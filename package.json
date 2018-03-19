@@ -1,0 +1,54 @@
+{
+  "name": "ls",
+  "version": "1.0.0",
+  "description": "Species recognition and recall",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest-webpack",
+    "start:dev": "webpack-dev-server",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "jest --watch utils.test.js",
+    "alternative watch - to run build": "webpack --watch --mode development"
+  },
+  "jest": {
+    "jest": {
+      "moduleFileExtensions": [
+        "js"
+      ],
+      "moduleDirectories": [
+        "node_modules"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danhartley/snapdragon-redux.git"
+  },
+  "keywords": [
+    "species",
+    "recognition",
+    "identification",
+    "learn",
+    "recall",
+    "eol"
+  ],
+  "author": "Daniel Hartley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danhartley/snapdragon-redux/issues"
+  },
+  "homepage": "https://github.com/danhartley/snapdragon-redux#readme",
+  "devDependencies": {
+    "babel-jest": "^23.0.0-alpha.0",
+    "css-loader": "^0.28.11",
+    "jest": "^22.4.2",
+    "jest-webpack": "^0.4.0",
+    "ramda": "^0.25.0",
+    "redux": "^3.7.2",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
+    "webpack-dev-server": "^3.1.1"
+  }
+}
