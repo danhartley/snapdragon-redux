@@ -30,7 +30,8 @@ export const renderTextEntry = () => {
 
     const template = document.querySelector(`.${element.template}`);
 
-    template.content.querySelector('span').innerHTML = item.genus;   
+    template.content.querySelector('span.js-genus').innerHTML = item.genus;
+    template.content.querySelector('span.js-species').innerHTML = item.species;
 
     const clone = document.importNode(template.content, true);
     

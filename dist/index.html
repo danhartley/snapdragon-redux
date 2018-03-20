@@ -50,24 +50,39 @@
                 <div class="letterbox">
                     <div></div>
                     <div>
-                        <span class="js-txt-entry"></span>
-                        <input class="short js-txt-input" type="text" placeholder="species">
+                        <span class="js-txt-entry js-genus"></span>
+                        <input class="short js-txt-input" type="text" placeholder="genus">
+                        <span class="js-txt-entry js-species" style="display:none"></span>
                         <button>Check</button>
                     </div>
                     <div></div>
                 </div>
             </template>
     
-            <template class="js-species-genus-entry-template">
-                    <div></div>
+            <template class="js-species-genus-entry-template">                    
                     <div class="letterbox">
+                        <div></div>
                         <div>
-                            <span class="js-txt-entry" style="display:none"></span>
+                            <span class="js-txt-entry js-species" style="display:none"></span>
                             <input class="long js-txt-input" type="text" placeholder="Species genus">
+                            <span class="js-txt-entry js-genus" style="display:none"></span>
                             <button>Check</button>
                         </div>
-                    </div>
-                    <div></div>
+                        <div></div>
+                    </div>                    
+            </template>
+
+            <template class="js-genus-entry-template">                    
+                    <div class="letterbox">
+                        <div></div>
+                        <div>
+                            <span class="js-txt-entry js-genus" style="display:none"></span>
+                            <input class="short js-txt-input" type="text" placeholder="Species">
+                            <span class="js-txt-entry js-species"></span>
+                            <button>Check</button>
+                        </div>
+                        <div></div>
+                    </div>                    
             </template>
     </body>
 </html>

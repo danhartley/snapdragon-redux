@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { renderSpecies } from 'ui/screens/species';
 import { renderPasses } from 'ui/screens/passes'; 
 import { renderFails } from 'ui/screens/fails';
-import { renderScore } from 'ui/screens/score';
+import { renderScore } from 'ui/screens/scorectrl';
 import { renderTextEntry } from 'ui/screens/text-entry';
 import { renderSpecimen } from 'ui/screens/specimen';
 
@@ -28,7 +28,9 @@ export const learnStrategies = [
         {
           name: 'score',
           render: renderScore
-        }
+        },
+        { name: 'passes', render: renderPasses},
+        { name: 'fails', render: renderFails}
       ]
     },
     {
@@ -52,7 +54,9 @@ export const learnStrategies = [
         {
           name: 'score',
           render: renderScore
-        }
+        },
+        { name: 'passes', render: renderPasses},
+        { name: 'fails', render: renderFails}
       ]
     },
     {
@@ -76,7 +80,35 @@ export const learnStrategies = [
         {
           name: 'score',
           render: renderScore
-        }
+        },
+        { name: 'passes', render: renderPasses},
+        { name: 'fails', render: renderFails}
       ]
-    }
+    },
+    {
+      id: 4,
+      active: false,
+      elements: [ 
+        {
+          name: 'specimen',
+          render: renderSpecimen,
+          parent: DOM.leftBody,
+          template: 'js-specimen-template'        
+        }, 
+        {
+            name: 'text-entry',
+            render: renderTextEntry,
+            parent: DOM.rightBody,
+            template: 'js-genus-entry-template',
+            question: 'species',
+            header: 'genus the binomial name'
+        },
+        {
+          name: 'score',
+          render: renderScore
+        },
+        { name: 'passes', render: renderPasses},
+        { name: 'fails', render: renderFails}
+      ]
+    },
   ];

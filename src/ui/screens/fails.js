@@ -1,19 +1,20 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
+import * as R from 'ramda';
 
 export const renderFails = () => {
-
-    if ('content' in document.createElement('template')) {
-
+    
+    const { score, items } = store.getState();
+    
+    if(score.total === items.length) {
+        
         const template = document.querySelector('.js-fails-template');
         const rptrFails = template.content.querySelector('.js-rptr-fails');
-        
-        const { score, items } = store.getState();
 
         DOM.headerTxt.innerHTML = 
-            score.wrong === 1
-                ? `You got ${score.wrong} question wrong:`
-                : `You got ${score.wrong} questions wrong:`;
+        score.wrong === 1
+            ? `You got ${score.wrong} question wrong:`
+            : `You got ${score.wrong} questions wrong:`;
         DOM.rightHeader.style.backgroundColor = 'rgb(141, 0, 5)';
 
         const species = items
@@ -40,4 +41,5 @@ export const renderFails = () => {
         DOM.rightBody.innerHTML = '';
         DOM.rightBody.appendChild(clone);
     }
+
 };

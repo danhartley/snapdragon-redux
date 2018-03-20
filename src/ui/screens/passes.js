@@ -1,15 +1,17 @@
 import { actions } from 'redux/actions/learn';
 import { store } from 'redux/store';
 import { renderFails } from 'ui/screens/fails';
+import { DOM } from 'ui/dom';
 
 export const renderPasses = () => {
-    if ('content' in document.createElement('template')) {
+
+    const { score, items } = store.getState();
+
+    if(score.total === items.length) {
         
         const template = document.querySelector('.js-passes-template');
         const rptrPasses = template.content.querySelector('.js-rptr-passes');
         const ul = document.createElement('ul');
-
-        const { score } = store.getState();
 
         DOM.headerTxt.innerHTML = 
             score.correct === 1 
