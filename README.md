@@ -1,6 +1,10 @@
 # snapdragon-redux
 Species recognition and recall
 
+## Firefox support
+
+Requires changing a config setting:  dom.moduleScripts.enabled setting in about:config
+
 
 ### instructions
 
@@ -20,10 +24,10 @@ NB: require babel-plugin-transform-object-rest-spread for the spread operator
 
 ### parcel
 
-Added parcel support: install babel-plugin-module-resolver and add 
+To support parcel required to: install babel-plugin-module-resolver and add:
 ["module-resolver", {
       "root": ["./src"]
 }]
 to .babelrc
 
-*devtools for chrome must be commented out for other browers!*
+*Build warning: devtools for chrome must be commented out for other browers!*

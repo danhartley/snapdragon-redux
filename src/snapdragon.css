@@ -165,16 +165,25 @@
   grid-area: letterbox;
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: 220px 60px;
+  background-color: rgb(85, 165, 119);
+  grid-template-rows: 220px 60px 320px;
   grid-template-areas: "one"
                        "two"
+                       "three"
 }
 
-.letterbox div {
+.letterbox div:nth-child(1) {
+  grid-area: one;
+}
+
+.letterbox div:nth-child(2) {
   grid-area: two;
-  height: 80px;
   background-color: rgba(44, 141, 86, .8);
-  padding: 20px 0;
+  padding: 10px 0;
+}
+
+.letterbox div:nth-child(3) {
+  grid-area: three;
 }
 
 .letterbox span {
