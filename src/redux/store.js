@@ -16,12 +16,21 @@ const reducer = combineReducers({
     randomiser
 });
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export const store = createStore(
     reducer, 
-    composeEnhancers(applyMiddleware(
+    applyMiddleware(
         timeoutScheduler,
         logger
-    ))
+    )
 );
+
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+// export const store = createStore(
+//     reducer, 
+//     composeEnhancers(applyMiddleware(
+//         timeoutScheduler,
+//         logger
+//     ))
+// );
