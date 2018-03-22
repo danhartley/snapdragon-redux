@@ -45,7 +45,7 @@ export const renderSpecies = () => {
     clone.querySelectorAll('.js-rptr-species .rectangle .answer button').forEach(element => {
         element.addEventListener('click', event => {                    
             const { item } = store.getState();    
-            const qandA = { question: item.name, answer: event.target.childNodes[0].data };
+            const qandA = { name: item.name, question: item.name, answer: event.target.childNodes[0].data };
             actions.boundMarkAnswer(qandA);
         });
     });

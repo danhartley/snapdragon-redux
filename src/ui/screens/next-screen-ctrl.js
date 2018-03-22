@@ -20,8 +20,6 @@ export const renderNext = () => {
     });
     subscriptions.length = 0;
 
-    DOM.rightBody.innerHTML = '';
-
     const strategy = randomiser.strategiesCollection.strategies[randomiser.strategiesCollection.index];
 
     if(!strategy) return;

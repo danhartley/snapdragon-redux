@@ -31,8 +31,8 @@ export const renderPasses = () => {
         DOM.rightBody.innerHTML = '';
         DOM.rightBody.appendChild(clone);
 
-        setTimeout(()=>{
-            renderFails();
-        },5000);
+        // setTimeout(()=>{
+        //     renderFails();
+        // },5000);
     }
 };

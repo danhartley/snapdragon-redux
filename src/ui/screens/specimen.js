@@ -1,16 +1,6 @@
 import { DOM } from 'ui/dom';
-import { store } from 'redux/store';
-import { utils } from 'utils/utils';
 
-let currItem = null;
-
-export const renderSpecimen = () => {
-
-    const { strategy, randomiser, item, items } = store.getState();
-
-    if(item === currItem) return;
-
-    currItem = item;
+export const renderSpecimens = (strategy, randomiser, item, items) => {
 
     const element = strategy.elements.filter(el => el.name === 'specimen')[0];
 

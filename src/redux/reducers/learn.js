@@ -8,6 +8,7 @@ const initialScoreState = {
     total: 0,
     correct: 0,
     wrong: 0,
+    name: '',
     answer: '',
     question: '',
     fails: [],
@@ -71,7 +72,7 @@ api.species.forEach(correctAnswer => {
     answersCollection.push(answers);
 });
 
-const initStrategies = utils.randomiseSelection(learnStrategies, api.species.length)
+const initStrategies = utils.randomiseSelection(learnStrategies, api.species.length + 1)
     .map(strategy => {
         strategy.active = true;
         return strategy;

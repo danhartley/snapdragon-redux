@@ -10,7 +10,7 @@ const sendQandA = () => {
     const question = item[strategy.elements.filter(el => el.name === 'text-entry')[0].question];
     if(!document.querySelector('.js-txt-input')) return;
     const answer = document.querySelector('.js-txt-input').value;
-    const qandA = { question: question, answer: answer }
+    const qandA = { name: item.name, question: question, answer: answer }
     actions.boundMarkAnswer(qandA);
 };
 

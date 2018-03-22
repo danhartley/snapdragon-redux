@@ -1,10 +1,9 @@
 import { DOM } from 'ui/dom';
 import { renderSpecies } from 'ui/screens/species';
-import { renderPasses } from 'ui/screens/passes'; 
-import { renderFails } from 'ui/screens/fails';
-import { renderScore } from 'ui/screens/scorectrl';
+import { renderProgress } from 'ui/screens/progress-ctrl';
+import { renderScore } from 'ui/screens/score-ctrl';
 import { renderTextEntry } from 'ui/screens/text-entry';
-import { renderSpecimen } from 'ui/screens/specimen';
+import { renderSpecimen } from 'ui/screens/specimen-ctrl';
 
 export const learnStrategies = [
     {
@@ -23,14 +22,13 @@ export const learnStrategies = [
             parent: DOM.rightBody,
             template: 'js-species-entry-template',
             question: 'species',
-            header: 'Complete the binomial name'
+            header: 'Give the species name'
         },
         {
           name: 'score',
           render: renderScore
         },
-        { name: 'passes', render: renderPasses},
-        { name: 'fails', render: renderFails}
+        { name: 'progress', render: renderProgress}
       ]
     },
     {
@@ -49,14 +47,13 @@ export const learnStrategies = [
             parent: DOM.rightBody,
             template: 'js-species-genus-entry-template',
             question: 'name',
-            header: 'Give the binomial name'
+            header: 'Give the genus and species name'
         },
         {
           name: 'score',
           render: renderScore
         },
-        { name: 'passes', render: renderPasses},
-        { name: 'fails', render: renderFails}
+        { name: 'progress', render: renderProgress}
       ]
     },
     {
@@ -81,8 +78,7 @@ export const learnStrategies = [
           name: 'score',
           render: renderScore
         },
-        { name: 'passes', render: renderPasses},
-        { name: 'fails', render: renderFails}
+        { name: 'progress', render: renderProgress}
       ]
     },
     {
@@ -100,15 +96,14 @@ export const learnStrategies = [
             render: renderTextEntry,
             parent: DOM.rightBody,
             template: 'js-genus-entry-template',
-            question: 'species',
-            header: 'genus the binomial name'
+            question: 'genus',
+            header: 'Give the genus'
         },
         {
           name: 'score',
           render: renderScore
         },
-        { name: 'passes', render: renderPasses},
-        { name: 'fails', render: renderFails}
+        { name: 'progress', render: renderProgress}
       ]
     },
   ];
