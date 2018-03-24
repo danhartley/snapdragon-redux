@@ -1,15 +1,14 @@
 import { DOM } from 'ui/dom';
-import { renderSpecies } from 'ui/screens/species';
+import { renderSpecies } from 'ui/screens/species-ctrl';
 import { renderProgress } from 'ui/screens/progress-ctrl';
-import { renderScore } from 'ui/screens/score-ctrl';
-import { renderTextEntry } from 'ui/screens/text-entry';
+import { renderTextEntry } from 'ui/screens/text-entry-ctrl';
 import { renderSpecimen } from 'ui/screens/specimen-ctrl';
 
 export const learnStrategies = [
     {
       id: 1,
       active: false,
-      elements: [ 
+      screens: [ 
         {
           name: 'specimen',
           render: renderSpecimen,
@@ -24,17 +23,13 @@ export const learnStrategies = [
             question: 'species',
             header: 'Give the species name'
         },
-        {
-          name: 'score',
-          render: renderScore
-        },
-        { name: 'progress', render: renderProgress}
+        // { name: 'progress', render: renderProgress}
       ]
     },
     {
       id: 2,
       active: false,
-      elements: [ 
+      screens: [ 
         {
           name: 'specimen',
           render: renderSpecimen,
@@ -49,17 +44,13 @@ export const learnStrategies = [
             question: 'name',
             header: 'Give the genus and species name'
         },
-        {
-          name: 'score',
-          render: renderScore
-        },
-        { name: 'progress', render: renderProgress}
+        // { name: 'progress', render: renderProgress}
       ]
     },
     {
       id: 3,
       active: true,
-      elements: [
+      screens: [
         {
           name: 'specimen',
           render: renderSpecimen,
@@ -74,17 +65,13 @@ export const learnStrategies = [
             question: 'name',
             header: 'Click the matching species'
         },
-        {
-          name: 'score',
-          render: renderScore
-        },
-        { name: 'progress', render: renderProgress}
+        // { name: 'progress', render: renderProgress}
       ]
     },
     {
       id: 4,
       active: false,
-      elements: [ 
+      screens: [ 
         {
           name: 'specimen',
           render: renderSpecimen,
@@ -99,11 +86,7 @@ export const learnStrategies = [
             question: 'genus',
             header: 'Give the genus'
         },
-        {
-          name: 'score',
-          render: renderScore
-        },
-        { name: 'progress', render: renderProgress}
+        // { name: 'progress', render: renderProgress}
       ]
     },
   ];

@@ -1,4 +1,4 @@
-import { score, item } from 'redux/reducers/learn';
+import { score, item, multipleChoices } from 'redux/reducers/learn-reducers';
 import { types } from 'redux/types/learn';
 
 it('learn state should reflect correct answer', () => {
@@ -94,3 +94,12 @@ it('learn state should return the next item', () => {
   expect(item(stateBefore, action)).toEqual(stateAfter);
 });
 
+it('multipleChoices returns given number of choices', () => {
+  expect(multipleChoices([1,2,3,4,5,6],6).length).toBe(6);
+});
+
+it('multipleChoices returns a collection of arrays', () => {
+  const items = [{id:1},{id:2},{id:3},{id:4}];
+  const answersCollection = multipleChoices(items, 4);
+  expect(answersCollection.map(answer => answer.items.length)).toEqual([4,4,4,4]);
+});

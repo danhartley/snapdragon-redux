@@ -1,14 +1,14 @@
 import { DOM } from 'ui/dom';
 
-export const renderSpecimens = (strategy, randomiser, item, items) => {
+export const renderSpecimensHeader = (count) => {
+    DOM.collectionTxt.innerHTML = `There are ${count} items in this test`;
+};
 
-    const element = strategy.elements.filter(el => el.name === 'specimen')[0];
+export const renderSpecimens = (screen, randomiser, itemImages) => {
 
-    const template = document.querySelector(`.${element.template}`);
+    const template = document.querySelector(`.${screen.template}`);
 
     const rptrSpecimen = template.content.querySelector('.js-rptr-specimen');
-
-    DOM.collectionTxt.innerHTML = `There are ${items.length} items in this test`;
 
     let renderSpecimenImages = null;
 
@@ -30,12 +30,12 @@ export const renderSpecimens = (strategy, randomiser, item, items) => {
                     </div>`; 
             }).join('');
             const clone = document.importNode(template.content, true);
-            element.parent.innerHTML = '';
-            element.parent.appendChild(clone);
+            screen.parent.innerHTML = '';
+            screen.parent.appendChild(clone);
         };        
     };
             
-    renderSpecimenImages = renderImages(item.images);
+    renderSpecimenImages = renderImages(itemImages);
     renderSpecimenImages();
 
     DOM.moreSpecimensBtn.addEventListener('click', () => {

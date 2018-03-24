@@ -2,6 +2,7 @@ import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/learn';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
+import { observeStore } from 'redux/observeStore';
 
 const subscriptions = [];
 
@@ -24,9 +25,9 @@ export const renderNext = () => {
 
     if(!strategy) return;
 
-    strategy.elements.forEach(element => { 
-        element.render();
-        subscriptions.push(store.subscribe(element.render));
+    strategy.screens.forEach(screen => { 
+        screen.render();
+        subscriptions.push(store.subscribe(screen.render));
     });
     subscriptions.push(store.subscribe(renderNext));
 
@@ -43,15 +44,16 @@ const { randomiser, items, item } = store.getState();
 
 const strategy = randomiser.strategiesCollection.strategies[randomiser.strategiesCollection.index];
 subscriptions.push(store.subscribe(renderNext));
-strategy.elements.forEach(element => { 
-    element.render();
-    subscriptions.push(store.subscribe(element.render));
+strategy.screens.forEach(screen => { 
+    screen.render();
+    subscriptions.push(observeStore(store, store => store, screen.render));
+
 });
 
 const newScreen = { 
     item: utils.nextItem(items, 0),
-    strategy: strategy,
-    randomiser: { index: randomiser.strategiesCollection.index + 1 }
+    // strategy: strategy,
+    // randomiser: { index: randomiser.strategiesCollection.index + 1 }
 };
 
 actions.boundNewScreen(newScreen);

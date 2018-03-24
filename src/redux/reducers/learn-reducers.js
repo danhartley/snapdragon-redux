@@ -59,18 +59,19 @@ export const items = (state = api.species, action) => {
     }
 };
 
-const answersCollection = [];
-const numberOfAlternateAnswers = (api.species.length > 5 ? 5 : api.species.length);
-api.species.forEach(correctAnswer => {
-    const answers = {};
-    const alternateAnswers = api.species.filter(s => {
-        return s.id !== correctAnswer.id
+export const multipleChoices = (collection, number) => {
+    const answersCollection = [];    
+    collection.forEach(correctAnswer => {
+        const answers = {};
+        const wrongAnswers = collection.filter(answer => answer.id !== correctAnswer.id);
+        answers.items = utils.randomiseSelection([ ...wrongAnswers, correctAnswer], number);
+        answers.correctAnswer = correctAnswer;
+        answersCollection.push(answers)
     });
-    answers.species = utils.randomiseSelection(alternateAnswers, numberOfAlternateAnswers);
-    answers.species.push(correctAnswer);
-    answers.id = correctAnswer.id;
-    answersCollection.push(answers);
-});
+    return answersCollection;
+};
+
+const answersCollection = multipleChoices(api.species, 6);
 
 const initStrategies = utils.randomiseSelection(learnStrategies, api.species.length + 1)
     .map(strategy => {
@@ -106,7 +107,6 @@ export const strategies = (state = null, action) => {
 export const randomiser = (state = initialRandomState, action) => {
     switch(action.type) {
         case types.NEW_SCREEN:
-        case 'RANDOMISER':
         const strategiesCollection = { strategiesCollection: { ...state.strategiesCollection, ...action.data.randomiser} };
             return { ...state, ...strategiesCollection };
         default: 

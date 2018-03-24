@@ -12,7 +12,7 @@ const binomials = flora[0].concat(flora[1])
 
 const species = utils.shuffleArray(binomials)
     .filter((sp, index) => {
-        if(index < 2) return sp;
+        if(index < 6) return sp;
     });
 
 export const api = {

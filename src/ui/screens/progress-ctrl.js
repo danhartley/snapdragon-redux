@@ -21,8 +21,8 @@ export const renderProgress = () => {
 
         rightBodyTop.innerHTML = '';
         rightBodyTop.appendChild(renderPasses(score.passes));
-        rightBodyBottom.innerHTML = '';
-        rightBodyBottom.appendChild(renderFails(score.fails));
+        // rightBodyBottom.innerHTML = '';
+        // rightBodyBottom.appendChild(renderFails(score.fails));
 
         const clone = document.importNode(template.content, true);
         DOM.rightBody.innerHTML = '';

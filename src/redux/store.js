@@ -5,7 +5,8 @@ import { timeoutScheduler } from 'redux/middleware/timeoutScheduler';
 
 import { utils } from 'utils/utils';
 
-import { score, item, strategy, items, randomiser, strategies } from 'redux/reducers/learn';
+import { score, item, strategy, items, randomiser, strategies } from 'redux/reducers/learn-reducers';
+import { subscriber } from 'redux/middleware/subscriber';
 
 const reducer = combineReducers({
     strategies,
@@ -22,6 +23,7 @@ export const store = createStore(
     reducer, 
     composeEnhancers(applyMiddleware(
         timeoutScheduler,
-        logger
+        // subscriber
+        // logger
     ))
 );
