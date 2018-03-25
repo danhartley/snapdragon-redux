@@ -37,6 +37,7 @@ export const score = (state = initialScoreState, action) => {
     }       
 };
 
+// export const item = (state = { ...api.species[0], index: 0 }, action) => {
 export const item = (state = null, action) => {
     switch(action.type) {
         case types.NEXT_ITEM:
@@ -73,7 +74,7 @@ export const multipleChoices = (collection, number) => {
 
 const answersCollection = multipleChoices(api.species, 6);
 
-const initStrategies = utils.randomiseSelection(learnStrategies, api.species.length + 1)
+const initStrategies = utils.randomiseSelection(learnStrategies, api.species.length)
     .map(strategy => {
         strategy.active = true;
         return strategy;

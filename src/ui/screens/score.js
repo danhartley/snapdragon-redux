@@ -18,6 +18,7 @@ export const renderScoreHeader = (score) => {
 };
 
 export const renderScoreFooter = (score) => {
+    
     const template = document.querySelector('.js-score-template');
 
     const txtCorrect = template.content.querySelector('.js-txt-correct');

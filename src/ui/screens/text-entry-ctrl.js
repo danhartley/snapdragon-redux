@@ -1,15 +1,15 @@
 import { store } from 'redux/store';
 import { renderInput } from 'ui/screens/text-entry';
 
-let currItem = null;
+// let currItem = null;
 
-export const renderTextEntry = () => {
+export const renderTextEntry = (item) => {
 
-    const { strategy, item } = store.getState();
+    const { strategy } = store.getState();
 
-    if(item === currItem) return;
+    // if(item === currItem) return;
 
-    currItem = item;
+    // currItem = item;
     
     const screen = strategy.screens.filter(el => el.name === 'text-entry')[0];
     

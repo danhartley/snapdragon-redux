@@ -6,12 +6,18 @@ import './snapdragon.css';
 import { renderNext } from 'ui/screens/next-screen-ctrl';
 import { renderScore } from 'ui/screens/score-ctrl';
 import { renderProgress } from 'ui/screens/progress-ctrl';
+import { renderSpecies } from 'ui/screens/species-ctrl';
+import { renderTextEntry } from 'ui/screens/text-entry-ctrl';
 
 import { store } from 'redux/store';
 
-// actions.boundNewScreen({ item: utils.nextItem(items, 0) });
-
 import { observeStore } from 'redux/observeStore';
+import { renderSpecimen } from './ui/screens/specimen-ctrl';
 
-const selectScore = store => store.score;
-observeStore(store, selectScore, renderScore);
+observeStore(store, store => store.score, renderScore);
+observeStore(store, store => store.score, renderNext);
+
+observeStore(store, store => store.item, renderSpecies);
+observeStore(store, store => store.item, renderTextEntry);
+observeStore(store, store => store.item, renderSpecimen);
+observeStore(store, store => store.item, renderProgress);

@@ -2,15 +2,9 @@ import { store } from 'redux/store';
 import { renderSpecimens } from 'ui/screens/specimen';
 import { renderSpecimensHeader } from './specimen';
 
-let currItem = null;
+export const renderSpecimen = (item) => {
 
-export const renderSpecimen = () => {
-
-    const { strategy, randomiser, item, items } = store.getState();
-
-    if(item === currItem) return;
-
-    currItem = item;
+    const { strategy, randomiser, items } = store.getState();
 
     renderSpecimensHeader(items.length);
 

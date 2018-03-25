@@ -1,8 +1,8 @@
 export const observeStore = (store, select, onChange) => {
-    let currentState;
+    let currentState = null;
   
     function handleChange() {
-      const name = onChange;
+      const name = onChange.name;
       let nextState = select(store.getState());
       if (nextState !== currentState) {
         currentState = nextState;
@@ -16,6 +16,6 @@ export const observeStore = (store, select, onChange) => {
   };
 
   const selectSpecies = store => {
-    const { strategy, randomiser, item } = store;
-    return { strategy, randomiser, items, item };
+    const { randomiser, items, item, score } = store;
+    return { randomiser, items, item, score };
   };

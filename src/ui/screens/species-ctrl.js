@@ -1,15 +1,9 @@
 import { store } from 'redux/store';
 import { renderSpeciesCards } from 'ui/screens/species';
 
-let currItem = null;
+export const renderSpecies = (item) => {
 
-export const renderSpecies = () => {
-
-    const { strategy, randomiser, item } = store.getState();
-
-    if(item === currItem) return;
-
-    currItem = item;
+    const { strategy, randomiser } = store.getState();
 
     const screen = strategy.screens.filter(el => el.name === 'species')[0];
 
