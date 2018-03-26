@@ -12,12 +12,15 @@ const makeActionCreator = action => {
   }
 
 const markAnswerAction = makeActionCreator(types.MARK_ANSWER);
-const newScreen = makeActionCreator(types.NEW_SCREEN);
+const newItem = makeActionCreator(types.NEXT_ITEM);
+const nextScreen = makeActionCreator(types.NEXT_LAYOUT);
 
 const boundMarkAnswer = data => store.dispatch(markAnswerAction(data));
-const boundNewScreen = data => store.dispatch(newScreen(data,{delay:2000}));
+const boundNextItem = data => store.dispatch(newItem(data,{delay:2000}));
+const boundNextScreen = data => store.dispatch(nextScreen(data));
 
 export const actions = {
     boundMarkAnswer,
-    boundNewScreen
+    boundNextItem,
+    boundNextScreen
 };

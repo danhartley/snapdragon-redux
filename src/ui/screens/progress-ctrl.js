@@ -2,7 +2,7 @@ import { store } from 'redux/store';
 import { renderFails, renderPasses } from 'ui/screens/progress';
 import { DOM } from 'ui/dom';
 
-export const renderProgress = () => {
+export const renderProgress = (index) => {
 
     const template = document.querySelector('.js-progress-template');
     const rightRptrProgress = template.content.querySelector('.js-rptr-progress');
@@ -21,8 +21,8 @@ export const renderProgress = () => {
 
         rightBodyTop.innerHTML = '';
         rightBodyTop.appendChild(renderPasses(score.passes));
-        // rightBodyBottom.innerHTML = '';
-        // rightBodyBottom.appendChild(renderFails(score.fails));
+        rightBodyBottom.innerHTML = '';
+        rightBodyBottom.appendChild(renderFails(score.fails));
 
         const clone = document.importNode(template.content, true);
         DOM.rightBody.innerHTML = '';

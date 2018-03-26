@@ -4,11 +4,11 @@ import { renderSpecimensHeader } from './specimen';
 
 export const renderSpecimen = (item) => {
 
-    const { strategy, randomiser, items } = store.getState();
+    const { layout, randomiser, items } = store.getState();
 
     renderSpecimensHeader(items.length);
 
-    const screen = strategy.screens.filter(el => el.name === 'specimen')[0];
+    const screen = layout.screens.filter(el => el.name === 'specimen')[0];
     
     renderSpecimens(screen, randomiser, item.images);
 

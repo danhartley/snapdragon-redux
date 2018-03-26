@@ -39,7 +39,7 @@ it('should return 10 random image indexes including 10', () => {
     expect(randoms.filter(num => num === 10).length).toBe(1);
 });
 
-const strategies = [
+const layouts = [
     {
       id: 1,
       active: true
@@ -53,7 +53,7 @@ const strategies = [
   ];
 
   it('should return required random numbers from a smaller array', () => {
-    const source = strategies;
+    const source = layouts;
     const num = 50;
     const randoms = utils.randomiseSelection(source, num, false);
     expect(randoms.length).toEqual(num)

@@ -3,9 +3,9 @@ import { renderSpeciesCards } from 'ui/screens/species';
 
 export const renderSpecies = (item) => {
 
-    const { strategy, randomiser } = store.getState();
+    const { layout, randomiser } = store.getState();
 
-    const screen = strategy.screens.filter(el => el.name === 'species')[0];
+    const screen = layout.screens.filter(el => el.name === 'species')[0];
 
     const { items:answers, correctAnswer : { name } } = randomiser.answersCollection.filter(collection => collection.correctAnswer.id === item.id)[0];
 

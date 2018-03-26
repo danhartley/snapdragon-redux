@@ -26,10 +26,10 @@ export const renderInput = (screen, item, question) => {
     const handleEnterPress = event => {
         if(event.key === 'Enter') {            
             sendQandA(document.querySelector('.js-txt-input').value);
-            window.removeEventListener('keypress', handleEnterPress);
+            document.removeEventListener('keypress', handleEnterPress);
         }
     };
 
-    window.addEventListener('keypress', handleEnterPress);
+    document.addEventListener('keypress', handleEnterPress);
 };
 

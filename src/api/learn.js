@@ -4,7 +4,7 @@ import { renderProgress } from 'ui/screens/progress-ctrl';
 import { renderTextEntry } from 'ui/screens/text-entry-ctrl';
 import { renderSpecimen } from 'ui/screens/specimen-ctrl';
 
-export const learnStrategies = [
+export const learnLayouts = [
     {
       id: 1,
       active: false,
@@ -22,8 +22,7 @@ export const learnStrategies = [
             template: 'js-species-entry-template',
             question: 'species',
             header: 'Give the species name'
-        },
-        // { name: 'progress', render: renderProgress}
+        }
       ]
     },
     {
@@ -43,8 +42,7 @@ export const learnStrategies = [
             template: 'js-species-genus-entry-template',
             question: 'name',
             header: 'Give the genus and species name'
-        },
-        // { name: 'progress', render: renderProgress}
+        }
       ]
     },
     {
@@ -64,8 +62,7 @@ export const learnStrategies = [
             template: 'js-species-template',
             question: 'name',
             header: 'Click the matching species'
-        },
-        // { name: 'progress', render: renderProgress}
+        }
       ]
     },
     {
@@ -85,8 +82,9 @@ export const learnStrategies = [
             template: 'js-genus-entry-template',
             question: 'genus',
             header: 'Give the genus'
-        },
-        // { name: 'progress', render: renderProgress}
+        }
       ]
     },
   ];
+  
+  export const progress = { name: 'progress', render: renderProgress};
