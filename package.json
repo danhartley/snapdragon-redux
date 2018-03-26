@@ -8,18 +8,17 @@
     "start:dev": "webpack-dev-server",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "watch": "jest --watch utils.test.js",
+    "watch": "webpack --watch --mode development & jest --watch reducers.test.js",
     "alternative watch - to run build": "webpack --watch --mode development"
   },
   "jest": {
-    "jest": {
-      "moduleFileExtensions": [
-        "js"
-      ],
-      "moduleDirectories": [
-        "node_modules"
-      ]
-    }
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "modulePaths": ["src"]
   },
   "repository": {
     "type": "git",

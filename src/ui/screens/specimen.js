@@ -1,24 +1,14 @@
 import { DOM } from 'ui/dom';
-import { store } from 'redux/store';
-import { utils } from 'utils/utils';
 
-let currItem = null;
+export const renderSpecimensHeader = (count) => {
+    DOM.collectionTxt.innerHTML = `There are ${count} items in this test`;
+};
 
-export const renderSpecimen = () => {
+export const renderSpecimens = (screen, randomiser, itemImages) => {
 
-    const { strategy, randomiser, item, items } = store.getState();
-
-    if(item === currItem) return;
-
-    currItem = item;
-
-    const element = strategy.elements.filter(el => el.name === 'specimen')[0];
-
-    const template = document.querySelector(`.${element.template}`);
+    const template = document.querySelector(`.${screen.template}`);
 
     const rptrSpecimen = template.content.querySelector('.js-rptr-specimen');
-
-    DOM.collectionTxt.innerHTML = `There are ${items.length} items in this test`;
 
     let renderSpecimenImages = null;
 
@@ -40,12 +30,12 @@ export const renderSpecimen = () => {
                     </div>`; 
             }).join('');
             const clone = document.importNode(template.content, true);
-            element.parent.innerHTML = '';
-            element.parent.appendChild(clone);
+            screen.parent.innerHTML = '';
+            screen.parent.appendChild(clone);
         };        
     };
             
-    renderSpecimenImages = renderImages(item.images);
+    renderSpecimenImages = renderImages(itemImages);
     renderSpecimenImages();
 
     DOM.moreSpecimensBtn.addEventListener('click', () => {
