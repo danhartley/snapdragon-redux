@@ -1,6 +1,8 @@
 # snapdragon-redux
 Species recognition and recall
 
+https://danhartley.github.io/snapdragon-redux/dist/index.html
+
 ## Firefox support
 
 Requires changing a config setting:  dom.moduleScripts.enabled setting in about:config
