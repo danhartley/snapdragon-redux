@@ -1,17 +1,9 @@
 import { actions } from 'redux/actions/learn';
 import { utils } from 'utils/utils';
 
-let loaded = false;
-
 export const renderInput = (screen, item, question) => {
 
-    console.log('text-entry item: ', item);
-    console.log('text-entry question: ', question);
-
-    const sendQandA = (item, question, answer) => {
-        console.log('item: ', item);
-        console.log('question: ', question);
-        console.log('answer: ', answer);
+    const sendQandA = (answer) => {
         actions.boundMarkAnswer({ name: item.name, question: question, answer: answer });
     };
 
@@ -23,7 +15,7 @@ export const renderInput = (screen, item, question) => {
     const clone = document.importNode(template.content, true);
     
     clone.querySelector('button').addEventListener('click', event => {
-        sendQandA(item, question, document.querySelector('.js-txt-input').value);
+        sendQandA(document.querySelector('.js-txt-input').value);
     });
 
     screen.parent.innerHTML = '';
@@ -33,13 +25,11 @@ export const renderInput = (screen, item, question) => {
 
     const handleEnterPress = event => {
         if(event.key === 'Enter') {            
-            sendQandA(item, question, document.querySelector('.js-txt-input').value);  
+            sendQandA(document.querySelector('.js-txt-input').value);
+            window.removeEventListener('keypress', handleEnterPress);
         }
     };
 
-    if(!loaded) {
-        window.addEventListener('keypress', handleEnterPress);
-        loaded = true;
-    }
+    window.addEventListener('keypress', handleEnterPress);
 };
 
