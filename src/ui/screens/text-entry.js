@@ -30,6 +30,6 @@ export const renderInput = (screen, item, question) => {
         }
     };
 
-    //document.addEventListener('keypress', handleEnterPress);
+    document.addEventListener('keypress', handleEnterPress);
 };
 
