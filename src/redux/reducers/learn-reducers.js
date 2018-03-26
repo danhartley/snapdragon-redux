@@ -1,8 +1,17 @@
 import { utils } from 'utils/utils';
 import { types } from 'redux/types/learn';
-import { learnStrategies } from 'api/learn';
+import { learnLayouts, progress } from 'api/learn';
 import { store } from 'redux/store';
 import { api } from 'api/species';
+
+export const index = (state = 0, action) => {
+    switch(action.type) {
+        case types.MARK_ANSWER:
+            return (state + 1) <= api.species.length ? (state + 1) : state;
+        default:
+            return state;
+    }
+};
 
 const initialScoreState = {
     total: 0,
@@ -37,13 +46,10 @@ export const score = (state = initialScoreState, action) => {
     }       
 };
 
-// export const item = (state = { ...api.species[0], index: 0 }, action) => {
-export const item = (state = null, action) => {
+export const item = (state = { ...api.species[0]}, action) => {
     switch(action.type) {
         case types.NEXT_ITEM:
             return { ...state, ...action.data };
-        case types.NEW_SCREEN:
-            return { ...state, ...action.data.item }
         default:
             return state;
     }
@@ -51,10 +57,6 @@ export const item = (state = null, action) => {
 
 export const items = (state = api.species, action) => {    
     switch(action.type) {
-        case 'LOAD_INAT_DATA':
-        case 'LOAD_EOL_DATA':
-        if(action.data)
-            return [...action.data];
         default:
             return state;
     }
@@ -74,42 +76,41 @@ export const multipleChoices = (collection, number) => {
 
 const answersCollection = multipleChoices(api.species, 6);
 
-const initStrategies = utils.randomiseSelection(learnStrategies, api.species.length)
-    .map(strategy => {
-        strategy.active = true;
-        return strategy;
+const initLayouts = utils.randomiseSelection(learnLayouts, api.species.length)
+    .map(layout => {
+        layout.active = true;
+        return layout;
     });
+
+    initLayouts.push(progress);
 
 const initialRandomState = {
     imageIndices : utils.randomiseSelection([1,2,3,4,5,6,7,8,9,10], 10, true),
-    strategiesCollection : {
-        strategies: initStrategies,
+    layoutsCollection : {
+        layouts: initLayouts,
         index: 0
     },
     answersCollection: answersCollection
 };
 
-export const strategy = (state = initialRandomState.strategiesCollection.strategies[0], action) => { 
+export const layout = (state = initialRandomState.layoutsCollection.layouts[0], action) => { 
     switch(action.type) {
-        case types.NEW_SCREEN:
-            return { ...state, ...action.data.strategy }
+        case types.NEXT_LAYOUT:
+            return { ...state, ...action.data }
         default: 
             return state;
     }
 };
 
-export const strategies = (state = null, action) => {
+export const layouts = (state = null, action) => {
     switch(action.type) {
         default:
-        return learnStrategies;
+        return learnLayouts;
     }
 };
 
 export const randomiser = (state = initialRandomState, action) => {
     switch(action.type) {
-        case types.NEW_SCREEN:
-        const strategiesCollection = { strategiesCollection: { ...state.strategiesCollection, ...action.data.randomiser} };
-            return { ...state, ...strategiesCollection };
         default: 
             return state;
     }
