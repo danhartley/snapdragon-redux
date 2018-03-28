@@ -1,7 +1,9 @@
 import { utils } from 'utils/utils';
 import { flora } from 'api/flora';
 
-const binomials = flora[0].concat(flora[1])
+const sampleSize = 12;
+
+const binomials = flora[2]
     .map(item => {
         const names = item.name.split(' ');
         item.genus = names[0];
@@ -12,7 +14,7 @@ const binomials = flora[0].concat(flora[1])
 
 const species = utils.shuffleArray(binomials)
     .filter((sp, index) => {
-        if(index < 6) return sp;
+        if(index < sampleSize) return sp;
     });
 
 export const api = {

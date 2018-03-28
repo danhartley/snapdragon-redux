@@ -85,7 +85,7 @@ const initLayouts = utils.randomiseSelection(learnLayouts, api.species.length)
     initLayouts.push(progress);
 
 const initialRandomState = {
-    imageIndices : utils.randomiseSelection([1,2,3,4,5,6,7,8,9,10], 10, true),
+    imageIndices : utils.randomiseSelection([1,2,3,4,5,6,7,8,9,10,11,12], 12, true),
     layoutsCollection : {
         layouts: initLayouts,
         index: 0
