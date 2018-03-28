@@ -5,7 +5,7 @@ import { timeoutScheduler } from 'redux/middleware/timeoutScheduler';
 
 import { utils } from 'utils/utils';
 
-import { index, score, item, layout, items, randomiser, layouts } from 'redux/reducers/learn-reducers';
+import { index, score, item, layout, items, randomiser, layouts, lesson } from 'redux/reducers/learn-reducers';
 
 const reducer = combineReducers({
     index,
@@ -14,7 +14,8 @@ const reducer = combineReducers({
     items,
     item,
     score,
-    randomiser
+    randomiser,
+    lesson
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

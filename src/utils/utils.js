@@ -80,6 +80,20 @@ Array.prototype.concatAll = function() {
     item.index = index % array.length;
     return item;
   };
+
+  const insertObjectBetweenItems = (array, insert) => {
+    const insertedIntoArray = array.reduce( (acc, curr, currIndex) => {        
+        return acc.concat([insert, curr]);
+    }, []);
+    return insertedIntoArray;
+  };
+
+  const doubledItemsInArray = (array) => {
+      const doubledArray = array.reduce( (acc, curr, currIndex) => {        
+          return acc.concat([curr, curr]);
+      }, []);
+      return doubledArray;
+  };
   
   export const utils = {
     log,
@@ -88,5 +102,7 @@ Array.prototype.concatAll = function() {
     intervalTimer,
     shuffleArray,
     nextItem,
-    randomiseSelection
+    randomiseSelection,
+    insertObjectBetweenItems,
+    doubledItemsInArray
   };

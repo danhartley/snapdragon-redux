@@ -58,3 +58,18 @@ const layouts = [
     const randoms = utils.randomiseSelection(source, num, false);
     expect(randoms.length).toEqual(num)
 });
+
+it('insertObjectBetweenItems for even items in 4 item array should return array length 8', () =>{
+    const items = [{id:1},{id:2},{id:3},{id:4}];
+    const insert = {id:0};
+    const insertedIntoArray = utils.insertObjectBetweenItems(items, insert);
+    expect(insertedIntoArray.length).toEqual(items.length*2);
+  });
+  
+  it('doubledItemsInArray for even items in 4 item array should return array length 8', () =>{
+    const items = [{id:1},{id:2},{id:3},{id:4}];
+    const doubledArray = utils.doubledItemsInArray(items);
+    const doubledItems = [{id:1},{id:1},{id:2},{id:2},{id:3},{id:3},{id:4},{id:4}];
+    expect(doubledArray.length).toEqual(items.length*2);
+    expect(doubledArray).toEqual(doubledItems);
+  });

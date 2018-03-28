@@ -14,8 +14,3 @@ export const observeStore = (store, select, onChange) => {
     handleChange();
     return unsubscribe;
   };
-
-  const selectSpecies = store => {
-    const { randomiser, items, item, score } = store;
-    return { randomiser, items, item, score };
-  };

@@ -1,4 +1,5 @@
 import { utils } from 'utils/utils';
+import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { types } from 'redux/types/learn';
 import { learnLayouts, progress } from 'api/learn';
 import { store } from 'redux/store';
@@ -46,7 +47,18 @@ export const score = (state = initialScoreState, action) => {
     }       
 };
 
-export const item = (state = { ...api.species[0]}, action) => {
+export const lesson = (state = null, action) => {
+    switch(action.type) {
+        case types.END_LESSON:
+            return { ...state, ...action.data };
+            default:
+                return state;
+    }
+};
+
+const collection = helpers.generateAndAddMultipleChoices(api.species, 6);
+
+export const item = (state = { ...collection[0]}, action) => {
     switch(action.type) {
         case types.NEXT_ITEM:
             return { ...state, ...action.data };
@@ -62,27 +74,15 @@ export const items = (state = api.species, action) => {
     }
 };
 
-export const multipleChoices = (collection, number) => {
-    const answersCollection = [];    
-    collection.forEach(correctAnswer => {
-        const answers = {};
-        const wrongAnswers = collection.filter(answer => answer.id !== correctAnswer.id);
-        answers.items = utils.randomiseSelection([ ...wrongAnswers, correctAnswer], number);
-        answers.correctAnswer = correctAnswer;
-        answersCollection.push(answers)
-    });
-    return answersCollection;
-};
-
-const answersCollection = multipleChoices(api.species, 6);
+const answersCollection = helpers.generateMultipleChoices(api.species, 6);
 
 const initLayouts = utils.randomiseSelection(learnLayouts, api.species.length)
     .map(layout => {
         layout.active = true;
         return layout;
-    });
+});
 
-    initLayouts.push(progress);
+initLayouts.push(progress);
 
 const initialRandomState = {
     imageIndices : utils.randomiseSelection([1,2,3,4,5,6,7,8,9,10,11,12], 12, true),
