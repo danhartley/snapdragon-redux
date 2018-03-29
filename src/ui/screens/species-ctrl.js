@@ -9,5 +9,5 @@ export const renderSpecies = (lesson) => {
 
     if(!screen) return;
     
-    renderSpeciesCards(screen, lesson);
+    renderSpeciesCards(screen.template, lesson);
 };

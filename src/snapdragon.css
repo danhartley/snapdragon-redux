@@ -210,6 +210,67 @@
   margin: 0 10px;
 }
 
+.new-species-grid{
+  display: grid;
+  grid-template-rows: 50px 150px 150px 220px;
+  grid-template-columns: 60px 1fr 200px;
+  grid-template-areas:  "one    species species"
+                        "four   names   names"
+                        "six    seven   ok" 
+                        "wiki   wiki    wiki";
+  grid-gap: 10px;
+
+}
+
+.species-card-btn {
+  margin: 100px 20px;
+  grid-area: ok;
+}
+
+.species-card-btn button {
+  width: 150px;
+}
+
+.species-card-name {
+  grid-area: species;
+  padding: 15px;
+  font-size: 1.6em;
+  text-align: right;
+}
+
+.species-card-wikipedia {
+  grid-area: wiki;
+  background-color: rgb(128, 128, 128);
+  padding: 10px;
+  font-size: .9em;
+}
+
+.species-card-names {
+  grid-area: names;
+  text-transform: capitalize;
+  text-align: right;
+}
+
+.family-name {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  text-align: right;
+}
+
+ul {
+  margin: 0;
+  padding: 10px;
+  color: rgb(105, 105, 105);
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: #ffffff;
+}
+
 button {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;

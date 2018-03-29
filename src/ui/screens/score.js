@@ -13,7 +13,7 @@ export const renderScoreHeader = (score) => {
     } 
     else {
         DOM.headerTxt.innerHTML = ``;
-        DOM.rightHeader.style.backgroundColor = 'rgb(44, 141, 86)';
+        //DOM.rightHeader.style.backgroundColor = 'rgb(44, 141, 86)';
     }
 };
 

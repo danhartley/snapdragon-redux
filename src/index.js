@@ -9,7 +9,7 @@ import { observeStore } from 'redux/observeStore';
 
 import { renderNextLayout } from 'ui/screens/next-layout-ctrl';
 import { renderNextItem } from 'ui/screens/next-item-ctrl';
-import { renderLesson } from 'ui/screens/lesson-ctrl';
+import { renderLesson } from 'ui/screens/species-card-ctrl';
 
 import { renderSpecimen } from './ui/screens/specimen-ctrl';
 import { renderSpecies } from 'ui/screens/species-ctrl';
