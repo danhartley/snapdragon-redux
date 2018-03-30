@@ -1,5 +1,5 @@
 import { store } from 'redux/store';
-import { renderSpeciesCard } from 'ui/screens/species-card';
+import { renderSpeciesCardHeader, renderSpeciesCard } from 'ui/screens/species-card';
 
 export const renderLesson = (index) => {
 
@@ -7,5 +7,6 @@ export const renderLesson = (index) => {
 
     const template = 'js-species-card-template';
 
+    renderSpeciesCardHeader();
     renderSpeciesCard(template, item, true);
 };

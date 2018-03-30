@@ -1,10 +1,28 @@
+import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/learn';
 import { utils } from 'utils/utils';
 
 export const renderInput = (screen, item, question) => {
 
-    const sendQandA = (answer) => {
-        actions.boundMarkAnswer({ name: item.name, question: question, answer: answer });
+    const sendQandA = (answer, event) => {
+        const btn = event.target;
+        const right = 'rgb(44, 141, 86)'
+        const wrong = 'rgb(141, 0, 5)';
+        if(answer === question) {
+            btn.style.color = right;
+            btn.parentNode.style.background = right;
+            DOM.headerTxt.innerHTML = `${answer} was the correct answer! Well done.`;
+            DOM.rightHeader.style.backgroundColor = 'rgb(44, 141, 86)';
+        }
+        else {
+            btn.style.color = wrong;
+            btn.parentNode.style.background = wrong;
+            DOM.headerTxt.innerHTML = `Oh no! The correct answer was ${item.name}.`;
+            DOM.rightHeader.style.backgroundColor = 'rgb(141, 0, 5)';
+        }
+        setTimeout(()=>{
+            actions.boundMarkAnswer({ name: item.name, question: question, answer: answer });
+        },3000);
     };
 
     const template = document.querySelector(`.${screen.template}`);
@@ -15,7 +33,7 @@ export const renderInput = (screen, item, question) => {
     const clone = document.importNode(template.content, true);
     
     clone.querySelector('button').addEventListener('click', event => {
-        sendQandA(document.querySelector('.js-txt-input').value);
+        sendQandA(document.querySelector('.js-txt-input').value, event);
     });
 
     screen.parent.innerHTML = '';
@@ -25,7 +43,7 @@ export const renderInput = (screen, item, question) => {
 
     const handleEnterPress = event => {
         if(event.key === 'Enter') {            
-            sendQandA(document.querySelector('.js-txt-input').value);
+            sendQandA(document.querySelector('.js-txt-input').value, event);
             document.removeEventListener('keypress', handleEnterPress);
         }
     };

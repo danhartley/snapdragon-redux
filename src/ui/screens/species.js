@@ -1,6 +1,7 @@
+import * as R from 'ramda';
+
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/learn';
-import * as R from 'ramda';
 
 export const renderSpeciesCards = (templateName, item) => {
 
@@ -30,7 +31,26 @@ export const renderSpeciesCards = (templateName, item) => {
 
     clone.querySelectorAll('.js-rptr-species .rectangle .answer button').forEach(choice => {
         choice.addEventListener('click', event => {
-            actions.boundMarkAnswer({ name: item.name, question: item.name, answer: event.target.childNodes[0].data });            
+            const btn = event.target;
+            const answer = btn.childNodes[0].data;
+            const right = 'rgb(44, 141, 86)'
+            const wrong = 'rgb(141, 0, 5)';
+            if(item.name === answer) {
+                btn.style.color = right;
+                btn.parentNode.style.background = right;
+                DOM.headerTxt.innerHTML = `${answer} was the correct answer! Well done.`;
+                DOM.rightHeader.style.backgroundColor = 'rgb(44, 141, 86)';
+            }
+            else {
+                btn.style.color = wrong;
+                btn.parentNode.style.background = wrong;
+                DOM.headerTxt.innerHTML = `Oh no! The correct answer was ${item.name}.`;
+                DOM.rightHeader.style.backgroundColor = 'rgb(141, 0, 5)';
+            }
+            setTimeout(()=>{
+                actions.boundMarkAnswer({ name: item.name, question: item.name, answer: answer });
+            },3000);
+            
         });
     });
 

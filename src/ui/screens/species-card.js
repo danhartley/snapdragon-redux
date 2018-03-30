@@ -3,6 +3,12 @@ import { actions } from 'redux/actions/learn';
 import { renderWiki } from 'wikipedia/wiki';
 import { renderFamily } from 'gbif/gbif';
 
+
+export const renderSpeciesCardHeader = () => {
+    DOM.headerTxt.innerHTML = ``;
+    DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
+};
+
 export const renderSpeciesCard = (templateSelector, item) => {
 
     const template = document.querySelector(`.${templateSelector}`);
@@ -31,9 +37,7 @@ export const renderSpeciesCard = (templateSelector, item) => {
     DOM.rightBody.innerHTML = '';
     DOM.rightBody.appendChild(clone);
 
-    // const wiki = document.querySelector('.js-txt-wiki');
     const gbif = document.querySelector('.js-txt-family span');
 
-    // renderWiki(wiki, item.name);
     renderFamily(gbif, item.name);
 };
