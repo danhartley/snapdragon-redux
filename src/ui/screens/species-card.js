@@ -26,16 +26,14 @@ export const renderSpeciesCard = (templateSelector, item) => {
         actions.boundEndLesson(item);
     });
 
-    DOM.rightBody.style.backgroundColor = 'rgb(211, 211, 211)';
-    DOM.rightHeader.style.cssText = 'text-align: right; padding-right: 20px; letter-spacing:.2em;';
+    DOM.rightBody.style.backgroundColor = 'rgb(50, 50, 50)';
+    
     DOM.rightBody.innerHTML = '';
     DOM.rightBody.appendChild(clone);
 
-    const wiki = document.querySelector('.js-txt-wiki');
-    const gbif = document.querySelector('.js-right-header .js-txt-header');
+    // const wiki = document.querySelector('.js-txt-wiki');
+    const gbif = document.querySelector('.js-txt-family span');
 
-    gbif.className = 'family-name';
-
-    renderWiki(wiki, item.name);
+    // renderWiki(wiki, item.name);
     renderFamily(gbif, item.name);
 };

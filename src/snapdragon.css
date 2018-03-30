@@ -203,28 +203,29 @@
 }
 
 .letterbox input.long {
-  width: 475px;
+  width: 450px;
 }
 
 .letterbox button {
   margin: 0 10px;
+  width: 100px;
 }
 
 .new-species-grid{
   display: grid;
-  grid-template-rows: 50px 150px 150px 220px;
-  grid-template-columns: 60px 1fr 200px;
-  grid-template-areas:  "one    species species"
-                        "four   names   names"
-                        "six    seven   ok" 
-                        "wiki   wiki    wiki";
+  grid-auto-flow: row;
+  grid-template-rows: 50px 1fr 1fr 100px;
+  grid-template-areas:  "family"
+                        "name"
+                        "names"
+                        "continue";
   grid-gap: 10px;
-
+  margin: 20px;
 }
 
 .species-card-btn {
-  margin: 100px 20px;
-  grid-area: ok;
+  grid-area: continue;
+  text-align: right;
 }
 
 .species-card-btn button {
@@ -232,10 +233,17 @@
 }
 
 .species-card-name {
-  grid-area: species;
-  padding: 15px;
-  font-size: 1.6em;
+  grid-area: name;
+  font-size: 1.8em;
+  text-align: right;  
+}
+
+.species-card-family {
+  grid-area: family;
+  text-transform: uppercase; 
+  font-size: 1.4em; 
   text-align: right;
+  letter-spacing: 2px;
 }
 
 .species-card-wikipedia {
