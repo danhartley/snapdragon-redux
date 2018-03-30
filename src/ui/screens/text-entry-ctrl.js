@@ -1,7 +1,7 @@
 import { store } from 'redux/store';
 import { renderInput } from 'ui/screens/text-entry';
 
-export const renderTextEntry = (item) => {
+export const renderTextEntry = (lesson) => {
 
     const { layout } = store.getState();
 
@@ -9,8 +9,8 @@ export const renderTextEntry = (item) => {
     
     if(!screen) return;
 
-    const question = item[screen.question];
+    const question = lesson[screen.question];
 
-    renderInput(screen, item, question);
+    renderInput(screen, lesson, question);
 };
 

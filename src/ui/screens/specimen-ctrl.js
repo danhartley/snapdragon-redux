@@ -2,7 +2,7 @@ import { store } from 'redux/store';
 import { renderSpecimens } from 'ui/screens/specimen';
 import { renderSpecimensHeader } from './specimen';
 
-export const renderSpecimen = (item) => {
+export const renderSpecimen = (lesson) => {
 
     const { layout, randomiser, items } = store.getState();
 
@@ -10,6 +10,6 @@ export const renderSpecimen = (item) => {
 
     const screen = layout.screens.filter(el => el.name === 'specimen')[0];
     
-    renderSpecimens(screen, randomiser, item.images);
+    renderSpecimens(screen, randomiser, lesson.images);
 
 };

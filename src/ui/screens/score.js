@@ -10,10 +10,6 @@ export const renderScoreHeader = (score) => {
     else if(score.total > 0) {
         DOM.headerTxt.innerHTML = `Oh no! The correct answer was ${score.question}.`;
         DOM.rightHeader.style.backgroundColor = 'rgb(141, 0, 5)';
-    } 
-    else {
-        DOM.headerTxt.innerHTML = ``;
-        DOM.rightHeader.style.backgroundColor = 'rgb(44, 141, 86)';
     }
 };
 
