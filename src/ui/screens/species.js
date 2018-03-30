@@ -15,7 +15,7 @@ export const renderSpeciesCards = (templateName, item) => {
         const vernacularNames = species.names
                 .filter(name => R.contains(name.language, languages))
                 .map(name => `<p>${name.vernacularName}</p>`)
-                .slice(0,5)
+                .slice(0,3)
                 .join('');
 
                 return `<div class="rectangle">
