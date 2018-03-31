@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { utils } from 'utils/utils';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { types } from 'redux/types/learn';
@@ -47,7 +49,7 @@ export const score = (state = initialScoreState, action) => {
     }       
 };
 
-export const lesson = (state = null, action) => {
+export const card = (state = null, action) => {
     switch(action.type) {
         case types.END_LESSON:
             return { ...state, ...action.data };
@@ -56,7 +58,8 @@ export const lesson = (state = null, action) => {
     }
 };
 
-const collection = helpers.generateAndAddMultipleChoices(api.species, 6);
+const multiChoicedSpecies = helpers.generateAndAddMultipleChoices(api.species, 6);
+const collection = helpers.generateAndAddMultipleTiles(multiChoicedSpecies, 9);
 
 export const item = (state = { ...collection[0]}, action) => {
     switch(action.type) {
@@ -75,6 +78,13 @@ export const items = (state = api.species, action) => {
 };
 
 const answersCollection = helpers.generateMultipleChoices(api.species, 6);
+const imageAnswersCollection = api.species.map(element => {
+    const images = utils.randomiseSelection(api.species, 6).map(sp => sp.images[0]);    
+    images.push(element.images[0]);
+    images.push(element.images[1]);
+    images.push(element.images[2]);
+    return images;
+});
 
 const initLayouts = utils.randomiseSelection(learnLayouts, api.species.length)
     .map(layout => {
@@ -85,15 +95,10 @@ const initLayouts = utils.randomiseSelection(learnLayouts, api.species.length)
 initLayouts.push(progress);
 
 const initialRandomState = {
-    imageIndices : utils.randomiseSelection([1,2,3,4,5,6,7,8,9,10,11,12], 12, true),
-    layoutsCollection : {
-        layouts: initLayouts,
-        index: 0
-    },
-    answersCollection: answersCollection
+    imageIndices : utils.randomiseSelection([1,2,3,4,5,6,7,8,9,10,11,12], 12, true)
 };
 
-export const layout = (state = initialRandomState.layoutsCollection.layouts[0], action) => { 
+export const layout = (state = initLayouts[0], action) => { 
     switch(action.type) {
         case types.NEXT_LAYOUT:
             return { ...state, ...action.data }
@@ -102,10 +107,10 @@ export const layout = (state = initialRandomState.layoutsCollection.layouts[0], 
     }
 };
 
-export const layouts = (state = null, action) => {
+export const layouts = (state = initLayouts, action) => {
     switch(action.type) {
         default:
-        return learnLayouts;
+        return initLayouts;
     }
 };
 

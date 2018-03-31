@@ -1,12 +1,13 @@
+import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { renderSpeciesCardHeader, renderSpeciesCard } from 'ui/screens/species-card';
+import { renderSpeciesCardHeader, renderSpeciesCardScreen } from 'ui/screens/species-card';
 
-export const renderLesson = (index) => {
+export const renderSpeciesCard = (index) => {
 
-    const { item } = store.getState();
+    const { item, layout } = store.getState();
 
-    const template = 'js-species-card-template';
+    screen = { template: 'js-species-card-template', parent: DOM.rightBody };
 
     renderSpeciesCardHeader();
-    renderSpeciesCard(template, item, true);
+    renderSpeciesCardScreen(screen, item);
 };

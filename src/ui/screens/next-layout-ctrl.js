@@ -2,17 +2,24 @@ import { actions } from 'redux/actions/learn';
 import { store } from 'redux/store';
 import { observeStore } from 'redux/observeStore';
 
-import { renderSpecimen } from 'ui/screens/specimen-ctrl';
-import { renderSpecies } from 'ui/screens/species-ctrl';
-import { renderTextEntry } from 'ui/screens/text-entry-ctrl';
-
-const subscriptions = [];
+let subscriptions = [];
 
 export const renderNextLayout = (index) => {
 
-    const { randomiser } = store.getState();
+    const { layouts } = store.getState();
 
-    const nextLayout = randomiser.layoutsCollection.layouts[index];
+    const layout = layouts[index];
 
-    actions.boundNextScreen(nextLayout);
+    subscriptions = [];
+
+    if(!layout.screens) return;
+
+    layout.screens.forEach(screen => {
+        subscriptions.push(observeStore(store, store => store[screen.domain], screen.render));
+        if(screen.next) {
+            subscriptions.push(observeStore(store, store => store[screen.next.domain], screen.next.render));
+        }
+    });
+
+    actions.boundNextScreen(layout);
 };

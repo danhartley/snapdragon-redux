@@ -20,7 +20,7 @@ const generateAndAddMultipleChoices = (collection, number) => {
             .filter(answer => answer.id !== item.id)
             .map(answer => {
                 const {name,names} = answer;
-                return answer;
+                return {name,names};
             }));
         const { name, names } = item;
         item.multipleChoices = utils.randomiseSelection([ ...wrongAnswers, { name, names } ], number );
@@ -28,7 +28,22 @@ const generateAndAddMultipleChoices = (collection, number) => {
     });
 };
 
+const generateAndAddMultipleTiles = (collection, number) => {
+    return collection.map(item => {
+        const wrongAnswers = R.take(number - 1, collection
+            .filter(answer => answer.id !== item.id)
+            .map(answer => {
+                const {name,images} = answer;
+                return {name,images};
+            }));
+        const { name, images } = item;
+        item.multipleTiles = utils.randomiseSelection([ ...wrongAnswers, { name, images } ], number );
+        return item;
+    });
+};
+
 export const helpers = {
     generateMultipleChoices,
-    generateAndAddMultipleChoices
+    generateAndAddMultipleChoices,
+    generateAndAddMultipleTiles
 };

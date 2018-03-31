@@ -4,12 +4,12 @@ import { renderWiki } from 'wikipedia/wiki';
 import { renderFamily } from 'gbif/gbif';
 
 
-export const renderSpeciesCardHeader = () => {
+export const renderSpeciesNameHeader = () => {
     DOM.headerTxt.innerHTML = ``;
     DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
 };
 
-export const renderSpeciesCardScreen = (screen, item) => {
+export const renderSpeciesNameScreen = (screen, item) => {
 
     const template = document.querySelector(`.${screen.template}`);
 
@@ -27,10 +27,6 @@ export const renderSpeciesCardScreen = (screen, item) => {
     vernacularNames.innerHTML = `<ul>${names}</ul>`;
 
     const clone = document.importNode(template.content, true);
-
-    clone.querySelector('button').addEventListener('click', event => {
-        actions.boundEndLesson(item);
-    });
 
     screen.parent.style.backgroundColor = 'rgb(50, 50, 50)';
     
