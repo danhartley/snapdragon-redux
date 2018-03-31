@@ -22,7 +22,7 @@ export const renderInput = (screen, item, question) => {
         }
         setTimeout(()=>{
             actions.boundMarkAnswer({ name: item.name, question: question, answer: answer });
-        },3000);
+        },2500);
     };
 
     const template = document.querySelector(`.${screen.template}`);
@@ -34,6 +34,7 @@ export const renderInput = (screen, item, question) => {
     
     clone.querySelector('button').addEventListener('click', event => {
         sendQandA(document.querySelector('.js-txt-input').value, event);
+        event.target.disabled = true;
     });
 
     screen.parent.innerHTML = '';
@@ -45,9 +46,10 @@ export const renderInput = (screen, item, question) => {
         if(event.key === 'Enter') {            
             sendQandA(document.querySelector('.js-txt-input').value, event);
             document.removeEventListener('keypress', handleEnterPress);
+            event.target.disabled = true;
         }
     };
 
-    document.addEventListener('keypress', handleEnterPress);
+    // document.addEventListener('keypress', handleEnterPress);
 };
 
