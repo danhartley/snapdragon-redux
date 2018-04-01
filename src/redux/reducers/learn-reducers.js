@@ -19,8 +19,8 @@ export const index = (state = 0, action) => {
 const initialScoreState = {
     total: 0,
     correct: 0,
-    wrong: 0,
     name: '',
+    wrong: 0,
     answer: '',
     question: '',
     fails: [],
@@ -37,11 +37,11 @@ export const score = (state = initialScoreState, action) => {
             score.success = score.answer === score.question;
             if(score.success) {
                 score.correct++;
-                score.passes.push(score.question);  
+                score.passes.push({ taxon: score.taxon, name: score.name, question: score.answer });  
             }
             else {
                 score.wrong++;
-                score.fails.push(score.question);
+                score.fails.push({ taxon: score.taxon, name: score.name, question: score.answer });
             }
             return { ...state, ...score};
         default:
@@ -117,6 +117,15 @@ export const layouts = (state = initLayouts, action) => {
 export const randomiser = (state = initialRandomState, action) => {
     switch(action.type) {
         default: 
+            return state;
+    }
+};
+
+export const history = (state = [], action) => {
+    switch(action.type) {
+        case types.RECORD_SCORE:            
+            return { ...state, ...action.data };
+        default:
             return state;
     }
 };

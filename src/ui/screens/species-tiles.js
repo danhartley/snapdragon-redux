@@ -35,8 +35,8 @@ export const renderTiles = (templateName, item) => {
                 DOM.rightHeader.style.backgroundColor = 'rgb(141, 0, 5)';
             }
             setTimeout(()=>{
-                actions.boundMarkAnswer({ name: item.name, question: item.name, answer: answer });
-            },2500);            
+                actions.boundMarkAnswer({ taxon: 'name', name: item.name, question: item.name, answer: answer });
+            },2000);            
         });
     });
 

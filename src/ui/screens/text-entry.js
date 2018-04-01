@@ -12,17 +12,17 @@ export const renderInput = (screen, item, question) => {
             btn.style.color = right;
             btn.parentNode.style.background = right;
             DOM.headerTxt.innerHTML = `${answer} was the correct answer! Well done.`;
-            DOM.rightHeader.style.backgroundColor = 'rgb(44, 141, 86)';
+            DOM.rightHeader.style.backgroundColor = right;
         }
         else {
             btn.style.color = wrong;
             btn.parentNode.style.background = wrong;
             DOM.headerTxt.innerHTML = `Oh no! The correct answer was ${item.name}.`;
-            DOM.rightHeader.style.backgroundColor = 'rgb(141, 0, 5)';
+            DOM.rightHeader.style.backgroundColor = wrong;
         }
         setTimeout(()=>{
-            actions.boundMarkAnswer({ name: item.name, question: question, answer: answer });
-        },2500);
+            actions.boundMarkAnswer({ taxon: screen.taxon, name: item.name, question: question, answer: answer });
+        },2000);
     };
 
     const template = document.querySelector(`.${screen.template}`);

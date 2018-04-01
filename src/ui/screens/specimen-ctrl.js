@@ -10,7 +10,7 @@ export const renderSpecimen = (item) => {
 
     const screen = layout.screens.filter(el => el.name === 'specimen')[0];
 
-    // if(!screen) return;
+    if(!screen) return;
     
     renderSpecimens(screen, randomiser, item.images);
 

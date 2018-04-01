@@ -41,7 +41,7 @@ const tiles = {
   domain: 'card',
   parent: DOM.rightBody,
   template: 'js-species-tiles-template',
-  question: 'name',
+  taxon: 'name',
   header: 'Click the image'
 };
 
@@ -56,7 +56,7 @@ const card = {
 const name = {
   name: 'species-name',
   render: renderSpeciesName,
-  domain: 'item',
+  domain: 'card',
   parent: DOM.leftBody,
   template: 'js-species-name-template'  
 };

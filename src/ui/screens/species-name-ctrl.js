@@ -6,7 +6,7 @@ export const renderSpeciesName = (item) => {
 
     const { layout } = store.getState();
 
-    let screen = layout.screens.filter(el => el.name === 'species-name')[0];
+    let screen = layout.screens[0].next;
 
     if(!screen) return;
 
