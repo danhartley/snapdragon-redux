@@ -21,7 +21,7 @@ export const renderInput = (screen, item, question) => {
             DOM.rightHeader.style.backgroundColor = wrong;
         }
         setTimeout(()=>{
-            actions.boundMarkAnswer({ name: item.name, question: question, answer: answer });
+            actions.boundMarkAnswer({ taxon: screen.taxon, name: item.name, question: question, answer: answer });
         },2000);
     };
 

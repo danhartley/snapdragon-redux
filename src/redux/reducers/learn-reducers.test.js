@@ -7,6 +7,8 @@ it('learn state should reflect correct answer', () => {
   const stateBefore = {
     total: 10,
     correct: 9,
+    taxon: 'name',
+    name: 'Anagallis arvensis',
     answer: '',
     success: false,
     wrong: 0,
@@ -18,12 +20,14 @@ it('learn state should reflect correct answer', () => {
   const stateAfter = {
     total: 11,
     correct: 10,
+    taxon: 'name',
+    name: 'Anagallis arvensis',
     question: 'Anagallis arvensis',
     answer: 'Anagallis arvensis',
     success: true,
     wrong: 0,
     fails: [],
-    passes: ['Anagallis arvensis']
+    passes: [{ name: 'Anagallis arvensis', question: 'Anagallis arvensis', taxon: 'name'}]
   }
 
   const action = {
@@ -45,6 +49,8 @@ it('learn state should reflect incorrect answer', () => {
   const stateBefore = {
     total: 10,
     correct: 9,
+    taxon: 'name',
+    name: 'Anagallis arvensis',
     answer: '',
     success: false,
     wrong: 0,
@@ -56,11 +62,13 @@ it('learn state should reflect incorrect answer', () => {
   const stateAfter = {
     total: 11,
     correct: 9,
+    taxon: 'name',
+    name: 'Anagallis arvensis',
     question: 'Anagallis arvensis',
     answer: 'Malva sylvestris',
     success: false,
     wrong: 1,
-    fails: ['Anagallis arvensis'],
+    fails: [{ name: 'Anagallis arvensis', question: 'Malva sylvestris', taxon: 'name'}],
     passes: []
   }
 

@@ -9,7 +9,7 @@ export const renderTextEntry = (item) => {
     
     if(!screen) return;
 
-    const question = item[screen.question];
+    const question = item[screen.taxon];
 
     renderInput(screen, item, question);
 };
