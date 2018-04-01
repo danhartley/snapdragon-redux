@@ -223,7 +223,7 @@ grid-template-areas: "header"
 
 .letterbox div:nth-child(2) {
   grid-area: two;
-  background-color: rgba(44, 141, 86, .8);
+  background-color: rgb(128, 128, 128);
   padding: 26px 10px;
 }
 
