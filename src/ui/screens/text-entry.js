@@ -22,7 +22,7 @@ export const renderInput = (screen, item, question) => {
         }
         setTimeout(()=>{
             actions.boundMarkAnswer({ name: item.name, question: question, answer: answer });
-        },2500);
+        },2000);
     };
 
     const template = document.querySelector(`.${screen.template}`);

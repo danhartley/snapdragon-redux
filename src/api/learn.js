@@ -56,7 +56,7 @@ const card = {
 const name = {
   name: 'species-name',
   render: renderSpeciesName,
-  domain: 'item',
+  domain: 'card',
   parent: DOM.leftBody,
   template: 'js-species-name-template'  
 };

@@ -36,7 +36,7 @@ export const renderTiles = (templateName, item) => {
             }
             setTimeout(()=>{
                 actions.boundMarkAnswer({ name: item.name, question: item.name, answer: answer });
-            },2500);            
+            },2000);            
         });
     });
 

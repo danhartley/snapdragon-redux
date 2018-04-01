@@ -120,3 +120,12 @@ export const randomiser = (state = initialRandomState, action) => {
             return state;
     }
 };
+
+export const history = (state = [], action) => {
+    switch(action.type) {
+        case types.RECORD_SCORE:            
+            return { ...state, ...action.data };
+        default:
+            return state;
+    }
+};
