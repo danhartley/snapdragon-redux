@@ -3,6 +3,5 @@ import { renderScoreHeader, renderScoreFooter } from 'ui/screens/score';
 
 export const renderScore = () => {
     const { score } = store.getState();
-    //renderScoreHeader(score);
     renderScoreFooter(score);
 };
