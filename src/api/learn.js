@@ -21,7 +21,7 @@ const text = {
   domain: 'card',
   parent: DOM.rightBody,
   template: 'js-species-entry-template',
-  question: 'species',
+  taxon: 'species',
   header: 'Give the species name'
 };
 
@@ -31,7 +31,7 @@ const species = {
   domain: 'card',
   parent: DOM.rightBody,
   template: 'js-species-template',
-  question: 'name',
+  taxon: 'name',
   header: 'Click the matching species'
 };
 
@@ -75,7 +75,7 @@ export const learnLayouts = [
       active: false,
       screens: [ 
         {...specimen},
-        {...text, template: 'js-genus-entry-template', question: 'genus'}
+        {...text, template: 'js-genus-entry-template', taxon: 'genus'}
       ]
     },
     {
@@ -83,7 +83,7 @@ export const learnLayouts = [
       active: false,
       screens: [ 
         {...specimen},
-        {...text, template: 'js-species-entry-template', question: 'species'}
+        {...text, template: 'js-species-entry-template', taxon: 'species'}
       ]
     },
     {

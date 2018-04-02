@@ -1,14 +1,15 @@
 
 import { DOM } from 'ui/dom';
+import { renderAnswer } from 'ui/screens/helpers-for-screens';
 
 export const renderScoreHeader = (score) => {
     
     if(score.success) { 
-        DOM.headerTxt.innerHTML = `${score.answer} was the correct answer! Well done.`;
+        DOM.headerTxt.innerHTML = `${renderAnswer(score)} was the correct answer! Well done.`;
         DOM.rightHeader.style.backgroundColor = 'rgb(44, 141, 86)';
     } 
     else if(score.total > 0) {
-        DOM.headerTxt.innerHTML = `Oh no! The correct answer was ${score.question}.`;
+        DOM.headerTxt.innerHTML = `Oh no! The correct answer was ${renderAnswer(score)}.`;
         DOM.rightHeader.style.backgroundColor = 'rgb(141, 0, 5)';
     }
 };

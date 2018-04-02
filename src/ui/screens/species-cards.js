@@ -2,6 +2,7 @@ import * as R from 'ramda';
 
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/learn';
+import { renderAnswer } from 'ui/screens/helpers-for-screens';
 
 export const renderSpeciesCards = (templateName, item) => {
 
@@ -34,16 +35,19 @@ export const renderSpeciesCards = (templateName, item) => {
             const answer = btn.childNodes[0].data;
             const right = 'rgb(44, 141, 86)'
             const wrong = 'rgb(141, 0, 5)';
+
+            const response = { taxon: 'name', name: item.name, question: item.name, answer: answer};
+
             if(item.name === answer) {
                 btn.style.color = right;
                 btn.parentNode.style.background = right;
-                DOM.headerTxt.innerHTML = `${answer} was the correct answer! Well done.`;
+                DOM.headerTxt.innerHTML = `${renderAnswer(response)} was the correct answer! Well done.`;
                 DOM.rightHeader.style.backgroundColor = 'rgb(44, 141, 86)';
             }
             else {
                 btn.style.color = wrong;
                 btn.parentNode.style.background = wrong;
-                DOM.headerTxt.innerHTML = `Oh no! The correct answer was ${item.name}.`;
+                DOM.headerTxt.innerHTML = `Oh no! The correct answer was ${renderAnswer(response)}.`;
                 DOM.rightHeader.style.backgroundColor = 'rgb(141, 0, 5)';
             }
             setTimeout(()=>{

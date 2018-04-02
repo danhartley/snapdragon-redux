@@ -1,5 +1,6 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/learn';
+import { renderAnswer } from 'ui/screens/helpers-for-screens';
 
 export const renderTiles = (templateName, item) => {
 
@@ -22,16 +23,19 @@ export const renderTiles = (templateName, item) => {
             const right = 'rgb(44, 141, 86)'
             const wrong = 'rgb(141, 0, 5)';
             img.style.opacity = .5;
+
+            const response = { taxon: 'name', name: item.name, question: item.name, answer: answer};
+
             if(item.name === answer) {
                 img.style.color = right;                
                 img.parentNode.style.background = right;
-                DOM.headerTxt.innerHTML = `${answer} was the correct answer! Well done.`;
+                DOM.headerTxt.innerHTML = `${renderAnswer(response)} was the correct answer! Well done.`;
                 DOM.rightHeader.style.backgroundColor = 'rgb(44, 141, 86)';
             }
             else {
                 img.style.color = wrong;
                 img.parentNode.style.background = wrong;
-                DOM.headerTxt.innerHTML = `Oh no! The correct answer was ${item.name}.`;
+                DOM.headerTxt.innerHTML = `Oh no! The correct answer was ${renderAnswer(response)}.`;
                 DOM.rightHeader.style.backgroundColor = 'rgb(141, 0, 5)';
             }
             setTimeout(()=>{
