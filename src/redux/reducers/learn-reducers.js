@@ -11,6 +11,8 @@ export const index = (state = 0, action) => {
     switch(action.type) {
         case types.MARK_ANSWER:
             return (state + 1) <= api.species.length ? (state + 1) : state;
+        case types.RESET:
+            return 0;
         default:
             return state;
     }
@@ -32,18 +34,20 @@ export const score = (state = initialScoreState, action) => {
     switch(action.type) {
         case types.MARK_ANSWER:
             const qAndA = action.data;
-            const score = { ...state, question: qAndA.question, answer : qAndA.answer };
+            const score = { ...state, taxon: qAndA.taxon, name: qAndA.name, question: qAndA.question, answer : qAndA.answer };
             score.total++;
             score.success = score.answer === score.question;
             if(score.success) {
                 score.correct++;
-                score.passes.push({ taxon: score.taxon, name: score.name, question: score.answer });  
+                score.passes.push({ taxon: score.taxon, name: score.name, question: score.question, answer: score.answer });
             }
             else {
                 score.wrong++;
-                score.fails.push({ taxon: score.taxon, name: score.name, question: score.answer });
+                score.fails.push({ taxon: score.taxon, name: score.name, question: score.question, answer: score.answer });
             }
             return { ...state, ...score};
+        case types.RESET:
+            return initialScoreState;
         default:
             return state;
     }       
@@ -65,6 +69,8 @@ export const item = (state = { ...collection[0]}, action) => {
     switch(action.type) {
         case types.NEXT_ITEM:
             return { ...state, ...action.data };
+        case types.RESET:
+            return helpers.generateAndAddMultipleTiles(helpers.generateAndAddMultipleChoices(action.data, 6), 9)[0];
         default:
             return state;
     }
@@ -72,19 +78,21 @@ export const item = (state = { ...collection[0]}, action) => {
 
 export const items = (state = api.species, action) => {    
     switch(action.type) {
+        case types.RESET:
+            return helpers.generateAndAddMultipleTiles(helpers.generateAndAddMultipleChoices(action.data, 6), 9);
         default:
             return state;
     }
 };
 
-const answersCollection = helpers.generateMultipleChoices(api.species, 6);
-const imageAnswersCollection = api.species.map(element => {
-    const images = utils.randomiseSelection(api.species, 6).map(sp => sp.images[0]);    
-    images.push(element.images[0]);
-    images.push(element.images[1]);
-    images.push(element.images[2]);
-    return images;
-});
+// const answersCollection = helpers.generateMultipleChoices(api.species, 6);
+// const imageAnswersCollection = api.species.map(element => {
+//     const images = utils.randomiseSelection(api.species, 6).map(sp => sp.images[0]);    
+//     images.push(element.images[0]);
+//     images.push(element.images[1]);
+//     images.push(element.images[2]);
+//     return images;
+// });
 
 const initLayouts = utils.randomiseSelection(learnLayouts, api.species.length)
     .map(layout => {

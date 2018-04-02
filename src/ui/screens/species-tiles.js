@@ -17,8 +17,8 @@ export const renderTiles = (templateName, item) => {
     const clone = document.importNode(template.content, true);
     const tiles = clone.querySelectorAll('.js-species-tiles .tile');
 
-    tiles.forEach(choice => {
-        choice.addEventListener('click', event => {
+    tiles.forEach(tile => {
+        tile.addEventListener('click', event => {
             const img = event.target;
             const answer = img.name;
 

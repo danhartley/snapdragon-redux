@@ -1,7 +1,7 @@
 import { utils } from 'utils/utils';
 import { flora } from 'api/flora';
 
-const sampleSize = 12;
+const sampleSize = 4;
 
 const binomials = flora[2]
     .map(item => {

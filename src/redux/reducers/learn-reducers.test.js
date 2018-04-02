@@ -2,7 +2,7 @@ import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { score, item } from 'redux/reducers/learn-reducers';
 import { types } from 'redux/types/learn';
 
-it('learn state should reflect correct answer', () => {
+it('score state should reflect correct answer', () => {
 
   const stateBefore = {
     total: 10,
@@ -27,12 +27,14 @@ it('learn state should reflect correct answer', () => {
     success: true,
     wrong: 0,
     fails: [],
-    passes: [{ name: 'Anagallis arvensis', question: 'Anagallis arvensis', taxon: 'name'}]
+    passes: [{ taxon: 'name', name: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Anagallis arvensis'}]
   }
 
   const action = {
     type: types.MARK_ANSWER,
     data: {
+      taxon: 'name',
+      name: 'Anagallis arvensis',
       question: 'Anagallis arvensis',
       answer: 'Anagallis arvensis'
     }
@@ -44,7 +46,7 @@ it('learn state should reflect correct answer', () => {
   expect(score(stateBefore, action)).toEqual(stateAfter);
 });
 
-it('learn state should reflect incorrect answer', () => {
+it('score state should reflect incorrect answer', () => {
 
   const stateBefore = {
     total: 10,
@@ -68,7 +70,7 @@ it('learn state should reflect incorrect answer', () => {
     answer: 'Malva sylvestris',
     success: false,
     wrong: 1,
-    fails: [{ name: 'Anagallis arvensis', question: 'Malva sylvestris', taxon: 'name'}],
+    fails: [{ taxon: 'name', name: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Malva sylvestris'}],
     passes: []
   }
 
@@ -78,6 +80,8 @@ it('learn state should reflect incorrect answer', () => {
   const action = {
     type: types.MARK_ANSWER,
     data: {
+      taxon: 'name',
+      name: 'Anagallis arvensis',
       question: 'Anagallis arvensis',
       answer: 'Malva sylvestris'
     }
@@ -86,7 +90,7 @@ it('learn state should reflect incorrect answer', () => {
   expect(score(stateBefore, action)).toEqual(stateAfter);
 });
 
-it('learn state should return the next item', () => {
+it('score state should return the next item', () => {
 
   const stateBefore = { };
 

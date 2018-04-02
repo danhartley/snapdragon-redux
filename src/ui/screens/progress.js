@@ -1,4 +1,5 @@
 import { DOM } from 'ui/dom';
+import { renderAnswer } from 'ui/screens/helpers-for-screens';
 
 export const renderProgressHeader = (score) => {
     DOM.headerTxt.innerHTML = 
@@ -11,7 +12,7 @@ export const renderProgressHeader = (score) => {
 const renderResponse = response => {
     const answer = document.createElement('ul');
     const name = document.createElement('li');
-    name.textContent = response;
+    name.innerHTML = renderAnswer(response);
     answer.appendChild(name);
     return answer;
 };
