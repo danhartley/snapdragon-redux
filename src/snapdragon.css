@@ -271,6 +271,15 @@ grid-template-areas: "header"
   }
 }
 
+.right {
+  color: black;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.wrong{
+  color: yellow;
+}
 .new-species-grid{
   display: grid;
   grid-auto-flow: row;

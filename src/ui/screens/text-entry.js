@@ -1,34 +1,36 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/learn';
 import { utils } from 'utils/utils';
+import { renderAnswer } from 'ui/screens/helpers-for-screens';
 
-export const renderInput = (screen, item, question) => {
+export const renderInput = (screen, question) => {
 
     const sendQandA = (answer, event) => {
         const btn = event.target;
         const right = 'rgb(44, 141, 86)'
         const wrong = 'rgb(141, 0, 5)';
-        if(answer === question) {
+        const response = { ...question, answer };
+        if(response.answer === response.question) {
             btn.style.color = right;
             btn.parentNode.style.background = right;
-            DOM.headerTxt.innerHTML = `${answer} was the correct answer! Well done.`;
+            DOM.headerTxt.innerHTML = `${renderAnswer(response)} was the correct answer! Well done.`;
             DOM.rightHeader.style.backgroundColor = right;
         }
         else {
             btn.style.color = wrong;
             btn.parentNode.style.background = wrong;
-            DOM.headerTxt.innerHTML = `Oh no! The correct answer was ${item.name}.`;
+            DOM.headerTxt.innerHTML = `Oh no! The correct answer was ${renderAnswer(response)}.`;
             DOM.rightHeader.style.backgroundColor = wrong;
         }
         setTimeout(()=>{
-            actions.boundMarkAnswer({ taxon: screen.taxon, name: item.name, question: question, answer: answer });
+            actions.boundMarkAnswer({ taxon: screen.taxon, name: response.name, question: response.question, answer: response.answer });
         },2000);
     };
 
     const template = document.querySelector(`.${screen.template}`);
 
-    template.content.querySelector('span.js-genus').innerHTML = item.genus;
-    template.content.querySelector('span.js-species').innerHTML = item.species;
+    template.content.querySelector('span.js-genus').innerHTML = question.genus;
+    template.content.querySelector('span.js-species').innerHTML = question.species;
 
     const clone = document.importNode(template.content, true);
     

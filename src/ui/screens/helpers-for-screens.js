@@ -1,22 +1,27 @@
-export const renderAnswer = (score) => {
+export const renderAnswer = (response) => {
 
-    const names = score.name.split(' ');
+    const names = response.name.split(' ');
     const genus = names[0];
     const species = names[1];
 
-    switch(score.taxon) {
+    const right = response.answer === response.question;
+    const className = right ? 'right' : 'wrong';
+
+    switch(response.taxon) {
         case 'name':
-            return `<span class="right">${score.name}</span>`;
+            return `<span class="${className}">${response.name}</span>`;
             break;
         case 'genus':
-            return `<span class="right">${score.answer}</span> <span>${species}</span>`;
+            return right
+                ? `<span class="${className}">${response.answer}</span> <span>${species}</span>`
+                : `<span class="${className}">${genus}</span> <span>${species}</span>`;
             break;
         case 'species':
-            return `<span class="right">${genus}</span> <span>${score.answer}</span>`;
+            return right
+                ? `<span>${genus}</span> <span class="${className}">${response.answer}</span>`
+                : `<span>${genus}</span> <span class="${className}">${species}</span>`;
             break;
         default:
             return '';
     }
-
-    return '';
 };

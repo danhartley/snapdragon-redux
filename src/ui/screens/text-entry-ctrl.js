@@ -9,8 +9,8 @@ export const renderTextEntry = (item) => {
     
     if(!screen) return;
 
-    const question = item[screen.taxon];
+    const question = { name: item.name, species: item.species, genus: item.genus, taxon: screen.taxon, question: item[screen.taxon] };
 
-    renderInput(screen, item, question);
+    renderInput(screen, question);
 };
 
