@@ -1,6 +1,6 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/learn';
-import { renderAnswer } from 'ui/screens/helpers-for-screens';
+import { renderAnswerHeader } from 'ui/screens/helpers-for-screens';
 
 export const renderTiles = (templateName, item) => {
 
@@ -15,29 +15,34 @@ export const renderTiles = (templateName, item) => {
     }).join('');
 
     const clone = document.importNode(template.content, true);
+    const tiles = clone.querySelectorAll('.js-species-tiles .tile');
 
-    clone.querySelectorAll('.js-species-tiles .tile').forEach(choice => {
+    tiles.forEach(choice => {
         choice.addEventListener('click', event => {
             const img = event.target;
             const answer = img.name;
-            const right = 'rgb(44, 141, 86)'
-            const wrong = 'rgb(141, 0, 5)';
-            img.style.opacity = .5;
 
             const response = { taxon: 'name', name: item.name, question: item.name, answer: answer};
 
-            if(item.name === answer) {
-                img.style.color = right;                
-                img.parentNode.style.background = right;
-                DOM.headerTxt.innerHTML = `${renderAnswer(response)} was the correct answer! Well done.`;
-                DOM.rightHeader.style.backgroundColor = 'rgb(44, 141, 86)';
+            const { text, colour, correct } = renderAnswerHeader(response);
+
+            img.style.opacity = .5;
+
+            DOM.headerTxt.innerHTML = text;
+            DOM.rightHeader.style.backgroundColor = colour;
+            
+            img.style.color = colour;
+            img.parentNode.style.background = colour;
+
+            if(!correct) {
+                tiles.forEach(tile => {
+                    if(tile.children[0].name === item.name) {
+                        tile.children[0].style.background = 'rgb(44, 141, 86)';
+                        tile.children[0].style.opacity = .5;
+                    }
+                });
             }
-            else {
-                img.style.color = wrong;
-                img.parentNode.style.background = wrong;
-                DOM.headerTxt.innerHTML = `Oh no! The correct answer was ${renderAnswer(response)}.`;
-                DOM.rightHeader.style.backgroundColor = 'rgb(141, 0, 5)';
-            }
+
             setTimeout(()=>{
                 actions.boundMarkAnswer({ taxon: 'name', name: item.name, question: item.name, answer: answer });
             },2000);            

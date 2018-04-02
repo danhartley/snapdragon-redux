@@ -1,7 +1,7 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/learn';
 import { utils } from 'utils/utils';
-import { renderAnswer } from 'ui/screens/helpers-for-screens';
+import { renderAnswerHeader } from 'ui/screens/helpers-for-screens';
 
 export const renderInput = (screen, question) => {
 
@@ -10,18 +10,15 @@ export const renderInput = (screen, question) => {
         const right = 'rgb(44, 141, 86)'
         const wrong = 'rgb(141, 0, 5)';
         const response = { ...question, answer };
-        if(response.answer === response.question) {
-            btn.style.color = right;
-            btn.parentNode.style.background = right;
-            DOM.headerTxt.innerHTML = `${renderAnswer(response)} was the correct answer! Well done.`;
-            DOM.rightHeader.style.backgroundColor = right;
-        }
-        else {
-            btn.style.color = wrong;
-            btn.parentNode.style.background = wrong;
-            DOM.headerTxt.innerHTML = `Oh no! The correct answer was ${renderAnswer(response)}.`;
-            DOM.rightHeader.style.backgroundColor = wrong;
-        }
+        
+        const { text, colour } = renderAnswerHeader(response);
+
+        DOM.headerTxt.innerHTML = text;
+        DOM.rightHeader.style.backgroundColor = colour;
+        
+        btn.style.color = colour;
+        btn.parentNode.style.background = colour;
+
         setTimeout(()=>{
             actions.boundMarkAnswer({ taxon: screen.taxon, name: response.name, question: response.question, answer: response.answer });
         },2000);

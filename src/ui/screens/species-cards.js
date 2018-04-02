@@ -2,7 +2,7 @@ import * as R from 'ramda';
 
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/learn';
-import { renderAnswer } from 'ui/screens/helpers-for-screens';
+import { renderAnswerHeader } from 'ui/screens/helpers-for-screens';
 
 export const renderSpeciesCards = (templateName, item) => {
 
@@ -28,28 +28,30 @@ export const renderSpeciesCards = (templateName, item) => {
     })).join('');
 
     const clone = document.importNode(template.content, true);
+    const cards = clone.querySelectorAll('.js-rptr-species .rectangle .answer button');
 
-    clone.querySelectorAll('.js-rptr-species .rectangle .answer button').forEach(choice => {
+    cards.forEach(choice => {
         choice.addEventListener('click', event => {
             const btn = event.target;
             const answer = btn.childNodes[0].data;
-            const right = 'rgb(44, 141, 86)'
-            const wrong = 'rgb(141, 0, 5)';
 
             const response = { taxon: 'name', name: item.name, question: item.name, answer: answer};
+            const { text, colour, correct } = renderAnswerHeader(response);
 
-            if(item.name === answer) {
-                btn.style.color = right;
-                btn.parentNode.style.background = right;
-                DOM.headerTxt.innerHTML = `${renderAnswer(response)} was the correct answer! Well done.`;
-                DOM.rightHeader.style.backgroundColor = 'rgb(44, 141, 86)';
+            DOM.headerTxt.innerHTML = text;
+            DOM.rightHeader.style.backgroundColor = colour;
+
+            btn.style.color = colour;
+            btn.parentNode.style.background = colour;
+
+            if(!correct) {
+                cards.forEach(card => {
+                    if(card.innerText === item.name) {
+                        card.parentNode.style.background = 'rgb(44, 141, 86)';
+                    }
+                });
             }
-            else {
-                btn.style.color = wrong;
-                btn.parentNode.style.background = wrong;
-                DOM.headerTxt.innerHTML = `Oh no! The correct answer was ${renderAnswer(response)}.`;
-                DOM.rightHeader.style.backgroundColor = 'rgb(141, 0, 5)';
-            }
+
             setTimeout(()=>{
                 actions.boundMarkAnswer({ taxon: 'name', name: item.name, question: item.name, answer: answer });
             },2000);            
