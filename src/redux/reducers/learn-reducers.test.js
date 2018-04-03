@@ -2,7 +2,7 @@ import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { score, item } from 'redux/reducers/learn-reducers';
 import { types } from 'redux/types/learn';
 
-it('learn state should reflect correct answer', () => {
+it('score state should reflect correct answer', () => {
 
   const stateBefore = {
     total: 10,
@@ -27,12 +27,14 @@ it('learn state should reflect correct answer', () => {
     success: true,
     wrong: 0,
     fails: [],
-    passes: [{ name: 'Anagallis arvensis', question: 'Anagallis arvensis', taxon: 'name'}]
+    passes: [{ taxon: 'name', name: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Anagallis arvensis'}]
   }
 
   const action = {
     type: types.MARK_ANSWER,
     data: {
+      taxon: 'name',
+      name: 'Anagallis arvensis',
       question: 'Anagallis arvensis',
       answer: 'Anagallis arvensis'
     }
@@ -44,7 +46,7 @@ it('learn state should reflect correct answer', () => {
   expect(score(stateBefore, action)).toEqual(stateAfter);
 });
 
-it('learn state should reflect incorrect answer', () => {
+it('score state should reflect incorrect answer', () => {
 
   const stateBefore = {
     total: 10,
@@ -68,7 +70,7 @@ it('learn state should reflect incorrect answer', () => {
     answer: 'Malva sylvestris',
     success: false,
     wrong: 1,
-    fails: [{ name: 'Anagallis arvensis', question: 'Malva sylvestris', taxon: 'name'}],
+    fails: [{ taxon: 'name', name: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Malva sylvestris'}],
     passes: []
   }
 
@@ -78,6 +80,8 @@ it('learn state should reflect incorrect answer', () => {
   const action = {
     type: types.MARK_ANSWER,
     data: {
+      taxon: 'name',
+      name: 'Anagallis arvensis',
       question: 'Anagallis arvensis',
       answer: 'Malva sylvestris'
     }
@@ -86,7 +90,7 @@ it('learn state should reflect incorrect answer', () => {
   expect(score(stateBefore, action)).toEqual(stateAfter);
 });
 
-it('learn state should return the next item', () => {
+it('score state should return the next item', () => {
 
   const stateBefore = { };
 
@@ -100,14 +104,14 @@ it('learn state should return the next item', () => {
   Object.freeze(stateBefore);
   Object.freeze(action);
 
-  expect(item(stateBefore, action)).toEqual(stateAfter);
+  expect(item(stateBefore, action).id).toEqual(stateAfter.id);
 });
 
-it('multipleChoices returns given number of choices', () => {
+it('multipleNames returns given number of choices', () => {
   expect(helpers.generateMultipleChoices([1,2,3,4,5,6],6).length).toBe(6);
 });
 
-it('multipleChoices returns a collection of arrays', () => {
+it('multipleNames returns a collection of arrays', () => {
   const items = [{id:1},{id:2},{id:3},{id:4}];
   const answersCollection = helpers.generateMultipleChoices(items, 4);
   expect(answersCollection.map(answer => answer.items.length)).toEqual([4,4,4,4]);
@@ -116,9 +120,9 @@ it('multipleChoices returns a collection of arrays', () => {
 // it('generateAndAddMultipleChoices should contain the question/correct answer', () => {
 //   const items = [{name:1, names:[1]},{name:2, names:[2]},{name:3, names:[3]},{name:4, names:[4]}];
 //   const itemsWithChoices = helpers.generateAndAddMultipleChoices(items, 4);
-//   expect(itemsWithChoices[0].multipleChoices.length).toBe(4);
-//   expect(itemsWithChoices[1].multipleChoices.length).toBe(4);
-//   expect(itemsWithChoices[2].multipleChoices.length).toBe(4);
-//   expect(itemsWithChoices[3].multipleChoices.length).toBe(4);
-//   expect(itemsWithChoices[0].multipleChoices[0]).toEqual({name:1, names:[1]});
+//   expect(itemsWithChoices[0].multipleNames.length).toBe(4);
+//   expect(itemsWithChoices[1].multipleNames.length).toBe(4);
+//   expect(itemsWithChoices[2].multipleNames.length).toBe(4);
+//   expect(itemsWithChoices[3].multipleNames.length).toBe(4);
+//   expect(itemsWithChoices[0].multipleNames[0]).toEqual({name:1, names:[1]});
 // });

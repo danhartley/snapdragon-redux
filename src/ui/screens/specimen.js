@@ -4,7 +4,7 @@ export const renderSpecimensHeader = (count) => {
     DOM.collectionTxt.innerHTML = `There are ${count} items in this test`;
 };
 
-export const renderSpecimens = (screen, randomiser, itemImages) => {
+export const renderSpecimens = (screen, item) => {
 
     const template = document.querySelector(`.${screen.template}`);
 
@@ -20,7 +20,7 @@ export const renderSpecimens = (screen, randomiser, itemImages) => {
 
     const renderImages = (specimenImages) => {        
         let images = [];
-        randomiser.imageIndices.forEach(index => images.push(specimenImages[index]));
+        item.imageIndices.forEach(index => images.push(specimenImages[index]));
         window.addEventListener('keydown', handleTabPress);        
         return () => {                    
             let displayImages = images.splice(0,4);
@@ -35,7 +35,7 @@ export const renderSpecimens = (screen, randomiser, itemImages) => {
         };        
     };
             
-    renderSpecimenImages = renderImages(itemImages);
+    renderSpecimenImages = renderImages(item.images);
     renderSpecimenImages();
 
     DOM.moreSpecimensBtn.addEventListener('click', () => {

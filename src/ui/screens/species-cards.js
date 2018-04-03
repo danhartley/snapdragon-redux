@@ -11,7 +11,7 @@ export const renderSpeciesCards = (templateName, item) => {
     const rptrSpecies = template.content.querySelector('.js-rptr-species');
                     
     const languages = [ 'en', 'pt' ];
-    rptrSpecies.innerHTML = R.take(6, item.multipleChoices.map(species => {        
+    rptrSpecies.innerHTML = R.take(6, item.multipleNames.map(species => {        
         const vernacularNames = species.names
                 .filter(name => R.contains(name.language, languages))
                 .map(name => `<p>${name.vernacularName}</p>`)

@@ -5,16 +5,15 @@ import { timeoutScheduler } from 'redux/middleware/timeoutScheduler';
 
 import { utils } from 'utils/utils';
 
-import { index, score, item, layout, items, randomiser, layouts, card, history } from 'redux/reducers/learn-reducers';
+import { index, score, item, layout, items, layouts, card, history } from 'redux/reducers/learn-reducers';
 
 const reducer = combineReducers({
     index,
     layouts,
     layout,
+    score,
     items,
     item,
-    score,
-    randomiser,
     card,
     history
 });

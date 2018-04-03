@@ -8,7 +8,7 @@ export const renderTiles = (templateName, item) => {
 
     const rptrTiles = template.content.querySelector('.js-species-tiles');
 
-    rptrTiles.innerHTML = item.multipleTiles.map(species => {        
+    rptrTiles.innerHTML = item.multipleImages.map(species => {        
         return `<div class="tile">
                     <img src="${species.images[0]}" name="${species.name}" /> 
                 </div>`;
@@ -17,8 +17,8 @@ export const renderTiles = (templateName, item) => {
     const clone = document.importNode(template.content, true);
     const tiles = clone.querySelectorAll('.js-species-tiles .tile');
 
-    tiles.forEach(choice => {
-        choice.addEventListener('click', event => {
+    tiles.forEach(tile => {
+        tile.addEventListener('click', event => {
             const img = event.target;
             const answer = img.name;
 

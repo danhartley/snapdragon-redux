@@ -46,3 +46,18 @@ export const renderAnswerHeader = (response, header, target) => {
 
     return { text: renderAnswerText(response), colour, correct };
 };
+
+export const createNewCollection = (species, responses) => {
+
+    const newCollection = [];
+
+    species.forEach(sp => {
+        responses.map(response => {
+            if(response.name === sp.name) {
+                newCollection.push(sp);
+            }
+        });
+    });
+
+    return newCollection;
+};
