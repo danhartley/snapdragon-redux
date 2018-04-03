@@ -4,7 +4,7 @@ export const observeStore = (store, select, onChange) => {
     function handleChange() {
       const name = onChange.name;
       let nextState = select(store.getState());
-      if (nextState !== currentState) {
+      if (nextState !== currentState && nextState !== null) {
         currentState = nextState;
         onChange(currentState);
       }

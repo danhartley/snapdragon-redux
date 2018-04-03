@@ -1,5 +1,3 @@
-import * as R from 'ramda';
-
 import { utils } from 'utils/utils';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { types } from 'redux/types/learn';
@@ -14,6 +12,39 @@ export const index = (state = 0, action) => {
         case types.RESET:
             return 0;
         default:
+            return state;
+    }
+};
+
+const initLayoutState = (layouts, number) => {
+    const initLayouts = 
+        utils.randomiseSelection(layouts, number)
+            .map(layout => {
+                layout.active = true;
+                return layout;
+            });
+
+    initLayouts.push(progress);
+
+    return initLayouts;
+};
+
+export const layouts = (state = initLayoutState(learnLayouts, api.species.length), action) => {
+    switch(action.type) {
+        case types.RESET:
+            return initLayoutState(learnLayouts, action.data.length);
+        default:
+            return state;
+    }
+};
+
+export const layout = (state = layouts(undefined, { type: ''})[0], action) => { 
+    switch(action.type) {
+        case types.NEXT_LAYOUT:
+            return { ...state, ...action.data };
+        case types.RESET:
+            return layouts(null, action)[0];
+        default: 
             return state;
     }
 };
@@ -47,84 +78,60 @@ export const score = (state = initialScoreState, action) => {
             }
             return { ...state, ...score};
         case types.RESET:
-            return initialScoreState;
+            return {
+                total: 0,
+                correct: 0,
+                name: '',
+                wrong: 0,
+                answer: '',
+                question: '',
+                fails: [],
+                passes: [],
+                success: false
+            };
         default:
             return state;
     }       
+};
+
+const initItemsState = (items) => {
+    const itemsWithNames = helpers.addMultipleNames(items, 6);
+    const itemsWithNamesAndImages = helpers.addMultipleImages(itemsWithNames, 9)
+    const modifiedItems = itemsWithNamesAndImages.map(item => {
+        item.imageIndices = utils.randomiseSelection([1,2,3,4,5,6,7,8,9,10,11,12], 12, true);
+        return item;
+    });
+    return modifiedItems;
+};
+
+export const items = (state = initItemsState(api.species), action) => {    
+    switch(action.type) {
+        case types.RESET:
+            //return initItemsState( helpers.spliceArrays(api.species, action.data.map(item => item.name)) );
+            return initItemsState(action.data);
+        default:
+            return state;
+    }
+};
+
+export const item = (state = items(undefined, { type: ''})[0], action) => {
+    switch(action.type) {
+        case types.NEXT_ITEM:
+            return {...state, ...action.data};
+        case types.RESET:
+            return items(null, action)[0];
+        default:
+            return state;
+    }
 };
 
 export const card = (state = null, action) => {
     switch(action.type) {
         case types.END_LESSON:
             return { ...state, ...action.data };
-            default:
-                return state;
-    }
-};
-
-const multiChoicedSpecies = helpers.generateAndAddMultipleChoices(api.species, 6);
-const collection = helpers.generateAndAddMultipleTiles(multiChoicedSpecies, 9);
-
-export const item = (state = { ...collection[0]}, action) => {
-    switch(action.type) {
-        case types.NEXT_ITEM:
-            return { ...state, ...action.data };
         case types.RESET:
-            return helpers.generateAndAddMultipleTiles(helpers.generateAndAddMultipleChoices(action.data, 6), 9)[0];
+            return null;
         default:
-            return state;
-    }
-};
-
-export const items = (state = api.species, action) => {    
-    switch(action.type) {
-        case types.RESET:
-            return helpers.generateAndAddMultipleTiles(helpers.generateAndAddMultipleChoices(action.data, 6), 9);
-        default:
-            return state;
-    }
-};
-
-// const answersCollection = helpers.generateMultipleChoices(api.species, 6);
-// const imageAnswersCollection = api.species.map(element => {
-//     const images = utils.randomiseSelection(api.species, 6).map(sp => sp.images[0]);    
-//     images.push(element.images[0]);
-//     images.push(element.images[1]);
-//     images.push(element.images[2]);
-//     return images;
-// });
-
-const initLayouts = utils.randomiseSelection(learnLayouts, api.species.length)
-    .map(layout => {
-        layout.active = true;
-        return layout;
-});
-
-initLayouts.push(progress);
-
-const initialRandomState = {
-    imageIndices : utils.randomiseSelection([1,2,3,4,5,6,7,8,9,10,11,12], 12, true)
-};
-
-export const layout = (state = initLayouts[0], action) => { 
-    switch(action.type) {
-        case types.NEXT_LAYOUT:
-            return { ...state, ...action.data }
-        default: 
-            return state;
-    }
-};
-
-export const layouts = (state = initLayouts, action) => {
-    switch(action.type) {
-        default:
-        return initLayouts;
-    }
-};
-
-export const randomiser = (state = initialRandomState, action) => {
-    switch(action.type) {
-        default: 
             return state;
     }
 };
@@ -133,6 +140,8 @@ export const history = (state = [], action) => {
     switch(action.type) {
         case types.RECORD_SCORE:            
             return { ...state, ...action.data };
+        case types.RESET:
+            return [];
         default:
             return state;
     }

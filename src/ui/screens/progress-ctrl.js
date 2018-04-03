@@ -11,6 +11,7 @@ export const renderProgress = (index) => {
     const { score, items } = store.getState();
 
     if(score.total === items.length) {
+
         renderProgressHeader(score);
         renderProgressScreen(score);
 
@@ -20,9 +21,10 @@ export const renderProgress = (index) => {
 
         const newCollection = createNewCollection(items, score.fails);
 
-        setTimeout(()=>{
-            observeStore(store, store => store.index, renderSpeciesCard);
-            actions.boundReset(score.fails);
+        setTimeout(() => {            
+            if(newCollection.length > 0) {
+                actions.boundReset(newCollection);
+            }
         },1000);
     }    
 };

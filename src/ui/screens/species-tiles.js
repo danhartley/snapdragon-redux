@@ -8,7 +8,7 @@ export const renderTiles = (templateName, item) => {
 
     const rptrTiles = template.content.querySelector('.js-species-tiles');
 
-    rptrTiles.innerHTML = item.multipleTiles.map(species => {        
+    rptrTiles.innerHTML = item.multipleImages.map(species => {        
         return `<div class="tile">
                     <img src="${species.images[0]}" name="${species.name}" /> 
                 </div>`;

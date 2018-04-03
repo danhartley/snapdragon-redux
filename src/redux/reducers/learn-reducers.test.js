@@ -104,14 +104,14 @@ it('score state should return the next item', () => {
   Object.freeze(stateBefore);
   Object.freeze(action);
 
-  expect(item(stateBefore, action)).toEqual(stateAfter);
+  expect(item(stateBefore, action).id).toEqual(stateAfter.id);
 });
 
-it('multipleChoices returns given number of choices', () => {
+it('multipleNames returns given number of choices', () => {
   expect(helpers.generateMultipleChoices([1,2,3,4,5,6],6).length).toBe(6);
 });
 
-it('multipleChoices returns a collection of arrays', () => {
+it('multipleNames returns a collection of arrays', () => {
   const items = [{id:1},{id:2},{id:3},{id:4}];
   const answersCollection = helpers.generateMultipleChoices(items, 4);
   expect(answersCollection.map(answer => answer.items.length)).toEqual([4,4,4,4]);
@@ -120,9 +120,9 @@ it('multipleChoices returns a collection of arrays', () => {
 // it('generateAndAddMultipleChoices should contain the question/correct answer', () => {
 //   const items = [{name:1, names:[1]},{name:2, names:[2]},{name:3, names:[3]},{name:4, names:[4]}];
 //   const itemsWithChoices = helpers.generateAndAddMultipleChoices(items, 4);
-//   expect(itemsWithChoices[0].multipleChoices.length).toBe(4);
-//   expect(itemsWithChoices[1].multipleChoices.length).toBe(4);
-//   expect(itemsWithChoices[2].multipleChoices.length).toBe(4);
-//   expect(itemsWithChoices[3].multipleChoices.length).toBe(4);
-//   expect(itemsWithChoices[0].multipleChoices[0]).toEqual({name:1, names:[1]});
+//   expect(itemsWithChoices[0].multipleNames.length).toBe(4);
+//   expect(itemsWithChoices[1].multipleNames.length).toBe(4);
+//   expect(itemsWithChoices[2].multipleNames.length).toBe(4);
+//   expect(itemsWithChoices[3].multipleNames.length).toBe(4);
+//   expect(itemsWithChoices[0].multipleNames[0]).toEqual({name:1, names:[1]});
 // });

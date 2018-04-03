@@ -1,0 +1,14 @@
+import { helpers } from 'redux/reducers/helpers-for-reducers';
+
+it('notItem should return array with item excluded', () => {
+    const collection = [ {name: 'a', id: 1}, {name: 'b', id: 2}, {name: 'c', id: 3}];
+    const item = collection[0];
+    const newCollection = helpers.notItem(item, collection);
+    expect(newCollection).not.toContain(item);
+});
+
+it('spliceArrays shoudlre return single array with all common valus', () => {
+    const objs = [ { id: 1, name: 'a'}, { id: 2, name: 'b'}, { id: 3, name: 'c'}, { id: 4, name: 'd'} ]
+    const names = [ 'a', 'b' ];
+    expect(helpers.spliceArrays(objs, names)).toEqual([ { id: 1, name: 'a'}, { id: 2, name: 'b'} ]);
+});

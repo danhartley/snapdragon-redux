@@ -1,49 +1,67 @@
-import * as R from 'ramda';
-
 import { utils } from 'utils/utils'; 
 
 const generateMultipleChoices = (collection, number) => {
     const answersCollection = [];    
     collection.forEach(correctAnswer => {
         const answers = {};
-        const wrongAnswers = collection.filter(answer => answer.id !== correctAnswer.id);
-        answers.items = utils.randomiseSelection([ ...wrongAnswers, correctAnswer ], number);
+        const others = collection.filter(answer => answer.id !== correctAnswer.id);
+        answers.items = utils.randomiseSelection([ ...others, correctAnswer ], number);
         answers.question = correctAnswer;
         answersCollection.push(answers);
     });
     return answersCollection;
 };
 
-const generateAndAddMultipleChoices = (collection, number) => {
+const notItem = (item, collection) => {
+    return collection.filter(other => other.id !== item.id);
+};
+
+const addMultipleNames = (collection, number) => {
     return collection.map(item => {
-        const wrongAnswers = R.take(number - 1, collection
-            .filter(answer => answer.id !== item.id)
-            .map(answer => {
-                const {name,names} = answer;
-                return {name,names};
-            }));
+        const others = 
+            notItem(item, collection)
+                .filter((other, index) => index + 1 < number)
+                .map(other => {
+                    const {name, names} = other;
+                    return {name, names};
+                });
         const { name, names } = item;
-        item.multipleChoices = utils.randomiseSelection([ ...wrongAnswers, { name, names } ], number );
+        item.multipleNames = utils.randomiseSelection([ ...others, { name, names } ], number );
         return item;
     });
 };
 
-const generateAndAddMultipleTiles = (collection, number) => {
+const addMultipleImages = (collection, number) => {
     return collection.map(item => {
-        const wrongAnswers = R.take(number - 1, collection
-            .filter(answer => answer.id !== item.id)
-            .map(answer => {
-                const {name,images} = answer;
-                return {name,images};
-            }));
+        const others = 
+            notItem(item, collection)
+                .filter((other, index) => index + 1 < number)
+                .map(other => {
+                    const {name, images} = other;
+                    return {name, images};
+                });
         const { name, images } = item;
-        item.multipleTiles = utils.randomiseSelection([ ...wrongAnswers, { name, images } ], number );
+        item.multipleImages = utils.randomiseSelection([ ...others, { name, images } ], number );
         return item;
     });
+};
+
+const spliceArrays = (items, itemNames) => {
+    const collection = [];
+    items.map(item => {
+        itemNames.map(itemName => {
+            if(itemName === item.name) {
+                collection.push(item);
+            }
+        });
+    });
+    return collection;
 };
 
 export const helpers = {
     generateMultipleChoices,
-    generateAndAddMultipleChoices,
-    generateAndAddMultipleTiles
+    notItem,
+    addMultipleNames,
+    addMultipleImages,
+    spliceArrays
 };

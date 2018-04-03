@@ -51,8 +51,12 @@ export const createNewCollection = (species, responses) => {
 
     const newCollection = [];
 
-    responses.forEach(response => {
-        newCollection.push(species.map(species => species.name === response.name));
+    species.forEach(sp => {
+        responses.map(response => {
+            if(response.name === sp.name) {
+                newCollection.push(sp);
+            }
+        });
     });
 
     return newCollection;

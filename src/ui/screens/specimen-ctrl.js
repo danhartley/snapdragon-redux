@@ -4,7 +4,7 @@ import { renderSpecimensHeader } from './specimen';
 
 export const renderSpecimen = (item) => {
 
-    const { layout, randomiser, items } = store.getState();
+    const { layout, items } = store.getState();
 
     renderSpecimensHeader(items.length);
 
@@ -12,6 +12,6 @@ export const renderSpecimen = (item) => {
 
     if(!screen) return;
     
-    renderSpecimens(screen, randomiser, item.images);
+    renderSpecimens(screen, item);
 
 };
