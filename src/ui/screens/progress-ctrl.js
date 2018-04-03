@@ -25,6 +25,6 @@ export const renderProgress = (index) => {
             if(newCollection.length > 0) {
                 actions.boundReset(newCollection);
             }
-        },1000);
+        },5000);
     }    
 };
