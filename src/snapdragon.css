@@ -5,7 +5,7 @@
   grid-auto-flow: column;
   grid-template-columns: 1fr 10fr 1fr 10fr 1fr;
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace
 }
 
@@ -18,7 +18,7 @@
   grid-column: 2;
   grid-auto-flow: column;
   grid-template-columns: 512px;
-  grid-template-rows: 50px 512px 50px;
+  grid-template-rows: 60px 512px 60px;
   grid-template-areas: "header"
                       "squares"
                       "footer"
@@ -29,7 +29,7 @@ display: grid;
 grid-column: 4;
 grid-auto-flow: column;
 grid-template-columns: 512px;
-grid-template-rows: 50px 512px 50px;
+grid-template-rows: 60px 512px 60px;
 grid-template-areas: "header"
                      "squares"
                      "footer"
@@ -211,10 +211,16 @@ grid-template-areas: "header"
   display: grid;
   grid-auto-flow: row;
   background-color: rgb(85, 165, 119);
-  grid-template-rows: 256px 100px 256px;
+  grid-template-rows: 206px 100px 206px;
   grid-template-areas: "one"
                        "two"
                        "three"
+}
+
+@media (min-width: 1200px) {
+  .letterbox {
+    grid-template-rows: 256px 100px 256px;
+  }
 }
 
 .letterbox div:nth-child(1) {
@@ -376,39 +382,39 @@ a {
 
 .tile :nth-child(1) {
   grid-area: tile1;
-};
+}
 
 .tile :nth-child(2) {
   grid-area: tile2;
-};
+}
 
 .tile :nth-child(3) {
   grid-area: tile3;
-};
+}
 
 .tile :nth-child(4) {
   grid-area: tile4;
-};
+}
 
 .tile :nth-child(5) {
   grid-area: tile5;
-};
+}
 
 .tile :nth-child(6) {
   grid-area: tile6;
-};
+}
 
 .tile :nth-child(7) {
   grid-area: tile7;
-};
+}
 
 .tile :nth-child(8) {
   grid-area: tile8;
-};
+}
 
 .tile :nth-child(9) {
   grid-area: tile9;
-};
+}
 
 .tile img {
   object-fit: cover;
@@ -426,9 +432,9 @@ a {
     width: 200px;
   }
   .tile img {
+    object-fit: cover;
     height: 200px;
     width: 200px;
-    object-fit: cover;
     cursor: pointer;
   }
 }

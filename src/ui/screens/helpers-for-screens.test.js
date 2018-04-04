@@ -32,6 +32,6 @@ it('renderAnswer should render species name with "wrong" css class when user is 
 
 it('renderAnswerText should render text that reflects the response', () => {
     const response = { taxon: 'species', name: 'Anagallis arvensis', question: 'arvensis', answer: 'officinalis'};
-    expect(renderAnswerText(response)).toEqual('Oh no! The correct answer was <span>Anagallis</span> <span class=\"wrong\">arvensis</span>.');
+    expect(renderAnswerText(response)).toEqual('The correct answer is <span>Anagallis</span> <span class=\"wrong\">arvensis</span>.');
 });
 
