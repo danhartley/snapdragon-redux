@@ -8,7 +8,7 @@
     "start:dev": "webpack-dev-server",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "watch": "webpack --watch --mode development & jest --watch *.test.js",
+    "watch": "webpack --watch --mode development & jest --watchAll",
     "alternative watch - to run build": "webpack --watch --mode development"
   },
   "jest": {
