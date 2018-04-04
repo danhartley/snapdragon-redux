@@ -4512,19 +4512,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.renderSpeciesName = undefined;\n\nvar _dom = __webpack_require__(/*! ui/dom */ \"./src/ui/dom.js\");\n\nvar _store = __webpack_require__(/*! redux/store */ \"./src/redux/store.js\");\n\nvar _speciesName = __webpack_require__(/*! ui/screens/species-name */ \"./src/ui/screens/species-name.js\");\n\nvar renderSpeciesName = exports.renderSpeciesName = function renderSpeciesName(item) {\n    var _store$getState = _store.store.getState(),\n        layout = _store$getState.layout;\n\n    var screen = layout.screens[0].next;\n\n    if (!screen) return;\n\n    (0, _speciesName.renderSpeciesNameHeader)();\n    (0, _speciesName.renderSpeciesNameScreen)(screen, item);\n};\n\n//# sourceURL=webpack:///./src/ui/screens/species-name-ctrl.js?");
-
-/***/ }),
-
-/***/ "./src/ui/screens/species-name.js":
-/*!****************************************!*\
-  !*** ./src/ui/screens/species-name.js ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.renderSpeciesNameScreen = exports.renderSpeciesNameHeader = undefined;\n\nvar _dom = __webpack_require__(/*! ui/dom */ \"./src/ui/dom.js\");\n\nvar _learn = __webpack_require__(/*! redux/actions/learn */ \"./src/redux/actions/learn.js\");\n\nvar _wiki = __webpack_require__(/*! wikipedia/wiki */ \"./src/wikipedia/wiki.js\");\n\nvar _gbif = __webpack_require__(/*! gbif/gbif */ \"./src/gbif/gbif.js\");\n\nvar renderSpeciesNameHeader = exports.renderSpeciesNameHeader = function renderSpeciesNameHeader() {\n    _dom.DOM.headerTxt.innerHTML = '';\n    _dom.DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';\n};\n\nvar renderSpeciesNameScreen = exports.renderSpeciesNameScreen = function renderSpeciesNameScreen(screen, item) {\n\n    var template = document.querySelector('.' + screen.template);\n\n    var speciesTxt = template.content.querySelector('.js-txt-species');\n\n    speciesTxt.innerHTML = item.name;\n\n    var vernacularNames = template.content.querySelector('.js-txt-species-names');\n\n    var names = item.names.map(function (vernacular) {\n        if (vernacular.language === 'en') return '<li>' + vernacular.vernacularName + '</li>';\n    }).join('');\n\n    vernacularNames.innerHTML = '<ul>' + names + '</ul>';\n\n    var clone = document.importNode(template.content, true);\n\n    screen.parent.style.backgroundColor = 'rgb(50, 50, 50)';\n\n    screen.parent.innerHTML = '';\n    screen.parent.appendChild(clone);\n\n    var gbif = document.querySelector('.js-txt-family span');\n\n    (0, _gbif.renderFamily)(gbif, item.name);\n};\n\n//# sourceURL=webpack:///./src/ui/screens/species-name.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.renderSpeciesName = undefined;\n\nvar _dom = __webpack_require__(/*! ui/dom */ \"./src/ui/dom.js\");\n\nvar _store = __webpack_require__(/*! redux/store */ \"./src/redux/store.js\");\n\nvar _speciesCard = __webpack_require__(/*! ui/screens/species-card */ \"./src/ui/screens/species-card.js\");\n\nvar renderSpeciesName = exports.renderSpeciesName = function renderSpeciesName(item) {\n    var _store$getState = _store.store.getState(),\n        layout = _store$getState.layout;\n\n    var screen = layout.screens[0].next;\n\n    if (!screen) return;\n\n    (0, _speciesCard.renderSpeciesCardHeader)();\n    (0, _speciesCard.renderSpeciesCardScreen)(screen, item);\n};\n\n//# sourceURL=webpack:///./src/ui/screens/species-name-ctrl.js?");
 
 /***/ }),
 
