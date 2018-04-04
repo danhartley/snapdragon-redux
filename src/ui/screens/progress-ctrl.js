@@ -2,9 +2,9 @@ import { store } from 'redux/store';
 import { renderProgressHeader, renderProgressScreen } from 'ui/screens/progress';
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/learn';
-import { createNewCollection } from 'ui/screens/helpers-for-screens';
+// import { createNewCollection } from 'ui/screens/helpers-for-screens';
 import { observeStore } from 'redux/observeStore';
-import { renderSpeciesCard } from 'ui/screens/species-card-ctrl';
+//import { renderSpeciesCard } from 'ui/screens/species-card-ctrl';
 
 export const renderProgress = (index) => {
 
@@ -12,19 +12,19 @@ export const renderProgress = (index) => {
 
     if(score.total === items.length) {
 
-        renderProgressHeader(score);
-        renderProgressScreen(score);
+        renderProgressHeader(score.correct, items.length);
+        renderProgressScreen(score, items);    
 
         actions.boundRecordScore(score);
 
         const { history } = store.getState();
 
-        const newCollection = createNewCollection(items, score.fails);
+        // const newCollection = createNewCollection(items, score.fails);
 
-        setTimeout(() => {            
-            if(newCollection.length > 0) {
-                actions.boundReset(newCollection);
-            }
-        },5000);
+        // setTimeout(() => {            
+        //     if(newCollection.length > 0) {
+        //         actions.boundReset(newCollection);
+        //     }
+        // },5000);
     }    
 };
