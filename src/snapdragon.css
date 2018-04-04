@@ -109,7 +109,7 @@ grid-template-areas: "header"
   padding: 10px 0 0 10px;
   text-transform: capitalize;
   cursor: pointer;
-  height: 140px;
+  height: 160px;
 }
 
 .header {

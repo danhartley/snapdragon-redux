@@ -22,11 +22,11 @@ const addMultipleNames = (collection, number) => {
             notItem(item, collection)
                 .filter((other, index) => index + 1 < number)
                 .map(other => {
-                    const {name, names} = other;
-                    return {name, names};
+                    const {id, name, names} = other;
+                    return {id, name, names};
                 });
-        const { name, names } = item;
-        item.multipleNames = utils.randomiseSelection([ ...others, { name, names } ], number );
+        const { id, name, names } = item;
+        item.multipleNames = utils.randomiseSelection([ ...others, { id, name, names } ], number );
         return item;
     });
 };
