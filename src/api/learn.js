@@ -6,6 +6,8 @@ import { renderSpecimen } from 'ui/screens/specimen-ctrl';
 import { renderTile } from 'ui/screens/species-tiles-ctrl';
 import { renderSpeciesCard } from 'ui/screens/species-card-ctrl';
 import { renderSpeciesName } from 'ui/screens/species-name-ctrl';
+import { renderSpeciesNames } from 'ui/screens/species-names-ctrl';
+import { renderScientificName } from 'ui/screens/species-scientific-ctrl';
 
 const specimen = {
   name: 'specimen',
@@ -50,15 +52,32 @@ const card = {
   render: renderSpeciesCard,
   domain: 'card',
   parent: DOM.leftBody,
-  template: 'js-species-card-template'  
+  template: 'js-genus-species-card-template'  
 };
 
 const name = {
-  name: 'species-name',
+  name: 'genus-species-names',
   render: renderSpeciesName,
   domain: 'card',
   parent: DOM.leftBody,
-  template: 'js-species-name-template'  
+  template: 'js-genus-species-names-template'  
+};
+
+const scientific = {
+  name: 'genus-species',
+  render: renderScientificName,
+  domain: 'card',
+  parent: DOM.leftBody,
+  template: 'js-scientific-template'  
+}
+
+const names = {
+  name: 'species-names',
+  render: renderSpeciesNames,
+  domain: 'card',
+  parent: DOM.rightBody,
+  template: 'js-species-names-template'  ,
+  taxon: 'name'
 };
 
 export const learnLayouts = [
@@ -101,10 +120,18 @@ export const learnLayouts = [
         {...specimen, next:{...name}},
         {...tiles}
       ]
+    },
+    {
+      id: 6,
+      active: false,
+      screens: [ 
+        {...specimen, next:{...scientific}},
+        {...names}
+      ]
     }
   ]
   // .filter(layout => (layout.id === 3 || layout.id === 5));
   // .filter(layout => (layout.id !== 1 && layout.id !== 2 && layout.id !== 3));
-  // .filter(layout => (layout.id === 5));
+  // .filter(layout => (layout.id === 6));
   
   export const progress = [{screens:[{ name: 'progress', render: renderProgress}]}];

@@ -1,6 +1,6 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { renderSpeciesCardHeader, renderSpeciesCardScreen } from 'ui/screens/species-card';
+import { renderSpeciesNameHeader, renderSpeciesNameScreen } from 'ui/screens/species-name';
 
 export const renderSpeciesName = (item) => {
 
@@ -10,6 +10,6 @@ export const renderSpeciesName = (item) => {
 
     if(!screen) return;
 
-    renderSpeciesCardHeader();
-    renderSpeciesCardScreen(screen, item);
+    renderSpeciesNameHeader();
+    renderSpeciesNameScreen(screen, item);
 };

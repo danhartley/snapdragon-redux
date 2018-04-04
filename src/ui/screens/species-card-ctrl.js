@@ -6,7 +6,7 @@ export const renderSpeciesCard = (index) => {
 
     const { item, layout } = store.getState();
 
-    screen = { template: 'js-species-card-template', parent: DOM.rightBody };
+    screen = { template: 'js-genus-species-card-template', parent: DOM.rightBody };//js-species-card-template
 
     renderSpeciesCardHeader();
     renderSpeciesCardScreen(screen, item);

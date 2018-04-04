@@ -296,7 +296,7 @@ grid-template-areas: "header"
   margin: 20px;
 }
 
-.new-species-grid{
+.species-description-grid {
   display: grid;
   grid-auto-flow: row;
   grid-template-rows: 50px 2fr 5fr 100px;
@@ -437,6 +437,11 @@ a {
     width: 200px;
     cursor: pointer;
   }
+}
+
+.names .answer {
+  padding: 20px 0 0  20px;
+  font-size: 1.4em;
 }
 
 .progress {

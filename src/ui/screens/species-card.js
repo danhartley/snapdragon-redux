@@ -37,7 +37,7 @@ export const renderSpeciesCardScreen = (screen, item) => {
     screen.parent.innerHTML = '';
     screen.parent.appendChild(clone);
 
-    const gbif = document.querySelector('.js-txt-family span');
+    const gbif = document.querySelector('.js-genus-species-card .js-txt-family span');
 
     renderFamily(gbif, item.name);
 };
