@@ -272,12 +272,24 @@ grid-template-areas: "header"
 }
 
 .right {
-  color: black;
+  display: inline-block;
+  padding: 3px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(44, 141, 86);
 }
 
-.wrong{
-  color: yellow;
+.wrong {
+  display: inline-block;
+  padding: 3px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(141, 0, 5);
 }
+
+.progress button {
+  width: 120px;
+  margin: 20px;
+}
+
 .new-species-grid{
   display: grid;
   grid-auto-flow: row;
