@@ -4225,7 +4225,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.api = undefined;\n\nvar _utils = __webpack_require__(/*! utils/utils */ \"./src/utils/utils.js\");\n\nvar _flora = __webpack_require__(/*! api/flora */ \"./src/api/flora.js\");\n\nvar sampleSize = 2;\n\nvar binomials = _flora.flora[2].map(function (item) {\n    var names = item.name.split(' ');\n    item.genus = names[0];\n    item.species = names[1];\n    item.name = item.name.split(' ').slice(0, 2).join(' ');\n    return item;\n});\n\nvar species = _utils.utils.shuffleArray(binomials).filter(function (sp, index) {\n    if (index < sampleSize) return sp;\n});\n\nvar api = exports.api = {\n    species: species\n};\n\n//# sourceURL=webpack:///./src/api/species.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.api = undefined;\n\nvar _utils = __webpack_require__(/*! utils/utils */ \"./src/utils/utils.js\");\n\nvar _flora = __webpack_require__(/*! api/flora */ \"./src/api/flora.js\");\n\nvar sampleSize = 12;\n\nvar binomials = _flora.flora[2].map(function (item) {\n    var names = item.name.split(' ');\n    item.genus = names[0];\n    item.species = names[1];\n    item.name = item.name.split(' ').slice(0, 2).join(' ');\n    return item;\n});\n\nvar species = _utils.utils.shuffleArray(binomials).filter(function (sp, index) {\n    if (index < sampleSize) return sp;\n});\n\nvar api = exports.api = {\n    species: species\n};\n\n//# sourceURL=webpack:///./src/api/species.js?");
 
 /***/ }),
 
