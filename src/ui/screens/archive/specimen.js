@@ -1,7 +1,9 @@
 import { DOM } from 'ui/dom';
 
 export const renderSpecimensHeader = (count) => {
-    DOM.collectionTxt.innerHTML = `There are ${count} items in this test`;
+    (count === 1)
+        ? DOM.collectionTxt.innerHTML = `There is ${count} item in this test`
+        : DOM.collectionTxt.innerHTML = `There are ${count} items in this test`;
 };
 
 export const renderSpecimens = (screen, item) => {
@@ -35,10 +37,10 @@ export const renderSpecimens = (screen, item) => {
         };        
     };
             
-    renderSpecimenImages = renderImages(item.images);
-    renderSpecimenImages();
+    // renderSpecimenImages = renderImages(item.images);
+    // renderSpecimenImages();
 
-    DOM.moreSpecimensBtn.addEventListener('click', () => {
-        renderSpecimenImages();
-    });
+    // DOM.moreSpecimensBtn.addEventListener('click', () => {
+    //     renderSpecimenImages();
+    // });
 };

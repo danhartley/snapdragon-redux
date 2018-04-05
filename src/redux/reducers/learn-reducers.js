@@ -1,7 +1,7 @@
 import { utils } from 'utils/utils';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { types } from 'redux/types/learn';
-import { learnLayouts, progress } from 'api/learn';
+import { learnLayouts, progressLayout } from 'api/learn';
 import { store } from 'redux/store';
 import { api } from 'api/species';
 
@@ -24,7 +24,7 @@ const initLayoutState = (layouts, number) => {
                 return layout;
             });
 
-    initLayouts.push(progress);
+    initLayouts.push(progressLayout);
 
     return initLayouts;
 };
@@ -107,7 +107,6 @@ const initItemsState = (items) => {
 export const items = (state = initItemsState(api.species), action) => {    
     switch(action.type) {
         case types.RESET:
-            //return initItemsState( helpers.spliceArrays(api.species, action.data.map(item => item.name)) );
             return initItemsState(action.data);
         default:
             return state;
@@ -136,12 +135,10 @@ export const card = (state = null, action) => {
     }
 };
 
-export const history = (state = [], action) => {
+export const progress = (state = [], action) => {
     switch(action.type) {
         case types.RECORD_SCORE:            
-            return { ...state, ...action.data };
-        case types.RESET:
-            return [];
+            return [...state, action.data];
         default:
             return state;
     }

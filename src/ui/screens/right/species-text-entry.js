@@ -1,5 +1,5 @@
 import { store } from 'redux/store';
-import { renderInput } from 'ui/screens/text-entry';
+import { renderInput } from 'ui/screens/common/text-entry';
 
 export const renderTextEntry = (item) => {
 

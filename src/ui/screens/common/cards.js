@@ -1,41 +1,26 @@
-import * as R from 'ramda';
-
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/learn';
-import { renderAnswerHeader } from 'ui/screens/helpers-for-screens';
+import { renderAnswerHeader } from 'ui/helpers/helpers-for-screens';
 
-export const renderSpeciesCards = (templateName, item) => {
+export const renderCards = (screen, item, callback) => {
 
-    const template = document.querySelector(`.${templateName}`);
+    const template = document.querySelector(`.${screen.template}`);
 
     const rptrSpecies = template.content.querySelector('.js-rptr-species');
                     
-    const languages = [ 'en', 'pt' ];
-    rptrSpecies.innerHTML = R.take(6, item.multipleNames.map(species => {        
-        const vernacularNames = species.names
-                .filter(name => R.contains(name.language, languages))
-                .map(name => `<p>${name.vernacularName}</p>`)
-                .slice(0,3)
-                .join('');
-
-                return `<div class="rectangle">
-                            <div class="answer" id="${species.id}">
-                                <button>${species.name}</button>
-                                <div class="vernacular-name">${vernacularNames}</div>
-                            </div>
-                        </div>`;
-
-    })).join('');
+    rptrSpecies.innerHTML = item.content.map(callback).join('');
 
     const clone = document.importNode(template.content, true);
     const cards = clone.querySelectorAll('.js-rptr-species .rectangle .answer button');
 
     cards.forEach(choice => {
         choice.addEventListener('click', event => {
+            
             const btn = event.target;
-            const answer = btn.childNodes[0].data;
+            const answer = btn.name;
+            const vernacularQuestion = item.names.filter(name => name.language === 'en')[0];
 
-            const response = { taxon: 'name', name: item.name, question: item.name, answer: answer};
+            const response = { taxon: 'name', name: item.name, question: item.name, answer: answer, vernacularQuestion: vernacularQuestion};
             const { text, colour, correct } = renderAnswerHeader(response);
 
             DOM.headerTxt.innerHTML = text;
@@ -58,6 +43,6 @@ export const renderSpeciesCards = (templateName, item) => {
         });
     });
 
-    DOM.rightBody.innerHTML = '';
-    DOM.rightBody.appendChild(clone);
+    screen.parent.innerHTML = '';
+    screen.parent.appendChild(clone);
 };

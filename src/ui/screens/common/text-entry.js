@@ -1,7 +1,7 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/learn';
 import { utils } from 'utils/utils';
-import { renderAnswerHeader } from 'ui/screens/helpers-for-screens';
+import { renderAnswerHeader } from 'ui/helpers/helpers-for-screens';
 
 export const renderInput = (screen, question) => {
 

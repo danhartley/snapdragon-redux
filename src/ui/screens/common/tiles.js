@@ -1,24 +1,21 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/learn';
-import { renderAnswerHeader } from 'ui/screens/helpers-for-screens';
+import { renderAnswerHeader } from 'ui/helpers/helpers-for-screens';
 
-export const renderTiles = (templateName, item) => {
+export const renderTilesScreen = (screen, item, callback) => {
 
-    const template = document.querySelector(`.${templateName}`);
+    const template = document.querySelector(`.${screen.template}`);
 
-    const rptrTiles = template.content.querySelector('.js-species-tiles');
+    const rptrTiles = template.content.querySelector('.js-tiles');
 
-    rptrTiles.innerHTML = item.multipleImages.map(species => {        
-        return `<div class="tile">
-                    <img src="${species.images[0]}" name="${species.name}" /> 
-                </div>`;
-    }).join('');
+    rptrTiles.innerHTML = item.content.map(callback).join('');
 
     const clone = document.importNode(template.content, true);
-    const tiles = clone.querySelectorAll('.js-species-tiles .tile');
+    const tiles = clone.querySelectorAll('.js-tiles .tile');
 
     tiles.forEach(tile => {
         tile.addEventListener('click', event => {
+
             const img = event.target;
             const answer = img.name;
 
@@ -44,11 +41,12 @@ export const renderTiles = (templateName, item) => {
             }
 
             setTimeout(()=>{
-                actions.boundMarkAnswer({ taxon: 'name', name: item.name, question: item.name, answer: answer });
+                const response = { taxon: 'name', name: item.name, question: item.name, answer: answer};
+                actions.boundMarkAnswer(response);
             },2000);            
         });
     });
 
-    DOM.rightBody.innerHTML = '';
-    DOM.rightBody.appendChild(clone);
+    screen.parent.innerHTML = '';
+    screen.parent.appendChild(clone);
 }

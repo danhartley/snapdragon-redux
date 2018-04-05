@@ -1,24 +1,27 @@
-import { createStore } from 'redux';
-import * as R from 'ramda';
-
 import './snapdragon.css';
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { observeStore } from 'redux/observeStore';
 
-import { renderNextLayout } from 'ui/screens/next-layout-ctrl';
-import { renderNextItem } from 'ui/screens/next-item-ctrl';
-import { renderSpeciesCard } from 'ui/screens/species-card-ctrl';
+import { renderNextLayout } from 'ui/events/next-layout-event';
+import { renderNextItem } from 'ui/events/next-item-event';
 
-import { renderScore } from 'ui/screens/score-ctrl';
-import { renderProgress } from 'ui/screens/progress-ctrl';
+import { renderSpeciesCardRight } from 'ui/screens/right/species-card-right';
+
+import { renderScore } from 'ui/progress/species-score';
+import { renderSpeciesSummary } from 'ui/progress/species-summary';
+
+// events
 
 observeStore(store, store => store.index, renderNextLayout);
 observeStore(store, store => store.index, renderNextItem);
 
-observeStore(store, store => store.index, renderSpeciesCard);
+// first screen
+
+observeStore(store, store => store.index, renderSpeciesCardRight);
+
+// progress
 
 observeStore(store, store => store.score, renderScore);
-
-observeStore(store, store => store.index, renderProgress);
+observeStore(store, store => store.index, renderSpeciesSummary);

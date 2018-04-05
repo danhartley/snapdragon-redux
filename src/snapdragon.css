@@ -109,7 +109,7 @@ grid-template-areas: "header"
   padding: 10px 0 0 10px;
   text-transform: capitalize;
   cursor: pointer;
-  height: 140px;
+  height: 160px;
 }
 
 .header {
@@ -296,7 +296,7 @@ grid-template-areas: "header"
   margin: 20px;
 }
 
-.new-species-grid{
+.species-description-grid {
   display: grid;
   grid-auto-flow: row;
   grid-template-rows: 50px 2fr 5fr 100px;
@@ -364,16 +364,11 @@ a {
   color: #ffffff;
 }
 
-.species-tiles-grid {
+.tiles {
   display: grid;
   grid-template-areas:  "tile1  tile2 tile3"
                         "tile4  tile5 tile6"
                         "tile7  tile8 tile9";
-}
-
-.tiles {
-  height: 510px;
-  width: 510px;
 }
 
 .tile {
@@ -441,6 +436,10 @@ a {
 
 .progress {
   padding: 20px;
+}
+
+.capitalised {
+  text-transform: capitalize;
 }
 
 button {

@@ -5,11 +5,15 @@ export const renderAnswer = (response) => {
     const species = names[1];
 
     const correct = response.answer === response.question;
-    const className = correct ? 'right' : 'wrong';
+    const className = correct ? 'right' : 'wrong';    
+
+    const name = response.vernacularQuestion 
+        ? response.vernacularQuestion.vernacularName.charAt(0).toUpperCase() + response.vernacularQuestion.vernacularName.slice(1)
+        : response.name;
 
     switch(response.taxon) {
         case 'name':
-            return `<span class="${className}">${response.name}</span>`;
+            return `<span class="${className}">${name}</span>`;
             break;
         case 'genus':
             return correct
