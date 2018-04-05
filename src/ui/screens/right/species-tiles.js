@@ -15,7 +15,7 @@ export const renderSpeciesTiles = (card) => {
 
     const callback = contentItem => {        
         return `<div class="tile">
-                    <img src="${contentItem.images[0]}" name="${item.name}" /> 
+                    <img src="${contentItem.images[0]}" name="${contentItem.name}" /> 
                 </div>`;
     };
 

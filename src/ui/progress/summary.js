@@ -1,3 +1,4 @@
+import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderAnswer, createNewCollection } from 'ui/helpers/helpers-for-screens';
 import { actions } from 'redux/actions/learn';
@@ -38,11 +39,26 @@ export const renderSummary = (score, items) => {
         const rightRptrProgress = template.content.querySelector('.js-rptr-progress');
         const rightBodyTop = template.content.querySelector('.js-right-body-top');
         const rightBodyBottom = template.content.querySelector('.js-right-body-bottom');
+        const historyText = template.content.querySelector('.js-progress-history');
         
         // rightBodyTop.innerHTML = '';
         // rightBodyTop.appendChild(renderPasses(score.passes));
         // rightBodyBottom.innerHTML = '';
         // rightBodyBottom.appendChild(renderFails(score.fails));
+
+        let scoreHistory = '';
+
+        setTimeout(()=>{
+            const { progress } = store.getState();            
+            progress.forEach((score, index) => {
+                scoreHistory +=
+                    `<div>
+                        <span>Round ${ index + 1}</span>
+                        <p><span>total: ${score.total}</span> <span>correct: ${score.correct}</span></p>
+                    </div>`;
+            });
+            historyText.innerHTML = scoreHistory;            
+        
 
         const clone = document.importNode(template.content, true);
         DOM.rightBody.innerHTML = '';
@@ -50,7 +66,7 @@ export const renderSummary = (score, items) => {
 
         const startOverBtn = document.querySelector('.js-start-over-btn');
         const tryAgainBtn = document.querySelector('.js-try-again-btn');
-        const newCollectionBtn = document.querySelector('.js-new-collection-btn');
+        const newCollectionBtn = document.querySelector('.js-new-collection-btn');   
 
         startOverBtn.addEventListener('click', event => {
             actions.boundReset(items);
@@ -64,4 +80,6 @@ export const renderSummary = (score, items) => {
         } else {
             tryAgainBtn.setAttribute('disabled', 'disabled');
         }
+
+    },500);        
 };

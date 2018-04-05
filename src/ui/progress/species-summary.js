@@ -13,15 +13,5 @@ export const renderSpeciesSummary = (index) => {
         renderSummary(score, items);    
 
         actions.boundRecordScore(score);
-
-        const { history } = store.getState();
-
-        // const newCollection = createNewCollection(items, score.fails);
-
-        // setTimeout(() => {            
-        //     if(newCollection.length > 0) {
-        //         actions.boundReset(newCollection);
-        //     }
-        // },5000);
     }    
 };
