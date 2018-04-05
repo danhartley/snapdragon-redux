@@ -1,4 +1,4 @@
-import { renderAnswer, renderAnswerText } from 'ui/screens/helpers-for-screens';
+import { renderAnswer, renderAnswerText } from 'ui/helpers/helpers-for-screens';
 
 it('renderAnswer should render binomial name with "right" css class when user is correct', () => {
     const response = { taxon: 'name', name: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Anagallis arvensis'};

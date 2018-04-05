@@ -1,8 +1,8 @@
 import { DOM } from 'ui/dom';
-import { renderAnswer, createNewCollection } from 'ui/screens/helpers-for-screens';
+import { renderAnswer, createNewCollection } from 'ui/helpers/helpers-for-screens';
 import { actions } from 'redux/actions/learn';
 
-export const renderProgressHeader = (correct, total) => {
+export const renderSummaryHeader = (correct, total) => {
     DOM.headerTxt.innerHTML = 
         correct === 1 
             ? `You got ${correct} question right out of ${total}`
@@ -32,7 +32,7 @@ const renderFails = (fails) => {
     return answers;
 };
 
-export const renderProgressScreen = (score, items) => {
+export const renderSummary = (score, items) => {
 
         const template = document.querySelector('.js-progress-template');
         const rightRptrProgress = template.content.querySelector('.js-rptr-progress');

@@ -37,10 +37,10 @@ export const renderSpecimens = (screen, item) => {
         };        
     };
             
-    renderSpecimenImages = renderImages(item.images);
-    renderSpecimenImages();
+    // renderSpecimenImages = renderImages(item.images);
+    // renderSpecimenImages();
 
-    DOM.moreSpecimensBtn.addEventListener('click', () => {
-        renderSpecimenImages();
-    });
+    // DOM.moreSpecimensBtn.addEventListener('click', () => {
+    //     renderSpecimenImages();
+    // });
 };

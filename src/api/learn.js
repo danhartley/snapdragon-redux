@@ -1,13 +1,14 @@
 import { DOM } from 'ui/dom';
-import { renderSpecies } from 'ui/screens/species-cards-ctrl';
-import { renderProgress } from 'ui/screens/progress-ctrl';
-import { renderTextEntry } from 'ui/screens/text-entry-ctrl';
-import { renderSpecimen } from 'ui/screens/specimen-ctrl';
-import { renderTile } from 'ui/screens/species-tiles-ctrl';
-import { renderSpeciesCard } from 'ui/screens/species-card-ctrl';
-import { renderSpeciesName } from 'ui/screens/species-name-ctrl';
-import { renderSpeciesNames } from 'ui/screens/species-names-ctrl';
-import { renderScientificName } from 'ui/screens/species-scientific-ctrl';
+import { renderSpeciesTiles } from 'ui/screens/right/species-tiles';
+import { renderSpecimen } from 'ui/screens/left/specimen-tiles';
+import { renderSpeciesCards } from 'ui/screens/right/species-cards';
+import { renderSpeciesCardRight } from 'ui/screens/right/species-card-right';
+
+import { renderSpeciesCardLeft } from 'ui/screens/left/species-card-left';
+import { renderSpeciesSummary } from 'ui/progress/species-summary';
+
+import { renderTextEntry } from 'ui/screens/right/species-text-entry';
+import { renderSpeciesNamesCards } from 'ui/screens/right/species-names-cards';
 
 const specimen = {
   name: 'specimen',
@@ -15,6 +16,59 @@ const specimen = {
   domain: 'item',
   parent: DOM.leftBody,
   template: 'js-specimen-template'     
+};
+
+const cards = {
+  name: 'species-cards',
+  render: renderSpeciesCards,
+  domain: 'card',
+  parent: DOM.rightBody,
+  template: 'js-cards-template',
+  taxon: 'name',
+  header: 'Click the matching species'
+};
+
+const card = {
+  name: 'species-card',
+  render: renderSpeciesCardRight,
+  domain: 'card',
+  parent: DOM.rightBody ,
+  template: 'js-card-template'
+};
+
+const name = {
+  name: 'species-card-left',
+  render: renderSpeciesCardLeft,
+  domain: 'card',
+  parent: DOM.leftBody,
+  template: 'js-card-left-template'  
+};
+
+const scientific = {
+  name: 'species-card-left',
+  render: renderSpeciesCardLeft,
+  domain: 'card',
+  parent: DOM.leftBody,
+  template: 'js-scientific-template'  
+}
+
+const names = {
+  name: 'species-names-cards',
+  render: renderSpeciesNamesCards,
+  domain: 'card',
+  parent: DOM.rightBody,
+  template: 'js-cards-template'  ,
+  taxon: 'name'
+};
+
+const tiles = {
+  name: 'tiles',
+  render: renderSpeciesTiles,
+  domain: 'card',
+  parent: DOM.rightBody,
+  template: 'js-tiles-template',
+  taxon: 'name',
+  header: 'Click the image'
 };
 
 const text = {
@@ -25,59 +79,6 @@ const text = {
   template: 'js-species-entry-template',
   taxon: 'species',
   header: 'Give the species name'
-};
-
-const species = {
-  name: 'species-cards',
-  render: renderSpecies,
-  domain: 'card',
-  parent: DOM.rightBody,
-  template: 'js-species-template',
-  taxon: 'name',
-  header: 'Click the matching species'
-};
-
-const tiles = {
-  name: 'species-tiles',
-  render: renderTile,
-  domain: 'card',
-  parent: DOM.rightBody,
-  template: 'js-species-tiles-template',
-  taxon: 'name',
-  header: 'Click the image'
-};
-
-const card = {
-  name: 'species-card',
-  render: renderSpeciesCard,
-  domain: 'card',
-  parent: DOM.leftBody,
-  template: 'js-genus-species-card-template'  
-};
-
-const name = {
-  name: 'genus-species-names',
-  render: renderSpeciesName,
-  domain: 'card',
-  parent: DOM.leftBody,
-  template: 'js-genus-species-names-template'  
-};
-
-const scientific = {
-  name: 'genus-species',
-  render: renderScientificName,
-  domain: 'card',
-  parent: DOM.leftBody,
-  template: 'js-scientific-template'  
-}
-
-const names = {
-  name: 'species-names',
-  render: renderSpeciesNames,
-  domain: 'card',
-  parent: DOM.rightBody,
-  template: 'js-species-names-template'  ,
-  taxon: 'name'
 };
 
 export const learnLayouts = [
@@ -110,7 +111,7 @@ export const learnLayouts = [
       active: true,
       screens: [
         {...specimen},
-        {...species}
+        {...cards}
       ]
     },
     {
@@ -134,4 +135,4 @@ export const learnLayouts = [
   // .filter(layout => (layout.id !== 1 && layout.id !== 2 && layout.id !== 3));
   // .filter(layout => (layout.id === 6));
   
-  export const progress = [{screens:[{ name: 'progress', render: renderProgress}]}];
+  export const progress = [{screens:[{ name: 'progress', render: renderSpeciesSummary }]}];

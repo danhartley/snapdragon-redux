@@ -24,11 +24,15 @@
             </div>
         <script src="bundle.js" type="module"></script>
 
-        <template class="js-specimen-template">
-                <div class="squares js-rptr-specimen"></div>
+            <template class="js-specimen-template">
+                <div class="squares js-tiles"></div>
+            </template>
+
+            <template class="js-tiles-template">
+                <div class="tiles js-tiles"></div>            
             </template>
     
-            <template class="js-species-template">
+            <template class="js-cards-template">
                 <div class="rectangles js-rptr-species"></div>
             </template>
     
@@ -99,8 +103,8 @@
                     </div>                    
             </template>
 
-            <template class="js-genus-species-card-template">
-                    <div class="species-description-grid js-genus-species-card">
+            <template class="js-card-template">
+                    <div class="species-description-grid js-card">
                         <div class="species-card-family js-txt-family"><span></span></div>
                         <div class="species-card-name js-txt-species"></div>
                         <div class="species-card-names js-txt-species-names">names</div>
@@ -108,8 +112,8 @@
                     </div>
             </template>
 
-            <template class="js-genus-species-names-template">
-                <div class="species-description-grid js-genus-species-names">
+            <template class="js-card-left-template">
+                <div class="species-description-grid js-card">
                     <div class="species-card-family js-txt-family"><span></span></div>
                     <div class="species-card-name js-txt-species"></div>
                     <div class="species-card-names js-txt-species-names">names</div>
@@ -121,17 +125,15 @@
                     <div class="species-description-grid js-scientific">
                         <div class="species-card-family js-txt-family"><span></span></div>
                         <div class="species-card-name js-txt-species"></div>
+                        <div class="species-card-names js-txt-species-names" style="display:none;">names</div>
+                        <div class="species-card-btn"><button style="display:none;">Continue</button></div>
                     </div>
             </template>
 
-            <template class="js-species-tiles-template">
-                <div class="species-tiles-grid js-species-tiles"></div>            
-            </template>
-
-            <template class="js-species-names-template">
+            <!-- <template class="js-species-names-template">
                     <div class="rectangles js-rptr-species"></div>
             </template>
-            
+             -->
     </body>
 </html>
 

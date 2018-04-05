@@ -364,16 +364,11 @@ a {
   color: #ffffff;
 }
 
-.species-tiles-grid {
+.tiles {
   display: grid;
   grid-template-areas:  "tile1  tile2 tile3"
                         "tile4  tile5 tile6"
                         "tile7  tile8 tile9";
-}
-
-.tiles {
-  height: 510px;
-  width: 510px;
 }
 
 .tile {
@@ -439,13 +434,12 @@ a {
   }
 }
 
-.names .answer {
-  padding: 20px 0 0  20px;
-  font-size: 1.4em;
-}
-
 .progress {
   padding: 20px;
+}
+
+.capitalised {
+  text-transform: capitalize;
 }
 
 button {
