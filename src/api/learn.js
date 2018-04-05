@@ -133,7 +133,7 @@ export const learnLayouts = [
   ]
   // .filter(layout => (layout.id === 3 || layout.id === 5));
   // .filter(layout => (layout.id !== 1 && layout.id !== 2 && layout.id !== 3));
-  .filter(layout => (layout.id === 5));
+  // .filter(layout => (layout.id === 5));
   
   export const progressLayout = [
     {
