@@ -14,14 +14,15 @@ export const renderCards = (screen, item, callback) => {
     const cards = clone.querySelectorAll('.js-rptr-species .rectangle .answer button');
 
     cards.forEach(choice => {
+
         choice.addEventListener('click', event => {
             
             const btn = event.target;
-            const answer = btn.name;
-            const vernacularQuestion = item.names.filter(name => name.language === 'en')[0];
+            const answer = btn.innerText;
+            const vernacular = btn.dataset.vernacular;
 
-            const response = { taxon: 'name', name: item.name, question: item.name, answer: answer, vernacularQuestion: vernacularQuestion};
-            const { text, colour, correct } = renderAnswerHeader(response);
+            const score = { taxon: 'binomial', binomial: item.name, vernacular: vernacular, question: item.name, answer: answer };
+            const { text, colour, correct } = renderAnswerHeader(score);
 
             DOM.headerTxt.innerHTML = text;
             DOM.rightHeader.style.backgroundColor = colour;
@@ -38,7 +39,7 @@ export const renderCards = (screen, item, callback) => {
             }
 
             setTimeout(()=>{
-                actions.boundMarkAnswer({ taxon: 'name', name: item.name, question: item.name, answer: answer });
+                actions.boundMarkAnswer(score);
             },2000);            
         });
     });

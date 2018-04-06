@@ -32,7 +32,7 @@ export const renderSpeciesNamesScreen = (screen, item) => {
             const vernacularAnswer = name.childNodes[0].data;
             const vernacularQuestion = item.names.filter(name => name.language === 'en')[0].vernacularName;
 
-            const response = { taxon: 'name', name: item.name, question: item.name, answer: answer, vernacularQuestion: vernacularQuestion, vernacularAnswer: vernacularAnswer};
+            const response = { taxon: 'binomial', binomial: item.name, question: item.name, answer: answer, vernacularQuestion: vernacularQuestion.vernacularName};
             const { text, colour, correct } = renderAnswerHeader(response);
 
             DOM.headerTxt.innerHTML = text;
@@ -49,7 +49,7 @@ export const renderSpeciesNamesScreen = (screen, item) => {
             }
 
             setTimeout(()=>{
-                actions.boundMarkAnswer({ taxon: 'name', name: item.name, question: item.name, answer: answer });
+                actions.boundMarkAnswer({ taxon: 'binomial', binomial: item.name, question: item.name, answer: answer });
             },2000);            
         });
     });

@@ -1,14 +1,14 @@
 import { DOM } from 'ui/dom';
 import { renderSpeciesTiles } from 'ui/screens/right/species-tiles';
 import { renderSpecimen } from 'ui/screens/left/specimen-tiles';
-import { renderSpeciesCards } from 'ui/screens/right/species-cards';
+import { renderSpeciesCards } from 'ui/screens/right/species-binomial-cards';
 import { renderSpeciesCardRight } from 'ui/screens/right/species-card-right';
 
 import { renderSpeciesCardLeft } from 'ui/screens/left/species-card-left';
 import { renderSpeciesSummary } from 'ui/progress/species-summary';
 
 import { renderTextEntry } from 'ui/screens/right/species-text-entry';
-import { renderSpeciesNamesCards } from 'ui/screens/right/species-names-cards';
+import { renderSpeciesNamesCards } from 'ui/screens/right/species-vernacular-cards';
 
 const specimen = {
   name: 'specimen',
@@ -19,12 +19,12 @@ const specimen = {
 };
 
 const cards = {
-  name: 'species-cards',
+  name: 'species-binomial-cards',
   render: renderSpeciesCards,
   domain: 'card',
   parent: DOM.rightBody,
   template: 'js-cards-template',
-  taxon: 'name',
+  taxon: 'binomial',
   header: 'Click the matching species'
 };
 
@@ -53,12 +53,12 @@ const scientific = {
 }
 
 const names = {
-  name: 'species-names-cards',
+  name: 'species-vernacular-cards',
   render: renderSpeciesNamesCards,
   domain: 'card',
   parent: DOM.rightBody,
   template: 'js-cards-template'  ,
-  taxon: 'name'
+  taxon: 'binomial'
 };
 
 const tiles = {
@@ -67,7 +67,7 @@ const tiles = {
   domain: 'card',
   parent: DOM.rightBody,
   template: 'js-tiles-template',
-  taxon: 'name',
+  taxon: 'binomial',
   header: 'Click the image'
 };
 
@@ -133,7 +133,7 @@ export const learnLayouts = [
   ]
   // .filter(layout => (layout.id === 3 || layout.id === 5));
   // .filter(layout => (layout.id !== 1 && layout.id !== 2 && layout.id !== 3));
-  // .filter(layout => (layout.id === 5));
+  .filter(layout => (layout.id === 4));
   
   export const progressLayout = [
     {

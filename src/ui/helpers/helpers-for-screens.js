@@ -1,18 +1,40 @@
+export const renderCapital = str => {
+
+    if(!str) return str;
+
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};
+
+export const renderName = (response, correct) => {
+
+    if(correct) return response.answer;
+
+    return renderCapital(response.vernacular) || response.binomial;
+
+};
+
+export const renderQuestion = response => {
+    return renderCapital(response.vernacular) || response.question;
+};
+
+
+export const renderCorrect = response => {
+    const question = renderQuestion(response);
+    return response.answer === question;
+};
+
 export const renderAnswer = (response) => {
 
-    const names = response.name.split(' ');
+    const names = response.binomial.split(' ');
     const genus = names[0];
     const species = names[1];
-
-    const correct = response.answer === response.question;
+    const correct = renderCorrect(response);
     const className = correct ? 'right' : 'wrong';    
 
-    const name = response.vernacularQuestion 
-        ? response.vernacularQuestion.vernacularName.charAt(0).toUpperCase() + response.vernacularQuestion.vernacularName.slice(1)
-        : response.name;
+    const name = renderName(response, correct);
 
     switch(response.taxon) {
-        case 'name':
+        case 'binomial':
             return `<span class="${className}">${name}</span>`;
             break;
         case 'genus':
@@ -32,7 +54,7 @@ export const renderAnswer = (response) => {
 
 export const renderAnswerText = (response) => {
 
-    const correct = response.answer === response.question;
+    const correct = renderCorrect(response);
 
     return correct
         ? `${renderAnswer(response)} is the correct answer!`
@@ -41,7 +63,7 @@ export const renderAnswerText = (response) => {
 
 export const renderAnswerHeader = (response, header, target) => {
 
-    const correct = response.answer === response.question;
+    const correct = renderCorrect(response);
 
     const right = 'rgb(44, 141, 86)';
     const wrong = 'rgb(141, 0, 5)';
@@ -57,7 +79,7 @@ export const createNewCollection = (species, responses) => {
 
     species.forEach(sp => {
         responses.map(response => {
-            if(response.name === sp.name) {
+            if(response.binomial === sp.name) {
                 newCollection.push(sp);
             }
         });

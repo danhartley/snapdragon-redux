@@ -4,6 +4,7 @@ import { types } from 'redux/types/learn';
 import { learnLayouts, progressLayout } from 'api/learn';
 import { store } from 'redux/store';
 import { api } from 'api/species';
+import { renderCorrect } from 'ui/helpers/helpers-for-screens';
 
 export const index = (state = 0, action) => {
     switch(action.type) {
@@ -52,7 +53,7 @@ export const layout = (state = layouts(undefined, { type: ''})[0], action) => {
 const initialScoreState = {
     total: 0,
     correct: 0,
-    name: '',
+    binomial: '',
     wrong: 0,
     answer: '',
     question: '',
@@ -64,24 +65,23 @@ const initialScoreState = {
 export const score = (state = initialScoreState, action) => {
     switch(action.type) {
         case types.MARK_ANSWER:
-            const qAndA = action.data;
-            const score = { ...state, taxon: qAndA.taxon, name: qAndA.name, question: qAndA.question, answer : qAndA.answer };
+            const score = { ...state, ...action.data };
             score.total++;
-            score.success = score.answer === score.question;
+            score.success = renderCorrect(score);
             if(score.success) {
                 score.correct++;
-                score.passes.push({ taxon: score.taxon, name: score.name, question: score.question, answer: score.answer });
+                score.passes.push({ taxon: score.taxon, binomial: score.binomial, question: score.question, answer: score.answer });
             }
             else {
                 score.wrong++;
-                score.fails.push({ taxon: score.taxon, name: score.name, question: score.question, answer: score.answer });
+                score.fails.push({ taxon: score.taxon, binomial: score.binomial, question: score.question, answer: score.answer });
             }
             return { ...state, ...score};
         case types.RESET:
             return {
                 total: 0,
                 correct: 0,
-                name: '',
+                binomial: '',
                 wrong: 0,
                 answer: '',
                 question: '',

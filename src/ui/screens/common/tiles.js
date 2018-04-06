@@ -19,7 +19,7 @@ export const renderTilesScreen = (screen, item, callback) => {
             const img = event.target;
             const answer = img.name;
 
-            const response = { taxon: 'name', name: item.name, question: item.name, answer: answer};
+            const response = { taxon: 'binomial', binomial: item.name, question: item.name, answer: answer};
 
             const { text, colour, correct } = renderAnswerHeader(response);
 
@@ -41,7 +41,7 @@ export const renderTilesScreen = (screen, item, callback) => {
             }
 
             setTimeout(()=>{
-                const response = { taxon: 'name', name: item.name, question: item.name, answer: answer};
+                const response = { taxon: 'binomial', binomial: item.name, question: item.name, answer: answer};
                 actions.boundMarkAnswer(response);
             },2000);            
         });
