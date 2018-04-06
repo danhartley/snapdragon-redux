@@ -1,7 +1,7 @@
 import { utils } from 'utils/utils';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
-import { types } from 'redux/types/learn';
-import { learnLayouts, progressLayout } from 'api/learn';
+import { types } from 'redux/actions/species-action-types';
+import { learnLayouts, progressScreen, historyScreen } from 'ui/layouts/species-layouts';
 import { store } from 'redux/store';
 import { api } from 'api/species';
 import { renderCorrect } from 'ui/helpers/helpers-for-screens';
@@ -25,7 +25,8 @@ const initLayoutState = (layouts, number) => {
                 return layout;
             });
 
-    initLayouts.push(progressLayout);
+    initLayouts[initLayouts.length-1].screens.push(progressScreen);
+    initLayouts[initLayouts.length-1].screens.push(historyScreen);
 
     return initLayouts;
 };
@@ -135,10 +136,10 @@ export const card = (state = null, action) => {
     }
 };
 
-export const progress = (state = [], action) => {
+export const history = (state = null, action) => {
     switch(action.type) {
         case types.RECORD_SCORE:            
-            return [...state, action.data];
+            return state === null ? [action.data] : [...state, action.data];
         default:
             return state;
     }

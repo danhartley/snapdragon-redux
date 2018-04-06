@@ -1,6 +1,6 @@
 import { helpers } from 'redux/reducers/helpers-for-reducers';
-import { score, item } from 'redux/reducers/learn-reducers';
-import { types } from 'redux/types/learn';
+import { score, item } from 'redux/reducers/species-reducers';
+import { types } from 'redux/actions/species-action-types';
 
 it('score state should reflect correct answer', () => {
 

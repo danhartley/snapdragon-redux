@@ -1,5 +1,5 @@
 import { DOM } from 'ui/dom';
-import { actions } from 'redux/actions/learn';
+import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
 import { renderAnswerHeader } from 'ui/helpers/helpers-for-screens';
 

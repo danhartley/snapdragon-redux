@@ -1,4 +1,4 @@
-import { actions } from 'redux/actions/learn';
+import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { observeStore } from 'redux/observeStore';
 

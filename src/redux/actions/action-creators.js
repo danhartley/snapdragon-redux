@@ -1,5 +1,5 @@
 import { store } from 'redux/store';
-import { types } from 'redux/types/learn';
+import { types } from 'redux/actions/species-action-types';
 
 const makeActionCreator = action => {
     return function (value, meta) {

@@ -1,5 +1,5 @@
 import { DOM } from 'ui/dom';
-import { actions } from 'redux/actions/learn';
+import { actions } from 'redux/actions/action-creators';
 import { renderAnswerHeader } from 'ui/helpers/helpers-for-screens';
 
 export const renderCards = (screen, item, callback) => {

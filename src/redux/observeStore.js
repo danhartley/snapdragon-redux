@@ -2,7 +2,8 @@ export const observeStore = (store, select, onChange) => {
     let currentState = null;
   
     function handleChange() {
-      const name = onChange.name;
+      const name = onChange ? onChange.name : 'no name';
+      console.log('name is:', name);
       let nextState = select(store.getState());
       if (nextState !== currentState && nextState !== null) {
         currentState = nextState;

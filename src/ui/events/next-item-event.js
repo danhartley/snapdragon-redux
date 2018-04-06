@@ -1,5 +1,5 @@
 import { utils } from 'utils/utils';
-import { actions } from 'redux/actions/learn';
+import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 
 export const renderNextItem = (index) => {
