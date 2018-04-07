@@ -1,9 +1,10 @@
 import { utils } from 'utils/utils';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
-import { types } from 'redux/types/learn';
-import { learnLayouts, progressLayout } from 'api/learn';
+import { types } from 'redux/actions/species-action-types';
+import { learnLayouts, progressScreen, historyScreen } from 'ui/layouts/species-layouts';
 import { store } from 'redux/store';
 import { api } from 'api/species';
+import { renderCorrect } from 'ui/helpers/helpers-for-screens';
 
 export const index = (state = 0, action) => {
     switch(action.type) {
@@ -17,33 +18,39 @@ export const index = (state = 0, action) => {
 };
 
 const initLayoutState = (layouts, number) => {
-    const initLayouts = 
+    console.log('calling initLayoutState');
+    const initLayouts =
         utils.randomiseSelection(layouts, number)
             .map(layout => {
                 layout.active = true;
                 return layout;
             });
 
-    initLayouts.push(progressLayout);
+    initLayouts[initLayouts.length-1].screens.push(progressScreen);
+    initLayouts[initLayouts.length-1].screens.push(historyScreen);
 
     return initLayouts;
 };
 
-export const layouts = (state = initLayoutState(learnLayouts, api.species.length), action) => {
+const intialLayoutState = initLayoutState(learnLayouts, api.species.length);
+let newLayouts;
+
+export const layouts = (state = intialLayoutState, action) => {
     switch(action.type) {
         case types.RESET:
-            return initLayoutState(learnLayouts, action.data.length);
+            newLayouts = initLayoutState(learnLayouts, action.data.length);
+            return newLayouts
         default:
             return state;
     }
 };
 
-export const layout = (state = layouts(undefined, { type: ''})[0], action) => { 
+export const layout = (state = intialLayoutState[0], action) => { 
     switch(action.type) {
         case types.NEXT_LAYOUT:
-            return { ...state, ...action.data };
+            return action.data;
         case types.RESET:
-            return layouts(null, action)[0];
+            return newLayouts[0];
         default: 
             return state;
     }
@@ -52,7 +59,7 @@ export const layout = (state = layouts(undefined, { type: ''})[0], action) => {
 const initialScoreState = {
     total: 0,
     correct: 0,
-    name: '',
+    binomial: '',
     wrong: 0,
     answer: '',
     question: '',
@@ -64,24 +71,23 @@ const initialScoreState = {
 export const score = (state = initialScoreState, action) => {
     switch(action.type) {
         case types.MARK_ANSWER:
-            const qAndA = action.data;
-            const score = { ...state, taxon: qAndA.taxon, name: qAndA.name, question: qAndA.question, answer : qAndA.answer };
+            const score = { ...state, ...action.data };
             score.total++;
-            score.success = score.answer === score.question;
+            score.success = renderCorrect(score);
             if(score.success) {
                 score.correct++;
-                score.passes.push({ taxon: score.taxon, name: score.name, question: score.question, answer: score.answer });
+                score.passes.push({ taxon: score.taxon, binomial: score.binomial, question: score.question, answer: score.answer });
             }
             else {
                 score.wrong++;
-                score.fails.push({ taxon: score.taxon, name: score.name, question: score.question, answer: score.answer });
+                score.fails.push({ taxon: score.taxon, binomial: score.binomial, question: score.question, answer: score.answer });
             }
             return { ...state, ...score};
         case types.RESET:
             return {
                 total: 0,
                 correct: 0,
-                name: '',
+                binomial: '',
                 wrong: 0,
                 answer: '',
                 question: '',
@@ -135,10 +141,10 @@ export const card = (state = null, action) => {
     }
 };
 
-export const progress = (state = [], action) => {
+export const history = (state = null, action) => {
     switch(action.type) {
-        case types.RECORD_SCORE:            
-            return [...state, action.data];
+        case types.UPDATE_HISTORY:            
+            return state === null ? [action.data] : [...state, action.data];
         default:
             return state;
     }

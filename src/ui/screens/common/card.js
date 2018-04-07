@@ -1,5 +1,5 @@
 import { DOM } from 'ui/dom';
-import { actions } from 'redux/actions/learn';
+import { actions } from 'redux/actions/action-creators';
 import { renderWiki } from 'wikipedia/wiki';
 import { renderFamily } from 'gbif/gbif';
 

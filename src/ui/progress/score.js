@@ -1,7 +1,7 @@
 
 import { DOM } from 'ui/dom';
 
-export const renderScoreFooter = (score) => {
+export const renderScore = (score) => {
     
     const template = document.querySelector('.js-score-template');
 

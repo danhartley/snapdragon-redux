@@ -106,10 +106,14 @@ grid-template-areas: "header"
 .answer {
   grid-area: five;
   background-color: rgb(51, 128, 183);
-  padding: 10px 0 0 10px;
+  padding: 10px;
   text-transform: capitalize;
   cursor: pointer;
   height: 160px;
+}
+
+.answer button {
+  width: 196px;
 }
 
 .header {
@@ -123,6 +127,9 @@ grid-template-areas: "header"
 @media (min-width: 1200px) {
   .answer {
     height: 180px;
+  }
+  .answer button {
+    width: 240px;
   }
   .header {
     height: 60px;
@@ -434,7 +441,7 @@ a {
   }
 }
 
-.progress {
+.progress, .history {
   padding: 20px;
 }
 

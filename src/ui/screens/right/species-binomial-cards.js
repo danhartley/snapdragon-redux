@@ -7,7 +7,7 @@ export const renderSpeciesCards = (item) => {
 
     const { layout } = store.getState();
 
-    const screen = layout.screens.filter(el => el.name === 'species-cards')[0];
+    const screen = layout.screens.filter(el => el.name === 'species-binomial-cards')[0];
 
     if(!screen) return;
     
@@ -19,13 +19,13 @@ export const renderSpeciesCards = (item) => {
                 .map(name => `<p>${name.vernacularName}</p>`)
                 .slice(0,3)
                 .join('');
-            return { id: item.id, name: item.name, vernacularNames };
+            return { id: item.id, binomial: item.name, vernacularNames };
     }));
 
     const callback = contentItem => {
         return `<div class="rectangle">
                     <div class="answer">
-                        <button id="${contentItem.id}" name="${contentItem.name}">${contentItem.name}</button>
+                        <button id="${contentItem.id}" name="${contentItem.binomial}">${contentItem.binomial}</button>
                         <div class="vernacular-name">${contentItem.vernacularNames}</div>
                     </div>
                 </div>`;

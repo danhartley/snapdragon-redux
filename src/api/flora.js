@@ -4269,13 +4269,13 @@ export const flora =
         "eol_preferred": true
       },
       {
+        "vernacularName": "scarlet pimpernel",
+        "language": "en"
+      },
+      {
         "vernacularName": "pimpernel",
         "language": "en",
         "eol_preferred": true
-      },
-      {
-        "vernacularName": "scarlet pimpernel",
-        "language": "en"
       },
       {
         "vernacularName": "Andagallo",

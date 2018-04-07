@@ -1,5 +1,5 @@
 import { DOM } from 'ui/dom';
-import { actions } from 'redux/actions/learn';
+import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
 import { renderAnswerHeader } from 'ui/helpers/helpers-for-screens';
 
@@ -20,7 +20,7 @@ export const renderInput = (screen, question) => {
         btn.parentNode.style.background = colour;
 
         setTimeout(()=>{
-            actions.boundMarkAnswer({ taxon: screen.taxon, name: response.name, question: response.question, answer: response.answer });
+            actions.boundMarkAnswer(response);
         },2000);
     };
 
