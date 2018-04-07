@@ -175,6 +175,24 @@ grid-template-areas: "header"
   width: 100px;
 }
 
+.strips {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: repeat(6,84px);
+  padding: 20px;
+}
+
+@media (min-width: 1200px) {
+  .strips {
+    grid-template-rows: repeat(6,100px);
+  }
+}
+
+.strip {
+  font-size: 2em;
+  cursor: pointer;
+}
+
 .vernacular-name {
   grid-area: five;
   padding: 5px 0 0 5px;

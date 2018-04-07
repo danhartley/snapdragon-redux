@@ -10,8 +10,6 @@ import { renderNextItem } from 'ui/events/next-item-event';
 import { renderSpeciesCardRight } from 'ui/screens/right/species-card-right';
 
 import { renderScore } from 'ui/progress/score';
-// import { renderSpeciesSummary } from 'ui/progress/species-summary';
-// import { renderHistory } from 'ui/progress/history';
 
 // events
 
@@ -25,5 +23,3 @@ observeStore(store, store => store.index, renderSpeciesCardRight, 'species-card'
 // progress
 
 observeStore(store, store => store.score, renderScore, 'score');
-// observeStore(store, store => store.index, renderSpeciesSummary);
-// observeStore(store, store => store.history, renderHistory);

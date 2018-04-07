@@ -6,6 +6,7 @@ import { renderSpeciesCardRight } from 'ui/screens/right/species-card-right';
 import { renderSpeciesCardLeft } from 'ui/screens/left/species-card-left';
 import { renderTextEntry } from 'ui/screens/right/species-text-entry';
 import { renderSpeciesNamesCards } from 'ui/screens/right/species-vernacular-cards';
+import { renderSpeciesNamesStrips } from 'ui/screens/right/species-vernacular-strips';
 
 import { renderSpeciesSummary } from 'ui/progress/species-summary';
 import { renderHistory } from 'ui/progress/history';
@@ -58,6 +59,15 @@ const names = {
   domain: 'card',
   parent: DOM.rightBody,
   template: 'js-cards-template'  ,
+  taxon: 'binomial'
+};
+
+const strips = {
+  name: 'species-vernacular-strips',
+  render: renderSpeciesNamesStrips,
+  domain: 'card',
+  parent: DOM.rightBody,
+  template: 'js-strips-template'  ,
   taxon: 'binomial'
 };
 
@@ -143,29 +153,10 @@ export const learnLayouts = [
       active: false,
       screens: [ 
         {...specimen, next:{...scientific}},
-        {...names}
+        {...strips}
       ]
     }
-  ]
-  // .filter(layout => (layout.id === 3 || layout.id === 5));
-  // .filter(layout => (layout.id !== 1 && layout.id !== 2 && layout.id !== 3));
-  // .filter(layout => (layout.id === 5));
-
-  // export const progressLayout = [
-  //   {
-  //     screens:[
-  //       {...progress}
-  //     ]
-  //   }
-  // ];
- 
-  // export const historyLayout = [
-  //   {
-  //     screens:[
-  //       {...history}
-  //     ]
-  //   }
-  // ];
+  ];
 
   export const progressScreen = progress;
   export const historyScreen = history;

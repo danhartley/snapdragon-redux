@@ -1,48 +1,50 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
-import { renderAnswerHeader } from 'ui/helpers/helpers-for-screens';
+import { renderAnswerHeader, addListeners } from 'ui/helpers/helpers-for-screens';
 
 export const renderCards = (screen, item, callback) => {
 
     const template = document.querySelector(`.${screen.template}`);
 
-    const rptrSpecies = template.content.querySelector('.js-rptr-species');
+    const rptrRectangles = template.content.querySelector('.js-rptr-rectangles');
                     
-    rptrSpecies.innerHTML = item.content.map(callback).join('');
+    rptrRectangles.innerHTML = item.content.map(callback).join('');
 
     const clone = document.importNode(template.content, true);
-    const cards = clone.querySelectorAll('.js-rptr-species .rectangle .answer button');
+    const cards = clone.querySelectorAll('.js-rptr-rectangles .rectangle .answer button');
 
-    cards.forEach(choice => {
+    addListeners(cards, item);
 
-        choice.addEventListener('click', event => {
+    // cards.forEach(choice => {
+
+    //     choice.addEventListener('click', event => {
             
-            const btn = event.target;
-            const answer = btn.innerText;
-            const vernacular = btn.dataset.vernacular;
+    //         const target = event.target;
+    //         const answer = target.innerText;
+    //         const vernacular = target.dataset.vernacular;
 
-            const score = { taxon: 'binomial', binomial: item.name, vernacular: vernacular, question: item.name, answer: answer };
-            const { text, colour, correct } = renderAnswerHeader(score);
+    //         const score = { taxon: 'binomial', binomial: item.name, vernacular: vernacular, question: item.name, answer: answer };
+    //         const { text, colour, correct } = renderAnswerHeader(score);
 
-            DOM.headerTxt.innerHTML = text;
-            DOM.rightHeader.style.backgroundColor = colour;
+    //         DOM.headerTxt.innerHTML = text;
+    //         DOM.rightHeader.style.backgroundColor = colour;
 
-            btn.style.color = colour;
-            btn.parentNode.style.background = colour;
+    //         target.style.color = colour;
+    //         target.parentNode.style.background = colour;
 
-            if(!correct) {
-                cards.forEach(card => {
-                    if(card.innerText === item.name) {
-                        card.parentNode.style.background = 'rgb(44, 141, 86)';
-                    }
-                });
-            }
+    //         if(!correct) {
+    //             cards.forEach(card => {
+    //                 if(card.innerText === item.name) {
+    //                     card.parentNode.style.background = 'rgb(44, 141, 86)';
+    //                 }
+    //             });
+    //         }
 
-            setTimeout(()=>{
-                actions.boundMarkAnswer(score);
-            },2000);            
-        });
-    });
+    //         setTimeout(()=>{
+    //             actions.boundMarkAnswer(score);
+    //         },2000);            
+    //     });
+    // });
 
     screen.parent.innerHTML = '';
     screen.parent.appendChild(clone);

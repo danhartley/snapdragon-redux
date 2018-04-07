@@ -16,7 +16,7 @@ export const DOM = {
     rightBodyBottom : document.getElementsByClassName('js-right-body-bottom')[0],
     rightFooter : document.getElementsByClassName('js-right-footer')[0],
     
-    speciesRptr : document.getElementsByClassName('js-rptr-species')[0],
+    speciesRptr : document.getElementsByClassName('js-rptr-rectangles')[0],
     headerTxt : document.getElementsByClassName('js-txt-header')[0],
     totalTxt : document.getElementsByClassName('js-txt-total')[0],
     correctTxt : document.getElementsByClassName('js-txt-correct')[0]    
