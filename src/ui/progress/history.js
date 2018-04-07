@@ -2,20 +2,21 @@ import { DOM } from 'ui/dom';
 
 export const renderHistory = (history) => {
             
-    const template = document.querySelector('.js-score-template');
+    const template = document.querySelector('.js-history-template');
 
     const historyText = template.content.querySelector('.js-history');
-
-    // let scoreHistory = '';
+    
+    let html = '';
 
     history.forEach((score, index) => {
-        historyText.innerHTML +=
+         html+=
             `<div>
                 <span>Round ${ index + 1}</span>
                 <p><span>total: ${score.total}</span> <span>correct: ${score.correct}</span></p>
             </div>`;
     });
-    // historyText.innerHTML = scoreHistory;   
+
+    historyText.innerHTML = html;
 
     const clone = document.importNode(template.content, true);
     DOM.leftBody.innerHTML = '';

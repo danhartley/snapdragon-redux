@@ -11,13 +11,13 @@ export const renderSummaryHeader = (correct, total) => {
     DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
 };
 
-export const renderSummary = (score, items) => {
+export const renderSummary = (screen, score, items) => {
 
-    const template = document.querySelector(`.${screen.template}`);
+    const template = document.querySelector('.js-progress-template');
 
     const clone = document.importNode(template.content, true);
-    screen.parent.innerHTML = '';
-    screen.parent.appendChild(clone);
+    DOM.rightBody.innerHTML = '';
+    DOM.rightBody.appendChild(clone);
 
     const startOverBtn = document.querySelector('.js-start-over-btn');
     const tryAgainBtn = document.querySelector('.js-try-again-btn');
@@ -30,7 +30,7 @@ export const renderSummary = (score, items) => {
     if(score.fails.length > 0) {
         tryAgainBtn.addEventListener('click', event => {            
             const newCollection = createNewCollection(items, score.fails);
-            actions.boundReset(newCollection);            
+            actions.boundReset(newCollection); 
         });
     } else {
         tryAgainBtn.setAttribute('disabled', 'disabled');

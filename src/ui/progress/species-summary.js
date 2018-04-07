@@ -5,17 +5,13 @@ import { actions } from 'redux/actions/action-creators';
 
 export const renderSpeciesSummary = (index) => {
 
-    const { layout, score, items } = store.getState();
-
-    let screen = layout.screens[0].next;
-
-    if(!screen) return;
+    const { score, items } = store.getState();
 
     if(score.total === items.length) {
 
         renderSummaryHeader(score.correct, items.length);
-        renderSummary(score, items);    
+        renderSummary(screen, score, items);    
 
-        actions.boundRecordScore(score);
+        actions.boundUpdateHistory(score);
     }    
 };

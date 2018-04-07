@@ -18,7 +18,8 @@ export const index = (state = 0, action) => {
 };
 
 const initLayoutState = (layouts, number) => {
-    const initLayouts = 
+    console.log('calling initLayoutState');
+    const initLayouts =
         utils.randomiseSelection(layouts, number)
             .map(layout => {
                 layout.active = true;
@@ -31,21 +32,25 @@ const initLayoutState = (layouts, number) => {
     return initLayouts;
 };
 
-export const layouts = (state = initLayoutState(learnLayouts, api.species.length), action) => {
+const intialLayoutState = initLayoutState(learnLayouts, api.species.length);
+let newLayouts;
+
+export const layouts = (state = intialLayoutState, action) => {
     switch(action.type) {
         case types.RESET:
-            return initLayoutState(learnLayouts, action.data.length);
+            newLayouts = initLayoutState(learnLayouts, action.data.length);
+            return newLayouts
         default:
             return state;
     }
 };
 
-export const layout = (state = layouts(undefined, { type: ''})[0], action) => { 
+export const layout = (state = intialLayoutState[0], action) => { 
     switch(action.type) {
         case types.NEXT_LAYOUT:
-            return { ...state, ...action.data };
+            return action.data;
         case types.RESET:
-            return layouts(null, action)[0];
+            return newLayouts[0];
         default: 
             return state;
     }
@@ -138,7 +143,7 @@ export const card = (state = null, action) => {
 
 export const history = (state = null, action) => {
     switch(action.type) {
-        case types.RECORD_SCORE:            
+        case types.UPDATE_HISTORY:            
             return state === null ? [action.data] : [...state, action.data];
         default:
             return state;

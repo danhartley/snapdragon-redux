@@ -20,7 +20,7 @@ export const renderInput = (screen, question) => {
         btn.parentNode.style.background = colour;
 
         setTimeout(()=>{
-            actions.boundMarkAnswer({ taxon: screen.taxon, name: response.name, question: response.question, answer: response.answer });
+            actions.boundMarkAnswer(response);
         },2000);
     };
 
