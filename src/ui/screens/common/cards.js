@@ -15,37 +15,6 @@ export const renderCards = (screen, item, callback) => {
 
     addListeners(cards, item);
 
-    // cards.forEach(choice => {
-
-    //     choice.addEventListener('click', event => {
-            
-    //         const target = event.target;
-    //         const answer = target.innerText;
-    //         const vernacular = target.dataset.vernacular;
-
-    //         const score = { taxon: 'binomial', binomial: item.name, vernacular: vernacular, question: item.name, answer: answer };
-    //         const { text, colour, correct } = renderAnswerHeader(score);
-
-    //         DOM.headerTxt.innerHTML = text;
-    //         DOM.rightHeader.style.backgroundColor = colour;
-
-    //         target.style.color = colour;
-    //         target.parentNode.style.background = colour;
-
-    //         if(!correct) {
-    //             cards.forEach(card => {
-    //                 if(card.innerText === item.name) {
-    //                     card.parentNode.style.background = 'rgb(44, 141, 86)';
-    //                 }
-    //             });
-    //         }
-
-    //         setTimeout(()=>{
-    //             actions.boundMarkAnswer(score);
-    //         },2000);            
-    //     });
-    // });
-
     screen.parent.innerHTML = '';
     screen.parent.appendChild(clone);
 };

@@ -7,6 +7,7 @@ import { renderSpeciesCardLeft } from 'ui/screens/left/species-card-left';
 import { renderTextEntry } from 'ui/screens/right/species-text-entry';
 import { renderSpeciesNamesCards } from 'ui/screens/right/species-vernacular-cards';
 import { renderSpeciesNamesStrips } from 'ui/screens/right/species-vernacular-strips';
+import { renderSpeciesStrips } from 'ui/screens/right/species-binomial-strips';
 
 import { renderSpeciesSummary } from 'ui/progress/species-summary';
 import { renderHistory } from 'ui/progress/history';
@@ -25,6 +26,16 @@ const cards = {
   domain: 'card',
   parent: DOM.rightBody,
   template: 'js-cards-template',
+  taxon: 'binomial',
+  header: 'Click the matching species'
+};
+
+const binomialStrips = {
+  name: 'species-binomial-strips',
+  render: renderSpeciesStrips,
+  domain: 'card',
+  parent: DOM.rightBody,
+  template: 'js-strips-template',
   taxon: 'binomial',
   header: 'Click the matching species'
 };
@@ -137,7 +148,7 @@ export const learnLayouts = [
       active: true,
       screens: [
         {...specimen},
-        {...cards}
+        {...binomialStrips}
       ]
     },
     {
