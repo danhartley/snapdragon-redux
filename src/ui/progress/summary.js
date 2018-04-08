@@ -11,7 +11,15 @@ export const renderSummaryHeader = (correct, total) => {
     DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
 };
 
-export const renderSummary = (screen, score, items) => {
+export const renderSummary = (index) => {
+
+    if(score.total < items.length) return;
+
+    const { score, items } = store.getState();
+    
+    renderSummaryHeader(score.correct, items.length);
+
+    actions.boundUpdateHistory(score);
 
     const template = document.querySelector('.js-progress-template');
 

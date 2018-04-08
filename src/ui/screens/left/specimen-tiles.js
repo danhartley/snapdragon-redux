@@ -14,6 +14,8 @@ export const renderSpecimenTiles = (item) => {
 
     const screen = layout.screens.filter(el => el.name === 'specimen')[0];
 
+    if(!screen) return;
+
     let images = [];
     item.imageIndices.forEach(index => images.push(item.images[index]));
     item.content = images.splice(0,4);

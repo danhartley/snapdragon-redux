@@ -1,7 +1,6 @@
 import { utils } from 'utils/utils';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { types } from 'redux/actions/species-action-types';
-import { speciesLayouts, progressScreen, historyScreen } from 'ui/layouts/species-layouts';
 import { store } from 'redux/store';
 import { api } from 'api/species';
 import { renderCorrect } from 'ui/helpers/helpers-for-screens';
@@ -10,6 +9,10 @@ export const index = (state = 0, action) => {
     switch(action.type) {
         case types.MARK_ANSWER:
             return (state + 1) <= api.species.length ? (state + 1) : state;
+
+        case types.END_LESSON:
+            return (state + 1) <= api.species.length ? (state + 1) : state;
+
         case types.RESET:
             return 0;
         default:
@@ -17,43 +20,6 @@ export const index = (state = 0, action) => {
     }
 };
 
-const initLayoutState = (layouts, number) => {
-    const initLayouts =
-        utils.randomiseSelection(layouts, number)
-            .map(layout => {
-                layout.active = true;
-                return layout;
-            });
-
-    initLayouts[initLayouts.length-1].screens.push(progressScreen);
-    initLayouts[initLayouts.length-1].screens.push(historyScreen);
-
-    return initLayouts;
-};
-
-const intialLayoutState = initLayoutState(speciesLayouts, api.species.length);
-let newLayoutsState;
-
-export const layouts = (state = intialLayoutState, action) => {
-    switch(action.type) {
-        case types.RESET:
-            newLayoutsState = initLayoutState(speciesLayouts, action.data.length);
-            return newLayoutsState;
-        default:
-            return state;
-    }
-};
-
-export const layout = (state = intialLayoutState[0], action) => { 
-    switch(action.type) {
-        case types.NEXT_LAYOUT:
-            return action.data;
-        case types.RESET:
-            return newLayoutsState[0];
-        default: 
-            return state;
-    }
-};
 
 const initialScoreState = {
     total: 0,
@@ -134,8 +100,8 @@ export const item = (state = initialItemState[0], action) => {
 
 export const card = (state = null, action) => {
     switch(action.type) {
-        case types.END_LESSON:
-            return { ...state, ...action.data };
+        // case types.END_LESSON:
+        //     return { ...state, ...action.data };
         case types.RESET:
             return null;
         default:

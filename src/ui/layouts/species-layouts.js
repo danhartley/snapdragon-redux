@@ -2,14 +2,15 @@ import { DOM } from 'ui/dom';
 import { renderSpeciesTiles } from 'ui/screens/right/species-tiles';
 import { renderSpecimenTiles } from 'ui/screens/left/specimen-tiles';
 import { renderSpeciesCards } from 'ui/screens/right/species-binomial-cards';
-import { renderSpeciesCardRight } from 'ui/screens/right/species-card-right';
+// import { renderSpeciesCardRight } from 'ui/screens/right/species-card-right';
+import { renderCard } from 'ui/screens/common/card';
 import { renderSpeciesCardLeft } from 'ui/screens/left/species-card-left';
 import { renderTextEntry } from 'ui/screens/right/species-text-entry';
 import { renderSpeciesNamesCards } from 'ui/screens/right/species-vernacular-cards';
 import { renderSpeciesNamesStrips } from 'ui/screens/right/species-vernacular-strips';
 import { renderSpeciesStrips } from 'ui/screens/right/species-binomial-strips';
 
-import { renderSpeciesSummary } from 'ui/progress/species-summary';
+import { renderSummary } from 'ui/progress/summary';
 import { renderHistory } from 'ui/progress/history';
 
 const specimen = {
@@ -23,7 +24,8 @@ const specimen = {
 const cards = {
   name: 'species-binomial-cards',
   render: renderSpeciesCards,
-  domain: 'card',
+  // domain: 'card',
+  domain: 'item',
   parent: DOM.rightBody,
   template: 'js-cards-template',
   taxon: 'name',
@@ -33,7 +35,8 @@ const cards = {
 const binomialStrips = {
   name: 'species-binomial-strips',
   render: renderSpeciesStrips,
-  domain: 'card',
+  // domain: 'card',
+  domain: 'item',
   parent: DOM.rightBody,
   template: 'js-strips-template',
   taxon: 'name',
@@ -42,8 +45,10 @@ const binomialStrips = {
 
 const card = {
   name: 'species-card',
-  render: renderSpeciesCardRight,
-  domain: 'card',
+  // render: renderSpeciesCardRight,
+  render: renderCard,
+  // domain: 'card',
+  domain: 'item',
   parent: DOM.rightBody ,
   template: 'js-card-template'
 };
@@ -51,7 +56,8 @@ const card = {
 const name = {
   name: 'species-card-left',
   render: renderSpeciesCardLeft,
-  domain: 'card',
+  // domain: 'card',
+  domain: 'item',
   parent: DOM.leftBody,
   template: 'js-card-left-template'  
 };
@@ -59,7 +65,8 @@ const name = {
 const scientific = {
   name: 'species-card-left',
   render: renderSpeciesCardLeft,
-  domain: 'card',
+  // domain: 'card',
+  domain: 'item',
   parent: DOM.leftBody,
   template: 'js-scientific-template'  
 }
@@ -67,7 +74,8 @@ const scientific = {
 const names = {
   name: 'species-vernacular-cards',
   render: renderSpeciesNamesCards,
-  domain: 'card',
+  // domain: 'card',
+  domain: 'item',
   parent: DOM.rightBody,
   template: 'js-cards-template'  ,
   taxon: 'name'
@@ -76,7 +84,8 @@ const names = {
 const strips = {
   name: 'species-vernacular-strips',
   render: renderSpeciesNamesStrips,
-  domain: 'card',
+  // domain: 'card',
+  domain: 'item',
   parent: DOM.rightBody,
   template: 'js-strips-template'  ,
   taxon: 'name'
@@ -85,7 +94,8 @@ const strips = {
 const tiles = {
   name: 'tiles',
   render: renderSpeciesTiles,
-  domain: 'card',
+  // domain: 'card',
+  domain: 'item',
   parent: DOM.rightBody,
   template: 'js-tiles-template',
   taxon: 'name',
@@ -95,7 +105,8 @@ const tiles = {
 const text = {
   name: 'text-entry',
   render: renderTextEntry,
-  domain: 'card',
+  // domain: 'card',
+  domain: 'item',
   parent: DOM.rightBody,
   header: 'Give the species name'
 };
@@ -104,7 +115,7 @@ const progress = {
   name: 'progress', 
   domain: 'index', 
   parent: DOM.rightBody,
-  render: renderSpeciesSummary,
+  render: renderSummary,
   template: 'js-progress-template'
 };
 
@@ -114,6 +125,21 @@ const history = {
   parent: DOM.leftBody,
   render: renderHistory,
   template: 'js-history-template'
+};
+
+export const screens = {
+  specimen, 
+  cards,
+  card,
+  history,
+  progress,
+  tiles,
+  text,
+  names, 
+  strips, 
+  scientific,
+  name,
+  binomialStrips
 };
 
 export const speciesLayouts = [
