@@ -26,7 +26,7 @@ const cards = {
   domain: 'card',
   parent: DOM.rightBody,
   template: 'js-cards-template',
-  taxon: 'binomial',
+  taxon: 'name',
   header: 'Click the matching species'
 };
 
@@ -36,7 +36,7 @@ const binomialStrips = {
   domain: 'card',
   parent: DOM.rightBody,
   template: 'js-strips-template',
-  taxon: 'binomial',
+  taxon: 'name',
   header: 'Click the matching species'
 };
 
@@ -70,7 +70,7 @@ const names = {
   domain: 'card',
   parent: DOM.rightBody,
   template: 'js-cards-template'  ,
-  taxon: 'binomial'
+  taxon: 'name'
 };
 
 const strips = {
@@ -79,7 +79,7 @@ const strips = {
   domain: 'card',
   parent: DOM.rightBody,
   template: 'js-strips-template'  ,
-  taxon: 'binomial'
+  taxon: 'name'
 };
 
 const tiles = {
@@ -88,7 +88,7 @@ const tiles = {
   domain: 'card',
   parent: DOM.rightBody,
   template: 'js-tiles-template',
-  taxon: 'binomial',
+  taxon: 'name',
   header: 'Click the image'
 };
 
@@ -97,8 +97,6 @@ const text = {
   render: renderTextEntry,
   domain: 'card',
   parent: DOM.rightBody,
-  template: 'js-species-entry-template',
-  taxon: 'species',
   header: 'Give the species name'
 };
 
@@ -118,13 +116,13 @@ const history = {
   template: 'js-history-template'
 };
 
-export const learnLayouts = [
+export const speciesLayouts = [
     {
       id: 1,
       active: false,
       screens: [ 
         {...specimen}, 
-        {...text}
+        {...text, template: 'js-species-genus-entry-template', taxon: 'name'}
       ]
     },
     {

@@ -20,7 +20,7 @@ export const renderTiles = (screen, item, callbackTemplate) => {
             const img = event.target;
             const answer = img.name;
 
-            const response = { taxon: 'binomial', binomial: item.name, question: item.name, answer: answer};
+            const response = { taxon: 'name', binomial: item.name, question: item.name, answer: answer};
 
             const { text, colour, correct } = renderAnswerHeader(response);
 
@@ -42,7 +42,7 @@ export const renderTiles = (screen, item, callbackTemplate) => {
             }
 
             setTimeout(()=>{
-                const response = { taxon: 'binomial', binomial: item.name, question: item.name, answer: answer};
+                const response = { taxon: 'name', binomial: item.name, question: item.name, answer: answer, success: correct };
                 actions.boundMarkAnswer(response);
             },2000);            
         });

@@ -1,7 +1,7 @@
 import { utils } from 'utils/utils';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { types } from 'redux/actions/species-action-types';
-import { learnLayouts, progressScreen, historyScreen } from 'ui/layouts/species-layouts';
+import { speciesLayouts, progressScreen, historyScreen } from 'ui/layouts/species-layouts';
 import { store } from 'redux/store';
 import { api } from 'api/species';
 import { renderCorrect } from 'ui/helpers/helpers-for-screens';
@@ -18,7 +18,6 @@ export const index = (state = 0, action) => {
 };
 
 const initLayoutState = (layouts, number) => {
-    console.log('calling initLayoutState');
     const initLayouts =
         utils.randomiseSelection(layouts, number)
             .map(layout => {
@@ -32,13 +31,13 @@ const initLayoutState = (layouts, number) => {
     return initLayouts;
 };
 
-const intialLayoutState = initLayoutState(learnLayouts, api.species.length);
+const intialLayoutState = initLayoutState(speciesLayouts, api.species.length);
 let newLayoutsState;
 
 export const layouts = (state = intialLayoutState, action) => {
     switch(action.type) {
         case types.RESET:
-            newLayoutsState = initLayoutState(learnLayouts, action.data.length);
+            newLayoutsState = initLayoutState(speciesLayouts, action.data.length);
             return newLayoutsState;
         default:
             return state;
@@ -73,7 +72,6 @@ export const score = (state = initialScoreState, action) => {
         case types.MARK_ANSWER:
             const score = { ...state, ...action.data };
             score.total++;
-            score.success = renderCorrect(score);
             if(score.success) {
                 score.correct++;
                 score.passes.push({ taxon: score.taxon, binomial: score.binomial, question: score.question, answer: score.answer });

@@ -7,7 +7,7 @@ it('score state should reflect correct answer', () => {
   const stateBefore = {
     total: 10,
     correct: 9,
-    taxon: 'binomial',
+    taxon: 'name',
     binomial: 'Anagallis arvensis',
     answer: '',
     success: false,
@@ -20,23 +20,24 @@ it('score state should reflect correct answer', () => {
   const stateAfter = {
     total: 11,
     correct: 10,
-    taxon: 'binomial',
+    taxon: 'name',
     binomial: 'Anagallis arvensis',
     question: 'Anagallis arvensis',
     answer: 'Anagallis arvensis',
     success: true,
     wrong: 0,
     fails: [],
-    passes: [{ taxon: 'binomial', binomial: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Anagallis arvensis'}]
+    passes: [{ taxon: 'name', binomial: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Anagallis arvensis'}]
   }
 
   const action = {
     type: types.MARK_ANSWER,
     data: {
-      taxon: 'binomial',
+      taxon: 'name',
       binomial: 'Anagallis arvensis',
       question: 'Anagallis arvensis',
-      answer: 'Anagallis arvensis'
+      answer: 'Anagallis arvensis',
+      success: true
     }
   }
 
@@ -51,7 +52,7 @@ it('score state should reflect incorrect answer', () => {
   const stateBefore = {
     total: 10,
     correct: 9,
-    taxon: 'binomial',
+    taxon: 'name',
     binomial: 'Anagallis arvensis',
     answer: '',
     success: false,
@@ -64,13 +65,13 @@ it('score state should reflect incorrect answer', () => {
   const stateAfter = {
     total: 11,
     correct: 9,
-    taxon: 'binomial',
+    taxon: 'name',
     binomial: 'Anagallis arvensis',
     question: 'Anagallis arvensis',
     answer: 'Malva sylvestris',
     success: false,
     wrong: 1,
-    fails: [{ taxon: 'binomial', binomial: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Malva sylvestris'}],
+    fails: [{ taxon: 'name', binomial: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Malva sylvestris'}],
     passes: []
   }
 
@@ -80,10 +81,11 @@ it('score state should reflect incorrect answer', () => {
   const action = {
     type: types.MARK_ANSWER,
     data: {
-      taxon: 'binomial',
+      taxon: 'name',
       binomial: 'Anagallis arvensis',
       question: 'Anagallis arvensis',
-      answer: 'Malva sylvestris'
+      answer: 'Malva sylvestris',
+      success: false
     }
   }
 
@@ -117,12 +119,4 @@ it('multipleNames returns a collection of arrays', () => {
   expect(answersCollection.map(answer => answer.items.length)).toEqual([4,4,4,4]);
 });
 
-// it('generateAndAddMultipleChoices should contain the question/correct answer', () => {
-//   const items = [{name:1, names:[1]},{name:2, names:[2]},{name:3, names:[3]},{name:4, names:[4]}];
-//   const itemsWithChoices = helpers.generateAndAddMultipleChoices(items, 4);
-//   expect(itemsWithChoices[0].multipleNames.length).toBe(4);
-//   expect(itemsWithChoices[1].multipleNames.length).toBe(4);
-//   expect(itemsWithChoices[2].multipleNames.length).toBe(4);
-//   expect(itemsWithChoices[3].multipleNames.length).toBe(4);
-//   expect(itemsWithChoices[0].multipleNames[0]).toEqual({name:1, names:[1]});
-// });
+

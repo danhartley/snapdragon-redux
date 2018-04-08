@@ -11,13 +11,15 @@ export const renderInput = (screen, question) => {
         const wrong = 'rgb(141, 0, 5)';
         const response = { ...question, answer };
         
-        const { text, colour } = renderAnswerHeader(response);
+        const { text, colour, correct } = renderAnswerHeader(response);
 
         DOM.headerTxt.innerHTML = text;
         DOM.rightHeader.style.backgroundColor = colour;
         
         btn.style.color = colour;
         btn.parentNode.style.background = colour;
+
+        response.success = correct;
 
         setTimeout(()=>{
             actions.boundMarkAnswer(response);
