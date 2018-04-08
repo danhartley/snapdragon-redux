@@ -1,6 +1,6 @@
 import { DOM } from 'ui/dom';
 import { renderSpeciesTiles } from 'ui/screens/right/species-tiles';
-import { renderSpecimen } from 'ui/screens/left/specimen-tiles';
+import { renderSpecimenTiles } from 'ui/screens/left/specimen-tiles';
 import { renderSpeciesCards } from 'ui/screens/right/species-binomial-cards';
 import { renderSpeciesCardRight } from 'ui/screens/right/species-card-right';
 import { renderSpeciesCardLeft } from 'ui/screens/left/species-card-left';
@@ -14,7 +14,7 @@ import { renderHistory } from 'ui/progress/history';
 
 const specimen = {
   name: 'specimen',
-  render: renderSpecimen,
+  render: renderSpecimenTiles,
   domain: 'item',
   parent: DOM.leftBody,
   template: 'js-specimen-template'     

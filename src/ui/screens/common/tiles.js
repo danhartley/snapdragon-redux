@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderAnswerHeader } from 'ui/helpers/helpers-for-screens';
 
-export const renderTilesScreen = (screen, item, callback) => {
+export const renderTiles = (screen, item, callback) => {
 
     const template = document.querySelector(`.${screen.template}`);
 

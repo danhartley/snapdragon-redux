@@ -1,5 +1,5 @@
 import { store } from 'redux/store';
-import { renderTilesScreen } from 'ui/screens/common/tiles';
+import { renderTiles } from 'ui/screens/common/tiles';
 
 export const renderSpeciesTiles = (card) => {
 
@@ -19,5 +19,5 @@ export const renderSpeciesTiles = (card) => {
                 </div>`;
     };
 
-    renderTilesScreen(screen, item, callback);
+    renderTiles(screen, item, callback);
 };
