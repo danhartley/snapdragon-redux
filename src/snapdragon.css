@@ -175,6 +175,24 @@ grid-template-areas: "header"
   width: 100px;
 }
 
+.strips {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: repeat(6,84px);
+  padding: 20px;
+}
+
+@media (min-width: 1200px) {
+  .strips {
+    grid-template-rows: repeat(6,100px);
+  }
+}
+
+.strip {
+  font-size: 2em;
+  cursor: pointer;
+}
+
 .vernacular-name {
   grid-area: five;
   padding: 5px 0 0 5px;
@@ -373,9 +391,9 @@ a {
 
 .tiles {
   display: grid;
-  grid-template-areas:  "tile1  tile2 tile3"
-                        "tile4  tile5 tile6"
-                        "tile7  tile8 tile9";
+  grid-template-areas: "tile1 tile2 tile3"
+                       "tile4 tile5 tile6"
+                       "tile7 tile8 tile9";
 }
 
 .tile {

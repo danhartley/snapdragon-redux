@@ -26,15 +26,6 @@ export const renderNextLayout = (index) => {
         const domain = screen.domain;
 
         subscriptions.push(observeStore(store, select, onChange, domain));
-
-        if(screen.next) {
-
-            const select = store => store[screen.next.domain];
-            const onChange = screen.next.render
-            const domain = screen.next.domain;
-    
-            subscriptions.push(observeStore(store, store => store[screen.next.domain], screen.next.render, screen.domain));
-        }
     });
 
     actions.boundNextScreen(layout);

@@ -1,18 +1,20 @@
 import { DOM } from 'ui/dom';
 import { renderSpeciesTiles } from 'ui/screens/right/species-tiles';
-import { renderSpecimen } from 'ui/screens/left/specimen-tiles';
+import { renderSpecimenTiles } from 'ui/screens/left/specimen-tiles';
 import { renderSpeciesCards } from 'ui/screens/right/species-binomial-cards';
 import { renderSpeciesCardRight } from 'ui/screens/right/species-card-right';
 import { renderSpeciesCardLeft } from 'ui/screens/left/species-card-left';
 import { renderTextEntry } from 'ui/screens/right/species-text-entry';
 import { renderSpeciesNamesCards } from 'ui/screens/right/species-vernacular-cards';
+import { renderSpeciesNamesStrips } from 'ui/screens/right/species-vernacular-strips';
+import { renderSpeciesStrips } from 'ui/screens/right/species-binomial-strips';
 
 import { renderSpeciesSummary } from 'ui/progress/species-summary';
 import { renderHistory } from 'ui/progress/history';
 
 const specimen = {
   name: 'specimen',
-  render: renderSpecimen,
+  render: renderSpecimenTiles,
   domain: 'item',
   parent: DOM.leftBody,
   template: 'js-specimen-template'     
@@ -24,6 +26,16 @@ const cards = {
   domain: 'card',
   parent: DOM.rightBody,
   template: 'js-cards-template',
+  taxon: 'binomial',
+  header: 'Click the matching species'
+};
+
+const binomialStrips = {
+  name: 'species-binomial-strips',
+  render: renderSpeciesStrips,
+  domain: 'card',
+  parent: DOM.rightBody,
+  template: 'js-strips-template',
   taxon: 'binomial',
   header: 'Click the matching species'
 };
@@ -58,6 +70,15 @@ const names = {
   domain: 'card',
   parent: DOM.rightBody,
   template: 'js-cards-template'  ,
+  taxon: 'binomial'
+};
+
+const strips = {
+  name: 'species-vernacular-strips',
+  render: renderSpeciesNamesStrips,
+  domain: 'card',
+  parent: DOM.rightBody,
+  template: 'js-strips-template'  ,
   taxon: 'binomial'
 };
 
@@ -127,45 +148,28 @@ export const learnLayouts = [
       active: true,
       screens: [
         {...specimen},
-        {...cards}
+        {...binomialStrips}
       ]
     },
     {
       id: 5,
       active: false,
-      screens: [ 
-        {...specimen, next:{...name}},
+      screens: [
+        {...specimen},
+        {...name},
         {...tiles}
       ]
     },
     {
       id: 6,
       active: false,
-      screens: [ 
-        {...specimen, next:{...scientific}},
-        {...names}
+      screens: [
+        {...specimen},
+        {...scientific},
+        {...strips}
       ]
     }
-  ]
-  // .filter(layout => (layout.id === 3 || layout.id === 5));
-  // .filter(layout => (layout.id !== 1 && layout.id !== 2 && layout.id !== 3));
-  // .filter(layout => (layout.id === 5));
-
-  // export const progressLayout = [
-  //   {
-  //     screens:[
-  //       {...progress}
-  //     ]
-  //   }
-  // ];
- 
-  // export const historyLayout = [
-  //   {
-  //     screens:[
-  //       {...history}
-  //     ]
-  //   }
-  // ];
+  ];
 
   export const progressScreen = progress;
   export const historyScreen = history;

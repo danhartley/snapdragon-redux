@@ -12,7 +12,6 @@ export const renderSpeciesNamesCards = (item) => {
 
     if(!screen) return;
 
-    
     item.content = R.take(6, item.multipleNames.map(cardItem => {
         const vernacularNames = cardItem.names
             .filter(name => name.language === 'en')
@@ -20,14 +19,14 @@ export const renderSpeciesNamesCards = (item) => {
 
             const vernacularQuestion = item.names.filter(name => name.language === 'en')[0].vernacularName;
 
-           return { id: item.id, binomial: item.name, vernacularQuestion: vernacularQuestion, vernacularAnswer: vernacularNames[0] };
+        return { id: item.id, binomial: item.name, vernacularQuestion: vernacularQuestion, vernacularAnswer: vernacularNames[0] };
    }));
 
    const callback = contentItem => {
 
     return `<div class="rectangle">
                     <div class="answer">
-                    <button class="capitalised" id="${contentItem.id}" data-vernacular="${contentItem.vernacularQuestion}">${contentItem.vernacularAnswer}</button>
+                        <button class="capitalised" id="${contentItem.id}" data-vernacular="${contentItem.vernacularQuestion}">${contentItem.vernacularAnswer}</button>
                     </div>
                 </div>`;
    };
