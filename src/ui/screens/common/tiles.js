@@ -2,18 +2,19 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderAnswerHeader } from 'ui/helpers/helpers-for-screens';
 
-export const renderTiles = (screen, item, callback) => {
+export const renderTiles = (screen, item, callbackTemplate) => {
 
     const template = document.querySelector(`.${screen.template}`);
 
     const rptrTiles = template.content.querySelector('.js-tiles');
 
-    rptrTiles.innerHTML = item.content.map(callback).join('');
+    rptrTiles.innerHTML = item.content.map(callbackTemplate).join('');
 
     const clone = document.importNode(template.content, true);
     const tiles = clone.querySelectorAll('.js-tiles .tile');
 
     tiles.forEach(tile => {
+        
         tile.addEventListener('click', event => {
 
             const img = event.target;

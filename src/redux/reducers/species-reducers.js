@@ -33,13 +33,13 @@ const initLayoutState = (layouts, number) => {
 };
 
 const intialLayoutState = initLayoutState(learnLayouts, api.species.length);
-let newLayouts;
+let newLayoutsState;
 
 export const layouts = (state = intialLayoutState, action) => {
     switch(action.type) {
         case types.RESET:
-            newLayouts = initLayoutState(learnLayouts, action.data.length);
-            return newLayouts
+            newLayoutsState = initLayoutState(learnLayouts, action.data.length);
+            return newLayoutsState;
         default:
             return state;
     }
@@ -50,7 +50,7 @@ export const layout = (state = intialLayoutState[0], action) => {
         case types.NEXT_LAYOUT:
             return action.data;
         case types.RESET:
-            return newLayouts[0];
+            return newLayoutsState[0];
         default: 
             return state;
     }
@@ -110,21 +110,25 @@ const initItemsState = (items) => {
     return modifiedItems;
 };
 
-export const items = (state = initItemsState(api.species), action) => {    
+const initialItemState = initItemsState(api.species);
+let newItemState;
+
+export const items = (state = initialItemState, action) => {    
     switch(action.type) {
         case types.RESET:
-            return initItemsState(action.data);
+            newItemState = initItemsState(action.data);
+            return newItemState;
         default:
             return state;
     }
 };
 
-export const item = (state = items(undefined, { type: ''})[0], action) => {
+export const item = (state = initialItemState[0], action) => {
     switch(action.type) {
         case types.NEXT_ITEM:
             return {...state, ...action.data};
         case types.RESET:
-            return items(null, action)[0];
+            return newItemState[0];
         default:
             return state;
     }

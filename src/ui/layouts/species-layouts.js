@@ -154,16 +154,18 @@ export const learnLayouts = [
     {
       id: 5,
       active: false,
-      screens: [ 
-        {...specimen, next:{...name}},
+      screens: [
+        {...specimen},
+        {...name},
         {...tiles}
       ]
     },
     {
       id: 6,
       active: false,
-      screens: [ 
-        {...specimen, next:{...scientific}},
+      screens: [
+        {...specimen},
+        {...scientific},
         {...strips}
       ]
     }
