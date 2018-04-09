@@ -13,9 +13,9 @@ export const renderSummaryHeader = (correct, total) => {
 
 export const renderSummary = (index) => {
 
-    if(score.total < items.length) return;
-
     const { score, items } = store.getState();
+
+    // if(score.total < items.length) return;
     
     renderSummaryHeader(score.correct, items.length);
 

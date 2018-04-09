@@ -1,4 +1,5 @@
 import { screens } from 'ui/layouts/species-layouts';
+import { createLesson } from 'syllabus/syllabus-helpers';
 
 // Take collectin or set of 12 items
 // Take first 3 items from the colletion
@@ -39,20 +40,28 @@ const layout4 = {
     ]
 }
 
-const lesson1Layouts = [
-    { ...layout1, id: 1},
-    { ...layout1, id: 2},
-    { ...layout1, id: 3},
-    { ...layout2, id: 4},
-    { ...layout2, id: 5},
-    { ...layout2, id: 6},
-    { ...layout3, id: 7},
-    { ...layout3, id: 8},
-    { ...layout3, id: 9},
-    { ...layout4, id: 10},
-    { ...layout4, id: 11},
-    { ...layout4, ...{ screens: [...screens.summary, ...screens.history] }, id: 12 },
-];
+const lesson1Layouts = createLesson(
+    [ layout1, layout2, layout3,layout4 ], 
+    [ screens.summary, screens.history ], 
+    2
+);
+
+// console.log(lesson1Layouts);
+
+// const lesson1Layouts = [
+//     { ...layout1, id: 1},
+//     { ...layout1, id: 2},
+//     { ...layout1, id: 3},
+//     { ...layout2, id: 4},
+//     { ...layout2, id: 5},
+//     { ...layout2, id: 6},
+//     { ...layout3, id: 7},
+//     { ...layout3, id: 8},
+//     { ...layout3, id: 9},
+//     { ...layout4, id: 10},
+//     { ...layout4, id: 11},
+//     { ...layout4, ...{ screens: [...screens.summary, ...screens.history] }, id: 12 },
+// ];
 
 const lessonLayouts = [];
 
