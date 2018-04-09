@@ -71,7 +71,7 @@ const vernaculars = {
   taxon: 'name'
 };
 
-const tiles = {
+const species = {
   name: 'species-images',
   domain: 'item',
   render: renderSpeciesTiles,
@@ -102,7 +102,7 @@ export const screens = {
   scientific,
   history,
   summary,
-  tiles,
+  species,
   text,
   scientifics, 
   vernaculars
@@ -147,7 +147,7 @@ export const speciesLayouts = [
       screens: [
         {...specimen},
         {...name},
-        {...tiles}
+        {...species}
       ]
     },
     {

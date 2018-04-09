@@ -22,7 +22,7 @@ const layout1 = {
 const layout2 = {
     screens: [
         { ...screens.specimen },
-        { ...screens.tiles }
+        { ...screens.species }
     ]
 }
 
