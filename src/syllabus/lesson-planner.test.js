@@ -3,8 +3,8 @@ import { renderSpeciesTiles } from 'ui/screens/right/species-tiles';
 import { renderSpecimenTiles } from 'ui/screens/left/specimen-tiles';
 import { renderCard } from 'ui/screens/common/card';
 import { renderTextEntry } from 'ui/screens/right/species-text-entry';
-import { renderSpeciesNamesStrips } from 'ui/screens/right/species-vernacular-strips';
-import { renderSpeciesStrips } from 'ui/screens/right/species-binomial-strips';
+import { renderVernaculars } from 'ui/screens/right/species-vernaculars';
+import { renderScientificStrips } from 'ui/screens/right/species-scientifics';
 
 import { renderSummary } from 'ui/progress/summary';
 import { renderHistory } from 'ui/progress/history';

@@ -3,8 +3,8 @@ import { renderSpeciesTiles } from 'ui/screens/right/species-tiles';
 import { renderSpecimenTiles } from 'ui/screens/left/specimen-tiles';
 import { renderCard } from 'ui/screens/common/card';
 import { renderTextEntry } from 'ui/screens/right/species-text-entry';
-import { renderSpeciesNamesStrips } from 'ui/screens/right/species-vernacular-strips';
-import { renderSpeciesStrips } from 'ui/screens/right/species-binomial-strips';
+import { renderVernaculars } from 'ui/screens/right/species-vernaculars';
+import { renderScientifics } from 'ui/screens/right/species-scientifics';
 
 import { renderSummary } from 'ui/progress/summary';
 import { renderHistory } from 'ui/progress/history';
@@ -45,10 +45,10 @@ const history = {
 
 // RIGHT
 
-const binomialStrips = {
-  name: 'species-binomial-strips',
+const scientifics = {
+  name: 'species-scientifics',
   domain: 'item',
-  render: renderSpeciesStrips,
+  render: renderScientifics,
   parent: DOM.rightBody,
   template: 'js-strips-template',
   taxon: 'name'
@@ -62,10 +62,10 @@ const revision = {
   template: 'js-card-revision-template'
 };
 
-const strips = {
-  name: 'species-vernacular-strips',
+const vernaculars = {
+  name: 'species-vernaculars',
   domain: 'item',
-  render: renderSpeciesNamesStrips,
+  render: renderVernaculars,
   parent: DOM.rightBody,
   template: 'js-strips-template',
   taxon: 'name'
@@ -104,8 +104,8 @@ export const screens = {
   summary,
   tiles,
   text,
-  strips, 
-  binomialStrips
+  scientifics, 
+  vernaculars
 };
 
 export const speciesLayouts = [
@@ -138,7 +138,7 @@ export const speciesLayouts = [
       active: true,
       screens: [
         {...specimen},
-        {...binomialStrips}
+        {...scientifics}
       ]
     },
     {
@@ -156,7 +156,7 @@ export const speciesLayouts = [
       screens: [
         {...specimen},
         {...scientific},
-        {...strips}
+        {...vernaculars}
       ]
     }
   ];

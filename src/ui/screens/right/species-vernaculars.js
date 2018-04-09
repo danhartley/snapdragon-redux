@@ -2,18 +2,18 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderStrips } from 'ui/screens/common/strips';
 
-export const renderSpeciesStrips = (item) => {
+export const renderVernaculars = (item) => {
 
     const { layout } = store.getState();
 
-    const screen = layout.screens.filter(el => el.name === 'species-binomial-strips')[0];
+    const screen = layout.screens.filter(el => el.name === 'species-vernaculars')[0];
 
     if(!screen) return;
 
     const callback = contentItem => {
 
         return `<div class="strip">
-                    <div id="${contentItem.id}">${contentItem.binomialAnswer}</div>
+                    <div class="capitalised" id="${contentItem.id}" data-vernacular="${contentItem.vernacularQuestion}">${contentItem.vernacularAnswer}</div>
                 </div>`;
        };
 

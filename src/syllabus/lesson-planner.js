@@ -28,14 +28,14 @@ const layout2 = {
 const layout3 = {
     screens: [
         { ...screens.specimen },
-        { ...screens.strips }
+        { ...screens.vernaculars }
     ]
 }
 
 const layout4 = {
     screens: [
         { ...screens.specimen },
-        { ...screens.binomialStrips }
+        { ...screens.scientifics }
     ]
 }
 
