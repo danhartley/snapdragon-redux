@@ -64,7 +64,7 @@ export const score = (state = initialScoreState, action) => {
     }       
 };
 
-const initItemsState = (items) => {
+const initialiseItemsState = (items) => {    
     const itemsWithNames = helpers.addMultipleNames(items, 6);
     const itemsWithNamesAndImages = helpers.addMultipleImages(itemsWithNames, 9)
     const modifiedItems = itemsWithNamesAndImages.map(item => {
@@ -74,31 +74,30 @@ const initItemsState = (items) => {
     return modifiedItems;
 };
 
-const initialItemState = initItemsState(modules.species);
-let newItemState;
+const initialItemsState = initialiseItemsState(modules.species);
+const initialItemState = initialItemsState[0];
 
-export const items = (state = initialItemState, action) => {    
+export const items = (state = initialItemsState, action) => {    
     switch(action.type) {
         case types.RESET:
-            newItemState = initItemsState(action.data);
-            return newItemState;
+            return initialItemsState;
         default:
             return state;
     }
 };
 
-export const item = (state = initialItemState[0], action) => {
+export const item = (state = initialItemState, action) => {
     switch(action.type) {
         case types.NEXT_ITEM:
             return {...state, ...action.data};
         case types.RESET:
-            return newItemState[0];
+            return initialItemState;
         default:
             return state;
     }
 };
 
-export const card = (state = null, action) => {
+export const revision = (state = null, action) => {
     switch(action.type) {
         // case types.END_LESSON:
         //     return { ...state, ...action.data };

@@ -18,6 +18,8 @@ export const renderCard = (item) => {
 
     const screen = layout.screens.filter(el => el.name === 'species-card')[0];
 
+    if(!screen) return;
+
     const template = document.querySelector(`.${screen.template}`);
 
     const speciesTxt = template.content.querySelector('.js-txt-species');

@@ -1,11 +1,8 @@
 import { DOM } from 'ui/dom';
 import { renderSpeciesTiles } from 'ui/screens/right/species-tiles';
 import { renderSpecimenTiles } from 'ui/screens/left/specimen-tiles';
-import { renderSpeciesCards } from 'ui/screens/right/species-binomial-cards';
 import { renderCard } from 'ui/screens/common/card';
-import { renderSpeciesCardLeft } from 'ui/screens/left/species-card-left';
 import { renderTextEntry } from 'ui/screens/right/species-text-entry';
-import { renderSpeciesNamesCards } from 'ui/screens/right/species-vernacular-cards';
 import { renderSpeciesNamesStrips } from 'ui/screens/right/species-vernacular-strips';
 import { renderSpeciesStrips } from 'ui/screens/right/species-binomial-strips';
 

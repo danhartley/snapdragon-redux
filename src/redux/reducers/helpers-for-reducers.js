@@ -12,11 +12,11 @@ const generateMultipleChoices = (collection, number) => {
     return answersCollection;
 };
 
-const notItem = (item, collection) => {
+const notItem = (item, collection) => {    
     return collection.filter(other => other.id !== item.id);
 };
 
-const addMultipleNames = (collection, number) => {
+const addMultipleNames = (collection, number) => {    
     return collection.map(item => {
         const others = 
             notItem(item, collection)
@@ -31,7 +31,7 @@ const addMultipleNames = (collection, number) => {
     });
 };
 
-const addMultipleImages = (collection, number) => {
+const addMultipleImages = (collection, number) => {    
     return collection.map(item => {
         const others = 
             notItem(item, collection)

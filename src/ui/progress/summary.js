@@ -21,7 +21,7 @@ export const renderSummary = (index) => {
 
     actions.boundUpdateHistory(score);
 
-    const template = document.querySelector('.js-progress-template');
+    const template = document.querySelector('.js-summary-template');
 
     const clone = document.importNode(template.content, true);
     DOM.rightBody.innerHTML = '';

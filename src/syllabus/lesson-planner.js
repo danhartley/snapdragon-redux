@@ -14,7 +14,7 @@ import { screens } from 'ui/layouts/species-layouts';
 const layout1 = {    
     screens: [
         { ...screens.specimen },
-        { ...screens.card }
+        { ...screens.revision }
     ]
 }
 
@@ -51,7 +51,7 @@ const lesson1Layouts = [
     { ...layout3, id: 9},
     { ...layout4, id: 10},
     { ...layout4, id: 11},
-    { ...layout4, ...{ screens: [...screens.progress, ...screens.history] }, id: 12 },
+    { ...layout4, ...{ screens: [...screens.summary, ...screens.history] }, id: 12 },
 ];
 
 const lessonLayouts = [];
