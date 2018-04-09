@@ -23,3 +23,4 @@ observeStore(store, store => store.index, renderNextItem, 'render-next-item');
 // progress
 
 observeStore(store, store => store.score, renderScore, 'score');
+

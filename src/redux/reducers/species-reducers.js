@@ -2,16 +2,16 @@ import { utils } from 'utils/utils';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { types } from 'redux/actions/species-action-types';
 import { store } from 'redux/store';
-import { api } from 'api/species';
+import { modules } from 'syllabus/lesson-modules';
 import { renderCorrect } from 'ui/helpers/helpers-for-screens';
 
 export const index = (state = 0, action) => {
     switch(action.type) {
         case types.MARK_ANSWER:
-            return (state + 1) <= api.species.length ? (state + 1) : state;
+            return (state + 1) <= modules.species.length ? (state + 1) : state;
 
         case types.END_LESSON:
-            return (state + 1) <= api.species.length ? (state + 1) : state;
+            return (state + 1) <= modules.species.length ? (state + 1) : state;
 
         case types.RESET:
             return 0;
@@ -74,7 +74,7 @@ const initItemsState = (items) => {
     return modifiedItems;
 };
 
-const initialItemState = initItemsState(api.species);
+const initialItemState = initItemsState(modules.species);
 let newItemState;
 
 export const items = (state = initialItemState, action) => {    

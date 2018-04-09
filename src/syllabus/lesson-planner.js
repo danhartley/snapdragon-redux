@@ -39,7 +39,7 @@ const layout4 = {
     ]
 }
 
-export const lesson1Layouts = [
+const lesson1Layouts = [
     { ...layout1, id: 1},
     { ...layout1, id: 2},
     { ...layout1, id: 3},
@@ -53,3 +53,10 @@ export const lesson1Layouts = [
     { ...layout4, id: 11},
     { ...layout4, ...{ screens: [...screens.progress, ...screens.history] }, id: 12 },
 ];
+
+const lessonLayouts = [];
+
+lessonLayouts.push(lesson1Layouts);
+
+export const lessonPlanner = { lessonLayouts: lessonLayouts };
+

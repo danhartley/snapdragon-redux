@@ -17,6 +17,6 @@ const species = utils.shuffleArray(binomials)
         if(index < sampleSize) return sp;
     });
 
-export const api = {
+export const modules = {
     species
 };
