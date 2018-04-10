@@ -1,6 +1,5 @@
 import { utils } from 'utils/utils';
-import { types } from 'redux/actions/species-action-types';
-import { speciesLayouts } from 'ui/layouts/species-layouts';
+import { types } from 'redux/actions/action-types';
 import { lessonPlanner } from 'syllabus/lesson-planner';
 
 const initialLayoutsState = lessonPlanner.lessonLayouts[0];

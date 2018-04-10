@@ -9,7 +9,7 @@ export const createLesson = (layouts, progressScreens, itemCount) => {
         do {
             i = i + 1;
             id = id + 1;
-            lessonPlan.push({...layout,id: id});
+            lessonPlan.push({...layout, id: id, exercise: index + 1});
           } while (i < itemCount);
     });
     
