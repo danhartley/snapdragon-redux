@@ -1,3 +1,4 @@
+import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderWiki } from 'wikipedia/wiki';
@@ -9,7 +10,15 @@ export const renderCardHeader = () => {
     DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
 };
 
-export const renderCard = (screen, item) => {
+export const renderCard = (item) => {
+
+    renderCardHeader();
+
+    const { layout } = store.getState();
+
+    const screen = layout.screens.filter(el => el.name === 'species-card')[0];
+
+    if(!screen) return;
 
     const template = document.querySelector(`.${screen.template}`);
 

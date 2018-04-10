@@ -12,14 +12,14 @@ const generateMultipleChoices = (collection, number) => {
     return answersCollection;
 };
 
-const notItem = (item, collection) => {
+const notItem = (item, collection) => {    
     return collection.filter(other => other.id !== item.id);
 };
 
-const addMultipleNames = (collection, number) => {
-    return collection.map(item => {
+const addMultipleNames = (pool, items, number) => {    
+    return items.map(item => {
         const others = 
-            notItem(item, collection)
+            notItem(item, pool)
                 .filter((other, index) => index + 1 < number)
                 .map(other => {
                     const {id, name, names} = other;
@@ -31,10 +31,10 @@ const addMultipleNames = (collection, number) => {
     });
 };
 
-const addMultipleImages = (collection, number) => {
-    return collection.map(item => {
+const addMultipleImages = (pool, items, number) => {    
+    return items.map(item => {
         const others = 
-            notItem(item, collection)
+            notItem(item, pool)
                 .filter((other, index) => index + 1 < number)
                 .map(other => {
                     const {name, images} = other;

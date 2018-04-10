@@ -3,9 +3,8 @@ import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import { logger } from 'redux/middleware/logger';
 import { timeoutScheduler } from 'redux/middleware/timeoutScheduler';
 
-import { utils } from 'utils/utils';
-
-import { index, score, item, layout, items, layouts, card, history } from 'redux/reducers/species-reducers';
+import { index, score, item, items, revision, history } from 'redux/reducers/species-reducers';
+import { layouts, layout } from 'redux/reducers/layout-reducers';
 
 const reducer = combineReducers({
     index,
@@ -14,7 +13,7 @@ const reducer = combineReducers({
     score,
     items,
     item,
-    card,
+    revision,
     history
 });
 

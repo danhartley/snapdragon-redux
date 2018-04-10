@@ -11,7 +11,7 @@ export const renderInput = (screen, question) => {
         const wrong = 'rgb(141, 0, 5)';
         const response = { ...question, answer };
         
-        const { text, colour } = renderAnswerHeader(response);
+        const { text, colour, correct } = renderAnswerHeader(response);
 
         DOM.headerTxt.innerHTML = text;
         DOM.rightHeader.style.backgroundColor = colour;
@@ -19,9 +19,11 @@ export const renderInput = (screen, question) => {
         btn.style.color = colour;
         btn.parentNode.style.background = colour;
 
+        response.success = correct;
+
         setTimeout(()=>{
             actions.boundMarkAnswer(response);
-        },2000);
+        },500);
     };
 
     const template = document.querySelector(`.${screen.template}`);

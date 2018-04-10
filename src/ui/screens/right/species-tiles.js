@@ -1,15 +1,13 @@
 import { store } from 'redux/store';
 import { renderTiles } from 'ui/screens/common/tiles';
 
-export const renderSpeciesTiles = (card) => {
+export const renderSpeciesTiles = (item) => {
 
     const { layout } = store.getState();
 
-    const screen = layout.screens.filter(el => el.name === 'tiles')[0];
+    const screen = layout.screens.filter(el => el.name === 'species-images')[0];
 
     if(!screen) return;
-
-    const item = card;
 
     item.content = item.multipleImages;
 

@@ -12,7 +12,9 @@ export const renderSpecimenTiles = (item) => {
         ? DOM.collectionTxt.innerHTML = `There is ${count} item in this test`
         : DOM.collectionTxt.innerHTML = `There are ${count} items in this test`;
 
-    const screen = layout.screens.filter(el => el.name === 'specimen')[0];
+    const screen = layout.screens.filter(el => el.name === 'specimen-images')[0];
+
+    if(!screen) return;
 
     let images = [];
     item.imageIndices.forEach(index => images.push(item.images[index]));

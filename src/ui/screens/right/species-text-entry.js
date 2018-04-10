@@ -13,4 +13,3 @@ export const renderTextEntry = (item) => {
 
     renderInput(screen, question);
 };
-

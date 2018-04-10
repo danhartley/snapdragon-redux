@@ -19,7 +19,7 @@ export const renderNextLayout = (index) => {
 
         console.log('the layout id is: ', layout.id);
 
-        console.log('the domain is: ', screen.domain.toUpperCase(), ' and the name is: ', screen.name.toUpperCase());
+        console.log('the domain is: ', screen.domain.toUpperCase(), ' and the screen name is: ', screen.name.toUpperCase());
 
         const select = store => store[screen.domain];
         const onChange = screen.render
@@ -28,5 +28,5 @@ export const renderNextLayout = (index) => {
         subscriptions.push(observeStore(store, select, onChange, domain));
     });
 
-    actions.boundNextScreen(layout);
+    actions.boundNextLayout(layout);
 };

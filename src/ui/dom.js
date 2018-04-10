@@ -11,7 +11,7 @@ export const DOM = {
     rightGrid : document.getElementsByClassName('js-right-grid')[0],
     rightHeader : document.getElementsByClassName('js-right-header')[0],
     rightBody : document.getElementsByClassName('js-right-body')[0],
-    rightRptrProgress : document.getElementsByClassName('js-rptr-progress')[0],
+    rightRptrSummary : document.getElementsByClassName('js-rptr-summary')[0],
     rightBodyTop : document.getElementsByClassName('js-right-body-top')[0],
     rightBodyBottom : document.getElementsByClassName('js-right-body-bottom')[0],
     rightFooter : document.getElementsByClassName('js-right-footer')[0],

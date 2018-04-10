@@ -37,7 +37,7 @@ export const renderAnswer = (response) => {
     const name = renderName(response, correct);
 
     switch(response.taxon) {
-        case 'binomial':
+        case 'name':
             return `<span class="${className}">${name}</span>`;
             break;
         case 'genus':
@@ -100,8 +100,9 @@ export const addListeners = (cards, item) => {
             const answer = target.innerText;
             const vernacular = target.dataset.vernacular;
 
-            const score = { taxon: 'binomial', binomial: item.name, vernacular: vernacular, question: item.name, answer: answer };
+            const score = { taxon: 'name', binomial: item.name, vernacular: vernacular, question: item.name, answer: answer };
             const { text, colour, correct } = renderAnswerHeader(score);
+            score.success = correct;
 
             DOM.headerTxt.innerHTML = text;
             DOM.rightHeader.style.backgroundColor = colour;
@@ -112,14 +113,14 @@ export const addListeners = (cards, item) => {
             if(!correct) {
                 cards.forEach(card => {
                     if(card.innerText === item.name) {
-                        card.parentNode.style.background = 'rgb(44, 141, 86)';
+                        //card.parentNode.style.background = 'rgb(44, 141, 86)';
                     }
                 });
             }
 
             setTimeout(()=>{
                 actions.boundMarkAnswer(score);
-            },2000);            
+            },500);            
         });
     });
 };

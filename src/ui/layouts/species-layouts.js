@@ -1,113 +1,41 @@
 import { DOM } from 'ui/dom';
-import { renderSpeciesTiles } from 'ui/screens/right/species-tiles';
-import { renderSpecimenTiles } from 'ui/screens/left/specimen-tiles';
-import { renderSpeciesCards } from 'ui/screens/right/species-binomial-cards';
-import { renderSpeciesCardRight } from 'ui/screens/right/species-card-right';
-import { renderSpeciesCardLeft } from 'ui/screens/left/species-card-left';
-import { renderTextEntry } from 'ui/screens/right/species-text-entry';
-import { renderSpeciesNamesCards } from 'ui/screens/right/species-vernacular-cards';
-import { renderSpeciesNamesStrips } from 'ui/screens/right/species-vernacular-strips';
-import { renderSpeciesStrips } from 'ui/screens/right/species-binomial-strips';
 
-import { renderSpeciesSummary } from 'ui/progress/species-summary';
+import { renderCard } from 'ui/screens/common/card';
+
+import { renderSpecimenTiles } from 'ui/screens/left/specimen-tiles';
+
+import { renderSpeciesTiles } from 'ui/screens/right/species-tiles';
+import { renderVernaculars } from 'ui/screens/right/species-vernaculars';
+import { renderScientifics } from 'ui/screens/right/species-scientifics';
+import { renderTextEntry } from 'ui/screens/right/species-text-entry';
+
+import { renderSummary } from 'ui/progress/summary';
 import { renderHistory } from 'ui/progress/history';
 
+// LEFT
+
 const specimen = {
-  name: 'specimen',
-  render: renderSpecimenTiles,
+  name: 'specimen-images',
   domain: 'item',
+  render: renderSpecimenTiles,
   parent: DOM.leftBody,
-  template: 'js-specimen-template'     
-};
-
-const cards = {
-  name: 'species-binomial-cards',
-  render: renderSpeciesCards,
-  domain: 'card',
-  parent: DOM.rightBody,
-  template: 'js-cards-template',
-  taxon: 'binomial',
-  header: 'Click the matching species'
-};
-
-const binomialStrips = {
-  name: 'species-binomial-strips',
-  render: renderSpeciesStrips,
-  domain: 'card',
-  parent: DOM.rightBody,
-  template: 'js-strips-template',
-  taxon: 'binomial',
-  header: 'Click the matching species'
-};
-
-const card = {
-  name: 'species-card',
-  render: renderSpeciesCardRight,
-  domain: 'card',
-  parent: DOM.rightBody ,
-  template: 'js-card-template'
+  template: 'js-specimen-images-template'     
 };
 
 const name = {
-  name: 'species-card-left',
-  render: renderSpeciesCardLeft,
-  domain: 'card',
+  name: 'species-card',
+  domain: 'item',
+  render: renderCard,
   parent: DOM.leftBody,
-  template: 'js-card-left-template'  
+  template: 'js-card-name-template'  
 };
 
 const scientific = {
-  name: 'species-card-left',
-  render: renderSpeciesCardLeft,
-  domain: 'card',
+  name: 'species-card',
+  domain: 'item',
+  render: renderCard,
   parent: DOM.leftBody,
-  template: 'js-scientific-template'  
-}
-
-const names = {
-  name: 'species-vernacular-cards',
-  render: renderSpeciesNamesCards,
-  domain: 'card',
-  parent: DOM.rightBody,
-  template: 'js-cards-template'  ,
-  taxon: 'binomial'
-};
-
-const strips = {
-  name: 'species-vernacular-strips',
-  render: renderSpeciesNamesStrips,
-  domain: 'card',
-  parent: DOM.rightBody,
-  template: 'js-strips-template'  ,
-  taxon: 'binomial'
-};
-
-const tiles = {
-  name: 'tiles',
-  render: renderSpeciesTiles,
-  domain: 'card',
-  parent: DOM.rightBody,
-  template: 'js-tiles-template',
-  taxon: 'binomial',
-  header: 'Click the image'
-};
-
-const text = {
-  name: 'text-entry',
-  render: renderTextEntry,
-  domain: 'card',
-  parent: DOM.rightBody,
-  template: 'js-species-entry-template',
-  taxon: 'species',
-  header: 'Give the species name'
-};
-
-const progress = { 
-  name: 'progress', 
-  domain: 'index', 
-  parent: DOM.rightBody,
-  render: renderSpeciesSummary,
-  template: 'js-progress-template'
+  template: 'js-card-scientific-template'  
 };
 
 const history = { 
@@ -118,58 +46,68 @@ const history = {
   template: 'js-history-template'
 };
 
-export const learnLayouts = [
-    {
-      id: 1,
-      active: false,
-      screens: [ 
-        {...specimen}, 
-        {...text}
-      ]
-    },
-    {
-      id: 2,
-      active: false,
-      screens: [ 
-        {...specimen},
-        {...text, template: 'js-genus-entry-template', taxon: 'genus'}
-      ]
-    },
-    {
-      id: 3,
-      active: false,
-      screens: [ 
-        {...specimen},
-        {...text, template: 'js-species-entry-template', taxon: 'species'}
-      ]
-    },
-    {
-      id: 4,
-      active: true,
-      screens: [
-        {...specimen},
-        {...binomialStrips}
-      ]
-    },
-    {
-      id: 5,
-      active: false,
-      screens: [
-        {...specimen},
-        {...name},
-        {...tiles}
-      ]
-    },
-    {
-      id: 6,
-      active: false,
-      screens: [
-        {...specimen},
-        {...scientific},
-        {...strips}
-      ]
-    }
-  ];
+// RIGHT
 
-  export const progressScreen = progress;
-  export const historyScreen = history;
+const revision = {
+  name: 'species-card',
+  domain: 'item',
+  render: renderCard,
+  parent: DOM.rightBody ,
+  template: 'js-card-revision-template'
+};
+
+const scientifics = {
+  name: 'species-scientifics',
+  domain: 'item',
+  render: renderScientifics,
+  parent: DOM.rightBody,
+  template: 'js-strips-template',
+  taxon: 'name'
+};
+
+const vernaculars = {
+  name: 'species-vernaculars',
+  domain: 'item',
+  render: renderVernaculars,
+  parent: DOM.rightBody,
+  template: 'js-strips-template',
+  taxon: 'name'
+};
+
+const species = {
+  name: 'species-images',
+  domain: 'item',
+  render: renderSpeciesTiles,
+  parent: DOM.rightBody,
+  template: 'js-tiles-template',
+  taxon: 'name'
+};
+
+const text = {
+  name: 'text-entry',
+  domain: 'item',
+  render: renderTextEntry,
+  parent: DOM.rightBody
+};
+
+const summary = { 
+  name: 'summary', 
+  domain: 'index', 
+  parent: DOM.rightBody,
+  render: renderSummary,
+  template: 'js-summary-template'
+};
+
+export const screens = {
+  specimen,
+  name,
+  scientific,
+  history,
+
+  revision,
+  scientifics,
+  vernaculars,
+  species,
+  text,
+  summary
+};
