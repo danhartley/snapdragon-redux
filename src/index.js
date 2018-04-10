@@ -11,7 +11,7 @@ import { renderScore } from 'ui/progress/score';
 // events
 
 observeStore(store, store => store.index, renderNextLayout, 'render-next-layout');
-observeStore(store, store => store.index, renderNextItem, 'render-next-item');
+observeStore(store, store => store.layout, renderNextItem, 'render-next-item');
 
 // progress
 

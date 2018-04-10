@@ -1,6 +1,6 @@
 import { utils } from 'utils/utils';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
-import { types } from 'redux/actions/species-action-types';
+import { types } from 'redux/actions/action-types';
 import { store } from 'redux/store';
 import { modules } from 'syllabus/lesson-modules';
 import { renderCorrect } from 'ui/helpers/helpers-for-screens';
@@ -8,18 +8,15 @@ import { renderCorrect } from 'ui/helpers/helpers-for-screens';
 export const index = (state = 0, action) => {
     switch(action.type) {
         case types.MARK_ANSWER:
-            return (state + 1) <= modules.species.length ? (state + 1) : state;
-
+            return (state + 1) <= modules.species.length ? (state + 1) : state;    
         case types.END_LESSON:
             return (state + 1) <= modules.species.length ? (state + 1) : state;
-
         case types.RESET:
             return 0;
         default:
             return state;
     }
 };
-
 
 const initialScoreState = {
     total: 0,
@@ -99,8 +96,6 @@ export const item = (state = initialItemState, action) => {
 
 export const revision = (state = null, action) => {
     switch(action.type) {
-        // case types.END_LESSON:
-        //     return { ...state, ...action.data };
         case types.RESET:
             return null;
         default:

@@ -1,16 +1,16 @@
 export const createLesson = (layouts, progressScreens, itemCount) => {
     
     const lessonPlan = [];
-    let id = 0;
+    let layoutIndex = 0;
 
     layouts.forEach( (layout, index) => {
 
         let i = 0;
         do {
+            lessonPlan.push({...layout, layoutIndex: layoutIndex, itemIndex: i, exerciseIndex: index + 1});
+            layoutIndex = layoutIndex + 1;
             i = i + 1;
-            id = id + 1;
-            lessonPlan.push({...layout, id: id, exercise: index + 1});
-          } while (i < itemCount);
+        } while (i < itemCount);
     });
     
     const finalLayout = lessonPlan[lessonPlan.length -1];

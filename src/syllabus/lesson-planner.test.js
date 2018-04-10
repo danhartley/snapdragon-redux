@@ -19,6 +19,6 @@ it('lesson-planner should contain at least one lesson', () => {
     expect(layouts.length).toBeGreaterThan(0);
 });
 
-it('first lesson in layout should have an Id of 1', () => {
-    expect(layout.id).toEqual(1);
+it('first lesson in layout should have a layoutIndex of 0', () => {
+    expect(layout.layoutIndex).toEqual(0);
 });

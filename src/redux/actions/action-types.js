@@ -6,8 +6,8 @@ const UPDATE_HISTORY = '[logic] Copy round score to history';
 const RESET = '[logic] Start another round';
 
 export const types = {
-    NEXT_ITEM,
     NEXT_LAYOUT,
+    NEXT_ITEM,
     MARK_ANSWER,
     END_LESSON,
     UPDATE_HISTORY,

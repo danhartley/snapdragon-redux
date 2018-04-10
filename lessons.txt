@@ -1,0 +1,10 @@
+// Take collectin or set of 12 items
+// Take first 3 items from the colletion
+// Show the:
+// LEFT: specimen images RIGHT: species card
+// Show the:
+// LEFT: specimen images RIGHT: multiple choice species image tiles
+// Show the:
+// LEFT: specimen images RIGHT: multiple choice species vernacular names
+// Show the:
+// LEFT: specimen images RIGHT: multiple choice species scientific names

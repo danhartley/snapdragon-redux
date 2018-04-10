@@ -23,7 +23,7 @@ export const renderInput = (screen, question) => {
 
         setTimeout(()=>{
             actions.boundMarkAnswer(response);
-        },2000);
+        },500);
     };
 
     const template = document.querySelector(`.${screen.template}`);

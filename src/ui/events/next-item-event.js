@@ -2,11 +2,11 @@ import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 
-export const renderNextItem = (index) => {
+export const renderNextItem = (layout) => {
 
     const { items } = store.getState();
 
-    const nextItem = utils.nextItem(items, index);
+    const nextItem = items[layout.itemIndex];
     
     actions.boundNextItem(nextItem);
 };

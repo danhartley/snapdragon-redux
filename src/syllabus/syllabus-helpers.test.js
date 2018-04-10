@@ -14,8 +14,8 @@ test('createLesson should return final layout with correct number of screens', (
     const progressScreens = [{},{}];
     const items = [1,2,3];
     const lesson = createLesson(layouts, progressScreens, items.length);
-    const firstLesson = {"id": 1, exercise: 1, "screens": [{}]};
-    const finalLayout = {"id": 12, exercise: 4, "screens": [{}, {}, {}]};
+    const firstLesson = { layoutIndex: 0, itemIndex: 0, exerciseIndex: 1, screens: [{}]};
+    const finalLayout = { layoutIndex: 11, itemIndex: 2, exerciseIndex: 4, screens: [{}, {}, {}]};
     expect(lesson[0]).toEqual(firstLesson);
     expect(lesson[lesson.length - 1]).toEqual(finalLayout);
 });

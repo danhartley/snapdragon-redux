@@ -120,7 +120,7 @@ export const addListeners = (cards, item) => {
 
             setTimeout(()=>{
                 actions.boundMarkAnswer(score);
-            },2000);            
+            },500);            
         });
     });
 };

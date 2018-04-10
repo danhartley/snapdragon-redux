@@ -28,5 +28,5 @@ export const renderNextLayout = (index) => {
         subscriptions.push(observeStore(store, select, onChange, domain));
     });
 
-    actions.boundNextScreen(layout);
+    actions.boundNextLayout(layout);
 };

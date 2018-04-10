@@ -108,6 +108,8 @@ export const screens = {
   vernaculars
 };
 
+// unused: replace by planned lessons (see lesson-planner)
+
 export const speciesLayouts = [
     {
       id: 1,
