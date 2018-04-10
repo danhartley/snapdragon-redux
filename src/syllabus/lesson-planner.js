@@ -29,4 +29,3 @@ export const reviseActiveLayouts = (selectionSize, excludeRevision = false) => {
         activeLayouts = revisedLayouts;
     return revisedLayouts;
 };
-

@@ -1,7 +1,8 @@
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
-import { renderAnswer, createNewCollection } from 'ui/helpers/helpers-for-screens';
+import { renderAnswer } from 'ui/helpers/helpers-for-screens';
 import { actions } from 'redux/actions/action-creators';
+import { utils } from 'utils/utils';
 
 export const renderSummaryHeader = (score) => {
     DOM.headerTxt.innerHTML = 
@@ -29,7 +30,7 @@ export const renderSummary = (index) => {
 
     const startOverBtn = document.querySelector('.js-start-over-btn');
     const tryAgainBtn = document.querySelector('.js-try-again-btn');
-    const newCollectionBtn = document.querySelector('.js-new-collection-btn');   
+    const learnMoreBtn = document.querySelector('.js-learn-more-btn');   
 
     startOverBtn.addEventListener('click', event => {
         actions.boundReset(items);
@@ -37,11 +38,17 @@ export const renderSummary = (index) => {
 
     if(score.fails.length > 0) {
         tryAgainBtn.addEventListener('click', event => {            
-            const newCollection = createNewCollection(items, score.fails);
-            actions.boundReset(newCollection); 
+            const fails = score.fails.map(fail => {
+                return items.filter(item => item.name === fail.binomial)[0];        
+            });
+            const uniqueFails = fails.filter(utils.onlyUnique);            
+            actions.boundReset(uniqueFails); 
         });
     } else {
         tryAgainBtn.setAttribute('disabled', 'disabled');
     }
 
+    learnMoreBtn.addEventListener('click', event => {
+        actions.boundNextSet()
+    });   
 };

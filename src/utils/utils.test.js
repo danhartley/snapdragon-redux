@@ -73,3 +73,9 @@ it('insertObjectBetweenItems for even items in 4 item array should return array 
     expect(doubledArray.length).toEqual(items.length*2);
     expect(doubledArray).toEqual(doubledItems);
   });
+
+  test('onlyUnique should ony return unique values from an array', () => {
+    const array = ['a', 1, 'a', 2, '1'];
+    var unique = array.filter(utils.onlyUnique);
+    expect(unique).toEqual(['a', 1, 2, '1']);
+  });

@@ -78,6 +78,8 @@ export const items = (state = initialItemsState, action) => {
     switch(action.type) {
         case types.RESET:
             return action.data;
+        case types.NEXT_SET:
+            
         default:
             return state;
     }

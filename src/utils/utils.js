@@ -94,6 +94,10 @@ Array.prototype.concatAll = function() {
       }, []);
       return doubledArray;
   };
+
+ const onlyUnique = (value, index, self) => { 
+    return self.indexOf(value) === index;
+};
   
   export const utils = {
     log,
@@ -104,5 +108,6 @@ Array.prototype.concatAll = function() {
     nextItem,
     randomiseSelection,
     insertObjectBetweenItems,
-    doubledItemsInArray
+    doubledItemsInArray,
+    onlyUnique
   };

@@ -1,1 +1,1 @@
-export const selectionSize = 3;
+export const selectionSize = 2;
