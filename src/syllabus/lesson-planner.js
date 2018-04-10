@@ -1,59 +1,32 @@
+import { lessonLayouts } from 'syllabus/lesson-plans';
+import { createLesson } from 'syllabus/lesson-helpers';
 import { screens } from 'ui/layouts/species-layouts';
-import { createLesson } from 'syllabus/syllabus-helpers';
+import { selectionSize } from 'syllabus/lesson-config';
 
 const { specimen, revision, species, vernaculars, scientifics, summary, history } = screens;
+const { layout1, layout2, layout3, layout4 } = lessonLayouts;
 
-const selectionSize = 2;
-
-const layout1 = {    
-    screens: [
-        { ...specimen },
-        { ...revision }
-    ]
-}
-
-const layout2 = {
-    screens: [
-        { ...specimen },
-        { ...species }
-    ]
-}
-
-const layout3 = {
-    screens: [
-        { ...specimen },
-        { ...vernaculars }
-    ]
-}
-
-const layout4 = {
-    screens: [
-        { ...specimen },
-        { ...scientifics }
-    ]
-}
-
-const lesson1Layouts = createLesson(
-    [ layout1, layout2, layout3,layout4 ],
+export const lesson1Layouts = createLesson(
+    [ layout1, layout2, layout3, layout4 ],
     [ summary, history ],
-    selectionSize
+    selectionSize,
+    'lesson1'
 );
 
-let lessonLayouts = [];
+export let activeLayouts = lesson1Layouts;
 
-lessonLayouts.push(lesson1Layouts);
+export const reviseActiveLayouts = (selectionSize, excludeRevision = false) => {
 
-const reviseLessonLayouts = selectionSize => {
-    const revisedLayouts = createLesson([ layout1, layout2, layout3,layout4 ],
+    let layouts = [ layout1, layout2, layout3, layout4 ];
+
+    if(excludeRevision) {
+        layouts = layouts.filter(layout => layout.name !== 'revision');
+    }
+
+    const revisedLayouts = createLesson(layouts,
         [ summary, history ],
-        selectionSize);
-    lessonLayouts = [];
-    lessonLayouts.push(revisedLayouts);
-    return lessonLayouts;
-};
-
-export const lessonPlanner = { 
-    lessonLayouts,
-    reviseLessonLayouts
+        selectionSize);    
+        activeLayouts = revisedLayouts;
+    return revisedLayouts;
 };
 

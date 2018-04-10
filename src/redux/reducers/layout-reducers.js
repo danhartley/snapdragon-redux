@@ -1,15 +1,15 @@
-import { utils } from 'utils/utils';
 import { types } from 'redux/actions/action-types';
-import { lessonPlanner } from 'syllabus/lesson-planner';
+import { activeLayouts, reviseActiveLayouts } from 'syllabus/lesson-planner';
 
-const initialLayoutsState = lessonPlanner.lessonLayouts[0];
+const initialLayoutsState = activeLayouts;
 const initialLayoutState = initialLayoutsState[0];
 let revisedLayoutState = null;
  
 export const layouts = (state = initialLayoutsState, action) => {
     switch(action.type) {
         case types.RESET:
-            revisedLayoutState = lessonPlanner.reviseLessonLayouts(action.data.length)[0];
+            const excludeRevision = true;
+            revisedLayoutState = reviseActiveLayouts(action.data.length, excludeRevision);
             return revisedLayoutState;
         default:
             return state;

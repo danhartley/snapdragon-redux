@@ -1,6 +1,9 @@
-export const createLesson = (layouts, progressScreens, itemCount) => {
+export const createLesson = (layouts, progressScreens, itemCount, name) => {
     
     const lessonPlan = [];
+
+    lessonPlan.name = name;
+
     let layoutIndex = 0;
 
     layouts.forEach( (layout, index) => {

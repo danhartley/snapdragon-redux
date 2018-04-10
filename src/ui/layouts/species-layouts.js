@@ -1,10 +1,13 @@
 import { DOM } from 'ui/dom';
-import { renderSpeciesTiles } from 'ui/screens/right/species-tiles';
-import { renderSpecimenTiles } from 'ui/screens/left/specimen-tiles';
+
 import { renderCard } from 'ui/screens/common/card';
-import { renderTextEntry } from 'ui/screens/right/species-text-entry';
+
+import { renderSpecimenTiles } from 'ui/screens/left/specimen-tiles';
+
+import { renderSpeciesTiles } from 'ui/screens/right/species-tiles';
 import { renderVernaculars } from 'ui/screens/right/species-vernaculars';
 import { renderScientifics } from 'ui/screens/right/species-scientifics';
+import { renderTextEntry } from 'ui/screens/right/species-text-entry';
 
 import { renderSummary } from 'ui/progress/summary';
 import { renderHistory } from 'ui/progress/history';
@@ -45,6 +48,14 @@ const history = {
 
 // RIGHT
 
+const revision = {
+  name: 'species-card',
+  domain: 'item',
+  render: renderCard,
+  parent: DOM.rightBody ,
+  template: 'js-card-revision-template'
+};
+
 const scientifics = {
   name: 'species-scientifics',
   domain: 'item',
@@ -52,14 +63,6 @@ const scientifics = {
   parent: DOM.rightBody,
   template: 'js-strips-template',
   taxon: 'name'
-};
-
-const revision = {
-  name: 'species-card',
-  domain: 'item',
-  render: renderCard,
-  parent: DOM.rightBody ,
-  template: 'js-card-revision-template'
 };
 
 const vernaculars = {
@@ -98,70 +101,13 @@ const summary = {
 export const screens = {
   specimen,
   name,
-  revision,
   scientific,
   history,
-  summary,
+
+  revision,
+  scientifics,
+  vernaculars,
   species,
   text,
-  scientifics, 
-  vernaculars
+  summary
 };
-
-// unused: replace by planned lessons (see lesson-planner)
-
-export const speciesLayouts = [
-    {
-      id: 1,
-      active: false,
-      screens: [ 
-        {...specimen}, 
-        {...text, template: 'js-species-genus-entry-template', taxon: 'name'}
-      ]
-    },
-    {
-      id: 2,
-      active: false,
-      screens: [ 
-        {...specimen},
-        {...text, template: 'js-genus-entry-template', taxon: 'genus'}
-      ]
-    },
-    {
-      id: 3,
-      active: false,
-      screens: [ 
-        {...specimen},
-        {...text, template: 'js-species-entry-template', taxon: 'species'}
-      ]
-    },
-    {
-      id: 4,
-      active: true,
-      screens: [
-        {...specimen},
-        {...scientifics}
-      ]
-    },
-    {
-      id: 5,
-      active: false,
-      screens: [
-        {...specimen},
-        {...name},
-        {...species}
-      ]
-    },
-    {
-      id: 6,
-      active: false,
-      screens: [
-        {...specimen},
-        {...scientific},
-        {...vernaculars}
-      ]
-    }
-  ];
-
-  export const summaryScreen = summary;
-  export const historyScreen = history;
