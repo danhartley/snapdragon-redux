@@ -8,7 +8,7 @@ const initialLayoutState = initialLayoutsState[0];
 export const layouts = (state = initialLayoutsState, action) => {
     switch(action.type) {
         case types.RESET:
-            return initialLayoutState;
+            return initialLayoutsState;
         default:
             return state;
     }

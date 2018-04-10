@@ -1,7 +1,7 @@
 import { screens } from 'ui/layouts/species-layouts';
 import { createLesson } from 'syllabus/syllabus-helpers';
 
-const selectionSize = 2;
+const selectionSize = 3;
 
 const layout1 = {    
     screens: [
