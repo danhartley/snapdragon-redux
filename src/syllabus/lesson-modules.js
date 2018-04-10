@@ -1,7 +1,7 @@
 import { utils } from 'utils/utils';
 import { flora } from 'api/flora';
 
-const sampleSize = 12;
+const sampleSize = 2;
 
 const binomials = flora[2]
     .map(item => {
@@ -12,11 +12,13 @@ const binomials = flora[2]
         return item;
 });
 
-const species = utils.shuffleArray(binomials)
-    .filter((sp, index) => {
-        if(index < sampleSize) return sp;
+const pool = utils.shuffleArray(binomials);
+const items = pool
+    .filter((item, index) => {
+        if(index < sampleSize) return item;
     });
 
 export const modules = {
-    species
+    pool, 
+    items
 };

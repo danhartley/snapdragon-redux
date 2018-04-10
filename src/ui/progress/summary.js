@@ -3,19 +3,21 @@ import { DOM } from 'ui/dom';
 import { renderAnswer, createNewCollection } from 'ui/helpers/helpers-for-screens';
 import { actions } from 'redux/actions/action-creators';
 
-export const renderSummaryHeader = (correct, total) => {
+export const renderSummaryHeader = (score) => {
     DOM.headerTxt.innerHTML = 
-        correct === 1 
-            ? `You got ${correct} question right out of ${total}`
-            : `You got ${correct} questions right out of ${total}`;
+        score.correct === 1 
+            ? `You got ${score.correct} question right out of ${score.total}`
+            : `You got ${score.correct} questions right out of ${score.total}`;
     DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
 };
 
 export const renderSummary = (index) => {
 
-    const { score, items } = store.getState();
+    const { score, items, layouts } = store.getState();
+
+    if(index !== layouts.length) return;
     
-    renderSummaryHeader(score.correct, items.length);
+    renderSummaryHeader(score);
 
     actions.boundUpdateHistory(score);
 

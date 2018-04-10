@@ -8,9 +8,9 @@ import { renderCorrect } from 'ui/helpers/helpers-for-screens';
 export const index = (state = 0, action) => {
     switch(action.type) {
         case types.MARK_ANSWER:
-            return (state + 1) <= modules.species.length ? (state + 1) : state;    
+            return (state + 1) <= modules.pool.length ? (state + 1) : state;    
         case types.END_LESSON:
-            return (state + 1) <= modules.species.length ? (state + 1) : state;
+            return (state + 1) <= modules.pool.length ? (state + 1) : state;
         case types.RESET:
             return 0;
         default:
@@ -61,9 +61,9 @@ export const score = (state = initialScoreState, action) => {
     }       
 };
 
-const initialiseItemsState = (items) => {    
-    const itemsWithNames = helpers.addMultipleNames(items, 6);
-    const itemsWithNamesAndImages = helpers.addMultipleImages(itemsWithNames, 9)
+const initialiseItemsState = (pool, items) => {    
+    const itemsWithNames = helpers.addMultipleNames(pool, items, 6);
+    const itemsWithNamesAndImages = helpers.addMultipleImages(pool, itemsWithNames, 9)
     const modifiedItems = itemsWithNamesAndImages.map(item => {
         item.imageIndices = utils.randomiseSelection([1,2,3,4,5,6,7,8,9,10,11,12], 12, true);
         return item;
@@ -71,10 +71,10 @@ const initialiseItemsState = (items) => {
     return modifiedItems;
 };
 
-const initialItemsState = initialiseItemsState(modules.species);
+const initialItemsState = initialiseItemsState(modules.pool, modules.items);
 const initialItemState = initialItemsState[0];
 
-export const items = (state = initialItemsState, action) => {    
+export const items = (state = initialItemsState, action) => {
     switch(action.type) {
         case types.RESET:
             return initialItemsState;
