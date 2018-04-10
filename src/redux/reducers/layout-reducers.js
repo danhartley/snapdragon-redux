@@ -4,11 +4,13 @@ import { lessonPlanner } from 'syllabus/lesson-planner';
 
 const initialLayoutsState = lessonPlanner.lessonLayouts[0];
 const initialLayoutState = initialLayoutsState[0];
+let revisedLayoutState = null;
  
 export const layouts = (state = initialLayoutsState, action) => {
     switch(action.type) {
         case types.RESET:
-            return initialLayoutsState;
+            revisedLayoutState = lessonPlanner.reviseLessonLayouts(action.data.length)[0];
+            return revisedLayoutState;
         default:
             return state;
     }
@@ -19,7 +21,7 @@ export const layout = (state = initialLayoutState, action) => {
         case types.NEXT_LAYOUT:
             return action.data;
         case types.RESET:
-            return initialLayoutState;
+            return revisedLayoutState[0];
         default: 
             return state;
     }

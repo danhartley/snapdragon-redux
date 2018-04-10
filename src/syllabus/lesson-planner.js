@@ -1,45 +1,59 @@
 import { screens } from 'ui/layouts/species-layouts';
 import { createLesson } from 'syllabus/syllabus-helpers';
 
-const selectionSize = 3;
+const { specimen, revision, species, vernaculars, scientifics, summary, history } = screens;
+
+const selectionSize = 2;
 
 const layout1 = {    
     screens: [
-        { ...screens.specimen },
-        { ...screens.revision }
+        { ...specimen },
+        { ...revision }
     ]
 }
 
 const layout2 = {
     screens: [
-        { ...screens.specimen },
-        { ...screens.species }
+        { ...specimen },
+        { ...species }
     ]
 }
 
 const layout3 = {
     screens: [
-        { ...screens.specimen },
-        { ...screens.vernaculars }
+        { ...specimen },
+        { ...vernaculars }
     ]
 }
 
 const layout4 = {
     screens: [
-        { ...screens.specimen },
-        { ...screens.scientifics }
+        { ...specimen },
+        { ...scientifics }
     ]
 }
 
 const lesson1Layouts = createLesson(
-    [ layout1, layout2, layout3,layout4 ], 
-    [ screens.summary, screens.history ],
+    [ layout1, layout2, layout3,layout4 ],
+    [ summary, history ],
     selectionSize
 );
 
-const lessonLayouts = [];
+let lessonLayouts = [];
 
 lessonLayouts.push(lesson1Layouts);
 
-export const lessonPlanner = { lessonLayouts: lessonLayouts };
+const reviseLessonLayouts = selectionSize => {
+    const revisedLayouts = createLesson([ layout1, layout2, layout3,layout4 ],
+        [ summary, history ],
+        selectionSize);
+    lessonLayouts = [];
+    lessonLayouts.push(revisedLayouts);
+    return lessonLayouts;
+};
+
+export const lessonPlanner = { 
+    lessonLayouts,
+    reviseLessonLayouts
+};
 
