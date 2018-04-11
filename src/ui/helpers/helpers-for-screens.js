@@ -104,7 +104,7 @@ export const addListeners = (cards, item) => {
             }
 
             setTimeout(()=>{
-                actions.boundMarkAnswer(score);
+                actions.boundUpdateScore(score);
             },500);            
         });
     });

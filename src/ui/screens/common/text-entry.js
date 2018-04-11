@@ -22,7 +22,7 @@ export const renderInput = (screen, question) => {
         response.success = correct;
 
         setTimeout(()=>{
-            actions.boundMarkAnswer(response);
+            actions.boundUpdateScore(response);
         },500);
     };
 

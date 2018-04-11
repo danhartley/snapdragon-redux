@@ -2,14 +2,24 @@ import { utils } from 'utils/utils';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { types } from 'redux/actions/action-types';
 import { store } from 'redux/store';
+import { config } from 'syllabus/lesson-config';
 import { modules } from 'syllabus/lesson-modules';
 import { renderCorrect } from 'ui/helpers/helpers-for-screens';
 
+export const lesson = (state = config, action) => {
+    switch(action.type) {
+        case types.NEXT_LESSON:
+            return action.data;
+        default: 
+            return state;
+    }
+};
+
 export const index = (state = 0, action) => {
     switch(action.type) {
-        case types.MARK_ANSWER:
+        case types.UPDATE_SCORE:
             return (state + 1) <= modules.pool.length ? (state + 1) : state;    
-        case types.END_LESSON:
+        case types.END_REVISION:
             return (state + 1) <= modules.pool.length ? (state + 1) : state;
         case types.RESET:
             return 0;
@@ -32,7 +42,7 @@ const initialScoreState = {
 
 export const score = (state = initialScoreState, action) => {
     switch(action.type) {
-        case types.MARK_ANSWER:
+        case types.UPDATE_SCORE:
             const score = { ...state, ...action.data };
             score.total++;
             if(score.success) {
@@ -61,9 +71,11 @@ export const score = (state = initialScoreState, action) => {
     }       
 };
 
-const initialiseItemsState = (pool, items) => {    
-    const itemsWithNames = helpers.addMultipleNames(pool, items, 6);
-    const itemsWithNamesAndImages = helpers.addMultipleImages(pool, itemsWithNames, 9)
+const initialLessonState = modules.prepareLesson(config.moduleSize);
+
+const initialiseItemsState = (state = initialLessonState) => {
+    const itemsWithNames = helpers.addMultipleNames(state.pool, state.items, 6);
+    const itemsWithNamesAndImages = helpers.addMultipleImages(state.pool, itemsWithNames, 9)
     const modifiedItems = itemsWithNamesAndImages.map(item => {
         item.imageIndices = utils.randomiseSelection([1,2,3,4,5,6,7,8,9,10,11,12], 12, true);
         return item;
@@ -71,7 +83,7 @@ const initialiseItemsState = (pool, items) => {
     return modifiedItems;
 };
 
-const initialItemsState = initialiseItemsState(modules.pool, modules.items);
+const initialItemsState = initialiseItemsState();
 const initialItemState = initialItemsState[0];
 
 export const items = (state = initialItemsState, action) => {

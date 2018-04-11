@@ -31,7 +31,7 @@ it('score state should reflect correct answer', () => {
   }
 
   const action = {
-    type: types.MARK_ANSWER,
+    type: types.UPDATE_SCORE,
     data: {
       taxon: 'name',
       binomial: 'Anagallis arvensis',
@@ -79,7 +79,7 @@ it('score state should reflect incorrect answer', () => {
   Object.freeze(action);
 
   const action = {
-    type: types.MARK_ANSWER,
+    type: types.UPDATE_SCORE,
     data: {
       taxon: 'name',
       binomial: 'Anagallis arvensis',

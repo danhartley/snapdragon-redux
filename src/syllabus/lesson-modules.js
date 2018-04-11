@@ -1,6 +1,5 @@
 import { utils } from 'utils/utils';
 import { flora } from 'api/flora';
-import { selectionSize } from 'syllabus/lesson-config';
 
 const binomials = flora[2]
     .map(item => {
@@ -12,12 +11,20 @@ const binomials = flora[2]
 });
 
 const pool = utils.shuffleArray(binomials);
-const items = pool
-    .filter((item, index) => {
-        if(index < selectionSize) return item;
-    });
+
+const prepareLesson = moduleSize => {    
+    const items = pool
+        .filter((item, index) => {
+            if(index < moduleSize) return item;
+        });
+    const lesson = {
+        pool,
+        items
+    }
+    return lesson;
+};
 
 export const modules = {
-    pool, 
-    items
+    pool,
+    prepareLesson
 };

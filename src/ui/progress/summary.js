@@ -49,6 +49,6 @@ export const renderSummary = (index) => {
     }
 
     learnMoreBtn.addEventListener('click', event => {
-        actions.boundNextSet()
+        // actions.boundNextSet()
     });   
 };

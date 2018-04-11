@@ -34,7 +34,7 @@ const layout4 = {
     ]
 };
 
-export const lessonLayouts = {
+export const lesson1Layouts = {
     layout1,
     layout2,
     layout3,
