@@ -38,7 +38,7 @@ export const renderCard = (item) => {
     const clone = document.importNode(template.content, true);
 
     clone.querySelector('button').addEventListener('click', event => {
-        actions.boundEndLesson(item);
+        actions.boundEndRevision(item);
     });
 
     screen.parent.style.backgroundColor = 'rgb(50, 50, 50)';

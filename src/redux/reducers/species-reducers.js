@@ -1,15 +1,23 @@
-import { utils } from 'utils/utils';
-import { helpers } from 'redux/reducers/helpers-for-reducers';
+
 import { types } from 'redux/actions/action-types';
-import { store } from 'redux/store';
+import { config } from 'syllabus/lesson-config';
 import { modules } from 'syllabus/lesson-modules';
-import { renderCorrect } from 'ui/helpers/helpers-for-screens';
+import { InitialState } from 'redux/reducers/initial-state-for-reducers';
+
+export const lesson = (state = config, action) => {
+    switch(action.type) {
+        case types.NEXT_LESSON:
+            return action.data;
+        default: 
+            return state;
+    }
+};
 
 export const index = (state = 0, action) => {
     switch(action.type) {
-        case types.MARK_ANSWER:
-            return (state + 1) <= modules.pool.length ? (state + 1) : state;    
-        case types.END_LESSON:
+        case types.UPDATE_SCORE:
+            return (state + 1) <= modules.pool.length ? (state + 1) : state;
+        case types.END_REVISION:
             return (state + 1) <= modules.pool.length ? (state + 1) : state;
         case types.RESET:
             return 0;
@@ -18,21 +26,9 @@ export const index = (state = 0, action) => {
     }
 };
 
-const initialScoreState = {
-    total: 0,
-    correct: 0,
-    binomial: '',
-    wrong: 0,
-    answer: '',
-    question: '',
-    fails: [],
-    passes: [],
-    success: false
-};
-
-export const score = (state = initialScoreState, action) => {
+export const score = (state = InitialState.score, action) => {
     switch(action.type) {
-        case types.MARK_ANSWER:
+        case types.UPDATE_SCORE:
             const score = { ...state, ...action.data };
             score.total++;
             if(score.success) {
@@ -61,29 +57,25 @@ export const score = (state = initialScoreState, action) => {
     }       
 };
 
-const initialiseItemsState = (pool, items) => {    
-    const itemsWithNames = helpers.addMultipleNames(pool, items, 6);
-    const itemsWithNamesAndImages = helpers.addMultipleImages(pool, itemsWithNames, 9)
-    const modifiedItems = itemsWithNamesAndImages.map(item => {
-        item.imageIndices = utils.randomiseSelection([1,2,3,4,5,6,7,8,9,10,11,12], 12, true);
-        return item;
-    });
-    return modifiedItems;
-};
+export const pool = (state = InitialState.itemPool, action) => {
+    switch(action.type) {
+        default:
+            return state;
+    }
+}
 
-const initialItemsState = initialiseItemsState(modules.pool, modules.items);
-const initialItemState = initialItemsState[0];
-
-export const items = (state = initialItemsState, action) => {
+export const items = (state = InitialState.items, action) => {
     switch(action.type) {
         case types.RESET:
             return action.data;
+        case types.NEXT_SET:
+            
         default:
             return state;
     }
 };
 
-export const item = (state = initialItemState, action) => {
+export const item = (state = InitialState.item, action) => {
     switch(action.type) {
         case types.NEXT_ITEM:
             return {...state, ...action.data};

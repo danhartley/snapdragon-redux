@@ -11,25 +11,31 @@ const makeActionCreator = action => {
     }
   }
 
-const markAnswer = makeActionCreator(types.MARK_ANSWER);
+const nextLesson = makeActionCreator(types.NEXT_LESSON);
+const updateScore = makeActionCreator(types.UPDATE_SCORE);
 const nextLayout = makeActionCreator(types.NEXT_LAYOUT);
 const nexItem = makeActionCreator(types.NEXT_ITEM);
-const endLesson = makeActionCreator(types.END_LESSON);
+const endRevision = makeActionCreator(types.END_REVISION);
 const updateHistory = makeActionCreator(types.UPDATE_HISTORY);
 const reset = makeActionCreator(types.RESET);
+// const nextSet = makeActionCreator(types.NEXT_SET);
 
-const boundMarkAnswer = data => store.dispatch(markAnswer(data));
+const boundNextLesson = data => store.dispatch(nextLesson(data));
+const boundUpdateScore = data => store.dispatch(updateScore(data));
 const boundNextLayout = data => store.dispatch(nextLayout(data));
 const boundNextItem = data => store.dispatch(nexItem(data,{delay:500}));
-const boundEndLesson = data => store.dispatch(endLesson(data));
+const boundEndRevision = data => store.dispatch(endRevision(data));
 const boundUpdateHistory = data => store.dispatch(updateHistory(data));
 const boundReset = data => store.dispatch(reset(data));
+// const boundNextSet = data => store.dispatch(nextSet(data));
 
 export const actions = {
-    boundMarkAnswer,
+    boundNextLesson,
+    boundUpdateScore,
     boundNextItem,
     boundNextLayout,
-    boundEndLesson,
+    boundEndRevision,
     boundUpdateHistory,
-    boundReset
+    boundReset,
+    // boundNextSet
 };

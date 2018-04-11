@@ -1,7 +1,8 @@
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
-import { renderAnswer, createNewCollection } from 'ui/helpers/helpers-for-screens';
+import { renderAnswer } from 'ui/helpers/helpers-for-screens';
 import { actions } from 'redux/actions/action-creators';
+import { batchUnIdentifiedItems, batchNextItems } from 'ui/helpers/helpers-for-screens';
 
 export const renderSummaryHeader = (score) => {
     DOM.headerTxt.innerHTML = 
@@ -13,7 +14,7 @@ export const renderSummaryHeader = (score) => {
 
 export const renderSummary = (index) => {
 
-    const { score, items, layouts } = store.getState();
+    const { score, items, layouts, pool } = store.getState();
 
     if(index !== layouts.length) return;
     
@@ -29,7 +30,7 @@ export const renderSummary = (index) => {
 
     const startOverBtn = document.querySelector('.js-start-over-btn');
     const tryAgainBtn = document.querySelector('.js-try-again-btn');
-    const newCollectionBtn = document.querySelector('.js-new-collection-btn');   
+    const learnMoreBtn = document.querySelector('.js-learn-more-btn');   
 
     startOverBtn.addEventListener('click', event => {
         actions.boundReset(items);
@@ -37,11 +38,19 @@ export const renderSummary = (index) => {
 
     if(score.fails.length > 0) {
         tryAgainBtn.addEventListener('click', event => {            
-            const newCollection = createNewCollection(items, score.fails);
-            actions.boundReset(newCollection); 
+            batchUnIdentifiedItems(score, items);    
+            actions.boundReset(unIdentifiedItems);
         });
     } else {
         tryAgainBtn.setAttribute('disabled', 'disabled');
     }
 
+    if(items.poolIndex + items.moduleSize <= items.poolCount) {
+        learnMoreBtn.addEventListener('click', event => {
+            const newItemsBatch = batchNextItems(items, pool);        
+            actions.boundReset(newItemsBatch);
+        });
+    } else {
+        learnMoreBtn.setAttribute('disabled', 'disabled');
+    }
 };

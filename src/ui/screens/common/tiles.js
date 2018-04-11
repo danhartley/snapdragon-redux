@@ -43,7 +43,7 @@ export const renderTiles = (screen, item, callbackTemplate) => {
 
             setTimeout(()=>{
                 const response = { taxon: 'name', binomial: item.name, question: item.name, answer: answer, success: correct };
-                actions.boundMarkAnswer(response);
+                actions.boundUpdateScore(response);
             },500);            
         });
     });

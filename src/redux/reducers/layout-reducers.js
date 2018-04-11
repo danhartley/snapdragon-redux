@@ -1,27 +1,30 @@
 import { types } from 'redux/actions/action-types';
-import { activeLayouts, reviseActiveLayouts } from 'syllabus/lesson-planner';
+import { prepareLessonPlan } from 'syllabus/lesson-planner';
 
-const initialLayoutsState = activeLayouts;
-const initialLayoutState = initialLayoutsState[0];
-let revisedLayoutState = null;
+let newLessonPlan = null;
  
-export const layouts = (state = initialLayoutsState, action) => {
+export const layouts = (state = null, action) => {
     switch(action.type) {
+        case types.NEXT_LESSON:
+            return action.data;
         case types.RESET:
+            const name = 'lesson1';
             const excludeRevision = true;
-            revisedLayoutState = reviseActiveLayouts(action.data.length, excludeRevision);
-            return revisedLayoutState;
+            newLessonPlan = prepareLessonPlan(name, action.data.length, excludeRevision);
+            return newLessonPlan;
         default:
             return state;
     }
 };
 
-export const layout = (state = initialLayoutState, action) => { 
+export const layout = (state = null, action) => { 
     switch(action.type) {
+        case types.NEXT_LESSON:
+            return action.data[0];
         case types.NEXT_LAYOUT:
             return action.data;
         case types.RESET:
-            return revisedLayoutState[0];
+            return newLessonPlan[0];
         default: 
             return state;
     }

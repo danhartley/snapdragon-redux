@@ -1,8 +1,11 @@
-import { utils } from 'utils/utils';
+import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 
 export const renderNextItem = (layout) => {
+
+    DOM.headerTxt.innerHTML = '';
+    DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
 
     const { items } = store.getState();
 

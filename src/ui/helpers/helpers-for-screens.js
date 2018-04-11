@@ -76,21 +76,6 @@ export const renderAnswerHeader = (response, header, target) => {
     return { text: renderAnswerText(response), colour, correct };
 };
 
-export const createNewCollection = (species, responses) => {
-
-    const newCollection = [];
-
-    species.forEach(sp => {
-        responses.map(response => {
-            if(response.binomial === sp.name) {
-                newCollection.push(sp);
-            }
-        });
-    });
-
-    return newCollection;
-};
-
 export const addListeners = (cards, item) => {
     cards.forEach(choice => {
 
@@ -119,8 +104,29 @@ export const addListeners = (cards, item) => {
             }
 
             setTimeout(()=>{
-                actions.boundMarkAnswer(score);
+                actions.boundUpdateScore(score);
             },500);            
         });
     });
+};
+
+export const batchNextItems = (items, pool) => {
+    const begin = items.poolIndex;
+    const end = items.poolIndex + items.moduleSize;
+    const newItems = pool.slice(begin, end);
+    newItems.moduleSize = items.moduleSize;
+    newItems.poolIndex = items.poolIndex + items.moduleSize;
+    newItems.poolCount = items.poolCount;
+    newItems.rounds = items.rounds;
+    newItems.currentRound = newItems.poolIndex / newItems.moduleSize;
+    return newItems;
+};
+
+export const batchUnIdentifiedItems = (score, items) => {
+    const fails = score.fails.map(fail => {
+        return items.filter(item => item.name === fail.binomial)[0];        
+    });
+    const unIdentifiedItems = fails.filter(utils.onlyUnique);
+    unIdentifiedItems.poolCount = items.poolCount;
+    return unIdentifiedItems; 
 };

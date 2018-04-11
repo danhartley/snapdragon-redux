@@ -1,1 +1,4 @@
-export const selectionSize = 3;
+export const config = {
+    moduleSize: 2,
+    active: 'lesson1'
+};
