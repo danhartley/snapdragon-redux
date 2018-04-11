@@ -2,7 +2,7 @@ import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderAnswer } from 'ui/helpers/helpers-for-screens';
 import { actions } from 'redux/actions/action-creators';
-import { utils } from 'utils/utils';
+import { batchUnIdentifiedItems, batchNextItems } from 'ui/helpers/helpers-for-screens';
 
 export const renderSummaryHeader = (score) => {
     DOM.headerTxt.innerHTML = 
@@ -14,7 +14,7 @@ export const renderSummaryHeader = (score) => {
 
 export const renderSummary = (index) => {
 
-    const { score, items, layouts } = store.getState();
+    const { score, items, layouts, pool } = store.getState();
 
     if(index !== layouts.length) return;
     
@@ -38,18 +38,19 @@ export const renderSummary = (index) => {
 
     if(score.fails.length > 0) {
         tryAgainBtn.addEventListener('click', event => {            
-            const fails = score.fails.map(fail => {
-                return items.filter(item => item.name === fail.binomial)[0];        
-            });
-            const uniqueFails = fails.filter(utils.onlyUnique);
-            uniqueFails.poolCount = items.poolCount;      
-            actions.boundReset(uniqueFails); 
+            batchUnIdentifiedItems(score, items);    
+            actions.boundReset(unIdentifiedItems);
         });
     } else {
         tryAgainBtn.setAttribute('disabled', 'disabled');
     }
 
-    learnMoreBtn.addEventListener('click', event => {
-        // actions.boundNextSet()
-    });   
+    if(items.poolIndex + items.moduleSize <= items.poolCount) {
+        learnMoreBtn.addEventListener('click', event => {
+            const newItemsBatch = batchNextItems(items, pool);        
+            actions.boundReset(newItemsBatch);
+        });
+    } else {
+        learnMoreBtn.setAttribute('disabled', 'disabled');
+    }
 };

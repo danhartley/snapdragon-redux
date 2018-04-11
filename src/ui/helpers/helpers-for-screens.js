@@ -1,4 +1,4 @@
-import { DOM } from 'ui/dom';
+    import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 
 export const renderCapital = str => {
@@ -108,4 +108,23 @@ export const addListeners = (cards, item) => {
             },500);            
         });
     });
+};
+
+export const batchNextItems = (items, pool) => {
+    const begin = items.poolIndex;
+    const end = items.poolIndex + items.moduleSize;
+    const newItems = pool.slice(begin, end);
+    newItems.moduleSize = items.moduleSize;
+    newItems.poolIndex = items.poolIndex + items.moduleSize;
+    newItems.poolCount = items.poolCount;
+    return newItems;
+};
+
+export const batchUnIdentifiedItems = (score, items) => {
+    const fails = score.fails.map(fail => {
+        return items.filter(item => item.name === fail.binomial)[0];        
+    });
+    const unIdentifiedItems = fails.filter(utils.onlyUnique);
+    unIdentifiedItems.poolCount = items.poolCount;
+    return unIdentifiedItems; 
 };

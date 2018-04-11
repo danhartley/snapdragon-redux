@@ -1,35 +1,35 @@
-import { renderCapital, renderName, renderAnswer, renderAnswerText } from 'ui/helpers/helpers-for-screens';
+import { renderCapital, renderName, renderAnswer, renderAnswerText, batchNextItems } from 'ui/helpers/helpers-for-screens';
 
-it('renderCapital should return first letter capitalised', () => {
+test('renderCapital should return first letter capitalised', () => {
     expect(renderCapital('chives')).toBe('Chives');
     expect(renderCapital('wild chives')).toBe('Wild Chives');
 });
 
-it('renderName should return binomial name where the answer is right', () =>{
+test('renderName should return binomial name where the answer is right', () =>{
     const response = { taxon: 'name', binomial: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Anagallis arvensis'};
     const correct = response.answer === response.question;
     expect(renderName(response, correct)).toBe('Anagallis arvensis');
 });
 
-it('renderName should return binomial name where the answer is wrong', () =>{
+test('renderName should return binomial name where the answer is wrong', () =>{
     const response = { taxon: 'name', binomial: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Rosmarinus officinalis'};
     const correct = response.answer === response.question;
     expect(renderName(response, correct)).toBe('Anagallis arvensis');
 });
 
-it('renderName should return vernacular name when the answer is right', () =>{
+test('renderName should return vernacular name when the answer is right', () =>{
     const response = { taxon: 'name', binomial: 'Anagallis arvensis', vernacular: 'Scarlet pimpernel', question: 'Scarlet Pimpernel', answer: 'Scarlet Pimpernel'};
     const correct = response.answer === response.question;
     expect(renderName(response, correct)).toBe('Scarlet Pimpernel');
 });
 
-it('renderName should return vernacular name when the answer is right but case is different', () =>{
+test('renderName should return vernacular name when the answer is right but case is different', () =>{
     const response = { taxon: 'name', binomial: 'Anagallis arvensis', vernacular: 'Scarlet pimpernel', question: 'Scarlet Pimpernel', answer: 'Scarlet Pimpernel'};
     const correct = response.answer === response.question;
     expect(renderName(response, correct)).toBe('Scarlet Pimpernel');
 });
 
-it('renderName should return vernacular name when the answer is wrong', () =>{
+test('renderName should return vernacular name when the answer is wrong', () =>{
     const response = { 
         taxon: 'name', 
         binomial: 'Anagallis arvensis', 
@@ -41,7 +41,7 @@ it('renderName should return vernacular name when the answer is wrong', () =>{
     expect(renderName(response, correct)).toBe('Scarlet Pimpernel');
 });
 
-it('renderAnswer for correct scientific name from multiple choice', () => {
+test('renderAnswer for correct scientific name from multiple choice', () => {
     const response = { 
         taxon: 'name', 
         binomial: 'Coriandrum sativum', 
@@ -51,12 +51,12 @@ it('renderAnswer for correct scientific name from multiple choice', () => {
     expect(renderAnswer(response)).toEqual('<span class=\"right\">Coriandrum sativum</span>');
 });
 
-it('renderAnswer for incorrect scientific name from multiple choice', () => {
+test('renderAnswer for incorrect scientific name from multiple choice', () => {
     const response = {    taxon: 'name', binomial: 'Coriandrum sativum', question: 'Coriandrum sativum', answer: 'Anagallis arvensis'}
     expect(renderAnswer(response)).toEqual('<span class=\"wrong\">Coriandrum sativum</span>');
 });
 
-it('renderAnswer for incorrect scientific name from text entry', () => {
+test('renderAnswer for incorrect scientific name from text entry', () => {
     const response = { binomial: 'Rosmarinus officinalis',
     species: 'officinalis',
     genus: 'Rosmarinus',
@@ -66,7 +66,7 @@ it('renderAnswer for incorrect scientific name from text entry', () => {
     expect(renderAnswer(response)).toEqual('<span class=\"wrong\">Rosmarinus officinalis</span>');
 });
 
-it('renderAnswer for correct Genus entry', () => {
+test('renderAnswer for correct Genus entry', () => {
     const response = {  
         binomial: 'Allium schoenoprasum',
         species: 'schoenoprasum',
@@ -78,7 +78,7 @@ it('renderAnswer for correct Genus entry', () => {
     expect(renderAnswer(response)).toEqual('<span class=\"right\">Allium</span> <span>schoenoprasum</span>');
 });
 
-it('renderAnswer for correct species text entry', () => {
+test('renderAnswer for correct species text entry', () => {
     const response = {
         binomial: 'Petroselinum crispum',
         species: 'crispum',
@@ -90,7 +90,7 @@ it('renderAnswer for correct species text entry', () => {
     expect(renderAnswer(response)).toEqual('<span>Petroselinum</span> <span class=\"right\">crispum</span>');
 });
 
-it('should renderAnswer for correct vernacular name from multipe choice', () => {
+test('should renderAnswer for correct vernacular name from multipe choice', () => {
     const response = {
         taxon: 'name',
         binomial: 'Mentha spicata',
@@ -101,7 +101,7 @@ it('should renderAnswer for correct vernacular name from multipe choice', () => 
     expect(renderAnswer(response)).toEqual('<span class=\"right\">Spearmint</span>');
 });
 
-it('should renderAnswer for incorrect vernacular name from multipe choice', () => {
+test('should renderAnswer for incorrect vernacular name from multipe choice', () => {
     const response = {
         taxon: 'name',
         binomial: 'Rosmarinus officinalis',
@@ -110,4 +110,19 @@ it('should renderAnswer for incorrect vernacular name from multipe choice', () =
         answer: 'Coriander'
     };
     expect(renderAnswer(response)).toEqual('<span class=\"wrong\">Rosemary</span>');
+});
+
+test('batchNextItems returns the next batch of items based on pool, items tested and lesson module size', () => {
+    
+    const pool = [ {a:1}, {b:2}, {c:3}, {d:4} ];
+    const items = [ {a:1}, {b:2} ];
+    const moduleSize = 2;
+
+    items.moduleSize = moduleSize;
+    items.pool = pool;
+    items.poolCount = pool.length;
+    items.poolIndex = moduleSize - 1;
+
+    const nextBatch = batchNextItems(items, pool);
+    expect(nextBatch.length).toBe(2);
 });

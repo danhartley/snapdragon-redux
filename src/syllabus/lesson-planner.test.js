@@ -5,9 +5,6 @@ import { prepareLessonPlan } from 'syllabus/lesson-planner';
 test('prepareLessonPlan returns lesson1 screens unchanged for given number of items', () => {
     const moduleSize = 2;
     const layouts = prepareLessonPlan('lesson1', moduleSize);
-
-    console.log(layouts);
-
     const revisedLayoutCount = layouts.length;
     let revisedScreens = [];
     layouts.map(layout => {
@@ -17,7 +14,7 @@ test('prepareLessonPlan returns lesson1 screens unchanged for given number of it
     expect(revisedScreens.length).toEqual(18); // 2*7 + 4 = 18
 });
 
-test.skip('prepareLessonPlan returns lesson1 missing revision screens for given number of items', () => {
+test('prepareLessonPlan returns lesson1 missing revision screens for given number of items', () => {
     const moduleSize = 2;
     const excludeRevision = true;
     const layouts = prepareLessonPlan('lesson1', moduleSize, excludeRevision);
