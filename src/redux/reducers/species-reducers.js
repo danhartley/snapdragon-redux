@@ -80,6 +80,7 @@ const initialiseItemsState = (state = initialLessonState) => {
         item.imageIndices = utils.randomiseSelection([1,2,3,4,5,6,7,8,9,10,11,12], 12, true);
         return item;
     });
+    modifiedItems.poolCount = state.pool.length;
     return modifiedItems;
 };
 

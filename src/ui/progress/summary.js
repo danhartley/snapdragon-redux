@@ -41,7 +41,8 @@ export const renderSummary = (index) => {
             const fails = score.fails.map(fail => {
                 return items.filter(item => item.name === fail.binomial)[0];        
             });
-            const uniqueFails = fails.filter(utils.onlyUnique);            
+            const uniqueFails = fails.filter(utils.onlyUnique);
+            uniqueFails.poolCount = items.poolCount;      
             actions.boundReset(uniqueFails); 
         });
     } else {

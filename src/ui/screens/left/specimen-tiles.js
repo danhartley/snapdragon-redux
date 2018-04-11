@@ -9,8 +9,8 @@ export const renderSpecimenTiles = (item) => {
     const count = items.length;
 
     (count === 1)
-        ? DOM.collectionTxt.innerHTML = `There is ${count} item in this test`
-        : DOM.collectionTxt.innerHTML = `There are ${count} items in this test`;
+        ? DOM.collectionTxt.innerHTML = `There is ${count} item of ${items.poolCount} in this test`
+        : DOM.collectionTxt.innerHTML = `There are ${count} items of ${items.poolCount} in this test`;
 
     const screen = layout.screens.filter(el => el.name === 'specimen-images')[0];
 
