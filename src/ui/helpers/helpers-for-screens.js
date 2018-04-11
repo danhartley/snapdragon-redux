@@ -1,4 +1,4 @@
-    import { DOM } from 'ui/dom';
+import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 
 export const renderCapital = str => {
@@ -117,6 +117,8 @@ export const batchNextItems = (items, pool) => {
     newItems.moduleSize = items.moduleSize;
     newItems.poolIndex = items.poolIndex + items.moduleSize;
     newItems.poolCount = items.poolCount;
+    newItems.rounds = items.rounds;
+    newItems.currentRound = newItems.poolIndex / newItems.moduleSize;
     return newItems;
 };
 

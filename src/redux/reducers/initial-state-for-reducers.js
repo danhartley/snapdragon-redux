@@ -18,6 +18,8 @@ const initItems = (itemPool, lesson) => {
     items.moduleSize = lesson.moduleSize;
     items.poolCount = lesson.pool.length;
     items.poolIndex = lesson.moduleSize;
+    items.rounds = items.poolCount / items.moduleSize;
+    items.currentRound = items.poolIndex / items.moduleSize;
     return items;
 }
 
