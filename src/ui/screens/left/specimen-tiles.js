@@ -6,7 +6,7 @@ export const renderSpecimenTiles = (item) => {
 
     const { layout, items } = store.getState();
 
-    DOM.collectionTxt.innerHTML = `Round ${items.currentRound} of ${items.rounds} [ ${items.poolCount} items in this test ]`;
+    DOM.collectionTxt.innerHTML = `Round ${items.currentRound} of ${items.rounds} [ ${items.poolCount} items in this lesson ]`;
 
     const screen = layout.screens.filter(el => el.name === 'specimen-images')[0];
 

@@ -28,9 +28,10 @@ export const renderCard = (item) => {
 
     const vernacularNames = template.content.querySelector('.js-txt-species-names');
 
-    const names = item.names.map(vernacular => {
-        if(vernacular.language === 'en')
-            return `<li>${vernacular.vernacularName}</li>`;
+    const names = item.names.filter(name => name.language === 'en').map((vernacular, index) => {
+            if(index < 6) {
+                return `<li>${vernacular.vernacularName}</li>`;
+        }
     }).join('');
 
     vernacularNames.innerHTML = `<ul>${names}</ul>`;

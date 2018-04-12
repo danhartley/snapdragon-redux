@@ -1,4 +1,6 @@
 import './snapdragon.css';
+import './snapdragon-media1024.css';
+import './snapdragon-media1200.css';
 
 import { store } from 'redux/store';
 import { observeStore } from 'redux/observe-store';
