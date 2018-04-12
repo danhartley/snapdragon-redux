@@ -14,7 +14,7 @@ export const renderSummaryHeader = (score) => {
 
 export const renderSummary = (index) => {
 
-    const { score, items, layouts, pool } = store.getState();
+    const { score, items, layouts, pool, config } = store.getState();
 
     if(index !== layouts.length) return;
     
@@ -31,6 +31,8 @@ export const renderSummary = (index) => {
     const startOverBtn = document.querySelector('.js-start-over-btn');
     const tryAgainBtn = document.querySelector('.js-try-again-btn');
     const learnMoreBtn = document.querySelector('.js-learn-more-btn');   
+    const nextLevelBtn = document.querySelector('.js-next-level-btn');
+    const nextLessonBtn = document.querySelector('.js-next-lesson-btn');
 
     startOverBtn.addEventListener('click', event => {
         actions.boundReset(items);
@@ -53,4 +55,10 @@ export const renderSummary = (index) => {
     } else {
         learnMoreBtn.setAttribute('disabled', 'disabled');
     }
+
+    nextLevelBtn.addEventListener('click', event => {
+        const newConfig = config.goToNextLevel(layouts.levelName);
+        items.config = newConfig;
+        actions.boundReset(items);
+    });
 };

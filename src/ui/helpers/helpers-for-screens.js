@@ -1,3 +1,4 @@
+import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 
@@ -119,6 +120,7 @@ export const batchNextItems = (items, pool) => {
     newItems.poolCount = items.poolCount;
     newItems.rounds = items.rounds;
     newItems.currentRound = newItems.poolIndex / newItems.moduleSize;
+    newItems.lesson = items.lesson;
     return newItems;
 };
 
