@@ -1,13 +1,13 @@
 
 import { types } from 'redux/actions/action-types';
-import { config } from 'syllabus/lesson-config';
+import { config as lessonConfig } from 'syllabus/lesson-config';
 import { modules } from 'syllabus/lesson-modules';
 import { InitialState } from 'redux/reducers/initial-state-for-reducers';
 
-export const lesson = (state = config, action) => {
+export const config = (state = lessonConfig, action) => {
     switch(action.type) {
-        case types.NEXT_LESSON:
-            return action.data;
+        case types.RESET:
+            return action.data.config;
         default: 
             return state;
     }

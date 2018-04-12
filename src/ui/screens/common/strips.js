@@ -16,9 +16,12 @@ export const renderStrips = (screen, item, callback) => {
 
             const vernacularQuestion = item.names.filter(name => name.language === 'en')[0].vernacularName;
 
-        return { id: item.id, binomial: item.name, 
-            vernacularQuestion: vernacularQuestion, vernacularAnswer: vernacularNames[0],
-            binomialAnswer: answer.name    
+        return {
+                id: item.id, 
+                binomial: item.name, 
+                vernacularQuestion: vernacularQuestion, 
+                vernacularAnswer: vernacularNames[0],
+                binomialAnswer: answer.name
         };
    }));
                     

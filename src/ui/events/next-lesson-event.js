@@ -1,19 +1,24 @@
 import { store } from 'redux/store';
-import { prepareLessonPlan } from 'syllabus/lesson-planner';
+import { createLessonPlan } from 'syllabus/lesson-planner';
 import { actions } from 'redux/actions/action-creators';
+
+let hasInitiatedLesson = false;
 
 export const prepareNextLesson = (index) => {
 
-    if(index > 0) return;
+    if(hasInitiatedLesson) return;
 
-    const { lesson } = store.getState();
+    hasInitiatedLesson = true;
 
-    // option to check db, local storage, etc. for user-specific lesson data
+    const { config } = store.getState();
 
-    if(lesson.length > 0) return;
+    // option to check db, local storage, etc. for user-specific lesson config settings
+    // this only runs once, after that lessons, layouts and lesson items come from the reset action event
 
-    const nextLesson = prepareLessonPlan(lesson.active, lesson.moduleSize);
+    const lessonName = config.lessons.filter(lesson => lesson.id === config.active.lesson)[0].name;
+    const levelName = config.levels.filter(level => level.id === config.active.level)[0].name;
 
-    actions.boundNextLesson(nextLesson);
+    const nextLessonLayouts = createLessonPlan(lessonName, levelName, config.moduleSize);
 
+    actions.boundNextLesson(nextLessonLayouts);
 };

@@ -12,7 +12,7 @@ const binomials = flora[2]
 
 const pool = utils.shuffleArray(binomials);
 
-const prepareModule = moduleSize => {    
+const createLessonModule = moduleSize => {    
     const items = pool
         .filter((item, index) => {
             if(index < moduleSize) return item;
@@ -27,5 +27,5 @@ const prepareModule = moduleSize => {
 
 export const modules = {
     pool,
-    prepareModule
+    createLessonModule
 };

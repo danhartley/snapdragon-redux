@@ -1,6 +1,6 @@
 import { screens } from 'ui/layouts/species-layouts';
 
-const { specimen, revision, species, vernaculars, scientifics, summary, history } = screens;
+const { specimen, revision, species, vernaculars, scientifics, summary, history, text } = screens;
 
 const layout1 = {
     name: 'revision',
@@ -34,9 +34,24 @@ const layout4 = {
     ]
 };
 
-export const lesson1Layouts = {
-    layout1,
-    layout2,
-    layout3,
-    layout4
+const layout5 = {
+    name: 'test',
+    screens: [
+        { ...specimen },
+        { ...text, template: 'js-genus-entry-template', taxon: 'genus'}
+    ]
 };
+
+const lesson1 = {
+    level1:
+        [ layout1,
+          layout2,
+          layout3,
+          layout4 ],
+    level2:
+        [ layout1,
+          layout5 ]
+};
+export const lessonPlans = {
+    lesson1
+}

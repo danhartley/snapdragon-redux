@@ -9,6 +9,8 @@ export const renderNextItem = (layout) => {
 
     const { items } = store.getState();
 
+    // option to check db, local storage, etc. for user-specific lesson data
+
     const nextItem = items[layout.itemIndex];
     
     actions.boundNextItem(nextItem);

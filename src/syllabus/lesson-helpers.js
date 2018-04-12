@@ -1,8 +1,13 @@
-export const createLesson = (name, moduleSize, layouts, progressScreens) => {
+export const createLessonLayouts = (lessonName, levelName, moduleSize, layouts, progressScreens, excludeRevision) => {
     
+    if(excludeRevision) {
+        layouts = layouts.filter(layout => layout.name !== 'revision');
+    }
+
     const lessonPlan = [];
 
-    lessonPlan.name = name;
+    lessonPlan.lessonName = lessonName;
+    lessonPlan.levelName = levelName;
 
     let layoutIndex = 0;
 
@@ -10,7 +15,7 @@ export const createLesson = (name, moduleSize, layouts, progressScreens) => {
 
         let i = 0;
         do {
-            lessonPlan.push({...layout, layoutIndex: layoutIndex, itemIndex: i, exerciseIndex: index + 1});
+            lessonPlan.push({...layout, layoutIndex: layoutIndex, itemIndex: i, exerciseIndex: index + 1, lessonName, levelName});
             lessonPlan[lessonPlan.length - 1].layoutIndex = layoutIndex;
             layoutIndex = layoutIndex + 1;
             i = i + 1;

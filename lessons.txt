@@ -1,10 +1,29 @@
-// Take collectin or set of 12 items
-// Take first 3 items from the colletion
-// Show the:
-// LEFT: specimen images RIGHT: species card
-// Show the:
-// LEFT: specimen images RIGHT: multiple choice species image tiles
-// Show the:
-// LEFT: specimen images RIGHT: multiple choice species vernacular names
-// Show the:
-// LEFT: specimen images RIGHT: multiple choice species scientific names
+Take collection or set of 12 items
+Take first 3 items from the collection
+    Show the:
+    LEFT: specimen images RIGHT: species card
+    Show the:
+    LEFT: specimen images RIGHT: multiple choice species image tiles
+    Show the:
+    LEFT: specimen images RIGHT: multiple choice species vernacular names
+    Show the:
+    LEFT: specimen images RIGHT: multiple choice species scientific names
+
+
+    Show the:
+    LEFT: specimen images RIGHT: species card
+    Show the:
+    LEFT: specimen images RIGHT: genus text entry
+    
+
+TODO:
+
+More lessons
+Links to EOL, Wikipedia, etc.
+Review history display
+
+Collection information
+Species pages
+
+Habits article for LinkedInç
+
