@@ -1282,6 +1282,11 @@ export const flora =
     ],
     "names": [
       {
+        "vernacularName": "spreading bellflower",
+        "language": "en",
+        "eol_preferred": true
+      },
+      {
         "vernacularName": "Campanule érinus, Campanule à petites fleurs",
         "language": "fr",
         "eol_preferred": true
@@ -4897,6 +4902,11 @@ export const flora =
       "http://media.eol.org/content/2015/04/30/14/00259_orig.jpg"
     ],
     "names": [
+      {
+        "vernacularName": "Sinapis",
+        "language": "en",
+        "eol_preferred": true
+      },
       {
         "vernacularName": "Moutarde de Maire",
         "language": "fr",

@@ -8,12 +8,12 @@ test('config should have default active lesson and level', () => {
 });
 
 test('config should return next available level', () => {
-    const newConfig = config.goToNextLevel('level1');
+    const newConfig = config.nextLevel('level1');
     expect(newConfig.active.level).toEqual(2);
 });
 
 test('config should return current level where there is no next available level', () => {
-    const newConfig = config.goToNextLevel('level2');
+    const newConfig = config.nextLevel('level2');
     expect(newConfig.active.level).toEqual(2);
     expect(newConfig.active.level).toEqual(2);
 });

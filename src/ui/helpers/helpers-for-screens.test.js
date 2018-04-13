@@ -1,4 +1,4 @@
-import { renderCapital, renderName, renderAnswer, renderAnswerText, batchNextItems } from 'ui/helpers/helpers-for-screens';
+import { renderCapital, renderName, renderAnswer, renderAnswerText, nextModule } from 'ui/helpers/helpers-for-screens';
 
 test('renderCapital should return first letter capitalised', () => {
     expect(renderCapital('chives')).toBe('Chives');
@@ -112,7 +112,7 @@ test('should renderAnswer for incorrect vernacular name from multipe choice', ()
     expect(renderAnswer(response)).toEqual('<span class=\"wrong\">Rosemary</span>');
 });
 
-test('batchNextItems returns the next batch of items based on pool, items tested and lesson module size', () => {
+test('nextModule returns the next batch of items based on pool, items tested and lesson module size', () => {
     
     const pool = [ {a:1}, {b:2}, {c:3}, {d:4} ];
     const items = [ {a:1}, {b:2} ];
@@ -123,6 +123,6 @@ test('batchNextItems returns the next batch of items based on pool, items tested
     items.poolCount = pool.length;
     items.poolIndex = moduleSize - 1;
 
-    const nextBatch = batchNextItems(items, pool);
+    const nextBatch = nextModule(items, pool);
     expect(nextBatch.length).toBe(2);
 });

@@ -2,7 +2,7 @@ import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderAnswer } from 'ui/helpers/helpers-for-screens';
 import { actions } from 'redux/actions/action-creators';
-import { batchUnIdentifiedItems, batchNextItems } from 'ui/helpers/helpers-for-screens';
+import { revisionModule, nextModule, repeatModule } from 'ui/helpers/helpers-for-screens';
 import { createLessonPlan } from 'syllabus/lesson-planner';
 
 export const renderSummaryHeader = (score) => {
@@ -42,15 +42,18 @@ export const renderSummary = (index) => {
         
         switch(btn) {
             case startOverBtn:
+                data.items = repeatModule(items, pool);
                 break;
             case tryAgainBtn:
-                data.items = batchUnIdentifiedItems(score, items);
+                data.items = revisionModule(score, items);
                 break;
             case learnMoreBtn:
-                data.items = batchNextItems(items, pool);
+                data.items = nextModule(items, pool);
+                data.excludeRevision = false;
                 break;
             case nextLevelBtn:
-                data.config = config.goToNextLevel(layouts.levelName);
+                data.items = repeatModule(items, pool);
+                data.config = config.nextLevel(layouts.levelName);
                 break;
         }
 

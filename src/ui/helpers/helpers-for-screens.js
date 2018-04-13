@@ -94,43 +94,56 @@ export const addListeners = (cards, item) => {
             DOM.rightHeader.style.backgroundColor = colour;
 
             target.style.color = colour;
-            // target.parentNode.style.background = colour;
-
-            if(!correct) {
-                cards.forEach(card => {
-                    if(card.innerText === item.name) {
-                        //card.parentNode.style.background = 'rgb(44, 141, 86)';
-                    }
-                });
-            }
 
             setTimeout(()=>{
                 actions.boundUpdateScore(score);
-            },500);
+            },1000);
             
             event.stopPropagation();
         });
     });
 };
 
-export const batchNextItems = (items, pool) => {
-    const begin = items.poolIndex;
-    const end = items.poolIndex + items.moduleSize;
-    const newItems = pool.slice(begin, end);
-    newItems.moduleSize = items.moduleSize;
-    newItems.poolIndex = items.poolIndex + items.moduleSize;
-    newItems.poolCount = items.poolCount;
-    newItems.rounds = items.rounds;
-    newItems.currentRound = newItems.poolIndex / newItems.moduleSize;
-    newItems.lesson = items.lesson;
-    return newItems;
+export const repeatModule = (items, pool) => {
+    const prevIndex = items.poolIndex - items.moduleSize;
+    const currIndex = items.poolIndex;
+    const mod = pool.slice(prevIndex, currIndex);
+
+    mod.moduleSize = items.moduleSize;
+    mod.poolIndex = currIndex;
+    mod.poolCount = items.poolCount;
+    mod.rounds = items.rounds;
+    mod.currentRound = items.currentRound;
+    
+    return mod;
 };
 
-export const batchUnIdentifiedItems = (score, items) => {
+export const nextModule = (items, pool) => {
+    
+    const currIndex = items.poolIndex;
+    const nextIndex = items.poolIndex + items.moduleSize;
+    const nextMod = pool.slice(currIndex, nextIndex);
+
+    nextMod.moduleSize = items.moduleSize;
+    nextMod.poolIndex = nextIndex;
+    nextMod.poolCount = items.poolCount;
+    nextMod.rounds = items.rounds;
+    nextMod.currentRound = nextMod.poolIndex / nextMod.moduleSize;
+
+    return nextMod;
+};
+
+export const revisionModule = (score, items) => {
     const fails = score.fails.map(fail => {
         return items.filter(item => item.name === fail.binomial)[0];        
     });
-    const unIdentifiedItems = fails.filter(utils.onlyUnique);
-    unIdentifiedItems.poolCount = items.poolCount;
-    return unIdentifiedItems; 
+    const revisionMod = fails.filter(utils.onlyUnique);
+    
+    revisionMod.moduleSize = items.moduleSize;
+    revisionMod.poolIndex = items.poolIndex;
+    revisionMod.poolCount = items.poolCount;
+    revisionMod.rounds = items.rounds;
+    revisionMod.currentRound = items.currentRound;
+    
+    return revisionMod; 
 };
