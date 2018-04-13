@@ -2,8 +2,6 @@
     <head>
         <meta http-equiv="content-type" content="text/html;charset=utf-8">
         <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <!-- <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="mobile-web-app-capable" content="yes"> -->
         <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
     </head>
     <body>
@@ -143,29 +141,6 @@
                         <div class="species-card-btn"><button style="display:none;">Continue</button></div>
                     </div>
             </template>
-
-            
-            <script>
-              document.addEventListener("click", function() {
-                    toggleFullScreen();
-              }, false);
-
-              function toggleFullScreen() {
-                    var doc = window.document;
-                    var docEl = doc.documentElement;
-
-                    var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
-                    var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
-
-                    if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
-                        requestFullScreen.call(docEl);
-                    }
-                    else {
-                        cancelFullScreen.call(doc);
-                    }
-                }
-            </script>
-
     </body>
 </html>
 
