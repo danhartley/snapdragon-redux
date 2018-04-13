@@ -99,7 +99,7 @@ grid-template-areas: "header"
   grid-area: header;
   height: 22px;
   background-color: rgb(128, 128, 128);
-  padding: 5px 0 0 5px;
+  padding: 2px 0 0 5px;
   font-size: 1em;
 }
 
@@ -107,7 +107,7 @@ grid-template-areas: "header"
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 92px;
+  grid-template-rows: 95px;
   grid-template-areas: "one two"
                        "three four"
                        "five six"
@@ -125,7 +125,7 @@ grid-template-areas: "header"
 
 .rectangles img {
   object-fit: cover;
-  height: 92px;
+  height: 95px;
   width: 142px;
 }
 
@@ -324,7 +324,7 @@ a {
 }
 
 .tile {
-  width: 92px;
+  width: 95px;
 }
 
 .tile :nth-child(1) {
@@ -367,7 +367,7 @@ a {
   object-fit: cover;
   cursor: pointer;
   height: 95px;
-  width: 92px;
+  width: 95px;
 }
 
 .summary, .history {

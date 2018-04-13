@@ -67,7 +67,7 @@ export const pool = (state = InitialState.itemPool, action) => {
 export const items = (state = InitialState.items, action) => {
     switch(action.type) {
         case types.RESET:
-            return action.data;
+            return action.data.items;
         case types.NEXT_SET:
             
         default:
@@ -80,7 +80,7 @@ export const item = (state = InitialState.item, action) => {
         case types.NEXT_ITEM:
             return {...state, ...action.data};
         case types.RESET:
-            return action.data[0];
+            return action.data.items[0];
         default:
             return state;
     }

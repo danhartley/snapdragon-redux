@@ -3,6 +3,7 @@ import { DOM } from 'ui/dom';
 import { renderAnswer } from 'ui/helpers/helpers-for-screens';
 import { actions } from 'redux/actions/action-creators';
 import { batchUnIdentifiedItems, batchNextItems } from 'ui/helpers/helpers-for-screens';
+import { createLessonPlan } from 'syllabus/lesson-planner';
 
 export const renderSummaryHeader = (score) => {
     DOM.headerTxt.innerHTML = 
@@ -34,31 +35,40 @@ export const renderSummary = (index) => {
     const nextLevelBtn = document.querySelector('.js-next-level-btn');
     const nextLessonBtn = document.querySelector('.js-next-lesson-btn');
 
-    startOverBtn.addEventListener('click', event => {
-        actions.boundReset(items);
-    });
+    const handleBtnClickEvent = event => {
+        
+        const btn = event.target;
+        const data = { items, config, excludeRevision: true };
+        
+        switch(btn) {
+            case startOverBtn:
+                break;
+            case tryAgainBtn:
+                data.items = batchUnIdentifiedItems(score, items);
+                break;
+            case learnMoreBtn:
+                data.items = batchNextItems(items, pool);
+                break;
+            case nextLevelBtn:
+                data.config = config.goToNextLevel(layouts.levelName);
+                break;
+        }
 
-    if(score.fails.length > 0) {
-        tryAgainBtn.addEventListener('click', event => {            
-            batchUnIdentifiedItems(score, items);    
-            actions.boundReset(unIdentifiedItems);
-        });
-    } else {
-        tryAgainBtn.setAttribute('disabled', 'disabled');
-    }
+        const lessonName = data.config.lessons.filter(lesson => lesson.id === data.config.active.lesson)[0].name;
+        const levelName = data.config.levels.filter(level => level.id === data.config.active.level)[0].name;
 
-    if(items.poolIndex + items.moduleSize <= items.poolCount) {
-        learnMoreBtn.addEventListener('click', event => {
-            const newItemsBatch = batchNextItems(items, pool);        
-            actions.boundReset(newItemsBatch);
-        });
-    } else {
-        learnMoreBtn.setAttribute('disabled', 'disabled');
-    }
+        data.layouts = createLessonPlan(lessonName, levelName, data.items.length, data.excludeRevision);
 
-    nextLevelBtn.addEventListener('click', event => {
-        const newConfig = config.goToNextLevel(layouts.levelName);
-        items.config = newConfig;
-        actions.boundReset(items);
-    });
+        actions.boundReset(data);
+    };
+
+    startOverBtn.addEventListener('click', handleBtnClickEvent);
+
+    if(score.fails.length > 0) tryAgainBtn.addEventListener('click', handleBtnClickEvent);
+    else tryAgainBtn.setAttribute('disabled', 'disabled');
+
+    if(items.poolIndex + items.moduleSize <= items.poolCount) learnMoreBtn.addEventListener('click', handleBtnClickEvent);
+    else learnMoreBtn.setAttribute('disabled', 'disabled');
+
+    nextLevelBtn.addEventListener('click', handleBtnClickEvent);
 };

@@ -5583,6 +5583,11 @@ export const flora =
         "language": "ar"
       },
       {
+        "vernacularName": "Mint",
+        "language": "en",
+        "eol_preferred": true
+      },
+      {
         "vernacularName": "spearmint",
         "language": "en",
         "eol_preferred": true
@@ -5784,7 +5789,12 @@ export const flora =
         "language": "de"
       },
       {
-        "vernacularName": "Common Sage",
+        "vernacularName": "Sage",
+        "language": "en",
+        "eol_preferred": true
+      },
+      {
+        "vernacularName": "Wild Sage",
         "language": "en",
         "eol_preferred": true
       },
@@ -6305,7 +6315,12 @@ export const flora =
         "language": "de"
       },
       {
-        "vernacularName": "garden thyme",
+        "vernacularName": "Thyme",
+        "language": "en",
+        "eol_preferred": true
+      },
+      {
+        "vernacularName": "Garden Thyme",
         "language": "en",
         "eol_preferred": true
       },
@@ -6431,16 +6446,20 @@ export const flora =
         "language": "de"
       },
       {
-        "vernacularName": "French Tarragon",
+        "vernacularName": "Tarragon",
         "language": "en",
         "eol_preferred": true
-      },
+      },      
       {
         "vernacularName": "Russian Tarragon",
         "language": "en"
       },
       {
         "vernacularName": "True Tarragon",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Wild Tarragon",
         "language": "en"
       },
       {
@@ -6638,6 +6657,11 @@ export const flora =
         "language": "de"
       },
       {
+        "vernacularName": "Parsley",
+        "language": "en",
+        "eol_preferred": true
+      },
+      {
         "vernacularName": "Hamburg Parsley",
         "language": "en",
         "eol_preferred": true
@@ -6656,10 +6680,6 @@ export const flora =
       },
       {
         "vernacularName": "Plainleaf Parsley",
-        "language": "en"
-      },
-      {
-        "vernacularName": "parsley",
         "language": "en"
       },
       {
@@ -6761,12 +6781,12 @@ export const flora =
         "language": "de"
       },
       {
-        "vernacularName": "wild chives",
+        "vernacularName": "Chives",
         "language": "en",
         "eol_preferred": true
       },
       {
-        "vernacularName": "Chives",
+        "vernacularName": "Wild Chives",
         "language": "en"
       },
       {
@@ -6904,9 +6924,8 @@ export const flora =
         "language": "de"
       },
       {
-        "vernacularName": "oregano",
-        "language": "en",
-        "eol_preferred": true
+        "vernacularName": "Oregano",
+        "language": "en"
       },
       {
         "vernacularName": "Compact Oregano",
