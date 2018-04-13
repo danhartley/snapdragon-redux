@@ -1,0 +1,86 @@
+@media (min-width: 1024px) {
+
+    body { 
+        font-size: 15px;
+      }      
+
+    .left-grid {
+        grid-template-columns: 512px;
+        grid-template-rows: 60px 512px 60px;
+    }
+
+    .right-grid {
+        grid-template-columns: 512px;
+        grid-template-rows: 60px 512px 60px;
+    }
+
+    .squares {
+        grid-template-columns: 256px 256px;
+        grid-template-rows: 256px;
+    }
+    .squares img {
+        height: 256px;
+        width: 256px;
+    }
+
+    .header, .footer {
+        height: 60px;
+        padding: 20px 0 0 20px;
+    }
+
+    .answer {
+        height: 160px;
+    }
+    .answer button {
+        width: 196px;
+    }
+  
+    .rectangles {
+        grid-template-rows: 160px;
+    }
+  
+    .strips {
+        grid-template-rows: repeat(6,84px);
+        padding: 20px;
+    }
+  
+    .letterbox {
+        grid-template-rows: 206px 100px 206px;
+    }
+  
+    .letterbox input.short {
+        width: 230px;
+    }
+    
+    .letterbox input.long {
+        width: 300px;
+    }
+    
+    .letterbox button {
+      margin: 0 5px;
+      width: 80px;
+    }
+  
+    .tiles {
+      height: 512px;
+      width: 512px;
+    }
+    .tile {
+        width: 170px;
+    }
+    .tile img {
+        object-fit: cover;
+        cursor: pointer;
+        height: 170px;
+        width: 170px;
+    }
+
+    .species-description-grid {
+        grid-template-rows: 50px 2fr 5fr 100px;
+    }
+
+    /* .tile :nth-child(7), .tile :nth-child(8), .tile :nth-child(9),
+    .tile :nth-child(7) img, .tile :nth-child(8) img, .tile :nth-child(9) img {
+        height: 172px;
+    }  */
+}

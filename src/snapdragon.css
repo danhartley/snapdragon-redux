@@ -1,4 +1,12 @@
+/* @media (min-width: 1px) and (orientation: landscape) { */
+
 * {box-sizing: border-box;}  
+
+body { 
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+}
 
 .grid {
   display: grid;
@@ -17,8 +25,8 @@
   display: grid;
   grid-column: 2;
   grid-auto-flow: column;
-  grid-template-columns: 512px;
-  grid-template-rows: 60px 512px 60px;
+  grid-template-columns: 284px;
+  grid-template-rows: 22px 276px 22px;
   grid-template-areas: "header"
                       "squares"
                       "footer"
@@ -28,49 +36,26 @@
 display: grid;
 grid-column: 4;
 grid-auto-flow: column;
-grid-template-columns: 512px;
-grid-template-rows: 60px 512px 60px;
+grid-template-columns: 284px;
+grid-template-rows: 22px 276px 22px;
 grid-template-areas: "header"
                      "squares"
                      "footer"
 }
 
-@media (min-width: 1200px) {
-.left-grid {
-  grid-template-columns: 600px;
-  grid-template-rows: 60px 600px 60px;
-}
-
-.right-grid {
-  grid-template-columns: 600px;
-  grid-template-rows: 60px 600px 60px;
- }
-}
-
 .squares {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: 256px 256px;
-  grid-template-rows: 256px;
+  grid-template-columns: 142px 142px;
+  grid-template-rows: 138px;
   grid-template-areas: "one two"
                        "three four"
 }
 
 .squares img {
   object-fit: cover;
-  height: 256px;
-  width: 256px;
-}
-
-@media (min-width: 1200px) {
-  .squares {
-    grid-template-columns: 300px 300px;
-    grid-template-rows: 300px;
-  }
-  .squares img {
-    height: 300px;
-    width: 300px;
-  }
+  height: 138px;
+  width: 142px;
 }
 
 .square:nth-child(1) {
@@ -91,16 +76,10 @@ grid-template-areas: "header"
 
 .footer {
   grid-area: footer;
-  height: 60px;
-  padding: 20px 0 0 20px;
+  height: 22px;
+  padding: 5px 0 0 5px;
   background-color: rgb(192, 58, 72);
   color: black;
-}
-
-@media (min-width: 1200px) {
-  .footer {
-    height: 60px;
-  }
 }
 
 .answer {
@@ -109,39 +88,26 @@ grid-template-areas: "header"
   padding: 10px;
   text-transform: capitalize;
   cursor: pointer;
-  height: 160px;
+  height: 80px;
 }
 
 .answer button {
-  width: 196px;
+  width: 98px;
 }
 
 .header {
   grid-area: header;
-  height: 60px;
+  height: 22px;
   background-color: rgb(128, 128, 128);
-  padding: 20px 0 0 20px;
+  padding: 2px 0 0 5px;
   font-size: 1em;
-}
-
-@media (min-width: 1200px) {
-  .answer {
-    height: 180px;
-  }
-  .answer button {
-    width: 240px;
-  }
-  .header {
-    height: 60px;
-  }
 }
 
 .rectangles {
   display: grid;
   grid-auto-flow: column;
-  background-color: steelblue;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 160px;
+  grid-template-rows: 95px;
   grid-template-areas: "one two"
                        "three four"
                        "five six"
@@ -157,35 +123,17 @@ grid-template-areas: "header"
                        "seven eight nine";
 }
 
-@media (min-width: 1200px) {
-  .rectangles {
-    grid-template-rows: 200px;
-  }
-}
-
 .rectangles img {
   object-fit: cover;
-  height: 200px;
-  width: 300px;
-}
-
-.rectangle img.thumb {
-  object-fit: cover;
-  height: 100px;
-  width: 100px;
+  height: 95px;
+  width: 142px;
 }
 
 .strips {
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: repeat(6,84px);
-  padding: 20px;
-}
-
-@media (min-width: 1200px) {
-  .strips {
-    grid-template-rows: repeat(6,100px);
-  }
+  grid-template-rows: repeat(6,46px);
+  padding: 5px;
 }
 
 .strip {
@@ -236,16 +184,10 @@ grid-template-areas: "header"
   display: grid;
   grid-auto-flow: row;
   background-color: rgb(85, 165, 119);
-  grid-template-rows: 206px 100px 206px;
+  grid-template-rows: 103px 50px 103px;
   grid-template-areas: "one"
                        "two"
                        "three"
-}
-
-@media (min-width: 1200px) {
-  .letterbox {
-    grid-template-rows: 256px 100px 256px;
-  }
 }
 
 .letterbox div:nth-child(1) {
@@ -275,31 +217,16 @@ grid-template-areas: "header"
 }
 
 .letterbox input.short {
-  width: 230px;
+  width: 115px;
 }
 
 .letterbox input.long {
-  width: 300px;
+  width: 150px;
 }
 
 .letterbox button {
   margin: 0 5px;
   width: 80px;
-}
-
-@media (min-width: 1200px) {
-  .letterbox input.short {
-    width: 300px;
-  }
-  
-  .letterbox input.long {
-    width: 450px;
-  }
-  
-  .letterbox button {
-    margin: 0 5px;
-    width: 100px;
-  }
 }
 
 .right {
@@ -324,7 +251,7 @@ grid-template-areas: "header"
 .species-description-grid {
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: 50px 2fr 5fr 100px;
+  grid-template-rows: 30px 1fr 3fr 20px;
   grid-template-areas:  "family"
                         "name"
                         "names"
@@ -397,7 +324,7 @@ a {
 }
 
 .tile {
-  width: 170px;
+  width: 95px;
 }
 
 .tile :nth-child(1) {
@@ -439,24 +366,8 @@ a {
 .tile img {
   object-fit: cover;
   cursor: pointer;
-  height: 170px;
-  width: 170px;
-}
-
-@media (min-width: 1200px) {
-  .tiles {
-    height: 600px;
-    width: 600px;
-  }
-  .tile {
-    width: 200px;
-  }
-  .tile img {
-    object-fit: cover;
-    height: 200px;
-    width: 200px;
-    cursor: pointer;
-  }
+  height: 95px;
+  width: 95px;
 }
 
 .summary, .history {
@@ -487,7 +398,7 @@ button {
 	cursor:pointer;
 	color:#666666;
 	font-family:Arial;
-	font-size:15px;
+	font-size:1em;
 	font-weight:bold;
 	padding:6px;
 	text-decoration:none;
@@ -515,3 +426,4 @@ button:focus {
 button:disabled {
   cursor: not-allowed;
 }
+/* } */
