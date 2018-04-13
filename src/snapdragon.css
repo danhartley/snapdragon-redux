@@ -99,9 +99,13 @@ grid-template-areas: "header"
   grid-area: header;
   height: 22px;
   background-color: rgb(128, 128, 128);
-  padding: 2px 0 0 5px;
+  padding: 4px 0 0 5px;
   font-size: 1em;
 }
+
+/* .right-grid .header {
+  padding: 0 0 0 5px;
+} */
 
 .rectangles {
   display: grid;
@@ -176,15 +180,15 @@ grid-template-areas: "header"
 }
 
 .right-body {
-  background-color: rgba(44, 141, 86, .8);
+  background-color: rgb(50, 50, 50);
 }
 
 .letterbox {
   grid-area: letterbox;
   display: grid;
   grid-auto-flow: row;
-  background-color: rgb(85, 165, 119);
-  grid-template-rows: 103px 50px 103px;
+  background-color: rgb(128, 128, 128);
+  grid-template-rows: 42px 200px 42px;
   grid-template-areas: "one"
                        "two"
                        "three"
@@ -205,11 +209,14 @@ grid-template-areas: "header"
 }
 
 .letterbox span {
-  font-size: 1.2em;
+  margin: 10px 0 10px 5px;
+  font-size: 1.4em;
   color: #fff;
+  display: block;
 }
 
-.letterbox input {  
+.letterbox input {
+  margin: 10px 0;
   height: 42px;
   font-size: 1.4em;
   padding: 5px;
@@ -217,7 +224,7 @@ grid-template-areas: "header"
 }
 
 .letterbox input.short {
-  width: 115px;
+  width: 265px;
 }
 
 .letterbox input.long {
@@ -225,27 +232,29 @@ grid-template-areas: "header"
 }
 
 .letterbox button {
-  margin: 0 5px;
-  width: 80px;
+  margin: 0px;
+  width: 260px;
 }
 
 .right {
   display: inline-block;
-  padding: 3px;
   background-color: rgb(255, 255, 255);
   color: rgb(44, 141, 86);
 }
 
 .wrong {
   display: inline-block;
-  padding: 3px;
   background-color: rgb(255, 255, 255);
   color: rgb(141, 0, 5);
 }
 
 .summary button {
   width: 120px;
-  margin: 20px;
+  margin: 10px;
+}
+
+.summary div {
+  display: none;
 }
 
 .species-description-grid {
@@ -398,7 +407,7 @@ button {
 	cursor:pointer;
 	color:#666666;
 	font-family:Arial;
-	font-size:1em;
+	font-size:1.4em;
 	font-weight:bold;
 	padding:6px;
 	text-decoration:none;

@@ -36,6 +36,7 @@ export const renderInput = (screen, question) => {
     clone.querySelector('button').addEventListener('click', event => {
         sendQandA(document.querySelector('.js-txt-input').value, event);
         event.target.disabled = true;
+        event.stopPropagation();
     });
 
     screen.parent.innerHTML = '';

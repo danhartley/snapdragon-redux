@@ -60,6 +60,8 @@ export const renderSummary = (index) => {
         data.layouts = createLessonPlan(lessonName, levelName, data.items.length, data.excludeRevision);
 
         actions.boundReset(data);
+
+        event.stopPropagation();
     };
 
     startOverBtn.addEventListener('click', handleBtnClickEvent);

@@ -40,6 +40,7 @@ export const renderCard = (item) => {
 
     clone.querySelector('button').addEventListener('click', event => {
         actions.boundEndRevision(item);
+        event.stopPropagation();
     });
 
     screen.parent.style.backgroundColor = 'rgb(50, 50, 50)';
