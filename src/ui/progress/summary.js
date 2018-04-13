@@ -48,6 +48,7 @@ export const renderSummary = (index) => {
                 break;
             case learnMoreBtn:
                 data.items = batchNextItems(items, pool);
+                data.excludeRevision = false;
                 break;
             case nextLevelBtn:
                 data.config = config.goToNextLevel(layouts.levelName);
