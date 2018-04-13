@@ -57,7 +57,7 @@ export const score = (state = InitialState.score, action) => {
     }       
 };
 
-export const pool = (state = InitialState.itemPool, action) => {
+export const pool = (state = InitialState.pool, action) => {
     switch(action.type) {
         default:
             return state;
