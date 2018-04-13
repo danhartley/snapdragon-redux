@@ -1,7 +1,7 @@
 import { utils } from 'utils/utils';
 import { flora } from 'api/flora';
 
-const binomials = flora[2]
+const binomials = flora[0]
     .map(item => {
         const names = item.name.split(' ');
         item.genus = names[0];

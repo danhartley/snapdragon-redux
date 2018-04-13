@@ -97,7 +97,7 @@ export const addListeners = (cards, item) => {
 
             setTimeout(()=>{
                 actions.boundUpdateScore(score);
-            },500);
+            },1000);
             
             event.stopPropagation();
         });

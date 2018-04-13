@@ -23,7 +23,7 @@ export const renderInput = (screen, question) => {
 
         setTimeout(()=>{
             actions.boundUpdateScore(response);
-        },500);
+        },1000);
     };
 
     const template = document.querySelector(`.${screen.template}`);

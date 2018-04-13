@@ -103,10 +103,6 @@ grid-template-areas: "header"
   font-size: 1em;
 }
 
-/* .right-grid .header {
-  padding: 0 0 0 5px;
-} */
-
 .rectangles {
   display: grid;
   grid-auto-flow: column;
@@ -236,14 +232,17 @@ grid-template-areas: "header"
   width: 260px;
 }
 
-.right {
+.right, .wrong {
+  padding: 1px 5px;
   display: inline-block;
+}
+
+.right {  
   background-color: rgb(255, 255, 255);
   color: rgb(44, 141, 86);
 }
 
 .wrong {
-  display: inline-block;
   background-color: rgb(255, 255, 255);
   color: rgb(141, 0, 5);
 }
