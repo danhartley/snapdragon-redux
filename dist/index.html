@@ -54,8 +54,8 @@
             </template>
 
             <template class="js-summary-template">
-                <div class="summary js-rptr-summary">
-                    <div class="js-right-body-top">
+                <div class="js-rptr-summary">
+                    <div class="summary js-right-body-top">
                         <div>Do you want to run the test again?</div>
                         <button class="js-start-over-btn">Start over</button>
                         <div>Only answer the ones you got wrong?</div>
@@ -140,6 +140,29 @@
                         <div class="species-card-btn"><button style="display:none;">Continue</button></div>
                     </div>
             </template>
+
+            
+            <script>
+              document.addEventListener("click", function() {
+                    toggleFullScreen();
+              }, false);
+
+              function toggleFullScreen() {
+                    var doc = window.document;
+                    var docEl = doc.documentElement;
+
+                    var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+                    var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+                    if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+                        requestFullScreen.call(docEl);
+                    }
+                    else {
+                        cancelFullScreen.call(doc);
+                    }
+                }
+            </script>
+
     </body>
 </html>
 
