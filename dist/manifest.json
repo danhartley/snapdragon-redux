@@ -1,7 +1,7 @@
 {
     "short_name": "Snapdragon",
     "name": "Snapdragon: species recognition and recall",
-    "start_url": "/",
+    "start_url": ".",
     "display": "browser",
     "orientation": "landscape"
   }
