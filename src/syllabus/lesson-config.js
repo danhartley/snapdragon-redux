@@ -1,4 +1,5 @@
 export const config = {
+    language: 'en',
     moduleSize: 2,
     active: {
         lesson: 1,
