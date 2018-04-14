@@ -97,8 +97,25 @@ export const revision = (state = null, action) => {
 
 export const history = (state = null, action) => {
     switch(action.type) {
-        case types.UPDATE_HISTORY:            
-            return state === null ? [action.data] : [...state, action.data];
+        case types.UPDATE_HISTORY:
+          
+            const score = action.data;
+            const updatedHistory = state === null ? [action.data] : [...state, action.data];
+            let historyCorrect = score.correct;
+            let historyTotal = score.total;
+        
+            if(state) {
+                state.map(round => {
+                    historyCorrect += round.correct;
+                    historyTotal += round.total;
+                });
+            }
+
+            updatedHistory.correct = historyCorrect;
+            updatedHistory.total = historyTotal;
+
+            return updatedHistory;
+            
         default:
             return state;
     }

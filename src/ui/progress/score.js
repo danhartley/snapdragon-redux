@@ -16,18 +16,8 @@ export const renderScore = (score) => {
     txtCorrect.innerHTML = score.correct;
     txtTotal.innerHTML = score.total;
 
-    let historyCorrect = score.correct;
-    let historyTotal = score.total;
-
-    if(history) {
-        history.map(round => {
-            historyCorrect += round.correct;
-            historyTotal += round.total;
-        });
-    }
-
-    txtHistoryCorrect.innerHTML = historyCorrect;
-    txtHistoryTotal.innerHTML = historyTotal;
+    txtHistoryCorrect.innerHTML = history ? history.correct + score.correct : score.correct;
+    txtHistoryTotal.innerHTML = history ? history.total + score.total : score.total;
 
     const clone = document.importNode(template.content, true);
 
