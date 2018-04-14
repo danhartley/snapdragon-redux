@@ -1,7 +1,6 @@
 
 import { types } from 'redux/actions/action-types';
 import { config as lessonConfig } from 'syllabus/lesson-config';
-import { modules } from 'syllabus/lesson-modules';
 import { InitialState } from 'redux/reducers/initial-state-for-reducers';
 
 export const config = (state = lessonConfig, action) => {

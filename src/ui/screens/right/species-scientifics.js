@@ -4,7 +4,7 @@ import { renderStrips } from 'ui/screens/common/strips';
 
 export const renderScientifics = (item) => {
 
-    const { layout } = store.getState();
+    const { layout, config } = store.getState();
 
     const screen = layout.screens.filter(el => el.name === 'species-scientifics')[0];
 
@@ -17,5 +17,5 @@ export const renderScientifics = (item) => {
                 </div>`;
        };
 
-    renderStrips(screen, item, callback);
+    renderStrips(screen, item, callback, config);
 };

@@ -1,5 +1,6 @@
 import { types } from 'redux/actions/action-types';
 import { InitialState } from 'redux/reducers/initial-state-for-reducers';
+import { modules } from 'syllabus/lesson-modules';
 
 export const index = (state = 0, action) => {
     switch(action.type) {
