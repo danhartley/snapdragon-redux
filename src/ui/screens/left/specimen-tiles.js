@@ -7,7 +7,10 @@ export const renderSpecimenTiles = (item) => {
     const { layout, items } = store.getState();
 
     DOM.collectionTxt.innerHTML = `Round ${items.currentRound} of ${items.rounds} [ ${items.poolCount} items in this lesson ]`;
-    DOM.moreSpecimensBtn.style.display = 'block';
+    
+    if (window.matchMedia("(min-width: 1024px)").matches || window.matchMedia("(min-width: 1200px)").matches)
+        DOM.moreSpecimensBtn.style.display = 'block';
+    else DOM.moreSpecimensBtn.style.display = 'none';
 
     const screen = layout.screens.filter(el => el.name === 'specimen-images')[0];
 
