@@ -8,6 +8,7 @@ export const renderHistory = (history) => {
     const template = document.querySelector('.js-history-template');
 
     DOM.leftBody.style.backgroundColor = 'rgb(50, 50, 50)';
+    DOM.moreSpecimensBtn.style.display = 'none';
 
     const txtRounds = template.content.querySelector('.js-history-rounds');
     const txtAnswered = template.content.querySelector('.js-history-answered');
