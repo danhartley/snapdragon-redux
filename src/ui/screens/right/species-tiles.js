@@ -11,9 +11,10 @@ export const renderSpeciesTiles = (item) => {
 
     item.content = item.multipleImages;
 
-    const callback = contentItem => {        
+    const callback = contentItem => {
+        const images = contentItem.images.filter(img => img !== undefined);
         return `<div class="tile">
-                    <img src="${contentItem.images[0]}" name="${contentItem.name}" /> 
+                    <img src="${images[0]}" name="${contentItem.name}" /> 
                 </div>`;
     };
 

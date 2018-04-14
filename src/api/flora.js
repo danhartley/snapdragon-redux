@@ -1642,6 +1642,11 @@ export const flora =
     ],
     "names": [
       {
+        "vernacularName": "Cistus",
+        "language": "en",
+        "eol_preferred": true
+      },
+      {
         "vernacularName": "Jara rizada",
         "language": "es",
         "eol_preferred": true

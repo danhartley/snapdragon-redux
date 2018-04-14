@@ -7,14 +7,20 @@ export const renderSpecimenTiles = (item) => {
     const { layout, items } = store.getState();
 
     DOM.collectionTxt.innerHTML = `Round ${items.currentRound} of ${items.rounds} [ ${items.poolCount} items in this lesson ]`;
+    DOM.moreSpecimensBtn.style.display = 'block';
 
     const screen = layout.screens.filter(el => el.name === 'specimen-images')[0];
 
     if(!screen) return;
 
     let images = [];
-    item.imageIndices.forEach(index => images.push(item.images[index]));
-    item.content = images.splice(0,4);
+    item.imageIndices.forEach(index => {
+        const image = item.images[index];
+        if(image)
+            images.push(image);
+    });
+    item.content = images.slice(0,4);
+    let index = 4;
 
     const callback = contentItem => {
         return `<div class="square">                            
@@ -23,5 +29,13 @@ export const renderSpecimenTiles = (item) => {
     };
 
     renderTiles(screen, item, callback);
+
+    DOM.moreSpecimensBtn.addEventListener('click', () => {
+        item.content = images.slice(index,index + 4);
+        index = index + 4;
+        renderTiles(screen, item, callback);
+        if(index === 8)
+            DOM.moreSpecimensBtn.style.display = 'none';
+    });
 
 };

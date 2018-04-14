@@ -24,7 +24,7 @@ export const renderQuestion = response => {
 
 export const renderCorrect = response => {
     const question = renderQuestion(response);
-    return response.answer === question;
+    return response.answer.toUpperCase() === question.toUpperCase();
 };
 
 export const renderAnswer = (response) => {
