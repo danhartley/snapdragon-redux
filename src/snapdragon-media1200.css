@@ -1,4 +1,9 @@
 @media (min-width: 1200px) {
+
+  .grid {
+    grid-template-columns: 4fr 10fr 1fr 10fr 4fr;
+  }
+
     .left-grid {
         grid-template-columns: 600px;
         grid-template-rows: 60px 600px 60px;
