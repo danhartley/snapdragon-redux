@@ -1,7 +1,8 @@
 import { utils } from 'utils/utils';
 import { flora } from 'api/flora';
+import { lamiaceae } from 'api/families';
 
-const binomials = flora[0]
+const binomials = lamiaceae
     .map(item => {
         const names = item.name.split(' ');
         item.genus = names[0];

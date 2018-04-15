@@ -4,7 +4,7 @@ import { renderStrips } from 'ui/screens/common/strips';
 
 export const renderVernaculars = (item) => {
 
-    const { layout } = store.getState();
+    const { layout, config } = store.getState();
 
     const screen = layout.screens.filter(el => el.name === 'species-vernaculars')[0];
 
@@ -17,5 +17,5 @@ export const renderVernaculars = (item) => {
                 </div>`;
        };
 
-    renderStrips(screen, item, callback);
+    renderStrips(screen, item, callback, config);
 };

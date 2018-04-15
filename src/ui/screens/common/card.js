@@ -14,7 +14,7 @@ export const renderCard = (item) => {
 
     renderCardHeader();
 
-    const { layout } = store.getState();
+    const { layout, config } = store.getState();
 
     const screen = layout.screens.filter(el => el.name === 'species-card')[0];
 
@@ -28,7 +28,7 @@ export const renderCard = (item) => {
 
     const vernacularNames = template.content.querySelector('.js-txt-species-names');
 
-    const names = item.names.filter(name => name.language === 'en').map((vernacular, index) => {
+    const names = item.names.filter(name => name.language === config.language).map((vernacular, index) => {
             if(index < 6) {
                 return `<li>${vernacular.vernacularName}</li>`;
         }

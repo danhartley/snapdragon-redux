@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { DOM } from 'ui/dom';
 import { addListeners } from 'ui/helpers/helpers-for-screens';
 
-export const renderStrips = (screen, item, callback) => {
+export const renderStrips = (screen, item, callback, config) => {
 
     const template = document.querySelector(`.${screen.template}`);
 
@@ -11,10 +11,10 @@ export const renderStrips = (screen, item, callback) => {
 
     item.content = R.take(6, item.multipleNames.map(answer => {
         const vernacularNames = answer.names
-            .filter(name => name.language === 'en')
+            .filter(name => name.language === config.language)
             .map(name => name.vernacularName);
 
-            const vernacularQuestion = item.names.filter(name => name.language === 'en')[0].vernacularName;
+            const vernacularQuestion = item.names.filter(name => name.language === config.language)[0].vernacularName;
 
         return {
                 id: item.id, 
