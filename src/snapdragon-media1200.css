@@ -1,78 +1,83 @@
 @media (min-width: 1200px) {
 
+  body {
+    background-color: rgb(73, 73, 73);
+    margin-top: 0px;
+  }
+
   .grid {
     grid-template-columns: 4fr 10fr 1fr 10fr 4fr;
   }
 
-    .left-grid {
-        grid-template-columns: 600px;
-        grid-template-rows: 60px 600px 60px;
-    }
-
-    .right-grid {
-        grid-template-columns: 600px;
-        grid-template-rows: 60px 600px 60px;
-    }
-
-    .squares {
-        grid-template-columns: 300px 300px;
-        grid-template-rows: 300px;
-    }
-    .squares img {
-        height: 300px;
-        width: 300px;
-    }
-
-    .footer {
-      height: 60px;
-    }
-
-    .answer {
-      height: 180px;
-    }
-    .answer button {
-      width: 240px;
-    }
-    .header {
-      height: 60px;
-    }
-  
-    .rectangles {
-      grid-template-rows: 200px;
-    }
-  
-    .strips {
-      grid-template-rows: repeat(6,100px);
-    }
-  
-    .letterbox {
-      grid-template-rows: 256px 100px 256px;
-    }
-  
-    .letterbox input.short {
-      width: 230px;
-    }
-    
-    .letterbox input.long {
-      width: 300px;
-    }
-    
-    .letterbox button {
-      margin: 0 5px;
-      width: 100px;
-    }
-  
-    .tiles {
-      height: 600px;
-      width: 600px;
-    }
-    .tile {
-      width: 200px;
-    }
-    .tile img {
-      object-fit: cover;
-      height: 200px;
-      width: 200px;
-      cursor: pointer;
-    }
+  .left-grid {
+      grid-template-columns: 600px;
+      grid-template-rows: 60px 600px 60px;
   }
+
+  .right-grid {
+      grid-template-columns: 600px;
+      grid-template-rows: 60px 600px 60px;
+  }
+
+  .squares {
+      grid-template-columns: 300px 300px;
+      grid-template-rows: 300px;
+  }
+  .squares img {
+      height: 300px;
+      width: 300px;
+  }
+
+  .footer {
+    height: 60px;
+  }
+
+  .answer {
+    height: 180px;
+  }
+  .answer button {
+    width: 240px;
+  }
+  .header {
+    height: 60px;
+  }
+
+  .rectangles {
+    grid-template-rows: 200px;
+  }
+
+  .strips {
+    grid-template-rows: repeat(6,100px);
+  }
+
+  .letterbox {
+    grid-template-rows: 256px 100px 256px;
+  }
+
+  .letterbox input.short {
+    width: 230px;
+  }
+  
+  .letterbox input.long {
+    width: 300px;
+  }
+  
+  .letterbox button {
+    margin: 0 5px;
+    width: 100px;
+  }
+
+  .tiles {
+    height: 600px;
+    width: 600px;
+  }
+  .tile {
+    width: 200px;
+  }
+  .tile img {
+    object-fit: cover;
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+  }
+}
