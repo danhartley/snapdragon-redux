@@ -133,7 +133,7 @@ export const nextModule = (items, pool) => {
     return nextMod;
 };
 
-export const revisionModule = (score, items) => {
+export const revisionModule = (items, score) => {
     const fails = score.fails.map(fail => {
         return items.filter(item => item.name === fail.binomial)[0];        
     });
