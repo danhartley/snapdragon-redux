@@ -45,7 +45,7 @@ export const renderSummary = (index) => {
                 data.items = repeatModule(items, pool);
                 break;
             case tryAgainBtn:
-                data.items = revisionModule(score, items);
+                data.items = revisionModule(items, score);
                 break;
             case learnMoreBtn:
                 data.items = nextModule(items, pool);
