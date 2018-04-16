@@ -18,7 +18,9 @@ export const index = (state = 0, action) => {
 export const score = (state = InitialState.score, action) => {
     switch(action.type) {
         case types.UPDATE_SCORE:
+
             const score = { ...state, ...action.data };
+            
             score.total++;
             if(score.success) {
                 score.correct++;
@@ -51,7 +53,9 @@ export const history = (state = null, action) => {
         case types.UPDATE_HISTORY:
           
             const score = action.data;
-            const updatedHistory = state === null ? [action.data] : [...state, action.data];
+
+            const history = state === null ? [action.data] : [...state, action.data];
+            
             let historyCorrect = score.correct;
             let historyTotal = score.total;
         
@@ -62,10 +66,10 @@ export const history = (state = null, action) => {
                 });
             }
 
-            updatedHistory.correct = historyCorrect;
-            updatedHistory.total = historyTotal;
+            history.correct = historyCorrect;
+            history.total = historyTotal;
 
-            return updatedHistory;
+            return history;
             
         default:
             return state;
