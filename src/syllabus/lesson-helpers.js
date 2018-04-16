@@ -1,4 +1,4 @@
-export const createLessonLayouts = (lessonName, levelName, moduleSize, layouts, progressScreens, excludeRevision) => {
+export const createLesson = (lessonName, levelName, moduleSize, layouts, progressScreens, excludeRevision) => {
     
     if(excludeRevision) {
         layouts = layouts.filter(layout => layout.name !== 'revision');

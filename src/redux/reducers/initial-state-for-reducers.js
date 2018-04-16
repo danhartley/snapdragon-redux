@@ -3,29 +3,31 @@ import { config } from 'syllabus/lesson-config';
 import { modules } from 'syllabus/lesson-modules';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 
-const initPool = mod => {
-    const itemsWithNames = helpers.addMultipleNames(mod.pool, mod.pool, 6);
-    const itemsWithNamesAndImages = helpers.addMultipleImages(mod.pool, itemsWithNames, 9)
-    const pool = itemsWithNamesAndImages.map(item => {
+const collections = modules.collections;
+
+const initCollection = mod => {
+    const itemsWithNames = helpers.addMultipleNames(mod.collection, mod.collection, 6);
+    const itemsWithNamesAndImages = helpers.addMultipleImages(mod.collection, itemsWithNames, 9)
+    const collection = itemsWithNamesAndImages.map(item => {
         item.imageIndices = utils.randomiseSelection([1,2,3,4,5,6,7,8,9,10,11,12], 12, true);
         return item;
     });
-    return pool;
+    return collection;
 };
 
-const initItems = (pool, mod) => {
-    const items = pool.filter((item, index) => index < 2);
+const initItems = (collection, mod) => {
+    const items = collection.filter((item, index) => index < 2);
     items.moduleSize = mod.moduleSize;
-    items.poolCount = mod.pool.length;
-    items.poolIndex = mod.moduleSize;
-    items.rounds = items.poolCount / items.moduleSize;
-    items.currentRound = items.poolIndex / items.moduleSize;
+    items.collectionCount = mod.collection.length;
+    items.collectionIndex = mod.moduleSize;
+    items.rounds = items.collectionCount / items.moduleSize;
+    items.currentRound = items.collectionIndex / items.moduleSize;
     return items;
 }
 
 const mod = modules.createLessonModule(config.moduleSize);
-const pool = initPool(mod);
-const items = initItems(pool, mod);
+const collection = initCollection(mod);
+const items = initItems(collection, mod);
 const item = items[0];
 
 const score = {
@@ -41,10 +43,9 @@ const score = {
 };
 
 export const InitialState = {
-    mod,
-    pool,
+    collections,
+    collection,
     items, 
     item,
     score
 }
-

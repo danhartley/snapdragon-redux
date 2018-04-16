@@ -112,17 +112,17 @@ test('should renderAnswer for incorrect vernacular name from multipe choice', ()
     expect(renderAnswer(response)).toEqual('<span class=\"wrong\">Rosemary</span>');
 });
 
-test('nextModule returns the next batch of items based on pool, items tested and lesson module size', () => {
+test('nextModule returns the next batch of items based on collection, items tested and lesson module size', () => {
     
-    const pool = [ {a:1}, {b:2}, {c:3}, {d:4} ];
+    const collection = [ {a:1}, {b:2}, {c:3}, {d:4} ];
     const items = [ {a:1}, {b:2} ];
     const moduleSize = 2;
 
     items.moduleSize = moduleSize;
-    items.pool = pool;
-    items.poolCount = pool.length;
-    items.poolIndex = moduleSize - 1;
+    items.collection = collection;
+    items.collectionCount = collection.length;
+    items.collectionIndex = moduleSize - 1;
 
-    const nextBatch = nextModule(items, pool);
+    const nextBatch = nextModule(items, collection);
     expect(nextBatch.length).toBe(2);
 });

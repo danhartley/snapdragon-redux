@@ -18,6 +18,7 @@ const nexItem = makeActionCreator(types.NEXT_ITEM);
 const endRevision = makeActionCreator(types.END_REVISION);
 const updateHistory = makeActionCreator(types.UPDATE_HISTORY);
 const reset = makeActionCreator(types.RESET);
+const changeCollection = makeActionCreator(types.CHANGE_COLLECTION);
 
 const boundNextLesson = data => store.dispatch(nextLesson(data));
 const boundUpdateScore = data => store.dispatch(updateScore(data));
@@ -26,6 +27,7 @@ const boundNextItem = data => store.dispatch(nexItem(data,{delay:500}));
 const boundEndRevision = data => store.dispatch(endRevision(data));
 const boundUpdateHistory = data => store.dispatch(updateHistory(data));
 const boundReset = data => store.dispatch(reset(data));
+const boundChangeCollection = data => store.dispatch(changeCollection(data));
 
 export const actions = {
     boundNextLesson,
@@ -34,5 +36,6 @@ export const actions = {
     boundNextLayout,
     boundEndRevision,
     boundUpdateHistory,
-    boundReset
+    boundReset,
+    boundChangeCollection
 };

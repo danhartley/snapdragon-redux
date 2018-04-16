@@ -59,21 +59,27 @@ const layout7 = {
 };
 
 const lesson1 = {
-    level1:
-        [ layout1,
-          layout2,
-          layout3,
-          layout4 ],
-    level2:
-        [ layout1,
-          layout5 ],
-    level3:
-        [ layout1,
-          layout6 ],
-    level4:
-        [ layout1,
-          layout7 ]
+    id: 1,
+    name: 'lesson1',
+    levels: [
+        {   id: 1,
+            name: 'level1',
+            layouts: [ layout1, layout2, layout3, layout4 ]
+        },
+        {   id: 2,
+            name: 'level2',
+            layouts: [ layout1, layout5 ]
+        },
+        {   id: 3,
+            name: 'level3',
+            layouts: [ layout1, layout6 ]
+        },
+        {   id: 4,
+            name: 'level4',
+            layouts: [ layout1, layout7 ]
+        }
+    ]
 };
-export const lessonPlans = {
+export const lessonPlans = [
     lesson1
-}
+]
