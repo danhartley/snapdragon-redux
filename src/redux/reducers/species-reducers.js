@@ -1,16 +1,6 @@
 
 import { types } from 'redux/actions/action-types';
-import { config as lessonConfig } from 'syllabus/lesson-config';
 import { InitialState } from 'redux/reducers/initial-state-for-reducers';
-
-export const config = (state = lessonConfig, action) => {
-    switch(action.type) {
-        case types.RESET:
-            return state;
-        default: 
-            return state;
-    }
-};
 
 export const collections = (state = InitialState.collections, action) => {
     switch(action.type) {

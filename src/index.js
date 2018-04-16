@@ -13,7 +13,7 @@ import { renderScore } from 'ui/progress/score';
 
 // events
 
-observeStore(store, store => store.lesson, prepareLesson, 'prepare-first-lesson');
+observeStore(store, store => store.lesson, prepareLesson, 'prepare-next-lesson');
 observeStore(store, store => store.index, renderNextLayout, 'render-next-layout');
 observeStore(store, store => store.layout, renderNextItem, 'render-next-item');
 

@@ -62,7 +62,9 @@ export const renderSummary = (index) => {
                 break;
         }
 
-        data.layouts = lessonPlanner.createLessonPlan(lessonName, levelName, data.items.length, data.excludeRevision);
+        const nextLayouts = lessonPlanner.createLessonPlan(lessonName, levelName, data.items.length, data.excludeRevision);
+
+        actions.boundNextLesson(nextLayouts);
 
         actions.boundReset(data);
 

@@ -2,10 +2,6 @@ import { types } from 'redux/actions/action-types';
 import { InitialState } from 'redux/reducers/initial-state-for-reducers';
 import { modules } from 'syllabus/lesson-modules';
 
-export const lesson = (state = 1, action) => {
-    return state;
-};
-
 export const index = (state = 0, action) => {
     switch(action.type) {
         case types.UPDATE_SCORE:
@@ -36,17 +32,7 @@ export const score = (state = InitialState.score, action) => {
             }
             return { ...state, ...score};
         case types.RESET:
-            return {
-                total: 0,
-                correct: 0,
-                binomial: '',
-                wrong: 0,
-                answer: '',
-                question: '',
-                fails: [],
-                passes: [],
-                success: false
-            };
+            return InitialState.score;
         default:
             return state;
     }       

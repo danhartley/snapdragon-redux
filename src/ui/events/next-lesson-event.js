@@ -19,7 +19,7 @@ export const prepareLesson = (lesson) => {
     // const lesson = { lessonName, levelName, moduleSize: config.moduleSize}
     // then boundNextLesson(lesson)
 
-    const nextLessonLayouts = lessonPlanner.createLessonPlan(config.lessonName, config.levelName, config.moduleSize);
+    const nextLayouts = lessonPlanner.createLessonPlan(config.lessonName, config.levelName, config.moduleSize);
 
-    actions.boundNextLesson(nextLessonLayouts);
+    actions.boundNextLesson(nextLayouts);
 };
