@@ -104,31 +104,31 @@ export const addListeners = (cards, item) => {
     });
 };
 
-export const repeatModule = (items, pool) => {
-    const prevIndex = items.poolIndex - items.moduleSize;
-    const currIndex = items.poolIndex;
-    const mod = pool.slice(prevIndex, currIndex);
+export const repeatModule = (items, collection) => {
+    const prevIndex = items.collectionIndex - items.moduleSize;
+    const currIndex = items.collectionIndex;
+    const mod = collection.slice(prevIndex, currIndex);
 
     mod.moduleSize = items.moduleSize;
-    mod.poolIndex = currIndex;
-    mod.poolCount = items.poolCount;
+    mod.collectionIndex = currIndex;
+    mod.collectionCount = items.collectionCount;
     mod.rounds = items.rounds;
     mod.currentRound = items.currentRound;
     
     return mod;
 };
 
-export const nextModule = (items, pool) => {
+export const nextModule = (items, collection) => {
     
-    const currIndex = items.poolIndex;
-    const nextIndex = items.poolIndex + items.moduleSize;
-    const nextMod = pool.slice(currIndex, nextIndex);
+    const currIndex = items.collectionIndex;
+    const nextIndex = items.collectionIndex + items.moduleSize;
+    const nextMod = collection.slice(currIndex, nextIndex);
 
     nextMod.moduleSize = items.moduleSize;
-    nextMod.poolIndex = nextIndex;
-    nextMod.poolCount = items.poolCount;
+    nextMod.collectionIndex = nextIndex;
+    nextMod.collectionCount = items.collectionCount;
     nextMod.rounds = items.rounds;
-    nextMod.currentRound = nextMod.poolIndex / nextMod.moduleSize;
+    nextMod.currentRound = nextMod.collectionIndex / nextMod.moduleSize;
 
     return nextMod;
 };
@@ -140,8 +140,8 @@ export const revisionModule = (items, score) => {
     const revisionMod = fails.filter(utils.onlyUnique);
     
     revisionMod.moduleSize = items.moduleSize;
-    revisionMod.poolIndex = items.poolIndex;
-    revisionMod.poolCount = items.poolCount;
+    revisionMod.collectionIndex = items.collectionIndex;
+    revisionMod.collectionCount = items.collectionCount;
     revisionMod.rounds = items.rounds;
     revisionMod.currentRound = items.currentRound;
     

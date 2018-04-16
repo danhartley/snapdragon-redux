@@ -3,7 +3,7 @@ import { DOM } from 'ui/dom';
 import { renderAnswer } from 'ui/helpers/helpers-for-screens';
 import { actions } from 'redux/actions/action-creators';
 import { revisionModule, nextModule, repeatModule } from 'ui/helpers/helpers-for-screens';
-import { createLessonPlan } from 'syllabus/lesson-planner';
+import { lessonPlanner } from 'syllabus/lesson-planner';
 
 export const renderSummaryHeader = (score) => {
     DOM.headerTxt.innerHTML = 
@@ -15,7 +15,7 @@ export const renderSummaryHeader = (score) => {
 
 export const renderSummary = (index) => {
 
-    const { score, items, layouts, pool, config } = store.getState();
+    const { score, items, layouts, collection } = store.getState();
 
     if(index !== layouts.length) return;
     
@@ -38,31 +38,36 @@ export const renderSummary = (index) => {
     const handleBtnClickEvent = event => {
         
         const btn = event.target;
-        const data = { items, config, excludeRevision: true };
+        const data = { items, excludeRevision: true };
+        
+        let lessonName = layouts.lessonName;
+        let levelName = layouts.levelName;
         
         switch(btn) {
             case startOverBtn:
-                data.items = repeatModule(items, pool);
+                data.items = repeatModule(items, collection);
                 break;
             case tryAgainBtn:
                 data.items = revisionModule(items, score);
                 break;
             case learnMoreBtn:
-                data.items = nextModule(items, pool);
+                data.items = nextModule(items, collection);
                 data.excludeRevision = false;
                 break;
             case nextLevelBtn:
-                data.items = repeatModule(items, pool);
-                data.config = config.nextLevel(layouts.levelName);
+                const level = lessonPlanner.nextLevel(lessonName, levelName);
+                lessonName = level.lessonName;
+                levelName = level.name;
+                data.items = repeatModule(items, collection);                
                 break;
         }
 
-        const lessonName = data.config.lessons.filter(lesson => lesson.id === data.config.active.lesson)[0].name;
-        const levelName = data.config.levels.filter(level => level.id === data.config.active.level)[0].name;
-
-        data.layouts = createLessonPlan(lessonName, levelName, data.items.length, data.excludeRevision);
+        data.layouts = lessonPlanner.createLessonPlan(lessonName, levelName, data.items.length, data.excludeRevision);
 
         actions.boundReset(data);
+
+        // send boundConfigUpdate and move config logic to config reducer
+        // and layout will handle new lesson plan
 
         event.stopPropagation();
     };
@@ -72,7 +77,7 @@ export const renderSummary = (index) => {
     if(score.fails.length > 0) tryAgainBtn.addEventListener('click', handleBtnClickEvent);
     else tryAgainBtn.setAttribute('disabled', 'disabled');
 
-    if(items.poolIndex + items.moduleSize <= items.poolCount) learnMoreBtn.addEventListener('click', handleBtnClickEvent);
+    if(items.collectionIndex + items.moduleSize <= items.collectionCount) learnMoreBtn.addEventListener('click', handleBtnClickEvent);
     else learnMoreBtn.setAttribute('disabled', 'disabled');
 
     nextLevelBtn.addEventListener('click', handleBtnClickEvent);

@@ -6,14 +6,23 @@ import { InitialState } from 'redux/reducers/initial-state-for-reducers';
 export const config = (state = lessonConfig, action) => {
     switch(action.type) {
         case types.RESET:
-            return action.data.config;
+            return state;
         default: 
             return state;
     }
 };
 
-export const pool = (state = InitialState.pool, action) => {
+export const collections = (state = InitialState.collections, action) => {
     switch(action.type) {
+        default:
+            return state;
+    }
+};
+
+export const collection = (state = InitialState.collection, action) => {
+    switch(action.type) {
+        case types.CHANGE_COLLECTION:
+            return action.data;
         default:
             return state;
     }

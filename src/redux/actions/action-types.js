@@ -5,6 +5,7 @@ const UPDATE_SCORE = '[logic] Check user answer and update running score';
 const END_REVISION = '[logic] Revision complete';
 const UPDATE_HISTORY = '[logic] Copy round score to history';
 const RESET = '[logic] Repeat the last set of questions';
+const CHANGE_COLLECTION = '[logic] Change collection';
 
 export const types = {
     NEXT_LESSON,
@@ -13,5 +14,6 @@ export const types = {
     UPDATE_SCORE,
     END_REVISION,
     UPDATE_HISTORY,
-    RESET
+    RESET,
+    CHANGE_COLLECTION
 };

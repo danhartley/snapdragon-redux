@@ -1,6 +1,5 @@
 export const flora =
 [
-[
   {
     "id": 579419,
     "name": "Salvia verbenaca L.",
@@ -5149,8 +5148,9 @@ export const flora =
       "http://media.eol.org/content/2012/07/19/01/84150_98_68.jpg"
     ]
   }
-],
-[
+];
+
+export const common = [
   {
     "id": 467609,
     "name": "Chamaemelum fuscatum (Brot.) Vasc.",
@@ -5564,7 +5564,9 @@ export const flora =
       "http://media.eol.org/content/2011/10/15/23/67556_98_68.jpg"
     ]
   }
-],
+];
+
+export const herbs =
 [
   {
     "id": 579697,
@@ -7597,5 +7599,4 @@ export const flora =
       "http://media.eol.org/content/2011/10/16/01/79200_98_68.jpg"
     ]
   }
-]
 ]

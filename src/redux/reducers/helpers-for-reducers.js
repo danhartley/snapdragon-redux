@@ -16,10 +16,10 @@ const notItem = (item, collection) => {
     return collection.filter(other => other.id !== item.id);
 };
 
-const addMultipleNames = (pool, items, number) => {    
+const addMultipleNames = (collection, items, number) => {    
     return items.map(item => {
         const others = 
-            notItem(item, pool)
+            notItem(item, collection)
                 .filter((other, index) => index + 1 < number)
                 .map(other => {
                     const {id, name, names} = other;
@@ -31,10 +31,10 @@ const addMultipleNames = (pool, items, number) => {
     });
 };
 
-const addMultipleImages = (pool, items, number) => {    
+const addMultipleImages = (collection, items, number) => {    
     return items.map(item => {
         const others = 
-            notItem(item, pool)
+            notItem(item, collection)
                 .filter((other, index) => index + 1 < number)
                 .map(other => {
                     const {name, images} = other;

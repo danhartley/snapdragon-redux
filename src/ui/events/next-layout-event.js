@@ -29,4 +29,6 @@ export const renderNextLayout = (index) => {
     });
 
     actions.boundNextLayout(layout);
+
+    // or boundNextLessonPlan
 };

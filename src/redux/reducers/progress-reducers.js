@@ -2,12 +2,16 @@ import { types } from 'redux/actions/action-types';
 import { InitialState } from 'redux/reducers/initial-state-for-reducers';
 import { modules } from 'syllabus/lesson-modules';
 
+export const lesson = (state = 1, action) => {
+    return state;
+};
+
 export const index = (state = 0, action) => {
     switch(action.type) {
         case types.UPDATE_SCORE:
-            return (state + 1) <= modules.pool.length ? (state + 1) : state;
+            return (state + 1) <= modules.collection.length ? (state + 1) : state;
         case types.END_REVISION:
-            return (state + 1) <= modules.pool.length ? (state + 1) : state;
+            return (state + 1) <= modules.collection.length ? (state + 1) : state;
         case types.RESET:
             return 0;
         default:
