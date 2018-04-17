@@ -38,38 +38,36 @@ export const renderSummary = (index) => {
     const handleBtnClickEvent = event => {
         
         const btn = event.target;
-        const data = { items, excludeRevision: true };
+        let excludeRevision = true;
+        let changedItems = null;
         
         let lessonName = layouts.lessonName;
         let levelName = layouts.levelName;
         
         switch(btn) {
             case startOverBtn:
-                data.items = repeatModule(items, collection);
+                changedItems = repeatModule(items, collection);
                 break;
             case tryAgainBtn:
-                data.items = revisionModule(items, score);
+                changedItems = revisionModule(items, score);
                 break;
             case learnMoreBtn:
-                data.items = nextModule(items, collection);
-                data.excludeRevision = false;
+                changedItems = nextModule(items, collection);
+                excludeRevision = false;
                 break;
             case nextLevelBtn:
                 const level = lessonPlanner.nextLevel(lessonName, levelName);
                 lessonName = level.lessonName;
                 levelName = level.name;
-                data.items = repeatModule(items, collection);                
+                changedItems = repeatModule(items, collection);                
                 break;
         }
 
-        const nextLayouts = lessonPlanner.createLessonPlan(lessonName, levelName, data.items.length, data.excludeRevision);
+        const nextLayouts = lessonPlanner.createLessonPlan(lessonName, levelName, items.length, excludeRevision);
 
         actions.boundNextLesson(nextLayouts);
 
-        actions.boundReset(data);
-
-        // send boundConfigUpdate and move config logic to config reducer
-        // and layout will handle new lesson plan
+        actions.boundChangeItems(changedItems);
 
         event.stopPropagation();
     };

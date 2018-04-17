@@ -3,7 +3,7 @@ import { config as lessonConfig } from 'syllabus/lesson-config';
  
 export const config = (state = lessonConfig, action) => {
     switch(action.type) {
-        case types.RESET:
+        case types.CHANGE_ITEMS:
             return state;
         default: 
             return state;

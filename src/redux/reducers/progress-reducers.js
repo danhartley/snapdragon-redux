@@ -8,7 +8,7 @@ export const index = (state = 0, action) => {
             return (state + 1) <= modules.collection.length ? (state + 1) : state;
         case types.END_REVISION:
             return (state + 1) <= modules.collection.length ? (state + 1) : state;
-        case types.RESET:
+        case types.CHANGE_ITEMS:
             return 0;
         default:
             return state;
@@ -31,7 +31,7 @@ export const score = (state = InitialState.score, action) => {
                 score.fails.push({ taxon: score.taxon, binomial: score.binomial, question: score.question, answer: score.answer });
             }
             return { ...state, ...score};
-        case types.RESET:
+        case types.CHANGE_ITEMS:
             return InitialState.score;
         default:
             return state;
@@ -68,7 +68,7 @@ export const history = (state = null, action) => {
 
 export const revision = (state = null, action) => {
     switch(action.type) {
-        case types.RESET:
+        case types.CHANGE_ITEMS:
             return null;
         default:
             return state;

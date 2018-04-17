@@ -6,7 +6,7 @@ export const renderSpecimenTiles = (item) => {
 
     const { layout, items } = store.getState();
 
-    DOM.collectionTxt.innerHTML = `Round ${items.currentRound} of ${items.rounds} [ ${items.colectionCount} items in this lesson ]`;
+    DOM.collectionTxt.innerHTML = `Round ${items.currentRound} of ${items.rounds} [ ${items.collectionCount} items in this lesson ]`;
     
     if (window.matchMedia("(min-width: 1024px)").matches || window.matchMedia("(min-width: 1200px)").matches)
         DOM.moreSpecimensBtn.style.display = 'block';

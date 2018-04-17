@@ -5,17 +5,17 @@ import './snapdragon-media1200.css';
 import { store } from 'redux/store';
 import { observeStore } from 'redux/observe-store';
 
-import { renderNextLayout } from 'ui/events/next-layout-event';
-import { renderNextItem } from 'ui/events/next-item-event';
-import { prepareLesson } from 'ui/events/next-lesson-event.js';
+import { nextLayout } from 'ui/setup/next-layout';
+import { nextItem } from 'ui/setup/next-item';
+import { nextLesson } from 'ui/setup/next-lesson';
 
 import { renderScore } from 'ui/progress/score';
 
-// events
+// setup
 
-observeStore(store, store => store.lesson, prepareLesson, 'prepare-next-lesson');
-observeStore(store, store => store.index, renderNextLayout, 'render-next-layout');
-observeStore(store, store => store.layout, renderNextItem, 'render-next-item');
+observeStore(store, store => store.lesson, nextLesson, 'next-lesson');
+observeStore(store, store => store.index, nextLayout, 'next-layout');
+observeStore(store, store => store.layout, nextItem, 'next-item');
 
 // progress
 

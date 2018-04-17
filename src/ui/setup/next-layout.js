@@ -4,7 +4,7 @@ import { observeStore } from 'redux/observe-store';
 
 let subscriptions = [];
 
-export const renderNextLayout = (index) => {
+export const nextLayout = (index) => {
 
     const { layouts } = store.getState();
 
@@ -29,6 +29,4 @@ export const renderNextLayout = (index) => {
     });
 
     actions.boundNextLayout(layout);
-
-    // or boundNextLessonPlan
 };
