@@ -3,7 +3,7 @@ import { renderTiles } from 'ui/screens/common/tiles';
 
 export const renderSpeciesTiles = (item) => {
 
-    const { layout } = store.getState();
+    const { layout, config } = store.getState();
 
     const screen = layout.screens.filter(el => el.name === 'species-images')[0];
 
@@ -18,5 +18,5 @@ export const renderSpeciesTiles = (item) => {
                 </div>`;
     };
 
-    renderTiles(screen, item, callback);
+    renderTiles(screen, item, callback, config.callbackTime);
 };

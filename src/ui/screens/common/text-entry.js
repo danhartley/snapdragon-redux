@@ -3,7 +3,7 @@ import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
 import { renderAnswerHeader } from 'ui/helpers/helpers-for-screens';
 
-export const renderInput = (screen, question) => {
+export const renderInput = (screen, question, callbackTime) => {
 
     const sendQandA = (answer, event) => {
         const btn = event.target;
@@ -23,7 +23,7 @@ export const renderInput = (screen, question) => {
 
         setTimeout(()=>{
             actions.boundUpdateScore(response);
-        },1000);
+        }, callbackTime);
     };
 
     const template = document.querySelector(`.${screen.template}`);

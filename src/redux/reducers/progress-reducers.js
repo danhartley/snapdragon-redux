@@ -2,17 +2,13 @@ import { types } from 'redux/actions/action-types';
 import { InitialState } from 'redux/reducers/initial-state-for-reducers';
 import { modules } from 'syllabus/lesson-modules';
 
-export const lesson = (state = 1, action) => {
-    return state;
-};
-
 export const index = (state = 0, action) => {
     switch(action.type) {
         case types.UPDATE_SCORE:
             return (state + 1) <= modules.collection.length ? (state + 1) : state;
         case types.END_REVISION:
             return (state + 1) <= modules.collection.length ? (state + 1) : state;
-        case types.RESET:
+        case types.CHANGE_ITEMS:
             return 0;
         default:
             return state;
@@ -35,18 +31,8 @@ export const score = (state = InitialState.score, action) => {
                 score.fails.push({ taxon: score.taxon, binomial: score.binomial, question: score.question, answer: score.answer });
             }
             return { ...state, ...score};
-        case types.RESET:
-            return {
-                total: 0,
-                correct: 0,
-                binomial: '',
-                wrong: 0,
-                answer: '',
-                question: '',
-                fails: [],
-                passes: [],
-                success: false
-            };
+        case types.CHANGE_ITEMS:
+            return InitialState.score;
         default:
             return state;
     }       
@@ -82,7 +68,7 @@ export const history = (state = null, action) => {
 
 export const revision = (state = null, action) => {
     switch(action.type) {
-        case types.RESET:
+        case types.CHANGE_ITEMS:
             return null;
         default:
             return state;

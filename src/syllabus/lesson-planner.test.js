@@ -1,5 +1,3 @@
-// import { renderCard } from 'ui/screens/common/card';
-
 import { lessonPlanner } from 'syllabus/lesson-planner';
 import { lessonPlan } from 'syllabus/lesson-plans';
 
