@@ -91,6 +91,7 @@ export const addListeners = (cards, item, callbackTime) => {
             score.success = correct;
 
             DOM.headerTxt.innerHTML = text;
+            DOM.changeCollection.innerHTML = '';
             DOM.rightHeader.style.backgroundColor = colour;
 
             target.style.color = colour;

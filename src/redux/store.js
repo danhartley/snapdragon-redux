@@ -3,7 +3,7 @@ import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import { logger } from 'redux/middleware/logger';
 import { timeoutScheduler } from 'redux/middleware/timeoutScheduler';
 
-import { collection, items, item } from 'redux/reducers/species-reducers';
+import { collections, collection, items, item } from 'redux/reducers/species-reducers';
 import { index, score, history, revision } from 'redux/reducers/progress-reducers';
 import { config, lesson, layouts, layout } from 'redux/reducers/layout-reducers';
 
@@ -14,6 +14,7 @@ const reducer = combineReducers({
     layouts,
     layout,
     score,
+    collections,
     collection,
     items,
     item,

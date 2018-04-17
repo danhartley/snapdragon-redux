@@ -15,6 +15,7 @@ export const renderInput = (screen, question, callbackTime) => {
 
         DOM.headerTxt.innerHTML = text;
         DOM.rightHeader.style.backgroundColor = colour;
+        DOM.changeCollection.innerHTML = '';
         
         btn.style.color = colour;
         btn.parentNode.style.background = colour;

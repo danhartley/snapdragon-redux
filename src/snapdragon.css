@@ -102,6 +102,12 @@ grid-template-areas: "header"
   font-size: 1em;
 }
 
+.change-collection {
+  float: right;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
 .rectangles {
   display: grid;
   grid-auto-flow: column;
@@ -418,4 +424,22 @@ button:focus {
 
 button:disabled {
   cursor: not-allowed;
+}
+
+.collections {
+  padding: 20px;
+}
+
+.collections div {
+  padding: 10px 0;
+}
+
+.collection span:nth-of-type(1) {
+  display: inline-block;
+  width: 260px;  
+}
+
+.collection span:nth-of-type(2) {
+  display: inline-block;
+  width: 140px;  
 }

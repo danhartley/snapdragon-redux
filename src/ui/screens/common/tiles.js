@@ -28,6 +28,7 @@ export const renderTiles = (screen, item, callbackTemplate, callbackTime) => {
 
             DOM.headerTxt.innerHTML = text;
             DOM.rightHeader.style.backgroundColor = colour;
+            DOM.changeCollection.innerHTML = '';
             
             img.style.color = colour;
             img.parentNode.style.background = colour;

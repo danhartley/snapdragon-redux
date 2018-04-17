@@ -17,6 +17,7 @@ export const renderSpecimenTiles = (item) => {
     if(!screen) return;
 
     let images = [];
+    
     item.imageIndices.forEach(index => {
         const image = item.images[index];
         if(image)
