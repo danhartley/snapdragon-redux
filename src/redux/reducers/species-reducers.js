@@ -36,10 +36,11 @@ export const item = (state = initialState.item, action) => {
         case types.NEXT_ITEM:
             return {...state, ...action.data};
         case types.CHANGE_ITEMS:
-            return action.data;
+            return action.data[0];
         case types.CHANGE_COLLECTION:
             const collection = initialState.collections.filter(collection => collection.id === action.data)[0].collection;
-            return initialState.initItems(initialState.initCollection(collection), 2)[0];
+            const _item = initialState.initItems(initialState.initCollection(collection), 2)[0];
+            return _item;
         default:
             return state;
     }
