@@ -32,7 +32,7 @@ export const renderStrips = (screen, item, callback, config) => {
     const clone = document.importNode(template.content, true);
     const cards = clone.querySelectorAll('.js-rptr-strips .strip div');
 
-    addListeners(cards, item);
+    addListeners(cards, item, config.callbackTime);
 
     screen.parent.innerHTML = '';
     screen.parent.appendChild(clone);

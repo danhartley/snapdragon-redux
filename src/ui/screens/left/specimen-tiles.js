@@ -4,7 +4,7 @@ import { DOM } from 'ui/dom';
 
 export const renderSpecimenTiles = (item) => {
 
-    const { layout, items } = store.getState();
+    const { layout, items, config } = store.getState();
 
     DOM.collectionTxt.innerHTML = `Round ${items.currentRound} of ${items.rounds} [ ${items.collectionCount} items in this lesson ]`;
     
@@ -31,12 +31,12 @@ export const renderSpecimenTiles = (item) => {
                 </div>`; 
     };
 
-    renderTiles(screen, item, callback);
+    renderTiles(screen, item, callback, config.callbackTime);
 
     DOM.moreSpecimensBtn.addEventListener('click', () => {
         item.content = images.slice(index,index + 4);
         index = index + 4;
-        renderTiles(screen, item, callback);
+        renderTiles(screen, item, callback, config.callbackTime);
         if(index === 8)
             DOM.moreSpecimensBtn.style.display = 'none';
     });

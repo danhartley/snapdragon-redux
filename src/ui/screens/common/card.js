@@ -5,16 +5,16 @@ import { renderWiki } from 'wikipedia/wiki';
 import { renderFamily } from 'gbif/gbif';
 
 
-export const renderCardHeader = () => {
-    DOM.headerTxt.innerHTML = ``;
+export const renderCardHeader = (colletionName) => {
+    DOM.headerTxt.innerHTML = colletionName;
     DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
 };
 
 export const renderCard = (item) => {
-
-    renderCardHeader();
-
+    
     const { layout, config } = store.getState();
+
+    renderCardHeader(config.EOLCollectionName);
 
     const screen = layout.screens.filter(el => el.name === 'species-card')[0];
 

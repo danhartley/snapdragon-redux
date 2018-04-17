@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderAnswerHeader } from 'ui/helpers/helpers-for-screens';
 
-export const renderTiles = (screen, item, callbackTemplate) => {
+export const renderTiles = (screen, item, callbackTemplate, callbackTime) => {
 
     const template = document.querySelector(`.${screen.template}`);
 
@@ -44,7 +44,7 @@ export const renderTiles = (screen, item, callbackTemplate) => {
             setTimeout(()=>{
                 const response = { taxon: 'name', binomial: item.name, question: item.name, answer: answer, success: correct };
                 actions.boundUpdateScore(response);
-            },1000);
+            }, callbackTime);
             
             event.stopPropagation();
         });

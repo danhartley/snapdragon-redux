@@ -77,7 +77,7 @@ export const renderAnswerHeader = (response, header, target) => {
     return { text: renderAnswerText(response), colour, correct };
 };
 
-export const addListeners = (cards, item) => {
+export const addListeners = (cards, item, callbackTime) => {
     cards.forEach(choice => {
 
         choice.addEventListener('click', event => {
@@ -97,7 +97,7 @@ export const addListeners = (cards, item) => {
 
             setTimeout(()=>{
                 actions.boundUpdateScore(score);
-            },1000);
+            }, callbackTime);
             
             event.stopPropagation();
         });
