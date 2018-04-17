@@ -14,13 +14,15 @@ export const renderStrips = (screen, item, callback, config) => {
             .filter(name => name.language === config.language)
             .map(name => name.vernacularName);
 
-            const vernacularQuestion = item.names.filter(name => name.language === config.language)[0].vernacularName;
+            const vernacularQuestions = item.names.filter(name => name.language === config.language);
+            const vernacularQuestion = (vernacularQuestions && vernacularQuestions.length > 0) ? vernacularQuestions[0].vernacularName : item.genus;
+            const vernacularName = (vernacularNames && vernacularNames.length > 0) ? vernacularNames[0] : answer.name.split(' ')[0];
 
         return {
                 id: item.id, 
                 binomial: item.name, 
                 vernacularQuestion: vernacularQuestion, 
-                vernacularAnswer: vernacularNames[0],
+                vernacularAnswer: vernacularName,
                 binomialAnswer: answer.name
         };
    }));

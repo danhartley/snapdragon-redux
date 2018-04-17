@@ -1,7 +1,6 @@
 import { modules } from 'syllabus/lesson-modules';
 
-it('should return at least one lesson module', () => {
-    const moduleSize = 2;
-    const lesson = modules.createLessonModule(2);
-    expect(lesson.items.length).toBe(2);
+test('should return at least one lesson module with at least one item', () => {    
+    expect(modules.collections.length).toBeGreaterThan(0);
+    expect(modules.collections[0].id).toBe(1);
 });

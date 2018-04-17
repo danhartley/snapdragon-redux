@@ -4,6 +4,7 @@ import { modules } from 'syllabus/lesson-modules';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 
 const collections = modules.collections;
+modules.collection = collections[0].collection;
 
 const initCollection = mod => {
     const itemsWithNames = helpers.addMultipleNames(mod.collection, mod.collection, 6);
@@ -16,7 +17,7 @@ const initCollection = mod => {
 };
 
 const initItems = (collection, mod) => {
-    const items = collection.filter((item, index) => index < 2);
+    const items = collection.filter((item, index) => index < mod.moduleSize);
     items.moduleSize = mod.moduleSize;
     items.collectionCount = mod.collection.length;
     items.collectionIndex = mod.moduleSize;
@@ -25,7 +26,11 @@ const initItems = (collection, mod) => {
     return items;
 }
 
-const mod = modules.createLessonModule(config.moduleSize);
+const mod = helpers.createLessonModule(modules.collection, config.moduleSize);
+
+mod.collection = helpers.cleanNames(mod.collection);
+mod.collection = utils.shuffleArray(mod.collection);
+
 const collection = initCollection(mod);
 const items = initItems(collection, mod);
 const item = items[0];
