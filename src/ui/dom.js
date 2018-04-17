@@ -19,5 +19,6 @@ export const DOM = {
     speciesRptr : document.getElementsByClassName('js-rptr-rectangles')[0],
     headerTxt : document.getElementsByClassName('js-txt-header')[0],
     totalTxt : document.getElementsByClassName('js-txt-total')[0],
-    correctTxt : document.getElementsByClassName('js-txt-correct')[0]
+    correctTxt : document.getElementsByClassName('js-txt-correct')[0],
+    changeCollection : document.getElementsByClassName('js-change-collection')[0]
 };

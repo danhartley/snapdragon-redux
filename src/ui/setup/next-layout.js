@@ -17,7 +17,7 @@ export const nextLayout = (index) => {
 
     layout.screens.forEach(screen => {
 
-        console.log('the layout id is: ', layout.id);
+        console.log('the layout is: ', layout);
 
         console.log('the domain is: ', screen.domain.toUpperCase(), ' and the screen name is: ', screen.name.toUpperCase());
 

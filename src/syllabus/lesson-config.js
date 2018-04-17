@@ -1,7 +1,7 @@
 export const config = {
     language: 'en',
     moduleSize: 2,
-    EOLCollectionName: 'Lamiaceae: Mint and Basil Family',
+    currentCollectionName: 'Mint Family | Lamiaceae',
     lessonName: 'lesson1',
     levelName: 'level1',
     callbackTime: 1500

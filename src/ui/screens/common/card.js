@@ -5,8 +5,9 @@ import { renderWiki } from 'wikipedia/wiki';
 import { renderFamily } from 'gbif/gbif';
 
 
-export const renderCardHeader = (colletionName) => {
-    DOM.headerTxt.innerHTML = colletionName;
+export const renderCardHeader = (collectionName) => {
+    DOM.headerTxt.innerHTML = `<span>Collection: ${collectionName}</span>`;
+    DOM.changeCollection.innerHTML = `Change collection?`;
     DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
 };
 
@@ -14,7 +15,7 @@ export const renderCard = (item) => {
     
     const { layout, config } = store.getState();
 
-    renderCardHeader(config.EOLCollectionName);
+    renderCardHeader(config.currentCollectionName);
 
     const screen = layout.screens.filter(el => el.name === 'species-card')[0];
 

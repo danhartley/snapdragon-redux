@@ -1,21 +1,22 @@
 import { types } from 'redux/actions/action-types';
-import { InitialState } from 'redux/reducers/initial-state-for-reducers';
-import { modules } from 'syllabus/lesson-modules';
+import { initialState } from 'redux/reducers/initial-state-for-reducers';
 
 export const index = (state = 0, action) => {
     switch(action.type) {
         case types.UPDATE_SCORE:
-            return (state + 1) <= modules.collection.length ? (state + 1) : state;
+            return (state + 1) <= initialState.collection.length ? (state + 1) : state;
         case types.END_REVISION:
-            return (state + 1) <= modules.collection.length ? (state + 1) : state;
+            return (state + 1) <= initialState.collection.length ? (state + 1) : state;
         case types.CHANGE_ITEMS:
+            return 0;
+        case types.CHANGE_COLLECTION:
             return 0;
         default:
             return state;
     }
 };
 
-export const score = (state = InitialState.score, action) => {
+export const score = (state = initialState.score, action) => {
     switch(action.type) {
         case types.UPDATE_SCORE:
 
@@ -32,7 +33,7 @@ export const score = (state = InitialState.score, action) => {
             }
             return { ...state, ...score};
         case types.CHANGE_ITEMS:
-            return InitialState.score;
+            return initialState.score;
         default:
             return state;
     }       
