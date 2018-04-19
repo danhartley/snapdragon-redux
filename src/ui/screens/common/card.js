@@ -13,11 +13,11 @@ export const renderCardHeader = (collectionName) => {
 
 export const renderCard = (collection) => {
     
-    const item = collection[collection.itemIndex];
+    const item = collection.items[collection.itemIndex];
 
     const { layout, config } = store.getState();
 
-    renderCardHeader(config.currentCollectionName);
+    renderCardHeader(collection.name);
 
     const screen = layout.screens.filter(el => el.name === 'species-card')[0];
 

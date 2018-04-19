@@ -2,11 +2,12 @@ import { types } from 'redux/actions/action-types';
 import { initialState } from 'redux/reducers/initial-state-for-reducers';
 
 export const index = (state = 0, action) => {
+    const collectionSize = initialState.collection.items.length;
     switch(action.type) {
         case types.UPDATE_SCORE:
-            return (state + 1) <= initialState.collection.length ? (state + 1) : state;
+            return (state + 1) <= collectionSize ? (state + 1) : state;
         case types.END_REVISION:
-            return (state + 1) <= initialState.collection.length ? (state + 1) : state;
+            return (state + 1) <= collectionSize ? (state + 1) : state;
         case types.CHANGE_COLLECTION:
             return 0;
         case types.NEXT_ROUND:

@@ -4,7 +4,7 @@ import { renderStrips } from 'ui/screens/common/strips';
 
 export const renderVernaculars = (collection) => {
 
-    const item = collection[collection.itemIndex];
+    const item = collection.items[collection.itemIndex];
 
     const { layout, config } = store.getState();
 

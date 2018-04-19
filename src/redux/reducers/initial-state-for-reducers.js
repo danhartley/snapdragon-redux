@@ -5,21 +5,23 @@ import { config } from 'syllabus/lesson-config';
 import { collections } from 'syllabus/lesson-collections';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 
-const initCollection = R.pipe(helpers.cleanNames, utils.shuffleArray, helpers.embellishCollection);
+const initCollection = (rawCollection = collections[0]) => {
+    const prepCollection = R.pipe(helpers.cleanNames, utils.shuffleArray, helpers.embellishCollection);
+    const items = prepCollection(rawCollection.items);
 
-const items = initCollection(collections[0].collection);
+    const collection = {
+        name: rawCollection.eol_name,
+        items : items,
+        itemIndex: 0,
+        currentRound: 0,
+        moduleSize: config.moduleSize,
+        rounds: rawCollection.length / config.moduleSize
+     };
 
-const collection = { 
-    items,
-    index: 0,
-    currentRound: 0,
-    moduleSize: config.moduleSize,
-    rounds: items.length / config.moduleSize
- };
-// collection.itemIndex = 0;
-// collection.currentRound = 0;
-// collection.moduleSize = config.moduleSize;
-// collection.rounds = collection.length / collection.moduleSize;
+     return collection;
+};
+
+const collection = initCollection();
 
 const score = {
     total: 0,

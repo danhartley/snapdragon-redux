@@ -4,6 +4,7 @@ import { renderAnswer } from 'ui/helpers/helpers-for-screens';
 import { actions } from 'redux/actions/action-creators';
 import { revisionModule, nextModule, repeatModule } from 'ui/helpers/helpers-for-screens';
 import { lessonPlanner } from 'syllabus/lesson-planner';
+import { renderCollections } from 'ui/screens/left/collections';
 
 export const renderSummaryHeader = (score) => {
     DOM.headerTxt.innerHTML = 
@@ -34,7 +35,7 @@ export const renderSummary = (index) => {
     const tryAgainBtn = document.querySelector('.js-try-again-btn');
     const learnMoreBtn = document.querySelector('.js-learn-more-btn');   
     const nextLevelBtn = document.querySelector('.js-next-level-btn');
-    const nextLessonBtn = document.querySelector('.js-next-lesson-btn');
+    const changeCollectionBtn = document.querySelector('.js-change-collection-btn');
 
     const handleBtnClickEvent = event => {
         
@@ -60,13 +61,16 @@ export const renderSummary = (index) => {
                 lessonName = level.lessonName;
                 levelName = level.name;
                 break;
+            case changeCollectionBtn:
+                renderCollections();
+                break;
         }
 
-        const nextLayouts = lessonPlanner.createLessonPlan(lessonName, levelName, items.length, excludeRevision);
-
-        actions.boundNextLesson(nextLayouts);
+        const nextLayouts = lessonPlanner.createLessonPlan(lessonName, levelName, collection.moduleSize, excludeRevision);
 
         actions.boundNextRound(index);
+
+        actions.boundNextLesson(nextLayouts);
 
         event.stopPropagation();
     };
@@ -80,4 +84,5 @@ export const renderSummary = (index) => {
     else learnMoreBtn.setAttribute('disabled', 'disabled');
 
     nextLevelBtn.addEventListener('click', handleBtnClickEvent);
+    changeCollectionBtn.addEventListener('click', handleBtnClickEvent);
 };

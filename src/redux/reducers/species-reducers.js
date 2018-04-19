@@ -11,26 +11,26 @@ export const collections = (state = initialState.collections, action) => {
 
 export const collection = (state = initialState.collection, action) => {
 
-    let newState = { ...state };
+    let collection = {};
     let itemIndex = 0;
+    let currentRound = 0;
 
-    switch(action.type) {        
-        case types.NEXT_ITEM:        
-            itemIndex = action.data;
-            newState.itemIndex = 
-                itemIndex % newState.moduleSize === 0 
-                    ? newState.moduleSize * (newState.currentRound) 
-                    : newState.moduleSize * (newState.currentRound) + itemIndex;
-            return newState;
+    switch(action.type) {
+        case types.NEXT_ITEM:
+        const layoutIndex = action.data;        
+            itemIndex = 
+                layoutIndex % state.moduleSize === 0 
+                    ? (state.moduleSize * state.currentRound) 
+                    : (state.moduleSize * state.currentRound) + layoutIndex;
+            return { ...state, itemIndex };
         case types.NEXT_ROUND:
-            const currentRound = state.currentRound + 1;
-            newState.currentRound = currentRound;
-            itemIndex = action.data + (newState.moduleSize * newState.currentRound);
-            newState.itemIndex = itemIndex;
-            return newState;
+            currentRound = state.currentRound + 1;
+            itemIndex = action.data + (state.moduleSize * currentRound);
+            return { ...state, itemIndex, currentRound };
         case types.CHANGE_COLLECTION:
-            const collection = initialState.collections.filter(collection => collection.id === action.data)[0].collection;            
-            return initialState.initCollection(collection);
+            const rawCollection = initialState.collections.filter(collection => collection.id === action.data)[0];
+            const collection = initialState.initCollection(rawCollection);   
+            return collection;
         default:
             return state;
     }

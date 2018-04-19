@@ -8,6 +8,7 @@ test('collection should return default parameter state when there is no action t
   const state = collection(initialState.collection, action);
 
   expect(state).toEqual(initialState.collection);
+  expect(state.items.length).toEqual(initialState.collection.items.length);
 });
 
 
@@ -18,11 +19,11 @@ test('collection should return correct itemIndex for action type NEXT_ITEM', () 
   expect(state.itemIndex).toBe(0);
 
   action = { data: 1, type: types.NEXT_ITEM };
-  state = collection(initialState.collection, action);
+  state = collection(state, action);
   expect(state.itemIndex).toBe(1);
 
   action = { data: 2, type: types.NEXT_ITEM };
-  state = collection(initialState.collection, action);
+  state = collection(state, action);
   expect(state.itemIndex).toBe(0);
 
 });

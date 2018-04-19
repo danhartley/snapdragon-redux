@@ -3,7 +3,7 @@ import { renderInput } from 'ui/screens/common/text-entry';
 
 export const renderTextEntry = (collection) => {
 
-    const item = collection[collection.itemIndex];
+    const item = collection.items[collection.itemIndex];
 
     const { layout, config } = store.getState();
 

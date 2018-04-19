@@ -3,7 +3,7 @@ import { renderTiles } from 'ui/screens/common/tiles';
 
 export const renderSpeciesTiles = (collection) => {
 
-    const item = collection[collection.itemIndex];
+    const item = collection.items[collection.itemIndex];
 
     const { layout, config } = store.getState();
 

@@ -4,7 +4,7 @@ import { lamiaceae } from 'api/families';
 export const collections = [
     {
         id: '1',
-        collection: lamiaceae,
+        items: lamiaceae,
         name: 'lamiaceae',
         eol_name: 'Mint Family | Lamiaceae',
         eol_link: 'http://eol.org/collections/139275'
@@ -12,14 +12,14 @@ export const collections = [
     {
         id: '2',
         name: 'herbs',
-        collection: herbs,
+        items: herbs,
         eol_name: 'Common Culinary Herbs',
         eol_link: 'http://eol.org/collections/139051'
     },
     {
         id: '3',
         name: 'flora',
-        collection: flora,
+        items: flora,
         eol_name: 'Flora Lisboa e Vale do Tejo',
         eol_link: 'http://eol.org/collections/124189'
     }
