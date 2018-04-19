@@ -11,8 +11,10 @@ export const renderCardHeader = (collectionName) => {
     DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
 };
 
-export const renderCard = (item) => {
+export const renderCard = (collection) => {
     
+    const item = collection[collection.itemIndex];
+
     const { layout, config } = store.getState();
 
     renderCardHeader(config.currentCollectionName);

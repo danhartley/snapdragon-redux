@@ -16,7 +16,7 @@ import { renderHistory } from 'ui/progress/history';
 
 const specimen = {
   name: 'specimen-images',
-  domain: 'item',
+  domain: 'collection',
   render: renderSpecimenTiles,
   parent: DOM.leftBody,
   template: 'js-specimen-images-template'     
@@ -24,7 +24,7 @@ const specimen = {
 
 const name = {
   name: 'species-card',
-  domain: 'item',
+  domain: 'collection',
   render: renderCard,
   parent: DOM.leftBody,
   template: 'js-card-name-template'  
@@ -32,7 +32,7 @@ const name = {
 
 const scientific = {
   name: 'species-card',
-  domain: 'item',
+  domain: 'collection',
   render: renderCard,
   parent: DOM.leftBody,
   template: 'js-card-scientific-template'  
@@ -50,7 +50,7 @@ const history = {
 
 const revision = {
   name: 'species-card',
-  domain: 'item',
+  domain: 'collection',
   render: renderCard,
   parent: DOM.rightBody ,
   template: 'js-card-revision-template'
@@ -58,7 +58,7 @@ const revision = {
 
 const scientifics = {
   name: 'species-scientifics',
-  domain: 'item',
+  domain: 'collection',
   render: renderScientifics,
   parent: DOM.rightBody,
   template: 'js-strips-template',
@@ -67,7 +67,7 @@ const scientifics = {
 
 const vernaculars = {
   name: 'species-vernaculars',
-  domain: 'item',
+  domain: 'collection',
   render: renderVernaculars,
   parent: DOM.rightBody,
   template: 'js-strips-template',
@@ -76,7 +76,7 @@ const vernaculars = {
 
 const species = {
   name: 'species-images',
-  domain: 'item',
+  domain: 'collection',
   render: renderSpeciesTiles,
   parent: DOM.rightBody,
   template: 'js-tiles-template',
@@ -85,7 +85,7 @@ const species = {
 
 const text = {
   name: 'text-entry',
-  domain: 'item',
+  domain: 'collection',
   render: renderTextEntry,
   parent: DOM.rightBody
 };

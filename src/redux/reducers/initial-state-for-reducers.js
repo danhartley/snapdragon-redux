@@ -7,20 +7,19 @@ import { helpers } from 'redux/reducers/helpers-for-reducers';
 
 const initCollection = R.pipe(helpers.cleanNames, utils.shuffleArray, helpers.embellishCollection);
 
-const collection = initCollection(collections[0].collection);
+const items = initCollection(collections[0].collection);
 
-const initItems = (collection, moduleSize) => {
-    const items = collection.filter((item, index) => index < moduleSize);
-    items.moduleSize = moduleSize;
-    items.collectionCount = collection.length;
-    items.collectionIndex = moduleSize;
-    items.rounds = items.collectionCount / items.moduleSize;
-    items.currentRound = items.collectionIndex / items.moduleSize;
-    return items;
-}
-
-const items = initItems(collection, config.moduleSize);
-const item = items[0];
+const collection = { 
+    items,
+    index: 0,
+    currentRound: 0,
+    moduleSize: config.moduleSize,
+    rounds: items.length / config.moduleSize
+ };
+// collection.itemIndex = 0;
+// collection.currentRound = 0;
+// collection.moduleSize = config.moduleSize;
+// collection.rounds = collection.length / collection.moduleSize;
 
 const score = {
     total: 0,
@@ -37,9 +36,6 @@ const score = {
 export const initialState = {
     collections,
     collection,
-    items, 
-    item,
     score,
-    initCollection,
-    initItems
+    initCollection
 }

@@ -1,7 +1,9 @@
 import { store } from 'redux/store';
 import { renderInput } from 'ui/screens/common/text-entry';
 
-export const renderTextEntry = (item) => {
+export const renderTextEntry = (collection) => {
+
+    const item = collection[collection.itemIndex];
 
     const { layout, config } = store.getState();
 

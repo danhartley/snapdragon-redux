@@ -1,7 +1,7 @@
 import { lessonPlanner } from 'syllabus/lesson-planner';
 import { lessonPlan } from 'syllabus/lesson-plans';
 
-test('createLessonPlan returns lesson1 screens unchanged for given number of items', () => {
+test('createLessonPlan returns lesson1 screens unchanged for given collection', () => {
     const moduleSize = 2;
     const layouts = lessonPlanner.createLessonPlan('lesson1', 'level1', moduleSize);
     const revisedLayoutCount = layouts.length;
@@ -13,7 +13,7 @@ test('createLessonPlan returns lesson1 screens unchanged for given number of ite
     expect(revisedScreens.length).toEqual(18); // 2*7 + 4 = 18
 });
 
-test('createLessonPlan returns lesson1 missing revision screens for given number of items', () => {
+test('createLessonPlan returns lesson1 missing revision screens for given collection', () => {
     const moduleSize = 2;
     const excludeRevision = true;
     const layouts = lessonPlanner.createLessonPlan('lesson1', 'level1', moduleSize, excludeRevision);

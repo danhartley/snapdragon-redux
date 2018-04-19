@@ -2,7 +2,9 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderStrips } from 'ui/screens/common/strips';
 
-export const renderVernaculars = (item) => {
+export const renderVernaculars = (collection) => {
+
+    const item = collection[collection.itemIndex];
 
     const { layout, config } = store.getState();
 

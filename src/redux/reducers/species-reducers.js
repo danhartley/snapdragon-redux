@@ -10,37 +10,27 @@ export const collections = (state = initialState.collections, action) => {
 };
 
 export const collection = (state = initialState.collection, action) => {
-    switch(action.type) {
+
+    let newState = { ...state };
+    let itemIndex = 0;
+
+    switch(action.type) {        
+        case types.NEXT_ITEM:        
+            itemIndex = action.data;
+            newState.itemIndex = 
+                itemIndex % newState.moduleSize === 0 
+                    ? newState.moduleSize * (newState.currentRound) 
+                    : newState.moduleSize * (newState.currentRound) + itemIndex;
+            return newState;
+        case types.NEXT_ROUND:
+            const currentRound = state.currentRound + 1;
+            newState.currentRound = currentRound;
+            itemIndex = action.data + (newState.moduleSize * newState.currentRound);
+            newState.itemIndex = itemIndex;
+            return newState;
         case types.CHANGE_COLLECTION:
-            const collection = initialState.collections.filter(collection => collection.id === action.data)[0].collection;
+            const collection = initialState.collections.filter(collection => collection.id === action.data)[0].collection;            
             return initialState.initCollection(collection);
-        default:
-            return state;
-    }
-}
-
-export const items = (state = initialState.items, action) => {
-    switch(action.type) {
-        case types.CHANGE_ITEMS:
-            return action.data;
-        case types.CHANGE_COLLECTION:
-            const collection = initialState.collections.filter(collection => collection.id === action.data)[0].collection;
-            return initialState.initItems(initialState.initCollection(collection), 2);
-        default:
-            return state;
-    }
-};
-
-export const item = (state = initialState.item, action) => {
-    switch(action.type) {
-        case types.NEXT_ITEM:
-            return {...state, ...action.data};
-        case types.CHANGE_ITEMS:
-            return action.data[0];
-        case types.CHANGE_COLLECTION:
-            const collection = initialState.collections.filter(collection => collection.id === action.data)[0].collection;
-            const _item = initialState.initItems(initialState.initCollection(collection), 2)[0];
-            return _item;
         default:
             return state;
     }

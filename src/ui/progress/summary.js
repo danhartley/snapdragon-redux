@@ -16,7 +16,7 @@ export const renderSummaryHeader = (score) => {
 
 export const renderSummary = (index) => {
 
-    const { score, items, layouts, collection } = store.getState();
+    const { score, layouts, collection } = store.getState();
 
     if(index !== layouts.length) return;
     
@@ -45,22 +45,20 @@ export const renderSummary = (index) => {
         let lessonName = layouts.lessonName;
         let levelName = layouts.levelName;
         
+        let index = 0;
+
         switch(btn) {
             case startOverBtn:
-                changedItems = repeatModule(items, collection);
                 break;
             case tryAgainBtn:
-                changedItems = revisionModule(items, score);
                 break;
             case learnMoreBtn:
-                changedItems = nextModule(items, collection);
                 excludeRevision = false;
                 break;
             case nextLevelBtn:
                 const level = lessonPlanner.nextLevel(lessonName, levelName);
                 lessonName = level.lessonName;
                 levelName = level.name;
-                changedItems = repeatModule(items, collection);                
                 break;
         }
 
@@ -68,7 +66,7 @@ export const renderSummary = (index) => {
 
         actions.boundNextLesson(nextLayouts);
 
-        actions.boundChangeItems(changedItems);
+        actions.boundNextRound(index);
 
         event.stopPropagation();
     };
@@ -78,7 +76,7 @@ export const renderSummary = (index) => {
     if(score.fails.length > 0) tryAgainBtn.addEventListener('click', handleBtnClickEvent);
     else tryAgainBtn.setAttribute('disabled', 'disabled');
 
-    if(items.collectionIndex + items.moduleSize <= items.collectionCount) learnMoreBtn.addEventListener('click', handleBtnClickEvent);
+    if(collection.currentRound < collection.rounds) learnMoreBtn.addEventListener('click', handleBtnClickEvent);
     else learnMoreBtn.setAttribute('disabled', 'disabled');
 
     nextLevelBtn.addEventListener('click', handleBtnClickEvent);

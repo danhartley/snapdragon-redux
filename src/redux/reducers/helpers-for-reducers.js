@@ -4,8 +4,8 @@ const notItem = (item, collection) => {
     return collection.filter(other => other.id !== item.id);
 };
 
-const addMultipleNames = (collection, items, number) => {    
-    return items.map(item => {
+const addMultipleNames = (collection, number) => {    
+    return collection.map(item => {
         const others = 
             notItem(item, collection)
                 .filter((other, index) => index + 1 < number)
@@ -57,7 +57,7 @@ const cleanNames = collection => {
 };
 
 const embellishCollection = collection => {
-    const itemsWithNames = helpers.addMultipleNames(collection, collection, 6);
+    const itemsWithNames = helpers.addMultipleNames(collection, 6);
     const itemsWithNamesAndImages = helpers.addMultipleImages(collection, itemsWithNames, 9)
     const _collection = itemsWithNamesAndImages.map(item => {
         item.imageIndices = utils.randomiseSelection([1,2,3,4,5,6,7,8,9,10,11,12], 12, true);

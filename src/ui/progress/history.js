@@ -3,7 +3,7 @@ import { store } from 'redux/store';
 
 export const renderHistory = (history) => {
             
-    const { items, score } = store.getState();
+    const { collection, score } = store.getState();
 
     const template = document.querySelector('.js-history-template');
 
@@ -14,7 +14,7 @@ export const renderHistory = (history) => {
     const txtAnswered = template.content.querySelector('.js-history-answered');
     const txtScore = template.content.querySelector('.js-history-score');
     
-    txtRounds.innerHTML = `You have completed ${items.currentRound} of ${items.rounds} rounds`;
+    txtRounds.innerHTML = `You have completed ${collection.currentRound} of ${collection.rounds} rounds`;
     txtAnswered.innerHTML = `You answered ${score.correct} out of ${score.total} correctly in the last round`;
     txtScore.innerHTML = `Your score is ${history.correct} out of ${history.total} for this lesson`
 
