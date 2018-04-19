@@ -1,7 +1,9 @@
 import { store } from 'redux/store';
 import { renderTiles } from 'ui/screens/common/tiles';
 
-export const renderSpeciesTiles = (item) => {
+export const renderSpeciesTiles = (collection) => {
+
+    const item = collection.items[collection.itemIndex];
 
     const { layout, config } = store.getState();
 

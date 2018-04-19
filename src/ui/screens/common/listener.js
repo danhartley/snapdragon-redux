@@ -5,5 +5,5 @@ export const listening = () => {
 
     const handleClick = event => renderCollections();
 
-    DOM.changeCollection.addEventListener('click', handleClick);    
+    DOM.changeCollection.addEventListener('click', handleClick);
 }

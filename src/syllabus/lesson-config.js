@@ -4,5 +4,5 @@ export const config = {
     currentCollectionName: 'Mint Family | Lamiaceae',
     lessonName: 'lesson1',
     levelName: 'level1',
-    callbackTime: 1500
+    callbackTime: 15
 };

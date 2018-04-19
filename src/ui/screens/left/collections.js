@@ -34,6 +34,6 @@ export const renderCollections = () => {
 
     btns.forEach(btn => btn.addEventListener('click', event => {
         actions.boundChangeCollection(event.target.id);
-        nextLayout();
+        nextLayout(0);
     }));
 };

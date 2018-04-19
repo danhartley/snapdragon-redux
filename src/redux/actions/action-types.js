@@ -4,8 +4,8 @@ const NEXT_LAYOUT = '[logc] Select next layout';
 const UPDATE_SCORE = '[logic] Check user answer and update running score';
 const END_REVISION = '[logic] Revision complete';
 const UPDATE_HISTORY = '[logic] Copy round score to history';
-const CHANGE_ITEMS = '[logic] Change items for the next round';
 const CHANGE_COLLECTION = '[logic] Change collection';
+const NEXT_ROUND = '[logic] Go to next round';
 
 export const types = {
     NEXT_LESSON,
@@ -14,6 +14,6 @@ export const types = {
     UPDATE_SCORE,
     END_REVISION,
     UPDATE_HISTORY,
-    CHANGE_ITEMS,
-    CHANGE_COLLECTION
+    CHANGE_COLLECTION,
+    NEXT_ROUND
 };

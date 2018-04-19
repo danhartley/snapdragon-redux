@@ -2,7 +2,9 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderStrips } from 'ui/screens/common/strips';
 
-export const renderScientifics = (item) => {
+export const renderScientifics = (collection) => {
+
+    const item = collection.items[collection.itemIndex];
 
     const { layout, config } = store.getState();
 

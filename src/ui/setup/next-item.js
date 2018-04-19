@@ -7,9 +7,5 @@ export const nextItem = (layout) => {
     DOM.headerTxt.innerHTML = '';
     DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
 
-    const { items } = store.getState();
-
-    const nextItem = items[layout.itemIndex];
-    
-    actions.boundNextItem(nextItem);
+    actions.boundNextItem(layout.itemIndex);
 };

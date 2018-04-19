@@ -1,9 +1,9 @@
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 
 test('notItem should return array with item excluded', () => {
-    const collection = [ {name: 'a', id: 1}, {name: 'b', id: 2}, {name: 'c', id: 3}];
-    const item = collection[0];
-    const newCollection = helpers.notItem(item, collection);
+    const collection = { items:[ {name: 'a', id: 1}, {name: 'b', id: 2}, {name: 'c', id: 3}]};
+    const item = collection.items[0];
+    const newCollection = helpers.notItem(item, collection.items);
     expect(newCollection).not.toContain(item);
 });
 
@@ -14,11 +14,11 @@ test('spliceArrays shoudlre return single array with all common valus', () => {
 });
 
 test('cleanNames should add genus and species names to each item passed in', () =>{
-    const collection = [ 
+    const collection = { items: [ 
         { name: 'Genus species L', id: 1 }        
-    ];
+    ]};
 
-    const { name, genus, species} = helpers.cleanNames(collection)[0];
+    const { name, genus, species} = helpers.cleanNames(collection.items)[0];
     expect(name).toBe('Genus species');
     expect(genus).toBe('Genus');
     expect(species).toBe('species');

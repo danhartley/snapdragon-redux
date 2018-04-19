@@ -2,11 +2,13 @@ import { store } from 'redux/store';
 import { renderTiles } from 'ui/screens/common/tiles';
 import { DOM } from 'ui/dom';
 
-export const renderSpecimenTiles = (item) => {
+export const renderSpecimenTiles = (collection) => {
 
-    const { layout, items, config } = store.getState();
+    const item = collection.items[collection.itemIndex];
 
-    DOM.collectionTxt.innerHTML = `Round ${items.currentRound} of ${items.rounds} [ ${items.collectionCount} items in this lesson ]`;
+    const { layout, config } = store.getState();
+
+    DOM.collectionTxt.innerHTML = `Round ${collection.currentRound + 1} of ${collection.rounds} [ ${collection.items.length} items in this lesson ]`;
     
     if (window.matchMedia("(min-width: 1024px)").matches || window.matchMedia("(min-width: 1200px)").matches)
         DOM.moreSpecimensBtn.style.display = 'block';

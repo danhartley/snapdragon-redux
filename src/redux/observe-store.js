@@ -3,7 +3,7 @@ export const observeStore = (store, select, onChange, domain) => {
   
     function handleChange() {
       const name = onChange ? onChange.name : 'no name';
-      // console.log('my domain is:', domain);
+      // console.log('listening for changes on domain:', domain);
       let nextState = select(store.getState());
       if (nextState !== currentState && nextState !== null) {
         currentState = nextState;

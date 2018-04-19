@@ -10,37 +10,27 @@ export const collections = (state = initialState.collections, action) => {
 };
 
 export const collection = (state = initialState.collection, action) => {
-    switch(action.type) {
-        case types.CHANGE_COLLECTION:
-            const collection = initialState.collections.filter(collection => collection.id === action.data)[0].collection;
-            return initialState.initCollection(collection);
-        default:
-            return state;
-    }
-}
 
-export const items = (state = initialState.items, action) => {
-    switch(action.type) {
-        case types.CHANGE_ITEMS:
-            return action.data;
-        case types.CHANGE_COLLECTION:
-            const collection = initialState.collections.filter(collection => collection.id === action.data)[0].collection;
-            return initialState.initItems(initialState.initCollection(collection), 2);
-        default:
-            return state;
-    }
-};
+    let collection = {};
+    let itemIndex = 0;
+    let currentRound = 0;
 
-export const item = (state = initialState.item, action) => {
     switch(action.type) {
         case types.NEXT_ITEM:
-            return {...state, ...action.data};
-        case types.CHANGE_ITEMS:
-            return action.data[0];
+        const layoutIndex = action.data;        
+            itemIndex = 
+                layoutIndex % state.moduleSize === 0 
+                    ? (state.moduleSize * state.currentRound) 
+                    : (state.moduleSize * state.currentRound) + layoutIndex;
+            return { ...state, itemIndex };
+        case types.NEXT_ROUND:
+            currentRound = state.currentRound + 1;
+            itemIndex = action.data + (state.moduleSize * currentRound);
+            return { ...state, itemIndex, currentRound };
         case types.CHANGE_COLLECTION:
-            const collection = initialState.collections.filter(collection => collection.id === action.data)[0].collection;
-            const _item = initialState.initItems(initialState.initCollection(collection), 2)[0];
-            return _item;
+            const rawCollection = initialState.collections.filter(collection => collection.id === action.data)[0];
+            const collection = initialState.initCollection(rawCollection);   
+            return collection;
         default:
             return state;
     }
