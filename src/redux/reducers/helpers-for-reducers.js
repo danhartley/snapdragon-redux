@@ -46,6 +46,10 @@ const spliceArrays = (items, itemNames) => {
     return collection;
 };
 
+const filterExcluded = collection => {
+    return collection.filter(item => !item.exclude);
+};
+
 const cleanNames = collection => {
     return collection.map(item => {
         const names = item.name.split(' ');
@@ -71,6 +75,7 @@ export const helpers = {
     addMultipleNames,
     addMultipleImages,
     spliceArrays,
+    filterExcluded,
     cleanNames,
     embellishCollection
 };

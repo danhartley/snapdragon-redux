@@ -2215,6 +2215,7 @@ export const arrabida = [
       ]
     },
     {
+      exclude: true,
       "id": 1010972,
       "name": "Miniopterus schreibersi (Kuhl, 1817)",
       "images": [
@@ -2310,6 +2311,7 @@ export const arrabida = [
       ]
     },
     {
+      exclude: true,
       "id": 311514,
       "name": "Martes foina (Erxleben, 1777)",
       "images": [

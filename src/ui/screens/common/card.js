@@ -6,8 +6,6 @@ import { renderFamily } from 'gbif/gbif';
 
 
 export const renderCardHeader = (collectionName) => {
-    DOM.headerTxt.innerHTML = `<span>Collection: ${collectionName}</span>`;
-    DOM.changeCollection.innerHTML = `Change collection?`;
     DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
 };
 
@@ -32,13 +30,19 @@ export const renderCard = (collection) => {
     const vernacularNames = template.content.querySelector('.js-txt-species-names');
 
     const names = item.names.filter(name => name.language === config.language).map((vernacular, index) => {
-            if(index < 6) {
+            if(index < 4) {
                 return `<li>${vernacular.vernacularName}</li>`;
         }
     }).join('');
 
     vernacularNames.innerHTML = `<ul>${names}</ul>`;
 
+    const eolPage = template.content.querySelector('.js-species-card-eol-link');
+    
+    eolPage.setAttribute('href', `http://eol.org/pages/${item.id}/overview`);
+    eolPage.setAttribute('target', '_blank');
+    eolPage.setAttribute('style', 'text-decoration: none');
+    
     const clone = document.importNode(template.content, true);
 
     clone.querySelector('button').addEventListener('click', event => {
@@ -50,6 +54,10 @@ export const renderCard = (collection) => {
     
     screen.parent.innerHTML = '';
     screen.parent.appendChild(clone);
+
+    const wiki = document.querySelector('.js-species-card-wiki');
+
+    renderWiki(wiki, item.name);
 
     const gbif = document.querySelector('.js-card .js-txt-family span');
 

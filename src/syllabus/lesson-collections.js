@@ -7,7 +7,7 @@ export const collections = [
         id: '1',
         items: lamiaceae,
         name: 'lamiaceae',
-        eol_name: 'Mint Family | Lamiaceae',
+        eol_name: 'Mint and Basil Family',
         eol_link: 'http://eol.org/collections/139275'
     },
     {

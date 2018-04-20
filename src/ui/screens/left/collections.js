@@ -18,7 +18,7 @@ export const renderCollections = () => {
 
     const collectionTable = collections.map(collection => {
         return `<div class="collection">
-                    <button id="${collection.id}">Start learning</button> <span>${collection.eol_name}</span><a target="_blank" href="${collection.eol_link}">EOL page</a> 
+                    <button id="${collection.id}">Start learning</button> <a class="underline-link" target="_blank" href="${collection.eol_link}">EOL</a> <span>${collection.eol_name}</span> 
                 </div>`;
     }).join(' ');
 

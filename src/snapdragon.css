@@ -81,6 +81,10 @@ grid-template-areas: "header"
   color: black;
 }
 
+.footer button {
+  padding: 4px 8px;
+}
+
 .answer {
   grid-area: five;
   background-color: rgb(51, 128, 183);
@@ -99,7 +103,7 @@ grid-template-areas: "header"
   height: 22px;
   background-color: rgb(128, 128, 128);
   padding: 4px 0 0 5px;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
 .change-collection {
@@ -266,13 +270,25 @@ grid-template-areas: "header"
 .species-description-grid {
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: 30px 1fr 3fr 20px;
+  grid-template-rows: 30px 1fr 3fr 30px 30px;
   grid-template-areas:  "family"
                         "name"
                         "names"
                         "continue";
   grid-gap: 10px;
   margin: 20px;
+}
+
+.species-description-grid div, .species-description-grid a {
+  text-align: right;
+}
+.underline-link {
+  text-decoration: none;
+  border: solid 1px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: white;
 }
 
 .species-card-btn {
@@ -282,19 +298,19 @@ grid-template-areas: "header"
 
 .species-card-btn button {
   width: 150px;
+  font-size: 1.1em;
+  padding: 10px;
 }
 
 .species-card-name {
   grid-area: name;
   font-size: 1.8em;
-  text-align: right;  
 }
 
 .species-card-family {
   grid-area: family;
   text-transform: uppercase; 
   font-size: 1.4em; 
-  text-align: right;
   letter-spacing: 2px;
 }
 
@@ -304,17 +320,18 @@ grid-template-areas: "header"
   padding: 10px;
   font-size: .9em;
 }
+.species-card-wiki a, .species-card-eol-link {
+  color: rgb(180,180,180);
+}
 
 .species-card-names {
   grid-area: names;
   text-transform: capitalize;
-  text-align: right;
 }
 
 .family-name {
   text-transform: uppercase;
   font-size: 1.2em;
-  text-align: right;
 }
 
 ul {
