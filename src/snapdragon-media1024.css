@@ -96,11 +96,6 @@
     }
 
     .species-description-grid {
-        grid-template-rows: 50px 2fr 5fr 100px;
+        grid-template-rows: 50px 2fr 5fr 2fr;
     }
-
-    /* .tile :nth-child(7), .tile :nth-child(8), .tile :nth-child(9),
-    .tile :nth-child(7) img, .tile :nth-child(8) img, .tile :nth-child(9) img {
-        height: 172px;
-    }  */
 }

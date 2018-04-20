@@ -17,10 +17,6 @@ export const nextLayout = (index) => {
 
     layout.screens.forEach(screen => {
 
-        // console.log('the layout is: ', layout);
-
-        console.log('the domain is: ', screen.domain.toUpperCase(), ' and the screen name is: ', screen.name.toUpperCase());
-
         const select = store => store[screen.domain];
         const onChange = screen.render
         const domain = screen.domain;

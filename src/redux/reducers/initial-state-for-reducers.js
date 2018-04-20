@@ -6,8 +6,9 @@ import { collections } from 'syllabus/lesson-collections';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 
 const initCollection = (rawCollection = collections[0]) => {
-    const prepCollection = R.pipe(helpers.cleanNames, utils.shuffleArray, helpers.embellishCollection);
+    const prepCollection = R.pipe(helpers.filterExcluded, helpers.cleanNames, utils.shuffleArray, helpers.embellishCollection);
     const items = prepCollection(rawCollection.items);
+    const rounds = items.length / config.moduleSize;
 
     const collection = {
         name: rawCollection.eol_name,
@@ -15,7 +16,7 @@ const initCollection = (rawCollection = collections[0]) => {
         itemIndex: 0,
         currentRound: 0,
         moduleSize: config.moduleSize,
-        rounds: items.length / config.moduleSize
+        rounds : rounds % 2 === 0 ? rounds : rounds + 0.5
      };
 
      return collection;

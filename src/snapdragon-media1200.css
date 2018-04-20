@@ -80,4 +80,7 @@
     width: 200px;
     cursor: pointer;
   }
+  .species-description-grid {
+    grid-template-rows: 50px 2fr 5fr 2fr 5fr;
+  }
 }

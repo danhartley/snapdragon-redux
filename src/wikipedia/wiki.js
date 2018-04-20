@@ -31,25 +31,33 @@ const fetchWiki = (name, missingMessage) => {
         .then(R.flatten);
 };
 
+const cleanEntry = str => {
+    let cleaned = str;
+    cleaned = str.replace(' ()', '');
+    cleaned = str.replace('()', '');
+    return cleaned;
+};
+
 const formatWiki = (entry) => {
     let html = '';
-    if(entry.length === 1)
-        return `<li><i>Species: ${entry[0]}</i></li>`;
-    if(entry[0]) html += `<li><p>${entry[0]}</p></li>`;
-    if(entry[1]) html += `<li><p>${entry[1]}</p></li>`;
+    // if(entry.length === 1)
+    //     return `<li><i>Species: ${entry[0]}</i></li>`;
+    // if(entry[0]) html += `<li><p>${entry[0]}</p></li>`;
+    if(entry[1]) html += `<li><p>${cleanEntry(entry[1])}</p></li>`;
     if(entry[2])
         if(entry[2].indexOf('https')!== -1)
-        html += `<li><a target="_blank" href="${entry[2]}">${entry[0]}</a></li>`;
+        html += `<li><a target="_blank" href="${cleanEntry(entry[2])}" class="underline-link">Wikipedia page</a></li>`;
         else html += `<li><p>${entry[2]}</p></li>`;
     if(entry[3]) 
         if(entry[3].indexOf('https')!== -1)
-        html += `<li><a target="_blank" href="${entry[3]}">${entry[0]}</a></li>`;
+        html += `<li><a target="_blank" href="${cleanEntry(entry[3])}" class="underline-link">Wikipedia page</a></li>`;
         else html += `<li><p>${entry[3]}</p></li>`;
     return html;
 };
 
 const renderWiki = (wikiNode, binomial) => {
-    const missingMessage = 'No Wikipedia entry is available for this plant. Sorry!';
+    //const missingMessage = 'No Wikipedia entry is available for this plant. Sorry!';
+    const missingMessage= '';
     wikiNode.innerHTML = "";        
     fetchWiki(binomial, missingMessage)         
         .then(entry => {            
@@ -59,7 +67,7 @@ const renderWiki = (wikiNode, binomial) => {
                 const genus = binomial.split(' ')[0];                
                 fetchWiki(genus).
                     then(genusEntry => {
-                        wikiNode.innerHTML = `<li><i>Species: ${entry[0]}</i></li>`;
+                        // wikiNode.innerHTML = `<li><i>Species: ${entry[0]}</i></li>`;
                         wikiNode.innerHTML+= formatWiki(genusEntry.slice(1));
                     });
             }
