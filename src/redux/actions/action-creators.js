@@ -16,8 +16,7 @@ const updateScore = makeActionCreator(types.UPDATE_SCORE);
 const nextLayout = makeActionCreator(types.NEXT_LAYOUT);
 const nexItem = makeActionCreator(types.NEXT_ITEM);
 const endRevision = makeActionCreator(types.END_REVISION);
-const updateHistory = makeActionCreator(types.UPDATE_HISTORY);
-// const changeItems = makeActionCreator(types.CHANGE_ITEMS);
+const updateHistory = makeActionCreator(types.UPDATE_HISTORY)
 const changeCollection = makeActionCreator(types.CHANGE_COLLECTION);
 const nextRound = makeActionCreator(types.NEXT_ROUND);
 
@@ -27,7 +26,6 @@ const boundNextLayout = data => store.dispatch(nextLayout(data));
 const boundNextItem = data => store.dispatch(nexItem(data,{delay:500}));
 const boundEndRevision = data => store.dispatch(endRevision(data));
 const boundUpdateHistory = data => store.dispatch(updateHistory(data));
-// const boundChangeItems = data => store.dispatch(changeItems(data));
 const boundChangeCollection = data => store.dispatch(changeCollection(data));
 const boundNextRound = data => store.dispatch(nextRound(data));
 
@@ -38,7 +36,6 @@ export const actions = {
     boundNextLayout,
     boundEndRevision,
     boundUpdateHistory,
-    // boundChangeItems,
     boundChangeCollection,
     boundNextRound
 };

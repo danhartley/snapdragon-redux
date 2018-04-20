@@ -41,7 +41,6 @@ export const renderSummary = (index) => {
         
         const btn = event.target;
         let excludeRevision = true;
-        let changedItems = null;
         
         let lessonName = layouts.lessonName;
         let levelName = layouts.levelName;
@@ -59,10 +58,7 @@ export const renderSummary = (index) => {
             case nextLevelBtn:
                 const level = lessonPlanner.nextLevel(lessonName, levelName);
                 lessonName = level.lessonName;
-                levelName = level.name;
-                break;
-            case changeCollectionBtn:
-                renderCollections();
+                levelName = level.name;                
                 break;
         }
 
@@ -84,5 +80,5 @@ export const renderSummary = (index) => {
     else learnMoreBtn.setAttribute('disabled', 'disabled');
 
     nextLevelBtn.addEventListener('click', handleBtnClickEvent);
-    changeCollectionBtn.addEventListener('click', handleBtnClickEvent);
+    changeCollectionBtn.addEventListener('click', renderCollections);
 };
