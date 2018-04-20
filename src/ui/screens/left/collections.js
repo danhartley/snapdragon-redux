@@ -27,6 +27,7 @@ export const renderCollections = () => {
     currentCollection.innerHTML = `The current collection is '${config.currentCollectionName}'`;
     
     const clone = document.importNode(template.content, true);
+    
     DOM.leftBody.innerHTML = '';
     DOM.leftBody.appendChild(clone);
 

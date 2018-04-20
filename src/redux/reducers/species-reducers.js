@@ -28,9 +28,8 @@ export const collection = (state = initialState.collection, action) => {
             itemIndex = action.data + (state.moduleSize * currentRound);
             return { ...state, itemIndex, currentRound };
         case types.CHANGE_COLLECTION:
-            const rawCollection = initialState.collections.filter(collection => collection.id === action.data)[0];
-            const collection = initialState.initCollection(rawCollection);   
-            return collection;
+            const collection = initialState.collections.filter(collection => collection.id === action.data)[0];
+            return initialState.initCollection(collection);
         default:
             return state;
     }
