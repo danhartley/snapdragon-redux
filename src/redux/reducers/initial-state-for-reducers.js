@@ -15,7 +15,7 @@ const initCollection = (rawCollection = collections[0]) => {
         itemIndex: 0,
         currentRound: 0,
         moduleSize: config.moduleSize,
-        rounds: rawCollection.length / config.moduleSize
+        rounds: items.length / config.moduleSize
      };
 
      return collection;
