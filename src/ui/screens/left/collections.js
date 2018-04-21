@@ -6,13 +6,14 @@ import { nextLayout } from 'ui/setup/next-layout';
 export const renderCollections = () => {
 
     DOM.moreSpecimensBtn.style.display = 'none';
+    DOM.collectionTxt.innerHTML = '';
 
     const { collections, config } = store.getState();
 
     const template = document.querySelector('.js-collections-template');
+
     const EOL = template.content.querySelector('.js-collections div:nth-child(1)');
-    const collectionRptr = template.content.querySelector('.js-collections div:nth-child(2)');
-    const currentCollection = template.content.querySelector('.js-collections div:nth-child(3)');
+    const collectionRptr = template.content.querySelector('.js-collections div:nth-child(2)');    
 
     EOL.innerHTML = `The following collections are hosted by the Encyclopedia of Life (EOL):`;
 
@@ -24,12 +25,13 @@ export const renderCollections = () => {
 
     collectionRptr.innerHTML = collectionTable;
 
-    currentCollection.innerHTML = `The current collection is '${config.currentCollectionName}'`;
-    
     const clone = document.importNode(template.content, true);
     
     DOM.leftBody.innerHTML = '';
     DOM.leftBody.appendChild(clone);
+    
+    const currentCollection = document.querySelector('.js-collections .js-current-collection');
+    currentCollection.innerHTML = `The current collection is '${config.currentCollectionName}'`;
 
     const btns = document.querySelectorAll('.collection button');
 
