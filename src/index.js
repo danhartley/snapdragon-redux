@@ -11,6 +11,7 @@ import { nextLesson } from 'ui/setup/next-lesson';
 
 import { renderScore } from 'ui/progress/score';
 import { listening } from 'ui/screens/common/listener';
+
 // setup
 
 observeStore(store, store => store.lesson, nextLesson, 'next-lesson');
@@ -21,7 +22,14 @@ observeStore(store, store => store.layout, nextItem, 'next-item');
 
 observeStore(store, store => store.score, renderScore, 'score');
 
-// listener
+
+import { renderSnapdragon } from 'ui/screens/right/snapdragon';
+import { renderCollections } from 'ui/screens/left/collections';
+
+renderCollections();
+renderSnapdragon();
+
+// global listener
 
 listening();
 

@@ -7,6 +7,44 @@ body {
   background-color: rgb(50,50,50);
 }
 
+.snapdragon {
+  margin: 20px;
+}
+
+.snapdragon div:nth-child(1) {
+  font-size: 1.8em;
+}
+
+.snapdragon div:nth-child(2) {
+  font-size: 1.2em;
+  margin: 25px 0 50px 0;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex.eol span {
+  padding: 25px 0 0 20px;
+}
+
+.flex.wiki {
+  margin: 20px 0 0 0;
+}
+
+.flex.wiki span {
+  padding: 55px 0 0 42px;
+}
+
+.flex.gbif {
+  margin: -10px 0 0 0;
+}
+
+.flex.gbif span {  
+  padding: 55px 0 0 42px;
+}
+
 .grid {
   display: grid;
   grid-auto-flow: column;
