@@ -4460,7 +4460,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nvar config = exports.config = {\n    language: 'en',\n    moduleSize: 2,\n    currentCollectionName: 'Mint and Basil Family',\n    lessonName: 'lesson1',\n    levelName: 'level1',\n    callbackTime: 15\n};\n\n//# sourceURL=webpack:///./src/syllabus/lesson-config.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nvar config = exports.config = {\n    language: 'en',\n    moduleSize: 2,\n    currentCollectionName: 'Mint and Basil Family',\n    lessonName: 'lesson1',\n    levelName: 'level1',\n    callbackTime: 1500\n};\n\n//# sourceURL=webpack:///./src/syllabus/lesson-config.js?");
 
 /***/ }),
 
