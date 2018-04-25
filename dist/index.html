@@ -85,9 +85,9 @@
 
             <template class="js-history-template">
                 <div class="history js-history">
-                    <div><span class="js-history-rounds"></span></div>
-                    <div><span class="js-history-answered"></span></div>
-                    <div><span class="js-history-score"></span></div>
+                    <div>You have completed {{ collection.currentRound }} of {{ collection.rounds }} rounds</div>
+                    <div>You answered {{ score.correct }} out of {{ score.total }} correctly in the last round</div>
+                    <div>Your score is {{ history.correct }} out of {{ history.total }} for this lesson</div>
                 </div>
             </template>
     
