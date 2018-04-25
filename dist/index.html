@@ -159,11 +159,15 @@
                     </div>
             </template>
 
-            <template class="js-collections-template">
+            <template class="js-collections-template">                
                 <div class="collections js-collections">
-                    <div></div>
-                    <div></div>
-                    <div class="js-current-collection"></div>
+                    <div>The following collections are hosted by the Encyclopedia of Life (EOL):</div>
+                    <div data-repeat-collection="{{ collections }}">
+                        <div class="collection">
+                            <button id="{{ collection.id }}">Start learning</button> <a class="underline-link" target="_blank" href="{{ collection.eol_link }}">EOL</a> <span>{{ collection.eol_name }}</span>
+                        </div>
+                    </div>
+                    <div>The current collection is {{ config.currentCollectionName }}</div>
                 </div>
             </template>
 
