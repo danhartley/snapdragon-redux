@@ -4,5 +4,5 @@ export const config = {
     currentCollectionName: 'Mint and Basil Family',
     lessonName: 'lesson1',
     levelName: 'level1',
-    callbackTime: 15
+    callbackTime: 1500
 };
