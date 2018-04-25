@@ -6,6 +6,7 @@ const END_REVISION = '[logic] Revision complete';
 const UPDATE_HISTORY = '[logic] Copy round score to history';
 const CHANGE_COLLECTION = '[logic] Change collection';
 const NEXT_ROUND = '[logic] Go to next round';
+const NEXT_LEVEL = '[logic] Go to next level';
 
 export const types = {
     NEXT_LESSON,
@@ -15,5 +16,6 @@ export const types = {
     END_REVISION,
     UPDATE_HISTORY,
     CHANGE_COLLECTION,
-    NEXT_ROUND
+    NEXT_ROUND,
+    NEXT_LEVEL
 };

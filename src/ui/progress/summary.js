@@ -40,22 +40,23 @@ export const renderSummary = (index) => {
     const handleBtnClickEvent = event => {
         
         const btn = event.target;
-        let excludeRevision = true;
         
         let lessonName = layouts.lessonName;
         let levelName = layouts.levelName;
-        
+        let excludeRevision = true;        
         let index = 0;
 
         switch(btn) {
             case startOverBtn:
-                break;
             case tryAgainBtn:
+                actions.boundNextRound(index);
                 break;
             case learnMoreBtn:
-                excludeRevision = false;
+                excludeRevision = levelName === 'level1' ? false : true;
+                actions.boundNextRound(index);
                 break;
             case nextLevelBtn:
+                excludeRevision = true;
                 const level = lessonPlanner.nextLevel(lessonName, levelName);
                 lessonName = level.lessonName;
                 levelName = level.name;                
@@ -64,9 +65,9 @@ export const renderSummary = (index) => {
 
         const nextLayouts = lessonPlanner.createLessonPlan(lessonName, levelName, collection.moduleSize, excludeRevision);
 
-        actions.boundNextRound(index);
-
         actions.boundNextLesson(nextLayouts);
+
+        if(btn === nextLevelBtn) actions.boundNextLevel();
 
         event.stopPropagation();
     };
@@ -80,5 +81,6 @@ export const renderSummary = (index) => {
     else learnMoreBtn.setAttribute('disabled', 'disabled');
 
     nextLevelBtn.addEventListener('click', handleBtnClickEvent);
+
     changeCollectionBtn.addEventListener('click', renderCollections);
 };
