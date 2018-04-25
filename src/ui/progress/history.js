@@ -10,15 +10,12 @@ export const renderHistory = (history) => {
     DOM.leftBody.style.backgroundColor = 'rgb(50, 50, 50)';
     DOM.moreSpecimensBtn.style.display = 'none';
 
-    const txtRounds = template.content.querySelector('.js-history-rounds');
-    const txtAnswered = template.content.querySelector('.js-history-answered');
-    const txtScore = template.content.querySelector('.js-history-score');
-    
-    txtRounds.innerHTML = `You have completed ${collection.currentRound + 1} of ${collection.rounds} rounds`;
-    txtAnswered.innerHTML = `You answered ${score.correct} out of ${score.total} correctly in the last round`;
-    txtScore.innerHTML = `Your score is ${history.correct} out of ${history.total} for this lesson`
+    const progress = { score, history, collection };
 
     const clone = document.importNode(template.content, true);
     DOM.leftBody.innerHTML = '';
-    DOM.leftBody.appendChild(clone);
+    
+    var ctx = new Stamp.Context();
+    var expanded = Stamp.expand(clone, progress);
+    Stamp.appendChildren(DOM.leftBody, expanded);
 }

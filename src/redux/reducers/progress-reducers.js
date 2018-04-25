@@ -12,6 +12,8 @@ export const index = (state = 0, action) => {
             return 0;
         case types.NEXT_ROUND:
             return 0;
+        case types.NEXT_LEVEL:
+            return 0;
         default:
             return state;
     }
@@ -36,6 +38,8 @@ export const score = (state = initialState.score, action) => {
         case types.CHANGE_COLLECTION:
             return initialState.score;
         case types.NEXT_ROUND:
+            return initialState.score;
+        case types.NEXT_LEVEL:
             return initialState.score;
         default:
             return state;

@@ -7,6 +7,8 @@ export const config = (state = lessonConfig, action) => {
         case types.CHANGE_COLLECTION:
             const collection = collections.filter(collection => collection.id === action.data)[0];
             return { ...state, currentCollectionName: collection.eol_name };
+        case types.UPDATE_CONFIG:
+            return { ...state, ...action.data };
         default: 
             return state;
     }

@@ -4,6 +4,7 @@
         <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
         <script src="https://cdn.ravenjs.com/3.24.2/raven.min.js" crossorigin="anonymous"></script>
+        <script src="./stamp.js"></script>
         <script>
             Raven.config('https://9d9d8654a6a345a3af09df89cb615bde@sentry.io/302756').install();
         </script>
@@ -48,9 +49,9 @@
     
             <template class="js-score-template">
                 <div>
-                    Score: <span class="js-txt-correct"></span>/<span class="js-txt-total"></span>
-                    History: <span class="js-txt-history-correct"></span>/<span class="js-txt-history-total"></span>
-                    Round: <span class="js-txt-lesson-round"></span>/<span class="js-txt-lesson-rounds"></span>
+                    Score: {{ score.correct }}/{{ score.total }}
+                    History: {{ running.correct }}/{{ running.total }}
+                    Round: {{ collection.currentRound }}/{{ collection.rounds }}
                 </div>
             </template>
     
@@ -84,9 +85,9 @@
 
             <template class="js-history-template">
                 <div class="history js-history">
-                    <div><span class="js-history-rounds"></span></div>
-                    <div><span class="js-history-answered"></span></div>
-                    <div><span class="js-history-score"></span></div>
+                    <div>You have completed {{ collection.currentRound }} of {{ collection.rounds }} rounds</div>
+                    <div>You answered {{ score.correct }} out of {{ score.total }} correctly in the last round</div>
+                    <div>Your score is {{ history.correct }} out of {{ history.total }} for this lesson</div>
                 </div>
             </template>
     
@@ -158,11 +159,18 @@
                     </div>
             </template>
 
-            <template class="js-collections-template">
+            <template class="js-collections-template">                
                 <div class="collections js-collections">
-                    <div></div>
-                    <div></div>
-                    <div class="js-current-collection"></div>
+                    <div>The following collections are hosted by the Encyclopedia of Life (EOL):</div>
+                    <div data-repeat-collection="{{ collections }}">
+                        <div class="collection">
+                            <button id="{{ collection.id }}">Start learning</button> <a class="underline-link" target="_blank" href="{{ collection.eol_link }}">EOL</a> <span>{{ collection.eol_name }}</span>
+                        </div>
+                    </div>
+                    <div>The current collection is {{ config.currentCollectionName }}</div>
+                    <ul data-repeat-language="{{ languages }}" class="">
+                        <li><input name="language" id="{{ language.lang }}" type="radio"> {{ language.name }}</li>
+                    </ul>
                 </div>
             </template>
 

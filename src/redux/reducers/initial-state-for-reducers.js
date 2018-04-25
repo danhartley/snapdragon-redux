@@ -14,7 +14,7 @@ const initCollection = (rawCollection = collections[0]) => {
         name: rawCollection.eol_name,
         items : items,
         itemIndex: 0,
-        currentRound: 0,
+        currentRound: 1,
         moduleSize: config.moduleSize,
         rounds : rounds % 2 === 0 ? rounds : rounds + 0.5
      };
