@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="stamp.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css" media="screen">
+      .itemfoo {
+        color: red;
+      }
+      .itembar {
+        color: blue;
+      }
+    </style>
+    <link rel="import" href="import.html">
+</head>
+<body>
+
+  <template id=t>
+    <p>
+      Templates use double moustaches to mark templated content.
+    </p>
+    <p>
+      For example: Hello, {{ name }}.
+    </p>
+    <p>
+      Expansion is done both in text elements and in node attributes.
+    </p>
+    <p>
+      <input type="text" value="{{ url }}" />
+    </p>
+    <p>
+      Some nodes have attributes that are strictly checked by the browser, so
+      Stamp allows appending an optional trailing "-" on an attribute that is
+      removed once the expansion is complete. For example, note the trailing "-"
+      on the href below, which is removd one the expansion is complete. Any
+      attribute name can have a trailing "-".
+    </p>
+    <p><a href-="{{ url }}">{{ foo.bar.baz }} {{ quux }}</a>!</p>
+
+    <p>
+      Loop over arrays. Use data attributes of data-repeat-[name]="x.y.z" and
+      reference the values iterated over using {{ [name] }}.  For arrays the
+      'i' state variable is also set.
+    </p>
+    <ul data-repeat-char="list">
+      <li>{{ char }} {{ i }}</li>
+    </ul>
+
+    <ul data-repeat-char-index="list">
+      <li>{{ char }} {{ index }}</li>
+    </ul>
+    <p data-repeat-char-index="list">
+      {{ char }} {{ index }}
+    </p>
+
+    <p>
+      Loop over Objects. For objects the 'key' state variable is also set.
+    </p>
+    <ul data-repeat-o="anobj">
+      <li class-="item{{ key }}">{{ key }}={{ o.name }}</li>
+      <li>{{ o.name }}={{ key }}</li>
+    </ul>
+
+    <ul data-repeat-value-key2="anobj">
+      <li>{{ key2 }}={{ value.name }}</li>
+    </ul>
+
+    <p>
+      Nested repeat loops that also demonstrace the ^ operator.
+    </p>
+    <ul data-repeat-value-key="top">
+      <li>{{ key }}
+        <ol data-repeat-value2-key2="{{ value }}">
+          <li>{{ ^.^.quux }}  {{ ^.key }} - {{ key2 }}={{ value2.name }}</li>
+        </ol>
+      </li>
+    </ul>
+  </template>
+
+  <p>
+    The template will be expanded with data and the resulting DOM tree will
+    be inserted into the div below.
+  </p>
+  <div id=target></div>
+
+  <script type="text/javascript" charset="utf-8">
+    (function () {
+      var data = {
+        foo: { bar: { baz: "Hello"}},
+        quux: "World",
+        list: ["a", "b", "c"],
+        anobj: {
+          foo: {name: "Fred"},
+          bar: {name: "Barney"}
+        },
+        top: {
+          foo: {
+            baz: {name: "Foo Baz"},
+            quux: {name: "Foo Quux"}
+          },
+          bar: {
+            larry: {name: "Bar Larry"},
+            curly: {name: "Bar Curly"}
+          },
+        },
+        url: "http://example.com",
+        title: "Press Me",
+        name: "Joe",
+      };
+
+      var ctx = new Stamp.Context();
+      Stamp.expandInto(document.getElementById('target'), ctx.import('t'), data);
+    })();
+  </script>
+
+  <p>
+    This is a demonstration of a custom element, defined in an HTML Import, that uses template expansion
+    with Shadow DOM.
+  </p>
+  <my-element>
+    <button>Light DOM Button</button>
+  </my-element>
+
+</body>
+</html>

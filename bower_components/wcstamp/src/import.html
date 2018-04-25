@@ -1,0 +1,30 @@
+<!--
+An example of a custom element with a template that uses Stamp, styling, and
+slots.
+-->
+<template id="my-template">
+  <style type="text/css" media="screen">
+    button {
+      background: papayawhip;
+      display: block;
+    }
+  </style>
+  <button>{{ name }}</button>
+  <slot></slot>
+</template>
+
+<script type="text/javascript" charset="utf-8">
+  (function () {
+    var ctx = new Stamp.Context();
+    customElements.define('my-element', class extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({mode: 'open'});
+      }
+
+      connectedCallback() {
+        Stamp.expandInto(this.shadowRoot, ctx.import('my-template'), {name: "Shadow DOM Button"});
+      }
+    });
+  })();
+</script>

@@ -4,6 +4,7 @@
         <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
         <script src="https://cdn.ravenjs.com/3.24.2/raven.min.js" crossorigin="anonymous"></script>
+        <script src="./stamp.js"></script>
         <script>
             Raven.config('https://9d9d8654a6a345a3af09df89cb615bde@sentry.io/302756').install();
         </script>
@@ -48,9 +49,9 @@
     
             <template class="js-score-template">
                 <div>
-                    Score: <span class="js-txt-correct"></span>/<span class="js-txt-total"></span>
-                    History: <span class="js-txt-history-correct"></span>/<span class="js-txt-history-total"></span>
-                    Round: <span class="js-txt-lesson-round"></span>/<span class="js-txt-lesson-rounds"></span>
+                    Score: {{ score.correct }}/{{ score.total }}
+                    History: {{ running.correct }}/{{ running.total }}
+                    Round: {{ collection.currentRound }}/{{ collection.rounds }}
                 </div>
             </template>
     
