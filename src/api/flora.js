@@ -6425,6 +6425,7 @@ export const herbs =
   {
     "id": 577604,
     "name": "Artemisia dracunculus L.",
+    "wiki-name": "Tarragon",
     "images": [
       "http://media.eol.org/content/2012/05/23/06/93432_orig.jpg",
       "http://media.eol.org/content/2011/10/06/02/70307_orig.jpg",
