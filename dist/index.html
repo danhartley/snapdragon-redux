@@ -168,6 +168,9 @@
                         </div>
                     </div>
                     <div>The current collection is {{ config.currentCollectionName }}</div>
+                    <ul data-repeat-language="{{ languages }}" class="">
+                        <li><input name="language" id="{{ language.lang }}" type="radio"> {{ language.name }}</li>
+                    </ul>
                 </div>
             </template>
 
