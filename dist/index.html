@@ -170,7 +170,7 @@
                     <div>The current collection is {{ config.currentCollectionName }}</div>
 
                     <div class="flex">
-                        <div class="dropdown">
+                        <div class="dropdown js-languages">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Languages
                             </button>
@@ -180,6 +180,19 @@
                         </div>
                         <div class="selected-language js-selected-language">Current language: <span>{{ config.language }}</span></div>
                     </div>
+
+                    <div class="flex">
+                        <div class="dropdown js-levels">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Levels
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-level="{{ config.lesson.levels }}">
+                                <a class="dropdown-item" id="level{{ level.id }}" href="#">{{ level.name }}: {{ level.description }}</a>
+                            </div>
+                        </div>
+                        <div class="selected-level js-selected-level">Current level: <span>{{ config.lesson.level.name }}</span></div>
+                    </div>
+    
 
                 </div>
             </template>

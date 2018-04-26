@@ -1,7 +1,7 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { nextLayout } from 'ui/setup/next-layout';
+import { nextLesson } from 'ui/setup/next-lesson';
 
 export const renderCollections = () => {
 
@@ -26,20 +26,39 @@ export const renderCollections = () => {
 
     btns.forEach(btn => btn.addEventListener('click', event => {
         actions.boundChangeCollection(event.target.id);
-        nextLayout(0);
+        nextLesson(0);
     }));
 
-    const id = '#' + config.language;
+    const languageId = '#' + config.language;
 
-    document.querySelectorAll(id)[0].classList.add('active');
+    document.querySelectorAll(languageId)[0].classList.add('active');
 
-    document.querySelectorAll('.dropdown div').forEach(option => {        
+    document.querySelectorAll('.dropdown.js-languages .dropdown-item').forEach(option => {        
         option.addEventListener('click', event => {
-            document.querySelectorAll(id)[0].classList.remove('active');
+            document.querySelectorAll(languageId)[0].classList.remove('active');
             event.target.classList.add('active');
             const lang = event.target.id;
-            document.querySelector('.js-selected-language span').innerHTML = lang; // time for rivets? (http://rivetsjs.com/)
+            document.querySelector('.js-selected-language span').innerHTML = lang;
             const data = { language: lang };
+            actions.boundUpdateConfig(data);
+        });
+    });
+
+    const levelId = '#level' + config.lesson.level.id;
+
+    document.querySelectorAll(levelId)[0].classList.add('active');
+
+    document.querySelectorAll('.dropdown.js-levels .dropdown-item').forEach(option => {        
+        option.addEventListener('click', event => {
+            document.querySelectorAll(levelId)[0].classList.remove('active');
+            event.target.classList.add('active');
+            const id = event.target.id;
+            const level = config.lesson.levels.filter(level => level.id.toString() === id.slice(id.length -1))[0];
+            document.querySelector('.js-selected-level span').innerHTML = level.name;
+            const data = { lesson: {
+                name: config.lesson.name,
+                level: level       
+            }};
             actions.boundUpdateConfig(data);
         });
     });

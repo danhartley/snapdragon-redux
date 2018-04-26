@@ -6,7 +6,7 @@ export const nextLesson = (lesson) => {
 
     const { config } = store.getState();
 
-    const layouts = lessonPlanner.createLessonPlan(config.lessonName, config.levelName, config.moduleSize);
+    const layouts = lessonPlanner.createLessonPlan(config.lesson.name, config.lesson.level.name, config.moduleSize);
 
     actions.boundNextLesson(layouts);
 };

@@ -52,7 +52,7 @@ export const renderSummary = (index) => {
                 actions.boundNextRound(index);
                 break;
             case learnMoreBtn:
-                excludeRevision = levelName === 'level1' ? false : true;
+                excludeRevision = levelName === 'Level 1' ? false : true;
                 actions.boundNextRound(index);
                 break;
             case nextLevelBtn:

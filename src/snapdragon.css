@@ -464,7 +464,7 @@ button:disabled {
   padding: 1em;
 }
 
-.flex .selected-language {
+.flex .selected-language, .flex .selected-level {
   padding: 1em;
 }
 
