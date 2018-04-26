@@ -1,6 +1,6 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
-import { renderAnswerHeader } from 'ui/helpers/helpers-for-screens';
+import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
 export const renderTiles = (screen, item, callbackTemplate, callbackTime) => {
 

@@ -1,8 +1,7 @@
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
-import { renderAnswer } from 'ui/helpers/helpers-for-screens';
+import { renderAnswer } from 'ui/helpers/response-formatting';
 import { actions } from 'redux/actions/action-creators';
-import { revisionModule, nextModule, repeatModule } from 'ui/helpers/helpers-for-screens';
 import { lessonPlanner } from 'syllabus/lesson-planner';
 import { renderCollections } from 'ui/screens/left/collections';
 

@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 
 import { DOM } from 'ui/dom';
-import { addListeners } from 'ui/helpers/helpers-for-screens';
+import { addListeners } from 'ui/helpers/listeners';
 
 export const renderStrips = (screen, item, callback, config) => {
 
