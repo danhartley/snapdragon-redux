@@ -16,25 +16,7 @@ export const renderCollections = () => {
     
     DOM.leftBody.innerHTML = '';
 
-    const languages = [
-        { name: 'english', lang: 'en', checked: false },
-        { name: 'عربى', lang: 'ar', checked: false },
-        { name: 'deutsche', lang: 'de', checked: false },
-        { name: 'italiano', lang: 'it', checked: false },
-        { name: 'français', lang: 'fr', checked: false },
-        { name: 'português', lang: 'pt', checked: false },
-        { name: '中文', lang: 'zh', checked: false }
-    ];
-
-    languages.map(language => {
-        if(language.lang === config.language) { language.checked = true; }
-        else { language.checked = false; }
-    });
-
-    let selectedLanguage = languages.filter(language => language.checked === true)[0].lang;
-    let id = '#' + selectedLanguage;
-
-    const data = { collections, config, languages, selectedLanguage };
+    const data = { collections, config };
 
     var ctx = new Stamp.Context();
     var expanded = Stamp.expand(clone, data);
@@ -47,6 +29,8 @@ export const renderCollections = () => {
         nextLayout(0);
     }));
 
+    const id = '#' + config.language;
+
     document.querySelectorAll(id)[0].classList.add('active');
 
     document.querySelectorAll('.dropdown div').forEach(option => {        
@@ -54,7 +38,7 @@ export const renderCollections = () => {
             document.querySelectorAll(id)[0].classList.remove('active');
             event.target.classList.add('active');
             const lang = event.target.id;
-            document.querySelector('.js-selected-language').innerHTML = lang; // time for rivets? (http://rivetsjs.com/)
+            document.querySelector('.js-selected-language span').innerHTML = lang; // time for rivets? (http://rivetsjs.com/)
             const data = { language: lang };
             actions.boundUpdateConfig(data);
         });

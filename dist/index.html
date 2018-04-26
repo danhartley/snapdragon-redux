@@ -169,15 +169,18 @@
                     </div>
                     <div>The current collection is {{ config.currentCollectionName }}</div>
 
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Languages
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ languages }}">
-                            <a class="dropdown-item" id="{{ language.lang }}" href="#">{{ language.name }}</a>
+                    <div class="flex">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Languages
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ config.languages }}">
+                                <a class="dropdown-item" id="{{ language.lang }}" href="#">{{ language.name }}</a>
+                            </div>
                         </div>
+                        <div class="selected-language js-selected-language">Current language: <span>{{ config.language }}</span></div>
                     </div>
-                    <div>Current language: <span class="js-selected-language">{{ selectedLanguage }}</span></div>
+
                 </div>
             </template>
 
