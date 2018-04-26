@@ -5,9 +5,9 @@
         margin-top: 68px;
       }      
 
-      button {
+      /* button {
           font-size: 1em;
-      }
+      } */
 
     .left-grid {
         grid-template-columns: 512px;
@@ -30,7 +30,6 @@
 
     .header, .footer {
         height: 60px;
-        padding: 20px 0 0 20px;
     }
 
     .answer {
@@ -55,7 +54,6 @@
     }
 
     .letterbox span {
-        margin: 20px 0;
         display: inline;
     }
   
@@ -68,13 +66,12 @@
     }
     
     .letterbox button {
-        margin: 20px 0;
-        margin: 0 5px;
+        margin: 0 .5em .4em 0.5em;
         width: 80px;
     }
   
     .summary button {
-        margin: 20px;
+        margin: 1em;
       }
 
       .summary div {
