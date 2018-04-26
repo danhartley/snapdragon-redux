@@ -60,22 +60,22 @@ const layout7 = {
 
 const lesson1 = {
     id: 1,
-    name: 'lesson1',
+    name: 'Lesson 1',
     levels: [
         {   id: 1,
-            name: 'level1',
+            name: 'Level 1',
             layouts: [ layout1, layout2, layout3, layout4 ]
         },
         {   id: 2,
-            name: 'level2',
+            name: 'Level 2',
             layouts: [ layout1, layout5 ]
         },
         {   id: 3,
-            name: 'level3',
+            name: 'Level 3',
             layouts: [ layout1, layout6 ]
         },
         {   id: 4,
-            name: 'level4',
+            name: 'Level 4',
             layouts: [ layout1, layout7 ]
         }
     ]

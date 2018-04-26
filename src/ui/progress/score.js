@@ -3,7 +3,7 @@ import { store } from 'redux/store';
 
 export const renderScore = (score) => {
     
-    const { history, collection } = store.getState();
+    const { history, collection, config } = store.getState();
 
     const template = document.querySelector('.js-score-template');
 
@@ -17,7 +17,7 @@ export const renderScore = (score) => {
             total: score.total
         };
 
-    const progress = { score, running, collection };
+    const progress = { score, running, collection, config };
 
     const clone = document.importNode(template.content, true);
 

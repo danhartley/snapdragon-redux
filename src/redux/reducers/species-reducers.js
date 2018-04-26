@@ -9,7 +9,7 @@ export const collections = (state = initialState.collections, action) => {
     }
 };
 
-export const collection = (state = initialState.collection, action) => {
+export const collection = (state = null, action) => {
 
     let collection = {};
     let itemIndex = 0;

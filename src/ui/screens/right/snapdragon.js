@@ -8,5 +8,4 @@ export const renderSnapdragon = () => {
     
     DOM.rightBody.innerHTML = '';
     DOM.rightBody.appendChild(clone);
-
 };

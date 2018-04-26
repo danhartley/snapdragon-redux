@@ -1,7 +1,7 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { nextLayout } from 'ui/setup/next-layout';
+import { nextLesson } from 'ui/setup/next-lesson';
 
 export const renderCollections = () => {
 
@@ -16,26 +16,11 @@ export const renderCollections = () => {
     
     DOM.leftBody.innerHTML = '';
 
-    const languages = [
-        { name: 'english', lang: 'en', checked: false },
-        { name: 'عربى', lang: 'ar', checked: false },
-        { name: 'deutsche', lang: 'de', checked: false },
-        { name: 'italiano', lang: 'it', checked: false },
-        { name: 'français', lang: 'fr', checked: false },
-        { name: 'português', lang: 'pt', checked: false },
-        { name: '中文', lang: 'zh', checked: false }
-    ];
+    let currentCollection = '';
+    if(config.currentCollectionName !== '') currentCollection = `The current collection is ${config.currentCollectionName}`;
 
-    languages.map(language => {
-        if(language.lang === config.language) { language.checked = true; }
-        else { language.checked = false; }
-    });
-
-    let selectedLanguage = languages.filter(language => language.checked === true)[0].lang;
-    let id = '#' + selectedLanguage;
-
-    const data = { collections, config, languages, selectedLanguage };
-
+    const data = { collections, config, currentCollection };
+    
     var ctx = new Stamp.Context();
     var expanded = Stamp.expand(clone, data);
     Stamp.appendChildren(DOM.leftBody, expanded);
@@ -44,18 +29,36 @@ export const renderCollections = () => {
 
     btns.forEach(btn => btn.addEventListener('click', event => {
         actions.boundChangeCollection(event.target.id);
-        nextLayout(0);
+        nextLesson(0);
     }));
 
-    document.querySelectorAll(id)[0].classList.add('active');
+    const languageId = '#' + config.language;
 
-    document.querySelectorAll('.dropdown div').forEach(option => {        
+    document.querySelectorAll(languageId)[0].classList.add('active');
+
+    document.querySelectorAll('.dropdown.js-languages .dropdown-item').forEach(option => {        
         option.addEventListener('click', event => {
-            document.querySelectorAll(id)[0].classList.remove('active');
+            document.querySelectorAll('.dropdown.js-languages .dropdown-item').forEach(option => option.classList.remove('active'));
             event.target.classList.add('active');
             const lang = event.target.id;
-            document.querySelector('.js-selected-language').innerHTML = lang; // time for rivets? (http://rivetsjs.com/)
+            document.querySelector('.js-selected-language span').innerHTML = lang;
             const data = { language: lang };
+            actions.boundUpdateConfig(data);
+        });
+    });
+
+    const levelId = '#level' + config.lesson.level.id;
+
+    document.querySelectorAll(levelId)[0].classList.add('active');
+
+    document.querySelectorAll('.dropdown.js-levels .dropdown-item').forEach(option => {
+        option.addEventListener('click', event => {
+            document.querySelectorAll('.dropdown.js-levels .dropdown-item').forEach(option => option.classList.remove('active'));
+            event.target.classList.add('active');
+            const id = event.target.id;
+            const level = config.lesson.levels.filter(level => level.id.toString() === id.slice(id.length -1))[0];
+            document.querySelector('.js-selected-level span').innerHTML = level.name;
+            const data = { lesson: { ...config.lesson, level } };
             actions.boundUpdateConfig(data);
         });
     });
