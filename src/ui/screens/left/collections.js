@@ -16,8 +16,11 @@ export const renderCollections = () => {
     
     DOM.leftBody.innerHTML = '';
 
-    const data = { collections, config };
+    let currentCollection = '';
+    if(config.currentCollectionName !== '') currentCollection = `The current collection is ${config.currentCollectionName}`;
 
+    const data = { collections, config, currentCollection };
+    
     var ctx = new Stamp.Context();
     var expanded = Stamp.expand(clone, data);
     Stamp.appendChildren(DOM.leftBody, expanded);
@@ -35,7 +38,7 @@ export const renderCollections = () => {
 
     document.querySelectorAll('.dropdown.js-languages .dropdown-item').forEach(option => {        
         option.addEventListener('click', event => {
-            document.querySelectorAll(languageId)[0].classList.remove('active');
+            document.querySelectorAll('.dropdown.js-languages .dropdown-item').forEach(option => option.classList.remove('active'));
             event.target.classList.add('active');
             const lang = event.target.id;
             document.querySelector('.js-selected-language span').innerHTML = lang;
@@ -48,17 +51,14 @@ export const renderCollections = () => {
 
     document.querySelectorAll(levelId)[0].classList.add('active');
 
-    document.querySelectorAll('.dropdown.js-levels .dropdown-item').forEach(option => {        
+    document.querySelectorAll('.dropdown.js-levels .dropdown-item').forEach(option => {
         option.addEventListener('click', event => {
-            document.querySelectorAll(levelId)[0].classList.remove('active');
+            document.querySelectorAll('.dropdown.js-levels .dropdown-item').forEach(option => option.classList.remove('active'));
             event.target.classList.add('active');
             const id = event.target.id;
             const level = config.lesson.levels.filter(level => level.id.toString() === id.slice(id.length -1))[0];
             document.querySelector('.js-selected-level span').innerHTML = level.name;
-            const data = { lesson: {
-                name: config.lesson.name,
-                level: level       
-            }};
+            const data = { lesson: { ...config.lesson, level } };
             actions.boundUpdateConfig(data);
         });
     });

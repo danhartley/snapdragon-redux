@@ -15,7 +15,10 @@ export const config = (state = lessonConfig, action) => {
 };
 
 export const lesson = (state = 1, action) => {
-    return state;
+    switch(action.type) {
+        default:
+            return state;
+    }
 };
 
 export const layouts = (state = null, action) => {

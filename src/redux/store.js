@@ -8,11 +8,11 @@ import { index, score, history, revision } from 'redux/reducers/progress-reducer
 import { config, lesson, layouts, layout } from 'redux/reducers/layout-reducers';
 
 const reducer = combineReducers({
-    lesson,
-    index,
-    config,
+    // lesson,
     layouts,
     layout,
+    index,
+    config,
     score,
     collections,
     collection,

@@ -1,9 +1,11 @@
 export const config = {
     language: 'en',
     moduleSize: 2,
-    currentCollectionName: 'Mint and Basil Family',
+    callbackTime: 1500,
+    currentCollectionName: '',
     lesson: {
-        name: 'Lesson 1',        
+        id: 1,
+        name: 'Lesson 1',               
         level: {
             id: 1,
             name: 'Level 1',
@@ -28,7 +30,6 @@ export const config = {
             }
         ]
     },
-    callbackTime: 15,
     languages : [
         { name: 'english', lang: 'en' },
         { name: 'عربى', lang: 'ar' },
