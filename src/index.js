@@ -1,3 +1,9 @@
+
+import {$,jQuery} from 'jquery';
+import PopperJs from 'popper.js';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './snapdragon.css';
 import './snapdragon-media1024.css';
 import './snapdragon-media1200.css';

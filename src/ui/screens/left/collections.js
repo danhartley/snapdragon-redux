@@ -22,7 +22,7 @@ export const renderCollections = () => {
         { name: 'deutsche', lang: 'de', checked: false },
         { name: 'italiano', lang: 'it', checked: false },
         { name: 'français', lang: 'fr', checked: false },
-        { name: 'português', lang: 'pt-BR', checked: false },
+        { name: 'português', lang: 'pt', checked: false },
         { name: '中文', lang: 'zh', checked: false }
     ];
 
@@ -31,7 +31,10 @@ export const renderCollections = () => {
         else { language.checked = false; }
     });
 
-    const data = { collections, config, languages };
+    let selectedLanguage = languages.filter(language => language.checked === true)[0].lang;
+    let id = '#' + selectedLanguage;
+
+    const data = { collections, config, languages, selectedLanguage };
 
     var ctx = new Stamp.Context();
     var expanded = Stamp.expand(clone, data);
@@ -44,12 +47,14 @@ export const renderCollections = () => {
         nextLayout(0);
     }));
 
-    const id = '#' + languages.filter(language => language.checked === true)[0].lang;
-    document.querySelectorAll(id)[0].setAttribute('checked', 'checked');
+    document.querySelectorAll(id)[0].classList.add('active');
 
-    document.querySelectorAll('li input').forEach(radio => {
-        radio.addEventListener('click', event => {
+    document.querySelectorAll('.dropdown div').forEach(option => {        
+        option.addEventListener('click', event => {
+            document.querySelectorAll(id)[0].classList.remove('active');
+            event.target.classList.add('active');
             const lang = event.target.id;
+            document.querySelector('.js-selected-language').innerHTML = lang; // time for rivets? (http://rivetsjs.com/)
             const data = { language: lang };
             actions.boundUpdateConfig(data);
         });

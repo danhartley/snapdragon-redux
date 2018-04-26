@@ -8,7 +8,7 @@ body {
 }
 
 .snapdragon {
-  margin: 20px;
+  margin: 1.4em;
 }
 
 .snapdragon div:nth-child(1) {
@@ -26,23 +26,23 @@ body {
 }
 
 .flex.eol span {
-  padding: 25px 0 0 20px;
+  padding: 1.8em 0 0 1em;
 }
 
 .flex.wiki {
-  margin: 20px 0 0 0;
+  margin: 1.6em 0 0 0;
 }
 
 .flex.wiki span {
-  padding: 55px 0 0 42px;
+  padding: 4em 0 0 2.2em;
 }
 
 .flex.gbif {
-  margin: -10px 0 0 0;
+  margin: -.5em 0 0 0;
 }
 
 .flex.gbif span {  
-  padding: 55px 0 0 42px;
+  padding: 4em 0 0 2.2em;
 }
 
 .grid {
@@ -67,6 +67,10 @@ body {
   grid-template-areas: "header"
                       "squares"
                       "footer"
+}
+
+.left-grid .header-text, .right-grid .header-text {
+  margin: .7em;
 }
 
 .right-grid {
@@ -114,13 +118,16 @@ grid-template-areas: "header"
 .footer {
   grid-area: footer;
   height: 22px;
-  padding: 5px 0 0 5px;
   background-color: rgb(192, 58, 72);
   color: black;
 }
 
 .footer button {
-  padding: 4px 8px;
+  margin: .8em;
+}
+
+.score-footer {
+  margin: 1.3em;
 }
 
 .answer {
@@ -140,13 +147,13 @@ grid-template-areas: "header"
   grid-area: header;
   height: 22px;
   background-color: rgb(128, 128, 128);
-  padding: 4px 0 0 5px;
+  /* padding: 4px 0 0 5px; */
   font-size: 1.2em;
 }
 
 .change-collection {
   float: right;
-  margin-right: 10px;
+  margin-right: .2em;
   cursor: pointer;
 }
 
@@ -244,7 +251,7 @@ grid-template-areas: "header"
 .letterbox div:nth-child(2) {
   grid-area: two;
   background-color: rgb(128, 128, 128);
-  padding: 26px 10px;
+  padding: 1.4em 1em;
 }
 
 .letterbox div:nth-child(3) {
@@ -259,10 +266,8 @@ grid-template-areas: "header"
 }
 
 .letterbox input {
-  margin: 10px 0;
-  height: 42px;
   font-size: 1.4em;
-  padding: 5px;
+  padding: .3em;
   color: white;
   background-color: rgb(50,50,50);
   border: 0;
@@ -277,7 +282,7 @@ grid-template-areas: "header"
 }
 
 .letterbox button {
-  margin: 0px;
+  margin: 0;
   width: 260px;
 }
 
@@ -298,7 +303,7 @@ grid-template-areas: "header"
 
 .summary button {
   width: 120px;
-  margin: 0 0 20px 0px;
+  margin: 0 0 1em 0px;
 }
 
 .summary div {
@@ -320,6 +325,7 @@ grid-template-areas: "header"
 .species-description-grid div, .species-description-grid a {
   text-align: right;
 }
+
 .underline-link {
   text-decoration: none;
   border: solid 1px;
@@ -336,8 +342,6 @@ grid-template-areas: "header"
 
 .species-card-btn button {
   width: 150px;
-  font-size: 1.1em;
-  padding: 10px;
 }
 
 .species-card-name {
@@ -448,33 +452,6 @@ a {
   text-transform: capitalize;
 }
 
-button {
-	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
-	background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
-	background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
-	background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
-	background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
-	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
-	background-color:#ffffff;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	cursor:pointer;
-	color:#666666;
-	font-family:Arial;
-	font-size:1.4em;
-	font-weight:bold;
-	padding:6px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
-}
-
 button:focus {
   outline: none;
 }
@@ -499,4 +476,8 @@ button:disabled {
 .collection span:nth-of-type(2) {
   display: inline-block;
   width: 140px;  
+}
+
+.dropdown button {
+  width: 160px;
 }
