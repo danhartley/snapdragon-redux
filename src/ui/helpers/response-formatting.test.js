@@ -1,4 +1,4 @@
-import { renderCapital, renderName, renderAnswer, renderAnswerText, nextModule } from 'ui/helpers/helpers-for-screens';
+import { renderCapital, renderName, renderAnswer, renderAnswerText, nextModule } from 'ui/helpers/response-formatting';
 
 test('renderCapital should return first letter capitalised', () => {
     expect(renderCapital('chives')).toBe('Chives');

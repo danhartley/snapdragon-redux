@@ -70,16 +70,27 @@
     height: 600px;
     width: 600px;
   }
+
   .tile {
     width: 200px;
   }
+
   .tile img {
     object-fit: cover;
     height: 200px;
     width: 200px;
     cursor: pointer;
   }
+
   .species-description-grid {
     grid-template-rows: 50px 2fr 5fr 2fr 5fr;
+  }
+
+  block {
+    margin: .1em;
+    padding: .1em .2em;
+    letter-spacing: .1em;
+    font-size: 2em;
+    border-radius: .2em;
   }
 }

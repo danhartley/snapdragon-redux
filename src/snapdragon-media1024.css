@@ -82,9 +82,11 @@
       height: 512px;
       width: 512px;
     }
+
     .tile {
         width: 170px;
     }
+
     .tile img {
         object-fit: cover;
         cursor: pointer;
@@ -94,5 +96,9 @@
 
     .species-description-grid {
         grid-template-rows: 50px 2fr 5fr 2fr;
+    }
+
+    .block {
+        font-size: 1.6em;
     }
 }

@@ -12,6 +12,9 @@ import { renderTextEntry } from 'ui/screens/right/species-text-entry';
 import { renderSummary } from 'ui/progress/summary';
 import { renderHistory } from 'ui/progress/history';
 
+import { renderLetters } from 'ui/screens/common/letters';
+import { runTask } from 'ui/screens/command';
+
 // LEFT
 
 const specimen = {
@@ -98,6 +101,18 @@ const summary = {
   template: 'js-summary-template'
 };
 
+const command = {
+  name: 'command', 
+  domain: 'collection',
+  render: runTask,
+  left: specimen,
+  right: {
+    parent: DOM.rightBody,
+    render: renderLetters,
+    template: 'js-letters-template'
+  }
+}
+
 export const screens = {
   specimen,
   name,
@@ -109,5 +124,7 @@ export const screens = {
   vernaculars,
   species,
   text,
-  summary
+  summary,
+
+  command
 };

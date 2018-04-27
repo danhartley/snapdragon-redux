@@ -1,7 +1,7 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
-import { renderAnswerHeader } from 'ui/helpers/helpers-for-screens';
+import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
 export const renderInput = (screen, question, callbackTime) => {
 

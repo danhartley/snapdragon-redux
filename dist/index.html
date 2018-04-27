@@ -53,7 +53,7 @@
                     History: {{ running.correct }}/{{ running.total }}
                     Round: {{ collection.currentRound }}/{{ collection.rounds }}
                     Level: {{ config.lesson.level.id }}/{{ config.lesson.levels.length }}
-                    Language: {{ config.language }}
+                    [{{ config.language }}]
                 </div>
             </template>
     
@@ -219,6 +219,15 @@
                         <a href="https://www.gbif.org/" target="_blank"><img height="135px" width="135px" src="https://www.gbif.org/img/full_logo_white.svg" alt="Global Biodiversity Information Facility"></a>
                         <span>Taxonomic data</span>
                     </div>
+                </div>
+            </template>
+
+            <template class="js-letters-template">
+                <div class="blocks js-letters">
+                    <div data-repeat-block="{{ blocks }}">
+                        <div class="block">{{ block }}</div>
+                    </div>
+                    <button class="btn btn-light js-try-again" disabled>Try again</button> <button class="btn btn-light js-continue">Continue</button>                            
                 </div>
             </template>
     </body>
