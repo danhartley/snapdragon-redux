@@ -1,6 +1,6 @@
 import { screens } from 'ui/layouts/species-layouts';
 
-const { specimen, revision, species, vernaculars, scientifics, summary, history, text } = screens;
+const { specimen, revision, species, vernaculars, scientifics, summary, history, text, command } = screens;
 
 const layout1 = {
     name: 'revision',
@@ -58,6 +58,13 @@ const layout7 = {
     ]
 };
 
+const layout8 = {
+    name: 'test',
+    screens: [
+        { ...command },
+    ]
+};
+
 const lesson1 = {
     id: 1,
     name: 'Lesson 1',
@@ -77,6 +84,10 @@ const lesson1 = {
         {   id: 4,
             name: 'Level 4',
             layouts: [ layout1, layout7 ]
+        },
+        {   id: 5,
+            name: 'Level 5',
+            layouts: [ layout8 ]
         }
     ]
 };

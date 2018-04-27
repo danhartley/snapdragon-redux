@@ -7,9 +7,9 @@ export const config = {
         id: 1,
         name: 'Lesson 1',               
         level: {
-            id: 1,
-            name: 'Level 1',
-            description: 'Click the species image or name'
+            id: 5,
+            name: 'Level 5',
+            description: 'Piece the name back together'
         },
         levels: [
             {   id: 1,
@@ -27,6 +27,10 @@ export const config = {
             {   id: 4,
                 name: 'Level 4',
                 description: 'Enter the genus and species name'
+            },
+            {   id: 5,
+                name: 'Level 5',
+                description: 'Piece the name back together'
             }
         ]
     },

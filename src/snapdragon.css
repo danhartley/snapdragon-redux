@@ -132,7 +132,7 @@ grid-template-areas: "header"
 
 .answer {
   grid-area: five;
-  background-color: rgb(51, 128, 183);
+  /* background-color: rgb(51, 128, 183); */
   padding: 10px;
   text-transform: capitalize;
   cursor: pointer;
@@ -484,4 +484,41 @@ button:disabled {
 
 .dropdown button {
   width: 160px;
+}
+
+.blocks {
+  padding: 2em;
+}
+
+.block {
+  display: inline-block;
+  cursor: pointer;
+  width: auto;
+  background-color: black;
+  color: white;
+  margin: .1em;
+  padding: .1em .2em;
+  letter-spacing: .1em;
+  border-radius: .2em;
+  font-size: 1.1em;
+}
+
+.block.light-grey {
+  color: rgb(128, 128, 128);
+}
+
+.block.green {
+  color: rgb(44, 141, 86);
+}
+
+.block.red {
+  color: rgb(141, 0, 5);
+}
+
+.block.white {
+  color: rgb(255,255,255);
+}
+
+.blocks button {
+  margin: 2em 0 0 0;
 }

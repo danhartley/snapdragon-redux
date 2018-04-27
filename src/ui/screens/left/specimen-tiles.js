@@ -14,7 +14,9 @@ export const renderSpecimenTiles = (collection) => {
         DOM.moreSpecimensBtn.style.display = 'block';
     else DOM.moreSpecimensBtn.style.display = 'none';
 
-    const screen = layout.screens.filter(el => el.name === 'specimen-images')[0];
+    let screen = layout.screens.filter(el => el.name === 'specimen-images')[0];
+
+    if(layout.screens[0].name === 'command') screen = layout.screens[0].left;
 
     if(!screen) return;
 
