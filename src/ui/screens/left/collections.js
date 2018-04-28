@@ -7,6 +7,7 @@ export const renderCollections = () => {
 
     DOM.moreSpecimensBtn.style.display = 'none';
     DOM.collectionTxt.innerHTML = '';
+    DOM.changeCollection.style.display = 'none';
 
     const { collections, config } = store.getState();
 
@@ -30,6 +31,7 @@ export const renderCollections = () => {
     btns.forEach(btn => btn.addEventListener('click', event => {
         actions.boundChangeCollection(event.target.id);
         nextLesson(0);
+        DOM.changeCollection.style.display = 'inline-block';
     }));
 
     const languageId = '#' + config.language;

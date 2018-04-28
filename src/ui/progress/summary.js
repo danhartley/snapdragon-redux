@@ -11,7 +11,6 @@ export const renderSummaryHeader = (score) => {
             ? `You got ${score.correct} question right out of ${score.total}`
             : `You got ${score.correct} questions right out of ${score.total}`;
     DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
-    DOM.changeCollection.innerHTML = '';
 };
 
 export const renderSummary = (index) => {

@@ -14,16 +14,21 @@
                 <div class="left-grid js-left-grid">
                     <div class="header js-left-header">
                         <div class="header-text js-txt-collection"></div>
+                        <div class="header-btn">
+                            <button class="btn btn-light js-btn-more-specimens" style="display: none;">Show 4 more</button>
+                        </div>
+                        
                     </div>
                     <div class="left-body js-left-body"></div>
                     <div class="footer js-left-footer">
-                        <button class="btn btn-light js-btn-more-specimens" style="display: none;">Show 4 more</button>
+                        <span class="change-collection">
+                            <span class="js-change-collection" style="display: none;">Home</span>
+                        </span>
                     </div>
                 </div>
                 <div class="right-grid js-right-grid">
                     <div class="header js-right-header">
-                        <div class="header-text js-txt-header"></div>
-                        <span class="change-collection"><span class="js-change-collection"></span></span>
+                        <div class="header-text js-txt-header"></div>                        
                     </div>
                     <div class="right-body js-right-body"></div>
                     <div class="footer js-right-footer"></div>
@@ -52,8 +57,8 @@
                     Score: {{ score.correct }}/{{ score.total }}
                     History: {{ running.correct }}/{{ running.total }}
                     Round: {{ collection.currentRound }}/{{ collection.rounds }}
-                    Level: {{ config.lesson.level.id }}/{{ config.lesson.levels.length }}
-                    [{{ config.language }}]
+                    Level: {{ config.lesson.level.id }}/{{ config.lesson.levels.length }}     
+                    [{{ config.language }}]               
                 </div>
             </template>
     
