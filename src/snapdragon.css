@@ -71,6 +71,17 @@ body {
 
 .left-grid .header-text, .right-grid .header-text {
   margin: .7em;
+  flex: 1 auto;
+}
+
+.header-btn {
+  flex: 1 auto;
+  text-align: right;
+  margin: .6em 1em 0 0;
+}
+
+.header-btn > button {
+  display: inline-block;
 }
 
 .right-grid {
@@ -144,16 +155,16 @@ grid-template-areas: "header"
 }
 
 .header {
+  display: flex;
   grid-area: header;
   height: 22px;
   background-color: rgb(128, 128, 128);
-  /* padding: 4px 0 0 5px; */
   font-size: 1.2em;
 }
 
 .change-collection {
   float: right;
-  margin-right: .2em;
+  margin: 1.3em;
   cursor: pointer;
 }
 

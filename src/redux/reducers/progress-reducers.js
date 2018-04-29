@@ -4,16 +4,16 @@ import { initialState } from 'redux/reducers/initial-state-for-reducers';
 export const index = (state = null, action) => {
     const collectionSize = initialState.collection.items.length;
     switch(action.type) {
+        case types.CHANGE_COLLECTION:
+            return null;
         case types.NEXT_LESSON:
+        case types.NEXT_ROUND:
+        case types.NEXT_LEVEL:
             return 0;
         case types.UPDATE_SCORE:
             return (state + 1) <= collectionSize ? (state + 1) : state;
         case types.END_REVISION:
             return (state + 1) <= collectionSize ? (state + 1) : state;
-        case types.NEXT_ROUND:
-            return 0;
-        case types.NEXT_LEVEL:
-            return 0;
         default:
             return state;
     }
@@ -36,9 +36,7 @@ export const score = (state = null, action) => {
             }
             return { ...state, ...score};
         case types.CHANGE_COLLECTION:
-            return initialState.score;
         case types.NEXT_ROUND:
-            return initialState.score;
         case types.NEXT_LEVEL:
             return initialState.score;
         default:

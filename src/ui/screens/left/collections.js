@@ -6,7 +6,8 @@ import { nextLesson } from 'ui/setup/next-lesson';
 export const renderCollections = () => {
 
     DOM.moreSpecimensBtn.style.display = 'none';
-    DOM.collectionTxt.innerHTML = '';
+    DOM.collectionTxt.innerHTML = 'Collections';
+    DOM.changeCollection.style.display = 'none';
 
     const { collections, config } = store.getState();
 
@@ -29,7 +30,8 @@ export const renderCollections = () => {
 
     btns.forEach(btn => btn.addEventListener('click', event => {
         actions.boundChangeCollection(event.target.id);
-        nextLesson(0);
+        nextLesson();
+        DOM.changeCollection.style.display = 'inline-block';
     }));
 
     const languageId = '#' + config.language;

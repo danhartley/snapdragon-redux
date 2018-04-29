@@ -1,3 +1,6 @@
+import { DOM } from 'ui/dom';
+import { actions } from 'redux/actions/action-creators';
+import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
 export const addListeners = (cards, item, callbackTime) => {
     cards.forEach(choice => {
@@ -13,7 +16,6 @@ export const addListeners = (cards, item, callbackTime) => {
             score.success = correct;
 
             DOM.headerTxt.innerHTML = text;
-            DOM.changeCollection.innerHTML = '';
             DOM.rightHeader.style.backgroundColor = colour;
 
             target.style.color = colour;

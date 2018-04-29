@@ -7,8 +7,8 @@ export const config = {
         id: 1,
         name: 'Lesson 1',               
         level: {
-            id: 5,
-            name: 'Level 5',
+            id: 1,
+            name: 'Level 1',
             description: 'Piece the name back together'
         },
         levels: [

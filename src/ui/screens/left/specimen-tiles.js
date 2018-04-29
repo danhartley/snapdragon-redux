@@ -11,7 +11,7 @@ export const renderSpecimenTiles = (collection) => {
     DOM.collectionTxt.innerHTML = config.currentCollectionName;
     
     if (window.matchMedia("(min-width: 1024px)").matches || window.matchMedia("(min-width: 1200px)").matches)
-        DOM.moreSpecimensBtn.style.display = 'block';
+        DOM.moreSpecimensBtn.style.display = 'inline-block';
     else DOM.moreSpecimensBtn.style.display = 'none';
 
     let screen = layout.screens.filter(el => el.name === 'specimen-images')[0];
