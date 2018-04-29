@@ -48,19 +48,13 @@ test('when user selects a collection state should be populated', () => {
         data: 1
     };
 
-    // user action (clicking on a collection) triggers CHANGE_COLLECTION
+    actions.boundChangeCollection('1'); // user action (clicking on a collection) triggers CHANGE_COLLECTION
 
-    actions.boundChangeCollection('1');
-
-    // CHANGE_COLLECTION
-
-    const { config, collection, score } = store.getState();
+    let { config, collection, score } = store.getState();
 
     expect(config.collection.id).toEqual('1');
     expect(collection.name).toEqual('Mint and Basil Family');
     expect(score).toEqual(initialState.score);
-
-    // nextLesson(config) triggers: NEXT_LESSON
 
     const layoutData = [
         {
@@ -259,30 +253,37 @@ test('when user selects a collection state should be populated', () => {
         }
     ];
 
-    actions.boundNextLesson(layoutData);
+    actions.boundNextLesson(layoutData); // nextLesson(config) triggers: NEXT_LESSON
 
-    const { index, layouts, layout } = store.getState();
+    let { index, layouts, layout } = store.getState();
 
     expect(index).toEqual(0);
     expect(layouts).toEqual(layoutData);
     expect(layout).toEqual(layoutData[0]);
+
+    // boundNextLayout(layout) triggers NEXT_LAYOUT but no state change
+
+    // boundNextItem(layout.itemIndex) triggers NEXT_ITEM but no state change
+
+    const item = {};
+
+    actions.boundEndRevision(item);
+
+    index = store.getState().index;
+
+    expect(index).toBe(1); // triggers nextLayout(index)
+
+    actions.boundNextLayout({ layoutIndex: 1, itemIndex: 1});
+
+    layout = store.getState().layout;
+
+    console.log(layout)
+    
+    expect(layout.itemIndex).toEqual(1); // triggers nextItem(layout)
+
+    actions.boundNextItem(1);
+
+    collection = store.getState().collection;
+
+    expect(collection.itemIndex).toEqual(1);
 });
-
-
-
-
-// NEXT_LAYOUT layout
-// NEXT_ITEM collection (for item), 
-
-// iterate through lesson
-
-// END_REVISION index
-// NEXT_LAYOUT
-// NEXT_ITEM
-
-// change lesson, repeat as start
-
-// change level,
-// UPDATE_CONFIG config, then repeat as start
-
-// removed domains: revision
