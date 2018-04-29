@@ -45,6 +45,7 @@ export const renderCollections = () => {
             document.querySelector('.js-selected-language span').innerHTML = lang;
             const data = { language: lang };
             actions.boundUpdateConfig(data);
+            DOM.changeCollection.style.display = 'inline-block';
         });
     });
 
@@ -61,6 +62,7 @@ export const renderCollections = () => {
             document.querySelector('.js-selected-level span').innerHTML = level.name;
             const data = { lesson: { ...config.lesson, level } };
             actions.boundUpdateConfig(data);
+            DOM.changeCollection.style.display = 'inline-block';
         });
     });
 };
