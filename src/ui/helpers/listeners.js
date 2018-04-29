@@ -1,3 +1,6 @@
+import { DOM } from 'ui/dom';
+import { actions } from 'redux/actions/action-creators';
+import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
 export const addListeners = (cards, item, callbackTime) => {
     cards.forEach(choice => {

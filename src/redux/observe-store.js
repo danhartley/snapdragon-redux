@@ -3,7 +3,7 @@ export const observeStore = (store, select, onChange, domain) => {
   
     function handleChange() {      
       let nextState = select(store.getState());
-      if (nextState !== currentState && nextState !== null) {
+      if (nextState !== currentState) {
         currentState = nextState;
         onChange(currentState);
       }

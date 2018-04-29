@@ -30,7 +30,7 @@ export const renderCollections = () => {
 
     btns.forEach(btn => btn.addEventListener('click', event => {
         actions.boundChangeCollection(event.target.id);
-        nextLesson(0);
+        nextLesson();
         DOM.changeCollection.style.display = 'inline-block';
     }));
 

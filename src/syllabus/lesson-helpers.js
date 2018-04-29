@@ -8,6 +8,7 @@ export const createLesson = (lessonName, levelName, moduleSize, layouts, progres
 
     lessonPlan.lessonName = lessonName;
     lessonPlan.levelName = levelName;
+    lessonPlan.moduleSize = moduleSize;
 
     let layoutIndex = 0;
 

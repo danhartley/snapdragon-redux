@@ -4,6 +4,8 @@ import { store } from 'redux/store';
 
 export const nextItem = (layout) => {
 
+    // const { layout } = store.getState();
+
     DOM.headerTxt.innerHTML = '';
     DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
 
