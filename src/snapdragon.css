@@ -7,6 +7,10 @@ body {
   background-color: rgb(50,50,50);
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .snapdragon {
   margin: 1.4em;
 }
