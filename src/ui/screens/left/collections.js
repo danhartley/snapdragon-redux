@@ -9,7 +9,7 @@ export const renderCollections = () => {
     DOM.collectionTxt.innerHTML = 'Collections';
     DOM.changeCollection.style.display = 'none';
 
-    const { collections, config } = store.getState();
+    const { collections, collection, config } = store.getState();
 
     const template = document.querySelector('.js-collections-template');
 
@@ -18,7 +18,7 @@ export const renderCollections = () => {
     DOM.leftBody.innerHTML = '';
 
     let currentCollection = '';
-    if(config.currentCollectionName !== '') currentCollection = `The current collection is ${config.currentCollectionName}`;
+    currentCollection = collection ? `The current collection is ${collection.name}` : '';
 
     const data = { collections, config, currentCollection };
     
@@ -30,7 +30,6 @@ export const renderCollections = () => {
 
     btns.forEach(btn => btn.addEventListener('click', event => {
         actions.boundChangeCollection(event.target.id);
-        nextLesson();
         DOM.changeCollection.style.display = 'inline-block';
     }));
 

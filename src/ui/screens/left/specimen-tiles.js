@@ -8,7 +8,7 @@ export const renderSpecimenTiles = (collection) => {
 
     const { layout, config } = store.getState();
 
-    DOM.collectionTxt.innerHTML = config.currentCollectionName;
+    DOM.collectionTxt.innerHTML = collection.name;
     
     if (window.matchMedia("(min-width: 1024px)").matches || window.matchMedia("(min-width: 1200px)").matches)
         DOM.moreSpecimensBtn.style.display = 'inline-block';
