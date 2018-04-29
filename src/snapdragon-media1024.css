@@ -95,7 +95,7 @@
     }
 
     .species-description-grid {
-        grid-template-rows: 50px 2fr 5fr 2fr;
+        grid-template-rows: 50px 2fr 4fr 2fr;
     }
 
     .block {
