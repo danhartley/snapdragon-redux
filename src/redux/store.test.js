@@ -1,13 +1,288 @@
 import { observeStore } from 'redux/observe-store';
 import { store } from 'redux/store';
+
+import { types } from 'redux/actions/action-types';
+import { actions } from 'redux/actions/action-creators';
+
+import { config } from 'redux/reducers/config-reducer';
 import { collections, collection } from 'redux/reducers/species-reducers';
 import { index, score, history, revision } from 'redux/reducers/progress-reducers';
-import { config, lesson, layouts, layout } from 'redux/reducers/layout-reducers';
+import { lesson, layouts, layout } from 'redux/reducers/layout-reducers';
 
-test('observeStore returns unsubscribe function for every listener', () => {
+import { initialState } from 'redux/reducers/initial-state-for-reducers';
+import { config as lessonConfig } from 'syllabus/lesson-config';
+
+test('observeStore should return unsubscribe function for every listener', () => {
     const onChange = () => {};
     const action = '';
-    const unsubscribe = observeStore(store, store => store.lesson, onChange,'');
-    console.log(unsubscribe)
+    const unsubscribe = observeStore(store, store => store.lesson, onChange,'');    
     expect(unsubscribe.name).toEqual('unsubscribe');
 });
+
+
+test('intial state of the app should be consistent', () => {
+    
+    const { config } = store.getState();
+    expect(config).toEqual(lessonConfig);
+    
+    const { lesson, layouts, layout } = store.getState();
+    expect(lesson).toEqual(1);
+    expect(layouts).toEqual(null);
+    expect(layout).toEqual(null);
+
+    const { collections, collection } = store.getState();
+    expect(collections.length).toBeGreaterThan(0);
+    expect(collection).toEqual(null);
+
+    const { index, score, history, revision } = store.getState();
+    expect(index).toEqual(null);
+    expect(score).toEqual(null);
+    expect(history).toEqual(null);
+    expect(revision).toEqual(undefined);// not in use, not visible in store
+});
+
+test('when user selects a collection state should be populated', () => {
+
+    const action = {
+        type: types.CHANGE_COLLECTION,
+        data: 1
+    };
+
+    // user action (clicking on a collection) triggers CHANGE_COLLECTION
+
+    actions.boundChangeCollection('1');
+
+    // CHANGE_COLLECTION
+
+    const { config, collection, score } = store.getState();
+
+    expect(config.collection.id).toEqual('1');
+    expect(collection.name).toEqual('Mint and Basil Family');
+    expect(score).toEqual(initialState.score);
+
+    // nextLesson(config) triggers: NEXT_LESSON
+
+    const layoutData = [
+        {
+        name: 'revision',
+        screens: [
+            {
+            name: 'specimen-images',
+            domain: 'collection',
+            parent: {},
+            template: 'js-specimen-images-template'
+            },
+            {
+            name: 'species-card',
+            domain: 'collection',
+            parent: {},
+            template: 'js-card-revision-template'
+            }
+        ],
+        layoutIndex: 0,
+        itemIndex: 0,
+        exerciseIndex: 1,
+        lessonName: 'Lesson 1',
+        levelName: 'Level 1'
+        },
+        {
+        name: 'revision',
+        screens: [
+            {
+            name: 'specimen-images',
+            domain: 'collection',
+            parent: {},
+            template: 'js-specimen-images-template'
+            },
+            {
+            name: 'species-card',
+            domain: 'collection',
+            parent: {},
+            template: 'js-card-revision-template'
+            }
+        ],
+        layoutIndex: 1,
+        itemIndex: 1,
+        exerciseIndex: 1,
+        lessonName: 'Lesson 1',
+        levelName: 'Level 1'
+        },
+        {
+        name: 'test',
+        screens: [
+            {
+            name: 'specimen-images',
+            domain: 'collection',
+            parent: {},
+            template: 'js-specimen-images-template'
+            },
+            {
+            name: 'species-images',
+            domain: 'collection',
+            parent: {},
+            template: 'js-tiles-template',
+            taxon: 'name'
+            }
+        ],
+        layoutIndex: 2,
+        itemIndex: 0,
+        exerciseIndex: 2,
+        lessonName: 'Lesson 1',
+        levelName: 'Level 1'
+        },
+        {
+        name: 'test',
+        screens: [
+            {
+            name: 'specimen-images',
+            domain: 'collection',
+            parent: {},
+            template: 'js-specimen-images-template'
+            },
+            {
+            name: 'species-images',
+            domain: 'collection',
+            parent: {},
+            template: 'js-tiles-template',
+            taxon: 'name'
+            }
+        ],
+        layoutIndex: 3,
+        itemIndex: 1,
+        exerciseIndex: 2,
+        lessonName: 'Lesson 1',
+        levelName: 'Level 1'
+        },
+        {
+        name: 'test',
+        screens: [
+            {
+            name: 'specimen-images',
+            domain: 'collection',
+            parent: {},
+            template: 'js-specimen-images-template'
+            },
+            {
+            name: 'species-vernaculars',
+            domain: 'collection',
+            parent: {},
+            template: 'js-strips-template',
+            taxon: 'name'
+            }
+        ],
+        layoutIndex: 4,
+        itemIndex: 0,
+        exerciseIndex: 3,
+        lessonName: 'Lesson 1',
+        levelName: 'Level 1'
+        },
+        {
+        name: 'test',
+        screens: [
+            {
+            name: 'specimen-images',
+            domain: 'collection',
+            parent: {},
+            template: 'js-specimen-images-template'
+            },
+            {
+            name: 'species-vernaculars',
+            domain: 'collection',
+            parent: {},
+            template: 'js-strips-template',
+            taxon: 'name'
+            }
+        ],
+        layoutIndex: 5,
+        itemIndex: 1,
+        exerciseIndex: 3,
+        lessonName: 'Lesson 1',
+        levelName: 'Level 1'
+        },
+        {
+        name: 'test',
+        screens: [
+            {
+            name: 'specimen-images',
+            domain: 'collection',
+            parent: {},
+            template: 'js-specimen-images-template'
+            },
+            {
+            name: 'species-scientifics',
+            domain: 'collection',
+            parent: {},
+            template: 'js-strips-template',
+            taxon: 'name'
+            }
+        ],
+        layoutIndex: 6,
+        itemIndex: 0,
+        exerciseIndex: 4,
+        lessonName: 'Lesson 1',
+        levelName: 'Level 1'
+        },
+        {
+        name: 'test',
+        screens: [
+            {
+            name: 'specimen-images',
+            domain: 'collection',
+            parent: {},
+            template: 'js-specimen-images-template'
+            },
+            {
+            name: 'species-scientifics',
+            domain: 'collection',
+            parent: {},
+            template: 'js-strips-template',
+            taxon: 'name'
+            },
+            {
+            name: 'summary',
+            domain: 'index',
+            parent: {},
+            template: 'js-summary-template'
+            },
+            {
+            name: 'history',
+            domain: 'history',
+            parent: {},
+            template: 'js-history-template'
+            }
+        ],
+        layoutIndex: 7,
+        itemIndex: 1,
+        exerciseIndex: 4,
+        lessonName: 'Lesson 1',
+        levelName: 'Level 1'
+        }
+    ];
+
+    actions.boundNextLesson(layoutData);
+
+    const { index, layouts, layout } = store.getState();
+
+    expect(index).toEqual(0);
+    expect(layouts).toEqual(layoutData);
+    expect(layout).toEqual(layoutData[0]);
+});
+
+
+
+
+// NEXT_LAYOUT layout
+// NEXT_ITEM collection (for item), 
+
+// iterate through lesson
+
+// END_REVISION index
+// NEXT_LAYOUT
+// NEXT_ITEM
+
+// change lesson, repeat as start
+
+// change level,
+// UPDATE_CONFIG config, then repeat as start
+
+// removed domains: revision

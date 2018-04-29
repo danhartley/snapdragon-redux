@@ -20,7 +20,7 @@ import { listening } from 'ui/screens/common/listener';
 
 // setup
 
-// observeStore(store, store => store.config, nextLesson, 'next-lesson');
+observeStore(store, store => store.config, nextLesson, 'next-lesson');
 observeStore(store, store => store.index, nextLayout, 'next-layout');
 observeStore(store, store => store.layout, nextItem, 'next-item');
 

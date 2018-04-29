@@ -15,7 +15,7 @@ export const collection = (state = null, action) => {
     let itemIndex = 0;
     let currentRound = 0;
     let layoutIndex = 0;
-
+    
     switch(action.type) {
         case types.NEXT_ITEM:
             layoutIndex = action.data;
@@ -34,7 +34,8 @@ export const collection = (state = null, action) => {
             currentRound = 1;
             return { ...state, itemIndex, currentRound };
         case types.CHANGE_COLLECTION:
-            const collection = initialState.collections.filter(collection => collection.id === action.data)[0];
+            const collectionId = action.data;
+            const collection = initialState.collections.filter(collection => collection.id === collectionId)[0];
             return initialState.initCollection(collection);
         default:
             return state;

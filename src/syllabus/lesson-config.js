@@ -2,7 +2,9 @@ export const config = {
     language: 'en',
     moduleSize: 2,
     callbackTime: 1500,
-    currentCollectionName: '',
+    collection: {
+        id: ''
+    },
     lesson: {
         id: 1,
         name: 'Lesson 1',               

@@ -2,9 +2,9 @@ import { store } from 'redux/store';
 import { lessonPlanner } from 'syllabus/lesson-planner';
 import { actions } from 'redux/actions/action-creators';
 
-export const nextLesson = () => {
+export const nextLesson = (config) => {
 
-    const { config } = store.getState();
+    if(config.collection.id === '') return;
 
     const excluedRevision = config.lesson.level.id !== 1;
 
