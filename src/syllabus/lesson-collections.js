@@ -1,6 +1,7 @@
 import { flora, common, herbs } from 'api/flora';
 import { lamiaceae } from 'api/families';
-import { arrabida } from 'api/fauna.js';
+import { arrabida } from 'api/fauna';
+import { wilduk } from 'api/wildflowers';
 
 export const collections = [
     {
@@ -26,6 +27,13 @@ export const collections = [
     },
     {
         id: '4',
+        name: 'uk wildfowers',
+        items: wilduk,
+        eol_name: 'British Woodland Flowers',
+        eol_link: 'http://eol.org/collections/139458'
+    },
+    {
+        id: '5',
         name: 'fauna',
         items: arrabida,
         eol_name: 'Fauna da Arrábida',

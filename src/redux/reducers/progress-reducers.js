@@ -14,6 +14,8 @@ export const index = (state = null, action) => {
             return 0;
         case types.NEXT_LEVEL:
             return 0;
+        case types.CHANGE_COLLECTION:
+            return null;
         default:
             return state;
     }

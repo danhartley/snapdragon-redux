@@ -6,7 +6,7 @@ import { nextLesson } from 'ui/setup/next-lesson';
 export const renderCollections = () => {
 
     DOM.moreSpecimensBtn.style.display = 'none';
-    DOM.collectionTxt.innerHTML = '';
+    DOM.collectionTxt.innerHTML = 'Collections';
     DOM.changeCollection.style.display = 'none';
 
     const { collections, config } = store.getState();
