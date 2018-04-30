@@ -1,9 +1,9 @@
 {
   "presets": [
+    "es2015",    
     ["env", {
-      "targets": {
-        "browsers": ["last 2 versions", "safari >= 8"]
-      }
+      "modules": false,
+      "browsers": ["last 2 versions"]
     }]
   ],
   "plugins": [
