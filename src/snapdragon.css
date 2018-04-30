@@ -137,7 +137,7 @@ grid-template-areas: "header"
 .footer {
   grid-area: footer;
   height: 22px;
-  background-color: rgb(192, 58, 72);
+  background-color: rgb(9, 32, 62);
   color: black;
 }
 
@@ -166,7 +166,7 @@ grid-template-areas: "header"
   display: flex;
   grid-area: header;
   height: 22px;
-  background-color: rgb(128, 128, 128);
+  background-color: rgb(12, 44, 84);
   font-size: 1.2em;
 }
 
