@@ -256,7 +256,6 @@ grid-template-areas: "header"
   grid-area: letterbox;
   display: grid;
   grid-auto-flow: row;
-  background-color: rgb(128, 128, 128);
   grid-template-rows: 42px 200px 42px;
   grid-template-areas: "one"
                        "two"
@@ -269,8 +268,8 @@ grid-template-areas: "header"
 
 .letterbox div:nth-child(2) {
   grid-area: two;
-  background-color: rgb(128, 128, 128);
-  padding: 1.4em 1em;
+  background-color: rgb(73, 73, 73);
+  padding: 1.9em 1em;
 }
 
 .letterbox div:nth-child(3) {
@@ -488,7 +487,7 @@ button:disabled {
 }
 
 .collections div {
-  padding: .5em 0;
+  padding: .4em 0;
 }
 
 .collection span:nth-of-type(1) {

@@ -3,7 +3,7 @@ import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
-export const renderInput = (screen, question, callbackTime) => {
+export const renderInput = (screen, question, callbackTime, item) => {
 
     const sendQandA = (answer, event) => {
         const btn = event.target;
@@ -41,6 +41,14 @@ export const renderInput = (screen, question, callbackTime) => {
 
     screen.parent.innerHTML = '';
     screen.parent.appendChild(clone);
+
+    const bgTop = document.querySelector('.letterbox div:nth-child(1)');
+    bgTop.style.backgroundImage = `url(${item.images[0]})`;
+    bgTop.style.opacity = '.1';
+    
+    const bgBottom = document.querySelector('.letterbox div:nth-child(3)');
+    bgBottom.style.backgroundImage = `url(${item.images[1]})`;
+    bgBottom.style.opacity = '.1';
 
     document.querySelector('.js-txt-input').focus();
 

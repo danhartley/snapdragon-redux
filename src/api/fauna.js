@@ -2999,15 +2999,15 @@ export const arrabida = [
       "images": [
         "http://media.eol.org/content/2012/06/13/06/94279_orig.jpg",
         "http://media.eol.org/content/2014/02/26/12/63542_orig.jpg",
-        "http://media.eol.org/content/2014/10/28/01/81213_orig.jpg",
+        // "http://media.eol.org/content/2014/10/28/01/81213_orig.jpg",
         "http://media.eol.org/content/2014/09/29/02/83266_orig.jpg",
         "http://media.eol.org/content/2014/09/29/02/51341_orig.jpg",
         "http://media.eol.org/content/2014/09/29/02/82823_orig.jpg",
         "http://media.eol.org/content/2014/09/29/02/80327_orig.jpg",
         "http://media.eol.org/content/2014/09/29/02/85246_orig.jpg",
-        "http://media.eol.org/content/2016/07/24/00/17967_orig.jpg",
-        "http://media.eol.org/content/2015/03/15/02/45761_orig.jpg",
-        "http://media.eol.org/content/2016/07/28/21/62534_orig.jpg",
+        // "http://media.eol.org/content/2016/07/24/00/17967_orig.jpg",
+        // "http://media.eol.org/content/2015/03/15/02/45761_orig.jpg",
+        // "http://media.eol.org/content/2016/07/28/21/62534_orig.jpg",
         "http://media.eol.org/content/2012/05/23/19/96911_orig.jpg"
       ],
       "names": [

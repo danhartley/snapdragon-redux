@@ -51,7 +51,11 @@
   }
 
   .letterbox {
-    grid-template-rows: 256px 100px 256px;
+    grid-template-rows: 236px 140px 236px;
+  }
+
+  .letterbox div:nth-child(2) {
+    padding: 3.5em 1em;
   }
 
   .letterbox input.short {

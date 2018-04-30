@@ -13,5 +13,5 @@ export const renderTextEntry = (collection) => {
 
     const question = { binomial: item.name, species: item.species, genus: item.genus, taxon: screen.taxon, question: item[screen.taxon] };
 
-    renderInput(screen, question, config.callbackTime);
+    renderInput(screen, question, config.callbackTime, item);
 };
