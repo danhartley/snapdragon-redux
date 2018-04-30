@@ -3195,11 +3195,11 @@ export const wilduk = [
         "http://media.eol.org/content/2012/12/05/02/29513_orig.jpg"
       ],
       "names": [
-        {
-          "vernacularName": "Wild Carrot or Queen Anne's Lace",
-          "language": "en",
-          "eol_preferred": true
-        },
+        // {
+        //   "vernacularName": "Wild Carrot or Queen Anne's Lace",
+        //   "language": "en",
+        //   "eol_preferred": true
+        // },
         {
           "vernacularName": "Queen Anne's lace",
           "language": "en"

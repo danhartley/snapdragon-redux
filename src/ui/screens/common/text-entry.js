@@ -7,8 +7,6 @@ export const renderInput = (screen, question, callbackTime, item) => {
 
     const sendQandA = (answer, event) => {
         const btn = event.target;
-        const right = 'rgb(44, 141, 86)'
-        const wrong = 'rgb(141, 0, 5)';
         const response = { ...question, answer };
         
         const { text, colour, correct } = renderAnswerHeader(response);
@@ -59,7 +57,5 @@ export const renderInput = (screen, question, callbackTime, item) => {
             event.target.disabled = true;
         }
     };
-
-    // document.addEventListener('keypress', handleEnterPress);
 };
 

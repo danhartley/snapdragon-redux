@@ -3,8 +3,9 @@ import { utils } from 'utils/utils';
 
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
+import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
-export const renderLetters = (letters, item) => {
+export const renderLetters = (letters, item, callbackTime) => {
 
     const template = document.querySelector('.js-letters-template');
 
@@ -46,6 +47,16 @@ export const renderLetters = (letters, item) => {
                         block.classList.add('green');
                     });
                     selectedBlocks = [];
+                    const question = { binomial: item.name, taxon: 'name', question: item['name'] };
+                    const answer = item.name;
+                    const success = itemName === item.name.replace(' ', '');
+                    const response = { ...question, answer, success };
+                    const { text, colour, correct } = renderAnswerHeader(response);
+                    DOM.headerTxt.innerHTML = text;
+                    DOM.rightHeader.style.backgroundColor = colour;
+                    setTimeout(()=>{
+                        actions.boundUpdateScore(response);
+                    }, callbackTime);
                 } else if(itemName.length >= item.name.length) {
                     selectedBlocks.forEach(block => {
                         block.classList.remove('light-grey');
@@ -70,9 +81,14 @@ export const renderLetters = (letters, item) => {
 
     continueBtn.addEventListener('click', event => {
         const question = { binomial: item.name, taxon: 'name', question: item['name'] };
-        const answer = item.name;
-        const success = itemName === item.name.replace(' ', '');
+        const answer = '';
+        const success = false;
         const response = { ...question, answer, success };
-        actions.boundUpdateScore(response);
+        const { text, colour, correct } = renderAnswerHeader(response);
+        DOM.headerTxt.innerHTML = text;
+        DOM.rightHeader.style.backgroundColor = colour;
+        setTimeout(()=>{
+            actions.boundUpdateScore(response);
+        }, callbackTime);
     });
 };
