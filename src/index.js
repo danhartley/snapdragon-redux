@@ -20,12 +20,15 @@ import { listening } from 'ui/screens/common/listener';
 
 // setup
 
-observeStore(store, store => store.config, nextLesson, 'next-lesson');
-observeStore(store, store => store.index, nextLayout, 'next-layout');
-observeStore(store, store => store.layout, nextItem, 'next-item');
+observeStore(store, store => store.config, nextLesson, 'config', 'next-lesson');
+observeStore(store, store => store.index, nextLayout, 'index', 'next-layout');
+observeStore(store, store => store.layout, nextItem, 'layout', 'next-item');
 
 // progress
 
+store.subscribe(()=>{
+    console.log('index: ', store.getState().index);
+});
 observeStore(store, store => store.score, renderScore, 'score');
 
 // home page

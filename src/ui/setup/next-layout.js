@@ -21,6 +21,8 @@ export const nextLayout = (index) => {
         const onChange = screen.render
         const domain = screen.domain;
 
+        // console.log('new render asking to subscribe: ', domain, ' ', onChange);
+
         subscriptions.push(observeStore(store, select, onChange, domain));
     });
 

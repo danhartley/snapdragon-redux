@@ -42,7 +42,7 @@ a:hover {
 }
 
 .flex.wiki span {
-  padding: 4em 0 0 2.2em;
+  padding: 4em 0 0 2.4em;
 }
 
 .flex.gbif {
@@ -54,11 +54,11 @@ a:hover {
 }
 
 .flex.gbif span {  
-  padding: 4em 0 0 2.2em;
+  padding: 3.8em 0 0 2.4em;
 }
 
 .flex.dan div {
-  margin: 1.6em 0 0 5.4em;
+  margin: 1em 0 0 5.6em;
   width: 250px;
   font-size: 1em;
 }

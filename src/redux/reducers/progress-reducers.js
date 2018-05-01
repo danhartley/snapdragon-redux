@@ -5,11 +5,13 @@ export const index = (state = null, action) => {
     const collectionSize = initialState.collection.items.length;
     switch(action.type) {
         case types.CHANGE_COLLECTION:
-        // case types.UPDATE_CONFIG:
+        case types.UPDATE_CONFIG:
+            let _state = state;
             return null;
         case types.NEXT_LESSON:
         case types.NEXT_ROUND:
         case types.NEXT_LEVEL:
+             _state = state;
             return 0;
         case types.UPDATE_SCORE:
             return (state + 1) <= collectionSize ? (state + 1) : state;
