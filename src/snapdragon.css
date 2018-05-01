@@ -478,16 +478,25 @@ button:disabled {
   cursor: not-allowed;
 }
 
+button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-light.dropdown-toggle, .btn-light:not(:disabled):not(.disabled).active:focus, .btn-light:not(:disabled):not(.disabled):active:focus, .show>.btn-light.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0;
+}
+
+.dropdown-menu {
+  border: 0;
+}
+
 .collections {
   padding: 1em;
 }
 
-.flex .selected-language, .flex .selected-level {
-  padding: 1em;
+.selected-collection, .selected-language, .selected-level {
+  margin: .4em;
 }
 
 .collections div {
-  padding: .4em 0;
+  padding: .4em .2em;
+  width: 500px;
 }
 
 .collection span:nth-of-type(1) {
@@ -500,8 +509,17 @@ button:disabled {
   width: 140px;  
 }
 
+.collection a, .collection .underline-link, .collection span {
+  color: black;
+}
+
+.collection button {
+  color: white;
+  background-color: rgb(73, 73, 73);
+}
+
 .dropdown button {
-  width: 160px;
+  width: 160px;  
 }
 
 .blocks {

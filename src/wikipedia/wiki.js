@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 
-const root = `https://en.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&limit=1&search=`;
+let root = '';
 
 const formatUrl = (name, root, encode) => {
     let binomial = name;
@@ -40,9 +40,9 @@ const cleanEntry = str => {
 
 const formatWiki = (entry) => {
     let html = '';
-    // if(entry.length === 1)
-    //     return `<li><i>Species: ${entry[0]}</i></li>`;
-    // if(entry[0]) html += `<li><p>${entry[0]}</p></li>`;
+    if(entry.length === 1) {
+        html += `<li><a target="_blank" href="${cleanEntry(entry[0])}" class="underline-link">Wikipedia page</a></li>`;
+    }
     if(entry[1]) html += `<li><p>${cleanEntry(entry[1])}</p></li>`;
     if(entry[2])
         if(entry[2].indexOf('https')!== -1)
@@ -55,33 +55,49 @@ const formatWiki = (entry) => {
     return html;
 };
 
-const renderWiki = (wikiNode, binomial) => {
-    //const missingMessage = 'No Wikipedia entry is available for this plant. Sorry!';
-    const missingMessage= '';
+const renderWiki = (wikiNode, binomial, language) => {
+    root = `https://${language}.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&limit=1&search=`;
     wikiNode.innerHTML = "";        
-    fetchWiki(binomial, missingMessage)         
-        .then(entry => {            
-            if(entry === missingMessage)
-            wikiNode.innerHTML = missingMessage;
-            else if(entry.length > 3 && entry[2] === '') {                        
-                const genus = binomial.split(' ')[0];                
-                fetchWiki(genus).
-                    then(genusEntry => {
-                        // wikiNode.innerHTML = `<li><i>Species: ${entry[0]}</i></li>`;
-                        wikiNode.innerHTML+= formatWiki(genusEntry.slice(1));
-                    });
-            }
-            else if(entry.length > 3)
+    fetchWiki(binomial)         
+        .then(entry => {
+            if(entry[2] && entry[2] !== '') {
                 wikiNode.innerHTML = formatWiki(entry.slice(1));
-            else {                        
+            } else {           
                 const genus = binomial.split(' ')[0];                
                 fetchWiki(genus).
                     then(genusEntry => {
-                        wikiNode.innerHTML = formatWiki(entry);
-                        wikiNode.innerHTML+= formatWiki(genusEntry.slice(1));
+                        if(entry[2] && entry[2] !== '') {
+                            wikiNode.innerHTML = formatWiki(entry);
+                            wikiNode.innerHTML+= formatWiki(genusEntry.slice(1));
+                        } else {
+                            if(language === 'en') return;
+                            else {
+                                language = 'en';
+                                renderWiki(wikiNode, binomial, language);
+                            }
+                        }
                     });
             } 
         });
+        // .then(entry => {
+        //     if(entry.length > 3 && entry[2] === '') {                        
+        //         const genus = binomial.split(' ')[0];                
+        //         fetchWiki(genus).
+        //             then(genusEntry => {
+        //                 wikiNode.innerHTML+= formatWiki(genusEntry.slice(1));
+        //             });
+        //     }
+        //     else if(entry.length > 3)
+        //         wikiNode.innerHTML = formatWiki(entry.slice(1));
+        //     else {                        
+        //         const genus = binomial.split(' ')[0];                
+        //         fetchWiki(genus).
+        //             then(genusEntry => {
+        //                 wikiNode.innerHTML = formatWiki(entry);
+        //                 wikiNode.innerHTML+= formatWiki(genusEntry.slice(1));
+        //             });
+        //     } 
+        // });
 }
 
 export {
