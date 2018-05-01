@@ -17,13 +17,17 @@ export const collection = (state = null, action) => {
     let layoutIndex = 0;
     
     switch(action.type) {
+        case types.CHANGE_COLLECTION:
+            const collectionId = action.data;
+            const collection = initialState.collections.filter(collection => collection.id === collectionId)[0];
+            return initialState.initCollection(collection);
         case types.NEXT_ITEM:
             layoutIndex = action.data;
             const isNewRound = layoutIndex % state.moduleSize === 0;
             itemIndex = isNewRound
                     ? (state.moduleSize * (state.currentRound -1))
                     : (state.moduleSize * (state.currentRound -1)) + layoutIndex;
-            return { ...state, itemIndex };
+            return state.itemIndex === itemIndex ? state : { ...state, itemIndex };
         case types.NEXT_ROUND:
             layoutIndex = action.data;
             currentRound = (state.currentRound === state.rounds) ? 1 : state.currentRound + 1;
@@ -32,11 +36,7 @@ export const collection = (state = null, action) => {
         case types.NEXT_LEVEL:
             itemIndex = 0;
             currentRound = 1;
-            return { ...state, itemIndex, currentRound };
-        case types.CHANGE_COLLECTION:
-            const collectionId = action.data;
-            const collection = initialState.collections.filter(collection => collection.id === collectionId)[0];
-            return initialState.initCollection(collection);
+            return { ...state, itemIndex, currentRound };        
         default:
             return state;
     }

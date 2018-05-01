@@ -60,44 +60,20 @@ const renderWiki = (wikiNode, binomial, language) => {
     wikiNode.innerHTML = "";        
     fetchWiki(binomial)         
         .then(entry => {
-            if(entry[2] && entry[2] !== '') {
+            if(entry[2]) {
                 wikiNode.innerHTML = formatWiki(entry.slice(1));
             } else {           
                 const genus = binomial.split(' ')[0];                
                 fetchWiki(genus).
                     then(genusEntry => {
-                        if(entry[2] && entry[2] !== '') {
-                            wikiNode.innerHTML = formatWiki(entry);
+                        if(genusEntry[2] !== '')
                             wikiNode.innerHTML+= formatWiki(genusEntry.slice(1));
-                        } else {
-                            if(language === 'en') wikiNode.innerHTML = formatWiki(entry);
-                            else {
-                                language = 'en';
-                                renderWiki(wikiNode, binomial, language);
-                            }
+                        else if (language !== 'en') {
+                            renderWiki(wikiNode, binomial, 'en');
                         }
                     });
             } 
         });
-        // .then(entry => {
-        //     if(entry.length > 3 && entry[2] === '') {                        
-        //         const genus = binomial.split(' ')[0];                
-        //         fetchWiki(genus).
-        //             then(genusEntry => {
-        //                 wikiNode.innerHTML+= formatWiki(genusEntry.slice(1));
-        //             });
-        //     }
-        //     else if(entry.length > 3)
-        //         wikiNode.innerHTML = formatWiki(entry.slice(1));
-        //     else {                        
-        //         const genus = binomial.split(' ')[0];                
-        //         fetchWiki(genus).
-        //             then(genusEntry => {
-        //                 wikiNode.innerHTML = formatWiki(entry);
-        //                 wikiNode.innerHTML+= formatWiki(genusEntry.slice(1));
-        //             });
-        //     } 
-        // });
 }
 
 export {
