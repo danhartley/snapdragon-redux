@@ -61,8 +61,8 @@ export const renderAnswerText = (response) => {
     const correct = renderCorrect(response);
 
     return correct
-        ? `${renderAnswer(response)} is the correct answer!`
-        : `The correct answer is ${renderAnswer(response)}.`
+        ? `${renderAnswer(response)} is correct!`
+        : `No! ${renderAnswer(response)}.`
 };
 
 export const renderAnswerHeader = (response, header, target) => {
