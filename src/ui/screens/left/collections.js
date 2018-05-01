@@ -9,7 +9,7 @@ export const renderCollections = () => {
     DOM.collectionTxt.innerHTML = 'Collections';
     DOM.changeCollection.style.display = 'none';
 
-    const { collections, collection, config } = store.getState();
+    let { collections, collection, config } = store.getState();
 
     const template = document.querySelector('.js-collections-template');
 
@@ -17,10 +17,9 @@ export const renderCollections = () => {
     
     DOM.leftBody.innerHTML = '';
 
-    let currentCollection = '';
-    currentCollection = collection ? `The current collection is ${collection.name}` : '';
+    collection = collection || { name: 'no collection selected'};
 
-    const data = { collections, config, currentCollection };
+    const data = { collections, config, collection };
     
     var ctx = new Stamp.Context();
     var expanded = Stamp.expand(clone, data);

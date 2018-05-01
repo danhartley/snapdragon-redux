@@ -109,6 +109,7 @@ const command = {
   right: {
     parent: DOM.rightBody,
     render: renderLetters,
+    cutLength: 5,
     template: 'js-letters-template'
   }
 }

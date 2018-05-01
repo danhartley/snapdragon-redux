@@ -5,7 +5,7 @@ export const index = (state = null, action) => {
     const collectionSize = initialState.collection.items.length;
     switch(action.type) {
         case types.CHANGE_COLLECTION:
-        case types.UPDATE_CONFIG:
+        // case types.UPDATE_CONFIG:
             return null;
         case types.NEXT_LESSON:
         case types.NEXT_ROUND:
