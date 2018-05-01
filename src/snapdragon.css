@@ -25,7 +25,7 @@ a:hover {
 
 .snapdragon div:nth-child(2) {
   font-size: 1.2em;
-  margin: 25px 0 50px 0;
+  margin: 1em 0 1.5em 0;
 }
 
 .flex {
@@ -34,11 +34,11 @@ a:hover {
 }
 
 .flex.eol span {
-  padding: 1.8em 0 0 1em;
+  padding: 1.4em 0 0 1em;
 }
 
 .flex.wiki {
-  margin: 1.6em 0 0 0;
+  margin: 1.4em 0 0 0;
 }
 
 .flex.wiki span {
@@ -46,11 +46,21 @@ a:hover {
 }
 
 .flex.gbif {
-  margin: -.5em 0 0 0;
+  margin: -1.4em 0 0 0;
+}
+
+.flex.dan {
+  margin: -1em 0 0 0; 
 }
 
 .flex.gbif span {  
   padding: 4em 0 0 2.2em;
+}
+
+.flex.dan div {
+  margin: 1.6em 0 0 5.4em;
+  width: 250px;
+  font-size: 1em;
 }
 
 .grid {
@@ -78,7 +88,7 @@ a:hover {
 }
 
 .left-grid .header-text, .right-grid .header-text {
-  margin: .7em;
+  margin: .8em;
   flex: 1 auto;
 }
 
