@@ -27,7 +27,7 @@ export const collection = (state = null, action) => {
             itemIndex = isNewRound
                     ? (state.moduleSize * (state.currentRound -1))
                     : (state.moduleSize * (state.currentRound -1)) + layoutIndex;
-            return state.itemIndex === itemIndex ? state : { ...state, itemIndex };
+            return { ...state, itemIndex };
         case types.NEXT_ROUND:
             layoutIndex = action.data;
             currentRound = (state.currentRound === state.rounds) ? 1 : state.currentRound + 1;
