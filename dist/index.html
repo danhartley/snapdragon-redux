@@ -4,11 +4,7 @@
         <title>Species recognition and recall</title>
         <meta http-equiv="content-type" content="text/html;charset=utf-8">
         <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
-        <!-- <script src="./system.js"></script>
-        <script>
-        SystemJS.import('./bundle.js');
-        </script> -->
+        <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">        
         <script src="https://cdn.ravenjs.com/3.24.2/raven.min.js" crossorigin="anonymous"></script>
         <script src="./stamp.js"></script>
         <script>
@@ -191,37 +187,45 @@
             <template class="js-collections-template">                
                 <div class="collections js-collections">
                     <div>The following collections are hosted by the Encyclopedia of Life (EOL):</div>
-                    <div data-repeat-collection="{{ collections }}">
-                        <div class="collection">
-                            <button class="btn btn-light" id="{{ collection.id }}">Start learning</button> <a class="underline-link" target="_blank" href="{{ collection.eol_link }}">EOL</a> <span>{{ collection.eol_name }}</span>
-                        </div>
-                    </div>
-                    <div>{{ currentCollection }}</div>
-
+                    
                     <div class="flex">
-                        <div class="dropdown js-languages">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Languages
+                        <div class="dropdown js-collections">
+                            <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Collections
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ config.languages }}">
-                                <a class="dropdown-item" id="{{ language.lang }}" href="#">{{ language.name }}</a>
-                            </div>
-                        </div>
-                        <div class="selected-language js-selected-language">Current language: <span>{{ config.language }}</span></div>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-collection="{{ collections }}">
+                                <div class="collection">
+                                    <button class="btn btn-light" id="{{ collection.id }}">Start learning</button> <a class="underline-link" target="_blank" href="{{ collection.eol_link }}">EOL</a> <span>{{ collection.eol_name }}</span>
+                                </div>
+                            </div>                            
+                        </div>                        
                     </div>
 
                     <div class="flex">
                         <div class="dropdown js-levels">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Levels
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-level="{{ config.lesson.levels }}">
                                 <a class="dropdown-item" id="level{{ level.id }}" href="#">{{ level.name }}: {{ level.description }}</a>
                             </div>
-                        </div>
-                        <div class="selected-level js-selected-level">Current level: <span>{{ config.lesson.level.name }}</span></div>
+                        </div>                        
+                    </div>
+
+                    <div class="flex">
+                        <div class="dropdown js-languages">
+                            <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Languages
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ config.languages }}">
+                                <a class="dropdown-item" id="{{ language.lang }}" href="#">{{ language.name }}</a>
+                            </div>
+                        </div>                        
                     </div>
     
+                    <div class="selected-collection js-selected-collection">Current collection: <span>{{ currentCollection }}</span></div>
+                    <div class="selected-level js-selected-level">Current level: <span>{{ config.lesson.level.name }}</span></div>
+                    <div class="selected-language js-selected-language">Current language: <span>{{ config.language }}</span></div>
 
                 </div>
             </template>
