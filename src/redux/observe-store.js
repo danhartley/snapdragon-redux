@@ -9,6 +9,9 @@ export const observeStore = (store, select, onChange, domain) => {
       }
     }
   
+    handleChange.domain = domain;
+    handleChange.calledBy = onChange.name;
+    console.log('new function asking to subscribe: ', handleChange.domain, ' ', handleChange.calledBy);
     let unsubscribe = store.subscribe(handleChange);
     handleChange();
     return unsubscribe;
