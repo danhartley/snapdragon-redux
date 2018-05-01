@@ -70,7 +70,7 @@ const renderWiki = (wikiNode, binomial, language) => {
                             wikiNode.innerHTML = formatWiki(entry);
                             wikiNode.innerHTML+= formatWiki(genusEntry.slice(1));
                         } else {
-                            if(language === 'en') return;
+                            if(language === 'en') wikiNode.innerHTML = formatWiki(entry);
                             else {
                                 language = 'en';
                                 renderWiki(wikiNode, binomial, language);
