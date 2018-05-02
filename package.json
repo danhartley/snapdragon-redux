@@ -59,6 +59,7 @@
     "popper.js": "^1.14.3",
     "ramda": "^0.25.0",
     "redux": "^3.7.2",
+    "redux-persist": "^5.9.1",
     "style-loader": "^0.20.3",
     "systemjs": "^0.21.3",
     "webpack": "^4.1.1",

@@ -26,9 +26,9 @@ observeStore(store, store => store.layout, nextItem, 'layout', 'next-item');
 
 // progress
 
-store.subscribe(()=>{
-    console.log('index: ', store.getState().index);
-});
+// store.subscribe(()=>{
+//     console.log('index: ', store.getState().index);
+// });
 observeStore(store, store => store.score, renderScore, 'score');
 
 // home page
