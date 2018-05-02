@@ -1,4 +1,6 @@
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web and AsyncStorage for react-native
 
 import { logger } from 'redux/middleware/logger';
 import { timeoutScheduler } from 'redux/middleware/timeoutScheduler';
@@ -21,12 +23,21 @@ const reducer = combineReducers({
     history
 });
 
+const persistConfig = {
+  key: 'root',
+  storage
+}
+
+const persistedReducer = persistReducer(persistConfig, reducer)
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+
 export const store = createStore(
-    reducer, 
+    persistedReducer, 
     composeEnhancers(applyMiddleware(
-        // timeoutScheduler,
         // logger
     ))
 );
+
+export const persistor = persistStore(store);

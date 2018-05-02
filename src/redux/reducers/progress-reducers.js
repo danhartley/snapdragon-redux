@@ -1,18 +1,27 @@
 import { types } from 'redux/actions/action-types';
 import { initialState } from 'redux/reducers/initial-state-for-reducers';
 
+let fromLocalStorage = false
+
 export const index = (state = null, action) => {
     const collectionSize = initialState.collection.items.length;
     switch(action.type) {
+        case 'persist/REHYDRATE':
+            fromLocalStorage = true;
+            return action.payload ? action.payload.index : null;
         case types.CHANGE_COLLECTION:
         case types.UPDATE_CONFIG:
-            let _state = state;
             return null;
         case types.NEXT_LESSON:
         case types.NEXT_ROUND:
         case types.NEXT_LEVEL:
-             _state = state;
-            return 0;
+            if(fromLocalStorage) {
+                fromLocalStorage = false;
+                return state || 0;
+            }            
+            else {                
+                return 0;
+            }
         case types.UPDATE_SCORE:
             return (state + 1) <= collectionSize ? (state + 1) : state;
         case types.END_REVISION:
@@ -53,13 +62,15 @@ export const history = (state = null, action) => {
           
             const score = action.data;
 
-            const history = state === null ? [action.data] : [...state, action.data];
+            const history = { scores: [] };
+
+            history.scores = state === null ? [action.data] : [...state, action.data];
             
             let historyCorrect = score.correct;
             let historyTotal = score.total;
         
             if(state) {
-                state.map(round => {
+                state.scores.map(round => {
                     historyCorrect += round.correct;
                     historyTotal += round.total;
                 });
