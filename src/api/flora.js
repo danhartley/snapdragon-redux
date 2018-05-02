@@ -4279,12 +4279,12 @@ export const flora =
       },
       {
         "vernacularName": "scarlet pimpernel",
-        "language": "en"
+        "language": "en",
+        "eol_preferred": true
       },
       {
         "vernacularName": "pimpernel",
-        "language": "en",
-        "eol_preferred": true
+        "language": "en"        
       },
       {
         "vernacularName": "Andagallo",
