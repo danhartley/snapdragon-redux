@@ -505,12 +505,12 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .collections div {
   padding: .4em .2em;
-  width: 500px;
+  width: 550px;
 }
 
 .collection span:nth-of-type(1) {
   display: inline-block;
-  width: 260px;  
+  width: 310px;  
 }
 
 .collection span:nth-of-type(2) {
@@ -529,6 +529,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .dropdown button {
   width: 160px;  
+}
+
+.dropdown .collection button {
+  width: 120px;  
 }
 
 .blocks {
