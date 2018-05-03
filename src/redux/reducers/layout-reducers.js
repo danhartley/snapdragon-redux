@@ -18,8 +18,6 @@ export const layouts = (state = null, action) => {
 
 export const layout = (state = null, action) => { 
     switch(action.type) {
-        // case 'persist/REHYDRATE':
-        //     return action.payload ? action.payload.layout : null;
         case types.NEXT_LESSON:
             return action.data[0];
         case types.NEXT_LAYOUT:

@@ -50,7 +50,7 @@ export const score = (state = null, action) => {
         case types.CHANGE_COLLECTION:
         case types.NEXT_ROUND:
         case types.NEXT_LEVEL:
-            return initialState.score;
+            return { ...initialState.score, ...{ fails: [], passes: []} };
         default:
             return state;
     }       
@@ -64,17 +64,19 @@ export const history = (state = null, action) => {
 
             const history = { scores: [] };
 
-            history.scores = state === null ? [action.data] : [...state, action.data];
-            
-            let historyCorrect = score.correct;
-            let historyTotal = score.total;
+            history.scores = state === null 
+                ? [action.data] 
+                : state.scores[state.scores.length-1].question === action.data.question
+                    ? [...state.scores]
+                    : [...state.scores, action.data];
+
+            let historyCorrect = 0;
+            let historyTotal = 0;
         
-            if(state) {
-                state.scores.map(round => {
-                    historyCorrect += round.correct;
-                    historyTotal += round.total;
-                });
-            }
+            history.scores.map(score => {
+                historyCorrect += score.correct;
+                historyTotal += score.total;
+            });
 
             history.correct = historyCorrect;
             history.total = historyTotal;

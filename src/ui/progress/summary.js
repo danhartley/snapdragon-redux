@@ -17,7 +17,7 @@ export const renderSummary = (index) => {
 
     const { score, layouts, collection } = store.getState();
 
-    if(index !== layouts.length) return;
+    if(index + 1 !== layouts.length) return;
     
     renderSummaryHeader(score);
 

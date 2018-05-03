@@ -33,7 +33,6 @@ export const renderCollections = () => {
 
     btns.forEach(btn => btn.addEventListener('click', event => {
         actions.boundChangeCollection(event.target.id);
-        // DOM.changeCollection.style.display = 'inline-block';
     }));
 
     const languageId = '#' + config.language;
@@ -67,6 +66,5 @@ export const renderCollections = () => {
 
     startLearningBtn.addEventListener('click', event => {
         actions.boundUpdateConfig(config);
-        // DOM.changeCollection.style.display = 'inline-block';
     });
 };
