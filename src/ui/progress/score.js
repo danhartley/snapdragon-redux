@@ -3,14 +3,16 @@ import { store } from 'redux/store';
 
 export const renderScore = (score) => {
     
-    const { history, collection, config } = store.getState();
+    const { history, collection, config, layout } = store.getState();
 
     const template = document.querySelector('.js-score-template');
 
+    const scoreCounted = (score.total === layout.roundScoreCount); 
+
     const running = history 
         ? {
-            correct: history.correct + score.correct,
-            total: history.total + score.total
+            correct: scoreCounted ? history.correct : history.correct + score.correct,
+            total: scoreCounted ? history.total : history.total + score.total
         } 
         : {
             correct: score.correct,

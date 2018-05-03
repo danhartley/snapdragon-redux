@@ -17,13 +17,14 @@ export const nextLayout = (index) => {
 
     layout.screens.forEach(screen => {
 
-        const select = store => store[screen.domain];
-        const onChange = screen.render
-        const domain = screen.domain;
+        if(screen.render) {
 
-        // console.log('new render asking to subscribe: ', domain, ' ', onChange);
+            const select = store => store[screen.domain];
+            const onChange = screen.render
+            const domain = screen.domain;
 
-        subscriptions.push(observeStore(store, select, onChange, domain));
+            subscriptions.push(observeStore(store, select, onChange, domain));
+        }
     });
 
     actions.boundNextLayout(layout);

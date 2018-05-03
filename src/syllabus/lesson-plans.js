@@ -12,6 +12,7 @@ const layout1 = {
 
 const layout2 = {
     name: 'test',
+    score: 1,
     screens: [
         { ...specimen },
         { ...species }
@@ -20,6 +21,7 @@ const layout2 = {
 
 const layout3 = {
     name: 'test',
+    score: 1,
     screens: [
         { ...specimen },
         { ...vernaculars }
@@ -28,6 +30,7 @@ const layout3 = {
 
 const layout4 = {
     name: 'test',
+    score: 1,
     screens: [
         { ...specimen },
         { ...scientifics }
@@ -36,6 +39,7 @@ const layout4 = {
 
 const layout5 = {
     name: 'test',
+    score: 1,
     screens: [
         { ...specimen },
         { ...text, template: 'js-genus-entry-template', taxon: 'genus'}
@@ -44,6 +48,7 @@ const layout5 = {
 
 const layout6 = {
     name: 'test',
+    score: 1,
     screens: [
         { ...specimen },
         { ...text, template: 'js-species-entry-template', taxon: 'species'}
@@ -52,6 +57,7 @@ const layout6 = {
 
 const layout7 = {
     name: 'test',
+    score: 1,
     screens: [
         { ...specimen },
         { ...text, template: 'js-species-genus-entry-template', taxon: 'name'}
@@ -60,6 +66,7 @@ const layout7 = {
 
 const layout8 = {
     name: 'test',
+    score: 1,
     screens: [
         { ...command },
     ]
