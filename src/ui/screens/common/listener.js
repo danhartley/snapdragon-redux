@@ -4,9 +4,18 @@ import { persistor } from 'redux/store';
 
 export const listening = (score) => {
 
-    DOM.stateChangeAlertTxt.innerHTML = 'Saving lesson score in browser...';
+    let savingLesson = 'Saving lesson...';
+    let lessonSaved = 'Lesson saved';
+
+    if (window.matchMedia("(min-width: 1024px)").matches || window.matchMedia("(min-width: 1200px)").matches){
+        savingLesson = 'Saving lesson score in browser...';
+        lessonSaved = 'Lesson score saved in browser';
+    }
+    else DOM.moreSpecimensBtn.style.display = 'none';
+
+    DOM.stateChangeAlertTxt.innerHTML = savingLesson;
     setTimeout(()=>{
-        DOM.stateChangeAlertTxt.innerHTML = 'Lesson score saved in browser';
+        DOM.stateChangeAlertTxt.innerHTML = lessonSaved;
     },1000);
     
     DOM.stateClearBtn.style.display = 'inline-block';

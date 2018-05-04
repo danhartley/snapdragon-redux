@@ -164,19 +164,20 @@ grid-template-areas: "header"
 }
 
 .score-footer {
-  margin: .7em 0em;
+  margin: .8em 0em;
 }
 
 .score-footer-alert {
-  margin: .7em;
+  margin: .8em;
   display: inline-block;
 }
 
 button.btn.btn-light.state-clear {
-  width: 140px;
+  width: 100px;
   float: right;
   font-size: .8em;
-  margin: 1.2em;
+  margin: .8em;
+  padding: .4em;
 }
 
 .answer {

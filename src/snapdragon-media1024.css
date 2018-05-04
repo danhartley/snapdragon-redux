@@ -41,6 +41,13 @@
         margin: 1.4em;
     }
 
+    button.btn.btn-light.state-clear {
+        width: 140px;
+        float: right;
+        font-size: .8em;
+        margin: 1.2em;
+      }
+
     .collections div {
         padding: .4em .2em;
         width: 500px;
