@@ -37,7 +37,7 @@
         height: 60px;
     }
 
-    .score-footer {
+    .score-footer, .score-footer-alert {
         margin: 1.4em;
     }
 

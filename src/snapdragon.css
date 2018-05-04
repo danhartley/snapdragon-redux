@@ -163,7 +163,7 @@ grid-template-areas: "header"
   margin: .8em;
 }
 
-.score-footer {
+.score-footer, .score-footer-alert {
   margin: .7em 0em;
 }
 
