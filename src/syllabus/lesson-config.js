@@ -1,7 +1,7 @@
 export const config = {
     language: 'en',
     moduleSize: 2,
-    callbackTime: 15,
+    callbackTime: 1500,
     collection: {
         id: ''
     },
