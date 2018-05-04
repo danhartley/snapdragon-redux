@@ -100,16 +100,6 @@ a:hover {
   flex: 1 auto;
 }
 
-.header-btn {
-  flex: 1 auto;
-  text-align: right;
-  margin: .6em 1em 0 0;
-}
-
-.header-btn > button {
-  display: inline-block;
-}
-
 .right-grid {
 display: grid;
 grid-column: 4;
@@ -159,8 +149,15 @@ grid-template-areas: "header"
   color: black;
 }
 
-.footer button {
-  margin: .8em;
+.footer button.btn.btn-light, .header button.btn.btn-light {
+  float: right;
+  font-size: .7rem;
+  margin: .4em 1em;
+  padding: .2em;
+}
+
+button.btn.btn-light.btn-more-specimens {
+  width: 20px;
 }
 
 .score-footer {
@@ -173,11 +170,7 @@ grid-template-areas: "header"
 }
 
 button.btn.btn-light.state-clear {
-  width: 100px;
-  float: right;
-  font-size: .8em;
-  margin: .8em;
-  padding: .4em;
+  width: 100px;  
 }
 
 .answer {
@@ -519,11 +512,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .collections div {
   padding: .2em .2em;
   width: 550px;
-}
-
-.collection span:nth-of-type(1) {
-  display: inline-block;
-  width: 310px;  
 }
 
 .collection span:nth-of-type(2) {

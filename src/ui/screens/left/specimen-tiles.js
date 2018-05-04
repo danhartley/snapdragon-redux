@@ -13,9 +13,9 @@ export const renderSpecimenTiles = (collection) => {
 
     DOM.collectionTxt.innerHTML = `${collection.name} [${config.language}]`;
     
-    if (window.matchMedia("(min-width: 1024px)").matches || window.matchMedia("(min-width: 1200px)").matches)
-        DOM.moreSpecimensBtn.style.display = 'inline-block';
-    else DOM.moreSpecimensBtn.style.display = 'none';
+    DOM.moreSpecimensBtn.style.display = 'inline-block';
+    if (window.matchMedia("(min-width: 1024px)").matches || window.matchMedia("(min-width: 1200px)").matches) {}
+    else DOM.moreSpecimensBtn.innerHTML = '>';
 
     let screen = layout.screens.filter(el => el.name === 'specimen-images')[0];
 
