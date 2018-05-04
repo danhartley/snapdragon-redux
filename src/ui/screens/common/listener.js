@@ -3,12 +3,10 @@ import { DOM } from 'ui/dom';
 import { renderSnapdragon } from 'ui/screens/right/snapdragon';
 import { renderCollections } from 'ui/screens/left/collections';
 
-export const listening = () => {
+export const listening = (score) => {
 
-    const handleClick = event => {
-        renderCollections();
-        renderSnapdragon();
-    };
-
-    DOM.changeCollection.addEventListener('click', handleClick);
+    DOM.stateChangeAlertTxt.innerHTML = 'Saving current lesson score...';
+    setTimeout(()=>{
+        DOM.stateChangeAlertTxt.innerHTML = 'Lesson score saved';
+    },1000);
 }

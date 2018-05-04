@@ -7,7 +7,6 @@ export const renderCollections = () => {
 
     DOM.moreSpecimensBtn.style.display = 'none';
     DOM.collectionTxt.innerHTML = 'Collections | Levels | Languages';
-    DOM.changeCollection.style.display = 'none';
 
     let { collections, collection, config } = store.getState();
 

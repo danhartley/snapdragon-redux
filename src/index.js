@@ -38,5 +38,5 @@ renderSnapdragon();
 
 // global listener
 
-listening();
+observeStore(store, store => store.score, listening, 'score');
 
