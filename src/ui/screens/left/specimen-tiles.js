@@ -1,10 +1,13 @@
 import { store } from 'redux/store';
 import { renderTiles } from 'ui/screens/common/tiles';
 import { DOM } from 'ui/dom';
+import { ifError } from 'assert';
 
 export const renderSpecimenTiles = (collection) => {
 
     const item = collection.items[collection.itemIndex];
+
+    if(!item) return;
 
     const { layout, config } = store.getState();
 
