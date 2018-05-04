@@ -31,7 +31,7 @@ export const renderCollections = () => {
     const btns = document.querySelectorAll('.collection button');
 
     btns.forEach(btn => btn.addEventListener('click', event => {
-        actions.boundChangeCollection(event.target.id);
+        actions.boundChangeCollection({ ...config, ...{ collection: { id: event.target.id }} });
     }));
 
     const languageId = '#' + config.language;

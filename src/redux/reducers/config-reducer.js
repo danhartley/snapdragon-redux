@@ -5,7 +5,7 @@ import { collections } from 'syllabus/lesson-collections';
 export const config = (state = lessonConfig, action) => {
     switch(action.type) {
         case types.CHANGE_COLLECTION:
-            return { ...state, ...{ collection: { id: action.data } } };
+            return { ...state, ...{ ...action.data } };
         case types.UPDATE_CONFIG:
             return { ...state, ...action.data };
         default: 

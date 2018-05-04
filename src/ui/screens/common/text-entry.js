@@ -1,9 +1,8 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
-import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
-export const renderInput = (screen, question, callbackTime, item) => {
+export const renderInput = (screen, question, callbackTime, item, renderAnswerHeader, hints) => {
 
     const sendQandA = (answer, event) => {
         const btn = event.target;
@@ -26,8 +25,9 @@ export const renderInput = (screen, question, callbackTime, item) => {
 
     const template = document.querySelector(`.${screen.template}`);
 
-    template.content.querySelector('span.js-genus').innerHTML = question.genus;
-    template.content.querySelector('span.js-species').innerHTML = question.species;
+    hints.forEach(hint => {
+        template.content.querySelector(hint.selector).innerHTML = hint.value;  
+    });
 
     const clone = document.importNode(template.content, true);
     

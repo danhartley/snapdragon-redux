@@ -48,7 +48,7 @@ test('when user selects a collection state should be populated', () => {
         data: 1
     };
 
-    actions.boundChangeCollection('1'); // user action (clicking on a collection) triggers CHANGE_COLLECTION
+    actions.boundChangeCollection({ collection: {id:'1'}}); // user action (clicking on a collection) triggers CHANGE_COLLECTION
 
     let { config, collection, score } = store.getState();
 
