@@ -163,8 +163,20 @@ grid-template-areas: "header"
   margin: .8em;
 }
 
-.score-footer, .score-footer-alert {
+.score-footer {
   margin: .7em 0em;
+}
+
+.score-footer-alert {
+  margin: .7em;
+  display: inline-block;
+}
+
+button.btn.btn-light.state-clear {
+  width: 140px;
+  float: right;
+  font-size: .8em;
+  margin: 1.2em;
 }
 
 .answer {
@@ -337,7 +349,7 @@ grid-template-areas: "header"
 }
 
 .summary button {
-  width: 100px;
+  width: 120px;
   margin: 0 0 1em 0px;
   font-size: 1em;
 }
@@ -504,7 +516,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .collections div {
-  padding: .4em .2em;
+  padding: .2em .2em;
   width: 550px;
 }
 
@@ -527,12 +539,9 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   background-color: rgb(73, 73, 73);
 }
 
-.dropdown button {
-  width: 160px;  
-}
-
-.dropdown .collection button {
-  width: 120px;  
+.dropdown .collection button, .dropdown button, .btn.btn-light {
+  width: 120px;
+  font-size: 1em;
 }
 
 .blocks {
