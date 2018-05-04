@@ -7,7 +7,7 @@ import { timeoutScheduler } from 'redux/middleware/timeoutScheduler';
 
 import { config } from 'redux/reducers/config-reducer';
 import { collections, collection } from 'redux/reducers/species-reducers';
-import { index, score, history, revision } from 'redux/reducers/progress-reducers';
+import { index, score, history } from 'redux/reducers/progress-reducers';
 import { lesson, layouts, layout } from 'redux/reducers/layout-reducers';
 
 const reducer = combineReducers({
@@ -19,7 +19,6 @@ const reducer = combineReducers({
     score,
     collections,
     collection,
-    // revision,
     history
 });
 

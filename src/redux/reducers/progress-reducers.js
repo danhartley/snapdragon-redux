@@ -83,7 +83,9 @@ export const history = (state = null, action) => {
 
             return history;
             
-        default:
+            case types.CHANGE_COLLECTION:
+                return null;
+            default:
             return state;
     }
 };
