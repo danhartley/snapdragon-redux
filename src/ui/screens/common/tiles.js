@@ -20,7 +20,7 @@ export const renderTiles = (screen, item, callbackTemplate, callbackTime) => {
             const img = event.target;
             const answer = img.name;
 
-            const response = { taxon: 'name', binomial: item.name, question: item.name, answer: answer};
+            const response = { taxon: 'name', binomial: item.name, question: item.name, answer: answer };
 
             const { text, colour, correct } = renderAnswerHeader(response);
 
