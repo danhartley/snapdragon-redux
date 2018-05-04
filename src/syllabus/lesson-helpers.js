@@ -33,15 +33,10 @@ export const createLesson = (lessonName, levelName, moduleSize, layouts, progres
     };
 
     lessonPlan.push(summaryLayout);
-    //const scores = [];
+
     const scores = lessonPlan.map(layout => layout.score || 0);
     const roundScoreCount = scores.reduce((accumulator, currentValue) => accumulator + currentValue);
     lessonPlan.map(layout => layout.roundScoreCount = roundScoreCount);
-
-    // const finalLayout = lessonPlan[lessonPlan.length -1];
-    // const finalLayoutScreens = finalLayout.screens;
-    // const screens = [ ...finalLayoutScreens, ...progressScreens];
-    // finalLayout.screens = screens;
 
     lessonPlan.moduleSize = moduleSize;
 
