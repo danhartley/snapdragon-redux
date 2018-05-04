@@ -28,7 +28,8 @@ export const createLesson = (lessonName, levelName, moduleSize, layouts, progres
         screens: [...progressScreens],
         lessonName,
         levelName,
-        layoutIndex: lessonPlan.length        
+        layoutIndex: lessonPlan.length,
+        itemIndex: 0  
     };
 
     lessonPlan.push(summaryLayout);
