@@ -41,6 +41,16 @@
         margin: 1.4em;
     }
 
+    .footer button.btn.btn-light, .header button.btn.btn-light {
+        font-size: .8rem;
+        margin: .8em;
+        padding: .4em;
+    }
+
+    button.btn.btn-light.btn-more-specimens {
+        width: 120px;
+    }
+
     button.btn.btn-light.state-clear {
         width: 140px;
         float: right;
