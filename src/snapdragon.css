@@ -169,6 +169,14 @@ grid-template-areas: "header"
 
 .score-footer-alert {
   margin: .7em;
+  display: inline-block;
+}
+
+button.btn.btn-light.state-clear {
+  width: 140px;
+  float: right;
+  font-size: .8em;
+  margin: 1.2em;
 }
 
 .answer {

@@ -20,5 +20,6 @@ export const DOM = {
     headerTxt : document.getElementsByClassName('js-txt-header')[0],
     totalTxt : document.getElementsByClassName('js-txt-total')[0],
     correctTxt : document.getElementsByClassName('js-txt-correct')[0],
-    stateChangeAlertTxt: document.getElementsByClassName('js-state-change-alert')[0]
+    stateChangeAlertTxt: document.getElementsByClassName('js-state-change-alert')[0],
+    stateClearBtn: document.getElementsByClassName('js-state-clear')[0]
 };
