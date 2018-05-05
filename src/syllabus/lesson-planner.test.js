@@ -1,5 +1,5 @@
 import { lessonPlanner } from 'syllabus/lesson-planner';
-import { lessonPlan } from 'syllabus/lesson-plans';
+// import { lessonPlans } from 'snapdragon/lesson-plans';
 
 test.skip('createLessonPlan returns Lesson 1 screens unchanged for given collection', () => {
     const moduleSize = 2;

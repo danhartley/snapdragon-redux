@@ -2,7 +2,9 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { nextLesson } from 'ui/setup/next-lesson';
-
+import { collectionPlans } from'snapdragon/collections-plans'
+;
+import { lessonPlans } from '../../../snapdragon/lesson-plans';
 export const renderCollections = () => {
 
     DOM.moreSpecimensBtn.style.display = 'none';
@@ -18,7 +20,10 @@ export const renderCollections = () => {
 
     collection = collection || { name: 'no collection selected', id: ''};
 
-    const data = { collections, config, collection };
+    const species = collections.filter(collection => collection.type === 'species');
+    const skills = collections.filter(collection => collection.type === 'skill');
+
+    const data = { species, skills, config, collection };
     
     var ctx = new Stamp.Context();
     var expanded = Stamp.expand(clone, data);
@@ -28,17 +33,25 @@ export const renderCollections = () => {
 
     if(collection.id !== '') startLearningBtn.style.display = 'block';
     
-    const btns = document.querySelectorAll('.collection button');
+    const speciesCollectionBtns = document.querySelectorAll('.js-species-collection .dropdown-menu button');
 
-    btns.forEach(btn => btn.addEventListener('click', event => {
+    speciesCollectionBtns.forEach(btn => btn.addEventListener('click', event => {
         actions.boundChangeCollection({ ...config, ...{ collection: { id: event.target.id }} });
     }));
+
+    const skillsCollectionsBtns = document.querySelector('.js-skills-collection .dropdown-menu button');
+
+    skillsCollectionsBtns.addEventListener('click', event => {
+        const collectionId = parseInt(event.target.id);
+        const { lessonName, levelName } = collectionPlans.filter(collectionPlan => collectionPlan.collectionId === collectionId )[0];
+        actions.boundChangeCollection({ ...config, ...{ collection: { id: collectionId }}, ...{ lesson: { name: lessonName, level: { name: levelName }}} });
+    });
 
     const languageId = '#' + config.language;
 
     document.querySelectorAll(languageId)[0].classList.add('active');
 
-    document.querySelectorAll('.dropdown.js-languages .dropdown-item').forEach(option => {        
+    document.querySelectorAll('.dropdown.js-languages .dropdown-item').forEach(option => {
         option.addEventListener('click', event => {
             document.querySelectorAll('.dropdown.js-languages .dropdown-item').forEach(option => option.classList.remove('active'));
             event.target.classList.add('active');
@@ -48,9 +61,9 @@ export const renderCollections = () => {
         });
     });
 
-    const levelId = '#level' + config.lesson.level.id;
+    const levelName = '#level' + config.lesson.level.id;
 
-    document.querySelectorAll(levelId)[0].classList.add('active');
+    document.querySelectorAll(levelName)[0].classList.add('active');
 
     document.querySelectorAll('.dropdown.js-levels .dropdown-item').forEach(option => {
         option.addEventListener('click', event => {

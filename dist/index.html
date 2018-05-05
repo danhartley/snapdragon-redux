@@ -32,7 +32,7 @@
     </head>
     <body>
         <div class="grid">
-                <div class="left-grid js-left-grid">
+            <div class="left-grid js-left-grid">
                     <div class="header js-left-header">
                         <div class="header-text js-txt-collection"></div>
                         <button class="btn btn-light btn-more-specimens js-btn-more-specimens" style="display: none;">Show 4 more</button>                        
@@ -42,14 +42,14 @@
                         <span class="score-footer-alert js-state-change-alert"></span>
                         <span><button class="btn btn-light state-clear js-state-clear" style="display: none;">Clear lesson</button></span>
                     </div>
+            </div>
+            <div class="right-grid js-right-grid">
+                <div class="header js-right-header">
+                    <div class="header-text js-txt-header"></div>                        
                 </div>
-                <div class="right-grid js-right-grid">
-                    <div class="header js-right-header">
-                        <div class="header-text js-txt-header"></div>                        
-                    </div>
-                    <div class="right-body js-right-body"></div>
-                    <div class="footer js-right-footer"></div>
-                </div>
+                <div class="right-body js-right-body"></div>
+                <div class="footer js-right-footer"></div>
+            </div>
             </div>
             <script src="bundle.js" type="module"></script>
 
@@ -74,7 +74,7 @@
                     Score: {{ score.correct }}/{{ score.total }}
                     History: {{ running.correct }}/{{ running.total }}
                     Round: {{ collection.currentRound }}/{{ collection.rounds }}
-                    Level: {{ config.lesson.level.id }}/{{ config.lesson.levels.length }}                               
+                    <!-- Level: {{ config.lesson.level.id }}/{{ config.lesson.levels.length }}                                -->
                 </div>
             </template>
     
@@ -128,16 +128,16 @@
             </template>
     
             <template class="js-species-genus-entry-template">                    
-                    <div class="letterbox">
-                        <div></div>
-                        <div>
-                            <span class="js-txt-entry js-species" style="display:none"></span>
-                            <input class="long js-txt-input" type="text" placeholder="Genus species">
-                            <span class="js-txt-entry js-genus" style="display:none"></span>
-                            <button class="btn btn-light">Check</button>
-                        </div>
-                        <div></div>
-                    </div>                    
+                <div class="letterbox">
+                    <div></div>
+                    <div>
+                        <span class="js-txt-entry js-species" style="display:none"></span>
+                        <input class="long js-txt-input" type="text" placeholder="Genus species">
+                        <span class="js-txt-entry js-genus" style="display:none"></span>
+                        <button class="btn btn-light">Check</button>
+                    </div>
+                    <div></div>
+                </div>                 
             </template>
 
             <template class="js-genus-entry-template">                    
@@ -182,17 +182,17 @@
                     </div>
             </template>
 
-            <template class="js-collections-template">                
-                <div class="collections js-collections">
-                    <div>Collections hosted by EOL:</div>
-                    
+            <template class="js-collections-template">
+
+                <div class="collections js-species-collection">
+                    <div>Collections hosted by EOL:</div>                    
                     <div class="flex">
                         <div class="dropdown js-collections">
                             <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Collections
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-collection="{{ collections }}">
-                                <div class="collection">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-collection="{{ species }}">
+                                <div class="collection js-collection">
                                     <button class="btn btn-light" id="{{ collection.id }}">Learn</button> <a class="underline-link" target="_blank" href="{{ collection.eol_link }}">Preview</a> <span>{{ collection.eol_name }} ({{ collection.items.length }})</span>
                                 </div>
                             </div>                            
@@ -227,6 +227,22 @@
 
                     <button class="btn btn-light js-start-learning" style="display:none;">Continue lesson</button>
                 </div>
+
+                <div class="collections js-skills-collection">
+                    <div class="flex skills">
+                        <div class="dropdown js-collections">
+                            <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Skills
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-collection="{{ skills }}">
+                                <div class="collection js-collection">
+                                    <button class="btn btn-light" id="{{ collection.id }}">Learn</button> <a class="underline-link" target="_blank" href="{{ collection.wiki_link }}">Preview</a> <span>{{ collection.wiki_name }}</span>
+                                </div>
+                            </div>                            
+                        </div>                        
+                    </div>
+                </div>
+
             </template>
 
             <template class="js-snapdragon">
@@ -266,6 +282,21 @@
                         <div class="block">{{ block }}</div>
                     </div>
                     <button class="btn btn-light js-try-again" disabled>Try again</button> <button class="btn btn-light js-continue">Continue</button>                            
+                </div>
+            </template>
+
+            <template class="js-leaf-image-template">
+                <div class="single-tile js-tile"></div>
+            </template>
+
+            <template class="js-text-entry-template">
+                <div class="letterbox">
+                    <div></div>
+                    <div>
+                        <input class="long js-txt-input" type="text" placeholder="name">
+                        <button class="btn btn-light">Check</button>
+                    </div>
+                    <div></div>
                 </div>
             </template>
     </body>

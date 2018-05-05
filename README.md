@@ -31,3 +31,4 @@ https://webpack.js.org/guides/getting-started/
 https://facebook.github.io/jest/docs/en/webpack.html Using with webpack 2
 
 NB: require babel-plugin-transform-object-rest-spread for the spread operator
+

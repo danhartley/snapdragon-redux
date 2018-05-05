@@ -1,6 +1,6 @@
-import { screens } from 'ui/layouts/species-layouts';
+import { screens } from 'snapdragon/screen-layouts';
 
-const { specimen, revision, species, vernaculars, scientifics, summary, history, text, command } = screens;
+const { specimen, revision, species, vernaculars, scientifics, summary, history, text, command, leaf, leafName } = screens;
 
 const layout1 = {
     name: 'revision',
@@ -72,32 +72,60 @@ const layout8 = {
     ]
 };
 
+const layout9 = {
+    name: 'test',
+    score: 1,
+    screens: [
+        { ...leaf },
+        { ...text, template: 'js-text-entry-template' }
+    ]
+};
+
 const lesson1 = {
     id: 1,
     name: 'Lesson 1',
     levels: [
         {   id: 1,
             name: 'Level 1',
+            description: 'Click the species image or name',
             layouts: [ layout1, layout2, layout3, layout4 ]
         },
         {   id: 2,
             name: 'Level 2',
+            description: 'Enter the genus name',
             layouts: [ layout1, layout5 ]
         },
         {   id: 3,
             name: 'Level 3',
+            description: 'Enter the species name',
             layouts: [ layout1, layout6 ]
         },
         {   id: 4,
             name: 'Level 4',
+            description: 'Enter the genus and species name',
             layouts: [ layout1, layout7 ]
         },
         {   id: 5,
             name: 'Level 5',
+            description: 'Piece the name back together',
             layouts: [ layout8 ]
         }
     ]
 };
+
+const lesson2 = {
+    id: 2,
+    name: 'Lesson 2',
+    levels: [
+        {   id: 1,
+            name: 'Level 1',
+            description: 'Name the leaf structure',
+            layouts: [ layout9 ]
+        }
+    ]
+};
+
 export const lessonPlans = [
-    lesson1
+    lesson1,
+    lesson2
 ]

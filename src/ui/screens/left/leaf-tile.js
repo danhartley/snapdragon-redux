@@ -1,8 +1,8 @@
 import { store } from 'redux/store';
-import { renderTiles } from 'ui/screens/common/tiles';
+import { renderTile } from 'ui/screens/common/tile';
 import { DOM } from 'ui/dom';
 
-export const renderSpecimenTiles = (collection) => {
+export const renderLeafTile = (collection) => {
 
     const item = collection.items[collection.itemIndex];
 
@@ -12,25 +12,9 @@ export const renderSpecimenTiles = (collection) => {
 
     DOM.collectionTxt.innerHTML = `${collection.name} [${config.language}]`;
     
-    DOM.moreSpecimensBtn.style.display = 'inline-block';
-    if (window.matchMedia("(min-width: 1024px)").matches || window.matchMedia("(min-width: 1200px)").matches) {}
-    else DOM.moreSpecimensBtn.innerHTML = '>';
-
-    let screen = layout.screens.filter(el => el.name === 'specimen-images')[0];
-
-    if(layout.screens[0].name === 'command') screen = layout.screens[0].left;
+    let screen = layout.screens.filter(el => el.name === 'leaf-image')[0];
 
     if(!screen) return;
-
-    let images = [];
-    
-    item.imageIndices.forEach(index => {
-        const image = item.images[index];
-        if(image)
-            images.push(image);
-    });
-    item.content = images.slice(0,4);
-    let index = 4;
 
     const callback = contentItem => {
         return `<div class="square">                            
@@ -38,14 +22,6 @@ export const renderSpecimenTiles = (collection) => {
                 </div>`; 
     };
 
-    renderTiles(screen, item, callback, config.callbackTime);
-
-    DOM.moreSpecimensBtn.addEventListener('click', () => {
-        item.content = images.slice(index,index + 4);
-        index = index + 4;
-        renderTiles(screen, item, callback, config.callbackTime);
-        if(index === 8)
-            DOM.moreSpecimensBtn.style.display = 'none';
-    });
+    renderTile(screen, item, callback, config.callbackTime);
 
 };

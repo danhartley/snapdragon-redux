@@ -25,9 +25,9 @@ export const renderInput = (screen, question, callbackTime, item, renderAnswerHe
 
     const template = document.querySelector(`.${screen.template}`);
 
-    hints.forEach(hint => {
-        template.content.querySelector(hint.selector).innerHTML = hint.value;  
-    });
+    // hints.forEach(hint => {
+    //     template.content.querySelector(hint.selector).innerHTML = hint.value;  
+    // });
 
     const clone = document.importNode(template.content, true);
     
@@ -40,13 +40,13 @@ export const renderInput = (screen, question, callbackTime, item, renderAnswerHe
     screen.parent.innerHTML = '';
     screen.parent.appendChild(clone);
 
-    const bgTop = document.querySelector('.letterbox div:nth-child(1)');
-    bgTop.style.backgroundImage = `url(${item.images[0]})`;
-    bgTop.style.opacity = '.1';
+    // const bgTop = document.querySelector('.letterbox div:nth-child(1)');
+    // bgTop.style.backgroundImage = `url(${item.images[0]})`;
+    // bgTop.style.opacity = '.1';
     
-    const bgBottom = document.querySelector('.letterbox div:nth-child(3)');
-    bgBottom.style.backgroundImage = `url(${item.images[1]})`;
-    bgBottom.style.opacity = '.1';
+    // const bgBottom = document.querySelector('.letterbox div:nth-child(3)');
+    // bgBottom.style.backgroundImage = `url(${item.images[1]})`;
+    // bgBottom.style.opacity = '.1';
 
     document.querySelector('.js-txt-input').focus();
 

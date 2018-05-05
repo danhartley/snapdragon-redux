@@ -15,6 +15,9 @@ import { renderHistory } from 'ui/progress/history';
 import { renderLetters } from 'ui/screens/common/letters';
 import { runTask } from 'ui/screens/command';
 
+import { renderLeafTile } from 'ui/screens/left/leaf-tile';
+import { renderNameEntry } from 'ui/screens/right/leaf-text-entry';
+
 // LEFT
 
 const specimen = {
@@ -112,7 +115,24 @@ const command = {
     cutLength: 5,
     template: 'js-letters-template'
   }
-}
+};
+
+const leaf = {
+  name: 'leaf-image',
+  domain: 'collection',
+  render: renderLeafTile,
+  parent: DOM.leftBody,
+  template: 'js-leaf-image-template'     
+};
+
+const leafName = {
+  name: 'leaf-text',
+  domain: 'collection',
+  render: renderNameEntry,
+  parent: DOM.rightBody,
+  template: 'js-text-entry-template'     
+};
+
 
 export const screens = {
   specimen,
@@ -127,5 +147,8 @@ export const screens = {
   text,
   summary,
 
-  command
+  command,
+
+  leaf,
+  leafName
 };
