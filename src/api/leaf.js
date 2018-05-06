@@ -39,6 +39,7 @@ export const leaf = [
         ],
         shape: [
             {
+                id: 1,
                 image: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Leaf_morphology_acicular.png',
                 term: 'acicular',
                 thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Leaf_morphology_acicular.png/64px-Leaf_morphology_acicular.png',
@@ -48,7 +49,8 @@ export const leaf = [
                 description: 'Slender and pointed, needle-like.',
                 refers: 'entire leaf'
             },{
-                image: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Leaf_morphology_acuminate.png',
+                id: 2,
+                image: 'https://upload.wikimedia.org/wikipedia/commo    ns/7/72/Leaf_morphology_acuminate.png',
                 thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Leaf_morphology_acuminate.png/64px-Leaf_morphology_acuminate.png',
                 author: 'Maksim CC BY-SA 3.0',
                 attribution: 'https://commons.wikimedia.org/w/index.php?curid=6531351',
@@ -57,6 +59,7 @@ export const leaf = [
                 refers: 'leaf tip',
                 description: 'Tapering to a long point in a concave manner.'
             },{
+                id: 3,
                 image: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Leaf_morphology_Acute.png',
                 thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Leaf_morphology_Acute.png/64px-Leaf_morphology_Acute.png',
                 author: 'Wasp32 CC BY-SA 4.0',                
@@ -66,6 +69,7 @@ export const leaf = [
                 description: 'Pointed, having a short sharp apex angled less than 90°.',
                 refers: 'leaf tip or base'
             },{
+                id: 4,
                 image: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Leaf_morphology_Apiculate.png',
                 thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Leaf_morphology_Apiculate.png/64px-Leaf_morphology_Apiculate.png',
                 author: 'Wasp32 CC BY-SA 4.0',
@@ -78,6 +82,7 @@ export const leaf = [
         ],
         edge: [
             {
+                id: 1,
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Leaf_morphology_entire.png/64px-Leaf_morphology_entire.png',
                 term: 'entire',
                 latin: 'Forma integra',
@@ -86,6 +91,7 @@ export const leaf = [
         ],
         folding: [
             {
+                id: 1,
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Palm_leaf_washingtonia_robusta.jpg/64px-Palm_leaf_washingtonia_robusta.jpg',
                 term: 'plicate',
                 latin: 'plicatus',
