@@ -39,13 +39,13 @@ export const renderCollections = () => {
         actions.boundChangeCollection({ ...config, ...{ collection: { id: event.target.id }} });
     }));
 
-    const skillsCollectionsBtns = document.querySelector('.js-skills-collection .dropdown-menu button');
+    const skillsCollectionsBtns = document.querySelectorAll('.js-skills-collection .dropdown-menu button');
 
-    skillsCollectionsBtns.addEventListener('click', event => {
+    skillsCollectionsBtns.forEach(btn => btn.addEventListener('click', event => {
         const collectionId = parseInt(event.target.id);
         const { lessonName, levelName } = collectionPlans.filter(collectionPlan => collectionPlan.collectionId === collectionId )[0];
         actions.boundChangeCollection({ ...config, ...{ collection: { id: collectionId }}, ...{ lesson: { name: lessonName, level: { name: levelName }}} });
-    });
+    }));
 
     const languageId = '#' + config.language;
 

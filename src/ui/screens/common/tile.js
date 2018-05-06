@@ -2,21 +2,16 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
-export const renderTile = (screen, item, callbackTemplate, callbackTime) => {
+export const renderTile = (screen, item, callbackTime) => {
 
     const template = document.querySelector(`.${screen.template}`);
 
-    const tile = template.content.querySelector('.js-tile');
-
-    //tile.innerHTML = item.content.map(callbackTemplate).join('');
-    tile.innerHTML = 'tile image';
-
     const clone = document.importNode(template.content, true);
 
-    // document.querySelector('.js-tile').addEventListener('click', event => {
-    //     console.log(event);
-    // });
+    DOM.leftBody.innerHTML = '';
+    DOM.leftBody.style.backgroundColor = 'rgb(50, 50, 50)';
 
-    screen.parent.innerHTML = '';
-    screen.parent.appendChild(clone);
+    var ctx = new Stamp.Context();
+    var expanded = Stamp.expand(clone, item);
+    Stamp.appendChildren(DOM.leftBody, expanded);
 }

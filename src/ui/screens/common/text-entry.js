@@ -25,9 +25,9 @@ export const renderInput = (screen, question, callbackTime, item, renderAnswerHe
 
     const template = document.querySelector(`.${screen.template}`);
 
-    // hints.forEach(hint => {
-    //     template.content.querySelector(hint.selector).innerHTML = hint.value;  
-    // });
+    hints.forEach(hint => {
+        template.content.querySelector(hint.selector).innerHTML = hint.value;  
+    });
 
     const clone = document.importNode(template.content, true);
     

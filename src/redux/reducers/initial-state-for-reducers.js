@@ -12,12 +12,12 @@ const initCollection = (rawCollection = collections[0]) => {
     const rounds = items.length / config.moduleSize;
 
     const collection = {
-        name: rawCollection.eol_name,
+        name: rawCollection.eol_name || rawCollection.wiki_name,
         items : items,
         itemIndex: 0,
         currentRound: 1,
         moduleSize: config.moduleSize,
-        rounds : rounds % 2 === 0 ? rounds : rounds + 1
+        rounds : rounds % 2 === 0 ? rounds : rounds === 1 ? 1 :rounds + 1
      };
 
      return collection;

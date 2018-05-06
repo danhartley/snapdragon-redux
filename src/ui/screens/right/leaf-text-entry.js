@@ -1,6 +1,6 @@
 import { store } from 'redux/store';
 import { renderInput } from 'ui/screens/common/text-entry';
-import { renderAnswerHeader } from 'ui/helpers/response-formatting';
+import { renderTermAnswerHeader } from 'ui/helpers/response-formatting';
 
 export const renderNameEntry = (collection) => {
 
@@ -12,9 +12,9 @@ export const renderNameEntry = (collection) => {
     
     if(!screen) return;
 
-    const question = { binomial: item.name, species: item.species, genus: item.genus, taxon: screen.taxon, question: item[screen.taxon] };
+    const question = { question: item.term };
 
     const hints = [];
 
-    renderInput(screen, question, config.callbackTime, item, renderAnswerHeader, hints);
+    renderInput(screen, question, config.callbackTime, item, renderTermAnswerHeader, hints);
 };

@@ -286,7 +286,18 @@
             </template>
 
             <template class="js-leaf-image-template">
-                <div class="single-tile js-tile"></div>
+                <div class="single-tile js-tile">
+                    <div class="frame">
+                        <div></div>
+                        <div class="image-tile">
+                            <div></div>
+                            <div class="image-border"><img src="{{ image }}" alt=""></div>
+                            <div class="term-property">{{ description }}</div>
+                            <div class="term-property"><a class="underline-link" target="_blank" href="{{ attribution }}">{{ author }}</a></div>                                                        
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
             </template>
 
             <template class="js-text-entry-template">

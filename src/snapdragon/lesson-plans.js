@@ -77,7 +77,7 @@ const layout9 = {
     score: 1,
     screens: [
         { ...leaf },
-        { ...text, template: 'js-text-entry-template' }
+        { ...leafName, template: 'js-text-entry-template' }
     ]
 };
 

@@ -11,7 +11,7 @@ export const config = {
         level: {
             id: 1,
             name: 'Level 1',
-            description: 'Piece the name back together'
+            description: 'Click the species image or name'
         },
         levels: [
             {   id: 1,
@@ -47,7 +47,7 @@ export const config = {
         levels: [{
             id: 1,
             name: 'Level 1',
-            description: 'Name the leaf structure'
+            description: 'Name the leaf part'
         }]
     }],
     languages : [

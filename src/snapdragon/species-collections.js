@@ -50,7 +50,15 @@ export const collections = [
         type: 'skill',
         name: 'leaf morphology - structure',
         items: leaf[0].structure,
-        wiki_name: 'Glossary of leaf morphology',
+        wiki_name: 'Leaf morphology - structure',
+        wiki_link: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology'
+    },
+    {
+        id: 7,
+        type: 'skill',
+        name: 'leaf morphology - shape',
+        items: leaf[0].shape,
+        wiki_name: 'Leaf morphology - shape',
         wiki_link: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology'
     }
 ];
