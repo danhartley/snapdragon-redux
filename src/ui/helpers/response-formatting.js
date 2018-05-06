@@ -76,3 +76,25 @@ export const renderAnswerHeader = (response, header, target) => {
 
     return { text: renderAnswerText(response), colour, correct };
 };
+
+export const renderTermAnswerHeader = (response, header, target) => {
+    
+    const correct = response.question.toLowerCase() === response.answer.toLowerCase();
+
+    const right = 'rgb(44, 141, 86)';
+    const wrong = 'rgb(141, 0, 5)';
+
+    const colour = correct ? right : wrong;
+
+    const className = correct ? 'right' : 'wrong';
+
+    const term = correct ? response.answer : response.question;
+
+    const answer = `<span class="${className}">${term}</span>`;
+
+    const text = correct
+        ? `${answer} is correct!`
+        : `No! ${answer}.`;
+
+    return { text, colour, correct };
+};

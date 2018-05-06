@@ -569,3 +569,31 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .blocks button {
   margin: 2em 0 0 0;
 }
+
+.flex.skills {
+  display: none;
+}
+
+.frame {
+  display: grid;
+  grid-template-columns: 100px auto minmax(200px, 400px) 100px;
+ }
+ 
+ .frame .image-tile {
+   display: grid;
+   grid-template-rows: 100px 1fr auto minmax(10px, 60px) 100px;
+ }
+ 
+ .image-border {
+   background-color: rgb(25, 25, 25);
+   padding: 1em;
+ }
+
+ .term-property {
+   padding: 1em;
+ }
+ 
+ .image-border img {
+   background-color: #ccc;
+   max-width: 400px;
+ }

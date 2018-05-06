@@ -1,6 +1,6 @@
-import { lessonPlans } from 'syllabus/lesson-plans';
+import { lessonPlans } from 'snapdragon/lesson-plans';
 import { createLesson } from 'syllabus/lesson-helpers';
-import { screens } from 'ui/layouts/species-layouts';
+import { screens } from 'snapdragon/screen-layouts';
 
 const { summary, history } = screens;
 

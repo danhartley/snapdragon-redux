@@ -5,18 +5,18 @@ export const config = {
     collection: {
         id: ''
     },
-    lesson: {
+    lessons: [{
         id: 1,
         name: 'Lesson 1',               
         level: {
             id: 1,
             name: 'Level 1',
-            description: 'Piece the name back together'
+            description: 'Click the species image or name'
         },
         levels: [
             {   id: 1,
                 name: 'Level 1',
-                description: 'Click the species image or name'        
+                description: 'Click the species image or name'
             },
             {   id: 2,
                 name: 'Level 2',
@@ -36,6 +36,20 @@ export const config = {
             }
         ]
     },
+    {
+        id: 2,
+        name: 'Lesson 2',
+        level: {
+            id: 1,
+            name: 'Level 1',
+            description: 'Name the leaf structure'
+        },
+        levels: [{
+            id: 1,
+            name: 'Level 1',
+            description: 'Name the leaf part'
+        }]
+    }],
     languages : [
         { name: 'english', lang: 'en' },
         { name: 'عربى', lang: 'ar' },
@@ -46,3 +60,5 @@ export const config = {
         { name: '中文', lang: 'zh' }
     ]
 };
+
+config.lesson = config.lessons[0];

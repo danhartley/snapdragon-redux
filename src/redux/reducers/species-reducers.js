@@ -18,8 +18,8 @@ export const collection = (state = null, action) => {
     
     switch(action.type) {
         case types.CHANGE_COLLECTION:
-            const collectionId = action.data;
-            const collection = initialState.collections.filter(collection => collection.id === collectionId)[0];
+            const config = action.data;
+            const collection = initialState.collections.filter(collection => collection.id === config.collection.id)[0];
             return initialState.initCollection(collection);
         case types.NEXT_ITEM:
             layoutIndex = action.data;
