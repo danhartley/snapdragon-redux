@@ -24,6 +24,7 @@ export const listening = (score) => {
             DOM.stateClearBtn.innerHTML = 'Clearing...';
             setTimeout(()=>{
                 DOM.stateClearBtn.innerHTML = 'Clear lesson';
+                window.location.reload(true);
             },1000);
         });
     });
