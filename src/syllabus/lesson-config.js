@@ -52,6 +52,7 @@ export const config = {
     }],
     languages : [
         { name: 'english', lang: 'en' },
+        { name: 'español', lang: 'es' },
         { name: 'عربى', lang: 'ar' },
         { name: 'deutsche', lang: 'de' },
         { name: 'italiano', lang: 'it' },
