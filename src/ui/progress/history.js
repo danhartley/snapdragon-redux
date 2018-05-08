@@ -9,6 +9,8 @@ export const renderHistory = (history) => {
 
     const progress = { score, history, collection };
     
+    if(!history) return;
+
     const clone = document.importNode(template.content, true);
     DOM.leftBody.style.backgroundColor = 'rgb(50, 50, 50)';
     DOM.leftBody.innerHTML = '';
