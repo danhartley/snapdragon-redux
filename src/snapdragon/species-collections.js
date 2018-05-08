@@ -3,6 +3,7 @@ import { lamiaceae } from 'api/families';
 import { arrabida } from 'api/fauna';
 import { wilduk } from 'api/wildflowers';
 import { leaf } from 'api/leaf';
+import { mediterranean } from 'api/mediterranean';
 
 export const collections = [
     {
@@ -44,9 +45,17 @@ export const collections = [
         items: arrabida,
         eol_name: 'Fauna da Arrábida',
         eol_link: 'http://eol.org/collections/139346'
-    },
+    },    
     {
         id: 6,
+        type: 'species',
+        name: 'common mediterranean fauna',
+        items: mediterranean,
+        eol_name: 'Common Mediterranean Fauna',
+        eol_link: 'http://eol.org/collections/139572'
+    },
+    {
+        id: 11,
         type: 'skill',
         name: 'leaf morphology - structure',
         items: leaf[0].structure,
@@ -54,7 +63,7 @@ export const collections = [
         wiki_link: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology'
     },
     {
-        id: 7,
+        id: 12,
         type: 'skill',
         name: 'leaf morphology - shape',
         items: leaf[0].shape,

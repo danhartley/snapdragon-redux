@@ -36,7 +36,8 @@ export const renderCollections = () => {
     const speciesCollectionBtns = document.querySelectorAll('.js-species-collection .dropdown-menu button');
 
     speciesCollectionBtns.forEach(btn => btn.addEventListener('click', event => {
-        actions.boundChangeCollection({ ...config, ...{ collection: { id: event.target.id }} });
+        const collectionId = parseInt(event.target.id);
+        actions.boundChangeCollection({ ...config, ...{ collection: { id: collectionId }} });
     }));
 
     const skillsCollectionsBtns = document.querySelectorAll('.js-skills-collection .dropdown-menu button');
