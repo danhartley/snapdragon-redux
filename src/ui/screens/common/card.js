@@ -29,13 +29,15 @@ export const renderCard = (collection) => {
 
     const vernacularNames = template.content.querySelector('.js-txt-species-names');
 
-    const names = item.names.filter(name => name.language === config.language).map((vernacular, index) => {
+    const names = item.names.filter(name => name.language === config.language);
+
+    const listNames = item.names.map((vernacular, index) => {
             if(index < 4) {
                 return `<li>${vernacular.vernacularName}</li>`;
         }
     }).join('');
 
-    vernacularNames.innerHTML = `<ul>${names}</ul>`;
+    vernacularNames.innerHTML = `<ul>${listNames}</ul>`;
 
     const eolPage = template.content.querySelector('.js-species-card-eol-link');
     

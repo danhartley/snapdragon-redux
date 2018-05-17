@@ -14,21 +14,27 @@ const formatUrl = (name, root, encode) => {
     return root + encode(binomial);
 };
 
-const fetchWiki = (name, missingMessage) => {
-    if(name === undefined) {
-        const errorPromise = new Promise((resolve, reject) => {
-            resolve(missingMessage)
-        });
-        return errorPromise;
-    }
+async function fetchWiki(name, missingMessage) {
     
+    if(name === undefined) {
+        return missingMessage;  
+    }
+
     const url = formatUrl(name, root, utils.encodeQuery);
     const config = { 
         method: 'GET'
     };
-    return fetch(url, config)
-        .then(json => json.json())
-        .then(R.flatten);
+    
+    try { 
+        const response = await fetch(url, config);
+        const data = await response.json();        
+        return R.flatten(data);        
+    } catch (e) {
+        const errorPromise = new Promise((resolve, reject) => {
+            resolve(missingMessage)
+        });
+        return errorPromise;
+    }    
 };
 
 const cleanEntry = str => {
@@ -55,25 +61,23 @@ const formatWiki = (entry) => {
     return html;
 };
 
-const renderWiki = (wikiNode, binomial, language) => {
+async function renderWiki(wikiNode, binomial, language) {
     root = `https://${language}.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&limit=1&search=`;
-    wikiNode.innerHTML = "";        
-    fetchWiki(binomial)         
-        .then(entry => {
-            if(entry[2]) {
-                wikiNode.innerHTML = formatWiki(entry.slice(1));
-            } else {           
-                const genus = binomial.split(' ')[0];                
-                fetchWiki(genus).
-                    then(genusEntry => {
-                        if(genusEntry[2] !== '')
-                            wikiNode.innerHTML+= formatWiki(genusEntry.slice(1));
-                        else if (language !== 'en') {
-                            renderWiki(wikiNode, binomial, 'en');
-                        }
-                    });
-            } 
-        });
+    wikiNode.innerHTML = "";
+
+    const entry = await fetchWiki(binomial);
+
+    if(entry[2]) {
+        wikiNode.innerHTML = formatWiki(entry.slice(1));
+    } else {
+        const genus = binomial.split(' ')[0];
+        const genusEntry = await fetchWiki(genus);
+        if(genusEntry[2] !== '')
+            wikiNode.innerHTML+= formatWiki(genusEntry.slice(1));
+        else if (language !== 'en') {
+            renderWiki(wikiNode, binomial, 'en');
+        }
+    }
 }
 
 export {

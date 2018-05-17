@@ -1,3 +1,4 @@
+import "babel-polyfill";
 
 import {$,jQuery} from 'jquery';
 import PopperJs from 'popper.js';
