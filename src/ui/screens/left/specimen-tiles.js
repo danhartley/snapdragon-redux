@@ -11,6 +11,9 @@ export const renderSpecimenTiles = (collection) => {
     const { layout, config } = store.getState();
 
     DOM.collectionTxt.innerHTML = `${collection.name} [${config.language}]`;
+    const screenName = layout.screens[1].name;
+    if(screenName !== 'species-scientifics' && screenName !== 'history')
+        DOM.specimenSpeciesTxt.innerHTML = item.name;
     
     DOM.moreSpecimensBtn.style.display = 'inline-block';
     if (window.matchMedia("(min-width: 1024px)").matches || window.matchMedia("(min-width: 1200px)").matches) {}
@@ -38,12 +41,12 @@ export const renderSpecimenTiles = (collection) => {
                 </div>`; 
     };
 
-    renderTiles(screen, item, callback, config.callbackTime);
+    renderTiles(screen, item, callback, config);
 
     DOM.moreSpecimensBtn.addEventListener('click', () => {
         item.content = images.slice(index,index + 4);
         index = index + 4;
-        renderTiles(screen, item, callback, config.callbackTime);
+        renderTiles(screen, item, callback, config);
         if(index === 8)
             DOM.moreSpecimensBtn.style.display = 'none';
     });

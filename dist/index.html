@@ -35,12 +35,12 @@
             <div class="left-grid js-left-grid">
                     <div class="header js-left-header">
                         <div class="header-text js-txt-collection"></div>
-                        <button class="btn btn-light btn-more-specimens js-btn-more-specimens" style="display: none;">Show 4 more</button>                        
+                        <div class="header-text js-txt-specimen-species"></div>                         
                     </div>
                     <div class="left-body js-left-body"></div>
                     <div class="footer js-left-footer">
                         <span class="score-footer-alert js-state-change-alert"></span>
-                        <span><button class="btn btn-light state-clear js-state-clear" style="display: none;">Clear lesson</button></span>
+                        <button class="btn btn-light btn-more-specimens js-btn-more-specimens" style="display: none;">Show 4 more</button>
                     </div>
             </div>
             <div class="right-grid js-right-grid">
@@ -93,12 +93,12 @@
                     <div class="summary js-right-body-top">
                         <div>Continue with the lesson</div>
                         <button class="btn btn-light js-learn-more-btn">Learn more</button>
-                        <div>Run the test again</div>
-                        <button class="btn btn-light js-start-over-btn">Start over</button>
+                        <div style="display: none;">Run the test again</div>
+                        <button style="display: none;" class="btn btn-light js-start-over-btn">Start over</button>
                         <div>Answer the ones you got wrong</div>
                         <button class="btn btn-light js-try-again-btn">Try again</button>
-                        <div>Move to the next level</div>
-                        <button class="btn btn-light js-next-level-btn">Next level</button>
+                        <div style="display: none;">Move to the next level</div>
+                        <button style="display: none;" class="btn btn-light js-next-level-btn">Next level</button>
                         <div>Change collection, level or other settings</div>
                         <button class="btn btn-light js-change-collection-btn">Change settings</button>
                     </div>                    
@@ -185,7 +185,7 @@
             <template class="js-collections-template">
 
                 <div class="collections js-species-collection">
-                    <div>Collections hosted by EOL:</div>                    
+                    <div>Collections hosted by EOL:</div>               
                     <div class="flex">
                         <div class="dropdown js-collections">
                             <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -223,12 +223,14 @@
     
                     <div class="selected-collection js-selected-collection">Current collection: <span>{{ collection.name }}</span></div>
                     <div class="selected-level js-selected-level">Current level: <span>{{ config.lesson.level.name }}</span></div>
-                    <div class="selected-language js-selected-language">Current language: <span>{{ config.language }}</span></div>
-
-                    <button class="btn btn-light js-start-learning" style="display:none;">Continue lesson</button>
+                    <div class="selected-language js-selected-language">Current language: <span>{{ config.language }}</span></div>                    
                 </div>
 
+                <button class="btn btn-light js-start-learning" style="display: inline-block; margin: 0px 0px 0px 20px;">Continue lesson</button>
+                <button class="btn btn-light state-clear js-state-clear">Clear lesson</button>
+
                 <div class="collections js-skills-collection">
+                    <div>General skills:</div>
                     <div class="flex skills">
                         <div class="dropdown js-collections">
                             <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -242,7 +244,7 @@
                         </div>                        
                     </div>
                 </div>
-
+                
             </template>
 
             <template class="js-snapdragon">

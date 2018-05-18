@@ -170,7 +170,7 @@ button.btn.btn-light.btn-more-specimens {
 }
 
 button.btn.btn-light.state-clear {
-  width: 100px;  
+  width: 160px;  
 }
 
 .answer {
@@ -412,7 +412,7 @@ button.btn.btn-light.state-clear {
 ul {
   margin: 0;
   padding: 10px;
-  color: rgb(105, 105, 105);
+  color: rgb(196, 196, 196);
 }
 
 li {

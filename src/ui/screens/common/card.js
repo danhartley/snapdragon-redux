@@ -6,7 +6,8 @@ import { renderFamily } from 'gbif/gbif';
 
 
 export const renderCardHeader = (collectionName) => {
-    DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
+    DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
+    DOM.headerTxt.innerHTML = ``;    
 };
 
 export const renderCard = (collection) => {

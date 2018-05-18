@@ -43,7 +43,7 @@
 
     .footer button.btn.btn-light, .header button.btn.btn-light {
         font-size: .8rem;
-        margin: .8em;
+        margin: 1em;
         padding: .4em;
     }
 
@@ -52,9 +52,7 @@
     }
 
     button.btn.btn-light.state-clear {
-        width: 140px;
-        float: right;
-        font-size: .8em;
+        width: 160px;
         margin: 1.2em;
       }
 

@@ -877,8 +877,8 @@ export const lamiaceae = [
         "http://media.eol.org/content/2013/09/04/15/85762_orig.jpg",
         "http://media.eol.org/content/2015/05/19/21/69315_orig.jpg",
         "http://media.eol.org/content/2015/05/19/21/09649_orig.jpg",
-        "http://media.eol.org/content/2016/08/05/03/55553_orig.jpg",
-        "http://media.eol.org/content/2016/08/05/03/70517_orig.jpg",
+        // "http://media.eol.org/content/2016/08/05/03/55553_orig.jpg",
+        // "http://media.eol.org/content/2016/08/05/03/70517_orig.jpg",
         "http://media.eol.org/content/2013/11/28/02/75764_orig.jpg",
         "http://media.eol.org/content/2012/10/09/06/61216_orig.jpg"
       ],
@@ -1598,10 +1598,10 @@ export const lamiaceae = [
         "http://media.eol.org/content/2009/07/24/03/72435_orig.jpg",
         "http://media.eol.org/content/2009/07/24/03/56463_orig.jpg",
         "http://media.eol.org/content/2009/07/24/03/00455_orig.jpg",
-        "http://media.eol.org/content/2016/08/04/16/44238_orig.jpg",
-        "http://media.eol.org/content/2016/08/04/16/26282_orig.jpg",
-        "http://media.eol.org/content/2016/08/04/16/27235_orig.jpg",
-        "http://media.eol.org/content/2016/08/04/16/90877_orig.jpg",
+        // "http://media.eol.org/content/2016/08/04/16/44238_orig.jpg",
+        // "http://media.eol.org/content/2016/08/04/16/26282_orig.jpg",
+        // "http://media.eol.org/content/2016/08/04/16/27235_orig.jpg",
+        // "http://media.eol.org/content/2016/08/04/16/90877_orig.jpg",
         "http://media.eol.org/content/2015/08/11/22/43798_orig.jpg"
       ],
       "names": [

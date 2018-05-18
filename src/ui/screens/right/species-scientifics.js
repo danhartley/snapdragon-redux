@@ -19,5 +19,8 @@ export const renderScientifics = (collection) => {
                 </div>`;
        };
 
+    DOM.headerTxt.innerHTML = `Click the scientific name to match the species.`;
+    DOM.specimenSpeciesTxt.innerHTML = '';
+
     renderStrips(screen, item, callback, config);
 };

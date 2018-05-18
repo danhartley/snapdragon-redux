@@ -2,9 +2,10 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { nextLesson } from 'ui/setup/next-lesson';
-import { collectionPlans } from'snapdragon/collections-plans'
-;
+import { collectionPlans } from'snapdragon/collections-plans';
 import { lessonPlans } from '../../../snapdragon/lesson-plans';
+import { persistor } from 'redux/store';
+
 export const renderCollections = () => {
 
     DOM.moreSpecimensBtn.style.display = 'none';
@@ -30,9 +31,11 @@ export const renderCollections = () => {
     Stamp.appendChildren(DOM.leftBody, expanded);
 
     const startLearningBtn = document.querySelector('.js-start-learning');
+    const stateClearBtn = document.querySelector('.js-state-clear');
 
-    if(collection.id !== '') startLearningBtn.style.display = 'block';
-    
+    startLearningBtn.style.display = collection.id !== '' ? 'inline-block' : 'none';
+    stateClearBtn.style.display = collection.id !== '' ? 'inline-block' : 'none';
+
     const speciesCollectionBtns = document.querySelectorAll('.js-species-collection .dropdown-menu button');
 
     speciesCollectionBtns.forEach(btn => btn.addEventListener('click', event => {
@@ -79,5 +82,15 @@ export const renderCollections = () => {
 
     startLearningBtn.addEventListener('click', event => {
         actions.boundUpdateConfig(config);
+    });
+
+    stateClearBtn.addEventListener('click', () => {
+        persistor.purge().then(res => {
+            stateClearBtn.innerHTML = 'Clearing...';
+            setTimeout(()=>{
+                stateClearBtn.innerHTML = 'Clear lesson';
+                window.location.reload(true);
+            },1000);
+        });
     });
 };

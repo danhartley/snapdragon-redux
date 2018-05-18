@@ -1,3 +1,4 @@
+import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTiles } from 'ui/screens/common/tiles';
 
@@ -13,6 +14,10 @@ export const renderSpeciesTiles = (collection) => {
 
     item.content = item.multipleImages;
 
+    setTimeout(()=>{
+        DOM.headerTxt.innerHTML = `Click the picture to match the species.`;
+    },100);
+
     const callback = contentItem => {
         const images = contentItem.images.filter(img => img !== undefined);
         return `<div class="tile">
@@ -20,5 +25,5 @@ export const renderSpeciesTiles = (collection) => {
                 </div>`;
     };
 
-    renderTiles(screen, item, callback, config.callbackTime);
+    renderTiles(screen, item, callback, config);
 };
