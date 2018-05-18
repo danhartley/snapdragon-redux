@@ -9,6 +9,10 @@ export const renderStrips = (screen, item, callback, config) => {
 
     const rptrStrips = template.content.querySelector('.js-rptr-strips');
 
+    setTimeout(()=>{
+        DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
+    },100);
+
     item.content = R.take(6, item.multipleNames.map(answer => {
         const vernacularNames = answer.names
             .filter(name => name.language === config.language)
@@ -30,9 +34,9 @@ export const renderStrips = (screen, item, callback, config) => {
     rptrStrips.innerHTML = item.content.map(callback).join('');
 
     const clone = document.importNode(template.content, true);
-    const cards = clone.querySelectorAll('.js-rptr-strips .strip div');
+    const strips = clone.querySelectorAll('.js-rptr-strips .strip div');
 
-    addListeners(cards, item, config.callbackTime);
+    addListeners(strips, item, config.callbackTime, config.isSmallDevice);
 
     screen.parent.innerHTML = '';
     screen.parent.appendChild(clone);

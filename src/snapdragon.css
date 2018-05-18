@@ -156,10 +156,6 @@ grid-template-areas: "header"
   padding: .2em;
 }
 
-button.btn.btn-light.btn-more-specimens {
-  width: 20px;
-}
-
 .score-footer {
   margin: .8em 0em;
 }
@@ -167,10 +163,6 @@ button.btn.btn-light.btn-more-specimens {
 .score-footer-alert {
   margin: .8em;
   display: inline-block;
-}
-
-button.btn.btn-light.state-clear {
-  width: 100px;  
 }
 
 .answer {
@@ -197,6 +189,10 @@ button.btn.btn-light.state-clear {
   float: right;
   margin: 1.3em;
   cursor: pointer;
+}
+
+.collections-skills {
+  display: none;
 }
 
 .rectangles {
@@ -412,7 +408,7 @@ button.btn.btn-light.state-clear {
 ul {
   margin: 0;
   padding: 10px;
-  color: rgb(105, 105, 105);
+  color: rgb(196, 196, 196);
 }
 
 li {
@@ -502,7 +498,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .collections {
-  padding: 1em;
+  padding: 1em 1em 0em 1em;
 }
 
 .selected-collection, .selected-language, .selected-level {

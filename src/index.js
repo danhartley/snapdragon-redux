@@ -1,3 +1,4 @@
+import "babel-polyfill";
 
 import {$,jQuery} from 'jquery';
 import PopperJs from 'popper.js';
@@ -17,6 +18,12 @@ import { nextItem } from 'ui/setup/next-item';
 
 import { renderScore } from 'ui/progress/score';
 import { listening } from 'ui/screens/common/listener';
+
+import { config } from 'syllabus/lesson-config';
+
+// capture device
+
+config.isSmallDevice = !(window.matchMedia("(min-width: 1024px)").matches || window.matchMedia("(min-width: 1200px)").matches);
 
 // setup
 
@@ -39,4 +46,3 @@ renderSnapdragon();
 // global listener
 
 observeStore(store, store => store.score, listening, 'score');
-

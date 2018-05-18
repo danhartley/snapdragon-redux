@@ -5,7 +5,6 @@ import { store } from 'redux/store';
 export const nextItem = (layout) => {
 
     DOM.headerTxt.innerHTML = '';
-    DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
 
     actions.boundNextItem(layout.itemIndex);
 };

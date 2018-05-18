@@ -6,7 +6,8 @@ import { renderFamily } from 'gbif/gbif';
 
 
 export const renderCardHeader = (collectionName) => {
-    DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
+    DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
+    DOM.headerTxt.innerHTML = ``;    
 };
 
 export const renderCard = (collection) => {
@@ -29,13 +30,15 @@ export const renderCard = (collection) => {
 
     const vernacularNames = template.content.querySelector('.js-txt-species-names');
 
-    const names = item.names.filter(name => name.language === config.language).map((vernacular, index) => {
+    const names = item.names.filter(name => name.language === config.language);
+
+    const listNames = names.map((vernacular, index) => {
             if(index < 4) {
                 return `<li>${vernacular.vernacularName}</li>`;
         }
     }).join('');
 
-    vernacularNames.innerHTML = `<ul>${names}</ul>`;
+    vernacularNames.innerHTML = `<ul>${listNames}</ul>`;
 
     const eolPage = template.content.querySelector('.js-species-card-eol-link');
     

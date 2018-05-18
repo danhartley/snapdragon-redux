@@ -14,6 +14,11 @@
       grid-template-rows: 60px 600px 60px;
   }
 
+  .left-grid .header-text, .right-grid .header-text {
+    margin: .7em;
+    font-size: 1em;
+}
+
   .right-grid {
       grid-template-columns: 600px;
       grid-template-rows: 60px 600px 60px;
@@ -90,10 +95,8 @@
   }
 
   .tile img {
-    object-fit: cover;
     height: 200px;
     width: 200px;
-    cursor: pointer;
   }
 
   .species-description-grid {

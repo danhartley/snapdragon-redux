@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
-export const renderTiles = (screen, item, callbackTemplate, callbackTime) => {
+export const renderTiles = (screen, item, callbackTemplate, config) => {
 
     const template = document.querySelector(`.${screen.template}`);
 
@@ -22,29 +22,28 @@ export const renderTiles = (screen, item, callbackTemplate, callbackTime) => {
 
             const response = { taxon: 'name', binomial: item.name, question: item.name, answer: answer };
 
-            const { text, colour, correct } = renderAnswerHeader(response);
+            const { text, colour, correct } = renderAnswerHeader(response, config.isSmallDevice);
 
-            img.style.opacity = .5;
+            tile.children[0].style.filter = 'saturate(100%)';
 
             DOM.headerTxt.innerHTML = text;
             DOM.rightHeader.style.backgroundColor = colour;
             
-            img.style.color = colour;
-            img.parentNode.style.background = colour;
+            img.parentNode.style.filter = 'saturate(100%)';
 
-            if(!correct) {
-                tiles.forEach(tile => {
-                    if(tile.children[0].name === item.name) {
-                        tile.children[0].style.background = 'rgb(44, 141, 86)';
-                        tile.children[0].style.opacity = .5;
-                    }
-                });
-            }
+            tiles.forEach(tile => {
+                tile.style.filter = 'saturate(10%)';
+                tile.style.opacity = .3;
+                if(tile.children[0].name === item.name) {
+                    tile.style.filter = 'saturate(100%)';
+                    tile.style.opacity = 1;
+                }
+            });
 
             setTimeout(()=>{
                 const response = { taxon: 'name', binomial: item.name, question: item.name, answer: answer, success: correct };
                 actions.boundUpdateScore(response);
-            }, callbackTime);
+            }, 2500);
             
             event.stopPropagation();
         });

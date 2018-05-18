@@ -3,9 +3,7 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 
 export const renderCapital = str => {
-
     if(!str) return str;
-
     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 };
 
@@ -56,16 +54,22 @@ export const renderAnswer = (response) => {
     }
 };
 
-export const renderAnswerText = (response) => {
+export const renderAnswerText = (response, isSmallDevice) => {
 
     const correct = renderCorrect(response);
 
-    return correct
+    if(isSmallDevice) {
+        return correct
         ? `${renderAnswer(response)} is correct!`
         : `No! ${renderAnswer(response)}.`
+    } else {
+        return correct
+        ? `${renderAnswer(response)} is the correct answer.`
+        : `The correct answer is ${renderAnswer(response)}.`
+    }
 };
 
-export const renderAnswerHeader = (response, header, target) => {
+export const renderAnswerHeader = (response, isSmallDevice = true) => {
 
     const correct = renderCorrect(response);
 
@@ -74,7 +78,7 @@ export const renderAnswerHeader = (response, header, target) => {
 
     const colour = correct ? right : wrong;
 
-    return { text: renderAnswerText(response), colour, correct };
+    return { text: renderAnswerText(response, isSmallDevice), colour, correct };
 };
 
 export const renderTermAnswerHeader = (response, header, target) => {

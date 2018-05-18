@@ -4,13 +4,14 @@ import { renderAnswer } from 'ui/helpers/response-formatting';
 import { actions } from 'redux/actions/action-creators';
 import { lessonPlanner } from 'syllabus/lesson-planner';
 import { renderCollections } from 'ui/screens/left/collections';
+import { renderSnapdragon } from 'ui/screens/right/snapdragon';
 
 export const renderSummaryHeader = (score) => {
     DOM.headerTxt.innerHTML = 
         score.correct === 1 
             ? `You got ${score.correct} question right out of ${score.total}`
             : `You got ${score.correct} questions right out of ${score.total}`;
-    DOM.rightHeader.style.backgroundColor = 'rgb(128, 128, 128)';
+        DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
 };
 
 export const renderSummary = (index) => {
@@ -81,4 +82,5 @@ export const renderSummary = (index) => {
     nextLevelBtn.addEventListener('click', handleBtnClickEvent);
 
     changeCollectionBtn.addEventListener('click', renderCollections);
+    changeCollectionBtn.addEventListener('click', renderSnapdragon);
 };

@@ -19,5 +19,9 @@ export const renderVernaculars = (collection) => {
                 </div>`;
        };
 
+    DOM.headerTxt.innerHTML = config.isSmallDevice 
+                                ? `Click name to match species.`
+                                : `Click the common name to match the species.`
+
     renderStrips(screen, item, callback, config);
 };

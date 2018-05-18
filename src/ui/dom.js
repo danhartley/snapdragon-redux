@@ -4,7 +4,8 @@ export const DOM = {
     leftBody : document.getElementsByClassName('js-left-body')[0],
     leftFooter : document.getElementsByClassName('js-left-footer')[0],
 
-    collectionTxt : document.getElementsByClassName('js-txt-collection')[0],
+    collectionTxt : document.getElementsByClassName('js-txt-collection')[0],    
+    specimenSpeciesTxt : document.getElementsByClassName('js-txt-specimen-species')[0],    
     specimenRptr : document.getElementsByClassName('js-rptr-specimen')[0],
     moreSpecimensBtn : document.getElementsByClassName('js-btn-more-specimens')[0],
     
@@ -20,6 +21,5 @@ export const DOM = {
     headerTxt : document.getElementsByClassName('js-txt-header')[0],
     totalTxt : document.getElementsByClassName('js-txt-total')[0],
     correctTxt : document.getElementsByClassName('js-txt-correct')[0],
-    stateChangeAlertTxt: document.getElementsByClassName('js-state-change-alert')[0],
-    stateClearBtn: document.getElementsByClassName('js-state-clear')[0]
+    stateChangeAlertTxt: document.getElementsByClassName('js-state-change-alert')[0]
 };

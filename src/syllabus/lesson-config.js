@@ -1,7 +1,8 @@
 export const config = {
     language: 'en',
     moduleSize: 2,
-    callbackTime: 1500,
+    callbackTime: 2000,
+    isSmallDevice: true,
     collection: {
         id: ''
     },
