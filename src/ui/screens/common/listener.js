@@ -6,8 +6,8 @@ export const listening = (score) => {
     let lessonSaved = 'Lesson saved';
 
     if (window.matchMedia("(min-width: 1024px)").matches || window.matchMedia("(min-width: 1200px)").matches){
-        savingLesson = 'Saving lesson score in browser...';
-        lessonSaved = 'Lesson score saved in browser';
+        savingLesson = 'Saving lesson progress...';
+        lessonSaved = 'Lesson progress saved';
     }
     else DOM.moreSpecimensBtn.style.display = 'none';
 

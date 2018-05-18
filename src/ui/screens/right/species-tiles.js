@@ -15,7 +15,9 @@ export const renderSpeciesTiles = (collection) => {
     item.content = item.multipleImages;
 
     setTimeout(()=>{
-        DOM.headerTxt.innerHTML = `Click the picture to match the species.`;
+        DOM.headerTxt.innerHTML =  config.isSmallDevice 
+                                    ? `Click picture to match species.`
+                                    : `Click the picture to match the species.`;
     },100);
 
     const callback = contentItem => {

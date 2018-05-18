@@ -32,7 +32,7 @@ export const renderCard = (collection) => {
 
     const names = item.names.filter(name => name.language === config.language);
 
-    const listNames = item.names.map((vernacular, index) => {
+    const listNames = names.map((vernacular, index) => {
             if(index < 4) {
                 return `<li>${vernacular.vernacularName}</li>`;
         }

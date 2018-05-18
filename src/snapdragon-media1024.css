@@ -11,8 +11,14 @@
     }
 
     .left-grid .header-text, .right-grid .header-text {
-        margin: .8em;
+        margin: 1.2em;
+        font-size: .8em;
         flex: 1 auto;
+    }
+
+    .left-grid .header-text, .right-grid .header-text.txt-specimen-species {
+        font-size: .9rem;
+        margin: 1.2em .8em;
     }
 
     .flex.eol, .flex.gbif, .species-card-wiki {
@@ -55,6 +61,10 @@
         width: 160px;
         margin: 1.2em;
       }
+
+    .collections-skills {
+        display: block;
+    }
 
     .collections div {
         padding: .4em .2em;

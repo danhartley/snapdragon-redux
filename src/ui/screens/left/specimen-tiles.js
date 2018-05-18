@@ -13,11 +13,11 @@ export const renderSpecimenTiles = (collection) => {
     DOM.collectionTxt.innerHTML = `${collection.name} [${config.language}]`;
     const screenName = layout.screens[1].name;
     if(screenName !== 'species-scientifics' && screenName !== 'history')
-        DOM.specimenSpeciesTxt.innerHTML = item.name;
+        DOM.specimenSpeciesTxt.innerHTML =  config.isSmallDevice ? '' : item.name;
+    else 
+        DOM.specimenSpeciesTxt.innerHTML = '';
     
     DOM.moreSpecimensBtn.style.display = 'inline-block';
-    if (window.matchMedia("(min-width: 1024px)").matches || window.matchMedia("(min-width: 1200px)").matches) {}
-    else DOM.moreSpecimensBtn.innerHTML = '>';
 
     let screen = layout.screens.filter(el => el.name === 'specimen-images')[0];
 
