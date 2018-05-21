@@ -5,12 +5,24 @@
         <meta http-equiv="content-type" content="text/html;charset=utf-8">
         <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="description" content="Recognise species and learn their common and scientific names with lessons">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
         <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
         <link rel="canonical" href="https://danhartley.github.io/snapdragon-redux/dist/">
         <script src="https://cdn.ravenjs.com/3.24.2/raven.min.js" crossorigin="anonymous"></script>
         <script src="./stamp.js"></script>
         <script>
             Raven.config('https://9d9d8654a6a345a3af09df89cb615bde@sentry.io/302756').install();
+        </script>
+        <script>
+                // Check that service workers are registered
+                if ('serviceWorker' in navigator) {
+                  // Use the window load event to keep the page load performant
+                  window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('./sw.js');
+                  });
+                }
         </script>
         <link rel="apple-touch-icon" sizes="57x57" href="./favicons/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="./favicons/apple-icon-60x60.png">
@@ -26,9 +38,6 @@
         <link rel="icon" type="image/png" sizes="96x96" href="./favicons/favicon-96x96.png">
         <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
         <link rel="manifest" href="/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
     </head>
     <body>
         <div class="grid">
