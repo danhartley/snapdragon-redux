@@ -4,16 +4,16 @@ export const flora =
     "id": 579419,
     "name": "Salvia verbenaca L.",
     "images": [
-      "http://media.eol.org/content/2014/08/15/05/05968_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/03/05940_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/79684_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/14658_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/06119_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/31654_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/34279_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/03/05940_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/15007_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/02/86933_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/05/05968_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/03/05940_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/79684_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/14658_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/06119_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/31654_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/34279_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/03/05940_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/15007_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/02/86933_orig.jpg"
     ],
     "names": [
       {
@@ -63,32 +63,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/05/05968_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/03/05940_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/79684_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/14658_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/06119_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/31654_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/34279_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/03/05940_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/15007_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/02/86933_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/05/05968_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/03/05940_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/79684_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/14658_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/06119_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/31654_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/34279_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/03/05940_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/15007_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/02/86933_98_68.jpg"
     ]
   },
   {
     "id": 467862,
     "name": "Cichorium intybus L.",
     "images": [
-      "http://media.eol.org/content/2015/03/25/18/53312_orig.jpg",
-      "http://media.eol.org/content/2013/12/02/08/50759_orig.jpg",
-      "http://media.eol.org/content/2014/01/02/01/47115_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/36692_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/72505_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/07639_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/83468_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/64572_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/47953_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/48800_orig.jpg"
+      "https://media.eol.org/content/2015/03/25/18/53312_orig.jpg",
+      "https://media.eol.org/content/2013/12/02/08/50759_orig.jpg",
+      "https://media.eol.org/content/2014/01/02/01/47115_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/36692_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/72505_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/07639_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/83468_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/64572_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/47953_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/48800_orig.jpg"
     ],
     "names": [
       {
@@ -253,32 +253,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2015/03/25/18/53312_98_68.jpg",
-      "http://media.eol.org/content/2013/12/02/08/50759_98_68.jpg",
-      "http://media.eol.org/content/2014/01/02/01/47115_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/36692_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/72505_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/07639_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/83468_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/64572_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/47953_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/48800_98_68.jpg"
+      "https://media.eol.org/content/2015/03/25/18/53312_98_68.jpg",
+      "https://media.eol.org/content/2013/12/02/08/50759_98_68.jpg",
+      "https://media.eol.org/content/2014/01/02/01/47115_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/36692_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/72505_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/07639_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/83468_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/64572_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/47953_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/48800_98_68.jpg"
     ]
   },
   {
     "id": 578523,
     "name": "Veronica persica Poir.",
     "images": [
-      "http://media.eol.org/content/2012/05/24/04/66519_orig.jpg",
-      "http://media.eol.org/content/2013/09/02/03/23230_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/03/40259_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/03/94002_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/03/06795_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/03/68561_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/03/35253_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/03/99865_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/03/45059_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/03/25243_orig.jpg"
+      "https://media.eol.org/content/2012/05/24/04/66519_orig.jpg",
+      "https://media.eol.org/content/2013/09/02/03/23230_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/03/40259_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/03/94002_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/03/06795_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/03/68561_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/03/35253_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/03/99865_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/03/45059_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/03/25243_orig.jpg"
     ],
     "names": [
       {
@@ -374,32 +374,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/05/24/04/66519_98_68.jpg",
-      "http://media.eol.org/content/2013/09/02/03/23230_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/03/40259_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/03/94002_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/03/06795_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/03/68561_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/03/35253_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/03/99865_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/03/45059_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/03/25243_98_68.jpg"
+      "https://media.eol.org/content/2012/05/24/04/66519_98_68.jpg",
+      "https://media.eol.org/content/2013/09/02/03/23230_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/03/40259_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/03/94002_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/03/06795_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/03/68561_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/03/35253_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/03/99865_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/03/45059_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/03/25243_98_68.jpg"
     ]
   },
   {
     "id": 1247200,
     "name": "Digitalis purpurea subsp. purpurea L.",
     "images": [
-      "http://media.eol.org/content/2012/08/11/23/26631_orig.jpg",
-      "http://media.eol.org/content/2012/08/11/23/48436_orig.jpg",
-      "http://media.eol.org/content/2012/08/11/23/83329_orig.jpg",
-      "http://media.eol.org/content/2015/04/30/00/15186_orig.jpg",
-      "http://media.eol.org/content/2015/04/30/00/30694_orig.jpg",
-      "http://media.eol.org/content/2015/04/30/00/54694_orig.jpg",
-      "http://media.eol.org/content/2011/11/01/21/02220_orig.jpg",
-      "http://media.eol.org/content/2015/04/30/09/28316_orig.jpg",
-      "http://media.eol.org/content/2012/08/11/23/35287_orig.jpg",
-      "http://media.eol.org/content/2012/08/20/00/83108_orig.jpg"
+      "https://media.eol.org/content/2012/08/11/23/26631_orig.jpg",
+      "https://media.eol.org/content/2012/08/11/23/48436_orig.jpg",
+      "https://media.eol.org/content/2012/08/11/23/83329_orig.jpg",
+      "https://media.eol.org/content/2015/04/30/00/15186_orig.jpg",
+      "https://media.eol.org/content/2015/04/30/00/30694_orig.jpg",
+      "https://media.eol.org/content/2015/04/30/00/54694_orig.jpg",
+      "https://media.eol.org/content/2011/11/01/21/02220_orig.jpg",
+      "https://media.eol.org/content/2015/04/30/09/28316_orig.jpg",
+      "https://media.eol.org/content/2012/08/11/23/35287_orig.jpg",
+      "https://media.eol.org/content/2012/08/20/00/83108_orig.jpg"
     ],
     "names": [
       {
@@ -442,32 +442,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/08/11/23/26631_98_68.jpg",
-      "http://media.eol.org/content/2012/08/11/23/48436_98_68.jpg",
-      "http://media.eol.org/content/2012/08/11/23/83329_98_68.jpg",
-      "http://media.eol.org/content/2015/04/30/00/15186_98_68.jpg",
-      "http://media.eol.org/content/2015/04/30/00/30694_98_68.jpg",
-      "http://media.eol.org/content/2015/04/30/00/54694_98_68.jpg",
-      "http://media.eol.org/content/2011/11/01/21/02220_98_68.jpg",
-      "http://media.eol.org/content/2015/04/30/09/28316_98_68.jpg",
-      "http://media.eol.org/content/2012/08/11/23/35287_98_68.jpg",
-      "http://media.eol.org/content/2012/08/20/00/83108_98_68.jpg"
+      "https://media.eol.org/content/2012/08/11/23/26631_98_68.jpg",
+      "https://media.eol.org/content/2012/08/11/23/48436_98_68.jpg",
+      "https://media.eol.org/content/2012/08/11/23/83329_98_68.jpg",
+      "https://media.eol.org/content/2015/04/30/00/15186_98_68.jpg",
+      "https://media.eol.org/content/2015/04/30/00/30694_98_68.jpg",
+      "https://media.eol.org/content/2015/04/30/00/54694_98_68.jpg",
+      "https://media.eol.org/content/2011/11/01/21/02220_98_68.jpg",
+      "https://media.eol.org/content/2015/04/30/09/28316_98_68.jpg",
+      "https://media.eol.org/content/2012/08/11/23/35287_98_68.jpg",
+      "https://media.eol.org/content/2012/08/20/00/83108_98_68.jpg"
     ]
   },
   {
     "id": 483777,
     "name": "Acanthus mollis L.",
     "images": [
-      "http://media.eol.org/content/2014/08/15/05/34142_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/01405_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/65106_orig.jpg",
-      "http://media.eol.org/content/2012/12/11/14/16283_orig.jpg",
-      "http://media.eol.org/content/2012/12/11/14/97709_orig.jpg",
-      "http://media.eol.org/content/2012/12/11/14/44539_orig.jpg",
-      "http://media.eol.org/content/2012/10/31/14/80629_orig.jpg",
-      "http://media.eol.org/content/2012/10/31/15/86766_orig.jpg",
-      "http://media.eol.org/content/2012/10/31/03/37185_orig.jpg",
-      "http://media.eol.org/content/2012/10/31/05/16925_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/05/34142_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/01405_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/65106_orig.jpg",
+      "https://media.eol.org/content/2012/12/11/14/16283_orig.jpg",
+      "https://media.eol.org/content/2012/12/11/14/97709_orig.jpg",
+      "https://media.eol.org/content/2012/12/11/14/44539_orig.jpg",
+      "https://media.eol.org/content/2012/10/31/14/80629_orig.jpg",
+      "https://media.eol.org/content/2012/10/31/15/86766_orig.jpg",
+      "https://media.eol.org/content/2012/10/31/03/37185_orig.jpg",
+      "https://media.eol.org/content/2012/10/31/05/16925_orig.jpg"
     ],
     "names": [
       {
@@ -541,32 +541,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/05/34142_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/01405_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/65106_98_68.jpg",
-      "http://media.eol.org/content/2012/12/11/14/16283_98_68.jpg",
-      "http://media.eol.org/content/2012/12/11/14/97709_98_68.jpg",
-      "http://media.eol.org/content/2012/12/11/14/44539_98_68.jpg",
-      "http://media.eol.org/content/2012/10/31/14/80629_98_68.jpg",
-      "http://media.eol.org/content/2012/10/31/15/86766_98_68.jpg",
-      "http://media.eol.org/content/2012/10/31/03/37185_98_68.jpg",
-      "http://media.eol.org/content/2012/10/31/05/16925_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/05/34142_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/01405_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/65106_98_68.jpg",
+      "https://media.eol.org/content/2012/12/11/14/16283_98_68.jpg",
+      "https://media.eol.org/content/2012/12/11/14/97709_98_68.jpg",
+      "https://media.eol.org/content/2012/12/11/14/44539_98_68.jpg",
+      "https://media.eol.org/content/2012/10/31/14/80629_98_68.jpg",
+      "https://media.eol.org/content/2012/10/31/15/86766_98_68.jpg",
+      "https://media.eol.org/content/2012/10/31/03/37185_98_68.jpg",
+      "https://media.eol.org/content/2012/10/31/05/16925_98_68.jpg"
     ]
   },
   {
     "id": 578491,
     "name": "Veronica arvensis L.",
     "images": [
-      "http://media.eol.org/content/2012/05/24/04/42615_orig.jpg",
-      "http://media.eol.org/content/2013/12/02/08/35176_orig.jpg",
-      "http://media.eol.org/content/2012/12/16/15/32338_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/19/35422_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/19/25202_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/19/25599_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/19/92980_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/19/15893_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/19/46351_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/19/29783_orig.jpg"
+      "https://media.eol.org/content/2012/05/24/04/42615_orig.jpg",
+      "https://media.eol.org/content/2013/12/02/08/35176_orig.jpg",
+      "https://media.eol.org/content/2012/12/16/15/32338_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/19/35422_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/19/25202_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/19/25599_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/19/92980_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/19/15893_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/19/46351_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/19/29783_orig.jpg"
     ],
     "names": [
       {
@@ -613,32 +613,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/05/24/04/42615_98_68.jpg",
-      "http://media.eol.org/content/2013/12/02/08/35176_98_68.jpg",
-      "http://media.eol.org/content/2012/12/16/15/32338_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/19/35422_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/19/25202_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/19/25599_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/19/92980_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/19/15893_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/19/46351_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/19/29783_98_68.jpg"
+      "https://media.eol.org/content/2012/05/24/04/42615_98_68.jpg",
+      "https://media.eol.org/content/2013/12/02/08/35176_98_68.jpg",
+      "https://media.eol.org/content/2012/12/16/15/32338_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/19/35422_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/19/25202_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/19/25599_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/19/92980_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/19/15893_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/19/46351_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/19/29783_98_68.jpg"
     ]
   },
   {
     "id": 580760,
     "name": "Anchusa azurea Mill.",
     "images": [
-      "http://media.eol.org/content/2014/08/15/03/39797_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/03/24713_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/03/40057_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/25766_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/00666_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/95023_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/87332_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/36870_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/76759_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/51066_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/03/39797_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/03/24713_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/03/40057_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/25766_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/00666_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/95023_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/87332_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/36870_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/76759_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/51066_orig.jpg"
     ],
     "names": [
       {
@@ -694,32 +694,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/03/39797_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/03/24713_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/03/40057_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/25766_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/00666_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/95023_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/87332_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/36870_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/76759_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/51066_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/03/39797_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/03/24713_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/03/40057_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/25766_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/00666_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/95023_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/87332_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/36870_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/76759_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/51066_98_68.jpg"
     ]
   },
   {
     "id": 703392,
     "name": "Trifolium campestre Schreb.",
     "images": [
-      "http://media.eol.org/content/2014/12/02/15/66286_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/03/46976_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/11878_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/11878_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/00/22522_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/29963_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/29963_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/33295_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/33295_orig.jpg",
-      "http://media.eol.org/content/2015/01/08/06/81573_orig.jpg"
+      "https://media.eol.org/content/2014/12/02/15/66286_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/03/46976_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/11878_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/11878_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/00/22522_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/29963_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/29963_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/33295_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/33295_orig.jpg",
+      "https://media.eol.org/content/2015/01/08/06/81573_orig.jpg"
     ],
     "names": [
       {
@@ -831,32 +831,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/12/02/15/66286_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/03/46976_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/11878_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/11878_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/00/22522_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/29963_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/29963_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/33295_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/33295_98_68.jpg",
-      "http://media.eol.org/content/2015/01/08/06/81573_98_68.jpg"
+      "https://media.eol.org/content/2014/12/02/15/66286_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/03/46976_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/11878_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/11878_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/00/22522_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/29963_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/29963_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/33295_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/33295_98_68.jpg",
+      "https://media.eol.org/content/2015/01/08/06/81573_98_68.jpg"
     ]
   },
   {
     "id": 487222,
     "name": "Fumaria capreolata L.",
     "images": [
-      "http://media.eol.org/content/2014/08/15/00/86806_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/13/12391_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/13/30040_orig.jpg",
-      "http://media.eol.org/content/2014/10/07/15/54224_orig.jpg",
-      "http://media.eol.org/content/2014/10/07/15/37340_orig.jpg",
-      "http://media.eol.org/content/2012/03/22/04/06064_orig.jpg",
-      "http://media.eol.org/content/2012/03/22/04/07354_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/23/50328_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/23/32598_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/23/67556_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/00/86806_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/13/12391_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/13/30040_orig.jpg",
+      "https://media.eol.org/content/2014/10/07/15/54224_orig.jpg",
+      "https://media.eol.org/content/2014/10/07/15/37340_orig.jpg",
+      "https://media.eol.org/content/2012/03/22/04/06064_orig.jpg",
+      "https://media.eol.org/content/2012/03/22/04/07354_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/23/50328_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/23/32598_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/23/67556_orig.jpg"
     ],
     "names": [
       {
@@ -880,32 +880,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/00/86806_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/13/12391_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/13/30040_98_68.jpg",
-      "http://media.eol.org/content/2014/10/07/15/54224_98_68.jpg",
-      "http://media.eol.org/content/2014/10/07/15/37340_98_68.jpg",
-      "http://media.eol.org/content/2012/03/22/04/06064_98_68.jpg",
-      "http://media.eol.org/content/2012/03/22/04/07354_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/23/50328_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/23/32598_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/23/67556_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/00/86806_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/13/12391_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/13/30040_98_68.jpg",
+      "https://media.eol.org/content/2014/10/07/15/54224_98_68.jpg",
+      "https://media.eol.org/content/2014/10/07/15/37340_98_68.jpg",
+      "https://media.eol.org/content/2012/03/22/04/06064_98_68.jpg",
+      "https://media.eol.org/content/2012/03/22/04/07354_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/23/50328_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/23/32598_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/23/67556_98_68.jpg"
     ]
   },
   {
     "id": 467843,
     "name": "Bellis perennis L.",
     "images": [
-      "http://media.eol.org/content/2010/03/24/04/51869_orig.jpg",
-      "http://media.eol.org/content/2012/06/13/04/47623_orig.jpg",
-      "http://media.eol.org/content/2012/06/13/04/45649_orig.jpg",
-      "http://media.eol.org/content/2012/06/13/04/53382_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/19/22990_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/19/84435_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/23/81560_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/98642_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/92864_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/52653_orig.jpg"
+      "https://media.eol.org/content/2010/03/24/04/51869_orig.jpg",
+      "https://media.eol.org/content/2012/06/13/04/47623_orig.jpg",
+      "https://media.eol.org/content/2012/06/13/04/45649_orig.jpg",
+      "https://media.eol.org/content/2012/06/13/04/53382_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/19/22990_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/19/84435_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/23/81560_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/98642_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/92864_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/52653_orig.jpg"
     ],
     "names": [
       {
@@ -1029,32 +1029,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2010/03/24/04/51869_98_68.jpg",
-      "http://media.eol.org/content/2012/06/13/04/47623_98_68.jpg",
-      "http://media.eol.org/content/2012/06/13/04/45649_98_68.jpg",
-      "http://media.eol.org/content/2012/06/13/04/53382_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/19/22990_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/19/84435_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/23/81560_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/98642_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/92864_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/52653_98_68.jpg"
+      "https://media.eol.org/content/2010/03/24/04/51869_98_68.jpg",
+      "https://media.eol.org/content/2012/06/13/04/47623_98_68.jpg",
+      "https://media.eol.org/content/2012/06/13/04/45649_98_68.jpg",
+      "https://media.eol.org/content/2012/06/13/04/53382_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/19/22990_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/19/84435_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/23/81560_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/98642_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/92864_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/52653_98_68.jpg"
     ]
   },
   {
     "id": 586697,
     "name": "Malva multiflora (Cav.) Soldano, Banfi & Galasso",
     "images": [
-      "http://media.eol.org/content/2014/08/15/05/23499_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/28426_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/82107_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/91239_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/00202_orig.jpg",
-      "http://media.eol.org/content/2015/01/08/06/15933_orig.jpg",
-      "http://media.eol.org/content/2015/01/08/04/98584_orig.jpg",
-      "http://media.eol.org/content/2015/08/11/22/48719_orig.jpg",
-      "http://media.eol.org/content/2012/01/24/03/75524_orig.jpg",
-      "http://media.eol.org/content/2012/01/24/03/17374_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/05/23499_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/28426_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/82107_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/91239_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/00202_orig.jpg",
+      "https://media.eol.org/content/2015/01/08/06/15933_orig.jpg",
+      "https://media.eol.org/content/2015/01/08/04/98584_orig.jpg",
+      "https://media.eol.org/content/2015/08/11/22/48719_orig.jpg",
+      "https://media.eol.org/content/2012/01/24/03/75524_orig.jpg",
+      "https://media.eol.org/content/2012/01/24/03/17374_orig.jpg"
     ],
     "names": [
       {
@@ -1079,32 +1079,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/05/23499_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/28426_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/82107_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/91239_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/00202_98_68.jpg",
-      "http://media.eol.org/content/2015/01/08/06/15933_98_68.jpg",
-      "http://media.eol.org/content/2015/01/08/04/98584_98_68.jpg",
-      "http://media.eol.org/content/2015/08/11/22/48719_98_68.jpg",
-      "http://media.eol.org/content/2012/01/24/03/75524_98_68.jpg",
-      "http://media.eol.org/content/2012/01/24/03/17374_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/05/23499_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/28426_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/82107_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/91239_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/00202_98_68.jpg",
+      "https://media.eol.org/content/2015/01/08/06/15933_98_68.jpg",
+      "https://media.eol.org/content/2015/01/08/04/98584_98_68.jpg",
+      "https://media.eol.org/content/2015/08/11/22/48719_98_68.jpg",
+      "https://media.eol.org/content/2012/01/24/03/75524_98_68.jpg",
+      "https://media.eol.org/content/2012/01/24/03/17374_98_68.jpg"
     ]
   },
   {
     "id": 1230687,
     "name": "Coronilla valentina subsp. glauca (L.) Batt.",
     "images": [
-      "http://media.eol.org/content/2014/08/15/03/42708_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/67730_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/03/35511_orig.jpg",
-      "http://media.eol.org/content/2015/05/20/11/98009_orig.jpg",
-      "http://media.eol.org/content/2014/03/18/01/17979_orig.jpg",
-      "http://media.eol.org/content/2015/08/11/22/43411_orig.jpg",
-      "http://media.eol.org/content/2014/06/10/15/32667_orig.jpg",
-      "http://media.eol.org/content/2014/06/10/15/84107_orig.jpg",
-      "http://media.eol.org/content/2014/06/10/15/53494_orig.jpg",
-      "http://media.eol.org/content/2014/10/05/17/77721_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/03/42708_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/67730_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/03/35511_orig.jpg",
+      "https://media.eol.org/content/2015/05/20/11/98009_orig.jpg",
+      "https://media.eol.org/content/2014/03/18/01/17979_orig.jpg",
+      "https://media.eol.org/content/2015/08/11/22/43411_orig.jpg",
+      "https://media.eol.org/content/2014/06/10/15/32667_orig.jpg",
+      "https://media.eol.org/content/2014/06/10/15/84107_orig.jpg",
+      "https://media.eol.org/content/2014/06/10/15/53494_orig.jpg",
+      "https://media.eol.org/content/2014/10/05/17/77721_orig.jpg"
     ],
     "names": [
       {
@@ -1129,32 +1129,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/03/42708_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/67730_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/03/35511_98_68.jpg",
-      "http://media.eol.org/content/2015/05/20/11/98009_98_68.jpg",
-      "http://media.eol.org/content/2014/03/18/01/17979_98_68.jpg",
-      "http://media.eol.org/content/2015/08/11/22/43411_98_68.jpg",
-      "http://media.eol.org/content/2014/06/10/15/32667_98_68.jpg",
-      "http://media.eol.org/content/2014/06/10/15/84107_98_68.jpg",
-      "http://media.eol.org/content/2014/06/10/15/53494_98_68.jpg",
-      "http://media.eol.org/content/2014/10/05/17/77721_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/03/42708_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/67730_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/03/35511_98_68.jpg",
+      "https://media.eol.org/content/2015/05/20/11/98009_98_68.jpg",
+      "https://media.eol.org/content/2014/03/18/01/17979_98_68.jpg",
+      "https://media.eol.org/content/2015/08/11/22/43411_98_68.jpg",
+      "https://media.eol.org/content/2014/06/10/15/32667_98_68.jpg",
+      "https://media.eol.org/content/2014/06/10/15/84107_98_68.jpg",
+      "https://media.eol.org/content/2014/06/10/15/53494_98_68.jpg",
+      "https://media.eol.org/content/2014/10/05/17/77721_98_68.jpg"
     ]
   },
   {
     "id": 40488428,
     "name": "Lysimachia foemina (Mill.) U.Manns & Anderb., 2009",
     "images": [
-      "http://media.eol.org/content/2014/10/05/07/87121_orig.jpg",
-      "http://media.eol.org/content/2014/10/05/07/64878_orig.jpg",
-      "http://media.eol.org/content/2014/10/05/08/17396_orig.jpg",
-      "http://media.eol.org/content/2014/10/06/01/06068_orig.jpg",
-      "http://media.eol.org/content/2014/10/06/04/89846_orig.jpg",
-      "http://media.eol.org/content/2014/10/06/02/51711_orig.jpg",
-      "http://media.eol.org/content/2014/10/06/02/93664_orig.jpg",
-      "http://media.eol.org/content/2014/10/06/02/09488_orig.jpg",
-      "http://media.eol.org/content/2014/10/06/02/80751_orig.jpg",
-      "http://media.eol.org/content/2014/10/05/22/97261_orig.jpg"
+      "https://media.eol.org/content/2014/10/05/07/87121_orig.jpg",
+      "https://media.eol.org/content/2014/10/05/07/64878_orig.jpg",
+      "https://media.eol.org/content/2014/10/05/08/17396_orig.jpg",
+      "https://media.eol.org/content/2014/10/06/01/06068_orig.jpg",
+      "https://media.eol.org/content/2014/10/06/04/89846_orig.jpg",
+      "https://media.eol.org/content/2014/10/06/02/51711_orig.jpg",
+      "https://media.eol.org/content/2014/10/06/02/93664_orig.jpg",
+      "https://media.eol.org/content/2014/10/06/02/09488_orig.jpg",
+      "https://media.eol.org/content/2014/10/06/02/80751_orig.jpg",
+      "https://media.eol.org/content/2014/10/05/22/97261_orig.jpg"
     ],
     "names": [
       {
@@ -1180,32 +1180,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/10/05/07/87121_98_68.jpg",
-      "http://media.eol.org/content/2014/10/05/07/64878_98_68.jpg",
-      "http://media.eol.org/content/2014/10/05/08/17396_98_68.jpg",
-      "http://media.eol.org/content/2014/10/06/01/06068_98_68.jpg",
-      "http://media.eol.org/content/2014/10/06/04/89846_98_68.jpg",
-      "http://media.eol.org/content/2014/10/06/02/51711_98_68.jpg",
-      "http://media.eol.org/content/2014/10/06/02/93664_98_68.jpg",
-      "http://media.eol.org/content/2014/10/06/02/09488_98_68.jpg",
-      "http://media.eol.org/content/2014/10/06/02/80751_98_68.jpg",
-      "http://media.eol.org/content/2014/10/05/22/97261_98_68.jpg"
+      "https://media.eol.org/content/2014/10/05/07/87121_98_68.jpg",
+      "https://media.eol.org/content/2014/10/05/07/64878_98_68.jpg",
+      "https://media.eol.org/content/2014/10/05/08/17396_98_68.jpg",
+      "https://media.eol.org/content/2014/10/06/01/06068_98_68.jpg",
+      "https://media.eol.org/content/2014/10/06/04/89846_98_68.jpg",
+      "https://media.eol.org/content/2014/10/06/02/51711_98_68.jpg",
+      "https://media.eol.org/content/2014/10/06/02/93664_98_68.jpg",
+      "https://media.eol.org/content/2014/10/06/02/09488_98_68.jpg",
+      "https://media.eol.org/content/2014/10/06/02/80751_98_68.jpg",
+      "https://media.eol.org/content/2014/10/05/22/97261_98_68.jpg"
     ]
   },
   {
     "id": 702952,
     "name": "Bituminaria bituminosa (L.) C. H. Stirt.",
     "images": [
-      "http://media.eol.org/content/2014/08/15/02/70025_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/02/50847_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/02/26537_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/02/00491_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/02/14412_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/02/38820_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/02/17481_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/02/35655_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/02/64631_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/23/41708_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/02/70025_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/02/50847_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/02/26537_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/02/00491_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/02/14412_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/02/38820_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/02/17481_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/02/35655_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/02/64631_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/23/41708_orig.jpg"
     ],
     "names": [
       {
@@ -1252,32 +1252,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/02/70025_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/02/50847_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/02/26537_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/02/00491_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/02/14412_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/02/38820_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/02/17481_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/02/35655_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/02/64631_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/23/41708_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/02/70025_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/02/50847_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/02/26537_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/02/00491_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/02/14412_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/02/38820_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/02/17481_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/02/35655_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/02/64631_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/23/41708_98_68.jpg"
     ]
   },
   {
     "id": 5133070,
     "name": "Campanula erinus L.",
     "images": [
-      "http://media.eol.org/content/2015/01/08/05/43733_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/98305_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/50962_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/14677_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/46025_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/74048_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/87186_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/65421_orig.jpg",
-      "http://media.eol.org/content/2014/02/13/18/47254_orig.jpg",
-      "http://media.eol.org/content/2012/06/15/16/77480_orig.jpg"
+      "https://media.eol.org/content/2015/01/08/05/43733_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/98305_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/50962_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/14677_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/46025_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/74048_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/87186_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/65421_orig.jpg",
+      "https://media.eol.org/content/2014/02/13/18/47254_orig.jpg",
+      "https://media.eol.org/content/2012/06/15/16/77480_orig.jpg"
     ],
     "names": [
       {
@@ -1293,32 +1293,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2015/01/08/05/43733_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/98305_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/50962_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/14677_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/46025_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/74048_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/87186_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/65421_98_68.jpg",
-      "http://media.eol.org/content/2014/02/13/18/47254_98_68.jpg",
-      "http://media.eol.org/content/2012/06/15/16/77480_98_68.jpg"
+      "https://media.eol.org/content/2015/01/08/05/43733_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/98305_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/50962_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/14677_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/46025_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/74048_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/87186_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/65421_98_68.jpg",
+      "https://media.eol.org/content/2014/02/13/18/47254_98_68.jpg",
+      "https://media.eol.org/content/2012/06/15/16/77480_98_68.jpg"
     ]
   },
   {
     "id": 582447,
     "name": "Oxalis corniculata L.",
     "images": [
-      // "http://media.eol.org/content/2016/08/02/16/01376_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/79893_orig.jpg",
-      "http://media.eol.org/content/2012/12/05/19/26605_orig.jpg",
-      "http://media.eol.org/content/2012/11/18/08/63409_orig.jpg",
-      "http://media.eol.org/content/2012/10/30/22/56801_orig.jpg",
-      "http://media.eol.org/content/2012/07/07/08/66311_orig.jpg",
-      "http://media.eol.org/content/2012/06/06/14/79153_orig.jpg",
-      "http://media.eol.org/content/2012/06/06/14/30087_orig.jpg",
-      "http://media.eol.org/content/2012/06/06/14/58234_orig.jpg",
-      "http://media.eol.org/content/2012/06/06/14/99184_orig.jpg"
+      // "https://media.eol.org/content/2016/08/02/16/01376_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/79893_orig.jpg",
+      "https://media.eol.org/content/2012/12/05/19/26605_orig.jpg",
+      "https://media.eol.org/content/2012/11/18/08/63409_orig.jpg",
+      "https://media.eol.org/content/2012/10/30/22/56801_orig.jpg",
+      "https://media.eol.org/content/2012/07/07/08/66311_orig.jpg",
+      "https://media.eol.org/content/2012/06/06/14/79153_orig.jpg",
+      "https://media.eol.org/content/2012/06/06/14/30087_orig.jpg",
+      "https://media.eol.org/content/2012/06/06/14/58234_orig.jpg",
+      "https://media.eol.org/content/2012/06/06/14/99184_orig.jpg"
     ],
     "names": [
       {
@@ -1430,32 +1430,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2016/08/02/16/01376_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/79893_98_68.jpg",
-      "http://media.eol.org/content/2012/12/05/19/26605_98_68.jpg",
-      "http://media.eol.org/content/2012/11/18/08/63409_98_68.jpg",
-      "http://media.eol.org/content/2012/10/30/22/56801_98_68.jpg",
-      "http://media.eol.org/content/2012/07/07/08/66311_98_68.jpg",
-      "http://media.eol.org/content/2012/06/06/14/79153_98_68.jpg",
-      "http://media.eol.org/content/2012/06/06/14/30087_98_68.jpg",
-      "http://media.eol.org/content/2012/06/06/14/58234_98_68.jpg",
-      "http://media.eol.org/content/2012/06/06/14/99184_98_68.jpg"
+      "https://media.eol.org/content/2016/08/02/16/01376_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/79893_98_68.jpg",
+      "https://media.eol.org/content/2012/12/05/19/26605_98_68.jpg",
+      "https://media.eol.org/content/2012/11/18/08/63409_98_68.jpg",
+      "https://media.eol.org/content/2012/10/30/22/56801_98_68.jpg",
+      "https://media.eol.org/content/2012/07/07/08/66311_98_68.jpg",
+      "https://media.eol.org/content/2012/06/06/14/79153_98_68.jpg",
+      "https://media.eol.org/content/2012/06/06/14/30087_98_68.jpg",
+      "https://media.eol.org/content/2012/06/06/14/58234_98_68.jpg",
+      "https://media.eol.org/content/2012/06/06/14/99184_98_68.jpg"
     ]
   },
   {
     "id": 5838420,
     "name": "Dactylis glomerata subsp. hispanica",
     "images": [
-      "http://media.eol.org/content/2011/10/15/23/67360_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/56148_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/23/21663_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/23/22171_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/23/44765_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/23/49362_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/23/22266_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/23/63240_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/23/84699_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/23/32626_orig.jpg"
+      "https://media.eol.org/content/2011/10/15/23/67360_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/56148_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/23/21663_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/23/22171_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/23/44765_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/23/49362_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/23/22266_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/23/63240_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/23/84699_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/23/32626_orig.jpg"
     ],
     "names": [
       {
@@ -1474,32 +1474,32 @@ export const flora =
       }
     ],
     "thumbs": [
-      "http://media.eol.org/content/2011/10/15/23/67360_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/56148_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/23/21663_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/23/22171_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/23/44765_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/23/49362_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/23/22266_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/23/63240_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/23/84699_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/23/32626_98_68.jpg"
+      "https://media.eol.org/content/2011/10/15/23/67360_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/56148_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/23/21663_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/23/22171_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/23/44765_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/23/49362_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/23/22266_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/23/63240_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/23/84699_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/23/32626_98_68.jpg"
     ]
   },
   {
     "id": 579215,
     "name": "Plantago lanceolata L.",
     "images": [
-      "http://media.eol.org/content/2012/05/23/22/41131_orig.jpg",
-      "http://media.eol.org/content/2012/08/02/03/05003_orig.jpg",
-      "http://media.eol.org/content/2012/12/05/06/19518_orig.jpg",
-      "http://media.eol.org/content/2009/07/24/03/08141_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/22/69557_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/22/68940_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/22/55552_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/22/13729_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/22/05297_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/22/70822_orig.jpg"
+      "https://media.eol.org/content/2012/05/23/22/41131_orig.jpg",
+      "https://media.eol.org/content/2012/08/02/03/05003_orig.jpg",
+      "https://media.eol.org/content/2012/12/05/06/19518_orig.jpg",
+      "https://media.eol.org/content/2009/07/24/03/08141_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/22/69557_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/22/68940_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/22/55552_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/22/13729_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/22/05297_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/22/70822_orig.jpg"
     ],
     "names": [
       {
@@ -1612,32 +1612,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/05/23/22/41131_98_68.jpg",
-      "http://media.eol.org/content/2012/08/02/03/05003_98_68.jpg",
-      "http://media.eol.org/content/2012/12/05/06/19518_98_68.jpg",
-      "http://media.eol.org/content/2009/07/24/03/08141_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/22/69557_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/22/68940_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/22/55552_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/22/13729_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/22/05297_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/22/70822_98_68.jpg"
+      "https://media.eol.org/content/2012/05/23/22/41131_98_68.jpg",
+      "https://media.eol.org/content/2012/08/02/03/05003_98_68.jpg",
+      "https://media.eol.org/content/2012/12/05/06/19518_98_68.jpg",
+      "https://media.eol.org/content/2009/07/24/03/08141_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/22/69557_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/22/68940_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/22/55552_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/22/13729_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/22/05297_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/22/70822_98_68.jpg"
     ]
   },
   {
     "id": 2867531,
     "name": "Cistus crispus",
     "images": [
-      "http://media.eol.org/content/2014/08/15/06/33256_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/82567_orig.jpg",
-      "http://media.eol.org/content/2014/07/08/09/60885_orig.jpg",
-      "http://media.eol.org/content/2014/07/08/09/82893_orig.jpg",
-      "http://media.eol.org/content/2014/07/08/09/72123_orig.jpg",
-      "http://media.eol.org/content/2015/04/06/23/01189_orig.jpg",
-      "http://media.eol.org/content/2013/11/17/04/06785_orig.jpg",
-      "http://media.eol.org/content/2013/11/17/04/99647_orig.jpg",
-      "http://media.eol.org/content/2013/11/17/04/56665_orig.jpg",
-      "http://media.eol.org/content/2013/11/17/04/56906_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/06/33256_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/82567_orig.jpg",
+      "https://media.eol.org/content/2014/07/08/09/60885_orig.jpg",
+      "https://media.eol.org/content/2014/07/08/09/82893_orig.jpg",
+      "https://media.eol.org/content/2014/07/08/09/72123_orig.jpg",
+      "https://media.eol.org/content/2015/04/06/23/01189_orig.jpg",
+      "https://media.eol.org/content/2013/11/17/04/06785_orig.jpg",
+      "https://media.eol.org/content/2013/11/17/04/99647_orig.jpg",
+      "https://media.eol.org/content/2013/11/17/04/56665_orig.jpg",
+      "https://media.eol.org/content/2013/11/17/04/56906_orig.jpg"
     ],
     "names": [
       {
@@ -1663,28 +1663,28 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/06/33256_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/82567_98_68.jpg",
-      "http://media.eol.org/content/2014/07/08/09/60885_98_68.jpg",
-      "http://media.eol.org/content/2014/07/08/09/82893_98_68.jpg",
-      "http://media.eol.org/content/2014/07/08/09/72123_98_68.jpg",
-      "http://media.eol.org/content/2015/04/06/23/01189_98_68.jpg",
-      "http://media.eol.org/content/2013/11/17/04/06785_98_68.jpg",
-      "http://media.eol.org/content/2013/11/17/04/99647_98_68.jpg",
-      "http://media.eol.org/content/2013/11/17/04/56665_98_68.jpg",
-      "http://media.eol.org/content/2013/11/17/04/56906_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/06/33256_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/82567_98_68.jpg",
+      "https://media.eol.org/content/2014/07/08/09/60885_98_68.jpg",
+      "https://media.eol.org/content/2014/07/08/09/82893_98_68.jpg",
+      "https://media.eol.org/content/2014/07/08/09/72123_98_68.jpg",
+      "https://media.eol.org/content/2015/04/06/23/01189_98_68.jpg",
+      "https://media.eol.org/content/2013/11/17/04/06785_98_68.jpg",
+      "https://media.eol.org/content/2013/11/17/04/99647_98_68.jpg",
+      "https://media.eol.org/content/2013/11/17/04/56665_98_68.jpg",
+      "https://media.eol.org/content/2013/11/17/04/56906_98_68.jpg"
     ]
   },
   {
     "id": 6269866,
     "name": "Galactites tomentosus",
     "images": [
-      "http://media.eol.org/content/2011/10/15/23/72080_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/23/10733_orig.jpg",
-      "http://media.eol.org/content/2014/06/10/14/51938_orig.jpg",
-      "http://media.eol.org/content/2014/06/10/14/57386_orig.jpg",
-      "http://media.eol.org/content/2014/06/10/14/63333_orig.jpg",
-      "http://media.eol.org/content/2014/06/10/14/36210_orig.jpg"
+      "https://media.eol.org/content/2011/10/15/23/72080_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/23/10733_orig.jpg",
+      "https://media.eol.org/content/2014/06/10/14/51938_orig.jpg",
+      "https://media.eol.org/content/2014/06/10/14/57386_orig.jpg",
+      "https://media.eol.org/content/2014/06/10/14/63333_orig.jpg",
+      "https://media.eol.org/content/2014/06/10/14/36210_orig.jpg"
     ],
     "names": [
       {
@@ -1704,28 +1704,28 @@ export const flora =
       }
     ],
     "thumbs": [
-      "http://media.eol.org/content/2011/10/15/23/72080_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/23/10733_98_68.jpg",
-      "http://media.eol.org/content/2014/06/10/14/51938_98_68.jpg",
-      "http://media.eol.org/content/2014/06/10/14/57386_98_68.jpg",
-      "http://media.eol.org/content/2014/06/10/14/63333_98_68.jpg",
-      "http://media.eol.org/content/2014/06/10/14/36210_98_68.jpg"
+      "https://media.eol.org/content/2011/10/15/23/72080_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/23/10733_98_68.jpg",
+      "https://media.eol.org/content/2014/06/10/14/51938_98_68.jpg",
+      "https://media.eol.org/content/2014/06/10/14/57386_98_68.jpg",
+      "https://media.eol.org/content/2014/06/10/14/63333_98_68.jpg",
+      "https://media.eol.org/content/2014/06/10/14/36210_98_68.jpg"
     ]
   },
   {
     "id": 1114101,
     "name": "Dactylis glomerata L.",
     "images": [
-      "http://media.eol.org/content/2012/11/20/02/26422_orig.jpg",
-      "http://media.eol.org/content/2012/11/20/02/57029_orig.jpg",
-      "http://media.eol.org/content/2013/12/01/04/81926_orig.jpg",
-      "http://media.eol.org/content/2013/12/07/14/30868_orig.jpg",
-      "http://media.eol.org/content/2012/11/20/02/81277_orig.jpg",
-      "http://media.eol.org/content/2012/11/20/02/16869_orig.jpg",
-      "http://media.eol.org/content/2012/11/20/02/79400_orig.jpg",
-      "http://media.eol.org/content/2012/11/20/02/13854_orig.jpg",
-      "http://media.eol.org/content/2014/07/01/22/70252_orig.jpg",
-      "http://media.eol.org/content/2014/12/02/15/33732_orig.jpg"
+      "https://media.eol.org/content/2012/11/20/02/26422_orig.jpg",
+      "https://media.eol.org/content/2012/11/20/02/57029_orig.jpg",
+      "https://media.eol.org/content/2013/12/01/04/81926_orig.jpg",
+      "https://media.eol.org/content/2013/12/07/14/30868_orig.jpg",
+      "https://media.eol.org/content/2012/11/20/02/81277_orig.jpg",
+      "https://media.eol.org/content/2012/11/20/02/16869_orig.jpg",
+      "https://media.eol.org/content/2012/11/20/02/79400_orig.jpg",
+      "https://media.eol.org/content/2012/11/20/02/13854_orig.jpg",
+      "https://media.eol.org/content/2014/07/01/22/70252_orig.jpg",
+      "https://media.eol.org/content/2014/12/02/15/33732_orig.jpg"
     ],
     "names": [
       {
@@ -1833,32 +1833,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/11/20/02/26422_98_68.jpg",
-      "http://media.eol.org/content/2012/11/20/02/57029_98_68.jpg",
-      "http://media.eol.org/content/2013/12/01/04/81926_98_68.jpg",
-      "http://media.eol.org/content/2013/12/07/14/30868_98_68.jpg",
-      "http://media.eol.org/content/2012/11/20/02/81277_98_68.jpg",
-      "http://media.eol.org/content/2012/11/20/02/16869_98_68.jpg",
-      "http://media.eol.org/content/2012/11/20/02/79400_98_68.jpg",
-      "http://media.eol.org/content/2012/11/20/02/13854_98_68.jpg",
-      "http://media.eol.org/content/2014/07/01/22/70252_98_68.jpg",
-      "http://media.eol.org/content/2014/12/02/15/33732_98_68.jpg"
+      "https://media.eol.org/content/2012/11/20/02/26422_98_68.jpg",
+      "https://media.eol.org/content/2012/11/20/02/57029_98_68.jpg",
+      "https://media.eol.org/content/2013/12/01/04/81926_98_68.jpg",
+      "https://media.eol.org/content/2013/12/07/14/30868_98_68.jpg",
+      "https://media.eol.org/content/2012/11/20/02/81277_98_68.jpg",
+      "https://media.eol.org/content/2012/11/20/02/16869_98_68.jpg",
+      "https://media.eol.org/content/2012/11/20/02/79400_98_68.jpg",
+      "https://media.eol.org/content/2012/11/20/02/13854_98_68.jpg",
+      "https://media.eol.org/content/2014/07/01/22/70252_98_68.jpg",
+      "https://media.eol.org/content/2014/12/02/15/33732_98_68.jpg"
     ]
   },
   {
     "id": 628306,
     "name": "Crataegus monogyna auct.",
     "images": [
-      "http://media.eol.org/content/2013/11/25/10/36821_orig.jpg",
-      "http://media.eol.org/content/2012/06/13/03/54825_orig.jpg",
-      "http://media.eol.org/content/2012/08/20/00/79264_orig.jpg",
-      "http://media.eol.org/content/2013/12/08/02/87044_orig.jpg",
-      "http://media.eol.org/content/2014/07/08/09/11595_orig.jpg",
-      "http://media.eol.org/content/2014/07/08/09/67713_orig.jpg",
-      "http://media.eol.org/content/2015/04/30/17/49875_orig.jpg",
-      "http://media.eol.org/content/2014/12/02/15/72659_orig.jpg",
-      "http://media.eol.org/content/2014/12/02/15/36176_orig.jpg",
-      "http://media.eol.org/content/2014/12/02/15/37416_orig.jpg"
+      "https://media.eol.org/content/2013/11/25/10/36821_orig.jpg",
+      "https://media.eol.org/content/2012/06/13/03/54825_orig.jpg",
+      "https://media.eol.org/content/2012/08/20/00/79264_orig.jpg",
+      "https://media.eol.org/content/2013/12/08/02/87044_orig.jpg",
+      "https://media.eol.org/content/2014/07/08/09/11595_orig.jpg",
+      "https://media.eol.org/content/2014/07/08/09/67713_orig.jpg",
+      "https://media.eol.org/content/2015/04/30/17/49875_orig.jpg",
+      "https://media.eol.org/content/2014/12/02/15/72659_orig.jpg",
+      "https://media.eol.org/content/2014/12/02/15/36176_orig.jpg",
+      "https://media.eol.org/content/2014/12/02/15/37416_orig.jpg"
     ],
     "names": [
       {
@@ -1942,32 +1942,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2013/11/25/10/36821_98_68.jpg",
-      "http://media.eol.org/content/2012/06/13/03/54825_98_68.jpg",
-      "http://media.eol.org/content/2012/08/20/00/79264_98_68.jpg",
-      "http://media.eol.org/content/2013/12/08/02/87044_98_68.jpg",
-      "http://media.eol.org/content/2014/07/08/09/11595_98_68.jpg",
-      "http://media.eol.org/content/2014/07/08/09/67713_98_68.jpg",
-      "http://media.eol.org/content/2015/04/30/17/49875_98_68.jpg",
-      "http://media.eol.org/content/2014/12/02/15/72659_98_68.jpg",
-      "http://media.eol.org/content/2014/12/02/15/36176_98_68.jpg",
-      "http://media.eol.org/content/2014/12/02/15/37416_98_68.jpg"
+      "https://media.eol.org/content/2013/11/25/10/36821_98_68.jpg",
+      "https://media.eol.org/content/2012/06/13/03/54825_98_68.jpg",
+      "https://media.eol.org/content/2012/08/20/00/79264_98_68.jpg",
+      "https://media.eol.org/content/2013/12/08/02/87044_98_68.jpg",
+      "https://media.eol.org/content/2014/07/08/09/11595_98_68.jpg",
+      "https://media.eol.org/content/2014/07/08/09/67713_98_68.jpg",
+      "https://media.eol.org/content/2015/04/30/17/49875_98_68.jpg",
+      "https://media.eol.org/content/2014/12/02/15/72659_98_68.jpg",
+      "https://media.eol.org/content/2014/12/02/15/36176_98_68.jpg",
+      "https://media.eol.org/content/2014/12/02/15/37416_98_68.jpg"
     ]
   },
   {
     "id": 1114993,
     "name": "Lagurus ovatus L.",
     "images": [
-      "http://media.eol.org/content/2012/07/26/21/16070_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/16/75351_orig.jpg",
-      "http://media.eol.org/content/2012/07/26/21/71501_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/65067_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/93756_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/73835_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/16/37057_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/16/35147_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/16/44188_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/16/89734_orig.jpg"
+      "https://media.eol.org/content/2012/07/26/21/16070_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/16/75351_orig.jpg",
+      "https://media.eol.org/content/2012/07/26/21/71501_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/65067_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/93756_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/73835_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/16/37057_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/16/35147_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/16/44188_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/16/89734_orig.jpg"
     ],
     "names": [
       {
@@ -1996,32 +1996,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/07/26/21/16070_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/16/75351_98_68.jpg",
-      "http://media.eol.org/content/2012/07/26/21/71501_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/65067_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/93756_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/73835_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/16/37057_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/16/35147_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/16/44188_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/16/89734_98_68.jpg"
+      "https://media.eol.org/content/2012/07/26/21/16070_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/16/75351_98_68.jpg",
+      "https://media.eol.org/content/2012/07/26/21/71501_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/65067_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/93756_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/73835_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/16/37057_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/16/35147_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/16/44188_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/16/89734_98_68.jpg"
     ]
   },
   {
     "id": 703436,
     "name": "Trifolium repens L.",
     "images": [
-      "http://media.eol.org/content/2015/04/30/14/77339_orig.jpg",
-      "http://media.eol.org/content/2012/03/23/01/92258_orig.jpg",
-      "http://media.eol.org/content/2012/08/20/00/01664_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/01/33115_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/65739_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/90392_orig.jpg",
-      "http://media.eol.org/content/2015/04/30/14/69144_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/19/37595_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/19/97769_orig.jpg",
-      "http://media.eol.org/content/2011/10/06/00/79689_orig.jpg"
+      "https://media.eol.org/content/2015/04/30/14/77339_orig.jpg",
+      "https://media.eol.org/content/2012/03/23/01/92258_orig.jpg",
+      "https://media.eol.org/content/2012/08/20/00/01664_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/01/33115_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/65739_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/90392_orig.jpg",
+      "https://media.eol.org/content/2015/04/30/14/69144_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/19/37595_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/19/97769_orig.jpg",
+      "https://media.eol.org/content/2011/10/06/00/79689_orig.jpg"
     ],
     "names": [
       {
@@ -2139,32 +2139,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2015/04/30/14/77339_98_68.jpg",
-      "http://media.eol.org/content/2012/03/23/01/92258_98_68.jpg",
-      "http://media.eol.org/content/2012/08/20/00/01664_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/01/33115_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/65739_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/90392_98_68.jpg",
-      "http://media.eol.org/content/2015/04/30/14/69144_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/19/37595_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/19/97769_98_68.jpg",
-      "http://media.eol.org/content/2011/10/06/00/79689_98_68.jpg"
+      "https://media.eol.org/content/2015/04/30/14/77339_98_68.jpg",
+      "https://media.eol.org/content/2012/03/23/01/92258_98_68.jpg",
+      "https://media.eol.org/content/2012/08/20/00/01664_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/01/33115_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/65739_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/90392_98_68.jpg",
+      "https://media.eol.org/content/2015/04/30/14/69144_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/19/37595_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/19/97769_98_68.jpg",
+      "https://media.eol.org/content/2011/10/06/00/79689_98_68.jpg"
     ]
   },
   {
     "id": 46321664,
     "name": "Crepis capillaris",
     "images": [
-      "http://media.eol.org/content/2011/10/15/22/75343_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/75680_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/63292_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/20844_orig.jpg",
-      "http://media.eol.org/content/2015/02/16/07/92089_orig.jpg",
-      "http://media.eol.org/content/2015/02/16/07/13132_orig.jpg",
-      "http://media.eol.org/content/2015/02/16/07/01697_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/10237_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/67730_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/53498_orig.jpg"
+      "https://media.eol.org/content/2011/10/15/22/75343_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/75680_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/63292_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/20844_orig.jpg",
+      "https://media.eol.org/content/2015/02/16/07/92089_orig.jpg",
+      "https://media.eol.org/content/2015/02/16/07/13132_orig.jpg",
+      "https://media.eol.org/content/2015/02/16/07/01697_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/10237_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/67730_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/53498_orig.jpg"
     ],
     "names": [
       {
@@ -2177,32 +2177,32 @@ export const flora =
       }
     ],
     "thumbs": [
-      "http://media.eol.org/content/2011/10/15/22/75343_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/75680_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/63292_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/20844_98_68.jpg",
-      "http://media.eol.org/content/2015/02/16/07/92089_98_68.jpg",
-      "http://media.eol.org/content/2015/02/16/07/13132_98_68.jpg",
-      "http://media.eol.org/content/2015/02/16/07/01697_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/10237_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/67730_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/53498_98_68.jpg"
+      "https://media.eol.org/content/2011/10/15/22/75343_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/75680_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/63292_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/20844_98_68.jpg",
+      "https://media.eol.org/content/2015/02/16/07/92089_98_68.jpg",
+      "https://media.eol.org/content/2015/02/16/07/13132_98_68.jpg",
+      "https://media.eol.org/content/2015/02/16/07/01697_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/10237_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/67730_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/53498_98_68.jpg"
     ]
   },
   {
     "id": 483190,
     "name": "Cistus monspeliensis L.",
     "images": [
-      "http://media.eol.org/content/2014/08/15/05/58116_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/46790_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/03/90880_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/25396_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/46339_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/01/66449_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/00/76927_orig.jpg",
-      "http://media.eol.org/content/2016/08/05/21/81776_orig.jpg",
-      "http://media.eol.org/content/2016/08/05/21/35088_orig.jpg",
-      "http://media.eol.org/content/2016/08/03/13/47298_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/05/58116_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/46790_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/03/90880_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/25396_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/46339_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/01/66449_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/00/76927_orig.jpg",
+      "https://media.eol.org/content/2016/08/05/21/81776_orig.jpg",
+      "https://media.eol.org/content/2016/08/05/21/35088_orig.jpg",
+      "https://media.eol.org/content/2016/08/03/13/47298_orig.jpg"
     ],
     "names": [
       {
@@ -2240,32 +2240,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/05/58116_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/46790_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/03/90880_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/25396_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/46339_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/01/66449_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/00/76927_98_68.jpg",
-      "http://media.eol.org/content/2016/08/05/21/81776_98_68.jpg",
-      "http://media.eol.org/content/2016/08/05/21/35088_98_68.jpg",
-      "http://media.eol.org/content/2016/08/03/13/47298_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/05/58116_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/46790_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/03/90880_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/25396_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/46339_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/01/66449_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/00/76927_98_68.jpg",
+      "https://media.eol.org/content/2016/08/05/21/81776_98_68.jpg",
+      "https://media.eol.org/content/2016/08/05/21/35088_98_68.jpg",
+      "https://media.eol.org/content/2016/08/03/13/47298_98_68.jpg"
     ]
   },
   {
     "id": 488251,
     "name": "Cistus ladanifer L.",
     "images": [
-      "http://media.eol.org/content/2014/12/20/00/74390_orig.jpg",
-      "http://media.eol.org/content/2013/11/16/21/36505_orig.jpg",
-      "http://media.eol.org/content/2014/05/24/03/44100_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/03/65758_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/32589_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/48287_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/37899_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/51740_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/99670_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/01/64436_orig.jpg"
+      "https://media.eol.org/content/2014/12/20/00/74390_orig.jpg",
+      "https://media.eol.org/content/2013/11/16/21/36505_orig.jpg",
+      "https://media.eol.org/content/2014/05/24/03/44100_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/03/65758_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/32589_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/48287_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/37899_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/51740_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/99670_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/01/64436_orig.jpg"
     ],
     "names": [
       {
@@ -2333,32 +2333,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/12/20/00/74390_98_68.jpg",
-      "http://media.eol.org/content/2013/11/16/21/36505_98_68.jpg",
-      "http://media.eol.org/content/2014/05/24/03/44100_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/03/65758_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/32589_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/48287_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/37899_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/51740_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/99670_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/01/64436_98_68.jpg"
+      "https://media.eol.org/content/2014/12/20/00/74390_98_68.jpg",
+      "https://media.eol.org/content/2013/11/16/21/36505_98_68.jpg",
+      "https://media.eol.org/content/2014/05/24/03/44100_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/03/65758_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/32589_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/48287_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/37899_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/51740_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/99670_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/01/64436_98_68.jpg"
     ]
   },
   {
     "id": 1114782,
     "name": "Avena fatua L.",
     "images": [
-      "http://media.eol.org/content/2014/08/02/04/73100_orig.jpg",
-      "http://media.eol.org/content/2014/08/02/04/41911_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/06/39912_orig.jpg",
-      "http://media.eol.org/content/2010/03/24/02/87266_orig.jpg",
-      "http://media.eol.org/content/2012/12/05/06/70687_orig.jpg",
-      "http://media.eol.org/content/2012/12/05/06/17707_orig.jpg",
-      "http://media.eol.org/content/2012/07/11/02/29218_orig.jpg",
-      "http://media.eol.org/content/2014/08/02/04/07290_orig.jpg",
-      "http://media.eol.org/content/2011/11/03/01/20850_orig.jpg",
-      "http://media.eol.org/content/2015/04/30/08/78492_orig.jpg"
+      "https://media.eol.org/content/2014/08/02/04/73100_orig.jpg",
+      "https://media.eol.org/content/2014/08/02/04/41911_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/06/39912_orig.jpg",
+      "https://media.eol.org/content/2010/03/24/02/87266_orig.jpg",
+      "https://media.eol.org/content/2012/12/05/06/70687_orig.jpg",
+      "https://media.eol.org/content/2012/12/05/06/17707_orig.jpg",
+      "https://media.eol.org/content/2012/07/11/02/29218_orig.jpg",
+      "https://media.eol.org/content/2014/08/02/04/07290_orig.jpg",
+      "https://media.eol.org/content/2011/11/03/01/20850_orig.jpg",
+      "https://media.eol.org/content/2015/04/30/08/78492_orig.jpg"
     ],
     "names": [
       {
@@ -2474,32 +2474,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/02/04/73100_98_68.jpg",
-      "http://media.eol.org/content/2014/08/02/04/41911_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/06/39912_98_68.jpg",
-      "http://media.eol.org/content/2010/03/24/02/87266_98_68.jpg",
-      "http://media.eol.org/content/2012/12/05/06/70687_98_68.jpg",
-      "http://media.eol.org/content/2012/12/05/06/17707_98_68.jpg",
-      "http://media.eol.org/content/2012/07/11/02/29218_98_68.jpg",
-      "http://media.eol.org/content/2014/08/02/04/07290_98_68.jpg",
-      "http://media.eol.org/content/2011/11/03/01/20850_98_68.jpg",
-      "http://media.eol.org/content/2015/04/30/08/78492_98_68.jpg"
+      "https://media.eol.org/content/2014/08/02/04/73100_98_68.jpg",
+      "https://media.eol.org/content/2014/08/02/04/41911_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/06/39912_98_68.jpg",
+      "https://media.eol.org/content/2010/03/24/02/87266_98_68.jpg",
+      "https://media.eol.org/content/2012/12/05/06/70687_98_68.jpg",
+      "https://media.eol.org/content/2012/12/05/06/17707_98_68.jpg",
+      "https://media.eol.org/content/2012/07/11/02/29218_98_68.jpg",
+      "https://media.eol.org/content/2014/08/02/04/07290_98_68.jpg",
+      "https://media.eol.org/content/2011/11/03/01/20850_98_68.jpg",
+      "https://media.eol.org/content/2015/04/30/08/78492_98_68.jpg"
     ]
   },
   {
     "id": 1114783,
     "name": "Avena sativa L.",
     "images": [
-      "http://media.eol.org/content/2012/05/23/06/13235_orig.jpg",
-      "http://media.eol.org/content/2011/10/06/02/39188_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/02363_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/06/03932_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/06/61766_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/06/75673_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/06/30886_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/06/19812_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/02356_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/06/79328_orig.jpg"
+      "https://media.eol.org/content/2012/05/23/06/13235_orig.jpg",
+      "https://media.eol.org/content/2011/10/06/02/39188_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/02363_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/06/03932_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/06/61766_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/06/75673_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/06/30886_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/06/19812_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/02356_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/06/79328_orig.jpg"
     ],
     "names": [
       {
@@ -2621,32 +2621,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/05/23/06/13235_98_68.jpg",
-      "http://media.eol.org/content/2011/10/06/02/39188_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/02363_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/06/03932_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/06/61766_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/06/75673_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/06/30886_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/06/19812_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/02356_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/06/79328_98_68.jpg"
+      "https://media.eol.org/content/2012/05/23/06/13235_98_68.jpg",
+      "https://media.eol.org/content/2011/10/06/02/39188_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/02363_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/06/03932_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/06/61766_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/06/75673_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/06/30886_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/06/19812_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/02356_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/06/79328_98_68.jpg"
     ]
   },
   {
     "id": 1114041,
     "name": "Briza maxima L.",
     "images": [
-      "http://media.eol.org/content/2015/03/21/03/65558_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/01259_orig.jpg",
-      "http://media.eol.org/content/2014/08/20/10/56819_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/50055_orig.jpg",
-      "http://media.eol.org/content/2012/12/12/00/86468_orig.jpg",
-      "http://media.eol.org/content/2012/12/12/00/27653_orig.jpg",
-      "http://media.eol.org/content/2014/05/19/01/69988_orig.jpg",
-      "http://media.eol.org/content/2016/07/22/17/30799_orig.jpg",
-      "http://media.eol.org/content/2013/11/08/02/06425_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/32753_orig.jpg"
+      "https://media.eol.org/content/2015/03/21/03/65558_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/01259_orig.jpg",
+      "https://media.eol.org/content/2014/08/20/10/56819_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/50055_orig.jpg",
+      "https://media.eol.org/content/2012/12/12/00/86468_orig.jpg",
+      "https://media.eol.org/content/2012/12/12/00/27653_orig.jpg",
+      "https://media.eol.org/content/2014/05/19/01/69988_orig.jpg",
+      "https://media.eol.org/content/2016/07/22/17/30799_orig.jpg",
+      "https://media.eol.org/content/2013/11/08/02/06425_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/32753_orig.jpg"
     ],
     "names": [
       {
@@ -2693,32 +2693,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2015/03/21/03/65558_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/01259_98_68.jpg",
-      "http://media.eol.org/content/2014/08/20/10/56819_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/50055_98_68.jpg",
-      "http://media.eol.org/content/2012/12/12/00/86468_98_68.jpg",
-      "http://media.eol.org/content/2012/12/12/00/27653_98_68.jpg",
-      "http://media.eol.org/content/2014/05/19/01/69988_98_68.jpg",
-      "http://media.eol.org/content/2016/07/22/17/30799_98_68.jpg",
-      "http://media.eol.org/content/2013/11/08/02/06425_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/32753_98_68.jpg"
+      "https://media.eol.org/content/2015/03/21/03/65558_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/01259_98_68.jpg",
+      "https://media.eol.org/content/2014/08/20/10/56819_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/50055_98_68.jpg",
+      "https://media.eol.org/content/2012/12/12/00/86468_98_68.jpg",
+      "https://media.eol.org/content/2012/12/12/00/27653_98_68.jpg",
+      "https://media.eol.org/content/2014/05/19/01/69988_98_68.jpg",
+      "https://media.eol.org/content/2016/07/22/17/30799_98_68.jpg",
+      "https://media.eol.org/content/2013/11/08/02/06425_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/32753_98_68.jpg"
     ]
   },
   {
     "id": 991197,
     "name": "Asphodelus ramosus L.",
     "images": [
-      "http://media.eol.org/content/2012/05/23/06/71267_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/06/84762_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/06/08848_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/06/91638_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/06/25790_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/06/23181_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/06/69740_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/54073_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/72696_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/13652_orig.jpg"
+      "https://media.eol.org/content/2012/05/23/06/71267_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/06/84762_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/06/08848_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/06/91638_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/06/25790_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/06/23181_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/06/69740_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/54073_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/72696_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/13652_orig.jpg"
     ],
     "names": [
       {
@@ -2756,32 +2756,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/05/23/06/71267_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/06/84762_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/06/08848_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/06/91638_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/06/25790_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/06/23181_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/06/69740_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/54073_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/72696_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/13652_98_68.jpg"
+      "https://media.eol.org/content/2012/05/23/06/71267_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/06/84762_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/06/08848_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/06/91638_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/06/25790_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/06/23181_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/06/69740_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/54073_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/72696_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/13652_98_68.jpg"
     ]
   },
   {
     "id": 585008,
     "name": "Foeniculum vulgare Mill.",
     "images": [
-      "http://media.eol.org/content/2014/08/15/04/24404_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/25525_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/28275_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/76275_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/93299_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/57498_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/89042_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/10887_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/99079_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/53716_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/04/24404_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/25525_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/28275_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/76275_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/93299_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/57498_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/89042_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/10887_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/99079_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/53716_orig.jpg"
     ],
     "names": [
       {
@@ -2931,32 +2931,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/04/24404_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/25525_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/28275_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/76275_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/93299_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/57498_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/89042_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/10887_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/99079_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/53716_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/04/24404_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/25525_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/28275_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/76275_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/93299_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/57498_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/89042_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/10887_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/99079_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/53716_98_68.jpg"
     ]
   },
   {
     "id": 841400,
     "name": "Lapsana communis L.",
     "images": [
-      "http://media.eol.org/content/2012/12/05/02/78026_orig.jpg",
-      "http://media.eol.org/content/2012/12/05/02/48433_orig.jpg",
-      "http://media.eol.org/content/2009/07/24/03/11956_orig.jpg",
-      "http://media.eol.org/content/2009/07/24/03/19423_orig.jpg",
-      "http://media.eol.org/content/2009/07/24/03/91876_orig.jpg",
-      "http://media.eol.org/content/2009/07/24/03/54151_orig.jpg",
-      "http://media.eol.org/content/2012/07/04/05/23880_orig.jpg",
-      "http://media.eol.org/content/2015/01/08/05/32129_orig.jpg",
-      "http://media.eol.org/content/2014/11/15/10/75315_orig.jpg",
-      "http://media.eol.org/content/2014/11/15/10/07865_orig.jpg"
+      "https://media.eol.org/content/2012/12/05/02/78026_orig.jpg",
+      "https://media.eol.org/content/2012/12/05/02/48433_orig.jpg",
+      "https://media.eol.org/content/2009/07/24/03/11956_orig.jpg",
+      "https://media.eol.org/content/2009/07/24/03/19423_orig.jpg",
+      "https://media.eol.org/content/2009/07/24/03/91876_orig.jpg",
+      "https://media.eol.org/content/2009/07/24/03/54151_orig.jpg",
+      "https://media.eol.org/content/2012/07/04/05/23880_orig.jpg",
+      "https://media.eol.org/content/2015/01/08/05/32129_orig.jpg",
+      "https://media.eol.org/content/2014/11/15/10/75315_orig.jpg",
+      "https://media.eol.org/content/2014/11/15/10/07865_orig.jpg"
     ],
     "names": [
       {
@@ -2985,32 +2985,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/12/05/02/78026_98_68.jpg",
-      "http://media.eol.org/content/2012/12/05/02/48433_98_68.jpg",
-      "http://media.eol.org/content/2009/07/24/03/11956_98_68.jpg",
-      "http://media.eol.org/content/2009/07/24/03/19423_98_68.jpg",
-      "http://media.eol.org/content/2009/07/24/03/91876_98_68.jpg",
-      "http://media.eol.org/content/2009/07/24/03/54151_98_68.jpg",
-      "http://media.eol.org/content/2012/07/04/05/23880_98_68.jpg",
-      "http://media.eol.org/content/2015/01/08/05/32129_98_68.jpg",
-      "http://media.eol.org/content/2014/11/15/10/75315_98_68.jpg",
-      "http://media.eol.org/content/2014/11/15/10/07865_98_68.jpg"
+      "https://media.eol.org/content/2012/12/05/02/78026_98_68.jpg",
+      "https://media.eol.org/content/2012/12/05/02/48433_98_68.jpg",
+      "https://media.eol.org/content/2009/07/24/03/11956_98_68.jpg",
+      "https://media.eol.org/content/2009/07/24/03/19423_98_68.jpg",
+      "https://media.eol.org/content/2009/07/24/03/91876_98_68.jpg",
+      "https://media.eol.org/content/2009/07/24/03/54151_98_68.jpg",
+      "https://media.eol.org/content/2012/07/04/05/23880_98_68.jpg",
+      "https://media.eol.org/content/2015/01/08/05/32129_98_68.jpg",
+      "https://media.eol.org/content/2014/11/15/10/75315_98_68.jpg",
+      "https://media.eol.org/content/2014/11/15/10/07865_98_68.jpg"
     ]
   },
   {
     "id": 509366,
     "name": "Silybum marianum (L.) Gaertn.",
     "images": [
-      "http://media.eol.org/content/2012/06/12/17/01185_orig.jpg",
-      "http://media.eol.org/content/2012/08/17/00/29745_orig.jpg",
-      "http://media.eol.org/content/2015/04/30/14/30720_orig.jpg",
-      "http://media.eol.org/content/2010/03/24/04/34451_orig.jpg",
-      "http://media.eol.org/content/2012/08/17/00/57905_orig.jpg",
-      "http://media.eol.org/content/2015/04/30/14/48757_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/02/39171_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/02/21496_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/02/86330_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/02/56938_orig.jpg"
+      "https://media.eol.org/content/2012/06/12/17/01185_orig.jpg",
+      "https://media.eol.org/content/2012/08/17/00/29745_orig.jpg",
+      "https://media.eol.org/content/2015/04/30/14/30720_orig.jpg",
+      "https://media.eol.org/content/2010/03/24/04/34451_orig.jpg",
+      "https://media.eol.org/content/2012/08/17/00/57905_orig.jpg",
+      "https://media.eol.org/content/2015/04/30/14/48757_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/02/39171_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/02/21496_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/02/86330_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/02/56938_orig.jpg"
     ],
     "names": [
       {
@@ -3122,32 +3122,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/06/12/17/01185_98_68.jpg",
-      "http://media.eol.org/content/2012/08/17/00/29745_98_68.jpg",
-      "http://media.eol.org/content/2015/04/30/14/30720_98_68.jpg",
-      "http://media.eol.org/content/2010/03/24/04/34451_98_68.jpg",
-      "http://media.eol.org/content/2012/08/17/00/57905_98_68.jpg",
-      "http://media.eol.org/content/2015/04/30/14/48757_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/02/39171_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/02/21496_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/02/86330_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/02/56938_98_68.jpg"
+      "https://media.eol.org/content/2012/06/12/17/01185_98_68.jpg",
+      "https://media.eol.org/content/2012/08/17/00/29745_98_68.jpg",
+      "https://media.eol.org/content/2015/04/30/14/30720_98_68.jpg",
+      "https://media.eol.org/content/2010/03/24/04/34451_98_68.jpg",
+      "https://media.eol.org/content/2012/08/17/00/57905_98_68.jpg",
+      "https://media.eol.org/content/2015/04/30/14/48757_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/02/39171_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/02/21496_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/02/86330_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/02/56938_98_68.jpg"
     ]
   },
   {
     "id": 486948,
     "name": "Lactuca virosa Habl.",
     "images": [
-      "http://media.eol.org/content/2011/10/16/00/56646_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/00/54208_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/00/22497_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/18/46193_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/16/17821_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/00/45741_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/00/16818_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/00/14350_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/00/18231_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/00/98784_orig.jpg"
+      "https://media.eol.org/content/2011/10/16/00/56646_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/00/54208_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/00/22497_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/18/46193_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/16/17821_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/00/45741_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/00/16818_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/00/14350_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/00/18231_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/00/98784_orig.jpg"
     ],
     "names": [
       {
@@ -3167,32 +3167,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2011/10/16/00/56646_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/00/54208_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/00/22497_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/18/46193_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/16/17821_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/00/45741_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/00/16818_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/00/14350_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/00/18231_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/00/98784_98_68.jpg"
+      "https://media.eol.org/content/2011/10/16/00/56646_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/00/54208_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/00/22497_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/18/46193_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/16/17821_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/00/45741_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/00/16818_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/00/14350_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/00/18231_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/00/98784_98_68.jpg"
     ]
   },
   {
     "id": 2885404,
     "name": "Urtica pilulifera",
     "images": [
-      "http://media.eol.org/content/2009/09/08/03/69274_orig.jpg",
-      "http://media.eol.org/content/2009/09/08/03/12719_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/04/03049_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/03/43397_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/03/91809_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/03/52652_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/03/46021_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/03/84836_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/03/76095_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/03/82825_orig.jpg"
+      "https://media.eol.org/content/2009/09/08/03/69274_orig.jpg",
+      "https://media.eol.org/content/2009/09/08/03/12719_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/04/03049_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/03/43397_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/03/91809_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/03/52652_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/03/46021_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/03/84836_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/03/76095_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/03/82825_orig.jpg"
     ],
     "names": [
       {
@@ -3230,32 +3230,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2009/09/08/03/69274_98_68.jpg",
-      "http://media.eol.org/content/2009/09/08/03/12719_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/04/03049_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/03/43397_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/03/91809_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/03/52652_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/03/46021_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/03/84836_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/03/76095_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/03/82825_98_68.jpg"
+      "https://media.eol.org/content/2009/09/08/03/69274_98_68.jpg",
+      "https://media.eol.org/content/2009/09/08/03/12719_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/04/03049_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/03/43397_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/03/91809_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/03/52652_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/03/46021_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/03/84836_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/03/76095_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/03/82825_98_68.jpg"
     ]
   },
   {
     "id": 595063,
     "name": "Urtica dioica L.",
     "images": [
-      "http://media.eol.org/content/2014/06/09/17/19485_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/13/30866_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/13/10200_orig.jpg",
-      "http://media.eol.org/content/2011/11/01/14/90463_orig.jpg",
-      "http://media.eol.org/content/2015/04/30/04/62662_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/04/65268_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/04/17334_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/13/13185_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/18/52313_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/18/70122_orig.jpg"
+      "https://media.eol.org/content/2014/06/09/17/19485_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/13/30866_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/13/10200_orig.jpg",
+      "https://media.eol.org/content/2011/11/01/14/90463_orig.jpg",
+      "https://media.eol.org/content/2015/04/30/04/62662_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/04/65268_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/04/17334_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/13/13185_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/18/52313_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/18/70122_orig.jpg"
     ],
     "names": [
       {
@@ -3339,31 +3339,31 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/06/09/17/19485_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/13/30866_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/13/10200_98_68.jpg",
-      "http://media.eol.org/content/2011/11/01/14/90463_98_68.jpg",
-      "http://media.eol.org/content/2015/04/30/04/62662_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/04/65268_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/04/17334_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/13/13185_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/18/52313_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/18/70122_98_68.jpg"
+      "https://media.eol.org/content/2014/06/09/17/19485_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/13/30866_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/13/10200_98_68.jpg",
+      "https://media.eol.org/content/2011/11/01/14/90463_98_68.jpg",
+      "https://media.eol.org/content/2015/04/30/04/62662_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/04/65268_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/04/17334_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/13/13185_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/18/52313_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/18/70122_98_68.jpg"
     ]
   },
   {
     "id": 587522,
     "name": "Chenopodium album L.",
     "images": [
-      "http://media.eol.org/content/2012/02/17/00/01790_orig.jpg",
-      "http://media.eol.org/content/2012/02/17/00/44526_orig.jpg",
-      "http://media.eol.org/content/2015/05/20/06/67087_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/56495_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/99309_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/96515_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/54452_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/88302_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/50883_orig.jpg"
+      "https://media.eol.org/content/2012/02/17/00/01790_orig.jpg",
+      "https://media.eol.org/content/2012/02/17/00/44526_orig.jpg",
+      "https://media.eol.org/content/2015/05/20/06/67087_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/56495_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/99309_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/96515_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/54452_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/88302_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/50883_orig.jpg"
     ],
     "names": [
       {
@@ -3479,31 +3479,31 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/02/17/00/01790_98_68.jpg",
-      "http://media.eol.org/content/2012/02/17/00/44526_98_68.jpg",
-      "http://media.eol.org/content/2015/05/20/06/67087_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/56495_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/99309_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/96515_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/54452_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/88302_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/50883_98_68.jpg"
+      "https://media.eol.org/content/2012/02/17/00/01790_98_68.jpg",
+      "https://media.eol.org/content/2012/02/17/00/44526_98_68.jpg",
+      "https://media.eol.org/content/2015/05/20/06/67087_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/56495_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/99309_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/96515_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/54452_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/88302_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/50883_98_68.jpg"
     ]
   },
   {
     "id": 585884,
     "name": "Beta vulgaris L.",
     "images": [
-      "http://media.eol.org/content/2013/11/15/07/80624_orig.jpg",
-      "http://media.eol.org/content/2013/07/02/01/19243_orig.jpg",
-      "http://media.eol.org/content/2012/06/13/08/69921_orig.jpg",
-      "http://media.eol.org/content/2013/07/02/01/14101_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/02/44310_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/02/03889_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/02/11946_orig.jpg",
-      "http://media.eol.org/content/2013/07/02/01/77684_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/06/47718_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/02/18858_orig.jpg"
+      "https://media.eol.org/content/2013/11/15/07/80624_orig.jpg",
+      "https://media.eol.org/content/2013/07/02/01/19243_orig.jpg",
+      "https://media.eol.org/content/2012/06/13/08/69921_orig.jpg",
+      "https://media.eol.org/content/2013/07/02/01/14101_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/02/44310_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/02/03889_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/02/11946_orig.jpg",
+      "https://media.eol.org/content/2013/07/02/01/77684_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/06/47718_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/02/18858_orig.jpg"
     ],
     "names": [
       {
@@ -3657,32 +3657,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2013/11/15/07/80624_98_68.jpg",
-      "http://media.eol.org/content/2013/07/02/01/19243_98_68.jpg",
-      "http://media.eol.org/content/2012/06/13/08/69921_98_68.jpg",
-      "http://media.eol.org/content/2013/07/02/01/14101_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/02/44310_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/02/03889_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/02/11946_98_68.jpg",
-      "http://media.eol.org/content/2013/07/02/01/77684_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/06/47718_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/02/18858_98_68.jpg"
+      "https://media.eol.org/content/2013/11/15/07/80624_98_68.jpg",
+      "https://media.eol.org/content/2013/07/02/01/19243_98_68.jpg",
+      "https://media.eol.org/content/2012/06/13/08/69921_98_68.jpg",
+      "https://media.eol.org/content/2013/07/02/01/14101_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/02/44310_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/02/03889_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/02/11946_98_68.jpg",
+      "https://media.eol.org/content/2013/07/02/01/77684_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/06/47718_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/02/18858_98_68.jpg"
     ]
   },
   {
     "id": 583895,
     "name": "Brassica nigra (L.) W. D. J. Koch",
     "images": [
-      "http://media.eol.org/content/2011/10/15/22/13063_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/92209_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/24846_orig.jpg",
-      "http://media.eol.org/content/2015/02/16/07/43917_orig.jpg",
-      "http://media.eol.org/content/2015/02/16/07/24320_orig.jpg",
-      "http://media.eol.org/content/2011/10/06/03/29768_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/93451_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/49522_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/78682_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/43776_orig.jpg"
+      "https://media.eol.org/content/2011/10/15/22/13063_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/92209_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/24846_orig.jpg",
+      "https://media.eol.org/content/2015/02/16/07/43917_orig.jpg",
+      "https://media.eol.org/content/2015/02/16/07/24320_orig.jpg",
+      "https://media.eol.org/content/2011/10/06/03/29768_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/93451_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/49522_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/78682_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/43776_orig.jpg"
     ],
     "names": [
       {
@@ -3852,32 +3852,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2011/10/15/22/13063_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/92209_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/24846_98_68.jpg",
-      "http://media.eol.org/content/2015/02/16/07/43917_98_68.jpg",
-      "http://media.eol.org/content/2015/02/16/07/24320_98_68.jpg",
-      "http://media.eol.org/content/2011/10/06/03/29768_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/93451_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/49522_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/78682_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/43776_98_68.jpg"
+      "https://media.eol.org/content/2011/10/15/22/13063_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/92209_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/24846_98_68.jpg",
+      "https://media.eol.org/content/2015/02/16/07/43917_98_68.jpg",
+      "https://media.eol.org/content/2015/02/16/07/24320_98_68.jpg",
+      "https://media.eol.org/content/2011/10/06/03/29768_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/93451_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/49522_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/78682_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/43776_98_68.jpg"
     ]
   },
   {
     "id": 1098038,
     "name": "Galium aparine L.",
     "images": [
-      "http://media.eol.org/content/2016/07/20/21/48179_orig.jpg",
-      "http://media.eol.org/content/2010/03/24/02/08336_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/19/55990_orig.jpg",
-      "http://media.eol.org/content/2013/07/02/02/57344_orig.jpg",
-      "http://media.eol.org/content/2013/06/02/02/03455_orig.jpg",
-      "http://media.eol.org/content/2013/09/02/02/14722_orig.jpg",
-      "http://media.eol.org/content/2012/12/05/19/09763_orig.jpg",
-      "http://media.eol.org/content/2013/07/02/02/35340_orig.jpg",
-      "http://media.eol.org/content/2013/09/02/02/73413_orig.jpg",
-      "http://media.eol.org/content/2012/12/05/02/04020_orig.jpg"
+      "https://media.eol.org/content/2016/07/20/21/48179_orig.jpg",
+      "https://media.eol.org/content/2010/03/24/02/08336_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/19/55990_orig.jpg",
+      "https://media.eol.org/content/2013/07/02/02/57344_orig.jpg",
+      "https://media.eol.org/content/2013/06/02/02/03455_orig.jpg",
+      "https://media.eol.org/content/2013/09/02/02/14722_orig.jpg",
+      "https://media.eol.org/content/2012/12/05/19/09763_orig.jpg",
+      "https://media.eol.org/content/2013/07/02/02/35340_orig.jpg",
+      "https://media.eol.org/content/2013/09/02/02/73413_orig.jpg",
+      "https://media.eol.org/content/2012/12/05/02/04020_orig.jpg"
     ],
     "names": [
       {
@@ -3981,32 +3981,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2016/07/20/21/48179_98_68.jpg",
-      "http://media.eol.org/content/2010/03/24/02/08336_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/19/55990_98_68.jpg",
-      "http://media.eol.org/content/2013/07/02/02/57344_98_68.jpg",
-      "http://media.eol.org/content/2013/06/02/02/03455_98_68.jpg",
-      "http://media.eol.org/content/2013/09/02/02/14722_98_68.jpg",
-      "http://media.eol.org/content/2012/12/05/19/09763_98_68.jpg",
-      "http://media.eol.org/content/2013/07/02/02/35340_98_68.jpg",
-      "http://media.eol.org/content/2013/09/02/02/73413_98_68.jpg",
-      "http://media.eol.org/content/2012/12/05/02/04020_98_68.jpg"
+      "https://media.eol.org/content/2016/07/20/21/48179_98_68.jpg",
+      "https://media.eol.org/content/2010/03/24/02/08336_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/19/55990_98_68.jpg",
+      "https://media.eol.org/content/2013/07/02/02/57344_98_68.jpg",
+      "https://media.eol.org/content/2013/06/02/02/03455_98_68.jpg",
+      "https://media.eol.org/content/2013/09/02/02/14722_98_68.jpg",
+      "https://media.eol.org/content/2012/12/05/19/09763_98_68.jpg",
+      "https://media.eol.org/content/2013/07/02/02/35340_98_68.jpg",
+      "https://media.eol.org/content/2013/09/02/02/73413_98_68.jpg",
+      "https://media.eol.org/content/2012/12/05/02/04020_98_68.jpg"
     ]
   },
   {
     "id": 584656,
     "name": "Malva sylvestris L.",
     "images": [
-      "http://media.eol.org/content/2012/05/23/18/29821_orig.jpg",
-      "http://media.eol.org/content/2011/10/10/11/28382_orig.jpg",
-      "http://media.eol.org/content/2011/10/10/11/28730_orig.jpg",
-      "http://media.eol.org/content/2011/10/10/11/46647_orig.jpg",
-      "http://media.eol.org/content/2011/10/10/11/58235_orig.jpg",
-      "http://media.eol.org/content/2011/10/10/11/26275_orig.jpg",
-      "http://media.eol.org/content/2011/10/10/11/16839_orig.jpg",
-      "http://media.eol.org/content/2011/10/10/11/54325_orig.jpg",
-      "http://media.eol.org/content/2011/10/10/11/58179_orig.jpg",
-      "http://media.eol.org/content/2011/10/10/11/10452_orig.jpg"
+      "https://media.eol.org/content/2012/05/23/18/29821_orig.jpg",
+      "https://media.eol.org/content/2011/10/10/11/28382_orig.jpg",
+      "https://media.eol.org/content/2011/10/10/11/28730_orig.jpg",
+      "https://media.eol.org/content/2011/10/10/11/46647_orig.jpg",
+      "https://media.eol.org/content/2011/10/10/11/58235_orig.jpg",
+      "https://media.eol.org/content/2011/10/10/11/26275_orig.jpg",
+      "https://media.eol.org/content/2011/10/10/11/16839_orig.jpg",
+      "https://media.eol.org/content/2011/10/10/11/54325_orig.jpg",
+      "https://media.eol.org/content/2011/10/10/11/58179_orig.jpg",
+      "https://media.eol.org/content/2011/10/10/11/10452_orig.jpg"
     ],
     "names": [
       {
@@ -4095,32 +4095,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/05/23/18/29821_98_68.jpg",
-      "http://media.eol.org/content/2011/10/10/11/28382_98_68.jpg",
-      "http://media.eol.org/content/2011/10/10/11/28730_98_68.jpg",
-      "http://media.eol.org/content/2011/10/10/11/46647_98_68.jpg",
-      "http://media.eol.org/content/2011/10/10/11/58235_98_68.jpg",
-      "http://media.eol.org/content/2011/10/10/11/26275_98_68.jpg",
-      "http://media.eol.org/content/2011/10/10/11/16839_98_68.jpg",
-      "http://media.eol.org/content/2011/10/10/11/54325_98_68.jpg",
-      "http://media.eol.org/content/2011/10/10/11/58179_98_68.jpg",
-      "http://media.eol.org/content/2011/10/10/11/10452_98_68.jpg"
+      "https://media.eol.org/content/2012/05/23/18/29821_98_68.jpg",
+      "https://media.eol.org/content/2011/10/10/11/28382_98_68.jpg",
+      "https://media.eol.org/content/2011/10/10/11/28730_98_68.jpg",
+      "https://media.eol.org/content/2011/10/10/11/46647_98_68.jpg",
+      "https://media.eol.org/content/2011/10/10/11/58235_98_68.jpg",
+      "https://media.eol.org/content/2011/10/10/11/26275_98_68.jpg",
+      "https://media.eol.org/content/2011/10/10/11/16839_98_68.jpg",
+      "https://media.eol.org/content/2011/10/10/11/54325_98_68.jpg",
+      "https://media.eol.org/content/2011/10/10/11/58179_98_68.jpg",
+      "https://media.eol.org/content/2011/10/10/11/10452_98_68.jpg"
     ]
   },
   {
     "id": 1136554,
     "name": "Ophrys apifera Huds.",
     "images": [
-      "http://media.eol.org/content/2014/10/21/22/80433_orig.jpg",
-      "http://media.eol.org/content/2011/11/02/11/01083_orig.jpg",
-      "http://media.eol.org/content/2015/05/20/10/20939_orig.jpg",
-      "http://media.eol.org/content/2012/06/26/05/42673_orig.jpg",
-      "http://media.eol.org/content/2014/07/08/07/45435_orig.jpg",
-      "http://media.eol.org/content/2014/07/08/07/44064_orig.jpg",
-      "http://media.eol.org/content/2014/06/14/15/15636_orig.jpg",
-      "http://media.eol.org/content/2016/07/20/19/28740_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/20/86191_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/03/51425_orig.jpg"
+      "https://media.eol.org/content/2014/10/21/22/80433_orig.jpg",
+      "https://media.eol.org/content/2011/11/02/11/01083_orig.jpg",
+      "https://media.eol.org/content/2015/05/20/10/20939_orig.jpg",
+      "https://media.eol.org/content/2012/06/26/05/42673_orig.jpg",
+      "https://media.eol.org/content/2014/07/08/07/45435_orig.jpg",
+      "https://media.eol.org/content/2014/07/08/07/44064_orig.jpg",
+      "https://media.eol.org/content/2014/06/14/15/15636_orig.jpg",
+      "https://media.eol.org/content/2016/07/20/19/28740_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/20/86191_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/03/51425_orig.jpg"
     ],
     "names": [
       {
@@ -4166,32 +4166,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/10/21/22/80433_98_68.jpg",
-      "http://media.eol.org/content/2011/11/02/11/01083_98_68.jpg",
-      "http://media.eol.org/content/2015/05/20/10/20939_98_68.jpg",
-      "http://media.eol.org/content/2012/06/26/05/42673_98_68.jpg",
-      "http://media.eol.org/content/2014/07/08/07/45435_98_68.jpg",
-      "http://media.eol.org/content/2014/07/08/07/44064_98_68.jpg",
-      "http://media.eol.org/content/2014/06/14/15/15636_98_68.jpg",
-      "http://media.eol.org/content/2016/07/20/19/28740_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/20/86191_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/03/51425_98_68.jpg"
+      "https://media.eol.org/content/2014/10/21/22/80433_98_68.jpg",
+      "https://media.eol.org/content/2011/11/02/11/01083_98_68.jpg",
+      "https://media.eol.org/content/2015/05/20/10/20939_98_68.jpg",
+      "https://media.eol.org/content/2012/06/26/05/42673_98_68.jpg",
+      "https://media.eol.org/content/2014/07/08/07/45435_98_68.jpg",
+      "https://media.eol.org/content/2014/07/08/07/44064_98_68.jpg",
+      "https://media.eol.org/content/2014/06/14/15/15636_98_68.jpg",
+      "https://media.eol.org/content/2016/07/20/19/28740_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/20/86191_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/03/51425_98_68.jpg"
     ]
   },
   {
     "id": 577759,
     "name": "Campanula patula L.",
     "images": [
-      "http://media.eol.org/content/2009/07/24/03/05138_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/70562_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/08/84938_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/08/01656_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/08/43868_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/08/22336_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/08/06870_orig.jpg",
-      "http://media.eol.org/content/2013/08/11/17/32633_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/08/27120_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/08/90730_orig.jpg"
+      "https://media.eol.org/content/2009/07/24/03/05138_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/70562_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/08/84938_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/08/01656_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/08/43868_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/08/22336_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/08/06870_orig.jpg",
+      "https://media.eol.org/content/2013/08/11/17/32633_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/08/27120_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/08/90730_orig.jpg"
     ],
     "names": [
       {
@@ -4219,32 +4219,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2009/07/24/03/05138_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/70562_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/08/84938_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/08/01656_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/08/43868_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/08/22336_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/08/06870_98_68.jpg",
-      "http://media.eol.org/content/2013/08/11/17/32633_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/08/27120_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/08/90730_98_68.jpg"
+      "https://media.eol.org/content/2009/07/24/03/05138_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/70562_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/08/84938_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/08/01656_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/08/43868_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/08/22336_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/08/06870_98_68.jpg",
+      "https://media.eol.org/content/2013/08/11/17/32633_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/08/27120_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/08/90730_98_68.jpg"
     ]
   },
   {
     "id": 583434,
     "name": "Anagallis arvensis L.",
     "images": [
-      "http://media.eol.org/content/2014/08/14/23/13180_orig.jpg",
-      "http://media.eol.org/content/2013/11/07/01/08522_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/05/32680_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/05/58940_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/05/03179_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/05/36075_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/05/89030_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/05/64646_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/05/40240_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/05/36440_orig.jpg"
+      "https://media.eol.org/content/2014/08/14/23/13180_orig.jpg",
+      "https://media.eol.org/content/2013/11/07/01/08522_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/05/32680_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/05/58940_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/05/03179_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/05/36075_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/05/89030_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/05/64646_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/05/40240_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/05/36440_orig.jpg"
     ],
     "names": [
       {
@@ -4330,32 +4330,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/14/23/13180_98_68.jpg",
-      "http://media.eol.org/content/2013/11/07/01/08522_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/05/32680_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/05/58940_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/05/03179_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/05/36075_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/05/89030_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/05/64646_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/05/40240_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/05/36440_98_68.jpg"
+      "https://media.eol.org/content/2014/08/14/23/13180_98_68.jpg",
+      "https://media.eol.org/content/2013/11/07/01/08522_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/05/32680_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/05/58940_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/05/03179_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/05/36075_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/05/89030_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/05/64646_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/05/40240_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/05/36440_98_68.jpg"
     ]
   },
   {
     "id": 579906,
     "name": "Echium plantagineum L.",
     "images": [
-      "http://media.eol.org/content/2014/08/15/03/59975_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/03/80176_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/12/03269_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/12/59315_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/96951_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/17813_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/30002_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/85016_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/96951_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/23/54801_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/03/59975_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/03/80176_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/12/03269_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/12/59315_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/96951_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/17813_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/30002_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/85016_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/96951_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/23/54801_orig.jpg"
     ],
     "names": [
       {
@@ -4434,32 +4434,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/03/59975_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/03/80176_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/12/03269_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/12/59315_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/96951_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/17813_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/30002_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/85016_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/96951_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/23/54801_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/03/59975_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/03/80176_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/12/03269_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/12/59315_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/96951_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/17813_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/30002_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/85016_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/96951_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/23/54801_98_68.jpg"
     ]
   },
   {
     "id": 1151536,
     "name": "Quercus ilex L.",
     "images": [
-      "http://media.eol.org/content/2012/06/12/13/03827_orig.jpg",
-      "http://media.eol.org/content/2014/04/29/21/30619_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/13/55909_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/13/65648_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/13/83279_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/13/73919_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/13/99932_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/13/83759_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/13/33563_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/13/61668_orig.jpg"
+      "https://media.eol.org/content/2012/06/12/13/03827_orig.jpg",
+      "https://media.eol.org/content/2014/04/29/21/30619_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/13/55909_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/13/65648_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/13/83279_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/13/73919_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/13/99932_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/13/83759_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/13/33563_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/13/61668_orig.jpg"
     ],
     "names": [
       {
@@ -4510,32 +4510,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/06/12/13/03827_98_68.jpg",
-      "http://media.eol.org/content/2014/04/29/21/30619_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/13/55909_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/13/65648_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/13/83279_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/13/73919_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/13/99932_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/13/83759_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/13/33563_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/13/61668_98_68.jpg"
+      "https://media.eol.org/content/2012/06/12/13/03827_98_68.jpg",
+      "https://media.eol.org/content/2014/04/29/21/30619_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/13/55909_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/13/65648_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/13/83279_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/13/73919_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/13/99932_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/13/83759_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/13/33563_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/13/61668_98_68.jpg"
     ]
   },
   {
     "id": 583608,
     "name": "Arbutus unedo L.",
     "images": [
-      "http://media.eol.org/content/2012/06/13/13/64173_orig.jpg",
-      "http://media.eol.org/content/2015/01/04/05/34066_orig.jpg",
-      "http://media.eol.org/content/2012/06/13/13/79136_orig.jpg",
-      "http://media.eol.org/content/2012/06/13/13/61274_orig.jpg",
-      "http://media.eol.org/content/2012/06/13/13/04772_orig.jpg",
-      "http://media.eol.org/content/2012/06/13/13/83559_orig.jpg",
-      "http://media.eol.org/content/2012/06/13/13/12959_orig.jpg",
-      "http://media.eol.org/content/2012/06/13/13/26710_orig.jpg",
-      "http://media.eol.org/content/2015/01/04/05/88128_orig.jpg",
-      "http://media.eol.org/content/2015/01/01/03/38579_orig.jpg"
+      "https://media.eol.org/content/2012/06/13/13/64173_orig.jpg",
+      "https://media.eol.org/content/2015/01/04/05/34066_orig.jpg",
+      "https://media.eol.org/content/2012/06/13/13/79136_orig.jpg",
+      "https://media.eol.org/content/2012/06/13/13/61274_orig.jpg",
+      "https://media.eol.org/content/2012/06/13/13/04772_orig.jpg",
+      "https://media.eol.org/content/2012/06/13/13/83559_orig.jpg",
+      "https://media.eol.org/content/2012/06/13/13/12959_orig.jpg",
+      "https://media.eol.org/content/2012/06/13/13/26710_orig.jpg",
+      "https://media.eol.org/content/2015/01/04/05/88128_orig.jpg",
+      "https://media.eol.org/content/2015/01/01/03/38579_orig.jpg"
     ],
     "names": [
       {
@@ -4599,32 +4599,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/06/13/13/64173_98_68.jpg",
-      "http://media.eol.org/content/2015/01/04/05/34066_98_68.jpg",
-      "http://media.eol.org/content/2012/06/13/13/79136_98_68.jpg",
-      "http://media.eol.org/content/2012/06/13/13/61274_98_68.jpg",
-      "http://media.eol.org/content/2012/06/13/13/04772_98_68.jpg",
-      "http://media.eol.org/content/2012/06/13/13/83559_98_68.jpg",
-      "http://media.eol.org/content/2012/06/13/13/12959_98_68.jpg",
-      "http://media.eol.org/content/2012/06/13/13/26710_98_68.jpg",
-      "http://media.eol.org/content/2015/01/04/05/88128_98_68.jpg",
-      "http://media.eol.org/content/2015/01/01/03/38579_98_68.jpg"
+      "https://media.eol.org/content/2012/06/13/13/64173_98_68.jpg",
+      "https://media.eol.org/content/2015/01/04/05/34066_98_68.jpg",
+      "https://media.eol.org/content/2012/06/13/13/79136_98_68.jpg",
+      "https://media.eol.org/content/2012/06/13/13/61274_98_68.jpg",
+      "https://media.eol.org/content/2012/06/13/13/04772_98_68.jpg",
+      "https://media.eol.org/content/2012/06/13/13/83559_98_68.jpg",
+      "https://media.eol.org/content/2012/06/13/13/12959_98_68.jpg",
+      "https://media.eol.org/content/2012/06/13/13/26710_98_68.jpg",
+      "https://media.eol.org/content/2015/01/04/05/88128_98_68.jpg",
+      "https://media.eol.org/content/2015/01/01/03/38579_98_68.jpg"
     ]
   },
   {
     "id": 1114459,
     "name": "Hordeum murinum L.",
     "images": [
-      "http://media.eol.org/content/2014/08/14/23/59136_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/33570_orig.jpg",
-      "http://media.eol.org/content/2011/10/06/06/01357_orig.jpg",
-      "http://media.eol.org/content/2011/10/06/06/72743_orig.jpg",
-      "http://media.eol.org/content/2011/10/06/06/95079_orig.jpg",
-      "http://media.eol.org/content/2011/10/06/06/46541_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/15/25926_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/15/79771_orig.jpg",
-      "http://media.eol.org/content/2011/08/04/12/19276_orig.jpg",
-      "http://media.eol.org/content/2014/04/26/07/47106_orig.jpg"
+      "https://media.eol.org/content/2014/08/14/23/59136_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/33570_orig.jpg",
+      "https://media.eol.org/content/2011/10/06/06/01357_orig.jpg",
+      "https://media.eol.org/content/2011/10/06/06/72743_orig.jpg",
+      "https://media.eol.org/content/2011/10/06/06/95079_orig.jpg",
+      "https://media.eol.org/content/2011/10/06/06/46541_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/15/25926_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/15/79771_orig.jpg",
+      "https://media.eol.org/content/2011/08/04/12/19276_orig.jpg",
+      "https://media.eol.org/content/2014/04/26/07/47106_orig.jpg"
     ],
     "names": [
       {
@@ -4684,32 +4684,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/14/23/59136_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/33570_98_68.jpg",
-      "http://media.eol.org/content/2011/10/06/06/01357_98_68.jpg",
-      "http://media.eol.org/content/2011/10/06/06/72743_98_68.jpg",
-      "http://media.eol.org/content/2011/10/06/06/95079_98_68.jpg",
-      "http://media.eol.org/content/2011/10/06/06/46541_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/15/25926_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/15/79771_98_68.jpg",
-      "http://media.eol.org/content/2011/08/04/12/19276_98_68.jpg",
-      "http://media.eol.org/content/2014/04/26/07/47106_98_68.jpg"
+      "https://media.eol.org/content/2014/08/14/23/59136_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/33570_98_68.jpg",
+      "https://media.eol.org/content/2011/10/06/06/01357_98_68.jpg",
+      "https://media.eol.org/content/2011/10/06/06/72743_98_68.jpg",
+      "https://media.eol.org/content/2011/10/06/06/95079_98_68.jpg",
+      "https://media.eol.org/content/2011/10/06/06/46541_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/15/25926_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/15/79771_98_68.jpg",
+      "https://media.eol.org/content/2011/08/04/12/19276_98_68.jpg",
+      "https://media.eol.org/content/2014/04/26/07/47106_98_68.jpg"
     ]
   },
   {
     "id": 2864808,
     "name": "Galactites tomentosa Moench",
     "images": [
-      "http://media.eol.org/content/2014/08/15/05/17177_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/20333_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/03/04576_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/02/52933_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/13/98678_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/13/70577_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/13/42455_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/13/20642_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/13/23964_orig.jpg",
-      "http://media.eol.org/content/2014/07/08/09/63715_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/05/17177_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/20333_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/03/04576_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/02/52933_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/13/98678_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/13/70577_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/13/42455_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/13/20642_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/13/23964_orig.jpg",
+      "https://media.eol.org/content/2014/07/08/09/63715_orig.jpg"
     ],
     "names": [
       {
@@ -4734,32 +4734,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/05/17177_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/20333_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/03/04576_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/02/52933_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/13/98678_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/13/70577_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/13/42455_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/13/20642_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/13/23964_98_68.jpg",
-      "http://media.eol.org/content/2014/07/08/09/63715_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/05/17177_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/20333_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/03/04576_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/02/52933_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/13/98678_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/13/70577_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/13/42455_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/13/20642_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/13/23964_98_68.jpg",
+      "https://media.eol.org/content/2014/07/08/09/63715_98_68.jpg"
     ]
   },
   {
     "id": 579910,
     "name": "Echium vulgare L.",
     "images": [
-      "http://media.eol.org/content/2009/07/24/02/90636_orig.jpg",
-      "http://media.eol.org/content/2013/12/02/08/07464_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/12/07084_orig.jpg",
-      "http://media.eol.org/content/2015/01/08/04/51884_orig.jpg",
-      "http://media.eol.org/content/2012/12/11/21/19796_orig.jpg",
-      "http://media.eol.org/content/2012/12/11/21/01988_orig.jpg",
-      "http://media.eol.org/content/2012/12/11/21/73966_orig.jpg",
-      "http://media.eol.org/content/2012/12/05/20/02707_orig.jpg",
-      "http://media.eol.org/content/2012/12/05/20/32104_orig.jpg",
-      "http://media.eol.org/content/2012/12/05/20/57977_orig.jpg"
+      "https://media.eol.org/content/2009/07/24/02/90636_orig.jpg",
+      "https://media.eol.org/content/2013/12/02/08/07464_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/12/07084_orig.jpg",
+      "https://media.eol.org/content/2015/01/08/04/51884_orig.jpg",
+      "https://media.eol.org/content/2012/12/11/21/19796_orig.jpg",
+      "https://media.eol.org/content/2012/12/11/21/01988_orig.jpg",
+      "https://media.eol.org/content/2012/12/11/21/73966_orig.jpg",
+      "https://media.eol.org/content/2012/12/05/20/02707_orig.jpg",
+      "https://media.eol.org/content/2012/12/05/20/32104_orig.jpg",
+      "https://media.eol.org/content/2012/12/05/20/57977_orig.jpg"
     ],
     "names": [
       {
@@ -4880,30 +4880,30 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2009/07/24/02/90636_98_68.jpg",
-      "http://media.eol.org/content/2013/12/02/08/07464_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/12/07084_98_68.jpg",
-      "http://media.eol.org/content/2015/01/08/04/51884_98_68.jpg",
-      "http://media.eol.org/content/2012/12/11/21/19796_98_68.jpg",
-      "http://media.eol.org/content/2012/12/11/21/01988_98_68.jpg",
-      "http://media.eol.org/content/2012/12/11/21/73966_98_68.jpg",
-      "http://media.eol.org/content/2012/12/05/20/02707_98_68.jpg",
-      "http://media.eol.org/content/2012/12/05/20/32104_98_68.jpg",
-      "http://media.eol.org/content/2012/12/05/20/57977_98_68.jpg"
+      "https://media.eol.org/content/2009/07/24/02/90636_98_68.jpg",
+      "https://media.eol.org/content/2013/12/02/08/07464_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/12/07084_98_68.jpg",
+      "https://media.eol.org/content/2015/01/08/04/51884_98_68.jpg",
+      "https://media.eol.org/content/2012/12/11/21/19796_98_68.jpg",
+      "https://media.eol.org/content/2012/12/11/21/01988_98_68.jpg",
+      "https://media.eol.org/content/2012/12/11/21/73966_98_68.jpg",
+      "https://media.eol.org/content/2012/12/05/20/02707_98_68.jpg",
+      "https://media.eol.org/content/2012/12/05/20/32104_98_68.jpg",
+      "https://media.eol.org/content/2012/12/05/20/57977_98_68.jpg"
     ]
   },
   {
     "id": 5152569,
     "name": "Sinapis alba subsp. mairei (H. Lindb.) Maire",
     "images": [
-      "http://media.eol.org/content/2012/08/20/00/07702_orig.jpg",
-      "http://media.eol.org/content/2012/08/20/00/29760_orig.jpg",
-      "http://media.eol.org/content/2012/08/20/00/69878_orig.jpg",
-      "http://media.eol.org/content/2012/08/20/00/01636_orig.jpg",
-      "http://media.eol.org/content/2015/04/30/14/24229_orig.jpg",
-      "http://media.eol.org/content/2015/04/30/14/45200_orig.jpg",
-      "http://media.eol.org/content/2015/04/30/14/09897_orig.jpg",
-      "http://media.eol.org/content/2015/04/30/14/00259_orig.jpg"
+      "https://media.eol.org/content/2012/08/20/00/07702_orig.jpg",
+      "https://media.eol.org/content/2012/08/20/00/29760_orig.jpg",
+      "https://media.eol.org/content/2012/08/20/00/69878_orig.jpg",
+      "https://media.eol.org/content/2012/08/20/00/01636_orig.jpg",
+      "https://media.eol.org/content/2015/04/30/14/24229_orig.jpg",
+      "https://media.eol.org/content/2015/04/30/14/45200_orig.jpg",
+      "https://media.eol.org/content/2015/04/30/14/09897_orig.jpg",
+      "https://media.eol.org/content/2015/04/30/14/00259_orig.jpg"
     ],
     "names": [
       {
@@ -4923,30 +4923,30 @@ export const flora =
       }
     ],
     "thumbs": [
-      "http://media.eol.org/content/2012/08/20/00/07702_98_68.jpg",
-      "http://media.eol.org/content/2012/08/20/00/29760_98_68.jpg",
-      "http://media.eol.org/content/2012/08/20/00/69878_98_68.jpg",
-      "http://media.eol.org/content/2012/08/20/00/01636_98_68.jpg",
-      "http://media.eol.org/content/2015/04/30/14/24229_98_68.jpg",
-      "http://media.eol.org/content/2015/04/30/14/45200_98_68.jpg",
-      "http://media.eol.org/content/2015/04/30/14/09897_98_68.jpg",
-      "http://media.eol.org/content/2015/04/30/14/00259_98_68.jpg"
+      "https://media.eol.org/content/2012/08/20/00/07702_98_68.jpg",
+      "https://media.eol.org/content/2012/08/20/00/29760_98_68.jpg",
+      "https://media.eol.org/content/2012/08/20/00/69878_98_68.jpg",
+      "https://media.eol.org/content/2012/08/20/00/01636_98_68.jpg",
+      "https://media.eol.org/content/2015/04/30/14/24229_98_68.jpg",
+      "https://media.eol.org/content/2015/04/30/14/45200_98_68.jpg",
+      "https://media.eol.org/content/2015/04/30/14/09897_98_68.jpg",
+      "https://media.eol.org/content/2015/04/30/14/00259_98_68.jpg"
     ]
   },
   {
     "id": 509700,
     "name": "Pulicaria dysenterica (L.) Gaertn.",
     "images": [
-      "http://media.eol.org/content/2014/10/02/04/07292_orig.jpg",
-      "http://media.eol.org/content/2014/12/12/19/38099_orig.jpg",
-      "http://media.eol.org/content/2014/10/02/04/82016_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/22/46268_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/22/01730_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/22/37802_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/22/17910_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/22/29105_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/12/14142_orig.jpg",
-      "http://media.eol.org/content/2012/12/04/12/38117_orig.jpg"
+      "https://media.eol.org/content/2014/10/02/04/07292_orig.jpg",
+      "https://media.eol.org/content/2014/12/12/19/38099_orig.jpg",
+      "https://media.eol.org/content/2014/10/02/04/82016_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/22/46268_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/22/01730_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/22/37802_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/22/17910_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/22/29105_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/12/14142_orig.jpg",
+      "https://media.eol.org/content/2012/12/04/12/38117_orig.jpg"
     ],
     "names": [
       {
@@ -5002,32 +5002,32 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/10/02/04/07292_98_68.jpg",
-      "http://media.eol.org/content/2014/12/12/19/38099_98_68.jpg",
-      "http://media.eol.org/content/2014/10/02/04/82016_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/22/46268_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/22/01730_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/22/37802_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/22/17910_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/22/29105_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/12/14142_98_68.jpg",
-      "http://media.eol.org/content/2012/12/04/12/38117_98_68.jpg"
+      "https://media.eol.org/content/2014/10/02/04/07292_98_68.jpg",
+      "https://media.eol.org/content/2014/12/12/19/38099_98_68.jpg",
+      "https://media.eol.org/content/2014/10/02/04/82016_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/22/46268_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/22/01730_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/22/37802_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/22/17910_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/22/29105_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/12/14142_98_68.jpg",
+      "https://media.eol.org/content/2012/12/04/12/38117_98_68.jpg"
     ]
   },
   {
     "id": 1061780,
     "name": "Pinus pinaster Aiton",
     "images": [
-      "http://media.eol.org/content/2012/06/13/03/85842_orig.jpg",
-      "http://media.eol.org/content/2012/06/13/03/10611_orig.jpg",
-      "http://media.eol.org/content/2012/07/19/01/42580_orig.jpg",
-      "http://media.eol.org/content/2015/04/30/07/50307_orig.jpg",
-      "http://media.eol.org/content/2012/06/13/03/13189_orig.jpg",
-      "http://media.eol.org/content/2012/08/07/03/99483_orig.jpg",
-      "http://media.eol.org/content/2013/11/16/20/39151_orig.jpg",
-      "http://media.eol.org/content/2014/07/08/07/99782_orig.jpg",
-      "http://media.eol.org/content/2012/06/13/03/27893_orig.jpg",
-      "http://media.eol.org/content/2012/07/19/01/84150_orig.jpg"
+      "https://media.eol.org/content/2012/06/13/03/85842_orig.jpg",
+      "https://media.eol.org/content/2012/06/13/03/10611_orig.jpg",
+      "https://media.eol.org/content/2012/07/19/01/42580_orig.jpg",
+      "https://media.eol.org/content/2015/04/30/07/50307_orig.jpg",
+      "https://media.eol.org/content/2012/06/13/03/13189_orig.jpg",
+      "https://media.eol.org/content/2012/08/07/03/99483_orig.jpg",
+      "https://media.eol.org/content/2013/11/16/20/39151_orig.jpg",
+      "https://media.eol.org/content/2014/07/08/07/99782_orig.jpg",
+      "https://media.eol.org/content/2012/06/13/03/27893_orig.jpg",
+      "https://media.eol.org/content/2012/07/19/01/84150_orig.jpg"
     ],
     "names": [
       {
@@ -5136,16 +5136,16 @@ export const flora =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/06/13/03/85842_98_68.jpg",
-      "http://media.eol.org/content/2012/06/13/03/10611_98_68.jpg",
-      "http://media.eol.org/content/2012/07/19/01/42580_98_68.jpg",
-      "http://media.eol.org/content/2015/04/30/07/50307_98_68.jpg",
-      "http://media.eol.org/content/2012/06/13/03/13189_98_68.jpg",
-      "http://media.eol.org/content/2012/08/07/03/99483_98_68.jpg",
-      "http://media.eol.org/content/2013/11/16/20/39151_98_68.jpg",
-      "http://media.eol.org/content/2014/07/08/07/99782_98_68.jpg",
-      "http://media.eol.org/content/2012/06/13/03/27893_98_68.jpg",
-      "http://media.eol.org/content/2012/07/19/01/84150_98_68.jpg"
+      "https://media.eol.org/content/2012/06/13/03/85842_98_68.jpg",
+      "https://media.eol.org/content/2012/06/13/03/10611_98_68.jpg",
+      "https://media.eol.org/content/2012/07/19/01/42580_98_68.jpg",
+      "https://media.eol.org/content/2015/04/30/07/50307_98_68.jpg",
+      "https://media.eol.org/content/2012/06/13/03/13189_98_68.jpg",
+      "https://media.eol.org/content/2012/08/07/03/99483_98_68.jpg",
+      "https://media.eol.org/content/2013/11/16/20/39151_98_68.jpg",
+      "https://media.eol.org/content/2014/07/08/07/99782_98_68.jpg",
+      "https://media.eol.org/content/2012/06/13/03/27893_98_68.jpg",
+      "https://media.eol.org/content/2012/07/19/01/84150_98_68.jpg"
     ]
   }
 ];
@@ -5155,9 +5155,9 @@ export const common = [
     "id": 467609,
     "name": "Chamaemelum fuscatum (Brot.) Vasc.",
     "images": [
-      "http://media.eol.org/content/2014/08/15/05/15684_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/20564_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/01/36747_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/05/15684_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/20564_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/01/36747_orig.jpg"
     ],
     "names": [
       {
@@ -5177,22 +5177,22 @@ export const common = [
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/05/15684_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/20564_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/01/36747_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/05/15684_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/20564_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/01/36747_98_68.jpg"
     ]
   },
   {
     "id": 5249067,
     "name": "Corema album",
     "images": [
-      "http://media.eol.org/content/2014/08/15/02/96175_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/02/56887_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/02/82519_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/01/09643_orig.jpg",
-      "http://media.eol.org/content/2014/06/12/10/79261_orig.jpg",
-      "http://media.eol.org/content/2014/06/12/06/78102_orig.jpg",
-      "http://media.eol.org/content/2014/06/12/07/74049_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/02/96175_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/02/56887_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/02/82519_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/01/09643_orig.jpg",
+      "https://media.eol.org/content/2014/06/12/10/79261_orig.jpg",
+      "https://media.eol.org/content/2014/06/12/06/78102_orig.jpg",
+      "https://media.eol.org/content/2014/06/12/07/74049_orig.jpg"
     ],
     "names": [
       {
@@ -5203,29 +5203,29 @@ export const common = [
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/02/96175_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/02/56887_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/02/82519_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/01/09643_98_68.jpg",
-      "http://media.eol.org/content/2014/06/12/10/79261_98_68.jpg",
-      "http://media.eol.org/content/2014/06/12/06/78102_98_68.jpg",
-      "http://media.eol.org/content/2014/06/12/07/74049_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/02/96175_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/02/56887_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/02/82519_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/01/09643_98_68.jpg",
+      "https://media.eol.org/content/2014/06/12/10/79261_98_68.jpg",
+      "https://media.eol.org/content/2014/06/12/06/78102_98_68.jpg",
+      "https://media.eol.org/content/2014/06/12/07/74049_98_68.jpg"
     ]
   },
   {
     "id": 1129557,
     "name": "Himantoglossum robertianum (Loisel.) P.Delforge",
     "images": [
-      "http://media.eol.org/content/2015/01/21/20/20612_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/45933_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/57302_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/58906_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/12748_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/47645_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/81884_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/98937_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/22/46130_orig.jpg",
-      "http://media.eol.org/content/2010/03/24/09/55374_orig.jpg"
+      "https://media.eol.org/content/2015/01/21/20/20612_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/45933_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/57302_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/58906_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/12748_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/47645_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/81884_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/98937_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/22/46130_orig.jpg",
+      "https://media.eol.org/content/2010/03/24/09/55374_orig.jpg"
     ],
     "names": [
       {
@@ -5236,32 +5236,32 @@ export const common = [
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2015/01/21/20/20612_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/45933_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/57302_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/58906_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/12748_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/47645_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/81884_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/98937_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/22/46130_98_68.jpg",
-      "http://media.eol.org/content/2010/03/24/09/55374_98_68.jpg"
+      "https://media.eol.org/content/2015/01/21/20/20612_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/45933_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/57302_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/58906_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/12748_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/47645_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/81884_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/98937_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/22/46130_98_68.jpg",
+      "https://media.eol.org/content/2010/03/24/09/55374_98_68.jpg"
     ]
   },
   {
     "id": 703075,
     "name": "Erophaca baetica (L.) Boiss.",
     "images": [
-      "http://media.eol.org/content/2014/08/15/00/82005_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/57819_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/06/98851_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/17135_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/67830_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/31260_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/01/18405_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/01/93654_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/00/98866_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/03/41504_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/00/82005_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/57819_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/06/98851_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/17135_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/67830_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/31260_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/01/18405_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/01/93654_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/00/98866_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/03/41504_orig.jpg"
     ],
     "names": [
       {
@@ -5276,32 +5276,32 @@ export const common = [
       }
     ],
     "thumbs": [
-      "http://media.eol.org/content/2014/08/15/00/82005_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/57819_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/06/98851_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/17135_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/67830_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/31260_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/01/18405_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/01/93654_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/00/98866_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/03/41504_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/00/82005_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/57819_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/06/98851_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/17135_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/67830_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/31260_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/01/18405_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/01/93654_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/00/98866_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/03/41504_98_68.jpg"
     ]
   },
   {
     "id": 586697,
     "name": "Malva multiflora (Cav.) Soldano, Banfi & Galasso",
     "images": [
-      "http://media.eol.org/content/2014/08/15/05/23499_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/28426_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/82107_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/91239_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/00202_orig.jpg",
-      "http://media.eol.org/content/2015/01/08/06/15933_orig.jpg",
-      "http://media.eol.org/content/2015/01/08/04/98584_orig.jpg",
-      "http://media.eol.org/content/2015/08/11/22/48719_orig.jpg",
-      "http://media.eol.org/content/2012/01/24/03/75524_orig.jpg",
-      "http://media.eol.org/content/2012/01/24/03/17374_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/05/23499_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/28426_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/82107_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/91239_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/00202_orig.jpg",
+      "https://media.eol.org/content/2015/01/08/06/15933_orig.jpg",
+      "https://media.eol.org/content/2015/01/08/04/98584_orig.jpg",
+      "https://media.eol.org/content/2015/08/11/22/48719_orig.jpg",
+      "https://media.eol.org/content/2012/01/24/03/75524_orig.jpg",
+      "https://media.eol.org/content/2012/01/24/03/17374_orig.jpg"
     ],
     "names": [
       {
@@ -5326,32 +5326,32 @@ export const common = [
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/05/23499_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/28426_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/82107_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/91239_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/00202_98_68.jpg",
-      "http://media.eol.org/content/2015/01/08/06/15933_98_68.jpg",
-      "http://media.eol.org/content/2015/01/08/04/98584_98_68.jpg",
-      "http://media.eol.org/content/2015/08/11/22/48719_98_68.jpg",
-      "http://media.eol.org/content/2012/01/24/03/75524_98_68.jpg",
-      "http://media.eol.org/content/2012/01/24/03/17374_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/05/23499_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/28426_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/82107_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/91239_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/00202_98_68.jpg",
+      "https://media.eol.org/content/2015/01/08/06/15933_98_68.jpg",
+      "https://media.eol.org/content/2015/01/08/04/98584_98_68.jpg",
+      "https://media.eol.org/content/2015/08/11/22/48719_98_68.jpg",
+      "https://media.eol.org/content/2012/01/24/03/75524_98_68.jpg",
+      "https://media.eol.org/content/2012/01/24/03/17374_98_68.jpg"
     ]
   },
   {
     "id": 579379,
     "name": "Rosmarinus officinalis L.",
     "images": [
-      "http://media.eol.org/content/2012/05/24/00/10770_orig.jpg",
-      "http://media.eol.org/content/2016/03/10/11/42763_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/37968_orig.jpg",
-      "http://media.eol.org/content/2014/10/13/23/20173_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/00/38069_orig.jpg",
-      "http://media.eol.org/content/2014/10/13/23/20173_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/27225_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/48868_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/23186_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/00/62372_orig.jpg"
+      "https://media.eol.org/content/2012/05/24/00/10770_orig.jpg",
+      "https://media.eol.org/content/2016/03/10/11/42763_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/37968_orig.jpg",
+      "https://media.eol.org/content/2014/10/13/23/20173_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/00/38069_orig.jpg",
+      "https://media.eol.org/content/2014/10/13/23/20173_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/27225_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/48868_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/23186_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/00/62372_orig.jpg"
     ],
     "names": [
       {
@@ -5469,24 +5469,24 @@ export const common = [
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/05/24/00/10770_98_68.jpg",
-      "http://media.eol.org/content/2016/03/10/11/42763_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/37968_98_68.jpg",
-      "http://media.eol.org/content/2014/10/13/23/20173_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/00/38069_98_68.jpg",
-      "http://media.eol.org/content/2014/10/13/23/20173_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/27225_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/48868_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/23186_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/00/62372_98_68.jpg"
+      "https://media.eol.org/content/2012/05/24/00/10770_98_68.jpg",
+      "https://media.eol.org/content/2016/03/10/11/42763_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/37968_98_68.jpg",
+      "https://media.eol.org/content/2014/10/13/23/20173_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/00/38069_98_68.jpg",
+      "https://media.eol.org/content/2014/10/13/23/20173_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/27225_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/48868_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/23186_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/00/62372_98_68.jpg"
     ]
   },
   {
     "id": 6948110,
     "name": "Erica erigena",
     "images": [
-      "http://media.eol.org/content/2013/11/25/17/84275_orig.jpg",
-      "http://media.eol.org/content/2014/02/01/22/12142_orig.jpg"
+      "https://media.eol.org/content/2013/11/25/17/84275_orig.jpg",
+      "https://media.eol.org/content/2014/02/01/22/12142_orig.jpg"
     ],
     "names": [
       {
@@ -5502,24 +5502,24 @@ export const common = [
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2013/11/25/17/84275_98_68.jpg",
-      "http://media.eol.org/content/2014/02/01/22/12142_98_68.jpg"
+      "https://media.eol.org/content/2013/11/25/17/84275_98_68.jpg",
+      "https://media.eol.org/content/2014/02/01/22/12142_98_68.jpg"
     ]
   },
   {
     "id": 487222,
     "name": "Fumaria capreolata L.",
     "images": [
-      "http://media.eol.org/content/2014/08/15/00/86806_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/13/12391_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/13/30040_orig.jpg",
-      "http://media.eol.org/content/2014/10/07/15/54224_orig.jpg",
-      "http://media.eol.org/content/2014/10/07/15/37340_orig.jpg",
-      "http://media.eol.org/content/2012/03/22/04/06064_orig.jpg",
-      "http://media.eol.org/content/2012/03/22/04/07354_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/23/50328_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/23/32598_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/23/67556_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/00/86806_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/13/12391_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/13/30040_orig.jpg",
+      "https://media.eol.org/content/2014/10/07/15/54224_orig.jpg",
+      "https://media.eol.org/content/2014/10/07/15/37340_orig.jpg",
+      "https://media.eol.org/content/2012/03/22/04/06064_orig.jpg",
+      "https://media.eol.org/content/2012/03/22/04/07354_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/23/50328_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/23/32598_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/23/67556_orig.jpg"
     ],
     "names": [
       {
@@ -5552,16 +5552,16 @@ export const common = [
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/00/86806_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/13/12391_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/13/30040_98_68.jpg",
-      "http://media.eol.org/content/2014/10/07/15/54224_98_68.jpg",
-      "http://media.eol.org/content/2014/10/07/15/37340_98_68.jpg",
-      "http://media.eol.org/content/2012/03/22/04/06064_98_68.jpg",
-      "http://media.eol.org/content/2012/03/22/04/07354_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/23/50328_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/23/32598_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/23/67556_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/00/86806_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/13/12391_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/13/30040_98_68.jpg",
+      "https://media.eol.org/content/2014/10/07/15/54224_98_68.jpg",
+      "https://media.eol.org/content/2014/10/07/15/37340_98_68.jpg",
+      "https://media.eol.org/content/2012/03/22/04/06064_98_68.jpg",
+      "https://media.eol.org/content/2012/03/22/04/07354_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/23/50328_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/23/32598_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/23/67556_98_68.jpg"
     ]
   }
 ];
@@ -5572,18 +5572,18 @@ export const herbs =
     "id": 579697,
     "name": "Mentha spicata L.",
     "images": [
-      "http://media.eol.org/content/2014/08/15/02/17481_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/02/40408_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/02/79346_orig.jpg",
-      "http://media.eol.org/content/2014/10/07/15/84088_orig.jpg",
-      "http://media.eol.org/content/2014/10/07/15/32399_orig.jpg",
-      "http://media.eol.org/content/2014/10/07/15/43250_orig.jpg",
-      "http://media.eol.org/content/2014/10/07/15/00614_orig.jpg",
-      "http://media.eol.org/content/2014/10/07/15/48391_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/67034_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/00820_orig.jpg",
-      "http://media.eol.org/content/2011/10/06/07/99089_orig.jpg",
-      "http://media.eol.org/content/2011/10/06/07/63915_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/02/17481_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/02/40408_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/02/79346_orig.jpg",
+      "https://media.eol.org/content/2014/10/07/15/84088_orig.jpg",
+      "https://media.eol.org/content/2014/10/07/15/32399_orig.jpg",
+      "https://media.eol.org/content/2014/10/07/15/43250_orig.jpg",
+      "https://media.eol.org/content/2014/10/07/15/00614_orig.jpg",
+      "https://media.eol.org/content/2014/10/07/15/48391_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/67034_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/00820_orig.jpg",
+      "https://media.eol.org/content/2011/10/06/07/99089_orig.jpg",
+      "https://media.eol.org/content/2011/10/06/07/63915_orig.jpg"
     ],
     "names": [
       {
@@ -5719,36 +5719,36 @@ export const herbs =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/02/17481_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/02/40408_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/02/79346_98_68.jpg",
-      "http://media.eol.org/content/2014/10/07/15/84088_98_68.jpg",
-      "http://media.eol.org/content/2014/10/07/15/32399_98_68.jpg",
-      "http://media.eol.org/content/2014/10/07/15/43250_98_68.jpg",
-      "http://media.eol.org/content/2014/10/07/15/00614_98_68.jpg",
-      "http://media.eol.org/content/2014/10/07/15/48391_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/67034_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/00820_98_68.jpg",
-      "http://media.eol.org/content/2011/10/06/07/99089_98_68.jpg",
-      "http://media.eol.org/content/2011/10/06/07/63915_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/02/17481_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/02/40408_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/02/79346_98_68.jpg",
+      "https://media.eol.org/content/2014/10/07/15/84088_98_68.jpg",
+      "https://media.eol.org/content/2014/10/07/15/32399_98_68.jpg",
+      "https://media.eol.org/content/2014/10/07/15/43250_98_68.jpg",
+      "https://media.eol.org/content/2014/10/07/15/00614_98_68.jpg",
+      "https://media.eol.org/content/2014/10/07/15/48391_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/67034_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/00820_98_68.jpg",
+      "https://media.eol.org/content/2011/10/06/07/99089_98_68.jpg",
+      "https://media.eol.org/content/2011/10/06/07/63915_98_68.jpg"
     ]
   },
   {
     "id": 578478,
     "name": "Salvia officinalis L.",
     "images": [
-      "http://media.eol.org/content/2008/10/06/15/93130_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/57684_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/22909_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/41331_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/32504_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/02/82474_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/01/90133_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/01/45232_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/01/14497_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/01/35670_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/01/59074_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/01/95778_orig.jpg"
+      "https://media.eol.org/content/2008/10/06/15/93130_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/57684_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/22909_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/41331_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/32504_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/02/82474_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/01/90133_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/01/45232_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/01/14497_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/01/35670_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/01/59074_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/01/95778_orig.jpg"
     ],
     "names": [
       {
@@ -5919,36 +5919,36 @@ export const herbs =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2008/10/06/15/93130_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/57684_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/22909_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/41331_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/32504_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/02/82474_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/01/90133_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/01/45232_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/01/14497_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/01/35670_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/01/59074_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/01/95778_98_68.jpg"
+      "https://media.eol.org/content/2008/10/06/15/93130_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/57684_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/22909_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/41331_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/32504_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/02/82474_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/01/90133_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/01/45232_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/01/14497_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/01/35670_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/01/59074_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/01/95778_98_68.jpg"
     ]
   },
   {
     "id": 584995,
     "name": "Anethum graveolens L.",
     "images": [
-      "http://media.eol.org/content/2013/04/02/02/98816_orig.jpg",
-      "http://media.eol.org/content/2013/04/02/02/14813_orig.jpg",
-      "http://media.eol.org/content/2013/04/02/02/05237_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/05/23179_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/05/43833_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/05/46328_orig.jpg",
-      "http://media.eol.org/content/2009/04/20/22/42954_orig.jpg",
-      "http://media.eol.org/content/2009/04/20/22/26383_orig.jpg",
-      "http://media.eol.org/content/2009/09/08/02/39675_orig.jpg",
-      "http://media.eol.org/content/2009/09/08/02/39554_orig.jpg",
-      "http://media.eol.org/content/2013/04/02/02/87568_orig.jpg",
-      "http://media.eol.org/content/2012/07/15/10/97976_orig.jpg"
+      "https://media.eol.org/content/2013/04/02/02/98816_orig.jpg",
+      "https://media.eol.org/content/2013/04/02/02/14813_orig.jpg",
+      "https://media.eol.org/content/2013/04/02/02/05237_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/05/23179_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/05/43833_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/05/46328_orig.jpg",
+      "https://media.eol.org/content/2009/04/20/22/42954_orig.jpg",
+      "https://media.eol.org/content/2009/04/20/22/26383_orig.jpg",
+      "https://media.eol.org/content/2009/09/08/02/39675_orig.jpg",
+      "https://media.eol.org/content/2009/09/08/02/39554_orig.jpg",
+      "https://media.eol.org/content/2013/04/02/02/87568_orig.jpg",
+      "https://media.eol.org/content/2012/07/15/10/97976_orig.jpg"
     ],
     "names": [
       {
@@ -6074,36 +6074,36 @@ export const herbs =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2013/04/02/02/98816_98_68.jpg",
-      "http://media.eol.org/content/2013/04/02/02/14813_98_68.jpg",
-      "http://media.eol.org/content/2013/04/02/02/05237_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/05/23179_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/05/43833_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/05/46328_98_68.jpg",
-      "http://media.eol.org/content/2009/04/20/22/42954_98_68.jpg",
-      "http://media.eol.org/content/2009/04/20/22/26383_98_68.jpg",
-      "http://media.eol.org/content/2009/09/08/02/39675_98_68.jpg",
-      "http://media.eol.org/content/2009/09/08/02/39554_98_68.jpg",
-      "http://media.eol.org/content/2013/04/02/02/87568_98_68.jpg",
-      "http://media.eol.org/content/2012/07/15/10/97976_98_68.jpg"
+      "https://media.eol.org/content/2013/04/02/02/98816_98_68.jpg",
+      "https://media.eol.org/content/2013/04/02/02/14813_98_68.jpg",
+      "https://media.eol.org/content/2013/04/02/02/05237_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/05/23179_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/05/43833_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/05/46328_98_68.jpg",
+      "https://media.eol.org/content/2009/04/20/22/42954_98_68.jpg",
+      "https://media.eol.org/content/2009/04/20/22/26383_98_68.jpg",
+      "https://media.eol.org/content/2009/09/08/02/39675_98_68.jpg",
+      "https://media.eol.org/content/2009/09/08/02/39554_98_68.jpg",
+      "https://media.eol.org/content/2013/04/02/02/87568_98_68.jpg",
+      "https://media.eol.org/content/2012/07/15/10/97976_98_68.jpg"
     ]
   },
   {
     "id": 585008,
     "name": "Foeniculum vulgare Mill.",
     "images": [
-      "http://media.eol.org/content/2014/08/15/04/24404_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/25525_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/28275_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/76275_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/93299_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/57498_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/89042_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/10887_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/99079_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/53716_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/06669_orig.jpg",
-      "http://media.eol.org/content/2014/08/14/23/85489_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/04/24404_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/25525_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/28275_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/76275_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/93299_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/57498_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/89042_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/10887_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/99079_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/53716_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/06669_orig.jpg",
+      "https://media.eol.org/content/2014/08/14/23/85489_orig.jpg"
     ],
     "names": [
       {
@@ -6253,36 +6253,36 @@ export const herbs =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/04/24404_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/25525_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/28275_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/76275_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/93299_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/57498_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/89042_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/10887_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/99079_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/53716_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/06669_98_68.jpg",
-      "http://media.eol.org/content/2014/08/14/23/85489_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/04/24404_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/25525_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/28275_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/76275_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/93299_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/57498_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/89042_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/10887_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/99079_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/53716_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/06669_98_68.jpg",
+      "https://media.eol.org/content/2014/08/14/23/85489_98_68.jpg"
     ]
   },
   {
     "id": 484542,
     "name": "Thymus vulgaris L.",
     "images": [
-      "http://media.eol.org/content/2015/04/06/10/88104_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/03/72970_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/03/16771_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/03/50032_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/03/29216_orig.jpg",
-      "http://media.eol.org/content/2009/07/24/03/63946_orig.jpg",
-      // "http://media.eol.org/content/2016/08/05/15/94252_orig.jpg",
-      // "http://media.eol.org/content/2016/08/05/15/99972_orig.jpg",
-      // "http://media.eol.org/content/2016/08/06/11/93351_orig.jpg",
-      // "http://media.eol.org/content/2016/08/05/11/94977_orig.jpg",
-      // "http://media.eol.org/content/2016/08/05/11/76325_orig.jpg",
-      "http://media.eol.org/content/2015/08/11/22/80787_orig.jpg"
+      "https://media.eol.org/content/2015/04/06/10/88104_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/03/72970_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/03/16771_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/03/50032_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/03/29216_orig.jpg",
+      "https://media.eol.org/content/2009/07/24/03/63946_orig.jpg",
+      // "https://media.eol.org/content/2016/08/05/15/94252_orig.jpg",
+      // "https://media.eol.org/content/2016/08/05/15/99972_orig.jpg",
+      // "https://media.eol.org/content/2016/08/06/11/93351_orig.jpg",
+      // "https://media.eol.org/content/2016/08/05/11/94977_orig.jpg",
+      // "https://media.eol.org/content/2016/08/05/11/76325_orig.jpg",
+      "https://media.eol.org/content/2015/08/11/22/80787_orig.jpg"
     ],
     "names": [
       {
@@ -6408,18 +6408,18 @@ export const herbs =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2015/04/06/10/88104_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/03/72970_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/03/16771_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/03/50032_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/03/29216_98_68.jpg",
-      "http://media.eol.org/content/2009/07/24/03/63946_98_68.jpg",
-      "http://media.eol.org/content/2016/08/05/15/94252_98_68.jpg",
-      "http://media.eol.org/content/2016/08/05/15/99972_98_68.jpg",
-      "http://media.eol.org/content/2016/08/06/11/93351_98_68.jpg",
-      "http://media.eol.org/content/2016/08/05/11/94977_98_68.jpg",
-      "http://media.eol.org/content/2016/08/05/11/76325_98_68.jpg",
-      "http://media.eol.org/content/2015/08/11/22/80787_98_68.jpg"
+      "https://media.eol.org/content/2015/04/06/10/88104_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/03/72970_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/03/16771_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/03/50032_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/03/29216_98_68.jpg",
+      "https://media.eol.org/content/2009/07/24/03/63946_98_68.jpg",
+      "https://media.eol.org/content/2016/08/05/15/94252_98_68.jpg",
+      "https://media.eol.org/content/2016/08/05/15/99972_98_68.jpg",
+      "https://media.eol.org/content/2016/08/06/11/93351_98_68.jpg",
+      "https://media.eol.org/content/2016/08/05/11/94977_98_68.jpg",
+      "https://media.eol.org/content/2016/08/05/11/76325_98_68.jpg",
+      "https://media.eol.org/content/2015/08/11/22/80787_98_68.jpg"
     ]
   },
   {
@@ -6427,18 +6427,18 @@ export const herbs =
     "name": "Artemisia dracunculus L.",
     "wiki-name": "Tarragon",
     "images": [
-      "http://media.eol.org/content/2012/05/23/06/93432_orig.jpg",
-      "http://media.eol.org/content/2011/10/06/02/70307_orig.jpg",
-      "http://media.eol.org/content/2011/10/06/02/40765_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/76363_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/46839_orig.jpg",
-      "http://media.eol.org/content/2012/12/16/15/04986_orig.jpg",
-      "http://media.eol.org/content/2012/04/07/05/41084_orig.jpg",
-      "http://media.eol.org/content/2011/10/06/02/30798_orig.jpg",
-      "http://media.eol.org/content/2011/10/06/02/40232_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/40870_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/95528_orig.jpg",
-      "http://media.eol.org/content/2011/10/15/21/54162_orig.jpg"
+      "https://media.eol.org/content/2012/05/23/06/93432_orig.jpg",
+      "https://media.eol.org/content/2011/10/06/02/70307_orig.jpg",
+      "https://media.eol.org/content/2011/10/06/02/40765_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/76363_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/46839_orig.jpg",
+      "https://media.eol.org/content/2012/12/16/15/04986_orig.jpg",
+      "https://media.eol.org/content/2012/04/07/05/41084_orig.jpg",
+      "https://media.eol.org/content/2011/10/06/02/30798_orig.jpg",
+      "https://media.eol.org/content/2011/10/06/02/40232_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/40870_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/95528_orig.jpg",
+      "https://media.eol.org/content/2011/10/15/21/54162_orig.jpg"
     ],
     "names": [
       {
@@ -6588,36 +6588,36 @@ export const herbs =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/05/23/06/93432_98_68.jpg",
-      "http://media.eol.org/content/2011/10/06/02/70307_98_68.jpg",
-      "http://media.eol.org/content/2011/10/06/02/40765_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/76363_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/46839_98_68.jpg",
-      "http://media.eol.org/content/2012/12/16/15/04986_98_68.jpg",
-      "http://media.eol.org/content/2012/04/07/05/41084_98_68.jpg",
-      "http://media.eol.org/content/2011/10/06/02/30798_98_68.jpg",
-      "http://media.eol.org/content/2011/10/06/02/40232_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/40870_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/95528_98_68.jpg",
-      "http://media.eol.org/content/2011/10/15/21/54162_98_68.jpg"
+      "https://media.eol.org/content/2012/05/23/06/93432_98_68.jpg",
+      "https://media.eol.org/content/2011/10/06/02/70307_98_68.jpg",
+      "https://media.eol.org/content/2011/10/06/02/40765_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/76363_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/46839_98_68.jpg",
+      "https://media.eol.org/content/2012/12/16/15/04986_98_68.jpg",
+      "https://media.eol.org/content/2012/04/07/05/41084_98_68.jpg",
+      "https://media.eol.org/content/2011/10/06/02/30798_98_68.jpg",
+      "https://media.eol.org/content/2011/10/06/02/40232_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/40870_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/95528_98_68.jpg",
+      "https://media.eol.org/content/2011/10/15/21/54162_98_68.jpg"
     ]
   },
   {
     "id": 581421,
     "name": "Petroselinum crispum (Mill.) Mansf.",
     "images": [
-      "http://media.eol.org/content/2014/08/15/02/57164_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/78305_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/80978_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/06520_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/28223_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/13386_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/15779_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/41937_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/21/51640_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/21/37713_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/21/46944_orig.jpg",
-      "http://media.eol.org/content/2016/08/05/22/11591_orig.jpg"
+      "https://media.eol.org/content/2014/08/15/02/57164_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/78305_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/80978_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/06520_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/28223_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/13386_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/15779_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/41937_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/21/51640_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/21/37713_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/21/46944_orig.jpg",
+      "https://media.eol.org/content/2016/08/05/22/11591_orig.jpg"
     ],
     "names": [
       {
@@ -6732,36 +6732,36 @@ export const herbs =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2014/08/15/02/57164_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/78305_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/80978_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/06520_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/28223_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/13386_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/15779_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/41937_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/21/51640_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/21/37713_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/21/46944_98_68.jpg",
-      "http://media.eol.org/content/2016/08/05/22/11591_98_68.jpg"
+      "https://media.eol.org/content/2014/08/15/02/57164_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/78305_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/80978_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/06520_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/28223_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/13386_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/15779_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/41937_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/21/51640_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/21/37713_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/21/46944_98_68.jpg",
+      "https://media.eol.org/content/2016/08/05/22/11591_98_68.jpg"
     ]
   },
   {
     "id": 1084938,
     "name": "Allium schoenoprasum L.",
     "images": [
-      "http://media.eol.org/content/2010/03/24/12/47702_orig.jpg",
-      "http://media.eol.org/content/2012/06/12/20/50086_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/04/06176_orig.jpg",
-      "http://media.eol.org/content/2012/10/30/04/73572_orig.jpg",
-      "http://media.eol.org/content/2012/12/11/14/50558_orig.jpg",
-      "http://media.eol.org/content/2012/12/11/14/23783_orig.jpg",
-      "http://media.eol.org/content/2012/12/11/14/91889_orig.jpg",
-      "http://media.eol.org/content/2012/12/11/14/88547_orig.jpg",
-      "http://media.eol.org/content/2012/12/11/14/04311_orig.jpg",
-      "http://media.eol.org/content/2012/12/11/14/88669_orig.jpg",
-      "http://media.eol.org/content/2012/11/18/07/71983_orig.jpg",
-      "http://media.eol.org/content/2012/11/18/07/84841_orig.jpg"
+      "https://media.eol.org/content/2010/03/24/12/47702_orig.jpg",
+      "https://media.eol.org/content/2012/06/12/20/50086_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/04/06176_orig.jpg",
+      "https://media.eol.org/content/2012/10/30/04/73572_orig.jpg",
+      "https://media.eol.org/content/2012/12/11/14/50558_orig.jpg",
+      "https://media.eol.org/content/2012/12/11/14/23783_orig.jpg",
+      "https://media.eol.org/content/2012/12/11/14/91889_orig.jpg",
+      "https://media.eol.org/content/2012/12/11/14/88547_orig.jpg",
+      "https://media.eol.org/content/2012/12/11/14/04311_orig.jpg",
+      "https://media.eol.org/content/2012/12/11/14/88669_orig.jpg",
+      "https://media.eol.org/content/2012/11/18/07/71983_orig.jpg",
+      "https://media.eol.org/content/2012/11/18/07/84841_orig.jpg"
     ],
     "names": [
       {
@@ -6871,36 +6871,36 @@ export const herbs =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2010/03/24/12/47702_98_68.jpg",
-      "http://media.eol.org/content/2012/06/12/20/50086_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/04/06176_98_68.jpg",
-      "http://media.eol.org/content/2012/10/30/04/73572_98_68.jpg",
-      "http://media.eol.org/content/2012/12/11/14/50558_98_68.jpg",
-      "http://media.eol.org/content/2012/12/11/14/23783_98_68.jpg",
-      "http://media.eol.org/content/2012/12/11/14/91889_98_68.jpg",
-      "http://media.eol.org/content/2012/12/11/14/88547_98_68.jpg",
-      "http://media.eol.org/content/2012/12/11/14/04311_98_68.jpg",
-      "http://media.eol.org/content/2012/12/11/14/88669_98_68.jpg",
-      "http://media.eol.org/content/2012/11/18/07/71983_98_68.jpg",
-      "http://media.eol.org/content/2012/11/18/07/84841_98_68.jpg"
+      "https://media.eol.org/content/2010/03/24/12/47702_98_68.jpg",
+      "https://media.eol.org/content/2012/06/12/20/50086_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/04/06176_98_68.jpg",
+      "https://media.eol.org/content/2012/10/30/04/73572_98_68.jpg",
+      "https://media.eol.org/content/2012/12/11/14/50558_98_68.jpg",
+      "https://media.eol.org/content/2012/12/11/14/23783_98_68.jpg",
+      "https://media.eol.org/content/2012/12/11/14/91889_98_68.jpg",
+      "https://media.eol.org/content/2012/12/11/14/88547_98_68.jpg",
+      "https://media.eol.org/content/2012/12/11/14/04311_98_68.jpg",
+      "https://media.eol.org/content/2012/12/11/14/88669_98_68.jpg",
+      "https://media.eol.org/content/2012/11/18/07/71983_98_68.jpg",
+      "https://media.eol.org/content/2012/11/18/07/84841_98_68.jpg"
     ]
   },
   {
     "id": 579367,
     "name": "Origanum vulgare L.",
     "images": [
-      "http://media.eol.org/content/2013/08/08/10/32690_orig.jpg",
-      "http://media.eol.org/content/2012/08/02/02/06989_orig.jpg",
-      "http://media.eol.org/content/2013/09/02/03/62739_orig.jpg",
-      "http://media.eol.org/content/2013/09/02/03/06806_orig.jpg",
-      "http://media.eol.org/content/2015/01/08/04/44261_orig.jpg",
-      "http://media.eol.org/content/2011/09/27/00/29603_orig.jpg",
-      "http://media.eol.org/content/2012/12/05/16/08684_orig.jpg",
-      "http://media.eol.org/content/2012/12/05/16/16331_orig.jpg",
-      "http://media.eol.org/content/2012/12/05/16/07161_orig.jpg",
-      "http://media.eol.org/content/2012/12/05/16/86758_orig.jpg",
-      "http://media.eol.org/content/2012/12/05/16/46760_orig.jpg",
-      "http://media.eol.org/content/2012/12/05/16/78775_orig.jpg"
+      "https://media.eol.org/content/2013/08/08/10/32690_orig.jpg",
+      "https://media.eol.org/content/2012/08/02/02/06989_orig.jpg",
+      "https://media.eol.org/content/2013/09/02/03/62739_orig.jpg",
+      "https://media.eol.org/content/2013/09/02/03/06806_orig.jpg",
+      "https://media.eol.org/content/2015/01/08/04/44261_orig.jpg",
+      "https://media.eol.org/content/2011/09/27/00/29603_orig.jpg",
+      "https://media.eol.org/content/2012/12/05/16/08684_orig.jpg",
+      "https://media.eol.org/content/2012/12/05/16/16331_orig.jpg",
+      "https://media.eol.org/content/2012/12/05/16/07161_orig.jpg",
+      "https://media.eol.org/content/2012/12/05/16/86758_orig.jpg",
+      "https://media.eol.org/content/2012/12/05/16/46760_orig.jpg",
+      "https://media.eol.org/content/2012/12/05/16/78775_orig.jpg"
     ],
     "names": [
       {
@@ -7085,36 +7085,36 @@ export const herbs =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2013/08/08/10/32690_98_68.jpg",
-      "http://media.eol.org/content/2012/08/02/02/06989_98_68.jpg",
-      "http://media.eol.org/content/2013/09/02/03/62739_98_68.jpg",
-      "http://media.eol.org/content/2013/09/02/03/06806_98_68.jpg",
-      "http://media.eol.org/content/2015/01/08/04/44261_98_68.jpg",
-      "http://media.eol.org/content/2011/09/27/00/29603_98_68.jpg",
-      "http://media.eol.org/content/2012/12/05/16/08684_98_68.jpg",
-      "http://media.eol.org/content/2012/12/05/16/16331_98_68.jpg",
-      "http://media.eol.org/content/2012/12/05/16/07161_98_68.jpg",
-      "http://media.eol.org/content/2012/12/05/16/86758_98_68.jpg",
-      "http://media.eol.org/content/2012/12/05/16/46760_98_68.jpg",
-      "http://media.eol.org/content/2012/12/05/16/78775_98_68.jpg"
+      "https://media.eol.org/content/2013/08/08/10/32690_98_68.jpg",
+      "https://media.eol.org/content/2012/08/02/02/06989_98_68.jpg",
+      "https://media.eol.org/content/2013/09/02/03/62739_98_68.jpg",
+      "https://media.eol.org/content/2013/09/02/03/06806_98_68.jpg",
+      "https://media.eol.org/content/2015/01/08/04/44261_98_68.jpg",
+      "https://media.eol.org/content/2011/09/27/00/29603_98_68.jpg",
+      "https://media.eol.org/content/2012/12/05/16/08684_98_68.jpg",
+      "https://media.eol.org/content/2012/12/05/16/16331_98_68.jpg",
+      "https://media.eol.org/content/2012/12/05/16/07161_98_68.jpg",
+      "https://media.eol.org/content/2012/12/05/16/86758_98_68.jpg",
+      "https://media.eol.org/content/2012/12/05/16/46760_98_68.jpg",
+      "https://media.eol.org/content/2012/12/05/16/78775_98_68.jpg"
     ]
   },
   {
     "id": 579379,
     "name": "Rosmarinus officinalis L.",
     "images": [
-      "http://media.eol.org/content/2012/05/24/00/10770_orig.jpg",
-      "http://media.eol.org/content/2016/03/10/11/42763_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/37968_orig.jpg",
-      "http://media.eol.org/content/2014/10/13/23/20173_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/00/38069_orig.jpg",
-      "http://media.eol.org/content/2014/10/13/23/20173_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/27225_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/48868_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/04/23186_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/00/62372_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/00/63754_orig.jpg",
-      "http://media.eol.org/content/2012/05/24/00/03120_orig.jpg"
+      "https://media.eol.org/content/2012/05/24/00/10770_orig.jpg",
+      "https://media.eol.org/content/2016/03/10/11/42763_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/37968_orig.jpg",
+      "https://media.eol.org/content/2014/10/13/23/20173_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/00/38069_orig.jpg",
+      "https://media.eol.org/content/2014/10/13/23/20173_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/27225_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/48868_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/04/23186_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/00/62372_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/00/63754_orig.jpg",
+      "https://media.eol.org/content/2012/05/24/00/03120_orig.jpg"
     ],
     "names": [
       {
@@ -7232,36 +7232,36 @@ export const herbs =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2012/05/24/00/10770_98_68.jpg",
-      "http://media.eol.org/content/2016/03/10/11/42763_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/37968_98_68.jpg",
-      "http://media.eol.org/content/2014/10/13/23/20173_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/00/38069_98_68.jpg",
-      "http://media.eol.org/content/2014/10/13/23/20173_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/27225_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/48868_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/04/23186_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/00/62372_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/00/63754_98_68.jpg",
-      "http://media.eol.org/content/2012/05/24/00/03120_98_68.jpg"
+      "https://media.eol.org/content/2012/05/24/00/10770_98_68.jpg",
+      "https://media.eol.org/content/2016/03/10/11/42763_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/37968_98_68.jpg",
+      "https://media.eol.org/content/2014/10/13/23/20173_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/00/38069_98_68.jpg",
+      "https://media.eol.org/content/2014/10/13/23/20173_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/27225_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/48868_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/04/23186_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/00/62372_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/00/63754_98_68.jpg",
+      "https://media.eol.org/content/2012/05/24/00/03120_98_68.jpg"
     ]
   },
   {
     "id": 581687,
     "name": "Coriandrum sativum L.",
     "images": [
-      "http://media.eol.org/content/2009/09/08/02/39981_orig.jpg",
-      "http://media.eol.org/content/2014/08/15/05/58362_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/10/96466_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/10/47021_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/10/39030_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/10/26821_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/10/93727_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/10/95942_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/10/64196_orig.jpg",
-      "http://media.eol.org/content/2016/08/05/15/59990_orig.jpg",
-      "http://media.eol.org/content/2016/07/23/23/95480_orig.jpg",
-      "http://media.eol.org/content/2016/07/24/12/88063_orig.jpg"
+      "https://media.eol.org/content/2009/09/08/02/39981_orig.jpg",
+      "https://media.eol.org/content/2014/08/15/05/58362_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/10/96466_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/10/47021_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/10/39030_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/10/26821_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/10/93727_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/10/95942_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/10/64196_orig.jpg",
+      "https://media.eol.org/content/2016/08/05/15/59990_orig.jpg",
+      "https://media.eol.org/content/2016/07/23/23/95480_orig.jpg",
+      "https://media.eol.org/content/2016/07/24/12/88063_orig.jpg"
     ],
     "names": [
       {
@@ -7379,36 +7379,36 @@ export const herbs =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2009/09/08/02/39981_98_68.jpg",
-      "http://media.eol.org/content/2014/08/15/05/58362_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/10/96466_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/10/47021_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/10/39030_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/10/26821_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/10/93727_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/10/95942_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/10/64196_98_68.jpg",
-      "http://media.eol.org/content/2016/08/05/15/59990_98_68.jpg",
-      "http://media.eol.org/content/2016/07/23/23/95480_98_68.jpg",
-      "http://media.eol.org/content/2016/07/24/12/88063_98_68.jpg"
+      "https://media.eol.org/content/2009/09/08/02/39981_98_68.jpg",
+      "https://media.eol.org/content/2014/08/15/05/58362_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/10/96466_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/10/47021_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/10/39030_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/10/26821_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/10/93727_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/10/95942_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/10/64196_98_68.jpg",
+      "https://media.eol.org/content/2016/08/05/15/59990_98_68.jpg",
+      "https://media.eol.org/content/2016/07/23/23/95480_98_68.jpg",
+      "https://media.eol.org/content/2016/07/24/12/88063_98_68.jpg"
     ]
   },
   {
     "id": 579364,
     "name": "Ocimum basilicum L.",
     "images": [
-      "http://media.eol.org/content/2009/07/24/03/04353_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/20/88526_orig.jpg",
-      "http://media.eol.org/content/2012/05/23/20/15545_orig.jpg",
-      "http://media.eol.org/content/2014/10/07/15/09377_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/25822_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/57793_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/57316_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/33568_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/71077_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/74791_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/02195_orig.jpg",
-      "http://media.eol.org/content/2011/10/16/01/79200_orig.jpg"
+      "https://media.eol.org/content/2009/07/24/03/04353_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/20/88526_orig.jpg",
+      "https://media.eol.org/content/2012/05/23/20/15545_orig.jpg",
+      "https://media.eol.org/content/2014/10/07/15/09377_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/25822_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/57793_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/57316_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/33568_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/71077_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/74791_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/02195_orig.jpg",
+      "https://media.eol.org/content/2011/10/16/01/79200_orig.jpg"
     ],
     "names": [
       {
@@ -7586,18 +7586,18 @@ export const herbs =
     ],
     "thumbs": [
       null,
-      "http://media.eol.org/content/2009/07/24/03/04353_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/20/88526_98_68.jpg",
-      "http://media.eol.org/content/2012/05/23/20/15545_98_68.jpg",
-      "http://media.eol.org/content/2014/10/07/15/09377_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/25822_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/57793_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/57316_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/33568_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/71077_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/74791_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/02195_98_68.jpg",
-      "http://media.eol.org/content/2011/10/16/01/79200_98_68.jpg"
+      "https://media.eol.org/content/2009/07/24/03/04353_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/20/88526_98_68.jpg",
+      "https://media.eol.org/content/2012/05/23/20/15545_98_68.jpg",
+      "https://media.eol.org/content/2014/10/07/15/09377_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/25822_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/57793_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/57316_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/33568_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/71077_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/74791_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/02195_98_68.jpg",
+      "https://media.eol.org/content/2011/10/16/01/79200_98_68.jpg"
     ]
   }
 ]
