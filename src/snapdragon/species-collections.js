@@ -12,7 +12,7 @@ export const collections = [
         items: lamiaceae,
         name: 'lamiaceae',
         eol_name: 'Mint and Basil Family',
-        eol_link: 'http://eol.org/collections/139275'
+        eol_link: 'https://eol.org/collections/139275'
     },
     {
         id: 2,
@@ -20,7 +20,7 @@ export const collections = [
         name: 'herbs',
         items: herbs,
         eol_name: 'Common Culinary Herbs',
-        eol_link: 'http://eol.org/collections/139051'
+        eol_link: 'https://eol.org/collections/139051'
     },
     {
         id: 3,
@@ -28,7 +28,7 @@ export const collections = [
         name: 'flora',
         items: flora,
         eol_name: 'Flora Vale do Tejo',
-        eol_link: 'http://eol.org/collections/124189'
+        eol_link: 'https://eol.org/collections/124189'
     },
     {
         id: 4,
@@ -36,7 +36,7 @@ export const collections = [
         name: 'uk wildfowers',
         items: wilduk,
         eol_name: 'British Woodland Flowers',
-        eol_link: 'http://eol.org/collections/139458'
+        eol_link: 'https://eol.org/collections/139458'
     },
     {
         id: 5,
@@ -44,7 +44,7 @@ export const collections = [
         name: 'fauna',
         items: arrabida,
         eol_name: 'Fauna da Arrábida',
-        eol_link: 'http://eol.org/collections/139346'
+        eol_link: 'https://eol.org/collections/139346'
     },    
     {
         id: 6,
@@ -52,7 +52,7 @@ export const collections = [
         name: 'common mediterranean fauna',
         items: mediterranean,
         eol_name: 'Common Mediterranean Fauna',
-        eol_link: 'http://eol.org/collections/139572'
+        eol_link: 'https://eol.org/collections/139572'
     },
     {
         id: 11,
