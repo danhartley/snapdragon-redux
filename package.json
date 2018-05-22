@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest-webpack",
     "start:dev": "webpack-dev-server",
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
+    "dev": "webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
     "watch": "webpack --watch --mode development & jest --watchAll",
     "alternative watch - to run build": "webpack --watch --mode development"
   },
@@ -46,12 +46,16 @@
     "babel-loader": "^7.1.4",
     "babel-plugin-module-resolver": "^3.1.0",
     "babel-plugin-transform-es2015-modules-systemjs": "^6.24.1",
+    "babel-plugin-transform-html-import-require-to-string": "0.0.3",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "bootstrap": "^4.1.0",
     "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
     "i": "^0.3.6",
     "immutable": "^3.8.2",
     "jest": "^22.4.2",
@@ -65,7 +69,8 @@
     "systemjs": "^0.21.3",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
-    "webpack-dev-server": "^3.1.1"
+    "webpack-dev-server": "^3.1.1",
+    "webpack-merge": "^4.1.2"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0"
