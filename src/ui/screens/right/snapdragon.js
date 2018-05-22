@@ -1,5 +1,4 @@
 import { DOM } from 'ui/dom';
-// import 'ui/screens/right/snapdragon-templ.html';
 
 export const renderSnapdragon = () => {
 
