@@ -51,4 +51,11 @@ export const renderSpecimenTiles = (collection) => {
             DOM.moreSpecimensBtn.style.display = 'none';
     });
 
+    // small screens
+
+    if(config.isSmallDevice) {
+        DOM.leftGrid.style.display = 'grid';
+        DOM.rightGrid.style.display = 'none';
+    }
+
 };

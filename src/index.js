@@ -6,6 +6,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './snapdragon.css';
+import './snapdragon-media360.css';
 import './snapdragon-media1024.css';
 import './snapdragon-media1200.css';
 
@@ -23,7 +24,7 @@ import { config } from 'syllabus/lesson-config';
 
 // capture device
 
-config.isSmallDevice = !(window.matchMedia("(min-width: 1024px)").matches || window.matchMedia("(min-width: 1200px)").matches);
+config.isSmallDevice = window.matchMedia("(max-width: 360px)").matches;
 
 // setup
 

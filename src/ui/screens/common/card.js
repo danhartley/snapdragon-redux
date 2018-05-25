@@ -4,11 +4,10 @@ import { actions } from 'redux/actions/action-creators';
 import { renderWiki } from 'wikipedia/wiki';
 import { renderFamily } from 'gbif/gbif';
 
-
-export const renderCardHeader = (collectionName) => {
-    DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
-    DOM.headerTxt.innerHTML = ``;    
-};
+// export const renderCardHeader = (collectionName) => {
+//     DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
+//     DOM.headerTxt.innerHTML = ``;
+// };
 
 export const renderCard = (collection) => {
     
@@ -16,7 +15,8 @@ export const renderCard = (collection) => {
 
     const { layout, config } = store.getState();
 
-    renderCardHeader(collection.name);
+    DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
+    DOM.headerTxt.innerHTML = ``;
 
     const screen = layout.screens.filter(el => el.name === 'species-card')[0];
 
@@ -32,13 +32,14 @@ export const renderCard = (collection) => {
 
     const names = item.names.filter(name => name.language === config.language);
 
-    const listNames = names.map((vernacular, index) => {
-            if(index < 4) {
-                return `<li>${vernacular.vernacularName}</li>`;
-        }
-    }).join('');
+    // const listNames = names.map((vernacular, index) => {
+    //         if(index < 1) {
+    //             return `<li>${vernacular.vernacularName}</li>`;
+    //     }
+    // }).join('');
 
-    vernacularNames.innerHTML = `<ul>${listNames}</ul>`;
+    // vernacularNames.innerHTML = `<ul>${listNames}</ul>`;
+    vernacularNames.innerHTML = names[0].vernacularName;
 
     const eolPage = template.content.querySelector('.js-species-card-eol-link');
     
@@ -65,4 +66,25 @@ export const renderCard = (collection) => {
     const gbif = document.querySelector('.js-card .js-txt-family span');
 
     renderFamily(gbif, item.name);
+    
+    // small screens
+
+    if(config.isSmallDevice) {
+        DOM.leftGrid.style.display = 'none';
+        DOM.rightGrid.style.display = 'grid';
+        DOM.headerTxt.innerHTML = collection.name;
+
+        let images = [];
+        
+        item.imageIndices.forEach(index => {
+            const image = item.images[index];
+            if(image)
+                images.push(image);
+        });
+        images = images.slice(0,2);
+
+        const speciesImages = document.querySelectorAll('.js-species-card img');
+        speciesImages[0].src = images[0];
+        speciesImages[1].src = images[1];
+    }
 };

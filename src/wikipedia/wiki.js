@@ -1,7 +1,6 @@
-import * as R from 'ramda';
+import { flatten } from 'ramda';
 
 import { utils } from 'utils/utils';
-import { store } from 'redux/store';
 
 let root = '';
 
@@ -28,7 +27,7 @@ async function fetchWiki(name, missingMessage) {
     try { 
         const response = await fetch(url, config);
         const data = await response.json();        
-        return R.flatten(data);        
+        return flatten(data);        
     } catch (e) {
         const errorPromise = new Promise((resolve, reject) => {
             resolve(missingMessage)

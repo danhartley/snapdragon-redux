@@ -79,7 +79,7 @@
             <div class="score-footer">
                 Score: {{ score.correct }}/{{ score.total }}
                 History: {{ running.correct }}/{{ running.total }}
-                Round: {{ collection.currentRound }}/{{ collection.rounds }}
+                <!-- Round: {{ collection.currentRound }}/{{ collection.rounds }} -->
                 <!-- Level: {{ config.lesson.level.id }}/{{ config.lesson.levels.length }} -->
             </div>
         </template>
@@ -160,18 +160,22 @@
         </template>
         
         <template class="js-card-revision-template">
-                <div class="species-description-grid js-card">
-                    <div class="species-card-family js-txt-family"><span></span></div>
-                    <div class="species-card-name js-txt-species"></div>
-                    <div class="species-card-names js-txt-species-names">names</div>
-                    <div class="species-card-btn"><button class="btn btn-light">Continue</button></div>
-                    <div><a class="species-card-eol-link js-species-card-eol-link underline-link">EOL page</a></div>
-                    <div class="species-card-wiki js-species-card-wiki"></div>
+                <div class="js-species-card species-card">
+                    <img src="" class="tile" alt="">
+                    <img src="" class="tile" alt="">
+                    <div class="grid-text-body js-card">
+                        <div class="species-card-family js-txt-family"><span></span></div>
+                        <div class="species-card-name js-txt-species"></div>
+                        <div class="species-card-names js-txt-species-names">names</div>
+                        <div class="species-card-btn"><button class="btn btn-light">Continue</button></div>
+                        <div><a class="species-card-eol-link js-species-card-eol-link underline-link">EOL page</a></div>
+                        <div class="species-card-wiki js-species-card-wiki"></div>
+                    </div>
                 </div>
         </template>
         
         <template class="js-card-name-template">
-            <div class="species-description-grid js-card">
+            <div class="species-card js-card">
                 <div class="species-card-family js-txt-family"><span></span></div>
                 <div class="species-card-name js-txt-species"></div>
                 <div class="species-card-names js-txt-species-names">names</div>
@@ -180,7 +184,7 @@
         </template>
         
         <template class="js-card-scientific-template">
-                <div class="species-description-grid js-card">
+                <div class="species-card js-card">
                     <div class="species-card-family js-txt-family"><span></span></div>
                     <div class="species-card-name js-txt-species"></div>
                     <div class="species-card-names js-txt-species-names" style="display:none;">names</div>
@@ -190,9 +194,9 @@
         
         <template class="js-collections-template">
         
-            <div class="collections js-species-collection">
+            <div class="collections grid-text-body js-species-collection">
                 <div>Collections hosted by EOL:</div>               
-                <div class="flex">
+                <div class="flex-provider">
                     <div class="dropdown js-collections">
                         <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Collections
@@ -205,7 +209,7 @@
                     </div>                        
                 </div>
         
-                <div class="flex">
+                <div class="flex-provider">
                     <div class="dropdown js-levels">
                         <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Levels
@@ -216,7 +220,7 @@
                     </div>                        
                 </div>
         
-                <div class="flex">
+                <div class="flex-provider">
                     <div class="dropdown js-languages">
                         <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Languages
@@ -235,9 +239,9 @@
             <button class="btn btn-light js-start-learning" style="display: inline-block; margin: 0px 0px 0px 20px;">Continue lesson</button>
             <button class="btn btn-light state-clear js-state-clear">Clear lesson</button>
         
-            <div class="collections collections-skills js-skills-collection">
+            <div class="collections collections-skills grid-text-body js-skills-collection">
                 <div>General skills:</div>
-                <div class="flex skills">
+                <div class="flex-provider skills">
                     <div class="dropdown js-collections">
                         <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Skills
@@ -254,27 +258,27 @@
         </template>
         
         <template class="js-snapdragon">
-            <div class="snapdragon">
+            <div class="snapdragon grid-text-body">
         
                 <h1>Snapdragon</h1>
                 <div>Species recognition and recall</div>
         
-                <div class="flex eol">
+                <div class="flex-provider eol">
                     <a href="http://eol.org/" target="_blank"><img height="99px" width="157px" src="https://media.eol.org//assets/v2/logo_index-0c13f339694ad74bdd975a1e0a8a5eff.png" alt="EOL"></a>
                     <span>Species collections and specimen images</span>
                 </div>
                 
-                <div class="flex wiki">
+                <div class="flex-provider wiki">
                    <a href="https://www.mediawiki.org/wiki/MediaWiki" target="_blank"><img height="135px" width="135px" src="https://www.mediawiki.org/static/images/project-logos/mediawikiwiki.png" alt="Mediawiki"></a>
                     <span>Species summaries</span>
                 </div>
         
-                <div class="flex gbif">
+                <div class="flex-provider gbif">
                     <a href="https://www.gbif.org/" target="_blank"><img height="135px" width="135px" src="https://www.gbif.org/img/full_logo_white.svg" alt="Global Biodiversity Information Facility"></a>
                     <span>Taxonomic data</span>
                 </div>
         
-                <div class="flex dan">
+                <div class="flex-provider dan">
                     <a href="http://eol.org/users/78941/collections" target="_blank"><img src="./dan.jpg" alt="Daniel Hartley"></a>
                     <div>
                         Daniel: Snapdragon curator

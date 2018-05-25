@@ -9,7 +9,7 @@ import { persistor } from 'redux/store';
 export const renderCollections = () => {
 
     DOM.moreSpecimensBtn.style.display = 'none';
-    DOM.collectionTxt.innerHTML = 'Collections | Levels | Languages';
+    DOM.collectionTxt.innerHTML = 'Snapdragon Collections';
 
     let { collections, collection, config } = store.getState();
 
