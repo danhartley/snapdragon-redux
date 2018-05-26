@@ -3,13 +3,17 @@ import { store } from 'redux/store';
 
 export const renderHistory = (history) => {
             
-    const { collection, score } = store.getState();
+    const { collection, score, config } = store.getState();
 
     const template = document.querySelector('.js-history-template');
 
     const progress = { score, history, collection };
     
     if(!history) return;
+
+    if(config.isSmallDevice) {
+        DOM.leftGrid.style.display = 'none';
+    }
 
     const clone = document.importNode(template.content, true);
     DOM.leftBody.style.backgroundColor = 'rgb(50, 50, 50)';

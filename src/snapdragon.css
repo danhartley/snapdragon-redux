@@ -47,11 +47,6 @@ a:hover {
   grid-auto-flow: column;
 }
 
-.right-grid {
-  grid-column: 4;
-  grid-auto-flow: column;
-}
-
  .left-grid, .right-grid {
   display: grid;
   grid-template-rows: 56px 456px 56px;
@@ -143,8 +138,8 @@ a:hover {
 .strips {
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: repeat(6,42px);
-  padding: 5px;
+  grid-template-rows: repeat(6,76px);
+  padding: 1em 0 0 2em;
 }
 
 .strip {
@@ -230,9 +225,9 @@ a:hover {
 }
 
 .summary button {
-  width: 120px;
+  /* width: 120px; */
   margin: 0 0 1em 0px;
-  font-size: 1em;
+  /* font-size: 1em; */
 }
 
 .summary div {
@@ -252,10 +247,6 @@ a:hover {
 }
 .species-card-name {
   font-size: 1.5em;
-}
-
-.species-card-btn button {
-  margin: 1em 0;
 }
 
 .species-card-eol-link {
@@ -337,7 +328,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .collections div {
-  padding: .2em .2em;
+  padding: .2em;
 }
 
 .collection span:nth-of-type(2) {

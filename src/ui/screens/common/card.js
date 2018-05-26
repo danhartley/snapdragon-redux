@@ -4,10 +4,10 @@ import { actions } from 'redux/actions/action-creators';
 import { renderWiki } from 'wikipedia/wiki';
 import { renderFamily } from 'gbif/gbif';
 
-// export const renderCardHeader = (collectionName) => {
-//     DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
-//     DOM.headerTxt.innerHTML = ``;
-// };
+export const renderCardHeader = (collectionName) => {
+    DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
+    DOM.headerTxt.innerHTML = ``;
+};
 
 export const renderCard = (collection) => {
     

@@ -53,7 +53,13 @@
         width: 250px;
         font-size: .9em;
       }
-      
+     
+    .right-grid {
+        grid-column: 4;
+        grid-auto-flow: column;
+    }
+
+
     .right-grid {
         grid-template-columns: 512px;
         grid-template-rows: 60px 512px 60px;
@@ -95,7 +101,7 @@
   
     .strips {
         grid-template-rows: repeat(6,84px);
-        padding: 20px;
+        padding: 1em 0 0 2em;
     }
   
     .letterbox {
@@ -120,8 +126,8 @@
     }
   
     .summary button {
-        width: 180px;
-        margin: 1em;
+        /* width: 180px; */
+        margin: 1em 0;
       }
 
       .summary div {

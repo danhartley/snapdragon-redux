@@ -11,6 +11,16 @@
         display: none;
     }
 
+    .species-card-btn {
+        padding: 1em;
+        display: flex;
+        align-items: center;
+    }
+
+    .species-card-btn button {
+        width: 100%;
+      }      
+
     .body {
         height: 456px;
     }
@@ -22,8 +32,13 @@
 
     .tile {
         width: 160px;
-        height: 160px;
+        height: 152px;
         float: left;
+    }
+
+    .tile img {
+        width: 160px;
+        height: 152px;
     }
 
     .collections-skills {
@@ -32,15 +47,16 @@
 
     .squares {
         display: grid;
-        grid-auto-flow: column;
-        grid-template-areas: "one two"
-                            "three four";                            
+        grid-auto-flow: column;                            
         grid-template-columns: 160px 160px;
-        grid-template-rows: 228px;
+        grid-template-rows: 190px 190px;
     }
     .squares img {
         object-fit: cover;
-        height: 228px;
+        height: 190px;
         width: 160px;
+    }
+    .strip {
+        font-size: 1.2em;
     }
 }

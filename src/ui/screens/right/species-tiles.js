@@ -18,7 +18,7 @@ export const renderSpeciesTiles = (collection) => {
         DOM.headerTxt.innerHTML =  config.isSmallDevice 
                                     ? `Click picture to match species.`
                                     : `Click the picture to match the species.`;
-    },100);
+    });
 
     const callback = contentItem => {
         const images = contentItem.images.filter(img => img !== undefined);
