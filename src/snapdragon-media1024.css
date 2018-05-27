@@ -19,6 +19,10 @@
         display: block;
     }
 
+    .js-card {
+        height: 580px;
+    }
+
     .flex-provider {
         display: flex;
         flex-direction: row;
@@ -58,7 +62,6 @@
         grid-column: 4;
         grid-auto-flow: column;
     }
-
 
     .right-grid {
         grid-template-columns: 512px;

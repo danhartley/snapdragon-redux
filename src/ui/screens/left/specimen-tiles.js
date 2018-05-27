@@ -11,7 +11,7 @@ export const renderSpecimenTiles = (collection) => {
     const { layout, config } = store.getState();
 
     DOM.collectionTxt.innerHTML = `${collection.name} [${config.language}]`;
-    const screenName = layout.screens[1].name;
+    const screenName = layout.screens[0].name;
     if(screenName !== 'species-scientifics' && screenName !== 'history')
         DOM.specimenSpeciesTxt.innerHTML =  config.isSmallDevice ? '' : item.name;
     else 
