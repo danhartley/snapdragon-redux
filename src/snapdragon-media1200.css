@@ -9,25 +9,13 @@
     grid-template-columns: 4fr 10fr 1fr 10fr 4fr;
   }
 
-  .left-grid {
+  .left-grid, .right-grid {
       grid-template-columns: 600px;
-      grid-template-rows: 60px 600px 60px;
-  }
-
-  .left-grid .header-text, .right-grid .header-text {
-    margin: .7em;
-    font-size: 1em;
-}
-
-  .right-grid {
-      grid-template-columns: 600px;
-      grid-template-rows: 60px 600px 60px;
+      grid-template-rows: 70px 580px 70px;
   }
 
   .collections div {
     padding: .4em .2em;
-    width: 550px;
-    font-size: 1em;
   }
 
   .collection span:nth-of-type(1) {
@@ -36,15 +24,11 @@
 
   .squares {
       grid-template-columns: 300px 300px;
-      grid-template-rows: 300px;
+      grid-template-rows: 290px;
   }
   .squares img {
-      height: 300px;
+      height: 290px;
       width: 300px;
-  }
-
-  .footer {
-    height: 60px;
   }
 
   .answer {
@@ -52,9 +36,6 @@
   }
   .answer button {
     width: 240px;
-  }
-  .header {
-    height: 60px;
   }
 
   .rectangles {
@@ -97,10 +78,6 @@
   .tile img {
     height: 200px;
     width: 200px;
-  }
-
-  .species-description-grid {
-    grid-template-rows: 1fr 1fr 2fr 1fr 1fr 3fr;
   }
 
   .flex.wiki {

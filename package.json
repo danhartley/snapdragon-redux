@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "jest-webpack",
-    "start:dev": "webpack-dev-server",
-    "dev": "webpack.dev.js",
+    "start:dev": "webpack-dev-server --open-page 'dist/index.html' --config webpack.dev.js",
+    "dev": "webpack --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "watch": "webpack --watch --mode development & jest --watchAll",
+    "watch": "webpack --watch --config webpack.dev.js & jest --watchAll",
     "alternative watch - to run build": "webpack --watch --mode development"
   },
   "jest": {

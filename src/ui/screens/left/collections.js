@@ -3,13 +3,13 @@ import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { nextLesson } from 'ui/setup/next-lesson';
 import { collectionPlans } from'snapdragon/collections-plans';
-import { lessonPlans } from '../../../snapdragon/lesson-plans';
+import { lessonPlans } from 'snapdragon/lesson-plans';
 import { persistor } from 'redux/store';
 
 export const renderCollections = () => {
 
     DOM.moreSpecimensBtn.style.display = 'none';
-    DOM.collectionTxt.innerHTML = 'Collections | Levels | Languages';
+    DOM.collectionTxt.innerHTML = 'Snapdragon Collections';
 
     let { collections, collection, config } = store.getState();
 

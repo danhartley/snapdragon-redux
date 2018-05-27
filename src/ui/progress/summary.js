@@ -7,10 +7,12 @@ import { renderCollections } from 'ui/screens/left/collections';
 import { renderSnapdragon } from 'ui/screens/right/snapdragon';
 
 export const renderSummaryHeader = (score) => {
-    DOM.headerTxt.innerHTML = 
-        score.correct === 1 
-            ? `You got ${score.correct} question right out of ${score.total}`
-            : `You got ${score.correct} questions right out of ${score.total}`;
+    setTimeout(()=>{
+        DOM.headerTxt.innerHTML = 'Summary';
+    });
+        // score.correct === 1 
+        //     ? `You got ${score.correct} question right out of ${score.total}`
+        //     : `You got ${score.correct} questions right out of ${score.total}`;
         DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
 };
 
@@ -27,6 +29,7 @@ export const renderSummary = (index) => {
     const template = document.querySelector('.js-summary-template');
 
     const clone = document.importNode(template.content, true);
+    DOM.rightGrid.style.display = 'grid';
     DOM.rightBody.innerHTML = '';
     DOM.rightBody.appendChild(clone);
 

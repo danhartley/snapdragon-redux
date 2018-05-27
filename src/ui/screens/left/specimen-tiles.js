@@ -11,7 +11,7 @@ export const renderSpecimenTiles = (collection) => {
     const { layout, config } = store.getState();
 
     DOM.collectionTxt.innerHTML = `${collection.name} [${config.language}]`;
-    const screenName = layout.screens[1].name;
+    const screenName = layout.screens[0].name;
     if(screenName !== 'species-scientifics' && screenName !== 'history')
         DOM.specimenSpeciesTxt.innerHTML =  config.isSmallDevice ? '' : item.name;
     else 
@@ -50,5 +50,18 @@ export const renderSpecimenTiles = (collection) => {
         if(index === 8)
             DOM.moreSpecimensBtn.style.display = 'none';
     });
+
+    // small screens
+
+    if(config.isSmallDevice) {
+
+        DOM.leftGrid.style.display = 'grid';
+        DOM.rightGrid.style.display = 'none';
+
+        document.querySelector('.js-continue-btn').addEventListener('click', () => {
+            DOM.leftGrid.style.display = 'none';
+            DOM.rightGrid.style.display = 'grid';
+        });
+    }
 
 };

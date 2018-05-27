@@ -1,0 +1,62 @@
+@media (max-width: 360px) {
+    
+    .grid {
+        display: grid;
+        width: 320px;
+        height: 568px;
+        background-color: #323232;
+    }
+    
+    .flex-provider.eol, .flex-provider.wiki, .flex-provider.gbif, .flex-provider.skills, .species-card-wiki {
+        display: none;
+    }
+
+    .species-card-btn {
+        padding: 1em;
+        display: flex;
+        align-items: center;
+    }
+
+    .species-card-btn button {
+        width: 100%;
+      }      
+
+    .body {
+        height: 456px;
+    }
+
+    .js-card {
+        height: 296px;
+        padding: 1em;
+    }
+
+    .tile {
+        width: 160px;
+        height: 152px;
+        float: left;
+    }
+
+    .tile img {
+        width: 160px;
+        height: 152px;
+    }
+
+    .collections-skills {
+        display: none;
+    }
+
+    .squares {
+        display: grid;
+        grid-auto-flow: column;                            
+        grid-template-columns: 160px 160px;
+        grid-template-rows: 190px 190px;
+    }
+    .squares img {
+        object-fit: cover;
+        height: 190px;
+        width: 160px;
+    }
+    .strip {
+        font-size: 1.2em;
+    }
+}
