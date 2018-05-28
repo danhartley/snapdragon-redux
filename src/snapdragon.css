@@ -394,3 +394,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .blocks button {
   margin: 2em 0 0 0;
 }
+
+.modal-title {
+  color: rgb(50,50,50);
+}

@@ -88,4 +88,13 @@
     .strip {
         font-size: 1.2em;
     }
+
+    .modal-body img {
+        width: 280px;
+        height: 280px;        
+    }
+
+    .modal-content button {
+        width: 50px;
+    }
 }
