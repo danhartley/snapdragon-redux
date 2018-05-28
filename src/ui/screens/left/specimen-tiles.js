@@ -58,7 +58,7 @@ export const renderSpecimenTiles = (collection) => {
         DOM.leftGrid.style.display = 'grid';
         DOM.rightGrid.style.display = 'none';
 
-        document.querySelector('.js-continue-btn').addEventListener('click', () => {
+        document.querySelector('.js-continue-btn button').addEventListener('click', () => {
             DOM.leftGrid.style.display = 'none';
             DOM.rightGrid.style.display = 'grid';
         });
