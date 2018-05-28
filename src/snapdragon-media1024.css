@@ -23,6 +23,20 @@
         height: 580px;
     }
 
+    .species-card-family {
+        text-transform: uppercase; 
+        font-size: 1.3em; 
+        letter-spacing: 2px;
+    }  
+
+    .species-card-name {
+        font-size: 2em;
+    }
+
+    .species-card-names {
+        font-size: 1.6em;
+    }
+      
     .flex-provider {
         display: flex;
         flex-direction: row;

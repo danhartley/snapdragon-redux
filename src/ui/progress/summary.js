@@ -8,7 +8,7 @@ import { renderSnapdragon } from 'ui/screens/right/snapdragon';
 
 export const renderSummaryHeader = (score) => {
     setTimeout(()=>{
-        DOM.headerTxt.innerHTML = 'Summary';
+        DOM.headerTxt.innerHTML = 'Lesson progress';
     });
     DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
 };

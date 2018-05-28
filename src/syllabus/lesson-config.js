@@ -12,28 +12,28 @@ export const config = {
         level: {
             id: 1,
             name: 'Level 1',
-            description: 'Click the species image or name'
+            description: 'Match species'
         },
         levels: [
             {   id: 1,
                 name: 'Level 1',
-                description: 'Click the species image or name'
+                description: 'Match species'
             },
             {   id: 2,
                 name: 'Level 2',
-                description: 'Enter the genus name'
+                description: 'Recall genus name'
             },
             {   id: 3,
                 name: 'Level 3',
-                description: 'Enter the species name'
+                description: 'Recall species name'
             },
             {   id: 4,
                 name: 'Level 4',
-                description: 'Enter the genus and species name'
+                description: 'Recall name'
             },
             {   id: 5,
                 name: 'Level 5',
-                description: 'Piece the name back together'
+                description: 'Name puzzle'
             }
         ]
     },

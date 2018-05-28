@@ -87,27 +87,27 @@ const lesson1 = {
     levels: [
         {   id: 1,
             name: 'Level 1',
-            description: 'Click the species image or name',
+            description: 'Match species',
             layouts: [ layout1, layout2, layout3, layout4 ]
         },
         {   id: 2,
             name: 'Level 2',
-            description: 'Enter the genus name',
+            description: 'Recall genus name',
             layouts: [ layout1, layout5 ]
         },
         {   id: 3,
             name: 'Level 3',
-            description: 'Enter the species name',
+            description: 'Recall species name',
             layouts: [ layout1, layout6 ]
         },
         {   id: 4,
             name: 'Level 4',
-            description: 'Enter the genus and species name',
+            description: 'Recall genus and species',
             layouts: [ layout1, layout7 ]
         },
         {   id: 5,
             name: 'Level 5',
-            description: 'Piece the name back together',
+            description: 'Name puzzle',
             layouts: [ layout8 ]
         }
     ]
