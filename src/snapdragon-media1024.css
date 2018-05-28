@@ -181,4 +181,12 @@
     .flex-provider .skills {
         display: block;
     }
+
+    .modal-content {
+        width: 600px;
+    }
+    .modal-body img {
+        width: 580px;
+        height: 580px;        
+    }
 }

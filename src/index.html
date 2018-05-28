@@ -62,6 +62,26 @@
         <template class="js-specimen-images-template">
             <div class="squares js-tiles"></div>
             <div class="species-card-btn js-continue-btn"><button class="btn btn-light">Continue</button></div>
+
+
+            <!-- Image Modal -->
+            <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title js-modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="js-image-modal" src="" alt="">
+                    </div>                    
+                </div>
+                </div>
+            </div>
+
+
         </template>
         
         <template class="js-tiles-template">

@@ -14,7 +14,6 @@ export const renderTiles = (screen, item, callbackTemplate, config) => {
     const tiles = clone.querySelectorAll('.js-tiles .tile');
 
     tiles.forEach(tile => {
-        
         tile.addEventListener('click', event => {
 
             const img = event.target;
@@ -49,6 +48,19 @@ export const renderTiles = (screen, item, callbackTemplate, config) => {
         });
     });
 
+    const squares = clone.querySelectorAll('.js-tiles .square');
+
+    squares.forEach(square => {
+        square.addEventListener('click', event => {
+            const img = event.target;
+            const src = img.dataset.src;
+            if(src) {
+                document.querySelector('.js-modal-title').innerHTML = item.name;
+                document.querySelector('.js-image-modal').src = src;
+            }
+        })
+    });
+    
     screen.parent.innerHTML = '';
     screen.parent.appendChild(clone);
 }
