@@ -30,6 +30,13 @@
         padding: 1em;
     }
 
+    .tiles {
+        display: grid;
+        grid-template-areas: "tile1 tile2"
+                             "tile3 tile4"
+                             "tile5 tile6";
+      }      
+
     .tile {
         width: 160px;
         height: 152px;
