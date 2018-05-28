@@ -49,7 +49,7 @@ a:hover {
 
  .left-grid, .right-grid {
   display: grid;
-  grid-template-rows: 56px 456px 56px;
+  grid-template-rows: 46px 456px 46px;
   background-color: rgb(50, 50, 50);
   grid-template-areas: "header"
                       "squares"
@@ -225,9 +225,7 @@ a:hover {
 }
 
 .summary button {
-  /* width: 120px; */
   margin: 0 0 1em 0px;
-  /* font-size: 1em; */
 }
 
 .summary div {

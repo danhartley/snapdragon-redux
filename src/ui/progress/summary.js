@@ -10,10 +10,7 @@ export const renderSummaryHeader = (score) => {
     setTimeout(()=>{
         DOM.headerTxt.innerHTML = 'Summary';
     });
-        // score.correct === 1 
-        //     ? `You got ${score.correct} question right out of ${score.total}`
-        //     : `You got ${score.correct} questions right out of ${score.total}`;
-        DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
+    DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
 };
 
 export const renderSummary = (index) => {
