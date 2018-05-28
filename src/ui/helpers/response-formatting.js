@@ -60,8 +60,8 @@ export const renderAnswerText = (response, isSmallDevice) => {
 
     if(isSmallDevice) {
         return correct
-        ? `${renderAnswer(response)} is correct!`
-        : `No! ${renderAnswer(response)}.`
+        ? `${renderAnswer(response)}`
+        : `${renderAnswer(response)}`
     } else {
         return correct
         ? `${renderAnswer(response)} is the correct answer.`

@@ -281,12 +281,6 @@ a {
   color: #ffffff;
 }
 
-.tiles {
-  display: grid;
-  grid-template-areas: "tile1 tile2 tile3"
-                       "tile4 tile5 tile6"
-                       "tile7 tile8 tile9";
-}
 .tile img {
   object-fit: cover;
   cursor: pointer;
