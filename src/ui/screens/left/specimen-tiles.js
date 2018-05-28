@@ -49,17 +49,22 @@ export const renderSpecimenTiles = (collection) => {
         renderTiles(screen, item, callback, config);
         if(index === 8)
             DOM.moreSpecimensBtn.style.display = 'none';
+        attachContinueEventHandler();
     });
 
-    if(config.isSmallDevice) {
+    const attachContinueEventHandler = () => {
+        if(config.isSmallDevice) {
 
-        DOM.leftGrid.style.display = 'grid';
-        DOM.rightGrid.style.display = 'none';
+            DOM.leftGrid.style.display = 'grid';
+            DOM.rightGrid.style.display = 'none';
+    
+            document.querySelector('.js-continue-btn button').addEventListener('click', () => {
+                DOM.leftGrid.style.display = 'none';
+                DOM.rightGrid.style.display = 'grid';
+            });
+        }
+    };
 
-        document.querySelector('.js-continue-btn button').addEventListener('click', () => {
-            DOM.leftGrid.style.display = 'none';
-            DOM.rightGrid.style.display = 'grid';
-        });
-    }
+    attachContinueEventHandler();
 
 };

@@ -318,6 +318,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   margin: .4em;
 }
 
+.clear-lesson button {
+  float: left;
+}
+
 .collections div {
   padding: .2em;
 }

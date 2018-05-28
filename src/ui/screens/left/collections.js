@@ -11,7 +11,7 @@ export const renderCollections = () => {
     DOM.moreSpecimensBtn.style.display = 'none';
     DOM.collectionTxt.innerHTML = 'Snapdragon Collections';
 
-    let { collections, collection, config } = store.getState();
+    let { collections, collection, config, index } = store.getState();
 
     const template = document.querySelector('.js-collections-template');
 
@@ -30,7 +30,7 @@ export const renderCollections = () => {
     var expanded = Stamp.expand(clone, data);
     Stamp.appendChildren(DOM.leftBody, expanded);
 
-    const startLearningBtn = document.querySelector('.js-start-learning');
+    const startLearningBtn = document.querySelector('.js-continue-lesson');
     const stateClearBtn = document.querySelector('.js-state-clear');
 
     startLearningBtn.style.display = collection.id !== '' ? 'inline-block' : 'none';
@@ -81,7 +81,8 @@ export const renderCollections = () => {
     });
 
     startLearningBtn.addEventListener('click', event => {
-        actions.boundUpdateConfig(config);
+        // actions.boundUpdateConfig(config);
+        actions.boundNextRound(index);
     });
 
     stateClearBtn.addEventListener('click', () => {
