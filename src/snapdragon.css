@@ -330,12 +330,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: white;
   background-color: rgb(73, 73, 73);
 }
-/* 
-.dropdown .collection button, .dropdown button, .btn.btn-light {
-
-  font-size: 1em;
-} */
-
 
 .frame {
   display: grid;

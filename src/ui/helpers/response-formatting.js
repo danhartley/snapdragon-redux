@@ -60,7 +60,7 @@ export const renderAnswerText = (response, isSmallDevice) => {
 
     if(isSmallDevice) {
         return correct
-        ? `${renderAnswer(response)}`
+        ? `${renderAnswer(response)}    `
         : `${renderAnswer(response)}`
     } else {
         return correct
@@ -70,6 +70,8 @@ export const renderAnswerText = (response, isSmallDevice) => {
 };
 
 export const renderAnswerHeader = (response, isSmallDevice = true) => {
+
+    response.answer = response.answer.trim();
 
     const correct = renderCorrect(response);
 
