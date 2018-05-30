@@ -41,12 +41,6 @@ export const renderCard = (collection) => {
     // vernacularNames.innerHTML = `<ul>${listNames}</ul>`;
     vernacularNames.innerHTML = names[0].vernacularName;
 
-    const eolPage = template.content.querySelector('.js-species-card-eol-link');
-    
-    eolPage.setAttribute('href', `http://eol.org/pages/${item.id}/overview`);
-    eolPage.setAttribute('target', '_blank');
-    eolPage.setAttribute('style', 'text-decoration: none');
-    
     const clone = document.importNode(template.content, true);
 
     clone.querySelector('button').addEventListener('click', event => {
@@ -58,6 +52,21 @@ export const renderCard = (collection) => {
     
     screen.parent.innerHTML = '';
     screen.parent.appendChild(clone);
+
+    document.querySelector('.js-species-card-eol-link').addEventListener('click', event => {
+        document.querySelector('.js-external-page-title').innerHTML = `EOL ${item.name}`;
+        document.querySelector('.js-external-page-body').innerHTML = 
+            `<iframe width="100%" height="100%" frameborder="0" src="http://eol.org/pages/${item.id}/overview"></iframe>`;
+    });
+
+    setTimeout(()=>{
+        const wikiLink = document.querySelector('.js-species-card-wiki span');
+        wikiLink.addEventListener('click', event => {
+            document.querySelector('.js-external-page-title').innerHTML = `Wikipedia ${item.name}`;
+            document.querySelector('.js-external-page-body').innerHTML = 
+                `<iframe width="100%" height="100%" frameborder="0" src="${wikiLink.dataset.src}"></iframe>`;
+        });
+    },1000);    
 
     const wiki = document.querySelector('.js-species-card-wiki');
 

@@ -43,19 +43,24 @@ const cleanEntry = str => {
     return cleaned;
 };
 
+const wikiLink = entry => {
+    //return `<li class="species-card-wiki-page"><a target="_blank" href="${cleanEntry(entry)}" class="underline-link">Wikipedia page</a></li>`;
+    return `<li class="species-card-wiki-page"><span data-toggle="modal" data-target="#externalPageModal" data-src="${cleanEntry(entry)}" class="underline-link">Wikipedia page</span></li>`;    
+};
+
 const formatWiki = (entry) => {
     let html = '';
     if(entry.length === 1) {
-        html += `<li class="species-card-wiki-page"><a target="_blank" href="${cleanEntry(entry[0])}" class="underline-link">Wikipedia page</a></li>`;
+        html += wikiLink(entry[0]);
     }
     if(entry[1]) html += `<li class="species-card-wiki-entry"><p>${cleanEntry(entry[1])}</p></li>`;
     if(entry[2])
         if(entry[2].indexOf('https')!== -1)
-        html += `<li class="species-card-wiki-page"><a target="_blank" href="${cleanEntry(entry[2])}" class="underline-link">Wikipedia page</a></li>`;
+        html += wikiLink(entry[2]);
         else html += `<li class="species-card-wiki-entry"><p>${entry[2]}</p></li>`;
     if(entry[3]) 
         if(entry[3].indexOf('https')!== -1)
-        html += `<li class="species-card-wiki-page"><a target="_blank" href="${cleanEntry(entry[3])}" class="underline-link">Wikipedia page</a></li>`;
+        html += wikiLink(entry[3]);
         else html += `<li class="species-card-wiki-entry"><p>${entry[3]}</p></li>`;
     return html;
 };
