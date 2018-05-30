@@ -94,6 +94,7 @@
 
   iframe {
     width: 960px;
+    max-width: 960px;
     border: 0;
     height: 100%;
   }

@@ -107,14 +107,15 @@
 
     iframe {
         width: 270px;
+        max-width: 270px;
         border: 0;
         height: 100%;
     }
-/* 
+
     .modal-dialog, .modal-content {
-        width: 270px;
-        max-width: 270px;
-    } */
+        width: 300px;
+        max-width: 300px;
+    }
 
     .modal-body img {
         width: 272px;

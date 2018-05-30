@@ -183,6 +183,7 @@
 
     iframe {
         width: 560px;
+        max-width: 560px;
         border: 0;
         height: 100%;
     }    
@@ -191,7 +192,7 @@
         width: 600px;
         max-width: 600px;
     }
-    
+
     .modal-body img {
         width: 568px;
         height: 568px;
