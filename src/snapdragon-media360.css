@@ -105,10 +105,12 @@
         font-size: 1.2em;
     }
 
-    .modal-dialog {
-        padding: 0;
+    iframe {
+        width: 270px;
+        border: 0;
+        height: 100%;
     }
-
+    
     .modal-body img {
         width: 272px;
         height: 272px;        

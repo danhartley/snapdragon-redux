@@ -181,7 +181,13 @@
         display: block;
     }
 
-    .modal-content {
+    iframe {
+        width: 560px;
+        border: 0;
+        height: 100%;
+    }    
+
+    .modal-dialog, .modal-content {
         width: 600px;
     }
     .modal-body img {
