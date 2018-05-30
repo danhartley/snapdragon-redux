@@ -49,9 +49,9 @@ export const collections = [
     {
         id: 6,
         type: 'species',
-        name: 'common mediterranean fauna',
+        name: 'common mediterranean flora',
         items: mediterranean,
-        eol_name: 'Common Mediterranean Fauna',
+        eol_name: 'Common Mediterranean Flora',
         eol_link: 'https://eol.org/collections/139572'
     },
     {
