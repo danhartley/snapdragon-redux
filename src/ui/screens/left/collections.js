@@ -36,9 +36,9 @@ export const renderCollections = () => {
     startLearningBtn.style.display = collection.id !== '' ? 'inline-block' : 'none';
     stateClearBtn.style.display = collection.id !== '' ? 'inline-block' : 'none';
 
-    const speciesCollectionBtns = document.querySelectorAll('.js-species-collection .dropdown-menu button');
+    const speciesCollectionLinks = document.querySelectorAll('.js-species-collection .dropdown-menu button, .js-species-collection .dropdown-menu span');
 
-    speciesCollectionBtns.forEach(btn => btn.addEventListener('click', event => {
+    speciesCollectionLinks.forEach(btn => btn.addEventListener('click', event => {
         const collectionId = parseInt(event.target.id);
         actions.boundChangeCollection({ ...config, ...{ collection: { id: collectionId }} });
     }));
