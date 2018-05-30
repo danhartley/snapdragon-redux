@@ -56,7 +56,7 @@ export const renderCard = (collection) => {
     document.querySelector('.js-species-card-eol-link').addEventListener('click', event => {
         document.querySelector('.js-external-page-title').innerHTML = `EOL ${item.name}`;
         document.querySelector('.js-external-page-body').innerHTML = 
-            `<iframe width="100%" height="100%" frameborder="0" src="http://eol.org/pages/${item.id}/overview"></iframe>`;
+            `<iframe width="100%" height="100%" frameborder="0" src="http://eol.org/pages/${item.id}/overview"><script>document.write()</script></iframe>`;
     });
 
     setTimeout(()=>{
