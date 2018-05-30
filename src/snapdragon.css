@@ -27,6 +27,7 @@ a:hover {
   border-left: none;
   border-right: none;
   color: white;
+  cursor: pointer;
 }
 
 /* home page */

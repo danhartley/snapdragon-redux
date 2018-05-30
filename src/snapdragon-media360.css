@@ -25,6 +25,14 @@
         width: 100%;
     }
 
+    .dropdown-menu.show {
+        width: 98%;
+    }
+
+    .collections div {
+        padding: .5em .2em;
+    }
+
     .collection-preview, .collection button {
         display: none;
     }

@@ -91,4 +91,8 @@
     font-size: 2em;
     border-radius: .2em;
   }
+  
+  .modal-dialog, .modal-content {
+    width: 1200px;
+  }
 }
