@@ -105,10 +105,6 @@
         font-size: 1.2em;
     }
 
-    .modal-dialog {
-        padding: 0;
-    }
-
     .modal-body img {
         width: 272px;
         height: 272px;        
