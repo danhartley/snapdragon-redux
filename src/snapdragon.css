@@ -237,7 +237,7 @@ a:hover {
   display: grid;
 }
 
-.species-card-eol-link {
+.species-card-eol-link, .species-card-wiki-page {
   font-size: .8em;
 }
 

@@ -7,7 +7,11 @@
         background-color: #323232;
     }
     
-    .flex-provider.eol, .flex-provider.wiki, .flex-provider.gbif, .flex-provider.skills, .species-card-wiki {
+    .species-card-wiki {
+        display: block;
+    }
+
+    .flex-provider.eol, .flex-provider.wiki, .flex-provider.gbif, .flex-provider.skills, .species-card-wiki-entry {
         display: none;
     }
 
@@ -23,6 +27,14 @@
 
     .collection button {
         width: 80px;
+    }
+
+    .collection-preview {
+        display: none;
+    }
+
+    .collection span, .collection button {
+        font-size: .7em;
     }
 
     .dropdown-item {

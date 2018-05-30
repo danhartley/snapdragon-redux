@@ -63,8 +63,6 @@
             <div class="squares js-tiles"></div>
             <div class="species-card-btn js-continue-btn"><button class="btn btn-light">Continue</button></div>
 
-
-            <!-- Image Modal -->
             <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -80,7 +78,6 @@
                 </div>
                 </div>
             </div>
-
 
         </template>
         
@@ -224,7 +221,7 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-collection="{{ species }}">
                             <div class="collection js-collection">
-                                <button class="btn btn-light" id="{{ collection.id }}">Learn</button> <a class="underline-link" target="_blank" href="{{ collection.eol_link }}">Preview</a> <span>{{ collection.eol_name }} ({{ collection.items.length }})</span>
+                                <button class="btn btn-light" id="{{ collection.id }}">Learn</button> <a class="underline-link collection-preview" target="_blank" href="{{ collection.eol_link }}">Preview</a> <span>{{ collection.eol_name }} ({{ collection.items.length }})</span>
                             </div>
                         </div>                            
                     </div>                        
