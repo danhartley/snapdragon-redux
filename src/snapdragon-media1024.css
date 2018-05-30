@@ -189,7 +189,9 @@
 
     .modal-dialog, .modal-content {
         width: 600px;
+        max-width: 600px;
     }
+    
     .modal-body img {
         width: 568px;
         height: 568px;
