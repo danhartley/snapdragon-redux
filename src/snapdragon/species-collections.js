@@ -35,7 +35,7 @@ export const collections = [
         type: 'species',
         name: 'uk wildfowers',
         items: wilduk,
-        eol_name: 'British Woodland Flowers',
+        eol_name: 'UK Woodland Flowers',
         eol_link: 'https://eol.org/collections/139458'
     },
     {
@@ -49,9 +49,9 @@ export const collections = [
     {
         id: 6,
         type: 'species',
-        name: 'common mediterranean flora',
+        name: 'mediterranean flora',
         items: mediterranean,
-        eol_name: 'Common Mediterranean Flora',
+        eol_name: 'Mediterranean Flora',
         eol_link: 'https://eol.org/collections/139572'
     },
     {

@@ -29,6 +29,14 @@
         width: 80px;
     }
 
+    .collection-preview {
+        display: none;
+    }
+
+    .collection span, .collection button {
+        font-size: .7em;
+    }
+
     .dropdown-item {
         padding: .25rem .5rem;
     }
