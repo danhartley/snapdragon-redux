@@ -119,8 +119,9 @@
         max-width: 300px;
     }
 
-    .modal-body {
+    .modal-content, .modal-body {
         padding: 0;
+        margin: 0;
     }
 
     .modal-body img {
