@@ -45,7 +45,8 @@ const cleanEntry = str => {
 
 const wikiLink = entry => {
     //return `<li class="species-card-wiki-page"><a target="_blank" href="${cleanEntry(entry)}" class="underline-link">Wikipedia page</a></li>`;
-    return `<li class="species-card-wiki-page"><span data-toggle="modal" data-target="#externalPageModal" data-src="${cleanEntry(entry)}" class="underline-link">Wikipedia page</span></li>`;    
+    const src = cleanEntry(entry).replace('.wikipedia', '.m.wikipedia');
+    return `<li class="species-card-wiki-page"><span data-toggle="modal" data-target="#externalPageModal" data-src="${src}" class="underline-link">Wikipedia page</span></li>`;    
 };
 
 const formatWiki = (entry) => {
@@ -66,7 +67,7 @@ const formatWiki = (entry) => {
 };
 
 async function renderWiki(wikiNode, binomial, language) {
-    root = `https://${language}.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&limit=1&search=`;
+    root = `https://${language}.m.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&limit=1&search=`;
     wikiNode.innerHTML = "";
 
     const entry = await fetchWiki(binomial);

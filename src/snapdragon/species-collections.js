@@ -60,7 +60,7 @@ export const collections = [
         name: 'leaf morphology - structure',
         items: leaf[0].structure,
         wiki_name: 'Leaf morphology - structure',
-        wiki_link: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology'
+        wiki_link: 'https://en.m.wikipedia.org/wiki/Glossary_of_leaf_morphology'
     },
     {
         id: 12,
@@ -68,6 +68,6 @@ export const collections = [
         name: 'leaf morphology - shape',
         items: leaf[0].shape,
         wiki_name: 'Leaf morphology - shape',
-        wiki_link: 'https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology'
+        wiki_link: 'https://en.m.wikipedia.org/wiki/Glossary_of_leaf_morphology'
     }
 ];
