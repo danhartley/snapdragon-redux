@@ -105,15 +105,22 @@
         font-size: 1.2em;
     }
 
-    iframe, .mediawiki {
-        width: 270px;
-        max-width: 270px;
+    iframe  {
+        width: 298px;
+        max-width: 298px;
+        min-width: 298px;
         border: 0;
+        margin: 0;
+        padding: 0;
     }
 
     .modal-dialog, .modal-content {
         width: 300px;
         max-width: 300px;
+    }
+
+    .modal-body {
+        padding: 0;
     }
 
     .modal-body img {
