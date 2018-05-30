@@ -25,16 +25,12 @@
         width: 100%;
     }
 
-    .collection button {
-        width: 80px;
-    }
-
-    .collection-preview {
+    .collection-preview, .collection button {
         display: none;
     }
 
-    .collection span, .collection button {
-        font-size: .7em;
+    .collection span {
+        cursor: pointer;
     }
 
     .dropdown-item {
