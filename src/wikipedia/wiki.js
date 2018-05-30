@@ -46,17 +46,17 @@ const cleanEntry = str => {
 const formatWiki = (entry) => {
     let html = '';
     if(entry.length === 1) {
-        html += `<li><a target="_blank" href="${cleanEntry(entry[0])}" class="underline-link">Wikipedia page</a></li>`;
+        html += `<li class="species-card-wiki-page"><a target="_blank" href="${cleanEntry(entry[0])}" class="underline-link">Wikipedia page</a></li>`;
     }
-    if(entry[1]) html += `<li><p>${cleanEntry(entry[1])}</p></li>`;
+    if(entry[1]) html += `<li class="species-card-wiki-entry"><p>${cleanEntry(entry[1])}</p></li>`;
     if(entry[2])
         if(entry[2].indexOf('https')!== -1)
-        html += `<li><a target="_blank" href="${cleanEntry(entry[2])}" class="underline-link">Wikipedia page</a></li>`;
-        else html += `<li><p>${entry[2]}</p></li>`;
+        html += `<li class="species-card-wiki-page"><a target="_blank" href="${cleanEntry(entry[2])}" class="underline-link">Wikipedia page</a></li>`;
+        else html += `<li class="species-card-wiki-entry"><p>${entry[2]}</p></li>`;
     if(entry[3]) 
         if(entry[3].indexOf('https')!== -1)
-        html += `<li><a target="_blank" href="${cleanEntry(entry[3])}" class="underline-link">Wikipedia page</a></li>`;
-        else html += `<li><p>${entry[3]}</p></li>`;
+        html += `<li class="species-card-wiki-page"><a target="_blank" href="${cleanEntry(entry[3])}" class="underline-link">Wikipedia page</a></li>`;
+        else html += `<li class="species-card-wiki-entry"><p>${entry[3]}</p></li>`;
     return html;
 };
 

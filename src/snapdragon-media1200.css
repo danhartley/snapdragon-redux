@@ -11,7 +11,7 @@
 
   .left-grid, .right-grid {
       grid-template-columns: 600px;
-      grid-template-rows: 70px 580px 70px;
+      grid-template-rows: 70px 600px 70px;
   }
 
   .collections div {
@@ -24,10 +24,10 @@
 
   .squares {
       grid-template-columns: 300px 300px;
-      grid-template-rows: 290px;
+      grid-template-rows: 300px;
   }
   .squares img {
-      height: 290px;
+      height: 300px;
       width: 300px;
   }
 
@@ -47,7 +47,7 @@
   }
 
   .letterbox {
-    grid-template-rows: 236px 140px 236px;
+    grid-template-rows: 230px 140px 230px;
   }
 
   .letterbox div:nth-child(2) {
