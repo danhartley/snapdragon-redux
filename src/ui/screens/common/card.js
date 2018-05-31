@@ -69,9 +69,27 @@ export const renderCard = (collection) => {
         const wikiLink = document.querySelector('.js-species-card-wiki span');
         wikiLink.addEventListener('click', event => {
             document.querySelector('.js-external-page-title').innerHTML = `Wikipedia ${item.name}`;
-            const entry = document.querySelector('.species-card-wiki-entry');
+
+            const entry = document.querySelector('.species-card-wiki-entry').innerText;
+            const style = `
+                <style type='text/css'>
+                body {
+                    font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;   
+                }
+                a {
+                    text-decoration: none;
+                    border: solid 1px;
+                    border-top: none;
+                    border-left: none;
+                    border-right: none;
+                    color: black;
+                    cursor: pointer;
+                }
+            </style>`;
+            const wiki = `<header>${style}</header><p>${entry}</p><p><a href='https://en.wikipedia.org/wiki/Salvia_officinalis' target='_blank'>Wikipedia page</a></p>`;
+
             document.querySelector('.js-external-page-body').innerHTML = config.isSmallDevice
-                ? `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" srcdoc="${entry.innerHTML}"></iframe>`             
+                ? `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="data:text/html,${wiki}"></iframe>`          
                 : `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="${wikiLink.dataset.src}"></iframe>`;
                 
             document.querySelector('#externalPageModal').focus();

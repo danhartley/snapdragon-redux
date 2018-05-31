@@ -118,7 +118,9 @@
         width: 1px;
         min-width: 298px;
         max-width: 298px;
-        min-height: 100px;
+        min-height: 10px;
+        padding: 10px 0px 10px 10px;
+        height: 200px;
     }
 
     .modal-content {
