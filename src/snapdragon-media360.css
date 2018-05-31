@@ -114,7 +114,7 @@
         padding: 0;
         border: none;
         resize: both;
-        overflow: auto;
+        overflow-y: scroll;
         width: 1px;
         min-width: 298px;
         max-width: 298px;
