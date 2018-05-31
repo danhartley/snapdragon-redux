@@ -69,8 +69,12 @@ export const renderCard = (collection) => {
         const wikiLink = document.querySelector('.js-species-card-wiki span');
         wikiLink.addEventListener('click', event => {
             document.querySelector('.js-external-page-title').innerHTML = `Wikipedia ${item.name}`;
-            document.querySelector('.js-external-page-body').innerHTML = 
-                `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="${wikiLink.dataset.src}"></iframe>`;
+            const entry = document.querySelector('.species-card-wiki-entry');
+            document.querySelector('.js-external-page-body').innerHTML = config.isSmallDevice
+                ? `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" srcdoc="${entry.innerHTML}"></iframe>`             
+                : `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="${wikiLink.dataset.src}"></iframe>`;
+                
+            document.querySelector('#externalPageModal').focus();
         });
     },1000);    
 
