@@ -70,7 +70,7 @@ export const renderCard = (collection) => {
         wikiLink.addEventListener('click', event => {
             document.querySelector('.js-external-page-title').innerHTML = `Wikipedia ${item.name}`;
             document.querySelector('.js-external-page-body').innerHTML = 
-                `<iframe src="${wikiLink.dataset.src}"></iframe>`;
+                `<iframe class="modal-iframe" src="${wikiLink.dataset.src}"></iframe>`;
         });
     },1000);    
 
