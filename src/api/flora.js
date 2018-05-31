@@ -5936,6 +5936,12 @@ export const herbs =
   {
     "id": 584995,
     "name": "Anethum graveolens L.",
+    "searchTerms": [
+      {
+        "language": "en",
+        "searchTerm": "Dill"
+      }
+    ],
     "images": [
       "https://media.eol.org/content/2013/04/02/02/98816_orig.jpg",
       "https://media.eol.org/content/2013/04/02/02/14813_orig.jpg",

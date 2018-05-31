@@ -64,11 +64,15 @@ const formatWiki = (entry) => {
     return html;
 };
 
-async function renderWiki(wikiNode, binomial, language) {
+async function renderWiki(wikiNode, item, language) {
+    const binomial = item.name;
+    const searchTerm = item.searchTerms 
+                            ? item.searchTerms.filter(term => term.language === language)[0].searchTerm 
+                            : binomial;
     root = `https://${language}.m.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&limit=1&search=`;
     wikiNode.innerHTML = "";
 
-    const entry = await fetchWiki(binomial);
+    const entry = await fetchWiki(searchTerm);
 
     if(entry[2]) {
         wikiNode.innerHTML = formatWiki(entry.slice(1));

@@ -42,7 +42,7 @@ export const renderTiles = (screen, item, callbackTemplate, config) => {
             setTimeout(()=>{
                 const response = { taxon: 'name', binomial: item.name, question: item.name, answer: answer, success: correct };
                 actions.boundUpdateScore(response);
-            }, 2500);
+            }, 1000);
             
             event.stopPropagation();
         });

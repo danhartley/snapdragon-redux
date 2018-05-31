@@ -98,7 +98,7 @@ export const renderCard = (collection) => {
 
     const wiki = document.querySelector('.js-species-card-wiki');
 
-    renderWiki(wiki, item.name, config.language);
+    renderWiki(wiki, item, config.language);
 
     const gbif = document.querySelector('.js-card .js-txt-family span');
 
