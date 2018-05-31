@@ -56,8 +56,7 @@ const formatWiki = (entry) => {
     }
     if(entry[1]) html += `<li class="species-card-wiki-entry"><p>${cleanEntry(entry[1])}</p></li>`;
     if(entry[2])
-        if(entry[2].indexOf('https')!== -1)
-        html += wikiLink(entry[2]);
+        if(entry[2].indexOf('https')!== -1) html += wikiLink(entry[2]);
         else html += `<li class="species-card-wiki-entry"><p>${entry[2]}</p></li>`;
     if(entry[3]) 
         if(entry[3].indexOf('https')!== -1)
