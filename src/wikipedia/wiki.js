@@ -44,7 +44,6 @@ const cleanEntry = str => {
 };
 
 const wikiLink = entry => {
-    //return `<li class="species-card-wiki-page"><a target="_blank" href="${cleanEntry(entry)}" class="underline-link">Wikipedia page</a></li>`;
     const src = cleanEntry(entry).replace('.wikipedia', '.m.wikipedia');
     return `<li class="species-card-wiki-page"><span data-toggle="modal" data-target="#externalPageModal" data-src="${src}" class="underline-link">Wikipedia page</span></li>`;    
 };
