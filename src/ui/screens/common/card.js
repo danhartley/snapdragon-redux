@@ -13,7 +13,7 @@ export const renderCard = (collection) => {
     
     const item = collection.items[collection.itemIndex];
 
-    const { layout, config } = store.getState();
+    const { layout, config, index } = store.getState();
 
     DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
     DOM.headerTxt.innerHTML = ``;
@@ -67,33 +67,35 @@ export const renderCard = (collection) => {
 
     setTimeout(()=>{
         const wikiLink = document.querySelector('.js-species-card-wiki span');
-        wikiLink.addEventListener('click', event => {
-            document.querySelector('.js-external-page-title').innerHTML = `Wikipedia ${item.name}`;
+        if(wikiLink) {
+            wikiLink.addEventListener('click', event => {
+                document.querySelector('.js-external-page-title').innerHTML = `${item.name}`;
 
-            const entry = document.querySelector('.species-card-wiki-entry').innerText;
-            const style = `
-                <style type='text/css'>
-                body {
-                    font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;   
-                }
-                a {
-                    text-decoration: none;
-                    border: solid 1px;
-                    border-top: none;
-                    border-left: none;
-                    border-right: none;
-                    color: black;
-                    cursor: pointer;
-                }
-            </style>`;
-            const wiki = `<header>${style}</header><p>${entry}</p><p><a href='https://en.wikipedia.org/wiki/Salvia_officinalis' target='_blank'>Wikipedia page</a></p>`;
+                const entry = document.querySelector('.species-card-wiki-entry').innerText;
+                const style = `
+                    <style type='text/css'>
+                    body {
+                        font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;   
+                    }
+                    a {
+                        text-decoration: none;
+                        border: solid 1px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        color: black;
+                        cursor: pointer;
+                    }
+                </style>`;
+                const wiki = `<header>${style}</header><p>${entry}</p><p><a href='https://en.wikipedia.org/wiki/Salvia_officinalis' target='_blank'>Wikipedia page</a></p>`;
 
-            document.querySelector('.js-external-page-body').innerHTML = config.isSmallDevice
-                ? `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="data:text/html,${wiki}"></iframe>`          
-                : `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="${wikiLink.dataset.src}"></iframe>`;
-                
-            document.querySelector('#externalPageModal').focus();
-        });
+                document.querySelector('.js-external-page-body').innerHTML = config.isSmallDevice
+                    ? `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="data:text/html,${wiki}"></iframe>`          
+                    : `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="${wikiLink.dataset.src}"></iframe>`;
+                    
+                document.querySelector('#externalPageModal').focus();
+            });
+        }
     },1000);    
 
     const wiki = document.querySelector('.js-species-card-wiki');
@@ -103,6 +105,9 @@ export const renderCard = (collection) => {
     const gbif = document.querySelector('.js-card .js-txt-family span');
 
     renderFamily(gbif, item.name);
+
+    const next = document.querySelector('.js-species-card-btn button');
+    next.innerText = (index + 1) === collection.moduleSize ? 'Species tests' : 'Next species';
     
     // small screens
 

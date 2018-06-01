@@ -50,7 +50,7 @@ export const leaf = [
                 refers: 'entire leaf'
             },{
                 id: 2,
-                image: 'https://upload.wikimedia.org/wikipedia/commo    ns/7/72/Leaf_morphology_acuminate.png',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Leaf_morphology_acuminate.png',
                 thumb: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Leaf_morphology_acuminate.png/64px-Leaf_morphology_acuminate.png',
                 author: 'Maksim CC BY-SA 3.0',
                 attribution: 'https://commons.wikimedia.org/w/index.php?curid=6531351',

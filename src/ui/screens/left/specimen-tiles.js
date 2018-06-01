@@ -52,8 +52,12 @@ export const renderSpecimenTiles = (collection) => {
         item.content = images.slice(index,index + 4);
         index = index + 4;
         renderTiles(screen, item, callback, config);
-        if(index === 8)
-            DOM.moreSpecimensBtn.style.display = 'none';
+        if(index === 8) {
+            DOM.moreSpecimensBtn.innerText = 'Last 4 images';    
+            index = 0;
+        } else {
+            DOM.moreSpecimensBtn.innerText = 'Next 4 images';
+        }
         addContinueEventHandler();
     });
 

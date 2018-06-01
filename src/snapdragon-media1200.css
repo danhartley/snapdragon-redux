@@ -1,53 +1,11 @@
 @media (min-width: 1200px) {
 
-  body {
-    background-color: rgb(73, 73, 73);
-    margin-top: 0px;
-  }
-
-  .grid {
-    grid-template-columns: 4fr 10fr 1fr 10fr 4fr;
-  }
-
-  .left-grid, .right-grid {
-      grid-template-columns: 600px;
-      grid-template-rows: 70px 600px 70px;
-  }
-
   .collections div {
     padding: .4em .2em;
   }
 
   .collection span:nth-of-type(1) {
     width: 310px;
-  }
-
-  .squares {
-      grid-template-columns: 300px 300px;
-      grid-template-rows: 300px;
-  }
-  .squares img {
-      height: 300px;
-      width: 300px;
-  }
-
-  .answer {
-    height: 180px;
-  }
-  .answer button {
-    width: 240px;
-  }
-
-  .rectangles {
-    grid-template-rows: 200px;
-  }
-
-  .strips {
-    grid-template-rows: repeat(6,100px);
-  }
-
-  .letterbox {
-    grid-template-rows: 230px 140px 230px;
   }
 
   .letterbox div:nth-child(2) {
@@ -64,20 +22,6 @@
   
   .letterbox button {
     width: 100px;
-  }
-
-  .tiles {
-    height: 600px;
-    width: 600px;
-  }
-
-  .tile {
-    width: 200px;
-  }
-
-  .tile img {
-    height: 200px;
-    width: 200px;
   }
 
   .flex.wiki {
@@ -98,9 +42,21 @@
     border: 0;
     height: 100%;
   }
-
-  .modal-dialog, .modal-content {
-    width: 1000px;
+  
+  #externalPageModal .modal-dialog {
     max-width: 1000px;
   }
+
+  #externalPageModal .modal-content {
+    height: 600px;
+  }
+
+  #externalPageModal .modal-body {
+    height: 550px;
+  }
+
+  #imageModal .modal-dialog {
+    max-width: 580px;
+  }
+  
 }

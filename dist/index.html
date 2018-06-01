@@ -3,7 +3,7 @@
     <head>
         <title>Species recognition and recall</title>
         <meta http-equiv="content-type" content="text/html;charset=utf-8">
-        <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
         <meta name="description" content="Recognise species and learn their common and scientific names with lessons">
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
@@ -47,8 +47,8 @@
                     </div>
                     <div class="left-body js-left-body"></div>
                     <div class="footer js-left-footer">
+                        <button class="btn btn-light btn-more-specimens js-btn-more-specimens">Next 4 images</button>
                         <span class="score-footer-alert js-state-change-alert"></span>
-                        <button class="btn btn-light btn-more-specimens js-btn-more-specimens" style="display: none;">Show 4 more</button>
                     </div>
             </div>
             <div class="right-grid js-right-grid">
@@ -61,7 +61,7 @@
         </div>
         <template class="js-specimen-images-template">
             <div class="squares js-tiles"></div>
-            <div class="species-card-btn js-continue-btn"><button class="btn btn-light">Continue</button></div>
+            <div class="specimens-card-btn js-continue-btn"><button class="btn btn-light">Continue</button></div>
 
             <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -85,9 +85,9 @@
             <div class="tiles js-tiles"></div>
         </template>
         
-        <template class="js-cards-template">
+        <!-- <template class="js-cards-template">
             <div class="rectangles js-rptr-rectangles"></div>
-        </template>
+        </template> -->
         
         <template class="js-strips-template">
             <div class="strips js-rptr-strips"></div>
@@ -188,7 +188,7 @@
                         <div class="species-card-wiki js-species-card-wiki"></div>
                         <div><a class="species-card-eol-link js-species-card-eol-link underline-link">EOL page</a></div>
                         <!-- <div><span class="species-card-eol-link js-species-card-eol-link underline-link" data-toggle="modal" data-target="#externalPageModal">EOL page</span></div> -->
-                        <div class="species-card-btn"><button class="btn btn-light">Continue</button></div>
+                        <div class="species-card-btn js-species-card-btn"><button class="btn btn-light">Next species</button></div>
                     </div>
                 </div>
 
@@ -214,7 +214,7 @@
                 <div class="species-card-family js-txt-family"><span></span></div>
                 <div class="species-card-name js-txt-species"></div>
                 <div class="species-card-names js-txt-species-names">names</div>
-                <div class="species-card-btn"><button class="btn btn-light" style="display:none;">Continue</button></div>
+                <div class="species-card-btn js-species-card-btn"><button class="btn btn-light">Next species</button></div>
             </div>
         </template>
         
@@ -223,7 +223,7 @@
                     <div class="species-card-family js-txt-family"><span></span></div>
                     <div class="species-card-name js-txt-species"></div>
                     <div class="species-card-names js-txt-species-names" style="display:none;">names</div>
-                    <div class="species-card-btn"><button class="btn btn-light" style="display:none;">Continue</button></div>
+                    <div class="species-card-btn js-species-card-btn"><button class="btn btn-light">Next species</button></div>
                 </div>
         </template>
         

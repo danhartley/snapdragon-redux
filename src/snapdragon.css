@@ -18,6 +18,20 @@ a:hover {
   text-decoration: none;
 }
 
+ul {
+  margin: 0;
+  padding: 1em;
+  color: rgb(196, 196, 196);
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: #ffffff;
+}
+
 /* generic */
 
 .underline-link {
@@ -43,29 +57,35 @@ a:hover {
 
 /* grids */
 
-.left-grid {
-  grid-column: 2;
+.grid {
+  display: grid;
   grid-auto-flow: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #323232;
 }
 
- .left-grid, .right-grid {
+.left-grid, .right-grid {
   display: grid;
-  grid-template-rows: 46px 456px 46px;
+  height: inherit;
+  grid-template-columns: 100%;
+  grid-column: 1;
+  grid-auto-flow: column;
+  grid-template-rows: 1fr 10fr 1fr;
   background-color: rgb(50, 50, 50);
   grid-template-areas: "header"
                       "squares"
                       "footer"
 }
 
+.right-body {
+  display: grid;
+  grid-auto-flow: row;
+}
+
 .left-body, .rigt-body {
   background-color: rgb(50, 50, 50);
 }
-
-.grid-text-body {
-  padding: 1em;
-}
-
-/* header, footer */
 
 .header, .footer {
   display: flex;
@@ -73,10 +93,18 @@ a:hover {
   padding: 0 0 0 1em;
 }
 
-/* header */
+.footer button {
+  font-size: .8em;
+  margin: 0 1em 0 0;
+}
 
 .header {
   grid-area: header;
+  background-color: rgb(12, 44, 84);
+}
+
+.footer {
+  grid-area: footer;
   background-color: rgb(12, 44, 84);
 }
 
@@ -86,83 +114,58 @@ a:hover {
 
 .answer {
   grid-area: five;
-  padding: 10px;
+  padding: 1em;
   text-transform: capitalize;
   cursor: pointer;
-  height: 80px;
+  height: 8em;
 }
 
 .answer button {
-  width: 98px;
+  width: 10em;
 }
 
-/* footer */
-
-.footer {
-  grid-area: footer;
-  background-color: rgb(12, 44, 84);
-}
-
-.footer button.btn.btn-light, .header button.btn.btn-light {
-  float: right;
-  font-size: .7rem;
-  margin: .4em 1em;
-  padding: .2em;
-}
-
-.rectangles {
+.squares {
   display: grid;
-  grid-auto-flow: column;
+  grid-auto-flow: column;                            
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 95px;
-  grid-template-areas: "one two"
-                       "three four"
-                       "five six"
-}
+  grid-template-rows: 1fr 1fr;
+}    
 
-.rectangle {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 20px 1fr 20px;
-  grid-template-rows: 20px 1fr 0px;
-  grid-template-areas: "one two three"
-                       "four five six"
-                       "seven eight nine";
-}
-
-.rectangles img {
+.squares img {
+  cursor: pointer;
   object-fit: cover;
-  height: 95px;
-  width: 142px;
+  width: 100%;
 }
 
 .strips {
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: repeat(6,76px);
-  padding: 1em 0 0 2em;
+  grid-template-rows: repeat(6,1fr);
+  align-items: center;
+  padding: 0 0 0 2em;
+  background-color: rgb(75, 75, 75);
 }
 
 .strip {
-  font-size: 2em;
+  font-size: 1.2em;
   cursor: pointer;
 }
 
 .vernacular-name {
   grid-area: five;
-  padding: 5px 0 0 5px;
+  padding: .5em 0 0 .5em;
   font-size: 0.8em;
 }
 
 .vernacular-name p {
-  height: 6px;
+  height: .5em;
 }
 
 .letterbox {
   grid-area: letterbox;
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: 42px 200px 42px;
+  grid-template-rows: 4.2em 200px 4.2em;
   grid-template-areas: "one"
                        "two"
                        "three"
@@ -174,7 +177,7 @@ a:hover {
 
 .letterbox div:nth-child(2) {
   grid-area: two;
-  background-color: rgb(73, 73, 73);
+  background-color: rgb(75,75,75);
   padding: 1.9em 1em;
 }
 
@@ -183,7 +186,7 @@ a:hover {
 }
 
 .letterbox span {
-  margin: 10px 0 10px 5px;
+  margin: 1em 0 1em .5em;
   font-size: 1.4em;
   color: #fff;
   display: block;
@@ -198,20 +201,20 @@ a:hover {
 }
 
 .letterbox input.short {
-  width: 265px;
+  width: 26.5em;
 }
 
 .letterbox input.long {
-  width: 150px;
+  width: 15em;
 }
 
 .letterbox button {
   margin: 0;
-  width: 260px;
+  width: 26.em;
 }
 
 .right, .wrong {
-  padding: 1px 5px;
+  padding: .1em .5em;
   display: inline-block;
 }
 
@@ -226,28 +229,35 @@ a:hover {
 }
 
 .summary button {
-  margin: 0 0 1em 0px;
-}
-
-.summary div {
-  display: none;
+  margin: 0 0 1em 0;
 }
 
 .js-card {
   text-align: right;
-  display: grid;
 }
 
-.species-card-eol-link, .species-card-wiki-page {
-  font-size: .8em;
+.js-card div {
+  margin: 1em;
 }
 
 .species-card-wikipedia {
-  background-color: rgb(128, 128, 128);  
-  font-size: .9em;
+  background-color: rgb(128, 128, 128);
 }
 .species-card-wiki a, .species-card-eol-link {
   color: rgb(180,180,180);
+}
+
+.species-card-family {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}  
+
+.species-card-name {
+  font-size: 1.5em;
+}
+
+.species-card-names {
+  font-size: 1.2em;
 }
 
 .species-card-names {
@@ -259,29 +269,20 @@ a:hover {
   font-size: 1.2em;
 }
 
-ul {
-  margin: 0;
-  padding: 10px;
-  color: rgb(196, 196, 196);
-}
-
-li {
-  list-style-type: none;
-}
-
-a {
-  color: #ffffff;
+.tile {
+  width: 50%;
+  float: left;
 }
 
 .tile img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   cursor: pointer;
-  height: 84px;
-  width: 95px;
 }
 
 .summary, .history {
-  padding: 20px;
+  padding: 2em;
 }
 
 .capitalised {
@@ -320,7 +321,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .collection span:nth-of-type(2) {
   display: inline-block;
-  width: 140px;  
+  width: 14em;  
 }
 
 .collection a, .collection .underline-link, .collection span {
@@ -329,17 +330,17 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .collection button {
   color: white;
-  background-color: rgb(73, 73, 73);
+  background-color: rgb(75,75,75);
 }
 
 .frame {
   display: grid;
-  grid-template-columns: 100px auto minmax(200px, 400px) 100px;
+  grid-template-columns: 1fr 5fr 1fr;
  }
  
  .frame .image-tile {
    display: grid;
-   grid-template-rows: 100px 1fr auto minmax(10px, 60px) 100px;
+   grid-template-rows: 1fr 1fr 1fr 1fr;
  }
 
  .term-property {
@@ -348,7 +349,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
  
  .image-border img {
    background-color: #ccc;
-   max-width: 400px;
+   width: 100%;
  }
 
  /* letter blocks */

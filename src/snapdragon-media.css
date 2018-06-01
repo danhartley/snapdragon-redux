@@ -1,0 +1,118 @@
+@media (max-width: 414px) {
+
+    .flex-provider.eol, .flex-provider.wiki, .flex-provider.gbif, .flex-provider.skills, .species-card-wiki-entry,
+    .summary div, .collection-preview, .collection button {
+        display: none;
+    }
+
+    .left-body button, .right-body button {
+        width: 100%;
+    }
+
+    .dropdown-menu.show {
+        width: 98%;
+    }
+
+    .collection span {
+        cursor: pointer;
+    }
+
+    .collections-skills {
+        display: none;
+    }
+
+    .specimens-card-btn {
+        padding: 2em 1em;
+    }
+
+    /* modal */
+
+    .modal-dialog {
+        margin: 10px;
+    }
+
+    .modal-iframe  {
+        margin: 0;
+        padding: 0;
+        border: none;
+        resize: both;
+        overflow-y: scroll;
+        width: 1px;
+        min-width: 298px;
+        max-width: 298px;
+        min-height: 10px;
+        padding: 10px 0px 10px 10px;
+        height: 300px;
+    }
+
+    .modal-content {
+        width: 300px;
+    }
+
+    .modal-content, .modal-body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .modal-body img {
+        object-fit: cover;
+        width: 298px;
+        height: 298px;    
+        padding: 1em;    
+    }
+
+    .modal-content button {
+        width: 50px;
+    }
+}
+
+@media (min-width: 320px) {
+    .tile img {
+        height: 160px;
+    }
+
+    .square img {
+        height: 160px;    
+    }
+}
+@media (min-width: 375px) {
+    .tile img {
+        height: 188px;
+    }
+    .square img {
+        height: 188px;
+    }
+}
+
+@media (min-width: 414px) {
+    .tile img {
+        height: 207px;
+    }
+    .square img {
+        height: 207px;
+    }
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 1024px) {
+    .tile img {
+        height: 207px;
+    }
+
+    .square img {
+        height: 256px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .square img {
+        height: 310px;
+    }
+  
+    .tile img {
+      height: 207px;
+    }
+}
