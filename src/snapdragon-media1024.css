@@ -94,12 +94,7 @@
     .letterbox input.long {
         width: 300px;
     }
-/*     
-    .letterbox button {
-        margin: 0 .5em .4em 0.5em;
-        width: 80px;
-    } */
-  
+
     .summary button {
         margin: 1em 0;
     }

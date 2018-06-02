@@ -121,7 +121,9 @@ const command = {
     parent: DOM.rightBody,
     render: renderLetters,
     cutLength: 5,
-    template: 'js-letters-template'
+    template: 'js-letters-template',
+    headers: { long: 'Complete the species name.', short: 'Complete the species name.'},
+    cue: 'Name puzzle'
   }
 };
 
