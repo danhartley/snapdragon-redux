@@ -68,7 +68,7 @@
 
 @media (min-width: 320px) {
     .species-card img, .tile img {
-        height: 160px;
+        height: 152px;
         object-fit: cover;
     }
     .square img {
