@@ -20,5 +20,7 @@ export const runTask = (collection) => {
         letters.push(cutter(answer.name, 5));
     }));
 
-    renderLetters(letters, item, config.callbackTime); 
+    const screen = layout.screens[0].right;
+
+    renderLetters(config, screen, letters, item, config.callbackTime); 
 };

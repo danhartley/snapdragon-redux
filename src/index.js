@@ -6,7 +6,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './snapdragon.css';
-import './snapdragon-media360.css';
+import './snapdragon-media.css';
 import './snapdragon-media1024.css';
 import './snapdragon-media1200.css';
 

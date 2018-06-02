@@ -2159,6 +2159,12 @@ export const lamiaceae = [
     {
       "id": 582374,
       "name": "Melissa officinalis L.",
+      "searchTerms": [
+        {
+          "language": "en",
+          "searchTerm": "Lemon Balm"
+        }
+      ],
       "images": [
         "https://media.eol.org/content/2013/08/08/10/87763_orig.jpg",
         "https://media.eol.org/content/2014/08/02/04/94743_orig.jpg",

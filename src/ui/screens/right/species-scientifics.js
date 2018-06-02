@@ -19,9 +19,8 @@ export const renderScientifics = (collection) => {
                 </div>`;
        };
 
-    DOM.headerTxt.innerHTML = config.isSmallDevice 
-                                ? `Click name to match species.`
-                                : `Click the scientific name to match the species.`
+    DOM.headerTxt.innerHTML = config.isSmallDevice ? screen.headers.short : screen.headers.long;
+    DOM.specimenSpeciesTxt.innerHTML = '';
 
     renderStrips(screen, item, callback, config);
 };

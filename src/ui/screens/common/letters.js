@@ -5,7 +5,7 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
-export const renderLetters = (letters, item, callbackTime) => {
+export const renderLetters = (config, screen, letters, item, callbackTime) => {
 
     const template = document.querySelector('.js-letters-template');
 
@@ -91,4 +91,6 @@ export const renderLetters = (letters, item, callbackTime) => {
             actions.boundUpdateScore(response);
         }, callbackTime);
     });
+
+    DOM.headerTxt.innerHTML = config.isSmallDevice ? screen.headers.short : screen.headers.long;
 };

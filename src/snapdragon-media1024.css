@@ -1,42 +1,30 @@
 @media (min-width: 1024px) {
 
-    .grid {
-        display: grid;
-        grid-auto-flow: column;
-        grid-template-columns: 1fr 10fr 1fr 10fr 1fr;
-        width: 100vw;
-        
+    .specimens-card-btn {
+        display: none;
     }
+
+    .grid {        
+        grid-template-columns: 3fr 10fr 1fr 10fr 3fr;  
+    }
+
+    .left-grid, .right-grid {
+        grid-template-rows: 1fr 10fr 1fr;
+    }
+
 
     .left-grid {
-        grid-template-columns: 512px;
-        grid-template-rows: 60px 512px 60px;
+        grid-column: 2;
     }
 
-    /* snapdragon home page links */
+    .right-grid {
+        grid-column: 4;
+    }
 
-    .flex-provider .eol, .flex-provider .gbif, .species-card-wiki {
+    .flex-provider .eol, .flex-provider .gbif {
         display: block;
     }
 
-    .js-card {
-        height: 580px;
-    }
-
-    .species-card-family {
-        text-transform: uppercase; 
-        font-size: 1.3em; 
-        letter-spacing: 2px;
-    }  
-
-    .species-card-name {
-        font-size: 2em;
-    }
-
-    .species-card-names {
-        font-size: 1.6em;
-    }
-      
     .flex-provider {
         display: flex;
         flex-direction: row;
@@ -70,30 +58,6 @@
         margin: 1em 0 0 6em;
         width: 250px;
         font-size: .9em;
-      }
-     
-    .right-grid {
-        grid-column: 4;
-        grid-auto-flow: column;
-    }
-
-    .right-grid {
-        grid-template-columns: 512px;
-        grid-template-rows: 60px 512px 60px;
-    }
-
-    .squares {
-        display: grid;
-        grid-auto-flow: column;
-        grid-template-areas: "one two"
-                            "three four";                            
-        grid-template-columns: 256px 256px;
-        grid-template-rows: 256px;
-    }
-    .squares img {
-        object-fit: cover;
-        height: 256px;
-        width: 256px;
     }
 
     .collections div {
@@ -105,29 +69,23 @@
         width: 265px;
     }
 
-    .answer {
-        height: 160px;
-    }
-    .answer button {
-        width: 196px;
-    }
-  
-    .rectangles {
-        grid-template-rows: 160px;
-    }
-  
-    .strips {
-        grid-template-rows: repeat(6,84px);
-        padding: 1em 0 0 2em;
-    }
-  
     .letterbox {
-        grid-template-rows: 206px 100px 206px;
+        grid-template-rows: 1fr 1fr 1fr;
     }
 
-    .letterbox span {
+    .letterbox-entry {  
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .letterbox-entry span {
+        margin: 0 .5em 0.5em 0;
         display: inline;
     }
+
+    .letterbox-entry button {
+        margin: 0 .5em 1em .5em;
+    }    
   
     .letterbox input.short {
         width: 230px;
@@ -136,41 +94,9 @@
     .letterbox input.long {
         width: 300px;
     }
-    
-    .letterbox button {
-        margin: 0 .5em .4em 0.5em;
-        width: 80px;
-    }
-  
+
     .summary button {
         margin: 1em 0;
-      }
-
-      .summary div {
-        display: block;
-      }
-
-    .tiles {
-    display: grid;
-    grid-template-areas: "tile1 tile2 tile3"
-                            "tile4 tile5 tile6"
-                            "tile7 tile8 tile9";
-    }      
-
-    .tiles {
-      height: 512px;
-      width: 512px;
-    }
-
-    .tile {
-        width: 170px;
-    }
-
-    .tile img {
-        object-fit: cover;
-        cursor: pointer;
-        height: 170px;
-        width: 170px;
     }
 
     .block {
@@ -188,17 +114,26 @@
         height: 100%;
     }    
 
-    .modal-dialog, .modal-content {
-        width: 600px;
-        max-width: 600px;        
+    #externalPageModal .modal-dialog {
+        max-width: 600px;
     }
 
-    .modal-body {
+    #externalPageModal .modal-content {
         height: 500px;
     }
 
+    #externalPageModal .modal-body {
+        height: 450px;
+    }
+
+    #imageModal .modal-dialog {
+        width: 480px;
+        max-width: 480px;
+    }
+
     .modal-body img {
-        width: 568px;
-        height: 568px;
+        object-fit: cover;
+        width: 448px;
+        height: 448px;
     }
 }

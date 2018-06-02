@@ -13,7 +13,7 @@ export const renderSpecimenTiles = (collection) => {
     DOM.collectionTxt.innerHTML = collection.name;
     const screenName = layout.screens[0].name;
     if(screenName !== 'species-scientifics' && screenName !== 'history')
-        DOM.specimenSpeciesTxt.innerHTML =  config.isSmallDevice ? '' : item.name;
+        DOM.specimenSpeciesTxt.innerHTML =  config.isSmallDevice ? '' : `[ ${item.name} ]`;
     else 
         DOM.specimenSpeciesTxt.innerHTML = '';
     
@@ -52,8 +52,12 @@ export const renderSpecimenTiles = (collection) => {
         item.content = images.slice(index,index + 4);
         index = index + 4;
         renderTiles(screen, item, callback, config);
-        if(index === 8)
-            DOM.moreSpecimensBtn.style.display = 'none';
+        if(index === 8) {
+            DOM.moreSpecimensBtn.innerText = 'Last 4 images';    
+            index = 0;
+        } else {
+            DOM.moreSpecimensBtn.innerText = 'Next 4 images';
+        }
         addContinueEventHandler();
     });
 
@@ -71,5 +75,11 @@ export const renderSpecimenTiles = (collection) => {
     };
 
     addContinueEventHandler();
+
+    if(config.isSmallDevice) {
+        const btn = document.querySelector('.js-continue-btn button');
+        const nextScreen = layout.screens[0].name === 'command' ? layout.screens[0].right : layout.screens[1];
+        btn.innerText = nextScreen.cue || 'no cue';
+    }
 
 };

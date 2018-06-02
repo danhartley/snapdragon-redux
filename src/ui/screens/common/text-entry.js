@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
 
-export const renderInput = (screen, question, callbackTime, item, renderAnswerHeader, hints) => {
+export const renderInput = (config, screen, question, callbackTime, item, renderAnswerHeader, hints) => {
 
     const sendQandA = (answer, event) => {
         const btn = event.target;
@@ -59,5 +59,7 @@ export const renderInput = (screen, question, callbackTime, item, renderAnswerHe
             event.target.disabled = true;
         }
     };
+
+    DOM.headerTxt.innerHTML = config.isSmallDevice ? screen.headers.short : screen.headers.long;
 };
 
