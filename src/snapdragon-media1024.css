@@ -69,13 +69,23 @@
         width: 265px;
     }
 
-    /* .letterbox {
-        grid-template-rows: 206px 100px 206px;
-    } */
+    .letterbox {
+        grid-template-rows: 1fr 1fr 1fr;
+    }
 
-    .letterbox span {
+    .letterbox-entry {  
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .letterbox-entry span {
+        margin: 0 .5em 0.5em 0;
         display: inline;
     }
+
+    .letterbox-entry button {
+        margin: 0 .5em 1em .5em;
+    }    
   
     .letterbox input.short {
         width: 230px;
@@ -84,11 +94,11 @@
     .letterbox input.long {
         width: 300px;
     }
-    
+/*     
     .letterbox button {
         margin: 0 .5em .4em 0.5em;
         width: 80px;
-    }
+    } */
   
     .summary button {
         margin: 1em 0;

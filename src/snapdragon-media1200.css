@@ -8,11 +8,11 @@
     width: 310px;
   }
 
-  .letterbox div:nth-child(2) {
+  /* .letterbox div:nth-child(2) {
     padding: 3.5em 1em;
-  }
+  } */
 
-  .letterbox input.short {
+  /* .letterbox input.short {
     width: 230px;
   }
   
@@ -22,7 +22,7 @@
   
   .letterbox button {
     width: 100px;
-  }
+  } */
 
   .flex.wiki {
     display: block;

@@ -115,8 +115,6 @@
         <template class="js-summary-template">
             <div class="js-rptr-summary">
                 <div class="summary js-right-body-top">
-                    <div>Continue with the lesson</div>
-                    <button class="btn btn-light learn-more-btn js-learn-more-btn">Learn more</button>
                     <div style="display: none;">Run the test again</div>
                     <button style="display: none;" class="btn btn-light start-over-btn js-start-over-btn">Start over</button>
                     <div>Answer the ones you got wrong</div>
@@ -125,6 +123,8 @@
                     <button style="display: none;" class="btn btn-light js-next-level-btn">Next level</button>
                     <div>Change collection, level or other settings</div>
                     <button class="btn btn-light js-change-collection-btn">Change settings</button>
+                    <div>Continue with the lesson</div>
+                    <button class="btn btn-light learn-more-btn js-learn-more-btn">Learn more</button>
                 </div>                    
                 <div class="js-right-body-bottom"></div>
             </div>
@@ -141,7 +141,7 @@
         <template class="js-species-entry-template">
             <div class="letterbox">
                 <div></div>
-                <div>
+                <div class="letterbox-entry">
                     <span class="js-txt-entry js-genus"></span>
                     <input class="short js-txt-input" type="text" placeholder="species">
                     <span class="js-txt-entry js-species" style="display:none"></span>
@@ -154,7 +154,7 @@
         <template class="js-species-genus-entry-template">                    
             <div class="letterbox">
                 <div></div>
-                <div>
+                <div class="letterbox-entry">
                     <span class="js-txt-entry js-species" style="display:none"></span>
                     <input class="long js-txt-input" type="text" placeholder="Genus species">
                     <span class="js-txt-entry js-genus" style="display:none"></span>
@@ -167,7 +167,7 @@
         <template class="js-genus-entry-template">                    
                 <div class="letterbox">
                     <div></div>
-                    <div>
+                    <div class="letterbox-entry">
                         <span class="js-txt-entry js-genus" style="display:none"></span>
                         <input class="short js-txt-input" type="text" placeholder="Genus">
                         <span class="js-txt-entry js-species"></span>

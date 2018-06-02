@@ -19,9 +19,7 @@ export const renderSpeciesTiles = (collection) => {
         item.content = images;
 
     setTimeout(()=>{
-        DOM.headerTxt.innerHTML =  config.isSmallDevice 
-                                    ? `Click picture to match species.`
-                                    : `Click the picture to match the species.`;
+        DOM.headerTxt.innerHTML = config.isSmallDevice ? screen.headers.short : screen.headers.long;
     });
 
     const callback = contentItem => {

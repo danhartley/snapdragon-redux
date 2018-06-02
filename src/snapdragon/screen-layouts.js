@@ -64,6 +64,8 @@ const revision = {
 
 const scientifics = {
   name: 'species-scientifics',
+  headers: { long: 'Click the common name to match the species.', short: 'Click name to match species.'},
+  cue: 'Match species name',
   domain: 'collection',
   render: renderScientifics,
   parent: DOM.rightBody,
@@ -73,6 +75,8 @@ const scientifics = {
 
 const vernaculars = {
   name: 'species-vernaculars',
+  headers: { long: 'Click the common name to match the species.', short: 'Click name to match species.'},
+  cue: 'Match common name',
   domain: 'collection',
   render: renderVernaculars,
   parent: DOM.rightBody,
@@ -82,6 +86,8 @@ const vernaculars = {
 
 const species = {
   name: 'species-images',
+  headers: { long: 'Click the picture to match the species.', short: 'Click picture to match species.'},
+  cue: 'Match the species',
   domain: 'collection',
   render: renderSpeciesTiles,
   parent: DOM.rightBody,
@@ -93,7 +99,9 @@ const text = {
   name: 'text-entry',
   domain: 'collection',
   render: renderTextEntry,
-  parent: DOM.rightBody
+  parent: DOM.rightBody,
+  headers: { long: 'Complete the species name.', short: 'Complete the species name.'},
+  cue: 'Complete species name',
 };
 
 const summary = { 

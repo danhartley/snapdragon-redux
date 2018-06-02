@@ -67,7 +67,6 @@ a {
 
 .left-grid, .right-grid {
   display: grid;
-  height: inherit;
   grid-template-columns: 100%;
   grid-column: 1;
   grid-auto-flow: column;
@@ -162,27 +161,17 @@ a {
 }
 
 .letterbox {
-  grid-area: letterbox;
-  display: grid;
-  grid-auto-flow: row;
-  grid-template-rows: 4.2em 200px 4.2em;
-  grid-template-areas: "one"
-                       "two"
-                       "three"
+  display: grid;  
 }
 
-.letterbox div:nth-child(1) {
-  grid-area: one;
+.letterbox div:nth-child(1), .letterbox div:nth-child(2), .letterbox div:nth-child(3) {
+  width: 100%;
 }
 
-.letterbox div:nth-child(2) {
-  grid-area: two;
+.letterbox-entry {  
+  padding: 1em 1em 0 1em;
   background-color: rgb(75,75,75);
-  padding: 1.9em 1em;
-}
-
-.letterbox div:nth-child(3) {
-  grid-area: three;
+  display: flex;
 }
 
 .letterbox span {
@@ -201,7 +190,7 @@ a {
 }
 
 .letterbox input.short {
-  width: 26.5em;
+  width: 10em;
 }
 
 .letterbox input.long {
@@ -237,7 +226,8 @@ a {
 }
 
 .js-card div {
-  margin: 1em;
+  margin: 1em 0;
+  margin-right: 10px;
 }
 
 .species-card-wikipedia {
@@ -253,15 +243,19 @@ a {
 }  
 
 .species-card-name {
+  font-size: 1.8em;
+}
+
+.species-card-names {
   font-size: 1.5em;
 }
 
 .species-card-names {
-  font-size: 1.2em;
+  text-transform: capitalize;
 }
 
-.species-card-names {
-  text-transform: capitalize;
+div.species-card-btn {
+  margin: 0 10px;
 }
 
 .family-name {

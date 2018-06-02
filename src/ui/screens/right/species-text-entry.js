@@ -19,5 +19,5 @@ export const renderTextEntry = (collection) => {
         { selector: 'span.js-species', value: question.species }
     ];
 
-    renderInput(screen, question, config.callbackTime, item, renderAnswerHeader, hints);
+    renderInput(config, screen, question, config.callbackTime, item, renderAnswerHeader, hints);
 };
