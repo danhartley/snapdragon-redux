@@ -3,7 +3,7 @@
     "name": "Snapdragon: species recognition and recall",
     "start_url": ".",
     "display": "standalone",
-    "orientation": "landscape",
+    "orientation": "portrait",
     "icons": [{
       "src": "./favicons/72x72.png",
       "sizes": "72x72",
