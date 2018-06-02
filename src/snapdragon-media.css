@@ -89,6 +89,9 @@
     .letterbox-entry span {
         margin: 1em 0 .5em 0;
     }
+    .js-card div {
+        margin: .5em 0;
+    }
 }
 @media (min-width: 375px) {
     .species-card img, .tile img {
@@ -100,6 +103,9 @@
     }
     div.species-card-btn {
         margin-top: 3em;
+    }
+    .js-card div {
+        margin: 1em 0;
     }
 }
 
