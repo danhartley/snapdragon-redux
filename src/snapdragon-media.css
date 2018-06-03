@@ -1,11 +1,11 @@
-@media (max-width: 414px) {
+@media (max-width: 768px) {
 
     .flex-provider.eol, .flex-provider.wiki, .flex-provider.gbif, .flex-provider.skills, .species-card-wiki-entry,
     .summary div, .collection-preview, .collection button {
         display: none;
     }
 
-    .left-body button, .right-body button {
+    .left-body button, .right-body button, .species-card-btn button {
         width: 100%;
     }
 
@@ -13,16 +13,16 @@
         width: 98%;
     }
 
-    .collection span {
-        cursor: pointer;
-    }
-
     .collections-skills {
         display: none;
     }
 
     .specimens-card-btn {
-        padding: 2em 1em;
+        padding: 2em 1em;        
+    }
+
+    div.species-card-btn {
+        float: initial;
     }
 
     /* modal */
@@ -67,12 +67,8 @@
 }
 
 @media (min-width: 320px) {
-    .species-card img, .tile img {
-        height: 152px;
-        object-fit: cover;
-    }
-    .square img {
-        height: 160px;    
+    .squares { 
+        height: 80%;
     }
     .letterbox {
         grid-template-rows: 2fr 3fr 2fr;
@@ -89,34 +85,17 @@
     .letterbox-entry span {
         margin: 1em 0 .5em 0;
     }
-    .js-card div {
-        margin: .5em 0;
+    .card div, .species-card-btn {
+        margin: .3em 0;
     }
 }
 @media (min-width: 375px) {
-    .species-card img, .tile img {
-        height: 188px;
-        object-fit: cover;
-    }
-    .square img {
-        height: 188px;
-    }
-    div.species-card-btn {
-        margin-top: 3em;
-    }
-    .js-card div {
+    .card div, .species-card-btn {
         margin: 1em 0;
     }
 }
 
 @media (min-width: 414px) {
-    .species-card img, .tile img {
-        height: 207px;
-        object-fit: cover;
-    }
-    .square img {
-        height: 207px;
-    }    
 }
 
 @media (min-width: 768px) {
@@ -127,21 +106,7 @@
     .species-card img {
         height: 0;
     }
-    .tile img {
-        height: 207px;
-    }
-
-    .square img {
-        height: 256px;
-    }
 }
 
 @media (min-width: 1200px) {
-    .square img {
-        height: 310px;
-    }
-  
-    .tile img {
-      height: 207px;
-    }
 }

@@ -1,11 +1,20 @@
 @media (min-width: 1200px) {
 
-  .collections div {
-    padding: .4em .2em;
+  .grid {        
+    grid-template-columns: 3fr 10fr 1em 10fr 3fr;  
   }
 
-  .collection span:nth-of-type(1) {
-    width: 310px;
+  .left-grid {
+    grid-column: 2;
+  }
+
+  .right-grid {
+      grid-column: 4;
+  }
+
+
+  .collections div {
+    padding: .4em .2em;
   }
 
   .flex.wiki {

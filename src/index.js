@@ -24,7 +24,8 @@ import { config } from 'syllabus/lesson-config';
 
 // capture device
 
-config.isSmallDevice = window.matchMedia("(max-width: 360px)").matches;
+config.isSmallDevice = window.matchMedia("(max-width: 480px)").matches;
+config.isTabletDevice = window.matchMedia("(max-width: 1024px)").matches;
 
 // setup
 

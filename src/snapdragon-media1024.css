@@ -5,20 +5,23 @@
     }
 
     .grid {        
-        grid-template-columns: 3fr 10fr 1fr 10fr 3fr;  
+        grid-template-columns: 10fr .1em 10fr;  
     }
 
     .left-grid, .right-grid {
         grid-template-rows: 1fr 10fr 1fr;
     }
 
-
     .left-grid {
-        grid-column: 2;
+        grid-column: 1;
     }
 
     .right-grid {
-        grid-column: 4;
+        grid-column: 3;
+    }
+
+    .squares { 
+        height: 100%;
     }
 
     .flex-provider .eol, .flex-provider .gbif {
@@ -58,15 +61,6 @@
         margin: 1em 0 0 6em;
         width: 250px;
         font-size: .9em;
-    }
-
-    .collections div {
-        width: 480px;
-        padding: .4em .2em;
-    }
-
-    .collection span:nth-of-type(1) {
-        width: 265px;
     }
 
     .letterbox {
