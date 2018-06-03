@@ -25,8 +25,9 @@ export const renderSpeciesTiles = (collection) => {
     const callback = contentItem => {
         const images = contentItem.images.filter(img => img !== undefined);
 
-        return `<div class="tile">
-                    <img src="${images[0]}" name="${contentItem.name}" /> 
+        return `<div class="tile"
+                    style="background-image: url(${images[0]}); background-size:cover;"
+                    data-name="${contentItem.name}">
                 </div>`;
     };
 

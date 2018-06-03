@@ -17,13 +17,13 @@ export const renderTiles = (screen, item, callbackTemplate, config) => {
         tile.addEventListener('click', event => {
 
             const img = event.target;
-            const answer = img.name;
+            const answer = img.dataset.name;
 
             const response = { taxon: 'name', binomial: item.name, question: item.name, answer: answer };
 
             const { text, colour, correct } = renderAnswerHeader(response, config.isSmallDevice);
 
-            tile.children[0].style.filter = 'saturate(100%)';
+            tile.style.filter = 'saturate(100%)';
 
             DOM.headerTxt.innerHTML = text;
             DOM.rightHeader.style.backgroundColor = colour;
@@ -33,7 +33,7 @@ export const renderTiles = (screen, item, callbackTemplate, config) => {
             tiles.forEach(tile => {
                 tile.style.filter = 'saturate(10%)';
                 tile.style.opacity = .3;
-                if(tile.children[0].name === item.name) {
+                if(tile.dataset.name === item.name) {
                     tile.style.filter = 'saturate(100%)';
                     tile.style.opacity = 1;
                 }
@@ -53,7 +53,7 @@ export const renderTiles = (screen, item, callbackTemplate, config) => {
     squares.forEach(square => {
         square.addEventListener('click', event => {
             const img = event.target;
-            const src = img.dataset.src;
+            const src = img.style.backgroundImage.slice(4, -1).replace(/"/g, "");
             if(src) {
                 document.querySelector('.js-modal-title').innerHTML = item.name;
                 document.querySelector('.js-image-modal').src = src;

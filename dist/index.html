@@ -181,15 +181,15 @@
                 <div class="js-species-card species-card">
                     <img src="" class="tile" alt="">
                     <img src="" class="tile" alt="">
-                    <div class="grid-text-body js-card">
+                    <div class="card js-card">
                         <div class="species-card-family js-txt-family"><span></span></div>
                         <div class="species-card-name js-txt-species"></div>
                         <div class="species-card-names js-txt-species-names">names</div>
                         <div class="species-card-wiki js-species-card-wiki"></div>
                         <div><a class="species-card-eol-link js-species-card-eol-link underline-link">EOL page</a></div>
-                        <!-- <div><span class="species-card-eol-link js-species-card-eol-link underline-link" data-toggle="modal" data-target="#externalPageModal">EOL page</span></div> -->
-                        <div class="species-card-btn js-species-card-btn"><button class="btn btn-light">Next species</button></div>
+                        <!-- <div><span class="species-card-eol-link js-species-card-eol-link underline-link" data-toggle="modal" data-target="#externalPageModal">EOL page</span></div> -->                        
                     </div>
+                    <div class="species-card-btn js-species-card-btn"><button class="btn btn-light">Next species</button></div>
                 </div>
 
                 <div class="modal fade" id="externalPageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -210,26 +210,26 @@
         </template>
         
         <template class="js-card-name-template">
-            <div class="species-card js-card">
+            <div class="species-card card js-card">
                 <div class="species-card-family js-txt-family"><span></span></div>
                 <div class="species-card-name js-txt-species"></div>
-                <div class="species-card-names js-txt-species-names">names</div>
-                <div class="species-card-btn js-species-card-btn"><button class="btn btn-light">Next species</button></div>
+                <div class="species-card-names js-txt-species-names">names</div>                
             </div>
+            <div class="species-card-btn js-species-card-btn"><button class="btn btn-light">Next species</button></div>
         </template>
         
         <template class="js-card-scientific-template">
-                <div class="species-card js-card">
+                <div class="species-card card js-card">
                     <div class="species-card-family js-txt-family"><span></span></div>
                     <div class="species-card-name js-txt-species"></div>
-                    <div class="species-card-names js-txt-species-names" style="display:none;">names</div>
-                    <div class="species-card-btn js-species-card-btn"><button class="btn btn-light">Next species</button></div>
+                    <div class="species-card-names js-txt-species-names" style="display:none;">names</div>                    
                 </div>
+                <div class="species-card-btn js-species-card-btn"><button class="btn btn-light">Next species</button></div>
         </template>
         
         <template class="js-collections-template">
         
-            <div class="collections grid-text-body js-species-collection">
+            <div class="collections js-species-collection">
                 <div>Collections hosted by EOL:</div>               
                 <div class="flex-provider">
                     <div class="dropdown js-collections">
@@ -238,9 +238,11 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-collection="{{ species }}">
                             <div class="collection js-collection">
-                                <button class="btn btn-light" id="{{ collection.id }}">Learn</button> <a class="underline-link collection-preview" target="_blank" href="{{ collection.eol_link }}">Preview</a> <span id="{{ collection.id }}">{{ collection.eol_name }} ({{ collection.items.length }})</span>
+                                <span id="{{ collection.id }}">{{ collection.eol_name }} ({{ collection.items.length }})</span>
+                                <!-- <button class="btn btn-light" id="{{ collection.id }}">Learn</button> -->
+                                <!-- <a class="underline-link collection-preview" target="_blank" href="{{ collection.eol_link }}">Preview</a>  -->
                             </div>
-                        </div>                            
+                        </div>
                     </div>                        
                 </div>
         
@@ -274,7 +276,7 @@
                 <div class="clear-lesson"><button class="btn btn-light state-clear js-state-clear">Clear lesson</button></div>
             </div>            
         
-            <div class="collections collections-skills grid-text-body js-skills-collection">
+            <div class="collections collections-skills js-skills-collection">
                 <div>General skills:</div>
                 <div class="flex-provider skills">
                     <div class="dropdown js-collections">
@@ -293,7 +295,7 @@
         </template>
         
         <template class="js-snapdragon">
-            <div class="snapdragon grid-text-body">
+            <div class="snapdragon">
         
                 <h1>Snapdragon</h1>
                 <div>Species recognition and recall</div>
