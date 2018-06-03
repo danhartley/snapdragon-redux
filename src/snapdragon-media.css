@@ -25,6 +25,13 @@
         float: initial;
     }
 
+    .species-card-images {
+        height: 30%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
     /* modal */
 
     .modal-dialog {

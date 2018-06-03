@@ -125,8 +125,10 @@ export const renderCard = (collection) => {
         });
         images = images.slice(0,2);
 
-        const speciesImages = document.querySelectorAll('.js-species-card img');
-        speciesImages[0].src = images[0];
-        speciesImages[1].src = images[1];
+        const backgroundImages = images.map(image => {
+                return `<div style='background-image: url(${image}); background-size:cover;'></div>`;
+            }).join('');
+
+        document.querySelector('.js-species-card-images').innerHTML = backgroundImages;
     }
 };
