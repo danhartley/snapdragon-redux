@@ -97,11 +97,11 @@
         padding: .5em 1em;
     }
     .card div, .species-card-btn {
-        margin: .3em 0;
+        margin: .2em 0;
     }
 }
 @media (min-width: 375px) {
     .card div, .species-card-btn {
-        margin: 1em 0;
+        margin: .6em 0;
     }
 }
