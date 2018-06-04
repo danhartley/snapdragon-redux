@@ -130,5 +130,8 @@ export const renderCard = (collection) => {
             }).join('');
 
         document.querySelector('.js-species-card-images').innerHTML = backgroundImages;
+        document.querySelector('.js-txt-family img').classList.add('hide');
+    } else {
+        document.querySelector('.js-txt-family img').classList.add('show');
     }
 };

@@ -77,7 +77,7 @@ export const renderSpecimenTiles = (collection) => {
     if(config.isSmallDevice) {
         const btn = document.querySelector('.js-continue-btn button');
         const nextScreen = layout.screens[0].name === 'command' ? layout.screens[0].right : layout.screens[1];
-        btn.innerText = nextScreen.cue || 'no cue';
+        btn.innerText = nextScreen.cue || 'Next';
     }
 
 };
