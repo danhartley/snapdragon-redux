@@ -26,7 +26,7 @@ export const renderSpeciesTiles = (collection) => {
         const images = contentItem.images.filter(img => img !== undefined);
 
         return `<div class="tile"
-                    style="background-image: url(${images[0]}); background-size:cover;"
+                    style="cursor: pointer; background-image: url(${images[0]}); background-size:cover;"
                     data-name="${contentItem.name}">
                 </div>`;
     };
