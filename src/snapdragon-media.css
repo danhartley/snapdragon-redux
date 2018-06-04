@@ -97,11 +97,28 @@
         padding: .5em 1em;
     }
     .card div, .species-card-btn {
-        margin: .2em 0;
+        margin: .2em;
     }
 }
 @media (min-width: 375px) {
     .card div, .species-card-btn {
-        margin: .6em 0;
+        margin: .6em .2em;
+    }
+    .modal-content {
+        width: 354px;
+    }
+    .modal-body img {
+        width: 352px;
+        height: 352px;
+    }
+}
+
+@media (min-width: 414px) {
+    .modal-content {
+        width: 394px;
+    }
+    .modal-body img {
+        width: 392px;
+        height: 392px;
     }
 }
