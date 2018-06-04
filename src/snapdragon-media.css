@@ -122,3 +122,9 @@
         height: 392px;
     }
 }
+
+@media (min-width: 786px) {
+    .modal-content {
+        width: 482px;
+    }    
+}
