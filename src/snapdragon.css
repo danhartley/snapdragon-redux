@@ -44,7 +44,19 @@ a {
   cursor: pointer;
 }
 
+.show {
+  display: inline;
+}
+
+.hide {
+  display: none;
+}
+
 /* home page */
+
+.snapdragon, .collections {
+  padding: .5em;
+}
 
 .snapdragon div:nth-child(1) {
   font-size: 1.8em;
@@ -62,7 +74,7 @@ a {
   grid-auto-flow: column;
   width: 100vw;
   height: 100vh;
-  background-color: #323232;
+  background-color: rgb(75, 75, 75);
 }
 
 .left-grid, .right-grid {
@@ -239,13 +251,18 @@ a {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  padding: .2em;
   text-align: right;
   margin: .5em;
   background-color: inherit;
+  border: 2px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
 }
 
 .card div {
-  margin: .5em 0;
+  margin: .3em 0;
 }
 
 .species-card-wikipedia {

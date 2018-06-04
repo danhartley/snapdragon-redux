@@ -14,6 +14,9 @@ export const listening = (score) => {
     DOM.stateChangeAlertTxt.innerHTML = savingLesson;
     setTimeout(()=>{
         DOM.stateChangeAlertTxt.innerHTML = lessonSaved;
+        setTimeout(()=>{
+            DOM.stateChangeAlertTxt.innerHTML = '';
+        },1500);
     },1000);
     
 }

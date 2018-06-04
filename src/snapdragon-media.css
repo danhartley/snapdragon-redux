@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .flex-provider.eol, .flex-provider.wiki, .flex-provider.gbif, .flex-provider.skills, .species-card-wiki-entry,
     .summary div, .collection-preview, .collection button {
@@ -18,11 +18,12 @@
     }
 
     .specimens-card-btn {
-        padding: 2em 1em;        
+        padding: 1em;        
     }
 
     div.species-card-btn {
         float: initial;
+        margin-right: 0;
     }
 
     .species-card-images {
@@ -92,6 +93,9 @@
     .letterbox-entry span {
         margin: 1em 0 .5em 0;
     }
+    .species-card-btn {
+        padding: .5em 1em;
+    }
     .card div, .species-card-btn {
         margin: .3em 0;
     }
@@ -100,20 +104,4 @@
     .card div, .species-card-btn {
         margin: 1em 0;
     }
-}
-
-@media (min-width: 414px) {
-}
-
-@media (min-width: 768px) {
-
-}
-
-@media (min-width: 1024px) {
-    .species-card img {
-        height: 0;
-    }
-}
-
-@media (min-width: 1200px) {
 }

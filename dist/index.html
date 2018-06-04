@@ -36,6 +36,15 @@
         <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="96x96" href="./favicons/favicon-96x96.png">
         <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+
+        <link rel="apple-touch-startup-image" href="images/splash/launch-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+        <!-- <link rel="apple-touch-startup-image" href="images/splash/launch-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+        <link rel="apple-touch-startup-image" href="images/splash/launch-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+        <link rel="apple-touch-startup-image" href="images/splash/launch-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+        <link rel="apple-touch-startup-image" href="images/splash/launch-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+        <link rel="apple-touch-startup-image" href="images/splash/launch-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+        <link rel="apple-touch-startup-image" href="images/splash/launch-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)"> -->
+
         <link rel="manifest" href="/manifest.json">
     </head>
     <body>
@@ -47,7 +56,7 @@
                     </div>
                     <div class="left-body js-left-body"></div>
                     <div class="footer js-left-footer">
-                        <button class="btn btn-light btn-more-specimens js-btn-more-specimens">Next 4 images</button>
+                        <button class="btn btn-light btn-more-specimens js-btn-more-specimens" style="display:none">Next 4 images</button>
                         <span class="score-footer-alert js-state-change-alert"></span>
                     </div>
             </div>
@@ -181,12 +190,14 @@
                 <div class="js-species-card species-card">
                     <div class="js-species-card-images species-card-images"></div>
                     <div class="card js-card">
-                        <div class="species-card-family js-txt-family"><span></span></div>
+                        <div class="species-card-family js-txt-family" style="margin:0;">
+                            <span></span>
+                            <img src="http://media.eol.org/content/2017/02/18/22/29040_98_68.jpg">
+                        </div>
                         <div class="species-card-name js-txt-species"></div>
                         <div class="species-card-names js-txt-species-names">names</div>
                         <div class="species-card-wiki js-species-card-wiki"></div>
                         <div><a class="species-card-eol-link js-species-card-eol-link underline-link">EOL page</a></div>
-                        <!-- <div><span class="species-card-eol-link js-species-card-eol-link underline-link" data-toggle="modal" data-target="#externalPageModal">EOL page</span></div> -->                        
                     </div>
                     <div class="species-card-btn js-species-card-btn"><button class="btn btn-light">Next species</button></div>
                 </div>

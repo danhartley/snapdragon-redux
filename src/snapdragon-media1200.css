@@ -53,3 +53,9 @@
   }
   
 }
+
+@media (min-width: 1366px) and (orientation: landscape) {
+  .grid {
+      grid-template-columns: 1fr 10fr 1em 10fr 1fr;
+  }
+}

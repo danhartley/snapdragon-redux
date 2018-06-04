@@ -2441,12 +2441,12 @@ export const wilduk = [
         },
         {
           "vernacularName": "Common Bird's-foot-trefoil",
-          "language": "en",
-          "eol_preferred": true
+          "language": "en"          
         },
         {
           "vernacularName": "Bird Foot's Trefoil",
-          "language": "en"
+          "language": "en",
+          "eol_preferred": true
         },
         {
           "vernacularName": "Bird's Foot Deervetch",
