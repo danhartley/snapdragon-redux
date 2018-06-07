@@ -10,7 +10,7 @@ export const renderInput = (config, screen, question, callbackTime, item, render
         
         const { text, colour, correct } = renderAnswerHeader(response);
 
-        DOM.headerTxt.innerHTML = text;
+        DOM.rightHeaderText.innerHTML = text;
         DOM.rightHeader.style.backgroundColor = colour;
         
         btn.style.color = colour;
@@ -60,6 +60,6 @@ export const renderInput = (config, screen, question, callbackTime, item, render
         }
     };
 
-    DOM.headerTxt.innerHTML = config.isSmallDevice ? screen.headers.short : screen.headers.long;
+    DOM.rightHeaderText.innerHTML = config.isPortraitMode ? screen.headers.short : screen.headers.long;
 };
 

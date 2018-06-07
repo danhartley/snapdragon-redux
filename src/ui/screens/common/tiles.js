@@ -1,66 +1,85 @@
-import { DOM } from 'ui/dom';
-import { actions } from 'redux/actions/action-creators';
-import { renderAnswerHeader } from 'ui/helpers/response-formatting';
+// import { DOM } from 'ui/dom';
+// import { actions } from 'redux/actions/action-creators';
+// import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
-export const renderTiles = (screen, item, callbackTemplate, config) => {
+// export const renderTiles = (screen, item, callbackTemplate, config, html) => {
 
-    const template = document.querySelector(`.${screen.template}`);
+//     const template = document.createElement('template');
 
-    const rptrTiles = template.content.querySelector('.js-tiles');
+//     template.innerHTML = html;
 
-    rptrTiles.innerHTML = item.content.map(callbackTemplate).join('');
-
-    const clone = document.importNode(template.content, true);
-    const tiles = clone.querySelectorAll('.js-tiles .tile');
-
-    tiles.forEach(tile => {
-        tile.addEventListener('click', event => {
-
-            const img = event.target;
-            const answer = img.dataset.name;
-
-            const response = { taxon: 'name', binomial: item.name, question: item.name, answer: answer };
-
-            const { text, colour, correct } = renderAnswerHeader(response, config.isSmallDevice);
-
-            tile.style.filter = 'saturate(100%)';
-
-            DOM.headerTxt.innerHTML = text;
-            DOM.rightHeader.style.backgroundColor = colour;
-            
-            img.parentNode.style.filter = 'saturate(100%)';
-
-            tiles.forEach(tile => {
-                tile.style.filter = 'saturate(10%)';
-                tile.style.opacity = .3;
-                if(tile.dataset.name === item.name) {
-                    tile.style.filter = 'saturate(100%)';
-                    tile.style.opacity = 1;
-                }
-            });
-
-            setTimeout(()=>{
-                const response = { taxon: 'name', binomial: item.name, question: item.name, answer: answer, success: correct };
-                actions.boundUpdateScore(response);
-            }, 1000);
-            
-            event.stopPropagation();
-        });
-    });
-
-    const squares = clone.querySelectorAll('.js-tiles .square');
-
-    squares.forEach(square => {
-        square.addEventListener('click', event => {
-            const img = event.target;
-            const src = img.style.backgroundImage.slice(4, -1).replace(/"/g, "");
-            if(src) {
-                document.querySelector('.js-modal-title').innerHTML = item.name;
-                document.querySelector('.js-image-modal').src = src;
-            }
-        })
-    });
+//     const rptrTiles = template.content.querySelector('.js-tiles');
+//     rptrTiles.innerHTML = item.content.map(callbackTemplate).join('');
     
-    screen.parent.innerHTML = '';
-    screen.parent.appendChild(clone);
-}
+//     const clone = document.importNode(template.content, true);
+//     const tiles = clone.querySelectorAll('.js-tiles .tile');
+//     tileClickHandler(tiles, item, config);
+//     const squares = clone.querySelectorAll('.js-tiles .square');
+
+//     squares.forEach(square => {
+//         square.addEventListener('click', event => {
+//             const img = event.target;
+//             const src = img.style.backgroundImage.slice(4, -1).replace(/"/g, "");
+//             if(src) {
+//                 document.querySelector('.js-modal-title').innerHTML = item.name;
+//                 document.querySelector('.js-image-modal').src = src;
+//             }
+//         })
+//     });
+
+//     screen.parent.innerHTML = '';
+
+//     if(config.isPortraitMode) {
+//         const species = item.name;
+//         const name = item.names.filter(name => name.language === config.language)[0].vernacularName;
+//         const context = { species, name };
+//         const clone = document.importNode(template.content, true);
+//         var ctx = new Stamp.Context();
+//         var expanded = Stamp.expand(clone, context);
+//         Stamp.appendChildren(screen.parent, expanded);
+//     } else {
+//         screen.parent.appendChild(clone);
+//     }
+
+//     const activeTiles = item.content.map(callbackTemplate).join('');
+//     document.querySelector('.js-tiles').innerHTML = activeTiles;
+//     tileClickHandler(document.querySelectorAll('.js-tiles .tile'), item, config);
+// };
+
+// const tileClickHandler = (tiles, item, config) => {
+
+//     tiles.forEach(tile => {
+//         tile.addEventListener('click', event => {
+
+//             const img = event.target;
+//             const answer = img.dataset.name;
+
+//             const response = { taxon: 'name', binomial: item.name, question: item.name, answer: answer };
+
+//             const { text, colour, correct } = renderAnswerHeader(response, config.isPortraitMode);
+
+//             tile.style.filter = 'saturate(100%)';
+
+//             DOM.rightHeaderText.innerHTML = text;
+//             DOM.rightHeader.style.backgroundColor = colour;
+            
+//             img.parentNode.style.filter = 'saturate(100%)';
+
+//             tiles.forEach(tile => {
+//                 tile.style.filter = 'saturate(10%)';
+//                 tile.style.opacity = .3;
+//                 if(tile.dataset.name === item.name) {
+//                     tile.style.filter = 'saturate(100%)';
+//                     tile.style.opacity = 1;
+//                 }
+//             });
+
+//             setTimeout(()=>{
+//                 const response = { taxon: 'name', binomial: item.name, question: item.name, answer: answer, success: correct };
+//                 actions.boundUpdateScore(response);
+//             }, 1000);
+            
+//             event.stopPropagation();
+//         });
+//     });
+// };

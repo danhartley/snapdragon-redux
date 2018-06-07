@@ -1,4 +1,4 @@
-import { createLesson } from 'syllabus/lesson-helpers';
+import { createLesson } from 'syllabus/lesson-builder';
 
 test.skip('createLesson should return new lesson plan with correct number of screens', () => {
     const layout = {screens:[{}]};

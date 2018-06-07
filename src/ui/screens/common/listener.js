@@ -1,4 +1,5 @@
 import { DOM } from 'ui/dom';
+import { persistor } from 'redux/store';
 
 export const listening = (score) => {
 
@@ -11,12 +12,20 @@ export const listening = (score) => {
     }
     else DOM.moreSpecimensBtn.style.display = 'none';
 
-    DOM.stateChangeAlertTxt.innerHTML = savingLesson;
-    setTimeout(()=>{
-        DOM.stateChangeAlertTxt.innerHTML = lessonSaved;
+    const displaySavingLessonNotice = () => {
+        DOM.stateChangeAlertTxt.innerHTML = savingLesson;
         setTimeout(()=>{
-            DOM.stateChangeAlertTxt.innerHTML = '';
-        },1500);
-    },1000);
-    
+            DOM.menuIcon.style.display = 'none';
+            DOM.stateChangeAlertTxt.innerHTML = lessonSaved;
+            setTimeout(()=>{
+                DOM.stateChangeAlertTxt.innerHTML = '';
+                DOM.menuIcon.style.display = 'block';
+            },1500);
+        },1000);
+    };
+ 
+    DOM.menuIcon.addEventListener('click', () => {
+        persistor.purge();
+        window.location.reload(true);
+    });
 }

@@ -2,6 +2,29 @@ import { screens } from 'snapdragon/screen-layouts';
 
 const { specimen, revision, species, vernaculars, scientifics, summary, history, text, command, leaf, leafName } = screens;
 
+const portrait1 = {
+    name: 'revision',
+    screens: [{ ...revision }]
+};
+
+const portrait2 = {
+    name: 'test',
+    score: 1,
+    screens: [{ ...species }]
+};
+
+const portrait3 = {
+    name: 'test',
+    score: 1,
+    screens: [{ ...vernaculars }]
+};
+
+const portrait4 = {
+    name: 'test',
+    score: 1,
+    screens: [{ ...scientifics }]
+};
+
 const layout1 = {
     name: 'revision',
     screens: [
@@ -81,9 +104,10 @@ const layout9 = {
     ]
 };
 
-const lesson1 = {
+const landscapeLesson1 = {
     id: 1,
     name: 'Lesson 1',
+    portrait: false,
     levels: [
         {   id: 1,
             name: 'Level 1',
@@ -113,9 +137,10 @@ const lesson1 = {
     ]
 };
 
-const lesson2 = {
+const landscapeLesson2 = {
     id: 2,
     name: 'Lesson 2',
+    portrait: false,
     levels: [
         {   id: 1,
             name: 'Level 1',
@@ -125,7 +150,21 @@ const lesson2 = {
     ]
 };
 
+const portraitLesson1 = {
+    id: 3,
+    name: 'Lesson 1',
+    portrait: true,
+    levels: [
+        {   id: 1,
+            name: 'Level 1',
+            description: 'Match species',
+            layouts: [ portrait1, portrait2, portrait3, portrait4 ]
+        }
+    ]
+};
+
 export const lessonPlans = [
-    lesson1,
-    lesson2
+    landscapeLesson1,
+    landscapeLesson2, 
+    portraitLesson1
 ]

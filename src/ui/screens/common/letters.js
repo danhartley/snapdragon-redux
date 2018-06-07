@@ -52,7 +52,7 @@ export const renderLetters = (config, screen, letters, item, callbackTime) => {
                     const success = itemName === item.name.replace(' ', '');
                     const response = { ...question, answer, success };
                     const { text, colour, correct } = renderAnswerHeader(response);
-                    DOM.headerTxt.innerHTML = text;
+                    DOM.rightHeaderText.innerHTML = text;
                     DOM.rightHeader.style.backgroundColor = colour;
                     setTimeout(()=>{
                         actions.boundUpdateScore(response);
@@ -85,12 +85,12 @@ export const renderLetters = (config, screen, letters, item, callbackTime) => {
         const success = false;
         const response = { ...question, answer, success };
         const { text, colour, correct } = renderAnswerHeader(response);
-        DOM.headerTxt.innerHTML = text;
+        DOM.rightHeaderText.innerHTML = text;
         DOM.rightHeader.style.backgroundColor = colour;
         setTimeout(()=>{
             actions.boundUpdateScore(response);
         }, callbackTime);
     });
 
-    DOM.headerTxt.innerHTML = config.isSmallDevice ? screen.headers.short : screen.headers.long;
+    DOM.rightHeaderText.innerHTML = config.isPortraitMode ? screen.headers.short : screen.headers.long;
 };

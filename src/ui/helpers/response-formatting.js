@@ -54,11 +54,11 @@ export const renderAnswer = (response) => {
     }
 };
 
-export const renderAnswerText = (response, isSmallDevice) => {
+export const renderAnswerText = (response, isPortraitMode) => {
 
     const correct = renderCorrect(response);
 
-    if(isSmallDevice) {
+    if(isPortraitMode) {
         return correct
         ? `${renderAnswer(response)}    `
         : `${renderAnswer(response)}`
@@ -69,7 +69,7 @@ export const renderAnswerText = (response, isSmallDevice) => {
     }
 };
 
-export const renderAnswerHeader = (response, isSmallDevice = true) => {
+export const renderAnswerHeader = (response, isPortraitMode = true) => {
 
     response.answer = response.answer.trim();
 
@@ -80,7 +80,7 @@ export const renderAnswerHeader = (response, isSmallDevice = true) => {
 
     const colour = correct ? right : wrong;
 
-    return { text: renderAnswerText(response, isSmallDevice), colour, correct };
+    return { text: renderAnswerText(response, isPortraitMode), colour, correct };
 };
 
 export const renderTermAnswerHeader = (response, header, target) => {

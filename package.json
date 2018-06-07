@@ -13,14 +13,18 @@
   },
   "jest": {
     "moduleFileExtensions": [
-      "js"
+      "js", "html"
     ],
     "moduleDirectories": [
       "node_modules"
     ],
     "modulePaths": [
       "src"
-    ]
+    ],
+    "moduleNameMapper": {      
+      "ui/screens/.*/.*.html": "<rootDir>/src/empty.js",
+      "ui/progress/.*.html": "<rootDir>/src/empty.js"
+    }
   },
   "repository": {
     "type": "git",

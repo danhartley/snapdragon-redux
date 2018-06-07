@@ -20,12 +20,14 @@ import { nextItem } from 'ui/setup/next-item';
 import { renderScore } from 'ui/progress/score';
 import { listening } from 'ui/screens/common/listener';
 
+import { lessonPlans } from 'snapdragon/lesson-plans';
 import { config } from 'syllabus/lesson-config';
 
 // capture device
 
-config.isSmallDevice = window.matchMedia("(max-width: 480px)").matches;
-config.isTabletDevice = window.matchMedia("(max-width: 1024px)").matches;
+config.isPortraitMode = window.matchMedia("(max-width: 480px)").matches;
+config.lesson = config.isPortraitMode ? lessonPlans[2] : lessonPlans[0];
+config.lesson.level = config.lesson.levels[0];
 
 // setup
 

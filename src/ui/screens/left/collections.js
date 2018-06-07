@@ -81,7 +81,6 @@ export const renderCollections = () => {
     });
 
     startLearningBtn.addEventListener('click', event => {
-        // actions.boundUpdateConfig(config);
         actions.boundNextRound(index);
     });
 

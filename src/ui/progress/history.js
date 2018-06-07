@@ -11,7 +11,7 @@ export const renderHistory = (history) => {
     
     if(!history) return;
 
-    if(config.isSmallDevice) {
+    if(config.isPortraitMode) {
         DOM.leftGrid.style.display = 'none';
     }
 

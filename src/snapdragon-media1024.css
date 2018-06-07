@@ -4,8 +4,27 @@
         padding: 1em;
       }
 
-    .species-card-images img {
-        height: 0;
+    .card {
+        font-size: 1em;
+        margin: .4em;
+    }
+
+    .card div {
+        margin: .5em;
+    }
+
+    .species-card {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-rows: 4fr 1fr
+    }
+
+    .species-card-btn button {
+        float: right;
+    }
+
+    .species-card-species, .species-card-name {
+        font-size: 1.5em;
     }
 
     .specimens-card-btn {
@@ -18,6 +37,13 @@
 
     .left-grid, .right-grid {
         grid-template-rows: 1fr 10fr 1fr;
+        grid-template-areas:  "header"
+                        "squares"
+                        "footer"
+    }
+
+    progress {
+        display: none;
     }
 
     .left-grid {
@@ -28,8 +54,35 @@
         grid-column: 3;
     }
 
+    .tiles {
+        height: 100%;
+    }
+
     .squares { 
         height: 100%;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .right {  
+        background-color: rgb(255, 255, 255);
+        color: rgb(44, 141, 86);
+    }
+    
+    .wrong {
+        background-color: rgb(255, 255, 255);
+        color: rgb(141, 0, 5);
+    }
+
+    .strips {
+        height: 100%;
+    }
+
+    .strip {
+        font-size: 1.4em;
+    }
+
+    .strip div {
+        padding: 1em;
     }
 
     .flex-provider .eol, .flex-provider .gbif {
@@ -81,7 +134,7 @@
     }
 
     .letterbox-entry span {
-        margin: 0 .5em 0.5em 0;
+        margin: 0 .5em .5em .5em;
         display: inline;
     }
 

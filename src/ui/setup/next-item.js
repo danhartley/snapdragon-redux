@@ -4,7 +4,7 @@ import { store } from 'redux/store';
 
 export const nextItem = (layout) => {
 
-    DOM.headerTxt.innerHTML = '';
+    DOM.rightHeaderText.innerHTML = '';
 
     actions.boundNextItem(layout.itemIndex);
 };

@@ -3,68 +3,45 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderWiki } from 'wikipedia/wiki';
 import { renderFamily } from 'gbif/gbif';
-
-export const renderCardHeader = (collectionName) => {
-    DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
-    DOM.headerTxt.innerHTML = ``;
-};
+import { renderTemplate } from 'ui/helpers/templating';
+import { modalHandler } from 'ui/helpers/handlers';
+import landscapeTemplate from 'ui/screens/common/card-template.html';
+import portraitTemplate from 'ui/screens/common/card-portrait-template.html';
 
 export const renderCard = (collection) => {
     
+    DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
+    DOM.rightHeaderText.innerHTML = ``;
+
     const item = collection.items[collection.itemIndex];
 
     const { layout, config, index } = store.getState();
-
-    DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
-    DOM.headerTxt.innerHTML = ``;
 
     const screen = layout.screens.filter(el => el.name === 'species-card')[0];
 
     if(!screen) return;
 
-    const template = document.querySelector(`.${screen.template}`);
+    screen.parent.innerHTML = '';
 
-    const speciesTxt = template.content.querySelector('.js-txt-species');
+    config.isPortraitMode
+        ? renderPortrait(screen, item, config, collection, index)
+        : renderLandscape(screen, item, config);
+};
 
-    speciesTxt.innerHTML = item.name;
+const renderLandscape = (screen, item, config) => {
 
-    const vernacularNames = template.content.querySelector('.js-txt-species-names');
+    const template = document.createElement('template');
 
-    const names = item.names.filter(name => name.language === config.language);
-
-    // const listNames = names.map((vernacular, index) => {
-    //         if(index < 1) {
-    //             return `<li>${vernacular.vernacularName}</li>`;
-    //     }
-    // }).join('');
-
-    // vernacularNames.innerHTML = `<ul>${listNames}</ul>`;
-    vernacularNames.innerHTML = names[0].vernacularName;
+    template.innerHTML = landscapeTemplate;
 
     const eolPage = template.content.querySelector('.js-species-card-eol-link');
-    
+
     eolPage.setAttribute('href', `http://eol.org/pages/${item.id}/overview`);
     eolPage.setAttribute('target', '_blank');
     eolPage.setAttribute('style', 'text-decoration: none');
 
-    const clone = document.importNode(template.content, true);
-
-    clone.querySelector('button').addEventListener('click', event => {
-        actions.boundEndRevision(item);
-        event.stopPropagation();
-    });
-
-    screen.parent.style.backgroundColor = 'rgb(50, 50, 50)';
+    renderCommonParts(screen, template, config, item);
     
-    screen.parent.innerHTML = '';
-    screen.parent.appendChild(clone);
-
-    // document.querySelector('.js-species-card-eol-link').addEventListener('click', event => {
-    //     document.querySelector('.js-external-page-title').innerHTML = `EOL ${item.name}`;
-    //     document.querySelector('.js-external-page-body').innerHTML = 
-    //         `<iframe width="100%" height="100%" frameborder="0" src="https://beta.eol.org/pages/${item.id}/overview"></iframe>`;
-    // });
-
     setTimeout(()=>{
         const wikiLink = document.querySelector('.js-species-card-wiki span');
         if(wikiLink) {
@@ -89,7 +66,7 @@ export const renderCard = (collection) => {
                 </style>`;
                 const wiki = `<header>${style}</header><p>${entry}</p><p><a href='https://en.wikipedia.org/wiki/Salvia_officinalis' target='_blank'>Wikipedia page</a></p>`;
 
-                document.querySelector('.js-external-page-body').innerHTML = config.isSmallDevice
+                document.querySelector('.js-external-page-body').innerHTML = config.isPortraitMode
                     ? `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="data:text/html,${wiki}"></iframe>`          
                     : `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="${wikiLink.dataset.src}"></iframe>`;
                     
@@ -106,32 +83,47 @@ export const renderCard = (collection) => {
 
     renderFamily(gbif, item.name);
 
-    const next = document.querySelector('.js-species-card-btn button');
-    next.innerText = (index + 1) === collection.moduleSize ? 'Species tests' : 'Next species';
+    document.querySelector('.js-txt-family img').classList.add('show');
+};
+const renderPortrait = (screen, item, config, collection, index) => {
+
+    const template = document.createElement('template');
+
+    template.innerHTML = portraitTemplate;
     
-    // small screens
+    renderCommonParts(screen, template, config, item);
 
-    if(config.isSmallDevice) {
-        DOM.leftGrid.style.display = 'none';
-        DOM.rightGrid.style.display = 'grid';
-        DOM.headerTxt.innerHTML = collection.name;
+    DOM.collectionTxt.innerHTML = 'Species preview';
 
-        let images = [];
-        
-        item.imageIndices.forEach(index => {
-            const image = item.images[index];
-            if(image)
-                images.push(image);
-        });
-        images = images.slice(0,2);
+    let images = [];
+    
+    item.imageIndices.forEach(index => {
+        const image = item.images[index];
+        if(image)
+            images.push(image);
+    });
+    images = images.slice(0,4);
 
-        const backgroundImages = images.map(image => {
-                return `<div style='background-image: url(${image}); background-size:cover;'></div>`;
-            }).join('');
+    const backgroundImages = images.map(image => {
+            return `<div style='background-image: url(${image}); background-size: cover;' data-toggle="modal" data-target="#imageModal"></div>`;
+        }).join('');
 
-        document.querySelector('.js-species-card-images').innerHTML = backgroundImages;
-        document.querySelector('.js-txt-family img').classList.add('hide');
-    } else {
-        document.querySelector('.js-txt-family img').classList.add('show');
-    }
+    document.querySelector('.js-species-card-images').innerHTML = backgroundImages;
+
+    modalHandler(document.querySelectorAll('.js-species-card-images div'), item);
+};
+
+const renderCommonParts = (screen, template, config, item) => {
+
+    const species = item.name;
+    const name = item.names.filter(name => name.language === config.language)[0].vernacularName;
+    
+    const clone = document.importNode(template.content, true);
+    
+    clone.querySelector('button').addEventListener('click', event => {
+        actions.boundEndRevision(item);
+        event.stopPropagation();
+    });
+    
+    renderTemplate({ species, name }, template.content, screen.parent, clone);
 };

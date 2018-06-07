@@ -11,7 +11,7 @@ export const collections = [
         type: 'species',
         items: lamiaceae,
         name: 'lamiaceae',
-        eol_name: 'Mint and Basil Family',
+        eol_name: 'Family 1: Mint and Basil',
         eol_link: 'https://eol.org/collections/139275'
     },
     {
@@ -19,7 +19,7 @@ export const collections = [
         type: 'species',
         name: 'herbs',
         items: herbs,
-        eol_name: 'Common Culinary Herbs',
+        eol_name: 'Common Plants 1: Herbs',
         eol_link: 'https://eol.org/collections/139051'
     },
     {
@@ -35,7 +35,7 @@ export const collections = [
         type: 'species',
         name: 'uk wildfowers',
         items: wilduk,
-        eol_name: 'UK Woodland Flowers',
+        eol_name: 'Flora 2: UK Woodland',
         eol_link: 'https://eol.org/collections/139458'
     },
     {
@@ -51,7 +51,7 @@ export const collections = [
         type: 'species',
         name: 'mediterranean flora',
         items: mediterranean,
-        eol_name: 'Mediterranean Flora',
+        eol_name: 'Flora 2: Mediterranean',
         eol_link: 'https://eol.org/collections/139572'
     },
     {

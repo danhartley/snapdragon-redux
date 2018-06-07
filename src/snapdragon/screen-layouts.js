@@ -28,22 +28,6 @@ const specimen = {
   template: 'js-specimen-images-template'     
 };
 
-const name = {
-  name: 'species-card',
-  domain: 'collection',
-  render: renderCard,
-  parent: DOM.leftBody,
-  template: 'js-card-name-template'  
-};
-
-const scientific = {
-  name: 'species-card',
-  domain: 'collection',
-  render: renderCard,
-  parent: DOM.leftBody,
-  template: 'js-card-scientific-template'  
-};
-
 const history = { 
   name: 'history', 
   domain: 'history', 
@@ -64,8 +48,8 @@ const revision = {
 
 const scientifics = {
   name: 'species-scientifics',
-  headers: { long: 'Click the common name to match the species.', short: 'Click name to match species.'},
-  cue: 'Match species name',
+  headers: { long: 'Click the latin name to match the species.', short: 'Click name to match species.'},
+  question: 'Tap the matching latin name.',
   domain: 'collection',
   render: renderScientifics,
   parent: DOM.rightBody,
@@ -76,7 +60,7 @@ const scientifics = {
 const vernaculars = {
   name: 'species-vernaculars',
   headers: { long: 'Click the common name to match the species.', short: 'Click name to match species.'},
-  cue: 'Match common name',
+  question: 'Tap the matching common name.',
   domain: 'collection',
   render: renderVernaculars,
   parent: DOM.rightBody,
@@ -87,7 +71,7 @@ const vernaculars = {
 const species = {
   name: 'species-images',
   headers: { long: 'Click the picture to match the species.', short: 'Click picture to match species.'},
-  cue: 'Match the species',
+  question: 'Which picture matches the name? Tap to find out.',
   domain: 'collection',
   render: renderSpeciesTiles,
   parent: DOM.rightBody,
@@ -97,11 +81,11 @@ const species = {
 
 const text = {
   name: 'text-entry',
+  headers: { long: 'Complete the latin name.', short: 'Complete the latin name.'},
   domain: 'collection',
   render: renderTextEntry,
   parent: DOM.rightBody,
-  headers: { long: 'Complete the species name.', short: 'Complete the species name.'},
-  cue: 'Complete species name',
+  question: 'Complete the latin name',
 };
 
 const summary = { 
@@ -122,13 +106,14 @@ const command = {
     render: renderLetters,
     cutLength: 5,
     template: 'js-letters-template',
-    headers: { long: 'Complete the species name.', short: 'Complete the species name.'},
-    cue: 'Name puzzle'
+    headers: { long: 'Complete the latin name.', short: 'Complete the latin name.'},
+    question: 'Name puzzle'
   }
 };
 
 const leaf = {
   name: 'leaf-image',
+  headers: { long: 'Enter the name for the leaf part.', short: 'Enter the name for the leaf part.'},
   domain: 'collection',
   render: renderLeafTile,
   parent: DOM.leftBody,
@@ -137,6 +122,7 @@ const leaf = {
 
 const leafName = {
   name: 'leaf-text',
+  headers: { long: 'Enter the name for the leaf part.', short: 'Enter the name for the leaf part.'},
   domain: 'collection',
   render: renderNameEntry,
   parent: DOM.rightBody,
@@ -146,8 +132,6 @@ const leafName = {
 
 export const screens = {
   specimen,
-  name,
-  scientific,
   history,
 
   revision,

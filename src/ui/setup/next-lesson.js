@@ -6,9 +6,9 @@ export const nextLesson = (config) => {
 
     if(config.collection.id === '') return;
 
-    const excluedRevision = config.lesson.level.id !== 1;
+    config.excluedRevision = config.lesson.level.id !== 1;
 
-    const layouts = lessonPlanner.createLessonPlan(config.lesson.name, config.lesson.level.name, config.moduleSize, excluedRevision);
+    const layouts = lessonPlanner.createLessonPlan(config);
 
     actions.boundNextLesson(layouts);
 };
