@@ -19,8 +19,8 @@ export const renderScientifics = (collection) => {
                 </div>`;
        };
 
-    DOM.headerTxt.innerHTML = config.isSmallDevice ? screen.headers.short : screen.headers.long;
+    DOM.rightHeaderText.innerHTML = config.isPortraitMode ? screen.headers.short : screen.headers.long;
     DOM.specimenSpeciesTxt.innerHTML = '';
 
-    renderStrips(screen, item, callback, config);
+    renderStrips(screen, item, callback, config, layout);
 };

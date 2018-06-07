@@ -5,30 +5,37 @@ import { actions } from 'redux/actions/action-creators';
 import { lessonPlanner } from 'syllabus/lesson-planner';
 import { renderCollections } from 'ui/screens/left/collections';
 import { renderSnapdragon } from 'ui/screens/right/snapdragon';
+import summaryTemplate from 'ui/progress/summary-template.html';
 
 export const renderSummaryHeader = (score) => {
     setTimeout(()=>{
-        DOM.headerTxt.innerHTML = 'Lesson progress';
+        DOM.rightHeaderText.innerHTML = 'Lesson progress';
     });
     DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
+    document.querySelector('progress').value = 0;
 };
 
 export const renderSummary = (index) => {
 
-    const { score, layouts, collection } = store.getState();
+    const { score, layouts, collection, config, layout } = store.getState();
 
     if(index + 1 !== layouts.length) return;
-    
+
+    const template = document.createElement('template');
+
+    template.innerHTML = summaryTemplate;
+
     renderSummaryHeader(score);
 
-    actions.boundUpdateHistory(score);
-
-    const template = document.querySelector('.js-summary-template');
+    if(!config.isPortraitMode)
+        actions.boundUpdateHistory(score);
+            
+    const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
 
     const clone = document.importNode(template.content, true);
-    DOM.rightGrid.style.display = 'grid';
-    DOM.rightBody.innerHTML = '';
-    DOM.rightBody.appendChild(clone);
+    parent.style.display = 'grid';
+    parent.innerHTML = '';
+    parent.appendChild(clone);
 
     const startOverBtn = document.querySelector('.js-start-over-btn');
     const tryAgainBtn = document.querySelector('.js-try-again-btn');
@@ -51,7 +58,7 @@ export const renderSummary = (index) => {
                 actions.boundNextRound(index);
                 break;
             case learnMoreBtn:
-                excludeRevision = levelName === 'Level 1' ? false : true;
+                config.excludeRevision = levelName === 'Level 1' ? false : true;
                 actions.boundNextRound(index);
                 break;
             case nextLevelBtn:
@@ -62,7 +69,9 @@ export const renderSummary = (index) => {
                 break;
         }
 
-        const nextLayouts = lessonPlanner.createLessonPlan(lessonName, levelName, collection.moduleSize, excludeRevision);
+        config.moduleSize = collection.moduleSize;
+
+        const nextLayouts = lessonPlanner.createLessonPlan(config);
 
         actions.boundNextLesson(nextLayouts);
 

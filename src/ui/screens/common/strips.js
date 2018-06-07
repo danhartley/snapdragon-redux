@@ -1,13 +1,20 @@
 import * as R from 'ramda';
 
 import { DOM } from 'ui/dom';
-import { addListeners } from 'ui/helpers/listeners';
+import { scoreHandler } from 'ui/helpers/handlers';
+import { renderTemplate } from 'ui/helpers/templating';
+import speciesCard from 'ui/screens/common/species-card-template.html';
+import questionCard from 'ui/screens/common/species-question-template.html';
 
-export const renderStrips = (screen, item, callback, config) => {
+export const renderStrips = (screen, item, callback, config, layout) => {
 
-    const template = document.querySelector(`.${screen.template}`);
+    const template = document.createElement('template');
 
+    template.innerHTML = `<div class="strips js-rptr-strips"></div>`;
+    
     const rptrStrips = template.content.querySelector('.js-rptr-strips');
+
+    screen.parent.innerHTML = '';
 
     setTimeout(()=>{
         DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
@@ -36,9 +43,34 @@ export const renderStrips = (screen, item, callback, config) => {
     const clone = document.importNode(template.content, true);
     const strips = clone.querySelectorAll('.js-rptr-strips .strip div');
 
-    addListeners(strips, item, config.callbackTime, config.isSmallDevice);
-
-    screen.parent.innerHTML = '';
     screen.parent.appendChild(clone);
 
+    if(config.isPortraitMode) {
+        
+        DOM.collectionTxt.innerHTML = `Question ${ layout.layoutIndex - 1 }`;
+        document.querySelector('progress').value = layout.layoutIndex - 2;
+
+        const species = item.name;
+        const name = item.names.filter(name => name.language === config.language)[0].vernacularName;
+        template.innerHTML = speciesCard;
+
+        const context = (screen.name === 'species-vernaculars') 
+                ? { name: '', species, filter: 'species' }
+                : { name, species: '', filter: 'name' }
+
+        renderTemplate( context, template.content, screen.parent);
+        template.innerHTML = questionCard;
+        const question = screen.question;
+        renderTemplate( { question }, template.content, screen.parent);
+        const renderAnswer = (text, colour, correct) => {
+            const answer = document.querySelector('.js-species-answer div');
+            answer.innerHTML = correct ? 'Correct' : 'Incorrect';
+            answer.parentElement.style.display = 'block';
+            answer.style.backgroundColor = colour;
+        }
+        scoreHandler(strips, item, config, 'strip', renderAnswer);
+    } else {
+        scoreHandler(strips, item, config, 'strip');
+    }
+    template.innerHTML = '';
 };

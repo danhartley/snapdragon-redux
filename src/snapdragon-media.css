@@ -21,16 +21,36 @@
         padding: 1em;        
     }
 
-    div.species-card-btn {
+    /* div.species-card-btn {
         float: initial;
         margin-right: 0;
+    } */
+
+    .left-body .species-card {
+        height: 100%;
+    }
+
+    .species-question {
+        font-size: .8em;
+    }
+
+    .species-answer {
+        padding: 0 .5em;
+        display: none;
+    }
+    .species-answer div {        
+        text-align: center;
+        border-radius: .1em;
+        padding: .2em 0;
+        font-size: 1.2rem;
     }
 
     .species-card-images {
-        height: 30%;
+        height: 50%;
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        cursor: pointer;
     }
 
     /* modal */
@@ -76,7 +96,7 @@
 
 @media (min-width: 320px) {
     .squares { 
-        height: 80%;
+        height: 60%;
     }
     .letterbox {
         grid-template-rows: 2fr 3fr 2fr;
@@ -84,25 +104,48 @@
     .letterbox-entry {
         flex-direction: column;
         align-items: left;
-        padding: 0em 1em;
     }
     .letterbox-entry input, .letterbox-entry input.short, .letterbox-entry input.long {
         width: 100%;
         margin: 0 0 1em 0;
     }
     .letterbox-entry span {
-        margin: 1em 0 .5em 0;
+        margin: 0 0 .5em 0;
+    }
+    .card {
+        font-size: 1.3em;
+        margin: .2em;
     }
     .species-card-btn {
         padding: .5em 1em;
+        font-size: 1rem;
     }
-    .card div, .species-card-btn {
-        margin: .2em;
+    .species-question {
+        font-size: .8rem;
+    }
+    .right {  
+        color: rgb(255, 255, 255);
+        background-color: rgb(44, 141, 86);
+    }
+    .wrong {
+        color: rgb(255, 255, 255);
+        background-color: rgb(141, 0, 5);
+    }
+    .strips {
+        height: 60%;
+    }
+    .strip {
+        cursor: pointer;
+        font-size: 1em;
+    }
+    .strip div {
+        padding: .3em;
     }
 }
-@media (min-width: 375px) {
-    .card div, .species-card-btn {
-        margin: .6em .2em;
+@media (min-width: 375px) {    
+    .card {
+        font-size: 1.5em;
+        margin: .4em .2em;
     }
     .modal-content {
         width: 354px;

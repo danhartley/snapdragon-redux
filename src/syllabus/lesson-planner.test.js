@@ -1,28 +1,26 @@
 import { lessonPlanner } from 'syllabus/lesson-planner';
-// import { lessonPlans } from 'snapdragon/lesson-plans';
 
-test.skip('createLessonPlan returns Lesson 1 screens unchanged for given collection', () => {
-    const moduleSize = 2;
-    const layouts = lessonPlanner.createLessonPlan('Lesson 1', 'Level 1', moduleSize);
+test('createLessonPlan returns layouts and screens for Lesson 1 for landscape mode by default', () => {    
+    const config = { lesson:  { name: 'Lesson 1', level: { name: 'Level 1'}}, moduleSize: 2, isPortraitMode: false };
+    const layouts = lessonPlanner.createLessonPlan(config);
     const revisedLayoutCount = layouts.length;
     let revisedScreens = [];
     layouts.map(layout => {
         layout.screens.map(screen => revisedScreens.push(screen));
     });
-    expect(revisedLayoutCount).toEqual(8); // 2*4 = 8
+    expect(revisedLayoutCount).toEqual(9); // 2*4 + 1 = 9
     expect(revisedScreens.length).toEqual(18); // 2*7 + 4 = 18
 });
 
-test.skip('createLessonPlan returns Lesson 1 missing revision screens for given collection', () => {
-    const moduleSize = 2;
-    const excludeRevision = true;
-    const layouts = lessonPlanner.createLessonPlan('Lesson 1', 'Level 1', moduleSize, excludeRevision);
+test('createLessonPlan returns Lesson 1 missing revision screens for given collection', () => {
+    const config = { lesson:  { name: 'Lesson 1', level: { name: 'Level 1'}}, moduleSize: 2, excludeRevision: true, isPortraitMode: false };
+    const layouts = lessonPlanner.createLessonPlan(config);
     const revisedLayoutCount = layouts.length;
     let revisedScreens = [];
     layouts.map(layout => {
         layout.screens.map(screen => revisedScreens.push(screen));
     });
-    expect(revisedLayoutCount).toEqual(6); // 2*3 = 6
+    expect(revisedLayoutCount).toEqual(7); // 2*3 + 1 = 7
     expect(revisedScreens.length).toEqual(14); // 2*5 + 4 = 14
 });
 

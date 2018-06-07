@@ -8,7 +8,7 @@ export const renderTile = (screen, item, callbackTime) => {
 
     const clone = document.importNode(template.content, true);
 
-    DOM.leftBody.innerHTML = '';
+    DOM.leftBody.innerHTML = '';    
     DOM.leftBody.style.backgroundColor = 'rgb(50, 50, 50)';
 
     var ctx = new Stamp.Context();

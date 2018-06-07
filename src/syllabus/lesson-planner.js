@@ -1,25 +1,28 @@
 import { lessonPlans } from 'snapdragon/lesson-plans';
-import { createLesson } from 'syllabus/lesson-helpers';
+import { createLesson } from 'syllabus/lesson-builder';
 import { screens } from 'snapdragon/screen-layouts';
 
 const { summary, history } = screens;
 
-const createLessonPlan = (lessonName, levelName, moduleSize, excludeRevision = false) => {
+const createLessonPlan = (config) => {
+    const { lesson: { name: lessonName, level: { name: levelName }}, moduleSize, excludeRevision, isPortraitMode } = config;
     return createLesson(
         lessonName, 
         levelName, 
         moduleSize, 
-        currentLayouts(lessonName, levelName), 
-        [ summary, history ], 
-        excludeRevision);        
+        excludeRevision,
+        isPortraitMode, 
+        currentLayouts(config), 
+        [ summary, history ]);        
 };
 
-const currentLayouts = (lessonName, levelName) => {
-    return currentLevel(currentLesson(lessonName), levelName).layouts;
+const currentLayouts = (config) => {
+    const { lesson: { name: lessonName, level: { name: levelName }}, isPortraitMode } = config;
+    return currentLevel(currentLesson(lessonName, isPortraitMode), levelName).layouts;
 };
 
-const currentLesson = lessonName => {
-    const lessons = lessonPlans.filter(lesson => lesson.name === lessonName);
+const currentLesson = (lessonName, isPortraitMode = false) => {
+    const lessons = lessonPlans.filter(lesson => lesson.name === lessonName && lesson.portrait === isPortraitMode);
     return lessons[0];
 };
 

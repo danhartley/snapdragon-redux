@@ -5,7 +5,7 @@ export const renderSnapdragon = () => {
 
     const { config } = store.getState();
 
-    if(config.isSmallDevice) {
+    if(config.isPortraitMode) {
         DOM.leftGrid.style.display = 'grid';
         DOM.rightGrid.style.display = 'none';
     } else {

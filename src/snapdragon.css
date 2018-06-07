@@ -32,6 +32,10 @@ a {
   color: #ffffff;
 }
 
+progress {
+  width: 100%;
+  background-color: rgb(44, 141, 86);
+}
 /* generic */
 
 .underline-link {
@@ -50,6 +54,17 @@ a {
 
 .hide {
   display: none;
+}
+
+.menu {
+  cursor: pointer;
+}
+
+.line {
+  height: .25em;
+  width: 2em;
+  margin: .25em 0;
+  background-color: white;
 }
 
 /* home page */
@@ -82,11 +97,15 @@ a {
   grid-template-columns: 100%;
   grid-column: 1;
   grid-auto-flow: column;
-  grid-template-rows: 1fr 10fr 1fr;
   background-color: rgb(50, 50, 50);
-  grid-template-areas: "header"
-                      "squares"
-                      "footer"
+  grid-template-areas:  "header"
+                        "progress"
+                        "squares"
+                        "footer"
+}
+
+.left-grid {
+  grid-template-rows: 1fr .3em 10fr 1fr;
 }
 
 .right-body {
@@ -137,17 +156,17 @@ a {
 .squares {
   display: grid;
   height: 100%;
-  grid-auto-flow: column;                            
+  grid-auto-flow: column;                       
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
 
 .tiles {
   display: grid;
-  height: 100%;
+  height: 50%;
   grid-auto-flow: column;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 .squares img {
@@ -169,13 +188,13 @@ a {
   grid-auto-flow: row;
   grid-template-rows: repeat(6,1fr);
   align-items: center;
-  padding: 0 0 0 2em;
-  background-color: rgb(75, 75, 75);
+  padding: 0 1em 0 1em;
+  background-color: rgb(85, 85, 85);
 }
 
-.strip {
-  font-size: 1.2em;
-  cursor: pointer;
+.strip div {
+    border: solid 1px;
+    border-color: rgb(75, 75, 75);
 }
 
 .vernacular-name {
@@ -235,16 +254,6 @@ a {
   display: inline-block;
 }
 
-.right {  
-  background-color: rgb(255, 255, 255);
-  color: rgb(44, 141, 86);
-}
-
-.wrong {
-  background-color: rgb(255, 255, 255);
-  color: rgb(141, 0, 5);
-}
-
 .summary button {
   margin: 0 0 1em 0;
 }
@@ -264,6 +273,14 @@ a {
   margin: .3em;
 }
 
+.card.name .species-card-species {
+  display: none;
+}
+
+.card.species .species-card-name {
+  display: none;
+}
+
 .species-card-wikipedia {
   background-color: rgb(128, 128, 128);
 }
@@ -274,17 +291,9 @@ a {
 .species-card-family {
   text-transform: uppercase;
   letter-spacing: 2px;
-}  
+}
 
 .species-card-name {
-  font-size: 1.8em;
-}
-
-.species-card-names {
-  font-size: 1.5em;
-}
-
-.species-card-names {
   text-transform: capitalize;
 }
 
@@ -304,6 +313,7 @@ div.species-card-btn {
 
 .capitalised {
   text-transform: capitalize;
+
 }
 
 button:focus {

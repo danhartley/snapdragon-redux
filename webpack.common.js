@@ -25,17 +25,12 @@ module.exports = {
             use: {
               loader: "babel-loader"
             }
+        },
+        {
+          test: /\.html$/,
+          exclude: [ /node_modules/, path.resolve(__dirname, 'src/index.html')],
+          use: {loader: 'html-loader'}
         }
-        // ,{
-        //     test: /\.html$/,
-        //     use: [ {
-        //       loader: 'file-loader',
-        //       options: {
-        //           name: '[name].[ext]'
-        //       }
-        //     } ],
-        //     exclude: path.resolve(__dirname, 'src/index.html')
-        // }
         ],
     },
     plugins: [

@@ -16,8 +16,12 @@ export const DOM = {
     rightBodyBottom : document.getElementsByClassName('js-right-body-bottom')[0],
     rightFooter : document.getElementsByClassName('js-right-footer')[0],
     
-    headerTxt : document.getElementsByClassName('js-txt-header')[0],
+    rightHeaderText : document.getElementsByClassName('js-right-txt-header')[0],
     totalTxt : document.getElementsByClassName('js-txt-total')[0],
     correctTxt : document.getElementsByClassName('js-txt-correct')[0],
-    stateChangeAlertTxt: document.getElementsByClassName('js-state-change-alert')[0]
+    stateChangeAlertTxt: document.getElementsByClassName('js-state-change-alert')[0],
+    menuIcon: document.getElementsByClassName('js-menu')[0],
+
+    speciesCardNameTxt: document.getElementsByClassName('js-txt-species-names')[0],
+    speciesCardSpeciesTxt: document.getElementsByClassName('js-txt-species')[0]
 };

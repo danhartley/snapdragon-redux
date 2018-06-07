@@ -56,65 +56,36 @@
     </head>
     <body>
         <div class="grid">
-            <div class="left-grid js-left-grid">
+            <div class="left-grid js-left-grid">                    
                     <div class="header js-left-header">
                         <div class="header-text js-txt-collection"></div>
                         <div class="header-text txt-specimen-species js-txt-specimen-species"></div>                         
                     </div>
+                    <progress value="0" max="6"></progress>
                     <div class="left-body js-left-body"></div>
                     <div class="footer js-left-footer">
                         <button class="btn btn-light btn-sm btn-more-specimens js-btn-more-specimens" style="display:none">Next 4 images</button>
                         <span class="score-footer-alert js-state-change-alert"></span>
+                        <span class="menu js-menu">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </span>
                     </div>
             </div>
             <div class="right-grid js-right-grid">
                 <div class="header js-right-header">
-                    <div class="header-text js-txt-header"></div>                        
+                    <div class="header-text js-right-txt-header"></div>                   
                 </div>
                 <div class="right-body js-right-body"></div>
                 <div class="footer js-right-footer"></div>
             </div>
         </div>
-        <template class="js-specimen-images-template">
-            <div class="squares js-tiles"></div>
-            <div class="specimens-card-btn js-continue-btn"><button class="btn btn-light">Continue</button></div>
 
-            <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title js-modal-title"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <div class="modal-body">
-                        <img class="js-image-modal" src="" alt="">
-                    </div>                    
-                </div>
-                </div>
-            </div>
-
-        </template>
-        
-        <template class="js-tiles-template">
-            <div class="tiles js-tiles"></div>
-        </template>
-        
-        <!-- <template class="js-cards-template">
-            <div class="rectangles js-rptr-rectangles"></div>
-        </template> -->
-        
-        <template class="js-strips-template">
-            <div class="strips js-rptr-strips"></div>
-        </template>
-        
         <template class="js-score-template">
             <div class="score-footer">
                 Score: {{ score.correct }}/{{ score.total }}
                 History: {{ running.correct }}/{{ running.total }}
-                <!-- Round: {{ collection.currentRound }}/{{ collection.rounds }} -->
-                <!-- Level: {{ config.lesson.level.id }}/{{ config.lesson.levels.length }} -->
             </div>
         </template>
         
@@ -125,24 +96,6 @@
         
         <template class="js-fails-template">
             <div class="rectangles js-rptr-fails">
-            </div>
-        </template>
-        
-        <template class="js-summary-template">
-            <div class="js-rptr-summary">
-                <div class="summary js-right-body-top">
-                    <div style="display: none;">Run the test again</div>
-                    <button style="display: none;" class="btn btn-light start-over-btn js-start-over-btn">Start over</button>
-                    <div>Answer the ones you got wrong</div>
-                    <button class="btn btn-light  js-try-again-btn">Try again</button>
-                    <div style="display: none;">Move to the next level</div>
-                    <button style="display: none;" class="btn btn-light js-next-level-btn">Next level</button>
-                    <div>Change collection, level or other settings</div>
-                    <button class="btn btn-light js-change-collection-btn">Change settings</button>
-                    <div>Continue with the lesson</div>
-                    <button class="btn btn-light learn-more-btn js-learn-more-btn">Learn more</button>
-                </div>                    
-                <div class="js-right-body-bottom"></div>
             </div>
         </template>
         
@@ -193,57 +146,6 @@
                 </div>                    
         </template>
         
-        <template class="js-card-revision-template">
-                <div class="js-species-card species-card">
-                    <div class="js-species-card-images species-card-images"></div>
-                    <div class="card js-card">
-                        <div class="species-card-family js-txt-family" style="margin:0;">
-                            <span></span>
-                            <img src="https://media.eol.org/content/2017/02/18/22/29040_98_68.jpg">
-                        </div>
-                        <div class="species-card-name js-txt-species"></div>
-                        <div class="species-card-names js-txt-species-names">names</div>
-                        <div class="species-card-wiki js-species-card-wiki"></div>
-                        <div><a class="species-card-eol-link js-species-card-eol-link underline-link">EOL page</a></div>
-                    </div>
-                    <div class="species-card-btn js-species-card-btn"><button class="btn btn-light">Next species</button></div>
-                </div>
-
-                <div class="modal fade" id="externalPageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                    <div class="modal-content"> 
-                        <div class="modal-header">
-                        <h5 class="modal-title js-external-page-title"></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        </div>
-                        <div class="modal-body js-external-page-body">
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-        </template>
-        
-        <template class="js-card-name-template">
-            <div class="species-card card js-card">
-                <div class="species-card-family js-txt-family"><span></span></div>
-                <div class="species-card-name js-txt-species"></div>
-                <div class="species-card-names js-txt-species-names">names</div>                
-            </div>
-            <div class="species-card-btn js-species-card-btn"><button class="btn btn-light">Next species</button></div>
-        </template>
-        
-        <template class="js-card-scientific-template">
-                <div class="species-card card js-card">
-                    <div class="species-card-family js-txt-family"><span></span></div>
-                    <div class="species-card-name js-txt-species"></div>
-                    <div class="species-card-names js-txt-species-names" style="display:none;">names</div>                    
-                </div>
-                <div class="species-card-btn js-species-card-btn"><button class="btn btn-light">Next species</button></div>
-        </template>
-        
         <template class="js-collections-template">
         
             <div class="collections js-species-collection">
@@ -256,8 +158,6 @@
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-collection="{{ species }}">
                             <div class="collection js-collection">
                                 <span id="{{ collection.id }}">{{ collection.eol_name }} ({{ collection.items.length }})</span>
-                                <!-- <button class="btn btn-light" id="{{ collection.id }}">Learn</button> -->
-                                <!-- <a class="underline-link collection-preview" target="_blank" href="{{ collection.eol_link }}">Preview</a>  -->
                             </div>
                         </div>
                     </div>                        
@@ -376,6 +276,23 @@
                 <div></div>
             </div>
         </template>
+
+        <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title js-modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <img class="js-image-modal" src="" alt="">
+                </div>                    
+            </div>
+            </div>
+        </div>
+        
         <script type="text/javascript" src="./stamp.js"></script>
     <script type="text/javascript" src="app.bundle.js"></script></body>    
     </html>
