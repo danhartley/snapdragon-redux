@@ -10,7 +10,7 @@ export const listening = (score) => {
         savingLesson = 'Saving lesson progress...';
         lessonSaved = 'Lesson progress saved';
     }
-    else DOM.moreSpecimensBtn.style.display = 'none';
+    // else DOM.moreSpecimensBtn.style.display = 'none';
 
     const displaySavingLessonNotice = () => {
         DOM.stateChangeAlertTxt.innerHTML = savingLesson;

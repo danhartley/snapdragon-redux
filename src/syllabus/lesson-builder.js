@@ -28,12 +28,9 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
     testPlans = utils.shuffleArray(testPlans);
     const shuffledLessonPlan = [ ...revisionPlans, ...testPlans ];
 
-    const itemIndices = [1,2];
-
     shuffledLessonPlan.forEach( (plan, i) => {
         plan.layoutIndex = layoutIndex;
         plan.itemIndex = (i % 2 === 0) ? 0 : 1;
-        // plan.itemIndex = utils.shuffleArray(itemIndices)[0];
         plan.exerciseIndex = i;
         layoutIndex = layoutIndex + 1;
     });

@@ -1,4 +1,3 @@
-import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
 
@@ -10,9 +9,6 @@ export const renderInput = (config, screen, question, callbackTime, item, render
         
         const { text, colour, correct } = renderAnswerHeader(response);
 
-        DOM.rightHeaderText.innerHTML = text;
-        DOM.rightHeader.style.backgroundColor = colour;
-        
         btn.style.color = colour;
         btn.parentNode.style.background = colour;
 
@@ -59,7 +55,5 @@ export const renderInput = (config, screen, question, callbackTime, item, render
             event.target.disabled = true;
         }
     };
-
-    DOM.rightHeaderText.innerHTML = config.isPortraitMode ? screen.headers.short : screen.headers.long;
 };
 

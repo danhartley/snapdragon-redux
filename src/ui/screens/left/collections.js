@@ -8,7 +8,7 @@ import { persistor } from 'redux/store';
 
 export const renderCollections = () => {
 
-    DOM.moreSpecimensBtn.style.display = 'none';
+    // DOM.moreSpecimensBtn.style.display = 'none';
     DOM.collectionTxt.innerHTML = 'Snapdragon Collections';
 
     let { collections, collection, config, index } = store.getState();

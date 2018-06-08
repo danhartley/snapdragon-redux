@@ -16,10 +16,6 @@ export const renderStrips = (screen, item, callback, config, layout) => {
 
     screen.parent.innerHTML = '';
 
-    setTimeout(()=>{
-        DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
-    },100);
-
     item.content = R.take(6, item.multipleNames.map(answer => {
         const vernacularNames = answer.names
             .filter(name => name.language === config.language)

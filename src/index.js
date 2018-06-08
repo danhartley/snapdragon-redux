@@ -17,6 +17,7 @@ import { nextLesson } from 'ui/setup/next-lesson';
 import { nextLayout } from 'ui/setup/next-layout';
 import { nextItem } from 'ui/setup/next-item';
 
+import { renderHeaders } from 'ui/screens/common/headers';
 import { renderScore } from 'ui/progress/score';
 import { listening } from 'ui/screens/common/listener';
 
@@ -34,6 +35,10 @@ config.lesson.level = config.lesson.levels[0];
 observeStore(store, store => store.config, nextLesson, 'config', 'next-lesson');
 observeStore(store, store => store.index, nextLayout, 'index', 'next-layout');
 observeStore(store, store => store.layout, nextItem, 'layout', 'next-item');
+
+// headers
+
+observeStore(store, store => store.layout, renderHeaders, 'layout', 'render-headers');
 
 // progress
 

@@ -1,5 +1,5 @@
 import { store } from 'redux/store';
-import { DOM } from 'ui/dom';
+import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
 import { renderWiki } from 'wikipedia/wiki';
 import { renderFamily } from 'gbif/gbif';
@@ -9,9 +9,6 @@ import landscapeTemplate from 'ui/screens/common/card-template.html';
 import portraitTemplate from 'ui/screens/common/card-portrait-template.html';
 
 export const renderCard = (collection) => {
-    
-    DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
-    DOM.rightHeaderText.innerHTML = ``;
 
     const item = collection.items[collection.itemIndex];
 
@@ -73,7 +70,7 @@ const renderLandscape = (screen, item, config) => {
                 document.querySelector('#externalPageModal').focus();
             });
         }
-    },1000);    
+    });    
 
     const wiki = document.querySelector('.js-species-card-wiki');
 
@@ -93,16 +90,7 @@ const renderPortrait = (screen, item, config, collection, index) => {
     
     renderCommonParts(screen, template, config, item);
 
-    DOM.collectionTxt.innerHTML = 'Species preview';
-
-    let images = [];
-    
-    item.imageIndices.forEach(index => {
-        const image = item.images[index];
-        if(image)
-            images.push(image);
-    });
-    images = images.slice(0,4);
+    const images = utils.shuffleArray(item.images).slice(0,4);
 
     const backgroundImages = images.map(image => {
             return `<div style='background-image: url(${image}); background-size: cover;' data-toggle="modal" data-target="#imageModal"></div>`;

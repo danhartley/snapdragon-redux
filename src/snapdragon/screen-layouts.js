@@ -48,8 +48,8 @@ const revision = {
 
 const scientifics = {
   name: 'species-scientifics',
-  headers: { long: 'Click the latin name to match the species.', short: 'Click name to match species.'},
-  question: 'Tap the matching latin name.',
+  headers: { long: 'Click the latin name to match the species', short: 'Click name to match species'},
+  question: 'Tap to the match latin name',
   domain: 'collection',
   render: renderScientifics,
   parent: DOM.rightBody,
@@ -59,8 +59,8 @@ const scientifics = {
 
 const vernaculars = {
   name: 'species-vernaculars',
-  headers: { long: 'Click the common name to match the species.', short: 'Click name to match species.'},
-  question: 'Tap the matching common name.',
+  headers: { long: 'Click the common name to match the species', short: 'Click name to match species'},
+  question: 'Tap to match the common name',
   domain: 'collection',
   render: renderVernaculars,
   parent: DOM.rightBody,
@@ -70,8 +70,8 @@ const vernaculars = {
 
 const species = {
   name: 'species-images',
-  headers: { long: 'Click the picture to match the species.', short: 'Click picture to match species.'},
-  question: 'Which picture matches the name? Tap to find out.',
+  headers: { long: 'Click the picture to match the species', short: 'Click picture to match species'},
+  question: 'Tap the picture to match the species',
   domain: 'collection',
   render: renderSpeciesTiles,
   parent: DOM.rightBody,
@@ -81,7 +81,7 @@ const species = {
 
 const text = {
   name: 'text-entry',
-  headers: { long: 'Complete the latin name.', short: 'Complete the latin name.'},
+  headers: { long: 'Complete the latin name', short: 'Complete the latin name'},
   domain: 'collection',
   render: renderTextEntry,
   parent: DOM.rightBody,

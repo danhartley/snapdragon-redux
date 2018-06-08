@@ -1,4 +1,3 @@
-import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderStrips } from 'ui/screens/common/strips';
 
@@ -18,8 +17,6 @@ export const renderVernaculars = (collection) => {
                     <div class="capitalised" id="${contentItem.id}" data-vernacular="${contentItem.vernacularQuestion}">${contentItem.vernacularAnswer}</div>
                 </div>`;
        };
-
-    DOM.rightHeaderText.innerHTML = config.isPortraitMode ? screen.headers.short : screen.headers.long;
 
     renderStrips(screen, item, callback, config, layout);
 };

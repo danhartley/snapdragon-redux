@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 
-import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
+import { utils } from 'utils/utils';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import html from 'ui/screens/right/species-tiles-template.html';
@@ -10,41 +10,27 @@ import questionCard from 'ui/screens/common/species-question-template.html';
 
 export const renderSpeciesTiles = (collection) => {
 
-    DOM.leftBody.style.display = 'block';
-
     const item = collection.items[collection.itemIndex];
 
     const { layout, config } = store.getState();
 
-    
     document.querySelector('progress').value = layout.layoutIndex - 2;
     
     const screen = layout.screens.filter(el => el.name === 'species-images')[0];
     
     if(!screen) return;
 
-    setTimeout(()=>{
-        if(config.isPortraitMode) {
-                DOM.collectionTxt.innerHTML = `Question ${ layout.layoutIndex - 1 }`,
-                document.querySelector('progress').value = layout.layoutIndex - 2
-            } else {
-                DOM.rightHeaderText.innerHTML = screen.headers ? screen.headers.long : 'no long header given';
-            }
-    });
-
     const template = document.createElement('template');
     
     template.innerHTML = html;
     
     screen.parent.innerHTML = '';
-    
-    const imagesRequired = config.isPortraitMode ? 3 : 3;
 
-    let images = R.take(imagesRequired, item.multipleImages.filter(image => image.name !== item.name));
-    images.push(R.take(imagesRequired, item.multipleImages.filter(image => image.name === item.name))[0]);    
-    images = images.map(image => { 
-        return { src: image.images[0], answer: image.name  };
-    });
+    let images = R.take(3, item.multipleImages.filter(image => image.name !== item.name));
+    images.push(R.take(3, item.multipleImages.filter(image => image.name === item.name))[0]);    
+    images = utils.shuffleArray(images.map(image => { 
+        return { src: image.images[Math.floor(Math.random() * image.images.length)], answer: image.name  };
+    }));
 
     renderTemplate({ images }, template.content, screen.parent);
     

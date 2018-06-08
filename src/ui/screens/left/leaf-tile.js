@@ -10,7 +10,7 @@ export const renderLeafTile = (collection) => {
 
     const { layout, config } = store.getState();
 
-    DOM.collectionTxt.innerHTML = collection.name;
+    // DOM.collectionTxt.innerHTML = collection.name;
     
     let screen = layout.screens.filter(el => el.name === 'leaf-image')[0];
 
