@@ -38,8 +38,8 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
 
     shuffledLessonPlan.forEach( (plan, i) => {
         plan.layoutIndex = layoutIndex;
-        // plan.itemIndex = (i % 2 === 0) ? 0 : 1;
-        plan.itemIndex = utils.shuffleArray(itemIndices)[0];
+        plan.itemIndex = (i % 2 === 0) ? 0 : 1;
+        // plan.itemIndex = utils.shuffleArray(itemIndices)[0];
         plan.exerciseIndex = i;
         layoutIndex = layoutIndex + 1;
     });
