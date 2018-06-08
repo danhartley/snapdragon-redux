@@ -28,11 +28,14 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
     testPlans = utils.shuffleArray(testPlans);
     const shuffledLessonPlan = [ ...revisionPlans, ...testPlans ];
 
+    let itemIndex = 0;
+
     shuffledLessonPlan.forEach( (plan, i) => {
         plan.layoutIndex = layoutIndex;
-        plan.itemIndex = (i % 2 === 0) ? 0 : 1;
+        plan.itemIndex = itemIndex;
         plan.exerciseIndex = i;
         layoutIndex = layoutIndex + 1;
+        itemIndex = (itemIndex + 1) === moduleSize ? 0 : itemIndex + 1;
     });
 
     // update the original lesson plan with the shuffled version

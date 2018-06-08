@@ -12,7 +12,12 @@ export const renderCard = (collection) => {
 
     const item = collection.items[collection.itemIndex];
 
-    const { layout, config, index } = store.getState();
+    const { layout, config, index, layouts } = store.getState();
+
+    // Test progress
+
+    document.querySelector('progress').max = layouts.filter(layout => layout.name === 'test').length;
+    document.querySelector('progress').value = 0;
 
     const screen = layout.screens.filter(el => el.name === 'species-card')[0];
 

@@ -42,9 +42,6 @@ export const renderStrips = (screen, item, callback, config, layout) => {
     screen.parent.appendChild(clone);
 
     if(config.isPortraitMode) {
-        
-        DOM.collectionTxt.innerHTML = `Question ${ layout.layoutIndex - 1 }`;
-        document.querySelector('progress').value = layout.layoutIndex - 2;
 
         const species = item.name;
         const name = item.names.filter(name => name.language === config.language)[0].vernacularName;
