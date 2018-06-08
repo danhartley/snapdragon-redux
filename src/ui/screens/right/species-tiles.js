@@ -24,9 +24,12 @@ export const renderSpeciesTiles = (collection) => {
     if(!screen) return;
 
     setTimeout(()=>{
-        config.isPortraitMode 
-            ? DOM.collectionTxt.innerHTML = `Question ${ layout.layoutIndex - 1 }`
-            : DOM.rightHeaderText.innerHTML = screen.headers ? screen.headers.long : 'no long header given';
+        if(config.isPortraitMode) {
+                DOM.collectionTxt.innerHTML = `Question ${ layout.layoutIndex - 1 }`,
+                document.querySelector('progress').value = layout.layoutIndex - 2
+            } else {
+                DOM.rightHeaderText.innerHTML = screen.headers ? screen.headers.long : 'no long header given';
+            }
     });
 
     const template = document.createElement('template');

@@ -8,13 +8,7 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         layouts = layouts.filter(layout => layout.name !== 'revision');
     }
 
-    let lessonPlan = [];
-
-    lessonPlan.lessonName = lessonName;
-    lessonPlan.levelName = levelName;
-    lessonPlan.moduleSize = moduleSize;
-
-    let layoutIndex = 0;
+    let lessonPlan = [], layoutIndex = 0;
 
     // create basic lesson plan from given layout and number of items (moduleSize)
 
@@ -47,6 +41,10 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
     // update the original lesson plan with the shuffled version
 
     lessonPlan = shuffledLessonPlan;
+
+    lessonPlan.lessonName = lessonName;
+    lessonPlan.levelName = levelName;
+    lessonPlan.moduleSize = moduleSize;
 
     const summaryLayout = isPortraitMode 
         ? {
