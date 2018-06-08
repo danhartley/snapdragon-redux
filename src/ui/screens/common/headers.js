@@ -5,13 +5,13 @@ export const renderHeaders = layout => {
     
     const { config, collection } = store.getState();
 
-    // RIGHT - landscape layouts only
+    // Right hand side screen - landscape layouts only
     
     DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
     DOM.rightHeaderText.style.backgroundColor = 'rgb(12, 44, 84)';
     DOM.rightHeaderText.innerHTML = 'Species preview';
 
-    // LEFT - landscape left screen and ALL portrait screens
+    // Left hand side screen - landscape left screen and ALL portrait screens
         
     if(config.isPortraitMode) {
         DOM.collectionTxt.innerHTML = 'Species preview';
@@ -19,15 +19,14 @@ export const renderHeaders = layout => {
         DOM.collectionTxt.innerHTML = collection.name;
     }
 
-
     if(layout.name === 'test') {
         
         DOM.leftBody.style.display = 'block'; // remove by changing code in summary which converts this to a grid...
 
         setTimeout(()=>{
             if(config.isPortraitMode) {
-                    DOM.collectionTxt.innerHTML = `Question ${ layout.layoutIndex - 1 }`,
-                    document.querySelector('progress').value = layout.layoutIndex - 2
+                    DOM.collectionTxt.innerHTML = `Question ${ layout.layoutIndex - config.moduleSize + 1 }`,
+                    document.querySelector('progress').value = layout.layoutIndex - config.moduleSize
             } else {
                 const screen = layout.screens[1];
                 DOM.rightHeaderText.style.backgroundColor = 'rgb(12, 44, 84)';

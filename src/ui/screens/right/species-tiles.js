@@ -14,8 +14,6 @@ export const renderSpeciesTiles = (collection) => {
 
     const { layout, config } = store.getState();
 
-    document.querySelector('progress').value = layout.layoutIndex - 2;
-    
     const screen = layout.screens.filter(el => el.name === 'species-images')[0];
     
     if(!screen) return;
