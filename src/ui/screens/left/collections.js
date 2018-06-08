@@ -31,10 +31,10 @@ export const renderCollections = () => {
     Stamp.appendChildren(DOM.leftBody, expanded);
 
     const startLearningBtn = document.querySelector('.js-continue-lesson');
-    const stateClearBtn = document.querySelector('.js-state-clear');
+    // const stateClearBtn = document.querySelector('.js-state-clear');
 
     startLearningBtn.style.display = collection.id !== '' ? 'inline-block' : 'none';
-    stateClearBtn.style.display = collection.id !== '' ? 'inline-block' : 'none';
+    // stateClearBtn.style.display = collection.id !== '' ? 'inline-block' : 'none';
 
     const speciesCollectionLinks = document.querySelectorAll('.js-species-collection .dropdown-menu button, .js-species-collection .dropdown-menu span');
 
@@ -84,13 +84,13 @@ export const renderCollections = () => {
         actions.boundNextRound(index);
     });
 
-    stateClearBtn.addEventListener('click', () => {
-        persistor.purge().then(res => {
-            stateClearBtn.innerHTML = 'Clearing...';
-            setTimeout(()=>{
-                stateClearBtn.innerHTML = 'Clear lesson';
-                window.location.reload(true);
-            },1000);
-        });
-    });
+    // stateClearBtn.addEventListener('click', () => {
+    //     persistor.purge().then(res => {
+    //         stateClearBtn.innerHTML = 'Clearing...';
+    //         setTimeout(()=>{
+    //             stateClearBtn.innerHTML = 'Clear lesson';
+    //             window.location.reload(true);
+    //         },1000);
+    //     });
+    // });
 };
