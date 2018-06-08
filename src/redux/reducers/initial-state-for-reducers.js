@@ -18,7 +18,7 @@ const initCollection = (rawCollection = collections[0]) => {
         itemIndex: 0,
         currentRound: 1,
         moduleSize: config.moduleSize,
-        rounds : rounds % 2 === 0 ? rounds : rounds === 1 ? 1 :rounds + 1
+        rounds : items.length % config.moduleSize === 0 ? rounds : rounds === 1 ? 1 : Math.floor(rounds) + 1
      };
 
      return collection;
