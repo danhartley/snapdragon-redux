@@ -201,6 +201,7 @@ progress::-moz-progress-bar {
   align-items: center;
   padding: 0 1em 0 1em;
   background-color: rgb(85, 85, 85);
+  height: 60%;
 }
 
 .strip div {
@@ -308,7 +309,7 @@ progress::-moz-progress-bar {
   text-transform: capitalize;
 }
 
-div.species-card-btn {
+.species-card-btn div {
   float: right;
   margin-right: .5em;
 }
@@ -356,6 +357,15 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .collections .dropdown div {
   white-space: nowrap;
   padding: .4em;
+}
+
+.collection:hover {
+  background-color: rgb(205,205,205);
+}
+
+.collection:active {
+  color: white;
+  background-color: rgb(50,50,50);
 }
 
 .collections div {

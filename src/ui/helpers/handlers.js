@@ -45,6 +45,7 @@ const stripHandler = (items, item, config, callback) => {
 
             DOM.rightHeaderText.innerHTML = text;
             DOM.rightHeader.style.backgroundColor = colour;
+            DOM.rightHeaderText.style.backgroundColor = colour;
             
             target.style.color = colour;
             target.style.borderColor = colour;
@@ -88,6 +89,7 @@ const imageHandler = (tiles, item, config, callback) => {
 
             DOM.rightHeaderText.innerHTML = text;
             DOM.rightHeader.style.backgroundColor = colour;
+            DOM.rightHeaderText.style.backgroundColor = colour;
             
             img.parentNode.style.filter = 'saturate(100%)';
 

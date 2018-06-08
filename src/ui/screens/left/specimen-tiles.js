@@ -1,6 +1,5 @@
 import { store } from 'redux/store';
 import { modalHandler } from 'ui/helpers/handlers';
-import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
 import landscapeTemplate from 'ui/screens/left/specimen-tiles-template.html';
 
@@ -11,8 +10,6 @@ export const renderSpecimenTiles = (collection) => {
     if(!item) return;
 
     const { layout, config } = store.getState();
-
-    DOM.collectionTxt.innerHTML = collection.name;
 
     let screen = layout.screens.filter(el => el.name === 'specimen-images')[0];
 

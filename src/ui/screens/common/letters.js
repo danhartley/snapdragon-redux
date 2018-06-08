@@ -92,5 +92,5 @@ export const renderLetters = (config, screen, letters, item, callbackTime) => {
         }, callbackTime);
     });
 
-    DOM.rightHeaderText.innerHTML = config.isPortraitMode ? screen.headers.short : screen.headers.long;
+    // DOM.rightHeaderText.innerHTML = config.isPortraitMode ? screen.headers.short : screen.headers.long;
 };

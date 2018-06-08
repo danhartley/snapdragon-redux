@@ -7,15 +7,9 @@ import { renderCollections } from 'ui/screens/left/collections';
 import { renderSnapdragon } from 'ui/screens/right/snapdragon';
 import summaryTemplate from 'ui/progress/summary-template.html';
 
-export const renderSummaryHeader = (score) => {
-    setTimeout(()=>{
-        DOM.rightHeaderText.innerHTML = 'Lesson progress';
-    });
-    DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
-    document.querySelector('progress').value = 0;
-};
-
 export const renderSummary = (index) => {
+
+    document.querySelector('progress').value = 0;
 
     const { score, layouts, collection, config, layout } = store.getState();
 
@@ -25,15 +19,13 @@ export const renderSummary = (index) => {
 
     template.innerHTML = summaryTemplate;
 
-    renderSummaryHeader(score);
-
     if(!config.isPortraitMode)
         actions.boundUpdateHistory(score);
             
     const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
 
     const clone = document.importNode(template.content, true);
-    parent.style.display = 'grid';
+    parent.style.display = 'grid'; // no, put this in a child
     parent.innerHTML = '';
     parent.appendChild(clone);
 

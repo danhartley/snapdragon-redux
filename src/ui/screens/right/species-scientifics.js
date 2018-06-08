@@ -1,4 +1,3 @@
-import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderStrips } from 'ui/screens/common/strips';
 
@@ -18,9 +17,6 @@ export const renderScientifics = (collection) => {
                     <div id="${contentItem.id}">${contentItem.binomialAnswer}</div>
                 </div>`;
        };
-
-    DOM.rightHeaderText.innerHTML = config.isPortraitMode ? screen.headers.short : screen.headers.long;
-    DOM.specimenSpeciesTxt.innerHTML = '';
 
     renderStrips(screen, item, callback, config, layout);
 };
