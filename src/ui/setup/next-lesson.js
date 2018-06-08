@@ -6,7 +6,7 @@ export const nextLesson = (config) => {
 
     if(config.collection.id === '') return;
 
-    config.excluedRevision = config.lesson.level.id !== 1;
+    config.excludeRevision = config.lesson.level.id !== 1;
 
     const layouts = lessonPlanner.createLessonPlan(config);
 
