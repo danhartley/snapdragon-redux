@@ -32,10 +32,27 @@ a {
   color: #ffffff;
 }
 
+/* progress, progress::-moz-progress-bar, progress::-webkit-progress-value, progress::-webkit-progress-bar {
+  
+  background-color: rgb(233, 232, 111);
+  background: rgb(75, 75, 75);
+} */
+
 progress {
   width: 100%;
-  background-color: rgb(44, 141, 86);
+  border: 0;
+  background: black;
 }
+progress::-webkit-progress-bar {
+  background-color: black;
+}
+progress::-webkit-progress-value {
+  background-color: rgb(233, 232, 111);
+}
+progress::-moz-progress-bar {
+  background-color: rgb(233, 232, 111);
+}
+
 /* generic */
 
 .underline-link {
