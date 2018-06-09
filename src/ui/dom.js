@@ -23,5 +23,7 @@ export const DOM = {
     menuIcon: document.getElementsByClassName('js-menu')[0],
 
     speciesCardNameTxt: document.getElementsByClassName('js-txt-species-names')[0],
-    speciesCardSpeciesTxt: document.getElementsByClassName('js-txt-species')[0]
+    speciesCardSpeciesTxt: document.getElementsByClassName('js-txt-species')[0],
+    modalTitle: document.getElementsByClassName('js-modal-title'),
+    modalBody: document.getElementsByClassName('js-modal-title')
 };
