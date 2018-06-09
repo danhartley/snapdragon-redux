@@ -11,7 +11,7 @@ export const renderHeaders = layout => {
     DOM.rightHeaderText.style.backgroundColor = 'rgb(12, 44, 84)';
     DOM.rightHeaderText.innerHTML = 'Species preview';
 
-    // Left hand side screen - landscape left screen and ALL portrait screens
+    // Left hand side screen - landscape left screen and all portrait screens
         
     if(config.isPortraitMode) {
         DOM.collectionTxt.innerHTML = 'Species preview';

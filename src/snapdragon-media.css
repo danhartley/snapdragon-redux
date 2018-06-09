@@ -133,6 +133,10 @@
     .strip div {
         padding: .3em;
     }
+    .tile span {
+        font-size: 1.6em;
+        padding: 0 .2em;
+    }
 }
 @media (min-width: 375px) {    
     .card {

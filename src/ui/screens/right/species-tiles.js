@@ -49,5 +49,14 @@ export const renderSpeciesTiles = (collection) => {
         scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image', renderAnswer);
     } else {
         scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image');
-    }
+    };
+
+    document.querySelectorAll('.tile span').forEach(img=>{
+        img.addEventListener('click', event => {        
+            const name = event.target.parentElement.dataset.name || event.target.parentElement.parentElement.dataset.name;
+            const src = event.target.parentElement.dataset.src || event.target.parentElement.parentElement.dataset.src;
+            document.querySelector('.js-modal-title').innerHTML = name;
+            document.querySelector('.js-image-modal').src = src;            
+        });
+    });
 };
