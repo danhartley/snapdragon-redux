@@ -71,7 +71,7 @@ export const renderAnswerText = (response, isPortraitMode) => {
 
 export const renderAnswerHeader = (response, isPortraitMode = true) => {
 
-    response.answer = response.answer.trim();
+    response.answer = response ? response.answer.trim() : '';
 
     const correct = renderCorrect(response);
 

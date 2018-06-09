@@ -75,7 +75,7 @@ const renderLandscape = (screen, item, config) => {
                 document.querySelector('#externalPageModal').focus();
             });
         }
-    });    
+    },500);    
 
     const wiki = document.querySelector('.js-species-card-wiki');
 
