@@ -98,7 +98,10 @@ const renderPortrait = (screen, item, config, collection, index) => {
     const images = utils.shuffleArray(item.images).slice(0,4);
 
     const backgroundImages = images.map(image => {
-            return `<div style='background-image: url(${image}); background-size: cover;' data-toggle="modal" data-target="#imageModal"></div>`;
+            return `                
+                <div style='background-image: url(${image}); background-size: cover;' data-toggle="modal" data-target="#imageModal">                                      
+                </div>
+            `;
         }).join('');
 
     document.querySelector('.js-species-card-images').innerHTML = backgroundImages;

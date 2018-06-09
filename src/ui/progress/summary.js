@@ -30,7 +30,7 @@ export const renderSummary = (index) => {
     parent.appendChild(clone);
 
     const startOverBtn = document.querySelector('.js-start-over-btn');
-    const tryAgainBtn = document.querySelector('.js-try-again-btn');
+    // const tryAgainBtn = document.querySelector('.js-try-again-btn');
     const learnMoreBtn = document.querySelector('.js-learn-more-btn');   
     const nextLevelBtn = document.querySelector('.js-next-level-btn');
     const changeCollectionBtn = document.querySelector('.js-change-collection-btn');
@@ -46,7 +46,7 @@ export const renderSummary = (index) => {
 
         switch(btn) {
             case startOverBtn:
-            case tryAgainBtn:
+            // case tryAgainBtn:
                 actions.boundNextRound(index);
                 break;
             case learnMoreBtn:
@@ -74,8 +74,8 @@ export const renderSummary = (index) => {
 
     startOverBtn.addEventListener('click', handleBtnClickEvent);
 
-    if(score.fails.length > 0) tryAgainBtn.addEventListener('click', handleBtnClickEvent);
-    else tryAgainBtn.setAttribute('disabled', 'disabled');
+    // if(score.fails.length > 0) tryAgainBtn.addEventListener('click', handleBtnClickEvent);
+    // else tryAgainBtn.setAttribute('disabled', 'disabled');
 
     if(collection.currentRound < collection.rounds) learnMoreBtn.addEventListener('click', handleBtnClickEvent);
     else learnMoreBtn.setAttribute('disabled', 'disabled');

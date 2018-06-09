@@ -1,4 +1,5 @@
-import { flora, common, herbs } from 'api/flora';
+import { flora, common } from 'api/flora';
+import { herbs } from 'api/herbs';
 import { lamiaceae } from 'api/families';
 import { arrabida } from 'api/fauna';
 import { wilduk } from 'api/wildflowers';
