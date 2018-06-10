@@ -12,7 +12,7 @@ export const collections = [
         type: 'species',
         name: 'herbs',
         items: herbs,
-        eol_name: 'Practical 1: Herbs',
+        eol_name: 'Garden 1: Herbs',
         eol_link: 'https://eol.org/collections/139051'
     },
     // {
@@ -36,7 +36,7 @@ export const collections = [
         type: 'species',
         name: 'uk wildfowers',
         items: wilduk,
-        eol_name: 'Flora 1: UK Woodland',
+        eol_name: 'Wild 1: UK Woodland',
         eol_link: 'https://eol.org/collections/139458'
     },
     // {
@@ -52,7 +52,7 @@ export const collections = [
         type: 'species',
         name: 'mediterranean flora',
         items: mediterranean,
-        eol_name: 'Flora 2: Mediterranean',
+        eol_name: 'Wild 2: Mediterranean',
         eol_link: 'https://eol.org/collections/139572'
     },
     {
