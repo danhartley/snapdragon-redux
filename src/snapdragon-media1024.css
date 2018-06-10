@@ -181,9 +181,4 @@
     #externalPageModal .modal-body {
         height: 450px;
     }
-
-    #imageModal .modal-dialog, #imageModal .modal-body {
-        width: 480px;
-        height: 480px;
-    }
 }

@@ -59,7 +59,8 @@ export const renderSpeciesTiles = (collection) => {
             const name = event.target.parentElement.dataset.name || event.target.parentElement.parentElement.dataset.name;
             const src = event.target.parentElement.dataset.src || event.target.parentElement.parentElement.dataset.src;
             DOM.modalImageTitle.innerHTML = name;
-            DOM.modalImage.src = src;
+            const style = `background-image: url(${src}); background-size: cover;`;
+            DOM.modalImage.style = style;
         });
     });
 };

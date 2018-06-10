@@ -468,7 +468,5 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .modal-image, .modal-image img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;    
+  height: 60vh;
 }
