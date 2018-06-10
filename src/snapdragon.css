@@ -323,6 +323,7 @@ progress::-moz-progress-bar {
   padding: 2em;
   border: 2px solid rgba(0,0,0,.125);
   border-radius: .25rem;
+  margin: .5em;
 }
 
 .capitalised {
