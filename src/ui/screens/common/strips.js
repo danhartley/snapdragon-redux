@@ -21,7 +21,7 @@ export const renderStrips = (screen, item, callback, config, layout) => {
             .filter(name => name.language === config.language)
             .map(name => name.vernacularName);
 
-            const vernacularQuestions = item.names.filter(name => name.language === config.language);
+            const vernacularQuestions = item.names.filter(name => name.language === config.language) || item.names.filter(name => name.language === 'en');  
             const vernacularQuestion = (vernacularQuestions && vernacularQuestions.length > 0) ? vernacularQuestions[0].vernacularName : item.genus;
             const vernacularName = (vernacularNames && vernacularNames.length > 0) ? vernacularNames[0] : answer.name.split(' ')[0];
 
@@ -44,7 +44,9 @@ export const renderStrips = (screen, item, callback, config, layout) => {
     if(config.isPortraitMode) {
 
         const species = item.name;
-        const name = item.names.filter(name => name.language === config.language)[0].vernacularName;
+        const english = item.names.filter(name => name.language === 'en')[0].vernacularName;
+        const names = item.names.filter(name => name.language === config.language);
+        const name = names.length > 0 ? names[0].vernacularName : english;
         template.innerHTML = speciesCard;
 
         const context = (screen.name === 'species-vernaculars') 

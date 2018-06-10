@@ -4,13 +4,11 @@ import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
 export const modalHandler = (images, item) => {
     images.forEach(image => {
-        image.addEventListener('click', event => {
+        image.addEventListener('click', event => {            
             const img = event.target;
             const src = img.style.backgroundImage.slice(4, -1).replace(/"/g, "");
             if(src) {
-                DOM.modalText.innerHTML = '';
-                DOM.modalTitle.innerHTML = name;
-                DOM.modalImageContainer.style.display = 'block';
+                DOM.modalImageTitle.innerHTML = item.name;
                 DOM.modalImage.src = src;
             }
         })

@@ -112,7 +112,10 @@ const renderPortrait = (screen, item, config, collection, index) => {
 const renderCommonParts = (screen, template, config, item) => {
 
     const species = item.name;
-    const name = item.names.filter(name => name.language === config.language)[0].vernacularName;
+    
+    const english = item.names.filter(name => name.language === 'en')[0].vernacularName;
+    const names = item.names.filter(name => name.language === config.language);
+    const name = names.length > 0 ? names[0].vernacularName : english;
     
     const clone = document.importNode(template.content, true);
     

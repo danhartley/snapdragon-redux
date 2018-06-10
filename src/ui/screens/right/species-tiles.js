@@ -35,7 +35,9 @@ export const renderSpeciesTiles = (collection) => {
     
     if(config.isPortraitMode) {
         const species = item.name;
-        const name = item.names.filter(name => name.language === config.language)[0].vernacularName;
+        const english = item.names.filter(name => name.language === 'en')[0].vernacularName;
+        const names = item.names.filter(name => name.language === config.language);
+        const name = names.length > 0 ? names[0].vernacularName : english;  
         template.innerHTML = speciesCard;
         renderTemplate( { species, name, filter: '' }, template.content, screen.parent);
         template.innerHTML = questionCard;
@@ -56,9 +58,7 @@ export const renderSpeciesTiles = (collection) => {
         img.addEventListener('click', event => {        
             const name = event.target.parentElement.dataset.name || event.target.parentElement.parentElement.dataset.name;
             const src = event.target.parentElement.dataset.src || event.target.parentElement.parentElement.dataset.src;
-            DOM.modalText.innerHTML = '';
-            DOM.modalTitle.innerHTML = name;
-            DOM.modalImageContainer.style.display = 'block';
+            DOM.modalImageTitle.innerHTML = name;
             DOM.modalImage.src = src;
         });
     });
