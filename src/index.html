@@ -65,7 +65,7 @@
                     <div class="left-body js-left-body"></div>
                     <div class="footer js-left-footer">
                         <span class="score-footer-alert js-state-change-alert"></span>
-                        <span class="menu js-menu" data-toggle="modal" data-target="#imageModal">
+                        <span class="menu js-menu" data-toggle="modal" data-target="#menuModal">
                             <div class="line"></div>
                             <div class="line"></div>
                             <div class="line"></div>
@@ -270,7 +270,7 @@
             <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title js-modal-title"></h5>
+                <h5 class="modal-title js-modal-image-title"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -279,11 +279,26 @@
                     <div class="modal-image js-modal-image-container">
                         <img class="js-modal-image" src="" alt="">
                     </div>
-                    <div class="modal-text js-modal-text"></div>
                 </div>                    
             </div>
             </div>
         </div>
+
+        <div class="modal fade" id="menuModal" tabindex="-1" role="dialog" aria-labelledby="menuModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title js-modal-text-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-text js-modal-text"></div>
+                    </div>                    
+                </div>
+                </div>
+            </div>
         
         <script type="text/javascript" src="./stamp.js"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>

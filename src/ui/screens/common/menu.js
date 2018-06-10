@@ -1,24 +1,35 @@
 import { DOM } from 'ui/dom';
 import { persistor } from 'redux/store';
+import { renderCollections } from 'ui/screens/left/collections';
+import { renderSnapdragon } from 'ui/screens/right/snapdragon';
 import { renderTemplate } from 'ui/helpers/templating';
 import menuTemplate from 'ui/screens/common/menu.html';
 
 export const renderMenu = () => {
     
+    DOM.modalText.innerHTML = '';
+
     const template = document.createElement('template');
     
     template.innerHTML = menuTemplate;
     
-    DOM.modalTitle.innerHTML = 'Snapdragon menu';
-    DOM.modalImageContainer.style.display = 'none';
+    DOM.modalTextTitle.innerHTML = 'Snapdragon menu';
 
     renderTemplate({ }, template.content, DOM.modalText);
     
     const clearCacheBtn = document.querySelector('.js-clear-cache-btn');
+    const collectionsBtn = document.querySelector('.js-change-collection-btn');
 
     clearCacheBtn.addEventListener('click', () => {
         persistor.purge();
         window.location.reload(true);
     });
 
+    const handleCollectionsClick = () => {
+        renderCollections();
+        renderSnapdragon();
+        document.querySelector('.modal-header button').click();
+    };
+
+    collectionsBtn.addEventListener('click', handleCollectionsClick);
 };

@@ -1,10 +1,10 @@
-// import { flora, common } from 'api/flora';
+// import { common, flora } from 'api/flora';
 import { herbs } from 'api/herbs';
 // import { lamiaceae } from 'api/families';
 // import { arrabida } from 'api/fauna';
 import { wilduk } from 'api/wildflowers';
 import { leaf } from 'api/leaf';
-// import { mediterranean } from 'api/mediterranean';
+import { mediterranean } from 'api/mediterranean';
 
 export const collections = [
     {
@@ -12,7 +12,7 @@ export const collections = [
         type: 'species',
         name: 'herbs',
         items: herbs,
-        eol_name: 'Plants 1: Herbs',
+        eol_name: 'Practical 1: Herbs',
         eol_link: 'https://eol.org/collections/139051'
     },
     // {
@@ -36,7 +36,7 @@ export const collections = [
         type: 'species',
         name: 'uk wildfowers',
         items: wilduk,
-        eol_name: 'Flora 2: UK Woodland',
+        eol_name: 'Flora 1: UK Woodland',
         eol_link: 'https://eol.org/collections/139458'
     },
     // {
@@ -47,14 +47,14 @@ export const collections = [
     //     eol_name: 'Fauna da Arrábida',
     //     eol_link: 'https://eol.org/collections/139346'
     // },    
-    // {
-    //     id: 6,
-    //     type: 'species',
-    //     name: 'mediterranean flora',
-    //     items: mediterranean,
-    //     eol_name: 'Flora 2: Mediterranean',
-    //     eol_link: 'https://eol.org/collections/139572'
-    // },
+    {
+        id: 6,
+        type: 'species',
+        name: 'mediterranean flora',
+        items: mediterranean,
+        eol_name: 'Flora 2: Mediterranean',
+        eol_link: 'https://eol.org/collections/139572'
+    },
     {
         id: 11,
         type: 'skill',
