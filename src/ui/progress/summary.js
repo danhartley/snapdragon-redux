@@ -5,13 +5,14 @@ import { actions } from 'redux/actions/action-creators';
 import { lessonPlanner } from 'syllabus/lesson-planner';
 import { renderCollections } from 'ui/screens/left/collections';
 import { renderSnapdragon } from 'ui/screens/right/snapdragon';
+import { renderTemplate } from 'ui/helpers/templating';
 import summaryTemplate from 'ui/progress/summary-template.html';
 
 export const renderSummary = (index) => {
 
     document.querySelector('progress').value = 0;
 
-    const { score, layouts, collection, config, layout } = store.getState();
+    const { score, layouts, collection, config, layout, history } = store.getState();
 
     if(index + 1 !== layouts.length) return;
 
@@ -19,21 +20,28 @@ export const renderSummary = (index) => {
 
     template.innerHTML = summaryTemplate;
 
-    if(!config.isPortraitMode)
-        actions.boundUpdateHistory(score);
+    actions.boundUpdateHistory(score);
             
     const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
 
-    const clone = document.importNode(template.content, true);
-    parent.style.display = 'grid'; // no, put this in a child
     parent.innerHTML = '';
-    parent.appendChild(clone);
 
-    const startOverBtn = document.querySelector('.js-start-over-btn');
-    // const tryAgainBtn = document.querySelector('.js-try-again-btn');
+    let _history;
+
+    if(!history) {
+        _history = {
+            correct: score.correct,
+            total: score.total
+        }
+    } else {
+        _history = history;
+    }
+
+    const clone = document.importNode(template.content, true);
+    renderTemplate({ score, history: _history, collection }, template.content, parent, clone);
+    
     const learnMoreBtn = document.querySelector('.js-learn-more-btn');   
     const nextLevelBtn = document.querySelector('.js-next-level-btn');
-    const changeCollectionBtn = document.querySelector('.js-change-collection-btn');
 
     const handleBtnClickEvent = event => {
         
@@ -45,10 +53,6 @@ export const renderSummary = (index) => {
         let index = 0;
 
         switch(btn) {
-            case startOverBtn:
-            // case tryAgainBtn:
-                actions.boundNextRound(index);
-                break;
             case learnMoreBtn:
                 config.excludeRevision = levelName === 'Level 1' ? false : true;
                 actions.boundNextRound(index);
@@ -72,16 +76,12 @@ export const renderSummary = (index) => {
         event.stopPropagation();
     };
 
-    startOverBtn.addEventListener('click', handleBtnClickEvent);
-
-    // if(score.fails.length > 0) tryAgainBtn.addEventListener('click', handleBtnClickEvent);
-    // else tryAgainBtn.setAttribute('disabled', 'disabled');
-
     if(collection.currentRound < collection.rounds) learnMoreBtn.addEventListener('click', handleBtnClickEvent);
     else learnMoreBtn.setAttribute('disabled', 'disabled');
 
     nextLevelBtn.addEventListener('click', handleBtnClickEvent);
-
-    changeCollectionBtn.addEventListener('click', renderCollections);
-    changeCollectionBtn.addEventListener('click', renderSnapdragon);
 };
+
+
+
+

@@ -64,9 +64,8 @@
                     <progress value="0" max="6"></progress>
                     <div class="left-body js-left-body"></div>
                     <div class="footer js-left-footer">
-                        <!-- <button class="btn btn-light btn-sm btn-more-specimens js-btn-more-specimens" style="display:none">Next 4 images</button> -->
                         <span class="score-footer-alert js-state-change-alert"></span>
-                        <span class="menu js-menu">
+                        <span class="menu js-menu" data-toggle="modal" data-target="#imageModal">
                             <div class="line"></div>
                             <div class="line"></div>
                             <div class="line"></div>
@@ -96,14 +95,6 @@
         
         <template class="js-fails-template">
             <div class="rectangles js-rptr-fails">
-            </div>
-        </template>
-        
-        <template class="js-history-template">
-            <div class="history js-history">
-                <div>You have completed {{ collection.currentRound }} of {{ collection.rounds }} rounds</div>
-                <div>You answered {{ score.correct }} out of {{ score.total }} correctly in the last round</div>
-                <div>Your score is {{ history.correct }} out of {{ history.total }} for this lesson</div>
             </div>
         </template>
         
@@ -189,7 +180,6 @@
                 <div class="selected-language js-selected-language">Current language: <span>{{ config.language }}</span></div>
                 
                 <div class="continue-lesson"><button class="btn btn-light js-continue-lesson">Continue lesson</button></div>
-                <!-- <div class="clear-lesson"><button class="btn btn-light state-clear js-state-clear">Clear lesson</button></div> -->
             </div>            
         
             <div class="collections collections-skills js-skills-collection">
@@ -286,7 +276,8 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                    <img class="js-image-modal" src="" alt="">
+                    <img class="js-modal-image" src="" alt="">
+                    <div class="js-modal-body"></div>
                 </div>                    
             </div>
             </div>

@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { scoreHandler } from 'ui/helpers/handlers';
@@ -55,8 +56,9 @@ export const renderSpeciesTiles = (collection) => {
         img.addEventListener('click', event => {        
             const name = event.target.parentElement.dataset.name || event.target.parentElement.parentElement.dataset.name;
             const src = event.target.parentElement.dataset.src || event.target.parentElement.parentElement.dataset.src;
-            document.querySelector('.js-modal-title').innerHTML = name;
-            document.querySelector('.js-image-modal').src = src;            
+            DOM.modalBody.innerHTML = '';
+            DOM.modalTitle.innerHTML = name;
+            DOM.modalImage.src = src;
         });
     });
 };

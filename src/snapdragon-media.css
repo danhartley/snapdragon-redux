@@ -1,7 +1,7 @@
 @media (max-width: 767px) {
 
     .flex-provider.eol, .flex-provider.wiki, .flex-provider.gbif, .flex-provider.skills, .species-card-wiki-entry,
-    .summary div, .collection-preview, .collection button {
+    .collection-preview, .collection button {
         display: none;
     }
 
@@ -72,11 +72,6 @@
         width: 300px;
     }
 
-    .modal-content, .modal-body {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
     .modal-body img {
         object-fit: cover;
         width: 298px;
@@ -84,9 +79,9 @@
         padding: 1em;    
     }
 
-    .modal-content button {
+    /* .modal-content button {
         width: 50px;
-    }
+    } */
 }
 
 @media (min-width: 320px) {

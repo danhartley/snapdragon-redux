@@ -187,9 +187,17 @@
         max-width: 480px;
     }
 
+    .modal-content {
+        width: 480px;
+    }
+
     .modal-body img {
         object-fit: cover;
         width: 448px;
         height: 448px;
     }
+
+    /* .modal-content button {
+        width: 50px;
+    } */
 }

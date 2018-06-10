@@ -19,10 +19,13 @@ import { nextItem } from 'ui/setup/next-item';
 
 import { renderHeaders } from 'ui/screens/common/headers';
 import { renderScore } from 'ui/progress/score';
-import { listening } from 'ui/screens/common/listener';
+// import { listening } from 'ui/screens/common/listener';
 
 import { lessonPlans } from 'snapdragon/lesson-plans';
 import { config } from 'syllabus/lesson-config';
+
+import { renderMenu } from 'ui/screens/common/menu';
+import { DOM } from 'ui/dom';
 
 // capture device
 
@@ -54,4 +57,10 @@ renderSnapdragon();
 
 // global listener
 
-observeStore(store, store => store.score, listening, 'score');
+// observeStore(store, store => store.score, listening, 'score');
+
+// menu
+
+DOM.menuIcon.addEventListener('click', () => {
+    renderMenu();
+});

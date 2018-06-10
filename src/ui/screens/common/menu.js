@@ -9,6 +9,9 @@ export const renderMenu = () => {
     
     template.innerHTML = menuTemplate;
     
+    DOM.modalTitle.innerHTML = 'Snapdragon menu';
+    DOM.modalImage.src = '';
+
     renderTemplate({ }, template.content, DOM.modalBody);
     
     const changeCollectionBtn = document.querySelector('.js-change-collection-btn');

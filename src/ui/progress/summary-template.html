@@ -1,9 +1,13 @@
-<div class="js-rptr-summary">
-    <div class="summary js-right-body-top">        
+<div class="history js-history">
+    <div>You have completed {{ collection.currentRound }} of {{ collection.rounds }} rounds</div>
+    <div>You answered {{ score.correct }} out of {{ score.total }} correctly in the last round</div>
+    <div>Your score is {{ history.correct }} out of {{ history.total }} for this lesson</div>
+</div>
+
+<div class="summary js-summary">
+    <div class="js-right-body-top">
         <div style="display: none;">Move to the next level</div>
         <button style="display: none;" class="btn btn-light js-next-level-btn">Next level</button>
-        <!-- <div>Change collection, level or other settings</div>
-        <button class="btn btn-light js-change-collection-btn">Go to collections</button> -->
         <div>Continue with the lesson</div>
         <button class="btn btn-light learn-more-btn js-learn-more-btn">Continue</button>
     </div>                    

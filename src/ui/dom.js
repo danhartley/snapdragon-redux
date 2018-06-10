@@ -7,13 +7,12 @@ export const DOM = {
     collectionTxt : document.getElementsByClassName('js-txt-collection')[0],    
     specimenSpeciesTxt : document.getElementsByClassName('js-txt-specimen-species')[0],    
     specimenRptr : document.getElementsByClassName('js-rptr-specimen')[0],
-    // moreSpecimensBtn : document.getElementsByClassName('js-btn-more-specimens')[0],
     
     rightGrid : document.getElementsByClassName('js-right-grid')[0],
     rightHeader : document.getElementsByClassName('js-right-header')[0],
     rightHeaderText : document.getElementsByClassName('js-right-txt-header')[0],
     rightBody : document.getElementsByClassName('js-right-body')[0],
-    rightRptrSummary : document.getElementsByClassName('js-rptr-summary')[0],
+    rightRptrSummary : document.getElementsByClassName('js-summary')[0],
     rightBodyBottom : document.getElementsByClassName('js-right-body-bottom')[0],
     rightFooter : document.getElementsByClassName('js-right-footer')[0],
     
@@ -24,6 +23,7 @@ export const DOM = {
 
     speciesCardNameTxt: document.getElementsByClassName('js-txt-species-names')[0],
     speciesCardSpeciesTxt: document.getElementsByClassName('js-txt-species')[0],
-    modalTitle: document.getElementsByClassName('js-modal-title'),
-    modalBody: document.getElementsByClassName('js-modal-title')
+    modalTitle: document.getElementsByClassName('js-modal-title')[0],
+    modalBody: document.getElementsByClassName('js-modal-body')[0],
+    modalImage: document.getElementsByClassName('js-modal-image')[0],
 };

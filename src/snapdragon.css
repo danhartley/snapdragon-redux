@@ -448,6 +448,15 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   margin: 2em 0 0 0;
 }
 
+.modal-body {
+  background-color: rgb(50, 50, 50);
+  padding: 0;
+}
+
+.modal-body button {
+  margin: 1em 0;
+}
+
 .modal-title {
   color: rgb(50,50,50);
 }
