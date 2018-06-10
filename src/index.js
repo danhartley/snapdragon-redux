@@ -1,7 +1,7 @@
 import "babel-polyfill";
 
-import {$,jQuery} from 'jquery';
-import PopperJs from 'popper.js';
+// import {$,jQuery} from 'jquery';
+// import PopperJs from 'popper.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

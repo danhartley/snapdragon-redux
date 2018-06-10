@@ -28,7 +28,6 @@ export const renderMenu = () => {
     const handleCollectionsClick = () => {
         renderCollections();
         renderSnapdragon();
-        document.querySelector('.modal-header button').click();
     };
 
     collectionsBtn.addEventListener('click', handleCollectionsClick);

@@ -5,6 +5,7 @@ import { renderWiki } from 'wikipedia/wiki';
 import { renderFamily } from 'gbif/gbif';
 import { renderTemplate } from 'ui/helpers/templating';
 import { modalHandler } from 'ui/helpers/handlers';
+import { itemVernacularName } from 'ui/helpers/data-checking';
 import landscapeTemplate from 'ui/screens/common/card-template.html';
 import portraitTemplate from 'ui/screens/common/card-portrait-template.html';
 
@@ -111,11 +112,8 @@ const renderPortrait = (screen, item, config, collection, index) => {
 
 const renderCommonParts = (screen, template, config, item) => {
 
-    const species = item.name;
-    
-    const english = item.names.filter(name => name.language === 'en')[0].vernacularName;
-    const names = item.names.filter(name => name.language === config.language);
-    const name = names.length > 0 ? names[0].vernacularName : english;
+    const species = item.name;    
+    const name = itemVernacularName(item, config);
     
     const clone = document.importNode(template.content, true);
     

@@ -5,6 +5,7 @@ import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
+import { itemVernacularName } from 'ui/helpers/data-checking';
 import html from 'ui/screens/right/species-tiles-template.html';
 import speciesCard from 'ui/screens/common/species-card-template.html';
 import questionCard from 'ui/screens/common/species-question-template.html';
@@ -35,9 +36,7 @@ export const renderSpeciesTiles = (collection) => {
     
     if(config.isPortraitMode) {
         const species = item.name;
-        const english = item.names.filter(name => name.language === 'en')[0].vernacularName;
-        const names = item.names.filter(name => name.language === config.language);
-        const name = names.length > 0 ? names[0].vernacularName : english;  
+        const name = itemVernacularName(item, config);
         template.innerHTML = speciesCard;
         renderTemplate( { species, name, filter: '' }, template.content, screen.parent);
         template.innerHTML = questionCard;

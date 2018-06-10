@@ -1,0 +1,71 @@
+import { itemVernacularName } from 'ui/helpers/data-checking';
+
+const item = {
+    "names": [
+        {
+          "vernacularName": "نعنع (نَعْنَع)، لمام ( لِمام)",
+          "language": "ar",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "حبق المويه(حَبَق المويه)، حبق الميه (حَبَق الميه)",
+          "language": "ar"
+        },
+        {
+          "vernacularName": "spearmint",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Curled Mint",
+          "language": "en"
+        },
+        {
+          "vernacularName": "wild mint",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Menthe à longues feuilles",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Baume",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Hortelã-verde",
+          "language": "pt",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "欧薄荷",
+          "language": "zh",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "狗肉香菜",
+          "language": "zh"
+        }
+      ]
+};
+
+test('should return Menthe à longues feuilles for preferred french name', () => {
+    const config = { language: 'fr'};
+    const fr = itemVernacularName(item, config);
+    expect(fr).toEqual('Menthe à longues feuilles');
+});
+
+test('should return spearmint instead of missing preferred spanish name', () => {
+    const config = { language: 'es'};
+    const es = itemVernacularName(item, config);
+    expect(es).toEqual('spearmint');
+});
+
+
+test('should return empty string when no match found for either english default or preferred spanish name', () => {
+    const emptyItem = { names: [] };
+    const config = { language: 'es'};
+    const es = itemVernacularName(emptyItem, config);
+    expect(es).toEqual('Unknown');
+});
