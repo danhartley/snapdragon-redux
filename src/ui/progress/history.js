@@ -1,20 +1,19 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
+import { renderTemplate } from 'ui/helpers/templating';
+import historyTemplate from 'ui/progress/history-template.html';
 
 export const renderHistory = (history) => {
             
     const { collection, score, config } = store.getState();
 
-    const template = document.querySelector('.js-history-template');
+    const template = document.createElement('template');
 
-    const progress = { score, history, collection };
-    
+    template.innerHTML = historyTemplate;
+
     if(!history) return;
-
-    const clone = document.importNode(template.content, true);
+    
     DOM.leftBody.innerHTML = '';
-        
-    var ctx = new Stamp.Context();
-    var expanded = Stamp.expand(clone, progress);
-    Stamp.appendChildren(DOM.leftBody, expanded);
+    const clone = document.importNode(template.content, true);
+    renderTemplate({ score, history, collection }, template.content, DOM.leftBody, clone);
 }    

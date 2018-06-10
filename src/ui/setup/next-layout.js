@@ -6,7 +6,7 @@ let subscriptions = [];
 
 export const nextLayout = (index) => {
 
-    const { layouts, config } = store.getState();
+    const { layouts, config, score } = store.getState();
 
     const layout = layouts[index];
 

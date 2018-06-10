@@ -21,8 +21,6 @@ export const renderHeaders = layout => {
 
     if(layout.name === 'test') {
         
-        DOM.leftBody.style.display = 'block'; // remove by changing code in summary which converts this to a grid...
-
         setTimeout(()=>{
             if(config.isPortraitMode) {
                     DOM.collectionTxt.innerHTML = `Question ${ layout.layoutIndex - config.moduleSize + 1 }`,
@@ -37,7 +35,7 @@ export const renderHeaders = layout => {
 
     if(layout.screens.filter(el => el.name === 'summary')[0]) {
         if(config.isPortraitMode) {
-            DOM.collectionTxt.innerHTML = 'Lesson progress';
+            DOM.collectionTxt.innerHTML = collection.name;
         } else {
             DOM.rightHeaderText.innerHTML = 'Lesson progress';
         }

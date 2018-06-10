@@ -321,6 +321,8 @@ progress::-moz-progress-bar {
 
 .summary, .history {
   padding: 2em;
+  border: 2px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
 }
 
 .capitalised {
@@ -443,6 +445,15 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .blocks button {
   margin: 2em 0 0 0;
+}
+
+.modal-body {
+  background-color: rgb(50, 50, 50);
+  padding: 0;
+}
+
+.modal-body button {
+  margin: 1em 0;
 }
 
 .modal-title {

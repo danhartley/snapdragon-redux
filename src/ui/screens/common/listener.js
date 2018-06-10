@@ -1,5 +1,4 @@
 import { DOM } from 'ui/dom';
-import { persistor } from 'redux/store';
 
 export const listening = (score) => {
 
@@ -10,7 +9,6 @@ export const listening = (score) => {
         savingLesson = 'Saving lesson progress...';
         lessonSaved = 'Lesson progress saved';
     }
-    // else DOM.moreSpecimensBtn.style.display = 'none';
 
     const displaySavingLessonNotice = () => {
         DOM.stateChangeAlertTxt.innerHTML = savingLesson;
@@ -23,9 +21,4 @@ export const listening = (score) => {
             },1500);
         },1000);
     };
- 
-    DOM.menuIcon.addEventListener('click', () => {
-        persistor.purge();
-        window.location.reload(true);
-    });
 }

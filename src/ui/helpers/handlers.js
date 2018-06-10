@@ -8,8 +8,9 @@ export const modalHandler = (images, item) => {
             const img = event.target;
             const src = img.style.backgroundImage.slice(4, -1).replace(/"/g, "");
             if(src) {
-                document.querySelector('.js-modal-title').innerHTML = item.name;
-                document.querySelector('.js-image-modal').src = src;
+                DOM.modalBody.innerHTML = '';
+                DOM.modalTitle.innerHTML = name;
+                DOM.modalImage.src = src;
             }
         })
     });
