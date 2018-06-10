@@ -26,6 +26,5 @@ export const DOM = {
     modalImageTitle: document.getElementsByClassName('js-modal-image-title')[0],
     modalTextTitle: document.getElementsByClassName('js-modal-text-title')[0],
     modalText: document.getElementsByClassName('js-modal-text')[0],
-    modalImage: document.getElementsByClassName('js-modal-image')[0],
-    modalImageContainer: document.getElementsByClassName('js-modal-image-container')[0],
+    modalImage: document.getElementsByClassName('js-modal-image')[0]
 };

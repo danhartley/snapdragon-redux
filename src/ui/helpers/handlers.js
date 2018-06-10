@@ -9,7 +9,8 @@ export const modalHandler = (images, item) => {
             const src = img.style.backgroundImage.slice(4, -1).replace(/"/g, "");
             if(src) {
                 DOM.modalImageTitle.innerHTML = item.name;
-                DOM.modalImage.src = src;
+                const style = `background-image: url(${src}); background-size: cover;`;
+                DOM.modalImage.style = style;
             }
         })
     });
@@ -77,6 +78,8 @@ const imageHandler = (tiles, item, config, callback) => {
 
             const img = event.target;
             const answer = img.dataset.answer;
+
+            if(!answer) return;
 
             const score = { taxon: 'name', binomial: item.name, question: item.name, answer: answer };
             const { text, colour, correct } = renderAnswerHeader(score, config.isPortraitMode);
