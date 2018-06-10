@@ -10,13 +10,13 @@ export const renderMenu = () => {
     template.innerHTML = menuTemplate;
     
     DOM.modalTitle.innerHTML = 'Snapdragon menu';
-    DOM.modalImage.src = '';
+    DOM.modalImageContainer.style.display = 'none';
 
-    renderTemplate({ }, template.content, DOM.modalBody);
+    renderTemplate({ }, template.content, DOM.modalText);
     
-    const changeCollectionBtn = document.querySelector('.js-change-collection-btn');
+    const clearCacheBtn = document.querySelector('.js-clear-cache-btn');
 
-    changeCollectionBtn.addEventListener('click', () => {
+    clearCacheBtn.addEventListener('click', () => {
         persistor.purge();
         window.location.reload(true);
     });
