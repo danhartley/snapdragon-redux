@@ -71,17 +71,6 @@
     .modal-content {
         width: 300px;
     }
-
-    .modal-body img {
-        object-fit: cover;
-        width: 298px;
-        height: 298px;    
-        padding: 1em;    
-    }
-
-    /* .modal-content button {
-        width: 50px;
-    } */
 }
 
 @media (min-width: 320px) {
@@ -132,33 +121,32 @@
         font-size: 2.6em;
         padding: 0 .2em;
     }
+    #imageModal .modal-dialog, #imageModal .modal-body {
+        width: 300px;
+        height: 300px;
+      }
 }
 @media (min-width: 375px) {    
     .card {
         font-size: 1.5em;
         margin: .4em .2em;
     }
-    .modal-content {
-        width: 354px;
-    }
-    .modal-body img {
-        width: 352px;
-        height: 352px;
-    }
+    #imageModal .modal-dialog, #imageModal .modal-body {
+        width: 350px;
+        height: 350px;
+      }
 }
 
 @media (min-width: 414px) {
-    .modal-content {
+    #imageModal .modal-dialog, #imageModal .modal-body {
         width: 394px;
-    }
-    .modal-body img {
-        width: 392px;
-        height: 392px;
-    }
+        height: 294px;
+      }
 }
 
 @media (min-width: 786px) {
-    .modal-content {
-        width: 482px;
-    }    
+    #imageModal .modal-dialog, #imageModal .modal-body {
+        width: 530px;
+        height: 500px;
+      }
 }

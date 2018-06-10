@@ -42,6 +42,7 @@ export const renderSummary = (index) => {
     
     const learnMoreBtn = document.querySelector('.js-learn-more-btn');   
     const nextLevelBtn = document.querySelector('.js-next-level-btn');
+    const collectionsBtn = document.querySelector('.js-change-collection-btn');
 
     const handleBtnClickEvent = event => {
         
@@ -76,12 +77,22 @@ export const renderSummary = (index) => {
         event.stopPropagation();
     };
 
-    if(collection.currentRound < collection.rounds) learnMoreBtn.addEventListener('click', handleBtnClickEvent);
-    else learnMoreBtn.setAttribute('disabled', 'disabled');
+    if(collection.currentRound < collection.rounds) {
+        learnMoreBtn.addEventListener('click', handleBtnClickEvent);
+        collectionsBtn.style.display = 'none';
+    }
+    else {
+        learnMoreBtn.setAttribute('disabled', 'disabled');
+        collectionsBtn.style.display = 'block';
+    }
 
     nextLevelBtn.addEventListener('click', handleBtnClickEvent);
+
+    const handleCollectionsClick = () => {
+        renderCollections();
+        renderSnapdragon();
+    };
+
+    collectionsBtn.addEventListener('click', handleCollectionsClick);
 };
-
-
-
 

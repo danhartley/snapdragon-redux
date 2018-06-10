@@ -326,9 +326,12 @@ progress::-moz-progress-bar {
   margin: .5em;
 }
 
+.history div {
+  margin: 0 0 1em 0;
+}
+
 .capitalised {
   text-transform: capitalize;
-
 }
 
 button:focus {
@@ -450,7 +453,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .modal-body {
   background-color: rgb(50, 50, 50);
-  padding: 0;
 }
 
 .modal-body button {
@@ -459,4 +461,14 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .modal-title {
   color: rgb(50,50,50);
+}
+
+.modal-text {
+  margin: 1em;
+}
+
+.modal-image, .modal-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;    
 }

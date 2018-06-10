@@ -48,8 +48,9 @@
     height: 550px;
   }
 
-  #imageModal .modal-dialog {
-    max-width: 580px;
+  #imageModal .modal-dialog, #imageModal .modal-body {
+    width: 580px;
+    height: 580px;
   }
   
 }
