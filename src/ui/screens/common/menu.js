@@ -3,6 +3,7 @@ import { persistor } from 'redux/store';
 import { renderCollections } from 'ui/screens/left/collections';
 import { renderSnapdragon } from 'ui/screens/right/snapdragon';
 import { renderTemplate } from 'ui/helpers/templating';
+import { closeModal } from 'ui/helpers/modal-toggle';
 import menuTemplate from 'ui/screens/common/menu.html';
 
 export const renderMenu = () => {
@@ -28,6 +29,7 @@ export const renderMenu = () => {
     const handleCollectionsClick = () => {
         renderCollections();
         renderSnapdragon();
+        closeModal('menuModal');
     };
 
     collectionsBtn.addEventListener('click', handleCollectionsClick);

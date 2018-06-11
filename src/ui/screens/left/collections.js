@@ -7,8 +7,7 @@ import { lessonPlans } from 'snapdragon/lesson-plans';
 import { persistor } from 'redux/store';
 
 export const renderCollections = () => {
-
-    // DOM.moreSpecimensBtn.style.display = 'none';
+    
     DOM.collectionTxt.innerHTML = 'Snapdragon Collections';
 
     let { collections, collection, config, index } = store.getState();
@@ -23,6 +22,10 @@ export const renderCollections = () => {
 
     const species = collections.filter(collection => collection.type === 'species');
     const skills = collections.filter(collection => collection.type === 'skill');
+
+    config.lesson.levels.forEach(level => {
+        level.menuName = config.isPortraitMode ? level.id : level.name;
+    });
 
     const data = { species, skills, config, collection };
     

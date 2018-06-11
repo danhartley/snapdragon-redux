@@ -32,6 +32,8 @@ import { DOM } from 'ui/dom';
 config.isPortraitMode = window.matchMedia("(max-width: 480px)").matches;
 config.lesson = config.isPortraitMode ? lessonPlans[2] : lessonPlans[0];
 config.lesson.level = config.lesson.levels[0];
+const levels = lessonPlans.filter(plan => plan.name === config.lesson.name)[0].levels;
+config.lesson.levels = levels;
 
 // setup
 

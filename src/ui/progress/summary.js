@@ -56,6 +56,12 @@ export const renderSummary = (index) => {
         switch(btn) {
             case learnMoreBtn:
                 config.excludeRevision = levelName === 'Level 1' ? false : true;
+                if(collection.currentRound === collection.rounds) {
+                    excludeRevision = true;
+                    const level = lessonPlanner.nextLevel(lessonName, levelName);
+                    lessonName = level.lessonName;
+                    levelName = level.name;    
+                }
                 actions.boundNextRound(index);
                 break;
             case nextLevelBtn:
@@ -77,14 +83,10 @@ export const renderSummary = (index) => {
         event.stopPropagation();
     };
 
-    if(collection.currentRound < collection.rounds) {
-        learnMoreBtn.addEventListener('click', handleBtnClickEvent);
-        collectionsBtn.style.display = 'none';
-    }
-    else {
-        learnMoreBtn.setAttribute('disabled', 'disabled');
-        collectionsBtn.style.display = 'block';
-    }
+    learnMoreBtn.addEventListener('click', handleBtnClickEvent);
+
+    // if(collection.currentRound < collection.rounds) collectionsBtn.style.display = 'none';
+    // else collectionsBtn.style.display = 'block';
 
     nextLevelBtn.addEventListener('click', handleBtnClickEvent);
 
