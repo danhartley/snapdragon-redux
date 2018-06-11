@@ -1,18 +1,21 @@
+import * as R from 'ramda';
+
 // import { common, flora } from 'api/flora';
 import { herbs } from 'api/herbs';
 // import { lamiaceae } from 'api/families';
 // import { arrabida } from 'api/fauna';
 import { wilduk } from 'api/wildflowers';
 import { leaf } from 'api/leaf';
+import { uk1 } from 'api/uk1';
 import { mediterranean } from 'api/mediterranean';
 
 export const collections = [
     {
         id: 1,
         type: 'species',
-        name: 'herbs',
+        name: 'herbs 1',
         items: herbs,
-        eol_name: 'Garden 1: Herbs',
+        eol_name: 'Herbs 1',
         eol_link: 'https://eol.org/collections/139051'
     },
     // {
@@ -34,9 +37,9 @@ export const collections = [
     {
         id: 4,
         type: 'species',
-        name: 'uk wildfowers',
-        items: wilduk,
-        eol_name: 'Wild 1: UK Woodland',
+        name: 'uk wildfowers 1',
+        items: R.take(6, uk1),
+        eol_name: 'UK 1 - Woodland',
         eol_link: 'https://eol.org/collections/139458'
     },
     // {
@@ -52,7 +55,7 @@ export const collections = [
         type: 'species',
         name: 'mediterranean flora',
         items: mediterranean,
-        eol_name: 'Wild 2: Mediterranean',
+        eol_name: 'Mediterranean 1',
         eol_link: 'https://eol.org/collections/139572'
     },
     {

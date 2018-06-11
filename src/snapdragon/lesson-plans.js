@@ -152,7 +152,7 @@ const landscapeLesson2 = {
 
 const portraitLesson1 = {
     id: 3,
-    name: 'Lesson 1',
+    name: 'Lesson 3',
     portrait: true,
     levels: [
         {   id: 1,
