@@ -27,17 +27,16 @@ export const renderCollections = () => {
         level.menuName = config.isPortraitMode ? level.id : level.name;
     });
 
-    const data = { species, skills, config, collection };
+    const languageName = config.languages.filter(l => l.lang === config.language)[0].name;
+
+    const data = { species, skills, config, collection, languageName };
     
     var ctx = new Stamp.Context();
     var expanded = Stamp.expand(clone, data);
     Stamp.appendChildren(DOM.leftBody, expanded);
 
     const startLearningBtn = document.querySelector('.js-continue-lesson');
-    // const stateClearBtn = document.querySelector('.js-state-clear');
-
     startLearningBtn.style.display = collection.id !== '' ? 'inline-block' : 'none';
-    // stateClearBtn.style.display = collection.id !== '' ? 'inline-block' : 'none';
 
     const speciesCollectionLinks = document.querySelectorAll('.js-species-collection .dropdown-menu button, .js-species-collection .dropdown-menu span');
 
@@ -63,7 +62,8 @@ export const renderCollections = () => {
             document.querySelectorAll('.dropdown.js-languages .dropdown-item').forEach(option => option.classList.remove('active'));
             event.target.classList.add('active');
             const lang = event.target.id;
-            document.querySelector('.js-selected-language span').innerHTML = lang;
+            const languageName = config.languages.filter(l => l.lang === lang)[0].name;
+            document.querySelector('.js-selected-language span').innerHTML = languageName;
             config.language = lang;
         });
     });

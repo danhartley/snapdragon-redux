@@ -18,7 +18,9 @@ const createLessonPlan = (config) => {
 
 const currentLayouts = (config) => {
     const { lesson: { name: lessonName, level: { name: levelName }}, isPortraitMode } = config;
-    return currentLevel(currentLesson(lessonName, isPortraitMode), levelName).layouts;
+    const _currentLesson = currentLesson(lessonName, isPortraitMode);
+    const _currentLevel = currentLevel(_currentLesson, levelName);
+    return _currentLevel.layouts;
 };
 
 const currentLesson = (lessonName, isPortraitMode = false) => {

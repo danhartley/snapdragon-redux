@@ -53,7 +53,7 @@ test('when user selects a collection state should be populated', () => {
     let { config, collection, score } = store.getState();
 
     expect(config.collection.id).toEqual('1');
-    expect(collection.name).toEqual('Garden 1: Herbs');
+    expect(collection.name).toEqual('Herbs 1');
     expect(score).toEqual(initialState.score);
 
     const layoutData = [
