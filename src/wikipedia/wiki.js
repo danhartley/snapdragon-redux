@@ -49,6 +49,7 @@ const wikiLink = entry => {
 };
 
 const formatWiki = (entry) => {
+    if(!entry) return '';
     let html = '';
     if(entry.length === 1) {
         html += wikiLink(entry[0]);
@@ -74,9 +75,10 @@ async function renderWiki(wikiNode, item, language) {
 
     const entry = await fetchWiki(searchTerm);
 
-    if(entry[2]) {
+    if(entry && entry[2]) {
         wikiNode.innerHTML = formatWiki(entry.slice(1));
     } else {
+        if(!binomial) return '';
         const genus = binomial.split(' ')[0];
         const genusEntry = await fetchWiki(genus);
         if(genusEntry[2] !== '')

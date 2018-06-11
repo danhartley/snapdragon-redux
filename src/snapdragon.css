@@ -379,13 +379,13 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .collection span {
+  padding: 0 .4em;
   cursor: pointer;
-  color: black;
 }
 
-.collection span:nth-of-type(2) {
-  display: inline-block;
-  width: 14em;  
+.collection:hover, .collection:active {
+  background-color: #007bff;
+  color: #fff;
 }
 
 .collection button {
