@@ -125,8 +125,47 @@
     }
 
     .letterbox {
+        display: grid;
         grid-template-rows: 1fr 1fr 1fr;
     }
+
+    .letterbox div:nth-child(1), .letterbox div:nth-child(2), .letterbox div:nth-child(3) {
+        width: 100%;
+      }      
+
+    .letterbox-entry {  
+        padding: 1em 1em 0 1em;
+        background-color: rgb(75,75,75);
+        display: flex;
+      }
+      
+      .letterbox span {
+        margin: 1em 0 1em .5em;
+        font-size: 1.4em;
+        color: #fff;
+        display: block;
+      }
+      
+      .letterbox input {
+        font-size: 1.4em;
+        padding: .3em;
+        color: white;
+        background-color: rgb(50,50,50);
+        border: 0;
+      }
+      
+      .letterbox input.short {
+        width: 10em;
+      }
+      
+      .letterbox input.long {
+        width: 15em;
+      }
+      
+      .letterbox button {
+        margin: 0;
+        width: 26.em;
+      }
 
     .letterbox-entry {  
         align-items: center;

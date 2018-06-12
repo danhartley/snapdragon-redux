@@ -15,8 +15,6 @@ export const renderCard = (collection) => {
 
     const { layout, config, index, layouts } = store.getState();
 
-    // Test progress
-
     document.querySelector('progress').max = layouts.filter(layout => layout.name === 'test').length;
     document.querySelector('progress').value = 0;
 

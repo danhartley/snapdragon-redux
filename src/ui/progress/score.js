@@ -1,6 +1,6 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-
+import { renderTemplate } from 'ui/helpers/templating';
 export const renderScore = (score) => {
     
     const { history, collection, config, layout } = store.getState();
@@ -19,13 +19,7 @@ export const renderScore = (score) => {
             total: score.total
         };
 
-    const progress = { score, running, collection, config };
-
-    const clone = document.importNode(template.content, true);
-
     DOM.rightFooter.innerHTML = '';
 
-    var ctx = new Stamp.Context();
-    var expanded = Stamp.expand(clone, progress);
-    Stamp.appendChildren(DOM.rightFooter, expanded);
+    renderTemplate({ score, running, collection, config }, template.content, DOM.rightFooter);
 };

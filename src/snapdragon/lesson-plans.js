@@ -25,6 +25,24 @@ const portrait4 = {
     screens: [{ ...scientifics }]
 };
 
+const portrait5 = {
+    name: 'test',
+    score: 1,
+    screens: [{ ...text, template: 'js-genus-entry-template', taxon: 'genus'}]
+};
+
+const portrait6 = {
+    name: 'test',
+    score: 1,
+    screens: [{ ...text, template: 'js-species-entry-template', taxon: 'species'}]
+};
+
+const portrait7 = {
+    name: 'test',
+    score: 1,
+    screens: [{ ...text, template: 'js-species-genus-entry-template', taxon: 'name'}]
+};
+
 const layout1 = {
     name: 'revision',
     screens: [
@@ -159,6 +177,26 @@ const portraitLesson1 = {
             name: 'Level 1',
             description: 'Match species',
             layouts: [ portrait1, portrait2, portrait3, portrait4 ]
+        },
+        {   id: 2,
+            name: 'Level 2',
+            description: 'Recall genus name',
+            layouts: [ portrait5 ]
+        },
+        {   id: 3,
+            name: 'Level 3',
+            description: 'Recall species name',
+            layouts: [ portrait6 ]
+        },
+        {   id: 4,
+            name: 'Level 4',
+            description: 'Recall genus and species',
+            layouts: [ portrait7 ]
+        },
+        {   id: 5,
+            name: 'Level 5',
+            description: 'Name puzzle',
+            layouts: [ layout8 ]
         }
     ]
 };

@@ -1,5 +1,9 @@
 import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
+import { renderTemplate } from 'ui/helpers/templating';
+import { modalHandler } from 'ui/helpers/handlers';
+import landscapeTemplates from 'ui/screens/common/text-entry-templates.html';
+import portraitTemplates from 'ui/screens/common/text-entry-portrait-templates.html';
 
 export const renderInput = (config, screen, question, callbackTime, item, renderAnswerHeader, hints) => {
 
@@ -10,7 +14,17 @@ export const renderInput = (config, screen, question, callbackTime, item, render
         const { text, colour, correct } = renderAnswerHeader(response);
 
         btn.style.color = colour;
-        btn.parentNode.style.background = colour;
+
+        if(!config.isPortraitMode) {            
+            btn.parentNode.style.background = colour;
+        }
+
+        if(config.isPortraitMode) {
+            const questionText = document.querySelector('.js-txt-question');
+            questionText.innerHTML = correct 
+                ? `<span class="icon"><i class="fas fa-check-circle"></i></span> ${response.question} is correct!`
+                : `<span class="icon"><i class="fas fa-times-circle"></i></span> The answer is ${response.question}`;
+        }
 
         response.success = correct;
 
@@ -19,10 +33,15 @@ export const renderInput = (config, screen, question, callbackTime, item, render
         }, callbackTime);
     };
 
-    const template = document.querySelector(`.${screen.template}`);
+    const templates = document.createElement('div');
+    templates.innerHTML = config.isPortraitMode ? portraitTemplates : landscapeTemplates;
+
+    const template = templates.querySelector(`.${screen.template}`);
 
     hints.forEach(hint => {
-        template.content.querySelector(hint.selector).innerHTML = hint.value;  
+        const el = template.content.querySelector(hint.selector);
+        if(el)
+            template.content.querySelector(hint.selector).innerHTML = hint.value;  
     });
 
     const clone = document.importNode(template.content, true);
@@ -30,12 +49,32 @@ export const renderInput = (config, screen, question, callbackTime, item, render
     clone.querySelector('button').addEventListener('click', event => {
         sendQandA(document.querySelector('.js-txt-input').value, event);
         event.target.disabled = true;
-        event.stopPropagation();
     });
 
     screen.parent.innerHTML = '';
     screen.parent.appendChild(clone);
 
+    config.isPortraitMode ? renderPortrait(item, template, screen) : renderLandscape(item);
+
+    document.querySelector('.js-txt-input').focus();
+};
+
+const renderPortrait = (item, template, screen) => {
+    const images = utils.shuffleArray(item.images).slice(0,4);
+
+    const backgroundImages = images.map(image => {
+            return `                
+                <div style='background-image: url(${image}); background-size: cover;' data-toggle="modal" data-target="#imageModal">                                      
+                </div>
+            `;
+        }).join('');
+
+    document.querySelector('.js-species-card-images').innerHTML = backgroundImages;
+
+    modalHandler(document.querySelectorAll('.js-species-card-images div'), item);
+};
+
+const renderLandscape = (item) => {
     if(item.images) {
         const bgTop = document.querySelector('.letterbox div:nth-child(1)');
         bgTop.style.backgroundImage = `url(${item.images[0]})`;
@@ -45,15 +84,5 @@ export const renderInput = (config, screen, question, callbackTime, item, render
         bgBottom.style.backgroundImage = `url(${item.images[1]})`;
         bgBottom.style.opacity = '.1';
     }
-
-    document.querySelector('.js-txt-input').focus();
-
-    const handleEnterPress = event => {
-        if(event.key === 'Enter') {            
-            sendQandA(document.querySelector('.js-txt-input').value, event);
-            document.removeEventListener('keypress', handleEnterPress);
-            event.target.disabled = true;
-        }
-    };
 };
 

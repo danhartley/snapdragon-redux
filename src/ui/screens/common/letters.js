@@ -3,6 +3,7 @@ import { utils } from 'utils/utils';
 
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
+import { renderTemplate } from 'ui/helpers/templating';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
 export const renderLetters = (config, screen, letters, item, callbackTime) => {
@@ -14,11 +15,7 @@ export const renderLetters = (config, screen, letters, item, callbackTime) => {
 
     const blocks = utils.shuffleArray(R.flatten(letters));
 
-    const data = { blocks };
-    
-    var ctx = new Stamp.Context();
-    var expanded = Stamp.expand(clone, data);
-    Stamp.appendChildren(DOM.rightBody, expanded);
+    renderTemplate({ blocks }, template.content, DOM.rightBody);
 
     let selectedBlocks = [];
     let itemName = '';
@@ -91,6 +88,4 @@ export const renderLetters = (config, screen, letters, item, callbackTime) => {
             actions.boundUpdateScore(response);
         }, callbackTime);
     });
-
-    // DOM.rightHeaderText.innerHTML = config.isPortraitMode ? screen.headers.short : screen.headers.long;
 };

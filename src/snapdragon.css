@@ -112,7 +112,8 @@ progress::-moz-progress-bar {
   grid-template-areas:  "header"
                         "progress"
                         "squares"
-                        "footer"
+                        "footer";
+  /* position: relative;   */
 }
 
 .left-grid {
@@ -124,7 +125,7 @@ progress::-moz-progress-bar {
   grid-auto-flow: row;
 }
 
-.left-body, .rigt-body {
+.left-body, .right-body {
   background-color: rgb(50, 50, 50);
 }
 
@@ -132,6 +133,15 @@ progress::-moz-progress-bar {
   display: flex;
   align-items: center;
   padding: 0 0 0 1em;
+  position: sticky;
+}
+
+.header {
+  top: 0;
+}
+
+.footer {  
+  bottom: 0;
 }
 
 .footer button {
@@ -217,48 +227,6 @@ progress::-moz-progress-bar {
 
 .vernacular-name p {
   height: .5em;
-}
-
-.letterbox {
-  display: grid;  
-}
-
-.letterbox div:nth-child(1), .letterbox div:nth-child(2), .letterbox div:nth-child(3) {
-  width: 100%;
-}
-
-.letterbox-entry {  
-  padding: 1em 1em 0 1em;
-  background-color: rgb(75,75,75);
-  display: flex;
-}
-
-.letterbox span {
-  margin: 1em 0 1em .5em;
-  font-size: 1.4em;
-  color: #fff;
-  display: block;
-}
-
-.letterbox input {
-  font-size: 1.4em;
-  padding: .3em;
-  color: white;
-  background-color: rgb(50,50,50);
-  border: 0;
-}
-
-.letterbox input.short {
-  width: 10em;
-}
-
-.letterbox input.long {
-  width: 15em;
-}
-
-.letterbox button {
-  margin: 0;
-  width: 26.em;
 }
 
 .right, .wrong {
@@ -352,9 +320,14 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   border: 0;
 }
 
-.selected-collection, .selected-language, .selected-level {
+.selected-collection, .selected-language, .selected-level {  
   margin: .4em;
 }
+
+.selected-language, .selected-level {
+  text-transform: capitalize;
+}
+
 
 .clear-lesson button {
   float: left;
@@ -457,6 +430,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .modal-body button {
   margin: 1em 0;
+  display: block;
 }
 
 .modal-title {
@@ -469,4 +443,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .modal-image, .modal-image img {
   height: 60vh;
+}
+
+.delay-slider {
+  margin: 1em 0;
 }
