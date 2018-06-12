@@ -52,11 +52,13 @@ export const renderSummary = (index) => {
         let levelName = layouts.levelName;
         let excludeRevision = true;        
         let index = 0;
+        let goToNextLevel = false;
 
         switch(btn) {
             case learnMoreBtn:
                 config.excludeRevision = levelName === 'Level 1' ? false : true;
                 if(collection.currentRound === collection.rounds) {
+                    goToNextLevel = true;
                     config.excludeRevision = true;
                     const level = lessonPlanner.nextLevel(lessonName, levelName, config.isPortraitMode);
                     config.lesson.level = level;
@@ -66,6 +68,7 @@ export const renderSummary = (index) => {
                     actions.boundNextRound(index);
                 break;
             case nextLevelBtn:
+                goToNextLevel = true;
                 config.excludeRevision = true;
                 const level = lessonPlanner.nextLevel(lessonName, levelName, config.isPortraitMode);
                 config.lesson.level = level;
@@ -80,7 +83,7 @@ export const renderSummary = (index) => {
 
         actions.boundNextLesson(nextLayouts);
 
-        if(btn === nextLevelBtn || btn === learnMoreBtn) actions.boundNextLevel();
+        if(goToNextLevel) actions.boundNextLevel();
 
         event.stopPropagation();
     };
