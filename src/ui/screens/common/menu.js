@@ -28,8 +28,13 @@ export const renderMenu = () => {
     const collectionsBtn = document.querySelector('.js-change-collection-btn');
     const setDelayBtn = document.querySelector('.js-set-delay-btn');
     const setDelayInput = document.querySelector('.js-set-delay-input');
+    const delayTxt = document.querySelector('.js-delay-text');
 
-    clearCacheBtn.addEventListener('click', () => {        
+    delayTxt.innerHTML = delay === 1
+    ? `The current delay is ${delay} second`
+    : `The current delay is ${delay} seconds`;
+
+    clearCacheBtn.addEventListener('click', () => { 
         clearCacheBtn.innerText = 'Clearing cache...';
         setTimeout(() => {
             persistor.purge();
@@ -51,8 +56,15 @@ export const renderMenu = () => {
     collectionsBtn.addEventListener('click', handleCollectionsClick);
 
     setDelayBtn.addEventListener('click', () => {
-        const delay = setDelayInput.value * 1000;
-        config.callbackTime = delay;
-        actions.boundUpdateConfig(config);
+        setDelayBtn.innerHTML = 'Setting delay...';
+        setTimeout(() => {
+            const delay = setDelayInput.value;
+            config.callbackTime = delay * 1000;
+            actions.boundUpdateConfig(config);
+            setDelayBtn.innerHTML = 'Set delay';
+            delayTxt.innerHTML = delay === '1'
+                ? `Delay updated to ${delay} second`
+                : `Delay updated to ${delay} seconds`;
+        }, 500);        
     });
 };
