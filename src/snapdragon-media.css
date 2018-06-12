@@ -67,25 +67,42 @@
         padding: 10px 0px 10px 10px;
         height: 300px;
     }
+
+    .text-entry-container {
+        height: 100%;
+    }
+    
+    .text-entry {
+        margin: 1em;
+        position: relative;
+        height: 40%;
+    }
+
+    .text-entry input {
+        margin: .5em 0;
+        width: 100%;
+    }
+
+    .text-entry button {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .text-question {
+        padding: .2em;
+        margin: .4em 0;
+        display: inline-block;
+    }
+
+    .text-question span {
+        font-size: 1.5em;
+    }
 }
 
 @media (min-width: 320px) {
     .squares { 
         height: 60%;
-    }
-    .letterbox {
-        grid-template-rows: 2fr 3fr 2fr;
-    }
-    .letterbox-entry {
-        flex-direction: column;
-        align-items: left;
-    }
-    .letterbox-entry input, .letterbox-entry input.short, .letterbox-entry input.long {
-        width: 100%;
-        margin: 0 0 1em 0;
-    }
-    .letterbox-entry span {
-        margin: 0 0 .5em 0;
     }
     .card {
         font-size: 1.3em;

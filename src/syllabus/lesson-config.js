@@ -1,7 +1,7 @@
 export const config = {
     language: 'en',
     moduleSize: 3,
-    callbackTime: 2000,
+    callbackTime: 200000,
     isPortraitMode: true,
     excludeRevision: false,
     isPortraitMode: false,

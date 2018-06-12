@@ -4,7 +4,7 @@ import { actions } from 'redux/actions/action-creators';
 import { nextLesson } from 'ui/setup/next-lesson';
 import { collectionPlans } from'snapdragon/collections-plans';
 import { lessonPlans } from 'snapdragon/lesson-plans';
-import { persistor } from 'redux/store';
+import { renderTemplate } from 'ui/helpers/templating';
 
 export const renderCollections = () => {
     
@@ -18,7 +18,7 @@ export const renderCollections = () => {
     
     DOM.leftBody.innerHTML = '';
 
-    collection = collection || { name: 'no collection selected', id: ''};
+    collection = collection || { name: 'Please chose a collection to start learning', id: ''};
 
     const species = collections.filter(collection => collection.type === 'species');
     const skills = collections.filter(collection => collection.type === 'skill');
@@ -29,11 +29,7 @@ export const renderCollections = () => {
 
     const languageName = config.languages.filter(l => l.lang === config.language)[0].name;
 
-    const data = { species, skills, config, collection, languageName };
-    
-    var ctx = new Stamp.Context();
-    var expanded = Stamp.expand(clone, data);
-    Stamp.appendChildren(DOM.leftBody, expanded);
+    renderTemplate({ species, skills, config, collection, languageName }, template.content, DOM.leftBody);
 
     const startLearningBtn = document.querySelector('.js-continue-lesson');
     startLearningBtn.style.display = collection.id !== '' ? 'inline-block' : 'none';
@@ -86,14 +82,4 @@ export const renderCollections = () => {
     startLearningBtn.addEventListener('click', event => {
         actions.boundNextRound(index);
     });
-
-    // stateClearBtn.addEventListener('click', () => {
-    //     persistor.purge().then(res => {
-    //         stateClearBtn.innerHTML = 'Clearing...';
-    //         setTimeout(()=>{
-    //             stateClearBtn.innerHTML = 'Clear lesson';
-    //             window.location.reload(true);
-    //         },1000);
-    //     });
-    // });
 };

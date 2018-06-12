@@ -57,18 +57,20 @@ export const renderSummary = (index) => {
             case learnMoreBtn:
                 config.excludeRevision = levelName === 'Level 1' ? false : true;
                 if(collection.currentRound === collection.rounds) {
-                    excludeRevision = true;
-                    const level = lessonPlanner.nextLevel(lessonName, levelName);
-                    lessonName = level.lessonName;
-                    levelName = level.name;    
-                }
-                actions.boundNextRound(index);
+                    config.excludeRevision = true;
+                    const level = lessonPlanner.nextLevel(lessonName, levelName, config.isPortraitMode);
+                    config.lesson.level = level;
+                    config.lessonName = level.lessonName;
+                    config.levelName = level.name;    
+                } else 
+                    actions.boundNextRound(index);
                 break;
             case nextLevelBtn:
-                excludeRevision = true;
-                const level = lessonPlanner.nextLevel(lessonName, levelName);
-                lessonName = level.lessonName;
-                levelName = level.name;                
+                config.excludeRevision = true;
+                const level = lessonPlanner.nextLevel(lessonName, levelName, config.isPortraitMode);
+                config.lesson.level = level;
+                config.lessonName = level.lessonName;
+                config.levelName = level.name;                
                 break;
         }
 
@@ -78,15 +80,12 @@ export const renderSummary = (index) => {
 
         actions.boundNextLesson(nextLayouts);
 
-        if(btn === nextLevelBtn) actions.boundNextLevel();
+        if(btn === nextLevelBtn || btn === learnMoreBtn) actions.boundNextLevel();
 
         event.stopPropagation();
     };
 
     learnMoreBtn.addEventListener('click', handleBtnClickEvent);
-
-    // if(collection.currentRound < collection.rounds) collectionsBtn.style.display = 'none';
-    // else collectionsBtn.style.display = 'block';
 
     nextLevelBtn.addEventListener('click', handleBtnClickEvent);
 

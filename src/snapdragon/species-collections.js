@@ -38,7 +38,7 @@ export const collections = [
         id: 4,
         type: 'species',
         name: 'uk wildfowers 1',
-        items: R.take(6, uk1),
+        items: uk1,
         eol_name: 'UK 1 - Woodland',
         eol_link: 'https://eol.org/collections/139458'
     },

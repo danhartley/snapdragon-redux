@@ -40,20 +40,20 @@ const nextLevelId = (lesson, level, direction) => {
     return id;
 };
 
-const changeLevel = (currentLessonName, currentLevelName, direction) => {
-    const lesson = currentLesson(currentLessonName);
+const changeLevel = (currentLessonName, currentLevelName, direction, isPortraitMode = false) => {
+    const lesson = currentLesson(currentLessonName, isPortraitMode);
     const level = currentLevel(lesson, currentLevelName);
     const levelId = nextLevelId(lesson, level, direction);
     const levels = lesson.levels.filter(level => level.id === levelId);
     return { ...levels[0], lessonName: lesson.name };
 };
 
-const nextLevel = (currentLessonName, currentLevelName) => {
-    return changeLevel(currentLessonName, currentLevelName, 'forwward');
+const nextLevel = (currentLessonName, currentLevelName, isPortraitMode = false) => {
+    return changeLevel(currentLessonName, currentLevelName, 'forwward', isPortraitMode);
 };
 
-const previousLevel = (currentLessonName, currentLevelName) => {
-    return changeLevel(currentLessonName, currentLevelName, 'backward');
+const previousLevel = (currentLessonName, currentLevelName, isPortraitMode = false) => {
+    return changeLevel(currentLessonName, currentLevelName, 'backward', isPortraitMode);
 };
 
 export const lessonPlanner = {

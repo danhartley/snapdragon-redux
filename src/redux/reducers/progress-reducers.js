@@ -1,7 +1,7 @@
 import { types } from 'redux/actions/action-types';
 import { initialState } from 'redux/reducers/initial-state-for-reducers';
 
-let fromLocalStorage = false
+let fromLocalStorage = false;
 
 export const index = (state = null, action) => {
     const collectionSize = initialState.collection.items.length;
@@ -10,8 +10,9 @@ export const index = (state = null, action) => {
             fromLocalStorage = true;
             return action.payload ? action.payload.index : null;
         case types.CHANGE_COLLECTION:
-        case types.UPDATE_CONFIG:
             return null;
+        case types.UPDATE_CONFIG:
+            return state;
         case types.NEXT_LESSON:
         case types.NEXT_ROUND:
         case types.NEXT_LEVEL:
