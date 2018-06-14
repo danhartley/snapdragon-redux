@@ -41,9 +41,6 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
         <meta name="apple-mobile-web-app-title" content="Snapdragon">
 
-
-        <!-- <link href="./images/splash/launch-640x1136.png" sizes="640x1136" rel="apple-touch-startup-image" /> -->
-
         <link rel="apple-touch-startup-image" href="./images/splash/launch-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
         <link rel="apple-touch-startup-image" href="images/splash/launch-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
         <link rel="apple-touch-startup-image" href="images/splash/launch-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
@@ -70,6 +67,7 @@
                             <div class="line"></div>
                             <div class="line"></div>
                         </span>
+                        <span class="js-left-footer-score"></span>
                     </div>
             </div>
             <div class="right-grid js-right-grid">
@@ -80,23 +78,6 @@
                 <div class="footer js-right-footer"></div>
             </div>
         </div>
-
-        <template class="js-score-template">
-            <div class="score-footer">
-                Score: {{ score.correct }}/{{ score.total }}
-                History: {{ running.correct }}/{{ running.total }}
-            </div>
-        </template>
-        
-        <template class="js-passes-template">
-            <div class="rectangles js-rptr-passes">
-            </div>
-        </template>
-        
-        <template class="js-fails-template">
-            <div class="rectangles js-rptr-fails">
-            </div>
-        </template>
 
         <template class="js-snapdragon">
             <div class="snapdragon">

@@ -60,7 +60,6 @@ observeStore(store, store => store.score, renderScore, 'score');
 import { renderSnapdragon } from 'ui/screens/right/snapdragon';
 import { renderCollections } from 'ui/screens/left/collections';
 
-// observeStore(store, store => store.config, renderCollections, 'config', 'collections');
 renderCollections();
 renderSnapdragon();
 renderHeaders();

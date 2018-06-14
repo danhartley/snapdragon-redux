@@ -1,27 +1,37 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
+import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 export const renderScore = (score) => {
     
-    const { history, collection, config, layout } = store.getState();
+    const { history = {}, collection, config, layout } = store.getState();
 
-    const template = document.querySelector('.js-score-template');
+    const template = document.createElement('template');
+
+    template.innerHTML = config.isPortraitMode
+            ?   `<div> Score: {{ score.correct }}/{{ score.total }}</div>`
+            :   `<div class="score-footer">
+                    Score: {{ score.correct }}/{{ score.total }}
+                    History: {{ history.correct }}/{{ history.total }}
+                </div>`;
 
     if(!layout) return;
 
-    const scoreCounted = (score.total === layout.roundScoreCount); 
+    const endOfRound = (score.total === layout.roundScoreCount); 
 
-    const running = history 
-        ? {
-            correct: scoreCounted ? history.correct : history.correct + score.correct,
-            total: scoreCounted ? history.total : history.total + score.total
-        } 
-        : {
-            correct: score.correct,
-            total: score.total
-        };
+    const runningTotal = history || { correct: 0, total: 0 };
 
-    DOM.rightFooter.innerHTML = '';
+    if(!endOfRound) {
+        runningTotal.correct = runningTotal.correct + score.correct;
+        runningTotal.total = runningTotal.total + score.total;
+    }
 
-    renderTemplate({ score, running, collection, config }, template.content, DOM.rightFooter);
+    const parent = config.isPortraitMode ? DOM.leftFooter.querySelector('.js-left-footer-score') : DOM.rightFooter;
+
+    parent.innerHTML = '';
+
+    renderTemplate({ score, history: runningTotal, collection, config }, template.content, parent);
+
+    if(endOfRound)
+        actions.boundUpdateHistory(score);
 };

@@ -49,7 +49,7 @@ const revision = {
 const scientifics = {
   name: 'species-scientifics',
   headers: { long: 'Click the latin name to match the species', short: 'Click name to match species'},
-  question: 'Tap to the match latin name',
+  question: 'Tap to match common name',
   domain: 'collection',
   render: renderScientifics,
   parent: DOM.rightBody,
@@ -60,7 +60,7 @@ const scientifics = {
 const vernaculars = {
   name: 'species-vernaculars',
   headers: { long: 'Click the common name to match the species', short: 'Click name to match species'},
-  question: 'Tap to match the common name',
+  question: 'Tap to match latin name',
   domain: 'collection',
   render: renderVernaculars,
   parent: DOM.rightBody,
@@ -71,7 +71,7 @@ const vernaculars = {
 const species = {
   name: 'species-images',
   headers: { long: 'Click the picture to match the species', short: 'Click picture to match species'},
-  question: 'Tap the picture to match the species',
+  question: 'Tap picture to match species',
   domain: 'collection',
   render: renderSpeciesTiles,
   parent: DOM.rightBody,
@@ -90,7 +90,7 @@ const text = {
 
 const summary = { 
   name: 'summary', 
-  domain: 'index', 
+  domain: 'history', 
   parent: DOM.rightBody,
   render: renderSummary,
   template: 'js-summary-template'
