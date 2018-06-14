@@ -89,6 +89,7 @@ progress::-moz-progress-bar {
 
 .menu {
   cursor: pointer;
+  margin: 0 1em 0 0;
 }
 
 .line {

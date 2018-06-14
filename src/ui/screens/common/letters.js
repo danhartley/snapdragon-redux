@@ -10,7 +10,6 @@ export const renderLetters = (config, screen, letters, item, callbackTime) => {
 
     const template = document.querySelector('.js-letters-template');
 
-    const clone = document.importNode(template.content, true);
     DOM.rightBody.innerHTML = '';
 
     const blocks = utils.shuffleArray(R.flatten(letters));

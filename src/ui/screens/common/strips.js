@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 
-import { DOM } from 'ui/dom';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemVernacularName } from 'ui/helpers/data-checking';
