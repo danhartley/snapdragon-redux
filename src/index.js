@@ -1,7 +1,5 @@
 import "babel-polyfill";
 
-// import {$,jQuery} from 'jquery';
-// import PopperJs from 'popper.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,7 +17,6 @@ import { nextItem } from 'ui/setup/next-item';
 
 import { renderHeaders } from 'ui/screens/common/headers';
 import { renderScore } from 'ui/progress/score';
-// import { listening } from 'ui/screens/common/listener';
 
 import { lessonPlans } from 'snapdragon/lesson-plans';
 import { config } from 'syllabus/lesson-config';
@@ -27,7 +24,16 @@ import { config } from 'syllabus/lesson-config';
 import { renderMenu } from 'ui/screens/common/menu';
 import { DOM } from 'ui/dom';
 
-// capture device
+// use case test
+
+const renderWelcome = () => {
+    console.log('welcome!');
+};
+
+const returningUser = localStorage.getItem('returningUser') ? new Boolean(localStorage.getItem('returningUser')) : false;
+returningUser ? renderWelcome() : localStorage.setItem('returningUser', true);
+
+// capture device and config defaults
 
 config.isPortraitMode = window.matchMedia("(max-width: 480px)").matches;
 config.lesson = config.isPortraitMode ? lessonPlans[2] : lessonPlans[0];
@@ -54,8 +60,10 @@ observeStore(store, store => store.score, renderScore, 'score');
 import { renderSnapdragon } from 'ui/screens/right/snapdragon';
 import { renderCollections } from 'ui/screens/left/collections';
 
+// observeStore(store, store => store.config, renderCollections, 'config', 'collections');
 renderCollections();
 renderSnapdragon();
+renderHeaders();
 
 // global listener
 

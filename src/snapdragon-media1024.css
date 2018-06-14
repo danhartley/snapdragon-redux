@@ -1,17 +1,8 @@
 @media (min-width: 768px) {
 
-    .snapdragon, .collections {
-        padding: 1em;
-      }
-
-    .card {
-        font-size: 1em;
-        margin: .4em;
-    }
-
-    .card div {
-        margin: .5em;
-    }
+    .collections div {
+        margin: .5em 0;
+      }      
 
     .species-card {
         display: grid;
@@ -19,12 +10,19 @@
         grid-template-rows: 4fr 1fr
     }
 
-    .species-card-btn button {
-        float: right;
+    .action-update button {
+        position: relative;
+        left: initial;
+        bottom: initial;
+        width: initial;
+        margin: 2em 0;
     }
 
-    .species-card-species, .species-card-name {
-        font-size: 1.5em;
+    .species-card-btn button {
+        width: initial;
+        font-size: 1em;
+        margin: 1em;
+        float: right;
     }
 
     .specimens-card-btn {
@@ -37,9 +35,9 @@
 
     .left-grid, .right-grid {
         grid-template-rows: 1fr 10fr 1fr;
-        grid-template-areas:  "header"
-                        "squares"
-                        "footer"
+        grid-template-areas:"header"
+                            "squares"
+                            "footer"
     }
 
     progress {
@@ -77,12 +75,9 @@
         height: 100%;
     }
 
-    .strip {
-        font-size: 1.4em;
-    }
-
     .strip div {
         padding: 1em;
+        font-size: 1.2em;
     }
 
     .flex-provider .eol, .flex-provider .gbif {
@@ -141,13 +136,11 @@
       
       .letterbox span {
         margin: 1em 0 1em .5em;
-        font-size: 1.4em;
         color: #fff;
         display: block;
       }
       
       .letterbox input {
-        font-size: 1.4em;
         padding: .3em;
         color: white;
         background-color: rgb(50,50,50);
@@ -191,10 +184,6 @@
 
     .summary button {
         margin: 1em 0;
-    }
-
-    .block {
-        font-size: 1.6em;
     }
 
     .flex-provider .skills {

@@ -58,7 +58,7 @@ export const renderLetters = (config, screen, letters, item, callbackTime) => {
                     selectedBlocks.forEach(block => {
                         block.classList.remove('light-grey');
                         block.classList.add('red');
-                        tryAgainBtn.attributes.removeNamedItem('disabled')
+                        tryAgainBtn.attributes.removeNamedItem('disabled');
                     });
                     selectedBlocks = [];
                 }

@@ -5,24 +5,12 @@
         display: none;
     }
 
-    .left-body button, .right-body button, .species-card-btn button {
+    .left-body button, .right-body button, .species-card-btn button, .dropdown-menu.show {
         width: 100%;
-    }
-
-    .dropdown-menu.show {
-        width: 98%;
     }
 
     .collections-skills {
         display: none;
-    }
-
-    .specimens-card-btn {
-        padding: 1em;        
-    }
-
-    .left-body .species-card {
-        height: 100%;
     }
 
     .species-question {
@@ -89,6 +77,10 @@
         left: 0;
     }
 
+    .text-entry div {
+        margin: 0 0 0 .1em;
+    }
+
     .text-question {
         padding: .2em;
         margin: .4em 0;
@@ -104,17 +96,6 @@
     .squares { 
         height: 60%;
     }
-    .card {
-        font-size: 1.3em;
-        margin: .2em;
-    }
-    .species-card-btn {
-        padding: .5em 1em;
-        font-size: 1rem;
-    }
-    .species-question {
-        font-size: .8rem;
-    }
     .right {  
         color: rgb(255, 255, 255);
         background-color: rgb(44, 141, 86);
@@ -123,26 +104,27 @@
         color: rgb(255, 255, 255);
         background-color: rgb(141, 0, 5);
     }
-    .strip {
-        cursor: pointer;
-        font-size: 1em;
-    }
-    .strip div {
-        padding: .3em;
-    }
     .tile span {
-        font-size: 2.6em;
         padding: 0 .2em;
     }
 }
-@media (min-width: 375px) {    
-    .card {
-        font-size: 1.5em;
-        margin: .4em .2em;
+@media (min-width: 375px) {
+    body {
+        font-size: 18px;
+    }
+    .strip div, .card {
+        font-size: 1.1em;
     }
 }
 
-@media (min-width: 414px) {
+@media (min-width: 414px) { 
+    body {
+        font-size: 20px;
+    }
+    /* require dpi check here for iphone with x3 */
+    .strip div, .card {
+        font-size: 1.2em;
+    }
 }
 
 @media (min-width: 786px) {

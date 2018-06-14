@@ -1,0 +1,57 @@
+<div class="collections js-species-collection">        
+    <div class="flex-provider">
+        <div class="dropdown js-collections">
+            <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Collections
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-collection="{{ species }}">
+                <a class="dropdown-item" id="{{ collection.id }}" href="#">{{ collection.eol_name }} ({{ collection.items.length }})</a>
+            </div>
+        </div>                        
+    </div>
+
+    <div class="flex-provider">
+        <div class="dropdown js-levels">
+            <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Levels
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-level="{{ config.lesson.levels }}">
+                <a class="dropdown-item" id="level{{ level.id }}" href="#">{{ level.menuName }}: {{ level.description }}</a>
+            </div>
+        </div>                        
+    </div>
+
+    <div class="flex-provider">
+        <div class="dropdown js-languages">
+            <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Languages
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ config.languages }}">
+                <a class="dropdown-item" id="{{ language.lang }}" href="#">{{ language.name }}</a>
+            </div>
+        </div>                        
+    </div>
+
+    <div class="selected-collection js-selected-collection">Current collection: <span>{{ collection.name }}</span></div>
+    <div class="selected-level js-selected-level">Current level: <span>{{ config.lesson.level.name }}</span></div>
+    <div class="selected-language js-selected-language">Current language: <span>{{ languageName }}</span></div>
+    
+    <div class="action-update"><button class="btn btn-light js-lesson-btn-action">Begin lesson</button></div>
+    
+    <div class="collections-skills js-skills-collection" style="display: none;">
+        <div>Advanced skills:</div>
+        <div class="flex-provider skills">
+            <div class="dropdown js-collections">
+                <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Skills
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-collection="{{ skills }}">
+                    <div class="collection js-collection">
+                        <button class="btn btn-light" id="{{ collection.id }}">Learn</button> <a class="underline-link" target="_blank" href="{{ collection.wiki_link }}">Preview</a> <span>{{ collection.wiki_name }}</span>
+                    </div>
+                </div>                            
+            </div>                        
+        </div>
+    </div>
+
+</div>            

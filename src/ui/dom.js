@@ -4,7 +4,7 @@ export const DOM = {
     leftBody : document.getElementsByClassName('js-left-body')[0],
     leftFooter : document.getElementsByClassName('js-left-footer')[0],
 
-    collectionTxt : document.getElementsByClassName('js-txt-collection')[0],    
+    collectionTxt : document.getElementsByClassName('js-txt-collection')[0],
     specimenSpeciesTxt : document.getElementsByClassName('js-txt-specimen-species')[0],    
     specimenRptr : document.getElementsByClassName('js-rptr-specimen')[0],
     

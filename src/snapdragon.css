@@ -47,6 +47,26 @@ progress::-moz-progress-bar {
   background-color: rgb(233, 232, 111);
 }
 
+/* variables */
+
+:root {
+  --snap-alert-colour: rgb(141, 0, 5);
+  --snap-light-text-colour: rgb(255, 255, 255);
+}
+
+.sd-colour-alert {
+  color: var(--snap-alert-colour);
+}
+
+.sd-bg-colour-alert {
+  background-color: var(--snap-alert-colour);
+  border-color: var(--snap-alert-colour);
+}
+
+.sd-colour-light {
+  color: rgb(255,255,255);
+}
+
 /* generic */
 
 .underline-link {
@@ -212,11 +232,13 @@ progress::-moz-progress-bar {
   padding: 0 1em 0 1em;
   background-color: rgb(85, 85, 85);
   height: 60%;
+  cursor: pointer;
 }
 
 .strip div {
     border: solid 1px;
     border-color: rgb(75, 75, 75);
+    padding: .25em;
 }
 
 .vernacular-name {
@@ -243,7 +265,7 @@ progress::-moz-progress-bar {
   flex-direction: column;
   padding: .2em;
   text-align: right;
-  margin: .5em;
+  margin: .5em 1em;
   background-color: inherit;
   border: 2px solid rgba(0,0,0,.125);
   border-radius: .25rem;
@@ -253,12 +275,8 @@ progress::-moz-progress-bar {
   margin: .3em;
 }
 
-.card.name .species-card-species {
-  display: none;
-}
-
-.card.species .species-card-name {
-  display: none;
+.species-card-species {
+  font-size: 1.3em;
 }
 
 .species-card-wikipedia {
@@ -275,6 +293,15 @@ progress::-moz-progress-bar {
 
 .species-card-name {
   text-transform: capitalize;
+}
+
+.specimens-card-btn {
+  padding: 1em;        
+}
+
+.left-body .species-card {
+  height: 100%;
+  position: relative;
 }
 
 .species-card-btn div {
@@ -321,7 +348,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .selected-collection, .selected-language, .selected-level {  
-  margin: .4em;
+  margin: .5em;
 }
 
 .selected-language, .selected-level {
@@ -333,9 +360,25 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   float: left;
 }
 
+.collections {
+  position: relative;
+  margin: 1em;
+  padding: 0;
+  height: 100%;
+}
+
+.collections div {
+  margin: 1em 0;
+}
+
+.collection span {
+  padding: 0 .5em;
+  cursor: pointer;
+}
+
 .collections .dropdown div {
   white-space: nowrap;
-  padding: .4em;
+  margin: .25em 0;
 }
 
 .collection:hover {
@@ -347,15 +390,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   background-color: rgb(50,50,50);
 }
 
-.collections div {
-  padding: .4em .2em;
-}
-
-.collection span {
-  padding: 0 .4em;
-  cursor: pointer;
-}
-
 .collection:hover, .collection:active {
   background-color: #007bff;
   color: #fff;
@@ -364,6 +398,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .collection button {
   color: white;
   background-color: rgb(75,75,75);
+  padding-top: .5em;
+  padding-bottom: .5em
 }
 
 .frame {
@@ -447,4 +483,22 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .delay-slider {
   margin: 1em 0;
+}
+
+.card-container {
+  position: relative;
+  height: 50%;
+  margin: 1em;
+}
+
+.card-container .card {
+  margin: 0;
+}
+
+.action-update button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 2em 0;
+  width: 100%;
 }
