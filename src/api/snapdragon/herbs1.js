@@ -1,4 +1,4 @@
-export const herbs = [
+export const herbs1 = [
     {
       "id": 579697,
       "name": "Mentha spicata L.",

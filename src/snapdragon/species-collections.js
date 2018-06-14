@@ -1,65 +1,38 @@
 import * as R from 'ramda';
 
-// import { common, flora } from 'api/flora';
-import { herbs } from 'api/herbs';
-// import { lamiaceae } from 'api/families';
-// import { arrabida } from 'api/fauna';
-import { wilduk } from 'api/wildflowers';
+import { herbs1 } from 'api/snapdragon/herbs1';
+import { uk1 } from 'api/snapdragon/uk1';
+import { med1 } from 'api/snapdragon/med1';
+
 import { leaf } from 'api/leaf';
-import { uk1 } from 'api/uk1';
-import { mediterranean } from 'api/mediterranean';
 
 export const collections = [
     {
         id: 1,
         type: 'species',
-        name: 'herbs 1',
-        items: herbs,
+        name: 'Herbs 1',
+        items: herbs1,
         eol_name: 'Herbs 1',
         eol_link: 'https://eol.org/collections/139051'
     },
-    // {
-    //     id: 1,
-    //     type: 'species',
-    //     items: lamiaceae,
-    //     name: 'lamiaceae',
-    //     eol_name: 'Family 1: Mint and Basil',
-    //     eol_link: 'https://eol.org/collections/139275'
-    // },
-    // {
-    //     id: 3,
-    //     type: 'species',
-    //     name: 'flora',
-    //     items: flora,
-    //     eol_name: 'Flora Vale do Tejo',
-    //     eol_link: 'https://eol.org/collections/124189'
-    // },
     {
-        id: 4,
+        id: 2,
         type: 'species',
-        name: 'uk wildfowers 1',
+        name: 'UK 1',
         items: uk1,
         eol_name: 'UK 1 - Woodland',
         eol_link: 'https://eol.org/collections/139458'
     },
-    // {
-    //     id: 5,
-    //     type: 'species',
-    //     name: 'fauna',
-    //     items: arrabida,
-    //     eol_name: 'Fauna da Arrábida',
-    //     eol_link: 'https://eol.org/collections/139346'
-    // },    
     {
-        id: 6,
+        id: 3,
         type: 'species',
-        name: 'mediterranean flora',
-        items: mediterranean,
+        name: 'Med 1',
+        items: med1,
         eol_name: 'Mediterranean 1',
         eol_link: 'https://eol.org/collections/139572'
     },
     {
-        id: 11,
+        id: 101,
         type: 'skill',
         name: 'leaf morphology - structure',
         items: leaf[0].structure,
@@ -67,7 +40,7 @@ export const collections = [
         wiki_link: 'https://en.m.wikipedia.org/wiki/Glossary_of_leaf_morphology'
     },
     {
-        id: 12,
+        id: 102,
         type: 'skill',
         name: 'leaf morphology - shape',
         items: leaf[0].shape,

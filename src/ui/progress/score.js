@@ -7,6 +7,8 @@ export const renderScore = (score) => {
 
     const template = document.querySelector('.js-score-template');
 
+    if(!layout) return;
+
     const scoreCounted = (score.total === layout.roundScoreCount); 
 
     const running = history 

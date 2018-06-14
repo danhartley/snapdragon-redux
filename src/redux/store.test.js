@@ -22,8 +22,12 @@ test('observeStore should return unsubscribe function for every listener', () =>
 
 test('intial state of the app should be consistent', () => {
     
+    lessonConfig.callbackTime = lessonConfig.callbackTime || 2000;
+    lessonConfig.language = lessonConfig.language || 'en';
+    const configWithDefaults = { ...lessonConfig };
+
     const { config } = store.getState();
-    expect(config).toEqual(lessonConfig);
+    expect(config).toEqual(configWithDefaults);
     
     const { lesson, layouts, layout } = store.getState();
     expect(lesson).toEqual(1);
