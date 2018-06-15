@@ -134,7 +134,6 @@ progress::-moz-progress-bar {
                         "progress"
                         "squares"
                         "footer";
-  /* position: relative;   */
 }
 
 .left-grid {
@@ -502,4 +501,75 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   left: 0;
   margin: 0 0 2em 0;
   width: 100%;
+}
+
+.text-entry-container {
+  height: 100%;
+}
+
+.text-entry {
+  margin: 1em;
+  position: relative;
+  height: 40%;
+}
+
+.text-entry input {
+  margin: .5em 0;
+  width: 100%;
+}
+
+.text-entry button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.text-entry div {
+  margin: 0 0 0 .1em;
+}
+
+.text-question {
+  padding: .2em;
+  margin: .4em 0;
+  display: inline-block;
+}
+
+.text-question span {
+  font-size: 1.5em;
+}
+
+.species-question {
+  font-size: .8em;
+}
+
+.species-answer {
+  padding: 0 .5em;
+  display: none;
+}
+.species-answer div {        
+  text-align: center;
+  border-radius: .1em;
+  padding: .2em 0;
+  font-size: 1.2rem;
+}
+
+.species-card-images {
+  height: 50%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  cursor: pointer;
+}
+
+.right-grid, .flex-provider.eol, .flex-provider.wiki, .flex-provider.gbif, .flex-provider.skills, .species-card-wiki-entry,
+.collection-preview, .collection button, .collections-skills {
+    display: none;
+}
+
+.left-body button, .right-body button, .species-card-btn button, .dropdown-menu.show {
+    width: 100%;
+}
+
+.modal-dialog {
+  margin: 1em;
 }

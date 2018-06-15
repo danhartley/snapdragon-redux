@@ -209,4 +209,13 @@
     #externalPageModal .modal-body {
         height: 450px;
     }
+
+    .right-grid, .flex-provider.eol, .flex-provider.wiki, .flex-provider.gbif, .flex-provider.skills, .species-card-wiki-entry,
+    .collection-preview, .collection button, .collections-skills {
+        display: inline-block;
+    }
+
+    .left-body button, .right-body button, .species-card-btn button, .dropdown-menu.show {
+        width: initial;
+    }
 }

@@ -1,16 +1,10 @@
 <div class="history js-history">
     <div>You answered {{ score.correct }} out of {{ score.total }} correctly in the last round.</div>
     <div>Your overall score for this collection is {{ history.correct }} out of {{ history.total }}.</div>
-    <div>You have completed {{ collection.currentRound }} of {{ collection.rounds }} rounds.</div>
-    <!-- <div class="js-level-progress"></div> -->
+    <div>You have completed {{ collection.currentRound }} of {{ collection.rounds }} rounds at this level.</div>
+    <div class="js-next-level-txt">On to the next round...</div>
 </div>
 
 <div class="summary js-summary">
-    <div class="js-right-body-top">
-        <div style="display: none;">Move to the next level</div>
-        <button style="display: none;" class="btn btn-light js-next-level-btn">Next level</button>        
-        <button class="btn btn-light learn-more-btn js-learn-more-btn">Continue</button>
-        <button style="display: none;" class="btn btn-light js-change-collection-btn">Go to collections</button>
-    </div>                    
-    <div class="js-right-body-bottom"></div>
+    <button class="btn btn-light learn-more-btn js-learn-more-btn">Continue</button>
 </div>

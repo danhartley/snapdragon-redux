@@ -3,7 +3,9 @@ import { DOM } from 'ui/dom';
 
 export const renderSnapdragon = () => {
 
-    const { config } = store.getState();
+    const { config, collection } = store.getState();
+
+    if(collection && collection.items) return;
 
     if(config.isPortraitMode) {
         DOM.leftGrid.style.display = 'grid';

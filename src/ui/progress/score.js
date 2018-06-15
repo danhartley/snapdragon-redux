@@ -4,7 +4,7 @@ import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 export const renderScore = (score) => {
     
-    const { history = {}, collection, config, layout } = store.getState();
+    const { history, collection, config, layout } = store.getState();
 
     const template = document.createElement('template');
 
@@ -19,7 +19,7 @@ export const renderScore = (score) => {
 
     const endOfRound = (score.total === layout.roundScoreCount); 
 
-    const runningTotal = history || { correct: 0, total: 0 };
+    const runningTotal = history ? { ...history } : { correct: 0, total: 0 };
 
     if(!endOfRound) {
         runningTotal.correct = runningTotal.correct + score.correct;

@@ -5,7 +5,7 @@ import historyTemplate from 'ui/progress/history-template.html';
 
 export const renderHistory = (history) => {
             
-    const { collection, score, config } = store.getState();
+    const { collection, score } = store.getState();
 
     const template = document.createElement('template');
 

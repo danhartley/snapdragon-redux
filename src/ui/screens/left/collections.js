@@ -14,12 +14,16 @@ export const renderCollections = () => {
 
     template.innerHTML = collectionsTemplate;
 
+    if(collection && collection.items) return;
+
     DOM.leftBody.innerHTML = '';
 
     collection = collection || { name: '---', id: ''};
 
     const species = collections.filter(collection => collection.type === 'species');
     const skills = collections.filter(collection => collection.type === 'skill');
+
+    if(!config.lesson) return;
 
     config.lesson.levels.forEach(level => {
         level.menuName = config.isPortraitMode ? level.id : level.name;
