@@ -4,7 +4,7 @@ import { actions } from 'redux/actions/action-creators';
 import { collectionPlans } from'snapdragon/collections-plans';
 import { renderTemplate } from 'ui/helpers/templating';
 import { selectHandler } from 'ui/helpers/handlers';
-import { renderSpecies } from 'ui/screens/common/species';
+import { renderSpeciesCollection } from 'ui/screens/common/species';
 import collectionsTemplate from 'ui/screens/left/collections-template.html';
 
 export const renderCollections = () => {
@@ -89,6 +89,6 @@ export const renderCollections = () => {
 
 
     goToSpeciesCollectionBtn.addEventListener('click', () => {
-        renderSpecies(collectionId);
+        renderSpeciesCollection(collectionId);
     });
 };

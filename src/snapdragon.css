@@ -602,3 +602,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .list-group {
   padding: 0;
 }
+
+.list-continue-btn {
+  margin: 1em .5em;
+}
