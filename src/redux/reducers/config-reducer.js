@@ -1,6 +1,5 @@
 import { types } from 'redux/actions/action-types';
 import { config as lessonConfig } from 'syllabus/lesson-config';
-import { collections } from 'snapdragon/species-collections';
 
 export const config = (state = lessonConfig, action) => {
     switch(action.type) {

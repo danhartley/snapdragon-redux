@@ -4,6 +4,7 @@ import { actions } from 'redux/actions/action-creators';
 import { collectionPlans } from'snapdragon/collections-plans';
 import { renderTemplate } from 'ui/helpers/templating';
 import { selectHandler } from 'ui/helpers/handlers';
+import { renderSpecies } from 'ui/screens/common/species';
 import collectionsTemplate from 'ui/screens/left/collections-template.html';
 
 export const renderCollections = () => {
@@ -14,12 +15,16 @@ export const renderCollections = () => {
 
     template.innerHTML = collectionsTemplate;
 
+    if(collection && collection.items) return;
+
     DOM.leftBody.innerHTML = '';
 
     collection = collection || { name: '---', id: ''};
 
     const species = collections.filter(collection => collection.type === 'species');
     const skills = collections.filter(collection => collection.type === 'skill');
+
+    if(!config.lesson) return;
 
     config.lesson.levels.forEach(level => {
         level.menuName = config.isPortraitMode ? level.id : level.name;
@@ -45,12 +50,15 @@ export const renderCollections = () => {
 
     document.querySelectorAll(levelName)[0].classList.add('active');
 
+    let collectionId;
+
     selectHandler('.dropdown.js-collections .dropdown-item', (id) => {
-        const collectionId = parseInt(id);
+        collectionId = parseInt(id);
         const collectionName = collections.filter(collection => collection.id === collectionId)[0].name;
         document.querySelector('.js-selected-collection span').innerHTML = collectionName;        
         config = { ...config, ...{ collection: { id: collectionId }} };
-        learningActionBtn.disabled = false;       
+        learningActionBtn.disabled = false;
+        goToSpeciesCollectionBtn.disabled = false;      
     });
 
     selectHandler('.dropdown.js-levels .dropdown-item', (id) => {
@@ -68,12 +76,19 @@ export const renderCollections = () => {
     });
 
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
+    const goToSpeciesCollectionBtn = document.querySelector('.js-species-collection');
 
     if(collection.id === '') {
         learningActionBtn.disabled = true;
+        goToSpeciesCollectionBtn.disabled = true;
     }
 
     learningActionBtn.addEventListener('click', event => {
         actions.boundChangeCollection(config);
+    });
+
+
+    goToSpeciesCollectionBtn.addEventListener('click', () => {
+        renderSpecies(collectionId);
     });
 };

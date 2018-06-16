@@ -1,47 +1,4 @@
 @media (max-width: 767px) {
-
-    .flex-provider.eol, .flex-provider.wiki, .flex-provider.gbif, .flex-provider.skills, .species-card-wiki-entry,
-    .collection-preview, .collection button {
-        display: none;
-    }
-
-    .left-body button, .right-body button, .species-card-btn button, .dropdown-menu.show {
-        width: 100%;
-    }
-
-    .collections-skills {
-        display: none;
-    }
-
-    .species-question {
-        font-size: .8em;
-    }
-
-    .species-answer {
-        padding: 0 .5em;
-        display: none;
-    }
-    .species-answer div {        
-        text-align: center;
-        border-radius: .1em;
-        padding: .2em 0;
-        font-size: 1.2rem;
-    }
-
-    .species-card-images {
-        height: 50%;
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        cursor: pointer;
-    }
-
-    /* modal */
-
-    .modal-dialog {
-        margin: 10px;
-    }
-
     .modal-iframe  {
         margin: 0;
         padding: 0;
@@ -54,41 +11,6 @@
         min-height: 10px;
         padding: 10px 0px 10px 10px;
         height: 300px;
-    }
-
-    .text-entry-container {
-        height: 100%;
-    }
-    
-    .text-entry {
-        margin: 1em;
-        position: relative;
-        height: 40%;
-    }
-
-    .text-entry input {
-        margin: .5em 0;
-        width: 100%;
-    }
-
-    .text-entry button {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-    }
-
-    .text-entry div {
-        margin: 0 0 0 .1em;
-    }
-
-    .text-question {
-        padding: .2em;
-        margin: .4em 0;
-        display: inline-block;
-    }
-
-    .text-question span {
-        font-size: 1.5em;
     }
 }
 
@@ -106,6 +28,7 @@
     }
     .tile span {
         padding: 0 .2em;
+        font-size: 1.8em;
     }
 }
 @media (min-width: 375px) {
@@ -125,7 +48,4 @@
     .strip div, .card {
         font-size: 1.2em;
     }
-}
-
-@media (min-width: 786px) {
 }

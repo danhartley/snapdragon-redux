@@ -25,7 +25,6 @@ export const renderMenu = () => {
     renderTemplate({ delay }, template.content, DOM.modalText);
     
     const clearCacheBtn = document.querySelector('.js-clear-cache-btn');
-    const collectionsBtn = document.querySelector('.js-change-collection-btn');
     const setDelayBtn = document.querySelector('.js-set-delay-btn');
     const setDelayInput = document.querySelector('.js-set-delay-input');
     const delayTxt = document.querySelector('.js-delay-text');
@@ -52,8 +51,6 @@ export const renderMenu = () => {
         renderSnapdragon();
         closeModal('menuModal');
     };
-
-    collectionsBtn.addEventListener('click', handleCollectionsClick);
 
     setDelayBtn.addEventListener('click', () => {
         setDelayBtn.innerHTML = 'Setting delay...';

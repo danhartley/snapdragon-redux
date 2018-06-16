@@ -86,7 +86,7 @@ const renderLandscape = (screen, item, config) => {
 
     document.querySelector('.js-txt-family img').classList.add('show');
 };
-const renderPortrait = (screen, item, config, collection, index) => {
+const renderPortrait = (screen, item, config) => {
 
     const template = document.createElement('template');
 

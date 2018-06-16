@@ -1,13 +1,13 @@
-const NEXT_LESSON = '[ui] Prepare next lesson';
-const NEXT_ITEM = '[ui] Render next item';
-const NEXT_LAYOUT = '[logc] Select next layout';
-const UPDATE_SCORE = '[logic] Check user answer and update running score';
-const END_REVISION = '[logic] Revision complete';
-const UPDATE_HISTORY = '[logic] Copy round score to history';
-const CHANGE_COLLECTION = '[logic] Change collection';
-const NEXT_ROUND = '[logic] Go to next round';
-const NEXT_LEVEL = '[logic] Go to next level';
-const UPDATE_CONFIG = '[logic] change to config';
+const NEXT_LESSON = '[NEXT_LESSON] Prepare next lesson';
+const NEXT_ITEM = '[NEXT_ITEM] Render next item';
+const NEXT_LAYOUT = '[NEXT_LAYOUT] Select next layout';
+const UPDATE_SCORE = '[UPDATE_SCORE] Check user answer and update running score';
+const END_REVISION = '[END_REVISION] Revision complete';
+const UPDATE_HISTORY = '[UPDATE_HISTORY] Copy round score to history';
+const CHANGE_COLLECTION = '[CHANGE_COLLECTION] Change collection';
+const NEXT_ROUND = '[NEXT_ROUND] Go to next round';
+const NEXT_LEVEL = '[NEXT_LEVEL] Go to next level';
+const UPDATE_CONFIG = '[UPDATE_CONFIG] change to config';
 
 export const types = {
     NEXT_LESSON,
