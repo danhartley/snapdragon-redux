@@ -1,12 +1,16 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
+import { actions } from 'redux/actions/action-creators';
+import { itemVernacularName } from 'ui/helpers/data-checking';
 import { collections } from 'snapdragon/species-collections';
 import { renderTemplate } from 'ui/helpers/templating';
 import speciesTemplate from 'ui/screens/common/species-template.html';
 
-export const renderSpecies = (collectionId) => {
+export const renderSpeciesCollection = (collectionId) => {
 
     let { config} = store.getState();
+
+    config.collection.id = collectionId;
 
     const template = document.createElement('template');
 
@@ -17,7 +21,7 @@ export const renderSpecies = (collectionId) => {
     const collection = collections.filter(collection => collection.id === collectionId)[0];
     collection.items.forEach(item => { 
         item.image = item.images[0];
-        item.vernacularName = item.names.filter(name => name.language === config.language)[0].vernacularName;
+        item.vernacularName = itemVernacularName(item, config);
     });
 
     renderTemplate({ collection }, template.content, DOM.leftBody);
@@ -31,5 +35,11 @@ export const renderSpecies = (collectionId) => {
             const item = event.target;
             item.classList.add('active');
         })
+    });
+
+    const learningActionBtn = document.querySelector('.js-lesson-btn-action');
+
+    learningActionBtn.addEventListener('click', event => {
+        actions.boundChangeCollection(config);
     });
 };
