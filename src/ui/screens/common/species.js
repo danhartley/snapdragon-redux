@@ -8,6 +8,8 @@ import speciesTemplate from 'ui/screens/common/species-template.html';
 
 export const renderSpeciesCollection = (collectionId) => {
 
+    if(isNaN(collectionId)) return;
+
     let { config} = store.getState();
 
     config.collection.id = collectionId;
