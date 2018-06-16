@@ -1,5 +1,14 @@
-<div class="list-group-container">
+<div class="list-group-container js-list-item-container">
     <ul class="list-group list-group-flush" data-repeat-item="{{ collection.items }}">
-        <li class="list-group-item">{{ item.name }}</li>
+        <div class="list-group-item js-list-item">
+            <div>
+                <img src="{{ item.image }}" alt="">
+            </div>
+            <div>
+                <span>{{ item.name }}</span>
+                <br/>
+                <span class="capitalise">{{ item.vernacularName }}</span>
+            </div>
+        </div>
     </ul>
 </div>
