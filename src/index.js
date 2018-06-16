@@ -24,6 +24,8 @@ import { lessonPlans } from 'snapdragon/lesson-plans';
 import { renderMenu } from 'ui/screens/common/menu';
 import { DOM } from 'ui/dom';
 
+import { renderSpecies } from 'ui/screens/common/species';
+
 // use case test
 
 const renderWelcome = () => {
@@ -64,6 +66,7 @@ setTimeout(()=>{
 observeStore(store, store => store.config, nextLesson, 'config', 'next-lesson');
 observeStore(store, store => store.index, nextLayout, 'index', 'next-layout');
 observeStore(store, store => store.layout, nextItem, 'layout', 'next-item');
+observeStore(store, store => store.collection, renderSpecies, 'collection', 'species-collection');
 
 // headers
 

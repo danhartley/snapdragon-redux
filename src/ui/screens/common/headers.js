@@ -8,7 +8,9 @@ export const renderHeaders = layout => {
     DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
     DOM.rightHeaderText.style.backgroundColor = 'rgb(12, 44, 84)';
 
-    DOM.collectionTxt.innerHTML = collection ? collection.name : 'Snapdragon';
+    const title = config.isPortraitMode ? 'Snapdragon' : 'Snapdragon - species recognition and recall'; // todo single source for text
+
+    DOM.collectionTxt.innerHTML = collection ? collection.name : title;
 
     if(!layout) return;
 

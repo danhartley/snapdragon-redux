@@ -24,11 +24,14 @@ export const renderSummary = (history) => {
     const learnMoreBtn = document.querySelector('.js-learn-more-btn');
     const nextLevelTxt = document.querySelector('.js-next-level-txt');
 
-    const handleBtnClickEvent = event => {
+    const levelComplete = collection.currentRound === collection.rounds;
+
+    levelComplete ? nextLevelTxt.style.display = 'inline-block' : nextLevelTxt.style.display = 'none';
+
+    const handleBtnClickEvent = () => {
         
         const lessonName = layouts.lessonName;
-        const levelName = layouts.levelName;
-        const levelComplete = collection.currentRound === collection.rounds;
+        const levelName = layouts.levelName;        
 
         config.excludeRevision = levelName === 'Level 1' ? false : true;
 
@@ -38,10 +41,8 @@ export const renderSummary = (history) => {
             config.lesson.level = level;
             config.lessonName = level.lessonName;
             config.levelName = level.name;
-            actions.boundNextLevel(0);
-            nextLevelTxt.style.display = 'inline-block';
-        } else {
-            nextLevelTxt.style.display = 'none';
+            actions.boundNextLevel(0);            
+        } else {            
             actions.boundNextRound(0);
         }
 

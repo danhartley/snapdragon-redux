@@ -28,6 +28,7 @@
     }
     .tile span {
         padding: 0 .2em;
+        font-size: 1.8em;
     }
 }
 @media (min-width: 375px) {

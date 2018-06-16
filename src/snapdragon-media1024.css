@@ -119,6 +119,10 @@
         font-size: .9em;
     }
 
+    .flex-provider.dan {
+        display: none;
+    }
+
     .letterbox {
         display: grid;
         grid-template-rows: 1fr 1fr 1fr;
@@ -210,12 +214,21 @@
         height: 450px;
     }
 
-    .right-grid, .flex-provider.eol, .flex-provider.wiki, .flex-provider.gbif, .flex-provider.skills, .species-card-wiki-entry,
+    /* .flex-provider.eol, .flex-provider.wiki, .flex-provider.gbif,  */
+    .flex-provider.skills, .species-card-wiki-entry,
     .collection-preview, .collection button, .collections-skills {
         display: inline-block;
     }
 
+    .right-grid {
+        display: grid;
+    }
+
     .left-body button, .right-body button, .species-card-btn button, .dropdown-menu.show {
         width: initial;
+    }
+
+    .portrait {
+        display: none;
     }
 }
