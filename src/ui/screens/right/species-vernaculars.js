@@ -14,7 +14,7 @@ export const renderVernaculars = (collection) => {
     const callback = contentItem => {
 
         return `<div class="strip">
-                    <div class="capitalised" id="${contentItem.id}" data-vernacular="${contentItem.vernacularQuestion}">${contentItem.vernacularAnswer}</div>
+                    <div class="capitalise" id="${contentItem.id}" data-vernacular="${contentItem.vernacularQuestion}">${contentItem.vernacularAnswer}</div>
                 </div>`;
        };
 
