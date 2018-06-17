@@ -1,3 +1,4 @@
+import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
@@ -10,10 +11,13 @@ import landscapeTemplate from 'ui/screens/common/card-template.html';
 import portraitTemplate from 'ui/screens/common/card-portrait-template.html';
 
 export const renderCard = (collection) => {
+    
+    console.log('*currentRound: ', collection.currentRound);
+    console.log('*itemIndex: ', collection.itemIndex);
 
     const item = collection.items[collection.itemIndex];
 
-    const { layout, config, index, layouts } = store.getState();
+    const { layout, config, layouts } = store.getState();
 
     document.querySelector('progress').max = layouts.filter(layout => layout.name === 'test').length;
     document.querySelector('progress').value = 0;
@@ -22,14 +26,12 @@ export const renderCard = (collection) => {
 
     if(!screen) return;
 
-    screen.parent.innerHTML = '';
-
     config.isPortraitMode
-        ? renderPortrait(screen, item, config, collection, index)
-        : renderLandscape(screen, item, config);
+        ? renderPortrait(item, config)
+        : renderLandscape(item, config);
 };
 
-const renderLandscape = (screen, item, config) => {
+const renderLandscape = (item, config) => {
 
     const template = document.createElement('template');
 
@@ -41,7 +43,7 @@ const renderLandscape = (screen, item, config) => {
     eolPage.setAttribute('target', '_blank');
     eolPage.setAttribute('style', 'text-decoration: none');
 
-    renderCommonParts(screen, template, config, item);
+    renderCommonParts(template, config, item);
     
     setTimeout(()=>{
         const wikiLink = document.querySelector('.js-species-card-wiki span');
@@ -86,13 +88,13 @@ const renderLandscape = (screen, item, config) => {
 
     document.querySelector('.js-txt-family img').classList.add('show');
 };
-const renderPortrait = (screen, item, config) => {
+const renderPortrait = (item, config) => {
 
     const template = document.createElement('template');
 
     template.innerHTML = portraitTemplate;
     
-    renderCommonParts(screen, template, config, item);
+    renderCommonParts(template, config, item);
 
     const images = utils.shuffleArray(item.images).slice(0,4);
 
@@ -108,7 +110,7 @@ const renderPortrait = (screen, item, config) => {
     modalHandler(document.querySelectorAll('.js-species-card-images div'), item);
 };
 
-const renderCommonParts = (screen, template, config, item) => {
+const renderCommonParts = (template, config, item) => {
 
     const species = item.name;    
     const name = itemVernacularName(item, config);
@@ -119,6 +121,9 @@ const renderCommonParts = (screen, template, config, item) => {
         actions.boundEndRevision(item);
         event.stopPropagation();
     });
+
+    const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
+    parent.innerHTML = '';
     
-    renderTemplate({ species, name }, template.content, screen.parent, clone);
+    renderTemplate({ species, name }, template.content, parent, clone);
 };

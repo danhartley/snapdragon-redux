@@ -15,7 +15,7 @@ export const renderCollections = () => {
 
     template.innerHTML = collectionsTemplate;
 
-    if(collection && collection.items) return;
+    // if(collection && collection.items) return;
 
     DOM.leftBody.innerHTML = '';
 
