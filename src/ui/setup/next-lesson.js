@@ -6,9 +6,11 @@ export const nextLesson = (config) => {
 
     if(config.collection.id === '') return;
 
+    const { layouts } = store.getState();
+
     config.excludeRevision = config.lesson.level.id !== 1;
 
-    const layouts = lessonPlanner.createLessonPlan(config);
+    const _layouts = layouts || lessonPlanner.createLessonPlan(config);
 
-    actions.boundNextLesson(layouts);
+    actions.boundNextLesson(_layouts);
 };

@@ -21,7 +21,7 @@ const history = {
 const revision = {
   name: 'species-card',
   domain: 'collection',
-  parent: DOM.rightBody ,
+  // parent: DOM.rightBody ,
   template: 'js-card-revision-template'
 };
 
@@ -30,7 +30,7 @@ const scientifics = {
   headers: { long: 'Click the latin name to match the species', short: 'Click name to match species'},
   question: 'Tap to match common name',
   domain: 'collection',
-  parent: DOM.rightBody,
+  // parent: DOM.rightBody,
   template: 'js-strips-template',
   taxon: 'name'
 };
@@ -40,7 +40,7 @@ const vernaculars = {
   headers: { long: 'Click the common name to match the species', short: 'Click name to match species'},
   question: 'Tap to match latin name',
   domain: 'collection',
-  parent: DOM.rightBody,
+  // parent: DOM.rightBody,
   template: 'js-strips-template',
   taxon: 'name'
 };

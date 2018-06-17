@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { DOM } from 'ui/dom';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemVernacularName } from 'ui/helpers/data-checking';
@@ -14,6 +15,7 @@ export const renderStrips = (screen, item, callback, config, layout) => {
     
     const rptrStrips = template.content.querySelector('.js-rptr-strips');
 
+    screen.parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
     screen.parent.innerHTML = '';
 
     item.content = R.take(6, item.multipleNames.map(answer => {

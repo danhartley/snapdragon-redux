@@ -19,7 +19,6 @@ import { renderHeaders } from 'ui/screens/common/headers';
 import { renderScore } from 'ui/progress/score';
 
 import { lessonPlans } from 'snapdragon/lesson-plans';
-// import { config } from 'syllabus/lesson-config';
 
 import { renderMenu } from 'ui/screens/common/menu';
 import { DOM } from 'ui/dom';
@@ -59,28 +58,15 @@ setTimeout(()=>{
     renderCollections();
     renderSnapdragon();
     renderHeaders();
+
+    observeStore(store, store => store.config, nextLesson, 'config', 'next-lesson');
+    observeStore(store, store => store.index, nextLayout, 'index', 'next-layout');
+    observeStore(store, store => store.layout, nextItem, 'layout', 'next-item');
+    observeStore(store, store => store.collection, renderSpeciesCollection, 'collection', 'species-collection');
+    observeStore(store, store => store.layout, renderHeaders, 'layout', 'render-headers');
+    observeStore(store, store => store.score, renderScore, 'score');
+
 });
-
-// setup
-
-observeStore(store, store => store.config, nextLesson, 'config', 'next-lesson');
-observeStore(store, store => store.index, nextLayout, 'index', 'next-layout');
-observeStore(store, store => store.layout, nextItem, 'layout', 'next-item');
-observeStore(store, store => store.collection, renderSpeciesCollection, 'collection', 'species-collection');
-
-// headers
-
-observeStore(store, store => store.layout, renderHeaders, 'layout', 'render-headers');
-
-// progress
-
-observeStore(store, store => store.score, renderScore, 'score');
-
-// global listener
-
-// observeStore(store, store => store.score, listening, 'score');
-
-// menu
 
 DOM.menuIcon.addEventListener('click', () => {
     renderMenu();
