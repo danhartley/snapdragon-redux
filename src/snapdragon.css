@@ -99,22 +99,20 @@ progress::-moz-progress-bar {
   background-color: white;
 }
 
-/* home page */
-
 .snapdragon, .collections {
   padding: .5em;
 }
 
-.snapdragon div:nth-child(1) {
-  font-size: 1.8em;
+.snapdragon .card {
+  text-align: left;
+  margin: 0;
+  padding: .5em;
 }
 
-.snapdragon div:nth-child(2) {
-  font-size: 1.2em;
-  margin: 1em 0 1.5em 0;
+.snapdragon p {
+  margin: .5em;
+  font-size: .9em;
 }
-
-/* grids */
 
 .grid {
   display: grid;

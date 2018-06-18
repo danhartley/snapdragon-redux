@@ -1,5 +1,6 @@
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
+import snapdragonTemplate from 'ui/screens/right/snapdragon-template.html';
 
 export const renderSnapdragon = () => {
 
@@ -14,7 +15,9 @@ export const renderSnapdragon = () => {
 
         DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
 
-        const template = document.querySelector('.js-snapdragon');
+        const template = document.createElement('template');
+
+        template.innerHTML = snapdragonTemplate;
 
         const clone = document.importNode(template.content, true);
             
