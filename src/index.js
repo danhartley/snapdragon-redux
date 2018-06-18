@@ -17,13 +17,10 @@ import { nextItem } from 'ui/setup/next-item';
 
 import { renderHeaders } from 'ui/screens/common/headers';
 import { renderScore } from 'ui/progress/score';
+import { renderSpeciesCollection } from 'ui/screens/common/species';
+import { renderNavigation } from 'ui/screens/common/navigation';
 
 import { lessonPlans } from 'snapdragon/lesson-plans';
-
-import { renderMenu } from 'ui/screens/common/menu';
-import { DOM } from 'ui/dom';
-
-import { renderSpeciesCollection } from 'ui/screens/common/species';
 
 // use case test
 
@@ -35,8 +32,6 @@ const returningUser = localStorage.getItem('returningUser') ? new Boolean(localS
 returningUser ? renderWelcome() : localStorage.setItem('returningUser', true);
 
 import { actions } from 'redux/actions/action-creators';
-import { renderSnapdragon } from 'ui/screens/right/snapdragon';
-import { renderCollections } from 'ui/screens/left/collections';
 
 setTimeout(()=>{
 
@@ -55,9 +50,8 @@ setTimeout(()=>{
 
     actions.boundUpdateConfig(config);
 
-    renderCollections();
-    renderSnapdragon();
     renderHeaders();
+    renderNavigation();
 
     observeStore(store, store => store.config, nextLesson, 'config', 'next-lesson');
     observeStore(store, store => store.index, nextLayout, 'index', 'next-layout');
@@ -65,9 +59,4 @@ setTimeout(()=>{
     observeStore(store, store => store.collection, renderSpeciesCollection, 'collection', 'species-collection');
     observeStore(store, store => store.layout, renderHeaders, 'layout', 'render-headers');
     observeStore(store, store => store.score, renderScore, 'score');
-
-});
-
-DOM.menuIcon.addEventListener('click', () => {
-    renderMenu();
 });

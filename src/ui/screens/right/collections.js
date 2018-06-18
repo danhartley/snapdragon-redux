@@ -5,7 +5,7 @@ import { collectionPlans } from'snapdragon/collections-plans';
 import { renderTemplate } from 'ui/helpers/templating';
 import { selectHandler } from 'ui/helpers/handlers';
 import { renderSpeciesCollection } from 'ui/screens/common/species';
-import collectionsTemplate from 'ui/screens/left/collections-template.html';
+import collectionsTemplate from 'ui/screens/right/collections-template.html';
 
 export const renderCollections = () => {
 
@@ -15,9 +15,9 @@ export const renderCollections = () => {
 
     template.innerHTML = collectionsTemplate;
 
-    // if(collection && collection.items) return;
+    const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
 
-    DOM.leftBody.innerHTML = '';
+    parent.innerHTML = '';
 
     collection = collection || { name: '---', id: ''};
 
@@ -32,7 +32,7 @@ export const renderCollections = () => {
 
     const languageName = config.languages.filter(l => l.lang === config.language)[0].name;
 
-    renderTemplate({ species, skills, config, collection, languageName }, template.content, DOM.leftBody);
+    renderTemplate({ species, skills, config, collection, languageName }, template.content, parent);
 
     const skillsCollectionsBtns = document.querySelectorAll('.js-skills-collection .dropdown-menu button');
 
@@ -42,13 +42,11 @@ export const renderCollections = () => {
         config = { ...config, ...{ collection: { id: collectionId }}, ...{ lesson: { name: lessonName, level: { name: levelName }}} };        
     }));
 
-    const languageId = '#' + config.language;
+    // species collections
 
-    document.querySelectorAll(languageId)[0].classList.add('active');
-
-    const levelName = '#level' + config.lesson.level.id;
-
-    document.querySelectorAll(levelName)[0].classList.add('active');
+    const activeCollectionSelector = `[name="collection${config.collection.id}"]`;
+    if(activeCollectionSelector !== 'collection')
+        document.querySelectorAll(activeCollectionSelector);
 
     let collectionId;
 
@@ -58,8 +56,14 @@ export const renderCollections = () => {
         document.querySelector('.js-selected-collection span').innerHTML = collectionName;        
         config = { ...config, ...{ collection: { id: collectionId }} };
         learningActionBtn.disabled = false;
-        goToSpeciesCollectionBtn.disabled = false;      
+        goToSpeciesCollectionBtn.disabled = false;
+        if(!config.isPortraitMode) renderSpeciesCollection(collectionId); 
     });
+
+    // lesson levels
+
+    const activeLevel = '#level' + config.lesson.level.id;
+    document.querySelectorAll(activeLevel)[0].classList.add('active');
 
     selectHandler('.dropdown.js-levels .dropdown-item', (id) => {
         const level = config.lesson.levels.filter(level => level.id.toString() === id.slice(id.length -1))[0];
@@ -67,6 +71,11 @@ export const renderCollections = () => {
             const lesson = { ...config.lesson, level };
             config = { ...config, lesson };
     });
+
+    // lanaguages
+
+    const activeLanguage = '#' + config.language;
+    document.querySelectorAll(activeLanguage)[0].classList.add('active');
 
     selectHandler('.dropdown.js-languages .dropdown-item', (id) => {
         const lang = id;
@@ -80,11 +89,14 @@ export const renderCollections = () => {
 
     if(collection.id === '') {
         learningActionBtn.disabled = true;
-        goToSpeciesCollectionBtn.disabled = true;
+        goToSpeciesCollectionBtn.disabled = true;        
     }
 
     learningActionBtn.addEventListener('click', event => {
         actions.boundChangeCollection(config);
+        document.querySelector('.js-home').classList.remove('active-icon');
+        document.querySelector('.js-test').classList.add('active-icon');
+        document.querySelector('.js-test').style.display = 'inline';
     });
 
 

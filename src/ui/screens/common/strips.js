@@ -7,7 +7,7 @@ import { itemVernacularName } from 'ui/helpers/data-checking';
 import speciesCard from 'ui/screens/common/species-card-template.html';
 import questionCard from 'ui/screens/common/species-question-template.html';
 
-export const renderStrips = (screen, item, callback, config, layout) => {
+export const renderStrips = (screen, item, callback, config) => {
 
     const template = document.createElement('template');
 
@@ -15,8 +15,8 @@ export const renderStrips = (screen, item, callback, config, layout) => {
     
     const rptrStrips = template.content.querySelector('.js-rptr-strips');
 
-    screen.parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
-    screen.parent.innerHTML = '';
+    const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
+    parent.innerHTML = '';
 
     item.content = R.take(6, item.multipleNames.map(answer => {
         const vernacularNames = answer.names
@@ -41,7 +41,7 @@ export const renderStrips = (screen, item, callback, config, layout) => {
     const clone = document.importNode(template.content, true);
     const strips = clone.querySelectorAll('.js-rptr-strips .strip div');
 
-    screen.parent.appendChild(clone);
+    parent.appendChild(clone);
 
     if(config.isPortraitMode) {
 
@@ -53,10 +53,10 @@ export const renderStrips = (screen, item, callback, config, layout) => {
                 ? { name: '', species, filter: 'species' }
                 : { name, species: '', filter: 'name' }
 
-        renderTemplate( context, template.content, screen.parent);
+        renderTemplate( context, template.content, parent);
         template.innerHTML = questionCard;
         const question = screen.question;
-        renderTemplate( { question }, template.content, screen.parent);
+        renderTemplate( { question }, template.content, parent);
         const renderAnswer = (text, colour, correct) => {
             const answer = document.querySelector('.js-species-answer div');
             answer.innerHTML = correct ? 'Correct' : 'Incorrect';

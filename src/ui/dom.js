@@ -19,7 +19,6 @@ export const DOM = {
     totalTxt : document.getElementsByClassName('js-txt-total')[0],
     correctTxt : document.getElementsByClassName('js-txt-correct')[0],
     stateChangeAlertTxt: document.getElementsByClassName('js-state-change-alert')[0],
-    menuIcon: document.getElementsByClassName('js-menu')[0],
 
     speciesCardNameTxt: document.getElementsByClassName('js-txt-species-names')[0],
     speciesCardSpeciesTxt: document.getElementsByClassName('js-txt-species')[0],

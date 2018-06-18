@@ -1,3 +1,4 @@
+import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -53,15 +54,16 @@ export const renderInput = (config, screen, question, callbackTime, item, render
         event.target.disabled = true;
     });
 
-    screen.parent.innerHTML = '';
-    screen.parent.appendChild(clone);
+    const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
+    parent.innerHTML = '';
+    parent.appendChild(clone);
 
-    config.isPortraitMode ? renderPortrait(item, template, screen) : renderLandscape(item);
+    config.isPortraitMode ? renderPortrait(item) : renderLandscape(item);
 
     document.querySelector('.js-txt-input').focus();
 };
 
-const renderPortrait = (item, template, screen) => {
+const renderPortrait = (item) => {
     const images = utils.shuffleArray(item.images).slice(0,4);
 
     const backgroundImages = images.map(image => {

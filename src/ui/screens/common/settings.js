@@ -2,19 +2,19 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { persistor } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { renderCollections } from 'ui/screens/left/collections';
-import { renderSnapdragon } from 'ui/screens/right/snapdragon';
+import { renderCollections } from 'ui/screens/right/collections';
+import { renderSpeciesCollection } from 'ui/screens/common/species';
 import { renderTemplate } from 'ui/helpers/templating';
 import { closeModal } from 'ui/helpers/modal-toggle';
-import menuTemplate from 'ui/screens/common/menu.html';
+import settingsTemplate from 'ui/screens/common/settings-template.html';
 
-export const renderMenu = () => {
+export const renderSettings = () => {
     
     DOM.modalText.innerHTML = '';
 
     const template = document.createElement('template');
     
-    template.innerHTML = menuTemplate;
+    template.innerHTML = settingsTemplate;
     
     DOM.modalTextTitle.innerHTML = 'Snapdragon menu';
 
@@ -48,7 +48,7 @@ export const renderMenu = () => {
 
     const handleCollectionsClick = () => {
         renderCollections();
-        renderSnapdragon();
+        renderSpeciesCollection(config.collection.id);
         closeModal('menuModal');
     };
 

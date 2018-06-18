@@ -18,13 +18,13 @@ export const renderSpeciesCollection = (collectionId) => {
 
     template.innerHTML = speciesTemplate;
 
-    DOM.leftBody.innerHTML = '';
-
     const collection = collections.filter(collection => collection.id === collectionId)[0];
     collection.items.forEach(item => { 
         item.image = item.images[0];
         item.vernacularName = itemVernacularName(item, config);
     });
+
+    DOM.leftBody.innerHTML = '';
 
     renderTemplate({ collection }, template.content, DOM.leftBody);
 

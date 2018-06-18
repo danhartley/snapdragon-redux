@@ -24,8 +24,8 @@ export const renderSpeciesTiles = (collection) => {
     
     template.innerHTML = html;
     
-    screen.parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
-    screen.parent.innerHTML = '';
+    const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
+    parent.innerHTML = '';
 
     let images = R.take(3, item.multipleImages.filter(image => image.name !== item.name));
     images.push(R.take(3, item.multipleImages.filter(image => image.name === item.name))[0]);    
@@ -33,16 +33,16 @@ export const renderSpeciesTiles = (collection) => {
         return { src: image.images[Math.floor(Math.random() * image.images.length)], answer: image.name  };
     }));
 
-    renderTemplate({ images }, template.content, screen.parent);
+    renderTemplate({ images }, template.content, parent);
     
     if(config.isPortraitMode) {
         const species = item.name;
         const name = itemVernacularName(item, config);
         template.innerHTML = speciesCard;
-        renderTemplate( { species, name, filter: '' }, template.content, screen.parent);
+        renderTemplate( { species, name, filter: '' }, template.content, parent);
         template.innerHTML = questionCard;
         const question = screen.question;
-        renderTemplate( { question }, template.content, screen.parent);
+        renderTemplate( { question }, template.content, parent);
         const renderAnswer = (text, colour, correct) => {
             const answer = document.querySelector('.js-species-answer div');
             answer.innerHTML = correct ? 'Correct' : 'Incorrect';

@@ -1,5 +1,13 @@
 @media (min-width: 768px) {
 
+    body {
+        font-size: 16px;
+    }
+
+    .snapdragon, .collections {
+        padding: 1em;
+    }
+
     .collections div {
         margin: .5em 0;
       }      

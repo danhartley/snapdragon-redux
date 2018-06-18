@@ -79,13 +79,5 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
 
     lessonPlan.moduleSize = moduleSize;
 
-    if(isPortraitMode) {
-        lessonPlan.forEach(lesson => { 
-            lesson.screens.forEach(screen => { 
-                screen.parent = DOM.leftBody;
-            } )}
-        );
-    }
-
     return lessonPlan;
 };

@@ -5,14 +5,12 @@ import { DOM } from 'ui/dom';
 const specimen = {
   name: 'specimen-images',
   domain: 'collection',
-  parent: DOM.leftBody,
   template: 'js-specimen-images-template'     
 };
 
 const history = { 
   name: 'history', 
-  domain: 'history', 
-  parent: DOM.leftBody,
+  domain: 'history',
   template: 'js-history-template'
 };
 
@@ -21,7 +19,6 @@ const history = {
 const revision = {
   name: 'species-card',
   domain: 'collection',
-  // parent: DOM.rightBody ,
   template: 'js-card-revision-template'
 };
 
@@ -30,7 +27,6 @@ const scientifics = {
   headers: { long: 'Click the latin name to match the species', short: 'Click name to match species'},
   question: 'Tap to match common name',
   domain: 'collection',
-  // parent: DOM.rightBody,
   template: 'js-strips-template',
   taxon: 'name'
 };
@@ -40,7 +36,6 @@ const vernaculars = {
   headers: { long: 'Click the common name to match the species', short: 'Click name to match species'},
   question: 'Tap to match latin name',
   domain: 'collection',
-  // parent: DOM.rightBody,
   template: 'js-strips-template',
   taxon: 'name'
 };
@@ -50,7 +45,6 @@ const species = {
   headers: { long: 'Click the picture to match the species', short: 'Click picture to match species'},
   question: 'Tap picture to match species',
   domain: 'collection',
-  parent: DOM.rightBody,
   template: 'js-tiles-template',
   taxon: 'name'
 };
@@ -59,14 +53,12 @@ const text = {
   name: 'text-entry',
   headers: { long: 'Complete the latin name', short: 'Complete the latin name'},
   domain: 'collection',
-  parent: DOM.rightBody,
   question: 'Complete the latin name',
 };
 
 const summary = { 
   name: 'summary', 
-  domain: 'history', 
-  parent: DOM.rightBody,
+  domain: 'history',
   template: 'js-summary-template'
 };
 
@@ -75,7 +67,6 @@ const command = {
   domain: 'collection',
   left: specimen,
   right: {
-    parent: DOM.rightBody,
     cutLength: 5,
     template: 'js-letters-template',
     headers: { long: 'Complete the latin name.', short: 'Complete the latin name.'},
@@ -87,7 +78,6 @@ const leaf = {
   name: 'leaf-image',
   headers: { long: 'Enter the name for the leaf part.', short: 'Enter the name for the leaf part.'},
   domain: 'collection',
-  parent: DOM.leftBody,
   template: 'js-leaf-image-template'     
 };
 
@@ -95,7 +85,6 @@ const leafName = {
   name: 'leaf-text',
   headers: { long: 'Enter the name for the leaf part.', short: 'Enter the name for the leaf part.'},
   domain: 'collection',
-  parent: DOM.rightBody,
   template: 'js-text-entry-template'     
 };
 
