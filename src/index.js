@@ -47,6 +47,8 @@ setTimeout(()=>{
         config.lesson.level = config.lesson.levels[0];
         const levels = lessonPlans.filter(plan => plan.name === config.lesson.name)[0].levels;
         config.lesson.levels = levels;
+        config.lessonName = config.lesson.name;
+        config.levelName = config.lesson.level.name;
     }
 
     actions.boundUpdateConfig(config);

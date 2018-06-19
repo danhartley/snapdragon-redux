@@ -8,7 +8,7 @@ import { helpers } from 'redux/reducers/helpers-for-reducers';
 const initCollection = (rawCollection = collections[0]) => {
     let prepCollection = rawCollection.type === 'skill'
         ? R.pipe(utils.shuffleArray)
-        : R.pipe(helpers.filterExcluded, utils.shuffleArray, helpers.embellishCollection);
+        : R.pipe(helpers.filterExcluded, helpers.extractScientificNames, utils.shuffleArray, helpers.embellishCollection);
     const items = prepCollection(rawCollection.items);
     const rounds = items.length / config.moduleSize;
 

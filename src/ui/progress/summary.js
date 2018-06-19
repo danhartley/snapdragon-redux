@@ -9,7 +9,9 @@ export const renderSummary = (history) => {
 
     document.querySelector('progress').value = 0;
 
-    const { score, layouts, collection, config } = store.getState();
+    const { score, layouts, collection, config: currentConfig } = store.getState();
+
+    const config = { ...currentConfig };
 
     const template = document.createElement('template');
 
@@ -30,8 +32,8 @@ export const renderSummary = (history) => {
 
     const handleBtnClickEvent = () => {
         
-        const lessonName = layouts.lessonName;
-        const levelName = layouts.levelName;        
+        const lessonName = layouts[0].lessonName;
+        const levelName = layouts[0].levelName;        
 
         config.excludeRevision = levelName === 'Level 1' ? false : true;
 
@@ -48,9 +50,7 @@ export const renderSummary = (history) => {
 
         config.moduleSize = collection.moduleSize;
 
-        const nextLayouts = lessonPlanner.createLessonPlan(config); // todo: remove this from here, just update config
-
-        actions.boundNextLesson(nextLayouts);
+        actions.boundUpdateConfig(config);
     };
 
     learnMoreBtn.addEventListener('click', handleBtnClickEvent);

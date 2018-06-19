@@ -22,5 +22,7 @@ export const nextLayout = (index) => {
         }
     });
 
-    actions.boundNextLayout(layout);
+    setTimeout(() => {
+        actions.boundNextLayout(layout); 
+    });    
 };

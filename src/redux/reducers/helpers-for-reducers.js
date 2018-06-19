@@ -50,7 +50,7 @@ const filterExcluded = collection => {
     return collection.filter(item => !item.exclude);
 };
 
-const cleanNames = collection => {
+const extractScientificNames = collection => {
     return collection.map(item => {
         const names = item.name.split(' ');
         item.genus = names[0];
@@ -76,6 +76,6 @@ export const helpers = {
     addMultipleImages,
     spliceArrays,
     filterExcluded,
-    cleanNames,
+    extractScientificNames,
     embellishCollection
 };
