@@ -11,8 +11,8 @@ export const observeStore = (store, select, onChange, domain) => {
   
     handleChange.domain = domain;
     handleChange.calledBy = onChange.name;
-    console.log('*added listener', onChange.name);
+    console.log('** New listener added', `func: ${onChange.name}`, `domain: ${domain}`);
     let unsubscribe = store.subscribe(handleChange);
     handleChange();
-    return unsubscribe;
+    return { unsubscribe, name: onChange.name };
   };

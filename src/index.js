@@ -21,11 +21,12 @@ import { renderSpeciesCollection } from 'ui/screens/common/species';
 import { renderNavigation } from 'ui/screens/common/navigation';
 
 import { lessonPlans } from 'snapdragon/lesson-plans';
+import { subscription } from 'redux/subscriptions';
 
 // use case test
 
 const renderWelcome = () => {
-    console.log('welcome!');
+    // console.log('Welcome back, Dan!');
 };
 
 const returningUser = localStorage.getItem('returningUser') ? new Boolean(localStorage.getItem('returningUser')) : false;
@@ -46,6 +47,8 @@ setTimeout(()=>{
         config.lesson.level = config.lesson.levels[0];
         const levels = lessonPlans.filter(plan => plan.name === config.lesson.name)[0].levels;
         config.lesson.levels = levels;
+        config.lessonName = config.lesson.name;
+        config.levelName = config.lesson.level.name;
     }
 
     actions.boundUpdateConfig(config);
@@ -53,10 +56,11 @@ setTimeout(()=>{
     renderHeaders();
     renderNavigation();
 
-    observeStore(store, store => store.config, nextLesson, 'config', 'next-lesson');
-    observeStore(store, store => store.index, nextLayout, 'index', 'next-layout');
-    observeStore(store, store => store.layout, nextItem, 'layout', 'next-item');
-    observeStore(store, store => store.collection, renderSpeciesCollection, 'collection', 'species-collection');
-    observeStore(store, store => store.layout, renderHeaders, 'layout', 'render-headers');
-    observeStore(store, store => store.score, renderScore, 'score');
+    subscription.add(nextLesson, 'config', 'flow');
+    subscription.add(nextLayout, 'index', 'flow');
+    subscription.add(nextItem, 'layout', 'flow');
+    subscription.add(renderScore, 'score', 'flow');
+    subscription.add(renderHeaders, 'layout', 'flow');
+
+    subscription.add(renderSpeciesCollection, 'collection', 'screen');
 });

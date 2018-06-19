@@ -8,8 +8,8 @@ export const index = (state = null, action) => {
             return action.payload ? action.payload.index : null;
         case types.CHANGE_COLLECTION:
             return 0;
-        case types.UPDATE_CONFIG:
-            return state;
+        // case types.UPDATE_CONFIG:
+        //     return state;
         case types.NEXT_LEVEL:            
         case types.NEXT_ROUND:
             return action.data;

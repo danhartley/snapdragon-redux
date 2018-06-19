@@ -43,10 +43,10 @@ export const renderNavigation = () => {
                 target.parentElement.classList.add('active-icon');
                 switch(targetId) {                    
                     case 'home':
-                    renderHome();
+                    renderHome(); // no, dispatch action
                         break;
                     case 'settings':
-                        renderSettings();
+                        renderSettings(); // no, dispatch action
                         break;
                     case 'test':
                         break;

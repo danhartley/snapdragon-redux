@@ -3,12 +3,6 @@ import { store } from 'redux/store';
 
 import { types } from 'redux/actions/action-types';
 import { actions } from 'redux/actions/action-creators';
-
-import { config } from 'redux/reducers/config-reducer';
-import { collections, collection } from 'redux/reducers/species-reducers';
-import { index, score, history, revision } from 'redux/reducers/progress-reducers';
-import { lesson, layouts, layout } from 'redux/reducers/layout-reducers';
-
 import { initialState } from 'redux/reducers/initial-state-for-reducers';
 import { config as lessonConfig } from 'syllabus/lesson-config';
 
@@ -16,7 +10,7 @@ test('observeStore should return unsubscribe function for every listener', () =>
     const onChange = () => {};
     const action = '';
     const unsubscribe = observeStore(store, store => store.lesson, onChange,'');    
-    expect(unsubscribe.name).toEqual('unsubscribe');
+    expect(unsubscribe.name).toEqual('onChange');
 });
 
 

@@ -1,7 +1,8 @@
 export const herbs1 = [
     {
       "id": 579697,
-      "name": "Mentha spicata L.",
+      "name": "Mentha spicata",
+      "eol-name": "Mentha spicata L.",
       "images": [
         "https://media.eol.org/content/2014/08/15/02/17481_orig.jpg",
         "https://media.eol.org/content/2014/08/15/02/40408_orig.jpg",
@@ -158,7 +159,8 @@ export const herbs1 = [
     },
     {
       "id": 584995,
-      "name": "Anethum graveolens L.",
+      "name": "Anethum graveolens",
+      "eol-name": "Anethum graveolens L.",
       "images": [
         "https://media.eol.org/content/2013/04/02/02/98816_orig.jpg",
         "https://media.eol.org/content/2013/04/02/02/14813_orig.jpg",
@@ -308,7 +310,8 @@ export const herbs1 = [
     },
     {
       "id": 484542,
-      "name": "Thymus vulgaris L.",
+      "name": "Thymus vulgaris",
+      "eol-name": "Thymus vulgaris L.",
       "images": [
         "https://media.eol.org/content/2015/04/06/10/88104_orig.jpg",
         "https://media.eol.org/content/2012/05/24/03/16771_orig.jpg",
@@ -456,7 +459,8 @@ export const herbs1 = [
     },
     {
       "id": 585008,
-      "name": "Foeniculum vulgare Mill.",
+      "name": "Foeniculum vulgare",
+      "eol-name": "Foeniculum vulgare Mill.",
       "images": [
         "https://media.eol.org/content/2014/08/15/04/24404_orig.jpg",
         "https://media.eol.org/content/2014/08/14/23/28275_orig.jpg",
@@ -637,7 +641,8 @@ export const herbs1 = [
     },
     {
       "id": 577604,
-      "name": "Artemisia dracunculus L.",
+      "name": "Artemisia dracunculus",
+      "eol-name": "Artemisia dracunculus L.",
       "images": [
         "https://media.eol.org/content/2011/10/06/02/70307_orig.jpg",
         "https://media.eol.org/content/2011/10/15/21/46839_orig.jpg",
@@ -794,7 +799,8 @@ export const herbs1 = [
     },
     {
       "id": 578478,
-      "name": "Salvia officinalis L.",
+      "name": "Salvia officinalis",
+      "eol-name": "Salvia officinalis L.",
       "images": [
         "https://media.eol.org/content/2008/10/06/15/93130_orig.jpg",
         "https://media.eol.org/content/2011/10/16/02/82474_orig.jpg",
@@ -984,7 +990,8 @@ export const herbs1 = [
     },
     {
       "id": 1084938,
-      "name": "Allium schoenoprasum L.",
+      "name": "Allium schoenoprasum",
+      "eol-name": "Allium schoenoprasum L.",
       "images": [
         "https://media.eol.org/content/2012/05/23/04/06176_orig.jpg",
         "https://media.eol.org/content/2012/10/30/04/73572_orig.jpg",
@@ -1117,7 +1124,8 @@ export const herbs1 = [
     },
     {
       "id": 579367,
-      "name": "Origanum vulgare L.",
+      "name": "Origanum vulgare",
+      "eol-name": "Origanum vulgare L.",
       "images": [
         "https://media.eol.org/content/2013/08/08/10/32690_orig.jpg",
         "https://media.eol.org/content/2013/09/02/03/62739_orig.jpg",
@@ -1321,7 +1329,8 @@ export const herbs1 = [
     },
     {
       "id": 581687,
-      "name": "Coriandrum sativum L.",
+      "name": "Coriandrum sativum",
+      "eol-name": "Coriandrum sativum L.",
       "images": [
         "https://media.eol.org/content/2012/05/23/10/96466_orig.jpg",
         "https://media.eol.org/content/2012/05/23/10/47021_orig.jpg",
@@ -1453,7 +1462,8 @@ export const herbs1 = [
     },
     {
       "id": 581421,
-      "name": "Petroselinum crispum (Mill.) Mansf.",
+      "name": "Petroselinum crispum",
+      "eol-name": "Petroselinum crispum (Mill.) Mansf.",
       "images": [
         "https://media.eol.org/content/2011/10/16/01/80978_orig.jpg",
         "https://media.eol.org/content/2011/10/16/01/13386_orig.jpg",
@@ -1583,7 +1593,8 @@ export const herbs1 = [
     },
     {
       "id": 579379,
-      "name": "Rosmarinus officinalis L.",
+      "name": "Rosmarinus officinalis",
+      "eol-name": "Rosmarinus officinalis L.",
       "images": [
         "https://media.eol.org/content/2012/05/24/00/10770_orig.jpg",
         "https://media.eol.org/content/2014/10/13/23/20173_orig.jpg",
@@ -1719,7 +1730,8 @@ export const herbs1 = [
     },
     {
       "id": 579364,
-      "name": "Ocimum basilicum L.",
+      "name": "Ocimum basilicum",
+      "eol-name": "Ocimum basilicum L.",
       "images": [
         "https://media.eol.org/content/2009/07/24/03/04353_orig.jpg",
         "https://media.eol.org/content/2012/05/23/20/88526_orig.jpg",
