@@ -91,11 +91,11 @@ progress::-moz-progress-bar {
   cursor: pointer;
   font-size: 1.6em;
   margin: 0 .25em 0 0;
-  color: rgb(2, 129, 232);
+  color: white;
 }
 
 .active-icon {
-  color: white;
+  color: black;
 }
 
 .line {
