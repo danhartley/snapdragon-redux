@@ -1,11 +1,4 @@
 import { types } from 'redux/actions/action-types';
- 
-export const lesson = (state = 1, action) => {
-    switch(action.type) {
-        default:
-            return state;
-    }
-};
 
 export const layouts = (state = null, action) => {
     switch(action.type) {

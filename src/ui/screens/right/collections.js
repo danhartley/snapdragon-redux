@@ -9,7 +9,11 @@ import collectionsTemplate from 'ui/screens/right/collections-template.html';
 
 export const renderCollections = () => {
 
-    let { collections, config, collection } = store.getState();
+    const { collections, config: currentConfig, collection: currentCollection } = store.getState();
+
+    let config = { ...currentConfig };
+    let collection = currentCollection ? { ...currentCollection } : { name: '---', id: '' };
+    let isNewCollection = collection.id === '';
 
     const template = document.createElement('template');
 
@@ -19,7 +23,7 @@ export const renderCollections = () => {
 
     parent.innerHTML = '';
 
-    collection = collection || { name: '---', id: ''};
+    // collection = collection || { name: '---', id: ''};
 
     const species = collections.filter(collection => collection.type === 'species');
     const skills = collections.filter(collection => collection.type === 'skill');
@@ -44,11 +48,13 @@ export const renderCollections = () => {
 
     // species collections
 
-    const activeCollectionSelector = `[name="collection${config.collection.id}"]`;
-    if(activeCollectionSelector !== 'collection')
-        document.querySelectorAll(activeCollectionSelector);
-
     let collectionId;
+
+    const activeCollectionSelector = `[name="collection${config.collection.id}"]`;
+    if(activeCollectionSelector !== 'collection') {
+        document.querySelectorAll(activeCollectionSelector);
+        collectionId = config.collection.id;
+    }
 
     selectHandler('.dropdown.js-collections .dropdown-item', (id) => {
         collectionId = parseInt(id);
@@ -57,7 +63,10 @@ export const renderCollections = () => {
         config = { ...config, ...{ collection: { id: collectionId }} };
         learningActionBtn.disabled = false;
         goToSpeciesCollectionBtn.disabled = false;
-        if(!config.isPortraitMode) renderSpeciesCollection(collectionId); 
+        isNewCollection = true;
+        if(!config.isPortraitMode) {
+            renderSpeciesCollection(collectionId); // todo this should be the result of an action
+        }
     });
 
     // lesson levels
@@ -72,7 +81,7 @@ export const renderCollections = () => {
             config = { ...config, lesson };
     });
 
-    // lanaguages
+    // languages
 
     const activeLanguage = '#' + config.language;
     document.querySelectorAll(activeLanguage)[0].classList.add('active');
@@ -90,13 +99,15 @@ export const renderCollections = () => {
     if(collection.id === '') {
         learningActionBtn.disabled = true;
         goToSpeciesCollectionBtn.disabled = true;        
+    } else {
+        learningActionBtn.innerHTML = 'Continue lesson';
     }
 
-    learningActionBtn.addEventListener('click', event => {
-        actions.boundChangeCollection(config);
+    learningActionBtn.addEventListener('click', () => {
+        
+        isNewCollection ? actions.boundChangeCollection(config) : actions.boundToggleLesson({ state: 'active' });
+
         document.querySelector('.js-home').classList.remove('active-icon');
-        document.querySelector('.js-test').classList.add('active-icon');
-        document.querySelector('.js-test').style.display = 'inline';
     });
 
 

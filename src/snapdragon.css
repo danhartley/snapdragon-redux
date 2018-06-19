@@ -87,7 +87,7 @@ progress::-moz-progress-bar {
   display: none;
 }
 
-.home, .test, .settings {
+.home, .settings {
   cursor: pointer;
   font-size: 1.6em;
   margin: 0 .25em 0 0;
@@ -95,7 +95,7 @@ progress::-moz-progress-bar {
 }
 
 .active-icon {
-  color: black;
+  color: orange;
 }
 
 .line {

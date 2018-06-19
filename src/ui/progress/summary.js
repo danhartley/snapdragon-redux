@@ -43,9 +43,9 @@ export const renderSummary = (history) => {
             config.lesson.level = level;
             config.lessonName = level.lessonName;
             config.levelName = level.name;
-            actions.boundNextLevel(0);            
+            actions.boundNextLevel({ index: 0, state: 'active' });            
         } else {            
-            actions.boundNextRound(0);
+            actions.boundNextRound({ index: 0, state: 'active' });
         }
 
         config.moduleSize = collection.moduleSize;
