@@ -8,6 +8,7 @@ const CHANGE_COLLECTION = '[CHANGE_COLLECTION] Change collection';
 const NEXT_ROUND = '[NEXT_ROUND] Go to next round';
 const NEXT_LEVEL = '[NEXT_LEVEL] Go to next level';
 const UPDATE_CONFIG = '[UPDATE_CONFIG] change to config';
+const TOGGLE_LESSON = '[TOGGLE_LESSON] set counter to inactive';
 
 export const types = {
     NEXT_LESSON,
@@ -19,5 +20,6 @@ export const types = {
     CHANGE_COLLECTION,
     NEXT_ROUND,
     NEXT_LEVEL,
-    UPDATE_CONFIG
+    UPDATE_CONFIG,
+    TOGGLE_LESSON
 };

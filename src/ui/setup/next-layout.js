@@ -3,11 +3,13 @@ import { store } from 'redux/store';
 import { funcByName } from 'ui/helpers/function-lookups';
 import { subscription } from 'redux/subscriptions';
 
-export const nextLayout = (index) => {
+export const nextLayout = (counter) => {
 
     const { layouts } = store.getState();
 
-    const layout = layouts[index];
+    if(!layouts) return; // fix this by unsubscribing
+
+    const layout = layouts[counter.index];
 
     subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
 

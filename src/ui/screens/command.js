@@ -9,9 +9,9 @@ export const runTask = (collection) => {
 
     const item = collection.items[collection.itemIndex];
 
-    const { layout, config, index } = store.getState();
+    const { layout, config, counter } = store.getState();
 
-    if(index >= collection.moduleSize) return;
+    if(counter >= collection.moduleSize) return;
 
     renderSpecimenTiles(collection);
     const letters = [];

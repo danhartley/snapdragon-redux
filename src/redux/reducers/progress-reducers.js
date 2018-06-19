@@ -1,22 +1,26 @@
 import { types } from 'redux/actions/action-types';
 import { initialState } from 'redux/reducers/initial-state-for-reducers';
 
-export const index = (state = null, action) => {
+export const counter = (state = null, action) => {
     const collectionSize = initialState.collection.items.length;
     switch(action.type) {
         case 'persist/REHYDRATE':
-            return action.payload ? action.payload.index : null;
+            return action.payload ? action.payload.counter : null;
         case types.CHANGE_COLLECTION:
-            return 0;
-        // case types.UPDATE_CONFIG:
-        //     return state;
-        case types.NEXT_LEVEL:            
+            return { index: 0, state: 'active' };
+        case types.UPDATE_CONFIG:
+            return state;
+        case types.NEXT_LEVEL:
         case types.NEXT_ROUND:
             return action.data;
         case types.UPDATE_SCORE:
-            return (state + 1) <= collectionSize ? (state + 1) : state;
+            let i = (state.index + 1) <= collectionSize ? (state.index + 1) : state.index;
+            return { index: i, state: 'active' };
         case types.END_REVISION:
-            return (state + 1) <= collectionSize ? (state + 1) : state;
+            i = (state.index + 1) <= collectionSize ? (state.index + 1) : state.index;
+            return { index: i, state: 'active' };
+        case types.TOGGLE_LESSON:
+            return { ...state, ...action.data };
         default:
             return state;
     }

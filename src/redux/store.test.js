@@ -23,8 +23,7 @@ test('intial state of the app should be consistent', () => {
     const { config } = store.getState();
     expect(config).toEqual(configWithDefaults);
     
-    const { lesson, layouts, layout } = store.getState();
-    expect(lesson).toEqual(1);
+    const { layouts, layout } = store.getState();
     expect(layouts).toEqual(null);
     expect(layout).toEqual(null);
 
@@ -32,8 +31,8 @@ test('intial state of the app should be consistent', () => {
     expect(collections.length).toBeGreaterThan(0);
     expect(collection).toEqual(null);
 
-    const { index, score, history, revision } = store.getState();
-    expect(index).toEqual(null);
+    const { counter, score, history, revision } = store.getState();
+    expect(counter).toEqual(null);
     expect(score).toEqual(null);
     expect(history).toEqual(null);
     expect(revision).toEqual(undefined);// not in use, not visible in store
@@ -232,7 +231,7 @@ test('when user selects a collection state should be populated', () => {
             },
             {
             name: 'summary',
-            domain: 'index',
+            domain: 'counter',
             parent: {},
             template: 'js-summary-template'
             },
@@ -253,9 +252,9 @@ test('when user selects a collection state should be populated', () => {
 
     actions.boundNextLesson(layoutData); // nextLesson(config) triggers: NEXT_LESSON
 
-    let { index, layouts, layout } = store.getState();
+    let { counter, layouts, layout } = store.getState();
 
-    expect(index).toEqual(0);
+    expect(counter.index).toEqual(0);
     expect(layouts).toEqual(layoutData);
     expect(layout).toEqual(layoutData[0]);
 
@@ -267,9 +266,9 @@ test('when user selects a collection state should be populated', () => {
 
     actions.boundEndRevision(item);
 
-    index = store.getState().index;
+    counter = store.getState().counter;
 
-    expect(index).toBe(1); // triggers nextLayout(index)
+    expect(counter.index).toEqual(1); // triggers nextLayout(index)
 
     actions.boundNextLayout({ layoutIndex: 1, itemIndex: 1});
 

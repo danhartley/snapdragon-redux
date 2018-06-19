@@ -57,7 +57,7 @@ setTimeout(()=>{
     renderNavigation();
 
     subscription.add(nextLesson, 'config', 'flow');
-    subscription.add(nextLayout, 'index', 'flow');
+    subscription.add(nextLayout, 'counter', 'flow');
     subscription.add(nextItem, 'layout', 'flow');
     subscription.add(renderScore, 'score', 'flow');
     subscription.add(renderHeaders, 'layout', 'flow');

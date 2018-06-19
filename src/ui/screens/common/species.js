@@ -10,14 +10,15 @@ export const renderSpeciesCollection = (collectionId) => {
 
     if(isNaN(collectionId)) return;
 
-    let { config} = store.getState();
+    const { config: currentConfig, layout } = store.getState();
 
-    config.collection.id = collectionId;
+    const config = { ...currentConfig, ...{ id: collectionId} };
 
     const template = document.createElement('template');
 
     template.innerHTML = speciesTemplate;
 
+    // should collection be coming from here rather than state...
     const collection = collections.filter(collection => collection.id === collectionId)[0];
     collection.items.forEach(item => { 
         item.image = item.images[0];
@@ -40,8 +41,9 @@ export const renderSpeciesCollection = (collectionId) => {
     });
 
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
+    learningActionBtn.disabled = layout ? false : true;
 
-    learningActionBtn.addEventListener('click', event => {
-        actions.boundChangeCollection(config);
+    learningActionBtn.addEventListener('click', () => {
+        actions.boundToggleLesson({ state: 'active' });
     });
 };
