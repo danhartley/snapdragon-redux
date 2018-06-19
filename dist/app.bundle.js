@@ -8356,6 +8356,18 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 
 /***/ }),
 
+/***/ "./src/redux/subscriptions.js":
+/*!************************************!*\
+  !*** ./src/redux/subscriptions.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.subscription = undefined;\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _store = __webpack_require__(/*! redux/store */ \"./src/redux/store.js\");\n\nvar _observeStore = __webpack_require__(/*! redux/observe-store */ \"./src/redux/observe-store.js\");\n\nvar subscriptions = [];\n\nvar add = function add(subscription, domain, role) {\n\n    var select = function select(store) {\n        return store[domain];\n    };\n    var onChange = subscription;\n\n    var sub = (0, _observeStore.observeStore)(_store.store, select, onChange, domain);\n\n    subscriptions.push(_extends({}, sub, { role: role }));\n    return sub;\n};\n\nvar remove = function remove(subscription) {\n    console.log('Calling unsubscribe on name: ' + subscription.name);\n    subscription.unsubscribe();\n    subscriptions = subscriptions.filter(function (sub) {\n        return sub.name !== subscription.name;\n    });\n};\n\nvar getByName = function getByName(name) {\n    return subscriptions.filter(function (sub) {\n        return sub.name === name;\n    });\n};\n\nvar getByRole = function getByRole(role) {\n    return subscriptions.filter(function (sub) {\n        return sub.role === role;\n    });\n};\n\nvar getAll = function getAll() {\n    return subscriptions;\n};\n\nvar subscription = exports.subscription = {\n    add: add,\n    remove: remove,\n    getByName: getByName,\n    getByRole: getByRole,\n    getAll: getAll\n};\n\n//# sourceURL=webpack:///./src/redux/subscriptions.js?");
+
+/***/ }),
+
 /***/ "./src/snapdragon-media.css":
 /*!**********************************!*\
   !*** ./src/snapdragon-media.css ***!
@@ -9029,7 +9041,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.nextLayout = undefined;\n\nvar _actionCreators = __webpack_require__(/*! redux/actions/action-creators */ \"./src/redux/actions/action-creators.js\");\n\nvar _store = __webpack_require__(/*! redux/store */ \"./src/redux/store.js\");\n\nvar _observeStore = __webpack_require__(/*! redux/observe-store */ \"./src/redux/observe-store.js\");\n\nvar _functionLookups = __webpack_require__(/*! ui/helpers/function-lookups */ \"./src/ui/helpers/function-lookups.js\");\n\nvar subscriptions = [];\n\nvar nextLayout = exports.nextLayout = function nextLayout(index) {\n    var _store$getState = _store.store.getState(),\n        layouts = _store$getState.layouts;\n\n    var layout = layouts[index];\n\n    console.log('** Calling unsubscribe on screen listeners');\n    subscriptions.forEach(function (func) {\n        console.log('unsubscribe name: ' + func.name);\n        func.unsubscribe();\n    });\n    subscriptions = [];\n\n    if (!layout) return;\n\n    layout.screens.forEach(function (screen) {\n\n        var func = (0, _functionLookups.funcByName)(screen.name);\n        if (func) {\n\n            // todo: handle command, runTask for letters...\n\n            var select = function select(store) {\n                return store[screen.domain];\n            };\n            var onChange = func;\n            var domain = screen.domain;\n\n            subscriptions.push((0, _observeStore.observeStore)(_store.store, select, onChange, domain));\n        }\n    });\n\n    _actionCreators.actions.boundNextLayout(layout);\n};\n\n//# sourceURL=webpack:///./src/ui/setup/next-layout.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.nextLayout = undefined;\n\nvar _actionCreators = __webpack_require__(/*! redux/actions/action-creators */ \"./src/redux/actions/action-creators.js\");\n\nvar _store = __webpack_require__(/*! redux/store */ \"./src/redux/store.js\");\n\nvar _functionLookups = __webpack_require__(/*! ui/helpers/function-lookups */ \"./src/ui/helpers/function-lookups.js\");\n\nvar _subscriptions = __webpack_require__(/*! redux/subscriptions */ \"./src/redux/subscriptions.js\");\n\nvar nextLayout = exports.nextLayout = function nextLayout(index) {\n    var _store$getState = _store.store.getState(),\n        layouts = _store$getState.layouts;\n\n    var layout = layouts[index];\n\n    _subscriptions.subscription.getByRole('screen').forEach(function (sub) {\n        return _subscriptions.subscription.remove(sub);\n    });\n\n    if (!layout) return;\n\n    layout.screens.forEach(function (screen) {\n\n        var func = (0, _functionLookups.funcByName)(screen.name);\n        if (func) {\n            // todo: handle command, runTask for letters...\n            _subscriptions.subscription.add(func, screen.domain, 'screen');\n        }\n    });\n\n    _actionCreators.actions.boundNextLayout(layout);\n};\n\n//# sourceURL=webpack:///./src/ui/setup/next-layout.js?");
 
 /***/ }),
 
