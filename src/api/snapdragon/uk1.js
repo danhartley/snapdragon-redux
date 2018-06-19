@@ -1,7 +1,8 @@
 export const uk1 = [
     {
       "id": 582687,
-      "name": "Viscum album L.",
+      "name": "Viscum album",
+      "eol-name": "Viscum album L.",
       "images": [
         "https://media.eol.org/content/2014/02/03/02/43691_orig.jpg",
         "https://media.eol.org/content/2012/01/10/02/31358_orig.jpg",
@@ -60,7 +61,8 @@ export const uk1 = [
     },
     {
       "id": 1088811,
-      "name": "Galanthus nivalis L.",
+      "name": "Galanthus nivalis",
+      "eol-name": "Galanthus nivalis L.",
       "images": [
         "https://media.eol.org/content/2013/08/23/12/65611_orig.jpg",
         "https://media.eol.org/content/2009/07/24/04/23509_orig.jpg",
@@ -145,7 +147,8 @@ export const uk1 = [
     },
     {
       "id": 596256,
-      "name": "Clematis vitalba L.",
+      "name": "Clematis vitalba",
+      "eol-name": "Clematis vitalba L.",
       "images": [
         "https://media.eol.org/content/2015/03/05/20/89734_orig.jpg",
         "https://media.eol.org/content/2014/01/02/01/53059_orig.jpg",
@@ -226,7 +229,8 @@ export const uk1 = [
     },
     {
       "id": 581107,
-      "name": "Atropa belladonna L.",
+      "name": "Atropa belladonna",
+      "eol-name": "Atropa belladonna L.",
       "images": [
         "https://media.eol.org/content/2015/01/01/00/33205_orig.jpg",
         "https://media.eol.org/content/2010/03/24/04/59921_orig.jpg",
@@ -285,7 +289,8 @@ export const uk1 = [
     },
     {
       "id": 1143004,
-      "name": "Hedera helix L.",
+      "name": "Hedera helix",
+      "eol-name": "Hedera helix L.",
       "images": [
         "https://media.eol.org/content/2012/06/12/18/36780_orig.jpg",
         "https://media.eol.org/content/2012/06/12/18/57987_orig.jpg",
@@ -358,7 +363,8 @@ export const uk1 = [
     },
     {
       "id": 467225,
-      "name": "Achillea millefolium L.",
+      "name": "Achillea millefolium",
+      "eol-name": "Achillea millefolium L.",
       "images": [
         "https://media.eol.org/content/2012/08/02/02/95929_orig.jpg",
         "https://media.eol.org/content/2014/01/02/01/23920_orig.jpg",
@@ -497,7 +503,8 @@ export const uk1 = [
     },
     {
       "id": 584573,
-      "name": "Viola odorata L.",
+      "name": "Viola odorata",
+      "eol-name": "Viola odorata L.",
       "images": [
         "https://media.eol.org/content/2009/09/08/03/83334_orig.jpg",
         "https://media.eol.org/content/2009/09/08/03/59898_orig.jpg",
@@ -576,7 +583,8 @@ export const uk1 = [
     },
     {
       "id": 580089,
-      "name": "Myosotis sylvatica Ehrh. ex Hoffm.",
+      "name": "Myosotis sylvatica",
+      "eol-name": "Myosotis sylvatica Ehrh. ex Hoffm.",
       "images": [
         "https://media.eol.org/content/2012/05/23/19/70315_orig.jpg",
         "https://media.eol.org/content/2012/05/23/19/92760_orig.jpg",
@@ -619,7 +627,8 @@ export const uk1 = [
     },
     {
       "id": 1001510,
-      "name": "Hyacinthoides non-scripta (L.) Chouard ex Rothm.",
+      "name": "Hyacinthoides non-scripta",
+      "eol-name": "Hyacinthoides non-scripta (L.) Chouard ex Rothm.",
       "images": [
         "https://media.eol.org/content/2012/12/12/03/89086_orig.jpg",
         "https://media.eol.org/content/2012/12/05/14/72310_orig.jpg",
@@ -660,7 +669,8 @@ export const uk1 = [
     },
     {
       "id": 596862,
-      "name": "Anemone nemorosa L.",
+      "name": "Anemone nemorosa",
+      "eol-name": "Anemone nemorosa L.",
       "images": [
         "https://media.eol.org/content/2012/12/04/18/77519_orig.jpg",
         "https://media.eol.org/content/2010/03/24/05/19235_orig.jpg",
@@ -754,7 +764,8 @@ export const uk1 = [
     },
     {
       "id": 1087078,
-      "name": "Convallaria majalis L.",
+      "name": "Convallaria majalis",
+      "eol-name": "Convallaria majalis L.",
       "images": [
         "https://media.eol.org/content/2013/12/02/08/48774_orig.jpg",
         "https://media.eol.org/content/2013/12/02/08/78382_orig.jpg",
@@ -835,7 +846,8 @@ export const uk1 = [
     },
     {
       "id": 1085089,
-      "name": "Allium ursinum L.",
+      "name": "Allium ursinum",
+      "eol-name": "Allium ursinum L.",
       "images": [
         "https://media.eol.org/content/2015/07/12/22/13289_orig.jpg",
         "https://media.eol.org/content/2014/08/02/04/40491_orig.jpg",

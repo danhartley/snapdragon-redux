@@ -1,7 +1,8 @@
 export const med1 = [
     {
       "id": 689294,
-      "name": "Coronilla valentina L.",
+      "name": "Coronilla valentina",
+      "eol-name": "Coronilla valentina L.",
       "images": [
         "https://media.eol.org/content/2010/03/24/08/35806_orig.jpg",
         "https://media.eol.org/content/2010/03/24/08/39854_orig.jpg",
@@ -48,7 +49,8 @@ export const med1 = [
       ]},
     {
       "id": 482110,
-      "name": "Erica arborea L.",
+      "name": "Erica arborea",
+      "eol-name": "Erica arborea L.",
       "images": [
         "https://media.eol.org/content/2012/06/14/22/62998_orig.jpg",
         "https://media.eol.org/content/2012/06/14/22/64805_orig.jpg",
@@ -92,7 +94,8 @@ export const med1 = [
       ]},
     {
       "id": 591115,
-      "name": "Celtis australis L.",
+      "name": "Celtis australis",
+      "eol-name": "Celtis australis L.",
       "images": [
         "https://media.eol.org/content/2011/10/15/22/70432_orig.jpg",
         "https://media.eol.org/content/2011/10/15/22/56027_orig.jpg",
@@ -169,7 +172,8 @@ export const med1 = [
       ]},
     {
       "id": 579379,
-      "name": "Rosmarinus officinalis L.",
+      "name": "Rosmarinus officinalis",
+      "eol-name": "Rosmarinus officinalis L.",
       "images": [
         "https://media.eol.org/content/2012/05/24/00/10770_orig.jpg",
         "https://media.eol.org/content/2012/05/24/00/38069_orig.jpg",
@@ -299,7 +303,8 @@ export const med1 = [
       ],},
     {
       "id": 1083826,
-      "name": "Agave americana L.",
+      "name": "Agave americana",
+      "eol-name": "Agave americana L.",
       "images": [
         "https://media.eol.org/content/2013/12/01/09/72256_orig.jpg",
         "https://media.eol.org/content/2014/05/01/21/81989_orig.jpg",
@@ -398,7 +403,8 @@ export const med1 = [
       ]},
     {
       "id": 484542,
-      "name": "Thymus vulgaris L.",
+      "name": "Thymus vulgaris",
+      "eol-name": "Thymus vulgaris L.",
       "images": [
         "https://media.eol.org/content/2015/04/06/10/88104_orig.jpg",
         "https://media.eol.org/content/2012/05/24/03/16771_orig.jpg",
@@ -528,7 +534,8 @@ export const med1 = [
       ]},
     {
       "id": 5654836,
-      "name": "Olea europaea var. sylvestris",
+      "name": "Olea europaea",
+      "eol-name": "Olea europaea var. sylvestris",
       "images": [
         "https://media.eol.org/content/2011/10/16/01/71709_orig.jpg",
         "https://media.eol.org/content/2011/10/16/01/45265_orig.jpg",
@@ -561,6 +568,7 @@ export const med1 = [
     {
       "id": 2867531,
       "name": "Cistus crispus",
+      "eol-name": "Cistus crispus",
       "images": [
         "https://media.eol.org/content/2015/04/06/23/01189_orig.jpg",
         "https://media.eol.org/content/2012/06/13/07/23732_orig.jpg",
@@ -588,7 +596,8 @@ export const med1 = [
       ]},
     {
       "id": 1151536,
-      "name": "Quercus ilex L.",
+      "name": "Quercus ilex",
+      "eol-name": "Quercus ilex L.",
       "images": [
         "https://media.eol.org/content/2012/06/12/13/03827_orig.jpg",
         "https://media.eol.org/content/2012/06/12/13/65648_orig.jpg",
@@ -650,7 +659,8 @@ export const med1 = [
       ]},
     {
       "id": 999491,
-      "name": "Pinus pinea L.",
+      "name": "Pinus pinea",
+      "eol-name": "Pinus pinea L.",
       "images": [
         "https://media.eol.org/content/2012/06/12/21/28095_orig.jpg",
         "https://media.eol.org/content/2012/06/12/21/86878_orig.jpg",
@@ -766,7 +776,8 @@ export const med1 = [
       ]},
     {
       "id": 1151259,
-      "name": "Quercus suber L.",
+      "name": "Quercus suber",
+      "eol-name": "Quercus suber L.",
       "images": [
         "https://media.eol.org/content/2012/05/23/23/41068_orig.jpg",
         "https://media.eol.org/content/2012/06/12/12/74345_orig.jpg",
@@ -811,7 +822,8 @@ export const med1 = [
       ]},
     {
       "id": 483849,
-      "name": "Lavandula stoechas L.",
+      "name": "Lavandula stoechas",
+      "eol-name": "Lavandula stoechas L.",
       "images": [
         "https://media.eol.org/content/2014/08/15/05/52147_orig.jpg",
         "https://media.eol.org/content/2014/08/15/05/55971_orig.jpg",
