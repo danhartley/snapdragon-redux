@@ -25,7 +25,7 @@ import { lessonPlans } from 'snapdragon/lesson-plans';
 // use case test
 
 const renderWelcome = () => {
-    console.log('welcome!');
+    // console.log('Welcome back, Dan!');
 };
 
 const returningUser = localStorage.getItem('returningUser') ? new Boolean(localStorage.getItem('returningUser')) : false;
@@ -56,7 +56,9 @@ setTimeout(()=>{
     observeStore(store, store => store.config, nextLesson, 'config', 'next-lesson');
     observeStore(store, store => store.index, nextLayout, 'index', 'next-layout');
     observeStore(store, store => store.layout, nextItem, 'layout', 'next-item');
-    observeStore(store, store => store.collection, renderSpeciesCollection, 'collection', 'species-collection');
     observeStore(store, store => store.layout, renderHeaders, 'layout', 'render-headers');
-    observeStore(store, store => store.score, renderScore, 'score');
+    observeStore(store, store => store.score, renderScore, 'score', 'score');
+    
+    // should be removeable
+    observeStore(store, store => store.collection, renderSpeciesCollection, 'collection', 'species-collection');
 });

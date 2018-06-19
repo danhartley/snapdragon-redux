@@ -48,7 +48,7 @@ export const renderSummary = (history) => {
 
         config.moduleSize = collection.moduleSize;
 
-        const nextLayouts = lessonPlanner.createLessonPlan(config);
+        const nextLayouts = lessonPlanner.createLessonPlan(config); // todo: remove this from here, just update config
 
         actions.boundNextLesson(nextLayouts);
     };

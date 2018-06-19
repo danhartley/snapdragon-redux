@@ -7,11 +7,15 @@ let subscriptions = [];
 
 export const nextLayout = (index) => {
 
-    const { layouts, config, score } = store.getState();
+    const { layouts } = store.getState();
 
     const layout = layouts[index];
 
-    subscriptions.forEach(unsubscribe => unsubscribe());
+    console.log('** Calling unsubscribe on screen listeners');
+    subscriptions.forEach(func => {
+        console.log(`unsubscribe name: ${func.name}`)
+        func.unsubscribe();
+    });
     subscriptions = [];
 
     if(!layout) return;
