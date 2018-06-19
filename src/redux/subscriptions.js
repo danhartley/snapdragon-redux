@@ -15,7 +15,7 @@ const add = (subscription, domain, role) => {
 };
 
 const remove = subscription => {
-    console.log(`Calling unsubscribe on name: ${subscription.name}`)
+    console.log(`Calling unsubscribe on name: ${subscription.name}, role: ${subscription.role}`)
     subscription.unsubscribe();
     subscriptions = subscriptions.filter(sub => sub.name !== subscription.name);
 };

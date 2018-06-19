@@ -21,6 +21,7 @@ import { renderSpeciesCollection } from 'ui/screens/common/species';
 import { renderNavigation } from 'ui/screens/common/navigation';
 
 import { lessonPlans } from 'snapdragon/lesson-plans';
+import { subscription } from 'redux/subscriptions';
 
 // use case test
 
@@ -53,12 +54,11 @@ setTimeout(()=>{
     renderHeaders();
     renderNavigation();
 
-    observeStore(store, store => store.config, nextLesson, 'config', 'next-lesson');
-    observeStore(store, store => store.index, nextLayout, 'index', 'next-layout');
-    observeStore(store, store => store.layout, nextItem, 'layout', 'next-item');
-    observeStore(store, store => store.layout, renderHeaders, 'layout', 'render-headers');
-    observeStore(store, store => store.score, renderScore, 'score', 'score');
-    
-    // should be removeable
-    observeStore(store, store => store.collection, renderSpeciesCollection, 'collection', 'species-collection');
+    subscription.add(nextLesson, 'config', 'flow');
+    subscription.add(nextLayout, 'index', 'flow');
+    subscription.add(nextItem, 'layout', 'flow');
+    subscription.add(renderScore, 'score', 'flow');
+    subscription.add(renderHeaders, 'layout', 'flow');
+
+    subscription.add(renderSpeciesCollection, 'collection', 'screen');
 });
