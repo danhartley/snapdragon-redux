@@ -38,19 +38,18 @@ export const renderAnswer = (response) => {
     switch(response.taxon) {
         case 'name':
             return `<span class="${className}">${name}</span>`;
-            break;
         case 'genus':
             return correct
                 ? `<span class="${className}">${response.answer}</span> <span>${species}</span>`
                 : `<span class="${className}">${genus}</span> <span>${species}</span>`;
-            break;
         case 'species':
             return correct
                 ? `<span>${genus}</span> <span class="${className}">${response.answer}</span>`
                 : `<span>${genus}</span> <span class="${className}">${species}</span>`;
-            break;
-        default:
-            return '';
+        case 'vernacular':
+        return correct
+                ? `<span>${genus}</span> <span class="${className}">${response.answer}</span>`
+                : `<span>${genus}</span> <span class="${className}">${response.question}</span>`;
     }
 };
 

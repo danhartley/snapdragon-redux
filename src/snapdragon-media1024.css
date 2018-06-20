@@ -182,6 +182,10 @@
         width: 50%
       }
 
+      .letterbox-entry button:disabled {
+        color: white;
+      }
+
       .letterbox input {
         width: 100%;
         height: 100%;
