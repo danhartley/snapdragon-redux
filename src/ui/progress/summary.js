@@ -43,14 +43,14 @@ export const renderSummary = (history) => {
             config.lesson.level = level;
             config.lessonName = level.lessonName;
             config.levelName = level.name;
-            actions.boundNextLevel({ index: 0, state: 'active' });            
+            actions.boundUpdateConfig(config);
+            actions.boundNextLevel({ index: 0, state: 'active' }); // triggers next layout before new layouts are ready, so starts with card...
         } else {            
+            actions.boundUpdateConfig(config);
             actions.boundNextRound({ index: 0, state: 'active' });
         }
 
-        config.moduleSize = collection.moduleSize;
-
-        actions.boundUpdateConfig(config);
+        config.moduleSize = collection.moduleSize;        
     };
 
     learnMoreBtn.addEventListener('click', handleBtnClickEvent);
