@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
 import { renderTemplate } from 'ui/helpers/templating';
-import { modalHandler } from 'ui/helpers/handlers';
+import { modalBackgroundImagesHandler } from 'ui/helpers/handlers';
 import landscapeTemplates from 'ui/screens/common/text-entry-templates.html';
 import portraitTemplates from 'ui/screens/common/text-entry-portrait-templates.html';
 
@@ -72,7 +72,7 @@ const renderPortrait = (item) => {
 
     document.querySelector('.js-species-card-images').innerHTML = backgroundImages;
 
-    modalHandler(document.querySelectorAll('.js-species-card-images div'), item);
+    modalBackgroundImagesHandler(document.querySelectorAll('.js-species-card-images div'), item);
 };
 
 const renderLandscape = (item) => {

@@ -1,6 +1,7 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
+import { modalImageHandler } from 'ui/helpers/handlers';
 import { itemVernacularName } from 'ui/helpers/data-checking';
 import { collections } from 'snapdragon/species-collections';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -30,7 +31,7 @@ export const renderSpeciesCollection = (collectionId) => {
     renderTemplate({ collection }, template.content, DOM.leftBody);
 
     const listItemContainer = document.querySelector('.js-list-item-container');
-    const listItems = document.querySelectorAll('.js-list-item');
+    const listItems = document.querySelectorAll('.js-list-item .js-list-item-link');
 
     listItems.forEach(listItem => {        
         listItem.addEventListener('click', (event) => {
@@ -39,6 +40,12 @@ export const renderSpeciesCollection = (collectionId) => {
             item.classList.add('active');
         })
     });
+
+    const listItemImages = document.querySelectorAll('.js-list-item div img');
+
+    listItemImages.forEach(itemImage => {
+        modalImageHandler(itemImage);
+    });    
 
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     learningActionBtn.disabled = layout ? false : true;
