@@ -133,33 +133,73 @@
 
     .letterbox {
         display: grid;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 2fr 1fr 2fr;
     }
 
-    .letterbox div:nth-child(1), .letterbox div:nth-child(2), .letterbox div:nth-child(3) {
+    .letterbox row1, .letterbox row2, .letterbox div:nth-child(3) {
         width: 100%;
-      }      
+    }      
 
-    .letterbox-entry {  
-        padding: 1em 1em 0 1em;
+    .letterbox-entry {
+        color: #fff;
         background-color: rgb(75,75,75);
         display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: .5em;
+        border: solid 1px rgb(50,50,50);
+        font-size: 1.2em;
       }
-      
-      .letterbox span {
-        margin: 1em 0 1em .5em;
-        color: #fff;
-        display: block;
+
+      .letterbox-entry span {
+          display: inline;
+          margin: 0 1em;
       }
-      
+
+      .letterbox-entry .row1, .letterbox-entry .row2 {        
+        flex: 1;
+        display: flex;
+        align-content: center;
+        width: 100%;
+        padding: .2em 0;
+      }
+
+      .letterbox-entry .row1 div {
+          flex: 1;
+          background-color: rgb(50,50,50);
+      }
+
+      .letterbox-entry .row1 .elem2, .letterbox-entry .row2 .elem1 {
+          display: flex;
+          align-items: center;
+      }
+
+      .letterbox-entry .row2 .elem1 {
+          width: 100%;
+      }
+
+      .letterbox-entry .row2 button {
+        width: 50%
+      }
+
+      .letterbox-entry button:disabled {
+        color: white;
+      }
+
       .letterbox input {
-        padding: .3em;
+        width: 100%;
+        height: 100%;
         color: white;
         background-color: rgb(50,50,50);
         border: 0;
+        padding: 0 .5em;
       }
       
-      .letterbox input.short {
+      .letterbox input:focus {
+          outline: none;
+      }
+
+      /* .letterbox input.short {
         width: 10em;
       }
       
@@ -170,14 +210,14 @@
       .letterbox button {
         margin: 0;
         width: 26.em;
-      }
+      } */
 
-    .letterbox-entry {  
+    /* .letterbox-entry {  
         align-items: center;
-        flex-direction: row;
-    }
+        flex-direction: column;
+    } */
 
-    .letterbox-entry span {
+    /* .letterbox-entry span {
         margin: 0 .5em .5em .5em;
         display: inline;
     }
@@ -192,7 +232,7 @@
     
     .letterbox input.long {
         width: 300px;
-    }
+    } */
 
     .summary button {
         margin: 1em 0;

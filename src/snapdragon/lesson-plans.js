@@ -43,6 +43,12 @@ const portrait7 = {
     screens: [{ ...text, template: 'js-species-genus-entry-template', taxon: 'name'}]
 };
 
+const portrait8 = {
+    name: 'test',
+    score: 1,
+    screens: [{ ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Enter the common name', short: 'Enter the common name'}}]    
+};
+
 const layout1 = {
     name: 'revision',
     screens: [
@@ -122,6 +128,15 @@ const layout9 = {
     ]
 };
 
+const layout10 = {
+    name: 'test',
+    score: 1,
+    screens: [
+        { ...specimen },
+        { ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Enter the common name', short: 'Enter the common name'}}
+    ]
+};
+
 const landscapeLesson1 = {
     id: 1,
     name: 'Lesson 1',
@@ -134,24 +149,29 @@ const landscapeLesson1 = {
         },
         {   id: 2,
             name: 'Level 2',
-            description: 'Recall genus name',
-            layouts: [ layout1, layout5 ]
+            description: 'Recall common name',
+            layouts: [ layout10 ]            
         },
         {   id: 3,
             name: 'Level 3',
-            description: 'Recall species name',
-            layouts: [ layout1, layout6 ]
+            description: 'Recall genus name',
+            layouts: [ layout1, layout5 ]
         },
         {   id: 4,
             name: 'Level 4',
-            description: 'Recall genus and species',
-            layouts: [ layout1, layout7 ]
+            description: 'Recall species name',
+            layouts: [ layout1, layout6 ]
         },
         {   id: 5,
             name: 'Level 5',
+            description: 'Recall genus and species',
+            layouts: [ layout1, layout7 ]
+        },
+        {   id: 6,
+            name: 'Level 6',
             description: 'Name puzzle',
-            layouts: [ layout8 ]
-        }
+            layouts: [ layout1, layout8 ]
+        }        
     ]
 };
 
@@ -180,21 +200,26 @@ const portraitLesson1 = {
         },
         {   id: 2,
             name: 'Level 2',
-            description: 'Recall genus name',
-            layouts: [ portrait5 ]
+            description: 'Recall common name',
+            layouts: [ portrait8 ]
         },
         {   id: 3,
             name: 'Level 3',
-            description: 'Recall species name',
-            layouts: [ portrait6 ]
+            description: 'Recall genus name',
+            layouts: [ portrait5 ]
         },
         {   id: 4,
             name: 'Level 4',
-            description: 'Recall genus and species',
-            layouts: [ portrait7 ]
+            description: 'Recall species name',
+            layouts: [ portrait6 ]
         },
         {   id: 5,
             name: 'Level 5',
+            description: 'Recall genus and species',
+            layouts: [ portrait7 ]
+        },
+        {   id: 6,
+            name: 'Level 6',
             description: 'Name puzzle',
             layouts: [ layout8 ]
         }

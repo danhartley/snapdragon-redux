@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
 import { renderTemplate } from 'ui/helpers/templating';
-import { modalHandler } from 'ui/helpers/handlers';
+import { modalBackgroundImagesHandler } from 'ui/helpers/handlers';
 import landscapeTemplates from 'ui/screens/common/text-entry-templates.html';
 import portraitTemplates from 'ui/screens/common/text-entry-portrait-templates.html';
 
@@ -14,20 +14,17 @@ export const renderInput = (config, screen, question, callbackTime, item, render
         
         const { text, colour, correct } = renderAnswerHeader(response);
 
-        if(!config.isPortraitMode) {           
-            btn.style.color = colour;
-            btn.parentNode.style.background = 'rbg(255,255,255)';
-        }
-
         if(config.isPortraitMode) {
             const questionText = document.querySelector('.js-txt-question');
             questionText.innerHTML = correct 
                 ? `<span class="icon"><i class="fas fa-check-circle"></i></span> ${response.question} is correct!`
                 : `<span class="icon"><i class="fas fa-times-circle"></i></span> The answer is ${response.question}`;
-            btn.style.background = colour;
-            btn.style.borderColor = colour;
-            btn.classList.add('disabled-button');
         }
+
+        btn.style.background = colour;
+        btn.style.borderColor = colour;
+        btn.classList.add('disabled-button');
+        btn.innerText = correct ? 'Correct' : 'Incorrect';
 
         response.success = correct;
 
@@ -75,7 +72,7 @@ const renderPortrait = (item) => {
 
     document.querySelector('.js-species-card-images').innerHTML = backgroundImages;
 
-    modalHandler(document.querySelectorAll('.js-species-card-images div'), item);
+    modalBackgroundImagesHandler(document.querySelectorAll('.js-species-card-images div'), item);
 };
 
 const renderLandscape = (item) => {

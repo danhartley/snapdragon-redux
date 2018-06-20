@@ -5,16 +5,13 @@ import { actions } from 'redux/actions/action-creators';
 import { renderWiki } from 'wikipedia/wiki';
 import { renderFamily } from 'gbif/gbif';
 import { renderTemplate } from 'ui/helpers/templating';
-import { modalHandler } from 'ui/helpers/handlers';
+import { modalBackgroundImagesHandler } from 'ui/helpers/handlers';
 import { itemVernacularName } from 'ui/helpers/data-checking';
 import landscapeTemplate from 'ui/screens/common/card-template.html';
 import portraitTemplate from 'ui/screens/common/card-portrait-template.html';
 
 export const renderCard = (collection) => {
     
-    console.log('*currentRound: ', collection.currentRound);
-    console.log('*itemIndex: ', collection.itemIndex);
-
     const item = collection.items[collection.itemIndex];
 
     const { layout, config, layouts } = store.getState();
@@ -107,7 +104,7 @@ const renderPortrait = (item, config) => {
 
     document.querySelector('.js-species-card-images').innerHTML = backgroundImages;
 
-    modalHandler(document.querySelectorAll('.js-species-card-images div'), item);
+    modalBackgroundImagesHandler(document.querySelectorAll('.js-species-card-images div'), item);
 };
 
 const renderCommonParts = (template, config, item) => {

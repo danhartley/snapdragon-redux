@@ -1,7 +1,3 @@
-import { DOM } from 'ui/dom';
-
-// LEFT
-
 const specimen = {
   name: 'specimen-images',
   domain: 'collection',
@@ -13,8 +9,6 @@ const history = {
   domain: 'history',
   template: 'js-history-template'
 };
-
-// RIGHT
 
 const revision = {
   name: 'species-card',

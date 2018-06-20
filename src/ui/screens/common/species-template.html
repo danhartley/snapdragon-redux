@@ -2,9 +2,9 @@
     <ul class="list-group list-group-flush" data-repeat-item="{{ collection.items }}">
         <div class="list-group-item js-list-item">
             <div>
-                <img src="{{ item.image }}" alt="">
+                <img id="{{ item.name }}" src="{{ item.image }}" alt="{{ item.name }}" data-toggle="modal" data-target="#imageModal">
             </div>
-            <div>
+            <div class="js-list-item-link">
                 <span>{{ item.name }}</span>
                 <br/>
                 <span class="capitalise">{{ item.vernacularName }}</span>

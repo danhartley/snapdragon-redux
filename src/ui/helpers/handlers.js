@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
-export const modalHandler = (images, item) => {
+export const modalBackgroundImagesHandler = (images, item) => {
     images.forEach(image => {
         image.addEventListener('click', event => {            
             const img = event.target;
@@ -14,6 +14,15 @@ export const modalHandler = (images, item) => {
             }
         })
     });
+};
+
+export const modalImageHandler = (image) => {
+    image.addEventListener('click', event => {            
+        const img = event.target;        
+        DOM.modalImageTitle.innerHTML = img.id;
+        const style = `background-image: url(${img.src}); background-size: cover;`;
+        DOM.modalImage.style = style;            
+    })
 };
 
 export const scoreHandler = (items, item, config, type, callback) => {
