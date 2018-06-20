@@ -177,6 +177,19 @@ progress::-moz-progress-bar {
   flex: auto;
 }
 
+.score-footer {
+  display: flex;
+  width: 100%;
+}
+
+.score-footer span:nth-child(1) {
+  flex: 1;
+}
+
+.score-footer span:nth-child(2) {
+  flex: 3;
+}
+
 .footer button {
   margin: 0 1em 0 0;
 }

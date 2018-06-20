@@ -44,7 +44,7 @@ export const renderSummary = (history) => {
             config.lessonName = level.lessonName;
             config.levelName = level.name;
             actions.boundUpdateConfig(config);
-            actions.boundNextLevel({ index: 0, state: 'active' }); // triggers next layout before new layouts are ready, so starts with card...
+            actions.boundNextLevel({ index: 0, state: 'active' });
         } else {            
             actions.boundUpdateConfig(config);
             actions.boundNextRound({ index: 0, state: 'active' });

@@ -9,10 +9,10 @@ export const renderScore = (score) => {
     const template = document.createElement('template');
 
     template.innerHTML = config.isPortraitMode
-            ?   `<div> Score: {{ score.correct }}/{{ score.total }}</div>`
+            ?   `<div><span>Score: {{ score.correct }}/{{ score.total }}</span></div>`
             :   `<div class="score-footer">
-                    Score: {{ score.correct }}/{{ score.total }}
-                    History: {{ history.correct }}/{{ history.total }}
+                    <span>Score: {{ score.correct }}/{{ score.total }}</span>
+                    <span>History: {{ history.correct }}/{{ history.total }}</span>
                 </div>`;
 
     if(!layout) return;
@@ -21,10 +21,10 @@ export const renderScore = (score) => {
 
     const runningTotal = history ? { ...history } : { correct: 0, total: 0 };
 
-    if(!endOfRound) {
+    //if(!endOfRound) {
         runningTotal.correct = runningTotal.correct + score.correct;
         runningTotal.total = runningTotal.total + score.total;
-    }
+    //}
 
     const parent = config.isPortraitMode ? DOM.leftFooter.querySelector('.js-left-footer-score') : DOM.rightFooter;
 
