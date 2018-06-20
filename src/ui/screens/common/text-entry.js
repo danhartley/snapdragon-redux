@@ -14,20 +14,17 @@ export const renderInput = (config, screen, question, callbackTime, item, render
         
         const { text, colour, correct } = renderAnswerHeader(response);
 
-        if(!config.isPortraitMode) {           
-            btn.style.color = colour;
-            btn.parentNode.style.background = 'rbg(255,255,255)';
-        }
-
         if(config.isPortraitMode) {
             const questionText = document.querySelector('.js-txt-question');
             questionText.innerHTML = correct 
                 ? `<span class="icon"><i class="fas fa-check-circle"></i></span> ${response.question} is correct!`
                 : `<span class="icon"><i class="fas fa-times-circle"></i></span> The answer is ${response.question}`;
-            btn.style.background = colour;
-            btn.style.borderColor = colour;
-            btn.classList.add('disabled-button');
         }
+
+        btn.style.background = colour;
+        btn.style.borderColor = colour;
+        btn.classList.add('disabled-button');
+        btn.innerText = correct ? 'Correct' : 'Incorrect';
 
         response.success = correct;
 

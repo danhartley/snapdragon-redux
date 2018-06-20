@@ -21,10 +21,8 @@ export const renderScore = (score) => {
 
     const runningTotal = history ? { ...history } : { correct: 0, total: 0 };
 
-    //if(!endOfRound) {
-        runningTotal.correct = runningTotal.correct + score.correct;
-        runningTotal.total = runningTotal.total + score.total;
-    //}
+    runningTotal.correct = runningTotal.correct + score.correct;
+    runningTotal.total = runningTotal.total + score.total;
 
     const parent = config.isPortraitMode ? DOM.leftFooter.querySelector('.js-left-footer-score') : DOM.rightFooter;
 
