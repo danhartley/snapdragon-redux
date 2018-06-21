@@ -46,11 +46,11 @@ export const renderSettings = () => {
         }, 1000);
     });
 
-    const handleCollectionsClick = () => {
-        renderCollections();
-        renderSpeciesCollection(config.collection.id);
-        closeModal('menuModal');
-    };
+    // const handleCollectionsClick = () => {
+    //     renderCollections();
+    //     renderSpeciesCollection(config.collection.id);
+    //     closeModal('menuModal');
+    // };
 
     setDelayBtn.addEventListener('click', () => {
         setDelayBtn.innerHTML = 'Setting delay...';

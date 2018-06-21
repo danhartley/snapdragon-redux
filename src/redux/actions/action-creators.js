@@ -22,6 +22,7 @@ const nextRound = makeActionCreator(types.NEXT_ROUND);
 const nextLevel = makeActionCreator(types.NEXT_LEVEL);
 const updateConfig = makeActionCreator(types.UPDATE_CONFIG);
 const toggleLesson = makeActionCreator(types.TOGGLE_LESSON);
+const selectCollection = makeActionCreator(types.SELECT_COLLECTION);
 
 const boundNextLesson = data => store.dispatch(nextLesson(data));
 const boundUpdateScore = data => store.dispatch(updateScore(data));
@@ -34,6 +35,7 @@ const boundNextRound = data => store.dispatch(nextRound(data));
 const boundNextLevel = data => store.dispatch(nextLevel(data));
 const boundUpdateConfig = data => store.dispatch(updateConfig(data));
 const boundToggleLesson = data => store.dispatch(toggleLesson(data));
+const boundSelectCollection = data => store.dispatch(selectCollection(data));
 
 export const actions = {
     boundNextLesson,
@@ -46,5 +48,6 @@ export const actions = {
     boundNextRound,
     boundNextLevel,
     boundUpdateConfig,
-    boundToggleLesson
+    boundToggleLesson,
+    boundSelectCollection
 };

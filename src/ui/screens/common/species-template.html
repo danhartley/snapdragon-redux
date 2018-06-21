@@ -1,3 +1,9 @@
+<div class="list-group-tabs js-list-header">
+    <div>Species collection</div>
+    <!-- <div class="tab1">All</div>
+    <div class="tab2">Correct</div>
+    <div class="tab3">Incorrect</div> -->
+</div>
 <div class="list-group-container js-list-item-container">
     <ul class="list-group list-group-flush" data-repeat-item="{{ collection.items }}">
         <div class="list-group-item js-list-item">
@@ -10,6 +16,6 @@
                 <span class="capitalise">{{ item.vernacularName }}</span>
             </div>
         </div>
-    </ul>
-    <div class="list-continue-btn"><button class="btn btn-light js-lesson-btn-action">Continue lesson</button></div>
+    </ul>    
 </div>
+<div class="list-continue-btn js-list-footer"><button class="btn btn-light js-lesson-btn-action">Continue lesson</button></div>

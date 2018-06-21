@@ -5,11 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './snapdragon.css';
 import './snapdragon-media.css';
-import './snapdragon-media1024.css';
+import './snapdragon-media768.css';
 import './snapdragon-media1200.css';
 
 import { store } from 'redux/store';
-import { observeStore } from 'redux/observe-store';
 
 import { nextLesson } from 'ui/setup/next-lesson';
 import { nextLayout } from 'ui/setup/next-layout';
@@ -62,5 +61,5 @@ setTimeout(()=>{
     subscription.add(renderScore, 'score', 'flow');
     subscription.add(renderHeaders, 'layout', 'flow');
 
-    subscription.add(renderSpeciesCollection, 'collection', 'screen');
+    // subscription.add(renderSpeciesCollection, 'collections', 'screen');
 });
