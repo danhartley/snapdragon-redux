@@ -1,7 +1,6 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
-import { renderTemplate } from 'ui/helpers/templating';
 import { modalBackgroundImagesHandler } from 'ui/helpers/handlers';
 import landscapeTemplates from 'ui/screens/common/text-entry-templates.html';
 import portraitTemplates from 'ui/screens/common/text-entry-portrait-templates.html';
@@ -14,17 +13,29 @@ export const renderInput = (config, screen, question, callbackTime, item, render
         
         const { text, colour, correct } = renderAnswerHeader(response);
 
-        if(config.isPortraitMode) {
-            const questionText = document.querySelector('.js-txt-question');
-            questionText.innerHTML = correct 
-                ? `<span class="icon"><i class="fas fa-check-circle"></i></span> ${response.question} is correct!`
-                : `<span class="icon"><i class="fas fa-times-circle"></i></span> The answer is ${response.question}`;
-        }
+        const questionText = document.querySelector('.js-txt-question');
+
+        questionText.innerHTML = correct 
+            ? `<div class="one">
+                    <span class="icon"><i class="fas fa-check-circle"></i></span>                        
+                </div>
+                <div class="two">
+                    <span>You got it!</span>
+                </div>
+                <div class="three">
+                    <span>It is</span> <span class="capitalise">${response.question}</span>
+                </div>`
+            : `<div class="one">
+                <span class="icon"><i class="fas fa-times-circle"></i></span>
+                </div> 
+                <div class="two"><span>No, that's not it!</span></div>
+                <div class="three">It's <span class="capitalise">${response.question}</span></div>`;
 
         btn.style.background = colour;
         btn.style.borderColor = colour;
-        btn.classList.add('disabled-button');
+        btn.style.color = 'white';
         btn.innerText = correct ? 'Correct' : 'Incorrect';
+        btn.disabled = true;
 
         response.success = correct;
 
@@ -77,12 +88,12 @@ const renderPortrait = (item) => {
 
 const renderLandscape = (item) => {
     if(item.images) {
-        const bgTop = document.querySelector('.letterbox div:nth-child(1)');
+        const bgTop = document.querySelector('.letterbox > div:nth-child(1)');
         bgTop.style.backgroundImage = `url(${item.images[0]})`;
         bgTop.style.opacity = '.1';
         
-        const bgBottom = document.querySelector('.letterbox div:nth-child(3)');
-        bgBottom.style.backgroundImage = `url(${item.images[1]})`;
+        const bgBottom = document.querySelector('.letterbox > div:nth-child(3)');
+        bgBottom.style.backgroundImage = `url(${item.images[0]})`;
         bgBottom.style.opacity = '.1';
     }
 };

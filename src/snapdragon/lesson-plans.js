@@ -154,21 +154,16 @@ const landscapeLesson1 = {
         },
         {   id: 3,
             name: 'Level 3',
-            description: 'Recall genus name',
-            layouts: [ layout1, layout5 ]
+            description: 'Complete latin name',
+            layouts: [ layout1, layout5, layout6 ]
         },
         {   id: 4,
             name: 'Level 4',
-            description: 'Recall species name',
-            layouts: [ layout1, layout6 ]
+            description: 'Enter full latin name',
+            layouts: [ layout1, layout7 ]
         },
         {   id: 5,
             name: 'Level 5',
-            description: 'Recall genus and species',
-            layouts: [ layout1, layout7 ]
-        },
-        {   id: 6,
-            name: 'Level 6',
             description: 'Name puzzle',
             layouts: [ layout1, layout8 ]
         }        
@@ -205,21 +200,16 @@ const portraitLesson1 = {
         },
         {   id: 3,
             name: 'Level 3',
-            description: 'Recall genus name',
-            layouts: [ portrait5 ]
+            description: 'Complete latin name',
+            layouts: [ portrait5, portrait6 ]
         },
         {   id: 4,
             name: 'Level 4',
-            description: 'Recall species name',
-            layouts: [ portrait6 ]
+            description: 'Enter full latin name',
+            layouts: [ portrait7 ]
         },
         {   id: 5,
             name: 'Level 5',
-            description: 'Recall genus and species',
-            layouts: [ portrait7 ]
-        },
-        {   id: 6,
-            name: 'Level 6',
             description: 'Name puzzle',
             layouts: [ layout8 ]
         }

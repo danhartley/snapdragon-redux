@@ -21,7 +21,7 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         } while (i < moduleSize);
     });
 
-    // create a new lesson plan, keeping the revision modules at the start and followed by the shuffled test modules
+    // create a new lesson plan, keeping the revision modules at the start followed by the shuffled test modules
 
     let testPlans = [ ...lessonPlan ];
     const revisionPlans = testPlans.splice(0,moduleSize);
