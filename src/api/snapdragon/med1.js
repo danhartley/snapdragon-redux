@@ -579,6 +579,11 @@ export const med1 = [
       ],
       "names": [
         {
+          "vernacularName": "Crispus Rockrose",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "Jara rizada",
           "language": "es",
           "eol_preferred": true
