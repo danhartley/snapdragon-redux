@@ -14,12 +14,10 @@ export const renderInput = (config, screen, question, callbackTime, item, render
         
         const { text, colour, correct } = renderAnswerHeader(response);
 
-        if(config.isPortraitMode) {
-            const questionText = document.querySelector('.js-txt-question');
+        const questionText = document.querySelector('.js-txt-question');
             questionText.innerHTML = correct 
                 ? `<span class="icon"><i class="fas fa-check-circle"></i></span> ${response.question} is correct!`
                 : `<span class="icon"><i class="fas fa-times-circle"></i></span> The answer is ${response.question}`;
-        }
 
         btn.style.background = colour;
         btn.style.borderColor = colour;
@@ -77,12 +75,12 @@ const renderPortrait = (item) => {
 
 const renderLandscape = (item) => {
     if(item.images) {
-        const bgTop = document.querySelector('.letterbox div:nth-child(1)');
+        const bgTop = document.querySelector('.letterbox > div:nth-child(1)');
         bgTop.style.backgroundImage = `url(${item.images[0]})`;
         bgTop.style.opacity = '.1';
         
-        const bgBottom = document.querySelector('.letterbox div:nth-child(3)');
-        bgBottom.style.backgroundImage = `url(${item.images[1]})`;
+        const bgBottom = document.querySelector('.letterbox > div:nth-child(3)');
+        bgBottom.style.backgroundImage = `url(${item.images[0]})`;
         bgBottom.style.opacity = '.1';
     }
 };
