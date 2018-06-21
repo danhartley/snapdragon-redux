@@ -11,7 +11,6 @@ export const collections = (state = initialState.collections, action) => {
 
 export const collection = (state = null, action) => {
 
-    let collection = {};
     let itemIndex = 0;
     let currentRound = 0;
     let layoutIndex = 0;

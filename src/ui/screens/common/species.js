@@ -43,9 +43,7 @@ export const renderSpeciesCollection = (collectionId) => {
 
     const listItemImages = document.querySelectorAll('.js-list-item div img');
 
-    listItemImages.forEach(itemImage => {
-        modalImageHandler(itemImage);
-    });    
+    listItemImages.forEach(itemImage => { modalImageHandler(itemImage); });    
 
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     learningActionBtn.disabled = layout ? false : true;
