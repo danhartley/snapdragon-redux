@@ -16,7 +16,7 @@ export const renderSpeciesTiles = (collection) => {
 
     const { layout, config } = store.getState();
 
-    const screen = layout.screens.filter(el => el.name === 'species-images')[0];
+    const screen = layout.screens.find(el => el.name === 'species-images');
     
     if(!screen) return;
 

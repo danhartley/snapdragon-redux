@@ -4,6 +4,16 @@ import { initialState } from 'redux/reducers/initial-state-for-reducers';
 
 export const collections = (state = initialState.collections, action) => {
     switch(action.type) {
+        case types.SELECT_COLLECTION:
+            const cols = [ ...state ];
+            cols.forEach(col => {
+                if(col.id === action.data) {
+                    col.selected = true;
+                } else {
+                    col.selected = false;
+                }
+            });
+            return cols;
         default:
             return state;
     }

@@ -12,7 +12,7 @@ export const renderSpecimenTiles = (collection) => {
 
     const { layout } = store.getState();
 
-    let screen = layout.screens.filter(el => el.name === 'specimen-images')[0];
+    let screen = layout.screens.find(el => el.name === 'specimen-images');
 
     if(layout.screens[0].name === 'command') screen = layout.screens[0].left;
 

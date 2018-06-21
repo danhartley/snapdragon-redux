@@ -10,11 +10,12 @@ import { renderLetters } from 'ui/screens/common/letters';
 import { renderLeafTile } from 'ui/screens/left/leaf-tile';
 import { renderNameEntry } from 'ui/screens/right/leaf-text-entry';
 import { runTask } from 'ui/screens/command';
+import { renderSpeciesCollection } from 'ui/screens/common/species';
 
 const functions = [
     { name: 'text-entry', func: renderTextEntry },
     { name: 'specimen-images', func: renderSpecimenTiles },
-    { name: 'history', func: renderHistory },
+    { name: 'collections', func: renderSpeciesCollection },
     { name: 'species-card', func: renderCard },
     { name: 'species-scientifics', func: renderScientifics },
     { name: 'species-vernaculars', func: renderVernaculars },

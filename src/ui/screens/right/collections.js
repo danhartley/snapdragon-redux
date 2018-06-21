@@ -4,12 +4,15 @@ import { actions } from 'redux/actions/action-creators';
 import { collectionPlans } from'snapdragon/collections-plans';
 import { renderTemplate } from 'ui/helpers/templating';
 import { selectHandler } from 'ui/helpers/handlers';
+import { subscription } from 'redux/subscriptions';
 import { renderSpeciesCollection } from 'ui/screens/common/species';
 import collectionsTemplate from 'ui/screens/right/collections-template.html';
 
 export const renderCollections = () => {
 
     const { collections, config: currentConfig, collection: currentCollection } = store.getState();
+
+    subscription.add(renderSpeciesCollection, 'collections', 'screen');
 
     let config = { ...currentConfig };
     let collection = currentCollection ? { ...currentCollection } : { name: '---', id: '' };
@@ -22,8 +25,6 @@ export const renderCollections = () => {
     const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
 
     parent.innerHTML = '';
-
-    // collection = collection || { name: '---', id: ''};
 
     const species = collections.filter(collection => collection.type === 'species');
     const skills = collections.filter(collection => collection.type === 'skill');
@@ -48,14 +49,12 @@ export const renderCollections = () => {
 
     // species collections
 
-    let collectionId;
+    const selectedCollection = collections.find(collection => collection.selected);
+    let collectionId = selectedCollection ? selectedCollection.id : 0;
 
-    const activeCollectionSelector = `[name="collection${config.collection.id}"]`;
-    if(activeCollectionSelector !== 'collection') {
-        document.querySelectorAll(activeCollectionSelector);
-        collectionId = config.collection.id;
-    }
-
+    if(selectedCollection)
+        document.querySelectorAll(`[name="${selectedCollection.name}"]`)[0].classList.add('active');
+    
     selectHandler('.dropdown.js-collections .dropdown-item', (id) => {
         collectionId = parseInt(id);
         const collectionName = collections.filter(collection => collection.id === collectionId)[0].name;
@@ -64,9 +63,8 @@ export const renderCollections = () => {
         learningActionBtn.disabled = false;
         goToSpeciesCollectionBtn.disabled = false;
         isNewCollection = true;
-        if(!config.isPortraitMode) {
-            renderSpeciesCollection(collectionId); // todo this should be the result of an action
-        }
+        if(!config.isPortraitMode)
+            actions.boundSelectCollection(collectionId);
     });
 
     // lesson levels
@@ -112,6 +110,6 @@ export const renderCollections = () => {
 
 
     goToSpeciesCollectionBtn.addEventListener('click', () => {
-        renderSpeciesCollection(collectionId);
+        actions.boundSelectCollection(collectionId);
     });
 };
