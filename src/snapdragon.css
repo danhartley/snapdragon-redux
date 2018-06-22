@@ -105,6 +105,11 @@ progress::-moz-progress-bar {
   background-color: white;
 }
 
+.snapdragon {
+  overflow-y: scroll;
+  height: 80vh;
+}
+
 .snapdragon, .collections {
   padding: .5em;
 }
@@ -250,6 +255,11 @@ progress::-moz-progress-bar {
   cursor: pointer;
 }
 
+.strips-container, .tiles-container {
+  position: relative;
+  height: 100%;;
+}
+
 .strips {
   display: grid;
   grid-auto-flow: row;
@@ -301,6 +311,10 @@ progress::-moz-progress-bar {
   margin: .3em;
 }
 
+.species.card {
+  margin: .5em;
+}
+
 .species-card-species {
   font-size: 1.2em;
 }
@@ -340,11 +354,18 @@ progress::-moz-progress-bar {
   font-size: 1.2em;
 }
 
-.summary, .history {
-  padding: 2em;
+.summary-container {
+  position: relative;
+  height: 100%;
+  margin: 0 1em;
+}
+
+.summary {
+  padding: 1em;
   border: 2px solid rgba(0,0,0,.125);
   border-radius: .25rem;
-  margin: .5em;
+  overflow-y: scroll;
+  height: 65vh;
 }
 
 .history div {
@@ -388,8 +409,9 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .collections {
   position: relative;
-  margin: .5em;
-  padding: 0;
+  margin: 0 1em;
+  padding-left: 0;
+  padding-right: 0;
   height: 100%;
 }
 
@@ -514,29 +536,31 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .card-container {
   position: relative;
   height: 50%;
-  margin: 1em;
+  margin: 0 1em;
 }
 
 .card-container .card {
   margin: 0;
 }
 
-.action-update button {
+.action-update button, .response-update {
   position: absolute;
   bottom: 0;
   left: 0;
-  margin: 0 0 2em 0;
+  margin: 0 0 1em 0;
   width: 100%;
 }
 
 .text-entry-container {
+  position: relative;
   height: 100%;
 }
 
 .text-entry {
-  margin: 1em;
+  margin: 0 1em;
+  padding: 1em 0 0 0;
   position: relative;
-  height: 40%;
+  height: 50%;
 }
 
 .text-entry input {
@@ -576,11 +600,11 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .species-question {
-  font-size: .8em;
+  font-size: .9em;
 }
 
 .species-answer {
-  padding: 0 .5em;
+  padding: 0 1em;
   display: none;
 }
 .species-answer div {        

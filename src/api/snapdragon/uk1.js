@@ -174,16 +174,16 @@ export const uk1 = [
           "language": "de"
         },
         {
-          "vernacularName": "Traveller's-joy",
+          "vernacularName": "Old man's beard",
           "language": "en",
           "eol_preferred": true
         },
         {
-          "vernacularName": "Fragrant clemati",
+          "vernacularName": "Traveller's-joy",
           "language": "en"
         },
         {
-          "vernacularName": "Old-man's-beard",
+          "vernacularName": "Fragrant clemati",
           "language": "en"
         },
         {
@@ -259,7 +259,8 @@ export const uk1 = [
         },
         {
           "vernacularName": "deadly nightshade",
-          "language": "en"
+          "language": "en",
+          "eol_preferred": true
         },
         {
           "vernacularName": "Belladona",
@@ -314,7 +315,7 @@ export const uk1 = [
           "eol_preferred": true
         },
         {
-          "vernacularName": "English ivy",
+          "vernacularName": "ivy",
           "language": "en",
           "eol_preferred": true
         },
@@ -527,9 +528,13 @@ export const uk1 = [
           "language": "de"
         },
         {
-          "vernacularName": "sweet violet",
+          "vernacularName": "violet",
           "language": "en",
           "eol_preferred": true
+        },
+        {
+          "vernacularName": "sweet violet",
+          "language": "en"
         },
         {
           "vernacularName": "Common Violet",
@@ -606,9 +611,13 @@ export const uk1 = [
           "language": "de"
         },
         {
-          "vernacularName": "woodland forget-me-not",
+          "vernacularName": "forget-me-not",
           "language": "en",
           "eol_preferred": true
+        },
+        {
+          "vernacularName": "woodland forget-me-not",
+          "language": "en"
         },
         {
           "vernacularName": "Wood Forget-me-not",
@@ -705,9 +714,13 @@ export const uk1 = [
           "language": "de"
         },
         {
-          "vernacularName": "Wood Anemone",
+          "vernacularName": "Anemone",
           "language": "en",
           "eol_preferred": true
+        },
+        {
+          "vernacularName": "Wood Anemone",
+          "language": "en"
         },
         {
           "vernacularName": "European thimbleweed",
@@ -785,7 +798,7 @@ export const uk1 = [
           "language": "de"
         },
         {
-          "vernacularName": "lily-of-the-valley",
+          "vernacularName": "lily of the valley",
           "language": "en",
           "eol_preferred": true
         },

@@ -463,7 +463,7 @@ export const med1 = [
           "language": "de"
         },
         {
-          "vernacularName": "garden thyme",
+          "vernacularName": "thyme",
           "language": "en",
           "eol_preferred": true
         },
@@ -545,7 +545,7 @@ export const med1 = [
       ],
       "names": [
         {
-          "vernacularName": "wild olive",
+          "vernacularName": "olive",
           "language": "en",
           "eol_preferred": true
         },
@@ -579,7 +579,7 @@ export const med1 = [
       ],
       "names": [
         {
-          "vernacularName": "Crispus Rockrose",
+          "vernacularName": "Rockrose",
           "language": "en",
           "eol_preferred": true
         },
