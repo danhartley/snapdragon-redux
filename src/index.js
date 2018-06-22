@@ -16,22 +16,13 @@ import { nextItem } from 'ui/setup/next-item';
 
 import { renderHeaders } from 'ui/screens/common/headers';
 import { renderScore } from 'ui/progress/score';
-import { renderSpeciesCollection } from 'ui/screens/common/species';
+import { renderCollections } from 'ui/screens/right/collections';
 import { renderNavigation } from 'ui/screens/common/navigation';
 
 import { lessonPlans } from 'snapdragon/lesson-plans';
 import { subscription } from 'redux/subscriptions';
-
-// use case test
-
-const renderWelcome = () => {
-    // console.log('Welcome back, Dan!');
-};
-
-const returningUser = localStorage.getItem('returningUser') ? new Boolean(localStorage.getItem('returningUser')) : false;
-returningUser ? renderWelcome() : localStorage.setItem('returningUser', true);
-
 import { actions } from 'redux/actions/action-creators';
+import { renderSnapdragon } from "./ui/screens/left/snapdragon";
 
 setTimeout(()=>{
 
@@ -50,16 +41,18 @@ setTimeout(()=>{
         config.levelName = config.lesson.level.name;
     }
 
-    actions.boundUpdateConfig(config);
-
     renderHeaders();
     renderNavigation();
 
+    actions.boundUpdateConfig(config);
+    actions.boundToggleLesson({ lesson: 'inactive' });
+
+    subscription.add(renderCollections, 'counter', 'flow');
+    subscription.add(renderSnapdragon, 'counter', 'flow');
     subscription.add(nextLesson, 'config', 'flow');
     subscription.add(nextLayout, 'counter', 'flow');
     subscription.add(nextItem, 'layout', 'flow');
     subscription.add(renderScore, 'score', 'flow');
     subscription.add(renderHeaders, 'layout', 'flow');
 
-    // subscription.add(renderSpeciesCollection, 'collections', 'screen');
 });

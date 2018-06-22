@@ -2,10 +2,7 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { persistor } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { renderCollections } from 'ui/screens/right/collections';
-import { renderSpeciesCollection } from 'ui/screens/common/species';
 import { renderTemplate } from 'ui/helpers/templating';
-import { closeModal } from 'ui/helpers/modal-toggle';
 import settingsTemplate from 'ui/screens/common/settings-template.html';
 
 export const renderSettings = () => {
@@ -45,12 +42,6 @@ export const renderSettings = () => {
             }, 500);
         }, 1000);
     });
-
-    // const handleCollectionsClick = () => {
-    //     renderCollections();
-    //     renderSpeciesCollection(config.collection.id);
-    //     closeModal('menuModal');
-    // };
 
     setDelayBtn.addEventListener('click', () => {
         setDelayBtn.innerHTML = 'Setting delay...';

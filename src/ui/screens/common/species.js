@@ -51,10 +51,11 @@ export const renderSpeciesCollection = (collections) => {
 
     listItemImages.forEach(itemImage => { modalImageHandler(itemImage); });    
 
-    const learningActionBtn = document.querySelector('.js-lesson-btn-action');
-    learningActionBtn.disabled = layout ? false : true;
-
-    learningActionBtn.addEventListener('click', () => {
-        actions.boundToggleLesson({ state: 'active' });
-    });
+    const continueLearningActionBtn = document.querySelector('.js-continue-lesson-btn-action');
+    if(continueLearningActionBtn) {
+        continueLearningActionBtn.disabled = layout ? false : true;
+        continueLearningActionBtn.addEventListener('click', () => {
+            actions.boundToggleLesson({ lesson: 'active' });
+        });
+    }
 };
