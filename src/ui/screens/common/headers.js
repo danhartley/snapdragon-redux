@@ -3,9 +3,10 @@ import { DOM } from 'ui/dom';
 
 export const renderHeaders = counter => {
     
-    const { config, collection, layout, layouts } = store.getState();
+    const { config, collection, layouts } = store.getState();
 
     const item = (collection && collection.items) ? collection.items[collection.itemIndex] : null;
+    const layout = layouts[counter.index];
     
     DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
     DOM.rightHeaderText.style.backgroundColor = 'rgb(12, 44, 84)';
