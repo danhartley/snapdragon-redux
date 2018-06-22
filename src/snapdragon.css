@@ -637,18 +637,12 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .list-group-tabs {
   display: flex;
   align-items: center;
-  /* background-color: pink; */
   padding: 0 0 0 1em;
 }
 
 .list-group-tabs div{
   flex: 1;
 }
-
-/* .list-group-tabs .tab1, .list-group-tabs .tab2, .list-group-tabs .tab3 {
-  flex: 1;
-  color: rgb(50, 50, 50);
-}  */
 
 .list-group-container {
   height: 60vh;
