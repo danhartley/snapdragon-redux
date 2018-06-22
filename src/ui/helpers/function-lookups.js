@@ -27,6 +27,7 @@ const functions = [
 ];
 
 export const funcByName = name => {
-    const func = functions.filter(func => func.name === name)[0].func;
+    const match = functions.find(func => func.name === name);
+    const func = match ? match.func : null;
     return func;
 };
