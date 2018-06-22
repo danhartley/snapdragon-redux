@@ -107,11 +107,14 @@ progress::-moz-progress-bar {
 
 .snapdragon {
   overflow-y: scroll;
-  height: 80vh;
+  height: 70vh;  
 }
 
-.snapdragon, .collections {
-  padding: .5em;
+.snapdragon-container, .collections {
+  padding: .5em 0;
+  position: relative;
+  margin: 0 1em;
+  height: 100%;
 }
 
 .snapdragon .card {
@@ -405,14 +408,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .clear-lesson button {
   float: left;
-}
-
-.collections {
-  position: relative;
-  margin: 0 1em;
-  padding-left: 0;
-  padding-right: 0;
-  height: 100%;
 }
 
 .collections div {

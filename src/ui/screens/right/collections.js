@@ -8,7 +8,9 @@ import { subscription } from 'redux/subscriptions';
 import { renderSpeciesCollection } from 'ui/screens/common/species';
 import collectionsTemplate from 'ui/screens/right/collections-template.html';
 
-export const renderCollections = () => {
+export const renderCollections = (counter) => {
+
+    if(counter && counter.lesson === 'active') return;
 
     const { collections, config: currentConfig, collection: currentCollection } = store.getState();
 
@@ -94,7 +96,7 @@ export const renderCollections = () => {
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     const goToSpeciesCollectionBtn = document.querySelector('.js-species-collection');
 
-    if(collection.id === '') {
+    if(collection.id === '') { // this looks wrong '' or 0?
         learningActionBtn.disabled = true;
         goToSpeciesCollectionBtn.disabled = true;        
     } else {
@@ -103,7 +105,7 @@ export const renderCollections = () => {
 
     learningActionBtn.addEventListener('click', () => {
         
-        isNewCollection ? actions.boundChangeCollection(config) : actions.boundToggleLesson({ state: 'active' });
+        isNewCollection ? actions.boundChangeCollection(config) : actions.boundToggleLesson({ lesson: 'active' });
 
         document.querySelector('.js-home').classList.remove('active-icon');
     });

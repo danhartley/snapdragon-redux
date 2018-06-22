@@ -44,10 +44,10 @@ export const renderSummary = (history) => {
             config.lessonName = level.lessonName;
             config.levelName = level.name;
             actions.boundUpdateConfig(config);
-            actions.boundNextLevel({ index: 0, state: 'active' });
+            actions.boundNextLevel({ index: 0, lesson: 'active' });
         } else {            
             actions.boundUpdateConfig(config);
-            actions.boundNextRound({ index: 0, state: 'active' });
+            actions.boundNextRound({ index: 0, lesson: 'active' });
         }
 
         config.moduleSize = collection.moduleSize;        

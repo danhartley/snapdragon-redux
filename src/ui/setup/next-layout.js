@@ -5,6 +5,8 @@ import { subscription } from 'redux/subscriptions';
 
 export const nextLayout = (counter) => {
 
+    if(counter && counter.lesson === 'inactive') return;
+
     const { layouts } = store.getState();
 
     if(!layouts) return; // fix this by unsubscribing
