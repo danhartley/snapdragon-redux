@@ -387,7 +387,7 @@ export const herbs1 = [
           "language": "de"
         },
         {
-          "vernacularName": "garden thyme",
+          "vernacularName": "thyme",
           "language": "en",
           "eol_preferred": true
         },
@@ -678,7 +678,7 @@ export const herbs1 = [
           "language": "de"
         },
         {
-          "vernacularName": "French Tarragon",
+          "vernacularName": "Tarragon",
           "language": "en",
           "eol_preferred": true
         },
@@ -881,7 +881,7 @@ export const herbs1 = [
           "language": "de"
         },
         {
-          "vernacularName": "Common Sage",
+          "vernacularName": "Sage",
           "language": "en",
           "eol_preferred": true
         },
@@ -1051,12 +1051,12 @@ export const herbs1 = [
           "language": "de"
         },
         {
-          "vernacularName": "wild chives",
+          "vernacularName": "Chives",
           "language": "en",
           "eol_preferred": true
         },
         {
-          "vernacularName": "Chives",
+          "vernacularName": "wild chives",
           "language": "en"
         },
         {
