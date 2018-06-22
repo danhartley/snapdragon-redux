@@ -26,10 +26,10 @@ import { renderSnapdragon } from "./ui/screens/left/snapdragon";
 
 setTimeout(()=>{
 
-    const { config: currentConfig } = store.getState();
+    const { config: currentConfig, counter: currentCounter } = store.getState();
 
     const config = { ...currentConfig };
-
+    
     config.isPortraitMode = window.matchMedia("(max-width: 480px)").matches;
 
     if(!config.lesson) {
@@ -41,11 +41,12 @@ setTimeout(()=>{
         config.levelName = config.lesson.level.name;
     }
 
-    renderHeaders();
+    const counter = currentCounter ? { ...currentCounter } : { index: null, lesson: 'inactive' };
+
     renderNavigation();
 
     actions.boundUpdateConfig(config);
-    actions.boundToggleLesson({ lesson: 'inactive' });
+    actions.boundToggleLesson(counter);
 
     subscription.add(renderCollections, 'counter', 'flow');
     subscription.add(renderSnapdragon, 'counter', 'flow');
@@ -53,6 +54,6 @@ setTimeout(()=>{
     subscription.add(nextLayout, 'counter', 'flow');
     subscription.add(nextItem, 'layout', 'flow');
     subscription.add(renderScore, 'score', 'flow');
-    subscription.add(renderHeaders, 'layout', 'flow');
+    subscription.add(renderHeaders, 'counter', 'flow');
 
 });
