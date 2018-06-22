@@ -21,7 +21,7 @@ const functions = [
     { name: 'species-vernaculars', func: renderVernaculars },
     { name: 'species-images', func: renderSpeciesTiles },
     { name: 'summary', func: renderSummary },
-    { name: 'command', func: [runTask, renderLetters] },
+    { name: 'command', func: [renderSpecimenTiles, runTask] },
     { name: 'leaf-image', func: renderLeafTile },
     { name: 'leaf-text', func: renderNameEntry },
 ];

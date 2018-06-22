@@ -9,7 +9,7 @@ export const nextLayout = (counter) => {
 
     const { layouts } = store.getState();
 
-    if(!layouts) return; // fix this by unsubscribing
+    if(!layouts) return;
 
     const layout = layouts[counter.index];
 
@@ -19,10 +19,16 @@ export const nextLayout = (counter) => {
 
     layout.screens.forEach(screen => {
 
-        const func = funcByName(screen.name);
-        if(func) {
-            // todo: handle command, runTask for letters...
-            subscription.add(func, screen.domain, 'screen');
+        if(screen.name === 'command') {
+            const funcs = funcByName(screen.name);
+            funcs.forEach(func => {
+                subscription.add(func, screen.domain, 'screen');
+            });
+        } else {
+            const func = funcByName(screen.name);
+            if(func) {            
+                subscription.add(func, screen.domain, 'screen');
+            }
         }
     });
 
