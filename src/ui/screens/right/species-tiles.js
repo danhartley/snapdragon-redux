@@ -24,7 +24,7 @@ export const renderSpeciesTiles = (collection) => {
     
     template.innerHTML = html;
     
-    const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
+    let parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
     parent.innerHTML = '';
 
     let images = R.take(3, item.multipleImages.filter(image => image.name !== item.name));
@@ -36,6 +36,9 @@ export const renderSpeciesTiles = (collection) => {
     renderTemplate({ images }, template.content, parent);
     
     if(config.isPortraitMode) {
+
+        parent = document.querySelector('.tiles-container');
+
         const species = item.name;
         const name = itemVernacularName(item, config);
         template.innerHTML = speciesCard;

@@ -11,11 +11,11 @@ export const renderStrips = (screen, item, callback, config) => {
 
     const template = document.createElement('template');
 
-    template.innerHTML = `<div class="strips js-rptr-strips"></div>`;
+    template.innerHTML = `<div class="strips-container"><div class="strips js-rptr-strips"></div></div>`;
     
     const rptrStrips = template.content.querySelector('.js-rptr-strips');
 
-    const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
+    let parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
     parent.innerHTML = '';
 
     item.content = R.take(6, item.multipleNames.map(answer => {
@@ -44,6 +44,8 @@ export const renderStrips = (screen, item, callback, config) => {
     parent.appendChild(clone);
 
     if(config.isPortraitMode) {
+
+        parent = document.querySelector('.strips-container');
 
         const species = item.name;
         const name = itemVernacularName(item, config);

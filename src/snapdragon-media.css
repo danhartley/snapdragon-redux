@@ -39,13 +39,3 @@
         font-size: 1.1em;
     }
 }
-
-@media (min-width: 414px) { 
-    body {
-        font-size: 20px;
-    }
-    /* require dpi check here for iphone with x3 */
-    .strip div, .card {
-        font-size: 1.2em;
-    }
-}
