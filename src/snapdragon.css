@@ -105,27 +105,24 @@ progress::-moz-progress-bar {
   background-color: white;
 }
 
-.snapdragon {
+.scrollable {
   overflow-y: scroll;
-  height: 70vh;  
+  height: 70vh;
 }
 
-.snapdragon-container, .collections {
+.scrollable.card {
+  text-align: left;
+}
+
+.snapdragon-container {
   padding: .5em 0;
   position: relative;
   margin: 0 1em;
   height: 100%;
 }
 
-.snapdragon .card {
-  text-align: left;
-  margin: 0;
-  padding: .5em;
-}
-
-.snapdragon p {
+.card {
   margin: .5em;
-  font-size: .9em;
 }
 
 .grid {
@@ -302,16 +299,16 @@ progress::-moz-progress-bar {
 .card {
   display: flex;
   flex-direction: column;
-  padding: .2em;
+  padding: .25em;
   text-align: right;
-  margin: .25em 1em;
+  margin: .5em 0;
   background-color: inherit;
   border: 2px solid rgba(0,0,0,.125);
   border-radius: .25rem;
 }
 
 .card div {
-  margin: .3em;
+  margin: .25em;
 }
 
 .species.card {
@@ -346,29 +343,29 @@ progress::-moz-progress-bar {
   height: 100%;
   position: relative;
 }
-
+/* 
 .species-card-btn div {
   float: right;
   margin-right: .5em;
-}
+} */
 
 .family-name {
   text-transform: uppercase;
   font-size: 1.2em;
 }
-
+/* 
 .summary-container {
   position: relative;
   height: 100%;
   margin: 0 1em;
-}
+} */
 
 .summary {
   padding: 1em;
   border: 2px solid rgba(0,0,0,.125);
   border-radius: .25rem;
-  overflow-y: scroll;
-  height: 65vh;
+  /* overflow-y: scroll;
+  height: 65vh; */
 }
 
 .history div {
@@ -533,16 +530,16 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   height: 50%;
   margin: 0 1em;
 }
-
+/* 
 .card-container .card {
   margin: 0;
-}
+} */
 
 .action-update button, .response-update {
   position: absolute;
   bottom: 0;
   left: 0;
-  margin: 0 0 1em 0;
+  margin: 0 0 1.5em 0;
   width: 100%;
 }
 
@@ -622,7 +619,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
     display: none;
 }
 
-.left-body button, .right-body button, .species-card-btn button, .dropdown-menu.show {
+/* , .species-card-btn button */
+.left-body button, .right-body button, .dropdown-menu.show {
     width: 100%;
 }
 
@@ -643,11 +641,11 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .list-group-tabs div{
   flex: 1;
 }
-
+/* 
 .list-group-container {
   height: 60vh;
   overflow-y: scroll;
-}
+} */
 
 .list-group-item {
   background-color: rgb(50, 50, 50);
