@@ -14,19 +14,32 @@ export const renderNavigation = () => {
 
     renderTemplate({ }, template.content, parent);
 
+    setTimeout(() => {
+        const isHomePage = document.querySelector('.js-collections');
+        if(isHomePage) 
+            document.querySelector('.js-home').classList.add('active-icon'); 
+    }); 
+
+    let handleBodyClick = true;
+
+    document.body.addEventListener('click', () => {
+        if(handleBodyClick)
+            document.querySelector('.js-settings').classList.remove('active-icon');
+            else
+        handleBodyClick = true;
+    });
+
     const navIcons = document.querySelectorAll('.js-nav-icons .icon');
 
     navIcons.forEach(icon => {
 
-        // icon.id === 'home' ? icon.classList.add('active-icon') : icon.classList.remove('active-icon');
-
-        icon.addEventListener('click', event => {
+        icon.addEventListener('click', event => {                
+                handleBodyClick = false;
                 const target = event.target.parentElement;
                 const targetId = target.id === '' ? target.parentElement.id : target.id;
                 target.parentElement.classList.add('active-icon');
                 switch(targetId) {                    
                     case 'home':
-
                     subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
                     setTimeout(() => {
                         actions.boundToggleLesson({ lesson: 'inactive' });

@@ -7,6 +7,6 @@ export const closeModal = (modalId) => {
         modal.style.display = 'none';
         modal.setAttribute('aria-hidden', true)
         document.querySelector('.modal-backdrop.fade.show').remove();
-        document.querySelector('.js-menu').click();
+        document.querySelector('.js-settings').click();
     }
 };
