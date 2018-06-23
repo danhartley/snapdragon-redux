@@ -23,10 +23,15 @@ export const renderNavigation = () => {
     let handleBodyClick = true;
 
     document.body.addEventListener('click', () => {
-        if(handleBodyClick)
+        if(handleBodyClick) {
             document.querySelector('.js-settings').classList.remove('active-icon');
-            else
-        handleBodyClick = true;
+            const svg = document.querySelector('.js-settings svg');
+            if(svg) {
+                svg.classList.remove('active-icon');
+            }
+        } else {
+            handleBodyClick = true;
+        }
     });
 
     const navIcons = document.querySelectorAll('.js-nav-icons .icon');
@@ -37,7 +42,7 @@ export const renderNavigation = () => {
                 handleBodyClick = false;
                 const target = event.target.parentElement;
                 const targetId = target.id === '' ? target.parentElement.id : target.id;
-                target.parentElement.classList.add('active-icon');
+                target.classList.add('active-icon');
                 switch(targetId) {                    
                     case 'home':
                     subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
