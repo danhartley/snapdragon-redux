@@ -45,6 +45,10 @@
   #externalPageModal .modal-body {
     height: 550px;
   }
+
+  /* .list-group-container {
+    height: 70vh;
+  } */
 }
 
 @media (min-width: 1366px) and (orientation: landscape) {

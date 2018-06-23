@@ -4,33 +4,27 @@
         font-size: 16px;
     }
 
-    .snapdragon, .collections {
-        padding: 1em;
-    }
-
     .collections div {
         margin: .5em 0;
       }      
 
+    .card {        
+        margin: 0;
+        padding: .5em;
+    }
+
     .species-card {
         display: grid;
         grid-auto-flow: row;
-        grid-template-rows: 4fr 1fr
-    }
-
-    .action-update button {
+        grid-template-rows: 4fr 1fr;
         position: relative;
-        left: initial;
-        bottom: initial;
-        width: initial;
-        margin: 2em 0;
+        margin: 0 1em;
     }
 
-    .species-card-btn button {
-        width: initial;
-        font-size: 1em;
-        margin: 1em;
-        float: right;
+    .action-update button, .response-update {
+        margin: 0 0 2.5em 0;
+        left: initial;
+        right: 0;
     }
 
     .specimens-card-btn {
@@ -249,7 +243,8 @@
         display: grid;
     }
 
-    .left-body button, .right-body button, .species-card-btn button, .dropdown-menu.show {
+    /* .species-card-btn button, */
+    .left-body button, .right-body button, .dropdown-menu.show { 
         width: initial;
     }
 

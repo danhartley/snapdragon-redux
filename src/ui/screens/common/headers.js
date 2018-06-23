@@ -3,7 +3,7 @@ import { DOM } from 'ui/dom';
 
 export const renderHeaders = counter => {
     
-    const { config, collection, layout, layouts } = store.getState();
+    const { config, collection, layouts } = store.getState();
 
     const item = (collection && collection.items) ? collection.items[collection.itemIndex] : null;
     
@@ -13,6 +13,10 @@ export const renderHeaders = counter => {
     const title = config.isPortraitMode ? 'Snapdragon' : 'Snapdragon - species recognition and recall';
 
     DOM.collectionTxt.innerHTML = (counter.lesson === 'active' && collection) ? collection.name : title;
+
+    if(!layouts) return;
+
+    const layout = layouts[counter.index];
 
     if(!layout) return;
 
@@ -26,7 +30,7 @@ export const renderHeaders = counter => {
                 }
             } else {
                 if(counter.lesson === 'active') {
-                    const screen = layout.screens[1];
+                    const screen = layout.screens.length === 2 ?layout.screens[1] : layout.screens[0].right;
                     DOM.rightHeaderText.style.backgroundColor = 'rgb(12, 44, 84)';
                     DOM.rightHeaderText.innerHTML = screen.headers ? screen.headers.long : 'no long header given';
                 } else {

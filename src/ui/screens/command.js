@@ -9,9 +9,9 @@ export const runTask = (collection) => {
 
     const item = collection.items[collection.itemIndex];
 
-    const { layout, config, counter } = store.getState();
+    const { config, counter } = store.getState();
 
-    if(counter >= collection.moduleSize) return;
+    if(counter.index >= collection.moduleSize) return;
 
     renderSpecimenTiles(collection);
     const letters = [];
@@ -20,7 +20,5 @@ export const runTask = (collection) => {
         letters.push(cutter(answer.name, 5));
     }));
 
-    const screen = layout.screens[0].right;
-
-    renderLetters(config, screen, letters, item, config.callbackTime); 
+    renderLetters(letters, item, config.callbackTime); 
 };

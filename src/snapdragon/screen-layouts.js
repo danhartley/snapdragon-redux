@@ -62,8 +62,9 @@ const command = {
   left: specimen,
   right: {
     cutLength: 5,
+    domain: 'collection',
     template: 'js-letters-template',
-    headers: { long: 'Complete the latin name.', short: 'Complete the latin name.'},
+    headers: { long: 'Put the name back together.', short: 'Complete the puzzle.'},
     question: 'Name puzzle'
   }
 };

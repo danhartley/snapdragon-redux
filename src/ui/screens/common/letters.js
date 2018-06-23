@@ -6,7 +6,7 @@ import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
-export const renderLetters = (config, screen, letters, item, callbackTime) => {
+export const renderLetters = (letters, item, callbackTime) => {
 
     const template = document.querySelector('.js-letters-template');
 
