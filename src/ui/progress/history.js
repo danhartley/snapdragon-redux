@@ -1,19 +1,22 @@
-import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { renderTemplate } from 'ui/helpers/templating';
-import historyTemplate from 'ui/progress/history-template.html';
+import { renderSpeciesCollectionList } from 'ui/screens/common/species-list';
 
 export const renderHistory = (history) => {
             
-    const { collection, score } = store.getState();
+    const { collection } = store.getState();
 
-    const template = document.createElement('template');
+    if(!history) return null;
 
-    template.innerHTML = historyTemplate;
+    const lastRoundIndex = history.scores.length -1;
+    const wrongAnswers = history.scores.map(round => round.fails)[lastRoundIndex].map(answer => answer.question);
+    const uniqueSpecies = [ ...(new Set(wrongAnswers)) ];
 
-    if(!history) return;
-    
-    DOM.leftBody.innerHTML = '';
-    const clone = document.importNode(template.content, true);
-    renderTemplate({ score, history, collection }, template.content, DOM.leftBody, clone);
+    var speciesToRevise = collection.items.filter(function(item) {
+        return uniqueSpecies.indexOf(item.name) !== -1;
+    });
+
+    const revision = { ...collection, ...{ items : speciesToRevise } };
+    revision.header = 'Species requiring revision';
+
+    renderSpeciesCollectionList(revision);
 }    

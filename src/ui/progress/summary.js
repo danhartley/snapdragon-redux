@@ -21,14 +21,18 @@ export const renderSummary = (history) => {
 
     parent.innerHTML = '';
 
-    renderTemplate({ score, history, collection }, template.content, parent);
+    renderTemplate({ score, history, collection, config }, template.content, parent);
     
     const learnMoreBtn = document.querySelector('.js-learn-more-btn');
     const nextLevelTxt = document.querySelector('.js-next-level-txt');
+    const endOfCollectionTxt = document.querySelector('.js-end-collection-txt');
 
     const levelComplete = collection.currentRound === collection.rounds;
+    const levels = config.isPortraitMode ? 4 : 5;
+    const collectionComplete = config.lesson.level.id === levels;
 
-    levelComplete ? nextLevelTxt.style.display = 'inline-block' : nextLevelTxt.style.display = 'none';
+    (levelComplete && !collectionComplete) ? nextLevelTxt.style.display = 'inline-block' : nextLevelTxt.style.display = 'none';
+    collectionComplete ? endOfCollectionTxt.style.display = 'inline-block' : endOfCollectionTxt.style.display = 'none';
 
     const handleBtnClickEvent = () => {
         
