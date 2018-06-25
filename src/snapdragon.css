@@ -75,7 +75,7 @@ progress::-moz-progress-bar {
   border-top: none;
   border-left: none;
   border-right: none;
-  color: white;
+  color: inherit;
   cursor: pointer;
 }
 
@@ -385,6 +385,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   margin: .5em;
 }
 
+.species-collection {
+  color: lightblue;
+}
+
 .selected-language, .selected-level {
   text-transform: capitalize;
 }
@@ -511,6 +515,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   position: relative;
   height: 50%;
   margin: 0 1em;
+  padding: .5em;
 }
 
 .action-update button, .response-update {
