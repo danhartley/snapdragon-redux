@@ -149,13 +149,14 @@ progress::-moz-progress-bar {
   grid-template-rows: 1fr .3em 10fr 1fr;
 }
 
-.right-body {
+.grid-flow-rows {
   display: grid;
   grid-auto-flow: row;
 }
 
 .left-body, .right-body {
   background-color: rgb(50, 50, 50);
+  position: relative;
 }
 
 .header, .footer {
@@ -311,6 +312,10 @@ progress::-moz-progress-bar {
   margin: .25em;
 }
 
+.species-card {
+  height: 100%;
+}
+
 .species.card {
   margin: .5em;
 }
@@ -339,33 +344,15 @@ progress::-moz-progress-bar {
   padding: 1em;        
 }
 
-.left-body .species-card {
-  height: 100%;
-  position: relative;
-}
-/* 
-.species-card-btn div {
-  float: right;
-  margin-right: .5em;
-} */
-
 .family-name {
   text-transform: uppercase;
   font-size: 1.2em;
 }
-/* 
-.summary-container {
-  position: relative;
-  height: 100%;
-  margin: 0 1em;
-} */
 
 .summary {
   padding: 1em;
   border: 2px solid rgba(0,0,0,.125);
   border-radius: .25rem;
-  /* overflow-y: scroll;
-  height: 65vh; */
 }
 
 .history div {
@@ -442,23 +429,18 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   padding-bottom: .5em
 }
 
-.frame {
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
- }
- 
- .frame .image-tile {
-   display: grid;
-   grid-template-rows: 1fr 1fr 1fr 1fr;
- }
+.single-tile {
+  display: flex;
+  flex-direction: column;
+  margin: 2em 1em;
+}                       
 
- .term-property {
+ .image-border {
+   text-align: center;
+   margin: 0 0 2em 0;
+   border: .05em solid;
+   border-radius: .2em;
    padding: 1em;
- }
- 
- .image-border img {
-   background-color: #ccc;
-   width: 100%;
  }
 
  /* letter blocks */
@@ -530,10 +512,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   height: 50%;
   margin: 0 1em;
 }
-/* 
-.card-container .card {
-  margin: 0;
-} */
 
 .action-update button, .response-update {
   position: absolute;
@@ -570,22 +548,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   margin: 0 0 0 .1em;
 }
 
-.text-question {
-  display: grid;
-  grid-template-columns: 2.5em 1fr;  
-}
-
-.text-question .one {
-  grid-column: 1;
-  grid-row: 1/3;
-}
-.text-question .two {
-  grid-column: 2;
-}
-.text-question .three {
-  grid-column: 2;
-}
-
 .text-question .icon {
   font-size: 1.5em;
   margin: 0 .25em 0 0 ;
@@ -619,7 +581,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
     display: none;
 }
 
-/* , .species-card-btn button */
 .left-body button, .right-body button, .dropdown-menu.show {
     width: 100%;
 }
@@ -632,6 +593,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   display: inline;
 }
 
+.landscape {
+  display: none;
+}
+
 .list-group-tabs {
   display: flex;
   align-items: center;
@@ -641,11 +606,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .list-group-tabs div{
   flex: 1;
 }
-/* 
-.list-group-container {
-  height: 60vh;
-  overflow-y: scroll;
-} */
 
 .list-group-item {
   background-color: rgb(50, 50, 50);

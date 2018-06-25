@@ -41,16 +41,6 @@ export const renderCollections = (counter) => {
 
     renderTemplate({ species, skills, config, collection, languageName }, template.content, parent);
 
-    const skillsCollectionsBtns = document.querySelectorAll('.js-skills-collection .dropdown-menu button');
-
-    skillsCollectionsBtns.forEach(btn => btn.addEventListener('click', event => {
-        const collectionId = parseInt(event.target.id);
-        const { lessonName, levelName } = collectionPlans.filter(collectionPlan => collectionPlan.collectionId === collectionId )[0];
-        config = { ...config, ...{ collection: { id: collectionId }}, ...{ lesson: { name: lessonName, level: { name: levelName }}} };        
-    }));
-
-    // species collections
-
     const selectedCollection = collections.find(collection => collection.selected);
     let collectionId = selectedCollection ? selectedCollection.id : 0;
 
@@ -93,10 +83,20 @@ export const renderCollections = (counter) => {
             config.language = lang;
     });
 
+    // skills
+
+    selectHandler('.dropdown.js-skills-collections .dropdown-item', (id) => {
+        collectionId = parseInt(id);
+        const { lessonName, levelName } = collectionPlans.filter(collectionPlan => collectionPlan.collectionId === collectionId )[0];
+        config = { ...config, ...{ collection: { id: collectionId }}, ...{ lesson: { name: lessonName, level: { name: levelName }}} };
+        learningActionBtn.disabled = false;
+        isNewCollection = true;
+    });
+
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     const goToSpeciesCollectionBtn = document.querySelector('.js-species-collection');
 
-    if(collection.id === '') { // this looks wrong '' or 0?
+    if(collection.id === '') {
         learningActionBtn.disabled = true;
         goToSpeciesCollectionBtn.disabled = true;        
     } else {

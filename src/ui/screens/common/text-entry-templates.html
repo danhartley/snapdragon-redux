@@ -1,73 +1,79 @@
-<template class="js-genus-entry-template">            
-    <div class="letterbox">
-        <div></div>
+<template class="js-genus-entry-template">                
+    <div class="species-card">            
         <div class="letterbox-entry">
-            <div class="row0">Enter the Genus name:</div>
-            <div class="row1">
-                <div class="elem1"><input class="short js-txt-input" type="text" placeholder="Genus"></div>
-                <div class="elem2"><span class="js-txt-entry js-species"></span></div>
-            </div>
-            
-            <div class="row3">
-                <div class="elem1 action-update"><button class="btn btn-light">Check</button></div>
-            </div>
-            <div class="row2 text-question js-txt-question"></div>
+            <div>Enter the Genus name:</div>
+            <div>
+                <div><input class="short js-txt-input" type="text" placeholder="Genus"></div>
+                <div><span class="js-txt-entry js-species"></span></div>
+            </div>            
+            <div class="text-question js-txt-question"></div>
         </div>
-        <div></div>
-    </div>                    
+        <div>
+            <div><button class="btn btn-light">Check your answer</button></div>
+        </div>
+    </div>  
 </template>
-
+    
 <template class="js-species-entry-template">
-    <div class="letterbox">
-        <div></div>
+    <div class="species-card">   
         <div class="letterbox-entry">
-                <div class="row0">Enter the species name:</div>
-            <div class="row1">
-                <div class="elem2"><span class="js-txt-entry js-genus"></span></div>
-                <div class="elem1"><input class="short js-txt-input" type="text" placeholder="species"></div>
-            </div>
-            
-            <div class="row3 action-update">
-                <button class="btn btn-light">Check</button>
-            </div>
-            <div class="row2 text-question js-txt-question"></div>
+                <div>Enter the species name:</div>
+            <div>
+                <div><span class="js-txt-entry js-genus"></span></div>
+                <div><input class="short js-txt-input" type="text" placeholder="species"></div>
+            </div>            
+            <div class="text-question js-txt-question"></div>                    
         </div>
-        <div></div>
+        <div class="action-update">
+            <button class="btn btn-light">Check your answer</button>
+        </div>
+    </div>
+</template>
+    
+<template class="js-species-genus-entry-template">
+    <div class="species-card">
+        <div class="letterbox-entry">
+            <div>Enter the Genus and species names:</div>
+            <div>
+                <div><input class="long js-txt-input" type="text" placeholder="Genus species"></div>
+            </div>                
+            <div class="text-question js-txt-question"></div>                
+        </div>
+        <div class="action-update">
+            <button class="btn btn-light">Check your answer</button>
+        </div>
+    </div>                 
+</template>
+    
+<template class="js-vernacular-entry-template">
+    <div class="species-card">
+        <div class="letterbox-entry">
+            <div>Enter the common name:</div>
+            <div>
+                <div><input class="long js-txt-input" type="text" placeholder="Common name"></div>
+            </div>
+            <div class="text-question js-txt-question"></div>
+        </div>       
+        <div class="action-update">
+            <button class="btn btn-light">Check your answer</button>
+        </div>     
     </div>
 </template>
 
-<template class="js-species-genus-entry-template">
-    <div class="letterbox">
-        <div></div>
-        <div class="letterbox-entry">
-            <div class="row0">Enter the Genus and species names:</div>
-            <div class="row1">
-                <div><input class="long js-txt-input" type="text" placeholder="Genus species"></div>
-            </div>
-            
-            <div class="row3 action-update">
-                <button class="btn btn-light">Check</button>
-            </div>
-            <div class="row2 text-question js-txt-question"></div>
-        </div>
-        <div></div>
-    </div>                 
-</template>
 
-<template class="js-vernacular-entry-template">
-    <div class="letterbox">
-        <div></div>
+<template class="js-text-entry-template">
+    <div class="species-card">
         <div class="letterbox-entry">
-            <div class="row0">Enter the common name:</div>
-            <div class="row1">
-                <div><input class="long js-txt-input" type="text" placeholder="Common name"></div>
-            </div>
-            
-            <div class="row3 action-update">
-                <button class="btn btn-light">Check</button>
-            </div>
-            <div class="row2 text-question js-txt-question"></div>
+            <div>Enter the name of the leaf structure:</div>
+            <div>
+                <div><input class="js-txt-input" type="text" placeholder="Name"></div>
+            </div>                
+            <div class="js-txt-question"></div>                    
         </div>
-        <div></div>
-    </div>                 
+        <div>
+        <div class="action-update">
+            <button class="btn btn-light">Check your answer</button>
+        </div>
+        </div>
+    </div>
 </template>

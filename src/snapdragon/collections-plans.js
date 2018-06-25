@@ -30,12 +30,12 @@ export const collectionPlans = [
         levelName: 'Level 1'
     },
     {
-        collectionId: 11,
+        collectionId: 101,
         lessonName: 'Lesson 2',
         levelName: 'Level 1'
     },
     {
-        collectionId: 12,
+        collectionId: 102,
         lessonName: 'Lesson 2',
         levelName: 'Level 1'
     }

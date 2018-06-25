@@ -1,21 +1,19 @@
 import { store } from 'redux/store';
-import { renderTile } from 'ui/screens/common/tile';
 import { DOM } from 'ui/dom';
+import { renderTemplate } from 'ui/helpers/templating';
+import leafTileTemplate from 'ui/screens/left/leaf-tile-template.html';
 
 export const renderLeafTile = (collection) => {
 
+    const template = document.createElement('template');
+
+    template.innerHTML = leafTileTemplate;
+
     const item = collection.items[collection.itemIndex];
 
-    if(!item) return;
+    const { layout } = store.getState();
 
-    const { layout, config } = store.getState();
+    DOM.leftBody.innerHTML = '';
 
-    // DOM.collectionTxt.innerHTML = collection.name;
-    
-    let screen = layout.screens.filter(el => el.name === 'leaf-image')[0];
-
-    if(!screen) return;
-
-    renderTile(screen, item, config.callbackTime);
-
+    renderTemplate(item, template.content, DOM.leftBody);
 };
