@@ -103,19 +103,22 @@ export const renderCollections = (counter) => {
         learningActionBtn.innerHTML = 'Continue lesson';        
     }
 
-    learningActionBtn.addEventListener('click', () => {
-        
-        isNewCollection ? actions.boundChangeCollection(config) : actions.boundToggleLesson({ lesson: 'active' });
-
+    const updateNavIcons = () => {
         document.querySelector('.js-home').classList.remove('active-icon');
         const svg = document.querySelector('.js-home svg');
         if(svg) {
             svg.classList.remove('active-icon');
         }
+    };
+
+    learningActionBtn.addEventListener('click', () => {        
+        isNewCollection ? actions.boundChangeCollection(config) : actions.boundToggleLesson({ lesson: 'active' });
+        updateNavIcons();        
     });
 
 
     speciesCollectionLink.addEventListener('click', () => {
         actions.boundSelectCollection(collectionId);
+        updateNavIcons();
     });
 };
