@@ -253,14 +253,13 @@ export const uk1 = [
           "eol_preferred": true
         },
         {
-          "vernacularName": "belladonna",
+          "vernacularName": "deadly nightshade",
           "language": "en",
           "eol_preferred": true
         },
         {
-          "vernacularName": "deadly nightshade",
-          "language": "en",
-          "eol_preferred": true
+          "vernacularName": "belladonna",
+          "language": "en"
         },
         {
           "vernacularName": "Belladona",

@@ -53,7 +53,7 @@ export const renderCollections = (counter) => {
         document.querySelector('.js-selected-collection span').innerHTML = collectionName;        
         config = { ...config, ...{ collection: { id: collectionId }} };
         learningActionBtn.disabled = false;
-        goToSpeciesCollectionBtn.disabled = false;
+        speciesCollectionLink.style.display = 'inline-block';
         isNewCollection = true;
         if(!config.isPortraitMode)
             actions.boundSelectCollection(collectionId);
@@ -94,13 +94,13 @@ export const renderCollections = (counter) => {
     });
 
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
-    const goToSpeciesCollectionBtn = document.querySelector('.js-species-collection');
+    const speciesCollectionLink = document.querySelector('.js-species-collection');
 
     if(collection.id === '') {
         learningActionBtn.disabled = true;
-        goToSpeciesCollectionBtn.disabled = true;        
+        speciesCollectionLink.style.display = 'none';        
     } else {
-        learningActionBtn.innerHTML = 'Continue lesson';
+        learningActionBtn.innerHTML = 'Continue lesson';        
     }
 
     learningActionBtn.addEventListener('click', () => {
@@ -108,10 +108,14 @@ export const renderCollections = (counter) => {
         isNewCollection ? actions.boundChangeCollection(config) : actions.boundToggleLesson({ lesson: 'active' });
 
         document.querySelector('.js-home').classList.remove('active-icon');
+        const svg = document.querySelector('.js-home svg');
+        if(svg) {
+            svg.classList.remove('active-icon');
+        }
     });
 
 
-    goToSpeciesCollectionBtn.addEventListener('click', () => {
+    speciesCollectionLink.addEventListener('click', () => {
         actions.boundSelectCollection(collectionId);
     });
 };

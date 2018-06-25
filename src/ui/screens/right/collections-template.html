@@ -1,7 +1,7 @@
 <div class="snapdragon-container collections">        
     <div class="flex-provider">
         <div class="dropdown js-collections">
-            <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Collections
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-collection="{{ species }}">
@@ -32,15 +32,15 @@
         </div>                        
     </div>
 
-    <div class="selected-collection js-selected-collection">Current collection: <span>{{ collection.name }}</span></div>
-    <div class="selected-level js-selected-level">Current level: <span>{{ config.lesson.level.name }}</span></div>
-    <div class="selected-language js-selected-language">Current language: <span>{{ languageName }}</span></div>
+    <div class="selected-collection js-selected-collection">Collection: <span>{{ collection.name }}</span></div>
+    <div class="selected-level js-selected-level">Level: <span>{{ config.lesson.level.name }}</span></div>
+    <div class="selected-language js-selected-language">Language: <span>{{ languageName }}</span></div>
     
     <div class="action-update"><button class="btn btn-light js-lesson-btn-action">Begin lesson</button></div>
     
     <div class="flex-provider landscape">
         <div class="dropdown js-skills-collections">
-            <button class="btn btn-light dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Advanced Skills
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-collection="{{ skills }}">
@@ -49,6 +49,6 @@
         </div>                        
     </div>
 
-    <div><button class="btn btn-light species-collection portrait js-species-collection">View species list</button></div>
+    <div><div class="underline-link species-collection portrait js-species-collection">View species list</div></div>
 
 </div>            
