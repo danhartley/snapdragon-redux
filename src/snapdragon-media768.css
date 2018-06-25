@@ -8,6 +8,11 @@
         padding: .5em;
     }
 
+    .scrollable {
+        overflow-y: scroll;
+        height: 70vh;
+      }
+
     .collections div {
         margin: .5em 0;
       }      

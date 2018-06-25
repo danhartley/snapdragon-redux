@@ -107,7 +107,7 @@ progress::-moz-progress-bar {
 
 .scrollable {
   overflow-y: scroll;
-  height: 70vh;
+  height: 60vh;
 }
 
 .scrollable.card {
