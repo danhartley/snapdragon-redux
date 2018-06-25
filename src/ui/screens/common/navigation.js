@@ -16,8 +16,13 @@ export const renderNavigation = () => {
 
     setTimeout(() => {
         const isHomePage = document.querySelector('.js-collections');
-        if(isHomePage) 
+        if(isHomePage) {
             document.querySelector('.js-home').classList.add('active-icon'); 
+            const svg = document.querySelector('.js-home svg');
+            if(svg) {
+                svg.classList.remove('active-icon');
+            }
+        }
     }); 
 
     let handleBodyClick = true;
