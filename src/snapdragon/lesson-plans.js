@@ -216,8 +216,22 @@ const portraitLesson1 = {
     ]
 };
 
+const portraitLesson2 = {
+    id: 4,
+    name: 'Lesson 4',
+    portrait: true,
+    levels: [
+        {   id: 1,
+            name: 'Level 1',
+            description: 'Name the leaf structure',
+            layouts: [ layout9 ]
+        }
+    ]
+};
+
 export const lessonPlans = [
     landscapeLesson1,
     landscapeLesson2, 
-    portraitLesson1
+    portraitLesson1,
+    portraitLesson2
 ]

@@ -11,25 +11,26 @@ export const renderInput = (config, screen, question, callbackTime, item, render
         const btn = event.target;
         const response = { ...question, answer };
         
-        const { text, colour, correct } = renderAnswerHeader(response);
+        const { colour, correct } = renderAnswerHeader(response);
 
         const questionText = document.querySelector('.js-txt-question');
 
+        const correctResponse = config.isPortraitMode ? 'Correct!' : `That's the correct answer!`;
+        const incorrectResponse = config.isPortraitMode ? 'Incorrect!' : `That's the wrong answer!`;
+
         questionText.innerHTML = correct 
-            ? `<div class="one">
-                    <span class="icon"><i class="fas fa-check-circle"></i></span>                        
-                </div>
-                <div class="two">
-                    <span>You got it!</span>
-                </div>
-                <div class="three">
-                    <span>It is</span> <span class="capitalise">${response.question}</span>
-                </div>`
-            : `<div class="one">
+            ? `<div>
+                <span class="icon"><i class="fas fa-check-circle"></i></span>                        
+                <span>${ correctResponse }</span>
+               </div>
+               <div>
+                <span>It is</span> <span class="capitalise">${response.question}</span>
+               </div>`
+            : `<div>
                 <span class="icon"><i class="fas fa-times-circle"></i></span>
+                <span>${ incorrectResponse }</span>
                 </div> 
-                <div class="two"><span>No, that's not it!</span></div>
-                <div class="three">It's <span class="capitalise">${response.question}</span></div>`;
+               <div>It's <span class="capitalise">${response.question}</span></div>`;
 
         btn.style.background = colour;
         btn.style.borderColor = colour;
@@ -92,9 +93,9 @@ const renderLandscape = (item) => {
         bgTop.style.backgroundImage = `url(${item.images[0]})`;
         bgTop.style.opacity = '.1';
         
-        const bgBottom = document.querySelector('.letterbox > div:nth-child(3)');
-        bgBottom.style.backgroundImage = `url(${item.images[0]})`;
-        bgBottom.style.opacity = '.1';
+        // const bgBottom = document.querySelector('.letterbox > div:nth-child(3)');
+        // bgBottom.style.backgroundImage = `url(${item.images[0]})`;
+        // bgBottom.style.opacity = '.1';
     }
 };
 

@@ -69,7 +69,7 @@
                 <div class="header js-right-header">
                     <div class="header-text js-right-txt-header"></div>                   
                 </div>
-                <div class="right-body js-right-body"></div>
+                <div class="right-body grid-flow-rows js-right-body"></div>
                 <div class="footer js-right-footer"></div>
             </div>
         </div>
@@ -83,32 +83,6 @@
             </div>
         </template>
         
-        <template class="js-leaf-image-template">
-            <div class="single-tile js-tile">
-                <div class="frame">
-                    <div></div>
-                    <div class="image-tile">
-                        <div></div>
-                        <div class="image-border"><img src="{{ image }}" alt=""></div>
-                        <div class="term-property">{{ description }}</div>
-                        <div class="term-property"><a class="underline-link" target="_blank" href="{{ attribution }}">{{ author }}</a></div>                                                        
-                    </div>
-                    <div></div>
-                </div>
-            </div>
-        </template>
-        
-        <template class="js-text-entry-template">
-            <div class="letterbox">
-                <div></div>
-                <div>
-                    <input class="long js-txt-input" type="text" placeholder="name">
-                    <button class="btn btn-light">Check</button>
-                </div>
-                <div></div>
-            </div>
-        </template>
-
         <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">

@@ -1,15 +1,13 @@
-import { DOM } from 'ui/dom';
-import { actions } from 'redux/actions/action-creators';
-import { renderTemplate } from 'ui/helpers/templating';
-import { renderAnswerHeader } from 'ui/helpers/response-formatting';
+// import { DOM } from 'ui/dom';
+// import { renderTemplate } from 'ui/helpers/templating';
 
-export const renderTile = (screen, item, callbackTime) => {
+// export const renderTile = (screen, item) => {
 
-    const template = document.querySelector(`.${screen.template}`);
+//     const template = document.querySelector(`.${screen.template}`);
 
-    const clone = document.importNode(template.content, true);
+//     const clone = document.importNode(template.content, true);
 
-    DOM.leftBody.innerHTML = '';
+//     DOM.leftBody.innerHTML = '';
 
-    renderTemplate(item, template.content, DOM.leftBody);
-}
+//     renderTemplate(item, template.content, DOM.leftBody);
+// }
