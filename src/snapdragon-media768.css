@@ -70,13 +70,13 @@
     }
 
     .right {  
+        color: var(--snap-success);
         background-color: rgb(255, 255, 255);
-        color: rgb(44, 141, 86);
     }
     
     .wrong {
+        color: var(--snap-alert);
         background-color: rgb(255, 255, 255);
-        color: rgb(141, 0, 5);
     }
 
     .strips {

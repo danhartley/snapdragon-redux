@@ -60,14 +60,16 @@ const stripHandler = (items, item, config, callback) => {
             target.style.color = colour;
             target.style.borderColor = colour;
 
+            const green = 'rgb(28, 179, 5)';
+
             items.forEach(strip => {   
                 const matchesScientificName = strip.innerText === item.name;
                 const matchesVernacularName = vernacular 
                                                 ? strip.innerText.toLowerCase() ===  vernacular.toLowerCase() 
                                                 : false;
                 if(matchesScientificName || matchesVernacularName) {
-                    strip.style.color = 'rgb(44, 141, 86)';
-                    strip.style.borderColor = 'rgb(44, 141, 86)';    
+                    strip.style.color = green;
+                    strip.style.borderColor = green;
                 }
             });            
 
