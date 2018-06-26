@@ -67,7 +67,7 @@ export const renderInput = (config, screen, question, callbackTime, item, render
     parent.innerHTML = '';
     parent.appendChild(clone);
 
-    config.isPortraitMode ? renderPortrait(item) : renderLandscape(item);
+    if(config.isPortraitMode) renderPortrait(item);
 
     document.querySelector('.js-txt-input').focus();
 };
@@ -85,17 +85,5 @@ const renderPortrait = (item) => {
     document.querySelector('.js-species-card-images').innerHTML = backgroundImages;
 
     modalBackgroundImagesHandler(document.querySelectorAll('.js-species-card-images div'), item);
-};
-
-const renderLandscape = (item) => {
-    if(item.images) {
-        const bgTop = document.querySelector('.letterbox > div:nth-child(1)');
-        bgTop.style.backgroundImage = `url(${item.images[0]})`;
-        bgTop.style.opacity = '.1';
-        
-        // const bgBottom = document.querySelector('.letterbox > div:nth-child(3)');
-        // bgBottom.style.backgroundImage = `url(${item.images[0]})`;
-        // bgBottom.style.opacity = '.1';
-    }
 };
 

@@ -20,8 +20,6 @@ export const DOM = {
     correctTxt : document.getElementsByClassName('js-txt-correct')[0],
     stateChangeAlertTxt: document.getElementsByClassName('js-state-change-alert')[0],
 
-    speciesCardNameTxt: document.getElementsByClassName('js-txt-species-names')[0],
-    speciesCardSpeciesTxt: document.getElementsByClassName('js-txt-species')[0],
     modalImageTitle: document.getElementsByClassName('js-modal-image-title')[0],
     modalTextTitle: document.getElementsByClassName('js-modal-text-title')[0],
     modalText: document.getElementsByClassName('js-modal-text')[0],

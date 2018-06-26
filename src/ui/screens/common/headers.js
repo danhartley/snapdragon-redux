@@ -1,4 +1,4 @@
-    import { store } from 'redux/store';
+import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 
 export const renderHeaders = counter => {
@@ -50,6 +50,10 @@ export const renderHeaders = counter => {
         } else {
             DOM.rightHeaderText.innerHTML = 'Lesson progress';
         }
+    }
+
+    if(counter.index === 0 && counter.lesson === 'inactive') {
+        DOM.rightHeaderText.innerHTML = '';
     }
   
 };

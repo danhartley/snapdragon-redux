@@ -46,7 +46,7 @@ const portrait7 = {
 const portrait8 = {
     name: 'test',
     score: 1,
-    screens: [{ ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Enter the common name', short: 'Enter the common name'}}]    
+    screens: [{ ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Common name recall', short: 'Enter the common name'}}]    
 };
 
 const layout1 = {
