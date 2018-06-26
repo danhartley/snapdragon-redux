@@ -390,13 +390,13 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   border: 0;
 }
 
-.selected-collection, .selected-language, .selected-level {  
+.selected-collection, .selected-language, .selected-level, .species-collection {  
   margin: .5em;
+  font-size: .9em;
 }
 
 .species-collection {
-  /* color: lightblue; */
-  color: rgb(190, 214, 252)
+  color: lightblue;
 }
 
 .selected-language, .selected-level {
@@ -407,10 +407,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .clear-lesson button {
   float: left;
 }
-/* 
-.collections div {
-  margin: .5em 0;
-} */
 
 .collection span {
   padding: 0 .5em;
