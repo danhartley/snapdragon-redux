@@ -72,7 +72,6 @@ export const renderAnswerHeader = (response, isPortraitMode = true) => {
 
     const correct = renderCorrect(response);
 
-    // const right = 'rgb(28, 179, 5)';
     const right = 'rgb(41, 108, 44)';
     const wrong = 'rgb(205, 10, 24)';
 
@@ -85,7 +84,6 @@ export const renderTermAnswerHeader = (response, header, target) => {
     
     const correct = response.question.toLowerCase() === response.answer.toLowerCase();
 
-    // const right = 'rgb(28, 179, 5)';
     const right = 'rgb(41, 108, 44)';
     const wrong = 'rgb(205, 10, 24)';
 

@@ -51,7 +51,6 @@ progress::-moz-progress-bar {
 
 :root {
   --snap-light-text-colour: rgb(255, 255, 255);
-  /* --snap-primary: rgb(40, 53, 114); */
   --snap-primary: rgb(2, 43, 84);
   --snap-secondary: rgb(174, 78, 136);
   --snap-tertiary: rgb(52, 105, 23);
@@ -575,6 +574,11 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   padding: 0 1.25em;
   display: none;
 }
+
+.species-question {
+  padding: 0 1.25em;
+}
+
 .species-answer div {        
   text-align: center;
   border-radius: .1em;
