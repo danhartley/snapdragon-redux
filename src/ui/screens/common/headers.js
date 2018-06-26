@@ -7,8 +7,10 @@ export const renderHeaders = counter => {
 
     const item = (collection && collection.items) ? collection.items[collection.itemIndex] : null;
     
-    DOM.rightHeader.style.backgroundColor = 'rgb(12, 44, 84)';
-    DOM.rightHeaderText.style.backgroundColor = 'rgb(12, 44, 84)';
+    const primary = 'rgb(40, 53, 114)';
+
+    DOM.rightHeader.style.backgroundColor = primary;
+    DOM.rightHeaderText.style.backgroundColor = primary;
 
     const title = config.isPortraitMode ? 'Snapdragon' : 'Snapdragon - species recognition and recall';
 
@@ -31,7 +33,7 @@ export const renderHeaders = counter => {
             } else {
                 if(counter.lesson === 'active') {
                     const screen = layout.screens.length === 2 ?layout.screens[1] : layout.screens[0].right;
-                    DOM.rightHeaderText.style.backgroundColor = 'rgb(12, 44, 84)';
+                    DOM.rightHeaderText.style.backgroundColor = primary;
                     DOM.rightHeaderText.innerHTML = screen.headers ? screen.headers.long : 'no long header given';
                 } else {
                     DOM.rightHeaderText.innerHTML = '';

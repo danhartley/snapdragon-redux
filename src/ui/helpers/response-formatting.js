@@ -1,7 +1,3 @@
-import { utils } from 'utils/utils';
-import { DOM } from 'ui/dom';
-import { actions } from 'redux/actions/action-creators';
-
 export const renderCapital = str => {
     if(!str) return str;
     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
@@ -76,8 +72,8 @@ export const renderAnswerHeader = (response, isPortraitMode = true) => {
 
     const correct = renderCorrect(response);
 
-    const right = 'rgb(44, 141, 86)';
-    const wrong = 'rgb(141, 0, 5)';
+    const right = 'rgb(28, 179, 5)';
+    const wrong = 'rgb(205, 10, 24)';
 
     const colour = correct ? right : wrong;
 
@@ -88,8 +84,8 @@ export const renderTermAnswerHeader = (response, header, target) => {
     
     const correct = response.question.toLowerCase() === response.answer.toLowerCase();
 
-    const right = 'rgb(44, 141, 86)';
-    const wrong = 'rgb(141, 0, 5)';
+    const right = 'rgb(28, 179, 5)';
+    const wrong = 'rgb(205, 10, 24)';
 
     const colour = correct ? right : wrong;
 

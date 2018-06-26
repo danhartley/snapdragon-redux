@@ -50,22 +50,38 @@ progress::-moz-progress-bar {
 /* variables */
 
 :root {
-  --snap-alert-colour: rgb(141, 0, 5);
   --snap-light-text-colour: rgb(255, 255, 255);
+  --snap-primary: rgb(40, 53, 114);
+  --snap-secondary: rgb(174, 78, 136);
+  --snap-tertiary: rgb(52, 105, 23);
+  --snap-alert: rgb(183, 12, 21);
+  --snap-success: rgb(28, 179, 5);
+  --snap-light-grey: rgb(75,75,75);
+  --snap-dark-grey: rgb(75,75,75);
 }
 
-.sd-colour-alert {
-  color: var(--snap-alert-colour);
+.btn-secondary {
+  background-color: var(--snap-secondary);
+  border-color: var(--snap-secondary);
 }
 
-.sd-bg-colour-alert {
-  background-color: var(--snap-alert-colour);
-  border-color: var(--snap-alert-colour);
+.js-collections a.dropdown-item.active, .js-collections a.dropdown-item:active {
+  background-color: var(--snap-secondary);
 }
 
-.sd-colour-light {
-  color: rgb(255,255,255);
+.js-levels a.dropdown-item.active, .js-levels a.dropdown-item:active {
+  background-color: var(--snap-tertiary);
 }
+
+.js-languages a.dropdown-item.active, .js-languages a.dropdown-item:active {
+  background-color: var(--snap-tertiary);
+}
+
+.btn-tertiary {
+  background-color: var(--snap-tertiary);
+  border-color: var(--snap-tertiary);
+}
+
 
 /* generic */
 
@@ -196,14 +212,8 @@ progress::-moz-progress-bar {
   margin: 0 1em 0 0;
 }
 
-.header {
-  grid-area: header;
-  background-color: rgb(12, 44, 84);
-}
-
-.footer {
-  grid-area: footer;
-  background-color: rgb(12, 44, 84);
+.header, .footer {
+  background-color: var(--snap-primary);
 }
 
 .txt-specimen-species {
@@ -211,7 +221,6 @@ progress::-moz-progress-bar {
 }
 
 .answer {
-  grid-area: five;
   padding: 1em;
   text-transform: capitalize;
   cursor: pointer;
@@ -275,7 +284,6 @@ progress::-moz-progress-bar {
 }
 
 .vernacular-name {
-  grid-area: five;
   padding: .5em 0 0 .5em;
   font-size: 0.8em;
 }
@@ -299,7 +307,7 @@ progress::-moz-progress-bar {
   padding: .25em;
   text-align: right;
   background-color: inherit;
-  border: 2px solid rgba(0,0,0,.125);
+  border: 2px solid rgba(75,75,75,.4);
   border-radius: .25rem;
 }
 
@@ -381,7 +389,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .species-collection {
-  color: lightblue;
+  /* color: lightblue; */
+  color: rgb(190, 214, 252)
 }
 
 .selected-language, .selected-level {
@@ -466,11 +475,11 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .block.green {
-  color: rgb(44, 141, 86);
+  color: var(--snap-success);
 }
 
 .block.red {
-  color: rgb(141, 0, 5);
+  color: var(--snap-alert);
 }
 
 .block.white {
