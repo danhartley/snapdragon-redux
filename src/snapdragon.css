@@ -121,10 +121,6 @@ progress::-moz-progress-bar {
   height: 100%;
 }
 
-.card {
-  margin: .5em;
-}
-
 .grid {
   display: grid;
   grid-auto-flow: column;
@@ -266,7 +262,7 @@ progress::-moz-progress-bar {
   grid-auto-flow: row;
   grid-template-rows: repeat(6,1fr);
   align-items: center;
-  padding: 0 1em 0 1em;
+  padding: 0 1.5em;
   background-color: rgb(85, 85, 85);
   height: 60%;
   cursor: pointer;
@@ -302,10 +298,13 @@ progress::-moz-progress-bar {
   flex-direction: column;
   padding: .25em;
   text-align: right;
-  margin: .5em 0;
   background-color: inherit;
   border: 2px solid rgba(0,0,0,.125);
   border-radius: .25rem;
+}
+
+.align-left {
+  text-align: left;
 }
 
 .card div {
@@ -316,11 +315,7 @@ progress::-moz-progress-bar {
   height: 100%;
 }
 
-.species.card {
-  margin: .5em;
-}
-
-.species-card-species {
+.species-card-species, .species-card-name {
   font-size: 1.2em;
 }
 
@@ -399,7 +394,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .collections div {
-  margin: 1em 0;
+  margin: .5em 0;
 }
 
 .collection span {
@@ -515,7 +510,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   position: relative;
   height: 50%;
   margin: 0 1em;
-  padding: .5em;
+}
+
+.card-container-padding {
+  padding: .5em 0;
 }
 
 .action-update button, .response-update {
@@ -561,12 +559,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   font-size: 1.5em;
 }
 
-.species-question {
-  font-size: .9em;
-}
-
 .species-answer {
-  padding: 0 1em;
+  padding: 0 1.25em;
   display: none;
 }
 .species-answer div {        
@@ -611,7 +605,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   padding: 0 0 0 1em;
 }
 
-.list-group-tabs div{
+.75 div{
   flex: 1;
 }
 

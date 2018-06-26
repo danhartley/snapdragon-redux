@@ -96,11 +96,12 @@ export const renderCollections = (counter) => {
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     const speciesCollectionLink = document.querySelector('.js-species-collection');
 
-    if(collection.id === '') {
+    if(collectionId === 0) {
         learningActionBtn.disabled = true;
-        speciesCollectionLink.style.display = 'none';        
+        speciesCollectionLink.style.display = 'none';
     } else {
-        learningActionBtn.innerHTML = 'Continue lesson';        
+        learningActionBtn.innerHTML = 'Continue lesson';
+        speciesCollectionLink.style.display = 'inline-block';
     }
 
     const updateNavIcons = () => {

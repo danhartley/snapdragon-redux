@@ -8,10 +8,19 @@
                 <div>
                     <img id="{{ item.name }}" src="{{ item.image }}" alt="{{ item.name }}" data-toggle="modal" data-target="#imageModal">
                 </div>
-                <div class="js-list-item-link">
+                <div class="js-list-item-link" style="flex:3">
                     <span>{{ item.name }}</span>
                     <br/>
                     <span class="capitalise">{{ item.vernacularName }}</span>
+                </div>
+                <div style="flex:1" class="landscape">
+                    <span>eol</span>
+                </div>
+                <div style="flex:1" class="landscape">
+                    <span>iNat</span>
+                </div>
+                <div style="flex:1" class="landscape">
+                    <span>wiki</span>
                 </div>
             </div>
         </ul>    

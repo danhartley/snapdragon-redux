@@ -32,14 +32,17 @@
         </div>                        
     </div>
 
-    <div class="selected-collection js-selected-collection">Collection: <span>{{ collection.name }}</span></div>
-    <div class="selected-level js-selected-level">Level: <span>{{ config.lesson.level.name }}</span></div>
-    <div class="selected-language js-selected-language">Language: <span>{{ languageName }}</span></div>
-    
-    <div class="action-update"><button class="btn btn-light js-lesson-btn-action">Begin lesson</button></div>
+    <div class="card align-left">
+        <div class="selected-collection js-selected-collection">Collection: <span>{{ collection.name }}</span></div>
+        <div class="selected-level js-selected-level">Level: <span>{{ config.lesson.level.name }}</span></div>
+        <div class="selected-language js-selected-language">Language: <span>{{ languageName }}</span></div>
+        <div>
+            <div class="underline-link species-collection portrait js-species-collection">View species list</div>
+        </div>
+    </div>
     
     <div class="flex-provider landscape">
-        <div class="dropdown js-skills-collections">
+        <div class="dropdown skills-collections js-skills-collections">
             <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Advanced Skills
             </button>
@@ -49,6 +52,6 @@
         </div>                        
     </div>
 
-    <div><div class="underline-link species-collection portrait js-species-collection">View species list</div></div>
+    <div class="action-update"><button class="btn btn-light js-lesson-btn-action">Begin lesson</button></div>
 
 </div>            

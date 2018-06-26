@@ -11,14 +11,13 @@
     .scrollable {
         overflow-y: scroll;
         height: 70vh;
-      }
+    }
 
-    .collections div {
-        margin: .5em 0;
-      }      
+    .skills-collections button {
+        margin: 1em 0;
+    }
 
-    .card {        
-        margin: 0;
+    .card {
         padding: .5em;
     }
 
