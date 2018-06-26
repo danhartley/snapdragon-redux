@@ -15,22 +15,27 @@ export const renderInput = (config, screen, question, callbackTime, item, render
 
         const questionText = document.querySelector('.js-txt-question');
 
-        const correctResponse = config.isPortraitMode ? 'Correct!' : `That's the correct answer!`;
-        const incorrectResponse = config.isPortraitMode ? 'Incorrect!' : `That's the wrong answer!`;
-
-        questionText.innerHTML = correct 
-            ? `<div>
-                <span class="icon"><i class="fas fa-check-circle"></i></span>                        
-                <span>${ correctResponse }</span>
-               </div>
-               <div>
-                <span>It is</span> <span class="capitalise">${response.question}</span>
-               </div>`
-            : `<div>
-                <span class="icon"><i class="fas fa-times-circle"></i></span>
-                <span>${ incorrectResponse }</span>
-                </div> 
-               <div>It's <span class="capitalise">${response.question}</span></div>`;
+        if(config.isPortraitMode) {
+            questionText.innerHTML = correct
+                ? `<div>
+                    <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
+                   </div>`
+                : `<div>
+                    <span class="icon"><i class="fas fa-times-circle"></i></span><span>Incorrect</span>
+                   </div>
+                   <div>Answer: ${ response.question }</div>`;
+        } else {
+            questionText.innerHTML = correct 
+                ? `<div>
+                    <span class="icon"><i class="fas fa-check-circle"></i></span>
+                    <span>${ response.question } is the correct answer.</span>
+                   </div>`
+                : `<div>
+                    <span class="icon"><i class="fas fa-times-circle"></i></span>
+                    <span>${ response.answer || '--' } is incorrect.</span>
+                   </div> 
+                   <div>The correct answer is ${ response.question }.</div>`;
+        }
 
         btn.style.background = colour;
         btn.style.borderColor = colour;
