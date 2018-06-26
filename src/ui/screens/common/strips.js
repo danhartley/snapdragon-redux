@@ -52,8 +52,8 @@ export const renderStrips = (screen, item, callback, config) => {
         template.innerHTML = speciesCard;
 
         const context = (screen.name === 'species-vernaculars') 
-                ? { name: '', species, filter: 'species' }
-                : { name, species: '', filter: 'name' }
+                ? { name: '---', species, filter: 'species' }
+                : { name, species: '---', filter: 'name' }
 
         renderTemplate( context, template.content, parent);
         template.innerHTML = questionCard;

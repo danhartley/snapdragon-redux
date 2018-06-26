@@ -25,10 +25,10 @@ export const renderSpeciesCollectionList = (collection) => {
 
     renderTemplate({ collection }, template.content, DOM.leftBody);
 
-    const height = `height:${document.querySelector('.js-left-header').offsetHeight}px`;
+    // const height = `height:${document.querySelector('.js-left-header').offsetHeight}px`;
 
-    document.querySelector('.js-list-header').setAttribute('style', height); 
-    document.querySelector('.js-list-footer').setAttribute('style', height); 
+    // document.querySelector('.js-list-header').setAttribute('style', height); 
+    // document.querySelector('.js-list-footer').setAttribute('style', height); 
 
     const listItemContainer = document.querySelector('.js-list-item-container');
     const listItems = document.querySelectorAll('.js-list-item .js-list-item-link');

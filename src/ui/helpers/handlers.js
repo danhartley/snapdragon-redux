@@ -60,7 +60,8 @@ const stripHandler = (items, item, config, callback) => {
             target.style.color = colour;
             target.style.borderColor = colour;
 
-            const green = 'rgb(28, 179, 5)';
+            // const green = 'rgb(28, 179, 5)';
+            const green = 'rgb(41, 108, 44)';
 
             items.forEach(strip => {   
                 const matchesScientificName = strip.innerText === item.name;
