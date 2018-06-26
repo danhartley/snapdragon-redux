@@ -4,9 +4,13 @@
         font-size: 16px;
     }
 
-    .card-container-padding {
-        padding: .5em;
+    .snapdragon-container {
+        margin: 0;  
       }
+
+    .card-container-padding {
+        padding: 1em;
+    }
 
     .scrollable {
         overflow-y: scroll;
@@ -58,6 +62,7 @@
 
     .tiles {
         height: 100%;
+        padding: .5em;
     }
 
     .squares { 
@@ -150,10 +155,6 @@
       .letterbox-entry button:disabled {
         color: white;
       }
-
-    .summary button {
-        margin: 1em 0;
-    }
 
     .flex-provider .skills {
         display: block;

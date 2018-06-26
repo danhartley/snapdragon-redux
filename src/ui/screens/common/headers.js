@@ -7,7 +7,8 @@ export const renderHeaders = counter => {
 
     const item = (collection && collection.items) ? collection.items[collection.itemIndex] : null;
     
-    const primary = 'rgb(40, 53, 114)';
+    // const primary = 'rgb(40, 53, 114)';
+    const primary = 'rgb(2, 43, 84)';
 
     DOM.rightHeader.style.backgroundColor = primary;
     DOM.rightHeaderText.style.backgroundColor = primary;

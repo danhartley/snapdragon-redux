@@ -51,11 +51,12 @@ progress::-moz-progress-bar {
 
 :root {
   --snap-light-text-colour: rgb(255, 255, 255);
-  --snap-primary: rgb(40, 53, 114);
+  /* --snap-primary: rgb(40, 53, 114); */
+  --snap-primary: rgb(2, 43, 84);
   --snap-secondary: rgb(174, 78, 136);
   --snap-tertiary: rgb(52, 105, 23);
   --snap-alert: rgb(183, 12, 21);
-  --snap-success: rgb(28, 179, 5);
+  --snap-success: rgb(41, 108, 44);
   --snap-light-grey: rgb(75,75,75);
   --snap-dark-grey: rgb(75,75,75);
 }
@@ -131,10 +132,43 @@ progress::-moz-progress-bar {
 }
 
 .snapdragon-container {
-  padding: .5em 0;
+  padding: 0;
   position: relative;
   margin: 0 1em;
   height: 100%;
+}
+
+.card-container-padding {
+  padding: .5em 0;
+}
+
+.card-container {
+  position: relative;
+  height: 50%;
+  margin: 0 1em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: .5em;
+  text-align: right;
+  background-color: rgba(125,125,125,.1);
+  border: 2px solid rgba(75,75,75,.4);
+  border-radius: .25rem;
+  height: 100%;
+}
+
+.card div {
+  margin: .25em;
+}
+
+.primary {
+  background-color: rgba(174, 78, 136, .5);
+}
+
+.flex-provider {
+  margin: 0 0 1em 0;
 }
 
 .grid {
@@ -237,6 +271,7 @@ progress::-moz-progress-bar {
   grid-auto-flow: column;                       
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  padding: .5em;
 }
 
 .tiles {
@@ -244,7 +279,7 @@ progress::-moz-progress-bar {
   height: 50%;
   grid-auto-flow: column;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;  
 }
 
 .squares img {
@@ -297,26 +332,8 @@ progress::-moz-progress-bar {
   display: inline-block;
 }
 
-.summary button {
-  margin: 0 0 1em 0;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  padding: .5em;
-  text-align: right;
-  background-color: inherit;
-  border: 2px solid rgba(75,75,75,.4);
-  border-radius: .25rem;
-}
-
 .align-left {
   text-align: left;
-}
-
-.card div {
-  margin: .25em;
 }
 
 .species-card {
@@ -350,12 +367,6 @@ progress::-moz-progress-bar {
 .family-name {
   text-transform: uppercase;
   font-size: 1.2em;
-}
-
-.summary {
-  padding: 1em;
-  border: 2px solid rgba(0,0,0,.125);
-  border-radius: .25rem;
 }
 
 .history div {
@@ -401,10 +412,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .clear-lesson button {
   float: left;
 }
-
+/* 
 .collections div {
   margin: .5em 0;
-}
+} */
 
 .collection span {
   padding: 0 .5em;
@@ -515,16 +526,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   margin: 1em 0;
 }
 
-.card-container {
-  position: relative;
-  height: 50%;
-  margin: 0 1em;
-}
-
-.card-container-padding {
-  padding: .5em 0;
-}
-
 .action-update button, .response-update {
   position: absolute;
   bottom: 0;
@@ -610,10 +611,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   display: none;
 }
 
-.list-group-tabs {
-  display: flex;
-  align-items: center;
-  padding: 0 0 0 1em;
+.list-group-header {
+  padding: .5em;
+  background-color: rgba(41, 108, 44,.3);
+  border-radius: .25rem;
 }
 
 .list-group-item {
@@ -622,6 +623,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   display: flex;
   flex-direction: row;
   padding: .25em .5em;
+}
+
+.list-group li:nth-child(2n+1) {
+  background-color: rgba(125,125,125,.1);
 }
 
 .list-group-item img {
