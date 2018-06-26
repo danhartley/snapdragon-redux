@@ -17,10 +17,6 @@
         margin: 1em 0;
     }
 
-    .card {
-        padding: .5em;
-    }
-
     .species-card {
         display: grid;
         grid-auto-flow: row;
