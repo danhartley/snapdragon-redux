@@ -12,6 +12,11 @@
         padding: 1em;
     }
 
+    .card div {
+        margin: .5em;
+    }
+      
+
     .scrollable {
         overflow-y: scroll;
         height: 70vh;
@@ -82,6 +87,7 @@
 
     .strips {
         height: 100%;
+        padding: 0 1.5em;
     }
 
     .strip div {
@@ -189,7 +195,6 @@
         display: grid;
     }
 
-    /* .species-card-btn button, */
     .left-body button, .right-body button, .dropdown-menu.show { 
         width: initial;
     }

@@ -158,10 +158,6 @@ progress::-moz-progress-bar {
   height: 100%;
 }
 
-.card div {
-  margin: .25em;
-}
-
 .primary {
   background-color: rgba(174, 78, 136, .5);
 }
@@ -305,7 +301,7 @@ progress::-moz-progress-bar {
   grid-auto-flow: row;
   grid-template-rows: repeat(6,1fr);
   align-items: center;
-  padding: 0 1.5em;
+  padding: 0 1em;
   background-color: rgb(85, 85, 85);
   height: 60%;
   cursor: pointer;
@@ -571,12 +567,12 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .species-answer {
-  padding: 0 1.25em;
+  padding: 0 1em;
   display: none;
 }
 
 .species-question {
-  padding: 0 1.25em;
+  padding: 0 1em;
 }
 
 .species-answer div {        
