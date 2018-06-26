@@ -45,7 +45,7 @@ const species = {
 
 const text = {
   name: 'text-entry',
-  headers: { long: 'Complete the latin name', short: 'Complete the latin name'},
+  headers: { long: 'Latin name recall', short: 'Complete the latin name'},
   domain: 'collection',
   question: 'Complete the latin name',
 };

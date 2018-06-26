@@ -53,7 +53,7 @@ export const renderCollections = (counter) => {
         document.querySelector('.js-selected-collection span').innerHTML = collectionName;        
         config = { ...config, ...{ collection: { id: collectionId }} };
         learningActionBtn.disabled = false;
-        speciesCollectionLink.style.display = 'inline-block';
+        speciesCollectionLink.style.display = config.isPortraitMode ? 'inline-block' : 'none';
         isNewCollection = true;
         if(!config.isPortraitMode)
             actions.boundSelectCollection(collectionId);
@@ -101,7 +101,7 @@ export const renderCollections = (counter) => {
         speciesCollectionLink.style.display = 'none';
     } else {
         learningActionBtn.innerHTML = 'Continue lesson';
-        speciesCollectionLink.style.display = 'inline-block';
+        speciesCollectionLink.style.display = config.isPortraitMode ? 'inline-block' : 'none';
     }
 
     const updateNavIcons = () => {

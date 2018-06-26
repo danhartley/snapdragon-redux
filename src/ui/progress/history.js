@@ -8,7 +8,7 @@ export const renderHistory = (history) => {
     if(!history) return null;
 
     const lastRoundIndex = history.scores.length -1;
-    const wrongAnswers = history.scores.map(round => round.fails)[lastRoundIndex].map(answer => answer.question);
+    const wrongAnswers = history.scores.map(round => round.fails)[lastRoundIndex].map(answer => answer.binomial);
     const uniqueSpecies = [ ...(new Set(wrongAnswers)) ];
 
     var speciesToRevise = collection.items.filter(function(item) {

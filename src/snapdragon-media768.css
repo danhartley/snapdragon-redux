@@ -4,9 +4,9 @@
         font-size: 16px;
     }
 
-    .left-body, .right-body {
+    .card-container-padding {
         padding: .5em;
-    }
+      }
 
     .scrollable {
         overflow-y: scroll;
@@ -28,7 +28,7 @@
     }
 
     .action-update button, .response-update {
-        margin: 0 0 2.5em 0;
+        margin: 0 0 2em 0;
         left: initial;
         right: 1em;
     }
@@ -132,7 +132,8 @@
     }
 
     .letterbox-entry {
-        border: 2px solid rgba(0,0,0,.125);
+        height: 100%;
+        border: .1em solid rgba(0,0,0,.125);
         border-radius: .25rem;
         display: flex;
         flex-direction: column;
@@ -145,7 +146,9 @@
       }
 
       .letterbox-entry input {
-          width: 50%;
+          width: 75%;
+          font-size: 1.5em;
+          padding: .25em;
       }
 
       .letterbox-entry button:disabled {

@@ -605,10 +605,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   padding: 0 0 0 1em;
 }
 
-.75 div{
-  flex: 1;
-}
-
 .list-group-item {
   background-color: rgb(50, 50, 50);
   cursor: pointer;
