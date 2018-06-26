@@ -150,10 +150,10 @@ progress::-moz-progress-bar {
 .card {
   display: flex;
   flex-direction: column;
-  padding: .5em;
+  padding: .25em .5em;
   text-align: right;
   background-color: rgba(125,125,125,.1);
-  border: 2px solid rgba(75,75,75,.4);
+  border: 2px solid rgba(75,75,75,.2);
   border-radius: .25rem;
   height: 100%;
 }
@@ -569,6 +569,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .species-question {
   padding: 0 1em;
+  text-align: center;
 }
 
 .species-answer div {        
