@@ -54,8 +54,8 @@ const stripHandler = (items, item, config, callback) => {
             score.success = correct;
 
             DOM.rightHeaderTxt.innerHTML = text;
-            DOM.rightHeader.classList.add(colour);
-            DOM.rightHeaderTxt.classList.add(colour);
+            // DOM.rightHeader.classList.add(colour);
+            // DOM.rightHeaderTxt.classList.add(colour);
             
             target.classList.add(colour);
             target.classList.add(colour);
@@ -100,8 +100,8 @@ const imageHandler = (tiles, item, config, callback) => {
             tile.style.filter = 'saturate(100%)';
 
             DOM.rightHeaderTxt.innerHTML = text;
-            DOM.rightHeader.classList.add(colour);
-            DOM.rightHeaderTxt.classList.add(colour);
+            // DOM.rightHeader.classList.add(colour);
+            // DOM.rightHeaderTxt.classList.add(colour);
             
             img.parentNode.style.filter = 'saturate(100%)';
 

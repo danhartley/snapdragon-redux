@@ -60,11 +60,11 @@ export const renderStrips = (screen, item, callback, config) => {
         const question = screen.question;
         renderTemplate( { question }, template.content, parent);
 
-        const renderAnswer = (text, colour, correct) => {
+        const renderAnswer = (text, className, correct) => {
             const answer = document.querySelector('.js-species-answer div');
             answer.innerHTML = correct ? 'Correct' : 'Incorrect';
             answer.parentElement.style.display = 'block';
-            answer.classList.add(colour);
+            answer.classList.add(className);
         }
 
         scoreHandler(strips, item, config, 'strip', renderAnswer);
