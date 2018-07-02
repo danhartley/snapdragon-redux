@@ -3,6 +3,7 @@ import "babel-polyfill";
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import './snapdragon-colours.css';
 import './snapdragon.css';
 import './snapdragon-media.css';
 import './snapdragon-media768.css';

@@ -37,7 +37,7 @@ export const renderSpeciesTiles = (collection) => {
     
     if(config.isPortraitMode) {
 
-        parent = document.querySelector('.tiles-container');
+        parent = document.querySelector('.snapdragon-container');
 
         const species = item.name;
         const name = itemVernacularName(item, config);
@@ -50,7 +50,7 @@ export const renderSpeciesTiles = (collection) => {
             const answer = document.querySelector('.js-species-answer div');
             answer.innerHTML = correct ? 'Correct' : 'Incorrect';
             answer.parentElement.style.display = 'block';
-            answer.style.backgroundColor = colour;
+            answer.classList.add(colour);
         }   
         scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image', renderAnswer);
     } else {

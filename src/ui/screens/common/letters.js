@@ -28,19 +28,19 @@ export const renderLetters = (letters, item, callbackTime) => {
 
             let block = event.target;
         
-            if(block.classList.contains('light-grey')) {
-                block.classList.remove('light-grey');
+            if(block.classList.contains('snap-inactive')) {
+                block.classList.remove('snap-inactive');
                 selectedBlocks = selectedBlocks.filter(selectedBlock => selectedBlock !== block);
                 itemName = itemName.replace(block.innerHTML, '');
             }
             else {
                 selectedBlocks.push(block);
-                block.classList.add('light-grey');
+                block.classList.add('snap-inactive');
                 itemName += block.innerHTML;
                 if(item.name.replace(' ', '') === itemName) {
                     selectedBlocks.forEach(block => {
-                        block.classList.remove('light-grey');
-                        block.classList.add('green');
+                        block.classList.remove('snap-inactive');
+                        block.classList.add('snap-success');
                     });
                     selectedBlocks = [];
                     const question = { binomial: item.name, taxon: 'name', question: item['name'] };
@@ -48,15 +48,15 @@ export const renderLetters = (letters, item, callbackTime) => {
                     const success = itemName === item.name.replace(' ', '');
                     const response = { ...question, answer, success };
                     const { text, colour, correct } = renderAnswerHeader(response);
-                    DOM.rightHeaderText.innerHTML = text;
-                    DOM.rightHeader.style.backgroundColor = colour;
+                    DOM.rightHeaderTxt.innerHTML = text;
+                    DOM.rightHeader.classList.add(colour);
                     setTimeout(()=>{
                         actions.boundUpdateScore(response);
                     }, callbackTime);
                 } else if(itemName.length >= item.name.length) {
                     selectedBlocks.forEach(block => {
-                        block.classList.remove('light-grey');
-                        block.classList.add('red');
+                        block.classList.remove('snap-inactive');
+                        block.classList.add('snap-alert');
                         tryAgainBtn.attributes.removeNamedItem('disabled');
                     });
                     selectedBlocks = [];
@@ -70,8 +70,8 @@ export const renderLetters = (letters, item, callbackTime) => {
     tryAgainBtn.addEventListener('click', event => {
         itemName = '';
         selectedBlocks.forEach(block => {
-            block.classList.remove('red');       
-            block.classList.remove('light-grey');       
+            block.classList.remove('snap-alert');       
+            block.classList.remove('snap-inactive');       
         });
     });
 
@@ -81,8 +81,8 @@ export const renderLetters = (letters, item, callbackTime) => {
         const success = false;
         const response = { ...question, answer, success };
         const { text, colour, correct } = renderAnswerHeader(response);
-        DOM.rightHeaderText.innerHTML = text;
-        DOM.rightHeader.style.backgroundColor = colour;
+        DOM.rightHeaderTxt.innerHTML = text;
+        DOM.rightHeader.classList.add(colour);
         setTimeout(()=>{
             actions.boundUpdateScore(response);
         }, callbackTime);

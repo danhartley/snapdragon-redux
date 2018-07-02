@@ -20,12 +20,12 @@
     }
     
     .right {  
-        color:rgb(255, 255, 255);
-        background-color:var(--snap-success);
+        color: var(--snap-text);
+        background-color: var(--snap-success);
     }
     
     .wrong {
-        color: rgb(255, 255, 255);
+        color:var(--snap-text);
         background-color: var(--snap-alert);
     }
 

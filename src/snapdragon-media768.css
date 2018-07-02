@@ -4,14 +4,6 @@
         font-size: 16px;
     }
 
-    .snapdragon-container {
-        margin: 0;  
-      }
-
-    .card-container-padding {
-        padding: 1em;
-    }
-
     .card div {
         margin: .5em;
     }
@@ -26,13 +18,7 @@
         margin: 1em 0;
     }
 
-    .species-card {
-        display: grid;
-        grid-auto-flow: row;
-        grid-template-rows: 4fr 1fr;        
-    }
-
-    .action-update button, .response-update {
+    .action-update, .response-update {
         margin: 0 0 2em 0;
         left: initial;
         right: 1em;
@@ -67,22 +53,12 @@
 
     .tiles {
         height: 100%;
-        padding: .5em;
+        /* padding: .5em; */
     }
 
     .squares { 
         height: 100%;
         grid-template-rows: 1fr 1fr;
-    }
-
-    .right {  
-        color: var(--snap-success);
-        background-color: rgb(255, 255, 255);
-    }
-    
-    .wrong {
-        color: var(--snap-alert);
-        background-color: rgb(255, 255, 255);
     }
 
     .strips {
@@ -140,8 +116,8 @@
 
     .letterbox-entry {
         height: 100%;
-        border: .1em solid rgba(0,0,0,.125);
-        border-radius: .25rem;
+        border: .1em solid var(--snap-card-border);
+        border-radius: .20rem;
         display: flex;
         flex-direction: column;
         padding: .5em;
@@ -159,7 +135,7 @@
       }
 
       .letterbox-entry button:disabled {
-        color: white;
+        color: var(--snap-text);
       }
 
     .flex-provider .skills {
