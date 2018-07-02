@@ -11,7 +11,7 @@ export const renderStrips = (screen, item, callback, config) => {
 
     const template = document.createElement('template');
 
-    template.innerHTML = `<div class="strips-container"><div class="strips js-rptr-strips"></div></div>`;
+    template.innerHTML = `<div class="snapdragon-container"><div class="strips js-rptr-strips"></div></div>`;
     
     const rptrStrips = template.content.querySelector('.js-rptr-strips');
 
@@ -45,26 +45,28 @@ export const renderStrips = (screen, item, callback, config) => {
 
     if(config.isPortraitMode) {
 
-        parent = document.querySelector('.strips-container');
+        parent = document.querySelector('.snapdragon-container');
 
         const species = item.name;
         const name = itemVernacularName(item, config);
         template.innerHTML = speciesCard;
 
         const context = (screen.name === 'species-vernaculars') 
-                ? { name: '---', species, filter: 'species' }
-                : { name, species: '---', filter: 'name' }
+                ? { name: '---', species }
+                : { name, species: '---' }
 
         renderTemplate( context, template.content, parent);
         template.innerHTML = questionCard;
         const question = screen.question;
         renderTemplate( { question }, template.content, parent);
+
         const renderAnswer = (text, colour, correct) => {
             const answer = document.querySelector('.js-species-answer div');
             answer.innerHTML = correct ? 'Correct' : 'Incorrect';
             answer.parentElement.style.display = 'block';
-            answer.style.backgroundColor = colour;
+            answer.classList.add(colour);
         }
+
         scoreHandler(strips, item, config, 'strip', renderAnswer);
     } else {
         scoreHandler(strips, item, config, 'strip');

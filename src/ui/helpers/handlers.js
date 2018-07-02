@@ -53,15 +53,12 @@ const stripHandler = (items, item, config, callback) => {
             
             score.success = correct;
 
-            DOM.rightHeaderText.innerHTML = text;
-            DOM.rightHeader.style.backgroundColor = colour;
-            DOM.rightHeaderText.style.backgroundColor = colour;
+            DOM.rightHeaderTxt.innerHTML = text;
+            DOM.rightHeader.classList.add(colour);
+            DOM.rightHeaderTxt.classList.add(colour);
             
-            target.style.color = colour;
-            target.style.borderColor = colour;
-
-            // const green = 'rgb(28, 179, 5)';
-            const green = 'rgb(41, 108, 44)';
+            target.classList.add(colour);
+            target.classList.add(colour);
 
             items.forEach(strip => {   
                 const matchesScientificName = strip.innerText === item.name;
@@ -69,8 +66,8 @@ const stripHandler = (items, item, config, callback) => {
                                                 ? strip.innerText.toLowerCase() ===  vernacular.toLowerCase() 
                                                 : false;
                 if(matchesScientificName || matchesVernacularName) {
-                    strip.style.color = green;
-                    strip.style.borderColor = green;
+                    strip.classList.add('snap-success');
+                    strip.classList.add('snap-success');
                 }
             });            
 
@@ -102,9 +99,9 @@ const imageHandler = (tiles, item, config, callback) => {
 
             tile.style.filter = 'saturate(100%)';
 
-            DOM.rightHeaderText.innerHTML = text;
-            DOM.rightHeader.style.backgroundColor = colour;
-            DOM.rightHeaderText.style.backgroundColor = colour;
+            DOM.rightHeaderTxt.innerHTML = text;
+            DOM.rightHeader.classList.add(colour);
+            DOM.rightHeaderTxt.classList.add(colour);
             
             img.parentNode.style.filter = 'saturate(100%)';
 

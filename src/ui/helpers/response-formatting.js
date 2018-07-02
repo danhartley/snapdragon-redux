@@ -27,7 +27,7 @@ export const renderAnswer = (response) => {
     const genus = names[0];
     const species = names[1];
     const correct = renderCorrect(response);
-    const className = correct ? 'right' : 'wrong';    
+    const className = correct ? 'snap-success' : 'snap-alert';    
 
     const name = renderName(response, correct);
 
@@ -72,10 +72,7 @@ export const renderAnswerHeader = (response, isPortraitMode = true) => {
 
     const correct = renderCorrect(response);
 
-    const right = 'rgb(41, 108, 44)';
-    const wrong = 'rgb(205, 10, 24)';
-
-    const colour = correct ? right : wrong;
+    const colour = correct ? 'snap-success' : 'snap-alert';
 
     return { text: renderAnswerText(response, isPortraitMode), colour, correct };
 };
@@ -83,21 +80,19 @@ export const renderAnswerHeader = (response, isPortraitMode = true) => {
 export const renderTermAnswerHeader = (response, header, target) => {
     
     const correct = response.question.toLowerCase() === response.answer.toLowerCase();
-
-    const right = 'rgb(41, 108, 44)';
-    const wrong = 'rgb(205, 10, 24)';
-
-    const colour = correct ? right : wrong;
-
-    const className = correct ? 'right' : 'wrong';
-
+    const colour = correct ? 'snap-success' : 'snap-alert';
     const term = correct ? response.answer : response.question;
-
-    const answer = `<span class="${className}">${term}</span>`;
-
+    const answer = `<span class="${colour}">${term}</span>`;
     const text = correct
         ? `${answer} is correct!`
         : `No! ${answer}.`;
 
     return { text, colour, correct };
+};
+
+export const addClassName = (element, className, redundantClasses) => {
+    if(redundantClasses && redundantClasses.length > 0) 
+        redundantClasses.forEach(redundant => element.classList.remove(redundant));
+    if(className)
+        element.classList.add(className);
 };

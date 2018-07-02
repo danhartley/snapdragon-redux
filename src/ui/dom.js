@@ -4,13 +4,13 @@ export const DOM = {
     leftBody : document.getElementsByClassName('js-left-body')[0],
     leftFooter : document.getElementsByClassName('js-left-footer')[0],
 
-    collectionTxt : document.getElementsByClassName('js-txt-collection')[0],
+    leftHeaderTxt : document.getElementsByClassName('js-left-txt-header')[0],
     specimenSpeciesTxt : document.getElementsByClassName('js-txt-specimen-species')[0],    
     specimenRptr : document.getElementsByClassName('js-rptr-specimen')[0],
     
     rightGrid : document.getElementsByClassName('js-right-grid')[0],
     rightHeader : document.getElementsByClassName('js-right-header')[0],
-    rightHeaderText : document.getElementsByClassName('js-right-txt-header')[0],
+    rightHeaderTxt : document.getElementsByClassName('js-right-txt-header')[0],
     rightBody : document.getElementsByClassName('js-right-body')[0],
     rightRptrSummary : document.getElementsByClassName('js-summary')[0],
     rightBodyBottom : document.getElementsByClassName('js-right-body-bottom')[0],

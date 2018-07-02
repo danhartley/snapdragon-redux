@@ -1,20 +1,19 @@
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
+import { addClassName } from 'ui/helpers/response-formatting';
 
 export const renderHeaders = counter => {
     
     const { config, collection, layouts } = store.getState();
 
     const item = (collection && collection.items) ? collection.items[collection.itemIndex] : null;
-    
-    const primary = 'rgb(2, 43, 84)';
 
-    DOM.rightHeader.style.backgroundColor = primary;
-    DOM.rightHeaderText.style.backgroundColor = primary;
+    addClassName(DOM.rightHeader, 'header', ['snap-correct', 'snap-alert']);
+    addClassName(DOM.rightHeaderTxt, '', ['snap-correct', 'snap-alert']);
 
     const title = config.isPortraitMode ? 'Snapdragon' : 'Snapdragon - species recognition and recall';
 
-    DOM.collectionTxt.innerHTML = (counter.lesson === 'active' && collection) ? collection.name : title;
+    DOM.leftHeaderTxt.innerHTML = (counter.lesson === 'active' && collection) ? collection.name : title;
 
     if(!layouts) return;
 
@@ -22,40 +21,42 @@ export const renderHeaders = counter => {
 
     if(!layout) return;
 
-    if(layout.name === 'test') {        
+    if(layout.name === 'test') {
+        const offset = layouts.filter(layout => layout.name === 'revision').length;
+        const question = `Question ${ layout.layoutIndex - offset + 1 }`;
         setTimeout(()=>{
             if(config.isPortraitMode) {
-                if(counter.lesson === 'active') {
-                    const offset = layouts.filter(layout => layout.name === 'revision').length;
-                    DOM.collectionTxt.innerHTML = `Question ${ layout.layoutIndex - offset + 1 }`;
+                if(counter.lesson === 'active') {                    
+                    DOM.leftHeaderTxt.innerHTML = question;
                     document.querySelector('progress').value = layout.layoutIndex - offset;
                 }
             } else {
                 if(counter.lesson === 'active') {
                     const screen = layout.screens.length === 2 ?layout.screens[1] : layout.screens[0].right;
-                    DOM.rightHeaderText.style.backgroundColor = primary;
-                    DOM.rightHeaderText.innerHTML = screen.headers ? screen.headers.long : 'no long header given';
+                    addClassName(DOM.rightHeaderTxt, '', ['snap-correct', 'snap-alert']);
+                    // DOM.rightHeaderTxt.innerHTML = screen.headers ? screen.headers.long : 'no long header given';
+                    DOM.rightHeaderTxt.innerHTML = question;
                 } else {
-                    DOM.rightHeaderText.innerHTML = '';
+                    DOM.rightHeaderTxt.innerHTML = '';
                 }
             }
         });
     } else if(layout.name === 'revision') {
         if(!config.isPortraitMode) {
-            DOM.rightHeaderText.innerHTML = item ? item.name : '';
+            DOM.rightHeaderTxt.innerHTML = item ? item.name : '';
         }
     }
 
     if(layout.screens.find(el => el.name === 'summary')) {
         if(config.isPortraitMode) {
-            DOM.collectionTxt.innerHTML = collection.name;
+            DOM.leftHeaderTxt.innerHTML = collection.name;
         } else {
-            DOM.rightHeaderText.innerHTML = 'Lesson progress';
+            DOM.rightHeaderTxt.innerHTML = 'Lesson progress';
         }
     }
 
     if(counter.index === 0 && counter.lesson === 'inactive') {
-        DOM.rightHeaderText.innerHTML = '';
+        DOM.rightHeaderTxt.innerHTML = '';
     }
   
 };
