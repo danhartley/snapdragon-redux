@@ -48,12 +48,14 @@ test('renderAnswer for correct scientific name from multiple choice', () => {
         question: 'Coriandrum sativum', 
         answer: 'Coriandrum sativum'
     };
-    expect(renderAnswer(response)).toEqual('<span class=\"snap-success\">Coriandrum sativum</span>');
+    expect(renderAnswer(response)).toEqual('Coriandrum sativum');
+    // expect(renderAnswer(response)).toEqual('<span class=\"snap-success\">Coriandrum sativum</span>');
 });
 
 test('renderAnswer for incorrect scientific name from multiple choice', () => {
     const response = {    taxon: 'name', binomial: 'Coriandrum sativum', question: 'Coriandrum sativum', answer: 'Anagallis arvensis'}
-    expect(renderAnswer(response)).toEqual('<span class=\"snap-alert\">Coriandrum sativum</span>');
+    expect(renderAnswer(response)).toEqual('Coriandrum sativum');
+    // expect(renderAnswer(response)).toEqual('<span class=\"snap-alert\">Coriandrum sativum</span>');
 });
 
 test('renderAnswer for incorrect scientific name from text entry', () => {
@@ -63,7 +65,8 @@ test('renderAnswer for incorrect scientific name from text entry', () => {
     taxon: 'name',
     question: 'Rosmarinus officinalis',
     answer: 'Romarinus officialis'}
-    expect(renderAnswer(response)).toEqual('<span class=\"snap-alert\">Rosmarinus officinalis</span>');
+    expect(renderAnswer(response)).toEqual('Rosmarinus officinalis');
+    // expect(renderAnswer(response)).toEqual('<span class=\"snap-alert\">Rosmarinus officinalis</span>');
 });
 
 test('renderAnswer for correct Genus entry', () => {
@@ -75,7 +78,8 @@ test('renderAnswer for correct Genus entry', () => {
         question: 'Allium',
         answer: 'Allium'
     };
-    expect(renderAnswer(response)).toEqual('<span class=\"snap-success\">Allium</span> <span>schoenoprasum</span>');
+    expect(renderAnswer(response)).toEqual('Allium');
+    // expect(renderAnswer(response)).toEqual('<span class=\"snap-success\">Allium</span> <span>schoenoprasum</span>');
 });
 
 test('renderAnswer for correct species text entry', () => {
@@ -87,7 +91,8 @@ test('renderAnswer for correct species text entry', () => {
         question: 'crispum',
         answer: 'crispum'
     };
-    expect(renderAnswer(response)).toEqual('<span>Petroselinum</span> <span class=\"snap-success\">crispum</span>');
+    expect(renderAnswer(response)).toEqual('crispum');
+    // expect(renderAnswer(response)).toEqual('<span>Petroselinum</span> <span class=\"snap-success\">crispum</span>');
 });
 
 test('should renderAnswer for correct vernacular name from multipe choice', () => {
@@ -98,7 +103,8 @@ test('should renderAnswer for correct vernacular name from multipe choice', () =
         question: 'Mentha spicata',
         answer: 'Spearmint'
     };
-    expect(renderAnswer(response)).toEqual('<span class=\"snap-success\">Spearmint</span>');
+    expect(renderAnswer(response)).toEqual('Spearmint');
+    // expect(renderAnswer(response)).toEqual('<span class=\"snap-success\">Spearmint</span>');
 });
 
 test('should renderAnswer for incorrect vernacular name from multipe choice', () => {
@@ -109,5 +115,6 @@ test('should renderAnswer for incorrect vernacular name from multipe choice', ()
         question: 'Rosmarinus officinalis',
         answer: 'Coriander'
     };
-    expect(renderAnswer(response)).toEqual('<span class=\"snap-alert\">Rosemary</span>');
+    expect(renderAnswer(response)).toEqual('Rosemary');
+    // expect(renderAnswer(response)).toEqual('<span class=\"snap-alert\">Rosemary</span>');
 });

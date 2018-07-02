@@ -12,12 +12,12 @@
     
     --snap-alert: rgb(183, 12, 21);
     --snap-inactive: rgba(125,125,125, .4);
+    --snap-active: rgb(0, 42, 84);
     --snap-success: rgb(41, 108, 44);
     --snap-progress: rgb(233, 232, 111);
-    --snap-link: rgb(173,216,230);
+    --snap-link: rgb(0, 42, 84);
   
     --snap-background-primary: rgba(255, 255, 255,.9);
-    /* --snap-background-secondary: rgba(173,216,230,.2); */
     --snap-background-secondary: rgba(185, 200, 204,.3);
     --snap-background-tertiary: rgb(255, 255, 255);
   

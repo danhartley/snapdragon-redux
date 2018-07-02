@@ -8,8 +8,8 @@ export const renderHeaders = counter => {
 
     const item = (collection && collection.items) ? collection.items[collection.itemIndex] : null;
 
-    addClassName(DOM.rightHeader, 'header', ['snap-correct', 'snap-alert']);
-    addClassName(DOM.rightHeaderTxt, '', ['snap-correct', 'snap-alert']);
+    // addClassName(DOM.rightHeader, 'header', ['snap-correct', 'snap-alert']);
+    // addClassName(DOM.rightHeaderTxt, '', ['snap-correct', 'snap-alert']);
 
     const title = config.isPortraitMode ? 'Snapdragon' : 'Snapdragon - species recognition and recall';
 

@@ -33,20 +33,36 @@ export const renderAnswer = (response) => {
 
     switch(response.taxon) {
         case 'name':
-            return `<span class="${className}">${name}</span>`;
+            return name;
         case 'genus':
             return correct
-                ? `<span class="${className}">${response.answer}</span> <span>${species}</span>`
-                : `<span class="${className}">${genus}</span> <span>${species}</span>`;
+                ? response.answer
+                : genus;
         case 'species':
             return correct
-                ? `<span>${genus}</span> <span class="${className}">${response.answer}</span>`
-                : `<span>${genus}</span> <span class="${className}">${species}</span>`;
+                ? response.answer
+                : species;
         case 'vernacular':
         return correct
-                ? `<span>${genus}</span> <span class="${className}">${response.answer}</span>`
-                : `<span>${genus}</span> <span class="${className}">${response.question}</span>`;
+                ? response.answer
+                : response.question;
     }
+    // switch(response.taxon) {
+    //     case 'name':
+    //         return `<span class="${className}">${name}</span>`;
+    //     case 'genus':
+    //         return correct
+    //             ? `<span class="${className}">${response.answer}</span> <span>${species}</span>`
+    //             : `<span class="${className}">${genus}</span> <span>${species}</span>`;
+    //     case 'species':
+    //         return correct
+    //             ? `<span>${genus}</span> <span class="${className}">${response.answer}</span>`
+    //             : `<span>${genus}</span> <span class="${className}">${species}</span>`;
+    //     case 'vernacular':
+    //     return correct
+    //             ? `<span>${genus}</span> <span class="${className}">${response.answer}</span>`
+    //             : `<span>${genus}</span> <span class="${className}">${response.question}</span>`;
+    // }
 };
 
 export const renderAnswerText = (response, isPortraitMode) => {
