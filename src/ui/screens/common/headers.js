@@ -1,6 +1,5 @@
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
-import { addClassName } from 'ui/helpers/response-formatting';
 
 export const renderHeaders = counter => {
     
@@ -8,7 +7,7 @@ export const renderHeaders = counter => {
 
     const item = (collection && collection.items) ? collection.items[collection.itemIndex] : null;
 
-    const title = config.isPortraitMode ? 'Snapdragon' : 'Snapdragon - species recognition and recall';
+    const title = 'Snapdragon - learn the planet';
 
     DOM.leftHeaderTxt.innerHTML = (counter.lesson === 'active' && collection) ? collection.name : title;
 

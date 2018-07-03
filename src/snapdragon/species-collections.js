@@ -10,7 +10,7 @@ export const collections = [
     {
         id: 1,
         type: 'species',
-        name: 'Herbs 1',
+        name: 'Herbs',
         items: herbs1,
         eol_name: 'Herbs 1',
         eol_link: 'https://eol.org/collections/139051'
@@ -18,7 +18,7 @@ export const collections = [
     {
         id: 2,
         type: 'species',
-        name: 'UK 1 - Woodland',
+        name: 'UK Woodland',
         items: uk1,
         eol_name: 'UK 1 - Woodland',
         eol_link: 'https://eol.org/collections/139458'
@@ -26,7 +26,7 @@ export const collections = [
     {
         id: 3,
         type: 'species',
-        name: 'Mediterranean 1',
+        name: 'Mediterranean',
         items: med1,
         eol_name: 'Mediterranean 1',
         eol_link: 'https://eol.org/collections/139572'

@@ -10,7 +10,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
-  color: var(--snap-text);
+  color: var(--snap-text-dark);
 }
 
 h1 {
@@ -33,64 +33,59 @@ li {
 progress {
   width: 100%;
   border: 0;
-  background: var(--snap-background-primary);
+  background: var(--snap-progress-bg);
 }
-/* progress::-webkit-progress-bar {
-  background-color: var(--snap-background-primary);
-}
-progress::-webkit-progress-value, progress::-moz-progress-bar {
-  background-color: var(--snap-progress);
-} */
 
 progress::-webkit-progress-bar {
-  background-color: black;
+  background-color: var(--snap-progress-bg);
 }
 progress::-webkit-progress-value {
-  background-color: rgb(233, 232, 111);
+  background-color: var(--snap-progress-bar);
 }
 progress::-moz-progress-bar {
-  background-color: rgb(233, 232, 111);
+  background-color: var(--snap-progress-bar);
 }
 
 /* variables */
 
 .btn {
-  color: var(--snap-white);
+  color: var(--snap-text-light);
 }
 
 .btn.btn-light {
-  color: var(--snap-white);
-  background-color: var(--snap-tertiary);
+  color: var(--snap-text-light);
+  background-color: var(--snap-button);
 }
 
-.btn-secondary {
-  background-color: var(--snap-secondary);
-  border-color: var(--snap-secondary);
+.btn-collection {
+  background-color: var(--snap-collection);
 }
 
-.js-collections a.dropdown-item.active, .js-collections a.dropdown-item:active {
-  background-color: var(--snap-secondary);
+.collections a.dropdown-item.active, .js-collections a.dropdown-item:active {
+  background-color: var(--snap-collection);
 }
 
-.js-levels a.dropdown-item.active, .js-levels a.dropdown-item:active {
-  background-color: var(--snap-tertiary);
+.levels a.dropdown-item.active, .js-levels a.dropdown-item:active {
+  color: var(--snap-text-dark);
+  background-color: var(--snap-option);
 }
 
-.js-languages a.dropdown-item.active, .js-languages a.dropdown-item:active {
-  background-color: var(--snap-tertiary);
+.languages a.dropdown-item.active, .js-languages a.dropdown-item:active {
+  color: var(--snap-text-dark);
+  background-color: var(--snap-option);
 }
 
-.btn-tertiary {
-  color: var(--snap-text);
-  background-color: var(--snap-primary);
-  border-color: var(--snap-primary);
+.btn-option {
+  color: var(--snap-text-dark);
+  background-color: var(--snap-option);
+  border-color: var(--snap-option);
 }
 
 
 /* generic */
 
 .underline-link {
-  color: var(--snap-link);
+  color: var(--snap-link) !important;
   text-decoration: none;
   border: solid 1px;
   border-top: none;
@@ -112,7 +107,7 @@ progress::-moz-progress-bar {
   cursor: pointer;
   font-size: 1.6em;
   margin: 0 .25em 0 0;
-  color: var(--snap-text);
+  color: var(--snap-text-dark);
 }
 
 .active-icon {
@@ -123,7 +118,7 @@ progress::-moz-progress-bar {
   height: .25em;
   width: 2em;
   margin: .25em 0;
-  background-color: var(--snap-text);
+  background-color: var(--snap-border-dark);
 }
 
 .scrollable {
@@ -138,7 +133,7 @@ progress::-moz-progress-bar {
 .snapdragon-container {
   padding: .5em;
   position: relative;
-  background-color: var(--snap-background-tertiary);
+  background-color: var(--snap-container-background);
   border: 1px solid var(--snap-primary);
 }
 
@@ -148,7 +143,7 @@ progress::-moz-progress-bar {
   padding: .25em .5em;
   text-align: right;
   background-color: var(--snap-card-background);
-  border: 2px solid var(--snap-card-border);
+  border: 2px solid var(--snap-border-dark);
   border-radius: .1rem;
 }
 
@@ -161,7 +156,6 @@ progress::-moz-progress-bar {
   grid-auto-flow: column;
   width: 100vw;
   height: 100vh;
-  /* background-color: var(--snap-background-tertiary); */
 }
 
 .left-grid, .right-grid {
@@ -169,7 +163,7 @@ progress::-moz-progress-bar {
   grid-template-columns: 100%;
   grid-column: 1;
   grid-auto-flow: column;
-  background-color: var(--snap-background-secondary);
+  background-color: var(--snap-grid-background);
   grid-template-areas:  "header"
                         "progress"
                         "squares"
@@ -279,14 +273,14 @@ progress::-moz-progress-bar {
   grid-template-rows: repeat(6,1fr);
   align-items: center;
   padding: 0 .5em;
-  background-color: var(--snap-background-secondary);
+  background-color: var(--snap-strips-background);
   height: 60%;
   cursor: pointer;
 }
 
 .strip div {
     border: solid 1px;
-    border-color: var(--snap-white);
+    border-color: var(--snap-border-light);
     padding: .25em;
 }
 
@@ -356,7 +350,7 @@ button:disabled {
 }
 
 button.btn-light {
-  border-color: var(--snap-button-border);
+  border-color: var(--snap-button-border-dark);
 }
 
 button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-light.dropdown-toggle, .btn-light:not(:disabled):not(.disabled).active:focus, .btn-light:not(:disabled):not(.disabled):active:focus, .show>.btn-light.dropdown-toggle:focus {
@@ -366,7 +360,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 /* dropdown menus */
 
 .dropdown-menu {
-  border: 0;
+  border: 1px solid var(--snap-border-dark);
 }
 
 .selected-collection, .selected-language, .selected-level, .species-collection {  
@@ -388,7 +382,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   cursor: pointer;
 }
 
-.collections .dropdown div {
+.snapdragon-dropdowns .dropdown div {
   white-space: nowrap;
   margin: .25em 0;
 }
@@ -398,13 +392,13 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .collection:active {
-  color: var(--snap-text);
+  color: var(--snap-text-dark);
   background-color: var(--snap-primary-active);
 }
 
 .collection button {
-  color: var(--snap-text);
-  background-color: var(--snap-background-secondary);
+  color: var(--snap-text-dark);
+  background-color: var(--snap-grid-background);
   padding-top: .5em;
   padding-bottom: .5em
 }
@@ -433,8 +427,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   display: inline-block;
   cursor: pointer;
   width: auto;
-  background-color: var(--snap-background-primary);
-  color: var(--snap-text);
+  background-color: var(--snap-block-light);
+  color: var(--snap-text-dark);
   margin: .1em;
   padding: .1em .2em;
   letter-spacing: .1em;
@@ -442,26 +436,22 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   font-size: 1.1em;
 }
 
-.snap-header-background {
-  background-color: var(--snap-background-primary);
-}
-
 .snap-inactive {
   color: var(--snap-inactive);
 }
 
 .snap-success {
-  color: var(--snap-white);
+  color: var(--snap-text-light);
   background-color: var(--snap-success);
 }
 
 .snap-alert {
-  color: var(--snap-white);
+  color: var(--snap-text-light);
   background-color: var(--snap-alert);
 }
 
 .block.white {
-  color: var(--snap-text);
+  color: var(--snap-text-dark);
 }
 
 .blocks button {
@@ -483,7 +473,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .modal-text {
   margin: 1em;
-  color: var(--snap-white);
+  color: var(--snap-text-light);
 }
 
 .modal-image, .modal-image img {
@@ -547,10 +537,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .species-answer div {        
   text-align: center;
-  /* border-radius: .2em; */
-  /* font-size: 1.2rem; */
-  color: var(--snap-text);
-  background-color: var(--snap-white);
+  color: var(--snap-text-dark);
+  background-color: var(--snap-border-light);
 }
 
 .species-card-images {
@@ -584,18 +572,18 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .list-group {
   padding: 0;
-  border: 1px solid var(--snap-tertiary);
+  border: 1px solid var(--snap-collection);
 }
 
 .list-group-header {
   padding: .5em;
-  color: var(--snap-white);
-  background-color: var(--snap-tertiary);
+  color: var(--snap-text-light);
+  background-color: var(--snap-collection);
   border-radius: .20rem .20rem 0 0;
 }
 
 .list-group-item {
-  background-color: var(--snap-background-secondary);
+  background-color: var(--snap-grid-background);
   cursor: pointer;
   display: flex;
   flex-direction: row;

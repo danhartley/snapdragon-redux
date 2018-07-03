@@ -1,19 +1,22 @@
-<div class="snapdragon-container collections">
+<div class="snapdragon-container snapdragon-dropdowns">
     <div class="flex-provider">
-        <div class="dropdown js-collections">
-            <button class="btn btn-secondary dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Collections
+        <div class="dropdown collections js-collections">
+            <button class="btn btn-collection dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pick a collection
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-collection="{{ species }}">
-                <a class="dropdown-item" id="{{ collection.id }}" name="{{ collection.name }}" href="#">{{ collection.eol_name }} ({{ collection.items.length }})</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <h6 class="dropdown-header">EOL collections</h6>
+                <div data-repeat-collection="{{ species }}">
+                    <a class="dropdown-item" id="{{ collection.id }}" name="{{ collection.name }}" href="#">{{ collection.name }} ({{ collection.items.length }})</a>
+                </div>
             </div>
         </div>                        
     </div>
 
     <div class="flex-provider">
-        <div class="dropdown js-levels">
-            <button class="btn btn-tertiary dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Levels
+        <div class="dropdown levels js-levels">
+            <button class="btn btn-option dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Choose your level
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-level="{{ config.lesson.levels }}">
                 <a class="dropdown-item" id="level{{ level.id }}" href="#">{{ level.menuName }}: {{ level.description }}</a>
@@ -22,8 +25,8 @@
     </div>
 
     <div class="flex-provider">
-        <div class="dropdown js-languages">
-            <button class="btn btn-tertiary dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="dropdown languages js-languages">
+            <button class="btn btn-option dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Languages
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ config.languages }}">
@@ -43,7 +46,7 @@
     
     <div class="flex-provider landscape" style="display:none;">
         <div class="dropdown skills-collections js-skills-collections">
-            <button class="btn btn-secondary dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-collection dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Advanced Skills
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-collection="{{ skills }}">

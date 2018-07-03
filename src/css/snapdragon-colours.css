@@ -1,11 +1,12 @@
 :root {
 
-    --snap-text: rgb(45,45,45);
-    --snap-white:rgb(255, 255, 255);
+    --snap-text-dark: rgb(45,45,45);
+    --snap-text-light:rgb(255, 255, 255);
     
     --snap-primary: rgba(52, 105, 23, .3);
-    --snap-secondary: rgba(2, 43, 84, .7);
-    --snap-tertiary: rgb(52, 105, 23);
+    --snap-collection: rgba(2, 43, 84, .7);
+    --snap-option: rgba(158, 201, 239, .6);
+    --snap-button: rgb(52, 105, 23);
   
     --snap-primary-hover: rgb(205,205,205);
     --snap-primary-active: rgb(205,205,205);
@@ -14,19 +15,24 @@
     --snap-inactive: rgba(125,125,125, .4);
     --snap-active: rgb(0, 42, 84);
     --snap-success: rgb(41, 108, 44);
-    --snap-progress: rgb(233, 232, 111);
-    --snap-link: rgb(0, 42, 84);
-  
-    --snap-background-primary: rgba(255, 255, 255,.9);
-    --snap-background-secondary: rgba(185, 200, 204,.3);
-    --snap-background-tertiary: rgb(255, 255, 255);
-  
-    --snap-card-background: rgba(52, 105, 23,.1);
-    --snap-card-border: rgba(175,175,175,.2);
     
-    --snap-button-border: rgba(175,175,175,.6);
+    --snap-link: rgb(0, 42, 84);
+
+    --snap-progress-bg: rgb(45,45,45);
+    --snap-progress-bar: rgb(233, 232, 111);
   
+    --snap-block-light: rgba(255, 255, 255,.9);
+
+    --snap-grid-background: rgba(185, 200, 204,.3);
+    --snap-container-background: rgb(255, 255, 255);
+    --snap-card-background: rgba(52, 105, 23,.1);
+    --snap-strips-background: rgba(185, 200, 204,.3);
     --snap-list-background: rgba(125,125,125,.1);
+  
+    --snap-border-dark: rgba(175,175,175,.2);
+    --snap-border-light: rgb(255, 255, 255);
+    
+    --snap-button-border-dark: rgba(175,175,175,.6);
   
     --snap-modal-background: rgb(50, 50, 50);
     --snap-modal-title: rgb(50, 50, 50);

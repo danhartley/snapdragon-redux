@@ -15,17 +15,20 @@
 }
 
 @media (min-width: 320px) {
+    .header-text {
+        font-size: .9em;
+    }
     .squares { 
         height: 60%;
     }
     
     .right {  
-        color: var(--snap-text);
+        color: var(--snap-text-dark);
         background-color: var(--snap-success);
     }
     
     .wrong {
-        color:var(--snap-text);
+        color:var(--snap-text-dark);
         background-color: var(--snap-alert);
     }
 
@@ -35,10 +38,18 @@
     }
 }
 @media (min-width: 375px) {
+    .header-text {
+        font-size: 1em;
+    }
     body {
         font-size: 18px;
     }
     .strip div {
         font-size: 1.1em;
+    }
+}
+@media (min-width: 414px) {
+    body {
+        font-size: 19px;
     }
 }

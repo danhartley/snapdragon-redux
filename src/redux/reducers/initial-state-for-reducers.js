@@ -13,7 +13,7 @@ const initCollection = (rawCollection = collections[0]) => {
     const rounds = items.length / config.moduleSize;
 
     const collection = {
-        name: rawCollection.eol_name || rawCollection.wiki_name,
+        name: rawCollection.name,
         items : items,
         itemIndex: 0,
         currentRound: 1,
