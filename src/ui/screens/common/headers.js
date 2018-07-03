@@ -8,9 +8,6 @@ export const renderHeaders = counter => {
 
     const item = (collection && collection.items) ? collection.items[collection.itemIndex] : null;
 
-    // addClassName(DOM.rightHeader, 'header', ['snap-correct', 'snap-alert']);
-    // addClassName(DOM.rightHeaderTxt, '', ['snap-correct', 'snap-alert']);
-
     const title = config.isPortraitMode ? 'Snapdragon' : 'Snapdragon - species recognition and recall';
 
     DOM.leftHeaderTxt.innerHTML = (counter.lesson === 'active' && collection) ? collection.name : title;
@@ -33,8 +30,7 @@ export const renderHeaders = counter => {
             } else {
                 if(counter.lesson === 'active') {
                     const screen = layout.screens.length === 2 ?layout.screens[1] : layout.screens[0].right;
-                    addClassName(DOM.rightHeaderTxt, '', ['snap-correct', 'snap-alert']);
-                    // DOM.rightHeaderTxt.innerHTML = screen.headers ? screen.headers.long : 'no long header given';
+                    // addClassName(DOM.rightHeaderTxt, '', ['snap-correct', 'snap-alert']);
                     DOM.rightHeaderTxt.innerHTML = question;
                 } else {
                     DOM.rightHeaderTxt.innerHTML = '';

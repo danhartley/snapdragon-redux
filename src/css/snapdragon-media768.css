@@ -8,7 +8,6 @@
         margin: .5em;
     }
       
-
     .scrollable {
         overflow-y: scroll;
         height: 70vh;
@@ -53,7 +52,6 @@
 
     .tiles {
         height: 100%;
-        /* padding: .5em; */
     }
 
     .squares { 
