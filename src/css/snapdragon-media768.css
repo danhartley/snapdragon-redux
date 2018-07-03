@@ -8,7 +8,6 @@
         margin: .5em;
     }
       
-
     .scrollable {
         overflow-y: scroll;
         height: 70vh;
@@ -53,7 +52,6 @@
 
     .tiles {
         height: 100%;
-        /* padding: .5em; */
     }
 
     .squares { 
@@ -116,7 +114,7 @@
 
     .letterbox-entry {
         height: 100%;
-        border: .1em solid var(--snap-card-border);
+        border: .1em solid var(--snap-border-dark);
         border-radius: .20rem;
         display: flex;
         flex-direction: column;
@@ -135,7 +133,7 @@
       }
 
       .letterbox-entry button:disabled {
-        color: var(--snap-text);
+        color: var(--snap-text-dark);
       }
 
     .flex-provider .skills {

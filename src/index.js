@@ -3,11 +3,11 @@ import "babel-polyfill";
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import './snapdragon-colours.css';
-import './snapdragon.css';
-import './snapdragon-media.css';
-import './snapdragon-media768.css';
-import './snapdragon-media1200.css';
+import './css/snapdragon-colours.css';
+import './css/snapdragon.css';
+import './css/snapdragon-media.css';
+import './css/snapdragon-media768.css';
+import './css/snapdragon-media1200.css';
 
 import { store } from 'redux/store';
 

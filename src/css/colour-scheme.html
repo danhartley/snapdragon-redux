@@ -1,0 +1,38 @@
+<html>
+    <header>
+        <link rel="stylesheet" type="text/css" href="./snapdragon-colours.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="./snapdragon.css" media="screen" />
+        <style media="screen" type="text/css">
+            H1 {
+                margin: 20px;    
+            }
+            .container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 10px;
+                grid-auto-rows: minmax(100px, auto);
+                padding: 50px;
+            }
+            .container div {
+                padding: 10px;
+            }
+            .primary {
+                background-color: var(--snap-primary);
+            }
+            .collection {
+                background-color: var(--snap-collection);
+            }
+            .button {
+                background-color: var(--snap-button);
+            }
+        </style>
+    </header>
+    <body>
+        <h1>Snapdragon colour scheme</h1>
+        <div class="container">
+            <div class="primary">Primary</div>
+            <div class="collection">Collection</div>
+            <div class="button">Button</div>
+        </div>
+    </body>
+</html>
