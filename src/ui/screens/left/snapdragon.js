@@ -5,7 +5,12 @@ import snapdragonTemplate from 'ui/screens/right/snapdragon-template.html';
 
 export const renderSnapdragon = (counter) => {
 
-    const { config } = store.getState();
+    const { config, collections } = store.getState();
+
+    const filteredCollections = collections.find(collection => collection.selected);
+    const collectionId = filteredCollections ? filteredCollections.id : 0;
+
+    if(collectionId !== 0) return;
 
     const renderWelcome = () => {
         console.log('Welcome back, Dan!');

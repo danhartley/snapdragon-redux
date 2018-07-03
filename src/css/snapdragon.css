@@ -357,6 +357,12 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   box-shadow: 0 0 0 0;  
 }
 
+.btn-placeholder {
+  text-align: center;
+  border: 1px solid var(--snap-border-dark);
+  padding: .5em;
+}
+
 /* dropdown menus */
 
 .dropdown-menu {
@@ -605,4 +611,12 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .list-continue-btn {
   margin: 1em .5em;
+}
+
+.toggle-content {
+	display: none;
+}
+
+.toggle-content.is-visible {
+	display: block;
 }

@@ -6,6 +6,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { selectHandler } from 'ui/helpers/handlers';
 import { subscription } from 'redux/subscriptions';
 import { renderSpeciesCollection } from 'ui/screens/common/species';
+import { elem } from 'ui/helpers/class-behaviour';
 import collectionsTemplate from 'ui/screens/right/collections-template.html';
 
 export const renderCollections = (counter) => {
@@ -44,18 +45,26 @@ export const renderCollections = (counter) => {
     const selectedCollection = collections.find(collection => collection.selected);
     let collectionId = selectedCollection ? selectedCollection.id : 0;
 
-    const learningActionBtn = document.querySelector('.js-lesson-btn-action');
-    const speciesCollectionLink = document.querySelector('.js-species-collection');
+    actions.boundSelectCollection(0);
+    actions.boundSelectCollection(collectionId);
 
-    if(selectedCollection)
+    const learningActionBtn = document.querySelector('.js-lesson-btn-action');
+    const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
+    const speciesCollectionLink = document.querySelector('.js-species-collection');    
+
+    if(selectedCollection) {
         document.querySelectorAll(`[name="${selectedCollection.name}"]`)[0].classList.add('active');
+        elem.show(learningActionBtn);
+        elem.hide(learningActionBtnPlaceholder);
+    }
     
     selectHandler('.dropdown.js-collections .dropdown-item', (id) => {
         collectionId = parseInt(id);
         const collectionName = collections.filter(collection => collection.id === collectionId)[0].name;
         document.querySelector('.js-selected-collection span').innerHTML = collectionName;        
         config = { ...config, ...{ collection: { id: collectionId }} };
-        learningActionBtn.disabled = false;
+        elem.show(learningActionBtn);
+        elem.hide(learningActionBtnPlaceholder);
         speciesCollectionLink.style.display = config.isPortraitMode ? 'inline-block' : 'none';
         isNewCollection = true;
         if(!config.isPortraitMode)
@@ -92,12 +101,10 @@ export const renderCollections = (counter) => {
         collectionId = parseInt(id);
         const { lessonName, levelName } = collectionPlans.filter(collectionPlan => collectionPlan.collectionId === collectionId )[0];
         config = { ...config, ...{ collection: { id: collectionId }}, ...{ lesson: { name: lessonName, level: { name: levelName }}} };
-        learningActionBtn.disabled = false;
         isNewCollection = true;
     });
 
-    if(collectionId === 0) {
-        learningActionBtn.disabled = true;
+    if(collectionId === 0) {        
         speciesCollectionLink.style.display = 'none';
     } else {
         learningActionBtn.innerHTML = 'Continue lesson';

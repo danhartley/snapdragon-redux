@@ -29,7 +29,6 @@ export const renderHeaders = counter => {
             } else {
                 if(counter.lesson === 'active') {
                     const screen = layout.screens.length === 2 ?layout.screens[1] : layout.screens[0].right;
-                    // addClassName(DOM.rightHeaderTxt, '', ['snap-correct', 'snap-alert']);
                     DOM.rightHeaderTxt.innerHTML = question;
                 } else {
                     DOM.rightHeaderTxt.innerHTML = '';
