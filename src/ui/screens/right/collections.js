@@ -44,6 +44,9 @@ export const renderCollections = (counter) => {
     const selectedCollection = collections.find(collection => collection.selected);
     let collectionId = selectedCollection ? selectedCollection.id : 0;
 
+    const learningActionBtn = document.querySelector('.js-lesson-btn-action');
+    const speciesCollectionLink = document.querySelector('.js-species-collection');
+
     if(selectedCollection)
         document.querySelectorAll(`[name="${selectedCollection.name}"]`)[0].classList.add('active');
     
@@ -93,9 +96,6 @@ export const renderCollections = (counter) => {
         isNewCollection = true;
     });
 
-    const learningActionBtn = document.querySelector('.js-lesson-btn-action');
-    const speciesCollectionLink = document.querySelector('.js-species-collection');
-
     if(collectionId === 0) {
         learningActionBtn.disabled = true;
         speciesCollectionLink.style.display = 'none';
@@ -104,6 +104,11 @@ export const renderCollections = (counter) => {
         speciesCollectionLink.style.display = config.isPortraitMode ? 'inline-block' : 'none';
     }
 
+    learningActionBtn.addEventListener('click', () => {        
+        isNewCollection ? actions.boundChangeCollection(config) : actions.boundToggleLesson({ lesson: 'active' });
+        updateNavIcons();        
+    });
+
     const updateNavIcons = () => {
         document.querySelector('.js-home').classList.remove('active-icon');
         const svg = document.querySelector('.js-home svg');
@@ -111,12 +116,6 @@ export const renderCollections = (counter) => {
             svg.classList.remove('active-icon');
         }
     };
-
-    learningActionBtn.addEventListener('click', () => {        
-        isNewCollection ? actions.boundChangeCollection(config) : actions.boundToggleLesson({ lesson: 'active' });
-        updateNavIcons();        
-    });
-
 
     speciesCollectionLink.addEventListener('click', () => {
         actions.boundSelectCollection(collectionId);

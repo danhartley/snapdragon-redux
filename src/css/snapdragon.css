@@ -143,7 +143,7 @@ progress::-moz-progress-bar {
   padding: .25em .5em;
   text-align: right;
   background-color: var(--snap-card-background);
-  border: 2px solid var(--snap-border-dark);
+  border: 1px solid var(--snap-border-dark);
   border-radius: .1rem;
 }
 
@@ -533,12 +533,14 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .species-question {
   text-align: center;
+  border: 1px solid var(--snap-border-dark);
 }
 
 .species-answer div {        
   text-align: center;
   color: var(--snap-text-dark);
   background-color: var(--snap-border-light);
+  border: 1px solid var(--snap-border-dark);
 }
 
 .species-card-images {
