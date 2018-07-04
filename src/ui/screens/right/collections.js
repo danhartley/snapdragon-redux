@@ -1,7 +1,6 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { collectionPlans } from'snapdragon/collections-plans';
 import { renderTemplate } from 'ui/helpers/templating';
 import { selectHandler } from 'ui/helpers/handlers';
 import { subscription } from 'redux/subscriptions';
@@ -30,7 +29,6 @@ export const renderCollections = (counter) => {
     parent.innerHTML = '';
 
     const species = collections.filter(collection => collection.type === 'species');
-    const skills = collections.filter(collection => collection.type === 'skill');
 
     if(!config.lesson) return;
 
@@ -40,13 +38,10 @@ export const renderCollections = (counter) => {
 
     const languageName = config.languages.filter(l => l.lang === config.language)[0].name;
 
-    renderTemplate({ species, skills, config, collection, languageName }, template.content, parent);
+    renderTemplate({ species, config, collection, languageName }, template.content, parent);
 
     const selectedCollection = collections.find(collection => collection.selected);
     let collectionId = selectedCollection ? selectedCollection.id : 0;
-
-    actions.boundSelectCollection(0);
-    actions.boundSelectCollection(collectionId);
 
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
@@ -93,15 +88,6 @@ export const renderCollections = (counter) => {
         const languageName = config.languages.filter(l => l.lang === lang)[0].name;
             document.querySelector('.js-selected-language span').innerHTML = languageName;
             config.language = lang;
-    });
-
-    // skills
-
-    selectHandler('.dropdown.js-skills-collections .dropdown-item', (id) => {
-        collectionId = parseInt(id);
-        const { lessonName, levelName } = collectionPlans.filter(collectionPlan => collectionPlan.collectionId === collectionId )[0];
-        config = { ...config, ...{ collection: { id: collectionId }}, ...{ lesson: { name: lessonName, level: { name: levelName }}} };
-        isNewCollection = true;
     });
 
     if(collectionId === 0) {        

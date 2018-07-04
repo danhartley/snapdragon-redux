@@ -1,5 +1,5 @@
 <div class="snapdragon-container snapdragon-dropdowns">
-    <div class="flex-provider">
+    <div class="snapdragon-options">
         <div class="dropdown collections js-collections">
             <button class="btn btn-collection dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Pick a collection
@@ -13,7 +13,7 @@
         </div>                        
     </div>
 
-    <div class="flex-provider">
+    <div class="snapdragon-options">
         <div class="dropdown levels js-levels">
             <button class="btn btn-option dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Choose your level
@@ -24,7 +24,7 @@
         </div>                        
     </div>
 
-    <div class="flex-provider">
+    <div class="snapdragon-options">
         <div class="dropdown languages js-languages">
             <button class="btn btn-option dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Languages
@@ -42,17 +42,6 @@
         <div>
             <div class="underline-link species-collection portrait js-species-collection">View species list</div>
         </div>
-    </div>
-    
-    <div class="flex-provider landscape" style="display:none;">
-        <div class="dropdown skills-collections js-skills-collections">
-            <button class="btn btn-collection dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Advanced Skills
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-collection="{{ skills }}">
-                <a class="dropdown-item" id="{{ collection.id }}" name="{{ collection.name }}" href="#">{{ collection.name }} ({{ collection.items.length }})</a>
-            </div>
-        </div>                        
     </div>
 
     <div class="action-update">

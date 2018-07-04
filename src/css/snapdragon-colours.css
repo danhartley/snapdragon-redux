@@ -6,7 +6,7 @@
     --snap-primary: rgba(52, 105, 23, .3);
     --snap-collection: rgba(2, 43, 84, .7);
     --snap-option: rgba(158, 201, 239, .6);
-    --snap-button: rgb(52, 105, 23);
+    --snap-lesson: rgb(52, 105, 23);
   
     --snap-primary-hover: rgb(205,205,205);
     --snap-primary-active: rgb(205,205,205);
@@ -32,7 +32,7 @@
     --snap-border-dark: rgba(175,175,175,.6);
     --snap-border-light: rgb(255, 255, 255);
     
-    --snap-button-border-dark: rgba(175,175,175,.6);
+    --snap-lesson-border-dark: rgba(175,175,175,.6);
   
     --snap-modal-background: rgb(50, 50, 50);
     --snap-modal-title: rgb(50, 50, 50);

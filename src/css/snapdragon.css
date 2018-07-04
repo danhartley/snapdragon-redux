@@ -54,11 +54,15 @@ progress::-moz-progress-bar {
 
 .btn.btn-light {
   color: var(--snap-text-light);
-  background-color: var(--snap-button);
+  background-color: var(--snap-lesson);
 }
 
 .btn-collection {
   background-color: var(--snap-collection);
+}
+
+.btn-lesson {
+  background-color: var(--snap-lesson);
 }
 
 .collections a.dropdown-item.active, .js-collections a.dropdown-item:active {
@@ -147,7 +151,7 @@ progress::-moz-progress-bar {
   border-radius: .1rem;
 }
 
-.flex-provider {
+.snapdragon-options {
   margin: 0 0 1em 0;
 }
 
@@ -350,7 +354,7 @@ button:disabled {
 }
 
 button.btn-light {
-  border-color: var(--snap-button-border-dark);
+  border-color: var(--snap-lesson-border-dark);
 }
 
 button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-light.dropdown-toggle, .btn-light:not(:disabled):not(.disabled).active:focus, .btn-light:not(:disabled):not(.disabled):active:focus, .show>.btn-light.dropdown-toggle:focus {
@@ -557,10 +561,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   cursor: pointer;
 }
 
-.right-grid, .flex-provider.eol, .flex-provider.wiki, .flex-provider.gbif, .flex-provider.skills, .species-card-wiki-entry,
+/* .right-grid, .flex-provider.eol, .flex-provider.wiki, .flex-provider.gbif, .flex-provider.skills, .species-card-wiki-entry,
 .collection-preview, .collection button, .collections-skills {
     display: none;
-}
+} */
 
 .left-body button, .right-body button, .dropdown-menu.show {
     width: 100%;

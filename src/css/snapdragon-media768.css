@@ -69,7 +69,7 @@
         font-size: 1.2em;
     }
 
-    .flex-provider .eol, .flex-provider .gbif {
+    /* .flex-provider .eol, .flex-provider .gbif {
         display: block;
     }
 
@@ -110,7 +110,7 @@
 
     .flex-provider.dan {
         display: none;
-    }
+    } */
 
     .letterbox-entry {
         height: 100%;
