@@ -1,4 +1,5 @@
-import { itemVernacularName } from 'ui/helpers/data-checking';
+import { itemProperties } from 'ui/helpers/data-checking';
+import { epithets } from 'api/botanical-latin';
 
 const item = {
     "names": [
@@ -52,13 +53,13 @@ const item = {
 
 test('should return Menthe à longues feuilles for preferred french name', () => {
     const config = { language: 'fr'};
-    const fr = itemVernacularName(item, config);
+    const fr = itemProperties.vernacularName(item, config);
     expect(fr).toEqual('Menthe à longues feuilles');
 });
 
 test('should return spearmint instead of missing preferred spanish name', () => {
     const config = { language: 'es'};
-    const es = itemVernacularName(item, config);
+    const es = itemProperties.vernacularName(item, config);
     expect(es).toEqual('spearmint');
 });
 
@@ -66,6 +67,23 @@ test('should return spearmint instead of missing preferred spanish name', () => 
 test('should return empty string when no match found for either english default or preferred spanish name', () => {
     const emptyItem = { names: [] };
     const config = { language: 'es'};
-    const es = itemVernacularName(emptyItem, config);
+    const es = itemProperties.vernacularName(emptyItem, config);
     expect(es).toEqual('Unknown');
+});
+
+test('should return a translation object where this is a matching latin name', () => {
+  const species = 'officinalis';
+  const expected = {
+      "latin" : ["officinalis", "officinale"],
+      "en" : "of or belonging to an officina, the store room of a monastery, where medicines and other necessaries were kept",
+      "wiki": "https://en.wikipedia.org/wiki/Officinalis"
+  };
+  const epithet = itemProperties.latin(species);
+  expect(epithet).toEqual(expected);
+});
+
+test('should not return a translation object where this is no a matching latin name', () => {
+  const species = 'schoenoprasum';
+  const epithet = itemProperties.latin(species);
+  expect(epithet).toEqual("");
 });

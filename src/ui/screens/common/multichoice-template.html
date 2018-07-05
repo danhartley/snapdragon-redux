@@ -1,0 +1,14 @@
+<div class="snapdragon-container">
+    <div class="species-card-container">
+            <div class="js-multi-question"></div>
+            <fieldset class="list-group list-group-flush" data-repeat-answer="{{ answers }}">
+                <div>
+                    <input type="radio" value="{{ answer }}" name="answer" checked />
+                    <label for="{{ answer }}">{{ answer }}</label>
+                </div>
+            </fieldset>
+    </div>
+    <div class="action-update">
+        <button class="btn btn-light">Check</button>
+    </div>
+</div>

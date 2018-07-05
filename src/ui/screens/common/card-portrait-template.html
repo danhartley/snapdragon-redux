@@ -1,10 +1,17 @@
 <div class="js-species-card snapdragon-container">
     <div class="js-species-card-images species-card-images"></div>    
     <div class="species-card-container">
-        <div class="card js-card">
-            <div class="species-card-species js-txt-species">{{ species }}</div>
-            <div class="species-card-name js-txt-species-names">{{ name }}</div>
-        </div>        
+        <div class="content">
+            <div class="card js-card">
+                <div class="species-card-family js-txt-family">
+                    <span></span>
+                </div>
+                <div class="species-card-species js-txt-species">{{ species }}</div>
+                <div class="species-card-name js-txt-species-names">{{ name }}</div>
+                <div class="species-card-latin js-txt-latin">{{ latin }}</div>
+                <div></div>
+            </div>
+        </div>     
     </div>
     <div class="species-card-btn action-update js-species-card-btn"><button class="btn btn-light">Continue</button></div>
 </div>

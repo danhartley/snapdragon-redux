@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { renderSummary } from 'ui/progress/summary';
 
-export const createLesson = (lessonName, levelName, moduleSize, excludeRevision, isPortraitMode, layouts, progressScreens) => {
+export const createLesson = (lessonName, levelName, moduleSize, excludeRevision, isPortraitMode, layouts, progressScreens, wildcardLayouts) => {
     
     if(excludeRevision) {
         layouts = layouts.filter(layout => layout.name !== 'revision');
@@ -11,6 +11,8 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
     let lessonPlan = [], layoutIndex = 0;
 
     // create basic lesson plan from given layout and number of items (moduleSize)
+    // replicate each layout x times where x is the configured module size e.g. if 3 then 
+    // iterate through 3 items from the collection on each round
 
     layouts.forEach( (layout, index) => {
 
@@ -26,13 +28,15 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
     let testPlans = [ ...lessonPlan ];
     const revisionPlans = testPlans.splice(0,moduleSize);
     testPlans = utils.shuffleArray(testPlans);
-    const shuffledLessonPlan = [ ...revisionPlans, ...testPlans ];
+    const shuffledLessonPlan = [ ...revisionPlans, ...testPlans, ...wildcardLayouts ];
+
+    console.log(shuffledLessonPlan);
 
     let itemIndex = 0;
 
     shuffledLessonPlan.forEach( (plan, i) => {
         plan.layoutIndex = layoutIndex;
-        plan.itemIndex = itemIndex;
+        plan.itemIndex = plan.itemIndex || itemIndex;
         plan.exerciseIndex = i;
         layoutIndex = layoutIndex + 1;
         itemIndex = (itemIndex + 1) === moduleSize ? 0 : itemIndex + 1;

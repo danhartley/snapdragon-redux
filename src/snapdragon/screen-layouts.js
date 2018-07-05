@@ -83,6 +83,13 @@ const leafName = {
   template: 'js-text-entry-template'     
 };
 
+const multichoice = {
+  name: 'multichoice',
+  headers: { long: 'Latin epithet recall', short: 'Select the epithet name'},
+  domain: 'collection',
+  question: 'Select the epithet',
+};
+
 
 export const screens = {
   specimen,
@@ -98,5 +105,7 @@ export const screens = {
   command,
 
   leaf,
-  leafName
+  leafName,
+
+  multichoice
 };

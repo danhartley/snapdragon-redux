@@ -3,11 +3,11 @@ import * as R from 'ramda';
 import { DOM } from 'ui/dom';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
-import { itemVernacularName } from 'ui/helpers/data-checking';
+import { itemProperties } from 'ui/helpers/data-checking';
 import speciesCard from 'ui/screens/common/species-card-template.html';
 import questionCard from 'ui/screens/common/species-question-template.html';
 
-export const renderStrips = (screen, item, callback, config) => {
+export const renderStrips = (screen, item, callback, config, questionCount) => {
 
     const template = document.createElement('template');
 
@@ -48,7 +48,7 @@ export const renderStrips = (screen, item, callback, config) => {
         parent = document.querySelector('.snapdragon-container');
 
         const species = item.name;
-        const name = itemVernacularName(item, config);
+        const name = itemProperties.vernacularName(item, config);
         template.innerHTML = speciesCard;
 
         const context = (screen.name === 'species-vernaculars') 
@@ -67,9 +67,9 @@ export const renderStrips = (screen, item, callback, config) => {
             answer.classList.add(className);
         }
 
-        scoreHandler(strips, item, config, 'strip', renderAnswer);
+        scoreHandler(strips, item, config, 'strip', renderAnswer, questionCount);
     } else {
-        scoreHandler(strips, item, config, 'strip');
+        scoreHandler(strips, item, config, 'strip', null, questionCount);
     }
     template.innerHTML = '';
 };

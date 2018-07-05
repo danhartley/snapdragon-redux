@@ -306,6 +306,10 @@ progress::-moz-progress-bar {
   text-align: left;
 }
 
+.species-card-container .content {
+  flex: 1 1 auto;
+}
+
 .species-card-container .card {
   margin: .5em  0 0 0;
 }
@@ -326,6 +330,10 @@ progress::-moz-progress-bar {
 
 .species-card-name {
   text-transform: capitalize;
+}
+
+.species-card-latin {
+  font-size: .8em;
 }
 
 .specimens-card-btn {
@@ -561,10 +569,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   cursor: pointer;
 }
 
-/* .right-grid, .flex-provider.eol, .flex-provider.wiki, .flex-provider.gbif, .flex-provider.skills, .species-card-wiki-entry,
+.right-grid, .species-card-wiki-entry,
 .collection-preview, .collection button, .collections-skills {
     display: none;
-} */
+}
 
 .left-body button, .right-body button, .dropdown-menu.show {
     width: 100%;

@@ -10,6 +10,7 @@ import { renderLeafTile } from 'ui/screens/left/leaf-tile';
 import { renderNameEntry } from 'ui/screens/right/leaf-text-entry';
 import { runTask } from 'ui/screens/command';
 import { renderSpeciesCollection } from 'ui/screens/common/species';
+import { renderMultichoice } from 'ui/screens/common/multichoice';
 
 const functions = [
     { name: 'text-entry', func: renderTextEntry },
@@ -24,6 +25,7 @@ const functions = [
     { name: 'command', func: [renderSpecimenTiles, runTask] },
     { name: 'leaf-image', func: renderLeafTile },
     { name: 'leaf-text', func: renderNameEntry },
+    { name: 'multichoice', func: renderMultichoice },
 ];
 
 export const funcByName = name => {

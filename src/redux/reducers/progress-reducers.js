@@ -14,10 +14,11 @@ export const counter = (state = null, action) => {
         case types.NEXT_ROUND:
             return action.data;
         case types.UPDATE_SCORE:
-            let i = (state.index + 1) <= collectionSize ? (state.index + 1) : state.index;
+            let i = (state.index + 1) <= action.data.questionCount ? (state.index + 1) : state.index;
             return { index: i, lesson: 'active' };
         case types.END_REVISION:
-            i = (state.index + 1) <= collectionSize ? (state.index + 1) : state.index;
+            // i = (state.index + 1) <= collectionSize ? (state.index + 1) : state.index;
+            i = (state.index + 1) <= action.data.questionCount ? (state.index + 1) : state.index;
             return { index: i, lesson: 'active' };
         case types.TOGGLE_LESSON:
             return { ...state, ...action.data };

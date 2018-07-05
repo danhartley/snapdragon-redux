@@ -4,6 +4,7 @@ import { utils } from 'utils/utils';
 import { config } from 'syllabus/lesson-config';
 import { collections } from 'snapdragon/species-collections';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
+import { itemProperties } from 'ui/helpers/data-checking';
 
 const initCollection = (rawCollection = collections[0]) => {
     let prepCollection = rawCollection.type === 'skill'
@@ -12,13 +13,23 @@ const initCollection = (rawCollection = collections[0]) => {
     const items = prepCollection(rawCollection.items);
     const rounds = items.length / config.moduleSize;
 
+    const wildcards = [];
+    const epithets = rawCollection.items.map( (item, index) => {
+        const species = itemProperties.speciesName(item.name);
+        const latin = itemProperties.latin(species);
+        const binomial = item.name;        
+        return { ...latin, binomial, index };
+    });
+    wildcards.push({ name: 'epithets', items: epithets.filter(epithet => epithet.latin)});    
+
     const collection = {
         name: rawCollection.name,
         items : items,
         itemIndex: 0,
         currentRound: 1,
         moduleSize: config.moduleSize,
-        rounds : items.length % config.moduleSize === 0 ? rounds : rounds === 1 ? 1 : Math.floor(rounds) + 1
+        rounds : items.length % config.moduleSize === 0 ? rounds : rounds === 1 ? 1 : Math.floor(rounds) + 1,
+        wildcards: wildcards
      };
 
      return collection;
