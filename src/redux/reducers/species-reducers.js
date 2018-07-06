@@ -33,12 +33,6 @@ export const collection = (state = null, action) => {
         case types.NEXT_ITEM:
             itemIndex = action.data;
             return { ...state, itemIndex };
-            // layoutIndex = action.data;
-            // const isNewRound = layoutIndex % state.moduleSize === 0;
-            // itemIndex = isNewRound
-            //         ? (state.moduleSize * (state.currentRound -1))
-            //         : (state.moduleSize * (state.currentRound -1)) + layoutIndex;
-            // return { ...state, itemIndex };
         case types.NEXT_ROUND:
             layoutIndex = action.data;
             currentRound = (state.currentRound === state.rounds) ? 1 : state.currentRound + 1;
