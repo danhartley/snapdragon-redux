@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { renderSummary } from 'ui/progress/summary';
 
-export const createLesson = (lessonName, levelName, moduleSize, excludeRevision, isPortraitMode, layouts, progressScreens, wildcardLayouts) => {
+export const createLesson = (lessonName, levelName, moduleSize, excludeRevision, isPortraitMode, layouts, progressScreens, wildcardLayouts, collection) => {
     
     if(excludeRevision) {
         layouts = layouts.filter(layout => layout.name !== 'revision');
@@ -25,21 +25,34 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
 
     // create a new lesson plan, keeping the revision modules at the start followed by the shuffled test modules
 
-    let testPlans = [ ...lessonPlan ];
+    //...wildcardLayouts
+
+    const itemGroup = collection.itemGroups[collection.currentRound - 1];
+    const wildcardLayoutsForGroup = [];
+    itemGroup.forEach(index => {
+        wildcardLayouts.forEach(layout => {
+            if(layout.itemIndex === index) {
+                wildcardLayoutsForGroup.push(layout);
+            }
+        });
+    });
+
+
+    let testPlans = [ ...lessonPlan, ...wildcardLayoutsForGroup ];
     const revisionPlans = testPlans.splice(0,moduleSize);
     testPlans = utils.shuffleArray(testPlans);
-    const shuffledLessonPlan = [ ...revisionPlans, ...testPlans, ...wildcardLayouts ];
+    const shuffledLessonPlan = [ ...revisionPlans, ...testPlans ];
 
     console.log(shuffledLessonPlan);
 
-    let itemIndex = 0;
+    const offSet = (collection.currentRound - 1) * moduleSize;
 
     shuffledLessonPlan.forEach( (plan, i) => {
         plan.layoutIndex = layoutIndex;
-        plan.itemIndex = plan.itemIndex || itemIndex;
+        plan.itemIndex = plan.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
+        console.log('plan.itemIndex ', plan.itemIndex);
         plan.exerciseIndex = i;
-        layoutIndex = layoutIndex + 1;
-        itemIndex = (itemIndex + 1) === moduleSize ? 0 : itemIndex + 1;
+        layoutIndex = layoutIndex + 1;        
     });
 
     // update the original lesson plan with the shuffled version

@@ -5,7 +5,7 @@ import { sendQandAHandler, modalBackgroundImagesHandler } from 'ui/helpers/handl
 import landscapeTemplates from 'ui/screens/common/text-entry-templates.html';
 import portraitTemplates from 'ui/screens/common/text-entry-portrait-templates.html';
 
-export const renderInput = (config, screen, question, callbackTime, item, hints) => {
+export const renderInput = (config, screen, question, callbackTime, item, renderHeader, hints) => {
 
     const { layouts } = store.getState();
     const templates = document.createElement('div');
@@ -22,7 +22,7 @@ export const renderInput = (config, screen, question, callbackTime, item, hints)
     const clone = document.importNode(template.content, true);
     
     clone.querySelector('button').addEventListener('click', event => {
-        sendQandAHandler(question, document.querySelector('.js-txt-input').value, event, config.isPortraitMode, layouts.length, callbackTime);
+        sendQandAHandler(question, document.querySelector('.js-txt-input').value, event, config.isPortraitMode, layouts.length, callbackTime, renderHeader);
     });
 
     const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;

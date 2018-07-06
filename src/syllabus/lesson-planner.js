@@ -14,7 +14,8 @@ const createLessonPlan = (config, collection) => {
         isPortraitMode, 
         currentLayouts(config), 
         [ summary, history ],
-        createWildcardLayouts([ [specimen, multichoice] ], collection, moduleSize)
+        createWildcardLayouts([ [specimen, multichoice] ], collection, moduleSize),
+        collection
     );        
 };
 
@@ -23,7 +24,8 @@ const createWildcardLayouts = (wildcards, collection, moduleSize) => {
     const layouts = [];
     epithets.items.forEach(item => {
         const screens = [ wildcards[0][0], wildcards[0][1] ];
-        layouts.push({ name: 'test', score: 1, screens, itemIndex: item.index % moduleSize, epithet: item});
+        layouts.push({ name: 'test', score: 1, screens, itemIndex: item.index, epithet: item});
+        // layouts.push({ name: 'test', score: 1, screens, itemIndex: item.index % moduleSize, epithet: item});
     });
     return layouts;
 };

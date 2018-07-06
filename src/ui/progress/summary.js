@@ -47,9 +47,11 @@ export const renderSummary = (history) => {
             config.lesson.level = level;
             actions.boundUpdateConfig(config);
             actions.boundNextLevel({ index: 0, lesson: 'active' });
-        } else {            
-            actions.boundUpdateConfig(config);
-            actions.boundNextRound({ index: 0, lesson: 'active' });
+        } else {
+            actions.boundNextRound({ index: 0, lesson: 'active' });            
+            setTimeout(() => {
+                actions.boundUpdateConfig(config);    
+            });
         }
 
         config.moduleSize = collection.moduleSize;        

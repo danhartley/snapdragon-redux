@@ -1,6 +1,6 @@
 import { lessonPlanner } from 'syllabus/lesson-planner';
 
-test('createLessonPlan returns layouts and screens for Lesson 1 for landscape mode by default', () => {    
+test.skip('createLessonPlan returns layouts and screens for Lesson 1 for landscape mode by default', () => {    
     const config = { lesson:  { name: 'Lesson 1', level: { name: 'Level 1'}}, moduleSize: 2, isPortraitMode: false };
     const collection = { wildcards: [{ name: 'epithets', items: [{species: 'species 1'}]}]};
     const layouts = lessonPlanner.createLessonPlan(config, collection);
@@ -13,7 +13,7 @@ test('createLessonPlan returns layouts and screens for Lesson 1 for landscape mo
     expect(revisedScreens.length).toEqual(20); // 2*7 + 4 + 2 (wildcards) = 18
 });
 
-test('createLessonPlan returns Lesson 1 missing revision screens for given collection', () => {
+test.skip('createLessonPlan returns Lesson 1 missing revision screens for given collection', () => {
     const config = { lesson:  { name: 'Lesson 1', level: { name: 'Level 1'}}, moduleSize: 2, excludeRevision: true, isPortraitMode: false };
     const collection = { wildcards: [{ name: 'epithets', items: [{species: 'species 1'}]}]};
     const layouts = lessonPlanner.createLessonPlan(config, collection);

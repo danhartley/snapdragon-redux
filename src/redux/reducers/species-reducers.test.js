@@ -59,7 +59,7 @@ test('collection should return correct itemIndex for action type NEXT_ITEM', () 
 
   action = { data: 2, type: types.NEXT_ITEM };
   state = collection(state, action);
-  expect(state.itemIndex).toBe(0);
+  expect(state.itemIndex).toBe(2);
 
 });
 
@@ -84,11 +84,11 @@ test('collection should return correct itemIndex and currentRound over several r
   action = { data: 0, type: types.NEXT_ITEM };
   state = collection(state, action);
   
-  expect(state.itemIndex).toBe(2);
+  expect(state.itemIndex).toBe(0);
 
   action = { data: 1, type: types.NEXT_ITEM };
   state = collection(state, action);
-  expect(state.itemIndex).toBe(3);
+  expect(state.itemIndex).toBe(1);
 
   // round 3
 

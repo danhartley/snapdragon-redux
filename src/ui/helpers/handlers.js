@@ -2,11 +2,11 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
-export const sendQandAHandler = (question, answer, event, isPortraitMode, questionCount, callbackTime) => {
+export const sendQandAHandler = (question, answer, event, isPortraitMode, questionCount, callbackTime, renderHeader) => {
     const btn = event.target;
     const response = { ...question, answer };
     
-    const { colour, correct } = renderAnswerHeader(response);
+    const { colour, correct } = renderHeader(response);
 
     const questionText = document.querySelector('.js-txt-question');
 
