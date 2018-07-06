@@ -268,7 +268,7 @@ test('when user selects a collection state should be populated', () => {
 
     counter = store.getState().counter;
 
-    expect(counter.index).toEqual(1); // triggers nextLayout(index)
+    expect(counter.index).toEqual(0); // triggers nextLayout(index)
 
     actions.boundNextLayout({ layoutIndex: 1, itemIndex: 1});
 

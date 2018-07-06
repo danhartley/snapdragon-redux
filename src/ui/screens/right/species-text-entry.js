@@ -1,5 +1,5 @@
 import { store } from 'redux/store';
-import { itemVernacularName } from 'ui/helpers/data-checking';
+import { itemProperties } from 'ui/helpers/data-checking';
 import { renderInput } from 'ui/screens/common/text-entry';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
@@ -13,7 +13,7 @@ export const renderTextEntry = (collection) => {
     
     if(!screen) return;
 
-    item.vernacular = itemVernacularName(item, config);
+    item.vernacular = itemProperties.vernacularName(item, config);
 
     const question = { binomial: item.name, species: item.species, genus: item.genus, taxon: screen.taxon, question: item[screen.taxon] };
 

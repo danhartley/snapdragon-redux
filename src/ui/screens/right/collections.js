@@ -1,11 +1,11 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { collectionPlans } from'snapdragon/collections-plans';
 import { renderTemplate } from 'ui/helpers/templating';
 import { selectHandler } from 'ui/helpers/handlers';
 import { subscription } from 'redux/subscriptions';
 import { renderSpeciesCollection } from 'ui/screens/common/species';
+import { elem } from 'ui/helpers/class-behaviour';
 import collectionsTemplate from 'ui/screens/right/collections-template.html';
 
 export const renderCollections = (counter) => {
@@ -29,7 +29,6 @@ export const renderCollections = (counter) => {
     parent.innerHTML = '';
 
     const species = collections.filter(collection => collection.type === 'species');
-    const skills = collections.filter(collection => collection.type === 'skill');
 
     if(!config.lesson) return;
 
@@ -39,20 +38,28 @@ export const renderCollections = (counter) => {
 
     const languageName = config.languages.filter(l => l.lang === config.language)[0].name;
 
-    renderTemplate({ species, skills, config, collection, languageName }, template.content, parent);
+    renderTemplate({ species, config, collection, languageName }, template.content, parent);
 
     const selectedCollection = collections.find(collection => collection.selected);
     let collectionId = selectedCollection ? selectedCollection.id : 0;
 
-    if(selectedCollection)
+    const learningActionBtn = document.querySelector('.js-lesson-btn-action');
+    const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
+    const speciesCollectionLink = document.querySelector('.js-species-collection');    
+
+    if(selectedCollection) {
         document.querySelectorAll(`[name="${selectedCollection.name}"]`)[0].classList.add('active');
+        elem.show(learningActionBtn);
+        elem.hide(learningActionBtnPlaceholder);
+    }
     
     selectHandler('.dropdown.js-collections .dropdown-item', (id) => {
         collectionId = parseInt(id);
         const collectionName = collections.filter(collection => collection.id === collectionId)[0].name;
         document.querySelector('.js-selected-collection span').innerHTML = collectionName;        
         config = { ...config, ...{ collection: { id: collectionId }} };
-        learningActionBtn.disabled = false;
+        elem.show(learningActionBtn);
+        elem.hide(learningActionBtnPlaceholder);
         speciesCollectionLink.style.display = config.isPortraitMode ? 'inline-block' : 'none';
         isNewCollection = true;
         if(!config.isPortraitMode)
@@ -83,26 +90,17 @@ export const renderCollections = (counter) => {
             config.language = lang;
     });
 
-    // skills
-
-    selectHandler('.dropdown.js-skills-collections .dropdown-item', (id) => {
-        collectionId = parseInt(id);
-        const { lessonName, levelName } = collectionPlans.filter(collectionPlan => collectionPlan.collectionId === collectionId )[0];
-        config = { ...config, ...{ collection: { id: collectionId }}, ...{ lesson: { name: lessonName, level: { name: levelName }}} };
-        learningActionBtn.disabled = false;
-        isNewCollection = true;
-    });
-
-    const learningActionBtn = document.querySelector('.js-lesson-btn-action');
-    const speciesCollectionLink = document.querySelector('.js-species-collection');
-
-    if(collectionId === 0) {
-        learningActionBtn.disabled = true;
+    if(collectionId === 0) {        
         speciesCollectionLink.style.display = 'none';
     } else {
         learningActionBtn.innerHTML = 'Continue lesson';
         speciesCollectionLink.style.display = config.isPortraitMode ? 'inline-block' : 'none';
     }
+
+    learningActionBtn.addEventListener('click', () => {        
+        isNewCollection ? actions.boundChangeCollection(config) : actions.boundToggleLesson({ lesson: 'active' });
+        updateNavIcons();        
+    });
 
     const updateNavIcons = () => {
         document.querySelector('.js-home').classList.remove('active-icon');
@@ -111,12 +109,6 @@ export const renderCollections = (counter) => {
             svg.classList.remove('active-icon');
         }
     };
-
-    learningActionBtn.addEventListener('click', () => {        
-        isNewCollection ? actions.boundChangeCollection(config) : actions.boundToggleLesson({ lesson: 'active' });
-        updateNavIcons();        
-    });
-
 
     speciesCollectionLink.addEventListener('click', () => {
         actions.boundSelectCollection(collectionId);

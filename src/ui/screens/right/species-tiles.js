@@ -5,7 +5,7 @@ import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
-import { itemVernacularName } from 'ui/helpers/data-checking';
+import { itemProperties } from 'ui/helpers/data-checking';
 import html from 'ui/screens/right/species-tiles-template.html';
 import speciesCard from 'ui/screens/common/species-card-template.html';
 import questionCard from 'ui/screens/common/species-question-template.html';
@@ -14,7 +14,7 @@ export const renderSpeciesTiles = (collection) => {
 
     const item = collection.items[collection.itemIndex];
 
-    const { layout, config } = store.getState();
+    const { layout, config, layouts } = store.getState();
 
     const screen = layout.screens.find(el => el.name === 'species-images');
     
@@ -34,13 +34,15 @@ export const renderSpeciesTiles = (collection) => {
     }));
 
     renderTemplate({ images }, template.content, parent);
+
+    const questionCount = layouts.length;
     
     if(config.isPortraitMode) {
 
         parent = document.querySelector('.snapdragon-container');
 
         const species = item.name;
-        const name = itemVernacularName(item, config);
+        const name = itemProperties.vernacularName(item, config);
         template.innerHTML = speciesCard;
         renderTemplate( { species, name, filter: '' }, template.content, parent);
         template.innerHTML = questionCard;
@@ -52,9 +54,9 @@ export const renderSpeciesTiles = (collection) => {
             answer.parentElement.style.display = 'block';
             answer.classList.add(colour);
         }   
-        scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image', renderAnswer);
+        scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image', renderAnswer, questionCount);
     } else {
-        scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image');
+        scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image', null, questionCount);
     };
 
     document.querySelectorAll('.tile span').forEach(img=>{

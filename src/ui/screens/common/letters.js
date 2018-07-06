@@ -2,11 +2,14 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 
 import { DOM } from 'ui/dom';
+import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
 export const renderLetters = (letters, item, callbackTime) => {
+
+    const { layouts } = store.getState();
 
     const template = document.querySelector('.js-letters-template');
 
@@ -50,6 +53,7 @@ export const renderLetters = (letters, item, callbackTime) => {
                     const { text, colour, correct } = renderAnswerHeader(response);
                     DOM.rightHeaderTxt.innerHTML = text;
                     DOM.rightHeader.classList.add(colour);
+                    response.questionCount = layouts.length;
                     setTimeout(()=>{
                         actions.boundUpdateScore(response);
                     }, callbackTime);
@@ -83,6 +87,7 @@ export const renderLetters = (letters, item, callbackTime) => {
         const { text, colour, correct } = renderAnswerHeader(response);
         DOM.rightHeaderTxt.innerHTML = text;
         DOM.rightHeader.classList.add(colour);
+        response.questionCount = layouts.length;
         setTimeout(()=>{
             actions.boundUpdateScore(response);
         }, callbackTime);

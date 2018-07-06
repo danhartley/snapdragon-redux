@@ -54,11 +54,15 @@ progress::-moz-progress-bar {
 
 .btn.btn-light {
   color: var(--snap-text-light);
-  background-color: var(--snap-button);
+  background-color: var(--snap-lesson);
 }
 
 .btn-collection {
   background-color: var(--snap-collection);
+}
+
+.btn-lesson {
+  background-color: var(--snap-lesson);
 }
 
 .collections a.dropdown-item.active, .js-collections a.dropdown-item:active {
@@ -143,11 +147,11 @@ progress::-moz-progress-bar {
   padding: .25em .5em;
   text-align: right;
   background-color: var(--snap-card-background);
-  border: 2px solid var(--snap-border-dark);
+  border: 1px solid var(--snap-border-dark);
   border-radius: .1rem;
 }
 
-.flex-provider {
+.snapdragon-options {
   margin: 0 0 1em 0;
 }
 
@@ -302,6 +306,10 @@ progress::-moz-progress-bar {
   text-align: left;
 }
 
+.species-card-container .content {
+  flex: 1 1 auto;
+}
+
 .species-card-container .card {
   margin: .5em  0 0 0;
 }
@@ -322,6 +330,10 @@ progress::-moz-progress-bar {
 
 .species-card-name {
   text-transform: capitalize;
+}
+
+.species-card-latin {
+  font-size: .8em;
 }
 
 .specimens-card-btn {
@@ -350,11 +362,17 @@ button:disabled {
 }
 
 button.btn-light {
-  border-color: var(--snap-button-border-dark);
+  border-color: var(--snap-lesson-border-dark);
 }
 
 button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-light.dropdown-toggle, .btn-light:not(:disabled):not(.disabled).active:focus, .btn-light:not(:disabled):not(.disabled):active:focus, .show>.btn-light.dropdown-toggle:focus {
   box-shadow: 0 0 0 0;  
+}
+
+.btn-placeholder {
+  text-align: center;
+  border: 1px solid var(--snap-border-dark);
+  padding: .5em;
 }
 
 /* dropdown menus */
@@ -533,12 +551,14 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .species-question {
   text-align: center;
+  border: 1px solid var(--snap-border-dark);
 }
 
 .species-answer div {        
   text-align: center;
   color: var(--snap-text-dark);
   background-color: var(--snap-border-light);
+  border: 1px solid var(--snap-border-dark);
 }
 
 .species-card-images {
@@ -549,7 +569,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   cursor: pointer;
 }
 
-.right-grid, .flex-provider.eol, .flex-provider.wiki, .flex-provider.gbif, .flex-provider.skills, .species-card-wiki-entry,
+.right-grid, .species-card-wiki-entry,
 .collection-preview, .collection button, .collections-skills {
     display: none;
 }
@@ -603,4 +623,21 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .list-continue-btn {
   margin: 1em .5em;
+}
+
+.toggle-content {
+	display: none;
+}
+
+.toggle-content.is-visible {
+	display: block;
+}
+
+.radio-buttons {
+  display: flex;
+}
+
+.radio-buttons input {
+  margin: 0.25em 1em 0 0;
+  cursor: pointer;
 }

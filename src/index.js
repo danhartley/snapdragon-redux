@@ -3,11 +3,11 @@ import "babel-polyfill";
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import './css/snapdragon-colours.css';
-import './css/snapdragon.css';
-import './css/snapdragon-media.css';
-import './css/snapdragon-media768.css';
-import './css/snapdragon-media1200.css';
+import 'ui/css/snapdragon-colours.css';
+import 'ui/css/snapdragon.css';
+import 'ui/css/snapdragon-media.css';
+import 'ui/css/snapdragon-media768.css';
+import 'ui/css/snapdragon-media1200.css';
 
 import { store } from 'redux/store';
 
@@ -18,6 +18,7 @@ import { nextItem } from 'ui/setup/next-item';
 import { renderHeaders } from 'ui/screens/common/headers';
 import { renderScore } from 'ui/progress/score';
 import { renderCollections } from 'ui/screens/right/collections';
+import { renderHome } from 'ui/screens/right/home';
 import { renderNavigation } from 'ui/screens/common/navigation';
 
 import { lessonPlans } from 'snapdragon/lesson-plans';
@@ -47,7 +48,8 @@ setTimeout(()=>{
     actions.boundUpdateConfig(config);
     actions.boundToggleLesson(counter);
 
-    subscription.add(renderCollections, 'counter', 'flow');
+    // subscription.add(renderCollections, 'counter', 'flow');
+    subscription.add(renderHome, 'counter', 'flow');
     subscription.add(renderSnapdragon, 'counter', 'flow');
     subscription.add(nextLesson, 'config', 'flow');
     subscription.add(nextLayout, 'counter', 'flow');

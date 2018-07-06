@@ -1,55 +1,13 @@
 import { DOM } from 'ui/dom';
-import { actions } from 'redux/actions/action-creators';
+import { store } from 'redux/store';
 import { utils } from 'utils/utils';
-import { modalBackgroundImagesHandler } from 'ui/helpers/handlers';
+import { sendQandAHandler, modalBackgroundImagesHandler } from 'ui/helpers/handlers';
 import landscapeTemplates from 'ui/screens/common/text-entry-templates.html';
 import portraitTemplates from 'ui/screens/common/text-entry-portrait-templates.html';
 
-export const renderInput = (config, screen, question, callbackTime, item, renderAnswerHeader, hints) => {
+export const renderInput = (config, screen, question, callbackTime, item, renderHeader, hints) => {
 
-    const sendQandA = (answer, event) => {
-        const btn = event.target;
-        const response = { ...question, answer };
-        
-        const { colour, correct } = renderAnswerHeader(response);
-
-        const questionText = document.querySelector('.js-txt-question');
-
-        if(config.isPortraitMode) {
-            questionText.innerHTML = correct
-                ? `<div>
-                    <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
-                   </div>`
-                : `<div>
-                    <span class="icon"><i class="fas fa-times-circle"></i></span><span>Incorrect</span>
-                   </div>
-                   <div>Answer: ${ response.question }</div>`;
-        } else {
-            questionText.innerHTML = correct 
-                ? `<div>
-                    <span class="icon"><i class="fas fa-check-circle"></i></span>
-                    <span>${ response.question } is the correct answer.</span>
-                   </div>`
-                : `<div>
-                    <span class="icon"><i class="fas fa-times-circle"></i></span>
-                    <span>${ response.answer || '--' } is incorrect.</span>
-                   </div> 
-                   <div>The correct answer is ${ response.question }.</div>`;
-        }
-
-        btn.style.background = colour;
-        btn.style.borderColor = colour;
-        btn.style.color = 'white';
-        btn.innerText = correct ? 'Correct' : 'Incorrect';
-        btn.disabled = true;
-
-        response.success = correct;
-
-        setTimeout(()=>{
-            actions.boundUpdateScore(response);
-        }, callbackTime);
-    };
-
+    const { layouts } = store.getState();
     const templates = document.createElement('div');
     templates.innerHTML = config.isPortraitMode ? portraitTemplates : landscapeTemplates;
 
@@ -64,8 +22,7 @@ export const renderInput = (config, screen, question, callbackTime, item, render
     const clone = document.importNode(template.content, true);
     
     clone.querySelector('button').addEventListener('click', event => {
-        sendQandA(document.querySelector('.js-txt-input').value, event);
-        event.target.disabled = true;
+        sendQandAHandler(question, document.querySelector('.js-txt-input').value, event, config.isPortraitMode, layouts.length, callbackTime, renderHeader);
     });
 
     const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;

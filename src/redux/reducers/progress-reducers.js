@@ -2,7 +2,6 @@ import { types } from 'redux/actions/action-types';
 import { initialState } from 'redux/reducers/initial-state-for-reducers';
 
 export const counter = (state = null, action) => {
-    const collectionSize = initialState.collection.items.length;
     switch(action.type) {
         case 'persist/REHYDRATE':
             return action.payload ? action.payload.counter : null;
@@ -14,10 +13,10 @@ export const counter = (state = null, action) => {
         case types.NEXT_ROUND:
             return action.data;
         case types.UPDATE_SCORE:
-            let i = (state.index + 1) <= collectionSize ? (state.index + 1) : state.index;
+            let i = (state.index + 1) <= action.data.questionCount ? (state.index + 1) : state.index;
             return { index: i, lesson: 'active' };
         case types.END_REVISION:
-            i = (state.index + 1) <= collectionSize ? (state.index + 1) : state.index;
+            i = (state.index + 1) <= action.data.questionCount ? (state.index + 1) : state.index;
             return { index: i, lesson: 'active' };
         case types.TOGGLE_LESSON:
             return { ...state, ...action.data };

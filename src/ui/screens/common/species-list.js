@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { modalImageHandler } from 'ui/helpers/handlers';
-import { itemVernacularName } from 'ui/helpers/data-checking';
+import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import speciesTemplate from 'ui/screens/common/species-template.html';
 
@@ -18,7 +18,7 @@ export const renderSpeciesCollectionList = (collection) => {
 
     collection.items.forEach(item => { 
         item.image = item.images[0];
-        item.vernacularName = itemVernacularName(item, config);
+        item.vernacularName = itemProperties.vernacularName(item, config);
     });
 
     DOM.leftBody.innerHTML = '';

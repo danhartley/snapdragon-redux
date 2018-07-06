@@ -1,6 +1,6 @@
 import { screens } from 'snapdragon/screen-layouts';
 
-const { specimen, revision, species, vernaculars, scientifics, summary, history, text, command, leaf, leafName } = screens;
+const { specimen, revision, species, vernaculars, scientifics, summary, history, text, command, leaf, leafName, multichoice } = screens;
 
 const portrait1 = {
     name: 'revision',
@@ -47,6 +47,14 @@ const portrait8 = {
     name: 'test',
     score: 1,
     screens: [{ ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Common name recall', short: 'Enter the common name'}}]    
+};
+
+const portrait9 = {
+    name: 'test',
+    score: 1,
+    screens: [
+        { ...multichoice }
+    ]
 };
 
 const layout1 = {
@@ -137,6 +145,15 @@ const layout10 = {
     ]
 };
 
+const layout11 = {
+    name: 'test',
+    score: 1,
+    screens: [
+        { ...specimen },
+        { ...multichoice }
+    ]
+};
+
 const landscapeLesson1 = {
     id: 1,
     name: 'Lesson 1',
@@ -155,7 +172,7 @@ const landscapeLesson1 = {
         {   id: 3,
             name: 'Level 3',
             description: 'Complete latin name',
-            layouts: [ layout1, layout5, layout6 ]
+            layouts: [ layout1, layout5, layout6, layout10, layout7 ]
         },
         {   id: 4,
             name: 'Level 4',

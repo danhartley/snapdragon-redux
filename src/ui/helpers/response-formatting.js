@@ -89,10 +89,3 @@ export const renderTermAnswerHeader = (response, header, target) => {
 
     return { text, colour, correct };
 };
-
-export const addClassName = (element, className, redundantClasses) => {
-    if(redundantClasses && redundantClasses.length > 0) 
-        redundantClasses.forEach(redundant => element.classList.remove(redundant));
-    if(className)
-        element.classList.add(className);
-};

@@ -1,5 +1,6 @@
 export const herbs1 = [
     {
+      "snap-id": 1,
       "id": 579697,
       "name": "Mentha spicata",
       "eol-name": "Mentha spicata L.",
@@ -158,6 +159,7 @@ export const herbs1 = [
       ]
     },
     {
+      "snap-id": 2,
       "id": 584995,
       "name": "Anethum graveolens",
       "eol-name": "Anethum graveolens L.",
@@ -309,6 +311,7 @@ export const herbs1 = [
       ]
     },
     {
+      "snap-id": 3,
       "id": 484542,
       "name": "Thymus vulgaris",
       "eol-name": "Thymus vulgaris L.",
@@ -458,6 +461,7 @@ export const herbs1 = [
       ]
     },
     {
+      "snap-id": 4,
       "id": 585008,
       "name": "Foeniculum vulgare",
       "eol-name": "Foeniculum vulgare Mill.",
@@ -640,6 +644,7 @@ export const herbs1 = [
       ]
     },
     {
+      "snap-id": 5,
       "id": 577604,
       "name": "Artemisia dracunculus",
       "eol-name": "Artemisia dracunculus L.",
@@ -798,6 +803,7 @@ export const herbs1 = [
       ]
     },
     {
+      "snap-id": 6,
       "id": 578478,
       "name": "Salvia officinalis",
       "eol-name": "Salvia officinalis L.",
@@ -989,6 +995,7 @@ export const herbs1 = [
       ]
     },
     {
+      "snap-id": 7,
       "id": 1084938,
       "name": "Allium schoenoprasum",
       "eol-name": "Allium schoenoprasum L.",
@@ -1123,6 +1130,7 @@ export const herbs1 = [
       ]
     },
     {
+      "snap-id": 8,
       "id": 579367,
       "name": "Origanum vulgare",
       "eol-name": "Origanum vulgare L.",
@@ -1328,6 +1336,7 @@ export const herbs1 = [
       ]
     },
     {
+      "snap-id": 9,
       "id": 581687,
       "name": "Coriandrum sativum",
       "eol-name": "Coriandrum sativum L.",
@@ -1461,6 +1470,7 @@ export const herbs1 = [
       ]
     },
     {
+      "snap-id": 10,
       "id": 581421,
       "name": "Petroselinum crispum",
       "eol-name": "Petroselinum crispum (Mill.) Mansf.",
@@ -1592,6 +1602,7 @@ export const herbs1 = [
       ]
     },
     {
+      "snap-id": 11,
       "id": 579379,
       "name": "Rosmarinus officinalis",
       "eol-name": "Rosmarinus officinalis L.",
@@ -1729,6 +1740,7 @@ export const herbs1 = [
       ]
     },
     {
+      "snap-id": 12,
       "id": 579364,
       "name": "Ocimum basilicum",
       "eol-name": "Ocimum basilicum L.",

@@ -6,7 +6,7 @@ import { renderWiki } from 'wikipedia/wiki';
 import { renderFamily } from 'gbif/gbif';
 import { renderTemplate } from 'ui/helpers/templating';
 import { modalBackgroundImagesHandler } from 'ui/helpers/handlers';
-import { itemVernacularName } from 'ui/helpers/data-checking';
+import { itemProperties } from 'ui/helpers/data-checking';
 import landscapeTemplate from 'ui/screens/common/card-template.html';
 import portraitTemplate from 'ui/screens/common/card-portrait-template.html';
 
@@ -15,6 +15,7 @@ export const renderCard = (collection) => {
     const item = collection.items[collection.itemIndex];
 
     const { layout, config, layouts } = store.getState();
+    item.questionCount = layouts.length;
 
     document.querySelector('progress').max = layouts.filter(layout => layout.name === 'test').length;
     document.querySelector('progress').value = 0;
@@ -73,15 +74,15 @@ const renderLandscape = (item, config) => {
                 document.querySelector('#externalPageModal').focus();
             });
         }
-    },500);    
+    });    
 
     const wiki = document.querySelector('.js-species-card-wiki');
 
     renderWiki(wiki, item, config.language);
 
-    const gbif = document.querySelector('.js-card .js-txt-family span');
+    // const gbif = document.querySelector('.js-card .js-txt-family span');
 
-    renderFamily(gbif, item.name);
+    // renderFamily(gbif, item.name);
 
     document.querySelector('.js-txt-family img').classList.add('show');
 };
@@ -110,8 +111,11 @@ const renderPortrait = (item, config) => {
 const renderCommonParts = (template, config, item) => {
 
     const species = item.name;    
-    const name = itemVernacularName(item, config);
-    
+    const name = itemProperties.vernacularName(item, config);
+    const speciesName = itemProperties.speciesName(species);
+    const epithet = itemProperties.latin(speciesName);
+    const latin = epithet ? `${speciesName}: ${epithet.en}` : '';
+
     const clone = document.importNode(template.content, true);
     
     clone.querySelector('button').addEventListener('click', event => {
@@ -122,5 +126,9 @@ const renderCommonParts = (template, config, item) => {
     const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
     parent.innerHTML = '';
     
-    renderTemplate({ species, name }, template.content, parent, clone);
+    renderTemplate({ species, name, latin }, template.content, parent, clone);
+
+    const gbif = document.querySelector('.js-card .js-txt-family span');
+
+    renderFamily(gbif, item.name);
 };

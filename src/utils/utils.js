@@ -98,16 +98,30 @@ Array.prototype.concatAll = function() {
  const onlyUnique = (value, index, self) => { 
     return self.indexOf(value) === index;
 };
-  
-  export const utils = {
-    log,
-    encodeQuery,
-    timer, 
-    intervalTimer,
-    shuffleArray,
-    nextItem,
-    randomiseSelection,
-    insertObjectBetweenItems,
-    doubledItemsInArray,
-    onlyUnique
-  };
+
+const sortBy = (arr, prop) => {
+  return arr.sort((a, b) => parseFloat(a[prop]) - parseFloat(b[prop]));
+};
+
+const calcItemIndex = (offSet, moduleSize, index) => {
+  const itemIndex = 
+        (offSet + index) % moduleSize === 0 
+          ? offSet
+          : offSet + (offSet + index) % moduleSize;
+  return itemIndex;
+};
+
+export const utils = {
+  log,
+  encodeQuery,
+  timer, 
+  intervalTimer,
+  shuffleArray,
+  nextItem,
+  randomiseSelection,
+  insertObjectBetweenItems,
+  doubledItemsInArray,
+  onlyUnique,
+  sortBy,
+  calcItemIndex
+};
