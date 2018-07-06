@@ -27,7 +27,7 @@ export const renderMultichoice = (collection) => {
     const randomAnswers = R.take(5, R.take(6, utils.shuffleArray(epithets)).filter(e => e.en !== layout.epithet.en)).map(e => e.en);
     const description = `In the species ${species}, what is the meaning of the epithet ${epithet}?`;
     const question = { question: layout.epithet.en, binomial: item.name };
-    const answers = [layout.epithet.en, ...randomAnswers];
+    const answers = utils.shuffleArray([layout.epithet.en, ...randomAnswers]);
 
     const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
 
