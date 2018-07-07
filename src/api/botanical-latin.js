@@ -198,6 +198,10 @@ export const epithets = [
     {
         "latin" : ["gracile"],
         "en" : "slender, graceful"
+    },    
+    {
+        "latin" : ["gravis"],
+        "en" : "heavy"
     },
     {
         "latin" : ["hali-"],
@@ -263,6 +267,10 @@ export const epithets = [
         "latin" : ["officinalis", "officinale"],
         "en" : "of or belonging to an officina, the store room of a monastery, where medicines and other necessaries were kept",
         "wiki": "https://en.wikipedia.org/wiki/Officinalis"
+    },
+    {
+        "latin": ["oleo"],
+        "en": "oily"
     },
     {
         "latin" : ["palustris"],

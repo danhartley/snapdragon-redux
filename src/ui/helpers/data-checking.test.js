@@ -72,11 +72,10 @@ test('should return empty string when no match found for either english default 
 });
 
 test('should return a translation object where this is a matching latin name', () => {
-  const species = 'officinalis';
+  const species = 'nucifer';
   const expected = {
-      "latin" : ["officinalis", "officinale"],
-      "en" : "of or belonging to an officina, the store room of a monastery, where medicines and other necessaries were kept",
-      "wiki": "https://en.wikipedia.org/wiki/Officinalis"
+      "latin" : ["nucifer"],
+      "en" : "bearing nuts"
   };
   const epithet = itemProperties.latin(species);
   expect(epithet).toEqual(expected);

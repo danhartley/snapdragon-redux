@@ -25,7 +25,6 @@ const createWildcardLayouts = (wildcards, collection, moduleSize) => {
     epithets.items.forEach(item => {
         const screens = [ wildcards[0][0], wildcards[0][1] ];
         layouts.push({ name: 'test', score: 1, screens, itemIndex: item.index, epithet: item});
-        // layouts.push({ name: 'test', score: 1, screens, itemIndex: item.index % moduleSize, epithet: item});
     });
     return layouts;
 };
