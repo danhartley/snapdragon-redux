@@ -1,13 +1,28 @@
 <html>
     <head>
+        <title>Snapdragon collection builder</title>
         <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
         <script src="./collection-builder.js"></script>
+        <style media="screen" type="text/css">            
+            select, button, input {
+                margin: 10px 5px;
+                height: 30px;
+                font-size: 16px;
+                width: 250px;
+            }
+            .container {
+                display: flex;
+                flex-direction: row;
+            }
+        </style>
     </head>
     <body>
-        <select name="names" id="names" onchange="getImages(this)"></select>
-        <div id="images" style="display: grid;grid-template-columns: 1fr 1fr 1fr 1fr 1fr;"></div>
-        <div>
-            <input type="button" id="btnAdd" value="Add to collection" />
+        <div class="container">
+            <input id="inputCollection" type="text" />
+            <select name="names" id="names" onchange="getImages(this)"></select>
+            <button id="btnGet">Get collection items</button>
+            <button id="btnAdd">Add to collection</button>
         </div>
+        <div id="images" style="display: grid;grid-template-columns: 1fr 1fr 1fr 1fr 1fr;"></div>        
     </body>
 </html>

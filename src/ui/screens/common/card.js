@@ -2,6 +2,7 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
+import { family } from 'api/snapdragon/family';
 import { renderWiki } from 'wikipedia/wiki';
 import { renderFamily } from 'gbif/gbif';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -42,7 +43,11 @@ const renderLandscape = (item, config) => {
     eolPage.setAttribute('style', 'text-decoration: none');
 
     renderCommonParts(template, config, item);
-    
+
+    const familyImage = family.find(f => f.name === item.family).thumb;
+
+    document.querySelector('.js-img-family').src = familyImage;
+
     setTimeout(()=>{
         const wikiLink = document.querySelector('.js-species-card-wiki span');
         if(wikiLink) {

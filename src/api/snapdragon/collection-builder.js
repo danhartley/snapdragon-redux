@@ -7,7 +7,7 @@ const encodeQuery = q => {
     return encodeURIComponent(q.trim()) 
 };
 
-const collectionId = 139051;
+const collectionId =  parseInt(document.querySelector('#inputCollection').value);
 const collectionUrl = `http://eol.org/api/collections/1.0/${collectionId}.json?page=1&per_page=50&filter=&sort_by=recently_added&sort_field=&cache_ttl=&language=en`;
 
 const speciesUrl = id => {
@@ -55,22 +55,24 @@ const getBinomial = item => {
     return binomial;
 };
 
-getCollection().then(collection => {
-    collection.forEach(item => {
-        getSpeciesData(item).then(data => {
-            const binomial = getBinomial(item);
-            getTaxonomy(binomial).then(taxonomy => {
-                data.taxonomy = taxonomy;
-                data.family = taxonomy.family;
-                item.eolName = item.name; 
-                item.name = binomial;
-                items.push(data);
-                console.log(data);
-                selector(items);
+const init = () => {
+    getCollection().then(collection => {
+        collection.forEach(item => {
+            getSpeciesData(item).then(data => {
+                const binomial = getBinomial(item);
+                getTaxonomy(binomial).then(taxonomy => {
+                    data.taxonomy = taxonomy;
+                    data.family = taxonomy.family;
+                    item.eolName = item.name; 
+                    item.name = binomial;
+                    items.push(data);
+                    console.log(data);
+                    selector(items);
+                });
             });
-        });
-    })
-});
+        })
+    });
+};
 
 const selector = items => {
     let options = '<option value="0">Select species</option>';
@@ -95,11 +97,16 @@ const getImages = obj => {
     document.querySelector('#images').innerHTML = images;  
     document.querySelectorAll('img').forEach(image => {
         image.addEventListener('click', event => {
+            const image = event.target;
             const imageId = parseInt(event.target.id);
             const index = imageIds.indexOf(imageId);
             if (index > -1) {
+                image.style.filter = 'saturate(100%)';
+                image.style.opacity = 1;
                 imageIds.splice(index, 1);
             } else {
+                image.style.filter = 'saturate(10%)';
+                image.style.opacity = .3;
                 imageIds.push(imageId);
             }
         });
@@ -109,6 +116,9 @@ const getImages = obj => {
 const newCollection = [];
 
 document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('#btnGet').addEventListener('click', event => {
+        init();
+    });
     document.querySelector('#btnAdd').addEventListener('click', event => {
         const item = items.find(i => i.id === currentItemId);
         const images = [];

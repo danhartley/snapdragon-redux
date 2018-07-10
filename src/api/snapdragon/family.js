@@ -1,4 +1,4 @@
-export const  family = [
+export const family = [
     {
         name: 'Asteraceae',
         aka: ['Compositae', 'Aster', 'Daisies', 'Composite', 'Sunflower family'],
