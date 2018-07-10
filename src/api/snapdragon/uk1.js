@@ -1,7 +1,9 @@
 export const uk1 = [
     {
+      "snap-id": 1,
       "id": 582687,
       "name": "Viscum album",
+      "family": "Santalaceae",
       "eol-name": "Viscum album L.",
       "images": [
         "https://media.eol.org/content/2014/02/03/02/43691_orig.jpg",
@@ -60,8 +62,10 @@ export const uk1 = [
       ]
     },
     {
+      "snap-id": 2,
       "id": 1088811,
       "name": "Galanthus nivalis",
+      "family": "Amaryllidaceae",
       "eol-name": "Galanthus nivalis L.",
       "images": [
         "https://media.eol.org/content/2013/08/23/12/65611_orig.jpg",
@@ -146,8 +150,10 @@ export const uk1 = [
       ]
     },
     {
+      "snap-id": 3,
       "id": 596256,
       "name": "Clematis vitalba",
+      "family": "Ranunculaceae",
       "eol-name": "Clematis vitalba L.",
       "images": [
         "https://media.eol.org/content/2015/03/05/20/89734_orig.jpg",
@@ -228,8 +234,10 @@ export const uk1 = [
       ]
     },
     {
+      "snap-id": 4,
       "id": 581107,
       "name": "Atropa belladonna",
+      "family": "Solanaceae",
       "eol-name": "Atropa belladonna L.",
       "images": [
         "https://media.eol.org/content/2015/01/01/00/33205_orig.jpg",
@@ -288,8 +296,10 @@ export const uk1 = [
       ]
     },
     {
+      "snap-id": 5,
       "id": 1143004,
       "name": "Hedera helix",
+      "family": "Araliaceae",
       "eol-name": "Hedera helix L.",
       "images": [
         "https://media.eol.org/content/2012/06/12/18/36780_orig.jpg",
@@ -362,8 +372,10 @@ export const uk1 = [
       ]
     },
     {
+      "snap-id": 6,
       "id": 467225,
       "name": "Achillea millefolium",
+      "family": "Asteraceae",
       "eol-name": "Achillea millefolium L.",
       "images": [
         "https://media.eol.org/content/2012/08/02/02/95929_orig.jpg",
@@ -502,8 +514,10 @@ export const uk1 = [
       ]
     },
     {
+      "snap-id": 7,
       "id": 584573,
       "name": "Viola odorata",
+      "family": "Violaceae",
       "eol-name": "Viola odorata L.",
       "images": [
         "https://media.eol.org/content/2009/09/08/03/83334_orig.jpg",
@@ -586,8 +600,10 @@ export const uk1 = [
       ]
     },
     {
+      "snap-id": 8,
       "id": 580089,
       "name": "Myosotis sylvatica",
+      "family": "Boraginaceae",
       "eol-name": "Myosotis sylvatica Ehrh. ex Hoffm.",
       "images": [
         "https://media.eol.org/content/2012/05/23/19/70315_orig.jpg",
@@ -634,8 +650,10 @@ export const uk1 = [
       ]
     },
     {
+      "snap-id": 9,
       "id": 1001510,
       "name": "Hyacinthoides non-scripta",
+      "family": "Asparagaceae",
       "eol-name": "Hyacinthoides non-scripta (L.) Chouard ex Rothm.",
       "images": [
         "https://media.eol.org/content/2012/12/12/03/89086_orig.jpg",
@@ -676,8 +694,10 @@ export const uk1 = [
       ]
     },
     {
+      "snap-id": 10,
       "id": 596862,
       "name": "Anemone nemorosa",
+      "family": "Ranunculaceae",
       "eol-name": "Anemone nemorosa L.",
       "images": [
         "https://media.eol.org/content/2012/12/04/18/77519_orig.jpg",
@@ -775,8 +795,10 @@ export const uk1 = [
       ]
     },
     {
+      "snap-id": 11,
       "id": 1087078,
       "name": "Convallaria majalis",
+      "family": "Asparagaceae",
       "eol-name": "Convallaria majalis L.",
       "images": [
         "https://media.eol.org/content/2013/12/02/08/48774_orig.jpg",
@@ -857,8 +879,10 @@ export const uk1 = [
       ]
     },
     {
+      "snap-id": 12,
       "id": 1085089,
       "name": "Allium ursinum",
+      "family": "Amaryllidaceae",
       "eol-name": "Allium ursinum L.",
       "images": [
         "https://media.eol.org/content/2015/07/12/22/13289_orig.jpg",

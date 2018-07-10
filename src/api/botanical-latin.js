@@ -1,11 +1,23 @@
 export const epithets = [
     {
+        "latin": ["-aceae"],
+        "en": "Used to form the name of taxonomic families of plants, algae, bacteria, and fungi"
+    },
+    {
+        "latin": ["aster"],
+        "en": "star",
+    },
+    {
         "latin" : ["alba"],
         "en" : "white"
     },
     {
         "latin" : ["ater"],
         "en" : "black"
+    },
+    {
+        "latin": ["botanikos"],
+        "en": ["plant"]
     },
     {
         "latin" : ["chrysus"],
@@ -38,6 +50,10 @@ export const epithets = [
     {
         "latin" : ["pendula"],
         "en" : "weeping"
+    },
+    {
+        "latin": ["pratense"],
+        "en": "of meadows"
     },
     {
         "latin" : ["prostrata"],
@@ -104,6 +120,10 @@ export const epithets = [
         "en" : "yellow"
     },
     {
+        "latin": ["cruciferae"],
+        "en": "cross-bearing"
+    },
+    {
         "latin" : ["derma"],
         "en" : "skin"
     },
@@ -134,6 +154,10 @@ export const epithets = [
     {
         "latin" : ["enanti-"],
         "en" : "opposite, against"
+    },
+    {
+        "latin": ["endemos"],
+        "en": "native"
     },
     {
         "latin" : ["ensatus"],
@@ -289,6 +313,11 @@ export const epithets = [
         "en" : "of the open sea"
     },
     {
+        "latin": ["persica"],
+        "en": "from Persia",
+        "examples": ["Prunus persica"]
+    },
+    {
         "latin" : ["petro-"],
         "en" : "rock, stone"
     },
@@ -315,6 +344,10 @@ export const epithets = [
     {
         "latin" : ["ramus"],
         "en" : "branch"
+    },
+    {
+        "latin": ["rapum"],
+        "en": "turnip"
     },
     {
         "latin" : ["repandus"],
@@ -355,6 +388,10 @@ export const epithets = [
     {
         "latin" : ["suber"],
         "en" : "cork"
+    },
+    {
+        "latin" : ["sucus"],
+        "en": "juice"
     },
     {
         "latin" : ["sulcatus"],

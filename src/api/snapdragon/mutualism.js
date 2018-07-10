@@ -10,5 +10,17 @@ const mutualists = [
     {
         family: 'Apiaceae',
         animal: 'Papilio polyxenes'
+    },
+    {
+        plant: 'Trifolium pratense',
+        animal: 'Bombus terrestris'
+    },
+    {
+        plant: 'Primula veris',
+        animal: 'Bombus terrestris'
+    },
+    {
+        plant: 'Brassica napus',
+        animal: 'Bombus terrestris'
     }
 ];

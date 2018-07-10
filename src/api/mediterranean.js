@@ -236,11 +236,6 @@ export const mediterranean = [
         "https://media.eol.org/content/2012/05/24/03/50032_orig.jpg",
         "https://media.eol.org/content/2012/05/24/03/29216_orig.jpg",
         "https://media.eol.org/content/2009/07/24/03/63946_orig.jpg",
-        // "https://media.eol.org/content/2016/08/05/15/94252_orig.jpg",
-        // "https://media.eol.org/content/2016/08/05/15/99972_orig.jpg",
-        // "https://media.eol.org/content/2016/08/06/11/93351_orig.jpg",
-        // "https://media.eol.org/content/2016/08/05/11/94977_orig.jpg",
-        // "https://media.eol.org/content/2016/08/05/11/76325_orig.jpg",
         "https://media.eol.org/content/2015/08/11/22/80787_orig.jpg"
       ],
       "names": [

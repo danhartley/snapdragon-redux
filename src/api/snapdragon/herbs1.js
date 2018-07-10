@@ -5,6 +5,7 @@ export const herbs1 = [
       "name": "Mentha spicata",
       "family": "Lamiaceae",
       "eol-name": "Mentha spicata L.",
+      "red-list": "LC",
       "images": [
         "https://media.eol.org/content/2014/08/15/02/17481_orig.jpg",
         "https://media.eol.org/content/2014/08/15/02/40408_orig.jpg",
@@ -318,6 +319,7 @@ export const herbs1 = [
       "name": "Thymus vulgaris",
       "family": "Lamiaceae",
       "eol-name": "Thymus vulgaris L.",
+      "red-list": "LC",
       "images": [
         "https://media.eol.org/content/2015/04/06/10/88104_orig.jpg",
         "https://media.eol.org/content/2012/05/24/03/16771_orig.jpg",
@@ -471,6 +473,7 @@ export const herbs1 = [
       "eol-name": "Foeniculum vulgare Mill.",
       "description": 'Hardy, perennial herb with yellow flowers and feathery leaves.',
       "aromatic": true,
+      "red-list": "LC",
       "images": [
         "https://media.eol.org/content/2014/08/15/04/24404_orig.jpg",
         "https://media.eol.org/content/2014/08/14/23/28275_orig.jpg",
@@ -815,6 +818,7 @@ export const herbs1 = [
       "name": "Salvia officinalis",
       "family": "Lamiaceae",
       "eol-name": "Salvia officinalis L.",
+      "red-list": "LC",
       "images": [
         "https://media.eol.org/content/2008/10/06/15/93130_orig.jpg",
         "https://media.eol.org/content/2011/10/16/02/82474_orig.jpg",
@@ -1008,6 +1012,7 @@ export const herbs1 = [
       "name": "Allium schoenoprasum",
       "family": "Amaryllidaceae",
       "eol-name": "Allium schoenoprasum L.",
+      "red-list": "LC",
       "images": [
         "https://media.eol.org/content/2012/05/23/04/06176_orig.jpg",
         "https://media.eol.org/content/2012/10/30/04/73572_orig.jpg",

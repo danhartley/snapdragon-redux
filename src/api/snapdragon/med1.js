@@ -1,5 +1,6 @@
 export const med1 = [
     {
+      "snap-id": 1,
       "id": 689294,
       "name": "Coronilla valentina",
       "eol-name": "Coronilla valentina L.",
@@ -48,6 +49,7 @@ export const med1 = [
         }
       ]},
     {
+      "snap-id": 2,
       "id": 482110,
       "name": "Erica arborea",
       "eol-name": "Erica arborea L.",
@@ -93,6 +95,7 @@ export const med1 = [
         }
       ]},
     {
+      "snap-id": 3,
       "id": 591115,
       "name": "Celtis australis",
       "eol-name": "Celtis australis L.",
@@ -171,6 +174,7 @@ export const med1 = [
         }
       ]},
     {
+      "snap-id": 4,
       "id": 579379,
       "name": "Rosmarinus officinalis",
       "eol-name": "Rosmarinus officinalis L.",
@@ -302,6 +306,7 @@ export const med1 = [
         }
       ],},
     {
+      "snap-id": 5,
       "id": 1083826,
       "name": "Agave americana",
       "eol-name": "Agave americana L.",
@@ -402,6 +407,7 @@ export const med1 = [
         }
       ]},
     {
+      "snap-id": 6,
       "id": 484542,
       "name": "Thymus vulgaris",
       "eol-name": "Thymus vulgaris L.",
@@ -533,6 +539,7 @@ export const med1 = [
         }
       ]},
     {
+      "snap-id": 7,
       "id": 5654836,
       "name": "Olea europaea",
       "eol-name": "Olea europaea var. sylvestris",
@@ -566,6 +573,7 @@ export const med1 = [
         }
       ]},
     {
+      "snap-id": 8,
       "id": 2867531,
       "name": "Cistus crispus",
       "eol-name": "Cistus crispus",
@@ -600,6 +608,7 @@ export const med1 = [
         }
       ]},
     {
+      "snap-id": 9,
       "id": 1151536,
       "name": "Quercus ilex",
       "eol-name": "Quercus ilex L.",
@@ -663,6 +672,7 @@ export const med1 = [
         }
       ]},
     {
+      "snap-id": 10,
       "id": 999491,
       "name": "Pinus pinea",
       "eol-name": "Pinus pinea L.",
@@ -780,6 +790,7 @@ export const med1 = [
         }
       ]},
     {
+      "snap-id": 11,
       "id": 1151259,
       "name": "Quercus suber",
       "eol-name": "Quercus suber L.",
@@ -826,6 +837,7 @@ export const med1 = [
         }
       ]},
     {
+      "snap-id": 12,
       "id": 483849,
       "name": "Lavandula stoechas",
       "eol-name": "Lavandula stoechas L.",

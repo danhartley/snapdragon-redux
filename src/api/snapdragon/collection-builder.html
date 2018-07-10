@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
+        <script src="./collection-builder.js"></script>
+    </head>
+    <body>
+        <select name="names" id="names" onchange="getImages(this)"></select>
+        <div id="images" style="display: grid;grid-template-columns: 1fr 1fr 1fr 1fr 1fr;"></div>
+        <div>
+            <input type="button" id="btnAdd" value="Add to collection" />
+        </div>
+    </body>
+</html>
