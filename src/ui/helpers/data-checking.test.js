@@ -75,7 +75,7 @@ test('should return a translation object where this is a matching latin name', (
   const species = 'nucifer';
   const expected = {
       "latin" : ["nucifer"],
-      "en" : "bearing nuts"
+      "en" : ["bearing nuts"]
   };
   const epithet = itemProperties.latin(species);
   expect(epithet).toEqual(expected);

@@ -3,6 +3,7 @@ import * as R from 'ramda';
 import { herbs1 } from 'api/snapdragon/herbs1';
 import { uk1 } from 'api/snapdragon/uk1';
 import { med1 } from 'api/snapdragon/med1';
+import { herbsAndSpices } from 'api/snapdragon/herbs-and-spices';
 
 import { leaf } from 'api/leaf';
 
@@ -30,6 +31,14 @@ export const collections = [
         items: med1,
         eol_name: 'Mediterranean 1',
         eol_link: 'https://eol.org/collections/139572'
+    },
+    {
+        id: 4,
+        type: 'species',
+        name: 'Herbs and Spices',
+        items: herbsAndSpices,
+        eol_name: 'Herbs and Spices',
+        eol_link: 'https://eol.org/collections/139051'
     },
     {
         id: 101,

@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
-import { family } from 'api/snapdragon/family';
+import { taxa } from 'api/snapdragon/taxa';
 import { renderWiki } from 'wikipedia/wiki';
 import { renderFamily } from 'gbif/gbif';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -44,7 +44,7 @@ const renderLandscape = (item, config) => {
 
     renderCommonParts(template, config, item);
 
-    const familyImage = family.find(f => f.name === item.family).thumb;
+    const familyImage = taxa.find(f => f.name === item.family).thumb;
 
     document.querySelector('.js-img-family').src = familyImage;
 

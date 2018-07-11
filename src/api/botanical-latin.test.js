@@ -8,7 +8,7 @@ test('should return a translation object where this is a matching latin name', (
 
     const expected = {
         "latin" : ["nucifer"],
-        "en" : "bearing nuts"
+        "en" : ["bearing nuts"]
     };
 
     expect(obj).toEqual(expected);
