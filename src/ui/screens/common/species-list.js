@@ -4,9 +4,9 @@ import { actions } from 'redux/actions/action-creators';
 import { modalImageHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
-import speciesTemplate from 'ui/screens/common/species-template.html';
+import speciesTemplate from 'ui/screens/common/species-list-template.html';
 
-export const renderSpeciesCollectionList = (collection) => {
+export const renderSpeciesCollectionList = (collection, append = false) => {
 
     const { config: currentConfig, layout } = store.getState();
 
@@ -14,16 +14,26 @@ export const renderSpeciesCollectionList = (collection) => {
 
     const template = document.createElement('template');
 
-    template.innerHTML = speciesTemplate;
-
     collection.items.forEach(item => { 
         item.image = item.images[0];
         item.vernacularName = itemProperties.vernacularName(item, config);
     });
 
-    DOM.leftBody.innerHTML = '';
+    let parent;
 
-    renderTemplate({ collection }, template.content, DOM.leftBody);
+    if(append) {
+        template.innerHTML += speciesTemplate;
+        parent = document.querySelector('.list-group-collection');
+        const scrollableArea = document.querySelector('.scrollable');
+        scrollableArea.style.height = scrollableArea.offsetHeight / 2 + 'px';
+    } else {
+        parent = DOM.leftBody;
+        parent.innerHTML = '<div class="snapdragon-container"></div>';
+        parent = parent.querySelector('.snapdragon-container');
+        template.innerHTML = speciesTemplate
+    }
+
+    renderTemplate({ collection }, template.content, parent);
 
     const listItems = document.querySelectorAll('.js-list-item .js-list-item-link');
 

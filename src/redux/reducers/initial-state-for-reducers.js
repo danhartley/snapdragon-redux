@@ -9,7 +9,6 @@ import { itemProperties } from 'ui/helpers/data-checking';
 const initCollection = (rawCollection = collections[0]) => {
     let prepCollection = rawCollection.type === 'skill'
         ? R.pipe(utils.shuffleArray)
-        // : R.pipe(helpers.filterExcluded, helpers.extractScientificNames, utils.shuffleArray, helpers.embellishCollection);
         : R.pipe(helpers.filterExcluded, helpers.extractScientificNames, helpers.embellishCollection);
     const items = utils.sortBy(prepCollection(rawCollection.items), 'snap-id');
     const rounds = items.length / config.moduleSize;

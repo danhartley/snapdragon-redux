@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         item.images = images;
         newCollection.push(item);
-        document.querySelector('#collectionCount').innerHTML = items.length;
+        document.querySelector('#collectionCount').innerHTML = newCollection.length;
         console.log(newCollection);
     });
 });

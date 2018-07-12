@@ -130,6 +130,10 @@ progress::-moz-progress-bar {
   height: 60vh;
 }
 
+.list-group-collection {
+  height: 60vh;
+}
+
 .scrollable.card {
   text-align: left;
 }

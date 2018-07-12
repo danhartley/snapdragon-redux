@@ -8,15 +8,30 @@ export const renderHistory = (history) => {
     if(!history) return null;
 
     const lastRoundIndex = history.scores.length -1;
-    const wrongAnswers = history.scores.map(round => round.fails)[lastRoundIndex].map(answer => answer.binomial);
-    const uniqueSpecies = [ ...(new Set(wrongAnswers)) ];
+    const correctAnswers = history.scores.map(round => round.passes)[lastRoundIndex].map(answer => answer.binomial);
+    const incorrectAnswers = history.scores.map(round => round.fails)[lastRoundIndex].map(answer => answer.binomial);
+    const uniqueIncorrectAnswers = [ ...(new Set(incorrectAnswers)) ];
+    const uniqueCorrectAnswers = [ ...(new Set(correctAnswers)) ];
 
-    var speciesToRevise = collection.items.filter(function(item) {
-        return uniqueSpecies.indexOf(item.name) !== -1;
+    const speciesWithFails = collection.items.filter(function(item) {
+        return uniqueIncorrectAnswers.indexOf(item.name) !== -1;
     });
 
-    const revision = { ...collection, ...{ items : speciesToRevise } };
-    revision.header = 'Species requiring revision';
+    const speciesWithPasses = collection.items.filter(function(item) {
+        return uniqueCorrectAnswers.indexOf(item.name) !== -1;
+    });
 
-    renderSpeciesCollectionList(revision);
+    let speciesWithoutFails = new Set([...speciesWithPasses].filter(x => {
+            !new Set(speciesWithFails).has(x);
+        })
+    );
+
+    const requiringRevision = { ...collection, ...{ items : speciesWithFails } };
+    const learnt = { ...collection, ...{ items : speciesWithoutFails } };
+    requiringRevision.header = 'Species requiring revision';
+    learnt.header = 'Species correctly answered';
+
+    
+    renderSpeciesCollectionList(requiringRevision);
+    renderSpeciesCollectionList(learnt, true);
 }    
