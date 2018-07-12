@@ -28,8 +28,8 @@ export const renderSummary = (history) => {
     const endOfCollectionTxt = document.querySelector('.js-end-collection-txt');
 
     const levelComplete = collection.currentRound === collection.rounds;
-    const levels = config.isPortraitMode ? 4 : 5;
-    const collectionComplete = config.lesson.level.id === levels;
+    const lastLevel = config.isPortraitMode ? 4 : 5;
+    const collectionComplete = config.lesson.level.id === lastLevel;
 
     (levelComplete && !collectionComplete) ? nextLevelTxt.style.display = 'inline-block' : nextLevelTxt.style.display = 'none';
     collectionComplete ? endOfCollectionTxt.style.display = 'inline-block' : endOfCollectionTxt.style.display = 'none';

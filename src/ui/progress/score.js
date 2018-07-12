@@ -17,7 +17,7 @@ export const renderScore = (score) => {
 
     if(!layout) return;
 
-    const endOfRound = (score.total === layout.roundScoreCount); 
+    const endOfRound = (score.total === layout.roundScoreCount);
 
     const runningTotal = history ? { ...history } : { correct: 0, total: 0 };
 
