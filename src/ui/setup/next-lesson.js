@@ -10,13 +10,9 @@ export const nextLesson = (config) => {
 
     config.excludeRevision = config.lesson.level.id !== 1;
 
-    const isLessonPlanRequired = (layout === null || score === null) ? true : (score.total === layout.roundScoreCount);
-
-    // const isLessonPlanRequired = layouts ? (layouts[0].lessonName !== config.lesson.name || layouts[0].levelName !== config.lesson.level.name) : true;
+    const isLessonPlanRequired = score.total === 0;
 
     const _layouts = isLessonPlanRequired ? lessonPlanner.createLessonPlan(config, collection) : layouts;
-
-    // const _layouts = lessonPlanner.createLessonPlan(config, collection);
 
     actions.boundNextLesson(_layouts);
 };
