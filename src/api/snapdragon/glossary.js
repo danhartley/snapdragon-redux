@@ -20,7 +20,7 @@ export const glossary = [
         "wiki-entry": "https://en.wikipedia.org/wiki/Hydrophily"
     },
     {
-        term: "aetherolea",
+        term: "Aetherolea",
         definition: "Aetherolea also known as volatile oils or essential oils are concentrated hydrophobic liquids that contain volatile aroma compounds from plants which evaporate when exposed to air and are thus capable of distillation.",
         "wiki-entry": "https://en.wikipedia.org/wiki/Essential_oil"
     },
@@ -59,5 +59,11 @@ export const glossary = [
         definition: "A species studied to understand particular biological phenomena, with the expectation that discoveries will provide insight into the workings of other organisms.",
         "wiki-entry": "https://en.wikipedia.org/wiki/Model_organism",
         examples: ['Escherichia coli', 'Drosophila melanogaster', 'Arabidopsis thaliana', 'Saccharomyces cerevisiae', 'Mus musculus']
+    },
+    {
+        term: "Mutualism"
+    },
+    {
+        term: "Symbiont"
     }
 ];

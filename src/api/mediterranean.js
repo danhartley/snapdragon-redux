@@ -1700,6 +1700,7 @@ export const mediterranean = [
     {
       "id": 594632,
       "name": "Ficus carica L.",
+      "family": "Moraceae",
       "images": [
         "https://media.eol.org/content/2011/10/15/23/75763_orig.jpg",
         "https://media.eol.org/content/2014/08/15/02/22792_orig.jpg",

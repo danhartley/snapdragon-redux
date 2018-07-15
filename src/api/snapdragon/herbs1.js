@@ -1,10 +1,10 @@
 export const herbs1 = [
     {
-      "snap-id": 1,
+      "snapId": 1,
       "id": 579697,
       "name": "Mentha spicata",
       "family": "Lamiaceae",
-      "eol-name": "Mentha spicata L.",
+      "eolName": "Mentha spicata L.",
       "red-list": "LC",
       "images": [
         "https://media.eol.org/content/2014/08/15/02/17481_orig.jpg",
@@ -161,11 +161,11 @@ export const herbs1 = [
       ]
     },
     {
-      "snap-id": 2,
+      "snapId": 2,
       "id": 584995,
       "name": "Anethum graveolens",
       "family": "Apiaceae",
-      "eol-name": "Anethum graveolens L.",
+      "eolName": "Anethum graveolens L.",
       "images": [
         "https://media.eol.org/content/2013/04/02/02/98816_orig.jpg",
         "https://media.eol.org/content/2013/04/02/02/14813_orig.jpg",
@@ -314,11 +314,11 @@ export const herbs1 = [
       ]
     },
     {
-      "snap-id": 3,
+      "snapId": 3,
       "id": 484542,
       "name": "Thymus vulgaris",
       "family": "Lamiaceae",
-      "eol-name": "Thymus vulgaris L.",
+      "eolName": "Thymus vulgaris L.",
       "red-list": "LC",
       "images": [
         "https://media.eol.org/content/2015/04/06/10/88104_orig.jpg",
@@ -466,11 +466,11 @@ export const herbs1 = [
       ]
     },
     {
-      "snap-id": 4,
+      "snapId": 4,
       "id": 585008,
       "name": "Foeniculum vulgare",
       "family": "Apiaceae",
-      "eol-name": "Foeniculum vulgare Mill.",
+      "eolName": "Foeniculum vulgare Mill.",
       "description": 'Hardy, perennial herb with yellow flowers and feathery leaves.',
       "aromatic": true,
       "red-list": "LC",
@@ -653,11 +653,11 @@ export const herbs1 = [
       ]
     },
     {
-      "snap-id": 5,
+      "snapId": 5,
       "id": 577604,
       "name": "Artemisia dracunculus",
       "family": "Asteraceae",
-      "eol-name": "Artemisia dracunculus L.",
+      "eolName": "Artemisia dracunculus L.",
       "images": [
         "https://media.eol.org/content/2011/10/06/02/70307_orig.jpg",
         "https://media.eol.org/content/2011/10/15/21/46839_orig.jpg",
@@ -813,11 +813,11 @@ export const herbs1 = [
       ]
     },
     {
-      "snap-id": 6,
+      "snapId": 6,
       "id": 578478,
       "name": "Salvia officinalis",
       "family": "Lamiaceae",
-      "eol-name": "Salvia officinalis L.",
+      "eolName": "Salvia officinalis L.",
       "red-list": "LC",
       "images": [
         "https://media.eol.org/content/2008/10/06/15/93130_orig.jpg",
@@ -1007,11 +1007,11 @@ export const herbs1 = [
       ]
     },
     {
-      "snap-id": 7,
+      "snapId": 7,
       "id": 1084938,
       "name": "Allium schoenoprasum",
       "family": "Amaryllidaceae",
-      "eol-name": "Allium schoenoprasum L.",
+      "eolName": "Allium schoenoprasum L.",
       "red-list": "LC",
       "images": [
         "https://media.eol.org/content/2012/05/23/04/06176_orig.jpg",
@@ -1144,11 +1144,11 @@ export const herbs1 = [
       ]
     },
     {
-      "snap-id": 8,
+      "snapId": 8,
       "id": 579367,
       "name": "Origanum vulgare",
       "family": "Lamiaceae",
-      "eol-name": "Origanum vulgare L.",
+      "eolName": "Origanum vulgare L.",
       "images": [
         "https://media.eol.org/content/2013/08/08/10/32690_orig.jpg",
         "https://media.eol.org/content/2013/09/02/03/62739_orig.jpg",
@@ -1351,11 +1351,11 @@ export const herbs1 = [
       ]
     },
     {
-      "snap-id": 9,
+      "snapId": 9,
       "id": 581687,
       "name": "Coriandrum sativum",
       "family": "Apiaceae",
-      "eol-name": "Coriandrum sativum L.",
+      "eolName": "Coriandrum sativum L.",
       "images": [
         "https://media.eol.org/content/2012/05/23/10/96466_orig.jpg",
         "https://media.eol.org/content/2012/05/23/10/47021_orig.jpg",
@@ -1486,11 +1486,11 @@ export const herbs1 = [
       ]
     },
     {
-      "snap-id": 10,
+      "snapId": 10,
       "id": 581421,
       "name": "Petroselinum crispum",
       "family": "Apiaceae",
-      "eol-name": "Petroselinum crispum (Mill.) Mansf.",
+      "eolName": "Petroselinum crispum (Mill.) Mansf.",
       "images": [
         "https://media.eol.org/content/2011/10/16/01/80978_orig.jpg",
         "https://media.eol.org/content/2011/10/16/01/13386_orig.jpg",
@@ -1619,11 +1619,11 @@ export const herbs1 = [
       ]
     },
     {
-      "snap-id": 11,
+      "snapId": 11,
       "id": 579379,
       "name": "Rosmarinus officinalis",
       "family": "Lamiaceae",
-      "eol-name": "Rosmarinus officinalis L.",
+      "eolName": "Rosmarinus officinalis L.",
       "images": [
         "https://media.eol.org/content/2012/05/24/00/10770_orig.jpg",
         "https://media.eol.org/content/2014/10/13/23/20173_orig.jpg",
@@ -1758,11 +1758,11 @@ export const herbs1 = [
       ]
     },
     {
-      "snap-id": 12,
+      "snapId": 12,
       "id": 579364,
       "name": "Ocimum basilicum",
       "family": "Lamiaceae",
-      "eol-name": "Ocimum basilicum L.",
+      "eolName": "Ocimum basilicum L.",
       "images": [
         "https://media.eol.org/content/2009/07/24/03/04353_orig.jpg",
         "https://media.eol.org/content/2012/05/23/20/88526_orig.jpg",

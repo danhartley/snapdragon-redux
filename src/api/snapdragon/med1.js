@@ -1,9 +1,9 @@
 export const med1 = [
     {
-      "snap-id": 1,
+      "snapId": 1,
       "id": 689294,
       "name": "Coronilla valentina",
-      "eol-name": "Coronilla valentina L.",
+      "eolName": "Coronilla valentina L.",
       "images": [
         "https://media.eol.org/content/2010/03/24/08/35806_orig.jpg",
         "https://media.eol.org/content/2010/03/24/08/39854_orig.jpg",
@@ -49,10 +49,10 @@ export const med1 = [
         }
       ]},
     {
-      "snap-id": 2,
+      "snapId": 2,
       "id": 482110,
       "name": "Erica arborea",
-      "eol-name": "Erica arborea L.",
+      "eolName": "Erica arborea L.",
       "images": [
         "https://media.eol.org/content/2012/06/14/22/62998_orig.jpg",
         "https://media.eol.org/content/2012/06/14/22/64805_orig.jpg",
@@ -95,10 +95,10 @@ export const med1 = [
         }
       ]},
     {
-      "snap-id": 3,
+      "snapId": 3,
       "id": 591115,
       "name": "Celtis australis",
-      "eol-name": "Celtis australis L.",
+      "eolName": "Celtis australis L.",
       "images": [
         "https://media.eol.org/content/2011/10/15/22/70432_orig.jpg",
         "https://media.eol.org/content/2011/10/15/22/56027_orig.jpg",
@@ -174,10 +174,10 @@ export const med1 = [
         }
       ]},
     {
-      "snap-id": 4,
+      "snapId": 4,
       "id": 579379,
       "name": "Rosmarinus officinalis",
-      "eol-name": "Rosmarinus officinalis L.",
+      "eolName": "Rosmarinus officinalis L.",
       "images": [
         "https://media.eol.org/content/2012/05/24/00/10770_orig.jpg",
         "https://media.eol.org/content/2012/05/24/00/38069_orig.jpg",
@@ -306,10 +306,10 @@ export const med1 = [
         }
       ],},
     {
-      "snap-id": 5,
+      "snapId": 5,
       "id": 1083826,
       "name": "Agave americana",
-      "eol-name": "Agave americana L.",
+      "eolName": "Agave americana L.",
       "images": [
         "https://media.eol.org/content/2013/12/01/09/72256_orig.jpg",
         "https://media.eol.org/content/2014/05/01/21/81989_orig.jpg",
@@ -407,10 +407,10 @@ export const med1 = [
         }
       ]},
     {
-      "snap-id": 6,
+      "snapId": 6,
       "id": 484542,
       "name": "Thymus vulgaris",
-      "eol-name": "Thymus vulgaris L.",
+      "eolName": "Thymus vulgaris L.",
       "images": [
         "https://media.eol.org/content/2015/04/06/10/88104_orig.jpg",
         "https://media.eol.org/content/2012/05/24/03/16771_orig.jpg",
@@ -539,10 +539,10 @@ export const med1 = [
         }
       ]},
     {
-      "snap-id": 7,
+      "snapId": 7,
       "id": 5654836,
       "name": "Olea europaea",
-      "eol-name": "Olea europaea var. sylvestris",
+      "eolName": "Olea europaea var. sylvestris",
       "images": [
         "https://media.eol.org/content/2011/10/16/01/71709_orig.jpg",
         "https://media.eol.org/content/2011/10/16/01/45265_orig.jpg",
@@ -573,10 +573,10 @@ export const med1 = [
         }
       ]},
     {
-      "snap-id": 8,
+      "snapId": 8,
       "id": 2867531,
       "name": "Cistus crispus",
-      "eol-name": "Cistus crispus",
+      "eolName": "Cistus crispus",
       "images": [
         "https://media.eol.org/content/2015/04/06/23/01189_orig.jpg",
         "https://media.eol.org/content/2012/06/13/07/23732_orig.jpg",
@@ -608,10 +608,10 @@ export const med1 = [
         }
       ]},
     {
-      "snap-id": 9,
+      "snapId": 9,
       "id": 1151536,
       "name": "Quercus ilex",
-      "eol-name": "Quercus ilex L.",
+      "eolName": "Quercus ilex L.",
       "images": [
         "https://media.eol.org/content/2012/06/12/13/03827_orig.jpg",
         "https://media.eol.org/content/2012/06/12/13/65648_orig.jpg",
@@ -672,10 +672,10 @@ export const med1 = [
         }
       ]},
     {
-      "snap-id": 10,
+      "snapId": 10,
       "id": 999491,
       "name": "Pinus pinea",
-      "eol-name": "Pinus pinea L.",
+      "eolName": "Pinus pinea L.",
       "images": [
         "https://media.eol.org/content/2012/06/12/21/28095_orig.jpg",
         "https://media.eol.org/content/2012/06/12/21/86878_orig.jpg",
@@ -790,10 +790,10 @@ export const med1 = [
         }
       ]},
     {
-      "snap-id": 11,
+      "snapId": 11,
       "id": 1151259,
       "name": "Quercus suber",
-      "eol-name": "Quercus suber L.",
+      "eolName": "Quercus suber L.",
       "images": [
         "https://media.eol.org/content/2012/05/23/23/41068_orig.jpg",
         "https://media.eol.org/content/2012/06/12/12/74345_orig.jpg",
@@ -837,10 +837,10 @@ export const med1 = [
         }
       ]},
     {
-      "snap-id": 12,
+      "snapId": 12,
       "id": 483849,
       "name": "Lavandula stoechas",
-      "eol-name": "Lavandula stoechas L.",
+      "eolName": "Lavandula stoechas L.",
       "images": [
         "https://media.eol.org/content/2014/08/15/05/52147_orig.jpg",
         "https://media.eol.org/content/2014/08/15/05/55971_orig.jpg",

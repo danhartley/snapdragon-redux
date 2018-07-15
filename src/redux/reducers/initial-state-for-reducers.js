@@ -2,15 +2,19 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { config } from 'syllabus/lesson-config';
-import { collections } from 'snapdragon/species-collections';
+// import { collections } from 'snapdragon/species-collections';
+import { kitchenGarden } from 'snapdragon/species-lessons';
+
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { itemProperties } from 'ui/helpers/data-checking';
+
+const collections = [ kitchenGarden ];
 
 const initCollection = (rawCollection = collections[0]) => {
     let prepCollection = rawCollection.type === 'skill'
         ? R.pipe(utils.shuffleArray)
         : R.pipe(helpers.filterExcluded, helpers.extractScientificNames, helpers.embellishCollection);
-    const items = utils.sortBy(prepCollection(rawCollection.items), 'snap-id');
+    const items = utils.sortBy(prepCollection(rawCollection.items), 'snapId');
     const rounds = items.length / config.moduleSize;
 
     const wildcards = [];

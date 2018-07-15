@@ -4,12 +4,20 @@ export const epithets = [
         "en" : ["Used to form the name of taxonomic families of plants, algae, bacteria, and fungi"]
     },
     {
+        "latin": ['Agastache'],
+        "en": ['many spikes']
+    },
+    {
         "latin": ["aster"],
         "en" : ["star"]
     },
     {
         "latin" : ["alba"],
         "en" : ["white"]
+    },
+    {
+        "latin" : ["avium"],
+        "en" : ["birds"]
     },
     {
         "latin" : ["ater"],
@@ -130,6 +138,14 @@ export const epithets = [
     {
         "latin" : ["digitalis"],
         "en" : ["having fingers"]
+    },
+    {
+        "latin" : ["domus"],
+        "en" : ["home"]
+    },
+    {
+        "latin" : ["domestic-"],
+        "en" : ["which lives in the house"]
     },
     {
         "latin" : ["echinatus"],
@@ -282,6 +298,10 @@ export const epithets = [
     {
         "latin" : ["muralis"],
         "en" : ["growing on the wall"]
+    },
+    {
+        "latin" : ["nobilis"],
+        "en" : ["noble"]
     },
     {
         "latin" : ["nix"],

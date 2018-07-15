@@ -24,7 +24,7 @@ export const renderMultichoice = (collection) => {
 
     const species = item.name;
     const epithet = itemProperties.speciesName(species);
-    const randomAnswers = R.take(5, R.take(6, utils.shuffleArray(epithets)).filter(e => e.en !== layout.epithet.en)).map(e => e.en);
+    const randomAnswers = R.take(5, R.take(6, utils.shuffleArray(epithets)).filter(e => !R.contains(e.en, layout.epithet.en))).map(e => e.en);
     const description = `In the species ${species}, what is the meaning of the epithet ${epithet}?`;
     const question = { question: layout.epithet.en[0], binomial: item.name };
     const answers = utils.shuffleArray([layout.epithet.en, ...randomAnswers]);

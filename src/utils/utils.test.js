@@ -1,4 +1,4 @@
-import { utils } from './utils';
+import { utils } from 'utils/utils';
 
 test('shuffleArray should return an non-equal array of the same size', () => {
     const source = [ 1,2,3,4,5,6,7,8,9,10 ];

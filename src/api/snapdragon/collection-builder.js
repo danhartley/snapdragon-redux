@@ -64,7 +64,7 @@ const init = () => {
         collection.forEach(item => {
             getSpeciesData(item).then(data => {
                 const binomial = getBinomial(item);
-                getTaxonomy(binomial).then(taxonomy => {
+                getTaxonomy(item.name).then(taxonomy => {
                     data.taxonomy = taxonomy;
                     data.family = taxonomy.family;
                     data.eolName = item.name; 
