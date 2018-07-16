@@ -1,6 +1,6 @@
 import { screens } from 'snapdragon/screen-layouts';
 
-const { specimen, revision, species, vernaculars, scientifics, summary, history, text, command, leaf, leafName, multichoice } = screens;
+const { specimen, revision, species, vernaculars, scientifics, summary, history, text, command, leaf, leafName, radiobuttons } = screens;
 
 const portrait1 = {
     name: 'revision',
@@ -53,7 +53,7 @@ const portrait9 = {
     name: 'test',
     score: 1,
     screens: [
-        { ...multichoice }
+        { ...radiobuttons }
     ]
 };
 
@@ -150,7 +150,7 @@ const layout11 = {
     score: 1,
     screens: [
         { ...specimen },
-        { ...multichoice }
+        { ...radiobuttons }
     ]
 };
 

@@ -1,6 +1,6 @@
 import { store } from 'redux/store';
 import { itemProperties } from 'ui/helpers/data-checking';
-import { renderInput } from 'ui/screens/common/text-entry';
+import { renderInput } from 'ui/screens/text-entry/text-entry';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
 export const renderTextEntry = (collection) => {

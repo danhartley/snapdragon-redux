@@ -1,7 +1,7 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import snapdragonTemplate from 'ui/screens/right/snapdragon-template.html';
+import snapdragonTemplate from 'ui/screens/cards/snapdragon-template.html';
 
 export const renderSnapdragon = (counter) => {
 

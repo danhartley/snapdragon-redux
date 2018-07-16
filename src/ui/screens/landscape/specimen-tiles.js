@@ -2,7 +2,7 @@ import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { modalBackgroundImagesHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
-import landscapeTemplate from 'ui/screens/left/specimen-tiles-template.html';
+import landscapeTemplate from 'ui/screens/landscape/specimen-tiles-template.html';
 
 export const renderSpecimenTiles = (collection) => {
 

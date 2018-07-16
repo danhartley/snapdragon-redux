@@ -1,4 +1,4 @@
-import { renderSpeciesCollectionList } from 'ui/screens/common/species-list';
+import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 
 export const renderSpeciesCollection = (collections) => {
 

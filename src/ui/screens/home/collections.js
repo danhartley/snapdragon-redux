@@ -4,9 +4,9 @@ import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import { selectHandler } from 'ui/helpers/handlers';
 import { subscription } from 'redux/subscriptions';
-import { renderSpeciesCollection } from 'ui/screens/common/species';
+import { renderSpeciesCollection } from 'ui/screens/lists/species';
 import { elem } from 'ui/helpers/class-behaviour';
-import collectionsTemplate from 'ui/screens/right/collections-template.html';
+import collectionsTemplate from 'ui/screens/home/collections-template.html';
 
 export const renderCollections = (counter) => {
 

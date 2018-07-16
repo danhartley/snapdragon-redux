@@ -2,7 +2,7 @@ import { lessonPlans } from 'snapdragon/lesson-plans';
 import { createLesson } from 'syllabus/lesson-builder';
 import { screens } from 'snapdragon/screen-layouts';
 
-const { summary, history, specimen, multichoice } = screens;
+const { summary, history, specimen, radiobuttons } = screens;
 
 const createLessonPlan = (config, collection) => {
     const { lesson: { name: lessonName, level: { name: levelName }}, moduleSize, excludeRevision, isPortraitMode } = config;
@@ -14,7 +14,7 @@ const createLessonPlan = (config, collection) => {
         isPortraitMode, 
         currentLayouts(config), 
         [ summary, history ],
-        createWildcardLayouts([ [specimen, multichoice] ], collection, moduleSize),
+        createWildcardLayouts([ [specimen, radiobuttons] ], collection, moduleSize),
         collection
     );        
 };

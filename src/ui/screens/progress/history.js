@@ -1,5 +1,5 @@
 import { store } from 'redux/store';
-import { renderSpeciesCollectionList } from 'ui/screens/common/species-list';
+import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 
 export const renderHistory = (history) => {
             

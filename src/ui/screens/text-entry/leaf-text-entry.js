@@ -1,5 +1,5 @@
 import { store } from 'redux/store';
-import { renderInput } from 'ui/screens/common/text-entry';
+import { renderInput } from 'ui/screens/text-entry/text-entry';
 import { renderTermAnswerHeader } from 'ui/helpers/response-formatting';
 
 export const renderNameEntry = (collection) => {

@@ -8,9 +8,9 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 import { utils } from 'utils/utils';
 import { epithets } from 'api/botanical-latin';
-import multiSelectTemplate from 'ui/screens/common/multichoice-template.html';
+import radiobuttonsTemplate from 'ui/screens/multichoice/radiobuttons-template.html';
 
-export const renderMultichoice = (collection) => {
+export const renderRadioButtons = (collection) => {
 
     const item = collection.items[collection.itemIndex];
 
@@ -18,7 +18,7 @@ export const renderMultichoice = (collection) => {
 
     const template = document.createElement('template');
 
-    template.innerHTML = multiSelectTemplate;
+    template.innerHTML = radiobuttonsTemplate;
 
     if(!layout.epithet) return;
 

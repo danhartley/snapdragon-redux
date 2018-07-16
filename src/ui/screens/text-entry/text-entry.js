@@ -2,8 +2,8 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { sendQandAHandler, modalBackgroundImagesHandler } from 'ui/helpers/handlers';
-import landscapeTemplates from 'ui/screens/common/text-entry-templates.html';
-import portraitTemplates from 'ui/screens/common/text-entry-portrait-templates.html';
+import landscapeTemplates from 'ui/screens/text-entry/text-entry-templates.html';
+import portraitTemplates from 'ui/screens/text-entry/text-entry-portrait-templates.html';
 
 export const renderInput = (config, screen, question, callbackTime, item, renderHeader, hints) => {
 

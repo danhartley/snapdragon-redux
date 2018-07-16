@@ -1,7 +1,7 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
-import lessonsTemplate from 'ui/screens/right/lessons-template.html';
+import lessonsTemplate from 'ui/screens/home/lessons-template.html';
 
 export const renderLessons = () => {
 

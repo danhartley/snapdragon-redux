@@ -1,6 +1,6 @@
 import { store } from 'redux/store';
-import { renderCollections } from 'ui/screens/right/collections';
-import { renderLessons } from 'ui/screens/right/lessons';
+import { renderCollections } from 'ui/screens/home/collections';
+import { renderLessons } from 'ui/screens/home/lessons';
 
 export const renderHome = (counter) => {
 

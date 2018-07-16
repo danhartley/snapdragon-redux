@@ -8,8 +8,8 @@ import { renderFamily } from 'gbif/gbif';
 import { renderTemplate } from 'ui/helpers/templating';
 import { modalBackgroundImagesHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
-import landscapeTemplate from 'ui/screens/common/card-template.html';
-import portraitTemplate from 'ui/screens/common/card-portrait-template.html';
+import landscapeTemplate from 'ui/screens/cards/card-template.html';
+import portraitTemplate from 'ui/screens/cards/card-portrait-template.html';
 
 export const renderCard = (collection) => {
     

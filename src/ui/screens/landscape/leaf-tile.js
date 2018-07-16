@@ -1,7 +1,7 @@
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
-import leafTileTemplate from 'ui/screens/left/leaf-tile-template.html';
+import leafTileTemplate from 'ui/screens/landscape/leaf-tile-template.html';
 
 export const renderLeafTile = (collection) => {
 

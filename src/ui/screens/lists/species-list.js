@@ -4,7 +4,7 @@ import { actions } from 'redux/actions/action-creators';
 import { modalImageHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
-import speciesTemplate from 'ui/screens/common/species-list-template.html';
+import speciesTemplate from 'ui/screens/lists/species-list-template.html';
 
 export const renderSpeciesCollectionList = (collection, append = false) => {
 

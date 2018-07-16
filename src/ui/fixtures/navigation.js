@@ -1,8 +1,8 @@
 import { actions } from 'redux/actions/action-creators';
-import { renderSettings } from 'ui/screens/common/settings';
+import { renderSettings } from 'ui/fixtures/settings';
 import { renderTemplate } from 'ui/helpers/templating';
 import { subscription } from 'redux/subscriptions';
-import navigationTemplate from 'ui/screens/common/navigation-template.html';
+import navigationTemplate from 'ui/fixtures/navigation-template.html';
 
 export const renderNavigation = () => {
 

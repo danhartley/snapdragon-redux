@@ -2,6 +2,7 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
+
 export const renderScore = (score) => {
     
     const { history, collection, config, layout } = store.getState();

@@ -6,8 +6,8 @@ import { utils } from 'utils/utils';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
-import html from 'ui/screens/right/species-tiles-template.html';
-import speciesCard from 'ui/screens/common/species-card-template.html';
+import html from 'ui/screens/multichoice/species-tiles-template.html';
+import speciesCard from 'ui/screens/cards/species-card-template.html';
 import questionCard from 'ui/screens/common/species-question-template.html';
 
 export const renderSpeciesTiles = (collection) => {

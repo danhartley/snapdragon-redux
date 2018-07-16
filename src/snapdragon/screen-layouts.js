@@ -83,8 +83,8 @@ const leafName = {
   template: 'js-text-entry-template'     
 };
 
-const multichoice = {
-  name: 'multichoice',
+const radiobuttons = {
+  name: 'radiobuttons',
   headers: { long: 'Latin epithet recall', short: 'Select the epithet name'},
   domain: 'collection',
   question: 'Select the epithet',
@@ -107,5 +107,5 @@ export const screens = {
   leaf,
   leafName,
 
-  multichoice
+  radiobuttons
 };

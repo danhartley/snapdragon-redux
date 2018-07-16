@@ -3,7 +3,7 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { lessonPlanner } from 'syllabus/lesson-planner';
 import { renderTemplate } from 'ui/helpers/templating';
-import summaryTemplate from 'ui/progress/summary-template.html';
+import summaryTemplate from 'ui/screens/progress/summary-template.html';
 
 export const renderSummary = (history) => {
 
