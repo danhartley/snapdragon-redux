@@ -15,16 +15,20 @@ import { nextLesson } from 'ui/setup/next-lesson';
 import { nextLayout } from 'ui/setup/next-layout';
 import { nextItem } from 'ui/setup/next-item';
 
-import { renderHeaders } from 'ui/screens/common/headers';
-import { renderScore } from 'ui/progress/score';
-import { renderCollections } from 'ui/screens/right/collections';
-import { renderHome } from 'ui/screens/right/home';
-import { renderNavigation } from 'ui/screens/common/navigation';
+import { renderHeaders } from 'ui/fixtures/headers';
+import { renderScore } from 'ui/fixtures/score';
+import { renderCollections } from 'ui/screens/home/collections';
+import { renderHome } from 'ui/screens/home/home';
+import { renderNavigation } from 'ui/fixtures/navigation';
 
 import { lessonPlans } from 'snapdragon/lesson-plans';
 import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
-import { renderSnapdragon } from "./ui/screens/left/snapdragon";
+import { renderSnapdragon } from "./ui/screens/cards/snapdragon";
+
+import { kitchenGarden } from 'snapdragon/species-lessons';
+
+console.log(kitchenGarden);
 
 setTimeout(()=>{
 
@@ -48,8 +52,8 @@ setTimeout(()=>{
     actions.boundUpdateConfig(config);
     actions.boundToggleLesson(counter);
 
-    // subscription.add(renderCollections, 'counter', 'flow');
-    subscription.add(renderHome, 'counter', 'flow');
+    subscription.add(renderCollections, 'counter', 'flow');
+    // subscription.add(renderHome, 'counter', 'flow');
     subscription.add(renderSnapdragon, 'counter', 'flow');
     subscription.add(nextLesson, 'config', 'flow');
     subscription.add(nextLayout, 'counter', 'flow');

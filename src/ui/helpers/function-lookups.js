@@ -1,16 +1,16 @@
-import { renderTextEntry } from 'ui/screens/right/species-text-entry';
-import { renderSpecimenTiles } from 'ui/screens/left/specimen-tiles';
-import { renderHistory } from 'ui/progress/history';
-import { renderCard } from 'ui/screens/common/card';
-import { renderScientifics } from 'ui/screens/right/species-scientifics';
-import { renderVernaculars } from 'ui/screens/right/species-vernaculars';
-import { renderSpeciesTiles } from 'ui/screens/right/species-tiles';
-import { renderSummary } from 'ui/progress/summary';
-import { renderLeafTile } from 'ui/screens/left/leaf-tile';
-import { renderNameEntry } from 'ui/screens/right/leaf-text-entry';
+import { renderTextEntry } from 'ui/screens/text-entry/species-text-entry';
+import { renderSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
+import { renderHistory } from 'ui/screens/progress/history';
+import { renderCard } from 'ui/screens/cards/card';
+import { renderScientifics } from 'ui/screens/multichoice/species-scientifics';
+import { renderVernaculars } from 'ui/screens/multichoice/species-vernaculars';
+import { renderSpeciesTiles } from 'ui/screens/multichoice/species-tiles';
+import { renderSummary } from 'ui/screens/progress/summary';
+import { renderLeafTile } from 'ui/screens/landscape/leaf-tile';
+import { renderNameEntry } from 'ui/screens/text-entry/leaf-text-entry';
 import { runTask } from 'ui/screens/command';
-import { renderSpeciesCollection } from 'ui/screens/common/species';
-import { renderMultichoice } from 'ui/screens/common/multichoice';
+import { renderSpeciesCollection } from 'ui/screens/lists/species';
+import { renderRadioButtons } from 'ui/screens/multichoice/radiobuttons';
 
 const functions = [
     { name: 'text-entry', func: renderTextEntry },
@@ -25,7 +25,9 @@ const functions = [
     { name: 'command', func: [renderSpecimenTiles, runTask] },
     { name: 'leaf-image', func: renderLeafTile },
     { name: 'leaf-text', func: renderNameEntry },
-    { name: 'multichoice', func: renderMultichoice },
+    { name: 'epithet', func: renderRadioButtons },
+    { name: 'family', func: renderRadioButtons },
+    { name: 'family-description', func: renderRadioButtons },
 ];
 
 export const funcByName = name => {

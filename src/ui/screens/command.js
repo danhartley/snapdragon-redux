@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { store } from 'redux/store';
 import { cutter } from 'ui/helpers/wordplay';
 import { renderLetters } from 'ui/screens/common/letters';
-import { renderSpecimenTiles } from 'ui/screens/left/specimen-tiles';
+import { renderSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
 
 export const runTask = (collection) => {
 

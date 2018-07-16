@@ -1,15 +1,14 @@
 import { epithets } from 'api/botanical-latin';
 
 test('should return a translation object where this is a matching latin name', () => {
-    const latinName = 'officinalis';
+    const latinName = 'nucifer';
     const obj = epithets.find(item => {        
         return item.latin.find(part => part === latinName);
     });
 
     const expected = {
-        "latin" : ["officinalis", "officinale"],
-        "en" : "of or belonging to an officina, the store room of a monastery, where medicines and other necessaries were kept",
-        "wiki": "https://en.wikipedia.org/wiki/Officinalis"
+        "latin" : ["nucifer"],
+        "en" : ["bearing nuts"]
     };
 
     expect(obj).toEqual(expected);

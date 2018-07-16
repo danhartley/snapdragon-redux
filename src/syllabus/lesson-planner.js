@@ -2,7 +2,7 @@ import { lessonPlans } from 'snapdragon/lesson-plans';
 import { createLesson } from 'syllabus/lesson-builder';
 import { screens } from 'snapdragon/screen-layouts';
 
-const { summary, history, specimen, multichoice } = screens;
+const { summary, history, specimen, epithets } = screens;
 
 const createLessonPlan = (config, collection) => {
     const { lesson: { name: lessonName, level: { name: levelName }}, moduleSize, excludeRevision, isPortraitMode } = config;
@@ -14,7 +14,7 @@ const createLessonPlan = (config, collection) => {
         isPortraitMode, 
         currentLayouts(config), 
         [ summary, history ],
-        createWildcardLayouts([ [specimen, multichoice] ], collection, moduleSize),
+        createWildcardLayouts([ [specimen, epithets] ], collection, moduleSize),
         collection
     );        
 };
@@ -25,7 +25,6 @@ const createWildcardLayouts = (wildcards, collection, moduleSize) => {
     epithets.items.forEach(item => {
         const screens = [ wildcards[0][0], wildcards[0][1] ];
         layouts.push({ name: 'test', score: 1, screens, itemIndex: item.index, epithet: item});
-        // layouts.push({ name: 'test', score: 1, screens, itemIndex: item.index % moduleSize, epithet: item});
     });
     return layouts;
 };

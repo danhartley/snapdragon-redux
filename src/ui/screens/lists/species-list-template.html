@@ -1,0 +1,34 @@
+<!-- <div class="snapdragon-container"> -->
+    <div class="list-group-collection">
+        <div class="list-group-header js-list-header">
+            <div>{{ collection.header }}</div>
+        </div>
+        <div class="list-group-container scrollable js-list-item-container">
+            <ul class="list-group list-group-flush" data-repeat-item="{{ collection.items }}">
+                <li class="list-group-item js-list-item">
+                    <div>
+                        <img id="{{ item.name }}" src="{{ item.image }}" alt="{{ item.name }}" data-toggle="modal" data-target="#imageModal">
+                    </div>
+                    <div class="js-list-item-link" style="flex:3">
+                        <span>{{ item.name }}</span>
+                        <br/>
+                        <span class="capitalise">{{ item.vernacularName }}</span>
+                    </div>
+                    <div style="flex:2" class="landscape">
+                        <span>{{ item.family }}</span>
+                    </div>
+                    <div style="flex:1" class="landscape">
+                        <span></span>
+                    </div>
+                    <div style="flex:1" class="landscape">
+                        <span>wiki</span>
+                    </div>
+                </li>
+            </ul>    
+        </div>
+    </div>
+    <div class="list-continue-btn action-update portrait js-list-footer">
+        <button class="btn btn-light js-continue-lesson-btn-action">Continue lesson</button>
+    </div>
+
+<!-- </div> -->

@@ -18,7 +18,8 @@ export const renderQuestion = response => {
 
 export const renderCorrect = response => {
     const question = renderQuestion(response);
-    return response.answer.toUpperCase() === question.toUpperCase();
+    return question.toUpperCase().indexOf(response.answer.toUpperCase()) !== -1;
+    // return response.answer.toUpperCase() === question.toUpperCase();
 };
 
 export const renderAnswer = (response) => {

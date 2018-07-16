@@ -7,7 +7,7 @@ export const nextLayout = (counter) => {
 
     if(counter && counter.lesson === 'inactive') return;
 
-    const { layouts } = store.getState();
+    const { layouts, config } = store.getState();
 
     if(!layouts) return;
 
@@ -17,7 +17,7 @@ export const nextLayout = (counter) => {
 
     if(!layout) return;
 
-    layout.screens.forEach(screen => {
+    layout.screens.forEach( (screen, index) => {
 
         if(screen.name === 'command') {
             const funcs = funcByName(screen.name);
@@ -26,8 +26,12 @@ export const nextLayout = (counter) => {
             });
         } else {
             const func = funcByName(screen.name);
-            if(func) {            
-                subscription.add(func, screen.domain, 'screen');
+            if(func) {
+                if(config.isPortraitMode) {
+                    if(index === 1) subscription.add(func, screen.domain, 'screen');
+                } else {
+                    subscription.add(func, screen.domain, 'screen');
+                }                           
             }
         }
     });

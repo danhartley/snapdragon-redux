@@ -1,399 +1,476 @@
 export const epithets = [
     {
+        "latin": ["-aceae"],
+        "en" : ["Used to form the name of taxonomic families of plants, algae, bacteria, and fungi"]
+    },
+    {
+        "latin": ['Agastache'],
+        "en": ['many spikes']
+    },
+    {
+        "latin": ["aster"],
+        "en" : ["star"]
+    },
+    {
         "latin" : ["alba"],
-        "en" : "white"
+        "en" : ["white"]
+    },
+    {
+        "latin" : ["avium"],
+        "en" : ["birds"]
     },
     {
         "latin" : ["ater"],
-        "en" : "black"
+        "en" : ["black"]
+    },
+    {
+        "latin": ["botanikos"],
+        "en" : ["plant"]
     },
     {
         "latin" : ["chrysus"],
-        "en" : "yellow"
+        "en" : ["yellow"]
     },
     {
         "latin" : ["erythro"],
-        "en" : "red"
+        "en" : ["red"]
     },
     {
         "latin" : ["lacteus"],
-        "en" : "milky"
+        "en" : ["milky"]
     },
     {
         "latin" : ["sylvestris"],
-        "en" : "woodland"
+        "en" : ["woodland"]
     },
     {
         "latin" : ["contorta"],
-        "en" : "twisted"
+        "en" : ["twisted"]
     },
     {
         "latin" : ["globosa"],
-        "en" : "rounded"
+        "en" : ["rounded"]
     },
     {
         "latin" : ["maculata"],
-        "en" : "spotted"
+        "en" : ["spotted"]
     },
     {
         "latin" : ["pendula"],
-        "en" : "weeping"
+        "en" : ["weeping"]
+    },
+    {
+        "latin": ["pratense"],
+        "en" : ["of meadows"]
     },
     {
         "latin" : ["prostrata"],
-        "en" : "creeping"
+        "en" : ["creeping"]
     },
     {
         "latin" : ["phyllos"],
-        "en" : "leaf, foliage"
+        "en" : ["leaf", "foliage"]
     },
     {
         "latin" : ["platy"],
-        "en" : "broad, flat"
+        "en" : ["broad", "flat"]
     },
     {
         "latin" : ["angustus"],
-        "en" : "narrow"
+        "en" : ["narrow"]
     },
     {
         "latin" : ["arena"],
-        "en" : "sand"
+        "en" : ["sand"]
     },
     {
         "latin" : ["argentum"],
-        "en" : "silver"
+        "en" : ["silver"]
     },
     {
         "latin" : ["arvensis"],
-        "en" : "in the field"
+        "en" : ["in the field"]
     },
     {
         "latin" : ["brachy-"],
-        "en" : "short"
+        "en" : ["short"]
     },
     {
         "latin" : ["brachyphyllus"],
-        "en" : "short leaved"
+        "en" : ["short leaved"]
     },
     {
         "latin" : ["caprae"],
-        "en" : "goat"
+        "en" : ["goat"]
     },
     {
         "latin" : ["chroma"],
-        "en" : "colour"
+        "en" : ["colour"]
     },
     {
         "latin" : ["cilium"],
-        "en" : "eyelash"
+        "en" : ["eyelash"]
+    },
+    {
+        "latin" : ["coccineus"],
+        "en" : ["scarlet"]
     },
     {
         "latin" : ["cordifolius"],
-        "en" : "heart-shaped"
+        "en" : ["heart-shaped"]
     },
     {
         "latin" : ["coronatus"],
-        "en" : "crowned"
+        "en" : ["crowned"]
     },
     {
         "latin" : ["crassus"],
-        "en" : "thick, fat"
+        "en" : ["thick", "fat"]
     },
     {
         "latin" : ["crocos"],
-        "en" : "yellow"
+        "en" : ["yellow"]
+    },
+    {
+        "latin": ["cruciferae"],
+        "en" : ["cross-bearing"]
     },
     {
         "latin" : ["derma"],
-        "en" : "skin"
+        "en" : ["skin"]
     },
     {
         "latin" : ["digitalis"],
-        "en" : "having fingers"
+        "en" : ["having fingers"]
+    },
+    {
+        "latin" : ["domus"],
+        "en" : ["home"]
+    },
+    {
+        "latin" : ["domestic-", "domestica"],
+        "en" : ["which lives in the house"]
     },
     {
         "latin" : ["echinatus"],
-        "en" : "prickly, spiny"
+        "en" : ["prickly", "spiny"]
     },
     {
         "latin" : ["edulis"],
-        "en" : "edible"
+        "en" : ["edible"]
     },
     {
         "latin" : ["elatior"],
-        "en" : "taller"
+        "en" : ["taller"]
     },
     {
         "latin" : ["electro-"],
-        "en" : "amber"
+        "en" : ["amber"]
     },
     {
         "latin" : ["emarginatus"],
-        "en" : "having no edges"
+        "en" : ["having no edges"]
     },
     {
         "latin" : ["enanti-"],
-        "en" : "opposite, against"
+        "en" : ["opposite", "against"]
+    },
+    {
+        "latin": ["endemos"],
+        "en" : ["native"]
     },
     {
         "latin" : ["ensatus"],
-        "en" : "sword-like"
+        "en" : ["sword-like"]
     },
     {
         "latin" : ["erectus"],
-        "en" : "upright"
+        "en" : ["upright"]
     },
     {
         "latin" : ["erio-"],
-        "en" : "wool, woolly"
+        "en" : ["wool", "woolly"]
     },
     {
         "latin" : ["erosus"],
-        "en" : "indented, jagged, serrated"
+        "en" : ["indented", "jagged", "serrated"]
     },
     {
         "latin" : ["fallax"],
-        "en" : "false"
+        "en" : ["false"]
     },
     {
         "latin" : ["fenum", "faenum", "feniculum", "feniculum"],
-        "en" : "hay"
+        "en" : ["hay"]
     },
     {
         "latin" : ["filium"],
-        "en" : "thread"
+        "en" : ["thread"]
     },
     {
-        "en" : "golden yellow, light yellow",
         "latin" : ["flavus"],
+        "en" : ["golden yellow", "light yellow"],
     },
     {
         "latin" : ["floridus"],
-        "en" : "flowery"
+        "en" : ["flowery"]
     },
     {
         "latin" : ["furcatus"],
-        "en" : "forked"
+        "en" : ["forked"]
     },
     {
         "latin" : ["fuscus"],
-        "en" : "dark, dark brown"
+        "en" : ["dark", "dark brown"]
     },
     {
-        "latin" : ["gala, galum"],
-        "en" : "milk"
+        "latin" : ["gala", "galum"],
+        "en" : ["milk"]
     },
     {
         "latin" : ["glaber"],
-        "en" : "smooth; hairless"
+        "en" : ["smooth; hairless"]
     },
     {
         "latin" : ["glaucus"],
-        "en" : "blue-green, blue-gray, gleaming"
+        "en" : ["blue-green", "blue-gray", "gleaming"]
     },
     {
         "latin" : ["glycy-"],
-        "en" : "sweet"
+        "en" : ["sweet"]
     },
     {
         "latin" : ["gracile"],
-        "en" : "slender, graceful"
+        "en" : ["slender", "graceful"]
+    },
+    {
+        "latin" : ["gravis"],
+        "en" : ["heavy"]
     },
     {
         "latin" : ["hali-"],
-        "en" : "of the sea, salt"
+        "en" : ["of the sea", "salt"]
     },
     {
         "latin" : ["hetero-"],
-        "en" : "diversely or different"
+        "en" : ["diversely or different"]
     },
     {
         "latin" : ["hirsutus"],
-        "en" : "hairy"
+        "en" : ["hairy"]
     },
     {
         "latin" : ["hortensis"],
-        "en" : "from the garden"
+        "en" : ["from the garden"]
     },
     {
         "latin" : ["hydro-"],
-        "en" : "water"
+        "en" : ["water"]
+    },
+    {
+        "latin": ["hymen"],
+        "en": ["membrance"]
     },
     {
         "latin" : ["hypo-", "hyp-"],
-        "en" : "under, beneath"
+        "en" : ["under", "beneath"]
     },
     {
         "latin" : ["hyper-"],
-        "en" : "over, above"
+        "en" : ["over", "above"]
     },
     {
         "latin" : ["laevis"],
-        "en" : "smooth"
+        "en" : ["smooth"]
     },
     {
         "latin" : ["lateralis"],
-        "en" : "side"
+        "en" : ["side"]
     },
     {
         "latin" : ["lepis", "lepido-"],
-        "en" : "scale, rind, husk, flake"
+        "en" : ["scale", "rind", "husk", "flake"]
     },
     {
         "latin" : ["lepto-", "lepti-"],
-        "en" : "light"
+        "en" : ["light"]
     },
     {
         "latin" : ["mel"],
-        "en" : "honey"
+        "en" : ["honey"]
     },
     {
         "latin" : ["muralis"],
-        "en" : "growing on the wall"
+        "en" : ["growing on the wall"]
+    },
+    {
+        "latin" : ["nobilis"],
+        "en" : ["noble"]
     },
     {
         "latin" : ["nix"],
-        "en" : "snow"
+        "en" : ["snow"]
     },
     {
         "latin" : ["nucifer"],
-        "en" : "bearing nuts"
+        "en" : ["bearing nuts"]
     },
     {
         "latin" : ["officinalis", "officinale"],
-        "en" : "of or belonging to an officina, the store room of a monastery, where medicines and other necessaries were kept",
+        "en" : ["of or belonging to an officina, the store room of a monastery, where medicines and other necessaries were kept"],
         "wiki": "https://en.wikipedia.org/wiki/Officinalis"
     },
     {
+        "latin": ["oleo"],
+        "en" : ["oily"]
+    },
+    {
         "latin" : ["palustris"],
-        "en" : "of the marsh"
+        "en" : ["of the marsh"]
     },
     {
         "latin" : ["parviflorus"],
-        "en" : "small-flowered"
+        "en" : ["small-flowered"]
     },
     {
         "latin" : ["parvifolius"],
-        "en" : "small-leaved"
+        "en" : ["small-leaved"]
     },
     {
         "latin" : ["pelagicus"],
-        "en" : "of the open sea"
+        "en" : ["of the open sea"]
+    },
+    {
+        "latin": ["persica"],
+        "en" : ["from Persia"],
+        "examples": ["Prunus persica"]
     },
     {
         "latin" : ["petro-"],
-        "en" : "rock, stone"
+        "en" : ["rock", "stone"]
     },
     {
         "latin" : ["phyto-"],
-        "en" : "plant"
+        "en" : ["plant"]
     },
     {
         "latin" : ["pomum"],
-        "en" : "fruit"
+        "en" : ["fruit"]
     },
     {
         "latin" : ["pratum"],
-        "en" : "meadow"
+        "en" : ["meadow"]
     },
     {
         "latin" : ["proto-"],
-        "en" : "first"
+        "en" : ["first"]
+    },
+    {
+        "latin": ["pteron"],
+        "en" : ["feather", "wing"]
     },
     {
         "latin" : ["radix"],
-        "en" : "root or radish"
+        "en" : ["root or radish"]
     },
     {
         "latin" : ["ramus"],
-        "en" : "branch"
+        "en" : ["branch"]
+    },
+    {
+        "latin": ["rapum"],
+        "en" : ["turnip"]
     },
     {
         "latin" : ["repandus"],
-        "en" : "curved upwards, turned up"
+        "en" : ["curved upwards", "turned up"]
     },
     {
         "latin" : ["rhiza"],
-        "en" : "root"
+        "en" : ["root"]
     },
     {
         "latin" : ["sativus", "sativum"],
-        "en" : "sown, cultivated"
+        "en" : ["sown", "cultivated"]
     },
     {
         "latin" : ["setosus"],
-        "en" : "bristly or shaggy"
+        "en" : ["bristly or shaggy"]
     },
     {
         "latin" : ["silvestris", "sylvestris"],
-        "en" : "from woodland or forest; wild"
+        "en" : ["from woodland or forest; wild"]
     },
     {
         "latin" : ["speciosus"],
-        "en" : "showy"
+        "en" : ["showy"]
     },
     {
         "latin" : ["sperma"],
-        "en" : "seed"
+        "en" : ["seed"]
     },
     {
         "latin" : ["striatus"],
-        "en" : "striped"
+        "en" : ["striped"]
     },
     {
         "latin" : ["strictus"] ,
-        "en" : "straight, narrow, erect"
+        "en" : ["straight", "narrow", "erect"]
     },
     {
         "latin" : ["suber"],
-        "en" : "cork"
+        "en" : ["cork"]
+    },
+    {
+        "latin" : ["sucus"],
+        "en" : ["juice"]
     },
     {
         "latin" : ["sulcatus"],
-        "en" : "furrowed"
+        "en" : ["furrowed"]
     },
     {
         "latin" : ["tenuis"],
-        "en" : "thin, slender, fine"
+        "en" : ["thin", "slender", "fine"]
     },
     {
         "latin" : ["tinctorius"],
-        "en" : "or dyeing"
+        "en" : ["or dyeing"]
     },
     {
         "latin" : ["tomentosus"],
-        "en" : "furry, hairy"
+        "en" : ["furry", "hairy"]
     },
     {
         "latin" : ["ulmus"],
-        "en" : "elm"
+        "en" : ["elm"]
     },
     {
         "latin" : ["vernus", "vernalis"],
-        "en" : "spring"
+        "en" : ["spring"]
     },
     {
         "latin" : ["verus"],
-        "en" : "true, genuine"
+        "en" : ["true", "genuine"]
     },
     {
         "latin" : ["villosus"],
-        "en" : "hairy, shaggy"
+        "en" : ["hairy", "shaggy"]
     },
     {
         "latin" : ["viridis"],
-        "en" : "green"
+        "en" : ["green"]
     },
     {
         "latin" : ["vulgaris", "vulgare"],
-        "en" : "common"
+        "en" : ["common"]
     },
     {
         "latin" : ["xanthos"],
-        "en" : "yellow"
+        "en" : ["yellow"]
     },
     {
         "latin" : ["zygos"],
-        "en" : "joined"
+        "en" : ["joined"]
     }
 ];
