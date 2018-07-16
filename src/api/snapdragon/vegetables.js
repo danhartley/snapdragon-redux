@@ -3,16 +3,16 @@ export const vegetables = [
       "id": 584402,
       "name": "Cucumis sativus",
       "images": [
-        "http://media.eol.org/content/2009/09/08/02/62376_orig.jpg",
-        "http://media.eol.org/content/2013/12/12/23/70225_orig.jpg",
-        "http://media.eol.org/content/2013/11/17/08/63353_orig.jpg",
-        "http://media.eol.org/content/2008/10/06/13/44776_orig.jpg",
-        "http://media.eol.org/content/2013/11/15/02/48495_orig.jpg",
-        "http://media.eol.org/content/2013/12/07/12/41212_orig.jpg",
-        "http://media.eol.org/content/2014/10/06/18/55560_orig.jpg",
-        "http://media.eol.org/content/2014/10/07/01/09570_orig.jpg",
-        "http://media.eol.org/content/2013/11/16/17/08191_orig.jpg",
-        "http://media.eol.org/content/2013/02/04/23/47188_orig.jpg"
+        "https://media.eol.org/content/2009/09/08/02/62376_orig.jpg",
+        "https://media.eol.org/content/2013/12/12/23/70225_orig.jpg",
+        "https://media.eol.org/content/2013/11/17/08/63353_orig.jpg",
+        "https://media.eol.org/content/2008/10/06/13/44776_orig.jpg",
+        "https://media.eol.org/content/2013/11/15/02/48495_orig.jpg",
+        "https://media.eol.org/content/2013/12/07/12/41212_orig.jpg",
+        "https://media.eol.org/content/2014/10/06/18/55560_orig.jpg",
+        "https://media.eol.org/content/2014/10/07/01/09570_orig.jpg",
+        "https://media.eol.org/content/2013/11/16/17/08191_orig.jpg",
+        "https://media.eol.org/content/2013/02/04/23/47188_orig.jpg"
       ],
       "names": [
         {
@@ -71,15 +71,15 @@ export const vegetables = [
       "id": 585884,
       "name": "Beta vulgaris",
       "images": [
-        "http://media.eol.org/content/2013/11/15/07/80624_orig.jpg",
-        "http://media.eol.org/content/2013/07/02/01/19243_orig.jpg",
-        "http://media.eol.org/content/2014/08/15/02/11946_orig.jpg",
-        "http://media.eol.org/content/2011/10/15/22/57580_orig.jpg",
-        "http://media.eol.org/content/2012/05/23/06/53470_orig.jpg",
-        "http://media.eol.org/content/2013/11/21/12/16373_orig.jpg",
-        "http://media.eol.org/content/2012/06/13/08/53002_orig.jpg",
-        "http://media.eol.org/content/2016/08/06/02/59831_orig.jpg",
-        "http://media.eol.org/content/2015/08/11/22/77010_orig.jpg"
+        "https://media.eol.org/content/2013/11/15/07/80624_orig.jpg",
+        "https://media.eol.org/content/2013/07/02/01/19243_orig.jpg",
+        "https://media.eol.org/content/2014/08/15/02/11946_orig.jpg",
+        "https://media.eol.org/content/2011/10/15/22/57580_orig.jpg",
+        "https://media.eol.org/content/2012/05/23/06/53470_orig.jpg",
+        "https://media.eol.org/content/2013/11/21/12/16373_orig.jpg",
+        "https://media.eol.org/content/2012/06/13/08/53002_orig.jpg",
+        "https://media.eol.org/content/2016/08/06/02/59831_orig.jpg",
+        "https://media.eol.org/content/2015/08/11/22/77010_orig.jpg"
       ],
       "names": [
         {
@@ -175,13 +175,13 @@ export const vegetables = [
       "id": 582002,
       "name": "Spinacia oleracea",
       "images": [
-        "http://media.eol.org/content/2013/12/02/08/06939_orig.jpg",
-        "http://media.eol.org/content/2012/02/03/03/87448_orig.jpg",
-        "http://media.eol.org/content/2012/06/12/18/53166_orig.jpg",
-        "http://media.eol.org/content/2012/06/12/18/14292_orig.jpg",
-        "http://media.eol.org/content/2012/06/12/18/46011_orig.jpg",
-        "http://media.eol.org/content/2013/11/26/02/15427_orig.jpg",
-        "http://media.eol.org/content/2013/12/07/03/40888_orig.jpg"
+        "https://media.eol.org/content/2013/12/02/08/06939_orig.jpg",
+        "https://media.eol.org/content/2012/02/03/03/87448_orig.jpg",
+        "https://media.eol.org/content/2012/06/12/18/53166_orig.jpg",
+        "https://media.eol.org/content/2012/06/12/18/14292_orig.jpg",
+        "https://media.eol.org/content/2012/06/12/18/46011_orig.jpg",
+        "https://media.eol.org/content/2013/11/26/02/15427_orig.jpg",
+        "https://media.eol.org/content/2013/12/07/03/40888_orig.jpg"
       ],
       "names": [
         {
@@ -224,14 +224,14 @@ export const vegetables = [
       "id": 583801,
       "name": "Raphanus sativus",
       "images": [
-        "http://media.eol.org/content/2015/03/30/11/27516_orig.jpg",
-        "http://media.eol.org/content/2011/10/16/02/89929_orig.jpg",
-        "http://media.eol.org/content/2011/10/16/02/25567_orig.jpg",
-        "http://media.eol.org/content/2012/05/24/00/12323_orig.jpg",
-        "http://media.eol.org/content/2011/08/04/16/82298_orig.jpg",
-        "http://media.eol.org/content/2014/07/24/01/01482_orig.jpg",
-        "http://media.eol.org/content/2014/07/24/01/05700_orig.jpg",
-        "http://media.eol.org/content/2016/08/06/14/70784_orig.jpg"
+        "https://media.eol.org/content/2015/03/30/11/27516_orig.jpg",
+        "https://media.eol.org/content/2011/10/16/02/89929_orig.jpg",
+        "https://media.eol.org/content/2011/10/16/02/25567_orig.jpg",
+        "https://media.eol.org/content/2012/05/24/00/12323_orig.jpg",
+        "https://media.eol.org/content/2011/08/04/16/82298_orig.jpg",
+        "https://media.eol.org/content/2014/07/24/01/01482_orig.jpg",
+        "https://media.eol.org/content/2014/07/24/01/05700_orig.jpg",
+        "https://media.eol.org/content/2016/08/06/14/70784_orig.jpg"
       ],
       "names": [
         {
@@ -290,14 +290,14 @@ export const vegetables = [
       "id": 584410,
       "name": "Cucurbita pepo",
       "images": [
-        "http://media.eol.org/content/2014/10/02/04/95723_orig.jpg",
-        "http://media.eol.org/content/2014/10/02/04/31694_orig.jpg",
-        "http://media.eol.org/content/2014/10/02/04/19366_orig.jpg",
-        "http://media.eol.org/content/2011/10/15/22/23146_orig.jpg",
-        "http://media.eol.org/content/2011/10/15/22/06195_orig.jpg",
-        "http://media.eol.org/content/2013/05/20/03/87504_orig.jpg",
-        "http://media.eol.org/content/2014/05/14/03/88652_orig.jpg",
-        "http://media.eol.org/content/2013/06/11/06/68380_orig.jpg"
+        "https://media.eol.org/content/2014/10/02/04/95723_orig.jpg",
+        "https://media.eol.org/content/2014/10/02/04/31694_orig.jpg",
+        "https://media.eol.org/content/2014/10/02/04/19366_orig.jpg",
+        "https://media.eol.org/content/2011/10/15/22/23146_orig.jpg",
+        "https://media.eol.org/content/2011/10/15/22/06195_orig.jpg",
+        "https://media.eol.org/content/2013/05/20/03/87504_orig.jpg",
+        "https://media.eol.org/content/2014/05/14/03/88652_orig.jpg",
+        "https://media.eol.org/content/2013/06/11/06/68380_orig.jpg"
       ],
       "names": [
         {
@@ -397,11 +397,11 @@ export const vegetables = [
       "id": 392557,
       "name": "Solanum lycopersicum",
       "images": [
-        "http://media.eol.org/content/2014/06/03/05/47795_orig.jpg",
-        "http://media.eol.org/content/2014/06/03/05/08267_orig.jpg",
-        "http://media.eol.org/content/2014/06/03/05/81307_orig.jpg",
-        "http://media.eol.org/content/2016/08/01/08/59678_orig.jpg",
-        "http://media.eol.org/content/2016/08/01/08/71750_orig.jpg"
+        "https://media.eol.org/content/2014/06/03/05/47795_orig.jpg",
+        "https://media.eol.org/content/2014/06/03/05/08267_orig.jpg",
+        "https://media.eol.org/content/2014/06/03/05/81307_orig.jpg",
+        "https://media.eol.org/content/2016/08/01/08/59678_orig.jpg",
+        "https://media.eol.org/content/2016/08/01/08/71750_orig.jpg"
       ],
       "names": [
         {
@@ -446,18 +446,18 @@ export const vegetables = [
       "id": 583898,
       "name": "Brassica rapa",
       "images": [
-        "http://media.eol.org/content/2011/10/06/03/07359_orig.jpg",
-        "http://media.eol.org/content/2011/10/06/03/48493_orig.jpg",
-        "http://media.eol.org/content/2011/10/06/03/58321_orig.jpg",
-        "http://media.eol.org/content/2011/10/15/22/77964_orig.jpg",
-        "http://media.eol.org/content/2011/10/15/22/50249_orig.jpg",
-        "http://media.eol.org/content/2009/09/08/03/23450_orig.jpg",
-        "http://media.eol.org/content/2011/08/04/09/26433_orig.jpg",
-        "http://media.eol.org/content/2013/03/24/17/29400_orig.jpg",
-        "http://media.eol.org/content/2016/08/02/23/79236_orig.jpg",
-        "http://media.eol.org/content/2016/08/05/21/38757_orig.jpg",
-        "http://media.eol.org/content/2014/03/29/04/86683_orig.jpg",
-        "http://media.eol.org/content/2013/11/20/02/93824_orig.jpg"
+        "https://media.eol.org/content/2011/10/06/03/07359_orig.jpg",
+        "https://media.eol.org/content/2011/10/06/03/48493_orig.jpg",
+        "https://media.eol.org/content/2011/10/06/03/58321_orig.jpg",
+        "https://media.eol.org/content/2011/10/15/22/77964_orig.jpg",
+        "https://media.eol.org/content/2011/10/15/22/50249_orig.jpg",
+        "https://media.eol.org/content/2009/09/08/03/23450_orig.jpg",
+        "https://media.eol.org/content/2011/08/04/09/26433_orig.jpg",
+        "https://media.eol.org/content/2013/03/24/17/29400_orig.jpg",
+        "https://media.eol.org/content/2016/08/02/23/79236_orig.jpg",
+        "https://media.eol.org/content/2016/08/05/21/38757_orig.jpg",
+        "https://media.eol.org/content/2014/03/29/04/86683_orig.jpg",
+        "https://media.eol.org/content/2013/11/20/02/93824_orig.jpg"
       ],
       "names": [
         {
@@ -580,13 +580,13 @@ export const vegetables = [
       "id": 703202,
       "name": "Vicia faba",
       "images": [
-        "http://media.eol.org/content/2013/09/02/03/85670_orig.jpg",
-        "http://media.eol.org/content/2014/04/16/10/24680_orig.jpg",
-        "http://media.eol.org/content/2012/06/27/01/61910_orig.jpg",
-        "http://media.eol.org/content/2013/09/02/03/38863_orig.jpg",
-        "http://media.eol.org/content/2014/10/05/17/76052_orig.jpg",
-        "http://media.eol.org/content/2014/01/31/15/09279_orig.jpg",
-        "http://media.eol.org/content/2014/02/01/04/56338_orig.jpg"
+        "https://media.eol.org/content/2013/09/02/03/85670_orig.jpg",
+        "https://media.eol.org/content/2014/04/16/10/24680_orig.jpg",
+        "https://media.eol.org/content/2012/06/27/01/61910_orig.jpg",
+        "https://media.eol.org/content/2013/09/02/03/38863_orig.jpg",
+        "https://media.eol.org/content/2014/10/05/17/76052_orig.jpg",
+        "https://media.eol.org/content/2014/01/31/15/09279_orig.jpg",
+        "https://media.eol.org/content/2014/02/01/04/56338_orig.jpg"
       ],
       "names": [
         {
@@ -641,7 +641,7 @@ export const vegetables = [
         }
       ],
       "descriptions": [
-        "The Fava Bean (<i>Vicia faba</i>) is a temperate crop which originated in the Mediterranean region or southwestern Asia, along with the <a href=\"http://eol.org/pages/703192/overview\">Garden Pea</a>, <a href= http://eol.org/pages/647510/overview>Lentil</a>, and <a href=\"http://eol.org/pages/685208/overview\">Chickpea</a> (although the Fava Bean probably originated later than these others). The earliest known archaeological Fava Bean remains are from the Neolithic period (6800 to 6500 B.C.E.) from Israel. Around 3000 B.C.E., numerous archaeological remains appear in the Mediterranean region and central Europe. Until <i>Phaseolus</i> beans were introduced from the New World in post-Columbian times, Fava Beans were a common food for many Mediterranean and Near East civilizations, including the Egyptians, Greeks, and Romans. Fava Bean spread along the Nile valley to Ethiopia, as well as to northern India and China. The Fava Bean's wild ancestor is unknown. \r\n\r\nToday, Fava Beans are cultivated in more than 50 countries, with China accounting for a large fraction of world production. The plant is an erect hardy annual with a distinctive four-ribbed stem, either single or sparsely branched. The <a href=\"http://www.amnh.org/learn/biodiversity_counts/ident_help/Parts_Plants/leaf_type.htm\">compound leaves</a> are composed of a few large leaflets and bear large <a href=\"http://en.wikipedia.org/wiki/Stipule\">stipules</a> at their bases. The white, black-blotched flowers are borne in axillary clusters. The plant may produce fruits known as \"longpods\", with up to eight seeds,, or \"Windsors\", with shorter pods containing up to four seeds. The seeds are highly variable in shape, color (white, green, buff brown, purple, or black), and size (6 to 20 mm in length).\r\n\r\nThe immature seeds (beans) may be cooked as a vegetable, canned, or frozen. The dry mature seeds can used as human food or animal feed. Seed flour has been used for bread.  Whole immature pods have also been used as food. In Egypt, Fava Beans are an important part of the diets of many people as an ingredient in <a href=\"http://en.wikipedia.org/wiki/Foul_Madammas\">ful</a>. The dried seeds contain 25% protein, 1.5% fat, and 49% carbohydrate. The young beans contain around 80% water, but significant levels of carotenes and Vitamin C.\r\n\r\nIn addition to its use as food for humans and livestock, Fava Bean plays a critical role in some agricultural systems due to the ability of the nitrogen-fixing bacteria it harbors to <a href=\"http://en.wikipedia.org/wiki/Nitrogen_fixation\">fix atmospheric nitrogen</a> under a broad spectrum of environmental conditions. This facilitates diversification of the agroecosystem in both time (via <a href=\"http://en.wikipedia.org/wiki/Crop_rotation\">crop rotations</a>) and in space (via intercrops), which also may indirectly enhance associated diversity of wild flora and fauna, as well as soil microbes, which may in turn impact the sustainability of agricultural systems. (Köpke and Nemecek 2010)\r\n\r\nFava Beans in the Mediterranean region are responsible for a form of <a href=\"http://en.wikipedia.org/wiki/Hemolytic_anemia\">hemolytic anemia</a> known as \"<a href=\"http://en.wikipedia.org/wiki/Favism\">favism</a>\". It occurs in individuals with a genetic deficiency of an enzyme know as <a href=\"http://en.wikipedia.org/wiki/Glucose-6-phosphate_dehydrogenase\">glucose-6-phosphate dehydrogenase</a> (G6PD). Pythagoras was said to suffer from this disorder. \r\n\r\n(Vaughan and Geissler 1997)\r\n\r\n\r\n"
+        "The Fava Bean (<i>Vicia faba</i>) is a temperate crop which originated in the Mediterranean region or southwestern Asia, along with the <a href=\"https://eol.org/pages/703192/overview\">Garden Pea</a>, <a href= https://eol.org/pages/647510/overview>Lentil</a>, and <a href=\"https://eol.org/pages/685208/overview\">Chickpea</a> (although the Fava Bean probably originated later than these others). The earliest known archaeological Fava Bean remains are from the Neolithic period (6800 to 6500 B.C.E.) from Israel. Around 3000 B.C.E., numerous archaeological remains appear in the Mediterranean region and central Europe. Until <i>Phaseolus</i> beans were introduced from the New World in post-Columbian times, Fava Beans were a common food for many Mediterranean and Near East civilizations, including the Egyptians, Greeks, and Romans. Fava Bean spread along the Nile valley to Ethiopia, as well as to northern India and China. The Fava Bean's wild ancestor is unknown. \r\n\r\nToday, Fava Beans are cultivated in more than 50 countries, with China accounting for a large fraction of world production. The plant is an erect hardy annual with a distinctive four-ribbed stem, either single or sparsely branched. The <a href=\"https://www.amnh.org/learn/biodiversity_counts/ident_help/Parts_Plants/leaf_type.htm\">compound leaves</a> are composed of a few large leaflets and bear large <a href=\"https://en.wikipedia.org/wiki/Stipule\">stipules</a> at their bases. The white, black-blotched flowers are borne in axillary clusters. The plant may produce fruits known as \"longpods\", with up to eight seeds,, or \"Windsors\", with shorter pods containing up to four seeds. The seeds are highly variable in shape, color (white, green, buff brown, purple, or black), and size (6 to 20 mm in length).\r\n\r\nThe immature seeds (beans) may be cooked as a vegetable, canned, or frozen. The dry mature seeds can used as human food or animal feed. Seed flour has been used for bread.  Whole immature pods have also been used as food. In Egypt, Fava Beans are an important part of the diets of many people as an ingredient in <a href=\"https://en.wikipedia.org/wiki/Foul_Madammas\">ful</a>. The dried seeds contain 25% protein, 1.5% fat, and 49% carbohydrate. The young beans contain around 80% water, but significant levels of carotenes and Vitamin C.\r\n\r\nIn addition to its use as food for humans and livestock, Fava Bean plays a critical role in some agricultural systems due to the ability of the nitrogen-fixing bacteria it harbors to <a href=\"https://en.wikipedia.org/wiki/Nitrogen_fixation\">fix atmospheric nitrogen</a> under a broad spectrum of environmental conditions. This facilitates diversification of the agroecosystem in both time (via <a href=\"https://en.wikipedia.org/wiki/Crop_rotation\">crop rotations</a>) and in space (via intercrops), which also may indirectly enhance associated diversity of wild flora and fauna, as well as soil microbes, which may in turn impact the sustainability of agricultural systems. (Köpke and Nemecek 2010)\r\n\r\nFava Beans in the Mediterranean region are responsible for a form of <a href=\"https://en.wikipedia.org/wiki/Hemolytic_anemia\">hemolytic anemia</a> known as \"<a href=\"https://en.wikipedia.org/wiki/Favism\">favism</a>\". It occurs in individuals with a genetic deficiency of an enzyme know as <a href=\"https://en.wikipedia.org/wiki/Glucose-6-phosphate_dehydrogenase\">glucose-6-phosphate dehydrogenase</a> (G6PD). Pythagoras was said to suffer from this disorder. \r\n\r\n(Vaughan and Geissler 1997)\r\n\r\n\r\n"
       ],
       "taxonomy": {
         "usageKey": 2974832,
@@ -674,20 +674,20 @@ export const vegetables = [
       "id": 645287,
       "name": "Phaseolus coccineus",
       "images": [
-        "http://media.eol.org/content/2012/10/22/13/94893_orig.jpg",
-        "http://media.eol.org/content/2014/01/15/06/82451_orig.jpg",
-        "http://media.eol.org/content/2014/05/18/23/38286_orig.jpg",
-        "http://media.eol.org/content/2015/03/21/11/37518_orig.jpg",
-        "http://media.eol.org/content/2013/06/18/01/40361_orig.jpg",
-        "http://media.eol.org/content/2013/06/18/01/38049_orig.jpg",
-        "http://media.eol.org/content/2013/06/18/01/62251_orig.jpg",
-        "http://media.eol.org/content/2014/10/05/09/50167_orig.jpg",
-        "http://media.eol.org/content/2014/10/06/05/09705_orig.jpg",
-        "http://media.eol.org/content/2014/10/05/23/15422_orig.jpg",
-        "http://media.eol.org/content/2014/10/05/06/44976_orig.jpg",
-        "http://media.eol.org/content/2013/06/18/01/91983_orig.jpg",
-        "http://media.eol.org/content/2012/06/12/19/58595_orig.jpg",
-        "http://media.eol.org/content/2013/06/18/01/64816_orig.jpg"
+        "https://media.eol.org/content/2012/10/22/13/94893_orig.jpg",
+        "https://media.eol.org/content/2014/01/15/06/82451_orig.jpg",
+        "https://media.eol.org/content/2014/05/18/23/38286_orig.jpg",
+        "https://media.eol.org/content/2015/03/21/11/37518_orig.jpg",
+        "https://media.eol.org/content/2013/06/18/01/40361_orig.jpg",
+        "https://media.eol.org/content/2013/06/18/01/38049_orig.jpg",
+        "https://media.eol.org/content/2013/06/18/01/62251_orig.jpg",
+        "https://media.eol.org/content/2014/10/05/09/50167_orig.jpg",
+        "https://media.eol.org/content/2014/10/06/05/09705_orig.jpg",
+        "https://media.eol.org/content/2014/10/05/23/15422_orig.jpg",
+        "https://media.eol.org/content/2014/10/05/06/44976_orig.jpg",
+        "https://media.eol.org/content/2013/06/18/01/91983_orig.jpg",
+        "https://media.eol.org/content/2012/06/12/19/58595_orig.jpg",
+        "https://media.eol.org/content/2013/06/18/01/64816_orig.jpg"
       ],
       "names": [
         {
@@ -762,18 +762,18 @@ export const vegetables = [
       "id": 703192,
       "name": "Pisum sativum",
       "images": [
-        "http://media.eol.org/content/2014/08/15/05/82300_orig.jpg",
-        "http://media.eol.org/content/2013/11/21/11/15780_orig.jpg",
-        "http://media.eol.org/content/2013/05/20/04/53692_orig.jpg",
-        "http://media.eol.org/content/2014/07/08/07/00834_orig.jpg",
-        "http://media.eol.org/content/2014/07/08/07/18440_orig.jpg",
-        "http://media.eol.org/content/2016/08/03/07/62507_orig.jpg",
-        "http://media.eol.org/content/2009/09/08/04/82596_orig.jpg",
-        "http://media.eol.org/content/2012/12/11/21/17487_orig.jpg",
-        "http://media.eol.org/content/2014/06/10/15/95415_orig.jpg",
-        "http://media.eol.org/content/2014/06/10/15/57087_orig.jpg",
-        "http://media.eol.org/content/2013/11/14/14/19153_orig.jpg",
-        "http://media.eol.org/content/2014/12/19/17/01160_orig.jpg"
+        "https://media.eol.org/content/2014/08/15/05/82300_orig.jpg",
+        "https://media.eol.org/content/2013/11/21/11/15780_orig.jpg",
+        "https://media.eol.org/content/2013/05/20/04/53692_orig.jpg",
+        "https://media.eol.org/content/2014/07/08/07/00834_orig.jpg",
+        "https://media.eol.org/content/2014/07/08/07/18440_orig.jpg",
+        "https://media.eol.org/content/2016/08/03/07/62507_orig.jpg",
+        "https://media.eol.org/content/2009/09/08/04/82596_orig.jpg",
+        "https://media.eol.org/content/2012/12/11/21/17487_orig.jpg",
+        "https://media.eol.org/content/2014/06/10/15/95415_orig.jpg",
+        "https://media.eol.org/content/2014/06/10/15/57087_orig.jpg",
+        "https://media.eol.org/content/2013/11/14/14/19153_orig.jpg",
+        "https://media.eol.org/content/2014/12/19/17/01160_orig.jpg"
       ],
       "names": [
         {
@@ -853,15 +853,15 @@ export const vegetables = [
       "id": 581528,
       "name": "Pastinaca sativa",
       "images": [
-        "http://media.eol.org/content/2015/05/20/08/69620_orig.jpg",
-        "http://media.eol.org/content/2012/10/02/02/36001_orig.jpg",
-        "http://media.eol.org/content/2012/12/04/20/10609_orig.jpg",
-        "http://media.eol.org/content/2012/05/23/21/09073_orig.jpg",
-        "http://media.eol.org/content/2014/01/02/01/91379_orig.jpg",
-        "http://media.eol.org/content/2012/12/04/20/63851_orig.jpg",
-        "http://media.eol.org/content/2013/04/18/02/70622_orig.jpg",
-        "http://media.eol.org/content/2016/08/01/23/95809_orig.jpg",
-        "http://media.eol.org/content/2015/03/14/14/27214_orig.jpg"
+        "https://media.eol.org/content/2015/05/20/08/69620_orig.jpg",
+        "https://media.eol.org/content/2012/10/02/02/36001_orig.jpg",
+        "https://media.eol.org/content/2012/12/04/20/10609_orig.jpg",
+        "https://media.eol.org/content/2012/05/23/21/09073_orig.jpg",
+        "https://media.eol.org/content/2014/01/02/01/91379_orig.jpg",
+        "https://media.eol.org/content/2012/12/04/20/63851_orig.jpg",
+        "https://media.eol.org/content/2013/04/18/02/70622_orig.jpg",
+        "https://media.eol.org/content/2016/08/01/23/95809_orig.jpg",
+        "https://media.eol.org/content/2015/03/14/14/27214_orig.jpg"
       ],
       "names": [
         {
@@ -879,7 +879,7 @@ export const vegetables = [
         }
       ],
       "descriptions": [
-        "Wild Parsnip (<i>Pastinaca sativa</i>) is a tall, stout, herbaceous plant with a long (up to 1.5 m), thick taproot (Gleason and Cronquist 1991). Parsnip is native to Eurasia between the western Mediterranean region and the Caucasus Mountains. It now grows wild throughout southern and central Europe and was long ago introduced into the United Kingdom and northern Europe. It is also now found growing wild in Australia, Canada and the United States, China and Japan, New Zealand, southern Africa, and southern South America. In many regions, Wild Parsnip is now viewed as a weed of concern. In North America, it is predominantly found in the eastern part of the continent, but it is widely naturalized across the United States, colonizing old fields, railroad embankments, roadsides, and waste areas. Parsnip was introduced to North America shortly after European settlement as an important root crop. It subsequently escaped cultivation and naturalized as a less palatable ‘‘wild’’ form. Wild Parsnip grows best in rich, alkaline, moist soils, but can survive under poor soil conditions and under drought conditions (perhaps as a result of its deep tap root). (Vaughan and Geissler 1997; Menemen et al. 2001 and references therein; Averill and DiTommaso 2007 and references therein) \r\n\r\nThe cultivated form of Parsnip, which has a thicker and more succulent root, is grown in temperate regions all over the world. Its root is used as animal fodder or as a cooked vegetable (delicious simply broiled with a drizzle of olive oil!). Parsnip was cultivated in Roman times, but fleshy forms were not developed until the Middle Ages. The root contains around 6% starch and 6% sugar; exposure to frost supposedly increases the conversion of starch to sugar. Vitamin C content is 17 mg/100g. Parsnip has sometimes been used to make wine. (Vaughan and Geissler 1997)\r\n\r\nThe Parsnip plant has a characteristic smell; hollow, furrowed stems; and large, <a href=\"http://www.google.fr/imgres?imgurl=http://media-2.web.britannica.com/eb-media/98/5598-004-08808ACE.gif&imgrefurl=http://www.britannica.com/EBchecked/media/374/Common-leaf-morphologies&h=370&w=600&sz=52&tbnid=D1qgmfbOgyHbLM:&tbnh=78&tbnw=127&prev=/search%3Fq%3Dleaf%2Bmorphology%26tbm%3Disch%26tbo%3Du&zoom=1&q=leaf+morphology&usg=__xtgHRS4VqTGmdxFJtNozqoaughY=&docid=Ptfs5opZ2-SCjM&sa=X&ei=JpTkT9CTDojX8gP_u-C7Cg&ved=0CGoQ9QEwAQ&dur=503\">simple, pinnate leaves with ovate and toothed leaflets</a>. The small yellow flowers are borne in an <a href=\"http://en.wikipedia.org/wiki/Umbel\">umbel</a> that may be as much as 10 cm across.  (Vaughan and Geissler 1997)\r\n\r\nParsnip contains <a href=\"http://en.wikipedia.org/wiki/Furanocoumarin\">furanocoumarins</a>, which deter herbivores from eating its foliage. These compounds can also cause <a href=\"http://en.wikipedia.org/wiki/Phytophotodermatitis\">phytophotodermatitis</a> in humans and livestock, a condition that results in patches of redness and blisters on the skin when they come into contact with the sap or ingest parts of the plant in the presence of sunlight. (Menemen et al. 2001)\r\n\r\nParsnip has been the subject of diverse studies investigating the chemical ecology and evolution of plant-herbivore interactions (<a href=\"http://www.pnas.org/content/105/12/4547.abstract\">Zanger et al. 2008 and references therein</a>). \r\n\r\nAverill and DiTommaso (2007) and Cain et al. (2010) reviewed the biology and ecology of this species.\r\n\r\nWild Parsnip is one of eight species and four subspecies in the genus <i>Pastinaca</i>, all of them native to Europe and Asia (Menemen et al. 2001 and references therein).\r\n"
+        "Wild Parsnip (<i>Pastinaca sativa</i>) is a tall, stout, herbaceous plant with a long (up to 1.5 m), thick taproot (Gleason and Cronquist 1991). Parsnip is native to Eurasia between the western Mediterranean region and the Caucasus Mountains. It now grows wild throughout southern and central Europe and was long ago introduced into the United Kingdom and northern Europe. It is also now found growing wild in Australia, Canada and the United States, China and Japan, New Zealand, southern Africa, and southern South America. In many regions, Wild Parsnip is now viewed as a weed of concern. In North America, it is predominantly found in the eastern part of the continent, but it is widely naturalized across the United States, colonizing old fields, railroad embankments, roadsides, and waste areas. Parsnip was introduced to North America shortly after European settlement as an important root crop. It subsequently escaped cultivation and naturalized as a less palatable ‘‘wild’’ form. Wild Parsnip grows best in rich, alkaline, moist soils, but can survive under poor soil conditions and under drought conditions (perhaps as a result of its deep tap root). (Vaughan and Geissler 1997; Menemen et al. 2001 and references therein; Averill and DiTommaso 2007 and references therein) \r\n\r\nThe cultivated form of Parsnip, which has a thicker and more succulent root, is grown in temperate regions all over the world. Its root is used as animal fodder or as a cooked vegetable (delicious simply broiled with a drizzle of olive oil!). Parsnip was cultivated in Roman times, but fleshy forms were not developed until the Middle Ages. The root contains around 6% starch and 6% sugar; exposure to frost supposedly increases the conversion of starch to sugar. Vitamin C content is 17 mg/100g. Parsnip has sometimes been used to make wine. (Vaughan and Geissler 1997)\r\n\r\nThe Parsnip plant has a characteristic smell; hollow, furrowed stems; and large, <a href=\"https://www.google.fr/imgres?imgurl=https://media-2.web.britannica.com/eb-media/98/5598-004-08808ACE.gif&imgrefurl=https://www.britannica.com/EBchecked/media/374/Common-leaf-morphologies&h=370&w=600&sz=52&tbnid=D1qgmfbOgyHbLM:&tbnh=78&tbnw=127&prev=/search%3Fq%3Dleaf%2Bmorphology%26tbm%3Disch%26tbo%3Du&zoom=1&q=leaf+morphology&usg=__xtgHRS4VqTGmdxFJtNozqoaughY=&docid=Ptfs5opZ2-SCjM&sa=X&ei=JpTkT9CTDojX8gP_u-C7Cg&ved=0CGoQ9QEwAQ&dur=503\">simple, pinnate leaves with ovate and toothed leaflets</a>. The small yellow flowers are borne in an <a href=\"https://en.wikipedia.org/wiki/Umbel\">umbel</a> that may be as much as 10 cm across.  (Vaughan and Geissler 1997)\r\n\r\nParsnip contains <a href=\"https://en.wikipedia.org/wiki/Furanocoumarin\">furanocoumarins</a>, which deter herbivores from eating its foliage. These compounds can also cause <a href=\"https://en.wikipedia.org/wiki/Phytophotodermatitis\">phytophotodermatitis</a> in humans and livestock, a condition that results in patches of redness and blisters on the skin when they come into contact with the sap or ingest parts of the plant in the presence of sunlight. (Menemen et al. 2001)\r\n\r\nParsnip has been the subject of diverse studies investigating the chemical ecology and evolution of plant-herbivore interactions (<a href=\"https://www.pnas.org/content/105/12/4547.abstract\">Zanger et al. 2008 and references therein</a>). \r\n\r\nAverill and DiTommaso (2007) and Cain et al. (2010) reviewed the biology and ecology of this species.\r\n\r\nWild Parsnip is one of eight species and four subspecies in the genus <i>Pastinaca</i>, all of them native to Europe and Asia (Menemen et al. 2001 and references therein).\r\n"
       ],
       "taxonomy": {
         "usageKey": 8262702,
@@ -912,15 +912,15 @@ export const vegetables = [
       "id": 581188,
       "name": "Solanum melongena",
       "images": [
-        "http://media.eol.org/content/2012/06/19/04/35626_orig.jpg",
-        "http://media.eol.org/content/2012/06/15/08/79607_orig.jpg",
-        "http://media.eol.org/content/2012/06/19/04/29858_orig.jpg",
-        "http://media.eol.org/content/2012/06/15/08/72432_orig.jpg",
-        "http://media.eol.org/content/2011/10/16/02/76599_orig.jpg",
-        "http://media.eol.org/content/2011/10/16/02/55822_orig.jpg",
-        "http://media.eol.org/content/2011/10/16/02/26792_orig.jpg",
-        "http://media.eol.org/content/2015/03/21/18/07470_orig.jpg",
-        "http://media.eol.org/content/2015/03/21/10/79030_orig.jpg"
+        "https://media.eol.org/content/2012/06/19/04/35626_orig.jpg",
+        "https://media.eol.org/content/2012/06/15/08/79607_orig.jpg",
+        "https://media.eol.org/content/2012/06/19/04/29858_orig.jpg",
+        "https://media.eol.org/content/2012/06/15/08/72432_orig.jpg",
+        "https://media.eol.org/content/2011/10/16/02/76599_orig.jpg",
+        "https://media.eol.org/content/2011/10/16/02/55822_orig.jpg",
+        "https://media.eol.org/content/2011/10/16/02/26792_orig.jpg",
+        "https://media.eol.org/content/2015/03/21/18/07470_orig.jpg",
+        "https://media.eol.org/content/2015/03/21/10/79030_orig.jpg"
       ],
       "names": [
         {
@@ -954,7 +954,7 @@ export const vegetables = [
         }
       ],
       "descriptions": [
-        "The cultivated eggplant or aubergine, Solanum melongena, is cultivated world wide for its fruits which are used in cooking.Aubergines are native to southeast Asia, but were brought to Europe sometime in the 1500s, where they eventually became popular and were exported around the world (<a href=\"http://www.eu-sol.net/public/plant-histories/eggplant-history\" title=\"\">Eu-Sol: Eggplant history</a>).The name by which the aubergine is known in the United States is eggplant, thought to come from old white fruited varieties where the fruit is egg-shaped."
+        "The cultivated eggplant or aubergine, Solanum melongena, is cultivated world wide for its fruits which are used in cooking.Aubergines are native to southeast Asia, but were brought to Europe sometime in the 1500s, where they eventually became popular and were exported around the world (<a href=\"https://www.eu-sol.net/public/plant-histories/eggplant-history\" title=\"\">Eu-Sol: Eggplant history</a>).The name by which the aubergine is known in the United States is eggplant, thought to come from old white fruited varieties where the fruit is egg-shaped."
       ],
       "taxonomy": {
         "usageKey": 2930617,
@@ -987,20 +987,20 @@ export const vegetables = [
       "id": 467498,
       "name": "Cynara cardunculus",
       "images": [
-        "http://media.eol.org/content/2014/07/19/17/81740_orig.jpg",
-        "http://media.eol.org/content/2017/04/28/22/31935_orig.jpg",
-        "http://media.eol.org/content/2014/08/15/05/29019_orig.jpg",
-        "http://media.eol.org/content/2013/10/02/02/40513_orig.jpg",
-        "http://media.eol.org/content/2014/08/15/04/48032_orig.jpg",
-        "http://media.eol.org/content/2014/07/08/09/60175_orig.jpg",
-        "http://media.eol.org/content/2015/08/11/22/34790_orig.jpg",
-        "http://media.eol.org/content/2015/08/11/22/83359_orig.jpg",
-        "http://media.eol.org/content/2014/05/10/06/97626_orig.jpg",
-        "http://media.eol.org/content/2013/07/02/07/80337_orig.jpg",
-        "http://media.eol.org/content/2015/03/12/08/47057_orig.jpg",
-        "http://media.eol.org/content/2011/11/01/05/86866_orig.jpg",
-        "http://media.eol.org/content/2012/05/23/11/02939_orig.jpg",
-        "http://media.eol.org/content/2012/06/12/15/35011_orig.jpg"
+        "https://media.eol.org/content/2014/07/19/17/81740_orig.jpg",
+        "https://media.eol.org/content/2017/04/28/22/31935_orig.jpg",
+        "https://media.eol.org/content/2014/08/15/05/29019_orig.jpg",
+        "https://media.eol.org/content/2013/10/02/02/40513_orig.jpg",
+        "https://media.eol.org/content/2014/08/15/04/48032_orig.jpg",
+        "https://media.eol.org/content/2014/07/08/09/60175_orig.jpg",
+        "https://media.eol.org/content/2015/08/11/22/34790_orig.jpg",
+        "https://media.eol.org/content/2015/08/11/22/83359_orig.jpg",
+        "https://media.eol.org/content/2014/05/10/06/97626_orig.jpg",
+        "https://media.eol.org/content/2013/07/02/07/80337_orig.jpg",
+        "https://media.eol.org/content/2015/03/12/08/47057_orig.jpg",
+        "https://media.eol.org/content/2011/11/01/05/86866_orig.jpg",
+        "https://media.eol.org/content/2012/05/23/11/02939_orig.jpg",
+        "https://media.eol.org/content/2012/06/12/15/35011_orig.jpg"
       ],
       "names": [
         {
@@ -1055,14 +1055,14 @@ export const vegetables = [
       "id": 468144,
       "name": "Lactuca sativa",
       "images": [
-        "http://media.eol.org/content/2011/10/06/06/40097_orig.jpg",
-        "http://media.eol.org/content/2011/10/06/06/55817_orig.jpg",
-        "http://media.eol.org/content/2012/08/30/18/03604_orig.jpg",
-        "http://media.eol.org/content/2013/11/15/02/80235_orig.jpg",
-        "http://media.eol.org/content/2014/11/20/00/06850_orig.jpg",
-        "http://media.eol.org/content/2013/11/25/03/04522_orig.jpg",
-        "http://media.eol.org/content/2013/11/17/23/15503_orig.jpg",
-        "http://media.eol.org/content/2013/11/17/23/62411_orig.jpg"
+        "https://media.eol.org/content/2011/10/06/06/40097_orig.jpg",
+        "https://media.eol.org/content/2011/10/06/06/55817_orig.jpg",
+        "https://media.eol.org/content/2012/08/30/18/03604_orig.jpg",
+        "https://media.eol.org/content/2013/11/15/02/80235_orig.jpg",
+        "https://media.eol.org/content/2014/11/20/00/06850_orig.jpg",
+        "https://media.eol.org/content/2013/11/25/03/04522_orig.jpg",
+        "https://media.eol.org/content/2013/11/17/23/15503_orig.jpg",
+        "https://media.eol.org/content/2013/11/17/23/62411_orig.jpg"
       ],
       "names": [
         {
@@ -1122,12 +1122,12 @@ export const vegetables = [
       "id": 1278046,
       "name": "Daucus carota",
       "images": [
-        "http://media.eol.org/content/2011/10/06/00/69686_orig.jpg",
-        "http://media.eol.org/content/2013/11/17/03/82807_orig.jpg",
-        "http://media.eol.org/content/2013/12/01/17/12742_orig.jpg",
-        "http://media.eol.org/content/2013/12/01/17/35189_orig.jpg",
-        "http://media.eol.org/content/2013/12/01/23/88972_orig.jpg",
-        "http://media.eol.org/content/2014/06/19/16/76703_orig.jpg"
+        "https://media.eol.org/content/2011/10/06/00/69686_orig.jpg",
+        "https://media.eol.org/content/2013/11/17/03/82807_orig.jpg",
+        "https://media.eol.org/content/2013/12/01/17/12742_orig.jpg",
+        "https://media.eol.org/content/2013/12/01/17/35189_orig.jpg",
+        "https://media.eol.org/content/2013/12/01/23/88972_orig.jpg",
+        "https://media.eol.org/content/2014/06/19/16/76703_orig.jpg"
       ],
       "names": [
         {
@@ -1184,18 +1184,18 @@ export const vegetables = [
       "id": 583899,
       "name": "Brassica oleracea",
       "images": [
-        "http://media.eol.org/content/2012/06/13/01/99823_orig.jpg",
-        "http://media.eol.org/content/2012/06/13/01/92797_orig.jpg",
-        "http://media.eol.org/content/2012/06/13/01/79773_orig.jpg",
-        "http://media.eol.org/content/2012/12/04/11/15375_orig.jpg",
-        "http://media.eol.org/content/2012/12/04/11/15604_orig.jpg",
-        "http://media.eol.org/content/2012/12/04/11/37865_orig.jpg",
-        "http://media.eol.org/content/2014/08/15/02/57459_orig.jpg",
-        "http://media.eol.org/content/2014/08/15/02/34226_orig.jpg",
-        "http://media.eol.org/content/2012/05/23/07/83671_orig.jpg",
-        "http://media.eol.org/content/2016/08/04/17/21941_orig.jpg",
-        "http://media.eol.org/content/2014/06/19/22/22734_orig.jpg",
-        "http://media.eol.org/content/2014/10/27/19/26271_orig.jpg"
+        "https://media.eol.org/content/2012/06/13/01/99823_orig.jpg",
+        "https://media.eol.org/content/2012/06/13/01/92797_orig.jpg",
+        "https://media.eol.org/content/2012/06/13/01/79773_orig.jpg",
+        "https://media.eol.org/content/2012/12/04/11/15375_orig.jpg",
+        "https://media.eol.org/content/2012/12/04/11/15604_orig.jpg",
+        "https://media.eol.org/content/2012/12/04/11/37865_orig.jpg",
+        "https://media.eol.org/content/2014/08/15/02/57459_orig.jpg",
+        "https://media.eol.org/content/2014/08/15/02/34226_orig.jpg",
+        "https://media.eol.org/content/2012/05/23/07/83671_orig.jpg",
+        "https://media.eol.org/content/2016/08/04/17/21941_orig.jpg",
+        "https://media.eol.org/content/2014/06/19/22/22734_orig.jpg",
+        "https://media.eol.org/content/2014/10/27/19/26271_orig.jpg"
       ],
       "names": [
         {
@@ -1275,15 +1275,15 @@ export const vegetables = [
       "id": 482935,
       "name": "Solanum tuberosum",
       "images": [
-        "http://media.eol.org/content/2013/11/26/21/59942_orig.jpg",
-        "http://media.eol.org/content/2016/08/02/23/74915_orig.jpg",
-        "http://media.eol.org/content/2015/08/11/22/82790_orig.jpg",
-        "http://media.eol.org/content/2012/05/24/02/19559_orig.jpg",
-        "http://media.eol.org/content/2013/08/10/07/15003_orig.jpg",
-        "http://media.eol.org/content/2008/10/08/13/44758_orig.jpg",
-        "http://media.eol.org/content/2015/03/25/03/67403_orig.jpg",
-        "http://media.eol.org/content/2012/12/11/20/49696_orig.jpg",
-        "http://media.eol.org/content/2012/05/24/02/98746_orig.jpg"
+        "https://media.eol.org/content/2013/11/26/21/59942_orig.jpg",
+        "https://media.eol.org/content/2016/08/02/23/74915_orig.jpg",
+        "https://media.eol.org/content/2015/08/11/22/82790_orig.jpg",
+        "https://media.eol.org/content/2012/05/24/02/19559_orig.jpg",
+        "https://media.eol.org/content/2013/08/10/07/15003_orig.jpg",
+        "https://media.eol.org/content/2008/10/08/13/44758_orig.jpg",
+        "https://media.eol.org/content/2015/03/25/03/67403_orig.jpg",
+        "https://media.eol.org/content/2012/12/11/20/49696_orig.jpg",
+        "https://media.eol.org/content/2012/05/24/02/98746_orig.jpg"
       ],
       "names": [
         {
@@ -1343,13 +1343,13 @@ export const vegetables = [
       "id": 1084354,
       "name": "Allium cepa",
       "images": [
-        "http://media.eol.org/content/2013/11/26/21/08583_orig.jpg",
-        "http://media.eol.org/content/2014/08/15/02/20138_orig.jpg",
-        "http://media.eol.org/content/2012/06/13/04/43491_orig.jpg",
-        "http://media.eol.org/content/2012/05/23/04/69877_orig.jpg",
-        "http://media.eol.org/content/2009/07/24/04/67256_orig.jpg",
-        "http://media.eol.org/content/2015/08/11/22/92876_orig.jpg",
-        "http://media.eol.org/content/2013/11/15/00/30795_orig.jpg"
+        "https://media.eol.org/content/2013/11/26/21/08583_orig.jpg",
+        "https://media.eol.org/content/2014/08/15/02/20138_orig.jpg",
+        "https://media.eol.org/content/2012/06/13/04/43491_orig.jpg",
+        "https://media.eol.org/content/2012/05/23/04/69877_orig.jpg",
+        "https://media.eol.org/content/2009/07/24/04/67256_orig.jpg",
+        "https://media.eol.org/content/2015/08/11/22/92876_orig.jpg",
+        "https://media.eol.org/content/2013/11/15/00/30795_orig.jpg"
       ],
       "names": [
         {
@@ -1376,7 +1376,7 @@ export const vegetables = [
         }
       ],
       "descriptions": [
-        "<i>Allium cepa</i>, the onion (also called bulb onion or common onion) and the shallot (<i>A. cepa</i> var. <i>aggregatum</i>), is a monocot bulbous perennial (often biannual). It is the most widely cultivated species of the genus <i>Allium</i>, which includes other important species such as garlic (<i>A. sativum</i>) and leeks (<i>A. ampeloprasum</i>). The name \"wild onion\" is applied to various <i>Alliums. </i>\r\n\r\n<i>Allium</i> species are among the oldest cultivated crops. Diverse representations in Egyptian artifacts dating to 2700 B.C suggest that onions had been cultivated and in wide use by that time (Fritsch and Friesen 2002). The present species, <i>A. cepa</i>, is known only from cultivation, but appears to have been domesticated from wild ancestors in the Central Asian mountains (Brewster 1994).\r\n\r\nNumerous cultivars have been developed for size, form, color, storability, resistance to pests and pathogens, and climatic adaptations. Cultivars are divided into the Common Onion Group (<i>A. cepa</i> var. <i>cepa</i>), which contains most of the economically important varieties (including cultivars grown for green or salad onions) and the Aggregatum Group, which includes shallots and potato onions, and typically produce clusters of small bulbs (Brewster 1994). \r\n\r\nOnions are widely used on cooking in nearly all regions of the world, and have been used in diverse cultures and rituals throughout history. (See Wikipedia article in full entry; additional details in Block 2010 and Brewster 1994.) \r\n\r\nOnions produce various sulfur-containing compounds (such as cysteine sulfoxide), probably for defense against fungi and insects, that, together with their breakdown products, produce their distinctive odor, flavor, and lachrymatory (tear-stimulating) properties (Brewster 1994). Throughout history, onions have been used in folk medicine for purposes ranging from treating wounds and stomach ailments to treating infertility (Wikipedia 2011). Scientific and pharmacological studies since World War II have found evidence that onions or their derived compounds have antimicrobial and antifungal properties, and may also be of benefit in preventing or treating heart disease and atherosclerosis, diabetes, cancer, and possibly asthma (Brewster 1994, Griffiths et al. 2002). \r\n\r\nDespite their benefits to humans, onions are toxic to cattle, cats, and dogs, and, to a lesser extent, sheep and goats (Cope 2011, Merck 2011). Consumption by these animals of large amounts of onion may lead to anemia and impaired oxygen transport.\r\n\r\nGlobal production of onions in 2008 was second only to tomatoes among horticultural crops: more than 73 million metric tons harvested from 3.6 million hectares. China alone produced more than 20 million metric tons; other leading producers were India, Australia, the United States, Pakistan, and Turkey (FAOSTAT 2011). <i>A. cepa</i> has escaped cultivation or naturalized in much of eastern North America as well as California and the Pacific Northwest (USDA PLANTS 2011), but generally remains localized. It is classified as a noxious weed in Arkansas (along with all <i>Alliums</i>).\r\n\r\nOnions have large cells visible under low magnification, so onion tissue is often used in high school science laboratories for learning about microscope use and cell structure, as shown in this lesson from Rice University (<a href=\"http://teachertech.rice.edu/Participants/dawsonm/cells/microlab4.htm\">http://teachertech.rice.edu/Participants/dawsonm/cells/microlab4.htm</a>) and this video of onion cells from YouTube: <a href=\"http://www.youtube.com/watch?v=Tdch3mxQ4oU\">http://www.youtube.com/watch?v=Tdch3mxQ4oU</a>.\r\n"
+        "<i>Allium cepa</i>, the onion (also called bulb onion or common onion) and the shallot (<i>A. cepa</i> var. <i>aggregatum</i>), is a monocot bulbous perennial (often biannual). It is the most widely cultivated species of the genus <i>Allium</i>, which includes other important species such as garlic (<i>A. sativum</i>) and leeks (<i>A. ampeloprasum</i>). The name \"wild onion\" is applied to various <i>Alliums. </i>\r\n\r\n<i>Allium</i> species are among the oldest cultivated crops. Diverse representations in Egyptian artifacts dating to 2700 B.C suggest that onions had been cultivated and in wide use by that time (Fritsch and Friesen 2002). The present species, <i>A. cepa</i>, is known only from cultivation, but appears to have been domesticated from wild ancestors in the Central Asian mountains (Brewster 1994).\r\n\r\nNumerous cultivars have been developed for size, form, color, storability, resistance to pests and pathogens, and climatic adaptations. Cultivars are divided into the Common Onion Group (<i>A. cepa</i> var. <i>cepa</i>), which contains most of the economically important varieties (including cultivars grown for green or salad onions) and the Aggregatum Group, which includes shallots and potato onions, and typically produce clusters of small bulbs (Brewster 1994). \r\n\r\nOnions are widely used on cooking in nearly all regions of the world, and have been used in diverse cultures and rituals throughout history. (See Wikipedia article in full entry; additional details in Block 2010 and Brewster 1994.) \r\n\r\nOnions produce various sulfur-containing compounds (such as cysteine sulfoxide), probably for defense against fungi and insects, that, together with their breakdown products, produce their distinctive odor, flavor, and lachrymatory (tear-stimulating) properties (Brewster 1994). Throughout history, onions have been used in folk medicine for purposes ranging from treating wounds and stomach ailments to treating infertility (Wikipedia 2011). Scientific and pharmacological studies since World War II have found evidence that onions or their derived compounds have antimicrobial and antifungal properties, and may also be of benefit in preventing or treating heart disease and atherosclerosis, diabetes, cancer, and possibly asthma (Brewster 1994, Griffiths et al. 2002). \r\n\r\nDespite their benefits to humans, onions are toxic to cattle, cats, and dogs, and, to a lesser extent, sheep and goats (Cope 2011, Merck 2011). Consumption by these animals of large amounts of onion may lead to anemia and impaired oxygen transport.\r\n\r\nGlobal production of onions in 2008 was second only to tomatoes among horticultural crops: more than 73 million metric tons harvested from 3.6 million hectares. China alone produced more than 20 million metric tons; other leading producers were India, Australia, the United States, Pakistan, and Turkey (FAOSTAT 2011). <i>A. cepa</i> has escaped cultivation or naturalized in much of eastern North America as well as California and the Pacific Northwest (USDA PLANTS 2011), but generally remains localized. It is classified as a noxious weed in Arkansas (along with all <i>Alliums</i>).\r\n\r\nOnions have large cells visible under low magnification, so onion tissue is often used in high school science laboratories for learning about microscope use and cell structure, as shown in this lesson from Rice University (<a href=\"https://teachertech.rice.edu/Participants/dawsonm/cells/microlab4.htm\">https://teachertech.rice.edu/Participants/dawsonm/cells/microlab4.htm</a>) and this video of onion cells from YouTube: <a href=\"https://www.youtube.com/watch?v=Tdch3mxQ4oU\">https://www.youtube.com/watch?v=Tdch3mxQ4oU</a>.\r\n"
       ],
       "taxonomy": {
         "usageKey": 2857697,
