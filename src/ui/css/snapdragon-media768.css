@@ -32,6 +32,10 @@
         width: 20em;
     }
 
+    .species-answer div {
+        border-bottom: 0px;
+    }
+
     .specimens-card-btn {
         display: none;
     }

@@ -162,7 +162,7 @@ const portraitLesson1 = {
         {   id: 1,
             name: 'Level 1',
             description: 'Match species',
-            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch ]
+            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, familyMatch, familyDescriptionMatch ]
         },
         {   id: 2,
             name: 'Level 2',
