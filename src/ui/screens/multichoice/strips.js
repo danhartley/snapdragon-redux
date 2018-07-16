@@ -15,7 +15,7 @@ export const renderStrips = (screen, item, callback, config, questionCount) => {
     
     const rptrStrips = template.content.querySelector('.js-rptr-strips');
 
-    let parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
+    let parent = DOM.rightBody;
     parent.innerHTML = '';
 
     item.content = R.take(6, item.multipleNames.map(answer => {
@@ -43,33 +43,29 @@ export const renderStrips = (screen, item, callback, config, questionCount) => {
 
     parent.appendChild(clone);
 
-    if(config.isPortraitMode) {
+    parent = document.querySelector('.right-body .snapdragon-container');
 
-        parent = document.querySelector('.snapdragon-container');
+    const species = item.name;
+    const name = itemProperties.vernacularName(item, config);
+    template.innerHTML = speciesCard;
 
-        const species = item.name;
-        const name = itemProperties.vernacularName(item, config);
-        template.innerHTML = speciesCard;
+    const context = (screen.name === 'species-vernaculars') 
+            ? { name: '---', species }
+            : { name, species: '---' }
 
-        const context = (screen.name === 'species-vernaculars') 
-                ? { name: '---', species }
-                : { name, species: '---' }
+    renderTemplate( context, template.content, parent);
+    template.innerHTML = questionCard;
+    const question = screen.question;
+    renderTemplate( { question }, template.content, parent);
 
-        renderTemplate( context, template.content, parent);
-        template.innerHTML = questionCard;
-        const question = screen.question;
-        renderTemplate( { question }, template.content, parent);
-
-        const renderAnswer = (text, className, correct) => {
-            const answer = document.querySelector('.js-species-answer div');
-            answer.innerHTML = correct ? 'Correct' : 'Incorrect';
-            answer.parentElement.style.display = 'block';
-            answer.classList.add(className);
-        }
-
-        scoreHandler(strips, item, config, 'strip', renderAnswer, questionCount);
-    } else {
-        scoreHandler(strips, item, config, 'strip', null, questionCount);
+    const renderAnswer = (text, className, correct) => {
+        const answer = document.querySelector('.js-species-answer div');
+        answer.innerHTML = correct ? 'Correct' : 'Incorrect';
+        answer.parentElement.style.display = 'block';
+        answer.classList.add(className);
     }
+
+    scoreHandler(strips, item, config, 'strip', renderAnswer, questionCount);
+
     template.innerHTML = '';
 };

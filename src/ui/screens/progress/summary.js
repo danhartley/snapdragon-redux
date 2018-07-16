@@ -17,8 +17,7 @@ export const renderSummary = (history) => {
 
     template.innerHTML = summaryTemplate;
             
-    const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
-
+    const parent = DOM.rightBody;
     parent.innerHTML = '';
 
     renderTemplate({ score, history, collection, config }, template.content, parent);

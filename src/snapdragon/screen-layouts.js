@@ -83,13 +83,26 @@ const leafName = {
   template: 'js-text-entry-template'     
 };
 
-const radiobuttons = {
-  name: 'radiobuttons',
+const epithets = {
+  name: 'epithets',
   headers: { long: 'Latin epithet recall', short: 'Select the epithet name'},
   domain: 'collection',
   question: 'Select the epithet',
 };
 
+const family = {
+  name: 'family',
+  headers: { long: 'Match species family', short: 'Match species family'},
+  domain: 'collection',
+  question: 'Match species family',
+};
+
+const familyDescription = {
+  name: 'family-description',
+  headers: { long: 'Match family description', short: 'Match family description'},
+  domain: 'collection',
+  question: 'Match family description',
+};
 
 export const screens = {
   specimen,
@@ -107,5 +120,7 @@ export const screens = {
   leaf,
   leafName,
 
-  radiobuttons
+  epithets,
+  family,
+  familyDescription
 };

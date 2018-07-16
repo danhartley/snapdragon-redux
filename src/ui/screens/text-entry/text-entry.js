@@ -25,8 +25,9 @@ export const renderInput = (config, screen, question, callbackTime, item, render
         scoringHandler(question, document.querySelector('.js-txt-input').value, event, config.isPortraitMode, layouts.length, callbackTime, renderHeader);
     });
 
-    const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
+    const parent = DOM.rightBody;
     parent.innerHTML = '';
+    
     parent.appendChild(clone);
 
     if(config.isPortraitMode) renderPortrait(item);

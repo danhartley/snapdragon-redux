@@ -128,7 +128,7 @@ const renderCommonParts = (template, config, item) => {
         event.stopPropagation();
     });
 
-    const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
+    const parent = DOM.rightBody;
     parent.innerHTML = '';
     
     renderTemplate({ species, name, latin }, template.content, parent, clone);

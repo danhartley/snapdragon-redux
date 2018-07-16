@@ -24,7 +24,12 @@
     .action-update, .response-update {
         margin: 0 0 2em 0;
         left: initial;
-        right: 1em;
+        right: .5em;
+        padding: .25em 0;        
+    }
+
+    .response-update {
+        width: 20em;
     }
 
     .specimens-card-btn {
@@ -35,16 +40,16 @@
         grid-template-columns: 10fr .1em 10fr;  
     }
 
-    .left-grid, .right-grid {
+    .left-grid {
         grid-template-rows: 1fr 10fr 1fr;
         grid-template-areas:"header"
                             "squares"
                             "footer"
     }
 
-    progress {
+    /* progress {
         display: none;
-    }
+    } */
 
     .left-grid {
         grid-column: 1;
@@ -64,12 +69,12 @@
     }
 
     .strips {
-        height: 100%;
-        padding: 0 1.5em;
+        height: 70%;
+        padding: 0 .5em;
     }
 
     .strip div {
-        padding: 1em;
+        padding: .5em;
         font-size: 1.2em;
     }
 
@@ -169,7 +174,7 @@
         display: inline-block;
     }
 
-    .right-grid {
+    .left-grid {
         display: grid;
     }
 

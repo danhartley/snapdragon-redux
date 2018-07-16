@@ -25,7 +25,9 @@ const functions = [
     { name: 'command', func: [renderSpecimenTiles, runTask] },
     { name: 'leaf-image', func: renderLeafTile },
     { name: 'leaf-text', func: renderNameEntry },
-    { name: 'radiobuttons', func: renderRadioButtons },
+    { name: 'epithets', func: renderRadioButtons },
+    { name: 'family', func: renderRadioButtons },
+    { name: 'family-description', func: renderRadioButtons },
 ];
 
 export const funcByName = name => {

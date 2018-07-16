@@ -24,8 +24,7 @@ export const renderCollections = (counter) => {
 
     template.innerHTML = collectionsTemplate;
 
-    const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
-
+    const parent = DOM.rightBody;
     parent.innerHTML = '';
 
     const species = collections.filter(collection => collection.type === 'species');

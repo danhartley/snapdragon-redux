@@ -1,63 +1,8 @@
 import { screens } from 'snapdragon/screen-layouts';
 
-const { specimen, revision, species, vernaculars, scientifics, summary, history, text, command, leaf, leafName, radiobuttons } = screens;
+const { specimen, revision, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyDescription } = screens;
 
-const portrait1 = {
-    name: 'revision',
-    screens: [{ ...revision }]
-};
-
-const portrait2 = {
-    name: 'test',
-    score: 1,
-    screens: [{ ...species }]
-};
-
-const portrait3 = {
-    name: 'test',
-    score: 1,
-    screens: [{ ...vernaculars }]
-};
-
-const portrait4 = {
-    name: 'test',
-    score: 1,
-    screens: [{ ...scientifics }]
-};
-
-const portrait5 = {
-    name: 'test',
-    score: 1,
-    screens: [{ ...text, template: 'js-genus-entry-template', taxon: 'genus'}]
-};
-
-const portrait6 = {
-    name: 'test',
-    score: 1,
-    screens: [{ ...text, template: 'js-species-entry-template', taxon: 'species'}]
-};
-
-const portrait7 = {
-    name: 'test',
-    score: 1,
-    screens: [{ ...text, template: 'js-species-genus-entry-template', taxon: 'name'}]
-};
-
-const portrait8 = {
-    name: 'test',
-    score: 1,
-    screens: [{ ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Common name recall', short: 'Enter the common name'}}]    
-};
-
-const portrait9 = {
-    name: 'test',
-    score: 1,
-    screens: [
-        { ...radiobuttons }
-    ]
-};
-
-const layout1 = {
+const speciesRevision = {
     name: 'revision',
     screens: [
         { ...specimen },
@@ -65,7 +10,7 @@ const layout1 = {
     ]
 };
 
-const layout2 = {
+const imageToImageMatch = {
     name: 'test',
     score: 1,
     screens: [
@@ -74,7 +19,25 @@ const layout2 = {
     ]
 };
 
-const layout3 = {
+const familyMatch = {
+    name: 'test',
+    score: 1,
+    screens: [
+        { ...specimen },
+        { ...family }
+    ]
+};
+
+const familyDescriptionMatch = {
+    name: 'test',
+    score: 1,
+    screens: [
+        { ...specimen },
+        { ...familyDescription }
+    ]
+};
+
+const latinToCommonMatch = {
     name: 'test',
     score: 1,
     screens: [
@@ -83,7 +46,7 @@ const layout3 = {
     ]
 };
 
-const layout4 = {
+const commonToLatinMatch = {
     name: 'test',
     score: 1,
     screens: [
@@ -92,7 +55,7 @@ const layout4 = {
     ]
 };
 
-const layout5 = {
+const genusEntry = {
     name: 'test',
     score: 1,
     screens: [
@@ -101,7 +64,7 @@ const layout5 = {
     ]
 };
 
-const layout6 = {
+const speciesEntry = {
     name: 'test',
     score: 1,
     screens: [
@@ -110,7 +73,7 @@ const layout6 = {
     ]
 };
 
-const layout7 = {
+const speciesGenusEntry = {
     name: 'test',
     score: 1,
     screens: [
@@ -119,7 +82,7 @@ const layout7 = {
     ]
 };
 
-const layout8 = {
+const commandLayout = {
     name: 'test',
     score: 1,
     screens: [
@@ -127,7 +90,7 @@ const layout8 = {
     ]
 };
 
-const layout9 = {
+const leafEntry = {
     name: 'test',
     score: 1,
     screens: [
@@ -136,21 +99,12 @@ const layout9 = {
     ]
 };
 
-const layout10 = {
+const commonEntry = {
     name: 'test',
     score: 1,
     screens: [
         { ...specimen },
         { ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Enter the common name', short: 'Enter the common name'}}
-    ]
-};
-
-const layout11 = {
-    name: 'test',
-    score: 1,
-    screens: [
-        { ...specimen },
-        { ...radiobuttons }
     ]
 };
 
@@ -161,28 +115,28 @@ const landscapeLesson1 = {
     levels: [
         {   id: 1,
             name: 'Level 1',
-            description: 'Match species',
-            layouts: [ layout1, layout2, layout3, layout4 ]
+            description: 'Level 1',
+            layouts: [ speciesRevision, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, familyDescriptionMatch ]
         },
         {   id: 2,
             name: 'Level 2',
             description: 'Recall common name',
-            layouts: [ layout10 ]            
+            layouts: [ commonEntry ]            
         },
         {   id: 3,
             name: 'Level 3',
             description: 'Complete latin name',
-            layouts: [ layout1, layout5, layout6, layout10, layout7 ]
+            layouts: [ speciesRevision, genusEntry, speciesEntry, commonEntry, speciesGenusEntry ]
         },
         {   id: 4,
             name: 'Level 4',
             description: 'Enter full latin name',
-            layouts: [ layout1, layout7 ]
+            layouts: [ speciesRevision, speciesGenusEntry ]
         },
         {   id: 5,
             name: 'Level 5',
             description: 'Name puzzle',
-            layouts: [ layout1, layout8 ]
+            layouts: [ speciesRevision, commandLayout ]
         }        
     ]
 };
@@ -195,7 +149,7 @@ const landscapeLesson2 = {
         {   id: 1,
             name: 'Level 1',
             description: 'Name the leaf structure',
-            layouts: [ layout9 ]
+            layouts: [ leafEntry ]
         }
     ]
 };
@@ -208,27 +162,27 @@ const portraitLesson1 = {
         {   id: 1,
             name: 'Level 1',
             description: 'Match species',
-            layouts: [ portrait1, portrait2, portrait3, portrait4 ]
+            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch ]
         },
         {   id: 2,
             name: 'Level 2',
             description: 'Recall common name',
-            layouts: [ portrait8 ]
+            layouts: [ commonEntry ]
         },
         {   id: 3,
             name: 'Level 3',
             description: 'Complete latin name',
-            layouts: [ portrait5, portrait6 ]
+            layouts: [ genusEntry, genusEntry, speciesEntry ]
         },
         {   id: 4,
             name: 'Level 4',
             description: 'Enter full latin name',
-            layouts: [ portrait7 ]
+            layouts: [ speciesGenusEntry ]
         },
         {   id: 5,
             name: 'Level 5',
             description: 'Name puzzle',
-            layouts: [ layout8 ]
+            layouts: [ commandLayout ]
         }
     ]
 };
@@ -241,7 +195,7 @@ const portraitLesson2 = {
         {   id: 1,
             name: 'Level 1',
             description: 'Name the leaf structure',
-            layouts: [ layout9 ]
+            layouts: [ leafEntry ]
         }
     ]
 };

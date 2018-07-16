@@ -8,6 +8,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 import { utils } from 'utils/utils';
 import { epithets } from 'api/botanical-latin';
+import { taxa } from 'api/snapdragon/taxa';
 import radiobuttonsTemplate from 'ui/screens/multichoice/radiobuttons-template.html';
 
 export const renderRadioButtons = (collection) => {
@@ -20,24 +21,54 @@ export const renderRadioButtons = (collection) => {
 
     template.innerHTML = radiobuttonsTemplate;
 
-    if(!layout.epithet) return;
+    let randomAnswers, description, question, answers;
 
     const species = item.name;
     const epithet = itemProperties.speciesName(species);
-    const randomAnswers = R.take(5, R.take(6, utils.shuffleArray(epithets)).filter(e => !R.contains(e.en, layout.epithet.en))).map(e => e.en);
-    const description = `In the species ${species}, what is the meaning of the epithet ${epithet}?`;
-    const question = { question: layout.epithet.en[0], binomial: item.name };
-    const answers = utils.shuffleArray([layout.epithet.en, ...randomAnswers]);
+    const family = item.family;
 
-    const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
+    const render = () => {
+        const parent = DOM.rightBody;
+        parent.innerHTML = '';
 
-    parent.innerHTML = '';
+        renderTemplate({ description, answers }, template.content, parent);
 
-    renderTemplate({ description, answers }, template.content, parent);
+        document.querySelector('button').addEventListener('click', event => {
+            const answer = document.querySelector('input[name="answer"]:checked').value;
+            scoringHandler(question, answer, event, config.isPortraitMode, layouts.length, config.callbackTime, renderAnswerHeader);
+        });
+    };
 
-    document.querySelector('button').addEventListener('click', event => {
-        const answer = document.querySelector('input[name="answer"]:checked').value;
-        scoringHandler(question, answer, event, config.isPortraitMode, layouts.length, config.callbackTime, renderAnswerHeader);
-    });
+    if(layout.screens.find(screen => screen.name === 'family-description')) {
+        const families = taxa.filter(taxon => taxon.taxon === 'family');
+        randomAnswers = R.take(2, R.take(3, utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.description[0].summary);
+        const familyDescription = families.find(f => f.name === family).description[0].summary;
+        description = `${species} belongs to the ${family}. Which of the following best describes the ${family} family:`;
+        question = { question: familyDescription, binomial: item.name };
+        answers = utils.shuffleArray([familyDescription, ...randomAnswers]);
 
+        render();
+    }
+    
+    if(layout.screens.find(screen => screen.name === 'family')) {
+
+        randomAnswers = R.take(5, R.take(6, utils.shuffleArray(collection.items)).filter(i => i.family !== family)).map(i => i.family);
+        description = `Which of the following families does the species ${species} belong to:`;
+        question = { question: family, binomial: item.name };
+        answers = utils.shuffleArray([family, ...randomAnswers]);
+        
+        render();
+    }
+
+    if(layout.screens.find(screen => screen.name === 'epithet')) {
+        
+        if(!layout.epithet) return;
+        
+        randomAnswers = R.take(5, R.take(6, utils.shuffleArray(epithets)).filter(e => !R.contains(e.en, layout.epithet.en))).map(e => e.en);
+        description = `In the species ${species}, what is the meaning of the epithet ${epithet}?`;
+        question = { question: layout.epithet.en[0], binomial: item.name };
+        answers = utils.shuffleArray([layout.epithet.en, ...randomAnswers]);
+
+        render();
+    }
 };

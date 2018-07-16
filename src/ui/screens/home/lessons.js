@@ -11,7 +11,7 @@ export const renderLessons = () => {
 
     template.innerHTML = lessonsTemplate;
 
-    const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
+    const parent = DOM.rightBody;
 
     parent.innerHTML = '';
 

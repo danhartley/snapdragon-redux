@@ -24,7 +24,7 @@ export const renderSpeciesTiles = (collection) => {
     
     template.innerHTML = html;
     
-    let parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;
+    let parent = DOM.rightBody;
     parent.innerHTML = '';
 
     let images = R.take(3, item.multipleImages.filter(image => image.name !== item.name));

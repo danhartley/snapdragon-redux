@@ -144,7 +144,7 @@ export const epithets = [
         "en" : ["home"]
     },
     {
-        "latin" : ["domestic-"],
+        "latin" : ["domestic-", "domestica"],
         "en" : ["which lives in the house"]
     },
     {

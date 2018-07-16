@@ -62,7 +62,7 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
             screens: [{ 
                 name: 'summary', 
                 domain: 'history', 
-                parent: DOM.leftBody,
+                parent: DOM.rightBody,
                 render: renderSummary,
                 template: 'js-summary-template'
             }],
