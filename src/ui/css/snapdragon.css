@@ -564,7 +564,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   background-color: var(--snap-border-light);
   border-left: 1px solid var(--snap-border-dark);
   border-right: 1px solid var(--snap-border-dark);
-  border-bottom: 1px solid var(--snap-border-dark);
+  /* border-bottom: 1px solid var(--snap-border-dark); */
 }
 
 .species-card-images {

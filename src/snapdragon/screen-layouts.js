@@ -84,7 +84,7 @@ const leafName = {
 };
 
 const epithets = {
-  name: 'epithets',
+  name: 'epithet',
   headers: { long: 'Latin epithet recall', short: 'Select the epithet name'},
   domain: 'collection',
   question: 'Select the epithet',

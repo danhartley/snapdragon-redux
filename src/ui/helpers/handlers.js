@@ -3,8 +3,22 @@ import { actions } from 'redux/actions/action-creators';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
 export const scoringHandler = (question, answer, event, isPortraitMode, questionCount, callbackTime, renderHeader) => {
+    
     const btn = event.target;
     const response = { ...question, answer };
+
+    let correctAnswer;
+    let wrongAnswer;
+
+    if(question.enumerated) {
+        correctAnswer = response.question.slice(0,3);
+        wrongAnswer = response.answer.slice(0,3);
+        response.answer = response.answer.slice(3);
+        response.question = response.question.slice(3);
+    } else {
+        correctAnswer = response.question;
+        wrongAnswer = response.answer;
+    }
     
     const { colour, correct } = renderHeader(response);
 
@@ -18,18 +32,18 @@ export const scoringHandler = (question, answer, event, isPortraitMode, question
             : `<div>
                 <span class="icon"><i class="fas fa-times-circle"></i></span><span>Incorrect</span>
                </div>
-               <div>Answer: ${ response.question }</div>`;
+               <div>Answer: ${ correctAnswer }</div>`;
     } else {
         questionText.innerHTML = correct 
             ? `<div>
                 <span class="icon"><i class="fas fa-check-circle"></i></span>
-                <span>${ response.question } is the correct answer.</span>
+                <span>${ correctAnswer } is the correct answer.</span>
                </div>`
             : `<div>
                 <span class="icon"><i class="fas fa-times-circle"></i></span>
-                <span>${ response.answer || '--' } is incorrect.</span>
+                <span>${ wrongAnswer || '--' } is incorrect.</span>
                </div> 
-               <div>The correct answer is ${ response.question }.</div>`;
+               <div>The correct answer is ${ correctAnswer }.</div>`;
     }
 
     btn.style.background = colour;

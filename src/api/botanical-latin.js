@@ -112,6 +112,10 @@ export const epithets = [
         "en" : ["eyelash"]
     },
     {
+        "latin" : ["coccineus"],
+        "en" : ["scarlet"]
+    },
+    {
         "latin" : ["cordifolius"],
         "en" : ["heart-shaped"]
     },

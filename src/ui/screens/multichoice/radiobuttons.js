@@ -26,6 +26,7 @@ export const renderRadioButtons = (collection) => {
     const species = item.name;
     const epithet = itemProperties.speciesName(species);
     const family = item.family;
+    const families = taxa.filter(taxon => taxon.taxon === 'family');
 
     const render = () => {
         const parent = DOM.rightBody;
@@ -40,19 +41,27 @@ export const renderRadioButtons = (collection) => {
     };
 
     if(layout.screens.find(screen => screen.name === 'family-description')) {
-        const families = taxa.filter(taxon => taxon.taxon === 'family');
+        
         randomAnswers = R.take(2, R.take(3, utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.description[0].summary);
         const familyDescription = families.find(f => f.name === family).description[0].summary;
         description = `${species} belongs to the ${family}. Which of the following best describes the ${family} family:`;
-        question = { question: familyDescription, binomial: item.name };
+        question = { question: familyDescription, binomial: item.name, enumerated: true };
         answers = utils.shuffleArray([familyDescription, ...randomAnswers]);
+
+        answers = answers.map((answer, index) => {
+                if(question.question === answer) {
+                    question.question = `${index+1}) ${question.question}`
+                }                
+                return `${index+1}) ${answer}`
+            }
+        );
 
         render();
     }
     
     if(layout.screens.find(screen => screen.name === 'family')) {
 
-        randomAnswers = R.take(5, R.take(6, utils.shuffleArray(collection.items)).filter(i => i.family !== family)).map(i => i.family);
+        randomAnswers = R.take(5, R.take(6, utils.shuffleArray(families)).filter(i => i.name !== family)).map(i => i.name);
         description = `Which of the following families does the species ${species} belong to:`;
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...randomAnswers]);

@@ -25,7 +25,7 @@ const functions = [
     { name: 'command', func: [renderSpecimenTiles, runTask] },
     { name: 'leaf-image', func: renderLeafTile },
     { name: 'leaf-text', func: renderNameEntry },
-    { name: 'epithets', func: renderRadioButtons },
+    { name: 'epithet', func: renderRadioButtons },
     { name: 'family', func: renderRadioButtons },
     { name: 'family-description', func: renderRadioButtons },
 ];

@@ -11,7 +11,7 @@ export const taxa = [
         description: [
             {   
                 language: 'en',
-                summary: 'Many members have composite flowers in the form of flower heads (capitula or pseudanthia) surrounded by involucral bracts. When viewed from a distance, each capitulum may have the appearance of being a single flower.',
+                summary: 'Many members have composite flowers in the form of flower heads (capitula or pseudanthia) which can appear to be a single flower.',
 
             }
         ]
@@ -29,6 +29,7 @@ export const taxa = [
         species: 3700,
         description: [
             { 
+                summary: 'A family of mostly aromatic flowering plants that includes economically important species such as carrot, parsley and coriander.',
                 language: 'en',
                 leaf: ['variable size', 'alternate', 'petiolate', 'sessile'],
                 blade: [ 'dissected', 'ternate', 'pinnate', 'simple and entire'],
@@ -74,7 +75,7 @@ export const taxa = [
         description: [
             {
                 language: 'en',
-                summary: 'Most are herbaceous plants, some shrubs, with simple, although sometimes deeply incised, alternatingly set leaves without stipules or in leaf rosettes, with terminal inflorescences without bracts, containing flowers with four free sepals, four free alternating petals, two short and four longer free stamens, and a fruit with seeds in rows.'
+                summary: 'A a medium-sized and economically important family of flowering plants commonly known as the mustards, crucifers, or cabbage family.'
             }
         ]
     },
@@ -88,7 +89,7 @@ export const taxa = [
         description: [
             {
                 language: 'en',
-                summary: 'Herbaceous or succulent'
+                summary: 'The subfamily Allioideae contains a number of important food crops, including onion, garlic, leek, and chives.'
             }
         ]
     },
@@ -102,7 +103,7 @@ export const taxa = [
         description: [
             {
                 language: 'en',
-                summary: 'Lepidopteran are characterized by the presence of scales that cover the bodies, wings, and a proboscis; some form of membranous wings; and holometabolous, meaning they undergo complete metamorphosis.'
+                summary: 'With the exception of a few moths, adult lepidopterans have two pairs of wings. The family name is derived from the Greek, meaning “scaly winged”.'
             }
         ],
         role: [ 'pollinators', 'food', 'pest', 'producers' ],
@@ -123,7 +124,12 @@ export const taxa = [
         species: 5700,
         members: ["Apis mellifera"],
         role: ["pollinator"],
-        summary: "Although the most visible members of Apidae are social, the vast majority of apid bees are solitary.",
+        description: [
+            {
+                language: 'en',
+                summary: "Although the most visible members of this family are social, the vast majority of apid bees are solitary."
+            }
+        ],        
         "inat-link": "https://www.inaturalist.org/taxa/47221-Apidae"
     },
     {
@@ -163,7 +169,7 @@ export const taxa = [
         description: [
             {
                 language: 'en',
-                summary: 'Grasses have stems that are hollow except at the nodes and narrow alternate leaves borne in two ranks. The lower part of each leaf encloses the stem, forming a leaf-sheath.'
+                summary: 'Members have stems that are hollow except at the nodes and narrow alternate leaves borne in two ranks. The lower part of each leaf encloses the stem, forming a leaf-sheath.'
             }
         ]
     },
@@ -177,7 +183,7 @@ export const taxa = [
         description: [
             {
                 language: 'en',
-                summary: 'Members of the family are small to large herbaceous plants with distichous leaves with basal sheaths that overlap to form a pseudostem. The plants are either self-supporting or epiphytic.'
+                summary: 'Aromatic herbaceous plants that are self-supporting or epiphytic. Species include important spices and plants with medicinal properties.'
             }
         ]
     },
@@ -191,7 +197,7 @@ export const taxa = [
         description: [
             {
                 language: 'en',
-                summary: 'Members of pepper family are small trees, shrubs, or perennial or annual herbs.'
+                summary: 'Members grow as small trees, shrubs, perennial and annual herbs. The leaves have a pungent flavour.'
             }
         ]
     },
@@ -205,7 +211,7 @@ export const taxa = [
         description: [
             {
                 language: 'en',
-                summary: 'Members includes trees, shrubs, and perennial or annual herbaceous plants, which are easily recognized by their fruit (legume) and their compound, stipulated leaves.'
+                summary: 'Members are easily recognized by their fruit (legume) and the distincitve formation of petals as "banner, wings, and keel.',
             }
         ],
         "eol-entry": "http://eol.org/pages/4277/overview",
@@ -221,7 +227,7 @@ export const taxa = [
         description: [
             {
                 language: 'en',
-                summary: 'Members include herbs, shrubs, and trees, including many edible fruits.'
+                summary: 'Members include edible fruits (apples, pears, apricots, peaches) and ornamental plants (roses).'
             }
         ],
         "eol-entry": "http://eol.org/pages/8097/overview",
@@ -237,7 +243,7 @@ export const taxa = [
         description: [
             {
                 language: 'en',
-                summary: 'Members have flowers that divide into four or five parts, usually with strong scents. They range in form and size from herbs to shrubs and large trees.'
+                summary: 'Flowers divides into 4 or 5 parts, usually with strong scents. Commonly known as the Rue or Citrus family.'
             }
         ],
         "eol-entry": "http://eol.org/pages/582200/overview",
@@ -253,7 +259,7 @@ export const taxa = [
         description: [
             {
                 language: 'en',
-                summary: 'Members grow in the tropics and in temperate areas; those with edible fruits were among the earliest cultivated plants in both the Old and New Worlds. The family ranks high for the number of species used as human food.'
+                summary: 'Members grow in the tropics and temperate areas; those with edible fruits were among the earliest cultivated plants in both the Old and New Worlds.'
             }
         ],
         "eol-entry": "http://eol.org/pages/4458/overview",
@@ -269,7 +275,7 @@ export const taxa = [
         description: [
             {
                 language: 'en',
-                summary: 'Members are widespread and cosmopolitan family from the tropics to cool temperate regions. Many of the species are halophytes, tolerating salty soils, or grow in dry steppes or semi-deserts.'
+                summary: 'Many of the species are halophytes, tolerating salty soils, or grow in dry steppes or semi-deserts.'
             }
         ],
         "eol-entry": "http://eol.org/pages/4226/overview",
@@ -285,7 +291,7 @@ export const taxa = [
         description: [
             {
                 language: 'en',
-                summary: 'Members range from annual and perennial herbs to vines, lianas, epiphytes, shrubs, and trees, and includes a number of important agricultural crops, medicinal plants, spices, weeds, and ornamentals.'
+                summary: 'Members range from annual and perennial herbs to vines, lianas, epiphytes, shrubs, and trees, and includes a number of important agricultural crops, medicinal plants, and spices.'
             }
         ],
         "eol-entry": "http://eol.org/pages/4437/overview",
@@ -333,7 +339,7 @@ export const taxa = [
         description: [
             {
                 language: 'en',
-                summary: 'The family has a worldwide distribution in tropical and warm climates. The Lauraceae are important components of tropical forests ranging from low-lying to montane. In several forested regions, Lauraceae are among the top five families in terms of the number of species present.'
+                summary: 'The family has a worldwide distribution in tropical and warm climates from low-lying to montane. Frequently aromatic trees and shrubs.'
             }
         ],
         "eol-entry": "http://eol.org/pages/4308/overview",
