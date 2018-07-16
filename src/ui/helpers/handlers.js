@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
-export const sendQandAHandler = (question, answer, event, isPortraitMode, questionCount, callbackTime, renderHeader) => {
+export const scoringHandler = (question, answer, event, isPortraitMode, questionCount, callbackTime, renderHeader) => {
     const btn = event.target;
     const response = { ...question, answer };
     

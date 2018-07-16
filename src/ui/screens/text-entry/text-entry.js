@@ -1,7 +1,7 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
-import { sendQandAHandler, modalBackgroundImagesHandler } from 'ui/helpers/handlers';
+import { scoringHandler, modalBackgroundImagesHandler } from 'ui/helpers/handlers';
 import landscapeTemplates from 'ui/screens/text-entry/text-entry-templates.html';
 import portraitTemplates from 'ui/screens/text-entry/text-entry-portrait-templates.html';
 
@@ -22,7 +22,7 @@ export const renderInput = (config, screen, question, callbackTime, item, render
     const clone = document.importNode(template.content, true);
     
     clone.querySelector('button').addEventListener('click', event => {
-        sendQandAHandler(question, document.querySelector('.js-txt-input').value, event, config.isPortraitMode, layouts.length, callbackTime, renderHeader);
+        scoringHandler(question, document.querySelector('.js-txt-input').value, event, config.isPortraitMode, layouts.length, callbackTime, renderHeader);
     });
 
     const parent = config.isPortraitMode ? DOM.leftBody : DOM.rightBody;

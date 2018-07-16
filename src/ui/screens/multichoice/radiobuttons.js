@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
-import { sendQandAHandler } from 'ui/helpers/handlers';
+import { scoringHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 import { utils } from 'utils/utils';
@@ -37,7 +37,7 @@ export const renderRadioButtons = (collection) => {
 
     document.querySelector('button').addEventListener('click', event => {
         const answer = document.querySelector('input[name="answer"]:checked').value;
-        sendQandAHandler(question, answer, event, config.isPortraitMode, layouts.length, config.callbackTime, renderAnswerHeader);
+        scoringHandler(question, answer, event, config.isPortraitMode, layouts.length, config.callbackTime, renderAnswerHeader);
     });
 
 };
