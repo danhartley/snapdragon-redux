@@ -1,4 +1,3 @@
-import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { renderSettings } from 'ui/fixtures/settings';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -7,13 +6,11 @@ import navigationTemplate from 'ui/fixtures/navigation-template.html';
 
 export const renderNavigation = () => {
 
-    const { config } = store.getState();
-
     const template = document.createElement('template');
 
     template.innerHTML = navigationTemplate;
 
-    const parent =  config.isPortraitMode ? document.querySelector('.js-right-footer .js-nav-icons') : document.querySelector('.js-left-footer .js-nav-icons');
+    const parent =  document.querySelector('.js-right-footer .js-nav-icons');
 
     renderTemplate({ }, template.content, parent);
 

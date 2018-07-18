@@ -634,8 +634,16 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 	display: block;
 }
 
+.radio-buttons-container {
+  height: 60vh;
+}
+
+.radio-buttons-group {
+  margin: 1em 0 0 0;
+}
+
 .radio-buttons {
-  display: flex;
+  display: flex;  
 }
 
 .radio-buttons input {
