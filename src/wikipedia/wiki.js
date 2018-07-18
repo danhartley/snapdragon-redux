@@ -67,9 +67,10 @@ const formatWiki = (entry) => {
 
 async function renderWiki(wikiNode, item, language) {
     const binomial = item.name;
-    const searchTerm = item.searchTerms 
+    const wikiSearch = item.wikiSeachTerms ? item.wikiSeachTerms.find(term => term.language === language) : null;
+    const searchTerm = wikiSearch ? wikiSearch.term : (item.searchTerms 
                             ? item.searchTerms.filter(term => term.language === language)[0].searchTerm 
-                            : binomial;
+                            : binomial);
     root = `https://${language}.m.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&limit=1&search=`;
     wikiNode.innerHTML = "";
 
