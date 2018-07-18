@@ -1,7 +1,7 @@
 <div class="snapdragon-container">
-    <div class="card align-left">
+    <div class="card align-left radio-buttons-container">
             <div class="js-multi-question">{{ description }}</div>
-            <div data-repeat-answer="{{ answers }}">                
+            <div class="radio-buttons-group scrollable" data-repeat-answer="{{ answers }}">                
                 <div class="radio-buttons">
                     <input type="radio" id="{{ answer }}" value="{{ answer }}" name="answer" />                    
                     <label for="{{ answer }}">{{ answer }}</label>
