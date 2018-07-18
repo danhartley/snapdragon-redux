@@ -49,8 +49,6 @@ export const renderRadioButtons = (collection) => {
 
     if(layout.screens.find(screen => screen.type === 'description-to-family')) {
         
-        console.log('family: ', 'description-to-family');
-
         randomAnswers = R.take(2, R.take(3, utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.description[0].summary);
         const familyDescription = families.find(f => f.name === family).description[0].summary;
         description = `${species} belongs to the ${family}. Which of the following best describes the ${family} family?`;
@@ -70,8 +68,6 @@ export const renderRadioButtons = (collection) => {
 
     if(layout.screens.find(screen => screen.type === 'family-to-description')) {
 
-        console.log('family: ', 'family-to-description');
-        
         randomAnswers = R.take(5, R.take(6, utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.name);
         const familyDescription = families.find(f => f.name === family).description[0].summary;
         description = `${species} belongs to a family whose description is '${familyDescription}' What is the name of that family?`;
@@ -90,8 +86,6 @@ export const renderRadioButtons = (collection) => {
     }
     
     if(layout.screens.find(screen => screen.type === 'species-to-family')) {
-
-        console.log('family: ', 'species-to-family');
 
         randomAnswers = R.take(5, R.take(6, utils.shuffleArray(families)).filter(i => i.name !== family)).map(i => i.name);
         description = `Which of the following families does the species ${species} belong to?`;

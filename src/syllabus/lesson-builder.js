@@ -42,14 +42,14 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
     shuffledLessonLayouts.forEach( (layout, i) => {
         layout.layoutIndex = layoutIndex;
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
-        layout.exerciseIndex = i;
+        layout.exerciseIndex = i + 1;
         layoutIndex = layoutIndex + 1;
     });
 
     revisionLayouts.forEach( (layout, i) => {
         layout.layoutIndex = layoutIndex;
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
-        layout.exerciseIndex = i;
+        // layout.exerciseIndex = i;
         layoutIndex = layoutIndex + 1;        
     });
 

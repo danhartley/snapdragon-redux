@@ -15,7 +15,7 @@ export const getSpeciesEpithets = items => {
     epithets = epithets.filter(epithet => epithet.latin);
     epithets = R.uniqBy(e=>e.latin, epithets);
 
-    epithets = new Set(utils.shuffleArray(epithets));
+    // epithets = new Set(utils.shuffleArray(epithets));
 
     return { name: 'epithets', items: epithets};
 };

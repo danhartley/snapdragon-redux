@@ -1,3 +1,5 @@
+import { is } from "immutable";
+
 export const renderCapital = str => {
     if(!str) return str;
     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
@@ -18,8 +20,10 @@ export const renderQuestion = response => {
 
 export const renderCorrect = response => {
     const question = renderQuestion(response);
-    return question.toUpperCase().indexOf(response.answer.toUpperCase()) !== -1;
-    // return response.answer.toUpperCase() === question.toUpperCase();
+    const isCorrect = 
+        question.toUpperCase().indexOf(response.answer.toUpperCase()) !== -1 ||
+        response.answer.toUpperCase().indexOf(question.toUpperCase()) !== -1;
+    return isCorrect;
 };
 
 export const renderAnswer = (response) => {
@@ -56,7 +60,7 @@ export const renderAnswerText = (response, isPortraitMode) => {
 
     if(isPortraitMode) {
         return correct
-        ? `${renderAnswer(response)}    `
+        ? `${renderAnswer(response)}`
         : `${renderAnswer(response)}`
     } else {
         return correct

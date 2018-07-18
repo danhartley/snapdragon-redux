@@ -19,6 +19,8 @@ const createLessonPlan = (config, collection) => {
     );        
 };
 
+// move wildcards to init because only need to create once, not every round
+
 const createWildcardLayouts = (wildcards, collection, moduleSize) => {
     const epithets = collection.wildcards.find(wildcard => wildcard.name === 'epithets');    
     const layouts = [];
