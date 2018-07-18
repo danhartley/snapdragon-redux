@@ -2,11 +2,12 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { config } from 'syllabus/lesson-config';
-// import { collections } from 'snapdragon/species-collections';
 import { kitchenGarden } from 'snapdragon/species-lessons';
 
 import { helpers } from 'redux/reducers/helpers-for-reducers';
-import { itemProperties } from 'ui/helpers/data-checking';
+
+import { getSpeciesEpithets } from 'redux/reducers/initial-state/species-state/species-epithets';
+import { getFamilies } from 'redux/reducers/initial-state/species-state/taxa';
 
 const collections = [ kitchenGarden ];
 
@@ -17,14 +18,10 @@ const initCollection = (rawCollection = collections[0]) => {
     const items = utils.sortBy(prepCollection(rawCollection.items), 'snapId');
     const rounds = items.length / config.moduleSize;
 
-    const wildcards = [];
-    const epithets = rawCollection.items.map( (item, index) => {
-        const species = itemProperties.speciesName(item.name);
-        const latin = itemProperties.latin(species);
-        const binomial = item.name;        
-        return { ...latin, binomial, index };
-    });
-    wildcards.push({ name: 'epithets', items: epithets.filter(epithet => epithet.latin)});
+    const wildcards = [];    
+    wildcards.push(getSpeciesEpithets(rawCollection.items));
+    
+    const families = getFamilies(rawCollection.items);
 
     let itemGroups = [];
     let group = [];
@@ -52,21 +49,8 @@ const initCollection = (rawCollection = collections[0]) => {
 
 const collection = initCollection();
 
-const score = {
-    total: 0,
-    correct: 0,
-    binomial: '',
-    wrong: 0,
-    answer: '',
-    question: '',
-    fails: [],
-    passes: [],
-    success: false
-};
-
-export const initialState = {
+export const speciesState = {
     collections,
-    collection,
-    score,
+    collection,    
     initCollection
 }

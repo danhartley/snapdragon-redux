@@ -1,6 +1,6 @@
 import { types } from 'redux/actions/action-types';
 import { collection } from 'redux/reducers/species-reducers';
-import { initialState } from 'redux/reducers/initial-state-for-reducers';
+import { speciesState } from 'redux/reducers/initial-state/initial-species-state';
 
 
 const herbs = {
@@ -40,10 +40,10 @@ const herbs = {
 test('collection should return default parameter state when there is no action type', () => {
 
   const action = { };  
-  const state = collection(initialState.collection, action);
+  const state = collection(speciesState.collection, action);
 
-  expect(state).toEqual(initialState.collection);
-  expect(state.items.length).toEqual(initialState.collection.items.length);
+  expect(state).toEqual(speciesState.collection);
+  expect(state.items.length).toEqual(speciesState.collection.items.length);
 });
 
 

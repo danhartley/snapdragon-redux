@@ -81,13 +81,9 @@ const renderLandscape = (item, config) => {
         }
     });    
 
-    const wiki = document.querySelector('.js-species-card-wiki');
+    const wikiNode = document.querySelector('.js-species-card-wiki');
 
-    renderWiki(wiki, item, config.language);
-
-    // const gbif = document.querySelector('.js-card .js-txt-family span');
-
-    // renderFamily(gbif, item.name);
+    renderWiki(wikiNode, item, config.language);
 
     document.querySelector('.js-txt-family img').classList.add('show');
 };

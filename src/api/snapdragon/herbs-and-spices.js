@@ -590,6 +590,12 @@ export const herbsAndSpices = [
         "https://media.eol.org/content/2013/03/03/17/73446_orig.jpg",
         "https://media.eol.org/content/2013/11/14/15/79559_orig.jpg"
       ],
+      "wikiSeachTerms": [
+        {
+          "term": "Black pepper",
+          "language": "en"
+        }
+      ],
       "names": [
         {
           "vernacularName": "black pepper",
@@ -1348,6 +1354,12 @@ export const herbsAndSpices = [
         "https://media.eol.org/content/2013/11/25/01/17230_orig.jpg",
         "https://media.eol.org/content/2013/11/25/20/55466_orig.jpg"
       ],
+      "wikiSeachTerms": [
+        {
+          "term": "Dill",
+          "language": "en"
+        }
+      ],
       "names": [
         {
           "vernacularName": "dill",
@@ -1699,6 +1711,12 @@ export const herbsAndSpices = [
         "https://media.eol.org/content/2014/07/29/11/05080_orig.jpg",
         "https://media.eol.org/content/2009/09/15/17/53251_orig.jpg",
         "https://media.eol.org/content/2012/06/13/06/59024_orig.jpg"
+      ],
+      "wikiSeachTerms": [
+        {
+          "term": "Tarragon",
+          "language": "en"
+        }
       ],
       "names": [
         {

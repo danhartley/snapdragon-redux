@@ -3,7 +3,7 @@ import { store } from 'redux/store';
 
 import { types } from 'redux/actions/action-types';
 import { actions } from 'redux/actions/action-creators';
-import { initialState } from 'redux/reducers/initial-state-for-reducers';
+import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
 import { config as lessonConfig } from 'syllabus/lesson-config';
 
 test('observeStore should return unsubscribe function for every listener', () => {
@@ -51,7 +51,7 @@ test('when user selects a collection state should be populated', () => {
 
     expect(config.collection.id).toEqual('1');
     expect(collection.name).toEqual('Kitchen Garden');
-    expect(score).toEqual(initialState.score);
+    expect(score).toEqual(progressState.score);
 
     const layoutData = [
         {

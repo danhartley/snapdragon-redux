@@ -125,6 +125,14 @@
         display: none;
     } */
 
+    .radio-buttons input {
+        width: 3%;
+    }
+
+    .radio-buttons label {
+    width: 97%;
+    }
+
     .letterbox-entry {
         height: 100%;
         border: .1em solid var(--snap-border-dark);
@@ -159,6 +167,10 @@
         border: 0;
         height: 100%;
     }    
+
+    .modal-image, .modal-image img {
+        height: 80vh;
+      }      
 
     #externalPageModal .modal-dialog {
         max-width: 600px;
