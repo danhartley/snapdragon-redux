@@ -37,8 +37,7 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
 
     let testPlans = [ ...lessonPlan, ...wildcardLayoutsForGroup ];
     const revisionPlans = testPlans.splice(0,moduleSize);
-    testPlans = utils.shuffleArray(testPlans);
-    const shuffledLessonPlan = [ ...revisionPlans, ...testPlans ];
+    const shuffledLessonPlan = utils.shuffleArray(testPlans);
     const offSet = (collection.currentRound - 1) * moduleSize;
 
     shuffledLessonPlan.forEach( (plan, i) => {
@@ -47,6 +46,19 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         plan.exerciseIndex = i;
         layoutIndex = layoutIndex + 1;        
     });
+
+    revisionPlans.forEach( (plan, i) => {
+        plan.layoutIndex = layoutIndex;
+        plan.itemIndex = plan.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
+        plan.exerciseIndex = i;
+        layoutIndex = layoutIndex + 1;        
+    });
+
+    revisionPlans.forEach(layout => {
+        const arrayIndex = shuffledLessonPlan.findIndex(plan => plan.itemIndex === layout.itemIndex);
+        shuffledLessonPlan.splice(arrayIndex, 0, layout);
+    });
+
 
     // update the original lesson plan with the shuffled version
 

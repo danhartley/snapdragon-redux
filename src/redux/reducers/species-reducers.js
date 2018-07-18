@@ -1,8 +1,8 @@
 
 import { types } from 'redux/actions/action-types';
-import { initialState } from 'redux/reducers/initial-state-for-reducers';
+import { speciesState } from 'redux/reducers/initial-state/initial-species-state';
 
-export const collections = (state = initialState.collections, action) => {
+export const collections = (state = speciesState.collections, action) => {
     switch(action.type) {
         case types.SELECT_COLLECTION:
             const cols = [ ...state ];
@@ -28,8 +28,8 @@ export const collection = (state = null, action) => {
     switch(action.type) {
         case types.CHANGE_COLLECTION:
             const config = action.data;
-            const collection = initialState.collections.filter(collection => collection.id === config.collection.id)[0];
-            return initialState.initCollection(collection);
+            const collection = speciesState.collections.filter(collection => collection.id === config.collection.id)[0];
+            return speciesState.initCollection(collection);
         case types.NEXT_ITEM:
             itemIndex = action.data;
             return { ...state, itemIndex };

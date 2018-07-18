@@ -1,5 +1,5 @@
 import { types } from 'redux/actions/action-types';
-import { initialState } from 'redux/reducers/initial-state-for-reducers';
+import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
 
 export const counter = (state = null, action) => {
     switch(action.type) {
@@ -44,7 +44,7 @@ export const score = (state = null, action) => {
         case types.CHANGE_COLLECTION:
         case types.NEXT_ROUND:
         case types.NEXT_LEVEL:
-            return { ...initialState.score, ...{ fails: [], passes: []} };
+            return { ...progressState.score, ...{ fails: [], passes: []} };
         default:
             return state;
     }       
