@@ -5,7 +5,6 @@
             Pick a collection
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <h6 class="dropdown-header">EOL collections</h6>
                 <div data-repeat-collection="{{ species }}">
                     <a class="dropdown-item" id="{{ collection.id }}" name="{{ collection.name }}" href="#">{{ collection.name }} ({{ collection.items.length }})</a>
                 </div>

@@ -641,7 +641,16 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .radio-buttons input {
   margin: 0.25em 1em 0 0;
   cursor: pointer;
+  width: 5%;
 }
+
+.radio-buttons label {
+  width: 95%;
+}
+
+/* input[type="radio"] {
+  width: 15%;
+} */
 
 .left-grid, .species-card-wiki-entry,
 .collection-preview, .collection button, .collections-skills {
