@@ -12,7 +12,8 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
 
     // create basic lesson plan from given layout and number of items (moduleSize)
     // replicate each layout x times where x is the configured module size e.g. if 3 then 
-    // iterate through 3 items from the collection on each round
+    // iterate through 3 items from the collection on each round.
+    // Add the species card before the first test card for that species
 
     layouts.forEach( (layout, index) => {
 
@@ -22,8 +23,6 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
             i++;
         } while (i < moduleSize);
     });
-
-    // create a new lesson plan, keeping the revision modules at the start followed by the shuffled test modules
 
     const itemGroup = collection.itemGroups[collection.currentRound - 1];
     const wildcardLayoutsForGroup = [];
@@ -35,34 +34,31 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         });
     });
 
-    let testPlans = [ ...lessonPlan, ...wildcardLayoutsForGroup ];
-    const revisionPlans = testPlans.splice(0,moduleSize);
-    const shuffledLessonPlan = utils.shuffleArray(testPlans);
+    let testLayouts = [ ...lessonPlan, ...wildcardLayoutsForGroup ];
+    const revisionLayouts = testLayouts.splice(0,moduleSize);
+    const shuffledLessonLayouts = utils.shuffleArray(testLayouts);
     const offSet = (collection.currentRound - 1) * moduleSize;
 
-    shuffledLessonPlan.forEach( (plan, i) => {
-        plan.layoutIndex = layoutIndex;
-        plan.itemIndex = plan.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
-        plan.exerciseIndex = i;
+    shuffledLessonLayouts.forEach( (layout, i) => {
+        layout.layoutIndex = layoutIndex;
+        layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
+        layout.exerciseIndex = i;
+        layoutIndex = layoutIndex + 1;
+    });
+
+    revisionLayouts.forEach( (layout, i) => {
+        layout.layoutIndex = layoutIndex;
+        layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
+        layout.exerciseIndex = i;
         layoutIndex = layoutIndex + 1;        
     });
 
-    revisionPlans.forEach( (plan, i) => {
-        plan.layoutIndex = layoutIndex;
-        plan.itemIndex = plan.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
-        plan.exerciseIndex = i;
-        layoutIndex = layoutIndex + 1;        
+    revisionLayouts.forEach(layout => {
+        const arrayIndex = shuffledLessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
+        shuffledLessonLayouts.splice(arrayIndex, 0, layout);
     });
 
-    revisionPlans.forEach(layout => {
-        const arrayIndex = shuffledLessonPlan.findIndex(plan => plan.itemIndex === layout.itemIndex);
-        shuffledLessonPlan.splice(arrayIndex, 0, layout);
-    });
-
-
-    // update the original lesson plan with the shuffled version
-
-    lessonPlan = shuffledLessonPlan;
+    lessonPlan = shuffledLessonLayouts;
 
     lessonPlan.lessonName = lessonName;
     lessonPlan.levelName = levelName;

@@ -40,11 +40,20 @@ export const renderRadioButtons = (collection) => {
         });
     };
 
-    if(layout.screens.find(screen => screen.name === 'family-description')) {
+    const familyTypes = [ 'species-to-family', 'description-to-family', 'family-to-description'];
+
+    const screen = layout.screens.find(screen => screen.name === 'family');
+    if(screen) {
+        screen.type = utils.shuffleArray(familyTypes)[0];
+    }
+
+    if(layout.screens.find(screen => screen.type === 'description-to-family')) {
         
+        console.log('family: ', 'description-to-family');
+
         randomAnswers = R.take(2, R.take(3, utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.description[0].summary);
         const familyDescription = families.find(f => f.name === family).description[0].summary;
-        description = `${species} belongs to the ${family}. Which of the following best describes the ${family} family:`;
+        description = `${species} belongs to the ${family}. Which of the following best describes the ${family} family?`;
         question = { question: familyDescription, binomial: item.name, enumerated: true };
         answers = utils.shuffleArray([familyDescription, ...randomAnswers]);
 
@@ -58,11 +67,34 @@ export const renderRadioButtons = (collection) => {
 
         render();
     }
+
+    if(layout.screens.find(screen => screen.type === 'family-to-description')) {
+
+        console.log('family: ', 'family-to-description');
+        
+        randomAnswers = R.take(5, R.take(6, utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.name);
+        const familyDescription = families.find(f => f.name === family).description[0].summary;
+        description = `${species} belongs to a family whose description is '${familyDescription}' What is the name of that family?`;
+        question = { question: family, binomial: item.name, enumerated: true };
+        answers = utils.shuffleArray([family, ...randomAnswers]);
+
+        answers = answers.map((answer, index) => {
+                if(question.question === answer) {
+                    question.question = `${index+1}) ${question.question}`
+                }                
+                return `${index+1}) ${answer}`
+            }
+        );
+
+        render();
+    }
     
-    if(layout.screens.find(screen => screen.name === 'family')) {
+    if(layout.screens.find(screen => screen.type === 'species-to-family')) {
+
+        console.log('family: ', 'species-to-family');
 
         randomAnswers = R.take(5, R.take(6, utils.shuffleArray(families)).filter(i => i.name !== family)).map(i => i.name);
-        description = `Which of the following families does the species ${species} belong to:`;
+        description = `Which of the following families does the species ${species} belong to?`;
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...randomAnswers]);
         
