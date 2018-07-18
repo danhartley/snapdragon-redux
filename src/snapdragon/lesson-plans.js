@@ -28,14 +28,14 @@ const familyMatch = {
     ]
 };
 
-const familyDescriptionMatch = {
-    name: 'test',
-    score: 1,
-    screens: [
-        { ...specimen },
-        { ...familyDescription }
-    ]
-};
+// const familyDescriptionMatch = {
+//     name: 'test',
+//     score: 1,
+//     screens: [
+//         { ...specimen },
+//         { ...familyDescription }
+//     ]
+// };
 
 const latinToCommonMatch = {
     name: 'test',
@@ -116,7 +116,7 @@ const landscapeLesson1 = {
         {   id: 1,
             name: 'Level 1',
             description: 'Level 1',
-            layouts: [ speciesRevision, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, familyDescriptionMatch ]
+            layouts: [ speciesRevision, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, familyMatch ]
         },
         {   id: 2,
             name: 'Level 2',
@@ -162,7 +162,7 @@ const portraitLesson1 = {
         {   id: 1,
             name: 'Level 1',
             description: 'Match species',
-            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, familyMatch, familyDescriptionMatch ]
+            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, familyMatch ]
         },
         {   id: 2,
             name: 'Level 2',

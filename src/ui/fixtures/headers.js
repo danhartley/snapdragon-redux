@@ -3,7 +3,7 @@ import { DOM } from 'ui/dom';
 
 export const renderHeaders = counter => {
     
-    const { config, collection, layouts } = store.getState();
+    const { collection, layouts, config } = store.getState();
 
     const item = (collection && collection.items) ? collection.items[collection.itemIndex] : null;
 
@@ -19,35 +19,21 @@ export const renderHeaders = counter => {
 
     if(layout.name === 'test') {
         const offset = layouts.filter(layout => layout.name === 'revision').length;
-        const question = `Question ${ layout.layoutIndex - offset + 1 }`;
+        const question = `Question ${ layout.exerciseIndex } of ${layouts.length - config.moduleSize - 1}`;
         setTimeout(()=>{
-            // if(config.isPortraitMode) {
-            //     if(counter.lesson === 'active') {                    
-            //         DOM.leftHeaderTxt.innerHTML = question;
-            //         document.querySelector('progress').value = layout.layoutIndex - offset;
-            //     }
-            // } else {
-                if(counter.lesson === 'active') {
-                    // const screen = layout.screens.length === 2 ?layout.screens[1] : layout.screens[0].right;
-                    DOM.rightHeaderTxt.innerHTML = question;
-                    document.querySelector('progress').value = layout.layoutIndex - offset;
-                } else {
-                    DOM.rightHeaderTxt.innerHTML = '';
-                }
-            // }
+            if(counter.lesson === 'active') {
+                DOM.rightHeaderTxt.innerHTML = question;
+                document.querySelector('progress').value = layout.layoutIndex - offset;
+            } else {
+                DOM.rightHeaderTxt.innerHTML = '';
+            }
         });
     } else if(layout.name === 'revision') {
-        // if(!config.isPortraitMode) {
-            DOM.rightHeaderTxt.innerHTML = item ? item.name : '';
-        // }
+        DOM.rightHeaderTxt.innerHTML = item ? item.name : '';
     }
 
     if(layout.screens.find(el => el.name === 'summary')) {
-        // if(config.isPortraitMode) {
-        //     DOM.leftHeaderTxt.innerHTML = collection.name;
-        // } else {
-            DOM.rightHeaderTxt.innerHTML = 'Lesson progress';
-        // }
+        DOM.rightHeaderTxt.innerHTML = 'Lesson progress';
     }
 
     if(counter.index === 0 && counter.lesson === 'inactive') {

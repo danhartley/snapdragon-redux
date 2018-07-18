@@ -97,12 +97,13 @@ const family = {
   question: 'Match species family',
 };
 
-const familyDescription = {
-  name: 'family-description',
-  headers: { long: 'Match family description', short: 'Match family description'},
-  domain: 'collection',
-  question: 'Match family description',
-};
+// const familyDescription = {
+//   name: 'family',
+//   type: 'description-to-family',
+//   headers: { long: 'Match family description', short: 'Match family description'},
+//   domain: 'collection',
+//   question: 'Match family description',
+// };
 
 export const screens = {
   specimen,
@@ -122,5 +123,5 @@ export const screens = {
 
   epithets,
   family,
-  familyDescription
+  // familyDescription
 };

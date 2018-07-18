@@ -19,9 +19,9 @@ const initCollection = (rawCollection = collections[0]) => {
     const rounds = items.length / config.moduleSize;
 
     const wildcards = [];    
-    wildcards.push(getSpeciesEpithets(rawCollection.items));
+    wildcards.push(getSpeciesEpithets(items));
     
-    const families = getFamilies(rawCollection.items);
+    const families = getFamilies(items);
 
     let itemGroups = [];
     let group = [];
@@ -41,7 +41,8 @@ const initCollection = (rawCollection = collections[0]) => {
         moduleSize: config.moduleSize,
         rounds : items.length % config.moduleSize === 0 ? rounds : rounds === 1 ? 1 : Math.floor(rounds) + 1,
         wildcards: wildcards, 
-        itemGroups: itemGroups
+        itemGroups: itemGroups,
+        families: families
      };
 
      return collection;
