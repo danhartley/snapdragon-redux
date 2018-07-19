@@ -9,7 +9,7 @@ export const renderHeaders = counter => {
 
     const title = 'Snapdragon - learn the planet';
 
-    DOM.leftHeaderTxt.innerHTML = (counter.lesson === 'active' && collection) ? collection.name : title;
+    DOM.leftHeaderTxt.innerHTML = title;
 
     if(!layouts) return;
 
@@ -29,7 +29,7 @@ export const renderHeaders = counter => {
             }
         });
     } else if(layout.name === 'revision') {
-        DOM.rightHeaderTxt.innerHTML = item ? item.name : '';
+        DOM.rightHeaderTxt.innerHTML = (counter.lesson === 'active' && collection) ? collection.name : title;
     }
 
     if(layout.screens.find(el => el.name === 'summary')) {

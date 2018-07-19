@@ -125,6 +125,10 @@
         display: none;
     } */
 
+    .radio-buttons-container {
+        height: 70vh;
+      }
+
     .radio-buttons input {
         width: 3%;
     }

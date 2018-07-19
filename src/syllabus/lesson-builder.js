@@ -2,18 +2,13 @@ import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { renderSummary } from 'ui/screens/progress/summary';
 
-export const createLesson = (lessonName, levelName, moduleSize, excludeRevision, isPortraitMode, layouts, progressScreens, wildcardLayouts, collection) => {
+export const createLesson = (lessonName, levelName, moduleSize, excludeRevision, isPortraitMode, layouts, progressScreens, collection) => {
     
     if(excludeRevision) {
         layouts = layouts.filter(layout => layout.name !== 'revision');
     }
 
     let lessonPlan = [], layoutIndex = 0;
-
-    // create basic lesson plan from given layout and number of items (moduleSize)
-    // replicate each layout x times where x is the configured module size e.g. if 3 then 
-    // iterate through 3 items from the collection on each round.
-    // Add the species card before the first test card for that species
 
     layouts.forEach( (layout, index) => {
 
@@ -24,19 +19,8 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         } while (i < moduleSize);
     });
 
-    const itemGroup = collection.itemGroups[collection.currentRound - 1];
-    const wildcardLayoutsForGroup = [];
-    itemGroup.forEach(index => {
-        wildcardLayouts.forEach(layout => {
-            if(layout.itemIndex === index) {
-                wildcardLayoutsForGroup.push(layout);
-            }
-        });
-    });
-
-    let testLayouts = [ ...lessonPlan, ...wildcardLayoutsForGroup ];
-    const revisionLayouts = testLayouts.splice(0,moduleSize);
-    const shuffledLessonLayouts = utils.shuffleArray(testLayouts);
+    const revisionLayouts = lessonPlan.splice(0,moduleSize);
+    const shuffledLessonLayouts = utils.shuffleArray(lessonPlan);
     const offSet = (collection.currentRound - 1) * moduleSize;
 
     shuffledLessonLayouts.forEach( (layout, i) => {
@@ -49,7 +33,6 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
     revisionLayouts.forEach( (layout, i) => {
         layout.layoutIndex = layoutIndex;
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
-        // layout.exerciseIndex = i;
         layoutIndex = layoutIndex + 1;        
     });
 

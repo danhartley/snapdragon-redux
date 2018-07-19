@@ -13,7 +13,7 @@ export const getSpeciesEpithets = items => {
     });
 
     epithets = epithets.filter(epithet => epithet.latin);
-    epithets = R.uniqBy(e=>e.latin, epithets);
+    epithets = R.uniqBy(epithet => epithet.latin, epithets);
 
     // epithets = new Set(utils.shuffleArray(epithets));
 

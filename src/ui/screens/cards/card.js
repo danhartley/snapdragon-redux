@@ -131,5 +131,7 @@ const renderCommonParts = (template, config, item) => {
 
     const gbif = document.querySelector('.js-card .js-txt-family span');
 
-    renderFamily(gbif, item.name);
+    gbif.innerHTML = item.family;
+
+    // renderFamily(gbif, item.name);
 };

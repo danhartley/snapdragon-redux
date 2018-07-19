@@ -1,37 +1,26 @@
 import { lessonPlans } from 'snapdragon/lesson-plans';
 import { createLesson } from 'syllabus/lesson-builder';
 import { screens } from 'snapdragon/screen-layouts';
+import { getWildcardLayouts } from 'redux/reducers/initial-state/species-state/species-wildcards';
 
 const { summary, history, specimen, epithets } = screens;
 
 const createLessonPlan = (config, collection) => {
     const { lesson: { name: lessonName, level: { name: levelName }}, moduleSize, excludeRevision, isPortraitMode } = config;
+    const layouts = [ ...getLayouts(config), ...getWildcardLayouts([ [specimen, epithets] ], collection, moduleSize) ];
     return createLesson(
         lessonName, 
         levelName, 
         moduleSize, 
         excludeRevision,
         isPortraitMode, 
-        currentLayouts(config), 
+        layouts, 
         [ summary, history ],
-        createWildcardLayouts([ [specimen, epithets] ], collection, moduleSize),
         collection
     );        
 };
 
-// move wildcards to init because only need to create once, not every round
-
-const createWildcardLayouts = (wildcards, collection, moduleSize) => {
-    const epithets = collection.wildcards.find(wildcard => wildcard.name === 'epithets');    
-    const layouts = [];
-    epithets.items.forEach(item => {
-        const screens = [ wildcards[0][0], wildcards[0][1] ];
-        layouts.push({ name: 'test', score: 1, screens, itemIndex: item.index, epithet: item});
-    });
-    return layouts;
-};
-
-const currentLayouts = (config) => {
+const getLayouts = (config) => {
     const { lesson: { name: lessonName, level: { name: levelName }}, isPortraitMode } = config;
     const _currentLesson = currentLesson(lessonName, isPortraitMode);
     const _currentLevel = currentLevel(_currentLesson, levelName);
