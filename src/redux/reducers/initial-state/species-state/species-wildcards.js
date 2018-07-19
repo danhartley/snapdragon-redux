@@ -22,7 +22,7 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
         wildcardLayouts.push({ name: 'test', score: 1, screens, itemIndex: item.index, epithet: item});
     });
     
-    const itemGroup = collection.itemGroups[collection.currentRound - 1];
+    const itemGroup = itemGroups[collection.currentRound - 1];
     const wildcardLayoutsForGroup = [];
     itemGroup.forEach(index => {
         wildcardLayouts.forEach(layout => {

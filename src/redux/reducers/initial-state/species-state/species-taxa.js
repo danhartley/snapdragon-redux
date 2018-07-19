@@ -5,5 +5,10 @@ const getTaxa = (items, taxon) => {
 
 export const getFamilies = items => {
     const families = getTaxa(items, 'family').map(item => item.family);
+    return families;
+};
+
+export const getUniqueFamilies = items => {
+    const families = getTaxa(items, 'family').map(item => item.family);
     return new Set(families);
 };

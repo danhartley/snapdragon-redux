@@ -10,6 +10,11 @@ const symbionts = [
         animal: {name: "Amphipyra tragopoginis", taxon:'species'}        
     },
     {
+        type: ['pollination'],
+        plant: {name: "Pastinaca sativa", taxon:'species' },
+        animal: {name: "Amphipyra tragopoginis", taxon:'species'}        
+    },
+    {
         type: ['pollination', 'pollen', 'shelter'],
         plant: {name: "Ficus carica", taxon:'species'},
         animal: {name: "Blastophaga psenes", taxon:'species'}        

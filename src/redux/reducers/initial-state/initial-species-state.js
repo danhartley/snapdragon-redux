@@ -4,7 +4,7 @@ import { utils } from 'utils/utils';
 import { config } from 'syllabus/lesson-config';
 import { kitchenGarden } from 'snapdragon/species-lessons';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
-import { getFamilies } from 'redux/reducers/initial-state/species-state/taxa';
+import { getFamilies } from 'redux/reducers/initial-state/species-state/species-taxa';
 
 const collections = [ kitchenGarden ];
 

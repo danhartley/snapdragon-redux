@@ -1,0 +1,27 @@
+<div class="js-species-card snapdragon-container">        
+    <div class="content">
+        <div class="card">
+                <div class="species-family">
+                    <span>{{ name }}</span><span class="badge badge-light">{{ occurrences }}</span> <span class="sr-only">species of this family in the collection</span>
+                    <img class="js-img-family" src="{{ img }}" alt="">                    
+                </div>
+                <div class="taxon-card-header">{{ aka }}</div>
+                <div class="data-box">
+                    <div></div>
+                    <div>
+                        <div class="taxon-data">Taxon: <span class="species-family">{{ rank }}</span></div>
+                        <div class="taxon-data">Species: {{ species }}</div>
+                        <div class="taxon-data">Genera: {{ genera }}</div>
+                    </div>
+                </div>
+                <div>{{ description }}</div>
+                <div>{{ identification }}</div>
+                <div><span class="snap-alert-fg js-taxon-toxic-warning"></span> {{ toxic }}</div>
+                <div><a href="{{ eol }}" target="_blank" class="underline-link">EOL page</a></div>
+                <div><a href="{{ wiki }}" class="underline-link" data-toggle="modal" data-target="#externalPageModal">Wikipedia entry</a></div>
+        </div>
+    </div>
+
+    <div class="species-card-btn action-update js-species-card-btn"><button class="btn btn-light">Next species</button></div>
+</div>
+    

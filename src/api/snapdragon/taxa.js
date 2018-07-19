@@ -11,8 +11,8 @@ export const taxa = [
         description: [
             {   
                 language: 'en',
-                summary: 'Many members have composite flowers in the form of flower heads (capitula or pseudanthia) which can appear to be a single flower.',
-
+                summary: 'Many members have composite flowers and bracts in two or more rows (Artichoke). Largest family in northern latitudes and second only to orchid family world.',
+                identification: 'Composite flowers with either disk or ray flowers, or both.'
             }
         ]
     },
@@ -27,9 +27,11 @@ export const taxa = [
                     'Anethum graveolens', 'Conium maculatum', 'Cuminum cyminum', 'Carum carvi', 'Anthriscus cerefolium',
                     'Myrrhis odorata', 'Pimpinella anisum', 'Levisticum officinale', 'Pastinaca sativa'],
         species: 3700,
+        toxic: { members:['Conium maculatum'], level: 8 },
         description: [
             { 
-                summary: 'A family of mostly aromatic flowering plants that includes economically important species such as carrot, parsley and coriander.',
+                summary: 'A family of mostly aromatic flowering plants that includes species such as carrot, celery, cumin, parsley and coriander, and the posionouse hemlocks.',
+                identification: 'Compound, termial umbels radiating from a single point. Hollow flower stalks.',
                 language: 'en',
                 leaf: ['variable size', 'alternate', 'petiolate', 'sessile'],
                 blade: [ 'dissected', 'ternate', 'pinnate', 'simple and entire'],
@@ -58,7 +60,8 @@ export const taxa = [
             {
                 language: 'en',
                 summary: 'Most members of the family are perennial or annual herbs with square stems.',
-                leaf: 'Typically simple and oppositely arranged; most are fragrant and contain volatile oils.',  
+                identification: 'Square stems, simple and opposite leaves, often fragrant. 5 petals and sepals, fused in both cases.',
+                leaf: 'Important members include basil, rosemary, lavender, marjoram, thyme, savory and the mints. Not to be confused with Verbena and Urticaceae.',  
                 inflorescence: 'The flowers are bilaterally symmetrical with five united petals and five united sepals, usually arranged in clusters and feature two-lipped, open-mouthed, tubular corollas (united petals) with five-lobed bell-like calyxes (united sepals).',
                 petals: 5,
                 speals: 5
@@ -75,7 +78,8 @@ export const taxa = [
         description: [
             {
                 language: 'en',
-                summary: 'A a medium-sized and economically important family of flowering plants commonly known as the mustards, crucifers, or cabbage family.'
+                summary: 'All members of this family are edible. Cauliflower, Brussel sprouts, broccoli, kohlrabi, cabbage and kale are bred from the single species, Brassica oleracea.',
+                identification: '4 petals, 6 stamen (4 tall, 2 short)'
             }
         ]
     },
@@ -205,13 +209,15 @@ export const taxa = [
         taxon: 'family',
         name: 'Fabaceae',
         thumb: "http://media.eol.org/content/2010/03/24/13/32972_98_68.jpg",
-        aka: [ { en: ['Leguminosae','Pea family', 'Bean family']} ],
+        aka: [ { en: ['Leguminosae','Pea family', 'Bean family', 'Legumes']} ],
+        toxic: { members:['Hedysarum alpinum'], level: 1},
         species: 19000,
         genera: 751,
         description: [
             {
                 language: 'en',
-                summary: 'Members are easily recognized by their fruit (legume) and the distincitve formation of petals as "banner, wings, and keel.',
+                summary: 'Members are easily recognized by their fruit (legume), their distinctive formation of petals ("banner, wings, and keel") or by their pinnate leaves (Mimosa).',
+                identification: 'Many have 5 petals in a distinctive "banner, wings, and keel" form, and/or pinnate leaves. Characterisic pod or legume fruit.'
             }
         ],
         "eol-entry": "http://eol.org/pages/4277/overview",
@@ -223,6 +229,7 @@ export const taxa = [
         thumb: "http://media.eol.org/content/2014/08/25/10/53156_88_88.jpg",
         aka: [ { en: ['Rose family']} ],
         species: 4828,
+        toxic: { members:['Conium maculatum'], level: 8 },
         genera: 91,
         description: [
             {
@@ -291,7 +298,7 @@ export const taxa = [
         description: [
             {
                 language: 'en',
-                summary: 'Members range from annual and perennial herbs to vines, lianas, epiphytes, shrubs, and trees, and includes a number of important agricultural crops, medicinal plants, and spices.'
+                summary: 'Members range from annual and perennial herbs to vines, lianas, epiphytes, shrubs, and trees, and include agricultural crops, medicinal plants, and spices.'
             }
         ],
         "eol-entry": "http://eol.org/pages/4437/overview",

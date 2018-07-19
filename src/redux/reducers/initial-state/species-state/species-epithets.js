@@ -1,7 +1,6 @@
 import * as R from 'ramda';
 
 import { itemProperties } from 'ui/helpers/data-checking';
-import { utils } from 'utils/utils';
 
 export const getSpeciesEpithets = items => {
     
@@ -14,8 +13,6 @@ export const getSpeciesEpithets = items => {
 
     epithets = epithets.filter(epithet => epithet.latin);
     epithets = R.uniqBy(epithet => epithet.latin, epithets);
-
-    // epithets = new Set(utils.shuffleArray(epithets));
 
     return { name: 'epithets', items: epithets};
 };

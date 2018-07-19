@@ -2,6 +2,7 @@ import { renderTextEntry } from 'ui/screens/text-entry/species-text-entry';
 import { renderSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
 import { renderHistory } from 'ui/screens/progress/history';
 import { renderCard } from 'ui/screens/cards/card';
+import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderScientifics } from 'ui/screens/multichoice/species-scientifics';
 import { renderVernaculars } from 'ui/screens/multichoice/species-vernaculars';
 import { renderSpeciesTiles } from 'ui/screens/multichoice/species-tiles';
@@ -27,7 +28,7 @@ const functions = [
     { name: 'leaf-text', func: renderNameEntry },
     { name: 'epithet', func: renderRadioButtons },
     { name: 'family', func: renderRadioButtons },
-    { name: 'family-description', func: renderRadioButtons },
+    { name: 'taxon-card', func: renderTaxonCard }
 ];
 
 export const funcByName = name => {

@@ -97,13 +97,10 @@ const family = {
   question: 'Match species family',
 };
 
-// const familyDescription = {
-//   name: 'family',
-//   type: 'description-to-family',
-//   headers: { long: 'Match family description', short: 'Match family description'},
-//   domain: 'collection',
-//   question: 'Match family description',
-// };
+const taxon = {
+  name: 'taxon-card',
+  domain: 'collection'
+};
 
 export const screens = {
   specimen,
@@ -123,5 +120,5 @@ export const screens = {
 
   epithets,
   family,
-  // familyDescription
+  taxon
 };

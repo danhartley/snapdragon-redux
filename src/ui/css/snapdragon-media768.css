@@ -4,17 +4,25 @@
         font-size: 16px;
     }
 
-    .card div {
-        margin: .5em;
+    .card {
+        height: 65vh;
+    }
+
+    .card > div {
+        margin: .25em;
+    }
+
+    div.taxon-data {
+        margin: 0;
     }
       
     .scrollable {
         overflow-y: scroll;
-        height: 70vh;
+        height: 65vh;
     }
 
     .list-group-collection {
-        height: 70vh;
+        height: 65vh;
     }
 
     .skills-collections button {
@@ -126,7 +134,7 @@
     } */
 
     .radio-buttons-container {
-        height: 70vh;
+        height: 65vh;
       }
 
     .radio-buttons input {
