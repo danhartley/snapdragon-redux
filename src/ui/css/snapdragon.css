@@ -130,10 +130,6 @@ progress::-moz-progress-bar {
   height: 60vh;
 }
 
-.list-group-collection {
-  height: 60vh;
-}
-
 .scrollable.card {
   text-align: left;
 }
@@ -588,12 +584,12 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   display: none;
 }
 
-.species-question, .species-answer {
+.species-question, .species-answer, .btn-placeholder {
   text-align: center;
   border: 1px solid var(--snap-border-dark);
 }
 
-.species-question.btn, .species-answer.btn {
+.species-question.btn, .species-answer.btn, .btn-placeholder.btn {
   color: var(--snap-text-dark);
   background-color: var(--snap-block-light);
 }

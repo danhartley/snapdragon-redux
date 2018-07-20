@@ -233,7 +233,7 @@ export const epithets = [
     },
     {
         "latin" : ["glaucus"],
-        "en" : ["blue-green", "blue-gray", "gleaming"]
+        "en" : ["blue-green", "blue-gray"]
     },
     {
         "latin" : ["glycy-"],
@@ -317,7 +317,7 @@ export const epithets = [
     },
     {
         "latin" : ["officinalis", "officinale"],
-        "en" : ["belonging to the officina (monastery store room)"],
+        "en" : ["belonging to the officina"],
         "wiki": "https://en.wikipedia.org/wiki/Officinalis"
     },
     {

@@ -30,9 +30,8 @@ export const scoringHandler = (question, answer, event, isPortraitMode, question
                 <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
                </div>`
             : `<div>
-                <span class="icon"><i class="fas fa-times-circle"></i></span><span>Incorrect</span>
-               </div>
-               <div>Answer: ${ correctAnswer }</div>`;
+                <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ correctAnswer }</span>
+               </div>`;
     } else {
         questionText.innerHTML = correct 
             ? `<div>
