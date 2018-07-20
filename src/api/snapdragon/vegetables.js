@@ -3,16 +3,16 @@ export const vegetables = [
       "id": 584402,
       "name": "Cucumis sativus",
       "images": [
-        "https://media.eol.org/content/2009/09/08/02/62376_orig.jpg",
-        "https://media.eol.org/content/2013/12/12/23/70225_orig.jpg",
-        "https://media.eol.org/content/2013/11/17/08/63353_orig.jpg",
-        "https://media.eol.org/content/2008/10/06/13/44776_orig.jpg",
-        "https://media.eol.org/content/2013/11/15/02/48495_orig.jpg",
-        "https://media.eol.org/content/2013/12/07/12/41212_orig.jpg",
-        "https://media.eol.org/content/2014/10/06/18/55560_orig.jpg",
-        "https://media.eol.org/content/2014/10/07/01/09570_orig.jpg",
-        "https://media.eol.org/content/2013/11/16/17/08191_orig.jpg",
-        "https://media.eol.org/content/2013/02/04/23/47188_orig.jpg"
+        "2009/09/08/02/62376_orig.jpg",
+        "2013/12/12/23/70225_orig.jpg",
+        "2013/11/17/08/63353_orig.jpg",
+        "2008/10/06/13/44776_orig.jpg",
+        "2013/11/15/02/48495_orig.jpg",
+        "2013/12/07/12/41212_orig.jpg",
+        "2014/10/06/18/55560_orig.jpg",
+        "2014/10/07/01/09570_orig.jpg",
+        "2013/11/16/17/08191_orig.jpg",
+        "2013/02/04/23/47188_orig.jpg"
       ],
       "names": [
         {
@@ -71,15 +71,15 @@ export const vegetables = [
       "id": 585884,
       "name": "Beta vulgaris",
       "images": [
-        "https://media.eol.org/content/2013/11/15/07/80624_orig.jpg",
-        "https://media.eol.org/content/2013/07/02/01/19243_orig.jpg",
-        "https://media.eol.org/content/2014/08/15/02/11946_orig.jpg",
-        "https://media.eol.org/content/2011/10/15/22/57580_orig.jpg",
-        "https://media.eol.org/content/2012/05/23/06/53470_orig.jpg",
-        "https://media.eol.org/content/2013/11/21/12/16373_orig.jpg",
-        "https://media.eol.org/content/2012/06/13/08/53002_orig.jpg",
-        "https://media.eol.org/content/2016/08/06/02/59831_orig.jpg",
-        "https://media.eol.org/content/2015/08/11/22/77010_orig.jpg"
+        "2013/11/15/07/80624_orig.jpg",
+        "2013/07/02/01/19243_orig.jpg",
+        "2014/08/15/02/11946_orig.jpg",
+        "2011/10/15/22/57580_orig.jpg",
+        "2012/05/23/06/53470_orig.jpg",
+        "2013/11/21/12/16373_orig.jpg",
+        "2012/06/13/08/53002_orig.jpg",
+        "2016/08/06/02/59831_orig.jpg",
+        "2015/08/11/22/77010_orig.jpg"
       ],
       "names": [
         {
@@ -175,13 +175,13 @@ export const vegetables = [
       "id": 582002,
       "name": "Spinacia oleracea",
       "images": [
-        "https://media.eol.org/content/2013/12/02/08/06939_orig.jpg",
-        "https://media.eol.org/content/2012/02/03/03/87448_orig.jpg",
-        "https://media.eol.org/content/2012/06/12/18/53166_orig.jpg",
-        "https://media.eol.org/content/2012/06/12/18/14292_orig.jpg",
-        "https://media.eol.org/content/2012/06/12/18/46011_orig.jpg",
-        "https://media.eol.org/content/2013/11/26/02/15427_orig.jpg",
-        "https://media.eol.org/content/2013/12/07/03/40888_orig.jpg"
+        "2013/12/02/08/06939_orig.jpg",
+        "2012/02/03/03/87448_orig.jpg",
+        "2012/06/12/18/53166_orig.jpg",
+        "2012/06/12/18/14292_orig.jpg",
+        "2012/06/12/18/46011_orig.jpg",
+        "2013/11/26/02/15427_orig.jpg",
+        "2013/12/07/03/40888_orig.jpg"
       ],
       "names": [
         {
@@ -224,14 +224,14 @@ export const vegetables = [
       "id": 583801,
       "name": "Raphanus sativus",
       "images": [
-        "https://media.eol.org/content/2015/03/30/11/27516_orig.jpg",
-        "https://media.eol.org/content/2011/10/16/02/89929_orig.jpg",
-        "https://media.eol.org/content/2011/10/16/02/25567_orig.jpg",
-        "https://media.eol.org/content/2012/05/24/00/12323_orig.jpg",
-        "https://media.eol.org/content/2011/08/04/16/82298_orig.jpg",
-        "https://media.eol.org/content/2014/07/24/01/01482_orig.jpg",
-        "https://media.eol.org/content/2014/07/24/01/05700_orig.jpg",
-        "https://media.eol.org/content/2016/08/06/14/70784_orig.jpg"
+        "2015/03/30/11/27516_orig.jpg",
+        "2011/10/16/02/89929_orig.jpg",
+        "2011/10/16/02/25567_orig.jpg",
+        "2012/05/24/00/12323_orig.jpg",
+        "2011/08/04/16/82298_orig.jpg",
+        "2014/07/24/01/01482_orig.jpg",
+        "2014/07/24/01/05700_orig.jpg",
+        "2016/08/06/14/70784_orig.jpg"
       ],
       "names": [
         {
@@ -290,14 +290,14 @@ export const vegetables = [
       "id": 584410,
       "name": "Cucurbita pepo",
       "images": [
-        "https://media.eol.org/content/2014/10/02/04/95723_orig.jpg",
-        "https://media.eol.org/content/2014/10/02/04/31694_orig.jpg",
-        "https://media.eol.org/content/2014/10/02/04/19366_orig.jpg",
-        "https://media.eol.org/content/2011/10/15/22/23146_orig.jpg",
-        "https://media.eol.org/content/2011/10/15/22/06195_orig.jpg",
-        "https://media.eol.org/content/2013/05/20/03/87504_orig.jpg",
-        "https://media.eol.org/content/2014/05/14/03/88652_orig.jpg",
-        "https://media.eol.org/content/2013/06/11/06/68380_orig.jpg"
+        "2014/10/02/04/95723_orig.jpg",
+        "2014/10/02/04/31694_orig.jpg",
+        "2014/10/02/04/19366_orig.jpg",
+        "2011/10/15/22/23146_orig.jpg",
+        "2011/10/15/22/06195_orig.jpg",
+        "2013/05/20/03/87504_orig.jpg",
+        "2014/05/14/03/88652_orig.jpg",
+        "2013/06/11/06/68380_orig.jpg"
       ],
       "names": [
         {
@@ -397,11 +397,11 @@ export const vegetables = [
       "id": 392557,
       "name": "Solanum lycopersicum",
       "images": [
-        "https://media.eol.org/content/2014/06/03/05/47795_orig.jpg",
-        "https://media.eol.org/content/2014/06/03/05/08267_orig.jpg",
-        "https://media.eol.org/content/2014/06/03/05/81307_orig.jpg",
-        "https://media.eol.org/content/2016/08/01/08/59678_orig.jpg",
-        "https://media.eol.org/content/2016/08/01/08/71750_orig.jpg"
+        "2014/06/03/05/47795_orig.jpg",
+        "2014/06/03/05/08267_orig.jpg",
+        "2014/06/03/05/81307_orig.jpg",
+        "2016/08/01/08/59678_orig.jpg",
+        "2016/08/01/08/71750_orig.jpg"
       ],
       "names": [
         {
@@ -446,18 +446,18 @@ export const vegetables = [
       "id": 583898,
       "name": "Brassica rapa",
       "images": [
-        "https://media.eol.org/content/2011/10/06/03/07359_orig.jpg",
-        "https://media.eol.org/content/2011/10/06/03/48493_orig.jpg",
-        "https://media.eol.org/content/2011/10/06/03/58321_orig.jpg",
-        "https://media.eol.org/content/2011/10/15/22/77964_orig.jpg",
-        "https://media.eol.org/content/2011/10/15/22/50249_orig.jpg",
-        "https://media.eol.org/content/2009/09/08/03/23450_orig.jpg",
-        "https://media.eol.org/content/2011/08/04/09/26433_orig.jpg",
-        "https://media.eol.org/content/2013/03/24/17/29400_orig.jpg",
-        "https://media.eol.org/content/2016/08/02/23/79236_orig.jpg",
-        "https://media.eol.org/content/2016/08/05/21/38757_orig.jpg",
-        "https://media.eol.org/content/2014/03/29/04/86683_orig.jpg",
-        "https://media.eol.org/content/2013/11/20/02/93824_orig.jpg"
+        "2011/10/06/03/07359_orig.jpg",
+        "2011/10/06/03/48493_orig.jpg",
+        "2011/10/06/03/58321_orig.jpg",
+        "2011/10/15/22/77964_orig.jpg",
+        "2011/10/15/22/50249_orig.jpg",
+        "2009/09/08/03/23450_orig.jpg",
+        "2011/08/04/09/26433_orig.jpg",
+        "2013/03/24/17/29400_orig.jpg",
+        "2016/08/02/23/79236_orig.jpg",
+        "2016/08/05/21/38757_orig.jpg",
+        "2014/03/29/04/86683_orig.jpg",
+        "2013/11/20/02/93824_orig.jpg"
       ],
       "names": [
         {
@@ -580,13 +580,13 @@ export const vegetables = [
       "id": 703202,
       "name": "Vicia faba",
       "images": [
-        "https://media.eol.org/content/2013/09/02/03/85670_orig.jpg",
-        "https://media.eol.org/content/2014/04/16/10/24680_orig.jpg",
-        "https://media.eol.org/content/2012/06/27/01/61910_orig.jpg",
-        "https://media.eol.org/content/2013/09/02/03/38863_orig.jpg",
-        "https://media.eol.org/content/2014/10/05/17/76052_orig.jpg",
-        "https://media.eol.org/content/2014/01/31/15/09279_orig.jpg",
-        "https://media.eol.org/content/2014/02/01/04/56338_orig.jpg"
+        "2013/09/02/03/85670_orig.jpg",
+        "2014/04/16/10/24680_orig.jpg",
+        "2012/06/27/01/61910_orig.jpg",
+        "2013/09/02/03/38863_orig.jpg",
+        "2014/10/05/17/76052_orig.jpg",
+        "2014/01/31/15/09279_orig.jpg",
+        "2014/02/01/04/56338_orig.jpg"
       ],
       "names": [
         {
@@ -674,20 +674,20 @@ export const vegetables = [
       "id": 645287,
       "name": "Phaseolus coccineus",
       "images": [
-        "https://media.eol.org/content/2012/10/22/13/94893_orig.jpg",
-        "https://media.eol.org/content/2014/01/15/06/82451_orig.jpg",
-        "https://media.eol.org/content/2014/05/18/23/38286_orig.jpg",
-        "https://media.eol.org/content/2015/03/21/11/37518_orig.jpg",
-        "https://media.eol.org/content/2013/06/18/01/40361_orig.jpg",
-        "https://media.eol.org/content/2013/06/18/01/38049_orig.jpg",
-        "https://media.eol.org/content/2013/06/18/01/62251_orig.jpg",
-        "https://media.eol.org/content/2014/10/05/09/50167_orig.jpg",
-        "https://media.eol.org/content/2014/10/06/05/09705_orig.jpg",
-        "https://media.eol.org/content/2014/10/05/23/15422_orig.jpg",
-        "https://media.eol.org/content/2014/10/05/06/44976_orig.jpg",
-        "https://media.eol.org/content/2013/06/18/01/91983_orig.jpg",
-        "https://media.eol.org/content/2012/06/12/19/58595_orig.jpg",
-        "https://media.eol.org/content/2013/06/18/01/64816_orig.jpg"
+        "2012/10/22/13/94893_orig.jpg",
+        "2014/01/15/06/82451_orig.jpg",
+        "2014/05/18/23/38286_orig.jpg",
+        "2015/03/21/11/37518_orig.jpg",
+        "2013/06/18/01/40361_orig.jpg",
+        "2013/06/18/01/38049_orig.jpg",
+        "2013/06/18/01/62251_orig.jpg",
+        "2014/10/05/09/50167_orig.jpg",
+        "2014/10/06/05/09705_orig.jpg",
+        "2014/10/05/23/15422_orig.jpg",
+        "2014/10/05/06/44976_orig.jpg",
+        "2013/06/18/01/91983_orig.jpg",
+        "2012/06/12/19/58595_orig.jpg",
+        "2013/06/18/01/64816_orig.jpg"
       ],
       "names": [
         {
@@ -766,18 +766,18 @@ export const vegetables = [
       "id": 703192,
       "name": "Pisum sativum",
       "images": [
-        "https://media.eol.org/content/2014/08/15/05/82300_orig.jpg",
-        "https://media.eol.org/content/2013/11/21/11/15780_orig.jpg",
-        "https://media.eol.org/content/2013/05/20/04/53692_orig.jpg",
-        "https://media.eol.org/content/2014/07/08/07/00834_orig.jpg",
-        "https://media.eol.org/content/2014/07/08/07/18440_orig.jpg",
-        "https://media.eol.org/content/2016/08/03/07/62507_orig.jpg",
-        "https://media.eol.org/content/2009/09/08/04/82596_orig.jpg",
-        "https://media.eol.org/content/2012/12/11/21/17487_orig.jpg",
-        "https://media.eol.org/content/2014/06/10/15/95415_orig.jpg",
-        "https://media.eol.org/content/2014/06/10/15/57087_orig.jpg",
-        "https://media.eol.org/content/2013/11/14/14/19153_orig.jpg",
-        "https://media.eol.org/content/2014/12/19/17/01160_orig.jpg"
+        "2014/08/15/05/82300_orig.jpg",
+        "2013/11/21/11/15780_orig.jpg",
+        "2013/05/20/04/53692_orig.jpg",
+        "2014/07/08/07/00834_orig.jpg",
+        "2014/07/08/07/18440_orig.jpg",
+        "2016/08/03/07/62507_orig.jpg",
+        "2009/09/08/04/82596_orig.jpg",
+        "2012/12/11/21/17487_orig.jpg",
+        "2014/06/10/15/95415_orig.jpg",
+        "2014/06/10/15/57087_orig.jpg",
+        "2013/11/14/14/19153_orig.jpg",
+        "2014/12/19/17/01160_orig.jpg"
       ],
       "names": [
         {
@@ -857,15 +857,15 @@ export const vegetables = [
       "id": 581528,
       "name": "Pastinaca sativa",
       "images": [
-        "https://media.eol.org/content/2015/05/20/08/69620_orig.jpg",
-        "https://media.eol.org/content/2012/10/02/02/36001_orig.jpg",
-        "https://media.eol.org/content/2012/12/04/20/10609_orig.jpg",
-        "https://media.eol.org/content/2012/05/23/21/09073_orig.jpg",
-        "https://media.eol.org/content/2014/01/02/01/91379_orig.jpg",
-        "https://media.eol.org/content/2012/12/04/20/63851_orig.jpg",
-        "https://media.eol.org/content/2013/04/18/02/70622_orig.jpg",
-        "https://media.eol.org/content/2016/08/01/23/95809_orig.jpg",
-        "https://media.eol.org/content/2015/03/14/14/27214_orig.jpg"
+        "2015/05/20/08/69620_orig.jpg",
+        "2012/10/02/02/36001_orig.jpg",
+        "2012/12/04/20/10609_orig.jpg",
+        "2012/05/23/21/09073_orig.jpg",
+        "2014/01/02/01/91379_orig.jpg",
+        "2012/12/04/20/63851_orig.jpg",
+        "2013/04/18/02/70622_orig.jpg",
+        "2016/08/01/23/95809_orig.jpg",
+        "2015/03/14/14/27214_orig.jpg"
       ],
       "names": [
         {
@@ -916,15 +916,15 @@ export const vegetables = [
       "id": 581188,
       "name": "Solanum melongena",
       "images": [
-        "https://media.eol.org/content/2012/06/19/04/35626_orig.jpg",
-        "https://media.eol.org/content/2012/06/15/08/79607_orig.jpg",
-        "https://media.eol.org/content/2012/06/19/04/29858_orig.jpg",
-        "https://media.eol.org/content/2012/06/15/08/72432_orig.jpg",
-        "https://media.eol.org/content/2011/10/16/02/76599_orig.jpg",
-        "https://media.eol.org/content/2011/10/16/02/55822_orig.jpg",
-        "https://media.eol.org/content/2011/10/16/02/26792_orig.jpg",
-        "https://media.eol.org/content/2015/03/21/18/07470_orig.jpg",
-        "https://media.eol.org/content/2015/03/21/10/79030_orig.jpg"
+        "2012/06/19/04/35626_orig.jpg",
+        "2012/06/15/08/79607_orig.jpg",
+        "2012/06/19/04/29858_orig.jpg",
+        "2012/06/15/08/72432_orig.jpg",
+        "2011/10/16/02/76599_orig.jpg",
+        "2011/10/16/02/55822_orig.jpg",
+        "2011/10/16/02/26792_orig.jpg",
+        "2015/03/21/18/07470_orig.jpg",
+        "2015/03/21/10/79030_orig.jpg"
       ],
       "names": [
         {
@@ -991,20 +991,20 @@ export const vegetables = [
       "id": 467498,
       "name": "Cynara cardunculus",
       "images": [
-        "https://media.eol.org/content/2014/07/19/17/81740_orig.jpg",
-        "https://media.eol.org/content/2017/04/28/22/31935_orig.jpg",
-        "https://media.eol.org/content/2014/08/15/05/29019_orig.jpg",
-        "https://media.eol.org/content/2013/10/02/02/40513_orig.jpg",
-        "https://media.eol.org/content/2014/08/15/04/48032_orig.jpg",
-        "https://media.eol.org/content/2014/07/08/09/60175_orig.jpg",
-        "https://media.eol.org/content/2015/08/11/22/34790_orig.jpg",
-        "https://media.eol.org/content/2015/08/11/22/83359_orig.jpg",
-        "https://media.eol.org/content/2014/05/10/06/97626_orig.jpg",
-        "https://media.eol.org/content/2013/07/02/07/80337_orig.jpg",
-        "https://media.eol.org/content/2015/03/12/08/47057_orig.jpg",
-        "https://media.eol.org/content/2011/11/01/05/86866_orig.jpg",
-        "https://media.eol.org/content/2012/05/23/11/02939_orig.jpg",
-        "https://media.eol.org/content/2012/06/12/15/35011_orig.jpg"
+        "2014/07/19/17/81740_orig.jpg",
+        "2017/04/28/22/31935_orig.jpg",
+        "2014/08/15/05/29019_orig.jpg",
+        "2013/10/02/02/40513_orig.jpg",
+        "2014/08/15/04/48032_orig.jpg",
+        "2014/07/08/09/60175_orig.jpg",
+        "2015/08/11/22/34790_orig.jpg",
+        "2015/08/11/22/83359_orig.jpg",
+        "2014/05/10/06/97626_orig.jpg",
+        "2013/07/02/07/80337_orig.jpg",
+        "2015/03/12/08/47057_orig.jpg",
+        "2011/11/01/05/86866_orig.jpg",
+        "2012/05/23/11/02939_orig.jpg",
+        "2012/06/12/15/35011_orig.jpg"
       ],
       "names": [
         {
@@ -1059,14 +1059,14 @@ export const vegetables = [
       "id": 468144,
       "name": "Lactuca sativa",
       "images": [
-        "https://media.eol.org/content/2011/10/06/06/40097_orig.jpg",
-        "https://media.eol.org/content/2011/10/06/06/55817_orig.jpg",
-        "https://media.eol.org/content/2012/08/30/18/03604_orig.jpg",
-        "https://media.eol.org/content/2013/11/15/02/80235_orig.jpg",
-        "https://media.eol.org/content/2014/11/20/00/06850_orig.jpg",
-        "https://media.eol.org/content/2013/11/25/03/04522_orig.jpg",
-        "https://media.eol.org/content/2013/11/17/23/15503_orig.jpg",
-        "https://media.eol.org/content/2013/11/17/23/62411_orig.jpg"
+        "2011/10/06/06/40097_orig.jpg",
+        "2011/10/06/06/55817_orig.jpg",
+        "2012/08/30/18/03604_orig.jpg",
+        "2013/11/15/02/80235_orig.jpg",
+        "2014/11/20/00/06850_orig.jpg",
+        "2013/11/25/03/04522_orig.jpg",
+        "2013/11/17/23/15503_orig.jpg",
+        "2013/11/17/23/62411_orig.jpg"
       ],
       "names": [
         {
@@ -1126,12 +1126,12 @@ export const vegetables = [
       "id": 1278046,
       "name": "Daucus carota",
       "images": [
-        "https://media.eol.org/content/2011/10/06/00/69686_orig.jpg",
-        "https://media.eol.org/content/2013/11/17/03/82807_orig.jpg",
-        "https://media.eol.org/content/2013/12/01/17/12742_orig.jpg",
-        "https://media.eol.org/content/2013/12/01/17/35189_orig.jpg",
-        "https://media.eol.org/content/2013/12/01/23/88972_orig.jpg",
-        "https://media.eol.org/content/2014/06/19/16/76703_orig.jpg"
+        "2011/10/06/00/69686_orig.jpg",
+        "2013/11/17/03/82807_orig.jpg",
+        "2013/12/01/17/12742_orig.jpg",
+        "2013/12/01/17/35189_orig.jpg",
+        "2013/12/01/23/88972_orig.jpg",
+        "2014/06/19/16/76703_orig.jpg"
       ],
       "names": [
         {
@@ -1188,18 +1188,18 @@ export const vegetables = [
       "id": 583899,
       "name": "Brassica oleracea",
       "images": [
-        "https://media.eol.org/content/2012/06/13/01/99823_orig.jpg",
-        "https://media.eol.org/content/2012/06/13/01/92797_orig.jpg",
-        "https://media.eol.org/content/2012/06/13/01/79773_orig.jpg",
-        "https://media.eol.org/content/2012/12/04/11/15375_orig.jpg",
-        "https://media.eol.org/content/2012/12/04/11/15604_orig.jpg",
-        "https://media.eol.org/content/2012/12/04/11/37865_orig.jpg",
-        "https://media.eol.org/content/2014/08/15/02/57459_orig.jpg",
-        "https://media.eol.org/content/2014/08/15/02/34226_orig.jpg",
-        "https://media.eol.org/content/2012/05/23/07/83671_orig.jpg",
-        "https://media.eol.org/content/2016/08/04/17/21941_orig.jpg",
-        "https://media.eol.org/content/2014/06/19/22/22734_orig.jpg",
-        "https://media.eol.org/content/2014/10/27/19/26271_orig.jpg"
+        "2012/06/13/01/99823_orig.jpg",
+        "2012/06/13/01/92797_orig.jpg",
+        "2012/06/13/01/79773_orig.jpg",
+        "2012/12/04/11/15375_orig.jpg",
+        "2012/12/04/11/15604_orig.jpg",
+        "2012/12/04/11/37865_orig.jpg",
+        "2014/08/15/02/57459_orig.jpg",
+        "2014/08/15/02/34226_orig.jpg",
+        "2012/05/23/07/83671_orig.jpg",
+        "2016/08/04/17/21941_orig.jpg",
+        "2014/06/19/22/22734_orig.jpg",
+        "2014/10/27/19/26271_orig.jpg"
       ],
       "names": [
         {
@@ -1279,15 +1279,15 @@ export const vegetables = [
       "id": 482935,
       "name": "Solanum tuberosum",
       "images": [
-        "https://media.eol.org/content/2013/11/26/21/59942_orig.jpg",
-        "https://media.eol.org/content/2016/08/02/23/74915_orig.jpg",
-        "https://media.eol.org/content/2015/08/11/22/82790_orig.jpg",
-        "https://media.eol.org/content/2012/05/24/02/19559_orig.jpg",
-        "https://media.eol.org/content/2013/08/10/07/15003_orig.jpg",
-        "https://media.eol.org/content/2008/10/08/13/44758_orig.jpg",
-        "https://media.eol.org/content/2015/03/25/03/67403_orig.jpg",
-        "https://media.eol.org/content/2012/12/11/20/49696_orig.jpg",
-        "https://media.eol.org/content/2012/05/24/02/98746_orig.jpg"
+        "2013/11/26/21/59942_orig.jpg",
+        "2016/08/02/23/74915_orig.jpg",
+        "2015/08/11/22/82790_orig.jpg",
+        "2012/05/24/02/19559_orig.jpg",
+        "2013/08/10/07/15003_orig.jpg",
+        "2008/10/08/13/44758_orig.jpg",
+        "2015/03/25/03/67403_orig.jpg",
+        "2012/12/11/20/49696_orig.jpg",
+        "2012/05/24/02/98746_orig.jpg"
       ],
       "names": [
         {
@@ -1347,13 +1347,13 @@ export const vegetables = [
       "id": 1084354,
       "name": "Allium cepa",
       "images": [
-        "https://media.eol.org/content/2013/11/26/21/08583_orig.jpg",
-        "https://media.eol.org/content/2014/08/15/02/20138_orig.jpg",
-        "https://media.eol.org/content/2012/06/13/04/43491_orig.jpg",
-        "https://media.eol.org/content/2012/05/23/04/69877_orig.jpg",
-        "https://media.eol.org/content/2009/07/24/04/67256_orig.jpg",
-        "https://media.eol.org/content/2015/08/11/22/92876_orig.jpg",
-        "https://media.eol.org/content/2013/11/15/00/30795_orig.jpg"
+        "2013/11/26/21/08583_orig.jpg",
+        "2014/08/15/02/20138_orig.jpg",
+        "2012/06/13/04/43491_orig.jpg",
+        "2012/05/23/04/69877_orig.jpg",
+        "2009/07/24/04/67256_orig.jpg",
+        "2015/08/11/22/92876_orig.jpg",
+        "2013/11/15/00/30795_orig.jpg"
       ],
       "names": [
         {

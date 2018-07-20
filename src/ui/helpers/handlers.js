@@ -30,9 +30,8 @@ export const scoringHandler = (question, answer, event, isPortraitMode, question
                 <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
                </div>`
             : `<div>
-                <span class="icon"><i class="fas fa-times-circle"></i></span><span>Incorrect</span>
-               </div>
-               <div>Answer: ${ correctAnswer }</div>`;
+                <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ correctAnswer }</span>
+               </div>`;
     } else {
         questionText.innerHTML = correct 
             ? `<div>
@@ -67,7 +66,7 @@ export const modalBackgroundImagesHandler = (images, item) => {
             const src = img.style.backgroundImage.slice(4, -1).replace(/"/g, "");
             if(src) {
                 DOM.modalImageTitle.innerHTML = item.name;
-                const style = `background-image: url(${src}); background-size: cover;`;
+                const style = `background-image: url(https://media.eol.org/content/${src}); background-size: cover;`;
                 DOM.modalImage.style = style;
             }
         })
@@ -78,7 +77,7 @@ export const modalImageHandler = (image) => {
     image.addEventListener('click', event => {            
         const img = event.target;        
         DOM.modalImageTitle.innerHTML = img.id;
-        const style = `background-image: url(${img.src}); background-size: cover;`;
+        const style = `background-image: url(https://media.eol.org/content/${img.src}); background-size: cover;`;
         DOM.modalImage.style = style;            
     })
 };

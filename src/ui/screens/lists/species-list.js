@@ -27,10 +27,10 @@ export const renderSpeciesCollectionList = (collection, append = false) => {
         const scrollableArea = document.querySelector('.scrollable');
         scrollableArea.style.height = scrollableArea.offsetHeight / 2 + 'px';
     } else {
-        parent = DOM.leftBody;
+        parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
         parent.innerHTML = '<div class="snapdragon-container"></div>';
         parent = parent.querySelector('.snapdragon-container');
-        template.innerHTML = speciesTemplate
+        template.innerHTML = speciesTemplate;
     }
 
     renderTemplate({ collection }, template.content, parent);
