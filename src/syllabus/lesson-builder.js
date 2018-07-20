@@ -19,7 +19,7 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         } while (i < moduleSize);
     });
 
-    const revisionLayouts = lessonPlan.splice(0,moduleSize);
+    const revisionLayouts = excludeRevision ? [] : lessonPlan.splice(0,moduleSize);
     const shuffledLessonLayouts = utils.shuffleArray(lessonPlan);
     const offSet = (collection.currentRound - 1) * moduleSize;
 

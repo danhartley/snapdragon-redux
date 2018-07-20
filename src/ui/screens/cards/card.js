@@ -100,7 +100,7 @@ const renderPortrait = (item, config) => {
 
     const backgroundImages = images.map(image => {
             return `                
-                <div style='background-image: url(${image}); background-size: cover;' data-toggle="modal" data-target="#imageModal">                                      
+                <div style='background-image: url(https://media.eol.org/content/${image}); background-size: cover;' data-toggle="modal" data-target="#imageModal">                                      
                 </div>
             `;
         }).join('');

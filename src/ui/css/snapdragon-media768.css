@@ -50,7 +50,6 @@
     }
 
     .strips {
-        height: 70%;
         padding: 0 .5em;
     }
 
@@ -60,7 +59,8 @@
     }
 
     .letterbox-entry {
-        height: 100%;
+        flex: auto;
+        margin: 1em 0;
         border: .1em solid var(--snap-border-dark);
         border-radius: .20rem;
         display: flex;

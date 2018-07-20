@@ -77,7 +77,8 @@ export const modalImageHandler = (image) => {
     image.addEventListener('click', event => {            
         const img = event.target;        
         DOM.modalImageTitle.innerHTML = img.id;
-        const style = `background-image: url(https://media.eol.org/content/${img.src}); background-size: cover;`;
+        img.src = img.src.indexOf('http') > 0 ? img.src : `https://media.eol.org/content/${img.src}`;
+        const style = `background-image: url(${img.src}); background-size: cover;`;
         DOM.modalImage.style = style;            
     })
 };

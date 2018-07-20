@@ -115,7 +115,7 @@ const landscapeLesson1 = {
         {   id: 1,
             name: 'Level 1',
             description: 'Level 1',
-            layouts: [ speciesRevision, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision ]
+            layouts: [ speciesRevision, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]
         },
         {   id: 2,
             name: 'Level 2',

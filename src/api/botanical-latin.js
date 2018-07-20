@@ -1,8 +1,8 @@
 export const epithets = [
-    {
-        "latin": ["-aceae"],
-        "en" : ["Used to form the name of taxonomic families of plants, algae, bacteria, and fungi"]
-    },
+    // {
+    //     "latin": ["-aceae"],
+    //     "en" : ["Used to form the name of taxonomic families of plants, algae, bacteria, and fungi"]
+    // },
     {
         "latin": ['Agastache'],
         "en": ['many spikes']
