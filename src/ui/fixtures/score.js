@@ -25,7 +25,7 @@ export const renderScore = (score) => {
     runningTotal.correct = runningTotal.correct + score.correct;
     runningTotal.total = runningTotal.total + score.total;
 
-    const parent = config.isPortraitMode ? DOM.rightFooter.querySelector('.js-right-footer-score') : DOM.rightFooter;
+    const parent = config.isPortraitMode ? DOM.rightFooter.querySelector('.js-footer-score') : DOM.rightFooter;
 
     parent.innerHTML = '';
 

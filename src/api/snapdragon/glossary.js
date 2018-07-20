@@ -61,9 +61,15 @@ export const glossary = [
         examples: ['Escherichia coli', 'Drosophila melanogaster', 'Arabidopsis thaliana', 'Saccharomyces cerevisiae', 'Mus musculus']
     },
     {
-        term: "Mutualism"
+        term: "Mutualism",
+        definition: "Symbiotic interaction between different species that is mutually beneficial."
     },
     {
-        term: "Symbiont"
+        term: "Symbiont",
+        definition: "Either species involved in a biological interaction whether mutualistic, parasitic or commensalistic"
+    },
+    {
+        term: "Dehiscence",
+        definition: "The natural opening of capsules, fruits, anthers along a line of natural weakness thereby releasing seeds or pollen."
     }
 ];

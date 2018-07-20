@@ -12,11 +12,14 @@
     --snap-primary-active: rgb(205,205,205);
     
     --snap-alert: rgb(183, 12, 21);
-    --snap-inactive: rgba(125,125,125, .4);
+    --snap-inactive: rgba(7, 2, 2, 0.4);
     --snap-active: rgb(0, 42, 84);
     --snap-success: rgb(41, 108, 44);
     
     --snap-link: rgb(0, 42, 84);
+    --snap-info-background: rgb(97, 109, 25);
+    --snap-question-background: rgb(0, 49, 105);
+    --snap-question-radio: rgb(138, 183, 234);
 
     --snap-progress-bg: rgb(45,45,45);
     --snap-progress-bar: rgb(233, 232, 111);

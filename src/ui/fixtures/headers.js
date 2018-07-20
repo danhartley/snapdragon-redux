@@ -9,7 +9,7 @@ export const renderHeaders = counter => {
 
     const title = 'Snapdragon - learn the planet';
 
-    DOM.leftHeaderTxt.innerHTML = (counter.lesson === 'active' && collection) ? collection.name : title;
+    DOM.leftHeaderTxt.innerHTML = title;
 
     if(!layouts) return;
 
@@ -17,9 +17,13 @@ export const renderHeaders = counter => {
 
     if(!layout) return;
 
+    const questionCount = layouts.length - config.moduleSize - 1;
+
+    document.querySelector('progress').max = questionCount;
+
     if(layout.name === 'test') {
         const offset = layouts.filter(layout => layout.name === 'revision').length;
-        const question = `Question ${ layout.exerciseIndex } of ${layouts.length - config.moduleSize - 1}`;
+        const question = `Question ${ layout.exerciseIndex } of ${questionCount}`;
         setTimeout(()=>{
             if(counter.lesson === 'active') {
                 DOM.rightHeaderTxt.innerHTML = question;
@@ -29,7 +33,7 @@ export const renderHeaders = counter => {
             }
         });
     } else if(layout.name === 'revision') {
-        DOM.rightHeaderTxt.innerHTML = item ? item.name : '';
+        DOM.rightHeaderTxt.innerHTML = (counter.lesson === 'active' && collection) ? collection.name : title;
     }
 
     if(layout.screens.find(el => el.name === 'summary')) {

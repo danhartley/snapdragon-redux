@@ -3,11 +3,8 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { config } from 'syllabus/lesson-config';
 import { kitchenGarden } from 'snapdragon/species-lessons';
-
 import { helpers } from 'redux/reducers/helpers-for-reducers';
-
-import { getSpeciesEpithets } from 'redux/reducers/initial-state/species-state/species-epithets';
-import { getFamilies } from 'redux/reducers/initial-state/species-state/taxa';
+import { getFamilies } from 'redux/reducers/initial-state/species-state/species-taxa';
 
 const collections = [ kitchenGarden ];
 
@@ -18,20 +15,7 @@ const initCollection = (rawCollection = collections[0]) => {
     const items = utils.sortBy(prepCollection(rawCollection.items), 'snapId');
     const rounds = items.length / config.moduleSize;
 
-    const wildcards = [];    
-    wildcards.push(getSpeciesEpithets(items));
-    
     const families = getFamilies(items);
-
-    let itemGroups = [];
-    let group = [];
-    items.forEach((item, index) => {
-        group.push(index);
-        if((index + 1) % config.moduleSize === 0) {
-            itemGroups.push(group);
-            group = [];
-        }
-    });
 
     const collection = {
         name: rawCollection.name,
@@ -40,8 +24,6 @@ const initCollection = (rawCollection = collections[0]) => {
         currentRound: 1,
         moduleSize: config.moduleSize,
         rounds : items.length % config.moduleSize === 0 ? rounds : rounds === 1 ? 1 : Math.floor(rounds) + 1,
-        wildcards: wildcards, 
-        itemGroups: itemGroups,
         families: families
      };
 

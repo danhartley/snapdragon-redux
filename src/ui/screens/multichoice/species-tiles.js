@@ -49,10 +49,11 @@ export const renderSpeciesTiles = (collection) => {
         const question = screen.question;
         renderTemplate( { question }, template.content, parent);
         const renderAnswer = (text, colour, correct) => {
-            const answer = document.querySelector('.js-species-answer div');
+            const answer = document.querySelector('.js-species-answer');
             answer.innerHTML = correct ? 'Correct' : 'Incorrect';
-            answer.parentElement.style.display = 'block';
+            answer.style.display = 'block';            
             answer.classList.add(colour);
+            document.querySelector('.js-species-question').style.display = 'none';
         }   
         scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image', renderAnswer, questionCount);
     } else {

@@ -139,20 +139,31 @@ progress::-moz-progress-bar {
 }
 
 .snapdragon-container {
+  display: flex;
+  flex-direction: column;
   padding: .5em;
-  position: relative;
   background-color: var(--snap-container-background);
   border: 1px solid var(--snap-primary);
 }
 
+.snapdragon-container.species-card .card > div {
+  flex: auto;
+}
+
 .card {
+  flex: auto;
+  margin: 0 0 1em 0;
   display: flex;
   flex-direction: column;
-  padding: .25em .5em;
+  padding: .5em;
   text-align: right;
   background-color: var(--snap-card-background);
   border: 1px solid var(--snap-border-dark);
   border-radius: .1rem;
+}
+
+.card.js-card div {
+  flex: auto;
 }
 
 .snapdragon-options {
@@ -203,11 +214,11 @@ progress::-moz-progress-bar {
   bottom: 0;
 }
 
-.right-body .footer {
+.left-body .footer, .right-body .footer {
   display: flex;
 }
 
-.right-grid .footer .nav-icons, .right-grid .footer .footer-score {
+.left-grid .footer .nav-icons, .right-grid .footer .nav-icons, .right-grid .footer .footer-score {
   flex: auto;
 }
 
@@ -263,7 +274,7 @@ progress::-moz-progress-bar {
   grid-template-rows: 1fr 1fr;  
 }
 
-.squares img {
+.squares img, .tiles img {
   cursor: pointer;
   object-fit: cover;
   width: 100%;
@@ -276,6 +287,7 @@ progress::-moz-progress-bar {
 }
 
 .strips {
+  flex: auto;
   display: grid;
   grid-auto-flow: row;
   grid-template-rows: repeat(6,1fr);
@@ -310,12 +322,16 @@ progress::-moz-progress-bar {
   text-align: left;
 }
 
+.content {
+  display: flex;
+}
+
 .species-card-container .content {
   flex: 1 1 auto;
 }
 
 .species-card-container .card {
-  margin: .5em  0 0 0;
+  margin: 1em  0;
 }
 
 .species-card-species, .species-card-name {
@@ -327,7 +343,7 @@ progress::-moz-progress-bar {
   color: var(--snap-link);
 }
 
-.species-card-family {
+.species-family {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -340,8 +356,31 @@ progress::-moz-progress-bar {
   font-size: .8em;
 }
 
-.specimens-card-btn {
-  padding: 1em;        
+.taxon-card-header {
+  font-size: 1.1em;
+}
+
+.data-box {  
+  display: flex;
+}
+
+.data-box > div:nth-child(1) {  
+  flex: auto;
+}
+
+.data-box > div:nth-child(2) {  
+  padding: .25em .5em 0 .5em;
+  color: var(--snap-text-light);
+  background-color: var(--snap-info-background);
+  border-radius: .1rem;
+  display: flex;
+  flex-direction: column;
+  font-size: .9em;
+}
+
+.taxon-data {
+  flex: auto;
+  margin: 0;
 }
 
 .family-name {
@@ -373,10 +412,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   box-shadow: 0 0 0 0;  
 }
 
-.btn-placeholder {
-  text-align: center;
-  border: 1px solid var(--snap-border-dark);
-  padding: .5em;
+.btn-placeholder.btn {
+  color: var(--snap-text-dark);
 }
 
 /* dropdown menus */
@@ -467,6 +504,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   background-color: var(--snap-success);
 }
 
+.snap-alert-fg {
+  color: var(--snap-alert);
+}
+
 .snap-alert {
   color: var(--snap-text-light);
   background-color: var(--snap-alert);
@@ -507,11 +548,9 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .action-update, .response-update {
-  position: absolute;
-  bottom: 0;
-  left: .5em;
-  right: .5em;
-  margin: 0 0 1.5em 0;
+  flex: initial;
+  display: flex;
+  flex-direction: row;
 }
 
 .action-update button {
@@ -534,10 +573,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   bottom: 0;
   left: 0;
 }
-/* 
-.text-entry div {
-  margin: 0 0 0 .1em;
-} */
 
 .text-question {
   margin: 0.25em 0 0 .25em;
@@ -553,12 +588,17 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   display: none;
 }
 
-.species-question {
+.species-question, .species-answer {
   text-align: center;
   border: 1px solid var(--snap-border-dark);
 }
 
-.species-answer div {        
+.species-question.btn, .species-answer.btn {
+  color: var(--snap-text-dark);
+  background-color: var(--snap-block-light);
+}
+
+.species-answer {        
   text-align: center;
   color: var(--snap-text-dark);
   background-color: var(--snap-border-light);
@@ -634,30 +674,33 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 	display: block;
 }
 
-.radio-buttons-container {
-  height: 60vh;
-}
-
 .radio-buttons-group {
   margin: 1em 0 0 0;
-}
-
-.radio-buttons {
-  display: flex;  
-}
-
-.radio-buttons input {
-  margin: 0.25em 1em 0 0;
-  cursor: pointer;
-  width: 5%;
+  display: flex;
+  flex-direction: column;
 }
 
 .radio-buttons label {
-  width: 95%;
-  cursor: pointer;
+  color: var(--snap-text-dark);
+  background-color: var(--snap-question-radio);
 }
 
 .left-grid, .species-card-wiki-entry,
 .collection-preview, .collection button, .collections-skills {
     display: none;
+}
+
+.badge {
+  vertical-align: text-top;
+}
+
+.badge-light {
+  color: var(--snap-text-light);
+  background-color: var(--snap-lesson);
+}
+
+.question-container {
+  color: var(--snap-text-light);
+  background-color: var(--snap-question-background);
+  padding: 1em;
 }

@@ -13,11 +13,11 @@ import portraitTemplate from 'ui/screens/cards/card-portrait-template.html';
 
 export const renderCard = (collection) => {
     
-    const item = collection.items[collection.itemIndex];
-
+    const item = collection.items[collection.itemIndex];    
     const { layout, config, layouts } = store.getState();
-    item.questionCount = layouts.length;
 
+    item.questionCount = layouts.length;
+    
     document.querySelector('progress').max = layouts.filter(layout => layout.name === 'test').length;
     document.querySelector('progress').value = 0;
 
@@ -87,6 +87,7 @@ const renderLandscape = (item, config) => {
 
     document.querySelector('.js-txt-family img').classList.add('show');
 };
+
 const renderPortrait = (item, config) => {
 
     const template = document.createElement('template');
@@ -121,7 +122,6 @@ const renderCommonParts = (template, config, item) => {
     
     clone.querySelector('button').addEventListener('click', event => {
         actions.boundEndRevision(item);
-        event.stopPropagation();
     });
 
     const parent = DOM.rightBody;
@@ -131,5 +131,7 @@ const renderCommonParts = (template, config, item) => {
 
     const gbif = document.querySelector('.js-card .js-txt-family span');
 
-    renderFamily(gbif, item.name);
+    gbif.innerHTML = item.family;
+
+    // renderFamily(gbif, item.name);
 };

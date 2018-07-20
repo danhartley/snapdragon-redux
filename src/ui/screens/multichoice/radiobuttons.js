@@ -34,13 +34,15 @@ export const renderRadioButtons = (collection) => {
 
         renderTemplate({ description, answers }, template.content, parent);
 
+        document.querySelector('input[name="answer"]:checked').checked = false;
+
         document.querySelector('button').addEventListener('click', event => {
             const answer = document.querySelector('input[name="answer"]:checked').value;
             scoringHandler(question, answer, event, config.isPortraitMode, layouts.length, config.callbackTime, renderAnswerHeader);
         });
     };
 
-    const familyTypes = [ 'species-to-family', 'description-to-family', 'family-to-description'];
+    const familyTypes = config.isPortraitMode ? [ 'species-to-family'] : [ 'species-to-family', 'description-to-family', 'family-to-description'];
 
     const screen = layout.screens.find(screen => screen.name === 'family');
     if(screen) {
@@ -49,8 +51,8 @@ export const renderRadioButtons = (collection) => {
 
     if(layout.screens.find(screen => screen.type === 'description-to-family')) {
         
-        randomAnswers = R.take(2, R.take(3, utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.description[0].summary);
-        const familyDescription = families.find(f => f.name === family).description[0].summary;
+        randomAnswers = R.take(2, R.take(3, utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.descriptions[0].summary);
+        const familyDescription = families.find(f => f.name === family).descriptions[0].summary;
         description = `${species} belongs to the ${family}. Which of the following best describes the ${family} family?`;
         question = { question: familyDescription, binomial: item.name, enumerated: true };
         answers = utils.shuffleArray([familyDescription, ...randomAnswers]);
@@ -66,10 +68,12 @@ export const renderRadioButtons = (collection) => {
         render();
     }
 
+    const indices = config.isPortraitMode ? [3,4] : [5,6];
+
     if(layout.screens.find(screen => screen.type === 'family-to-description')) {
 
-        randomAnswers = R.take(5, R.take(6, utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.name);
-        const familyDescription = families.find(f => f.name === family).description[0].summary;
+        randomAnswers = R.take(indices[0], R.take(indices[0], utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.name);
+        const familyDescription = families.find(f => f.name === family).descriptions[0].summary;
         description = `${species} belongs to a family whose description is '${familyDescription}' What is the name of that family?`;
         question = { question: family, binomial: item.name, enumerated: true };
         answers = utils.shuffleArray([family, ...randomAnswers]);
@@ -87,7 +91,7 @@ export const renderRadioButtons = (collection) => {
     
     if(layout.screens.find(screen => screen.type === 'species-to-family')) {
 
-        randomAnswers = R.take(5, R.take(6, utils.shuffleArray(families)).filter(i => i.name !== family)).map(i => i.name);
+        randomAnswers = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(i => i.name !== family)).map(i => i.name);
         description = `Which of the following families does the species ${species} belong to?`;
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...randomAnswers]);
@@ -99,7 +103,7 @@ export const renderRadioButtons = (collection) => {
         
         if(!layout.epithet) return;
         
-        randomAnswers = R.take(5, R.take(6, utils.shuffleArray(epithets)).filter(e => !R.contains(e.en, layout.epithet.en))).map(e => e.en);
+        randomAnswers = R.take(indices[0], R.take(indices[1], utils.shuffleArray(epithets)).filter(e => !R.contains(e.en, layout.epithet.en))).map(e => e.en);
         description = `In the species ${species}, what is the meaning of the epithet ${epithet}?`;
         question = { question: layout.epithet.en[0], binomial: item.name };
         answers = utils.shuffleArray([layout.epithet.en, ...randomAnswers]);

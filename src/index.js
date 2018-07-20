@@ -47,11 +47,10 @@ setTimeout(()=>{
 
     const counter = currentCounter ? { ...currentCounter } : { index: null, lesson: 'inactive' };
 
-    renderNavigation();
-
     actions.boundUpdateConfig(config);
     actions.boundToggleLesson(counter);
 
+    subscription.add(renderNavigation, 'config', 'flow');
     subscription.add(renderCollections, 'counter', 'flow');
     // subscription.add(renderHome, 'counter', 'flow');
     subscription.add(renderSnapdragon, 'counter', 'flow');

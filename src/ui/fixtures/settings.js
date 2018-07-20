@@ -4,6 +4,7 @@ import { persistor } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import settingsTemplate from 'ui/fixtures/settings-template.html';
+import { renderNavigation } from 'ui/fixtures/navigation';
 
 export const renderSettings = () => {
     
@@ -37,7 +38,7 @@ export const renderSettings = () => {
             clearCacheBtn.innerText = 'Cache cleared';
             setTimeout(() => {                                
                 setTimeout(() => {
-                    window.location.reload(true);                        
+                    window.location.reload(true);               
                 }, 500);
             }, 500);
         }, 1000);
