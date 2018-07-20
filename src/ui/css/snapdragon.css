@@ -699,4 +699,5 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: var(--snap-text-light);
   background-color: var(--snap-question-background);
   padding: 1em;
+  border-radius: .2rem;
 }
