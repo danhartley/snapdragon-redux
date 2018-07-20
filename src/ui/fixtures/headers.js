@@ -17,9 +17,13 @@ export const renderHeaders = counter => {
 
     if(!layout) return;
 
+    const questionCount = layouts.length - config.moduleSize - 1;
+
+    document.querySelector('progress').max = questionCount;
+
     if(layout.name === 'test') {
         const offset = layouts.filter(layout => layout.name === 'revision').length;
-        const question = `Question ${ layout.exerciseIndex } of ${layouts.length - config.moduleSize - 1}`;
+        const question = `Question ${ layout.exerciseIndex } of ${questionCount}`;
         setTimeout(()=>{
             if(counter.lesson === 'active') {
                 DOM.rightHeaderTxt.innerHTML = question;

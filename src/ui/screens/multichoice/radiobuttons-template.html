@@ -1,15 +1,17 @@
 <div class="snapdragon-container">
     <div class="card align-left radio-buttons-container">
-            <div class="js-multi-question">{{ description }}</div>
-            <div class="radio-buttons-group scrollable" data-repeat-answer="{{ answers }}">                
+            <div class="js-multi-question question-container">{{ description }}</div>
+            <div class="radio-buttons-group btn-group btn-group-toggle" data-toggle="buttons" data-repeat-answer="{{ answers }}">                
                 <div class="radio-buttons">
-                    <input type="radio" id="{{ answer }}" value="{{ answer }}" name="answer" />                    
-                    <label for="{{ answer }}">{{ answer }}</label>
+                    <label class="btn">
+                        <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}" autocomplete="off" checked> {{ answer }}
+                    </label>
                 </div>                
             </div>
             <div class="text-question js-txt-question"></div>
     </div>
     <div class="action-update">
+        <div></div>
         <button class="btn btn-light">Check</button>
     </div>
 </div>

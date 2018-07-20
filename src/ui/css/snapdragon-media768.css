@@ -4,14 +4,6 @@
         font-size: 16px;
     }
 
-    .card {
-        height: 65vh;
-    }
-
-    .card > div {
-        margin: .25em;
-    }
-
     div.taxon-data {
         margin: 0;
     }
@@ -29,23 +21,8 @@
         margin: 1em 0;
     }
 
-    .action-update, .response-update {
-        margin: 0 0 2em 0;
-        left: initial;
-        right: .5em;
-        padding: .25em 0;        
-    }
-
-    .response-update {
-        width: 20em;
-    }
-
-    .species-answer div {
-        border-bottom: 0px;
-    }
-
-    .specimens-card-btn {
-        display: none;
+    .action-update > div:nth-child(1), .response-update > div:nth-child(1) {
+        flex: auto;
     }
 
     .grid {        
@@ -58,10 +35,6 @@
                             "squares"
                             "footer"
     }
-
-    /* progress {
-        display: none;
-    } */
 
     .left-grid {
         grid-column: 1;
@@ -88,61 +61,6 @@
     .strip div {
         padding: .5em;
         font-size: 1.2em;
-    }
-
-    /* .flex-provider .eol, .flex-provider .gbif {
-        display: block;
-    }
-
-    .flex-provider {
-        display: flex;
-        flex-direction: row;
-      }
-      
-    .flex-provider.eol span {
-        padding: 1.4em 0 0 1em;
-      }
-      
-    .flex-provider.wiki {
-        margin: 1.4em 0 0 0;
-      }
-      
-    .flex-provider.wiki span {
-        padding: 4em 0 0 2.4em;
-      }
-      
-    .flex-provider.gbif {
-        margin: -1.4em 0 0 0;
-      }
-      
-    .flex-provider.dan {
-        margin: -2em 0 0 0; 
-      }
-      
-    .flex-provider.gbif span {  
-        padding: 3.8em 0 0 2.4em;
-      }
-      
-    .flex-provider.dan div {
-        margin: 1em 0 0 6em;
-        width: 250px;
-        font-size: .9em;
-    }
-
-    .flex-provider.dan {
-        display: none;
-    } */
-
-    .radio-buttons-container {
-        height: 65vh;
-      }
-
-    .radio-buttons input {
-        width: 3%;
-    }
-
-    .radio-buttons label {
-    width: 97%;
     }
 
     .letterbox-entry {

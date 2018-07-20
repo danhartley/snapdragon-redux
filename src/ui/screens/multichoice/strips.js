@@ -59,10 +59,11 @@ export const renderStrips = (screen, item, callback, config, questionCount) => {
     renderTemplate( { question }, template.content, parent);
 
     const renderAnswer = (text, className, correct) => {
-        const answer = document.querySelector('.js-species-answer div');
+        const answer = document.querySelector('.js-species-answer');
         answer.innerHTML = correct ? 'Correct' : 'Incorrect';
-        answer.parentElement.style.display = 'block';
+        answer.style.display = 'block';
         answer.classList.add(className);
+        document.querySelector('.js-species-question').style.display = 'none';
     }
 
     scoreHandler(strips, item, config, 'strip', renderAnswer, questionCount);

@@ -2,13 +2,14 @@ export const taxa = [
     {
         taxon: "family",
         name: 'Asteraceae',
-        aka: [{ en :['Compositae', 'Aster', 'Daisies', 'Composite', 'Sunflower family']}],
+        alt: [ 'Compositae'],
+        names: [{ language: "en", names:[ 'Daisies', 'Compositae', 'Aster', 'Composite', 'Sunflower family']}],
         "wiki-entry": "https://en.wikipedia.org/wiki/Asteraceae",
         "eol-entry": "http://eol.org/pages/4206/overview",
-        thumb: 'http://media.eol.org/content/2017/02/18/22/29040_98_68.jpg',
+        thumb: 'https://media.eol.org/content/2017/02/18/22/29040_98_68.jpg',
         species: 32913,
         genera: 1911,
-        description: [
+        descriptions: [
             {   
                 language: 'en',
                 summary: 'Many members have composite flowers and bracts in two or more rows (Artichoke). Largest family in northern latitudes and second only to orchid family world.',
@@ -19,7 +20,8 @@ export const taxa = [
     {
         taxon: "family",
         name: 'Apiaceae',
-        aka: [{ en :['Umbelliferae', 'Umbellifers', 'Celery family', 'Carrot family', 'Parsely family']}],
+        alt: ['Umbelliferae'],
+        names: [{ language: "en", names:[ 'Carrot or Parsley family', 'Umbellifers', 'Celery family', 'Carrot family', 'Parsely family']}],
         "wiki-entry": "https://en.wikipedia.org/wiki/Apiaceae",
         "eol-entry": "http://eol.org/pages/4200/overview",
         thumb: 'https://media.eol.org/content/2014/04/16/16/98519_88_88.jpg',
@@ -28,7 +30,7 @@ export const taxa = [
                     'Myrrhis odorata', 'Pimpinella anisum', 'Levisticum officinale', 'Pastinaca sativa'],
         species: 3700,
         toxic: { members:['Conium maculatum'], level: 8 },
-        description: [
+        descriptions: [
             { 
                 summary: 'A family of mostly aromatic flowering plants that includes species such as carrot, celery, cumin, parsley and coriander, and the posionouse hemlocks.',
                 identification: 'Compound, termial umbels radiating from a single point. Hollow flower stalks.',
@@ -47,7 +49,8 @@ export const taxa = [
     {
         taxon: "family",
         name: 'Lamiaceae',
-        aka: [{ en :['Labiatae', 'Mint', 'Deadnettles']}],
+        alt: ['Labiatae'],
+        names: [{ language: "en", names:[ 'Mint or Deadnettles', 'Mint or Basil', 'Labiatae', 'Mint', 'Deadnettles']}],
         "wiki-entry": "https://en.wikipedia.org/wiki/Lamiaceae",
         "eol-entry": "http://eol.org/pages/4302/overview",
         thumb: "http://media.eol.org/content/2014/08/14/23/80866_88_88.jpg",
@@ -56,7 +59,7 @@ export const taxa = [
         aetherolea: ['Rosmarinus officinalis', 'Lavandula officinalis'],
         genera: 236,
         species: 7534,
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: 'Most members of the family are perennial or annual herbs with square stems.',
@@ -71,11 +74,12 @@ export const taxa = [
     {
         taxon: "family",
         name: 'Brassicaceae',
-        aka: [{ en :['Cruciferae', 'Mustards', 'Crucifers', 'Cabbage family']}],
-        thumb: 'http://media.eol.org/content/2015/04/30/10/19667_88_88.jpg',
+        alt: ['Cruciferae'],
+        names: [{ language: "en", names:['Mustards', 'Cruciferae', 'Crucifers', 'Cabbage family']}],
+        thumb: 'https://media.eol.org/content/2015/04/30/10/19667_88_88.jpg',
         species: 4060,
         genera: 372,
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: 'All members of this family are edible. Cauliflower, Brussel sprouts, broccoli, kohlrabi, cabbage and kale are bred from the single species, Brassica oleracea.',
@@ -86,11 +90,11 @@ export const taxa = [
     {
         taxon: "family",
         name: 'Amaryllidaceae',
-        aka: [ { en: ['Amaryllis']}],
-        thumb: 'http://media.eol.org/content/2015/01/27/22/09266_98_68.jpg',
+        names: [ { language: "en", names: ['Amaryllis']}],
+        thumb: 'https://media.eol.org/content/2015/01/27/22/09266_98_68.jpg',
         species: 1600,
         genera: 75,
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: 'The subfamily Allioideae contains a number of important food crops, including onion, garlic, leek, and chives.'
@@ -100,11 +104,11 @@ export const taxa = [
     {
         taxon: "order",
         name: 'Lepidoptera',
-        aka: [ { en :['Butterflies and Moths']}],
+        names: [ { language: "en", names:['Butterflies and Moths']}],
         thumb: 'https://media.eol.org/content/2017/01/25/21/74379_88_88.jpg',
         species: 180000,
         families: 126,
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: 'With the exception of a few moths, adult lepidopterans have two pairs of wings. The family name is derived from the Greek, meaning “scaly winged”.'
@@ -118,17 +122,24 @@ export const taxa = [
         taxon: "order",
         name: "Hymenoptera",
         thumb: "http://media.eol.org/content/2013/02/03/12/43681_98_68.jpg",
-        aka: [ { en: ['Ants, Bees, and Wasps']} ],
+        names: [ { language: "en", names: ['Ants, Bees, and Wasps']} ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: ""
+            }
+        ],
         species: 150000
     },
     {
         taxon: "family",
         name: "Apidae",
+        names: [ { language: "en", names: ['Bees']}],
         thumb: "http://media.eol.org/content/2013/02/03/12/43681_98_68.jpg",
         species: 5700,
         members: ["Apis mellifera"],
         role: ["pollinator"],
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: "Although the most visible members of this family are social, the vast majority of apid bees are solitary."
@@ -140,9 +151,9 @@ export const taxa = [
         taxon: 'order',
         name: "Coleoptera",
         thumb: "http://media.eol.org/content/2015/01/26/11/41088_88_88.jpg",
-        aka: [ { en: ['Beetles']} ],
+        names: [ { language: "en", names: ['Beetles']} ],
         species: 400000,
-        description: [
+        descriptions: [
             {
                 language: "en",
                 summary: "Their front pair of wings is hardened into wing-cases, elytra, distinguishing them from most other insects."
@@ -153,9 +164,9 @@ export const taxa = [
         taxon: 'order',
         name: "Diptera",
         thumb: "http://media.eol.org/content/2015/01/31/00/39232_88_88.jpg",
-        aka: [ { en: ['Flies']} ],
+        names: [ { language: "en", names: ['Flies']} ],
         species: 150000,
-        description: [
+        descriptions: [
             {
                 language: "en",
                 summary: "Insects of this order use only a single pair of wings to fly, the hindwings having evolved into advanced mechanosensory organs known as halteres, which act as high-speed sensors of rotational movement and allow dipterans to perform advanced aerobatics."
@@ -166,11 +177,12 @@ export const taxa = [
         taxon: 'family',
         name: 'Poaceae',
         thumb: "http://media.eol.org/content/2012/05/23/07/89214_88_88.jpg",
-        aka: [ { en: ['Poaceae', 'Gramineae', 'Grasses'] } ],
+        alt: ['Poaceae', 'Gramineae'],
+        names: [ { language: "en", names: ['Grasses'] } ],
         "wiki-entry": 'https://en.wikipedia.org/wiki/Poaceae',
         species: 1200, 
         genera: 780,
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: 'Members have stems that are hollow except at the nodes and narrow alternate leaves borne in two ranks. The lower part of each leaf encloses the stem, forming a leaf-sheath.'
@@ -181,10 +193,10 @@ export const taxa = [
         taxon: 'family',
         name: 'Zingiberaceae',
         thumb: "http://media.eol.org/content/2012/01/25/15/09074_98_68.jpg",
-        aka: [ { en: 'Ginger family'} ],
+        names: [ { language: "en", names: ['Ginger family']} ],
         species: 1600,
         genera: 50,
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: 'Aromatic herbaceous plants that are self-supporting or epiphytic. Species include important spices and plants with medicinal properties.'
@@ -195,10 +207,10 @@ export const taxa = [
         taxon: 'family',
         name: 'Piperaceae',
         thumb: "http://media.eol.org/content/2017/01/30/20/37424_88_88.jpg",
-        aka: [ { en: ['Pepper family']} ],
+        names: [ { language: "en", names: ['Pepper family']} ],
         species: 3600,
         genera: 13,
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: 'Members grow as small trees, shrubs, perennial and annual herbs. The leaves have a pungent flavour.'
@@ -209,11 +221,12 @@ export const taxa = [
         taxon: 'family',
         name: 'Fabaceae',
         thumb: "http://media.eol.org/content/2010/03/24/13/32972_98_68.jpg",
-        aka: [ { en: ['Leguminosae','Pea family', 'Bean family', 'Legumes']} ],
+        alt: ['Leguminosae'],
+        names: [ { language: "en", names: ['Pea family', 'Bean family', 'Legumes']} ],
         toxic: { members:['Hedysarum alpinum'], level: 1},
         species: 19000,
         genera: 751,
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: 'Members are easily recognized by their fruit (legume), their distinctive formation of petals ("banner, wings, and keel") or by their pinnate leaves (Mimosa).',
@@ -227,11 +240,11 @@ export const taxa = [
         taxon: 'family',
         name: 'Rosaceae',
         thumb: "http://media.eol.org/content/2014/08/25/10/53156_88_88.jpg",
-        aka: [ { en: ['Rose family']} ],
+        names: [ { language: "en", names: ['Rose family']} ],
         species: 4828,
         toxic: { members:['Conium maculatum'], level: 8 },
         genera: 91,
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: 'Members include edible fruits (apples, pears, apricots, peaches) and ornamental plants (roses).'
@@ -244,10 +257,10 @@ export const taxa = [
         taxon: 'family',
         name: 'Rutaceae',
         thumb: "http://media.eol.org/content/2012/05/23/09/05989_98_68.jpg",
-        aka: [ { en: ['Citrus family', 'Rue family']} ],
+        names: [ { language: "en", names: ['Citrus family', 'Rue family']} ],
         species: 1600,
         genera: 160,
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: 'Flowers divides into 4 or 5 parts, usually with strong scents. Commonly known as the Rue or Citrus family.'
@@ -260,10 +273,10 @@ export const taxa = [
         taxon: 'family',
         name: 'Cucurbitaceae',
         thumb: "http://media.eol.org/content/2011/08/04/10/10257_88_88.jpg",
-        aka: [ { en: ['Cucurbits', 'Gourd family', 'Gourds, Melons, Squash, & Cucumbers']} ],
+        names: [ { language: "en", names: ['Gourd family', 'Cucurbits', 'Gourds, Melons, Squash, & Cucumbers']} ],
         species: 975,
         genera: 98,
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: 'Members grow in the tropics and temperate areas; those with edible fruits were among the earliest cultivated plants in both the Old and New Worlds.'
@@ -276,10 +289,10 @@ export const taxa = [
         taxon: 'family',
         name: 'Amaranthaceae',
         thumb: "http://media.eol.org/content/2012/06/12/15/54548_88_88.jpg",
-        aka: [ { en: ['Amaranth family', 'Pigweed']} ],
+        names: [ { language: "en", names: ['Amaranth family', 'Pigweed']} ],
         species: 2040,
         genera: 165,
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: 'Many of the species are halophytes, tolerating salty soils, or grow in dry steppes or semi-deserts.'
@@ -292,10 +305,10 @@ export const taxa = [
         taxon: 'family',
         name: 'Solanaceae',
         thumb: "http://media.eol.org/content/2012/06/12/16/57629_98_68.jpg",
-        aka: [ { en: ['Nightshades']} ],
+        names: [ { language: "en", names: ['Nightshades']} ],
         species: 2700,
         genera: 98,
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: 'Members range from annual and perennial herbs to vines, lianas, epiphytes, shrubs, and trees, and include agricultural crops, medicinal plants, and spices.'
@@ -308,10 +321,10 @@ export const taxa = [
         taxon: 'family',
         name: 'Moraceae',
         thumb: "http://media.eol.org/content/2014/08/15/04/78512_88_88.jpg",
-        aka: [ { en: ['Mulberry family', 'Fig family']} ],
+        names: [ { language: "en", names: ['Mulberry family', 'Fig family']} ],
         species: 1100,
         genera: 38,
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: 'Members known for their fleshy fruit containing seeds. Widespread in tropical and subtropical regions.'
@@ -324,10 +337,10 @@ export const taxa = [
         taxon: 'family',
         name: 'Vitaceae',
         thumb: "http://media.eol.org/content/2013/12/08/20/40721_88_88.jpg",
-        aka: [ { en: ['Wild Grape Family']} ],
+        names: [ { language: "en", names: ['Wild Grape Family']} ],
         species: 910,
         genera: 14,
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: 'The berries of Vitis species, commonly known as grapes, are an important fruit crop and, when fermented, produce wine.'
@@ -340,10 +353,10 @@ export const taxa = [
         taxon: 'family',
         name: 'Lauraceae',
         thumb: "http://media.eol.org/content/2012/06/13/03/98939_88_88.jpg",
-        aka: [ { en: ['Laurel Family']} ],
+        names: [ { language: "en", names: ['Laurel Family']} ],
         species: 2850,
         genera: 45,
-        description: [
+        descriptions: [
             {
                 language: 'en',
                 summary: 'The family has a worldwide distribution in tropical and warm climates from low-lying to montane. Frequently aromatic trees and shrubs.'

@@ -17,7 +17,9 @@
     --snap-success: rgb(41, 108, 44);
     
     --snap-link: rgb(0, 42, 84);
-    --snap-info-background: rgb(86, 114, 165);
+    --snap-info-background: rgb(97, 109, 25);
+    --snap-question-background: rgb(0, 49, 105);
+    --snap-question-radio: rgb(138, 183, 234);
 
     --snap-progress-bg: rgb(45,45,45);
     --snap-progress-bar: rgb(233, 232, 111);
