@@ -341,7 +341,8 @@ progress::-moz-progress-bar {
 
 .species-family {
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: .1em;
+  font-size: 1.2em;
 }
 
 .species-card-name {
@@ -356,7 +357,7 @@ progress::-moz-progress-bar {
   font-size: 1.1em;
 }
 
-.data-box {  
+.data-box, .id-box {  
   display: flex;
 }
 
@@ -364,19 +365,38 @@ progress::-moz-progress-bar {
   flex: auto;
 }
 
-.data-box > div:nth-child(2) {  
-  padding: .25em .5em 0 .5em;
-  color: var(--snap-text-light);
-  background-color: var(--snap-info-background);
+.id-box > div:nth-child(1) {
+  flex: 4;
+}
+
+.data-box > div:nth-child(2), .id-box > div:nth-child(2) {  
+  padding: .25em .5em;
+  color: var(--snap-text-light);  
   border-radius: .1rem;
   display: flex;
   flex-direction: column;
   font-size: .9em;
 }
 
+.data-box > div:nth-child(2) {
+  text-align: left;
+  background-color: var(--snap-info-background);
+  letter-spacing: .05em;
+}
+
+.id-box > div:nth-child(2) {  
+  text-align: left;
+  flex: auto;
+  background-color: var(--snap-id-background);
+}
+
 .taxon-data {
   flex: auto;
   margin: 0;
+}
+
+.taxon-members {
+  font-style: italic;
 }
 
 .family-name {
@@ -592,7 +612,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .species-question.btn, .species-answer.btn, .btn-placeholder.btn {
   color: var(--snap-text-dark);
   background-color: var(--snap-block-light);
-  padding: 0 1em .5em;
 }
 
 .species-answer {        
@@ -680,6 +699,11 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .radio-buttons label {
   color: var(--snap-text-dark);
   background-color: var(--snap-question-radio);
+  width: 100%;
+}
+
+.radio-buttons .btn {
+  text-align: left;
 }
 
 .left-grid, .species-card-wiki-entry,
@@ -693,7 +717,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .badge-light {
   color: var(--snap-text-light);
-  background-color: var(--snap-lesson);
+  background-color: var(--snap-info-background);
+  margin: 0 0 0 .25em;
 }
 
 .question-container {

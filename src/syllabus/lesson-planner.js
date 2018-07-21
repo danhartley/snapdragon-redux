@@ -7,7 +7,8 @@ const { summary, history, specimen, epithets } = screens;
 
 const createLessonPlan = (config, collection) => {
     const { lesson: { name: lessonName, level: { name: levelName }}, moduleSize, excludeRevision, isPortraitMode } = config;
-    const layouts = [ ...getLayouts(config), ...getWildcardLayouts([ [specimen, epithets] ], collection, moduleSize) ];
+    const wildcardLayouts = getWildcardLayouts([ [specimen, epithets] ], collection, moduleSize);
+    const layouts = getLayouts(config);
     return createLesson(
         lessonName, 
         levelName, 
@@ -16,7 +17,8 @@ const createLessonPlan = (config, collection) => {
         isPortraitMode, 
         layouts, 
         [ summary, history ],
-        collection
+        collection,
+        wildcardLayouts
     );        
 };
 

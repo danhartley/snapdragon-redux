@@ -1,28 +1,39 @@
 <div class="snapdragon-container species-card js-species-card">
     <div class="card">
-            <div class="species-family">
-                <span>{{ name }}</span><span class="badge badge-light">{{ occurrences }}</span> <span class="sr-only">species of this family in the collection</span>
-                <img class="js-img-family" src="{{ img }}" alt="">                    
-            </div>
-            <div class="taxon-card-header">{{ common }}</div>
-            <div>
-                <div class="data-box">
-                    <div></div>
-                    <div>
-                        <div class="taxon-data">Taxon: <span class="species-family">{{ rank }}</span></div>
-                        <div class="taxon-data">Species: {{ species }}</div>
-                        <div class="taxon-data">Genera: {{ genera }}</div>
-                    </div>
+        <div class="species-family">
+            <span>{{ name }}</span><span class="badge badge-light">{{ occurrences }}</span> <span class="sr-only">species of this family in the collection</span>
+            <img class="js-img-family" src="{{ img }}" alt="">                    
+        </div>
+        <div class="taxon-card-header">{{ common }}</div>
+        <div>
+            <div class="data-box">
+                <div></div>
+                <div>
+                    <div class="taxon-data">Taxon: <span class="species-family">{{ rank }}</span></div>
+                    <div class="taxon-data">Species: {{ species }}</div>
+                    <div class="taxon-data">Genera: {{ genera }}</div>
                 </div>
             </div>
-            <div>{{ identification }}</div>
-            <div class="landscape"><span class="snap-alert-fg js-taxon-toxic-warning"></span> {{ toxic }}</div>
-            <div class="landscape"><a href="{{ eol }}" target="_blank" class="underline-link">EOL page</a></div>
-            <div class="landscape"><a href="{{ wiki }}" class="underline-link" data-toggle="modal" data-target="#externalPageModal">Wikipedia entry</a></div>
+        </div>
+        <div>
+            <div class="id-box">
+                <div></div>
+                <div>
+                    <div>{{ identification }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="landscape">{{ summary }}</div>
+        <div class="taxon-members">{{ members }}  </div>
+        <div class="landscape"><span class="snap-alert-fg js-taxon-toxic-warning"></span> {{ toxic }}</div>
+        <div class="landscape">
+            <a href="{{ eol }}" target="_blank" class="underline-link">EOL</a>
+            <a href="{{ wiki }}" class="underline-link" data-toggle="modal" data-target="#externalPageModal">WIKI</a>
+        </div>
     </div>
     <div class="species-card-btn action-update js-species-card-btn">
         <div></div>
-        <button class="btn btn-light">Next species</button>
+        <button class="btn btn-light">Continue</button>
     </div>
 </div>
     

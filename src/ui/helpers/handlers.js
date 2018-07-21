@@ -63,10 +63,11 @@ export const modalBackgroundImagesHandler = (images, item) => {
     images.forEach(image => {
         image.addEventListener('click', event => {            
             const img = event.target;
-            const src = img.style.backgroundImage.slice(4, -1).replace(/"/g, "");
+            let src = img.style.backgroundImage.slice(4, -1).replace(/"/g, "");
             if(src) {
+                src = src.indexOf('https') > -1 ? src : `https://media.eol.org/content/${src}`;
                 DOM.modalImageTitle.innerHTML = item.name;
-                const style = `background-image: url(https://media.eol.org/content/${src}); background-size: cover;`;
+                const style = `background-image: url(${src}); background-size: cover;`;
                 DOM.modalImage.style = style;
             }
         })
@@ -77,7 +78,7 @@ export const modalImageHandler = (image) => {
     image.addEventListener('click', event => {            
         const img = event.target;        
         DOM.modalImageTitle.innerHTML = img.id;
-        img.src = img.src.indexOf('http') > 0 ? img.src : `https://media.eol.org/content/${img.src}`;
+        img.src = img.src.indexOf('http') > -1 ? img.src : `https://media.eol.org/content/${img.src}`;
         const style = `background-image: url(${img.src}); background-size: cover;`;
         DOM.modalImage.style = style;            
     })

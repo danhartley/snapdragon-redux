@@ -1,6 +1,6 @@
 import { screens } from 'snapdragon/screen-layouts';
 
-const { specimen, revision, species, vernaculars, scientifics, text, command, leaf, leafName, family, taxon } = screens;
+const { specimen, revision, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon } = screens;
 
 const speciesRevision = {
     name: 'revision',
@@ -33,6 +33,15 @@ const familyMatch = {
     screens: [
         { ...specimen },
         { ...family }
+    ]
+};
+
+const familyStripsMatch = {
+    name: 'test',
+    score: 1,
+    screens: [
+        { ...specimen },
+        { ...familyStrips }
     ]
 };
 
@@ -161,7 +170,7 @@ const portraitLesson1 = {
         {   id: 1,
             name: 'Level 1',
             description: 'Match species',
-            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, familyMatch ]
+            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]
         },
         {   id: 2,
             name: 'Level 2',

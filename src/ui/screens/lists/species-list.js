@@ -21,17 +21,20 @@ export const renderSpeciesCollectionList = (collection, append = false) => {
 
     let parent;
 
-    if(append) {
-        template.innerHTML += speciesTemplate;
-        parent = document.querySelector('.list-group-collection');
-        const scrollableArea = document.querySelector('.scrollable');
-        scrollableArea.style.height = scrollableArea.offsetHeight / 2 + 'px';
-    } else {
+    // if(append) {
+    //     template.innerHTML = speciesTemplate;
+    //     const clone = document.importNode(template.content, true);
+    //     const listGroup = clone.querySelector('.list-group');
+    //     parent = document.querySelector('.list-group-collection');
+    //     parent.innerHTML += listGroup;
+    //     const scrollableArea = document.querySelector('.scrollable');
+    //     scrollableArea.style.height = scrollableArea.offsetHeight / 2 + 'px';
+    // } else {
         parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
-        parent.innerHTML = '<div class="snapdragon-container"></div>';
-        parent = parent.querySelector('.snapdragon-container');
+        parent.innerHTML = '<div class="snapdragon-container js-species-list"></div>';
+        parent = parent.querySelector('.snapdragon-container.js-species-list');
         template.innerHTML = speciesTemplate;
-    }
+    // }
 
     renderTemplate({ collection }, template.content, parent);
 

@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -34,12 +36,13 @@ export const renderTaxonCard = collection => {
         common: taxon.names ? taxon.names.find(name => name.language === language).names[0] : taxon.alt,
         species: taxon.species || '--',
         genera: taxon.genera || '--',
-        identification: taxon.descriptions.find(name => name.language === language).identification ? `Quick identification: ${taxon.descriptions.find(name => name.language === language).identification}` : taxon.descriptions.find(name => name.language === language).summary,
-        descriptions: taxon.descriptions.find(name => name.language === language).summary || '',
+        identification: `QUICK ID :- ${taxon.descriptions.find(name => name.language === language).identification}`,
+        summary: taxon.descriptions.find(name => name.language === language).summary || '',
         eol: taxon['eol-entry'] || '',
         wiki: taxon['wiki-entry'] || '',
         occurrences: occurrences[taxon.name],
-        toxic: taxon.toxic ? `Toxic species: ${taxon.toxic.members.join(', ')}` : ''
+        toxic: taxon.toxic ? `Toxic species: ${taxon.toxic.members.join(', ')}` : '',
+        members: taxon.members ? R.take(2, taxon.members).join(', ') : ''
     }
 
     clone.querySelector('button').addEventListener('click', event => {

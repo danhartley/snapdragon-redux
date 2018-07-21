@@ -10,11 +10,15 @@
       
     .scrollable {
         overflow-y: scroll;
-        height: 65vh;
+        height: 75vh;
     }
 
     .skills-collections button {
         margin: 1em 0;
+    }
+
+    .id-box > div:nth-child(2) {  
+        flex: 6;
     }
 
     .action-update > div:nth-child(1), .response-update > div:nth-child(1) {
@@ -73,15 +77,19 @@
           width: 100%;
       }
 
-      .letterbox-entry input {
-          width: 75%;
-          font-size: 1.5em;
-          padding: .25em;
-      }
+    .letterbox-entry input {
+        width: 75%;
+        font-size: 1.5em;
+        padding: .25em;
+    }
 
-      .letterbox-entry button:disabled {
-        color: var(--snap-text-dark);
-      }
+    .letterbox-entry button:disabled {
+    color: var(--snap-text-dark);
+    }
+
+    .radio-buttons label {
+        width: initial;
+    }
 
     .flex-provider .skills {
         display: block;

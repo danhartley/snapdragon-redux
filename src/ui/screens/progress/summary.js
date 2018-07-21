@@ -20,18 +20,19 @@ export const renderSummary = (history) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    renderTemplate({ score, history, collection, config }, template.content, parent);
-    
-    const learnMoreBtn = document.querySelector('.js-learn-more-btn');
-    const nextLevelTxt = document.querySelector('.js-next-level-txt');
-    const endOfCollectionTxt = document.querySelector('.js-end-collection-txt');
-
     const levelComplete = collection.currentRound === collection.rounds;
     const lastLevel = config.isPortraitMode ? 4 : 5;
     const collectionComplete = config.lesson.level.id === lastLevel;
 
-    (levelComplete && !collectionComplete) ? nextLevelTxt.style.display = 'inline-block' : nextLevelTxt.style.display = 'none';
-    collectionComplete ? endOfCollectionTxt.style.display = 'inline-block' : endOfCollectionTxt.style.display = 'none';
+    const summary = (levelComplete && !collectionComplete) 
+        ?   `Congratulations! You have completed level ${config.lesson.level.id}. 
+            Continue with the lesson to learn more species from ${collection.name}.` 
+        :   `You have completed the collection. Well done! 
+            Begin a new collection, review questions you got wrong, or consolidate what you have just learnt.`
+
+    renderTemplate({ score, history, collection, config, summary }, template.content, parent);
+    
+    const learnMoreBtn = document.querySelector('.js-learn-more-btn');
 
     const handleBtnClickEvent = () => {
         
