@@ -97,6 +97,13 @@ const family = {
   question: 'Match species family',
 };
 
+const familyStrips = {
+  name: 'family-strips',
+  headers: { long: 'Match species family', short: 'Match species family'},
+  domain: 'collection',
+  question: 'Match species family',
+};
+
 const taxon = {
   name: 'taxon-card',
   domain: 'collection'
@@ -120,5 +127,6 @@ export const screens = {
 
   epithets,
   family,
+  familyStrips,
   taxon
 };

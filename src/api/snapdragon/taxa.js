@@ -12,10 +12,11 @@ export const taxa = [
         descriptions: [
             {   
                 language: 'en',
-                summary: 'Many members have composite flowers and bracts in two or more rows (Artichoke). Largest family in northern latitudes and second only to orchid family world.',
+                summary: 'Worldwide distribution, from the polar regions to the tropics. Second only to the orchid family in size.',
                 identification: 'Composite flowers with either disk or ray flowers, or both.'
             }
-        ]
+        ],
+        members: ['Cynara cardunculus', 'Helianthus annuus']
     },
     {
         taxon: "family",
@@ -29,7 +30,8 @@ export const taxa = [
                     'Anethum graveolens', 'Conium maculatum', 'Cuminum cyminum', 'Carum carvi', 'Anthriscus cerefolium',
                     'Myrrhis odorata', 'Pimpinella anisum', 'Levisticum officinale', 'Pastinaca sativa'],
         species: 3700,
-        toxic: { members:['Conium maculatum'], level: 8 },
+        genera: 400,
+        toxic: { members:['Conium maculatum'] },
         descriptions: [
             { 
                 summary: 'A family of mostly aromatic flowering plants that includes species such as carrot, celery, cumin, parsley and coriander, and the posionouse hemlocks.',
@@ -85,7 +87,8 @@ export const taxa = [
                 summary: 'All members of this family are edible. Cauliflower, Brussel sprouts, broccoli, kohlrabi, cabbage and kale are bred from the single species, Brassica oleracea.',
                 identification: '4 petals, 6 stamen (4 tall, 2 short)'
             }
-        ]
+        ],
+        members: ['Arabidopsis thaliana', 'Brassica oleracea']
     },
     {
         taxon: "family",
@@ -97,7 +100,8 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'The subfamily Allioideae contains a number of important food crops, including onion, garlic, leek, and chives.'
+                summary: 'The subfamily Allioideae contains a number of important food crops, including onion, garlic, leek, and chives. Formerly part of the Lily family. Contains the subfamily Agapanthus.',
+                identification: '3 undifferentiated petals and sepals (tepals). Lily-like flowers, onion-like bulbs. Flowerheads wrapped in a bract.'
             }
         ]
     },
@@ -185,9 +189,11 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Members have stems that are hollow except at the nodes and narrow alternate leaves borne in two ranks. The lower part of each leaf encloses the stem, forming a leaf-sheath.'
+                summary: 'Cereal grains wheat (Triticum), rice (Oryza), wild rice (Zizania), corn (Zea), oats (Avena), barley (Hordeum), millet (Echinochloa) and rye (Secale) belong to this family. 3 (rarely 2 or 6) stamen. Ovary usually matures into 1 seed. Bracts surrounding the flower are also known as chaff. Hollow stems except at the nodes and narrow alternate leaves borne in two ranks. The lower part of each leaf encloses the stem, forming a leaf-sheath.',
+                identification: 'Grasses with distinctive nodes on the flower stem. Non-showy flowers.'
             }
-        ]
+        ],
+        toxic: { members: ['Lolium temulentum'] }
     },
     {
         taxon: 'family',
@@ -213,7 +219,8 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Members grow as small trees, shrubs, perennial and annual herbs. The leaves have a pungent flavour.'
+                summary: 'Small trees, shrubs, perennial and annual herbs. Includes Piper nigrum the source of both black and white pepper.',
+                identification: 'Dense flower spikes of tiny radially symmetrical flowers with a bract below and no petals or sepals. Soft, fleshy or succulent leaves with pungent flavour.'
             }
         ]
     },
@@ -223,16 +230,17 @@ export const taxa = [
         thumb: "http://media.eol.org/content/2010/03/24/13/32972_98_68.jpg",
         alt: ['Leguminosae'],
         names: [ { language: "en", names: ['Pea family', 'Bean family', 'Legumes']} ],
-        toxic: { members:['Hedysarum alpinum'], level: 1},
+        toxic: { members:['Hedysarum alpinum']},
         species: 19000,
         genera: 751,
         descriptions: [
             {
                 language: 'en',
-                summary: 'Members are easily recognized by their fruit (legume), their distinctive formation of petals ("banner, wings, and keel") or by their pinnate leaves (Mimosa).',
-                identification: 'Many have 5 petals in a distinctive "banner, wings, and keel" form, and/or pinnate leaves. Characterisic pod or legume fruit.'
+                summary: 'Widely distributed, the third-largest land plant family. Genera include Mimosa and Acacia. Food staples pea, alfafa, soybean, chickpea, peanut, beans, carob and liqourice.',
+                identification: 'Many have 5 petals in a distinctive "banner, wings, and keel" form, and/or pinnate leaves (Mimosa). Characterisic pod or legume fruit.'
             }
         ],
+        members: ['Pisum sativum', 'Glycine max', 'Cicer arietinum', 'Arachis hypogaea'],
         "eol-entry": "http://eol.org/pages/4277/overview",
         "wiki-entry": "https://en.wikipedia.org/wiki/Fabaceae"
     },
@@ -242,12 +250,13 @@ export const taxa = [
         thumb: "http://media.eol.org/content/2014/08/25/10/53156_88_88.jpg",
         names: [ { language: "en", names: ['Rose family']} ],
         species: 4828,
-        toxic: { members:['Conium maculatum'], level: 8 },
+        toxic: { members:['Conium maculatum'] },
         genera: 91,
         descriptions: [
             {
                 language: 'en',
-                summary: 'Members include edible fruits (apples, pears, apricots, peaches) and ornamental plants (roses).'
+                summary: 'Members include edible fruits (apples, pears, apricots, peaches) and ornamental plants (roses). Genera include Sorbus, Crataegus and Prunus. Mostly decidous. Worldwide, most diverse in northern hemisphere.',
+                identification: 'Highly fragrant flowers. 5 sepals and 5 petals. Stamen often numerous. Serrated, oval-shaped leaves.'
             }
         ],
         "eol-entry": "http://eol.org/pages/8097/overview",
@@ -263,7 +272,8 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Flowers divides into 4 or 5 parts, usually with strong scents. Commonly known as the Rue or Citrus family.'
+                summary: 'Includes woody shrubs and trees, distributed worldwide, especially in warm temperate and tropical regions. Commonly known as the Rue or Citrus family.',
+                identification: 'Flowers that divide into 4 or 5 parts, usually with strong scents.'
             }
         ],
         "eol-entry": "http://eol.org/pages/582200/overview",
@@ -311,9 +321,11 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Members range from annual and perennial herbs to vines, lianas, epiphytes, shrubs, and trees, and include agricultural crops, medicinal plants, and spices.'
+                summary: 'Members range from annual and perennial herbs to vines, lianas, epiphytes, shrubs, and trees, and include agricultural crops (potato), medicinal plants, and spices. Many contain potent alkaloids (tobacco).',
+                identification: 'Alternate leaves. 5 united petals and sepals. 2 cells in the ovary: berry (tomato) or capsule (petunia).'
             }
         ],
+        members: ['Nicotiana tabacum', 'Solanum tuberosum'],
         "eol-entry": "http://eol.org/pages/4437/overview",
         "wiki-entry": "https://en.wikipedia.org/wiki/Solanaceae"
     },

@@ -42,7 +42,7 @@ export const renderRadioButtons = (collection) => {
         });
     };
 
-    const familyTypes = config.isPortraitMode ? [ 'species-to-family'] : [ 'species-to-family', 'description-to-family', 'family-to-description'];
+    const familyTypes = config.isPortraitMode ? [ 'species-to-family'] : [ 'species-to-family', 'family-to-description'];
 
     const screen = layout.screens.find(screen => screen.name === 'family');
     if(screen) {

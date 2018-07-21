@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { renderSummary } from 'ui/screens/progress/summary';
 
-export const createLesson = (lessonName, levelName, moduleSize, excludeRevision, isPortraitMode, layouts, progressScreens, collection) => {
+export const createLesson = (lessonName, levelName, moduleSize, excludeRevision, isPortraitMode, layouts, progressScreens, collection, wildcardLayouts) => {
     
     if(excludeRevision) {
         layouts = layouts.filter(layout => layout.name !== 'revision');
@@ -19,8 +19,8 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         } while (i < moduleSize);
     });
 
-    const revisionLayouts = lessonPlan.splice(0,moduleSize);
-    const shuffledLessonLayouts = utils.shuffleArray(lessonPlan);
+    const revisionLayouts = excludeRevision ? [] : lessonPlan.splice(0,moduleSize);
+    const shuffledLessonLayouts = utils.shuffleArray([ ...lessonPlan, ...wildcardLayouts]);
     const offSet = (collection.currentRound - 1) * moduleSize;
 
     shuffledLessonLayouts.forEach( (layout, i) => {

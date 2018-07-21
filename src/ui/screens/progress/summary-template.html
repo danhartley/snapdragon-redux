@@ -1,12 +1,12 @@
 <div class="snapdragon-container">
     <div class="card align-left">
-            <p>You answered {{ score.correct }} out of {{ score.total }} correctly in the last round.</p>
-            <p>Your overall score for this collection is {{ history.correct }} out of {{ history.total }}.</p>
-            <p>You have completed {{ collection.currentRound }} of {{ collection.rounds }} rounds at this level.</p>
-            <div class="js-next-level-txt">Congratulations! You have completed level {{ config.lesson.level.id }}. Continue with the lesson to learn more species from {{ collection.name }}.</div>
-            <div class="js-end-collection-txt">You have completed the collection. Well done! Begin a new collection, review questions you got wrong, or consolidate what you have just learnt.</div>
-    </div>    
-    <div class="action-update">
-        <button class="btn btn-light learn-more-btn js-learn-more-btn">Continue lesson</button>
+        <p>You answered {{ score.correct }} out of {{ score.total }} correctly in the last round.</p>
+        <p>Your overall score for this collection is {{ history.correct }} out of {{ history.total }}.</p>
+        <p>You have completed {{ collection.currentRound }} of {{ collection.rounds }} rounds at this level.</p>
+        <p>{{ summary }}</p>
+    </div>
+    <div class="species-card-btn action-update">
+        <div></div>
+        <button class="btn btn-light js-learn-more-btn">Continue lesson</button>
     </div>
 </div>

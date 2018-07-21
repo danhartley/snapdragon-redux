@@ -1,6 +1,7 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
+import { renderTemplate } from 'ui/helpers/templating';
 import { scoringHandler, modalBackgroundImagesHandler } from 'ui/helpers/handlers';
 import landscapeTemplates from 'ui/screens/text-entry/text-entry-templates.html';
 import portraitTemplates from 'ui/screens/text-entry/text-entry-portrait-templates.html';
@@ -28,7 +29,9 @@ export const renderInput = (config, screen, question, callbackTime, item, render
     const parent = DOM.rightBody;
     parent.innerHTML = '';
     
-    parent.appendChild(clone);
+    // parent.appendChild(clone);
+    const txtQuestion = `Enter the common name for the species ${item.name}:`;
+    renderTemplate({ txtQuestion }, template.content, parent, clone);
 
     if(config.isPortraitMode) renderPortrait(item);
 
@@ -38,9 +41,9 @@ export const renderInput = (config, screen, question, callbackTime, item, render
 const renderPortrait = (item) => {
     const images = utils.shuffleArray(item.images).slice(0,4);
 
-    const backgroundImages = images.map(image => {
-            return `                
-                <div style='background-image: url(${image}); background-size: cover;' data-toggle="modal" data-target="#imageModal">                                      
+    const backgroundImages = images.map(image => {        
+        return `                
+                <div style='background-image: url(https://media.eol.org/content/${image}); background-size: cover;' data-toggle="modal" data-target="#imageModal">                                      
                 </div>
             `;
         }).join('');

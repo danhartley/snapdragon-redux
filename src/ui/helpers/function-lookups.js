@@ -28,6 +28,7 @@ const functions = [
     { name: 'leaf-text', func: renderNameEntry },
     { name: 'epithet', func: renderRadioButtons },
     { name: 'family', func: renderRadioButtons },
+    // { name: 'family-strips', func: renderFamilyDescriptions },
     { name: 'taxon-card', func: renderTaxonCard }
 ];
 
