@@ -4,9 +4,9 @@
     </div>
     <div class="list-group-container scrollable js-list-item-container">
         <ul class="list-group list-group-flush" data-repeat-item="{{ collection.items }}">
-            <li class="list-group-item js-list-item">
+            <li class="list-group-item js-list-item" data-toggle="modal" data-target="#imageModal" data-image="{{ item.image }}" data-id="{{ item.name }}">
                 <div>
-                    <img id="{{ item.name }}" src="https://media.eol.org/content/{{ item.image }}" alt="{{ item.name }}" data-toggle="modal" data-target="#imageModal">
+                    <img id="{{ item.name }}" src="https://media.eol.org/content/{{ item.image }}" alt="{{ item.name }}">
                 </div>
                 <div class="js-list-item-link" style="flex:3">
                     <span>{{ item.name }}</span>

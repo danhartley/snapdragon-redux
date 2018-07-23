@@ -75,11 +75,10 @@ export const modalBackgroundImagesHandler = (images, item) => {
 };
 
 export const modalImageHandler = (image) => {
-    image.addEventListener('click', event => {            
-        const img = event.target;        
-        DOM.modalImageTitle.innerHTML = img.id;
-        img.src = img.src.indexOf('http') > -1 ? img.src : `https://media.eol.org/content/${img.src}`;
-        const style = `background-image: url(${img.src}); background-size: cover;`;
+    image.addEventListener('click', event => {
+        const src  = `https://media.eol.org/content/${event.currentTarget.dataset.image}`;
+        DOM.modalImageTitle.innerHTML = event.currentTarget.dataset.id;
+        const style = `background-image: url(${src}); background-size: cover;`;
         DOM.modalImage.style = style;            
     })
 };
