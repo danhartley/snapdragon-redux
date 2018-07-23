@@ -17,7 +17,7 @@ export const renderHeaders = counter => {
 
     if(!layout) return;
 
-    const questionCount = layouts.length - config.moduleSize - 1;
+    const questionCount = layouts.filter(l => l.name === 'test').length;
 
     document.querySelector('progress').max = questionCount;
 

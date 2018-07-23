@@ -297,7 +297,7 @@ progress::-moz-progress-bar {
 .strip div {
     border: solid 1px;
     border-color: var(--snap-border-light);
-    padding: .25em;
+    padding: .25em .5em;
 }
 
 .vernacular-name {
@@ -581,6 +581,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .text-entry input {
   margin: .5em 0;
+  padding: 0 .25em;
   width: 100%;
 }
 

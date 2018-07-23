@@ -33,7 +33,7 @@ test('config should return next available level', () => {
 
 test('config should return current level where there is no next available level', () => {
     const level = lessonPlanner.nextLevel('Lesson 1', 'Level 4');
-    expect(level.name).toEqual('Level 5');
+    expect(level.name).toEqual('Level 4');
 });
 
 test('config should return current level where there is no previous available level', () => {

@@ -14,45 +14,66 @@ export const fruit = [
       ],
       "names": [
         {
-          "vernacularName": "European Grape",
+          "vernacularName": "Gartenbirnbaum",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Birnbaum",
+          "language": "de"
+        },
+        {
+          "vernacularName": "pear",
           "language": "en",
           "eol_preferred": true
         },
         {
-          "vernacularName": "Table grape",
+          "vernacularName": "Cultivated Pear",
           "language": "en"
         },
         {
-          "vernacularName": "Vine",
+          "vernacularName": "European Pear",
           "language": "en"
         },
         {
-          "vernacularName": "grape",
+          "vernacularName": "common pear",
           "language": "en"
         },
         {
-          "vernacularName": "grapes",
+          "vernacularName": "garden pear",
           "language": "en"
         },
         {
-          "vernacularName": "wild grape",
-          "language": "en"
+          "vernacularName": "pera",
+          "language": "es",
+          "eol_preferred": true
         },
         {
-          "vernacularName": "wine grape",
-          "language": "en"
+          "vernacularName": "peral",
+          "language": "es"
         },
         {
-          "vernacularName": "Videira",
-          "language": "pt"
+          "vernacularName": "Aigrin",
+          "language": "fr",
+          "eol_preferred": true
         },
         {
-          "vernacularName": "vinha",
-          "language": "pt"
+          "vernacularName": "Poirier cultivé, Poirier commun",
+          "language": "fr"
         },
         {
-          "vernacularName": "vinho",
-          "language": "pt"
+          "vernacularName": "pera",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Pero",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Pereira",
+          "language": "pt",
+          "eol_preferred": true
         }
       ],
       "descriptions": [

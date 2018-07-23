@@ -17,7 +17,7 @@ export const epithets = [
     },
     {
         "latin" : ["avium"],
-        "en" : ["birds"]
+        "en" : ["bird"]
     },
     {
         "latin" : ["ater", "nigrum"],

@@ -16,15 +16,15 @@ export const taxa = [
                 identification: 'Composite flowers with either disk or ray flowers, or both.'
             }
         ],
-        members: ['Cynara cardunculus', 'Helianthus annuus']
+        members: ['Cynara cardunculus', 'Helianthus annuus'],
+        "wiki-entry": "https://en.wikipedia.org/wiki/Asteraceae",
+        "eol-entry": "http://eol.org/pages/4206/overview"
     },
     {
         taxon: "family",
         name: 'Apiaceae',
         alt: ['Umbelliferae'],
-        names: [{ language: "en", names:[ 'Carrot or Parsley family', 'Umbellifers', 'Celery family', 'Carrot family', 'Parsely family']}],
-        "wiki-entry": "https://en.wikipedia.org/wiki/Apiaceae",
-        "eol-entry": "http://eol.org/pages/4200/overview",
+        names: [{ language: "en", names:[ 'Carrot or Parsley family', 'Umbellifers', 'Celery family', 'Carrot family', 'Parsely family']}],        
         thumb: 'https://media.eol.org/content/2014/04/16/16/98519_88_88.jpg',
         members: [  'Daucus carota subsp. sativus', 'Coriandrum sativum', 'Petroselinum crispum', 'Foeniculum vulgare', 
                     'Anethum graveolens', 'Conium maculatum', 'Cuminum cyminum', 'Carum carvi', 'Anthriscus cerefolium',
@@ -45,8 +45,9 @@ export const taxa = [
                 aetherolea: ['Petroselinum crispum', 'Coriandrum sativum', 'Anethum graveolens'],
                 companion: true
          }
-        ]
-
+        ],
+        "wiki-entry": "https://en.wikipedia.org/wiki/Apiaceae",
+        "eol-entry": "http://eol.org/pages/4200/overview"
     },
     {
         taxon: "family",
@@ -71,7 +72,9 @@ export const taxa = [
                 petals: 5,
                 speals: 5
          }
-        ]
+        ],
+        "wiki-entry": "https://en.wikipedia.org/wiki/Lamiaceae",
+        "eol-entry": "http://eol.org/pages/4302/overview"
     },
     {
         taxon: "family",
@@ -88,7 +91,9 @@ export const taxa = [
                 identification: '4 petals, 6 stamen (4 tall, 2 short)'
             }
         ],
-        members: ['Arabidopsis thaliana', 'Brassica oleracea']
+        members: ['Arabidopsis thaliana', 'Brassica oleracea'],
+        "wiki-entry": "https://en.wikipedia.org/wiki/Brassicaceae",
+        "eol-entry": "http://eol.org/pages/4219/overview"
     },
     {
         taxon: "family",
@@ -103,7 +108,9 @@ export const taxa = [
                 summary: 'The subfamily Allioideae contains a number of important food crops, including onion, garlic, leek, and chives. Formerly part of the Lily family. Contains the subfamily Agapanthus.',
                 identification: '3 undifferentiated petals and sepals (tepals). Lily-like flowers, onion-like bulbs. Flowerheads wrapped in a bract.'
             }
-        ]
+        ],
+        "wiki-entry": "https://en.wikipedia.org/wiki/Amaryllidaceae",
+        "eol-entry": "http://eol.org/pages/8187/overview"
     },
     {
         taxon: "order",
@@ -133,7 +140,9 @@ export const taxa = [
                 summary: ""
             }
         ],
-        species: 150000
+        species: 150000,
+        "wiki-entry": "https://en.wikipedia.org/wiki/Hymenoptera",
+        "eol-entry": "http://eol.org/pages/648/overview"
     },
     {
         taxon: "family",
@@ -149,7 +158,8 @@ export const taxa = [
                 summary: "Although the most visible members of this family are social, the vast majority of apid bees are solitary."
             }
         ],        
-        "inat-link": "https://www.inaturalist.org/taxa/47221-Apidae"
+        "inat-link": "https://www.inaturalist.org/taxa/47221-Apidae",
+        "wiki-entry": "https://en.wikipedia.org/wiki/Apidae"
     },
     {
         taxon: 'order',
@@ -162,7 +172,9 @@ export const taxa = [
                 language: "en",
                 summary: "Their front pair of wings is hardened into wing-cases, elytra, distinguishing them from most other insects."
             }
-        ]
+        ],
+        "wiki-entry": "https://en.wikipedia.org/wiki/Coleoptera",
+        "eol-entry": "http://eol.org/pages/345/overview"
     },
     {
         taxon: 'order',
@@ -175,14 +187,16 @@ export const taxa = [
                 language: "en",
                 summary: "Insects of this order use only a single pair of wings to fly, the hindwings having evolved into advanced mechanosensory organs known as halteres, which act as high-speed sensors of rotational movement and allow dipterans to perform advanced aerobatics."
             }
-        ]
+        ],
+        "wiki-entry": "https://en.wikipedia.org/wiki/Diptera",
+        "eol-entry": "http://eol.org/pages/421/overview"
     },
     {
         taxon: 'family',
         name: 'Poaceae',
         thumb: "http://media.eol.org/content/2012/05/23/07/89214_88_88.jpg",
         alt: ['Poaceae', 'Gramineae'],
-        names: [ { language: "en", names: ['Grasses'] } ],
+        names: [ { language: "en", names: ['Grasses', 'True Grasses'] } ],
         "wiki-entry": 'https://en.wikipedia.org/wiki/Poaceae',
         species: 1200, 
         genera: 780,
@@ -193,7 +207,9 @@ export const taxa = [
                 identification: 'Grasses with distinctive nodes on the flower stem. Non-showy flowers.'
             }
         ],
-        toxic: { members: ['Lolium temulentum'] }
+        toxic: { members: ['Lolium temulentum'] },
+        "wiki-entry": "https://en.wikipedia.org/wiki/Poaceae",
+        "eol-entry": "http://eol.org/pages/8223/overview"
     },
     {
         taxon: 'family',
@@ -205,9 +221,13 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Aromatic herbaceous plants that are self-supporting or epiphytic. Species include important spices and plants with medicinal properties.'
+                summary: 'Aromatic herbaceous plants that are self-supporting or epiphytic. Species include important spices and plants with medicinal properties.',
+                identification: 'Orchid-like flowers. Fleshy rhizomes (underground stem).'
             }
-        ]
+        ],
+        members: ['Curcuma longa', 'Zingiber officinale', 'Elettaria cardamomum'],
+        "wiki-entry": "https://en.wikipedia.org/wiki/Zingiberaceae",
+        "eol-entry": "http://eol.org/pages/8183/overview"
     },
     {
         taxon: 'family',
@@ -222,7 +242,9 @@ export const taxa = [
                 summary: 'Small trees, shrubs, perennial and annual herbs. Includes Piper nigrum the source of both black and white pepper.',
                 identification: 'Dense flower spikes of tiny radially symmetrical flowers with a bract below and no petals or sepals. Soft, fleshy or succulent leaves with pungent flavour.'
             }
-        ]
+        ],
+        "wiki-entry": "https://en.wikipedia.org/wiki/Piperaceae",
+        "eol-entry": "http://eol.org/pages/4351/overview"        
     },
     {
         taxon: 'family',
@@ -305,9 +327,11 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Many of the species are halophytes, tolerating salty soils, or grow in dry steppes or semi-deserts.'
+                summary: 'Many of the species are halophytes, tolerating salty soils, or grow in dry steppes or semi-deserts. Many species use the C4 pathway tp fix carbon.',
+                identification: 'Red-colored plants. Leaves may be succulent or hairy.'
             }
         ],
+        members: ['Beta vulgaris', 'Spinacia oleracea'],
         "eol-entry": "http://eol.org/pages/4226/overview",
         "wiki-entry": "https://en.wikipedia.org/wiki/Amaranthaceae"
     },
@@ -355,9 +379,11 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'The berries of Vitis species, commonly known as grapes, are an important fruit crop and, when fermented, produce wine.'
+                summary: 'The berries of Vitis species, commonly known as grapes, are an important fruit crop and, when fermented, produce wine.',
+                identification: 'Climbing vines, tendrils and bunches of berries (grapes)'
             }
         ],
+        members: ['Vitis vinifera'],
         "eol-entry": "http://eol.org/pages/4382/overview",
         "wiki-entry": "https://en.wikipedia.org/wiki/Vitaceae"
     },

@@ -24,15 +24,22 @@ export const renderSummary = (history) => {
     const lastLevel = config.isPortraitMode ? 4 : 5;
     const collectionComplete = config.lesson.level.id === lastLevel;
 
-    const summary = (levelComplete && !collectionComplete) 
-        ?   `Congratulations! You have completed level ${config.lesson.level.id}. 
-            Continue with the lesson to learn more species from ${collection.name}.` 
-        :   `You have completed the collection. Well done! 
-            Begin a new collection, review questions you got wrong, or consolidate what you have just learnt.`
+    let summary; 
+    if(!levelComplete) {
+        summary = 'Keep going...';
+    }
+    if(levelComplete && !collectionComplete) {
+        summary = `Congratulations! You have completed level ${config.lesson.level.id}. 
+             Continue with the lesson to learn more species from ${collection.name}.` 
+    }
+    if(levelComplete && collectionComplete) {
+        summary = `You have completed the collection. Well done! 
+             Begin a new collection, review questions you got wrong, or consolidate what you have just learnt.`
+    }
 
     renderTemplate({ score, history, collection, config, summary }, template.content, parent);
     
-    const learnMoreBtn = document.querySelector('.js-learn-more-btn');
+    const learnMoreBtn = document.querySelector('.js-lesson-btn-action');
 
     const handleBtnClickEvent = () => {
         

@@ -123,29 +123,24 @@ const landscapeLesson1 = {
     levels: [
         {   id: 1,
             name: 'Level 1',
-            description: 'Level 1',
-            layouts: [ speciesRevision, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]
+            description: 'Beginner',
+            layouts: [ speciesRevision, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]            
         },
         {   id: 2,
             name: 'Level 2',
-            description: 'Recall common name',
-            layouts: [ commonEntry ]            
+            description: 'Intermediate',
+            layouts: [ genusEntry, speciesEntry ]   
         },
         {   id: 3,
             name: 'Level 3',
-            description: 'Complete latin name',
-            layouts: [ speciesRevision, genusEntry, speciesEntry, commonEntry, speciesGenusEntry ]
+            description: 'Advanced',
+            layouts: [ speciesGenusEntry ]
         },
         {   id: 4,
             name: 'Level 4',
-            description: 'Enter full latin name',
-            layouts: [ speciesRevision, speciesGenusEntry ]
-        },
-        {   id: 5,
-            name: 'Level 5',
-            description: 'Name puzzle',
-            layouts: [ speciesRevision, commandLayout ]
-        }        
+            description: 'Fun',
+            layouts: [ commandLayout ]
+        }    
     ]
 };
 
@@ -169,27 +164,23 @@ const portraitLesson1 = {
     levels: [
         {   id: 1,
             name: 'Level 1',
-            description: 'Match species',
-            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]
+            description: 'Beginner',
+            layouts: [ speciesRevision, latinToCommonMatch ]
+            // layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]
         },
         {   id: 2,
             name: 'Level 2',
-            description: 'Recall common name',
-            layouts: [ commonEntry ]
+            description: 'Intermediate',
+            layouts: [ genusEntry, speciesEntry ]
         },
         {   id: 3,
             name: 'Level 3',
-            description: 'Complete latin name',
-            layouts: [ genusEntry, genusEntry, speciesEntry ]
+            description: 'Advanced',
+            layouts: [ speciesGenusEntry ]
         },
         {   id: 4,
             name: 'Level 4',
-            description: 'Enter full latin name',
-            layouts: [ speciesGenusEntry ]
-        },
-        {   id: 5,
-            name: 'Level 5',
-            description: 'Name puzzle',
+            description: 'Fun',
             layouts: [ commandLayout ]
         }
     ]
