@@ -10,7 +10,7 @@ export const renderSpeciesCollectionList = (collection, append = false) => {
 
     const { config: currentConfig, layout } = store.getState();
 
-    const config = { ...currentConfig, ...{ id: collection.id} };
+    const config = { ...currentConfig, ...{ collection: { id: collection.id } } };
 
     const template = document.createElement('template');
 
@@ -52,11 +52,11 @@ export const renderSpeciesCollectionList = (collection, append = false) => {
 
     listItemImages.forEach(itemImage => { modalImageHandler(itemImage); });    
 
-    const continueLearningActionBtn = document.querySelector('.js-continue-lesson-btn-action');
+    const continueLearningActionBtn = document.querySelector('.js-lesson-btn-action');
+    
     if(continueLearningActionBtn) {
-        continueLearningActionBtn.disabled = layout ? false : true;
         continueLearningActionBtn.addEventListener('click', () => {
-            actions.boundToggleLesson({ lesson: 'active' });
+            actions.boundChangeCollection(config);
         });
     }
 };

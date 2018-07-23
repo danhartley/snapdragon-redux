@@ -18,7 +18,6 @@ export const renderCollections = (counter) => {
 
     let config = { ...currentConfig };
     let collection = currentCollection ? { ...currentCollection } : { name: '---', id: '' };
-    let isNewCollection = collection.id === '';
 
     const template = document.createElement('template');
 
@@ -31,10 +30,6 @@ export const renderCollections = (counter) => {
 
     if(!config.lesson) return;
 
-    config.lesson.levels.forEach(level => {
-        level.menuName = config.isPortraitMode ? level.id : level.name;
-    });
-
     const languageName = config.languages.filter(l => l.lang === config.language)[0].name;
 
     renderTemplate({ species, config, collection, languageName }, template.content, parent);
@@ -44,40 +39,23 @@ export const renderCollections = (counter) => {
 
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
-    const speciesCollectionLink = document.querySelector('.js-species-collection');    
 
     if(selectedCollection) {
         document.querySelectorAll(`[name="${selectedCollection.name}"]`)[0].classList.add('active');
         elem.show(learningActionBtn);
         elem.hide(learningActionBtnPlaceholder);
     }
-    
+
     selectHandler('.dropdown.js-collections .dropdown-item', (id) => {
         collectionId = parseInt(id);
-        const collectionName = collections.filter(collection => collection.id === collectionId)[0].name;
-        document.querySelector('.js-selected-collection span').innerHTML = collectionName;        
+        collection = collections.filter(collection => collection.id === collectionId)[0];
+        document.querySelector('.js-selected-collection span').innerHTML = collection.name;        
         config = { ...config, ...{ collection: { id: collectionId }} };
         elem.show(learningActionBtn);
         elem.hide(learningActionBtnPlaceholder);
-        speciesCollectionLink.style.display = config.isPortraitMode ? 'inline-block' : 'none';
-        isNewCollection = true;
         if(!config.isPortraitMode)
-            actions.boundSelectCollection(collectionId);
+            actions.boundSelectCollection(collection);
     });
-
-    // lesson levels
-
-    const activeLevel = '#level' + config.lesson.level.id;
-    document.querySelectorAll(activeLevel)[0].classList.add('active');
-
-    selectHandler('.dropdown.js-levels .dropdown-item', (id) => {
-        const level = config.lesson.levels.filter(level => level.id.toString() === id.slice(id.length -1))[0];
-            document.querySelector('.js-selected-level span').innerHTML = level.name;
-            const lesson = { ...config.lesson, level };
-            config = { ...config, lesson };
-    });
-
-    // languages
 
     const activeLanguage = '#' + config.language;
     document.querySelectorAll(activeLanguage)[0].classList.add('active');
@@ -89,15 +67,12 @@ export const renderCollections = (counter) => {
             config.language = lang;
     });
 
-    if(collectionId === 0) {        
-        speciesCollectionLink.style.display = 'none';
-    } else {
-        learningActionBtn.innerHTML = 'Continue lesson';
-        speciesCollectionLink.style.display = config.isPortraitMode ? 'inline-block' : 'none';
-    }
-
     learningActionBtn.addEventListener('click', () => {        
-        isNewCollection ? actions.boundChangeCollection(config) : actions.boundToggleLesson({ lesson: 'active' });
+        if(config.isPortraitMode) {
+            actions.boundSelectCollection(collection);
+        }
+        else
+            actions.boundChangeCollection(config);
         updateNavIcons();        
     });
 
@@ -108,9 +83,4 @@ export const renderCollections = (counter) => {
             svg.classList.remove('active-icon');
         }
     };
-
-    speciesCollectionLink.addEventListener('click', () => {
-        actions.boundSelectCollection(collectionId);
-        updateNavIcons();
-    });
 };

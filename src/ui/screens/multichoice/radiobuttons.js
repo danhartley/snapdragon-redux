@@ -74,17 +74,9 @@ export const renderRadioButtons = (collection) => {
 
         randomAnswers = R.take(indices[0], R.take(indices[0], utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.name);
         const familyDescription = families.find(f => f.name === family).descriptions[0].summary;
-        description = `${species} belongs to a family whose description is '${familyDescription}' What is the name of that family?`;
-        question = { question: family, binomial: item.name, enumerated: true };
+        description = `${species} belongs to a family whose description is '${familyDescription}' What is the name of this family?`;
+        question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...randomAnswers]);
-
-        answers = answers.map((answer, index) => {
-                if(question.question === answer) {
-                    question.question = `${index+1}) ${question.question}`
-                }                
-                return `${index+1}) ${answer}`
-            }
-        );
 
         render();
     }

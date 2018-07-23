@@ -88,7 +88,7 @@
     }
 
     .radio-buttons label {
-        width: initial;
+        width: 50%;
     }
 
     .flex-provider .skills {

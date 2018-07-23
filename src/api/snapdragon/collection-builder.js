@@ -32,7 +32,7 @@ async function getCollection() {
 }
 
 async function getSpeciesData(item) {
-    const languages = [ 'en', 'pt' ];
+    const languages = [ 'en', 'pt', 'es', 'de', 'fr', 'it' ];
     const response = await fetch(item.detailsUrl);
     const json = await response.json();
     const imagesCollection = json.dataObjects.filter(item => item.mediaURL || item.eolMediaURL).map(media => media.eolMediaURL);

@@ -7,7 +7,7 @@ export const collections = (state = speciesState.collections, action) => {
         case types.SELECT_COLLECTION:
             const cols = [ ...state ];
             cols.forEach(col => {
-                if(col.id === action.data) {
+                if(col.id === action.data.id) {
                     col.selected = true;
                 } else {
                     col.selected = false;
@@ -26,6 +26,8 @@ export const collection = (state = null, action) => {
     let layoutIndex = 0;
     
     switch(action.type) {
+        case types.SELECT_COLLECTION:
+            return action.data;
         case types.CHANGE_COLLECTION:
             const config = action.data;
             const collection = speciesState.collections.filter(collection => collection.id === config.collection.id)[0];

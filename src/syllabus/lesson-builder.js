@@ -19,8 +19,8 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         } while (i < moduleSize);
     });
 
-    const revisionLayouts = excludeRevision ? [] : lessonPlan.splice(0,moduleSize);
-    const shuffledLessonLayouts = utils.shuffleArray([ ...lessonPlan, ...wildcardLayouts]);
+    const revisionLayouts = excludeRevision ? [] : lessonPlan.filter(l => l.name === 'revision');
+    const shuffledLessonLayouts = utils.shuffleArray([ ...lessonPlan.filter(l => l.name === 'test'), ...wildcardLayouts]);
     const offSet = (collection.currentRound - 1) * moduleSize;
 
     shuffledLessonLayouts.forEach( (layout, i) => {
@@ -53,9 +53,7 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
             screens: [{ 
                 name: 'summary', 
                 domain: 'history', 
-                parent: DOM.rightBody,
-                render: renderSummary,
-                template: 'js-summary-template'
+                parent: DOM.rightBody
             }],
             lessonName,
             levelName,

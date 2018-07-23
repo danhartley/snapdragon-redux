@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -9,6 +10,10 @@ import taxonTemplate from 'ui/screens/cards/taxon-template.html';
 export const renderTaxonCard = collection => {
   
     const item = collection.items[collection.itemIndex];
+    const { layouts } = store.getState();
+
+    item.questionCount = layouts.length;
+
     const template = document.createElement('template');
 
     template.innerHTML = taxonTemplate;
