@@ -12,6 +12,7 @@ import { renderNameEntry } from 'ui/screens/text-entry/leaf-text-entry';
 import { runTask } from 'ui/screens/command';
 import { renderSpeciesCollection } from 'ui/screens/lists/species';
 import { renderRadioButtons } from 'ui/screens/multichoice/radiobuttons';
+import { renderFamilyDescriptions } from 'ui/screens/multichoice/family-description';
 
 const functions = [
     { name: 'text-entry', func: renderTextEntry },
@@ -28,7 +29,7 @@ const functions = [
     { name: 'leaf-text', func: renderNameEntry },
     { name: 'epithet', func: renderRadioButtons },
     { name: 'family', func: renderRadioButtons },
-    // { name: 'family-strips', func: renderFamilyDescriptions },
+    { name: 'family-strips', func: renderFamilyDescriptions },
     { name: 'taxon-card', func: renderTaxonCard }
 ];
 

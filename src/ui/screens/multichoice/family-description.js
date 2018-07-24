@@ -3,14 +3,18 @@ import * as R from 'ramda';
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
+import { taxa } from 'api/snapdragon/taxa';
+import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
-import { familyTemplate } from 'ui/screens/multichoice/family-descriptions.html';
+import familyTemplate from 'ui/screens/multichoice/family-descriptions.html';
+import questionCard from 'ui/screens/common/species-question-template.html';
+import familyCard from 'ui/screens/cards/taxon-card-template.html';
 
 export const renderFamilyDescriptions = (collection) => {
 
     const item = collection.items[collection.itemIndex];
 
-    const { layout, config, layouts } = store.getState();
+    const { config, layouts } = store.getState();
 
     let parent = DOM.rightBody;
     parent.innerHTML = '';
@@ -19,29 +23,50 @@ export const renderFamilyDescriptions = (collection) => {
     
     template.innerHTML = familyTemplate;
 
-    let randomAnswers, description, question, answers;
+    let randomAnswers, answers;
 
-    const species = item.name;
-    const epithet = itemProperties.speciesName(species);
     const family = item.family;
     const families = taxa.filter(taxon => taxon.taxon === 'family');
 
-    randomAnswers = R.take(2, R.take(3, utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.descriptions[0].summary);
-    const familyDescription = families.find(f => f.name === family).descriptions[0].summary;
-    description = `${species} belongs to the ${family}. Which of the following best describes the ${family} family?`;
-    question = { question: familyDescription, binomial: item.name, enumerated: true };
+    const type = config.isPortraitMode ? 'identification' : 'summary';
+
+    randomAnswers = R.take(2, R.take(3, utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.descriptions[0][type]);
+    const familyDescription = families.find(f => f.name === family).descriptions[0][type];
+
     answers = utils.shuffleArray([familyDescription, ...randomAnswers]);
 
-    answers = answers.map((answer, index) => {
-            if(question.question === answer) {
-                question.question = `${index+1}) ${question.question}`
-            }                
-            return `${index+1}) ${answer}`
-        }
-    );
+    renderTemplate({ answers }, template.content, parent);
+    
+    const questionCount = layouts.filter(l => l.name === 'test').length;
+    const strips = document.querySelectorAll('.js-rptr-strips .strip div');
 
+    // render family card
 
-    const context = {};
+    parent = document.querySelector('.right-body .snapdragon-container');
 
-    renderTemplate({ description, answers }, template.content, parent);
+    template.innerHTML = familyCard;
+
+    const context = { family: item.family };
+
+    renderTemplate( context, template.content, parent);
+
+    // render question
+
+    template.innerHTML = questionCard;
+    
+    const question = config.isPortraitMode ? 'Tap to match description' : 'Tap the description that best matches';
+
+    renderTemplate( { question: question }, template.content, parent);
+
+    const renderAnswer = (text, className, correct) => {
+        const answer = document.querySelector('.js-species-answer');
+        answer.innerHTML = correct ? 'Correct' : 'Incorrect';
+        answer.style.display = 'block';
+        answer.classList.add(className);
+        document.querySelector('.js-species-question').style.display = 'none';
+    }
+
+    const taxon = { name: item.family, binomial: item.name, question: familyDescription };
+
+    scoreHandler(strips, taxon, config, 'strip', renderAnswer, questionCount);
 };

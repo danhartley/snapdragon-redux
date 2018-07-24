@@ -18,7 +18,7 @@ export const renderQuestion = response => {
 };
 
 
-export const renderCorrect = response => {
+export const isAnswerCorrect = response => {
     const question = renderQuestion(response);
     const isCorrect = 
         question.toUpperCase().indexOf(response.answer.toUpperCase()) !== -1 ||
@@ -31,7 +31,7 @@ export const renderAnswer = (response) => {
     const names = response.binomial.split(' ');
     const genus = names[0];
     const species = names[1];
-    const correct = renderCorrect(response);
+    const correct = isAnswerCorrect(response);
     const className = correct ? 'snap-success' : 'snap-alert';    
 
     const name = renderName(response, correct);
@@ -56,7 +56,7 @@ export const renderAnswer = (response) => {
 
 export const renderAnswerText = (response, isPortraitMode) => {
 
-    const correct = renderCorrect(response);
+    const correct = isAnswerCorrect(response);
 
     if(isPortraitMode) {
         return correct
@@ -75,7 +75,7 @@ export const renderAnswerHeader = (response, isPortraitMode = true) => {
 
     response.answer = response.answer.trim();
 
-    const correct = renderCorrect(response);
+    const correct = isAnswerCorrect(response);
 
     const colour = correct ? 'snap-success' : 'snap-alert';
 

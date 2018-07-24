@@ -53,7 +53,7 @@ export const renderLetters = (letters, item, callbackTime) => {
                     const { text, colour, correct } = renderAnswerHeader(response);
                     DOM.rightHeaderTxt.innerHTML = text;
                     DOM.rightHeader.classList.add(colour);
-                    response.questionCount = layouts.length;
+                    response.questionCount = layouts.filter(l => l.name === 'test').length;
                     setTimeout(()=>{
                         actions.boundUpdateScore(response);
                     }, callbackTime);
@@ -87,7 +87,7 @@ export const renderLetters = (letters, item, callbackTime) => {
         const { text, colour, correct } = renderAnswerHeader(response);
         DOM.rightHeaderTxt.innerHTML = text;
         DOM.rightHeader.classList.add(colour);
-        response.questionCount = layouts.length;
+        response.questionCount = layouts.filter(l => l.name === 'test').length;
         setTimeout(()=>{
             actions.boundUpdateScore(response);
         }, callbackTime);
