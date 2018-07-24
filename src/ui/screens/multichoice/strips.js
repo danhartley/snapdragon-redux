@@ -9,6 +9,8 @@ import questionCard from 'ui/screens/common/species-question-template.html';
 
 export const renderStrips = (screen, item, callback, config, questionCount) => {
 
+    // render questions
+
     const template = document.createElement('template');
 
     template.innerHTML = `<div class="snapdragon-container"><div class="strips js-rptr-strips"></div></div>`;
@@ -45,6 +47,8 @@ export const renderStrips = (screen, item, callback, config, questionCount) => {
 
     parent = document.querySelector('.right-body .snapdragon-container');
 
+    // render species card
+
     const species = item.name;
     const name = itemProperties.vernacularName(item, config);
     template.innerHTML = speciesCard;
@@ -54,6 +58,9 @@ export const renderStrips = (screen, item, callback, config, questionCount) => {
             : { name, species: '---' }
 
     renderTemplate( context, template.content, parent);
+
+    // render question
+
     template.innerHTML = questionCard;
     const question = screen.question;
     renderTemplate( { question }, template.content, parent);
@@ -66,7 +73,9 @@ export const renderStrips = (screen, item, callback, config, questionCount) => {
         document.querySelector('.js-species-question').style.display = 'none';
     }
 
-    scoreHandler(strips, item, config, 'strip', renderAnswer, questionCount);
+    const taxon = { name: item.name, binomial: item.name, question: item.name };
+
+    scoreHandler(strips, taxon, config, 'strip', renderAnswer, questionCount);
 
     template.innerHTML = '';
 };

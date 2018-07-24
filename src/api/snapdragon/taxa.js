@@ -203,10 +203,11 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Cereal grains wheat (Triticum), rice (Oryza), wild rice (Zizania), corn (Zea), oats (Avena), barley (Hordeum), millet (Echinochloa) and rye (Secale) belong to this family. 3 (rarely 2 or 6) stamen. Ovary usually matures into 1 seed. Bracts surrounding the flower are also known as chaff. Hollow stems except at the nodes and narrow alternate leaves borne in two ranks. The lower part of each leaf encloses the stem, forming a leaf-sheath.',
-                identification: 'Grasses with distinctive nodes on the flower stem. Non-showy flowers.'
+                summary: 'This family is the world’s single most important source of food and its species the most abundant.',
+                identification: 'Grasses with distinctive nodes on otherwise hollow flower stems. Non-showy flowers.' 
             }
         ],
+        members: ['Triticum','Oryza','Zizania','Zea', 'Avena', 'Hordeum', 'Echinochloa', 'Secale' ],
         toxic: { members: ['Lolium temulentum'] },
         "wiki-entry": "https://en.wikipedia.org/wiki/Poaceae",
         "eol-entry": "http://eol.org/pages/8223/overview"
@@ -397,9 +398,11 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'The family has a worldwide distribution in tropical and warm climates from low-lying to montane. Frequently aromatic trees and shrubs.'
+                summary: 'The family has a worldwide distribution in tropical and warm climates from low-lying to montane.',
+                identification: 'Frequently aromatic trees and shrubs. The fruits of Lauraceae are drupes, one-seeded fleshy fruit with a hard layer, the endocarp, surrounding the seed.'
             }
         ],
+        members: ['Persea americana', 'Laurus nobilis'],
         "eol-entry": "http://eol.org/pages/4308/overview",
         "wiki-entry": "https://en.wikipedia.org/wiki/Lauraceae"
     }

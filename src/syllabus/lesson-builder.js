@@ -1,6 +1,5 @@
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
-import { renderSummary } from 'ui/screens/progress/summary';
 
 export const createLesson = (lessonName, levelName, moduleSize, excludeRevision, isPortraitMode, layouts, progressScreens, collection, wildcardLayouts) => {
     

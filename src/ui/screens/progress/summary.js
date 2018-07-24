@@ -21,12 +21,15 @@ export const renderSummary = (history) => {
     parent.innerHTML = '';
 
     const levelComplete = collection.currentRound === collection.rounds;
-    const lastLevel = config.isPortraitMode ? 4 : 5;
+    const lastLevel = 4;
     const collectionComplete = config.lesson.level.id === lastLevel;
 
     let summary; 
     if(!levelComplete) {
         summary = 'Keep going...';
+    }
+    if(levelComplete) {
+        summary = 'Continue to the next level...';
     }
     if(levelComplete && !collectionComplete) {
         summary = `Congratulations! You have completed level ${config.lesson.level.id}. 
@@ -43,8 +46,8 @@ export const renderSummary = (history) => {
 
     const handleBtnClickEvent = () => {
         
-        const lessonName = layouts[0].lessonName;
-        const levelName = layouts[0].levelName;        
+        const lessonName = config.lesson.name;
+        const levelName = config.lesson.level.name;
 
         config.excludeRevision = levelName === 'Level 1' ? false : true;
 
@@ -52,8 +55,11 @@ export const renderSummary = (history) => {
             config.excludeRevision = true;
             const level = lessonPlanner.nextLevel(lessonName, levelName, config.isPortraitMode);
             config.lesson.level = level;
-            actions.boundUpdateConfig(config);
-            actions.boundNextLevel({ index: 0, lesson: 'active' });
+            actions.boundNextLevel({ index: 0, lesson: 'inactive' });
+            setTimeout(() => {
+                actions.boundUpdateConfig(config);
+                actions.boundNextLevel({ index: 0, lesson: 'active' });
+            });
         } else {
             actions.boundNextRound({ index: 0, lesson: 'active' });            
             setTimeout(() => {

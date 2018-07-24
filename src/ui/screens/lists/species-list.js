@@ -48,7 +48,7 @@ export const renderSpeciesCollectionList = (collection, append = false) => {
         })
     });
 
-    const listItemImages = document.querySelectorAll('.js-list-item div img');
+    const listItemImages = document.querySelectorAll('.js-list-item');
 
     listItemImages.forEach(itemImage => { modalImageHandler(itemImage); });    
 

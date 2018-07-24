@@ -35,7 +35,7 @@ export const renderSpeciesTiles = (collection) => {
 
     renderTemplate({ images }, template.content, parent);
 
-    const questionCount = layouts.length;
+    const questionCount = layouts.filter(l => l.name === 'test').length;
     
     if(config.isPortraitMode) {
 

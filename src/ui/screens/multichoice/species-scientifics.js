@@ -18,7 +18,7 @@ export const renderScientifics = (collection) => {
                 </div>`;
        };
 
-    const questionCount = layouts.length;
+    const questionCount = layouts.filter(l => l.name === 'test').length;
 
     renderStrips(screen, item, callback, config, questionCount);
 };

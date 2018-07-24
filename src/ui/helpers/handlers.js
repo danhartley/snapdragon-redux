@@ -75,11 +75,10 @@ export const modalBackgroundImagesHandler = (images, item) => {
 };
 
 export const modalImageHandler = (image) => {
-    image.addEventListener('click', event => {            
-        const img = event.target;        
-        DOM.modalImageTitle.innerHTML = img.id;
-        img.src = img.src.indexOf('http') > -1 ? img.src : `https://media.eol.org/content/${img.src}`;
-        const style = `background-image: url(${img.src}); background-size: cover;`;
+    image.addEventListener('click', event => {
+        const src  = `https://media.eol.org/content/${event.currentTarget.dataset.image}`;
+        DOM.modalImageTitle.innerHTML = event.currentTarget.dataset.id;
+        const style = `background-image: url(${src}); background-size: cover;`;
         DOM.modalImage.style = style;            
     })
 };
@@ -96,7 +95,7 @@ export const scoreHandler = (items, item, config, type, callback, questionCount)
     }
 };
 
-const stripHandler = (items, item, config, callback, questionCount) => {    
+const stripHandler = (items, taxon, config, callback, questionCount) => {    
     items.forEach(selected => {
 
         selected.addEventListener('click', event => {
@@ -105,20 +104,20 @@ const stripHandler = (items, item, config, callback, questionCount) => {
             const answer = target.innerText;
             const vernacular = target.dataset.vernacular;
 
-            const score = { taxon: 'name', binomial: item.name, vernacular: vernacular, question: item.name, answer: answer };
+            const score = { taxon: 'name', binomial: taxon.binomial, vernacular: vernacular, question: taxon.question, answer: answer };
             const { text, colour, correct } = renderAnswerHeader(score, config.isPortraitMode);
 
             if(callback) callback(text, colour, correct);
             
             score.success = correct;
 
-            DOM.rightHeaderTxt.innerHTML = text;
+            // DOM.rightHeaderTxt.innerHTML = text;
             
             target.classList.add(colour);
             target.classList.add(colour);
 
             items.forEach(strip => {   
-                const matchesScientificName = strip.innerText === item.name;
+                const matchesScientificName = strip.innerText === taxon.name;
                 const matchesVernacularName = vernacular 
                                                 ? strip.innerText.toLowerCase() ===  vernacular.toLowerCase() 
                                                 : false;
