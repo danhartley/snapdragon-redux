@@ -1,6 +1,9 @@
+import * as R from 'ramda';
+
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
+import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { scoringHandler, modalBackgroundImagesHandler } from 'ui/helpers/handlers';
 import landscapeTemplates from 'ui/screens/text-entry/text-entry-templates.html';
@@ -8,7 +11,7 @@ import portraitTemplates from 'ui/screens/text-entry/text-entry-portrait-templat
 
 export const renderInput = (config, screen, question, callbackTime, item, renderHeader, hints) => {
 
-    const { layouts } = store.getState();
+    const { layouts, collection } = store.getState();
     const templates = document.createElement('div');
     templates.innerHTML = config.isPortraitMode ? portraitTemplates : landscapeTemplates;
 
@@ -22,23 +25,24 @@ export const renderInput = (config, screen, question, callbackTime, item, render
 
     const clone = document.importNode(template.content, true);
     
-    clone.querySelector('button').addEventListener('click', event => {
-        scoringHandler(question, document.querySelector('.js-txt-input').value, event, config.isPortraitMode, layouts.length, callbackTime, renderHeader);
+    clone.querySelector('.js-check-answer').addEventListener('click', event => {
+        const score = { question, answer: document.querySelector('.js-txt-input').value, event, layoutCount: layouts.length };
+        scoringHandler(score, config.isPortraitMode, callbackTime, renderHeader);
     });
 
     const parent = DOM.rightBody;
     parent.innerHTML = '';
     
-    // parent.appendChild(clone);
     const txtQuestion = `Enter the common name for the species ${item.name}:`;
     renderTemplate({ txtQuestion }, template.content, parent, clone);
 
     if(config.isPortraitMode) renderPortrait(item);
+    else renderLandscape(item, config, collection);
 
     document.querySelector('.js-txt-input').focus();
 };
 
-const renderPortrait = (item) => {
+const renderPortrait = item => {
     const images = utils.shuffleArray(item.images).slice(0,4);
 
     const backgroundImages = images.map(image => {        
@@ -53,3 +57,78 @@ const renderPortrait = (item) => {
     modalBackgroundImagesHandler(document.querySelectorAll('.js-species-card-images div'), item);
 };
 
+const renderLandscape = (item, config, collection) => {
+    
+    const answer = item.name + itemProperties.vernacularName(item, config);
+
+    const pool = (R.take(1,utils.shuffleArray(collection.items)).map(item => item.name).join('') + answer).replace(/\s/g,'').toLowerCase();
+
+    let blocks = '';
+
+    utils.shuffleArray(Array.from(pool)).forEach( (letter, index) => {
+        blocks += `<span id="${index}" class="block">${letter}</span>`
+    });
+
+    blocks += `<span id="${blocks.length}" class="block">&nbsp;</span>`;
+
+    document.querySelector('.js-pool-letters').innerHTML = blocks;
+
+    const input = document.querySelector('.js-txt-input');
+
+    const letters = [];
+
+    const deleteLetter = (letter) => {
+        let lastLetter = letter || letters[letters.length-1];
+        let value = document.querySelector('.js-txt-input').value;
+        if(value.length > 0){
+            let indexInInput = value.lastIndexOf(lastLetter.innerHTML);            
+            let newValue = '';
+            let letters = Array.from(value);
+            letters.splice(indexInInput,1);
+            letters.forEach(letter => newValue += letter);            
+            input.value = newValue;
+        }
+        lastLetter.classList.remove('active');
+        letters.forEach(l => {
+            if(l.id === lastLetter.id) {
+                const letterIndex = letters.indexOf(l);
+                if(letterIndex > -1)
+                    letters.splice(letterIndex,1);
+            }
+        });
+    };
+
+    document.querySelectorAll('.block').forEach(block => {
+        block.addEventListener('click', event => {
+            const letter = event.target;
+            if(letter.classList.contains('active')) {
+                deleteLetter(letter);
+            } else {
+                letter.classList.add('active');
+                letters.push(letter);
+                if(letter.innerHTML === '&nbsp;')
+                    input.value += ' ';
+                else
+                    input.value += letter.innerHTML;
+            }            
+        });
+    });
+
+    document.querySelector('.js-delete-letter').addEventListener('click', () => {
+        deleteLetter();
+    });
+
+    const keyboardBtn = document.querySelector('.js-toggle-keyboard');
+
+    keyboardBtn.addEventListener('click', () =>{
+        const disabled = input.hasAttribute('disabled');
+        if(disabled) {
+            keyboardBtn.innerHTML = 'Disable keyboard';
+            input.removeAttribute('disabled');
+            input.focus();
+        } else {
+            keyboardBtn.innerHTML = 'Enable keyboard'
+            input.setAttribute('disabled', 'disabled');
+        }
+    });
+};

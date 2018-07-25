@@ -111,6 +111,10 @@ const calcItemIndex = (offSet, moduleSize, index) => {
   return itemIndex;
 };
 
+const isIterable = array => {
+  return Array.isArray(array) && array.length !== 0;
+}
+
 export const utils = {
   log,
   encodeQuery,
@@ -123,5 +127,6 @@ export const utils = {
   doubledItemsInArray,
   onlyUnique,
   sortBy,
-  calcItemIndex
+  calcItemIndex,
+  isIterable
 };

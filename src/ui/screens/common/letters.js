@@ -4,20 +4,27 @@ import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
+import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
+import lettersTemplate from 'ui/screens/common/letters-template.html';
 
 export const renderLetters = (letters, item, callbackTime) => {
 
-    const { layouts } = store.getState();
+    const { layouts, config } = store.getState();
 
-    const template = document.querySelector('.js-letters-template');
+    let parent = DOM.rightBody;
+    parent.innerHTML = '';
 
-    DOM.rightBody.innerHTML = '';
+    const template = document.createElement('template');
+    
+    template.innerHTML = lettersTemplate;
+
+    const name = itemProperties.vernacularName(item, config);
 
     const blocks = utils.shuffleArray(R.flatten(letters));
 
-    renderTemplate({ blocks }, template.content, DOM.rightBody);
+    renderTemplate({ blocks, name }, template.content, parent);
 
     let selectedBlocks = [];
     let itemName = '';
@@ -54,6 +61,7 @@ export const renderLetters = (letters, item, callbackTime) => {
                     DOM.rightHeaderTxt.innerHTML = text;
                     DOM.rightHeader.classList.add(colour);
                     response.questionCount = layouts.filter(l => l.name === 'test').length;
+                    response.layoutCount = layouts.length;
                     setTimeout(()=>{
                         actions.boundUpdateScore(response);
                     }, callbackTime);
@@ -88,6 +96,7 @@ export const renderLetters = (letters, item, callbackTime) => {
         DOM.rightHeaderTxt.innerHTML = text;
         DOM.rightHeader.classList.add(colour);
         response.questionCount = layouts.filter(l => l.name === 'test').length;
+        response.layoutCount = layouts.length;
         setTimeout(()=>{
             actions.boundUpdateScore(response);
         }, callbackTime);

@@ -38,7 +38,8 @@ export const renderRadioButtons = (collection) => {
 
         document.querySelector('button').addEventListener('click', event => {
             const answer = document.querySelector('input[name="answer"]:checked').value;
-            scoringHandler(question, answer, event, config.isPortraitMode, layouts.length, config.callbackTime, renderAnswerHeader);
+            const score = { question, answer, event, layoutCount: layouts.length };
+            scoringHandler(score, config.isPortraitMode, config.callbackTime, renderAnswerHeader);
         });
     };
 

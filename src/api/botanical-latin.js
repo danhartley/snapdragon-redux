@@ -28,6 +28,10 @@ export const epithets = [
         "en" : ["plant"]
     },
     {
+        "latin": ["capitata"],
+        "en" : ["having a head"]
+    },
+    {
         "latin" : ["chrysus"],
         "en" : ["yellow"]
     },

@@ -36,6 +36,7 @@ export const renderSpeciesTiles = (collection) => {
     renderTemplate({ images }, template.content, parent);
 
     const questionCount = layouts.filter(l => l.name === 'test').length;
+    const layoutCount = layouts.length;
     
     if(config.isPortraitMode) {
 
@@ -55,9 +56,9 @@ export const renderSpeciesTiles = (collection) => {
             answer.classList.add(colour);
             document.querySelector('.js-question').style.display = 'none';
         }   
-        scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image', renderAnswer, questionCount);
+        scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image', renderAnswer, questionCount, layoutCount);
     } else {
-        scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image', null, questionCount);
+        scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image', null, questionCount, layoutCount);
     };
 
     document.querySelectorAll('.tile span').forEach(img=>{

@@ -503,6 +503,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
  /* letter blocks */
 
  .blocks {
+  flex: auto;
+  flex-direction: column;
   padding: 2em;
 }
 
@@ -517,6 +519,21 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   letter-spacing: .1em;
   border-radius: .2em;
   font-size: 1.1em;
+  border: .05em solid var(--snap-text-dark);
+}
+
+.pool .block {
+  font-size: 1.4em;
+}
+
+.pool .block.active {
+  color: var(--snap-text-light);
+  background-color: var(--snap-success);
+}
+
+.btn-dark {
+  color: var(--snap-text-dark);
+  background-color: var(--snap-block-light);
 }
 
 .snap-inactive {
