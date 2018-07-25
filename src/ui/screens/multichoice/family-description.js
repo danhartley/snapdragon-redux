@@ -7,7 +7,7 @@ import { taxa } from 'api/snapdragon/taxa';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import familyTemplate from 'ui/screens/multichoice/family-descriptions.html';
-import questionCard from 'ui/screens/common/species-question-template.html';
+import questionCard from 'ui/screens/common/question-template.html';
 import familyCard from 'ui/screens/cards/taxon-card-template.html';
 
 export const renderFamilyDescriptions = (collection) => {
@@ -54,16 +54,16 @@ export const renderFamilyDescriptions = (collection) => {
 
     template.innerHTML = questionCard;
     
-    const question = config.isPortraitMode ? 'Tap to match description' : 'Tap the description that best matches';
+    const question = config.isPortraitMode ? 'Tap to match Quick ID' : 'Tap the description that best matches';
 
     renderTemplate( { question: question }, template.content, parent);
 
     const renderAnswer = (text, className, correct) => {
-        const answer = document.querySelector('.js-species-answer');
+        const answer = document.querySelector('.js-answer');
         answer.innerHTML = correct ? 'Correct' : 'Incorrect';
         answer.style.display = 'block';
         answer.classList.add(className);
-        document.querySelector('.js-species-question').style.display = 'none';
+        document.querySelector('.js-question').style.display = 'none';
     }
 
     const taxon = { name: item.family, binomial: item.name, question: familyDescription };

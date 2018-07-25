@@ -12,7 +12,7 @@ const initCollection = (rawCollection = collections[0]) => {
     let prepCollection = rawCollection.type === 'skill'
         ? R.pipe(utils.shuffleArray)
         : R.pipe(helpers.filterExcluded, helpers.extractScientificNames, helpers.embellishCollection);
-    const items = R.take(6,utils.sortBy(prepCollection(rawCollection.items), 'snapId'));
+    const items = utils.sortBy(prepCollection(rawCollection.items), 'snapId');
     const rounds = items.length / config.moduleSize;
 
     const families = getFamilies(items);

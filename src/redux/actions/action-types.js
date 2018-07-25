@@ -10,6 +10,7 @@ const NEXT_LEVEL = '[NEXT_LEVEL] Go to next level';
 const UPDATE_CONFIG = '[UPDATE_CONFIG] change to config';
 const TOGGLE_LESSON = '[TOGGLE_LESSON] set counter to inactive';
 const SELECT_COLLECTION = '[SELECT_COLLECTION] update the current selected collection';
+const UPDATE_LANGUAGE = '[UPDATE_LANGUAGE] update the current language';
 
 export const types = {
     NEXT_LESSON,
@@ -23,5 +24,6 @@ export const types = {
     NEXT_LEVEL,
     UPDATE_CONFIG,
     TOGGLE_LESSON,
-    SELECT_COLLECTION
+    SELECT_COLLECTION,
+    UPDATE_LANGUAGE
 };

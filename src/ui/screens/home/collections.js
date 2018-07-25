@@ -30,9 +30,9 @@ export const renderCollections = (counter) => {
 
     if(!config.lesson) return;
 
-    const languageName = config.languages.filter(l => l.lang === config.language)[0].name;
+    const language = config.languages.filter(l => l.lang === config.language)[0];
 
-    renderTemplate({ species, config, collection, languageName }, template.content, parent);
+    renderTemplate({ species, config, collection, language }, template.content, parent);
 
     const selectedCollection = collections.find(collection => collection.selected);
     let collectionId = selectedCollection ? selectedCollection.id : 0;
@@ -65,6 +65,7 @@ export const renderCollections = (counter) => {
         const languageName = config.languages.filter(l => l.lang === lang)[0].name;
             document.querySelector('.js-selected-language span').innerHTML = languageName;
             config.language = lang;
+            actions.boundUpdateLanguage(lang);
     });
 
     learningActionBtn.addEventListener('click', () => {        

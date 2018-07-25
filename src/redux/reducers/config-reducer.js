@@ -7,6 +7,8 @@ export const config = (state = lessonConfig, action) => {
             return { ...state, ...{ ...action.data } };
         case types.UPDATE_CONFIG:
             return { ...state, ...action.data };
+        case types.UPDATE_LANGUAGE:
+            return { ...state, ...{ language: action.data } };
         default: 
             return state;
     }
