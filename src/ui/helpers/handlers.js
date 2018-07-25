@@ -2,8 +2,10 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
-export const scoringHandler = (question, answer, event, isPortraitMode, questionCount, callbackTime, renderHeader) => {
+export const scoringHandler = (score, isPortraitMode, callbackTime, renderHeader) => {
     
+    const { question, answer, event, layoutCount } = score;
+
     const btn = event.target;
     const response = { ...question, answer };
 
@@ -52,7 +54,7 @@ export const scoringHandler = (question, answer, event, isPortraitMode, question
     btn.disabled = true;
 
     response.success = correct;
-    response.questionCount = questionCount;
+    response.layoutCount = layoutCount;
 
     setTimeout(()=>{
         actions.boundUpdateScore(response);
@@ -83,19 +85,19 @@ export const modalImageHandler = (image) => {
     })
 };
 
-export const scoreHandler = (items, item, config, type, callback, questionCount) => {
+export const scoreHandler = (items, item, config, type, callback, questionCount, layoutCount) => {
     
     switch(type) {
         case 'strip':
-            stripHandler(items, item, config, callback, questionCount);
+            stripHandler(items, item, config, callback, questionCount, layoutCount);
             break;
         case 'image':
-            imageHandler(items, item, config, callback, questionCount);
+            imageHandler(items, item, config, callback, questionCount, layoutCount);
             break;
     }
 };
 
-const stripHandler = (items, taxon, config, callback, questionCount) => {    
+const stripHandler = (items, taxon, config, callback, questionCount, layoutCount) => {    
     items.forEach(selected => {
 
         selected.addEventListener('click', event => {
@@ -126,6 +128,7 @@ const stripHandler = (items, taxon, config, callback, questionCount) => {
             });     
             
             score.questionCount = questionCount;
+            score.layoutCount = layoutCount;
 
             setTimeout(()=>{
                 actions.boundUpdateScore(score);
@@ -136,7 +139,7 @@ const stripHandler = (items, taxon, config, callback, questionCount) => {
     });
 };
 
-const imageHandler = (tiles, item, config, callback, questionCount) => {
+const imageHandler = (tiles, item, config, callback, questionCount, layoutCount) => {
 
     tiles.forEach(tile => {
         tile.addEventListener('click', event => {
@@ -169,6 +172,7 @@ const imageHandler = (tiles, item, config, callback, questionCount) => {
             });
 
             score.questionCount = questionCount;
+            score.layoutCount = layoutCount;
 
             setTimeout(() => {
                 actions.boundUpdateScore(score);

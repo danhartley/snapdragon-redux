@@ -10,11 +10,11 @@ export const config = {
     languages : [
         { name: 'english', lang: 'en' },
         { name: 'español', lang: 'es' },
-        { name: 'عربى', lang: 'ar' },
+        // { name: 'عربى', lang: 'ar' },
         { name: 'deutsche', lang: 'de' },
         { name: 'italiano', lang: 'it' },
         { name: 'français', lang: 'fr' },
         { name: 'português', lang: 'pt' },
-        { name: '中文', lang: 'zh' }
+        // { name: '中文', lang: 'zh' }
     ]
 };

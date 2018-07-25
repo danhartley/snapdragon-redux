@@ -38,6 +38,7 @@ export const renderFamilyDescriptions = (collection) => {
     renderTemplate({ answers }, template.content, parent);
     
     const questionCount = layouts.filter(l => l.name === 'test').length;
+    const layoutCount = layouts.length;
     const strips = document.querySelectorAll('.js-rptr-strips .strip div');
 
     // render family card
@@ -68,5 +69,5 @@ export const renderFamilyDescriptions = (collection) => {
 
     const taxon = { name: item.family, binomial: item.name, question: familyDescription };
 
-    scoreHandler(strips, taxon, config, 'strip', renderAnswer, questionCount);
+    scoreHandler(strips, taxon, config, 'strip', renderAnswer, questionCount, layoutCount);
 };

@@ -19,6 +19,7 @@ export const renderVernaculars = (collection) => {
        };
 
     const questionCount = layouts.filter(l => l.name === 'test').length;
+    const layoutCount = layouts.length;
 
-    renderStrips(screen, item, callback, config, questionCount);
+    renderStrips(screen, item, callback, config, questionCount, layoutCount);
 };

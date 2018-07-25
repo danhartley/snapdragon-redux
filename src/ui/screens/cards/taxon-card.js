@@ -13,6 +13,7 @@ export const renderTaxonCard = collection => {
     const { layouts } = store.getState();
 
     item.questionCount = layouts.filter(l => l.name === 'test').length;
+    item.layoutCount = layouts.length;
 
     const template = document.createElement('template');
 

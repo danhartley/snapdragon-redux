@@ -1,3 +1,4 @@
+import { utils } from 'utils/utils'; 
 import { getSpeciesEpithets } from 'redux/reducers/initial-state/species-state/species-epithets';
 
 export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
@@ -17,20 +18,23 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
     });
 
     const wildcardLayouts = [];
-    epithets.items.forEach(item => {
-        const screens = [ wildcards[0][0], wildcards[0][1] ];
-        wildcardLayouts.push({ name: 'test', score: 1, screens, itemIndex: item.index, epithet: item});
-    });
-    
-    const itemGroup = itemGroups[collection.currentRound - 1];
     const wildcardLayoutsForGroup = [];
-    itemGroup.forEach(index => {
-        wildcardLayouts.forEach(layout => {
-            if(layout.itemIndex === index) {
-                wildcardLayoutsForGroup.push(layout);
-            }
+
+    if(utils.isIterable(epithets)) {
+        epithets.items.forEach(item => {
+            const screens = [ wildcards[0][0], wildcards[0][1] ];
+            wildcardLayouts.push({ name: 'test', score: 1, screens, itemIndex: item.index, epithet: item});
         });
-    });
+        
+        const itemGroup = itemGroups[collection.currentRound - 1];        
+        itemGroup.forEach(index => {
+            wildcardLayouts.forEach(layout => {
+                if(layout.itemIndex === index) {
+                    wildcardLayoutsForGroup.push(layout);
+                }
+            });
+        });
+    }
 
     return wildcardLayoutsForGroup;
 };
