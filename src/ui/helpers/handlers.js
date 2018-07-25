@@ -111,9 +111,6 @@ const stripHandler = (items, taxon, config, callback, questionCount) => {
             
             score.success = correct;
 
-            // DOM.rightHeaderTxt.innerHTML = text;
-            
-            target.classList.add(colour);
             target.classList.add(colour);
 
             items.forEach(strip => {   
@@ -121,7 +118,8 @@ const stripHandler = (items, taxon, config, callback, questionCount) => {
                 const matchesVernacularName = vernacular 
                                                 ? strip.innerText.toLowerCase() ===  vernacular.toLowerCase() 
                                                 : false;
-                if(matchesScientificName || matchesVernacularName) {
+                const matchesQuestion = strip.innerText === taxon.question;
+                if(matchesScientificName || matchesVernacularName || matchesQuestion) {
                     strip.classList.add('snap-success');
                     strip.classList.add('snap-success');
                 }

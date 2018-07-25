@@ -106,7 +106,7 @@ export const taxa = [
             {
                 language: 'en',
                 summary: 'The subfamily Allioideae contains a number of important food crops, including onion, garlic, leek, and chives. Formerly part of the Lily family. Contains the subfamily Agapanthus.',
-                identification: '3 undifferentiated petals and sepals (tepals). Lily-like flowers, onion-like bulbs. Flowerheads wrapped in a bract.'
+                identification: '3 tepals. Lily-like flowers, onion-like bulbs. Flowerheads wrapped in bract.'
             }
         ],
         "wiki-entry": "https://en.wikipedia.org/wiki/Amaryllidaceae",
@@ -155,7 +155,8 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: "Although the most visible members of this family are social, the vast majority of apid bees are solitary."
+                summary: "Although the most visible members of this family are social, the vast majority of apid bees are solitary.",
+                identification: 'Yellow, black, or honey brown. Body covered in numerous branched hairs. Pollen basket on tibia.'
             }
         ],        
         "inat-link": "https://www.inaturalist.org/taxa/47221-Apidae",
@@ -260,7 +261,7 @@ export const taxa = [
             {
                 language: 'en',
                 summary: 'Widely distributed, the third-largest land plant family. Genera include Mimosa and Acacia. Food staples pea, alfafa, soybean, chickpea, peanut, beans, carob and liqourice.',
-                identification: 'Many have 5 petals in a distinctive "banner, wings, and keel" form, and/or pinnate leaves (Mimosa). Characterisic pod or legume fruit.'
+                identification: '5 petals in "banner, wings, and keel" form, and/or pinnate leaves (Mimosa). Pod or legume fruit.'
             }
         ],
         members: ['Pisum sativum', 'Glycine max', 'Cicer arietinum', 'Arachis hypogaea'],
@@ -282,6 +283,7 @@ export const taxa = [
                 identification: 'Highly fragrant flowers. 5 sepals and 5 petals. Stamen often numerous. Serrated, oval-shaped leaves.'
             }
         ],
+        members: ['Malus domestica', 'Pyrus communis'],
         "eol-entry": "http://eol.org/pages/8097/overview",
         "wiki-entry": "https://en.wikipedia.org/wiki/Rosaceae"
     },
@@ -312,7 +314,8 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Members grow in the tropics and temperate areas; those with edible fruits were among the earliest cultivated plants in both the Old and New Worlds.'
+                summary: 'Members grow in the tropics and temperate areas; those with edible fruits were among the earliest cultivated plants in both the Old and New Worlds.',
+                identification: 'Climbing vines, tendrils, funnel-shaped flowers and large fruit often with 3 chambers.'
             }
         ],
         "eol-entry": "http://eol.org/pages/4458/overview",
@@ -364,9 +367,11 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Members known for their fleshy fruit containing seeds. Widespread in tropical and subtropical regions.'
+                summary: 'Members known for their fleshy fruit containing seeds. Widespread in tropical and subtropical regions.',
+                identification: 'Trees and shrubs with milky sap. 2 carpels sometimes with 1 reduced, compound inconspicuous flowers, and compound fruits.'
             }
         ],
+        members: ['Ficus', 'Morus alba'],
         "eol-entry": "http://eol.org/pages/4450/overview",
         "wiki-entry": "https://en.wikipedia.org/wiki/Moraceae"
     },
@@ -399,7 +404,7 @@ export const taxa = [
             {
                 language: 'en',
                 summary: 'The family has a worldwide distribution in tropical and warm climates from low-lying to montane.',
-                identification: 'Frequently aromatic trees and shrubs. The fruits of Lauraceae are drupes, one-seeded fleshy fruit with a hard layer, the endocarp, surrounding the seed.'
+                identification: 'Frequently aromatic trees and shrubs. The fruits are drupes, one-seeded fleshy fruit with a hard layer, the endocarp, surrounding the seed.'
             }
         ],
         members: ['Persea americana', 'Laurus nobilis'],

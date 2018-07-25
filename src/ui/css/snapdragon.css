@@ -283,25 +283,23 @@ progress::-moz-progress-bar {
 }
 
 .strips {
-  height: 100%;
   flex: auto;
   display: flex;
   flex-direction: column;
-  /* display: grid;
-  grid-auto-flow: row;
-  grid-template-rows: repeat(6,1fr); */
   align-items: center;
   padding: 0 .5em;
   background-color: var(--snap-strips-background);
   cursor: pointer;
 }
-/* 
-.strips.description {
-  grid-template-rows: repeat(3,1fr);
-} */
+
+.strip {
+  flex: auto;
+  width: 100%;
+  margin: .5em 0;
+}
 
 .strips.description .strip div {
-  font-size: 1em;
+  font-size: .9em;
 }
 
 .strip div {

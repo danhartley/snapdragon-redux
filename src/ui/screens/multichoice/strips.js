@@ -5,7 +5,7 @@ import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
 import speciesCard from 'ui/screens/cards/species-card-template.html';
-import questionCard from 'ui/screens/common/species-question-template.html';
+import questionCard from 'ui/screens/common/question-template.html';
 
 export const renderStrips = (screen, item, callback, config, questionCount) => {
 
@@ -66,11 +66,11 @@ export const renderStrips = (screen, item, callback, config, questionCount) => {
     renderTemplate( { question }, template.content, parent);
 
     const renderAnswer = (text, className, correct) => {
-        const answer = document.querySelector('.js-species-answer');
+        const answer = document.querySelector('.js-answer');
         answer.innerHTML = correct ? 'Correct' : 'Incorrect';
         answer.style.display = 'block';
         answer.classList.add(className);
-        document.querySelector('.js-species-question').style.display = 'none';
+        document.querySelector('.js-question').style.display = 'none';
     }
 
     const taxon = { name: item.name, binomial: item.name, question: item.name };

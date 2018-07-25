@@ -8,7 +8,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
 import html from 'ui/screens/multichoice/species-tiles-template.html';
 import speciesCard from 'ui/screens/cards/species-card-template.html';
-import questionCard from 'ui/screens/common/species-question-template.html';
+import questionCard from 'ui/screens/common/question-template.html';
 
 export const renderSpeciesTiles = (collection) => {
 
@@ -49,11 +49,11 @@ export const renderSpeciesTiles = (collection) => {
         const question = screen.question;
         renderTemplate( { question }, template.content, parent);
         const renderAnswer = (text, colour, correct) => {
-            const answer = document.querySelector('.js-species-answer');
+            const answer = document.querySelector('.js-answer');
             answer.innerHTML = correct ? 'Correct' : 'Incorrect';
             answer.style.display = 'block';            
             answer.classList.add(colour);
-            document.querySelector('.js-species-question').style.display = 'none';
+            document.querySelector('.js-question').style.display = 'none';
         }   
         scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image', renderAnswer, questionCount);
     } else {

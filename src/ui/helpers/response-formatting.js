@@ -20,9 +20,11 @@ export const renderQuestion = response => {
 
 export const isAnswerCorrect = response => {
     const question = renderQuestion(response);
-    const isCorrect = 
-        question.toUpperCase().indexOf(response.answer.toUpperCase()) !== -1 ||
-        response.answer.toUpperCase().indexOf(question.toUpperCase()) !== -1;
+    const validAnswer = response.answer.length > 2;
+    const isCorrect =
+        validAnswer &&
+        (question.toUpperCase().indexOf(response.answer.toUpperCase()) !== -1 ||
+        response.answer.toUpperCase().indexOf(question.toUpperCase()) !== -1);
     return isCorrect;
 };
 
