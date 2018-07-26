@@ -142,8 +142,7 @@ const landscapeLesson1 = {
         {   id: 1,
             name: 'Level 1',
             description: 'Beginner',
-            layouts: [ textCompleteGenus, textCompleteSpecies ]
-            // layouts: [ speciesRevision, familyStripsMatch, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]            
+            layouts: [ speciesRevision, familyStripsMatch, textCompleteGenus, textCompleteSpecies, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]            
         },
         {   id: 2,
             name: 'Level 2',
@@ -183,9 +182,8 @@ const portraitLesson1 = {
     levels: [
         {   id: 1,
             name: 'Level 1',
-            description: 'Beginner',
-            layouts: [ textCompleteGenus, textCompleteSpecies ]
-            // layouts: [ speciesRevision, familyStripsMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]
+            description: 'Beginner',            
+            layouts: [ speciesRevision, familyStripsMatch, textCompleteGenus, textCompleteSpecies, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]
         },
         {   id: 2,
             name: 'Level 2',
