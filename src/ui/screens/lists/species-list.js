@@ -31,7 +31,7 @@ export const renderSpeciesCollectionList = (collection, append = false) => {
     //     scrollableArea.style.height = scrollableArea.offsetHeight / 2 + 'px';
     // } else {
         parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
-        parent.innerHTML = '<div class="snapdragon-container js-species-list"></div>';
+        parent.innerHTML = '<div class="snapdragon-container species-list js-species-list"></div>';
         parent = parent.querySelector('.snapdragon-container.js-species-list');
         template.innerHTML = speciesTemplate;
     // }
