@@ -1,6 +1,6 @@
 import { screens } from 'snapdragon/screen-layouts';
 
-const { specimen, revision, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon } = screens;
+const { specimen, revision, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete } = screens;
 
 const speciesRevision = {
     name: 'revision',
@@ -107,6 +107,24 @@ const leafEntry = {
     ]
 };
 
+const textCompleteGenus = {
+    name: 'test',
+    score: 1,
+    screens: [
+        { ...specimen },
+        { ...textComplete, type: 'text-complete-genus'  }
+    ]
+};
+
+const textCompleteSpecies = {
+    name: 'test',
+    score: 1,
+    screens: [
+        { ...specimen },
+        { ...textComplete, type: 'text-complete-species' }
+    ]
+};
+
 const commonEntry = {
     name: 'test',
     score: 1,
@@ -124,7 +142,8 @@ const landscapeLesson1 = {
         {   id: 1,
             name: 'Level 1',
             description: 'Beginner',
-            layouts: [ speciesRevision, familyStripsMatch, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]            
+            layouts: [ textCompleteGenus, textCompleteSpecies ]
+            // layouts: [ speciesRevision, familyStripsMatch, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]            
         },
         {   id: 2,
             name: 'Level 2',
@@ -165,7 +184,8 @@ const portraitLesson1 = {
         {   id: 1,
             name: 'Level 1',
             description: 'Beginner',
-            layouts: [ speciesRevision, familyStripsMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]
+            layouts: [ textCompleteGenus, textCompleteSpecies ]
+            // layouts: [ speciesRevision, familyStripsMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]
         },
         {   id: 2,
             name: 'Level 2',

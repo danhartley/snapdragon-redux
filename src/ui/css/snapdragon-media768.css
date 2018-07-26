@@ -84,13 +84,22 @@
     }
 
     .letterbox-entry button:disabled {
-    color: var(--snap-text-dark);
+        color: var(--snap-text-dark);
     }
 
     .radio-buttons label {
         width: 75%;
     }
 
+    .block {
+        font-size: 1.4em;
+        margin: .2em 0;
+    }
+
+    .text-question {
+        margin: 1em 0 0 .25em;
+    }
+    
     .flex-provider .skills {
         display: block;
     }

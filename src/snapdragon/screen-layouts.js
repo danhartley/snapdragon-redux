@@ -50,6 +50,13 @@ const text = {
   question: 'Complete the latin name',
 };
 
+const textComplete = {
+  name: 'text-complete',
+  headers: { long: 'Latin name recall', short: 'Complete the latin name'},
+  domain: 'collection',
+  question: 'Complete the latin name',
+};
+
 const summary = { 
   name: 'summary', 
   domain: 'history',
@@ -128,5 +135,6 @@ export const screens = {
   epithets,
   family,
   familyStrips,
-  taxon
+  taxon,
+  textComplete
 };

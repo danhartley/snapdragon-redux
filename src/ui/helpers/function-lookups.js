@@ -13,6 +13,7 @@ import { runTask } from 'ui/screens/command';
 import { renderSpeciesCollection } from 'ui/screens/lists/species';
 import { renderRadioButtons } from 'ui/screens/multichoice/radiobuttons';
 import { renderFamilyDescriptions } from 'ui/screens/multichoice/family-description';
+import { renderCompleteText } from 'ui/screens/text-entry/text-complete';
 
 const functions = [
     { name: 'text-entry', func: renderTextEntry },
@@ -30,7 +31,8 @@ const functions = [
     { name: 'epithet', func: renderRadioButtons },
     { name: 'family', func: renderRadioButtons },
     { name: 'family-strips', func: renderFamilyDescriptions },
-    { name: 'taxon-card', func: renderTaxonCard }
+    { name: 'taxon-card', func: renderTaxonCard },
+    { name: 'text-complete', func: renderCompleteText }
 ];
 
 export const funcByName = name => {

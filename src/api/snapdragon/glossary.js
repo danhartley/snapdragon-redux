@@ -66,10 +66,26 @@ export const glossary = [
     },
     {
         term: "Symbiont",
-        definition: "Either species involved in a biological interaction whether mutualistic, parasitic or commensalistic"
+        definition: "Either species involved in a biological interaction whether mutualistic, parasitic or commensalistic."
     },
     {
         term: "Dehiscence",
         definition: "The natural opening of capsules, fruits, anthers along a line of natural weakness thereby releasing seeds or pollen."
-    }
+    },
+    {
+        term: "Cultivar",
+        definition: "A plant variety that has been produced in cultivation by selective breeding."
+    },
+    {
+        term: "Variety",
+        definition: "A taxonomic rank below that of species and subspecies but above that of form."
+    },
+    {
+        term: "Form",
+        definition: "An infraspecific taxon below that of species."
+    },
+    {
+        term: "Species",
+        definition: "A group of closely related organisms usually capable of interbreeding and producing fertile offspring."
+    },
 ];

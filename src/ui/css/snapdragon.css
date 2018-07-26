@@ -516,10 +516,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .block {
   display: inline-block;
   cursor: pointer;
-  width: auto;
+  width: fit-content;
   background-color: var(--snap-block-light);
   color: var(--snap-text-dark);
-  margin: .1em;
+  margin: .2em 0;
   padding: .1em .4em;
   letter-spacing: .1em;
   border-radius: .2em;
@@ -527,8 +527,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   border: .05em solid var(--snap-text-dark);
 }
 
-.pool .block {
-  font-size: 1.4em;
+.block.given {
+  margin: 1em 0;
 }
 
 .pool .block.active {

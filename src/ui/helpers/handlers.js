@@ -85,6 +85,19 @@ export const modalImageHandler = (image) => {
     })
 };
 
+export const blockScoreHander = (response, renderHeader, callback) => {
+    
+    const { colour, correct } = renderHeader(response);
+
+    response.success = correct;
+
+    callback(colour, correct, response.answer);
+
+    setTimeout(()=>{
+        actions.boundUpdateScore(response);
+    }, response.callbackTime);
+};
+
 export const scoreHandler = (items, item, config, type, callback, questionCount, layoutCount) => {
     
     switch(type) {
