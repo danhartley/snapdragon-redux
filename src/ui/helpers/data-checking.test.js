@@ -60,7 +60,7 @@ test('should return Menthe à longues feuilles for preferred french name', () =>
 test('should return spearmint instead of missing preferred spanish name', () => {
     const config = { language: 'es'};
     const es = itemProperties.vernacularName(item, config);
-    expect(es).toEqual('spearmint');
+    expect(es).toEqual('Spearmint');
 });
 
 

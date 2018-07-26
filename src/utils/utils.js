@@ -115,6 +115,10 @@ const isIterable = array => {
   return Array.isArray(array) && array.length !== 0;
 }
 
+const capitaliseFirst = str => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 export const utils = {
   log,
   encodeQuery,
@@ -128,5 +132,6 @@ export const utils = {
   onlyUnique,
   sortBy,
   calcItemIndex,
-  isIterable
+  isIterable,
+  capitaliseFirst
 };

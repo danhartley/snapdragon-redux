@@ -1,0 +1,21 @@
+<div class="snapdragon-container">
+    <div class="card align-left">
+        <div class="js-multi-question question-container">
+            <div>{{ description }}</div>
+            <div class="landscape">The common name for this species is <span class="capitalise">{{ vernacular }}.</span></div>
+        </div>
+        <div>
+            <span class="block given genus">{{ genus }}</span> <span class="block species">{{ species }}</span>
+        </div>
+        <div class="pool" data-repeat-answer="{{ answers }}">
+            <div class="block">
+                <span>{{ answer }}</span>
+            </div>
+        </div>
+        <div class="text-question js-txt-response"></div>
+    </div>
+    <div class="action-update">
+        <div></div>
+        <button disabled class="btn btn-light js-text-btn">Continue</button>
+    </div>
+</div>
