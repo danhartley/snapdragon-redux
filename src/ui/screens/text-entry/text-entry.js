@@ -70,6 +70,8 @@ const renderLandscape = (item, config, collection) => {
     });
 
     blocks += `<span id="${blocks.length}" class="block">&nbsp;</span>`;
+    blocks += `<span id="${blocks.length}" class="block">&nbsp;</span>`;
+    blocks += `<span id="${blocks.length}" class="block">&nbsp;</span>`;
 
     document.querySelector('.js-pool-letters').innerHTML = blocks;
 

@@ -146,6 +146,11 @@ progress::-moz-progress-bar {
   flex: auto;
 }
 
+.list-group-collection {
+  flex: auto;
+  flex-grow: 1;
+}
+
 .card {
   flex: auto;
   margin: 0 0 1em 0;
@@ -515,7 +520,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   background-color: var(--snap-block-light);
   color: var(--snap-text-dark);
   margin: .1em;
-  padding: .1em .2em;
+  padding: .1em .4em;
   letter-spacing: .1em;
   border-radius: .2em;
   font-size: 1.1em;
@@ -703,10 +708,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   object-fit: cover;
   margin: 0 .5em 0 0;
 }
-
+/* 
 .list-continue-btn {
   margin: 1em .5em;
-}
+} */
 
 .toggle-content {
 	display: none;
