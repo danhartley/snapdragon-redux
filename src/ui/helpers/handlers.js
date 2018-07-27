@@ -69,7 +69,7 @@ export const modalBackgroundImagesHandler = (images, item) => {
             if(src) {
                 src = src.indexOf('https') > -1 ? src : `https://media.eol.org/content/${src}`;
                 DOM.modalImageTitle.innerHTML = item.name;
-                const style = `background-image: url(${src}); background-size: cover;`;
+                const style = `background-image: url(${src}); background-size: cover; background-position: center;`;
                 DOM.modalImage.style = style;
             }
         })

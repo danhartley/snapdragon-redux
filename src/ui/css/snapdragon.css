@@ -331,13 +331,17 @@ progress::-moz-progress-bar {
   text-align: left;
 }
 
-.content {
+/* .content {
   display: flex;
+} */
+
+.species-card-container {
+  flex-shrink: 2;
 }
 
-.species-card-container .content {
+/* .species-card-container .content {
   flex: 1 1 auto;
-}
+} */
 
 .species-card-container .card {
   margin: 1em  0;
