@@ -109,6 +109,7 @@ export const taxa = [
                 identification: '3 tepals. Lily-like flowers, onion-like bulbs. Flowerheads wrapped in bract.'
             }
         ],
+        examples: ['Allium cepa', 'Allium schoenoprasum'],
         "wiki-entry": "https://en.wikipedia.org/wiki/Amaryllidaceae",
         "eol-entry": "http://eol.org/pages/8187/overview"
     },

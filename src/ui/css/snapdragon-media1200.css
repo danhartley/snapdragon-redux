@@ -33,4 +33,8 @@
   #externalPageModal .modal-body {
     height: 550px;
   }
+
+  .strips.description .strip div {
+    font-size: 1.1em;
+  }
 }

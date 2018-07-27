@@ -71,7 +71,7 @@ export const renderCompleteText = (collection) => {
                 <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
                </div>`
             : `<div>
-                <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ answer }</span>
+                <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ response.question }</span>
                </div>`;
 
         if(question === item.species) {
