@@ -192,6 +192,10 @@ export const epithets = [
         "en" : ["upright"]
     },
     {
+        "latin" : ["erica"],
+        "en" : ["heath", "broom"]
+    },
+    {
         "latin" : ["erio-"],
         "en" : ["wool", "woolly"]
     },

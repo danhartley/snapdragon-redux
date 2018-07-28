@@ -1,4 +1,4 @@
-export const pollinators = {    
+export const syndromes = {    
     source: 'https://www.fs.fed.us/wildflowers/pollinators/What_is_Pollination/syndromes.shtml',
     traits: [
         {

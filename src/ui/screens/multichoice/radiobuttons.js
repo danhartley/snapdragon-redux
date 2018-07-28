@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import * as R from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/ramda';
 
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
@@ -43,7 +43,9 @@ export const renderRadioButtons = (collection) => {
         });
     };
 
-    const familyTypes = config.isPortraitMode ? [ 'species-to-family'] : [ 'species-to-family', 'family-to-description'];
+    const familyTypes = config.isPortraitMode 
+        ? [ 'species-to-family'] 
+        : [ 'species-to-family', 'family-to-description'];
 
     const screen = layout.screens.find(screen => screen.name === 'family');
     if(screen) {

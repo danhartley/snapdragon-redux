@@ -130,6 +130,10 @@ progress::-moz-progress-bar {
   height: 60vh;
 }
 
+.modal-list.scrollable {
+  height: 50vh;
+}
+
 .scrollable.card {
   text-align: left;
 }
@@ -161,10 +165,6 @@ progress::-moz-progress-bar {
   background-color: var(--snap-card-background);
   border: 1px solid var(--snap-border-dark);
   border-radius: .1rem;
-}
-
-.card.js-card div {
-  flex: auto;
 }
 
 .snapdragon-options {
@@ -748,6 +748,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .badge {
   vertical-align: text-top;
+  cursor: pointer;
 }
 
 .badge-light {

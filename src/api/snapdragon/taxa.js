@@ -5,7 +5,7 @@ export const taxa = [
         alt: [ 'Compositae'],
         names: [{ language: "en", names:[ 'Daisies', 'Compositae', 'Aster', 'Composite', 'Sunflower family']}],
         "wiki-entry": "https://en.wikipedia.org/wiki/Asteraceae",
-        "eol-entry": "http://eol.org/pages/4206/overview",
+        "eol-entry": "https://eol.org/pages/4206/overview",
         thumb: 'https://media.eol.org/content/2017/02/18/22/29040_98_68.jpg',
         species: 32913,
         genera: 1911,
@@ -18,7 +18,7 @@ export const taxa = [
         ],
         members: ['Cynara cardunculus', 'Helianthus annuus'],
         "wiki-entry": "https://en.wikipedia.org/wiki/Asteraceae",
-        "eol-entry": "http://eol.org/pages/4206/overview"
+        "eol-entry": "https://eol.org/pages/4206/overview"
     },
     {
         taxon: "family",
@@ -47,7 +47,7 @@ export const taxa = [
          }
         ],
         "wiki-entry": "https://en.wikipedia.org/wiki/Apiaceae",
-        "eol-entry": "http://eol.org/pages/4200/overview"
+        "eol-entry": "https://eol.org/pages/4200/overview"
     },
     {
         taxon: "family",
@@ -55,8 +55,8 @@ export const taxa = [
         alt: ['Labiatae'],
         names: [{ language: "en", names:[ 'Mint or Deadnettles', 'Mint or Basil', 'Labiatae', 'Mint', 'Deadnettles']}],
         "wiki-entry": "https://en.wikipedia.org/wiki/Lamiaceae",
-        "eol-entry": "http://eol.org/pages/4302/overview",
-        thumb: "http://media.eol.org/content/2014/08/14/23/80866_88_88.jpg",
+        "eol-entry": "https://eol.org/pages/4302/overview",
+        thumb: "https://media.eol.org/content/2014/08/14/23/80866_88_88.jpg",
         members: ['Ocimum basilicum', 'Rosmarinus officinalis'],
         propagation: 'stem cuttings',
         aetherolea: ['Rosmarinus officinalis', 'Lavandula officinalis'],
@@ -74,7 +74,7 @@ export const taxa = [
          }
         ],
         "wiki-entry": "https://en.wikipedia.org/wiki/Lamiaceae",
-        "eol-entry": "http://eol.org/pages/4302/overview"
+        "eol-entry": "https://eol.org/pages/4302/overview"
     },
     {
         taxon: "family",
@@ -93,7 +93,7 @@ export const taxa = [
         ],
         members: ['Arabidopsis thaliana', 'Brassica oleracea'],
         "wiki-entry": "https://en.wikipedia.org/wiki/Brassicaceae",
-        "eol-entry": "http://eol.org/pages/4219/overview"
+        "eol-entry": "https://eol.org/pages/4219/overview"
     },
     {
         taxon: "family",
@@ -111,7 +111,7 @@ export const taxa = [
         ],
         examples: ['Allium cepa', 'Allium schoenoprasum'],
         "wiki-entry": "https://en.wikipedia.org/wiki/Amaryllidaceae",
-        "eol-entry": "http://eol.org/pages/8187/overview"
+        "eol-entry": "https://eol.org/pages/8187/overview"
     },
     {
         taxon: "order",
@@ -128,12 +128,12 @@ export const taxa = [
         ],
         role: [ 'pollinators', 'food', 'pest', 'producers' ],
         "wiki-entry": "https://en.wikipedia.org/wiki/Lepidoptera",
-        "eol-entry": "http://eol.org/pages/747/overview"
+        "eol-entry": "https://eol.org/pages/747/overview"
     },
     {
         taxon: "order",
         name: "Hymenoptera",
-        thumb: "http://media.eol.org/content/2013/02/03/12/43681_98_68.jpg",
+        thumb: "https://media.eol.org/content/2013/02/03/12/43681_98_68.jpg",
         names: [ { language: "en", names: ['Ants, Bees, and Wasps']} ],
         descriptions: [
             {
@@ -143,13 +143,13 @@ export const taxa = [
         ],
         species: 150000,
         "wiki-entry": "https://en.wikipedia.org/wiki/Hymenoptera",
-        "eol-entry": "http://eol.org/pages/648/overview"
+        "eol-entry": "https://eol.org/pages/648/overview"
     },
     {
         taxon: "family",
         name: "Apidae",
         names: [ { language: "en", names: ['Bees']}],
-        thumb: "http://media.eol.org/content/2013/02/03/12/43681_98_68.jpg",
+        thumb: "https://media.eol.org/content/2013/02/03/12/43681_98_68.jpg",
         species: 5700,
         members: ["Apis mellifera"],
         role: ["pollinator"],
@@ -166,7 +166,7 @@ export const taxa = [
     {
         taxon: 'order',
         name: "Coleoptera",
-        thumb: "http://media.eol.org/content/2015/01/26/11/41088_88_88.jpg",
+        thumb: "https://media.eol.org/content/2015/01/26/11/41088_88_88.jpg",
         names: [ { language: "en", names: ['Beetles']} ],
         species: 400000,
         descriptions: [
@@ -176,12 +176,12 @@ export const taxa = [
             }
         ],
         "wiki-entry": "https://en.wikipedia.org/wiki/Coleoptera",
-        "eol-entry": "http://eol.org/pages/345/overview"
+        "eol-entry": "https://eol.org/pages/345/overview"
     },
     {
         taxon: 'order',
         name: "Diptera",
-        thumb: "http://media.eol.org/content/2015/01/31/00/39232_88_88.jpg",
+        thumb: "https://media.eol.org/content/2015/01/31/00/39232_88_88.jpg",
         names: [ { language: "en", names: ['Flies']} ],
         species: 150000,
         descriptions: [
@@ -191,12 +191,12 @@ export const taxa = [
             }
         ],
         "wiki-entry": "https://en.wikipedia.org/wiki/Diptera",
-        "eol-entry": "http://eol.org/pages/421/overview"
+        "eol-entry": "https://eol.org/pages/421/overview"
     },
     {
         taxon: 'family',
         name: 'Poaceae',
-        thumb: "http://media.eol.org/content/2012/05/23/07/89214_88_88.jpg",
+        thumb: "https://media.eol.org/content/2012/05/23/07/89214_88_88.jpg",
         alt: ['Poaceae', 'Gramineae'],
         names: [ { language: "en", names: ['Grasses', 'True Grasses'] } ],
         "wiki-entry": 'https://en.wikipedia.org/wiki/Poaceae',
@@ -212,12 +212,12 @@ export const taxa = [
         members: ['Triticum','Oryza','Zizania','Zea', 'Avena', 'Hordeum', 'Echinochloa', 'Secale' ],
         toxic: { members: ['Lolium temulentum'] },
         "wiki-entry": "https://en.wikipedia.org/wiki/Poaceae",
-        "eol-entry": "http://eol.org/pages/8223/overview"
+        "eol-entry": "https://eol.org/pages/8223/overview"
     },
     {
         taxon: 'family',
         name: 'Zingiberaceae',
-        thumb: "http://media.eol.org/content/2012/01/25/15/09074_98_68.jpg",
+        thumb: "https://media.eol.org/content/2012/01/25/15/09074_98_68.jpg",
         names: [ { language: "en", names: ['Ginger family']} ],
         species: 1600,
         genera: 50,
@@ -230,12 +230,12 @@ export const taxa = [
         ],
         members: ['Curcuma longa', 'Zingiber officinale', 'Elettaria cardamomum'],
         "wiki-entry": "https://en.wikipedia.org/wiki/Zingiberaceae",
-        "eol-entry": "http://eol.org/pages/8183/overview"
+        "eol-entry": "https://eol.org/pages/8183/overview"
     },
     {
         taxon: 'family',
         name: 'Piperaceae',
-        thumb: "http://media.eol.org/content/2017/01/30/20/37424_88_88.jpg",
+        thumb: "https://media.eol.org/content/2017/01/30/20/37424_88_88.jpg",
         names: [ { language: "en", names: ['Pepper family']} ],
         species: 3600,
         genera: 13,
@@ -247,12 +247,12 @@ export const taxa = [
             }
         ],
         "wiki-entry": "https://en.wikipedia.org/wiki/Piperaceae",
-        "eol-entry": "http://eol.org/pages/4351/overview"        
+        "eol-entry": "https://eol.org/pages/4351/overview"        
     },
     {
         taxon: 'family',
         name: 'Fabaceae',
-        thumb: "http://media.eol.org/content/2010/03/24/13/32972_98_68.jpg",
+        thumb: "https://media.eol.org/content/2010/03/24/13/32972_98_68.jpg",
         alt: ['Leguminosae'],
         names: [ { language: "en", names: ['Pea family', 'Bean family', 'Legumes']} ],
         toxic: { members:['Hedysarum alpinum']},
@@ -266,13 +266,13 @@ export const taxa = [
             }
         ],
         members: ['Pisum sativum', 'Glycine max', 'Cicer arietinum', 'Arachis hypogaea'],
-        "eol-entry": "http://eol.org/pages/4277/overview",
+        "eol-entry": "https://eol.org/pages/4277/overview",
         "wiki-entry": "https://en.wikipedia.org/wiki/Fabaceae"
     },
     {
         taxon: 'family',
         name: 'Rosaceae',
-        thumb: "http://media.eol.org/content/2014/08/25/10/53156_88_88.jpg",
+        thumb: "https://media.eol.org/content/2014/08/25/10/53156_88_88.jpg",
         names: [ { language: "en", names: ['Rose family']} ],
         species: 4828,
         toxic: { members:['Conium maculatum'] },
@@ -285,13 +285,13 @@ export const taxa = [
             }
         ],
         members: ['Malus domestica', 'Pyrus communis'],
-        "eol-entry": "http://eol.org/pages/8097/overview",
+        "eol-entry": "https://eol.org/pages/8097/overview",
         "wiki-entry": "https://en.wikipedia.org/wiki/Rosaceae"
     },
     {
         taxon: 'family',
         name: 'Rutaceae',
-        thumb: "http://media.eol.org/content/2012/05/23/09/05989_98_68.jpg",
+        thumb: "https://media.eol.org/content/2012/05/23/09/05989_98_68.jpg",
         names: [ { language: "en", names: ['Citrus family', 'Rue family']} ],
         species: 1600,
         genera: 160,
@@ -302,13 +302,13 @@ export const taxa = [
                 identification: 'Flowers that divide into 4 or 5 parts, usually with strong scents.'
             }
         ],
-        "eol-entry": "http://eol.org/pages/582200/overview",
+        "eol-entry": "https://eol.org/pages/582200/overview",
         "wiki-entry": "https://en.wikipedia.org/wiki/Rutaceae"
     },
     {
         taxon: 'family',
         name: 'Cucurbitaceae',
-        thumb: "http://media.eol.org/content/2011/08/04/10/10257_88_88.jpg",
+        thumb: "https://media.eol.org/content/2011/08/04/10/10257_88_88.jpg",
         names: [ { language: "en", names: ['Gourd family', 'Cucurbits', 'Gourds, Melons, Squash, & Cucumbers']} ],
         species: 975,
         genera: 98,
@@ -319,13 +319,13 @@ export const taxa = [
                 identification: 'Climbing vines, tendrils, funnel-shaped flowers and large fruit often with 3 chambers.'
             }
         ],
-        "eol-entry": "http://eol.org/pages/4458/overview",
+        "eol-entry": "https://eol.org/pages/4458/overview",
         "wiki-entry": "https://en.wikipedia.org/wiki/Cucurbitaceae"
     },
     {
         taxon: 'family',
         name: 'Amaranthaceae',
-        thumb: "http://media.eol.org/content/2012/06/12/15/54548_88_88.jpg",
+        thumb: "https://media.eol.org/content/2012/06/12/15/54548_88_88.jpg",
         names: [ { language: "en", names: ['Amaranth family', 'Pigweed']} ],
         species: 2040,
         genera: 165,
@@ -337,13 +337,13 @@ export const taxa = [
             }
         ],
         members: ['Beta vulgaris', 'Spinacia oleracea'],
-        "eol-entry": "http://eol.org/pages/4226/overview",
+        "eol-entry": "https://eol.org/pages/4226/overview",
         "wiki-entry": "https://en.wikipedia.org/wiki/Amaranthaceae"
     },
     {
         taxon: 'family',
         name: 'Solanaceae',
-        thumb: "http://media.eol.org/content/2012/06/12/16/57629_98_68.jpg",
+        thumb: "https://media.eol.org/content/2012/06/12/16/57629_98_68.jpg",
         names: [ { language: "en", names: ['Nightshades']} ],
         species: 2700,
         genera: 98,
@@ -355,13 +355,13 @@ export const taxa = [
             }
         ],
         members: ['Nicotiana tabacum', 'Solanum tuberosum'],
-        "eol-entry": "http://eol.org/pages/4437/overview",
+        "eol-entry": "https://eol.org/pages/4437/overview",
         "wiki-entry": "https://en.wikipedia.org/wiki/Solanaceae"
     },
     {
         taxon: 'family',
         name: 'Moraceae',
-        thumb: "http://media.eol.org/content/2014/08/15/04/78512_88_88.jpg",
+        thumb: "https://media.eol.org/content/2014/08/15/04/78512_88_88.jpg",
         names: [ { language: "en", names: ['Mulberry family', 'Fig family']} ],
         species: 1100,
         genera: 38,
@@ -373,13 +373,13 @@ export const taxa = [
             }
         ],
         members: ['Ficus', 'Morus alba'],
-        "eol-entry": "http://eol.org/pages/4450/overview",
+        "eol-entry": "https://eol.org/pages/4450/overview",
         "wiki-entry": "https://en.wikipedia.org/wiki/Moraceae"
     },
     {
         taxon: 'family',
         name: 'Vitaceae',
-        thumb: "http://media.eol.org/content/2013/12/08/20/40721_88_88.jpg",
+        thumb: "https://media.eol.org/content/2013/12/08/20/40721_88_88.jpg",
         names: [ { language: "en", names: ['Wild Grape Family']} ],
         species: 910,
         genera: 14,
@@ -391,13 +391,13 @@ export const taxa = [
             }
         ],
         members: ['Vitis vinifera'],
-        "eol-entry": "http://eol.org/pages/4382/overview",
+        "eol-entry": "https://eol.org/pages/4382/overview",
         "wiki-entry": "https://en.wikipedia.org/wiki/Vitaceae"
     },
     {
         taxon: 'family',
         name: 'Lauraceae',
-        thumb: "http://media.eol.org/content/2012/06/13/03/98939_88_88.jpg",
+        thumb: "https://media.eol.org/content/2012/06/13/03/98939_88_88.jpg",
         names: [ { language: "en", names: ['Laurel Family']} ],
         species: 2850,
         genera: 45,
@@ -409,7 +409,25 @@ export const taxa = [
             }
         ],
         members: ['Persea americana', 'Laurus nobilis'],
-        "eol-entry": "http://eol.org/pages/4308/overview",
+        "eol-entry": "https://eol.org/pages/4308/overview",
         "wiki-entry": "https://en.wikipedia.org/wiki/Lauraceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Ericaceae',
+        thumb: "https://media.eol.org/content/2012/06/13/13/64173_88_88.jpg",
+        names: [ { language: "en", names: ['Heath Family', 'Heather Family']} ],
+        species: 4250,
+        genera: 124,
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Common in acidic and poor soils.',
+                identification: 'Red or white bell-shaped flowers (parts in 4s or 5s). Commonly evergreen leaves. Family includes cranberry, blueberry and rhododendron.'
+            }
+        ],
+        members: ['Vaccinium oxycoccos', 'Vaccinium', 'Rhododendron', 'Arbutus unedo', 'Erica'],
+        "eol-entry": "https://eol.org/pages/4267/overview",
+        "wiki-entry": "https://en.wikipedia.org/wiki/Ericaceae"
     }
 ];
