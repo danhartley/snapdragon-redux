@@ -2,26 +2,26 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
-export const scoreHandler = (type, score, callback, callbackTime, isPortraitMode, renderHeader) => {
+export const scoreHandler = (type, score, callback, callbackTime, renderHeader) => {
     
     switch(type) {
         case 'radio':
         case 'text':
-            scoringHandler(score, callback, callbackTime, isPortraitMode, renderHeader);
+            scoringHandler(score, callback, callbackTime, renderHeader);
             break;
         case 'block':
             blockScoreHander(score, callback, callbackTime);
             break;
         case 'strip':   
-            stripScoreHandler(score, callback, callbackTime, isPortraitMode);
+            stripScoreHandler(score, callback, callbackTime);
             break;
         case 'image':
-            imageScoreHandler(score, callback, callbackTime, isPortraitMode);
+            imageScoreHandler(score, callback, callbackTime);
             break;
     }
 };
 
-const scoringHandler = (score, callback, callbackTime, isPortraitMode, renderHeader) => {
+const scoringHandler = (score, callback, callbackTime, renderHeader) => {
     
     const { question, answer, event, layoutCount } = score;
 
@@ -45,7 +45,7 @@ const scoringHandler = (score, callback, callbackTime, isPortraitMode, renderHea
 
     const questionText = document.querySelector('.js-txt-question');
 
-    if(isPortraitMode) {
+    //if(isPortraitMode) {
         questionText.innerHTML = correct
             ? `<div>
                 <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
@@ -53,18 +53,18 @@ const scoringHandler = (score, callback, callbackTime, isPortraitMode, renderHea
             : `<div>
                 <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ correctAnswer }</span>
                </div>`;
-    } else {
-        questionText.innerHTML = correct 
-            ? `<div>
-                <span class="icon"><i class="fas fa-check-circle"></i></span>
-                <span>${ correctAnswer } is the correct answer.</span>
-               </div>`
-            : `<div>
-                <span class="icon"><i class="fas fa-times-circle"></i></span>
-                <span>${ wrongAnswer || '--' } is incorrect.</span>
-               </div> 
-               <div>The correct answer is ${ correctAnswer }.</div>`;
-    }
+    // } else {
+    //     questionText.innerHTML = correct 
+    //         ? `<div>
+    //             <span class="icon"><i class="fas fa-check-circle"></i></span>
+    //             <span>${ correctAnswer } is the correct answer.</span>
+    //            </div>`
+    //         : `<div>
+    //             <span class="icon"><i class="fas fa-times-circle"></i></span>
+    //             <span>${ wrongAnswer || '--' } is incorrect.</span>
+    //            </div> 
+    //            <div>The correct answer is ${ correctAnswer }.</div>`;
+    // }
 
     btn.style.background = colour;
     btn.style.borderColor = colour;
@@ -93,7 +93,7 @@ const blockScoreHander = (score, callback, callbackTime) => {
     }, callbackTime);
 };
 
-const stripScoreHandler = (score, callback, callbackTime, isPortraitMode) => {    
+const stripScoreHandler = (score, callback, callbackTime) => {    
 
     const { items, taxon } = score;
 
@@ -138,7 +138,7 @@ const stripScoreHandler = (score, callback, callbackTime, isPortraitMode) => {
     });
 };
 
-const imageScoreHandler = (score, callback, callbackTime, isPortraitMode) => {
+const imageScoreHandler = (score, callback, callbackTime) => {
 
     const { items, taxon } = score;
 
@@ -153,7 +153,7 @@ const imageScoreHandler = (score, callback, callbackTime, isPortraitMode) => {
             score.taxon = 'name';
             score.question = taxon.name
             score.answer = answer;
-            const { text, colour, correct } = renderAnswerHeader(score, isPortraitMode);
+            const { text, colour, correct } = renderAnswerHeader(score);
 
             if(callback) callback(text, colour, correct);
 

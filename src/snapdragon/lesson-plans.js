@@ -144,7 +144,7 @@ const landscapeLesson1 = {
             description: 'Beginner',
             // layouts: [ speciesRevision,  textCompleteGenus, textCompleteSpecies, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, commonEntry ]            
             // layouts: [ speciesRevision, familyStripsMatch, textCompleteGenus, textCompleteSpecies, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]            
-            layouts: [ genusEntry, speciesEntry ]
+            layouts: [ imageToImageMatch, speciesEntry ]
         },
         {   id: 2,
             name: 'Level 2',

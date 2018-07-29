@@ -56,22 +56,7 @@ export const renderAnswer = (response) => {
     }
 };
 
-export const renderAnswerText = (response, isPortraitMode) => {
-
-    const correct = isAnswerCorrect(response);
-
-    if(isPortraitMode) {
-        return correct
-        ? `${renderAnswer(response)}`
-        : `${renderAnswer(response)}`
-    } else {
-        return correct
-        ? `${renderAnswer(response)} is the correct answer.`
-        : `The correct answer is ${renderAnswer(response)}.`
-    }
-};
-
-export const renderAnswerHeader = (response, isPortraitMode = true) => {
+export const renderAnswerHeader = response => {
 
     if(!response) return;
 
@@ -81,7 +66,7 @@ export const renderAnswerHeader = (response, isPortraitMode = true) => {
 
     const colour = correct ? 'snap-success' : 'snap-alert';
 
-    return { text: renderAnswerText(response, isPortraitMode), colour, correct };
+    return { text: renderAnswer(response), colour, correct };
 };
 
 export const renderTermAnswerHeader = (response, header, target) => {

@@ -76,7 +76,7 @@ export const renderStrips = (screen, item, callback, config, lessonPlan) => {
     const taxon = { name: item.name, binomial: item.name, question: item.name };
     const score = { items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount};
     
-    scoreHandler('strip', score, renderAnswer, config.callbackTime, config.isPortraitMode);
+    scoreHandler('strip', score, renderAnswer, config.callbackTime);
 
     template.innerHTML = '';
 };

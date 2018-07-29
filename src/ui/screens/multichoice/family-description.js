@@ -72,5 +72,5 @@ export const renderFamilyDescriptions = (collection) => {
     const score = { items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount};
     const callback = renderAnswer;
 
-    scoreHandler('strip', score, callback, config.callbackTime, config.isPortraitMode);
+    scoreHandler('strip', score, callback, config.callbackTime);
 };

@@ -39,7 +39,7 @@ export const renderRadioButtons = (collection) => {
         document.querySelector('button').addEventListener('click', event => {
             const answer = document.querySelector('input[name="answer"]:checked').value;
             const score = { question, answer, event, layoutCount: lessonPlan.layouts.length };
-            scoreHandler('radio', score, null, config.callbackTime, config.isPortraitMode, renderAnswerHeader);
+            scoreHandler('radio', score, null, config.callbackTime, renderAnswerHeader);
         });
     };
 

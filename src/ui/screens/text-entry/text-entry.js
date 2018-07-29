@@ -27,7 +27,7 @@ export const renderInput = (config, screen, question, callbackTime, item, render
     
     clone.querySelector('.js-check-answer').addEventListener('click', event => {
         const score = { question, answer: document.querySelector('.js-txt-input').value, event, layoutCount: lessonPlan.layouts.length };
-        scoreHandler('text', score, null, callbackTime, config.isPortraitMode, renderHeader);
+        scoreHandler('text', score, null, callbackTime, renderHeader);
     });
 
     const parent = DOM.rightBody;
