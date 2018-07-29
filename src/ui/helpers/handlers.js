@@ -161,7 +161,7 @@ const imageScoreHandler = (score, callback, callbackTime) => {
 
             tile.style.filter = 'saturate(100%)';
 
-            DOM.rightHeaderTxt.innerHTML = text;
+            // DOM.rightHeaderTxt.innerHTML = text;
             
             img.parentNode.style.filter = 'saturate(100%)';
 

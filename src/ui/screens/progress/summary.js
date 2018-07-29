@@ -42,9 +42,9 @@ export const renderSummary = (history) => {
 
     renderTemplate({ score, history, collection, config, summary }, template.content, parent);
     
-    const learnMoreBtn = document.querySelector('.js-lesson-btn-action');
+    const learnMoreBtn = document.querySelector('.js-summmary-btn-action');
 
-    const handleBtnClickEvent = () => {
+    const handleBtnClickEvent = event => {
         
         const lessonName = config.lesson.name;
         const levelName = config.lesson.level.name;
@@ -70,6 +70,7 @@ export const renderSummary = (history) => {
         config.moduleSize = collection.moduleSize;        
     };
 
+    learnMoreBtn.removeEventListener('click', handleBtnClickEvent);
     learnMoreBtn.addEventListener('click', handleBtnClickEvent);
 };
 

@@ -52,7 +52,7 @@ export const renderSpeciesCollectionList = (collection, append = false) => {
 
     listItemImages.forEach(itemImage => { modalImageHandler(itemImage); });    
 
-    const continueLearningActionBtn = document.querySelector('.js-lesson-btn-action');
+    const continueLearningActionBtn = document.querySelector('.js-species-list-btn-action');
     
     if(continueLearningActionBtn) {
         continueLearningActionBtn.addEventListener('click', () => {
