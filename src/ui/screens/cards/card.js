@@ -4,7 +4,7 @@ import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
 import { taxa } from 'api/snapdragon/taxa';
 import { renderWiki } from 'wikipedia/wiki';
-import { renderFamily } from 'gbif/gbif';
+import { infraspecifics } from 'api/snapdragon/infraspecifics';
 import { renderTemplate } from 'ui/helpers/templating';
 import { modalBackgroundImagesHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
@@ -14,12 +14,12 @@ import portraitTemplate from 'ui/screens/cards/card-portrait-template.html';
 export const renderCard = (collection) => {
     
     const item = collection.items[collection.itemIndex];    
-    const { layout, config, layouts } = store.getState();
+    const { layout, config, lessonPlan } = store.getState();
 
-    item.questionCount = layouts.filter(l => l.name === 'test').length;
-    item.layoutCount = layouts.length;
+    item.questionCount = lessonPlan.questionCount;
+    item.layoutCount = lessonPlan.layoutCount;
     
-    document.querySelector('progress').max = layouts.filter(layout => layout.name === 'test').length;
+    document.querySelector('progress').max = item.questionCount;
     document.querySelector('progress').value = 0;
 
     const screen = layout.screens.filter(el => el.name === 'species-card')[0];
@@ -45,7 +45,8 @@ const renderLandscape = (item, config) => {
 
     renderCommonParts(template, config, item);
 
-    const familyImage = taxa.find(f => f.name === item.family).thumb;
+    const family = taxa.find(f => f.name === item.family);
+    const familyImage = family ? family.thumb : '';
 
     document.querySelector('.js-img-family').src = familyImage;
 
@@ -118,6 +119,11 @@ const renderCommonParts = (template, config, item) => {
     const speciesName = itemProperties.speciesName(species);
     const epithet = itemProperties.latin(speciesName);
     const latin = epithet ? `${speciesName}: ${epithet.en}` : '';
+    const rank = "species";
+
+    const specific = infraspecifics.find(specific => specific.name === item.name);
+    
+    const occurrences = specific ? specific.subspecies.length : 0;
 
     const clone = document.importNode(template.content, true);
     
@@ -128,11 +134,31 @@ const renderCommonParts = (template, config, item) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
     
-    renderTemplate({ species, name, latin }, template.content, parent, clone);
+    renderTemplate({ species, name, latin, rank, occurrences }, template.content, parent, clone);
 
     const gbif = document.querySelector('.js-card .js-txt-family span');
 
     gbif.innerHTML = item.family;
 
-    // renderFamily(gbif, item.name);
+    if(occurrences !== 0) {
+
+        const members = specific.subspecies;
+
+        document.querySelector('.badge').addEventListener('click', event => {
+            document.querySelector('#listModal .js-modal-text-title').innerHTML = `Cultivars of ${item.name}`;            
+            const list = document.querySelector('#listModal .js-modal-text');
+            let html = '<div class="modal-list scrollable">';
+            members.forEach(member => {
+                html += `<div><span>subspecies: ${member.name}</span>`;
+                html += `<ul>`;
+                member.names.forEach(name => {
+                    if(name.language === config.language)
+                        html += `<li>name: ${name.vernacularName}</li>`;
+                });
+                html += `</ul></div>`;
+            });
+            html += '</div>';
+            list.innerHTML = html;
+        });
+    }
 };

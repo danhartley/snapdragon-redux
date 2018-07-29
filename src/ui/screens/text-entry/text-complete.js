@@ -3,10 +3,9 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
-import { blockScoreHander } from 'ui/helpers/handlers';
+import { scoreHandler } from 'ui/helpers/handlers';
 
 import completeTemplate from 'ui/screens/text-entry/text-complete-template.html';
 
@@ -14,7 +13,7 @@ export const renderCompleteText = (collection) => {
 
     const item = collection.items[collection.itemIndex];
 
-    const { layout, config, layouts } = store.getState();
+    const { layout, config, lessonPlan } = store.getState();
 
     const screen = layout.screens.filter(el => el.name === 'text-complete')[0];
     
@@ -62,7 +61,7 @@ export const renderCompleteText = (collection) => {
 
     renderTemplate({ description, vernacular, answers, genus, species }, template.content, parent);
 
-    const response = { binomial: item.name, question: item[givenTaxon], callbackTime: config.callbackTime, layoutCount: layouts.length };
+    const score = { binomial: item.name, question: item[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length };
 
     const updateScreen = (colour, correct, answer) => {
 
@@ -71,7 +70,7 @@ export const renderCompleteText = (collection) => {
                 <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
                </div>`
             : `<div>
-                <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ response.question }</span>
+                <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ score.question }</span>
                </div>`;
 
         if(question === item.species) {
@@ -99,8 +98,8 @@ export const renderCompleteText = (collection) => {
             } else {
                 document.querySelector('.genus').innerHTML = answer;
             }
-            response.answer = answer;
-            blockScoreHander(response, renderAnswerHeader, updateScreen);
+            score.answer = answer;
+            scoreHandler('block', score, updateScreen, config.callbackTime);
         });
     });
 };

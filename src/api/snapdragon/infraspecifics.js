@@ -30,10 +30,6 @@ export const infraspecifics = [
                     {
                         "vernacularName": "Field mustard",
                         "language": "en"
-                    },
-                    {
-                        "vernacularName": "Field mustard",
-                        "language": "en"
                     }
                 ]
             },
@@ -55,7 +51,7 @@ export const infraspecifics = [
     {
         name: 'Brassica oleracea',
         variety: 'oleracea',
-        varieties: [
+        subspecies: [
             {
                 name: 'oleracea',
                 names: [

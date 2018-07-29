@@ -3,6 +3,7 @@ import * as R from 'ramda';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
+import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { taxa } from 'api/snapdragon/taxa';
 import taxonTemplate from 'ui/screens/cards/taxon-template.html';
@@ -10,10 +11,10 @@ import taxonTemplate from 'ui/screens/cards/taxon-template.html';
 export const renderTaxonCard = collection => {
   
     const item = collection.items[collection.itemIndex];
-    const { layouts } = store.getState();
+    const { lessonPlan, config } = store.getState();
 
-    item.questionCount = layouts.filter(l => l.name === 'test').length;
-    item.layoutCount = layouts.length;
+    item.questionCount = lessonPlan.layouts.filter(l => l.name === 'test').length;
+    item.layoutCount = lessonPlan.layouts.length;
 
     const template = document.createElement('template');
 
@@ -63,4 +64,14 @@ export const renderTaxonCard = collection => {
 
     document.querySelector('.js-external-page-title').innerHTML = `${item.family}`;
     document.querySelector('.js-external-page-body').innerHTML = `<iframe class="modal-iframe" title="Wikipedia page for ${item.family}" src="${context.wiki}"></iframe>`;
+
+    document.querySelector('.badge').addEventListener('click', event => {
+        document.querySelector('#listModal .js-modal-text-title').innerHTML = `Members of the ${item.family} family`;
+        const members = collection.items.filter(i => i.family === item.family);
+        const list = document.querySelector('#listModal .js-modal-text');
+        list.innerHTML = '';
+        members.forEach(member => {
+            list.innerHTML += `<div>${member.name} (${itemProperties.vernacularName(member, config)})</div>`;
+        });
+    });
 };

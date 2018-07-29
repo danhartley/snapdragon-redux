@@ -5,7 +5,10 @@
             <span></span>
         </div>
         <div class="species-card-species js-txt-species">{{ species }}</div>
-        <div class="species-card-name js-txt-species-names">{{ name }}</div>
+        <div class="species-card-name js-txt-species-names">
+                <span>{{ name }}</span>
+                <span class="badge badge-light" data-toggle="modal" data-target="#listModal">{{ occurrences }}</span> <span class="sr-only">species of this family in the collection</span>
+        </div>
         <div class="species-card-latin js-txt-latin">{{ latin }}</div>
         <div></div>
     </div>    

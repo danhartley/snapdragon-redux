@@ -6,13 +6,13 @@ export const nextLesson = (config) => {
 
     if(config.collection.id === '') return;
 
-    const { layouts, collection, layout, score } = store.getState();
+    const { lessonPlan, collection, score } = store.getState();
 
     config.excludeRevision = config.lesson.level.id !== 1;
 
     const isLessonPlanRequired = score.total === 0;
 
-    const _layouts = isLessonPlanRequired ? lessonPlanner.createLessonPlan(config, collection) : layouts;
+    const _lessonPlan = isLessonPlanRequired ? lessonPlanner.createLessonPlan(config, collection) : lessonPlan;
 
-    actions.boundNextLesson(_layouts);
+    actions.boundNextLesson(_lessonPlan);
 };

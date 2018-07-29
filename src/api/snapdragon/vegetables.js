@@ -461,6 +461,10 @@ export const vegetables = [
       ],
       "names": [
         {
+          "vernacularName": "field mustard",
+          "language": "en"
+        },
+        {
           "vernacularName": "turnip",
           "language": "en",
           "eol_preferred": true
@@ -500,11 +504,7 @@ export const vegetables = [
         {
           "vernacularName": "colza",
           "language": "en"
-        },
-        {
-          "vernacularName": "field mustard",
-          "language": "en"
-        },
+        },        
         {
           "vernacularName": "napa (nappa) cabbage",
           "language": "en"

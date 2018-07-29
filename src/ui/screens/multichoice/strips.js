@@ -7,7 +7,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import speciesCard from 'ui/screens/cards/species-card-template.html';
 import questionCard from 'ui/screens/common/question-template.html';
 
-export const renderStrips = (screen, item, callback, config, questionCount, layoutCount) => {
+export const renderStrips = (screen, item, callback, config, lessonPlan) => {
 
     // render questions
 
@@ -74,8 +74,9 @@ export const renderStrips = (screen, item, callback, config, questionCount, layo
     }
 
     const taxon = { name: item.name, binomial: item.name, question: item.name };
-
-    scoreHandler(strips, taxon, config, 'strip', renderAnswer, questionCount, layoutCount);
+    const score = { items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount};
+    
+    scoreHandler('strip', score, renderAnswer, config.callbackTime);
 
     template.innerHTML = '';
 };

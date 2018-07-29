@@ -14,7 +14,7 @@ export const renderSpeciesTiles = (collection) => {
 
     const item = collection.items[collection.itemIndex];
 
-    const { layout, config, layouts } = store.getState();
+    const { layout, config, lessonPlan } = store.getState();
 
     const screen = layout.screens.find(el => el.name === 'species-images');
     
@@ -35,31 +35,27 @@ export const renderSpeciesTiles = (collection) => {
 
     renderTemplate({ images }, template.content, parent);
 
-    const questionCount = layouts.filter(l => l.name === 'test').length;
-    const layoutCount = layouts.length;
-    
-    if(config.isPortraitMode) {
+    const score = { items: document.querySelectorAll('.js-tiles .tile'), taxon: item, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount};
 
-        parent = document.querySelector('.snapdragon-container');
+    parent = document.querySelector('.right-body .snapdragon-container');
 
-        const species = item.name;
-        const name = itemProperties.vernacularName(item, config);
-        template.innerHTML = speciesCard;
-        renderTemplate( { species, name, filter: '' }, template.content, parent);
-        template.innerHTML = questionCard;
-        const question = screen.question;
-        renderTemplate( { question }, template.content, parent);
-        const renderAnswer = (text, colour, correct) => {
-            const answer = document.querySelector('.js-answer');
-            answer.innerHTML = correct ? 'Correct' : 'Incorrect';
-            answer.style.display = 'block';            
-            answer.classList.add(colour);
-            document.querySelector('.js-question').style.display = 'none';
-        }   
-        scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image', renderAnswer, questionCount, layoutCount);
-    } else {
-        scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image', null, questionCount, layoutCount);
-    };
+    const species = item.name;
+    const name = itemProperties.vernacularName(item, config);
+    template.innerHTML = speciesCard;
+    renderTemplate( { species, name, filter: '' }, template.content, parent);
+    template.innerHTML = questionCard;
+    const question = screen.question;
+    renderTemplate( { question }, template.content, parent);
+    const renderAnswer = (text, colour, correct) => {
+        const answer = document.querySelector('.js-answer');
+        answer.innerHTML = correct ? 'Correct' : 'Incorrect';
+        answer.style.display = 'block';            
+        answer.classList.add(colour);
+        document.querySelector('.js-question').style.display = 'none';
+    }   
+
+    const callback = renderAnswer;
+    scoreHandler('image', score, callback, config.callbackTime);
 
     document.querySelectorAll('.tile span').forEach(img=>{
         img.addEventListener('click', event => {        

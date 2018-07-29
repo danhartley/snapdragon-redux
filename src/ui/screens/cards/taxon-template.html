@@ -1,7 +1,7 @@
 <div class="snapdragon-container species-card js-species-card">
     <div class="card">
         <div class="species-family">
-            <span>{{ name }}</span><span class="badge badge-light">{{ occurrences }}</span> <span class="sr-only">species of this family in the collection</span>
+            <span>{{ name }}</span><span class="badge badge-light" data-toggle="modal" data-target="#listModal">{{ occurrences }}</span> <span class="sr-only">species of this family in the collection</span>
             <img class="js-img-family" src="{{ img }}" alt="">                    
         </div>
         <div class="taxon-card-header">{{ common }}</div>
@@ -24,7 +24,6 @@
             </div>
         </div>
         <div class="landscape">{{ summary }}</div>
-        <div class="taxon-members">e.g. {{ members }}  </div>
         <div class="landscape"><span class="snap-alert-fg js-taxon-toxic-warning"></span> {{ toxic }}</div>
         <div class="landscape">
             <a href="{{ eol }}" target="_blank" class="underline-link">EOL</a>

@@ -5,7 +5,7 @@ export const renderVernaculars = (collection) => {
 
     const item = collection.items[collection.itemIndex];
 
-    const { layout, config, layouts } = store.getState();
+    const { layout, config, lessonPlan } = store.getState();
 
     const screen = layout.screens.filter(el => el.name === 'species-vernaculars')[0];
 
@@ -18,8 +18,5 @@ export const renderVernaculars = (collection) => {
                 </div>`;
        };
 
-    const questionCount = layouts.filter(l => l.name === 'test').length;
-    const layoutCount = layouts.length;
-
-    renderStrips(screen, item, callback, config, questionCount, layoutCount);
+    renderStrips(screen, item, callback, config, lessonPlan);
 };

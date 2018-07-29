@@ -5,13 +5,13 @@ import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
-import { scoringHandler, modalBackgroundImagesHandler } from 'ui/helpers/handlers';
+import { scoreHandler, modalBackgroundImagesHandler } from 'ui/helpers/handlers';
 import landscapeTemplates from 'ui/screens/text-entry/text-entry-templates.html';
 import portraitTemplates from 'ui/screens/text-entry/text-entry-portrait-templates.html';
 
 export const renderInput = (config, screen, question, callbackTime, item, renderHeader, hints) => {
 
-    const { layouts, collection } = store.getState();
+    const { lessonPlan, collection } = store.getState();
     const templates = document.createElement('div');
     templates.innerHTML = config.isPortraitMode ? portraitTemplates : landscapeTemplates;
 
@@ -26,8 +26,8 @@ export const renderInput = (config, screen, question, callbackTime, item, render
     const clone = document.importNode(template.content, true);
     
     clone.querySelector('.js-check-answer').addEventListener('click', event => {
-        const score = { question, answer: document.querySelector('.js-txt-input').value, event, layoutCount: layouts.length };
-        scoringHandler(score, config.isPortraitMode, callbackTime, renderHeader);
+        const score = { question, answer: document.querySelector('.js-txt-input').value, event, layoutCount: lessonPlan.layouts.length };
+        scoreHandler('text', score, null, callbackTime, renderHeader);
     });
 
     const parent = DOM.rightBody;
@@ -59,9 +59,9 @@ const renderPortrait = item => {
 
 const renderLandscape = (item, config, collection) => {
     
-    const answer = item.name + itemProperties.vernacularName(item, config);
+    const pool = (item.name + itemProperties.vernacularName(item, config)).replace(/\s/g,'').toLowerCase();
 
-    const pool = (R.take(1,utils.shuffleArray(collection.items)).map(item => item.name).join('') + answer).replace(/\s/g,'').toLowerCase();
+    //const pool = (R.take(1,utils.shuffleArray(collection.items)).map(item => item.name).join('') + answer).replace(/\s/g,'').toLowerCase();
 
     let blocks = '';
 
