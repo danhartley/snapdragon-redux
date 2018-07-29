@@ -9,7 +9,7 @@ export const renderSummary = (history) => {
 
     document.querySelector('progress').value = 0;
 
-    const { score, layouts, collection, config: currentConfig } = store.getState();
+    const { score, collection, config: currentConfig } = store.getState();
 
     const config = { ...currentConfig };
 

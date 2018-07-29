@@ -14,7 +14,7 @@ export const renderFamilyDescriptions = (collection) => {
 
     const item = collection.items[collection.itemIndex];
 
-    const { config, layouts } = store.getState();
+    const { config, lessonPlan } = store.getState();
 
     let parent = DOM.rightBody;
     parent.innerHTML = '';
@@ -37,8 +37,8 @@ export const renderFamilyDescriptions = (collection) => {
 
     renderTemplate({ answers }, template.content, parent);
     
-    const questionCount = layouts.filter(l => l.name === 'test').length;
-    const layoutCount = layouts.length;
+    const { questionCount, layoutCount } = lessonPlan;
+
     const strips = document.querySelectorAll('.js-rptr-strips .strip div');
 
     // render family card
@@ -69,5 +69,8 @@ export const renderFamilyDescriptions = (collection) => {
 
     const taxon = { name: item.family, binomial: item.name, question: familyDescription };
 
-    scoreHandler(strips, taxon, config, 'strip', renderAnswer, questionCount, layoutCount);
+    const score = { items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount};
+    const callback = renderAnswer;
+
+    scoreHandler('strip', score, callback, config.callbackTime, config.isPortraitMode);
 };

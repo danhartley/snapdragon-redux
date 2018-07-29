@@ -7,19 +7,19 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         layouts = layouts.filter(layout => layout.name !== 'revision');
     }
 
-    let lessonPlan = [], layoutIndex = 0;
+    let lessonPlan = { layouts: [] }, layoutIndex = 0;
 
     layouts.forEach( (layout, index) => {
 
         let i = 0;
         do {
-            lessonPlan.push({...layout, lessonName, levelName });
+            lessonPlan.layouts.push({...layout, lessonName, levelName });
             i++;
         } while (i < moduleSize);
     });
 
-    const revisionLayouts = excludeRevision ? [] : lessonPlan.filter(l => l.name === 'revision');
-    const shuffledLessonLayouts = utils.shuffleArray([ ...lessonPlan.filter(l => l.name === 'test'), ...wildcardLayouts]);
+    const revisionLayouts = excludeRevision ? [] : lessonPlan.layouts.filter(l => l.name === 'revision');
+    const shuffledLessonLayouts = utils.shuffleArray([ ...lessonPlan.layouts.filter(l => l.name === 'test'), ...wildcardLayouts]);
     const offSet = (collection.currentRound - 1) * moduleSize;
 
     shuffledLessonLayouts.forEach( (layout, i) => {
@@ -40,7 +40,7 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         shuffledLessonLayouts.splice(arrayIndex, 0, layout);
     });
 
-    lessonPlan = shuffledLessonLayouts;
+    lessonPlan.layouts = shuffledLessonLayouts;
 
     lessonPlan.lessonName = lessonName;
     lessonPlan.levelName = levelName;
@@ -56,7 +56,7 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
             }],
             lessonName,
             levelName,
-            layoutIndex: lessonPlan.length,
+            layoutIndex: lessonPlan.layouts.length,
             itemIndex: 0
         }
         : {
@@ -64,18 +64,21 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
             screens: [...progressScreens],
             lessonName,
             levelName,
-            layoutIndex: lessonPlan.length,
+            layoutIndex: lessonPlan.layouts.length,
             itemIndex: 0
         };
 
-    lessonPlan.push(summaryLayout);
+    lessonPlan.layouts.push(summaryLayout);
 
-    const scores = lessonPlan.map(layout => layout.score || 0);
+    const scores = lessonPlan.layouts.map(layout => layout.score || 0);
     const roundScoreCount = scores.reduce((accumulator, currentValue) => accumulator + currentValue);
 
-    lessonPlan.map(layout => layout.roundScoreCount = roundScoreCount);
+    lessonPlan.layouts.map(layout => layout.roundScoreCount = roundScoreCount);
 
     lessonPlan.moduleSize = moduleSize;
+
+    lessonPlan.questionCount = lessonPlan.layouts.filter(l => l.name === 'test').length;
+    lessonPlan.layoutCount = lessonPlan.layouts.length;
 
     return lessonPlan;
 };

@@ -3,7 +3,7 @@ import { DOM } from 'ui/dom';
 
 export const renderHeaders = counter => {
     
-    const { collection, layouts, config } = store.getState();
+    const { collection, lessonPlan, config } = store.getState();
 
     const item = (collection && collection.items) ? collection.items[collection.itemIndex] : null;
 
@@ -11,18 +11,18 @@ export const renderHeaders = counter => {
 
     DOM.leftHeaderTxt.innerHTML = title;
 
-    if(!layouts) return;
+    if(!lessonPlan) return;
 
-    const layout = layouts[counter.index];
+    const layout = lessonPlan.layouts[counter.index];
 
     if(!layout) return;
 
-    const questionCount = layouts.filter(l => l.name === 'test').length;
+    const questionCount = lessonPlan.layouts.filter(l => l.name === 'test').length;
 
     document.querySelector('progress').max = questionCount;
 
     if(layout.name === 'test') {
-        const offset = layouts.filter(layout => layout.name === 'revision').length;
+        const offset = lessonPlan.layouts.filter(layout => layout.name === 'revision').length;
         const question = `Question ${ layout.exerciseIndex } of ${questionCount}`;
         setTimeout(()=>{
             if(counter.lesson === 'active') {

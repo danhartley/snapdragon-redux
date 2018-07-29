@@ -7,11 +7,11 @@ export const nextLayout = (counter) => {
 
     if(counter && counter.lesson === 'inactive') return;
 
-    const { layouts, config } = store.getState();
+    const { lessonPlan, config } = store.getState();
 
-    if(!layouts) return;
+    if(!lessonPlan.layouts) return;
 
-    const layout = layouts[counter.index];
+    const layout = lessonPlan.layouts[counter.index];
 
     subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
 

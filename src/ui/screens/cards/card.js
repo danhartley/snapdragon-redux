@@ -14,12 +14,12 @@ import portraitTemplate from 'ui/screens/cards/card-portrait-template.html';
 export const renderCard = (collection) => {
     
     const item = collection.items[collection.itemIndex];    
-    const { layout, config, layouts } = store.getState();
+    const { layout, config, lessonPlan } = store.getState();
 
-    item.questionCount = layouts.filter(l => l.name === 'test').length;
-    item.layoutCount = layouts.length;
+    item.questionCount = lessonPlan.questionCount;
+    item.layoutCount = lessonPlan.layoutCount;
     
-    document.querySelector('progress').max = layouts.filter(layout => layout.name === 'test').length;
+    document.querySelector('progress').max = item.questionCount;
     document.querySelector('progress').value = 0;
 
     const screen = layout.screens.filter(el => el.name === 'species-card')[0];
@@ -45,7 +45,8 @@ const renderLandscape = (item, config) => {
 
     renderCommonParts(template, config, item);
 
-    const familyImage = taxa.find(f => f.name === item.family).thumb;
+    const family = taxa.find(f => f.name === item.family);
+    const familyImage = family ? family.thumb : '';
 
     document.querySelector('.js-img-family').src = familyImage;
 

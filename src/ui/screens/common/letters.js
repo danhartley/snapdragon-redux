@@ -11,7 +11,7 @@ import lettersTemplate from 'ui/screens/common/letters-template.html';
 
 export const renderLetters = (letters, item, callbackTime) => {
 
-    const { layouts, config } = store.getState();
+    const { lessonPlan, config } = store.getState();
 
     let parent = DOM.rightBody;
     parent.innerHTML = '';
@@ -60,8 +60,8 @@ export const renderLetters = (letters, item, callbackTime) => {
                     const { text, colour, correct } = renderAnswerHeader(response);
                     DOM.rightHeaderTxt.innerHTML = text;
                     DOM.rightHeader.classList.add(colour);
-                    response.questionCount = layouts.filter(l => l.name === 'test').length;
-                    response.layoutCount = layouts.length;
+                    response.questionCount = lessonPlan.layouts.filter(l => l.name === 'test').length;
+                    response.layoutCount = lessonPlan.layouts.length;
                     setTimeout(()=>{
                         actions.boundUpdateScore(response);
                     }, callbackTime);
@@ -95,8 +95,8 @@ export const renderLetters = (letters, item, callbackTime) => {
         const { text, colour, correct } = renderAnswerHeader(response);
         DOM.rightHeaderTxt.innerHTML = text;
         DOM.rightHeader.classList.add(colour);
-        response.questionCount = layouts.filter(l => l.name === 'test').length;
-        response.layoutCount = layouts.length;
+        response.questionCount = lessonPlan.questionCount;
+        response.layoutCount = lessonPlan.layoutCount;
         setTimeout(()=>{
             actions.boundUpdateScore(response);
         }, callbackTime);

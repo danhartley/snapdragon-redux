@@ -1,9 +1,9 @@
-import * as R from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/ramda';
+import * as R from 'ramda';
 
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
-import { scoringHandler } from 'ui/helpers/handlers';
+import { scoreHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 import { utils } from 'utils/utils';
@@ -15,7 +15,7 @@ export const renderRadioButtons = (collection) => {
 
     const item = collection.items[collection.itemIndex];
 
-    const { config, layouts, layout } = store.getState();
+    const { config, lessonPlan, layout } = store.getState();
 
     const template = document.createElement('template');
 
@@ -38,8 +38,8 @@ export const renderRadioButtons = (collection) => {
 
         document.querySelector('button').addEventListener('click', event => {
             const answer = document.querySelector('input[name="answer"]:checked').value;
-            const score = { question, answer, event, layoutCount: layouts.length };
-            scoringHandler(score, config.isPortraitMode, config.callbackTime, renderAnswerHeader);
+            const score = { question, answer, event, layoutCount: lessonPlan.layouts.length };
+            scoreHandler('radio', score, null, config.callbackTime, config.isPortraitMode, renderAnswerHeader);
         });
     };
 

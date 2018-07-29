@@ -14,7 +14,7 @@ export const renderSpeciesTiles = (collection) => {
 
     const item = collection.items[collection.itemIndex];
 
-    const { layout, config, layouts } = store.getState();
+    const { layout, config, lessonPlan } = store.getState();
 
     const screen = layout.screens.find(el => el.name === 'species-images');
     
@@ -35,8 +35,7 @@ export const renderSpeciesTiles = (collection) => {
 
     renderTemplate({ images }, template.content, parent);
 
-    const questionCount = layouts.filter(l => l.name === 'test').length;
-    const layoutCount = layouts.length;
+    const score = { items: document.querySelectorAll('.js-tiles .tile'), taxon: item, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount};
     
     if(config.isPortraitMode) {
 
@@ -56,9 +55,12 @@ export const renderSpeciesTiles = (collection) => {
             answer.classList.add(colour);
             document.querySelector('.js-question').style.display = 'none';
         }   
-        scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image', renderAnswer, questionCount, layoutCount);
-    } else {
-        scoreHandler(document.querySelectorAll('.js-tiles .tile'), item, config, 'image', null, questionCount, layoutCount);
+
+        const callback = renderAnswer;
+        scoreHandler('image', score, callback, config.callbackTime, config.isPortraitMode);
+    } else {        
+        const callback = null;
+        scoreHandler('image', score, callback, config.callbackTime, config.isPortraitMode);
     };
 
     document.querySelectorAll('.tile span').forEach(img=>{

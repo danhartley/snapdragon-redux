@@ -11,10 +11,10 @@ import taxonTemplate from 'ui/screens/cards/taxon-template.html';
 export const renderTaxonCard = collection => {
   
     const item = collection.items[collection.itemIndex];
-    const { layouts, config } = store.getState();
+    const { lessonPlan, config } = store.getState();
 
-    item.questionCount = layouts.filter(l => l.name === 'test').length;
-    item.layoutCount = layouts.length;
+    item.questionCount = lessonPlan.layouts.filter(l => l.name === 'test').length;
+    item.layoutCount = lessonPlan.layouts.length;
 
     const template = document.createElement('template');
 

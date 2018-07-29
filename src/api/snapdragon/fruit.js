@@ -14,65 +14,174 @@ export const fruit = [
       ],
       "names": [
         {
-          "vernacularName": "Gartenbirnbaum",
-          "language": "de",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Birnbaum",
-          "language": "de"
-        },
-        {
-          "vernacularName": "pear",
+          "vernacularName": "European Grape",
           "language": "en",
           "eol_preferred": true
         },
         {
-          "vernacularName": "Cultivated Pear",
+          "vernacularName": "Druif",
+          "language": "af",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "vino",
+          "language": "bg"
+        },
+        {
+          "vernacularName": "Almindelig Vin",
+          "language": "da",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Weinrebe",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Weinstock",
+          "language": "de"
+        },
+        {
+          "vernacularName": "European Grape",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Table grape",
           "language": "en"
         },
         {
-          "vernacularName": "European Pear",
+          "vernacularName": "Vine",
           "language": "en"
         },
         {
-          "vernacularName": "common pear",
+          "vernacularName": "grape",
           "language": "en"
         },
         {
-          "vernacularName": "garden pear",
+          "vernacularName": "grapes",
           "language": "en"
         },
         {
-          "vernacularName": "pera",
+          "vernacularName": "wild grape",
+          "language": "en"
+        },
+        {
+          "vernacularName": "wine grape",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Vid",
           "language": "es",
           "eol_preferred": true
         },
         {
-          "vernacularName": "peral",
+          "vernacularName": "vino",
           "language": "es"
         },
         {
-          "vernacularName": "Aigrin",
+          "vernacularName": "Viiniköynnös",
+          "language": "fi",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Vigne",
           "language": "fr",
           "eol_preferred": true
         },
         {
-          "vernacularName": "Poirier cultivé, Poirier commun",
+          "vernacularName": "Lambrusque",
           "language": "fr"
         },
         {
-          "vernacularName": "pera",
-          "language": "it",
+          "vernacularName": "Vigne cultivée",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Vigne sauvage",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Vínber",
+          "language": "is",
           "eol_preferred": true
         },
         {
-          "vernacularName": "Pero",
+          "vernacularName": "ambrusca",
           "language": "it"
         },
         {
-          "vernacularName": "Pereira",
-          "language": "pt",
+          "vernacularName": "lebrusca",
+          "language": "it"
+        },
+        {
+          "vernacularName": "vite",
+          "language": "it"
+        },
+        {
+          "vernacularName": "vite selvatica",
+          "language": "it"
+        },
+        {
+          "vernacularName": "zampino",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Druif",
+          "language": "nl",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Ekte vinranke",
+          "language": "no",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "vinha",
+          "language": "oc",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Videira",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "vinha",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "vinho",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "vinograd",
+          "language": "ru"
+        },
+        {
+          "vernacularName": "виноград",
+          "language": "ru"
+        },
+        {
+          "vernacularName": "Mugirepisi",
+          "language": "sn",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Vinranka",
+          "language": "sv"
+        },
+        {
+          "vernacularName": "vindruva",
+          "language": "sv"
+        },
+        {
+          "vernacularName": "葡萄",
+          "language": "zh",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "vitis vinifére",
+          "language": "zh-CN",
           "eol_preferred": true
         }
       ],

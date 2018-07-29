@@ -23,8 +23,8 @@ test('intial state of the app should be consistent', () => {
     const { config } = store.getState();
     expect(config).toEqual(configWithDefaults);
     
-    const { layouts, layout } = store.getState();
-    expect(layouts).toEqual(null);
+    const { lessonPlan, layout } = store.getState();
+    expect(lessonPlan).toEqual(null);
     expect(layout).toEqual(null);
 
     const { collections, collection } = store.getState();
@@ -53,7 +53,9 @@ test('when user selects a collection state should be populated', () => {
     expect(collection.name).toEqual('Kitchen Garden');
     expect(score).toEqual(progressState.score);
 
-    const layoutData = [
+    const _lessonPlan = { layouts: [] };
+
+    _lessonPlan.layouts = [
         {
         name: 'revision',
         screens: [
@@ -250,13 +252,13 @@ test('when user selects a collection state should be populated', () => {
         }
     ];
 
-    actions.boundNextLesson(layoutData); // nextLesson(config) triggers: NEXT_LESSON
+    actions.boundNextLesson(_lessonPlan); // nextLesson(config) triggers: NEXT_LESSON
 
-    let { counter, layouts, layout } = store.getState();
+    let { counter, lessonPlan, layout } = store.getState();
 
     expect(counter.index).toEqual(0);
-    expect(layouts).toEqual(layoutData);
-    expect(layout).toEqual(layoutData[0]);
+    expect(lessonPlan.layouts).toEqual(_lessonPlan.layouts);
+    expect(layout).toEqual(_lessonPlan.layouts[0]);
 
     // boundNextLayout(layout) triggers NEXT_LAYOUT but no state change
 
