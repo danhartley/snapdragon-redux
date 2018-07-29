@@ -109,7 +109,7 @@ const stripScoreHandler = (score, callback, callbackTime) => {
             score.vernacular = vernacular;
             score.question = taxon.question;
             score.answer = answer;
-            const { text, colour, correct } = renderAnswerHeader(score, isPortraitMode);
+            const { text, colour, correct } = renderAnswerHeader(score);
 
             if(callback) callback(text, colour, correct);
             
