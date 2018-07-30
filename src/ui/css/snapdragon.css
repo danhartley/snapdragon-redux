@@ -46,9 +46,9 @@ progress::-moz-progress-bar {
   background-color: var(--snap-progress-bar);
 }
 
-/* hr {
-  margin-top: 0;
-} */
+hr {
+  margin-bottom: 0;
+}
 
 /* variables */
 
@@ -541,8 +541,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   margin: .2em 0;
   padding: .1em .4em;
   letter-spacing: .1em;
-  border-radius: .2em;
-  font-size: 1.1em;
+  border-radius: .2em;  
   border: .05em solid var(--snap-text-dark);
 }
 

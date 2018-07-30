@@ -38,7 +38,7 @@ export const renderCompleteText = (collection) => {
         givenTaxon = 'genus';
         description =  config.isPortraitMode 
             ? `Complete the latin name for ${vernacular.toUpperCase()}.`
-            : `Complete the latin name by selecting the correct species taxon from the options below.`;
+            : `Complete the latin name by selecting the correct GENUS from the options below.`;
 
     } else if(screen.type === 'text-complete-species') {
 
@@ -48,7 +48,7 @@ export const renderCompleteText = (collection) => {
         givenTaxon = 'species';
         description = config.isPortraitMode 
             ? `Complete the latin name for ${vernacular.toUpperCase()}.`
-            : `Complete the latin name by selecting the correct genus taxon from the options below.`;
+            : `Complete the latin name by selecting the correct SPECIES from the options below.`;
     }
 
     const pool = R.take(6, utils.shuffleArray(collection.items).filter(i => i.name !== item.name)).map(i => i[givenTaxon]);
