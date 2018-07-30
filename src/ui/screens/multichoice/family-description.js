@@ -28,17 +28,17 @@ export const renderFamilyDescriptions = (collection) => {
     const family = item.family;
     const families = taxa.filter(taxon => taxon.taxon === 'family');
 
-    const type = config.isPortraitMode ? 'identification' : 'summary';
+    const type = 'identification';
 
-    randomAnswers = R.take(2, R.take(3, utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.descriptions[0][type]);
+    const number = config.isPortraitMode ? 3 : 5;
+
+    randomAnswers = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.descriptions[0][type]);
     const familyDescription = families.find(f => f.name === family).descriptions[0][type];
 
     answers = utils.shuffleArray([familyDescription, ...randomAnswers]);
 
     renderTemplate({ answers }, template.content, parent);
     
-    const { questionCount, layoutCount } = lessonPlan;
-
     const strips = document.querySelectorAll('.js-rptr-strips .strip div');
 
     // render family card
@@ -47,7 +47,7 @@ export const renderFamilyDescriptions = (collection) => {
 
     template.innerHTML = familyCard;
 
-    const context = { family: item.family };
+    const context = { taxon: 'Family', family: item.family };
 
     renderTemplate( context, template.content, parent);
 
@@ -55,7 +55,7 @@ export const renderFamilyDescriptions = (collection) => {
 
     template.innerHTML = questionCard;
     
-    const question = config.isPortraitMode ? 'Tap to match Quick ID' : 'Tap the description that best matches';
+    const question = config.isPortraitMode ? 'Tap to match Quick ID' : 'Click the Quick ID that fits';
 
     renderTemplate( { question: question }, template.content, parent);
 
