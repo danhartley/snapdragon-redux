@@ -87,9 +87,9 @@
         color: var(--snap-text-dark);
     }
 
-    .radio-buttons label {
+    /* .radio-buttons label {
         width: 75%;
-    }
+    } */
 
     .block {
         font-size: 1.4em;

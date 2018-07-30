@@ -28,7 +28,7 @@ export const renderCompleteText = (collection) => {
     item.genus = itemProperties.genusName(item.name);
     item.species = itemProperties.speciesName(item.name);
 
-    const vernacular = itemProperties.vernacularName(item, config);
+    const vernacular = itemProperties.vernacularName(item, config).toUpperCase();
 
     if(screen.type === 'text-complete-genus') {
 
@@ -37,7 +37,7 @@ export const renderCompleteText = (collection) => {
         species = item.species;
         givenTaxon = 'genus';
         description =  config.isPortraitMode 
-            ? `Complete the latin name for ${vernacular}.`
+            ? `Complete the latin name for ${vernacular.toUpperCase()}.`
             : `Complete the latin name by selecting the correct species taxon from the options below.`;
 
     } else if(screen.type === 'text-complete-species') {
@@ -47,7 +47,7 @@ export const renderCompleteText = (collection) => {
         species = '---';        
         givenTaxon = 'species';
         description = config.isPortraitMode 
-            ? `Complete the latin name for ${vernacular}.`
+            ? `Complete the latin name for ${vernacular.toUpperCase()}.`
             : `Complete the latin name by selecting the correct genus taxon from the options below.`;
     }
 

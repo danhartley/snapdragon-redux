@@ -1,15 +1,16 @@
-<div class="snapdragon-container species-card js-species-card">
-    <div class="card">
-        <div class="species-family">
+<div class="snapdragon-container js-species-card">
+    <div class="taxon card">
+        <div class="taxon-highlight">
             <span>{{ name }}</span><span class="badge badge-light" data-toggle="modal" data-target="#listModal">{{ occurrences }}</span> <span class="sr-only">species of this family in the collection</span>
             <img class="js-img-family" src="{{ img }}" alt="">                    
         </div>
         <div class="taxon-card-header">{{ common }}</div>
+        <hr>
         <div>
             <div class="data-box">
                 <div></div>
                 <div>
-                    <div class="taxon-data">Taxon: <span class="species-family">{{ rank }}</span></div>
+                    <div class="taxon-data">Taxon: <span class="taxon-highlight">{{ rank }}</span></div>
                     <div class="taxon-data">Species: {{ species }}</div>
                     <div class="taxon-data">Genera: {{ genera }}</div>
                 </div>
@@ -24,7 +25,7 @@
             </div>
         </div>
         <div class="landscape">{{ summary }}</div>
-        <div class="landscape"><span class="snap-alert-fg js-taxon-toxic-warning"></span> {{ toxic }}</div>
+        <!-- <div class="landscape portrait"><span class="snap-alert-fg js-taxon-toxic-warning"></span> {{ toxic }}</div> -->
         <div class="landscape">
             <a href="{{ eol }}" target="_blank" class="underline-link">EOL</a>
             <a href="{{ wiki }}" class="underline-link" data-toggle="modal" data-target="#externalPageModal">WIKI</a>

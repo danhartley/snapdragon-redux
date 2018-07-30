@@ -4,7 +4,7 @@ import { utils } from 'utils/utils';
 export const createLesson = (lessonName, levelName, moduleSize, excludeRevision, isPortraitMode, layouts, progressScreens, collection, wildcardLayouts) => {
     
     if(excludeRevision) {
-        layouts = layouts.filter(layout => layout.name !== 'revision');
+        layouts = layouts.filter(layout => layout.type !== 'revision');
     }
 
     let lessonPlan = { layouts: [] }, layoutIndex = 0;
@@ -18,8 +18,8 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         } while (i < moduleSize);
     });
 
-    const revisionLayouts = excludeRevision ? [] : lessonPlan.layouts.filter(l => l.name === 'revision');
-    const shuffledLessonLayouts = utils.shuffleArray([ ...lessonPlan.layouts.filter(l => l.name === 'test'), ...wildcardLayouts]);
+    const revisionLayouts = excludeRevision ? [] : lessonPlan.layouts.filter(layout => layout.type === 'revision');
+    const shuffledLessonLayouts = utils.shuffleArray([ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts]);
     const offSet = (collection.currentRound - 1) * moduleSize;
 
     shuffledLessonLayouts.forEach( (layout, i) => {
@@ -29,13 +29,16 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         layoutIndex = layoutIndex + 1;
     });
 
+    // revisionLayouts.forEach( (layout, i) => {
+    //     layout.layoutIndex = layoutIndex;
+    //     layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
+    //     layoutIndex = layoutIndex + 1;  
+    // });
+
     revisionLayouts.forEach( (layout, i) => {
         layout.layoutIndex = layoutIndex;
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
-        layoutIndex = layoutIndex + 1;        
-    });
-
-    revisionLayouts.forEach(layout => {
+        layoutIndex = layoutIndex + 1;
         const arrayIndex = shuffledLessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
         shuffledLessonLayouts.splice(arrayIndex, 0, layout);
     });
@@ -77,8 +80,9 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
 
     lessonPlan.moduleSize = moduleSize;
 
-    lessonPlan.questionCount = lessonPlan.layouts.filter(l => l.name === 'test').length;
+    lessonPlan.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
     lessonPlan.layoutCount = lessonPlan.layouts.length;
+    lessonPlan.layoutNames = lessonPlan.layouts.map(layout => layout.name);
 
     return lessonPlan;
 };

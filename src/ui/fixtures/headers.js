@@ -17,12 +17,12 @@ export const renderHeaders = counter => {
 
     if(!layout) return;
 
-    const questionCount = lessonPlan.layouts.filter(l => l.name === 'test').length;
+    const questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
 
     document.querySelector('progress').max = questionCount;
 
-    if(layout.name === 'test') {
-        const offset = lessonPlan.layouts.filter(layout => layout.name === 'revision').length;
+    if(layout.type === 'test') {
+        const offset = lessonPlan.layouts.filter(layout => layout.type === 'revision').length;
         const question = `Question ${ layout.exerciseIndex } of ${questionCount}`;
         setTimeout(()=>{
             if(counter.lesson === 'active') {
@@ -32,7 +32,7 @@ export const renderHeaders = counter => {
                 DOM.rightHeaderTxt.innerHTML = '';
             }
         });
-    } else if(layout.name === 'revision') {
+    } else if(layout.type === 'revision') {
         DOM.rightHeaderTxt.innerHTML = (counter.lesson === 'active' && collection) ? collection.name : title;
     }
 

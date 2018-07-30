@@ -17,11 +17,13 @@
     --snap-success: rgb(41, 108, 44);
     
     --snap-link: rgb(0, 42, 84);
-    --snap-info-background: rgb(79, 106, 36);
+    /* --snap-info-background: rgb(79, 106, 36); */
+    --snap-info-background: rgba(26, 67, 91, .5);
     --snap-id-background: rgb(193, 149, 167);
     --snap-id-background: rgba(150, 43, 110,.8);
     --snap-question-background: rgba(26, 67, 91,.9);
     --snap-question-radio: rgb(147, 208, 244);
+    --snap-id-border: rgb(129, 67, 101);
 
     --snap-progress-bg: rgb(45,45,45);
     --snap-progress-bar: rgb(233, 232, 111);
@@ -30,7 +32,8 @@
 
     --snap-grid-background: rgba(185, 200, 204,.3);
     --snap-container-background: rgb(255, 255, 255);
-    --snap-card-background: rgba(52, 105, 23,.1);
+    --snap-taxon-card-background: rgba(52, 105, 23,.1);
+    --snap-species-card-background: rgba(204, 192, 199,.4);
     --snap-strips-background: rgb(182, 201, 213);
     --snap-list-background: rgba(125,125,125,.1);
   

@@ -39,10 +39,10 @@ export const renderSpeciesTiles = (collection) => {
 
     parent = document.querySelector('.right-body .snapdragon-container');
 
-    const species = item.name;
-    const name = itemProperties.vernacularName(item, config);
+    const name = item.name;
+    const vernacular = itemProperties.vernacularName(item, config);
     template.innerHTML = speciesCard;
-    renderTemplate( { species, name, filter: '' }, template.content, parent);
+    renderTemplate( { name, vernacular, filter: '' }, template.content, parent);
     template.innerHTML = questionCard;
     const question = screen.question;
     renderTemplate( { question }, template.content, parent);
