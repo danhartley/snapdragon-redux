@@ -20,7 +20,7 @@ export const renderInput = (config, screen, question, callbackTime, item, render
     hints.forEach(hint => {
         const el = template.content.querySelector(hint.selector);
         if(el)
-            template.content.querySelector(hint.selector).innerHTML = hint.value;  
+            template.content.querySelector(hint.selector).innerHTML = hint.value.toUpperCase();  
     });
 
     const clone = document.importNode(template.content, true);

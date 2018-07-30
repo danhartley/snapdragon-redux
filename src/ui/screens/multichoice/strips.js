@@ -49,13 +49,13 @@ export const renderStrips = (screen, item, callback, config, lessonPlan) => {
 
     // render species card
 
-    const species = item.name;
-    const name = itemProperties.vernacularName(item, config);
+    const name = item.name;
+    const vernacular = itemProperties.vernacularName(item, config);
     template.innerHTML = speciesCard;
 
     const context = (screen.name === 'species-vernaculars') 
-            ? { name: '---', species }
-            : { name, species: '---' }
+            ? { vernacular: '---', name }
+            : { vernacular, name: '---' }
 
     renderTemplate( context, template.content, parent);
 
@@ -71,6 +71,12 @@ export const renderStrips = (screen, item, callback, config, lessonPlan) => {
         answer.style.display = 'block';
         answer.classList.add(className);
         document.querySelector('.js-question').style.display = 'none';
+
+        if(screen.name === 'species-vernaculars') {
+            document.querySelector('.js-txt-species-name').innerHTML = vernacular.toUpperCase();
+        } else {
+            document.querySelector('.js-txt-species').innerHTML = name.toUpperCase();
+        }
     }
 
     const taxon = { name: item.name, binomial: item.name, question: item.name };

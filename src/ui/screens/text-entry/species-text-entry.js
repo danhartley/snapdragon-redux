@@ -15,11 +15,13 @@ export const renderTextEntry = (collection) => {
 
     item.vernacular = itemProperties.vernacularName(item, config);
 
-    const question = { binomial: item.name, species: item.species, genus: item.genus, taxon: screen.taxon, question: item[screen.taxon] };
+    const question = { binomial: item.name, species: item.species, genus: item.genus, taxon: screen.taxon, question: item[screen.taxon], common: itemProperties.vernacularName(item, config) };
 
     const hints = [
         { selector: 'span.js-genus', value: question.genus },
-        { selector: 'span.js-species', value: question.species }
+        { selector: 'span.js-species', value: question.species },
+        { selector: 'span.js-common', value: question.binomial },
+        { selector: 'span.js-latin', value: question.common }
     ];
 
     renderInput(config, screen, question, config.callbackTime, item, renderAnswerHeader, hints);

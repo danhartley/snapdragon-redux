@@ -140,11 +140,15 @@ const renderCommonParts = (template, config, item) => {
 
     gbif.innerHTML = item.family;
 
-    if(occurrences !== 0) {
+    const badge = document.querySelector('.badge');
+
+    if(occurrences === 0) {
+        badge.classList.add('hide');
+    } else {
 
         const members = specific.subspecies;
 
-        document.querySelector('.badge').addEventListener('click', event => {
+        badge.addEventListener('click', event => {
             document.querySelector('#listModal .js-modal-text-title').innerHTML = `Cultivars of ${item.name}`;            
             const list = document.querySelector('#listModal .js-modal-text');
             let html = '<div class="modal-list scrollable">';

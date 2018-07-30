@@ -3,7 +3,8 @@ import { screens } from 'snapdragon/screen-layouts';
 const { specimen, revision, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete } = screens;
 
 const speciesRevision = {
-    name: 'revision',
+    name: 'screen-species-card',
+    type: 'revision',
     screens: [
         { ...specimen },
         { ...revision }
@@ -11,7 +12,8 @@ const speciesRevision = {
 };
 
 const taxonRevision = {
-    name: 'revision',
+    name: 'screen-taxon-card',
+    type:'revision',
     screens: [
         { ...specimen },
         { ...taxon }
@@ -19,7 +21,8 @@ const taxonRevision = {
 };
 
 const imageToImageMatch = {
-    name: 'test',
+    name: 'screen-image-to-image',
+    type:'test',
     score: 1,
     screens: [
         { ...specimen },
@@ -28,7 +31,8 @@ const imageToImageMatch = {
 };
 
 const familyMatch = {
-    name: 'test',
+    name: 'screen-species-to-family',
+    type:'test',
     score: 1,
     screens: [
         { ...specimen },
@@ -37,7 +41,8 @@ const familyMatch = {
 };
 
 const familyStripsMatch = {
-    name: 'test',
+    name: 'screen-family-to-description',
+    type:'test',
     score: 1,
     screens: [
         { ...specimen },
@@ -46,7 +51,8 @@ const familyStripsMatch = {
 };
 
 const latinToCommonMatch = {
-    name: 'test',
+    name: 'screen-latin-to-common',
+    type:'test',
     score: 1,
     screens: [
         { ...specimen },
@@ -55,7 +61,8 @@ const latinToCommonMatch = {
 };
 
 const commonToLatinMatch = {
-    name: 'test',
+    name: 'screen-common-to-latin',
+    type:'test',
     score: 1,
     screens: [
         { ...specimen },
@@ -64,7 +71,8 @@ const commonToLatinMatch = {
 };
 
 const genusEntry = {
-    name: 'test',
+    name: 'screen-genus-entry',
+    type:'test',
     score: 1,
     screens: [
         { ...specimen },
@@ -73,7 +81,8 @@ const genusEntry = {
 };
 
 const speciesEntry = {
-    name: 'test',
+    name: 'screen-species-entry',
+    type:'test',
     score: 1,
     screens: [
         { ...specimen },
@@ -82,7 +91,8 @@ const speciesEntry = {
 };
 
 const speciesGenusEntry = {
-    name: 'test',
+    name: 'screen-binomial-entry',
+    type:'test',
     score: 1,
     screens: [
         { ...specimen },
@@ -91,7 +101,8 @@ const speciesGenusEntry = {
 };
 
 const commandLayout = {
-    name: 'test',
+    name: 'screen-command',
+    type:'test',
     score: 1,
     screens: [
         { ...command },
@@ -99,7 +110,7 @@ const commandLayout = {
 };
 
 const leafEntry = {
-    name: 'test',
+    type:'test',
     score: 1,
     screens: [
         { ...leaf },
@@ -108,7 +119,8 @@ const leafEntry = {
 };
 
 const textCompleteGenus = {
-    name: 'test',
+    name: 'screen-genus-completion',
+    type:'test',
     score: 1,
     screens: [
         { ...specimen },
@@ -117,7 +129,8 @@ const textCompleteGenus = {
 };
 
 const textCompleteSpecies = {
-    name: 'test',
+    name: 'screen-species-completion',
+    type:'test',
     score: 1,
     screens: [
         { ...specimen },
@@ -126,7 +139,8 @@ const textCompleteSpecies = {
 };
 
 const commonEntry = {
-    name: 'test',
+    name: 'screen-common-entry',
+    type:'test',
     score: 1,
     screens: [
         { ...specimen },
@@ -136,26 +150,27 @@ const commonEntry = {
 
 const landscapeLesson1 = {
     id: 1,
-    name: 'Lesson 1',
+    name:'Lesson 1',
     portrait: false,
     levels: [
         {   id: 1,
-            name: 'Level 1',
+            name:'Level 1',
             description: 'Beginner',
+            // layouts: [ speciesRevision, textCompleteGenus, textCompleteSpecies, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, commonEntry ]                        
             layouts: [ speciesRevision, familyStripsMatch, textCompleteGenus, textCompleteSpecies, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]                        
         },
         {   id: 2,
-            name: 'Level 2',
+            name:'Level 2',
             description: 'Intermediate',
             layouts: [ genusEntry, speciesEntry ]
         },
         {   id: 3,
-            name: 'Level 3',
+            name:'Level 3',
             description: 'Advanced',
             layouts: [ speciesGenusEntry ]
         },
         {   id: 4,
-            name: 'Level 4',
+            name:'Level 4',
             description: 'Fun',
             layouts: [ commandLayout ]
         }    
@@ -164,11 +179,11 @@ const landscapeLesson1 = {
 
 const landscapeLesson2 = {
     id: 2,
-    name: 'Lesson 2',
+    name:'Lesson 2',
     portrait: false,
     levels: [
         {   id: 1,
-            name: 'Level 1',
+            name:'Level 1',
             description: 'Name the leaf structure',
             layouts: [ leafEntry ]
         }
@@ -177,26 +192,26 @@ const landscapeLesson2 = {
 
 const portraitLesson1 = {
     id: 3,
-    name: 'Lesson 3',
+    name:'Lesson 3',
     portrait: true,
     levels: [
         {   id: 1,
-            name: 'Level 1',
+            name:'Level 1',
             description: 'Beginner',            
             layouts: [ speciesRevision, familyStripsMatch, textCompleteGenus, textCompleteSpecies, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]
         },
         {   id: 2,
-            name: 'Level 2',
+            name:'Level 2',
             description: 'Intermediate',
             layouts: [ genusEntry, speciesEntry ]
         },
         {   id: 3,
-            name: 'Level 3',
+            name:'Level 3',
             description: 'Advanced',
             layouts: [ speciesGenusEntry ]
         },
         {   id: 4,
-            name: 'Level 4',
+            name:'Level 4',
             description: 'Fun',
             layouts: [ commandLayout ]
         }
@@ -205,11 +220,11 @@ const portraitLesson1 = {
 
 const portraitLesson2 = {
     id: 4,
-    name: 'Lesson 4',
+    name:'Lesson 4',
     portrait: true,
     levels: [
         {   id: 1,
-            name: 'Level 1',
+            name:'Level 1',
             description: 'Name the leaf structure',
             layouts: [ leafEntry ]
         }

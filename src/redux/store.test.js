@@ -57,16 +57,16 @@ test('when user selects a collection state should be populated', () => {
 
     _lessonPlan.layouts = [
         {
-        name: 'revision',
+        type:'revision',
         screens: [
             {
-            name: 'specimen-images',
+            type:'specimen-images',
             domain: 'collection',
             parent: {},
             template: 'js-specimen-images-template'
             },
             {
-            name: 'species-card',
+            type:'species-card',
             domain: 'collection',
             parent: {},
             template: 'js-card-revision-template'
@@ -79,16 +79,16 @@ test('when user selects a collection state should be populated', () => {
         levelName: 'Level 1'
         },
         {
-        name: 'revision',
+        type:'revision',
         screens: [
             {
-            name: 'specimen-images',
+            type:'specimen-images',
             domain: 'collection',
             parent: {},
             template: 'js-specimen-images-template'
             },
             {
-            name: 'species-card',
+            type:'species-card',
             domain: 'collection',
             parent: {},
             template: 'js-card-revision-template'
@@ -101,16 +101,16 @@ test('when user selects a collection state should be populated', () => {
         levelName: 'Level 1'
         },
         {
-        name: 'test',
+        type:'test',
         screens: [
             {
-            name: 'specimen-images',
+            type:'specimen-images',
             domain: 'collection',
             parent: {},
             template: 'js-specimen-images-template'
             },
             {
-            name: 'species-images',
+            type:'species-images',
             domain: 'collection',
             parent: {},
             template: 'js-tiles-template',
@@ -124,16 +124,16 @@ test('when user selects a collection state should be populated', () => {
         levelName: 'Level 1'
         },
         {
-        name: 'test',
+        type:'test',
         screens: [
             {
-            name: 'specimen-images',
+            type:'specimen-images',
             domain: 'collection',
             parent: {},
             template: 'js-specimen-images-template'
             },
             {
-            name: 'species-images',
+            type:'species-images',
             domain: 'collection',
             parent: {},
             template: 'js-tiles-template',
@@ -147,16 +147,16 @@ test('when user selects a collection state should be populated', () => {
         levelName: 'Level 1'
         },
         {
-        name: 'test',
+        type:'test',
         screens: [
             {
-            name: 'specimen-images',
+            type:'specimen-images',
             domain: 'collection',
             parent: {},
             template: 'js-specimen-images-template'
             },
             {
-            name: 'species-vernaculars',
+            type:'species-vernaculars',
             domain: 'collection',
             parent: {},
             template: 'js-strips-template',
@@ -170,16 +170,16 @@ test('when user selects a collection state should be populated', () => {
         levelName: 'Level 1'
         },
         {
-        name: 'test',
+        type:'test',
         screens: [
             {
-            name: 'specimen-images',
+            type:'specimen-images',
             domain: 'collection',
             parent: {},
             template: 'js-specimen-images-template'
             },
             {
-            name: 'species-vernaculars',
+            type:'species-vernaculars',
             domain: 'collection',
             parent: {},
             template: 'js-strips-template',
@@ -193,16 +193,16 @@ test('when user selects a collection state should be populated', () => {
         levelName: 'Level 1'
         },
         {
-        name: 'test',
+        type:'test',
         screens: [
             {
-            name: 'specimen-images',
+            type:'specimen-images',
             domain: 'collection',
             parent: {},
             template: 'js-specimen-images-template'
             },
             {
-            name: 'species-scientifics',
+            type:'species-scientifics',
             domain: 'collection',
             parent: {},
             template: 'js-strips-template',
@@ -216,29 +216,29 @@ test('when user selects a collection state should be populated', () => {
         levelName: 'Level 1'
         },
         {
-        name: 'test',
+        type:'test',
         screens: [
             {
-            name: 'specimen-images',
+            type:'specimen-images',
             domain: 'collection',
             parent: {},
             template: 'js-specimen-images-template'
             },
             {
-            name: 'species-scientifics',
+            type:'species-scientifics',
             domain: 'collection',
             parent: {},
             template: 'js-strips-template',
             taxon: 'name'
             },
             {
-            name: 'summary',
+            type:'summary',
             domain: 'counter',
             parent: {},
             template: 'js-summary-template'
             },
             {
-            name: 'history',
+            type:'history',
             domain: 'history',
             parent: {},
             template: 'js-history-template'

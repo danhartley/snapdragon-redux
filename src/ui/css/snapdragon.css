@@ -46,6 +46,10 @@ progress::-moz-progress-bar {
   background-color: var(--snap-progress-bar);
 }
 
+/* hr {
+  margin-top: 0;
+} */
+
 /* variables */
 
 .btn {
@@ -146,7 +150,7 @@ progress::-moz-progress-bar {
   border: 1px solid var(--snap-primary);
 }
 
-.snapdragon-container.species-card .card > div {
+.species.card > div, .taxon.card > div {
   flex: auto;
 }
 
@@ -161,10 +165,17 @@ progress::-moz-progress-bar {
   display: flex;
   flex-direction: column;
   padding: .5em;
-  text-align: right;
-  background-color: var(--snap-card-background);
+  text-align: right;  
   border: 1px solid var(--snap-border-dark);
   border-radius: .1rem;
+}
+
+.card.species {
+  background-color: var(--snap-species-card-background);
+}
+
+.card.taxon {
+  background-color: var(--snap-taxon-card-background);
 }
 
 .snapdragon-options {
@@ -347,16 +358,16 @@ progress::-moz-progress-bar {
   margin: 1em  0;
 }
 
-.species-card-species, .species-card-name {
+/* .species-card-species, .species-card-name {
   font-size: 1.2em;
   position: relative;
-}
+} */
 
 .species-card-wiki a, .species-card-eol-link, .species-card-wikipedia {
   color: var(--snap-link);
 }
 
-.species-family {
+.taxon-highlight {
   text-transform: uppercase;
   letter-spacing: .1em;
   font-size: 1.2em;
@@ -397,14 +408,18 @@ progress::-moz-progress-bar {
 
 .data-box > div:nth-child(2) {
   text-align: left;
-  background-color: var(--snap-info-background);
+  /* background-color: var(--snap-info-background); */
   letter-spacing: .05em;
+  color: var(--snap-text-dark);
+  border: .05em solid var(--snap-border-dark);  
 }
 
 .id-box > div:nth-child(2) {  
   text-align: left;
   flex: auto;
-  background-color: var(--snap-id-background);
+  /* background-color: var(--snap-id-background); */
+  color: var(--snap-text-dark);
+  border-left: .25em solid var(--snap-id-border);
 }
 
 .taxon-data {
@@ -523,7 +538,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   width: fit-content;
   background-color: var(--snap-block-light);
   color: var(--snap-text-dark);
-  margin: .2em;
+  margin: .2em 0;
   padding: .1em .4em;
   letter-spacing: .1em;
   border-radius: .2em;
@@ -733,7 +748,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .radio-buttons label {
   color: var(--snap-text-dark);
-  background-color: var(--snap-question-radio);
+  background-color: var(--snap-strips-background);
+  /* background-color: var(--snap-question-radio); */
   width: 100%;
 }
 
@@ -753,13 +769,13 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .badge-light {
   color: var(--snap-text-light);
-  background-color: var(--snap-info-background);
+  background-color: var(--snap-collection);
   margin: 0 0 0 .25em;
 }
 
 .question-container {
-  color: var(--snap-text-light);
-  background-color: var(--snap-question-background);
+  /* color: var(--snap-text-light); */
+  border: .05em solid var(--snap-question-background);
   padding: 1em;
   border-radius: .2rem;
 }

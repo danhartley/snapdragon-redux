@@ -6,7 +6,7 @@ import { kitchenGarden, Exam } from 'snapdragon/species-lessons';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { getFamilies } from 'redux/reducers/initial-state/species-state/species-taxa';
 
-const collections = [ kitchenGarden, Exam ];
+const collections = [ kitchenGarden ];
 
 const initCollection = (rawCollection = collections[0]) => {
     let prepCollection = rawCollection.type === 'skill'

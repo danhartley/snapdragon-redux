@@ -60,7 +60,7 @@ export const renderLetters = (letters, item, callbackTime) => {
                     const { text, colour, correct } = renderAnswerHeader(response);
                     DOM.rightHeaderTxt.innerHTML = text;
                     DOM.rightHeader.classList.add(colour);
-                    response.questionCount = lessonPlan.layouts.filter(l => l.name === 'test').length;
+                    response.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
                     response.layoutCount = lessonPlan.layouts.length;
                     setTimeout(()=>{
                         actions.boundUpdateScore(response);

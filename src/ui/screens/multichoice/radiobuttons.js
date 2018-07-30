@@ -77,7 +77,7 @@ export const renderRadioButtons = (collection) => {
 
         randomAnswers = R.take(indices[0], R.take(indices[0], utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.name);
         const familyDescription = families.find(f => f.name === family).descriptions[0].summary;
-        description = `${species} belongs to a family whose description is '${familyDescription}' What is the name of this family?`;
+        description = `${species.toUpperCase()} belongs to a family whose description is '${familyDescription}' What is the name of this family?`;
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...randomAnswers]);
 
@@ -87,7 +87,7 @@ export const renderRadioButtons = (collection) => {
     if(layout.screens.find(screen => screen.type === 'species-to-family')) {
 
         randomAnswers = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(i => i.name !== family)).map(i => i.name);
-        description = `Which of the following families does the species ${species} belong to?`;
+        description = `Which of the following families does the species ${species.toUpperCase()} belong to?`;
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...randomAnswers]);
         

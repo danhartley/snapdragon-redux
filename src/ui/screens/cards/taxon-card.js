@@ -13,7 +13,7 @@ export const renderTaxonCard = collection => {
     const item = collection.items[collection.itemIndex];
     const { lessonPlan, config } = store.getState();
 
-    item.questionCount = lessonPlan.layouts.filter(l => l.name === 'test').length;
+    item.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
     item.layoutCount = lessonPlan.layouts.length;
 
     const template = document.createElement('template');
@@ -48,7 +48,7 @@ export const renderTaxonCard = collection => {
         eol: taxon['eol-entry'] || '',
         wiki: taxon['wiki-entry'] || '',
         occurrences: occurrences[taxon.name],
-        toxic: taxon.toxic ? `Toxic species: ${taxon.toxic.members.join(', ')}` : '',
+        // toxic: taxon.toxic ? `Toxic species: ${taxon.toxic.members.join(', ')}` : '',
         members: taxon.members ? R.take(2, taxon.members).join(', ') : ''
     }
 
@@ -58,9 +58,9 @@ export const renderTaxonCard = collection => {
 
     renderTemplate(context, template.content, parent, clone);
 
-    if(taxon.toxic) {
-        document.querySelector('.js-taxon-toxic-warning').innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
-    }
+    // if(taxon.toxic) {
+    //     document.querySelector('.js-taxon-toxic-warning').innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+    // }
 
     document.querySelector('.js-external-page-title').innerHTML = `${item.family}`;
     document.querySelector('.js-external-page-body').innerHTML = `<iframe class="modal-iframe" title="Wikipedia page for ${item.family}" src="${context.wiki}"></iframe>`;
