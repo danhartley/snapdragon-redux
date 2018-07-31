@@ -10,7 +10,9 @@ export const lessons = collections.filter(collection => R.contains(collection.na
 export const kitchenGarden = { 
     id: 1, name: 'Kitchen Garden', 
     type: 'species', 
-    items:[ ...lessons[0].items, ...lessons[1].items, ...lessons[2].items ],
+    items: [ ...lessons[1].items ],
+    // items:[ ...lessons[0].items, ...lessons[1].items, ...lessons[2].items ],
+    // items:[ ...lessons[0].items, ...lessons[1].items, ...lessons[2].items ].filter(item => item.name === 'Brassica oleracea'),
     collections: required
 };
 

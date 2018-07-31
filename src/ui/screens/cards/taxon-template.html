@@ -1,10 +1,13 @@
-<div class="snapdragon-container js-species-card">
+<div class="snapdragon-container">
     <div class="taxon card">
         <div class="taxon-highlight">
             <span>{{ name }}</span><span class="badge badge-light" data-toggle="modal" data-target="#listModal">{{ occurrences }}</span> <span class="sr-only">species of this family in the collection</span>
             <img class="js-img-family" src="{{ img }}" alt="">                    
         </div>
-        <div class="taxon-card-header"><span>{{ common }}</span><hr></div>        
+        <div class="taxon-card-header"
+            ><span>{{ common }}</span>
+            <hr>
+        </div>        
         <div>
             <div class="data-box">
                 <div></div>
@@ -30,7 +33,7 @@
             <a href="{{ wiki }}" class="underline-link" data-toggle="modal" data-target="#externalPageModal">WIKI</a>
         </div>
     </div>
-    <div class="species-card-btn action-update js-species-card-btn">
+    <div class="species-card-btn action-update js-taxon-card-btn">
         <div></div>
         <button class="btn btn-light">Continue</button>
     </div>

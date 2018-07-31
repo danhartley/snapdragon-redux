@@ -46,10 +46,6 @@ progress::-moz-progress-bar {
   background-color: var(--snap-progress-bar);
 }
 
-hr {
-  margin-bottom: 0;
-}
-
 /* variables */
 
 .btn {
@@ -342,26 +338,13 @@ hr {
   text-align: left;
 }
 
-/* .content {
-  display: flex;
-} */
-
 .species-card-container {
   flex-shrink: 2;
 }
 
-/* .species-card-container .content {
-  flex: 1 1 auto;
-} */
-
 .species-card-container .card {
   margin: 1em  0;
 }
-
-/* .species-card-species, .species-card-name {
-  font-size: 1.2em;
-  position: relative;
-} */
 
 .species-card-wiki a, .species-card-eol-link, .species-card-wikipedia {
   color: var(--snap-link);
@@ -370,7 +353,7 @@ hr {
 .taxon-highlight {
   text-transform: uppercase;
   letter-spacing: .1em;
-  font-size: 1.2em;
+  font-size: 1.1em;  
 }
 
 .species-card-name {
@@ -383,6 +366,28 @@ hr {
 
 .taxon-card-header {
   font-size: 1.1em;
+}
+
+.cultivar.card {
+  display: flex;
+}
+
+.cultivar.card div {
+  flex: 1;  
+}
+
+.cultivar.card div:nth-child(2) {
+  text-align: left;
+}
+
+.cultivar.card span {
+  flex: 1;  
+  text-align: left;
+  padding: .15em;
+}
+
+.cultivar.card .scrollable {
+  height: 30vh;
 }
 
 .data-box, .id-box {  
@@ -408,7 +413,6 @@ hr {
 
 .data-box > div:nth-child(2) {
   text-align: left;
-  /* background-color: var(--snap-info-background); */
   letter-spacing: .05em;
   color: var(--snap-text-dark);
   border: .05em solid var(--snap-border-dark);  
@@ -417,7 +421,6 @@ hr {
 .id-box > div:nth-child(2) {  
   text-align: left;
   flex: auto;
-  /* background-color: var(--snap-id-background); */
   color: var(--snap-text-dark);
   border-left: .25em solid var(--snap-id-border);
 }
@@ -708,8 +711,21 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   border-radius: .20rem .20rem 0 0;
 }
 
+.list-group-headers {
+  padding: .5em;
+  color: var(--snap-text-light);
+  background-color: var(--snap-collection);
+  border-radius: .20rem .20rem 0 0;  
+  display: flex;
+  flex-direction: row;
+}
+
+.list-group-headers span {
+  flex: 1;
+}
+
 .list-group-item {
-  background-color: var(--snap-grid-background);
+  background-color: var(--snap-list-background);
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -717,7 +733,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .list-group li:nth-child(2n+1) {
-  background-color: var(--snap-list-background);
+  background-color: var(--snap-list-alt-background);
 }
 
 .list-group-item img {

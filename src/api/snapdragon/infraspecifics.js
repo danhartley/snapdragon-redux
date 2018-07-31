@@ -3,7 +3,7 @@ export const infraspecifics = [
         name: 'Brassica rapa',
         subspecies: [
             {
-                name: 'chinensis',
+                variety: 'chinensis',
                 names: [
                     {
                         "vernacularName": "Bok choy",
@@ -16,7 +16,7 @@ export const infraspecifics = [
                 ]
             },
             {
-                name: 'rapa',
+                variety: 'rapa',
                 names: [
                     {
                         "vernacularName": "Turnip",
@@ -25,7 +25,7 @@ export const infraspecifics = [
                 ]
             },
             {
-                name: 'oleifera',
+                variety: 'oleifera',
                 names: [
                     {
                         "vernacularName": "Field mustard",
@@ -34,7 +34,7 @@ export const infraspecifics = [
                 ]
             },
             {
-                name: 'pekinensis',
+                variety: 'pekinensis',
                 names: [
                     {
                         "vernacularName": "Chinese cabbage",
@@ -53,49 +53,56 @@ export const infraspecifics = [
         variety: 'oleracea',
         subspecies: [
             {
-                name: 'oleracea',
+                variety: 'oleracea',
                 names: [
                     {
                         "vernacularName": "Wild cabbage",
-                        "language": "en"
+                        "language": "en",
+                        wiki: 'https://en.wikipedia.org/wiki/Brassica_oleracea',
+                        eol: 'http://eol.org/pages/1283630/overview'              
                     },
                 ]
             },
             {
-                name: 'capitata',
+                variety: 'capitata',
                 group: 'Capitata',
                 form: 'alba',
                 names: [
                     {
                         "vernacularName": "Cabbage",
-                        "language": "en"
+                        "language": "en",
+                        wiki: 'https://en.wikipedia.org/wiki/Cabbage',
+                        eol: 'http://eol.org/pages/38390/overview'
                     },
                 ]
             },
             {
-                name: 'capitata',
+                variety: 'capitata',
                 group: 'Capitata',
                 form: 'sabauda',
                 names: [
                     {
                         "vernacularName": "Savoy cabbage",
-                        "language": "en"
+                        "language": "en",
+                        "wiki": 'https://en.wikipedia.org/wiki/Savoy_cabbage',
+                        eol: 'http://eol.org/pages/5148887/overview'
                     },
                 ]
             },
             {
-                name: 'capitata',
+                variety: 'capitata',
                 group: 'Capitata',
                 form: 'rubra',
                 names: [
                     {
                         "vernacularName": "Red cabbage",
-                        "language": "en"
+                        "language": "en",
+                        wiki: 'https://en.wikipedia.org/wiki/Red_cabbage'
                     },
                 ]
             },
             {
-                name: 'capitata',
+                variety: 'capitata',
                 group: 'Capitata',
                 form: 'acuta',
                 names: [
@@ -106,7 +113,7 @@ export const infraspecifics = [
                 ]
             },
             {
-                name: 'viridis',
+                variety: 'viridis',
                 group: 'acephala',
                 names: [
                     {
@@ -116,7 +123,7 @@ export const infraspecifics = [
                 ]
             },
             {
-                name: 'viridis',
+                variety: 'viridis',
                 group: 'Acephala',
                 names: [
                     {
@@ -126,7 +133,7 @@ export const infraspecifics = [
                 ]
             },
             {
-                name: 'gemmifera',
+                variety: 'gemmifera',
                 group: 'Gemmifera',
                 names: [
                     {
@@ -136,7 +143,7 @@ export const infraspecifics = [
                 ]
             },
             {
-                name: 'gongylodes',
+                variety: 'gongylodes',
                 group: 'Gongylodes',
                 names: [
                     {
@@ -146,7 +153,7 @@ export const infraspecifics = [
                 ]
             },
             {
-                name: 'italica',
+                variety: 'italica',
                 group: 'Italica',
                 names: [
                     {
@@ -156,7 +163,7 @@ export const infraspecifics = [
                 ]
             },
             {
-                name: 'botrytis',
+                variety: 'botrytis',
                 group: 'Botrytis',
                 names: [
                     {

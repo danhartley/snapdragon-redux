@@ -1,0 +1,25 @@
+<div class="snapdragon-container">
+    <div class="cultivar card">
+        <div class="taxon-highlight"><span>{{ item.name }}</span><hr></div>
+        <div>The following cultivars are all derived from the single species {{ item.name }}:</div>
+        <div>
+            <div class="list-group-headers">
+                <span>Name</span><span>Variety</span><span class="landscape">Form</span><span class="landscape">More</span>
+            </div>        
+            <div class="scrollable">
+                <ul class="list-group list-group-flush" data-repeat-cultivar="{{ cultivars }}">
+                    <li class="list-group-item">
+                        <span>{{ cultivar.vernacular }}</span>
+                        <span>{{ cultivar.variety }}</span>
+                        <span class="landscape">{{ cultivar.form }}</span>
+                        <span class="landscape"><a class="underline-link" href="{{ cultivar.wiki }}" title="{{ cultivar.wikiAlt }}">WIKI</a> <a class="underline-link" href="{{ cultivar.eol }}" target="_blank" title="{{ cultivar.eolAlt }}">EOL</a></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="species-card-btn action-update js-cultivar-card-btn">
+        <div></div>
+        <button class="btn btn-light">Continue</button>
+    </div>
+</div>

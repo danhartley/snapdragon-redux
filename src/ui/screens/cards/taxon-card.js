@@ -52,7 +52,7 @@ export const renderTaxonCard = collection => {
         members: taxon.members ? R.take(2, taxon.members).join(', ') : ''
     }
 
-    clone.querySelector('button').addEventListener('click', event => {
+    clone.querySelector('.js-taxon-card-btn').addEventListener('click', event => {
         actions.boundEndRevision(item);
     });
 
