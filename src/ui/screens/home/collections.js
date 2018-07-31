@@ -17,7 +17,7 @@ export const renderCollections = (counter) => {
     subscription.add(renderSpeciesCollection, 'collections', 'screen');
 
     let config = { ...currentConfig };
-    let collection = currentCollection ? { ...currentCollection } : { name: '---', id: '' };
+    let collection = currentCollection ? { ...currentCollection } : { name: '---', id: '', description: '' };
 
     const template = document.createElement('template');
 
@@ -49,7 +49,8 @@ export const renderCollections = (counter) => {
     selectHandler('.dropdown.js-collections .dropdown-item', (id) => {
         collectionId = parseInt(id);
         collection = collections.filter(collection => collection.id === collectionId)[0];
-        document.querySelector('.js-selected-collection span').innerHTML = collection.name;        
+        document.querySelector('.js-selected-collection span').innerHTML = collection.name;
+        document.querySelector('.js-selected-description span').innerHTML = collection.description;
         config = { ...config, ...{ collection: { id: collectionId }} };
         elem.show(learningActionBtn);
         elem.hide(learningActionBtnPlaceholder);
