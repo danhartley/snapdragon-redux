@@ -46,6 +46,10 @@ progress::-moz-progress-bar {
   background-color: var(--snap-progress-bar);
 }
 
+hr {
+  margin-bottom: 0;
+}
+
 /* variables */
 
 .btn {

@@ -9,10 +9,9 @@ export const lessons = collections.filter(collection => R.contains(collection.na
 
 export const kitchenGarden = { 
     id: 1, name: 'Kitchen Garden', 
-    type: 'species', 
-    // items: [ ...lessons[1].items ],
+    type: 'species',
+    description: 'This course has over 500 questions and will take about 1&frac12; hours to complete. The species of fruit, vegetables, herbs, spices, and insects may be found, with one or two exceptions, in a Mediterranean climate.',
     items:[ ...lessons[0].items, ...lessons[1].items, ...lessons[2].items ],
-    // items:[ ...lessons[0].items, ...lessons[1].items, ...lessons[2].items ].filter(item => item.name === 'Brassica oleracea'),
     collections: required
 };
 
