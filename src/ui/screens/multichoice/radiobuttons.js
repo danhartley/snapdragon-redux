@@ -43,16 +43,16 @@ export const renderRadioButtons = (collection) => {
         });
     };
 
-    const familyTypes = config.isPortraitMode 
+    const familyFlavours = config.isPortraitMode 
         ? [ 'species-to-family'] 
-        : [ 'species-to-family', 'family-to-description'];
+        : [ 'species-to-family', 'family-to-description', 'description-to-family'];
 
     const screen = layout.screens.find(screen => screen.name === 'family');
     if(screen) {
-        screen.type = utils.shuffleArray(familyTypes)[0];
+        screen.flavour = utils.shuffleArray(familyFlavours)[0];
     }
 
-    if(layout.screens.find(screen => screen.type === 'description-to-family')) {
+    if(layout.screens.find(screen => screen.flavour === 'description-to-family')) {
         
         randomAnswers = R.take(2, R.take(3, utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.descriptions[0].summary);
         const familyDescription = families.find(f => f.name === family).descriptions[0].summary;
@@ -73,9 +73,9 @@ export const renderRadioButtons = (collection) => {
 
     const indices = config.isPortraitMode ? [3,4] : [5,6];
 
-    if(layout.screens.find(screen => screen.type === 'family-to-description')) {
+    if(layout.screens.find(screen => screen.flavour === 'family-to-description')) {
 
-        randomAnswers = R.take(indices[0], R.take(indices[0], utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.name);
+        randomAnswers = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.name);
         const familyDescription = families.find(f => f.name === family).descriptions[0].summary;
         description = `${species.toUpperCase()} belongs to a family whose description is '${familyDescription}' What is the name of this family?`;
         question = { question: family, binomial: item.name };
@@ -84,7 +84,7 @@ export const renderRadioButtons = (collection) => {
         render();
     }
     
-    if(layout.screens.find(screen => screen.type === 'species-to-family')) {
+    if(layout.screens.find(screen => screen.flavour === 'species-to-family')) {
 
         randomAnswers = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(i => i.name !== family)).map(i => i.name);
         description = `Which of the following families does the species ${species.toUpperCase()} belong to?`;
@@ -102,6 +102,18 @@ export const renderRadioButtons = (collection) => {
         description = `In the species ${species}, what is the meaning of the epithet ${epithet}?`;
         question = { question: layout.epithet.en[0], binomial: item.name };
         answers = utils.shuffleArray([layout.epithet.en, ...randomAnswers]);
+
+        render();
+    }
+
+    if(layout.screens.find(screen => screen.name === 'cultivar-match')) {
+        
+        randomAnswers = R.take(indices[0], R.take(indices[1], utils.shuffleArray(collection.items)).filter(i => i.name !== item.name)).map(i => i.name);
+        const subspecies = layout.cultivars.subspecies;
+        const names = R.take(indices[1], R.flatten(subspecies.map(sub => sub.names.filter(name => name.language === config.language))).map(n => n.vernacularName)).join(', ');
+        description = `${names} derive from one species. What is its name?`;
+        question = { question: item.name, binomial: item.name };
+        answers = utils.shuffleArray([item.name, ...randomAnswers]);
 
         render();
     }

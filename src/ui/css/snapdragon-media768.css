@@ -13,6 +13,10 @@
         height: 75vh;
     }
 
+    .cultivar.card .scrollable {
+        height: 40vh;
+      }      
+
     .skills-collections button {
         margin: 1em 0;
     }

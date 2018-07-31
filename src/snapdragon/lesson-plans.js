@@ -1,6 +1,6 @@
 import { screens } from 'snapdragon/screen-layouts';
 
-const { specimen, revision, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete } = screens;
+const { specimen, revision, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete, cultivar } = screens;
 
 const speciesRevision = {
     name: 'screen-species-card',
@@ -37,6 +37,16 @@ const familyMatch = {
     screens: [
         { ...specimen },
         { ...family }
+    ]
+};
+
+const cultivarMatch = {
+    name: 'screen-cultivar-to-species',
+    type:'test',
+    score: 1,
+    screens: [
+        { ...specimen },
+        { ...cultivar }
     ]
 };
 
@@ -156,7 +166,6 @@ const landscapeLesson1 = {
         {   id: 1,
             name:'Level 1',
             description: 'Beginner',
-            // layouts: [ speciesRevision, textCompleteGenus, textCompleteSpecies, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, commonEntry ]                        
             layouts: [ speciesRevision, familyStripsMatch, textCompleteGenus, textCompleteSpecies, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]                        
         },
         {   id: 2,

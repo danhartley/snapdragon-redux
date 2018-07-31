@@ -29,12 +29,6 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         layoutIndex = layoutIndex + 1;
     });
 
-    // revisionLayouts.forEach( (layout, i) => {
-    //     layout.layoutIndex = layoutIndex;
-    //     layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
-    //     layoutIndex = layoutIndex + 1;  
-    // });
-
     revisionLayouts.forEach( (layout, i) => {
         layout.layoutIndex = layoutIndex;
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
@@ -79,7 +73,6 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
     lessonPlan.layouts.map(layout => layout.roundScoreCount = roundScoreCount);
 
     lessonPlan.moduleSize = moduleSize;
-
     lessonPlan.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
     lessonPlan.layoutCount = lessonPlan.layouts.length;
     lessonPlan.layoutNames = lessonPlan.layouts.map(layout => layout.name);

@@ -116,6 +116,16 @@ const taxon = {
   domain: 'collection'
 };
 
+const cultivar = {
+  name: 'cultivar-match',
+  domain: 'collection'
+};
+
+const cultivarCard = {
+  name: 'cultivar-card',
+  domain: 'collection'
+};
+
 export const screens = {
   specimen,
   history,
@@ -136,5 +146,7 @@ export const screens = {
   family,
   familyStrips,
   taxon,
-  textComplete
+  textComplete,
+  cultivarCard,
+  cultivar
 };

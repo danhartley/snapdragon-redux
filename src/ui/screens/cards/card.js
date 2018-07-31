@@ -127,7 +127,7 @@ const renderCommonParts = (template, config, item) => {
 
     const clone = document.importNode(template.content, true);
     
-    clone.querySelector('button').addEventListener('click', event => {
+    clone.querySelector('.js-species-card-btn').addEventListener('click', event => {
         actions.boundEndRevision(item);
     });
 
