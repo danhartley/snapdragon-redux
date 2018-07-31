@@ -136,7 +136,7 @@ const renderCommonParts = (template, config, item) => {
     
     renderTemplate({ species, name, latin, rank, occurrences }, template.content, parent, clone);
 
-    const gbif = document.querySelector('.js-card .js-txt-family span');
+    const gbif = document.querySelector('.js-txt-family span');
 
     gbif.innerHTML = item.family;
 
