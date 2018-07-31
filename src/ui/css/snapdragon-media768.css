@@ -7,6 +7,10 @@
     div.taxon-data {
         margin: 0;
     }
+/* 
+    .data-box {
+        margin: .5em 0 0 0;
+    } */
       
     .scrollable {
         overflow-y: scroll;
