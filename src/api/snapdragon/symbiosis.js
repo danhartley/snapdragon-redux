@@ -82,17 +82,17 @@ const symbionts = [
     {
         type: ['pollination'],
         plant: {name:'Tanacetum vulgare',taxon:'species'},
-        animal: {name:'Apiae',taxon:'family'}        
+        animal: {name:'Apidae',taxon:'family'}        
     },
     {
         type: ['pollination'],
         plant: {name:'Helichrysum italicum',taxon:'species'},
-        animal: {name:'Apiae',taxon:'family'}
+        animal: {name:'Apidae',taxon:'family'}
     },
     {
         type: ['pollination'],
         plant: {name:'Allium schoenoprasum',taxon:'species'},
-        animal: {name:'Apiae',taxon:'family'}       
+        animal: {name:'Apidae',taxon:'family'}       
     },
     {
         type: ['pollination'],
@@ -102,12 +102,12 @@ const symbionts = [
     {
         type: ['pollination'],
         plant:{name:'Foeniculum vulgare',taxon:'species'},
-        animal: {name:'Apiae',taxon:'family'}    
+        animal: {name:'Apidae',taxon:'family'}    
     },
     {
         type: ['pollination'],
         plant:{name:'Thymus vulgaris',taxon:'species'},
-        animal: {name:'Apiae',taxon:'family'}
+        animal: {name:'Apidae',taxon:'family'}
     },
     {
         type: ['pollination'],
@@ -192,7 +192,7 @@ const symbionts = [
     {
         type: ['pollination'],
         plant:{name:'Erica',taxon:'genus'},
-        animal: {name:'Apiae',taxon:'family'}
+        animal: {name:'Apidae',taxon:'family'}
     },
     {
         type: ['pollination', 'nectar'],
@@ -212,7 +212,12 @@ const symbionts = [
     {
         type: ['pollination', 'nectar', 'shelter'],
         plant:{name:'Hedera helix',taxon:'species'},
-        animal: {name:'Apiae',taxon:'family'}
+        animal: {name:'Apidae',taxon:'family'}
+    },
+    {
+        type: ['pollination'],
+        plant:{name:'Rutaceae',taxon:'family'},
+        animal: {name:'Insecta',taxon:'class'}
     },
     {
         type: ['predation'],

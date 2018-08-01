@@ -1,6 +1,6 @@
 export const taxa = [
     {
-        taxon: "family",
+        taxon: 'family',
         name: 'Asteraceae',
         alt: [ 'Compositae'],
         names: [{ language: "en", names:[ 'Daisies', 'Compositae', 'Aster', 'Composite', 'Sunflower family']}],
@@ -12,7 +12,7 @@ export const taxa = [
         descriptions: [
             {   
                 language: 'en',
-                summary: 'Worldwide distribution, from the polar regions to the tropics. Second only to the orchid family in size.',
+                summary: 'Worldwide distribution, second only to the orchids in size. Economically important, products include cooking oils, lettuce, sunflower seeds, and artichokes. The head may track the sun which maximizes reflectivity thereby attracting more pollinators.',
                 identification: 'Composite flowers with either disk or ray flowers, or both.'
             }
         ],
@@ -21,7 +21,7 @@ export const taxa = [
         "eol-entry": "https://eol.org/pages/4206/overview"
     },
     {
-        taxon: "family",
+        taxon: 'family',
         name: 'Apiaceae',
         alt: ['Umbelliferae'],
         names: [{ language: "en", names:[ 'Carrot or Parsley family', 'Umbellifers', 'Celery family', 'Carrot family', 'Parsely family']}],        
@@ -50,7 +50,7 @@ export const taxa = [
         "eol-entry": "https://eol.org/pages/4200/overview"
     },
     {
-        taxon: "family",
+        taxon: 'family',
         name: 'Lamiaceae',
         alt: ['Labiatae'],
         names: [{ language: "en", names:[ 'Mint or Deadnettles', 'Mint or Basil', 'Labiatae', 'Mint', 'Deadnettles']}],
@@ -65,7 +65,7 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Most members of the family are perennial or annual herbs with square stems.',
+                summary: 'Many aromatic perennials including basil, mint, rosemary, sage, savory, marjoram, and oregano. Readily propagated from stem cuttings or seed (chia).',
                 identification: 'Square stems, simple and opposite leaves, often fragrant. 5 petals and sepals, fused in both cases.',
                 leaf: 'Important members include basil, rosemary, lavender, marjoram, thyme, savory and the mints. Not to be confused with Verbena and Urticaceae.',  
                 inflorescence: 'The flowers are bilaterally symmetrical with five united petals and five united sepals, usually arranged in clusters and feature two-lipped, open-mouthed, tubular corollas (united petals) with five-lobed bell-like calyxes (united sepals).',
@@ -77,7 +77,7 @@ export const taxa = [
         "eol-entry": "https://eol.org/pages/4302/overview"
     },
     {
-        taxon: "family",
+        taxon: 'family',
         name: 'Brassicaceae',
         alt: ['Cruciferae'],
         names: [{ language: "en", names:['Mustards', 'Cruciferae', 'Crucifers', 'Cabbage family']}],
@@ -96,7 +96,7 @@ export const taxa = [
         "eol-entry": "https://eol.org/pages/4219/overview"
     },
     {
-        taxon: "family",
+        taxon: 'family',
         name: 'Amaryllidaceae',
         names: [ { language: "en", names: ['Amaryllis']}],
         thumb: 'https://media.eol.org/content/2015/01/27/22/09266_98_68.jpg',
@@ -146,7 +146,7 @@ export const taxa = [
         "eol-entry": "https://eol.org/pages/648/overview"
     },
     {
-        taxon: "family",
+        taxon: 'family',
         name: "Apidae",
         names: [ { language: "en", names: ['Bees']}],
         thumb: "https://media.eol.org/content/2013/02/03/12/43681_98_68.jpg",
@@ -298,8 +298,8 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Includes woody shrubs and trees, distributed worldwide, especially in warm temperate and tropical regions. Commonly known as the Rue or Citrus family.',
-                identification: 'Flowers that divide into 4 or 5 parts, usually with strong scents.'
+                summary: 'Includes woody shrubs and trees, distributed worldwide, especially in warm temperate and tropical regions. Fruits of the genus Citrus include orange, lemon and lime.',
+                identification: 'Flowers that divide into 4 or 5 parts. Frequently aromatic.'
             }
         ],
         "eol-entry": "https://eol.org/pages/582200/overview",
@@ -332,7 +332,7 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Many of the species are halophytes, tolerating salty soils, or grow in dry steppes or semi-deserts. Many species use the C4 pathway tp fix carbon.',
+                summary: 'Many of the species are halophytes, tolerating salty soils, or grow in dry steppes or semi-deserts. Many species use the C4 pathway to fix carbon.',
                 identification: 'Red-colored plants. Leaves may be succulent or hairy.'
             }
         ],

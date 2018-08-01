@@ -12,7 +12,7 @@ import { renderNameEntry } from 'ui/screens/text-entry/leaf-text-entry';
 import { runTask } from 'ui/screens/command';
 import { renderSpeciesCollection } from 'ui/screens/lists/species';
 import { renderRadioButtons } from 'ui/screens/multichoice/radiobuttons';
-import { renderFamilyDescriptions } from 'ui/screens/multichoice/family-description';
+import { renderFamilyDescriptions } from 'ui/screens/multichoice/family-descriptions';
 import { renderCompleteText } from 'ui/screens/text-entry/text-complete';
 import { renderCultivarCard } from 'ui/screens/cards/cultivar-card';
 

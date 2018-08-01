@@ -163,8 +163,58 @@ export const glossary = [
     },
     {
         term: 'Sonication',
-        definition: '(Buzz pollination) is the release of pollen from anthers and flowers shaken by the rapid movement of the flight muscles of (solitary) bees. Bees are the only animals that perform this behaviour. Bumblebees sonicate, honeybees do not',
+        definition: '(Buzz pollination) is the release of pollen from anthers and flowers shaken by the rapid movement of the flight muscles of (solitary) bees. Bees are the only animals that perform this behaviour. Bumblebees sonicate, honeybees do not.',
         "wiki-entry": 'https://en.wikipedia.org/wiki/Buzz_pollination',
         examples: ['Solanaceae', 'Solanum lycopersicum', 'Solanum melongena', 'Solanum tuberosum', 'Vaccinium']
+    },
+    {
+        term: 'Stamen',
+        definition: 'Pollen-producing reproductive organ of a flower. Consists of a stalk (filament) and pollen-carrying anther.',
+        "wiki-entry": 'https://en.wikipedia.org/wiki/Stamen'
+    },
+    {
+        term: 'Flower',
+        definition: 'The reproductive structure found in flowering plants (angiosperms  ).',
+        "wiki-entry": 'https://en.wikipedia.org/wiki/Flower'
+    },
+    {
+        term: 'Fruit',
+        definition: 'The seed-bearing structure in flowering plants formed from the ovary after flowering.',
+        "wiki-entry": 'https://en.wikipedia.org/wiki/Fruit'
+    },
+    {
+        term: 'Perianth',
+        definition: 'The non-reproductive part of the flower, and structure that forms an envelope surrounding the sexual organs, consisting of the calyx (sepals) and the corolla (petals).',
+        "wiki-entry": 'https://en.wikipedia.org/wiki/Perianth'
+    },
+    {
+        term: 'Petal',
+        definition: 'Modified leaves that surround the reproductive parts of flowers.',
+        "wiki-entry": 'https://en.wikipedia.org/wiki/Petal'
+    },
+    {
+        term: 'Corolla',
+        definition: 'All the petals of a flower.',
+        "wiki-entry": 'https://en.wikipedia.org/wiki/Petal#Corolla'
+    },
+    {
+        term: 'Perennial',
+        definition: 'A plant that lives more than two years (used to distinguish plants with little or no woody growth from trees and shrubs).',
+        "wiki-entry": 'https://en.wikipedia.org/wiki/Perennial_plant'
+    },
+    {
+        term: 'Annual',
+        definition: 'A plant that completes its life cycle, from germination to the production of seeds, within one year, and then dies.',
+        "wiki-entry": 'https://en.wikipedia.org/wiki/Annual_plant'
+    },
+    {
+        term: 'Biennial',
+        definition: 'A flowering plant that takes two years to complete its biological lifecycle.',
+        "wiki-entry": 'https://en.wikipedia.org/wiki/Biennial_plant'
+    },
+    {
+        term: 'Evergreen',
+        definition: 'Non-herbaceous, perennials which retain a mantle of leaves throughout the year.',
+        "wiki-entry": 'https://en.wikipedia.org/wiki/Evergreen'
     },
 ];
