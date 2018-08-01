@@ -22,11 +22,16 @@ export const renderRadioButtons = (collection) => {
     template.innerHTML = radiobuttonsTemplate;
 
     let randomAnswers, description, question, answers;
+    let indices = config.isPortraitMode ? [3,4] : [4,5];
 
     const species = item.name;
     const epithet = itemProperties.speciesName(species);
     const family = item.family;
     const families = taxa.filter(taxon => taxon.taxon === 'family');
+    const otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name !== item.family));
+    const otherFamilyLatinNames = otherFamilies.map(family => family.name);
+    const otherFamiliesCommonNames = otherFamilies.filter(family => family.names.find(name => name.language === config.language)).map(family => family.names[0].names[0]);
+    const commonFamilyName = families.find(family => family.name === item.family).names.find(name => name.language === config.language).names[0];
 
     const render = () => {
         const parent = DOM.rightBody;
@@ -44,52 +49,75 @@ export const renderRadioButtons = (collection) => {
     };
 
     const familyFlavours = config.isPortraitMode 
-        ? [ 'species-to-family'] 
-        : [ 'species-to-family', 'family-to-description', 'description-to-family'];
+        ? [ 'match-species-to-latin-family-name', 'match-common-family-name-to-latin-family-name', 'match-latin-family-name-to-common-family-name', 'match-species-to-common-family-name' ] 
+        : [ 'match-species-to-latin-family-name', 'match-family-to-quick-id', 'match-family-to-summary', 'match-common-family-name-to-latin-family-name', 'match-latin-family-name-to-common-family-name', 'match-species-to-common-family-name' ];
 
     const screen = layout.screens.find(screen => screen.name === 'family');
+
     if(screen) {
         screen.flavour = utils.shuffleArray(familyFlavours)[0];
     }
 
-    if(layout.screens.find(screen => screen.flavour === 'description-to-family')) {
-        
-        randomAnswers = R.take(2, R.take(3, utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.descriptions[0].summary);
-        const familyDescription = families.find(f => f.name === family).descriptions[0].summary;
-        description = `${species} belongs to the ${family}. Which of the following best describes the ${family} family?`;
-        question = { question: familyDescription, binomial: item.name, enumerated: true };
-        answers = utils.shuffleArray([familyDescription, ...randomAnswers]);
+    if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
 
-        answers = answers.map((answer, index) => {
-                if(question.question === answer) {
-                    question.question = `${index+1}) ${question.question}`
-                }                
-                return `${index+1}) ${answer}`
-            }
-        );
+        const summary = families.find(f => f.name === family).descriptions[0].summary;
+        description = `${species.toUpperCase()} belongs to a family whose description is '${summary}' What is the name of this FAMILY?`;
+        question = { question: family, binomial: item.name };
+        answers = utils.shuffleArray([family, ...otherFamilyLatinNames]);
 
         render();
     }
 
-    const indices = config.isPortraitMode ? [3,4] : [5,6];
+    if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
-    if(layout.screens.find(screen => screen.flavour === 'family-to-description')) {
-
-        randomAnswers = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(f => f.name !== family)).map(f => f.name);
-        const familyDescription = families.find(f => f.name === family).descriptions[0].summary;
-        description = `${species.toUpperCase()} belongs to a family whose description is '${familyDescription}' What is the name of this family?`;
+        const identification = families.find(f => f.name === family).descriptions[0].identification;
+        description = `${species.toUpperCase()} belongs to a family whose Quick ID is '${identification}' What is the name of this FAMILY?`;
         question = { question: family, binomial: item.name };
-        answers = utils.shuffleArray([family, ...randomAnswers]);
+        answers = utils.shuffleArray([family, ...otherFamilyLatinNames]);
 
         render();
     }
     
-    if(layout.screens.find(screen => screen.flavour === 'species-to-family')) {
+    if(layout.screens.find(screen => screen.flavour === 'match-species-to-latin-family-name')) {
 
-        randomAnswers = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(i => i.name !== family)).map(i => i.name);
-        description = `Which of the following families does the species ${species.toUpperCase()} belong to?`;
+        indices = config.isPortraitMode ? [3,4] : [5,6];
+
+        description = `To which of the following families does the species ${species.toUpperCase()} belong?`;
         question = { question: family, binomial: item.name };
-        answers = utils.shuffleArray([family, ...randomAnswers]);
+        answers = utils.shuffleArray([family, ...otherFamilyLatinNames]);
+        
+        render();
+    }
+    
+    if(layout.screens.find(screen => screen.flavour === 'match-species-to-common-family-name')) {
+
+        indices = config.isPortraitMode ? [3,4] : [5,6];
+        
+        description = `To which of the following families does the species ${species.toUpperCase()} belong?`;
+        question = { question: commonFamilyName, binomial: item.name };
+        answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
+        
+        render();
+    }
+
+    if(layout.screens.find(screen => screen.flavour === 'match-common-family-name-to-latin-family-name')) {
+
+        indices = config.isPortraitMode ? [3,4] : [5,6];
+
+        description = `Which of the following common family names matches the latin name ${family.toUpperCase()}?`;
+        question = { question: commonFamilyName, binomial: item.name };
+        answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
+        
+        render();
+    }
+
+    if(layout.screens.find(screen => screen.flavour === 'match-latin-family-name-to-common-family-name')) {
+
+        indices = config.isPortraitMode ? [3,4] : [5,6];
+
+        description = `Which of the following common family names matches the latin name ${family.toUpperCase()}?`;
+        question = { question: commonFamilyName, binomial: item.name };
+        answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
         
         render();
     }
@@ -97,6 +125,8 @@ export const renderRadioButtons = (collection) => {
     if(layout.screens.find(screen => screen.name === 'epithet')) {
         
         if(!layout.epithet) return;
+
+        indices = config.isPortraitMode ? [3,4] : [5,6];
         
         randomAnswers = R.take(indices[0], R.take(indices[1], utils.shuffleArray(epithets)).filter(e => !R.contains(e.en, layout.epithet.en))).map(e => e.en);
         description = `In the species ${species}, what is the meaning of the epithet ${epithet}?`;
@@ -108,6 +138,8 @@ export const renderRadioButtons = (collection) => {
 
     if(layout.screens.find(screen => screen.name === 'cultivar-match')) {
         
+        indices = config.isPortraitMode ? [3,4] : [5,6];
+
         randomAnswers = R.take(indices[0], R.take(indices[1], utils.shuffleArray(collection.items)).filter(i => i.name !== item.name)).map(i => i.name);
         const subspecies = layout.cultivars.subspecies;
         const names = R.take(indices[1], R.flatten(subspecies.map(sub => sub.names.filter(name => name.language === config.language))).map(n => n.vernacularName)).join(', ');
