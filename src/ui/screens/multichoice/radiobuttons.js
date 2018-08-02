@@ -29,7 +29,7 @@ export const renderRadioButtons = (collection) => {
     const family = item.family;
     const families = taxa.filter(taxon => taxon.taxon === 'family');
     const otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name !== item.family));
-    const otherFamilyLatinNames = otherFamilies.map(family => family.name);
+    const otherFamiliesLatinNames = otherFamilies.map(family => family.name);
     const otherFamiliesCommonNames = otherFamilies.filter(family => family.names.find(name => name.language === config.language)).map(family => family.names[0].names[0]);
     const commonFamilyName = families.find(family => family.name === item.family).names.find(name => name.language === config.language).names[0];
 
@@ -63,7 +63,7 @@ export const renderRadioButtons = (collection) => {
         const summary = families.find(f => f.name === family).descriptions[0].summary;
         description = `${species.toUpperCase()} belongs to a family whose description is '${summary}' What is the name of this FAMILY?`;
         question = { question: family, binomial: item.name };
-        answers = utils.shuffleArray([family, ...otherFamilyLatinNames]);
+        answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 
         render();
     }
@@ -73,7 +73,7 @@ export const renderRadioButtons = (collection) => {
         const identification = families.find(f => f.name === family).descriptions[0].identification;
         description = `${species.toUpperCase()} belongs to a family whose Quick ID is '${identification}' What is the name of this FAMILY?`;
         question = { question: family, binomial: item.name };
-        answers = utils.shuffleArray([family, ...otherFamilyLatinNames]);
+        answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 
         render();
     }
@@ -84,7 +84,7 @@ export const renderRadioButtons = (collection) => {
 
         description = `To which of the following families does the species ${species.toUpperCase()} belong?`;
         question = { question: family, binomial: item.name };
-        answers = utils.shuffleArray([family, ...otherFamilyLatinNames]);
+        answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
         
         render();
     }

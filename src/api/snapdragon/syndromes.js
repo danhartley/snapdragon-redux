@@ -48,7 +48,8 @@ export const syndromes = {
                 },
                 {
                     key: 'bee',
-                    value: true
+                    value: true,
+                    description: 'UV reflectance near centre of petal'
                 },
                 {
                     key: 'beetle',
@@ -85,7 +86,7 @@ export const syndromes = {
                 },
                 {
                     key: 'bee',
-                    value: 'Fresh, mild, pleasant'
+                    value: 'Fresh, mild, pleasant, aromatic, minty'
                 },
                 {
                     key: 'beetle',
@@ -191,7 +192,7 @@ export const syndromes = {
             ]                    
         },
         {
-            name: 'Flower Shape',
+            name: 'Flower',
             keys: [
                 {
                     key: 'bat',
@@ -199,7 +200,7 @@ export const syndromes = {
                 },
                 {
                     key: 'bee',
-                    value: 'Shallow; have landing platform; tubular'
+                    value: 'Shallow; have landing platform; tubular; bilaterally symmetrical; open in daytime'
                 },
                 {
                     key: 'beetle',

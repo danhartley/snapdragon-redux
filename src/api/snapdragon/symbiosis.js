@@ -26,6 +26,21 @@ const symbionts = [
     },
     {
         type: ['pollination'],
+        plant: {name: 'Apiaceae', taxon: 'family'},
+        animal: {name: 'Xylocopinae', taxon:'genus'}
+    },
+    {
+        type: ['pollination'],
+        plant: {name: 'Apiaceae', taxon: 'family'},
+        animal: {name: 'Megachilidae', taxon:'genus'}
+    },
+    {
+        type: ['pollination'],
+        plant: {name: 'Apiaceae', taxon: 'family'},
+        animal: {name: 'Osmia', taxon:'genus'}
+    },
+    {
+        type: ['pollination'],
         plant: {name:'Trifolium pratense',taxon:'species'},
         animal: {name: 'Bombus terrestris', taxon:'species'}
     },
