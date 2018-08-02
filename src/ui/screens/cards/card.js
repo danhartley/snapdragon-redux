@@ -9,7 +9,6 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { modalBackgroundImagesHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import landscapeTemplate from 'ui/screens/cards/card-template.html';
-import portraitTemplate from 'ui/screens/cards/card-portrait-template.html';
 
 export const renderCard = (collection) => {
     
@@ -25,17 +24,17 @@ export const renderCard = (collection) => {
     const screen = layout.screens.filter(el => el.name === 'species-card')[0];
 
     if(!screen) return;
-
-    config.isPortraitMode
-        ? renderPortrait(item, config)
-        : renderLandscape(item, config);
-};
-
-const renderLandscape = (item, config) => {
-
+    
     const template = document.createElement('template');
 
     template.innerHTML = landscapeTemplate;
+
+    config.isPortraitMode
+        ? renderPortrait(template, item, config)
+        : renderLandscape(template, item, config);
+};
+
+const renderLandscape = (template, item, config) => {
 
     const eolPage = template.content.querySelector('.js-species-card-eol-link');
 
@@ -44,11 +43,6 @@ const renderLandscape = (item, config) => {
     eolPage.setAttribute('style', 'text-decoration: none');
 
     renderCommonParts(template, config, item);
-
-    const family = taxa.find(f => f.name === item.family);
-    const familyImage = family ? family.thumb : '';
-
-    document.querySelector('.js-img-family').src = familyImage;
 
     setTimeout(()=>{
         const wikiLink = document.querySelector('.js-species-card-wiki span');
@@ -86,16 +80,10 @@ const renderLandscape = (item, config) => {
     const wikiNode = document.querySelector('.js-species-card-wiki');
 
     renderWiki(wikiNode, item, config.language);
-
-    document.querySelector('.js-txt-family img').classList.add('show');
 };
 
-const renderPortrait = (item, config) => {
+const renderPortrait = (template, item, config) => {
 
-    const template = document.createElement('template');
-
-    template.innerHTML = portraitTemplate;
-    
     renderCommonParts(template, config, item);
 
     const images = utils.shuffleArray(item.images).slice(0,4);
@@ -120,10 +108,11 @@ const renderCommonParts = (template, config, item) => {
     const epithet = itemProperties.latin(speciesName);
     const latin = epithet ? `${speciesName}: ${epithet.en}` : '';
     const rank = "species";
-
+    const family = taxa.find(f => f.name === item.family);
+    const familyImage = family ? family.thumb : '';
     const specific = infraspecifics.find(specific => specific.name === item.name);
-    
     const occurrences = specific ? specific.subspecies.length : 0;
+    const pollinators = family.pollinators.map(p=>p).join(', ');
 
     const clone = document.importNode(template.content, true);
     
@@ -134,11 +123,7 @@ const renderCommonParts = (template, config, item) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
     
-    renderTemplate({ species, name, latin, rank, occurrences }, template.content, parent, clone);
-
-    const gbif = document.querySelector('.js-txt-family span');
-
-    gbif.innerHTML = item.family;
+    renderTemplate({ species, name, latin, rank, occurrences, family: item.family, familyImage, pollinators }, template.content, parent, clone);
 
     const badge = document.querySelector('.badge');
 

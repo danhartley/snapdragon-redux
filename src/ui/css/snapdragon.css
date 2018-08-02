@@ -361,15 +361,25 @@ hr {
 }
 
 .species-card-name {
+  font-style: italic;
+}
+
+.species-common-name {
+  font-size: 1.3em;
   text-transform: capitalize;
+}
+
+.species-pollinators span {
+  font-weight: bold;
+  color: rgb(97, 109, 25);
 }
 
 .species-card-latin {
   font-size: .8em;
 }
 
-.taxon-card-header {
-  font-size: 1.1em;
+.taxon-common-name {
+  font-size: 1.3em;
 }
 
 .cultivar.card {
@@ -419,7 +429,8 @@ hr {
   text-align: left;
   letter-spacing: .05em;
   color: var(--snap-text-dark);
-  border: .05em solid var(--snap-border-dark);  
+  border: .05em solid var(--snap-border-dark);
+  background-color: var(--snap-grid-background);
 }
 
 .id-box > div:nth-child(2) {  
@@ -699,6 +710,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   display: inline;
 }
 
+.portrait-grid {
+  display: grid;
+}
+
 .landscape {
   display: none;
 }
@@ -784,6 +799,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .badge {
   vertical-align: text-top;
   cursor: pointer;
+  padding: .25em .25em .25em .4em;
 }
 
 .badge-light {

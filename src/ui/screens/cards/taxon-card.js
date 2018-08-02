@@ -43,7 +43,7 @@ export const renderTaxonCard = collection => {
         common: taxon.names ? taxon.names.find(name => name.language === language).names[0] : taxon.alt,
         species: taxon.species || '--',
         genera: taxon.genera || '--',
-        identification: `QUICK ID :- ${taxon.descriptions.find(name => name.language === language).identification}`,
+        identification: `Quick ID :- ${taxon.descriptions.find(name => name.language === language).identification}`,
         summary: taxon.descriptions.find(name => name.language === language).summary || '',
         eol: taxon['eol-entry'] || '',
         wiki: taxon['wiki-entry'] || '',

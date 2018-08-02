@@ -148,7 +148,7 @@
         width: initial;
     }
 
-    .portrait {
+    .portrait, .portrait-grid {
         display: none;
     }
 

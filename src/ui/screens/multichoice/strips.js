@@ -75,7 +75,7 @@ export const renderStrips = (screen, item, callback, config, lessonPlan) => {
         if(screen.name === 'species-vernaculars') {
             document.querySelector('.js-txt-species-name').innerHTML = vernacular.toUpperCase();
         } else {
-            document.querySelector('.js-txt-species').innerHTML = name.toUpperCase();
+            document.querySelector('.js-txt-species').innerHTML = name;
         }
     }
 
