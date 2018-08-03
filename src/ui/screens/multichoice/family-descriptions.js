@@ -6,6 +6,7 @@ import { store } from 'redux/store';
 import { taxa } from 'api/snapdragon/taxa';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
+import { syndromes } from 'api/snapdragon/syndromes';
 import familyTemplate from 'ui/screens/multichoice/family-descriptions.html';
 import questionCard from 'ui/screens/common/question-template.html';
 import familyCard from 'ui/screens/cards/taxon-card-template.html';
@@ -91,6 +92,43 @@ export const renderFamilyDescriptions = (collection) => {
         const question = families.find(f => f.name === item.family).descriptions[0].summary;
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family)).map(f => f.descriptions[0].summary);
         const answers = utils.shuffleArray([question, ...alternatives]);
+
+        render(questionText, question, answers);
+    }
+
+    if(layout.screens.find(screen => screen.name === 'wildcard-match')) {
+
+        const getTraits = (pollinators) => {
+            const traits = [];
+            pollinators.forEach(pollinator => {
+                const trait = collection.items.map( (item, i) => {                
+                    return {
+                        traits: R.flatten(syndromes.traits.map(trait => {
+                            const t = trait.keys.find(key => key.key === pollinator);
+                            return { trait: trait.name, value: t.value, description: t.description || '' };
+                        })),
+                        index: i
+                    };                
+                }).filter(c => c);
+                traits.push(trait[0].traits);
+            });
+
+            const options = traits.map(trait => trait.map(t => {
+                return `${t.trait}: ${t.value}`;
+            }));
+
+            return options.map(option => option.join('; '));
+        }
+
+        const number = config.isPortraitMode ? 1 : 2;
+
+        const pollinators = R.take(number, utils.shuffleArray(['beetle', 'bird', 'butterfly', 'fly', 'moth', 'wind']));
+        
+        const traits = getTraits(pollinators);
+        const question = getTraits(['bee'])[0];
+
+        const questionText = `Which set of traits best fits the ${item.family}?`;
+        const answers = utils.shuffleArray([question, ...traits]);
 
         render(questionText, question, answers);
     }

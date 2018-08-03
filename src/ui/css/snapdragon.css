@@ -150,7 +150,7 @@ hr {
   border: 1px solid var(--snap-primary);
 }
 
-.species.card > div, .taxon.card > div {
+.species.card > div, .taxon.card > div, .trait.card > div {
   flex: auto;
 }
 
@@ -361,15 +361,25 @@ hr {
 }
 
 .species-card-name {
+  font-style: italic;
+}
+
+.species-common-name {
+  font-size: 1.3em;
   text-transform: capitalize;
+}
+
+.species-pollinators span {
+  font-weight: bold;
+  color: rgb(97, 109, 25);
 }
 
 .species-card-latin {
   font-size: .8em;
 }
 
-.taxon-card-header {
-  font-size: 1.1em;
+.taxon-common-name {
+  font-size: 1.3em;
 }
 
 .cultivar.card {
@@ -392,6 +402,10 @@ hr {
 
 .cultivar.card .scrollable {
   height: 30vh;
+}
+
+.trait.card .scrollable {
+  height: 40vh;
 }
 
 .data-box, .id-box {  
@@ -419,7 +433,8 @@ hr {
   text-align: left;
   letter-spacing: .05em;
   color: var(--snap-text-dark);
-  border: .05em solid var(--snap-border-dark);  
+  border: .05em solid var(--snap-border-dark);
+  background-color: var(--snap-grid-background);
 }
 
 .id-box > div:nth-child(2) {  
@@ -699,6 +714,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   display: inline;
 }
 
+.portrait-grid {
+  display: grid;
+}
+
 .landscape {
   display: none;
 }
@@ -722,6 +741,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   border-radius: .20rem .20rem 0 0;  
   display: flex;
   flex-direction: row;
+  text-align: left;
 }
 
 .list-group-headers span {
@@ -746,10 +766,17 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   object-fit: cover;
   margin: 0 .5em 0 0;
 }
-/* 
-.list-continue-btn {
-  margin: 1em .5em;
-} */
+
+
+.trait.card li span:nth-child(1) {
+  width: 25%;
+  text-align: left;
+}
+
+.trait.card li span:nth-child(2) {
+  width: 75%;
+  text-align: left;
+}
 
 .toggle-content {
 	display: none;
@@ -784,6 +811,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .badge {
   vertical-align: text-top;
   cursor: pointer;
+  padding: .25em .25em .25em .4em;
 }
 
 .badge-light {

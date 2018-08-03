@@ -11,6 +11,23 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Kreuzkümmel",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Mutterkümmel",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Römischer Kümmel",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Weißer Kreuzkümmel",
+          "language": "de"
+        },
+        {
           "vernacularName": "cumin",
           "language": "en",
           "eol_preferred": true
@@ -26,6 +43,41 @@ export const herbsAndSpices = [
         {
           "vernacularName": "White cumin",
           "language": "en"
+        },
+        {
+          "vernacularName": "Comino",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Comino blanco",
+          "language": "es"
+        },
+        {
+          "vernacularName": "cumin",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Cumin blanc",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Cumin du Maroc",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Faux anis",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Cumino",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Cumino bianco",
+          "language": "it"
         },
         {
           "vernacularName": "Cominho",
@@ -123,6 +175,27 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Guatemaltekisches Lemongras",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Citronella",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Lemongras",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Westindisches Lemongras",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Zitronengras",
+          "language": "de"
+        },
+        {
           "vernacularName": "lemon grass",
           "language": "en",
           "eol_preferred": true
@@ -154,6 +227,57 @@ export const herbsAndSpices = [
         {
           "vernacularName": "oil grass",
           "language": "en"
+        },
+        {
+          "vernacularName": "Citronella",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Caña de Limón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Hierba de Limón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Te de limón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Zacate de limón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "sontol",
+          "language": "es"
+        },
+        {
+          "vernacularName": "yerba de calentura",
+          "language": "es"
+        },
+        {
+          "vernacularName": "yerba de limón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Verveine des Indes",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Citronnelle",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Herbe à moutons",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Cimbopogone",
+          "language": "it",
+          "eol_preferred": true
         },
         {
           "vernacularName": "Capim-santo",
@@ -222,6 +346,15 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Weißer Senf",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "weiβe Senf",
+          "language": "de"
+        },
+        {
           "vernacularName": "white mustard",
           "language": "en",
           "eol_preferred": true
@@ -253,6 +386,49 @@ export const herbsAndSpices = [
         {
           "vernacularName": "yellow mustard",
           "language": "en"
+        },
+        {
+          "vernacularName": "Mostaza silvestre",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Moutarde blanche",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Moutarde",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Roquette cultivée",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "moutarde anglaise",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "moutarde cultivée",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "moutarde rude",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "petit bouquet jaune",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "senévé",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Senape biancha",
+          "language": "it",
+          "eol_preferred": true
         },
         {
           "vernacularName": "Mostarda-branca",
@@ -306,6 +482,11 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Ingwer",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "ginger",
           "language": "en",
           "eol_preferred": true
@@ -325,6 +506,25 @@ export const herbsAndSpices = [
         {
           "vernacularName": "garden ginger",
           "language": "en"
+        },
+        {
+          "vernacularName": "Jengibre",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Gingembre",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Zingiber officinale",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Zenzero",
+          "language": "it"
         },
         {
           "vernacularName": "Gengibre",
@@ -380,6 +580,15 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Schwarzer Senf",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Braunsenf",
+          "language": "de"
+        },
+        {
           "vernacularName": "black mustard",
           "language": "en",
           "eol_preferred": true
@@ -403,6 +612,73 @@ export const herbsAndSpices = [
         {
           "vernacularName": "shortpod mustard",
           "language": "en"
+        },
+        {
+          "vernacularName": "Mostaza negra",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Mostaza de Indias",
+          "language": "es"
+        },
+        {
+          "vernacularName": "jenabe ajenabo",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Moutarde noire",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Moutarde",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Moutarde brune",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Moutarde de Chine",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Moutarde de l'Inde",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Moutarde noire, Chou noir",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "moutarde sauvage",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "petit bouquet jaune",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "senévé",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "senévé noir",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Senape nera",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "senepa vera",
+          "language": "it"
+        },
+        {
+          "vernacularName": "senevra",
+          "language": "it"
         },
         {
           "vernacularName": "Mostarda (preta)",
@@ -456,6 +732,11 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Kümmel",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "caraway",
           "language": "en",
           "eol_preferred": true
@@ -483,6 +764,57 @@ export const herbsAndSpices = [
         {
           "vernacularName": "wild caraway",
           "language": "en"
+        },
+        {
+          "vernacularName": "Carvi",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Alcaravea",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Comino de Prado",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Carvi",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Cumin des prés",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Cumin des prés, Anis des Vosges",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Grains de carvi",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "anis canadien, carvi commun, anis, anis bâtard, aneine, anis des vosges, anis sauvage, carvic cumin, cumin des prés, care carvi",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "anis des Vosges",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Caro",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Carvi",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Cumino tedesco",
+          "language": "it"
         },
         {
           "vernacularName": "Alcaravia",
@@ -528,6 +860,31 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Bohnenkraut",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Kölle",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Pfefferkraut",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Saturei",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Sommer-Bohnenkraut",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Winterbergminze",
+          "language": "de"
+        },
+        {
           "vernacularName": "savory",
           "language": "en",
           "eol_preferred": true
@@ -535,6 +892,61 @@ export const herbsAndSpices = [
         {
           "vernacularName": "summer savory",
           "language": "en"
+        },
+        {
+          "vernacularName": "ajedrea",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Ajedrea*",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Jedrea&ast;",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Sabroso",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Sarriette annuelle",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Herbe de Saint-Julien",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Poivrette",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Sarriette",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Sarriette de montagne*",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Sarriette des champs",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "santoreggia domestica",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Santoreggia",
+          "language": "it"
+        },
+        {
+          "vernacularName": "savoreggia",
+          "language": "it"
         },
         {
           "vernacularName": "segurelha",
@@ -598,6 +1010,23 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Pfeffer",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Grüner Pfeffer",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Schwarzer Pfeffer",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Weißer Pfeffer",
+          "language": "de"
+        },
+        {
           "vernacularName": "black pepper",
           "language": "en",
           "eol_preferred": true
@@ -609,6 +1038,61 @@ export const herbsAndSpices = [
         {
           "vernacularName": "pepper",
           "language": "en"
+        },
+        {
+          "vernacularName": "Pimienta nigra",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Pimienta",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Pimienta blanca",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Pimienta negra",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Poivre",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Poivre blanc",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Poivre noir",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Poivre vert",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Poivrier noir",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Pepe",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Pepe bianco",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Pepe nero",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Pepe verde",
+          "language": "it"
         },
         {
           "vernacularName": "pimenta",
@@ -680,6 +1164,15 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Lorbeer",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Lorbeerbaum",
+          "language": "de"
+        },
+        {
           "vernacularName": "Bay Laurel",
           "language": "en",
           "eol_preferred": true
@@ -707,6 +1200,45 @@ export const herbsAndSpices = [
         {
           "vernacularName": "sweet bay",
           "language": "en"
+        },
+        {
+          "vernacularName": "laurel",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Laural",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Laurier (noble)",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Laurier-sauce",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "alloro poetico",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Alloro",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Lauro",
+          "language": "it"
+        },
+        {
+          "vernacularName": "lauro poetico",
+          "language": "it"
+        },
+        {
+          "vernacularName": "lauro regale",
+          "language": "it"
         },
         {
           "vernacularName": "Loureiro",
@@ -763,6 +1295,19 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Paprika",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Spanischer Pfeffer",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Zier-Pfeffer",
+          "language": "de"
+        },
+        {
           "vernacularName": "chili pepper",
           "language": "en",
           "eol_preferred": true
@@ -806,6 +1351,81 @@ export const herbsAndSpices = [
         {
           "vernacularName": "sweet and chili peppers",
           "language": "en"
+        },
+        {
+          "vernacularName": "Paprika",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Chile",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Guindilla",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Pimentón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Pimiento dulce",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Pimiento morrón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "aji",
+          "language": "es"
+        },
+        {
+          "vernacularName": "aji picante",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Piment annuel",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Paprika de Hongrie",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Piment",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Piment doux",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Piment doux d'Espagne",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Piment ornemental, Piment doux",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Poivre rouge",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "poivrons",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Peperone",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Paprica",
+          "language": "it"
         },
         {
           "vernacularName": "Pimentão doce",
@@ -862,6 +1482,15 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Knoblauch",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Großer Schlangerknoblauch",
+          "language": "de"
+        },
+        {
           "vernacularName": "Garlic",
           "language": "en",
           "eol_preferred": true
@@ -885,6 +1514,33 @@ export const herbsAndSpices = [
         {
           "vernacularName": "cultivated garlic",
           "language": "en"
+        },
+        {
+          "vernacularName": "Ajo",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Ail",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Ail rocambole",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Ail, Ail commun, Ail cultivé",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Thériaque des pauvres",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Aglio",
+          "language": "it",
+          "eol_preferred": true
         },
         {
           "vernacularName": "Alho",
@@ -940,6 +1596,15 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Salbei",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Echter Salbei",
+          "language": "de"
+        },
+        {
           "vernacularName": "Common Sage",
           "language": "en",
           "eol_preferred": true
@@ -983,6 +1648,41 @@ export const herbsAndSpices = [
         {
           "vernacularName": "sage",
           "language": "en"
+        },
+        {
+          "vernacularName": "salvia",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Mermasangre",
+          "language": "es"
+        },
+        {
+          "vernacularName": "salvia fina",
+          "language": "es"
+        },
+        {
+          "vernacularName": "salvia real",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Sauge",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Sauge officinale",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Thé de la Grèce",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "salvia",
+          "language": "it",
+          "eol_preferred": true
         },
         {
           "vernacularName": "Salva",
@@ -1053,6 +1753,27 @@ export const herbsAndSpices = [
       "names": [
         {
           "vernacularName": "oregano",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Dost",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Gewöhnlicher Dost",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Kostets",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Wilder Majoran",
+          "language": "de"
+        },
+        {
+          "vernacularName": "oregano",
           "language": "en",
           "eol_preferred": true
         },
@@ -1075,6 +1796,77 @@ export const herbsAndSpices = [
         {
           "vernacularName": "Wild Marjoram",
           "language": "en"
+        },
+        {
+          "vernacularName": "Orégano",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Marjolaine bâtarde",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Doste",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Marazolette",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Marjolaine sauvage",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Origan",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Origan commun",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Origan d'Héraclée",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Pelevoué",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Penevoué",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Thym de berger",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Thé rouge",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "origano commune",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Erba acciuga",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Origano",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Origano comune",
+          "language": "it"
+        },
+        {
+          "vernacularName": "regano",
+          "language": "it"
         },
         {
           "vernacularName": "Orégão",
@@ -1133,6 +1925,23 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Koriander",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Chinesische Petersilie",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Indische Petersilie",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Wanzenkümmel",
+          "language": "de"
+        },
+        {
           "vernacularName": "coriander",
           "language": "en",
           "eol_preferred": true
@@ -1148,6 +1957,37 @@ export const herbsAndSpices = [
         {
           "vernacularName": "Indian parsley",
           "language": "en"
+        },
+        {
+          "vernacularName": "Cilantro",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Coriandro",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Coriandre",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Coriandre cultivée",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Persil arabe",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Punaise mâle",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Coriandolo",
+          "language": "it",
+          "eol_preferred": true
         },
         {
           "vernacularName": "Coentro",
@@ -1202,6 +2042,15 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Fenchel",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Purgier-Lein",
+          "language": "de"
+        },
+        {
           "vernacularName": "fennel",
           "language": "en",
           "eol_preferred": true
@@ -1225,6 +2074,37 @@ export const herbsAndSpices = [
         {
           "vernacularName": "sweet fennel",
           "language": "en"
+        },
+        {
+          "vernacularName": "Hinojo",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Fenouil",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Aneth doux",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Fenouil commun",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Finocchio comune",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Finocchio",
+          "language": "it"
+        },
+        {
+          "vernacularName": "finocchio commune",
+          "language": "it"
         },
         {
           "vernacularName": "Funcho",
@@ -1307,6 +2187,51 @@ export const herbsAndSpices = [
           "language": "en"
         },
         {
+          "vernacularName": "Menthe à longues feuilles",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Baume",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Menthe",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Menthe en grappe",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Menthe en épi, Menthe verte",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Menthe glabre",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Menthe velue",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Menthe verte",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "baume vert",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "menthe romaine",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "menthe à épis",
+          "language": "fr"
+        },
+        {
           "vernacularName": "Hortelã-verde",
           "language": "pt",
           "eol_preferred": true
@@ -1363,12 +2288,64 @@ export const herbsAndSpices = [
       "names": [
         {
           "vernacularName": "dill",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Gurkenkraut",
+          "language": "de"
+        },
+        {
+          "vernacularName": "dill",
           "language": "en",
           "eol_preferred": true
         },
         {
           "vernacularName": "Indian Dill",
           "language": "en"
+        },
+        {
+          "vernacularName": "Hinojo hediondo",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Abesón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Aneldo",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Eneldo",
+          "language": "es"
+        },
+        {
+          "vernacularName": "anís alemán",
+          "language": "es"
+        },
+        {
+          "vernacularName": "anise",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Aneth odorant",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Fenouil bâtard",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Aneto",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "oneto",
+          "language": "it"
         },
         {
           "vernacularName": "Endro",
@@ -1429,6 +2406,19 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Thymian",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Echter Thymian",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Römischer Quendel",
+          "language": "de"
+        },
+        {
           "vernacularName": "garden thyme",
           "language": "en",
           "eol_preferred": true
@@ -1448,6 +2438,45 @@ export const herbsAndSpices = [
         {
           "vernacularName": "thyme",
           "language": "en"
+        },
+        {
+          "vernacularName": "tomillo común",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Tomillo",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Thym (ordinaire)",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Farigoule",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Frigoule",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Thym commun",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Thym commun, Farigoule",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "timo maggiore",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Timo",
+          "language": "it"
         },
         {
           "vernacularName": "Tomilho-ordinário",
@@ -1577,6 +2606,19 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Basilikum",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Basilienkraut",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Königskraut",
+          "language": "de"
+        },
+        {
           "vernacularName": "basil",
           "language": "en",
           "eol_preferred": true
@@ -1592,6 +2634,49 @@ export const herbsAndSpices = [
         {
           "vernacularName": "sweet basil",
           "language": "en"
+        },
+        {
+          "vernacularName": "albahaca",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Albacar",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Alfábega",
+          "language": "es"
+        },
+        {
+          "vernacularName": "albahaca de puerco",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Basilic",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Basilic commun",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Basilic commun, Basilic à épis nombreux",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Herbe royale",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "petit framboisin",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Basilico",
+          "language": "it",
+          "eol_preferred": true
         },
         {
           "vernacularName": "Manjericão",
@@ -1648,6 +2733,15 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Schnittlauch",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Schnitt-Lauch",
+          "language": "de"
+        },
+        {
           "vernacularName": "wild chives",
           "language": "en",
           "eol_preferred": true
@@ -1667,6 +2761,45 @@ export const herbsAndSpices = [
         {
           "vernacularName": "wild chive",
           "language": "en"
+        },
+        {
+          "vernacularName": "Allium schoenoprasum",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Cebollino",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Ciboulette (botanique)",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Ciboulette",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Civette",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Civette, Ciboulette, Ciboule",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "cipollina",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Aglio ungherese",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Erba cipollina",
+          "language": "it"
         },
         {
           "vernacularName": "Cebolinha",
@@ -1720,6 +2853,15 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Estragon",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "falsely Bertram",
+          "language": "de"
+        },
+        {
           "vernacularName": "French Tarragon",
           "language": "en",
           "eol_preferred": true
@@ -1755,6 +2897,57 @@ export const herbsAndSpices = [
         {
           "vernacularName": "wormwood",
           "language": "en"
+        },
+        {
+          "vernacularName": "Estragon",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Tarragona",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Tarragón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Estragon",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Estragon, Dragonne",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Estragonu",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Herbe dragonne",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Dragoncello",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Dragoncella",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Dragone",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Estragon",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Estragone",
+          "language": "it"
         },
         {
           "vernacularName": "Estragão",
@@ -1813,6 +3006,11 @@ export const herbsAndSpices = [
       ],
       "names": [
         {
+          "vernacularName": "Rosmarin",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "rosemary",
           "language": "en",
           "eol_preferred": true
@@ -1828,6 +3026,53 @@ export const herbsAndSpices = [
         {
           "vernacularName": "Romero",
           "language": "en"
+        },
+        {
+          "vernacularName": "Romero",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Rosmario",
+          "language": "es"
+        },
+        {
+          "vernacularName": "roméro",
+          "language": "es"
+        },
+        {
+          "vernacularName": "yerba de la niña",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Rosmarin",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Ecensier",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Romarin",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Romarin, Romarin officinal",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Rosmarin encens",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Ramerino",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Rosmarino",
+          "language": "it"
         },
         {
           "vernacularName": "Alecrim",
@@ -1876,5 +3121,397 @@ export const herbsAndSpices = [
         "class": "Magnoliopsida"
       },
       "family": "Lamiaceae"
-    }
+    },
+    {
+      "id": 580765,
+      "name": "Borago officinalis",
+      "images": [
+        "http://media.eol.org/content/2014/08/14/23/42261_orig.jpg",
+        "http://media.eol.org/content/2014/08/14/23/83149_orig.jpg",
+        "http://media.eol.org/content/2014/08/14/23/90706_orig.jpg",
+        "http://media.eol.org/content/2013/09/02/02/24711_orig.jpg",
+        "http://media.eol.org/content/2014/08/15/05/71530_orig.jpg",
+        "http://media.eol.org/content/2014/08/15/05/78832_orig.jpg",
+        "http://media.eol.org/content/2014/08/15/03/39037_orig.jpg",
+        "http://media.eol.org/content/2014/08/15/05/92380_orig.jpg",
+        "http://media.eol.org/content/2015/01/08/06/33968_orig.jpg",
+        "http://media.eol.org/content/2011/10/15/22/93267_orig.jpg",
+        "http://media.eol.org/content/2011/10/15/22/44455_orig.jpg",
+        "http://media.eol.org/content/2011/10/15/22/91451_orig.jpg",
+        "http://media.eol.org/content/2011/10/15/22/27297_orig.jpg",
+        "http://media.eol.org/content/2011/10/15/22/78423_orig.jpg",
+        "http://media.eol.org/content/2011/10/15/22/31076_orig.jpg",
+        "http://media.eol.org/content/2011/10/15/22/26164_orig.jpg",
+        "http://media.eol.org/content/2011/10/15/22/82514_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/35693_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/84729_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/36366_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/61147_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/36122_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/02019_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/55797_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/40683_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/41707_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/07122_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/77466_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/85473_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/52371_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/89956_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/08175_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/08031_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/44509_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/74090_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/34052_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/06168_orig.jpg",
+        "http://media.eol.org/content/2012/12/12/00/47668_orig.jpg",
+        "http://media.eol.org/content/2012/12/08/12/50838_orig.jpg",
+        "http://media.eol.org/content/2012/12/08/12/05676_orig.jpg",
+        "http://media.eol.org/content/2012/11/18/08/67080_orig.jpg",
+        "http://media.eol.org/content/2012/10/31/15/67018_orig.jpg",
+        "http://media.eol.org/content/2012/05/23/07/44639_orig.jpg",
+        "http://media.eol.org/content/2012/05/23/07/62501_orig.jpg",
+        "http://media.eol.org/content/2012/05/23/07/11759_orig.jpg",
+        "http://media.eol.org/content/2012/05/23/07/99131_orig.jpg",
+        "http://media.eol.org/content/2009/04/20/23/46051_orig.jpg",
+        "http://media.eol.org/content/2009/04/20/23/29959_orig.jpg",
+        "http://media.eol.org/content/2009/07/24/02/44726_orig.jpg",
+        "http://media.eol.org/content/2009/07/24/02/50794_orig.jpg",
+        "http://media.eol.org/content/2011/08/04/09/19701_orig.jpg",
+        "http://media.eol.org/content/2011/08/04/09/28103_orig.jpg",
+        "http://media.eol.org/content/2011/08/04/09/64575_orig.jpg",
+        "http://media.eol.org/content/2014/02/13/06/80055_orig.jpg",
+        "http://media.eol.org/content/2014/07/08/10/28735_orig.jpg",
+        "http://media.eol.org/content/2014/07/08/10/43246_orig.jpg",
+        "http://media.eol.org/content/2014/07/08/10/12546_orig.jpg",
+        "http://media.eol.org/content/2014/07/08/10/97591_orig.jpg",
+        "http://media.eol.org/content/2012/07/04/05/29721_orig.jpg",
+        "http://media.eol.org/content/2012/07/04/05/71694_orig.jpg",
+        "http://media.eol.org/content/2012/07/04/05/82979_orig.jpg",
+        "http://media.eol.org/content/2013/09/02/02/57339_orig.jpg",
+        "http://media.eol.org/content/2013/09/02/02/89909_orig.jpg",
+        "http://media.eol.org/content/2013/09/02/02/98507_orig.jpg",
+        "http://media.eol.org/content/2013/09/02/02/32067_orig.jpg",
+        "http://media.eol.org/content/2013/09/02/02/02180_orig.jpg",
+        "http://media.eol.org/content/2016/08/03/00/80863_orig.jpg",
+        "http://media.eol.org/content/2016/08/03/00/72375_orig.jpg",
+        "http://media.eol.org/content/2016/08/03/00/57500_orig.jpg",
+        "http://media.eol.org/content/2016/08/02/22/23782_orig.jpg",
+        "http://media.eol.org/content/2016/08/06/08/87485_orig.jpg",
+        "http://media.eol.org/content/2016/08/06/10/72483_orig.jpg",
+        "http://media.eol.org/content/2016/08/06/10/63041_orig.jpg",
+        "http://media.eol.org/content/2016/08/05/18/84853_orig.jpg",
+        "http://media.eol.org/content/2016/08/06/01/12610_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Gurkenkraut",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Borretsch",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Einjähriger Borretsch",
+          "language": "de"
+        },
+        {
+          "vernacularName": "borage",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Beebread",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Burrage",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Cool-Tankard",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Talewort",
+          "language": "en"
+        },
+        {
+          "vernacularName": "beeplant",
+          "language": "en"
+        },
+        {
+          "vernacularName": "bugloss",
+          "language": "en"
+        },
+        {
+          "vernacularName": "common borage",
+          "language": "en"
+        },
+        {
+          "vernacularName": "starflower",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Borraja",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Borrega",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Rabo de Alacrán",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Bourrache officinale",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Borragine",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "boragine",
+          "language": "it"
+        },
+        {
+          "vernacularName": "borandella",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Borragem",
+          "language": "pt",
+          "eol_preferred": true
+        }
+      ],
+      "descriptions": [
+        "The most striking aspect of this plant are the star-shaped flowers; the petals have a shade of genuine blue that is uncommon among flowering plants. The flowers are reportedly edible with a sweet taste. The leaves are also eaten in salads and other dishes; they have a cucumber-like flavor. However, because of their potential toxicity, the leaves should be eaten in only small amounts. Because of its unique blue flowers, Borage is easy to identify. Other species in the Borage family have flowers with more conventional corollas."
+      ],
+      "taxonomy": {
+        "usageKey": 2926110,
+        "scientificName": "Borago officinalis L.",
+        "canonicalName": "Borago officinalis",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Plantae",
+        "phylum": "Tracheophyta",
+        "order": "Boraginales",
+        "family": "Boraginaceae",
+        "genus": "Borago",
+        "species": "Borago officinalis",
+        "kingdomKey": 6,
+        "phylumKey": 7707728,
+        "classKey": 220,
+        "orderKey": 7226464,
+        "familyKey": 2498,
+        "genusKey": 2926109,
+        "speciesKey": 2926110,
+        "synonym": false,
+        "class": "Magnoliopsida"
+      },
+      "family": "Boraginaceae",
+      "eolName": "Borago officinalis L."
+    },
+    {
+      "id": 1122309,
+      "name": "Curcuma longa",
+      "images": [
+        "http://media.eol.org/content/2012/07/07/22/76419_orig.jpg",
+        "http://media.eol.org/content/2012/08/30/17/61524_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/76419_orig.jpg",
+        "http://media.eol.org/content/2012/08/30/17/61524_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/74269_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/11560_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/97462_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/92991_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/32166_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/70656_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/03844_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/88691_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/85674_orig.jpg",
+        "http://media.eol.org/content/2012/08/30/17/23212_orig.jpg",
+        "http://media.eol.org/content/2012/08/30/17/13867_orig.jpg",
+        "http://media.eol.org/content/2012/08/30/17/05214_orig.jpg",
+        "http://media.eol.org/content/2012/08/30/17/01981_orig.jpg",
+        "http://media.eol.org/content/2012/08/30/17/46491_orig.jpg",
+        "http://media.eol.org/content/2012/08/30/17/06137_orig.jpg",
+        "http://media.eol.org/content/2012/08/30/17/42862_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/21/25218_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/21/59470_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/21/60178_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/21/37105_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/21/23782_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/21/86015_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/19/91142_orig.jpg",
+        "http://media.eol.org/content/2012/08/30/17/59888_orig.jpg",
+        "http://media.eol.org/content/2012/08/30/17/47703_orig.jpg",
+        "http://media.eol.org/content/2012/08/30/17/56497_orig.jpg",
+        "http://media.eol.org/content/2012/08/30/17/21183_orig.jpg",
+        "http://media.eol.org/content/2012/08/30/17/59764_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/19/07974_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/19/04001_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/19/41774_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/19/19949_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/19/87066_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/19/52360_orig.jpg",
+        "http://media.eol.org/content/2012/10/31/22/66908_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/09/87613_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/09/94368_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/09/17798_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/09/68501_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/09/94565_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/09/11464_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/09/41977_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/09/89651_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/08/67673_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/08/18278_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/08/40095_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/08/10065_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/08/09397_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/08/07280_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/08/32250_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/08/38953_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/08/98362_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/08/39307_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/08/15984_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/08/27998_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/08/35773_orig.jpg",
+        "http://media.eol.org/content/2012/07/15/09/10811_orig.jpg",
+        "http://media.eol.org/content/2012/11/02/03/99432_orig.jpg",
+        "http://media.eol.org/content/2016/08/04/00/66774_orig.jpg",
+        "http://media.eol.org/content/2016/08/04/00/61048_orig.jpg",
+        "http://media.eol.org/content/2016/08/04/00/36893_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/74269_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/11560_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/97462_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/92991_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/32166_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/70656_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/03844_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/88691_orig.jpg",
+        "http://media.eol.org/content/2012/07/07/22/85674_orig.jpg",
+        "http://media.eol.org/content/2012/08/30/17/23212_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "curcuma",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Gelbwurz",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Indischer Safran",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Kurkuma",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Turmeric",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Indian saffron",
+          "language": "en"
+        },
+        {
+          "vernacularName": "common turmeric",
+          "language": "en"
+        },
+        {
+          "vernacularName": "turmérico",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Azafrán arabe",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Cúrcuma",
+          "language": "es"
+        },
+        {
+          "vernacularName": "curcuma",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Curcuma long",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Safran des Indes",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Souchet des Indes",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Terre-mérite",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "curcuma",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "curcuma",
+          "language": "pt",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Açafrão da terra",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Açafrão da Índia",
+          "language": "pt"
+        }
+      ],
+      "descriptions": [
+        "Turmeric (<i>Curcuma longa</i>) is a member of the ginger family (Zingiberaceae). The tuberous underground stems, or <a href=\"http://en.wikipedia.org/wiki/Rhizome\">rhizomes</a>, are the source of the spice known as turmeric. Turmeric was apparently domesticated in Southeast Asia and this region remains the center of turmeric production, with India being the largest producer and exporter. The ground dried rhizomes of turmeric are used to color a range of food products. Turmeric is an important constituent of curry powder, providing both flavor and strong yellow pigments (notably, curcumin). Researchers have also identified a number of possible pharmacological uses for curcumin.\r\n\r\nTurmeric  is a sterile <a href=\"http://www.ces.ncsu.edu/fletcher/mcilab/publications/ranney-2006.pdf\">triploid</a> (2n = 3x = 63) that rarely flowers. There is essentially no seed formation and the plant is therefore vegetatively propagated using its rhizomes.\r\n\r\n(Vaughan and Geissler 1997; Sigrist et al. 2010 and references therein)\r\n"
+      ],
+      "taxonomy": {
+        "usageKey": 2757624,
+        "scientificName": "Curcuma longa L.",
+        "canonicalName": "Curcuma longa",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Plantae",
+        "phylum": "Tracheophyta",
+        "order": "Zingiberales",
+        "family": "Zingiberaceae",
+        "genus": "Curcuma",
+        "species": "Curcuma longa",
+        "kingdomKey": 6,
+        "phylumKey": 7707728,
+        "classKey": 196,
+        "orderKey": 627,
+        "familyKey": 4687,
+        "genusKey": 2757518,
+        "speciesKey": 2757624,
+        "synonym": false,
+        "class": "Liliopsida"
+      },
+      "family": "Zingiberaceae",
+      "eolName": "Curcuma longa L."
+    },
   ];

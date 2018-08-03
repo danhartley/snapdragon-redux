@@ -26,6 +26,10 @@ export const glossary = [
         definition: "Flowers which are both wind and insect pollinated."
     },
     {
+        term: "Apomixis",
+        definition: "Asexual reproduction, without fertilization."
+    },
+    {
         term: "Nectar (floral) guides",
         definition: 'Marking or pattern seen in flowers that guide pollinators to their rewards (often nectar or pollen).'
     },

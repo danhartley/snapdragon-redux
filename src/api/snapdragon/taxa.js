@@ -16,6 +16,7 @@ export const taxa = [
                 identification: 'Composite flowers with either disk or ray flowers, or both.'
             }
         ],
+        pollinators: [ { language: "en", names: ['Insects', 'Wind', 'Asexual'] } ],
         members: ['Cynara cardunculus', 'Helianthus annuus'],
         "wiki-entry": "https://en.wikipedia.org/wiki/Asteraceae",
         "eol-entry": "https://eol.org/pages/4206/overview"
@@ -29,6 +30,7 @@ export const taxa = [
         members: [  'Daucus carota subsp. sativus', 'Coriandrum sativum', 'Petroselinum crispum', 'Foeniculum vulgare', 
                     'Anethum graveolens', 'Conium maculatum', 'Cuminum cyminum', 'Carum carvi', 'Anthriscus cerefolium',
                     'Myrrhis odorata', 'Pimpinella anisum', 'Levisticum officinale', 'Pastinaca sativa'],
+        pollinators: [ { language: "en", names: ['Carpenter Bees', 'Mason Bees', 'Leafcutter Bees'], families: ['Xylocopa', 'Megachilidae'] } ],
         species: 3700,
         genera: 400,
         toxic: { members:['Conium maculatum'] },
@@ -58,6 +60,7 @@ export const taxa = [
         "eol-entry": "https://eol.org/pages/4302/overview",
         thumb: "https://media.eol.org/content/2014/08/14/23/80866_88_88.jpg",
         members: ['Ocimum basilicum', 'Rosmarinus officinalis'],
+        pollinators: [ { language: "en", names: ['Insects', 'Bumblebees', 'Single Bees'] } ],
         propagation: 'stem cuttings',
         aetherolea: ['Rosmarinus officinalis', 'Lavandula officinalis'],
         genera: 236,
@@ -84,6 +87,7 @@ export const taxa = [
         thumb: 'https://media.eol.org/content/2015/04/30/10/19667_88_88.jpg',
         species: 4060,
         genera: 372,
+        pollinators: [ { language: "en", names: ['Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -109,7 +113,8 @@ export const taxa = [
                 identification: '3 tepals. Lily-like flowers, onion-like bulbs. Flowerheads wrapped in bract.'
             }
         ],
-        examples: ['Allium cepa', 'Allium schoenoprasum'],
+        pollinators: [ { language: "en", names: ['Carpenter Bees' ,' Owlet Moths'] } ],
+        members: ['Allium cepa', 'Allium schoenoprasum'],
         "wiki-entry": "https://en.wikipedia.org/wiki/Amaryllidaceae",
         "eol-entry": "https://eol.org/pages/8187/overview"
     },
@@ -153,6 +158,7 @@ export const taxa = [
         species: 5700,
         members: ["Apis mellifera"],
         role: ["pollinator"],
+        pollinators: ['Flowering plants'],
         descriptions: [
             {
                 language: 'en',
@@ -199,6 +205,7 @@ export const taxa = [
         thumb: "https://media.eol.org/content/2012/05/23/07/89214_88_88.jpg",
         alt: ['Poaceae', 'Gramineae'],
         names: [ { language: "en", names: ['Grasses', 'True Grasses'] } ],
+        pollinators: [ { language: "en", names: ['Wind', 'Insects'] } ],
         "wiki-entry": 'https://en.wikipedia.org/wiki/Poaceae',
         species: 1200, 
         genera: 780,
@@ -221,6 +228,7 @@ export const taxa = [
         names: [ { language: "en", names: ['Ginger family']} ],
         species: 1600,
         genera: 50,
+        pollinators: [ { language: "en", names: ['Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -239,6 +247,7 @@ export const taxa = [
         names: [ { language: "en", names: ['Pepper family']} ],
         species: 3600,
         genera: 13,
+        pollinators: [ { language: "en", names: ['Wind','Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -258,6 +267,7 @@ export const taxa = [
         toxic: { members:['Hedysarum alpinum']},
         species: 19000,
         genera: 751,
+        pollinators: [ { language: "en", names: ['Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -276,6 +286,7 @@ export const taxa = [
         names: [ { language: "en", names: ['Rose family']} ],
         species: 4828,
         toxic: { members:['Conium maculatum'] },
+        pollinators: [ { language: "en", names: ['Insects', 'Wind'] } ],
         genera: 91,
         descriptions: [
             {
@@ -295,6 +306,7 @@ export const taxa = [
         names: [ { language: "en", names: ['Citrus family', 'Rue family']} ],
         species: 1600,
         genera: 160,
+        pollinators: [ { language: "en", names: ['Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -312,6 +324,7 @@ export const taxa = [
         names: [ { language: "en", names: ['Gourd family', 'Cucurbits', 'Gourds, Melons, Squash, & Cucumbers']} ],
         species: 975,
         genera: 98,
+        pollinators: [ { language: "en", names: ['Bees', 'Beetles'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -329,6 +342,7 @@ export const taxa = [
         names: [ { language: "en", names: ['Amaranth family', 'Pigweed']} ],
         species: 2040,
         genera: 165,
+        pollinators: [ { language: "en", names: ['Insects', 'Wind'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -347,6 +361,7 @@ export const taxa = [
         names: [ { language: "en", names: ['Nightshades']} ],
         species: 2700,
         genera: 98,
+        pollinators: [ { language: "en", names: ['Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -365,6 +380,7 @@ export const taxa = [
         names: [ { language: "en", names: ['Mulberry family', 'Fig family']} ],
         species: 1100,
         genera: 38,
+        pollinators: [ { language: "en", names: ['Wind', 'Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -383,6 +399,7 @@ export const taxa = [
         names: [ { language: "en", names: ['Wild Grape Family']} ],
         species: 910,
         genera: 14,
+        pollinators: [ { language: "en", names: ['Bees', 'Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -401,6 +418,7 @@ export const taxa = [
         names: [ { language: "en", names: ['Laurel Family']} ],
         species: 2850,
         genera: 45,
+        pollinators: [ { language: "en", names: ['Bees', 'Wasps'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -419,6 +437,7 @@ export const taxa = [
         names: [ { language: "en", names: ['Heath Family', 'Heather Family']} ],
         species: 4250,
         genera: 124,
+        pollinators: [ { language: "en", names: ['Bees', 'Hummingbirds'] } ],
         descriptions: [
             {
                 language: 'en',

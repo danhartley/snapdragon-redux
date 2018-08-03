@@ -3,14 +3,14 @@ import { createLesson } from 'syllabus/lesson-builder';
 import { screens } from 'snapdragon/screen-layouts';
 import { getWildcardLayouts } from 'redux/reducers/initial-state/species-state/species-wildcards';
 
-const { summary, history, specimen, epithets, cultivarCard, cultivar } = screens;
+const { summary, history, specimen, epithets, cultivarCard, cultivar, wildcardCard, wildcard } = screens;
 
 const createLessonPlan = (config, collection) => {
     const { lesson: { name: lessonName, level: { name: levelName }}, moduleSize, excludeRevision, isPortraitMode } = config;
-    const wildcardLayouts = getWildcardLayouts([ [specimen, epithets], [specimen, cultivarCard, cultivar] ], collection, moduleSize);
+    const wildcardLayouts = getWildcardLayouts([ [specimen, epithets], [specimen, cultivarCard, cultivar], [specimen, wildcardCard, wildcard] ], collection, moduleSize);
     const layouts = getLayouts(config);
     return createLesson(
-        lessonName, 
+        lessonName,
         levelName, 
         moduleSize, 
         excludeRevision,

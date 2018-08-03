@@ -116,13 +116,23 @@ const taxon = {
   domain: 'collection'
 };
 
+const cultivarCard = {
+  name: 'cultivar-card',
+  domain: 'collection'
+};
+
 const cultivar = {
   name: 'cultivar-match',
   domain: 'collection'
 };
 
-const cultivarCard = {
-  name: 'cultivar-card',
+const wildcardCard = {
+  name: 'wildcard-card',
+  domain: 'collection'
+};
+
+const wildcard = {
+  name: 'wildcard-match',
   domain: 'collection'
 };
 
@@ -148,5 +158,7 @@ export const screens = {
   taxon,
   textComplete,
   cultivarCard,
-  cultivar
+  cultivar,
+  wildcardCard,
+  wildcard
 };

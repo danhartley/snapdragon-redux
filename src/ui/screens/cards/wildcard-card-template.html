@@ -1,0 +1,30 @@
+<div class="snapdragon-container">
+    <div class="trait card">
+        <div class="taxon-highlight">
+                <span>{{ family.name }}</span><span class="badge badge-light" data-toggle="modal" data-target="#listModal">{{ occurrences }}</span> <span class="sr-only">species of this family in the collection</span>
+                <img class="js-img-family" src="{{ img }}" alt="">                    
+            </div>
+        <div class="taxon-common-name">
+            <span>Pollination traits</span>
+            <hr>
+        </div>   
+        <div>
+            <div class="list-group-headers">
+                <span>Trait</span><span>Value</span>
+            </div>        
+            <div class="scrollable">
+                <ul class="list-group list-group-flush" data-repeat-trait="{{ traits }}">
+                    <li class="list-group-item">
+                        <span class="capitalise">{{ trait.trait }}</span>
+                        <span class="capitalise">{{ trait.value }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="landscape">{{ wiki }}</div>
+    </div>
+    <div class="species-card-btn action-update js-trait-card-btn">
+        <div></div>
+        <button class="btn btn-light">Continue</button>
+    </div>
+</div>

@@ -16,6 +16,11 @@ export const vegetables = [
       ],
       "names": [
         {
+          "vernacularName": "Gurke",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "garden cucumber",
           "language": "en",
           "eol_preferred": true
@@ -35,6 +40,34 @@ export const vegetables = [
         {
           "vernacularName": "cucumbers",
           "language": "en"
+        },
+        {
+          "vernacularName": "pepino",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Concombre cultivé, Concombre, Cornichon",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Cucumis sativus",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "cetriolo",
+          "language": "it"
+        },
+        {
+          "vernacularName": "cocomero",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Pepineiro",
+          "language": "pt",
+          "eol_preferred": true
         }
       ],
       "descriptions": [
@@ -83,6 +116,19 @@ export const vegetables = [
       ],
       "names": [
         {
+          "vernacularName": "Gemeine Rübe",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Rübe",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Zuckerrübe",
+          "language": "de"
+        },
+        {
           "vernacularName": "beet",
           "language": "en",
           "eol_preferred": true
@@ -126,6 +172,37 @@ export const vegetables = [
         {
           "vernacularName": "sea beet",
           "language": "en"
+        },
+        {
+          "vernacularName": "acelga",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Betterave commune, Bette-épinard",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Betterave fourragère",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Betterave rouge potagère",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Betterave sucrière",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "bieta a foglia",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "bietola da taglio",
+          "language": "it"
         },
         {
           "vernacularName": "acelga",
@@ -185,8 +262,41 @@ export const vegetables = [
       ],
       "names": [
         {
+          "vernacularName": "Spinat",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "spinach",
           "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Spinacia oleracea",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "espinaca",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Épinard",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Spinacia oleracea",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "spinacio",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Espinafre",
+          "language": "pt",
           "eol_preferred": true
         }
       ],
@@ -235,6 +345,15 @@ export const vegetables = [
       ],
       "names": [
         {
+          "vernacularName": "Garten-Rettich",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Radieschen",
+          "language": "de"
+        },
+        {
           "vernacularName": "garden radish",
           "language": "en",
           "eol_preferred": true
@@ -254,6 +373,16 @@ export const vegetables = [
         {
           "vernacularName": "wild radish",
           "language": "en"
+        },
+        {
+          "vernacularName": "Radis cultivé",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Rabanete",
+          "language": "pt",
+          "eol_preferred": true
         }
       ],
       "descriptions": [
@@ -300,6 +429,27 @@ export const vegetables = [
         "2013/06/11/06/68380_orig.jpg"
       ],
       "names": [
+        {
+          "vernacularName": "Gemüse-Kürbis",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Kürbis",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Patisson",
+          "language": "de"
+        },
+        {
+          "vernacularName": "zucchini",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Ölkürbis",
+          "language": "de"
+        },
         {
           "vernacularName": "Summer Squash",
           "language": "en",
@@ -358,6 +508,24 @@ export const vegetables = [
           "language": "en"
         },
         {
+          "vernacularName": "Calabaza",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Courge nue",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Courge pépon, Giraumon, Citrouille iroquoise, Courgette",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Pâtisson",
+          "language": "fr"
+        },
+        {
           "vernacularName": "Abóbora",
           "language": "pt",
           "eol_preferred": true
@@ -405,6 +573,11 @@ export const vegetables = [
       ],
       "names": [
         {
+          "vernacularName": "tomate",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "garden tomato",
           "language": "en",
           "eol_preferred": true
@@ -412,6 +585,42 @@ export const vegetables = [
         {
           "vernacularName": "tomato",
           "language": "en"
+        },
+        {
+          "vernacularName": "Tomate fino",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "jitomate",
+          "language": "es"
+        },
+        {
+          "vernacularName": "tomate",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Aubergine, Marignan",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Pomme d'amour",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Pomme de terre, Patate",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "pomidoro",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Tomateiro",
+          "language": "pt",
+          "eol_preferred": true
         }
       ],
       "descriptions": [],
@@ -461,8 +670,9 @@ export const vegetables = [
       ],
       "names": [
         {
-          "vernacularName": "field mustard",
-          "language": "en"
+          "vernacularName": "Rübsen",
+          "language": "de",
+          "eol_preferred": true
         },
         {
           "vernacularName": "turnip",
@@ -504,7 +714,11 @@ export const vegetables = [
         {
           "vernacularName": "colza",
           "language": "en"
-        },        
+        },
+        {
+          "vernacularName": "field mustard",
+          "language": "en"
+        },
         {
           "vernacularName": "napa (nappa) cabbage",
           "language": "en"
@@ -544,6 +758,84 @@ export const vegetables = [
         {
           "vernacularName": "wild turnip",
           "language": "en"
+        },
+        {
+          "vernacularName": "colza",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Moutarde des champs",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Navet potager",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Navet sauvage",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Navette d'été",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Navette des champs",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Rave",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "chou champêtre",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "chou-rave",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "moutarde d'Allemagne",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "moutarde des oiseaux",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "moutarde sauvage",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "navette d' Allemange",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "navette d'ete",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "navette des oiseaux",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "navette fourragere",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "navette oleagineuse",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "sénevé à feuilles lisses",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "nabo",
+          "language": "pt",
+          "eol_preferred": true
         }
       ],
       "descriptions": [
@@ -590,6 +882,15 @@ export const vegetables = [
       ],
       "names": [
         {
+          "vernacularName": "Ackerbohne",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Saubohne",
+          "language": "de"
+        },
+        {
           "vernacularName": "Broad Bean",
           "language": "en",
           "eol_preferred": true
@@ -633,6 +934,45 @@ export const vegetables = [
         {
           "vernacularName": "horsebean",
           "language": "en"
+        },
+        {
+          "vernacularName": "Vicia faba",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Haba",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Féverolle",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Fève",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Fève des marais",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Vesce Fève",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Vesce cultivée, Poisette",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "goulgane",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Fava",
+          "language": "it",
+          "eol_preferred": true
         },
         {
           "vernacularName": "Fava",
@@ -691,8 +1031,37 @@ export const vegetables = [
       ],
       "names": [
         {
-          "vernacularName": "Runner Bean",
-          "language": "en"
+          "vernacularName": "Feuerbohne",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Arabische Bohne",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Blumenbohne",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Feuer-Bohne",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Käferbohne",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Schminkbohne",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Stangenbohne",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Türkische Bohne",
+          "language": "de"
         },
         {
           "vernacularName": "Scarlet Runner Bean",
@@ -710,7 +1079,11 @@ export const vegetables = [
         {
           "vernacularName": "Haricot á Fleurs Rouges",
           "language": "en"
-        },        
+        },
+        {
+          "vernacularName": "Runner Bean",
+          "language": "en"
+        },
         {
           "vernacularName": "Runner Beans",
           "language": "en"
@@ -728,8 +1101,18 @@ export const vegetables = [
           "language": "en"
         },
         {
+          "vernacularName": "Haricot d'Espagne",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Haricot écarlate",
+          "language": "fr"
+        },
+        {
           "vernacularName": "Phaseolus lunatus",
-          "language": "pt"
+          "language": "pt",
+          "eol_preferred": true
         }
       ],
       "descriptions": [
@@ -781,6 +1164,11 @@ export const vegetables = [
       ],
       "names": [
         {
+          "vernacularName": "Erbse",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "garden pea",
           "language": "en",
           "eol_preferred": true
@@ -816,6 +1204,41 @@ export const vegetables = [
         {
           "vernacularName": "pea",
           "language": "en"
+        },
+        {
+          "vernacularName": "Alverja",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Arveja",
+          "language": "es"
+        },
+        {
+          "vernacularName": "guisantes",
+          "language": "es"
+        },
+        {
+          "vernacularName": "pésol",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Pois",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Pois cultivé",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "pisello",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Pisum sativum",
+          "language": "it"
         },
         {
           "vernacularName": "ervilha",
@@ -869,6 +1292,11 @@ export const vegetables = [
       ],
       "names": [
         {
+          "vernacularName": "Patinak",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "parsnip",
           "language": "en",
           "eol_preferred": true
@@ -880,6 +1308,26 @@ export const vegetables = [
         {
           "vernacularName": "wild parsnip",
           "language": "en"
+        },
+        {
+          "vernacularName": "chirivía",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Panais cultivé, Pastinacier",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "pastinacá",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Cherovia",
+          "language": "pt",
+          "eol_preferred": true
         }
       ],
       "descriptions": [
@@ -929,6 +1377,11 @@ export const vegetables = [
       "names": [
         {
           "vernacularName": "aubergine",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "aubergine",
           "language": "en",
           "eol_preferred": true
         },
@@ -955,6 +1408,34 @@ export const vegetables = [
         {
           "vernacularName": "eggplant",
           "language": "en"
+        },
+        {
+          "vernacularName": "berenjena",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "aubergine",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Aubergine, Marignan",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "morelle",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "melanzana",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Beringela",
+          "language": "pt",
+          "eol_preferred": true
         }
       ],
       "descriptions": [
@@ -1008,6 +1489,11 @@ export const vegetables = [
       ],
       "names": [
         {
+          "vernacularName": "Artischocke",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "Artichoke",
           "language": "en",
           "eol_preferred": true
@@ -1023,6 +1509,42 @@ export const vegetables = [
         {
           "vernacularName": "wild artichoke",
           "language": "en"
+        },
+        {
+          "vernacularName": "alcachofa",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "alcaucil",
+          "language": "es"
+        },
+        {
+          "vernacularName": "cardo de comer",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Artichaut",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Cardon, Carde",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "cardo",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "cardone",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Alcachofra",
+          "language": "pt",
+          "eol_preferred": true
         }
       ],
       "descriptions": [
@@ -1070,6 +1592,19 @@ export const vegetables = [
       ],
       "names": [
         {
+          "vernacularName": "Gartensalat",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Grüner Salat",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Kopfsalat",
+          "language": "de"
+        },
+        {
           "vernacularName": "lettuce",
           "language": "en",
           "eol_preferred": true
@@ -1085,6 +1620,69 @@ export const vegetables = [
         {
           "vernacularName": "garden lettuce",
           "language": "en"
+        },
+        {
+          "vernacularName": "lechuga",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "lechuga acogollada",
+          "language": "es"
+        },
+        {
+          "vernacularName": "lechuga cortar",
+          "language": "es"
+        },
+        {
+          "vernacularName": "lechuga repollada",
+          "language": "es"
+        },
+        {
+          "vernacularName": "lechuga romana",
+          "language": "es"
+        },
+        {
+          "vernacularName": "lechuguino",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Laitue cultivée, Salade",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Laitue scariole, Escarole",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "insalata",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "lattuga",
+          "language": "it"
+        },
+        {
+          "vernacularName": "lattuga a cappuccio",
+          "language": "it"
+        },
+        {
+          "vernacularName": "lattuga a testa",
+          "language": "it"
+        },
+        {
+          "vernacularName": "lattuga de taglio",
+          "language": "it"
+        },
+        {
+          "vernacularName": "lattuga romana",
+          "language": "it"
+        },
+        {
+          "vernacularName": "lattughetta",
+          "language": "it"
         },
         {
           "vernacularName": "Alface",
@@ -1135,6 +1733,11 @@ export const vegetables = [
       ],
       "names": [
         {
+          "vernacularName": "Karotte",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "domesticated carrot",
           "language": "en",
           "eol_preferred": true
@@ -1154,6 +1757,16 @@ export const vegetables = [
         {
           "vernacularName": "wild carrot",
           "language": "en"
+        },
+        {
+          "vernacularName": "Zanahoria",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Carotte cultivée",
+          "language": "fr",
+          "eol_preferred": true
         }
       ],
       "descriptions": [],
@@ -1203,6 +1816,15 @@ export const vegetables = [
       ],
       "names": [
         {
+          "vernacularName": "Gemüsekohl",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Gemüse-Kohl",
+          "language": "de"
+        },
+        {
           "vernacularName": "wild cabbage",
           "language": "en",
           "eol_preferred": true
@@ -1238,6 +1860,73 @@ export const vegetables = [
         {
           "vernacularName": "kohlrabi",
           "language": "en"
+        },
+        {
+          "vernacularName": "Lombarda",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Col",
+          "language": "es"
+        },
+        {
+          "vernacularName": "La Col Verde",
+          "language": "es"
+        },
+        {
+          "vernacularName": "repollo",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Chou",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Chou Brocoli",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Chou d'Aigrette",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Chou de Bruxelles",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Chou de Savoie",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Chou fleur",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Chou fourrager",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Chou frisé",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Chou moëllier",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Chou rave",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Chou sauvage, Chou commun",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "cavolo",
+          "language": "it",
+          "eol_preferred": true
         },
         {
           "vernacularName": "couve",
@@ -1291,6 +1980,11 @@ export const vegetables = [
       ],
       "names": [
         {
+          "vernacularName": "Kartoffel",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "Potato",
           "language": "en",
           "eol_preferred": true
@@ -1306,6 +2000,33 @@ export const vegetables = [
         {
           "vernacularName": "potatoes",
           "language": "en"
+        },
+        {
+          "vernacularName": "Papa",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "patata",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Pomme de terre, Patate",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "patate",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "pomi di terra",
+          "language": "it"
+        },
+        {
+          "vernacularName": "tartufolo",
+          "language": "it"
         },
         {
           "vernacularName": "batateira",
@@ -1357,6 +2078,11 @@ export const vegetables = [
       ],
       "names": [
         {
+          "vernacularName": "Zwiebel",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "garden onion",
           "language": "en",
           "eol_preferred": true
@@ -1372,6 +2098,45 @@ export const vegetables = [
         {
           "vernacularName": "onion",
           "language": "en"
+        },
+        {
+          "vernacularName": "Allium cepa",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Cebolla",
+          "language": "es"
+        },
+        {
+          "vernacularName": "chalote",
+          "language": "es"
+        },
+        {
+          "vernacularName": "escaluña",
+          "language": "es"
+        },
+        {
+          "vernacularName": "oignon",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Ail à fleurs peu nombreuses",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Oignon, Ail oignon",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Cipolla",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Scalogna",
+          "language": "it"
         },
         {
           "vernacularName": "Cebola",

@@ -6,6 +6,7 @@ import { med1 } from 'api/snapdragon/med1';
 import { herbsAndSpices } from 'api/snapdragon/herbs-and-spices';
 import { vegetables } from 'api/snapdragon/vegetables';
 import { fruit } from 'api/snapdragon/fruit';
+import { insects } from 'api/snapdragon/insects';
 import { exam } from 'api/snapdragon/exam';
 
 import { leaf } from 'api/leaf';
@@ -61,6 +62,14 @@ export const collections = [
     },
     {
         id: 7,
+        type: 'species',
+        name: 'Insects',
+        items: insects,
+        eol_name: 'Insects',
+        eol_link: 'https://eol.org/collections/140494'
+    },
+    {
+        id: 8,
         type: 'species',
         name: 'Test',
         items: exam,

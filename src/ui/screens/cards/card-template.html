@@ -1,18 +1,21 @@
 <div class="snapdragon-container js-species-card">            
+    <div class="portrait-grid species-card-images js-species-card-images"></div>  
     <div class="species card">
-        <div class="js-txt-family">
-            <span></span>
-            <img class="js-img-family" src="" alt="">
+        <div class="taxon-highlight js-txt-family">
+            <span>{{ family }}</span>
+            <img class="landscape js-img-family" src="{{ familyImage }}" alt="">
         </div>
-        <div class="taxon-highlight js-txt-species">
-            <span>{{ species }}</span>
-        </div>
-        <div class="species-card-name js-txt-species-name">
-            <span>{{ name }}</span>
-            <span class="badge badge-light" data-toggle="modal" data-target="#listModal">{{ occurrences }}</span> <span class="sr-only">species of this family in the collection</span>
-            <hr>
-        </div>        
         <div>
+            <div class="species-common-name js-txt-species">
+                <span>{{ name }}</span>
+            </div>
+            <div class="species-card-name js-txt-species-name">
+                <span>{{ species }}</span>
+                <span class="badge badge-light" data-toggle="modal" data-target="#listModal">{{ occurrences }}</span> <span class="sr-only">species of this family in the collection</span>
+                <hr>
+            </div>
+        </div>
+        <div class="landscape">
             <div class="data-box">
                 <div></div>
                 <div>
@@ -20,9 +23,10 @@
                 </div>
             </div>
         </div>        
-        <div class="species-card-latin js-txt-latin">{{ latin }}</div>
+        <div class="species-pollinators"><span>Pollination: </span>{{ pollinators }}</div>
+        <!-- <div class="species-card-latin">{{ latin }}</div> -->
         <div class="species-card-wiki js-species-card-wiki"></div>
-        <div><a class="species-card-eol-link js-species-card-eol-link underline-link">EOL</a></div>
+        <div class="landscape"><a class="species-card-eol-link js-species-card-eol-link underline-link">EOL</a></div>
     </div>    
     <div class="species-card-btn action-update js-species-card-btn">
         <div></div>

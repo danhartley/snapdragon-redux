@@ -1,6 +1,9 @@
+import * as R from 'ramda';
+
 import { utils } from 'utils/utils'; 
 import { getSpeciesEpithets } from 'redux/reducers/initial-state/species-state/species-epithets';
 import { getSpeciesCultivars } from 'redux/reducers/initial-state/species-state/species-cultivars';
+import { syndromes } from 'api/snapdragon/syndromes';
 
 export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
 
@@ -39,7 +42,31 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
         });
     }
 
-    const itemGroup = itemGroups[collection.currentRound - 1];        
+    const names = [ 'Apis mellifera' ];
+
+    const insects = collection.items.map( (item, i) => {
+        if(R.contains(item.name, names)) {
+            return {
+                item: item,
+                traits: R.flatten(syndromes.traits.map(trait => {
+                    const t = trait.keys.filter(key => key.key === 'bee');
+                    return { trait: trait.name, value: t[0].value, description: t[0].description || '' };
+                })),
+                index: i
+            };
+        }
+    }).filter(c => c);
+
+    if(utils.isIterable(insects)) {
+        insects.forEach(item => {
+            let screens = [ wildcards[2][0], wildcards[2][1] ];
+            wildcardLayouts.push({ name: 'screen-traits-card', type: 'revision', score: 0, screens, itemIndex: item.index, insects});
+            screens = [ wildcards[2][0], wildcards[2][2] ];
+            wildcardLayouts.push({ name: 'screen-traits', type: 'test', score: 1, screens, itemIndex: item.index, insects});
+        });
+    }
+
+    const itemGroup = itemGroups[collection.currentRound - 1];          
     
     if(utils.isIterable(wildcardLayouts)) {
         itemGroup.forEach(index => {

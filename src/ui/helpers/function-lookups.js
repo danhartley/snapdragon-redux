@@ -15,6 +15,7 @@ import { renderRadioButtons } from 'ui/screens/multichoice/radiobuttons';
 import { renderFamilyDescriptions } from 'ui/screens/multichoice/family-descriptions';
 import { renderCompleteText } from 'ui/screens/text-entry/text-complete';
 import { renderCultivarCard } from 'ui/screens/cards/cultivar-card';
+import { renderWildcard } from 'ui/screens/cards/wildcard-card';
 
 const functions = [
     { name: 'text-entry', func: renderTextEntry },
@@ -36,6 +37,8 @@ const functions = [
     { name: 'taxon-card', func: renderTaxonCard },
     { name: 'text-complete', func: renderCompleteText },
     { name: 'cultivar-card', func: renderCultivarCard },
+    { name: 'wildcard-card', func: renderWildcard },
+    { name: 'wildcard-match', func: renderFamilyDescriptions },
 ];
 
 export const funcByName = name => {
