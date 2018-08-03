@@ -14,25 +14,6 @@ export const fruit = [
       ],
       "names": [
         {
-          "vernacularName": "European Grape",
-          "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Druif",
-          "language": "af",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "vino",
-          "language": "bg"
-        },
-        {
-          "vernacularName": "Almindelig Vin",
-          "language": "da",
-          "eol_preferred": true
-        },
-        {
           "vernacularName": "Weinrebe",
           "language": "de",
           "eol_preferred": true
@@ -80,11 +61,6 @@ export const fruit = [
           "language": "es"
         },
         {
-          "vernacularName": "Viiniköynnös",
-          "language": "fi",
-          "eol_preferred": true
-        },
-        {
           "vernacularName": "Vigne",
           "language": "fr",
           "eol_preferred": true
@@ -100,11 +76,6 @@ export const fruit = [
         {
           "vernacularName": "Vigne sauvage",
           "language": "fr"
-        },
-        {
-          "vernacularName": "Vínber",
-          "language": "is",
-          "eol_preferred": true
         },
         {
           "vernacularName": "ambrusca",
@@ -127,21 +98,6 @@ export const fruit = [
           "language": "it"
         },
         {
-          "vernacularName": "Druif",
-          "language": "nl",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Ekte vinranke",
-          "language": "no",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "vinha",
-          "language": "oc",
-          "eol_preferred": true
-        },
-        {
           "vernacularName": "Videira",
           "language": "pt"
         },
@@ -152,37 +108,6 @@ export const fruit = [
         {
           "vernacularName": "vinho",
           "language": "pt"
-        },
-        {
-          "vernacularName": "vinograd",
-          "language": "ru"
-        },
-        {
-          "vernacularName": "виноград",
-          "language": "ru"
-        },
-        {
-          "vernacularName": "Mugirepisi",
-          "language": "sn",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Vinranka",
-          "language": "sv"
-        },
-        {
-          "vernacularName": "vindruva",
-          "language": "sv"
-        },
-        {
-          "vernacularName": "葡萄",
-          "language": "zh",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "vitis vinifére",
-          "language": "zh-CN",
-          "eol_preferred": true
         }
       ],
       "descriptions": [
@@ -228,9 +153,57 @@ export const fruit = [
       ],
       "names": [
         {
+          "vernacularName": "mispel",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Deutsche Mispel",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Echte Mispel",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Mispelbaum",
+          "language": "de"
+        },
+        {
           "vernacularName": "medlar",
           "language": "en",
           "eol_preferred": true
+        },
+        {
+          "vernacularName": "Nispero",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Níspero Común",
+          "language": "es"
+        },
+        {
+          "vernacularName": "níspero europeo",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Néflier",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Néflier commun, Aubépine d'Allemagne",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Mespilus germanica",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "nespolo",
+          "language": "it"
         },
         {
           "vernacularName": "Nespereira",
@@ -288,6 +261,11 @@ export const fruit = [
       ],
       "names": [
         {
+          "vernacularName": "Aprikose",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "apricot",
           "language": "en",
           "eol_preferred": true
@@ -311,6 +289,33 @@ export const fruit = [
         {
           "vernacularName": "wild Apricot",
           "language": "en"
+        },
+        {
+          "vernacularName": "Albaricoquero",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "albicocco",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Abricotier",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Prunier Crèque",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Prunier abricotier",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "armenillo",
+          "language": "it",
+          "eol_preferred": true
         },
         {
           "vernacularName": "Damasqueiro",
@@ -366,6 +371,15 @@ export const fruit = [
       ],
       "names": [
         {
+          "vernacularName": "Pflaume",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Zwetschge",
+          "language": "de"
+        },
+        {
           "vernacularName": "common plum",
           "language": "en",
           "eol_preferred": true
@@ -405,6 +419,29 @@ export const fruit = [
         {
           "vernacularName": "plum",
           "language": "en"
+        },
+        {
+          "vernacularName": "ciruela",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "ciruelo",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Prunier domestique",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Prunier domestique, Prunier",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "pruno",
+          "language": "it",
+          "eol_preferred": true
         },
         {
           "vernacularName": "Ameixeira-europeia",
@@ -456,6 +493,15 @@ export const fruit = [
       ],
       "names": [
         {
+          "vernacularName": "Pfirsich",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Pfirsichbaum",
+          "language": "de"
+        },
+        {
           "vernacularName": "peach",
           "language": "en",
           "eol_preferred": true
@@ -471,6 +517,37 @@ export const fruit = [
         {
           "vernacularName": "Peach tree",
           "language": "en"
+        },
+        {
+          "vernacularName": "Melocotonero",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Persico",
+          "language": "es"
+        },
+        {
+          "vernacularName": "duraznero",
+          "language": "es"
+        },
+        {
+          "vernacularName": "nectarine",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Pêcher",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Persico",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "pesco",
+          "language": "it"
         },
         {
           "vernacularName": "Pessegueiro",
@@ -529,6 +606,11 @@ export const fruit = [
       ],
       "names": [
         {
+          "vernacularName": "Himbeere",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "raspberry",
           "language": "en",
           "eol_preferred": true
@@ -556,6 +638,53 @@ export const fruit = [
         {
           "vernacularName": "wild red raspberry",
           "language": "en"
+        },
+        {
+          "vernacularName": "Frambueso",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Sangüeso",
+          "language": "es"
+        },
+        {
+          "vernacularName": "framboise",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Framboisier",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Ronce framboisier",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "framboisier des jardins",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "kiock",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "ronce du mont Ida",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "frambosa",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Lampone",
+          "language": "it"
+        },
+        {
+          "vernacularName": "rovo ideo",
+          "language": "it"
         },
         {
           "vernacularName": "Framboesa",
@@ -614,6 +743,11 @@ export const fruit = [
       ],
       "names": [
         {
+          "vernacularName": "Zitrone",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "lemon",
           "language": "en",
           "eol_preferred": true
@@ -621,6 +755,33 @@ export const fruit = [
         {
           "vernacularName": "Lemon-tree",
           "language": "en"
+        },
+        {
+          "vernacularName": "limonero",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Limón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Citronnier",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Bergamotte",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "citron",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Limone",
+          "language": "it",
+          "eol_preferred": true
         },
         {
           "vernacularName": "Limão",
@@ -677,6 +838,15 @@ export const fruit = [
       ],
       "names": [
         {
+          "vernacularName": "Kultur-Erdbeere",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Garten-Erdbeere",
+          "language": "de"
+        },
+        {
           "vernacularName": "garden strawberry",
           "language": "en",
           "eol_preferred": true
@@ -692,6 +862,29 @@ export const fruit = [
         {
           "vernacularName": "strawberry",
           "language": "en"
+        },
+        {
+          "vernacularName": "fresa",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "fresón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Fraisier cultivé",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Fraisier sauvage, Fraisier des bois",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "fragola",
+          "language": "it",
+          "eol_preferred": true
         },
         {
           "vernacularName": "Morangueiro",
@@ -748,6 +941,15 @@ export const fruit = [
       ],
       "names": [
         {
+          "vernacularName": "Gartenbirnbaum",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Birnbaum",
+          "language": "de"
+        },
+        {
           "vernacularName": "pear",
           "language": "en",
           "eol_preferred": true
@@ -767,6 +969,33 @@ export const fruit = [
         {
           "vernacularName": "garden pear",
           "language": "en"
+        },
+        {
+          "vernacularName": "pera",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "peral",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Aigrin",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Poirier cultivé, Poirier commun",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "pera",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Pero",
+          "language": "it"
         },
         {
           "vernacularName": "Pereira",
@@ -820,6 +1049,15 @@ export const fruit = [
       ],
       "names": [
         {
+          "vernacularName": "Echte Feige",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Feigenbaum",
+          "language": "de"
+        },
+        {
           "vernacularName": "common fig",
           "language": "en",
           "eol_preferred": true
@@ -855,6 +1093,24 @@ export const fruit = [
         {
           "vernacularName": "piku",
           "language": "en"
+        },
+        {
+          "vernacularName": "Ficus carica",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "higuera",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Figuier d'Europe",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Fico",
+          "language": "it"
         },
         {
           "vernacularName": "Figueira",
@@ -913,6 +1169,27 @@ export const fruit = [
       ],
       "names": [
         {
+          "vernacularName": "Gartenapfelbaum",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Apfel",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Apfelbaum",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Kultur-Apfel",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Kultur-Apfelbaum",
+          "language": "de"
+        },
+        {
           "vernacularName": "Orchard Apple",
           "language": "en",
           "eol_preferred": true
@@ -932,6 +1209,33 @@ export const fruit = [
         {
           "vernacularName": "table apple",
           "language": "en"
+        },
+        {
+          "vernacularName": "manzano",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "manzana",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Pommier commun",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Pommier cultivé",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Melo",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "mela",
+          "language": "it"
         },
         {
           "vernacularName": "Macieira",
@@ -988,6 +1292,15 @@ export const fruit = [
       ],
       "names": [
         {
+          "vernacularName": "Süsskirsche",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Vogel-Kirsche",
+          "language": "de"
+        },
+        {
           "vernacularName": "Wild Cherry",
           "language": "en",
           "eol_preferred": true
@@ -1007,6 +1320,37 @@ export const fruit = [
         {
           "vernacularName": "sweet cherry",
           "language": "en"
+        },
+        {
+          "vernacularName": "Cerezo",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "cerezo silvestre",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Cerisier commun",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Cerisier sauvage",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Merisier",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Prunier merisier",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "ciliegio",
+          "language": "it",
+          "eol_preferred": true
         },
         {
           "vernacularName": "Cerejeira-brava",

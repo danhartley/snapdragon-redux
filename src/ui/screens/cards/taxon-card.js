@@ -33,18 +33,16 @@ export const renderTaxonCard = collection => {
         occurrences[num] = occurrences[num] ? occurrences[num] + 1 : 1;
     });
 
-    const language = "en";
-
     const context = {
         rank: 'family',
         name: item.family,
         img: taxon.thumb,
         alt: taxon.alt,
-        common: taxon.names ? taxon.names.find(name => name.language === language).names[0] : taxon.alt,
+        common: taxon.names ? taxon.names.find(name => name.language === config.language).names[0] : taxon.alt,
         species: taxon.species || '--',
         genera: taxon.genera || '--',
-        identification: `Quick ID :- ${taxon.descriptions.find(name => name.language === language).identification}`,
-        summary: taxon.descriptions.find(name => name.language === language).summary || '',
+        identification: `Quick ID :- ${taxon.descriptions.find(name => name.language === config.language).identification}`,
+        summary: taxon.descriptions.find(name => name.language === config.language).summary || '',
         eol: taxon['eol-entry'] || '',
         wiki: taxon['wiki-entry'] || '',
         occurrences: occurrences[taxon.name],

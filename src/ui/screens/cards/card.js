@@ -112,7 +112,7 @@ const renderCommonParts = (template, config, item) => {
     const familyImage = family ? family.thumb : '';
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const occurrences = specific ? specific.subspecies.length : 0;
-    const pollinators = family.pollinators.map(p=>p).join(', ');
+    const pollinators = family.pollinators.find(pollinator => pollinator.language === config.language).names.join(', ');
 
     const clone = document.importNode(template.content, true);
     

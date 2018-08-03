@@ -150,7 +150,7 @@ hr {
   border: 1px solid var(--snap-primary);
 }
 
-.species.card > div, .taxon.card > div {
+.species.card > div, .taxon.card > div, .trait.card > div {
   flex: auto;
 }
 
@@ -402,6 +402,10 @@ hr {
 
 .cultivar.card .scrollable {
   height: 30vh;
+}
+
+.trait.card .scrollable {
+  height: 40vh;
 }
 
 .data-box, .id-box {  
@@ -737,6 +741,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   border-radius: .20rem .20rem 0 0;  
   display: flex;
   flex-direction: row;
+  text-align: left;
 }
 
 .list-group-headers span {
@@ -761,10 +766,17 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   object-fit: cover;
   margin: 0 .5em 0 0;
 }
-/* 
-.list-continue-btn {
-  margin: 1em .5em;
-} */
+
+
+.trait.card li span:nth-child(1) {
+  width: 25%;
+  text-align: left;
+}
+
+.trait.card li span:nth-child(2) {
+  width: 75%;
+  text-align: left;
+}
 
 .toggle-content {
 	display: none;
