@@ -54,6 +54,7 @@ hr {
 
 .btn {
   color: var(--snap-text-light);
+  padding: .175em .75em;
 }
 
 .btn.btn-light {
