@@ -155,4 +155,8 @@
     .landscape {
         display: inline;
     }
+
+    .snapdragon-container {
+        border: 1px solid var(--snap-primary);
+      }      
 }

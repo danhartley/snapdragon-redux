@@ -147,7 +147,6 @@ hr {
   flex-direction: column;
   padding: .5em;
   background-color: var(--snap-container-background);
-  border: 1px solid var(--snap-primary);
 }
 
 .species.card > div, .taxon.card > div, .trait.card > div {
