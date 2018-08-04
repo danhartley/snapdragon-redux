@@ -2892,7 +2892,7 @@ export const herbsAndSpices = [
       ],
       "wikiSeachTerms": [
         {
-          "term": "Tarragon",
+          "term": "Artemisia dracunculus",
           "language": "en"
         }
       ],

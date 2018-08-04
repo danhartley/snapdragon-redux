@@ -456,6 +456,11 @@ export const vegetables = [
           "language": "de"
         },
         {
+          "vernacularName": "Pumpkin",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "Summer Squash",
           "language": "en",
           "eol_preferred": true

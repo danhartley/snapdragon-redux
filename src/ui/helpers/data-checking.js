@@ -25,9 +25,37 @@ const latin = species => {
     return epithet || '';
 };
 
+const getTaxonProp = (taxon, language, prop) => {
+
+    if(!taxon[prop]) return '';
+
+    const propValue = taxon[prop].find(p => p.language === language) ? taxon[prop].find(p => p.language === language) : taxon[prop].find(p => p.language === 'en');
+
+    return propValue || '';
+};
+
+const getNestedTaxonProp = (taxon, language, prop1, prop2, index) => {
+
+    if(!taxon[prop1]) return '';
+
+    const prop1Value = taxon[prop1].find(name => name.language === language) ? taxon[prop1].find(name => name.language === language) : taxon[prop1].find(name => name.language === 'en');
+
+    if(!prop1Value) return '';
+
+    const prop2Value = prop1Value[prop2];
+
+    if(!prop2Value) return '';
+
+    const output = index ? prop2Value[index] : prop2Value;
+
+    return output;
+}
+
 export const itemProperties = {
     vernacularName,
     genusName,
     speciesName,
-    latin
-}
+    latin,
+    getTaxonProp,
+    getNestedTaxonProp
+};

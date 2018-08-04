@@ -38,15 +38,15 @@ export const renderTaxonCard = collection => {
         name: item.family,
         img: taxon.thumb,
         alt: taxon.alt,
-        common: taxon.names ? taxon.names.find(name => name.language === config.language).names[0] : taxon.alt,
+        common: itemProperties.getNestedTaxonProp(taxon, config.language, 'names', 'names', '0'),
         species: taxon.species || '--',
         genera: taxon.genera || '--',
-        identification: `Quick ID :- ${taxon.descriptions.find(name => name.language === config.language).identification}`,
-        summary: taxon.descriptions.find(name => name.language === config.language).summary || '',
-        eol: taxon['eol-entry'] || '',
-        wiki: taxon['wiki-entry'] || '',
+        identification: itemProperties.getNestedTaxonProp(taxon, config.language, 'descriptions', 'identification'),
+        summary: itemProperties.getNestedTaxonProp(taxon, config.language, 'descriptions', 'summary'),
+        eol: taxon.eol ? taxon.eol.replace('en', config.language) : '',
+        wiki: taxon.wiki ? taxon.wiki.replace('en', config.language) : '',
         occurrences: occurrences[taxon.name],
-        // toxic: taxon.toxic ? `Toxic species: ${taxon.toxic.members.join(', ')}` : '',
+        toxic: taxon.toxic ? `Toxic species: ${taxon.toxic.members.join(', ')}` : '',
         members: taxon.members ? R.take(2, taxon.members).join(', ') : ''
     }
 
