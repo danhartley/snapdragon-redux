@@ -31,7 +31,9 @@ export const renderRadioButtons = (collection) => {
     const otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name !== item.family));
     const otherFamiliesLatinNames = otherFamilies.map(family => family.name);
     const otherFamiliesCommonNames = otherFamilies.filter(family => family.names.find(name => name.language === config.language)).map(family => family.names[0].names[0]);
-    const commonFamilyName = families.find(family => family.name === item.family).names.find(name => name.language === config.language).names[0];
+    
+    const familyTaxon = families.find(family => family.name === item.family); 
+    const commonFamilyName = itemProperties.getTaxonProp(familyTaxon, config.language, 'names', 'names', '0').names[0];
 
     const render = () => {
         const parent = DOM.rightBody;

@@ -2,23 +2,23 @@ export const glossary = [
     {
         term: "Type species",
         definition: "A type species (species typica) is the species name with which the name of a genus or subgenus is considered to be permanently taxonomically associated, i.e., the species that contains the biological type specimen(s).",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Type_species"
+        wiki: "https://en.wikipedia.org/wiki/Type_species"
     },
     {
         term: "Entomophily",
         definition: "Entomophily or insect pollination is a form of pollination whereby pollen of plants, especially but not only of flowering plants, is distributed by insect (biotic).",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Entomophily"
+        wiki: "https://en.wikipedia.org/wiki/Entomophily"
     },
     {
         term: "Anemophily",
         definition: "Anemophily or wind pollination is a form of pollination whereby pollen is distributed by wind (abiotic).",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Anemophily",
+        wiki: "https://en.wikipedia.org/wiki/Anemophily",
         characteristics: 'Anemophilous, or wind pollinated flowers, are usually small and inconspicuous, and do not possess a scent or produce nectar. The anthers may produce a large number of pollen grains, while the stamens are generally long and protrude out of flower.'
     },
     {
         term: "Hydrophily",
         definition: "Hydrophily is a form of pollination whereby pollen is distributed by the flow of waters, particularly in rivers and streams (abiotic).",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Hydrophily",
+        wiki: "https://en.wikipedia.org/wiki/Hydrophily",
         characteristics: 'Flowers tend to be small and inconspicuous with lots of pollen grains and large, feathery stigmas to catch the pollen.'
     },
     {
@@ -83,33 +83,33 @@ export const glossary = [
     {
         term: "Aetherolea",
         definition: "Aetherolea also known as volatile oils or essential oils are concentrated hydrophobic liquids that contain volatile aroma compounds from plants which evaporate when exposed to air and are thus capable of distillation.",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Essential_oil"
+        wiki: "https://en.wikipedia.org/wiki/Essential_oil"
     },
     {
         term: 'Garigue',
         definition: "A low open scrubland with many evergreen shrubs, low trees, aromatic herbs, and bunchgrasses found in poor or dry soil in the Mediterranean region.",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Garrigue"
+        wiki: "https://en.wikipedia.org/wiki/Garrigue"
     },
     {
         term: "Maquis",
         definition: "Dense scrub vegetation consisting of hardy evergreen shrubs and small trees, characteristic of Mediterranean coastal regions.",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Maquis_shrubland"
+        wiki: "https://en.wikipedia.org/wiki/Maquis_shrubland"
     },
     {
         term: "Indigenous",
         synonym: "Autochthonous",
         definition: "A species whose presence in a given region or ecosystem is the result of natural process.",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Indigenous_(ecology)" 
+        wiki: "https://en.wikipedia.org/wiki/Indigenous_(ecology)" 
     },
     {
         term: "Endemic",
         definition: "A species that is unique to a defined geographic location, such as an island, nation or country.",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Endemism"
+        wiki: "https://en.wikipedia.org/wiki/Endemism"
     },
     {
         term: "Introduced",
         definition: "A species found outside its native distributional range due to human activity.",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Introduced_speciesepothet"
+        wiki: "https://en.wikipedia.org/wiki/Introduced_speciesepothet"
     },
     {
         term: "Pollination",
@@ -118,7 +118,7 @@ export const glossary = [
     {
         term: "Model organism",
         definition: "A species studied to understand particular biological phenomena, with the expectation that discoveries will provide insight into the workings of other organisms.",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Model_organism",
+        wiki: "https://en.wikipedia.org/wiki/Model_organism",
         examples: ['Escherichia coli', 'Drosophila melanogaster', 'Arabidopsis thaliana', 'Saccharomyces cerevisiae', 'Mus musculus']
     },
     {
@@ -168,57 +168,57 @@ export const glossary = [
     {
         term: 'Sonication',
         definition: '(Buzz pollination) is the release of pollen from anthers and flowers shaken by the rapid movement of the flight muscles of (solitary) bees. Bees are the only animals that perform this behaviour. Bumblebees sonicate, honeybees do not.',
-        "wiki-entry": 'https://en.wikipedia.org/wiki/Buzz_pollination',
+        wiki: 'https://en.wikipedia.org/wiki/Buzz_pollination',
         examples: ['Solanaceae', 'Solanum lycopersicum', 'Solanum melongena', 'Solanum tuberosum', 'Vaccinium']
     },
     {
         term: 'Stamen',
         definition: 'Pollen-producing reproductive organ of a flower. Consists of a stalk (filament) and pollen-carrying anther.',
-        "wiki-entry": 'https://en.wikipedia.org/wiki/Stamen'
+        wiki: 'https://en.wikipedia.org/wiki/Stamen'
     },
     {
         term: 'Flower',
         definition: 'The reproductive structure found in flowering plants (angiosperms  ).',
-        "wiki-entry": 'https://en.wikipedia.org/wiki/Flower'
+        wiki: 'https://en.wikipedia.org/wiki/Flower'
     },
     {
         term: 'Fruit',
         definition: 'The seed-bearing structure in flowering plants formed from the ovary after flowering.',
-        "wiki-entry": 'https://en.wikipedia.org/wiki/Fruit'
+        wiki: 'https://en.wikipedia.org/wiki/Fruit'
     },
     {
         term: 'Perianth',
         definition: 'The non-reproductive part of the flower, and structure that forms an envelope surrounding the sexual organs, consisting of the calyx (sepals) and the corolla (petals).',
-        "wiki-entry": 'https://en.wikipedia.org/wiki/Perianth'
+        wiki: 'https://en.wikipedia.org/wiki/Perianth'
     },
     {
         term: 'Petal',
         definition: 'Modified leaves that surround the reproductive parts of flowers.',
-        "wiki-entry": 'https://en.wikipedia.org/wiki/Petal'
+        wiki: 'https://en.wikipedia.org/wiki/Petal'
     },
     {
         term: 'Corolla',
         definition: 'All the petals of a flower.',
-        "wiki-entry": 'https://en.wikipedia.org/wiki/Petal#Corolla'
+        wiki: 'https://en.wikipedia.org/wiki/Petal#Corolla'
     },
     {
         term: 'Perennial',
         definition: 'A plant that lives more than two years (used to distinguish plants with little or no woody growth from trees and shrubs).',
-        "wiki-entry": 'https://en.wikipedia.org/wiki/Perennial_plant'
+        wiki: 'https://en.wikipedia.org/wiki/Perennial_plant'
     },
     {
         term: 'Annual',
         definition: 'A plant that completes its life cycle, from germination to the production of seeds, within one year, and then dies.',
-        "wiki-entry": 'https://en.wikipedia.org/wiki/Annual_plant'
+        wiki: 'https://en.wikipedia.org/wiki/Annual_plant'
     },
     {
         term: 'Biennial',
         definition: 'A flowering plant that takes two years to complete its biological lifecycle.',
-        "wiki-entry": 'https://en.wikipedia.org/wiki/Biennial_plant'
+        wiki: 'https://en.wikipedia.org/wiki/Biennial_plant'
     },
     {
         term: 'Evergreen',
         definition: 'Non-herbaceous, perennials which retain a mantle of leaves throughout the year.',
-        "wiki-entry": 'https://en.wikipedia.org/wiki/Evergreen'
+        wiki: 'https://en.wikipedia.org/wiki/Evergreen'
     },
 ];

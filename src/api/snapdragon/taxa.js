@@ -3,9 +3,14 @@ export const taxa = [
         taxon: 'family',
         name: 'Asteraceae',
         alt: [ 'Compositae'],
-        names: [{ language: "en", names:[ 'Daisies', 'Compositae', 'Aster', 'Composite', 'Sunflower family']}],
-        "wiki-entry": "https://en.wikipedia.org/wiki/Asteraceae",
-        "eol-entry": "https://eol.org/pages/4206/overview",
+        names: [{ language: "en", names:[ 'Daisies', 'Compositae', 'Aster', 'Composite', 'Sunflower family' ]}],
+        names: [{ language: "fr", names:[ 'Astéracées' ]}],
+        names: [{ language: "de", names:[ 'Korbblütler' ]}],
+        names: [{ language: "es", names:[ 'Daisies' ]}],
+        names: [{ language: "pt", names:[ 'Daisies' ]}],
+        names: [{ language: "it", names:[ 'Daisies' ]}],
+        wiki: "https://en.wikipedia.org/wiki/Asteraceae",
+        eol: "http://eol.org/pages/4206/overview",
         thumb: 'https://media.eol.org/content/2017/02/18/22/29040_98_68.jpg',
         species: 32913,
         genera: 1911,
@@ -18,14 +23,19 @@ export const taxa = [
         ],
         pollinators: [ { language: "en", names: ['Insects', 'Wind', 'Asexual'] } ],
         members: ['Cynara cardunculus', 'Helianthus annuus'],
-        "wiki-entry": "https://en.wikipedia.org/wiki/Asteraceae",
-        "eol-entry": "https://eol.org/pages/4206/overview"
+        wiki: "https://en.wikipedia.org/wiki/Asteraceae",
+        eol: "http://eol.org/pages/4206/overview"
     },
     {
         taxon: 'family',
         name: 'Apiaceae',
         alt: ['Umbelliferae'],
-        names: [{ language: "en", names:[ 'Carrot or Parsley family', 'Umbellifers', 'Celery family', 'Carrot family', 'Parsely family']}],        
+        names: [{ language: "en", names:[ 'Carrot or Parsley family', 'Umbellifers', 'Celery family', 'Carrot family', 'Parsely family']}],
+        names: [{ language: "fr", names:[ 'Apiaceae' ]}],
+        names: [{ language: "de", names:[ 'Doldengewächse' ]}],
+        names: [{ language: "es", names:[ 'Apiaceae' ]}],
+        names: [{ language: "pt", names:[ 'Apiaceae' ]}],
+        names: [{ language: "it", names:[ 'Apiaceae' ]}],
         thumb: 'https://media.eol.org/content/2014/04/16/16/98519_88_88.jpg',
         members: [  'Daucus carota subsp. sativus', 'Coriandrum sativum', 'Petroselinum crispum', 'Foeniculum vulgare', 
                     'Anethum graveolens', 'Conium maculatum', 'Cuminum cyminum', 'Carum carvi', 'Anthriscus cerefolium',
@@ -48,16 +58,21 @@ export const taxa = [
                 companion: true
          }
         ],
-        "wiki-entry": "https://en.wikipedia.org/wiki/Apiaceae",
-        "eol-entry": "https://eol.org/pages/4200/overview"
+        wiki: "https://en.wikipedia.org/wiki/Apiaceae",
+        eol: "http://eol.org/pages/4200/overview"
     },
     {
         taxon: 'family',
         name: 'Lamiaceae',
         alt: ['Labiatae'],
         names: [{ language: "en", names:[ 'Mint or Deadnettles', 'Mint or Basil', 'Labiatae', 'Mint', 'Deadnettles']}],
-        "wiki-entry": "https://en.wikipedia.org/wiki/Lamiaceae",
-        "eol-entry": "https://eol.org/pages/4302/overview",
+        names: [{ language: "fr", names:[ 'Menthes' ]}],
+        names: [{ language: "de", names:[ 'Lippenblütler' ]}],
+        names: [{ language: "es", names:[ 'Mint' ]}],
+        names: [{ language: "pt", names:[ 'Mint' ]}],
+        names: [{ language: "it", names:[ 'Mint' ]}],
+        wiki: "https://en.wikipedia.org/wiki/Lamiaceae",
+        eol: "http://eol.org/pages/4302/overview",
         thumb: "https://media.eol.org/content/2014/08/14/23/80866_88_88.jpg",
         members: ['Ocimum basilicum', 'Rosmarinus officinalis'],
         pollinators: [ { language: "en", names: ['Insects', 'Bumblebees', 'Single Bees'] } ],
@@ -76,14 +91,19 @@ export const taxa = [
                 speals: 5
          }
         ],
-        "wiki-entry": "https://en.wikipedia.org/wiki/Lamiaceae",
-        "eol-entry": "https://eol.org/pages/4302/overview"
+        wiki: "https://en.wikipedia.org/wiki/Lamiaceae",
+        eol: "http://eol.org/pages/4302/overview"
     },
     {
         taxon: 'family',
         name: 'Brassicaceae',
         alt: ['Cruciferae'],
         names: [{ language: "en", names:['Mustards', 'Cruciferae', 'Crucifers', 'Cabbage family']}],
+        names: [{ language: "fr", names:[ 'Brassicaceae' ]}],
+        names: [{ language: "de", names:[ 'Kreuzblütengewächse' ]}],
+        names: [{ language: "es", names:[ 'Mustards' ]}],
+        names: [{ language: "pt", names:[ 'Mustards' ]}],
+        names: [{ language: "it", names:[ 'Mustards' ]}],
         thumb: 'https://media.eol.org/content/2015/04/30/10/19667_88_88.jpg',
         species: 4060,
         genera: 372,
@@ -96,13 +116,18 @@ export const taxa = [
             }
         ],
         members: ['Arabidopsis thaliana', 'Brassica oleracea'],
-        "wiki-entry": "https://en.wikipedia.org/wiki/Brassicaceae",
-        "eol-entry": "https://eol.org/pages/4219/overview"
+        wiki: "https://en.wikipedia.org/wiki/Brassicaceae",
+        eol: "http://eol.org/pages/4219/overview"
     },
     {
         taxon: 'family',
         name: 'Amaryllidaceae',
         names: [ { language: "en", names: ['Amaryllis']}],
+        names: [{ language: "fr", names:[ 'Amaryllis' ]}],
+        names: [{ language: "de", names:[ 'Narzissengewächse' ]}],
+        names: [{ language: "es", names:[ 'Amaryllis' ]}],
+        names: [{ language: "pt", names:[ 'Amaryllis' ]}],
+        names: [{ language: "it", names:[ 'Amaryllis' ]}],
         thumb: 'https://media.eol.org/content/2015/01/27/22/09266_98_68.jpg',
         species: 1600,
         genera: 75,
@@ -115,13 +140,18 @@ export const taxa = [
         ],
         pollinators: [ { language: "en", names: ['Carpenter Bees' ,' Owlet Moths'] } ],
         members: ['Allium cepa', 'Allium schoenoprasum'],
-        "wiki-entry": "https://en.wikipedia.org/wiki/Amaryllidaceae",
-        "eol-entry": "https://eol.org/pages/8187/overview"
+        wiki: "https://en.wikipedia.org/wiki/Amaryllidaceae",
+        eol: "http://eol.org/pages/8187/overview"
     },
     {
         taxon: "order",
         name: 'Lepidoptera',
         names: [ { language: "en", names:['Butterflies and Moths']}],
+        names: [{ language: "fr", names:[ 'Hétérocères' ]}],
+        names: [{ language: "de", names:[ 'Schmetterlinge' ]}],
+        names: [{ language: "es", names:[ 'Butterflies and Moths' ]}],
+        names: [{ language: "pt", names:[ 'Borboleta' ]}],
+        names: [{ language: "it", names:[ 'Butterflies and Moths' ]}],
         thumb: 'https://media.eol.org/content/2017/01/25/21/74379_88_88.jpg',
         species: 180000,
         families: 126,
@@ -132,14 +162,19 @@ export const taxa = [
             }
         ],
         role: [ 'pollinators', 'food', 'pest', 'producers' ],
-        "wiki-entry": "https://en.wikipedia.org/wiki/Lepidoptera",
-        "eol-entry": "https://eol.org/pages/747/overview"
+        wiki: "https://en.wikipedia.org/wiki/Lepidoptera",
+        eol: "http://eol.org/pages/747/overview"
     },
     {
         taxon: "order",
         name: "Hymenoptera",
         thumb: "https://media.eol.org/content/2013/02/03/12/43681_98_68.jpg",
         names: [ { language: "en", names: ['Ants, Bees, and Wasps']} ],
+        names: [{ language: "fr", names:[ 'Hyménoptères' ]}],
+        names: [{ language: "de", names:[ 'Hautflügler' ]}],
+        names: [{ language: "es", names:[ 'Ants, Bees, and Wasps' ]}],
+        names: [{ language: "pt", names:[ 'Vespa' ]}],
+        names: [{ language: "it", names:[ 'Ants, Bees, and Wasps' ]}],
         descriptions: [
             {
                 language: 'en',
@@ -147,13 +182,18 @@ export const taxa = [
             }
         ],
         species: 150000,
-        "wiki-entry": "https://en.wikipedia.org/wiki/Hymenoptera",
-        "eol-entry": "https://eol.org/pages/648/overview"
+        wiki: "https://en.wikipedia.org/wiki/Hymenoptera",
+        eol: "http://eol.org/pages/648/overview"
     },
     {
         taxon: 'family',
         name: "Apidae",
         names: [ { language: "en", names: ['Bees']}],
+        names: [{ language: "fr", names:[ 'Bees' ]}],
+        names: [{ language: "de", names:[ 'Echte Bienen' ]}],
+        names: [{ language: "es", names:[ 'Bees' ]}],
+        names: [{ language: "pt", names:[ 'Bees' ]}],
+        names: [{ language: "it", names:[ 'Bees' ]}],
         thumb: "https://media.eol.org/content/2013/02/03/12/43681_98_68.jpg",
         species: 5700,
         members: ["Apis mellifera"],
@@ -166,14 +206,20 @@ export const taxa = [
                 identification: 'Yellow, black, or honey brown. Body covered in numerous branched hairs. Pollen basket on tibia.'
             }
         ],        
+        eol: 'http://eol.org/pages/677/overview',
         "inat-link": "https://www.inaturalist.org/taxa/47221-Apidae",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Apidae"
+        wiki: "https://en.wikipedia.org/wiki/Apidae"
     },
     {
         taxon: 'order',
         name: "Coleoptera",
         thumb: "https://media.eol.org/content/2015/01/26/11/41088_88_88.jpg",
         names: [ { language: "en", names: ['Beetles']} ],
+        names: [{ language: "fr", names:[ 'Coléoptères' ]}],
+        names: [{ language: "de", names:[ 'Käfer' ]}],
+        names: [{ language: "es", names:[ 'Coleoptera' ]}],
+        names: [{ language: "pt", names:[ 'Besouro' ]}],
+        names: [{ language: "it", names:[ 'Coleoptera' ]}],
         species: 400000,
         descriptions: [
             {
@@ -181,14 +227,19 @@ export const taxa = [
                 summary: "Their front pair of wings is hardened into wing-cases, elytra, distinguishing them from most other insects."
             }
         ],
-        "wiki-entry": "https://en.wikipedia.org/wiki/Coleoptera",
-        "eol-entry": "https://eol.org/pages/345/overview"
+        wiki: "https://en.wikipedia.org/wiki/Coleoptera",
+        eol: "http://eol.org/pages/345/overview"
     },
     {
         taxon: 'order',
         name: "Diptera",
         thumb: "https://media.eol.org/content/2015/01/31/00/39232_88_88.jpg",
         names: [ { language: "en", names: ['Flies']} ],
+        names: [{ language: "fr", names:[ 'Diptères' ]}],
+        names: [{ language: "de", names:[ 'Zweiflügler' ]}],
+        names: [{ language: "es", names:[ 'Flies' ]}],
+        names: [{ language: "pt", names:[ 'Mosca' ]}],
+        names: [{ language: "it", names:[ 'Flies' ]}],
         species: 150000,
         descriptions: [
             {
@@ -196,8 +247,8 @@ export const taxa = [
                 summary: "Insects of this order use only a single pair of wings to fly, the hindwings having evolved into advanced mechanosensory organs known as halteres, which act as high-speed sensors of rotational movement and allow dipterans to perform advanced aerobatics."
             }
         ],
-        "wiki-entry": "https://en.wikipedia.org/wiki/Diptera",
-        "eol-entry": "https://eol.org/pages/421/overview"
+        wiki: "https://en.wikipedia.org/wiki/Diptera",
+        eol: "http://eol.org/pages/421/overview"
     },
     {
         taxon: 'family',
@@ -205,8 +256,13 @@ export const taxa = [
         thumb: "https://media.eol.org/content/2012/05/23/07/89214_88_88.jpg",
         alt: ['Poaceae', 'Gramineae'],
         names: [ { language: "en", names: ['Grasses', 'True Grasses'] } ],
+        names: [{ language: "fr", names:[ 'Graminées' ]}],
+        names: [{ language: "de", names:[ 'Süßgräser' ]}],
+        names: [{ language: "es", names:[ 'Grasses' ]}],
+        names: [{ language: "pt", names:[ 'Grasses' ]}],
+        names: [{ language: "it", names:[ 'Grasses' ]}],
         pollinators: [ { language: "en", names: ['Wind', 'Insects'] } ],
-        "wiki-entry": 'https://en.wikipedia.org/wiki/Poaceae',
+        wiki: 'https://en.wikipedia.org/wiki/Poaceae',
         species: 1200, 
         genera: 780,
         descriptions: [
@@ -218,14 +274,19 @@ export const taxa = [
         ],
         members: ['Triticum','Oryza','Zizania','Zea', 'Avena', 'Hordeum', 'Echinochloa', 'Secale' ],
         toxic: { members: ['Lolium temulentum'] },
-        "wiki-entry": "https://en.wikipedia.org/wiki/Poaceae",
-        "eol-entry": "https://eol.org/pages/8223/overview"
+        wiki: "https://en.wikipedia.org/wiki/Poaceae",
+        eol: "http://eol.org/pages/8223/overview"
     },
     {
         taxon: 'family',
         name: 'Zingiberaceae',
         thumb: "https://media.eol.org/content/2012/01/25/15/09074_98_68.jpg",
         names: [ { language: "en", names: ['Ginger family']} ],
+        names: [{ language: "fr", names:[ 'Ginger family' ]}],
+        names: [{ language: "de", names:[ 'Ginger family' ]}],
+        names: [{ language: "es", names:[ 'Ginger family' ]}],
+        names: [{ language: "pt", names:[ 'Ginger family' ]}],
+        names: [{ language: "it", names:[ 'Ginger family' ]}],
         species: 1600,
         genera: 50,
         pollinators: [ { language: "en", names: ['Insects'] } ],
@@ -237,14 +298,19 @@ export const taxa = [
             }
         ],
         members: ['Curcuma longa', 'Zingiber officinale', 'Elettaria cardamomum'],
-        "wiki-entry": "https://en.wikipedia.org/wiki/Zingiberaceae",
-        "eol-entry": "https://eol.org/pages/8183/overview"
+        wiki: "https://en.wikipedia.org/wiki/Zingiberaceae",
+        eol: "http://eol.org/pages/8183/overview"
     },
     {
         taxon: 'family',
         name: 'Piperaceae',
         thumb: "https://media.eol.org/content/2017/01/30/20/37424_88_88.jpg",
         names: [ { language: "en", names: ['Pepper family']} ],
+        names: [{ language: "fr", names:[ 'Pepper family' ]}],
+        names: [{ language: "de", names:[ 'Pepper family' ]}],
+        names: [{ language: "es", names:[ 'Pepper family' ]}],
+        names: [{ language: "pt", names:[ 'Pepper family' ]}],
+        names: [{ language: "it", names:[ 'Pepper family' ]}],
         species: 3600,
         genera: 13,
         pollinators: [ { language: "en", names: ['Wind','Insects'] } ],
@@ -255,8 +321,8 @@ export const taxa = [
                 identification: 'Dense flower spikes of tiny radially symmetrical flowers; no petals or sepals. Soft, fleshy or succulent leaves with pungent flavour.'
             }
         ],
-        "wiki-entry": "https://en.wikipedia.org/wiki/Piperaceae",
-        "eol-entry": "https://eol.org/pages/4351/overview"        
+        wiki: "https://en.wikipedia.org/wiki/Piperaceae",
+        eol: "http://eol.org/pages/4351/overview"        
     },
     {
         taxon: 'family',
@@ -264,6 +330,11 @@ export const taxa = [
         thumb: "https://media.eol.org/content/2010/03/24/13/32972_98_68.jpg",
         alt: ['Leguminosae'],
         names: [ { language: "en", names: ['Pea family', 'Bean family', 'Legumes']} ],
+        names: [{ language: "fr", names:[ 'Pea family' ]}],
+        names: [{ language: "de", names:[ 'Hülsenfrüchtler' ]}],
+        names: [{ language: "es", names:[ 'Pea family' ]}],
+        names: [{ language: "pt", names:[ 'Pea family' ]}],
+        names: [{ language: "it", names:[ 'Pea family' ]}],
         toxic: { members:['Hedysarum alpinum']},
         species: 19000,
         genera: 751,
@@ -276,14 +347,19 @@ export const taxa = [
             }
         ],
         members: ['Pisum sativum', 'Glycine max', 'Cicer arietinum', 'Arachis hypogaea'],
-        "eol-entry": "https://eol.org/pages/4277/overview",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Fabaceae"
+        eol: "http://eol.org/pages/4277/overview",
+        wiki: "https://en.wikipedia.org/wiki/Fabaceae"
     },
     {
         taxon: 'family',
         name: 'Rosaceae',
         thumb: "https://media.eol.org/content/2014/08/25/10/53156_88_88.jpg",
         names: [ { language: "en", names: ['Rose family']} ],
+        names: [{ language: "fr", names:[ 'Rosaceae' ]}],
+        names: [{ language: "de", names:[ 'Rosengewächse' ]}],
+        names: [{ language: "es", names:[ 'Rose family' ]}],
+        names: [{ language: "pt", names:[ 'Rose family' ]}],
+        names: [{ language: "it", names:[ 'Rosaceae' ]}],
         species: 4828,
         toxic: { members:['Conium maculatum'] },
         pollinators: [ { language: "en", names: ['Insects', 'Wind'] } ],
@@ -296,14 +372,19 @@ export const taxa = [
             }
         ],
         members: ['Malus domestica', 'Pyrus communis'],
-        "eol-entry": "https://eol.org/pages/8097/overview",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Rosaceae"
+        eol: "http://eol.org/pages/8097/overview",
+        wiki: "https://en.wikipedia.org/wiki/Rosaceae"
     },
     {
         taxon: 'family',
         name: 'Rutaceae',
         thumb: "https://media.eol.org/content/2012/05/23/09/05989_98_68.jpg",
         names: [ { language: "en", names: ['Citrus family', 'Rue family']} ],
+        names: [{ language: "fr", names:[ 'Citronnier' ]}],
+        names: [{ language: "de", names:[ 'Zitrone' ]}],
+        names: [{ language: "es", names:[ 'Limonero' ]}],
+        names: [{ language: "pt", names:[ 'Limão' ]}],
+        names: [{ language: "it", names:[ 'Limone' ]}],
         species: 1600,
         genera: 160,
         pollinators: [ { language: "en", names: ['Insects'] } ],
@@ -314,14 +395,19 @@ export const taxa = [
                 identification: 'Flowers that divide into 4 or 5 parts. Frequently aromatic.'
             }
         ],
-        "eol-entry": "https://eol.org/pages/582200/overview",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Rutaceae"
+        eol: "http://eol.org/pages/582200/overview",
+        wiki: "https://en.wikipedia.org/wiki/Rutaceae"
     },
     {
         taxon: 'family',
         name: 'Cucurbitaceae',
         thumb: "https://media.eol.org/content/2011/08/04/10/10257_88_88.jpg",
         names: [ { language: "en", names: ['Gourd family', 'Cucurbits', 'Gourds, Melons, Squash, & Cucumbers']} ],
+        names: [{ language: "fr", names:[ 'Cucurbitaceae' ]}],
+        names: [{ language: "de", names:[ 'Gourd family' ]}],
+        names: [{ language: "es", names:[ 'Gourd family' ]}],
+        names: [{ language: "pt", names:[ 'Gourd family' ]}],
+        names: [{ language: "it", names:[ 'Gourd family' ]}],
         species: 975,
         genera: 98,
         pollinators: [ { language: "en", names: ['Bees', 'Beetles'] } ],
@@ -332,14 +418,19 @@ export const taxa = [
                 identification: 'Climbing vines, tendrils, funnel-shaped flowers and large fruit often with 3 chambers.'
             }
         ],
-        "eol-entry": "https://eol.org/pages/4458/overview",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Cucurbitaceae"
+        eol: "http://eol.org/pages/4458/overview",
+        wiki: "https://en.wikipedia.org/wiki/Cucurbitaceae"
     },
     {
         taxon: 'family',
         name: 'Amaranthaceae',
         thumb: "https://media.eol.org/content/2012/06/12/15/54548_88_88.jpg",
         names: [ { language: "en", names: ['Amaranth family', 'Pigweed']} ],
+        names: [{ language: "fr", names:[ 'Amaranthaceae' ]}],
+        names: [{ language: "de", names:[ 'Amaranth family' ]}],
+        names: [{ language: "es", names:[ 'Amaranth family' ]}],
+        names: [{ language: "pt", names:[ 'Amaranth family' ]}],
+        names: [{ language: "it", names:[ 'Amaranth family' ]}],
         species: 2040,
         genera: 165,
         pollinators: [ { language: "en", names: ['Insects', 'Wind'] } ],
@@ -351,14 +442,19 @@ export const taxa = [
             }
         ],
         members: ['Beta vulgaris', 'Spinacia oleracea'],
-        "eol-entry": "https://eol.org/pages/4226/overview",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Amaranthaceae"
+        eol: "http://eol.org/pages/4226/overview",
+        wiki: "https://en.wikipedia.org/wiki/Amaranthaceae"
     },
     {
         taxon: 'family',
         name: 'Solanaceae',
         thumb: "https://media.eol.org/content/2012/06/12/16/57629_98_68.jpg",
         names: [ { language: "en", names: ['Nightshades']} ],
+        names: [{ language: "fr", names:[ 'Solanacées' ]}],
+        names: [{ language: "de", names:[ 'Nachtschattengewächse' ]}],
+        names: [{ language: "es", names:[ 'Nightshades' ]}],
+        names: [{ language: "pt", names:[ 'Solanacée' ]}],
+        names: [{ language: "it", names:[ 'Nightshades' ]}],
         species: 2700,
         genera: 98,
         pollinators: [ { language: "en", names: ['Insects'] } ],
@@ -370,14 +466,19 @@ export const taxa = [
             }
         ],
         members: ['Nicotiana tabacum', 'Solanum tuberosum'],
-        "eol-entry": "https://eol.org/pages/4437/overview",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Solanaceae"
+        eol: "http://eol.org/pages/4437/overview",
+        wiki: "https://en.wikipedia.org/wiki/Solanaceae"
     },
     {
         taxon: 'family',
         name: 'Moraceae',
         thumb: "https://media.eol.org/content/2014/08/15/04/78512_88_88.jpg",
         names: [ { language: "en", names: ['Mulberry family', 'Fig family']} ],
+        names: [{ language: "fr", names:[ 'Mulberry family' ]}],
+        names: [{ language: "de", names:[ 'Mulberry family' ]}],
+        names: [{ language: "es", names:[ 'Mulberry family' ]}],
+        names: [{ language: "pt", names:[ 'Mulberry family' ]}],
+        names: [{ language: "it", names:[ 'Mulberry family' ]}],
         species: 1100,
         genera: 38,
         pollinators: [ { language: "en", names: ['Wind', 'Insects'] } ],
@@ -389,14 +490,19 @@ export const taxa = [
             }
         ],
         members: ['Ficus', 'Morus alba'],
-        "eol-entry": "https://eol.org/pages/4450/overview",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Moraceae"
+        eol: "http://eol.org/pages/4450/overview",
+        wiki: "https://en.wikipedia.org/wiki/Moraceae"
     },
     {
         taxon: 'family',
         name: 'Vitaceae',
         thumb: "https://media.eol.org/content/2013/12/08/20/40721_88_88.jpg",
-        names: [ { language: "en", names: ['Wild Grape Family']} ],
+        names: [ { language: "en", names: ['Grape Family','Wild Grape Family']} ],
+        names: [{ language: "fr", names:[ 'Grape Family' ]}],
+        names: [{ language: "de", names:[ 'Grape Family' ]}],
+        names: [{ language: "es", names:[ 'Grape Family' ]}],
+        names: [{ language: "pt", names:[ 'Grape Family' ]}],
+        names: [{ language: "it", names:[ 'Grape Family' ]}],
         species: 910,
         genera: 14,
         pollinators: [ { language: "en", names: ['Bees', 'Insects'] } ],
@@ -408,14 +514,19 @@ export const taxa = [
             }
         ],
         members: ['Vitis vinifera'],
-        "eol-entry": "https://eol.org/pages/4382/overview",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Vitaceae"
+        eol: "http://eol.org/pages/4382/overview",
+        wiki: "https://en.wikipedia.org/wiki/Vitaceae"
     },
     {
         taxon: 'family',
         name: 'Lauraceae',
         thumb: "https://media.eol.org/content/2012/06/13/03/98939_88_88.jpg",
         names: [ { language: "en", names: ['Laurel Family']} ],
+        names: [{ language: "fr", names:[ 'Laurel Family' ]}],
+        names: [{ language: "de", names:[ 'Laurel Family' ]}],
+        names: [{ language: "es", names:[ 'Laurel Family' ]}],
+        names: [{ language: "pt", names:[ 'Laurel Family' ]}],
+        names: [{ language: "it", names:[ 'Laurel Family' ]}],
         species: 2850,
         genera: 45,
         pollinators: [ { language: "en", names: ['Bees', 'Wasps'] } ],
@@ -427,14 +538,19 @@ export const taxa = [
             }
         ],
         members: ['Persea americana', 'Laurus nobilis'],
-        "eol-entry": "https://eol.org/pages/4308/overview",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Lauraceae"
+        eol: "http://eol.org/pages/4308/overview",
+        wiki: "https://en.wikipedia.org/wiki/Lauraceae"
     },
     {
         taxon: 'family',
         name: 'Ericaceae',
         thumb: "https://media.eol.org/content/2012/06/13/13/64173_88_88.jpg",
         names: [ { language: "en", names: ['Heath Family', 'Heather Family']} ],
+        names: [{ language: "fr", names:[ 'Èricacées' ]}],
+        names: [{ language: "de", names:[ 'Heidekrautgewächse' ]}],
+        names: [{ language: "es", names:[ 'Heath Family' ]}],
+        names: [{ language: "pt", names:[ 'Heath Family' ]}],
+        names: [{ language: "it", names:[ 'Heath Family' ]}],
         species: 4250,
         genera: 124,
         pollinators: [ { language: "en", names: ['Bees', 'Hummingbirds'] } ],
@@ -446,7 +562,7 @@ export const taxa = [
             }
         ],
         members: ['Vaccinium oxycoccos', 'Vaccinium', 'Rhododendron', 'Arbutus unedo', 'Erica'],
-        "eol-entry": "https://eol.org/pages/4267/overview",
-        "wiki-entry": "https://en.wikipedia.org/wiki/Ericaceae"
+        eol: "http://eol.org/pages/4267/overview",
+        wiki: "https://en.wikipedia.org/wiki/Ericaceae"
     }
 ];
