@@ -61,4 +61,7 @@
     .taxon-highlight {
         font-size: 1.2em;  
     }
+    .btn {
+        padding: .375em .75em;
+    }
 }
