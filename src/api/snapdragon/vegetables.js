@@ -380,6 +380,11 @@ export const vegetables = [
           "eol_preferred": true
         },
         {
+          "vernacularName": "Rábano",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "Rabanete",
           "language": "pt",
           "eol_preferred": true
@@ -510,6 +515,11 @@ export const vegetables = [
         {
           "vernacularName": "Calabaza",
           "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Zucchini",
+          "language": "it",
           "eol_preferred": true
         },
         {
@@ -1108,6 +1118,14 @@ export const vegetables = [
         {
           "vernacularName": "Haricot écarlate",
           "language": "fr"
+        },
+        {
+          "vernacularName": "Ayocote",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Fagiolo americano",
+          "language": "it"
         },
         {
           "vernacularName": "Phaseolus lunatus",
@@ -1764,8 +1782,18 @@ export const vegetables = [
           "eol_preferred": true
         },
         {
+          "vernacularName": "Carota",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "Carotte cultivée",
           "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Cenoura",
+          "language": "pt",
           "eol_preferred": true
         }
       ],
@@ -1926,6 +1954,11 @@ export const vegetables = [
         {
           "vernacularName": "cavolo",
           "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Col silvestre",
+          "language": "es",
           "eol_preferred": true
         },
         {
