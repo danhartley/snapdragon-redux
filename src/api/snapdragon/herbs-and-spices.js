@@ -134,6 +134,31 @@ export const herbsAndSpices = [
           "vernacularName": "sweet marjoram",
           "language": "en",
           "eol_preferred": true
+        },
+        {
+          "vernacularName": "Süßer Majoran",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Mejorana",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Origan marjolaine",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Maggiorana",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Manjerona",
+          "language": "pt",
+          "eol_preferred": true
         }
       ],
       "taxonomy": {
@@ -1202,7 +1227,7 @@ export const herbsAndSpices = [
           "language": "en"
         },
         {
-          "vernacularName": "laurel",
+          "vernacularName": "lauro",
           "language": "es",
           "eol_preferred": true
         },
@@ -2232,6 +2257,10 @@ export const herbsAndSpices = [
           "language": "fr"
         },
         {
+          "vernacularName": "Mentastro verde",
+          "language": "it"
+        },
+        {
           "vernacularName": "Hortelã-verde",
           "language": "pt",
           "eol_preferred": true
@@ -2556,6 +2585,22 @@ export const herbsAndSpices = [
         {
           "vernacularName": "Plainleaf Parsley",
           "language": "en"
+        },
+        {
+          "vernacularName": "Garten-Petersilie",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Perejil",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Persil cultivé",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Prezzemolo",
+          "language": "it"
         },
         {
           "vernacularName": "Salsa",
