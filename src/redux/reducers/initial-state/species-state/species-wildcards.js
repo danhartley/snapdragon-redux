@@ -4,6 +4,7 @@ import { utils } from 'utils/utils';
 import { getSpeciesEpithets } from 'redux/reducers/initial-state/species-state/species-epithets';
 import { getSpeciesCultivars } from 'redux/reducers/initial-state/species-state/species-cultivars';
 import { syndromes } from 'api/snapdragon/syndromes';
+import { definitions } from 'api/snapdragon/glossary';
 
 export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
 
@@ -67,6 +68,7 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
     }
 
     const itemGroup = itemGroups[collection.currentRound - 1];          
+    const words = utils.shuffleArray(definitions);
     
     if(utils.isIterable(wildcardLayouts)) {
         itemGroup.forEach(index => {
@@ -75,6 +77,8 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
                     wildcardLayoutsForGroup.push(layout);
                 }
             });
+            const definitionLayout = { name: 'screen-definitions', type: 'test', score: 1, screens: [wildcards[3][0], wildcards[3][1]], itemIndex: index, definition: words.pop() };
+            wildcardLayoutsForGroup.push(definitionLayout);
         });
     }
 

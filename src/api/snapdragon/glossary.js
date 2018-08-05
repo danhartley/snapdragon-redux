@@ -1,4 +1,4 @@
-export const glossary = [
+export const definitions = [
     {
         term: "Type species",
         definition: "A type species (species typica) is the species name with which the name of a genus or subgenus is considered to be permanently taxonomically associated, i.e., the species that contains the biological type specimen(s).",
@@ -151,11 +151,11 @@ export const glossary = [
     },
     {
         term: 'Annual',
-        definition: ''
+        definition: 'A plant that completes its life cycle, from germination to the production of seeds, within one year, and then dies.'
     },
     {
         term: 'Herbaceous',
-        definition: ''
+        definition: 'Plants that have no persistent woody stem above ground. Herbaceous plants may be annuals, biennials or perennials.'
     },
     {
         term: 'Angiosperm',

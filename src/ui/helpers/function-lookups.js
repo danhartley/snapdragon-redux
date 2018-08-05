@@ -12,7 +12,7 @@ import { renderNameEntry } from 'ui/screens/text-entry/leaf-text-entry';
 import { runTask } from 'ui/screens/command';
 import { renderSpeciesCollection } from 'ui/screens/lists/species';
 import { renderRadioButtons } from 'ui/screens/multichoice/radiobuttons';
-import { renderFamilyDescriptions } from 'ui/screens/multichoice/family-descriptions';
+import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 import { renderCompleteText } from 'ui/screens/text-entry/text-complete';
 import { renderCultivarCard } from 'ui/screens/cards/cultivar-card';
 import { renderWildcard } from 'ui/screens/cards/wildcard-card';
@@ -30,15 +30,16 @@ const functions = [
     { name: 'command', func: [renderSpecimenTiles, runTask] },
     { name: 'leaf-image', func: renderLeafTile },
     { name: 'leaf-text', func: renderNameEntry },
-    { name: 'epithet', func: renderRadioButtons },
+    { name: 'epithet', func: renderMultiStrips },
+    { name: 'definition', func: renderMultiStrips },
     { name: 'family', func: renderRadioButtons },
     { name: 'cultivar-match', func: renderRadioButtons },
-    { name: 'family-strips', func: renderFamilyDescriptions },
+    { name: 'family-strips', func: renderMultiStrips },
     { name: 'taxon-card', func: renderTaxonCard },
     { name: 'text-complete', func: renderCompleteText },
     { name: 'cultivar-card', func: renderCultivarCard },
     { name: 'wildcard-card', func: renderWildcard },
-    { name: 'wildcard-match', func: renderFamilyDescriptions },
+    { name: 'wildcard-match', func: renderMultiStrips },
 ];
 
 export const funcByName = name => {
