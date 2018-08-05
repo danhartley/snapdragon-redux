@@ -32,6 +32,8 @@ export const renderCollections = (counter) => {
 
     const language = config.languages.filter(l => l.lang === config.language)[0];
 
+    collection.description = collection.description || '';
+
     renderTemplate({ species, config, collection, language }, template.content, parent);
 
     const selectedCollection = collections.find(collection => collection.selected);

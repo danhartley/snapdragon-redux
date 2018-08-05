@@ -2100,7 +2100,13 @@ export const vegetables = [
         "class": "Magnoliopsida"
       },
       "family": "Solanaceae",
-      "eolName": "Solanum tuberosum L."
+      "eolName": "Solanum tuberosum L.",
+      "wikiSearchTerms": [
+        {
+          term: 'Solanum tuberosum',
+          "language": "pt"
+        }
+      ]
     },
     {
       "id": 1084354,

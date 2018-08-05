@@ -172,6 +172,7 @@ hr {
 
 .card.species {
   background-color: var(--snap-species-card-background);
+  margin: .5em 0 1em 0;
 }
 
 .card.taxon {
@@ -560,7 +561,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   width: fit-content;
   background-color: var(--snap-block-light);
   color: var(--snap-text-dark);
-  margin: .2em 0;
+  margin: .2em .1em;
   padding: .1em .4em;
   letter-spacing: .1em;
   border-radius: .2em;  

@@ -30,6 +30,11 @@ export const renderInput = (config, screen, question, callbackTime, item, render
         scoreHandler('text', score, null, callbackTime, renderHeader);
     });
 
+    const name = clone.querySelector('.js-txt-name');
+    if(name) name.innerHTML = item.name;
+    const vernacular = clone.querySelector('.js-txt-vernacular');
+    if(vernacular) vernacular.innerHTML = itemProperties.vernacularName(item, config);
+
     const parent = DOM.rightBody;
     parent.innerHTML = '';
     
@@ -60,8 +65,6 @@ const renderPortrait = item => {
 const renderLandscape = (item, config, collection) => {
     
     const pool = (item.name + itemProperties.vernacularName(item, config)).replace(/\s/g,'').toLowerCase();
-
-    //const pool = (R.take(1,utils.shuffleArray(collection.items)).map(item => item.name).join('') + answer).replace(/\s/g,'').toLowerCase();
 
     let blocks = '';
 

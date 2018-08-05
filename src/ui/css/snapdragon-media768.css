@@ -17,6 +17,10 @@
         height: 75vh;
     }
 
+    .card.species {
+        margin: 0 0 1em 0;
+    }
+
     .cultivar.card .scrollable {
         height: 40vh;
       }      
@@ -94,10 +98,6 @@
     .letterbox-entry button:disabled {
         color: var(--snap-text-dark);
     }
-
-    /* .radio-buttons label {
-        width: 75%;
-    } */
 
     .block {
         font-size: 1.4em;
