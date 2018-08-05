@@ -4,14 +4,17 @@ import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { taxa } from 'api/snapdragon/taxa';
+import { epithets } from 'api/botanical-latin';
+import { definitions } from 'api/snapdragon/glossary';
+import { itemProperties } from 'ui/helpers/data-checking';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { syndromes } from 'api/snapdragon/syndromes';
-import familyTemplate from 'ui/screens/multichoice/family-descriptions.html';
+import familyTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import questionCard from 'ui/screens/common/question-template.html';
 import familyCard from 'ui/screens/cards/taxon-card-template.html';
 
-export const renderFamilyDescriptions = (collection) => {
+export const renderMultiStrips = (collection) => {
 
     const item = collection.items[collection.itemIndex];
 
@@ -25,6 +28,8 @@ export const renderFamilyDescriptions = (collection) => {
     template.innerHTML = familyTemplate;
 
     const families = taxa.filter(taxon => taxon.taxon === 'family');
+
+    let description = config.isPortraitMode ? `${item.family}` : `Which of the above describes the ${item.family}`;
 
     const familyFlavours = config.isPortraitMode 
     ? [ 'match-family-to-quick-id' ] 
@@ -45,8 +50,6 @@ export const renderFamilyDescriptions = (collection) => {
         parent = document.querySelector('.right-body .snapdragon-container');
 
         template.innerHTML = familyCard;
-
-        const description = config.isPortraitMode ? `${item.family}` : `Which of the above describes the ${item.family}`;
 
         const context = { description };
 
@@ -129,6 +132,46 @@ export const renderFamilyDescriptions = (collection) => {
 
         const questionText = `Which set of traits best fits the ${item.family}?`;
         const answers = utils.shuffleArray([question, ...traits]);
+
+        render(questionText, question, answers);
+    }
+
+    if(layout.screens.find(screen => screen.name === 'epithet')) {
+        
+        if(!layout.epithet) return;
+
+        const epithet = itemProperties.speciesName(item.name);
+
+        description = config.isPortraitMode ? `In the species ${item.name}, what does \'${epithet}\' mean?` : `In the species ${item.name}, what is the meaning of the epithet ${epithet}?`;
+
+        const number = config.isPortraitMode ? 6 : 6;
+        
+        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(epithets)).filter(e => !R.contains(e.en, layout.epithet.en))).map(e => e.en.join(', '));
+        const questionText = config.isPortraitMode 
+            ? `Tap to match the epithet`
+            : `Click to match the epithet`
+        const question = layout.epithet.en[0];
+        const answers = utils.shuffleArray([question, ...alternatives]);
+
+        render(questionText, question, answers);
+    }
+
+    if(layout.screens.find(screen => screen.name === 'definition')) {
+        
+        if(!layout.definition) return;
+
+        const { term, definition } = layout.definition;
+
+        description = `What is the meaning of the word \'${term}?\'`;
+
+        const number = config.isPortraitMode ? 2 : 5;
+        
+        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(definitions)).filter(d => !R.contains(d.term, term))).map(d => d.definition);
+        const questionText = config.isPortraitMode 
+            ? `Tap the correct definition`
+            : `Click the correct definition`
+        const question = definition;
+        const answers = utils.shuffleArray([question, ...alternatives]);
 
         render(questionText, question, answers);
     }

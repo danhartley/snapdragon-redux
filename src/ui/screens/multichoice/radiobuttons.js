@@ -7,7 +7,6 @@ import { scoreHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 import { utils } from 'utils/utils';
-import { epithets } from 'api/botanical-latin';
 import { taxa } from 'api/snapdragon/taxa';
 import radiobuttonsTemplate from 'ui/screens/multichoice/radiobuttons-template.html';
 
@@ -25,7 +24,6 @@ export const renderRadioButtons = (collection) => {
     let indices = config.isPortraitMode ? [3,4] : [4,5];
 
     const species = item.name;
-    const epithet = itemProperties.speciesName(species);
     const family = item.family;
     const families = taxa.filter(taxon => taxon.taxon === 'family');
     const otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name !== item.family));
@@ -120,20 +118,6 @@ export const renderRadioButtons = (collection) => {
         question = { question: commonFamilyName, binomial: item.name };
         answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
         
-        render();
-    }
-
-    if(layout.screens.find(screen => screen.name === 'epithet')) {
-        
-        if(!layout.epithet) return;
-
-        indices = config.isPortraitMode ? [3,4] : [5,6];
-        
-        randomAnswers = R.take(indices[0], R.take(indices[1], utils.shuffleArray(epithets)).filter(e => !R.contains(e.en, layout.epithet.en))).map(e => e.en);
-        description = `In the species ${species}, what is the meaning of the epithet ${epithet}?`;
-        question = { question: layout.epithet.en[0], binomial: item.name };
-        answers = utils.shuffleArray([layout.epithet.en, ...randomAnswers]);
-
         render();
     }
 

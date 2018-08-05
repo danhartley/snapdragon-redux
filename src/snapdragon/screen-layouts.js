@@ -92,9 +92,16 @@ const leafName = {
 
 const epithets = {
   name: 'epithet',
-  headers: { long: 'Latin epithet recall', short: 'Select the epithet name'},
+  // headers: { long: 'Latin epithet recall', short: 'Select the epithet name'},
   domain: 'collection',
-  question: 'Select the epithet',
+  // question: 'Select the epithet',
+};
+
+const definitions = {
+  name: 'definition',
+  // headers: { long: 'Definition recall', short: 'Select the definition name'},
+  domain: 'collection',
+  // question: 'Select the definition',
 };
 
 const family = {
@@ -153,8 +160,10 @@ export const screens = {
   leafName,
 
   epithets,
+  definitions,
   family,
   familyStrips,
+  
   taxon,
   textComplete,
   cultivarCard,
