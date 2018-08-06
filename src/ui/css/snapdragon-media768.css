@@ -7,11 +7,7 @@
     div.taxon-data {
         margin: 0;
     }
-/* 
-    .data-box {
-        margin: .5em 0 0 0;
-    } */
-      
+
     .scrollable {
         overflow-y: scroll;
         height: 75vh;
@@ -49,6 +45,10 @@
         grid-column: 3;
     }
 
+    .table-header th {
+        font-size: .9em;
+    }
+
     .tiles {
         height: 100%;
     }
@@ -77,10 +77,10 @@
         padding: .5em;
       }
 
-      .letterbox-entry div {
-          margin: .5em 0;
-          width: 100%;
-      }
+    .letterbox-entry div {
+        margin: .5em 0;
+        width: 100%;
+    }
 
     .letterbox-entry input {
         width: 75%;
