@@ -16,10 +16,10 @@ export const renderHeaders = counter => {
     if(!layout) return;
 
     const questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
-    const progressBar = document.querySelector('progress');
+    const progressBar = document.querySelector('.js-right-grid progress');
 
     progressBar.max = questionCount;
-    progressBar.value = layout.progressIndex;
+    progressBar.value = layout.progressIndex || progressBar.value;
 
     if(layout.type === 'test') {
         const question = `Question ${ layout.progressIndex } of ${questionCount}`;
