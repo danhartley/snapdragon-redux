@@ -22,12 +22,11 @@ export const renderHeaders = counter => {
     document.querySelector('progress').max = questionCount;
 
     if(layout.type === 'test') {
-        const offset = lessonPlan.layouts.filter(layout => layout.type === 'revision').length;
-        const question = `Question ${ layout.exerciseIndex } of ${questionCount}`;
+        const question = `Question ${ layout.progressIndex } of ${questionCount}`;
         setTimeout(()=>{
             if(counter.lesson === 'active') {
                 DOM.rightHeaderTxt.innerHTML = question;
-                document.querySelector('progress').value = layout.layoutIndex - offset;
+                document.querySelector('progress').value = layout.progressIndex;
             } else {
                 DOM.rightHeaderTxt.innerHTML = '';
             }
