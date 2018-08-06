@@ -77,8 +77,10 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
                     wildcardLayoutsForGroup.push(layout);
                 }
             });
-            const definitionLayout = { name: 'screen-definitions', type: 'test', score: 1, screens: [wildcards[3][0], wildcards[3][1]], itemIndex: index, definition: words.pop() };
-            wildcardLayoutsForGroup.push(definitionLayout);
+            if(index === 0) {
+                const definitionLayout = { name: 'screen-definitions', type: 'test', score: 1, screens: [wildcards[3][0], wildcards[3][1]], itemIndex: index, definition: words.pop() };
+                wildcardLayoutsForGroup.push(definitionLayout);
+            }            
         });
     }
 
