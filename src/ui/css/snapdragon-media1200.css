@@ -16,6 +16,19 @@
       grid-column: 4;
   }
 
+  .list-group-collection .scrollable {
+    height: 80vh;
+  }
+
+  .table-header th {
+    font-size: 1em;
+  }
+/* 
+  .list-group-item img {
+    width: 4em;
+    height: 4em;
+  } */
+
   .header-text {
     font-size: 1.15em;
   }

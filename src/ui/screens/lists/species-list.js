@@ -58,10 +58,10 @@ export const renderSpeciesCollectionList = (collection, append = false) => {
     const header1 = document.createElement('th');
     const header2 = document.createElement('th');
     const header3 = document.createElement('th');
-    header0.innerHTML = '';
+    header0.innerHTML = '<div></div>';
     header1.innerHTML = 'Species';
     header2.innerHTML = 'Family';
-    header3.innerHTML = 'Learnt';
+    header3.innerHTML = '<span class="icon"><i class="fas fa-check-circle"></i></span>';
     row.appendChild(header0);
     row.appendChild(header1);
     if(!config.isPortraitMode) {

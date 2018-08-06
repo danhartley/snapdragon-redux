@@ -8,15 +8,17 @@
                 <div>
                     <img id="{{ item.name }}" src="https://media.eol.org/content/{{ item.image }}" alt="{{ item.name }}">
                 </div>
-                <div class="js-list-item-link" style="flex:3">
-                    <span>{{ item.name }}</span>
-                    <br/>
-                    <span class="capitalise">{{ item.vernacularName }}</span>
+                <div class="js-list-item-link">
+                    <div>
+                        <span>{{ item.name }}</span>
+                        <br/>
+                        <span class="capitalise">{{ item.vernacularName }}</span>
+                    </div>
                 </div>
-                <div style="flex:2" class="landscape">
+                <div class="landscape">
                     <span>{{ item.family }}</span>
                 </div>
-                <div style="flex:1" class="landscape">
+                <div class="landscape">
                     <span>---</span>
                 </div>
             </li>
