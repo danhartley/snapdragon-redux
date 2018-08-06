@@ -202,11 +202,12 @@ hr {
                         "footer";
 }
 
-.right-grid {
+.left-grid, .right-grid {
   grid-template-rows: 1fr .3em 10fr 1fr;
 }
 
-.grid-flow-rows {
+
+.left-body , .right-body {
   display: grid;
   grid-auto-flow: row;
 }

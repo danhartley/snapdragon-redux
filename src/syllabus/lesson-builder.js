@@ -25,7 +25,7 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
     shuffledLessonLayouts.forEach( (layout, i) => {
         layout.layoutIndex = layoutIndex;
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
-        layout.exerciseIndex = i + 1;
+        layout.progressIndex = i + 1;
         layoutIndex = layoutIndex + 1;
     });
 

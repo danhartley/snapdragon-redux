@@ -18,9 +18,6 @@ export const renderCard = (collection) => {
     item.questionCount = lessonPlan.questionCount;
     item.layoutCount = lessonPlan.layoutCount;
     
-    document.querySelector('progress').max = item.questionCount;
-    document.querySelector('progress').value = 0;
-
     const screen = layout.screens.filter(el => el.name === 'species-card')[0];
 
     if(!screen) return;

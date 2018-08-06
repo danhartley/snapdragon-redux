@@ -74,7 +74,7 @@ test('when user selects a collection state should be populated', () => {
         ],
         layoutIndex: 0,
         itemIndex: 0,
-        exerciseIndex: 1,
+        progressIndex: 1,
         lessonName: 'Lesson 1',
         levelName: 'Level 1'
         },
@@ -96,7 +96,7 @@ test('when user selects a collection state should be populated', () => {
         ],
         layoutIndex: 1,
         itemIndex: 1,
-        exerciseIndex: 1,
+        progressIndex: 1,
         lessonName: 'Lesson 1',
         levelName: 'Level 1'
         },
@@ -119,7 +119,7 @@ test('when user selects a collection state should be populated', () => {
         ],
         layoutIndex: 2,
         itemIndex: 0,
-        exerciseIndex: 2,
+        progressIndex: 2,
         lessonName: 'Lesson 1',
         levelName: 'Level 1'
         },
@@ -142,7 +142,7 @@ test('when user selects a collection state should be populated', () => {
         ],
         layoutIndex: 3,
         itemIndex: 1,
-        exerciseIndex: 2,
+        progressIndex: 2,
         lessonName: 'Lesson 1',
         levelName: 'Level 1'
         },
@@ -165,7 +165,7 @@ test('when user selects a collection state should be populated', () => {
         ],
         layoutIndex: 4,
         itemIndex: 0,
-        exerciseIndex: 3,
+        progressIndex: 3,
         lessonName: 'Lesson 1',
         levelName: 'Level 1'
         },
@@ -188,7 +188,7 @@ test('when user selects a collection state should be populated', () => {
         ],
         layoutIndex: 5,
         itemIndex: 1,
-        exerciseIndex: 3,
+        progressIndex: 3,
         lessonName: 'Lesson 1',
         levelName: 'Level 1'
         },
@@ -211,7 +211,7 @@ test('when user selects a collection state should be populated', () => {
         ],
         layoutIndex: 6,
         itemIndex: 0,
-        exerciseIndex: 4,
+        progressIndex: 4,
         lessonName: 'Lesson 1',
         levelName: 'Level 1'
         },
@@ -246,7 +246,7 @@ test('when user selects a collection state should be populated', () => {
         ],
         layoutIndex: 7,
         itemIndex: 1,
-        exerciseIndex: 4,
+        progressIndex: 4,
         lessonName: 'Lesson 1',
         levelName: 'Level 1'
         }

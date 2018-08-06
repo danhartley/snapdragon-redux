@@ -5,8 +5,6 @@ export const renderHeaders = counter => {
     
     const { collection, lessonPlan, config } = store.getState();
 
-    const item = (collection && collection.items) ? collection.items[collection.itemIndex] : null;
-
     const title = 'Snapdragon - learn the planet';
 
     DOM.leftHeaderTxt.innerHTML = title;
@@ -18,30 +16,23 @@ export const renderHeaders = counter => {
     if(!layout) return;
 
     const questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
+    const progressBar = document.querySelector('progress');
 
-    document.querySelector('progress').max = questionCount;
+    progressBar.max = questionCount;
+    progressBar.value = layout.progressIndex;
 
     if(layout.type === 'test') {
-        const offset = lessonPlan.layouts.filter(layout => layout.type === 'revision').length;
-        const question = `Question ${ layout.exerciseIndex } of ${questionCount}`;
-        setTimeout(()=>{
-            if(counter.lesson === 'active') {
-                DOM.rightHeaderTxt.innerHTML = question;
-                document.querySelector('progress').value = layout.layoutIndex - offset;
-            } else {
-                DOM.rightHeaderTxt.innerHTML = '';
-            }
+        const question = `Question ${ layout.progressIndex } of ${questionCount}`;
+        setTimeout(() => {
+            DOM.rightHeaderTxt.innerHTML = counter.lesson === 'active' ? question : '';
         });
     } else if(layout.type === 'revision') {
         DOM.rightHeaderTxt.innerHTML = (counter.lesson === 'active' && collection) ? collection.name : title;
     }
-
     if(layout.screens.find(el => el.name === 'summary')) {
         DOM.rightHeaderTxt.innerHTML = 'Lesson progress';
     }
-
     if(counter.index === 0 && counter.lesson === 'inactive') {
         DOM.rightHeaderTxt.innerHTML = '';
     }
-  
 };
