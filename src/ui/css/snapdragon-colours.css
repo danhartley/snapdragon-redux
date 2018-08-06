@@ -5,6 +5,7 @@
     
     --snap-primary: rgba(52, 105, 23, .3);
     --snap-collection: rgba(2, 43, 84, .7);
+    
     --snap-option: rgba(158, 201, 239, .6);
     --snap-lesson: rgb(52, 105, 23);
   
@@ -17,7 +18,6 @@
     --snap-success: rgb(41, 108, 44);
     
     --snap-link: rgb(0, 42, 84);
-    /* --snap-info-background: rgb(79, 106, 36); */
     --snap-info-background: rgba(26, 67, 91, .5);
     --snap-id-background: rgb(193, 149, 167);
     --snap-id-background: rgba(150, 43, 110,.8);
@@ -35,6 +35,7 @@
     --snap-taxon-card-background: rgba(52, 105, 23,.1);
     --snap-species-card-background: rgba(194, 183, 91,.2);
     --snap-strips-background: rgba(182, 201, 213,.5);
+    --snap-list-header: rgba(95, 125, 89,.8);
     --snap-list-background: rgba(125,125,125,.1);
     --snap-list-alt-background: rgba(185, 200, 204,.3);
   

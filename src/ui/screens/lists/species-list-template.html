@@ -2,7 +2,7 @@
     <div class="list-group-header js-list-header">
         <div>{{ collection.header }}</div>
     </div>
-    <div class="list-group-container scrollable js-list-item-container">
+    <div class="scrollable js-list-item-container">
         <ul class="list-group list-group-flush" data-repeat-item="{{ collection.items }}">
             <li class="list-group-item js-list-item" data-toggle="modal" data-target="#imageModal" data-image="{{ item.image }}" data-id="{{ item.name }}">
                 <div>
@@ -17,10 +17,7 @@
                     <span>{{ item.family }}</span>
                 </div>
                 <div style="flex:1" class="landscape">
-                    <span></span>
-                </div>
-                <div style="flex:1" class="landscape">
-                    <span>wiki</span>
+                    <span>---</span>
                 </div>
             </li>
         </ul>    

@@ -6,6 +6,7 @@ import { selectHandler } from 'ui/helpers/handlers';
 import { subscription } from 'redux/subscriptions';
 import { renderSpeciesCollection } from 'ui/screens/lists/species';
 import { elem } from 'ui/helpers/class-behaviour';
+import { speciesCount } from 'gbif/gbif';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
 
 export const renderCollections = (counter) => {
@@ -41,11 +42,15 @@ export const renderCollections = (counter) => {
 
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
+    const speciesCountNode = document.querySelector('.js-species-count');
+
+    speciesCount(speciesCountNode);
 
     if(selectedCollection) {
         document.querySelectorAll(`[name="${selectedCollection.name}"]`)[0].classList.add('active');
         elem.show(learningActionBtn);
         elem.hide(learningActionBtnPlaceholder);
+        elem.hide(speciesCountNode);
     }
 
     selectHandler('.dropdown.js-collections .dropdown-item', (id) => {
@@ -56,8 +61,9 @@ export const renderCollections = (counter) => {
         config = { ...config, ...{ collection: { id: collectionId }} };
         elem.show(learningActionBtn);
         elem.hide(learningActionBtnPlaceholder);
+        elem.hide(speciesCountNode);
         if(!config.isPortraitMode)
-            actions.boundSelectCollection(collection);
+            actions.boundSelectCollection(collection);        
     });
 
     const activeLanguage = '#' + config.language;
@@ -86,5 +92,5 @@ export const renderCollections = (counter) => {
         if(svg) {
             svg.classList.remove('active-icon');
         }
-    };
+    };    
 };
