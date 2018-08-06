@@ -162,9 +162,9 @@ export const renderMultiStrips = (collection) => {
 
         const { term, definition } = layout.definition;
 
-        description = `What is the meaning of the word \'${term}?\'`;
+        description = config.isPortraitMode ? `What does ${term} mean?` : `What is the meaning of the word \'${term}?\'`;
 
-        const number = config.isPortraitMode ? 2 : 5;
+        const number = config.isPortraitMode ? 4 : 5;
         
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(definitions)).filter(d => !R.contains(d.term, term))).map(d => d.definition);
         const questionText = config.isPortraitMode 
