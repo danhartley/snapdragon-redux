@@ -9,6 +9,8 @@ export const renderHeaders = counter => {
 
     DOM.leftHeaderTxt.innerHTML = title;
 
+    if(config.isPortraitMode) DOM.rightHeaderTxt.innerHTML = title;
+
     if(!lessonPlan) return;
 
     const layout = lessonPlan.layouts[counter.index];
