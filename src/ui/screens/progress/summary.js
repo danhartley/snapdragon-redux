@@ -7,8 +7,6 @@ import summaryTemplate from 'ui/screens/progress/summary-template.html';
 
 export const renderSummary = (history) => {
 
-    document.querySelector('progress').value = 0;
-
     const { score, collection, config: currentConfig } = store.getState();
 
     const config = { ...currentConfig };
