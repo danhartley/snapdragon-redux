@@ -1,10 +1,12 @@
 import { DOM } from 'ui/dom';
+import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { modalImageHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
-import speciesTemplate from 'ui/screens/lists/species-list-template.html';
+// import speciesTemplate from 'ui/screens/lists/species-list-template.html';
+import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 
 export const renderSpeciesCollectionList = (collection, append = false) => {
 
@@ -47,6 +49,29 @@ export const renderSpeciesCollectionList = (collection, append = false) => {
             item.classList.add('active');
         })
     });
+
+    const tbody = document.querySelector('.species-table tbody');
+    
+    const row = document.createElement('tr');
+    row.classList.add('table-header');
+    const header0 = document.createElement('th');
+    const header1 = document.createElement('th');
+    const header2 = document.createElement('th');
+    const header3 = document.createElement('th');
+    header0.innerHTML = '';
+    header1.innerHTML = 'Species';
+    header2.innerHTML = 'Family';
+    header3.innerHTML = 'Learnt';
+    row.appendChild(header0);
+    row.appendChild(header1);
+    if(!config.isPortraitMode) {
+        row.appendChild(header2);
+        row.appendChild(header3);
+    } 
+
+    tbody.insertBefore(row, tbody.children[0]);
+
+    utils.makeSortable(document);
 
     const listItemImages = document.querySelectorAll('.js-list-item');
 

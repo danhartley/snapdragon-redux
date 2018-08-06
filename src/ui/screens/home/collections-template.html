@@ -23,11 +23,12 @@
         </div>                        
     </div>
 
-    <div class="card align-left">
-        <div class="selected-collection js-selected-collection">Collection: <span>{{ collection.name }}</span></div>
-        <div class="selected-language js-selected-language">Language: <span>{{ language.name }}</span></div>
-        <div class="selected-collection js-selected-description"><span>{{ collection.description }}</span></div>
-    </div>
+    <div class="card selected-collection align-left">
+        <div class="js-selected-collection">Collection: <span>{{ collection.name }}</span></div>
+        <div class="js-selected-language">Language: <span>{{ language.name }}</span></div>
+        <div class="js-selected-description"><span>{{ collection.description }}</span></div>
+        <div class="species-count js-species-count toggle-content is-visible"></div>
+    </div>    
 
     <div class="action-update">
         <div></div>
