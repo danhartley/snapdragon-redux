@@ -157,6 +157,9 @@ hr {
 .list-group-collection {
   flex: auto;
   flex-grow: 1;
+}
+
+.list-group-collection .scrollable {
   height: 70vh;
 }
 
