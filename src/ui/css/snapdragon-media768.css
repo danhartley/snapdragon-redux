@@ -38,15 +38,8 @@
     }
 
     .grid {        
-        grid-template-columns: 10fr .1em 10fr;  
+        grid-template-columns: 10fr .25em 10fr;  
     }
-
-    /* .left-grid {
-        grid-template-rows: 1fr 10fr 1fr;
-        grid-template-areas:"header"
-                            "squares"
-                            "footer"
-    } */
 
     .left-grid {
         grid-column: 1;
