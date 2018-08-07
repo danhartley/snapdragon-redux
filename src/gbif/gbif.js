@@ -14,6 +14,6 @@ export const speciesCount = (gbifNode) => {
     fetch(url)
         .then(json => json.json())
         .then(species => {
-            gbifNode.innerHTML = `<span>${ species.count.toLocaleString() }</span> species have been formally described. <p>How many can you identify?</p>`;
+            gbifNode.innerHTML = `<span>${ species.count.toLocaleString() }</span> species have been formally described.`;
         });
 };

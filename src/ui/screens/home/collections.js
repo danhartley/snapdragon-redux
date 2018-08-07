@@ -44,13 +44,11 @@ export const renderCollections = (counter) => {
     const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
     const speciesCountNode = document.querySelector('.js-species-count');
 
-    speciesCount(speciesCountNode);
-
     if(selectedCollection) {
         document.querySelectorAll(`[name="${selectedCollection.name}"]`)[0].classList.add('active');
         elem.show(learningActionBtn);
         elem.hide(learningActionBtnPlaceholder);
-        elem.hide(speciesCountNode);
+        speciesCountNode.style.display = 'none';
     }
 
     selectHandler('.dropdown.js-collections .dropdown-item', (id) => {
@@ -61,7 +59,7 @@ export const renderCollections = (counter) => {
         config = { ...config, ...{ collection: { id: collectionId }} };
         elem.show(learningActionBtn);
         elem.hide(learningActionBtnPlaceholder);
-        elem.hide(speciesCountNode);
+        speciesCountNode.style.display = 'none';
         if(!config.isPortraitMode)
             actions.boundSelectCollection(collection);        
     });
