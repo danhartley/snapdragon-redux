@@ -52,6 +52,10 @@ hr {
 
 /* variables */
 
+.no-progress {
+  background-color: var(--snap-no-progress-bar);
+}
+
 .btn {
   color: var(--snap-text-light);
   padding: .175em .75em;
@@ -502,6 +506,9 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   margin: .5em 0;
   font-size: .9em;
 }
+.species-count span {
+  font-size: 1.2em;
+}
 
 .selected-collection div:nth-child(2) {
   text-transform: capitalize;
@@ -744,7 +751,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .table-header {
   color: var(--snap-text-light);
   background-color: var(--snap-list-header);
-  border-radius: .25em .25em 0 0;
+  /* border-radius: .25em .25em 0 0; */
   line-height: 1.5;
   cursor: pointer;
   display: flex;
@@ -831,11 +838,11 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   text-align: left;
 }
 
-.toggle-content {
+.toggle-content, .toggle-content * {
 	display: none;
 }
 
-.toggle-content.is-visible {
+.toggle-content.is-visible, .toggle-content.is-visible * {
 	display: block;
 }
 
@@ -873,8 +880,42 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .question-container {
-  /* color: var(--snap-text-light); */
   border: .05em solid var(--snap-question-background);
   padding: 1em;
   border-radius: .2rem;
 }
+
+/* typewriter */
+
+.typewriter span {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* .line-1{
+  border-right: 2px solid rgba(255,255,255,.75);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.anim-typewriter {
+animation: typewriter 3s steps(44) 1s 1 normal both,
+           blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+@keyframes typewriter{
+  from { width: 0; }
+  to { width: 30em; }
+}
+
+@keyframes blinkTextCursor{
+  from { border-right-color: rgba(255,255,255,.75); }
+  to { border-right-color: transparent; }
+} */

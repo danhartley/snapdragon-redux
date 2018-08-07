@@ -27,6 +27,7 @@
 
     --snap-progress-bg: rgb(45,45,45);
     --snap-progress-bar: rgb(233, 232, 111);
+    --snap-no-progress-bar: rgb(48, 94, 37);
   
     --snap-block-light: rgba(255, 255, 255,.9);
 
