@@ -145,7 +145,7 @@
         display: none;
     }
 
-    .landscape {
+    .landscape, .landscape * {
         display: inline;
     }
 
