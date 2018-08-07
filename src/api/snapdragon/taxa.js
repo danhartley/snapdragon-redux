@@ -580,12 +580,36 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Flower parts in 5\'s. Hairy leaves.',
-                identification: 'Herbs, shrubs and trees. Members include the Forget-me-nots (Myosotis).'
+                summary: 'Herbs, shrubs and trees. Members include the Forget-me-nots (Myosotis).',
+                identification: 'Flower parts in 5\'s. Hairy leaves.'
             }
         ],
-        members: ['Borago officinalis', 'Myosotis', 'Echium vulgare)'],
+        members: ['Borago officinalis', 'Myosotis', 'Echium vulgare'],
         eol: "http://eol.org/pages/4301/overview",
         wiki: "https://en.wikipedia.org/wiki/Boraginaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Caryophyllaceae',
+        thumb: "http://media.eol.org/content/2012/05/23/08/72167_88_88.jpg",
+        names: [ { language: "en", names: ['Carnation Family', 'Pink Family', 'Chickweed Family']} ,
+        { language: "fr", names:[ 'Caryophyllacées' ]},
+        { language: "de", names:[ 'Nelkengewächse' ]},
+        { language: "es", names:[ 'Carnation Family' ]},
+        { language: "pt", names:[ 'Cariofiláceas' ]},
+        { language: "it", names:[ 'Cariofillacee' ]}],
+        species:  2625,
+        genera: 81,
+        pollinators: [ { language: "en", names: ['Bees', 'Butterflies'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Flowering plants mainly from the Mediterranean. Members include, pinks, carnations and campions.',
+                identification: 'Rough stems. Opposite leaves. Flower parts in 5\'s with slipt ends.'
+            }
+        ],
+        members: ['Dianthus caryophyllus'],
+        eol: "http://eol.org/pages/4229/overview",
+        wiki: "https://en.wikipedia.org/wiki/Caryophyllaceae"
     }
 ];

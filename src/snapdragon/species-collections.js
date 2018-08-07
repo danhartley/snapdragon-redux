@@ -1,13 +1,13 @@
 import * as R from 'ramda';
 
-import { herbs1 } from 'api/snapdragon/herbs1';
-import { uk1 } from 'api/snapdragon/uk1';
-import { med1 } from 'api/snapdragon/med1';
+// import { herbs1 } from 'api/snapdragon/herbs1';
+// import { uk1 } from 'api/snapdragon/uk1';
+// import { med1 } from 'api/snapdragon/med1';
 import { herbsAndSpices } from 'api/snapdragon/herbs-and-spices';
 import { vegetables } from 'api/snapdragon/vegetables';
 import { fruit } from 'api/snapdragon/fruit';
 import { insects } from 'api/snapdragon/insects';
-import { exam } from 'api/snapdragon/exam';
+import { nationalFlowers } from 'api/snapdragon/national-flowers';
 
 import { leaf } from 'api/leaf';
 
@@ -16,7 +16,7 @@ export const collections = [
         id: 1,
         type: 'species',
         name: 'Herbs',
-        items: herbs1,
+        // items: herbs1,
         eol_name: 'Herbs 1',
         eol_link: 'https://eol.org/collections/139051'
     },
@@ -24,7 +24,7 @@ export const collections = [
         id: 2,
         type: 'species',
         name: 'UK Woodland',
-        items: uk1,
+        // items: uk1,
         eol_name: 'UK 1 - Woodland',
         eol_link: 'https://eol.org/collections/139458'
     },
@@ -32,7 +32,7 @@ export const collections = [
         id: 3,
         type: 'species',
         name: 'Mediterranean',
-        items: med1,
+        // items: med1,
         eol_name: 'Mediterranean 1',
         eol_link: 'https://eol.org/collections/139572'
     },
@@ -71,10 +71,10 @@ export const collections = [
     {
         id: 8,
         type: 'species',
-        name: 'Test',
-        items: exam,
-        eol_name: 'Test',
-        eol_link: 'https://eol.org/collections/140297'
+        name: 'National Flowers',
+        items: nationalFlowers,
+        eol_name: 'National Flowers',
+        eol_link: 'https://eol.org/collections/140523'
     },
     {
         id: 101,

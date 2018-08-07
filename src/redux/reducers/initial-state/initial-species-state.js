@@ -2,11 +2,11 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { config } from 'syllabus/lesson-config';
-import { kitchenGarden, Exam } from 'snapdragon/species-lessons';
+import { kitchenGarden, nationalFlowers } from 'snapdragon/species-lessons';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { getFamilies } from 'redux/reducers/initial-state/species-state/species-taxa';
 
-const collections = [ kitchenGarden ];
+const collections = [ kitchenGarden, nationalFlowers ];
 
 const initCollection = (rawCollection = collections[0]) => {
     let prepCollection = rawCollection.type === 'skill'
