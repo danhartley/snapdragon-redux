@@ -42,13 +42,13 @@ export const renderCollections = (counter) => {
 
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
-    const speciesCountNode = document.querySelector('.js-species-count');
+    const typewriter = document.querySelector('.typewriter-container');
 
     if(selectedCollection) {
         document.querySelectorAll(`[name="${selectedCollection.name}"]`)[0].classList.add('active');
         elem.show(learningActionBtn);
         elem.hide(learningActionBtnPlaceholder);
-        speciesCountNode.style.display = 'none';
+        typewriter.style.display = 'none';
     }
 
     selectHandler('.dropdown.js-collections .dropdown-item', (id) => {
@@ -59,7 +59,7 @@ export const renderCollections = (counter) => {
         config = { ...config, ...{ collection: { id: collectionId }} };
         elem.show(learningActionBtn);
         elem.hide(learningActionBtnPlaceholder);
-        speciesCountNode.style.display = 'none';
+        typewriter.style.display = 'none';
         if(!config.isPortraitMode)
             actions.boundSelectCollection(collection);        
     });
@@ -90,5 +90,5 @@ export const renderCollections = (counter) => {
         if(svg) {
             svg.classList.remove('active-icon');
         }
-    };    
+    };
 };

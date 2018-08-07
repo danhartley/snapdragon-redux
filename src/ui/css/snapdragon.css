@@ -843,7 +843,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .toggle-content.is-visible, .toggle-content.is-visible * {
-	display: block;
+	display: initial;
 }
 
 .radio-buttons-group {
@@ -885,11 +885,20 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   border-radius: .2rem;
 }
 
-/* typewriter */
+.typewriter-container {  
+  padding: 1em 1.5em;
+  color: var(--snap-type-colour);
+  font-size: 1em;
+  border: .05em solid var(--snap-border-dark);
+}
 
-.typewriter span {
-  border-right: .05em solid;
-  animation: caret 1s steps(1) infinite;
+.typewriter-container div {
+  font-size: 1.1em;
+}
+
+.typewriter-container span {
+  border-right: .05em solid var(--snap-type-colour);
+  animation: caret 1s steps(1) infinite;  
 }
 
 @keyframes caret {
@@ -897,25 +906,3 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
     border-color: transparent;
   }
 }
-
-/* .line-1{
-  border-right: 2px solid rgba(255,255,255,.75);
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.anim-typewriter {
-animation: typewriter 3s steps(44) 1s 1 normal both,
-           blinkTextCursor 500ms steps(44) infinite normal;
-}
-
-@keyframes typewriter{
-  from { width: 0; }
-  to { width: 30em; }
-}
-
-@keyframes blinkTextCursor{
-  from { border-right-color: rgba(255,255,255,.75); }
-  to { border-right-color: transparent; }
-} */
