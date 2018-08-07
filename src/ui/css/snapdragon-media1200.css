@@ -16,8 +16,16 @@
       grid-column: 4;
   }
 
-  .list-group-collection .scrollable {
+  /* .list-group-collection .scrollable {
     height: 80vh;
+  } */
+  
+  /* .scrollable {
+    height: 80vh;
+  } */
+  
+  .species-table {
+    font-size: 1em;
   }
 
   .table-header th {
