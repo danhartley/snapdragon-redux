@@ -732,7 +732,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .list-group {
   padding: 0;
-  /* border: 1px solid var(--snap-collection); */
 }
 
 .list-group-header {
@@ -849,7 +848,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .radio-buttons label {
   color: var(--snap-text-dark);
   background-color: var(--snap-strips-background);
-  /* background-color: var(--snap-question-radio); */
   width: 100%;
 }
 
