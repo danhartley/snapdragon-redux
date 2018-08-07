@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded',function(event){
     function typeWriter(text, i, fnCallback) {
       if (i < (text.length)) {        
         setTimeout(function() {
-          document.querySelector(".js-typewriter").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+          const typewriter = document.querySelector(".js-typewriter");
+          if(typewriter)
+            typewriter.innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
         });
         setTimeout(function() {
           typeWriter(text, i + 1, fnCallback)
@@ -15,16 +17,20 @@ document.addEventListener('DOMContentLoaded',function(event){
       }
     }
      function StartTextAnimation(i) {
-       if (typeof dataText[i] == 'undefined'){
+
+      const typewriter = document.querySelector(".js-typewriter");
+      if(!typewriter) return;
+
+      if (typeof dataText[i] == 'undefined'){
           setTimeout(function() {
             StartTextAnimation(0);
           }, 20000);
-       }
-      if (dataText && i < dataText[i].length) {
-       typeWriter(dataText[i], 0, function(){
-         StartTextAnimation(i + 1);
-       });
       }
+      if (dataText && i < dataText[i].length) {
+      typeWriter(dataText[i], 0, function(){
+        StartTextAnimation(i + 1);
+      });
+}
     }
     // start the text animation
     const url = `https://api.gbif.org/v1/species/search?advanced=true&dataset_key=7ddf754f-d193-4cc9-b351-99906754a03b&facet=rank&facet=dataset_key&facet=constituent_key&facet=highertaxon_key&facet=name_type&facet=status&facet=issue&facet=origin&facetMultiselect=true&issue.facetLimit=100&locale=en&name_type.facetLimit=100&rank=SPECIES&rank.facetLimit=100&status=ACCEPTED&status.facetLimit=100`;

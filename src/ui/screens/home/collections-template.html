@@ -1,26 +1,28 @@
-<div class="snapdragon-container snapdragon-dropdowns">
-    <div class="snapdragon-options">
-        <div class="dropdown collections js-collections">
-            <button class="btn btn-collection dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Pick a course
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <div data-repeat-collection="{{ species }}">
-                    <a class="dropdown-item" id="{{ collection.id }}" name="{{ collection.name }}" href="#">{{ collection.name }} ({{ collection.items.length }})</a>
+<div class="snapdragon-container">
+    <div>
+        <div class="snapdragon-options">
+            <div class="dropdown collections js-collections">
+                <button class="btn btn-collection dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Pick a course
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div data-repeat-collection="{{ species }}">
+                        <a class="dropdown-item" id="{{ collection.id }}" name="{{ collection.name }}" href="#">{{ collection.name }} ({{ collection.items.length }})</a>
+                    </div>
                 </div>
-            </div>
-        </div>                        
-    </div>
+            </div>                        
+        </div>
 
-    <div class="snapdragon-options">
-        <div class="dropdown languages js-languages">
-            <button class="btn btn-option dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Languages
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ config.languages }}">
-                <a class="dropdown-item" id="{{ language.lang }}" href="#">{{ language.name }}</a>
-            </div>
-        </div>                        
+        <div class="snapdragon-options">
+            <div class="dropdown languages js-languages">
+                <button class="btn btn-option dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Languages
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ config.languages }}">
+                    <a class="dropdown-item" id="{{ language.lang }}" href="#">{{ language.name }}</a>
+                </div>
+            </div>                        
+        </div>
     </div>
 
     <div class="card selected-collection align-left">
@@ -32,9 +34,11 @@
         </div>
     </div>    
 
-    <div class="action-update">
-        <div></div>
-        <button class="btn btn-light js-lesson-btn-action toggle-content">Begin lesson</button>
-        <button class="btn btn-placeholder js-lesson-btn-action-placeholder toggle-content is-visible">Pick a course to begin...</button>
+    <div class="action-update-container">
+        <div class="action-update">
+            <div></div>
+            <button class="btn btn-light js-lesson-btn-action toggle-content">Begin lesson</button>
+            <button class="btn btn-placeholder js-lesson-btn-action-placeholder toggle-content is-visible">Pick a course to begin...</button>
+        </div>
     </div>
 </div>            

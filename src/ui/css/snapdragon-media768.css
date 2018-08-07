@@ -10,12 +10,20 @@
 
     .scrollable {
         overflow-y: scroll;
-        height: 75vh;
+        height: 80vh;
     }
 
-    .card.species {
-        margin: 0 0 1em 0;
+    .species-table {
+        font-size: .9em;
     }
+
+    .snapdragon-options .btn, .snapdragon-options .dropdown-menu.show {
+        width: 15em;
+    }
+
+    /* .card.species {
+        margin: 0 0 1em 0;
+    } */
 
     .cultivar.card .scrollable {
         height: 40vh;
@@ -46,7 +54,7 @@
     }
 
     .table-header th {
-        font-size: .9em;
+        font-size: 1em;
     }
 
     .tiles {
@@ -145,8 +153,8 @@
         display: none;
     }
 
-    .landscape, .landscape * {
-        display: inline;
+    .landscape {
+        display: initial;
     }
 
     .snapdragon-container {

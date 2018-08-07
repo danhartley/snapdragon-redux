@@ -74,8 +74,15 @@ hr {
   background-color: var(--snap-lesson);
 }
 
+.dropdown-item {
+  padding: 0;
+  text-align: center;
+}
+
 .collections a.dropdown-item.active, .js-collections a.dropdown-item:active {
-  background-color: var(--snap-collection);
+  color: var(--snap-text-light);
+  background-color: var(--snap-collection-active);
+  padding: .25em 0;
 }
 
 .levels a.dropdown-item.active, .js-levels a.dropdown-item:active {
@@ -163,13 +170,16 @@ hr {
   flex-grow: 1;
 }
 
-.list-group-collection .scrollable {
+/* .list-group-collection .scrollable {
+  height: 70vh;
+} */
+
+.scrollable {
   height: 70vh;
 }
 
 .card {
   flex: auto;
-  margin: 0 0 1em 0;
   display: flex;
   flex-direction: column;
   padding: .5em;
@@ -180,7 +190,6 @@ hr {
 
 .card.species {
   background-color: var(--snap-species-card-background);
-  margin: .5em 0 1em 0;
 }
 
 .card.taxon {
@@ -502,9 +511,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   border: 1px solid var(--snap-border-dark);
 }
 
-.selected-collection div {
+.selected-collection > div:nth-child(1), .selected-collection > div:nth-child(2), .selected-collection > div:nth-child(3) {
   margin: .5em 0;
-  font-size: .9em;
 }
 .species-count span {
   font-size: 1.2em;
@@ -527,7 +535,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   cursor: pointer;
 }
 
-.snapdragon-dropdowns .dropdown div {
+.dropdown div {
   white-space: nowrap;
   margin: .25em 0;
 }
@@ -536,10 +544,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   background-color: var(--snap-primary-hover);
 }
 
-.collection:active {
+/* .collection:active {
   color: var(--snap-text-dark);
   background-color: var(--snap-primary-active);
-}
+} */
 
 .collection button {
   color: var(--snap-text-dark);
@@ -655,6 +663,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   flex-direction: row;
 }
 
+.action-update-container {
+  padding: 1em 0 0 0;
+}
+
 .action-update button {
   width: 100%;
 }
@@ -726,14 +738,14 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .portrait {
-  display: inline;
+  display: initial;
 }
 
 .portrait-grid {
   display: grid;
 }
 
-.landscape, .landscape * {
+.landscape {
   display: none;
 }
 
