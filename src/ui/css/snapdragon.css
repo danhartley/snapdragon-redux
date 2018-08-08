@@ -763,7 +763,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .table-header {
   color: var(--snap-text-light);
   background-color: var(--snap-list-header);
-  /* border-radius: .25em .25em 0 0; */
   line-height: 1.5;
   cursor: pointer;
   display: flex;
@@ -777,7 +776,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   padding: .375em 0em;
 }
 
-.table-header th:nth-child(2):after, .table-header th:nth-child(3):after, .table-header th:nth-child(4):after {
+.table-header th:nth-child(2):after, .table-header th:nth-child(3):after, .table-header th:nth-child(4):after, .table-header th:nth-child(5):after {
   display: inline-block;
   width: 0;
   height: 0;
@@ -809,7 +808,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  padding: .20em .5em;
+  padding: .20em 0em;
+  /* padding: .20em .5em; */
   border-left: .05em solid var(--snap-list-header) !important;
   border-right: .05em solid var(--snap-list-header) !important;
 }
@@ -830,11 +830,15 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .table-header th:nth-child(1) > div {
-  width: 5em;
+  width: 4.5em;
   height: 1px;
 }
 
 .table-header th:nth-child(2), .list-group-item td:nth-child(2) {
+  display: none;
+}
+
+.table-header th:nth-child(3), .list-group-item td:nth-child(3) {
   flex: 4;
   display: flex;
   align-items: center;

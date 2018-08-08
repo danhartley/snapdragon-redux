@@ -99,8 +99,10 @@ Array.prototype.concatAll = function() {
     return self.indexOf(value) === index;
 };
 
-const sortBy = (arr, prop) => {
-  return arr.sort((a, b) => parseFloat(a[prop]) - parseFloat(b[prop]));
+const sortBy = (arr, prop, dir = 'asc') => {
+  return dir === 'asc' 
+    ? arr.sort((a, b) => parseFloat(a[prop]) - parseFloat(b[prop]))
+    : arr.sort((a, b) => parseFloat(b[prop]) - parseFloat(a[prop]));
 };
 
 const calcItemIndex = (offSet, moduleSize, index) => {

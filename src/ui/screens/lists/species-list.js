@@ -18,6 +18,8 @@ export const renderSpeciesCollectionList = collection => {
     collection.items.forEach(item => { 
         item.image = item.images[0];
         item.vernacularName = itemProperties.vernacularName(item, config);
+        item.passes = item.passes || 0;
+        item.fails = item.fails || 0;
     });
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
@@ -45,15 +47,25 @@ export const renderSpeciesCollectionList = collection => {
     const header1 = document.createElement('th');
     const header2 = document.createElement('th');
     const header3 = document.createElement('th');
+    const header4 = document.createElement('th');
+    const header5 = document.createElement('th');
     header0.innerHTML = '<div></div>';
-    header1.innerHTML = 'Species';
-    header2.innerHTML = 'Family';
-    header3.innerHTML = '<span class="icon"><i class="fas fa-check-circle"></i></span>';
-    row.appendChild(header0);
-    row.appendChild(header1);
-    if(!config.isPortraitMode) {
+    header1.innerHTML = '#';
+    header2.innerHTML = 'Species';
+    header3.innerHTML = 'Family';
+    header4.innerHTML = '<span class="icon"><i class="fas fa-check-circle"></i></span>';
+    header5.innerHTML = '<span class="icon"><i class="fas fa-times-circle"></i></span>';
+    if(config.isPortraitMode) {
+        row.appendChild(header0);    
         row.appendChild(header2);
+    }
+    else {
+        row.appendChild(header0);
+        row.appendChild(header1);
+        row.appendChild(header2);    
         row.appendChild(header3);
+        row.appendChild(header4);
+        row.appendChild(header5);
     } 
 
     tbody.insertBefore(row, tbody.children[0]);
@@ -65,7 +77,9 @@ export const renderSpeciesCollectionList = collection => {
     listItemImages.forEach(itemImage => { modalImageHandler(itemImage); });    
 
     const continueLearningActionBtn = document.querySelector('.js-species-list-btn-action');
-    
+  
+    // Portrait mode only
+
     if(continueLearningActionBtn) {
         continueLearningActionBtn.addEventListener('click', () => {
             actions.boundChangeCollection(config);

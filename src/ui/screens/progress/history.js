@@ -1,9 +1,10 @@
+import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 
 export const renderHistory = (history) => {
             
-    const { collection } = store.getState();
+    const { collection, score } = store.getState();
 
     if(!history) return null;
 
@@ -31,6 +32,30 @@ export const renderHistory = (history) => {
     requiringRevision.header = 'Species requiring revision';
     learnt.header = 'Species correctly answered';
 
+    const reducer = (acc, curr) => {
+        return { ...acc,  ...curr };
+    }
+
+    history.scores.push(score);
+
+    const passesTotals = history.scores.map(score => score.passesTotals);
+    const failsTotals = history.scores.map(score => score.failsTotals);
+
+    const passes = passesTotals.reduce(reducer, {});
+    const fails = failsTotals.reduce(reducer, {});
+    const all = { ...passes, ...fails };
+
+    const items = utils.sortBy(collection.items.filter(item => all[item.id]), 'snapIndex', 'desc');
     
-    renderSpeciesCollectionList(requiringRevision);
+    items.forEach(item => { 
+        item.passes = passes[item.id] || 0;
+        item.fails = fails[item.id] || 0;
+    });
+
+    const tested =  { ...collection, ...{ items: items }};
+
+    // const tested =  { ...collection, ...{ items: collection.items.filter(item => score.passesTotals[item.id] || score.failsTotals[item.id]) }};
+    
+    renderSpeciesCollectionList(tested);
+    // renderSpeciesCollectionList(requiringRevision);
 }    

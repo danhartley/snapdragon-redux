@@ -34,14 +34,16 @@ export const score = (state = null, action) => {
             if(score.success) {
                 score.correct++;
                 score.passes.push({ itemId: score.itemId, taxon: score.taxon, binomial: score.binomial, question: score.question, answer: score.answer });
-                if(score.passes.map(pass => pass.itemId).length > 0)
+                if(score.passes.map(pass => pass.itemId).length > 0) {
                     score.passesTotals = score.passes.map(pass => pass.itemId).reduce(utils.itemCountReducer, {});
+                }
             }
             else {
                 score.wrong++;
                 score.fails.push({ itemId: score.itemId, taxon: score.taxon, binomial: score.binomial, question: score.question, answer: score.answer });
-                if(score.fails.map(fail => fail.itemId).length > 0)
+                if(score.fails.map(fail => fail.itemId).length > 0) {
                     score.failsTotals = score.fails.map(fail => fail.itemId).reduce(utils.itemCountReducer, {});
+                }
             }
             return { ...state, ...score};
         case types.CHANGE_COLLECTION:
