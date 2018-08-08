@@ -26,10 +26,6 @@ import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
 import { renderSnapdragon } from "./ui/screens/cards/snapdragon";
 
-// import { kitchenGarden } from 'snapdragon/species-lessons';
-
-// console.log(kitchenGarden);
-
 setTimeout(()=>{
 
     const { config: currentConfig, counter: currentCounter } = store.getState();

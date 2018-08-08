@@ -605,11 +605,35 @@ export const taxa = [
             {
                 language: 'en',
                 summary: 'Flowering plants mainly from the Mediterranean. Members include, pinks, carnations and campions.',
-                identification: 'Rough stems. Opposite leaves. Flower parts in 5\'s with slipt ends.'
+                identification: 'Rough stems. Opposite leaves. Flower parts in 5\'s with ragged ends.'
             }
         ],
         members: ['Dianthus caryophyllus'],
         eol: "http://eol.org/pages/4229/overview",
         wiki: "https://en.wikipedia.org/wiki/Caryophyllaceae"
-    }
+    },
+    {
+        taxon: 'family',
+        name: 'Iridaceae',
+        thumb: "http://media.eol.org/content/2009/07/24/04/85444_98_68.jpg",
+        names: [ { language: "en", names: ['Iris Family']} ,
+        { language: "fr", names:[ 'Iridacées' ]},
+        { language: "de", names:[ 'Schwertliliengewächse' ]},
+        { language: "es", names:[ 'Iridáceas' ]},
+        { language: "pt", names:[ 'Iris' ]},
+        { language: "it", names:[ 'Iris Family' ]}],
+        species:  2244,
+        genera: 66,
+        pollinators: [ { language: "en", names: ['Solitary Bees', 'Butterflies', 'Moths', 'Birds', 'Flies'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Widespread family of perennial plants, with a bulb, corm or rhizome. The plants grow erect, and have leaves that are generally grass-like, with a sharp central fold.',
+                identification: 'Lily-like flowers, grass-like leaves.'
+            }
+        ],
+        members: ['Dianthus caryophyllus'],
+        eol: "http://eol.org/pages/4183/overview",
+        wiki: "https://en.wikipedia.org/wiki/Iridaceae"
+    },
 ];

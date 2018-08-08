@@ -33,5 +33,4 @@ export const renderHistory = (history) => {
 
     
     renderSpeciesCollectionList(requiringRevision);
-    // renderSpeciesCollectionList(learnt, true);
 }    
