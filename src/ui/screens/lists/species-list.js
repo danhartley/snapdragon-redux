@@ -5,10 +5,9 @@ import { actions } from 'redux/actions/action-creators';
 import { modalImageHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
-// import speciesTemplate from 'ui/screens/lists/species-list-template.html';
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 
-export const renderSpeciesCollectionList = (collection, append = false) => {
+export const renderSpeciesCollectionList = collection => {
 
     const { config: currentConfig, layout } = store.getState();
 
@@ -21,22 +20,10 @@ export const renderSpeciesCollectionList = (collection, append = false) => {
         item.vernacularName = itemProperties.vernacularName(item, config);
     });
 
-    let parent;
-
-    // if(append) {
-    //     template.innerHTML = speciesTemplate;
-    //     const clone = document.importNode(template.content, true);
-    //     const listGroup = clone.querySelector('.list-group');
-    //     parent = document.querySelector('.list-group-collection');
-    //     parent.innerHTML += listGroup;
-    //     const scrollableArea = document.querySelector('.scrollable');
-    //     scrollableArea.style.height = scrollableArea.offsetHeight / 2 + 'px';
-    // } else {
-        parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
-        parent.innerHTML = '<div class="snapdragon-container species-list js-species-list"></div>';
-        parent = parent.querySelector('.snapdragon-container.js-species-list');
-        template.innerHTML = speciesTemplate;
-    // }
+    const parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
+    parent.innerHTML = '<div class="snapdragon-container species-list js-species-list"></div>';
+    parent = parent.querySelector('.snapdragon-container.js-species-list');
+    template.innerHTML = speciesTemplate;
 
     renderTemplate({ collection }, template.content, parent);
 
