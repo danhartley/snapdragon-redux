@@ -86,7 +86,7 @@ const layouts = [
     expect(srtd).toEqual([{id:1},{id:2},{id:3},{id:4}]);
   });
 
-  test.only('given initial index and module size should return the next index', () => {
+  test('given initial index and module size should return the next index', () => {
     // [0,1,2]
     // [3,4,5]
     // [6,7,8]
@@ -153,4 +153,10 @@ const layouts = [
     index = 15;
     itemIndex = utils.calcItemIndex(offSet, moduleSize, index);
     expect(itemIndex).toBe(3);
+  });
+
+  test.only('should tally up pass or fail counts by item id', () => {
+    const arr = [ 1,2,2,3,3,3,7 ];
+    const ids = arr.reduce(utils.itemCountReducer, {});
+    expect(ids).toEqual({1:1,2:2,3:3,7:1});
   });

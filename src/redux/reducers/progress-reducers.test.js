@@ -26,7 +26,9 @@ test('score state should reflect correct answer', () => {
       success: true,
       wrong: 0,
       fails: [],
-      passes: [{ taxon: 'name', binomial: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Anagallis arvensis'}]
+      itemId: 1,
+      passes: [{ itemId: 1, taxon: 'name', binomial: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Anagallis arvensis'}],
+      passesTotals: { 1: 1 }
     }
   
     const action = {
@@ -36,7 +38,8 @@ test('score state should reflect correct answer', () => {
         binomial: 'Anagallis arvensis',
         question: 'Anagallis arvensis',
         answer: 'Anagallis arvensis',
-        success: true
+        success: true,
+        itemId: 1
       }
     }
   
@@ -70,8 +73,10 @@ test('score state should reflect correct answer', () => {
       answer: 'Malva sylvestris',
       success: false,
       wrong: 1,
-      fails: [{ taxon: 'name', binomial: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Malva sylvestris'}],
-      passes: []
+      itemId: 1,
+      fails: [{ itemId: 1, taxon: 'name', binomial: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Malva sylvestris'}],
+      passes: [],
+      failsTotals: { 1: 1 }
     }
   
     Object.freeze(stateBefore);
@@ -84,7 +89,8 @@ test('score state should reflect correct answer', () => {
         binomial: 'Anagallis arvensis',
         question: 'Anagallis arvensis',
         answer: 'Malva sylvestris',
-        success: false
+        success: false,
+        itemId: 1        
       }
     }
   

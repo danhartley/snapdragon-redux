@@ -128,14 +128,20 @@ const comparer = function(idx, asc) { return function(a, b) { return function(v1
 
 const makeSortable = document => {
   Array.from(document.querySelectorAll('th')).forEach(function(th) { th.addEventListener('click', function() {
-        var table = th.closest('table');
-        Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
-            .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
-            .forEach(function(tr) { table.appendChild(tr) });
-    })
-});
-
+          var table = th.closest('table');
+          Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
+              .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+              .forEach(function(tr) { table.appendChild(tr) });
+      })
+  });
 };
+
+const itemCountReducer = (acc, curr) => {
+  acc[curr.toString()] = acc[curr.toString()] || 0;
+  acc[curr.toString()]++;
+  return acc;
+};
+
 export const utils = {
   log,
   encodeQuery,
@@ -151,5 +157,6 @@ export const utils = {
   calcItemIndex,
   isIterable,
   capitaliseFirst,
-  makeSortable
+  makeSortable,
+  itemCountReducer
 };

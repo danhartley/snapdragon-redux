@@ -61,7 +61,7 @@ export const renderCompleteText = (collection) => {
 
     renderTemplate({ description, vernacular, answers, genus, species }, template.content, parent);
 
-    const score = { binomial: item.name, question: item[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length };
+    const score = { itemId: item.id, binomial: item.name, question: item[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length };
 
     const updateScreen = (colour, correct, answer) => {
 
