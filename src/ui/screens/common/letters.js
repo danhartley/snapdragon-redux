@@ -62,6 +62,7 @@ export const renderLetters = (letters, item, callbackTime) => {
                     DOM.rightHeader.classList.add(colour);
                     response.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
                     response.layoutCount = lessonPlan.layouts.length;
+                    reponse.itemId = item.id;
                     setTimeout(()=>{
                         actions.boundUpdateScore(response);
                     }, callbackTime);
@@ -97,6 +98,7 @@ export const renderLetters = (letters, item, callbackTime) => {
         DOM.rightHeader.classList.add(colour);
         response.questionCount = lessonPlan.questionCount;
         response.layoutCount = lessonPlan.layoutCount;
+        reponse.itemId = item.id;
         setTimeout(()=>{
             actions.boundUpdateScore(response);
         }, callbackTime);

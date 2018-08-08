@@ -9,7 +9,7 @@ import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 
 export const renderSpeciesCollectionList = collection => {
 
-    const { config: currentConfig, layout } = store.getState();
+    const { config: currentConfig, score, history } = store.getState();
 
     const config = { ...currentConfig, ...{ collection: { id: collection.id } } };
 
@@ -20,7 +20,7 @@ export const renderSpeciesCollectionList = collection => {
         item.vernacularName = itemProperties.vernacularName(item, config);
     });
 
-    const parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
+    let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
     parent.innerHTML = '<div class="snapdragon-container species-list js-species-list"></div>';
     parent = parent.querySelector('.snapdragon-container.js-species-list');
     template.innerHTML = speciesTemplate;

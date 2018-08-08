@@ -23,10 +23,10 @@ export const scoreHandler = (type, score, callback, callbackTime, renderHeader) 
 
 const scoringHandler = (score, callback, callbackTime, renderHeader) => {
     
-    const { question, answer, event, layoutCount } = score;
+    const { itemId, question, answer, event, layoutCount } = score;
 
     const btn = event.target;
-    const response = { ...question, answer };
+    const response = { itemId, ...question, answer };
 
     let correctAnswer;
     let wrongAnswer;
