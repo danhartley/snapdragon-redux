@@ -21,7 +21,7 @@ export const kitchenGarden = {
 export const nationalFlowers = { 
     id: 2, name: 'National Flowers', 
     type: 'species',
-    description: 'Short lesson on the national flowers of Germany, Italy, Portugal, Spain, France and England. Useful as a quick-start introdution to Snapdragon.',
+    description: 'Short lesson on the national flowers of Germany, Italy, Portugal, Spain, France and England. Useful as a quick-start introduction to Snapdragon.',
     items:[ ...nationalFlowersLessons[0].items ],
     collections: ['National Flowers'],
     moduleSize: 6
