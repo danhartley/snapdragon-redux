@@ -8,13 +8,16 @@
                 <div>
                     <img id="{{ item.name }}" src="https://media.eol.org/content/{{ item.image }}" alt="{{ item.name }}">
                 </div>
-                <div class="js-list-item-link">
+                <div>
+                    <span>{{ item.snapIndex }}</span>
+                </div>
+                <!-- <div class="js-list-item-link"> -->
                     <div>
                         <span>{{ item.name }}</span>
                         <br/>
                         <span class="capitalise">{{ item.vernacularName }}</span>
                     </div>
-                </div>
+                <!-- </div> -->
                 <div class="landscape">
                     <span>{{ item.family }}</span>
                 </div>

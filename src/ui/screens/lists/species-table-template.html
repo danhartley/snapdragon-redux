@@ -8,6 +8,9 @@
                         <td>
                             <img id="{{ item.name }}" src="https://media.eol.org/content/{{ item.image }}" alt="{{ item.name }}">
                         </td>
+                        <td class="landscape">
+                            <span>{{ item.snapIndex }}</span>
+                        </td>
                         <td class="js-list-item-link">
                             <div>
                                 <span>{{ item.name }}</span>
@@ -19,7 +22,10 @@
                             <span>{{ item.family }}</span>
                         </td>
                         <td class="landscape">
-                            <span>---</span>
+                            <span>{{ item.passes }}</span>
+                        </td>
+                        <td class="landscape">
+                            <span>{{ item.fails }}</span>
                         </td>
                     </tr>
                 </tbody>

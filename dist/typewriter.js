@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded',function(event){
             StartTextAnimation(0);
           }, 20000);
       }
-      if (dataText && i < dataText[i].length) {
+      if (dataText && dataText[i] && i < dataText[i].length) {
       typeWriter(dataText[i], 0, function(){
         StartTextAnimation(i + 1);
       });

@@ -79,8 +79,9 @@ export const renderCollections = (counter) => {
         if(config.isPortraitMode) {
             actions.boundSelectCollection(collection);
         }
-        else
+        else {
             actions.boundChangeCollection(config);
+        }
         updateNavIcons();        
     });
 
