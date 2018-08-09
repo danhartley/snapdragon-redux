@@ -70,7 +70,7 @@ export const renderRadioButtons = (collection) => {
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
         const identification = families.find(f => f.name === family).descriptions[0].identification;
-        description = `${species.toUpperCase()} belongs to a family whose Quick ID is '${identification}' What is the name of this FAMILY?`;
+        description = `${species.toUpperCase()} belongs to a family whose Quick ID is '${identification}' What is the name of this FAMILY?`;        
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 
@@ -81,7 +81,7 @@ export const renderRadioButtons = (collection) => {
 
         indices = config.isPortraitMode ? [3,4] : [5,6];
 
-        description = `To which of the following families does the species ${species.toUpperCase()} belong?`;
+        description = `To which FAMILY does the species ${species.toUpperCase()} belong?`;        
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
         
@@ -92,7 +92,7 @@ export const renderRadioButtons = (collection) => {
 
         indices = config.isPortraitMode ? [3,4] : [5,6];
         
-        description = `To which of the following families does the species ${species.toUpperCase()} belong?`;
+        description = `To which FAMILY does the species ${species.toUpperCase()} belong?`;
         question = { question: commonFamilyName, binomial: item.name };
         answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
         
@@ -103,7 +103,7 @@ export const renderRadioButtons = (collection) => {
 
         indices = config.isPortraitMode ? [3,4] : [5,6];
 
-        description = `Which of the following common family names matches the latin name ${family.toUpperCase()}?`;
+        description = `Which of the following common FAMILY names matches the latin name ${family.toUpperCase()}?`;
         question = { question: commonFamilyName, binomial: item.name };
         answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
         
@@ -114,7 +114,7 @@ export const renderRadioButtons = (collection) => {
 
         indices = config.isPortraitMode ? [3,4] : [5,6];
 
-        description = `Which of the following common family names matches the latin name ${family.toUpperCase()}?`;
+        description = `Which of the following common FAMILY names matches the latin name ${family.toUpperCase()}?`;
         question = { question: commonFamilyName, binomial: item.name };
         answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
         

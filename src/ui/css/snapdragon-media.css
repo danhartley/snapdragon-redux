@@ -85,7 +85,7 @@
       
     .table-header th:nth-child(1) > div {
         width: 4.5em;
-    }
+    }    
 }
 @media (min-width: 1024px) {
       .table-header th:nth-child(1), .table-row td:nth-child(1) {
@@ -136,4 +136,11 @@
       .typewriter-container {
         margin: 4em;
       }      
+}
+
+@media (min-height: 736px) {
+    .taxon.card .landscape {
+        display: initial;
+        font-size: .9em;
+    }
 }
