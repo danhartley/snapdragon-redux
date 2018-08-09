@@ -72,7 +72,8 @@ export const collections = [
         id: 8,
         type: 'species',
         name: 'National Flowers',
-        items: R.take(4, nationalFlowers),
+        items: nationalFlowers,
+        // items: R.take(4, nationalFlowers),
         eol_name: 'National Flowers',
         eol_link: 'https://eol.org/collections/140523'
     },

@@ -80,8 +80,6 @@ export const history = (state = null, action) => {
 
             return history;
             
-            // case types.CHANGE_COLLECTION:
-            //     return state;
             default:
             return state;
     }
