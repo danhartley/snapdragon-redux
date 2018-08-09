@@ -45,9 +45,9 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
 
     const summaryLayout = isPortraitMode 
         ? {
-            name: 'summary',
+            name: 'history',
             screens: [{ 
-                name: 'summary', 
+                name: 'history', 
                 domain: 'history', 
                 parent: DOM.rightBody
             }],

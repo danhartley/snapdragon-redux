@@ -3,20 +3,14 @@
     <div class="scrollable js-list-item-container">
         <div>
             <table class="species-table list-group list-group-flush">
-                <tbody data-repeat-item="{{ collection.items }}">
+                <tbody  data-repeat-item="{{ collection.items }}">
                     <tr class="table-row js-list-item" data-toggle="modal" data-target="#imageModal" data-image="{{ item.image }}" data-id="{{ item.name }}">
-                        <td>
-                            <span>{{ item.snapIndex }}</span>
-                        </td>
                         <td>
                             <img id="{{ item.name }}" src="https://media.eol.org/content/{{ item.image }}" alt="{{ item.name }}">
                         </td>
                         <td>
                             <span style="flex:1" class="capitalise">{{ item.vernacularName }}</span>
                             <span style="flex:1" class="species-card-name">{{ item.binomial }}</span>
-                        </td>
-                        <td>
-                            <span>{{ item.family }}</span>
                         </td>
                         <td>
                             <span>{{ item.passes }}</span>

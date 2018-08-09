@@ -496,7 +496,7 @@ export const taxa = [
         taxon: 'family',
         name: 'Vitaceae',
         thumb: "https://media.eol.org/content/2013/12/08/20/40721_88_88.jpg",
-        names: [ { language: "en", names: ['Grape Family','Wild Grape Family']} ,
+        names: [ { language: "en", names: ['Grape family','Wild grape family']} ,
         { language: "fr", names:[ 'Grape Family' ]},
         { language: "de", names:[ 'Grape Family' ]},
         { language: "es", names:[ 'Grape Family' ]},

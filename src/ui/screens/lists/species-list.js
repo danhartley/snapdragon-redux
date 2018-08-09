@@ -6,10 +6,11 @@ import { modalImageHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
+import speciesPortraitTemplate from 'ui/screens/lists/species-table-portrait-template.html';
 
-export const renderSpeciesCollectionList = collection => {
+export const renderSpeciesCollectionList = (collection) => {
 
-    const { config: currentConfig, score, history } = store.getState();
+    const { config: currentConfig } = store.getState();
 
     const config = { ...currentConfig, ...{ collection: { id: collection.id } } };
 
@@ -18,54 +19,47 @@ export const renderSpeciesCollectionList = collection => {
     collection.items.forEach(item => { 
         item.image = item.images[0];
         item.vernacularName = itemProperties.vernacularName(item, config);
-        item.passes = item.passes || 0;
-        item.fails = item.fails || 0;
+        item.passes = item.passes || '--';
+        item.fails = item.fails || '--';
+        item.binomial = config.isPortraitMode ? itemProperties.trimLatinName(item.name) : item.name
     });
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
     parent.innerHTML = '<div class="snapdragon-container species-list js-species-list"></div>';
     parent = parent.querySelector('.snapdragon-container.js-species-list');
-    template.innerHTML = speciesTemplate;
+    template.innerHTML = config.isPortraitMode ? speciesPortraitTemplate : speciesTemplate;
 
     renderTemplate({ collection }, template.content, parent);
-
-    const listItems = document.querySelectorAll('.js-list-item .js-list-item-link');
-
-    listItems.forEach(listItem => {        
-        listItem.addEventListener('click', (event) => {
-            listItems.forEach(item => item.classList.remove('active'));
-            const item = event.target;
-            item.classList.add('active');
-        })
-    });
 
     const tbody = document.querySelector('.species-table tbody');
     
     const row = document.createElement('tr');
     row.classList.add('table-header');
-    const header0 = document.createElement('th');
-    const header1 = document.createElement('th');
-    const header2 = document.createElement('th');
-    const header3 = document.createElement('th');
-    const header4 = document.createElement('th');
-    const header5 = document.createElement('th');
-    header0.innerHTML = '<div></div>';
-    header1.innerHTML = '#';
-    header2.innerHTML = 'Species';
-    header3.innerHTML = 'Family';
-    header4.innerHTML = '<span class="icon"><i class="fas fa-check-circle"></i></span>';
-    header5.innerHTML = '<span class="icon"><i class="fas fa-times-circle"></i></span>';
+    const imageHeader = document.createElement('th');
+    const indexHeader = document.createElement('th');
+    const speciesHeader = document.createElement('th');
+    const familyHeader = document.createElement('th');
+    const passesHeader = document.createElement('th');
+    const failsHeader = document.createElement('th');
+    indexHeader.innerHTML = '#';
+    imageHeader.innerHTML = '<div></div>';
+    speciesHeader.innerHTML = 'Species';
+    familyHeader.innerHTML = 'Family';
+    passesHeader.innerHTML = '<span class="icon"><i class="fas fa-check-circle"></i></span>';
+    failsHeader.innerHTML = '<span class="icon"><i class="fas fa-times-circle"></i></span>';
     if(config.isPortraitMode) {
-        row.appendChild(header0);    
-        row.appendChild(header2);
+        row.appendChild(imageHeader);    
+        row.appendChild(speciesHeader);
+        row.appendChild(passesHeader);
+        row.appendChild(failsHeader);     
     }
     else {
-        row.appendChild(header0);
-        row.appendChild(header1);
-        row.appendChild(header2);    
-        row.appendChild(header3);
-        row.appendChild(header4);
-        row.appendChild(header5);
+        row.appendChild(indexHeader);
+        row.appendChild(imageHeader);
+        row.appendChild(speciesHeader);    
+        row.appendChild(familyHeader);
+        row.appendChild(passesHeader);
+        row.appendChild(failsHeader);
     } 
 
     tbody.insertBefore(row, tbody.children[0]);
