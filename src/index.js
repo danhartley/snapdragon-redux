@@ -23,7 +23,7 @@ import { renderNavigation } from 'ui/fixtures/navigation';
 import { lessonPlans } from 'snapdragon/lesson-plans';
 import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
-import { renderSnapdragon } from "./ui/screens/cards/snapdragon";
+import { renderSnapdragon } from "./ui/screens/home/snapdragon";
 
 setTimeout(()=>{
 
