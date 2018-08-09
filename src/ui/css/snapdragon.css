@@ -9,7 +9,9 @@
 body { 
   margin: 0;
   padding: 0;
-  font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+  /* font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace; */
+  /* font-family: 'Roboto',arial,sans-serif; */
+  font-family: 'PT Sans', 'Roboto', arial,sans-serif;
   color: var(--snap-text-dark);
 }
 
@@ -128,6 +130,25 @@ hr {
   font-size: 1.6em;
   margin: 0 .25em 0 0;
   color: var(--snap-text-dark);
+}
+
+.lessons-list .lesson-item {
+  display: flex;
+  margin: 0 0 2em 0;
+}
+
+.lessons-list .lesson-item > div:nth-child(1) {
+  
+}
+
+.lessons-list .lesson-item > div:nth-child(2) {
+  flex: auto;
+}
+
+.lessons-list .lesson-item > div > img {
+  width: 10em;
+  height: 10em;
+  margin: 0 1em 0 0;
 }
 
 .active-icon {

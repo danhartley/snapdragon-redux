@@ -15,7 +15,10 @@ export const kitchenGarden = {
     description: 'This course has over 750 questions and will take about 2 hours to complete. The species of fruit, vegetables, herbs, spices, and insects are found in a Mediterranean climate.',    
     items:[ ...kitchenGardenLessons[0].items, ...kitchenGardenLessons[1].items, ...kitchenGardenLessons[2].items, ...kitchenGardenLessons[3].items ],
     collections: kg,
-    moduleSize: 6
+    thumb: 'https://media.eol.org/content/2014/06/03/05/47795_orig.jpg',
+    moduleSize: 6,
+    curator: 'Snapdragon',
+    level: 'The Interested'
 };
 
 export const nationalFlowers = { 
@@ -24,7 +27,10 @@ export const nationalFlowers = {
     description: 'Short lesson on the national flowers of Germany, Italy, Portugal, Spain, France and England. Useful as a quick-start introduction to Snapdragon it will take about 30 minutes.',
     items:[ ...nationalFlowersLessons[0].items ],
     collections: ['National Flowers'],
-    moduleSize: 6
+    thumb: 'https://media.eol.org/content/2012/06/13/04/65813_orig.jpg',
+    moduleSize: 6,
+    curator: 'Snapdragon',
+    level: 'Everyone'    
 };
 
 kitchenGarden.items = utils.shuffleArray(kitchenGarden.items);

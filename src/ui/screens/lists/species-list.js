@@ -41,8 +41,8 @@ export const renderSpeciesCollectionList = (collection) => {
     const familyHeader = document.createElement('th');
     const passesHeader = document.createElement('th');
     const failsHeader = document.createElement('th');
-    imageHeader.innerHTML = '<div></div>';
     indexHeader.innerHTML = '#';
+    imageHeader.innerHTML = '<div></div>';
     speciesHeader.innerHTML = 'Species';
     familyHeader.innerHTML = 'Family';
     passesHeader.innerHTML = '<span class="icon"><i class="fas fa-check-circle"></i></span>';
@@ -54,8 +54,8 @@ export const renderSpeciesCollectionList = (collection) => {
         row.appendChild(failsHeader);     
     }
     else {
-        row.appendChild(imageHeader);
         row.appendChild(indexHeader);
+        row.appendChild(imageHeader);
         row.appendChild(speciesHeader);    
         row.appendChild(familyHeader);
         row.appendChild(passesHeader);

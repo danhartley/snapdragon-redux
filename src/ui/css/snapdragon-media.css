@@ -90,16 +90,17 @@
 @media (min-width: 1024px) {
       .table-header th:nth-child(1), .table-row td:nth-child(1) {
         flex: 1;
-      }
-      
-      .table-header th:nth-child(2), .table-row td:nth-child(2) {
-        flex: 1;
         display: flex;
         align-items: center;
+        justify-content: center;
+      }
+      
+      .table-row td:nth-child(1) {
+        flex-direction: row;
       }
 
-      .table-row td:nth-child(2) {
-        flex-direction: row;
+      .table-header th:nth-child(2), .table-row td:nth-child(2) {
+        flex: 1;        
       }
 
       .table-header th:nth-child(3) {

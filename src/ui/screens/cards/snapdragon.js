@@ -1,20 +1,13 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
+import { kitchenGarden, nationalFlowers } from 'snapdragon/species-lessons';
+import { renderTemplate } from 'ui/helpers/templating';
 import snapdragonTemplate from 'ui/screens/cards/snapdragon-template.html';
 
 export const renderSnapdragon = (counter) => {
 
     const { config } = store.getState();
-
-    const renderWelcome = () => {
-        console.log('Welcome back, Dan!');
-    };
-
-    const returningUser = localStorage.getItem('returningUser') ? new Boolean(localStorage.getItem('returningUser')) : false;
-    returningUser ? renderWelcome() : localStorage.setItem('returningUser', true);
-
-    if(returningUser && config.isPortraitMode) return;
 
     const template = document.createElement('template');
 
@@ -22,14 +15,12 @@ export const renderSnapdragon = (counter) => {
 
     const clone = document.importNode(template.content, true);
 
-    DOM.leftBody.innerHTML = '';
-    DOM.leftBody.appendChild(clone);
+    const parent = DOM.leftBody;
+    parent.innerHTML = '';
 
-    const startLearningBtn = document.querySelector('.js-start-learning-btn');
+    const collections = [ kitchenGarden, nationalFlowers ];
 
-    if(startLearningBtn) {
-        startLearningBtn.addEventListener('click', () => {
-            actions.boundToggleLesson({ lesson: 'inactive' });
-        });
-    }
+    const context = { collections };
+
+    renderTemplate(context, template.content, parent, clone);
 };
