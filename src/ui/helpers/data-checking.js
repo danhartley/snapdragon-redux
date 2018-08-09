@@ -51,11 +51,25 @@ const getNestedTaxonProp = (taxon, language, prop1, prop2, index) => {
     return output;
 }
 
+const trimLatinName = name => {
+
+    let binomial = name;
+
+    if(name.indexOf('.') < 0) {
+        binomial = name.split(' ').map((n,i) => {
+            return i === 0 ? n.slice(0,1).trim() + '.' : n.trim()
+          }).join(' ')
+    }
+    
+    return binomial;
+};
+
 export const itemProperties = {
     vernacularName,
     genusName,
     speciesName,
     latin,
     getTaxonProp,
-    getNestedTaxonProp
+    getNestedTaxonProp,
+    trimLatinName
 };

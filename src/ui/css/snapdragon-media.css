@@ -50,6 +50,15 @@
     .block {
         font-size: 1.2em;
     }
+
+    .table-row img {
+        width: 3.5em;
+        height: 3.5em;
+      }
+      
+    .table-header th:nth-child(1) > div {
+        width: 4em;
+    }
 }
 @media (min-width: 414px) {
     body {
@@ -59,41 +68,65 @@
         font-size: 1.2em;
     }
     .taxon-highlight {
-        font-size: 1.1em;  
+        font-size: 1em;  
     }
     .btn {
         padding: .375em .75em;
     }
+
+    tbody {
+        font-size: 1em;
+      }
+
+    .table-row img {
+        width: 4em;
+        height: 4em;
+      }
+      
+    .table-header th:nth-child(1) > div {
+        width: 4.5em;
+    }
 }
 @media (min-width: 1024px) {
-      .table-header th:nth-child(1), .list-group-item td:nth-child(1) {
+      .table-header th:nth-child(1), .table-row td:nth-child(1) {
         flex: 1;
       }
       
-      .table-header th:nth-child(2), .list-group-item td:nth-child(2) {
+      .table-header th:nth-child(2), .table-row td:nth-child(2) {
         flex: 1;
-        display: initial;
-      }
-
-      .table-header th:nth-child(3), .list-group-item td:nth-child(3) {
-        flex: 4;
         display: flex;
         align-items: center;
       }
+
+      .table-row td:nth-child(2) {
+        flex-direction: row;
+      }
+
+      .table-header th:nth-child(3) {
+        flex: 4;
+        display: flex;          
+      }
+
+      .table-row td:nth-child(3) {
+        flex: 4;
+        display: flex;
+        flex-direction: column;
+        align-items: initial;
+      }
       
-      .table-header th:nth-child(4), .list-group-item td:nth-child(4) {
+      .table-header th:nth-child(4), .table-row td:nth-child(4) {
         flex: 3;
         display: flex;
         align-items: center;
       }
       
-      .table-header th:nth-child(5), .list-group-item td:nth-child(5) {
+      .table-header th:nth-child(5), .table-row td:nth-child(5) {
         flex: 1;
         display: flex;
         align-items: center;
       }
       
-      .table-header th:nth-child(6), .list-group-item td:nth-child(6) {
+      .table-header th:nth-child(6), .table-row td:nth-child(6) {
         flex: 1;
         display: flex;
         align-items: center;

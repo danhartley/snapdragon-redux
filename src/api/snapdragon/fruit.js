@@ -847,6 +847,10 @@ export const fruit = [
           "language": "de"
         },
         {
+          "vernacularName": "strawberry",
+          "language": "en"
+        },
+        {
           "vernacularName": "garden strawberry",
           "language": "en",
           "eol_preferred": true
@@ -857,10 +861,6 @@ export const fruit = [
         },
         {
           "vernacularName": "pineapple strawberry",
-          "language": "en"
-        },
-        {
-          "vernacularName": "strawberry",
           "language": "en"
         },
         {

@@ -28,7 +28,7 @@ export const nextLayout = (counter) => {
             const func = funcByName(screen.name);
             if(func) {
                 if(config.isPortraitMode) {
-                    if(index === 1 || screen.name === 'summary') subscription.add(func, screen.domain, 'screen');                    
+                    if(index === 1 || screen.name === 'history') subscription.add(func, screen.domain, 'screen');                    
                 } else {
                     subscription.add(func, screen.domain, 'screen');
                 }                           

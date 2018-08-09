@@ -8,17 +8,18 @@ import { getFamilies } from 'redux/reducers/initial-state/species-state/species-
 
 const collections = [ kitchenGarden, nationalFlowers ];
 
-const initCollection = (rawCollection = collections[0]) => {
-    let prepCollection = rawCollection.type === 'skill'
+const initCollection = (selectedCollection = collections[0]) => {
+    let prepCollection = selectedCollection.type === 'skill'
         ? R.pipe(utils.shuffleArray)
         : R.pipe(helpers.filterExcluded, helpers.extractScientificNames, helpers.embellishCollection);
-    const items = utils.sortBy(prepCollection(rawCollection.items), 'snapIndex');
+    const items = utils.sortBy(prepCollection(selectedCollection.items), 'snapIndex');
     const rounds = items.length / config.moduleSize;
 
     const families = getFamilies(items);
 
     const collection = {
-        name: rawCollection.name,
+        id: selectedCollection.id,
+        name: selectedCollection.name,
         items : items,
         itemIndex: 0,
         currentRound: 1,

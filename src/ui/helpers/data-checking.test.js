@@ -86,3 +86,9 @@ test('should not return a translation object where this is no a matching latin n
   const epithet = itemProperties.latin(species);
   expect(epithet).toEqual("");
 });
+
+test('should trim latin name', () => {
+  const name = 'Allium schoenoprasum';
+  const trimmedName = itemProperties.trimLatinName(name);
+  expect(trimmedName).toEqual("A. schoenoprasum");
+});

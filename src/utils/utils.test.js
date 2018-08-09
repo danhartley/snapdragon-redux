@@ -155,7 +155,7 @@ const layouts = [
     expect(itemIndex).toBe(3);
   });
 
-  test.only('should tally up pass or fail counts by item id', () => {
+  test('should tally up pass or fail counts by item id', () => {
     const arr = [ 1,2,2,3,3,3,7 ];
     const ids = arr.reduce(utils.itemCountReducer, {});
     expect(ids).toEqual({1:1,2:2,3:3,7:1});

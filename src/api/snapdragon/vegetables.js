@@ -1079,6 +1079,10 @@ export const vegetables = [
           "language": "de"
         },
         {
+          "vernacularName": "Runner Bean",
+          "language": "en"
+        },
+        {
           "vernacularName": "Scarlet Runner Bean",
           "language": "en",
           "eol_preferred": true
@@ -1093,10 +1097,6 @@ export const vegetables = [
         },
         {
           "vernacularName": "Haricot á Fleurs Rouges",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Runner Bean",
           "language": "en"
         },
         {
@@ -1761,6 +1761,10 @@ export const vegetables = [
           "eol_preferred": true
         },
         {
+          "vernacularName": "carrot",
+          "language": "en"
+        },
+        {
           "vernacularName": "domesticated carrot",
           "language": "en",
           "eol_preferred": true
@@ -1771,10 +1775,6 @@ export const vegetables = [
         },
         {
           "vernacularName": "bird's nest",
-          "language": "en"
-        },
-        {
-          "vernacularName": "carrot",
           "language": "en"
         },
         {
