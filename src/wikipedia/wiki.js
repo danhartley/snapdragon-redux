@@ -45,7 +45,7 @@ const cleanEntry = str => {
 
 const wikiLink = entry => {
     const src = cleanEntry(entry).replace('.wikipedia', '.m.wikipedia');
-    return `<li><span data-toggle="modal" data-target="#externalPageModal" data-src="${src}" class="underline-link">Wiki</span></li>`;    
+    return `<span data-toggle="modal" data-target="#externalPageModal" data-src="${src}" class="underline-link">Wiki</span>`;    
 };
 
 const formatWiki = (entry) => {
@@ -54,14 +54,14 @@ const formatWiki = (entry) => {
     if(entry.length === 1) {
         html += wikiLink(entry[0]);
     }
-    if(entry[1]) html += `<li class="species-card-wiki-entry"><p>${cleanEntry(entry[1])}</p></li>`;
+    if(entry[1]) html += `<p>${cleanEntry(entry[1])}</p>`;
     if(entry[2])
         if(entry[2].indexOf('https')!== -1) html += wikiLink(entry[2]);
-        else html += `<li class="species-card-wiki-entry"><p>${entry[2]}</p></li>`;
+        else html += `<p>${entry[2]}</p>`;
     if(entry[3]) 
         if(entry[3].indexOf('https')!== -1)
         html += wikiLink(entry[3]);
-        else html += `<li class="species-card-wiki-entry"><p>${entry[3]}</p></li>`;
+        else html += `<p>${entry[3]}</p>`;
     return html;
 };
 
