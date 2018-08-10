@@ -51,7 +51,7 @@ const renderLandscape = (template, item, config) => {
                 const style = `
                     <style type='text/css'>
                     body {
-                        font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;   
+                        font-family: PT Sans', 'Roboto', arial,sans-serif;
                     }
                     a {
                         text-decoration: none;

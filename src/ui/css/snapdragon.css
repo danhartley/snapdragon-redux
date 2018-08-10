@@ -9,8 +9,6 @@
 body { 
   margin: 0;
   padding: 0;
-  /* font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace; */
-  /* font-family: 'Roboto',arial,sans-serif; */
   font-family: 'PT Sans', 'Roboto', arial,sans-serif;
   color: var(--snap-text-dark);
 }
@@ -132,6 +130,10 @@ hr {
   color: var(--snap-text-dark);
 }
 
+.lessons-list .card {
+  text-align: left;
+}
+
 .lessons-list .lesson-item {
   display: flex;
   margin: 0 0 2em 0;
@@ -180,6 +182,14 @@ hr {
   flex-direction: column;
   padding: .5em;
   background-color: var(--snap-container-background);
+}
+
+.species.card {
+  margin: .5em 0 0 0;
+}
+
+.binomial {
+  font-style: italic;
 }
 
 .species.card > div, .taxon.card > div, .trait.card > div {
@@ -422,12 +432,15 @@ hr {
   display: flex;
 }
 
-.cultivar.card div {
+/* .cultivar.card div {
   flex: 1;  
-}
+} */
 
-.cultivar.card div:nth-child(2) {
+.cultivar.card .title {
+  flex: initial;
   text-align: left;
+  flex-shrink: initial;
+  padding: .5em 0;
 }
 
 .cultivar.card span {
@@ -437,7 +450,7 @@ hr {
 }
 
 .cultivar.card .scrollable {
-  height: 30vh;
+  height: 40vh;
 }
 
 .trait.card .scrollable {
@@ -453,7 +466,11 @@ hr {
 }
 
 .id-box > div:nth-child(1) {
-  flex: 4;
+  flex: 1;
+}
+
+.id-box > div:nth-child(2) {
+  flex: 3 !important;
 }
 
 .data-box > div:nth-child(2), .id-box > div:nth-child(2) {  
@@ -793,7 +810,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   padding: .375em 0em;
 }
 
-.table-header th:nth-child(2):after, .table-header th:nth-child(3):after, .table-header th:nth-child(4):after, .table-header th:nth-child(5):after, .table-header th:nth-child(6):after {
+.table-header th:nth-child(1):after, .table-header th:nth-child(3):after, .table-header th:nth-child(4):after, .table-header th:nth-child(5):after, .table-header th:nth-child(6):after {
   display: inline-block;
   width: 0;
   height: 0;
@@ -829,7 +846,7 @@ tbody {
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  padding: .20em 0em;
+  padding: .2em .5em;
   border-left: .05em solid var(--snap-list-header) !important;
   border-right: .05em solid var(--snap-list-header) !important;
 }

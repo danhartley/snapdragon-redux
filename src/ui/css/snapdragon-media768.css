@@ -25,8 +25,12 @@
         width: 15em;
     }
 
+    .species.card {
+        margin: 0;
+      }
+
     .cultivar.card .scrollable {
-        height: 40vh;
+        height: 50vh;
       }      
 
     .skills-collections button {

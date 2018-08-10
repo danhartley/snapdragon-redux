@@ -3,7 +3,7 @@ import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { kitchenGarden, nationalFlowers } from 'snapdragon/species-lessons';
 import { renderTemplate } from 'ui/helpers/templating';
-import snapdragonTemplate from 'ui/screens/cards/snapdragon-template.html';
+import snapdragonTemplate from 'ui/screens/home/snapdragon-template.html';
 
 export const renderSnapdragon = (counter) => {
 
