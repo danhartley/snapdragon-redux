@@ -27,6 +27,9 @@ test('score state should reflect correct answer', () => {
       wrong: 0,
       fails: [],
       itemId: 1,
+      totalPoints: 0,
+      totalPassPoints: 0,
+      totalFailPoints: 0,
       passes: [{ itemId: 1, taxon: 'name', binomial: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Anagallis arvensis'}],
       passesTotals: { 1: 1 }
     }
@@ -76,6 +79,9 @@ test('score state should reflect correct answer', () => {
       itemId: 1,
       fails: [{ itemId: 1, taxon: 'name', binomial: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Malva sylvestris'}],
       passes: [],
+      totalPoints: 0,
+      totalPassPoints: 0,
+      totalFailPoints: 0,
       failsTotals: { 1: 1 }
     }
   
@@ -89,7 +95,7 @@ test('score state should reflect correct answer', () => {
         binomial: 'Anagallis arvensis',
         question: 'Anagallis arvensis',
         answer: 'Malva sylvestris',
-        success: false,
+        success: false,        
         itemId: 1        
       }
     }

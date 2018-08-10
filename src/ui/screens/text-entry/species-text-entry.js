@@ -24,5 +24,5 @@ export const renderTextEntry = (collection) => {
         { selector: 'span.js-latin', value: question.common }
     ];
 
-    renderInput(config, screen, question, config.callbackTime, item, renderAnswerHeader, hints);
+    renderInput(config, screen, question, config.callbackTime, item, renderAnswerHeader, hints, layout);
 };

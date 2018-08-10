@@ -9,7 +9,7 @@ import { scoreHandler, modalBackgroundImagesHandler } from 'ui/helpers/handlers'
 import landscapeTemplates from 'ui/screens/text-entry/text-entry-templates.html';
 import portraitTemplates from 'ui/screens/text-entry/text-entry-portrait-templates.html';
 
-export const renderInput = (config, screen, question, callbackTime, item, renderHeader, hints) => {
+export const renderInput = (config, screen, question, callbackTime, item, renderHeader, hints, layout) => {
 
     const { lessonPlan, collection } = store.getState();
     const templates = document.createElement('div');
@@ -26,7 +26,7 @@ export const renderInput = (config, screen, question, callbackTime, item, render
     const clone = document.importNode(template.content, true);
     
     clone.querySelector('.js-check-answer').addEventListener('click', event => {
-        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, event, layoutCount: lessonPlan.layouts.length };
+        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, event, layoutCount: lessonPlan.layouts.length, points: layout.score };
         scoreHandler('text', score, null, callbackTime, renderHeader);
     });
 

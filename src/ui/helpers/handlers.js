@@ -23,10 +23,10 @@ export const scoreHandler = (type, score, callback, callbackTime, renderHeader) 
 
 const scoringHandler = (score, callback, callbackTime, renderHeader) => {
     
-    const { itemId, question, answer, event, layoutCount } = score;
+    const { itemId, question, answer, event, layoutCount, points } = score;
 
     const btn = event.target;
-    const response = { itemId, ...question, answer };
+    const response = { itemId, ...question, answer, points };
 
     let correctAnswer;
     let wrongAnswer;
@@ -45,26 +45,13 @@ const scoringHandler = (score, callback, callbackTime, renderHeader) => {
 
     const questionText = document.querySelector('.js-txt-question');
 
-    //if(isPortraitMode) {
-        questionText.innerHTML = correct
-            ? `<div>
-                <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
-               </div>`
-            : `<div>
-                <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ correctAnswer }</span>
-               </div>`;
-    // } else {
-    //     questionText.innerHTML = correct 
-    //         ? `<div>
-    //             <span class="icon"><i class="fas fa-check-circle"></i></span>
-    //             <span>${ correctAnswer } is the correct answer.</span>
-    //            </div>`
-    //         : `<div>
-    //             <span class="icon"><i class="fas fa-times-circle"></i></span>
-    //             <span>${ wrongAnswer || '--' } is incorrect.</span>
-    //            </div> 
-    //            <div>The correct answer is ${ correctAnswer }.</div>`;
-    // }
+    questionText.innerHTML = correct
+        ? `<div>
+            <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
+            </div>`
+        : `<div>
+            <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ correctAnswer }</span>
+            </div>`;
 
     btn.style.background = colour;
     btn.style.borderColor = colour;
@@ -161,8 +148,6 @@ const imageScoreHandler = (score, callback, callbackTime) => {
 
             tile.style.filter = 'saturate(100%)';
 
-            // DOM.rightHeaderTxt.innerHTML = text;
-            
             img.parentNode.style.filter = 'saturate(100%)';
 
             items.forEach(tile => {

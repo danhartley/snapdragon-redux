@@ -5,6 +5,7 @@ const { specimen, revision, species, vernaculars, scientifics, text, command, le
 const speciesRevision = {
     name: 'screen-species-card',
     type: 'revision',
+    score: 0,
     screens: [
         { ...specimen },
         { ...revision }
@@ -14,6 +15,7 @@ const speciesRevision = {
 const taxonRevision = {
     name: 'screen-taxon-card',
     type:'revision',
+    score: 0,
     screens: [
         { ...specimen },
         { ...taxon }
@@ -83,7 +85,7 @@ const commonToLatinMatch = {
 const genusEntry = {
     name: 'screen-genus-entry',
     type:'test',
-    score: 1,
+    score: 2,
     screens: [
         { ...specimen },
         { ...text, template: 'js-genus-entry-template', taxon: 'genus'}
@@ -93,7 +95,7 @@ const genusEntry = {
 const speciesEntry = {
     name: 'screen-species-entry',
     type:'test',
-    score: 1,
+    score: 2,
     screens: [
         { ...specimen },
         { ...text, template: 'js-species-entry-template', taxon: 'species'}
@@ -103,7 +105,7 @@ const speciesEntry = {
 const speciesGenusEntry = {
     name: 'screen-binomial-entry',
     type:'test',
-    score: 1,
+    score: 3,
     screens: [
         { ...specimen },
         { ...text, template: 'js-species-genus-entry-template', taxon: 'name'}
@@ -131,7 +133,7 @@ const leafEntry = {
 const textCompleteGenus = {
     name: 'screen-genus-completion',
     type:'test',
-    score: 1,
+    score: 2,
     screens: [
         { ...specimen },
         { ...textComplete, type: 'text-complete-genus'  }
@@ -141,7 +143,7 @@ const textCompleteGenus = {
 const textCompleteSpecies = {
     name: 'screen-species-completion',
     type:'test',
-    score: 1,
+    score: 2,
     screens: [
         { ...specimen },
         { ...textComplete, type: 'text-complete-species' }
@@ -151,7 +153,7 @@ const textCompleteSpecies = {
 const commonEntry = {
     name: 'screen-common-entry',
     type:'test',
-    score: 1,
+    score: 2,
     screens: [
         { ...specimen },
         { ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Enter the common name', short: 'Enter the common name'}}

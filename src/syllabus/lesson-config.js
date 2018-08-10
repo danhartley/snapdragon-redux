@@ -1,6 +1,6 @@
 export const config = {
     language: 'en',
-    moduleSize: 6,
+    moduleSize: 2,
     callbackTime: 2000,
     excludeRevision: false,
     isPortraitMode: false,

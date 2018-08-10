@@ -35,7 +35,7 @@ export const renderSpeciesTiles = (collection) => {
 
     renderTemplate({ images }, template.content, parent);
 
-    const score = { itemId: item.id, items: document.querySelectorAll('.js-tiles .tile'), taxon: item, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount};
+    const score = { itemId: item.id, items: document.querySelectorAll('.js-tiles .tile'), taxon: item, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.score};
 
     parent = document.querySelector('.right-body .snapdragon-container');
 

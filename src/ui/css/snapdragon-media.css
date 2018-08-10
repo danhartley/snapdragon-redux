@@ -57,7 +57,7 @@
       }
       
     .table-header th:nth-child(1) > div {
-        width: 4em;
+        width: 3.5em;
         height: 1px;
     }
 }
@@ -85,51 +85,66 @@
       }
       
     .table-header th:nth-child(2) > div {
-        width: 4.5em;
+        width: 4em;
         height: 1px;
     }    
 }
 @media (min-width: 1024px) {
-      .table-header th:nth-child(1), .table-row td:nth-child(1) {
+
+    .table-header th:nth-child(1):after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: .255em;
+        vertical-align: .255em;
+        content: "";
+        border-top: .3em solid;
+        border-right: .3em solid transparent;
+        border-bottom: 0;
+        border-left: .3em solid transparent
+    }
+
+      .table-header th:nth-child(1), .table-row td:nth-child(1), .table-footer td:nth-child(1) {
         flex: 1;
         display: flex;
         align-items: center;
         justify-content: center;
       }
       
-      .table-row td:nth-child(1) {
+      .table-row td:nth-child(1), .table-header th:nth-child(1) {
         flex-direction: row;
       }
 
-      .table-header th:nth-child(2), .table-row td:nth-child(2) {
+      .table-header th:nth-child(2), .table-row td:nth-child(2), .table-footer td:nth-child(2) {
         flex: 1;        
       }
 
-      .table-header th:nth-child(3) {
+      .table-header th:nth-child(3), .table-footer td:nth-child(3) {
+        /* padding-left: .5em; */
         flex: 4;
         display: flex;     
       }
 
-      .table-row td:nth-child(3) {
+      .table-row td:nth-child(3), .table-footer td:nth-child(3) {
         flex: 4;
         display: flex;
         flex-direction: column;
         align-items: initial;
       }
       
-      .table-header th:nth-child(4), .table-row td:nth-child(4) {
+      .table-header th:nth-child(4), .table-row td:nth-child(4), .table-footer td:nth-child(4) {
         flex: 3;
         display: flex;
         align-items: center;
       }
       
-      .table-header th:nth-child(5), .table-row td:nth-child(5) {
+      .table-header th:nth-child(5), .table-row td:nth-child(5), .table-footer td:nth-child(5) {
         flex: 1;
         display: flex;
         align-items: center;
       }
       
-      .table-header th:nth-child(6), .table-row td:nth-child(6) {
+      .table-header th:nth-child(6), .table-row td:nth-child(6), .table-footer td:nth-child(6) {
         flex: 1;
         display: flex;
         align-items: center;

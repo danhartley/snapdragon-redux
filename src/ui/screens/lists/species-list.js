@@ -16,12 +16,17 @@ export const renderSpeciesCollectionList = (collection) => {
 
     const template = document.createElement('template');
 
+    let totalPasses = 0;
+    let totalFails = 0;
+
     collection.items.forEach(item => { 
         item.image = item.images[0];
         item.vernacularName = itemProperties.vernacularName(item, config);
         item.passes = item.passes || '--';
         item.fails = item.fails || '--';
         item.binomial = config.isPortraitMode ? itemProperties.trimLatinName(item.name) : item.name
+        totalPasses += item.passes;
+        totalFails += item.fails;
     });
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
@@ -31,10 +36,11 @@ export const renderSpeciesCollectionList = (collection) => {
 
     renderTemplate({ collection }, template.content, parent);
 
+    const table = document.querySelector('.species-table');
     const tbody = document.querySelector('.species-table tbody');
     
-    const row = document.createElement('tr');
-    row.classList.add('table-header');
+    const headerRow = document.createElement('tr');
+    headerRow.classList.add('table-header');
     const imageHeader = document.createElement('th');
     const indexHeader = document.createElement('th');
     const speciesHeader = document.createElement('th');
@@ -48,21 +54,49 @@ export const renderSpeciesCollectionList = (collection) => {
     passesHeader.innerHTML = '<span class="icon"><i class="fas fa-check-circle"></i></span>';
     failsHeader.innerHTML = '<span class="icon"><i class="fas fa-times-circle"></i></span>';
     if(config.isPortraitMode) {
-        row.appendChild(imageHeader);    
-        row.appendChild(speciesHeader);
-        row.appendChild(passesHeader);
-        row.appendChild(failsHeader);     
+        headerRow.appendChild(imageHeader);    
+        headerRow.appendChild(speciesHeader);
+        headerRow.appendChild(passesHeader);
+        headerRow.appendChild(failsHeader);     
     }
     else {
-        row.appendChild(indexHeader);
-        row.appendChild(imageHeader);
-        row.appendChild(speciesHeader);    
-        row.appendChild(familyHeader);
-        row.appendChild(passesHeader);
-        row.appendChild(failsHeader);
+        headerRow.appendChild(indexHeader);
+        headerRow.appendChild(imageHeader);
+        headerRow.appendChild(speciesHeader);    
+        headerRow.appendChild(familyHeader);
+        headerRow.appendChild(passesHeader);
+        headerRow.appendChild(failsHeader);
     } 
 
-    tbody.insertBefore(row, tbody.children[0]);
+    tbody.insertBefore(headerRow, tbody.children[0]);
+
+    const tfoot = document.createElement('tfoot');
+    const footerRow = document.createElement('tr');
+    footerRow.classList.add('table-footer');
+
+    const imageFooter = document.createElement('td');
+    const indexFooter = document.createElement('td');
+    const speciesFooter = document.createElement('td');
+    const familyFooter = document.createElement('td');
+    const passesFooter = document.createElement('td');
+    const failsFooter = document.createElement('td');
+
+    imageFooter.innerHTML = '<div></div>';
+    indexFooter.innerHTML = '<div></div>';
+    speciesFooter.innerHTML = '<div></div>';
+    familyFooter.innerHTML = '<div></div>';
+
+    passesFooter.innerHTML = totalPasses;
+    failsFooter.innerHTML = totalFails;
+
+    footerRow.appendChild(imageFooter);
+    footerRow.appendChild(indexFooter);
+    footerRow.appendChild(speciesFooter);
+    footerRow.appendChild(familyFooter);
+    footerRow.appendChild(passesFooter);
+    footerRow.appendChild(failsFooter);
+    tfoot.appendChild(footerRow);
+    table.appendChild(tfoot);
 
     utils.makeSortable(document);
 

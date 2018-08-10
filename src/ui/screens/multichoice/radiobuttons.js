@@ -20,8 +20,10 @@ export const renderRadioButtons = (collection) => {
 
     template.innerHTML = radiobuttonsTemplate;
 
-    let randomAnswers, description, question, answers;
+    let randomAnswers, description, description2, question, answers;
     let indices = config.isPortraitMode ? [3,4] : [4,5];
+
+    description2 = '';
 
     const species = item.name;
     const family = item.family;
@@ -36,13 +38,13 @@ export const renderRadioButtons = (collection) => {
         const parent = DOM.rightBody;
         parent.innerHTML = '';
 
-        renderTemplate({ description, answers }, template.content, parent);
+        renderTemplate({ description, description2, answers }, template.content, parent);
 
         document.querySelector('input[name="answer"]:checked').checked = false;
 
         document.querySelector('button').addEventListener('click', event => {
             const answer = document.querySelector('input[name="answer"]:checked').value;
-            const score = { itemId: item.id, question, answer, event, layoutCount: lessonPlan.layouts.length };
+            const score = { itemId: item.id, question, answer, event, layoutCount: lessonPlan.layouts.length, points: layout.score };
             scoreHandler('radio', score, null, config.callbackTime, renderAnswerHeader);
         });
     };
@@ -60,7 +62,8 @@ export const renderRadioButtons = (collection) => {
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
 
         const summary = families.find(f => f.name === family).descriptions[0].summary;
-        description = `${species.toUpperCase()} belongs to a family whose description is '${summary}' What is the name of this FAMILY?`;
+        description = `${species.toUpperCase()} belongs to a family whose description is '${summary}'`;
+        description2 = 'What is the name of this FAMILY?';
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 
@@ -70,7 +73,8 @@ export const renderRadioButtons = (collection) => {
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
         const identification = families.find(f => f.name === family).descriptions[0].identification;
-        description = `${species.toUpperCase()} belongs to a family whose Quick ID is '${identification}' What is the name of this FAMILY?`;        
+        description = `${species.toUpperCase()} belongs to a family whose Quick ID is '${identification}'`;
+        description2 = 'What is the name of this FAMILY?';
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 

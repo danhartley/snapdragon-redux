@@ -1,8 +1,28 @@
 <div class="snapdragon-container">
-    <div class="card align-left">
-        <p>You answered {{ score.correct }} out of {{ score.total }} correctly in the last round.</p>
-        <p>Your overall score for this collection is {{ history.correct }} out of {{ history.total }}.</p>
-        <p>You have completed {{ collection.currentRound }} of {{ collection.rounds }} rounds at this level.</p>
+    <div class="card summary align-left">
+        
+        <div class="score">
+            <div>Last round</div>
+            <div>
+                <div><span class="score">{{ score.correct }}</span>correct</div>
+                <div><span class="score">{{ score.incorrect }}</span>incorrect</div>
+            </div>
+        </div>
+
+        <br>
+        
+        <div class="score">
+            <div>Overall score</div>
+            <div>
+                <div><span class="score">{{ history.correct }}</span>correct</div>
+                <div><span class="score">{{ history.incorrect }}</span>incorrect</div>
+            </div>
+        </div>
+
+        <br>
+
+        <p>You have completed <span class="score">{{ collection.currentRound }}</span> out of <span class="score">{{ collection.rounds }}</span> rounds at this level.</p>
+
         <p>{{ summary }}</p>
     </div>
     <div class="action-update-container">
