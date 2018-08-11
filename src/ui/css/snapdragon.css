@@ -532,7 +532,7 @@ hr {
 }
 
 .summary div.score > div:nth-child(2) {
-  flex: 4;
+  flex: 3;
   border-left: .5em solid var(--snap-list-header);
   padding-left: .5em;
 }

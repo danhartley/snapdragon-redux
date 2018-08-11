@@ -80,7 +80,7 @@ export const renderStrips = (screen, item, callback, config, lessonPlan, layout)
     }
 
     const taxon = { name: item.name, binomial: item.name, question: item.name };
-    const score = { itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.score};
+    const score = { itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
     
     scoreHandler('strip', score, renderAnswer, config.callbackTime);
 

@@ -25,8 +25,8 @@ export const renderSpeciesCollectionList = (collection) => {
         item.passes = item.passes || '--';
         item.fails = item.fails || '--';
         item.binomial = config.isPortraitMode ? itemProperties.trimLatinName(item.name) : item.name
-        totalPasses += item.passes;
-        totalFails += item.fails;
+        totalPasses += Number.isInteger(item.passes) ? item.passes : 0;
+        totalFails += Number.isInteger(item.fails) ? item.fails : 0;
     });
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;

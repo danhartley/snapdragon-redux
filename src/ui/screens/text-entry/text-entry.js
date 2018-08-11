@@ -26,7 +26,7 @@ export const renderInput = (config, screen, question, callbackTime, item, render
     const clone = document.importNode(template.content, true);
     
     clone.querySelector('.js-check-answer').addEventListener('click', event => {
-        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, event, layoutCount: lessonPlan.layouts.length, points: layout.score };
+        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, event, layoutCount: lessonPlan.layouts.length, points: layout.points };
         scoreHandler('text', score, null, callbackTime, renderHeader);
     });
 

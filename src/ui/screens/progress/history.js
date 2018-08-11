@@ -36,10 +36,6 @@ export const renderHistory = (history) => {
         return { ...acc,  ...curr };
     }
 
-    // const runningScores = [ ...history.scores ];
-
-    // runningScores.push(score);
-
     const passesTotals = history.scores.map(score => score.passesTotals);
     const failsTotals = history.scores.map(score => score.failsTotals);
 

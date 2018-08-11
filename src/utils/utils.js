@@ -131,9 +131,15 @@ const comparer = function(idx, asc) { return function(a, b) { return function(v1
 const makeSortable = document => {
   Array.from(document.querySelectorAll('th')).forEach(function(th) { th.addEventListener('click', function() {
           var table = th.closest('table');
+          var body = table.querySelector('tbody');
+          var footer = table.querySelector('tfoot');
           Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
               .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
-              .forEach(function(tr) { table.appendChild(tr) });
+              .forEach(function(tr) { 
+                if(tr !== footer) {
+                  body.appendChild(tr);
+                }
+              });
       })
   });
 };

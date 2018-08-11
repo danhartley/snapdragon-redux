@@ -44,7 +44,7 @@ export const renderRadioButtons = (collection) => {
 
         document.querySelector('button').addEventListener('click', event => {
             const answer = document.querySelector('input[name="answer"]:checked').value;
-            const score = { itemId: item.id, question, answer, event, layoutCount: lessonPlan.layouts.length, points: layout.score };
+            const score = { itemId: item.id, question, answer, event, layoutCount: lessonPlan.layouts.length, points: layout.points };
             scoreHandler('radio', score, null, config.callbackTime, renderAnswerHeader);
         });
     };
