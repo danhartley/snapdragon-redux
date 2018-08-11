@@ -69,7 +69,7 @@ export const renderMultiStrips = (collection) => {
 
         const taxon = { name: item.family, binomial: item.name, question: questionValue };
 
-        const score = { itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount};
+        const score = { itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
         const callback = renderAnswer;
 
         scoreHandler('strip', score, callback, config.callbackTime);

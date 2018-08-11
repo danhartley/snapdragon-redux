@@ -30,8 +30,15 @@ export const score = (state = null, action) => {
 
             const score = { ...state, ...action.data };
             
+            score.totalPoints = score.totalPoints || 0;
+            score.totalPassPoints = score.totalPassPoints || 0;
+            score.totalFailPoints = score.totalFailPoints || 0;
+
+            score.totalPoints += score.points ? score.points : 0;
+
             score.total++;
             if(score.success) {
+                score.totalPassPoints += score.points ? score.points : 0;
                 score.correct++;
                 score.passes.push({ itemId: score.itemId, taxon: score.taxon, binomial: score.binomial, question: score.question, answer: score.answer });
                 if(score.passes.map(pass => pass.itemId).length > 0) {
@@ -40,6 +47,7 @@ export const score = (state = null, action) => {
             }
             else {
                 score.wrong++;
+                score.totalFailPoints += score.points ? score.points : 0;
                 score.fails.push({ itemId: score.itemId, taxon: score.taxon, binomial: score.binomial, question: score.question, answer: score.answer });
                 if(score.fails.map(fail => fail.itemId).length > 0) {
                     score.failsTotals = score.fails.map(fail => fail.itemId).reduce(utils.itemCountReducer, {});

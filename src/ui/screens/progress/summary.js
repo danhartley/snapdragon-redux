@@ -38,6 +38,10 @@ export const renderSummary = (history) => {
              Begin a new collection, review questions you got wrong, or consolidate what you have just learnt.`
     }
 
+    score.correct = score.correct;
+    score.incorrect = score.total - score.correct;
+    history.incorrect = history.total - history.correct;
+
     renderTemplate({ score, history, collection, config, summary }, template.content, parent);
     
     const learnMoreBtn = document.querySelector('.js-summmary-btn-action');

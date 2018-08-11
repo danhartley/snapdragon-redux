@@ -16,5 +16,5 @@ export const renderNameEntry = (collection) => {
 
     const hints = [];
 
-    renderInput(config, screen, question, config.callbackTime, item, renderTermAnswerHeader, hints);
+    renderInput(config, screen, question, config.callbackTime, item, renderTermAnswerHeader, hints, layout);
 };

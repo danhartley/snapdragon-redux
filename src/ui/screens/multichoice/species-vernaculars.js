@@ -18,5 +18,5 @@ export const renderVernaculars = (collection) => {
                 </div>`;
        };
 
-    renderStrips(screen, item, callback, config, lessonPlan);
+    renderStrips(screen, item, callback, config, lessonPlan, layout);
 };

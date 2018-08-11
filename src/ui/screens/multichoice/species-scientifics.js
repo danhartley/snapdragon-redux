@@ -18,5 +18,5 @@ export const renderScientifics = (collection) => {
                 </div>`;
        };
 
-    renderStrips(screen, item, callback, config, lessonPlan);
+    renderStrips(screen, item, callback, config, lessonPlan, layout);
 };

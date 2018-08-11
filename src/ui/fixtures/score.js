@@ -10,10 +10,10 @@ export const renderScore = (score) => {
     const template = document.createElement('template');
 
     template.innerHTML = config.isPortraitMode
-            ?   `<div><span>Score: {{ score.correct }}/{{ score.total }}</span></div>`
+            ?   `<div><span>Score: {{ score.correct }} / {{ score.total }}</span></div>`
             :   `<div class="score-footer">
-                    <span>Score: {{ score.correct }}/{{ score.total }}</span>
-                    <span>History: {{ history.correct }}/{{ history.total }}</span>
+                    <span>Score: {{ score.correct }} / {{ score.total }}</span>
+                    <span>History: {{ history.correct }} / {{ history.total }}</span>
                 </div>`;
 
     if(!layout) return;

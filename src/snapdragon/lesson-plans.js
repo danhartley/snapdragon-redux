@@ -5,6 +5,7 @@ const { specimen, revision, species, vernaculars, scientifics, text, command, le
 const speciesRevision = {
     name: 'screen-species-card',
     type: 'revision',
+    score: 0,
     screens: [
         { ...specimen },
         { ...revision }
@@ -24,6 +25,7 @@ const imageToImageMatch = {
     name: 'screen-image-to-image',
     type:'test',
     score: 1,
+    points: 1,
     screens: [
         { ...specimen },
         { ...species }
@@ -34,6 +36,7 @@ const familyMatch = {
     name: 'screen-species-to-family',
     type:'test',
     score: 1,
+    points: 1,
     screens: [
         { ...specimen },
         { ...family }
@@ -44,6 +47,7 @@ const cultivarMatch = {
     name: 'screen-cultivar-to-species',
     type:'test',
     score: 1,
+    points: 2,
     screens: [
         { ...specimen },
         { ...cultivar }
@@ -54,6 +58,7 @@ const familyStripsMatch = {
     name: 'screen-family-to-description',
     type:'test',
     score: 1,
+    points: 2,
     screens: [
         { ...specimen },
         { ...familyStrips }
@@ -64,6 +69,7 @@ const latinToCommonMatch = {
     name: 'screen-latin-to-common',
     type:'test',
     score: 1,
+    points: 2,
     screens: [
         { ...specimen },
         { ...vernaculars }
@@ -74,6 +80,7 @@ const commonToLatinMatch = {
     name: 'screen-common-to-latin',
     type:'test',
     score: 1,
+    points: 2,
     screens: [
         { ...specimen },
         { ...scientifics }
@@ -84,6 +91,7 @@ const genusEntry = {
     name: 'screen-genus-entry',
     type:'test',
     score: 1,
+    points: 3,
     screens: [
         { ...specimen },
         { ...text, template: 'js-genus-entry-template', taxon: 'genus'}
@@ -94,6 +102,7 @@ const speciesEntry = {
     name: 'screen-species-entry',
     type:'test',
     score: 1,
+    points: 3,
     screens: [
         { ...specimen },
         { ...text, template: 'js-species-entry-template', taxon: 'species'}
@@ -104,6 +113,7 @@ const speciesGenusEntry = {
     name: 'screen-binomial-entry',
     type:'test',
     score: 1,
+    points: 4,
     screens: [
         { ...specimen },
         { ...text, template: 'js-species-genus-entry-template', taxon: 'name'}
@@ -114,6 +124,7 @@ const commandLayout = {
     name: 'screen-command',
     type:'test',
     score: 1,
+    points: 2,
     screens: [
         { ...command },
     ]
@@ -122,6 +133,7 @@ const commandLayout = {
 const leafEntry = {
     type:'test',
     score: 1,
+    points: 3,
     screens: [
         { ...leaf },
         { ...leafName, template: 'js-text-entry-template' }
@@ -132,6 +144,7 @@ const textCompleteGenus = {
     name: 'screen-genus-completion',
     type:'test',
     score: 1,
+    points: 2,
     screens: [
         { ...specimen },
         { ...textComplete, type: 'text-complete-genus'  }
@@ -142,6 +155,7 @@ const textCompleteSpecies = {
     name: 'screen-species-completion',
     type:'test',
     score: 1,
+    points: 2,
     screens: [
         { ...specimen },
         { ...textComplete, type: 'text-complete-species' }
@@ -152,6 +166,7 @@ const commonEntry = {
     name: 'screen-common-entry',
     type:'test',
     score: 1,
+    points: 2,
     screens: [
         { ...specimen },
         { ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Enter the common name', short: 'Enter the common name'}}

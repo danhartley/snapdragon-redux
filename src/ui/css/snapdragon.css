@@ -515,6 +515,37 @@ hr {
   margin: 0 0 1em 0;
 }
 
+.summary div.score {
+  display: flex;
+  align-items: center;
+}
+
+.summary div.score > div:nth-child(1) {
+  flex: 1;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.summary p > span.score {
+  font-size: 1.em;
+  padding: 0;
+}
+
+.summary div.score > div:nth-child(2) {
+  flex: 3;
+  border-left: .5em solid var(--snap-list-header);
+  padding-left: .5em;
+}
+
+.summary div:nth-child(1).score > div:nth-child(2) {
+  border-left: .5em solid var(--snap-collection);
+}
+
+.summary span.score {
+  font-size: 1.4em;
+  padding: 0 .2em 0 0;
+}
+
 .capitalise {
   text-transform: capitalize;
 }
@@ -794,7 +825,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   border-radius: .20rem .20rem 0 0;
 }
 
-.table-header {
+.table-header, .table-footer {
   color: var(--snap-text-light);
   background-color: var(--snap-list-header);
   line-height: 1.5;
@@ -804,13 +835,13 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   border: 1px solid transparent;
 }
 
-.table-header th {
+.table-header th, .table-footer td {
   cursor: pointer;
   font-weight: initial;
   padding: .375em 0em;
 }
 
-.table-header th:nth-child(1):after, .table-header th:nth-child(3):after, .table-header th:nth-child(4):after, .table-header th:nth-child(5):after, .table-header th:nth-child(6):after {
+.table-header th:nth-child(3):after, .table-header th:nth-child(4):after, .table-header th:nth-child(5):after, .table-header th:nth-child(6):after {
   display: inline-block;
   width: 0;
   height: 0;
@@ -846,9 +877,16 @@ tbody {
   cursor: pointer;
   display: flex;
   flex-direction: row;
+  /* border-left: .05em solid var(--snap-list-header) !important;
+  border-right: .05em solid var(--snap-list-header) !important; */
+}
+
+.table-row {
+  padding: .2em 0;
+}
+
+.list-group-item {
   padding: .2em .5em;
-  border-left: .05em solid var(--snap-list-header) !important;
-  border-right: .05em solid var(--snap-list-header) !important;
 }
 
 .list-group li:nth-child(2n+1) {
@@ -858,12 +896,15 @@ tbody {
 .table-row img {
   width: 3em;
   height: 3em;
-  object-fit: cover;
-  margin: 0 .5em 0 0;
+  object-fit: cover;  
+}
+
+.table-row img {
+  padding-right: .5em;
 }
 
 .table-header th:nth-child(1) > div {
-  width: 3.5em;
+  /* padding-left: .5em; */
   height: 1px;
 }
 
@@ -948,6 +989,11 @@ tbody {
   border: .05em solid var(--snap-question-background);
   padding: 1em;
   border-radius: .2rem;
+}
+
+.question-container > span:nth-child(2) {
+  margin: .5em 0 0 0;
+  display: block;
 }
 
 .typewriter-container {  
