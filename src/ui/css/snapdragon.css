@@ -79,26 +79,36 @@ hr {
   text-align: center;
 }
 
-.collections a.dropdown-item:active, .collections a.dropdown-item.active {
-  color: var(--snap-text-light);
-  background-color: var(--snap-collection-active);
-  padding: .25em 0;
+.collections a.dropdown-item {
+  padding: .75em 0;
 }
 
-.levels a.dropdown-item:active, .levels a.dropdown-item.active {
-  color: var(--snap-text-dark);
-  background-color: var(--snap-option);
+.collections a.dropdown-item:active, .collections a.dropdown-item.active {
+  color: var(--snap-text-light);
+  background-color: var(--snap-collection-active);  
+}
+
+.collections a.dropdown-item:hover{
+  background-color: var(--snap-collection-hover);
+}
+
+.languages a.dropdown-item:hover{
+  background-color: var(--snap-language-hover);
 }
 
 .languages a.dropdown-item.active, .js-languages a.dropdown-item:active {
   color: var(--snap-text-dark);
-  background-color: var(--snap-option);
+  background-color: var(--snap-language);
+}
+
+.languages a.dropdown-item {
+  padding: .5em 0;
 }
 
 .btn-option {
   color: var(--snap-text-dark);
-  background-color: var(--snap-option);
-  border-color: var(--snap-option);
+  background-color: var(--snap-language);
+  border-color: var(--snap-language);
 }
 
 
@@ -620,13 +630,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .collection:hover {
-  background-color: var(--snap-primary-hover);
+  background-color: var(--snap-collection-hover);
 }
-
-/* .collection:active {
-  color: var(--snap-text-dark);
-  background-color: var(--snap-primary-active);
-} */
 
 .collection button {
   color: var(--snap-text-dark);

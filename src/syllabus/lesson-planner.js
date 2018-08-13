@@ -26,7 +26,7 @@ const createLessonPlan = (config, collection) => {
 const getLayouts = (config) => {
     const { lesson: { name: lessonName, level: { name: levelName }}, isPortraitMode } = config;
     const _currentLesson = currentLesson(lessonName, isPortraitMode);
-    const _currentLevel = currentLevel(_currentLesson, levelName);
+    const _currentLevel = getCurrentLevel(_currentLesson, levelName);
     return _currentLevel.layouts;
 };
 
@@ -35,7 +35,7 @@ const currentLesson = (lessonName, isPortraitMode = false) => {
     return lessons[0];
 };
 
-const currentLevel = (lesson, levelName) => { 
+const getCurrentLevel = (lesson, levelName) => { 
     const levels = lesson.levels.filter(level => level.name === levelName);
     return levels[0];
 };
@@ -49,7 +49,7 @@ const nextLevelId = (lesson, level, direction) => {
 
 const changeLevel = (currentLessonName, currentLevelName, direction, isPortraitMode = false) => {
     const lesson = currentLesson(currentLessonName, isPortraitMode);
-    const level = currentLevel(lesson, currentLevelName);
+    const level = getCurrentLevel(lesson, currentLevelName);
     const levelId = nextLevelId(lesson, level, direction);
     const levels = lesson.levels.filter(level => level.id === levelId);
     return { ...levels[0], lessonName: lesson.name };

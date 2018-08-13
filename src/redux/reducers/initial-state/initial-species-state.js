@@ -10,11 +10,12 @@ const collections = [ kitchenGarden, nationalFlowers ];
 
 const initCollection = (selectedCollection = collections[0]) => {
 
-    let prepCollection = selectedCollection.type === 'skill'
-    ? R.pipe(utils.shuffleArray)
-    : R.pipe(helpers.filterExcluded, helpers.extractScientificNames, helpers.embellishCollection);
-    const items = utils.sortBy(prepCollection(selectedCollection.items), 'snapIndex');
     const moduleSize = selectedCollection.moduleSize || config.moduleSize;
+
+    let prepCollection = selectedCollection.type === 'skill'
+        ? R.pipe(utils.shuffleArray)
+        : R.pipe(helpers.filterExcluded, helpers.extractScientificNames, helpers.embellishCollection);
+    const items = utils.sortBy(prepCollection(selectedCollection.items), 'snapIndex');
     const rounds = items.length / moduleSize;
 
     const families = getFamilies(items);
