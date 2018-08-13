@@ -43,8 +43,7 @@ export const renderHistory = (history) => {
     const fails = failsTotals.reduce(reducer, {});
     const all = { ...passes, ...fails };
 
-    const items = collection.items.filter(item => all[item.id]);
-    // const items = utils.sortBy(collection.items.filter(item => all[item.id]), 'snapIndex', 'desc');
+    const items = utils.sortBy(collection.items.filter(item => all[item.id]), 'snapIndex', 'desc');
     
     items.forEach(item => { 
         item.passes = passes[item.id] || 0;

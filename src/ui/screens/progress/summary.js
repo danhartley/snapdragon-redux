@@ -21,10 +21,13 @@ export const renderSummary = (history) => {
     const levelComplete = collection.currentRound === collection.rounds;
     const lastLevel = 4;
     const collectionComplete = config.lesson.level.id === lastLevel;
+    const speciesCount = collection.items.length;
+    const speciesTestedCount = collection.currentRound * config.moduleSize;
+    const speciesUntestedCount = speciesCount - speciesTestedCount;
 
     let summary; 
     if(!levelComplete) {
-        summary = 'Keep going...';
+        summary = `There are ${speciesUntestedCount} more species to learn in this lesson.`;
     }
     if(levelComplete) {
         summary = 'Continue to the next level...';

@@ -190,6 +190,10 @@ hr {
   justify-content: space-between;
 }
 
+.selected-collection.card, .summary.card {
+  margin: 0 0 1em 0;
+}
+
 .species.revision.card {
   margin: .5em 0 1em 0;
 }

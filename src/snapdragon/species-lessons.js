@@ -28,7 +28,7 @@ export const nationalFlowers = {
     items:[ ...nationalFlowersLessons[0].items ],
     collections: ['National Flowers'],
     thumb: 'https://media.eol.org/content/2012/06/13/04/65813_orig.jpg',
-    moduleSize: 6,
+    moduleSize: 2,
     curator: 'Snapdragon',
     level: 'Everyone'    
 };
