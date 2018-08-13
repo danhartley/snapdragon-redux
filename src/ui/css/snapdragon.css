@@ -182,19 +182,29 @@ hr {
   flex-direction: column;
   padding: .5em;
   background-color: var(--snap-container-background);
+  justify-content: space-between;
 }
 
-.species.card {
-  margin: .5em 0 0 0;
+.taxon.revision.card, .species.revision.card {
+  margin: 0 0 1em 0;
+  justify-content: space-between;
+}
+
+.species.revision.card {
+  margin: .5em 0 1em 0;
+}
+
+.card.radio-buttons-container, .card.block-container {
+  margin: 0 0 1em 0;
 }
 
 .binomial {
   font-style: italic;
 }
 
-.species.card > div, .taxon.card > div, .trait.card > div {
+/* .species.card > div, .taxon.card > div, .trait.card > div {
   flex: auto;
-}
+} */
 
 .list-group-collection {
   flex: auto;
@@ -345,7 +355,7 @@ hr {
 }
 
 .strips {
-  flex: auto;
+  flex: initial;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -387,14 +397,14 @@ hr {
 .align-left {
   text-align: left;
 }
-
+/* 
 .species-card-container {
   flex-shrink: 2;
-}
+} */
 
-.species-card-container .card {
+/* .species-card-container .card {
   margin: 1em  0;
-}
+} */
 
 .species-card-wiki a, .species-card-eol-link, .species-card-wikipedia {
   color: var(--snap-link);
@@ -649,11 +659,12 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   width: fit-content;
   background-color: var(--snap-block-light);
   color: var(--snap-text-dark);
-  margin: .2em .1em;
+  margin: .2em;
   padding: .1em .4em;
   letter-spacing: .1em;
   border-radius: .2em;  
   border: .05em solid var(--snap-text-dark);
+  font-size: 1.2em;
 }
 
 .block.given {
@@ -729,7 +740,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .action-update-container {
-  padding: 1em 0 0 0;
+  width: 100%;
 }
 
 .action-update button {
@@ -841,6 +852,14 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   padding: .375em 0em;
 }
 
+.table-footer td:nth-child(1), .table-footer td:nth-child(3),.table-footer td:nth-child(4) {
+  flex: 1;
+}
+
+.table-footer td:nth-child(2) {
+  flex: 4;
+}
+
 .table-header th:nth-child(3):after, .table-header th:nth-child(4):after, .table-header th:nth-child(5):after, .table-header th:nth-child(6):after {
   display: inline-block;
   width: 0;
@@ -904,7 +923,6 @@ tbody {
 }
 
 .table-header th:nth-child(1) > div {
-  /* padding-left: .5em; */
   height: 1px;
 }
 
