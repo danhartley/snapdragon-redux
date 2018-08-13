@@ -86,15 +86,23 @@ export const renderSpeciesCollectionList = (collection) => {
     speciesFooter.innerHTML = '<div></div>';
     familyFooter.innerHTML = '<div></div>';
 
-    passesFooter.innerHTML = totalPasses;
-    failsFooter.innerHTML = totalFails;
+    passesFooter.innerHTML = `<div>${totalPasses}</div>`;
+    failsFooter.innerHTML = `<div>${totalFails}</div>`;
 
-    footerRow.appendChild(imageFooter);
-    footerRow.appendChild(indexFooter);
-    footerRow.appendChild(speciesFooter);
-    footerRow.appendChild(familyFooter);
-    footerRow.appendChild(passesFooter);
-    footerRow.appendChild(failsFooter);
+    if(config.isPortraitMode) {
+        footerRow.appendChild(imageFooter);
+        footerRow.appendChild(speciesFooter);
+        footerRow.appendChild(passesFooter);
+        footerRow.appendChild(failsFooter);
+    } else {
+        footerRow.appendChild(imageFooter);
+        footerRow.appendChild(indexFooter);
+        footerRow.appendChild(speciesFooter);
+        footerRow.appendChild(familyFooter);
+        footerRow.appendChild(passesFooter);
+        footerRow.appendChild(failsFooter);
+        }
+
     tfoot.appendChild(footerRow);
     table.appendChild(tfoot);
 

@@ -62,7 +62,7 @@
     }
 
     .tiles {
-        height: 100%;
+        height: 75%;
     }
 
     .squares { 
@@ -77,6 +77,10 @@
     .strip div {
         padding: .5em;
         font-size: 1.2em;
+    }
+
+    .action-update-container {
+        width: initial;
     }
 
     .letterbox-entry {
@@ -104,9 +108,9 @@
         color: var(--snap-text-dark);
     }
 
-    .block {
+    /* .block {
         font-size: 1.4em;
-    }
+    } */
 
     .text-question {
         margin: 1em 0 0 .25em;

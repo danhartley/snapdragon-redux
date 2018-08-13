@@ -83,7 +83,7 @@ export const renderRadioButtons = (collection) => {
     
     if(layout.screens.find(screen => screen.flavour === 'match-species-to-latin-family-name')) {
 
-        indices = config.isPortraitMode ? [3,4] : [5,6];
+        indices = config.isPortraitMode ? [5,6] : [5,6];
 
         description = `To which FAMILY does the species ${species.toUpperCase()} belong?`;        
         question = { question: family, binomial: item.name };
@@ -94,7 +94,7 @@ export const renderRadioButtons = (collection) => {
     
     if(layout.screens.find(screen => screen.flavour === 'match-species-to-common-family-name')) {
 
-        indices = config.isPortraitMode ? [3,4] : [5,6];
+        indices = config.isPortraitMode ? [5,6] : [5,6];
         
         description = `To which FAMILY does the species ${species.toUpperCase()} belong?`;
         question = { question: commonFamilyName, binomial: item.name };
