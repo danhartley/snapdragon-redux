@@ -9,11 +9,13 @@ import { getFamilies } from 'redux/reducers/initial-state/species-state/species-
 const collections = [ kitchenGarden, nationalFlowers ];
 
 const initCollection = (selectedCollection = collections[0]) => {
+
     let prepCollection = selectedCollection.type === 'skill'
-        ? R.pipe(utils.shuffleArray)
-        : R.pipe(helpers.filterExcluded, helpers.extractScientificNames, helpers.embellishCollection);
+    ? R.pipe(utils.shuffleArray)
+    : R.pipe(helpers.filterExcluded, helpers.extractScientificNames, helpers.embellishCollection);
     const items = utils.sortBy(prepCollection(selectedCollection.items), 'snapIndex');
-    const rounds = items.length / config.moduleSize;
+    const moduleSize = selectedCollection.moduleSize || config.moduleSize;
+    const rounds = items.length / moduleSize;
 
     const families = getFamilies(items);
 
@@ -23,8 +25,8 @@ const initCollection = (selectedCollection = collections[0]) => {
         items : items,
         itemIndex: 0,
         currentRound: 1,
-        moduleSize: config.moduleSize,
-        rounds : items.length % config.moduleSize === 0 ? rounds : rounds === 1 ? 1 : Math.floor(rounds) + 1,
+        moduleSize: moduleSize,
+        rounds : items.length % moduleSize === 0 ? rounds : rounds === 1 ? 1 : Math.floor(rounds) + 1,
         families: families
      };
 

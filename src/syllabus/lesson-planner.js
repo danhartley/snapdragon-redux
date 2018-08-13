@@ -6,7 +6,8 @@ import { getWildcardLayouts } from 'redux/reducers/initial-state/species-state/s
 const { summary, history, specimen, epithets, cultivarCard, cultivar, wildcardCard, wildcard, definitions } = screens;
 
 const createLessonPlan = (config, collection) => {
-    const { lesson: { name: lessonName, level: { name: levelName }}, moduleSize, excludeRevision, isPortraitMode } = config;
+    const moduleSize = collection.moduleSize || config.moduleSize;
+    const { lesson: { name: lessonName, level: { name: levelName }}, excludeRevision, isPortraitMode } = config;
     const wildcardLayouts = getWildcardLayouts([ [specimen, epithets], [specimen, cultivarCard, cultivar], [specimen, wildcardCard, wildcard], [specimen, definitions] ], collection, moduleSize);
     const layouts = getLayouts(config);
     return createLesson(
