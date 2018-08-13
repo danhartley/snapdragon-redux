@@ -23,7 +23,7 @@ export const renderCompleteText = (collection) => {
 
     template.innerHTML = completeTemplate;
 
-    let question, givenTaxon, description, genus, species;
+    let question, givenTaxon, description, description2, genus, species;
 
     item.genus = itemProperties.genusName(item.name);
     item.species = itemProperties.speciesName(item.name);
@@ -36,19 +36,24 @@ export const renderCompleteText = (collection) => {
         genus = '---';
         species = item.species;
         givenTaxon = 'genus';
-        description =  config.isPortraitMode 
-            ? `Complete the latin name for ${vernacular.toUpperCase()}.`
-            : `Complete the latin name by selecting the correct GENUS from the options below.`;
-
+        if(config.isPortraitMode) {
+            description = `Complete the latin name for ${vernacular.toUpperCase()}.`
+        } else {
+            description = `Complete the latin name by selecting the correct GENUS from the options below.`;
+            description2 = `Common name: ${vernacular.toUpperCase()}.`
+        }
     } else if(screen.type === 'text-complete-species') {
 
         question = item.species;
         genus = item.genus;
         species = '---';        
         givenTaxon = 'species';
-        description = config.isPortraitMode 
-            ? `Complete the latin name for ${vernacular.toUpperCase()}.`
-            : `Complete the latin name by selecting the correct SPECIES from the options below.`;
+        if(config.isPortraitMode) {
+            description = `Complete the latin name for ${vernacular.toUpperCase()}.`
+        } else {
+            description = `Complete the latin name by selecting the correct SPECIES from the options below.`;
+            description2 = `Common name: ${vernacular.toUpperCase()}.`
+        }
     }
 
     const pool = R.take(6, utils.shuffleArray(collection.items).filter(i => i.name !== item.name)).map(i => i[givenTaxon]);
@@ -59,7 +64,7 @@ export const renderCompleteText = (collection) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    renderTemplate({ description, vernacular, answers, genus, species }, template.content, parent);
+    renderTemplate({ description, description2, vernacular, answers, genus, species }, template.content, parent);
 
     const score = { itemId: item.id, binomial: item.name, question: item[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length, points: layout.points };
 

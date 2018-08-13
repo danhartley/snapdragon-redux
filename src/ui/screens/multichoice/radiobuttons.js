@@ -21,7 +21,7 @@ export const renderRadioButtons = (collection) => {
     template.innerHTML = radiobuttonsTemplate;
 
     let randomAnswers, description, description2, question, answers;
-    let indices = config.isPortraitMode ? [3,4] : [4,5];
+    let indices = config.isPortraitMode ? [4,5] : [5,6];
 
     description2 = '';
 
@@ -33,6 +33,8 @@ export const renderRadioButtons = (collection) => {
     const otherFamiliesCommonNames = otherFamilies.filter(family => family.names.find(name => name.language === config.language)).map(family => family.names[0].names[0]);    
     const familyTaxon = families.find(family => family.name === item.family); 
     const commonFamilyName = itemProperties.getTaxonProp(familyTaxon, config.language, 'names', 'names', '0').names[0];
+
+    indices = config.isPortraitMode ? [3,4] : [4,5];
 
     const render = () => {
         const parent = DOM.rightBody;
@@ -83,8 +85,6 @@ export const renderRadioButtons = (collection) => {
     
     if(layout.screens.find(screen => screen.flavour === 'match-species-to-latin-family-name')) {
 
-        indices = config.isPortraitMode ? [5,6] : [5,6];
-
         description = `To which FAMILY does the species ${species.toUpperCase()} belong?`;        
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
@@ -94,8 +94,6 @@ export const renderRadioButtons = (collection) => {
     
     if(layout.screens.find(screen => screen.flavour === 'match-species-to-common-family-name')) {
 
-        indices = config.isPortraitMode ? [5,6] : [5,6];
-        
         description = `To which FAMILY does the species ${species.toUpperCase()} belong?`;
         question = { question: commonFamilyName, binomial: item.name };
         answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
@@ -105,7 +103,7 @@ export const renderRadioButtons = (collection) => {
 
     if(layout.screens.find(screen => screen.flavour === 'match-common-family-name-to-latin-family-name')) {
 
-        indices = config.isPortraitMode ? [3,4] : [5,6];
+        indices = config.isPortraitMode ? [4,5] : [5,6];
 
         description = `Which of the following common FAMILY names matches the latin name ${family.toUpperCase()}?`;
         question = { question: commonFamilyName, binomial: item.name };
@@ -116,7 +114,7 @@ export const renderRadioButtons = (collection) => {
 
     if(layout.screens.find(screen => screen.flavour === 'match-latin-family-name-to-common-family-name')) {
 
-        indices = config.isPortraitMode ? [3,4] : [5,6];
+        indices = config.isPortraitMode ? [4,5] : [5,6];
 
         description = `Which of the following common FAMILY names matches the latin name ${family.toUpperCase()}?`;
         question = { question: commonFamilyName, binomial: item.name };
