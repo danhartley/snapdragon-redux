@@ -1,6 +1,6 @@
 @media (max-width: 768px) {
     .landscape {
-        display: none;
+        display: none !important;
     }
     .portrait-grid {
         display: grid;
@@ -9,7 +9,7 @@
 
 @media (min-width: 768px) {
     .portrait, .portrait-grid {
-        display: none;
+        display: none !important;
     }
 }
 

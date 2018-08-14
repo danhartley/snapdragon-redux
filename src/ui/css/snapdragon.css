@@ -306,7 +306,7 @@ hr {
 }
 
 .score-footer span:nth-child(1) {
-  flex: 1;
+  flex: auto;
 }
 
 .score-footer span:nth-child(2) {
