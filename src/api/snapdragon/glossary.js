@@ -139,7 +139,7 @@ export const definitions = [
     },
     {
         term: "Variety",
-        definition: "A taxonomic rank below that of species and subspecies but above that of form."
+        definition: "A naturally occurring, stable variation on a species."
     },
     {
         term: "Form",

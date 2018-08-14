@@ -12,10 +12,11 @@ export const renderCultivarCard = collection => {
     const cultivarCollection = lessonPlan.layouts.find(l => l.name === 'screen-cultivar-card').cultivars;
 
     const cultivars = cultivarCollection.subspecies.map(sub => {
-        const locale = sub.names.find(n => n.language === config.language);
+        let locale = sub.names.find(n => n.language === config.language);
+        locale = locale || sub.names.find(n => n.language === 'en');
         return {
-            vernacular: locale.vernacularName,
-            variety: sub.variety,
+            vernacular: locale.vernacularName || '',
+            variety: sub.variety || '',
             form: sub.form || '',
             eol: locale.eol || '',
             eolAlt: locale.eol || 'N/A',
