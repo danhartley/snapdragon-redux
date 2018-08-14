@@ -37,10 +37,10 @@ export const renderCompleteText = (collection) => {
         species = item.species;
         givenTaxon = 'genus';
         if(config.isPortraitMode) {
-            description = `Complete the latin name for ${vernacular.toUpperCase()}.`
+            description = `Complete the latin name for ${vernacular}.`            
         } else {
             description = `Complete the latin name by selecting the correct GENUS from the options below.`;
-            description2 = `Common name: ${vernacular.toUpperCase()}.`
+            description2 = `Common name: ${vernacular}.`
         }
     } else if(screen.type === 'text-complete-species') {
 
@@ -49,10 +49,10 @@ export const renderCompleteText = (collection) => {
         species = '---';        
         givenTaxon = 'species';
         if(config.isPortraitMode) {
-            description = `Complete the latin name for ${vernacular.toUpperCase()}.`
+            description = `Complete the latin name for ${vernacular}.`
         } else {
             description = `Complete the latin name by selecting the correct SPECIES from the options below.`;
-            description2 = `Common name: ${vernacular.toUpperCase()}.`
+            description2 = `Common name: ${vernacular}.`
         }
     }
 

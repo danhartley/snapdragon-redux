@@ -533,7 +533,7 @@ export const taxa = [
             {
                 language: 'en',
                 summary: 'The family has a worldwide distribution in tropical and warm climates from low-lying to montane.',
-                identification: 'Frequently aromatic trees and shrubs. The fruits are drupes, one-seeded fleshy fruit with a hard layer, the endocarp, surrounding the seed.'
+                identification: 'Aromatic trees and shrubs. The fruits are drupes, one-seeded fleshy fruit with a hard layer, the endocarp, surrounding the seed.'
             }
         ],
         members: ['Persea americana', 'Laurus nobilis'],
@@ -557,7 +557,7 @@ export const taxa = [
             {
                 language: 'en',
                 summary: 'Common in acidic and poor soils.',
-                identification: 'Red or white bell-shaped flowers (parts in 4\'s or 5\'s). Commonly evergreen leaves. Family includes cranberry, blueberry and rhododendron.'
+                identification: 'Red or white bell-shaped flowers (parts in 4\'s or 5\'s). Commonly evergreen leaves. Family includes cranberry and rhododendron.'
             }
         ],
         members: ['Vaccinium oxycoccos', 'Vaccinium', 'Rhododendron', 'Arbutus unedo', 'Erica'],
