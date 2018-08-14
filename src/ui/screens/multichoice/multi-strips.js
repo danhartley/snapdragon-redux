@@ -186,11 +186,13 @@ export const renderMultiStrips = (collection) => {
 
         const number = config.isPortraitMode ? 6 : 6;
         
-        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(epithets)).filter(e => !R.contains(e.en, layout.epithet.en))).map(e => e.en.join(', '));
+        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(epithets)).filter(e => !R.contains(e.en, epithet))).map(e => e.en.join(', '));
         const questionText = config.isPortraitMode 
             ? `Tap to match the epithet`
             : `Click to match the epithet`
-        const question = layout.epithet.en[0];
+        let question = epithets.find(e => e.latin[0].toUpperCase() === epithet.toUpperCase());
+        question = question ? question[config.language][0] : epithet;
+        
         const answers = utils.shuffleArray([question, ...alternatives]);
 
         render(questionText, question, answers);

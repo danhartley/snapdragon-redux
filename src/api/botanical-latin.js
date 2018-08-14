@@ -4,7 +4,11 @@ export const epithets = [
     //     "en" : ["Used to form the name of taxonomic families of plants, algae, bacteria, and fungi"]
     // },
     {
-        "latin": ['Agastache'],
+        "latin": ['armeniaca'],
+        "en": ['from Armenia']
+    },
+    {
+        "latin": ['agastache'],
         "en": ['many spikes']
     },
     {
