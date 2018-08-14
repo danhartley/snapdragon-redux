@@ -1,0 +1,34 @@
+<div class="list-group-collection">    
+    <div></div>
+    <div class="scrollable js-list-item-container">
+        <div>
+            <table class="species-table list-group list-group-flush">
+                <tbody data-repeat-item="{{ collection.items }}">
+                    <tr class="table-row js-list-item" data-toggle="modal" data-target="#imageModal" data-image="{{ item.image }}" data-id="{{ item.name }}">
+                        <td>
+                            <span>{{ item.snapIndex }}</span>
+                        </td>
+                        <td>
+                            <img id="{{ item.name }}" src="https://media.eol.org/content/{{ item.image }}" alt="{{ item.name }}">
+                        </td>
+                        <td>
+                            <span style="flex:1" class="capitalise">{{ item.vernacularName }}</span>
+                            <span style="flex:1" class="species-card-name">{{ item.binomial }}</span>
+                        </td>
+                        <td>
+                            <span>{{ item.passes }}</span>
+                        </td>
+                        <td>
+                            <span>{{ item.fails }}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>    
+    </div>
+</div>
+<div>
+    <div class="list-continue-btn action-update portrait js-list-footer">
+        <button class="btn btn-light js-species-list-btn-action">Continue lesson</button>
+    </div>
+</div>

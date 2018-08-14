@@ -12,7 +12,8 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { syndromes } from 'api/snapdragon/syndromes';
 import familyTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import questionCard from 'ui/screens/common/question-template.html';
-import familyCard from 'ui/screens/cards/taxon-card-template.html';
+import speciesCard from 'ui/screens/cards/species-card-template.html';
+import taxonCard from 'ui/screens/cards/taxon-card-template.html';
 
 export const renderMultiStrips = (collection) => {
 
@@ -29,19 +30,21 @@ export const renderMultiStrips = (collection) => {
 
     const families = taxa.filter(taxon => taxon.taxon === 'family');
 
-    let description = config.isPortraitMode ? `Family: ${item.family}` : `Which of the above describes the ${item.family}`;
+    let description = config.isPortraitMode ? `Family: ${item.family} ` : `Which of the above describes the ${item.family}`;
 
     const familyFlavours = config.isPortraitMode 
     ? [ 'match-family-to-quick-id' ] 
     : [ 'match-family-to-quick-id', 'match-family-to-summary' ];
 
-    const screen = layout.screens.find(screen => screen.name === 'family-strips');
+    let screen = layout.screens.find(screen => screen.name === 'family-strips');
     
     if(screen) {
         screen.flavour = utils.shuffleArray(familyFlavours)[0];
+    } else {
+        screen = layout.screens.find(screen => screen.name === 'species-scientifics') || layout.screens.find(screen => screen.name === 'species-vernaculars')
     }
 
-    const render = (questionText, questionValue, answers) => {
+    const render = (questionText, questionValue, answers, card = taxonCard, ctxt = {description}) => {
     
         renderTemplate({ answers }, template.content, parent);
         
@@ -49,9 +52,9 @@ export const renderMultiStrips = (collection) => {
 
         parent = document.querySelector('.right-body .snapdragon-container');
 
-        template.innerHTML = familyCard;
+        template.innerHTML = card;
 
-        const context = { description };
+        const context = ctxt;
 
         renderTemplate( context, template.content, parent);
 
@@ -65,6 +68,11 @@ export const renderMultiStrips = (collection) => {
             answer.style.display = 'block';
             answer.classList.add(className);
             document.querySelector('.js-question').style.display = 'none';
+            if(screen.name === 'species-vernaculars') {
+                document.querySelector('.js-txt-species-name').innerHTML = text
+            } else if(screen.name === 'species-scientifics') {
+                document.querySelector('.js-txt-species').innerHTML = text;
+            }
         }
 
         const taxon = { name: item.family, binomial: item.name, question: questionValue };
@@ -75,9 +83,39 @@ export const renderMultiStrips = (collection) => {
         scoreHandler('strip', score, callback, config.callbackTime);
     }
 
+    if(layout.screens.find(screen => screen.name === 'species-scientifics')) {
+
+        const number = config.isPortraitMode ? 4 : config.isSmallLandscapeMode ? 5 : 6;
+
+        const vernacular = itemProperties.vernacularName(item, config);
+        const questionText = config.isPortraitMode ? 'Tap to match latin name' : `Click to match latin name`;
+        const question = item.name;
+        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(collection.items)).filter(i => i.name !== item.name)).map(i => i.name);
+        const answers = utils.shuffleArray([question, ...alternatives]);
+
+        const description = { vernacular, name: '---' };
+
+        render(questionText, question, answers, speciesCard, description);
+    }
+
+    if(layout.screens.find(screen => screen.name === 'species-vernaculars')) {
+
+        const number = config.isPortraitMode ? 4 : config.isSmallLandscapeMode ? 5 : 6;
+
+        const questionText = config.isPortraitMode ? 'Tap to match common name' : `Click to match common name`;
+        const question = itemProperties.vernacularName(item, config);
+        let alternatives = R.take(number-1, R.take(number, utils.shuffleArray(collection.items)).map(i => i.names.filter(name => name.language === config.language)[0].vernacularName)).filter(i => i !== question);
+        alternatives = alternatives.map(a => utils.capitaliseFirst(a));
+        const answers = utils.shuffleArray([question, ...alternatives]);
+
+        const description = { vernacular: '---', name: item.name };
+
+        render(questionText, question, answers, speciesCard, description);
+    }
+
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
-        const number = config.isPortraitMode ? 4 : 6;
+        const number = config.isPortraitMode ? 4 : config.isSmallLandscapeMode ? 5 : 6;
 
         const questionText = config.isPortraitMode ? 'Tap to match Quick ID' : `Click to match the Quick ID`;
         const question = families.find(f => f.name === item.family).descriptions[0].identification;

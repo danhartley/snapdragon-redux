@@ -818,14 +818,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   margin: 2em auto;
 }
 
-.portrait {
-  display: initial;
-}
-
-.portrait-grid {
-  display: grid;
-}
-
 .list-group {
   padding: 0;
 }
@@ -1019,7 +1011,7 @@ tbody {
 
 .question-container > span:nth-child(2) {
   margin: .5em 0 0 0;
-  display: block !important;
+  display: block;
 }
 
 .typewriter-container {  
@@ -1042,8 +1034,4 @@ tbody {
   50% {
     border-color: transparent;
   }
-}
-
-.landscape {
-  display: none !important; 
 }

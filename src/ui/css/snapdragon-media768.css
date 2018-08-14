@@ -157,14 +157,6 @@
         width: initial;
     }
 
-    .portrait, .portrait-grid {
-        display: none;
-    }
-
-    .landscape {
-        display: initial !important;
-    }
-
     .snapdragon-container {
         border: 1px solid var(--snap-primary);
     }    
