@@ -317,7 +317,7 @@ export const taxa = [
             {
                 language: 'en',
                 summary: 'Small trees, shrubs, perennial and annual herbs. Includes Piper nigrum the source of both black and white pepper.',
-                identification: 'Dense flower spikes of tiny radially symmetrical flowers; no petals or sepals. Soft, fleshy or succulent leaves with pungent flavour.'
+                identification: 'Dense flower spikes of tiny radially symmetrical flowers; no petals or sepals. Succulent leaves with pungent flavour.'
             }
         ],
         wiki: "https://en.wikipedia.org/wiki/Piperaceae",
