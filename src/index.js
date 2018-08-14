@@ -8,6 +8,7 @@ import 'ui/css/snapdragon.css';
 import 'ui/css/snapdragon-media.css';
 import 'ui/css/snapdragon-media768.css';
 import 'ui/css/snapdragon-media1200.css';
+import 'ui/css/snapdragon-media-display.css';
 
 import { store } from 'redux/store';
 
@@ -31,7 +32,8 @@ setTimeout(()=>{
 
     const config = { ...currentConfig };
     
-    config.isPortraitMode = window.matchMedia("(max-width: 480px)").matches;
+    config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
+    config.isSmallLandscapeMode = window.matchMedia("(max-width: 1023px)").matches;
 
     if(!config.lesson) {
         config.lesson = config.isPortraitMode ? lessonPlans[2] : lessonPlans[0];

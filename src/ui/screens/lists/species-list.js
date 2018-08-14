@@ -7,6 +7,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 import speciesPortraitTemplate from 'ui/screens/lists/species-table-portrait-template.html';
+import speciesSmallLandscapeTemplate from 'ui/screens/lists/species-table-small-landscape-template.html';
 
 export const renderSpeciesCollectionList = (collection) => {
 
@@ -32,7 +33,7 @@ export const renderSpeciesCollectionList = (collection) => {
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
     parent.innerHTML = '<div class="snapdragon-container species-list js-species-list"></div>';
     parent = parent.querySelector('.snapdragon-container.js-species-list');
-    template.innerHTML = config.isPortraitMode ? speciesPortraitTemplate : speciesTemplate;
+    template.innerHTML = config.isPortraitMode ? speciesPortraitTemplate : config.isSmallLandscapeMode ? speciesSmallLandscapeTemplate : speciesTemplate;
 
     renderTemplate({ collection }, template.content, parent);
 
@@ -58,6 +59,12 @@ export const renderSpeciesCollectionList = (collection) => {
         headerRow.appendChild(speciesHeader);
         headerRow.appendChild(passesHeader);
         headerRow.appendChild(failsHeader);     
+    } else if(config.isSmallLandscapeMode) {
+        headerRow.appendChild(indexHeader);
+        headerRow.appendChild(imageHeader);
+        headerRow.appendChild(speciesHeader);
+        headerRow.appendChild(passesHeader);
+        headerRow.appendChild(failsHeader);
     }
     else {
         headerRow.appendChild(indexHeader);
@@ -94,6 +101,12 @@ export const renderSpeciesCollectionList = (collection) => {
         footerRow.appendChild(speciesFooter);
         footerRow.appendChild(passesFooter);
         footerRow.appendChild(failsFooter);
+    } else if(config.isSmallLandscapeMode) {
+        footerRow.appendChild(imageFooter);
+        footerRow.appendChild(indexFooter);
+        footerRow.appendChild(speciesFooter);
+        footerRow.appendChild(passesFooter);
+        footerRow.appendChild(failsFooter);
     } else {
         footerRow.appendChild(imageFooter);
         footerRow.appendChild(indexFooter);
@@ -101,7 +114,7 @@ export const renderSpeciesCollectionList = (collection) => {
         footerRow.appendChild(familyFooter);
         footerRow.appendChild(passesFooter);
         footerRow.appendChild(failsFooter);
-        }
+    }
 
     tfoot.appendChild(footerRow);
     table.appendChild(tfoot);
