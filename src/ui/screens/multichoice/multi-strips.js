@@ -29,7 +29,7 @@ export const renderMultiStrips = (collection) => {
 
     const families = taxa.filter(taxon => taxon.taxon === 'family');
 
-    let description = config.isPortraitMode ? `${item.family}` : `Which of the above describes the ${item.family}`;
+    let description = config.isPortraitMode ? `Family: ${item.family}` : `Which of the above describes the ${item.family}`;
 
     const familyFlavours = config.isPortraitMode 
     ? [ 'match-family-to-quick-id' ] 
