@@ -30,7 +30,7 @@ export const renderLetters = (letters, item, callbackTime) => {
     let itemName = '';
 
     const tryAgainBtn = document.querySelector('.js-letters .js-try-again');
-    const continueBtn = document.querySelector('.js-letters .js-continue');
+    const continueBtn = document.querySelector('.js-letters .js-continue-btn');
 
     document.querySelectorAll('.block').forEach(block => {
         
@@ -58,11 +58,11 @@ export const renderLetters = (letters, item, callbackTime) => {
                     const success = itemName === item.name.replace(' ', '');
                     const response = { ...question, answer, success };
                     const { text, colour, correct } = renderAnswerHeader(response);
-                    DOM.rightHeaderTxt.innerHTML = text;
-                    DOM.rightHeader.classList.add(colour);
+                    // DOM.rightHeaderTxt.innerHTML = text;
+                    // DOM.rightHeader.classList.add(colour);
                     response.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
                     response.layoutCount = lessonPlan.layouts.length;
-                    reponse.itemId = item.id;
+                    response.itemId = item.id;
                     setTimeout(()=>{
                         actions.boundUpdateScore(response);
                     }, callbackTime);
@@ -94,8 +94,8 @@ export const renderLetters = (letters, item, callbackTime) => {
         const success = false;
         const response = { ...question, answer, success };
         const { text, colour, correct } = renderAnswerHeader(response);
-        DOM.rightHeaderTxt.innerHTML = text;
-        DOM.rightHeader.classList.add(colour);
+        // DOM.rightHeaderTxt.innerHTML = text;
+        // DOM.rightHeader.classList.add(colour);
         response.questionCount = lessonPlan.questionCount;
         response.layoutCount = lessonPlan.layoutCount;
         reponse.itemId = item.id;

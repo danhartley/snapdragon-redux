@@ -216,10 +216,6 @@ hr {
   font-style: italic;
 }
 
-/* .species.card > div, .taxon.card > div, .trait.card > div {
-  flex: auto;
-} */
-
 .list-group-collection {
   flex: auto;
   flex-grow: 1;
@@ -994,6 +990,10 @@ tbody {
   text-align: left;
 }
 
+.radio-buttons input {
+  margin: 0 .25em 0 0;
+}
+
 .left-grid, .species-card-wiki-entry,
 .collection-preview, .collection button, .collections-skills {
     display: none;
@@ -1019,7 +1019,7 @@ tbody {
 
 .question-container > span:nth-child(2) {
   margin: .5em 0 0 0;
-  display: block;
+  display: block !important;
 }
 
 .typewriter-container {  

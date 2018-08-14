@@ -89,7 +89,7 @@ export const renderMultiStrips = (collection) => {
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
         
-        const number = config.isPortraitMode ? 3 : 6;
+        const number = config.isPortraitMode ? 3 : 5;
 
         const questionText = config.isPortraitMode ? 'Tap to match description' : `Click to match the description`;
         const question = families.find(f => f.name === item.family).descriptions[0].summary;
