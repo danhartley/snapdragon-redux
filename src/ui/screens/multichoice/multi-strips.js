@@ -30,7 +30,7 @@ export const renderMultiStrips = (collection) => {
 
     const families = taxa.filter(taxon => taxon.taxon === 'family');
 
-    let description = config.isPortraitMode ? `Family: ${item.family} ` : `Which of the above describes the ${item.family}`;
+    let description = config.isPortraitMode ? `Family: ${item.family} ` : `Which of the above fits the ${item.family}?`;
 
     const familyFlavours = config.isPortraitMode 
     ? [ 'match-family-to-quick-id' ] 
@@ -41,8 +41,10 @@ export const renderMultiStrips = (collection) => {
     if(screen) {
         screen.flavour = utils.shuffleArray(familyFlavours)[0];
     } else {
-        screen = layout.screens.find(screen => screen.name === 'species-scientifics') || layout.screens.find(screen => screen.name === 'species-vernaculars')
+        screen = layout.screens.find(screen => screen.name === 'species-scientifics') || layout.screens.find(screen => screen.name === 'species-vernaculars') || layout.screens.find(screen => screen.name === 'epithet') || layout.screens.find(screen => screen.name === 'definition') || layout.screens.find(screen => screen.name === 'wildcard-match')
     }
+
+    if(!screen) return;
 
     const render = (questionText, questionValue, answers, card = taxonCard, ctxt = {description}) => {
     
@@ -83,9 +85,9 @@ export const renderMultiStrips = (collection) => {
         scoreHandler('strip', score, callback, config.callbackTime);
     }
 
-    if(layout.screens.find(screen => screen.name === 'species-scientifics')) {
+    if(screen.name === 'species-scientifics') {
 
-        const number = config.isPortraitMode ? 4 : config.isSmallLandscapeMode ? 5 : 6;
+        const number = config.isPortraitMode ? 6 : config.isSmallLandscapeMode ? 6 : 6;
 
         const vernacular = itemProperties.vernacularName(item, config);
         const questionText = config.isPortraitMode ? 'Tap to match latin name' : `Click to match latin name`;
@@ -98,9 +100,9 @@ export const renderMultiStrips = (collection) => {
         render(questionText, question, answers, speciesCard, description);
     }
 
-    if(layout.screens.find(screen => screen.name === 'species-vernaculars')) {
+    if(screen.name === 'species-vernaculars') {
 
-        const number = config.isPortraitMode ? 4 : config.isSmallLandscapeMode ? 5 : 6;
+        const number = config.isPortraitMode ? 6 : config.isSmallLandscapeMode ? 6 : 6;
 
         const questionText = config.isPortraitMode ? 'Tap to match common name' : `Click to match common name`;
         const question = itemProperties.vernacularName(item, config);
@@ -137,7 +139,7 @@ export const renderMultiStrips = (collection) => {
         render(questionText, question, answers);
     }
 
-    if(layout.screens.find(screen => screen.name === 'wildcard-match')) {
+    if(screen.name === 'wildcard-match') {
 
         const getTraits = (pollinators) => {
             const traits = [];
@@ -174,7 +176,7 @@ export const renderMultiStrips = (collection) => {
         render(questionText, question, answers);
     }
 
-    if(layout.screens.find(screen => screen.name === 'epithet')) {
+    if(screen.name === 'epithet') {
         
         if(!layout.epithet) return;
 
@@ -194,7 +196,7 @@ export const renderMultiStrips = (collection) => {
         render(questionText, question, answers);
     }
 
-    if(layout.screens.find(screen => screen.name === 'definition')) {
+    if(screen.name === 'definition') {
         
         if(!layout.definition) return;
 
