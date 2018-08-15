@@ -212,7 +212,7 @@ export const epithets = [
         "en" : ["false"]
     },
     {
-        "latin" : ["fenum", "faenum", "feniculum", "feniculum"],
+        "latin" : ["foeniculum"],
         "en" : ["hay"]
     },
     {
@@ -250,6 +250,10 @@ export const epithets = [
     {
         "latin" : ["glycy-"],
         "en" : ["sweet"]
+    },
+    {
+        "latin" : ["perennis"],
+        "en" : ["perennial, lasting, yearlong"]
     },
     {
         "latin" : ["gracile"],
