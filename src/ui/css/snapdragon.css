@@ -191,7 +191,7 @@ hr {
   justify-content: space-between;
 }
 
-.taxon.revision.card, .species.revision.card {
+.taxon.revision.card, .species.revision.card, .species.cultivar.card {
   margin: 0 0 1em 0;
   justify-content: space-between;
 }
