@@ -107,7 +107,7 @@ export const renderMultiStrips = (collection) => {
         const questionText = config.isPortraitMode ? 'Tap to match common name' : `Click to match common name`;
         const question = itemProperties.vernacularName(item, config);
         let alternatives = R.take(number, utils.shuffleArray(collection.items).map(i => i.names.filter(name => name.language === config.language)[0].vernacularName));
-        alternatives = alternatives.filter(alt => alt !== question);
+        alternatives = alternatives.filter(alt => alt.toUpperCase() !== question.toUpperCase());
         alternatives = alternatives.map(a => utils.capitaliseFirst(a));
         const answers = utils.shuffleArray([question, ...alternatives]);
 
