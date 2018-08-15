@@ -1,8 +1,4 @@
 export const epithets = [
-    // {
-    //     "latin": ["-aceae"],
-    //     "en" : ["Used to form the name of taxonomic families of plants, algae, bacteria, and fungi"]
-    // },
     {
         "latin": ['armeniaca'],
         "en": ['from Armenia']
@@ -24,7 +20,11 @@ export const epithets = [
         "en" : ["bird"]
     },
     {
-        "latin" : ["ater", "nigrum"],
+        "latin" : ["nigrum"],
+        "en" : ["black"]
+    },
+    {
+        "latin" : ["ater"],
         "en" : ["black"]
     },
     {
@@ -44,7 +44,7 @@ export const epithets = [
         "en" : ["red"]
     },
     {
-        "latin" : ["lacteus"],
+        "latin" : ["lactuca"],
         "en" : ["milky"]
     },
     {
@@ -236,7 +236,11 @@ export const epithets = [
         "en" : ["dark", "dark brown"]
     },
     {
-        "latin" : ["gala", "galum"],
+        "latin" : ["gala"],
+        "en" : ["milk"]
+    },
+    {
+        "latin" : ["galum"],
         "en" : ["milk"]
     },
     {
@@ -333,12 +337,12 @@ export const epithets = [
     },
     {
         "latin" : ["officinale"],
-        "en" : ["from 'officina': monastery storeroom, where medicines were kept"],
+        "en" : ["of or belonging to an officina, the storeroom of a monastery, where medicines and other necessaries were kept."],
         "wiki": "https://en.wikipedia.org/wiki/Officinalis"
     },
     {
         "latin" : ["officinalis"],
-        "en" : ["from 'officina': monastery storeroom, where medicines were kept"],
+        "en" : ["of or belonging to an officina, the storeroom of a monastery, where medicines and other necessaries were kept."],
         "wiki": "https://en.wikipedia.org/wiki/Officinalis"
     },
     {
@@ -411,7 +415,15 @@ export const epithets = [
         "en" : ["root"]
     },
     {
-        "latin" : ["sativus", "sativum"],
+        "latin" : ["sativus"],
+        "en" : ["sown", "cultivated"]
+    },
+    {
+        "latin" : ["sativum"],
+        "en" : ["sown", "cultivated"]
+    },
+    {
+        "latin" : ["sativa"],
         "en" : ["sown", "cultivated"]
     },
     {
@@ -419,7 +431,11 @@ export const epithets = [
         "en" : ["bristly or shaggy"]
     },
     {
-        "latin" : ["silvestris", "sylvestris"],
+        "latin" : ["silvestris"],
+        "en" : ["from woodland or forest; wild"]
+    },
+    {
+        "latin" : ["sylvestris"],
         "en" : ["from woodland or forest; wild"]
     },
     {
@@ -467,7 +483,11 @@ export const epithets = [
         "en" : ["elm"]
     },
     {
-        "latin" : ["vernus", "vernalis"],
+        "latin" : ["vernus"],
+        "en" : ["spring"]
+    },
+    {
+        "latin" : ["vernalis"],
         "en" : ["spring"]
     },
     {

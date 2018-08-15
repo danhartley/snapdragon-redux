@@ -25,10 +25,12 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
 
     const epithets = getSpeciesEpithets(collection.items);
 
-    if(utils.isIterable(epithets.items)) {
-        epithets.items.forEach(item => {
+    if(utils.isIterable(epithets)) {
+        epithets.forEach(epithet => {
             const screens = [ wildcards[0][0], wildcards[0][1] ];
-            wildcardLayouts.push({ name: 'screen-epithet-meaning', type: 'test', score: 1, screens, itemIndex: item.index, epithet: item});
+            const layout = { name: 'screen-epithet-meaning', type: 'test', score: 1, screens, itemIndex: epithet.index, epithet: R.take(1,utils.shuffleArray(epithet.parts))[0]};
+            wildcardLayouts.push(layout);            
+            console.log('layout ', layout)
         });
     }
 
@@ -71,17 +73,13 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
     const words = utils.shuffleArray(definitions);
     
     if(utils.isIterable(wildcardLayouts)) {
-        itemGroup.forEach(index => {
-            wildcardLayouts.forEach(layout => {
-                if(layout.itemIndex === index) {
-                    wildcardLayoutsForGroup.push(layout);
-                }
-            });
-            if(index === 0) {
-                const definitionLayout = { name: 'screen-definitions', type: 'test', score: 1, screens: [wildcards[3][0], wildcards[3][1]], itemIndex: index, definition: words.pop() };
-                wildcardLayoutsForGroup.push(definitionLayout);
-            }            
-        });
+        wildcardLayouts.forEach(layout => {
+            if(R.contains(layout.itemIndex, itemGroup)) {
+                wildcardLayoutsForGroup.push(layout);
+            }         
+        })
+        const definitionLayout = { name: 'screen-definitions', type: 'test', score: 1, screens: [wildcards[3][0], wildcards[3][1]], itemIndex: itemGroup[0], definition: words.pop() };
+        wildcardLayoutsForGroup.push(definitionLayout);
     }
 
     return wildcardLayoutsForGroup;

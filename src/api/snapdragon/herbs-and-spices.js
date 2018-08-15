@@ -1,5 +1,229 @@
 export const herbsAndSpices = [
     {
+      "id": 1084926,
+      "name": "Allium sativum",
+      "eolName": "Allium sativum L.",
+      descriptions: [
+        "<i>Allium sativum</i>, (cultivated) garlic, is a species of monocot, bulb-forming perennial. Relatives include onions and shallots (<i>A. cepa</i>), and leeks (<i>A. ampeloprasum</i>). Garlic is not found in the wild—“sativum” means “cultivated”—but appears to have originated in mountainous regions in Central Asia (Brewster 2008). \r\n\r\nGarlic has been cultivated for over 5000 years. Diverse representations in Mesopotamian writings from ~3000 B.C. and Egyptian art dating to 2700 B.C suggest that garlic was already widely used (Block 2010, Fritsch and Friesen 2002). Hippocrates, Galen, Pliny the Elder, and Dioscorides recommend garlic for conditions including parasites, respiratory problems, poor digestion, and low energy. It is described in Chinese writings from A.D. 510 (Hahn 1996), and is mentioned in the Bible and the Koran (Block 2010).\r\n\r\nGarlic bulbs contain separate fleshy sections (cloves), each covered with a papery skin (tunic). The plants produce a leafless flower stem (a scape), but the flowers are sterile and produce bulbils (small cloves) rather than seeds; the species is propagated clonally from cloves and bulbils (Block 2010). Hundreds of cultivars are divided into two subspecies:  1) Hardneck garlic (<i>A sativum</i> ssp. <i>ophioscorodon</i>); and 2) Softneck garlic (<i>A. sativum</i> ssp. <i>sativum</i>, Block 2010).\r\n\r\nGarlic has historically been grown for both culinary and medicinal purposes. Bulbs are most commonly used, but leaves, scapes, and bulbils are also eaten. Garlic is frequent in the cuisines of Asia, the Middle East, the Mediterranean, and South and Central America. It has traditionally been used to treat pulmonary problems, coughs, and tuberculosis. Recent works describe numerous traditional medicinal and ritual uses and literary depictions (Wikipedia 2011, Block 2010, Hahn 1996), including the Central European practice of using garlic to fend off evil spirits and vampires (Koch 1996).\r\n\r\nGarlic produces various sulfur compounds that, together with their breakdown products, yield a characteristic pungent taste and odor, which may persist on the breath and body for up to 30 hours as garlic is metabolized (Block 2010). These compounds have documented antimicrobial and antifungal effects. Allicin, derived from garlic, combats fungal infections and parasites, lowers blood cholesterol, treats arterosclerosis, and promotes circulatory function (Block 2010, Reuter et al. 1996). Garlic preparations are used to treat insect stings and improve scar healing (Block 2010). Epidemiological studies suggest that dietary garlic consumption lowers the risk of various cancers (Reuter et al. 1996).\r\n\r\nGlobal garlic production in 2008 topped 22 million metric tons, harvested from nearly 1.4 million hectares (FAOSTAT 2011). China produces over ¾ of the yield, followed by India, South Korea, Russia, Egypt, and the U.S, where California leads production. The town of Gilroy, California, bills itself “Garlic Capital of the World” and celebrates annual garlic festivals (Boriss and Geissler 2011, USDA/ERS 2000).\r\n\r\nGarlic has escaped from cultivation in many U.S. states and Canadian provinces (USDA PLANTS 2011), but generally remains localized. Several related “garlic” species— “wild-,” “crow-” “field-” and “meadow garlic” and “garlic chives” (<i>A. ursinum</i>, <i>A. vineale</i>, <i>A. oleraceum</i>, <i>A. canadense</i>, and <i>A. tuberosum</i>, respectively)—are, however, weedy or invasive in Europe and North America.\r\n"
+      ],
+      "images": [
+        "2011/10/15/21/54139_orig.jpg",
+        "2014/08/15/02/12491_orig.jpg",
+        "2014/08/15/02/40892_orig.jpg",
+        "2012/06/15/06/24419_orig.jpg",
+        "2013/11/25/16/21465_orig.jpg",
+        "2014/12/19/23/39467_orig.jpg",
+        "2013/11/30/19/97086_orig.jpg",
+        "2013/11/30/03/74647_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Knoblauch",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Großer Schlangerknoblauch",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Garlic",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Garlick",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Hardneck Garlic",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Pskem River Garlic",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Serpent Garlic",
+          "language": "en"
+        },
+        {
+          "vernacularName": "cultivated garlic",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Ajo",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Ail",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Ail rocambole",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Ail, Ail commun, Ail cultivé",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Thériaque des pauvres",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Aglio",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Alho",
+          "language": "pt",
+          "eol_preferred": true
+        }
+      ],
+      "taxonomy": {
+        "usageKey": 2856681,
+        "scientificName": "Allium sativum L.",
+        "canonicalName": "Allium sativum",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 98,
+        "matchType": "EXACT",
+        "kingdom": "Plantae",
+        "phylum": "Tracheophyta",
+        "order": "Asparagales",
+        "family": "Amaryllidaceae",
+        "genus": "Allium",
+        "species": "Allium sativum",
+        "kingdomKey": 6,
+        "phylumKey": 7707728,
+        "classKey": 196,
+        "orderKey": 1169,
+        "familyKey": 7682,
+        "genusKey": 9624496,
+        "speciesKey": 2856681,
+        "synonym": false,
+        "class": "Liliopsida"
+      },
+      "family": "Amaryllidaceae"
+    },
+    {
+      "id": 581687,
+      "name": "Coriandrum sativum",
+      "eolName": "Coriandrum sativum L.",
+      descriptions: [
+        "Coriander (<i>Coriandrum sativum</i>), also known as Cilantro, is a slender, solid-stemmed annual reaching 60 cm in height. The upper leaves are divided into narrow linear segments, the lower leaves into broad leaflets. The small flowers are white or pink. The middle flowers in each <a href=\"https://en.wikipedia.org/wiki/Umbel\">umbel</a> are infertile, while the outer flowers are slightly larger and fertile. The globose fruits are around 3 mm in diameter, ridged, and yellowish brown. \r\n\r\nCoriander likely originated in the eastern Mediterranean region and archaological evidence indicates it was already being used in the <a href=\"https://en.wikipedia.org/wiki/Neolithic\">Neolithic</a> period in Israel. It was used by both the Greeks and Romans. The Romans brought Coriander to northwestern Europe, including Britain. It also reached India and China. \r\n\r\nWhen crushed, all parts of the Coriander plant give off an odor reminiscent of stink bugs (family Pentatomidae). The pungent leaves are used in a wide range of cuisines around the world. When the seeds are dried, this odor is lost and replaced with a mild aromatic flavor. Coriander is used in curries, meat dishes, bread, sweets, and alcoholic drinks. Major world producers include Morocco, India Pakistan, Romania, and the former Soviet Union, but Coriander is grown in many other countries as well (e.g., Iran, Turkey, Egypt, and Israel in the Middle East; China, Burma, and Thailand in Asia; Poland, Bulgaria, Hungary, France, and the Netherlands in Europe; and the United States, Canada, Argentina, and Mexico in the Americas) (Alberta, Canada Agriculture and Rural Development Coriander <a href=\"https://www1.agric.gov.ab.ca/$department/deptdocs.nsf/all/agdex121\">AGRIFACTS</a> Fact Sheet, updated December 2008).\r\n\r\nThe fresh leaves of the plant are considered an extremely pleasant flavoring by some people, but repulsive by others. Cilanto-haters seem to be far more frequent in some cultures than others and some limited evidence suggests there may be a significant genetic component to these taste responses.\r\n\r\n(Vaughan and Geissler 1997)\r\n\r\n"
+      ],
+      "images": [
+        "2014/08/15/05/58362_orig.jpg",
+        "2012/05/23/10/47021_orig.jpg",
+        "2012/05/23/10/39030_orig.jpg",
+        "2015/03/21/12/19081_orig.jpg",
+        "2013/11/25/19/41075_orig.jpg",
+        "2013/11/25/19/26077_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Koriander",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Chinesische Petersilie",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Indische Petersilie",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Wanzenkümmel",
+          "language": "de"
+        },
+        {
+          "vernacularName": "coriander",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Chinese parsley",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Cilantro",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Indian parsley",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Cilantro",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Coriandro",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Coriandre",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Coriandre cultivée",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Persil arabe",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Punaise mâle",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Coriandolo",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Coentro",
+          "language": "pt",
+          "eol_preferred": true
+        }
+      ],
+      "taxonomy": {
+        "usageKey": 3034871,
+        "scientificName": "Coriandrum sativum L.",
+        "canonicalName": "Coriandrum sativum",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 98,
+        "matchType": "EXACT",
+        "kingdom": "Plantae",
+        "phylum": "Tracheophyta",
+        "order": "Apiales",
+        "family": "Apiaceae",
+        "genus": "Coriandrum",
+        "species": "Coriandrum sativum",
+        "kingdomKey": 6,
+        "phylumKey": 7707728,
+        "classKey": 220,
+        "orderKey": 1351,
+        "familyKey": 6720,
+        "genusKey": 3034870,
+        "speciesKey": 3034871,
+        "synonym": false,
+        "class": "Magnoliopsida"
+      },
+      "family": "Apiaceae"
+    },    
+    {
       "id": 488085,
       "name": "Cuminum cyminum",
       "eolName": "Cuminum cyminum L.",
@@ -1489,117 +1713,6 @@ export const herbsAndSpices = [
       "family": "Solanaceae"
     },
     {
-      "id": 1084926,
-      "name": "Allium sativum",
-      "eolName": "Allium sativum L.",
-      descriptions: [
-        "<i>Allium sativum</i>, (cultivated) garlic, is a species of monocot, bulb-forming perennial. Relatives include onions and shallots (<i>A. cepa</i>), and leeks (<i>A. ampeloprasum</i>). Garlic is not found in the wild—“sativum” means “cultivated”—but appears to have originated in mountainous regions in Central Asia (Brewster 2008). \r\n\r\nGarlic has been cultivated for over 5000 years. Diverse representations in Mesopotamian writings from ~3000 B.C. and Egyptian art dating to 2700 B.C suggest that garlic was already widely used (Block 2010, Fritsch and Friesen 2002). Hippocrates, Galen, Pliny the Elder, and Dioscorides recommend garlic for conditions including parasites, respiratory problems, poor digestion, and low energy. It is described in Chinese writings from A.D. 510 (Hahn 1996), and is mentioned in the Bible and the Koran (Block 2010).\r\n\r\nGarlic bulbs contain separate fleshy sections (cloves), each covered with a papery skin (tunic). The plants produce a leafless flower stem (a scape), but the flowers are sterile and produce bulbils (small cloves) rather than seeds; the species is propagated clonally from cloves and bulbils (Block 2010). Hundreds of cultivars are divided into two subspecies:  1) Hardneck garlic (<i>A sativum</i> ssp. <i>ophioscorodon</i>); and 2) Softneck garlic (<i>A. sativum</i> ssp. <i>sativum</i>, Block 2010).\r\n\r\nGarlic has historically been grown for both culinary and medicinal purposes. Bulbs are most commonly used, but leaves, scapes, and bulbils are also eaten. Garlic is frequent in the cuisines of Asia, the Middle East, the Mediterranean, and South and Central America. It has traditionally been used to treat pulmonary problems, coughs, and tuberculosis. Recent works describe numerous traditional medicinal and ritual uses and literary depictions (Wikipedia 2011, Block 2010, Hahn 1996), including the Central European practice of using garlic to fend off evil spirits and vampires (Koch 1996).\r\n\r\nGarlic produces various sulfur compounds that, together with their breakdown products, yield a characteristic pungent taste and odor, which may persist on the breath and body for up to 30 hours as garlic is metabolized (Block 2010). These compounds have documented antimicrobial and antifungal effects. Allicin, derived from garlic, combats fungal infections and parasites, lowers blood cholesterol, treats arterosclerosis, and promotes circulatory function (Block 2010, Reuter et al. 1996). Garlic preparations are used to treat insect stings and improve scar healing (Block 2010). Epidemiological studies suggest that dietary garlic consumption lowers the risk of various cancers (Reuter et al. 1996).\r\n\r\nGlobal garlic production in 2008 topped 22 million metric tons, harvested from nearly 1.4 million hectares (FAOSTAT 2011). China produces over ¾ of the yield, followed by India, South Korea, Russia, Egypt, and the U.S, where California leads production. The town of Gilroy, California, bills itself “Garlic Capital of the World” and celebrates annual garlic festivals (Boriss and Geissler 2011, USDA/ERS 2000).\r\n\r\nGarlic has escaped from cultivation in many U.S. states and Canadian provinces (USDA PLANTS 2011), but generally remains localized. Several related “garlic” species— “wild-,” “crow-” “field-” and “meadow garlic” and “garlic chives” (<i>A. ursinum</i>, <i>A. vineale</i>, <i>A. oleraceum</i>, <i>A. canadense</i>, and <i>A. tuberosum</i>, respectively)—are, however, weedy or invasive in Europe and North America.\r\n"
-      ],
-      "images": [
-        "2011/10/15/21/54139_orig.jpg",
-        "2014/08/15/02/12491_orig.jpg",
-        "2014/08/15/02/40892_orig.jpg",
-        "2012/06/15/06/24419_orig.jpg",
-        "2013/11/25/16/21465_orig.jpg",
-        "2014/12/19/23/39467_orig.jpg",
-        "2013/11/30/19/97086_orig.jpg",
-        "2013/11/30/03/74647_orig.jpg"
-      ],
-      "names": [
-        {
-          "vernacularName": "Knoblauch",
-          "language": "de",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Großer Schlangerknoblauch",
-          "language": "de"
-        },
-        {
-          "vernacularName": "Garlic",
-          "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Garlick",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Hardneck Garlic",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Pskem River Garlic",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Serpent Garlic",
-          "language": "en"
-        },
-        {
-          "vernacularName": "cultivated garlic",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Ajo",
-          "language": "es",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Ail",
-          "language": "fr",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Ail rocambole",
-          "language": "fr"
-        },
-        {
-          "vernacularName": "Ail, Ail commun, Ail cultivé",
-          "language": "fr"
-        },
-        {
-          "vernacularName": "Thériaque des pauvres",
-          "language": "fr"
-        },
-        {
-          "vernacularName": "Aglio",
-          "language": "it",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Alho",
-          "language": "pt",
-          "eol_preferred": true
-        }
-      ],
-      "taxonomy": {
-        "usageKey": 2856681,
-        "scientificName": "Allium sativum L.",
-        "canonicalName": "Allium sativum",
-        "rank": "SPECIES",
-        "status": "ACCEPTED",
-        "confidence": 98,
-        "matchType": "EXACT",
-        "kingdom": "Plantae",
-        "phylum": "Tracheophyta",
-        "order": "Asparagales",
-        "family": "Amaryllidaceae",
-        "genus": "Allium",
-        "species": "Allium sativum",
-        "kingdomKey": 6,
-        "phylumKey": 7707728,
-        "classKey": 196,
-        "orderKey": 1169,
-        "familyKey": 7682,
-        "genusKey": 9624496,
-        "speciesKey": 2856681,
-        "synonym": false,
-        "class": "Liliopsida"
-      },
-      "family": "Amaryllidaceae"
-    },
-    {
       "id": 578478,
       "name": "Salvia officinalis",
       "eolName": "Salvia officinalis L.",
@@ -1932,119 +2045,6 @@ export const herbsAndSpices = [
         "class": "Magnoliopsida"
       },
       "family": "Lamiaceae"
-    },
-    {
-      "id": 581687,
-      "name": "Coriandrum sativum",
-      "eolName": "Coriandrum sativum L.",
-      descriptions: [
-        "Coriander (<i>Coriandrum sativum</i>), also known as Cilantro, is a slender, solid-stemmed annual reaching 60 cm in height. The upper leaves are divided into narrow linear segments, the lower leaves into broad leaflets. The small flowers are white or pink. The middle flowers in each <a href=\"https://en.wikipedia.org/wiki/Umbel\">umbel</a> are infertile, while the outer flowers are slightly larger and fertile. The globose fruits are around 3 mm in diameter, ridged, and yellowish brown. \r\n\r\nCoriander likely originated in the eastern Mediterranean region and archaological evidence indicates it was already being used in the <a href=\"https://en.wikipedia.org/wiki/Neolithic\">Neolithic</a> period in Israel. It was used by both the Greeks and Romans. The Romans brought Coriander to northwestern Europe, including Britain. It also reached India and China. \r\n\r\nWhen crushed, all parts of the Coriander plant give off an odor reminiscent of stink bugs (family Pentatomidae). The pungent leaves are used in a wide range of cuisines around the world. When the seeds are dried, this odor is lost and replaced with a mild aromatic flavor. Coriander is used in curries, meat dishes, bread, sweets, and alcoholic drinks. Major world producers include Morocco, India Pakistan, Romania, and the former Soviet Union, but Coriander is grown in many other countries as well (e.g., Iran, Turkey, Egypt, and Israel in the Middle East; China, Burma, and Thailand in Asia; Poland, Bulgaria, Hungary, France, and the Netherlands in Europe; and the United States, Canada, Argentina, and Mexico in the Americas) (Alberta, Canada Agriculture and Rural Development Coriander <a href=\"https://www1.agric.gov.ab.ca/$department/deptdocs.nsf/all/agdex121\">AGRIFACTS</a> Fact Sheet, updated December 2008).\r\n\r\nThe fresh leaves of the plant are considered an extremely pleasant flavoring by some people, but repulsive by others. Cilanto-haters seem to be far more frequent in some cultures than others and some limited evidence suggests there may be a significant genetic component to these taste responses.\r\n\r\n(Vaughan and Geissler 1997)\r\n\r\n"
-      ],
-      "images": [
-        "2014/08/15/05/58362_orig.jpg",
-        "2012/05/23/10/47021_orig.jpg",
-        "2012/05/23/10/39030_orig.jpg",
-        "2015/03/21/12/19081_orig.jpg",
-        "2013/11/25/19/41075_orig.jpg",
-        "2013/11/25/19/26077_orig.jpg"
-      ],
-      "names": [
-        {
-          "vernacularName": "Koriander",
-          "language": "de",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Chinesische Petersilie",
-          "language": "de"
-        },
-        {
-          "vernacularName": "Indische Petersilie",
-          "language": "de"
-        },
-        {
-          "vernacularName": "Wanzenkümmel",
-          "language": "de"
-        },
-        {
-          "vernacularName": "coriander",
-          "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Chinese parsley",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Cilantro",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Indian parsley",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Cilantro",
-          "language": "es",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Coriandro",
-          "language": "es"
-        },
-        {
-          "vernacularName": "Coriandre",
-          "language": "fr",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Coriandre cultivée",
-          "language": "fr"
-        },
-        {
-          "vernacularName": "Persil arabe",
-          "language": "fr"
-        },
-        {
-          "vernacularName": "Punaise mâle",
-          "language": "fr"
-        },
-        {
-          "vernacularName": "Coriandolo",
-          "language": "it",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Coentro",
-          "language": "pt",
-          "eol_preferred": true
-        }
-      ],
-      "taxonomy": {
-        "usageKey": 3034871,
-        "scientificName": "Coriandrum sativum L.",
-        "canonicalName": "Coriandrum sativum",
-        "rank": "SPECIES",
-        "status": "ACCEPTED",
-        "confidence": 98,
-        "matchType": "EXACT",
-        "kingdom": "Plantae",
-        "phylum": "Tracheophyta",
-        "order": "Apiales",
-        "family": "Apiaceae",
-        "genus": "Coriandrum",
-        "species": "Coriandrum sativum",
-        "kingdomKey": 6,
-        "phylumKey": 7707728,
-        "classKey": 220,
-        "orderKey": 1351,
-        "familyKey": 6720,
-        "genusKey": 3034870,
-        "speciesKey": 3034871,
-        "synonym": false,
-        "class": "Magnoliopsida"
-      },
-      "family": "Apiaceae"
     },
     {
       "id": 585008,

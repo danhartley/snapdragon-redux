@@ -18,11 +18,11 @@ const speciesName = binomial => {
 };
 
 const latin = species => {
-    const epithet = epithets.find(item => {        
-        const match = item.latin.find(part => part === species);
+    let epithet = epithets.find(e => {        
+        const match = e.latin.find(part => part.toUpperCase() === species.toUpperCase());
         return match || '';
     });
-    return epithet || '';
+    return epithet ? { ...epithet } : '';
 };
 
 const getTaxonProp = (taxon, language, prop) => {
