@@ -4,7 +4,11 @@ export const epithets = [
     //     "en" : ["Used to form the name of taxonomic families of plants, algae, bacteria, and fungi"]
     // },
     {
-        "latin": ['Agastache'],
+        "latin": ['armeniaca'],
+        "en": ['from Armenia']
+    },
+    {
+        "latin": ['agastache'],
         "en": ['many spikes']
     },
     {
@@ -152,7 +156,7 @@ export const epithets = [
         "en" : ["home"]
     },
     {
-        "latin" : ["domestic-", "domestica"],
+        "latin" : ["domestica"],
         "en" : ["which lives in the house"]
     },
     {
@@ -324,8 +328,13 @@ export const epithets = [
         "en" : ["bearing nuts"]
     },
     {
-        "latin" : ["officinalis", "officinale"],
-        "en" : ["'officina': monastery storeroom, where medicines were kept"],
+        "latin" : ["officinale"],
+        "en" : ["from 'officina': monastery storeroom, where medicines were kept"],
+        "wiki": "https://en.wikipedia.org/wiki/Officinalis"
+    },
+    {
+        "latin" : ["officinalis"],
+        "en" : ["from 'officina': monastery storeroom, where medicines were kept"],
         "wiki": "https://en.wikipedia.org/wiki/Officinalis"
     },
     {
@@ -470,7 +479,11 @@ export const epithets = [
         "en" : ["green"]
     },
     {
-        "latin" : ["vulgaris", "vulgare"],
+        "latin" : ["vulgaris"],
+        "en" : ["common"]
+    },
+    {
+        "latin" : ["vulgare"],
         "en" : ["common"]
     },
     {

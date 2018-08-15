@@ -106,7 +106,8 @@ export const renderMultiStrips = (collection) => {
 
         const questionText = config.isPortraitMode ? 'Tap to match common name' : `Click to match common name`;
         const question = itemProperties.vernacularName(item, config);
-        let alternatives = R.take(number-1, R.take(number, utils.shuffleArray(collection.items)).map(i => i.names.filter(name => name.language === config.language)[0].vernacularName)).filter(i => i !== question);
+        let alternatives = R.take(number, utils.shuffleArray(collection.items).map(i => i.names.filter(name => name.language === config.language)[0].vernacularName));
+        alternatives = alternatives.filter(alt => alt !== question);
         alternatives = alternatives.map(a => utils.capitaliseFirst(a));
         const answers = utils.shuffleArray([question, ...alternatives]);
 
@@ -186,11 +187,14 @@ export const renderMultiStrips = (collection) => {
 
         const number = config.isPortraitMode ? 6 : 6;
         
-        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(epithets)).filter(e => !R.contains(e.en, layout.epithet.en))).map(e => e.en.join(', '));
+        let alternatives = R.take(number-1, utils.shuffleArray(epithets)).filter(e => !R.contains(e.latin, epithet));
+        alternatives = alternatives.map(e => e.en.join(', '));
         const questionText = config.isPortraitMode 
             ? `Tap to match the epithet`
             : `Click to match the epithet`
-        const question = layout.epithet.en[0];
+        let question = epithets.find(e => e.latin[0].toUpperCase() === epithet.toUpperCase());
+        question = question ? question[config.language][0] : epithet;
+        
         const answers = utils.shuffleArray([question, ...alternatives]);
 
         render(questionText, question, answers);
