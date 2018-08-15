@@ -34,10 +34,7 @@ const initCollection = (selectedCollection = collections[0]) => {
      return collection;
 };
 
-const collection = initCollection();
-
 export const speciesState = {
-    collections,
-    collection,    
+    collections,    
     initCollection
 }

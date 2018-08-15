@@ -189,7 +189,7 @@ export const definitions = [
     },
     {
         term: 'Petal',
-        definition: 'Modified leaves that surround the reproductive parts of flowers.',
+        definition: 'A modified leaf that surround the reproductive parts of flowers.',
         wiki: 'https://en.wikipedia.org/wiki/Petal'
     },
     {
@@ -214,7 +214,7 @@ export const definitions = [
     },
     {
         term: 'Evergreen',
-        definition: 'Non-herbaceous, perennials which retain a mantle of leaves throughout the year.',
+        definition: 'Non-herbaceous perennials which retain a mantle of leaves throughout the year.',
         wiki: 'https://en.wikipedia.org/wiki/Evergreen'
     },
 ];

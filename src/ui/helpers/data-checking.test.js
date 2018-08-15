@@ -92,3 +92,15 @@ test('should trim latin name', () => {
   const trimmedName = itemProperties.trimLatinName(name);
   expect(trimmedName).toEqual("A. schoenoprasum");
 });
+
+test('should return genus name', () => {
+  const item =  { name: 'Foeniculum vulgare' };
+  const expected = 'Foeniculum';
+  expect(itemProperties.genusName(item.name)).toEqual(expected);
+});
+
+test('should return species name', () => {
+  const item =  { name: 'Foeniculum vulgare' };
+  const expected = 'vulgare';
+  expect(itemProperties.speciesName(item.name)).toEqual(expected);
+});

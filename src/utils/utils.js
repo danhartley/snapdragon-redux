@@ -55,11 +55,29 @@ Array.prototype.concatAll = function() {
     return this;
   };
   
-  const shuffleArray = arr => {
-    return (arr
-      .map(a => [Math.random(), a])
-      .sort((a, b) => a[0] - b[0])
-      .map(a => a[1]))
+  const shuffleArray = array => {
+
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return [ ...array ];
+
+    // return (arr
+    //   .map(a => [Math.random(), a])
+    //   .sort((a, b) => a[0] - b[0])
+    //   .map(a => a[1]))
   };
   
   const randomiseSelection = (source, required, zeroBased = false) => {

@@ -33,7 +33,8 @@ export const nationalFlowers = {
     level: 'Everyone'    
 };
 
-kitchenGarden.items = utils.shuffleArray(kitchenGarden.items);
+kitchenGarden.items = kitchenGarden.items;
+// kitchenGarden.items = utils.shuffleArray(kitchenGarden.items);
 nationalFlowers.items = utils.shuffleArray(nationalFlowers.items);
 
 kitchenGarden.items.forEach((item,index)=>{

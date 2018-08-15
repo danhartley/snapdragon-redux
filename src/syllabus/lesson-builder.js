@@ -20,6 +20,7 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
 
     const revisionLayouts = excludeRevision ? [] : lessonPlan.layouts.filter(layout => layout.type === 'revision');
     const shuffledLessonLayouts = utils.shuffleArray([ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts]);
+    shuffledLessonLayouts.filter(layout => layout.name === 'screen-epithet-meaning').map(layout => layout.itemIndex = layout.epithet.index);
     const offSet = (collection.currentRound - 1) * moduleSize;
 
     shuffledLessonLayouts.forEach( (layout, i) => {
@@ -76,6 +77,7 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
     lessonPlan.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
     lessonPlan.layoutCount = lessonPlan.layouts.length;
     lessonPlan.layoutNames = lessonPlan.layouts.map(layout => layout.name);
+    lessonPlan.wildcardLayouts = wildcardLayouts;
 
     return lessonPlan;
 };
