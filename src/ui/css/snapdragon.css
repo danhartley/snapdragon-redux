@@ -149,10 +149,6 @@ hr {
   margin: 0 0 2em 0;
 }
 
-.lessons-list .lesson-item > div:nth-child(1) {
-  
-}
-
 .lessons-list .lesson-item > div:nth-child(2) {
   flex: auto;
 }
