@@ -20,25 +20,25 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
 
     const revisionLayouts = excludeRevision ? [] : lessonPlan.layouts.filter(layout => layout.type === 'revision');
     const shuffledLessonLayouts = utils.shuffleArray([ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts]);
-    shuffledLessonLayouts.filter(layout => layout.name === 'screen-epithet-meaning').map(layout => layout.itemIndex = layout.epithet.index);
     const offSet = (collection.currentRound - 1) * moduleSize;
 
-    shuffledLessonLayouts.forEach( (layout, i) => {
+    const newLessonLayouts = shuffledLessonLayouts.map( (layout, i) => {
         layout.layoutIndex = layoutIndex;
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
         layout.progressIndex = i + 1;
         layoutIndex = layoutIndex + 1;
+        return { ...layout };
     });
 
     revisionLayouts.forEach( (layout, i) => {
         layout.layoutIndex = layoutIndex;
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
         layoutIndex = layoutIndex + 1;
-        const arrayIndex = shuffledLessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
-        shuffledLessonLayouts.splice(arrayIndex, 0, layout);
+        const arrayIndex = newLessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
+        newLessonLayouts.splice(arrayIndex, 0, layout);
     });
 
-    lessonPlan.layouts = shuffledLessonLayouts;
+    lessonPlan.layouts = [ ...newLessonLayouts ];
 
     lessonPlan.lessonName = lessonName;
     lessonPlan.levelName = levelName;
