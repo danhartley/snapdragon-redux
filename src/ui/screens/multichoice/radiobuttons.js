@@ -127,7 +127,9 @@ export const renderRadioButtons = (collection) => {
         
         indices = config.isPortraitMode ? [3,4] : [5,6];
 
-        randomAnswers = R.take(indices[0], R.take(indices[1], utils.shuffleArray(collection.items)).filter(i => i.name !== item.name)).map(i => i.name);
+        const itemNames = [ ...collection.items.map(item => item.name) ];
+
+        randomAnswers = R.take(indices[0], R.take(indices[1], utils.shuffleArray(itemNames)).filter(itemName => itemName !== item.name));
         const subspecies = layout.cultivars.subspecies;
         const names = R.take(indices[1], R.flatten(subspecies.map(sub => sub.names.filter(name => name.language === config.language))).map(n => n.vernacularName)).join(', ');
         description = `${names} derive from one species. What is its name?`;

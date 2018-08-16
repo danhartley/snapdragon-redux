@@ -92,7 +92,8 @@ export const renderMultiStrips = (collection) => {
         const vernacular = itemProperties.vernacularName(item, config);
         const questionText = config.isPortraitMode ? 'Tap to match latin name' : `Click to match latin name`;
         const question = item.name;
-        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(collection.items)).filter(i => i.name !== item.name)).map(i => i.name);
+        const itemNames = [ ...collection.items.map(item => item.name) ];
+        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(itemNames)).filter(itemName => itemName !== item.name));
         const answers = utils.shuffleArray([question, ...alternatives]);
 
         const description = { vernacular, name: '---' };
@@ -106,7 +107,8 @@ export const renderMultiStrips = (collection) => {
 
         const questionText = config.isPortraitMode ? 'Tap to match common name' : `Click to match common name`;
         const question = itemProperties.vernacularName(item, config);
-        let alternatives = R.take(number, utils.shuffleArray(collection.items).map(i => i.names.filter(name => name.language === config.language)[0].vernacularName));
+        const items = [ ...collection.items ];
+        let alternatives = R.take(number, utils.shuffleArray(items).map(i => i.names.filter(name => name.language === config.language)[0].vernacularName));
         alternatives = alternatives.filter(alt => alt.toUpperCase() !== question.toUpperCase());
         alternatives = alternatives.map(a => utils.capitaliseFirst(a));
         const answers = utils.shuffleArray([question, ...alternatives]);
@@ -182,7 +184,7 @@ export const renderMultiStrips = (collection) => {
         if(!layout.epithet) return;
         // if(!layout.epithet || layout.epithet.name !== item.name) return;
 
-        const epithet = itemProperties.speciesName(item.name);
+        const epithet = layout.epithet.latin[0];
 
         description = config.isPortraitMode ? `In the species ${item.name}, what does \'${epithet}\' mean?` : `In the species ${item.name}, what is the meaning of the epithet ${epithet}?`;
 

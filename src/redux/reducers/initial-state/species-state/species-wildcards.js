@@ -12,7 +12,7 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
 
     let itemGroups = [];
     let group = [];
-    collection.items.forEach((item, index) => {
+    [ ...collection.items].forEach((item, index) => {
         group.push(index);
         if((index + 1) % moduleSize === 0) {
             itemGroups.push(group);
@@ -23,7 +23,7 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
     const wildcardLayouts = [];
     const wildcardLayoutsForGroup = [];
 
-    const epithets = getSpeciesEpithets(collection.items);
+    const epithets = getSpeciesEpithets([ ...collection.items ]);
 
     if(utils.isIterable(epithets)) {
         epithets.forEach(epithet => {
@@ -34,7 +34,7 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
         });
     }
 
-    const cultivars = getSpeciesCultivars(collection.items);
+    const cultivars = getSpeciesCultivars([ ...collection.items ]);
 
     if(utils.isIterable(cultivars)) {
         cultivars.forEach(item => {
@@ -47,7 +47,7 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
 
     const names = [ 'Apis mellifera' ];
 
-    const insects = collection.items.map( (item, i) => {
+    const insects = [ ...collection.items ].map( (item, i) => {
         if(R.contains(item.name, names)) {
             return {
                 item: item,
