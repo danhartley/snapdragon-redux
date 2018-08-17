@@ -894,7 +894,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Oleaceae',
-        thumb: "",
+        thumb: "2012/12/23/03/10152_88_88.jpg",
         names: [ { language: "en", names: ['Olive family']} ,
         { language: "fr", names:[ 'Olive family' ]},
         { language: "de", names:[ 'Ölbaumgewächse' ]},
@@ -917,7 +917,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Caesalpiniaceae',
-        thumb: "",
+        thumb: "2012/06/06/13/83275_88_88.jpg",
         names: [ { language: "en", names: ['Caesalpinioideae']} ,
         { language: "fr", names:[ 'Caesalpinioideae' ]},
         { language: "de", names:[ 'Caesalpinioideae' ]},
@@ -940,7 +940,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Aquifoliaceae',
-        thumb: "",
+        thumb: "2014/09/13/01/38591_88_88.jpg",
         names: [ { language: "en", names: ['Holly']} ,
         { language: "fr", names:[ 'Aquifoliacées' ]},
         { language: "de", names:[ 'Stechpalmengewächse' ]},
@@ -963,7 +963,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Juglandaceae',
-        thumb: "",
+        thumb: "2015/04/30/18/90529_88_88.jpg",
         names: [ { language: "en", names: ['Walnut family']} ,
         { language: "fr", names:[ 'Juglandacées' ]},
         { language: "de", names:[ 'Walnussgewächse' ]},
@@ -986,7 +986,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Papilionaceae',
-        thumb: "",
+        thumb: "2012/07/26/21/36713_88_88.jpg",
         names: [ { language: "en", names: ['Dillwynia, Peaflowers']} ,
         { language: "fr", names:[ 'Dillwynia' ]},
         { language: "de", names:[ 'Dillwynia' ]},
@@ -1009,7 +1009,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Hamamelidaceae',
-        thumb: "",
+        thumb: "2013/02/26/12/81796_88_88.jpg",
         names: [ { language: "en", names: ['Witch-hazel family']} ,
         { language: "fr", names:[ 'Witch-hazel family' ]},
         { language: "de", names:[ 'Witch-hazel family' ]},
@@ -1032,7 +1032,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Magnoliaceae',
-        thumb: "",
+        thumb: "2014/05/01/13/34482_88_88.jpg",
         names: [ { language: "en", names: ['Magnolia family']} ,
         { language: "fr", names:[ 'Magnolia family' ]},
         { language: "de", names:[ 'Magnolia family' ]},
@@ -1055,7 +1055,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Platanaceae',
-        thumb: "",
+        thumb: "2012/06/13/14/08088_88_88.jpg",
         names: [ { language: "en", names: ['Plane Tree family']} ,
         { language: "fr", names:[ 'Plane Tree family' ]},
         { language: "de", names:[ 'Plane Tree family' ]},
@@ -1078,7 +1078,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Salicaceae',
-        thumb: "",
+        thumb: "2012/05/24/01/44806_88_88.jpg",
         names: [ { language: "en", names: ['Willow family']} ,
         { language: "fr", names:[ 'Willow family' ]},
         { language: "de", names:[ 'Weidengewächse' ]},
@@ -1101,7 +1101,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Theaceae',
-        thumb: "",
+        thumb: "2013/01/09/07/00837_88_88.jpg",
         names: [ { language: "en", names: ['Tea family']} ,
         { language: "fr", names:[ 'Tea family' ]},
         { language: "de", names:[ 'Teestrauchgewächse' ]},
@@ -1124,7 +1124,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Styracaceae',
-        thumb: "",
+        thumb: "2015/01/14/00/21247_88_88.jpg",
         names: [ { language: "en", names: ['Storax family']} ,
         { language: "fr", names:[ 'Storax family' ]},
         { language: "de", names:[ 'Storax family' ]},
@@ -1147,7 +1147,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Malvaceae',
-        thumb: "",
+        thumb: "2017/09/09/23/95319_88_88.jpg",
         names: [ { language: "en", names: ['Mallows or Hibiscus']} ,
         { language: "fr", names:[ 'Mauves' ]},
         { language: "de", names:[ 'Malvengewächse' ]},
