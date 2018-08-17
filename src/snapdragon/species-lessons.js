@@ -33,14 +33,26 @@ export const nationalFlowers = {
     level: 'Everyone'    
 };
 
-kitchenGarden.items = kitchenGarden.items;
-// kitchenGarden.items = utils.shuffleArray(kitchenGarden.items);
-nationalFlowers.items = utils.shuffleArray(nationalFlowers.items);
+export const rhsTrees = { 
+    id: 3, name: 'Deciduous and Evergreen Trees', 
+    type: 'species',
+    description: 'The approved list of Deciduous and Evergreen Trees for students taking Royal Horticultural Society Qualifications in Practical Horticulture.',
+    items:[ ...collections[0].items ],
+    collections: ['Deciduous and evergreen trees'],
+    thumb: 'https://media.eol.org/content/2012/06/13/04/65813_orig.jpg',
+    moduleSize: 6,
+    curator: 'Snapdragon',
+    level: 'RHS students'    
+};
 
 kitchenGarden.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });
 
 nationalFlowers.items.forEach((item,index)=>{
+    item.snapIndex = index + 1;
+});
+
+rhsTrees.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });

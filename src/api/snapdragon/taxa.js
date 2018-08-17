@@ -497,11 +497,11 @@ export const taxa = [
         name: 'Vitaceae',
         thumb: "https://media.eol.org/content/2013/12/08/20/40721_88_88.jpg",
         names: [ { language: "en", names: ['Grape family','Wild grape family']} ,
-        { language: "fr", names:[ 'Grape Family' ]},
-        { language: "de", names:[ 'Grape Family' ]},
-        { language: "es", names:[ 'Grape Family' ]},
-        { language: "pt", names:[ 'Grape Family' ]},
-        { language: "it", names:[ 'Grape Family' ]}],
+        { language: "fr", names:[ 'Grape family' ]},
+        { language: "de", names:[ 'Grape family' ]},
+        { language: "es", names:[ 'Grape family' ]},
+        { language: "pt", names:[ 'Grape family' ]},
+        { language: "it", names:[ 'Grape family' ]}],
         species: 910,
         genera: 14,
         pollinators: [ { language: "en", names: ['Bees', 'Insects'] } ],
@@ -520,12 +520,12 @@ export const taxa = [
         taxon: 'family',
         name: 'Lauraceae',
         thumb: "https://media.eol.org/content/2012/06/13/03/98939_88_88.jpg",
-        names: [ { language: "en", names: ['Laurel Family']} ,
-        { language: "fr", names:[ 'Laurel Family' ]},
-        { language: "de", names:[ 'Laurel Family' ]},
-        { language: "es", names:[ 'Laurel Family' ]},
-        { language: "pt", names:[ 'Laurel Family' ]},
-        { language: "it", names:[ 'Laurel Family' ]}],
+        names: [ { language: "en", names: ['Laurel family']} ,
+        { language: "fr", names:[ 'Laurel family' ]},
+        { language: "de", names:[ 'Laurel family' ]},
+        { language: "es", names:[ 'Laurel family' ]},
+        { language: "pt", names:[ 'Laurel family' ]},
+        { language: "it", names:[ 'Laurel family' ]}],
         species: 2850,
         genera: 45,
         pollinators: [ { language: "en", names: ['Bees', 'Wasps'] } ],
@@ -544,12 +544,12 @@ export const taxa = [
         taxon: 'family',
         name: 'Ericaceae',
         thumb: "https://media.eol.org/content/2012/06/13/13/64173_88_88.jpg",
-        names: [ { language: "en", names: ['Heath Family', 'Heather Family']} ,
+        names: [ { language: "en", names: ['Heath family', 'Heather family']} ,
         { language: "fr", names:[ 'Èricacées' ]},
         { language: "de", names:[ 'Heidekrautgewächse' ]},
-        { language: "es", names:[ 'Heath Family' ]},
-        { language: "pt", names:[ 'Heath Family' ]},
-        { language: "it", names:[ 'Heath Family' ]}],
+        { language: "es", names:[ 'Heath family' ]},
+        { language: "pt", names:[ 'Heath family' ]},
+        { language: "it", names:[ 'Heath family' ]}],
         species: 4250,
         genera: 124,
         pollinators: [ { language: "en", names: ['Bees', 'Hummingbirds'] } ],
@@ -568,12 +568,12 @@ export const taxa = [
         taxon: 'family',
         name: 'Boraginaceae',
         thumb: "http://media.eol.org/content/2014/10/05/05/78144_88_88.jpg",
-        names: [ { language: "en", names: ['Borage Family', 'Borage']} ,
+        names: [ { language: "en", names: ['Borage family', 'Borage']} ,
         { language: "fr", names:[ 'Bourraches' ]},
         { language: "de", names:[ 'Raublattgewächse' ]},
-        { language: "es", names:[ 'Borage Family' ]},
-        { language: "pt", names:[ 'Borage Family' ]},
-        { language: "it", names:[ 'Borage Family' ]}],
+        { language: "es", names:[ 'Borage family' ]},
+        { language: "pt", names:[ 'Borage family' ]},
+        { language: "it", names:[ 'Borage family' ]}],
         species: 2000,
         genera: 146,
         pollinators: [ { language: "en", names: ['Bees', 'Bumblebees'] } ],
@@ -592,10 +592,10 @@ export const taxa = [
         taxon: 'family',
         name: 'Caryophyllaceae',
         thumb: "http://media.eol.org/content/2012/05/23/08/72167_88_88.jpg",
-        names: [ { language: "en", names: ['Carnation Family', 'Pink Family', 'Chickweed Family']} ,
+        names: [ { language: "en", names: ['Carnation family', 'Pink family', 'Chickweed family']} ,
         { language: "fr", names:[ 'Caryophyllacées' ]},
         { language: "de", names:[ 'Nelkengewächse' ]},
-        { language: "es", names:[ 'Carnation Family' ]},
+        { language: "es", names:[ 'Carnation family' ]},
         { language: "pt", names:[ 'Cariofiláceas' ]},
         { language: "it", names:[ 'Cariofillacee' ]}],
         species:  2625,
@@ -616,12 +616,12 @@ export const taxa = [
         taxon: 'family',
         name: 'Iridaceae',
         thumb: "http://media.eol.org/content/2009/07/24/04/85444_98_68.jpg",
-        names: [ { language: "en", names: ['Iris Family']} ,
+        names: [ { language: "en", names: ['Iris family']} ,
         { language: "fr", names:[ 'Iridacées' ]},
         { language: "de", names:[ 'Schwertliliengewächse' ]},
         { language: "es", names:[ 'Iridáceas' ]},
         { language: "pt", names:[ 'Iris' ]},
-        { language: "it", names:[ 'Iris Family' ]}],
+        { language: "it", names:[ 'Iris family' ]}],
         species:  2244,
         genera: 66,
         pollinators: [ { language: "en", names: ['Solitary Bees', 'Butterflies', 'Moths', 'Birds', 'Flies'] } ],
@@ -635,5 +635,536 @@ export const taxa = [
         members: ['Dianthus caryophyllus'],
         eol: "http://eol.org/pages/4183/overview",
         wiki: "https://en.wikipedia.org/wiki/Iridaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Iridaceae',
+        thumb: "http://media.eol.org/content/2009/07/24/04/85444_98_68.jpg",
+        names: [ { language: "en", names: ['Iris family']} ,
+        { language: "fr", names:[ 'Iridacées' ]},
+        { language: "de", names:[ 'Schwertliliengewächse' ]},
+        { language: "es", names:[ 'Iridáceas' ]},
+        { language: "pt", names:[ 'Iris' ]},
+        { language: "it", names:[ 'Iris family' ]}],
+        species:  2244,
+        genera: 66,
+        pollinators: [ { language: "en", names: ['Solitary Bees', 'Butterflies', 'Moths', 'Birds', 'Flies'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Widespread family of perennial plants, with a bulb, corm or rhizome. The plants grow erect, and have leaves that are generally grass-like, with a sharp central fold.',
+                identification: 'Lily-like flowers, grass-like leaves.'
+            }
+        ],
+        members: ['Dianthus caryophyllus'],
+        eol: "http://eol.org/pages/4183/overview",
+        wiki: "https://en.wikipedia.org/wiki/Iridaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Iridaceae',
+        thumb: "http://media.eol.org/content/2009/07/24/04/85444_98_68.jpg",
+        names: [ { language: "en", names: ['Iris family']} ,
+        { language: "fr", names:[ 'Iridacées' ]},
+        { language: "de", names:[ 'Schwertliliengewächse' ]},
+        { language: "es", names:[ 'Iridáceas' ]},
+        { language: "pt", names:[ 'Iris' ]},
+        { language: "it", names:[ 'Iris family' ]}],
+        species:  2244,
+        genera: 66,
+        pollinators: [ { language: "en", names: ['Solitary Bees', 'Butterflies', 'Moths', 'Birds', 'Flies'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Widespread family of perennial plants, with a bulb, corm or rhizome. The plants grow erect, and have leaves that are generally grass-like, with a sharp central fold.',
+                identification: 'Lily-like flowers, grass-like leaves.'
+            }
+        ],
+        members: ['Dianthus caryophyllus'],
+        eol: "http://eol.org/pages/4183/overview",
+        wiki: "https://en.wikipedia.org/wiki/Iridaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Mimosaceae',
+        thumb: "2015/01/19/17/65438_88_88.jpg",
+        names: [ { language: "en", names: ['Mimosoideae']} ,
+        { language: "fr", names:[ 'Mimosoideae' ]},
+        { language: "de", names:[ 'Mimosoideae' ]},
+        { language: "es", names:[ 'Mimosoideae' ]},
+        { language: "pt", names:[ 'Mimosoideae' ]},
+        { language: "it", names:[ 'Mimosoideae' ]}],
+        species:  2500,
+        genera: 40,
+        pollinators: [ { language: "en", names: ['Bees', 'Butterflies'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Found in arid areas, rarely temperate climates. 3 genera occur naturally in Australia. Most species in the genera Acacia.',
+                identification: 'Radially symmetrical flowers. Valvate (twice divided) flowers.'
+            }
+        ],
+        eol: "http://eol.org/pages/2865720/overview",
+        wiki: "https://en.wikipedia.org/wiki/Mimosaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Sapindaceae',
+        thumb: "2015/05/20/03/13849_88_88.jpg",
+        names: [ { language: "en", names: ['Soapberry family']} ,
+        { language: "fr", names:[ 'Sapindacées' ]},
+        { language: "de", names:[ 'Seifenbaumgewächse' ]},
+        { language: "es", names:[ 'Sapindáceas' ]},
+        { language: "pt", names:[ 'Sapindáceas' ]},
+        { language: "it", names:[ 'Sapindaceae' ]}],
+        species:  1858,
+        genera: 138,
+        pollinators: [ { language: "en", names: ['Insects', 'Birds', 'Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Occur in temperate to tropical regions, many in laurel forests. Many are laticiferous, i.e. they contain latex and many contain mildly toxic saponins with soap-like qualities in foliage and/or the seeds, or roots.',
+                identification: 'Leaves spirally alternate or opposite; pinnately or palmately (Aesculus) compound, or palmate (Acer).'
+            }
+        ],
+        eol: "http://eol.org/pages/4415/overview",
+        wiki: "https://en.wikipedia.org/wiki/Sapindaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Betulaceae',
+        thumb: "2015/04/30/07/54206_88_88.jpg",
+        names: [ { language: "en", names: ['Birch family']} ,
+        { language: "fr", names:[ 'Bétulacée' ]},
+        { language: "de", names:[ 'Birkengewächse' ]},
+        { language: "es", names:[ 'Betuláceas' ]},
+        { language: "pt", names:[ 'Birch family' ]},
+        { language: "it", names:[ 'Betulacee' ]}],
+        species:  167,
+        genera: 6,
+        pollinators: [ { language: "en", names: ['Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Deciduous, nut-bearing trees and shrubs, including the birches, alders, hazels and hornbeams.',
+                identification: 'Flowers are typically catkins and often appear before leaves; nuts have bracts attached.'
+            }
+        ],
+        eol: "http://eol.org/pages/5528/overview",
+        wiki: "https://en.wikipedia.org/wiki/Betulaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Fagaceae',
+        thumb: "2014/02/08/07/45589_88_88.jpg",
+        names: [ { language: "en", names: ['Beech family']} ,
+        { language: "fr", names:[ 'Fagacée' ]},
+        { language: "de", names:[ 'Buchengewächse' ]},
+        { language: "es", names:[ 'Fagaceae' ]},
+        { language: "pt", names:[ 'Birch' ]},
+        { language: "it", names:[ 'Fagacee' ]}],
+        species:  927,
+        genera: 8,
+        pollinators: [ { language: "en", names: ['Insects', 'Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Species (oak, chestnut, and beech) used for floors, furniture, cabinets, and wine barrels.',
+                identification: 'Trees or shrubs with single nuts in spiky or scaly husks. Unisex catkin flowers. Alternate simple leaves with pinnate venation.'
+            }
+        ],
+        eol: "http://eol.org/pages/4197/overview",
+        wiki: "https://en.wikipedia.org/wiki/Fagaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Bignoniaceae',
+        thumb: "2014/09/14/00/14843_88_88.jpg",
+        names: [ { language: "en", names: ['Bignonias']} ,
+        { language: "fr", names:[ 'Bignonias' ]},
+        { language: "de", names:[ 'Trompetenbaumgewächse' ]},
+        { language: "es", names:[ 'Bignonias' ]},
+        { language: "pt", names:[ 'Bignonias' ]},
+        { language: "it", names:[ 'Bignonias' ]}],
+        species:  860,
+        genera: 85,
+        pollinators: [ { language: "en", names: ['Bees', 'Birds', 'Moths'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Trees or shrubs or often woody climbers (including lianas, climbing by tendrils, by twining, or rarely, by aerial roots), rarely herbs.',
+                identification: 'Leaves opposite or rarely in whorls of 3 or 4, simple or pinnately compound with terminal leaflets sometimes modified into tendrils, sometimes palmately compound; stipules absent.'
+            }
+        ],
+        eol: "http://eol.org/pages/4421/overview",
+        wiki: "https://en.wikipedia.org/wiki/Bignoniaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Caesalpiniaceae',
+        thumb: "2012/06/06/13/83275_88_88.jpg",
+        names: [ { language: "en", names: ['Caesalpinioideae']} ,
+        { language: "fr", names:[ 'Caesalpinioideae' ]},
+        { language: "de", names:[ 'Caesalpinioideae' ]},
+        { language: "es", names:[ 'Caesalpinioideae' ]},
+        { language: "pt", names:[ 'Caesalpinioideae' ]},
+        { language: "it", names:[ 'Caesalpinioideae' ]}],
+        species:  2000,
+        genera: 160,
+        pollinators: [ { language: "en", names: ['Bees', 'Butterflies'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Caesalpinioideae is a botanical name at the rank of subfamily, placed in the large family Fabaceae or Leguminosae. Its name is formed from the generic name Caesalpinia. It is known also as the peacock flower subfamily,',
+                identification: 'Leaves are alternate, stipulate, mostly pinnately compound sometimes bipinnate or simple.'
+            }
+        ],
+        eol: "http://eol.org/pages/2865551/overview",
+        wiki: "https://en.wikipedia.org/wiki/Caesalpiniaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Asparagaceae',
+        thumb: "2013/11/25/03/02174_88_88.jpg",
+        names: [ { language: "en", names: ['Asparagus family']} ,
+        { language: "fr", names:[ 'Asparagacées' ]},
+        { language: "de", names:[ 'Spargelgewächse' ]},
+        { language: "es", names:[ 'Asparagáceas' ]},
+        { language: "pt", names:[ 'Asparagus family' ]},
+        { language: "it", names:[ 'Asparagacee' ]}],
+        species:  2900,
+        genera: 114,
+        pollinators: [ { language: "en", names: ['Flies', 'Bees'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Family (together with Agave, Beargrass, and Brodiaea families) formed when the Lily family was broken up.',
+                identification: '3 sepals and 3 petals that similar in size and color; 6 stamens and a tripartite pistil.'
+            }
+        ],
+        eol: "http://eol.org/pages/8194/overview",
+        wiki: "https://en.wikipedia.org/wiki/Asparagaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Myrtaceae',
+        thumb: "2012/10/19/00/00976_88_88.jpg",
+        names: [ { language: "en", names: ['Myrtles']} ,
+        { language: "fr", names:[ 'Myrtacées' ]},
+        { language: "de", names:[ 'Myrtles' ]},
+        { language: "es", names:[ 'Mirtáceas' ]},
+        { language: "pt", names:[ 'Myrtles' ]},
+        { language: "it", names:[ 'Myrtles' ]}],
+        species:  5950,
+        genera: 132,
+        pollinators: [ { language: "en", names: ['Bees'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Family of dicotyledonous plants. Wide distribution in tropical and warm-temperate regions, genera include Eucalyptus, Corymbia and Callistemon.',
+                identification: 'Evergreen, leaves opposite, simple, and with an entire margin. Woody with essential oils. 4 or 5 petals. Conspicuous, bright and numerous stamens.'
+            }
+        ],
+        eol: "http://eol.org/pages/8095/overview",
+        wiki: "https://en.wikipedia.org/wiki/Myrtaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Cunoniaceae',
+        thumb: "2011/11/01/20/89856_88_88.jpg",
+        names: [ { language: "en", names: ['Wild Alder family']} ,
+        { language: "fr", names:[ 'Wild Alder family' ]},
+        { language: "de", names:[ 'Wild Alder family' ]},
+        { language: "es", names:[ 'Wild Alder family' ]},
+        { language: "pt", names:[ 'Wild Alder family' ]},
+        { language: "it", names:[ 'Wild Alder family' ]}],
+        species:  330,
+        genera: 27,
+        pollinators: [ { language: "en", names: ['Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Woody plants in the order Oxalidales, mostly found in the tropical and wet temperate regions of the Southern Hemisphere.',
+                identification: 'Trees and shrubs mostly evergreen. Leaves opposite or whorled, simple or compound. Usually 4/5 petals/sepals. Fruit a woody capsule with small seeds.'
+            }
+        ],
+        eol: "http://eol.org/pages/4390/overview",
+        wiki: "https://en.wikipedia.org/wiki/Cunoniaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Oleaceae',
+        thumb: "",
+        names: [ { language: "en", names: ['Olive family']} ,
+        { language: "fr", names:[ 'Olive family' ]},
+        { language: "de", names:[ 'Ölbaumgewächse' ]},
+        { language: "es", names:[ 'Oleáceas' ]},
+        { language: "pt", names:[ 'Olive family' ]},
+        { language: "it", names:[ 'Olive family' ]}],
+        species:  700,
+        genera: 25,
+        pollinators: [ { language: "en", names: ['Wind', 'Insects'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Shrubs, trees, and lianas. Subcosmopolitan distribution, (subarctic to the southernmost parts of Africa, Australia, and South America).',
+                identification: 'Trees or shrubs, opposite leaves and 4 sepals, 4 or 0 petals and 2 stamens. Odiferous flowers.'
+            }
+        ],
+        eol: "http://eol.org/pages/4426/overview",
+        wiki: "https://en.wikipedia.org/wiki/Oleaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Caesalpiniaceae',
+        thumb: "",
+        names: [ { language: "en", names: ['Caesalpinioideae']} ,
+        { language: "fr", names:[ 'Caesalpinioideae' ]},
+        { language: "de", names:[ 'Caesalpinioideae' ]},
+        { language: "es", names:[ 'Caesalpinioideae' ]},
+        { language: "pt", names:[ 'Caesalpinioideae' ]},
+        { language: "it", names:[ 'Caesalpinioideae' ]}],
+        species: 2500,
+        genera: 148,
+        pollinators: [ { language: "en", names: [''] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Mostly tropical and subtropical trees and shrubs.',
+                identification: 'Leaves are stipulate, alternate, and mostly pinnately compound but may be bipinnate or simple. Fruit is usually a legume.'
+            }
+        ],
+        eol: "http://eol.org/pages/2865551/overview",
+        wiki: "https://en.wikipedia.org/wiki/Caesalpiniaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Aquifoliaceae',
+        thumb: "",
+        names: [ { language: "en", names: ['Holly']} ,
+        { language: "fr", names:[ 'Aquifoliacées' ]},
+        { language: "de", names:[ 'Stechpalmengewächse' ]},
+        { language: "es", names:[ 'Aquifoliáceas' ]},
+        { language: "pt", names:[ 'Aquifoliáceas' ]},
+        { language: "it", names:[ 'Holly' ]}],
+        species: 400,
+        genera: 2,
+        pollinators: [ { language: "en", names: ['Bees', 'Insects'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'The species are evergreen or deciduous trees, shrubs, and climbers from tropics to temperate zones worldwide. Flowers produce pollen or seeds.',
+                identification: 'Shiny leaves and bright, red berries in some holly species.'
+            }
+        ],
+        eol: "http://eol.org/pages/4240/overview",
+        wiki: "https://en.wikipedia.org/wiki/Aquifoliaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Juglandaceae',
+        thumb: "",
+        names: [ { language: "en", names: ['Walnut family']} ,
+        { language: "fr", names:[ 'Juglandacées' ]},
+        { language: "de", names:[ 'Walnussgewächse' ]},
+        { language: "es", names:[ 'Juglandáceas' ]},
+        { language: "pt", names:[ 'Walnut family' ]},
+        { language: "it", names:[ 'Walnut family' ]}],
+        species: 50,
+        genera: 10,
+        pollinators: [ { language: "en", names: ['Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Family includes nut-producing walnut, pecan and hickory trees.',
+                identification: 'Large, aromatic leaves that usually alternate, pinnately compound or ternate. Catkins.'
+            }
+        ],
+        eol: "http://eol.org/pages/4240/overview",
+        wiki: "https://en.wikipedia.org/wiki/Juglandaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Papilionaceae',
+        thumb: "",
+        names: [ { language: "en", names: ['Dillwynia, Peaflowers']} ,
+        { language: "fr", names:[ 'Dillwynia' ]},
+        { language: "de", names:[ 'Dillwynia' ]},
+        { language: "es", names:[ 'Dillwynia' ]},
+        { language: "pt", names:[ 'Dillwynia' ]},
+        { language: "it", names:[ 'Dillwynia' ]}],
+        species: 375,
+        genera: 3,
+        pollinators: [ { language: "en", names: ['Insects'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Widely distributed, adapted to a variety of environments. Species include trees, shrubs, and herbaceous plants (pea, the sweet pea, the laburnum).',
+                identification: 'Pea-shaped flowers. Root nodulation is common.'
+            }
+        ],
+        eol: "http://eol.org/pages/2874237/overview",
+        wiki: "https://en.wikipedia.org/wiki/Papilionaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Hamamelidaceae',
+        thumb: "",
+        names: [ { language: "en", names: ['Witch-hazel family']} ,
+        { language: "fr", names:[ 'Witch-hazel family' ]},
+        { language: "de", names:[ 'Witch-hazel family' ]},
+        { language: "es", names:[ 'Witch-hazel family' ]},
+        { language: "pt", names:[ 'Witch-hazel family' ]},
+        { language: "it", names:[ 'Witch-hazel family' ]}],
+        species: 140,
+        genera: 30,
+        pollinators: [ { language: "en", names: [ 'Wind', 'Insects'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Shrubs and trees distributed in North America and western and eastern Asia.',
+                identification: 'Simple leaves. 4/5 strap-shaped flowers. Sometimes either or both sepals and petals are lacking. Woody fruits.'
+            }
+        ],
+        eol: "http://eol.org/pages/4293/overview",
+        wiki: "https://en.wikipedia.org/wiki/Hamamelidaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Magnoliaceae',
+        thumb: "",
+        names: [ { language: "en", names: ['Magnolia family']} ,
+        { language: "fr", names:[ 'Magnolia family' ]},
+        { language: "de", names:[ 'Magnolia family' ]},
+        { language: "es", names:[ 'Magnolia family' ]},
+        { language: "pt", names:[ 'Magnolia family' ]},
+        { language: "it", names:[ 'Magnolia family' ]}],
+        species: 219,
+        genera: 17,
+        pollinators: [ { language: "en", names: [ 'Beetles', 'Bees'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Trees and shrubs concentrated in the SE US, Mexico, Central America, the Caribbean, and in East and SE Asia. Species include the Tulip tree.',
+                identification: 'Stamens and pistils in spirals on a conical receptacle. Undifferentiated sepals/petals. Fragrant flowers.'
+            }
+        ],
+        eol: "http://eol.org/pages/4194/overview",
+        wiki: "https://en.wikipedia.org/wiki/Magnoliaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Platanaceae',
+        thumb: "",
+        names: [ { language: "en", names: ['Plane Tree family']} ,
+        { language: "fr", names:[ 'Plane Tree family' ]},
+        { language: "de", names:[ 'Plane Tree family' ]},
+        { language: "es", names:[ 'Plane Tree family' ]},
+        { language: "pt", names:[ 'Plane Tree family' ]},
+        { language: "it", names:[ 'Platanacee' ]}],
+        species: 8,
+        genera: 1,
+        pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'The family consists of one extant genus, Platanus. Tall trees, native to temperate and subtropical regions of the Northern Hemisphere. The hybrid London plane is widely planted in cities.',
+                identification: 'Speckled bark that sheds in large irregular sheets, leaving smooth, pale surface. Reduced flowers in balls.'
+            }
+        ],
+        eol: "http://eol.org/pages/4294/overview",
+        wiki: "https://en.wikipedia.org/wiki/Platanaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Salicaceae',
+        thumb: "",
+        names: [ { language: "en", names: ['Willow family']} ,
+        { language: "fr", names:[ 'Willow family' ]},
+        { language: "de", names:[ 'Weidengewächse' ]},
+        { language: "es", names:[ 'Willow family' ]},
+        { language: "pt", names:[ 'Willow family' ]},
+        { language: "it", names:[ 'Willow family' ]}],
+        species: 1220,
+        genera: 56,
+        pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Family includes cottonwoods (Populus) and willows (Salix). Analgesic, anti-inflammatory, astringent and diuretic properties.',
+                identification: 'Riparian trees and bushes. Alternate leaves. Catkins form small capsules.'
+            }
+        ],
+        eol: "http://eol.org/pages/4400/overview",
+        wiki: "https://en.wikipedia.org/wiki/Salicaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Theaceae',
+        thumb: "",
+        names: [ { language: "en", names: ['Tea family']} ,
+        { language: "fr", names:[ 'Tea family' ]},
+        { language: "de", names:[ 'Teestrauchgewächse' ]},
+        { language: "es", names:[ 'Tea family' ]},
+        { language: "pt", names:[ 'Tea family' ]},
+        { language: "it", names:[ 'Tea family' ]}],
+        species: 200,
+        genera: 40,
+        pollinators: [ { language: "en", names: [ 'Bees' ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Flowering shrubs and trees, including the camellias (Camellia sinensis, tea), native to temperate and tropical regions of both hemispheres.',
+                identification: 'Theoid leaf has toothed margins crowned by a glandular, deciduous tip.'
+            }
+        ],
+        eol: "http://eol.org/pages/4446/overview",
+        wiki: "https://en.wikipedia.org/wiki/Theaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Styracaceae',
+        thumb: "",
+        names: [ { language: "en", names: ['Storax family']} ,
+        { language: "fr", names:[ 'Storax family' ]},
+        { language: "de", names:[ 'Storax family' ]},
+        { language: "es", names:[ 'Storax family' ]},
+        { language: "pt", names:[ 'Storax family' ]},
+        { language: "it", names:[ 'Storax family' ]}],
+        species: 160,
+        genera: 11,
+        pollinators: [ { language: "en", names: [ 'Bumblees', 'Bees', 'Butterflies', 'Wasps', 'Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Small family of flowering trees and shrubs in the order Ericales, occurring in warm temperate and subtropical regions of the Northern Hemisphere.',
+                identification: 'Spirally arranged simple leaves with no stipules. Fruit, dry capsule or fleshy drupe.'
+            }
+        ],
+        eol: "http://eol.org/pages/4263/overview",
+        wiki: "https://en.wikipedia.org/wiki/Styracaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Malvaceae',
+        thumb: "",
+        names: [ { language: "en", names: ['Mallows or Hibiscus']} ,
+        { language: "fr", names:[ 'Mauves' ]},
+        { language: "de", names:[ 'Malvengewächse' ]},
+        { language: "es", names:[ 'Storax family' ]},
+        { language: "pt", names:[ 'Storax family' ]},
+        { language: "it", names:[ 'Storax family' ]}],
+        species: 4225,
+        genera: 244,
+        pollinators: [ { language: "en", names: [ 'Bees', 'Hummingbirds', 'Bats', 'Insects'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Large family of flowering plants including of economic importance okra, cotton, cacao and durian.',
+                identification: '5 petals (lobed margin) and a column of stamens. Mucilaginous stems. Hairs common.'
+            }
+        ],
+        eol: "http://eol.org/pages/4321/overview",
+        wiki: "https://en.wikipedia.org/wiki/Malvaceae"
     },
 ];

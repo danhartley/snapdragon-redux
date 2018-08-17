@@ -517,5 +517,9 @@ export const epithets = [
     {
         "latin" : ["zygos"],
         "en" : ["joined"]
-    }
+    },
+    {
+        "latin" : ["stipula"],
+        "en" : ["straw, stalk"]
+    },
 ];
