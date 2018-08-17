@@ -7,11 +7,14 @@ const encodeQuery = q => {
     return encodeURIComponent(q.trim()) 
 };
 
+const unrestrictedLicences = 'pd|cc-by|cc-by-sa|cc-by-nd';
+const restrictedLicences = 'pd|cc-by|cc-by-sa|cc-by-nd';
+
 const speciesUrl = id => {
     return `http://eol.org/api/pages/1.0.json?
-    batch=false&id=${encodeQuery(id)}&images_per_page=100&images_page=1
+    batch=true&id=${encodeQuery(id)}&images_per_page=75&images_page=1
     &videos_per_page=0&videos_page=0&sounds_per_page=0&sounds_page=0&maps_per_page=0
-    &maps_page=0&texts_per_page=1&texts_page=1&subjects=all&licenses=all
+    &maps_page=0&texts_per_page=1&texts_page=1&subjects=all&licenses=${unrestrictedLicences}
     &details=true&common_names=true&synonyms=false&references=false&taxonomy=false&vetted=0&cache_ttl=&language=en`;
 };
 
@@ -25,7 +28,7 @@ const getSpecies = (collection) => {
 
 async function getCollection() {
     const collectionId =  parseInt(document.querySelector('#inputCollection').value);
-    const collectionUrl = `http://eol.org/api/collections/1.0/${collectionId}.json?page=1&per_page=50&filter=&sort_by=recently_added&sort_field=&cache_ttl=&language=en`;
+    const collectionUrl = `http://eol.org/api/collections/1.0/${collectionId}.json?page=1&per_page=100&filter=&sort_by=recently_added&sort_field=&cache_ttl=&language=en`;
     const response = await fetch(collectionUrl);
     const json = await response.json();
     return await getSpecies(json);

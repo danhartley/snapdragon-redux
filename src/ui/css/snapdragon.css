@@ -522,6 +522,10 @@ hr {
   font-style: italic;
 }
 
+.family-img {
+  filter: grayscale(80%);
+}
+
 .family-name {
   text-transform: uppercase;
   font-size: 1.2em;

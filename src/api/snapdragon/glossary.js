@@ -217,4 +217,16 @@ export const definitions = [
         definition: 'Non-herbaceous perennials which retain a mantle of leaves throughout the year.',
         wiki: 'https://en.wikipedia.org/wiki/Evergreen'
     },
+    {
+        term: 'Valvate',
+        definition: '(Of flowers) twice divided.'
+    },
+    {
+        term: 'Dicotyledon',
+        definition: 'Former division of angiosperms. Refers to seeds with two embryonic leaves (cotyledons).'
+    },
+    {
+        term: 'Genus',
+        definition: 'Taxonomic category above species and below family.'
+    },
 ];

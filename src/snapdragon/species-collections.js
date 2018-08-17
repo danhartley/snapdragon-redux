@@ -1,8 +1,6 @@
 import * as R from 'ramda';
 
-// import { herbs1 } from 'api/snapdragon/herbs1';
-// import { uk1 } from 'api/snapdragon/uk1';
-// import { med1 } from 'api/snapdragon/med1';
+import { deciduousAndEvergreenTrees } from 'api/snapdragon/rhs/deciduous-evergreen-trees';
 import { herbsAndSpices } from 'api/snapdragon/herbs-and-spices';
 import { vegetables } from 'api/snapdragon/vegetables';
 import { fruit } from 'api/snapdragon/fruit';
@@ -16,9 +14,9 @@ export const collections = [
         id: 1,
         type: 'species',
         name: 'Herbs',
-        // items: herbs1,
-        eol_name: 'Herbs 1',
-        eol_link: 'https://eol.org/collections/139051'
+        items: deciduousAndEvergreenTrees,
+        eol_name: 'Deciduous and evergreen trees',
+        eol_link: 'https://eol.org/collections/140596'
     },
     {
         id: 2,
