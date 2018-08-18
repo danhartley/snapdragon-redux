@@ -39,7 +39,7 @@ export const rhsTrees = {
     description: 'The approved list of Deciduous and Evergreen Trees for students taking Royal Horticultural Society Qualifications in Practical Horticulture.',
     items:[ ...collections[0].items ],
     collections: ['Deciduous and evergreen trees'],
-    thumb: 'https://media.eol.org/content/2012/06/13/04/65813_orig.jpg',
+    thumb: 'https://media.eol.org/content/2015/04/30/19/57100_orig.jpg',
     moduleSize: 6,
     curator: 'Snapdragon',
     level: 'RHS students'    
