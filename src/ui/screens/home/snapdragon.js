@@ -1,13 +1,9 @@
 import { DOM } from 'ui/dom';
-import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
-import { kitchenGarden, nationalFlowers } from 'snapdragon/species-lessons';
+import { kitchenGarden, nationalFlowers, rhsTrees } from 'snapdragon/species-lessons';
 import { renderTemplate } from 'ui/helpers/templating';
 import snapdragonTemplate from 'ui/screens/home/snapdragon-template.html';
 
 export const renderSnapdragon = (counter) => {
-
-    const { config } = store.getState();
 
     const template = document.createElement('template');
 
@@ -18,7 +14,7 @@ export const renderSnapdragon = (counter) => {
     const parent = DOM.leftBody;
     parent.innerHTML = '';
 
-    const collections = [ kitchenGarden, nationalFlowers ];
+    const collections = [ kitchenGarden, nationalFlowers, rhsTrees ];
 
     const context = { collections };
 
