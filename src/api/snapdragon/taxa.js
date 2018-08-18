@@ -11,7 +11,7 @@ export const taxa = [
         { language: "it", names:[ 'Daisies' ]}],
         wiki: "https://en.wikipedia.org/wiki/Asteraceae",
         eol: "http://eol.org/pages/4206/overview",
-        thumb: 'https://media.eol.org/content/2017/02/18/22/29040_98_68.jpg',
+        thumb: '2017/02/18/22/29040_98_68.jpg',
         species: 32913,
         genera: 1911,
         descriptions: [
@@ -36,7 +36,7 @@ export const taxa = [
         { language: "es", names:[ 'Carrot or Parsley family' ]},
         { language: "pt", names:[ 'Carrot or Parsley family' ]},
         { language: "it", names:[ 'Carrot or Parsley family' ]}],
-        thumb: 'https://media.eol.org/content/2014/04/16/16/98519_88_88.jpg',
+        thumb: '2014/04/16/16/98519_88_88.jpg',
         members: [  'Daucus carota subsp. sativus', 'Coriandrum sativum', 'Petroselinum crispum', 'Foeniculum vulgare', 
                     'Anethum graveolens', 'Conium maculatum', 'Cuminum cyminum', 'Carum carvi', 'Anthriscus cerefolium',
                     'Myrrhis odorata', 'Pimpinella anisum', 'Levisticum officinale', 'Pastinaca sativa'],
@@ -73,7 +73,7 @@ export const taxa = [
         { language: "it", names:[ 'Mint' ]}],
         wiki: "https://en.wikipedia.org/wiki/Lamiaceae",
         eol: "http://eol.org/pages/4302/overview",
-        thumb: "https://media.eol.org/content/2014/08/14/23/80866_88_88.jpg",
+        thumb: "2014/08/14/23/80866_88_88.jpg",
         members: ['Ocimum basilicum', 'Rosmarinus officinalis'],
         pollinators: [ { language: "en", names: ['Insects', 'Bumblebees', 'Single Bees'] } ],
         propagation: 'stem cuttings',
@@ -104,7 +104,7 @@ export const taxa = [
         { language: "es", names:[ 'Mustards' ]},
         { language: "pt", names:[ 'Mustards' ]},
         { language: "it", names:[ 'Mustards' ]}],
-        thumb: 'https://media.eol.org/content/2015/04/30/10/19667_88_88.jpg',
+        thumb: '2015/04/30/10/19667_88_88.jpg',
         species: 4060,
         genera: 372,
         pollinators: [ { language: "en", names: ['Insects'] } ],
@@ -128,7 +128,7 @@ export const taxa = [
         { language: "es", names:[ 'Amaryllis' ]},
         { language: "pt", names:[ 'Amaryllis' ]},
         { language: "it", names:[ 'Amaryllis' ]}],
-        thumb: 'https://media.eol.org/content/2015/01/27/22/09266_98_68.jpg',
+        thumb: '2015/01/27/22/09266_98_68.jpg',
         species: 1600,
         genera: 75,
         descriptions: [
@@ -152,7 +152,7 @@ export const taxa = [
         { language: "es", names:[ 'Butterflies and Moths' ]},
         { language: "pt", names:[ 'Borboleta' ]},
         { language: "it", names:[ 'Butterflies and Moths' ]}],
-        thumb: 'https://media.eol.org/content/2017/01/25/21/74379_88_88.jpg',
+        thumb: '2017/01/25/21/74379_88_88.jpg',
         species: 180000,
         families: 126,
         descriptions: [
@@ -168,7 +168,7 @@ export const taxa = [
     {
         taxon: "order",
         name: "Hymenoptera",
-        thumb: "https://media.eol.org/content/2013/02/03/12/43681_98_68.jpg",
+        thumb: "2013/02/03/12/43681_98_68.jpg",
         names: [ { language: "en", names: ['Ants, Bees, and Wasps']},
         { language: "fr", names:[ 'Hyménoptères' ]},
         { language: "de", names:[ 'Hautflügler' ]},
@@ -194,7 +194,7 @@ export const taxa = [
         { language: "es", names:[ 'Bees' ]},
         { language: "pt", names:[ 'Bees' ]},
         { language: "it", names:[ 'Bees' ]}],
-        thumb: "https://media.eol.org/content/2013/02/03/12/43681_98_68.jpg",
+        thumb: "2013/02/03/12/43681_98_68.jpg",
         species: 5700,
         members: ["Apis mellifera"],
         pollinators: [ { language: "en", names: ['Flowering plants'] } ],
@@ -212,7 +212,7 @@ export const taxa = [
     {
         taxon: 'order',
         name: "Coleoptera",
-        thumb: "https://media.eol.org/content/2015/01/26/11/41088_88_88.jpg",
+        thumb: "2015/01/26/11/41088_88_88.jpg",
         names: [ { language: "en", names: ['Beetles']},
         { language: "fr", names:[ 'Coléoptères' ]},
         { language: "de", names:[ 'Käfer' ]},
@@ -232,7 +232,7 @@ export const taxa = [
     {
         taxon: 'order',
         name: "Diptera",
-        thumb: "https://media.eol.org/content/2015/01/31/00/39232_88_88.jpg",
+        thumb: "2015/01/31/00/39232_88_88.jpg",
         names: [ { language: "en", names: ['Flies']},
         { language: "fr", names:[ 'Diptères' ]},
         { language: "de", names:[ 'Zweiflügler' ]},
@@ -252,7 +252,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Poaceae',
-        thumb: "https://media.eol.org/content/2012/05/23/07/89214_88_88.jpg",
+        thumb: "2012/05/23/07/89214_88_88.jpg",
         alt: ['Poaceae', 'Gramineae'],
         names: [ { language: "en", names: ['Grasses', 'True Grasses'] } ,
         { language: "fr", names:[ 'Graminées' ]},
@@ -279,7 +279,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Zingiberaceae',
-        thumb: "https://media.eol.org/content/2012/01/25/15/09074_98_68.jpg",
+        thumb: "2012/01/25/15/09074_98_68.jpg",
         names: [ { language: "en", names: ['Ginger family']} ,
         { language: "fr", names:[ 'Ginger family' ]},
         { language: "de", names:[ 'Ginger family' ]},
@@ -303,7 +303,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Piperaceae',
-        thumb: "https://media.eol.org/content/2017/01/30/20/37424_88_88.jpg",
+        thumb: "2017/01/30/20/37424_88_88.jpg",
         names: [ { language: "en", names: ['Pepper family']} ,
         { language: "fr", names:[ 'Pepper family' ]},
         { language: "de", names:[ 'Pepper family' ]},
@@ -326,7 +326,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Fabaceae',
-        thumb: "https://media.eol.org/content/2010/03/24/13/32972_98_68.jpg",
+        thumb: "2010/03/24/13/32972_98_68.jpg",
         alt: ['Leguminosae'],
         names: [ { language: "en", names: ['Pea family', 'Bean family', 'Legumes']} ,
         { language: "fr", names:[ 'Pea family' ]},
@@ -352,7 +352,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Rosaceae',
-        thumb: "https://media.eol.org/content/2014/08/25/10/53156_88_88.jpg",
+        thumb: "2014/08/25/10/53156_88_88.jpg",
         names: [ { language: "en", names: ['Rose family']} ,
         { language: "fr", names:[ 'Rosaceae' ]},
         { language: "de", names:[ 'Rosengewächse' ]},
@@ -377,7 +377,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Rutaceae',
-        thumb: "https://media.eol.org/content/2012/05/23/09/05989_98_68.jpg",
+        thumb: "2012/05/23/09/05989_98_68.jpg",
         names: [ { language: "en", names: ['Citrus family', 'Rue family']} ,
         { language: "fr", names:[ 'Citronnier' ]},
         { language: "de", names:[ 'Zitrone' ]},
@@ -400,7 +400,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Cucurbitaceae',
-        thumb: "https://media.eol.org/content/2011/08/04/10/10257_88_88.jpg",
+        thumb: "2011/08/04/10/10257_88_88.jpg",
         names: [ { language: "en", names: ['Gourd family', 'Cucurbits', 'Gourds, Melons, Squash, & Cucumbers']} ,
         { language: "fr", names:[ 'Cucurbitaceae' ]},
         { language: "de", names:[ 'Gourd family' ]},
@@ -423,7 +423,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Amaranthaceae',
-        thumb: "https://media.eol.org/content/2012/06/12/15/54548_88_88.jpg",
+        thumb: "2012/06/12/15/54548_88_88.jpg",
         names: [ { language: "en", names: ['Amaranth family', 'Pigweed']} ,
         { language: "fr", names:[ 'Amaranthaceae' ]},
         { language: "de", names:[ 'Amaranth family' ]},
@@ -447,7 +447,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Solanaceae',
-        thumb: "https://media.eol.org/content/2012/06/12/16/57629_98_68.jpg",
+        thumb: "2012/06/12/16/57629_98_68.jpg",
         names: [ { language: "en", names: ['Nightshades']} ,
         { language: "fr", names:[ 'Solanacées' ]},
         { language: "de", names:[ 'Nachtschattengewächse' ]},
@@ -471,7 +471,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Moraceae',
-        thumb: "https://media.eol.org/content/2014/08/15/04/78512_88_88.jpg",
+        thumb: "2014/08/15/04/78512_88_88.jpg",
         names: [ { language: "en", names: ['Mulberry family', 'Fig family']} ,
         { language: "fr", names:[ 'Mulberry family' ]},
         { language: "de", names:[ 'Mulberry family' ]},
@@ -495,7 +495,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Vitaceae',
-        thumb: "https://media.eol.org/content/2013/12/08/20/40721_88_88.jpg",
+        thumb: "2013/12/08/20/40721_88_88.jpg",
         names: [ { language: "en", names: ['Grape family','Wild grape family']} ,
         { language: "fr", names:[ 'Grape family' ]},
         { language: "de", names:[ 'Grape family' ]},
@@ -519,7 +519,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Lauraceae',
-        thumb: "https://media.eol.org/content/2012/06/13/03/98939_88_88.jpg",
+        thumb: "2012/06/13/03/98939_88_88.jpg",
         names: [ { language: "en", names: ['Laurel family']} ,
         { language: "fr", names:[ 'Laurel family' ]},
         { language: "de", names:[ 'Laurel family' ]},
@@ -543,7 +543,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Ericaceae',
-        thumb: "https://media.eol.org/content/2012/06/13/13/64173_88_88.jpg",
+        thumb: "2012/06/13/13/64173_88_88.jpg",
         names: [ { language: "en", names: ['Heath family', 'Heather family']} ,
         { language: "fr", names:[ 'Èricacées' ]},
         { language: "de", names:[ 'Heidekrautgewächse' ]},

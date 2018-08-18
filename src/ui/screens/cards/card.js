@@ -106,7 +106,7 @@ const renderCommonParts = (template, config, item) => {
     const latin = epithet ? `${speciesName}: ${epithet.en}` : '';
     const rank = "species";
     const family = taxa.find(f => f.name === item.family);
-    const familyImage = family ? family.thumb : '';
+    const familyImage = family ? `https://media.eol.org/content/${family.thumb}` : '';
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const occurrences = specific ? specific.subspecies.length : 0;
     const pollinators = itemProperties.getNestedTaxonProp(family, config.language, 'pollinators', 'names').join(', ');
