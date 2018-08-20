@@ -1,7 +1,6 @@
-import * as R from 'ramda';
-
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
+import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -9,13 +8,15 @@ import { scoreHandler, modalBackgroundImagesHandler } from 'ui/helpers/handlers'
 import landscapeTemplates from 'ui/screens/text-entry/text-entry-templates.html';
 import portraitTemplates from 'ui/screens/text-entry/text-entry-portrait-templates.html';
 
-export const renderInput = (config, screen, question, callbackTime, item, renderHeader, hints, layout) => {
+export const renderInput = (screen, question, hints) => {
 
-    const { lessonPlan, collection } = store.getState();
-    const templates = document.createElement('div');
+    const { lessonPlan, collection, config, layout } = store.getState();
+    const templates = document.createElement('div');    
     templates.innerHTML = config.isPortraitMode ? portraitTemplates : landscapeTemplates;
 
     const template = templates.querySelector(`.${screen.template}`);
+
+    const item = collection.items[collection.itemIndex];
 
     hints.forEach(hint => {
         const el = template.content.querySelector(hint.selector);
@@ -25,10 +26,24 @@ export const renderInput = (config, screen, question, callbackTime, item, render
 
     const clone = document.importNode(template.content, true);
     
-    clone.querySelector('.js-check-answer').addEventListener('click', event => {
+    const callback = (colour, score, scoreUpdateTimer) => {
+        const answerBtn = document.querySelector('.js-check-answer');
+        answerBtn.innerHTML = 'Continue';
+        answerBtn.disabled = false;
+        answerBtn.classList.add(colour);
+        answerBtn.removeEventListener('click', scoreEventHandler);
+        answerBtn.addEventListener('click', () => {
+            window.clearTimeout(scoreUpdateTimer);
+            actions.boundUpdateScore(score);
+        });
+    };
+
+    const scoreEventHandler = event => {
         const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, event, layoutCount: lessonPlan.layouts.length, points: layout.points };
-        scoreHandler('text', score, null, callbackTime, renderHeader);
-    });
+        scoreHandler('text', score, callback, config.callbackTime);
+    };
+
+    clone.querySelector('.js-check-answer').addEventListener('click', scoreEventHandler);
 
     const name = clone.querySelector('.js-txt-name');
     if(name) name.innerHTML = item.name;
@@ -64,7 +79,7 @@ const renderPortrait = item => {
 
 const renderLandscape = (item, config, collection) => {
     
-    const pool = (item.name + itemProperties.vernacularName(item, config)).replace(/\s/g,'').toLowerCase();
+    const pool = (item.species + itemProperties.vernacularName(item, config)).replace(/\s/g,'').toLowerCase();
 
     let blocks = '';
 

@@ -1,15 +1,13 @@
 import { store } from 'redux/store';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderInput } from 'ui/screens/text-entry/text-entry';
-import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
 export const renderTextEntry = (collection) => {
-
-    const item = collection.items[collection.itemIndex];
 
     const { layout, config } = store.getState();
 
     const screen = layout.screens.filter(el => el.name === 'text-entry')[0];
+    const item = collection.items[collection.itemIndex];
     
     if(!screen) return;
 
@@ -24,5 +22,5 @@ export const renderTextEntry = (collection) => {
         { selector: 'span.js-latin', value: question.common }
     ];
 
-    renderInput(config, screen, question, config.callbackTime, item, renderAnswerHeader, hints, layout);
+    renderInput(screen, question, hints);
 };

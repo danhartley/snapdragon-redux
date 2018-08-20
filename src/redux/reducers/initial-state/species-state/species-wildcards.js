@@ -29,8 +29,7 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
         epithets.forEach(epithet => {
             const screens = [ wildcards[0][0], wildcards[0][1] ];
             const layout = { name: 'screen-epithet-meaning', type: 'test', score: 1, screens, itemIndex: epithet.index, epithet: R.take(1,utils.shuffleArray(epithet.parts))[0]};
-            wildcardLayouts.push(layout);            
-            console.log('layout ', layout)
+            wildcardLayouts.push(layout);
         });
     }
 

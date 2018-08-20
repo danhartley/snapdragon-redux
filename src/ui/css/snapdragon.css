@@ -63,7 +63,7 @@ hr {
 
 .btn.btn-light {
   color: var(--snap-text-light);
-  background-color: var(--snap-lesson);
+  background-color: var(--snap-collection);
 }
 
 .btn-collection {
@@ -720,8 +720,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .snap-alert {
-  color: var(--snap-text-light);
-  background-color: var(--snap-alert);
+  color: var(--snap-text-light) !important;
+  background-color: var(--snap-alert) !important;
 }
 
 .block.white {
@@ -808,9 +808,18 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   border: 1px solid var(--snap-border-dark);
 }
 
-.species-question.btn, .species-answer.btn, .btn-placeholder.btn {
+.species-question.btn, .btn-placeholder.btn {
   color: var(--snap-text-dark);
   background-color: var(--snap-block-light);
+}
+
+.species-answer.btn {
+  color: var(--snap-text-light);
+  background-color: var(--snap-collection);
+}
+
+.species-question.btn.btn:not(:disabled):not(.disabled) {
+  cursor: initial;
 }
 
 .species-answer {        
@@ -1033,6 +1042,12 @@ tbody {
 .question-container > span:nth-child(2) {
   margin: .5em 0 0 0;
   display: block;
+}
+
+.answer-container {
+  border: 1px solid var(--snap-border-dark);
+  padding: .5em;
+  margin: 1em 0;
 }
 
 .typewriter-container {  

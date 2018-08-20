@@ -101,7 +101,7 @@
 
     .letterbox-entry div {
         margin: .5em 0;
-        width: 100%;
+        width: 80%;
     }
 
     .letterbox-entry input {
@@ -114,9 +114,17 @@
         color: var(--snap-text-dark);
     }
 
-    /* .block {
+    .text-question .icon {
+        font-size: 2em;
+    }
+
+    .text-question .icon span {
         font-size: 1.4em;
-    } */
+    }
+
+    .block {
+        font-size: 1.4em;
+    }
 
     .text-question {
         margin: 1em 0 0 .25em;
