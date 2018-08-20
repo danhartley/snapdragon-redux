@@ -56,8 +56,8 @@ export const renderCompleteText = (collection) => {
         }
     }
 
-    const itemNames = [ ...collection.items ];
-    const pool = R.take(6, utils.shuffleArray(itemNames).filter(itemName => itemName !== item.name)).map(i => i[givenTaxon]);
+    const itemTaxons = [ ...collection.items ].map(item => item[givenTaxon]);
+    const pool = R.take(5, utils.shuffleArray(itemTaxons).filter(utils.onlyUnique).filter(itemTaxon => itemTaxon !== item[givenTaxon]));
     pool.push(item[givenTaxon]);
 
     const answers = utils.shuffleArray(pool);

@@ -109,7 +109,7 @@ export const renderMultiStrips = (collection) => {
         const question = itemProperties.vernacularName(item, config);
         const items = [ ...collection.items ];
         let alternatives = R.take(number, utils.shuffleArray(items).map(i => i.names.filter(name => name.language === config.language)[0].vernacularName));
-        alternatives = alternatives.filter(alt => alt.toUpperCase() !== question.toUpperCase());
+        alternatives = R.take(number-1, alternatives.filter(alt => alt.toUpperCase() !== question.toUpperCase()));
         alternatives = alternatives.map(a => utils.capitaliseFirst(a));
         const answers = utils.shuffleArray([question, ...alternatives]);
 
