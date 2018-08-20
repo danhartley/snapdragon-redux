@@ -18,7 +18,7 @@ export const renderSummary = (history) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    const levelComplete = collection.currentRound === collection.rounds;
+    const isLevelComplete = collection.currentRound === collection.rounds;
     const lastLevel = 4;
     const collectionComplete = config.lesson.level.id === lastLevel;
     const speciesCount = collection.items.length;
@@ -26,17 +26,17 @@ export const renderSummary = (history) => {
     const speciesUntestedCount = speciesCount - speciesTestedCount;
 
     let summary; 
-    if(!levelComplete) {
+    if(!isLevelComplete) {
         summary = `There are ${speciesUntestedCount} more species to learn in this lesson.`;
     }
-    if(levelComplete) {
+    if(isLevelComplete) {
         summary = 'Continue to the next level...';
     }
-    if(levelComplete && !collectionComplete) {
+    if(isLevelComplete && !collectionComplete) {
         summary = `Congratulations! You have completed level ${config.lesson.level.id}. 
              Continue with the lesson to learn more species from ${collection.name}.` 
     }
-    if(levelComplete && collectionComplete) {
+    if(isLevelComplete && collectionComplete) {
         summary = `You have completed the collection. Well done! 
              Begin a new collection, review questions you got wrong, or consolidate what you have just learnt.`
     }
@@ -56,7 +56,7 @@ export const renderSummary = (history) => {
 
         config.excludeRevision = levelName === 'Level 1' ? false : true;
 
-        if(levelComplete) {
+        if(isLevelComplete) {
             config.excludeRevision = true;
             const level = lessonPlanner.nextLevel(lessonName, levelName, config.isPortraitMode);
             config.lesson.level = level;

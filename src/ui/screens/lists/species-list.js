@@ -134,8 +134,31 @@ export const renderSpeciesCollectionList = (collection) => {
     // Portrait mode only
 
     if(continueLearningActionBtn) {
+        
+        const isLevelComplete = collection.currentRound === collection.rounds;
+        const levelName = config.lesson.level.name;
+        config.excludeRevision = levelName === 'Level 1' ? false : true;
+
         continueLearningActionBtn.addEventListener('click', () => {
-            actions.boundChangeCollection(config);
+            // actions.boundChangeCollection(config);
+
+            if(isLevelComplete) {
+                config.excludeRevision = true;
+                const level = lessonPlanner.nextLevel(lessonName, levelName, config.isPortraitMode);
+                config.lesson.level = level;
+                actions.boundNextLevel({ index: 0, lesson: 'inactive' });
+                setTimeout(() => {
+                    actions.boundUpdateConfig(config);
+                    actions.boundNextLevel({ index: 0, lesson: 'active' });
+                });
+            } else {
+                actions.boundNextRound({ index: 0, lesson: 'active' });            
+                setTimeout(() => {
+                    actions.boundUpdateConfig(config);    
+                });
+            }
+
+
         });
     }
 };
