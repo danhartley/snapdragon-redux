@@ -813,10 +813,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   background-color: var(--snap-block-light);
 }
 
-.species-answer.btn {
+/* .species-answer.btn {
   color: var(--snap-text-light);
   background-color: var(--snap-collection);
-}
+} */
 
 .species-question.btn.btn:not(:disabled):not(.disabled) {
   cursor: initial;

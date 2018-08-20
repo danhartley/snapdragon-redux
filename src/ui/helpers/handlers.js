@@ -4,7 +4,7 @@ import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
 export const scoreHandler = (type, score, callback, callbackTime) => {
     
-    const callbackDelay = 2000000;
+    const callbackDelay = 2000;
 
     switch(type) {
         case 'radio':
