@@ -2,6 +2,7 @@ import * as R from 'ramda';
 
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
+import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
@@ -44,12 +45,25 @@ export const renderRadioButtons = (collection) => {
 
         document.querySelector('input[name="answer"]:checked').checked = false;
 
-        document.querySelector('button').addEventListener('click', event => {
+        const answerBtn = document.querySelector('.js-rb-answer-btn');
+
+        const callback = (colour, score, scoreUpdateTimer) => {            
+            answerBtn.disabled = false;
+            answerBtn.classList.add(colour);
+            answerBtn.removeEventListener('click', scoreEventHandler);     
+            answerBtn.addEventListener('click', () => {
+                window.clearTimeout(scoreUpdateTimer);
+                actions.boundUpdateScore(score);
+            });
+        };
+
+        const scoreEventHandler = event => {
             const answer = document.querySelector('input[name="answer"]:checked').value;
             const score = { itemId: item.id, question, answer, event, layoutCount: lessonPlan.layouts.length, points: layout.points };
-            scoreHandler('radio', score, null, config.callbackTime, renderAnswerHeader);
-        });
-    };
+            scoreHandler('radio', score, callback, config.callbackTime, renderAnswerHeader);            
+        };
+
+        answerBtn.addEventListener('click', scoreEventHandler)};
 
     const familyFlavours = config.isPortraitMode 
         ? [ 'match-species-to-latin-family-name', 'match-common-family-name-to-latin-family-name', 'match-latin-family-name-to-common-family-name', 'match-species-to-common-family-name' ] 

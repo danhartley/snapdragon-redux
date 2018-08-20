@@ -1167,4 +1167,27 @@ export const taxa = [
         eol: "http://eol.org/pages/4321/overview",
         wiki: "https://en.wikipedia.org/wiki/Malvaceae"
     },
+    {
+        taxon: 'family',
+        name: 'Altingiaceae',
+        thumb: "2013/02/26/12/81796_88_88.jpg",
+        names: [ { language: "en", names: ['']} ,
+        { language: "fr", names:[ '' ]},
+        { language: "de", names:[ '' ]},
+        { language: "es", names:[ '' ]},
+        { language: "pt", names:[ '' ]},
+        { language: "it", names:[ '' ]}],
+        species: 15,
+        genera: 1,
+        pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'They naturally occur in Central America, Mexico, eastern North America, the eastern Mediterranean, China, and tropical Asia. They are often cultivated as ornamentals and many produce valuable wood.',
+                identification: 'Wind-pollinated trees that produce hard, woody fruits containing numerous seeds.'
+            }
+        ],
+        eol: "http://eol.org/pages/6367079/overview",
+        wiki: "https://en.wikipedia.org/wiki/Altingiaceae"
+    },
 ];

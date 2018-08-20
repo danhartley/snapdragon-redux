@@ -2,26 +2,28 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
-export const scoreHandler = (type, score, callback, callbackTime, renderHeader) => {
+export const scoreHandler = (type, score, callback, callbackTime) => {
     
+    const callbackDelay = 2000000;
+
     switch(type) {
         case 'radio':
         case 'text':
-            scoringHandler(score, callback, callbackTime, renderHeader);
+            genericScoreHandler(score, callback, callbackTime, callbackDelay);
             break;
         case 'block':
-            blockScoreHander(score, callback, callbackTime);
+            blockScoreHander(score, callback, callbackTime, callbackDelay);
             break;
         case 'strip':   
-            stripScoreHandler(score, callback, callbackTime);
+            stripScoreHandler(score, callback, callbackTime, callbackDelay);
             break;
         case 'image':
-            imageScoreHandler(score, callback, callbackTime);
+            imageScoreHandler(score, callback, callbackTime, callbackDelay);
             break;
     }
 };
 
-const scoringHandler = (score, callback, callbackTime, renderHeader) => {
+const genericScoreHandler = (score, callback, callbackTime, callbackDelay) => {
     
     const { itemId, question, answer, event, layoutCount, points } = score;
 
@@ -41,7 +43,7 @@ const scoringHandler = (score, callback, callbackTime, renderHeader) => {
         wrongAnswer = response.answer;
     }
     
-    const { colour, correct } = renderHeader(response);
+    const { colour, correct } = renderAnswerHeader(response);
 
     const questionText = document.querySelector('.js-txt-question');
 
@@ -56,31 +58,38 @@ const scoringHandler = (score, callback, callbackTime, renderHeader) => {
     btn.style.background = colour;
     btn.style.borderColor = colour;
     btn.style.color = 'white';
-    btn.innerText = correct ? 'Correct' : 'Incorrect';
+    btn.innerText = 'Co ntinue';
+    // btn.innerText = correct ? 'Correct' : 'Incorrect';
     btn.disabled = true;
 
     response.success = correct;
     response.layoutCount = layoutCount;
 
-    setTimeout(()=>{
+    const delay = correct ? callbackTime : callbackTime + callbackDelay;
+
+    const scoreUpdateTimer = setTimeout(()=>{
         actions.boundUpdateScore(response);
-    }, callbackTime);
+    }, delay);
+
+    callback(colour, score, scoreUpdateTimer);
 };
 
-const blockScoreHander = (score, callback, callbackTime) => {
+const blockScoreHander = (score, callback, callbackTime, callbackDelay) => {
     
     const { colour, correct } = renderAnswerHeader(score);
 
     score.success = correct;
 
-    callback(colour, correct, score.answer);
+    const delay = correct ? callbackTime : callbackTime + callbackDelay;
 
-    setTimeout(()=>{
+    const scoreUpdateTimer = setTimeout(()=>{
         actions.boundUpdateScore(score);
-    }, callbackTime);
+    }, delay);
+
+    callback(colour, correct, score, scoreUpdateTimer);
 };
 
-const stripScoreHandler = (score, callback, callbackTime) => {    
+const stripScoreHandler = (score, callback, callbackTime, callbackDelay) => {    
 
     const { items, taxon } = score;
 
@@ -97,8 +106,6 @@ const stripScoreHandler = (score, callback, callbackTime) => {
             score.question = taxon.question;
             score.answer = answer;
             const { text, colour, correct } = renderAnswerHeader(score);
-
-            if(callback) callback(text, colour, correct);
             
             score.success = correct;
 
@@ -116,16 +123,18 @@ const stripScoreHandler = (score, callback, callbackTime) => {
                 }
             });     
             
-            setTimeout(()=>{
-                actions.boundUpdateScore(score);
-            }, callbackTime);
+            const delay = correct ? callbackTime : callbackTime + callbackDelay;
             
-            event.stopPropagation();
+            const scoreUpdateTimer = setTimeout(()=>{
+                actions.boundUpdateScore(score);
+            }, delay);
+            
+            if(callback) callback(text, colour, correct, score, scoreUpdateTimer);
         });
     });
 };
 
-const imageScoreHandler = (score, callback, callbackTime) => {
+const imageScoreHandler = (score, callback, callbackTime, callbackDelay) => {
 
     const { items, taxon } = score;
 
@@ -142,8 +151,6 @@ const imageScoreHandler = (score, callback, callbackTime) => {
             score.answer = answer;
             const { text, colour, correct } = renderAnswerHeader(score);
 
-            if(callback) callback(text, colour, correct);
-
             score.success = correct;
 
             tile.style.filter = 'saturate(100%)';
@@ -159,11 +166,13 @@ const imageScoreHandler = (score, callback, callbackTime) => {
                 }
             });
 
-            setTimeout(() => {
+            const delay = correct ? callbackTime : callbackTime + callbackDelay;
+
+            const scoreUpdateTimer = setTimeout(() => {
                 actions.boundUpdateScore(score);
-            }, callbackTime);
+            }, delay);
                 
-            event.stopPropagation();
+            if(callback) callback(text, colour, correct, scoreUpdateTimer);
         });
     });
 };

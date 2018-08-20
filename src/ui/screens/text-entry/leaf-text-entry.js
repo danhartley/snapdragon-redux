@@ -1,10 +1,7 @@
 import { store } from 'redux/store';
 import { renderInput } from 'ui/screens/text-entry/text-entry';
-import { renderTermAnswerHeader } from 'ui/helpers/response-formatting';
 
 export const renderNameEntry = (collection) => {
-
-    const item = collection.items[collection.itemIndex];
 
     const { layout, config } = store.getState();
 
@@ -16,5 +13,5 @@ export const renderNameEntry = (collection) => {
 
     const hints = [];
 
-    renderInput(config, screen, question, config.callbackTime, item, renderTermAnswerHeader, hints, layout);
+    renderInput(screen, question, hints);
 };

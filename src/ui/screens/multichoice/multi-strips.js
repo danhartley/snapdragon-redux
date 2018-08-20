@@ -3,6 +3,7 @@ import * as R from 'ramda';
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
+import { actions } from 'redux/actions/action-creators';
 import { taxa } from 'api/snapdragon/taxa';
 import { epithets } from 'api/botanical-latin';
 import { definitions } from 'api/snapdragon/glossary';
@@ -64,17 +65,22 @@ export const renderMultiStrips = (collection) => {
         
         renderTemplate( { question: questionText }, template.content, parent);
 
-        const renderAnswer = (text, className, correct) => {
+        const renderAnswer = (text, className, correct, score, scoreUpdateTimer) => {
             const answer = document.querySelector('.js-answer');
-            answer.innerHTML = correct ? 'Correct' : 'Incorrect';
+            answer.innerHTML = 'Continue';
             answer.style.display = 'block';
-            answer.classList.add(className);
+            // answer.classList.add(className);
+            answer.style.cursor = 'pointer';
+            answer.addEventListener('click', () => {
+                window.clearTimeout(scoreUpdateTimer);
+                actions.boundUpdateScore(score);
+            });
             document.querySelector('.js-question').style.display = 'none';
             if(screen.name === 'species-vernaculars') {
                 document.querySelector('.js-txt-species-name').innerHTML = text
             } else if(screen.name === 'species-scientifics') {
                 document.querySelector('.js-txt-species').innerHTML = text;
-            }
+            }            
         }
 
         const taxon = { name: item.family, binomial: item.name, question: questionValue };
@@ -82,7 +88,7 @@ export const renderMultiStrips = (collection) => {
         const score = { itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
         const callback = renderAnswer;
 
-        scoreHandler('strip', score, callback, config.callbackTime);
+        scoreHandler('strip', score, callback, config.callbackTime);        
     }
 
     if(screen.name === 'species-scientifics') {

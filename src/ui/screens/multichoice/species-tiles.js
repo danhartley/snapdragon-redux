@@ -3,6 +3,7 @@ import * as R from 'ramda';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
+import { actions } from 'redux/actions/action-creators';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
@@ -46,16 +47,20 @@ export const renderSpeciesTiles = (collection) => {
     template.innerHTML = questionCard;
     const question = screen.question;
     renderTemplate( { question }, template.content, parent);
-    const renderAnswer = (text, colour, correct) => {
+    const renderAnswer = (text, colour, correct, scoreUpdateTimer) => {
         const answer = document.querySelector('.js-answer');
-        answer.innerHTML = correct ? 'Correct' : 'Incorrect';
+        answer.innerHTML = 'Continue';
         answer.style.display = 'block';            
         answer.classList.add(colour);
+        answer.style.cursor = 'pointer';
+        answer.addEventListener('click', () => {
+            window.clearTimeout(scoreUpdateTimer);
+            actions.boundUpdateScore(score);
+        });
         document.querySelector('.js-question').style.display = 'none';
     }   
 
-    const callback = renderAnswer;
-    scoreHandler('image', score, callback, config.callbackTime);
+    scoreHandler('image', score, renderAnswer, config.callbackTime);
 
     document.querySelectorAll('.tile span').forEach(img=>{
         img.addEventListener('click', event => {        

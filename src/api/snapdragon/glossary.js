@@ -189,7 +189,7 @@ export const definitions = [
     },
     {
         term: 'Petal',
-        definition: 'A modified leaf that surround the reproductive parts of flowers.',
+        definition: 'A modified leaf that surrounds the reproductive parts of flowers.',
         wiki: 'https://en.wikipedia.org/wiki/Petal'
     },
     {

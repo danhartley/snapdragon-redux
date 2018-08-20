@@ -3,6 +3,7 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
+import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { scoreHandler } from 'ui/helpers/handlers';
@@ -69,14 +70,14 @@ export const renderCompleteText = (collection) => {
 
     const score = { itemId: item.id, binomial: item.name, question: item[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length, points: layout.points };
 
-    const updateScreen = (colour, correct, answer) => {
+    const updateScreen = (colour, correct, score, scoreUpdateTimer) => {
 
         document.querySelector('.js-txt-response').innerHTML = correct
             ? `<div>
                 <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
                </div>`
             : `<div>
-                <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ score.question }</span>
+                <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ score.binomial }</span>
                </div>`;
 
         if(question === item.species) {
@@ -91,9 +92,24 @@ export const renderCompleteText = (collection) => {
             genus.classList.add(colour);
         }
 
-        document.querySelector('.js-text-btn').innerHTML = correct
-            ? 'Correct'
-            : 'Incorrect';
+        if(!correct) {
+            document.querySelectorAll('.block span').forEach(block => {
+                if(block.innerHTML === score.question) {
+                    block.parentElement.classList.add('snap-success');
+                }
+            });
+        }
+
+        const txtBtn = document.querySelector('.js-text-btn');
+
+        txtBtn.innerHTML = 'Continue';
+
+        txtBtn.style.cursor = 'pointer';
+        txtBtn.disabled = false;
+        txtBtn.addEventListener('click', () => {
+            window.clearTimeout(scoreUpdateTimer);
+            actions.boundUpdateScore(score);
+        });
     };
 
     document.querySelectorAll('.pool .block span').forEach(answer => {
