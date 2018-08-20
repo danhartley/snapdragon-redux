@@ -106,6 +106,7 @@ const renderCommonParts = (template, config, item) => {
     const latin = epithet ? `${speciesName}: ${epithet.en}` : '';
     const rank = "species";
     const family = taxa.find(f => f.name === item.family);
+    const familyName = itemProperties.familyVernacularNames(item.family, config.language)[0];
     const familyImage = family ? `https://media.eol.org/content/${family.thumb}` : '';
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const occurrences = specific ? specific.subspecies.length : 0;
@@ -120,7 +121,7 @@ const renderCommonParts = (template, config, item) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
     
-    renderTemplate({ species, name, latin, rank, occurrences, family: item.family, familyImage, pollinators }, template.content, parent, clone);
+    renderTemplate({ species, name, latin, rank, occurrences, family: family.name, familyImage, pollinators, familyName }, template.content, parent, clone);
 
     const badge = document.querySelector('.badge');
 

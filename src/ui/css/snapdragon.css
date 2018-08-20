@@ -403,23 +403,32 @@ hr {
 .align-left {
   text-align: left;
 }
-/* 
-.species-card-container {
-  flex-shrink: 2;
-} */
-
-/* .species-card-container .card {
-  margin: 1em  0;
-} */
 
 .species-card-wiki a, .species-card-eol-link, .species-card-wikipedia {
   color: var(--snap-link);
 }
 
-.taxon-highlight {
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  font-size: .9em;  
+.taxon-highlight {  
+  background-color: var(--snap-taxon-card-background);
+  padding: .5em;
+  margin: -.5em -.5em 0 -.5em;
+  display: flex;
+  justify-content: right;
+}
+
+.taxon-highlight > div:nth-child(1) {
+  flex: 1;
+  align-self: center;
+}
+
+.taxon-highlight > div:nth-child(2) {
+  align-self: center;
+}
+
+.taxon-highlight img {
+  height: 88px;
+  width: 88px;
+  margin: 0 0 0 1em;
 }
 
 .species-card-name {
@@ -441,7 +450,7 @@ hr {
 }
 
 .taxon-common-name {
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
 .cultivar.card {
@@ -477,12 +486,23 @@ hr {
   display: flex;
 }
 
+.id-box {
+  border: 1px solid rgba(129, 67, 101, .3);
+  padding: 1em 0;
+}
+
 .data-box > div:nth-child(1) {  
   flex: auto;
 }
 
 .id-box > div:nth-child(1) {
   flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 .5em 0 0;
+  align-items: center;
+  font-size: .9m;
 }
 
 .id-box > div:nth-child(2) {
@@ -1000,7 +1020,8 @@ tbody {
 .badge-light {
   color: var(--snap-text-light);
   background-color: var(--snap-collection);
-  margin: 0 0 0 .25em;
+  margin: -.25em 0 0 .25em;
+  padding: .5em;
 }
 
 .question-container {

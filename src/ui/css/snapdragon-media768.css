@@ -17,8 +17,14 @@
         font-size: .9em;
     }
 
+    .species.revision.card {
+        margin: 0 0 1em 0;
+      }
+
     .taxon-highlight {
         font-size: 1.1em;  
+        padding: 0;
+        margin: 0;
     }
 
     .snapdragon-options .btn, .snapdragon-options .dropdown-menu.show {

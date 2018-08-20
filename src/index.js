@@ -54,6 +54,7 @@ setTimeout(()=>{
     subscription.add(nextLayout, 'counter', 'flow');
     subscription.add(nextItem, 'layout', 'flow');
     subscription.add(renderScore, 'score', 'flow');
-    subscription.add(renderHeaders, 'counter', 'flow');
+    subscription.add(renderHeaders, 'collection', 'flow');
+    // subscription.add(renderHeaders, 'counter', 'flow');
 
 });

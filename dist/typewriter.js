@@ -1,6 +1,6 @@
 // With thanks to Geoff Graham: https://css-tricks.com/snippets/css/typewriter-effect/
 document.addEventListener('DOMContentLoaded',function(event){
-    var dataText = [ "How many do you think you know?", "It\'s time to find out.", "Pick a course to begin.", "Good luck."];
+    var dataText = [ "How many do you know?", "It\'s time to find out.", "Pick a course to begin.", "Good luck."];
     function typeWriter(text, i, fnCallback) {
       if (i < (text.length)) {        
         setTimeout(function() {

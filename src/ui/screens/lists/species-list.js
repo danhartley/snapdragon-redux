@@ -126,6 +126,10 @@ export const renderSpeciesCollectionList = (collection) => {
     listItemImages.forEach(itemImage => { modalImageHandler(itemImage); });    
 
     const continueLearningActionBtn = document.querySelector('.js-species-list-btn-action');
+
+    if(history) {
+        continueLearningActionBtn.innerHTML = 'Continue lesson';
+    }
   
     // Portrait mode only
 

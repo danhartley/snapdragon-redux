@@ -2,7 +2,10 @@
     <div class="portrait-grid species-card-images js-species-card-images"></div>  
     <div class="species revision card">
         <div class="taxon-highlight js-txt-family">
-            <span>{{ family }}</span>
+            <div>
+                <div>{{ familyName }}</div>
+                <div>{{ family }}</div>
+            </div>
             <img class="landscape family-img js-img-family" src="{{ familyImage }}" alt="">
         </div>
         <div>
@@ -11,18 +14,18 @@
             </div>
             <div class="species-card-name js-txt-species-name">
                 <span>{{ species }}</span>
-                <span class="badge badge-light" data-toggle="modal" data-target="#listModal">{{ occurrences }}</span> <span class="sr-only">species of this family in the collection</span>
-                <hr>
+                <span class="badge badge-light" data-toggle="modal" data-target="#listModal">{{ occurrences }}</span> <span class="sr-only">species of this family in the collection</span>                
             </div>
         </div>
         <div class="landscape">
             <div class="data-box">
                 <div></div>
                 <div>
-                    <div class="taxon-data">Taxon: <span class="taxon-highlight">{{ rank }}</span></div>
+                    <div class="taxon-data">Rank: {{ rank }}</div>
                 </div>
             </div>
         </div>        
+        <hr>
         <div class="species-pollinators"><span>Pollination: </span>{{ pollinators }}</div>
         <div class="species-card-wiki">
             <span class="js-species-card-wiki"></span>

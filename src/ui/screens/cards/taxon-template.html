@@ -1,7 +1,8 @@
 <div class="snapdragon-container">
     <div class="taxon revision card">
         <div class="taxon-highlight">
-            <span>{{ name }}</span><span class="badge badge-light" data-toggle="modal" data-target="#listModal">{{ occurrences }}</span> <span class="sr-only">species of this family in the collection</span>
+            <div>{{ name }}</div>
+            <div class="badge badge-light" data-toggle="modal" data-target="#listModal">{{ occurrences }}</div> <span class="sr-only">species of this family in the collection</span>
             <img class="family-img js-img-family" src="{{ img }}" alt="">                    
         </div>
         <div class="taxon-common-name">
@@ -12,7 +13,7 @@
             <div class="data-box">
                 <div></div>
                 <div>
-                    <div class="taxon-data">Taxon: <span class="taxon-highlight">{{ rank }}</span></div>
+                    <div class="taxon-data">Rank: {{ rank }}</div>
                     <div class="taxon-data">Species: {{ species }}</div>
                     <div class="taxon-data">Genera: {{ genera }}</div>
                 </div>
@@ -20,7 +21,9 @@
         </div>
         <div>
             <div class="id-box">
-                <div></div>
+                <div>
+                    <div>Quick Id</div>
+                </div>
                 <div>
                     <div>{{ identification }}</div>
                 </div>

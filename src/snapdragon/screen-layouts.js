@@ -37,7 +37,7 @@ const vernaculars = {
 const species = {
   name: 'species-images',
   headers: { long: 'Click the picture to match the species', short: 'Click picture to match species'},
-  question: 'Tap picture to match species',
+  question: 'Select specimen to match species',
   domain: 'collection',
   template: 'js-tiles-template',
   taxon: 'name'

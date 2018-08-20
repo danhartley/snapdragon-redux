@@ -90,7 +90,7 @@ export const renderMultiStrips = (collection) => {
         const number = config.isPortraitMode ? 6 : config.isSmallLandscapeMode ? 6 : 6;
 
         const vernacular = itemProperties.vernacularName(item, config);
-        const questionText = config.isPortraitMode ? 'Tap to match latin name' : `Click to match latin name`;
+        const questionText = config.isPortraitMode ? 'Select equivalent of common name' : `Select latin equivalent of common name`;
         const question = item.name;
         const itemNames = [ ...collection.items.map(item => item.name) ];
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(itemNames)).filter(itemName => itemName !== item.name));
@@ -105,7 +105,7 @@ export const renderMultiStrips = (collection) => {
 
         const number = config.isPortraitMode ? 6 : config.isSmallLandscapeMode ? 6 : 6;
 
-        const questionText = config.isPortraitMode ? 'Tap to match common name' : `Click to match common name`;
+        const questionText = config.isPortraitMode ? 'Select equivalent of latin name' : `Select common name equivalent of the latin`;
         const question = itemProperties.vernacularName(item, config);
         const items = [ ...collection.items ];
         let alternatives = R.take(number, utils.shuffleArray(items).map(i => i.names.filter(name => name.language === config.language)[0].vernacularName));
@@ -122,7 +122,7 @@ export const renderMultiStrips = (collection) => {
 
         const number = config.isPortraitMode ? 4 : config.isSmallLandscapeMode ? 5 : 6;
 
-        const questionText = config.isPortraitMode ? 'Tap to match Quick ID' : `Click to match the Quick ID`;
+        const questionText = config.isPortraitMode ? 'Tap to match Quick ID' : `Click to match the Quick Id`;
         const question = families.find(f => f.name === item.family).descriptions[0].identification;
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family)).map(f => f.descriptions[0].identification);
         const answers = utils.shuffleArray([question, ...alternatives]);

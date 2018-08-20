@@ -104,3 +104,16 @@ test('should return species name', () => {
   const expected = 'vulgare';
   expect(itemProperties.speciesName(item.name)).toEqual(expected);
 });
+
+test('should return vernacular family names when provided with latin name and language', () => {
+  const family = {
+      name: 'Malvaceae',
+      names: [ { language: "en", names: ['Mallows or Hibiscus']} ,
+      { language: "fr", names:[ 'Mauves' ]},
+      { language: "de", names:[ 'Malvengewächse' ]},
+      { language: "es", names:[ 'Storax family' ]},
+      { language: "pt", names:[ 'Storax family' ]},
+      { language: "it", names:[ 'Storax family' ]}]
+  };
+  expect(itemProperties.familyVernacularNames(family.name, 'en')).toEqual(['Mallows or Hibiscus']);
+});

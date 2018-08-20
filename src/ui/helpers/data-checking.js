@@ -1,5 +1,6 @@
 import { utils } from 'utils/utils';
 import { epithets } from 'api/botanical-latin';
+import { taxa } from '../../api/snapdragon/taxa';
 
 const vernacularName = (item, config) => {
     const englishNames = item.names.filter(name => name.language === 'en');
@@ -64,6 +65,10 @@ const trimLatinName = name => {
     return binomial;
 };
 
+const familyVernacularNames = (name, language) => {
+    return taxa.find(taxon => taxon.name.toUpperCase() === name.toUpperCase()).names.find(name => name.language === language).names;
+}
+
 export const itemProperties = {
     vernacularName,
     genusName,
@@ -71,5 +76,6 @@ export const itemProperties = {
     latin,
     getTaxonProp,
     getNestedTaxonProp,
-    trimLatinName
+    trimLatinName,
+    familyVernacularNames
 };
