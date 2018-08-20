@@ -11,7 +11,7 @@ import speciesSmallLandscapeTemplate from 'ui/screens/lists/species-table-small-
 
 export const renderSpeciesCollectionList = (collection) => {
 
-    const { config: currentConfig } = store.getState();
+    const { config: currentConfig, score, history } = store.getState();
 
     const config = { ...currentConfig, ...{ collection: { id: collection.id } } };
 
@@ -127,20 +127,19 @@ export const renderSpeciesCollectionList = (collection) => {
 
     const continueLearningActionBtn = document.querySelector('.js-species-list-btn-action');
 
-    if(history) {
-        continueLearningActionBtn.innerHTML = 'Continue lesson';
-    }
-  
     // Portrait mode only
 
     if(continueLearningActionBtn) {
+
+        if(history) {
+            continueLearningActionBtn.innerHTML = 'Continue lesson';
+        }    
         
-        const isLevelComplete = collection.currentRound === collection.rounds;
+        const isLevelComplete = collection.currentRound ? (collection.currentRound === collection.rounds) : false;
         const levelName = config.lesson.level.name;
         config.excludeRevision = levelName === 'Level 1' ? false : true;
 
         continueLearningActionBtn.addEventListener('click', () => {
-            // actions.boundChangeCollection(config);
 
             if(isLevelComplete) {
                 config.excludeRevision = true;
@@ -152,10 +151,14 @@ export const renderSpeciesCollectionList = (collection) => {
                     actions.boundNextLevel({ index: 0, lesson: 'active' });
                 });
             } else {
-                actions.boundNextRound({ index: 0, lesson: 'active' });            
-                setTimeout(() => {
-                    actions.boundUpdateConfig(config);    
-                });
+                if(score) {
+                    actions.boundNextRound({ index: 0, lesson: 'active' });            
+                    setTimeout(() => {
+                        actions.boundUpdateConfig(config);    
+                    });
+                } else {
+                    actions.boundChangeCollection(config);
+                }
             }
 
 
