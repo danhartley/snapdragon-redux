@@ -180,13 +180,13 @@ const landscapeLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            description: 'Beginner',
-            layouts: [ speciesRevision, textCompleteGenus, textCompleteSpecies, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, familyMatch, commonEntry ]                        
+            description: 'Receptive only',
+            layouts: [ speciesRevision, imageToImageMatch, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ]
         },
         {   id: 2,
             name:'Level 2',
-            description: 'Intermediate',
-            layouts: [ genusEntry, speciesEntry, familyStripsMatch, taxonRevision ]
+            description: 'Beginner productive',
+            layouts: [ taxonRevision, familyMatch, commonEntry, textCompleteSpecies, genusEntry, speciesEntry, familyStripsMatch, taxonRevision ]
         },
         {   id: 3,
             name:'Level 3',
@@ -221,13 +221,13 @@ const portraitLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            description: 'Beginner',            
-            layouts: [ speciesRevision, familyStripsMatch, textCompleteGenus, textCompleteSpecies, latinToCommonMatch, commonToLatinMatch, familyMatch, taxonRevision, commonEntry ]
+            description: 'Receptive only',
+            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ]
         },
         {   id: 2,
             name:'Level 2',
-            description: 'Intermediate',
-            layouts: [ genusEntry, speciesEntry ]
+            description: 'Beginner productive',
+            layouts: [ taxonRevision, familyMatch, commonEntry, textCompleteSpecies, genusEntry, speciesEntry, familyStripsMatch, taxonRevision ]
         },
         {   id: 3,
             name:'Level 3',

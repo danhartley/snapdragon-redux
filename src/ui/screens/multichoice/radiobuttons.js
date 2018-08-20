@@ -75,7 +75,7 @@ export const renderRadioButtons = (collection) => {
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
         const identification = families.find(f => f.name === family).descriptions[0].identification;
-        description = `${species.toUpperCase()} belongs to a family whose Quick ID is '${identification}'`;
+        description = `${species.toUpperCase()} belongs to a family whose Quick Id is '${identification}'`;
         description2 = 'What is the name of this FAMILY?';
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);

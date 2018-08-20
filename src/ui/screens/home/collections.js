@@ -44,6 +44,8 @@ export const renderCollections = (counter) => {
     const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
     const typewriter = document.querySelector('.typewriter-container');
 
+    learningActionBtn.innerHTML = config.isPortraitMode ? 'View course species' : 'Begin lesson';
+
     if(selectedCollection) {
         document.querySelectorAll(`[name="${selectedCollection.name}"]`)[0].classList.add('active');
         elem.show(learningActionBtn);
