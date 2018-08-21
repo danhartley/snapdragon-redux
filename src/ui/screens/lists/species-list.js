@@ -11,7 +11,7 @@ import speciesSmallLandscapeTemplate from 'ui/screens/lists/species-table-small-
 
 export const renderSpeciesCollectionList = (collection) => {
 
-    const { config: currentConfig, score, history } = store.getState();
+    const { config: currentConfig, score, history, counter } = store.getState();
 
     const config = { ...currentConfig, ...{ collection: { id: collection.id } } };
 
@@ -131,13 +131,20 @@ export const renderSpeciesCollectionList = (collection) => {
 
     if(continueLearningActionBtn) {
 
-        if(history) {
+        const lessonPaused = counter.log ? true : false;
+
+        if(history || lessonPaused) {
             continueLearningActionBtn.innerHTML = 'Continue lesson';
         }    
         
         const isLevelComplete = collection.currentRound ? (collection.currentRound === collection.rounds) : false;
         const levelName = config.lesson.level.name;
         config.excludeRevision = levelName === 'Level 1' ? false : true;
+
+        const getLatestCounter = () => { 
+            const counter = lessonPaused ? { index: store.getState().counter.log.index, lesson: 'active' } : { index: 0, lesson: 'active' };  
+            return counter;
+        };
 
         continueLearningActionBtn.addEventListener('click', () => {
 
@@ -150,6 +157,8 @@ export const renderSpeciesCollectionList = (collection) => {
                     actions.boundUpdateConfig(config);
                     actions.boundNextLevel({ index: 0, lesson: 'active' });
                 });
+            } else if(lessonPaused) {
+                actions.boundToggleLesson(getLatestCounter());
             } else {
                 if(score) {
                     actions.boundNextRound({ index: 0, lesson: 'active' });            

@@ -14,6 +14,11 @@ export const renderCollections = (counter) => {
 
     const { collections, config: currentConfig, collection: currentCollection } = store.getState();
 
+    if(counter.log) {
+        currentCollection.paused = true;
+        actions.boundSelectCollection(currentCollection);
+    }    
+
     subscription.add(renderSpeciesCollection, 'collections', 'screen');
 
     const template = document.createElement('template');
