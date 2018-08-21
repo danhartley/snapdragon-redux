@@ -72,13 +72,13 @@ export const renderCompleteText = (collection) => {
 
     const updateScreen = (colour, correct, score, scoreUpdateTimer) => {
 
+        document.querySelector('.js-icon-response').innerHTML = correct
+            ? `<span class="icon"><i class="fas fa-check-circle"></i></span>`
+            : `<span class="icon"><i class="fas fa-times-circle"></i></span>`;
+
         document.querySelector('.js-txt-response').innerHTML = correct
-            ? `<div>
-                <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
-               </div>`
-            : `<div>
-                <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ score.binomial }</span>
-               </div>`;
+            ? `<span class="icon-text">Correct. The complete latin name is <span class="binomial">${score.binomial}</span>.</span>`
+            : `<span class="icon-text">Incorrect. The complete latin name is <span class="binomial">${score.binomial}</span>.</span>`;
 
         if(question === item.species) {
             const species = document.querySelector('.species');
