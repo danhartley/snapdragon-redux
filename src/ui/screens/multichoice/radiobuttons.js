@@ -6,7 +6,6 @@ import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
-import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 import { utils } from 'utils/utils';
 import { taxa } from 'api/snapdragon/taxa';
 import radiobuttonsTemplate from 'ui/screens/multichoice/radiobuttons-template.html';
@@ -60,7 +59,7 @@ export const renderRadioButtons = (collection) => {
         const scoreEventHandler = event => {
             const answer = document.querySelector('input[name="answer"]:checked').value;
             const score = { itemId: item.id, question, answer, event, layoutCount: lessonPlan.layouts.length, points: layout.points };
-            scoreHandler('radio', score, callback, config.callbackTime, renderAnswerHeader);            
+            scoreHandler('radio', score, callback, config);            
         };
 
         answerBtn.addEventListener('click', scoreEventHandler)};

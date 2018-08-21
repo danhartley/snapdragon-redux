@@ -60,7 +60,7 @@ export const renderSpeciesTiles = (collection) => {
         document.querySelector('.js-question').style.display = 'none';
     }   
 
-    scoreHandler('image', score, renderAnswer, config.callbackTime);
+    scoreHandler('image', score, renderAnswer, config);
 
     document.querySelectorAll('.tile span').forEach(img=>{
         img.addEventListener('click', event => {        

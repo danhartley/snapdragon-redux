@@ -2,28 +2,26 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 
-export const scoreHandler = (type, score, callback, callbackTime) => {
+export const scoreHandler = (type, score, callback, config) => {
     
-    const callbackDelay = 2000;
-
     switch(type) {
         case 'radio':
         case 'text':
-            genericScoreHandler(score, callback, callbackTime, callbackDelay);
+            genericScoreHandler(score, callback, config);
             break;
         case 'block':
-            blockScoreHander(score, callback, callbackTime, callbackDelay);
+            blockScoreHander(score, callback, config);
             break;
         case 'strip':   
-            stripScoreHandler(score, callback, callbackTime, callbackDelay);
+            stripScoreHandler(score, callback, config);
             break;
         case 'image':
-            imageScoreHandler(score, callback, callbackTime, callbackDelay);
+            imageScoreHandler(score, callback, config);
             break;
     }
 };
 
-const genericScoreHandler = (score, callback, callbackTime, callbackDelay) => {
+const genericScoreHandler = (score, callback, config) => {
     
     const { itemId, question, answer, event, layoutCount, points } = score;
 
@@ -58,14 +56,13 @@ const genericScoreHandler = (score, callback, callbackTime, callbackDelay) => {
     btn.style.background = colour;
     btn.style.borderColor = colour;
     btn.style.color = 'white';
-    btn.innerText = 'Co ntinue';
-    // btn.innerText = correct ? 'Correct' : 'Incorrect';
+    btn.innerText = 'Continue';
     btn.disabled = true;
 
     response.success = correct;
     response.layoutCount = layoutCount;
 
-    const delay = correct ? callbackTime : callbackTime + callbackDelay;
+    const delay = correct ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
     const scoreUpdateTimer = setTimeout(()=>{
         actions.boundUpdateScore(response);
@@ -74,22 +71,22 @@ const genericScoreHandler = (score, callback, callbackTime, callbackDelay) => {
     callback(colour, score, scoreUpdateTimer);
 };
 
-const blockScoreHander = (score, callback, callbackTime, callbackDelay) => {
+const blockScoreHander = (score, callback, config) => {
     
     const { colour, correct } = renderAnswerHeader(score);
 
     score.success = correct;
 
-    const delay = correct ? callbackTime : callbackTime + callbackDelay;
+    const delay = correct ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
     const scoreUpdateTimer = setTimeout(()=>{
         actions.boundUpdateScore(score);
     }, delay);
 
-    callback(colour, correct, score, scoreUpdateTimer);
+    callback(colour, correct, score, scoreUpdateTimer, config);
 };
 
-const stripScoreHandler = (score, callback, callbackTime, callbackDelay) => {    
+const stripScoreHandler = (score, callback, config) => {    
 
     const { items, taxon } = score;
 
@@ -123,7 +120,7 @@ const stripScoreHandler = (score, callback, callbackTime, callbackDelay) => {
                 }
             });     
             
-            const delay = correct ? callbackTime : callbackTime + callbackDelay;
+            const delay = correct ? config.callbackTime : config.callbackTime + config.callbackDelay;
             
             const scoreUpdateTimer = setTimeout(()=>{
                 actions.boundUpdateScore(score);
@@ -134,7 +131,7 @@ const stripScoreHandler = (score, callback, callbackTime, callbackDelay) => {
     });
 };
 
-const imageScoreHandler = (score, callback, callbackTime, callbackDelay) => {
+const imageScoreHandler = (score, callback, config) => {
 
     const { items, taxon } = score;
 
@@ -166,7 +163,7 @@ const imageScoreHandler = (score, callback, callbackTime, callbackDelay) => {
                 }
             });
 
-            const delay = correct ? callbackTime : callbackTime + callbackDelay;
+            const delay = correct ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
             const scoreUpdateTimer = setTimeout(() => {
                 actions.boundUpdateScore(score);
