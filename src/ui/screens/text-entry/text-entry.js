@@ -40,7 +40,7 @@ export const renderInput = (screen, question, hints) => {
 
     const scoreEventHandler = event => {
         const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, event, layoutCount: lessonPlan.layouts.length, points: layout.points };
-        scoreHandler('text', score, callback, config.callbackTime);
+        scoreHandler('text', score, callback, config);
     };
 
     clone.querySelector('.js-check-answer').addEventListener('click', scoreEventHandler);

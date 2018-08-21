@@ -88,7 +88,7 @@ export const renderMultiStrips = (collection) => {
         const score = { itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
         const callback = renderAnswer;
 
-        scoreHandler('strip', score, callback, config.callbackTime);        
+        scoreHandler('strip', score, callback, config);        
     }
 
     if(screen.name === 'species-scientifics') {

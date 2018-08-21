@@ -70,15 +70,23 @@ export const renderCompleteText = (collection) => {
 
     const score = { itemId: item.id, binomial: item.name, question: item[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length, points: layout.points };
 
-    const updateScreen = (colour, correct, score, scoreUpdateTimer) => {
+    const updateScreen = (colour, correct, score, scoreUpdateTimer, config) => {
 
         document.querySelector('.js-icon-response').innerHTML = correct
             ? `<span class="icon"><i class="fas fa-check-circle"></i></span>`
             : `<span class="icon"><i class="fas fa-times-circle"></i></span>`;
 
-        document.querySelector('.js-txt-response').innerHTML = correct
-            ? `<span class="icon-text">Correct. The complete latin name is <span class="binomial">${score.binomial}</span>.</span>`
-            : `<span class="icon-text">Incorrect. The complete latin name is <span class="binomial">${score.binomial}</span>.</span>`;
+        const txtCorrect = 
+            config.isPortraitMode 
+                ? `<span class="icon-text"><span class="binomial">${score.binomial}</span> is correct.</span>`
+                : `<span class="icon-text">Correct. The complete latin name is <span class="binomial">${score.binomial}</span>.</span>`;
+
+        const txtIncorrect = 
+            config.isPortraitMode
+                ? `<span class="icon-text">The correct name is <span class="binomial">${score.binomial}</span>.</span>`
+                : `<span class="icon-text">Incorrect. The complete latin name is <span class="binomial">${score.binomial}</span>.</span>`;
+
+        document.querySelector('.js-txt-response').innerHTML = correct ? txtCorrect : txtIncorrect;
 
         if(question === item.species) {
             const species = document.querySelector('.species');
@@ -121,7 +129,7 @@ export const renderCompleteText = (collection) => {
                 document.querySelector('.genus').innerHTML = answer;
             }
             score.answer = answer;
-            scoreHandler('block', score, updateScreen, config.callbackTime);
+            scoreHandler('block', score, updateScreen, config);
         });
     });
 };
