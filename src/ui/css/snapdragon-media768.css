@@ -76,6 +76,10 @@
         grid-template-rows: 1fr 1fr;
     }
 
+    .strips.description .strip div {
+        font-size: 1.1em;
+    }
+
     .strips {
         padding: 0 .5em;
     }
@@ -120,6 +124,14 @@
 
     .text-question .icon span {
         font-size: 1.4em;
+    }
+
+    .answer-container .icon {
+        font-size: 2em;
+    }
+
+    .text-question .icon-text {
+        font-size: 1.2em;
     }
 
     .block {

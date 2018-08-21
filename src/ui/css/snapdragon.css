@@ -377,7 +377,7 @@ hr {
 }
 
 .strips.description .strip div {
-  font-size: .9em;
+  font-size: 1em;
 }
 
 .strip div {
@@ -713,6 +713,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .snap-success {
   color: var(--snap-text-light);
   background-color: var(--snap-success);
+  border: .05em solid var(--snap-success);
 }
 
 .snap-alert-fg {
@@ -722,6 +723,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .snap-alert {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-alert) !important;
+  border: .05em solid var(--snap-alert);
 }
 
 .block.white {
@@ -791,12 +793,23 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .text-question {
-  margin: 0.25em 0 0 .25em;
+  margin: 0.5em 0 0 .25em;
 }
 
 .text-question .icon {
   font-size: 1.5em;
   margin: 0 .25em 0 0;
+}
+
+.answer-container .icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.answer-container .icon {
+  font-size: 1.5em;
+  position: absolute;
+  top: -.9em;
 }
 
 .species-answer {

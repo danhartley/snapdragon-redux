@@ -15,10 +15,10 @@
 
     --snap-lesson: rgb(52, 105, 23);
     
-    --snap-alert: rgb(183, 12, 21);
+    --snap-alert: rgba(183, 12, 21,.8);
     --snap-inactive: rgba(7, 2, 2, 0.4);
     --snap-active: rgb(0, 42, 84);
-    --snap-success: rgb(41, 108, 44);
+    --snap-success: rgba(41, 108, 44,.8);
     
     --snap-link: rgb(0, 42, 84);
     --snap-info-background: rgba(26, 67, 91, .5);
