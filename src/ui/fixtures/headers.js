@@ -65,7 +65,7 @@ export const renderHeaders = collection => {
     if(layout.screens.find(el => el.name === 'summary')) {
         DOM.rightHeaderTxt.innerHTML = 'Lesson progress';
     }
-    if(counter.index === 0 && counter.lesson === 'inactive') {
-        DOM.rightHeaderTxt.innerHTML = '';
-    }
+    // if(counter.index === 0 && counter.lesson === 'inactive') {
+    //     DOM.rightHeaderTxt.innerHTML = '';
+    // }
 };
