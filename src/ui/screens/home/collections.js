@@ -6,7 +6,6 @@ import { selectHandler } from 'ui/helpers/handlers';
 import { subscription } from 'redux/subscriptions';
 import { renderSpeciesCollection } from 'ui/screens/lists/species';
 import { elem } from 'ui/helpers/class-behaviour';
-import { speciesCount } from 'gbif/gbif';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
 
 export const renderCollections = (counter) => {
@@ -17,73 +16,77 @@ export const renderCollections = (counter) => {
 
     subscription.add(renderSpeciesCollection, 'collections', 'screen');
 
-    let config = { ...currentConfig };
-    let collection = currentCollection ? { ...currentCollection } : { name: '---', id: '', description: '' };
-
     const template = document.createElement('template');
-
     template.innerHTML = collectionsTemplate;
 
-    const parent = DOM.rightBody;
-    parent.innerHTML = '';
+    let config = { ...currentConfig };
+    let collection = currentCollection ? { ...currentCollection, descriptions: null } : { name: '---', id: '', descriptions: null };
+    let language = config.languages.find(l => l.lang === config.language);
+    let courses = collections.filter(collection => collection.type === 'species');
 
-    const species = collections.filter(collection => collection.type === 'species');
+    DOM.rightBody.innerHTML = '';
 
-    if(!config.lesson) return;
+    const snapdragon = { descriptions : [
+        'Snapdragon is a tool for studying the 1.3 million recorded species on Earth.',
+        'Related species are grouped and tested in courses.',
+        'Courses take the form of concise summaries followed by quick tests.',
+        'Take one of the public courses or request one tailored to your needs.',
+        'Good luck.'
+    ] };
 
-    const language = config.languages.filter(l => l.lang === config.language)[0];
+    const copy = collection.descriptions || snapdragon.descriptions;
 
-    collection.description = collection.description || '';
+    renderTemplate({ courses, config, collection, language, copy }, template.content, DOM.rightBody);
 
-    renderTemplate({ species, config, collection, language }, template.content, parent);
-
-    const selectedCollection = collections.find(collection => collection.selected);
-    let collectionId = selectedCollection ? selectedCollection.id : 0;
+    const course = collections.find(collection => collection.selected) || { id: 0 };
 
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
-    const typewriter = document.querySelector('.typewriter-container');
+    const collectionsHeader = document.querySelector('.btn-collection');
+    const collectionDescription = document.querySelector('.js-selected-description');
+    const languagesHeader = document.querySelector('.btn-language');
 
     learningActionBtn.innerHTML = config.isPortraitMode ? 'View course species' : 'Begin lesson';
 
-    if(selectedCollection) {
-        document.querySelectorAll(`[name="${selectedCollection.name}"]`)[0].classList.add('active');
+    // Courses
+
+    if(course.name) {
+        document.querySelectorAll(`[name="${course.name}"]`)[0].classList.add('active');
         elem.show(learningActionBtn);
         elem.hide(learningActionBtnPlaceholder);
-        typewriter.style.display = 'none';
+        collectionsHeader.innerHTML = course.name;
     }
 
-    selectHandler('.dropdown.js-collections .dropdown-item', (id) => {
-        collectionId = parseInt(id);
-        collection = collections.filter(collection => collection.id === collectionId)[0];
-        document.querySelector('.js-selected-collection span').innerHTML = collection.name;
-        document.querySelector('.js-selected-description span').innerHTML = collection.description;
-        config = { ...config, ...{ collection: { id: collectionId }} };
+    selectHandler('.dropdown.js-collections .dropdown-item', id => {
+        
+        collection = collections.find(collection => collection.id === parseInt(id));
+        collectionsHeader.innerHTML = collection.name;
+        const descriptions = collection.descriptions.map(description => `<span>${description}</span>`).join('');
+        collectionDescription.innerHTML = descriptions;
+        
+        config = { ...config, ...{ collection: { id: parseInt(id) }} };
+
+        if(!config.isPortraitMode) {
+            actions.boundSelectCollection(collection);
+        }
+
         elem.show(learningActionBtn);
-        elem.hide(learningActionBtnPlaceholder);
-        typewriter.style.display = 'none';
-        if(!config.isPortraitMode)
-            actions.boundSelectCollection(collection);        
+        elem.hide(learningActionBtnPlaceholder);        
     });
 
-    const activeLanguage = '#' + config.language;
-    document.querySelectorAll(activeLanguage)[0].classList.add('active');
+    // Languages
 
-    selectHandler('.dropdown.js-languages .dropdown-item', (id) => {
-        const lang = id;
-        const languageName = config.languages.filter(l => l.lang === lang)[0].name;
-            document.querySelector('.js-selected-language span').innerHTML = languageName;
-            config.language = lang;
-            actions.boundUpdateLanguage(lang);
+    document.querySelector(`#${config.language}`).classList.add('active');
+    languagesHeader.innerHTML = config.languages.find(l => l.lang === config.language).name;
+
+    selectHandler('.dropdown.js-languages .dropdown-item', language => {        
+        config.language = language;
+        languagesHeader.innerHTML = config.languages.find(l => l.lang === config.language).name;
+        actions.boundUpdateLanguage(language);
     });
 
     learningActionBtn.addEventListener('click', () => {        
-        if(config.isPortraitMode) {
-            actions.boundSelectCollection(collection);
-        }
-        else {
-            actions.boundChangeCollection(config);
-        }
+        config.isPortraitMode ? actions.boundSelectCollection(collection) : actions.boundChangeCollection(config);
         updateNavIcons();        
     });
 

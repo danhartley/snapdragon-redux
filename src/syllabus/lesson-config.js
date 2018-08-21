@@ -9,11 +9,11 @@ export const config = {
         id: ''
     },
     languages : [
-        { name: 'english', lang: 'en' },
-        { name: 'español', lang: 'es' },
-        { name: 'deutsche', lang: 'de' },
-        { name: 'italiano', lang: 'it' },
-        { name: 'français', lang: 'fr' },
-        { name: 'português', lang: 'pt' }
+        { name: 'English', lang: 'en' },
+        { name: 'Español', lang: 'es' },
+        { name: 'Deutsche', lang: 'de' },
+        { name: 'Italiano', lang: 'it' },
+        { name: 'Français', lang: 'fr' },
+        { name: 'Português', lang: 'pt' }
     ]
 };

@@ -105,7 +105,7 @@ hr {
   padding: .5em 0;
 }
 
-.btn-option {
+.btn-language {
   color: var(--snap-text-dark);
   background-color: var(--snap-language);
   border-color: var(--snap-language);
@@ -196,7 +196,9 @@ hr {
   justify-content: space-between;
 }
 
-.selected-collection.card, .summary.card {
+/* .selected-collection.card,  */
+
+.summary.card {
   margin: 0 0 1em 0;
 }
 
@@ -265,7 +267,6 @@ hr {
 .left-grid, .right-grid {
   grid-template-rows: 1fr .3em 10fr 1fr;
 }
-
 
 .left-body , .right-body {
   display: grid;
@@ -406,6 +407,10 @@ hr {
 
 .species-card-wiki a, .species-card-eol-link, .species-card-wikipedia {
   color: var(--snap-link);
+}
+
+.snapdragon.card {
+  margin: 0 0 1em 0;
 }
 
 .taxon-highlight {  
@@ -606,8 +611,18 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   box-shadow: 0 0 0 0;  
 }
 
+.dropdown-toggle::after {
+  vertical-align: .2em;
+  margin-left: .2em;
+}
+
 .btn-placeholder.btn {
   color: var(--snap-text-dark);
+}
+
+.course-description span:nth-child(2), .course-description span:nth-child(3), .course-description span:nth-child(4), .course-description span:nth-child(5) {
+  margin: 1em 0 0 0;
+  display: block;
 }
 
 /* dropdown menus */
@@ -616,15 +631,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   border: 1px solid var(--snap-border-dark);
 }
 
-.selected-collection > div:nth-child(1), .selected-collection > div:nth-child(2), .selected-collection > div:nth-child(3) {
-  margin: .5em 0;
-}
 .species-count span {
   font-size: 1.2em;
-}
-
-.selected-collection div:nth-child(2) {
-  text-transform: capitalize;
 }
 
 .species-count p{

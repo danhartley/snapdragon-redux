@@ -12,7 +12,11 @@ export const nationalFlowersLessons = collections.filter(collection => R.contain
 export const kitchenGarden = { 
     id: 1, name: 'Kitchen Garden', 
     type: 'species',
-    description: 'This course has over 750 questions and will take about 2 hours to complete. The species of fruit, vegetables, herbs, spices, and insects are found in a Mediterranean climate.',    
+    descriptions: [
+        'This course has over 750 questions and will take about 2 hours to complete. The species of fruit, vegetables, herbs, spices, and insects are found in a Mediterranean climate.',
+        'You will start by learning to recognise species, develop a familiarity with their common and latin names, and be able to select the genus to which they belong.',
+        'You will also learn some useful terms.'
+    ],    
     items:[ ...kitchenGardenLessons[0].items, ...kitchenGardenLessons[1].items, ...kitchenGardenLessons[2].items, ...kitchenGardenLessons[3].items ],
     collections: kg,
     thumb: 'https://media.eol.org/content/2014/06/03/05/47795_orig.jpg',
@@ -24,7 +28,7 @@ export const kitchenGarden = {
 export const nationalFlowers = { 
     id: 2, name: 'National Flowers', 
     type: 'species',
-    description: 'Short lesson on the national flowers of Germany, Italy, Portugal, Spain, France and England. Useful as a quick-start introduction to Snapdragon it will take about 30 minutes.',
+    descriptions: ['Short lesson on the national flowers of Germany, Italy, Portugal, Spain, France and England. Useful as a quick-start introduction to Snapdragon it will take about 30 minutes.'],
     items:[ ...nationalFlowersLessons[0].items ],
     collections: ['National Flowers'],
     thumb: 'https://media.eol.org/content/2012/06/13/04/65813_orig.jpg',
@@ -36,7 +40,7 @@ export const nationalFlowers = {
 export const rhsTrees = { 
     id: 3, name: 'Deciduous and Evergreen Trees', 
     type: 'species',
-    description: 'The approved list of Deciduous and Evergreen Trees for students taking Royal Horticultural Society Qualifications in Practical Horticulture.',
+    descriptions: ['The approved list of Deciduous and Evergreen Trees for students taking Royal Horticultural Society Qualifications in Practical Horticulture.'],
     items:[ ...collections[0].items ],
     collections: ['Deciduous and evergreen trees'],
     thumb: 'https://media.eol.org/content/2015/04/30/19/57100_orig.jpg',

@@ -6,7 +6,7 @@
                 Pick a course
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <div data-repeat-collection="{{ species }}">
+                    <div data-repeat-collection="{{ courses }}">
                         <a class="dropdown-item" id="{{ collection.id }}" name="{{ collection.name }}" href="#">{{ collection.name }} ({{ collection.items.length }})</a>
                     </div>
                 </div>
@@ -15,7 +15,7 @@
 
         <div class="snapdragon-options">
             <div class="dropdown languages js-languages">
-                <button class="btn btn-option dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-language dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Languages
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ config.languages }}">
@@ -25,13 +25,10 @@
         </div>
     </div>
 
-    <div class="card selected-collection align-left">
-        <div class="js-selected-collection">Course: <span>{{ collection.name }}</span></div>
-        <div class="js-selected-language">Language: <span>{{ language.name }}</span></div>
-        <div class="js-selected-description"><span>{{ collection.description }}</span></div>        
-        <div class="typewriter-container">
-            <div class="typewriter js-typewriter species-count js-species-count toggle-content is-visible"></div>
-        </div>
+    <div class="snapdragon card align-left">
+        <div class="course-description js-selected-description" data-repeat-text="{{ copy }}">
+            <span>{{ text }}</span>
+        </div>        
     </div>    
 
     <div class="action-update-container">
