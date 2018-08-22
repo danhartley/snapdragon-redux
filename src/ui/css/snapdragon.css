@@ -1092,3 +1092,12 @@ tbody {
     border-color: transparent;
   }
 }
+
+.carousel-item {
+  height: 40vh;
+  background-size: cover;
+}
+
+.carousel.species-card-images {
+  grid-template-columns: 1fr; 
+}

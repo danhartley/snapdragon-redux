@@ -35,8 +35,7 @@ export const renderCollections = (counter) => {
         'Snapdragon is a tool for studying the 1.3 million recorded species on Earth.',
         'Related species are grouped and tested in courses.',
         'Courses take the form of concise summaries followed by quick tests.',
-        'Take one of the public courses or request one tailored to your needs.',
-        'Good luck.'
+        'Take one of the public courses or request one tailored to your needs.'
     ] };
 
     const copy = collection.descriptions || snapdragon.descriptions;
