@@ -832,11 +832,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   background-color: var(--snap-block-light);
 }
 
-/* .species-answer.btn {
-  color: var(--snap-text-light);
-  background-color: var(--snap-collection);
-} */
-
 .species-question.btn.btn:not(:disabled):not(.disabled) {
   cursor: initial;
 }
@@ -1042,7 +1037,6 @@ tbody {
 .badge {
   vertical-align: text-top;
   cursor: pointer;
-  /* padding: .25em .25em .25em .4em; */
 }
 
 .badge-light {
@@ -1069,28 +1063,6 @@ tbody {
   margin: .5em 0;
 }
 
-.typewriter-container {  
-  padding: 1em 1.5em;
-  color: var(--snap-type-colour);
-  font-size: 1em;
-  border: .05em solid var(--snap-border-dark);
-}
-
-.typewriter-container div {
-  font-size: 1.2em;
-}
-
-.typewriter-container span {
-  border-right: .05em solid var(--snap-type-colour);
-  animation: caret 1s steps(1) infinite;  
-}
-
-@keyframes caret {
-  50% {
-    border-color: transparent;
-  }
-}
-
 .carousel-item {
   height: 40vh;
 }
@@ -1100,7 +1072,7 @@ tbody {
   height: 100%;
 }
 
-/* .carousel.species-card-images {
-  grid-template-columns: 1fr; 
-  height: initial;
-} */
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  width: 1.5em;
+  height: 1.5em;
+}
