@@ -2,16 +2,14 @@ import * as R from 'ramda';
 
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
 import { taxa } from 'api/snapdragon/taxa';
 import { renderWiki } from 'wikipedia/wiki';
 import { infraspecifics } from 'api/snapdragon/infraspecifics';
 import { renderTemplate } from 'ui/helpers/templating';
-import { modalBackgroundImagesHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import landscapeTemplate from 'ui/screens/cards/card-template.html';
-import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
+import { imageSlider } from 'ui/screens/common/image-slider';
 
 export const renderCard = (collection) => {
     
@@ -86,20 +84,7 @@ const renderPortrait = (template, item, config) => {
 
     renderCommonParts(template, config, item);
 
-    const images = utils.shuffleArray(item.images);
-
-    const slider = document.createElement('template');
-
-    slider.innerHTML = imageSliderTemplate;
-
-    const parent = document.querySelector('.js-species-card-images');
-    parent.innerHTML = '';
-
-    renderTemplate({ images }, slider.content, parent);    
-
-    document.querySelector('.js-species-card-images .carousel-item').classList.add('active');
-
-    modalBackgroundImagesHandler(document.querySelectorAll('.js-species-card-images .carousel-item'), item);
+    imageSlider(item);    
 };
 
 const renderCommonParts = (template, config, item) => {

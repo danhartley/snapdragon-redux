@@ -47,7 +47,7 @@ progress::-moz-progress-bar {
 }
 
 hr {
-  margin-bottom: 0;
+  margin: 0;
 }
 
 /* variables */
@@ -699,7 +699,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .block.given {
-  margin: 1em 0;
+  margin: .5em 0;
 }
 
 .pool .block.active {
@@ -851,10 +851,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .species-card-images {
-  height: 50%;
   width: 100%;
+  height: initial;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr; 
   cursor: pointer;
 }
 
@@ -1042,14 +1042,14 @@ tbody {
 .badge {
   vertical-align: text-top;
   cursor: pointer;
-  padding: .25em .25em .25em .4em;
+  /* padding: .25em .25em .25em .4em; */
 }
 
 .badge-light {
   color: var(--snap-text-light);
   background-color: var(--snap-collection);
   margin: -.25em 0 0 .25em;
-  padding: .5em;
+  padding: .4em .4em .3em .4em;
 }
 
 .question-container {
@@ -1065,8 +1065,8 @@ tbody {
 
 .answer-container {
   border: 1px solid var(--snap-border-dark);
-  padding: .5em;
-  margin: 1em 0;
+  padding: .25em .5em;
+  margin: .5em 0;
 }
 
 .typewriter-container {  
@@ -1100,7 +1100,7 @@ tbody {
   height: 100%;
 }
 
-.carousel.species-card-images {
+/* .carousel.species-card-images {
   grid-template-columns: 1fr; 
   height: initial;
-}
+} */
