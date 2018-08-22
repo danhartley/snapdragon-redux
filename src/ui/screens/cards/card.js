@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
@@ -88,8 +90,6 @@ const renderPortrait = (template, item, config) => {
 
     const slider = document.createElement('template');
 
-    //<div style='background-image: url(https://media.eol.org/content/${image}); background-size: cover;' >                                      
-
     slider.innerHTML = imageSliderTemplate;
 
     const parent = document.querySelector('.js-species-card-images');
@@ -104,6 +104,8 @@ const renderPortrait = (template, item, config) => {
 
 const renderCommonParts = (template, config, item) => {
 
+    const pollinatorsLength = config.isPortraitMode ? 2 : 5;
+
     const species = item.name;    
     const name = itemProperties.vernacularName(item, config);
     const speciesName = itemProperties.speciesName(species);
@@ -115,7 +117,7 @@ const renderCommonParts = (template, config, item) => {
     const familyImage = family ? `https://media.eol.org/content/${family.thumb}` : '';
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const occurrences = specific ? specific.subspecies.length : 0;
-    const pollinators = itemProperties.getNestedTaxonProp(family, config.language, 'pollinators', 'names').join(', ');
+    const pollinators = R.take(pollinatorsLength, itemProperties.getNestedTaxonProp(family, config.language, 'pollinators', 'names')).join(', ');
     
     const clone = document.importNode(template.content, true);
     

@@ -196,14 +196,12 @@ hr {
   justify-content: space-between;
 }
 
-/* .selected-collection.card,  */
-
 .summary.card {
   margin: 0 0 1em 0;
 }
 
 .species.revision.card {
-  margin: .5em 0 1em 0;
+  margin: .5em 0 .5em 0;
 }
 
 .card.radio-buttons-container, .card.block-container {
@@ -1095,9 +1093,14 @@ tbody {
 
 .carousel-item {
   height: 40vh;
-  background-size: cover;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100%;
 }
 
 .carousel.species-card-images {
   grid-template-columns: 1fr; 
+  height: initial;
 }
