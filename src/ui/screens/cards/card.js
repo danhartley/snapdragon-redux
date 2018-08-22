@@ -9,6 +9,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { modalBackgroundImagesHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import landscapeTemplate from 'ui/screens/cards/card-template.html';
+import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 
 export const renderCard = (collection) => {
     
@@ -83,18 +84,22 @@ const renderPortrait = (template, item, config) => {
 
     renderCommonParts(template, config, item);
 
-    const images = utils.shuffleArray(item.images).slice(0,4);
+    const images = utils.shuffleArray(item.images);
 
-    const backgroundImages = images.map(image => {
-            return `                
-                <div style='background-image: url(https://media.eol.org/content/${image}); background-size: cover;' data-toggle="modal" data-target="#imageModal">                                      
-                </div>
-            `;
-        }).join('');
+    const slider = document.createElement('template');
 
-    document.querySelector('.js-species-card-images').innerHTML = backgroundImages;
+    //<div style='background-image: url(https://media.eol.org/content/${image}); background-size: cover;' >                                      
 
-    modalBackgroundImagesHandler(document.querySelectorAll('.js-species-card-images div'), item);
+    slider.innerHTML = imageSliderTemplate;
+
+    const parent = document.querySelector('.js-species-card-images');
+    parent.innerHTML = '';
+
+    renderTemplate({ images }, slider.content, parent);    
+
+    document.querySelector('.js-species-card-images .carousel-item').classList.add('active');
+
+    modalBackgroundImagesHandler(document.querySelectorAll('.js-species-card-images .carousel-item'), item);
 };
 
 const renderCommonParts = (template, config, item) => {
