@@ -699,7 +699,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .block.given {
-  margin: 1em 0;
+  margin: .5em 0;
 }
 
 .pool .block.active {
@@ -1065,7 +1065,7 @@ tbody {
 
 .answer-container {
   border: 1px solid var(--snap-border-dark);
-  padding: .5em;
+  padding: .25em .5em;
   margin: .5em 0;
 }
 

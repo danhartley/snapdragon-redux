@@ -57,8 +57,10 @@ export const renderCompleteText = (collection) => {
         }
     }
 
+    const numerOfItems = config.isPortraitMode ? 4 : 5;
+
     const itemTaxons = [ ...collection.items ].map(item => item[givenTaxon]);
-    const pool = R.take(5, utils.shuffleArray(itemTaxons).filter(utils.onlyUnique).filter(itemTaxon => itemTaxon !== item[givenTaxon]));
+    const pool = R.take(numerOfItems, utils.shuffleArray(itemTaxons).filter(utils.onlyUnique).filter(itemTaxon => itemTaxon !== item[givenTaxon]));
     pool.push(item[givenTaxon]);
 
     const answers = utils.shuffleArray(pool);
