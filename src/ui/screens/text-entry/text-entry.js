@@ -4,9 +4,10 @@ import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
-import { scoreHandler, modalBackgroundImagesHandler } from 'ui/helpers/handlers';
+import { scoreHandler } from 'ui/helpers/handlers';
 import landscapeTemplates from 'ui/screens/text-entry/text-entry-templates.html';
 import portraitTemplates from 'ui/screens/text-entry/text-entry-portrait-templates.html';
+import { imageSlider } from 'ui/screens/common/image-slider';
 
 export const renderInput = (screen, question, hints) => {
 
@@ -63,18 +64,23 @@ export const renderInput = (screen, question, hints) => {
 };
 
 const renderPortrait = item => {
-    const images = utils.shuffleArray(item.images).slice(0,4);
 
-    const backgroundImages = images.map(image => {        
-        return `                
-                <div style='background-image: url(https://media.eol.org/content/${image}); background-size: cover;' data-toggle="modal" data-target="#imageModal">                                      
-                </div>
-            `;
-        }).join('');
+    imageSlider(item);
 
-    document.querySelector('.js-species-card-images').innerHTML = backgroundImages;
+    // const images = utils.shuffleArray(item.images);
 
-    modalBackgroundImagesHandler(document.querySelectorAll('.js-species-card-images div'), item);
+    // const slider = document.createElement('template');
+
+    // slider.innerHTML = imageSliderTemplate;
+
+    // const parent = document.querySelector('.js-species-card-images');
+    // parent.innerHTML = '';
+
+    // renderTemplate({ images }, slider.content, parent);    
+
+    // document.querySelector('.js-species-card-images .carousel-item').classList.add('active');
+
+    // modalBackgroundImagesHandler(document.querySelectorAll('.js-species-card-images .carousel-item'), item);
 };
 
 const renderLandscape = (item, config, collection) => {
