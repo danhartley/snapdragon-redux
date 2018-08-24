@@ -15,11 +15,15 @@ export const imageSlider = (item, parent, disableModal = false, image) => {
 
     renderTemplate({ images }, slider.content, parent);
 
-    parent.querySelectorAll('.carousel-item').forEach(item => {
-        if(item.lastElementChild.src === image.dataset.src) {
-            item.classList.add('active');        
-        }
-    });
+    if(image) {
+        parent.querySelectorAll('.carousel-item').forEach(item => {        
+            if(item.lastElementChild.src === image.dataset.src) {
+                item.classList.add('active');        
+            }
+        });
+    } else {
+        parent.querySelector('.carousel-item').classList.add('active');
+    }
     
     if(disableModal) {
         document.querySelectorAll('.carousel-item img').forEach(img => {
