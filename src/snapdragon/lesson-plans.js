@@ -6,6 +6,10 @@ const speciesRevision = {
     name: 'screen-species-card',
     type: 'revision',
     score: 0,
+    kind: 'RO',
+    points: 0,
+    given: 'Species revision',
+    options: '',
     screens: [
         { ...specimen },
         { ...revision }
@@ -15,6 +19,11 @@ const speciesRevision = {
 const taxonRevision = {
     name: 'screen-taxon-card',
     type:'revision',
+    score: 0,
+    kind: 'RO',
+    points: 0,
+    given: 'Family revision',
+    options: '',
     screens: [
         { ...specimen },
         { ...taxon }
@@ -26,6 +35,9 @@ const imageToImageMatch = {
     type:'test',
     score: 1,
     points: 1,
+    kind: 'MC',
+    given: 'Species: specimens',
+    options: 'Species images',
     screens: [
         { ...specimen },
         { ...species }
@@ -37,6 +49,9 @@ const familyMatch = {
     type:'test',
     score: 1,
     points: 1,
+    kind: 'MC',
+    given: 'Species: name',
+    options: 'List families',
     screens: [
         { ...specimen },
         { ...family }
@@ -48,6 +63,9 @@ const cultivarMatch = {
     type:'test',
     score: 1,
     points: 2,
+    kind: 'MC',
+    given: 'Cultivar: name',
+    options: 'List species',
     screens: [
         { ...specimen },
         { ...cultivar }
@@ -59,6 +77,9 @@ const familyStripsMatch = {
     type:'test',
     score: 1,
     points: 2,
+    kind: 'MC',
+    given: 'Family: description',
+    options: 'List families',
     screens: [
         { ...specimen },
         { ...familyStrips }
@@ -70,6 +91,9 @@ const latinToCommonMatch = {
     type:'test',
     score: 1,
     points: 2,
+    kind: 'MC',
+    given: 'Species: latin name',
+    options: 'List common names',
     screens: [
         { ...specimen },
         { ...vernaculars }
@@ -81,6 +105,9 @@ const commonToLatinMatch = {
     type:'test',
     score: 1,
     points: 2,
+    kind: 'MC',
+    given: 'Species: common name',
+    options: 'List latin names',
     screens: [
         { ...specimen },
         { ...scientifics }
@@ -92,6 +119,9 @@ const genusEntry = {
     type:'test',
     score: 1,
     points: 3,
+    kind: 'T',
+    given: 'Species: species name',
+    options: 'Enter genus name',
     screens: [
         { ...specimen },
         { ...text, template: 'js-genus-entry-template', taxon: 'genus'}
@@ -103,6 +133,9 @@ const speciesEntry = {
     type:'test',
     score: 1,
     points: 3,
+    kind: 'T',
+    given: 'Species: genus name',
+    options: 'Enter species name',
     screens: [
         { ...specimen },
         { ...text, template: 'js-species-entry-template', taxon: 'species'}
@@ -114,6 +147,9 @@ const speciesGenusEntry = {
     type:'test',
     score: 1,
     points: 4,
+    kind: 'T',
+    given: 'Species: common name',
+    options: 'Enter latin name',
     screens: [
         { ...specimen },
         { ...text, template: 'js-species-genus-entry-template', taxon: 'name'}
@@ -125,6 +161,9 @@ const commandLayout = {
     type:'test',
     score: 1,
     points: 2,
+    kind: 'T',
+    given: 'command layout',
+    options: 'random random',
     screens: [
         { ...command },
     ]
@@ -134,6 +173,7 @@ const leafEntry = {
     type:'test',
     score: 1,
     points: 3,
+    kind: 'T',
     screens: [
         { ...leaf },
         { ...leafName, template: 'js-text-entry-template' }
@@ -145,6 +185,9 @@ const textCompleteGenus = {
     type:'test',
     score: 1,
     points: 2,
+    kind: 'MC',
+    given: 'Species: species name',
+    options: 'Choose genus name',
     screens: [
         { ...specimen },
         { ...textComplete, type: 'text-complete-genus'  }
@@ -156,6 +199,9 @@ const textCompleteSpecies = {
     type:'test',
     score: 1,
     points: 2,
+    kind: 'T',
+    given: 'Species: genus name',
+    options: 'Choose species name',
     screens: [
         { ...specimen },
         { ...textComplete, type: 'text-complete-species' }
@@ -167,6 +213,9 @@ const commonEntry = {
     type:'test',
     score: 1,
     points: 2,
+    kind: 'T',
+    given: 'Species: latin name',
+    options: 'Choose common name',
     screens: [
         { ...specimen },
         { ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Enter the common name', short: 'Enter the common name'}}
@@ -177,26 +226,26 @@ const landscapeLesson1 = {
     id: 1,
     name:'Lesson 1',
     portrait: false,
+    default: true,
     levels: [
         {   id: 1,
             name:'Level 1',
-            description: 'Receptive only',
-            // layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ]
-            layouts: [ speciesGenusEntry, imageToImageMatch, speciesRevision ]
+            // description: 'Receptive only',
+            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ]
         },
         {   id: 2,
             name:'Level 2',
-            description: 'Beginner productive',
+            // description: 'Beginner productive',
             layouts: [ taxonRevision, familyMatch, commonEntry, textCompleteSpecies, genusEntry, speciesEntry, familyStripsMatch ]
         },
         {   id: 3,
             name:'Level 3',
-            description: 'Advanced',
+            // description: 'Advanced',
             layouts: [ speciesGenusEntry ]
         },
         {   id: 4,
             name:'Level 4',
-            description: 'Fun',
+            // description: 'Fun',
             layouts: [ commandLayout ]
         }    
     ]
@@ -219,6 +268,7 @@ const portraitLesson1 = {
     id: 3,
     name:'Lesson 3',
     portrait: true,
+    default: true,
     levels: [
         {   id: 1,
             name:'Level 1',

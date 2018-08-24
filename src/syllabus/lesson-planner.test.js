@@ -27,16 +27,16 @@ test.skip('createLessonPlan returns Lesson 1 missing revision screens for given 
 });
 
 test('config should return next available level', () => {
-    const level = lessonPlanner.nextLevel('Lesson 1', 'Level 1');
+    const level = lessonPlanner.getNextLevel('Lesson 1', 'Level 1');
     expect(level.name).toEqual('Level 2');
 });
 
 test('config should return current level where there is no next available level', () => {
-    const level = lessonPlanner.nextLevel('Lesson 1', 'Level 4');
+    const level = lessonPlanner.getNextLevel('Lesson 1', 'Level 4');
     expect(level.name).toEqual('Level 4');
 });
 
 test('config should return current level where there is no previous available level', () => {
-    const level = lessonPlanner.previousLevel('Lesson 1', 'Level 1');
+    const level = lessonPlanner.getPreviousLevel('Lesson 1', 'Level 1');
     expect(level.name).toEqual('Level 1');
 });

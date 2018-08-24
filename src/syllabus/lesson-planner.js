@@ -25,12 +25,12 @@ const createLessonPlan = (config, collection) => {
 
 const getLayouts = (config) => {
     const { lesson: { name: lessonName, level: { name: levelName }}, isPortraitMode } = config;
-    const _currentLesson = currentLesson(lessonName, isPortraitMode);
-    const _currentLevel = getCurrentLevel(_currentLesson, levelName);
-    return _currentLevel.layouts;
+    const currentLesson = getCurrentLesson(lessonName, isPortraitMode);
+    const currentLevel = getCurrentLevel(currentLesson, levelName);
+    return currentLevel.layouts;
 };
 
-const currentLesson = (lessonName, isPortraitMode = false) => {
+const getCurrentLesson = (lessonName, isPortraitMode = false) => {
     const lessons = lessonPlans.filter(lesson => lesson.name === lessonName && lesson.portrait === isPortraitMode);
     return lessons[0];
 };
@@ -40,7 +40,7 @@ const getCurrentLevel = (lesson, levelName) => {
     return levels[0];
 };
 
-const nextLevelId = (lesson, level, direction) => {
+const getNextLevelId = (lesson, level, direction) => {
     const id = (direction === 'forwward') ? level.id + 1 : level.id - 1;
     if(id > lesson.levels.length || id === 0)
     return level.id;
@@ -48,23 +48,23 @@ const nextLevelId = (lesson, level, direction) => {
 };
 
 const changeLevel = (currentLessonName, currentLevelName, direction, isPortraitMode = false) => {
-    const lesson = currentLesson(currentLessonName, isPortraitMode);
+    const lesson = getCurrentLesson(currentLessonName, isPortraitMode);
     const level = getCurrentLevel(lesson, currentLevelName);
-    const levelId = nextLevelId(lesson, level, direction);
+    const levelId = getNextLevelId(lesson, level, direction);
     const levels = lesson.levels.filter(level => level.id === levelId);
     return { ...levels[0], lessonName: lesson.name };
 };
 
-const nextLevel = (currentLessonName, currentLevelName, isPortraitMode = false) => {
+const getNextLevel = (currentLessonName, currentLevelName, isPortraitMode = false) => {
     return changeLevel(currentLessonName, currentLevelName, 'forwward', isPortraitMode);
 };
 
-const previousLevel = (currentLessonName, currentLevelName, isPortraitMode = false) => {
+const getPreviousLevel = (currentLessonName, currentLevelName, isPortraitMode = false) => {
     return changeLevel(currentLessonName, currentLevelName, 'backward', isPortraitMode);
 };
 
 export const lessonPlanner = {
     createLessonPlan,
-    nextLevel,
-    previousLevel
+    getNextLevel,
+    getPreviousLevel
 }

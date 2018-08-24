@@ -618,9 +618,13 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: var(--snap-text-dark);
 }
 
-.course-description span:nth-child(2), .course-description span:nth-child(3), .course-description span:nth-child(4), .course-description span:nth-child(5) {
+.course-description span, .lesson-plan {
   margin: 1em 0 0 0;
   display: block;
+}
+
+.course-description span:nth-child(1) {
+  margin: 0;
 }
 
 /* dropdown menus */
@@ -760,6 +764,14 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .modal-image, .modal-image img {
   height: 60vh;
+}
+
+#listModal .modal-body, #listModal .list-group-collection {
+  background-color: var(--snap-grid-background);
+}
+
+#listModal .scrollable {
+  height: 50vh;
 }
 
 .delay-slider {
@@ -1075,4 +1087,32 @@ tbody {
 .carousel-control-next-icon, .carousel-control-prev-icon {
   width: 1.5em;
   height: 1.5em;
+}
+
+#listModal .modal-body {
+  padding: 0;
+}
+
+.lesson-plans .table-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.lesson-plans .table-row input {
+  height: 1.75em;
+  width: 1.75em;
+}
+
+.lesson-plans .table-row th:nth-child(1), .lesson-plans .table-row th:nth-child(3), .lesson-plans .table-row th:nth-child(4) {
+  flex: 1;
+}
+
+.lesson-plans .table-row th:nth-child(2) {
+  flex: 4;
+}
+
+.lesson-plans .table-row td:nth-child(1) {
+  align-self: center;
+  justify-content: center;
+  display: flex;
 }

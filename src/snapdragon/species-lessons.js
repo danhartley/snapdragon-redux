@@ -22,7 +22,9 @@ export const kitchenGarden = {
     thumb: 'https://media.eol.org/content/2014/06/03/05/47795_orig.jpg',
     moduleSize: 6,
     curator: 'Snapdragon',
-    level: 'The Interested'
+    level: 'The Interested',
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 3
 };
 
 export const nationalFlowers = { 
@@ -34,7 +36,9 @@ export const nationalFlowers = {
     thumb: 'https://media.eol.org/content/2012/06/13/04/65813_orig.jpg',
     moduleSize: 2,
     curator: 'Snapdragon',
-    level: 'Everyone'    
+    level: 'Everyone',
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 3
 };
 
 export const rhsTrees = { 
@@ -46,7 +50,9 @@ export const rhsTrees = {
     thumb: 'https://media.eol.org/content/2015/04/30/19/57100_orig.jpg',
     moduleSize: 6,
     curator: 'Snapdragon',
-    level: 'RHS students'    
+    level: 'RHS students',
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 3
 };
 
 kitchenGarden.items.forEach((item,index)=>{
