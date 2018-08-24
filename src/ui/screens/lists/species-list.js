@@ -123,7 +123,10 @@ export const renderSpeciesCollectionList = (collection) => {
 
     const listItemImages = document.querySelectorAll('.js-list-item');
 
-    listItemImages.forEach(itemImage => { modalImageHandler(itemImage); });    
+    listItemImages.forEach(itemImage => { 
+        const item = collection.items.find(item => item.name === itemImage.dataset.id)
+        modalImageHandler(itemImage, item); 
+    });    
 
     const continueLearningActionBtn = document.querySelector('.js-species-list-btn-action');
 

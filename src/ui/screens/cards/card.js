@@ -84,7 +84,7 @@ const renderPortrait = (template, item, config) => {
 
     renderCommonParts(template, config, item);
 
-    imageSlider(item);    
+    imageSlider(item, document.querySelector('.js-species-card-images'), true);
 };
 
 const renderCommonParts = (template, config, item) => {

@@ -762,9 +762,9 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: var(--snap-text-light);
 }
 
-.modal-image, .modal-image img {
-  height: 60vh;
-}
+/* .modal-image, .modal-image img {
+  height: 40vh;
+} */
 
 #listModal .modal-body, #listModal .list-group-collection {
   background-color: var(--snap-grid-background);
@@ -1081,7 +1081,11 @@ tbody {
 
 .carousel-item img {
   object-fit: cover;
-  height: 100%;
+  height: inherit;
+}
+
+.modal .carousel-item img {
+  object-fit: contain;
 }
 
 .carousel-control-next-icon, .carousel-control-prev-icon {

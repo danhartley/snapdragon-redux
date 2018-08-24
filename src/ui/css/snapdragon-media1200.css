@@ -46,15 +46,15 @@
     height: 100%;
   }
   
-  #externalPageModal .modal-dialog {
-    max-width: 1000px;
-  }
+  /* #externalPageModal .modal-dialog {
+    max-width: 60vw;
+  } */
 
-  #externalPageModal .modal-content {
+  /* #externalPageModal .modal-content {
     height: 600px;
   }
 
   #externalPageModal .modal-body {
     height: 550px;
-  }
+  } */
 }
