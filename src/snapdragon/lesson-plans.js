@@ -6,10 +6,10 @@ const speciesRevision = {
     name: 'screen-species-card',
     type: 'revision',
     score: 0,
-    kind: 'RO',
+    kind: 'S',
     points: 0,
-    given: 'Species revision',
-    options: '',
+    given: 'Study',
+    options: 'Species summary',
     screens: [
         { ...specimen },
         { ...revision }
@@ -20,10 +20,10 @@ const taxonRevision = {
     name: 'screen-taxon-card',
     type:'revision',
     score: 0,
-    kind: 'RO',
+    kind: 'S',
     points: 0,
-    given: 'Family revision',
-    options: '',
+    given: 'Study',
+    options: 'Family summary',
     screens: [
         { ...specimen },
         { ...taxon }
@@ -36,7 +36,7 @@ const imageToImageMatch = {
     score: 1,
     points: 1,
     kind: 'MC',
-    given: 'Species: specimens',
+    given: 'Species specimens',
     options: 'Species images',
     screens: [
         { ...specimen },
@@ -50,7 +50,7 @@ const familyMatch = {
     score: 1,
     points: 1,
     kind: 'MC',
-    given: 'Species: name',
+    given: 'Species name',
     options: 'List families',
     screens: [
         { ...specimen },
@@ -64,7 +64,7 @@ const cultivarMatch = {
     score: 1,
     points: 2,
     kind: 'MC',
-    given: 'Cultivar: name',
+    given: 'Cultivar name',
     options: 'List species',
     screens: [
         { ...specimen },
@@ -78,7 +78,7 @@ const familyStripsMatch = {
     score: 1,
     points: 2,
     kind: 'MC',
-    given: 'Family: description',
+    given: 'Family description',
     options: 'List families',
     screens: [
         { ...specimen },
@@ -92,7 +92,7 @@ const latinToCommonMatch = {
     score: 1,
     points: 2,
     kind: 'MC',
-    given: 'Species: latin name',
+    given: 'Species latin name',
     options: 'List common names',
     screens: [
         { ...specimen },
@@ -106,7 +106,7 @@ const commonToLatinMatch = {
     score: 1,
     points: 2,
     kind: 'MC',
-    given: 'Species: common name',
+    given: 'Species common name',
     options: 'List latin names',
     screens: [
         { ...specimen },
@@ -120,7 +120,7 @@ const genusEntry = {
     score: 1,
     points: 3,
     kind: 'T',
-    given: 'Species: species name',
+    given: 'Species species name',
     options: 'Enter genus name',
     screens: [
         { ...specimen },
@@ -134,7 +134,7 @@ const speciesEntry = {
     score: 1,
     points: 3,
     kind: 'T',
-    given: 'Species: genus name',
+    given: 'Species genus name',
     options: 'Enter species name',
     screens: [
         { ...specimen },
@@ -148,7 +148,7 @@ const speciesGenusEntry = {
     score: 1,
     points: 4,
     kind: 'T',
-    given: 'Species: common name',
+    given: 'Species common name',
     options: 'Enter latin name',
     screens: [
         { ...specimen },
@@ -186,7 +186,7 @@ const textCompleteGenus = {
     score: 1,
     points: 2,
     kind: 'MC',
-    given: 'Species: species name',
+    given: 'Species species name',
     options: 'Choose genus name',
     screens: [
         { ...specimen },
@@ -200,7 +200,7 @@ const textCompleteSpecies = {
     score: 1,
     points: 2,
     kind: 'T',
-    given: 'Species: genus name',
+    given: 'Species genus name',
     options: 'Choose species name',
     screens: [
         { ...specimen },
@@ -214,7 +214,7 @@ const commonEntry = {
     score: 1,
     points: 2,
     kind: 'T',
-    given: 'Species: latin name',
+    given: 'Species latin name',
     options: 'Choose common name',
     screens: [
         { ...specimen },
@@ -230,22 +230,18 @@ const landscapeLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            // description: 'Receptive only',
             layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ]
         },
         {   id: 2,
             name:'Level 2',
-            // description: 'Beginner productive',
             layouts: [ taxonRevision, familyMatch, commonEntry, textCompleteSpecies, genusEntry, speciesEntry, familyStripsMatch ]
         },
         {   id: 3,
             name:'Level 3',
-            // description: 'Advanced',
             layouts: [ speciesGenusEntry ]
         },
         {   id: 4,
             name:'Level 4',
-            // description: 'Fun',
             layouts: [ commandLayout ]
         }    
     ]

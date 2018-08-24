@@ -1100,23 +1100,43 @@ tbody {
 .lesson-plans .table-row {
   display: flex;
   flex-direction: row;
+  background-color: rgba(194, 223, 245,.2);
 }
 
 .lesson-plans .table-row input {
-  height: 1.75em;
-  width: 1.75em;
+  height: 1.75rem;
+  width: 1.75rem;
 }
 
-.lesson-plans .table-row th:nth-child(1), .lesson-plans .table-row th:nth-child(3), .lesson-plans .table-row th:nth-child(4) {
-  flex: 1;
+.lesson-plans .table-row th:nth-child(1), .lesson-plans .table-row th:nth-child(3), .lesson-plans .table-row th:nth-child(4),
+.lesson-plans .table-row td:nth-child(1), .lesson-plans .table-row td:nth-child(3), .lesson-plans .table-row td:nth-child(4) {
+  flex: 1 !important;
 }
 
-.lesson-plans .table-row th:nth-child(2) {
-  flex: 4;
+.lesson-plans .table-row th:nth-child(2),
+.lesson-plans .table-row td:nth-child(2) {
+  flex: 4 !important;
 }
 
-.lesson-plans .table-row td:nth-child(1) {
+.lesson-plans .table-row th:nth-child(1), .lesson-plans .table-row th:nth-child(3), .lesson-plans .table-row th:nth-child(4),
+.lesson-plans .table-row td:nth-child(1), .lesson-plans .table-row td:nth-child(3), .lesson-plans .table-row td:nth-child(4) {
   align-self: center;
-  justify-content: center;
+  /* justify-content: center; */
   display: flex;
+}
+
+.lesson-plans .table-row.level1 {
+  background-color: rgba(176, 110, 143, .2);
+}
+
+.lesson-plans .table-row.level2 {
+  background-color: rgba(73, 104, 135,.2);
+}
+
+.lesson-plans .table-row.level3 {
+  background-color: rgba(137, 90, 76, 0.2);
+}
+
+.lesson-plans .table-row.level4 {
+  background-color: rgba(211, 105, 14, .2);
 }
