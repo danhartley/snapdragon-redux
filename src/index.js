@@ -36,7 +36,7 @@ setTimeout(()=>{
     config.isSmallLandscapeMode = window.matchMedia("(max-width: 1023px)").matches;
 
     if(!config.lesson) {
-        config.lesson = config.isPortraitMode ? lessonPlans[2] : lessonPlans[0];
+        config.lesson = lessonPlans.find(plan => plan.portrait === config.isPortraitMode && plan.default);
         config.lesson.level = config.lesson.levels[0];
         const levels = lessonPlans.filter(plan => plan.name === config.lesson.name)[0].levels;
         config.lesson.levels = levels;

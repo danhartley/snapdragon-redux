@@ -162,22 +162,15 @@
         height: 100%;
     }    
 
-    .modal-image, .modal-image img {
-        height: 80vh;
-      }      
-
-    #externalPageModal .modal-dialog {
-        max-width: 600px;
+    .modal-dialog {
+        max-width: 60vw;
     }
 
-    #externalPageModal .modal-content {
-        height: 500px;
-        width: 100%;
+    .carousel-item {
+        height: 60vh;
     }
 
-    #externalPageModal .modal-body {
-        height: 450px;
-    }
+    /* #externalPageModal */
 
     .flex-provider.skills, .species-card-wiki-entry,
     .collection-preview, .collection button, .collections-skills {

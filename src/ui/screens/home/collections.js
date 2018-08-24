@@ -6,6 +6,7 @@ import { selectHandler } from 'ui/helpers/handlers';
 import { subscription } from 'redux/subscriptions';
 import { renderSpeciesCollection } from 'ui/screens/lists/species';
 import { elem } from 'ui/helpers/class-behaviour';
+import { renderLessonPlans } from 'ui/screens/lists/lesson-plans-table';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
 
 export const renderCollections = (counter) => {
@@ -25,7 +26,7 @@ export const renderCollections = (counter) => {
     template.innerHTML = collectionsTemplate;
 
     let config = { ...currentConfig };
-    let collection = currentCollection ? { ...currentCollection, descriptions: null } : { name: '---', id: '', descriptions: null };
+    let collection = currentCollection ? { ...currentCollection } : { name: '---', id: '', descriptions: null };
     let language = config.languages.find(l => l.lang === config.language);
     let courses = collections.filter(collection => collection.type === 'species');
 
@@ -50,7 +51,16 @@ export const renderCollections = (counter) => {
     const collectionDescription = document.querySelector('.js-selected-description');
     const languagesHeader = document.querySelector('.btn-language');
 
-    learningActionBtn.innerHTML = config.isPortraitMode ? 'View course species' : 'Begin lesson';
+
+    if(config.isPortraitMode) {
+        learningActionBtn.innerHTML =  'View course species';
+    } else {
+        const lessonPaused = counter.log ? true : false;
+        learningActionBtn.innerHTML = 'Begin lesson'
+        if(history || lessonPaused) {
+            learningActionBtn.innerHTML = 'Continue lesson';
+        }
+    }    
 
     // Courses
 
@@ -89,6 +99,8 @@ export const renderCollections = (counter) => {
         actions.boundUpdateLanguage(language);
     });
 
+    // User action
+
     learningActionBtn.addEventListener('click', () => {        
         config.isPortraitMode ? actions.boundSelectCollection(collection) : actions.boundChangeCollection(config);
         updateNavIcons();        
@@ -101,4 +113,12 @@ export const renderCollections = (counter) => {
             svg.classList.remove('active-icon');
         }
     };
+
+    // Populates lesson plan modal
+
+    document.querySelector('.js-lesson-plan-link').addEventListener('click', event => {
+        const planId = config.isPortraitMode ? 3 : 1;
+        renderLessonPlans(planId);
+        // renderLessonPlans(config.collection.id);
+    });
 };

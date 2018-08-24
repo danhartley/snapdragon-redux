@@ -9,7 +9,7 @@ export const renderCultivarCard = collection => {
     const item = collection.items[collection.itemIndex];
     const { lessonPlan, layout, config } = store.getState();
 
-    const cultivarCollection = lessonPlan.layouts.find(l => l.name === 'screen-cultivar-card').cultivars;
+    const cultivarCollection = lessonPlan.layouts.find(layout => layout.name === 'screen-cultivar-card').cultivars;
 
     const cultivars = cultivarCollection.subspecies.map(sub => {
         let locale = sub.names.find(n => n.language === config.language);

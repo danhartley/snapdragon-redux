@@ -1,9 +1,9 @@
 import { utils } from 'utils/utils';
 import { renderTemplate } from 'ui/helpers/templating';
-import { modalBackgroundImagesHandler } from 'ui/helpers/handlers';
+import { modalImagesHandler } from 'ui/helpers/handlers';
 import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 
-export const imageSlider = item => {
+export const imageSlider = (item, parent, disableModal = false, image) => {
 
     const images = utils.shuffleArray(item.images);
 
@@ -11,13 +11,22 @@ export const imageSlider = item => {
 
     slider.innerHTML = imageSliderTemplate;
 
-    const parent = document.querySelector('.js-species-card-images');
-    
     parent.innerHTML = '';
 
-    renderTemplate({ images }, slider.content, parent);    
+    renderTemplate({ images }, slider.content, parent);
 
-    document.querySelector('.js-species-card-images .carousel-item').classList.add('active');
-
-    modalBackgroundImagesHandler(document.querySelectorAll('.js-species-card-images .carousel-item'), item);
+    parent.querySelectorAll('.carousel-item').forEach(item => {
+        if(item.lastElementChild.src === image.dataset.src) {
+            item.classList.add('active');        
+        }
+    });
+    
+    if(disableModal) {
+        document.querySelectorAll('.carousel-item img').forEach(img => {
+            img.removeAttribute('data-toggle');
+            img.removeAttribute('data-target');
+        });
+    } else {
+        modalImagesHandler(parent.querySelectorAll('.carousel-item'), item);
+    }
 };

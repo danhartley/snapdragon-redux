@@ -30,8 +30,8 @@ export const collection = (state = null, action) => {
             return action.data;
         case types.CHANGE_COLLECTION:
             const config = action.data;
-            const collection = speciesState.collections.filter(collection => collection.id === config.collection.id)[0];
-            return speciesState.initCollection(collection);
+            const collection = speciesState.collections.find(collection => collection.id === config.collection.id);
+            return { ...state, ...speciesState.initCollection(collection) };
         case types.NEXT_ITEM:
             itemIndex = action.data;
             return { ...state, itemIndex };

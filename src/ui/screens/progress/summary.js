@@ -58,7 +58,7 @@ export const renderSummary = (history) => {
 
         if(isLevelComplete) {
             config.excludeRevision = true;
-            const level = lessonPlanner.nextLevel(lessonName, levelName, config.isPortraitMode);
+            const level = lessonPlanner.getNextLevel(lessonName, levelName, config.isPortraitMode);
             config.lesson.level = level;
             actions.boundNextLevel({ index: 0, lesson: 'inactive' });
             setTimeout(() => {

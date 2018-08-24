@@ -1,6 +1,7 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
+import { imageSlider } from 'ui/screens/common/image-slider';
 
 export const scoreHandler = (type, score, callback, config) => {
     
@@ -185,26 +186,16 @@ export const selectHandler = (selector, callback) => {
     });
 };
 
-export const modalBackgroundImagesHandler = (images, item) => {
+export const modalImagesHandler = (images, item) => {
     images.forEach(image => {
-        image.addEventListener('click', event => {            
-            const img = event.target;
-            let src = img.src || img.style.backgroundImage.slice(4, -1).replace(/"/g, "");
-            if(src) {
-                src = src.indexOf('https') > -1 ? src : `https://media.eol.org/content/${src}`;
-                DOM.modalImageTitle.innerHTML = item.name;
-                const style = `background-image: url(${src}); background-size: cover; background-position: center;`;
-                DOM.modalImage.style = style;
-            }
-        })
+        modalImageHandler(image, item);
     });
 };
 
-export const modalImageHandler = (image) => {
+export const modalImageHandler = (image, item) => {
     image.addEventListener('click', event => {
-        const src  = `https://media.eol.org/content/${event.currentTarget.dataset.image}`;
-        DOM.modalImageTitle.innerHTML = event.currentTarget.dataset.id;
-        const style = `background-image: url(${src}); background-size: cover;`;
-        DOM.modalImage.style = style;            
+        const parent = document.querySelector('#imageModal .js-modal-image');
+        imageSlider(item, parent, false, image);
+        DOM.modalImageTitle.innerHTML = item.name;
     })
 };

@@ -64,23 +64,7 @@ export const renderInput = (screen, question, hints) => {
 };
 
 const renderPortrait = item => {
-
-    imageSlider(item);
-
-    // const images = utils.shuffleArray(item.images);
-
-    // const slider = document.createElement('template');
-
-    // slider.innerHTML = imageSliderTemplate;
-
-    // const parent = document.querySelector('.js-species-card-images');
-    // parent.innerHTML = '';
-
-    // renderTemplate({ images }, slider.content, parent);    
-
-    // document.querySelector('.js-species-card-images .carousel-item').classList.add('active');
-
-    // modalBackgroundImagesHandler(document.querySelectorAll('.js-species-card-images .carousel-item'), item);
+    imageSlider(item, document.querySelector('.js-species-card-images'), true);
 };
 
 const renderLandscape = (item, config, collection) => {

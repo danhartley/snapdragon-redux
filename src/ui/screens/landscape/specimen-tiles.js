@@ -1,6 +1,6 @@
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
-import { modalBackgroundImagesHandler } from 'ui/helpers/handlers';
+import { modalImagesHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import landscapeTemplate from 'ui/screens/landscape/specimen-tiles-template.html';
 
@@ -35,5 +35,5 @@ export const renderSpecimenTiles = (collection) => {
 
     renderTemplate({ images }, template.content, parent);
 
-    modalBackgroundImagesHandler(document.querySelectorAll('.js-tiles .square'), item);
+    modalImagesHandler(document.querySelectorAll('.js-tiles .square'), item);
 };

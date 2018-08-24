@@ -618,9 +618,13 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: var(--snap-text-dark);
 }
 
-.course-description span:nth-child(2), .course-description span:nth-child(3), .course-description span:nth-child(4), .course-description span:nth-child(5) {
+.course-description span, .lesson-plan {
   margin: 1em 0 0 0;
   display: block;
+}
+
+.course-description span:nth-child(1) {
+  margin: 0;
 }
 
 /* dropdown menus */
@@ -758,8 +762,16 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: var(--snap-text-light);
 }
 
-.modal-image, .modal-image img {
-  height: 60vh;
+/* .modal-image, .modal-image img {
+  height: 40vh;
+} */
+
+#listModal .modal-body, #listModal .list-group-collection {
+  background-color: var(--snap-grid-background);
+}
+
+#listModal .scrollable {
+  height: 50vh;
 }
 
 .delay-slider {
@@ -831,11 +843,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: var(--snap-text-dark);
   background-color: var(--snap-block-light);
 }
-
-/* .species-answer.btn {
-  color: var(--snap-text-light);
-  background-color: var(--snap-collection);
-} */
 
 .species-question.btn.btn:not(:disabled):not(.disabled) {
   cursor: initial;
@@ -1042,7 +1049,6 @@ tbody {
 .badge {
   vertical-align: text-top;
   cursor: pointer;
-  /* padding: .25em .25em .25em .4em; */
 }
 
 .badge-light {
@@ -1069,38 +1075,48 @@ tbody {
   margin: .5em 0;
 }
 
-.typewriter-container {  
-  padding: 1em 1.5em;
-  color: var(--snap-type-colour);
-  font-size: 1em;
-  border: .05em solid var(--snap-border-dark);
-}
-
-.typewriter-container div {
-  font-size: 1.2em;
-}
-
-.typewriter-container span {
-  border-right: .05em solid var(--snap-type-colour);
-  animation: caret 1s steps(1) infinite;  
-}
-
-@keyframes caret {
-  50% {
-    border-color: transparent;
-  }
-}
-
 .carousel-item {
   height: 40vh;
 }
 
 .carousel-item img {
   object-fit: cover;
-  height: 100%;
+  height: inherit;
 }
 
-/* .carousel.species-card-images {
-  grid-template-columns: 1fr; 
-  height: initial;
-} */
+.modal .carousel-item img {
+  object-fit: contain;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+#listModal .modal-body {
+  padding: 0;
+}
+
+.lesson-plans .table-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.lesson-plans .table-row input {
+  height: 1.75em;
+  width: 1.75em;
+}
+
+.lesson-plans .table-row th:nth-child(1), .lesson-plans .table-row th:nth-child(3), .lesson-plans .table-row th:nth-child(4) {
+  flex: 1;
+}
+
+.lesson-plans .table-row th:nth-child(2) {
+  flex: 4;
+}
+
+.lesson-plans .table-row td:nth-child(1) {
+  align-self: center;
+  justify-content: center;
+  display: flex;
+}

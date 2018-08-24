@@ -123,7 +123,10 @@ export const renderSpeciesCollectionList = (collection) => {
 
     const listItemImages = document.querySelectorAll('.js-list-item');
 
-    listItemImages.forEach(itemImage => { modalImageHandler(itemImage); });    
+    listItemImages.forEach(itemImage => { 
+        const item = collection.items.find(item => item.name === itemImage.dataset.id)
+        modalImageHandler(itemImage, item); 
+    });    
 
     const continueLearningActionBtn = document.querySelector('.js-species-list-btn-action');
 
@@ -135,7 +138,7 @@ export const renderSpeciesCollectionList = (collection) => {
 
         if(history || lessonPaused) {
             continueLearningActionBtn.innerHTML = 'Continue lesson';
-        }    
+        }
         
         const isLevelComplete = collection.currentRound ? (collection.currentRound === collection.rounds) : false;
         const levelName = config.lesson.level.name;
@@ -150,7 +153,7 @@ export const renderSpeciesCollectionList = (collection) => {
 
             if(isLevelComplete) {
                 config.excludeRevision = true;
-                const level = lessonPlanner.nextLevel(lessonName, levelName, config.isPortraitMode);
+                const level = lessonPlanner.getNextLevel(lessonName, levelName, config.isPortraitMode);
                 config.lesson.level = level;
                 actions.boundNextLevel({ index: 0, lesson: 'inactive' });
                 setTimeout(() => {
@@ -169,8 +172,6 @@ export const renderSpeciesCollectionList = (collection) => {
                     actions.boundChangeCollection(config);
                 }
             }
-
-
         });
     }
 };
