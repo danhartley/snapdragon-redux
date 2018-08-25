@@ -231,11 +231,11 @@ hr {
   border-radius: .1rem;
 }
 
-.card.species {
+.card.species, .lesson-plans .table-row.species-background:nth-child(n) {
   background-color: var(--snap-species-card-background);
 }
 
-.card.taxon {
+.card.taxon, .lesson-plans .table-row.taxon-background:nth-child(n) {
   background-color: var(--snap-taxon-card-background);
 }
 
@@ -1097,6 +1097,22 @@ tbody {
   padding: 0;
 }
 
+.lesson-plans .table-row:nth-child(odd) {
+  background-color: var(--snap-grid-background);
+}
+
+.lp-context {
+  font-style: italic;
+}
+
+.lp-answer {
+  font-style: initial;
+}
+
+.lp-level {
+  text-transform: uppercase;
+}
+
 .lesson-plans .table-row {
   display: flex;
   flex-direction: row;
@@ -1104,25 +1120,29 @@ tbody {
 }
 
 .lesson-plans .table-row input {
-  height: 1.75rem;
-  width: 1.75rem;
+  height: 1.25rem;
+  width: 1.25rem;
+  margin: 0 0 0 .5em;
 }
 
 .lesson-plans .table-row th:nth-child(1), .lesson-plans .table-row th:nth-child(3), .lesson-plans .table-row th:nth-child(4),
 .lesson-plans .table-row td:nth-child(1), .lesson-plans .table-row td:nth-child(3), .lesson-plans .table-row td:nth-child(4) {
-  flex: 1 !important;
+  flex: 1;
+  align-self: center;
+  display: flex;
 }
 
 .lesson-plans .table-row th:nth-child(2),
 .lesson-plans .table-row td:nth-child(2) {
-  flex: 4 !important;
+  flex: 4;
 }
 
-.lesson-plans .table-row th:nth-child(1), .lesson-plans .table-row th:nth-child(3), .lesson-plans .table-row th:nth-child(4),
-.lesson-plans .table-row td:nth-child(1), .lesson-plans .table-row td:nth-child(3), .lesson-plans .table-row td:nth-child(4) {
-  align-self: center;
-  /* justify-content: center; */
-  display: flex;
+.lesson-plans svg {
+  margin: 0 .5em 0 0;
+}
+
+.lesson-plans .table-row:nth-child(1) {
+  background-color: rgba(194, 223, 245,.5);
 }
 
 .lesson-plans .table-row.level1 {
@@ -1139,4 +1159,8 @@ tbody {
 
 .lesson-plans .table-row.level4 {
   background-color: rgba(211, 105, 14, .2);
+}
+
+.lesson-plan-btn {
+  padding: 1em 2em;
 }

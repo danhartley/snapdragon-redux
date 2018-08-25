@@ -20,7 +20,7 @@ const taxonRevision = {
     name: 'screen-taxon-card',
     type:'revision',
     score: 0,
-    kind: 'S',
+    kind: 'F',
     points: 0,
     given: 'Study',
     options: 'Family summary',

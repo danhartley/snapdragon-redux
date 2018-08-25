@@ -170,6 +170,17 @@
         height: 60vh;
     }
 
+    .lesson-plans .table-row input {
+        height: 1.75rem;
+        width: 1.75rem;
+        margin: 0 0 0 1em;
+    }
+
+    .lesson-plans .table-row th:nth-child(3),
+    .lesson-plans .table-row td:nth-child(3) {
+        flex: 2;
+    }
+
     /* #externalPageModal */
 
     .flex-provider.skills, .species-card-wiki-entry,
