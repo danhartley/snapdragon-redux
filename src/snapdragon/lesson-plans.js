@@ -120,7 +120,7 @@ const genusEntry = {
     score: 1,
     points: 3,
     kind: 'T',
-    given: 'Species species name',
+    given: 'Species name',
     options: 'Enter genus name',
     screens: [
         { ...specimen },
@@ -162,8 +162,8 @@ const commandLayout = {
     score: 1,
     points: 2,
     kind: 'T',
-    given: 'command layout',
-    options: 'random random',
+    given: 'Various',
+    options: 'various',
     screens: [
         { ...command },
     ]
