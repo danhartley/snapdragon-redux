@@ -4,10 +4,8 @@ import { utils } from 'utils/utils';
 import { collections } from 'snapdragon/species-collections';
 
 const kg = ['Herbs and Spices', 'Vegetables', 'Fruit', 'Insects'];
-const nf = ['National Flowers'];
 
 export const kitchenGardenLessons = collections.filter(collection => R.contains(collection.name, kg));
-export const nationalFlowersLessons = collections.filter(collection => R.contains(collection.name, nf));
 
 export const kitchenGarden = { 
     id: 1, name: 'Kitchen Garden', 
@@ -21,30 +19,13 @@ export const kitchenGarden = {
     thumb: 'https://media.eol.org/content/2014/06/03/05/47795_orig.jpg',
     moduleSize: 6,
     curator: 'Snapdragon',
-    level: 'The Interested',
-    lessonPlanLandscape: 1,
-    lessonPlanPortrait: 3
-};
-
-export const nationalFlowers = { 
-    id: 2, name: 'National Flowers', 
-    type: 'species',
-    descriptions: [
-        'Short lesson on the national flowers of Germany, Italy, Portugal, Spain, France and England.',
-        'Useful as a quick-start introduction to Snapdragon it will take about 30 minutes to complete.'
-],
-    items:[ ...nationalFlowersLessons[0].items ],
-    collections: ['National Flowers'],
-    thumb: 'https://media.eol.org/content/2012/06/13/04/65813_orig.jpg',
-    moduleSize: 2,
-    curator: 'Snapdragon',
-    level: 'Everyone',
+    level: 'General Interest',
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 3
 };
 
 export const rhsTrees = { 
-    id: 3, name: 'Deciduous and Evergreen Trees', 
+    id: 2, name: 'Deciduous and Evergreen Trees', 
     type: 'species',
     descriptions: ['The approved list of Deciduous and Evergreen Trees for students taking Royal Horticultural Society Qualifications in Practical Horticulture.'],
     items:[ ...collections[0].items ],
@@ -57,14 +38,28 @@ export const rhsTrees = {
     lessonPlanPortrait: 3
 };
 
+export const commonBirds = { 
+    id: 3, name: '8 Common City Birds', 
+    type: 'species',
+    descriptions: ['8 birds common to European cities.'],
+    items:[ ...collections[5].items ],
+    collections: ['8 Common City Birds'],
+    thumb: 'http://media.eol.org/content/2015/01/21/07/32241_88_88.jpg',
+    moduleSize: 4,
+    curator: 'Snapdragon',
+    level: 'General Interest',
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 3
+};
+
 kitchenGarden.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });
 
-nationalFlowers.items.forEach((item,index)=>{
+rhsTrees.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });
 
-rhsTrees.items.forEach((item,index)=>{
+commonBirds.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });
