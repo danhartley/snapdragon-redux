@@ -234,15 +234,15 @@ const landscapeLesson1 = {
         },
         {   id: 2,
             name:'Level 2',
-            layouts: [ taxonRevision, familyMatch, commonEntry, textCompleteSpecies, genusEntry, speciesEntry, familyStripsMatch ]
+            layouts: [ taxonRevision, commonEntry, textCompleteSpecies, genusEntry, familyStripsMatch ]
         },
         {   id: 3,
             name:'Level 3',
-            layouts: [ speciesGenusEntry ]
+            layouts: [ speciesEntry, familyMatch ]
         },
         {   id: 4,
             name:'Level 4',
-            layouts: [ commandLayout ]
+            layouts: [ speciesGenusEntry ]
         }    
     ]
 };
@@ -268,25 +268,20 @@ const portraitLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            description: 'Receptive only',            
             layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ]
-            // layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus, taxonRevision, familyMatch, commonEntry, textCompleteSpecies, genusEntry, speciesEntry, familyStripsMatch ]
         },
         {   id: 2,
             name:'Level 2',
-            description: 'Beginner productive',
-            layouts: [ taxonRevision, familyMatch, commonEntry, textCompleteSpecies, genusEntry, speciesEntry, familyStripsMatch, taxonRevision ]
+            layouts: [ taxonRevision, commonEntry, textCompleteSpecies, genusEntry, familyStripsMatch ]
         },
         {   id: 3,
             name:'Level 3',
-            description: 'Advanced',
-            layouts: [ speciesGenusEntry ]
+            layouts: [ speciesEntry, familyMatch ]
         },
         {   id: 4,
             name:'Level 4',
-            description: 'Fun',
-            layouts: [ commandLayout ]
-        }
+            layouts: [ speciesGenusEntry ]
+        }    
     ]
 };
 

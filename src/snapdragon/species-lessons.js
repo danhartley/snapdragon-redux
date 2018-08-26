@@ -14,7 +14,7 @@ export const kitchenGarden = {
     type: 'species',
     descriptions: [
         'This course has over 750 questions and will take about 2 hours to complete. Species are native or adapted to a Mediterranean climate.',
-        'You will start by learning to recognise species, become familiar with their common and latin names, and be able to select the genus to which they belong. Subsequent levels will build on this knowledge.'        
+        'You will start by learning to recognise species, become familiar with their common and latin names, and identify their genus. Subsequent levels will build on this knowledge.'        
     ],    
     items:[ ...kitchenGardenLessons[0].items, ...kitchenGardenLessons[1].items, ...kitchenGardenLessons[2].items, ...kitchenGardenLessons[3].items ],
     collections: kg,
