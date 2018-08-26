@@ -102,7 +102,8 @@ const renderCommonParts = (template, config, item) => {
     const familyImage = family ? `https://media.eol.org/content/${family.thumb}` : '';
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const occurrences = specific ? specific.subspecies.length : 0;
-    const pollinators = R.take(pollinatorsLength, itemProperties.getNestedTaxonProp(family, config.language, 'pollinators', 'names')).join(', ');
+    let pollinators = itemProperties.getNestedTaxonProp(family, config.language, 'pollinators', 'names');
+    pollinators = pollinators !== '' ? R.take(pollinatorsLength, pollinators).join(', ') : '';
     
     const clone = document.importNode(template.content, true);
     

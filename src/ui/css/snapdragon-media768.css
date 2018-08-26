@@ -13,6 +13,10 @@
         height: 80vh;
     }
 
+    .left-grid, .right-grid {
+        grid-template-rows: 1fr .5em 10fr 1fr;
+    }      
+
     .species-table {
         font-size: .9em;
     }
@@ -181,6 +185,9 @@
         flex: 2;
     }
 
+    .lesson-plan-btn {
+        padding: 1em 2em;
+      }
     /* #externalPageModal */
 
     .flex-provider.skills, .species-card-wiki-entry,

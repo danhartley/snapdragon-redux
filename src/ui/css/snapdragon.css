@@ -154,8 +154,8 @@ hr {
 }
 
 .lessons-list .lesson-item > div > img {
-  width: 7em;
-  height: 7em;
+  width: 7.5em;
+  height: 7.5em;
   margin: 0 1em 0 0;
 }
 
@@ -232,11 +232,11 @@ hr {
 }
 
 .card.species, .lesson-plans .table-row.species-background:nth-child(n) {
-  background-color: var(--snap-species-card-background);
+  background-color: var(--snap-species-highlight-background);
 }
 
 .card.taxon, .lesson-plans .table-row.taxon-background:nth-child(n) {
-  background-color: var(--snap-taxon-card-background);
+  background-color: var(--snap-taxon-highlight-background);
 }
 
 .snapdragon-options {
@@ -1146,21 +1146,25 @@ tbody {
 }
 
 .lesson-plans .table-row.level1 {
-  background-color: rgba(176, 110, 143, .2);
+  background-color: rgba(211, 105, 14,.2);
 }
 
 .lesson-plans .table-row.level2 {
-  background-color: rgba(73, 104, 135,.2);
+  background-color: rgba(211, 105, 14,.4);
 }
 
 .lesson-plans .table-row.level3 {
-  background-color: rgba(137, 90, 76, 0.2);
+  background-color: rgba(211, 105, 14,.6);
 }
 
 .lesson-plans .table-row.level4 {
-  background-color: rgba(211, 105, 14, .2);
+  background-color: rgba(211, 105, 14,.8);
+}
+
+.lesson-plans .table-row.level4 {
+  background-color: rgba(211, 105, 14,1);
 }
 
 .lesson-plan-btn {
-  padding: 1em 2em;
+  padding: 0em .5em;
 }

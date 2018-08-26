@@ -30,6 +30,8 @@ const taxonRevision = {
     ]
 };
 
+// 1 point
+
 const imageToImageMatch = {
     name: 'screen-image-to-image',
     type:'test',
@@ -44,11 +46,55 @@ const imageToImageMatch = {
     ]
 };
 
+const latinToCommonMatch = {
+    name: 'screen-latin-to-common',
+    type:'test',
+    score: 1,
+    points: 1,
+    kind: 'MC',
+    given: 'Species latin name',
+    options: 'List common names',
+    screens: [
+        { ...specimen },
+        { ...vernaculars }
+    ]
+};
+
+const commonToLatinMatch = {
+    name: 'screen-common-to-latin',
+    type:'test',
+    score: 1,
+    points: 1,
+    kind: 'MC',
+    given: 'Species common name',
+    options: 'List latin names',
+    screens: [
+        { ...specimen },
+        { ...scientifics }
+    ]
+};
+
+const textCompleteGenus = {
+    name: 'screen-genus-completion',
+    type:'test',
+    score: 1,
+    points: 1,
+    kind: 'MC',
+    given: 'Species species name',
+    options: 'Choose genus name',
+    screens: [
+        { ...specimen },
+        { ...textComplete, type: 'text-complete-genus'  }
+    ]
+};
+
+//  2 points
+
 const familyMatch = {
     name: 'screen-species-to-family',
     type:'test',
     score: 1,
-    points: 1,
+    points: 2,
     kind: 'MC',
     given: 'Species name',
     options: 'List families',
@@ -86,41 +132,13 @@ const familyStripsMatch = {
     ]
 };
 
-const latinToCommonMatch = {
-    name: 'screen-latin-to-common',
-    type:'test',
-    score: 1,
-    points: 2,
-    kind: 'MC',
-    given: 'Species latin name',
-    options: 'List common names',
-    screens: [
-        { ...specimen },
-        { ...vernaculars }
-    ]
-};
-
-const commonToLatinMatch = {
-    name: 'screen-common-to-latin',
-    type:'test',
-    score: 1,
-    points: 2,
-    kind: 'MC',
-    given: 'Species common name',
-    options: 'List latin names',
-    screens: [
-        { ...specimen },
-        { ...scientifics }
-    ]
-};
-
 const genusEntry = {
     name: 'screen-genus-entry',
     type:'test',
     score: 1,
-    points: 3,
+    points: 2,
     kind: 'T',
-    given: 'Species name',
+    given: 'Species species name',
     options: 'Enter genus name',
     screens: [
         { ...specimen },
@@ -132,7 +150,7 @@ const speciesEntry = {
     name: 'screen-species-entry',
     type:'test',
     score: 1,
-    points: 3,
+    points: 2,
     kind: 'T',
     given: 'Species genus name',
     options: 'Enter species name',
@@ -180,20 +198,6 @@ const leafEntry = {
     ]
 };
 
-const textCompleteGenus = {
-    name: 'screen-genus-completion',
-    type:'test',
-    score: 1,
-    points: 2,
-    kind: 'MC',
-    given: 'Species species name',
-    options: 'Choose genus name',
-    screens: [
-        { ...specimen },
-        { ...textComplete, type: 'text-complete-genus'  }
-    ]
-};
-
 const textCompleteSpecies = {
     name: 'screen-species-completion',
     type:'test',
@@ -201,7 +205,7 @@ const textCompleteSpecies = {
     points: 2,
     kind: 'T',
     given: 'Species genus name',
-    options: 'Choose species name',
+    options: 'Enter species name',
     screens: [
         { ...specimen },
         { ...textComplete, type: 'text-complete-species' }
@@ -215,7 +219,7 @@ const commonEntry = {
     points: 2,
     kind: 'T',
     given: 'Species latin name',
-    options: 'Choose common name',
+    options: 'Enter common name',
     screens: [
         { ...specimen },
         { ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Enter the common name', short: 'Enter the common name'}}

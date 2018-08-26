@@ -7,14 +7,15 @@ const encodeQuery = q => {
     return encodeURIComponent(q.trim()) 
 };
 
-const unrestrictedLicences = 'pd|cc-by|cc-by-sa|cc-by-nd';
+const all = 'all';
+const unrestrictedLicences = 'pd|cc-by|cc-by-sa|cc-by-nd|cc-by-nc';
 const restrictedLicences = 'pd|cc-by|cc-by-sa|cc-by-nd';
 
 const speciesUrl = id => {
     return `http://eol.org/api/pages/1.0.json?
     batch=true&id=${encodeQuery(id)}&images_per_page=75&images_page=1
     &videos_per_page=0&videos_page=0&sounds_per_page=0&sounds_page=0&maps_per_page=0
-    &maps_page=0&texts_per_page=1&texts_page=1&subjects=all&licenses=${unrestrictedLicences}
+    &maps_page=0&texts_per_page=1&texts_page=1&subjects=all&licenses=${restrictedLicences}
     &details=true&common_names=true&synonyms=false&references=false&taxonomy=false&vetted=0&cache_ttl=&language=en`;
 };
 
@@ -126,20 +127,22 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('#btnGet').addEventListener('click', event => {
         init();
     });
-    document.querySelector('#btnAdd').addEventListener('click', event => {
-        const item = items.find(i => i.id === currentItemId);
-        const images = [];
-        item.images.forEach((image,index) => {
-            imageIds.forEach(id => {
-                if(index === id) {
-                    images.push(image);
-                }
+    document.querySelectorAll('.btnAdd').forEach(btn => {
+            btn.addEventListener('click', event => {
+            const item = items.find(i => i.id === currentItemId);
+            const images = [];
+            item.images.forEach((image,index) => {
+                imageIds.forEach(id => {
+                    if(index === id) {
+                        images.push(image);
+                    }
+                });
             });
+            item.images = images;
+            newCollection.push(item);
+            document.querySelectorAll('.collectionCount').forEach(counter => counter.innerHTML = newCollection.length);
+            console.log(newCollection);
         });
-        item.images = images;
-        newCollection.push(item);
-        document.querySelector('#collectionCount').innerHTML = newCollection.length;
-        console.log(newCollection);
     });
 });
 

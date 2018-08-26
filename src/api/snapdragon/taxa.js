@@ -1190,4 +1190,165 @@ export const taxa = [
         eol: "http://eol.org/pages/6367079/overview",
         wiki: "https://en.wikipedia.org/wiki/Altingiaceae"
     },
+    {
+        taxon: 'family',
+        name: 'Paridae',
+        thumb: "2015/03/21/14/84751_98_68.jpg",
+        names: [ { language: "en", names: ['Tits, chickadees']} ,
+        { language: "fr", names:[ 'Tits, chickadees' ]},
+        { language: "de", names:[ 'Meisen' ]},
+        { language: "es", names:[ 'Carboneros, herrerillos' ]},
+        { language: "pt", names:[ 'Tits, chickadees' ]},
+        { language: "it", names:[ 'Tits, chickadees' ]}],
+        species: '--',
+        genera: '--',
+        // pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'A large family of small passerine birds which occur mainly in the Northern Hemisphere and Africa.',
+                identification: 'Small birds with plain or colourful plumages, stout legs and strong feet and short, triangular bills. Several species have crests.'
+            }
+        ],
+        eol: "http://eol.org/pages/1629/overview",
+        wiki: "https://en.wikipedia.org/wiki/Paridae"
+    },
+    {
+        taxon: 'family',
+        name: 'Sturnidae',
+        thumb: "2015/04/30/03/95558_98_68.jpg",
+        names: [ { language: "en", names: ['Starlings']} ,
+        { language: "fr", names:[ 'Starlings' ]},
+        { language: "de", names:[ 'Stare' ]},
+        { language: "es", names:[ 'Starlings' ]},
+        { language: "pt", names:[ 'Starlings' ]},
+        { language: "it", names:[ 'Starlings' ]}],
+        species: '--',
+        genera: '--',
+        // pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Small to medium-sized passerine birds. The starling species familiar to most people in Europe and North America is the common starling, and throughout much of Asia and the Pacific, the common myna is indeed common.',
+                identification: 'Small to medium-sized birds many with are strikingly coloured and iridescent.'
+            }
+        ],
+        eol: "http://eol.org/pages/1607/overview",
+        wiki: "https://en.wikipedia.org/wiki/Sturnidae"
+    },
+    {
+        taxon: 'family',
+        name: 'Apodidae',
+        thumb: "2014/04/16/09/52451_88_88.jpg",
+        names: [ { language: "en", names: ['Swifts']} ,
+        { language: "fr", names:[ 'Martinets et Salanganes' ]},
+        { language: "de", names:[ 'Segler' ]},
+        { language: "es", names:[ 'Swifts' ]},
+        { language: "pt", names:[ 'Swifts' ]},
+        { language: "it", names:[ 'Apodidi' ]}],
+        species: '--',
+        genera: '--',
+        // pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Highly aerial birds, they are superficially similar to swallows, but are not closely related to any passerine species. Swifts are placed in the order Apodiformes with hummingbirds.',
+                identification: 'Elongated, cigar-shaped bodies, short, forked tails, very small bills but wide mouths, long, stiff, scythe-shaped wings and tiny legs, with all four toes facing forwards.'
+            }
+        ],
+        eol: "http://eol.org/pages/8023/overview",
+        wiki: "https://en.wikipedia.org/wiki/Apodidae"
+    },
+    {
+        taxon: 'family',
+        name: 'Troglodytidae',
+        thumb: "2014/04/24/12/47487_98_68.jpg",
+        names: [ { language: "en", names: ['Wrens']} ,
+        { language: "fr", names:[ 'Wrens' ]},
+        { language: "de", names:[ 'Segler' ]},
+        { language: "es", names:[ 'Wrens' ]},
+        { language: "pt", names:[ 'Wrens' ]},
+        { language: "it", names:[ 'Wrens' ]}],
+        species: '88',
+        genera: '19',
+        // pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Small and rather inconspicuous, except for their loud and often complex songs. Live in almost any environment.',
+                identification: 'Round-bodied, short-tailed and short-winged, with pointed bills and quite strong feet.'
+            }
+        ],
+        eol: "http://eol.org/pages/1602/overview",
+        wiki: "https://en.wikipedia.org/wiki/Troglodytidae"
+    },
+    {
+        taxon: 'family',
+        name: 'Muscicapidae',
+        thumb: "2012/06/12/23/53991_260_190.jpg",
+        names: [ { language: "en", names: ['Old World flycatcher']} ,
+        { language: "fr", names:[ 'Old World flycatcher' ]},
+        { language: "de", names:[ 'Fliegenschnäpper' ]},
+        { language: "es", names:[ 'Old World flycatcher' ]},
+        { language: "pt", names:[ 'Old World flycatcher' ]},
+        { language: "it", names:[ 'Old World flycatcher' ]}],
+        species: '324',
+        genera: '51',
+        // pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Weak songs and harsh calls.',
+                identification: 'Small to medium birds, dull brown in colour. Broad, flattened bills suited to catching insects in flight; ground-foraging species have finer bills.'
+            }
+        ],
+        eol: "http://eol.org/pages/1637/overview",
+        wiki: "https://en.wikipedia.org/wiki/Muscicapidae"
+    },
+    {
+        taxon: 'family',
+        name: 'Passeridae',
+        thumb: "2015/06/17/14/46120_88_88.jpg",
+        names: [ { language: "en", names: ['Sparrows']} ,
+        { language: "fr", names:[ 'Passéridés' ]},
+        { language: "de", names:[ 'Sperlinge' ]},
+        { language: "es", names:[ 'Sparrows' ]},
+        { language: "pt", names:[ 'Sparrows' ]},
+        { language: "it", names:[ 'Sparrows' ]}],
+        species: '43',
+        genera: '8',
+        // pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Many species nest on buildings and the house and Eurasian tree sparrows, in particular, inhabit cities in large numbers, so sparrows are among the most familiar of all wild birds. They are primarily seed-eaters, though they also consume small insects.',
+                identification: 'Finch-like birds. They have stout bodies, rounded wings and broad heads, with deep, conical bills adapted for seed-eating.'
+            }
+        ],
+        eol: "http://eol.org/pages/1627/overview",
+        wiki: "https://en.wikipedia.org/wiki/Passeridae"
+    },
+    {
+        taxon: 'family',
+        name: 'Columbidae',
+        thumb: "2014/12/25/21/51614_88_88.jpg",
+        names: [ { language: "en", names: ['Pigeon']} ,
+        { language: "fr", names:[ 'Pigeon' ]},
+        { language: "de", names:[ 'Tauben' ]},
+        { language: "es", names:[ 'Paloma' ]},
+        { language: "pt", names:[ 'Pombos' ]},
+        { language: "it", names:[ 'Pigeon' ]}],
+        species: '310',
+        genera: '42',
+        // pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Columbine refers to pigeons and doves. Likely the most common birds in the world. They primarily feed on seeds, fruits, and plants.',
+                identification: 'Small, rounded heads, small, slim bills with a small fleshy patch at the base, rounded bodies with dense, soft feathers, tapered wings and short, scaly legs.'
+            }
+        ],
+        eol: "http://eol.org/pages/7978/overview",
+        wiki: "https://en.wikipedia.org/wiki/Columbidae"
+    },
 ];

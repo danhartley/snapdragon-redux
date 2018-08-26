@@ -5,7 +5,7 @@ import { herbsAndSpices } from 'api/snapdragon/herbs-and-spices';
 import { vegetables } from 'api/snapdragon/vegetables';
 import { fruit } from 'api/snapdragon/fruit';
 import { insects } from 'api/snapdragon/insects';
-import { nationalFlowers } from 'api/snapdragon/national-flowers';
+import { commonCityBirds } from 'api/snapdragon/common-city-birds';
 
 import { leaf } from 'api/leaf';
 
@@ -13,7 +13,7 @@ export const collections = [
     {
         id: 1,
         type: 'species',
-        name: 'Herbs',
+        name: 'Trees',
         items: deciduousAndEvergreenTrees,
         eol_name: 'Deciduous and evergreen trees',
         eol_link: 'https://eol.org/collections/140596'
@@ -21,29 +21,13 @@ export const collections = [
     {
         id: 2,
         type: 'species',
-        name: 'UK Woodland',
-        // items: uk1,
-        eol_name: 'UK 1 - Woodland',
-        eol_link: 'https://eol.org/collections/139458'
-    },
-    {
-        id: 3,
-        type: 'species',
-        name: 'Mediterranean',
-        // items: med1,
-        eol_name: 'Mediterranean 1',
-        eol_link: 'https://eol.org/collections/139572'
-    },
-    {
-        id: 4,
-        type: 'species',
         name: 'Herbs and Spices',
         items: herbsAndSpices,
         eol_name: 'Herbs and Spices',
         eol_link: 'https://eol.org/collections/139051'
     },
     {
-        id: 5,
+        id: 3,
         type: 'species',
         name: 'Vegetables',
         items: vegetables,
@@ -51,7 +35,7 @@ export const collections = [
         eol_link: 'https://eol.org/collections/140088'
     },
     {
-        id: 6,
+        id: 4,
         type: 'species',
         name: 'Fruit',
         items: fruit,
@@ -59,7 +43,7 @@ export const collections = [
         eol_link: 'https://eol.org/collections/140297'
     },
     {
-        id: 7,
+        id: 5,
         type: 'species',
         name: 'Insects',
         items: insects,
@@ -67,14 +51,29 @@ export const collections = [
         eol_link: 'https://eol.org/collections/140494'
     },
     {
-        id: 8,
+        id: 6,
         type: 'species',
-        name: 'National Flowers',
-        items: nationalFlowers,
-        // items: R.take(4, nationalFlowers),
-        eol_name: 'National Flowers',
-        eol_link: 'https://eol.org/collections/140523'
+        name: '8 Common City Birds',
+        items: commonCityBirds,
+        eol_name: '8 Common City Birds',
+        eol_link: 'https://eol.org/collections/140683'
     },
+    // {
+    //     id: 2,
+    //     type: 'species',
+    //     name: 'UK Woodland',
+    //     items: uk1,
+    //     eol_name: 'UK 1 - Woodland',
+    //     eol_link: 'https://eol.org/collections/139458'
+    // },
+    // {
+    //     id: 3,
+    //     type: 'species',
+    //     name: 'Mediterranean',
+    //     items: med1,
+    //     eol_name: 'Mediterranean 1',
+    //     eol_link: 'https://eol.org/collections/139572'
+    // },
     {
         id: 101,
         type: 'skill',

@@ -37,7 +37,9 @@
     --snap-grid-background: rgba(185, 200, 204,.3);
     --snap-container-background: rgb(255, 255, 255);
     --snap-taxon-card-background: rgba(52, 105, 23,.1);
+    --snap-taxon-highlight-background: rgba(52, 105, 23,.3);
     --snap-species-card-background: rgba(194, 183, 91,.2);
+    --snap-species-highlight-background: rgba(194, 183, 91,.4);
     --snap-strips-background: rgba(182, 201, 213,.5);
     --snap-list-header: rgba(95, 125, 89,.8);
     --snap-list-background: rgba(125,125,125,.1);
