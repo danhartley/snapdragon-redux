@@ -29,7 +29,7 @@ export const renderLessonPlans = (planId) => {
 
         const parent = document.querySelector('#listModal .js-lesson-plans');
 
-        const level = `<tr class="table-row"><td>Level ${index + 1}</td></tr>`;
+        const level = `<tr class="table-row level${index + 1}"><td class="lp-level">Level ${index + 1}</td></tr>`;
 
         parent.innerHTML += level;
 
@@ -40,6 +40,29 @@ export const renderLessonPlans = (planId) => {
             
             renderTemplate({ layout },template.content, parent);       
             
+            document.querySelectorAll('.lp-kind').forEach(kind => {
+                switch(kind.innerHTML) {
+                    case 'S':
+                        kind.innerHTML = `<span class="icon"><i class="fas fa-chalkboard"></i></i></span>`;
+                        if(!config.isPortraitMode) kind.innerHTML += '<span>species info</span>'
+                        kind.parentElement.parentElement.classList.add('species-background')
+                        break;
+                    case 'F':
+                        kind.innerHTML = `<span class="icon"><i class="fas fa-chalkboard"></i></i></span>`;
+                        if(!config.isPortraitMode) kind.innerHTML += '<span>family info</span>'
+                        kind.parentElement.parentElement.classList.add('taxon-background')
+                        break;
+                    case 'MC':
+                        kind.innerHTML = `<span class="icon"><i class="fas fa-check-circle"></i></span>`;
+                        if(!config.isPortraitMode) kind.innerHTML += '<span>multiple choice</span>'
+                        break;
+                    case 'T':
+                        kind.innerHTML = `<span class="icon"><i class="fas fa-edit"></i></span>`;
+                        if(!config.isPortraitMode) kind.innerHTML += '<span>text entry</span>'
+                        break;
+                    default:
+                }
+            });
         });
     });
     

@@ -1,15 +1,13 @@
 <tr class="table-row">            
     <td>
-        <input type="checkbox" checked>
+        <input type="checkbox" checked disabled>
     </td>
     <td>
-        <!-- <span class="lessonplan-question">Family latin</span>
-        <span class="lessonplan-answer">Family common</span> -->
-        <span class="lessonplan-question">{{ layout.given }}</span>
-        <span class="lessonplan-answer">{{ layout.options }}</span>
+        <span class="lp-context">{{ layout.given }}</span>
+        <span class="lp-answer">{{ layout.options }}</span>
     </td>
     <td>
-        <span>{{ layout.kind }}</span>
+        <span class="lp-kind">{{ layout.kind }}</span>
     </td>
     <td>
         <span>{{ layout.points }}</span>

@@ -136,6 +136,10 @@
       }
 }
 
+.lesson-plans {
+    border: 1em solid var(--snap-container-background);
+}
+
 @media (min-width: 1024px) {
     .table-header th:nth-child(3), .table-footer td:nth-child(3) {
         flex: 4;
