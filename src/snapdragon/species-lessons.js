@@ -44,7 +44,7 @@ export const commonBirds = {
     descriptions: ['8 birds common to European cities.'],
     items:[ ...collections[5].items ],
     collections: ['8 Common City Birds'],
-    thumb: 'http://media.eol.org/content/2015/01/21/07/32241_88_88.jpg',
+    thumb: 'https://media.eol.org/content/2015/01/21/07/32241_88_88.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     level: 'General Interest',
