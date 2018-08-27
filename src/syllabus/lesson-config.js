@@ -6,7 +6,7 @@ export const config = {
     excludeRevision: false,
     isPortraitMode: false,
     collection: {
-        id: ''
+        id: 0
     },
     languages : [
         { name: 'English', lang: 'en' },

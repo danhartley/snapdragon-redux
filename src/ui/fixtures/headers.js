@@ -49,10 +49,11 @@ export const renderHeaders = collection => {
     if(layout.type === 'test') {
         const question = `Question ${ layout.progressIndex } of ${questionCount}`;
         setTimeout(() => {
-            DOM.rightHeaderTxt.innerHTML = counter.lesson === 'active' ? question : '';
+            // DOM.rightHeaderTxt.innerHTML = counter.lesson === 'active' ? question : '';
         });
     } else if(layout.type === 'revision') {
-        const isActiveLesson = counter.lesson === 'active' && collection;
+        const isActiveLesson = !!collection;
+        // const isActiveLesson = counter.lesson === 'active' && collection;
         const isSpeciesCard = layout.name === 'screen-species-card';
         const isFamilyCard = layout.name === 'screen-taxon-card';
         const speciesHeader = config.isPortraitMode ? 'Species summary' : 'Species summary';
@@ -65,7 +66,4 @@ export const renderHeaders = collection => {
     if(layout.screens.find(el => el.name === 'summary')) {
         DOM.rightHeaderTxt.innerHTML = 'Lesson progress';
     }
-    // if(counter.index === 0 && counter.lesson === 'inactive') {
-    //     DOM.rightHeaderTxt.innerHTML = '';
-    // }
 };

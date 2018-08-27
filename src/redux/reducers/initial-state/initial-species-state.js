@@ -6,7 +6,7 @@ import { kitchenGarden, rhsTrees, commonBirds } from 'snapdragon/species-lessons
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { getFamilies } from 'redux/reducers/initial-state/species-state/species-taxa';
 
-const collections = [ kitchenGarden, rhsTrees ];
+const collections = [ kitchenGarden, rhsTrees, commonBirds ];
 
 const initCollection = (selectedCollection = collections[0]) => {
 

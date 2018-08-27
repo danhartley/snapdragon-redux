@@ -42,7 +42,8 @@ setTimeout(()=>{
         config.lesson.levels = levels;
     }
 
-    const counter = currentCounter ? { ...currentCounter } : { index: null, lesson: 'inactive' };
+    const counter = currentCounter ? { ...currentCounter } : { index: null };
+    // const counter = currentCounter ? { ...currentCounter } : { index: null, lesson: 'inactive' };
 
     actions.boundUpdateConfig(config);
     actions.boundToggleLesson(counter);

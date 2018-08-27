@@ -4,29 +4,27 @@ import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import { selectHandler } from 'ui/helpers/handlers';
 import { subscription } from 'redux/subscriptions';
-import { renderSpeciesCollection } from 'ui/screens/lists/species';
+import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { elem } from 'ui/helpers/class-behaviour';
 import { renderLessonPlans } from 'ui/screens/lists/lesson-plans-table';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
 
 export const renderCollections = (counter) => {
 
-    if(counter && counter.lesson === 'active') return;
+    const { collections, config, collection: _collection } = store.getState();
 
-    const { collections, config: currentConfig, collection: currentCollection } = store.getState();
+    let collection = { ..._collection };
 
-    if(counter.log) {
-        currentCollection.paused = true;
-        actions.boundSelectCollection(currentCollection);
+    if(counter && counter.log) {
+        // collection.paused = true;
+        actions.boundSelectCollection(collection);
     }    
 
-    subscription.add(renderSpeciesCollection, 'collections', 'screen');
+    subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
 
     const template = document.createElement('template');
     template.innerHTML = collectionsTemplate;
 
-    let config = { ...currentConfig };
-    let collection = currentCollection ? { ...currentCollection } : { name: '---', id: '', descriptions: null };
     let language = config.languages.find(l => l.lang === config.language);
     let courses = collections.filter(collection => collection.type === 'species');
 
@@ -43,7 +41,7 @@ export const renderCollections = (counter) => {
 
     renderTemplate({ courses, config, collection, language, copy }, template.content, DOM.rightBody);
 
-    const course = collections.find(collection => collection.selected) || { id: 0 };
+    collection = collections.find(collection => collection.selected) || { id: 0 };
 
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
@@ -54,7 +52,7 @@ export const renderCollections = (counter) => {
     if(config.isPortraitMode) {
         learningActionBtn.innerHTML =  'View course species';
     } else {
-        const lessonPaused = counter.log ? true : false;
+        const lessonPaused = (counter && counter.log) ? true : false;
         learningActionBtn.innerHTML = 'Begin lesson'
         if(history || lessonPaused) {
             learningActionBtn.innerHTML = 'Continue lesson';
@@ -63,12 +61,14 @@ export const renderCollections = (counter) => {
 
     // Courses
 
-    if(course.name) {
-        document.querySelectorAll(`[name="${course.name}"]`)[0].classList.add('active');
+    if(collection && collection.name) {
+        document.querySelectorAll(`[name="${collection.name}"]`)[0].classList.add('active');
         elem.show(learningActionBtn);
         elem.hide(learningActionBtnPlaceholder);
         elem.show(lessonPlanLink);
-        collectionsHeader.innerHTML = course.name;
+        collectionsHeader.innerHTML = collection.name;
+    } else {
+        collectionsHeader.innerHTML = 'Courses';        
     }
 
     selectHandler('.dropdown.js-collections .dropdown-item', id => {
@@ -78,15 +78,20 @@ export const renderCollections = (counter) => {
         const descriptions = collection.descriptions.map(description => `<span>${description}</span>`).join('');
         collectionDescription.innerHTML = descriptions;
         
-        config = { ...config, ...{ collection: { id: parseInt(id) }} };
+        config.collection = { id: parseInt(id) };
 
-        if(!config.isPortraitMode) {
-            actions.boundSelectCollection(collection);
-        }
+        subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
 
-        elem.show(learningActionBtn);
-        elem.hide(learningActionBtnPlaceholder);        
-        elem.show(lessonPlanLink);
+        setTimeout(() => {
+            // collection.isPaused = config.isPortraitMode
+            if(!config.isPortraitMode) {
+                actions.boundSelectCollection(collection);
+            }
+    
+            elem.show(learningActionBtn);
+            elem.hide(learningActionBtnPlaceholder);        
+            elem.show(lessonPlanLink);    
+        });        
     });
 
     // Languages
@@ -103,7 +108,9 @@ export const renderCollections = (counter) => {
     // User action
 
     learningActionBtn.addEventListener('click', () => {        
-        config.isPortraitMode ? actions.boundSelectCollection(collection) : actions.boundChangeCollection(config);
+        if(config.isPortraitMode) {
+            actions.boundSelectCollection(collection);
+         } else { actions.boundChangeCollection(config); }
         updateNavIcons();        
     });
 
@@ -124,6 +131,6 @@ export const renderCollections = (counter) => {
     lessonPlanLink.addEventListener('click', event => {
         const planId = config.isPortraitMode ? 3 : 1;
         renderLessonPlans(planId);
-        // renderLessonPlans(config.collection.id);
     });
+    
 };

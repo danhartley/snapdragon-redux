@@ -4,7 +4,7 @@ import { actions } from 'redux/actions/action-creators';
 
 export const nextLesson = (config) => {
 
-    if(config.collection.id === '') return;
+    if(config.collection.id === 0) return;
 
     const { lessonPlan, collection, score } = store.getState();
 

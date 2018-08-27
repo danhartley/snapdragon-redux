@@ -42,7 +42,7 @@ test('collection should return default parameter state when there is no action t
   const action = { };  
   const state = collection(speciesState.collection, action);
 
-  expect(state).toEqual(null);
+  expect(state).toEqual({"descriptions": null, "id": 0, "name": "---"});
 });
 
 

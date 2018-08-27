@@ -5,6 +5,9 @@ import { speciesState } from 'redux/reducers/initial-state/initial-species-state
 export const collections = (state = speciesState.collections, action) => {
     switch(action.type) {
         case types.SELECT_COLLECTION:
+            // if(!action.data || !action.data.id) {
+            //     return state;
+            // }
             const cols = [ ...state ];
             cols.forEach(col => {
                 if(col.id === action.data.id) {
@@ -19,7 +22,7 @@ export const collections = (state = speciesState.collections, action) => {
     }
 };
 
-export const collection = (state = null, action) => {
+export const collection = (state = { name: '---', id: 0, descriptions: null }, action) => {
 
     let itemIndex = 0;
     let currentRound = 0;

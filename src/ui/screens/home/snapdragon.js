@@ -15,7 +15,7 @@ export const renderSnapdragon = (counter) => {
     const parent = DOM.leftBody;
     parent.innerHTML = '';
 
-    const collections = [ kitchenGarden, rhsTrees ];
+    const collections = [ kitchenGarden, rhsTrees, commonBirds ];
 
     collections.forEach(collection => {
         collection.families = collection.items.map(item => item.family).filter(utils.onlyUnique);

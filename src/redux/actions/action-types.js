@@ -1,6 +1,6 @@
 const NEXT_LESSON = '[NEXT_LESSON] Prepare next lesson';
-const NEXT_ITEM = '[NEXT_ITEM] Render next item';
-const NEXT_LAYOUT = '[NEXT_LAYOUT] Select next layout';
+const NEXT_ITEM = '[NEXT_ITEM] Get next item';
+const NEXT_LAYOUT = '[NEXT_LAYOUT] Render next layout';
 const UPDATE_SCORE = '[UPDATE_SCORE] Check user answer and update running score';
 const END_REVISION = '[END_REVISION] Revision complete';
 const UPDATE_HISTORY = '[UPDATE_HISTORY] Copy round score to history';

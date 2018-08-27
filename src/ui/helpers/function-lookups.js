@@ -8,7 +8,7 @@ import { renderSummary } from 'ui/screens/progress/summary';
 import { renderLeafTile } from 'ui/screens/landscape/leaf-tile';
 import { renderNameEntry } from 'ui/screens/text-entry/leaf-text-entry';
 import { runTask } from 'ui/screens/command';
-import { renderSpeciesCollection } from 'ui/screens/lists/species';
+import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { renderRadioButtons } from 'ui/screens/multichoice/radiobuttons';
 import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 import { renderCompleteText } from 'ui/screens/text-entry/text-complete';
@@ -18,7 +18,7 @@ import { renderWildcard } from 'ui/screens/cards/wildcard-card';
 const functions = [
     { name: 'text-entry', func: renderTextEntry },
     { name: 'specimen-images', func: renderSpecimenTiles },
-    { name: 'collections', func: renderSpeciesCollection },
+    { name: 'collection', func: renderSpeciesCollectionList },
     { name: 'species-card', func: renderCard },
     { name: 'species-scientifics', func: renderMultiStrips },
     { name: 'species-vernaculars', func: renderMultiStrips },
