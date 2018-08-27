@@ -29,7 +29,8 @@ export const renderMultiStrips = (collection) => {
     
     template.innerHTML = familyTemplate;
 
-    const families = taxa.filter(taxon => taxon.taxon === 'family');
+    const collectionFamilies = collection.items.map(item => item.family).filter(utils.onlyUnique);
+    const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, collectionFamilies));
 
     let description = config.isPortraitMode ? `Family: ${item.family} ` : `Which of the above fits the ${item.family}?`;
 
