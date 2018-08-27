@@ -1,4 +1,4 @@
-const NEXT_LESSON = '[NEXT_LESSON] Prepare next lesson';
+const NEXT_LESSON = '[NEXT_LESSON] Get (new) lesson plan';
 const NEXT_ITEM = '[NEXT_ITEM] Get next item';
 const NEXT_LAYOUT = '[NEXT_LAYOUT] Render next layout';
 const UPDATE_SCORE = '[UPDATE_SCORE] Check user answer and update running score';
@@ -8,9 +8,9 @@ const CHANGE_COLLECTION = '[CHANGE_COLLECTION] Change collection';
 const NEXT_ROUND = '[NEXT_ROUND] Go to next round';
 const NEXT_LEVEL = '[NEXT_LEVEL] Go to next level';
 const UPDATE_CONFIG = '[UPDATE_CONFIG] change to config';
-const TOGGLE_LESSON = '[TOGGLE_LESSON] set counter to inactive';
-const SELECT_COLLECTION = '[SELECT_COLLECTION] update the current selected collection';
-const UPDATE_LANGUAGE = '[UPDATE_LANGUAGE] update the current language';
+const STOP_START_LESSON = '[STOP_START_LESSON] Pause or play current lesson';
+const SELECT_COLLECTION = '[SELECT_COLLECTION] Update the current selected collection';
+const UPDATE_LANGUAGE = '[UPDATE_LANGUAGE] Update the current language';
 
 export const types = {
     NEXT_LESSON,
@@ -23,7 +23,7 @@ export const types = {
     NEXT_ROUND,
     NEXT_LEVEL,
     UPDATE_CONFIG,
-    TOGGLE_LESSON,
+    STOP_START_LESSON,
     SELECT_COLLECTION,
     UPDATE_LANGUAGE
 };

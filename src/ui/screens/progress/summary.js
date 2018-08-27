@@ -61,15 +61,12 @@ export const renderSummary = (history) => {
             const level = lessonPlanner.getNextLevel(lessonName, levelName, config.isPortraitMode);
             config.lesson.level = level;
             actions.boundNextLevel({ index: 0 });
-            // actions.boundNextLevel({ index: 0, lesson: 'inactive' });
             setTimeout(() => {
                 actions.boundUpdateConfig(config);
                 actions.boundNextLevel({ index: 0 });
-                // actions.boundNextLevel({ index: 0, lesson: 'active' });
             });
         } else {
-            actions.boundNextRound({ index: 0 });            
-            // actions.boundNextRound({ index: 0, lesson: 'active' });            
+            actions.boundNextRound({ index: 0 });
             setTimeout(() => {
                 actions.boundUpdateConfig(config);    
             });

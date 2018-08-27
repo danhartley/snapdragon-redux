@@ -14,5 +14,5 @@ export const nextLesson = (config) => {
 
     const _lessonPlan = isLessonPlanRequired ? lessonPlanner.createLessonPlan(config, collection) : lessonPlan;
 
-    actions.boundNextLesson(_lessonPlan);
+    actions.boundNextLessonPlan(_lessonPlan);
 };

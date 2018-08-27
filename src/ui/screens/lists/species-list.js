@@ -18,8 +18,6 @@ export const renderSpeciesCollectionList = (collection) => {
 
     const config = { ...currentConfig, ...{ collection: { id: collection.id } } };
 
-    // if(config.isPortraitMode && collection.isPaused) return;
-
     const template = document.createElement('template');
 
     const buildTable = () => {
@@ -143,9 +141,9 @@ export const renderSpeciesCollectionList = (collection) => {
 
     if(continueLearningActionBtn) {
 
-        const lessonPaused = (counter && counter.log) ? true : false;
+        const isLessonPaused = (counter && counter.log) ? true : false;
 
-        if(history || lessonPaused) {
+        if(history || isLessonPaused) {
             continueLearningActionBtn.innerHTML = 'Continue lesson';
         }
         
@@ -154,9 +152,10 @@ export const renderSpeciesCollectionList = (collection) => {
         config.excludeRevision = levelName === 'Level 1' ? false : true;
 
         const getLatestCounter = () => { 
-            const counter = lessonPaused ? { index: store.getState().counter.log.index } : { index: 0 };  
-            // const counter = lessonPaused ? { index: store.getState().counter.log.index, lesson: 'active' } : { index: 0, lesson: 'active' };  
-            return counter;
+            const counter = store.getState().counter;
+            const log = counter.log;
+            const index = log ? log.index : counter.index;
+            return { index };
         };
 
         continueLearningActionBtn.addEventListener('click', () => {
@@ -166,13 +165,11 @@ export const renderSpeciesCollectionList = (collection) => {
                 const level = lessonPlanner.getNextLevel(lessonName, levelName, config.isPortraitMode);
                 config.lesson.level = level;
                 actions.boundNextLevel({ index: 0 });
-                // actions.boundNextLevel({ index: 0, lesson: 'inactive' });
                 setTimeout(() => {
                     actions.boundUpdateConfig(config);
                     actions.boundNextLevel({ index: 0 });
-                    // actions.boundNextLevel({ index: 0, lesson: 'active' });
                 });
-            } else if(lessonPaused) {
+            } else if(isLessonPaused) {
                 actions.boundToggleLesson(getLatestCounter());
             } else {
                 if(score) {

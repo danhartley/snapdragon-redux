@@ -5,7 +5,9 @@ import { subscription } from 'redux/subscriptions';
 
 export const nextLayout = (counter) => {
 
-    // if(counter && counter.lesson === 'inactive') return;
+    const isLessonPaused = (counter.log && counter.log.index !== counter.index);
+
+    if(isLessonPaused) return;
 
     const { lessonPlan, config } = store.getState();
 
@@ -16,7 +18,7 @@ export const nextLayout = (counter) => {
     subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
 
     subscription.getByName('renderSnapdragon').forEach(sub => subscription.remove(sub));
-    // subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
+    subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
 
     if(!layout) return;
 

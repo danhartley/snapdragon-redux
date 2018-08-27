@@ -252,7 +252,7 @@ test('when user selects a collection state should be populated', () => {
         }
     ];
 
-    actions.boundNextLesson(_lessonPlan); // nextLesson(config) triggers: NEXT_LESSON
+    actions.boundNextLessonPlan(_lessonPlan); // nextLesson(config) triggers: NEXT_LESSON
 
     let { counter, lessonPlan, layout } = store.getState();
 

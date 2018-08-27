@@ -11,12 +11,11 @@ import collectionsTemplate from 'ui/screens/home/collections-template.html';
 
 export const renderCollections = (counter) => {
 
-    const { collections, config, collection: _collection } = store.getState();
+    const { collections, config, collection: _collection, history } = store.getState();
 
     let collection = { ..._collection };
 
     if(counter && counter.log) {
-        // collection.paused = true;
         actions.boundSelectCollection(collection);
     }    
 
@@ -41,7 +40,9 @@ export const renderCollections = (counter) => {
 
     renderTemplate({ courses, config, collection, language, copy }, template.content, DOM.rightBody);
 
-    collection = collections.find(collection => collection.selected) || { id: 0 };
+    const selectedCollection = collections.find(collection => collection.selected);
+
+    collection = selectedCollection ? { ...collection, ...selectedCollection } : { id: 0 };
 
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
@@ -52,9 +53,9 @@ export const renderCollections = (counter) => {
     if(config.isPortraitMode) {
         learningActionBtn.innerHTML =  'View course species';
     } else {
-        const lessonPaused = (counter && counter.log) ? true : false;
+        const isLessonPaused = (counter && counter.log) ? true : false;
         learningActionBtn.innerHTML = 'Begin lesson'
-        if(history || lessonPaused) {
+        if(history || isLessonPaused) {
             learningActionBtn.innerHTML = 'Continue lesson';
         }
     }    
@@ -73,7 +74,7 @@ export const renderCollections = (counter) => {
 
     selectHandler('.dropdown.js-collections .dropdown-item', id => {
         
-        collection = collections.find(collection => collection.id === parseInt(id));
+        collection = { ...collection, ...collections.find(collection => collection.id === parseInt(id)) };
         collectionsHeader.innerHTML = collection.name;
         const descriptions = collection.descriptions.map(description => `<span>${description}</span>`).join('');
         collectionDescription.innerHTML = descriptions;
@@ -83,7 +84,6 @@ export const renderCollections = (counter) => {
         subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
 
         setTimeout(() => {
-            // collection.isPaused = config.isPortraitMode
             if(!config.isPortraitMode) {
                 actions.boundSelectCollection(collection);
             }
@@ -107,10 +107,27 @@ export const renderCollections = (counter) => {
 
     // User action
 
-    learningActionBtn.addEventListener('click', () => {        
+    const getLatestCounter = () => { 
+        const counter = store.getState().counter;
+        const log = counter.log;
+        const index = log ? log.index : counter.index;
+        return { index };
+    };
+
+
+    learningActionBtn.addEventListener('click', () => {
+        subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
         if(config.isPortraitMode) {
             actions.boundSelectCollection(collection);
-         } else { actions.boundChangeCollection(config); }
+         } else {
+            subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
+            const isLessonPaused = (counter && counter.log) ? true : false; 
+             if(isLessonPaused) {
+                actions.boundToggleLesson(getLatestCounter());
+             } else {
+                actions.boundChangeCollection(config); 
+             }
+            }
         updateNavIcons();        
     });
 
