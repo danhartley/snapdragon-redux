@@ -21,7 +21,7 @@ export const taxa = [
                 identification: 'Composite flowers with either disk or ray flowers, or both.'
             }
         ],
-        pollinators: [ { language: "en", names: ['Insects', 'Wind', 'Asexual'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Insects', 'Wind', 'Asexual'] } ],
         members: ['Cynara cardunculus', 'Helianthus annuus'],
         wiki: "https://en.wikipedia.org/wiki/Asteraceae",
         eol: "http://eol.org/pages/4206/overview"
@@ -40,7 +40,7 @@ export const taxa = [
         members: [  'Daucus carota subsp. sativus', 'Coriandrum sativum', 'Petroselinum crispum', 'Foeniculum vulgare', 
                     'Anethum graveolens', 'Conium maculatum', 'Cuminum cyminum', 'Carum carvi', 'Anthriscus cerefolium',
                     'Myrrhis odorata', 'Pimpinella anisum', 'Levisticum officinale', 'Pastinaca sativa'],
-        pollinators: [ { language: "en", names: ['Carpenter Bees', 'Mason Bees', 'Leafcutter Bees'], families: ['Xylocopa', 'Megachilidae'] } ],
+        traits: [ { language: "en", names: ['Carpenter Bees', 'Mason Bees', 'Leafcutter Bees'], families: ['Xylocopa', 'Megachilidae'] } ],
         species: 3700,
         genera: 400,
         toxic: { members:['Conium maculatum'] },
@@ -75,7 +75,7 @@ export const taxa = [
         eol: "http://eol.org/pages/4302/overview",
         thumb: "2014/08/14/23/80866_88_88.jpg",
         members: ['Ocimum basilicum', 'Rosmarinus officinalis'],
-        pollinators: [ { language: "en", names: ['Insects', 'Bumblebees', 'Single Bees'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Insects', 'Bumblebees', 'Single Bees'] } ],
         propagation: 'stem cuttings',
         aetherolea: ['Rosmarinus officinalis', 'Lavandula officinalis'],
         genera: 236,
@@ -107,7 +107,7 @@ export const taxa = [
         thumb: '2015/04/30/10/19667_88_88.jpg',
         species: 4060,
         genera: 372,
-        pollinators: [ { language: "en", names: ['Insects'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -138,7 +138,7 @@ export const taxa = [
                 identification: '3 tepals. Lily-like flowers, onion-like bulbs. Flowerheads wrapped in bract.'
             }
         ],
-        pollinators: [ { language: "en", names: ['Carpenter Bees' ,' Owlet Moths'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Carpenter Bees' ,' Owlet Moths'] } ],
         members: ['Allium cepa', 'Allium schoenoprasum'],
         wiki: "https://en.wikipedia.org/wiki/Amaryllidaceae",
         eol: "http://eol.org/pages/8187/overview"
@@ -197,7 +197,7 @@ export const taxa = [
         thumb: "2013/02/03/12/43681_98_68.jpg",
         species: 5700,
         members: ["Apis mellifera"],
-        pollinators: [ { language: "en", names: ['Flowering plants'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Flowering plants'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -260,7 +260,7 @@ export const taxa = [
         { language: "es", names:[ 'Grasses' ]},
         { language: "pt", names:[ 'Grasses' ]},
         { language: "it", names:[ 'Grasses' ]}],
-        pollinators: [ { language: "en", names: ['Wind', 'Insects'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Wind', 'Insects'] } ],
         wiki: 'https://en.wikipedia.org/wiki/Poaceae',
         species: 1200, 
         genera: 780,
@@ -288,7 +288,7 @@ export const taxa = [
         { language: "it", names:[ 'Ginger family' ]}],
         species: 1600,
         genera: 50,
-        pollinators: [ { language: "en", names: ['Insects'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -312,7 +312,7 @@ export const taxa = [
         { language: "it", names:[ 'Pepper family' ]}],
         species: 3600,
         genera: 13,
-        pollinators: [ { language: "en", names: ['Wind','Insects'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Wind','Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -337,7 +337,7 @@ export const taxa = [
         toxic: { members:['Hedysarum alpinum']},
         species: 19000,
         genera: 751,
-        pollinators: [ { language: "en", names: ['Insects'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -361,7 +361,7 @@ export const taxa = [
         { language: "it", names:[ 'Rosaceae' ]}],
         species: 4828,
         toxic: { members:['Conium maculatum'] },
-        pollinators: [ { language: "en", names: ['Insects', 'Wind'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Insects', 'Wind'] } ],
         genera: 91,
         descriptions: [
             {
@@ -386,7 +386,7 @@ export const taxa = [
         { language: "it", names:[ 'Limone' ]}],
         species: 1600,
         genera: 160,
-        pollinators: [ { language: "en", names: ['Insects'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -409,7 +409,7 @@ export const taxa = [
         { language: "it", names:[ 'Gourd family' ]}],
         species: 975,
         genera: 98,
-        pollinators: [ { language: "en", names: ['Bees', 'Beetles'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Bees', 'Beetles'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -432,7 +432,7 @@ export const taxa = [
         { language: "it", names:[ 'Amaranth family' ]}],
         species: 2040,
         genera: 165,
-        pollinators: [ { language: "en", names: ['Insects', 'Wind'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Insects', 'Wind'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -456,7 +456,7 @@ export const taxa = [
         { language: "it", names:[ 'Nightshades' ]}],
         species: 2700,
         genera: 98,
-        pollinators: [ { language: "en", names: ['Insects'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -480,7 +480,7 @@ export const taxa = [
         { language: "it", names:[ 'Mulberry family' ]}],
         species: 1100,
         genera: 38,
-        pollinators: [ { language: "en", names: ['Wind', 'Insects'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Wind', 'Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -504,7 +504,7 @@ export const taxa = [
         { language: "it", names:[ 'Grape family' ]}],
         species: 910,
         genera: 14,
-        pollinators: [ { language: "en", names: ['Bees', 'Insects'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Bees', 'Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -528,7 +528,7 @@ export const taxa = [
         { language: "it", names:[ 'Laurel family' ]}],
         species: 2850,
         genera: 45,
-        pollinators: [ { language: "en", names: ['Bees', 'Wasps'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Bees', 'Wasps'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -552,7 +552,7 @@ export const taxa = [
         { language: "it", names:[ 'Heath family' ]}],
         species: 4250,
         genera: 124,
-        pollinators: [ { language: "en", names: ['Bees', 'Hummingbirds'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Bees', 'Hummingbirds'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -576,7 +576,7 @@ export const taxa = [
         { language: "it", names:[ 'Borage family' ]}],
         species: 2000,
         genera: 146,
-        pollinators: [ { language: "en", names: ['Bees', 'Bumblebees'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Bees', 'Bumblebees'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -600,7 +600,7 @@ export const taxa = [
         { language: "it", names:[ 'Cariofillacee' ]}],
         species:  2625,
         genera: 81,
-        pollinators: [ { language: "en", names: ['Bees', 'Butterflies'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Bees', 'Butterflies'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -624,7 +624,7 @@ export const taxa = [
         { language: "it", names:[ 'Iris family' ]}],
         species:  2244,
         genera: 66,
-        pollinators: [ { language: "en", names: ['Solitary Bees', 'Butterflies', 'Moths', 'Birds', 'Flies'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Solitary Bees', 'Butterflies', 'Moths', 'Birds', 'Flies'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -648,7 +648,7 @@ export const taxa = [
         { language: "it", names:[ 'Iris family' ]}],
         species:  2244,
         genera: 66,
-        pollinators: [ { language: "en", names: ['Solitary Bees', 'Butterflies', 'Moths', 'Birds', 'Flies'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Solitary Bees', 'Butterflies', 'Moths', 'Birds', 'Flies'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -672,7 +672,7 @@ export const taxa = [
         { language: "it", names:[ 'Iris family' ]}],
         species:  2244,
         genera: 66,
-        pollinators: [ { language: "en", names: ['Solitary Bees', 'Butterflies', 'Moths', 'Birds', 'Flies'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Solitary Bees', 'Butterflies', 'Moths', 'Birds', 'Flies'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -696,7 +696,7 @@ export const taxa = [
         { language: "it", names:[ 'Mimosoideae' ]}],
         species:  2500,
         genera: 40,
-        pollinators: [ { language: "en", names: ['Bees', 'Butterflies'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Bees', 'Butterflies'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -719,7 +719,7 @@ export const taxa = [
         { language: "it", names:[ 'Sapindaceae' ]}],
         species:  1858,
         genera: 138,
-        pollinators: [ { language: "en", names: ['Insects', 'Birds', 'Wind'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Insects', 'Birds', 'Wind'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -742,7 +742,7 @@ export const taxa = [
         { language: "it", names:[ 'Betulacee' ]}],
         species:  167,
         genera: 6,
-        pollinators: [ { language: "en", names: ['Wind'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Wind'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -765,7 +765,7 @@ export const taxa = [
         { language: "it", names:[ 'Fagacee' ]}],
         species:  927,
         genera: 8,
-        pollinators: [ { language: "en", names: ['Insects', 'Wind'] } ],
+        traits: [ { language: "en", names: ['Insects', 'Wind'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -788,7 +788,7 @@ export const taxa = [
         { language: "it", names:[ 'Bignonias' ]}],
         species:  860,
         genera: 85,
-        pollinators: [ { language: "en", names: ['Bees', 'Birds', 'Moths'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Bees', 'Birds', 'Moths'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -811,7 +811,7 @@ export const taxa = [
         { language: "it", names:[ 'Caesalpinioideae' ]}],
         species:  2000,
         genera: 160,
-        pollinators: [ { language: "en", names: ['Bees', 'Butterflies'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Bees', 'Butterflies'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -834,7 +834,7 @@ export const taxa = [
         { language: "it", names:[ 'Asparagacee' ]}],
         species:  2900,
         genera: 114,
-        pollinators: [ { language: "en", names: ['Flies', 'Bees'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Flies', 'Bees'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -857,7 +857,7 @@ export const taxa = [
         { language: "it", names:[ 'Myrtles' ]}],
         species:  5950,
         genera: 132,
-        pollinators: [ { language: "en", names: ['Bees'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Bees'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -880,7 +880,7 @@ export const taxa = [
         { language: "it", names:[ 'Wild Alder family' ]}],
         species:  330,
         genera: 27,
-        pollinators: [ { language: "en", names: ['Wind'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Wind'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -903,7 +903,7 @@ export const taxa = [
         { language: "it", names:[ 'Olive family' ]}],
         species:  700,
         genera: 25,
-        pollinators: [ { language: "en", names: ['Wind', 'Insects'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Wind', 'Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -926,7 +926,7 @@ export const taxa = [
         { language: "it", names:[ 'Caesalpinioideae' ]}],
         species: 2500,
         genera: 148,
-        pollinators: [ { language: "en", names: [''] } ],
+        traits: [ { language: "en", name: 'pollination', values: [''] } ],
         descriptions: [
             {
                 language: 'en',
@@ -949,7 +949,7 @@ export const taxa = [
         { language: "it", names:[ 'Holly' ]}],
         species: 400,
         genera: 2,
-        pollinators: [ { language: "en", names: ['Bees', 'Insects'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Bees', 'Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -972,7 +972,7 @@ export const taxa = [
         { language: "it", names:[ 'Walnut family' ]}],
         species: 50,
         genera: 10,
-        pollinators: [ { language: "en", names: ['Wind'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Wind'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -995,7 +995,7 @@ export const taxa = [
         { language: "it", names:[ 'Dillwynia' ]}],
         species: 375,
         genera: 3,
-        pollinators: [ { language: "en", names: ['Insects'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1018,7 +1018,7 @@ export const taxa = [
         { language: "it", names:[ 'Witch-hazel family' ]}],
         species: 140,
         genera: 30,
-        pollinators: [ { language: "en", names: [ 'Wind', 'Insects'] } ],
+        traits: [ { language: "en", name: 'pollination', values: [ 'Wind', 'Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1041,7 +1041,7 @@ export const taxa = [
         { language: "it", names:[ 'Magnolia family' ]}],
         species: 219,
         genera: 17,
-        pollinators: [ { language: "en", names: [ 'Beetles', 'Bees'] } ],
+        traits: [ { language: "en", name: 'pollination', values: [ 'Beetles', 'Bees'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1064,7 +1064,7 @@ export const taxa = [
         { language: "it", names:[ 'Platanacee' ]}],
         species: 8,
         genera: 1,
-        pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        traits: [ { language: "en", name: 'pollination', values: [ 'Wind'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1087,7 +1087,7 @@ export const taxa = [
         { language: "it", names:[ 'Willow family' ]}],
         species: 1220,
         genera: 56,
-        pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        traits: [ { language: "en", name: 'pollination', values: [ 'Wind'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1110,7 +1110,7 @@ export const taxa = [
         { language: "it", names:[ 'Tea family' ]}],
         species: 200,
         genera: 40,
-        pollinators: [ { language: "en", names: [ 'Bees' ] } ],
+        traits: [ { language: "en", name: 'pollination', values: [ 'Bees' ] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1133,7 +1133,7 @@ export const taxa = [
         { language: "it", names:[ 'Storax family' ]}],
         species: 160,
         genera: 11,
-        pollinators: [ { language: "en", names: [ 'Bumblees', 'Bees', 'Butterflies', 'Wasps', 'Wind'] } ],
+        traits: [ { language: "en", name: 'pollination', values: [ 'Bumblees', 'Bees', 'Butterflies', 'Wasps', 'Wind'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1156,7 +1156,7 @@ export const taxa = [
         { language: "it", names:[ 'Storax family' ]}],
         species: 4225,
         genera: 244,
-        pollinators: [ { language: "en", names: [ 'Bees', 'Hummingbirds', 'Bats', 'Insects'] } ],
+        traits: [ { language: "en", name: 'pollination', values: [ 'Bees', 'Hummingbirds', 'Bats', 'Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1179,7 +1179,7 @@ export const taxa = [
         { language: "it", names:[ '' ]}],
         species: 15,
         genera: 1,
-        pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        traits: [ { language: "en", name: 'pollination', values: [ 'Wind'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1202,7 +1202,7 @@ export const taxa = [
         { language: "it", names:[ 'Tits, chickadees' ]}],
         species: '--',
         genera: '--',
-        // pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        traits: [ { language: "en", name: 'diet', values: [ 'Insects', 'Nuts and seeds' ] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1225,7 +1225,7 @@ export const taxa = [
         { language: "it", names:[ 'Starlings' ]}],
         species: '--',
         genera: '--',
-        // pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        traits: [ { language: "en", name: 'diet', values: [ 'Insects', 'Fruit' ] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1248,7 +1248,7 @@ export const taxa = [
         { language: "it", names:[ 'Apodidi' ]}],
         species: '--',
         genera: '--',
-        // pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        traits: [ { language: "en", name: 'diet', values: [ 'Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1271,7 +1271,7 @@ export const taxa = [
         { language: "it", names:[ 'Wrens' ]}],
         species: '88',
         genera: '19',
-        // pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        traits: [ { language: "en", name: 'diet', values: [ 'Insects', 'Small frogs and lizards'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1294,7 +1294,7 @@ export const taxa = [
         { language: "it", names:[ 'Old World flycatcher' ]}],
         species: '324',
         genera: '51',
-        // pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        traits: [ { language: "en", name: 'diet', values: [ 'Insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1317,7 +1317,7 @@ export const taxa = [
         { language: "it", names:[ 'Sparrows' ]}],
         species: '43',
         genera: '8',
-        // pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        traits: [ { language: "en", name: 'diet', values: [ 'Seeds', 'Small insects'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1340,7 +1340,7 @@ export const taxa = [
         { language: "it", names:[ 'Pigeon' ]}],
         species: '310',
         genera: '42',
-        // pollinators: [ { language: "en", names: [ 'Wind'] } ],
+        traits: [ { language: "en", name: 'diet', values: [ 'Seeds', 'Fruit' ] } ],
         descriptions: [
             {
                 language: 'en',

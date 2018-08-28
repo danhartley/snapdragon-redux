@@ -21,7 +21,8 @@ export const kitchenGarden = {
     curator: 'Snapdragon',
     level: 'General Interest',
     lessonPlanLandscape: 1,
-    lessonPlanPortrait: 3
+    lessonPlanPortrait: 3,
+    glossary: ['plantae', 'common']
 };
 
 export const rhsTrees = { 
@@ -35,7 +36,8 @@ export const rhsTrees = {
     curator: 'Snapdragon',
     level: 'RHS students',
     lessonPlanLandscape: 1,
-    lessonPlanPortrait: 3
+    lessonPlanPortrait: 3,
+    glossary: ['plantae', 'common']
 };
 
 export const commonBirds = { 
@@ -49,7 +51,8 @@ export const commonBirds = {
     curator: 'Snapdragon',
     level: 'General Interest',
     lessonPlanLandscape: 1,
-    lessonPlanPortrait: 3
+    lessonPlanPortrait: 3,
+    glossary: ['animalia', 'common']
 };
 
 kitchenGarden.items.forEach((item,index)=>{

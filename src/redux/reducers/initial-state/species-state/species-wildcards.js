@@ -4,7 +4,7 @@ import { utils } from 'utils/utils';
 import { getSpeciesEpithets } from 'redux/reducers/initial-state/species-state/species-epithets';
 import { getSpeciesCultivars } from 'redux/reducers/initial-state/species-state/species-cultivars';
 import { syndromes } from 'api/snapdragon/syndromes';
-import { definitions } from 'api/snapdragon/glossary';
+import { getGlossary } from 'api/glossary/glossary';
 
 export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
 
@@ -69,7 +69,7 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
     }
 
     const itemGroup = itemGroups[collection.currentRound - 1];          
-    const words = utils.shuffleArray(definitions);
+    const definitions = utils.shuffleArray(getGlossary(collection.glossary));
     
     if(utils.isIterable(wildcardLayouts)) {
         wildcardLayouts.forEach(layout => {
@@ -77,7 +77,7 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
                 wildcardLayoutsForGroup.push(layout);
             }         
         })
-        const definitionLayout = { name: 'screen-definitions', type: 'test', score: 1, screens: [wildcards[3][0], wildcards[3][1]], itemIndex: itemGroup[0], definition: words.pop() };
+        const definitionLayout = { name: 'screen-definitions', type: 'test', score: 1, screens: [wildcards[3][0], wildcards[3][1]], itemIndex: itemGroup[0], definition: definitions.pop() };
         wildcardLayoutsForGroup.push(definitionLayout);
     }
 

@@ -443,9 +443,10 @@ hr {
   text-transform: capitalize;
 }
 
-.species-pollinators span {
+.species-traits span {
   font-weight: bold;
   color: rgb(97, 109, 25);
+  text-transform: capitalize;
 }
 
 .species-card-latin {
