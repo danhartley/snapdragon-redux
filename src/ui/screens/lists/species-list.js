@@ -6,6 +6,7 @@ import { subscription } from 'redux/subscriptions';
 import { modalImageHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
+import { lessonPlanner } from 'syllabus/lesson-planner';
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 import speciesPortraitTemplate from 'ui/screens/lists/species-table-portrait-template.html';
 import speciesSmallLandscapeTemplate from 'ui/screens/lists/species-table-small-landscape-template.html';
@@ -162,6 +163,8 @@ export const renderSpeciesCollectionList = (collection) => {
 
             if(isLevelComplete) {
                 config.excludeRevision = true;
+                const lessonName = config.lesson.name;
+                const levelName = config.lesson.level.name;
                 const level = lessonPlanner.getNextLevel(lessonName, levelName, config.isPortraitMode);
                 config.lesson.level = level;
                 actions.boundNextLevel({ index: 0 });

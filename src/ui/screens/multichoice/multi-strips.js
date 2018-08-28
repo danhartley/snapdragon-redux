@@ -70,7 +70,6 @@ export const renderMultiStrips = (collection) => {
             const answer = document.querySelector('.js-answer');
             answer.innerHTML = 'Continue';
             answer.style.display = 'block';
-            // answer.classList.add(className);
             answer.style.cursor = 'pointer';
             answer.addEventListener('click', () => {
                 window.clearTimeout(scoreUpdateTimer);
@@ -127,7 +126,7 @@ export const renderMultiStrips = (collection) => {
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
-        const number = config.isPortraitMode ? 4 : config.isSmallLandscapeMode ? 5 : 6;
+        const number = config.isPortraitMode ? 3 : config.isSmallLandscapeMode ? 4 : 6;
 
         const questionText = config.isPortraitMode ? 'Tap to match Quick ID' : `Click to match the Quick Id`;
         const question = families.find(f => f.name === item.family).descriptions[0].identification;

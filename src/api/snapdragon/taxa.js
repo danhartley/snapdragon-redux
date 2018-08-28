@@ -1229,8 +1229,8 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Small to medium-sized passerine birds. The starling species familiar to most people in Europe and North America is the common starling, and throughout much of Asia and the Pacific, the common myna is indeed common.',
-                identification: 'Small to medium-sized birds many with are strikingly coloured and iridescent.'
+                summary: 'Small-medium sized passerine birds. Tthe starling is most common Europe and N America, the myna in Asia and Pacific.',
+                identification: 'Small-medium sized birds many strikingly coloured and iridescent.'
             }
         ],
         eol: "http://eol.org/pages/1607/overview",
@@ -1252,8 +1252,8 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Highly aerial birds, they are superficially similar to swallows, but are not closely related to any passerine species. Swifts are placed in the order Apodiformes with hummingbirds.',
-                identification: 'Elongated, cigar-shaped bodies, short, forked tails, very small bills but wide mouths, long, stiff, scythe-shaped wings and tiny legs, with all four toes facing forwards.'
+                summary: 'Superficially similar to swallows, but are not closely related to any passerine species, placed in the Apodiformes with hummingbirds.',
+                identification: 'Cigar-shaped bodies, short, forked tails, short bills, wide mouths, long, stiff, scythe-shaped wings, tiny legs.'
             }
         ],
         eol: "http://eol.org/pages/8023/overview",
@@ -1299,7 +1299,7 @@ export const taxa = [
             {
                 language: 'en',
                 summary: 'Weak songs and harsh calls.',
-                identification: 'Small to medium birds, dull brown in colour. Broad, flattened bills suited to catching insects in flight; ground-foraging species have finer bills.'
+                identification: 'Small-medium birds, dull brown in colour. Broad, flattened bills suited to catching insects; ground-foragers have finer bills.'
             }
         ],
         eol: "http://eol.org/pages/1637/overview",
@@ -1321,7 +1321,7 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Many species nest on buildings and the house and Eurasian tree sparrows, in particular, inhabit cities in large numbers, so sparrows are among the most familiar of all wild birds. They are primarily seed-eaters, though they also consume small insects.',
+                summary: 'Common in cities in large numbers often nesting on buildings. Primarily seed-eaters, they also consume small insects.',
                 identification: 'Finch-like birds. They have stout bodies, rounded wings and broad heads, with deep, conical bills adapted for seed-eating.'
             }
         ],
@@ -1345,7 +1345,7 @@ export const taxa = [
             {
                 language: 'en',
                 summary: 'Columbine refers to pigeons and doves. Likely the most common birds in the world. They primarily feed on seeds, fruits, and plants.',
-                identification: 'Small, rounded heads, small, slim bills with a small fleshy patch at the base, rounded bodies with dense, soft feathers, tapered wings and short, scaly legs.'
+                identification: 'Small, rounded heads and bodies, small, slim bills, dense, soft feathers, tapered wings and short, scaly legs.'
             }
         ],
         eol: "http://eol.org/pages/7978/overview",

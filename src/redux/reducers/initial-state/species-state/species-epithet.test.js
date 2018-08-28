@@ -33,7 +33,7 @@ test('should return multiple epithet matches', () => {
       {
         "parts": [
           {
-            "en" : ["of or belonging to an officina, the storeroom of a monastery, where medicines and other necessaries were kept."],
+            "en" : ["of or belonging to the officina (storeroom for medicines)."],
             "index": 1,
             "latin": [
               "officinalis"

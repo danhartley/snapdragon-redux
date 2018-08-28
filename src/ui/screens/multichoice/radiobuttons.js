@@ -27,7 +27,8 @@ export const renderRadioButtons = (collection) => {
 
     const species = item.name;
     const family = item.family;
-    const families = taxa.filter(taxon => taxon.taxon === 'family');
+    const collectionFamilies = collection.items.map(item => item.family).filter(utils.onlyUnique);
+    const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, collectionFamilies));
     const otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name !== item.family));
     const otherFamiliesLatinNames = otherFamilies.map(family => family.name);
     const otherFamiliesCommonNames = otherFamilies.filter(family => family.names.find(name => name.language === config.language)).map(family => family.names[0].names[0]);    

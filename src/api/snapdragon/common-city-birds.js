@@ -252,6 +252,10 @@ export const commonCityBirds = [
           "eol_preferred": true
         },
         {
+          "vernacularName": "Swift",
+          "language": "en"
+        },
+        {
           "vernacularName": "common swift",
           "language": "en",
           "eol_preferred": true
@@ -267,11 +271,7 @@ export const commonCityBirds = [
         {
           "vernacularName": "Mauersegler",
           "language": "en"
-        },
-        {
-          "vernacularName": "Swift",
-          "language": "en"
-        },
+        },        
         {
           "vernacularName": "tiny mousetail",
           "language": "en"
@@ -346,6 +346,10 @@ export const commonCityBirds = [
           "eol_preferred": true
         },
         {
+          "vernacularName": "Wren",
+          "language": "en"
+        },
+        {
           "vernacularName": "Winter Wren",
           "language": "en",
           "eol_preferred": true
@@ -397,11 +401,7 @@ export const commonCityBirds = [
         {
           "vernacularName": "Unalaska wren",
           "language": "en"
-        },
-        {
-          "vernacularName": "Wren",
-          "language": "en"
-        },
+        },        
         {
           "vernacularName": "anaga wren",
           "language": "en"
@@ -507,16 +507,16 @@ export const commonCityBirds = [
           "eol_preferred": true
         },
         {
+          "vernacularName": "Robin",
+          "language": "en"
+        },
+        {
           "vernacularName": "European Robin",
           "language": "en",
           "eol_preferred": true
         },
         {
           "vernacularName": "Eurasian Robin",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Robin",
           "language": "en"
         },
         {
@@ -593,6 +593,10 @@ export const commonCityBirds = [
           "eol_preferred": true
         },
         {
+          "vernacularName": "Blackbird",
+          "language": "en"
+        },
+        {
           "vernacularName": "Common Blackbird",
           "language": "en",
           "eol_preferred": true
@@ -600,11 +604,7 @@ export const commonCityBirds = [
         {
           "vernacularName": "Amsel",
           "language": "en"
-        },
-        {
-          "vernacularName": "Blackbird",
-          "language": "en"
-        },
+        },        
         {
           "vernacularName": "Common blackbird and Eurasian blackbird",
           "language": "en"
@@ -706,6 +706,10 @@ export const commonCityBirds = [
         {
           "vernacularName": "Sperling",
           "language": "de"
+        },
+        {
+          "vernacularName": "Sparrow",
+          "language": "en"
         },
         {
           "vernacularName": "House Sparrow",
@@ -869,6 +873,10 @@ export const commonCityBirds = [
           "language": "de"
         },
         {
+          "vernacularName": "pigeon",
+          "language": "en"
+        },
+        {
           "vernacularName": "Rock Dove",
           "language": "en",
           "eol_preferred": true
@@ -919,10 +927,6 @@ export const commonCityBirds = [
         },
         {
           "vernacularName": "homing pigeon",
-          "language": "en"
-        },
-        {
-          "vernacularName": "pigeon",
           "language": "en"
         },
         {
