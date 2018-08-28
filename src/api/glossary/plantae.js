@@ -1,4 +1,4 @@
-export const definitions = [
+export const plantae = [
     // {
     //     term: "Type species",
     //     definition: "A type species (species typica) is the species name with which the name of a genus or subgenus is considered to be permanently taxonomically associated, i.e., the species that contains the biological type specimen(s).",
@@ -85,32 +85,7 @@ export const definitions = [
     //     definition: "Aetherolea also known as volatile oils or essential oils are concentrated hydrophobic liquids that contain volatile aroma compounds from plants which evaporate when exposed to air and are thus capable of distillation.",
     //     wiki: "https://en.wikipedia.org/wiki/Essential_oil"
     // },
-    {
-        term: 'Garigue',
-        definition: "Low open scrubland found in poor or dry soil in the Mediterranean.",
-        wiki: "https://en.wikipedia.org/wiki/Garrigue"
-    },
-    {
-        term: "Maquis",
-        definition: "Dense scrub vegetation characteristic of Mediterranean coastal regions.",
-        wiki: "https://en.wikipedia.org/wiki/Maquis_shrubland"
-    },
-    {
-        term: "Indigenous",
-        synonym: "Autochthonous",
-        definition: "A species whose presence in a given region or ecosystem is the result of natural process.",
-        wiki: "https://en.wikipedia.org/wiki/Indigenous_(ecology)" 
-    },
-    {
-        term: "Endemic",
-        definition: "A species that is unique to a defined geographic location, such as an island or country.",
-        wiki: "https://en.wikipedia.org/wiki/Endemism"
-    },
-    {
-        term: "Introduced",
-        definition: "A species found outside its native distributional range due to human activity.",
-        wiki: "https://en.wikipedia.org/wiki/Introduced_speciesepothet"
-    },
+
     {
         term: "Pollination",
         definition: "The transfer of pollen (male gametes) between the male and female parts of flowers."
@@ -121,14 +96,7 @@ export const definitions = [
     //     wiki: "https://en.wikipedia.org/wiki/Model_organism",
     //     examples: ['Escherichia coli', 'Drosophila melanogaster', 'Arabidopsis thaliana', 'Saccharomyces cerevisiae', 'Mus musculus']
     // },
-    {
-        term: "Mutualism",
-        definition: "Symbiotic interaction between different species that is mutually beneficial."
-    },
-    {
-        term: "Symbiont",
-        definition: "Either species involved in a biological interaction."
-    },
+
     {
         term: "Dehiscence",
         definition: "The natural opening of fruits, etc. along line of natural weakness releasing seeds/pollen."
@@ -140,14 +108,6 @@ export const definitions = [
     {
         term: "Variety",
         definition: "A naturally occurring, stable variation on a species."
-    },
-    {
-        term: "Form",
-        definition: "An infraspecific taxon below that of species."
-    },
-    {
-        term: "Species",
-        definition: "A group of related organisms capable of interbreeding and producing fertile offspring."
     },
     {
         term: 'Herbaceous',
@@ -224,9 +184,5 @@ export const definitions = [
     {
         term: 'Dicotyledon',
         definition: 'Former division of angiosperms. Refers to seeds with two embryonic leaves (cotyledons).'
-    },
-    {
-        term: 'Genus',
-        definition: 'Taxonomic category above species and below family.'
     },
 ];

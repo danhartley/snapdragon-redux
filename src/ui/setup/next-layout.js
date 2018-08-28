@@ -5,11 +5,13 @@ import { subscription } from 'redux/subscriptions';
 
 export const nextLayout = (counter) => {
 
-    if(counter && counter.lesson === 'inactive') return;
+    const isLessonPaused = (counter.log && counter.log.index !== counter.index);
+
+    if(isLessonPaused) return;
 
     const { lessonPlan, config } = store.getState();
 
-    if(!lessonPlan.layouts) return;
+    if(!lessonPlan || !lessonPlan.layouts) return;
 
     const layout = lessonPlan.layouts[counter.index];
 

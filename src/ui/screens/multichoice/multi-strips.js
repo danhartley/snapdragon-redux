@@ -6,7 +6,7 @@ import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { taxa } from 'api/snapdragon/taxa';
 import { epithets } from 'api/botanical-latin';
-import { definitions } from 'api/snapdragon/glossary';
+import { getGlossary } from 'api/glossary/glossary';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -29,7 +29,8 @@ export const renderMultiStrips = (collection) => {
     
     template.innerHTML = familyTemplate;
 
-    const families = taxa.filter(taxon => taxon.taxon === 'family');
+    const collectionFamilies = collection.items.map(item => item.family).filter(utils.onlyUnique);
+    const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, collectionFamilies));
 
     let description = config.isPortraitMode ? `Family: ${item.family} ` : `Which of the above fits the ${item.family}?`;
 
@@ -69,7 +70,6 @@ export const renderMultiStrips = (collection) => {
             const answer = document.querySelector('.js-answer');
             answer.innerHTML = 'Continue';
             answer.style.display = 'block';
-            // answer.classList.add(className);
             answer.style.cursor = 'pointer';
             answer.addEventListener('click', () => {
                 window.clearTimeout(scoreUpdateTimer);
@@ -126,7 +126,7 @@ export const renderMultiStrips = (collection) => {
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
-        const number = config.isPortraitMode ? 4 : config.isSmallLandscapeMode ? 5 : 6;
+        const number = config.isPortraitMode ? 3 : config.isSmallLandscapeMode ? 4 : 6;
 
         const questionText = config.isPortraitMode ? 'Tap to match Quick ID' : `Click to match the Quick Id`;
         const question = families.find(f => f.name === item.family).descriptions[0].identification;
@@ -150,22 +150,22 @@ export const renderMultiStrips = (collection) => {
 
     if(screen.name === 'wildcard-match') {
 
-        const getTraits = (pollinators) => {
-            const traits = [];
-            pollinators.forEach(pollinator => {
-                const trait = collection.items.map( (item, i) => {                
+        const getTraits = (traits) => {
+            const _traits = [];
+            traits.forEach(trait => {
+                const _trait = collection.items.map( (item, i) => {                
                     return {
                         traits: R.flatten(syndromes.traits.map(trait => {
-                            const t = trait.keys.find(key => key.key === pollinator);
+                            const t = trait.keys.find(key => key.key === trait);
                             return { trait: trait.name, value: t.value, description: t.description || '' };
                         })),
                         index: i
                     };                
                 }).filter(c => c);
-                traits.push(trait[0].traits);
+                _traits.push(_trait[0].traits);
             });
 
-            const options = traits.map(trait => trait.map(t => {
+            const options = _traits.map(trait => trait.map(t => {
                 return `${t.trait}: ${t.value}`;
             }));
 
@@ -218,6 +218,8 @@ export const renderMultiStrips = (collection) => {
         description = config.isPortraitMode ? `What does ${term} mean?` : `What is the meaning of the word \'${term}?\'`;
 
         const number = config.isPortraitMode ? 4 : 5;
+
+        const definitions = getGlossary(collection.glossary);
         
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(definitions)).filter(d => !R.contains(d.term, term))).map(d => d.definition);
         const questionText = config.isPortraitMode 

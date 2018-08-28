@@ -19,7 +19,7 @@ export const collections = (state = speciesState.collections, action) => {
     }
 };
 
-export const collection = (state = null, action) => {
+export const collection = (state = { name: '---', id: 0, descriptions: null }, action) => {
 
     let itemIndex = 0;
     let currentRound = 0;

@@ -266,7 +266,7 @@ const landscapeLesson2 = {
 
 const portraitLesson1 = {
     id: 3,
-    name:'Lesson 3',
+    name:'Lesson 1',
     portrait: true,
     default: true,
     levels: [

@@ -57,12 +57,11 @@ export const renderNavigation = (config) => {
                 target.classList.add('active-icon');
                 switch(targetId) {                    
                     case 'home':
-                    subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
-                    
+                    subscription.getByRole('screen').forEach(sub => subscription.remove(sub));           
                     subscription.add(renderCollections, 'counter', 'screen');
                     setTimeout(() => {
                         const { index } = getLatestCounter();
-                        actions.boundToggleLesson({ index: 0, lesson: 'inactive', log: { index: index, collection: collection.id  } });
+                        actions.boundToggleLesson({ index: 0, log: { index: index, collection: collection.id  } });
                     });                    
                         break;
                     case 'settings':

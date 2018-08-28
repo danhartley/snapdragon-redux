@@ -7,18 +7,17 @@ export const counter = (state = null, action) => {
         case 'persist/REHYDRATE':
             return action.payload ? action.payload.counter : null;
         case types.CHANGE_COLLECTION:
-            return { index: 0, lesson: 'active' };
+            return { index: 0 };
         case types.UPDATE_CONFIG:
             return state;
         case types.NEXT_LEVEL:
         case types.NEXT_ROUND:
+        case types.STOP_START_LESSON:
             return action.data;
         case types.UPDATE_SCORE:
         case types.END_REVISION:
             let i = (state.index + 1) <= action.data.layoutCount ? (state.index + 1) : state.index;
-            return { index: i, lesson: 'active' };
-        case types.TOGGLE_LESSON:
-            return { ...state, ...action.data };
+            return { index: i };
         default:
             return state;
     }

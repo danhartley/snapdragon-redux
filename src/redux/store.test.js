@@ -29,7 +29,7 @@ test('intial state of the app should be consistent', () => {
 
     const { collections, collection } = store.getState();
     expect(collections.length).toBeGreaterThan(0);
-    expect(collection).toEqual(null);
+    expect(collection).toEqual({"descriptions": null, "id": 0, "name": "---"});
 
     const { counter, score, history, revision } = store.getState();
     expect(counter).toEqual(null);
@@ -252,7 +252,7 @@ test('when user selects a collection state should be populated', () => {
         }
     ];
 
-    actions.boundNextLesson(_lessonPlan); // nextLesson(config) triggers: NEXT_LESSON
+    actions.boundNextLessonPlan(_lessonPlan); // nextLesson(config) triggers: NEXT_LESSON
 
     let { counter, lessonPlan, layout } = store.getState();
 

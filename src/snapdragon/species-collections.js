@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-import { deciduousAndEvergreenTrees } from 'api/snapdragon/rhs/deciduous-evergreen-trees';
+import { deciduousAndEvergreenTrees } from 'api/rhs/deciduous-evergreen-trees';
 import { herbsAndSpices } from 'api/snapdragon/herbs-and-spices';
 import { vegetables } from 'api/snapdragon/vegetables';
 import { fruit } from 'api/snapdragon/fruit';

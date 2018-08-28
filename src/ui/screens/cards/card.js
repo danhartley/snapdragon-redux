@@ -89,7 +89,7 @@ const renderPortrait = (template, item, config) => {
 
 const renderCommonParts = (template, config, item) => {
 
-    const pollinatorsLength = config.isPortraitMode ? 2 : 5;
+    const traitsLength = config.isPortraitMode ? 2 : 5;
 
     const species = item.name;    
     const name = itemProperties.vernacularName(item, config);
@@ -102,8 +102,9 @@ const renderCommonParts = (template, config, item) => {
     const familyImage = family ? `https://media.eol.org/content/${family.thumb}` : '';
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const occurrences = specific ? specific.subspecies.length : 0;
-    let pollinators = itemProperties.getNestedTaxonProp(family, config.language, 'pollinators', 'names');
-    pollinators = pollinators !== '' ? R.take(pollinatorsLength, pollinators).join(', ') : '';
+    const traits = itemProperties.getNestedTaxonProp(family, config.language, 'traits', 'values');
+    const traitValue = traits !== '' ? R.take(traitsLength, traits).join(', ') : '';
+    const traitName = family.traits.map(trait => trait.name)[0];
     
     const clone = document.importNode(template.content, true);
     
@@ -114,7 +115,7 @@ const renderCommonParts = (template, config, item) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
     
-    renderTemplate({ species, name, latin, rank, occurrences, family: family.name, familyImage, pollinators, familyName }, template.content, parent, clone);
+    renderTemplate({ species, name, latin, rank, occurrences, family: family.name, familyImage, traitName, traitValue, familyName }, template.content, parent, clone);
 
     const badge = document.querySelector('.badge');
 
