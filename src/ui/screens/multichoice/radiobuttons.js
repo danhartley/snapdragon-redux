@@ -12,7 +12,7 @@ import radiobuttonsTemplate from 'ui/screens/multichoice/radiobuttons-template.h
 
 export const renderRadioButtons = (collection) => {
 
-    const item = collection.items[collection.itemIndex];
+    const item = collection.nextItem;
 
     const { config, lessonPlan, layout } = store.getState();
 

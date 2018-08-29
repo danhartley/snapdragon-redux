@@ -17,7 +17,7 @@ export const renderInput = (screen, question, hints) => {
 
     const template = templates.querySelector(`.${screen.template}`);
 
-    const item = collection.items[collection.itemIndex];
+    const item = collection.nextItem;
 
     hints.forEach(hint => {
         const el = template.content.querySelector(hint.selector);

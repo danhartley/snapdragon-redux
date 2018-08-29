@@ -8,6 +8,7 @@ export const config = {
     collection: {
         id: 0
     },
+    mode: 'learn',
     languages : [
         { name: 'English', lang: 'en' },
         { name: 'Español', lang: 'es' },

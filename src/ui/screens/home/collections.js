@@ -80,6 +80,7 @@ export const renderCollections = (counter) => {
         collectionDescription.innerHTML = descriptions;
         
         config.collection = { id: parseInt(id) };
+        config.moduleSize = collection.moduleSize;
 
         subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
 

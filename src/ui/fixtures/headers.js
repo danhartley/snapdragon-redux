@@ -18,7 +18,7 @@ export const renderHeaders = collection => {
 
     const specimensScreen = layout.screens.find(screen => screen.name === 'specimen-images');
 
-    const item = collection.items[collection.itemIndex];
+    const item = collection.nextItem;
     const vernacularName = item ? itemProperties.vernacularName(item, config) : '';
     
     let specimenTitle = '';

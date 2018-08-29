@@ -6,7 +6,7 @@ import cultivarTemplate from 'ui/screens/cards/cultivar-card-template.html';
 
 export const renderCultivarCard = collection => {
 
-    const item = collection.items[collection.itemIndex];
+    const item = collection.nextItem;
     const { lessonPlan, layout, config } = store.getState();
 
     const cultivarCollection = lessonPlan.layouts.find(layout => layout.name === 'screen-cultivar-card').cultivars;

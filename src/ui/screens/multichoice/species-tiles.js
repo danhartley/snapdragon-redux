@@ -13,7 +13,7 @@ import questionCard from 'ui/screens/common/question-template.html';
 
 export const renderSpeciesTiles = (collection) => {
 
-    const item = collection.items[collection.itemIndex];
+    const item = collection.nextItem;
 
     const { layout, config, lessonPlan } = store.getState();
 

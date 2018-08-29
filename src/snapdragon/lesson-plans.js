@@ -1,6 +1,6 @@
 import { screens } from 'snapdragon/screen-layouts';
 
-const { specimen, revision, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete, cultivar } = screens;
+const { specimen, revision, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete, cultivar, cultivarCard, epithets, wildcardCard, wildcard, definitions } = screens;
 
 const speciesRevision = {
     name: 'screen-species-card',
@@ -234,11 +234,15 @@ const landscapeLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ]
+            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ],
+            wildcardLayouts : [],
+            reviewLayouts: [ latinToCommonMatch, commonToLatinMatch, textCompleteGenus ]
         },
         {   id: 2,
             name:'Level 2',
-            layouts: [ taxonRevision, commonEntry, textCompleteSpecies, genusEntry, familyStripsMatch ]
+            layouts: [ taxonRevision, commonEntry, textCompleteSpecies, genusEntry, familyStripsMatch ],
+            wildcardLayouts : [ [specimen, epithets], [specimen, cultivarCard, cultivar], [specimen, wildcardCard, wildcard], [specimen, definitions] ],
+            reviewLayouts: [ commonEntry, textCompleteSpecies, genusEntry ]
         },
         {   id: 3,
             name:'Level 3',
@@ -273,7 +277,7 @@ const portraitLesson1 = {
         {   id: 1,
             name:'Level 1',
             layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ]
-        },
+        },        
         {   id: 2,
             name:'Level 2',
             layouts: [ taxonRevision, commonEntry, textCompleteSpecies, genusEntry, familyStripsMatch ]

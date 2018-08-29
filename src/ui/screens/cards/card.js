@@ -13,7 +13,8 @@ import { imageSlider } from 'ui/screens/common/image-slider';
 
 export const renderCard = (collection) => {
     
-    const item = collection.items[collection.itemIndex];    
+    const item = collection.nextItem;
+
     const { layout, config, lessonPlan } = store.getState();
 
     item.questionCount = lessonPlan.questionCount;

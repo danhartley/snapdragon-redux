@@ -148,7 +148,6 @@ export const renderSpeciesCollectionList = (collection) => {
             continueLearningActionBtn.innerHTML = 'Continue lesson';
         }
         
-        const isLevelComplete = collection.currentRound ? (collection.currentRound === collection.rounds) : false;
         const levelName = config.lesson.level.name;
         config.excludeRevision = levelName === 'Level 1' ? false : true;
 
@@ -161,7 +160,7 @@ export const renderSpeciesCollectionList = (collection) => {
 
         continueLearningActionBtn.addEventListener('click', () => {
 
-            if(isLevelComplete) {
+            if(collection.isLevelComplete) {
                 config.excludeRevision = true;
                 const lessonName = config.lesson.name;
                 const levelName = config.lesson.level.name;
@@ -176,8 +175,7 @@ export const renderSpeciesCollectionList = (collection) => {
                 actions.boundToggleLesson(getLatestCounter());
             } else {
                 if(score) {
-                    actions.boundNextRound({ index: 0 });            
-                    // actions.boundNextRound({ index: 0, lesson: 'active' });            
+                    actions.boundNextRound({ index: 0 });       
                     setTimeout(() => {
                         actions.boundUpdateConfig(config);    
                     });

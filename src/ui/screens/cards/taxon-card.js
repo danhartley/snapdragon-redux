@@ -10,8 +10,8 @@ import taxonTemplate from 'ui/screens/cards/taxon-template.html';
 
 export const renderTaxonCard = collection => {
   
-    const item = collection.items[collection.itemIndex];
-    const { lessonPlan, config } = store.getState();
+    const item = collection.nextItem;
+    const { lessonPlan, config, collections } = store.getState();
 
     item.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
     item.layoutCount = lessonPlan.layouts.length;
@@ -26,13 +26,7 @@ export const renderTaxonCard = collection => {
     parent.innerHTML = '';
 
     const taxon = taxa.find(f => f.name === item.family);
-    let occurrences = {};
-
-    collection.families.forEach( (item,index) => {
-        let num = collection.families[index];
-        occurrences[num] = occurrences[num] ? occurrences[num] + 1 : 1;
-    });
-
+    
     const context = {
         rank: 'family',
         name: item.family,
@@ -45,7 +39,7 @@ export const renderTaxonCard = collection => {
         summary: itemProperties.getNestedTaxonProp(taxon, config.language, 'descriptions', 'summary'),
         eol: taxon.eol ? taxon.eol.replace('en', config.language) : '',
         wiki: taxon.wiki ? taxon.wiki.replace('en', config.language) : '',
-        occurrences: occurrences[taxon.name],
+        occurrences: collection.familyStats[taxon.name],
         toxic: taxon.toxic ? `Toxic species: ${taxon.toxic.members.join(', ')}` : '',
         members: taxon.members ? R.take(2, taxon.members).join(', ') : ''
     }
@@ -65,7 +59,8 @@ export const renderTaxonCard = collection => {
 
     document.querySelector('.badge').addEventListener('click', event => {
         document.querySelector('#listModal .js-modal-text-title').innerHTML = `Members of the ${item.family} family`;
-        const members = collection.items.filter(i => i.family === item.family);
+        const collectionPool = collections.find(c => c.id === collection.id);
+        const members = collectionPool.items.filter(i => i.family === item.family);
         const list = document.querySelector('#listModal .js-modal-text');
         list.innerHTML = '';
         members.forEach(member => {

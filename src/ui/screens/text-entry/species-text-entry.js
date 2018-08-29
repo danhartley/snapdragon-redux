@@ -7,7 +7,7 @@ export const renderTextEntry = (collection) => {
     const { layout, config } = store.getState();
 
     const screen = layout.screens.filter(el => el.name === 'text-entry')[0];
-    const item = collection.items[collection.itemIndex];
+    const item = collection.nextItem;
     
     if(!screen) return;
 

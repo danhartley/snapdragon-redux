@@ -3,13 +3,14 @@ import { createLesson } from 'syllabus/lesson-builder';
 import { screens } from 'snapdragon/screen-layouts';
 import { getWildcardLayouts } from 'redux/reducers/initial-state/species-state/species-wildcards';
 
-const { summary, history, specimen, epithets, cultivarCard, cultivar, wildcardCard, wildcard, definitions } = screens;
+const { summary, history } = screens;
 
 const createLessonPlan = (config, collection) => {
     const moduleSize = collection.moduleSize || config.moduleSize;
     const { lesson: { name: lessonName, level: { name: levelName }}, excludeRevision, isPortraitMode } = config;
-    const wildcardLayouts = getWildcardLayouts([ [specimen, epithets], [specimen, cultivarCard, cultivar], [specimen, wildcardCard, wildcard], [specimen, definitions] ], collection, moduleSize);
-    const layouts = getLayouts(config);
+    const wildcards = config.mode === 'learn' ? getLayouts(config, 'wildcard') : [];
+    const wildcardLayouts = wildcards.length > 0 ? getWildcardLayouts(wildcards, collection, moduleSize) : [];
+    const layouts = getLayouts(config, config.mode);
     return createLesson(
         lessonName,
         levelName, 
@@ -23,11 +24,20 @@ const createLessonPlan = (config, collection) => {
     );        
 };
 
-const getLayouts = (config) => {
+const getLayouts = (config, type) => {
     const { lesson: { name: lessonName, level: { name: levelName }}, isPortraitMode } = config;
     const currentLesson = getCurrentLesson(lessonName, isPortraitMode);
     const currentLevel = getCurrentLevel(currentLesson, levelName);
-    return currentLevel.layouts;
+    switch(type) {
+        case 'learn':
+            return currentLevel.layouts;
+        case 'wildcard':
+            return currentLevel.wildcardLayouts || [];
+        case 'review':
+            return currentLevel.reviewLayouts || [];
+        default:
+            return currentLevel.layouts;
+    }
 };
 
 const getCurrentLesson = (lessonName, isPortraitMode = false) => {

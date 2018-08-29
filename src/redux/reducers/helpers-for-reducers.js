@@ -60,22 +60,11 @@ const extractScientificNames = collection => {
     });
 };
 
-const embellishCollection = collection => {
-    const itemsWithNames = helpers.addMultipleNames(collection, 6);
-    const itemsWithNamesAndImages = helpers.addMultipleImages(collection, itemsWithNames, 9)
-    const _collection = itemsWithNamesAndImages.map(item => {
-        item.imageIndices = utils.randomiseSelection([1,2,3,4,5,6,7,8,9,10,11,12], 12, true);
-        return item;
-    });
-    return _collection;
-};
-
 export const helpers = {
     notItem,
     addMultipleNames,
     addMultipleImages,
     spliceArrays,
     filterExcluded,
-    extractScientificNames,
-    embellishCollection
+    extractScientificNames
 };
