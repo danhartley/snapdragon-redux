@@ -13,7 +13,7 @@ export const renderTextEntry = (collection) => {
 
     item.vernacular = itemProperties.vernacularName(item, config);
 
-    const question = { binomial: item.name, species: item.species, genus: item.genus, taxon: screen.taxon, question: item[screen.taxon], common: itemProperties.vernacularName(item, config) };
+    const question = { binomial: item.name, species: item.species, genus: item.genus, taxon: screen.taxon, question: item[screen.taxon], common: item.vernacular };
 
     const hints = [
         { selector: 'span.js-genus', value: question.genus },

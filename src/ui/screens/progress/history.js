@@ -4,7 +4,7 @@ import { stats } from 'ui/helpers/stats';
 
 export const renderHistory = (history) => {
             
-    const { collection } = store.getState();
+    const { collection, score } = store.getState();
 
     if(!history) return null;
 

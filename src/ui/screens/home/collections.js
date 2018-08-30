@@ -25,20 +25,20 @@ export const renderCollections = (counter) => {
     template.innerHTML = collectionsTemplate;
 
     let language = config.languages.find(l => l.lang === config.language);
-    let courses = collections.filter(collection => collection.type === 'species');
+    let lessons = collections.filter(collection => collection.type === 'species');
 
     DOM.rightBody.innerHTML = '';
 
     const snapdragon = { descriptions : [
         'Snapdragon is a tool for studying the 1.3 million recorded species on Earth.',
-        'Related species are grouped and tested in courses.',
-        'Courses take the form of concise summaries followed by quick tests.',
-        'Take one of the public courses or request one tailored to your needs.'
+        'Related species are grouped and tested in lessons.',
+        'Lessons take the form of concise summaries followed by quick tests.',
+        'Take one of the public lessons or request one tailored to your needs.'
     ] };
 
     const copy = collection.descriptions || snapdragon.descriptions;
 
-    renderTemplate({ courses, config, collection, language, copy }, template.content, DOM.rightBody);
+    renderTemplate({ lessons, config, collection, language, copy }, template.content, DOM.rightBody);
 
     const selectedCollection = collections.find(collection => collection.selected);
 
@@ -51,7 +51,7 @@ export const renderCollections = (counter) => {
     const languagesHeader = document.querySelector('.btn-language');
 
     if(config.isPortraitMode) {
-        learningActionBtn.innerHTML =  'View course species';
+        learningActionBtn.innerHTML =  'View lesson species';
     } else {
         const isLessonPaused = (counter && counter.log) ? true : false;
         learningActionBtn.innerHTML = 'Begin lesson'
@@ -60,7 +60,7 @@ export const renderCollections = (counter) => {
         }
     }    
 
-    // Courses
+    // lessons
 
     if(collection && collection.name) {
         document.querySelectorAll(`[name="${collection.name}"]`)[0].classList.add('active');
@@ -69,7 +69,7 @@ export const renderCollections = (counter) => {
         elem.show(lessonPlanLink);
         collectionsHeader.innerHTML = collection.name;
     } else {
-        collectionsHeader.innerHTML = 'Courses';        
+        collectionsHeader.innerHTML = 'Lessons';        
     }
 
     selectHandler('.dropdown.js-collections .dropdown-item', id => {

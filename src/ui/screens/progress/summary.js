@@ -1,4 +1,5 @@
 import { store } from 'redux/store';
+import { subscription } from 'redux/subscriptions';
 import { DOM } from 'ui/dom';
 import { stats } from 'ui/helpers/stats';
 import { actions } from 'redux/actions/action-creators';
@@ -70,6 +71,9 @@ export const renderSummary = (history) => {
 
     const handleBtnClickEvent = event => {
         
+        subscription.getByName('renderSummary').forEach(sub => subscription.remove(sub));
+        subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
+
         const lessonName = config.lesson.name;
         const levelName = config.lesson.level.name;        
 

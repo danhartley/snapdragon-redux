@@ -3,10 +3,10 @@
         <div class="snapdragon-options">
             <div class="dropdown collections js-collections">
                 <button class="btn btn-collection dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Courses
+                Lessons
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <div data-repeat-collection="{{ courses }}">
+                    <div data-repeat-collection="{{ lessons }}">
                         <a class="dropdown-item" id="{{ collection.id }}" name="{{ collection.name }}" href="#">{{ collection.name }} ({{ collection.items.length }})</a>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
         <div class="action-update">
             <div></div>
             <button class="btn btn-light js-lesson-btn-action toggle-content"></button>
-            <button class="btn btn-placeholder js-lesson-btn-action-placeholder toggle-content is-visible">Pick a course to begin...</button>
+            <button class="btn btn-placeholder js-lesson-btn-action-placeholder toggle-content is-visible">Pick a lesson to begin...</button>
         </div>
     </div>
 </div>            

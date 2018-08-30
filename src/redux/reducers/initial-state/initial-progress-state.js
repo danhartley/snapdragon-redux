@@ -8,7 +8,8 @@ const score = {
     question: '',
     fails: [],
     passes: [],
-    success: false
+    success: false,
+    mode: 'learn'
 };
 
 export const progressState = {

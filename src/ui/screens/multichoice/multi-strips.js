@@ -124,7 +124,7 @@ export const renderMultiStrips = (collection) => {
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
-        const number = config.isPortraitMode ? 3 : config.isSmallLandscapeMode ? 4 : 6;
+        const number = config.isPortraitMode ? 3 : config.isSmallLandscapeMode ? 4 : 5;
 
         const questionText = config.isPortraitMode ? 'Tap to match Quick ID' : `Click to match the Quick Id`;
         const question = families.find(f => f.name === item.family).descriptions[0].identification;

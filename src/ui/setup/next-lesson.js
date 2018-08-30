@@ -5,6 +5,7 @@ import { store } from 'redux/store';
 import { stats } from 'ui/helpers/stats';
 import { lessonPlanner } from 'syllabus/lesson-planner';
 import { actions } from 'redux/actions/action-creators';
+import { speciesState } from 'redux/reducers/initial-state/initial-species-state';
 
 export const nextLesson = (config) => {
 
@@ -27,7 +28,7 @@ export const nextLesson = (config) => {
                 _collection.items = stats.getItemsForRevision(collection, history, 1);
                 break;
             case 'learn':
-                _collection.items = collections.find(c => c.id === _collection.id).items;
+                _collection.items = speciesState.initCollection(collections.find(c => c.id === _collection.id)).items;
                 break;
             default:
                 break;
