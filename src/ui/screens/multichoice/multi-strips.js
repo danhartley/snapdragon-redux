@@ -95,7 +95,7 @@ export const renderMultiStrips = (collection) => {
         const number = config.isPortraitMode ? 6 : config.isSmallLandscapeMode ? 6 : 6;
 
         const vernacular = itemProperties.vernacularName(item, config);
-        const questionText = config.isPortraitMode ? 'Select equivalent of common name' : `Select latin equivalent of common name`;
+        const questionText = config.isPortraitMode ? 'Select equivalent of common name' : `Select the latin equivalent of the common name`;
         const question = item.name;
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(collection.speciesNames)).filter(itemName => itemName !== item.name));
         const answers = utils.shuffleArray([question, ...alternatives]);
@@ -109,7 +109,7 @@ export const renderMultiStrips = (collection) => {
 
         const number = config.isPortraitMode ? 6 : config.isSmallLandscapeMode ? 6 : 6;
 
-        const questionText = config.isPortraitMode ? 'Select equivalent of latin name' : `Select common name equivalent of the latin`;
+        const questionText = config.isPortraitMode ? 'Select equivalent of latin name' : `Select the common name equivalent of the latin`;
         const question = itemProperties.vernacularName(item, config);
         const items = [ ...collection.items ];
         let alternatives = R.take(number, utils.shuffleArray(collection.speciesVernacularNames));

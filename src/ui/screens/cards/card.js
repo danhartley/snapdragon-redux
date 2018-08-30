@@ -44,7 +44,7 @@ const renderLandscape = (template, item, config) => {
     renderCommonParts(template, config, item);
 
     setTimeout(()=>{
-        const wikiLink = document.querySelector('.js-species-card-wiki span');
+        const wikiLink = document.querySelector('.js-species-card-wiki');
         if(wikiLink) {
             wikiLink.addEventListener('click', event => {
                 document.querySelector('.js-external-page-title').innerHTML = `${item.name}`;
@@ -69,7 +69,7 @@ const renderLandscape = (template, item, config) => {
 
                 document.querySelector('.js-external-page-body').innerHTML = config.isPortraitMode
                     ? `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="data:text/html,${wiki}"></iframe>`          
-                    : `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="${wikiLink.dataset.src}"></iframe>`;
+                    : `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="${wikiLink.querySelector('span').dataset.src}"></iframe>`;
                     
                 document.querySelector('#externalPageModal').focus();
             });
