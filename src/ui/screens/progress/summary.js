@@ -2,8 +2,7 @@ import { store } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
 import { DOM } from 'ui/dom';
 import { stats } from 'ui/helpers/stats';
-import { actions } from 'redux/actions/action-creators';
-import { lessonPlanner } from 'syllabus/lesson-planner';
+import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import summaryTemplate from 'ui/screens/progress/summary-template.html';
 
@@ -25,17 +24,10 @@ export const renderSummary = (history) => {
     const speciesCount = collection.items.length;
     const speciesTestedCount = collection.currentRound * config.moduleSize;
     const speciesUntestedCount = speciesCount - speciesTestedCount;
-    let isLevelComplete = collection.isLevelComplete;
 
-    if(config.mode === 'review') {
-        isLevelComplete = true;
-    }
-    
+    const isLevelComplete = config.mode === 'review' ? true : collection.isLevelComplete;
     const itemsToReview = stats.getItemsForRevision(collection, history, 1);
-
-    const mode = config.mode === 'learn' && collection.isLevelComplete && itemsToReview.length > 0
-                ? 'review'
-                : 'learn';
+    const mode = endOfRoundHandler.getMode(config.mode, isLevelComplete, itemsToReview);
 
     let summary; 
 
@@ -74,42 +66,7 @@ export const renderSummary = (history) => {
         subscription.getByName('renderSummary').forEach(sub => subscription.remove(sub));
         subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
 
-        const lessonName = config.lesson.name;
-        const levelName = config.lesson.level.name;        
-
-        config.excludeRevision = levelName === 'Level 1' ? false : true;
-
-        switch(mode) {
-            case 'learn':         
-                config.mode = mode;       
-                if(isLevelComplete) {
-                    config.excludeRevision = true;
-                    const level = lessonPlanner.getNextLevel(lessonName, levelName, config.isPortraitMode);
-                    config.lesson.level = level;
-                    collection.moduleSize = collections.find(c => c.id === collection.id).moduleSize;
-                    actions.boundNextLevel({ index: 0 });
-                    setTimeout(() => {
-                        actions.boundUpdateConfig(config);
-                        actions.boundNextLevel({ index: 0 });
-                    });
-                } else {
-                    actions.boundNextRound({ index: 0 });
-                    setTimeout(() => {
-                        actions.boundUpdateConfig(config);    
-                    });
-                };
-                break;
-            case 'review':
-                config.mode = mode;
-                collection.moduleSize = config.moduleSize = (config.moduleSize > itemsToReview.length) ? itemsToReview.length : config.moduleSize;
-                actions.boundNextRound({ index: 0 });
-                setTimeout(() => {
-                    actions.boundUpdateConfig(config);    
-                });
-                break;
-        }
-
-        config.moduleSize = collection.moduleSize;
+        endOfRoundHandler.callEndOfRoundActions(mode, config, collections, collection, score, itemsToReview, isLevelComplete);
     };
 
     learnMoreBtn.removeEventListener('click', handleBtnClickEvent);
