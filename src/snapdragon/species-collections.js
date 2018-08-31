@@ -4,6 +4,7 @@ import { vegetables } from 'api/snapdragon/vegetables';
 import { fruit } from 'api/snapdragon/fruit';
 import { insects } from 'api/snapdragon/insects';
 import { commonCityBirds } from 'api/snapdragon/common-city-birds';
+import { weeds1 } from 'api/rhs/weeds1';
 
 import { leaf } from 'api/leaf';
 
@@ -13,7 +14,7 @@ export const collections = [
         type: 'species',
         name: 'Trees',
         items: deciduousAndEvergreenTrees,
-        eol_name: 'Deciduous and evergreen trees',
+        eol_name: 'RHS Deciduous and evergreen trees',
         eol_link: 'https://eol.org/collections/140596'
     },
     {
@@ -55,6 +56,14 @@ export const collections = [
         items: commonCityBirds,
         eol_name: '8 Common City Birds',
         eol_link: 'https://eol.org/collections/140683'
+    },
+    {
+        id: 7,
+        type: 'species',
+        name: 'RHS Weeds 1',
+        items: weeds1,
+        eol_name: 'WEEDS I',
+        eol_link: 'https://eol.org/collections/140731'
     },
     {
         id: 101,

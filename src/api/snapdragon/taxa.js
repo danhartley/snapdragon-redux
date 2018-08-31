@@ -1351,4 +1351,73 @@ export const taxa = [
         eol: "http://eol.org/pages/7978/overview",
         wiki: "https://en.wikipedia.org/wiki/Columbidae"
     },
+    {
+        taxon: 'family',
+        name: 'Convolvulaceae',
+        thumb: "2015/01/14/00/22186_88_88.jpg",
+        names: [ { language: "en", names: ['Morning-glory Family']} ,
+        { language: "fr", names:[ 'Convolvulacées' ]},
+        { language: "de", names:[ 'Windengewächse' ]},
+        { language: "es", names:[ 'Morning-glory Family' ]},
+        { language: "pt", names:[ 'Morning-glory Family' ]},
+        { language: "it", names:[ 'Morning-glory Family' ]}],
+        species: '1650',
+        genera: '60',
+        traits: [ { language: "en", name: 'pollination', values: [ 'Bees', 'Self', 'Bats'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Twining and erect herbs, some woody vines, trees, and shrubs. Widespread in both tropical and temperate areas. Members often ornamental but also the sweet potato (Ipomoea batatas).',
+                identification: 'Open funnel-shaped flowers and winding stems.'
+            }
+        ],
+        eol: "http://eol.org/pages/4431/overview",
+        wiki: "https://en.wikipedia.org/wiki/Convolvulaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Equisetaceae',
+        thumb: "2014/04/07/01/52227_orig.jpg",
+        names: [ { language: "en", names: ['Horsetails']} ,
+        { language: "fr", names:[ 'Prèle' ]},
+        { language: "de", names:[ 'Schachtelhalmgewächse' ]},
+        { language: "es", names:[ 'Horsetails' ]},
+        { language: "pt", names:[ 'Cavalinha' ]},
+        { language: "it", names:[ 'Horsetails' ]}],
+        species: '20',
+        genera: '1',
+        traits: [ { language: "en", name: 'pollination', values: [ 'Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'The only surviving family of the Equisetales, a group with many fossils of large tree-like plants that possessed ribbed stems similar to modern horsetails.',
+                identification: '1 stalk bearing cone-like spore-producing structures, 1 sterile (the horse tail).'
+            }
+        ],
+        eol: "http://eol.org/pages/4080/overview",
+        wiki: "https://en.wikipedia.org/wiki/Equisetaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Euphorbiaceae',
+        thumb: "2014/07/18/07/47489_88_88.jpg",
+        names: [ { language: "en", names: ['Spurge family']} ,
+        { language: "fr", names:[ 'Euphorbiacées' ]},
+        { language: "de", names:[ 'Wolfsmilchgewächse' ]},
+        { language: "es", names:[ 'Spurge family' ]},
+        { language: "pt", names:[ 'Euforbiácea' ]},
+        { language: "it", names:[ 'Euforbiacee' ]}],
+        species: '7500',
+        genera: '300',
+        traits: [ { language: "en", name: 'pollination', values: [ 'Bees', 'Insects', 'Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'A large, diverse, and widespread family. Euphorbia subtribe show highly specialized form of pseudanthium called a cyathium.',
+                identification: 'Colourful bracts. Radially symmetrical flowers.'
+            }
+        ],
+        eol: "http://eol.org/pages/4198/overview",
+        wiki: "https://en.wikipedia.org/wiki/Euphorbiaceae"
+    },
 ];

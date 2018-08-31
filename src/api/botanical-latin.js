@@ -280,6 +280,10 @@ export const epithets = [
         "en" : ["hairy"]
     },
     {
+        "latin" : ["hirsuta"],
+        "en" : ["hairy"]
+    },
+    {
         "latin" : ["hortensis"],
         "en" : ["from the garden"]
     },
@@ -521,5 +525,9 @@ export const epithets = [
     {
         "latin" : ["stipula"],
         "en" : ["straw, stalk"]
+    },
+    {
+        "latin" : ["convolvulus"],
+        "en" : ["wound"]
     },
 ];
