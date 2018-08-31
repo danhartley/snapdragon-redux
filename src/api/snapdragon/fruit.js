@@ -1190,14 +1190,14 @@ export const fruit = [
           "language": "de"
         },
         {
-          "vernacularName": "Orchard Apple",
-          "language": "en",
-          "eol_preferred": true
-        },
-        {
           "vernacularName": "apple",
           "language": "en"
         },
+        {
+          "vernacularName": "Orchard Apple",
+          "language": "en",
+          "eol_preferred": true
+        },        
         {
           "vernacularName": "apple tree",
           "language": "en"

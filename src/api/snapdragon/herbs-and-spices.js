@@ -1251,12 +1251,6 @@ export const herbsAndSpices = [
         "2013/03/03/17/73446_orig.jpg",
         "2013/11/14/15/79559_orig.jpg"
       ],
-      "wikiSeachTerms": [
-        {
-          "term": "Black pepper",
-          "language": "en"
-        }
-      ],
       "names": [
         {
           "vernacularName": "Pfeffer",
@@ -1278,7 +1272,8 @@ export const herbsAndSpices = [
         {
           "vernacularName": "black pepper",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Common pepper",
@@ -2308,12 +2303,6 @@ export const herbsAndSpices = [
         "2013/11/25/01/17230_orig.jpg",
         "2013/11/25/20/55466_orig.jpg"
       ],
-      "wikiSeachTerms": [
-        {
-          "term": "Dill",
-          "language": "en"
-        }
-      ],
       "names": [
         {
           "vernacularName": "dill",
@@ -2327,7 +2316,8 @@ export const herbsAndSpices = [
         {
           "vernacularName": "dill",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Indian Dill",
@@ -2890,12 +2880,6 @@ export const herbsAndSpices = [
         "2009/09/15/17/53251_orig.jpg",
         "2012/06/13/06/59024_orig.jpg"
       ],
-      "wikiSeachTerms": [
-        {
-          "term": "Artemisia dracunculus",
-          "language": "en"
-        }
-      ],
       "names": [
         {
           "vernacularName": "Estragon",
@@ -2942,6 +2926,11 @@ export const herbsAndSpices = [
         {
           "vernacularName": "wormwood",
           "language": "en"
+        },
+        {
+          "vernacularName": "Artemisia dracunculus",
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Estragon",
