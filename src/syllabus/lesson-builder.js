@@ -9,13 +9,21 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
 
     let lessonPlan = { layouts: [] }, layoutIndex = 0;
 
+
+        const itemsCountToDate = (collection.currentRound - 1) * moduleSize;
+        const itemsLeft = collection.items.length - itemsCountToDate;
+
+        const layoutsToAdd = moduleSize > itemsLeft ? itemsLeft : moduleSize;
+
+        console.log('layoutsToAdd: ', layoutsToAdd);
+
     layouts.forEach( (layout, index) => {
 
         let i = 0;
         do {
             lessonPlan.layouts.push({...layout, lessonName, levelName });
             i++;
-        } while (i < moduleSize);
+        } while (i < layoutsToAdd);
     });
 
     const revisionLayouts = excludeRevision ? [] : lessonPlan.layouts.filter(layout => layout.type === 'revision');
@@ -24,7 +32,7 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
 
     const newLessonLayouts = shuffledLessonLayouts.map( (layout, i) => {
         layout.layoutIndex = layoutIndex;
-        layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
+        layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, layoutsToAdd, i);
         layout.progressIndex = i + 1;
         layoutIndex = layoutIndex + 1;
         return { ...layout };
@@ -32,7 +40,7 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
 
     revisionLayouts.forEach( (layout, i) => {
         layout.layoutIndex = layoutIndex;
-        layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, moduleSize, i);
+        layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, layoutsToAdd, i);
         layoutIndex = layoutIndex + 1;
         const arrayIndex = newLessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
         newLessonLayouts.splice(arrayIndex, 0, layout);

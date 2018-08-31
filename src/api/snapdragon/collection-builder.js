@@ -7,15 +7,27 @@ const encodeQuery = q => {
     return encodeURIComponent(q.trim()) 
 };
 
+// https://creativecommons.org/licenses/
+// CC BY:       Attribution                 (commerical allowed)
+// CC BY-SA:    Attribution-ShareAlike      (commerical allowed)
+// CC BY-ND:    Attribution-NoDerivs        (commerical allowed)
+// CC BY-NC:    Attribution-NonCommercial   (commerical NOT allowed)
+
 const all = 'all';
 const unrestrictedLicences = 'pd|cc-by|cc-by-sa|cc-by-nd|cc-by-nc';
 const restrictedLicences = 'pd|cc-by|cc-by-sa|cc-by-nd';
+const licenses = [
+    { key: 'unrestricted', value: unrestrictedLicences },
+    { key: 'restricted', value: restrictedLicences }
+];
+
+let selectedLicence = licenses[1].key;
 
 const speciesUrl = id => {
     return `http://eol.org/api/pages/1.0.json?
     batch=true&id=${encodeQuery(id)}&images_per_page=75&images_page=1
     &videos_per_page=0&videos_page=0&sounds_per_page=0&sounds_page=0&maps_per_page=0
-    &maps_page=0&texts_per_page=1&texts_page=1&subjects=all&licenses=${restrictedLicences}
+    &maps_page=0&texts_per_page=1&texts_page=1&subjects=all&licenses=${selectedLicence}
     &details=true&common_names=true&synonyms=false&references=false&taxonomy=false&vetted=0&cache_ttl=&language=en`;
 };
 
@@ -75,24 +87,37 @@ const init = () => {
                     data.name = binomial;
                     items.push(data);
                     console.log(data);
-                    selector(items);
+                    itemSelector(items);
                 });
             });
         })
     });
 };
 
-const selector = items => {
+const itemSelector = items => {
     let options = '<option value="0">Select species</option>';
     items.forEach(item => {
         options = options + `<option value="${item.id}">${item.name}</option>`;
     });
     document.querySelector('#names').innerHTML = options;
+    document.querySelector('#speciesCount').innerHTML = items.length;
+}
+
+const licenceSelector = licenses => {
+    let options = '<option value="0">Select media licence rule</option>';
+    licenses.forEach(licence => {
+        options = options + `<option value="${licence.value}">${licence.key}</option>`;
+    });
+    document.querySelector('#licences').innerHTML = options;
 }
 
 imageIds = [];
 
 let currentItemId;
+
+const setLicence = obj => {
+    selectedLicence = obj.value;
+}
 
 const getImages = obj => {
     imageIds = [];
@@ -123,6 +148,10 @@ const getImages = obj => {
 
 const newCollection = [];
 
+const jumpto = anchor => {
+    window.location.href = "#" + anchor;
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('#btnGet').addEventListener('click', event => {
         init();
@@ -144,11 +173,6 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log(newCollection);
         });
     });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-// const test = "Sweet Basil (<i>Ocimum basilicum</i>) is unusual among the many culinary herbs in the mint family (Lamiaceae=Labiateae) in that it is thought to have its origins in India. This plant has been cultivated in India and the Middle East since ancient times and was known to the Greeks and Romans. In addition to its very familiar uses such as in tomato-based sauces and salads, it is an ingredient in the liqueur chartreuse. \r\n\r\nSweet Basil is an erect annual, up to 35 cm in height, with ovate, toothed or entire, leaves which are up to 8 cm in length. The flowers are white or purple-tinged, around 1 cm long, and borne in simple terminal <a href=\"http://en.wikipedia.org/wiki/Raceme\">racemes</a>. Some varieties have partly red or entirely purple leaves.\r\n\r\n(Vaughan and Geissler 1997)\r\n\r\nA great diversity of Sweet Basil varieties have been developed (see <a href=\"http://www.hort.purdue.edu/newcrop/proceedings1999/v4-499.html\">Simon et al.1999</a>). Several aroma compounds can be found in different <a href=\"http://en.wikipedia.org/wiki/Chemotype\">chemotypes </a>of basil, including <a href=\"http://en.wikipedia.org/wiki/Citral\">citral</a>, <a href=\"http://en.wikipedia.org/wiki/Eugenol\">eugenol</a>, <a href= http://en.wikipedia.org/wiki/Linalool\">linalool</a>, <a href=\"http://en.wikipedia.org/wiki/Methylchavicol\">methylchavicol</a>, and <a href=\"http://en.wikipedia.org/wiki/Methyl_cinnamate\">methyl cinnamate</a> and are traded in the international essential oil market. These chemotypes are commonly known by names based on geographical origins such as Egyptian, French, European, or Reunion basil. The European type, a sweet basil, contains linalool and methylchavicol as the major constituents. The Egyptian basil is very similar to the European, but contains a higher percentage of methylchavicol. The Reunion type, from the Comoro Islands, and more recently from Madagascar, Thailand, and Vietnam, is characterized by high concentrations of methylchavicol. Methyl cinnamate-rich basil has been commercially produced in Bulgaria, India, Guatemala, and Pakistan. A basil from Java, Russia, and North Africa is rich in eugenol.\r\n\r\n<a href=\"http://www.hort.purdue.edu/newcrop/proceedings1999/v4-499.html\">Simon et al. (1999)</a> note that the diversity in basil based on appearance; flavors; fragrances; industrial, edible, and drying oils; and natural pigments provides great opportunities for developing new culinary, ornamental, and industrial crops. They also suggest that the high variation among basil cultivars in susceptibility to damage by <a href=\"http://eol.org/pages/2866900/overview\">Japanese beetles</a> suggests the presence of active ingredients that either could be useful in commercial traps or serve as a deterrent.\r\n\r\n<a href=\"http://www.hort.purdue.edu/newcrop/proceedings1999/v4-499.html\">Simon et al. (1999)</a>\r\n\r\n<a href=\"http://www.uvm.edu/vtvegandberry/Crops/basil.html\">University of Vermont Extension</a> provides links to a number of useful sources on Basil production.\r\n\r\n\r\n";
-// const test = "<br>Please see details, credits, terms of use and the latest version of the map at <a href='http://www.discoverlife.org/20/m?kind=Origanum+majorana&b=EOL/pages/579365'>Discover Life</a>.<br>Explore <a href='http://www.discoverlife.org/mp/20q?search=Origanum+majorana&b=EOL/pages/579365'><i>Origanum majorana</i></a> in Discover Life.";
-const test = "";
-document.querySelector('#test').innerHTML = test;
+    licenceSelector(licenses);
+    document.querySelector('#inputCollection').focus();
 });

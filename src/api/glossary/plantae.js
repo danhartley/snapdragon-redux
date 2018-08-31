@@ -185,4 +185,12 @@ export const plantae = [
         term: 'Dicotyledon',
         definition: 'Former division of angiosperms. Refers to seeds with two embryonic leaves (cotyledons).'
     },
+    {
+        term: 'Self-pollination',
+        definition: 'Process by which pollen from the same plant arrives at the stigma of a flower (angiosperms) or at the ovule (gymnosperms).'
+    },
+    {
+        term: 'Pseudanthium',
+        definition: 'A "false flower" made up of several true flowers.'
+    },
 ];

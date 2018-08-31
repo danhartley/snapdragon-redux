@@ -55,6 +55,24 @@ export const commonBirds = {
     glossary: ['animalia', 'common']
 };
 
+export const rhsWeeds1 = { 
+    id: 4, name: 'RHS Weeds I', 
+    type: 'species',
+    descriptions: [
+        'Part I of the approved list of Weeds for students taking Royal Horticultural Society Qualifications in Practical Horticulture.',
+        'Snapdragon does not necessarily support the view that weeds are plants in the wrong place.'
+    ],
+    items: utils.shuffleArray([ ...collections[6].items ]),
+    collections: ['RHS Weeds I'],
+    thumb: 'https://media.eol.org/content/2015/01/21/07/32241_88_88.jpg',
+    moduleSize: 4,
+    curator: 'Snapdragon',
+    level: 'RHS students',
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 3,
+    glossary: ['plantae', 'common']
+};
+
 kitchenGarden.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });
@@ -64,5 +82,9 @@ rhsTrees.items.forEach((item,index)=>{
 });
 
 commonBirds.items.forEach((item,index)=>{
+    item.snapIndex = index + 1;
+});
+
+rhsWeeds1.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });
