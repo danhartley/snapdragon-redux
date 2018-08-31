@@ -29,7 +29,8 @@ export const commonCityBirds = [
         },
         {
           "vernacularName": "Eurasian Blue Tit",
-          "language": "en"
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Fuerteventura Blue Tit",
@@ -146,7 +147,8 @@ export const commonCityBirds = [
         {
           "vernacularName": "Common Starling",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "English starling",
@@ -244,7 +246,7 @@ export const commonCityBirds = [
         "2015/01/20/15/79428_orig.jpg",
         "2015/01/20/17/33817_orig.jpg",
         "2012/06/13/18/33451_orig.jpg"
-      ],
+      ],      
       "names": [
         {
           "vernacularName": "Mauersegler",
@@ -258,7 +260,8 @@ export const commonCityBirds = [
         {
           "vernacularName": "common swift",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Eurasian Swift",
@@ -352,7 +355,8 @@ export const commonCityBirds = [
         {
           "vernacularName": "Winter Wren",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Alaska wren",
@@ -513,7 +517,8 @@ export const commonCityBirds = [
         {
           "vernacularName": "European Robin",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Eurasian Robin",
@@ -599,7 +604,8 @@ export const commonCityBirds = [
         {
           "vernacularName": "Common Blackbird",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Amsel",
@@ -714,7 +720,8 @@ export const commonCityBirds = [
         {
           "vernacularName": "House Sparrow",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "English sparrow",
@@ -879,7 +886,8 @@ export const commonCityBirds = [
         {
           "vernacularName": "Rock Dove",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Blue Rock Dove",
