@@ -4,9 +4,10 @@ import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
 import { modalImageHandler } from 'ui/helpers/handlers';
+import { stats } from 'ui/helpers/stats';
+import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
-import { lessonPlanner } from 'syllabus/lesson-planner';
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 import speciesPortraitTemplate from 'ui/screens/lists/species-table-portrait-template.html';
 import speciesSmallLandscapeTemplate from 'ui/screens/lists/species-table-small-landscape-template.html';
@@ -15,7 +16,7 @@ export const renderSpeciesCollectionList = (collection) => {
 
     if(collection.id === 0) return;
 
-    const { config: currentConfig, score, history, counter } = store.getState();
+    const { config: currentConfig, score, history, counter, collections  } = store.getState();
 
     const config = { ...currentConfig, ...{ collection: { id: collection.id } } };
 
@@ -148,10 +149,6 @@ export const renderSpeciesCollectionList = (collection) => {
             continueLearningActionBtn.innerHTML = 'Continue lesson';
         }
         
-        const isLevelComplete = collection.currentRound ? (collection.currentRound === collection.rounds) : false;
-        const levelName = config.lesson.level.name;
-        config.excludeRevision = levelName === 'Level 1' ? false : true;
-
         const getLatestCounter = () => { 
             const counter = store.getState().counter;
             const log = counter.log;
@@ -161,32 +158,18 @@ export const renderSpeciesCollectionList = (collection) => {
 
         continueLearningActionBtn.addEventListener('click', () => {
 
-            if(isLevelComplete) {
-                config.excludeRevision = true;
-                const lessonName = config.lesson.name;
-                const levelName = config.lesson.level.name;
-                const level = lessonPlanner.getNextLevel(lessonName, levelName, config.isPortraitMode);
-                config.lesson.level = level;
-                actions.boundNextLevel({ index: 0 });
-                setTimeout(() => {
-                    actions.boundUpdateConfig(config);
-                    actions.boundNextLevel({ index: 0 });
-                });
-            } else if(isLessonPaused) {
+            if(isLessonPaused) {
                 actions.boundToggleLesson(getLatestCounter());
             } else {
-                if(score) {
-                    actions.boundNextRound({ index: 0 });            
-                    // actions.boundNextRound({ index: 0, lesson: 'active' });            
-                    setTimeout(() => {
-                        actions.boundUpdateConfig(config);    
-                    });
-                } else {
-                    actions.boundChangeCollection(config);
-                }
+                const isLevelComplete = config.mode === 'review' ? true : collection.isLevelComplete;
+                const itemsToReview = stats.getItemsForRevision(collection, history, 1);
+                const mode = endOfRoundHandler.getMode(config.mode, isLevelComplete, itemsToReview);
+
+                endOfRoundHandler.callEndOfRoundActions(mode, config, collections, collection, score, itemsToReview, isLevelComplete);
             }
             
             subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
+            subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
         });
     }
 };

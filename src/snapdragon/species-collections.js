@@ -1,5 +1,3 @@
-import * as R from 'ramda';
-
 import { deciduousAndEvergreenTrees } from 'api/rhs/deciduous-evergreen-trees';
 import { herbsAndSpices } from 'api/snapdragon/herbs-and-spices';
 import { vegetables } from 'api/snapdragon/vegetables';
@@ -58,22 +56,6 @@ export const collections = [
         eol_name: '8 Common City Birds',
         eol_link: 'https://eol.org/collections/140683'
     },
-    // {
-    //     id: 2,
-    //     type: 'species',
-    //     name: 'UK Woodland',
-    //     items: uk1,
-    //     eol_name: 'UK 1 - Woodland',
-    //     eol_link: 'https://eol.org/collections/139458'
-    // },
-    // {
-    //     id: 3,
-    //     type: 'species',
-    //     name: 'Mediterranean',
-    //     items: med1,
-    //     eol_name: 'Mediterranean 1',
-    //     eol_link: 'https://eol.org/collections/139572'
-    // },
     {
         id: 101,
         type: 'skill',

@@ -1,3 +1,6 @@
+import * as R from 'ramda';
+
+import { utils } from 'utils/utils'; 
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { modalImagesHandler } from 'ui/helpers/handlers';
@@ -6,7 +9,7 @@ import landscapeTemplate from 'ui/screens/landscape/specimen-tiles-template.html
 
 export const renderSpecimenTiles = (collection) => {
 
-    const item = collection.items[collection.itemIndex];
+    const item = collection.nextItem;
 
     if(!item) return;
 
@@ -22,13 +25,7 @@ export const renderSpecimenTiles = (collection) => {
 
     template.innerHTML = landscapeTemplate;
 
-    let images = [];
-
-    item.imageIndices.forEach(index => {
-        const image = item.images[index];
-        if(image && index < 4)
-            images.push(image);
-    });
+    const images = R.take(4, utils.shuffleArray(item.images));
 
     const parent = DOM.leftBody;
     parent.innerHTML = '';

@@ -11,7 +11,7 @@ import { symbionts } from 'api/snapdragon/symbiosis';
 
 export const renderWildcard = collection => {
 
-    const item = collection.items[collection.itemIndex];
+    const item = collection.nextItem;
     const { lessonPlan, config } = store.getState();
 
     item.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;

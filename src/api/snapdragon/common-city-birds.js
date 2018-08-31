@@ -140,6 +140,10 @@ export const commonCityBirds = [
           "eol_preferred": true
         },
         {
+          "vernacularName": "Starling",
+          "language": "en"
+        },
+        {
           "vernacularName": "Common Starling",
           "language": "en",
           "eol_preferred": true
@@ -159,11 +163,7 @@ export const commonCityBirds = [
         {
           "vernacularName": "Purple-winged Starling",
           "language": "en"
-        },
-        {
-          "vernacularName": "Starling",
-          "language": "en"
-        },
+        },        
         {
           "vernacularName": "church-martin",
           "language": "en"

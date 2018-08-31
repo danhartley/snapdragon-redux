@@ -7,13 +7,13 @@ export const renderTextEntry = (collection) => {
     const { layout, config } = store.getState();
 
     const screen = layout.screens.filter(el => el.name === 'text-entry')[0];
-    const item = collection.items[collection.itemIndex];
+    const item = collection.nextItem;
     
     if(!screen) return;
 
     item.vernacular = itemProperties.vernacularName(item, config);
 
-    const question = { binomial: item.name, species: item.species, genus: item.genus, taxon: screen.taxon, question: item[screen.taxon], common: itemProperties.vernacularName(item, config) };
+    const question = { binomial: item.name, species: item.species, genus: item.genus, taxon: screen.taxon, question: item[screen.taxon], common: item.vernacular };
 
     const hints = [
         { selector: 'span.js-genus', value: question.genus },

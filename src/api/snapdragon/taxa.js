@@ -1229,7 +1229,7 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Small-medium sized passerine birds. Tthe starling is most common Europe and N America, the myna in Asia and Pacific.',
+                summary: 'Small-medium sized passerine birds. The starling is most common Europe and N America, the myna in Asia and Pacific.',
                 identification: 'Small-medium sized birds many strikingly coloured and iridescent.'
             }
         ],
@@ -1344,7 +1344,7 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Columbine refers to pigeons and doves. Likely the most common birds in the world. They primarily feed on seeds, fruits, and plants.',
+                summary: 'The family of pigeons and doves. Likely the most common birds in the world. They primarily feed on seeds, fruits, and plants.',
                 identification: 'Small, rounded heads and bodies, small, slim bills, dense, soft feathers, tapered wings and short, scaly legs.'
             }
         ],

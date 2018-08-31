@@ -18,7 +18,7 @@ import taxonCard from 'ui/screens/cards/taxon-card-template.html';
 
 export const renderMultiStrips = (collection) => {
 
-    const item = collection.items[collection.itemIndex];
+    const item = collection.nextItem;
 
     const { config, lessonPlan, layout } = store.getState();
 
@@ -29,8 +29,7 @@ export const renderMultiStrips = (collection) => {
     
     template.innerHTML = familyTemplate;
 
-    const collectionFamilies = collection.items.map(item => item.family).filter(utils.onlyUnique);
-    const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, collectionFamilies));
+    const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, collection.families));
 
     let description = config.isPortraitMode ? `Family: ${item.family} ` : `Which of the above fits the ${item.family}?`;
 
@@ -96,10 +95,9 @@ export const renderMultiStrips = (collection) => {
         const number = config.isPortraitMode ? 6 : config.isSmallLandscapeMode ? 6 : 6;
 
         const vernacular = itemProperties.vernacularName(item, config);
-        const questionText = config.isPortraitMode ? 'Select equivalent of common name' : `Select latin equivalent of common name`;
+        const questionText = config.isPortraitMode ? 'Select equivalent of common name' : `Select the latin equivalent of the common name`;
         const question = item.name;
-        const itemNames = [ ...collection.items.map(item => item.name) ];
-        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(itemNames)).filter(itemName => itemName !== item.name));
+        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(collection.speciesNames)).filter(itemName => itemName !== item.name));
         const answers = utils.shuffleArray([question, ...alternatives]);
 
         const description = { vernacular, name: '---' };
@@ -111,10 +109,10 @@ export const renderMultiStrips = (collection) => {
 
         const number = config.isPortraitMode ? 6 : config.isSmallLandscapeMode ? 6 : 6;
 
-        const questionText = config.isPortraitMode ? 'Select equivalent of latin name' : `Select common name equivalent of the latin`;
+        const questionText = config.isPortraitMode ? 'Select equivalent of latin name' : `Select the common name equivalent of the latin`;
         const question = itemProperties.vernacularName(item, config);
         const items = [ ...collection.items ];
-        let alternatives = R.take(number, utils.shuffleArray(items).map(i => i.names.filter(name => name.language === config.language)[0].vernacularName));
+        let alternatives = R.take(number, utils.shuffleArray(collection.speciesVernacularNames));
         alternatives = R.take(number-1, alternatives.filter(alt => alt.toUpperCase() !== question.toUpperCase()));
         alternatives = alternatives.map(a => utils.capitaliseFirst(a));
         const answers = utils.shuffleArray([question, ...alternatives]);
@@ -126,7 +124,7 @@ export const renderMultiStrips = (collection) => {
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
-        const number = config.isPortraitMode ? 3 : config.isSmallLandscapeMode ? 4 : 6;
+        const number = config.isPortraitMode ? 3 : config.isSmallLandscapeMode ? 4 : 5;
 
         const questionText = config.isPortraitMode ? 'Tap to match Quick ID' : `Click to match the Quick Id`;
         const question = families.find(f => f.name === item.family).descriptions[0].identification;

@@ -1,13 +1,14 @@
 import { store } from 'redux/store';
+import { subscription } from 'redux/subscriptions';
 import { DOM } from 'ui/dom';
-import { actions } from 'redux/actions/action-creators';
-import { lessonPlanner } from 'syllabus/lesson-planner';
+import { stats } from 'ui/helpers/stats';
+import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import summaryTemplate from 'ui/screens/progress/summary-template.html';
 
 export const renderSummary = (history) => {
 
-    const { score, collection, config: currentConfig } = store.getState();
+    const { score, collection, config: currentConfig, collections } = store.getState();
 
     const config = { ...currentConfig };
 
@@ -18,27 +19,38 @@ export const renderSummary = (history) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    const isLevelComplete = collection.currentRound === collection.rounds;
-    const lastLevel = 4;
+    const lastLevel = 4; // ????
     const collectionComplete = config.lesson.level.id === lastLevel;
     const speciesCount = collection.items.length;
     const speciesTestedCount = collection.currentRound * config.moduleSize;
     const speciesUntestedCount = speciesCount - speciesTestedCount;
 
+    const isLevelComplete = config.mode === 'review' ? true : collection.isLevelComplete;
+    const itemsToReview = stats.getItemsForRevision(collection, history, 1);
+    const mode = endOfRoundHandler.getMode(config.mode, isLevelComplete, itemsToReview);
+
     let summary; 
-    if(!isLevelComplete) {
-        summary = `There are ${speciesUntestedCount} more species to learn in this lesson.`;
+
+    if(mode === 'learn') {
+
+        if(!isLevelComplete) {
+            summary = `There are ${speciesUntestedCount} more species to learn in this lesson.`;
+        }
+        if(isLevelComplete) {
+            summary = 'Continue to the next level...';
+        }
+        if(isLevelComplete && !collectionComplete) {
+            summary = `Congratulations! You have completed level ${config.lesson.level.id}. 
+                Continue with the lesson to learn more species from ${collection.name}.` 
+        }
+        if(isLevelComplete && collectionComplete) {
+            summary = `You have completed the collection. Well done! 
+                Begin a new collection, review questions you got wrong, or consolidate what you have just learnt.`
+        }
     }
-    if(isLevelComplete) {
-        summary = 'Continue to the next level...';
-    }
-    if(isLevelComplete && !collectionComplete) {
-        summary = `Congratulations! You have completed level ${config.lesson.level.id}. 
-             Continue with the lesson to learn more species from ${collection.name}.` 
-    }
-    if(isLevelComplete && collectionComplete) {
-        summary = `You have completed the collection. Well done! 
-             Begin a new collection, review questions you got wrong, or consolidate what you have just learnt.`
+
+    if(mode === 'review') {
+        summary = 'Before going to the next level, there are a few questions to review...';
     }
 
     score.correct = score.correct;
@@ -51,28 +63,10 @@ export const renderSummary = (history) => {
 
     const handleBtnClickEvent = event => {
         
-        const lessonName = config.lesson.name;
-        const levelName = config.lesson.level.name;
+        subscription.getByName('renderSummary').forEach(sub => subscription.remove(sub));
+        subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
 
-        config.excludeRevision = levelName === 'Level 1' ? false : true;
-
-        if(isLevelComplete) {
-            config.excludeRevision = true;
-            const level = lessonPlanner.getNextLevel(lessonName, levelName, config.isPortraitMode);
-            config.lesson.level = level;
-            actions.boundNextLevel({ index: 0 });
-            setTimeout(() => {
-                actions.boundUpdateConfig(config);
-                actions.boundNextLevel({ index: 0 });
-            });
-        } else {
-            actions.boundNextRound({ index: 0 });
-            setTimeout(() => {
-                actions.boundUpdateConfig(config);    
-            });
-        }
-
-        config.moduleSize = collection.moduleSize;        
+        endOfRoundHandler.callEndOfRoundActions(mode, config, collections, collection, score, itemsToReview, isLevelComplete);
     };
 
     learnMoreBtn.removeEventListener('click', handleBtnClickEvent);

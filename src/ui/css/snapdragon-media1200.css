@@ -38,23 +38,4 @@
     letter-spacing: .1em;
     border-radius: .2em;
   }
-
-  iframe {
-    width: 960px;
-    max-width: 960px;
-    border: 0;
-    height: 100%;
-  }
-  
-  /* #externalPageModal .modal-dialog {
-    max-width: 60vw;
-  } */
-
-  /* #externalPageModal .modal-content {
-    height: 600px;
-  }
-
-  #externalPageModal .modal-body {
-    height: 550px;
-  } */
 }

@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 
 export const createLesson = (lessonName, levelName, moduleSize, excludeRevision, isPortraitMode, layouts, progressScreens, collection, wildcardLayouts) => {
-    
+
     if(excludeRevision) {
         layouts = layouts.filter(layout => layout.type !== 'revision');
     }

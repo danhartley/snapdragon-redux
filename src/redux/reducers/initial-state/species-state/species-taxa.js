@@ -3,12 +3,28 @@ const getTaxa = (items, taxon) => {
     return taxa;
 };
 
-export const getFamilies = items => {
+const getFamilyNames = items => {
     const families = getTaxa(items, 'family').map(item => item.family);
     return families;
 };
 
-export const getUniqueFamilies = items => {
+const getUniqueFamilies = items => {
     const families = getTaxa(items, 'family').map(item => item.family);
     return new Set(families);
 };
+
+const reducer = function(obj,elem){
+    obj[elem]=obj[elem] || 0;
+    obj[elem]++;
+    return obj;
+};
+
+const getFamilyStats = items => {
+    return getFamilyNames(items).reduce(reducer,{});
+}
+
+export const familyProps = {
+    getFamilyNames,
+    getUniqueFamilies,
+    getFamilyStats
+}

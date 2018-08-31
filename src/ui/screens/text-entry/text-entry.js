@@ -17,12 +17,12 @@ export const renderInput = (screen, question, hints) => {
 
     const template = templates.querySelector(`.${screen.template}`);
 
-    const item = collection.items[collection.itemIndex];
+    const item = collection.nextItem;
 
     hints.forEach(hint => {
         const el = template.content.querySelector(hint.selector);
         if(el)
-            template.content.querySelector(hint.selector).innerHTML = hint.value.toUpperCase();  
+            template.content.querySelector(hint.selector).innerHTML = (hint && hint.value) ? hint.value.toUpperCase() : '';  
     });
 
     const clone = document.importNode(template.content, true);

@@ -31,6 +31,8 @@ export const renderScore = (score) => {
 
     renderTemplate({ score, history: runningTotal, collection, config }, template.content, parent);
 
+    score.mode = config.mode;
+
     if(endOfRound)
         actions.boundUpdateHistory(score);
 };

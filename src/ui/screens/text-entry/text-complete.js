@@ -12,7 +12,7 @@ import completeTemplate from 'ui/screens/text-entry/text-complete-template.html'
 
 export const renderCompleteText = (collection) => {
 
-    const item = collection.items[collection.itemIndex];
+    const item = collection.nextItem;
 
     const { layout, config, lessonPlan } = store.getState();
 
@@ -59,7 +59,16 @@ export const renderCompleteText = (collection) => {
 
     const numerOfItems = config.isPortraitMode ? 4 : 5;
 
-    const itemTaxons = [ ...collection.items ].map(item => item[givenTaxon]);
+    const itemTaxons = [ ...collection.speciesNames ].map(item => {
+        switch(givenTaxon) {
+            case 'genus':
+                return itemProperties.genusName(item);
+            case 'species':
+                return itemProperties.speciesName(item);
+            default:
+                return item
+        }
+    });
     const pool = R.take(numerOfItems, utils.shuffleArray(itemTaxons).filter(utils.onlyUnique).filter(itemTaxon => itemTaxon !== item[givenTaxon]));
     pool.push(item[givenTaxon]);
 

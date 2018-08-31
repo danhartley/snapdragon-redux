@@ -9,7 +9,7 @@ export const renderLeafTile = (collection) => {
 
     template.innerHTML = leafTileTemplate;
 
-    const item = collection.items[collection.itemIndex];
+    const item = collection.nextItem;
 
     const { layout } = store.getState();
 

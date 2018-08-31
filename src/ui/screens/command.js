@@ -7,7 +7,7 @@ import { renderSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
 
 export const runTask = (collection) => {
 
-    const item = collection.items[collection.itemIndex];
+    const item = collection.nextItem;
 
     const { config, counter } = store.getState();
 
