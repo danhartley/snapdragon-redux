@@ -236,7 +236,7 @@ hr {
 }
 
 .card.taxon, .lesson-plans .table-row.taxon-background:nth-child(n) {
-  background-color: var(--snap-taxon-highlight-background);
+  background-color: var(--snap-taxon-card-background);
 }
 
 .snapdragon-options {
@@ -763,12 +763,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: var(--snap-text-light);
 }
 
-/* .modal-image, .modal-image img {
-  height: 40vh;
-} */
-
 #listModal .modal-body, #listModal .list-group-collection {
-  background-color: var(--snap-grid-background);
+  background-color: var(--snap-modal-background);
 }
 
 #listModal .scrollable {

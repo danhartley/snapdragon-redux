@@ -13,7 +13,7 @@ export const nextLesson = (config) => {
 
     const { lessonPlan, collection, score, history, collections } = store.getState();
 
-    config.excludeRevision = config.lesson.level.id !== 1;
+    // config.excludeRevision = config.lesson.level.id !== 1;
 
     const isLessonPlanRequired = score.total === 0;
 
