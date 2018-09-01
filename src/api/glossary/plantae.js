@@ -182,8 +182,12 @@ export const plantae = [
         definition: '(Of flowers) twice divided.'
     },
     {
-        term: 'Dicotyledon',
-        definition: 'Former division of angiosperms. Refers to seeds with two embryonic leaves (cotyledons).'
+        term: 'Dicotyledon (dicot)',
+        definition : "plant group where seed has two embryonic leaves (cotyledons)."
+    },
+    {
+        term : "Monocotyledon (monocot)",
+        definition : "plant group where seed has one embryonic leaf (cotyledon)."
     },
     {
         term: 'Self-pollination',
@@ -192,5 +196,5 @@ export const plantae = [
     {
         term: 'Pseudanthium',
         definition: 'A "false flower" made up of several true flowers.'
-    },
+    },    
 ];
