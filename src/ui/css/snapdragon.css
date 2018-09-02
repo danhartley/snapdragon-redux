@@ -1169,3 +1169,12 @@ tbody {
 .dropdown-item-text {
   background-color: rgba(76, 105, 135,.4);
 }
+
+.bird-song {
+  display: flex;
+  margin: 1em 0 0 0;
+}
+
+.bird-song div {
+  flex: 1;
+}
