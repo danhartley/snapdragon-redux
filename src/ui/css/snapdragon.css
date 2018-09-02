@@ -1182,3 +1182,11 @@ tbody {
 .bird-song-bg {
   background-color: var(--snap-collection-active);
 }
+
+.bird-song-icon {
+  color: rgba(0,0,0,1);
+}
+
+.bird-song-icon-disabled {
+  color: rgba(0,0,0,.2);
+}
