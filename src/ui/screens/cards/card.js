@@ -10,6 +10,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
 import landscapeTemplate from 'ui/screens/cards/card-template.html';
 import { imageSlider } from 'ui/screens/common/image-slider';
+import { getBirdSong } from 'xeno-canto/birdsong';
 
 export const renderCard = (collection) => {
     
@@ -31,6 +32,25 @@ export const renderCard = (collection) => {
     config.isPortraitMode
         ? renderPortrait(template, item, config)
         : renderLandscape(template, item, config);
+
+    const player = document.querySelector('.js-bird-song-player');
+    const src = document.querySelector('.js-bird-song');
+
+    const node = config.isPortraitMode ? player : src;
+    
+    getBirdSong(item.name, node, config.isPortraitMode);
+
+    player.addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.style.width = '100%';
+        iframe.src = player.dataset.src;
+        document.querySelector('.js-modal-text-title').innerHTML = `${item.name} bird song`;
+        const elm = document.querySelector('.js-modal-text');
+        while (elm.firstChild) {
+            elm.removeChild(elm.firstChild);
+         }
+        elm.appendChild(iframe);
+    });
 };
 
 const renderLandscape = (template, item, config) => {
