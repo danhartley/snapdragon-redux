@@ -4,7 +4,6 @@ import { persistor } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import settingsTemplate from 'ui/fixtures/settings-template.html';
-import { renderNavigation } from 'ui/fixtures/navigation';
 
 export const renderSettings = () => {
     
@@ -14,7 +13,7 @@ export const renderSettings = () => {
     
     template.innerHTML = settingsTemplate;
     
-    DOM.modalTextTitle.innerHTML = 'Snapdragon menu';
+    DOM.modalTextTitle.innerHTML = 'Snapdragon settings';
 
     const { config } = store.getState();
 

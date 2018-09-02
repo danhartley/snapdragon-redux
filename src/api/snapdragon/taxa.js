@@ -40,7 +40,7 @@ export const taxa = [
         members: [  'Daucus carota subsp. sativus', 'Coriandrum sativum', 'Petroselinum crispum', 'Foeniculum vulgare', 
                     'Anethum graveolens', 'Conium maculatum', 'Cuminum cyminum', 'Carum carvi', 'Anthriscus cerefolium',
                     'Myrrhis odorata', 'Pimpinella anisum', 'Levisticum officinale', 'Pastinaca sativa'],
-        traits: [ { language: "en", names: ['Carpenter Bees', 'Mason Bees', 'Leafcutter Bees'], families: ['Xylocopa', 'Megachilidae'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Carpenter Bees', 'Mason Bees', 'Leafcutter Bees'], families: ['Xylocopa', 'Megachilidae'] } ],
         species: 3700,
         genera: 400,
         toxic: { members:['Conium maculatum'] },
@@ -765,7 +765,7 @@ export const taxa = [
         { language: "it", names:[ 'Fagacee' ]}],
         species:  927,
         genera: 8,
-        traits: [ { language: "en", names: ['Insects', 'Wind'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Insects', 'Wind'] } ],
         descriptions: [
             {
                 language: 'en',
