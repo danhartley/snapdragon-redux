@@ -1178,3 +1178,7 @@ tbody {
 .bird-song div {
   flex: 1;
 }
+
+.bird-song-bg {
+  background-color: var(--snap-collection-active);
+}
