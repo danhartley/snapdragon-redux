@@ -22,7 +22,9 @@ export const kitchenGarden = {
     level: 'General Interest',
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 3,
-    glossary: ['plantae', 'common']
+    glossary: ['plantae', 'common'],
+    courseId: 1,
+    course: 'Snapdragon'
 };
 
 export const rhsTrees = { 
@@ -37,7 +39,9 @@ export const rhsTrees = {
     level: 'RHS students',
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 3,
-    glossary: ['plantae', 'common']
+    glossary: ['plantae', 'common'],
+    courseId: 2,
+    course: 'RHS Practical Horticulture'
 };
 
 export const commonBirds = { 
@@ -52,7 +56,9 @@ export const commonBirds = {
     level: 'General Interest',
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 3,
-    glossary: ['animalia', 'common']
+    glossary: ['animalia', 'common'],
+    courseId: 1,
+    course: 'Snapdragon'
 };
 
 export const rhsWeeds1 = { 
@@ -70,7 +76,9 @@ export const rhsWeeds1 = {
     level: 'RHS students',
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 3,
-    glossary: ['plantae', 'common']
+    glossary: ['plantae', 'common'],
+    courseId: 2,
+    course: 'RHS Practical Horticulture'
 };
 
 kitchenGarden.items.forEach((item,index)=>{

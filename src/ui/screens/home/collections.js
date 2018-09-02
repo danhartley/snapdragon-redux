@@ -1,3 +1,4 @@
+import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
@@ -25,7 +26,7 @@ export const renderCollections = (counter) => {
     template.innerHTML = collectionsTemplate;
 
     let language = config.languages.find(l => l.lang === config.language);
-    let lessons = collections.filter(collection => collection.type === 'species');
+    let lessons = utils.sortBy(collections.filter(collection => collection.type === 'species'), 'courseId', 'asc');
 
     DOM.rightBody.innerHTML = '';
 
@@ -93,6 +94,19 @@ export const renderCollections = (counter) => {
             elem.hide(learningActionBtnPlaceholder);        
             elem.show(lessonPlanLink);    
         });        
+    });
+
+    let currentCourseId;
+
+    document.querySelectorAll('.dropdown.js-collections .dropdown-item').forEach(option => {
+        const optionCollection = collections.find(collection => collection.id === parseInt(option.id));
+        if(optionCollection.courseId !== currentCourseId && optionCollection.course !== '') {
+            var courseHeader = document.createElement('span');
+            courseHeader.classList.add('dropdown-item-text');
+            courseHeader.innerHTML = optionCollection.course;
+            option.before(courseHeader);            
+        }
+        currentCourseId = optionCollection.courseId;
     });
 
     // Languages

@@ -63,7 +63,7 @@ export const collections = [
         name: 'RHS Weeds 1',
         items: weeds1,
         eol_name: 'WEEDS I',
-        eol_link: 'https://eol.org/collections/140731'
+        eol_link: 'https://eol.org/collections/140731'        
     },
     {
         id: 101,

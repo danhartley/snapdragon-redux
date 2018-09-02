@@ -80,7 +80,7 @@ hr {
 }
 
 .collections a.dropdown-item {
-  padding: .75em 0;
+  padding: .5em 0;
 }
 
 .collections a.dropdown-item:active, .collections a.dropdown-item.active {
@@ -1164,4 +1164,8 @@ tbody {
 
 .lesson-plan-btn {
   padding: 0em .5em;
+}
+
+.dropdown-item-text {
+  background-color: rgba(76, 105, 135,.4);
 }

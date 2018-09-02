@@ -1225,7 +1225,7 @@ export const weeds1 = [
           "eol_preferred": true
         },
         {
-          "vernacularName": "Shephered's purse",
+          "vernacularName": "Shepherd's purse",
           "language": "en",
           "eol_preferred": true
         },

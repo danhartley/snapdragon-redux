@@ -40,7 +40,7 @@ export const taxa = [
         members: [  'Daucus carota subsp. sativus', 'Coriandrum sativum', 'Petroselinum crispum', 'Foeniculum vulgare', 
                     'Anethum graveolens', 'Conium maculatum', 'Cuminum cyminum', 'Carum carvi', 'Anthriscus cerefolium',
                     'Myrrhis odorata', 'Pimpinella anisum', 'Levisticum officinale', 'Pastinaca sativa'],
-        traits: [ { language: "en", names: ['Carpenter Bees', 'Mason Bees', 'Leafcutter Bees'], families: ['Xylocopa', 'Megachilidae'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Carpenter Bees', 'Mason Bees', 'Leafcutter Bees'], families: ['Xylocopa', 'Megachilidae'] } ],
         species: 3700,
         genera: 400,
         toxic: { members:['Conium maculatum'] },
@@ -765,7 +765,7 @@ export const taxa = [
         { language: "it", names:[ 'Fagacee' ]}],
         species:  927,
         genera: 8,
-        traits: [ { language: "en", names: ['Insects', 'Wind'] } ],
+        traits: [ { language: "en", name: 'pollination', values: ['Insects', 'Wind'] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1419,5 +1419,97 @@ export const taxa = [
         ],
         eol: "http://eol.org/pages/4198/overview",
         wiki: "https://en.wikipedia.org/wiki/Euphorbiaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Ranunculaceae',
+        thumb: "2014/07/18/07/47489_88_88.jpg",
+        names: [ { language: "en", names: ['Buttercup family', 'Crowfoot family']} ,
+        { language: "fr", names:[ 'Renonculacées' ]},
+        { language: "de", names:[ 'Hahnenfußgewächse' ]},
+        { language: "es", names:[ 'Ranunculáceas' ]},
+        { language: "pt", names:[ 'Buttercup family' ]},
+        { language: "it", names:[ 'Buttercup family' ]}],
+        species: '2000',
+        genera: '43',
+        traits: [ { language: "en", name: 'pollination', values: [ 'Insects', 'Wind'] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Mostly herbaceous annuals or perennials, but some woody climbers (Clematis). Mostly bisexual flowers often aggregated in cymes, panicles, or spikes.',
+                identification: 'Dicots with 3 or more simple, hooked pistils.'
+            }
+        ],
+        eol: "http://eol.org/pages/4377/overview",
+        wiki: "https://en.wikipedia.org/wiki/Ranunculaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Polygonaceae',
+        thumb: "2014/07/18/07/47489_88_88.jpg",
+        names: [ { language: "en", names: ['Knotweed family', 'Smartweed family']} ,
+        { language: "fr", names:[ 'Polygonacées' ]},
+        { language: "de", names:[ 'Knöterichgewächse' ]},
+        { language: "es", names:[ 'Centinodias' ]},
+        { language: "pt", names:[ 'Knotweed family' ]},
+        { language: "it", names:[ 'Knotweed family' ]}],
+        species: '1200',
+        genera: '48',
+        traits: [ { language: "en", name: 'pollination', values: [ 'Insects' ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Flowering plants. Its name refers to the many swollen nodes the stems of some species have (poly - many and goni - knee or joint.',
+                identification: 'Small flowers, , no corolla, 3-6 colourful sepals.'
+            }
+        ],
+        eol: "http://eol.org/pages/4364/overview",
+        wiki: "https://en.wikipedia.org/wiki/Polygonaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Urticaceae',
+        thumb: "2014/07/18/07/47489_88_88.jpg",
+        names: [ { language: "en", names: ['Nettle family']} ,
+        { language: "fr", names:[ 'Nettle family' ]},
+        { language: "de", names:[ 'Brennnesselgewächse' ]},
+        { language: "es", names:[ 'Nettle family' ]},
+        { language: "pt", names:[ 'Nettle family' ]},
+        { language: "it", names:[ 'Nettle family' ]}],
+        species: '2625',
+        genera: '53',
+        traits: [ { language: "en", name: 'pollination', values: [ 'Wind' ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Shrubs, lianas, herbs, or, rarely, trees. Disperse pollen when stamens are mature and filaments straighten explosively.',
+                identification: 'Hairy plants, no petals, flowers in string-like clusters from leaf axil.'
+            }
+        ],
+        eol: "http://eol.org/pages/4452/overview",
+        wiki: "https://en.wikipedia.org/wiki/Urticaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Plantaginaceae',
+        thumb: "2014/07/18/07/47489_88_88.jpg",
+        names: [ { language: "en", names: ['Plantain family']} ,
+        { language: "fr", names:[ 'Plantaginacées' ]},
+        { language: "de", names:[ 'Wegerichgewächse' ]},
+        { language: "es", names:[ 'Plantagináceas' ]},
+        { language: "pt", names:[ 'Plantain family' ]},
+        { language: "it", names:[ 'Plantaginacee' ]}],
+        species: '1900',
+        genera: '94',
+        traits: [ { language: "en", name: 'pollination', values: [ 'Wind', 'Wasps', 'Bumbless', 'Inescts' ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Diverse, cosmopolitan family of herbs, shrubs and some aquatic plants and members formerly in Figwort and Snapdragon families.',
+                identification: 'Most flowers polysymmetric, corolla 2-lipped.'
+            }
+        ],
+        eol: "http://eol.org/pages/4354/overview",
+        wiki: "https://en.wikipedia.org/wiki/Plantaginaceae"
     },
 ];
