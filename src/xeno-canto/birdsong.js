@@ -19,7 +19,7 @@ export const getBirdSong = (binomial, node, portrait) => {
         const recording = data.recordings[0];
         const url = `https://www.xeno-canto.org/${recording.id}/embed?simple=1`;
         portrait ? node.dataset.src = url : node.src = url;
-        if(portrait) node.style.display = 'initial';
+        if(portrait) node.style.color = 'rgba(0,0,0)';
       });
 
       return fetchAsync(endpoint, node, portrait);

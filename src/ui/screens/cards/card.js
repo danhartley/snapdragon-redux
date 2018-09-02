@@ -42,8 +42,10 @@ export const renderCard = (collection) => {
 
     player.addEventListener('click', () => {
         const iframe = document.createElement('iframe');
-        iframe.style.width = '100%';
+        iframe.style.width = '80vw';
+        iframe.style.border = 0;
         iframe.src = player.dataset.src;
+        document.querySelector('#menuModal .modal-body').classList.add('bird-song-bg');
         document.querySelector('.js-modal-text-title').innerHTML = `${item.name} bird song`;
         const elm = document.querySelector('.js-modal-text');
         while (elm.firstChild) {
