@@ -32,27 +32,6 @@ export const renderCard = (collection) => {
     config.isPortraitMode
         ? renderPortrait(template, item, config)
         : renderLandscape(template, item, config);
-
-    const player = document.querySelector('.js-bird-song-player');
-    const src = document.querySelector('.js-bird-song');
-
-    const node = config.isPortraitMode ? player : src;
-    
-    getBirdSong(item.name, node, config.isPortraitMode);
-
-    player.addEventListener('click', () => {
-        const iframe = document.createElement('iframe');
-        iframe.style.width = '80vw';
-        iframe.style.border = 0;
-        iframe.src = player.dataset.src;
-        document.querySelector('#menuModal .modal-body').classList.add('bird-song-bg');
-        document.querySelector('.js-modal-text-title').innerHTML = `${item.name} bird song`;
-        const elm = document.querySelector('.js-modal-text');
-        while (elm.firstChild) {
-            elm.removeChild(elm.firstChild);
-         }
-        elm.appendChild(iframe);
-    });
 };
 
 const renderLandscape = (template, item, config) => {
@@ -101,6 +80,10 @@ const renderLandscape = (template, item, config) => {
     const wikiNode = document.querySelector('.js-species-card-wiki');
 
     renderWiki(wikiNode, item, config.language);
+
+    const src = document.querySelector('.js-bird-song');
+    
+    getBirdSong(item.name, src, config.isPortraitMode);
 };
 
 const renderPortrait = (template, item, config) => {
@@ -108,6 +91,25 @@ const renderPortrait = (template, item, config) => {
     renderCommonParts(template, config, item);
 
     imageSlider(item, document.querySelector('.js-species-card-images'), true);
+
+
+    const player = document.querySelector('.js-bird-song-player');
+    
+    getBirdSong(item.name, player, config.isPortraitMode);
+
+    player.addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.style.width = '80vw';
+        iframe.style.border = 0;
+        iframe.src = player.dataset.src;
+        document.querySelector('#menuModal .modal-body').classList.add('bird-song-bg');
+        document.querySelector('.js-modal-text-title').innerHTML = `${item.name} bird song`;
+        const elm = document.querySelector('.js-modal-text');
+        while (elm.firstChild) {
+            elm.removeChild(elm.firstChild);
+         }
+        elm.appendChild(iframe);
+    });
 };
 
 const renderCommonParts = (template, config, item) => {

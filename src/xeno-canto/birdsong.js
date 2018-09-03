@@ -4,10 +4,6 @@ export const getBirdSong = (binomial, node, portrait) => {
 
     async function fetchAsync (endpoint) {
 
-        var request = new Request(endpoint);
-
-        var init = { mode: 'no-cors' };
-        
         let response = await fetch(endpoint);
         
         let data = await response.json();

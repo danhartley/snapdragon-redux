@@ -104,10 +104,19 @@ export const history = (state = null, action) => {
     }
 };
 
-export const revision = (state = null, action) => {
+const revision = (state = null, action) => {
     switch(action.type) {
         case types.CHANGE_COLLECTION:
             return null;
+        default:
+            return state;
+    }
+};
+
+export const page = (state = { name: 'home'}, action) => {
+    switch(action.type) {
+        case types.CHANGE_PAGE:
+            return action.data;
         default:
             return state;
     }

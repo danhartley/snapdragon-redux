@@ -16,6 +16,8 @@ export const renderCollections = (counter) => {
 
     let collection = { ..._collection };
 
+    subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
+    
     if(counter && counter.log) {
         actions.boundSelectCollection(collection);
     }    
@@ -83,8 +85,6 @@ export const renderCollections = (counter) => {
         config.collection = { id: parseInt(id) };
         config.moduleSize = collection.moduleSize;
 
-        subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
-
         setTimeout(() => {
             if(!config.isPortraitMode) {
                 actions.boundSelectCollection(collection);
@@ -129,11 +129,11 @@ export const renderCollections = (counter) => {
         return { index };
     };
 
-
     learningActionBtn.addEventListener('click', () => {
         subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
         if(config.isPortraitMode) {
             actions.boundSelectCollection(collection);
+            actions.boundNewPage({ name: 'list'});
          } else {
             subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
             const isLessonPaused = (counter && counter.log) ? true : false; 

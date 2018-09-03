@@ -4,11 +4,12 @@ import { renderSettings } from 'ui/fixtures/settings';
 import { renderTemplate } from 'ui/helpers/templating';
 import { subscription } from 'redux/subscriptions';
 import { renderCollections } from 'ui/screens/home/collections';
+import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
 
-export const renderNavigation = (config) => {
+export const renderNavigation = (page) => {
 
-    const { counter, collection } = store.getState();
+    const { collection, config } = store.getState();
 
     const template = document.createElement('template');
 
@@ -19,14 +20,26 @@ export const renderNavigation = (config) => {
 
     renderTemplate({ }, template.content, parent);
 
-    setTimeout(() => {
-        const isHomePage = document.querySelector('.js-collections');
-        if(isHomePage) {
-            document.querySelector('.js-home').classList.add('active-icon'); 
-            const svg = document.querySelector('.js-home svg');
+    const activateIcon = id => {
+        const icon = document.querySelector(`.${id}`);
+        if(icon) {
+            icon.classList.add('active-icon');
+            const svgId = `${id} svg`; 
+            const svg = document.querySelector(svgId);
             if(svg) {
                 svg.classList.remove('active-icon');
             }
+        }
+    };
+
+    setTimeout(() => {
+        switch(page.name) {
+            case 'home':
+                activateIcon('js-home');
+                break;
+            case 'list':
+                activateIcon('js-list');
+                break;
         }
     }); 
 
@@ -48,28 +61,46 @@ export const renderNavigation = (config) => {
 
     const getLatestCounter = () => store.getState().counter;
 
+    const pauseLesson = () => {
+        subscription.getByRole('screen').forEach(sub => subscription.remove(sub));        
+        subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));   
+        subscription.add(renderCollections, 'counter', 'screen');
+        setTimeout(() => {
+            const { index } = getLatestCounter();
+            actions.boundToggleLesson({ index: 0, log: { index: index, collection: collection.id  } });
+        });
+    };
+
     navIcons.forEach(icon => {
 
-        icon.addEventListener('click', event => {                
+        icon.addEventListener('click', event => {       
+            let name;         
                 handleBodyClick = false;
                 const target = event.target.parentElement;
                 const targetId = target.id === '' ? target.parentElement.id : target.id;
                 target.classList.add('active-icon');
                 switch(targetId) {                    
                     case 'home':
-                    subscription.getByRole('screen').forEach(sub => subscription.remove(sub));           
-                    subscription.add(renderCollections, 'counter', 'screen');
-                    setTimeout(() => {
-                        const { index } = getLatestCounter();
-                        actions.boundToggleLesson({ index: 0, log: { index: index, collection: collection.id  } });
-                    });                    
+                        name = 'home';
+                        pauseLesson();
                         break;
                     case 'settings':
                         renderSettings();
                         break;
+                    case 'list':
+                        name = 'list';
+                        subscription.getByRole('screen').forEach(sub => subscription.remove(sub));                                   
+                        const { index } = getLatestCounter();
+                        collection.itemIndex = index;
+                        setTimeout(() => {                            
+                            actions.boundToggleLesson({ index: 0, log: { index: index, collection: collection.id  } });
+                            renderSpeciesCollectionList(collection);
+                        });                                                                    
+                        break;
                     case 'test':
                         break;
                 }
+                actions.boundNewPage({ name: name});
             }
         )}
     );
