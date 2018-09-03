@@ -1194,3 +1194,7 @@ tbody {
 .bird-song-icon-disabled {
   color: rgba(0,0,0,.2);
 }
+
+div.xc-audio {
+  max-width: 80vw;
+}
