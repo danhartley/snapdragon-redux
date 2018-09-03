@@ -103,7 +103,7 @@ const renderPortrait = (template, item, config) => {
         iframe.style.border = 0;
         iframe.src = player.dataset.src;
         document.querySelector('#menuModal .modal-body').classList.add('bird-song-bg');
-        document.querySelector('.js-modal-text-title').innerHTML = `${item.name} bird song`;
+        document.querySelector('.js-modal-text-title').innerHTML = `${item.name}`;
         const elm = document.querySelector('.js-modal-text');
         while (elm.firstChild) {
             elm.removeChild(elm.firstChild);
