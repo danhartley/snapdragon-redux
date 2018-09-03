@@ -99,7 +99,7 @@ const renderPortrait = (template, item, config) => {
 
     player.addEventListener('click', () => {
         const iframe = document.createElement('iframe');
-        iframe.style.width = '80vw';
+        iframe.id = 'birdsong';
         iframe.style.border = 0;
         iframe.src = player.dataset.src;
         document.querySelector('#menuModal .modal-body').classList.add('bird-song-bg');
