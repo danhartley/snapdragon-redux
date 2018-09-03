@@ -43,12 +43,11 @@ setTimeout(()=>{
     }
 
     const counter = currentCounter ? { ...currentCounter } : { index: null };
-    // const counter = currentCounter ? { ...currentCounter } : { index: null, lesson: 'inactive' };
 
     actions.boundUpdateConfig(config);
     actions.boundToggleLesson(counter);
 
-    subscription.add(renderNavigation, 'config', 'flow');
+    subscription.add(renderNavigation, 'page', 'flow');
     subscription.add(renderCollections, 'counter', 'flow');
     subscription.add(renderSnapdragon, 'counter', 'flow');
     subscription.add(nextLesson, 'config', 'flow');
@@ -56,6 +55,17 @@ setTimeout(()=>{
     subscription.add(nextItem, 'layout', 'flow');
     subscription.add(renderScore, 'score', 'flow');
     subscription.add(renderHeaders, 'collection', 'flow');
-    // subscription.add(renderHeaders, 'counter', 'flow');
+    
+    // document.body.addEventListener('click', () => {
+    //     const modal = document.getElementById('menuModal');
+    //     const hasClosed = modal.classList.contains('fade');
+    //     if(hasClosed) {
+    //         const stop = frames['iframe'].document.querySelector('.jp-stop');
+    //         if(stop) {
+    //             stop.click();
+    //         }
+    //     }
+    // });        
+
 
 });

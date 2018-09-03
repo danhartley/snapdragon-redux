@@ -168,6 +168,8 @@ export const renderSpeciesCollectionList = (collection) => {
                 endOfRoundHandler.callEndOfRoundActions(mode, config, collections, collection, score, itemsToReview, isLevelComplete);
             }
             
+            actions.boundNewPage({ name: ''});
+
             subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
             subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
         });

@@ -24,6 +24,7 @@ const updateConfig = makeActionCreator(types.UPDATE_CONFIG);
 const toggleLesson = makeActionCreator(types.STOP_START_LESSON);
 const selectCollection = makeActionCreator(types.SELECT_COLLECTION);
 const updateLanguage = makeActionCreator(types.UPDATE_LANGUAGE);
+const newPage = makeActionCreator(types.CHANGE_PAGE);
 
 const boundNextLessonPlan = data => store.dispatch(nextLesson(data));
 const boundUpdateScore = data => store.dispatch(updateScore(data));
@@ -38,6 +39,7 @@ const boundUpdateConfig = data => store.dispatch(updateConfig(data));
 const boundToggleLesson = data => store.dispatch(toggleLesson(data));
 const boundSelectCollection = data => store.dispatch(selectCollection(data));
 const boundUpdateLanguage = data => store.dispatch(updateLanguage(data));
+const boundNewPage = data => store.dispatch(newPage(data));
 
 export const actions = {
     boundNextLessonPlan,
@@ -52,5 +54,6 @@ export const actions = {
     boundUpdateConfig,
     boundToggleLesson,
     boundSelectCollection,
-    boundUpdateLanguage
+    boundUpdateLanguage,
+    boundNewPage
 };
