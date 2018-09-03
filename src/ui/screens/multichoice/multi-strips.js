@@ -186,7 +186,6 @@ export const renderMultiStrips = (collection) => {
     if(screen.name === 'epithet') {
         
         if(!layout.epithet) return;
-        // if(!layout.epithet || layout.epithet.name !== item.name) return;
 
         const epithet = layout.epithet.latin[0];
 
