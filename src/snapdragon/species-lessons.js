@@ -45,9 +45,13 @@ export const rhsTrees = {
 };
 
 export const commonBirds = { 
-    id: 3, name: '8 Common City Birds', 
+    id: 3, name: 'Top 10 UK Birds', 
     type: 'species',
-    descriptions: ['8 birds common to European cities.'],
+    descriptions: [
+        'The top 10 most common birds in the UK.',
+        'The RSPB Big Garden Birdwatch 2018 survey recorded 6,764,475 birds.',
+        'There were 420,489 respondents.'
+    ],
     items: utils.shuffleArray([ ...collections[5].items ]),
     collections: ['8 Common City Birds'],
     thumb: 'https://media.eol.org/content/2015/01/21/07/32241_88_88.jpg',

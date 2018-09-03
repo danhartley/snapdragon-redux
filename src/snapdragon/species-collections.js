@@ -52,9 +52,9 @@ export const collections = [
     {
         id: 6,
         type: 'species',
-        name: '8 Common City Birds',
+        name: 'Top 10 UK Birds',
         items: commonCityBirds,
-        eol_name: '8 Common City Birds',
+        eol_name: '13 Common City Birds',
         eol_link: 'https://eol.org/collections/140683'
     },
     {
