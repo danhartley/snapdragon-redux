@@ -1195,6 +1195,7 @@ tbody {
   color: rgba(0,0,0,.2);
 }
 
-div.xc-audio {
-  max-width: 80vw;
+iframe#birdsong {
+  width: 1px;
+  min-width: 260px;
 }
