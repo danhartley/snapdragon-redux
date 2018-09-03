@@ -1512,4 +1512,50 @@ export const taxa = [
         eol: "http://eol.org/pages/4354/overview",
         wiki: "https://en.wikipedia.org/wiki/Plantaginaceae"
     },
+    {
+        taxon: 'family',
+        name: 'Fringillidae',
+        thumb: "2012/06/15/20/32486_98_68.jpg",
+        names: [ { language: "en", names: ['Finches']} ,
+        { language: "fr", names:[ 'Finches' ]},
+        { language: "de", names:[ 'Finken' ]},
+        { language: "es", names:[ 'Finches' ]},
+        { language: "pt", names:[ 'Finches' ]},
+        { language: "it", names:[ 'Finches' ]}],
+        species: '228',
+        genera: '50',
+        traits: [ { language: "en", name: 'diet', values: [ 'Seeds' ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Small-medium sized passerine birds. Great range of habitats where they are usually resident and do not migrate.',
+                identification: 'Forked or notched tails, pointed wings, rounded or elongated bodies and round heads, triangular bill.'
+            }
+        ],
+        eol: "http://eol.org/pages/7548/overview",
+        wiki: "https://en.wikipedia.org/wiki/Fringillidae"
+    },
+    {
+        taxon: 'family',
+        name: 'Aegithalidae',
+        thumb: "2012/07/26/21/49865_88_88.jpg",
+        names: [ { language: "en", names: ['Bushtits', 'Long-tailed tits']} ,
+        { language: "fr", names:[ 'Bushtits' ]},
+        { language: "de", names:[ 'Schwanzmeisen' ]},
+        { language: "es", names:[ 'Bushtits' ]},
+        { language: "pt", names:[ 'Bushtits' ]},
+        { language: "it", names:[ 'Bushtits' ]}],
+        species: '13',
+        genera: '4',
+        traits: [ { language: "en", name: 'diet', values: [ 'Insects', 'Berries', 'Seeds' ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Generally not migratory, the long-tailed tit is an exception. During non-breeding season, birds live in flocks of up to 50 individuals.',
+                identification: 'Small, passerine birds with moderately long tails and muted colours.'
+            }
+        ],
+        eol: "http://eol.org/pages/7573/overview",
+        wiki: "https://en.wikipedia.org/wiki/Aegithalidae"
+    },
 ];

@@ -1,4 +1,4 @@
-import { traits } from 'api/traits';
+import { extraTraits } from 'api/traits';
 
 export const getBirdSong = (binomial, node, portrait) => {
 
@@ -22,7 +22,7 @@ export const getBirdSong = (binomial, node, portrait) => {
         }
     };
 
-    const playerId = traits.find(t => t.name === binomial);
+    const playerId = extraTraits.find(t => t.name === binomial).traits.find(t => t.name === 'song');
         
     if(playerId) {
         loadPlayer(playerId.value);

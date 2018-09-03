@@ -234,265 +234,6 @@ export const commonCityBirds = [
       "eolName": "Sturnus vulgaris Linnaeus 1758"
     },
     {
-      "id": 1046068,
-      "name": "Apus apus",
-      "images": [
-        "2012/06/13/18/71016_orig.jpg",
-        "2012/06/13/18/99113_orig.jpg",
-        "2012/06/15/08/92758_orig.jpg",
-        "2015/01/20/13/52599_orig.jpg",
-        "2015/01/20/13/65297_orig.jpg",
-        "2015/01/20/15/29671_orig.jpg",
-        "2015/01/20/15/79428_orig.jpg",
-        "2015/01/20/17/33817_orig.jpg",
-        "2012/06/13/18/33451_orig.jpg"
-      ],      
-      "names": [
-        {
-          "vernacularName": "Mauersegler",
-          "language": "de",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Swift",
-          "language": "en"
-        },
-        {
-          "vernacularName": "common swift",
-          "language": "en",
-          "eol_preferred": true,
-          wikiSearchTerm: true
-        },
-        {
-          "vernacularName": "Eurasian Swift",
-          "language": "en"
-        },
-        {
-          "vernacularName": "European Swift",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Mauersegler",
-          "language": "en"
-        },        
-        {
-          "vernacularName": "tiny mousetail",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Vencejo común",
-          "language": "es",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Martinet noir",
-          "language": "fr",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Rondone",
-          "language": "it",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Andorinh",
-          "language": "pt",
-          "eol_preferred": true
-        }
-      ],
-      "descriptions": [
-        "Depth range based on 52 specimens in 2 taxa.<br>Water temperature and chemistry ranges based on 29 samples.<br><br>Environmental ranges<br>&nbsp;&nbsp;Depth range (m): 0 - 0<br>&nbsp;&nbsp;Temperature range (&deg;C): 8.891 - 11.597<br>&nbsp;&nbsp;Nitrate (umol/L): 1.206 - 12.040<br>&nbsp;&nbsp;Salinity (PPS): 6.607 - 35.137<br>&nbsp;&nbsp;Oxygen (ml/l): 6.271 - 8.052<br>&nbsp;&nbsp;Phosphate (umol/l): 0.284 - 0.653<br>&nbsp;&nbsp;Silicate (umol/l): 1.816 - 10.887<br><br>Graphical representation<br><br>Temperature range (&deg;C): 8.891 - 11.597 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:8.891|2.706&chxr=0,-2.072,29.546&chds=0,29.546&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=b1,lg,90,FF0000,0,76A4FB,1&chco=ffffff,389ced&chxl=1:|global oceans min: -2.072|average|global oceans max: 29.546'><br><br>Nitrate (umol/L): 1.206 - 12.040 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:1.206|10.834&chxr=0,0,49.846&chds=0,49.846&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=&chco=ffffff,00ff00&chxl=1:|global oceans min|average|global oceans max: 49.846'><br><br>Salinity (PPS): 6.607 - 35.137 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:6.607|28.53&chxr=0,5,40.817&chds=0,40.817&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=&chco=ffffff,389ced&chxl=1:|global oceans min: 5|average|global oceans max: 40.817'><br><br>Oxygen (ml/l): 6.271 - 8.052 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:6.271|1.781&chxr=0,0,9.323&chds=0,9.323&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=&chco=ffffff,389ced&chxl=1:|global oceans min|average|global oceans max: 9.323'><br><br>Phosphate (umol/l): 0.284 - 0.653 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:0.284|0.3690000000000001&chxr=0,0.006,3.661&chds=0,3.661&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=&chco=ffffff,00ff00&chxl=1:|global oceans min: 0.006|average|global oceans max: 3.661'><br><br>Silicate (umol/l): 1.816 - 10.887 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:1.816|9.071&chxr=0,0,230.3&chds=0,230.3&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=&chco=ffffff,00ff00&chxl=1:|global oceans min|average|global oceans max: 230.3'><br>&nbsp;<br>Note: this information has not been validated. Check this *<a target='obis_gallery' href='http://www.eol.org/content_partners/257'>note</a>*. Your feedback is most welcome."
-      ],
-      "taxonomy": {
-        "usageKey": 5228676,
-        "scientificName": "Apus apus (Linnaeus, 1758)",
-        "canonicalName": "Apus apus",
-        "rank": "SPECIES",
-        "status": "ACCEPTED",
-        "confidence": 99,
-        "matchType": "EXACT",
-        "kingdom": "Animalia",
-        "phylum": "Chordata",
-        "order": "Apodiformes",
-        "family": "Apodidae",
-        "genus": "Apus",
-        "species": "Apus apus",
-        "kingdomKey": 1,
-        "phylumKey": 44,
-        "classKey": 212,
-        "orderKey": 1448,
-        "familyKey": 2993,
-        "genusKey": 2235048,
-        "speciesKey": 5228676,
-        "synonym": false,
-        "class": "Aves"
-      },
-      "family": "Apodidae",
-      "eolName": "Apus apus (Linnaeus, 1758)"
-    },
-    {
-      "id": 1050660,
-      "name": "Troglodytes troglodytes",
-      "images": [
-        "2013/08/23/06/21083_orig.jpg",
-        "2012/06/12/23/51866_orig.jpg",
-        "2016/08/01/20/28952_orig.jpg",
-        "2015/03/15/05/74396_orig.jpg",
-        "2015/01/21/05/06686_orig.jpg",
-        "2014/10/07/00/07216_orig.jpg",
-        "2013/06/11/03/15227_orig.jpg"
-      ],
-      "names": [
-        {
-          "vernacularName": "Zaunkönig",
-          "language": "de",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Winter Wren",
-          "language": "en",
-          "eol_preferred": true,
-          wikiSearchTerm: true
-        },
-        {
-          "vernacularName": "Alaska wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Aleutian wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Attu wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Common Wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Daito Wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Eurasian Wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Kiska wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Kodiak wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Semidi wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Stevenson's wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Tanaga wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Unalaska wren",
-          "language": "en"
-        },        
-        {
-          "vernacularName": "anaga wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "mouse wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "short-tailed wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "spruce wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "western wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "willow wren",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Troglodytes troglodytes",
-          "language": "es",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "ChivirÌn chochÌn",
-          "language": "es"
-        },
-        {
-          "vernacularName": "Chivirín chochín",
-          "language": "es"
-        },
-        {
-          "vernacularName": "ChochÌn",
-          "language": "es"
-        },
-        {
-          "vernacularName": "Chochín Común",
-          "language": "es"
-        },
-        {
-          "vernacularName": "troglodyte mignon",
-          "language": "fr",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Scricciolo",
-          "language": "it",
-          "eol_preferred": true
-        }
-      ],
-      "descriptions": [
-        "Depth range based on 1 specimen in 1 taxon.<br>Water temperature and chemistry ranges based on 1 sample.<br><br>Environmental ranges<br>&nbsp;&nbsp;Depth range (m): 0 - 0<br>&nbsp;&nbsp;Temperature range (&deg;C): 7.710 - 7.710<br>&nbsp;&nbsp;Nitrate (umol/L): 1.075 - 1.075<br>&nbsp;&nbsp;Salinity (PPS): 8.907 - 8.907<br>&nbsp;&nbsp;Oxygen (ml/l): 8.179 - 8.179<br>&nbsp;&nbsp;Phosphate (umol/l): 0.270 - 0.270<br>&nbsp;&nbsp;Silicate (umol/l): 11.140 - 11.140<br>&nbsp;<br>Note: this information has not been validated. Check this *<a target='obis_gallery' href='http://www.eol.org/content_partners/257'>note</a>*. Your feedback is most welcome."
-      ],
-      "taxonomy": {
-        "usageKey": 5231438,
-        "scientificName": "Troglodytes troglodytes (Linnaeus, 1758)",
-        "canonicalName": "Troglodytes troglodytes",
-        "rank": "SPECIES",
-        "status": "ACCEPTED",
-        "confidence": 99,
-        "matchType": "EXACT",
-        "kingdom": "Animalia",
-        "phylum": "Chordata",
-        "order": "Passeriformes",
-        "family": "Troglodytidae",
-        "genus": "Troglodytes",
-        "species": "Troglodytes troglodytes",
-        "kingdomKey": 1,
-        "phylumKey": 44,
-        "classKey": 212,
-        "orderKey": 729,
-        "familyKey": 9355,
-        "genusKey": 2493899,
-        "speciesKey": 5231438,
-        "synonym": false,
-        "class": "Aves"
-      },
-      "family": "Troglodytidae",
-      "eolName": "Troglodytes troglodytes (Linnaeus, 1758)"
-    },
-    {
       "id": 1051567,
       "name": "Erithacus rubecula",
       "images": [
@@ -853,146 +594,482 @@ export const commonCityBirds = [
       "eolName": "Passer domesticus (Linnaeus, 1758)"
     },
     {
-      "id": 1050069,
-      "name": "Columba livia",
+      "id": 919235,
+      "name": "Fringilla coelebs",
       "images": [
-        "2013/03/08/13/78576_orig.jpg",
-        "2016/08/05/23/48267_orig.jpg",
-        "2016/08/02/13/31635_orig.jpg",
-        "2016/08/04/06/40040_orig.jpg"
+        "2011/10/10/11/29282_orig.jpg",
+        "2014/10/09/01/67848_orig.jpg",
+        "2012/06/13/06/21233_orig.jpg",
+        "2011/10/10/11/20004_orig.jpg",
+        "2011/10/10/11/22498_orig.jpg",
+        "2011/10/10/11/04400_orig.jpg",
+        "2011/10/10/11/40352_orig.jpg",
+        "2011/10/10/11/71732_orig.jpg",
+        "2016/08/02/05/96458_orig.jpg",
+        "2016/08/02/05/35826_orig.jpg"
       ],
       "names": [
         {
-          "vernacularName": "Strassentaube",
+          "vernacularName": "Buchfink",
           "language": "de",
           "eol_preferred": true
         },
         {
-          "vernacularName": "Felsentaube",
-          "language": "de"
-        },
-        {
-          "vernacularName": "Felsentaube (Haustaube)",
-          "language": "de"
-        },
-        {
-          "vernacularName": "Haustaube",
-          "language": "de"
-        },
-        {
-          "vernacularName": "pigeon",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Rock Dove",
+          "vernacularName": "Chaffinch",
           "language": "en",
-          "eol_preferred": true,
-          wikiSearchTerm: true
+          "eol_preferred": true
         },
         {
-          "vernacularName": "Blue Rock Dove",
+          "vernacularName": "Chaffinnch",
           "language": "en"
         },
         {
-          "vernacularName": "Feral Pigeon/Rock Dove",
+          "vernacularName": "Eurasian chaffinch",
           "language": "en"
         },
         {
-          "vernacularName": "Feral Rock Pigeon",
+          "vernacularName": "common chaffinch",
           "language": "en"
         },
         {
-          "vernacularName": "Rock Pigeon",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Rock Pigeon, Wild Pigeon",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Rock dovei",
-          "language": "en"
-        },
-        {
-          "vernacularName": "blue rock",
-          "language": "en"
-        },
-        {
-          "vernacularName": "carrier pigeon",
-          "language": "en"
-        },
-        {
-          "vernacularName": "common pigeon",
-          "language": "en"
-        },
-        {
-          "vernacularName": "domestic pigeon",
-          "language": "en"
-        },
-        {
-          "vernacularName": "feral pigeon",
-          "language": "en"
-        },
-        {
-          "vernacularName": "homing pigeon",
-          "language": "en"
-        },
-        {
-          "vernacularName": "street pigeon",
-          "language": "en"
-        },
-        {
-          "vernacularName": "wild pigeon",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Paloma Bravía",
+          "vernacularName": "Pinzón vulgar",
           "language": "es",
           "eol_preferred": true
         },
         {
-          "vernacularName": "Columba livia",
+          "vernacularName": "Fringilla coelebs",
           "language": "es"
         },
         {
-          "vernacularName": "Paloma bravia",
+          "vernacularName": "Pinzón Común",
           "language": "es"
         },
         {
-          "vernacularName": "Paloma doméstica",
-          "language": "es"
-        },
-        {
-          "vernacularName": "Pigeon biset domestique",
+          "vernacularName": "Pinson des arbres",
           "language": "fr",
           "eol_preferred": true
         },
         {
-          "vernacularName": "pigeon biset",
-          "language": "fr"
-        },
-        {
-          "vernacularName": "Piccione selvatico",
+          "vernacularName": "Fringuello",
           "language": "it",
           "eol_preferred": true
         },
         {
-          "vernacularName": "Piccione domestico",
-          "language": "it"
-        },
-        {
-          "vernacularName": "Pombo-dom",
+          "vernacularName": "Tentilh",
           "language": "pt",
           "eol_preferred": true
         }
       ],
       "descriptions": [
-        "Depth range based on 94 specimens in 2 taxa.<br>Water temperature and chemistry ranges based on 19 samples.<br><br>Environmental ranges<br>&nbsp;&nbsp;Depth range (m): 0 - 0<br>&nbsp;&nbsp;Temperature range (&deg;C): 9.557 - 12.471<br>&nbsp;&nbsp;Nitrate (umol/L): 1.402 - 12.829<br>&nbsp;&nbsp;Salinity (PPS): 32.748 - 35.245<br>&nbsp;&nbsp;Oxygen (ml/l): 6.137 - 6.590<br>&nbsp;&nbsp;Phosphate (umol/l): 0.306 - 0.734<br>&nbsp;&nbsp;Silicate (umol/l): 0.987 - 8.436<br><br>Graphical representation<br><br>Temperature range (&deg;C): 9.557 - 12.471 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:9.557|2.914&chxr=0,-2.072,29.546&chds=0,29.546&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=b1,lg,90,FF0000,0,76A4FB,1&chco=ffffff,389ced&chxl=1:|global oceans min: -2.072|average|global oceans max: 29.546'><br><br>Nitrate (umol/L): 1.402 - 12.829 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:1.402|11.427&chxr=0,0,49.846&chds=0,49.846&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=&chco=ffffff,00ff00&chxl=1:|global oceans min|average|global oceans max: 49.846'><br><br>Salinity (PPS): 32.748 - 35.245 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:32.748|2.497&chxr=0,5,40.817&chds=0,40.817&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=&chco=ffffff,389ced&chxl=1:|global oceans min: 5|average|global oceans max: 40.817'><br><br>Oxygen (ml/l): 6.137 - 6.590 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:6.137|0.4530000000000003&chxr=0,0,9.323&chds=0,9.323&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=&chco=ffffff,389ced&chxl=1:|global oceans min|average|global oceans max: 9.323'><br><br>Phosphate (umol/l): 0.306 - 0.734 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:0.306|0.428&chxr=0,0.006,3.661&chds=0,3.661&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=&chco=ffffff,00ff00&chxl=1:|global oceans min: 0.006|average|global oceans max: 3.661'><br><br>Silicate (umol/l): 0.987 - 8.436 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:0.987|7.449&chxr=0,0,230.3&chds=0,230.3&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=&chco=ffffff,00ff00&chxl=1:|global oceans min|average|global oceans max: 230.3'><br>&nbsp;<br>Note: this information has not been validated. Check this *<a target='obis_gallery' href='http://www.eol.org/content_partners/257'>note</a>*. Your feedback is most welcome."
+        "Depth range based on 7 specimens in 1 taxon.<br>Water temperature and chemistry ranges based on 3 samples.<br><br>Environmental ranges<br>&nbsp;&nbsp;Depth range (m): 0 - 0<br>&nbsp;&nbsp;Temperature range (&deg;C): 9.590 - 11.396<br>&nbsp;&nbsp;Nitrate (umol/L): 5.547 - 8.636<br>&nbsp;&nbsp;Salinity (PPS): 34.665 - 35.167<br>&nbsp;&nbsp;Oxygen (ml/l): 6.315 - 6.398<br>&nbsp;&nbsp;Phosphate (umol/l): 0.476 - 0.574<br>&nbsp;&nbsp;Silicate (umol/l): 2.687 - 3.347<br><br>Graphical representation<br><br>Temperature range (&deg;C): 9.590 - 11.396 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:9.590|1.806000000000001&chxr=0,-2.072,29.546&chds=0,29.546&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=b1,lg,90,FF0000,0,76A4FB,1&chco=ffffff,389ced&chxl=1:|global oceans min: -2.072|average|global oceans max: 29.546'><br><br>Nitrate (umol/L): 5.547 - 8.636 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:5.547|3.089&chxr=0,0,49.846&chds=0,49.846&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=&chco=ffffff,00ff00&chxl=1:|global oceans min|average|global oceans max: 49.846'><br><br>Salinity (PPS): 34.665 - 35.167 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:34.665|0.5020000000000024&chxr=0,5,40.817&chds=0,40.817&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=&chco=ffffff,389ced&chxl=1:|global oceans min: 5|average|global oceans max: 40.817'><br><br>Oxygen (ml/l): 6.315 - 6.398 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:6.315|0.0829999999999993&chxr=0,0,9.323&chds=0,9.323&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=&chco=ffffff,389ced&chxl=1:|global oceans min|average|global oceans max: 9.323'><br><br>Phosphate (umol/l): 0.476 - 0.574 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:0.476|0.09799999999999998&chxr=0,0.006,3.661&chds=0,3.661&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=&chco=ffffff,00ff00&chxl=1:|global oceans min: 0.006|average|global oceans max: 3.661'><br><br>Silicate (umol/l): 2.687 - 3.347 <img src='http://chart.apis.google.com/chart?cht=bvs&chs=350x150&chd=t:2.687|0.6600000000000001&chxr=0,0,230.3&chds=0,230.3&chbh=50,20,15&chxt=y,r&chm=N,FF0000,-1,,12|N,000000,0,,12,,c|N,00000000,1,,12,,c|N,ffffff,2,,12,,c&chma=20&chf=&chco=ffffff,00ff00&chxl=1:|global oceans min|average|global oceans max: 230.3'><br>&nbsp;<br>Note: this information has not been validated. Check this *<a target='obis_gallery' href='http://www.eol.org/content_partners/257'>note</a>*. Your feedback is most welcome."
       ],
       "taxonomy": {
-        "usageKey": 2495414,
-        "scientificName": "Columba livia Gmelin, 1789",
-        "canonicalName": "Columba livia",
+        "usageKey": 2494422,
+        "scientificName": "Fringilla coelebs Linnaeus, 1758",
+        "canonicalName": "Fringilla coelebs",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "order": "Passeriformes",
+        "family": "Fringillidae",
+        "genus": "Fringilla",
+        "species": "Fringilla coelebs",
+        "kingdomKey": 1,
+        "phylumKey": 44,
+        "classKey": 212,
+        "orderKey": 729,
+        "familyKey": 5242,
+        "genusKey": 2494421,
+        "speciesKey": 2494422,
+        "synonym": false,
+        "class": "Aves"
+      },
+      "family": "Fringillidae",
+      "eolName": "Fringilla coelebs Linnaeus 1758"
+    },
+    {
+      "id": 915636,
+      "name": "Aegithalos caudatus",
+      "images": [
+        "2014/02/01/20/03327_orig.jpg",
+        "2012/07/26/21/49865_orig.jpg",
+        "2014/04/30/04/02380_orig.jpg",
+        "2018/04/22/20/16219_orig.jpg",
+        "2012/06/13/05/78079_orig.jpg",
+        "2010/03/25/01/59545_orig.jpg",
+        "2012/06/13/05/97226_orig.jpg",
+        "2013/02/03/11/74209_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Schwanzmeise",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Long-tailed Tit",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Long-tailed Bushtit",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Northern Long-tailed Tit",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Mito Común",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Mito",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Mésange à longue queue",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Codibugnolo",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Codibugnolo italiano",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Chapim-rabilongo",
+          "language": "pt",
+          "eol_preferred": true
+        }
+      ],
+      "descriptions": [],
+      "taxonomy": {
+        "usageKey": 2495000,
+        "scientificName": "Aegithalos caudatus (Linnaeus, 1758)",
+        "canonicalName": "Aegithalos caudatus",
+        "rank": "SPECIES",
+        "status": "DOUBTFUL",
+        "confidence": 98,
+        "matchType": "EXACT",
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "order": "Passeriformes",
+        "family": "Aegithalidae",
+        "genus": "Aegithalos",
+        "species": "Aegithalos caudatus",
+        "kingdomKey": 1,
+        "phylumKey": 44,
+        "classKey": 212,
+        "orderKey": 729,
+        "familyKey": 2878,
+        "genusKey": 9270076,
+        "speciesKey": 2495000,
+        "synonym": false,
+        "class": "Aves"
+      },
+      "family": "Aegithalidae",
+      "eolName": "Aegithalos caudatus (Linnaeus, 1758)"
+    },
+    {
+      "id": 1051079,
+      "name": "Carduelis carduelis",
+      "images": [
+        "2016/08/30/19/54849_orig.jpg",
+        "2016/12/31/12/21834_orig.jpg",
+        "2013/12/01/23/15478_orig.jpg",
+        "2013/12/10/02/54036_orig.jpg",
+        "2013/11/30/20/90252_orig.jpg",
+        "2013/12/07/17/97056_orig.jpg",
+        "2012/06/12/10/38629_orig.jpg",
+        "2013/11/30/10/89179_orig.jpg",
+        "2013/12/10/02/96135_orig.jpg",
+        "2013/12/10/02/56352_orig.jpg",
+        "2013/12/10/02/78587_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Distelfink",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Stieglitz",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Stieglitz (Distelfink)",
+          "language": "de"
+        },
+        {
+          "vernacularName": "European Goldfinch",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Goldfinch",
+          "language": "en"
+        },
+        {
+          "vernacularName": "draw-water",
+          "language": "en"
+        },
+        {
+          "vernacularName": "eurasian goldfinch",
+          "language": "en"
+        },
+        {
+          "vernacularName": "thistle-bird",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Jilguero Europeo",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Colorín",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Jilguero",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Siete Colores",
+          "language": "es"
+        },
+        {
+          "vernacularName": "chardonneret èlègant",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "chardonneret élégant",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Cardellino",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Pintassilgo",
+          "language": "pt",
+          "eol_preferred": true
+        }
+      ],
+      "descriptions": [
+        "Depth range based on 3 specimens in 1 taxon.<br>Water temperature and chemistry ranges based on 1 sample.<br><br>Environmental ranges<br>&nbsp;&nbsp;Depth range (m): 0 - 0<br>&nbsp;&nbsp;Temperature range (&deg;C): 11.811 - 11.811<br>&nbsp;&nbsp;Nitrate (umol/L): 6.342 - 6.342<br>&nbsp;&nbsp;Salinity (PPS): 34.953 - 34.953<br>&nbsp;&nbsp;Oxygen (ml/l): 6.391 - 6.391<br>&nbsp;&nbsp;Phosphate (umol/l): 0.377 - 0.377<br>&nbsp;&nbsp;Silicate (umol/l): 3.584 - 3.584<br>&nbsp;<br>Note: this information has not been validated. Check this *<a target='obis_gallery' href='http://www.eol.org/content_partners/257'>note</a>*. Your feedback is most welcome."
+      ],
+      "taxonomy": {
+        "usageKey": 2494686,
+        "scientificName": "Carduelis carduelis (Linnaeus, 1758)",
+        "canonicalName": "Carduelis carduelis",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 99,
+        "matchType": "EXACT",
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "order": "Passeriformes",
+        "family": "Fringillidae",
+        "genus": "Carduelis",
+        "species": "Carduelis carduelis",
+        "kingdomKey": 1,
+        "phylumKey": 44,
+        "classKey": 212,
+        "orderKey": 729,
+        "familyKey": 5242,
+        "genusKey": 2494621,
+        "speciesKey": 2494686,
+        "synonym": false,
+        "class": "Aves"
+      },
+      "family": "Fringillidae",
+      "eolName": "Carduelis carduelis (Linnaeus, 1758)"
+    },
+    {
+      "id": 1051974,
+      "name": "Parus major",
+      "images": [
+        "2015/04/27/05/41188_orig.jpg",
+        "2015/04/27/05/22078_orig.jpg",
+        "2016/08/02/05/74716_orig.jpg",
+        "2016/08/02/05/59828_orig.jpg",
+        "2016/08/04/15/83315_orig.jpg",
+        "2012/06/13/05/19172_orig.jpg",
+        "2016/08/06/04/17413_orig.jpg",
+        "2012/06/13/05/93978_orig.jpg",
+        "2012/06/13/05/98189_orig.jpg",
+        "2015/03/21/14/16241_orig.jpg",
+        "2013/11/25/22/11572_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Kohlmeise",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Great Tit",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Cinereous Tit",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Kohlmeise",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Széncinege",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Carbonero común",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Mésange charbonnière",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Parus major",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Cinciallegra",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Chapim-real",
+          "language": "pt",
+          "eol_preferred": true
+        }
+      ],
+      "descriptions": [],
+      "taxonomy": {
+        "usageKey": 9705453,
+        "scientificName": "Parus major Linnaeus, 1758",
+        "canonicalName": "Parus major",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "order": "Passeriformes",
+        "family": "Paridae",
+        "genus": "Parus",
+        "species": "Parus major",
+        "kingdomKey": 1,
+        "phylumKey": 44,
+        "classKey": 212,
+        "orderKey": 729,
+        "familyKey": 9327,
+        "genusKey": 2487923,
+        "speciesKey": 9705453,
+        "synonym": false,
+        "class": "Aves"
+      },
+      "family": "Paridae",
+      "eolName": "Parus major Linnaeus 1758"
+    },
+    {
+      "id": 1049693,
+      "name": "Columba palumbus",
+      "images": [
+        "2015/05/20/09/96688_orig.jpg",
+        "2015/04/30/03/00948_orig.jpg",
+        "2011/11/01/15/93754_orig.jpg",
+        "2012/05/23/10/70480_orig.jpg",
+        "2011/11/02/00/33144_orig.jpg",
+        "2016/08/01/19/68979_orig.jpg",
+        "2016/08/01/09/74595_orig.jpg",
+        "2016/08/01/10/38005_orig.jpg",
+        "2016/08/03/10/91552_orig.jpg",
+        "2016/08/03/18/35813_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Ringeltaube",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Wood Pigeon",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Bar-tailed Cuckoo",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Common Wood Pigeon",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Common Wood-Pigeon",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Common woodpigeon",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Ring Dove or Cushat",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Wood Pigeon, Ring Dove or Cushat",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Woodpigeon",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Paloma torcaz",
+          "language": "es",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Pigeon ramier",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Columba palumbus",
+          "language": "it",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Colombaccio",
+          "language": "it"
+        }
+      ],
+      "descriptions": [
+        "Woodpigeons feed on grains, fruits, seeds, peas and beans, root crops and the occasional invertebrate (3).&nbsp;Courtship displays involve birds flying fairly high before clapping the wings together and gliding down, as well as males strutting and fluffing out their chest feathers (3). The male brings nesting materials to the female, who builds an untidy platform-like nest, usually in a tree, before laying 2 white eggs (3). Both sexes incubate the eggs for around 17 days; they then feed the young (known as squabs), on 'pigeon milk', a regurgitated milky substance from a food-storage organ called the crop (3). The squabs fledge 29-35 days after hatching (3)."
+      ],
+      "taxonomy": {
+        "usageKey": 2495455,
+        "scientificName": "Columba palumbus Linnaeus, 1758",
+        "canonicalName": "Columba palumbus",
         "rank": "SPECIES",
         "status": "ACCEPTED",
         "confidence": 100,
@@ -1002,18 +1079,18 @@ export const commonCityBirds = [
         "order": "Columbiformes",
         "family": "Columbidae",
         "genus": "Columba",
-        "species": "Columba livia",
+        "species": "Columba palumbus",
         "kingdomKey": 1,
         "phylumKey": 44,
         "classKey": 212,
         "orderKey": 1446,
         "familyKey": 5233,
         "genusKey": 2495404,
-        "speciesKey": 2495414,
+        "speciesKey": 2495455,
         "synonym": false,
         "class": "Aves"
       },
       "family": "Columbidae",
-      "eolName": "Columba livia Gmelin 1789"
+      "eolName": "Columba palumbus Linnaeus 1758"
     }
   ]

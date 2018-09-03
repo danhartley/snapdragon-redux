@@ -1199,3 +1199,10 @@ iframe#birdsong {
   width: 1px;
   min-width: 260px;
 }
+
+.rank {
+  font-size: .7em;
+  border-radius: .24em;
+  display: inline-block;
+  vertical-align: text-top;
+}

@@ -11,6 +11,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import landscapeTemplate from 'ui/screens/cards/card-template.html';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { getBirdSong } from 'xeno-canto/birdsong';
+import { extraTraits } from 'api/traits';
 
 export const renderCard = (collection) => {
     
@@ -130,6 +131,7 @@ const renderCommonParts = (template, config, item) => {
     const traits = itemProperties.getNestedTaxonProp(family, config.language, 'traits', 'values');
     const traitValue = traits !== '' ? R.take(traitsLength, traits).join(', ') : '';
     const traitName = family.traits.map(trait => trait.name)[0];
+    const place = `UK #` + extraTraits.find(t => t.name === item.name).traits.find(t => t.name === 'rank' && t.language === config.language).value;
     
     const clone = document.importNode(template.content, true);
     
@@ -140,7 +142,7 @@ const renderCommonParts = (template, config, item) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
     
-    renderTemplate({ species, name, latin, rank, occurrences, family: family.name, familyImage, traitName, traitValue, familyName }, template.content, parent, clone);
+    renderTemplate({ species, name, latin, rank, occurrences, family: family.name, familyImage, traitName, traitValue, familyName, place }, template.content, parent, clone);
 
     const badge = document.querySelector('.badge');
 
