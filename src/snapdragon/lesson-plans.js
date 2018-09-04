@@ -240,13 +240,13 @@ const landscapeLesson1 = {
         },
         {   id: 2,
             name:'Level 2',
-            layouts: [ taxonRevision, commonEntry, textCompleteSpecies, genusEntry, familyStripsMatch ],
+            layouts: [ commonEntry, textCompleteSpecies, genusEntry ],
             wildcardLayouts : [ [specimen, epithets], [specimen, cultivarCard, cultivar], [specimen, wildcardCard, wildcard], [specimen, definitions] ],
             reviewLayouts: [ commonEntry, textCompleteSpecies, genusEntry ]
         },
         {   id: 3,
             name:'Level 3',
-            layouts: [ speciesEntry, familyMatch ],
+            layouts: [ speciesEntry ],
             wildcardLayouts : [],
             reviewLayouts: [ speciesEntry ]
         },
@@ -255,7 +255,13 @@ const landscapeLesson1 = {
             layouts: [ speciesGenusEntry ],
             wildcardLayouts : [],
             reviewLayouts: [ speciesGenusEntry ]
-        }    
+        },
+        {   id: 5,
+            name:'Level 5',
+            layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
+            wildcardLayouts : [],
+            reviewLayouts: [ familyStripsMatch ]
+        }   
     ]
 };
 
@@ -286,13 +292,13 @@ const portraitLesson1 = {
         },
         {   id: 2,
             name:'Level 2',
-            layouts: [ taxonRevision, commonEntry, textCompleteSpecies, genusEntry, familyStripsMatch ],
+            layouts: [ commonEntry, textCompleteSpecies, genusEntry ],
             wildcardLayouts : [ [specimen, epithets], [specimen, cultivarCard, cultivar], [specimen, wildcardCard, wildcard], [specimen, definitions] ],
             reviewLayouts: [ commonEntry, textCompleteSpecies, genusEntry ]
         },
         {   id: 3,
             name:'Level 3',
-            layouts: [ speciesEntry, familyMatch ],
+            layouts: [ speciesEntry ],
             wildcardLayouts : [],
             reviewLayouts: [ speciesEntry ]
         },
@@ -301,6 +307,12 @@ const portraitLesson1 = {
             layouts: [ speciesGenusEntry ],
             wildcardLayouts : [],
             reviewLayouts: [ speciesGenusEntry ]
+        },
+        {   id: 5,
+            name:'Level 5',
+            layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
+            wildcardLayouts : [],
+            reviewLayouts: [ familyStripsMatch ]
         }   
     ]
 };

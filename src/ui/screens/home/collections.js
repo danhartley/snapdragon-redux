@@ -48,6 +48,7 @@ export const renderCollections = (counter) => {
     const collectionsHeader = document.querySelector('.btn-collection');
     const collectionDescription = document.querySelector('.js-selected-description');
     const languagesHeader = document.querySelector('.btn-language');
+    const lessonPlanLink = document.querySelector('.js-lesson-plan-link');
 
     if(config.isPortraitMode) {
         learningActionBtn.innerHTML =  'View lesson species';
@@ -161,8 +162,6 @@ export const renderCollections = (counter) => {
     };
 
     // Populates lesson plan modal
-
-    const lessonPlanLink = document.querySelector('.js-lesson-plan-link');
 
     elem.hide(lessonPlanLink);
 
