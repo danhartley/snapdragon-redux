@@ -6,15 +6,15 @@ export const extraTraits = [
     { name: 'Columba livia', traits: [
         { name: 'song', value: '342145', description: 'xeno-canto id' }
     ] },
-    { name: 'Troglodytes troglodytes', trits: [
+    { name: 'Troglodytes troglodytes', traits: [
         { name: 'song', value: '432786', description: 'xeno-canto id' }
     ] },
     { name: 'Cyanistes caeruleus', traits: [
         { name: 'song', value: '431038', description: 'xeno-canto id' },
         { name: 'rank', value: '3', description: 'common', language: 'en' },
     ]  },    
-    { name: 'Turdus merula', trits: [
-        { name: 'song', value: '432566', description: 'xeno-canto id' },
+    { name: 'Turdus merula', traits: [
+        { name: 'song', value: '324061', description: 'xeno-canto id' },
         { name: 'rank', value: '4', description: 'common', language: 'en' },
     ] },
     { name: 'Erithacus rubecula', traits: [

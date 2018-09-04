@@ -34,6 +34,7 @@ setTimeout(()=>{
     
     config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
     config.isSmallLandscapeMode = window.matchMedia("(max-width: 1023px)").matches;
+    config.isLandscapeMode = !config.isPortraitMode;
 
     if(!config.lesson) {
         config.lesson = lessonPlans.find(plan => plan.portrait === config.isPortraitMode && plan.default);

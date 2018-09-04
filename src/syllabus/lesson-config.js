@@ -5,6 +5,7 @@ export const config = {
     callbackDelay: 2000,
     excludeRevision: false,
     isPortraitMode: false,
+    isLandscapeMode: true,
     collection: {
         id: 0
     },

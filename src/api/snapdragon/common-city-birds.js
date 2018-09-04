@@ -629,7 +629,8 @@ export const commonCityBirds = [
         },
         {
           "vernacularName": "common chaffinch",
-          "language": "en"
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Pinzón vulgar",
@@ -812,7 +813,8 @@ export const commonCityBirds = [
         {
           "vernacularName": "European Goldfinch",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Goldfinch",
@@ -922,7 +924,8 @@ export const commonCityBirds = [
         {
           "vernacularName": "Great Tit",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Cinereous Tit",
@@ -1021,7 +1024,8 @@ export const commonCityBirds = [
         },
         {
           "vernacularName": "Common Wood Pigeon",
-          "language": "en"
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Common Wood-Pigeon",

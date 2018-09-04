@@ -3,6 +3,7 @@ import { actions } from 'redux/actions/action-creators';
 import { renderSettings } from 'ui/fixtures/settings';
 import { renderTemplate } from 'ui/helpers/templating';
 import { subscription } from 'redux/subscriptions';
+import {renderSnapdragon } from 'ui/screens/home/snapdragon';
 import { renderCollections } from 'ui/screens/home/collections';
 import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
@@ -65,6 +66,7 @@ export const renderNavigation = (page) => {
         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));        
         subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));   
         subscription.add(renderCollections, 'counter', 'screen');
+        subscription.add(renderSnapdragon, 'counter', 'screen');
         setTimeout(() => {
             const { index } = getLatestCounter();
             actions.boundToggleLesson({ index: 0, log: { index: index, collection: collection.id  } });
@@ -92,10 +94,8 @@ export const renderNavigation = (page) => {
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));                                   
                         const { index } = getLatestCounter();
                         collection.itemIndex = index;
-                        setTimeout(() => {                            
-                            actions.boundToggleLesson({ index: 0, log: { index: index, collection: collection.id  } });
-                            renderSpeciesCollectionList(collection);
-                        });                                                                    
+                        actions.boundToggleLesson({ index: 0, log: { index: index, collection: collection.id  } });
+                        renderSpeciesCollectionList(collection);                                                                    
                         break;
                     case 'test':
                         break;

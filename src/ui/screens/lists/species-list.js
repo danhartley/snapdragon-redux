@@ -14,6 +14,8 @@ import speciesSmallLandscapeTemplate from 'ui/screens/lists/species-table-small-
 
 export const renderSpeciesCollectionList = (collection) => {
 
+    subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
+    
     if(collection.id === 0) return;
 
     const { config: currentConfig, score, history, counter, collections  } = store.getState();
