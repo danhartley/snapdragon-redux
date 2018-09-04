@@ -84,7 +84,7 @@ const renderLandscape = (template, item, config) => {
 
     const src = document.querySelector('.js-bird-song');
     
-    getBirdSong(item.name, src, config.isPortraitMode);
+    getBirdSong(item, src, config.isPortraitMode);
 };
 
 const renderPortrait = (template, item, config) => {
@@ -96,7 +96,7 @@ const renderPortrait = (template, item, config) => {
 
     const player = document.querySelector('.js-bird-song-player');
     
-    getBirdSong(item.name, player, config.isPortraitMode);
+    getBirdSong(item, player, config.isPortraitMode);
 
     player.addEventListener('click', () => {
         const iframe = document.createElement('iframe');
@@ -131,7 +131,7 @@ const renderCommonParts = (template, config, item) => {
     const traits = itemProperties.getNestedTaxonProp(family, config.language, 'traits', 'values');
     const traitValue = traits !== '' ? R.take(traitsLength, traits).join(', ') : '';
     const traitName = family.traits.map(trait => trait.name)[0];
-    const place = `UK #` + extraTraits.find(t => t.name === item.name).traits.find(t => t.name === 'rank' && t.language === config.language).value;
+    const place = `UK #` + itemProperties.getTrait(extraTraits, item.name, 'rank', config.language)
     
     const clone = document.importNode(template.content, true);
     

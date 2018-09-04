@@ -69,6 +69,16 @@ const familyVernacularNames = (name, language) => {
     return taxa.find(taxon => taxon.name.toUpperCase() === name.toUpperCase()).names.find(name => name.language === language).names;
 }
 
+const getTrait = (traits, itemName, name, language) => {
+    const item = traits.find(t => t.name === itemName);
+    if(!item || !item.traits) return '';
+    const trait = language 
+        ? item.traits.find(t => t.name === name && t.language === language) 
+        : item.traits.find(t => t.name === name);
+    if(!trait || !trait.value) return '';
+    return trait.value;
+}
+
 export const itemProperties = {
     vernacularName,
     genusName,
@@ -77,5 +87,6 @@ export const itemProperties = {
     getTaxonProp,
     getNestedTaxonProp,
     trimLatinName,
-    familyVernacularNames
+    familyVernacularNames,
+    getTrait
 };

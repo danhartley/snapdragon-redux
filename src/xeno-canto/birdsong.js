@@ -1,35 +1,41 @@
 import { extraTraits } from 'api/traits';
+import { itemProperties } from 'ui/helpers/data-checking';
 
-export const getBirdSong = (binomial, node, portrait) => {
+export const getBirdSong = (item, node, portrait) => {
 
-    const endpoint = `https://cors-anywhere.herokuapp.com/http://www.xeno-canto.org/api/2/recordings?query=${binomial} q:A`;
+    if(item.taxonomy.class.toUpperCase() === 'AVES') {
 
-    async function fetchAsync (endpoint) {
+        const endpoint = `https://cors-anywhere.herokuapp.com/http://www.xeno-canto.org/api/2/recordings?query=${item.name} q:A`;
 
-        let response = await fetch(endpoint);
-        
-        let data = await response.json();
-        
-        return data;
-    }
+        async function fetchAsync (endpoint) {
 
-    const loadPlayer = id => {
-        const url = `https://www.xeno-canto.org/${id}/embed?simple=1`;
-        portrait ? node.dataset.src = url : node.src = url;
-        if(portrait) {
-            node.classList.remove('bird-song-icon-disabled');
-            node.classList.add('bird-song-icon');
+            let response = await fetch(endpoint);
+            
+            let data = await response.json();
+            
+            return data;
         }
-    };
 
-    const playerId = extraTraits.find(t => t.name === binomial).traits.find(t => t.name === 'song');
-        
-    if(playerId) {
-        loadPlayer(playerId.value);
+        const loadPlayer = id => {
+            const url = `https://www.xeno-canto.org/${id}/embed?simple=1`;
+            portrait ? node.dataset.src = url : node.src = url;
+            if(portrait) {
+                node.classList.remove('bird-song-icon-disabled');
+                node.classList.add('bird-song-icon');
+            }
+        };
+
+        const playerId = itemProperties.getTrait(extraTraits, item.name, 'song');
+            
+        if(playerId) {
+            loadPlayer(playerId);
+        } else {
+            fetchAsync(endpoint).then(data => {        
+                const recording = data.recordings[0];
+                loadPlayer(recording.id);
+            });
+        }
     } else {
-        fetchAsync(endpoint).then(data => {        
-            const recording = data.recordings[0];
-            loadPlayer(recording.id);
-        });
+        node.style.display = 'none';
     }
 }

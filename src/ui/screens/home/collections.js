@@ -15,14 +15,10 @@ export const renderCollections = (counter) => {
     const { collections, config, collection: _collection, history } = store.getState();
 
     let collection = { ..._collection };
-
-    subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
     
     if(counter && counter.log) {
         actions.boundSelectCollection(collection);
     }    
-
-    subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
 
     const template = document.createElement('template');
     template.innerHTML = collectionsTemplate;
@@ -63,7 +59,7 @@ export const renderCollections = (counter) => {
         }
     }    
 
-    // lessons
+    // Selected lesson
 
     if(collection && collection.name) {
         document.querySelectorAll(`[name="${collection.name}"]`)[0].classList.add('active');
@@ -71,10 +67,15 @@ export const renderCollections = (counter) => {
         elem.hide(learningActionBtnPlaceholder);
         elem.show(lessonPlanLink);
         collectionsHeader.innerHTML = collection.name;
+        if(config.isLandscapeMode) {
+            subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
+        }
     } else {
         collectionsHeader.innerHTML = 'Lessons';        
     }
 
+    // User selects lesson
+    
     selectHandler('.dropdown.js-collections .dropdown-item', id => {
         
         collection = { ...collection, ...collections.find(collection => collection.id === parseInt(id)) };
@@ -85,20 +86,22 @@ export const renderCollections = (counter) => {
         config.collection = { id: parseInt(id) };
         config.moduleSize = collection.moduleSize;
 
-        setTimeout(() => {
-            if(!config.isPortraitMode) {
-                actions.boundSelectCollection(collection);
-            }
-    
-            elem.show(learningActionBtn);
-            elem.hide(learningActionBtnPlaceholder);        
-            elem.show(lessonPlanLink);    
-        });        
+        if(config.isLandscapeMode) {
+            subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
+            actions.boundSelectCollection(collection);
+        }
+
+        elem.show(learningActionBtn);
+        elem.hide(learningActionBtnPlaceholder);        
+        elem.show(lessonPlanLink);        
     });
 
     let currentCourseId;
 
     document.querySelectorAll('.dropdown.js-collections .dropdown-item').forEach(option => {
+
+        subscription.getByName('renderSnapdragon').forEach(sub => subscription.remove(sub));
+
         const optionCollection = collections.find(collection => collection.id === parseInt(option.id));
         if(optionCollection.courseId !== currentCourseId && optionCollection.course !== '') {
             var courseHeader = document.createElement('span');
@@ -120,8 +123,6 @@ export const renderCollections = (counter) => {
         actions.boundUpdateLanguage(language);
     });
 
-    // User action
-
     const getLatestCounter = () => { 
         const counter = store.getState().counter;
         const log = counter.log;
@@ -129,13 +130,18 @@ export const renderCollections = (counter) => {
         return { index };
     };
 
+    // User begins or continues lesson
+
     learningActionBtn.addEventListener('click', () => {
+                
         subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
-        if(config.isPortraitMode) {
+
+        if(config.isPortraitMode) {            
+            subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
             actions.boundSelectCollection(collection);
             actions.boundNewPage({ name: 'list'});
          } else {
-            subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
+            subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));            
             const isLessonPaused = (counter && counter.log) ? true : false; 
              if(isLessonPaused) {
                 actions.boundToggleLesson(getLatestCounter());
