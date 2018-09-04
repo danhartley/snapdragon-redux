@@ -19,7 +19,7 @@ export const renderSummary = (history) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    const lastLevel = 4; // ????
+    const lastLevel = 5; // ????
     const collectionComplete = config.lesson.level.id === lastLevel;
     const speciesCount = collection.items.length;
     const speciesTestedCount = collection.currentRound * config.moduleSize;

@@ -176,6 +176,9 @@
         height: 90%;
     }
 
+    #externalPageModal iframe {
+        height: 100%;
+    }
     
     .modal-dialog {
         max-width: 60vw;
@@ -199,7 +202,6 @@
     .lesson-plan-btn {
         padding: 1em 2em;
       }
-    /* #externalPageModal */
 
     .flex-provider.skills, .species-card-wiki-entry,
     .collection-preview, .collection button, .collections-skills {

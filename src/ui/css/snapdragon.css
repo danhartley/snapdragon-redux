@@ -753,8 +753,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: var(--snap-modal-title);
 }
 
-.modal-body {
-  background-color: var(--snap-modal-background);
+#menuModal .modal-content {
+  color: var(--snap-text-dark);
 }
 
 .modal-body button {
@@ -764,11 +764,15 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .modal-text {
   margin: 1em;
-  color: var(--snap-text-light);
+  /* color: var(--snap-text-light); */
+}
+
+#listModal .modal-content {
+  background-color: var(--snap-modal-content-background);
 }
 
 #listModal .modal-body, #listModal .list-group-collection {
-  background-color: var(--snap-modal-background);
+  /* background-color: var(--snap-modal-background); */
 }
 
 #listModal .scrollable {
@@ -972,6 +976,10 @@ tbody {
 
 .table-row img {
   padding-right: .5em;
+}
+
+.table-row .lp-level {
+  padding: 0 0 0 .5em;
 }
 
 .table-header th:nth-child(1) > div {
