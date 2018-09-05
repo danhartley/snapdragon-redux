@@ -1084,6 +1084,10 @@ tbody {
   margin: .5em 0;
 }
 
+.carousel.slide {
+  background-color: var(--snap-modal-background);
+}
+
 .carousel-item {
   height: 40vh;
 }

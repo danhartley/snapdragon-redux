@@ -1,5 +1,3 @@
-import * as R from 'ramda';
-
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { lessonPlans } from 'snapdragon/lesson-plans';
@@ -29,7 +27,9 @@ export const renderLessonPlans = (planId) => {
 
         const parent = document.querySelector('#listModal .js-lesson-plans');
 
-        const level = `<tr class="table-row level${index + 1}"><td class="lp-level">Level ${index + 1}</td></tr>`;
+        const levelId = index + 1;
+
+        const level = `<tr class="table-row level${levelId}"><td class="lp-level">Level ${levelId}</td></tr>`;
 
         parent.innerHTML += level;
 
@@ -38,7 +38,7 @@ export const renderLessonPlans = (planId) => {
             const template = document.createElement('template');
             template.innerHTML = lessonPlansTemplate;
             
-            renderTemplate({ layout },template.content, parent);       
+            renderTemplate({ layout, levelId },template.content, parent);       
             
             document.querySelectorAll('.lp-kind').forEach(kind => {
                 switch(kind.innerHTML) {
@@ -66,4 +66,14 @@ export const renderLessonPlans = (planId) => {
         });
     });
     
+    document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
+        checkbox.addEventListener('click', event => {
+            const screenName = event.target.name;
+            const levelId = parseInt(event.target.dataset.levelId);
+            const planId = config.isPortraitMode ? 3 : 1;
+            const currentPlan = lessonPlans.find(lessonPlan => lessonPlan.id === planId);
+            const currentLevelLayouts = currentPlan.levels.find(level => level.id === levelId).layouts;
+            const index = currentLevel.
+        });
+    });
 };

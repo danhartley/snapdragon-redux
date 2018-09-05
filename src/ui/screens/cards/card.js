@@ -93,7 +93,6 @@ const renderPortrait = (template, item, config) => {
 
     imageSlider(item, document.querySelector('.js-species-card-images'), true);
 
-
     const player = document.querySelector('.js-bird-song-player');
     
     getBirdSong(item, player, config.isPortraitMode);

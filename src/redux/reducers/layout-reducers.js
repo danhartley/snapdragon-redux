@@ -7,6 +7,8 @@ const flag = (msg, data) => {
 
 export const lessonPlan = (state = null, action) => {
     switch(action.type) {
+        case types.CHANGE_LESSON_PLAN:
+            return action.data;
         case types.NEXT_LESSON:
             flag(types.NEXT_LESSON, action.data.levelName);
             return action.data;

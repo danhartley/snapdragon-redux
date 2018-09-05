@@ -24,11 +24,11 @@ const createLessonPlan = (config, collection) => {
     );        
 };
 
-const getLayouts = (config, type) => {
+const getLayouts = (config, mode) => {
     const { lesson: { name: lessonName, level: { name: levelName }}, isPortraitMode } = config;
     const currentLesson = getCurrentLesson(lessonName, isPortraitMode);
     const currentLevel = getCurrentLevel(currentLesson, levelName);
-    switch(type) {
+    switch(mode) {
         case 'learn':
             return currentLevel.layouts;
         case 'wildcard':
