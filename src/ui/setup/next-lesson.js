@@ -1,11 +1,9 @@
-import * as R from 'ramda';
-
-import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { stats } from 'ui/helpers/stats';
 import { lessonPlanner } from 'syllabus/lesson-planner';
 import { actions } from 'redux/actions/action-creators';
 import { speciesState } from 'redux/reducers/initial-state/initial-species-state';
+import { lessonPlans } from 'snapdragon/lesson-plans';
 
 export const nextLesson = (config) => {
 
@@ -15,7 +13,9 @@ export const nextLesson = (config) => {
 
     const isLessonPlanRequired = score.total === 0;
 
-    let newLessonPlan = lessonPlan;
+    let lesson;
+
+    let defaultLessonPlan = lessonPlan || lessonPlans.find(lessonPlan => lessonPlan.id === 1 && lessonPlan.portrait === config.isPortraitMode);
     
     if(isLessonPlanRequired) {
 
@@ -36,10 +36,10 @@ export const nextLesson = (config) => {
         _collection.rounds = Math.ceil(_collection.items.length / _collection.moduleSize);
         _collection.itemIndex = 0;        
 
-        newLessonPlan = { ...newLessonPlan, ...lessonPlanner.createLessonPlan(config, _collection) }
+        lesson = { ...defaultLessonPlan, ...lessonPlanner.createLessonPlan(defaultLessonPlan, config, _collection) }
 
-        newLessonPlan.collection = _collection;
+        lesson.collection = _collection;
     }     
 
-    actions.boundNextLessonPlan(newLessonPlan);
+    actions.boundNextLessonPlan(lesson);
 };

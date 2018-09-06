@@ -49,6 +49,8 @@ export const renderCollections = (counter) => {
     const collectionDescription = document.querySelector('.js-selected-description');
     const languagesHeader = document.querySelector('.btn-language');
     const lessonPlanLink = document.querySelector('.js-lesson-plan-link');
+    
+    elem.hide(lessonPlanLink);
 
     if(config.isPortraitMode) {
         learningActionBtn.innerHTML =  'View lesson species';
@@ -73,6 +75,7 @@ export const renderCollections = (counter) => {
         }
     } else {
         collectionsHeader.innerHTML = 'Lessons';        
+        elem.hide(lessonPlanLink);
     }
 
     // User selects lesson
@@ -163,7 +166,7 @@ export const renderCollections = (counter) => {
 
     // Populates lesson plan modal
 
-    elem.hide(lessonPlanLink);
+    // elem.hide(lessonPlanLink);
 
     lessonPlanLink.addEventListener('click', event => {
         const planId = config.isPortraitMode ? 3 : 1;

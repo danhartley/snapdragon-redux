@@ -725,7 +725,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: var(--snap-inactive);
 }
 
-.snap-success {
+.snap-success, .btn.btn-light.snap-success {
   color: var(--snap-text-light);
   background-color: var(--snap-success);
   border: .05em solid var(--snap-success);
@@ -1082,6 +1082,10 @@ tbody {
   border: 1px solid var(--snap-border-dark);
   padding: .25em .5em;
   margin: .5em 0;
+}
+
+.carousel.slide {
+  background-color: var(--snap-modal-background);
 }
 
 .carousel-item {

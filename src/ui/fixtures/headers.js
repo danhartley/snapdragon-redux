@@ -12,7 +12,7 @@ export const renderHeaders = collection => {
 
     if(!collection || !lessonPlan) return;
 
-    const layout = lessonPlan.layouts[counter.index];
+    const layout = lessonPlan.layouts ? lessonPlan.layouts[counter.index] : null;
 
     if(!layout) return;
 

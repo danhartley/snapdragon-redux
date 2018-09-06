@@ -1,3 +1,4 @@
+const CHANGE_LESSON_PLAN = '[CHANGE_LESSON_PLAN] Edit the original lesson plan';
 const NEXT_LESSON = '[NEXT_LESSON] Get (new) lesson plan';
 const NEXT_ITEM = '[NEXT_ITEM] Get next item';
 const NEXT_LAYOUT = '[NEXT_LAYOUT] Render next layout';
@@ -14,6 +15,7 @@ const UPDATE_LANGUAGE = '[UPDATE_LANGUAGE] Update the current language';
 const CHANGE_PAGE = '[CHANGE_PAGE] Navigate to new page';
 
 export const types = {
+    CHANGE_LESSON_PLAN,
     NEXT_LESSON,
     NEXT_LAYOUT,
     NEXT_ITEM,

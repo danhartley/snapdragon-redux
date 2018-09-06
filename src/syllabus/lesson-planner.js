@@ -5,12 +5,21 @@ import { getWildcardLayouts } from 'redux/reducers/initial-state/species-state/s
 
 const { summary, history } = screens;
 
-const createLessonPlan = (config, collection) => {
+const createLessonPlan = (lessonPlan, config, collection) => {
     const moduleSize = collection.moduleSize || config.moduleSize;
-    const { lesson: { name: lessonName, level: { name: levelName }}, excludeRevision, isPortraitMode } = config;
-    const wildcards = config.mode === 'learn' ? getLayouts(config, 'wildcard') : [];
-    const wildcardLayouts = wildcards.length > 0 ? getWildcardLayouts(wildcards, collection, moduleSize) : [];
-    const layouts = getLayouts(config, config.mode);
+    let { lesson: { name: lessonName, level: { name: levelName }}, excludeRevision, isPortraitMode } = config;
+    const wildcards = config.mode === 'learn' ? getLayouts(lessonPlan, config, 'wildcard') : [];
+    let wildcardLayouts = wildcards.length > 0 ? getWildcardLayouts(wildcards, collection, moduleSize) : [];
+    let layouts = getLayouts(lessonPlan, config, config.mode);
+
+    if(layouts.length === 0 && wildcardLayouts.length === 0) {
+        const level = getNextLevel(config.lesson.name, config.lesson.level.name, config.isPortraitMode);
+        config.lesson.level = level;
+        lessonName = config.lesson.name;
+        levelName = config.lesson.level.name;
+        layouts = getLayouts(null, config, config.mode);
+    }
+
     return createLesson(
         lessonName,
         levelName, 
@@ -24,11 +33,11 @@ const createLessonPlan = (config, collection) => {
     );        
 };
 
-const getLayouts = (config, type) => {
-    const { lesson: { name: lessonName, level: { name: levelName }}, isPortraitMode } = config;
-    const currentLesson = getCurrentLesson(lessonName, isPortraitMode);
+const getLayouts = (lessonPlan, config, mode) => {
+    const { lesson: { level: { name: levelName }} } = config;
+    const currentLesson = lessonPlan || getCurrentLesson(lessonPlans, config.lesson.name, config.isPortraitMode);
     const currentLevel = getCurrentLevel(currentLesson, levelName);
-    switch(type) {
+    switch(mode) {
         case 'learn':
             return currentLevel.layouts;
         case 'wildcard':
@@ -40,14 +49,14 @@ const getLayouts = (config, type) => {
     }
 };
 
-const getCurrentLesson = (lessonName, isPortraitMode = false) => {
-    const lessons = lessonPlans.filter(lesson => lesson.name === lessonName && lesson.portrait === isPortraitMode);
-    return lessons[0];
+const getCurrentLesson = (lessonPlans, lessonName, isPortraitMode = false) => {
+    const lessons = lessonPlans.find(lesson => lesson.name === lessonName && lesson.portrait === isPortraitMode);
+    return lessons;
 };
 
 const getCurrentLevel = (lesson, levelName) => { 
-    const levels = lesson.levels.filter(level => level.name === levelName);
-    return levels[0];
+    const levels = lesson.levels.find(level => level.name === levelName);
+    return levels;
 };
 
 const getNextLevelId = (lesson, level, direction) => {
@@ -58,11 +67,11 @@ const getNextLevelId = (lesson, level, direction) => {
 };
 
 const changeLevel = (currentLessonName, currentLevelName, direction, isPortraitMode = false) => {
-    const lesson = getCurrentLesson(currentLessonName, isPortraitMode);
+    const lesson = getCurrentLesson(lessonPlans, currentLessonName, isPortraitMode);
     const level = getCurrentLevel(lesson, currentLevelName);
     const levelId = getNextLevelId(lesson, level, direction);
-    const levels = lesson.levels.filter(level => level.id === levelId);
-    return { ...levels[0], lessonName: lesson.name };
+    const levels = lesson.levels.find(level => level.id === levelId);
+    return { ...levels, lessonName: lesson.name };
 };
 
 const getNextLevel = (currentLessonName, currentLevelName, isPortraitMode = false) => {
