@@ -11,7 +11,7 @@ const makeActionCreator = action => {
     }
   }
 
-const changeLessonPlam = makeActionCreator(types.CHANGE_LESSON_PLAN);
+const changeLessonPlan = makeActionCreator(types.CHANGE_LESSON_PLAN);
 const nextLesson = makeActionCreator(types.NEXT_LESSON);
 const updateScore = makeActionCreator(types.UPDATE_SCORE);
 const nextLayout = makeActionCreator(types.NEXT_LAYOUT);
@@ -27,7 +27,7 @@ const selectCollection = makeActionCreator(types.SELECT_COLLECTION);
 const updateLanguage = makeActionCreator(types.UPDATE_LANGUAGE);
 const newPage = makeActionCreator(types.CHANGE_PAGE);
 
-const boundChangeLessonPlan = data => store.dispatch(changeLessonPlan(data));
+  const boundchangeLessonPlan = data => store.dispatch(changeLessonPlan(data));
 const boundNextLessonPlan = data => store.dispatch(nextLesson(data));
 const boundUpdateScore = data => store.dispatch(updateScore(data));
 const boundNextLayout = data => store.dispatch(nextLayout(data));
@@ -44,7 +44,7 @@ const boundUpdateLanguage = data => store.dispatch(updateLanguage(data));
 const boundNewPage = data => store.dispatch(newPage(data));
 
 export const actions = {
-  boundChangeLessonPlan,
+    boundchangeLessonPlan,
     boundNextLessonPlan,
     boundUpdateScore,
     boundNextItem,

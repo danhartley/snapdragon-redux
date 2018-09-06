@@ -1,16 +1,15 @@
-import { lessonPlans } from 'snapdragon/lesson-plans';
 import { createLesson } from 'syllabus/lesson-builder';
 import { screens } from 'snapdragon/screen-layouts';
 import { getWildcardLayouts } from 'redux/reducers/initial-state/species-state/species-wildcards';
 
 const { summary, history } = screens;
 
-const createLessonPlan = (config, collection) => {
+const createLessonPlan = (lessonPlan, config, collection) => {
     const moduleSize = collection.moduleSize || config.moduleSize;
     const { lesson: { name: lessonName, level: { name: levelName }}, excludeRevision, isPortraitMode } = config;
-    const wildcards = config.mode === 'learn' ? getLayouts(config, 'wildcard') : [];
+    const wildcards = config.mode === 'learn' ? getLayouts(lessonPlan, config, 'wildcard') : [];
     const wildcardLayouts = wildcards.length > 0 ? getWildcardLayouts(wildcards, collection, moduleSize) : [];
-    const layouts = getLayouts(config, config.mode);
+    const layouts = getLayouts(lessonPlan, config, config.mode);
     return createLesson(
         lessonName,
         levelName, 
@@ -24,10 +23,10 @@ const createLessonPlan = (config, collection) => {
     );        
 };
 
-const getLayouts = (config, mode) => {
-    const { lesson: { name: lessonName, level: { name: levelName }}, isPortraitMode } = config;
-    const currentLesson = getCurrentLesson(lessonName, isPortraitMode);
-    const currentLevel = getCurrentLevel(currentLesson, levelName);
+const getLayouts = (lessonPlan, config, mode) => {
+    const { lesson: { level: { name: levelName }} } = config;
+    // const currentLesson = getCurrentLesson(lessonPlan, lessonName, isPortraitMode);
+    const currentLevel = getCurrentLevel(lessonPlan, levelName);
     switch(mode) {
         case 'learn':
             return currentLevel.layouts;
@@ -40,10 +39,10 @@ const getLayouts = (config, mode) => {
     }
 };
 
-const getCurrentLesson = (lessonName, isPortraitMode = false) => {
-    const lessons = lessonPlans.filter(lesson => lesson.name === lessonName && lesson.portrait === isPortraitMode);
-    return lessons[0];
-};
+// const getCurrentLesson = (lessonPlan, lessonName, isPortraitMode = false) => {
+//     const lessons = lessonPlan.filter(lesson => lesson.name === lessonName && lesson.portrait === isPortraitMode);
+//     return lessons[0];
+// };
 
 const getCurrentLevel = (lesson, levelName) => { 
     const levels = lesson.levels.filter(level => level.name === levelName);
