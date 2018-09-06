@@ -24,7 +24,9 @@ export const renderLessonPlans = (lessonPlanId) => {
 
     const lessonPlan = lessonPlans.find(plan => plan.id === lessonPlanId && plan.portrait === config.isPortraitMode);
     
-    const levelLayouts = lessonPlan.levels.map(level => level.layouts);
+    const levelLayouts = lessonPlan.levels.map(level => {
+        return [ ...level.layouts, ...level.wildcardLayouts ];
+    });
 
     levelLayouts.forEach((layouts, index) => {
 
@@ -86,7 +88,7 @@ export const renderLessonPlans = (lessonPlanId) => {
                 });
                 
             } else {                
-                const currentLevelLayouts = lessonPlan.levels.find(level => level.id === levelId).layouts;
+                const currentLevelLayouts = newLessonPlan.levels.find(level => level.id === levelId).layouts;
                 const newLayouts = currentLevelLayouts.map(layout =>  { 
                     if(layout.name === screenName) {
                         layout = { name: screenName };
@@ -94,7 +96,6 @@ export const renderLessonPlans = (lessonPlanId) => {
                     return layout;
                 });      
                 newLessonPlan.levels.find(level => level.id === levelId).layouts = newLayouts;
-                console.log(newLessonPlan)
             }
         });
     });
@@ -102,7 +103,7 @@ export const renderLessonPlans = (lessonPlanId) => {
     document.querySelector('.js-lesson-plan-btn-action').addEventListener('click', event => {
         newLessonPlan.levels = newLessonPlan.levels.map(level => { 
             const layouts = level.layouts.filter(layout => { 
-                return layout.name !== screenName;
+                return layout.screens;
             });
             return { ...level, layouts: layouts };
         });

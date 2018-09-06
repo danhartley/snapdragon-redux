@@ -226,6 +226,64 @@ const commonEntry = {
     ]
 };
 
+const latinEpithets = {
+    name: 'screen-epithets',
+    type: 'test',
+    score: 1,
+    points: 1,
+    kind: 'T',
+    given: 'Epithet',
+    options: 'List epithet definitions',
+    screens: [
+        { ...specimen },
+        { ...epithets }
+    ]
+};
+
+const glossaryTerms = {
+    name: 'screen-definitions',
+    type: 'test',
+    score: 1,
+    points: 1,
+    kind: 'T',
+    given: 'Term',
+    options: 'List term definitions',
+    screens: [
+        { ...specimen },
+        { ...definitions }
+    ]
+};
+
+const cultivars = {
+    name: 'screen-cultivars',
+    type: 'test',
+    score: 1,
+    points: 1,
+    kind: 'T',
+    given: 'List of cultivars',
+    options: 'List of species',
+    screens: [
+        { ...specimen },
+        { ...cultivarCard },
+        { ...cultivar }
+    ]
+};
+
+const wildcards = {
+    name: 'screen-connections',
+    type: 'test',
+    score: 1,
+    points: 1,
+    kind: 'T',
+    given: 'List of traits',
+    options: 'List of species',
+    screens: [
+        { ...specimen },
+        { ...wildcardCard },
+        { ...wildcard }
+    ]
+};
+
 const landscapeLesson1 = {
     id: 1,
     name:'Lesson 1',
@@ -241,7 +299,7 @@ const landscapeLesson1 = {
         {   id: 2,
             name:'Level 2',
             layouts: [ commonEntry, textCompleteSpecies, genusEntry ],
-            wildcardLayouts : [ [specimen, epithets], [specimen, cultivarCard, cultivar], [specimen, wildcardCard, wildcard], [specimen, definitions] ],
+            wildcardLayouts : [ latinEpithets, cultivars, glossaryTerms, wildcards ],
             reviewLayouts: [ commonEntry, textCompleteSpecies, genusEntry ]
         },
         {   id: 3,

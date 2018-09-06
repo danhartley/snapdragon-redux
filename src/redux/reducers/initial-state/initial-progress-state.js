@@ -9,7 +9,9 @@ const score = {
     fails: [],
     passes: [],
     success: false,
-    mode: 'learn'
+    mode: 'learn',
+    totalPassPoints: 0,
+    totalPoints: 0
 };
 
 export const progressState = {
