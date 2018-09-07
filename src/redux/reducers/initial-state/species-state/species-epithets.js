@@ -18,10 +18,6 @@ export const getSpeciesEpithets = items => {
 
         if(parts.length > 0) {
             epithets.push({ parts: parts, index: obj.index });
-            // epithets.forEach(epithet => {
-            //     console.log('name ', epithet.parts[0].name, ' index ', epithet.parts[0].index, ' layout index ', epithet.index)
-            // });
-            // console.log('*** BREAK ***')
         }        
     }
 

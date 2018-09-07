@@ -26,32 +26,22 @@ export const collection = (state = { name: '---', id: 0, descriptions: null }, a
     let currentRound = 0;
     let layoutIndex = 0;
     
-    const flag = (msg, data) => {
-        // console.log(`Collection update triggered by: ${msg}`);
-        // console.log(`Action was: ${data}`)
-    };
-
     switch(action.type) {
         case types.SELECT_COLLECTION:
-            flag(types.SELECT_COLLECTION, action.data.id);
             return action.data;
         case types.CHANGE_COLLECTION:
-            flag(types.CHANGE_COLLECTION, action.data.id);
             const config = action.data;
             const selectedCollection = speciesState.collections.find(collection => collection.id === config.collection.id);
             const collection = speciesState.initCollection(selectedCollection)
             nextItem = collection.items[collection.itemIndex];
             return { ...state, ...collection, nextItem };
         case types.NEXT_LESSON: 
-            flag(types.NEXT_LESSON, action.data.levelName);
             return action.data.collection || state;
         case types.NEXT_ITEM:
-            flag(types.NEXT_ITEM, action.data);
             itemIndex = action.data;
             nextItem = state.items[itemIndex];
             return { ...state, itemIndex, nextItem };
         case types.NEXT_ROUND:
-            flag(types.NEXT_ROUND, action.data.collection);
             layoutIndex = action.data;
             currentRound = (state.currentRound === state.rounds) ? 1 : state.currentRound + 1;
             itemIndex = state.moduleSize * (currentRound -1);
@@ -59,7 +49,6 @@ export const collection = (state = { name: '---', id: 0, descriptions: null }, a
             const isLevelComplete = currentRound === state.rounds;
             return { ...state, itemIndex, currentRound, nextItem, isLevelComplete };
         case types.NEXT_LEVEL:
-            flag(types.NEXT_LEVEL, action.data ? action.data.index : '');
             itemIndex = 0;
             currentRound = 1;
             nextItem = state.items[itemIndex];

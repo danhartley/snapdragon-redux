@@ -2,32 +2,20 @@ import { utils } from 'utils/utils';
 import { types } from 'redux/actions/action-types';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
 
-const flag = (msg, data) => {
-    // console.log(`Counter update triggered by: ${msg}`);
-    // console.log(`Action was: ${data}`)
-};
-
 export const counter = (state = null, action) => {
     switch(action.type) {
         case 'persist/REHYDRATE':
             return action.payload ? action.payload.counter : null;
         case types.CHANGE_COLLECTION:
-            flag(types.CHANGE_COLLECTION, action.data.id);
             return { index: 0 };
         case types.UPDATE_CONFIG:
-            flag(types.UPDATE_CONFIG, action.data.collection.id);
             return state;
         case types.NEXT_LEVEL:
-            flag(types.NEXT_LEVEL, action.data);
         case types.NEXT_ROUND:
-            flag(types.NEXT_ROUND, action.data);
         case types.STOP_START_LESSON:
-            flag(types.STOP_START_LESSON, action.data);
             return action.data;
         case types.UPDATE_SCORE:
-            flag(types.UPDATE_SCORE, action.data);
         case types.END_REVISION:
-            flag(types.END_REVISION, action.data);
             let i = (state.index + 1) <= action.data.layoutCount ? (state.index + 1) : state.index;
             return { index: i };
         default:
