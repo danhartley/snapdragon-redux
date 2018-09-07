@@ -504,7 +504,8 @@ export const fruit = [
         {
           "vernacularName": "peach",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Akroot",
@@ -750,7 +751,8 @@ export const fruit = [
         {
           "vernacularName": "lemon",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Lemon-tree",
@@ -848,12 +850,13 @@ export const fruit = [
         },
         {
           "vernacularName": "strawberry",
-          "language": "en"
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "garden strawberry",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true          
         },
         {
           "vernacularName": "hybrid strawberry",
@@ -1191,7 +1194,8 @@ export const fruit = [
         },
         {
           "vernacularName": "apple",
-          "language": "en"
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Orchard Apple",

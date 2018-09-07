@@ -21,7 +21,7 @@ const initCollection = (selectedCollection = collections[0]) => {
     const families = familyProps.getFamilyNames(items);
     const familyStats = familyProps.getFamilyStats(items);
     const speciesNames = items.map(item => item.name);
-    const speciesVernacularNames = items.map(i => i.names.filter(name => name.language === config.language)[0].vernacularName);
+    const speciesVernacularNames = items.map(i => i.names.filter(name => name.language === config.language));
 
     const collection = {
         id: selectedCollection.id,

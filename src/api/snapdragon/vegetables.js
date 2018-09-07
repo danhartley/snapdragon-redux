@@ -27,7 +27,8 @@ export const vegetables = [
         },
         {
           "vernacularName": "Cucumber",
-          "language": "en"
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Oriental Cucumber",
@@ -269,7 +270,8 @@ export const vegetables = [
         {
           "vernacularName": "spinach",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Spinacia oleracea",
@@ -368,7 +370,8 @@ export const vegetables = [
         },
         {
           "vernacularName": "radish",
-          "language": "en"
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "wild radish",
@@ -595,11 +598,12 @@ export const vegetables = [
         {
           "vernacularName": "garden tomato",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true          
         },
         {
           "vernacularName": "tomato",
-          "language": "en"
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Tomate fino",
@@ -1226,7 +1230,8 @@ export const vegetables = [
         },
         {
           "vernacularName": "pea",
-          "language": "en"
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Alverja",
@@ -1322,7 +1327,8 @@ export const vegetables = [
         {
           "vernacularName": "parsnip",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "wild parship",
@@ -1430,7 +1436,8 @@ export const vegetables = [
         },
         {
           "vernacularName": "eggplant",
-          "language": "en"
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "berenjena",
@@ -1523,7 +1530,8 @@ export const vegetables = [
         },
         {
           "vernacularName": "Cardoon",
-          "language": "en"
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "artichoke thistle",
@@ -1630,7 +1638,8 @@ export const vegetables = [
         {
           "vernacularName": "lettuce",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Thridace",
@@ -2025,7 +2034,8 @@ export const vegetables = [
         {
           "vernacularName": "Potato",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Irish potato",
@@ -2101,12 +2111,6 @@ export const vegetables = [
       },
       "family": "Solanaceae",
       "eolName": "Solanum tuberosum L.",
-      "wikiSearchTerms": [
-        {
-          term: 'Solanum tuberosum',
-          "language": "pt"
-        }
-      ]
     },
     {
       "id": 1084354,
@@ -2141,7 +2145,8 @@ export const vegetables = [
         },
         {
           "vernacularName": "onion",
-          "language": "en"
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Allium cepa",

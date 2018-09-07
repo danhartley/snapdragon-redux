@@ -1,5 +1,4 @@
-import { flatten } from 'ramda';
-
+import * as R from 'ramda';
 import { utils } from 'utils/utils';
 
 let root = '';
@@ -27,7 +26,7 @@ async function fetchWiki(name, missingMessage) {
     try { 
         const response = await fetch(url, config);
         const data = await response.json();        
-        return flatten(data);        
+        return R.flatten(data);        
     } catch (e) {
         const errorPromise = new Promise((resolve, reject) => {
             resolve(missingMessage)
@@ -38,8 +37,11 @@ async function fetchWiki(name, missingMessage) {
 
 const cleanEntry = str => {
     let cleaned = str;
-    cleaned = str.replace(' ()', '');
-    cleaned = str.replace('()', '');
+    cleaned = cleaned.replace('( or UK: , US: )', '');
+    cleaned = cleaned.replace('(;', '(');
+    cleaned = cleaned.replace('()', '');
+    cleaned = cleaned.replace('( ', '(');
+    cleaned = cleaned.replace('  ', ' ');
     return cleaned;
 };
 
@@ -49,6 +51,13 @@ const wikiLink = entry => {
 };
 
 const formatWiki = (entry) => {
+
+    const exceptions = ['Tarragon', 'Apple'];
+
+    if(R.contains(entry[0], exceptions)) {
+        return `<li class="species-card-wiki-entry">'${cleanEntry(entry[2])}'</li>`;
+    }
+
     if(!entry) return '';
     let html = '';
     if(entry.length === 1) {
@@ -57,11 +66,11 @@ const formatWiki = (entry) => {
     if(entry[1]) html += `<li class="species-card-wiki-entry">'${cleanEntry(entry[1])}'</li>`;
     if(entry[2])
         if(entry[2].indexOf('https')!== -1) html += wikiLink(entry[2]);
-        else html += `<li class="species-card-wiki-entry">'${entry[2]}'</li>`;
+        else html += `<li class="species-card-wiki-entry">'${cleanEntry(entry[2])}'</li>`;
     if(entry[3]) 
         if(entry[3].indexOf('https')!== -1)
         html += wikiLink(entry[3]);
-        else html += `<li class="species-card-wiki-entry">'${entry[3]}'</li>`;
+        else html += `<li class="species-card-wiki-entry">'${cleanEntry(entry[3])}'</li>`;
     return html;
 };
 
@@ -72,6 +81,10 @@ async function renderWiki(wikiNode, item, language) {
                             ? item.searchTerms.filter(term => term.language === language)[0].searchTerm 
                             : binomial);
     root = `https://${language}.m.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&limit=1&search=`;
+    const exceptions = [ 'Artemisia dracunculus', 'Malus domestica'];
+    if(R.contains(item.name, exceptions)) {
+        root = `https://${language}.m.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&limit=2&search=`;
+    }    
     wikiNode.innerHTML = "";
 
     const entry = await fetchWiki(searchTerm);

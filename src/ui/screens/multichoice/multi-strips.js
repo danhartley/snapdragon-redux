@@ -113,8 +113,9 @@ export const renderMultiStrips = (collection) => {
         const question = itemProperties.vernacularName(item, config);
         const items = [ ...collection.items ];
         let alternatives = R.take(number, utils.shuffleArray(collection.speciesVernacularNames));
-        alternatives = R.take(number-1, alternatives.filter(alt => alt.toUpperCase() !== question.toUpperCase()));
-        alternatives = alternatives.map(a => utils.capitaliseFirst(a));
+        alternatives = alternatives.map(names => names.map(name => name.vernacularName));
+        alternatives = R.take(number-1, alternatives.filter(alt => alt[0].toUpperCase() !== question.toUpperCase()));
+        alternatives = alternatives.map(a => utils.capitaliseFirst(a[0]));
         const answers = utils.shuffleArray([question, ...alternatives]);
 
         const description = { vernacular: '---', name: item.name };

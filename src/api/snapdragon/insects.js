@@ -46,7 +46,8 @@ export const insects = [
           },
           {
             "vernacularName": "Western honey bee",
-            "language": "en"
+            "language": "en",
+            wikiSearchTerm: true
           },
           {
             "vernacularName": "bee",

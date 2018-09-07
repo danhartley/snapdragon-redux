@@ -29,7 +29,8 @@ export const herbsAndSpices = [
         {
           "vernacularName": "Garlic",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Garlick",
@@ -146,7 +147,8 @@ export const herbsAndSpices = [
         {
           "vernacularName": "coriander",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Chinese parsley",
@@ -254,7 +256,8 @@ export const herbsAndSpices = [
         {
           "vernacularName": "cumin",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Cummin",
@@ -357,7 +360,8 @@ export const herbsAndSpices = [
         {
           "vernacularName": "sweet marjoram",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Süßer Majoran",
@@ -367,7 +371,8 @@ export const herbsAndSpices = [
         {
           "vernacularName": "Mejorana",
           "language": "es",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Origan marjolaine",
@@ -606,7 +611,8 @@ export const herbsAndSpices = [
         {
           "vernacularName": "white mustard",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Salade mustard",
@@ -738,7 +744,8 @@ export const herbsAndSpices = [
         {
           "vernacularName": "ginger",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Canton Ginger",
@@ -988,7 +995,8 @@ export const herbsAndSpices = [
         {
           "vernacularName": "caraway",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Carroway",
@@ -1140,7 +1148,8 @@ export const herbsAndSpices = [
         },
         {
           "vernacularName": "summer savory",
-          "language": "en"
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "ajedrea",
@@ -1887,7 +1896,8 @@ export const herbsAndSpices = [
         {
           "vernacularName": "oregano",
           "language": "de",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Dost",
@@ -2180,7 +2190,8 @@ export const herbsAndSpices = [
         {
           "vernacularName": "spearmint",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Curled Mint",
@@ -2554,7 +2565,8 @@ export const herbsAndSpices = [
         {
           "vernacularName": "parsley",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Common garden parsley",
@@ -2656,7 +2668,8 @@ export const herbsAndSpices = [
         {
           "vernacularName": "basil",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Basilie",
@@ -2783,7 +2796,8 @@ export const herbsAndSpices = [
         },
         {
           "vernacularName": "Chives",
-          "language": "en"
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Common Chive",
@@ -2921,7 +2935,8 @@ export const herbsAndSpices = [
         },
         {
           "vernacularName": "tarragon",
-          "language": "en"
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "wormwood",
@@ -3047,7 +3062,8 @@ export const herbsAndSpices = [
         {
           "vernacularName": "rosemary",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Old Man",
@@ -3185,7 +3201,8 @@ export const herbsAndSpices = [
         {
           "vernacularName": "borage",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Beebread",
