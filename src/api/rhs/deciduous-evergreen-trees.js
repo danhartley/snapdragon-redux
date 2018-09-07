@@ -1358,7 +1358,8 @@ export const deciduousAndEvergreenTrees = [
         {
           "vernacularName": "cherry plum",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "myrobalan plum",
@@ -1731,7 +1732,7 @@ export const deciduousAndEvergreenTrees = [
         {
           "vernacularName": "olive",
           "language": "de",
-          "eol_preferred": true
+          "eol_preferred": true          
         },
         {
           "vernacularName": "Ölbaum",
@@ -1744,7 +1745,8 @@ export const deciduousAndEvergreenTrees = [
         {
           "vernacularName": "olive",
           "language": "en",
-          "eol_preferred": true
+          "eol_preferred": true,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "African olive",
@@ -2577,6 +2579,11 @@ export const deciduousAndEvergreenTrees = [
           "vernacularName": "Highclere Holly",
           "language": "en",
           "eol_preferred": true
+        },
+        {
+          "vernacularName": "Holly",
+          "language": "en",
+          wikiSearchTerm: true
         }
       ],
       "descriptions": [],
@@ -2700,7 +2707,12 @@ export const deciduousAndEvergreenTrees = [
             "vernacularName": "Nyman\'s hybrideucryphia 'Nymansay'",
             "language": "en",
             "eol_preferred": true
-          }
+        },
+        {
+            "vernacularName": "Eucryphia",
+            "language": "en",
+            wikiSearchTerm: true
+        },
       ],
       "descriptions": [],
       "taxonomy": {
@@ -3169,7 +3181,8 @@ export const deciduousAndEvergreenTrees = [
         },
         {
           "vernacularName": "Honey locust",
-          "language": "en"
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Sweet Locust",

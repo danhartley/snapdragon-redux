@@ -66,6 +66,7 @@ const trimLatinName = name => {
 };
 
 const familyVernacularNames = (name, language) => {
+    if(name === '') return '';
     return taxa.find(taxon => taxon.name.toUpperCase() === name.toUpperCase()).names.find(name => name.language === language).names;
 }
 
