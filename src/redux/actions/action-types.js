@@ -6,6 +6,7 @@ const UPDATE_SCORE = '[UPDATE_SCORE] Check user answer and update running score'
 const END_REVISION = '[END_REVISION] Revision complete';
 const UPDATE_HISTORY = '[UPDATE_HISTORY] Copy round score to history';
 const CHANGE_COLLECTION = '[CHANGE_COLLECTION] Change collection';
+const CHANGE_COLLECTION_ITEMS = '[CHANGE_COLLECTION_ITEMS] Change collection items';
 const NEXT_ROUND = '[NEXT_ROUND] Go to next round';
 const NEXT_LEVEL = '[NEXT_LEVEL] Go to next level';
 const UPDATE_CONFIG = '[UPDATE_CONFIG] change to config';
@@ -23,6 +24,7 @@ export const types = {
     END_REVISION,
     UPDATE_HISTORY,
     CHANGE_COLLECTION,
+    CHANGE_COLLECTION_ITEMS,
     NEXT_ROUND,
     NEXT_LEVEL,
     UPDATE_CONFIG,

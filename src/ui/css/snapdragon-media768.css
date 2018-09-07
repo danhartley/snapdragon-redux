@@ -21,6 +21,15 @@
         font-size: .9em;
     }
 
+    .species-table input {
+        font-size: 1.5em;
+        margin: 0 0 0 .25em;
+    }
+
+    .species-table .table-row input {
+        margin: 0 0 .35em .25em;
+    }
+
     .species.revision.card {
         margin: 0 0 1em 0;
       }

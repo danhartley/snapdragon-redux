@@ -85,8 +85,7 @@ export const renderLessonPlans = (lessonPlanId) => {
                         const defaultLayout = lessonPlan.levels.find(level => level.id === levelId).layouts.find(layout => layout.name === screenName);
                         layout === defaultLayout;
                     }
-                });
-                
+                });                
             } else {                
                 const currentLevelLayouts = newLessonPlan.levels.find(level => level.id === levelId).layouts;
                 const newLayouts = currentLevelLayouts.map(layout =>  { 

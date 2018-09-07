@@ -205,7 +205,7 @@ const textCompleteSpecies = {
     points: 2,
     kind: 'T',
     given: 'Species genus name',
-    options: 'Enter species name',
+    options: 'Select species name',
     screens: [
         { ...specimen },
         { ...textComplete, type: 'text-complete-species' }
