@@ -25,7 +25,7 @@ export const renderSummary = (history) => {
     const speciesTestedCount = collection.currentRound * config.moduleSize;
     const speciesUntestedCount = speciesCount - speciesTestedCount;
 
-    const isLevelComplete = config.mode === 'review' ? true : collection.isLevelComplete;
+    const isLevelComplete = config.mode === 'review' ? true : collection.isLevelComplete || collection.currentRound === collection.rounds;
     const itemsToReview = stats.getItemsForRevision(collection, history, 1);
     const mode = endOfRoundHandler.getMode(config.mode, isLevelComplete, itemsToReview);
 

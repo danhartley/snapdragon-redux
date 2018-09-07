@@ -1,3 +1,4 @@
+import * as R from 'ramda';
 
 import { types } from 'redux/actions/action-types';
 import { speciesState } from 'redux/reducers/initial-state/initial-species-state';
@@ -29,14 +30,20 @@ export const collection = (state = { name: '---', id: 0, descriptions: null }, a
     switch(action.type) {
         case types.SELECT_COLLECTION:
             return action.data;
+        case types.CHANGE_COLLECTION_ITEMS:
+            const _collection = R.clone(state);
+            _collection.items = action.data;
+            return _collection;
         case types.CHANGE_COLLECTION:
-            const config = action.data;
+            const config = action.data.config;
+            const items = action.data.items;
             const selectedCollection = speciesState.collections.find(collection => collection.id === config.collection.id);
+            selectedCollection.items = items;
             const collection = speciesState.initCollection(selectedCollection)
             nextItem = collection.items[collection.itemIndex];
             return { ...state, ...collection, nextItem };
         case types.NEXT_LESSON: 
-            return action.data.collection || state;
+            return (action.data && action.data.collection) ? action.data.collection : state;
         case types.NEXT_ITEM:
             itemIndex = action.data;
             nextItem = state.items[itemIndex];

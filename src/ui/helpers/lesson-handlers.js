@@ -22,12 +22,12 @@ const callEndOfRoundActions = (mode, config, collections, collection, score, ite
                 config.lesson.level = level;
                 
                 collection.moduleSize = collections.find(c => c.id === collection.id).moduleSize;
-                actions.boundNextLevel({ index: 0 });
-                setTimeout(() => {
+                // actions.boundNextLevel({ index: 0 });
+                // setTimeout(() => {
                     config.moduleSize = collection.moduleSize;
                     actions.boundUpdateConfig(config);
                     actions.boundNextLevel({ index: 0 });
-                });
+                // });
             } else {
                 if(score) {
                     actions.boundNextRound({ index: 0 });

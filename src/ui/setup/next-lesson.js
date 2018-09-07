@@ -11,7 +11,7 @@ export const nextLesson = (config) => {
 
     const { lessonPlan, collection, score, history, collections } = store.getState();
 
-    const isLessonPlanRequired = score.total === 0;
+    const isLessonPlanRequired = score.total === 0 || collection.currentRound === collection.rounds; //this is the problem, not reliable...
 
     let lesson;
 
@@ -26,7 +26,7 @@ export const nextLesson = (config) => {
                 _collection.items = stats.getItemsForRevision(collection, history, 1);
                 break;
             case 'learn':
-                _collection.items = speciesState.initCollection(collections.find(c => c.id === _collection.id)).items;
+                _collection.items = _collection.items || speciesState.initCollection(collections.find(c => c.id === _collection.id)).items;
                 break;
             default:
                 break;

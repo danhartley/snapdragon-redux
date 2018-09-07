@@ -88,7 +88,7 @@
 
 @media (min-width: 768px) {
 
-    .table-header th:nth-child(1):after {
+    .table-header th:nth-child(1):before {
         display: inline-block;
         width: 0;
         height: 0;

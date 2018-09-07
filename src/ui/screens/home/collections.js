@@ -137,6 +137,18 @@ export const renderCollections = (counter) => {
     // User begins or continues lesson
 
     learningActionBtn.addEventListener('click', () => {
+
+        const notEnoughItemsSelected = collection.items.filter(item => !item.isDeselected).length < config.moduleSize;
+
+        if(notEnoughItemsSelected) {
+            learningActionBtn.innerHTML = `You must select at least ${config.moduleSize} items`;
+        }
+
+        setTimeout(() => {
+            learningActionBtn.innerHTML = 'Begin lesson';
+        }, 2000);
+
+        if(notEnoughItemsSelected) return;
                 
         subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
 
@@ -150,7 +162,8 @@ export const renderCollections = (counter) => {
              if(isLessonPaused) {
                 actions.boundToggleLesson(getLatestCounter());
              } else {
-                actions.boundChangeCollection(config); 
+                const items = collection.items.filter(item => !item.isDeselected);
+                actions.boundChangeCollection({ config: config, items: items });
              }
             }
         updateNavIcons();        
@@ -165,8 +178,6 @@ export const renderCollections = (counter) => {
     };
 
     // Populates lesson plan modal
-
-    // elem.hide(lessonPlanLink);
 
     lessonPlanLink.addEventListener('click', event => {
         const planId = config.isPortraitMode ? 3 : 1;
