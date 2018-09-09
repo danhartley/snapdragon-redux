@@ -20,12 +20,14 @@ export const collections = (state = speciesState.collections, action) => {
     }
 };
 
-export const collection = (state = { name: '---', id: 0, descriptions: null }, action) => {
+export const collection = (state = { id: 0, descriptions: null, isLessonPlanRequired: true }, action) => {
 
     let itemIndex = 0;
     let nextItem = {};
     let currentRound = 0;
     let layoutIndex = 0;
+    let isLevelComplete;
+    let isLessonPlanRequired;
     
     switch(action.type) {
         case types.SELECT_COLLECTION:
@@ -42,7 +44,7 @@ export const collection = (state = { name: '---', id: 0, descriptions: null }, a
             const collection = speciesState.initCollection(selectedCollection)
             nextItem = collection.items[collection.itemIndex];
             return { ...state, ...collection, nextItem };
-        case types.NEXT_LESSON: 
+        case types.NEXT_LESSON:             
             return (action.data && action.data.collection) ? action.data.collection : state;
         case types.NEXT_ITEM:
             itemIndex = action.data;
@@ -53,8 +55,9 @@ export const collection = (state = { name: '---', id: 0, descriptions: null }, a
             currentRound = (state.currentRound === state.rounds) ? 1 : state.currentRound + 1;
             itemIndex = state.moduleSize * (currentRound -1);
             nextItem = state.items[itemIndex];
-            const isLevelComplete = currentRound === state.rounds;
-            return { ...state, itemIndex, currentRound, nextItem, isLevelComplete };
+            isLevelComplete = !state.rounds ? true : currentRound === state.rounds;
+            isLessonPlanRequired = isLevelComplete;
+            return { ...state, itemIndex, currentRound, nextItem, isLevelComplete, isLessonPlanRequired };
         case types.NEXT_LEVEL:
             itemIndex = 0;
             currentRound = 1;

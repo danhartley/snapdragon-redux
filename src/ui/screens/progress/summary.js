@@ -20,12 +20,11 @@ export const renderSummary = (history) => {
     parent.innerHTML = '';
 
     const lastLevel = 5; // ????
-    const collectionComplete = config.lesson.level.id === lastLevel;
+    const collectionComplete = collection.lesson.level.id === lastLevel;
     const speciesCount = collection.items.length;
-    const speciesTestedCount = collection.currentRound * config.moduleSize;
+    const speciesTestedCount = collection.currentRound * collection.moduleSize;
     const speciesUntestedCount = speciesCount - speciesTestedCount;
 
-    const isLevelComplete = config.mode === 'review' ? true : collection.isLevelComplete || collection.currentRound === collection.rounds;
     const itemsToReview = stats.getItemsForRevision(collection, history, 1);
     const mode = endOfRoundHandler.getMode(config.mode, isLevelComplete, itemsToReview);
 
@@ -33,17 +32,17 @@ export const renderSummary = (history) => {
 
     if(mode === 'learn') {
 
-        if(!isLevelComplete) {
+        if(!collection.isLevelComplete) {
             summary = `There are ${speciesUntestedCount} more species to learn in this lesson.`;
         }
-        if(isLevelComplete) {
+        if(collection.isLevelComplete) {
             summary = 'Continue to the next level...';
         }
-        if(isLevelComplete && !collectionComplete) {
-            summary = `Congratulations! You have completed level ${config.lesson.level.id}. 
+        if(collection.isLevelComplete && !collectionComplete) {
+            summary = `Congratulations! You have completed level ${collection.lesson.level.id}. 
                 Continue with the lesson to learn more species from ${collection.name}.` 
         }
-        if(isLevelComplete && collectionComplete) {
+        if(collection.isLevelComplete && collectionComplete) {
             summary = `You have completed the collection. Well done! 
                 Begin a new collection, review questions you got wrong, or consolidate what you have just learnt.`
         }
@@ -66,7 +65,7 @@ export const renderSummary = (history) => {
         subscription.getByName('renderSummary').forEach(sub => subscription.remove(sub));
         subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
 
-        endOfRoundHandler.callEndOfRoundActions(mode, config, collections, collection, score, itemsToReview, isLevelComplete);
+        endOfRoundHandler.callEndOfRoundActions(mode, config, collections, collection, score, itemsToReview, collection.isLevelComplete);
     };
 
     learnMoreBtn.removeEventListener('click', handleBtnClickEvent);

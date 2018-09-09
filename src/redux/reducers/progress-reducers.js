@@ -10,8 +10,9 @@ export const counter = (state = null, action) => {
             return { index: 0 };
         case types.UPDATE_CONFIG:
             return state;
+        case types.NEXT_LESSON:
+            return { index: 0 };
         case types.NEXT_LEVEL:
-        case types.NEXT_ROUND:
         case types.STOP_START_LESSON:
             return action.data;
         case types.UPDATE_SCORE:

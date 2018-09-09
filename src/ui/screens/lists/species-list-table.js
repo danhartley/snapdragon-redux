@@ -18,7 +18,8 @@ export const buildTable = (collection, config) => {
         item.vernacularName = itemProperties.vernacularName(item, config);
         item.passes = item.passes || '--';
         item.fails = item.fails || '--';
-        item.binomial = config.isPortraitMode ? itemProperties.trimLatinName(item.name) : item.name
+        item.binomial = item.name;
+        item.shortName = itemProperties.trimLatinName(item.name);
         totalPasses += Number.isInteger(item.passes) ? item.passes : 0;
         totalFails += Number.isInteger(item.fails) ? item.fails : 0;
     });
@@ -44,12 +45,12 @@ export const buildTable = (collection, config) => {
     const input = document.createElement('input');
     input.type = "checkbox";
     input.checked = true;
-    indexHeader.appendChild(input);
     imageHeader.innerHTML = '<div></div>';
     speciesHeader.innerHTML = 'Species';
     familyHeader.innerHTML = 'Family';
     passesHeader.innerHTML = '<span class="icon"><i class="fas fa-check-circle"></i></span>';
     failsHeader.innerHTML = '<span class="icon"><i class="fas fa-times-circle"></i></span>';
+    config.isPortraitMode ? imageHeader.appendChild(input) : indexHeader.appendChild(input);
     if(config.isPortraitMode) {
         headerRow.appendChild(imageHeader);    
         headerRow.appendChild(speciesHeader);

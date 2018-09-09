@@ -107,6 +107,8 @@ export const renderMultiStrips = (collection) => {
 
     if(screen.name === 'species-vernaculars') {
 
+        if(!collection.speciesVernacularNames) return;
+
         const number = config.isPortraitMode ? 6 : config.isSmallLandscapeMode ? 6 : 6;
 
         const questionText = config.isPortraitMode ? 'Select equivalent of latin name' : `Select the common name equivalent of the latin`;

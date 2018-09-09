@@ -12,9 +12,9 @@ import collectionsTemplate from 'ui/screens/home/collections-template.html';
 
 export const renderCollections = (counter) => {
 
-    const { collections, config, collection: _collection, history } = store.getState();
+    const { collections, config, collection: stateCollection, history } = store.getState();
 
-    let collection = { ..._collection };
+    let collection = { ...stateCollection };
     
     if(counter && counter.log) {
         actions.boundSelectCollection(collection);
@@ -24,7 +24,7 @@ export const renderCollections = (counter) => {
     template.innerHTML = collectionsTemplate;
 
     let language = config.languages.find(l => l.lang === config.language);
-    let lessons = utils.sortBy(collections.filter(collection => collection.type === 'species'), 'courseId', 'asc');
+    let lessons = utils.sortBy(collections.filter(c => c.type === 'species'), 'courseId', 'asc');
 
     DOM.rightBody.innerHTML = '';
 
@@ -39,9 +39,9 @@ export const renderCollections = (counter) => {
 
     renderTemplate({ lessons, config, collection, language, copy }, template.content, DOM.rightBody);
 
-    const selectedCollection = collections.find(collection => collection.selected);
+    const selectedCollection = collections.find(c => c.selected);
 
-    collection = selectedCollection ? { ...collection, ...selectedCollection } : { id: 0 };
+    collection = selectedCollection ? { ...collection, ...selectedCollection } : collection;
 
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
@@ -88,7 +88,7 @@ export const renderCollections = (counter) => {
         collectionDescription.innerHTML = descriptions;
         
         config.collection = { id: parseInt(id) };
-        config.moduleSize = collection.moduleSize;
+        // config.moduleSize = collection.moduleSize;
 
         if(config.isLandscapeMode) {
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
@@ -106,7 +106,7 @@ export const renderCollections = (counter) => {
 
         subscription.getByName('renderSnapdragon').forEach(sub => subscription.remove(sub));
 
-        const optionCollection = collections.find(collection => collection.id === parseInt(option.id));
+        const optionCollection = collections.find(c => c.id === parseInt(option.id));
         if(optionCollection.courseId !== currentCourseId && optionCollection.course !== '') {
             var courseHeader = document.createElement('span');
             courseHeader.classList.add('dropdown-item-text');
@@ -138,10 +138,10 @@ export const renderCollections = (counter) => {
 
     learningActionBtn.addEventListener('click', () => {
 
-        const notEnoughItemsSelected = collection.items.filter(item => !item.isDeselected).length < config.moduleSize;
+        const notEnoughItemsSelected = collection.items.filter(item => !item.isDeselected).length < collection.moduleSize;
 
         if(notEnoughItemsSelected) {
-            learningActionBtn.innerHTML = `You must select at least ${config.moduleSize} items`;
+            learningActionBtn.innerHTML = `You must select at least ${collection.moduleSize} items`;
         }
 
         setTimeout(() => {

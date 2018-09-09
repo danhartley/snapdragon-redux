@@ -28,19 +28,17 @@ import { renderSnapdragon } from "./ui/screens/home/snapdragon";
 
 setTimeout(()=>{
 
-    const { config: currentConfig, counter: currentCounter } = store.getState();
+    const { config, counter: currentCounter, collection } = store.getState();
 
-    const config = { ...currentConfig };
-    
     config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
     config.isSmallLandscapeMode = window.matchMedia("(max-width: 1023px)").matches;
     config.isLandscapeMode = !config.isPortraitMode;
 
-    if(!config.lesson) {
-        config.lesson = lessonPlans.find(plan => plan.portrait === config.isPortraitMode && plan.default);
-        config.lesson.level = config.lesson.levels[0];
-        const levels = lessonPlans.filter(plan => plan.name === config.lesson.name)[0].levels;
-        config.lesson.levels = levels;
+    if(!collection.lesson) {
+        collection.lesson = lessonPlans.find(plan => plan.portrait === config.isPortraitMode && plan.default);
+        collection.lesson.level = collection.lesson.levels[0];
+        const levels = lessonPlans.filter(plan => plan.name === collection.lesson.name)[0].levels;
+        collection.lesson.levels = levels;
     }
 
     const counter = currentCounter ? { ...currentCounter } : { index: null };
@@ -56,17 +54,4 @@ setTimeout(()=>{
     subscription.add(nextItem, 'layout', 'flow');
     subscription.add(renderScore, 'score', 'flow');
     subscription.add(renderHeaders, 'collection', 'flow');
-    
-    // document.body.addEventListener('click', () => {
-    //     const modal = document.getElementById('menuModal');
-    //     const hasClosed = modal.classList.contains('fade');
-    //     if(hasClosed) {
-    //         const stop = frames['iframe'].document.querySelector('.jp-stop');
-    //         if(stop) {
-    //             stop.click();
-    //         }
-    //     }
-    // });        
-
-
 });

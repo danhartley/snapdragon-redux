@@ -18,21 +18,25 @@ export const renderSpeciesCollectionList = (collection) => {
 
     buildTable(collection, config);
 
-    document.querySelector(".table-header input[type='checkbox']").addEventListener('click', event => {
-        event.stopPropagation();
-        if(event.target.checked) {            
-            document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
-                checkbox.checked = true;
-            });        
-            collection.items.forEach(item => item.isDeselected = false);
-         } else { 
-            document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
-                checkbox.checked = false;
-            });
-            collection.items.forEach(item => item.isDeselected = true);
-         }
-         actions.boundChangeCollectionItems(collection.items);
-    });
+    const headerCheckbox = document.querySelector(".table-header input[type='checkbox']");
+
+    if(headerCheckbox) {
+        headerCheckbox.addEventListener('click', event => {
+            event.stopPropagation();
+            if(event.target.checked) {            
+                document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
+                    checkbox.checked = true;
+                });        
+                collection.items.forEach(item => item.isDeselected = false);
+                } else { 
+                document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                collection.items.forEach(item => item.isDeselected = true);
+                }
+                actions.boundChangeCollectionItems(collection.items);
+        });
+    }
 
     document.querySelectorAll(".table-row input[type='checkbox']").forEach(checkbox => {
         checkbox.addEventListener('click', event => {
@@ -76,14 +80,27 @@ export const renderSpeciesCollectionList = (collection) => {
 
         continueLearningActionBtn.addEventListener('click', () => {
 
+            const notEnoughItemsSelected = collection.items.filter(item => !item.isDeselected).length < collection.moduleSize;
+
+            if(notEnoughItemsSelected) {
+                continueLearningActionBtn.innerHTML = `You must select at least ${collection.moduleSize} items`;
+            }
+    
+            setTimeout(() => {
+                continueLearningActionBtn.innerHTML = 'Begin lesson';
+            }, 2000);
+
+            if(notEnoughItemsSelected) return;
+
             if(isLessonPaused) {
                 actions.boundToggleLesson(getLatestCounter());
             } else {
-                const isLevelComplete = config.mode === 'review' ? true : collection.isLevelComplete || collection.currentRound === collection.rounds;;
                 const itemsToReview = stats.getItemsForRevision(collection, history, 1);
-                const mode = endOfRoundHandler.getMode(config.mode, isLevelComplete, itemsToReview);
-
-                endOfRoundHandler.callEndOfRoundActions(mode, config, collections, collection, score, itemsToReview, isLevelComplete);
+                const mode = endOfRoundHandler.getMode(config.mode, collection.isLevelComplete, itemsToReview);
+                endOfRoundHandler.callEndOfRoundActions(mode, config, collections, collection, score, itemsToReview, collection.isLevelComplete);
+                
+                const items = collection.items.filter(item => !item.isDeselected);
+                actions.boundChangeCollection({ config: config, items: items });
             }
             
             actions.boundNewPage({ name: ''});
