@@ -7,17 +7,17 @@ const { summary, history } = screens;
 
 const createLessonPlan = (lessonPlan, config, collection) => {
     const moduleSize = collection.moduleSize || config.moduleSize;
-    let { lesson: { name: lessonName, level: { name: levelName }}, excludeRevision, isPortraitMode } = config;
-    const wildcards = config.mode === 'learn' ? getLayouts(lessonPlan, config, 'wildcard') : [];
+    let { lesson: { name: lessonName, level: { name: levelName }}, excludeRevision, isPortraitMode } = collection;
+    const wildcards = config.mode === 'learn' ? getLayouts(lessonPlan, collection, config, 'wildcard') : [];
     let wildcardLayouts = wildcards.length > 0 ? getWildcardLayouts(wildcards, collection, moduleSize) : [];
-    let layouts = getLayouts(lessonPlan, config, config.mode);
+    let layouts = getLayouts(lessonPlan, collection, config, config.mode);
 
     if(layouts.length === 0 && wildcardLayouts.length === 0) {
-        const level = getNextLevel(config.lesson.name, config.lesson.level.name, config.isPortraitMode);
-        config.lesson.level = level;
-        lessonName = config.lesson.name;
-        levelName = config.lesson.level.name;
-        layouts = getLayouts(null, config, config.mode);
+        const level = getNextLevel(collection.lesson.name, collection.lesson.level.name, config.isPortraitMode);
+        collection.lesson.level = level;
+        lessonName = collection.lesson.name;
+        levelName = collection.lesson.level.name;
+        layouts = getLayouts(null, collection, config, config.mode);
     }
 
     return createLesson(
@@ -33,9 +33,9 @@ const createLessonPlan = (lessonPlan, config, collection) => {
     );        
 };
 
-const getLayouts = (lessonPlan, config, mode) => {
-    const { lesson: { level: { name: levelName }} } = config;
-    const currentLesson = lessonPlan || getCurrentLesson(lessonPlans, config.lesson.name, config.isPortraitMode);
+const getLayouts = (lessonPlan, collection, config, mode) => {
+    const { lesson: { level: { name: levelName }} } = collection;
+    const currentLesson = lessonPlan || getCurrentLesson(lessonPlans, collection.lesson.name, config.isPortraitMode);
     const currentLevel = getCurrentLevel(currentLesson, levelName);
     switch(mode) {
         case 'learn':

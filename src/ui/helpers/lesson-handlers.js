@@ -16,39 +16,20 @@ const callEndOfRoundActions = (mode, config, collections, collection, score, ite
 
         case 'learn':             
             
-            if(isLevelComplete) {
-                
-                const level = lessonPlanner.getNextLevel(config.lesson.name, config.lesson.level.name, config.isPortraitMode);
-                config.lesson.level = level;
-                
-                collection.moduleSize = collections.find(c => c.id === collection.id).moduleSize;
-                // actions.boundNextLevel({ index: 0 });
-                // setTimeout(() => {
-                    config.moduleSize = collection.moduleSize;
-                    actions.boundUpdateConfig(config);
-                    actions.boundNextLevel({ index: 0 });
-                // });
+            if(isLevelComplete) {            
+                collection.lesson.level = lessonPlanner.getNextLevel(config.lesson.name, config.lesson.level.name, config.isPortraitMode);
+                collection.moduleSize = collections.find(c => c.id === collection.id).moduleSize;                
+                actions.boundNextLevel({ index: 0 });
             } else {
                 if(score) {
                     actions.boundNextRound({ index: 0 });
-                    setTimeout(() => {
-                        config.moduleSize = collection.moduleSize;
-                        actions.boundUpdateConfig(config);    
-                    });
-                } else {
-                    actions.boundChangeCollection(config);
                 }
             };
             break;
 
-        case 'review':
-        
-            collection.moduleSize = config.moduleSize = (config.moduleSize > itemsToReview.length) ? itemsToReview.length : config.moduleSize;
+        case 'review':        
+            collection.moduleSize = (collection.moduleSize > itemsToReview.length) ? itemsToReview.length : collection.moduleSize;
             actions.boundNextRound({ index: 0 });
-            setTimeout(() => {
-                config.moduleSize = collection.moduleSize;
-                actions.boundUpdateConfig(config);    
-            });
             break;
     }
 }

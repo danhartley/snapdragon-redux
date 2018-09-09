@@ -9,15 +9,13 @@ export const nextLesson = (config) => {
 
     if(config.collection.id === 0) return;
 
-    const { lessonPlan, collection, score, history, collections } = store.getState();
-
-    const isLessonPlanRequired = score.total === 0 || collection.currentRound === collection.rounds; //this is the problem, not reliable...
+    const { lessonPlan, collection, history, collections } = store.getState();
 
     let lesson;
 
     let defaultLessonPlan = lessonPlan || lessonPlans.find(lessonPlan => lessonPlan.id === 1 && lessonPlan.portrait === config.isPortraitMode);
     
-    if(isLessonPlanRequired) {
+    if(collection.isLessonPlanRequired) {
 
         let _collection = { ...collection };
 
@@ -32,7 +30,7 @@ export const nextLesson = (config) => {
                 break;
         }
 
-        _collection.moduleSize = config.moduleSize;
+        // _collection.moduleSize = config.moduleSize;
         _collection.rounds = Math.ceil(_collection.items.length / _collection.moduleSize);
         _collection.itemIndex = 0;        
 
