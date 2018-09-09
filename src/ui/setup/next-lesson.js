@@ -30,7 +30,6 @@ export const nextLesson = (config) => {
                 break;
         }
 
-        // _collection.moduleSize = config.moduleSize;
         _collection.rounds = Math.ceil(_collection.items.length / _collection.moduleSize);
         _collection.itemIndex = 0;        
 

@@ -97,8 +97,8 @@ export const renderSpeciesCollectionList = (collection) => {
             } else {
                 const itemsToReview = stats.getItemsForRevision(collection, history, 1);
                 const mode = endOfRoundHandler.getMode(config.mode, collection.isLevelComplete, itemsToReview);
-
                 endOfRoundHandler.callEndOfRoundActions(mode, config, collections, collection, score, itemsToReview, collection.isLevelComplete);
+                
                 const items = collection.items.filter(item => !item.isDeselected);
                 actions.boundChangeCollection({ config: config, items: items });
             }

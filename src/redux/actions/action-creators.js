@@ -28,7 +28,7 @@ const selectCollection = makeActionCreator(types.SELECT_COLLECTION);
 const updateLanguage = makeActionCreator(types.UPDATE_LANGUAGE);
 const newPage = makeActionCreator(types.CHANGE_PAGE);
 
-  const boundchangeLessonPlan = data => store.dispatch(changeLessonPlan(data));
+const boundchangeLessonPlan = data => store.dispatch(changeLessonPlan(data));
 const boundNextLessonPlan = data => store.dispatch(nextLesson(data));
 const boundUpdateScore = data => store.dispatch(updateScore(data));
 const boundNextLayout = data => store.dispatch(nextLayout(data));

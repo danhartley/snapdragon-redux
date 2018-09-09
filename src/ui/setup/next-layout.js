@@ -38,7 +38,7 @@ export const nextLayout = (counter) => {
         }
     });
 
-    // setTimeout(() => {
+    setTimeout(() => {
         actions.boundNextLayout(layout); 
-    // });    
+    });    
 };

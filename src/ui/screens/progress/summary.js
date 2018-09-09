@@ -20,13 +20,11 @@ export const renderSummary = (history) => {
     parent.innerHTML = '';
 
     const lastLevel = 5; // ????
-    // const collectionComplete = config.lesson.level.id === lastLevel;
     const collectionComplete = collection.lesson.level.id === lastLevel;
     const speciesCount = collection.items.length;
     const speciesTestedCount = collection.currentRound * collection.moduleSize;
     const speciesUntestedCount = speciesCount - speciesTestedCount;
 
-    // const isLevelComplete = config.mode === 'review' ? true : collection.isLevelComplete || collection.currentRound === collection.rounds;
     const itemsToReview = stats.getItemsForRevision(collection, history, 1);
     const mode = endOfRoundHandler.getMode(config.mode, isLevelComplete, itemsToReview);
 
@@ -41,7 +39,6 @@ export const renderSummary = (history) => {
             summary = 'Continue to the next level...';
         }
         if(collection.isLevelComplete && !collectionComplete) {
-            // summary = `Congratulations! You have completed level ${config.lesson.level.id}. 
             summary = `Congratulations! You have completed level ${collection.lesson.level.id}. 
                 Continue with the lesson to learn more species from ${collection.name}.` 
         }
