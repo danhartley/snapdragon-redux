@@ -6,7 +6,7 @@ import { stats } from 'ui/helpers/stats';
 import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
 import { buildTable } from 'ui/screens/lists/species-list-table';
 
-export const renderSpeciesCollectionList = (collection) => {
+export const renderSpeciesCollectionList = (collection, disableCheckBoxes = false) => {
 
     subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
     
@@ -21,35 +21,49 @@ export const renderSpeciesCollectionList = (collection) => {
     const headerCheckbox = document.querySelector(".table-header input[type='checkbox']");
 
     if(headerCheckbox) {
-        headerCheckbox.addEventListener('click', event => {
-            event.stopPropagation();
-            if(event.target.checked) {            
-                document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
-                    checkbox.checked = true;
-                });        
-                collection.items.forEach(item => item.isDeselected = false);
-                } else { 
-                document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
-                    checkbox.checked = false;
-                });
-                collection.items.forEach(item => item.isDeselected = true);
-                }
-                actions.boundChangeCollectionItems(collection.items);
-        });
+        if(disableCheckBoxes) {
+            headerCheckbox.disabled = true;
+        } else {
+            headerCheckbox.addEventListener('click', event => {
+                event.stopPropagation();
+                if(event.target.checked) {            
+                    document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
+                        checkbox.checked = true;
+                    });        
+                    collection.items.forEach(item => item.isDeselected = false);
+                    } else { 
+                    document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
+                        checkbox.checked = false;
+                    });
+                    collection.items.forEach(item => item.isDeselected = true);
+                    }
+                    actions.boundChangeCollectionItems(collection.items);
+            });
+        }
     }
 
-    document.querySelectorAll(".table-row input[type='checkbox']").forEach(checkbox => {
-        checkbox.addEventListener('click', event => {
+    document.querySelectorAll(".table-row td:nth-child(1)").forEach(td => {
+        td.addEventListener('click', event => {
             event.stopPropagation();
-            const name = event.target.name;
-            const item = collection.items.find(item => item.name === name);
-            if(event.target.checked) {
-                item.isDeselected = false;
-             } else { 
-                item.isDeselected = true;
-            }
-            actions.boundChangeCollectionItems(collection.items);
         });
+    });
+
+    document.querySelectorAll(".table-row input[type='checkbox']").forEach(checkbox => {
+        if(disableCheckBoxes) { 
+            checkbox.disabled = true;
+        } else {     
+            checkbox.addEventListener('click', event => {
+                event.stopPropagation();
+                const name = event.target.name;
+                const item = collection.items.find(item => item.name === name);
+                if(event.target.checked) {
+                    item.isDeselected = false;
+                } else { 
+                    item.isDeselected = true;
+                }
+                actions.boundChangeCollectionItems(collection.items);
+            });
+        }
     });
 
     const listItemImages = document.querySelectorAll('.js-list-item');

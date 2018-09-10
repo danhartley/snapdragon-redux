@@ -19,14 +19,14 @@ export const renderSummary = (history) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    const lastLevel = 5; // ????
+    const lastLevel = collection.lesson.levels.length;
     const collectionComplete = collection.lesson.level.id === lastLevel;
     const speciesCount = collection.items.length;
     const speciesTestedCount = collection.currentRound * collection.moduleSize;
     const speciesUntestedCount = speciesCount - speciesTestedCount;
 
     const itemsToReview = stats.getItemsForRevision(collection, history, 1);
-    const mode = endOfRoundHandler.getMode(config.mode, isLevelComplete, itemsToReview);
+    const mode = endOfRoundHandler.getMode(config.mode, collection.isLevelComplete, itemsToReview);
 
     let summary; 
 
