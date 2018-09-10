@@ -36,5 +36,5 @@ export const renderHistory = (history) => {
 
     const tested =  { ...collection, ...{ items: items }};
 
-    renderSpeciesCollectionList(tested);
+    renderSpeciesCollectionList(tested, true);
 }    

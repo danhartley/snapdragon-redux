@@ -26,7 +26,7 @@ export const renderSummary = (history) => {
     const speciesUntestedCount = speciesCount - speciesTestedCount;
 
     const itemsToReview = stats.getItemsForRevision(collection, history, 1);
-    const mode = endOfRoundHandler.getMode(config.mode, isLevelComplete, itemsToReview);
+    const mode = endOfRoundHandler.getMode(config.mode, collection.isLevelComplete, itemsToReview);
 
     let summary; 
 
