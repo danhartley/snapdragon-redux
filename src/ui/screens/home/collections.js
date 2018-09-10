@@ -88,7 +88,6 @@ export const renderCollections = (counter) => {
         collectionDescription.innerHTML = descriptions;
         
         config.collection = { id: parseInt(id) };
-        // config.moduleSize = collection.moduleSize;
 
         if(config.isLandscapeMode) {
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
@@ -156,16 +155,18 @@ export const renderCollections = (counter) => {
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
             actions.boundSelectCollection(collection);
             actions.boundNewPage({ name: 'list'});
-         } else {
+         } 
+         
+         if(config.isLandscapeMode) {
             subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));            
             const isLessonPaused = (counter && counter.log) ? true : false; 
-             if(isLessonPaused) {
+            if(isLessonPaused) {
                 actions.boundToggleLesson(getLatestCounter());
-             } else {
+            } else {
                 const items = collection.items.filter(item => !item.isDeselected);
                 actions.boundChangeCollection({ config: config, items: items });
-             }
             }
+        }
         updateNavIcons();        
     });
 

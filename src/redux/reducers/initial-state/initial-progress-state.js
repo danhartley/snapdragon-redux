@@ -11,7 +11,8 @@ const score = {
     success: false,
     mode: 'learn',
     totalPassPoints: 0,
-    totalPoints: 0
+    totalPoints: 0,
+    // endOfRound: false
 };
 
 export const progressState = {

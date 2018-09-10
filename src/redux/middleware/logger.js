@@ -1,5 +1,6 @@
 export const logger = store => next => action => {
     
+    console.log('NEXT: ', next);
     console.group(action.type)
     console.info('dispatching', action)
     let result = next(action)

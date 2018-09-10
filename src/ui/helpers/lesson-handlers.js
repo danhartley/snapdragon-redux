@@ -13,15 +13,17 @@ const callEndOfRoundActions = (mode, config, collections, collection, score, ite
     config.mode = mode;
 
     switch(mode) {
+        case 'learn':          
+        
+            // must really be level complete i.e. not the beginning
 
-        case 'learn':             
-            
             if(isLevelComplete) {            
                 collection.lesson.level = lessonPlanner.getNextLevel(collection.lesson.name, collection.lesson.level.name, config.isPortraitMode);
                 collection.moduleSize = collections.find(c => c.id === collection.id).moduleSize;                
                 actions.boundNextLevel({ index: 0 });
             } else {
-                if(score) {
+                if(score.total > 0) {
+                    // this has to be at the end of a real round too
                     actions.boundNextRound({ index: 0 });
                 }
             };

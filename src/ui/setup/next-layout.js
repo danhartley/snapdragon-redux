@@ -5,6 +5,8 @@ import { subscription } from 'redux/subscriptions';
 
 export const nextLayout = (counter) => {
 
+    console.log('^^ nextLayout ran');
+
     const isLessonPaused = (counter.log && counter.log.index !== counter.index);
 
     if(isLessonPaused) return;
@@ -38,7 +40,7 @@ export const nextLayout = (counter) => {
         }
     });
 
-    setTimeout(() => {
+    // setTimeout(() => {
         actions.boundNextLayout(layout); 
-    });    
+    // });    
 };

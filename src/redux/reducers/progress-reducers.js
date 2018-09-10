@@ -10,7 +10,7 @@ export const counter = (state = null, action) => {
             return { index: 0 };
         case types.UPDATE_CONFIG:
             return state;
-        case types.NEXT_LESSON:
+        case types.NEXT_ROUND:
             return { index: 0 };
         case types.NEXT_LEVEL:
         case types.STOP_START_LESSON:
@@ -30,6 +30,9 @@ export const score = (state = progressState.score, action) => {
 
             const score = { ...state, ...action.data };
             
+            score.passesTotals = 0;
+            score.failsTotals = 0;
+
             score.totalPoints = score.totalPoints || 0;
             score.totalPassPoints = score.totalPassPoints || 0;
             score.totalFailPoints = score.totalFailPoints || 0;
@@ -53,6 +56,8 @@ export const score = (state = progressState.score, action) => {
                     score.failsTotals = score.fails.map(fail => fail.itemId).reduce(utils.itemCountReducer, {});
                 }
             }
+            score.questionTotal = score.passes.length + score.fails.length;
+            // score.endOfRound = score.questionTotal === score.questionCount;
             return { ...state, ...score};
         case types.CHANGE_COLLECTION:
         case types.NEXT_ROUND:
@@ -89,15 +94,6 @@ export const history = (state = null, action) => {
             return history;
             
             default:
-            return state;
-    }
-};
-
-const revision = (state = null, action) => {
-    switch(action.type) {
-        case types.CHANGE_COLLECTION:
-            return null;
-        default:
             return state;
     }
 };
