@@ -14,12 +14,11 @@ const callEndOfRoundActions = (mode, config, collections, collection, score, ite
 
     switch(mode) {
         case 'learn':
-            const isRoundComplete = !!collection.layoutCounter && collection.layoutCounter === collection.layoutCount;
             if(collection.isLevelComplete) {            
                 collection.lesson.level = lessonPlanner.getNextLevel(collection.lesson.name, collection.lesson.level.name, config.isPortraitMode);
                 collection.moduleSize = collections.find(c => c.id === collection.id).moduleSize;                
                 actions.boundNextLevel({ index: 0 });
-            } else if (isRoundComplete) {
+            } else if (collection.isNewRound) {
                 actions.boundNextRound({ index: 0 });
             };
             break;

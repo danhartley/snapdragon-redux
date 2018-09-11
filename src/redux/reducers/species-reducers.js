@@ -20,14 +20,14 @@ export const collections = (state = speciesState.collections, action) => {
     }
 };
 
-export const collection = (state = { id: 0, descriptions: null, isLessonPlanRequired: true, currentRound: 0, rounds: 0 }, action) => {
+export const collection = (state = { id: 0, descriptions: null, currentRound: 0, rounds: 0, isNewRound: true }, action) => {
 
     const getNextItem = (action, state) => {
         let itemIndex = action.data;
         let nextItem = state.items[itemIndex];
         let layoutCounter = state.layoutCounter ? state.layoutCounter + 1 : 1;
-        // let isRoundComplete = layoutCounter = state.layoutCount;
-        return { itemIndex, nextItem, layoutCounter };
+        let isNewRound = layoutCounter = state.layoutCount;
+        return { itemIndex, nextItem, layoutCounter, isNewRound };
     };
 
     const getNextRound = state => {
@@ -41,8 +41,8 @@ export const collection = (state = { id: 0, descriptions: null, isLessonPlanRequ
             nextRound = 1;
             nextItem = state.items[itemIndex];        
         }
-        let isLessonPlanRequired = state.layoutCounter === state.layoutCount;
-        return { nextRound, isLevelComplete, itemIndex, nextItem, isLessonPlanRequired };
+        let layoutCounter = 1;
+        return { nextRound, isLevelComplete, itemIndex, nextItem, layoutCounter };
     };
 
     const getNewCollection = (action, state) => {
@@ -55,10 +55,12 @@ export const collection = (state = { id: 0, descriptions: null, isLessonPlanRequ
         return { collection, nextItem };
     };
 
-    const getNextLesson = action => {
+    const getNextLesson = (action, state) => {
         let lessonPlan = action.data;
         let isRevision = !!(lessonPlan && lessonPlan.collection);
-        return { lessonPlan, isRevision };
+        let isNewRound = state.layoutCounter = state.layoutCount;
+        let layoutCounter = 1;
+        return { lessonPlan, isRevision, layoutCounter, isNewRound };
     };
     
     switch(action.type) {
@@ -79,13 +81,13 @@ export const collection = (state = { id: 0, descriptions: null, isLessonPlanRequ
             return { ...state, itemIndex, nextItem, layoutCounter };
         }
         case types.NEXT_ROUND: {
-            const { itemIndex, nextRound, nextItem, isLevelComplete, isLessonPlanRequired } = getNextRound(state);
-            return { ...state, itemIndex, currentRound: nextRound, nextItem, isLevelComplete, isLessonPlanRequired };
+            const { itemIndex, nextRound, nextItem, isLevelComplete, layoutCounter } = getNextRound(state);
+            return { ...state, itemIndex, currentRound: nextRound, nextItem, isLevelComplete, layoutCounter };
         }
         case types.NEXT_LESSON: {
-            const { lessonPlan, isRevision } = getNextLesson(action);
+            const { lessonPlan, isRevision, layoutCounter, isNewRound } = getNextLesson(action, state);
             const collection = isRevision ? lessonPlan.collection : state;
-            return { ...collection, isLessonPlanRequired: false, layoutCount: lessonPlan.layoutCount };
+            return { ...collection, isNewRound: false, layoutCounter, layoutCount: action.data.layoutCount, isNewRound };
         }
         default: {
             return state; 

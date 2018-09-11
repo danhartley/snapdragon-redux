@@ -29,7 +29,7 @@ test('intial state of the app should be consistent', () => {
 
     const { collections, collection } = store.getState();
     expect(collections.length).toBeGreaterThan(0);
-    expect(collection).toEqual({"currentRound": 0, "descriptions": null, "id": 0, "isLessonPlanRequired": true, "rounds": 0});
+    expect(collection).toEqual({"currentRound": 0, "descriptions": null, "id": 0, "rounds": 0, isNewRound: true});
 
     const { counter, score, history, revision } = store.getState();
     expect(counter).toEqual(null);

@@ -15,7 +15,7 @@ export const nextLesson = (counter) => {
 
     let defaultLessonPlan = lessonPlan || lessonPlans.find(plan => plan.id === 1 && plan.portrait === config.isPortraitMode);
     
-    if(collection.isLessonPlanRequired) {
+    if(collection.isNewRound) {
 
         switch(config.mode) {
             case 'review':
@@ -30,7 +30,7 @@ export const nextLesson = (counter) => {
                 break;
         }
 
-        lesson = { ...defaultLessonPlan, ...lessonPlanner.createLessonPlan(defaultLessonPlan, config, collection) }
+        lesson = { ...defaultLessonPlan, ...lessonPlanner.createLessonPlan(defaultLessonPlan, config, collection) };        
         
         if(config.mode === 'review') {
             lesson.collection = collection;
@@ -38,6 +38,8 @@ export const nextLesson = (counter) => {
     } else {
         lesson = defaultLessonPlan;
     }
+
+    collection.layoutCount = lesson.layoutCount;
 
     actions.boundNextLessonPlan(lesson);
 };
