@@ -8,27 +8,21 @@ const getMode = (mode, isLevelComplete, itemsToReview) => {
     return _mode;
 }
 
-const callEndOfRoundActions = (mode, config, collections, collection, score, itemsToReview, isLevelComplete = false) => {
+const callEndOfRoundActions = (mode, config, collections, collection, score, itemsToReview) => {
 
     config.mode = mode;
 
     switch(mode) {
-        case 'learn':          
-        
-            // must really be level complete i.e. not the beginning
-
-            if(isLevelComplete) {            
+        case 'learn':
+            const isRoundComplete = !!collection.layoutCounter && collection.layoutCounter === collection.layoutCount;
+            if(collection.isLevelComplete) {            
                 collection.lesson.level = lessonPlanner.getNextLevel(collection.lesson.name, collection.lesson.level.name, config.isPortraitMode);
                 collection.moduleSize = collections.find(c => c.id === collection.id).moduleSize;                
                 actions.boundNextLevel({ index: 0 });
-            } else {
-                if(score.total > 0) {
-                    // this has to be at the end of a real round too
-                    actions.boundNextRound({ index: 0 });
-                }
+            } else if (isRoundComplete) {
+                actions.boundNextRound({ index: 0 });
             };
             break;
-
         case 'review':        
             collection.moduleSize = (collection.moduleSize > itemsToReview.length) ? itemsToReview.length : collection.moduleSize;
             actions.boundNextRound({ index: 0 });

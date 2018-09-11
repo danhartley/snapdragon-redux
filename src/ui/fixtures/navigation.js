@@ -10,8 +10,6 @@ import navigationTemplate from 'ui/fixtures/navigation-template.html';
 
 export const renderNavigation = (page) => {
 
-    console.log('^^ renderNavigation ran');
-
     const { collection, config } = store.getState();
 
     const template = document.createElement('template');

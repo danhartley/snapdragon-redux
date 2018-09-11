@@ -94,27 +94,31 @@ export const renderSpeciesCollectionList = (collection, disableCheckBoxes = fals
 
         continueLearningActionBtn.addEventListener('click', () => {
 
-            const notEnoughItemsSelected = collection.items.filter(item => !item.isDeselected).length < collection.moduleSize;
+            if(!disableCheckBoxes) {
+                const notEnoughItemsSelected = !history && collection.items.filter(item => !item.isDeselected).length < collection.moduleSize;
 
-            if(notEnoughItemsSelected) {
-                continueLearningActionBtn.innerHTML = `You must select at least ${collection.moduleSize} items`;
+                if(notEnoughItemsSelected) {
+                    continueLearningActionBtn.innerHTML = `You must select at least ${collection.moduleSize} items`;
+                }
+
+                setTimeout(() => {
+                    continueLearningActionBtn.innerHTML = 'Begin lesson';
+                }, 2000);
+
+                if(notEnoughItemsSelected) return;
             }
-    
-            setTimeout(() => {
-                continueLearningActionBtn.innerHTML = 'Begin lesson';
-            }, 2000);
-
-            if(notEnoughItemsSelected) return;
 
             if(isLessonPaused) {
                 actions.boundToggleLesson(getLatestCounter());
             } else {
                 const itemsToReview = stats.getItemsForRevision(collection, history, 1);
                 const mode = endOfRoundHandler.getMode(config.mode, collection.isLevelComplete, itemsToReview);
-                endOfRoundHandler.callEndOfRoundActions(mode, config, collections, collection, score, itemsToReview, collection.isLevelComplete);
+                endOfRoundHandler.callEndOfRoundActions(mode, config, collections, collection, score, itemsToReview);
                 
                 const items = collection.items.filter(item => !item.isDeselected);
-                actions.boundChangeCollection({ config: config, items: items });
+                if(!disableCheckBoxes || itemsToReview.length > 0) {
+                    actions.boundChangeCollection({ config: config, items: items });
+                }
             }
             
             actions.boundNewPage({ name: ''});

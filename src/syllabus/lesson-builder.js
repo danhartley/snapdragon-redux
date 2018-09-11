@@ -15,8 +15,6 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
 
         const layoutsToAdd = moduleSize > itemsLeft ? itemsLeft : moduleSize;
 
-        console.log('layoutsToAdd: ', layoutsToAdd);
-
     layouts.forEach( (layout, index) => {
 
         let i = 0;

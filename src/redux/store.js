@@ -15,9 +15,9 @@ const reducer = combineReducers({
     lessonPlan,
     layout,
     config,
+    collection,
     score,
     collections,
-    collection,
     history, 
     page
 });
@@ -35,7 +35,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 export const store = createStore(
     persistedReducer, 
     composeEnhancers(applyMiddleware(
-        // logger
+        logger
     ))
 );
 

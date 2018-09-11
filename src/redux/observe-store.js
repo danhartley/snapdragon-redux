@@ -1,10 +1,31 @@
-export const observeStore = (store, select, onChange, domain) => {
+import { subscription } from 'redux/subscriptions';
+
+export const observeStore = (store, select, onChange, domain, layout) => {
     let currentState = null;
   
     function handleChange() {      
       let nextState = select(store.getState());
-      if (nextState !== currentState) {
+
+      let hasStateSignificantlyChanged = false;
+      hasStateSignificantlyChanged = nextState !== currentState;
+      
+      if(currentState && nextState) {
+        switch(layout) {
+          case 'screen-species-card':
+            hasStateSignificantlyChanged = currentState.itemIndex !== nextState.itemIndex;
+            break;
+          case 'screen-latin-to-common':
+            hasStateSignificantlyChanged = currentState.speciesVernacularNames !== nextState.speciesVernacularNames;
+          case 'screen-common-to-latin':
+            hasStateSignificantlyChanged = currentState.speciesNames !== nextState.speciesNames;
+          case 'screen-genus-completion':
+            hasStateSignificantlyChanged = currentState.itemIndex !== nextState.itemIndex;
+        }
+      }
+
+      if (hasStateSignificantlyChanged) {
         currentState = nextState;
+        console.log(`*** ${onChange.name} called `);        
         onChange(currentState);
       }
     }

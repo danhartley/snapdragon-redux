@@ -7,21 +7,21 @@ import { lessonPlans } from 'snapdragon/lesson-plans';
 
 export const nextLesson = (counter) => {
 
-    console.log('^^ nextLesson ran');
-    
     const { lessonPlan, history, collections, collection, config } = store.getState();
 
     if(config.collection.id === 0) return;
     
     let lesson;
 
-    let defaultLessonPlan = lessonPlan || lessonPlans.find(lessonPlan => lessonPlan.id === 1 && lessonPlan.portrait === config.isPortraitMode);
+    let defaultLessonPlan = lessonPlan || lessonPlans.find(plan => plan.id === 1 && plan.portrait === config.isPortraitMode);
     
     if(collection.isLessonPlanRequired) {
 
         switch(config.mode) {
             case 'review':
-                collection.items = stats.getItemsForRevision(collection, history, 1);
+                collection.itemsToReview = stats.getItemsForRevision(collection, history, 1);
+                collection.rounds = Math.ceil(collection.items.length / collection.moduleSize);
+                collection.itemIndex = 0;
                 break;
             case 'learn':
                 collection.items = collection.items || speciesState.initCollection(collections.find(c => c.id === collection.id)).items;
@@ -30,13 +30,14 @@ export const nextLesson = (counter) => {
                 break;
         }
 
-        collection.rounds = Math.ceil(collection.items.length / collection.moduleSize);
-        collection.itemIndex = 0;        
-
         lesson = { ...defaultLessonPlan, ...lessonPlanner.createLessonPlan(defaultLessonPlan, config, collection) }
+        
+        if(config.mode === 'review') {
+            lesson.collection = collection;
+        }        
+    } else {
+        lesson = defaultLessonPlan;
+    }
 
-        lesson.collection = collection;
-
-        actions.boundNextLessonPlan(lesson);
-    }         
+    actions.boundNextLessonPlan(lesson);
 };

@@ -52,7 +52,7 @@ test('score state should reflect correct answer', () => {
     expect(score(stateBefore, action)).toEqual(stateAfter);
   });
   
-  test('score state should reflect incorrect answer', () => {
+  test.only('score state should reflect incorrect answer', () => {
   
     const stateBefore = {
       total: 10,
@@ -72,7 +72,9 @@ test('score state should reflect correct answer', () => {
       correct: 9,
       taxon: 'name',
       binomial: 'Anagallis arvensis',
+      passesTotals: 0,
       question: 'Anagallis arvensis',
+      questionTotal: 1,
       answer: 'Malva sylvestris',
       success: false,
       wrong: 1,
@@ -95,6 +97,7 @@ test('score state should reflect correct answer', () => {
         binomial: 'Anagallis arvensis',
         question: 'Anagallis arvensis',
         answer: 'Malva sylvestris',
+        "questionTotal": 1,
         success: false,        
         itemId: 1        
       }
