@@ -15,9 +15,9 @@ const reducer = combineReducers({
     lessonPlan,
     layout,
     config,
+    collection,
     score,
     collections,
-    collection,
     history, 
     page
 });

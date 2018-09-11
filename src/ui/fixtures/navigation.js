@@ -66,7 +66,9 @@ export const renderNavigation = (page) => {
         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));        
         subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));   
         subscription.add(renderCollections, 'counter', 'screen');
-        subscription.add(renderSnapdragon, 'counter', 'screen');
+        if(!config.isPortraitMode) {
+            subscription.add(renderSnapdragon, 'counter', 'screen');
+        }
         setTimeout(() => {
             const { index } = getLatestCounter();
             actions.boundToggleLesson({ index: 0, log: { index: index, collection: collection.id  } });

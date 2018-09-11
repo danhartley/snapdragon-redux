@@ -5,38 +5,41 @@ import { actions } from 'redux/actions/action-creators';
 import { speciesState } from 'redux/reducers/initial-state/initial-species-state';
 import { lessonPlans } from 'snapdragon/lesson-plans';
 
-export const nextLesson = (config) => {
+export const nextLesson = (counter) => {
+
+    const { lessonPlan, history, collections, collection, config } = store.getState();
 
     if(config.collection.id === 0) return;
-
-    const { lessonPlan, collection, history, collections } = store.getState();
-
+    
     let lesson;
 
-    let defaultLessonPlan = lessonPlan || lessonPlans.find(lessonPlan => lessonPlan.id === 1 && lessonPlan.portrait === config.isPortraitMode);
+    let defaultLessonPlan = lessonPlan || lessonPlans.find(plan => plan.id === 1 && plan.portrait === config.isPortraitMode);
     
-    if(collection.isLessonPlanRequired) {
-
-        let _collection = { ...collection };
+    if(collection.isNewRound) {
 
         switch(config.mode) {
             case 'review':
-                _collection.items = stats.getItemsForRevision(collection, history, 1);
+                collection.itemsToReview = stats.getItemsForRevision(collection, history, 1);
+                collection.rounds = Math.ceil(collection.items.length / collection.moduleSize);
+                collection.itemIndex = 0;
                 break;
             case 'learn':
-                _collection.items = _collection.items || speciesState.initCollection(collections.find(c => c.id === _collection.id)).items;
+                collection.items = collection.items || speciesState.initCollection(collections.find(c => c.id === collection.id)).items;
                 break;
             default:
                 break;
         }
 
-        _collection.rounds = Math.ceil(_collection.items.length / _collection.moduleSize);
-        _collection.itemIndex = 0;        
+        lesson = { ...defaultLessonPlan, ...lessonPlanner.createLessonPlan(defaultLessonPlan, config, collection) };        
+        
+        if(config.mode === 'review') {
+            lesson.collection = collection;
+        }        
+    } else {
+        lesson = defaultLessonPlan;
+    }
 
-        lesson = { ...defaultLessonPlan, ...lessonPlanner.createLessonPlan(defaultLessonPlan, config, _collection) }
-
-        lesson.collection = _collection;
-    }     
+    collection.layoutCount = lesson.layoutCount;
 
     actions.boundNextLessonPlan(lesson);
 };

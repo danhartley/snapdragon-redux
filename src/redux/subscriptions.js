@@ -3,12 +3,12 @@ import { observeStore } from 'redux/observe-store';
 
 let subscriptions = [];
 
-const add = (subscription, domain, role) => {
+const add = (subscription, domain, role, layout) => {
     
     const select = store => store[domain];
     const onChange = subscription;
 
-    const sub = observeStore(store, select, onChange, domain);
+    const sub = observeStore(store, select, onChange, domain, layout);
 
     subscriptions.push({ ...sub, role});
     return sub;

@@ -14,7 +14,7 @@ import { getBirdSong } from 'xeno-canto/birdsong';
 import { extraTraits } from 'api/traits';
 
 export const renderCard = (collection) => {
-    
+
     const item = collection.nextItem;
 
     const { layout, config, lessonPlan } = store.getState();

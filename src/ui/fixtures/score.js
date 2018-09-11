@@ -18,8 +18,6 @@ export const renderScore = (score) => {
 
     if(!layout) return;
 
-    const endOfRound = (score.total === layout.roundScoreCount);
-
     const runningTotal = history ? { ...history } : { correct: 0, total: 0 };
 
     runningTotal.correct = runningTotal.correct + score.correct;
@@ -33,6 +31,7 @@ export const renderScore = (score) => {
 
     score.mode = config.mode;
 
-    if(endOfRound)
+    if(score.total === layout.roundScoreCount) {
         actions.boundUpdateHistory(score);
+    }
 };
