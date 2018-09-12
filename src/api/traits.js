@@ -14,7 +14,7 @@ export const extraTraits = [
         { name: 'rank', value: '3', description: 'common', language: 'en' },
     ]  },    
     { name: 'Turdus merula', traits: [
-        { name: 'song', value: '324061', description: 'xeno-canto id' },
+        { name: 'song', value: '421352', description: 'xeno-canto id' },
         { name: 'rank', value: '4', description: 'common', language: 'en' },
     ] },
     { name: 'Erithacus rubecula', traits: [
