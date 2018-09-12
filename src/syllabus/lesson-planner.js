@@ -6,19 +6,26 @@ import { getWildcardLayouts } from 'redux/reducers/initial-state/species-state/s
 const { summary, history } = screens;
 
 const createLessonPlan = (lessonPlan, config, collection) => {
+
+    if(collection.isLevelComplete) {
+        collection.lesson.level = getNextLevel(collection.lesson.name, collection.lesson.level.name, config.isPortraitMode);
+        collection.currentRound = 1;
+    }
     const moduleSize = collection.moduleSize || config.moduleSize;
     let { lesson: { name: lessonName, level: { name: levelName }}, excludeRevision, isPortraitMode } = collection;
     const wildcards = config.mode === 'learn' ? getLayouts(lessonPlan, collection, config, 'wildcard') : [];
     let wildcardLayouts = wildcards.length > 0 ? getWildcardLayouts(wildcards, collection, moduleSize) : [];
     let layouts = getLayouts(lessonPlan, collection, config, config.mode);
 
-    if(layouts.length === 0 && wildcardLayouts.length === 0) {
-        const level = getNextLevel(collection.lesson.name, collection.lesson.level.name, config.isPortraitMode);
-        collection.lesson.level = level;
-        lessonName = collection.lesson.name;
-        levelName = collection.lesson.level.name;
-        layouts = getLayouts(null, collection, config, config.mode);
-    }
+    // reivsion stuff??
+
+    // if(layouts.length === 0 && wildcardLayouts.length === 0) {
+    //     const level = getNextLevel(collection.lesson.name, collection.lesson.level.name, config.isPortraitMode);
+    //     collection.lesson.level = level;
+    //     lessonName = collection.lesson.name;
+    //     levelName = collection.lesson.level.name;
+    //     layouts = getLayouts(null, collection, config, config.mode);
+    // }
 
     return createLesson(
         lessonName,
@@ -55,8 +62,8 @@ const getCurrentLesson = (lessonPlans, lessonName, isPortraitMode = false) => {
 };
 
 const getCurrentLevel = (lesson, levelName) => { 
-    const levels = lesson.levels.find(level => level.name === levelName);
-    return levels;
+    const level = lesson.levels.find(level => level.name === levelName);
+    return level;
 };
 
 const getNextLevelId = (lesson, level, direction) => {
@@ -70,8 +77,8 @@ const changeLevel = (currentLessonName, currentLevelName, direction, isPortraitM
     const lesson = getCurrentLesson(lessonPlans, currentLessonName, isPortraitMode);
     const level = getCurrentLevel(lesson, currentLevelName);
     const levelId = getNextLevelId(lesson, level, direction);
-    const levels = lesson.levels.find(level => level.id === levelId);
-    return { ...levels, lessonName: lesson.name };
+    const nextLevel = lesson.levels.find(level => level.id === levelId);
+    return { ...nextLevel, lessonName: lesson.name };
 };
 
 const getNextLevel = (currentLessonName, currentLevelName, isPortraitMode = false) => {

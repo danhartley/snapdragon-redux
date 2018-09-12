@@ -14,7 +14,9 @@ export const counter = (state = null, action) => {
             return { index: 0 };
         case types.NEXT_LEVEL:
         case types.STOP_START_LESSON:
-            return action.data;
+            const _counter = action.data;
+            const isLessonPaused = (!!_counter && !!_counter.log);
+            return { ...action.data, isLessonPaused };
         case types.UPDATE_SCORE:
         case types.END_REVISION:
             let i = (state.index + 1) <= action.data.layoutCount ? (state.index + 1) : state.index;

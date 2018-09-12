@@ -203,10 +203,10 @@
         margin: 0 0 0 1em;
     }
 
-    .lesson-plans .table-row th:nth-child(3),
+    /* .lesson-plans .table-row th:nth-child(3),
     .lesson-plans .table-row td:nth-child(3) {
         flex: 2;
-    }
+    } */
 
     .lesson-plan-btn {
         padding: 1em 2em;

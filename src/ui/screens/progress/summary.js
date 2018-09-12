@@ -65,7 +65,7 @@ export const renderSummary = (history) => {
         subscription.getByName('renderSummary').forEach(sub => subscription.remove(sub));
         subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
 
-        endOfRoundHandler.callEndOfRoundActions(mode, config, collections, collection, score, itemsToReview);
+        endOfRoundHandler.changeCollection('nextRound', collections, collection, config, history);
     };
 
     learnMoreBtn.removeEventListener('click', handleBtnClickEvent);

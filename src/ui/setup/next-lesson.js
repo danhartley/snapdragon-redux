@@ -2,29 +2,28 @@ import { store } from 'redux/store';
 import { stats } from 'ui/helpers/stats';
 import { lessonPlanner } from 'syllabus/lesson-planner';
 import { actions } from 'redux/actions/action-creators';
-import { speciesState } from 'redux/reducers/initial-state/initial-species-state';
 import { lessonPlans } from 'snapdragon/lesson-plans';
 
 export const nextLesson = (counter) => {
 
-    const { lessonPlan, history, collections, collection, config } = store.getState();
+    const { lessonPlan, history, collection, config } = store.getState();
 
-    if(config.collection.id === 0) return;
+    if(counter.isLessonPaused || config.collection.id === 0) return;
     
     let lesson;
 
-    let defaultLessonPlan = lessonPlan || lessonPlans.find(plan => plan.id === 1 && plan.portrait === config.isPortraitMode);
+    let planId = config.isPortraitMode ? 3 : 1;
+    let defaultLessonPlan = lessonPlan || lessonPlans.find(plan => plan.id === planId && plan.portrait === config.isPortraitMode);
     
-    if(collection.isNewRound) {
+    if(collection.isNextRound) {
 
         switch(config.mode) {
-            case 'review':
+            case 'review': // can this be reached with flag above???
                 collection.itemsToReview = stats.getItemsForRevision(collection, history, 1);
                 collection.rounds = Math.ceil(collection.items.length / collection.moduleSize);
                 collection.itemIndex = 0;
                 break;
             case 'learn':
-                collection.items = collection.items || speciesState.initCollection(collections.find(c => c.id === collection.id)).items;
                 break;
             default:
                 break;

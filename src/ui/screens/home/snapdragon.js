@@ -6,6 +6,8 @@ import snapdragonTemplate from 'ui/screens/home/snapdragon-template.html';
 
 export const renderSnapdragon = (counter) => {
 
+    if(counter.isLessonPaused) return;
+
     const template = document.createElement('template');
 
     template.innerHTML = snapdragonTemplate;
