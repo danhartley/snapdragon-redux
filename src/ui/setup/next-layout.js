@@ -1,5 +1,6 @@
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
+import { screensSubscriptionHandler } from 'ui/helpers/subscription-handler';
 
 export const nextLayout = (counter) => {
 
@@ -7,7 +8,7 @@ export const nextLayout = (counter) => {
 
     if(isLessonPaused) return;
 
-    const { lessonPlan } = store.getState();
+    const { lessonPlan, config } = store.getState();
 
     if(!lessonPlan || !lessonPlan.layouts) return;
 
@@ -16,4 +17,6 @@ export const nextLayout = (counter) => {
     if(!layout) return;
 
     actions.boundNextLayout(layout);     
+
+    screensSubscriptionHandler(layout, config);
 };

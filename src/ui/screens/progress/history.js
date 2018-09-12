@@ -34,7 +34,7 @@ export const renderHistory = (history) => {
 
     const items = stats.getItemScoreStats(collection, history);
 
-    const tested =  { ...collection, ...{ items: items }};
+    const collectionFromLastRound =  { ...collection, ...{ items: items }};
 
-    renderSpeciesCollectionList(tested, true);
+    renderSpeciesCollectionList(collection, collectionFromLastRound, true);
 }    

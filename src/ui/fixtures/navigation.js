@@ -6,11 +6,12 @@ import { subscription } from 'redux/subscriptions';
 import {renderSnapdragon } from 'ui/screens/home/snapdragon';
 import { renderCollections } from 'ui/screens/home/collections';
 import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
+import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
 
 export const renderNavigation = (page) => {
 
-    const { collection, config } = store.getState();
+    const { collections, collection, config, counter, history } = store.getState();
 
     const template = document.createElement('template');
 
@@ -60,21 +61,6 @@ export const renderNavigation = (page) => {
 
     const navIcons =  document.querySelectorAll('.js-nav-icons .icon');
 
-    const getLatestCounter = () => store.getState().counter;
-
-    const pauseLesson = () => {
-        subscription.getByRole('screen').forEach(sub => subscription.remove(sub));        
-        subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));   
-        subscription.add(renderCollections, 'counter', 'screen');
-        if(!config.isPortraitMode) {
-            subscription.add(renderSnapdragon, 'counter', 'screen');
-        }
-        setTimeout(() => {
-            const { index } = getLatestCounter();
-            actions.boundToggleLesson({ index: 0, log: { index: index, collection: collection.id  } });
-        });
-    };
-
     navIcons.forEach(icon => {
 
         icon.addEventListener('click', event => {       
@@ -86,7 +72,9 @@ export const renderNavigation = (page) => {
                 switch(targetId) {                    
                     case 'home':
                         name = 'home';
-                        pauseLesson();
+                        subscription.getByRole('screen').forEach(sub => subscription.remove(sub));        
+                        endOfRoundHandler.changeCollection('pauseLesson', collections, collection, config, history); 
+                        renderCollections(counter);
                         break;
                     case 'settings':
                         renderSettings();
@@ -94,10 +82,8 @@ export const renderNavigation = (page) => {
                     case 'list':
                         name = 'list';
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));                                   
-                        const { index } = getLatestCounter();
-                        collection.itemIndex = index;
-                        actions.boundToggleLesson({ index: 0, log: { index: index, collection: collection.id  } });
-                        renderSpeciesCollectionList(collection);                                                                    
+                        endOfRoundHandler.changeCollection('pauseLesson', collections, collection, config, history);     
+                        renderSpeciesCollectionList(collection, null, true);                   
                         break;
                     case 'test':
                         break;

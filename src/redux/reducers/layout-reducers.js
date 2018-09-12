@@ -14,8 +14,6 @@ export const lessonPlan = (state = null, action) => {
 
 export const layout = (state = null, action) => { 
     switch(action.type) {
-        case types.NEXT_LESSON:
-            return (action.data && action.data.layouts) ? action.data.layouts[0] : state;
         case types.NEXT_LAYOUT:
             return action.data;
         default: 

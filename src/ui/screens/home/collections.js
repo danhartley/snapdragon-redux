@@ -9,6 +9,7 @@ import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { elem } from 'ui/helpers/class-behaviour';
 import { renderLessonPlans } from 'ui/screens/lists/lesson-plans-table';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
+import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
 
 export const renderCollections = (counter) => {
 
@@ -16,9 +17,9 @@ export const renderCollections = (counter) => {
 
     let collection = { ...stateCollection };
     
-    if(counter && counter.log) {
-        actions.boundSelectCollection(collection);
-    }    
+    // if(counter && counter.log) {
+    //     actions.boundSelectCollection(collection);
+    // }    
 
     const template = document.createElement('template');
     template.innerHTML = collectionsTemplate;
@@ -55,9 +56,8 @@ export const renderCollections = (counter) => {
     if(config.isPortraitMode) {
         learningActionBtn.innerHTML =  'View lesson species';
     } else {
-        const isLessonPaused = (counter && counter.log) ? true : false;
         learningActionBtn.innerHTML = 'Begin lesson'
-        if(history || isLessonPaused) {
+        if(history || counter.isLessonPaused) {
             learningActionBtn.innerHTML = 'Continue lesson';
         }
     }    
@@ -126,47 +126,28 @@ export const renderCollections = (counter) => {
         actions.boundUpdateLanguage(language);
     });
 
-    const getLatestCounter = () => { 
-        const counter = store.getState().counter;
-        const log = counter.log;
-        const index = log ? log.index : counter.index;
-        return { index };
-    };
-
     // User begins or continues lesson
 
     learningActionBtn.addEventListener('click', () => {
 
-        const notEnoughItemsSelected = collection.items.filter(item => !item.isDeselected).length < collection.moduleSize;
-
-        if(notEnoughItemsSelected) {
-            learningActionBtn.innerHTML = `You must select at least ${collection.moduleSize} items`;
+        if(config.isLandscapeMode) {
+            subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));            
+            const lessonStateMode = counter.isLessonPaused ? 'restartLesson' : 'newLesson';
+            endOfRoundHandler.changeCollection(lessonStateMode, collections, collection, config, history, learningActionBtn);
         }
-
-        setTimeout(() => {
-            learningActionBtn.innerHTML = 'Begin lesson';
-        }, 2000);
-
-        if(notEnoughItemsSelected) return;
                 
         subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
 
         if(config.isPortraitMode) {            
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
-            actions.boundSelectCollection(collection);
-            actions.boundNewPage({ name: 'list'});
-         } 
-         
-         if(config.isLandscapeMode) {
-            subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));            
-            const isLessonPaused = (counter && counter.log) ? true : false; 
-            if(isLessonPaused) {
-                actions.boundToggleLesson(getLatestCounter());
+            if(counter.isLessonPaused) {
+                renderSpeciesCollectionList(collection, null, true);
             } else {
-                const items = collection.items.filter(item => !item.isDeselected);
-                actions.boundChangeCollection({ config: config, items: items });
-            }
-        }
+                actions.boundSelectCollection(collection);
+                actions.boundNewPage({ name: 'list'});
+            }            
+         } 
+        
         updateNavIcons();        
     });
 

@@ -2,17 +2,16 @@ import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
 import { modalImageHandler } from 'ui/helpers/handlers';
-import { stats } from 'ui/helpers/stats';
 import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
 import { buildTable } from 'ui/screens/lists/species-list-table';
 
-export const renderSpeciesCollectionList = (collection, disableCheckBoxes = false) => {
+export const renderSpeciesCollectionList = (collection, collectionFromLastRound, readOnlyMode = false) => {
 
     subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
     
     if(collection.id === 0) return;
 
-    const { config, score, history, counter, collections  } = store.getState();
+    const { config, history, counter, collections  } = store.getState();
 
     config.collection = { id: collection.id };
 
@@ -21,7 +20,7 @@ export const renderSpeciesCollectionList = (collection, disableCheckBoxes = fals
     const headerCheckbox = document.querySelector(".table-header input[type='checkbox']");
 
     if(headerCheckbox) {
-        if(disableCheckBoxes) {
+        if(readOnlyMode) {
             headerCheckbox.disabled = true;
         } else {
             headerCheckbox.addEventListener('click', event => {
@@ -49,7 +48,7 @@ export const renderSpeciesCollectionList = (collection, disableCheckBoxes = fals
     });
 
     document.querySelectorAll(".table-row input[type='checkbox']").forEach(checkbox => {
-        if(disableCheckBoxes) { 
+        if(readOnlyMode) { 
             checkbox.disabled = true;
         } else {     
             checkbox.addEventListener('click', event => {
@@ -78,49 +77,21 @@ export const renderSpeciesCollectionList = (collection, disableCheckBoxes = fals
     // Portrait mode only
 
     if(continueLearningActionBtn) {
-
-        const isLessonPaused = (counter && counter.log) ? true : false;
-
-        if(history || isLessonPaused) {
+        
+        if(history || counter.isLessonPaused) {
             continueLearningActionBtn.innerHTML = 'Continue lesson';
         }
-        
-        const getLatestCounter = () => { 
-            const counter = store.getState().counter;
-            const log = counter.log;
-            const index = log ? log.index : counter.index;
-            return { index };
-        };
 
         continueLearningActionBtn.addEventListener('click', () => {
 
-            if(!disableCheckBoxes) {
-                const notEnoughItemsSelected = !history && collection.items.filter(item => !item.isDeselected).length < collection.moduleSize;
-
-                if(notEnoughItemsSelected) {
-                    continueLearningActionBtn.innerHTML = `You must select at least ${collection.moduleSize} items`;
-                }
-
-                setTimeout(() => {
-                    continueLearningActionBtn.innerHTML = 'Begin lesson';
-                }, 2000);
-
-                if(notEnoughItemsSelected) return;
+            if(readOnlyMode) {
+                const lessonStateMode = counter.isLessonPaused ? 'restartLesson' : 'nextRound';
+                endOfRoundHandler.changeCollection(lessonStateMode, collections, collection, config, history);
+            }
+            else {
+                endOfRoundHandler.changeCollection('newLesson', collections, collection, config, history, continueLearningActionBtn);
             }
 
-            if(isLessonPaused) {
-                actions.boundToggleLesson(getLatestCounter());
-            } else {
-                const itemsToReview = stats.getItemsForRevision(collection, history, 1);
-                const mode = endOfRoundHandler.getMode(config.mode, collection.isLevelComplete, itemsToReview);
-                endOfRoundHandler.callEndOfRoundActions(mode, config, collections, collection, score, itemsToReview);
-                
-                const items = collection.items.filter(item => !item.isDeselected);
-                if(!disableCheckBoxes || itemsToReview.length > 0) {
-                    actions.boundChangeCollection({ config: config, items: items });
-                }
-            }
-            
             actions.boundNewPage({ name: ''});
 
             subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));

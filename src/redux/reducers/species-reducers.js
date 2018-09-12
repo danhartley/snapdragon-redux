@@ -20,32 +20,32 @@ export const collections = (state = speciesState.collections, action) => {
     }
 };
 
-export const collection = (state = { id: 0, descriptions: null, currentRound: 0, rounds: 0, isNewRound: true }, action) => {
+export const collection = (state = { id: 0, descriptions: null, currentRound: 0, rounds: 0, isNextRound: true }, action) => {
 
     const getNextItem = (action, state) => {
         let itemIndex = action.data;
         let nextItem = state.items[itemIndex];
         let layoutCounter = state.layoutCounter ? state.layoutCounter + 1 : 1;
-        let isNewRound = layoutCounter = state.layoutCount;
-        return { itemIndex, nextItem, layoutCounter, isNewRound };
+        let isNextRound = layoutCounter === state.layoutCount;
+        let noLessonSelected = state.rounds === 0;
+        let isLevelComplete = noLessonSelected ? false : state.currentRound === state.rounds;
+        return { itemIndex, nextItem, layoutCounter, isNextRound, isLevelComplete };
     };
 
-    const getNextRound = state => {
-        let noLessonSelected = state.rounds === 0;
+    const getNextRound = state => {        
         let nextRound = (state.currentRound === state.rounds) ? 1 : state.currentRound + 1;
-        let isLevelComplete = noLessonSelected ? false : state.currentRound === state.rounds;
         let itemIndex = state.moduleSize * (nextRound -1);
         let nextItem = state.items[itemIndex];
-        if(isLevelComplete) {
+        if(state.isLevelComplete) {
             itemIndex = 0;
             nextRound = 1;
-            nextItem = state.items[itemIndex];        
+            nextItem = state.items[itemIndex];
         }
-        let layoutCounter = 1;
-        return { nextRound, isLevelComplete, itemIndex, nextItem, layoutCounter };
+        let layoutCounter = 0;
+        return { nextRound, itemIndex, nextItem, layoutCounter };
     };
 
-    const getNewCollection = (action, state) => {
+    const changeCollection = (action, state) => {
         let config = action.data.config;
         let items = action.data.items;
         let selectedCollection = state.collections.find(collection => collection.id === config.collection.id);
@@ -58,9 +58,8 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
     const getNextLesson = (action, state) => {
         let lessonPlan = action.data;
         let isRevision = !!(lessonPlan && lessonPlan.collection);
-        let isNewRound = state.layoutCounter = state.layoutCount;
-        let layoutCounter = 1;
-        return { lessonPlan, isRevision, layoutCounter, isNewRound };
+        let isNextRound = state.layoutCounter === state.layoutCount;
+        return { lessonPlan, isRevision, isNextRound };
     };
     
     switch(action.type) {
@@ -73,21 +72,21 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
             return _collection;
         }
         case types.CHANGE_COLLECTION: {
-            const { collection, nextItem } = getNewCollection(action, speciesState);
+            const { collection, nextItem } = changeCollection(action, speciesState);
             return { ...state, ...collection, nextItem };
         }
         case types.NEXT_ITEM: {
-            const { itemIndex, nextItem, layoutCounter } = getNextItem(action, state);
-            return { ...state, itemIndex, nextItem, layoutCounter };
+            const { itemIndex, nextItem, layoutCounter, isNextRound, isLevelComplete } = getNextItem(action, state);
+            return { ...state, itemIndex, nextItem, layoutCounter, isNextRound, isLevelComplete };
         }
         case types.NEXT_ROUND: {
-            const { itemIndex, nextRound, nextItem, isLevelComplete, layoutCounter } = getNextRound(state);
-            return { ...state, itemIndex, currentRound: nextRound, nextItem, isLevelComplete, layoutCounter };
+            const { itemIndex, nextRound, nextItem, layoutCounter } = getNextRound(state);
+            return { ...state, itemIndex, currentRound: nextRound, nextItem, layoutCounter };
         }
         case types.NEXT_LESSON: {
-            const { lessonPlan, isRevision, layoutCounter, isNewRound } = getNextLesson(action, state);
+            const { lessonPlan, isRevision, isNextRound } = getNextLesson(action, state);
             const collection = isRevision ? lessonPlan.collection : state;
-            return { ...collection, isNewRound: false, layoutCounter, layoutCount: action.data.layoutCount, isNewRound };
+            return { ...collection, isNextRound: false, layoutCount: action.data.layoutCount, isNextRound };
         }
         default: {
             return state; 
