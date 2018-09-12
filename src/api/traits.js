@@ -1,6 +1,6 @@
 export const extraTraits = [
     { name: 'Passer domesticus', traits: [
-        { name: 'song', value: '431831', description: 'xeno-canto id' },
+        { name: 'song', value: '416611', description: 'xeno-canto id' },
         { name: 'rank', value: '1', description: 'common', language: 'en' },
     ] },
     { name: 'Columba livia', traits: [
@@ -18,7 +18,7 @@ export const extraTraits = [
         { name: 'rank', value: '4', description: 'common', language: 'en' },
     ] },
     { name: 'Erithacus rubecula', traits: [
-        { name: 'song', value: '432677', description: 'xeno-canto id' },
+        { name: 'song', value: '401271', description: 'xeno-canto id' },
         { name: 'rank', value: '8', description: 'common', language: 'en' },
     ] },
     { name: 'Apus apus', traits: [
@@ -33,19 +33,19 @@ export const extraTraits = [
         { name: 'rank', value: '5', description: 'common', language: 'en' },
     ] },
     { name: 'Carduelis carduelis', traits: [
-        { name: 'song', value: '423474', description: 'xeno-canto id' },
+        { name: 'song', value: '416636', description: 'xeno-canto id' },
         { name: 'rank', value: '6', description: 'common', language: 'en' },
     ] },
     { name: 'Parus major', traits: [
-        { name: 'song', value: '431099', description: 'xeno-canto id' },
+        { name: 'song', value: '422223', description: 'xeno-canto id' },
         { name: 'rank', value: '7', description: 'common', language: 'en' },
     ] },
     { name: 'Aegithalos caudatus', traits: [
-        { name: 'song', value: '423114', description: 'xeno-canto id' },
+        { name: 'song', value: '404853', description: 'xeno-canto id' },
         { name: 'rank', value: '9', description: 'common', language: 'en' },
     ] },
     { name: 'Fringilla coelebs', traits: [
-        { name: 'song', value: '431721', description: 'xeno-canto id' },
+        { name: 'song', value: '426190', description: 'xeno-canto id' },
         { name: 'rank', value: '10', description: 'common', language: 'en' },
     ] },
 ];
