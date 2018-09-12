@@ -18,7 +18,8 @@ export const nextLesson = (counter) => {
     if(collection.isNextRound) {
 
         switch(config.mode) {
-            case 'review': // can this be reached with flag above???
+            // todo: review review
+            case 'review': 
                 collection.itemsToReview = stats.getItemsForRevision(collection, history, 1);
                 collection.rounds = Math.ceil(collection.items.length / collection.moduleSize);
                 collection.itemIndex = 0;
