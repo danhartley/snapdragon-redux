@@ -25,7 +25,6 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
     });
 
     const revisionLayouts = excludeRevision ? [] : lessonPlan.layouts.filter(layout => layout.type === 'revision');
-    // const shuffledLessonLayouts = utils.shuffleArray([ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts]);
     const shuffledLessonLayouts = [ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts];
     const offSet = (collection.currentRound - 1) * moduleSize;
 

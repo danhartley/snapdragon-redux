@@ -57,7 +57,7 @@ export const renderCollections = (counter) => {
         learningActionBtn.innerHTML =  'View lesson species';
     } else {
         learningActionBtn.innerHTML = 'Begin lesson'
-        if(history || counter.isLessonPaused) {
+        if(collection.layoutCounter > 1) {
             learningActionBtn.innerHTML = 'Continue lesson';
         }
     }    
