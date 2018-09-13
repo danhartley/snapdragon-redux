@@ -24,7 +24,7 @@ export const renderSpeciesCollectionList = (collection, collectionFromLastRound,
             headerCheckbox.disabled = true;
         } else {
             headerCheckbox.addEventListener('click', event => {
-                event.stopPropagation();
+                // event.stopPropagation();
                 if(event.target.checked) {            
                     document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
                         checkbox.checked = true;
