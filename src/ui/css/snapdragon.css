@@ -951,13 +951,16 @@ tbody {
 
 .list-group-item, .table-row {
   background-color: var(--snap-list-background);
-  cursor: pointer;
   display: flex;
   flex-direction: row;
 }
 
 .table-row {
   padding: .2em 0;
+}
+
+.table-row img, table input {
+  cursor: pointer;
 }
 
 .list-group-item {

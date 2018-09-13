@@ -52,7 +52,7 @@ export const renderSpeciesCollectionList = (collection, collectionFromLastRound,
             checkbox.disabled = true;
         } else {     
             checkbox.addEventListener('click', event => {
-                event.stopPropagation();
+                // event.stopPropagation();
                 const name = event.target.name;
                 const item = collection.items.find(item => item.name === name);
                 if(event.target.checked) {
@@ -65,7 +65,7 @@ export const renderSpeciesCollectionList = (collection, collectionFromLastRound,
         }
     });
 
-    const listItemImages = document.querySelectorAll('.js-list-item');
+    const listItemImages = document.querySelectorAll('.table-row img');
 
     listItemImages.forEach(itemImage => { 
         const item = collection.items.find(item => item.name === itemImage.dataset.id)
