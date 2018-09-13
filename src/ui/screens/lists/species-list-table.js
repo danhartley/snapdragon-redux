@@ -42,15 +42,15 @@ export const buildTable = (collection, config) => {
     const familyHeader = document.createElement('th');
     const passesHeader = document.createElement('th');
     const failsHeader = document.createElement('th');
-    const input = document.createElement('input');
-    input.type = "checkbox";
-    input.checked = true;
+    const checkbox = document.createElement('span');
+    checkbox.innerHTML = '<i class="fas fa-check-square"></i>';
+    checkbox.classList.add('icon');
     imageHeader.innerHTML = '<div></div>';
     speciesHeader.innerHTML = 'Species';
     familyHeader.innerHTML = 'Family';
     passesHeader.innerHTML = '<span class="icon"><i class="fas fa-check-circle"></i></span>';
     failsHeader.innerHTML = '<span class="icon"><i class="fas fa-times-circle"></i></span>';
-    config.isPortraitMode ? imageHeader.appendChild(input) : indexHeader.appendChild(input);
+    config.isPortraitMode ? imageHeader.appendChild(checkbox) : indexHeader.appendChild(checkbox);
     if(config.isPortraitMode) {
         headerRow.appendChild(imageHeader);    
         headerRow.appendChild(speciesHeader);

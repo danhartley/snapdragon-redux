@@ -17,48 +17,61 @@ export const renderSpeciesCollectionList = (collection, collectionFromLastRound,
 
     buildTable(collection, config);
 
-    const headerCheckbox = document.querySelector(".table-header input[type='checkbox']");
+    const headerCheckbox = document.querySelector(".table-header span.icon");
+    const itemCheckboxes = document.querySelectorAll(".table-row span.icon");
+
+    const isUnchecked = event => {
+        const svg = event.target.parentElement;
+        const checked = svg.classList.contains('fa-check-square');
+        if(checked) {
+            svg.dataset.icon = 'square';
+        } else {
+            svg.dataset.icon = 'check-square';
+        }
+        return checked;
+    }
+
+    const check = checkbox => {
+        checkbox.childNodes[0].dataset.icon = 'check-square';
+    }
+
+    const uncheck = checkbox => {
+        checkbox.childNodes[0].dataset.icon = 'square';
+    }
 
     if(headerCheckbox) {
         if(readOnlyMode) {
             headerCheckbox.disabled = true;
         } else {
             headerCheckbox.addEventListener('click', event => {
-                // event.stopPropagation();
-                if(event.target.checked) {            
-                    document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
-                        checkbox.checked = true;
+                event.stopPropagation();
+                if(isUnchecked(event)) {
+                    itemCheckboxes.forEach(checkbox => {
+                        uncheck(checkbox);
                     });        
-                    collection.items.forEach(item => item.isDeselected = false);
-                    } else { 
-                    document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
-                        checkbox.checked = false;
-                    });
                     collection.items.forEach(item => item.isDeselected = true);
-                    }
-                    actions.boundChangeCollectionItems(collection.items);
+                } else { 
+                    itemCheckboxes.forEach(checkbox => {
+                        check(checkbox);
+                    });                
+                    collection.items.forEach(item => item.isDeselected = false);
+                }                
+                actions.boundChangeCollectionItems(collection.items);
             });
         }
     }
 
-    // document.querySelectorAll(".table-row td:nth-child(1)").forEach(td => {
-    //     td.addEventListener('click', event => {
-    //         event.stopPropagation();
-    //     });
-    // });
-
-    document.querySelectorAll(".table-row input[type='checkbox']").forEach(checkbox => {
+    itemCheckboxes.forEach(checkbox => {
         if(readOnlyMode) { 
             checkbox.disabled = true;
         } else {     
             checkbox.addEventListener('click', event => {
-                // event.stopPropagation();
-                const name = event.target.name;
+                const name = event.target.parentElement.parentElement.getAttribute('name');
                 const item = collection.items.find(item => item.name === name);
-                if(event.target.checked) {
-                    item.isDeselected = false;
-                } else { 
+                if(isUnchecked(event)) {
                     item.isDeselected = true;
+                } else { 
+                    item.isDeselected = false;
                 }
                 actions.boundChangeCollectionItems(collection.items);
             });
