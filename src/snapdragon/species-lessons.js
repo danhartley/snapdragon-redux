@@ -14,7 +14,7 @@ export const kitchenGarden = {
         'This lesson has over 750 questions and will take about 2 hours to complete. Species are native or adapted to a Mediterranean climate.',
         'You will start by learning to recognise species, become familiar with their common and latin names, and identify their genus. Subsequent levels will build on this knowledge.'        
     ],    
-    items:utils.shuffleArray([ ...kitchenGardenLessons[0].items, ...kitchenGardenLessons[1].items, ...kitchenGardenLessons[2].items, ...kitchenGardenLessons[3].items ]),
+    items: [ ...kitchenGardenLessons[0].items, ...kitchenGardenLessons[1].items, ...kitchenGardenLessons[2].items, ...kitchenGardenLessons[3].items ],
     collections: kg,
     thumb: 'https://media.eol.org/content/2014/06/03/05/47795_orig.jpg',
     moduleSize: 6,
@@ -31,7 +31,7 @@ export const rhsTrees = {
     id: 2, name: 'Deciduous and Evergreen Trees', 
     type: 'species',
     descriptions: ['The approved list of Deciduous and Evergreen Trees for students taking Royal Horticultural Society Qualifications in Practical Horticulture.'],
-    items: utils.shuffleArray([ ...collections[0].items ]),
+    items: [ ...collections[0].items ],
     collections: ['Deciduous and evergreen trees'],
     thumb: 'https://media.eol.org/content/2015/04/30/19/57100_orig.jpg',
     moduleSize: 6,
@@ -72,7 +72,7 @@ export const rhsWeeds1 = {
         'Part I of the approved list of Weeds for students taking Royal Horticultural Society Qualifications in Practical Horticulture.',
         'Snapdragon does not necessarily support the view that weeds are plants in the wrong place.'
     ],
-    items: utils.shuffleArray([ ...collections[6].items ]),
+    items: [ ...collections[6].items ],
     collections: ['RHS Weeds I'],
     thumb: 'https://media.eol.org/content/2015/01/21/07/32241_88_88.jpg',
     moduleSize: 4,
