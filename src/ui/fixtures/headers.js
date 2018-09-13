@@ -10,7 +10,11 @@ export const renderHeaders = collection => {
 
     if(config.isPortraitMode) DOM.rightHeaderTxt.innerHTML = title;
 
-    if(!collection || !lessonPlan) return;
+    if(!collection) return;
+
+    DOM.leftHeaderTxt.innerHTML = collection.name;
+    
+    if(!lessonPlan) return;
 
     const layout = lessonPlan.layouts ? lessonPlan.layouts[counter.index] : null;
 
@@ -19,6 +23,7 @@ export const renderHeaders = collection => {
     const specimensScreen = layout.screens.find(screen => screen.name === 'specimen-images');
 
     const item = collection.nextItem;
+
     const vernacularName = item ? itemProperties.vernacularName(item, config) : '';
     
     let specimenTitle = '';
