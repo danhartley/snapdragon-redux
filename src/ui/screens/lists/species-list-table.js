@@ -45,7 +45,9 @@ export const buildTable = (collection, config) => {
     const checkbox = document.createElement('span');
     checkbox.innerHTML = '<i class="fas fa-check-square"></i>';
     checkbox.classList.add('icon');
-    imageHeader.innerHTML = '<div></div>';
+    if(!config.isPortraitMode) {
+        imageHeader.innerHTML = '<div></div>';
+    }
     speciesHeader.innerHTML = 'Species';
     familyHeader.innerHTML = 'Family';
     passesHeader.innerHTML = '<span class="icon"><i class="fas fa-check-circle"></i></span>';

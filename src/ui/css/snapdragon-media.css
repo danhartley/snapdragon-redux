@@ -47,13 +47,9 @@
     .strip div {
         font-size: 1.1em;
     }
-    .table-row img {
-        width: 4em;
-        height: 4em;
-      }
-      
+
     .table-header th:nth-child(1) > div {
-        width: 3.5em;
+        width: 5em;
         height: 1px;
     }
 }
@@ -75,18 +71,17 @@
         font-size: 1em;
       }
 
-    .table-row img {
-        width: 4em;
-        height: 4em;
-      }
-      
     .table-header th:nth-child(2) > div {
-        width: 4em;
+        width: 5em;
         height: 1px;
     }    
 }
 
 @media (min-width: 768px) {
+
+    .table-header th:nth-child(1) span {
+        width: initial;
+    }
 
     .table-header th:nth-child(1):before {
         display: inline-block;

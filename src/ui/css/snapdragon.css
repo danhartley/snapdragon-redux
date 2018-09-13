@@ -931,7 +931,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   border-left: .3em solid transparent
 }
 
-tbody {
+table {
   font-size: .9em;
 }
 
@@ -973,21 +973,17 @@ tbody {
 }
 
 .table-row img {
-  width: 4em;
-  height: 4em;
+  width: 5em;
+  height: 5em;
   object-fit: cover;  
 }
-
-/* .table-row img {
-  padding-right: .5em;
-} */
 
 .table-row .lp-level {
   padding: 0 0 0 .5em;
 }
 
 .table-header th:nth-child(1) > div {
-  height: 1px;
+  height: 1px;  
 }
 
 .table-header th:nth-child(1), .table-row td:nth-child(1) {
@@ -996,20 +992,35 @@ tbody {
 
 .table-header th:nth-child(1) {
   display: flex;
+}
+
+.table-header th:nth-child(1) span {
+  display: flex;
   align-items: center;
   justify-content: center;
+  width: 5em;  
+}
+
+.table-header th:nth-child(1) span svg {
+  font-size: 1.2em;
 }
 
 .table-header th:nth-child(2) {
   flex: 4;
   padding: 0 0 0 .5em;
+  display: flex;
+  align-items: center;
 }
 
 .table-row td:nth-child(2) {
   flex: 4;
   display: flex;
   flex-direction: column;
-  padding: 0 0 0 .5em;
+  padding: 0 0 0 .5em;  
+}
+
+.table-row td:nth-child(2) span:nth-child(3) {
+  font-size: 1.5em;
 }
 
 .table-header th:nth-child(3), .table-row td:nth-child(3) {  
