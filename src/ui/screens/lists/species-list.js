@@ -41,11 +41,11 @@ export const renderSpeciesCollectionList = (collection, collectionFromLastRound,
         }
     }
 
-    document.querySelectorAll(".table-row td:nth-child(1)").forEach(td => {
-        td.addEventListener('click', event => {
-            event.stopPropagation();
-        });
-    });
+    // document.querySelectorAll(".table-row td:nth-child(1)").forEach(td => {
+    //     td.addEventListener('click', event => {
+    //         event.stopPropagation();
+    //     });
+    // });
 
     document.querySelectorAll(".table-row input[type='checkbox']").forEach(checkbox => {
         if(readOnlyMode) { 
