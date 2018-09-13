@@ -4,14 +4,14 @@
         <div>
             <table class="species-table list-group list-group-flush">
                 <tbody data-repeat-item="{{ collection.items }}">
-                    <tr class="table-row js-list-item" data-toggle="modal" data-target="#imageModal" data-image="{{ item.image }}" data-id="{{ item.name }}" data-src="https://media.eol.org/content/{{ item.image }}">
+                    <tr class="table-row js-list-item">
                         <td>
-                            <img id="{{ item.name }}" src="https://media.eol.org/content/{{ item.image }}" alt="{{ item.name }}">
+                            <img id="{{ item.name }}" src="https://media.eol.org/content/{{ item.image }}" alt="{{ item.name }}" data-toggle="modal" data-target="#imageModal" data-image="{{ item.image }}" data-id="{{ item.name }}" data-src="https://media.eol.org/content/{{ item.image }}">
                         </td>
                         <td>
                             <span style="flex:1" class="capitalise">{{ item.vernacularName }}</span>
                             <span style="flex:1" class="species-card-name">{{ item.shortName }}</span>
-                            <span class="portrait"><input name="{{ item.binomial }}" type="checkbox" checked></span>
+                            <span name="{{ item.binomial }}" class="icon"><i class="fas fa-check-square"></i></span>
                         </td>
                         <td>
                             <span>{{ item.passes }}</span>
