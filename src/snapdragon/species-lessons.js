@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 
-import { utils } from 'utils/utils';
 import { collections } from 'snapdragon/species-collections';
 
 const kg = ['Herbs and Spices', 'Vegetables', 'Fruit', 'Insects'];
@@ -45,7 +44,7 @@ export const rhsTrees = {
 };
 
 export const commonBirds = { 
-    id: 3, name: 'Top 10 UK Birds', 
+    id: 3, name: 'RSPB Top 10 UK Birds', 
     type: 'species',
     descriptions: [
         'The top 10 most common birds in the UK.',
@@ -53,7 +52,7 @@ export const commonBirds = {
         'There were 420,489 respondents.'
     ],
     items: collections[5].items,
-    collections: ['Top 10 UK Birds'],
+    collections: ['RSPB Top 10 UK Birds'],
     thumb: 'https://media.eol.org/content/2015/01/21/07/32241_88_88.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
@@ -85,6 +84,26 @@ export const rhsWeeds1 = {
     course: 'RHS Practical Horticulture'
 };
 
+export const mushroomQuiz = { 
+    id: 5, name: 'Mushroom Quiz', 
+    type: 'species',
+    descriptions: [
+        '10 common mushrooms, 5 are edible, 5 are toxic.',
+        'Can you identify which are safe to gather?'
+    ],
+    items: [ ...collections[7].items ],
+    collections: ['Mushroom Quiz'],
+    thumb: 'https://media.eol.org/content/2015/01/21/07/32241_88_88.jpg',
+    moduleSize: 4,
+    curator: 'Snapdragon',
+    userLevel: 'Amateur mycologists',
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 3,
+    glossary: ['fungi', 'common'],
+    courseId: 1,
+    course: 'Snapdragon'
+};
+
 kitchenGarden.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });
@@ -98,5 +117,9 @@ commonBirds.items.forEach((item,index)=>{
 });
 
 rhsWeeds1.items.forEach((item,index)=>{
+    item.snapIndex = index + 1;
+});
+
+mushroomQuiz.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });

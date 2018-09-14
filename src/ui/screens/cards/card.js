@@ -11,7 +11,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import landscapeTemplate from 'ui/screens/cards/card-template.html';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { getBirdSong } from 'xeno-canto/birdsong';
-import { extraTraits } from 'api/traits';
+import { speciesTraits } from 'api/traits';
 
 export const renderCard = (collection) => {
 
@@ -127,15 +127,21 @@ const renderCommonParts = (template, config, item) => {
     const familyImage = family ? `https://media.eol.org/content/${family.thumb}` : '';
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const occurrences = specific ? specific.subspecies.length : 0;
-    const traits = itemProperties.getNestedTaxonProp(family, config.language, 'traits', 'values');
+    const traits = itemProperties.getNestedTaxonProp(family, config.language, 'traits', 'values');  
     const traitValue = traits !== '' ? R.take(traitsLength, traits).join(', ') : '';
-    const traitName = family.traits.map(trait => trait.name)[0];
-    let place = itemProperties.getTrait(extraTraits, item.name, 'rank', config.language);
+    const traitName = family.traits.map(t => t.name)[0];
+    let trait = itemProperties.getTrait(speciesTraits, item.name, 'rank', config.language).value;
 
-    if(place && place !== '') {
-        place = `UK #` + place;
+    if(trait && trait !== '') {
+        trait = `UK #` + trait;
     }
+
+    trait = itemProperties.getTrait(speciesTraits, item.name, 'edible', config.language);
     
+    if(trait && trait !== '') {
+        trait = trait.value ? 'Edible': 'Toxic';
+    }
+
     const clone = document.importNode(template.content, true);
     
     clone.querySelector('.js-species-card-btn').addEventListener('click', event => {
@@ -145,7 +151,7 @@ const renderCommonParts = (template, config, item) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
     
-    renderTemplate({ species, name, latin, rank, occurrences, family: family.name, familyImage, traitName, traitValue, familyName, place }, template.content, parent, clone);
+    renderTemplate({ species, name, latin, rank, occurrences, family: family.name, familyImage, traitName, traitValue, familyName, trait }, template.content, parent, clone);
 
     const badge = document.querySelector('.badge');
 

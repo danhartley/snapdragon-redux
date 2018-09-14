@@ -12,7 +12,7 @@ export const renderHeaders = collection => {
 
     if(!collection) return;
 
-    DOM.leftHeaderTxt.innerHTML = collection.name;
+    DOM.leftHeaderTxt.innerHTML = collection.name || '';
     
     if(!lessonPlan) return;
 

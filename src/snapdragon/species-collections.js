@@ -4,6 +4,7 @@ import { vegetables } from 'api/snapdragon/vegetables';
 import { fruit } from 'api/snapdragon/fruit';
 import { insects } from 'api/snapdragon/insects';
 import { commonCityBirds } from 'api/snapdragon/common-city-birds';
+import { mushroomQuiz } from 'api/snapdragon/mushroom-quiz';
 import { weeds1 } from 'api/rhs/weeds1';
 
 import { leaf } from 'api/leaf';
@@ -52,7 +53,7 @@ export const collections = [
     {
         id: 6,
         type: 'species',
-        name: 'Top 10 UK Birds',
+        name: 'RSPB Top 10 UK Birds',
         items: commonCityBirds,
         eol_name: '13 Common City Birds',
         eol_link: 'https://eol.org/collections/140683'
@@ -64,6 +65,14 @@ export const collections = [
         items: weeds1,
         eol_name: 'WEEDS I',
         eol_link: 'https://eol.org/collections/140731'        
+    },
+    {
+        id: 8,
+        type: 'species',
+        name: 'Mushroom Quiz',
+        items: mushroomQuiz,
+        eol_name: 'Mushroom Quiz',
+        eol_link: 'https://eol.org/collections/140498'        
     },
     {
         id: 101,

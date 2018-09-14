@@ -1558,4 +1558,211 @@ export const taxa = [
         eol: "http://eol.org/pages/7573/overview",
         wiki: "https://en.wikipedia.org/wiki/Aegithalidae"
     },
+    {
+        taxon: 'family',
+        name: 'Amanitaceae',
+        thumb: "2011/11/02/05/30529_88_88.jpg",
+        names: [ { language: "en", names: ['Amanita Family']} ,
+        { language: "fr", names:[ 'Amanita Family' ]},
+        { language: "de", names:[ 'Amanita Family' ]},
+        { language: "es", names:[ 'Amanita Family' ]},
+        { language: "pt", names:[ 'Amanita Family' ]},
+        { language: "it", names:[ 'Amanitacee' ]}],
+        species: '1000',
+        genera: '2',
+        traits: [ { language: "en", name: 'habitat', values: [ 'Woodlands' ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Many emerge from egg-like structure formed by the universal veil. Mostly deadly are white with white spore prints.',
+                identification: 'Puffball shape but with gills in cross section.'
+            }
+        ],
+        eol: "http://eol.org/pages/2861424/overview",
+        wiki: "https://en.wikipedia.org/wiki/Amanitaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Mycenaceae',
+        thumb: "2017/01/27/21/45835_88_88.jpg",
+        names: [ { language: "en", names: ['Bonnet mushrooms']} ,
+        { language: "fr", names:[ 'Bonnet mushrooms' ]},
+        { language: "de", names:[ 'Bonnet mushrooms' ]},
+        { language: "es", names:[ 'Bonnet mushrooms' ]},
+        { language: "pt", names:[ 'Bonnet mushrooms' ]},
+        { language: "it", names:[ 'Bonnet mushrooms' ]}],
+        species: '705',
+        genera: '10',
+        traits: [ { language: "en", name: 'habitat', values: [ 'Diverse' ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Cosmopolitan distribution. Members are saprobic.',
+                identification: 'Require detailled microscopic examination.'
+            }
+        ],
+        eol: "http://eol.org/pages/6890860/overview",
+        wiki: "https://en.wikipedia.org/wiki/Mycenaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Tricholomataceae',
+        thumb: "2012/06/12/05/72724_88_88.jpg",
+        names: [ { language: "en", names: ['Pale-Spore Mushroom Family']} ,
+        { language: "fr", names:[ 'Pale-Spore Mushroom Family' ]},
+        { language: "de", names:[ 'Ritterlingsverwandte' ]},
+        { language: "es", names:[ 'Pale-Spore Mushroom Family' ]},
+        { language: "pt", names:[ 'Pale-Spore Mushroom Family' ]},
+        { language: "it", names:[ 'Pale-Spore Mushroom Family' ]}],
+        species: '1020',
+        genera: '78',
+        traits: [ { language: "en", name: 'habitat', values: [ 'Meadows', 'Lawns' ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Most species are saprophytic. The family is a mixed bag of heterogeneous genera and species.',
+                identification: 'Pale yellow, pink or white spores.'
+            }
+        ],
+        eol: "http://eol.org/pages/5965/overview",
+        wiki: "https://en.wikipedia.org/wiki/Tricholomataceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Boletaceae',
+        thumb: "2009/06/06/01/14807_88_88.jpg",
+        names: [ { language: "en", names: ['Boletes']} ,
+        { language: "fr", names:[ 'Boletaceae' ]},
+        { language: "de", names:[ 'Dickröhrlingsverwandte' ]},
+        { language: "es", names:[ 'Boletaceae' ]},
+        { language: "pt", names:[ 'Boletaceae' ]},
+        { language: "it", names:[ 'Boletacee' ]}],
+        species: '415',
+        genera: '26',
+        traits: [ { language: "en", name: 'habitat', values: [ 'Moist conditions' ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Widespread. A relatively safe group with many members prized for their flavour.',
+                identification: 'Small pores (tubes) on the underside of the mushroom, instead of gills.'
+            }
+        ],
+        eol: "http://eol.org/pages/5960/overview",
+        wiki: "https://en.wikipedia.org/wiki/Boletaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Boletaceae',
+        thumb: "2009/06/06/01/14807_88_88.jpg",
+        names: [ { language: "en", names: ['Boletes']} ,
+        { language: "fr", names:[ 'Boletaceae' ]},
+        { language: "de", names:[ 'Dickröhrlingsverwandte' ]},
+        { language: "es", names:[ 'Boletaceae' ]},
+        { language: "pt", names:[ 'Boletaceae' ]},
+        { language: "it", names:[ 'Boletacee' ]}],
+        species: '415',
+        genera: '26',
+        traits: [ { language: "en", name: 'habitat', values: [ 'Moist conditions' ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Widespread. A relatively safe group with many members prized for their flavour.',
+                identification: 'Small pores (tubes) on the underside of the mushroom, instead of gills.'
+            }
+        ],
+        eol: "http://eol.org/pages/5960/overview",
+        wiki: "https://en.wikipedia.org/wiki/Boletaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Hydnangiaceae',
+        thumb: "2015/01/06/17/88312_88_88.jpg",
+        names: [ { language: "en", names: ['Hydnangiaceae']} ,
+        { language: "fr", names:[ 'Hydnangiaceae' ]},
+        { language: "de", names:[ 'Hydnangiaceae' ]},
+        { language: "es", names:[ 'Hydnangiaceae' ]},
+        { language: "pt", names:[ 'Hydnangiaceae' ]},
+        { language: "it", names:[ 'Hydnangiaceae' ]}],
+        species: '30',
+        genera: '4',
+        traits: [ { language: "en", name: 'habitat', values: [ 'Coniferous and deciduous forests' ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Widespread in temperate and tropical regions.',
+                identification: 'May have fruit bodies with stipes and caps, or gasteroid (with internal spore production, like puffballs).'
+            }
+        ],
+        eol: "http://eol.org/pages/5982/overview",
+        wiki: "https://en.wikipedia.org/wiki/Hydnangiaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Sclerodermataceae',
+        thumb: "2013/12/02/08/57866_88_88.jpg",
+        names: [ { language: "en", names: ['Earth-balls']} ,
+        { language: "fr", names:[ 'Earth-balls' ]},
+        { language: "de", names:[ 'Earth-balls' ]},
+        { language: "es", names:[ 'Earth-balls' ]},
+        { language: "pt", names:[ 'Earth-balls' ]},
+        { language: "it", names:[ 'Earth-balls' ]}],
+        species: '--',
+        genera: '--',
+        traits: [ { language: "en", name: 'habitat', values: [ 'Rotten wood' ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Species known as the ‘hard-skinned puffballs’, ‘earthballs’, or ’earthstars’, widespread in temperate and tropical regions.',
+                identification: 'More or less spherical in shape, without a stem or with an irregular root-like stem.'
+            }
+        ],
+        eol: "http://eol.org/pages/5944/overview",
+        wiki: "https://en.wikipedia.org/wiki/Sclerodermataceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Auriculariaceae',
+        thumb: "2013/03/21/09/72709_88_88.jpg",
+        names: [ { language: "en", names: ['Jelly fungi']} ,
+        { language: "fr", names:[ 'Jelly fungi' ]},
+        { language: "de", names:[ 'Jelly fungi' ]},
+        { language: "es", names:[ 'Jelly fungi' ]},
+        { language: "pt", names:[ 'Jelly fungi' ]},
+        { language: "it", names:[ 'Jelly fungi' ]}],
+        species: '100',
+        genera: '7',
+        traits: [ { language: "en", name: 'habitat', values: [ 'Dead wood' ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Cosmopolitan. Species saprotrophic, most growing on dead wood.',
+                identification: 'Conspicuous and may be ear-shaped, button-shaped, lobed, or effused.'
+            }
+        ],
+        eol: "http://eol.org/pages/5963/overview",
+        wiki: "https://en.wikipedia.org/wiki/Auriculariaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Agaricaceae',
+        thumb: "2016/08/19/14/07661_88_88.jpg",
+        names: [ { language: "en", names: ['Agaricus', 'True Mushrooms']} ,
+        { language: "fr", names:[ 'Agaricus' ]},
+        { language: "de", names:[ 'Agaricus' ]},
+        { language: "es", names:[ 'Agaricus' ]},
+        { language: "pt", names:[ 'Agaricus' ]},
+        { language: "it", names:[ 'Agaricus' ]}],
+        species: '1340',
+        genera: '85',
+        traits: [ { language: "en", name: 'habitat', values: [ 'Woodland', 'Grassland' ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'wide variety of fruit body morphology. Species include the ‘true puffballs‘.',
+                identification: 'Pileate form dominant with thin gills free from attachment to the stipe. Caps are scurfy to smooth, flat to umbonate.'
+            }
+        ],
+        eol: "http://eol.org/pages/5966/overview",
+        wiki: "https://en.wikipedia.org/wiki/Agaricaceae"
+    },
 ];

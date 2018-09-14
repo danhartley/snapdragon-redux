@@ -76,8 +76,8 @@ const getTrait = (traits, itemName, name, language) => {
     const trait = language 
         ? item.traits.find(t => t.name === name && t.language === language) 
         : item.traits.find(t => t.name === name);
-    if(!trait || !trait.value) return '';
-    return trait.value;
+    if(!trait) return '';
+    return trait;
 }
 
 export const itemProperties = {
