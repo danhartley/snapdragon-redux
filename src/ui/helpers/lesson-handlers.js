@@ -5,7 +5,7 @@ import { stats } from 'ui/helpers/stats';
 const getMode = (mode, isLevelComplete, itemsToReview) => {    
     const _mode = (mode === 'learn' && isLevelComplete && itemsToReview.length > 0)
             ? 'review'
-            : 'learn';
+            : mode === 'review' ? 'learn-again' : 'learn';
     return _mode;
 }
 
@@ -42,7 +42,7 @@ const changeCollection = (lessonStateMode, collections, collection, config, hist
             break;
         }
         case 'nextRound': {
-            const itemsToReview = stats.getItemsForRevision(collection, history, 1);
+            const itemsToReview = stats.getItemsForRevision(collection, history, config, 1);
             const mode = getMode(config.mode, collection.isLevelComplete, itemsToReview);
             config.mode = mode;
 
@@ -56,11 +56,16 @@ const changeCollection = (lessonStateMode, collections, collection, config, hist
                     break;
                 }
                 case 'review' : {
-                    const items = collection.items.filter(item => !item.isDeselected);
-                    actions.boundChangeCollection({ config: config, items: items });
-                    collection.moduleSize = (collection.moduleSize > itemsToReview.length) ? itemsToReview.length : collection.moduleSize;
-                    actions.boundNextRound({ index: 0 });
+                    collection.isLevelComplete = false;
+                    collection.moduleSize = (collection.moduleSize > collection.length) ? collection.length : collection.moduleSize;
+                    collection.rounds = Math.ceil(collection.items.length / collection.moduleSize);
+                    collection.itemIndex = 0;
+                    actions.boundChangeCollection({ config: config, items: itemsToReview });
                     break;
+                }
+                case 'learn-again': {
+                    const items = collections.find(c => c.id === collection.id).items;
+                    actions.boundChangeCollection({ config: config, items: items });
                 }
             }            
             break;      

@@ -3,7 +3,8 @@ import { config as lessonConfig } from 'syllabus/lesson-config';
 
 export const config = (state = lessonConfig, action) => {
     switch(action.type) {
-        case types.CHANGE_COLLECTION:
+        case types.CHANGE_COLLECTION:        
+            return action.data.config || state;
         case types.UPDATE_CONFIG:
             return { ...state, ...action.data };
         case types.UPDATE_LANGUAGE:
