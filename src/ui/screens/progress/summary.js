@@ -8,9 +8,7 @@ import summaryTemplate from 'ui/screens/progress/summary-template.html';
 
 export const renderSummary = (history) => {
 
-    const { score, collection, config: currentConfig, collections } = store.getState();
-
-    const config = { ...currentConfig };
+    const { score, collection, config, collections } = store.getState();
 
     const template = document.createElement('template');
 
@@ -25,7 +23,7 @@ export const renderSummary = (history) => {
     const speciesTestedCount = collection.currentRound * collection.moduleSize;
     const speciesUntestedCount = speciesCount - speciesTestedCount;
 
-    const itemsToReview = stats.getItemsForRevision(collection, history, 1);
+    const itemsToReview = stats.getItemsForRevision(collection, history, config, 1);
     const mode = endOfRoundHandler.getMode(config.mode, collection.isLevelComplete, itemsToReview);
 
     let summary; 
@@ -50,6 +48,10 @@ export const renderSummary = (history) => {
 
     if(mode === 'review') {
         summary = 'Before going to the next level, there are a few questions to review...';
+    }
+
+    if(mode === 'learn-again') {
+        summary = `That's the review over. On to the next level...`;
     }
 
     score.correct = score.correct;

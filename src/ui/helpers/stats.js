@@ -1,6 +1,8 @@
 import { utils } from 'utils/utils';
 
-const getItemScoreStats = (collection, history) => {
+const getItemScoreStats = (collection, history, config) => {
+
+    if(config.mode === 'review') return [];
 
     const reducer = (acc, curr) => {
         return { ...acc,  ...curr };
@@ -25,9 +27,9 @@ const getItemScoreStats = (collection, history) => {
     return items;
 };
 
-const getItemsForRevision = (collection, history, minimumScore) => {
+const getItemsForRevision = (collection, history, config, minimumScore) => {
 
-    const items = getItemScoreStats(collection, history);
+    const items = getItemScoreStats(collection, history, config);
 
     return items.filter(item => item.fails > minimumScore);
 };

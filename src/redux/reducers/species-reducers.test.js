@@ -1,6 +1,6 @@
 import { types } from 'redux/actions/action-types';
 import { collection } from 'redux/reducers/species-reducers';
-import { speciesState } from 'redux/reducers/initial-state/initial-species-state';
+import { speciesStateHelper } from 'redux/reducers/initial-state/initial-species-state';
 
 
 const herbs = {
@@ -40,7 +40,7 @@ const herbs = {
 test('collection should return default parameter state when there is no action type', () => {
 
   const action = { };  
-  const state = collection(speciesState.collection, action);
+  const state = collection(speciesStateHelper.collection, action);
 
   expect(state).toEqual({"currentRound": 0, "descriptions": null, "id": 0, "rounds": 0, isNextRound: true});
 });

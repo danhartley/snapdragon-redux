@@ -1,9 +1,9 @@
 import * as R from 'ramda';
 
 import { types } from 'redux/actions/action-types';
-import { speciesState } from 'redux/reducers/initial-state/initial-species-state';
+import { speciesStateHelper } from 'redux/reducers/initial-state/initial-species-state';
 
-export const collections = (state = speciesState.collections, action) => {
+export const collections = (state = speciesStateHelper.collections, action) => {
     switch(action.type) {
         case types.SELECT_COLLECTION:
             const cols = [ ...state ];
@@ -45,13 +45,23 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
         return { nextRound, itemIndex, nextItem, layoutCounter };
     };
 
-    const changeCollection = (action, state) => {
-        let config = action.data.config;
-        let items = action.data.items;
-        let selectedCollection = state.collections.find(collection => collection.id === config.collection.id);
-        selectedCollection.items = items;
-        let collection = state.initCollection(selectedCollection)
+    const changeCollection = (action, speciesStateHelper) => {
+        
+        const initialCollection = speciesStateHelper.collections.find(collection => collection.id === action.data.config.collection.id);
+        const clonedCollection = R.clone(initialCollection)
+        clonedCollection.items = action.data.items;        
+        
+        let collection = speciesStateHelper.initCollection(clonedCollection);
         let nextItem = collection.items[collection.itemIndex];
+        
+        if(action.data.config.mode === 'learn') {
+            initialCollection.items = R.clone(clonedCollection.items);
+        }
+        if(action.data.config.mode === 'learn-again') {
+            collection.currentRound = collection.rounds;
+            collection.isNextRound = true;
+            collection.isLevelComplete = true;
+        }
         return { collection, nextItem };
     };
 
@@ -59,7 +69,8 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
         let lessonPlan = action.data;
         let isRevision = !!(lessonPlan && lessonPlan.collection);
         let isNextRound = state.layoutCounter === state.layoutCount;
-        return { lessonPlan, isRevision, isNextRound };
+        let layoutCounter = 0;
+        return { lessonPlan, isRevision, isNextRound, layoutCounter };
     };
     
     switch(action.type) {
@@ -72,7 +83,7 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
             return _collection;
         }
         case types.CHANGE_COLLECTION: {
-            const { collection, nextItem } = changeCollection(action, speciesState);
+            const { collection, nextItem } = changeCollection(action, speciesStateHelper);
             return { ...state, ...collection, nextItem };
         }
         case types.NEXT_ITEM: {
@@ -84,9 +95,9 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
             return { ...state, itemIndex, currentRound: nextRound, nextItem, layoutCounter };
         }
         case types.NEXT_LESSON: {
-            const { lessonPlan, isRevision, isNextRound } = getNextLesson(action, state);
+            const { lessonPlan, isRevision, isNextRound, layoutCounter } = getNextLesson(action, state);
             const collection = isRevision ? lessonPlan.collection : state;
-            return { ...collection, isNextRound: false, layoutCount: action.data.layoutCount, isNextRound };
+            return { ...collection, isNextRound: false, layoutCount: action.data.layoutCount, isNextRound, layoutCounter };
         }
         default: {
             return state; 

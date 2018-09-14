@@ -4,7 +4,7 @@ import { stats } from 'ui/helpers/stats';
 
 export const renderHistory = (history) => {
             
-    const { collection, score } = store.getState();
+    const { collection, config } = store.getState();
 
     if(!history) return null;
 
@@ -32,7 +32,7 @@ export const renderHistory = (history) => {
     requiringRevision.header = 'Species requiring revision';
     learnt.header = 'Species correctly answered';
 
-    const items = stats.getItemScoreStats(collection, history);
+    const items = stats.getItemScoreStats(collection, history, config);
 
     const collectionFromLastRound =  { ...collection, ...{ items: items }};
 

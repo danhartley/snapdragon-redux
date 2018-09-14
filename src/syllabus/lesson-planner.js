@@ -17,15 +17,15 @@ const createLessonPlan = (lessonPlan, config, collection) => {
     let wildcardLayouts = wildcards.length > 0 ? getWildcardLayouts(wildcards, collection, moduleSize) : [];
     let layouts = getLayouts(lessonPlan, collection, config, config.mode);
 
-    // reivsion stuff??
+    // if none selected in planner
 
-    // if(layouts.length === 0 && wildcardLayouts.length === 0) {
-    //     const level = getNextLevel(collection.lesson.name, collection.lesson.level.name, config.isPortraitMode);
-    //     collection.lesson.level = level;
-    //     lessonName = collection.lesson.name;
-    //     levelName = collection.lesson.level.name;
-    //     layouts = getLayouts(null, collection, config, config.mode);
-    // }
+    if(layouts.length === 0 && wildcardLayouts.length === 0) {
+        const level = getNextLevel(collection.lesson.name, collection.lesson.level.name, config.isPortraitMode);
+        collection.lesson.level = level;
+        lessonName = collection.lesson.name;
+        levelName = collection.lesson.level.name;
+        layouts = getLayouts(null, collection, config, config.mode);
+    }
 
     return createLesson(
         lessonName,
