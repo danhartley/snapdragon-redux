@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { observeStore } from 'redux/observe-store';
 import { store } from 'redux/store';
 
@@ -33,7 +35,7 @@ test('intial state of the app should be consistent', () => {
 
     const { counter, score, history, revision } = store.getState();
     expect(counter).toEqual(null);
-    expect(score).toEqual( {"answer": "", "binomial": "", "correct": 0, "fails": [], "mode": "learn", "passes": [], "question": "", "success": false, "total": 0, "totalPassPoints":0, "totalPoints": 0, "wrong": 0});
+    expect(score).toEqual(R.clone(progressState.score));
     expect(history).toEqual(null);
     expect(revision).toEqual(undefined);// not in use, not visible in store
 });
@@ -51,7 +53,7 @@ test.skip('when user selects a collection state should be populated', () => {
 
     expect(config.collection.id).toEqual('1');
     expect(collection.name).toEqual('Kitchen Garden');
-    expect(score).toEqual(progressState.score);
+    expect(score).toEqual(R.clone(progressState.score));
 
     const _lessonPlan = { layouts: [] };
 

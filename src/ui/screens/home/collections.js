@@ -10,16 +10,13 @@ import { elem } from 'ui/helpers/class-behaviour';
 import { renderLessonPlans } from 'ui/screens/lists/lesson-plans-table';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
 import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
+import { score } from '../../../redux/reducers/progress-reducers';
 
 export const renderCollections = (counter) => {
 
     const { collections, config, collection: stateCollection, history } = store.getState();
 
     let collection = { ...stateCollection };
-    
-    // if(counter && counter.log) {
-    //     actions.boundSelectCollection(collection);
-    // }    
 
     const template = document.createElement('template');
     template.innerHTML = collectionsTemplate;
@@ -43,13 +40,17 @@ export const renderCollections = (counter) => {
     const selectedCollection = collections.find(c => c.selected);
 
     collection = selectedCollection ? { ...collection, ...selectedCollection } : collection;
-
+    
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
     const collectionsHeader = document.querySelector('.btn-collection');
     const collectionDescription = document.querySelector('.js-selected-description');
     const languagesHeader = document.querySelector('.btn-language');
     const lessonPlanLink = document.querySelector('.js-lesson-plan-link');
+
+    if(counter.isLessonPaused && config.isLandscapeMode) {
+        collectionDescription.innerHTML += `<span class='snap-alert'>If you change lessons your current lesson score will be lost!</span>`;
+    }
     
     elem.hide(lessonPlanLink);
 
@@ -68,7 +69,9 @@ export const renderCollections = (counter) => {
         document.querySelectorAll(`[name="${collection.name}"]`)[0].classList.add('active');
         elem.show(learningActionBtn);
         elem.hide(learningActionBtnPlaceholder);
-        elem.show(lessonPlanLink);
+        if(!counter.isLessonPaused) {
+            elem.show(lessonPlanLink);
+        }        
         collectionsHeader.innerHTML = collection.name;
         if(config.isLandscapeMode) {
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
@@ -80,6 +83,8 @@ export const renderCollections = (counter) => {
 
     // User selects lesson
     
+    let collectionId = collection.id;
+
     selectHandler('.dropdown.js-collections .dropdown-item', id => {
         
         collection = { ...collection, ...collections.find(collection => collection.id === parseInt(id)) };
@@ -94,9 +99,19 @@ export const renderCollections = (counter) => {
             actions.boundSelectCollection(collection);
         }
 
+        if(counter.isLessonPaused && config.isPortraitMode && collection.id !== collectionId) {
+            collectionDescription.innerHTML += `<span class='snap-alert'>If you change lessons your current lesson score will be lost!</span>`;
+        }
+         
         elem.show(learningActionBtn);
         elem.hide(learningActionBtnPlaceholder);        
         elem.show(lessonPlanLink);        
+
+        if(config.isPortraitMode && collection.id === collectionId) {
+            learningActionBtn.innerHTML = 'Continue lesson';
+        } else {
+            learningActionBtn.innerHTML = 'Begin lesson';
+        }
     });
 
     let currentCourseId;
@@ -140,7 +155,7 @@ export const renderCollections = (counter) => {
 
         if(config.isPortraitMode) {            
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
-            if(counter.isLessonPaused) {
+            if(counter.isLessonPaused && collectionId === collection.id) {
                 renderSpeciesCollectionList(collection, null, true);
             } else {
                 actions.boundSelectCollection(collection);

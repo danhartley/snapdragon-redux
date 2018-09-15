@@ -74,6 +74,7 @@ export const renderNavigation = (page) => {
                         name = 'home';
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));        
                         endOfRoundHandler.changeCollection('pauseLesson', collections, collection, config, history); 
+                        const { counter } = store.getState();
                         renderCollections(counter);
                         break;
                     case 'settings':
@@ -82,7 +83,7 @@ export const renderNavigation = (page) => {
                     case 'list':
                         name = 'list';
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));                                   
-                        endOfRoundHandler.changeCollection('pauseLesson', collections, collection, config, history);     
+                        endOfRoundHandler.changeCollection('pauseLesson', collections, collection, config, history); 
                         renderSpeciesCollectionList(collection, null, true);                   
                         break;
                     case 'test':

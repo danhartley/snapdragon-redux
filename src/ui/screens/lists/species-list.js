@@ -17,16 +17,65 @@ export const renderSpeciesCollectionList = (collection, collectionFromLastRound,
 
     buildTable(collection, config);
 
-    const headerCheckbox = document.querySelector(".table-header span.icon");
-    const itemCheckboxes = document.querySelectorAll(".table-row span.icon");
+    
+        const headerCheckbox = document.querySelector(".table-header span.icon");
+        const itemCheckboxes = document.querySelectorAll(".table-row span.icon");
 
-    const isUnchecked = event => {
-        const svg = event.target.parentElement;
-        const checked = svg.classList.contains('fa-check-square');
+        if(headerCheckbox) {
+            if(readOnlyMode) {
+                headerCheckbox.disabled = true;
+            } else {
+                headerCheckbox.addEventListener('click', event => {
+                    event.stopPropagation();
+                    const element  = event.target.nodeName === 'svg' ? event.target : event.target.parentElement;
+                    if(isUnchecked(element)) {
+                        itemCheckboxes.forEach(checkbox => {
+                            uncheck(checkbox);
+                        });        
+                        collection.items.forEach(item => item.isDeselected = true);
+                    } else { 
+                        itemCheckboxes.forEach(checkbox => {
+                            check(checkbox);
+                        });                
+                        collection.items.forEach(item => item.isDeselected = false);
+                    }                
+                    actions.boundChangeCollectionItems(collection.items);
+                });
+            }
+        }
+
+        itemCheckboxes.forEach(checkbox => {
+            if(readOnlyMode) { 
+                checkbox.disabled = true;
+            } else {     
+                checkbox.addEventListener('click', event => {
+                    event.stopPropagation();
+                    const element  = event.target.nodeName === 'svg' ? event.target : event.target.parentElement;
+                    const name = element.parentElement.getAttribute('name');
+                    const item = collection.items.find(item => item.name === name);        
+                    console.log(item.name);        
+                    if(isUnchecked(element)) {
+                        console.log('deselect item:', item.name);
+                        item.isDeselected = true;
+                    } else { 
+                        console.log('select item:', item.name);
+                        item.isDeselected = false;
+                    }
+                    actions.boundChangeCollectionItems(collection.items);
+                });
+            }
+        });
+    
+
+    const isUnchecked = element => {
+        const icon = element.getAttribute('data-icon');;
+        const checked = icon === 'check-square';
         if(checked) {
-            svg.dataset.icon = 'square';
+            element.setAttribute('data-icon', 'square');
+            element.getAttribute('data-icon');
         } else {
-            svg.dataset.icon = 'check-square';
+            element.setAttribute('data-icon', 'check-square');
+            element.getAttribute('data-icon');
         }
         return checked;
     }
@@ -38,45 +87,6 @@ export const renderSpeciesCollectionList = (collection, collectionFromLastRound,
     const uncheck = checkbox => {
         checkbox.childNodes[0].dataset.icon = 'square';
     }
-
-    if(headerCheckbox) {
-        if(readOnlyMode) {
-            headerCheckbox.disabled = true;
-        } else {
-            headerCheckbox.addEventListener('click', event => {
-                event.stopPropagation();
-                if(isUnchecked(event)) {
-                    itemCheckboxes.forEach(checkbox => {
-                        uncheck(checkbox);
-                    });        
-                    collection.items.forEach(item => item.isDeselected = true);
-                } else { 
-                    itemCheckboxes.forEach(checkbox => {
-                        check(checkbox);
-                    });                
-                    collection.items.forEach(item => item.isDeselected = false);
-                }                
-                actions.boundChangeCollectionItems(collection.items);
-            });
-        }
-    }
-
-    itemCheckboxes.forEach(checkbox => {
-        if(readOnlyMode) { 
-            checkbox.disabled = true;
-        } else {     
-            checkbox.addEventListener('click', event => {
-                const name = event.target.parentElement.parentElement.getAttribute('name');
-                const item = collection.items.find(item => item.name === name);
-                if(isUnchecked(event)) {
-                    item.isDeselected = true;
-                } else { 
-                    item.isDeselected = false;
-                }
-                actions.boundChangeCollectionItems(collection.items);
-            });
-        }
-    });
 
     const listItemImages = document.querySelectorAll('.table-row img');
 
