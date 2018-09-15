@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { utils } from 'utils/utils';
 import { types } from 'redux/actions/action-types';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
@@ -26,7 +28,7 @@ export const counter = (state = null, action) => {
     }
 };
 
-export const score = (state = progressState.score, action) => {
+export const score = (state = R.clone(progressState.score), action) => {
     switch(action.type) {
         case types.UPDATE_SCORE:
 
@@ -60,7 +62,8 @@ export const score = (state = progressState.score, action) => {
                 score.failsTotals = score.fails.map(fail => fail.itemId).reduce(utils.itemCountReducer, {});
             }
             return { ...state, ...score};
-        case types.CHANGE_COLLECTION:
+        case types.SELECT_COLLECTION:
+            return R.clone(progressState.score);
         case types.NEXT_ROUND:
         case types.NEXT_LEVEL:
             return { ...progressState.score, ...{ fails: [], passes: []} };
@@ -71,7 +74,7 @@ export const score = (state = progressState.score, action) => {
 
 export const history = (state = null, action) => {
     switch(action.type) {
-        case types.UPDATE_HISTORY:
+        case types.UPDATE_HISTORY: {
           
             const history = { scores: [] };
 
@@ -93,8 +96,10 @@ export const history = (state = null, action) => {
             history.total = historyTotal;
 
             return history;
-            
-            default:
+        }
+        case types.SELECT_COLLECTION:
+            return null;   
+        default:
             return state;
     }
 };

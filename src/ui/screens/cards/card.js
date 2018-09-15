@@ -130,17 +130,13 @@ const renderCommonParts = (template, config, item) => {
     const traits = itemProperties.getNestedTaxonProp(family, config.language, 'traits', 'values');  
     const traitValue = traits !== '' ? R.take(traitsLength, traits).join(', ') : '';
     const traitName = family.traits.map(t => t.name)[0];
-    let trait = itemProperties.getTrait(speciesTraits, item.name, 'rank', config.language).value;
-
-    if(trait && trait !== '') {
-        trait = `UK #` + trait;
-    }
-
-    trait = itemProperties.getTrait(speciesTraits, item.name, 'edible', config.language);
     
-    if(trait && trait !== '') {
-        trait = trait.value ? 'Edible': 'Toxic';
-    }
+    const options = [
+        { name: 'rank', formatter: trait => `UK # ${trait.value}` },
+        { name: 'edible', formatter: trait => trait.value ? 'Edible': 'Toxic' }
+    ]
+
+    let trait = itemProperties.getActiveTrait(speciesTraits, item.name, config.language, options);
 
     const clone = document.importNode(template.content, true);
     

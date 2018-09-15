@@ -740,6 +740,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: var(--snap-text-light) !important;
   background-color: var(--snap-alert) !important;
   border: .05em solid var(--snap-alert);
+  padding: 0 .25em;
 }
 
 .block.white {

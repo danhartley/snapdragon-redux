@@ -11,7 +11,7 @@ export const kitchenGarden = {
     type: 'species',
     descriptions: [
         'This lesson has over 750 questions and will take about 2 hours to complete. Species are native or adapted to a Mediterranean climate.',
-        'You will start by learning to recognise species, become familiar with their common and latin names, and identify their genus. Subsequent levels will build on this knowledge.'        
+        'You will start by learning to recognise species and their names. Subsequent levels will build on this knowledge.'        
     ],    
     items: [ ...kitchenGardenLessons[0].items, ...kitchenGardenLessons[1].items, ...kitchenGardenLessons[2].items, ...kitchenGardenLessons[3].items ],
     collections: kg,
@@ -89,7 +89,7 @@ export const mushroomQuiz = {
     type: 'species',
     descriptions: [
         '10 common mushrooms, 5 are edible, 5 are toxic.',
-        'Can you identify which are safe to gather?'
+        'Can you identify which are safe to eat?'
     ],
     items: [ ...collections[7].items ],
     collections: ['Mushroom Quiz'],

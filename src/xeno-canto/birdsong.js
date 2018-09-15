@@ -1,4 +1,4 @@
-import { extraTraits } from 'api/traits';
+import { speciesTraits } from 'api/traits';
 import { itemProperties } from 'ui/helpers/data-checking';
 
 export const getBirdSong = (item, node, portrait) => {
@@ -25,7 +25,7 @@ export const getBirdSong = (item, node, portrait) => {
             }
         };
 
-        const playerId = itemProperties.getTrait(extraTraits, item.name, 'song');
+        const playerId = itemProperties.getTrait(speciesTraits, item.name, 'song').value;
             
         if(playerId) {
             loadPlayer(playerId);
