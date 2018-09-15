@@ -37,9 +37,9 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
 
     if(utils.isIterable(cultivars)) {
         cultivars.forEach(item => {
-            let screens = [ wildcards[1].screens[0], wildcards[1].screens[1] ];
+            let screens = [ wildcards[0].screens[0], wildcards[0].screens[1] ];
             wildcardLayouts.push({ name: 'screen-cultivar-card', type: 'revision', score: 0, screens, itemIndex: item.index, cultivars: item.cultivars});
-            screens = [ wildcards[1].screens[0], wildcards[1].screens[2] ];
+            screens = [ wildcards[0].screens[0], wildcards[0].screens[2] ];
             wildcardLayouts.push({ name: 'screen-cultivars-species', type: 'test', score: 1, screens, itemIndex: item.index, cultivars: item.cultivars});
         });
     }
@@ -61,9 +61,9 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
 
     if(utils.isIterable(insects)) {
         insects.forEach(item => {
-            let screens = [ wildcards[2].screens[0], wildcards[2].screens[1] ];
+            let screens = [ wildcards[0].screens[0], wildcards[0].screens[1] ];
             wildcardLayouts.push({ name: 'screen-traits-card', type: 'revision', score: 0, screens, itemIndex: item.index, insects});
-            screens = [ wildcards[2].screens[0], wildcards[2].screens[2] ];
+            screens = [ wildcards[0].screens[0], wildcards[0].screens[2] ];
             wildcardLayouts.push({ name: 'screen-traits', type: 'test', score: 1, screens, itemIndex: item.index, insects});
         });
     }
@@ -77,7 +77,7 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
                 wildcardLayoutsForGroup.push(layout);
             }         
         })
-        const definitionLayout = { name: 'screen-definitions', type: 'test', score: 1, screens: [wildcards[3].screens[0], wildcards[3].screens[1]], itemIndex: itemGroup[0], definition: definitions.pop() };
+        const definitionLayout = { name: 'screen-definitions', type: 'test', score: 1, screens: [wildcards[0].screens[0], wildcards[0].screens[1]], itemIndex: itemGroup[0], definition: definitions.pop() };
         wildcardLayoutsForGroup.push(definitionLayout);
     }
 

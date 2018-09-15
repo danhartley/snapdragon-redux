@@ -194,7 +194,6 @@ export const modalImagesHandler = (images, item) => {
 
 export const modalImageHandler = (image, item) => {
     image.addEventListener('click', event => {
-        console.log('image handler')
         const parent = document.querySelector('#imageModal .js-modal-image');
         imageSlider(item, parent, false, image);
         DOM.modalImageTitle.innerHTML = item.name;
