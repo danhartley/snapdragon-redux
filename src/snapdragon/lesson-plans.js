@@ -299,25 +299,28 @@ const landscapeLesson1 = {
         {   id: 2,
             name:'Level 2',
             layouts: [ commonEntry, textCompleteSpecies, genusEntry ],
-            wildcardLayouts : [ latinEpithets, cultivars, glossaryTerms, wildcards ],
+            wildcardLayouts : [ latinEpithets ],
             reviewLayouts: [ commonEntry, textCompleteSpecies, genusEntry ]
         },
         {   id: 3,
             name:'Level 3',
             layouts: [ speciesEntry ],
-            wildcardLayouts : [],
+            wildcardLayouts : [ ],
+            // wildcardLayouts : [ glossaryTerms ],
             reviewLayouts: [ speciesEntry ]
         },
         {   id: 4,
             name:'Level 4',
             layouts: [ speciesGenusEntry ],
-            wildcardLayouts : [],
+            wildcardLayouts : [  ],
+            // wildcardLayouts : [ cultivars ],
             reviewLayouts: [ speciesGenusEntry ]
         },
         {   id: 5,
             name:'Level 5',
             layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
-            wildcardLayouts : [],
+            wildcardLayouts : [ ],
+            // wildcardLayouts : [wildcards ],
             reviewLayouts: [ familyStripsMatch ]
         }   
     ]
@@ -351,25 +354,28 @@ const portraitLesson1 = {
         {   id: 2,
             name:'Level 2',
             layouts: [ commonEntry, textCompleteSpecies, genusEntry ],
-            wildcardLayouts : [ [specimen, epithets], [specimen, cultivarCard, cultivar], [specimen, wildcardCard, wildcard], [specimen, definitions] ],
+            wildcardLayouts : [ [epithets] ],
             reviewLayouts: [ commonEntry, textCompleteSpecies, genusEntry ]
         },
         {   id: 3,
             name:'Level 3',
             layouts: [ speciesEntry ],
             wildcardLayouts : [],
+            // wildcardLayouts : [[definitions]],
             reviewLayouts: [ speciesEntry ]
         },
         {   id: 4,
             name:'Level 4',
             layouts: [ speciesGenusEntry ],
             wildcardLayouts : [],
+            // wildcardLayouts : [[cultivarCard, cultivar]],
             reviewLayouts: [ speciesGenusEntry ]
         },
         {   id: 5,
             name:'Level 5',
             layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
             wildcardLayouts : [],
+            // wildcardLayouts : [[wildcardCard, wildcard]],
             reviewLayouts: [ familyStripsMatch ]
         }   
     ]

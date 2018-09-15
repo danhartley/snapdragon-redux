@@ -13,11 +13,9 @@ const createLessonPlan = (lessonPlan, config, collection) => {
     }
     const moduleSize = collection.moduleSize || config.moduleSize;
     let { lesson: { name: lessonName, level: { name: levelName }}, excludeRevision, isPortraitMode } = collection;
-    const wildcards = config.mode === 'learn' ? getLayouts(lessonPlan, collection, config, 'wildcard') : [];
+    let wildcards = config.mode === 'learn' ? getLayouts(lessonPlan, collection, config, 'wildcard') : [];
     let wildcardLayouts = wildcards.length > 0 ? getWildcardLayouts(wildcards, collection, moduleSize) : [];
     let layouts = getLayouts(lessonPlan, collection, config, config.mode);
-
-    // if none selected in planner
 
     if(layouts.length === 0 && wildcardLayouts.length === 0) {
         const level = getNextLevel(collection.lesson.name, collection.lesson.level.name, config.isPortraitMode);
@@ -25,6 +23,8 @@ const createLessonPlan = (lessonPlan, config, collection) => {
         lessonName = collection.lesson.name;
         levelName = collection.lesson.level.name;
         layouts = getLayouts(null, collection, config, config.mode);
+        wildcards = config.mode === 'learn' ? getLayouts(lessonPlan, collection, config, 'wildcard') : [];
+        wildcardLayouts = wildcards.length > 0 ? getWildcardLayouts(wildcards, collection, moduleSize) : [];
     }
 
     return createLesson(
