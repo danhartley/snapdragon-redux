@@ -36,12 +36,13 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
         let nextRound = (state.currentRound === state.rounds) ? 1 : state.currentRound + 1;
         let itemIndex = state.moduleSize * (nextRound -1);
         let nextItem = state.items[itemIndex];
+        let layoutCounter = state.layoutCounter;
         if(state.isLevelComplete) {
             itemIndex = 0;
             nextRound = 1;
             nextItem = state.items[itemIndex];
-        }
-        let layoutCounter = 0;
+            layoutCounter = 0;
+        }        
         return { nextRound, itemIndex, nextItem, layoutCounter };
     };
 

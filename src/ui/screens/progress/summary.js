@@ -40,18 +40,19 @@ export const renderSummary = (history) => {
             summary = `Congratulations! You have completed level ${collection.lesson.level.id}. 
                 Continue with the lesson to learn more species from ${collection.name}.` 
         }
-        if(collection.isLevelComplete && collectionComplete) {
-            summary = `You have completed the collection. Well done! 
-                Begin a new collection, review questions you got wrong, or consolidate what you have just learnt.`
-        }
     }
 
     if(mode === 'review') {
         summary = 'Before going to the next level, there are a few questions to review...';
     }
 
-    if(mode === 'learn-again') {
+    if(mode === 'learn-again' && !collectionComplete) {
         summary = `That's the review over. On to the next level...`;
+    }
+
+    if(collection.isLevelComplete && collectionComplete) {
+        summary = `You have completed the collection. Well done! 
+            Begin a new collection, review questions you got wrong, or consolidate what you have just learnt.`
     }
 
     score.correct = score.correct;

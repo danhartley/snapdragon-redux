@@ -36,7 +36,7 @@ test.skip('config should return current level where there is no next available l
     expect(level.name).toEqual('Level 5');
 });
 
-test.skip('config should return current level where there is no previous available level', () => {
-    const level = lessonPlanner.getPreviousLevel('Lesson 1', 'Level 1');
-    expect(level.name).toEqual('Level 1');
-});
+// test.skip('config should return current level where there is no previous available level', () => {
+//     const level = lessonPlanner.getPreviousLevel('Lesson 1', 'Level 1');
+//     expect(level.name).toEqual('Level 1');
+// });
