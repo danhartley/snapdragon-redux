@@ -51,8 +51,7 @@ export const renderSpeciesCollectionList = (collection, collectionFromLastRound,
                 event.stopPropagation();
                 const element  = event.target.nodeName === 'svg' ? event.target : event.target.parentElement;
                 const name = element.parentElement.getAttribute('name');
-                const item = collection.items.find(item => item.name === name);        
-                console.log(item.name);        
+                const item = collection.items.find(item => item.name === name);
                 if(isUnchecked(element)) {
                     item.isDeselected = true;
                 } else { 

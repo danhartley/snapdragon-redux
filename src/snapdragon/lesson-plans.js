@@ -269,7 +269,7 @@ const cultivars = {
     ]
 };
 
-const wildcards = {
+const connections = {
     name: 'screen-connections',
     type: 'test',
     score: 1,
@@ -305,22 +305,19 @@ const landscapeLesson1 = {
         {   id: 3,
             name:'Level 3',
             layouts: [ speciesEntry ],
-            wildcardLayouts : [ ],
-            // wildcardLayouts : [ glossaryTerms ],
+            wildcardLayouts : [ glossaryTerms ],
             reviewLayouts: [ speciesEntry ]
         },
         {   id: 4,
             name:'Level 4',
             layouts: [ speciesGenusEntry ],
-            wildcardLayouts : [  ],
-            // wildcardLayouts : [ cultivars ],
+            wildcardLayouts : [ cultivars ],
             reviewLayouts: [ speciesGenusEntry ]
         },
         {   id: 5,
             name:'Level 5',
             layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
-            wildcardLayouts : [ ],
-            // wildcardLayouts : [wildcards ],
+            wildcardLayouts : [ connections ],
             reviewLayouts: [ familyStripsMatch ]
         }   
     ]
@@ -360,22 +357,19 @@ const portraitLesson1 = {
         {   id: 3,
             name:'Level 3',
             layouts: [ speciesEntry ],
-            wildcardLayouts : [],
-            // wildcardLayouts : [[definitions]],
+            wildcardLayouts : [[definitions]],
             reviewLayouts: [ speciesEntry ]
         },
         {   id: 4,
             name:'Level 4',
             layouts: [ speciesGenusEntry ],
-            wildcardLayouts : [],
-            // wildcardLayouts : [[cultivarCard, cultivar]],
+            wildcardLayouts : [[cultivarCard, cultivar]],
             reviewLayouts: [ speciesGenusEntry ]
         },
         {   id: 5,
             name:'Level 5',
             layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
-            wildcardLayouts : [],
-            // wildcardLayouts : [[wildcardCard, wildcard]],
+            wildcardLayouts : [[wildcardCard, wildcard]],
             reviewLayouts: [ familyStripsMatch ]
         }   
     ]

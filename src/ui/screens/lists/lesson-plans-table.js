@@ -74,27 +74,36 @@ export const renderLessonPlans = (lessonPlanId) => {
     let newLessonPlan = R.clone(lessonPlan);
     let screenName;
     
+    const removeLayouts = (layoutType, levelId) => {
+        const currentLevelLayouts = newLessonPlan.levels.find(level => level.id === levelId)[layoutType];
+        const layouts = currentLevelLayouts.map(layout =>  { 
+            if(layout.name === screenName) {
+                layout.isDeselected = true;
+            }              
+            return layout;
+        });
+        return layouts;
+    }
+
+    const revertLayouts = (layoutType, levelId) => {
+        const layouts = newLessonPlan.levels.find(level => level.id === levelId)[layoutType];
+        layouts.forEach(layout => {
+            if(layout.name === screenName) {
+                layout.isDeselected = false;
+            }
+        });
+    }
+
     document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
         checkbox.addEventListener('click', event => {
             screenName = event.target.name;
             const levelId = parseInt(event.target.dataset.levelId);                  
             if(event.target.checked) {
-                const newLayouts = newLessonPlan.levels.find(level => level.id === levelId).layouts;
-                newLayouts.forEach(layout => {
-                    if(layout.name === screenName) {
-                        const defaultLayout = lessonPlan.levels.find(level => level.id === levelId).layouts.find(layout => layout.name === screenName);
-                        layout === defaultLayout;
-                    }
-                });                
+                revertLayouts('layouts', levelId);
+                revertLayouts('wildcardLayouts', levelId);
             } else {                
-                const currentLevelLayouts = newLessonPlan.levels.find(level => level.id === levelId).layouts;
-                const newLayouts = currentLevelLayouts.map(layout =>  { 
-                    if(layout.name === screenName) {
-                        layout = { name: screenName };
-                    }              
-                    return layout;
-                });      
-                newLessonPlan.levels.find(level => level.id === levelId).layouts = newLayouts;
+                removeLayouts('layouts', levelId);
+                removeLayouts('wildcardLayouts', levelId);
             }
         });
     });
@@ -104,7 +113,13 @@ export const renderLessonPlans = (lessonPlanId) => {
             const layouts = level.layouts.filter(layout => { 
                 return layout.screens;
             });
-            return { ...level, layouts: layouts };
+            return { ...level, layouts: layouts.filter(layout => !layout.isDeselected) };
+        });
+        newLessonPlan.levels = newLessonPlan.levels.map(level => { 
+            const wildcardLayouts = level.wildcardLayouts.filter(layout => { 
+                return layout.screens;
+            });
+            return { ...level, wildcardLayouts: wildcardLayouts.filter(layout => !layout.isDeselected) };
         });
         actions.boundchangeLessonPlan(newLessonPlan);        
         event.target.classList.add('snap-success');
