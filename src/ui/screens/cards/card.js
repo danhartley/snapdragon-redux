@@ -12,6 +12,8 @@ import landscapeTemplate from 'ui/screens/cards/card-template.html';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { getBirdSong } from 'xeno-canto/birdsong';
 import { speciesTraits } from 'api/traits';
+import { characteristics } from 'api/snapdragon/mycological-characteristics';
+import { infoSlider } from 'ui/screens/common/info-slider';
 
 export const renderCard = (collection) => {
 
@@ -77,6 +79,12 @@ const renderLandscape = (template, item, config) => {
             });
         }
     });    
+
+    const info = characteristics.find(c => c.name === item.name);
+
+    if(info) {
+        infoSlider(info, document.querySelector('.js-info-box'));
+    }
 
     const wikiNode = document.querySelector('.js-species-card-wiki');
 

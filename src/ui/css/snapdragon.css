@@ -1111,26 +1111,51 @@ table {
   margin: .5em 0;
 }
 
-.carousel.slide {
+#imageSlider .carousel.slide {
   background-color: var(--snap-modal-background);
 }
 
-.carousel-item {
+#imageSlider .carousel-item {
   height: 40vh;
 }
 
-.carousel-item img {
+#imageSlider .carousel-item img {
   object-fit: cover;
   height: inherit;
 }
 
-.modal .carousel-item img {
+#imageSlider .modal .carousel-item img {
   object-fit: contain;
 }
 
-.carousel-control-next-icon, .carousel-control-prev-icon {
+#imageSlider .carousel-control-next-icon, #imageSlider .carousel-control-prev-icon {
   width: 1.5em;
   height: 1.5em;
+}
+
+.info-box {
+  width: 100%;
+}
+
+.info-box #traitSlider {
+  float: right;
+  width: 60%;
+  border: .05em solid var(--snap-border-dark);
+}
+
+#traitSlider .carousel-item div {
+  padding: .5em;
+  text-align: center;
+  background-color: rgb(128, 128, 128);
+  margin: 0 15%;
+}
+
+#traitSlider .carousel-item div:nth-child(1) {
+  color: rgb(233, 220, 203)
+}
+
+#traitSlider .carousel-item div:nth-child(2) {
+  background-color: rgba(128, 128, 128,.5);
 }
 
 #listModal .modal-body {
@@ -1210,8 +1235,7 @@ table {
 }
 
 .bird-song {
-  display: flex;
-  margin: 1em 0;
+  display: flex;    
 }
 
 .bird-song div {
@@ -1232,6 +1256,10 @@ table {
 
 .bird-song-icon-disabled {
   color: rgba(0,0,0,.2);
+}
+
+.bird-song-spacing {
+  margin: 1em 0;
 }
 
 iframe#birdsong {

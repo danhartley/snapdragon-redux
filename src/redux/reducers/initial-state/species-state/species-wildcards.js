@@ -37,7 +37,6 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
     const wildcardLayouts = [];
     const wildcardLayoutsForGroup = [];
 
-    
     if(epithetScreens) {
 
         const epithets = getSpeciesEpithets([ ...collection.items ]).filter(utils.onlyUnique);

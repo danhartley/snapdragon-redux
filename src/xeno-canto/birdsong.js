@@ -22,6 +22,8 @@ export const getBirdSong = (item, node, portrait) => {
             if(portrait) {
                 node.classList.remove('bird-song-icon-disabled');
                 node.classList.add('bird-song-icon');
+            } else {
+                node.parentElement.classList.add('bird-song-spacing');
             }
         };
 
