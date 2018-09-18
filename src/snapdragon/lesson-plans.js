@@ -336,6 +336,27 @@ const landscapeLesson2 = {
     ]
 };
 
+const landscapeLesson3 = {
+    id: 3,
+    name:'Lesson 3',
+    portrait: false,
+    default: false,
+    levels: [
+        {   id: 1,
+            name:'Level 1',
+            layouts: [ speciesRevision, commonToLatinMatch ],
+            wildcardLayouts : [glossaryTerms],
+            reviewLayouts: [ commonToLatinMatch ]
+        },
+        {   id: 2,
+            name:'Level 2',
+            layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
+            wildcardLayouts : [],
+            reviewLayouts: [ familyMatch, familyStripsMatch ]
+        }   
+    ]
+};
+
 const portraitLesson1 = {
     id: 101,
     name:'Lesson 101',
@@ -357,7 +378,7 @@ const portraitLesson1 = {
         {   id: 3,
             name:'Level 3',
             layouts: [ speciesEntry ],
-            wildcardLayouts : [[definitions]],
+            wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ speciesEntry ]
         },
         {   id: 4,
@@ -392,13 +413,13 @@ const portraitLesson3 = {
     id: 103,
     name:'Lesson 103',
     portrait: true,
-    default: true,
+    default: false,
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ speciesRevision, commonEntry ],
-            wildcardLayouts : [],
-            reviewLayouts: [ commonEntry ]
+            layouts: [ speciesRevision, commonToLatinMatch ],
+            wildcardLayouts : [glossaryTerms],
+            reviewLayouts: [ commonToLatinMatch ]
         },
         {   id: 2,
             name:'Level 2',
@@ -412,6 +433,7 @@ const portraitLesson3 = {
 export const lessonPlans = [
     landscapeLesson1,
     landscapeLesson2, 
+    landscapeLesson3,
     portraitLesson1,
     portraitLesson2,
     portraitLesson3

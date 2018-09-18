@@ -97,9 +97,9 @@ export const mushroomQuiz = {
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'Amateur mycologists',
-    lessonPlanLandscape: 1,
+    lessonPlanLandscape: 3,
     lessonPlanPortrait: 103,
-    glossary: ['fungi', 'common'],
+    glossary: ['fungi'],
     courseId: 1,
     course: 'Snapdragon'
 };

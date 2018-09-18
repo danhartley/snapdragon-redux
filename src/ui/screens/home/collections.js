@@ -87,6 +87,7 @@ export const renderCollections = (counter) => {
 
     selectHandler('.dropdown.js-collections .dropdown-item', id => {
         
+        collectionId = parseInt(id);
         collection = { ...collection, ...collections.find(collection => collection.id === parseInt(id)) };
         collectionsHeader.innerHTML = collection.name;
         const descriptions = collection.descriptions.map(description => `<span>${description}</span>`).join('');

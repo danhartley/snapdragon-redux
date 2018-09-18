@@ -122,7 +122,7 @@ const renderPortrait = (template, item, config) => {
 
 const renderCommonParts = (template, config, item) => {
 
-    const traitsLength = config.isPortraitMode ? 2 : 5;
+    // const traitsLength = config.isPortraitMode ? 2 : 5;
 
     const species = item.name;    
     const name = itemProperties.vernacularName(item, config);
