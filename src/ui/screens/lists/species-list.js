@@ -100,7 +100,7 @@ export const renderSpeciesCollectionList = (collection, collectionFromLastRound,
             continueLearningActionBtn.innerHTML = 'Continue lesson';
         }
 
-        continueLearningActionBtn.addEventListener('click', () => {
+        continueLearningActionBtn.addEventListener('click', event => {
 
             if(readOnlyMode) {
                 const lessonStateMode = counter.isLessonPaused ? 'restartLesson' : 'nextRound';
@@ -114,6 +114,8 @@ export const renderSpeciesCollectionList = (collection, collectionFromLastRound,
 
             subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
             subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
+
+            event.target.setAttribute("disabled", "disabled");
         });
     }
 };

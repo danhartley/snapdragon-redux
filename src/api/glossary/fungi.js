@@ -94,7 +94,7 @@ export const fungi = [
     },
     {
         term: "Decurrent",
-        definition: "Gills or pores are broadly attached to and extends down the stipe."
+        definition: "Gills or pores are broadly attached to and extend down the stipe."
     },
     {
         term: "Ostiole",
