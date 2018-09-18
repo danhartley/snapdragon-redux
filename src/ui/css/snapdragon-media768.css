@@ -223,4 +223,10 @@
     .snapdragon-container {
         border: 1px solid var(--snap-primary);
     }    
+    .info-box #traitSlider {     
+        width: 60%;
+    }
+    #traitSlider .carousel-item div {
+        padding: .5em;
+    }
 }

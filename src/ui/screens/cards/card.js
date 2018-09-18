@@ -135,9 +135,9 @@ const renderCommonParts = (template, config, item) => {
     const familyImage = family ? `https://media.eol.org/content/${family.thumb}` : '';
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const occurrences = specific ? specific.subspecies.length : 0;
-    const traits = itemProperties.getNestedTaxonProp(family, config.language, 'traits', 'values');  
-    const traitValue = traits !== '' ? R.take(traitsLength, traits).join(', ') : '';
-    const traitName = family.traits.map(t => t.name)[0];
+    // const traits = itemProperties.getNestedTaxonProp(family, config.language, 'traits', 'values');  
+    // const traitValue = traits !== '' ? R.take(traitsLength, traits).join(', ') : '';
+    // const traitName = family.traits.map(t => t.name)[0];
     
     const options = [
         { name: 'rank', formatter: trait => `UK # ${trait.value}` },
@@ -155,7 +155,8 @@ const renderCommonParts = (template, config, item) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
     
-    renderTemplate({ species, name, latin, rank, occurrences, family: family.name, familyImage, traitName, traitValue, familyName, trait }, template.content, parent, clone);
+    renderTemplate({ species, name, latin, rank, occurrences, family: family.name, familyImage, familyName, trait }, template.content, parent, clone);
+    // renderTemplate({ species, name, latin, rank, occurrences, family: family.name, familyImage, traitName, traitValue, familyName, trait }, template.content, parent, clone);
 
     const badge = document.querySelector('.badge');
 

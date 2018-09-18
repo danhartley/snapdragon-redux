@@ -1139,12 +1139,12 @@ table {
 
 .info-box #traitSlider {
   float: right;
-  width: 60%;
+  width: 100%;
   border: .05em solid var(--snap-border-dark);
 }
 
 #traitSlider .carousel-item div {
-  padding: .5em;
+  padding: 0em;
   text-align: center;
   background-color: rgb(128, 128, 128);
   margin: 0 15%;
@@ -1156,6 +1156,10 @@ table {
 
 #traitSlider .carousel-item div:nth-child(2) {
   background-color: rgba(128, 128, 128,.5);
+}
+
+#traitSlider .carousel-control-next-icon {
+  color: black;
 }
 
 #listModal .modal-body {
