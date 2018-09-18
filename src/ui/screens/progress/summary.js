@@ -64,11 +64,13 @@ export const renderSummary = (history) => {
     const learnMoreBtn = document.querySelector('.js-summmary-btn-action');
 
     const handleBtnClickEvent = event => {
-        
+
         subscription.getByName('renderSummary').forEach(sub => subscription.remove(sub));
         subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
 
         endOfRoundHandler.changeCollection('nextRound', collections, collection, config, history);
+
+        event.target.setAttribute("disabled", "disabled");
     };
 
     learnMoreBtn.removeEventListener('click', handleBtnClickEvent);

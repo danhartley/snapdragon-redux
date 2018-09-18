@@ -5,6 +5,7 @@ import { getSpeciesEpithets } from 'redux/reducers/initial-state/species-state/s
 import { getSpeciesCultivars } from 'redux/reducers/initial-state/species-state/species-cultivars';
 import { syndromes } from 'api/snapdragon/syndromes';
 import { getGlossary } from 'api/glossary/glossary';
+import { collections } from '../../species-reducers';
 
 export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
 
@@ -29,6 +30,10 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
     [ ...collection.items].forEach((item, index) => {
         group.push(index);
         if((index + 1) % moduleSize === 0) {
+            itemGroups.push(group);
+            group = [];
+        }
+        if((index + 1) % moduleSize !== 0 && (index + 1) === collection.items.length) {
             itemGroups.push(group);
             group = [];
         }

@@ -215,7 +215,7 @@ export const renderMultiStrips = (collection) => {
 
         const { term, definition } = layout.definition;
 
-        description = config.isPortraitMode ? `What does ${term} mean?` : `Which definition best fits the word \'${term}?\'`;
+        description = `What does ${term} mean?`;
 
         const number = config.isPortraitMode ? 3 : 5;
 
