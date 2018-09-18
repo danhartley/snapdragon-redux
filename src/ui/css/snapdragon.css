@@ -1139,12 +1139,13 @@ table {
 
 .info-box #traitSlider {
   float: right;
-  width: 60%;
-  border: .05em solid var(--snap-border-dark);
+  width: 100%;
+  /* border: .05em solid var(--snap-border-dark); */
+  border: .05em solid rgba(128, 128, 128,.7);
 }
 
 #traitSlider .carousel-item div {
-  padding: .5em;
+  padding: 0em;
   text-align: center;
   background-color: rgb(128, 128, 128);
   margin: 0 15%;
@@ -1156,6 +1157,18 @@ table {
 
 #traitSlider .carousel-item div:nth-child(2) {
   background-color: rgba(128, 128, 128,.5);
+}
+
+#traitSlider .carousel-control-next-icon {
+  color: black;
+}
+
+#traitSlider .carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+#traitSlider .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }
 
 #listModal .modal-body {

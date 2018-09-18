@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-import { collections } from 'snapdragon/species-collections';
+import { collections } from 'snapdragon/eol-collections';
 
 const kg = ['Herbs and Spices', 'Vegetables', 'Fruit', 'Insects'];
 
@@ -20,7 +20,7 @@ export const kitchenGarden = {
     curator: 'Snapdragon',
     userLevel: 'General Interest',
     lessonPlanLandscape: 1,
-    lessonPlanPortrait: 3,
+    lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
     courseId: 1,
     course: 'Snapdragon'
@@ -37,7 +37,7 @@ export const rhsTrees = {
     curator: 'Snapdragon',
     userLevel: 'RHS students',
     lessonPlanLandscape: 1,
-    lessonPlanPortrait: 3,
+    lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
     courseId: 2,
     course: 'RHS Practical Horticulture'
@@ -58,7 +58,7 @@ export const commonBirds = {
     curator: 'Snapdragon',
     userLevel: 'General Interest',
     lessonPlanLandscape: 1,
-    lessonPlanPortrait: 3,
+    lessonPlanPortrait: 101,
     glossary: ['animalia', 'common'],
     courseId: 1,
     course: 'Snapdragon'
@@ -78,7 +78,7 @@ export const rhsWeeds1 = {
     curator: 'Snapdragon',
     userLevel: 'RHS students',
     lessonPlanLandscape: 1,
-    lessonPlanPortrait: 3,
+    lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
     courseId: 2,
     course: 'RHS Practical Horticulture'
@@ -97,9 +97,9 @@ export const mushroomQuiz = {
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'Amateur mycologists',
-    lessonPlanLandscape: 1,
-    lessonPlanPortrait: 3,
-    glossary: ['fungi', 'common'],
+    lessonPlanLandscape: 3,
+    lessonPlanPortrait: 103,
+    glossary: ['fungi'],
     courseId: 1,
     course: 'Snapdragon'
 };
@@ -123,3 +123,11 @@ rhsWeeds1.items.forEach((item,index)=>{
 mushroomQuiz.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });
+
+export const snapdragonCollections = [
+    kitchenGarden,
+    rhsTrees,
+    commonBirds,
+    rhsWeeds1,
+    mushroomQuiz
+];

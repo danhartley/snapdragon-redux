@@ -2,7 +2,7 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { config } from 'syllabus/lesson-config';
-import { kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, mushroomQuiz } from 'snapdragon/species-lessons';
+import { kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, mushroomQuiz } from 'snapdragon/snapdragon-collections';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
 

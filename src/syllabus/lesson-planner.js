@@ -34,7 +34,6 @@ const createLessonPlan = (lessonPlan, config, collection) => {
             layouts = getLayouts(lessonPlan, collection, config, config.mode);
             wildcards = config.mode === 'learn' ? getLayouts(lessonPlan, collection, config, 'wildcard') : [];
             wildcardLayouts = wildcards.length > 0 ? getWildcardLayouts(wildcards, collection, moduleSize) : [];
-            collection.currentRound = 1;
 
             increment++;
 

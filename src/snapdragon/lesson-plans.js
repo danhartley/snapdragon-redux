@@ -336,9 +336,30 @@ const landscapeLesson2 = {
     ]
 };
 
-const portraitLesson1 = {
+const landscapeLesson3 = {
     id: 3,
-    name:'Lesson 1',
+    name:'Lesson 3',
+    portrait: false,
+    default: false,
+    levels: [
+        {   id: 1,
+            name:'Level 1',
+            layouts: [ speciesRevision, commonToLatinMatch ],
+            wildcardLayouts : [glossaryTerms],
+            reviewLayouts: [ commonToLatinMatch ]
+        },
+        {   id: 2,
+            name:'Level 2',
+            layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
+            wildcardLayouts : [],
+            reviewLayouts: [ familyMatch, familyStripsMatch ]
+        }   
+    ]
+};
+
+const portraitLesson1 = {
+    id: 101,
+    name:'Lesson 101',
     portrait: true,
     default: true,
     levels: [
@@ -357,7 +378,7 @@ const portraitLesson1 = {
         {   id: 3,
             name:'Level 3',
             layouts: [ speciesEntry ],
-            wildcardLayouts : [[definitions]],
+            wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ speciesEntry ]
         },
         {   id: 4,
@@ -376,8 +397,8 @@ const portraitLesson1 = {
 };
 
 const portraitLesson2 = {
-    id: 4,
-    name:'Lesson 4',
+    id: 102,
+    name:'Lesson 102',
     portrait: true,
     levels: [
         {   id: 1,
@@ -388,9 +409,32 @@ const portraitLesson2 = {
     ]
 };
 
+const portraitLesson3 = {
+    id: 103,
+    name:'Lesson 103',
+    portrait: true,
+    default: false,
+    levels: [
+        {   id: 1,
+            name:'Level 1',
+            layouts: [ speciesRevision, commonToLatinMatch ],
+            wildcardLayouts : [glossaryTerms],
+            reviewLayouts: [ commonToLatinMatch ]
+        },
+        {   id: 2,
+            name:'Level 2',
+            layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
+            wildcardLayouts : [],
+            reviewLayouts: [ familyMatch, familyStripsMatch ]
+        }   
+    ]
+};
+
 export const lessonPlans = [
     landscapeLesson1,
     landscapeLesson2, 
+    landscapeLesson3,
     portraitLesson1,
-    portraitLesson2
+    portraitLesson2,
+    portraitLesson3
 ]

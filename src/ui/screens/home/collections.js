@@ -10,7 +10,7 @@ import { elem } from 'ui/helpers/class-behaviour';
 import { renderLessonPlans } from 'ui/screens/lists/lesson-plans-table';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
 import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
-import { score } from '../../../redux/reducers/progress-reducers';
+import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
 
 export const renderCollections = (counter) => {
 
@@ -87,6 +87,7 @@ export const renderCollections = (counter) => {
 
     selectHandler('.dropdown.js-collections .dropdown-item', id => {
         
+        collectionId = parseInt(id);
         collection = { ...collection, ...collections.find(collection => collection.id === parseInt(id)) };
         collectionsHeader.innerHTML = collection.name;
         const descriptions = collection.descriptions.map(description => `<span>${description}</span>`).join('');
@@ -177,7 +178,8 @@ export const renderCollections = (counter) => {
     // Populates lesson plan modal
 
     lessonPlanLink.addEventListener('click', event => {
-        const planId = config.isPortraitMode ? 3 : 1;
+        const snapdragonCollection = snapdragonCollections.find(sc => sc.id === collectionId);
+        const planId = config.isPortraitMode ? snapdragonCollection.lessonPlanPortrait : snapdragonCollection.lessonPlanLandscape;
         renderLessonPlans(planId);
     });
     

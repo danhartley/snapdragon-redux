@@ -215,9 +215,9 @@ export const renderMultiStrips = (collection) => {
 
         const { term, definition } = layout.definition;
 
-        description = config.isPortraitMode ? `What does ${term} mean?` : `What is the meaning of the word \'${term}?\'`;
+        description = config.isPortraitMode ? `What does ${term} mean?` : `Which definition best fits the word \'${term}?\'`;
 
-        const number = config.isPortraitMode ? 4 : 5;
+        const number = config.isPortraitMode ? 3 : 5;
 
         const definitions = getGlossary(collection.glossary);
         

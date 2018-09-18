@@ -80,11 +80,11 @@ const renderLandscape = (template, item, config) => {
         }
     });    
 
-    const info = characteristics.find(c => c.name === item.name);
+    // const info = characteristics.find(c => c.name === item.name);
 
-    if(info) {
-        infoSlider(info, document.querySelector('.js-info-box'));
-    }
+    // if(info) {
+    //     infoSlider(info, document.querySelector('.js-info-box'));
+    // }
 
     const wikiNode = document.querySelector('.js-species-card-wiki');
 
@@ -122,7 +122,7 @@ const renderPortrait = (template, item, config) => {
 
 const renderCommonParts = (template, config, item) => {
 
-    const traitsLength = config.isPortraitMode ? 2 : 5;
+    // const traitsLength = config.isPortraitMode ? 2 : 5;
 
     const species = item.name;    
     const name = itemProperties.vernacularName(item, config);
@@ -135,9 +135,9 @@ const renderCommonParts = (template, config, item) => {
     const familyImage = family ? `https://media.eol.org/content/${family.thumb}` : '';
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const occurrences = specific ? specific.subspecies.length : 0;
-    const traits = itemProperties.getNestedTaxonProp(family, config.language, 'traits', 'values');  
-    const traitValue = traits !== '' ? R.take(traitsLength, traits).join(', ') : '';
-    const traitName = family.traits.map(t => t.name)[0];
+    // const traits = itemProperties.getNestedTaxonProp(family, config.language, 'traits', 'values');  
+    // const traitValue = traits !== '' ? R.take(traitsLength, traits).join(', ') : '';
+    // const traitName = family.traits.map(t => t.name)[0];
     
     const options = [
         { name: 'rank', formatter: trait => `UK # ${trait.value}` },
@@ -155,7 +155,8 @@ const renderCommonParts = (template, config, item) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
     
-    renderTemplate({ species, name, latin, rank, occurrences, family: family.name, familyImage, traitName, traitValue, familyName, trait }, template.content, parent, clone);
+    renderTemplate({ species, name, latin, rank, occurrences, family: family.name, familyImage, familyName, trait }, template.content, parent, clone);
+    // renderTemplate({ species, name, latin, rank, occurrences, family: family.name, familyImage, traitName, traitValue, familyName, trait }, template.content, parent, clone);
 
     const badge = document.querySelector('.badge');
 
@@ -181,5 +182,10 @@ const renderCommonParts = (template, config, item) => {
             html += '</div>';
             list.innerHTML = html;
         });
+    }
+    const info = characteristics.find(c => c.name === item.name);
+
+    if(info) {
+        infoSlider(info, document.querySelector('.js-info-box'));
     }
 };
