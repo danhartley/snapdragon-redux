@@ -1,6 +1,6 @@
 import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
-import { kitchenGarden, rhsTrees, commonBirds } from 'snapdragon/species-lessons';
+import { kitchenGarden, rhsTrees, commonBirds } from 'snapdragon/snapdragon-collections';
 import { renderTemplate } from 'ui/helpers/templating';
 import snapdragonTemplate from 'ui/screens/home/snapdragon-template.html';
 

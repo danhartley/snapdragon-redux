@@ -1,4 +1,4 @@
-import { collections } from 'snapdragon/species-collections';
+import { collections } from 'snapdragon/eol-collections';
 
 test('should return at least one lesson module with at least one item', () => {    
     expect(collections.length).toBeGreaterThan(0);

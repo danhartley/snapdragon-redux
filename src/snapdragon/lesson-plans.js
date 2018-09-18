@@ -337,8 +337,8 @@ const landscapeLesson2 = {
 };
 
 const portraitLesson1 = {
-    id: 3,
-    name:'Lesson 1',
+    id: 101,
+    name:'Lesson 101',
     portrait: true,
     default: true,
     levels: [
@@ -376,8 +376,8 @@ const portraitLesson1 = {
 };
 
 const portraitLesson2 = {
-    id: 4,
-    name:'Lesson 4',
+    id: 102,
+    name:'Lesson 102',
     portrait: true,
     levels: [
         {   id: 1,
@@ -388,9 +388,31 @@ const portraitLesson2 = {
     ]
 };
 
+const portraitLesson3 = {
+    id: 103,
+    name:'Lesson 103',
+    portrait: true,
+    default: true,
+    levels: [
+        {   id: 1,
+            name:'Level 1',
+            layouts: [ speciesRevision, commonEntry ],
+            wildcardLayouts : [],
+            reviewLayouts: [ commonEntry ]
+        },
+        {   id: 2,
+            name:'Level 2',
+            layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
+            wildcardLayouts : [],
+            reviewLayouts: [ familyMatch, familyStripsMatch ]
+        }   
+    ]
+};
+
 export const lessonPlans = [
     landscapeLesson1,
     landscapeLesson2, 
     portraitLesson1,
-    portraitLesson2
+    portraitLesson2,
+    portraitLesson3
 ]

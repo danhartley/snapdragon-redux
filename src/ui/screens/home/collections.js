@@ -10,7 +10,7 @@ import { elem } from 'ui/helpers/class-behaviour';
 import { renderLessonPlans } from 'ui/screens/lists/lesson-plans-table';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
 import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
-import { score } from '../../../redux/reducers/progress-reducers';
+import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
 
 export const renderCollections = (counter) => {
 
@@ -177,7 +177,8 @@ export const renderCollections = (counter) => {
     // Populates lesson plan modal
 
     lessonPlanLink.addEventListener('click', event => {
-        const planId = config.isPortraitMode ? 3 : 1;
+        const snapdragonCollection = snapdragonCollections.find(sc => sc.id === collectionId);
+        const planId = config.isPortraitMode ? snapdragonCollection.lessonPlanPortrait : snapdragonCollection.lessonPlanLandscape;
         renderLessonPlans(planId);
     });
     
