@@ -139,6 +139,7 @@ hr {
 }
 
 .lessons-list .card {
+  height: 60vh;
   text-align: left;
 }
 
