@@ -372,7 +372,7 @@ const portraitLesson1 = {
         {   id: 2,
             name:'Level 2',
             layouts: [ commonEntry, textCompleteSpecies, genusEntry ],
-            wildcardLayouts : [ [epithets] ],
+            wildcardLayouts : [ latinEpithets ],
             reviewLayouts: [ commonEntry, textCompleteSpecies, genusEntry ]
         },
         {   id: 3,
@@ -384,13 +384,13 @@ const portraitLesson1 = {
         {   id: 4,
             name:'Level 4',
             layouts: [ speciesGenusEntry ],
-            wildcardLayouts : [[cultivarCard, cultivar]],
+            wildcardLayouts : [ cultivars ],
             reviewLayouts: [ speciesGenusEntry ]
         },
         {   id: 5,
             name:'Level 5',
             layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
-            wildcardLayouts : [[wildcardCard, wildcard]],
+            wildcardLayouts : [ connections ],
             reviewLayouts: [ familyStripsMatch ]
         }   
     ]
