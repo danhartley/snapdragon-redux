@@ -1136,7 +1136,7 @@ table {
 }
 
 #imageSlider .carousel-item {
-  height: 40vh;
+  height: 35vh;
   padding: 0 10%;
 }
 
@@ -1161,7 +1161,6 @@ table {
 .info-box #traitSlider {
   float: right;
   width: 100%;
-  /* border: .05em solid var(--snap-border-dark); */
   border: .05em solid rgba(128, 128, 128,.7);
 }
 
@@ -1173,7 +1172,6 @@ table {
 
 #traitSlider .carousel-item div:nth-child(1) {
   background-color: rgba(128, 128, 128,.3);
-  /* color: rgb(233, 220, 203) */
 }
 
 #traitSlider .carousel-item div:nth-child(2) {
