@@ -31,6 +31,7 @@ li {
 }
 
 progress {
+  margin: 0;
   width: 100%;
   border: 0;
   background: var(--snap-progress-bg);

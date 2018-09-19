@@ -3,7 +3,6 @@ import { actions } from 'redux/actions/action-creators';
 import { renderSettings } from 'ui/fixtures/settings';
 import { renderTemplate } from 'ui/helpers/templating';
 import { subscription } from 'redux/subscriptions';
-import {renderSnapdragon } from 'ui/screens/home/snapdragon';
 import { renderCollections } from 'ui/screens/home/collections';
 import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
