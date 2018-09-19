@@ -18,6 +18,12 @@ export const fungi = [
         level: 1
     },
     {
+        term: "Parasitic",
+        definition: "Fungus that lives off a living host.",
+        wiki: "https://en.wikipedia.org/wiki/Parasitism",
+        level: 1
+    },
+    {
         term: "Lamella or Gill",
         definition: "Papery rib under the cap of some mushroom species (esp. agarics) used for spore dispersal.",
         wiki: "https://en.wikipedia.org/wiki/Lamella_(mycology)",

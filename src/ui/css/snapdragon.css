@@ -31,7 +31,7 @@ li {
 }
 
 progress {
-  margin: 0;
+  margin: 0 !important;
   width: 100%;
   border: 0;
   background: var(--snap-progress-bg);
@@ -1113,16 +1113,35 @@ table {
   margin: .5em 0;
 }
 
+#imageModal .modal-body {
+  padding: 0;
+}
+
+#imageSlider .carousel-inner {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(211, 214, 173,.4);
+}
+
+#imageSlider .carousel-control-next, #imageSlider .carousel-control-prev {
+  top: 40%;
+  height: 20%;
+  width: 10%;
+  background-color: rgba(211, 214, 173,.2);
+  opacity: .5;
+}
+
 #imageSlider .carousel.slide {
   background-color: var(--snap-modal-background);
 }
 
 #imageSlider .carousel-item {
   height: 40vh;
+  padding: 0 10%;
 }
 
 #imageSlider .carousel-item img {
-  object-fit: cover;
+  object-fit: contain;
   height: inherit;
 }
 
@@ -1148,17 +1167,17 @@ table {
 
 #traitSlider .carousel-item div {
   padding: 0em;
-  text-align: center;
-  background-color: rgb(128, 128, 128);
+  text-align: center;  
   margin: 0 15%;
 }
 
 #traitSlider .carousel-item div:nth-child(1) {
-  color: rgb(233, 220, 203)
+  background-color: rgba(128, 128, 128,.3);
+  /* color: rgb(233, 220, 203) */
 }
 
 #traitSlider .carousel-item div:nth-child(2) {
-  background-color: rgba(128, 128, 128,.5);
+  background-color: rgba(128, 128, 128,.1);
 }
 
 #traitSlider .carousel-control-next-icon {
@@ -1166,11 +1185,11 @@ table {
 }
 
 #traitSlider .carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23b3b19f' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
 }
 
 #traitSlider .carousel-control-next-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23b3b19f' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }
 
 #listModal .modal-body {

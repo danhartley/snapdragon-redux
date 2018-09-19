@@ -114,6 +114,7 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
         wildcardLayoutsForGroup.push(definitionLayout);
     }
     
+    collection.itemGroup = itemGroup;
 
     return wildcardLayoutsForGroup;
 };
