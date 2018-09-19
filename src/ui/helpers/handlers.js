@@ -202,35 +202,31 @@ export const modalImageHandler = (image, item) => {
 };
 
 export const radioButonClickhandler = (config, template, description1, description2, answers, submitBtn, question) => {
+    
+    const parent = DOM.rightBody;
+    parent.innerHTML = '';
 
-    // const render = (target = '.js-rb-answer-btn') => {
-        const parent = DOM.rightBody;
-        parent.innerHTML = '';
+    renderTemplate({ description1, description2, answers }, template.content, parent);
 
-        renderTemplate({ description1, description2, answers }, template.content, parent);
+    document.querySelector('input[name="answer"]:checked').checked = false;
 
-        document.querySelector('input[name="answer"]:checked').checked = false;
+    const answerBtn = document.querySelector(submitBtn);
 
-        const answerBtn = document.querySelector(submitBtn);
-
-        const callback = (colour, score, scoreUpdateTimer) => {            
-            answerBtn.disabled = false;
-            answerBtn.classList.add(colour);
-            answerBtn.removeEventListener('click', scoreEventHandler);     
-            answerBtn.addEventListener('click', () => {
-                window.clearTimeout(scoreUpdateTimer);
-                actions.boundUpdateScore(score);
-            });
-        };
-
-        const scoreEventHandler = event => {
-            const answer = document.querySelector('input[name="answer"]:checked').value;
-            const score = { ...question, answer, event };
-            // const score = { itemId: item.id, question, answer, event, layoutCount: lessonPlan.layouts.length, points: layout.points };
-            scoreHandler('radio', score, callback, config);            
-        };
-
-        answerBtn.addEventListener('click', scoreEventHandler)
+    const callback = (colour, score, scoreUpdateTimer) => {            
+        answerBtn.disabled = false;
+        answerBtn.classList.add(colour);
+        answerBtn.removeEventListener('click', scoreEventHandler);     
+        answerBtn.addEventListener('click', () => {
+            window.clearTimeout(scoreUpdateTimer);
+            actions.boundUpdateScore(score);
+        });
     };
 
-// }
+    const scoreEventHandler = event => {
+        const answer = document.querySelector('input[name="answer"]:checked').value;
+        const score = { ...question, answer, event };
+        scoreHandler('radio', score, callback, config);            
+    };
+
+    answerBtn.addEventListener('click', scoreEventHandler)
+};

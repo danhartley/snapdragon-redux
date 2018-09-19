@@ -1,0 +1,25 @@
+<div class="snapdragon-container js-species-card">            
+    <div class="portrait-grid species-card-images carousel js-species-card-images"></div>  
+    <!-- <div class="js-rb-group"></div> -->
+    <div class="radio-buttons-group btn-group btn-group-toggle" data-toggle="buttons" data-repeat-answer="{{ answers }}">                
+        <div class="radio-buttons">
+            <label class="btn">
+                <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}" autocomplete="off" checked> {{ answer }}
+            </label>
+        </div>                
+    </div>
+    <div class="text-question js-txt-question"></div>
+
+    <div class="js-multi-question question-container">
+        <span>{{ description1 }}</span>
+        <span>{{ description2 }}</span>
+    </div>
+
+    <!-- <div class="js-update-btn"></div> -->
+    <div class="action-update-container">
+        <div class="action-update">
+            <div></div>
+            <button class="btn btn-light js-rb-answer-btn">Check your answer</button>
+        </div>
+    </div>
+</div>

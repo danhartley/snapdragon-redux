@@ -143,6 +143,11 @@ const wildcard = {
   domain: 'collection'
 };
 
+const visualMatch = {
+  name: 'visual-match',
+  domain: 'collection'
+};
+
 export const screens = {
   specimen,
   history,
@@ -169,5 +174,7 @@ export const screens = {
   cultivarCard,
   cultivar,
   wildcardCard,
-  wildcard
+  wildcard,
+
+  visualMatch
 };

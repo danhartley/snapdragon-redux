@@ -1,6 +1,6 @@
 import { screens } from 'snapdragon/screen-layouts';
 
-const { specimen, revision, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete, cultivar, cultivarCard, epithets, wildcardCard, wildcard, definitions } = screens;
+const { specimen, revision, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete, cultivar, cultivarCard, epithets, wildcardCard, wildcard, definitions, visualMatch } = screens;
 
 const speciesRevision = {
     name: 'screen-species-card',
@@ -89,6 +89,20 @@ const textCompleteGenus = {
 };
 
 //  2 points
+
+const multiVisualMatch = {
+    name: 'screen-visual-match',
+    type:'test',
+    score: 1,
+    points: 2,
+    kind: 'MC',
+    given: 'Specimen image',
+    options: 'Choose species',
+    screens: [
+        { ...specimen },
+        { ...visualMatch  }
+    ]
+};
 
 const familyMatch = {
     name: 'screen-species-to-family',
@@ -292,7 +306,8 @@ const landscapeLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ],
+            layouts: [ speciesRevision, multiVisualMatch ],
+            // layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ],
             wildcardLayouts : [],
             reviewLayouts: [ latinToCommonMatch ]
         },

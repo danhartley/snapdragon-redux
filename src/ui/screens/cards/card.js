@@ -1,5 +1,3 @@
-import * as R from 'ramda';
-
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
