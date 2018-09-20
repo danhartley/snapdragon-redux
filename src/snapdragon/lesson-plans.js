@@ -1,6 +1,6 @@
 import { screens } from 'snapdragon/screen-layouts';
 
-const { specimen, revision, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete, cultivar, cultivarCard, epithets, wildcardCard, wildcard, definitions, visualMatch } = screens;
+const { specimen, speciesCard, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete, cultivar, cultivarCard, epithets, wildcardCard, wildcard, definitions, visualMatch, definitionCard } = screens;
 
 const speciesRevision = {
     name: 'screen-species-card',
@@ -12,7 +12,7 @@ const speciesRevision = {
     options: 'Species summary',
     screens: [
         { ...specimen },
-        { ...revision }
+        { ...speciesCard }
     ]
 };
 
@@ -27,6 +27,20 @@ const taxonRevision = {
     screens: [
         { ...specimen },
         { ...taxon }
+    ]
+};
+
+const definitionRevision = {
+    name: 'screen-definition-card',
+    type:'revision',
+    score: 0,
+    kind: 'F',
+    points: 0,
+    given: 'Study',
+    options: 'Glossary definitions',
+    screens: [
+        { ...specimen },
+        { ...definitionCard }
     ]
 };
 
@@ -88,21 +102,21 @@ const textCompleteGenus = {
     ]
 };
 
-//  2 points
-
 const multiVisualMatch = {
     name: 'screen-visual-match',
     type:'test',
     score: 1,
-    points: 2,
+    points: 1,
     kind: 'MC',
     given: 'Specimen image',
     options: 'Choose species',
     screens: [
         { ...specimen },
-        { ...visualMatch  }
+        { ...visualMatch }
     ]
 };
+
+//  2 points
 
 const familyMatch = {
     name: 'screen-species-to-family',
@@ -298,6 +312,11 @@ const connections = {
     ]
 };
 
+const screenType = (multiVisualMatch, type) => {
+    multiVisualMatch.screens[1].type = type;
+    return multiVisualMatch;
+};
+
 const landscapeLesson1 = {
     id: 1,
     name:'Lesson 1',
@@ -306,8 +325,7 @@ const landscapeLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ speciesRevision, multiVisualMatch ],
-            // layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ],
+            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ],
             wildcardLayouts : [],
             reviewLayouts: [ latinToCommonMatch ]
         },
@@ -358,8 +376,9 @@ const landscapeLesson3 = {
     default: false,
     levels: [
         {   id: 1,
-            name:'Level 1',
-            layouts: [ speciesRevision, commonToLatinMatch ],
+            name:'Level 1',            
+            // layouts: [ speciesRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'vernacular') }, latinToCommonMatch, taxonRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'binomial') }, commonToLatinMatch  ],
+            layouts: [ speciesRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'vernacular') }, definitionRevision, latinToCommonMatch, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'binomial') }, commonToLatinMatch  ],
             wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ commonToLatinMatch ]
         },
@@ -380,13 +399,13 @@ const portraitLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ],
+            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch ],
             wildcardLayouts : [],
             reviewLayouts: [ latinToCommonMatch ]
         },
         {   id: 2,
             name:'Level 2',
-            layouts: [ commonEntry, textCompleteSpecies, genusEntry ],
+            layouts: [ textCompleteGenus, commonEntry, textCompleteSpecies, genusEntry ],
             wildcardLayouts : [ latinEpithets ],
             reviewLayouts: [ commonEntry, textCompleteSpecies, genusEntry ]
         },
@@ -431,8 +450,8 @@ const portraitLesson3 = {
     default: false,
     levels: [
         {   id: 1,
-            name:'Level 1',
-            layouts: [ speciesRevision, commonToLatinMatch ],
+            name:'Level 1',            
+            layouts: [ speciesRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'vernacular') }, latinToCommonMatch, definitionRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'binomial') }, commonToLatinMatch  ],
             wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ commonToLatinMatch ]
         },

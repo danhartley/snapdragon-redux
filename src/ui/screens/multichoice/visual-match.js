@@ -1,12 +1,11 @@
-import * as R from 'ramda';
-
+import { utils } from 'utils/utils';
 import { store } from 'redux/store';
-import { renderTemplate } from 'ui/helpers/templating';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { radioButonClickhandler } from 'ui/helpers/handlers';
 import visualMatchTemplate from 'ui/screens/multichoice/visual-match-template.html';
-import rbGroupTemplate from 'ui/screens/multichoice/radiobutton-group-template.html';
-import updateBtnTemplate from 'ui/screens/multichoice/update-btn-template.html';
+import { itemProperties } from '../../helpers/data-checking';
+
+// Specimen carousel not working on this screen (works fine for portrait)
 
 export const renderVisualMatch = collection => {
 
@@ -20,25 +19,23 @@ export const renderVisualMatch = collection => {
 
     const description1 = 'Can you identify the species?';
     const description2 = '';
-    const itemGroup = [0,1,2,3]; //collection.itemGroup
-    const answers = collection.items.filter((item, index) => R.contains(index, itemGroup)).map(item => item.name);
+    
+    const answers = layout.screens[1].type === 'binomial' 
+            ? itemProperties.itemNames(collection.items, collection.itemGroup)
+            : itemProperties.vernacularNames(collection.items, config, collection.itemGroup);
 
-    // const rbGroup = document.createElement('template');
+    const questionValue = layout.screens[1].type === 'binomial'
+            ? item.name
+            : item.names.filter(names => names.language === config.language)[0].vernacularName;
 
-    // rbGroup.innerHTML = rbGroupTemplate;
+    const vernacularName = layout.screens[1].type === 'binomial'
+            ? ''
+            : item.names.filter(names => names.language === config.language)[0].vernacularName;
 
-    // renderTemplate({}, rbGroup.content, document.querySelector('.js-rb-group'));
-
-    // const updateBtn = document.createElement('template');
-
-    // updateBtn.innerHTML = updateBtnTemplate;
-
-    // renderTemplate({}, updateBtn.content, document.querySelector('.js-update-btn'));
-
-    const question = { question: item.name, binomial: item.name };
+    const question = { question: questionValue, binomial: item.name, vernacular: vernacularName };
     const questionFormat = { itemId: item.id, question, layoutCount: lessonPlan.layouts.length, points: layout.points };
 
-    radioButonClickhandler(config, template, description1, description2, answers, '.js-rb-answer-btn', questionFormat);
+    radioButonClickhandler(config, template, description1, description2, utils.shuffleArray(answers), '.js-rb-answer-btn', questionFormat);
     
     imageSlider(item, document.querySelector('.js-species-card-images'), true);
 };

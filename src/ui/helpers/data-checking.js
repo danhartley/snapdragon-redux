@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { utils } from 'utils/utils';
 import { epithets } from 'api/botanical-latin';
 import { taxa } from '../../api/snapdragon/taxa';
@@ -96,6 +98,17 @@ const getActiveTrait = (traits, itemName, language, options) => {
     return traitValues.reduce(reducer, '');
 }
 
+const vernacularNames = (items, config, itemGroup) => {
+    const names = itemGroup ? items.filter((item, index) => R.contains(index, itemGroup)).map(item => item.names): items.map(item => item.names);
+    const vernaculars = names.map(itemNames => itemNames.filter(name => name.language === config.language));
+    return vernaculars.map(name => name[0].vernacularName);
+};
+
+const itemNames = (items, itemGroup) => {
+    const names = itemGroup ? items.filter((item, index) => R.contains(index, itemGroup)).map(item => item.name) : items.map(item => item.name);
+    return names;
+};
+
 export const itemProperties = {
     vernacularName,
     genusName,
@@ -106,5 +119,7 @@ export const itemProperties = {
     trimLatinName,
     familyVernacularNames,
     getTrait,
-    getActiveTrait
+    getActiveTrait,
+    vernacularNames,
+    itemNames
 };

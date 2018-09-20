@@ -3,6 +3,8 @@ import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 import { imageSlider } from 'ui/screens/common/image-slider';
+import updateBtnTemplate from 'ui/screens/multichoice/update-btn-template.html';
+
 
 export const scoreHandler = (type, score, callback, config) => {
     
@@ -207,6 +209,12 @@ export const radioButonClickhandler = (config, template, description1, descripti
     parent.innerHTML = '';
 
     renderTemplate({ description1, description2, answers }, template.content, parent);
+    
+    const updateBtn = document.createElement('template');
+
+    updateBtn.innerHTML = updateBtnTemplate;
+
+    renderTemplate({}, updateBtn.content, document.querySelector('.js-update-btn'));
 
     document.querySelector('input[name="answer"]:checked').checked = false;
 

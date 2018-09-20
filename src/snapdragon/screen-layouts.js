@@ -10,10 +10,16 @@ const history = {
   template: 'js-history-template'
 };
 
-const revision = {
+const speciesCard = {
   name: 'species-card',
   domain: 'collection',
   template: 'js-card-revision-template'
+};
+
+const definitionCard = {
+  name: 'definition-card',
+  domain: 'collection',
+  // template: 'js-definition-card-template'
 };
 
 const scientifics = {
@@ -152,7 +158,8 @@ export const screens = {
   specimen,
   history,
 
-  revision,
+  speciesCard,
+  definitionCard,
   scientifics,
   vernaculars,
   species,

@@ -78,12 +78,6 @@ const renderLandscape = (template, item, config) => {
         }
     });    
 
-    // const info = characteristics.find(c => c.name === item.name);
-
-    // if(info) {
-    //     infoSlider(info, document.querySelector('.js-info-box'));
-    // }
-
     const wikiNode = document.querySelector('.js-species-card-wiki');
 
     renderWiki(wikiNode, item, config.language);
