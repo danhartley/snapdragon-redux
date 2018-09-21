@@ -7,7 +7,7 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         layouts = layouts.filter(layout => layout.type !== 'revision');
     }
 
-    let lessonPlan = { layouts: [] }, layoutIndex = 0;
+    let lessonPlan = { layouts: [] };
 
 
         const itemsCountToDate = (collection.currentRound - 1) * moduleSize;
@@ -31,35 +31,32 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
     const offSet = (collection.currentRound - 1) * moduleSize;
 
     const newLessonLayouts = lessonLayouts.map( (layout, i) => {
-        layout.layoutIndex = layoutIndex;
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, layoutsToAdd, i);
         layout.progressIndex = i + 1;
-        layoutIndex = layoutIndex + 1;
         return { ...layout };
     });
 
     revisionLayouts.forEach( (layout, i) => {
-        layout.layoutIndex = layoutIndex;
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, layoutsToAdd, i);
-        layoutIndex = layoutIndex + 1;
         const arrayIndex = newLessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
         newLessonLayouts.splice(arrayIndex, 0, layout);
 
     });
 
+    let hasGlossary = false;
+    const glossary = lessonPlan.layouts.find(layout => layout.name === 'screen-definition-card');
+
+    if(glossary) {
+        newLessonLayouts.forEach((layout, index) => {
+            if(layout.name === 'screen-common-to-latin' && !hasGlossary) {
+                glossary.itemIndex = 0;
+                newLessonLayouts.splice(index, 0, glossary);
+                hasGlossary = true;
+            }
+        });
+    }
+
     lessonPlan.layouts = [ ...newLessonLayouts ];
-
-    // let hasGlossary = false;
-    // const glossary = lessonPlan.layouts.find(layout => layout.name === 'screen-definition-card');
-
-    // lessonPlan.layouts.forEach(layout => {
-    //     if(layout.name === 'screen-common-to-latin' && !hasGlossary) {
-    //         const arrayIndex = lessonPlan.layouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
-    //         lessonPlan.layouts.splice(arrayIndex, 0, glossary);
-    //         hasGlossary = true;
-    //         return;
-    //     }
-    // });
 
     lessonPlan.lessonName = lessonName;
     lessonPlan.levelName = levelName;

@@ -131,11 +131,15 @@ hr {
   display: none;
 }
 
-.home, .settings, .list {
+.home, .settings, .list, .glossary {
   cursor: pointer;
   font-size: 1.6em;
   margin: 0 .25em 0 0;
   color: var(--snap-text-dark);
+}
+
+.glossary svg{
+  vertical-align: text-bottom;
 }
 
 .lessons-list .card {
@@ -160,6 +164,11 @@ hr {
 
 .active-icon {
   color: var(--snap-active);
+}
+
+.inactive-icon {
+  color: var(--snap-inactive);
+  cursor: not-allowed;
 }
 
 .line {
@@ -764,15 +773,22 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .modal-text {
   margin: 1em;
-  /* color: var(--snap-text-light); */
+}
+
+.modal-body.glossary-modal {
+  padding: 0;
+}
+
+.modal-body.glossary-modal .modal-text {
+  margin: 0;
+}
+
+.modal-body.settings-modal {
+  padding: 1em;
 }
 
 #listModal .modal-content {
   background-color: var(--snap-modal-content-background);
-}
-
-#listModal .modal-body, #listModal .list-group-collection {
-  /* background-color: var(--snap-modal-background); */
 }
 
 #listModal .scrollable {

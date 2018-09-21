@@ -5,8 +5,6 @@ import { radioButonClickhandler } from 'ui/helpers/handlers';
 import visualMatchTemplate from 'ui/screens/multichoice/visual-match-template.html';
 import { itemProperties } from '../../helpers/data-checking';
 
-// Specimen carousel not working on this screen (works fine for portrait)
-
 export const renderVisualMatch = collection => {
 
     const item = collection.nextItem;
@@ -37,5 +35,7 @@ export const renderVisualMatch = collection => {
 
     radioButonClickhandler(config, template, description1, description2, utils.shuffleArray(answers), '.js-rb-answer-btn', questionFormat);
     
-    imageSlider(item, document.querySelector('.js-species-card-images'), true);
+    if(config.isPortraitMode) {
+        imageSlider(item, document.querySelector('.js-species-card-images'), true);
+    }
 };

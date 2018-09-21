@@ -101,7 +101,7 @@ const getActiveTrait = (traits, itemName, language, options) => {
 const vernacularNames = (items, config, itemGroup) => {
     const names = itemGroup ? items.filter((item, index) => R.contains(index, itemGroup)).map(item => item.names): items.map(item => item.names);
     const vernaculars = names.map(itemNames => itemNames.filter(name => name.language === config.language));
-    return vernaculars.map(name => name[0].vernacularName);
+    return vernaculars.map(name => utils.capitaliseFirst(name[0].vernacularName));
 };
 
 const itemNames = (items, itemGroup) => {

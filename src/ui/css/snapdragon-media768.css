@@ -193,6 +193,10 @@
         max-width: 60vw;
     }
 
+    #menuModal .modal-dialog {
+        max-width: 40vw;
+    }
+
     #imageSlider .carousel-item {
         height: 60vh;
     }

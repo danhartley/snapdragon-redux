@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { screens } from 'snapdragon/screen-layouts';
 
 const { specimen, speciesCard, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete, cultivar, cultivarCard, epithets, wildcardCard, wildcard, definitions, visualMatch, definitionCard } = screens;
@@ -378,7 +380,7 @@ const landscapeLesson3 = {
         {   id: 1,
             name:'Level 1',            
             // layouts: [ speciesRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'vernacular') }, latinToCommonMatch, taxonRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'binomial') }, commonToLatinMatch  ],
-            layouts: [ speciesRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'vernacular') }, definitionRevision, latinToCommonMatch, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'binomial') }, commonToLatinMatch  ],
+            layouts: [ speciesRevision, { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'vernacular') }, definitionRevision, latinToCommonMatch, { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'binomial') }, commonToLatinMatch  ],
             wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ commonToLatinMatch ]
         },
