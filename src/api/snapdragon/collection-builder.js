@@ -86,7 +86,6 @@ const init = () => {
                     data.eolName = item.name; 
                     data.name = binomial;
                     items.push(data);
-                    console.log(data);
                     itemSelector(items);
                 });
             });

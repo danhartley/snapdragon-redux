@@ -5,7 +5,6 @@ import { getSpeciesEpithets } from 'redux/reducers/initial-state/species-state/s
 import { getSpeciesCultivars } from 'redux/reducers/initial-state/species-state/species-cultivars';
 import { syndromes } from 'api/snapdragon/syndromes';
 import { getGlossary } from 'api/glossary/glossary';
-import { collections } from '../../species-reducers';
 
 export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
 
@@ -22,22 +21,6 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
     const cultivarScreens = getScreens(wildcards, 'screen-cultivars');
     const connectionScreens = getScreens(wildcards, 'screen-connections');
     const definitionScreens = getScreens(wildcards, 'screen-definitions');
-
-    // e.g. [0,1,2,3,4,5,6], [7,8,9,10,11,12]
-
-    let itemGroups = [];
-    let group = [];
-    [ ...collection.items].forEach((item, index) => {
-        group.push(index);
-        if((index + 1) % moduleSize === 0) {
-            itemGroups.push(group);
-            group = [];
-        }
-        if((index + 1) % moduleSize !== 0 && (index + 1) === collection.items.length) {
-            itemGroups.push(group);
-            group = [];
-        }
-    });
 
     const wildcardLayouts = [];
     const wildcardLayoutsForGroup = [];
@@ -96,11 +79,11 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
         }
     }
 
-    const itemGroup = itemGroups[collection.currentRound - 1];        
+    collection.itemGroup = collection.itemGroups[collection.currentRound - 1];        
         
     if(utils.isIterable(wildcardLayouts)) {
         wildcardLayouts.forEach(layout => {
-            if(R.contains(layout.itemIndex, itemGroup)) {
+            if(R.contains(layout.itemIndex, collection.itemGroup)) {
                 wildcardLayoutsForGroup.push(layout);
             }         
         })        
@@ -109,12 +92,14 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
     if(definitionScreens) {
 
         const definitions = utils.shuffleArray(getGlossary(collection.glossary));
-        
-        const definitionLayout = { name: 'screen-definitions', type: 'test', score: 1, screens: [definitionScreens[0], definitionScreens[1]], itemIndex: itemGroup[0], definition: definitions.pop() };
-        wildcardLayoutsForGroup.push(definitionLayout);
+        const level1 = definitions.filter(def => def.level === 1);
+        level1.forEach((def,index) => {
+            if(index < 3) {
+                const definitionLayout = { name: 'screen-definitions', type: 'test', score: 1, screens: [definitionScreens[0], definitionScreens[1]], itemIndex: collection.itemGroup[0], definition: def };
+                wildcardLayoutsForGroup.push(definitionLayout);
+            }
+        });        
     }
-    
-    collection.itemGroup = itemGroup;
 
     return wildcardLayoutsForGroup;
 };

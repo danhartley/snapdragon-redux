@@ -10,10 +10,16 @@ const history = {
   template: 'js-history-template'
 };
 
-const revision = {
+const speciesCard = {
   name: 'species-card',
   domain: 'collection',
   template: 'js-card-revision-template'
+};
+
+const definitionCard = {
+  name: 'definition-card',
+  domain: 'collection',
+  // template: 'js-definition-card-template'
 };
 
 const scientifics = {
@@ -143,11 +149,17 @@ const wildcard = {
   domain: 'collection'
 };
 
+const visualMatch = {
+  name: 'visual-match',
+  domain: 'collection'
+};
+
 export const screens = {
   specimen,
   history,
 
-  revision,
+  speciesCard,
+  definitionCard,
   scientifics,
   vernaculars,
   species,
@@ -169,5 +181,7 @@ export const screens = {
   cultivarCard,
   cultivar,
   wildcardCard,
-  wildcard
+  wildcard,
+
+  visualMatch
 };

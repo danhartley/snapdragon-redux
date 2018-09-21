@@ -9,19 +9,22 @@ export const fungi = [
         term: "Saprotroph",
         definition: "Fungus that lives off decayed organic matter.",
         wiki: "https://en.wikipedia.org/wiki/Saprotrophic_nutrition",
-        level: 1
+        level: 1,
+        group: 1
     },
     {
         term: "Mycorrhizal",
         definition: "Fungus that colonises roots of a vascular host plan in a (generally) mutualistic relationship.",
         wiki: "https://en.wikipedia.org/wiki/Mycorrhiza",
-        level: 1
+        level: 1,
+        group: 1
     },
     {
         term: "Parasitic",
         definition: "Fungus that lives off a living host.",
         wiki: "https://en.wikipedia.org/wiki/Parasitism",
-        level: 1
+        level: 1,
+        group: 1
     },
     {
         term: "Lamella or Gill",
@@ -39,7 +42,7 @@ export const fungi = [
         term: "Tooth or Spine",
         definition: "Downward projections under the cap of some mushroom species (Tooth Fungi) used for spore dispersal.",
         wiki: "https://en.wikipedia.org/wiki/Hydnoid_fungi",
-        level: 1
+        level: 2
     },
     {
         term: "Spore",
@@ -63,13 +66,14 @@ export const fungi = [
         term: "Hymenophore",
         definition: "Hymenium-bearing structure of a fungal fruiting body (take form of smooth surfaces, lamellae, folds, tubes, or teeth).",
         wiki: "https://en.wikipedia.org/wiki/Hymenophore",
-        level: 1
+        level: 2
     },
     {
         term: "Mushroom",
         definition: "Fleshy, spore-bearing fruiting body of a fungus, typically produced above ground on soil or on its food source.",
         wiki: "https://en.wikipedia.org/wiki/Mushroom",
-        level: 1
+        level: 1,
+        group: 1
     },
     {
         term: "Stipe",
@@ -86,26 +90,42 @@ export const fungi = [
     {
         term: "Skirt",
         definition: "Ring flaring downwards and out.",
-        level: 1
+        level: 2
     },
     {
         term: "Gleba",
         definition: "Fleshy spore-bearing inner mass of certain fungi such as the puffball or stinkhorn.",
         wiki: 'https://en.wikipedia.org/wiki/Gleba',
-        level: 1
+        level: 2
     },
     {
         term: "Adnate",
-        definition: "Gills are broadly attached to the stalk slightly above the bottom of the gill, with most of the gill fused to the stem."
+        definition: "Gills are broadly attached to the stalk slightly above the bottom of the gill, with most of the gill fused to the stem.",
+        level: 3
     },
     {
         term: "Decurrent",
-        definition: "Gills or pores are broadly attached to and extend down the stipe."
+        definition: "Gills or pores are broadly attached to and extend down the stipe.",
+        level: 3
     },
     {
         term: "Ostiole",
         definition: "Small hole or opening through which algae or fungi release their mature spores.",
         wiki: "https://en.wikipedia.org/wiki/Ostiole",
         level: 1
-    }
+    },
+    {
+        term: "Mycelium",
+        definition: "Vegetative part of a fungus, consisting of a mass of branching, thread-like hyphae.",
+        wiki: "https://en.wikipedia.org/wiki/Mycelium",
+        level: 1,
+        group: 1
+    },
+    {
+        term: "Hypha",
+        definition: "Long, branching filamentous structure of a fungus and usally the main mode of vegetative growth.",
+        wiki: "https://en.wikipedia.org/wiki/Hypha",
+        level: 1,
+        group: 1
+    },
 ]

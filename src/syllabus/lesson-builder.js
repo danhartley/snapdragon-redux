@@ -24,11 +24,13 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         } while (i < layoutsToAdd);
     });
 
-    const revisionLayouts = excludeRevision ? [] : lessonPlan.layouts.filter(layout => layout.type === 'revision');
-    const shuffledLessonLayouts = [ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts];
+    const revisionLayouts = excludeRevision 
+        ? [] 
+        : lessonPlan.layouts.filter(layout => layout.type === 'revision' && layout.name !== 'screen-definition-card');
+    const lessonLayouts = [ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts];
     const offSet = (collection.currentRound - 1) * moduleSize;
 
-    const newLessonLayouts = shuffledLessonLayouts.map( (layout, i) => {
+    const newLessonLayouts = lessonLayouts.map( (layout, i) => {
         layout.layoutIndex = layoutIndex;
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, layoutsToAdd, i);
         layout.progressIndex = i + 1;
@@ -42,9 +44,22 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         layoutIndex = layoutIndex + 1;
         const arrayIndex = newLessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
         newLessonLayouts.splice(arrayIndex, 0, layout);
+
     });
 
     lessonPlan.layouts = [ ...newLessonLayouts ];
+
+    // let hasGlossary = false;
+    // const glossary = lessonPlan.layouts.find(layout => layout.name === 'screen-definition-card');
+
+    // lessonPlan.layouts.forEach(layout => {
+    //     if(layout.name === 'screen-common-to-latin' && !hasGlossary) {
+    //         const arrayIndex = lessonPlan.layouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
+    //         lessonPlan.layouts.splice(arrayIndex, 0, glossary);
+    //         hasGlossary = true;
+    //         return;
+    //     }
+    // });
 
     lessonPlan.lessonName = lessonName;
     lessonPlan.levelName = levelName;

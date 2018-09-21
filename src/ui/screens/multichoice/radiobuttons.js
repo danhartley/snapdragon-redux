@@ -1,14 +1,11 @@
 import * as R from 'ramda';
 
-import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
-import { renderTemplate } from 'ui/helpers/templating';
-import { scoreHandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { utils } from 'utils/utils';
 import { taxa } from 'api/snapdragon/taxa';
 import radiobuttonsTemplate from 'ui/screens/multichoice/radiobuttons-template.html';
+import { radioButonClickhandler } from 'ui/helpers/handlers';
 
 export const renderRadioButtons = (collection) => {
 
@@ -20,7 +17,7 @@ export const renderRadioButtons = (collection) => {
 
     template.innerHTML = radiobuttonsTemplate;
 
-    let randomAnswers, description, description2, question, answers;
+    let randomAnswers, description1, description2, question, answers;
     let indices = config.isPortraitMode ? [4,5] : [5,6];
 
     description2 = '';
@@ -37,33 +34,10 @@ export const renderRadioButtons = (collection) => {
 
     indices = config.isPortraitMode ? [3,4] : [4,5];
 
-    const render = () => {
-        const parent = DOM.rightBody;
-        parent.innerHTML = '';
-
-        renderTemplate({ description, description2, answers }, template.content, parent);
-
-        document.querySelector('input[name="answer"]:checked').checked = false;
-
-        const answerBtn = document.querySelector('.js-rb-answer-btn');
-
-        const callback = (colour, score, scoreUpdateTimer) => {            
-            answerBtn.disabled = false;
-            answerBtn.classList.add(colour);
-            answerBtn.removeEventListener('click', scoreEventHandler);     
-            answerBtn.addEventListener('click', () => {
-                window.clearTimeout(scoreUpdateTimer);
-                actions.boundUpdateScore(score);
-            });
-        };
-
-        const scoreEventHandler = event => {
-            const answer = document.querySelector('input[name="answer"]:checked').value;
-            const score = { itemId: item.id, question, answer, event, layoutCount: lessonPlan.layouts.length, points: layout.points };
-            scoreHandler('radio', score, callback, config);            
-        };
-
-        answerBtn.addEventListener('click', scoreEventHandler)};
+    const scorehandler = (description1, description2, question, answers) => {
+        const questionFormat = { itemId: item.id, question, layoutCount: lessonPlan.layouts.length, points: layout.points };
+        radioButonClickhandler(config, template, description1, description2, answers, '.js-rb-answer-btn', questionFormat);
+    }
 
     const familyFlavours = config.isPortraitMode 
         ? [ 'match-species-to-latin-family-name', 'match-common-family-name-to-latin-family-name', 'match-latin-family-name-to-common-family-name', 'match-species-to-common-family-name' ] 
@@ -78,63 +52,63 @@ export const renderRadioButtons = (collection) => {
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
 
         const summary = families.find(f => f.name === family).descriptions[0].summary;
-        description = `${species.toUpperCase()} belongs to a family whose description is '${summary}'`;
+        description1 = `${species.toUpperCase()} belongs to a family whose description1 is '${summary}'`;
         description2 = 'What is the name of this FAMILY?';
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 
-        render();
+        scorehandler(description1, description2, question, answers);
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
         const identification = families.find(f => f.name === family).descriptions[0].identification;
-        description = `${species.toUpperCase()} belongs to a family whose Quick Id is '${identification}'`;
+        description1 = `${species.toUpperCase()} belongs to a family whose Quick Id is '${identification}'`;
         description2 = 'What is the name of this FAMILY?';
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 
-        render();
+        scorehandler(description1, description2, question, answers);
     }
     
     if(layout.screens.find(screen => screen.flavour === 'match-species-to-latin-family-name')) {
 
-        description = `To which FAMILY does the species ${species.toUpperCase()} belong?`;        
+        description1 = `To which FAMILY does the species ${species.toUpperCase()} belong?`;        
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
         
-        render();
+        scorehandler(description1, description2, question, answers);
     }
     
     if(layout.screens.find(screen => screen.flavour === 'match-species-to-common-family-name')) {
 
-        description = `To which FAMILY does the species ${species.toUpperCase()} belong?`;
+        description1 = `To which FAMILY does the species ${species.toUpperCase()} belong?`;
         question = { question: commonFamilyName, binomial: item.name };
         answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
         
-        render();
+        scorehandler(description1, description2, question, answers);
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-common-family-name-to-latin-family-name')) {
 
         indices = config.isPortraitMode ? [4,5] : [5,6];
 
-        description = `Which of the following common FAMILY names matches the latin name ${family.toUpperCase()}?`;
+        description1 = `Which of the following common FAMILY names matches the latin name ${family.toUpperCase()}?`;
         question = { question: commonFamilyName, binomial: item.name };
         answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
         
-        render();
+        scorehandler(description1, description2, question, answers);
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-latin-family-name-to-common-family-name')) {
 
         indices = config.isPortraitMode ? [4,5] : [5,6];
 
-        description = `Which of the following common FAMILY names matches the latin name ${family.toUpperCase()}?`;
+        description1 = `Which of the following common FAMILY names matches the latin name ${family.toUpperCase()}?`;
         question = { question: commonFamilyName, binomial: item.name };
         answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
         
-        render();
+        scorehandler(description1, description2, question, answers);
     }
 
     if(layout.screens.find(screen => screen.name === 'cultivar-match')) {
@@ -146,10 +120,10 @@ export const renderRadioButtons = (collection) => {
         randomAnswers = R.take(indices[0], R.take(indices[1], utils.shuffleArray(itemNames)).filter(itemName => itemName !== item.name));
         const subspecies = layout.cultivars.subspecies;
         const names = R.take(indices[1], R.flatten(subspecies.map(sub => sub.names.filter(name => name.language === config.language))).map(n => n.vernacularName)).join(', ');
-        description = `${names} derive from one species. What is its name?`;
+        description1 = `${names} derive from one species. What is its name?`;
         question = { question: item.name, binomial: item.name };
         answers = utils.shuffleArray([item.name, ...randomAnswers]);
 
-        render();
+        scorehandler(description1, description2, question, answers);
     }
 };

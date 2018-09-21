@@ -1,6 +1,6 @@
 import { screens } from 'snapdragon/screen-layouts';
 
-const { specimen, revision, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete, cultivar, cultivarCard, epithets, wildcardCard, wildcard, definitions } = screens;
+const { specimen, speciesCard, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete, cultivar, cultivarCard, epithets, wildcardCard, wildcard, definitions, visualMatch, definitionCard } = screens;
 
 const speciesRevision = {
     name: 'screen-species-card',
@@ -12,7 +12,7 @@ const speciesRevision = {
     options: 'Species summary',
     screens: [
         { ...specimen },
-        { ...revision }
+        { ...speciesCard }
     ]
 };
 
@@ -27,6 +27,20 @@ const taxonRevision = {
     screens: [
         { ...specimen },
         { ...taxon }
+    ]
+};
+
+const definitionRevision = {
+    name: 'screen-definition-card',
+    type:'revision',
+    score: 0,
+    kind: 'F',
+    points: 0,
+    given: 'Study',
+    options: 'Glossary definitions',
+    screens: [
+        { ...specimen },
+        { ...definitionCard }
     ]
 };
 
@@ -85,6 +99,20 @@ const textCompleteGenus = {
     screens: [
         { ...specimen },
         { ...textComplete, type: 'text-complete-genus'  }
+    ]
+};
+
+const multiVisualMatch = {
+    name: 'screen-visual-match',
+    type:'test',
+    score: 1,
+    points: 1,
+    kind: 'MC',
+    given: 'Specimen image',
+    options: 'Choose species',
+    screens: [
+        { ...specimen },
+        { ...visualMatch }
     ]
 };
 
@@ -284,6 +312,11 @@ const connections = {
     ]
 };
 
+const screenType = (multiVisualMatch, type) => {
+    multiVisualMatch.screens[1].type = type;
+    return multiVisualMatch;
+};
+
 const landscapeLesson1 = {
     id: 1,
     name:'Lesson 1',
@@ -343,8 +376,9 @@ const landscapeLesson3 = {
     default: false,
     levels: [
         {   id: 1,
-            name:'Level 1',
-            layouts: [ speciesRevision, commonToLatinMatch ],
+            name:'Level 1',            
+            // layouts: [ speciesRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'vernacular') }, latinToCommonMatch, taxonRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'binomial') }, commonToLatinMatch  ],
+            layouts: [ speciesRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'vernacular') }, definitionRevision, latinToCommonMatch, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'binomial') }, commonToLatinMatch  ],
             wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ commonToLatinMatch ]
         },
@@ -365,14 +399,14 @@ const portraitLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ],
+            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch ],
             wildcardLayouts : [],
             reviewLayouts: [ latinToCommonMatch ]
         },
         {   id: 2,
             name:'Level 2',
-            layouts: [ commonEntry, textCompleteSpecies, genusEntry ],
-            wildcardLayouts : [ [epithets] ],
+            layouts: [ textCompleteGenus, commonEntry, textCompleteSpecies, genusEntry ],
+            wildcardLayouts : [ latinEpithets ],
             reviewLayouts: [ commonEntry, textCompleteSpecies, genusEntry ]
         },
         {   id: 3,
@@ -384,13 +418,13 @@ const portraitLesson1 = {
         {   id: 4,
             name:'Level 4',
             layouts: [ speciesGenusEntry ],
-            wildcardLayouts : [[cultivarCard, cultivar]],
+            wildcardLayouts : [ cultivars ],
             reviewLayouts: [ speciesGenusEntry ]
         },
         {   id: 5,
             name:'Level 5',
             layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
-            wildcardLayouts : [[wildcardCard, wildcard]],
+            wildcardLayouts : [ connections ],
             reviewLayouts: [ familyStripsMatch ]
         }   
     ]
@@ -416,8 +450,8 @@ const portraitLesson3 = {
     default: false,
     levels: [
         {   id: 1,
-            name:'Level 1',
-            layouts: [ speciesRevision, commonToLatinMatch ],
+            name:'Level 1',            
+            layouts: [ speciesRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'vernacular') }, latinToCommonMatch, definitionRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'binomial') }, commonToLatinMatch  ],
             wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ commonToLatinMatch ]
         },

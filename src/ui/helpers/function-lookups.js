@@ -14,6 +14,8 @@ import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 import { renderCompleteText } from 'ui/screens/text-entry/text-complete';
 import { renderCultivarCard } from 'ui/screens/cards/cultivar-card';
 import { renderWildcard } from 'ui/screens/cards/wildcard-card';
+import { renderVisualMatch } from 'ui/screens/multichoice/visual-match';
+import { renderDefinitionCard } from 'ui/screens/cards/definition-card';
 
 const functions = [
     { name: 'text-entry', func: renderTextEntry },
@@ -38,6 +40,8 @@ const functions = [
     { name: 'cultivar-card', func: renderCultivarCard },
     { name: 'wildcard-card', func: renderWildcard },
     { name: 'wildcard-match', func: renderMultiStrips },
+    { name: 'visual-match', func: renderVisualMatch },
+    { name: 'definition-card', func: renderDefinitionCard },
 ];
 
 export const funcByName = name => {

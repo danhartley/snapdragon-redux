@@ -737,6 +737,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   padding: 0 .25em;
 }
 
+.btn.snap-alert {
+  padding: .175em .75em;
+}
+
 .block.white {
   color: var(--snap-text-dark);
 }
@@ -1304,4 +1308,20 @@ iframe#birdsong {
   border-radius: .24em;
   display: inline-block;
   vertical-align: text-top;
+}
+
+.definition.revision.card {
+  height: 60vh;
+  border: 0;
+}
+
+.definition.revision.card div>div {
+  margin: .5em 0;  
+  padding: .15em;
+}
+
+.definition.revision.card span:nth-child(1) {
+  text-underline-position: under;
+  color: var(--snap-success);
+  margin: 0 .25em 0 0;
 }

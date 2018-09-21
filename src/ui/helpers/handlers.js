@@ -1,7 +1,10 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
+import { renderTemplate } from 'ui/helpers/templating';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 import { imageSlider } from 'ui/screens/common/image-slider';
+import updateBtnTemplate from 'ui/screens/multichoice/update-btn-template.html';
+
 
 export const scoreHandler = (type, score, callback, config) => {
     
@@ -198,4 +201,40 @@ export const modalImageHandler = (image, item) => {
         imageSlider(item, parent, false, image);
         DOM.modalImageTitle.innerHTML = item.name;
     })
+};
+
+export const radioButonClickhandler = (config, template, description1, description2, answers, submitBtn, question) => {
+    
+    const parent = DOM.rightBody;
+    parent.innerHTML = '';
+
+    renderTemplate({ description1, description2, answers }, template.content, parent);
+    
+    const updateBtn = document.createElement('template');
+
+    updateBtn.innerHTML = updateBtnTemplate;
+
+    renderTemplate({}, updateBtn.content, document.querySelector('.js-update-btn'));
+
+    document.querySelector('input[name="answer"]:checked').checked = false;
+
+    const answerBtn = document.querySelector(submitBtn);
+
+    const callback = (colour, score, scoreUpdateTimer) => {            
+        answerBtn.disabled = false;
+        answerBtn.classList.add(colour);
+        answerBtn.removeEventListener('click', scoreEventHandler);     
+        answerBtn.addEventListener('click', () => {
+            window.clearTimeout(scoreUpdateTimer);
+            actions.boundUpdateScore(score);
+        });
+    };
+
+    const scoreEventHandler = event => {
+        const answer = document.querySelector('input[name="answer"]:checked').value;
+        const score = { ...question, answer, event };
+        scoreHandler('radio', score, callback, config);            
+    };
+
+    answerBtn.addEventListener('click', scoreEventHandler)
 };

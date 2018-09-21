@@ -1,5 +1,3 @@
-import * as R from 'ramda';
-
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
@@ -79,12 +77,6 @@ const renderLandscape = (template, item, config) => {
             });
         }
     });    
-
-    // const info = characteristics.find(c => c.name === item.name);
-
-    // if(info) {
-    //     infoSlider(info, document.querySelector('.js-info-box'));
-    // }
 
     const wikiNode = document.querySelector('.js-species-card-wiki');
 

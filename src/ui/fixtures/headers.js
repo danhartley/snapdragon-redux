@@ -62,7 +62,10 @@ export const renderHeaders = collection => {
         const isFamilyCard = layout.name === 'screen-taxon-card';
         const speciesHeader = config.isPortraitMode ? 'Species summary' : 'Species summary';
         const familyHeader = config.isPortraitMode ? 'Family summary and quick id' : 'Family summary & quick id';
-        const header = isSpeciesCard ? speciesHeader : isFamilyCard ? familyHeader : collection.name;
+        let header = isSpeciesCard ? speciesHeader : isFamilyCard ? familyHeader : collection.name;
+        if(layout.name === 'screen-definition-card') {
+            header = 'Glossary';
+        }
         setTimeout(() => {
             DOM.rightHeaderTxt.innerHTML = isActiveLesson ? header : title;   
         });

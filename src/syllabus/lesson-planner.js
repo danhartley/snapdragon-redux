@@ -15,6 +15,8 @@ const createLessonPlan = (lessonPlan, config, collection) => {
     const moduleSize = collection.moduleSize || config.moduleSize;    
     const { excludeRevision } = collection;
 
+    collection.itemGroups = getItemGroups(collection);
+
     const goToNextLevelWithLayouts = (collection) => {
 
         let layouts = [], wildcardLayouts = [];
@@ -73,6 +75,26 @@ const getLayouts = (lessonPlan, collection, config, mode) => {
         default:
             return currentLevel.layouts;
     }
+};
+
+const getItemGroups = collection => {
+
+    // e.g. [0,1,2,3,4,5,6], [7,8,9,10,11,12]
+
+    let itemGroups = [];
+    let group = [];
+    [ ...collection.items].forEach((item, index) => {
+        group.push(index);
+        if((index + 1) % collection.moduleSize === 0) {
+            itemGroups.push(group);
+            group = [];
+        }
+        if((index + 1) % collection.moduleSize !== 0 && (index + 1) === collection.items.length) {
+            itemGroups.push(group);
+            group = [];
+        }
+    });
+    return itemGroups;
 };
 
 export const lessonPlanner = {
