@@ -17,10 +17,10 @@ export const renderRadioButtons = (collection) => {
 
     template.innerHTML = radiobuttonsTemplate;
 
-    let randomAnswers, description1, description2, question, answers;
+    let randomAnswers, question, answers;
     let indices = config.isPortraitMode ? [4,5] : [5,6];
 
-    description2 = '';
+    const descriptions = ['','',''];
 
     const species = item.name;
     const family = item.family;
@@ -52,8 +52,8 @@ export const renderRadioButtons = (collection) => {
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
 
         const summary = families.find(f => f.name === family).descriptions[0].summary;
-        description1 = `${species.toUpperCase()} belongs to a family whose description1 is '${summary}'`;
-        description2 = 'What is the name of this FAMILY?';
+        descriptions[0] = `${species.toUpperCase()} belongs to a family whose description1 is '${summary}'`;
+        descriptions[1] = 'What is the name of this FAMILY?';
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 

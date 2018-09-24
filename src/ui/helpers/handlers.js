@@ -203,12 +203,16 @@ export const modalImageHandler = (image, item) => {
     })
 };
 
-export const radioButonClickhandler = (config, template, description1, description2, answers, submitBtn, question) => {
+export const radioButonClickhandler = (config, template, descriptions, answers, submitBtn, question) => {
     
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    renderTemplate({ description1, description2, answers }, template.content, parent);
+    const description1 = descriptions[0] || '';
+    const description2 = descriptions[1] || '';
+    const description3 = descriptions[2] || '';
+
+    renderTemplate({ description1, description2, description3, answers }, template.content, parent);
     
     const updateBtn = document.createElement('template');
 

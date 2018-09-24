@@ -104,6 +104,27 @@ export const mushroomQuiz = {
     course: 'Snapdragon'
 };
 
+export const mushrooms1 = { 
+    id: 6, 
+    name: 'Mushrooms I', 
+    type: 'species',
+    descriptions: [
+        '12 common mushrooms, 6 are edible, 6 are poisonous.',
+        'Can you identify which are safe to eat?'
+    ],
+    items: [ ...collections[8].items ],
+    collections: ['Mushrooms I'],
+    thumb: 'https://media.eol.org/content/2013/03/01/14/45554_orig.jpg',
+    moduleSize: 4,
+    curator: 'Snapdragon',
+    userLevel: 'Amateur mycologists',
+    lessonPlanLandscape: 3,
+    lessonPlanPortrait: 103,
+    glossary: ['fungi'],
+    courseId: 1,
+    course: 'Snapdragon'
+};
+
 kitchenGarden.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });
@@ -124,10 +145,15 @@ mushroomQuiz.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });
 
+mushrooms1.items.forEach((item,index)=>{
+    item.snapIndex = index + 1;
+});
+
 export const snapdragonCollections = [
     kitchenGarden,
     rhsTrees,
     commonBirds,
     rhsWeeds1,
-    mushroomQuiz
+    mushroomQuiz,
+    mushrooms1
 ];

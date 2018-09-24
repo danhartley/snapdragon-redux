@@ -58,10 +58,10 @@ export const renderTaxonCard = collection => {
     document.querySelector('.js-external-page-body').innerHTML = `<iframe class="modal-iframe" title="Wikipedia page for ${item.family}" src="${context.wiki}"></iframe>`;
 
     document.querySelector('.badge').addEventListener('click', event => {
-        document.querySelector('#listModal .js-modal-text-title').innerHTML = `Members of the ${item.family} family`;
+        document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = `Members of the ${item.family} family`;
         const collectionPool = collections.find(c => c.id === collection.id);
         const members = collectionPool.items.filter(i => i.family === item.family);
-        const list = document.querySelector('#listModal .js-modal-text');
+        const list = document.querySelector('#badgeListModal .js-modal-text');
         list.innerHTML = '';
         members.forEach(member => {
             list.innerHTML += `<div>${member.name} (${itemProperties.vernacularName(member, config)})</div>`;

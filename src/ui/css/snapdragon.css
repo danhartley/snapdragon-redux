@@ -1341,3 +1341,28 @@ iframe#birdsong {
   color: var(--snap-success);
   margin: 0 .25em 0 0;
 }
+
+.visual-match .radio-buttons label {
+  font-size: 1.2em; 
+}
+
+.visual-match .radio.btn {
+  padding: .5em;
+}
+
+.visual-match .description {
+  background-color: rgb(200, 197, 172);
+  display: flex;
+  flex-direction: column;
+  padding: .5em;
+}
+
+.visual-match .description span {
+  flex: 1;
+}
+
+.names-badge {
+  font-size: .8em;
+  vertical-align: super;
+  cursor: pointer;
+}

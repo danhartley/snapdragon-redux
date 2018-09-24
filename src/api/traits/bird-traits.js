@@ -1,4 +1,4 @@
-export const speciesTraits = [
+export const birdTraits = [
     { name: 'Passer domesticus', traits: [
         { name: 'song', value: '416611', description: 'xeno-canto id' },
         { name: 'rank', value: '1', description: 'common', language: 'en' },
@@ -47,35 +47,5 @@ export const speciesTraits = [
     { name: 'Fringilla coelebs', traits: [
         { name: 'song', value: '426190', description: 'xeno-canto id' },
         { name: 'rank', value: '10', description: 'common', language: 'en' },
-    ] },
-    { name: 'Coprinus comatus', traits: [
-        { name: 'edible', value: true, description: 'mild flavour', language: 'en' }
-    ] },
-    { name: 'Scleroderma citrinum', traits: [
-        { name: 'edible', value: false, description: 'significant stomach upsets', language: 'en' }
-    ] },
-    { name: 'Laccaria amethystina', traits: [
-        { name: 'edible', value: true, description: 'not particularly tasty', language: 'en' }
-    ] },
-    { name: 'Auricularia auricula-judae', traits: [
-        { name: 'edible', value: true, description: 'common in Chinese hot and sour soup', language: 'en' }
-    ] },
-    { name: 'Amanita pantherina', traits: [
-        { name: 'edible', value: false, description: 'sickness and hallucinations', language: 'en' }
-    ] },
-    { name: 'Amanita muscaria', traits: [
-        { name: 'edible', value: false, description: 'deadly in quantity', language: 'en' }
-    ] },
-    { name: 'Clitocybe odora', traits: [
-        { name: 'edible', value: true, description: 'aniseed flavour', language: 'en' }
-    ] },
-    { name: 'Amanita virosa', traits: [
-        { name: 'edible', value: false, description: 'highly poisonous even in small quantities; symptoms delayed', language: 'en' }
-    ] },
-    { name: 'Mycena rosea', traits: [
-        { name: 'edible', value: false, description: 'toxic' , language: 'en'}
-    ] },
-    { name: 'boletus edulis', traits: [
-        { name: 'edible', value: true, description: 'tasty; high in protein, vitamins, minerals and fibre', language: 'en' }
     ] },
 ];

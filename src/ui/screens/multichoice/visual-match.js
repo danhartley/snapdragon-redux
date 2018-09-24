@@ -2,8 +2,10 @@ import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { radioButonClickhandler } from 'ui/helpers/handlers';
-import visualMatchTemplate from 'ui/screens/multichoice/visual-match-template.html';
 import { itemProperties } from '../../helpers/data-checking';
+import { taxa } from 'api/snapdragon/taxa';
+import { fungiTraits } from 'api/traits/fungi-traits';
+import visualMatchTemplate from 'ui/screens/multichoice/visual-match-template.html';
 
 export const renderVisualMatch = collection => {
 
@@ -15,8 +17,19 @@ export const renderVisualMatch = collection => {
 
     template.innerHTML = visualMatchTemplate;
 
-    const description1 = 'Can you identify the species?';
-    const description2 = '';
+    let identification;
+
+    if(config.isLandscapeMode) {
+        const taxon = taxa.find(t => t.name === item.genus);
+        identification = taxon ? `Genus: ${taxon.descriptions[0].identification}` : '';
+        item.keyTrait = `How edible: ${itemProperties.getActiveTrait(fungiTraits, item.name, config.language, [{ name: 'how edible', formatter: trait => trait.value }])}`;
+    }
+
+    const descriptions = [
+        'Can you identify the species?',
+        identification,
+        item.keyTrait
+    ];
     
     const answers = layout.screens[1].type === 'binomial' 
             ? itemProperties.itemNames(collection.items, collection.itemGroup)
@@ -33,7 +46,7 @@ export const renderVisualMatch = collection => {
     const question = { question: questionValue, binomial: item.name, vernacular: vernacularName };
     const questionFormat = { itemId: item.id, question, layoutCount: lessonPlan.layouts.length, points: layout.points };
 
-    radioButonClickhandler(config, template, description1, description2, utils.shuffleArray(answers), '.js-rb-answer-btn', questionFormat);
+    radioButonClickhandler(config, template, descriptions, utils.shuffleArray(answers), '.js-rb-answer-btn', questionFormat);
     
     if(config.isPortraitMode) {
         imageSlider(item, document.querySelector('.js-species-card-images'), true);

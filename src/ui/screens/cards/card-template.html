@@ -10,15 +10,16 @@
         </div>
         <div>
             <div class="species-common-name js-txt-species">
+                <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ nameCount }}</span>
                 <span>{{ name }}</span>
                 <span class='rank'>{{ trait }}</span>
             </div>
             <div class="species-card-name js-txt-species-name">
-                <span class="portrait bird-song-icon-disabled js-bird-song-player" data-src='player' data-toggle="modal" data-target="#menuModal">
+                <span class="portrait bird-song-icon-disabled js-bird-song-player" data-src='player' data-toggle="modal" data-target="#badgeListModal">
                     <i class="fas fa-music"></i>
                 </span>
                 <span>{{ species }}</span>
-                <span class="badge badge-light" data-toggle="modal" data-target="#listModal">{{ occurrences }}</span> <span class="sr-only">species of this family in the collection</span>                
+                <span class="badge badge-light js-subspecies-badge" data-toggle="modal" data-target="#badgeListModal">{{ subSpeciesCount }}</span> <span class="sr-only">species of this family in the collection</span>                
             </div>
         </div>        
         <hr class="landscape">
