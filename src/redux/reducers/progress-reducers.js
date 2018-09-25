@@ -104,10 +104,12 @@ export const history = (state = null, action) => {
     }
 };
 
-export const page = (state = { name: 'home'}, action) => {
+export const page = (state = { name: 'home', glossary: false}, action) => {
     switch(action.type) {
         case types.CHANGE_PAGE:
-            return action.data;
+            return { ...state, ...action.data };
+        case types.NEXT_LESSON:
+            return { name: '', glossary: true };
         default:
             return state;
     }

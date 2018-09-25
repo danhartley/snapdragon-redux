@@ -1,16 +1,20 @@
-<div class="snapdragon-container js-species-card">            
+<div class="snapdragon-container visual-match js-species-card">            
     <div class="portrait-grid species-card-images carousel js-species-card-images"></div>  
+    <div class="landscape question-container">
+        <span>{{ description1 }}</span>
+    </div>
     <div class="radio-buttons-group btn-group btn-group-toggle" data-toggle="buttons" data-repeat-answer="{{ answers }}">                
         <div class="radio-buttons">
-            <label class="btn">
+            <label class="radio btn">
                 <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}" autocomplete="off" checked> {{ answer }}
             </label>
         </div>                
     </div>
-    <div class="text-question js-txt-question">
-        <span>{{ description1 }}</span>
+    <div class="description landscape">
         <span>{{ description2 }}</span>
+        <span>{{ description3 }}</span>
     </div>
-
+    <div class="text-question js-txt-question landscape">                
+    </div>
     <div class="js-update-btn"></div>
 </div>

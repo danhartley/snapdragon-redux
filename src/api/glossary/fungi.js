@@ -14,7 +14,7 @@ export const fungi = [
     },
     {
         term: "Mycorrhizal",
-        definition: "Fungus that colonises roots of a vascular host plan in a (generally) mutualistic relationship.",
+        definition: "Fungus that colonises roots of a vascular host plant in a (generally) mutualistic relationship.",
         wiki: "https://en.wikipedia.org/wiki/Mycorrhiza",
         level: 1,
         group: 1
@@ -101,12 +101,14 @@ export const fungi = [
     {
         term: "Adnate",
         definition: "Gills are broadly attached to the stalk slightly above the bottom of the gill, with most of the gill fused to the stem.",
-        level: 3
+        level: 2,
+        group: 1
     },
     {
         term: "Decurrent",
         definition: "Gills or pores are broadly attached to and extend down the stipe.",
-        level: 3
+        level: 2,
+        group: 1
     },
     {
         term: "Ostiole",
@@ -122,10 +124,36 @@ export const fungi = [
         group: 1
     },
     {
+        term: "Substrate",
+        definition: "Substance on which mycelium grows.",
+        level: 1,
+        group: 1
+    },
+    {
         term: "Hypha",
         definition: "Long, branching filamentous structure of a fungus and usally the main mode of vegetative growth.",
         wiki: "https://en.wikipedia.org/wiki/Hypha",
         level: 1,
         group: 1
+    },
+    {
+        term: "Polypore",
+        definition: "Group of fungi that form fruiting bodies with pores or tubes on the underside. Also called bracket or shelf fungi.",
+        wiki: "https://en.wikipedia.org/wiki/Polypore",
+        level: 2,
+        group: 2
+    },
+    {
+        term: "Ectomycorrhiza",
+        definition: "Symbiotic relationship between fungal symbiont and roots of various plant species (without penetrating host’s cell walls.).",
+        wiki: "https://en.wikipedia.org/wiki/Ectomycorrhiza",
+        level: 2,
+        group: 2
+    },
+    {
+        term: "Infundibuliform",
+        definition: "Having the shape of a funnel or cone.",
+        level: 2,
+        group: 2
     },
 ]

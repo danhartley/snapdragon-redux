@@ -1,3 +1,5 @@
+import * as SD from 'api/snapdragon/trait-types';
+
 export const taxa = [
     {
         taxon: 'family',
@@ -1758,11 +1760,423 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'wide variety of fruit body morphology. Species include the ‘true puffballs‘.',
+                summary: 'Wide variety of fruit body morphology. Species include the ‘true puffballs‘.',
                 identification: 'Pileate form dominant with thin gills free from attachment to the stipe. Caps are scurfy to smooth, flat to umbonate.'
             }
         ],
         eol: "http://eol.org/pages/5966/overview",
         wiki: "https://en.wikipedia.org/wiki/Agaricaceae"
     },
+    {
+        taxon: 'family',
+        name: 'Cantharellaceae',
+        thumb: "2014/07/15/01/58726_260_190.jpg",
+        names: [ { language: "en", names: ['Chanterelle Family']} ,
+        { language: "fr", names:[ 'Chanterelle Family' ]},
+        { language: "de", names:[ 'Leistlingsartige' ]},
+        { language: "es", names:[ 'Chanterelle Family' ]},
+        { language: "pt", names:[ 'Chanterelle Family' ]},
+        { language: "it", names:[ 'Chanterelle Family' ]}],
+        species: '90',
+        genera: '5',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND_LITTER ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Cosmopolitan. Form mutually beneficial relationship with the roots of trees and other plants (ectomycorrhizal).',
+                identification: 'Fruit are mushroom or trumpet-like, with spore-bearing surfaces that are smooth, wrinkled, veined, or gill-like, typically decurrent (running down the upper stem).'
+            }
+        ],
+        eol: "http://eol.org/pages/5940/overview",
+        wiki: "https://en.wikipedia.org/wiki/Cantharellaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Discinaceae',
+        thumb: "2016/08/09/04/56138_88_88.jpg",
+        names: [ { language: "en", names: ['Discinaceae']} ,
+        { language: "fr", names:[ 'Discinaceae' ]},
+        { language: "de", names:[ 'Discinaceae' ]},
+        { language: "es", names:[ 'Discinaceae' ]},
+        { language: "pt", names:[ 'Discinaceae' ]},
+        { language: "it", names:[ 'Discinaceae' ]}],
+        species: '58',
+        genera: '5',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND_LITTER ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Family of ascomycete fungi (sac fungi), the best known members of which are the false morels of the genus Gyromitra.',
+                identification: ''
+            }
+        ],
+        eol: "http://eol.org/pages/6080/overview",
+        wiki: "https://en.wikipedia.org/wiki/Discinaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Fomitopsidaceae',
+        thumb: "2015/01/14/02/81377_88_88.jpg",
+        names: [ { language: "en", names: ['Bracket Polypores']} ,
+        { language: "fr", names:[ 'Bracket Polypores' ]},
+        { language: "de", names:[ 'Bracket Polypores' ]},
+        { language: "es", names:[ 'Bracket Polypores' ]},
+        { language: "pt", names:[ 'Bracket Polypores' ]},
+        { language: "it", names:[ 'Bracket Polypores' ]}],
+        species: '--',
+        genera: '14',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Most species are parasitic on woody plants, and cause brown rots (wood-dcay fungus).',
+                identification: ''
+            }
+        ],
+        eol: "http://eol.org/pages/5913/overview",
+        wiki: "https://en.wikipedia.org/wiki/Fomitopsidaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Hericiaceae',
+        thumb: "2011/08/11/15/27368_88_88.jpg",
+        names: [ { language: "en", names: ['Tooth Fungi']} ,
+        { language: "fr", names:[ 'Tooth Fungi' ]},
+        { language: "de", names:[ 'Tooth Fungi' ]},
+        { language: "es", names:[ 'Tooth Fungi' ]},
+        { language: "pt", names:[ 'Tooth Fungi' ]},
+        { language: "it", names:[ 'Tooth Fungi' ]}],
+        species: '--',
+        genera: '5',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Taxa are mainly known from north temperate regions, and are saprobic on rotting wood.',
+                identification: 'Species of this family commonly have fruitbodies with pegs, spines, or teeth hanging from the hymenium.'
+            }
+        ],
+        eol: "http://eol.org/pages/5913/overview",
+        wiki: "https://en.wikipedia.org/wiki/Hericiaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Marasmiaceae',
+        thumb: "2011/08/18/07/33951_88_88.jpg",
+        names: [ { language: "en", names: ['Omphalotaceae']} ,
+        { language: "fr", names:[ 'Marasmiaceae' ]},
+        { language: "de", names:[ 'Marasmiaceae' ]},
+        { language: "es", names:[ 'Marasmiaceae' ]},
+        { language: "pt", names:[ 'Marasmiaceae' ]},
+        { language: "it", names:[ 'Marasmiaceae' ]}],
+        species: '1590',
+        genera: '54',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'The widely consumed edible fungus Lentinula edodes, the shiitake mushroom, is a member of this family.',
+                identification: 'Tough stems and capability of shrivelling up during a dry period and later recovering.'
+            }
+        ],
+        eol: "http://eol.org/pages/5979/overview",
+        wiki: "https://en.wikipedia.org/wiki/Marasmiaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Meripilaceae',
+        thumb: "2012/02/03/03/83638_88_88.jpg",
+        names: [ { language: "en", names: ['Meripilaceae']} ,
+        { language: "fr", names:[ 'Meripilaceae' ]},
+        { language: "de", names:[ 'Meripilaceae' ]},
+        { language: "es", names:[ 'Meripilaceae' ]},
+        { language: "pt", names:[ 'Meripilaceae' ]},
+        { language: "it", names:[ 'Meripilaceae' ]}],
+        species: '57',
+        genera: '7',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Family of fungi in the order Polyporales.',
+                identification: ''
+            }
+        ],
+        eol: "http://eol.org/pages/5907/overview",
+        wiki: "https://en.wikipedia.org/wiki/Meripilaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Morchellaceae',
+        thumb: "2015/01/12/06/12029_98_68.jpg",
+        names: [ { language: "en", names: ['Morchellaceae']} ,
+        { language: "fr", names:[ 'Morchellaceae' ]},
+        { language: "de", names:[ 'Morchellaceae' ]},
+        { language: "es", names:[ 'Morchellaceae' ]},
+        { language: "pt", names:[ 'Morchellaceae' ]},
+        { language: "it", names:[ 'Morchellaceae' ]}],
+        species: '49+',
+        genera: '9',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD, SD.habitats.WASTELAND, SD.habitats.WOODLAND, SD.habitats.FIELDS ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Include true morels of the genus Morchella, the thimble morels of the genus Verpa, and a genus of cup-shaped fungi Disciotis.',
+                identification: 'Morchella species have ascocarp with sponge-like pileus, hollow stipe and pileus.'
+            }
+        ],
+        eol: "http://eol.org/pages/5907/overview",
+        wiki: "https://en.wikipedia.org/wiki/Morchellaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Omphalotaceae',
+        thumb: "2012/06/13/08/27040_88_88.jpg",
+        names: [ { language: "en", names: ['Marasmiaceae']} ,
+        { language: "fr", names:[ 'Omphalotaceae' ]},
+        { language: "de", names:[ 'Omphalotaceae' ]},
+        { language: "es", names:[ 'Omphalotaceae' ]},
+        { language: "pt", names:[ 'Omphalotaceae' ]},
+        { language: "it", names:[ 'Omphalotaceae' ]}],
+        species: '1590',
+        genera: '54',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'The widely consumed edible fungus Lentinula edodes, the shiitake mushroom, is a member of this family.',
+                identification: 'Tough stems and capability of shrivelling up during a dry period and later recovering.'
+            }
+        ],
+        eol: "http://eol.org/pages/5974/overview",
+        wiki: "https://en.wikipedia.org/wiki/Omphalotaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Pleurotaceae',
+        thumb: "2010/10/15/02/92478_88_88.jpg",
+        names: [ { language: "en", names: ['Pleurotaceae']} ,
+        { language: "fr", names:[ 'Pleurotaceae' ]},
+        { language: "de", names:[ 'Pleurotaceae' ]},
+        { language: "es", names:[ 'Pleurotaceae' ]},
+        { language: "pt", names:[ 'Pleurotaceae' ]},
+        { language: "it", names:[ 'Pleurotaceae' ]}],
+        species: '94',
+        genera: '4',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD, SD.habitats.WOOD ] } ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Members of this family can be mistaken for members of Marasmiaceae. Includes oyster mushroom (Pleurotus ostreatus).',
+                identification: 'Small to medium-sized with white spores.'
+            }
+        ],
+        eol: "http://eol.org/pages/5972/overview",
+        wiki: "https://en.wikipedia.org/wiki/Pleurotaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Russulaceae',
+        thumb: "2012/05/24/01/44262_88_88.jpg",
+        names: [ { language: "en", names: ['Russulaceae']} ,
+        { language: "fr", names:[ 'Russulaceae' ]},
+        { language: "de", names:[ 'Täublingsartige' ]},
+        { language: "es", names:[ 'Russulaceae' ]},
+        { language: "pt", names:[ 'Russulaceae' ]},
+        { language: "it", names:[ 'Russulaceae' ]}],
+        species: '1900',
+        genera: '7',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD, SD.habitats.WOOD, SD.habitats.WOODLAND_LITTER]}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Worldwide distribution. Includes the brittlegills and milk-caps. Important group of root-symbiotic ectomycorrhizal fungi in forests and shrublands.',
+                identification: 'Gilled mushrooms characterised by brittle flesh of their fruitbodies.'
+            }
+        ],
+        eol: "http://eol.org/pages/5889/overview",
+        wiki: "https://en.wikipedia.org/wiki/Russulaceae"
+    },
+
+    // genus data from: https://www.ukfungusday.co.uk/files/7814/9796/1077/Genus_information_sheets1.FINAL.pdf
+
+    {
+        taxon: 'genus',
+        name: 'Coprinus',
+        names: [ { language: "en", names: ['Inkcaps']}],
+        traits: [ 
+            { language: "en", name: 'habitat', values: [ SD.habitats.SOIL, SD.habitats.WOOD, SD.habitats.VEGETATION, SD.habitats.ROOTS, SD.habitats.DUNG ] },
+            { language: "en", name: 'cap size cms', values: [ '.5-5' ] },
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Deliquesce when mature; short-lived; moist conditions.',
+                identification: 'Thin-fleshed caps, white when young, often with veil (fibrils), .5-5cm. Gills age from white to black. White stems, may be tall in relation to cap.'
+            }
+        ]
+    },
+    {
+        taxon: 'genus',
+        name: 'Agaricus',
+        names: [ { language: "en", names: ['Agarics']}],
+        traits: [ 
+            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND_LITTER, SD.habitats.GRASSLAND ] },
+            { language: "en", name: 'smell', values: [ 'Mushroomy', 'Ink', 'Almonds' ] },
+            { language: "en", name: 'cap size cms', values: [ '3-15' ] },
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Mid Summer and throughout Autumn.',
+                identification: 'Caps 3-15cm, white to brown, smooth but often scaly, some stain red or yellow. Gills pale pink, age to black brown (spore colour). White stem with ring (may be lost).'
+            }
+        ]
+    },    
+    {
+        taxon: 'genus',
+        name: 'Lactarius',
+        names: [ { language: "en", names: ['Milkcaps']}],
+        traits: [ 
+            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND_LITTER, SD.habitats.GRASSLAND ] },
+            { language: "en", name: 'cap size cms', values: [ '3-10' ] },
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Exude milky liquid of many colours from damaged gills and flesh. Autumnal. Mycorrhizal',
+                identification: 'Caps 3-10cm, brown, grey, tan, or white, smooth, hairy, concentric zoning. Gills, spores cream. Stems paler, no ring.'
+            }
+        ]
+    },    
+    {
+        taxon: 'genus',
+        name: 'Inocybe',
+        names: [ { language: "en", names: ['Fibrecaps']}],
+        traits: [ 
+            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND ] },
+            { language: "en", name: 'cap size cms', values: [ '1-8' ] },
+            { language: "en", name: 'smell', values: [ 'Marzipan', 'Honey', 'Fish' ] },
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Small. All but one poisonous. Autumnal. Mycorrhizal',
+                identification: 'Caps smooth, scaly, often split at edges. 1-8cm; brown, white, yellow and 1 lilac. Gills pale age to dark brown (spore colour). No ring, may have bulb at base.'
+            }
+        ]
+    },    
+    {
+        taxon: 'genus',
+        name: 'Scleroderma',
+        names: [ { language: "en", names: ['Earthballs']}],
+        traits: [ 
+            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND ] },
+            { language: "en", name: 'smell', values: [ 'Strong, unpleasant' ] },
+            { language: "en", name: 'lookalikes', values: [ 'Lycoperdon (Puffballs)' ] },
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'All poisonous, some similar to Puffballs.',
+                identification: 'Thick scaly brown or dirty yellow skins (never white). Olive brown inside, turning black. Unpleasant smell.'
+            }
+        ]
+    },    
+    {
+        taxon: 'genus',
+        name: 'Macrolepiota',
+        names: [ { language: "en", names: ['Parasols']}],
+        traits: [ 
+            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND_LITTER, SD.habitats.DUNE, SD.habitats.GRASSLAND ] },
+            { language: "en", name: 'lookalikes', values: [ 'Amanita (Puffballs)' ] },
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Late Summer, Autumn.',
+                identification: 'Rough scaly caps often pale brown to white with a darker brown central zone. Gills and spores are nearly always white. Stems often have ring, sometimes swollen base.'
+            }
+        ]
+    },    
+    {
+        taxon: 'genus',
+        name: 'Lycoperdon',
+        names: [ { language: "en", names: ['Puffballs']}],
+        traits: [ 
+            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND, SD.habitats.GRASSLAND ] },
+            { language: "en", name: 'lookalikes', values: [ 'Scleroderma (Earthballs)' ] },
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Some edible, some similar to Earthballs.',
+                identification: 'Regular shape, soft skins mature from white to very pale brown when spores ready. The flesh inside white, then brown when sporing. Very little smell.'
+            }
+        ]
+    },    
+    {
+        taxon: 'genus',
+        name: 'Amanita',
+        names: [ { language: "en", names: ['Amanita']}],
+        traits: [ 
+            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND_LITTER, SD.habitats.GRASSLAND ] },
+            { language: "en", name: 'cap size cms', values: [ '5-10' ] },
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Few edible, mainly poisonous, some deadly.',
+                identification: 'Caps white, yellow, red, orange, cream, beige or brown; often flecked with white or occasionally grey ‘spots’. Gills and spores are white. Stem often white and often has skirt. Volva at base.'
+            }
+        ]
+    },    
+    {
+        taxon: 'genus',
+        name: 'Mycena',
+        names: [ { language: "en", names: ['Bonnets']}],
+        traits: [ 
+            { language: "en", name: 'habitat', values: [ SD.habitats.WIDESPREAD ] },
+            { language: "en", name: 'cap size cms', values: [ '.5-3' ] },
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Few edible, mainly poisonous, some deadly.',
+                identification: 'Small, delicate, smooth caps (red, pink, white, black, blue). Long, thin stems. Gills, spores white.'
+            }
+        ]
+    },    
+    {
+        taxon: 'genus',
+        name: 'Tylopilus',
+        names: [ { language: "en", names: ['']}],
+        traits: [ 
+            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND, SD.habitats.WOODLAND_LITTER, SD.habitats.MOSS ] },
+            { language: "en", name: 'cap size cms', values: [ '10-20' ] },
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Form mycorrhizal relationships with trees. Widespread but only one species in Europe.',
+                identification: 'Swollen, wide stipes without a ring. Pinkish pores.'
+            }
+        ]
+    },    
+    {
+        taxon: 'genus',
+        name: 'Boletus',
+        names: [ { language: "en", names: ['']}],
+        traits: [ 
+            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND, SD.habitats.WOODLAND_LITTER, SD.habitats.MOSS ] },
+            { language: "en", name: 'cap size cms', values: [ '10-20' ] },
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Commonly known as Boletes although this group is now known to include species from genera.',
+                identification: 'Pileus has spongy surface of pores. Stipe is thick and may bulge. Pileus (cap) and stipe (stem) are clearly differentiated.'
+            }
+        ]
+    },    
 ];

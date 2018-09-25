@@ -1,11 +1,13 @@
+import * as R from 'ramda'
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
+import * as SD from 'api/snapdragon/trait-types';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { radioButonClickhandler } from 'ui/helpers/handlers';
-import visualMatchTemplate from 'ui/screens/multichoice/visual-match-template.html';
 import { itemProperties } from '../../helpers/data-checking';
-
-// Specimen carousel not working on this screen (works fine for portrait)
+import { taxa } from 'api/snapdragon/taxa';
+import { fungiTraits } from 'api/traits/fungi-traits';
+import visualMatchTemplate from 'ui/screens/multichoice/visual-match-template.html';
 
 export const renderVisualMatch = collection => {
 
@@ -17,25 +19,76 @@ export const renderVisualMatch = collection => {
 
     template.innerHTML = visualMatchTemplate;
 
-    const description1 = 'Can you identify the species?';
-    const description2 = '';
-    
-    const answers = layout.screens[1].type === 'binomial' 
-            ? itemProperties.itemNames(collection.items, collection.itemGroup)
-            : itemProperties.vernacularNames(collection.items, config, collection.itemGroup);
+    let question, answers, descriptions = [];
 
-    const questionValue = layout.screens[1].type === 'binomial'
-            ? item.name
-            : item.names.filter(names => names.language === config.language)[0].vernacularName;
+    const scorehandler = (descriptions, question, answers) => {        
+        const questionFormat = { itemId: item.id, question, layoutCount: lessonPlan.layouts.length, points: layout.points };
+        radioButonClickhandler(config, template, descriptions, answers, '.js-rb-answer-btn', questionFormat);
+    }
 
-    const vernacularName = layout.screens[1].type === 'binomial'
-            ? ''
-            : item.names.filter(names => names.language === config.language)[0].vernacularName;
+    if(layout.screens.find(screen => screen.name === 'visual-match')) {
 
-    const question = { question: questionValue, binomial: item.name, vernacular: vernacularName };
-    const questionFormat = { itemId: item.id, question, layoutCount: lessonPlan.layouts.length, points: layout.points };
+        let identification;
 
-    radioButonClickhandler(config, template, description1, description2, utils.shuffleArray(answers), '.js-rb-answer-btn', questionFormat);
-    
-    imageSlider(item, document.querySelector('.js-species-card-images'), true);
+        if(config.isLandscapeMode) {
+            const taxon = taxa.find(t => t.name === item.genus);
+            identification = taxon ? `Genus: ${taxon.descriptions[0].identification}` : '';
+            item.keyTrait = `How edible: ${itemProperties.getActiveTrait(fungiTraits, item.name, config.language, [{ name: 'how edible', formatter: trait => trait.value }])}`;
+        }
+
+        descriptions = [
+            'Can you identify the species?',
+            identification,
+            item.keyTrait
+        ];
+        
+        answers = layout.screens[1].type === 'binomial' 
+                ? itemProperties.itemNames(collection.items, collection.itemGroup)
+                : itemProperties.vernacularNames(collection.items, config, collection.itemGroup);
+
+        const questionValue = layout.screens[1].type === 'binomial'
+                ? item.name
+                : item.names.filter(names => names.language === config.language)[0].vernacularName;
+
+        const vernacularName = layout.screens[1].type === 'binomial'
+                ? ''
+                : item.names.filter(names => names.language === config.language)[0].vernacularName;
+
+        question = { question: questionValue, binomial: item.name, vernacular: vernacularName };
+        scorehandler(descriptions, question, answers);                
+    }
+
+    if(layout.screens.find(screen => screen.name === 'trait-property')) {
+
+        const screen = layout.screens.find(screen => screen.name === 'trait-property');
+
+        let traitName;
+
+        switch(screen.trait) {
+            case 'howEdible':
+                traitName = 'how edible';
+                descriptions[0] = 'How edible is this mushroom?';
+                descriptions[1] = 'Click on an image to open the picture gallery.'
+                break;
+        }
+                
+        const traitValue = fungiTraits.find(trait => trait.name === item.name).traits.find(trait => trait.name === traitName).value;
+        question = { question: traitValue, binomial: item.name };
+
+        let traits = [];
+        Object.keys(SD[screen.trait]).forEach(key => {
+            let value = SD[screen.trait][key];
+            traits.push(value);
+          });
+
+        if(config.isPortraitMode) traits = R.take(4, traits);
+
+        answers = traits.filter(utils.onlyUnique);
+
+        scorehandler(descriptions, question, answers);
+    }
+
+    if(config.isPortraitMode) {
+        imageSlider(item, document.querySelector('.js-species-card-images'), true);
+    }
 };

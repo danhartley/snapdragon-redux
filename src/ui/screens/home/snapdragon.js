@@ -1,6 +1,6 @@
 import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
-import { kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, mushroomQuiz } from 'snapdragon/snapdragon-collections';
+import { kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, mushroomQuiz, mushrooms1 } from 'snapdragon/snapdragon-collections';
 import { renderTemplate } from 'ui/helpers/templating';
 import snapdragonTemplate from 'ui/screens/home/snapdragon-template.html';
 
@@ -17,7 +17,7 @@ export const renderSnapdragon = (counter) => {
     const parent = DOM.leftBody;
     parent.innerHTML = '';
 
-    const collections = [ kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, mushroomQuiz ];
+    const collections = [ kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, mushroomQuiz, mushrooms1 ];
 
     collections.forEach(collection => {
         collection.families = collection.items.map(item => item.family).filter(utils.onlyUnique);

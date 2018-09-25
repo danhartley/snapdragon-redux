@@ -17,6 +17,7 @@ export const getGlossary = requiredGlossaries => {
                 break;
             case 'common':
                 glossary = [ ...glossary, ...commmon ];
+                break;
             case 'fungi':
                 glossary = [ ...glossary, ...fungi ];
                 break;

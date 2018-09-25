@@ -2,6 +2,7 @@ import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
+import { traits } from 'api/traits/traits';
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 import speciesPortraitTemplate from 'ui/screens/lists/species-table-portrait-template.html';
 import speciesSmallLandscapeTemplate from 'ui/screens/lists/species-table-small-landscape-template.html';
@@ -22,6 +23,7 @@ export const buildTable = (collection, config) => {
         item.shortName = itemProperties.trimLatinName(item.name);
         totalPasses += Number.isInteger(item.passes) ? item.passes : 0;
         totalFails += Number.isInteger(item.fails) ? item.fails : 0;
+        item.keyTrait = itemProperties.getActiveTrait(traits, item.name, config.language, [{ name: 'how edible', formatter: trait => trait.value }]);
     });
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;

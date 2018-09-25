@@ -229,6 +229,7 @@ export const herbsAndSpices = [
       "id": 488085,
       "name": "Cuminum cyminum",
       "eolName": "Cuminum cyminum L.",
+      "image": "2015/06/18/03/35954_orig.jpg",
       "images": [
         "2011/10/06/00/35014_orig.jpg",
         "2011/10/06/00/67312_orig.jpg",
@@ -745,7 +746,7 @@ export const herbsAndSpices = [
           "vernacularName": "ginger",
           "language": "en",
           "eol_preferred": true,
-          wikiSearchTerm: true
+          // wikiSearchTerm: true
         },
         {
           "vernacularName": "Canton Ginger",

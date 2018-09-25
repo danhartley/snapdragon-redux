@@ -94,7 +94,7 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
         const definitions = utils.shuffleArray(getGlossary(collection.glossary));
         const level1 = definitions.filter(def => def.level === 1);
         level1.forEach((def,index) => {
-            if(index < 3) {
+            if(index < 3 && def) {
                 const definitionLayout = { name: 'screen-definitions', type: 'test', score: 1, screens: [definitionScreens[0], definitionScreens[1]], itemIndex: collection.itemGroup[0], definition: def };
                 wildcardLayoutsForGroup.push(definitionLayout);
             }

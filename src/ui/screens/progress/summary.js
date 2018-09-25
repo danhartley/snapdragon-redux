@@ -70,7 +70,7 @@ export const renderSummary = (history) => {
 
         endOfRoundHandler.changeCollection('nextRound', collections, collection, config, history);
 
-        event.target.setAttribute("disabled", "disabled");
+        // event.target.setAttribute("disabled", "disabled");
     };
 
     learnMoreBtn.removeEventListener('click', handleBtnClickEvent);

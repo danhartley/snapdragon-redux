@@ -9,8 +9,8 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import landscapeTemplate from 'ui/screens/cards/card-template.html';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { getBirdSong } from 'xeno-canto/birdsong';
-import { speciesTraits } from 'api/traits';
-import { characteristics } from 'api/snapdragon/mycological-characteristics';
+import { traits } from 'api/traits/traits';
+import { fungiTraits } from 'api/traits/fungi-traits';
 import { infoSlider } from 'ui/screens/common/info-slider';
 
 export const renderCard = (collection) => {
@@ -114,8 +114,6 @@ const renderPortrait = (template, item, config) => {
 
 const renderCommonParts = (template, config, item) => {
 
-    // const traitsLength = config.isPortraitMode ? 2 : 5;
-
     const species = item.name;    
     const name = itemProperties.vernacularName(item, config);
     const speciesName = itemProperties.speciesName(species);
@@ -124,19 +122,20 @@ const renderCommonParts = (template, config, item) => {
     const rank = "species";
     const family = taxa.find(f => f.name === item.family);
     const familyName = itemProperties.familyVernacularNames(item.family, config.language)[0];
-    const familyImage = family ? `https://media.eol.org/content/${family.thumb}` : '';
-    const specific = infraspecifics.find(specific => specific.name === item.name);
-    const occurrences = specific ? specific.subspecies.length : 0;
-    // const traits = itemProperties.getNestedTaxonProp(family, config.language, 'traits', 'values');  
-    // const traitValue = traits !== '' ? R.take(traitsLength, traits).join(', ') : '';
-    // const traitName = family.traits.map(t => t.name)[0];
+    const itemImage = item.image || item.images[0];
     
+    const specific = infraspecifics.find(specific => specific.name === item.name);
+    const subSpeciesCount = specific ? specific.subspecies.length : 0;
+
+    const names = item.names.filter(name => name.language === config.language).map(name => name.vernacularName);
+    const nameCount = names.length; 
+
     const options = [
         { name: 'rank', formatter: trait => `UK # ${trait.value}` },
-        { name: 'edible', formatter: trait => trait.value ? 'Edible': 'Toxic' }
+        { name: 'how edible', formatter: trait => trait.value }
     ]
 
-    let trait = itemProperties.getActiveTrait(speciesTraits, item.name, config.language, options);
+    let trait = itemProperties.getActiveTrait(traits, item.name, config.language, options);
 
     const clone = document.importNode(template.content, true);
     
@@ -147,20 +146,19 @@ const renderCommonParts = (template, config, item) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
     
-    renderTemplate({ species, name, latin, rank, occurrences, family: family.name, familyImage, familyName, trait }, template.content, parent, clone);
-    // renderTemplate({ species, name, latin, rank, occurrences, family: family.name, familyImage, traitName, traitValue, familyName, trait }, template.content, parent, clone);
+    renderTemplate({ species, name, latin, rank, subSpeciesCount, family: family.name, itemImage, familyName, trait, nameCount }, template.content, parent, clone);
 
-    const badge = document.querySelector('.badge');
+    const subspeciesBadge = document.querySelector('.js-subspecies-badge');
 
-    if(occurrences === 0) {
-        badge.classList.add('hide');
+    if(subSpeciesCount === 0) {
+        subspeciesBadge.classList.add('hide');
     } else {
 
         const members = specific.subspecies;
 
-        badge.addEventListener('click', event => {
-            document.querySelector('#listModal .js-modal-text-title').innerHTML = `Cultivars of ${item.name}`;            
-            const list = document.querySelector('#listModal .js-modal-text');
+        subspeciesBadge.addEventListener('click', event => {
+            document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = `Cultivars of ${item.name}`;            
+            const list = document.querySelector('#badgeListModal .js-modal-text');
             let html = '<div class="modal-list scrollable">';
             members.forEach(member => {
                 html += `<div><span>subspecies: ${member.name}</span>`;
@@ -175,9 +173,37 @@ const renderCommonParts = (template, config, item) => {
             list.innerHTML = html;
         });
     }
-    const info = characteristics.find(c => c.name === item.name);
+    let info = fungiTraits.find(c => c.name === item.name);
 
     if(info) {
-        infoSlider(info, document.querySelector('.js-info-box'));
+        infoSlider(info, document.querySelector('.js-info-box'));    
+    } else {
+        info = { traits: family.traits };
+        infoSlider(info, document.querySelector('.js-info-box'));    
+    }
+
+    const namesBadge = document.querySelector('.js-names-badge');
+
+    if(nameCount < 2) {
+        namesBadge.classList.add('hide');    
+    } else {
+        namesBadge.addEventListener('click', event => {
+            document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = 'Common names';
+            let html = `<ul>`;
+            names.forEach(name => {
+                html+= `<li class="capitalise">${name}</li>`;
+            });
+            html+= `</ul>`;
+            document.querySelector('#badgeListModal .js-modal-text').innerHTML = html;
+        });
+    }
+
+    // Consolidate all the traits lookups
+
+    const context = traits.find(trait => trait.name === item.name).context;
+    const lookalikes = context.find(c => c.name === 'look-alikes');
+
+    if(lookalikes) {
+        document.querySelector('.lookalikes').innerHTML = lookalikes.values.join(', ');
     }
 };

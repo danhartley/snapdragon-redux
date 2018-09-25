@@ -41,6 +41,7 @@ const functions = [
     { name: 'wildcard-card', func: renderWildcard },
     { name: 'wildcard-match', func: renderMultiStrips },
     { name: 'visual-match', func: renderVisualMatch },
+    { name: 'trait-property', func: renderVisualMatch },
     { name: 'definition-card', func: renderDefinitionCard },
 ];
 

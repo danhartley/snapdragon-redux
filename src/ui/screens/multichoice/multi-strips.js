@@ -65,7 +65,7 @@ export const renderMultiStrips = (collection) => {
         
         renderTemplate( { question: questionText }, template.content, parent);
 
-        const renderAnswer = (text, className, correct, score, scoreUpdateTimer) => {
+        const renderAnswer = (score, scoreUpdateTimer) => {
             const answer = document.querySelector('.js-answer');
             answer.innerHTML = 'Continue';
             answer.style.display = 'block';
@@ -76,9 +76,9 @@ export const renderMultiStrips = (collection) => {
             });
             document.querySelector('.js-question').style.display = 'none';
             if(screen.name === 'species-vernaculars') {
-                document.querySelector('.js-txt-species-name').innerHTML = text
+                document.querySelector('.js-txt-species-name').innerHTML = score.question
             } else if(screen.name === 'species-scientifics') {
-                document.querySelector('.js-txt-species').innerHTML = text;
+                document.querySelector('.js-txt-species').innerHTML = score.question;
             }            
         }
 

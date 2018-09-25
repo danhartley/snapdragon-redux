@@ -5,6 +5,7 @@ import { fruit } from 'api/snapdragon/fruit';
 import { insects } from 'api/snapdragon/insects';
 import { commonCityBirds } from 'api/snapdragon/common-city-birds';
 import { mushroomQuiz } from 'api/snapdragon/mushroom-quiz';
+import { mushrooms1 } from 'api/snapdragon/mushrooms1';
 import { weeds1 } from 'api/rhs/weeds1';
 
 import { leaf } from 'api/leaf';
@@ -71,6 +72,14 @@ export const collections = [
         type: 'species',
         name: 'Mushroom Quiz',
         items: mushroomQuiz,
+        eol_name: 'Mushroom Quiz',
+        eol_link: 'https://eol.org/collections/140498'        
+    },
+    {
+        id: 9,
+        type: 'species',
+        name: 'Mushrooms I',
+        items: mushrooms1,
         eol_name: 'Mushroom Quiz',
         eol_link: 'https://eol.org/collections/140498'        
     },

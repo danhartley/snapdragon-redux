@@ -63,7 +63,7 @@
     .taxon-highlight {
         font-size: 1em;  
     }
-    .btn {
+    .btn, .btn.snap-alert, .btn.snap-success {
         padding: .375em 2em;
     }
 

@@ -1,6 +1,8 @@
+import * as R from 'ramda';
+
 import { screens } from 'snapdragon/screen-layouts';
 
-const { specimen, speciesCard, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete, cultivar, cultivarCard, epithets, wildcardCard, wildcard, definitions, visualMatch, definitionCard } = screens;
+const { specimen, speciesCard, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete, cultivar, cultivarCard, epithets, wildcardCard, wildcard, definitions, visualMatch, definitionCard, traitProperty } = screens;
 
 const speciesRevision = {
     name: 'screen-species-card',
@@ -113,6 +115,20 @@ const multiVisualMatch = {
     screens: [
         { ...specimen },
         { ...visualMatch }
+    ]
+};
+
+const traitPropertyMatch = {
+    name: 'trait-property-match',
+    type:'test',
+    score: 1,
+    points: 1,
+    kind: 'MC',
+    given: 'Specimen image',
+    options: 'Choose trait',
+    screens: [
+        { ...specimen },
+        { ...traitProperty }
     ]
 };
 
@@ -317,6 +333,11 @@ const screenType = (multiVisualMatch, type) => {
     return multiVisualMatch;
 };
 
+const propertyTrait = (traitPropertyMatch, trait) => {
+    traitPropertyMatch.screens[1].trait = trait;
+    return traitPropertyMatch;
+};
+
 const landscapeLesson1 = {
     id: 1,
     name:'Lesson 1',
@@ -378,7 +399,15 @@ const landscapeLesson3 = {
         {   id: 1,
             name:'Level 1',            
             // layouts: [ speciesRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'vernacular') }, latinToCommonMatch, taxonRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'binomial') }, commonToLatinMatch  ],
-            layouts: [ speciesRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'vernacular') }, definitionRevision, latinToCommonMatch, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'binomial') }, commonToLatinMatch  ],
+            layouts: [ 
+                speciesRevision, 
+                { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
+                // { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'vernacular') }, 
+                // definitionRevision, 
+                // latinToCommonMatch, 
+                // { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'binomial') }, 
+                // commonToLatinMatch  
+            ],
             wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ commonToLatinMatch ]
         },
@@ -451,7 +480,16 @@ const portraitLesson3 = {
     levels: [
         {   id: 1,
             name:'Level 1',            
-            layouts: [ speciesRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'vernacular') }, latinToCommonMatch, definitionRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'binomial') }, commonToLatinMatch  ],
+            // layouts: [ speciesRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'vernacular') }, latinToCommonMatch, definitionRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'binomial') }, commonToLatinMatch  ],
+            layouts: [ 
+                speciesRevision, 
+                { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
+                // { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'vernacular') }, 
+                // definitionRevision, 
+                // latinToCommonMatch, 
+                // { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'binomial') }, 
+                // commonToLatinMatch  
+            ],
             wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ commonToLatinMatch ]
         },

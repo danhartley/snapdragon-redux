@@ -34,7 +34,7 @@ export const renderAnswer = (response) => {
     const genus = names[0];
     const species = names[1];
     const correct = isAnswerCorrect(response);
-    const className = correct ? 'snap-success' : 'snap-alert';    
+    // const className = correct ? 'snap-success' : 'snap-alert';    
 
     const name = renderName(response, correct);
 
