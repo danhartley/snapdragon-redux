@@ -32,15 +32,13 @@ export const habitats = {
     MOSS
 };
 
-const TOXIC = 'Toxic';
-const CHOICE = 'Choice';
-const EDIBLE = 'Edible';
-const INEDIBLE = 'Inedible';
-const POISONOUS = 'Poisonous';
 const DEADLY = 'Deadly';
+const POISONOUS = 'Poisonous';
+const INEDIBLE = 'Inedible';
+const EDIBLE = 'Edible';
+const CHOICE = 'Choice';
 
 export const howEdible = {
-    TOXIC,
     CHOICE,
     EDIBLE,
     INEDIBLE,

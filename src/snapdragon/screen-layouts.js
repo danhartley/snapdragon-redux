@@ -154,6 +154,11 @@ const visualMatch = {
   domain: 'collection'
 };
 
+const traitProperty = {
+  name: 'trait-property',
+  domain: 'collection'
+};
+
 export const screens = {
   specimen,
   history,
@@ -183,5 +188,6 @@ export const screens = {
   wildcardCard,
   wildcard,
 
-  visualMatch
+  visualMatch,
+  traitProperty
 };

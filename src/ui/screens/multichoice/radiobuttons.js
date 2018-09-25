@@ -34,9 +34,9 @@ export const renderRadioButtons = (collection) => {
 
     indices = config.isPortraitMode ? [3,4] : [4,5];
 
-    const scorehandler = (description1, description2, question, answers) => {
+    const scorehandler = (descriptions, question, answers) => {
         const questionFormat = { itemId: item.id, question, layoutCount: lessonPlan.layouts.length, points: layout.points };
-        radioButonClickhandler(config, template, description1, description2, answers, '.js-rb-answer-btn', questionFormat);
+        radioButonClickhandler(config, template, descriptions, answers, '.js-rb-answer-btn', questionFormat);
     }
 
     const familyFlavours = config.isPortraitMode 
@@ -57,58 +57,58 @@ export const renderRadioButtons = (collection) => {
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 
-        scorehandler(description1, description2, question, answers);
+        scorehandler(descriptions, question, answers);
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
         const identification = families.find(f => f.name === family).descriptions[0].identification;
-        description1 = `${species.toUpperCase()} belongs to a family whose Quick Id is '${identification}'`;
-        description2 = 'What is the name of this FAMILY?';
+        descriptions[0] = `${species.toUpperCase()} belongs to a family whose Quick Id is '${identification}'`;
+        descriptions[1] = 'What is the name of this FAMILY?';
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 
-        scorehandler(description1, description2, question, answers);
+        scorehandler(descriptions, question, answers);
     }
     
     if(layout.screens.find(screen => screen.flavour === 'match-species-to-latin-family-name')) {
 
-        description1 = `To which FAMILY does the species ${species.toUpperCase()} belong?`;        
+        descriptions[0] = `To which FAMILY does the species ${species.toUpperCase()} belong?`;        
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
         
-        scorehandler(description1, description2, question, answers);
+        scorehandler(descriptions, question, answers);
     }
     
     if(layout.screens.find(screen => screen.flavour === 'match-species-to-common-family-name')) {
 
-        description1 = `To which FAMILY does the species ${species.toUpperCase()} belong?`;
+        descriptions[0] = `To which FAMILY does the species ${species.toUpperCase()} belong?`;
         question = { question: commonFamilyName, binomial: item.name };
         answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
         
-        scorehandler(description1, description2, question, answers);
+        scorehandler(descriptions, question, answers);
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-common-family-name-to-latin-family-name')) {
 
         indices = config.isPortraitMode ? [4,5] : [5,6];
 
-        description1 = `Which of the following common FAMILY names matches the latin name ${family.toUpperCase()}?`;
+        descriptions[0] = `Which of the following common FAMILY names matches the latin name ${family.toUpperCase()}?`;
         question = { question: commonFamilyName, binomial: item.name };
         answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
         
-        scorehandler(description1, description2, question, answers);
+        scorehandler(descriptions, question, answers);
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-latin-family-name-to-common-family-name')) {
 
         indices = config.isPortraitMode ? [4,5] : [5,6];
 
-        description1 = `Which of the following common FAMILY names matches the latin name ${family.toUpperCase()}?`;
+        descriptions[0] = `Which of the following common FAMILY names matches the latin name ${family.toUpperCase()}?`;
         question = { question: commonFamilyName, binomial: item.name };
         answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
         
-        scorehandler(description1, description2, question, answers);
+        scorehandler(descriptions, question, answers);
     }
 
     if(layout.screens.find(screen => screen.name === 'cultivar-match')) {
@@ -120,10 +120,10 @@ export const renderRadioButtons = (collection) => {
         randomAnswers = R.take(indices[0], R.take(indices[1], utils.shuffleArray(itemNames)).filter(itemName => itemName !== item.name));
         const subspecies = layout.cultivars.subspecies;
         const names = R.take(indices[1], R.flatten(subspecies.map(sub => sub.names.filter(name => name.language === config.language))).map(n => n.vernacularName)).join(', ');
-        description1 = `${names} derive from one species. What is its name?`;
+        descriptions[0] = `${names} derive from one species. What is its name?`;
         question = { question: item.name, binomial: item.name };
         answers = utils.shuffleArray([item.name, ...randomAnswers]);
 
-        scorehandler(description1, description2, question, answers);
+        scorehandler(descriptions, question, answers);
     }
 };

@@ -160,10 +160,6 @@
         font-size: 1.4em;
     }
 
-    .text-question {
-        margin: 1em 0 0 .25em;
-    }
-    
     .flex-provider .skills {
         display: block;
     }
@@ -196,7 +192,7 @@
     #menuModal .modal-dialog {
         max-width: 40vw;
     }
-
+    
     #imageSlider .carousel-item {
         height: 60vh;
     }

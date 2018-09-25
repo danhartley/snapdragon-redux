@@ -9,7 +9,22 @@ export const infoSlider = (info, parent) => {
 
     parent.innerHTML = '';
 
+    info.traits.forEach(trait => {
+        if(!trait.value && trait.values) {
+            trait.value = trait.values.join(', ');
+        }
+    });
+    
     renderTemplate({ info }, slider.content, parent);
-
+    
     document.querySelector('.carousel-item').classList.add('active');
+
+    const traitCount = info.traits.length;
+
+    if(traitCount === 1) {
+        document.querySelectorAll('.carousel.slide a').forEach(control => {
+            control.setAttribute('disabled', 'disabled');
+            control.classList.add('inactive-icon');
+        });
+    }
 }

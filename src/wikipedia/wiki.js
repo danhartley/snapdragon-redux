@@ -47,7 +47,7 @@ const cleanEntry = str => {
 
 const wikiLink = entry => {
     const src = cleanEntry(entry).replace('.wikipedia', '.m.wikipedia');
-    return `<li><span data-toggle="modal" data-target="#externalPageModal" data-src="${src}" class="underline-link">Wikipedia</span></li>`;    
+    return `<span data-toggle="modal" data-target="#externalPageModal" data-src="${src}" class="underline-link">Wikipedia</span>`;    
 };
 
 const formatWiki = (entry) => {
@@ -81,9 +81,9 @@ async function renderWiki(wikiNode, item, language) {
                             ? item.searchTerms.filter(term => term.language === language)[0].searchTerm 
                             : binomial);
     root = `https://${language}.m.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&limit=1&search=`;
-    const exceptions = [ 'Artemisia dracunculus', 'Malus domestica'];
+    const exceptions = [ 'Artemisia dracunculus', 'Malus domestica', 'Zingiber officinale'];
     if(R.contains(item.name, exceptions)) {
-        root = `https://${language}.m.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&limit=2&search=`;
+        root = `https://${language}.m.wikipedia.org/w/api.php?action=opensearch&format=json&origin=*&limit=2&redirects=resolve&search=`;
     }    
     wikiNode.innerHTML = "";
 

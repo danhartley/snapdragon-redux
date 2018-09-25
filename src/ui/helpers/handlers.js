@@ -25,6 +25,17 @@ export const scoreHandler = (type, score, callback, config) => {
     }
 };
 
+const textAlertHandler = (correct, correctAnswer) => {
+    const questionText = document.querySelector('.js-txt-question');
+    questionText.innerHTML = correct
+        ? `<div>
+            <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
+            </div>`
+        : `<div>
+            <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ correctAnswer }</span>
+            </div>`;
+}
+
 const genericScoreHandler = (score, callback, config) => {
     
     const { itemId, question, answer, event, layoutCount, points } = score;
@@ -47,21 +58,11 @@ const genericScoreHandler = (score, callback, config) => {
     
     const { colour, correct } = renderAnswerHeader(response);
 
-    const questionText = document.querySelector('.js-txt-question');
+    textAlertHandler(correct, correctAnswer);
 
-    questionText.innerHTML = correct
-        ? `<div>
-            <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
-            </div>`
-        : `<div>
-            <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ correctAnswer }</span>
-            </div>`;
-
-    btn.style.background = colour;
-    btn.style.borderColor = colour;
-    btn.style.color = 'white';
+    score.answerContainer.classList.add(colour);
+    score.questionContainer.classList.add('snap-success');
     btn.innerText = 'Continue';
-    btn.disabled = true;
 
     response.success = correct;
     response.layoutCount = layoutCount;
@@ -69,7 +70,7 @@ const genericScoreHandler = (score, callback, config) => {
     const delay = correct ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
     const scoreUpdateTimer = setTimeout(()=>{
-        actions.boundUpdateScore(response);
+        actions.boundUpdateScore(response);        
     }, delay);
 
     callback(colour, score, scoreUpdateTimer);
@@ -130,7 +131,9 @@ const stripScoreHandler = (score, callback, config) => {
                 actions.boundUpdateScore(score);
             }, delay);
             
-            if(callback) callback(text, colour, correct, score, scoreUpdateTimer);
+            if(callback) callback(score, scoreUpdateTimer);
+
+            textAlertHandler(correct, score.question);
         });
     });
 };
@@ -224,9 +227,14 @@ export const radioButonClickhandler = (config, template, descriptions, answers, 
 
     const answerBtn = document.querySelector(submitBtn);
 
+    document.querySelectorAll('.radio-buttons').forEach(rbContainer => {
+        rbContainer.addEventListener('click', () => {
+            answerBtn.innerHTML = 'Check your answer';
+        });
+    });
+
     const callback = (colour, score, scoreUpdateTimer) => {            
         answerBtn.disabled = false;
-        answerBtn.classList.add(colour);
         answerBtn.removeEventListener('click', scoreEventHandler);     
         answerBtn.addEventListener('click', () => {
             window.clearTimeout(scoreUpdateTimer);
@@ -235,8 +243,15 @@ export const radioButonClickhandler = (config, template, descriptions, answers, 
     };
 
     const scoreEventHandler = event => {
+        let questionContainer;
+        document.querySelectorAll('input[name="answer"]').forEach((rb, index) => {
+            if(rb.id.toUpperCase() === question.question.question.toUpperCase()) {
+                questionContainer = rb.parentElement;
+            }
+        });
+        const answerContainer = document.querySelector('input[name="answer"]:checked').parentElement;
         const answer = document.querySelector('input[name="answer"]:checked').value;
-        const score = { ...question, answer, event };
+        const score = { ...question, answer, event, answerContainer, questionContainer };
         scoreHandler('radio', score, callback, config);            
     };
 

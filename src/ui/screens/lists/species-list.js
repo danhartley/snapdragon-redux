@@ -115,7 +115,7 @@ export const renderSpeciesCollectionList = (collection, collectionFromLastRound,
             subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
             subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
 
-            event.target.setAttribute("disabled", "disabled");
+            // event.target.setAttribute("disabled", "disabled");
         });
     }
 };
