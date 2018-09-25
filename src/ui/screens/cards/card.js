@@ -122,7 +122,7 @@ const renderCommonParts = (template, config, item) => {
     const rank = "species";
     const family = taxa.find(f => f.name === item.family);
     const familyName = itemProperties.familyVernacularNames(item.family, config.language)[0];
-    const itemImage = item.image || item.images[0];
+    const itemImage = item.icon || item.images[0];
     
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const subSpeciesCount = specific ? specific.subspecies.length : 0;
@@ -203,7 +203,11 @@ const renderCommonParts = (template, config, item) => {
     const context = traits.find(trait => trait.name === item.name).context;
     const lookalikes = context.find(c => c.name === 'look-alikes');
 
+    const lookalikesElement = document.querySelector('.js-lookalikes span:nth-child(2)');
+
     if(lookalikes) {
-        document.querySelector('.lookalikes').innerHTML = lookalikes.values.join(', ');
+        lookalikesElement.innerHTML = lookalikes.values.join(', ');
+    } else {
+        lookalikesElement.classList.add('hide');
     }
 };

@@ -69,6 +69,7 @@ export const renderVisualMatch = collection => {
                 traitName = 'how edible';
                 descriptions[0] = 'How edible is this mushroom?';
                 descriptions[1] = 'Click on an image to open the picture gallery.'
+                descriptions[2] = 'Stuck? Click here to reveal the name of this mushroom.';
                 break;
         }
                 
@@ -86,6 +87,14 @@ export const renderVisualMatch = collection => {
         answers = traits.filter(utils.onlyUnique);
 
         scorehandler(descriptions, question, answers);
+
+        const hint = document.querySelector('.js-clickable-description');
+        if(hint) {
+            hint.classList.add('clickable');
+            hint.addEventListener('click', () =>{
+                hint.innerHTML = `${itemProperties.vernacularName(item, config)} (${item.name})`;
+            });
+        }
     }
 
     if(config.isPortraitMode) {

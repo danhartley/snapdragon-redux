@@ -2,7 +2,7 @@ export const mushrooms1 = [
     {
         "id": 195761,
         "name": "Boletus edulis",
-        "image": "2013/03/01/14/45554_orig.jpg",
+        "icon": "2013/03/01/14/45554_orig.jpg",
         "images": [
           "2013/03/01/14/45554_orig.jpg",
           "2015/03/19/06/51750_orig.jpg",
@@ -203,7 +203,7 @@ export const mushrooms1 = [
       {
         "id": 162875,
         "name": "Lycoperdon perlatum",
-        "image": "2012/06/14/01/36709_orig.jpg",
+        "icon": "2012/06/14/01/36709_orig.jpg",
         "images": [
           "2016/08/19/14/07661_orig.jpg",
           "2010/03/24/04/44580_orig.jpg",
