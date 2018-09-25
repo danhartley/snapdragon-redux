@@ -6,12 +6,12 @@ import { imageSlider } from 'ui/screens/common/image-slider';
 import updateBtnTemplate from 'ui/screens/multichoice/update-btn-template.html';
 
 
-export const scoreHandler = (type, score, callback, config) => {
+export const scoreHandler = (type, score, callback, config, containers) => {
     
     switch(type) {
         case 'radio':
         case 'text':
-            genericScoreHandler(score, callback, config);
+            genericScoreHandler(score, callback, config, containers);
             break;
         case 'block':
             blockScoreHander(score, callback, config);
@@ -36,7 +36,7 @@ const textAlertHandler = (correct, correctAnswer) => {
             </div>`;
 }
 
-const genericScoreHandler = (score, callback, config) => {
+const genericScoreHandler = (score, callback, config, containers) => {
     
     const { itemId, question, answer, event, layoutCount, points } = score;
 
@@ -60,8 +60,8 @@ const genericScoreHandler = (score, callback, config) => {
 
     textAlertHandler(correct, correctAnswer);
 
-    score.answerContainer.classList.add(colour);
-    score.questionContainer.classList.add('snap-success');
+    containers.answerContainer.classList.add(colour);
+    containers.questionContainer.classList.add('snap-success');
     btn.innerText = 'Continue';
 
     response.success = correct;
@@ -251,8 +251,8 @@ export const radioButonClickhandler = (config, template, descriptions, answers, 
         });
         const answerContainer = document.querySelector('input[name="answer"]:checked').parentElement;
         const answer = document.querySelector('input[name="answer"]:checked').value;
-        const score = { ...question, answer, event, answerContainer, questionContainer };
-        scoreHandler('radio', score, callback, config);            
+        const score = { ...question, answer, event };
+        scoreHandler('radio', score, callback, config, { answerContainer, questionContainer });            
     };
 
     answerBtn.addEventListener('click', scoreEventHandler)
