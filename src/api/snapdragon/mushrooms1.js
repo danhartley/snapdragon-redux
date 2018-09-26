@@ -530,6 +530,7 @@ export const mushrooms1 = [
       {
         "id": 6666298,
         "name": "Cantharellus cibarius",
+        "icon": "2015/03/24/03/69838_orig.jpg",
         "images": [
           "2013/07/14/01/63518_orig.jpg",
           "2012/08/30/22/48536_orig.jpg",

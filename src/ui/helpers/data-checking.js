@@ -109,6 +109,16 @@ const itemNames = (items, itemGroup) => {
     return names;
 };
 
+const itemContextProperty = (traits, item, propertyName) => {
+    const trait = traits.find(trait => trait.name === item.name);
+    if(!trait || !trait.context) return '';
+
+    const property = trait.context.find(c => c.name === propertyName);
+    if(!property) return '';
+
+    return property.values.join(', ');
+};
+
 export const itemProperties = {
     vernacularName,
     genusName,
@@ -121,5 +131,6 @@ export const itemProperties = {
     getTrait,
     getActiveTrait,
     vernacularNames,
-    itemNames
+    itemNames,
+    itemContextProperty
 };
