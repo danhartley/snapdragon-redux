@@ -15,6 +15,7 @@ export const nextLesson = (counter) => {
     let defaultLessonPlan = lessonPlan || lessonPlans.find(plan => plan.id === planId && plan.portrait === config.isPortraitMode);
     
     if(collection.isNextRound) {
+        collection.lesson = collection.lesson || { ...defaultLessonPlan, level: { id: 1 } };
         lesson = { ...defaultLessonPlan, ...lessonPlanner.createLessonPlan(defaultLessonPlan, config, collection) };        
         collection.layoutCount = lesson.layoutCount;
         actions.boundNextLessonPlan(lesson);

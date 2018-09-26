@@ -60,8 +60,10 @@ const genericScoreHandler = (score, callback, config, containers) => {
 
     textAlertHandler(correct, correctAnswer);
 
-    containers.answerContainer.classList.add(colour);
-    containers.questionContainer.classList.add('snap-success');
+    if(containers) {
+        containers.answerContainer.classList.add(colour);
+        containers.questionContainer.classList.add('snap-success');
+    }
     btn.innerText = 'Continue';
 
     response.success = correct;

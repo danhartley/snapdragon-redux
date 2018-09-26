@@ -398,15 +398,14 @@ const landscapeLesson3 = {
     levels: [
         {   id: 1,
             name:'Level 1',            
-            // layouts: [ speciesRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'vernacular') }, latinToCommonMatch, taxonRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'binomial') }, commonToLatinMatch  ],
             layouts: [ 
                 speciesRevision, 
                 { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
-                // { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'vernacular') }, 
-                // definitionRevision, 
-                // latinToCommonMatch, 
-                // { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'binomial') }, 
-                // commonToLatinMatch  
+                { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'vernacular') }, 
+                definitionRevision, 
+                latinToCommonMatch, 
+                { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'binomial') }, 
+                commonToLatinMatch  
             ],
             wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ commonToLatinMatch ]

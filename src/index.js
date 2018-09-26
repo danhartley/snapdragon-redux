@@ -21,7 +21,6 @@ import { renderScore } from 'ui/fixtures/score';
 import { renderCollections } from 'ui/screens/home/collections';
 import { renderNavigation } from 'ui/fixtures/navigation';
 
-import { lessonPlans } from 'snapdragon/lesson-plans';
 import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
 import { renderSnapdragon } from "./ui/screens/home/snapdragon";
@@ -33,13 +32,6 @@ setTimeout(()=>{
     config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
     config.isSmallLandscapeMode = window.matchMedia("(max-width: 1023px)").matches;
     config.isLandscapeMode = !config.isPortraitMode;
-
-    if(!collection.lesson) {
-        collection.lesson = lessonPlans.find(plan => plan.portrait === config.isPortraitMode && plan.default);
-        collection.lesson.level = collection.lesson.levels[0];
-        const levels = lessonPlans.filter(plan => plan.name === collection.lesson.name)[0].levels;
-        collection.lesson.levels = levels;
-    }
 
     const counter = currentCounter ? { ...currentCounter } : { index: null };
 

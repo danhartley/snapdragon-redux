@@ -267,6 +267,7 @@ export const mushrooms1 = [
       {
         "id": 1013415,
         "name": "Tylopilus felleus",
+        "icon": "2015/03/24/03/26565_orig.jpg",
         "images": [
           "2010/03/24/04/10174_orig.jpg",
           "2010/03/24/04/88696_orig.jpg",
@@ -344,6 +345,7 @@ export const mushrooms1 = [
       {
         "id": 1029767,
         "name": "Scleroderma citrinum",
+        "icon": "2014/01/31/19/28742_orig.jpg",
         "images": [
           "2014/01/30/22/82571_orig.jpg",
           "2012/06/12/09/51199_orig.jpg",
@@ -397,6 +399,7 @@ export const mushrooms1 = [
       {
         "id": 1004634,
         "name": "Morchella esculenta",
+        "icon": "2017/10/15/13/22940_orig.jpg",
         "images": [
           "2009/07/24/05/02771_orig.jpg",
           "2009/07/24/05/31897_orig.jpg",
@@ -600,6 +603,7 @@ export const mushrooms1 = [
       {
         "id": 188598,
         "name": "Gyromitra esculenta",
+        "icon": "2016/08/15/22/55369_orig.jpg",
         "images": [
           "2014/05/08/03/85444_orig.jpg",
           "2012/06/12/06/77245_orig.jpg",
@@ -655,6 +659,7 @@ export const mushrooms1 = [
       {
         "id": 190094,
         "name": "Omphalotus olearius",
+        "icon": "2012/07/03/00/21100_orig.jpg",
         "images": [
           "2014/01/16/01/30757_orig.jpg",
           "2012/06/12/08/99171_orig.jpg",
@@ -731,6 +736,7 @@ export const mushrooms1 = [
       {
         "id": 10407419,
         "name": "Agaricus campestris",
+        "icon": "2015/03/24/03/13326_orig.jpg",
         "images": [
           "2009/11/24/02/35916_orig.jpg",
           "2009/11/24/02/19536_orig.jpg",
@@ -823,6 +829,7 @@ export const mushrooms1 = [
       {
         "id": 2870280,
         "name": "Macrolepiota procera",
+        "icon": "2015/03/04/21/56925_orig.jpg",
         "images": [
           "2014/03/20/02/56258_orig.jpg",
           "2012/06/12/07/74353_orig.jpg",
@@ -929,6 +936,7 @@ export const mushrooms1 = [
       {
         "id": 1030008,
         "name": "Agaricus xanthodermus",
+        "icon": "2015/03/04/21/14485_orig.jpg",
         "images": [
           "2012/11/14/04/35981_orig.jpg",
           "2012/11/14/04/68652_orig.jpg",
@@ -1000,6 +1008,7 @@ export const mushrooms1 = [
       {
         "id": 2865532,
         "name": "Amanita rubescens",
+        "icon": "2015/03/04/21/97493_orig.jpg",
         "images": [
           "2013/08/29/01/17648_orig.jpg",
           "2014/02/03/01/07770_orig.jpg",

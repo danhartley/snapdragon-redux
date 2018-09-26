@@ -538,4 +538,8 @@ export const epithets = [
         "latin" : ["esculenta"],
         "en" : ["edible"]
     },
+    {
+        "latin" : ["ascus"],
+        "en" : ["sack, wineskin"]
+    },
 ];
