@@ -123,7 +123,7 @@ const sortBy = (arr, prop, dir = 'asc') => {
     : arr.sort((a, b) => parseFloat(b[prop]) - parseFloat(a[prop]));
 };
 
-const sortAlphabeticallyBy = (arr, prop, dir = 'asc') => {
+const sortAlphabeticallyBy = (arr, prop) => {
   arr.sort(function(a, b){
     if(a[prop] < b[prop]) return -1;
     if(a[prop] > b[prop]) return 1;

@@ -24,7 +24,7 @@ export const renderDefinitionCard = collection => {
 
     const filteredTerms = getGlossary(collection.glossary).filter(term => term.level === 1);
 
-    const glossary = utils.sortAlphabeticallyBy(filteredTerms, 'term', 'asc');
+    const glossary = utils.sortAlphabeticallyBy(filteredTerms, 'term');
     
     renderTemplate({ glossary }, template.content, parent);
 
