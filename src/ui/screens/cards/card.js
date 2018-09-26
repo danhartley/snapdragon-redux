@@ -188,7 +188,7 @@ const renderCommonParts = (template, config, item) => {
         namesBadge.classList.add('hide');    
     } else {
         namesBadge.addEventListener('click', event => {
-            document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = 'Common names';
+            document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = 'EOL Common Names';
             let html = `<ul>`;
             names.forEach(name => {
                 html+= `<li class="capitalise">${name}</li>`;

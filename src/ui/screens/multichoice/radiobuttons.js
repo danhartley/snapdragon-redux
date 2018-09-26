@@ -52,7 +52,7 @@ export const renderRadioButtons = (collection) => {
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
 
         const summary = families.find(f => f.name === family).descriptions[0].summary;
-        descriptions[0] = `${species.toUpperCase()} belongs to a family whose description1 is '${summary}'`;
+        descriptions[0] = `${species.toUpperCase()} belongs to a family whose description is '${summary}'`;
         descriptions[1] = 'What is the name of this FAMILY?';
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);

@@ -156,4 +156,25 @@ export const fungi = [
         level: 2,
         group: 2
     },
+    {
+        term: "Basidiomycota",
+        definition: "One of two divisions (with Ascomycota) of the `Higher Fungi`. Includes mushrooms.",
+        wiki: "https://en.wikipedia.org/wiki/Basidiomycota",
+        level: 2,
+        group: 2
+    },
+    {
+        term: "Ascomycota",
+        definition: "One of two divisions (with Basidiomycota) of the `Higher Fungi`. Also known as Sac Fungi.",
+        wiki: "https://en.wikipedia.org/wiki/Ascomycota",
+        level: 2,
+        group: 2
+    },
+    {
+        term: "Ascocarp",
+        definition: "Fruiting body (sporocarp) of an ascomycete phylum fungus. Consists of very tightly interwoven hyphae.",
+        wiki: "https://en.wikipedia.org/wiki/Ascocarp",
+        level: 2,
+        group: 2
+    },
 ]

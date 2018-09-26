@@ -123,6 +123,15 @@ const sortBy = (arr, prop, dir = 'asc') => {
     : arr.sort((a, b) => parseFloat(b[prop]) - parseFloat(a[prop]));
 };
 
+const sortAlphabeticallyBy = (arr, prop, dir = 'asc') => {
+  arr.sort(function(a, b){
+    if(a[prop] < b[prop]) return -1;
+    if(a[prop] > b[prop]) return 1;
+    return 0;
+  });
+  return arr;
+};
+
 const calcItemIndex = (offSet, moduleSize, index) => {
   const itemIndex = 
         (offSet + index) % moduleSize === 0 
@@ -180,6 +189,7 @@ export const utils = {
   doubledItemsInArray,
   onlyUnique,
   sortBy,
+  sortAlphabeticallyBy,
   calcItemIndex,
   isIterable,
   capitaliseFirst,
