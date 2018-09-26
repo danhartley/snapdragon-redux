@@ -2,11 +2,11 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { config } from 'syllabus/lesson-config';
-import { kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, mushroomQuiz, mushrooms1 } from 'snapdragon/snapdragon-collections';
+import { kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, mushrooms1, mushrooms2, mushrooms3 } from 'snapdragon/snapdragon-collections';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
 
-const collections = [ kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, mushroomQuiz, mushrooms1 ];
+const collections = [ kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, mushrooms1, mushrooms2, mushrooms3 ];
 
 const initCollection = (selectedCollection = collections[0]) => {
 
