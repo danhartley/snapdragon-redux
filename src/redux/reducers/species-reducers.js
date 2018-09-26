@@ -20,12 +20,20 @@ export const collections = (state = speciesStateHelper.collections, action) => {
     }
 };
 
+let isRehydrated = false;
+
 export const collection = (state = { id: 0, descriptions: null, currentRound: 0, rounds: 0, isNextRound: true }, action) => {
 
     const getNextItem = (action, state) => {
         let itemIndex = action.data;
         let nextItem = state.items[itemIndex];
-        let layoutCounter = state.layoutCounter ? state.layoutCounter + 1 : 1;
+        let layoutCounter;
+        if(!isRehydrated) {
+            layoutCounter = state.layoutCounter ? state.layoutCounter + 1 : 1;            
+        } else {
+            layoutCounter = state.layoutCounter === 0 ? 1 : state.layoutCounter;
+            isRehydrated = false;
+        }        
         let isNextRound = layoutCounter === state.layoutCount;
         let noLessonSelected = state.rounds === 0;
         let isLevelComplete = noLessonSelected ? false : state.currentRound === state.rounds;
@@ -75,6 +83,11 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
     };
     
     switch(action.type) {
+
+        case 'persist/REHYDRATE':
+            isRehydrated = true;
+            return state;
+
         case types.SELECT_COLLECTION: {
             return action.data;
         }
