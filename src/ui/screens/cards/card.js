@@ -199,15 +199,9 @@ const renderCommonParts = (template, config, item) => {
     }
 
     // Consolidate all the traits lookups
-
-    const context = traits.find(trait => trait.name === item.name).context;
-    const lookalikes = context.find(c => c.name === 'look-alikes');
-
+    const lookalikesContainer = document.querySelector('.js-lookalikes');
     const lookalikesElement = document.querySelector('.js-lookalikes span:nth-child(2)');
-
-    if(lookalikes) {
-        lookalikesElement.innerHTML = lookalikes.values.join(', ');
-    } else {
-        lookalikesElement.classList.add('hide');
-    }
+    const lookalikes = itemProperties.itemContextProperty(traits, item, 'look-alikes')
+    lookalikesElement.innerHTML = lookalikes;
+    if(lookalikes === '') lookalikesContainer.classList.add('hide');
 };

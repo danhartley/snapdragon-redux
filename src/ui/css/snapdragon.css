@@ -1417,6 +1417,10 @@ iframe#birdsong {
   display: none;
 }
 
+div.hide-empty:empty {
+  display: none;
+}
+
 .visual-match .radio-buttons label {
   font-size: 1.2em; 
 }
