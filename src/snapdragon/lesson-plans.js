@@ -479,15 +479,14 @@ const portraitLesson3 = {
     levels: [
         {   id: 1,
             name:'Level 1',            
-            // layouts: [ speciesRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'vernacular') }, latinToCommonMatch, definitionRevision, { ...multiVisualMatch, ...screenType(multiVisualMatch, 'binomial') }, commonToLatinMatch  ],
             layouts: [ 
                 speciesRevision, 
+                latinToCommonMatch, 
                 { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
-                // { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'vernacular') }, 
-                // definitionRevision, 
-                // latinToCommonMatch, 
-                // { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'binomial') }, 
-                // commonToLatinMatch  
+                { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'vernacular') }, 
+                definitionRevision, 
+                { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'binomial') }, 
+                commonToLatinMatch  
             ],
             wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ commonToLatinMatch ]

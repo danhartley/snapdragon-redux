@@ -536,6 +536,10 @@ hr {
   flex: 1;
 }
 
+.data-box > div:nth-child(2) {
+  flex: 2;
+}
+
 .id-box > div:nth-child(1) {
   flex: 1;
   display: flex;
@@ -949,8 +953,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 #badgeListModal .modal-dialog {
-  min-width: 250px;
-  width: 20vw;       
+  min-width: 400px;
 }
 
 #badgeListModal .modal-text {

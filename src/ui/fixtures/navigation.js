@@ -1,3 +1,4 @@
+import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
@@ -112,7 +113,7 @@ export const renderNavigation = (page) => {
                             const template = document.createElement('template');                    
                             template.innerHTML = definitionCardTemplate;                    
                             DOM.modalTextTitle.innerHTML = 'Glossary';
-                            const glossary = getGlossary(collection.glossary);
+                            const glossary = utils.sortAlphabeticallyBy(getGlossary(collection.glossary), 'term');
                             renderTemplate({ glossary }, template.content, DOM.modalText);
                             document.querySelector('.js-definition-card-btn').style.display = 'none';
                         }
