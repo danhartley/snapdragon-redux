@@ -496,7 +496,25 @@ const portraitLesson3 = {
             layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
             wildcardLayouts : [],
             reviewLayouts: [ familyMatch, familyStripsMatch ]
-        }   
+        },
+        {   id: 3,
+            name:'Level 3',
+            layouts: [ genusEntry ],
+            wildcardLayouts : [],
+            reviewLayouts: [ genusEntry ]
+        },
+        {   id: 4,
+            name:'Level 4',
+            layouts: [ speciesEntry ],
+            wildcardLayouts : [  ],
+            reviewLayouts: [ speciesEntry ]
+        },
+        {   id: 5,
+            name:'Level 5',
+            layouts: [ speciesGenusEntry ],
+            wildcardLayouts : [ connections ],
+            reviewLayouts: [ speciesGenusEntry ]
+        } 
     ]
 };
 
