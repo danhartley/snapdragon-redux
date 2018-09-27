@@ -1109,6 +1109,10 @@ export const weeds1 = [
           "language": "de"
         },
         {
+          "vernacularName": "Ground Elder",
+          "language": "en"
+        },
+        {
           "vernacularName": "bishop's goutweed",
           "language": "en",
           "eol_preferred": true
@@ -1120,11 +1124,7 @@ export const weeds1 = [
         {
           "vernacularName": "Gout Weed",
           "language": "en"
-        },
-        {
-          "vernacularName": "Ground Elder",
-          "language": "en"
-        },
+        },        
         {
           "vernacularName": "ashweed",
           "language": "en"
