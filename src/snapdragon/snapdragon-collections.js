@@ -89,7 +89,7 @@ export const mushrooms1 = {
     name: 'Mushrooms I', 
     type: 'species',
     descriptions: [
-        '12 common mushrooms, 6 are edible, 6 are poisonous.',
+        '10 common mushrooms, 7 are edible, 5 are poisonous.',        
         'Can you identify which are safe to eat?'
     ],
     items: [ ...collections[8].items ],
@@ -109,7 +109,7 @@ export const mushrooms2 = {
     id: 6, name: 'Mushrooms II', 
     type: 'species',
     descriptions: [
-        '10 common mushrooms, 6 are edible, 6 are toxic.',
+        '12 common mushrooms, 7 are edible, 5 are poisonous.',
         'Can you identify which are safe to eat?'
     ],
     items: [ ...collections[7].items ],
@@ -129,7 +129,7 @@ export const mushrooms3 = {
     id: 7, name: 'Mushrooms III', 
     type: 'species',
     descriptions: [
-        '10 common mushrooms, 6 are edible, 6 are toxic.',
+        '10 common mushrooms, 9 are edible, 3 are poisonous.',
         'Can you identify which are safe to eat?'
     ],
     items: [ ...collections[9].items ],
