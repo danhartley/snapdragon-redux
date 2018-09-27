@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 
@@ -36,11 +38,23 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         return { ...layout };
     });
 
-    revisionLayouts.forEach( (layout, i) => {
-        layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, layoutsToAdd, i);
-        const arrayIndex = newLessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
-        newLessonLayouts.splice(arrayIndex, 0, layout);
+    // revisionLayouts.forEach(layout => {
+    //     layout.family = collection.items.find((item, index) => index === layout.itemIndex).family;
+    // });
 
+    // utils.sortAlphabeticallyBy(revisionLayouts, 'family');
+
+    const families = [];
+
+    revisionLayouts.forEach( (layout, i) => {
+        const layoutItemIndex = layout.itemIndex || utils.calcItemIndex(offSet, layoutsToAdd, i);
+        const family = collection.items.find((item, index) => index === layoutItemIndex).family;
+        if(!R.contains(family, families)) {
+            layout.itemIndex = layoutItemIndex;
+            const arrayIndex = newLessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
+            newLessonLayouts.splice(arrayIndex, 0, layout);
+        }
+        families.push(family);
     });
 
     let hasGlossary = false;

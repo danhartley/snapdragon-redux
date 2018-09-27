@@ -84,15 +84,16 @@ export const rhsWeeds1 = {
     course: 'RHS Practical Horticulture'
 };
 
-export const mushroomQuiz = { 
-    id: 5, name: 'Mushroom Quiz', 
+export const mushrooms1 = { 
+    id: 5, 
+    name: 'Mushrooms I', 
     type: 'species',
     descriptions: [
-        '10 common mushrooms, 5 are edible, 5 are toxic.',
+        '10 common mushrooms, 7 are edible, 5 are poisonous.',        
         'Can you identify which are safe to eat?'
     ],
-    items: [ ...collections[7].items ],
-    collections: ['Mushroom Quiz'],
+    items: [ ...collections[8].items ],
+    collections: ['Mushrooms I'],
     thumb: 'https://media.eol.org/content/2013/03/01/14/45554_orig.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
@@ -104,16 +105,35 @@ export const mushroomQuiz = {
     course: 'Snapdragon'
 };
 
-export const mushrooms1 = { 
-    id: 6, 
-    name: 'Mushrooms I', 
+export const mushrooms2 = { 
+    id: 6, name: 'Mushrooms II', 
     type: 'species',
     descriptions: [
-        '12 common mushrooms, 6 are edible, 6 are poisonous.',
+        '12 common mushrooms, 7 are edible, 5 are poisonous.',
         'Can you identify which are safe to eat?'
     ],
-    items: [ ...collections[8].items ],
-    collections: ['Mushrooms I'],
+    items: [ ...collections[7].items ],
+    collections: ['Mushrooms II'],
+    thumb: 'https://media.eol.org/content/2013/03/01/14/45554_orig.jpg',
+    moduleSize: 4,
+    curator: 'Snapdragon',
+    userLevel: 'Amateur mycologists',
+    lessonPlanLandscape: 3,
+    lessonPlanPortrait: 103,
+    glossary: ['fungi'],
+    courseId: 1,
+    course: 'Snapdragon'
+};
+
+export const mushrooms3 = { 
+    id: 7, name: 'Mushrooms III', 
+    type: 'species',
+    descriptions: [
+        '10 common mushrooms, 9 are edible, 3 are poisonous.',
+        'Can you identify which are safe to eat?'
+    ],
+    items: [ ...collections[9].items ],
+    collections: ['Mushrooms III'],
     thumb: 'https://media.eol.org/content/2013/03/01/14/45554_orig.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
@@ -141,11 +161,15 @@ rhsWeeds1.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });
 
-mushroomQuiz.items.forEach((item,index)=>{
+mushrooms1.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });
 
-mushrooms1.items.forEach((item,index)=>{
+mushrooms2.items.forEach((item,index)=>{
+    item.snapIndex = index + 1;
+});
+
+mushrooms3.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });
 
@@ -154,6 +178,6 @@ export const snapdragonCollections = [
     rhsTrees,
     commonBirds,
     rhsWeeds1,
-    mushroomQuiz,
-    mushrooms1
+    mushrooms1,
+    mushrooms2,
 ];

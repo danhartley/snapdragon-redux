@@ -55,7 +55,7 @@ export const renderVisualMatch = collection => {
                 : item.names.filter(names => names.language === config.language)[0].vernacularName;
 
         question = { question: questionValue, binomial: item.name, vernacular: vernacularName };
-        scorehandler(descriptions, question, answers);                
+        scorehandler(descriptions, question, utils.shuffleArray(answers));                
     }
 
     if(layout.screens.find(screen => screen.name === 'trait-property')) {
@@ -86,7 +86,7 @@ export const renderVisualMatch = collection => {
 
         answers = traits.filter(utils.onlyUnique);
 
-        scorehandler(descriptions, question, answers);
+        scorehandler(descriptions, question, utils.shuffleArray(answers));
 
         const hint = document.querySelector('.js-clickable-description');
         if(hint) {

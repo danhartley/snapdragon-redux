@@ -1997,6 +1997,75 @@ export const taxa = [
         eol: "http://eol.org/pages/5889/overview",
         wiki: "https://en.wikipedia.org/wiki/Russulaceae"
     },
+    {
+        taxon: 'family',
+        name: 'Fistulinaceae',
+        thumb: "2009/01/09/12/22980_98_68.jpg",
+        names: [ { language: "en", names: ['Fistulinaceae']} ,
+        { language: "fr", names:[ 'Fistulinaceae' ]},
+        { language: "de", names:[ 'Fistulinaceae' ]},
+        { language: "es", names:[ 'Fistulinaceae' ]},
+        { language: "pt", names:[ 'Fistulinaceae' ]},
+        { language: "it", names:[ 'Fistulinaceae' ]}],
+        species: '--',
+        genera: '3',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.WOOD ]}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Basidiocarps (fruits) are formed annually, are pileate with lateral stipe.',
+                identification: 'Fleshy and moist. They grow on wood.'
+            }
+        ],
+        eol: "http://eol.org/pages/5985/overview",
+        wiki: "https://en.wikipedia.org/wiki/Fistulinaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Hygrophoropsidaceae',
+        thumb: "2012/12/12/02/73263_88_88.jpg",
+        names: [ { language: "en", names: ['Hygrophoropsidaceae']} ,
+        { language: "fr", names:[ 'Hygrophoropsidaceae' ]},
+        { language: "de", names:[ 'Hygrophoropsidaceae' ]},
+        { language: "es", names:[ 'Hygrophoropsidaceae' ]},
+        { language: "pt", names:[ 'Hygrophoropsidaceae' ]},
+        { language: "it", names:[ 'Hygrophoropsidaceae' ]}],
+        species: '18',
+        genera: '2',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.WOOD ]}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Includes the "false chanterelle", Hygrophoropsis aurantiaca. Cause brown rot in their hosts.',
+                identification: 'Fleshy and moist. They grow on wood.'
+            }
+        ],
+        eol: "http://eol.org/pages/5953/overview",
+        wiki: "https://en.wikipedia.org/wiki/Hygrophoropsidaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Psathyrellaceae',
+        thumb: "2014/12/02/15/00813_88_88.jpg",
+        names: [ { language: "en", names: ['Hygrophoropsidaceae']} ,
+        { language: "fr", names:[ 'Hygrophoropsidaceae' ]},
+        { language: "de", names:[ 'Hygrophoropsidaceae' ]},
+        { language: "es", names:[ 'Hygrophoropsidaceae' ]},
+        { language: "pt", names:[ 'Hygrophoropsidaceae' ]},
+        { language: "it", names:[ 'Hygrophoropsidaceae' ]}],
+        species: '500+',
+        genera: '14',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD, SD.habitats.SOIL ]}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: '~50% species produce fruiting bodies that dissolve into ink-like ooze when the spores are mature via autodigestion.',
+                identification: 'Dark-spored agarics that generally have soft, fragile fruiting bodies; characterized by black, dark brown, rarely reddish spore prints.'
+            }
+        ],
+        eol: "http://eol.org/pages/5970/overview",
+        wiki: "https://en.wikipedia.org/wiki/Psathyrellaceae"
+    },
 
     // genus data from: https://www.ukfungusday.co.uk/files/7814/9796/1077/Genus_information_sheets1.FINAL.pdf
 
