@@ -542,4 +542,12 @@ export const epithets = [
         "latin" : ["ascus"],
         "en" : ["sack, wineskin"]
     },
+    {
+        "latin" : ["sclero"],
+        "en" : ["hard"]
+    },
+    {
+        "latin" : ["derma"],
+        "en" : ["skin"]
+    },
 ];

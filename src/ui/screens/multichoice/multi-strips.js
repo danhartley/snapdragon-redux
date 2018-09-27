@@ -31,7 +31,7 @@ export const renderMultiStrips = (collection) => {
 
     const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, collection.families));
 
-    let description = config.isPortraitMode ? `Family: ${item.family} ` : `Which of the above fits the ${item.family}?`;
+    let description = config.isPortraitMode ? `Family: ${item.family} ` : `Which of the above descriptions best fits the ${item.family}?`;
 
     const familyFlavours = config.isPortraitMode 
     ? [ 'match-family-to-quick-id' ] 
