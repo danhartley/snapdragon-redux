@@ -1576,8 +1576,8 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Many emerge from egg-like structure formed by the universal veil. Mostly deadly are white with white spore prints.',
-                identification: 'Puffball shape but with gills in cross section.'
+                summary: 'Found in woodlands. Many emerge from egg-like structure formed by the universal veil. Mostly deadly are white with white spore prints.',
+                identification: 'White free gills, white spore print. Stalks have ring below cap and broaden to volva. Puffball shape in early stages but with gills in cross section.'
             }
         ],
         eol: "http://eol.org/pages/2861424/overview",
@@ -1646,30 +1646,7 @@ export const taxa = [
             {
                 language: 'en',
                 summary: 'Widespread. A relatively safe group with many members prized for their flavour.',
-                identification: 'Small pores (tubes) on the underside of the mushroom, instead of gills.'
-            }
-        ],
-        eol: "http://eol.org/pages/5960/overview",
-        wiki: "https://en.wikipedia.org/wiki/Boletaceae"
-    },
-    {
-        taxon: 'family',
-        name: 'Boletaceae',
-        thumb: "2009/06/06/01/14807_88_88.jpg",
-        names: [ { language: "en", names: ['Boletes']} ,
-        { language: "fr", names:[ 'Boletaceae' ]},
-        { language: "de", names:[ 'Dickröhrlingsverwandte' ]},
-        { language: "es", names:[ 'Boletaceae' ]},
-        { language: "pt", names:[ 'Boletaceae' ]},
-        { language: "it", names:[ 'Boletacee' ]}],
-        species: '415',
-        genera: '26',
-        traits: [ { language: "en", name: 'habitat', values: [ 'Moist conditions' ] } ],
-        descriptions: [
-            {
-                language: 'en',
-                summary: 'Widespread. A relatively safe group with many members prized for their flavour.',
-                identification: 'Small pores (tubes) on the underside of the mushroom, instead of gills.'
+                identification: 'Small pores (tubes) on the underside of the mushroom, instead of gills. Thick stems and caps.'
             }
         ],
         eol: "http://eol.org/pages/5960/overview",
@@ -1708,14 +1685,14 @@ export const taxa = [
         { language: "es", names:[ 'Earth-balls' ]},
         { language: "pt", names:[ 'Earth-balls' ]},
         { language: "it", names:[ 'Earth-balls' ]}],
-        species: '--',
-        genera: '--',
+        species: '109',
+        genera: '6',
         traits: [ { language: "en", name: 'habitat', values: [ 'Rotten wood' ] } ],
         descriptions: [
             {
                 language: 'en',
                 summary: 'Species known as the ‘hard-skinned puffballs’, ‘earthballs’, or ’earthstars’, widespread in temperate and tropical regions.',
-                identification: 'More or less spherical in shape, without a stem or with an irregular root-like stem.'
+                identification: 'Epigenous, rarely hypogeous. Hard skins more or less spherical in shape without a stem or with an irregular root-like stem.'
             }
         ],
         eol: "http://eol.org/pages/5944/overview",
@@ -1761,7 +1738,7 @@ export const taxa = [
             {
                 language: 'en',
                 summary: 'Wide variety of fruit body morphology. Species include the ‘true puffballs‘.',
-                identification: 'Pileate form dominant with thin gills free from attachment to the stipe. Caps are scurfy to smooth, flat to umbonate.'
+                identification: 'In pileate form dominant with thin gills free from attachment to the stipe. Caps are scurfy to smooth, flat to umbonate. ‘True puffballs‘ are round and tough.'
             }
         ],
         eol: "http://eol.org/pages/5966/overview",
@@ -1807,7 +1784,7 @@ export const taxa = [
             {
                 language: 'en',
                 summary: 'Family of ascomycete fungi (sac fungi), the best known members of which are the false morels of the genus Gyromitra.',
-                identification: ''
+                identification: 'Species in genus Gyromitra have irregular caps yellow to brown and well-developed stems that are not hollow.'
             }
         ],
         eol: "http://eol.org/pages/6080/overview",
@@ -1863,7 +1840,7 @@ export const taxa = [
         taxon: 'family',
         name: 'Marasmiaceae',
         thumb: "2011/08/18/07/33951_88_88.jpg",
-        names: [ { language: "en", names: ['Omphalotaceae']} ,
+        names: [ { language: "en", names: ['Marasmiaceae']} ,
         { language: "fr", names:[ 'Marasmiaceae' ]},
         { language: "de", names:[ 'Marasmiaceae' ]},
         { language: "es", names:[ 'Marasmiaceae' ]},
@@ -1876,7 +1853,7 @@ export const taxa = [
             {
                 language: 'en',
                 summary: 'The widely consumed edible fungus Lentinula edodes, the shiitake mushroom, is a member of this family.',
-                identification: 'Tough stems and capability of shrivelling up during a dry period and later recovering.'
+                identification: 'Tough stems with capacity to shrivel up in dry period and rehydrate later.'
             }
         ],
         eol: "http://eol.org/pages/5979/overview",
@@ -1945,7 +1922,7 @@ export const taxa = [
             {
                 language: 'en',
                 summary: 'The widely consumed edible fungus Lentinula edodes, the shiitake mushroom, is a member of this family.',
-                identification: 'Tough stems and capability of shrivelling up during a dry period and later recovering.'
+                identification: 'Tough stems with capacity to shrivel up in dry period and rehydrate later.'
             }
         ],
         eol: "http://eol.org/pages/5974/overview",

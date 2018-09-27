@@ -177,4 +177,23 @@ export const fungi = [
         level: 2,
         group: 2
     },
+    {
+        term: "Sporocarp",
+        definition: "Fruiting body, part of sexual phase of fungal life-cycle. ",
+        wiki: "https://en.wikipedia.org/wiki/Sporocarp_(fungi)",
+        level: 2,
+        group: 2
+    },
+    {
+        term: "Epigenous",
+        definition: "Developing or growing on an upper surface.",
+        level: 2,
+        group: 2
+    },
+    {
+        term: "Epigenous",
+        definition: "Partially or completely embedded in soil or humus.",
+        level: 2,
+        group: 2
+    },
 ]
