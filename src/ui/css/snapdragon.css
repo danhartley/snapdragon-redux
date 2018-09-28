@@ -218,7 +218,7 @@ hr {
   width:88px;
 }
 
-.card.radio-buttons-container, .card.block-container {
+.card.radio-buttons-container, .card.block-container, .card.mixed-specimen-container {
   margin: 0 0 1em 0;
 }
 
@@ -1199,6 +1199,13 @@ table {
   display: block;
 }
 
+.question-images {
+  display: grid;
+  height: 8em;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: .5em;
+}
+
 .answer-container {
   border: 1px solid var(--snap-border-dark);
   padding: .25em .5em;
@@ -1459,4 +1466,17 @@ div.hide-empty:empty {
   font-size: .8em;
   vertical-align: super;
   cursor: pointer;
+}
+
+.layer {
+  height: 100%;
+  width: 100%;
+  font-size: 10em;
+  color: rgb(101, 132, 37);
+  vertical-align: middle;
+  text-align: center;
+}
+
+.mixed-specimen-container .layer {
+  font-size: 5em;
 }

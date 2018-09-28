@@ -16,8 +16,13 @@ import { renderCultivarCard } from 'ui/screens/cards/cultivar-card';
 import { renderWildcard } from 'ui/screens/cards/wildcard-card';
 import { renderVisualMatch } from 'ui/screens/multichoice/visual-match';
 import { renderDefinitionCard } from 'ui/screens/cards/definition-card';
+import { randomiseItems } from 'ui/screens/multichoice/mixed-specimen-shared';
+import { renderMixedSpecimenTiles } from 'ui/screens/multichoice/mixed-specimen-tiles';
+import { renderMixedSpecimenQuestions } from 'ui/screens/multichoice/mixed-specimen-questions';
 
 const functions = [
+    { name: 'mixed-specimen-tiles', func: renderMixedSpecimenTiles },
+    { name: 'mixed-specimen-questions', func: renderMixedSpecimenQuestions },
     { name: 'text-entry', func: renderTextEntry },
     { name: 'specimen-images', func: renderSpecimenTiles },
     { name: 'collection', func: renderSpeciesCollectionList },

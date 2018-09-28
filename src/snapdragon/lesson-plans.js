@@ -2,7 +2,28 @@ import * as R from 'ramda';
 
 import { screens } from 'snapdragon/screen-layouts';
 
-const { specimen, speciesCard, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete, cultivar, cultivarCard, epithets, wildcardCard, wildcard, definitions, visualMatch, definitionCard, traitProperty } = screens;
+const { 
+    specimen, speciesCard, species, vernaculars, scientifics, text, 
+    command, leaf, leafName, 
+    family, familyStrips, taxon, textComplete, cultivar, cultivarCard, 
+    epithets, wildcardCard, wildcard, definitions, 
+    visualMatch, definitionCard, traitProperty,
+    mixedSpecimenTiles,
+    mixedSpecimenQuestions } = screens;
+
+const mixedSpecimenMatch = {
+    name: 'screen-mixed-specimen-match',
+    type: 'test',
+    score: 1,
+    kind: 'MC',
+    points: 3,
+    given: 'Specimen images',
+    options: 'Choose species',
+    screens: [
+        { ...mixedSpecimenTiles },
+        { ...mixedSpecimenQuestions }
+    ]
+};
 
 const speciesRevision = {
     name: 'screen-species-card',
@@ -346,7 +367,8 @@ const landscapeLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ],
+            layouts: [ speciesRevision, mixedSpecimenMatch ],
+            // layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ],
             wildcardLayouts : [],
             reviewLayouts: [ latinToCommonMatch ]
         },

@@ -69,6 +69,16 @@ const summary = {
   template: 'js-summary-template'
 };
 
+const mixedSpecimenTiles = {
+  name: 'mixed-specimen-tiles',
+  domain: 'collection'
+};
+
+const mixedSpecimenQuestions = {
+  name: 'mixed-specimen-questions',
+  domain: 'collection'
+};
+
 const command = {
   name: 'command', 
   domain: 'collection',
@@ -189,5 +199,8 @@ export const screens = {
   wildcard,
 
   visualMatch,
-  traitProperty
+  traitProperty,
+
+  mixedSpecimenTiles,
+  mixedSpecimenQuestions
 };

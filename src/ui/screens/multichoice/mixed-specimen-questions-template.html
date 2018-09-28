@@ -1,0 +1,16 @@
+<div class="snapdragon-container">
+    <div class="card align-left mixed-specimen-container">
+        
+        <div class="question-container">
+            <p>{{ question1 }}</p>
+            <p>{{ question2 }}</p>
+        </div>
+
+        <div class="question-images" data-repeat-image="{{ images }}">
+            <div style="cursor: pointer; background-image: url('https://media.eol.org/content/{{ image.src }}'); background-size: cover;  background-position: center;">
+                <div class="layer">{{ image.index }}</div>
+            </div>            
+        </div>
+    </div>
+    <div class="js-update-btn"></div>
+</div>

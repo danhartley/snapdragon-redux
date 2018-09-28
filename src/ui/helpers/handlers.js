@@ -5,7 +5,6 @@ import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import updateBtnTemplate from 'ui/screens/multichoice/update-btn-template.html';
 
-
 export const scoreHandler = (type, score, callback, config, containers) => {
     
     switch(type) {
@@ -194,17 +193,18 @@ export const selectHandler = (selector, callback) => {
     });
 };
 
-export const modalImagesHandler = (images, item) => {
+export const modalImagesHandler = (images, item, collection) => {
     images.forEach(image => {
-        modalImageHandler(image, item);
+        modalImageHandler(image, item, collection);
     });
 };
 
-export const modalImageHandler = (image, item) => {
+export const modalImageHandler = (image, item, collection) => {
     image.addEventListener('click', event => {
         const parent = document.querySelector('#imageModal .js-modal-image');
-        imageSlider(item, parent, false, image);
-        DOM.modalImageTitle.innerHTML = item.name;
+        const selectedItem = item || collection.items.find(item => item.name === image.dataset.itemname);
+        imageSlider(selectedItem, parent, false, image);
+        DOM.modalImageTitle.innerHTML = selectedItem.name;
     })
 };
 
