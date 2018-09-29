@@ -64,7 +64,7 @@ export const renderInput = (screen, question, hints) => {
 };
 
 const renderPortrait = item => {
-    imageSlider(item, document.querySelector('.js-species-card-images'), true);
+    imageSlider(item.images, document.querySelector('.js-species-card-images'), true);
 };
 
 const renderLandscape = (item, config, question) => {

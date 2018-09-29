@@ -1,7 +1,7 @@
 <div id="imageSlider" class="carousel slide" data-ride="carousel" data-interval="false">
     <div class="carousel-inner" data-repeat-image="{{ images }}">      
       <div class="carousel-item">
-        <img class="d-block w-100" src="https://media.eol.org/content/{{ image }}" alt="" data-toggle="modal" data-target="#imageModal">
+        <img class="d-block w-100" src="https://media.eol.org/content/{{ image.src }}" alt="" data-toggle="modal" data-target="#imageModal" data-itemname="{{ image.itemName }}">
       </div>
     <a class="carousel-control-prev" href="#imageSlider" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

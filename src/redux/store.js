@@ -21,7 +21,7 @@ const reducer = combineReducers({
     collections,
     history, 
     page,
-    ui
+    ui 
 });
 
 const persistConfig = {

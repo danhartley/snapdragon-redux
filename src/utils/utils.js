@@ -177,6 +177,16 @@ const itemCountReducer = (acc, curr) => {
   return acc;
 };
 
+const flatten = array => {
+  const flattenedArray = array.reduce(
+    function(accumulator, currentValue) {
+      return accumulator.concat(currentValue);
+    },
+    []
+  );
+  return flattenedArray;
+}
+
 export const utils = {
   log,
   encodeQuery,
@@ -194,5 +204,6 @@ export const utils = {
   isIterable,
   capitaliseFirst,
   makeSortable,
-  itemCountReducer
+  itemCountReducer,
+  flatten
 };

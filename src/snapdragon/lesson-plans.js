@@ -449,7 +449,8 @@ const portraitLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch ],
+            layouts: [ speciesRevision, mixedSpecimenMatch ],
+            // layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch ],
             wildcardLayouts : [],
             reviewLayouts: [ latinToCommonMatch ]
         },

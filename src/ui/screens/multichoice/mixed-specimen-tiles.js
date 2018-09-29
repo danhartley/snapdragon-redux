@@ -1,11 +1,14 @@
 import { DOM } from 'ui/dom';
+import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
 import { modalImagesHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import mixedSpecimenTemplate from 'ui/screens/multichoice/mixed-specimen-tiles-template.html';
 import { screenShare } from 'ui/screens/multichoice/mixed-specimen-shared';
 
-export const renderMixedSpecimenTiles = (collection) => {
+export const renderMixedSpecimenTiles = (ui) => {
+
+    const { collection, config } = store.getState();
 
     const item = collection.nextItem;
 
@@ -32,8 +35,10 @@ export const renderMixedSpecimenTiles = (collection) => {
         });
     };
 
-    const images = screenShare.getRandomImages(item);
     screenShare.subscribeToImageSelection(selectImage);
+    const images = screenShare.getRandomImages(item, config);
+
+    if(!images) return;
 
     const parent = DOM.leftBody;
     parent.innerHTML = '';

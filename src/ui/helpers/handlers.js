@@ -24,9 +24,9 @@ export const scoreHandler = (type, score, callback, config, containers) => {
     }
 };
 
-const textAlertHandler = (correct, correctAnswer) => {
+const textAlertHandler = (isCorrect, correctAnswer) => {
     const questionText = document.querySelector('.js-txt-question');
-    questionText.innerHTML = correct
+    questionText.innerHTML = isCorrect
         ? `<div>
             <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
             </div>`
@@ -37,11 +37,11 @@ const textAlertHandler = (correct, correctAnswer) => {
 
 export const simpleScoreHandler = (score, config, callback) => {
     
-    const delay = correct ? config.callbackTime : config.callbackTime + config.callbackDelay;
-            
-    const { correct } = renderAnswerHeader(score);
+    const { isCorrect } = renderAnswerHeader(score);
 
-    score.correct = correct;
+    const delay = isCorrect ? config.callbackTime : config.callbackTime + config.callbackDelay;
+
+    score.success = isCorrect;
     
     const scoreUpdateTimer = setTimeout(()=>{
         actions.boundUpdateScore(score);
@@ -49,7 +49,7 @@ export const simpleScoreHandler = (score, config, callback) => {
 
     if(callback) callback(score, scoreUpdateTimer);
 
-    textAlertHandler(correct, score.answer);
+    textAlertHandler(isCorrect, score.answer);
 }
 
 const genericScoreHandler = (score, callback, config, containers) => {
@@ -72,9 +72,9 @@ const genericScoreHandler = (score, callback, config, containers) => {
         wrongAnswer = response.answer;
     }
     
-    const { colour, correct } = renderAnswerHeader(response);
+    const { colour, isCorrect } = renderAnswerHeader(response);
 
-    textAlertHandler(correct, correctAnswer);
+    textAlertHandler(isCorrect, correctAnswer);
 
     if(containers) {
         containers.answerContainer.classList.add(colour);
@@ -82,10 +82,10 @@ const genericScoreHandler = (score, callback, config, containers) => {
     }
     btn.innerText = 'Continue';
 
-    response.success = correct;
+    response.success = isCorrect;
     response.layoutCount = layoutCount;
 
-    const delay = correct ? config.callbackTime : config.callbackTime + config.callbackDelay;
+    const delay = isCorrect ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
     const scoreUpdateTimer = setTimeout(()=>{
         actions.boundUpdateScore(response);        
@@ -96,17 +96,17 @@ const genericScoreHandler = (score, callback, config, containers) => {
 
 const blockScoreHander = (score, callback, config) => {
     
-    const { colour, correct } = renderAnswerHeader(score);
+    const { colour, isCorrect } = renderAnswerHeader(score);
 
-    score.success = correct;
+    score.success = isCorrect;
 
-    const delay = correct ? config.callbackTime : config.callbackTime + config.callbackDelay;
+    const delay = isCorrect ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
     const scoreUpdateTimer = setTimeout(()=>{
         actions.boundUpdateScore(score);
     }, delay);
 
-    callback(colour, correct, score, scoreUpdateTimer, config);
+    callback(colour, isCorrect, score, scoreUpdateTimer, config);
 };
 
 const stripScoreHandler = (score, callback, config) => {    
@@ -125,9 +125,9 @@ const stripScoreHandler = (score, callback, config) => {
             score.vernacular = vernacular;
             score.question = taxon.question;
             score.answer = answer;
-            const { text, colour, correct } = renderAnswerHeader(score);
+            const { text, colour, isCorrect } = renderAnswerHeader(score);
             
-            score.success = correct;
+            score.success = isCorrect;
 
             target.classList.add(colour);
 
@@ -143,7 +143,7 @@ const stripScoreHandler = (score, callback, config) => {
                 }
             });     
             
-            const delay = correct ? config.callbackTime : config.callbackTime + config.callbackDelay;
+            const delay = isCorrect ? config.callbackTime : config.callbackTime + config.callbackDelay;
             
             const scoreUpdateTimer = setTimeout(()=>{
                 actions.boundUpdateScore(score);
@@ -151,7 +151,7 @@ const stripScoreHandler = (score, callback, config) => {
             
             if(callback) callback(score, scoreUpdateTimer);
 
-            textAlertHandler(correct, score.question);
+            textAlertHandler(isCorrect, score.question);
         });
     });
 };
@@ -171,9 +171,9 @@ const imageScoreHandler = (score, callback, config) => {
             score.taxon = 'name';
             score.question = taxon.name
             score.answer = answer;
-            const { text, colour, correct } = renderAnswerHeader(score);
+            const { text, colour, isCorrect } = renderAnswerHeader(score);
 
-            score.success = correct;
+            score.success = isCorrect;
 
             tile.style.filter = 'saturate(100%)';
 
@@ -188,13 +188,13 @@ const imageScoreHandler = (score, callback, config) => {
                 }
             });
 
-            const delay = correct ? config.callbackTime : config.callbackTime + config.callbackDelay;
+            const delay = isCorrect ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
             const scoreUpdateTimer = setTimeout(() => {
                 actions.boundUpdateScore(score);
             }, delay);
                 
-            if(callback) callback(text, colour, correct, scoreUpdateTimer);
+            if(callback) callback(text, colour, isCorrect, scoreUpdateTimer);
         });
     });
 };
@@ -220,7 +220,10 @@ export const modalImageHandler = (image, item, collection) => {
     image.addEventListener('click', event => {
         const parent = document.querySelector('#imageModal .js-modal-image');
         const selectedItem = item || collection.items.find(item => item.name === image.dataset.itemname);
-        imageSlider(selectedItem, parent, false, image);
+        const images = selectedItem.images.map(image => {
+            return { src: image, itemName: selectedItem.name };
+        });
+        imageSlider(images, parent, false, image);
         DOM.modalImageTitle.innerHTML = selectedItem.name;
     })
 };

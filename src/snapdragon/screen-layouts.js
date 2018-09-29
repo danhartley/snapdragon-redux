@@ -71,12 +71,12 @@ const summary = {
 
 const mixedSpecimenTiles = {
   name: 'mixed-specimen-tiles',
-  domain: 'collection'
+  domain: 'ui'
 };
 
 const mixedSpecimenQuestions = {
   name: 'mixed-specimen-questions',
-  domain: 'collection'
+  domain: 'ui'
 };
 
 const command = {

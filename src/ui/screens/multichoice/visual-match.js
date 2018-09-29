@@ -98,6 +98,6 @@ export const renderVisualMatch = collection => {
     }
 
     if(config.isPortraitMode) {
-        imageSlider(item, document.querySelector('.js-species-card-images'), true);
+        imageSlider(item.images, document.querySelector('.js-species-card-images'), true);
     }
 };

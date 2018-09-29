@@ -1,11 +1,10 @@
-import { utils } from 'utils/utils';
 import { renderTemplate } from 'ui/helpers/templating';
 import { modalImagesHandler } from 'ui/helpers/handlers';
 import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 
-export const imageSlider = (item, parent, disableModal = false, image) => {
+export const imageSlider = (images, parent, disableModal = false, image) => {
 
-    const images = utils.shuffleArray(item.images);
+    // need to randomise image
 
     const slider = document.createElement('template');
 
@@ -16,9 +15,9 @@ export const imageSlider = (item, parent, disableModal = false, image) => {
     renderTemplate({ images }, slider.content, parent);
 
     if(image) {
-        parent.querySelectorAll('.carousel-item').forEach(item => {        
-            if(item.lastElementChild.src === image.dataset.src) {
-                item.classList.add('active');        
+        parent.querySelectorAll('.carousel-item').forEach(i => {        
+            if(i.lastElementChild.src === image.dataset.src) {
+                i.classList.add('active');        
             }
         });
     } else {
@@ -31,6 +30,6 @@ export const imageSlider = (item, parent, disableModal = false, image) => {
             img.removeAttribute('data-target');
         });
     } else {
-        modalImagesHandler(parent.querySelectorAll('.carousel-item'), item);
+        modalImagesHandler(parent.querySelectorAll('.carousel-item'), null, null);
     }
 };

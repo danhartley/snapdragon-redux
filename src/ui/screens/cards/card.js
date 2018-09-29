@@ -91,7 +91,11 @@ const renderPortrait = (template, item, config) => {
 
     renderCommonParts(template, config, item);
 
-    imageSlider(item, document.querySelector('.js-species-card-images'), true);
+    const images = item.images.map((img, index) => { 
+        return { index: index + 1, src: img, itemName: item.name };
+    } );
+
+    imageSlider(images, document.querySelector('.js-species-card-images'), true);
 
     const player = document.querySelector('.js-bird-song-player');
     

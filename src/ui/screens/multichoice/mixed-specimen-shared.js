@@ -6,11 +6,11 @@ import { actions } from 'redux/actions/action-creators';
 
 let items;
 
-// deliberately include the lookalikes?
-
 const randomiseItems = collection => {
 
     const { ui } = store.getState();
+
+    if(!collection.nextItem) return;
 
     if(!collection.items) {
         if(!ui.sharedItems) return;
@@ -18,20 +18,30 @@ const randomiseItems = collection => {
             return collection.items.find(i => i.name === item.name);
         });
     } else {
-        items = R.take(4, utils.shuffleArray(collection.items));
+        const clonedItems = R.clone(collection.items);
+        items = R.take(3, utils.shuffleArray(clonedItems));
+        items.push(clonedItems.find(i => i.name === collection.nextItem.name));
         actions.boundUpdateUI({ sharedItems: items.map(item => item.name)});
     }
 };
 
-const getRandomImages = currentItem => {
+const getRandomImages = (currentItem, config) => {
     if(!items) return;
     items = items.filter(item => item !== currentItem);
     items = R.take(3, items);
     items.push(currentItem);
 
-    const images = items.map((item, index) => { 
-        return { index: index + 1, src: item.images[0], itemName: item.name };
-    } );
+    let images;
+
+    if(config.isPortraitMode) {
+        images = items.map((item, index) => { 
+            return { index: index + 1, srcs: item.images, itemName: item.name };
+        } );
+    } else {
+        images = items.map((item, index) => { 
+            return { index: index + 1, src: item.images[0], itemName: item.name };
+        } );
+    }
 
     return images;
 };
