@@ -114,6 +114,15 @@ export const renderMixedSpecimenQuestions = ui => {
                 const selectedName = event.target.dataset.itemname;
                 const question = item.name;
                 const answer = selectedName;
+                const isCorrect = answer === question;                
+                const questionText = document.querySelector('.question-container p:nth-child(2)');
+                questionText.innerHTML = isCorrect
+                    ? `<div>
+                        <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
+                        </div>`
+                    : `<div>
+                        <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ answer }</span>
+                        </div>`;                
                 scoreHandler(score, question, answer, config);
             });
         });
