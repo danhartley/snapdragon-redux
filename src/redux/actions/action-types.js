@@ -16,6 +16,8 @@ const CHANGE_COLLECTION_ITEMS = '[CHANGE_COLLECTION_ITEMS] Change collection ite
 const NEXT_LEVEL = '[NEXT_LEVEL] Go to next level';
 const UPDATE_LANGUAGE = '[UPDATE_LANGUAGE] Update the current language';
 
+const UPDATE_UI = '[UPDATE_UI] update UI elements';
+
 export const types = {
     CHANGE_LESSON_PLAN,
     NEXT_LESSON,
@@ -32,5 +34,6 @@ export const types = {
     STOP_START_LESSON,
     SELECT_COLLECTION,
     UPDATE_LANGUAGE,
-    CHANGE_PAGE
+    CHANGE_PAGE,
+    UPDATE_UI
 };

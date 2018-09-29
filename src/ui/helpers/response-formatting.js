@@ -1,5 +1,3 @@
-import { is } from "immutable";
-
 export const renderCapital = str => {
     if(!str) return str;
     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
@@ -34,7 +32,6 @@ export const renderAnswer = (response) => {
     const genus = names[0];
     const species = names[1];
     const correct = isAnswerCorrect(response);
-    // const className = correct ? 'snap-success' : 'snap-alert';    
 
     const name = renderName(response, correct);
 
@@ -67,17 +64,4 @@ export const renderAnswerHeader = response => {
     const colour = correct ? 'snap-success' : 'snap-alert';
 
     return { text: renderAnswer(response), colour, correct };
-};
-
-export const renderTermAnswerHeader = (response, header, target) => {
-    
-    const correct = response.question.toLowerCase() === response.answer.toLowerCase();
-    const colour = correct ? 'snap-success' : 'snap-alert';
-    const term = correct ? response.answer : response.question;
-    const answer = `<span class="${colour}">${term}</span>`;
-    const text = correct
-        ? `${answer} is correct!`
-        : `No! ${answer}.`;
-
-    return { text, colour, correct };
 };

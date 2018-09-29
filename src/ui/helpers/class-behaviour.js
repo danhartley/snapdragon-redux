@@ -13,14 +13,16 @@ const toggle = (elem) => {
 	elem.classList.toggle('is-visible');
 };
 
-const add = (element, className, redundantClasses) => {
-    if(!elem) return;
-    if(redundantClasses && redundantClasses.length > 0) 
-        redundantClasses.forEach(redundant => elem.classList.remove(redundant));
-    if(className)
-        elem.classList.add(className);
+const addClassToSelected = (collection, element, classesToRemove, classToAdd) => {
+    if(!element) return;
+    collection.forEach(elem => {
+        if(classesToRemove && classesToRemove.length > 0) 
+        classesToRemove.forEach(redundant => elem.classList.remove(redundant));
+    });    
+    if(classToAdd)
+        element.classList.add(classToAdd);
 };
 
 export const elem = {
-    show, hide, toggle, add
+    show, hide, toggle, addClassToSelected
 };

@@ -352,7 +352,7 @@ hr {
 .squares {
   display: grid;
   height: 100%;
-  grid-auto-flow: column;                       
+  grid-auto-flow: row;                       
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
@@ -1212,6 +1212,30 @@ table {
   margin: .5em 0;
 }
 
+.layer-container {
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;  
+}
+
+.layer {
+  height: 100%;
+  width: 100%;
+  font-size: 10em;
+  color: rgb(101, 132, 37);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layer > div {
+  text-align: center;
+}
+
+.mixed-specimen-container .layer {
+  font-size: 5em;  
+}
+
 #imageModal .modal-body {
   padding: 0;
 }
@@ -1466,17 +1490,4 @@ div.hide-empty:empty {
   font-size: .8em;
   vertical-align: super;
   cursor: pointer;
-}
-
-.layer {
-  height: 100%;
-  width: 100%;
-  font-size: 10em;
-  color: rgb(101, 132, 37);
-  vertical-align: middle;
-  text-align: center;
-}
-
-.mixed-specimen-container .layer {
-  font-size: 5em;
 }

@@ -25,7 +25,7 @@ import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
 import { renderSnapdragon } from "./ui/screens/home/snapdragon";
 
-import { randomiseItems } from 'ui/screens/multichoice/mixed-specimen-shared';
+import { screenShare } from 'ui/screens/multichoice/mixed-specimen-shared';
 
 setTimeout(()=>{
 
@@ -52,5 +52,5 @@ setTimeout(()=>{
     subscription.add(renderScore, 'score', 'flow');
     subscription.add(renderHeaders, 'collection', 'flow');
     
-    subscription.add(randomiseItems, 'collection', 'flow');
+    subscription.add(screenShare.randomiseItems, 'collection', 'flow');
 });

@@ -35,6 +35,23 @@ const textAlertHandler = (correct, correctAnswer) => {
             </div>`;
 }
 
+export const simpleScoreHandler = (score, config, callback) => {
+    
+    const delay = correct ? config.callbackTime : config.callbackTime + config.callbackDelay;
+            
+    const { correct } = renderAnswerHeader(score);
+
+    score.correct = correct;
+    
+    const scoreUpdateTimer = setTimeout(()=>{
+        actions.boundUpdateScore(score);
+    }, delay);
+
+    if(callback) callback(score, scoreUpdateTimer);
+
+    textAlertHandler(correct, score.answer);
+}
+
 const genericScoreHandler = (score, callback, config, containers) => {
     
     const { itemId, question, answer, event, layoutCount, points } = score;

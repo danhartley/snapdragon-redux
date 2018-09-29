@@ -1,12 +1,9 @@
-import * as R from 'ramda';
-
-import { utils } from 'utils/utils'; 
-import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
+import { elem } from 'ui/helpers/class-behaviour';
 import { modalImagesHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import mixedSpecimenTemplate from 'ui/screens/multichoice/mixed-specimen-tiles-template.html';
-import { getRandomItems } from 'ui/screens/multichoice/mixed-specimen-shared';
+import { screenShare } from 'ui/screens/multichoice/mixed-specimen-shared';
 
 export const renderMixedSpecimenTiles = (collection) => {
 
@@ -18,12 +15,25 @@ export const renderMixedSpecimenTiles = (collection) => {
 
     template.innerHTML = mixedSpecimenTemplate;
 
-    const items = getRandomItems(item);
+    const selectImage = (selectedIndex, selectedName, isCorrectAnswer) => {
+        const imageLayers = document.querySelectorAll('.js-tiles .square .layer');
+        imageLayers.forEach(imageLayer => {
+            if(imageLayer.children.length === 0) return;
+            if(imageLayer.children[0].innerHTML === selectedIndex) {
+                imageLayer.children[0].innerHTML = selectedName;
+                imageLayer.innerHTML = selectedName;
+                imageLayer.setAttribute('style', 'font-size: 1em;');
+                if(isCorrectAnswer) {
+                    elem.addClassToSelected(imageLayers, imageLayer, ['snap-success', 'snap-alert'], 'snap-success' );
+                } else {
+                    elem.addClassToSelected(imageLayers, imageLayer, ['snap-success', 'snap-alert'], 'snap-alert' );
+                }
+            }
+        });
+    };
 
-    const images = items.map((item, index) => { 
-        return { index: index + 1, src: item.images[0], itemName: item.name };
-    } );
-
+    const images = screenShare.getRandomImages(item);
+    screenShare.subscribeToImageSelection(selectImage);
 
     const parent = DOM.leftBody;
     parent.innerHTML = '';
