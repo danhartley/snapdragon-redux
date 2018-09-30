@@ -367,8 +367,12 @@ const landscapeLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ speciesRevision, mixedSpecimenMatch ],
-            // layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ],
+            layouts: [ 
+                speciesRevision, 
+                latinToCommonMatch, 
+                mixedSpecimenMatch,
+                commonToLatinMatch 
+            ],
             wildcardLayouts : [],
             reviewLayouts: [ latinToCommonMatch ]
         },
@@ -421,20 +425,24 @@ const landscapeLesson3 = {
         {   id: 1,
             name:'Level 1',            
             layouts: [ 
-                speciesRevision, 
+                speciesRevision,                 
+                latinToCommonMatch, 
                 { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
                 { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'vernacular') }, 
+                mixedSpecimenMatch,
                 definitionRevision, 
-                latinToCommonMatch, 
-                { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'binomial') }, 
-                commonToLatinMatch  
+                { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'binomial') },   
             ],
             wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ commonToLatinMatch ]
         },
         {   id: 2,
             name:'Level 2',
-            layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
+            layouts: [ 
+                commonToLatinMatch,
+                taxonRevision, 
+                familyMatch, 
+                familyStripsMatch ],
             wildcardLayouts : [],
             reviewLayouts: [ familyMatch, familyStripsMatch ]
         }   
@@ -449,8 +457,12 @@ const portraitLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ speciesRevision, mixedSpecimenMatch ],
-            // layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch ],
+            layouts: [ 
+                speciesRevision, 
+                latinToCommonMatch, 
+                mixedSpecimenMatch,
+                commonToLatinMatch 
+            ],
             wildcardLayouts : [],
             reviewLayouts: [ latinToCommonMatch ]
         },
@@ -503,20 +515,24 @@ const portraitLesson3 = {
         {   id: 1,
             name:'Level 1',            
             layouts: [ 
-                speciesRevision, 
+                speciesRevision,                 
                 latinToCommonMatch, 
                 { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
                 { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'vernacular') }, 
+                mixedSpecimenMatch,
                 definitionRevision, 
                 { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'binomial') }, 
-                commonToLatinMatch  
             ],
             wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ commonToLatinMatch ]
         },
         {   id: 2,
             name:'Level 2',
-            layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
+            layouts: [ 
+                commonToLatinMatch,
+                taxonRevision, 
+                familyMatch, 
+                familyStripsMatch ],
             wildcardLayouts : [],
             reviewLayouts: [ familyMatch, familyStripsMatch ]
         },

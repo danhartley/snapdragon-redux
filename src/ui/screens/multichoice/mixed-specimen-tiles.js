@@ -45,5 +45,5 @@ export const renderMixedSpecimenTiles = (ui) => {
 
     renderTemplate({images}, template.content, parent);
 
-    modalImagesHandler(document.querySelectorAll('.js-tiles .square'), null, collection);
+    modalImagesHandler(document.querySelectorAll('.js-tiles .square'), null, collection, 'withheld');
 };

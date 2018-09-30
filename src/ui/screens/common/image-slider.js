@@ -4,8 +4,6 @@ import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 
 export const imageSlider = (images, parent, disableModal = false, image) => {
 
-    // need to randomise image
-
     const slider = document.createElement('template');
 
     slider.innerHTML = imageSliderTemplate;
@@ -16,7 +14,7 @@ export const imageSlider = (images, parent, disableModal = false, image) => {
 
     if(image) {
         parent.querySelectorAll('.carousel-item').forEach(i => {        
-            if(i.lastElementChild.src === image.dataset.src) {
+            if(i.lastElementChild.src === image.dataset.src || i.lastElementChild.dataset.src === image.dataset.src) {
                 i.classList.add('active');        
             }
         });

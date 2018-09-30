@@ -82,7 +82,11 @@ export const renderVisualMatch = collection => {
             traits.push(value);
           });
 
-        if(config.isPortraitMode) traits = R.take(4, traits);
+        if(config.isPortraitMode) {
+            const filteredTraits = R.take(3, traits);
+            filteredTraits.push(traits.find(trait => trait === traitValue));
+            traits = utils.shuffleArray(filteredTraits);
+        }
 
         answers = traits.filter(utils.onlyUnique);
 
@@ -98,6 +102,11 @@ export const renderVisualMatch = collection => {
     }
 
     if(config.isPortraitMode) {
-        imageSlider(item.images, document.querySelector('.js-species-card-images'), true);
+
+        const images = item.images.map((img, index) => { 
+            return { index: index + 1, src: img, itemName: item.name };
+        } );
+    
+        imageSlider(images, document.querySelector('.js-species-card-images'), true);
     }
 };

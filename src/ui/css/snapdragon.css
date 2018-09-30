@@ -891,7 +891,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .text-question {
-  min-height: 3em;
+  min-height: 0em;
 }
 
 .text-question .icon {
@@ -1235,6 +1235,10 @@ table {
 .mixed-specimen-container .layer {
   font-size: 5em;  
 }
+
+/* .mixed-specimen-container .text-question {
+  min-height: 0;
+} */
 
 #imageModal .modal-body {
   padding: 0;

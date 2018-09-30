@@ -1,5 +1,6 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
+import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderAnswerHeader } from 'ui/helpers/response-formatting';
 import { imageSlider } from 'ui/screens/common/image-slider';
@@ -210,13 +211,13 @@ export const selectHandler = (selector, callback) => {
     });
 };
 
-export const modalImagesHandler = (images, item, collection) => {
+export const modalImagesHandler = (images, item, collection, displayNameType) => {
     images.forEach(image => {
-        modalImageHandler(image, item, collection);
+        modalImageHandler(image, item, collection, displayNameType);
     });
 };
 
-export const modalImageHandler = (image, item, collection) => {
+export const modalImageHandler = (image, item, collection, displayNameType = 'binomial') => {
     image.addEventListener('click', event => {
         const parent = document.querySelector('#imageModal .js-modal-image');
         const selectedItem = item || collection.items.find(item => item.name === image.dataset.itemname);
@@ -224,7 +225,21 @@ export const modalImageHandler = (image, item, collection) => {
             return { src: image, itemName: selectedItem.name };
         });
         imageSlider(images, parent, false, image);
-        DOM.modalImageTitle.innerHTML = selectedItem.name;
+        let displayName = '';
+        switch(displayNameType) {
+            case 'biomial':
+                displayName = selectedItem.name;
+                break;
+            case 'vernacular':
+                displayName = itemProperties.vernacularName(item, config);
+                break;
+            case 'withheld':
+                displayName = 'Species name withheld';
+                break;
+            default:
+                displayName = selectedItem.name;
+        }
+        DOM.modalImageTitle.innerHTML = displayName;
     })
 };
 

@@ -26,6 +26,7 @@ export const renderMixedSpecimenQuestions = ui => {
     template.innerHTML = mixedSpecimenTemplate;
 
     const getPortraitImages = images => {
+        if(!images) return;
         const multiImages = utils.flatten(images.map(image => { 
             const srcs = R.take(3, image.srcs);
             return srcs.map((src, index) => {
@@ -35,7 +36,7 @@ export const renderMixedSpecimenQuestions = ui => {
         return multiImages;
     }
 
-    let images = screenShare.getRandomImages(item, config);
+    let images = utils.shuffleArray(screenShare.getRandomImages(item, config));
 
     if(config.isPortraitMode) images = getPortraitImages(images);
     
@@ -107,22 +108,24 @@ export const renderMixedSpecimenQuestions = ui => {
 
     if(config.isPortraitMode) {
         
-        imageSlider(images, document.querySelector('.js-species-card-images'), true);
+        imageSlider(utils.shuffleArray(images), document.querySelector('.js-species-card-images'), true);
 
-        document.querySelectorAll('.carousel-item img').forEach(img => {
+        document.querySelectorAll('.carousel-item .layer').forEach(img => {
             img.addEventListener('click', event => {
-                const selectedName = event.target.dataset.itemname;
+                const layer = event.target;
+                const selectedName = layer.dataset.itemname;
                 const question = item.name;
                 const answer = selectedName;
-                const isCorrect = answer === question;                
-                const questionText = document.querySelector('.question-container p:nth-child(2)');
-                questionText.innerHTML = isCorrect
-                    ? `<div>
-                        <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
-                        </div>`
-                    : `<div>
-                        <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ answer }</span>
-                        </div>`;                
+                const isCorrect = answer === question;
+                const className = isCorrect ? 'snap-success' : 'snap-alert';
+                layer.classList.add(className);
+                document.querySelector('.question-container p:nth-child(2)').innerHTML = '';                
+                const icon = document.createElement('span');
+                icon.innerHTML = isCorrect 
+                        ? '<span class="icon"><i class="fas fa-check-circle"></i></span>'
+                        : '<span class="icon"><i class="fas fa-times-circle"></i></span>';
+
+                layer.appendChild(icon);          
                 scoreHandler(score, question, answer, config);
             });
         });

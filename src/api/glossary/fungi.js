@@ -58,7 +58,7 @@ export const fungi = [
     },
     {
         term: "Pileus",
-        definition: "Cap, or cap-like part, of a fungal fruiting body (basidiocarp) that supports spore-bearing surface (hymeniums).",
+        definition: "Cap, or cap-like part, of a fungal fruiting body (basidiocarp) that supports spore-bearing surface (hymenium).",
         wiki: "https://en.wikipedia.org/wiki/Pileus_(mycology)",
         level: 1
     },
