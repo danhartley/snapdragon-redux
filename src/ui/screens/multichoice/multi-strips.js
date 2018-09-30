@@ -12,7 +12,7 @@ import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { syndromes } from 'api/snapdragon/syndromes';
 import familyTemplate from 'ui/screens/multichoice/multi-strips-template.html';
-import questionCard from 'ui/screens/common/question-template.html';
+import questionTemplate from 'ui/screens/common/question-template.html';
 import speciesCard from 'ui/screens/cards/species-card-template.html';
 import taxonCard from 'ui/screens/cards/taxon-card-template.html';
 
@@ -61,7 +61,7 @@ export const renderMultiStrips = (collection) => {
 
         renderTemplate( context, template.content, parent);
 
-        template.innerHTML = questionCard;
+        template.innerHTML = questionTemplate;
         
         renderTemplate( { question: questionText }, template.content, parent);
 
@@ -87,7 +87,7 @@ export const renderMultiStrips = (collection) => {
         const _score = { ...score, itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
         const callback = renderAnswer;
 
-        scoreHandler('strip', _score, callback, config);        
+        scoreHandler('strip', _score, callback, config);
     }
 
     if(screen.name === 'species-scientifics') {

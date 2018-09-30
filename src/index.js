@@ -25,6 +25,8 @@ import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
 import { renderSnapdragon } from "./ui/screens/home/snapdragon";
 
+import { screenShare } from 'ui/screens/multichoice/mixed-specimen-shared';
+
 setTimeout(()=>{
 
     const { config, counter: currentCounter, collection } = store.getState();
@@ -49,4 +51,6 @@ setTimeout(()=>{
     
     subscription.add(renderScore, 'score', 'flow');
     subscription.add(renderHeaders, 'collection', 'flow');
+    
+    subscription.add(screenShare.randomiseItems, 'collection', 'flow');
 });

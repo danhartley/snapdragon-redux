@@ -1,13 +1,11 @@
-import { is } from "immutable";
-
 export const renderCapital = str => {
     if(!str) return str;
     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 };
 
-export const renderName = (response, correct) => {
+export const renderName = (response, isCorrect) => {
 
-    if(correct) return response.answer;
+    if(isCorrect) return response.answer;
 
     return renderCapital(response.vernacular) || response.binomial;
 
@@ -33,24 +31,23 @@ export const renderAnswer = (response) => {
     const names = response.binomial.split(' ');
     const genus = names[0];
     const species = names[1];
-    const correct = isAnswerCorrect(response);
-    // const className = correct ? 'snap-success' : 'snap-alert';    
+    const isCorrect = isAnswerCorrect(response);
 
-    const name = renderName(response, correct);
+    const name = renderName(response, isCorrect);
 
     switch(response.taxon) {
         case 'name':
             return name;
         case 'genus':
-            return correct
+            return isCorrect
                 ? response.answer
                 : genus;
         case 'species':
-            return correct
+            return isCorrect
                 ? response.answer
                 : species;
         case 'vernacular':
-        return correct
+        return isCorrect
                 ? response.answer
                 : response.question;
     }
@@ -62,22 +59,9 @@ export const renderAnswerHeader = response => {
 
     response.answer = response.answer.trim();
 
-    const correct = isAnswerCorrect(response);
+    const isCorrect = isAnswerCorrect(response);
 
-    const colour = correct ? 'snap-success' : 'snap-alert';
+    const colour = isCorrect ? 'snap-success' : 'snap-alert';
 
-    return { text: renderAnswer(response), colour, correct };
-};
-
-export const renderTermAnswerHeader = (response, header, target) => {
-    
-    const correct = response.question.toLowerCase() === response.answer.toLowerCase();
-    const colour = correct ? 'snap-success' : 'snap-alert';
-    const term = correct ? response.answer : response.question;
-    const answer = `<span class="${colour}">${term}</span>`;
-    const text = correct
-        ? `${answer} is correct!`
-        : `No! ${answer}.`;
-
-    return { text, colour, correct };
+    return { text: renderAnswer(response), colour, isCorrect };
 };

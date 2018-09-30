@@ -9,6 +9,7 @@ import { config } from 'redux/reducers/config-reducer';
 import { collections, collection } from 'redux/reducers/species-reducers';
 import { counter, score, history, page } from 'redux/reducers/progress-reducers';
 import { lessonPlan, layout } from 'redux/reducers/layout-reducers';
+import { ui } from 'redux/reducers/ui-reducers';
 
 const reducer = combineReducers({
     counter,
@@ -19,7 +20,8 @@ const reducer = combineReducers({
     score,
     collections,
     history, 
-    page
+    page,
+    ui 
 });
 
 const persistConfig = {

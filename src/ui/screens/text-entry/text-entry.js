@@ -58,30 +58,45 @@ export const renderInput = (screen, question, hints) => {
     renderTemplate({ txtQuestion }, template.content, parent, clone);
 
     if(config.isPortraitMode) renderPortrait(item);
-    else renderLandscape(item, config, collection);
+    else renderLandscape(item, config, question);
 
     document.querySelector('.js-txt-input').focus();
 };
 
 const renderPortrait = item => {
-    imageSlider(item, document.querySelector('.js-species-card-images'), true);
+    imageSlider(item.images, document.querySelector('.js-species-card-images'), true);
 };
 
-const renderLandscape = (item, config, collection) => {
+const renderLandscape = (item, config, question) => {
     
-    const pool = (item.species + itemProperties.vernacularName(item, config)).replace(/\s/g,'').toLowerCase();
+    let answer = question[question.taxon];
+    
+    let pool;
 
-    let blocks = '';
+    switch(question.taxon) {
+        case 'vernacular':
+            pool = itemProperties.vernacularName(item, config).toLowerCase();
+            answer = question.common;
+            break;
+        case 'genus':
+            pool = item.genus.toLowerCase();
+            break;
+        case 'species':
+            pool = item.species.toLowerCase();
+            break;
+        case 'binomial':
+            pool = item.name.toLowerCase();
+            break;
+    }
+
+    let letterBlocks = '';
 
     utils.shuffleArray(Array.from(pool)).forEach( (letter, index) => {
-        blocks += `<span id="${index}" class="block">${letter}</span>`
+        if(letter === ' ') letter = '&nbsp;';
+        letterBlocks += `<span id="${index}" class="block">${letter}</span>`
     });
 
-    blocks += `<span id="${blocks.length}" class="block">&nbsp;</span>`;
-    blocks += `<span id="${blocks.length}" class="block">&nbsp;</span>`;
-    blocks += `<span id="${blocks.length}" class="block">&nbsp;</span>`;
-
-    document.querySelector('.js-pool-letters').innerHTML = blocks;
+    document.querySelector('.js-pool-letters').innerHTML = letterBlocks;
 
     const input = document.querySelector('.js-txt-input');
 
@@ -108,7 +123,9 @@ const renderLandscape = (item, config, collection) => {
         });
     };
 
-    document.querySelectorAll('.block').forEach(block => {
+    const blocks = document.querySelectorAll('.block');
+
+    blocks.forEach(block => {
         block.addEventListener('click', event => {
             const letter = event.target;
             if(letter.classList.contains('active')) {
@@ -120,7 +137,11 @@ const renderLandscape = (item, config, collection) => {
                     input.value += ' ';
                 else
                     input.value += letter.innerHTML;
-            }            
+            }
+            if(input.value === answer.toLowerCase()) {
+                blocks.forEach(block => block.classList.add('correct'));
+                document.querySelector('.js-check-answer').click();
+            }
         });
     });
 
@@ -141,4 +162,27 @@ const renderLandscape = (item, config, collection) => {
             input.setAttribute('disabled', 'disabled');
         }
     });
+
+    const blockArray = [ ...blocks ];    
+    const entries = [];
+    let selectedBlock;
+
+    input.addEventListener('input', event => {
+        const entry = event.data.toLowerCase();        
+        entries.push(entry);
+        selectedBlock = blockArray.find(block => block.innerHTML === entry);
+        selectedBlock.classList.add('active');
+        if(input.value === answer.toLowerCase()) {
+            blockArray.forEach(block => block.classList.add('correct'));
+            document.querySelector('.js-check-answer').click();
+        }
+    });
+
+    input.addEventListener('keyup', event => {
+          if(event.keyCode === 8) {
+            const entry = entries.pop();
+            selectedBlock = blockArray.find(block => block.innerHTML === entry);
+            selectedBlock.classList.remove('active');
+          }            
+        });
 };

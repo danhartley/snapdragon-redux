@@ -2,7 +2,28 @@ import * as R from 'ramda';
 
 import { screens } from 'snapdragon/screen-layouts';
 
-const { specimen, speciesCard, species, vernaculars, scientifics, text, command, leaf, leafName, family, familyStrips, taxon, textComplete, cultivar, cultivarCard, epithets, wildcardCard, wildcard, definitions, visualMatch, definitionCard, traitProperty } = screens;
+const { 
+    specimen, speciesCard, species, vernaculars, scientifics, text, 
+    command, leaf, leafName, 
+    family, familyStrips, taxon, textComplete, cultivar, cultivarCard, 
+    epithets, wildcardCard, wildcard, definitions, 
+    visualMatch, definitionCard, traitProperty,
+    mixedSpecimenTiles,
+    mixedSpecimenQuestions } = screens;
+
+const mixedSpecimenMatch = {
+    name: 'screen-mixed-specimen-match',
+    type: 'test',
+    score: 1,
+    kind: 'MC',
+    points: 3,
+    given: 'Specimen images',
+    options: 'Choose species',
+    screens: [
+        { ...mixedSpecimenTiles },
+        { ...mixedSpecimenQuestions }
+    ]
+};
 
 const speciesRevision = {
     name: 'screen-species-card',
@@ -346,7 +367,12 @@ const landscapeLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch, textCompleteGenus ],
+            layouts: [ 
+                speciesRevision, 
+                latinToCommonMatch, 
+                mixedSpecimenMatch,
+                commonToLatinMatch 
+            ],
             wildcardLayouts : [],
             reviewLayouts: [ latinToCommonMatch ]
         },
@@ -399,20 +425,24 @@ const landscapeLesson3 = {
         {   id: 1,
             name:'Level 1',            
             layouts: [ 
-                speciesRevision, 
+                speciesRevision,                 
+                latinToCommonMatch, 
                 { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
                 { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'vernacular') }, 
+                mixedSpecimenMatch,
                 definitionRevision, 
-                latinToCommonMatch, 
-                { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'binomial') }, 
-                commonToLatinMatch  
+                { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'binomial') },   
             ],
             wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ commonToLatinMatch ]
         },
         {   id: 2,
             name:'Level 2',
-            layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
+            layouts: [ 
+                commonToLatinMatch,
+                taxonRevision, 
+                familyMatch, 
+                familyStripsMatch ],
             wildcardLayouts : [],
             reviewLayouts: [ familyMatch, familyStripsMatch ]
         }   
@@ -427,7 +457,12 @@ const portraitLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ speciesRevision, latinToCommonMatch, commonToLatinMatch ],
+            layouts: [ 
+                speciesRevision, 
+                latinToCommonMatch, 
+                mixedSpecimenMatch,
+                commonToLatinMatch 
+            ],
             wildcardLayouts : [],
             reviewLayouts: [ latinToCommonMatch ]
         },
@@ -480,20 +515,24 @@ const portraitLesson3 = {
         {   id: 1,
             name:'Level 1',            
             layouts: [ 
-                speciesRevision, 
+                speciesRevision,                 
                 latinToCommonMatch, 
                 { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
                 { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'vernacular') }, 
+                mixedSpecimenMatch,
                 definitionRevision, 
                 { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'binomial') }, 
-                commonToLatinMatch  
             ],
             wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ commonToLatinMatch ]
         },
         {   id: 2,
             name:'Level 2',
-            layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
+            layouts: [ 
+                commonToLatinMatch,
+                taxonRevision, 
+                familyMatch, 
+                familyStripsMatch ],
             wildcardLayouts : [],
             reviewLayouts: [ familyMatch, familyStripsMatch ]
         },

@@ -51,9 +51,9 @@ const species = {
 
 const text = {
   name: 'text-entry',
-  headers: { long: 'Latin name recall', short: 'Complete the latin name'},
+  // headers: { long: 'Latin name recall', short: 'Complete the latin name'},
   domain: 'collection',
-  question: 'Complete the latin name',
+  // question: 'Complete the latin name',
 };
 
 const textComplete = {
@@ -67,6 +67,16 @@ const summary = {
   name: 'summary', 
   domain: 'history',
   template: 'js-summary-template'
+};
+
+const mixedSpecimenTiles = {
+  name: 'mixed-specimen-tiles',
+  domain: 'ui'
+};
+
+const mixedSpecimenQuestions = {
+  name: 'mixed-specimen-questions',
+  domain: 'ui'
 };
 
 const command = {
@@ -189,5 +199,8 @@ export const screens = {
   wildcard,
 
   visualMatch,
-  traitProperty
+  traitProperty,
+
+  mixedSpecimenTiles,
+  mixedSpecimenQuestions
 };

@@ -229,4 +229,8 @@
     #traitSlider .carousel-item div {
         padding: .5em;
     }
+
+    .text-question {
+        min-height: 3em;
+    }
 }
