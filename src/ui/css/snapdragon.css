@@ -1267,13 +1267,12 @@ table {
   padding: 0 10%;
 }
 
-#imageSlider .carousel-item img {
-  object-fit: contain;
-  height: inherit;
-}
-
-#imageSlider .modal .carousel-item img {
-  object-fit: contain;
+#imageSlider .carousel-item > div {
+  height: 100%; 
+  cursor: pointer; 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #imageSlider .carousel-control-next-icon, #imageSlider .carousel-control-prev-icon {

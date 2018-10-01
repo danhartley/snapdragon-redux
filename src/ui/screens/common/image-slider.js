@@ -23,7 +23,7 @@ export const imageSlider = (images, parent, disableModal = false, image) => {
     }
     
     if(disableModal) {
-        document.querySelectorAll('.carousel-item img').forEach(img => {
+        document.querySelectorAll('.carousel-item div').forEach(img => {
             img.removeAttribute('data-toggle');
             img.removeAttribute('data-target');
         });
