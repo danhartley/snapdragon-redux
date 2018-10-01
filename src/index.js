@@ -40,6 +40,7 @@ setTimeout(()=>{
     actions.boundUpdateConfig(config);
     actions.boundToggleLesson(counter);
 
+    subscription.add(renderHeaders, 'page', 'flow');
     subscription.add(renderNavigation, 'page', 'flow');
     subscription.add(renderCollections, 'counter', 'flow');
     if(!config.isPortraitMode) {
@@ -50,7 +51,6 @@ setTimeout(()=>{
     subscription.add(nextItem, 'layout', 'flow');
     
     subscription.add(renderScore, 'score', 'flow');
-    subscription.add(renderHeaders, 'collection', 'flow');
     
     subscription.add(screenShare.randomiseItems, 'collection', 'flow');
 });
