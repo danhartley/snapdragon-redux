@@ -98,8 +98,22 @@ const getActiveTrait = (traits, itemName, language, options) => {
     return traitValues.reduce(reducer, '');
 }
 
-const vernacularNames = (items, config, itemGroup) => {
-    const names = itemGroup ? items.filter((item, index) => R.contains(index, itemGroup)).map(item => item.names): items.map(item => item.names);
+const vernacularNames = (items, config) => {
+    let itemNames = items.map(item => item.names);
+    let vernaculars = itemNames.map(itemNames => itemNames.filter(name => 
+        { return name.language === config.language || name.language === 'en' 
+    }));
+    vernaculars = vernaculars.map(vernacular => {
+        let name = vernacular.find(v => v.language === config.language);
+        if(!name) name = vernacular.find(v => v.language === 'en');
+        return utils.capitaliseFirst(name.vernacularName);
+    });
+    return vernaculars;
+    // return vernaculars.map(name => utils.capitaliseFirst(name[0].vernacularName));
+};
+
+const vernacularNamesForGroups = (items, config, itemGroup) => {
+    let names = itemGroup ? items.filter((item, index) => R.contains(index, itemGroup)).map(item => item.names): items.map(item => item.names);    
     const vernaculars = names.map(itemNames => itemNames.filter(name => name.language === config.language));
     return vernaculars.map(name => utils.capitaliseFirst(name[0].vernacularName));
 };
@@ -130,7 +144,8 @@ export const itemProperties = {
     familyVernacularNames,
     getTrait,
     getActiveTrait,
-    vernacularNames,
+    vernacularNamesForGroups,
     itemNames,
-    itemContextProperty
+    itemContextProperty,
+    vernacularNames
 };

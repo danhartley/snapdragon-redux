@@ -4,7 +4,7 @@ import { store } from 'redux/store';
 import * as SD from 'api/snapdragon/trait-types';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { radioButonClickhandler } from 'ui/helpers/handlers';
-import { itemProperties } from '../../helpers/data-checking';
+import { itemProperties } from 'ui/helpers/data-checking';
 import { taxa } from 'api/snapdragon/taxa';
 import { fungiTraits } from 'api/traits/fungi-traits';
 import visualMatchTemplate from 'ui/screens/multichoice/visual-match-template.html';
@@ -44,7 +44,7 @@ export const renderVisualMatch = collection => {
         
         answers = layout.screens[1].type === 'binomial' 
                 ? itemProperties.itemNames(collection.items, collection.itemGroup)
-                : itemProperties.vernacularNames(collection.items, config, collection.itemGroup);
+                : itemProperties.vernacularNamesForGroups(collection.items, config, collection.itemGroup);
 
         const questionValue = layout.screens[1].type === 'binomial'
                 ? item.name

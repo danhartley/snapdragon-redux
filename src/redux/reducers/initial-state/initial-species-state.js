@@ -1,14 +1,17 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
-import { config } from 'syllabus/lesson-config';
+import { store } from 'redux/store';
 import { kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, mushrooms1, mushrooms2, mushrooms3 } from 'snapdragon/snapdragon-collections';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
+import { itemProperties } from 'ui/helpers/data-checking';
 import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
 
 const collections = [ kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, mushrooms1, mushrooms2, mushrooms3 ];
 
 const initCollection = (selectedCollection = collections[0]) => {
+
+    const { config } = store.getState();
 
     const moduleSize = selectedCollection.moduleSize || config.moduleSize;
 
@@ -21,7 +24,7 @@ const initCollection = (selectedCollection = collections[0]) => {
     const families = familyProps.getFamilyNames(items);
     const familyStats = familyProps.getFamilyStats(items);
     const speciesNames = items.map(item => item.name);
-    const speciesVernacularNames = items.map(i => i.names.filter(name => name.language === config.language));
+    const speciesVernacularNames = itemProperties.vernacularNames(items, config);
 
     const collection = {
         id: selectedCollection.id,

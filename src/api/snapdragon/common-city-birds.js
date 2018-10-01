@@ -52,10 +52,6 @@ export const commonCityBirds = [
         "language": "en"
       },
       {
-        "vernacularName": "Haussperling",
-        "language": "en"
-      },
-      {
         "vernacularName": "Italian Sparrow",
         "language": "en"
       },

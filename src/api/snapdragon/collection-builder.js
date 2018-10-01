@@ -52,7 +52,7 @@ async function getSpeciesData(item) {
     const response = await fetch(item.detailsUrl);
     const json = await response.json();
     const imagesCollection = json.dataObjects.filter(item => item.mediaURL || item.eolMediaURL).map(media => media.eolMediaURL);
-    const namesCollection = json.vernacularNames.filter(item => R.contains(item.language, languages));
+    const namesCollection = json.vernacularNamesForGroups.filter(item => R.contains(item.language, languages));
     const descriptions = [];
     const objs = json.dataObjects.filter(obj => {
         return (obj.mimeType === 'text/plain' || obj.mimeType === 'text/html') && obj.vettedStatus === "Trusted" }
