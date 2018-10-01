@@ -58,7 +58,7 @@ export const renderCollections = (counter) => {
         learningActionBtn.innerHTML =  'View lesson species';
     } else {
         learningActionBtn.innerHTML = 'Begin lesson'
-        if(collection.layoutCounter > 1) {
+        if(collection.layoutCounter > 0) {
             learningActionBtn.innerHTML = 'Continue lesson';
         }
     }    
@@ -98,6 +98,7 @@ export const renderCollections = (counter) => {
         if(config.isLandscapeMode) {
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
             actions.boundSelectCollection(collection);
+            actions.boundNewPage({ name: 'list'});
         }
 
         if(counter.isLessonPaused && config.isPortraitMode && collection.id !== collectionId) {
@@ -149,7 +150,7 @@ export const renderCollections = (counter) => {
         if(config.isLandscapeMode) {
             subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));            
             const lessonStateMode = counter.isLessonPaused ? 'restartLesson' : 'newLesson';
-            endOfRoundHandler.changeCollection(lessonStateMode, collections, collection, config, history, learningActionBtn);
+            endOfRoundHandler.changeCollection(lessonStateMode, collections, collection, config, history, learningActionBtn);            
         }
                 
         subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
@@ -159,9 +160,9 @@ export const renderCollections = (counter) => {
             if(counter.isLessonPaused && collectionId === collection.id) {
                 renderSpeciesCollectionList(collection, null, true);
             } else {
-                actions.boundSelectCollection(collection);
-                actions.boundNewPage({ name: 'list'});
+                actions.boundSelectCollection(collection);                
             }            
+            actions.boundNewPage({ name: 'list'});
          } 
         
         updateNavIcons();        

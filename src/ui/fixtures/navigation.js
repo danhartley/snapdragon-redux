@@ -37,6 +37,8 @@ export const renderNavigation = (page) => {
 
     renderTemplate({ }, template.content, parent);
 
+    const navIcons =  document.querySelectorAll('.js-nav-icons .icon');
+
     const activateIcon = id => {
         const icon = document.querySelector(`.${id}`);
         if(icon) {
@@ -49,7 +51,7 @@ export const renderNavigation = (page) => {
         }
     };
 
-    setTimeout(() => {
+    // setTimeout(() => {
         switch(page.name) {
             case 'home':
                 activateIcon('js-home');
@@ -57,8 +59,10 @@ export const renderNavigation = (page) => {
             case 'list':
                 activateIcon('js-list');
                 break;
+            default:
+                navIcons.forEach(icon => icon.classList.remove('active-icon'));
         }
-    }); 
+    // }); 
 
     let handleBodyClick = true;
 
@@ -74,10 +78,7 @@ export const renderNavigation = (page) => {
         }
     });
 
-    const navIcons =  document.querySelectorAll('.js-nav-icons .icon');
-
     navIcons.forEach(icon => {
-
         icon.addEventListener('click', event => {       
                 handleBodyClick = false;
                 const target = event.target.parentElement;

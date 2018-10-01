@@ -110,6 +110,8 @@ export const page = (state = { name: 'home', glossary: false}, action) => {
             return { ...state, ...action.data };
         case types.NEXT_LESSON:
             return { name: '', glossary: true };
+        case types.NEXT_LAYOUT:
+            return { name: '', type: action.data.type, glossary: true };
         default:
             return state;
     }
