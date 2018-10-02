@@ -2,117 +2,109 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
-import { renderAnswerHeader } from 'ui/helpers/response-formatting';
+import { markTest } from 'ui/helpers/score-handler';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import updateBtnTemplate from 'ui/screens/multichoice/update-btn-template.html';
 
-export const scoreHandler = (type, score, callback, config, containers) => {
+export const scoreHandler = (type, test, callback, config, containers) => {
     
     switch(type) {
         case 'radio':
         case 'text':
-            genericScoreHandler(score, callback, config, containers);
+            genericScoreHandler(test, callback, config, containers);
             break;
         case 'block':
-            blockScoreHander(score, callback, config);
+            blockScoreHander(test, callback, config);
             break;
         case 'strip':   
-            stripScoreHandler(score, callback, config);
+            stripScoreHandler(test, callback, config);
             break;
         case 'image':
-            imageScoreHandler(score, callback, config);
+            imageScoreHandler(test, callback, config);
             break;
     }
 };
 
-const textAlertHandler = (isCorrect, correctAnswer) => {
+const textAlertHandler = (score) => {
     const questionText = document.querySelector('.js-txt-question');
-    questionText.innerHTML = isCorrect
+    questionText.innerHTML = score.success
         ? `<div>
             <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
             </div>`
         : `<div>
-            <span class="icon"><i class="fas fa-times-circle"></i></span><span>${ correctAnswer }</span>
+            <span class="icon"><i class="fas fa-times-circle"></i></span><span>Incorrect</span>
             </div>`;
 }
 
-export const simpleScoreHandler = (score, config, callback) => {
+export const simpleScoreHandler = (test, config, callback) => {
     
-    const { isCorrect } = renderAnswerHeader(score);
+    const score = markTest(test);
 
-    const delay = isCorrect ? config.callbackTime : config.callbackTime + config.callbackDelay;
+    const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
-    score.success = isCorrect;
-    
     const scoreUpdateTimer = setTimeout(()=>{
         actions.boundUpdateScore(score);
     }, delay);
 
     if(callback) callback(score, scoreUpdateTimer);
 
-    textAlertHandler(isCorrect, score.answer);
+    textAlertHandler(score);
 }
 
-const genericScoreHandler = (score, callback, config, containers) => {
+const genericScoreHandler = (_score, callback, config, containers) => {
     
-    const { itemId, question, answer, event, layoutCount, points } = score;
+    const { itemId, question, answer, event, layoutCount, points } = _score;
 
     const btn = event.target;
-    const response = { itemId, ...question, answer, points };
+    const test = { itemId, ...question, answer, points };
 
     let correctAnswer;
-    let wrongAnswer;
 
     if(question.enumerated) {
-        correctAnswer = response.question.slice(0,3);
-        wrongAnswer = response.answer.slice(0,3);
-        response.answer = response.answer.slice(3);
-        response.question = response.question.slice(3);
+        correctAnswer = test.question.slice(0,3);
+        test.answer = test.answer.slice(3);
+        test.question = test.question.slice(3);
     } else {
-        correctAnswer = response.question;
-        wrongAnswer = response.answer;
+        correctAnswer = test.question;
     }
     
-    const { colour, isCorrect } = renderAnswerHeader(response);
+    const score = markTest(test);
 
-    textAlertHandler(isCorrect, correctAnswer);
+    textAlertHandler(score);
 
     if(containers) {
-        containers.answerContainer.classList.add(colour);
+        containers.answerContainer.classList.add(score.colour);
         containers.questionContainer.classList.add('snap-success');
     }
     btn.innerText = 'Continue';
 
-    response.success = isCorrect;
-    response.layoutCount = layoutCount;
+    score.layoutCount = layoutCount;
 
-    const delay = isCorrect ? config.callbackTime : config.callbackTime + config.callbackDelay;
+    const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
     const scoreUpdateTimer = setTimeout(()=>{
-        actions.boundUpdateScore(response);        
+        actions.boundUpdateScore(score);        
     }, delay);
 
-    callback(colour, score, scoreUpdateTimer);
+    callback(score, scoreUpdateTimer);
 };
 
-const blockScoreHander = (score, callback, config) => {
+const blockScoreHander = (test, callback, config) => {
     
-    const { colour, isCorrect } = renderAnswerHeader(score);
+    const score = markTest(test);
 
-    score.success = isCorrect;
-
-    const delay = isCorrect ? config.callbackTime : config.callbackTime + config.callbackDelay;
+    const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
     const scoreUpdateTimer = setTimeout(()=>{
         actions.boundUpdateScore(score);
     }, delay);
 
-    callback(colour, isCorrect, score, scoreUpdateTimer, config);
+    callback(score, scoreUpdateTimer, config);
 };
 
-const stripScoreHandler = (score, callback, config) => {    
+const stripScoreHandler = (test, callback, config) => {    
 
-    const { items, taxon } = score;
+    const { items, taxon } = test;
 
     items.forEach(selected => {
 
@@ -122,15 +114,13 @@ const stripScoreHandler = (score, callback, config) => {
             const answer = target.innerText;
             const vernacular = target.dataset.vernacular;
 
-            score.taxon = 'name';
-            score.vernacular = vernacular;
-            score.question = taxon.question;
-            score.answer = answer;
-            const { text, colour, isCorrect } = renderAnswerHeader(score);
-            
-            score.success = isCorrect;
+            test.taxon = 'name';
+            test.vernacular = vernacular;
+            test.question = taxon.question;
+            test.answer = answer;
+            const score = markTest(test);
 
-            target.classList.add(colour);
+            target.classList.add(score.colour);
 
             items.forEach(strip => {   
                 const matchesScientificName = strip.innerText === taxon.name;
@@ -144,7 +134,7 @@ const stripScoreHandler = (score, callback, config) => {
                 }
             });     
             
-            const delay = isCorrect ? config.callbackTime : config.callbackTime + config.callbackDelay;
+            const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
             
             const scoreUpdateTimer = setTimeout(()=>{
                 actions.boundUpdateScore(score);
@@ -152,14 +142,14 @@ const stripScoreHandler = (score, callback, config) => {
             
             if(callback) callback(score, scoreUpdateTimer);
 
-            textAlertHandler(isCorrect, score.question);
+            textAlertHandler(score);
         });
     });
 };
 
-const imageScoreHandler = (score, callback, config) => {
+const imageScoreHandler = (test, callback, config) => { // not in use but check
 
-    const { items, taxon } = score;
+    const { items, taxon } = test;
 
     items.forEach(tile => {
         tile.addEventListener('click', event => {
@@ -169,12 +159,10 @@ const imageScoreHandler = (score, callback, config) => {
 
             if(!answer) return;
 
-            score.taxon = 'name';
-            score.question = taxon.name
-            score.answer = answer;
-            const { text, colour, isCorrect } = renderAnswerHeader(score);
-
-            score.success = isCorrect;
+            test.taxon = 'name';
+            test.question = taxon.name
+            test.answer = answer;
+            const score = markTest(test);
 
             tile.style.filter = 'saturate(100%)';
 
@@ -189,13 +177,13 @@ const imageScoreHandler = (score, callback, config) => {
                 }
             });
 
-            const delay = isCorrect ? config.callbackTime : config.callbackTime + config.callbackDelay;
+            const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
 
             const scoreUpdateTimer = setTimeout(() => {
                 actions.boundUpdateScore(score);
             }, delay);
                 
-            if(callback) callback(text, colour, isCorrect, scoreUpdateTimer);
+            if(callback) callback(score, scoreUpdateTimer);
         });
     });
 };
@@ -270,7 +258,7 @@ export const radioButonClickhandler = (config, template, descriptions, answers, 
         });
     });
 
-    const callback = (colour, score, scoreUpdateTimer) => {            
+    const callback = (score, scoreUpdateTimer) => {            
         answerBtn.disabled = false;
         answerBtn.removeEventListener('click', scoreEventHandler);     
         answerBtn.addEventListener('click', () => {
@@ -288,8 +276,8 @@ export const radioButonClickhandler = (config, template, descriptions, answers, 
         });
         const answerContainer = document.querySelector('input[name="answer"]:checked').parentElement;
         const answer = document.querySelector('input[name="answer"]:checked').value;
-        const score = { ...question, answer, event };
-        scoreHandler('radio', score, callback, config, { answerContainer, questionContainer });            
+        const test = { ...question, answer, event };
+        scoreHandler('radio', test, callback, config, { answerContainer, questionContainer });            
     };
 
     answerBtn.addEventListener('click', scoreEventHandler)

@@ -180,4 +180,5 @@ export const snapdragonCollections = [
     rhsWeeds1,
     mushrooms1,
     mushrooms2,
+    mushrooms3,
 ];

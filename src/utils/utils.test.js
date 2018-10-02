@@ -160,3 +160,9 @@ const layouts = [
     const ids = arr.reduce(utils.itemCountReducer, {});
     expect(ids).toEqual({1:1,2:2,3:3,7:1});
   });
+
+  test('should capitalise all words', () => {
+    const str = 'the small black dog jumped over the lazy moon';
+    const strCapialised = 'The Small Black Dog Jumped Over The Lazy Moon';
+    expect(utils.capitaliseAll(str)).toEqual(strCapialised);
+  });

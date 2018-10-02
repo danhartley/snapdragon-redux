@@ -6,7 +6,7 @@ import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
-import { renderAnswerHeader } from 'ui/helpers/response-formatting';
+import { markTest } from 'ui/helpers/score-handler';
 import lettersTemplate from 'ui/screens/common/letters-template.html';
 
 export const renderLetters = (letters, item, callbackTime) => {
@@ -57,7 +57,7 @@ export const renderLetters = (letters, item, callbackTime) => {
                     const answer = item.name;
                     const success = itemName === item.name.replace(' ', '');
                     const response = { ...question, answer, success };
-                    const { text, colour, correct } = renderAnswerHeader(response);
+                    const { text, colour, correct } = markTest(response);
                     response.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
                     response.layoutCount = lessonPlan.layouts.length;
                     response.itemId = item.id;
@@ -91,7 +91,7 @@ export const renderLetters = (letters, item, callbackTime) => {
         const answer = '';
         const success = false;
         const response = { ...question, answer, success };
-        const { text, colour, correct } = renderAnswerHeader(response);
+        const { text, colour, correct } = markTest(response);
         response.questionCount = lessonPlan.questionCount;
         response.layoutCount = lessonPlan.layoutCount;
         reponse.itemId = item.id;

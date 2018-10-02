@@ -27,11 +27,11 @@ export const renderInput = (screen, question, hints) => {
 
     const clone = document.importNode(template.content, true);
     
-    const callback = (colour, score, scoreUpdateTimer) => {
+    const callback = (score, scoreUpdateTimer) => {
         const answerBtn = document.querySelector('.js-check-answer');
         answerBtn.innerHTML = 'Continue';
         answerBtn.disabled = false;
-        answerBtn.classList.add(colour);
+        answerBtn.classList.add(score.colour);
         answerBtn.removeEventListener('click', scoreEventHandler);
         answerBtn.addEventListener('click', () => {
             window.clearTimeout(scoreUpdateTimer);
@@ -64,7 +64,12 @@ export const renderInput = (screen, question, hints) => {
 };
 
 const renderPortrait = item => {
-    imageSlider(item.images, document.querySelector('.js-species-card-images'), true);
+    
+    const images = item.images.map((img, index) => { 
+        return { index: index + 1, src: img, itemName: item.name };
+    } );
+
+    imageSlider(images, document.querySelector('.js-species-card-images'), true);
 };
 
 const renderLandscape = (item, config, question) => {

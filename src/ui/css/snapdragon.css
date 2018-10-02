@@ -1272,6 +1272,10 @@ table {
   height: 1.5em;
 }
 
+#imageModal #imageSlider .carousel-item {
+  height: 70vh;
+}
+
 .info-box {
   width: 100%;
 }
@@ -1376,8 +1380,8 @@ table {
   background-color: rgba(211, 105, 14,.8);
 }
 
-.lesson-plans .table-row.level4 {
-  background-color: rgba(211, 105, 14,1);
+.lesson-plans .table-row.level5 {
+  background-color: rgb(211, 105, 14);
 }
 
 .lesson-plan-btn {
@@ -1407,10 +1411,6 @@ table {
 .bird-song-icon-disabled {
   color: rgba(0,0,0,.2);
 }
-
-/* .bird-song-spacing {
-  margin: 1em 0;
-} */
 
 iframe#birdsong {
   width: 1px;
