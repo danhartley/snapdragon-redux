@@ -223,18 +223,12 @@
     }
 
     .snapdragon-container {
-        border: 1px solid var(--snap-primary);
+        border: .05em solid var(--snap-primary);
     }    
     .info-box #traitSlider {     
         width: 60%;
     }
-
-    /* #imageSlider .carousel-item > div {
-        height: 100%; 
-        cursor: pointer; 
-        background-size: cover;
-    } */
-
+    
     #traitSlider .carousel-item div {
         padding: .5em;
     }
