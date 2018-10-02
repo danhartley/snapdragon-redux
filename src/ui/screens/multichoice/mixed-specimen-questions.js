@@ -38,10 +38,10 @@ export const renderMixedSpecimenQuestions = ui => {
 
     let images = utils.shuffleArray(screenShare.getRandomImages(item, config));
 
-    if(config.isPortraitMode) images = getPortraitImages(images);
-    
     if(!images) return;
 
+    if(config.isPortraitMode) images = getPortraitImages(images);
+    
     let question1 = `Species identification: ${itemProperties.vernacularName(item, config)} (${item.name})`;
     let question2 = `Can you identify which of the 4 species on the left is ${item.name}? (Click on an image to view more examples.)`;
     let question3 = `When you've decided, click on the matching image below.`;
@@ -78,8 +78,8 @@ export const renderMixedSpecimenQuestions = ui => {
     }
 
     const scoreHandler = (score, question, answer, config) => {
-        const _score = { ...score, itemId: item.id, question, answer, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
-        simpleScoreHandler(_score, config, renderAnswer);
+        const test = { ...score, itemId: item.id, question, answer, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
+        simpleScoreHandler(test, config, renderAnswer);
     };
 
     if(config.isLandscapeMode) {

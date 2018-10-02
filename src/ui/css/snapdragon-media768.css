@@ -187,16 +187,10 @@
     
     .modal-dialog {
         max-width: 60vw;
-        height: 80vh;
     }
 
     #menuModal .modal-dialog {
         max-width: 40vw;
-    }
-    
-    #imageSlider .carousel-item {
-        /* height: 60vh; */
-        height: 80vh;
     }
 
     .lesson-plans .table-row input {

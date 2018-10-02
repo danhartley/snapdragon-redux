@@ -157,8 +157,8 @@
       }
 }
 
-@media (min-height: 736px) {
+/* @media (min-height: 736px) {
     #imageSlider .carousel-item {
-        height: 40vh;
+        height: 80vh;
     }
-}
+} */

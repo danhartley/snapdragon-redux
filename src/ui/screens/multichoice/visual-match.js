@@ -83,9 +83,9 @@ export const renderVisualMatch = collection => {
           });
 
         if(config.isPortraitMode) {
-            const filteredTraits = R.take(3, traits);
+            const filteredTraits = R.take(4, traits);
             filteredTraits.push(traits.find(trait => trait === traitValue));
-            traits = utils.shuffleArray(filteredTraits);
+            traits = utils.shuffleArray(R.take(4, filteredTraits));
         }
 
         answers = traits.filter(utils.onlyUnique);

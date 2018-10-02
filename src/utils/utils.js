@@ -57,6 +57,8 @@ Array.prototype.concatAll = function() {
   
   const shuffleArray = array => {
 
+    if(!array) return;
+
     var currentIndex = array.length, temporaryValue, randomIndex;
 
     // While there remain elements to shuffle...
@@ -148,6 +150,10 @@ const capitaliseFirst = str => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
+const capitaliseAll = str => {
+  return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};
+
 const getCellValue = function(tr, idx){ return tr.children[idx].innerText || tr.children[idx].textContent; }
 
 const comparer = function(idx, asc) { return function(a, b) { return function(v1, v2) {
@@ -203,6 +209,7 @@ export const utils = {
   calcItemIndex,
   isIterable,
   capitaliseFirst,
+  capitaliseAll,
   makeSortable,
   itemCountReducer,
   flatten

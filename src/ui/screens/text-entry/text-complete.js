@@ -81,9 +81,9 @@ export const renderCompleteText = (collection) => {
 
     const score = { itemId: item.id, binomial: item.name, question: item[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length, points: layout.points };
 
-    const updateScreen = (colour, correct, score, scoreUpdateTimer, config) => {
+    const updateScreen = (score, scoreUpdateTimer, config) => {
 
-        document.querySelector('.js-icon-response').innerHTML = correct
+        document.querySelector('.js-icon-response').innerHTML = score.success
             ? `<span class="icon"><i class="fas fa-check-circle"></i></span>`
             : `<span class="icon"><i class="fas fa-times-circle"></i></span>`;
 
@@ -97,21 +97,21 @@ export const renderCompleteText = (collection) => {
                 ? `<span class="icon-text">The correct name is <span class="binomial">${score.binomial}</span>.</span>`
                 : `<span class="icon-text">Incorrect. The complete latin name is <span class="binomial">${score.binomial}</span>.</span>`;
 
-        document.querySelector('.js-txt-response').innerHTML = correct ? txtCorrect : txtIncorrect;
+        document.querySelector('.js-txt-response').innerHTML = score.success ? txtCorrect : txtIncorrect;
 
         if(question === item.species) {
             const species = document.querySelector('.species');
             species.style.color = 'white';
             species.style.borderColor = 'white';
-            species.classList.add(colour);
+            species.classList.add(score.colour);
         } else {
             const genus = document.querySelector('.genus');
             genus.style.color = 'white';
             genus.style.borderColor = 'white';
-            genus.classList.add(colour);
+            genus.classList.add(score.colour);
         }
 
-        if(!correct) {
+        if(!score.success) {
             document.querySelectorAll('.block span').forEach(block => {
                 if(block.innerHTML === score.question) {
                     block.parentElement.classList.add('snap-success');
