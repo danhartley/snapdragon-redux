@@ -292,7 +292,7 @@ hr {
 .header, .footer {
   display: flex;
   align-items: center;
-  padding: 0 0 0 1em;
+  padding: 0 .55em;
   position: sticky;
   position: -webkit-sticky;
 }
@@ -313,25 +313,17 @@ hr {
   flex: auto;
 }
 
-.score-footer {
-  display: flex;
-  width: 100%;
-}
-
-.score-footer span:nth-child(1) {
-  flex: auto;
-}
-
-.score-footer span:nth-child(2) {
-  flex: 3;
-}
-
-.footer button {
-  margin: 0 1em 0 0;
+.score-footer span {
+  background-color: rgba(221, 229, 219, .2);
+  padding: .75em;
 }
 
 .header, .footer {
   background-color: var(--snap-primary);
+}
+
+.right-grid .footer {
+  justify-content: flex-end;
 }
 
 .txt-specimen-species {
