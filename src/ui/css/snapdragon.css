@@ -1450,6 +1450,11 @@ iframe#birdsong {
 
 .visual-match .radio-buttons label {
   background-color: rgb(211, 214, 173);
+  font-size: 1.2em; 
+}
+
+.radio-buttons.disabled label {
+  background-color: var(--snap-strips-background);
 }
 
 .visual-match .description div:empty, .visual-match .description span:empty {
@@ -1458,10 +1463,6 @@ iframe#birdsong {
 
 div.hide-empty:empty {
   display: none;
-}
-
-.visual-match .radio-buttons label {
-  font-size: 1.2em; 
 }
 
 .visual-match .radio.btn {

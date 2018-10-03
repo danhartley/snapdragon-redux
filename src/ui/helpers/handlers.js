@@ -1,6 +1,7 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { itemProperties } from 'ui/helpers/data-checking';
+import { elem } from 'ui/helpers/class-behaviour';
 import { renderTemplate } from 'ui/helpers/templating';
 import { markTest } from 'ui/helpers/score-handler';
 import { imageSlider } from 'ui/screens/common/image-slider';
@@ -106,10 +107,12 @@ const stripScoreHandler = (test, callback, config) => {
     const { items, taxon } = test;
 
     items.forEach(selected => {
-
         selected.addEventListener('click', event => {
             
             const target = event.target;
+
+            if(elem.hasClass(target, 'disabled')) return;
+
             const answer = target.innerText;
             const vernacular = target.dataset.vernacular;
 
@@ -142,6 +145,8 @@ const stripScoreHandler = (test, callback, config) => {
             if(callback) callback(score, scoreUpdateTimer);
 
             textAlertHandler(score);
+
+            items.forEach(item => item.classList.add('disabled'));
         });
     });
 };
@@ -251,7 +256,9 @@ export const radioButonClickhandler = (config, template, descriptions, answers, 
 
     const answerBtn = document.querySelector(submitBtn);
 
-    document.querySelectorAll('.radio-buttons').forEach(rbContainer => {
+    const radioButtons = document.querySelectorAll('.radio-buttons');
+
+    radioButtons.forEach(rbContainer => {
         rbContainer.addEventListener('click', () => {
             answerBtn.innerHTML = 'Check your answer';
         });
@@ -276,7 +283,11 @@ export const radioButonClickhandler = (config, template, descriptions, answers, 
         const answerContainer = document.querySelector('input[name="answer"]:checked').parentElement;
         const answer = document.querySelector('input[name="answer"]:checked').value;
         const test = { ...question, answer, target: event.target };
-        scoreHandler('radio', test, callback, config, { answerContainer, questionContainer });            
+        scoreHandler('radio', test, callback, config, { answerContainer, questionContainer });         
+        radioButtons.forEach(rb => {
+            rb.querySelector('input').readOnly; 
+            rb.classList.add('disabled');
+        });
     };
 
     answerBtn.addEventListener('click', scoreEventHandler)
