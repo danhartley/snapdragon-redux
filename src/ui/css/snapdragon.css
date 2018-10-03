@@ -790,11 +790,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: var(--snap-alert);
 }
 
-.snap-alert {
+.snap-alert, .btn.btn-light.snap-alert {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-alert) !important;
   border: .05em solid var(--snap-alert);
-  padding: .5em;
 }
 
 .btn.snap-alert {
