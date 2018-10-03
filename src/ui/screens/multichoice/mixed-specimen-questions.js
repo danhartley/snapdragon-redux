@@ -87,22 +87,26 @@ export const renderMixedSpecimenQuestions = ui => {
         const imageLayers = document.querySelectorAll('.question-images .layer');
 
         imageLayers.forEach((imageLayer) => {
-                imageLayer.addEventListener('click', event => {
-                    const selectedIndex = imageLayer.children[0].innerHTML;
-                    const selectedName = event.target.dataset.itemname || event.target.parentElement.dataset.itemname;
-                    const isCorrectAnswer = selectedName === item.name;
-                    imageLayer.children[0].innerHTML = selectedName;
-                    imageLayer.setAttribute('style', 'font-size: 1em;');
-                    if(isCorrectAnswer) {
-                        elem.addClassToSelected(imageLayers, imageLayer, ['snap-success', 'snap-alert'], 'snap-success' );
-                    } else {
-                        elem.addClassToSelected(imageLayers, imageLayer, ['snap-success', 'snap-alert'], 'snap-alert' );
-                    }
-                    screenShare.selectImage(selectedIndex, selectedName, isCorrectAnswer);
-                    const question = item.name;
-                    const answer = selectedName;
-                    scoreHandler(score, question, answer, config);
-                });
+            imageLayer.addEventListener('click', event => {
+
+                if(elem.hasClass(imageLayer, 'disabled')) return;
+
+                const selectedIndex = imageLayer.children[0].innerHTML;
+                const selectedName = event.target.dataset.itemname || event.target.parentElement.dataset.itemname;
+                const isCorrectAnswer = selectedName === item.name;
+                imageLayer.children[0].innerHTML = selectedName;
+                imageLayer.setAttribute('style', 'font-size: 1em;');
+                if(isCorrectAnswer) {
+                    elem.addClassToSelected(imageLayers, imageLayer, ['snap-success', 'snap-alert'], 'snap-success' );
+                } else {
+                    elem.addClassToSelected(imageLayers, imageLayer, ['snap-success', 'snap-alert'], 'snap-alert' );
+                }
+                screenShare.selectImage(selectedIndex, selectedName, isCorrectAnswer);
+                const question = item.name;
+                const answer = selectedName;
+                scoreHandler(score, question, answer, config);
+                imageLayers.forEach(item => item.classList.add('disabled'));                
+            });
         });
     }
 

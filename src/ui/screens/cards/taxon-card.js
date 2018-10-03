@@ -44,7 +44,15 @@ export const renderTaxonCard = collection => {
         members: taxon.members ? R.take(2, taxon.members).join(', ') : ''
     }
 
-    clone.querySelector('.js-taxon-card-btn').addEventListener('click', event => {
+    const continueBtn = clone.querySelector('.js-taxon-card-btn button');
+
+    continueBtn.disabled = true;
+
+    setTimeout(() => {
+        continueBtn.disabled = false;            
+    }, 500);
+
+    continueBtn.addEventListener('click', event => {
         actions.boundEndRevision(item);
     });
 

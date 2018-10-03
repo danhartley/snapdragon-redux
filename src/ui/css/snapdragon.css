@@ -790,11 +790,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: var(--snap-alert);
 }
 
-.snap-alert {
+.snap-alert, .btn.btn-light.snap-alert {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-alert) !important;
   border: .05em solid var(--snap-alert);
-  padding: .5em;
 }
 
 .btn.snap-alert {
@@ -1089,6 +1088,10 @@ table {
   font-size: 1.2em;
 }
 
+.table-header .include-txt {
+  font-size: .8rem;
+}
+
 .table-header th:nth-child(2) {
   flex: 4;
   padding: 0 0 0 .5em;
@@ -1101,10 +1104,12 @@ table {
   display: flex;
   flex-direction: column;
   padding: 0 0 0 .5em;  
+  justify-content: space-evenly;
 }
 
-.table-row td:nth-child(2) span:nth-child(3) {
+.table-row td:nth-child(2) span:nth-child(3) span:nth-child(2) {
   font-size: 1.5em;
+  vertical-align: sub;
 }
 
 .table-header th:nth-child(3), .table-row td:nth-child(3) {  
@@ -1451,6 +1456,11 @@ iframe#birdsong {
 
 .visual-match .radio-buttons label {
   background-color: rgb(211, 214, 173);
+  font-size: 1.2em; 
+}
+
+.radio-buttons.disabled label {
+  background-color: var(--snap-strips-background);
 }
 
 .visual-match .description div:empty, .visual-match .description span:empty {
@@ -1459,10 +1469,6 @@ iframe#birdsong {
 
 div.hide-empty:empty {
   display: none;
-}
-
-.visual-match .radio-buttons label {
-  font-size: 1.2em; 
 }
 
 .visual-match .radio.btn {

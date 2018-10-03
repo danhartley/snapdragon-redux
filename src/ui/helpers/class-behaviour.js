@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 const show = (elem) => {
     if(!elem) return;
 	elem.classList.add('is-visible');
@@ -23,6 +25,11 @@ const addClassToSelected = (collection, element, classesToRemove, classToAdd) =>
         element.classList.add(classToAdd);
 };
 
+const hasClass = (elem, className) => {
+    const classArray = [ ...elem.classList ];
+    return R.contains(className, classArray);
+};
+
 export const elem = {
-    show, hide, toggle, addClassToSelected
+    show, hide, toggle, addClassToSelected, hasClass
 };

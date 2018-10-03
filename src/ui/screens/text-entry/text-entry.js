@@ -26,8 +26,8 @@ export const renderInput = (screen, question, hints) => {
     });
 
     const clone = document.importNode(template.content, true);
-    
-    const markingCallback = (score, scoreUpdateTimer) => {
+
+    const markingCallback = (score, scoreUpdateTimer) => {        
         const answerBtn = document.querySelector('.js-check-answer');
         answerBtn.innerHTML = 'Continue';
         answerBtn.disabled = false;
@@ -48,7 +48,16 @@ export const renderInput = (screen, question, hints) => {
         scoreHandler('text', score, markingCallback, config);
     };
 
-    clone.querySelector('.js-check-answer').addEventListener('click', scoreEventHandler);
+    const answerBtn = clone.querySelector('.js-check-answer');
+    answerBtn.addEventListener('click', scoreEventHandler);
+
+    if(answerBtn) {
+        answerBtn.disabled = true;
+        setTimeout(() => {
+            answerBtn.disabled = false;
+        }, 500);
+    }
+    
 
     const name = clone.querySelector('.js-txt-name');
     if(name) name.innerHTML = item.name;

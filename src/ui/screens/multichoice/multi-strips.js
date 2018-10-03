@@ -84,10 +84,10 @@ export const renderMultiStrips = (collection) => {
 
         const taxon = { name: item.family, binomial: item.name, question: questionValue };
 
-        const _score = { ...score, itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
+        const test = { ...score, itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
         const callback = renderAnswer;
 
-        scoreHandler('strip', _score, callback, config);
+        scoreHandler('strip', test, callback, config);
     }
 
     if(screen.name === 'species-scientifics') {
