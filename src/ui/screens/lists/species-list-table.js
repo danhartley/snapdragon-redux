@@ -45,7 +45,7 @@ export const buildTable = (collection, config) => {
     const passesHeader = document.createElement('th');
     const failsHeader = document.createElement('th');
     const checkbox = document.createElement('span');
-    checkbox.innerHTML = '<i class="fas fa-check-square"></i>';
+    checkbox.innerHTML = config.isPortraitMode ? '<span class="include-txt">Include</span><i class="fas fa-check-square"></i>' : '<i class="fas fa-check-square"></i>';
     checkbox.classList.add('icon');
     if(!config.isPortraitMode) {
         imageHeader.innerHTML = '<div></div>';

@@ -1088,6 +1088,10 @@ table {
   font-size: 1.2em;
 }
 
+.table-header .include-txt {
+  font-size: .8rem;
+}
+
 .table-header th:nth-child(2) {
   flex: 4;
   padding: 0 0 0 .5em;
@@ -1100,10 +1104,12 @@ table {
   display: flex;
   flex-direction: column;
   padding: 0 0 0 .5em;  
+  justify-content: space-evenly;
 }
 
-.table-row td:nth-child(2) span:nth-child(3) {
+.table-row td:nth-child(2) span:nth-child(3) span:nth-child(2) {
   font-size: 1.5em;
+  vertical-align: sub;
 }
 
 .table-header th:nth-child(3), .table-row td:nth-child(3) {  

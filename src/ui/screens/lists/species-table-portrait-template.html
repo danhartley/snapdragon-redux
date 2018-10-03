@@ -9,9 +9,9 @@
                             <img id="{{ item.name }}" src="https://media.eol.org/content/{{ item.image }}" alt="{{ item.name }}" data-toggle="modal" data-target="#imageModal" data-image="{{ item.image }}" data-id="{{ item.name }}" data-src="https://media.eol.org/content/{{ item.image }}">
                         </td>
                         <td>
-                            <span style="flex:1" class="capitalise">{{ item.vernacularName }}</span>
-                            <span style="flex:1" class="species-card-name">{{ item.shortName }}</span>
-                            <span name="{{ item.binomial }}" class="icon"><i class="fas fa-check-square"></i></span>
+                            <span class="capitalise">{{ item.vernacularName }}</span>
+                            <span class="species-card-name">{{ item.shortName }}</span>
+                            <span><span class="capitalise">{{ item.keyTrait }}</span> <span name="{{ item.binomial }}" class="icon"><i class="fas fa-check-square"></i></span></span>
                         </td>
                         <td>
                             <span>{{ item.passes }}</span>
