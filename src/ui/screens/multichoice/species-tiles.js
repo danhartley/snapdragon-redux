@@ -50,8 +50,7 @@ export const renderSpeciesTiles = (collection) => {
     const renderAnswer = (text, colour, correct, scoreUpdateTimer) => {
         const answer = document.querySelector('.js-answer');
         answer.innerHTML = 'Continue';
-        answer.style.display = 'block';            
-        // answer.classList.add(colour);
+        answer.style.display = 'block'; 
         answer.style.cursor = 'pointer';
         answer.addEventListener('click', () => {
             window.clearTimeout(scoreUpdateTimer);

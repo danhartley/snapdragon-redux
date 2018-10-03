@@ -219,7 +219,7 @@ hr {
 }
 
 .card.radio-buttons-container, .card.block-container, .card.mixed-specimen-container {
-  margin: 0 0 1em 0;
+  margin: 0 0 .5em 0;
 }
 
 .card.block-container div {
@@ -865,15 +865,20 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .text-entry {
-  padding: 1em 0 0 0;
+  padding: .5em;
   position: relative;
-  height: 50%;
+  height: 55%;
+  border: .05em solid var(--snap-primary);
+  margin: .5em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .text-entry input {
-  margin: .5em 0;
-  padding: 0 .25em;
   width: 100%;
+  padding: .5em;
+  border: .05em solid var(--snap-border-dark);
 }
 
 .text-entry button {
@@ -883,7 +888,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .text-question {
-  min-height: 0em;
+  min-height: 2em;
 }
 
 .text-question .icon {
@@ -1182,7 +1187,7 @@ table {
 
 .question-container {
   border: .05em solid var(--snap-question-background);
-  padding: 1em;
+  padding: .5em;
   border-radius: .2rem;
 }
 

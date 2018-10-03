@@ -24,7 +24,7 @@ const initCollection = (selectedCollection = collections[0]) => {
     const families = familyProps.getFamilyNames(items);
     const familyStats = familyProps.getFamilyStats(items);
     const speciesNames = items.map(item => item.name);
-    const speciesVernacularNames = itemProperties.vernacularNames(items, config);
+    const speciesVernacularNames = itemProperties.vernacularNamesForItems(items, config);
 
     const collection = {
         id: selectedCollection.id,

@@ -27,7 +27,7 @@ export const renderInput = (screen, question, hints) => {
 
     const clone = document.importNode(template.content, true);
     
-    const callback = (score, scoreUpdateTimer) => {
+    const markingCallback = (score, scoreUpdateTimer) => {
         const answerBtn = document.querySelector('.js-check-answer');
         answerBtn.innerHTML = 'Continue';
         answerBtn.disabled = false;
@@ -37,11 +37,15 @@ export const renderInput = (screen, question, hints) => {
             window.clearTimeout(scoreUpdateTimer);
             actions.boundUpdateScore(score);
         });
+        if(score.alternativeAccepted) {
+            document.querySelector('.js-text-alternative').innerHTML = `Alternative: ${score.question}`;
+        }
     };
 
     const scoreEventHandler = event => {
-        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, event, layoutCount: lessonPlan.layouts.length, points: layout.points };
-        scoreHandler('text', score, callback, config);
+        const names = itemProperties.vernacularNames(item, config);
+        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names };
+        scoreHandler('text', score, markingCallback, config);
     };
 
     clone.querySelector('.js-check-answer').addEventListener('click', scoreEventHandler);

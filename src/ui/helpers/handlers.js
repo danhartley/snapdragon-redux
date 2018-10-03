@@ -28,12 +28,12 @@ export const scoreHandler = (type, test, callback, config, containers) => {
 const textAlertHandler = (score) => {
     const questionText = document.querySelector('.js-txt-question');
     questionText.innerHTML = score.success
-        ? `<div>
+        ? `<div class="answer-box-success">
             <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
             </div>`
-        : `<div>
-            <span class="icon"><i class="fas fa-times-circle"></i></span><span>Incorrect</span>
-            </div>`;
+        : `<div class="answer-box-alert">
+            <span class="icon"><i class="fas fa-times-circle"></i></span><span>Answer: ${score.question}</span>
+           </div>`;
 }
 
 export const simpleScoreHandler = (test, config, callback) => {
@@ -53,10 +53,9 @@ export const simpleScoreHandler = (test, config, callback) => {
 
 const genericScoreHandler = (_score, callback, config, containers) => {
     
-    const { itemId, question, answer, event, layoutCount, points } = _score;
-
-    const btn = event.target;
-    const test = { itemId, ...question, answer, points };
+    const { itemId, question, answer, target, layoutCount, points, names } = _score;
+    const btn = target;
+    const test = { itemId, ...question, answer, points, names };
 
     let correctAnswer;
 
@@ -147,7 +146,7 @@ const stripScoreHandler = (test, callback, config) => {
     });
 };
 
-const imageScoreHandler = (test, callback, config) => { // not in use but check
+const imageScoreHandler = (test, callback, config) => {
 
     const { items, taxon } = test;
 
@@ -276,7 +275,7 @@ export const radioButonClickhandler = (config, template, descriptions, answers, 
         });
         const answerContainer = document.querySelector('input[name="answer"]:checked').parentElement;
         const answer = document.querySelector('input[name="answer"]:checked').value;
-        const test = { ...question, answer, event };
+        const test = { ...question, answer, target: event.target };
         scoreHandler('radio', test, callback, config, { answerContainer, questionContainer });            
     };
 

@@ -7,15 +7,17 @@ export const capitaliseAll = str => {
     return utils.capitaliseAll(str);
 };
 
-export const checkQuestion = score => {
-    return capitaliseAll(score.vernacular) || score.question;
-};
-
 export const isAnswerCorrect = score => {
-    const validAnswer = score.answer.length > 2;
-    const isCorrect = validAnswer && score.answer.toUpperCase() === score.question.toUpperCase();
-        // (score.question.toUpperCase().indexOf(score.answer.toUpperCase()) !== -1 ||
-        // score.answer.toUpperCase().indexOf(score.question.toUpperCase()) !== -1);
+    let isCorrect = score.answer.toUpperCase() === score.question.toUpperCase();
+    switch(score.taxon) {
+        case 'vernacular':
+            if(score.names) {
+                const alsoCorrect = R.contains(utils.capitaliseAll(score.answer), score.names);                
+                if(!isCorrect && alsoCorrect) score.alternativeAccepted = true;
+                isCorrect = alsoCorrect;
+            }
+        break;
+    }
     return isCorrect;
 };
 

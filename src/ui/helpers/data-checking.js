@@ -98,7 +98,7 @@ const getActiveTrait = (traits, itemName, language, options) => {
     return traitValues.reduce(reducer, '');
 }
 
-const vernacularNames = (items, config) => {
+const vernacularNamesForItems = (items, config) => {
     let itemNames = items.map(item => item.names);
     let vernaculars = itemNames.map(itemNames => itemNames.filter(name => 
         { return name.language === config.language || name.language === 'en' 
@@ -109,7 +109,11 @@ const vernacularNames = (items, config) => {
         return utils.capitaliseFirst(name.vernacularName);
     });
     return vernaculars;
-    // return vernaculars.map(name => utils.capitaliseFirst(name[0].vernacularName));
+};
+
+const vernacularNames = (item, config) => {
+    const names = item.names.filter(name => name.language === config.language).map(name => utils.capitaliseAll(name.vernacularName));
+    return names;
 };
 
 const vernacularNamesForGroups = (items, config, itemGroup) => {
@@ -144,6 +148,7 @@ export const itemProperties = {
     familyVernacularNames,
     getTrait,
     getActiveTrait,
+    vernacularNamesForItems,
     vernacularNamesForGroups,
     itemNames,
     itemContextProperty,
