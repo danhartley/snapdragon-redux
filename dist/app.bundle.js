@@ -8770,7 +8770,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nvar config = exports.config = {\n    language: 'en',\n    moduleSize: 2,\n    callbackTime: 2000000,\n    callbackDelay: 2000,\n    excludeRevision: false,\n    isPortraitMode: false,\n    isLandscapeMode: true,\n    collection: {\n        id: 0\n    },\n    mode: 'learn',\n    languages: [{ name: 'English', lang: 'en' }, { name: 'Español', lang: 'es' }, { name: 'Deutsche', lang: 'de' }, { name: 'Italiano', lang: 'it' }, { name: 'Français', lang: 'fr' }, { name: 'Português', lang: 'pt' }]\n};\n\n//# sourceURL=webpack:///./src/syllabus/lesson-config.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nvar config = exports.config = {\n    language: 'en',\n    moduleSize: 2,\n    callbackTime: 2000,\n    callbackDelay: 2000,\n    excludeRevision: false,\n    isPortraitMode: false,\n    isLandscapeMode: true,\n    collection: {\n        id: 0\n    },\n    mode: 'learn',\n    languages: [{ name: 'English', lang: 'en' }, { name: 'Español', lang: 'es' }, { name: 'Deutsche', lang: 'de' }, { name: 'Italiano', lang: 'it' }, { name: 'Français', lang: 'fr' }, { name: 'Português', lang: 'pt' }]\n};\n\n//# sourceURL=webpack:///./src/syllabus/lesson-config.js?");
 
 /***/ }),
 
