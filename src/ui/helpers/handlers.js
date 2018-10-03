@@ -74,7 +74,9 @@ const genericScoreHandler = (_score, callback, config, containers) => {
 
     if(containers) {
         containers.answerContainer.classList.add(score.colour);
-        containers.questionContainer.classList.add('snap-success');
+        if(containers.questionContainer) {
+            containers.questionContainer.classList.add('snap-success');
+        }        
     }
     btn.innerText = 'Continue';
 
