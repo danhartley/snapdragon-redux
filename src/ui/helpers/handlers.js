@@ -1,10 +1,10 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
-import { itemProperties } from 'ui/helpers/data-checking';
+// import { itemProperties } from 'ui/helpers/data-checking';
 import { elem } from 'ui/helpers/class-behaviour';
 import { renderTemplate } from 'ui/helpers/templating';
 import { markTest } from 'ui/helpers/score-handler';
-import { imageSlider } from 'ui/screens/common/image-slider';
+// import { imageSlider } from 'ui/screens/common/image-slider';
 import updateBtnTemplate from 'ui/screens/multichoice/update-btn-template.html';
 
 export const scoreHandler = (type, test, callback, config, containers) => {
@@ -205,37 +205,6 @@ export const selectHandler = (selector, callback) => {
     });
 };
 
-export const modalImagesHandler = (images, item, collection, displayNameType) => {
-    images.forEach(image => {
-        modalImageHandler(image, item, collection, displayNameType);
-    });
-};
-
-export const modalImageHandler = (image, item, collection, displayNameType = 'binomial') => {
-    image.addEventListener('click', event => {
-        const parent = document.querySelector('#imageModal .js-modal-image');
-        const selectedItem = item || collection.items.find(item => item.name === image.dataset.itemname);
-        const images = selectedItem.images.map(image => {
-            return { src: image, itemName: selectedItem.name };
-        });
-        imageSlider(images, parent, false, image);
-        let displayName = '';
-        switch(displayNameType) {
-            case 'biomial':
-                displayName = selectedItem.name;
-                break;
-            case 'vernacular':
-                displayName = itemProperties.vernacularName(item, config);
-                break;
-            case 'withheld':
-                displayName = 'Species name withheld';
-                break;
-            default:
-                displayName = selectedItem.name;
-        }
-        DOM.modalImageTitle.innerHTML = displayName;
-    })
-};
 
 export const radioButonClickhandler = (config, template, descriptions, answers, submitBtn, question) => {
     

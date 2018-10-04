@@ -1,7 +1,7 @@
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
-import { modalImageHandler } from 'ui/helpers/handlers';
+import { modalImageHandler } from 'ui/helpers/image-handlers';
 import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
 import { buildTable } from 'ui/screens/lists/species-list-table';
 

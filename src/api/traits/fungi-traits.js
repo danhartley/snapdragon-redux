@@ -254,7 +254,7 @@ export const fungiTraits = [
         { name: 'smell', value : "fruity", language: 'en' },
         { name: 'vitamins', value : "C, D", language: 'en' },
     ], context: [
-        { name: 'look-alikes', values: [ 'Omphalotus olearius', 'Omphalotus illudens', 'Omphalotus olivascens', 'Hygrophoropsis aurantiaca' ]},
+        { name: 'look-alikes', values: [ 'Omphalotus olearius', 'Omphalotus illudens', 'Hygrophoropsis aurantiaca' ]},
         { name: 'trees', values: [ 'Quercus', 'Fagus', 'Betula'] }
     ]},
     { name: 'Hygrophoropsis aurantiaca', traits: [
@@ -335,7 +335,7 @@ export const fungiTraits = [
         { name: 'stipe character', value : "bare", language: 'en' },
         { name: 'gill attachment', value : "adnate", language: 'en' },
     ], context: [
-        { name: 'look-alikes', values: [ 'Boletus edulus' ]},
+        { name: 'look-alikes', values: [ 'Boletus edulis' ]},
         { name: 'trees', values: [ 'Quercus', 'Fagus', 'Pinus'] }
     ]},
     { name: 'Lactarius sanguifluus', traits: [

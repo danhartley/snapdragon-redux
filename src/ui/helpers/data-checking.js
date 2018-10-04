@@ -134,7 +134,7 @@ const itemContextProperty = (traits, item, propertyName) => {
     const property = trait.context.find(c => c.name === propertyName);
     if(!property) return '';
 
-    return property.values.join(', ');
+    return property.values;
 };
 
 export const itemProperties = {

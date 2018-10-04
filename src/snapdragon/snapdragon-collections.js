@@ -92,7 +92,7 @@ export const mushrooms1 = {
         '12 common mushrooms, 7 are edible, 5 are poisonous.',        
         'Can you identify which are safe to eat?'
     ],
-    items: [ ...collections[8].items ],
+    items: [ ...collections[7].items ],
     collections: ['Mushrooms I'],
     thumb: 'https://media.eol.org/content/2013/03/01/14/45554_orig.jpg',
     moduleSize: 4,
@@ -112,7 +112,7 @@ export const mushrooms2 = {
         '12 common mushrooms, 7 are edible, 5 are poisonous.',
         'Can you identify which are safe to eat?'
     ],
-    items: [ ...collections[7].items ],
+    items: [ ...collections[8].items ],
     collections: ['Mushrooms II'],
     thumb: 'https://media.eol.org/content/2013/03/01/14/45554_orig.jpg',
     moduleSize: 4,

@@ -1,4 +1,5 @@
 import * as R from 'ramda'
+
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import * as SD from 'api/snapdragon/trait-types';
@@ -6,6 +7,7 @@ import { imageSlider } from 'ui/screens/common/image-slider';
 import { radioButonClickhandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { taxa } from 'api/snapdragon/taxa';
+import { lookALikes } from 'ui/screens/common/look-alikes';
 import { fungiTraits } from 'api/traits/fungi-traits';
 import visualMatchTemplate from 'ui/screens/multichoice/visual-match-template.html';
 
@@ -99,6 +101,8 @@ export const renderVisualMatch = collection => {
                 hint.innerHTML = `${itemProperties.vernacularName(item, config)} (${item.name})`;
             });
         }
+
+        lookALikes(collection, item, fungiTraits);
     }
 
     if(config.isPortraitMode) {

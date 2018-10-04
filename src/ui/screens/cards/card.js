@@ -11,6 +11,7 @@ import { imageSlider } from 'ui/screens/common/image-slider';
 import { getBirdSong } from 'xeno-canto/birdsong';
 import { traits } from 'api/traits/traits';
 import { fungiTraits } from 'api/traits/fungi-traits';
+import { lookALikes } from 'ui/screens/common/look-alikes';
 import { infoSlider } from 'ui/screens/common/info-slider';
 
 export const renderCard = (collection) => {
@@ -31,11 +32,11 @@ export const renderCard = (collection) => {
     template.innerHTML = landscapeTemplate;
 
     config.isPortraitMode
-        ? renderPortrait(template, item, config)
-        : renderLandscape(template, item, config);
+        ? renderPortrait(template, item, config, collection)
+        : renderLandscape(template, item, config, collection);
 };
 
-const renderLandscape = (template, item, config) => {
+const renderLandscape = (template, item, config, collection) => {
 
     const eolPage = template.content.querySelector('.js-species-card-eol-link');
 
@@ -43,7 +44,7 @@ const renderLandscape = (template, item, config) => {
     eolPage.setAttribute('target', '_blank');
     eolPage.setAttribute('style', 'text-decoration: none');
 
-    renderCommonParts(template, config, item);
+    renderCommonParts(template, config, item, collection);
 
     setTimeout(()=>{
         const wikiLink = document.querySelector('.js-species-card-wiki');
@@ -84,12 +85,12 @@ const renderLandscape = (template, item, config) => {
 
     const src = document.querySelector('.js-bird-song');
     
-    getBirdSong(item, src, config.isPortraitMode);
+    getBirdSong(item, src, config.isPortraitMode);    
 };
 
-const renderPortrait = (template, item, config) => {
+const renderPortrait = (template, item, config, collection) => {
 
-    renderCommonParts(template, config, item);
+    renderCommonParts(template, config, item, collection);
 
     const images = item.images.map((img, index) => { 
         return { index: index + 1, src: img, itemName: item.name };
@@ -116,7 +117,7 @@ const renderPortrait = (template, item, config) => {
     });
 };
 
-const renderCommonParts = (template, config, item) => {
+const renderCommonParts = (template, config, item, collection) => {
 
     const species = item.name;    
     const name = itemProperties.vernacularName(item, config);
@@ -210,10 +211,5 @@ const renderCommonParts = (template, config, item) => {
         });
     }
 
-    // Consolidate all the traits lookups
-    const lookalikesContainer = document.querySelector('.js-lookalikes');
-    const lookalikesElement = document.querySelector('.js-lookalikes span:nth-child(2)');
-    const lookalikes = itemProperties.itemContextProperty(traits, item, 'look-alikes')
-    lookalikesElement.innerHTML = lookalikes;
-    if(lookalikes === '') lookalikesContainer.classList.add('hide');
+    lookALikes(collection, item, fungiTraits);
 };

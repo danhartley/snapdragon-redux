@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils'; 
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
-import { modalImagesHandler } from 'ui/helpers/handlers';
+import { modalImagesHandler } from 'ui/helpers/image-handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import landscapeTemplate from 'ui/screens/landscape/specimen-tiles-template.html';
 
