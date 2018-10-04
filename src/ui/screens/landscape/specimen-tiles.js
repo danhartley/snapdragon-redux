@@ -13,7 +13,7 @@ export const renderSpecimenTiles = (collection) => {
 
     if(!item) return;
 
-    const { layout } = store.getState();
+    const { layout, config } = store.getState();
 
     let screen = layout.screens.find(el => el.name === 'specimen-images');
 
@@ -32,5 +32,5 @@ export const renderSpecimenTiles = (collection) => {
 
     renderTemplate({ images }, template.content, parent);
 
-    modalImagesHandler(document.querySelectorAll('.js-tiles .square'), item);
+    modalImagesHandler(document.querySelectorAll('.js-tiles .square'), item, null, config);
 };

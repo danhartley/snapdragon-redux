@@ -112,7 +112,7 @@ export const renderMixedSpecimenQuestions = ui => {
 
     if(config.isPortraitMode) {
         
-        imageSlider(utils.shuffleArray(images), document.querySelector('.js-species-card-images'), true);
+        imageSlider(utils.shuffleArray(images), document.querySelector('.js-species-card-images'), true), config;
 
         document.querySelectorAll('.carousel-item .layer').forEach(img => {
             img.addEventListener('click', event => {
