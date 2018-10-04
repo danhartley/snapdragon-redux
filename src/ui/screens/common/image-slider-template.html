@@ -1,18 +1,20 @@
 
 
-<div id="imageSlider" class="carousel slide" data-ride="carousel" data-interval="false">
-    <div class="carousel-inner" data-repeat-image="{{ images }}">      
-      <div class="carousel-item">
-        <div class="d-block w-100" 
-              style="background-image: url('https://media.eol.org/content/{{ image.src }}');" data-src="https://media.eol.org/content/{{ image.src }}">    
-                <div data-itemname="{{ image.itemName }}" class="layer"></div>
+<div id="imageSlider{{ index }}" class="imageSlider carousel slide" data-ride="carousel" data-interval="false">
+    <div class="carousel-inner">
+      <div data-repeat-image="{{ images }}">
+        <div class="carousel-item">
+            <div class="d-block w-100" 
+                style="background-image: url('https://media.eol.org/content/{{ image.src }}');" data-src="https://media.eol.org/content/{{ image.src }}">    
+                  <div data-itemname="{{ image.itemName }}" class="layer"></div>
+        </div>
         </div>
       </div>
-    <a class="carousel-control-prev" href="#imageSlider" role="button" data-slide="prev">
+    <a class="carousel-control-prev" href="#imageSlider{{ index }}" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next" href="#imageSlider" role="button" data-slide="next">
+    <a class="carousel-control-next" href="#imageSlider{{ index }}" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>

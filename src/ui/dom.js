@@ -20,7 +20,7 @@ export const DOM = {
     correctTxt : document.getElementsByClassName('js-txt-correct')[0],
     stateChangeAlertTxt: document.getElementsByClassName('js-state-change-alert')[0],
 
-    modalImageTitle: document.getElementsByClassName('js-modal-image-title')[0],
+    modalImageTitle: document.querySelector('.js-modal-image-title span:nth-child(1)'),
     modalTextTitle: document.getElementsByClassName('js-modal-text-title')[0],
     modalText: document.getElementsByClassName('js-modal-text')[0],
     modalImage: document.getElementsByClassName('js-modal-image')[0]
