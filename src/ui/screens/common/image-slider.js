@@ -15,18 +15,18 @@ const selectActiveImage = (image, parent) => {
     }
 };
 
-const disableModalPopups = (disableModal, parent) => {
+const disableModalPopups = (disableModal, parent, config) => {
     if(disableModal) {
         document.querySelectorAll('.carousel-item div').forEach(img => {
             img.removeAttribute('data-toggle');
             img.removeAttribute('data-target');
         });
     } else {
-        modalImagesHandler(parent.querySelectorAll('.carousel-item'), null, null);
+        modalImagesHandler(parent.querySelectorAll('.carousel-item'), null, config, null);
     }
 };
 
-export const imageSlider = (images, parent, disableModal = false, image) => {
+export const imageSlider = (images, parent, disableModal = false, image, config) => {
 
     const slider = document.createElement('template');
 
@@ -36,10 +36,10 @@ export const imageSlider = (images, parent, disableModal = false, image) => {
 
     renderTemplate({ images, index: '' }, slider.content, parent);
     selectActiveImage(image, parent);    
-    disableModalPopups(disableModal, parent);
+    disableModalPopups(disableModal, parent, config);
 };
 
-export const imageSideBySlider = (slides, parent, disableModal = false) => {
+export const imageSideBySlider = (slides, parent, disableModal = false, config) => {
 
     const sideBySlider = document.createElement('template');
 
@@ -54,10 +54,10 @@ export const imageSideBySlider = (slides, parent, disableModal = false) => {
 
     slides.forEach((slide, index) => {
         const header = document.querySelector(`#imageComparisonModal .js-modal-image-title span:nth-child(${index + 1})`);
-        header.innerHTML = slide.images[0].itemName;
+        header.innerHTML = `${slide.images[0].itemCommon} (${slide.images[0].itemName})`;
         renderTemplate({ images: slide.images, index: index + 1 }, sideBySlider.content, parent);
         document.querySelector(`#imageSlider${index + 1} .carousel-item`).classList.add('active');
-        disableModalPopups(disableModal);
+        disableModalPopups(disableModal, config);
     });    
 
 };

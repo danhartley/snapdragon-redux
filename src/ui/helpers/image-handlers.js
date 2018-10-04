@@ -2,20 +2,20 @@ import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
 
-export const modalImagesHandler = (images, item, collection, displayNameType) => {
+export const modalImagesHandler = (images, item, collection, config, displayNameType) => {
     images.forEach(image => {
-        modalImageHandler(image, item, collection, displayNameType);
+        modalImageHandler(image, item, collection, config, displayNameType);
     });
 };
 
-export const modalImageHandler = (image, item, collection, displayNameType = 'binomial') => {
+export const modalImageHandler = (image, item, collection, config, displayNameType = 'binomial') => {
     image.addEventListener('click', event => {
         const parent = document.querySelector('#imageModal .js-modal-image');
         const selectedItem = item || collection.items.find(item => item.name === image.dataset.itemname);
         const images = selectedItem.images.map((image, index) => {
-            return { src: image, itemName: selectedItem.name };
+            return { src: image, itemName: selectedItem.name, itemCommon: itemProperties.vernacularName(item, config) };
         });
-        imageSlider(images, parent, false, image);
+        imageSlider(images, parent, false, image, config);
         let displayName = '';
         switch(displayNameType) {
             case 'biomial':
@@ -28,7 +28,7 @@ export const modalImageHandler = (image, item, collection, displayNameType = 'bi
                 displayName = 'Species name withheld';
                 break;
             default:
-                displayName = selectedItem.name;
+                displayName = `${itemProperties.vernacularName(selectedItem, config)} (${selectedItem.name})`;
         }
         DOM.modalImageTitle.innerHTML = displayName;
     })
