@@ -8,6 +8,8 @@ let items;
 
 const randomiseItems = collection => {
 
+    console.log('randomiseItems');
+
     const { ui } = store.getState();
 
     if(!collection.nextItem) return;

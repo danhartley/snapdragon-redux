@@ -83,16 +83,21 @@
         width: initial;
     }
 
-    .table-header th:nth-child(1):before {
+    .table-header th:nth-child(1) > span:nth-child(1) {
+        width: 1em;
+    }
+
+    .table-header th:nth-child(1) > span:nth-child(1):before {
         display: inline-block;
-        width: 0;
+        width: 1px;
         height: 0;
         vertical-align: .255em;
         content: "";
         border-top: .3em solid;
         border-right: .3em solid transparent;
         border-bottom: 0;
-        border-left: .3em solid transparent
+        border-left: .3em solid transparent;
+        pointer-events: none;
     }
 
       .table-header th:nth-child(1), .table-row td:nth-child(1), .table-footer td:nth-child(1) {
@@ -103,10 +108,6 @@
         font-size: 1.2em;
       }
 
-      .species-table th input {
-          width: initial;
-      }
-      
       .table-header th:nth-child(1), .table-row td:nth-child(1) {
         flex-direction: row;
       }

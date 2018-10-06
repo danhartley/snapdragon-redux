@@ -1167,10 +1167,10 @@ table {
     display: none;
 }
 
-.species-table th input {
+/* .species-table th input {
   height: 1em;
   width: 4em;
-}
+} */
 
 .species-table td .portrait input {
   height: 1.15em;
@@ -1526,4 +1526,43 @@ div.hide-empty:empty, span.hide-empty:empty {
   font-size: .8em;
   vertical-align: super;
   cursor: pointer;
+}
+
+.custom-control-label::before, 
+.custom-control-label::after {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.custom-control {
+  padding: 0;
+  display: inline;
+}
+
+.custom-control-input {
+  position: relative;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+  background-color: var(--snap-success);
+}
+
+.custom-checkbox .custom-control-input:disabled:checked~.custom-control-label::before {
+  background-color: rgba(41, 108, 44,.6);
+}
+
+.custom-checkbox input {
+  margin: 0 .5em 0 0;
+}
+
+.custom-control-label::before {
+  background-color: var(--snap-grid-background);
+}
+
+th .custom-control-label::before, th .custom-control-label::after {
+  margin: .25em 3.5em;
+}
+
+.form-control-lg {
+  font-size: 1em;
 }
