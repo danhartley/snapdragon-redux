@@ -94,6 +94,7 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
         case types.CHANGE_COLLECTION_ITEMS: {
             const _collection = R.clone(state);
             _collection.items = action.data;
+            _collection.userSelection = true;
             return _collection;
         }
         case types.CHANGE_COLLECTION: {
@@ -102,7 +103,7 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
         }
         case types.NEXT_ITEM: {
             const { itemIndex, nextItem, layoutCounter, isNextRound, isLevelComplete } = getNextItem(action, state);
-            return { ...state, itemIndex, nextItem, layoutCounter, isNextRound, isLevelComplete };
+            return { ...state, itemIndex, nextItem, layoutCounter, isNextRound, isLevelComplete, userSelection: false };
         }
         case types.NEXT_ROUND: {
             const { itemIndex, nextRound, nextItem, layoutCounter } = getNextRound(state);

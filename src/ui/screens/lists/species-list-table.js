@@ -44,17 +44,36 @@ export const buildTable = (collection, config) => {
     const familyHeader = document.createElement('th');
     const passesHeader = document.createElement('th');
     const failsHeader = document.createElement('th');
+    const sorter = document.createElement('span');
     const checkbox = document.createElement('span');
-    checkbox.innerHTML = config.isPortraitMode ? '<span class="include-txt">Include</span><i class="fas fa-check-square"></i>' : '<i class="fas fa-check-square"></i>';
-    checkbox.classList.add('icon');
-    if(!config.isPortraitMode) {
-        imageHeader.innerHTML = '<div></div>';
-    }
-    speciesHeader.innerHTML = 'Species';
-    familyHeader.innerHTML = 'Family';
+    const inputCheck = document.createElement('input');
+    if(config.isPortraitMode) {
+        checkbox.innerHTML = '<span>View</span>';
+    }    
+    checkbox.classList.add('custom-control');
+    checkbox.classList.add('form-control-lg');
+    checkbox.classList.add('custom-checkbox');
+    checkbox.classList.add('not-sortable');
+    inputCheck.id = 'inputCheckAll'
+    inputCheck.type = "checkbox";
+    inputCheck.checked = true;
+    inputCheck.classList.add('custom-control-input');
+    const labelCheck = document.createElement('label');
+    labelCheck.classList.add('custom-control-label');
+    labelCheck.setAttribute('for', 'inputCheckAll');
+    checkbox.appendChild(inputCheck);
+    checkbox.appendChild(labelCheck);    
+    speciesHeader.innerHTML = '<span>Species</span';
+    familyHeader.innerHTML = '<span>Family</span>';
     passesHeader.innerHTML = '<span class="icon"><i class="fas fa-check-circle"></i></span>';
     failsHeader.innerHTML = '<span class="icon"><i class="fas fa-times-circle"></i></span>';
-    config.isPortraitMode ? imageHeader.appendChild(checkbox) : indexHeader.appendChild(checkbox);
+    if(!config.isPortraitMode) {
+        indexHeader.appendChild(sorter);
+        indexHeader.appendChild(checkbox);
+        imageHeader.innerHTML = '<div></div>';
+    } else {
+        imageHeader.appendChild(checkbox);
+    }
     if(config.isPortraitMode) {
         headerRow.appendChild(imageHeader);    
         headerRow.appendChild(speciesHeader);

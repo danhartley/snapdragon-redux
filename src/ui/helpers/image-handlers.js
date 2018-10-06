@@ -13,7 +13,7 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
         const parent = document.querySelector('#imageModal .js-modal-image');
         const selectedItem = item || collection.items.find(item => item.name === image.dataset.itemname);
         const images = selectedItem.images.map((image, index) => {
-            return { src: image, itemName: selectedItem.name, itemCommon: itemProperties.vernacularName(item, config) };
+            return { src: image, itemName: selectedItem.name, itemCommon: itemProperties.vernacularName(selectedItem, config) };
         });
         imageSlider(images, parent, false, image, config);
         let displayName = '';
