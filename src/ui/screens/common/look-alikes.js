@@ -38,6 +38,8 @@ export const lookALikes = (collection, item, traits, config) => {
         renderTemplate({slides}, matchTemplate.content, lookalikeNode);
 
         document.querySelector('.js-compare-species-label').innerHTML = `Look-alikes: ${names.join(', ')}`;
+        
+        if(!config.isLandscapeMode) return;
 
         document.querySelector('.js-compare-species-link').addEventListener('click', ()=> {
             const parent = document.querySelector('#imageComparisonModal .js-modal-image');
