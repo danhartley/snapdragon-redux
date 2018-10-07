@@ -26,33 +26,37 @@ export const renderSummary = (history) => {
     const itemsToReview = stats.getItemsForRevision(collection, history, config, 1);
     const mode = endOfRoundHandler.getMode(config.mode, collection.isLevelComplete, itemsToReview);
 
-    let summary; 
+    let header, summary; 
 
     if(mode === 'learn') {
 
         if(!collection.isLevelComplete) {
+            header = `You have completed ${collection.currentRound - 1} rounds`;
             summary = `There are ${speciesUntestedCount} more species to learn in this lesson.`;
         }
         if(collection.isLevelComplete) {
+            header = 'Well done, you finished the level.';
             summary = 'Continue to the next level...';
         }
         if(collection.isLevelComplete && !collectionComplete) {
-            summary = `Congratulations! You have completed level ${collection.lesson.level.id}. 
-                Continue with the lesson to learn more species from ${collection.name}.` 
+            header = `Congratulations! You have completed level ${collection.lesson.level.id}.`;
+            summary = `Continue with the lesson to learn more species from ${collection.name}.` 
         }
     }
 
     if(mode === 'review') {
+        header = `Well done, you commpleted the round.`;
         summary = 'Before going to the next level, there are a few questions to review...';
     }
 
     if(mode === 'learn-again' && !collectionComplete) {
+        haeder = 'Phew!';
         summary = `That's the review over. On to the next level...`;
     }
 
     if(collection.isLevelComplete && collectionComplete) {
-        summary = `You have completed the collection. Well done! 
-            Begin a new collection, review questions you got wrong, or consolidate what you have just learnt.`
+        header = 'You have completed the collection. Well done!';
+        summary = `Begin a new collection, review questions you got wrong, or consolidate what you have just learnt.`
     }
 
     score.correct = score.correct;

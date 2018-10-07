@@ -205,8 +205,22 @@ hr {
   justify-content: space-between;
 }
 
-.summary.card {
-  margin: 0 0 1em 0;
+.summary-header {
+    padding: 0 0 0 .5em;
+    /* height: 2.5em; */
+    line-height: 2.5;
+    display: flex;
+    background-color: var(--snap-list-alt-background);
+    align-items: center;
+}
+
+.summary {
+  /* margin: 0 0 1em 0; */
+  padding: 0;
+  justify-content: space-between;
+  border: 0;
+  flex-direction: column;
+  height: 100%;
 }
 
 .species.revision.card {
