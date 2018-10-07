@@ -15,7 +15,7 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
         const images = selectedItem.images.map((image, index) => {
             return { src: image, itemName: selectedItem.name, itemCommon: itemProperties.vernacularName(selectedItem, config) };
         });
-        imageSlider(images, parent, false, image, config);
+        imageSlider(config, images, parent, false, image);
         let displayName = '';
         switch(displayNameType) {
             case 'biomial':

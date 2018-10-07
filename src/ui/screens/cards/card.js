@@ -96,7 +96,9 @@ const renderPortrait = (template, item, config, collection) => {
         return { index: index + 1, src: img, itemName: item.name };
     } );
 
-    imageSlider(images, document.querySelector('.js-species-card-images'), true, null, config);
+    const parent = document.querySelector('.js-species-card-images');
+
+    imageSlider(config, images, parent, true);
 
     const player = document.querySelector('.js-bird-song-player');
     

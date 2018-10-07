@@ -82,7 +82,9 @@ const renderPortrait = (item, config) => {
         return { index: index + 1, src: img, itemName: item.name };
     } );
 
-    imageSlider(images, document.querySelector('.js-species-card-images'), true, config);
+    const parent = document.querySelector('.js-species-card-images');
+
+    imageSlider(config, images, parent, true);
 };
 
 const renderLandscape = (item, config, question) => {

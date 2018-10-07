@@ -26,7 +26,7 @@ const disableModalPopups = (disableModal, parent, config) => {
     }
 };
 
-export const imageSlider = (images, parent, disableModal = false, image, config) => {
+export const imageSlider = (config, images, parent, disableModal = false, image) => {
 
     const slider = document.createElement('template');
 
