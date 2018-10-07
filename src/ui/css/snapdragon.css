@@ -1548,7 +1548,8 @@ div.hide-empty:empty, span.hide-empty:empty {
 }
 
 .custom-checkbox .custom-control-input:disabled:checked~.custom-control-label::before {
-  background-color: rgba(41, 108, 44,.6);
+  background-color: rgba(41, 108, 44,.3);
+  pointer-events: none;
 }
 
 .custom-checkbox input {

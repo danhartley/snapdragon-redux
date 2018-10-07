@@ -115,6 +115,6 @@ export const renderVisualMatch = collection => {
 
         if(!parent) return;
 
-        imageSlider(images, parent, true, null, config);
+        imageSlider(config, images, parent, true);
     }
 };
