@@ -70,13 +70,13 @@ export const renderInput = (screen, question, hints) => {
     const txtQuestion = `Enter the common name for the species ${item.name}:`;
     renderTemplate({ txtQuestion }, template.content, parent, clone);
 
-    if(config.isPortraitMode) renderPortrait(item);
+    if(config.isPortraitMode) renderPortrait(item, config);
     else renderLandscape(item, config, question);
 
     document.querySelector('.js-txt-input').focus();
 };
 
-const renderPortrait = item => {
+const renderPortrait = (item, config) => {
     
     const images = item.images.map((img, index) => { 
         return { index: index + 1, src: img, itemName: item.name };

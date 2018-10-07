@@ -550,4 +550,8 @@ export const epithets = [
         "latin" : ["derma"],
         "en" : ["skin"]
     },
+    {
+        "latin" : ["odora"],
+        "en" : ["perfumed"]
+    },
 ];

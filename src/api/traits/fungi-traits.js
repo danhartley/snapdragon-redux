@@ -230,6 +230,8 @@ export const fungiTraits = [
         { name: 'stipe character', value : "bare", language: 'en' },
         { name: 'gill attachment', value : "decurrent", language: 'en' },
         { name: 'grouping', value : "clusters", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ 'Cantharellus cibarius' ]},
     ]},
     { name: 'Amanita rubescens', traits: [
         { name: 'cap shape', value: 'infundibuliform', language: 'en' },

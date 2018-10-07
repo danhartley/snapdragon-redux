@@ -111,6 +111,10 @@ export const renderVisualMatch = collection => {
             return { index: index + 1, src: img, itemName: item.name };
         } );
     
-        imageSlider(images, document.querySelector('.js-species-card-images'), true), config;
+        const parent = document.querySelector('.js-species-card-images');
+
+        if(!parent) return;
+
+        imageSlider(images, parent, true, null, config);
     }
 };
