@@ -6,16 +6,9 @@ const { summary, history } = screens;
 
 const createLessonPlan = (lessonPlan, config, collection) => {
 
-    if(collection.isLevelComplete) {
-        const levelId = collection.lesson.level.id + 1;
-        collection.lesson.level = lessonPlan.levels.find(level => level.id === levelId);
-        collection.currentRound = 1;
-    }
-
-    const moduleSize = collection.moduleSize || config.moduleSize;    
-    const { excludeRevision } = collection;
-
     collection.itemGroups = getItemGroups(collection);
+
+    collection.activeLevelCount = lessonPlan.levels.filter(level => level.layouts.length > 0).length;
 
     const goToNextLevelWithLayouts = (collection) => {
 
@@ -35,7 +28,7 @@ const createLessonPlan = (lessonPlan, config, collection) => {
             levelName = collection.lesson.level.name;
             layouts = getLayouts(lessonPlan, collection, config, config.mode);
             wildcards = config.mode === 'learn' ? getLayouts(lessonPlan, collection, config, 'wildcard') : [];
-            wildcardLayouts = wildcards.length > 0 ? getWildcardLayouts(wildcards, collection, moduleSize) : [];
+            wildcardLayouts = wildcards.length > 0 ? getWildcardLayouts(wildcards, collection, collection.moduleSize) : [];
 
             increment++;
 
@@ -47,13 +40,16 @@ const createLessonPlan = (lessonPlan, config, collection) => {
         return { lessonName, levelName, layouts, wildcardLayouts };
     }
 
+    if(collection.isLevelComplete) {
+        const levelId = collection.lesson.level.id + 1;
+        collection.lesson.level = lessonPlan.levels.find(level => level.id === levelId);
+    }
     const { lessonName, levelName, layouts, wildcardLayouts } = goToNextLevelWithLayouts(collection);
 
     return createLesson(
         lessonName,
         levelName, 
-        moduleSize, 
-        excludeRevision,
+        collection.moduleSize,
         config.isPortraitMode, 
         layouts, 
         [ summary, history ],

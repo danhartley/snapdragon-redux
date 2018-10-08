@@ -3,11 +3,7 @@ import * as R from 'ramda';
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 
-export const createLesson = (lessonName, levelName, moduleSize, excludeRevision, isPortraitMode, layouts, progressScreens, collection, wildcardLayouts) => {
-
-    if(excludeRevision) {
-        layouts = layouts.filter(layout => layout.type !== 'revision');
-    }
+export const createLesson = (lessonName, levelName, moduleSize, isPortraitMode, layouts, progressScreens, collection, wildcardLayouts) => {
 
     let lessonPlan = { layouts: [] };
 
@@ -26,9 +22,7 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         } while (i < layoutsToAdd);
     });
 
-    const revisionLayouts = excludeRevision 
-        ? [] 
-        : lessonPlan.layouts.filter(layout => layout.type === 'revision' && layout.name !== 'screen-definition-card');
+    const revisionLayouts = lessonPlan.layouts.filter(layout => layout.type === 'revision' && layout.name !== 'screen-definition-card');
     const lessonLayouts = [ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts];
     const offSet = (collection.currentRound - 1) * moduleSize;
 
@@ -37,12 +31,6 @@ export const createLesson = (lessonName, levelName, moduleSize, excludeRevision,
         layout.progressIndex = i + 1;
         return { ...layout };
     });
-
-    // revisionLayouts.forEach(layout => {
-    //     layout.family = collection.items.find((item, index) => index === layout.itemIndex).family;
-    // });
-
-    // utils.sortAlphabeticallyBy(revisionLayouts, 'family');
 
     const families = [];
 

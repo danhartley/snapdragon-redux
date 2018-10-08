@@ -10,7 +10,7 @@ test('score state should reflect correct answer', () => {
       binomial: 'Anagallis arvensis',
       answer: '',
       success: false,
-      wrong: 0,
+      incorrect: 0,
       question: 'Anagallis arvensis',
       fails: [],
       passes: []
@@ -24,7 +24,7 @@ test('score state should reflect correct answer', () => {
       question: 'Anagallis arvensis',
       answer: 'Anagallis arvensis',
       success: true,
-      wrong: 0,
+      incorrect: 0,
       fails: [],
       itemId: 1,
       totalPoints: 0,
@@ -61,7 +61,7 @@ test('score state should reflect correct answer', () => {
       binomial: 'Anagallis arvensis',
       answer: '',
       success: false,
-      wrong: 0,
+      incorrect: 0,
       question: '',
       fails: [],
       passes: []
@@ -77,7 +77,7 @@ test('score state should reflect correct answer', () => {
       questionTotal: 1,
       answer: 'Malva sylvestris',
       success: false,
-      wrong: 1,
+      incorrect: 1,
       itemId: 1,
       fails: [{ itemId: 1, taxon: 'name', binomial: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Malva sylvestris'}],
       passes: [],
@@ -126,7 +126,7 @@ test('score state should reflect correct answer', () => {
 
   test('history should reflect total scores to date', () => {
     const state1 = null;
-    const score1 = { total: 6, correct: 6, wrong: 0, fails:[], passes:[1,2,3,4,5,6], question: 'question1'};
+    const score1 = { total: 6, correct: 6, incorrect: 0, fails:[], passes:[1,2,3,4,5,6], question: 'question1'};
     const action1 = {
       type: types.UPDATE_HISTORY,
       data: score1
@@ -137,7 +137,7 @@ test('score state should reflect correct answer', () => {
     expect(state2.total).toEqual(6);
     expect(state2.correct).toEqual(6);
     
-    const score2 = { total: 6, correct: 0, wrong: 6, fails:[1,2,3,4,5,6], passes:[], question: 'question2'};
+    const score2 = { total: 6, correct: 0, incorrect: 6, fails:[1,2,3,4,5,6], passes:[], question: 'question2'};
     const action2 = {
       type: types.UPDATE_HISTORY,
       data: score2
@@ -151,7 +151,7 @@ test('score state should reflect correct answer', () => {
 
     // after user returns to page, or page refresh, etc. and state rehydrated from localStorage
     
-    const score3 = { total: 6, correct: 0, wrong: 6, fails:[1,2,3,4,5,6], passes:[], question: 'question2'};
+    const score3 = { total: 6, correct: 0, incorrect: 6, fails:[1,2,3,4,5,6], passes:[], question: 'question2'};
     const action3 = {
       type: types.UPDATE_HISTORY,
       data: score3

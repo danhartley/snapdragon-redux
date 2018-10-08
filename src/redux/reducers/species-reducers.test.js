@@ -3,7 +3,7 @@ import { collection } from 'redux/reducers/species-reducers';
 import { speciesStateHelper } from 'redux/reducers/initial-state/initial-species-state';
 
 
-const herbs = {
+const herbCollection = {
   "name": "Mint and Basil Family",
   "items": [
     {
@@ -34,7 +34,8 @@ const herbs = {
   "itemIndex": 0,
   "currentRound": 1,
   "moduleSize": 2,
-  "rounds": 3
+  "rounds": 3,
+  lesson: { levels: [], level: {}}
 }
 
 test('collection should return default parameter state when there is no action type', () => {
@@ -42,14 +43,16 @@ test('collection should return default parameter state when there is no action t
   const action = { };  
   const state = collection(speciesStateHelper.collection, action);
 
-  expect(state).toEqual({"currentRound": 0, "descriptions": null, "id": 0, "rounds": 0, isNextRound: true});
+  const received = {"currentRound": 0, "descriptions": null, "id": 0, "isNextRound": true,"lesson": {"level": {}, "levels": []}, "rounds": 0};
+
+  expect(state).toEqual(received);
 });
 
 
 test('collection should return correct itemIndex for action type NEXT_ITEM', () => {
 
   let action = { data: 0, type: types.NEXT_ITEM };
-  let state = collection(herbs, action);
+  let state = collection(herbCollection, action);
   expect(state.itemIndex).toBe(0);
 
   action = { data: 1, type: types.NEXT_ITEM };
@@ -67,7 +70,7 @@ test.skip('collection should return correct itemIndex and currentRound over seve
   // round 1
 
   let action = { data: 0, type: types.NEXT_ITEM };
-  let state = collection(herbs, action);
+  let state = collection(herbCollection, action);
 
   expect(state.currentRound).toBe(1);
   expect(state.itemIndex).toBe(0);
@@ -109,7 +112,7 @@ test.skip('collection should return correct itemIndex and currentRound over seve
 test('collection should return itemIndex of 0 and currentRound of 1 when moving to the next level', () => {
   
   let action = { data: undefined, type: types.NEXT_LEVEL };
-  let state = collection(herbs, action);
+  let state = collection(herbCollection, action);
 
   expect(state.currentRound).toBe(1);
   expect(state.itemIndex).toBe(0);

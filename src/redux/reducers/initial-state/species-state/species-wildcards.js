@@ -79,7 +79,9 @@ export const getWildcardLayouts = (wildcards, collection, moduleSize) => {
         }
     }
 
-    collection.itemGroup = collection.itemGroups[collection.currentRound - 1];        
+    const currentRound = collection.currentRound || 1;
+
+    collection.itemGroup = collection.itemGroups[currentRound - 1];        
         
     if(utils.isIterable(wildcardLayouts)) {
         wildcardLayouts.forEach(layout => {

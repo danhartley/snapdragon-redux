@@ -3,6 +3,7 @@ export const mushrooms1 = [
       "id": 195761,
       "name": "Boletus edulis",
       "icon": "2013/03/01/14/45554_orig.jpg",
+      "list": "2013/03/01/14/45554_orig.jpg",
       "images": [
         "2013/03/01/14/45554_orig.jpg",
         "2015/03/19/06/51750_orig.jpg",
