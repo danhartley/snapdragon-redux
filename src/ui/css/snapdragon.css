@@ -1590,3 +1590,7 @@ th.lessonScore {
   flex-direction: column;
   height: 3em;
 }
+
+.comparison-description {
+  padding: .5em;
+}

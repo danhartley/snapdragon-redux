@@ -1,7 +1,10 @@
+import * as R from 'ramda';
+
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageSideBySlider } from 'ui/screens/common/image-slider';
 import visualComparisonTemplate from 'ui/screens/common/look-alikes-link-template.html';
+import { fungiDescriptions } from 'api/traits/fungi-traits';
 
 export const lookALikes = (collection, item, traits, config) => {
 
@@ -42,8 +45,12 @@ export const lookALikes = (collection, item, traits, config) => {
         if(!config.isLandscapeMode) return;
 
         document.querySelector('.js-compare-species-link').addEventListener('click', ()=> {
-            const parent = document.querySelector('#imageComparisonModal .js-modal-image');
+            const parent = document.querySelector('#imageComparisonModal .js-modal-image');            
             imageSideBySlider(slides, parent, true, config);
         });
+
+        const description = fungiDescriptions.find(trait => trait.type === 'lookalike' && R.contains(item.name, trait.ids)).description;
+
+        document.querySelector('#imageComparisonModal .js-comparison-description').innerHTML = description;
     }
 };
