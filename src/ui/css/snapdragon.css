@@ -205,10 +205,6 @@ hr {
   justify-content: space-between;
 }
 
-.summary.card {
-  margin: 0 0 1em 0;
-}
-
 .species.revision.card {
   margin: .5em 0 .5em 0;
 }
@@ -607,37 +603,6 @@ hr {
 
 .history div {
   margin: 0 0 1em 0;
-}
-
-.summary div.score {
-  display: flex;
-  align-items: center;
-}
-
-.summary div.score > div:nth-child(1) {
-  flex: 1;
-  font-size: 1.3em;
-  text-align: center;
-}
-
-.summary p > span.score {
-  font-size: 1.em;
-  padding: 0;
-}
-
-.summary div.score > div:nth-child(2) {
-  flex: 3;
-  border-left: .5em solid var(--snap-list-header);
-  padding-left: .5em;
-}
-
-.summary div:nth-child(1).score > div:nth-child(2) {
-  border-left: .5em solid var(--snap-collection);
-}
-
-.summary span.score {
-  font-size: 1.4em;
-  padding: 0 .2em 0 0;
 }
 
 .capitalise {
@@ -1099,12 +1064,19 @@ table {
   align-items: center;
 }
 
-.table-row td:nth-child(2) {
-  flex: 4;
+.table-row td:nth-child(2), .table-row td:nth-child(3) {
+  flex: 3;
   display: flex;
   flex-direction: column;
   padding: 0 0 0 .5em;  
   justify-content: space-evenly;
+}
+
+.table-row td:nth-child(3) > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .table-row td:nth-child(2) span:nth-child(3) span:nth-child(2) {
@@ -1167,10 +1139,9 @@ table {
     display: none;
 }
 
-/* .species-table th input {
-  height: 1em;
-  width: 4em;
-} */
+.species-table td {
+  border-bottom: 1px solid white;
+}
 
 .species-table td .portrait input {
   height: 1.15em;
@@ -1566,4 +1537,56 @@ th .custom-control-label::before, th .custom-control-label::after {
 
 .form-control-lg {
   font-size: 1em;
+}
+
+.summary-header {
+  padding: 0 0 0 .5em;
+  line-height: 2.5;
+  display: flex;
+  background-color: rgb(176, 113, 4,.4);
+  align-items: center;
+}
+
+.summary-scores {
+  width: 16em;
+  font-size: 1.05em;
+  align-self: center;
+  margin: 2em 0 0 0;
+}
+
+.summary-scores th {
+  transform-origin: bottom left;
+  position: absolute;
+  margin: 0 0 0 8em;
+}
+
+th.roundScore {
+  transform: translate(2.58em,-2em) rotate(-40deg);  
+}
+th.lessonScore {
+  transform: translate(6.14em,-2em) rotate(-40deg);
+}
+
+.summary-scores td {
+  border: 1px solid white;
+  padding: .5em 1em;
+}
+
+.summary-scores td:nth-child(1) {
+  width: 8em;
+  background-color: rgb(176, 113, 4,.6);
+}
+
+.summary-scores td:nth-child(2), .summary-scores td:nth-child(3) {
+  width: 4em;
+  background-color: rgb(176, 113, 4,.4);
+}
+
+.summary {
+  padding: 0;
+  justify-content: space-between;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  height: 3em;
 }

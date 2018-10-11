@@ -60,7 +60,7 @@ export const commonBirds = {
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     glossary: ['animalia', 'common'],
-    courseId: 1,
+    courseId: 3,
     course: 'Snapdragon'
 };
 
@@ -101,7 +101,7 @@ export const mushrooms1 = {
     lessonPlanLandscape: 3,
     lessonPlanPortrait: 103,
     glossary: ['fungi'],
-    courseId: 1,
+    courseId: 4,
     course: 'Snapdragon'
 };
 
@@ -121,7 +121,7 @@ export const mushrooms2 = {
     lessonPlanLandscape: 3,
     lessonPlanPortrait: 103,
     glossary: ['fungi'],
-    courseId: 1,
+    courseId: 4,
     course: 'Snapdragon'
 };
 
@@ -141,7 +141,7 @@ export const mushrooms3 = {
     lessonPlanLandscape: 3,
     lessonPlanPortrait: 103,
     glossary: ['fungi'],
-    courseId: 1,
+    courseId: 4,
     course: 'Snapdragon'
 };
 

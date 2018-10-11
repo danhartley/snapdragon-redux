@@ -3,7 +3,7 @@ const score = {
     total: 0,
     correct: 0,
     binomial: '',
-    wrong: 0,
+    incorrect: 0,
     answer: '',
     question: '',
     fails: [],

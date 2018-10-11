@@ -1,32 +1,37 @@
-<div class="snapdragon-container">
-    <div class="summary card align-left">
+<div class="snapdragon-container">    
         
-        <div class="score">
-            <div>Last round</div>
-            <div>
-                <div><span class="score">{{ score.correct }}</span>correct answers</div>
-                <div><span class="score">{{ score.incorrect }}</span>incorrect answers</div>
-            </div>
-        </div>
+    <div class="summary-header js-summary-header"><span>{{ header }}</span></div>
 
-        <br>
-        
-        <div class="score">
-            <div>Overall score</div>
-            <div>
-                <div><span class="score">{{ history.correct }}</span>correct answers</div>
-                <div><span class="score">{{ history.incorrect }}</span>incorrect answers</div>
-            </div>
-        </div>
+    <table class="summary-scores">
+            <thead>
+                <tr>
+                    <th class="roundScore">Round score</th>
+                    <th class="lessonScore">Lesson score</th>   
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Correct</td>
+                    <td>{{ score.correct }}</td>
+                    <td>{{ history.correct }}</td>                
+                </tr>
+                <tr>
+                    <td>Incorrect</td>
+                    <td>{{ score.incorrect }}</td>
+                    <td>{{ history.incorrect }}</td>                
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>{{ score.total }}</td>
+                    <td>{{ history.total }}</td>
+                </tr>
+            </tbody>
+    </table>
 
-        <br>
-
-        <p>You scored <span class="score">{{ score.totalPassPoints }}</span> points out of a possible <span class="score">{{ score.totalPoints }}</span>.</p>
-
-        <p>You have completed <span class="score">{{ collection.currentRound }}</span> out of <span class="score">{{ collection.rounds }}</span> rounds at this level.</p>
-
-        <p>{{ summary }}</p>
+    <div class="summary">
+        <div>{{ summary }}</div>
     </div>
+    
     <div class="action-update-container">
         <div class="species-card-btn action-update">
             <div></div>

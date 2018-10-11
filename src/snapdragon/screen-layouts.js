@@ -18,8 +18,7 @@ const speciesCard = {
 
 const definitionCard = {
   name: 'definition-card',
-  domain: 'collection',
-  // template: 'js-definition-card-template'
+  domain: 'collection'
 };
 
 const scientifics = {
@@ -33,7 +32,6 @@ const scientifics = {
 
 const vernaculars = {
   name: 'species-vernaculars',
-  headers: { long: 'Click the common name to match the species', short: 'Click name to match species'},
   question: 'Tap to match latin name',
   domain: 'collection',
   template: 'js-strips-template',
@@ -42,7 +40,6 @@ const vernaculars = {
 
 const species = {
   name: 'species-images',
-  headers: { long: 'Click the picture to match the species', short: 'Click picture to match species'},
   question: 'Select specimen to match species',
   domain: 'collection',
   template: 'js-tiles-template',
@@ -51,14 +48,11 @@ const species = {
 
 const text = {
   name: 'text-entry',
-  // headers: { long: 'Latin name recall', short: 'Complete the latin name'},
-  domain: 'collection',
-  // question: 'Complete the latin name',
+  domain: 'collection'
 };
 
 const textComplete = {
   name: 'text-complete',
-  headers: { long: 'Latin name recall', short: 'Complete the latin name'},
   domain: 'collection',
   question: 'Complete the latin name',
 };
@@ -87,49 +81,43 @@ const command = {
     cutLength: 5,
     domain: 'collection',
     template: 'js-letters-template',
-    headers: { long: 'Put the name back together.', short: 'Complete the puzzle.'},
+    // headers: { long: 'Put the name back together.', short: 'Complete the puzzle.'},
     question: 'Name puzzle'
   }
 };
 
 const leaf = {
   name: 'leaf-image',
-  headers: { long: 'Enter the name for the leaf part.', short: 'Enter the name for the leaf part.'},
+  // headers: { long: 'Enter the name for the leaf part.', short: 'Enter the name for the leaf part.'},
   domain: 'collection',
   template: 'js-leaf-image-template'     
 };
 
 const leafName = {
   name: 'leaf-text',
-  headers: { long: 'Enter the name for the leaf part.', short: 'Enter the name for the leaf part.'},
+  // headers: { long: 'Enter the name for the leaf part.', short: 'Enter the name for the leaf part.'},
   domain: 'collection',
   template: 'js-text-entry-template'     
 };
 
 const epithets = {
   name: 'epithet',
-  // headers: { long: 'Latin epithet recall', short: 'Select the epithet name'},
-  domain: 'collection',
-  // question: 'Select the epithet',
+  domain: 'collection'
 };
 
 const definitions = {
   name: 'definition',
-  // headers: { long: 'Definition recall', short: 'Select the definition name'},
-  domain: 'collection',
-  // question: 'Select the definition',
+  domain: 'collection'
 };
 
 const family = {
   name: 'family',
-  headers: { long: 'Match species family', short: 'Match species family'},
   domain: 'collection',
   question: 'Match species family',
 };
 
 const familyStrips = {
   name: 'family-strips',
-  headers: { long: 'Match species family', short: 'Match species family'},
   domain: 'collection',
   question: 'Match species family',
 };
@@ -159,9 +147,16 @@ const wildcard = {
   domain: 'collection'
 };
 
-const visualMatch = {
+const specimenCommonMatch = {
   name: 'visual-match',
-  domain: 'collection'
+  domain: 'collection',
+  type: 'vernacular'
+};
+
+const specimenLatinMatch = {
+  name: 'visual-match',
+  domain: 'collection',
+  type: 'binomial'
 };
 
 const traitProperty = {
@@ -198,7 +193,8 @@ export const screens = {
   wildcardCard,
   wildcard,
 
-  visualMatch,
+  specimenCommonMatch,
+  specimenLatinMatch,
   traitProperty,
 
   mixedSpecimenTiles,

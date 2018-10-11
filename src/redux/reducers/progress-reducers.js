@@ -50,7 +50,7 @@ export const score = (state = R.clone(progressState.score), action) => {
                 score.passes.push({ itemId: score.itemId, taxon: score.taxon, binomial: score.binomial, question: score.question, answer: score.answer });
             }
             else {
-                score.wrong++;
+                score.incorrect++;
                 score.totalFailPoints += score.points ? score.points : 0;
                 score.fails.push({ itemId: score.itemId, taxon: score.taxon, binomial: score.binomial, question: score.question, answer: score.answer });
             }
@@ -94,6 +94,7 @@ export const history = (state = null, action) => {
 
             history.correct = historyCorrect;
             history.total = historyTotal;
+            history.incorrect = history.total - history.correct;
 
             return history;
         }

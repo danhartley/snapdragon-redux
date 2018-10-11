@@ -15,7 +15,7 @@ export const buildTable = (collection, config) => {
     let totalFails = 0;
 
     collection.items.forEach(item => { 
-        item.image = item.images[0];
+        item.image = item.list || item.images[0];
         item.vernacularName = itemProperties.vernacularName(item, config);
         item.passes = item.passes || '--';
         item.fails = item.fails || '--';
