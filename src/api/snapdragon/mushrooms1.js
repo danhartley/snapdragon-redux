@@ -1097,4 +1097,91 @@ export const mushrooms1 = [
       "family": "Amanitaceae",
       "eolName": "Amanita rubescens"
     },
+    {
+      "id": 195773,
+      "name": "Hygrophoropsis aurantiaca",
+      "images": [
+        "2012/06/12/07/90772_orig.jpg",
+        "2012/06/12/07/27835_orig.jpg",
+        "2015/03/14/10/08984_orig.jpg",
+        "2015/03/14/10/31882_orig.jpg",
+        "2015/03/14/10/19530_orig.jpg",
+        "2013/02/26/17/08540_orig.jpg",
+        "2014/02/01/03/23714_orig.jpg",
+        "2014/02/01/13/65914_orig.jpg",
+        "2015/03/24/03/69838_orig.jpg",
+        "2014/01/31/15/71645_orig.jpg",
+        "2014/01/31/18/18127_orig.jpg",
+        "2014/02/01/04/19834_orig.jpg",
+        "2014/02/01/04/95199_orig.jpg",
+        "2014/02/01/05/80700_orig.jpg",
+        "2014/02/01/05/93522_orig.jpg",
+        "2014/02/01/06/47976_orig.jpg",
+        "2014/01/31/19/48180_orig.jpg",
+        "2014/02/01/09/39391_orig.jpg",
+        "2014/02/01/07/47689_orig.jpg",
+        "2014/01/31/18/36696_orig.jpg",
+        "2015/06/18/02/88312_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Falscher Pfifferling",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Falscher Eierschwamm",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Orangegelber Gabelblättling",
+          "language": "de"
+        },
+        {
+          "vernacularName": "False Chanterelle",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Fausse chanterelle",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Chanterelle orangée",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Fausse girolle",
+          "language": "fr"
+        }
+      ],
+      "descriptions": [],
+      "taxonomy": {
+        "usageKey": 2525710,
+        "scientificName": "Hygrophoropsis aurantiaca (Wulfen) Maire",
+        "canonicalName": "Hygrophoropsis aurantiaca",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Fungi",
+        "phylum": "Basidiomycota",
+        "order": "Boletales",
+        "family": "Hygrophoropsidaceae",
+        "genus": "Hygrophoropsis",
+        "species": "Hygrophoropsis aurantiaca",
+        "kingdomKey": 5,
+        "phylumKey": 34,
+        "classKey": 186,
+        "orderKey": 1063,
+        "familyKey": 4194,
+        "genusKey": 2525560,
+        "speciesKey": 2525710,
+        "synonym": false,
+        "class": "Agaricomycetes"
+      },
+      "family": "Hygrophoropsidaceae",
+      "eolName": "Hygrophoropsis aurantiaca (Wulfen) Maire 1921"
+    },
 ];

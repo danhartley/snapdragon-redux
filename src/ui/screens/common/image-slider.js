@@ -55,10 +55,9 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
 
     slides.forEach((slide, index) => {
         const header = document.querySelector(`#imageComparisonModal .js-modal-image-title span:nth-child(${index + 1})`);
-        header.innerHTML = `${slide.images[0].itemCommon} (${slide.images[0].itemName})`;
+        header.innerHTML = `${slide.images[0].itemCommon} <br> (${slide.images[0].itemName})`;
         renderTemplate({ images: slide.images, index: index + 1 }, sideBySlider.content, parent);
         document.querySelector(`#imageSlider${index + 1} .carousel-item`).classList.add('active');
         disableModalPopups(disableModal, config);
-    });    
-
+    });
 };

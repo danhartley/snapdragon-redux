@@ -554,4 +554,8 @@ export const epithets = [
         "latin" : ["odora"],
         "en" : ["perfumed"]
     },
+    {
+        "latin" : ["kantharos"],
+        "en" : ["tankard", "cup"]
+    },
 ];

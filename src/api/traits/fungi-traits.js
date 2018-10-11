@@ -1,5 +1,18 @@
 import * as SD from 'api/snapdragon/trait-types';
 
+export const fungiDescriptions = [
+    {
+        ids: ['Cantharellus cibarius', 'Omphalotus olearius', 'Hygrophoropsis aurantiaca'],
+        type: 'lookalike',
+        description: 'The false chanterelle (Hygrophoropsis aurantiaca) has a similar appearance and can be confused with the chanterelle. Distinguishing factors are color (the true chanterelle is uniform egg-yellow, while the false chanterelle is more orange in hue and graded, with darker center) and attachment of gills to the stem (the true chanterelle has ridges or wrinkles, which can be quite deep, but not true gills).'
+    },
+    {
+        ids: ['Morchella esculenta', 'Gyromitra esculenta'],
+        type: 'lookalike',
+        description: 'The false morel (Gyromitra esculenta) has a wrinkled or cerebral appearance, the ridges and pit of the true morel ressemble honeycomb. The cap of the false morel is reddish-brown, purplish-brown or dark brown. Only the true morel has a hollow stem.'
+    },
+];
+
 export const fungiTraits = [
     { name: 'Agaricus bisporus', traits: [
         { name: 'cap shape', value: 'convex', language: 'en' },
@@ -231,7 +244,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "decurrent", language: 'en' },
         { name: 'grouping', value : "clusters", language: 'en' },
     ], context: [
-        { name: 'look-alikes', values: [ 'Cantharellus cibarius' ]},
+        { name: 'look-alikes', values: [ 'Cantharellus cibarius', 'Hygrophoropsis aurantiaca' ]},
     ]},
     { name: 'Amanita rubescens', traits: [
         { name: 'cap shape', value: 'infundibuliform', language: 'en' },
@@ -256,7 +269,7 @@ export const fungiTraits = [
         { name: 'smell', value : "fruity", language: 'en' },
         { name: 'vitamins', value : "C, D", language: 'en' },
     ], context: [
-        { name: 'look-alikes', values: [ 'Omphalotus olearius', 'Omphalotus illudens', 'Hygrophoropsis aurantiaca' ]},
+        { name: 'look-alikes', values: [ 'Omphalotus olearius', 'Omphalotus illudens', 'Hygrophoropsis aurantiaca' ] },
         { name: 'trees', values: [ 'Quercus', 'Fagus', 'Betula'] }
     ]},
     { name: 'Hygrophoropsis aurantiaca', traits: [
