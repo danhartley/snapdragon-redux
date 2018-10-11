@@ -64,7 +64,7 @@ export const fungi = [
     },
     {
         term: "Hymenophore",
-        definition: "Hymenium-bearing structure of a fungal fruiting body (take form of smooth surfaces, lamellae, folds, tubes, or teeth).",
+        definition: "Hymenium-bearing structure of a fungal fruiting body (having smooth surfaces, lamellae, folds, tubes, or teeth).",
         wiki: "https://en.wikipedia.org/wiki/Hymenophore",
         level: 2
     },
@@ -191,7 +191,7 @@ export const fungi = [
         group: 2
     },
     {
-        term: "Epigenous",
+        term: "Hypogeous",
         definition: "Partially or completely embedded in soil or humus.",
         level: 2,
         group: 2

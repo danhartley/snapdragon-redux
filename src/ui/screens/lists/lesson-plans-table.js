@@ -57,8 +57,17 @@ export const renderLessonPlans = (lessonPlanId) => {
                         if(!config.isPortraitMode) kind.innerHTML += '<span>family info</span>'
                         kind.parentElement.parentElement.classList.add('taxon-background')
                         break;
+                    case 'G':
+                        kind.innerHTML = `<span class="icon"><i class="fas fa-chalkboard"></i></i></span>`;
+                        if(!config.isPortraitMode) kind.innerHTML += '<span>glossary</span>'
+                        kind.parentElement.parentElement.classList.add('taxon-background')
+                        break;
                     case 'MC':
                         kind.innerHTML = `<span class="icon"><i class="fas fa-check-circle"></i></span>`;
+                        if(!config.isPortraitMode) kind.innerHTML += '<span>multiple choice</span>'
+                        break;
+                    case 'VMC':
+                        kind.innerHTML = `<span class="icon"><i class="fas fa-check-circle"></i></span><span class="icon"><i class="fas fa-eye"></i></span>`;
                         if(!config.isPortraitMode) kind.innerHTML += '<span>multiple choice</span>'
                         break;
                     case 'T':

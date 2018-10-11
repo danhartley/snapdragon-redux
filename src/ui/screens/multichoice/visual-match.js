@@ -9,9 +9,9 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { taxa } from 'api/snapdragon/taxa';
 import { lookALikes } from 'ui/screens/common/look-alikes';
 import { fungiTraits } from 'api/traits/fungi-traits';
-import visualMatchTemplate from 'ui/screens/multichoice/visual-match-template.html';
+import specimenCommonMatchTemplate from 'ui/screens/multichoice/visual-match-template.html';
 
-export const renderVisualMatch = collection => {
+export const renderSpecimenMatch = collection => {
 
     const item = collection.nextItem;
 
@@ -19,7 +19,7 @@ export const renderVisualMatch = collection => {
 
     const template = document.createElement('template');
 
-    template.innerHTML = visualMatchTemplate;
+    template.innerHTML = specimenCommonMatchTemplate;
 
     let question, answers, descriptions = [];
 

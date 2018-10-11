@@ -32,7 +32,6 @@ const scientifics = {
 
 const vernaculars = {
   name: 'species-vernaculars',
-  // headers: { long: 'Click the common name to match the species', short: 'Click name to match species'},
   question: 'Tap to match latin name',
   domain: 'collection',
   template: 'js-strips-template',
@@ -41,7 +40,6 @@ const vernaculars = {
 
 const species = {
   name: 'species-images',
-  // headers: { long: 'Click the picture to match the species', short: 'Click picture to match species'},
   question: 'Select specimen to match species',
   domain: 'collection',
   template: 'js-tiles-template',
@@ -55,7 +53,6 @@ const text = {
 
 const textComplete = {
   name: 'text-complete',
-  // headers: { long: 'Latin name recall', short: 'Complete the latin name'},
   domain: 'collection',
   question: 'Complete the latin name',
 };
@@ -115,14 +112,12 @@ const definitions = {
 
 const family = {
   name: 'family',
-  // headers: { long: 'Match species family', short: 'Match species family'},
   domain: 'collection',
   question: 'Match species family',
 };
 
 const familyStrips = {
   name: 'family-strips',
-  // headers: { long: 'Match species family', short: 'Match species family'},
   domain: 'collection',
   question: 'Match species family',
 };
@@ -152,9 +147,16 @@ const wildcard = {
   domain: 'collection'
 };
 
-const visualMatch = {
+const specimenCommonMatch = {
   name: 'visual-match',
-  domain: 'collection'
+  domain: 'collection',
+  type: 'vernacular'
+};
+
+const specimenLatinMatch = {
+  name: 'visual-match',
+  domain: 'collection',
+  type: 'binomial'
 };
 
 const traitProperty = {
@@ -191,7 +193,8 @@ export const screens = {
   wildcardCard,
   wildcard,
 
-  visualMatch,
+  specimenCommonMatch,
+  specimenLatinMatch,
   traitProperty,
 
   mixedSpecimenTiles,

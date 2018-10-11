@@ -189,12 +189,29 @@
     }
     
     .modal-dialog {
-        max-width: 60vw;
+        max-width: 70vw;
     }
 
     #menuModal .modal-dialog {
         max-width: 40vw;
     }
+
+    .lesson-plans .table-row th:nth-child(1), .lesson-plans .table-row th:nth-child(4),
+    .lesson-plans .table-row td:nth-child(1), .lesson-plans .table-row td:nth-child(4) {
+      flex: 1;
+      align-self: center;
+      display: flex;
+    }
+    
+    .lesson-plans .table-row th:nth-child(2),
+    .lesson-plans .table-row td:nth-child(2) {
+      flex: 4;
+    }
+
+    .lesson-plans .table-row th:nth-child(3), 
+    .lesson-plans .table-row td:nth-child(3) {
+        flex: 3;    
+    } 
 
     .lesson-plans .table-row input {
         height: 1.75rem;

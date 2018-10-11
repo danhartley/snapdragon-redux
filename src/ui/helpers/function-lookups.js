@@ -14,7 +14,7 @@ import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 import { renderCompleteText } from 'ui/screens/text-entry/text-complete';
 import { renderCultivarCard } from 'ui/screens/cards/cultivar-card';
 import { renderWildcard } from 'ui/screens/cards/wildcard-card';
-import { renderVisualMatch } from 'ui/screens/multichoice/visual-match';
+import { renderSpecimenMatch } from 'ui/screens/multichoice/visual-match';
 import { renderDefinitionCard } from 'ui/screens/cards/definition-card';
 import { renderMixedSpecimenTiles } from 'ui/screens/multichoice/mixed-specimen-tiles';
 import { renderMixedSpecimenQuestions } from 'ui/screens/multichoice/mixed-specimen-questions';
@@ -44,8 +44,8 @@ const functions = [
     { name: 'cultivar-card', func: renderCultivarCard },
     { name: 'wildcard-card', func: renderWildcard },
     { name: 'wildcard-match', func: renderMultiStrips },
-    { name: 'visual-match', func: renderVisualMatch },
-    { name: 'trait-property', func: renderVisualMatch },
+    { name: 'visual-match', func: renderSpecimenMatch },
+    { name: 'trait-property', func: renderSpecimenMatch },
     { name: 'definition-card', func: renderDefinitionCard },
 ];
 

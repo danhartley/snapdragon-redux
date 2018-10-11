@@ -7,18 +7,19 @@ const {
     command, leaf, leafName, 
     family, familyStrips, taxon, textComplete, cultivar, cultivarCard, 
     epithets, wildcardCard, wildcard, definitions, 
-    visualMatch, definitionCard, traitProperty,
+    specimenCommonMatch, specimenLatinMatch,
+    definitionCard, traitProperty,
     mixedSpecimenTiles,
     mixedSpecimenQuestions } = screens;
 
-const mixedSpecimenMatch = {
-    name: 'screen-mixed-specimen-match',
+const mixedSpeciesMatch = {
+    name: 'screen-mixed-species-match',
     type: 'test',
     score: 1,
-    kind: 'MC',
+    kind: 'VMC',
     points: 3,
-    given: 'Specimen images',
-    options: 'Choose species',
+    given: 'Given species name',    
+    requirement: 'Select species image',
     screens: [
         { ...mixedSpecimenTiles },
         { ...mixedSpecimenQuestions }
@@ -31,8 +32,8 @@ const speciesRevision = {
     score: 0,
     kind: 'S',
     points: 0,
-    given: 'Study',
-    options: 'Species summary',
+    given: 'Given species information',
+    requirement: 'Study species',
     screens: [
         { ...specimen },
         { ...speciesCard }
@@ -46,7 +47,7 @@ const taxonRevision = {
     kind: 'F',
     points: 0,
     given: 'Study',
-    options: 'Family summary',
+    requirement: 'Family summary',
     screens: [
         { ...specimen },
         { ...taxon }
@@ -57,10 +58,10 @@ const definitionRevision = {
     name: 'screen-definition-card',
     type:'revision',
     score: 0,
-    kind: 'F',
+    kind: 'G',
     points: 0,
-    given: 'Study',
-    options: 'Glossary definitions',
+    given: 'Given glossary',
+    requirement: 'Study definitions',
     screens: [
         { ...specimen },
         { ...definitionCard }
@@ -76,7 +77,7 @@ const imageToImageMatch = {
     points: 1,
     kind: 'MC',
     given: 'Species specimens',
-    options: 'Species images',
+    requirement: 'Species images',
     screens: [
         { ...specimen },
         { ...species }
@@ -89,8 +90,8 @@ const latinToCommonMatch = {
     score: 1,
     points: 1,
     kind: 'MC',
-    given: 'Species latin name',
-    options: 'List common names',
+    given: 'Given latin name',
+    requirement: 'Select common name',
     screens: [
         { ...specimen },
         { ...vernaculars }
@@ -103,8 +104,8 @@ const commonToLatinMatch = {
     score: 1,
     points: 1,
     kind: 'MC',
-    given: 'Species common name',
-    options: 'List latin names',
+    given: 'Given common name',
+    requirement: 'Select latin name',
     screens: [
         { ...specimen },
         { ...scientifics }
@@ -117,25 +118,39 @@ const textCompleteGenus = {
     score: 1,
     points: 1,
     kind: 'MC',
-    given: 'Species species name',
-    options: 'Choose genus name',
+    given: 'Given species name',
+    requirement: 'Select genus name',
     screens: [
         { ...specimen },
         { ...textComplete, type: 'text-complete-genus'  }
     ]
 };
 
-const multiVisualMatch = {
-    name: 'screen-visual-match',
+const multiSpecimenCommonMatch = {
+    name: 'screen-specimens-common-match',
     type:'test',
     score: 1,
     points: 1,
-    kind: 'MC',
-    given: 'Specimen image',
-    options: 'Choose species',
+    kind: 'VMC',
+    given: 'Given specimen images',
+    requirement: 'Select commnon name',
     screens: [
         { ...specimen },
-        { ...visualMatch }
+        { ...specimenCommonMatch }
+    ]
+};
+
+const multiSpecimenLatinMatch = {
+    name: 'screen-specimens-latin-match',
+    type:'test',
+    score: 1,
+    points: 1,
+    kind: 'VMC',
+    given: 'Given specimen images',
+    requirement: 'Select latin name',
+    screens: [
+        { ...specimen },
+        { ...specimenLatinMatch }
     ]
 };
 
@@ -145,8 +160,8 @@ const traitPropertyMatch = {
     score: 1,
     points: 1,
     kind: 'MC',
-    given: 'Specimen image',
-    options: 'Choose trait',
+    given: 'Given specimen images',
+    requirement: 'Select trait value',
     screens: [
         { ...specimen },
         { ...traitProperty }
@@ -162,7 +177,7 @@ const familyMatch = {
     points: 2,
     kind: 'MC',
     given: 'Species name',
-    options: 'List families',
+    requirement: 'List families',
     screens: [
         { ...specimen },
         { ...family }
@@ -176,7 +191,7 @@ const cultivarMatch = {
     points: 2,
     kind: 'MC',
     given: 'Cultivar name',
-    options: 'List species',
+    requirement: 'List species',
     screens: [
         { ...specimen },
         { ...cultivar }
@@ -190,7 +205,7 @@ const familyStripsMatch = {
     points: 2,
     kind: 'MC',
     given: 'Family description',
-    options: 'List families',
+    requirement: 'List families',
     screens: [
         { ...specimen },
         { ...familyStrips }
@@ -204,7 +219,7 @@ const genusEntry = {
     points: 2,
     kind: 'T',
     given: 'Species species name',
-    options: 'Enter genus name',
+    requirement: 'Enter genus name',
     screens: [
         { ...specimen },
         { ...text, template: 'js-genus-entry-template', taxon: 'genus'}
@@ -218,7 +233,7 @@ const speciesEntry = {
     points: 2,
     kind: 'T',
     given: 'Species genus name',
-    options: 'Enter species name',
+    requirement: 'Enter species name',
     screens: [
         { ...specimen },
         { ...text, template: 'js-species-entry-template', taxon: 'species'}
@@ -232,7 +247,7 @@ const speciesGenusEntry = {
     points: 4,
     kind: 'T',
     given: 'Species common name',
-    options: 'Enter latin name',
+    requirement: 'Enter latin name',
     screens: [
         { ...specimen },
         { ...text, template: 'js-species-genus-entry-template', taxon: 'name'}
@@ -246,7 +261,7 @@ const commandLayout = {
     points: 2,
     kind: 'T',
     given: 'Various',
-    options: 'various',
+    requirement: 'various',
     screens: [
         { ...command },
     ]
@@ -269,8 +284,8 @@ const textCompleteSpecies = {
     score: 1,
     points: 2,
     kind: 'T',
-    given: 'Species genus name',
-    options: 'Select species name',
+    given: 'Given genus name',
+    requirement: 'Select species name',
     screens: [
         { ...specimen },
         { ...textComplete, type: 'text-complete-species' }
@@ -284,7 +299,7 @@ const commonEntry = {
     points: 2,
     kind: 'T',
     given: 'Species latin name',
-    options: 'Enter common name',
+    requirement: 'Enter common name',
     screens: [
         { ...specimen },
         { ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Enter the common name', short: 'Enter the common name'}}
@@ -298,7 +313,7 @@ const latinEpithets = {
     points: 1,
     kind: 'T',
     given: 'Epithet',
-    options: 'List epithet definitions',
+    requirement: 'List epithet definitions',
     screens: [
         { ...specimen },
         { ...epithets }
@@ -311,8 +326,8 @@ const glossaryTerms = {
     score: 1,
     points: 1,
     kind: 'T',
-    given: 'Term',
-    options: 'List term definitions',
+    given: 'Given glossary term',
+    requirement: 'Select definition',
     screens: [
         { ...specimen },
         { ...definitions }
@@ -326,7 +341,7 @@ const cultivars = {
     points: 1,
     kind: 'T',
     given: 'List of cultivars',
-    options: 'List of species',
+    requirement: 'List of species',
     screens: [
         { ...specimen },
         { ...cultivarCard },
@@ -341,17 +356,12 @@ const connections = {
     points: 1,
     kind: 'T',
     given: 'List of traits',
-    options: 'List of species',
+    requirement: 'List of species',
     screens: [
         { ...specimen },
         { ...wildcardCard },
         { ...wildcard }
     ]
-};
-
-const screenType = (multiVisualMatch, type) => {
-    multiVisualMatch.screens[1].type = type;
-    return multiVisualMatch;
 };
 
 const propertyTrait = (traitPropertyMatch, trait) => {
@@ -370,7 +380,7 @@ const landscapeLesson1 = {
             layouts: [ 
                 speciesRevision, 
                 latinToCommonMatch, 
-                mixedSpecimenMatch,
+                mixedSpeciesMatch,
                 commonToLatinMatch 
             ],
             wildcardLayouts : [],
@@ -428,10 +438,10 @@ const landscapeLesson3 = {
                 speciesRevision,                 
                 latinToCommonMatch, 
                 { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
-                { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'vernacular') }, 
-                mixedSpecimenMatch,
+                multiSpecimenCommonMatch,
+                mixedSpeciesMatch,
                 definitionRevision, 
-                { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'binomial') },   
+                multiSpecimenLatinMatch,
             ],
             wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ commonToLatinMatch ]
@@ -463,7 +473,7 @@ const portraitLesson1 = {
             layouts: [ 
                 speciesRevision, 
                 latinToCommonMatch, 
-                mixedSpecimenMatch,
+                mixedSpeciesMatch,
                 commonToLatinMatch 
             ],
             wildcardLayouts : [],
@@ -521,10 +531,10 @@ const portraitLesson3 = {
                 speciesRevision,                 
                 latinToCommonMatch, 
                 { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
-                { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'vernacular') }, 
-                mixedSpecimenMatch,
+                multiSpecimenCommonMatch,
+                mixedSpeciesMatch,
                 definitionRevision, 
-                { ...multiVisualMatch, ...screenType(R.clone(multiVisualMatch), 'binomial') }, 
+                multiSpecimenLatinMatch
             ],
             wildcardLayouts : [glossaryTerms],
             reviewLayouts: [ commonToLatinMatch ]
