@@ -218,7 +218,7 @@ const genusEntry = {
     score: 1,
     points: 2,
     kind: 'T',
-    given: 'Species species name',
+    given: 'Given species name',
     requirement: 'Enter genus name',
     screens: [
         { ...specimen },
@@ -232,7 +232,7 @@ const speciesEntry = {
     score: 1,
     points: 2,
     kind: 'T',
-    given: 'Species genus name',
+    given: 'Given genus name',
     requirement: 'Enter species name',
     screens: [
         { ...specimen },
@@ -246,7 +246,7 @@ const speciesGenusEntry = {
     score: 1,
     points: 4,
     kind: 'T',
-    given: 'Species common name',
+    given: 'Given common name',
     requirement: 'Enter latin name',
     screens: [
         { ...specimen },
