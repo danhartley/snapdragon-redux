@@ -441,24 +441,41 @@ const landscapeLesson3 = {
                 multiSpecimenCommonMatch,
                 mixedSpeciesMatch,
                 definitionRevision, 
-                multiSpecimenLatinMatch,
+                multiSpecimenLatinMatch
             ],
-            wildcardLayouts : [glossaryTerms],
+            wildcardLayouts : [],
             reviewLayouts: [ commonToLatinMatch ]
         },
         {   id: 2,
             name:'Level 2',
             layouts: [ 
                 commonToLatinMatch,
-                textCompleteGenus,
-                textCompleteSpecies
+                commonEntry,                
             ],
-            wildcardLayouts : [],
+            wildcardLayouts : [glossaryTerms    ],
             reviewLayouts: [ 
-                textCompleteGenus,
-                textCompleteSpecies
+                commonToLatinMatch,
+                commonEntry,
             ]
         },
+        {   id: 3,
+            name:'Level 3',
+            layouts: [ textCompleteGenus, genusEntry ],
+            wildcardLayouts : [],
+            reviewLayouts: [ textCompleteGenus, genusEntry ]
+        },
+        {   id: 4,
+            name:'Level 4',
+            layouts: [ textCompleteSpecies, speciesEntry ],
+            wildcardLayouts : [  ],
+            reviewLayouts: [ textCompleteSpecies, speciesEntry ]
+        },
+        {   id: 5,
+            name:'Level 5',
+            layouts: [ speciesGenusEntry ],
+            wildcardLayouts : [ connections ],
+            reviewLayouts: [ speciesGenusEntry ]
+        } 
     ]
 };
 
@@ -536,33 +553,32 @@ const portraitLesson3 = {
                 definitionRevision, 
                 multiSpecimenLatinMatch
             ],
-            wildcardLayouts : [glossaryTerms],
+            wildcardLayouts : [],
             reviewLayouts: [ commonToLatinMatch ]
         },
         {   id: 2,
             name:'Level 2',
             layouts: [ 
                 commonToLatinMatch,
-                textCompleteGenus,
-                textCompleteSpecies
+                commonEntry,                
             ],
-            wildcardLayouts : [],
+            wildcardLayouts : [glossaryTerms    ],
             reviewLayouts: [ 
-                textCompleteGenus,
-                textCompleteSpecies
+                commonToLatinMatch,
+                commonEntry,
             ]
         },
         {   id: 3,
             name:'Level 3',
-            layouts: [ commonEntry ],
+            layouts: [ textCompleteGenus, genusEntry ],
             wildcardLayouts : [],
-            reviewLayouts: [ commonEntry ]
+            reviewLayouts: [ textCompleteGenus, genusEntry ]
         },
         {   id: 4,
             name:'Level 4',
-            layouts: [ genusEntry, speciesEntry ],
+            layouts: [ textCompleteSpecies, speciesEntry ],
             wildcardLayouts : [  ],
-            reviewLayouts: [ genusEntry, speciesEntry ]
+            reviewLayouts: [ textCompleteSpecies, speciesEntry ]
         },
         {   id: 5,
             name:'Level 5',

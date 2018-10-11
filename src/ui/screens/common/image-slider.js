@@ -1,3 +1,4 @@
+import { utils } from 'utils/utils';
 import { renderTemplate } from 'ui/helpers/templating';
 import { modalImagesHandler } from 'ui/helpers/image-handlers';
 import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
@@ -34,7 +35,7 @@ export const imageSlider = (config, images, parent, disableModal = false, image)
 
     parent.innerHTML = '';
 
-    renderTemplate({ images, index: '' }, slider.content, parent);
+    renderTemplate({ images: utils.shuffleArray(images), index: '' }, slider.content, parent);
     selectActiveImage(image, parent);    
     disableModalPopups(disableModal, parent, config);
 };
