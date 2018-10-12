@@ -15,9 +15,6 @@
 }
 
 @media (min-width: 320px) {
-    .header-text {
-        font-size: .9em;
-    }
     .squares { 
         height: 60%;
     }
@@ -38,9 +35,6 @@
     }
 }
 @media (min-width: 375px) {
-    .header-text {
-        font-size: 1em;
-    }
     body {
         font-size: 18px;
     }

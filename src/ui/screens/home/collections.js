@@ -49,7 +49,7 @@ export const renderCollections = (counter) => {
     const lessonPlanLink = document.querySelector('.js-lesson-plan-link');
 
     if(counter.isLessonPaused && config.isLandscapeMode) {
-        collectionDescription.innerHTML += `<span class='snap-alert'>If you change lessons your current lesson score will be lost!</span>`;
+        collectionDescription.innerHTML += `<span><span class='snap-alert snap-padding'>If you change lessons your current lesson score will be lost!</span></span>`;
     }
     
     elem.hide(lessonPlanLink);
