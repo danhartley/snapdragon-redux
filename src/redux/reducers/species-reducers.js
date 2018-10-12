@@ -38,16 +38,10 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
         let noLessonSelected = state.rounds === 0;
         let isLevelComplete = noLessonSelected ? false : state.currentRound === state.rounds;
 
-        // let lastLevel = state.lesson.levels.length;
         let isLessonComplete = false;
         if(state.lesson.level.id) {
             isLessonComplete = isLevelComplete && state.lesson.level.id === state.activeLevelCount;
         }
-        // let isLessonComplete = state.lesson.level.id ? state.lesson.level.id === lastLevel : false;
-        
-        // let speciesCount = state.items.length;
-        // let speciesTestedCount = state.currentRound * state.moduleSize;
-        // let speciesUntestedCount = speciesCount - speciesTestedCount;
 
         return { itemIndex, nextItem, layoutCounter, isNextRound, isLevelComplete, isLessonComplete };
     };
@@ -94,7 +88,8 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
         let isRevision = !!(lessonPlan && lessonPlan.collection);
         let isNextRound = state.layoutCounter === state.layoutCount;
         let layoutCounter = 0;
-        return { lessonPlan, isRevision, isNextRound, layoutCounter };
+        let itemGroup = state.itemGroups[state.currentRound - 1];
+        return { lessonPlan, isRevision, isNextRound, layoutCounter, itemGroup };
     };
     
     switch(action.type) {
@@ -125,9 +120,9 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
             return { ...state, itemIndex, currentRound, nextItem, layoutCounter, lesson };
         }
         case types.NEXT_LESSON: {
-            const { lessonPlan, isRevision, isNextRound, layoutCounter } = getNextLesson(action, state);
+            const { lessonPlan, isRevision, isNextRound, layoutCounter, itemGroup } = getNextLesson(action, state);
             const collection = isRevision ? lessonPlan.collection : state;
-            return { ...collection, isNextRound: false, layoutCount: action.data.layoutCount, isNextRound, layoutCounter };
+            return { ...collection, isNextRound: false, layoutCount: action.data.layoutCount, isNextRound, layoutCounter, itemGroup };
         }
         default: {
             return state; 

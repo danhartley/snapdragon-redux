@@ -15,7 +15,7 @@ export const fungiDescriptions = [
 
 export const fungiTraits = [
     { name: 'Agaricus bisporus', traits: [
-        { name: 'cap shape', value: 'convex', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.CONVEX, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -24,7 +24,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "free", language: 'en' },
     ]},
     { name: 'Amanita virosa', traits: [
-        { name: 'cap shape', value: 'convex', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.CONVEX, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
         { name: 'how edible', value : SD.howEdible.DEADLY, language: 'en', description: 'highly poisonous even in small quantities; symptoms delayed' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -34,7 +34,7 @@ export const fungiTraits = [
         { name: 'flesh', value : "pure white", language: 'en' },
     ]},
     { name: 'Mycena rosea', traits: [
-        { name: 'cap shape', value: 'conical', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.CONICAL, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value : SD.howEdible.POISONOUS, language: 'en', description: 'contains small amounts of muscarine' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -43,7 +43,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "adnate", language: 'en' },
     ]},
     { name: 'Clitocybe odora', traits: [
-        { name: 'cap shape', value: 'flat', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.FLAT, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
         { name: 'how edible', value: SD.howEdible.EDIBLE, language: 'en', description: 'aniseed flavour' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -52,7 +52,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "decurrent", language: 'en' },
     ]},
     { name: 'Amanita pantherina', traits: [
-        { name: 'cap shape', value: 'flat', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.FLAT, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
         { name: 'how edible', value : SD.howEdible.POISONOUS, language: 'en', description: 'sickness and hallucinations' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -61,7 +61,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "free", language: 'en' },
     ]},
     { name: 'Boletus edulis', traits: [
-        { name: 'cap shape', value: 'convex', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.CONVEX, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en', description: 'tasty; high in protein, vitamins, minerals and fibre' },
         { name: 'hymenium type', value : "pores", language: 'en' },
@@ -74,7 +74,7 @@ export const fungiTraits = [
         { name: 'trees', values: [ 'Quercus', 'Fagus', 'Pinus'] }
     ]},
     { name: 'Amanita muscaria', traits: [
-        { name: 'cap shape', value: 'flat', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.FLAT, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
         { name: 'how edible', value : SD.howEdible.POISONOUS, language: 'en', description: 'deadly in quantity' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -83,7 +83,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "free", language: 'en' },
     ]},
     { name: 'Laccaria amethystina', traits: [
-        { name: 'cap shape', value: 'convex', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.CONVEX, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
         { name: 'how edible', value: SD.howEdible.EDIBLE, language: 'en', description: 'not particularly tasty' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -92,7 +92,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "decurrent", language: 'en' },
     ]},
     { name: 'Scleroderma citrinum', traits: [
-        { name: 'cap shape', value: 'potato shaped', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.POTATO_SHAPED, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
         { name: 'how edible', value : SD.howEdible.POISONOUS, language: 'en', description: 'significant stomach upsets' },
         { name: 'hymenium type', value : "gleba", language: 'en' },
@@ -104,7 +104,7 @@ export const fungiTraits = [
         { name: 'look-alikes', values: [ 'Lycoperdon perlatum' ]},
     ]},
     { name: 'Auricularia auricula-judae', traits: [
-        { name: 'cap shape', value: 'NA', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.NA, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.EDIBLE, language: 'en', description: 'common in Chinese hot and sour soup' },
         { name: 'hymenium type', value : "smooth", language: 'en' },
@@ -113,7 +113,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "NA", language: 'en' },
     ]},
     { name: 'Coprinus comatus', traits: [
-        { name: 'cap shape', value: 'conical', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.CONICAL, language: 'en' },
         { name: 'cap colour', value: 'white, white scales', language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en', description: 'mild flavour' },
@@ -126,7 +126,7 @@ export const fungiTraits = [
         { name: 'look-alikes', values: [ 'Coprinus picaceus' ]},        
     ]},
     { name: 'Coprinus picaceus', traits: [
-        { name: 'cap shape', value: 'conical', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.CONICAL, language: 'en' },
         { name: 'cap colour', value: 'black, white scales', language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.POISONOUS, language: 'en', description: 'mild flavour' },
@@ -139,7 +139,7 @@ export const fungiTraits = [
         { name: 'look-alikes', values: [ 'Coprinus comatus' ]},        
     ]},
     { name: 'Grifola frondosa', traits: [
-        { name: 'cap shape', value: 'no, offset', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.OFFSET, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.PARASITIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "pores", language: 'en' },
@@ -148,7 +148,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "decurrent", language: 'en' },
     ]},
     { name: 'Amanita phalloides', traits: [
-        { name: 'cap shape', value: 'flat, convex', language: 'en' },
+        { name: 'cap shape', value: `${SD.capShape.FLAT}, ${SD.capShape.CONVEX}`, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
         { name: 'how edible', value: SD.howEdible.DEADLY, language: 'en' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -157,7 +157,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "free", language: 'en' },
     ]},
     { name: 'Lycoperdon pyriforme', traits: [
-        { name: 'cap shape', value: 'spherical, pear shaped', language: 'en' },
+        { name: 'cap shape', value: `${SD.capShape.SPHERICAL}, ${SD.capShape.PEAR_SHAPED}`, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "gleba", language: 'en' },
@@ -170,7 +170,7 @@ export const fungiTraits = [
         { name: 'look-alikes', values: [ 'Scleroderma citrinum', 'Amanita muscaria']},
     ]},
     { name: 'Lycoperdon perlatum', traits: [
-        { name: 'cap shape', value: 'spherical, pear shaped', language: 'en' },
+        { name: 'cap shape', value: `${SD.capShape.SPHERICAL}, ${SD.capShape.PEAR_SHAPED}`, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.EDIBLE, language: 'en' },
         { name: 'hymenium type', value : "gleba", language: 'en' },
@@ -183,7 +183,7 @@ export const fungiTraits = [
         { name: 'look-alikes', values: [ 'Scleroderma citrinum', 'Amanita muscaria' ]},
     ]},
     { name: 'Pleurotus ostreatus', traits: [
-        { name: 'cap shape', value: 'offset', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.OFFSET, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -195,7 +195,7 @@ export const fungiTraits = [
         { name: 'grouping', value : "large clusters", language: 'en' },
     ]},
     { name: 'Hericium erinaceus', traits: [
-        { name: 'cap shape', value: 'NA', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.NA, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.PARASITIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "teeth", language: 'en' },
@@ -204,7 +204,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "NA", language: 'en' },
     ]},
     { name: 'Laetiporus sulphureus', traits: [
-        { name: 'cap shape', value: 'flat', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.FLAT, language: 'en' },
         { name: 'ecological type', value: `${SD.ecoType.SAPROTROPHIC}, ${SD.ecoType.PARASITIC}`, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "pores", language: 'en' },
@@ -215,7 +215,7 @@ export const fungiTraits = [
         { name: 'grouping', value : "large groups", language: 'en' },
     ]},
     { name: 'Craterellus cornucopioides', traits: [
-        { name: 'cap shape', value: 'infundibuliform', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.INFUNDIBULIFORM, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "ridges", language: 'en' },
@@ -224,7 +224,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "decurrent", language: 'en' },
     ]},
     { name: 'Gyromitra esculenta', traits: [
-        { name: 'cap shape', value: 'convex, brain-like', language: 'en' },
+        { name: 'cap shape', value: `${SD.capShape.CONVEX}, ${SD.capShape.BRAIN_LIKE}`, language: 'en' },
         { name: 'ecological type', value: `${SD.ecoType.MYCORRHIZAL}, ${SD.ecoType.PARASITIC}`, language: 'en' },
         { name: 'how edible', value: SD.howEdible.DEADLY, language: 'en' },
         { name: 'hymenium type', value : "smooth", language: 'en' },
@@ -235,7 +235,7 @@ export const fungiTraits = [
         { name: 'look-alikes', values: [ 'Morchella esculenta' ]},
     ]},
     { name: 'Omphalotus olearius', traits: [
-        { name: 'cap shape', value: 'infundibuliform', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.INFUNDIBULIFORM, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value : SD.howEdible.POISONOUS, language: 'en' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -247,7 +247,7 @@ export const fungiTraits = [
         { name: 'look-alikes', values: [ 'Cantharellus cibarius', 'Hygrophoropsis aurantiaca' ]},
     ]},
     { name: 'Amanita rubescens', traits: [
-        { name: 'cap shape', value: 'infundibuliform', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.INFUNDIBULIFORM, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value : SD.howEdible.POISONOUS, language: 'en' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -258,7 +258,7 @@ export const fungiTraits = [
         { name: 'look-alikes', values: [ 'Macrolepiota procera' ]},     
     ]},
     { name: 'Cantharellus cibarius', traits: [
-        { name: 'cap shape', value: 'infundibuliform', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.INFUNDIBULIFORM, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "ridges", language: 'en' },
@@ -273,7 +273,7 @@ export const fungiTraits = [
         { name: 'trees', values: [ 'Quercus', 'Fagus', 'Betula'] }
     ]},
     { name: 'Hygrophoropsis aurantiaca', traits: [
-        { name: 'cap shape', value: 'depressed, infundibuliform', language: 'en' },
+        { name: 'cap shape', value: `${SD.capShape.INFUNDIBULIFORM}, ${SD.capShape.INFUNDIBULIFORM}`, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.INEDIBLE, language: 'en' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -286,7 +286,7 @@ export const fungiTraits = [
         { name: 'trees', values: [ 'Quercus', 'Fagus', 'Betula'] }
     ]},
     { name: 'Agaricus xanthodermus', traits: [
-        { name: 'cap shape', value: 'convex', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.CONVEX, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value : SD.howEdible.POISONOUS, language: 'en' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -299,7 +299,7 @@ export const fungiTraits = [
         { name: 'look-alikes', values: [ 'Agaricus campestris' ]}
     ]},
     { name: 'Clitocybe rivulosa', traits: [
-        { name: 'cap shape', value: 'depressed', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.DEPRESSED, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.DEADLY, language: 'en' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -308,7 +308,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "decurrent", language: 'en' },
     ]},
     { name: 'Agaricus campestris', traits: [
-        { name: 'cap shape', value: 'flat, convex', language: 'en' },
+        { name: 'cap shape', value: `${SD.capShape.FLAT}, ${SD.capShape.CONVEX}`, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -320,7 +320,7 @@ export const fungiTraits = [
         { name: 'look-alikes', values: [ 'Agaricus xanthodermus' ]}
     ]},
     { name: 'Marasmius oreades', traits: [
-        { name: 'cap shape', value: 'convex, umbonate', language: 'en' },
+        { name: 'cap shape', value: `${SD.capShape.CONVEX}, ${SD.capShape.UMBONATE}`, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -329,7 +329,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "adnate", language: 'en' },
     ]},
     { name: 'Morchella esculenta', traits: [
-        { name: 'cap shape', value: 'conical, ovate, honeycomb', language: 'en' },
+        { name: 'cap shape', value: `${SD.capShape.CONICAL}, ${SD.capShape.OVATE}, ${SD.capShape.HONEYCOMB}`, language: 'en' },
         { name: 'ecological type', value: `${SD.ecoType.SAPROTROPHIC}, ${SD.ecoType.MYCORRHIZAL}`, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "smooth", language: 'en' },
@@ -342,7 +342,7 @@ export const fungiTraits = [
         { name: 'look-alikes', values: [ 'Gyromitra esculenta' ]},
     ]},
     { name: 'Tylopilus felleus', traits: [
-        { name: 'cap shape', value: 'convex', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.CONVEX, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
         { name: 'how edible', value : "inedible", language: 'en' },
         { name: 'hymenium type', value : "pores", language: 'en' },
@@ -354,7 +354,7 @@ export const fungiTraits = [
         { name: 'trees', values: [ 'Quercus', 'Fagus', 'Pinus'] }
     ]},
     { name: 'Lactarius sanguifluus', traits: [
-        { name: 'cap shape', value: 'depressed', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.DEPRESSED, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -363,7 +363,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "decurrent", language: 'en' },
     ]},
     { name: 'Macrolepiota procera', traits: [
-        { name: 'cap shape', value: 'umbonate', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.UMBONATE, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -374,7 +374,7 @@ export const fungiTraits = [
         { name: 'look-alikes', values: [ 'Amanita rubescens', 'Amanitas', 'Posinous Lepiotas' ]},
     ]},
     { name: 'Amanita caesarea', traits: [
-        { name: 'cap shape', value: 'convex', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.CONVEX, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -383,7 +383,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "free", language: 'en' },
     ]},
     { name: 'Lactarius deliciosus', traits: [
-        { name: 'cap shape', value: 'depressed', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.DEPRESSED, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -392,7 +392,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "decurrent", language: 'en' },
     ]},
     { name: 'Fistulina hepatica', traits: [
-        { name: 'cap shape', value: 'flat', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.FLAT, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.PARASITIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.EDIBLE, language: 'en' },
         { name: 'hymenium type', value : "pores", language: 'en' },
@@ -401,7 +401,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "decurrent", language: 'en' },
     ]},
     { name: 'Chlorophyllum rhacodes', traits: [
-        { name: 'cap shape', value: 'convex, umbonate', language: 'en' },
+        { name: 'cap shape', value: `${SD.capShape.CONVEX}, ${SD.capShape.UMBONATE}` , language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -410,7 +410,7 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "free", language: 'en' },
     ]},
     { name: 'Coprinopsis picacea', traits: [
-        { name: 'cap shape', value: 'conical', language: 'en' },
+        { name: 'cap shape', value: SD.capShape.CONICAL, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
         { name: 'how edible', value: SD.howEdible.POISONOUS, language: 'en' },
         { name: 'hymenium type', value : "gills", language: 'en' },
