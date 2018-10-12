@@ -53,6 +53,10 @@ hr {
 
 /* variables */
 
+.snap-padding {
+  padding: .5em;
+}
+
 .no-progress {
   background-color: var(--snap-no-progress-bar);
 }
@@ -139,7 +143,7 @@ hr {
 }
 
 .glossary svg{
-  vertical-align: text-bottom;
+  vertical-align: middle;
 }
 
 .lessons-list .card {
@@ -163,11 +167,15 @@ hr {
   margin: 0 1em 0 0;
 }
 
-.active-icon {
+.nav-icons .icon {
+  color: var(--snap-green-ident);
+}
+
+.nav-icons .active-icon {
   color: var(--snap-active);
 }
 
-.inactive-icon {
+.nav-icons .inactive-icon {
   color: var(--snap-inactive);
   cursor: not-allowed;
 }
@@ -297,6 +305,10 @@ hr {
   top: 0;
 }
 
+.header-text {
+  color: var(--snap-green-ident-txt);
+}
+
 .footer {  
   bottom: 0;
 }
@@ -310,7 +322,8 @@ hr {
 }
 
 .score-footer span {
-  background-color: rgba(221, 229, 219, .2);
+  color: var(--snap-green-ident-txt);
+  /* background-color: rgba(221, 229, 219, .2); */
   padding: .75em;
 }
 
@@ -638,16 +651,18 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: var(--snap-text-dark);
 }
 
-.course-description span, .lesson-plan {
-  margin: 1em 0 0 0;
+.course-description {
+  margin: 1em 0;
+}
+
+.course-description span {
   display: block;
+  margin: 0 0 1em 0;
 }
 
-.course-description span:nth-child(1) {
-  margin: 0;
+.course-description .snap-alert {
+  width: 50%;
 }
-
-/* dropdown menus */
 
 .dropdown-menu {
   border: 1px solid var(--snap-border-dark);

@@ -2,6 +2,8 @@
 
     --snap-text-dark: rgb(45,45,45);
     --snap-text-light:rgb(255, 255, 255);
+    --snap-green-ident: rgb(20, 39, 15);
+    --snap-green-ident-txt: rgb(39, 76, 30);
     
     --snap-primary: rgba(52, 105, 23, .3);
     --snap-collection: rgba(2, 43, 84, .7);
