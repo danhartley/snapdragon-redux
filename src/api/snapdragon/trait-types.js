@@ -55,3 +55,35 @@ export const ecoType = {
     PARASITIC,
     MYCORRHIZAL
 }
+
+const CONVEX = 'Convex';
+const CONICAL = 'Conical';
+const FLAT = 'Flat';
+const POTATO_SHAPED = 'Potato shaped';
+const NA = 'N/A';
+const SPHERICAL = 'Spherical';
+const PEAR_SHAPED = 'Pear shaped';
+const OFFSET = 'Offset';
+const INFUNDIBULIFORM = 'Infundibuliform';
+const BRAIN_LIKE = 'Brain-like';
+const DEPRESSED = 'Depressed';
+const UMBONATE = 'Umbonate';
+const OVATE = 'Ovate';
+const HONEYCOMB = 'Honeycomb';
+
+export const capShape = {
+    CONVEX,
+    CONICAL,
+    FLAT,
+    POTATO_SHAPED,
+    NA,
+    SPHERICAL,
+    PEAR_SHAPED,
+    OFFSET,
+    INFUNDIBULIFORM,
+    BRAIN_LIKE,
+    DEPRESSED,
+    UMBONATE,
+    OVATE,
+    HONEYCOMB
+};

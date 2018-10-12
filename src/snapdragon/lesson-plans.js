@@ -365,8 +365,9 @@ const connections = {
 };
 
 const propertyTrait = (traitPropertyMatch, trait) => {
-    traitPropertyMatch.screens[1].trait = trait;
-    return traitPropertyMatch;
+    const layout = R.clone(traitPropertyMatch);
+    layout.screens[1].trait = trait;
+    return layout;
 };
 
 const landscapeLesson1 = {
@@ -438,6 +439,7 @@ const landscapeLesson3 = {
                 speciesRevision,                 
                 latinToCommonMatch, 
                 { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
+                { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'capShape') },
                 multiSpecimenCommonMatch,
                 mixedSpeciesMatch,
                 definitionRevision, 
@@ -548,6 +550,7 @@ const portraitLesson3 = {
                 speciesRevision,                 
                 latinToCommonMatch, 
                 { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
+                { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'capShape') },
                 multiSpecimenCommonMatch,
                 mixedSpeciesMatch,
                 definitionRevision, 

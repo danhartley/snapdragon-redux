@@ -14,7 +14,7 @@ export const lookALikes = (collection, item, traits, config) => {
 
         const matchTemplate = document.createElement('template');
         matchTemplate.innerHTML = visualComparisonTemplate;
-        const lookalikeNode = document.querySelector('.js-lookalikes');
+        const lookalikeParent = document.querySelector('.js-lookalikes');
 
         const slides = [];
 
@@ -38,9 +38,9 @@ export const lookALikes = (collection, item, traits, config) => {
 
         if(slides.length === 1) return;
 
-        renderTemplate({slides}, matchTemplate.content, lookalikeNode);
+        renderTemplate({slides, names: names.join(', ')}, matchTemplate.content, lookalikeParent);
 
-        document.querySelector('.js-compare-species-label').innerHTML = `Look-alikes: ${names.join(', ')}`;
+        document.querySelector('.js-compare-species-label').innerHTML = `Look-alikes:`;
         
         if(!config.isLandscapeMode) return;
 

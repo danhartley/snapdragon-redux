@@ -73,6 +73,12 @@ export const renderSpecimenMatch = collection => {
                 descriptions[1] = 'Click on an image to open the picture gallery.'
                 descriptions[2] = 'Stuck? Click here to reveal the name of this mushroom.';
                 break;
+            case 'capShape':
+                traitName = 'cap shape';
+                descriptions[0] = 'How would you describe the pileus (cap) of this mushroom?';
+                descriptions[1] = 'Click on an image to open the picture gallery.'
+                descriptions[2] = 'Stuck? Click here to reveal the name of this mushroom.';
+                break;
         }
                 
         const traitValue = fungiTraits.find(trait => trait.name === item.name).traits.find(trait => trait.name === traitName).value;
@@ -84,11 +90,17 @@ export const renderSpecimenMatch = collection => {
             traits.push(value);
           });
 
-        if(config.isPortraitMode) {
-            const filteredTraits = R.take(2, traits.filter(trait => trait !== traitValue));
-            filteredTraits.push(traits.find(trait => trait.toUpperCase() === traitValue.toUpperCase()));
+        if(config.isLandscapeMode) {
+            const filteredTraits = R.take(4, traits.filter(trait => trait !== traitValue));            
             traits = utils.shuffleArray(filteredTraits);
         }
+
+        if(config.isPortraitMode) {
+            const filteredTraits = R.take(2, traits.filter(trait => trait !== traitValue));
+            traits = utils.shuffleArray(filteredTraits);
+        }
+
+        traits.push(traitValue);
 
         answers = traits.filter(utils.onlyUnique);
 
@@ -102,7 +114,9 @@ export const renderSpecimenMatch = collection => {
             });
         }
 
-        lookALikes(collection, item, fungiTraits, config);
+        if(screen.trait === 'howEdible') {            
+            lookALikes(collection, item, fungiTraits, config);
+        }
     }
 
     if(config.isPortraitMode) {
