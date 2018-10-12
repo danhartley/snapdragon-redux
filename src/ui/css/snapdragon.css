@@ -1075,7 +1075,7 @@ table {
 .table-row td:nth-child(3) > span {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
 }
 
