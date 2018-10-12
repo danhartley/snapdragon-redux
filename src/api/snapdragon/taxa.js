@@ -1600,7 +1600,7 @@ export const taxa = [
             {
                 language: 'en',
                 summary: 'Cosmopolitan distribution. Members are saprobic.',
-                identification: 'Require detailled microscopic examination.'
+                identification: 'Require detailed microscopic examination.'
             }
         ],
         eol: "http://eol.org/pages/6890860/overview",
