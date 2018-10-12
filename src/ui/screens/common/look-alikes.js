@@ -49,7 +49,8 @@ export const lookALikes = (collection, item, traits, config) => {
             imageSideBySlider(slides, parent, true, config);
         });
 
-        const description = fungiDescriptions.find(trait => trait.type === 'lookalike' && R.contains(item.name, trait.ids)).description;
+        let description = fungiDescriptions.find(trait => trait.type === 'lookalike' && R.contains(item.name, trait.ids));
+        description = description ? description.description : '';
 
         document.querySelector('#imageComparisonModal .js-comparison-description').innerHTML = description;
     }
