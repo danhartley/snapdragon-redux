@@ -251,6 +251,10 @@
         padding: .5em;
     }
 
+    .imageSlider .carousel-item {
+        height: 70vh;
+    }
+
     .text-question {
         min-height: 3em;
     }

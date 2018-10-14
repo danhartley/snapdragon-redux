@@ -1269,7 +1269,7 @@ table {
 }
 
 .imageSlider .carousel-item {
-  height: 70vh;
+  height: 30vh;
   padding: 0 10%;
 }
 
@@ -1526,9 +1526,9 @@ div.hide-empty:empty, span.hide-empty:empty {
   padding: .5em;
 }
 
-.visual-match .description span:nth-child(2) {
+/* .visual-match .description span:nth-child(2) {
   margin: .5em 0 0 0;
-}
+} */
 
 .names-badge {
   font-size: .8em;

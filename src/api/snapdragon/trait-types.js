@@ -6,7 +6,7 @@ const SOIL = 'Soil';
 const VEGETATION = 'Vegetation';
 const ROOTS = 'Roots';
 const DUNG = 'Dung';
-const DUNE = 'Dune';
+const DUNES = 'Dunes';
 const WIDESPREAD = 'Widespread';
 const DEAD_WOOD = 'Dead wood';
 const WASTELAND = 'Wasteland';
@@ -29,7 +29,7 @@ export const habitats = {
     VEGETATION,
     ROOTS, 
     DUNG,
-    DUNE,
+    DUNES,
     WIDESPREAD,
     DEAD_WOOD,
     WASTELAND,
@@ -50,7 +50,7 @@ const BIRCH = 'Birch';
 const PINE = 'Pine';
 const DECIDUOUS = 'Deciduous';
 const MIXED_WOODLAND = 'Mixed woodland';
-const CONIFER = 'Conifers';
+const CONIFERS = 'Conifers';
 const ASH = 'Ash';
 const ELM = 'Elm';
 const SYCAMORE = 'Sycamore';
@@ -65,6 +65,8 @@ const ROBINIA = "Robinia";
 const CERATONIA = "Ceratonia";
 const EUCALYPTUS = "Eucalyptus";
 const BROAD_LEAF = 'Broad-leaf';
+const SWEET_CHESTNUT = 'Sweet chestnut';
+const POPLAR = "Poplar";
 
 export const treeTypes = {
     OAK,
@@ -72,7 +74,7 @@ export const treeTypes = {
     BIRCH,
     DECIDUOUS,
     MIXED_WOODLAND,
-    CONIFER,
+    CONIFERS,
     PINE,
     ELM,
     ASH,
@@ -87,7 +89,9 @@ export const treeTypes = {
     ROBINIA,
     CERATONIA,
     EUCALYPTUS,
-    BROAD_LEAF
+    BROAD_LEAF,
+    SWEET_CHESTNUT,
+    POPLAR
 }
 
 const DEADLY = 'Deadly';

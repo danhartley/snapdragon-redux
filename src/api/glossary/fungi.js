@@ -214,4 +214,10 @@ export const fungi = [
         level: 2,
         group: 2
     },
+    {
+        term: "Umbonate",
+        definition: "A mushroom having an umbo (raised area) in the centre of its cap.",
+        level: 2,
+        group: 2
+    },
 ]
