@@ -570,4 +570,8 @@ export const epithets = [
         "latin" : ["Lycopersicon"],
         "en" : ["wolf's peach"]
     },
+    {
+        "latin" : ["hepatica"],
+        "en" : ["Liver like"]
+    },
 ];

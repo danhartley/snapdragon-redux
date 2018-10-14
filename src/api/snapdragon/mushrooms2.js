@@ -1167,4 +1167,72 @@ export const mushrooms2 = [
     "family": "Pleurotaceae",
     "eolName": "Pleurotus ostreatus (Jacq.) P. Kumm. 1871"
   },
+  {
+    "id": 989800,
+    "name": "Coprinopsis picacea",
+    "images": [
+      "2015/03/21/15/04416_orig.jpg",
+      "2014/01/31/17/47116_orig.jpg",
+      "2014/01/31/16/05632_orig.jpg",
+      "2011/07/26/06/80590_orig.jpg",
+      "2014/02/01/13/26299_orig.jpg",
+      "2014/01/31/19/35484_orig.jpg",
+      "2014/01/31/19/37947_orig.jpg",
+      "2014/01/31/21/39552_orig.jpg",
+      "2014/05/01/16/62431_orig.jpg",
+      "2014/05/01/16/70299_orig.jpg"
+    ],
+    "names": [
+      {
+        "vernacularName": "Spechttintling",
+        "language": "de",
+        "eol_preferred": true
+      },
+      {
+        "vernacularName": "Elsterntintling",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Magpie Inkcap",
+        "language": "en",
+        "eol_preferred": true
+      },
+      {
+        "vernacularName": "Coprin pie",
+        "language": "fr",
+        "eol_preferred": true
+      },
+      {
+        "vernacularName": "Coprin noir et blanc",
+        "language": "fr"
+      }
+    ],
+    "descriptions": [],
+    "taxonomy": {
+      "usageKey": 5242777,
+      "scientificName": "Coprinopsis picacea (Bull.) Redhead, Vilgalys & Moncalvo",
+      "canonicalName": "Coprinopsis picacea",
+      "rank": "SPECIES",
+      "status": "ACCEPTED",
+      "confidence": 100,
+      "matchType": "EXACT",
+      "kingdom": "Fungi",
+      "phylum": "Basidiomycota",
+      "order": "Agaricales",
+      "family": "Psathyrellaceae",
+      "genus": "Coprinopsis",
+      "species": "Coprinopsis picacea",
+      "kingdomKey": 5,
+      "phylumKey": 34,
+      "classKey": 186,
+      "orderKey": 1499,
+      "familyKey": 4184,
+      "genusKey": 6005961,
+      "speciesKey": 5242777,
+      "synonym": false,
+      "class": "Agaricomycetes"
+    },
+    "family": "Psathyrellaceae",
+    "eolName": "Coprinopsis picacea (Bull.) Redhead, Vilgalys & Moncalvo 2001"
+  },
 ];

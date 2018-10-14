@@ -105,6 +105,7 @@ const renderLandscape = (item, config, question) => {
             pool = item.species.toLowerCase();
             break;
         case 'binomial':
+        case 'name':
             pool = item.name.toLowerCase();
             break;
     }

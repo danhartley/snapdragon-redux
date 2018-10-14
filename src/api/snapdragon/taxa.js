@@ -2134,7 +2134,7 @@ export const taxa = [
         name: 'Macrolepiota',
         names: [ { language: "en", names: ['Parasols']}],
         traits: [ 
-            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND_LITTER, SD.habitats.DUNE, SD.habitats.GRASSLAND ] },
+            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND_LITTER, SD.habitats.DUNES, SD.habitats.GRASSLAND ] },
             { language: "en", name: 'lookalikes', values: [ 'Amanita (Puffballs)' ] },
         ],
         descriptions: [
