@@ -55,7 +55,7 @@ export const renderInput = (screen, question, hints) => {
         answerBtn.disabled = true;
         setTimeout(() => {
             answerBtn.disabled = false;
-        }, 500);
+        }, 1000);
     }
     
 

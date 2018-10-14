@@ -31,7 +31,7 @@ test('intial state of the app should be consistent', () => {
 
     const { collections, collection } = store.getState();
     expect(collections.length).toBeGreaterThan(0);
-    const received = {"currentRound": 0, "descriptions": null, "id": 0, "isNextRound": true,"lesson": {"level": {}, "levels": []}, "rounds": 0};
+    const received =  {"currentRound": 0, "descriptions": null, "id": 0, "isNextRound": true,"rounds": 0};
     expect(collection).toEqual(received);
 
     const { counter, score, history, revision } = store.getState();

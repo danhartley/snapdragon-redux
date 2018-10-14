@@ -91,12 +91,12 @@ export const renderSpecimenMatch = collection => {
           });
 
         if(config.isLandscapeMode) {
-            const filteredTraits = R.take(4, traits.filter(trait => trait !== traitValue));            
+            const filteredTraits = R.take(4, traits.filter(trait => trait.toUpperCase() !== traitValue.toUpperCase()));            
             traits = utils.shuffleArray(filteredTraits);
         }
 
         if(config.isPortraitMode) {
-            const filteredTraits = R.take(2, traits.filter(trait => trait !== traitValue));
+            const filteredTraits = R.take(2, traits.filter(trait => trait.toUpperCase() !== traitValue.toUpperCase()));
             traits = utils.shuffleArray(filteredTraits);
         }
 

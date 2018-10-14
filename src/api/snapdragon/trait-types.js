@@ -13,6 +13,12 @@ const WASTELAND = 'Wasteland';
 const MEADOW = 'Meadow';
 const FIELDS = 'Fields';
 const MOSS = 'Moss';
+const PASTURE = 'Pasture';
+const COMMONS = 'Commons';
+const HEATH = 'Heath';
+const ORCHARDS = 'Orchards';
+const HEDGEROWS = 'Hedgerows';
+const LAWNS = "Lawns";
 
 export const habitats = {
     WOOD,
@@ -29,8 +35,60 @@ export const habitats = {
     WASTELAND,
     MEADOW,
     FIELDS, 
-    MOSS
+    MOSS,
+    PASTURE,
+    COMMONS,
+    HEATH,
+    ORCHARDS,
+    HEDGEROWS,
+    LAWNS
 };
+
+const OAK = 'Oak';
+const BEECH = 'Beech';
+const BIRCH = 'Birch';
+const PINE = 'Pine';
+const DECIDUOUS = 'Deciduous';
+const MIXED_WOODLAND = 'Mixed woodland';
+const CONIFER = 'Conifers';
+const ASH = 'Ash';
+const ELM = 'Elm';
+const SYCAMORE = 'Sycamore';
+const ASPEN = 'Aspen';
+const ELDER = 'Elder';
+const CHESTNUT = 'Chestnut';
+const HARDWOODS = 'Hardwoods';
+const PRUNUS = 'Prunus';
+const PYRUS = "Pyrus";
+const SALIX = "Salix";
+const ROBINIA = "Robinia";
+const CERATONIA = "Ceratonia";
+const EUCALYPTUS = "Eucalyptus";
+const BROAD_LEAF = 'Broad-leaf';
+
+export const treeTypes = {
+    OAK,
+    BEECH,
+    BIRCH,
+    DECIDUOUS,
+    MIXED_WOODLAND,
+    CONIFER,
+    PINE,
+    ELM,
+    ASH,
+    SYCAMORE,
+    ASPEN,
+    ELDER,
+    CHESTNUT,
+    HARDWOODS,
+    PRUNUS,
+    PYRUS,
+    SALIX,
+    ROBINIA,
+    CERATONIA,
+    EUCALYPTUS,
+    BROAD_LEAF
+}
 
 const DEADLY = 'Deadly';
 const POISONOUS = 'Poisonous';

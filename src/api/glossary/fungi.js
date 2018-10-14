@@ -196,4 +196,22 @@ export const fungi = [
         level: 2,
         group: 2
     },
+    {
+        term: "Symbiosis",
+        definition: "A long-term biological interaction between organisms of different species.",
+        level: 2,
+        group: 2
+    },
+    {
+        term: "Symbiont",
+        definition: "An organism living in symbiosis with another.",
+        level: 2,
+        group: 2
+    },
+    {
+        term: "Sclerotium",
+        definition: "A compact mass of hardened fungal mycelium containing food reserves.",
+        level: 2,
+        group: 2
+    },
 ]

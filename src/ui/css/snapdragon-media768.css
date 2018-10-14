@@ -134,7 +134,7 @@
         color: var(--snap-text-dark);
     }
 
-    .letterbox-entry button:nth-child(2) {
+    .letterbox-entry button {
         margin: .5em 0 0 0;
     }
 

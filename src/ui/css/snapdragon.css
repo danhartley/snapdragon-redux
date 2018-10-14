@@ -457,8 +457,12 @@ hr {
   margin: 0 0 0 1em;
 }
 
-.species-card-name {
+.latin-name {
   font-style: italic;
+}
+
+.common-name {
+  font-style: normal;
 }
 
 .species-header {
@@ -552,7 +556,6 @@ hr {
   justify-content: flex-end;
   align-items: center;
   padding: 0 .5em 0 0;
-  align-items: center;
   font-size: .9m;
 }
 
@@ -1239,7 +1242,7 @@ table {
   padding: 0;
 }
 
-.compare-species-label {
+.feature-label {
   color: var(--snap-green-ident-txt);
 }
 
@@ -1266,7 +1269,7 @@ table {
 }
 
 .imageSlider .carousel-item {
-  height: 35vh;
+  height: 70vh;
   padding: 0 10%;
 }
 
@@ -1283,7 +1286,11 @@ table {
   height: 1.5em;
 }
 
-#imageModal .imageSlider .carousel-item, #imageComparisonModal .imageSlider .carousel-item {
+/* #imageModal .imageSlider .carousel-item, #imageComparisonModal .imageSlider .carousel-item {
+  height: 70vh;
+} */
+
+#imageModal .modal-body, #imageComparisonModal .modal-body {
   height: 70vh;
 }
 
@@ -1482,7 +1489,7 @@ iframe#birdsong {
 }
 
 .visual-match .imageSlider .carousel-item {
-  height: 30vh;
+  height: 50vh;
 }
 
 .visual-match .radio-buttons label {
@@ -1622,5 +1629,8 @@ th.lessonScore {
 }
 
 .comparison-description {
-  padding: .5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 .5em;
 }

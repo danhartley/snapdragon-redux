@@ -43,7 +43,7 @@ test('collection should return default parameter state when there is no action t
   const action = { };  
   const state = collection(speciesStateHelper.collection, action);
 
-  const received = {"currentRound": 0, "descriptions": null, "id": 0, "isNextRound": true,"lesson": {"level": {}, "levels": []}, "rounds": 0};
+  const received = {"currentRound": 0, "descriptions": null, "id": 0, "isNextRound": true,"rounds": 0};
 
   expect(state).toEqual(received);
 });

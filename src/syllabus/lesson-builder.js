@@ -36,13 +36,14 @@ export const createLesson = (lessonName, levelName, moduleSize, isPortraitMode, 
 
     revisionLayouts.forEach( (layout, i) => {
         const layoutItemIndex = layout.itemIndex || utils.calcItemIndex(offSet, layoutsToAdd, i);
+        layout.itemIndex = layoutItemIndex;
+        const arrayIndex = newLessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
+        newLessonLayouts.splice(arrayIndex, 0, layout);
         const family = collection.items.find((item, index) => index === layoutItemIndex).family;
         if(!R.contains(family, families)) {
-            layout.itemIndex = layoutItemIndex;
-            const arrayIndex = newLessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
-            newLessonLayouts.splice(arrayIndex, 0, layout);
+            families.push(family);            
         }
-        families.push(family);
+        
     });
 
     let hasGlossary = false;

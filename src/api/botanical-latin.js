@@ -558,4 +558,16 @@ export const epithets = [
         "latin" : ["kantharos"],
         "en" : ["tankard", "cup"]
     },
+    {
+        "latin" : ["pyriforme"],
+        "en" : ["pear-shaped"]
+    },
+    {
+        "latin" : ["Lycoperdon"],
+        "en" : ["wolf's fart"]
+    },
+    {
+        "latin" : ["Lycopersicon"],
+        "en" : ["wolf's peach"]
+    },
 ];
