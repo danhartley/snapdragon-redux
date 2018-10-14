@@ -12,6 +12,7 @@ import { getBirdSong } from 'xeno-canto/birdsong';
 import { traits } from 'api/traits/traits';
 import { fungiTraits } from 'api/traits/fungi-traits';
 import { lookALikes } from 'ui/screens/common/look-alikes';
+import { featureType } from 'ui/screens/common/feature';
 import { infoSlider } from 'ui/screens/common/info-slider';
 
 export const renderCard = (collection) => {
@@ -214,4 +215,6 @@ const renderCommonParts = (template, config, item, collection) => {
     }
 
     lookALikes(collection, item, fungiTraits, config);
+    featureType(collection, item, fungiTraits, config, document.querySelector('.js-ecology'), 'ecology');
+    featureType(collection, item, fungiTraits, config, document.querySelector('.js-symbionts'), 'symbionts');
 };

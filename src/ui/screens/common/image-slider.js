@@ -54,10 +54,15 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
     document.querySelector(`#imageComparisonModal .js-modal-image-title span:nth-child(4)`).innerHTML = '';
 
     slides.forEach((slide, index) => {
-        const header = document.querySelector(`#imageComparisonModal .js-modal-image-title span:nth-child(${index + 1})`);
-        header.innerHTML = `${slide.images[0].itemCommon} <br> (${slide.images[0].itemName})`;
+        const header = document.querySelector(`#imageComparisonModal .js-modal-image-title > span:nth-child(${index + 1})`);
+        header.innerHTML = `<span class="common-name">${slide.images[0].itemCommon}</span><br><span class="latin-name">(${slide.images[0].itemName})</span>`;
         renderTemplate({ images: slide.images, index: index + 1 }, sideBySlider.content, parent);
         document.querySelector(`#imageSlider${index + 1} .carousel-item`).classList.add('active');
         disableModalPopups(disableModal, config);
     });
+
+    if(document.querySelector('.js-comparison-description div').style.display !== 'none') {
+        document.querySelectorAll('.imageSlider .carousel-item').forEach(item => item.style.height = '50vh');
+        document.querySelector('.js-comparison-description').style.height = '20vh';
+    }
 };

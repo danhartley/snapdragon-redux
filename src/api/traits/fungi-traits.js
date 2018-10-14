@@ -22,6 +22,9 @@ export const fungiTraits = [
         { name: 'spore print colour', value : "brown", language: 'en' },
         { name: 'stipe character', value : "ring", language: 'en' },
         { name: 'gill attachment', value : "free", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ '' ]},
+        { name: 'ecology', values: [ ''] }
     ]},
     { name: 'Amanita virosa', traits: [
         { name: 'cap shape', value: SD.capShape.CONVEX, language: 'en' },
@@ -32,6 +35,10 @@ export const fungiTraits = [
         { name: 'stipe character', value : "ring and volva", language: 'en' },
         { name: 'gill attachment', value : "free", language: 'en' },
         { name: 'flesh', value : "pure white", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ '' ]},
+        { name: 'ecology', values: [ SD.habitats.MIXED_WOODLAND ] },
+        { name: 'symbionts', values: [ SD.treeTypes.DECIDUOUS, SD.treeTypes.CONIFERS ] },
     ]},
     { name: 'Mycena rosea', traits: [
         { name: 'cap shape', value: SD.capShape.CONICAL, language: 'en' },
@@ -41,6 +48,10 @@ export const fungiTraits = [
         { name: 'spore print colour', value : "white", language: 'en' },
         { name: 'stipe character', value : "bare", language: 'en' },
         { name: 'gill attachment', value : "adnate", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ '' ]},
+        { name: 'ecology', values: [ SD.treeTypes.MIXED_WOODLAND] },
+        { name: 'symbionts', values: [ SD.treeTypes.DECIDUOUS ] },
     ]},
     { name: 'Clitocybe odora', traits: [
         { name: 'cap shape', value: SD.capShape.FLAT, language: 'en' },
@@ -50,6 +61,10 @@ export const fungiTraits = [
         { name: 'spore print colour', value : "white", language: 'en' },
         { name: 'stipe character', value : "bare", language: 'en' },
         { name: 'gill attachment', value : "decurrent", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ '' ]},
+        { name: 'ecology', values: [ SD.treeTypes.MIXED_WOODLAND] },
+        { name: 'symbionts', values: [ SD.treeTypes.DECIDUOUS ] },
     ]},
     { name: 'Amanita pantherina', traits: [
         { name: 'cap shape', value: SD.capShape.FLAT, language: 'en' },
@@ -59,6 +74,10 @@ export const fungiTraits = [
         { name: 'spore print colour', value : "white", language: 'en' },
         { name: 'stipe character', value : "ring and volva", language: 'en' },
         { name: 'gill attachment', value : "free", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ '' ]},
+        { name: 'ecology', values: [ SD.habitats.WOODLAND ] },
+        { name: 'symbionts', values: [ SD.treeTypes.BEECH ] },
     ]},
     { name: 'Boletus edulis', traits: [
         { name: 'cap shape', value: SD.capShape.CONVEX, language: 'en' },
@@ -71,7 +90,8 @@ export const fungiTraits = [
         { name: 'flesh', value : "white, yellowing", language: 'en' }
     ], context: [
         { name: 'look-alikes', values: [ 'Tylopilus felleus' ]},
-        { name: 'trees', values: [ 'Quercus', 'Fagus', 'Pinus'] }
+        { name: 'ecology', values: [ SD.treeTypes.MIXED_WOODLAND ]},
+        { name: 'symbionts', values: [ SD.treeTypes.OAK, SD.treeTypes.BEECH, SD.treeTypes.PINE] }
     ]},
     { name: 'Amanita muscaria', traits: [
         { name: 'cap shape', value: SD.capShape.FLAT, language: 'en' },
@@ -81,6 +101,10 @@ export const fungiTraits = [
         { name: 'spore print colour', value : "white", language: 'en' },
         { name: 'stipe character', value : "ring and volva", language: 'en' },
         { name: 'gill attachment', value : "free", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ '' ]},
+        { name: 'ecology', values: [ SD.habitats.MIXED_WOODLAND ] },
+        { name: 'symbionts', values: [ SD.treeTypes.BEECH, SD.treeTypes.PINE, SD.treeTypes.BIRCH, SD.treeTypes.DECIDUOUS, SD.treeTypes.CONIFER ] },
     ]},
     { name: 'Laccaria amethystina', traits: [
         { name: 'cap shape', value: SD.capShape.CONVEX, language: 'en' },
@@ -90,6 +114,10 @@ export const fungiTraits = [
         { name: 'spore print colour', value : "white", language: 'en' },
         { name: 'stipe character', value : "bare", language: 'en' },
         { name: 'gill attachment', value : "decurrent", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ '' ]},
+        { name: 'ecology', values: [ SD.treeTypes.MIXED_WOODLAND ] },
+        { name: 'symbionts', values: [ SD.treeTypes.ELDER, SD.treeTypes.DECIDUOUS ] },
     ]},
     { name: 'Scleroderma citrinum', traits: [
         { name: 'cap shape', value: SD.capShape.POTATO_SHAPED, language: 'en' },
@@ -102,6 +130,8 @@ export const fungiTraits = [
         { name: 'flesh', value : "off-white, purple, black", language: 'en' },
     ], context: [
         { name: 'look-alikes', values: [ 'Lycoperdon perlatum' ]},
+        { name: 'ecology', values: [ SD.habitats.COMMONS, SD.habitats.PASTURE, SD.habitats.HEATH, SD.treeTypes.MIXED_WOODLAND] },
+        { name: 'symbionts', values: [ ] },
     ]},
     { name: 'Auricularia auricula-judae', traits: [
         { name: 'cap shape', value: SD.capShape.NA, language: 'en' },
@@ -111,6 +141,10 @@ export const fungiTraits = [
         { name: 'spore print colour', value : "white, cream", language: 'en' },
         { name: 'stipe character', value : "none or very short", language: 'en' },
         { name: 'gill attachment', value : "NA", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ '' ]},
+        { name: 'ecology', values: [ SD.treeTypes.MIXED_WOODLAND ] },
+        { name: 'symbionts', values: [ SD.treeTypes.ELDER, SD.treeTypes.SYCAMORE, SD.treeTypes.BEECH, SD.treeTypes.ASH, SD.treeTypes.DECIDUOUS ] },
     ]},
     { name: 'Coprinus comatus', traits: [
         { name: 'cap shape', value: SD.capShape.CONICAL, language: 'en' },
@@ -123,7 +157,9 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "free", language: 'en' },
         { name: 'flesh', value : "white", language: 'en' },
     ], context: [
-        { name: 'look-alikes', values: [ 'Coprinus picaceus' ]},        
+        { name: 'look-alikes', values: [ 'Coprinus picaceus' ]},
+        { name: 'ecology', values: [ SD.habitats.WASTELAND, SD.habitats.LAWNS ] },
+        { name: 'symbionts', values: [] },  
     ]},
     { name: 'Coprinus picaceus', traits: [
         { name: 'cap shape', value: SD.capShape.CONICAL, language: 'en' },
@@ -136,7 +172,9 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "free", language: 'en' },
         { name: 'flesh', value : "white", language: 'en' },
     ], context: [
-        { name: 'look-alikes', values: [ 'Coprinus comatus' ]},        
+        { name: 'look-alikes', values: [ 'Coprinus comatus' ]},       
+        { name: 'ecology', values: [] },
+        { name: 'symbionts', values: [] },   
     ]},
     { name: 'Grifola frondosa', traits: [
         { name: 'cap shape', value: SD.capShape.OFFSET, language: 'en' },
@@ -146,6 +184,10 @@ export const fungiTraits = [
         { name: 'spore print colour', value : "white", language: 'en' },
         { name: 'stipe character', value : "NA", language: 'en' },
         { name: 'gill attachment', value : "decurrent", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ 'Meripilus giganteus' ]},
+        { name: 'ecology', values: [ SD.habitats.WOODLAND ] },
+        { name: 'symbionts', values: [SD.treeTypes.OAK, SD.treeTypes.DECIDUOUS] },  
     ]},
     { name: 'Amanita phalloides', traits: [
         { name: 'cap shape', value: `${SD.capShape.FLAT}, ${SD.capShape.CONVEX}`, language: 'en' },
@@ -155,6 +197,10 @@ export const fungiTraits = [
         { name: 'spore print colour', value : "white", language: 'en' },
         { name: 'stipe character', value : "ring and volva", language: 'en' },
         { name: 'gill attachment', value : "free", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ 'Amanita caesarea' ]},
+        { name: 'ecology', values: [ SD.habitats.WOODLAND ] },
+        { name: 'symbionts', values: [SD.treeTypes.OAK, SD.treeTypes.PINE, SD.treeTypes.CHESTNUT] },  
     ]},
     { name: 'Lycoperdon pyriforme', traits: [
         { name: 'cap shape', value: `${SD.capShape.SPHERICAL}, ${SD.capShape.PEAR_SHAPED}`, language: 'en' },
@@ -168,6 +214,8 @@ export const fungiTraits = [
         { name: 'smell', value : "unpleasant, gas-like", language: 'en' },        
     ], context: [
         { name: 'look-alikes', values: [ 'Scleroderma citrinum', 'Amanita muscaria']},
+        { name: 'ecology', values: [ SD.habitats.DEAD_WOOD ] },
+        { name: 'symbionts', values: [SD.treeTypes.DECIDUOUS, SD.treeTypes.CONIFER] },  
     ]},
     { name: 'Lycoperdon perlatum', traits: [
         { name: 'cap shape', value: `${SD.capShape.SPHERICAL}, ${SD.capShape.PEAR_SHAPED}`, language: 'en' },
@@ -181,6 +229,8 @@ export const fungiTraits = [
         { name: 'grouping', value : "usually gregarious", language: 'en' },
     ], context: [
         { name: 'look-alikes', values: [ 'Scleroderma citrinum', 'Amanita muscaria' ]},
+        { name: 'ecology', values: [ SD.treeTypes.MIXED_WOODLAND] },
+        { name: 'symbionts', values: [SD.treeTypes.DECIDUOUS] },  
     ]},
     { name: 'Pleurotus ostreatus', traits: [
         { name: 'cap shape', value: SD.capShape.OFFSET, language: 'en' },
@@ -193,6 +243,10 @@ export const fungiTraits = [
         { name: 'flesh', value : "white, tough in stem", language: 'en' },
         { name: 'smell', value : "mushroomy", language: 'en' },
         { name: 'grouping', value : "large clusters", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ ]},
+        { name: 'ecology', values: [ SD.habitats.MIXED_WOODLAND] },
+        { name: 'symbionts', values: [SD.habitats.DEAD_WOOD, SD.treeTypes.BEECH, SD.treeTypes.DECIDUOUS] },  
     ]},
     { name: 'Hericium erinaceus', traits: [
         { name: 'cap shape', value: SD.capShape.NA, language: 'en' },
@@ -202,6 +256,10 @@ export const fungiTraits = [
         { name: 'spore print colour', value : "white", language: 'en' },
         { name: 'stipe character', value : "NA", language: 'en' },
         { name: 'gill attachment', value : "NA", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ ]},
+        { name: 'ecology', values: [SD.treeTypes.BEECH] },
+        { name: 'symbionts', values: [] },  
     ]},
     { name: 'Laetiporus sulphureus', traits: [
         { name: 'cap shape', value: SD.capShape.FLAT, language: 'en' },
@@ -213,6 +271,10 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "no", language: 'en' },
         { name: 'flesh', value : "yellow, orange, white", language: 'en' },
         { name: 'grouping', value : "large groups", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: ['Polyporus squamosus', 'Meripilus giganteus', 'Laetiporus huroniensis', 'Laetiporus gilbertsonii' ]},
+        { name: 'ecology', values: [SD.habitats.DEAD_WOOD, SD.treeTypes.HARDWOODS, SD.treeTypes.BEECH, SD.treeTypes.OAK, SD.treeTypes.PRUNUS, SD.treeTypes.SALIX, SD.treeTypes.ROBINIA, SD.treeTypes.EUCALYPTUS, SD.treeTypes.CERATONIA] },
+        { name: 'symbionts', values: [] },  
     ]},
     { name: 'Craterellus cornucopioides', traits: [
         { name: 'cap shape', value: SD.capShape.INFUNDIBULIFORM, language: 'en' },
@@ -222,6 +284,10 @@ export const fungiTraits = [
         { name: 'spore print colour', value : "buff, cream", language: 'en' },
         { name: 'stipe character', value : "bare", language: 'en' },
         { name: 'gill attachment', value : "decurrent", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ '' ]},
+        { name: 'ecology', values: [ SD.habitats.WOODLAND_LITTER, SD.treeTypes.BEECH, SD.treeTypes.OAK, SD.treeTypes.BROAD_LEAF ] },
+        { name: 'symbionts', values: [ ] },
     ]},
     { name: 'Gyromitra esculenta', traits: [
         { name: 'cap shape', value: `${SD.capShape.CONVEX}, ${SD.capShape.BRAIN_LIKE}`, language: 'en' },
@@ -233,6 +299,8 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "NA", language: 'en' },
     ], context: [
         { name: 'look-alikes', values: [ 'Morchella esculenta' ]},
+        { name: 'ecology', values: [ SD.habitats.WASTELAND ] },
+        { name: 'symbionts', values: [ SD.treeTypes.ELM, SD.treeTypes.ASH, SD.treeTypes.PINE, SD.treeTypes.BEECH, SD.treeTypes.SYCAMORE ] },
     ]},
     { name: 'Omphalotus olearius', traits: [
         { name: 'cap shape', value: SD.capShape.INFUNDIBULIFORM, language: 'en' },
@@ -245,6 +313,7 @@ export const fungiTraits = [
         { name: 'grouping', value : "clusters", language: 'en' },
     ], context: [
         { name: 'look-alikes', values: [ 'Cantharellus cibarius', 'Hygrophoropsis aurantiaca' ]},
+        { name: 'ecology', values: [ SD.habitats.ROOTS, SD.habitats.DEAD_WOOD ] },
     ]},
     { name: 'Amanita rubescens', traits: [
         { name: 'cap shape', value: SD.capShape.INFUNDIBULIFORM, language: 'en' },
@@ -256,6 +325,8 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "decurrent", language: 'en' },
     ], context: [
         { name: 'look-alikes', values: [ 'Macrolepiota procera' ]},     
+        { name: 'ecology', values: [ SD.treeTypes.DECIDUOUS ] },
+        { name: 'symbionts', values: [ SD.treeTypes.CONIFER ] }
     ]},
     { name: 'Cantharellus cibarius', traits: [
         { name: 'cap shape', value: SD.capShape.INFUNDIBULIFORM, language: 'en' },
@@ -270,7 +341,8 @@ export const fungiTraits = [
         { name: 'vitamins', value : "C, D", language: 'en' },
     ], context: [
         { name: 'look-alikes', values: [ 'Omphalotus olearius', 'Omphalotus illudens', 'Hygrophoropsis aurantiaca' ] },
-        { name: 'trees', values: [ 'Quercus', 'Fagus', 'Betula'] }
+        { name: 'ecology', values: [ SD.habitats.MOSS ] },
+        { name: 'symbionts', values: [ SD.treeTypes.OAK, SD.treeTypes.BEECH, SD.treeTypes.BIRCH ] }
     ]},
     { name: 'Hygrophoropsis aurantiaca', traits: [
         { name: 'cap shape', value: `${SD.capShape.INFUNDIBULIFORM}, ${SD.capShape.INFUNDIBULIFORM}`, language: 'en' },
@@ -283,7 +355,8 @@ export const fungiTraits = [
         { name: 'flesh', value : "as cap", language: 'en' }
     ], context: [
         { name: 'look-alikes', values: [ 'Cantharellus cibarius' ]},
-        { name: 'trees', values: [ 'Quercus', 'Fagus', 'Betula'] }
+        { name: 'ecology', values: [ SD.treeTypes.MIXED_WOODLAND ] },
+        { name: 'symbionts', values: [ SD.treeTypes.OAK, SD.treeTypes.BEECH, SD.treeTypes.BIRCH] }
     ]},
     { name: 'Agaricus xanthodermus', traits: [
         { name: 'cap shape', value: SD.capShape.CONVEX, language: 'en' },
@@ -296,7 +369,8 @@ export const fungiTraits = [
         { name: 'flesh', value : "white, bruising yellow", language: 'en' },
         { name: 'smell', value : "iodine, ink", language: 'en' },
     ], context: [
-        { name: 'look-alikes', values: [ 'Agaricus campestris' ]}
+        { name: 'look-alikes', values: [ 'Agaricus campestris' ]},
+        { name: 'ecology', values: [ SD.treeTypes.MIXED_WOODLAND, SD.habitats.GRASSLAND, SD.habitats.HEDGEROWS ] }
     ]},
     { name: 'Clitocybe rivulosa', traits: [
         { name: 'cap shape', value: SD.capShape.DEPRESSED, language: 'en' },
@@ -317,7 +391,8 @@ export const fungiTraits = [
         { name: 'gill attachment', value : "free", language: 'en' },
         { name: 'flesh', value : "white, bruising pink", language: 'en' },
     ], context: [
-        { name: 'look-alikes', values: [ 'Agaricus xanthodermus' ]}
+        { name: 'look-alikes', values: [ 'Agaricus xanthodermus' ]},
+        { name: 'ecology', values: [ SD.habitats.PASTURE, SD.habitats.MEADOW, SD.habitats.WASTELAND, SD.habitats.FIELDS ] }
     ]},
     { name: 'Marasmius oreades', traits: [
         { name: 'cap shape', value: `${SD.capShape.CONVEX}, ${SD.capShape.UMBONATE}`, language: 'en' },
@@ -340,18 +415,21 @@ export const fungiTraits = [
         { name: 'grouping', value : "scattered clusters", language: 'en' },
     ], context: [
         { name: 'look-alikes', values: [ 'Gyromitra esculenta' ]},
+        { name: 'ecology', values: [ SD.habitats.ORCHARDS, SD.habitats.WOODLAND, SD.habitats.WASTELAND ] },
+        { name: 'symbionts', values: [ SD.treeTypes.ELM, SD.treeTypes.ASH, SD.treeTypes.PINE, SD.treeTypes.BEECH, SD.treeTypes.SYCAMORE ] }
     ]},
     { name: 'Tylopilus felleus', traits: [
         { name: 'cap shape', value: SD.capShape.CONVEX, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
-        { name: 'how edible', value : "inedible", language: 'en' },
+        { name: 'how edible', value : SD.howEdible.INEDIBLE, language: 'en' },
         { name: 'hymenium type', value : "pores", language: 'en' },
         { name: 'spore print colour', value : "pink, buff", language: 'en' },
         { name: 'stipe character', value : "bare", language: 'en' },
         { name: 'gill attachment', value : "adnate", language: 'en' },
     ], context: [
         { name: 'look-alikes', values: [ 'Boletus edulis' ]},
-        { name: 'trees', values: [ 'Quercus', 'Fagus', 'Pinus'] }
+        { name: 'ecology', values: [ SD.treeTypes.MIXED_WOODLAND ]},
+        { name: 'symbionts', values: [ SD.treeTypes.OAK, SD.treeTypes.BEECH] }
     ]},
     { name: 'Lactarius sanguifluus', traits: [
         { name: 'cap shape', value: SD.capShape.DEPRESSED, language: 'en' },
@@ -381,6 +459,10 @@ export const fungiTraits = [
         { name: 'spore print colour', value : "white", language: 'en' },
         { name: 'stipe character', value : "ring and volva", language: 'en' },
         { name: 'gill attachment', value : "free", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ 'Amanita phalloides' ]},
+        { name: 'ecology', values: [ SD.habitats.WOODLAND ] },
+        { name: 'symbionts', values: [SD.treeTypes.OAK, SD.treeTypes.CONIFER, SD.treeTypes.PINE] },  
     ]},
     { name: 'Lactarius deliciosus', traits: [
         { name: 'cap shape', value: SD.capShape.DEPRESSED, language: 'en' },

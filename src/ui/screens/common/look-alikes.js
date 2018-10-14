@@ -4,13 +4,13 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageSideBySlider } from 'ui/screens/common/image-slider';
 import visualComparisonTemplate from 'ui/screens/common/look-alikes-link-template.html';
-import { fungiDescriptions } from 'api/traits/fungi-traits';
+import { fungiDescriptions } from 'api/traits/fungi-traits'; // pass these in; consider a more generic visual comparison function
 
 export const lookALikes = (collection, item, traits, config) => {
 
     const lookalikes = itemProperties.itemContextProperty(traits, item, 'look-alikes');
 
-    if(lookalikes) {
+    if(lookalikes && lookalikes !== '') {
 
         const matchTemplate = document.createElement('template');
         matchTemplate.innerHTML = visualComparisonTemplate;
@@ -52,6 +52,6 @@ export const lookALikes = (collection, item, traits, config) => {
         let description = fungiDescriptions.find(trait => trait.type === 'lookalike' && R.contains(item.name, trait.ids));
         description = description ? description.description : '';
 
-        document.querySelector('#imageComparisonModal .js-comparison-description').innerHTML = description;
+        document.querySelector('#imageComparisonModal .js-comparison-description div').innerHTML = description;
     }
 };
