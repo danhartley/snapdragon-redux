@@ -21,7 +21,7 @@ const createLessonPlan = (lessonPlan, config, collection) => {
 
             if(layouts.length > 0 || wildcardLayouts.length > 0) return;
 
-            const levelId = collection.lesson.level.id + increment;
+            const levelId = increment + 1;
             const level = lessonPlan.levels.find(level => level.id === levelId);
             collection.lesson.level = level;
             lessonName = collection.lesson.name;

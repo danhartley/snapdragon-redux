@@ -27,7 +27,7 @@ import { renderSnapdragon } from "./ui/screens/home/snapdragon";
 
 import { screenShare } from 'ui/screens/multichoice/mixed-specimen-shared';
 
-setTimeout(()=>{
+setTimeout( () => {
 
     const { config, counter: currentCounter, collection } = store.getState();
 
@@ -42,7 +42,7 @@ setTimeout(()=>{
     subscription.add(renderHeaders, 'page', 'flow');
     subscription.add(renderNavigation, 'page', 'flow');
     subscription.add(renderCollections, 'counter', 'flow');
-    if(!config.isPortraitMode) {
+    if(!config.isPortraitMode && (collection && !collection.name)) {
         subscription.add(renderSnapdragon, 'counter', 'flow');
     }
     subscription.add(nextLesson, 'counter', 'flow');

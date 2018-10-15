@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.6em;
+  font-size: 1.4em;
 }
 
 a:hover {
@@ -113,7 +113,8 @@ hr {
 }
 
 .btn-language {
-  color: var(--snap-text-dark);
+  /* color: var(--snap-text-dark); */
+  color:rgb(68, 68, 68);
   background-color: var(--snap-language);
   border-color: var(--snap-language);
 }
@@ -147,8 +148,21 @@ hr {
   color: var(--snap-text-dark);
 }
 
-.glossary svg{
+.glossary svg {
   vertical-align: middle;
+}
+
+.lessons-list > div:nth-child(1) {
+  height: 2.5rem;
+  background-color: rgb(79, 106, 135,.8);
+  display: flex;
+  align-items: center;
+  color: white;
+  width: 100%;
+}
+
+.lessons-list > div:nth-child(1) > div {    
+  padding: 0 .5em;
 }
 
 .lessons-list .card {
@@ -432,8 +446,12 @@ hr {
 }
 
 .snapdragon.card {
-  margin: 0 0 1em 0;
+  border: 0;  
 }
+
+/* .snapdragon.card > div {
+  margin: 1em 0 0 0;
+} */
 
 .taxon-highlight {  
   background-color: var(--snap-taxon-card-background);
@@ -665,7 +683,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .course-description span {
   display: block;
-  margin: 0 0 1em 0;
+  margin: 0 0 .75em 0;
 }
 
 .course-description .snap-alert {
@@ -976,12 +994,23 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 .table-header, .table-footer {
   color: var(--snap-text-light);
   background-color: var(--snap-list-header);
+  background-color: rgb(127, 151, 122);
   line-height: 2.5;
   cursor: pointer;
   display: flex;
   flex-direction: row;
   border: 1px solid transparent;
   height: 2.5rem;
+  position: sticky;  
+  z-index: 10;
+}
+
+.table-header {
+  top: 0;
+}
+
+.table-footer {
+  top: 300px;
 }
 
 .table-header th, .table-footer td {
