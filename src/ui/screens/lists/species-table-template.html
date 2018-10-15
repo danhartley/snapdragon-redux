@@ -7,10 +7,6 @@
                     <tr class="table-row js-list-item">
                         <td>
                             <span>{{ item.snapIndex }}</span>
-                            <div class="custom-control custom-checkbox">
-                                <input name="{{ item.binomial }}" type="checkbox" class="custom-control-input" id="inputCheck{{ item.snapIndex }}" checked>
-                                <label class="custom-control-label" for="inputCheck{{ item.snapIndex }}"></label>
-                            </div>
                         </td>
                         <td>
                             <img id="{{ item.name }}" src="https://media.eol.org/content/{{ item.image }}" alt="{{ item.name }}" data-toggle="modal" data-target="#imageModal" data-image="{{ item.image }}" data-id="{{ item.name }}" data-src="https://media.eol.org/content/{{ item.image }}">
@@ -28,6 +24,12 @@
                         </td>
                         <td>
                             <span>{{ item.fails }}</span>
+                        </td>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input name="{{ item.binomial }}" type="checkbox" class="custom-control-input" id="inputCheck{{ item.snapIndex }}" checked>
+                                <label class="custom-control-label" for="inputCheck{{ item.snapIndex }}"></label>
+                            </div>
                         </td>
                     </tr>
                 </tbody>

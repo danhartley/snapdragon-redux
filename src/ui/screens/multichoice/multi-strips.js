@@ -92,7 +92,7 @@ export const renderMultiStrips = (collection) => {
 
     if(screen.name === 'species-scientifics') {
 
-        const number = config.isPortraitMode ? 6 : config.isSmallLandscapeMode ? 6 : 6;
+        const number = config.isPortraitMode ? 6 : config.isLandscapeMode ? 6 : 6;
 
         const vernacular = itemProperties.vernacularName(item, config);
         const questionText = config.isPortraitMode ? 'Select equivalent of common name' : `Select the latin equivalent of the common name`;
@@ -109,7 +109,7 @@ export const renderMultiStrips = (collection) => {
 
         if(!collection.speciesVernacularNames) return;
 
-        const number = config.isPortraitMode ? 6 : config.isSmallLandscapeMode ? 6 : 6;
+        const number = config.isPortraitMode ? 6 : config.isLandscapeMode ? 6 : 6;
 
         const questionText = config.isPortraitMode ? 'Select equivalent of latin name' : `Select the common name equivalent of the latin`;
         const question = itemProperties.vernacularName(item, config);
@@ -123,7 +123,7 @@ export const renderMultiStrips = (collection) => {
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
-        const number = config.isPortraitMode ? 3 : config.isSmallLandscapeMode ? 4 : 5;
+        const number = config.isPortraitMode ? 3 : config.isLandscapeMode ? 4 : 5;
 
         const questionText = config.isPortraitMode ? 'Tap to match Quick ID' : `Click to match the Quick Id`;
         const question = families.find(f => f.name === item.family).descriptions[0].identification;

@@ -164,6 +164,7 @@ const comparer = function(idx, asc) { return function(a, b) { return function(v1
 const makeSortable = document => {
   Array.from(document.querySelectorAll('th > span:nth-child(1)')).forEach(function(sp) { sp.addEventListener('click', function() {
           var th = this.parentElement;
+          if(th.classList[0] === 'not-sortable') return;
           var table = th.closest('table');
           var body = table.querySelector('tbody');
           var footer = table.querySelector('tfoot');          

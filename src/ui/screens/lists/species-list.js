@@ -1,4 +1,5 @@
 import { store } from 'redux/store';
+import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
 import { modalImageHandler } from 'ui/helpers/image-handlers';

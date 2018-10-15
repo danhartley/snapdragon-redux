@@ -1,10 +1,8 @@
 import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
-// import { itemProperties } from 'ui/helpers/data-checking';
 import { elem } from 'ui/helpers/class-behaviour';
 import { renderTemplate } from 'ui/helpers/templating';
 import { markTest } from 'ui/helpers/score-handler';
-// import { imageSlider } from 'ui/screens/common/image-slider';
 import updateBtnTemplate from 'ui/screens/multichoice/update-btn-template.html';
 
 export const scoreHandler = (type, test, callback, config, containers) => {

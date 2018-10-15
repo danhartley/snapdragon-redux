@@ -32,7 +32,6 @@ setTimeout(()=>{
     const { config, counter: currentCounter, collection } = store.getState();
 
     config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
-    config.isSmallLandscapeMode = window.matchMedia("(max-width: 1023px)").matches;
     config.isLandscapeMode = !config.isPortraitMode;
 
     const counter = currentCounter ? { ...currentCounter } : { index: null };
