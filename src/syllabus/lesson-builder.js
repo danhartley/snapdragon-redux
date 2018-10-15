@@ -24,7 +24,9 @@ export const createLesson = (lessonName, levelName, moduleSize, isPortraitMode, 
 
     const revisionLayouts = lessonPlan.layouts.filter(layout => layout.type === 'revision' && layout.name !== 'screen-definition-card');
     const lessonLayouts = [ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts];
-    const offSet = (collection.currentRound - 1) * moduleSize;
+    let offSet = (collection.currentRound - 1) * moduleSize;
+
+    offSet = offSet < 0 ? 0 : offSet;
 
     const newLessonLayouts = lessonLayouts.map( (layout, i) => {
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, layoutsToAdd, i);

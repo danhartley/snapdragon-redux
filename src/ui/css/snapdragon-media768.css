@@ -79,9 +79,9 @@
         grid-column: 3;
     }
 
-    .table-header th {
+    /* .table-header th {
         font-size: 1em;
-    }
+    } */
 
     .tiles {
         height: 75%;
@@ -258,4 +258,9 @@
     .text-question {
         min-height: 3em;
     }
+
+    .summary-scores {
+        align-self: center;
+        margin: 2em 0 0 0;
+      }
 }

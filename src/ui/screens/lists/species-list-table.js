@@ -5,7 +5,6 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { traits } from 'api/traits/traits';
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 import speciesPortraitTemplate from 'ui/screens/lists/species-table-portrait-template.html';
-import speciesSmallLandscapeTemplate from 'ui/screens/lists/species-table-small-landscape-template.html';
 
 export const buildTable = (collection, config) => {
 
@@ -13,6 +12,8 @@ export const buildTable = (collection, config) => {
 
     let totalPasses = 0;
     let totalFails = 0;
+
+    const wide = window.matchMedia("(min-width: 1200px)").matches;
 
     collection.items.forEach(item => { 
         item.image = item.list || item.images[0];
@@ -29,7 +30,7 @@ export const buildTable = (collection, config) => {
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
     parent.innerHTML = '<div class="snapdragon-container species-list js-species-list"></div>';
     parent = parent.querySelector('.snapdragon-container.js-species-list');
-    template.innerHTML = config.isPortraitMode ? speciesPortraitTemplate : config.isSmallLandscapeMode ? speciesSmallLandscapeTemplate : speciesTemplate;
+    template.innerHTML = wide ? speciesTemplate : speciesPortraitTemplate;
 
     renderTemplate({ collection }, template.content, parent);
 
@@ -44,16 +45,15 @@ export const buildTable = (collection, config) => {
     const familyHeader = document.createElement('th');
     const passesHeader = document.createElement('th');
     const failsHeader = document.createElement('th');
-    const sorter = document.createElement('span');
+    const filterHeader = document.createElement('th');
+    filterHeader.classList.add('not-sortable');
+
     const checkbox = document.createElement('span');
     const inputCheck = document.createElement('input');
-    if(config.isPortraitMode) {
-        checkbox.innerHTML = '<span>View</span>';
-    }    
+
     checkbox.classList.add('custom-control');
     checkbox.classList.add('form-control-lg');
     checkbox.classList.add('custom-checkbox');
-    checkbox.classList.add('not-sortable');
     inputCheck.id = 'inputCheckAll'
     inputCheck.type = "checkbox";
     inputCheck.checked = true;
@@ -63,37 +63,27 @@ export const buildTable = (collection, config) => {
     labelCheck.setAttribute('for', 'inputCheckAll');
     checkbox.appendChild(inputCheck);
     checkbox.appendChild(labelCheck);    
+    indexHeader.innerHTML = `<span></span>`;
     speciesHeader.innerHTML = '<span>Species</span';
     familyHeader.innerHTML = '<span>Family</span>';
     passesHeader.innerHTML = '<span class="icon"><i class="fas fa-check-circle"></i></span>';
     failsHeader.innerHTML = '<span class="icon"><i class="fas fa-times-circle"></i></span>';
-    if(!config.isPortraitMode) {
-        indexHeader.appendChild(sorter);
-        indexHeader.appendChild(checkbox);
-        imageHeader.innerHTML = '<div></div>';
-    } else {
-        imageHeader.appendChild(checkbox);
-    }
-    if(config.isPortraitMode) {
-        headerRow.appendChild(imageHeader);    
-        headerRow.appendChild(speciesHeader);
-        headerRow.appendChild(passesHeader);
-        headerRow.appendChild(failsHeader);     
-    } else if(config.isSmallLandscapeMode) {
-        headerRow.appendChild(indexHeader);
-        headerRow.appendChild(imageHeader);
-        headerRow.appendChild(speciesHeader);
-        headerRow.appendChild(passesHeader);
-        headerRow.appendChild(failsHeader);
-    }
-    else {
+    filterHeader.appendChild(checkbox); 
+    imageHeader.innerHTML = '<div></div>';
+    if(wide) {        
         headerRow.appendChild(indexHeader);
         headerRow.appendChild(imageHeader);
         headerRow.appendChild(speciesHeader);    
         headerRow.appendChild(familyHeader);
         headerRow.appendChild(passesHeader);
-        headerRow.appendChild(failsHeader);
-    } 
+        headerRow.appendChild(failsHeader); 
+    } else {
+        headerRow.appendChild(imageHeader);    
+        headerRow.appendChild(speciesHeader);
+        headerRow.appendChild(passesHeader);
+        headerRow.appendChild(failsHeader);     
+    }
+    headerRow.appendChild(filterHeader);      
 
     tbody.insertBefore(headerRow, tbody.children[0]);
 
@@ -107,6 +97,7 @@ export const buildTable = (collection, config) => {
     const familyFooter = document.createElement('td');
     const passesFooter = document.createElement('td');
     const failsFooter = document.createElement('td');
+    const filterFooter = document.createElement('td');
 
     imageFooter.innerHTML = '<div></div>';
     indexFooter.innerHTML = '<div></div>';
@@ -116,25 +107,22 @@ export const buildTable = (collection, config) => {
     passesFooter.innerHTML = `<div>${totalPasses}</div>`;
     failsFooter.innerHTML = `<div>${totalFails}</div>`;
 
-    if(config.isPortraitMode) {
-        footerRow.appendChild(imageFooter);
-        footerRow.appendChild(speciesFooter);
-        footerRow.appendChild(passesFooter);
-        footerRow.appendChild(failsFooter);
-    } else if(config.isSmallLandscapeMode) {
-        footerRow.appendChild(imageFooter);
-        footerRow.appendChild(indexFooter);
-        footerRow.appendChild(speciesFooter);
-        footerRow.appendChild(passesFooter);
-        footerRow.appendChild(failsFooter);
-    } else {
+    filterFooter.innerHTML = '<div></div>';
+
+    if(wide) {
         footerRow.appendChild(imageFooter);
         footerRow.appendChild(indexFooter);
         footerRow.appendChild(speciesFooter);
         footerRow.appendChild(familyFooter);
         footerRow.appendChild(passesFooter);
         footerRow.appendChild(failsFooter);
+    } else {
+        footerRow.appendChild(imageFooter);
+        footerRow.appendChild(speciesFooter);
+        footerRow.appendChild(passesFooter);
+        footerRow.appendChild(failsFooter);
     }
+    footerRow.appendChild(filterFooter);
 
     tfoot.appendChild(footerRow);
     table.appendChild(tfoot);
