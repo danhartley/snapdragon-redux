@@ -6,7 +6,8 @@
     --snap-green-ident-txt: rgb(39, 76, 30);
     
     --snap-primary: rgba(52, 105, 23, .3);
-    --snap-collection: rgba(2, 43, 84, .7);
+    /* --snap-collection: rgba(2, 43, 84, .7); */
+    --snap-collection: rgb(79, 106, 135,.9);
     --snap-collection-active: rgba(95, 125, 89,1);
     --snap-collection-hover: rgba(95, 126, 89,.2);
     
