@@ -571,7 +571,15 @@ export const epithets = [
         "en" : ["wolf's peach"]
     },
     {
-        "latin" : ["hepatica"],
-        "en" : ["Liver like"]
+        "latin" : ["Grifola"],
+        "en" : ["Something intricate or braided"]
+    },
+    {
+        "latin" : ["Frondosa"],
+        "en" : ["Full of leaves"]
+    },
+    {
+        "latin" : ["calvus"],
+        "en" : ["bald, without hair"]
     },
 ];

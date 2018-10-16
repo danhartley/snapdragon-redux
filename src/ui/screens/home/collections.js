@@ -22,7 +22,7 @@ export const renderCollections = (counter) => {
     template.innerHTML = collectionsTemplate;
 
     let language = config.languages.find(l => l.lang === config.language);
-    let lessons = utils.sortBy(collections.filter(c => c.type === 'species'), 'courseId', 'asc');
+    let lessons = utils.sortBy(collections.filter(c => c.type === 'species'), 'providerId', 'asc');
 
     DOM.rightBody.innerHTML = '';
 
@@ -123,20 +123,20 @@ export const renderCollections = (counter) => {
        changeCollection(id); 
     });
 
-    let currentCourseId;
+    let currentProviderId;
 
     document.querySelectorAll('.dropdown.js-collections .dropdown-item').forEach(option => {
 
         subscription.getByName('renderSnapdragon').forEach(sub => subscription.remove(sub));
 
         const optionCollection = collections.find(c => c.id === parseInt(option.id));
-        if(optionCollection.courseId !== currentCourseId && optionCollection.course !== '') {
+        if(optionCollection.providerId !== currentProviderId && optionCollection.course !== '') {
             var courseHeader = document.createElement('span');
             courseHeader.classList.add('dropdown-item-text');
             courseHeader.innerHTML = optionCollection.course;
             option.before(courseHeader);            
         }
-        currentCourseId = optionCollection.courseId;
+        currentProviderId = optionCollection.providerId;
     });
 
     // Languages

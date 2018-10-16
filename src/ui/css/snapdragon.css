@@ -87,6 +87,7 @@ hr {
   padding: .25em 1em;
   border-bottom: 1px solid lightgray;
   border-top: 1px solid darkgray;
+  background-color: rgb(79, 106, 135,.4);
 }
 
 .collections a.dropdown-item, .languages a.dropdown-item {
