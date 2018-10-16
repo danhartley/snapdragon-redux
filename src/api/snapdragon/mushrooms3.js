@@ -652,6 +652,10 @@ export const mushrooms3 = [
           {
             "vernacularName": "Míscaro",
             "language": "pt"
+          },
+          {
+            "vernacularName": "Sancha",
+            "language": "pt"
           }
         ],
         "descriptions": [],
@@ -735,7 +739,12 @@ export const mushrooms3 = [
             "vernacularName": "Langue-de-boeuf",
             "language": "fr",
             "eol_preferred": true
-          }
+          },
+          {
+            "vernacularName": "Língua de vaca",
+            "language": "pt",
+            "eol_preferred": true
+          },
         ],
         "descriptions": [
           "<div class=\"textile\"><p><img src=\"http://upload.wikimedia.org/wikipedia/commons/2/28/Fistulina_hepatica.JPG\" style=\"width:300px;\" alt=\"\" /></p>&nbsp;<p><em>Fistulina hepatica</em> or beefsteak fungus or beefsteak polypore as it is commonly called is a common edible fungus in the Great Britain, but is less common in NOrth America. It is found in many parts of the world like North America, Australia and Europe. It is usually found growing on mature living oaks or chestnuts and is known to cause brown heart rot. It is a bracket fungus commonly called as beefsteak fungus or ox tongue fungus due to its striking resemblance to a chunk of fresh meat or liver. It is widely used as a substitute for meat and has been known to be used a lot by the Europeans especially the French. In the natural environment where this fungus is found it is very easy to identify this fungus as it looks like a mass of red meat sticking to a log. <br />&nbsp;<em>Fistulina</em> is not considered as a &#8220;true&#8221; polpore inspite its tubes being packed tightly because the tubes are discrete units like the bristles of a brush. Thus leading the &#8220;Polyporologists&#8221; to classify and give <em>F. hepatica</em> its own family Fistulinaceae</p></div>"

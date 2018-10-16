@@ -91,7 +91,7 @@ export const fungiTraits = [
     ], context: [
         { name: 'look-alikes', values: [ 'Tylopilus felleus' ]},
         { name: 'ecology', values: [ SD.treeTypes.MIXED_WOODLAND ]},
-        { name: 'symbionts', values: [ SD.treeTypes.OAK, SD.treeTypes.BEECH, SD.treeTypes.PINE] }
+        { name: 'symbionts', values: [ SD.treeTypes.OAK, SD.treeTypes.BEECH, SD.treeTypes.PINE, SD.treeTypes.CHESTNUT, SD.treeTypes.CORK] }
     ]},
     { name: 'Amanita muscaria', traits: [
         { name: 'cap shape', value: SD.capShape.FLAT, language: 'en' },
@@ -198,7 +198,7 @@ export const fungiTraits = [
         { name: 'stipe character', value : "ring and volva", language: 'en' },
         { name: 'gill attachment', value : "free", language: 'en' },
     ], context: [
-        { name: 'look-alikes', values: [ 'Amanita caesarea' ]},
+        { name: 'look-alikes', values: [ 'Amanita caesarea', 'Tricholoma equestre', 'Amanita muscaria' ]},
         { name: 'ecology', values: [ SD.habitats.WOODLAND ] },
         { name: 'symbionts', values: [SD.treeTypes.OAK, SD.treeTypes.PINE, SD.treeTypes.CHESTNUT] },  
     ]},
@@ -472,9 +472,9 @@ export const fungiTraits = [
         { name: 'stipe character', value : "ring and volva", language: 'en' },
         { name: 'gill attachment', value : "free", language: 'en' },
     ], context: [
-        { name: 'look-alikes', values: [ 'Amanita phalloides' ]},
+        { name: 'look-alikes', values: [ 'Amanita phalloides', 'Amanita muscaria' ]},
         { name: 'ecology', values: [ SD.habitats.WOODLAND ] },
-        { name: 'symbionts', values: [SD.treeTypes.OAK, SD.treeTypes.CONIFERS, SD.treeTypes.PINE] },  
+        { name: 'symbionts', values: [SD.treeTypes.OAK, SD.treeTypes.CONIFERS, SD.treeTypes.PINE, SD.treeTypes.CHESTNUT] },  
     ]},
     { name: 'Lactarius deliciosus', traits: [
         { name: 'cap shape', value: SD.capShape.DEPRESSED, language: 'en' },
@@ -510,5 +510,67 @@ export const fungiTraits = [
         { name: 'spore print colour', value : "white", language: 'en' },
         { name: 'stipe character', value : "ring", language: 'en' },
         { name: 'gill attachment', value : "free", language: 'en' },
+    ]},
+    { name: 'Amanita ponderosa', traits: [
+        { name: 'cap shape', value: `${SD.capShape.HEMI_SPHERICAL}, ${SD.capShape.CONVEX}, ${SD.capShape.FLAT}`, language: 'en' },
+        { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
+        { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
+        { name: 'hymenium type', value : "gills", language: 'en' },
+        { name: 'spore print colour', value : "pink", language: 'en' },
+        { name: 'stipe character', value : "ring and volva", language: 'en' },
+        { name: 'gill attachment', value : "free", language: 'en' },
+        { name: 'smell', value : "earthy", language: 'en' },
+        { name: 'flesh', value : "white", language: 'en' },
+        { name: 'contact air', value : "pinkish", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ 'Amanita phalloides' , 'Amanita curtipes', 'Amanita verna' ]},
+        { name: 'ecology', values: [ SD.habitats.WOODLAND ] },
+        { name: 'symbionts', values: [SD.treeTypes.OAK, SD.treeTypes.CORK, SD.treeTypes.PINE, SD.treeTypes.EUCALYPTUS] },  
+    ]},
+    { name: 'Tricholoma equestre', traits: [
+        { name: 'cap shape', value: `${SD.capShape.FLAT}`, language: 'en' },
+        { name: 'cap colour', value: `yellow, yellow-green, brown`, language: 'en' },
+        { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
+        { name: 'how edible', value: SD.howEdible.POISONOUS, language: 'en' },
+        { name: 'hymenium type', value : "gills", language: 'en' },
+        { name: 'spore print colour', value : "white", language: 'en' },
+        { name: 'stipe character', value : "bare", language: 'en' },
+        { name: 'stipe colour', value : "yellow", language: 'en' },
+        { name: 'gill attachment', value : "adnexed", language: 'en' },
+        { name: 'gill colour', value : "yellow", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ ]},
+        { name: 'ecology', values: [ SD.habitats.WOODLAND ] },
+        { name: 'symbionts', values: [] },  
+    ]},
+    { name: 'Boletus pinophilus', traits: [
+        { name: 'cap shape', value: SD.capShape.CONVEX, language: 'en' },
+        { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
+        { name: 'how edible', value: SD.howEdible.EDIBLE, language: 'en'},
+        { name: 'hymenium type', value : "pores", language: 'en' },
+        { name: 'spore print colour', value : "olive-brown", language: 'en' },
+        { name: 'stipe character', value : "bare", language: 'en' },
+        { name: 'gill attachment', value : "adnexed", language: 'en' },
+        { name: 'flesh', value : "white, no change on bruising", language: 'en' },
+        { name: 'smell', value : "pleasant, pork crackling", language: 'en' }
+    ], context: [
+        { name: 'look-alikes', values: [ 'Boletus edulis', 'Tylopilus felleus' ]},
+        { name: 'ecology', values: [ SD.treeTypes.MIXED_WOODLAND ]},
+        { name: 'symbionts', values: [ SD.treeTypes.PINE, SD.treeTypes.FIR, SD.treeTypes.SPRUCE] }
+    ]},
+    { name: 'Hydnum repandum', traits: [
+        { name: 'cap shape', value: SD.capShape.DEPRESSED, language: 'en' },
+        { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
+        { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en'},
+        { name: 'hymenium type', value : "teeth", language: 'en' },
+        { name: 'spore print colour', value : "white", language: 'en' },
+        { name: 'stipe character', value : "bare", language: 'en' },
+        { name: 'gill attachment', value : "decurrent", language: 'en' },
+        { name: 'flesh', value : "white, orange on bruising", language: 'en' },
+        { name: 'smell', value : "pleasant", language: 'en' }
+    ], context: [
+        { name: 'look-alikes', values: [ 'Hydnum umbilicatum', 'Hydnum albidum', 'Hydnum albomagnum', 'Hydnum rufescens' ]},
+        { name: 'ecology', values: [ SD.treeTypes.MIXED_WOODLAND, SD.habitats.MOSS, SD.habitats.RINGS, SD.habitats.SOIL ]},
+        { name: 'symbionts', values: [ SD.treeTypes.CONIFERS, SD.treeTypes.DECIDUOUS] }
     ]},
 ];
