@@ -220,4 +220,11 @@ export const fungi = [
         level: 2,
         group: 2
     },
+    {
+        term: "Gasteroid fungi ('stomach fungi')",
+        definition: "Mushrooms that produce spores inside their basidiocarps (fruit bodies) rather than on an outer surface e.g. puffballs",
+        level: 2,
+        group: 2,
+        wiki: 'https://en.wikipedia.org/wiki/Gasteroid_fungi'
+    },
 ]

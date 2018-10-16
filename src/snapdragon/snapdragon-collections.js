@@ -7,6 +7,7 @@ const kg = ['Herbs and Spices', 'Vegetables', 'Fruit', 'Insects'];
 export const kitchenGardenLessons = collections.filter(collection => R.contains(collection.name, kg));
 
 export const kitchenGarden = { 
+    providerId: 1,
     id: 1, name: 'Kitchen Garden', 
     type: 'species',
     descriptions: [
@@ -28,6 +29,7 @@ export const kitchenGarden = {
 };
 
 export const rhsTrees = { 
+    providerId: 2,
     id: 2, name: 'Deciduous and Evergreen Trees', 
     type: 'species',
     descriptions: ['This is an approved list of Deciduous and Evergreen Trees from the Royal Horticultural Society (RHS).', 'Students taking RHS courses in Practical Horticulture are required to learn some, or all, of these species.'],
@@ -45,6 +47,7 @@ export const rhsTrees = {
 };
 
 export const commonBirds = { 
+    providerId: 1,
     id: 3, name: 'RSPB Top 10 UK Birds', 
     type: 'species',
     descriptions: [
@@ -66,6 +69,7 @@ export const commonBirds = {
 };
 
 export const rhsWeeds1 = { 
+    providerId: 2,
     id: 4, name: 'RHS Weeds I', 
     type: 'species',
     descriptions: [
@@ -86,6 +90,7 @@ export const rhsWeeds1 = {
 };
 
 export const mushrooms1 = { 
+    providerId: 1,
     id: 5, 
     name: 'Mushrooms I', 
     type: 'species',
@@ -107,6 +112,7 @@ export const mushrooms1 = {
 };
 
 export const mushrooms2 = { 
+    providerId: 1,
     id: 6, name: 'Mushrooms II', 
     type: 'species',
     descriptions: [
@@ -127,6 +133,7 @@ export const mushrooms2 = {
 };
 
 export const mushrooms3 = { 
+    providerId: 1,
     id: 7, name: 'Mushrooms III', 
     type: 'species',
     descriptions: [
@@ -145,6 +152,17 @@ export const mushrooms3 = {
     courseId: 4,
     course: 'Snapdragon'
 };
+
+export const fallMushroomsEasternUSA = {
+    items: [ 
+        'Grifola frondosa', 'Laetiporus sulphureus', 'Hericium erinaceus', 'Lycoperdon perlatum',
+        'Lycoperdon pyriforme',
+        'Laetiporus cincinnatus', 'Craterellus tubaeformis', 'Hydnum repandum', 'Hydnum umbilicatum', 
+        'Hericium americanum', 'Hericium coralloides', 'Calvatia gigantea', 'Clitocybe nuda',
+        'Armillaria mellea', 'Armillaria tabescens', 'Entoloma abortive'
+        
+    ]
+}
 
 kitchenGarden.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
