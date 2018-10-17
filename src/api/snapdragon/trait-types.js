@@ -19,6 +19,7 @@ const HEATH = 'Heath';
 const ORCHARDS = 'Orchards';
 const HEDGEROWS = 'Hedgerows';
 const LAWNS = "Lawns";
+const RINGS = "Rings";
 
 export const habitats = {
     WOOD,
@@ -41,7 +42,8 @@ export const habitats = {
     HEATH,
     ORCHARDS,
     HEDGEROWS,
-    LAWNS
+    LAWNS,
+    RINGS
 };
 
 const OAK = 'Oak';
@@ -67,6 +69,9 @@ const EUCALYPTUS = "Eucalyptus";
 const BROAD_LEAF = 'Broad-leaf';
 const SWEET_CHESTNUT = 'Sweet chestnut';
 const POPLAR = "Poplar";
+const CORK = "Cork";
+const FIR = "Fir";
+const SPRUCE = "Spruce"
 
 export const treeTypes = {
     OAK,
@@ -91,7 +96,10 @@ export const treeTypes = {
     EUCALYPTUS,
     BROAD_LEAF,
     SWEET_CHESTNUT,
-    POPLAR
+    POPLAR,
+    CORK,
+    FIR,
+    SPRUCE
 }
 
 const DEADLY = 'Deadly';
@@ -132,6 +140,7 @@ const DEPRESSED = 'Depressed';
 const UMBONATE = 'Umbonate';
 const OVATE = 'Ovate';
 const HONEYCOMB = 'Honeycomb';
+const HEMI_SPHERICAL = 'Hemispherical';
 
 export const capShape = {
     CONVEX,
@@ -147,5 +156,6 @@ export const capShape = {
     DEPRESSED,
     UMBONATE,
     OVATE,
-    HONEYCOMB
+    HONEYCOMB,
+    HEMI_SPHERICAL
 };

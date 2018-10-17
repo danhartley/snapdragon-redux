@@ -2043,6 +2043,29 @@ export const taxa = [
         eol: "http://eol.org/pages/5970/overview",
         wiki: "https://en.wikipedia.org/wiki/Psathyrellaceae"
     },
+    {
+        taxon: 'family',
+        name: 'Hydnaceae',
+        thumb: "2014/07/15/01/34844_98_68.jpg",
+        names: [ { language: "en", names: ['Hydnaceae']} ,
+        { language: "fr", names:[ 'Hydnaceae' ]},
+        { language: "de", names:[ 'Hydnaceae' ]},
+        { language: "es", names:[ 'Hydnaceae' ]},
+        { language: "pt", names:[ 'Hydnaceae' ]},
+        { language: "it", names:[ 'Hydnaceae' ]}],
+        species: '190',
+        genera: '9',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND_LITTER ]}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Widely distributed. Family members are ectomycorrhizal, forming a mutually beneficial relationship with the roots of trees and other plants.',
+                identification: 'Hymenium consists of slender, downward-hanging tapering extensions referred to as "spines" or "teeth".'
+            }
+        ],
+        eol: "http://eol.org/pages/5938/overview",
+        wiki: "https://en.wikipedia.org/wiki/Hydnaceae"
+    },
 
     // genus data from: https://www.ukfungusday.co.uk/files/7814/9796/1077/Genus_information_sheets1.FINAL.pdf
 

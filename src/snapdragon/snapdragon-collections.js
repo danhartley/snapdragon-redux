@@ -134,7 +134,8 @@ export const mushrooms2 = {
 
 export const mushrooms3 = { 
     providerId: 1,
-    id: 7, name: 'Mushrooms III', 
+    id: 7, 
+    name: 'Mushrooms III', 
     type: 'species',
     descriptions: [
         '12 common mushrooms, 9 are edible, 3 are poisonous.',
@@ -153,6 +154,19 @@ export const mushrooms3 = {
     course: 'Snapdragon'
 };
 
+export const mushroomCollection = {
+    providerId: 1,
+    type: 'species',
+    thumb: 'https://media.eol.org/content/2013/03/01/14/45554_orig.jpg',
+    moduleSize: 4,
+    curator: 'Snapdragon',
+    userLevel: 'Amateur mycologists',
+    lessonPlanLandscape: 3,
+    lessonPlanPortrait: 103,
+    glossary: ['fungi'],
+    course: 'Snapdragon'
+};
+
 export const fallMushroomsEasternUSA = {
     items: [ 
         'Grifola frondosa', 'Laetiporus sulphureus', 'Hericium erinaceus', 'Lycoperdon perlatum',
@@ -163,6 +177,41 @@ export const fallMushroomsEasternUSA = {
         
     ]
 }
+
+export const wildFoodUKTopTenBeginners = {
+    items: [
+        'Fistulina hepatica', 'Boletus edulis', 'Pleurotus ostreatus', 'Auricularia auricula-judae',
+        'Calvatia gigantea', 'Hydnum repandum', 'Polyporus squamosus', 'Sarcoscypha coccinea',
+        'Sparassis crispa', 'Lepista saeva'
+    ]
+};
+
+export const cogumelosEmPortugal = {
+    ...mushroomCollection,
+    id: 8,
+    name: 'Cogumelos comuns em Portugal',
+    itemNames: [
+        'Boletus edulis', 'Lactarius deliciosus', 'Agaricus campestris', 'Macrolepiota procera',
+        'Craterellus cornucopioides', 'Cantharellus cibarius', 'Amanita caesarea', 'Chlorophyllum rhacodes',
+        'Lactarius sanguifluus', 'Fistulina hepatica', 'Amanita phalloides', 'Amanita muscaria',
+        'Amanita ponderosa', 'Tricholoma equestre', 'Boletus pinophilus', 'Hydnum repandum'
+    ],
+    descriptions: [
+        'Common local mushrooms'
+    ]
+};
+
+const itemNames = collections[10].items.map(item => item.name);
+
+cogumelosEmPortugal.items = cogumelosEmPortugal.itemNames.map(name => { 
+    if(R.contains(name, itemNames)) {
+        return collections[10].items.find(item => item.name === name);
+    }
+}).filter(item => item);
+
+cogumelosEmPortugal.items.forEach((item,index)=>{
+    item.snapIndex = index + 1;
+});
 
 kitchenGarden.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
@@ -200,4 +249,5 @@ export const snapdragonCollections = [
     mushrooms1,
     mushrooms2,
     mushrooms3,
+    cogumelosEmPortugal
 ];

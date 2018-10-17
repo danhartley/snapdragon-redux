@@ -169,7 +169,15 @@ export const mushrooms1 = [
           "vernacularName": "porcino",
           "language": "it",
           "eol_preferred": true
-        }
+        },
+        {
+          "vernacularName": "Tartulho",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Boleto",
+          "language": "pt"
+        },
       ],
       "descriptions": [
         "<p><em>Boletus edulis,</em> (class Basidiomycetes) is a gourmet, meaty, mild-tasting wild mushroom known by many common names including porcini, penny bun, porcino and cep.&nbsp; It is traditionally described as widely distributed in the holarctic across Europe, Asia, and North America, however recent molecular phylogenetic analyses show that <em>Boletus edulis</em> is taxonomically complex, and requires molecular (DNA) characters to distinguish the distinct species that are easily confused and included in this species (Dentinger and Suz 2014).&nbsp; Multiple studies show the North American, European and Asian mushrooms appear to be very morphologically similar but genetically diverse species.&nbsp; The highly diverse clade of porcini mushrooms (<em>Boletus</em> section <em>Boletus</em>) currently numbers about 36 species and is growing as new species are genetically identified (Feng et al. 2012; Dentinger et al. 2010).&nbsp; While the porcini mushrooms are not indigenous to the Southern Hemisphere, they have been accidentally introduced to Australia New Zealand and Africa (Catcheside and Catcheside 2011; Wang et al. 1995; Hall et al. 1998; SA Forestry Magazine 2009). &nbsp;There is significant export of these mushrooms from their main production areas to markets worldwide, often dried or frozen.</p>\r\n<p><em>Boletus edulis</em> grows in deciduous and coniferous forests and tree plantations, forming obligate, symbiotic ectomycorrhizal associations with living trees by enveloping the tree&#39;s underground roots with sheaths of fungal tissue, assisting the tree in nutrient uptake and benefiting from sugars produced in the tree&rsquo;s photosynthesis. &nbsp;This relationship makes <em>B. edulis</em> difficult to cultivate, most attempts have been unsuccessful (Regents of the University of California 2014).&nbsp; The fungus produces spore-bearing fruit bodies above ground in summer and autumn. &nbsp;The fruit body has a large brown cap and the stem (stipe) is broad and reticulated stem; the flesh is white (yellowing with age) and non-bruising. &nbsp;Rather than gills,<em> B. edulis</em> (like other boletes) has tubes extending downward from the underside of the cap from which the spores escape at maturity.&nbsp; <em>Boletus edulis</em> have been reported as reaching sizes of 35 cm (14 in) in diameter, up to 25 cm (10 in) tall and 3 kg (6.6 lb) in weight (Kuo 2002; First-Nature)</p>\r\n"
@@ -571,7 +579,16 @@ export const mushrooms1 = [
           "vernacularName": "Chanterelle",
           "language": "en",
           "eol_preferred": true
-        }
+        },
+        {
+          "vernacularName": "Cantarelo",
+          "language": "pt",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Rapazinho",
+          "language": "pt"
+        },
       ],
       "descriptions": [],
       "taxonomy": {
@@ -904,7 +921,27 @@ export const mushrooms1 = [
         {
           "vernacularName": "St. Michel",
           "language": "fr"
-        }
+        },
+        {
+          "vernacularName": "Frade",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Roca",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Fuso",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Chapéusinho",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Pucarinha",
+          "language": "pt"
+        },
       ],
       "descriptions": [],
       "taxonomy": {
