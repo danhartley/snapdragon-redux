@@ -3267,7 +3267,11 @@ export const mushrooms = [
           "vernacularName": "Lactaire sanguin",
           "language": "fr",
           "eol_preferred": true
-        }
+        },
+        {
+          "vernacularName": "Sancha",
+          "language": "fr"         
+        },
       ],
       "descriptions": [],
       "taxonomy": {
