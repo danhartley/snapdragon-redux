@@ -267,4 +267,8 @@
     .course-description span {
         margin: 0 0 1em 0;
     }
+
+    .visual-match .imageSlider .carousel-item {
+        height: 50vh;
+      }
 }

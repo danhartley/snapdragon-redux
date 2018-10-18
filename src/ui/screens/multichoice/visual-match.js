@@ -50,11 +50,11 @@ export const renderSpecimenMatch = collection => {
 
         const questionValue = layout.screens[1].type === 'binomial'
                 ? item.name
-                : item.names.filter(names => names.language === config.language)[0].vernacularName;
+                : itemProperties.vernacularName(item, config);
 
         const vernacularName = layout.screens[1].type === 'binomial'
                 ? ''
-                : item.names.filter(names => names.language === config.language)[0].vernacularName;
+                : itemProperties.vernacularName(item, config);
 
         question = { question: questionValue, binomial: item.name, vernacular: vernacularName };
         scorehandler(descriptions, question, utils.shuffleArray(answers));                
@@ -96,7 +96,7 @@ export const renderSpecimenMatch = collection => {
         }
 
         if(config.isPortraitMode) {
-            const filteredTraits = R.take(2, traits.filter(trait => trait.toUpperCase() !== traitValue.toUpperCase()));
+            const filteredTraits = R.take(3, traits.filter(trait => trait.toUpperCase() !== traitValue.toUpperCase()));
             traits = utils.shuffleArray(filteredTraits);
         }
 

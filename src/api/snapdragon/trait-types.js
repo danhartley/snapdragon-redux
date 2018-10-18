@@ -20,6 +20,7 @@ const ORCHARDS = 'Orchards';
 const HEDGEROWS = 'Hedgerows';
 const LAWNS = "Lawns";
 const RINGS = "Rings";
+const DAMP = "Damp";
 
 export const habitats = {
     WOOD,
@@ -43,7 +44,8 @@ export const habitats = {
     ORCHARDS,
     HEDGEROWS,
     LAWNS,
-    RINGS
+    RINGS,
+    DAMP
 };
 
 const OAK = 'Oak';

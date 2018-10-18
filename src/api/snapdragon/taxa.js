@@ -2045,6 +2045,29 @@ export const taxa = [
     },
     {
         taxon: 'family',
+        name: 'Polyporaceae',
+        thumb: "2009/01/09/12/96758_88_88.jpg",
+        names: [ { language: "en", names: ['Bracket Polypores']} ,
+        { language: "fr", names:[ 'Bracket Polypores' ]},
+        { language: "de", names:[ 'Bracket Polypores' ]},
+        { language: "es", names:[ 'Bracket Polypores' ]},
+        { language: "pt", names:[ 'Bracket Polypores' ]},
+        { language: "it", names:[ 'Bracket Polypores' ]}],
+        species: '1621',
+        genera: '114',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD, SD.habitats.WOODLAND ]}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Widely distributed.',
+                identification: 'Usually grown on living or dead trees. Can reach 40cm in diameter. Many are brackets, others have definite stipe. Most have vertical pores, some gills.'
+            }
+        ],
+        eol: "http://eol.org/pages/5903/overview",
+        wiki: "https://en.wikipedia.org/wiki/Polyporaceae"
+    },
+    {
+        taxon: 'family',
         name: 'Hydnaceae',
         thumb: "2014/07/15/01/34844_98_68.jpg",
         names: [ { language: "en", names: ['Hydnaceae']} ,
@@ -2065,6 +2088,75 @@ export const taxa = [
         ],
         eol: "http://eol.org/pages/5938/overview",
         wiki: "https://en.wikipedia.org/wiki/Hydnaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Sarcoscyphaceae',
+        thumb: "2014/07/15/01/34844_98_68.jpg",
+        names: [ { language: "en", names: ['Cup Fungi']} ,
+        { language: "fr", names:[ 'Cup Fungi' ]},
+        { language: "de", names:[ 'Cup Fungi' ]},
+        { language: "es", names:[ 'Cup Fungi' ]},
+        { language: "pt", names:[ 'Cup Fungi' ]},
+        { language: "it", names:[ 'Cup Fungi' ]}],
+        species: '102',
+        genera: '13',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD, SD.habitats.MOSS, SD.habitats.DAMP ]}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Cosmopolitan in distribution (tropical and temperate regions).',
+                identification: 'Found damp stream valleys, north-facing slopes, mosses. Fruiting later winter/early spring on dead wood.'
+            }
+        ],
+        eol: "http://eol.org/pages/6073/overview",
+        wiki: "https://en.wikipedia.org/wiki/Sarcoscyphaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Sparassidaceae',
+        thumb: "2015/01/14/02/78915_88_88.jpg",
+        names: [ { language: "en", names: ['']} ,
+        { language: "fr", names:[ 'Sparassidaceae' ]},
+        { language: "de", names:[ 'Sparassidaceae' ]},
+        { language: "es", names:[ 'Sparassidaceae' ]},
+        { language: "pt", names:[ 'Sparassidaceae' ]},
+        { language: "it", names:[ 'Sparassidaceae' ]}],
+        species: '10',
+        genera: '2',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND ]}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Sparassis genus is cultivated and sold in Korea, Japan, US and Australia.',
+                identification: 'Fruit bodies are branched, fan-shaped segments that originate from a central core.'
+            }
+        ],
+        eol: "http://eol.org/pages/5901/overview",
+        wiki: "https://en.wikipedia.org/wiki/Sparassidaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Entolomataceae',
+        thumb: "2015/02/03/05/66673_88_88.jpg",
+        names: [ { language: "en", names: ['Entolomataceae']} ,
+        { language: "fr", names:[ 'Entolomataceae' ]},
+        { language: "de", names:[ 'Entolomataceae' ]},
+        { language: "es", names:[ 'Entolomataceae' ]},
+        { language: "pt", names:[ 'Entolomataceae' ]},
+        { language: "it", names:[ 'Entolomataceae' ]}],
+        species: '1500',
+        genera: '9/10',
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.WIDESPREAD ]}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Large family of pink-spored terrestrial gilled mushrooms. Widespread, many habitats.',
+                identification: 'Distinctive spore print: pink (or brownish/greyish pink), ornamented with bumps or ridges, or polygonal cross-section.'
+            }
+        ],
+        eol: "http://eol.org/pages/5986/overview",
+        wiki: "https://en.wikipedia.org/wiki/Entolomataceae"
     },
 
     // genus data from: https://www.ukfungusday.co.uk/files/7814/9796/1077/Genus_information_sheets1.FINAL.pdf

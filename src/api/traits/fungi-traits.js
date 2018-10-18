@@ -27,7 +27,7 @@ export const fungiTraits = [
         { name: 'ecology', values: [ ''] }
     ]},
     { name: 'Amanita virosa', traits: [
-        { name: 'cap shape', value: SD.capShape.CONVEX, language: 'en' },
+        { name: 'cap shape', value: `${SD.capShape.CONVEX}, ${SD.capShape.FLAT}`, language: 'en' },
         { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
         { name: 'how edible', value : SD.howEdible.DEADLY, language: 'en', description: 'highly poisonous even in small quantities; symptoms delayed' },
         { name: 'hymenium type', value : "gills", language: 'en' },
@@ -210,7 +210,7 @@ export const fungiTraits = [
         { name: 'spore print colour', value : "white, browning", language: 'en' },
         { name: 'stipe character', value : "short, stumpy", language: 'en' },
         { name: 'gill attachment', value : "NA", language: 'en' },
-        { name: 'grouping', value : "gregarious, numerous", language: 'en' },        
+        { name: 'grouping', value : "gregarious, numerous", language: 'en' },  
         { name: 'smell', value : "unpleasant, gas-like", language: 'en' },        
     ], context: [
         { name: 'look-alikes', values: [ 'Scleroderma citrinum', 'Amanita muscaria']},
@@ -272,9 +272,9 @@ export const fungiTraits = [
         { name: 'flesh', value : "yellow, orange, white", language: 'en' },
         { name: 'grouping', value : "large groups", language: 'en' },
     ], context: [
-        { name: 'look-alikes', values: ['Polyporus squamosus', 'Meripilus giganteus', 'Laetiporus huroniensis', 'Laetiporus gilbertsonii' ]},
+        { name: 'look-alikes', values: ['Polyporus squamosus', 'Meripilus giganteus', 'Laetiporus huroniensis', 'Laetiporus gilbertsonii', 'Laetiporus cincinnatus' ]},
         { name: 'ecology', values: [SD.habitats.DEAD_WOOD, SD.treeTypes.HARDWOODS, SD.treeTypes.BEECH, SD.treeTypes.OAK, SD.treeTypes.PRUNUS, SD.treeTypes.SALIX, SD.treeTypes.ROBINIA, SD.treeTypes.EUCALYPTUS, SD.treeTypes.CERATONIA] },
-        { name: 'symbionts', values: [] },  
+        { name: 'symbionts', values: ['Acer pseudoplatanus'] },  
     ]},
     { name: 'Craterellus cornucopioides', traits: [
         { name: 'cap shape', value: SD.capShape.INFUNDIBULIFORM, language: 'en' },
@@ -572,5 +572,142 @@ export const fungiTraits = [
         { name: 'look-alikes', values: [ 'Hydnum umbilicatum', 'Hydnum albidum', 'Hydnum albomagnum', 'Hydnum rufescens' ]},
         { name: 'ecology', values: [ SD.treeTypes.MIXED_WOODLAND, SD.habitats.MOSS, SD.habitats.RINGS, SD.habitats.SOIL ]},
         { name: 'symbionts', values: [ SD.treeTypes.CONIFERS, SD.treeTypes.DECIDUOUS] }
+    ]},
+    { name: 'Laetiporus cincinnatus', traits: [
+        { name: 'cap shape', value: SD.capShape.FLAT, language: 'en' },
+        { name: 'ecological type', value: `${SD.ecoType.SAPROTROPHIC}, ${SD.ecoType.PARASITIC}`, language: 'en' },
+        { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
+        { name: 'hymenium type', value : "pores", language: 'en' },
+        { name: 'spore print colour', value : "white", language: 'en' },
+        { name: 'stipe character', value : "NA", language: 'en' },
+        { name: 'gill attachment', value : "no", language: 'en' },
+        { name: 'flesh', value : "yellow, orange, white", language: 'en' },
+        { name: 'grouping', value : "large groups", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ 'Laetiporus sulphureus', 'Polyporus squamosus' ]},
+        { name: 'ecology', values: [SD.habitats.DEAD_WOOD, SD.treeTypes.HARDWOODS, SD.treeTypes.BEECH, SD.treeTypes.OAK, SD.treeTypes.PRUNUS, SD.treeTypes.SALIX, SD.treeTypes.ROBINIA, SD.treeTypes.EUCALYPTUS, SD.treeTypes.CERATONIA] },
+        { name: 'symbionts', values: ['Acer pseudoplatanus'] },  
+    ]},
+    { name: 'Craterellus tubaeformis', traits: [
+        { name: 'cap shape', value: SD.capShape.INFUNDIBULIFORM },
+        { name: 'ecological type', value: `${SD.ecoType.MYCORRHIZAL}, ${SD.ecoType.SAPROTROPHIC}`, language: 'en' },
+        { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
+        { name: 'hymenium type', value : "ridges", language: 'en' },
+        { name: 'spore print colour', value : "salmon", language: 'en' },
+        { name: 'stipe character', value : "bare", language: 'en' },
+        { name: 'gill attachment', value : "decurrent", language: 'en' },
+        { name: 'grouping', value : "large groups", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ 'Laetiporus sulphureus', 'Polyporus squamosus' ]},
+        { name: 'ecology', values: [SD.habitats.CONIFERS, SD.habitats.MOSS, SD.habitats.DEAD_WOOD ] },
+        { name: 'symbionts', values: ['Pseudotsuga menziesii', 'Tsuga heterophylla'] },  
+    ]},
+    { name: 'Hydnum umbilicatum', traits: [
+        { name: 'cap shape', value: SD.capShape.DEPRESSED, language: 'en' },
+        { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
+        { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en'},
+        { name: 'hymenium type', value : "teeth", language: 'en' },
+        { name: 'spore print colour', value : "white", language: 'en' },
+        { name: 'stipe character', value : "bare", language: 'en' },
+        { name: 'gill attachment', value : "decurrent", language: 'en' }
+    ], context: [
+        { name: 'look-alikes', values: [ 'Hydnum repandum' ]},
+        { name: 'ecology', values: [SD.habitats.CONIFERS, SD.habitats.DAMP ] },
+        { name: 'symbionts', values: [''] },  
+    ]},
+    { name: 'Hericium americanum', traits: [
+        { name: 'cap shape', value: '', language: 'en' },
+        { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
+        { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en'},
+        { name: 'hymenium type', value : "teeth", language: 'en' },
+        { name: 'spore print colour', value : "white", language: 'en' },
+        { name: 'stipe character', value : "bare", language: 'en' },
+        { name: 'gill attachment', value : "NA", language: 'en' }
+    ], context: [
+        { name: 'look-alikes', values: [ 'Hericium coralloides' ]},
+        { name: 'ecology', values: ['' ] },
+        { name: 'symbionts', values: [''] },  
+    ]},
+    { name: 'Hericium coralloides', traits: [
+        { name: 'cap shape', value: 'NA', language: 'en' },
+        { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
+        { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en'},
+        { name: 'hymenium type', value : "teeth", language: 'en' },
+        { name: 'spore print colour', value : "white", language: 'en' },
+        { name: 'stipe character', value : "bare", language: 'en' },
+        { name: 'gill attachment', value : "NA", language: 'en' }
+    ], context: [
+        { name: 'look-alikes', values: [ 'Hericium americanum' ]},
+        { name: 'ecology', values: [ SD.treeTypes.HARDWOODS ] },
+        { name: 'symbionts', values: [''] },  
+    ]},
+    { name: 'Calvatia gigantea', traits: [
+        { name: 'cap shape', value: 'NA', language: 'en' },
+        { name: 'ecological type', value: SD.ecoType.MYCORRHIZAL, language: 'en' },
+        { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en'},
+        { name: 'hymenium type', value : "gleba", language: 'en' },
+        { name: 'spore print colour', value : "brown", language: 'en' },
+        { name: 'stipe character', value : "NA", language: 'en' },
+        { name: 'gill attachment', value : "NA", language: 'en' }
+    ], context: [
+        { name: 'look-alikes', values: [ 'Amanitas, Earthball' ]},
+        { name: 'ecology', values: [ SD.treeTypes.DECIDUOUS, SD.habitats.MEADOW, SD.habitats.FIELDS ] },
+        { name: 'symbionts', values: [''] },  
+    ]},
+    { name: 'Clitocybe nuda', traits: [
+        { name: 'cap shape', value: 'convex, umbonate', language: 'en' },
+        { name: 'ecological type', value: SD.ecoType.SAPROTROPHIC, language: 'en' },
+        { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en'},
+        { name: 'hymenium type', value : "gills", language: 'en' },
+        { name: 'spore print colour', value : "pink", language: 'en' },
+        { name: 'stipe character', value : "bare", language: 'en' },
+        { name: 'gill attachment', value : "emarginate", language: 'en' }
+    ], context: [
+        { name: 'look-alikes', values: [ SD.habitats.WOODLAND_LITTER ]},
+        { name: 'ecology', values: [ SD.treeTypes.DECIDUOUS, SD.habitats.MEADOW, SD.habitats.FIELDS ] },
+        { name: 'symbionts', values: ['Picea abies', 'Pinus sylvestris'] },  
+    ]},
+    { name: 'Armillaria mellea', traits: [
+        { name: 'cap shape', value: 'convex', language: 'en' },
+        { name: 'ecological type', value: SD.ecoType.PARASITIC, language: 'en' },
+        { name: 'how edible', value: SD.howEdible.EDIBLE, language: 'en'},
+        { name: 'hymenium type', value : "gills", language: 'en' },
+        { name: 'spore print colour', value : "white", language: 'en' },
+        { name: 'stipe character', value : "ring", language: 'en' },
+        { name: 'gill attachment', value : "subdecurrent, adnate", language: 'en' }
+    ], context: [
+        { name: 'look-alikes', values: [ ]},
+        { name: 'ecology', values: [ SD.treeTypes.HARDWOODS, SD.habitats.DEAD_WOOD ] },
+        { name: 'symbionts', values: [ 'Entoloma abortivum', 'Pseudotsuga menziesii', 'Tsuga heterophylla'] },
+    ]},
+    { name: 'Armillaria tabescens', traits: [
+        { name: 'cap shape', value: 'convex, flat', language: 'en' },
+        { name: 'ecological type', value: `${SD.ecoType.PARASITIC}, ${SD.ecoType.SAPROTROPHIC}`, language: 'en' },
+        { name: 'how edible', value: SD.howEdible.EDIBLE, language: 'en'},
+        { name: 'hymenium type', value : "gills", language: 'en' },
+        { name: 'spore print colour', value : "white", language: 'en' },
+        { name: 'stipe character', value : "bare", language: 'en' },
+        { name: 'gill attachment', value : "decurrent", language: 'en' },
+        { name: 'grouping', value : "clusters", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ ]},
+        { name: 'ecology', values: [ SD.treeTypes.HARDWOODS, SD.habitats.DEAD_WOOD ] },
+        { name: 'symbionts', values: [ SD.treeTypes.OAK] },
+    ]},
+    { name: 'Entoloma abortivum', traits: [
+        { name: 'cap shape', value: 'convex, flat', language: 'en' },
+        { name: 'ecological type', value: `${SD.ecoType.PARASITIC}, ${SD.ecoType.SAPROTROPHIC}`, language: 'en' },
+        { name: 'how edible', value: SD.howEdible.EDIBLE, language: 'en'},
+        { name: 'hymenium type', value : "gills", language: 'en' },
+        { name: 'spore print colour', value : "pink", language: 'en' },
+        { name: 'stipe character', value : "bare", language: 'en' },
+        { name: 'gill attachment', value : "decurrent", language: 'en' },
+        { name: 'grouping', value : "clusters", language: 'en' },
+        { name: 'flesh', value : "white", language: 'en' },
+        { name: 'smell', value : "strongly mealy", language: 'en' },
+    ], context: [
+        { name: 'look-alikes', values: [ ]},
+        { name: 'ecology', values: [ SD.treeTypes.HARDWOODS, SD.habitats.WOODLAND_LITTER, SD.habitats.DEAD_WOOD ] },
+        { name: 'symbionts', values: [ 'Armillaria mellea'] },
     ]},
 ];

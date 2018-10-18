@@ -36,7 +36,6 @@ export const mushrooms = [
           "language": "en"
         },
       ],
-      "descriptions": [],
       "taxonomy": {
         "usageKey": 7241988,
         "scientificName": "Amanita ponderosa Malençon & R.Heim",
@@ -123,7 +122,6 @@ export const mushrooms = [
           "language": "pt"
         }
       ],
-      "descriptions": [],
       "taxonomy": {
         "usageKey": 3324883,
         "scientificName": "Tricholoma equestre (L.) P.Kumm., 1871",
@@ -194,7 +192,6 @@ export const mushrooms = [
           "eol_preferred": true
         },
       ],
-      "descriptions": [],
       "taxonomy": {
         "usageKey": 5954949,
         "scientificName": "Boletus pinophilus Pilát & Dermek",
@@ -281,7 +278,6 @@ export const mushrooms = [
           "eol_preferred": true
         }
       ],
-      "descriptions": [],
       "taxonomy": {
         "usageKey": 2554716,
         "scientificName": "Hydnum repandum L.",
@@ -489,9 +485,6 @@ export const mushrooms = [
           "language": "pt"
         },
       ],
-      "descriptions": [
-        "<p><em>Boletus edulis,</em> (class Basidiomycetes) is a gourmet, meaty, mild-tasting wild mushroom known by many common names including porcini, penny bun, porcino and cep.&nbsp; It is traditionally described as widely distributed in the holarctic across Europe, Asia, and North America, however recent molecular phylogenetic analyses show that <em>Boletus edulis</em> is taxonomically complex, and requires molecular (DNA) characters to distinguish the distinct species that are easily confused and included in this species (Dentinger and Suz 2014).&nbsp; Multiple studies show the North American, European and Asian mushrooms appear to be very morphologically similar but genetically diverse species.&nbsp; The highly diverse clade of porcini mushrooms (<em>Boletus</em> section <em>Boletus</em>) currently numbers about 36 species and is growing as new species are genetically identified (Feng et al. 2012; Dentinger et al. 2010).&nbsp; While the porcini mushrooms are not indigenous to the Southern Hemisphere, they have been accidentally introduced to Australia New Zealand and Africa (Catcheside and Catcheside 2011; Wang et al. 1995; Hall et al. 1998; SA Forestry Magazine 2009). &nbsp;There is significant export of these mushrooms from their main production areas to markets worldwide, often dried or frozen.</p>\r\n<p><em>Boletus edulis</em> grows in deciduous and coniferous forests and tree plantations, forming obligate, symbiotic ectomycorrhizal associations with living trees by enveloping the tree&#39;s underground roots with sheaths of fungal tissue, assisting the tree in nutrient uptake and benefiting from sugars produced in the tree&rsquo;s photosynthesis. &nbsp;This relationship makes <em>B. edulis</em> difficult to cultivate, most attempts have been unsuccessful (Regents of the University of California 2014).&nbsp; The fungus produces spore-bearing fruit bodies above ground in summer and autumn. &nbsp;The fruit body has a large brown cap and the stem (stipe) is broad and reticulated stem; the flesh is white (yellowing with age) and non-bruising. &nbsp;Rather than gills,<em> B. edulis</em> (like other boletes) has tubes extending downward from the underside of the cap from which the spores escape at maturity.&nbsp; <em>Boletus edulis</em> have been reported as reaching sizes of 35 cm (14 in) in diameter, up to 25 cm (10 in) tall and 3 kg (6.6 lb) in weight (Kuo 2002; First-Nature)</p>\r\n"
-      ],
       "taxonomy": {
         "usageKey": 5954958,
         "scientificName": "Boletus edulis Bull.",
@@ -555,7 +548,7 @@ export const mushrooms = [
           "eol_preferred": true
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 5243258,
         "scientificName": "Lycoperdon perlatum Pers.",
@@ -633,7 +626,7 @@ export const mushrooms = [
           "language": "fr"
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 2524910,
         "scientificName": "Tylopilus felleus (Bull.) P.Karst.",
@@ -687,7 +680,7 @@ export const mushrooms = [
           "eol_preferred": true
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 5239982,
         "scientificName": "Scleroderma citrinum Pers.",
@@ -821,7 +814,7 @@ export const mushrooms = [
           "language": "it"
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 2594602,
         "scientificName": "Morchella esculenta (L.) Pers.",
@@ -900,7 +893,7 @@ export const mushrooms = [
           "language": "pt"
         },
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 5249504,
         "scientificName": "Cantharellus cibarius Fr.",
@@ -956,7 +949,7 @@ export const mushrooms = [
           "eol_preferred": true
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 5258510,
         "scientificName": "Gyromitra esculenta (Pers.) Fr.",
@@ -1030,9 +1023,6 @@ export const mushrooms = [
           "vernacularName": "Faux clitocybe lumineux",
           "language": "fr"
         }
-      ],
-      "descriptions": [
-        "<p>The North American Jack O'Lantern mushroom (<em>Omphalotus illudens</em>) has sometimes been treated as conspecific with (i.e., belonging to the same species as) the European <em>O. olearius</em>, but these are now generally recognized as distinct species. <em>Omphalotus illudens</em>, which is also present in Europe, is one of four <em>Omphalotus</em> species that have been described from North and Central America. The widespread eastern North American species is <em>O. illudens</em> and the West Coast one is <em>O. olivascens </em>(<em>O. subilludens </em>occurs in the southeastern United States; Ammirati et al. 1985).</p>\r\n<p>The Jack O'Lantern mushroom's name is derived from the its orange color and the fact that the gills often glow eerily greenish (clearly visible under very dark conditions). This <a href=\"http://en.wikipedia.org/wiki/Muscarine\">muscarine</a>-containing poisonous mushroom with conspicuously decurrent gills (i.e., gills descending stalk) is widespread and locally common in eastern North America, growing in dense clusters on tree stumps and buried roots of oak and other hardwoods. The spore print is cream-colored.</p>\r\n<p>(Lincoff 1981; Arora 1986; Kirchmair et al. 2004 and references therein)</p>"
       ],
       "taxonomy": {
         "usageKey": 2538088,
@@ -1131,9 +1121,6 @@ export const mushrooms = [
           "vernacularName": "cogumelo silvestre",
           "language": "pt"
         },
-      ],
-      "descriptions": [
-        "<div id=\"globalWrapper\"><div id=\"column-content\"><div id=\"content\"><div id=\"bodyContent\"><div></div><table class=\"infobox\" cellspacing=\"3\" style=\"border-spacing:3px;width:22em;\"><tr><th colspan=\"2\" style=\"text-align:center;font-size:125%;font-weight:bold;background-color: #ADD8E6;\">Agaricus campestris</th></tr><tr><td colspan=\"2\" style=\"text-align:center;background-color: #ADD8E6; font-style: italic; font-size: 110%;\"><div class=\"floatright\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Template:Mycomorphbox\" title=\"float\"><img alt=\"View the Mycomorphbox template that generates the following list\" src=\"http://upload.wikimedia.org/wikipedia/en/thumb/3/35/Information_icon.svg/14px-Information_icon.svg.png\" width=\"14\" height=\"14\" srcset=\"//upload.wikimedia.org/wikipedia/en/thumb/3/35/Information_icon.svg/21px-Information_icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/3/35/Information_icon.svg/28px-Information_icon.svg.png 2x\" /></a></div><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Mycology\" title=\"Mycology\">Mycological characteristics</a></td></tr><tr><th scope=\"row\" style=\"text-align:left;white-space: nowrap;\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Gills_icon.png/32px-Gills_icon.png\" width=\"32\" height=\"32\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/1/11/Gills_icon.png/48px-Gills_icon.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/11/Gills_icon.png/64px-Gills_icon.png 2x\" /></th><td style=\"text-align: right;\"><b>gills</b> on <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Hymenium\" title=\"Hymenium\">hymenium</a></td></tr><tr><th scope=\"row\" style=\"text-align:left;white-space: nowrap;\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Convex_cap_icon.svg/32px-Convex_cap_icon.svg.png\" width=\"32\" height=\"32\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Convex_cap_icon.svg/48px-Convex_cap_icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Convex_cap_icon.svg/64px-Convex_cap_icon.svg.png 2x\" /> <img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flat_cap_icon.svg/32px-Flat_cap_icon.svg.png\" width=\"32\" height=\"32\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flat_cap_icon.svg/48px-Flat_cap_icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flat_cap_icon.svg/64px-Flat_cap_icon.svg.png 2x\" /></th><td style=\"text-align: right;\"><p><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Pileus_(mycology)\" title=\"Pileus (mycology)\">cap</a> is <b>convex</b></p>or <b>flat</b></td></tr><tr><th scope=\"row\" style=\"text-align:left;white-space: nowrap;\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Free_gills_icon2.svg/32px-Free_gills_icon2.svg.png\" width=\"32\" height=\"32\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Free_gills_icon2.svg/48px-Free_gills_icon2.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Free_gills_icon2.svg/64px-Free_gills_icon2.svg.png 2x\" /></th><td style=\"text-align: right;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Hymenium\" title=\"Hymenium\">hymenium</a> is <b>free</b></td></tr><tr><th scope=\"row\" style=\"text-align:left;white-space: nowrap;\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ring_stipe_icon.svg/32px-Ring_stipe_icon.svg.png\" width=\"32\" height=\"32\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ring_stipe_icon.svg/48px-Ring_stipe_icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ring_stipe_icon.svg/64px-Ring_stipe_icon.svg.png 2x\" /></th><td style=\"text-align: right;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Stipe_(mycology)\" title=\"Stipe (mycology)\">stipe</a> has a <b>ring</b></td></tr><tr><th scope=\"row\" style=\"text-align:left;white-space: nowrap;\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Brown_spore_print_icon.png/32px-Brown_spore_print_icon.png\" width=\"32\" height=\"32\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Brown_spore_print_icon.png/48px-Brown_spore_print_icon.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Brown_spore_print_icon.png/64px-Brown_spore_print_icon.png 2x\" /></th><td style=\"text-align: right;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Spore_print\" title=\"Spore print\">spore print</a> is <b>brown</b></td></tr><tr><th scope=\"row\" style=\"text-align:left;white-space: nowrap;\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Saprotrophic_fungus.svg/32px-Saprotrophic_fungus.svg.png\" width=\"32\" height=\"24\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/2/20/Saprotrophic_fungus.svg/48px-Saprotrophic_fungus.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/20/Saprotrophic_fungus.svg/64px-Saprotrophic_fungus.svg.png 2x\" /></th><td style=\"text-align: right;\">ecology is <b><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Saprotrophic\" title=\"Saprotrophic\" class=\"mw-redirect\">saprotrophic</a></b></td></tr><tr><th scope=\"row\" style=\"text-align:left;white-space: nowrap;\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mycomorphbox_Choice.png/32px-Mycomorphbox_Choice.png\" width=\"32\" height=\"32\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mycomorphbox_Choice.png/48px-Mycomorphbox_Choice.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mycomorphbox_Choice.png/64px-Mycomorphbox_Choice.png 2x\" /></th><td style=\"text-align: right;\">edibility: <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Edible_mushroom\" title=\"Edible mushroom\"><b>choice</b></a></td></tr></table><p><i><b>Agaricus campestris</b></i> is commonly known as the <b>field mushroom</b> or, in North America, <b>meadow mushroom</b>. It is a widely eaten <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Agaricales\" title=\"Agaricales\">gilled mushroom</a> closely related to the cultivated <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Button_mushroom\" title=\"Button mushroom\" class=\"mw-redirect\">button mushroom</a> <i>Agaricus bisporus</i>.</p><div id=\"toc\" class=\"toc\"><div id=\"toctitle\"><h2>Contents</h2></div><ul><li class=\"toclevel-1 tocsection-1\"><a href=\"#Taxonomy\"><span class=\"tocnumber\">1</span> <span class=\"toctext\">Taxonomy</span></a></li><li class=\"toclevel-1 tocsection-2\"><a href=\"#Description\"><span class=\"tocnumber\">2</span> <span class=\"toctext\">Description</span></a></li><li class=\"toclevel-1 tocsection-3\"><a href=\"#Distribution_and_habitat\"><span class=\"tocnumber\">3</span> <span class=\"toctext\">Distribution and habitat</span></a></li><li class=\"toclevel-1 tocsection-4\"><a href=\"#Edibility\"><span class=\"tocnumber\">4</span> <span class=\"toctext\">Edibility</span></a></li><li class=\"toclevel-1 tocsection-5\"><a href=\"#Other_uses\"><span class=\"tocnumber\">5</span> <span class=\"toctext\">Other uses</span></a></li><li class=\"toclevel-1 tocsection-6\"><a href=\"#Bioactive_properties\"><span class=\"tocnumber\">6</span> <span class=\"toctext\">Bioactive properties</span></a></li><li class=\"toclevel-1 tocsection-7\"><a href=\"#See_also\"><span class=\"tocnumber\">7</span> <span class=\"toctext\">See also</span></a></li><li class=\"toclevel-1 tocsection-8\"><a href=\"#References\"><span class=\"tocnumber\">8</span> <span class=\"toctext\">References</span></a></li><li class=\"toclevel-1 tocsection-9\"><a href=\"#External_links\"><span class=\"tocnumber\">9</span> <span class=\"toctext\">External links</span></a></li></ul></div><h2><span class=\"mw-headline\" id=\"Taxonomy\">Taxonomy</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Agaricus_campestris&amp;action=edit&amp;section=1\" title=\"Edit section: Taxonomy\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><p>This species was originally noted and named in 1753 by <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Carolus_Linnaeus\" title=\"Carolus Linnaeus\" class=\"mw-redirect\">Carolus Linnaeus</a> as <i>Agaricus campestris</i>. It was placed in the genus <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Psalliota\" title=\"Psalliota\" class=\"mw-redirect\">Psalliota</a></i> by <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Lucien_Quelet\" title=\"Lucien Quelet\" class=\"mw-redirect\">Lucien Quelet</a> in 1872. Some variants have been isolated over the years, a few of which now have species status, for example, <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Agaricus_bernardii\" title=\"Agaricus bernardii\">Agaricus bernardii</a></i> Quel. (1878), <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Agaricus_bisporus\" title=\"Agaricus bisporus\">Agaricus bisporus</a></i> (J.E. Lange) Imbach (1946), <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Agaricus_bitorquis\" title=\"Agaricus bitorquis\">Agaricus bitorquis</a></i> (Quel.) Sacc. (1887), <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Agaricus_cappellianus&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"Agaricus cappellianus (page does not exist)\">Agaricus cappellianus</a></i> Hlavacek (1987), and <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Agaricus_silvicola\" title=\"Agaricus silvicola\">Agaricus silvicola</a></i> (Vittad.) Peck (1872).<br />Some were so similar they did not warrant even variant status, others have retained it e.g. <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Agaricus_campestris_var._equestris&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"Agaricus campestris var. equestris (page does not exist)\">Agaricus campestris var. equestris</a></i> (F.H. Moller) Pilat (1951) is still valid, and presumably favors pasture where horses have been kept. <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Agaricus_campestris_var_isabellinus&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"Agaricus campestris var isabellinus (page does not exist)\">Agaricus campestris var isabellinus</a></i> (F.H. Moller) Pilat (1951), and <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Agaricus_campestris_var.radicatus&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"Agaricus campestris var.radicatus (page does not exist)\">Agaricus campestris var.radicatus</a></i>, are possibly still valid too.<br />The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Specific_name_(botany)\" title=\"Specific name (botany)\" class=\"mw-redirect\">specific epithet</a> <i>campestris</i> is derived from the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Latin\" title=\"Latin\">Latin</a> <i>campus</i> \"field\".</p><h2><span class=\"mw-headline\" id=\"Description\">Description</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Agaricus_campestris&amp;action=edit&amp;section=2\" title=\"Edit section: Description\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><p>The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Pileus_(mycology)\" title=\"Pileus (mycology)\">cap</a> is white, may have fine scales, and is 5 to 10 centimetres (2.0&#160;to&#160;3.9&#160;in) in diameter; it is first hemispherical in shape before flattening out with maturity. The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Lamella_(mycology)\" title=\"Lamella (mycology)\">gills</a> are initially pink, then red-brown and finally a dark brown, as is the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Spore_print\" title=\"Spore print\">spore print</a>. The 3 to 10 centimetres (1.2&#160;to&#160;3.9&#160;in) tall <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Stipe_(mycology)\" title=\"Stipe (mycology)\">stipe</a> is predominantly white and bears a single thin ring.<sup id=\"cite_ref-1\" class=\"reference\"><a href=\"#cite_note-1\"><span>[</span>1<span>]</span></a></sup> The taste is mild. The white <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Trama_(mycology)\" title=\"Trama (mycology)\">flesh</a> bruises slightly reddish, as opposed to yellow in the inedible (and somewhat toxic) <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Agaricus_xanthodermus\" title=\"Agaricus xanthodermus\">Agaricus xanthodermus</a></i> and similar species. The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Spore\" title=\"Spore\">spores</a> are 7–8 micrometres (0.00028–0.00031&#160;in) by 4–5 micrometres (0.00016–0.00020&#160;in), and ovate. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Cheilocystidia\" title=\"Cheilocystidia\" class=\"mw-redirect\">Cheilocystidia</a> are absent.<br /><b>Similar species:</b><br /><i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Amanita_virosa\" title=\"Amanita virosa\">Amanita virosa</a></i> (and similar, closely related species), <b>the destroying angel</b> <b>(morbidly toxic)</b>.<br /><i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Agaricus_xanthodermus\" title=\"Agaricus xanthodermus\">Agaricus xanthodermus</a></i>, <b>the yellow stainer</b> <b>(causes gastrointestinal problems)</b>.<br /><i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Agaricus_arvensis\" title=\"Agaricus arvensis\">Agaricus arvensis</a></i>, <b>the horse mushroom</b> <b>(excellent edible)</b>.<br />White <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Clitocybe\" title=\"Clitocybe\">Clitocybe</a></i> species, that also grow on lawns, and in grassy places <b>(dangerous)</b>.</p><h2><span class=\"mw-headline\" id=\"Distribution_and_habitat\">Distribution and habitat</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Agaricus_campestris&amp;action=edit&amp;section=3\" title=\"Edit section: Distribution and habitat\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><p><i>Agaricus campestris</i> is common in fields and grassy areas after rain from late summer onwards worldwide. It is often found on lawns in suburban areas. Appearing in small groups, in <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Fairy_rings\" title=\"Fairy rings\" class=\"mw-redirect\">fairy rings</a>,<sup id=\"cite_ref-2\" class=\"reference\"><a href=\"#cite_note-2\"><span>[</span>2<span>]</span></a></sup> or solitary. Owing to the demise of horse-drawn vehicles, and the subsequent decrease in the number of horses on pasture, the old '<b>white outs'</b> of years gone by are becoming rare events.<sup id=\"cite_ref-R.Mabey_3-0\" class=\"reference\"><a href=\"#cite_note-R.Mabey-3\"><span>[</span>3<span>]</span></a></sup> This species is rarely found in <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Woodland\" title=\"Woodland\">woodland</a>.</p><h2><span class=\"mw-headline\" id=\"Edibility\">Edibility</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Agaricus_campestris&amp;action=edit&amp;section=4\" title=\"Edit section: Edibility\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><p>It is widely collected and eaten, even by those who would not normally eat wild <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Mushrooms\" title=\"Mushrooms\" class=\"mw-redirect\">mushrooms</a>. This mushroom is not commercially cultivated on account of its fast maturing and short shelf-life.<sup id=\"cite_ref-4\" class=\"reference\"><a href=\"#cite_note-4\"><span>[</span>4<span>]</span></a></sup> Culinary uses of the meadow mushroom include eating it sauteed or fried, in sauces, or even sliced raw and included in salads. In flavor and texture, this mushroom is almost identical to the white button mushroom available in grocery stores in the United States. Be sure to rinse well to dislodge any sand, and also watch out for small, white larvae which tunnel through the stems and caps. Among the similar species mentioned above, there have been cases (in fact the most common cause of fatal fungus poisoning in France) where the deadly toxic <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Destroying_angel\" title=\"Destroying angel\">destroying angel</a> (<i>Amanita bisporigera</i>) has been consumed by individuals who mistook it for this species. The edibility of specimens collected from lawns is uncertain because of possible contamination with pesticides or other chemicals.</p><h2><span class=\"mw-headline\" id=\"Other_uses\">Other uses</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Agaricus_campestris&amp;action=edit&amp;section=5\" title=\"Edit section: Other uses\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><p>Research into fungal dressings for the treatment of ulcers, and bed sores, using fungal mycelial filaments, is ongoing. In the past, slices of <i>A. campestris</i> were applied to scalds, and burns in parts of Scotland.<sup id=\"cite_ref-P.Harding_5-0\" class=\"reference\"><a href=\"#cite_note-P.Harding-5\"><span>[</span>5<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"Bioactive_properties\">Bioactive properties</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Agaricus_campestris&amp;action=edit&amp;section=6\" title=\"Edit section: Bioactive properties\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><p>Water extracts of <i>A. campestris</i> have been shown to enhance the secretion of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Insulin\" title=\"Insulin\">insulin</a>, and to have insulin-like effects on <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Glucose_metabolism\" title=\"Glucose metabolism\" class=\"mw-redirect\">glucose metabolism</a> <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/In_vitro\" title=\"In vitro\">in vitro</a></i>, although the mechanism is not understood.<sup id=\"cite_ref-pmid9659289_6-0\" class=\"reference\"><a href=\"#cite_note-pmid9659289-6\"><span>[</span>6<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"See_also\">See also</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Agaricus_campestris&amp;action=edit&amp;section=7\" title=\"Edit section: See also\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><div class=\"noprint tright portal\" style=\"border:solid #aaa 1px;margin:0.5em 0 0.5em 1em;\"><table style=\"background:#f9f9f9;font-size:85%;line-height:110%;max-width:175px;\"><tr valign=\"middle\"><td style=\"text-align:center;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Karl_Johanssvamp,_Iduns_kokbok.png\" class=\"image\"><img alt=\"Portal icon\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Karl_Johanssvamp%2C_Iduns_kokbok.png/25px-Karl_Johanssvamp%2C_Iduns_kokbok.png\" width=\"25\" height=\"28\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/4/42/Karl_Johanssvamp%2C_Iduns_kokbok.png/38px-Karl_Johanssvamp%2C_Iduns_kokbok.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/42/Karl_Johanssvamp%2C_Iduns_kokbok.png/51px-Karl_Johanssvamp%2C_Iduns_kokbok.png 2x\" /></a></td><td style=\"padding:0 0.2em;vertical-align:middle;font-style:italic;font-weight:bold;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Portal:Fungi\" title=\"Portal:Fungi\">Fungi portal</a></td></tr></table></div><ul><li><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/List_of_Agaricus_species\" title=\"List of Agaricus species\">List of <i>Agaricus</i> species</a></li></ul><h2><span class=\"mw-headline\" id=\"References\">References</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Agaricus_campestris&amp;action=edit&amp;section=8\" title=\"Edit section: References\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><div class=\"reflist\" style=\"list-style-type: decimal;\"><ol class=\"references\"><li id=\"cite_note-1\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-1\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation book\">Nilsson, Sven &amp; Persson, Olle (1977). <i>Fungi of Northern Europe 2: Gill-Fungi</i>. Penguin, New York. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Book_Number\" title=\"International Standard Book Number\">ISBN</a>&#160;<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/0-14-063006-6\" title=\"Special:BookSources/0-14-063006-6\">0-14-063006-6</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAgaricus+campestris&amp;rft.aulast=Nilsson%2C+Sven+%26+Persson%2C+Olle&amp;rft.au=Nilsson%2C+Sven+%26+Persson%2C+Olle&amp;rft.btitle=Fungi+of+Northern+Europe+2%3A+Gill-Fungi&amp;rft.date=1977&amp;rft.genre=book&amp;rft.isbn=0-14-063006-6&amp;rft.pub=Penguin%2C+New+York&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-2\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-2\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Fox RTV., R (2006). \"Fungal foes in your garden: fairy ring mushrooms\". <i>Mycologist</i> <b>20</b> (1): 36–37. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Digital_object_identifier\" title=\"Digital object identifier\">doi</a>:<a rel=\"nofollow\" class=\"external text\" href=\"http://dx.doi.org/10.1016%2Fj.mycol.2005.11.013\">10.1016/j.mycol.2005.11.013</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAgaricus+campestris&amp;rft.atitle=Fungal+foes+in+your+garden%3A+fairy+ring+mushrooms&amp;rft.aufirst=R&amp;rft.au=Fox+RTV.%2C+R&amp;rft.aulast=Fox+RTV.&amp;rft.date=2006&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1016%2Fj.mycol.2005.11.013&amp;rft.issue=1&amp;rft.jtitle=Mycologist&amp;rft.pages=36%26ndash%3B37&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=20\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-R.Mabey-3\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-R.Mabey_3-0\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation book\">Richard Mabey (1972). <i>Food For Free, a guide to the edible wild plants of Britain</i>. Fontana/Collins.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAgaricus+campestris&amp;rft.aulast=Richard+Mabey&amp;rft.au=Richard+Mabey&amp;rft.btitle=Food+For+Free%2C+a+guide+to+the+edible+wild+plants+of+Britain&amp;rft.date=1972&amp;rft.genre=book&amp;rft.pub=Fontana%2FCollins&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-4\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-4\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation book\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Jane_Grigson\" title=\"Jane Grigson\">Grigson, Jane</a> (1975). <i>The Mushroom Feast</i>. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/London\" title=\"London\">London</a>: Penguin. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Book_Number\" title=\"International Standard Book Number\">ISBN</a>&#160;<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/0-14-046273-2\" title=\"Special:BookSources/0-14-046273-2\">0-14-046273-2</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAgaricus+campestris&amp;rft.aufirst=Jane&amp;rft.au=Grigson%2C+Jane&amp;rft.aulast=Grigson&amp;rft.btitle=The+Mushroom+Feast&amp;rft.date=1975&amp;rft.genre=book&amp;rft.isbn=0-14-046273-2&amp;rft.place=London&amp;rft.pub=Penguin&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-P.Harding-5\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-P.Harding_5-0\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation book\">Patrick Harding (2008). <i>Mushroom Miscellany</i>. Collins. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Book_Number\" title=\"International Standard Book Number\">ISBN</a>&#160;<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/978-0-00-728464-1\" title=\"Special:BookSources/978-0-00-728464-1\">978-0-00-728464-1</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAgaricus+campestris&amp;rft.aulast=Patrick+Harding&amp;rft.au=Patrick+Harding&amp;rft.btitle=Mushroom+Miscellany&amp;rft.date=2008&amp;rft.genre=book&amp;rft.isbn=978-0-00-728464-1&amp;rft.pub=Collins&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-pmid9659289-6\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-pmid9659289_6-0\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Gray AM, Flatt PR (1998). <a rel=\"nofollow\" class=\"external text\" href=\"http://joe.endocrinology-journals.org/cgi/pmidlookup?view=long&amp;pmid=9659289\">\"Insulin-releasing and insulin-like activity of <i>Agaricus campestris</i> (mushroom)\"</a>. <i>The Journal of Endocrinology</i> <b>157</b> (2): 259–66. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Digital_object_identifier\" title=\"Digital object identifier\">doi</a>:<a rel=\"nofollow\" class=\"external text\" href=\"http://dx.doi.org/10.1677%2Fjoe.0.1570259\">10.1677/joe.0.1570259</a>. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/PubMed_Identifier\" title=\"PubMed Identifier\" class=\"mw-redirect\">PMID</a>&#160;<a rel=\"nofollow\" class=\"external text\" target=\"wikipedia\" href=\"http://www.ncbi.nlm.nih.gov/pubmed/9659289\">9659289</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAgaricus+campestris&amp;rft.atitle=Insulin-releasing+and+insulin-like+activity+of+%27%27Agaricus+campestris%27%27+%28mushroom%29&amp;rft.au=Gray+AM%2C+Flatt+PR&amp;rft.aulast=Gray+AM%2C+Flatt+PR&amp;rft.date=1998&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fjoe.endocrinology-journals.org%2Fcgi%2Fpmidlookup%3Fview%3Dlong%26pmid%3D9659289&amp;rft_id=info%3Adoi%2F10.1677%2Fjoe.0.1570259&amp;rft_id=info%3Apmid%2F9659289&amp;rft.issue=2&amp;rft.jtitle=The+Journal+of+Endocrinology&amp;rft.pages=259%E2%80%9366&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=157\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li></ol></div><p><a rel=\"nofollow\" class=\"external text\" href=\"http://www.basidiochecklist.info/DisplayResults.asp?intGBNum=9779\">British Checklist</a><br /><a rel=\"nofollow\" class=\"external text\" href=\"http://www.indexfungorum.org/Names/SynSpecies.asp?RecordID=416972\">Index Fungorum</a></p></div></div></div></div>"
       ],
       "taxonomy": {
         "usageKey": 7434022,
@@ -1261,7 +1248,7 @@ export const mushrooms = [
           "language": "pt"
         },
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 3339766,
         "scientificName": "Macrolepiota procera (Scop.) Singer, 1948",
@@ -1333,7 +1320,7 @@ export const mushrooms = [
           "language": "fr"
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 5243412,
         "scientificName": "Agaricus xanthodermus Genev.",
@@ -1422,9 +1409,6 @@ export const mushrooms = [
           "language": "fr"
         }
       ],
-      "descriptions": [
-        "Barcode of Life Data Systems (BOLDS) Stats <br> Public Records: 1<br>Specimens with Barcodes: 1<br>Species With Barcodes: 1"
-      ],
       "taxonomy": {
         "usageKey": 7496350,
         "scientificName": "Amanita rubescens Pers., 1797",
@@ -1511,7 +1495,7 @@ export const mushrooms = [
           "language": "fr"
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 2525710,
         "scientificName": "Hygrophoropsis aurantiaca (Wulfen) Maire",
@@ -1588,7 +1572,7 @@ export const mushrooms = [
           "eol_preferred": true
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 5240323,
         "scientificName": "Amanita virosa (Fr.) Bertill.",
@@ -1662,7 +1646,7 @@ export const mushrooms = [
           "language": "fr"
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 4911705,
         "scientificName": "Mycena rosea (Schumach.) Gramberg",
@@ -1721,7 +1705,7 @@ export const mushrooms = [
           "language": "en"
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 2531124,
         "scientificName": "Clitocybe odora (Bull.) P.Kumm.",
@@ -1795,7 +1779,7 @@ export const mushrooms = [
           "eol_preferred": true
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 8961574,
         "scientificName": "Amanita pantherina (DC.) Krombh.",
@@ -1959,7 +1943,7 @@ export const mushrooms = [
           "language": "pt"
         },
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 8671098,
         "scientificName": "Amanita muscaria (L.) Lam., 1783",
@@ -2038,9 +2022,6 @@ export const mushrooms = [
           "eol_preferred": true
         }
       ],
-      "descriptions": [
-        "<p><em>&nbsp;Laccaria amethystina</em> - the Amethyst Deceiver - a solitary mushroom occasionally growing as scattered specimens or in small dense clumps or tufts (caespitose), is associated with oak trees (Quercus) and beech trees (Fagus) in temperate deciduous or mixed deciduous coniferous forests of eastern North America and Europe. &nbsp;It grows under species of Quercus in Central America and northern South America.</p>\r\n<p>It can be distinguished from the other North American &quot;purple&quot; Laccaria (<em>L. amethysteo-occidentalis</em> and <em>L. vinaceobrunnea</em>) by its small size and stature, bright grayish purple basidiomata that fade directly to buff, and globose, coarsely echinulate basidiospores.</p>"
-      ],
       "taxonomy": {
         "usageKey": 2530983,
         "scientificName": "Laccaria amethystina (Huds.) Cooke",
@@ -2116,7 +2097,7 @@ export const mushrooms = [
           "eol_preferred": true
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 5249271,
         "scientificName": "Auricularia auricula-judae (Bull.) Quél.",
@@ -2227,7 +2208,7 @@ export const mushrooms = [
           "eol_preferred": true
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 7987658,
         "scientificName": "Coprinus comatus (O.F.Müll.) Pers.",
@@ -2330,7 +2311,7 @@ export const mushrooms = [
           "language": "fr"
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 2540800,
         "scientificName": "Grifola frondosa (Dicks.) Gray",
@@ -2424,9 +2405,6 @@ export const mushrooms = [
           "language": "pt"
         },
       ],
-      "descriptions": [
-        "<p><strong>Original Description</strong></p>\r\nFries EM 1821 Systema Mycologicum I. sumtibus Ernesti Mauritii, Gryphiswaldiae (Digital image at <a href=\"http://194.203.77.76/librifungorum/Image.asp?ItemID=21&ImageFileName=0013b.jpg\"target=\"_blank\">Libri Fungorum</a>)\r\n<br>\r\n<p><strong>The combination <em><a href=\"/pages/1009706\">Amanita phalloides</a></em> was proposed in:</strong></p>\r\nLink DHF (1833) Grundriss der Kraeuterkunde IV. Haude und Spenerschen Buchhandlung (S.J. Joseephy), Berlin\r\n"
-      ],
       "taxonomy": {
         "usageKey": 5240325,
         "scientificName": "Amanita phalloides (Vaill. ex Fr.) Link",
@@ -2482,9 +2460,6 @@ export const mushrooms = [
           "language": "pt",
           "eol_preferred": true
         },
-      ],
-      "descriptions": [
-        "<div id=\"globalWrapper\"><div id=\"column-content\"><div id=\"content\"><div id=\"bodyContent\"><table class=\"mw-stack\" cellpadding=\"0\" cellspacing=\"1\" style=\"float:right; background: transparent; border-style: none; margin: 0; padding: 0;\"><tr><td style=\"border-style: none\"><div></div><table class=\"infobox\" style=\"width:22em\"><tr><th colspan=\"2\" style=\"text-align:center;font-size:125%;font-weight:bold;background-color: #ADD8E6\"><i>Amanita caesarea</i></th></tr><tr><td colspan=\"2\" style=\"text-align:center;background-color: #ADD8E6; font-style: italic; font-size: 110%\"><div class=\"floatright\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Template:Mycomorphbox\" title=\"float\"><img alt=\"View the Mycomorphbox template that generates the following list\" src=\"http://upload.wikimedia.org/wikipedia/en/thumb/3/35/Information_icon.svg/14px-Information_icon.svg.png\" width=\"14\" height=\"14\" srcset=\"//upload.wikimedia.org/wikipedia/en/thumb/3/35/Information_icon.svg/21px-Information_icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/3/35/Information_icon.svg/28px-Information_icon.svg.png 2x\" data-file-width=\"62\" data-file-height=\"62\" /></a></div><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Mycology\" title=\"Mycology\">Mycological characteristics</a></td></tr><tr><th scope=\"row\" style=\"text-align:left;white-space: nowrap\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Gills_icon.png/32px-Gills_icon.png\" width=\"32\" height=\"32\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/1/11/Gills_icon.png/48px-Gills_icon.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/11/Gills_icon.png/64px-Gills_icon.png 2x\" data-file-width=\"302\" data-file-height=\"300\" /></th><td style=\"text-align: right\"><b>gills</b> on <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Hymenium\" title=\"Hymenium\">hymenium</a></td></tr><tr><th scope=\"row\" style=\"text-align:left;white-space: nowrap\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Convex_cap_icon.svg/32px-Convex_cap_icon.svg.png\" width=\"32\" height=\"32\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Convex_cap_icon.svg/48px-Convex_cap_icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Convex_cap_icon.svg/64px-Convex_cap_icon.svg.png 2x\" data-file-width=\"342\" data-file-height=\"342\" /></th><td style=\"text-align: right\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Pileus_(mycology)\" title=\"Pileus (mycology)\">cap</a> is <b>convex</b></td></tr><tr><th scope=\"row\" style=\"text-align:left;white-space: nowrap\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Free_gills_icon2.svg/32px-Free_gills_icon2.svg.png\" width=\"32\" height=\"32\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Free_gills_icon2.svg/48px-Free_gills_icon2.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Free_gills_icon2.svg/64px-Free_gills_icon2.svg.png 2x\" data-file-width=\"300\" data-file-height=\"300\" /></th><td style=\"text-align: right\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Hymenium\" title=\"Hymenium\">hymenium</a> is <b>free</b></td></tr><tr><th scope=\"row\" style=\"text-align:left;white-space: nowrap\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ring_and_volva_stipe_icon.svg/32px-Ring_and_volva_stipe_icon.svg.png\" width=\"32\" height=\"32\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ring_and_volva_stipe_icon.svg/48px-Ring_and_volva_stipe_icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ring_and_volva_stipe_icon.svg/64px-Ring_and_volva_stipe_icon.svg.png 2x\" data-file-width=\"300\" data-file-height=\"300\" /></th><td style=\"text-align: right\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Stipe_(mycology)\" title=\"Stipe (mycology)\">stipe</a> has a <b>ring and volva</b></td></tr><tr><th scope=\"row\" style=\"text-align:left;white-space: nowrap\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/White_spore_print_icon.png/32px-White_spore_print_icon.png\" width=\"32\" height=\"32\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/1/1b/White_spore_print_icon.png/48px-White_spore_print_icon.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/1b/White_spore_print_icon.png/64px-White_spore_print_icon.png 2x\" data-file-width=\"213\" data-file-height=\"213\" /></th><td style=\"text-align: right\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Spore_print\" title=\"Spore print\">spore print</a> is <b>white</b></td></tr><tr><th scope=\"row\" style=\"text-align:left;white-space: nowrap\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Mycorrhizal_fungus.svg/32px-Mycorrhizal_fungus.svg.png\" width=\"32\" height=\"24\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/5/55/Mycorrhizal_fungus.svg/48px-Mycorrhizal_fungus.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/55/Mycorrhizal_fungus.svg/64px-Mycorrhizal_fungus.svg.png 2x\" data-file-width=\"270\" data-file-height=\"200\" /></th><td style=\"text-align: right\">ecology is <b><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Mycorrhizal\" title=\"Mycorrhizal\" class=\"mw-redirect\">mycorrhizal</a></b></td></tr><tr><th scope=\"row\" style=\"text-align:left;white-space: nowrap\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mycomorphbox_Choice.png/32px-Mycomorphbox_Choice.png\" width=\"32\" height=\"32\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mycomorphbox_Choice.png/48px-Mycomorphbox_Choice.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mycomorphbox_Choice.png/64px-Mycomorphbox_Choice.png 2x\" data-file-width=\"250\" data-file-height=\"250\" /> <img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Mycomorphbox_Caution.png/32px-Mycomorphbox_Caution.png\" width=\"32\" height=\"32\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Mycomorphbox_Caution.png/48px-Mycomorphbox_Caution.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Mycomorphbox_Caution.png/64px-Mycomorphbox_Caution.png 2x\" data-file-width=\"250\" data-file-height=\"250\" /></th><td style=\"text-align: right\"><p>edibility: <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Edible_mushroom\" title=\"Edible mushroom\"><b>choice</b></a></p>but <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Mushroom_hunting#Poisonous_mushrooms_commonly_confused_with_edible_ones\" title=\"Mushroom hunting\"><b>not recommended</b></a></td></tr></table></td></tr></table><p><i><b>Amanita caesarea</b></i>, commonly known in English as <b>Caesar's mushroom</b>, is a highly regarded <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Edible_mushroom\" title=\"Edible mushroom\">edible mushroom</a> in the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Genus\" title=\"Genus\">genus</a> <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Amanita\" title=\"Amanita\">Amanita</a></i>, native to southern Europe and North Africa. This mushroom was first <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Species_description\" title=\"Species description\">described</a> by <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Giovanni_Antonio_Scopoli\" title=\"Giovanni Antonio Scopoli\">Giovanni Antonio Scopoli</a> in 1772. This mushroom was a favorite of early rulers of the Roman Empire.<sup id=\"cite_ref-1\" class=\"reference\"><a href=\"#cite_note-1\"><span>[</span>1<span>]</span></a></sup></p><p>It has a distinctive orange <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Pileus_(mycology)\" title=\"Pileus (mycology)\">cap</a>, yellow <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Lamella_(mycology)\" title=\"Lamella (mycology)\">gills</a> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Stipe_(mycology)\" title=\"Stipe (mycology)\">stipe</a>. Organic acids have been isolated from this species. Similar orange-capped species occur in North America and India. It was known to and valued by the Ancient Romans, who called it <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Boletus\" title=\"Boletus\">Boletus</a></i>, a name now applied to a very different type of fungus.</p><p></p><div id=\"toc\" class=\"toc\"><div id=\"toctitle\"><h2>Contents</h2></div><ul><li class=\"toclevel-1 tocsection-1\"><a href=\"#Taxonomy_and_naming\"><span class=\"tocnumber\">1</span> <span class=\"toctext\">Taxonomy and naming</span></a></li><li class=\"toclevel-1 tocsection-2\"><a href=\"#Description\"><span class=\"tocnumber\">2</span> <span class=\"toctext\">Description</span></a><ul><li class=\"toclevel-2 tocsection-3\"><a href=\"#Chemical_properties\"><span class=\"tocnumber\">2.1</span> <span class=\"toctext\">Chemical properties</span></a></li><li class=\"toclevel-2 tocsection-4\"><a href=\"#Edibility\"><span class=\"tocnumber\">2.2</span> <span class=\"toctext\">Edibility</span></a></li></ul></li><li class=\"toclevel-1 tocsection-5\"><a href=\"#Distribution_and_habitat\"><span class=\"tocnumber\">3</span> <span class=\"toctext\">Distribution and habitat</span></a></li><li class=\"toclevel-1 tocsection-6\"><a href=\"#See_also\"><span class=\"tocnumber\">4</span> <span class=\"toctext\">See also</span></a></li><li class=\"toclevel-1 tocsection-7\"><a href=\"#References\"><span class=\"tocnumber\">5</span> <span class=\"toctext\">References</span></a></li><li class=\"toclevel-1 tocsection-8\"><a href=\"#External_links\"><span class=\"tocnumber\">6</span> <span class=\"toctext\">External links</span></a></li></ul></div><p></p><h2><span class=\"mw-headline\" id=\"Taxonomy_and_naming\">Taxonomy and naming</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Amanita_caesarea&amp;action=edit&amp;section=1\" title=\"Edit section: Taxonomy and naming\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><p><i>Amanita caesarea</i> was first described by Italian <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Mycology\" title=\"Mycology\">mycologist</a> <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Giovanni_Antonio_Scopoli\" title=\"Giovanni Antonio Scopoli\">Giovanni Antonio Scopoli</a> in 1772 as <i>Agaricus caesareus</i>,<sup id=\"cite_ref-2\" class=\"reference\"><a href=\"#cite_note-2\"><span>[</span>2<span>]</span></a></sup> before later being placed in <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Amanita\" title=\"Amanita\">Amanita</a></i> by <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Persoon\" title=\"Persoon\" class=\"mw-redirect\">Persoon</a> in 1801.<sup id=\"cite_ref-3\" class=\"reference\"><a href=\"#cite_note-3\"><span>[</span>3<span>]</span></a></sup> The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Common_name\" title=\"Common name\">common name</a> comes from its being a favourite of the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Roman_Empire\" title=\"Roman Empire\">Roman</a> emperors, who took the name <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Caesar_(title)\" title=\"Caesar (title)\">Caesar</a> (originally a <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Cognomen\" title=\"Cognomen\">family name</a>) as a title. It was a personal favorite of Roman emperor <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Claudius\" title=\"Claudius\">Claudius</a>.<sup id=\"cite_ref-marley_4-0\" class=\"reference\"><a href=\"#cite_note-marley-4\"><span>[</span>4<span>]</span></a></sup> The Romans called it <i>Bōlētus</i>, derived from the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Ancient_Greek\" title=\"Ancient Greek\">Ancient Greek</a> βωλιτης for this fungus as named by <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Galen\" title=\"Galen\">Galen</a>.<sup id=\"cite_ref-Ramsbottom53_5-0\" class=\"reference\"><a href=\"#cite_note-Ramsbottom53-5\"><span>[</span>5<span>]</span></a></sup> Several modern common names recognise this heritage with the English Caesar's mushroom and royal amanita, French <i>impériale</i>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Polish_language\" title=\"Polish language\">Polish</a> <i>cesarski</i> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/German_language\" title=\"German language\">German</a> <i>Kaiserling</i>. In <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Italian_language\" title=\"Italian language\">Italian</a>, it is <i>ovolo</i> (pl. <i>ovoli</i>), due to its resemblance to an egg when very young.<sup id=\"cite_ref-Carluccio03_6-0\" class=\"reference\"><a href=\"#cite_note-Carluccio03-6\"><span>[</span>6<span>]</span></a></sup> In <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Albanian_language\" title=\"Albanian language\">Albanian</a> it is <i>kuqëlorja</i> from its colour (&lt; Albanian <i>kuqe</i> 'red'). Other common names include <i>Amanite des Césars</i> and <i>Oronge</i>.</p><p>It has also been classified as <i>A.&#160;umbonata</i>. <i>A.&#160;hemibapha</i> is a similar species originally described from <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/India\" title=\"India\">India</a>, and this name has sometimes been applied to North American collections. The relationship of the similar <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/North_America\" title=\"North America\">North American</a> species <i>A.&#160;arkansana</i> and <i>A.&#160;jacksonii</i> to <i>A.&#160;caesarea</i> is not clear. The edibility of some of these similar species is also unclear, though <i>A.&#160;jacksonii</i> is eaten by many and there have been no reports of illness from it. <i>A. caesarea</i> was first domesticated in 1984.<sup id=\"cite_ref-7\" class=\"reference\"><a href=\"#cite_note-7\"><span>[</span>7<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"Description\">Description</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Amanita_caesarea&amp;action=edit&amp;section=2\" title=\"Edit section: Description\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><div class=\"thumb tleft\"><div class=\"thumbinner\" style=\"width:222px;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Amanita_caesarea.jpg\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Amanita_caesarea.jpg/220px-Amanita_caesarea.jpg\" width=\"220\" height=\"165\" class=\"thumbimage\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Amanita_caesarea.jpg/330px-Amanita_caesarea.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Amanita_caesarea.jpg/440px-Amanita_caesarea.jpg 2x\" data-file-width=\"1024\" data-file-height=\"768\" /></a><div class=\"thumbcaption\"><div class=\"magnify\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Amanita_caesarea.jpg\" class=\"internal\" title=\"Enlarge\"></a></div>Specimen of <i>A. caesarea</i></div></div></div><p>This mushroom has an orange-red <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Pileus_(mycology)\" title=\"Pileus (mycology)\">cap</a>, initially hemispherical before convex and finally flat. The surface is smooth, and margins striated, and it can reach 15&#160;cm (6&#160;in) or rarely 20&#160;cm (8&#160;in) in diameter. The free <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Lamella_(mycology)\" title=\"Lamella (mycology)\">gills</a> are pale to golden yellow, as is the cylinder-shaped <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Stipe_(mycology)\" title=\"Stipe (mycology)\">stipe</a>, which is 8–15&#160;cm (3–6&#160;in) tall and 2–3&#160;cm (around 1&#160;in) wide. The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Annulus_(mycology)\" title=\"Annulus (mycology)\">ring</a> hangs loosely and is lined above and smooth below. The base of the stipe is thicker than the top and is seated in a greyish-white cup-like <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Volva_(mycology)\" title=\"Volva (mycology)\">volva</a>, which is a remnant of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Universal_veil\" title=\"Universal veil\">universal veil</a>. The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Spore\" title=\"Spore\">spores</a> are white.<sup id=\"cite_ref-Breit95_8-0\" class=\"reference\"><a href=\"#cite_note-Breit95-8\"><span>[</span>8<span>]</span></a></sup></p><p>It could be confused with the poisonous fly agaric (<i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Amanita_muscaria\" title=\"Amanita muscaria\">Amanita muscaria</a></i>). Though <i>A. muscaria</i> has a distinctive red cap dotted with fluffy white flakes, these tend to fall off as the carpophor ages and the bright red tends to fade to a yellowy orange. The latter mushroom will always have white gills and stalk with a ringed volva<sup id=\"cite_ref-Breit95_8-1\" class=\"reference\"><a href=\"#cite_note-Breit95-8\"><span>[</span>8<span>]</span></a></sup> rather than a yellow stalk and is typically associated with spruce (<i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Picea\" title=\"Picea\" class=\"mw-redirect\">Picea</a></i>), pine (<i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Pinus\" title=\"Pinus\" class=\"mw-redirect\">Pinus</a></i>) or birch (<i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Betula\" title=\"Betula\" class=\"mw-redirect\">Betula</a></i>).<sup id=\"cite_ref-Breit95muscaria_9-0\" class=\"reference\"><a href=\"#cite_note-Breit95muscaria-9\"><span>[</span>9<span>]</span></a></sup> Certain varieties (e.g. <i>Amanita muscaria var. guessowii</i>) are close to yellow even at the juvenile stage.</p><h3><span class=\"mw-headline\" id=\"Chemical_properties\">Chemical properties</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Amanita_caesarea&amp;action=edit&amp;section=3\" title=\"Edit section: Chemical properties\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h3><p>A study of isolates from the fruit bodies of <i>A. caesarea</i> showed that the radial growth (increases in axon's diameter) of this species was possible at pH 6-7, and optimal growth was in a temperature of 24–28&#160;°C (75–82&#160;°F), depending on the isolate.<sup id=\"cite_ref-daza_10-0\" class=\"reference\"><a href=\"#cite_note-daza-10\"><span>[</span>10<span>]</span></a></sup></p><p>In another study, the quantities of heavy metals <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Arsenic\" title=\"Arsenic\">arsenic</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Cadmium\" title=\"Cadmium\">cadmium</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Lead\" title=\"Lead\">lead</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Mercury_(element)\" title=\"Mercury (element)\">mercury</a> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Selenium\" title=\"Selenium\">selenium</a> were investigated in mushroom samples. Cadmium amount was found to have exceeded in <i>A. caesarea</i>, <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Boletus_edulis\" title=\"Boletus edulis\">Boletus edulis</a></i> and <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Boletus_pinophilus\" title=\"Boletus pinophilus\">Boletus pinophilus</a></i>, which is not harmful. The study concluded that the concentrations of the metals may vary from species to species and may be playing a taxonomic role, but has no reliable part in the mushroom's ecology.<sup id=\"cite_ref-cocchi_11-0\" class=\"reference\"><a href=\"#cite_note-cocchi-11\"><span>[</span>11<span>]</span></a></sup></p><p>Organic acid compositions were noted in six mushroom species: <i>Boletus edulis</i>, <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Gyroporus_castaneus\" title=\"Gyroporus castaneus\">Gyroporus castaneus</a></i>, <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Lactarius_deliciosus\" title=\"Lactarius deliciosus\">Lactarius deliciosus</a></i>, <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Suillus_collinitus\" title=\"Suillus collinitus\">Suillus collinitus</a></i> and <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Xerocomus_chrysenteron\" title=\"Xerocomus chrysenteron\" class=\"mw-redirect\">Xerocomus chrysenteron</a></i>. Each had five acids in common - <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Citric_acid\" title=\"Citric acid\">citric acid</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Ketoglutaric_acid\" title=\"Ketoglutaric acid\">ketoglutaric acid</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Malic_acid\" title=\"Malic acid\">malic acid</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Succinic_acid\" title=\"Succinic acid\">succinic acid</a> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Fumaric_acid\" title=\"Fumaric acid\">fumaric acid</a>. In <i>A. caesarea</i>, malic acid and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Ascorbic_acid\" title=\"Ascorbic acid\">ascorbic acid</a> were the most common compounds.<sup id=\"cite_ref-12\" class=\"reference\"><a href=\"#cite_note-12\"><span>[</span>12<span>]</span></a></sup> Ergosterol has also been isolated from <i>A. caesarea</i>.<sup id=\"cite_ref-13\" class=\"reference\"><a href=\"#cite_note-13\"><span>[</span>13<span>]</span></a></sup></p><div class=\"thumb tleft\"><div class=\"thumbinner\" style=\"width:152px;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Amanita_caesarea.JPG\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Amanita_caesarea.JPG/150px-Amanita_caesarea.JPG\" width=\"150\" height=\"200\" class=\"thumbimage\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Amanita_caesarea.JPG/225px-Amanita_caesarea.JPG 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Amanita_caesarea.JPG/300px-Amanita_caesarea.JPG 2x\" data-file-width=\"1200\" data-file-height=\"1600\" /></a><div class=\"thumbcaption\"><div class=\"magnify\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Amanita_caesarea.JPG\" class=\"internal\" title=\"Enlarge\"></a></div><i>A. caesarea</i> specimen from Italy.</div></div></div><h3><span class=\"mw-headline\" id=\"Edibility\">Edibility</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Amanita_caesarea&amp;action=edit&amp;section=4\" title=\"Edit section: Edibility\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h3><p><i>A. caesarea</i> is a highly appreciated mushroom in Europe. It is traditionally gathered and consumed in Italy, where it is known as <i>ovolo</i> or <i>ovolo buono</i>.<sup id=\"cite_ref-14\" class=\"reference\"><a href=\"#cite_note-14\"><span>[</span>14<span>]</span></a></sup> It has been traditionally taken as food in Mexico. They consume it roasted with a bit of the herb epazote, <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Dysphania_ambrosioides\" title=\"Dysphania ambrosioides\">Dysphania ambrosioides</a></i>. International export market began from the 1990s.<sup id=\"cite_ref-poe_15-0\" class=\"reference\"><a href=\"#cite_note-poe-15\"><span>[</span>15<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"Distribution_and_habitat\">Distribution and habitat</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Amanita_caesarea&amp;action=edit&amp;section=5\" title=\"Edit section: Distribution and habitat\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><p>It is found in southern Europe and North Africa, particularly in the hills of northern Italy. It is thought to have been introduced north of the Alps by the Roman armies as it is most frequently found along old Roman roads.<sup id=\"cite_ref-Breit95_8-2\" class=\"reference\"><a href=\"#cite_note-Breit95-8\"><span>[</span>8<span>]</span></a></sup> The mushroom is also distributed in Balkan paeninsula, Hungary,<sup id=\"cite_ref-16\" class=\"reference\"><a href=\"#cite_note-16\"><span>[</span>16<span>]</span></a></sup> India,<sup id=\"cite_ref-17\" class=\"reference\"><a href=\"#cite_note-17\"><span>[</span>17<span>]</span></a></sup> and China (<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Sichuan_Province\" title=\"Sichuan Province\" class=\"mw-redirect\">Sichuan Province</a>).<sup id=\"cite_ref-18\" class=\"reference\"><a href=\"#cite_note-18\"><span>[</span>18<span>]</span></a></sup> Although the species is not known to exist in the United States and Canada, it has been collected in Mexico.<sup id=\"cite_ref-19\" class=\"reference\"><a href=\"#cite_note-19\"><span>[</span>19<span>]</span></a></sup><sup id=\"cite_ref-20\" class=\"reference\"><a href=\"#cite_note-20\"><span>[</span>20<span>]</span></a></sup></p><p>In Europe, <i>Amanita caesarea</i> inhabits primarily oak forests (<i>Quercetum troianae</i> Em. et Ht., <i>Quercetum frainetto-cerris</i> Rudsky. and <i>Quercetum frainetto-cerris macedonicum</i> Oberd., e.g.). It grows individually or in groups from early summer to mid autumn. In warmer climates this mushroom fruits in higher <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Oak\" title=\"Oak\">oak</a> woodlands, sometimes mixed with <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Conifer\" title=\"Conifer\" class=\"mw-redirect\">conifers</a>. Thus, in Mexico its natural habitat is oak, pine or fir forests at altitudes of 2,200–3,000&#160;m (7,200–9,800&#160;ft) above sea level, where it prefers plains and can occur at slopes of 20 degrees.<sup id=\"cite_ref-poe_15-1\" class=\"reference\"><a href=\"#cite_note-poe-15\"><span>[</span>15<span>]</span></a></sup></p><p><i>Amanita caesarea</i> is listed in the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Regional_Red_List\" title=\"Regional Red List\">Red Data book</a> of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Ukraine\" title=\"Ukraine\">Ukraine</a>,<sup id=\"cite_ref-21\" class=\"reference\"><a href=\"#cite_note-21\"><span>[</span>21<span>]</span></a></sup> and it is protected by law in <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Croatia\" title=\"Croatia\">Croatia</a>,<sup id=\"cite_ref-22\" class=\"reference\"><a href=\"#cite_note-22\"><span>[</span>22<span>]</span></a></sup> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Slovenia\" title=\"Slovenia\">Slovenia</a>.<sup id=\"cite_ref-23\" class=\"reference\"><a href=\"#cite_note-23\"><span>[</span>23<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"See_also\">See also</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Amanita_caesarea&amp;action=edit&amp;section=6\" title=\"Edit section: See also\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><div class=\"noprint tright portal\" style=\"border:solid #aaa 1px;margin:0.5em 0 0.5em 1em;\"><table style=\"background:#f9f9f9;font-size:85%;line-height:110%;max-width:175px;\"><tr style=\"vertical-align:middle;\"><td style=\"text-align:center;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Karl_Johanssvamp,_Iduns_kokbok.png\" class=\"image\"><img alt=\"Portal icon\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Karl_Johanssvamp%2C_Iduns_kokbok.png/25px-Karl_Johanssvamp%2C_Iduns_kokbok.png\" width=\"25\" height=\"28\" class=\"noviewer\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/4/42/Karl_Johanssvamp%2C_Iduns_kokbok.png/38px-Karl_Johanssvamp%2C_Iduns_kokbok.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/42/Karl_Johanssvamp%2C_Iduns_kokbok.png/51px-Karl_Johanssvamp%2C_Iduns_kokbok.png 2x\" data-file-width=\"1105\" data-file-height=\"1215\" /></a></td><td style=\"padding:0 0.2em;vertical-align:middle;font-style:italic;font-weight:bold;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Portal:Fungi\" title=\"Portal:Fungi\">Fungi portal</a></td></tr></table></div><ul><li><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/List_of_Amanita_species\" title=\"List of Amanita species\">List of <i>Amanita</i> species</a></li></ul><h2><span class=\"mw-headline\" id=\"References\">References</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Amanita_caesarea&amp;action=edit&amp;section=7\" title=\"Edit section: References\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><div class=\"reflist references-column-width\" style=\" -webkit-  list-style-type: decimal;\"><ol class=\"references\"><li id=\"cite_note-1\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-1\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\">Volk, Tom. <a rel=\"nofollow\" class=\"external text\" href=\"http://botit.botany.wisc.edu/toms_fungi/mar2002.html\">\"Tom Volk's Fungus of the Month for March 2002\"</a><span class=\"reference-accessdate\">. Retrieved 17 November 2012</span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.aufirst=Tom&amp;rft.aulast=Volk&amp;rft.au=Volk%2C+Tom&amp;rft.btitle=Tom+Volk%27s+Fungus+of+the+Month+for+March+2002&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fbotit.botany.wisc.edu%2Ftoms_fungi%2Fmar2002.html&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-2\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-2\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation book\">Scopoli JA. (1772). <i>Flora Carniolica exhibiens Plantas Carnioliae Indigenas et Distributas in Classes, Genera, Species, Varietates ordine Linnaeano. Vol. 2</i> (in Latin). Vienna: Johann Paul Krauss. p.&#160;419.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.aulast=Scopoli+JA.&amp;rft.au=Scopoli+JA.&amp;rft.btitle=Flora+Carniolica+exhibiens+Plantas+Carnioliae+Indigenas+et+Distributas+in+Classes%2C+Genera%2C+Species%2C+Varietates+ordine+Linnaeano.+Vol.+2&amp;rft.date=1772&amp;rft.genre=book&amp;rft.pages=419&amp;rft.place=Vienna&amp;rft.pub=Johann+Paul+Krauss&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-3\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-3\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation book\">Persoon CH. (1801). <a rel=\"nofollow\" class=\"external text\" href=\"http://194.203.77.76/LibriFungorum/Image.asp?ItemID=82&amp;ImageFileName=0252b.jpg\"><i>Synopsis Methodica Fungorum</i></a> (in Latin). Gottingae. p.&#160;252.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.aulast=Persoon+CH.&amp;rft.au=Persoon+CH.&amp;rft.btitle=Synopsis+Methodica+Fungorum&amp;rft.date=1801&amp;rft.genre=book&amp;rft_id=http%3A%2F%2F194.203.77.76%2FLibriFungorum%2FImage.asp%3FItemID%3D82%26ImageFileName%3D0252b.jpg&amp;rft.pages=252&amp;rft.pub=Gottingae&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-marley-4\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-marley_4-0\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation book\">Marley, Greg A. (2010). <i>Chanterelle dreams, amanita nightmares&#160;: the love, lore, and mystique of mushrooms</i>. White River Junction, Vt.: Chelsea Green Pub. p.&#160;112. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Book_Number\" title=\"International Standard Book Number\">ISBN</a>&#160;<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/978-1-60358-214-8\" title=\"Special:BookSources/978-1-60358-214-8\">978-1-60358-214-8</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.aufirst=Greg+A.&amp;rft.aulast=Marley&amp;rft.au=Marley%2C+Greg+A.&amp;rft.btitle=Chanterelle+dreams%2C+amanita+nightmares+%3A+the+love%2C+lore%2C+and+mystique+of+mushrooms&amp;rft.date=2010&amp;rft.genre=book&amp;rft.isbn=978-1-60358-214-8&amp;rft.pages=112&amp;rft.place=White+River+Junction%2C+Vt.&amp;rft.pub=Chelsea+Green+Pub.&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-Ramsbottom53-5\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-Ramsbottom53_5-0\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation book\">Ramsbottom J. (1953). <i>Mushrooms &amp; Toadstools</i>. Collins. p.&#160;6. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Book_Number\" title=\"International Standard Book Number\">ISBN</a>&#160;<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/1-870630-09-2\" title=\"Special:BookSources/1-870630-09-2\">1-870630-09-2</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.aulast=Ramsbottom+J.&amp;rft.au=Ramsbottom+J.&amp;rft.btitle=Mushrooms+%26+Toadstools&amp;rft.date=1953&amp;rft.genre=book&amp;rft.isbn=1-870630-09-2&amp;rft.pages=6&amp;rft.pub=Collins&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-Carluccio03-6\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-Carluccio03_6-0\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation book\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Antonio_Carluccio\" title=\"Antonio Carluccio\">Carluccio A.</a> (2003). <i>The Complete Mushroom Book</i>. Quadrille. pp.&#160;23–24. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Book_Number\" title=\"International Standard Book Number\">ISBN</a>&#160;<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/1-84400-040-0\" title=\"Special:BookSources/1-84400-040-0\">1-84400-040-0</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.au=Carluccio+A.&amp;rft.aulast=Carluccio+A.&amp;rft.btitle=The+Complete+Mushroom+Book&amp;rft.date=2003&amp;rft.genre=book&amp;rft.isbn=1-84400-040-0&amp;rft.pages=23-24&amp;rft.pub=Quadrille&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-7\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-7\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation book\">Chang, Philip G. Miles, Shu-Ting (1997). <i>Mushroom biology&#160;: concise basics and current developments</i>. Singapore: World Scientific. p.&#160;139. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Book_Number\" title=\"International Standard Book Number\">ISBN</a>&#160;<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/981-02-2877-5\" title=\"Special:BookSources/981-02-2877-5\">981-02-2877-5</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.au=Chang%2C+Philip+G.+Miles%2C+Shu-Ting&amp;rft.aufirst=Philip+G.+Miles%2C+Shu-Ting&amp;rft.aulast=Chang&amp;rft.btitle=Mushroom+biology+%3A+concise+basics+and+current+developments&amp;rft.date=1997&amp;rft.genre=book&amp;rft.isbn=981-02-2877-5&amp;rft.pages=139&amp;rft.place=Singapore&amp;rft.pub=World+Scientific&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-Breit95-8\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-Breit95_8-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-Breit95_8-1\"><sup><i><b>b</b></i></sup></a> <a href=\"#cite_ref-Breit95_8-2\"><sup><i><b>c</b></i></sup></a></span> <span class=\"reference-text\"><span class=\"citation book\">Breitenbach J, Kränzlin F (1995). <i>Fungi of Switzerland 4: Agarics, 2nd Part</i>. p.&#160;146. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Book_Number\" title=\"International Standard Book Number\">ISBN</a>&#160;<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/3-85604-240-7\" title=\"Special:BookSources/3-85604-240-7\">3-85604-240-7</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.au=Breitenbach+J%2C+Kr%C3%A4nzlin+F&amp;rft.aulast=Breitenbach+J%2C+Kr%C3%A4nzlin+F&amp;rft.btitle=Fungi+of+Switzerland+4%3A+Agarics%2C+2nd+Part&amp;rft.date=1995&amp;rft.genre=book&amp;rft.isbn=3-85604-240-7&amp;rft.pages=146&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-Breit95muscaria-9\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-Breit95muscaria_9-0\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation book\">Breitenbach J, Kränzlin F (1995). <i>Fungi of Switzerland 4: Agarics, 2nd Part</i>. p.&#160;150. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Book_Number\" title=\"International Standard Book Number\">ISBN</a>&#160;<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/3-85604-240-7\" title=\"Special:BookSources/3-85604-240-7\">3-85604-240-7</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.au=Breitenbach+J%2C+Kr%C3%A4nzlin+F&amp;rft.aulast=Breitenbach+J%2C+Kr%C3%A4nzlin+F&amp;rft.btitle=Fungi+of+Switzerland+4%3A+Agarics%2C+2nd+Part&amp;rft.date=1995&amp;rft.genre=book&amp;rft.isbn=3-85604-240-7&amp;rft.pages=150&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-daza-10\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-daza_10-0\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Daza, A.; Manjón, J. L.; Camacho, M.; Romero de la Osa, L.; Aguilar, A.; Santamaría, C. (15 November 2005). \"Effect of carbon and nitrogen sources, pH and temperature on in vitro culture of several isolates of Amanita caesarea (Scop.:Fr.) Pers.\". <i>Mycorrhiza</i> <b>16</b> (2): 133–136. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Digital_object_identifier\" title=\"Digital object identifier\">doi</a>:<a rel=\"nofollow\" class=\"external text\" href=\"http://dx.doi.org/10.1007%2Fs00572-005-0025-6\">10.1007/s00572-005-0025-6</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.atitle=Effect+of+carbon+and+nitrogen+sources%2C+pH+and+temperature+on+in+vitro+culture+of+several+isolates+of+Amanita+caesarea+%28Scop.%3AFr.%29+Pers.&amp;rft.au=Aguilar%2C+A.&amp;rft.au=Camacho%2C+M.&amp;rft.au=Daza%2C+A.&amp;rft.aufirst=A.&amp;rft.aulast=Daza&amp;rft.au=Manj%C3%B3n%2C+J.+L.&amp;rft.au=Romero+de+la+Osa%2C+L.&amp;rft.au=Santamar%C3%ADa%2C+C.&amp;rft.date=15+November+2005&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1007%2Fs00572-005-0025-6&amp;rft.issue=2&amp;rft.jtitle=Mycorrhiza&amp;rft.pages=133-136&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=16\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-cocchi-11\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-cocchi_11-0\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Cocchi, Luigi; Vescovi, Luciano; Petrini, Liliane E.; Petrini, Orlando (2006). \"Heavy metals in edible mushrooms in Italy\". <i>Food Chemistry</i> <b>98</b> (2): 277–284. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Digital_object_identifier\" title=\"Digital object identifier\">doi</a>:<a rel=\"nofollow\" class=\"external text\" href=\"http://dx.doi.org/10.1016%2Fj.foodchem.2005.05.068\">10.1016/j.foodchem.2005.05.068</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.atitle=Heavy+metals+in+edible+mushrooms+in+Italy&amp;rft.au=Cocchi%2C+Luigi&amp;rft.aufirst=Luigi&amp;rft.aulast=Cocchi&amp;rft.au=Petrini%2C+Liliane+E.&amp;rft.au=Petrini%2C+Orlando&amp;rft.au=Vescovi%2C+Luciano&amp;rft.date=2006&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1016%2Fj.foodchem.2005.05.068&amp;rft.issue=2&amp;rft.jtitle=Food+Chemistry&amp;rft.pages=277-284&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=98\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-12\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-12\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Valentão, Patrícia; Lopes, Graciliana; Valente, Miguel; Barbosa, Paula; Andrade, Paula B.; Silva, Branca M.; Baptista, Paula; Seabra, Rosa M. (1 May 2005). \"Quantitation of Nine Organic Acids in Wild Mushrooms\". <i>Journal of Agricultural and Food Chemistry</i> <b>53</b> (9): 3626–3630. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Digital_object_identifier\" title=\"Digital object identifier\">doi</a>:<a rel=\"nofollow\" class=\"external text\" href=\"http://dx.doi.org/10.1021%2Fjf040465z\">10.1021/jf040465z</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.atitle=Quantitation+of+Nine+Organic+Acids+in+Wild+Mushrooms&amp;rft.au=Andrade%2C+Paula+B.&amp;rft.au=Baptista%2C+Paula&amp;rft.au=Barbosa%2C+Paula&amp;rft.aufirst=Patr%C3%ADcia&amp;rft.aulast=Valent%C3%A3o&amp;rft.au=Lopes%2C+Graciliana&amp;rft.au=Seabra%2C+Rosa+M.&amp;rft.au=Silva%2C+Branca+M.&amp;rft.au=Valent%C3%A3o%2C+Patr%C3%ADcia&amp;rft.au=Valente%2C+Miguel&amp;rft.date=1+May+2005&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1021%2Fjf040465z&amp;rft.issue=9&amp;rft.jtitle=Journal+of+Agricultural+and+Food+Chemistry&amp;rft.pages=3626-3630&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=53\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-13\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-13\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Yokokawa, H.; Mitsuhashi, T. (1981). \"The sterol composition of mushrooms\". <i>Phytochemistry</i> <b>20</b> (6): 1349–1351. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Digital_object_identifier\" title=\"Digital object identifier\">doi</a>:<a rel=\"nofollow\" class=\"external text\" href=\"http://dx.doi.org/10.1016%2F0031-9422%2881%2980036-2\">10.1016/0031-9422(81)80036-2</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.atitle=The+sterol+composition+of+mushrooms&amp;rft.aufirst=H.&amp;rft.aulast=Yokokawa&amp;rft.au=Mitsuhashi%2C+T.&amp;rft.au=Yokokawa%2C+H.&amp;rft.date=1981&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1016%2F0031-9422%2881%2980036-2&amp;rft.issue=6&amp;rft.jtitle=Phytochemistry&amp;rft.pages=1349-1351&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=20\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-14\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-14\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://www.treccani.it/enciclopedia/ovolo/\">\"ovolo\"</a>. <i>Enciclopedia Treccani</i>. Treccani<span class=\"reference-accessdate\">. Retrieved 28 September 2013</span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.atitle=ovolo&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.treccani.it%2Fenciclopedia%2Fovolo%2F&amp;rft.jtitle=Enciclopedia+Treccani&amp;rft.pub=Treccani&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-poe-15\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-poe_15-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-poe_15-1\"><sup><i><b>b</b></i></sup></a></span> <span class=\"reference-text\"><span class=\"citation book\">Poe, Melissa Renee (2009). <i>Wild Mushrooms, Forest Governance, and Conflict in the Northern Sierra of Oaxaca</i>. ProQuest. p.&#160;139.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.aufirst=Melissa+Renee&amp;rft.aulast=Poe&amp;rft.au=Poe%2C+Melissa+Renee&amp;rft.btitle=Wild+Mushrooms%2C+Forest+Governance%2C+and+Conflict+in+the+Northern+Sierra+of+Oaxaca&amp;rft.date=2009&amp;rft.genre=book&amp;rft.pages=139&amp;rft.pub=ProQuest&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-16\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-16\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Zoltan K. (1986). \"Mushrooms Of The Vali Forest Central Hungary\". <i>Botanikai Kozlemenyek</i> (in Hungarian) <b>73</b> (1–2): 49–72. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Serial_Number\" title=\"International Standard Serial Number\">ISSN</a>&#160;<a rel=\"nofollow\" class=\"external text\" target=\"wikipedia\" href=\"http://www.worldcat.org/issn/0006-8144\">0006-8144</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.atitle=Mushrooms+Of+The+Vali+Forest+Central+Hungary&amp;rft.aulast=Zoltan+K.&amp;rft.au=Zoltan+K.&amp;rft.date=1986&amp;rft.genre=article&amp;rft.issn=0006-8144&amp;rft.issue=1%E2%80%932&amp;rft.jtitle=Botanikai+Kozlemenyek&amp;rft.pages=49-72&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=73\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-17\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-17\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Rishikesh M. (2003). \"Some wild edible mushrooms of Siang valley: Arunachal Pradesh.\". <i>Plant Archives</i> <b>3</b> (1): 81–84. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Serial_Number\" title=\"International Standard Serial Number\">ISSN</a>&#160;<a rel=\"nofollow\" class=\"external text\" target=\"wikipedia\" href=\"http://www.worldcat.org/issn/0972-5210\">0972-5210</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.atitle=Some+wild+edible+mushrooms+of+Siang+valley%3A+Arunachal+Pradesh.&amp;rft.aulast=Rishikesh+M.&amp;rft.au=Rishikesh+M.&amp;rft.date=2003&amp;rft.genre=article&amp;rft.issn=0972-5210&amp;rft.issue=1&amp;rft.jtitle=Plant+Archives&amp;rft.pages=81-84&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=3\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-18\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-18\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">WeiHong P, BingCheng G, Wei T, Yong G. (2003). \"Studies on economic mushrooms in Longmen mountain areas\". <i>Southwest China Journal of Agricultural Sciences</i> (in Chinese) <b>16</b> (1): 36–41. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Serial_Number\" title=\"International Standard Serial Number\">ISSN</a>&#160;<a rel=\"nofollow\" class=\"external text\" target=\"wikipedia\" href=\"http://www.worldcat.org/issn/1001-4829\">1001-4829</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.atitle=Studies+on+economic+mushrooms+in+Longmen+mountain+areas&amp;rft.aulast=WeiHong+P%2C+BingCheng+G%2C+Wei+T%2C+Yong+G.&amp;rft.au=WeiHong+P%2C+BingCheng+G%2C+Wei+T%2C+Yong+G.&amp;rft.date=2003&amp;rft.genre=article&amp;rft.issn=1001-4829&amp;rft.issue=1&amp;rft.jtitle=Southwest+China+Journal+of+Agricultural+Sciences&amp;rft.pages=36-41&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=16\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-19\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-19\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Castano-Meneses G, Quiroz-Robledo LN. (2004). \"Ants (Hymenoptera: Formicidae) associated with macromycetes fungus (Fungi: Basidiomycetes) in sierra de Taxco, Guerrero, Mexico\". <i>Folia Entomologica Mexicana</i> <b>43</b> (1): 79–86. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Serial_Number\" title=\"International Standard Serial Number\">ISSN</a>&#160;<a rel=\"nofollow\" class=\"external text\" target=\"wikipedia\" href=\"http://www.worldcat.org/issn/0430-8603\">0430-8603</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.atitle=Ants+%28Hymenoptera%3A+Formicidae%29+associated+with+macromycetes+fungus+%28Fungi%3A+Basidiomycetes%29+in+sierra+de+Taxco%2C+Guerrero%2C+Mexico&amp;rft.au=Castano-Meneses+G%2C+Quiroz-Robledo+LN.&amp;rft.aulast=Castano-Meneses+G%2C+Quiroz-Robledo+LN.&amp;rft.date=2004&amp;rft.genre=article&amp;rft.issn=0430-8603&amp;rft.issue=1&amp;rft.jtitle=Folia+Entomologica+Mexicana&amp;rft.pages=79-86&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=43\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-20\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-20\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation book\">Guzmán G, Ramirez-Guillen F. (2001). <i>The</i> Amanita caesarea<i>-complex</i>. <i>Bibliotheca Mycologica</i> <b>187</b> (Berlin: J.&#160;Cramer). <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Book_Number\" title=\"International Standard Book Number\">ISBN</a>&#160;<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/978-3-443-59089-5\" title=\"Special:BookSources/978-3-443-59089-5\">978-3-443-59089-5</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.atitle=The+Amanita+caesarea-complex&amp;rft.au=Guzm%C3%A1n+G%2C+Ramirez-Guillen+F.&amp;rft.aulast=Guzm%C3%A1n+G%2C+Ramirez-Guillen+F.&amp;rft.date=2001&amp;rft.genre=article&amp;rft.isbn=978-3-443-59089-5&amp;rft.jtitle=Bibliotheca+Mycologica&amp;rft.place=Berlin&amp;rft.pub=J.%26nbsp%3BCramer&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=187\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-21\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-21\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Sarkina IS, Prydiuk MP, Heluta VP. (2003). \"Macromycetes of Crimea, listed in the red data book of Ukraine\". <i>Ukrayins'kyi Botanichnyi Zhurnal</i> <b>60</b> (4): 438–46. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Serial_Number\" title=\"International Standard Serial Number\">ISSN</a>&#160;<a rel=\"nofollow\" class=\"external text\" target=\"wikipedia\" href=\"http://www.worldcat.org/issn/0372-4123\">0372-4123</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.atitle=Macromycetes+of+Crimea%2C+listed+in+the+red+data+book+of+Ukraine&amp;rft.aulast=Sarkina+IS%2C+Prydiuk+MP%2C+Heluta+VP.&amp;rft.au=Sarkina+IS%2C+Prydiuk+MP%2C+Heluta+VP.&amp;rft.date=2003&amp;rft.genre=article&amp;rft.issn=0372-4123&amp;rft.issue=4&amp;rft.jtitle=Ukrayins%27kyi+Botanichnyi+Zhurnal&amp;rft.pages=438-46&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=60\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-22\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-22\">^</a></b></span> <span class=\"reference-text\"><a rel=\"nofollow\" class=\"external text\" href=\"http://narodne-novine.nn.hr/clanci/sluzbeni/308498.html\">MINISTARSTVO ZAŠTITE OKOLIŠA I PROSTORNOG UREĐENJA</a></span></li><li id=\"cite_note-23\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-23\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Al-Sayegh Petkovsek S, Pokorny B, Piltaver A. (2003). \"The first list of macrofungi from the wider area of the Salek Valley\". <i>Zbornik Gozdarstva in Lesarstva</i> (in Slovenian) (72): 83–120. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Serial_Number\" title=\"International Standard Serial Number\">ISSN</a>&#160;<a rel=\"nofollow\" class=\"external text\" target=\"wikipedia\" href=\"http://www.worldcat.org/issn/0351-3114\">0351-3114</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AAmanita+caesarea&amp;rft.atitle=The+first+list+of+macrofungi+from+the+wider+area+of+the+Salek+Valley&amp;rft.au=Al-Sayegh+Petkovsek+S%2C+Pokorny+B%2C+Piltaver+A.&amp;rft.aulast=Al-Sayegh+Petkovsek+S%2C+Pokorny+B%2C+Piltaver+A.&amp;rft.date=2003&amp;rft.genre=article&amp;rft.issn=0351-3114&amp;rft.issue=72&amp;rft.jtitle=Zbornik+Gozdarstva+in+Lesarstva&amp;rft.pages=83-120&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li></ol></div></div></div></div></div>"
       ],
       "taxonomy": {
         "usageKey": 5240269,
@@ -2581,9 +2556,6 @@ export const mushrooms = [
           "vernacularName": "Laranjinha",
           "language": "pt"
         },
-      ],
-      "descriptions": [
-        "<div id=\"globalWrapper\"><div id=\"column-content\"><div id=\"content\"><div id=\"bodyContent\"><div></div><p><i><b>Lycoperdon pyriforme</b></i>, commonly known as the <b>pear-shaped puffball</b> or <b>stump puffball</b>, is a <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Saprobic\" title=\"Saprobic\" class=\"mw-redirect\">saprobic</a> <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Fungus\" title=\"Fungus\">fungus</a> present throughout much of the world. Emerging in autumn, this <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Puffball\" title=\"Puffball\">puffball</a> is common and abundant on decaying logs of both <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Deciduous\" title=\"Deciduous\">deciduous</a> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Coniferous\" title=\"Coniferous\" class=\"mw-redirect\">coniferous</a> wood. It is considered a choice <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Edible_mushroom\" title=\"Edible mushroom\">edible</a> when still immature and the inner flesh is white.<sup id=\"cite_ref-urlMushroomExpert_2-0\" class=\"reference\"><a href=\"#cite_note-urlMushroomExpert-2\"><span>[</span>2<span>]</span></a></sup><sup id=\"cite_ref-Lincoff_1981_3-0\" class=\"reference\"><a href=\"#cite_note-Lincoff_1981-3\"><span>[</span>3<span>]</span></a></sup></p><p></p><div id=\"toc\" class=\"toc\"><div id=\"toctitle\"><h2>Contents</h2></div><ul><li class=\"toclevel-1 tocsection-1\"><a href=\"#Taxonomy\"><span class=\"tocnumber\">1</span> <span class=\"toctext\">Taxonomy</span></a></li><li class=\"toclevel-1 tocsection-2\"><a href=\"#Description\"><span class=\"tocnumber\">2</span> <span class=\"toctext\">Description</span></a></li><li class=\"toclevel-1 tocsection-3\"><a href=\"#References\"><span class=\"tocnumber\">3</span> <span class=\"toctext\">References</span></a></li><li class=\"toclevel-1 tocsection-4\"><a href=\"#External_links\"><span class=\"tocnumber\">4</span> <span class=\"toctext\">External links</span></a></li></ul></div><p></p><h2><span class=\"mw-headline\" id=\"Taxonomy\">Taxonomy</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Lycoperdon_pyriforme&amp;action=edit&amp;section=1\" title=\"Edit section: Taxonomy\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><p>The fungus was first described in the scientific literature by <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Jacob_Christian_Schaeffer\" title=\"Jacob Christian Schaeffer\" class=\"mw-redirect\">Jacob Christian Schaeffer</a> in 1774.<sup id=\"cite_ref-Schaeffer_1774_4-0\" class=\"reference\"><a href=\"#cite_note-Schaeffer_1774-4\"><span>[</span>4<span>]</span></a></sup> In 2001, DNA evidence compiled by Dirk Krüger and a number of other <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Mycologist\" title=\"Mycologist\" class=\"mw-redirect\">mycologists</a> suggested that the genus <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Lycoperdon\" title=\"Lycoperdon\">Lycoperdon</a></i> was <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Polyphyletic\" title=\"Polyphyletic\" class=\"mw-redirect\">polyphyletic</a>, with the pear-shaped puffball differing most significantly from the group. This finding was supported by several <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Morphology_(biology)\" title=\"Morphology (biology)\">morphological</a> differences including the presence of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Mycelial_cord\" title=\"Mycelial cord\">rhizomorphs</a> and its preference for wood. A 2003 publication of further research moved the puffball to the genus <i>Morganella</i> with the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Specific_name_(botany)\" title=\"Specific name (botany)\" class=\"mw-redirect\">specific epithet</a>'s ending changed for <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Agreement_(linguistics)\" title=\"Agreement (linguistics)\">agreement</a>.<sup id=\"cite_ref-Kruger_2003_5-0\" class=\"reference\"><a href=\"#cite_note-Kruger_2003-5\"><span>[</span>5<span>]</span></a></sup> In 2008, however, Larsson and Jeppson revisited the phylogeny of the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Lycoperdaceae\" title=\"Lycoperdaceae\">Lycoperdaceae</a>, with a broader sampling of species, and retained the taxon in <i>Lycoperdon</i>.<sup id=\"cite_ref-Larsson_2008_6-0\" class=\"reference\"><a href=\"#cite_note-Larsson_2008-6\"><span>[</span>6<span>]</span></a></sup> The specific epithet <i>pyriforme</i> is <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Latin\" title=\"Latin\">Latin</a> for \"pear-shaped\".</p><h2><span class=\"mw-headline\" id=\"Description\">Description</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Lycoperdon_pyriforme&amp;action=edit&amp;section=2\" title=\"Edit section: Description\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><p>The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Basidiocarp\" title=\"Basidiocarp\">fruit body</a> of the pear-shaped puffball measures 1.5 to 4.5&#160;cm in width by 2 to 4.5&#160;cm in height. They are often pear-shaped as the name suggests, but they may also be nearly spherical. When very young they are covered in small white spines that typically fall off before maturity. A small developing pore may be visible at the top, while the sterile base of the mushroom is small and appears to be pinched in. Colour ranges from nearly white to yellowish brown with the darker shades developing with age. The central pore ruptures at late maturity to allow the wind and rain to disperse the spores. The base is attached to the wood by means of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Mycelial_cord\" title=\"Mycelial cord\">rhizomorphs</a> (thick, cord-like strands of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Mycelium\" title=\"Mycelium\">mycelium</a>).<sup id=\"cite_ref-urlMushroomExpert_2-1\" class=\"reference\"><a href=\"#cite_note-urlMushroomExpert-2\"><span>[</span>2<span>]</span></a></sup><sup id=\"cite_ref-Lincoff_1981_3-1\" class=\"reference\"><a href=\"#cite_note-Lincoff_1981-3\"><span>[</span>3<span>]</span></a></sup></p><p>The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Gleba\" title=\"Gleba\">gleba</a>, or inner <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Spore\" title=\"Spore\">spore</a> mass, is white when young, but it becomes greenish-yellow to dark olive-brown with age. The spores measure 3 to 4.5&#160;<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/%CE%9Cm\" title=\"Μm\" class=\"mw-redirect\">µm</a> and are round, smooth and a dark olive-brown in colour.<sup id=\"cite_ref-Lincoff_1981_3-2\" class=\"reference\"><a href=\"#cite_note-Lincoff_1981-3\"><span>[</span>3<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"References\">References</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Lycoperdon_pyriforme&amp;action=edit&amp;section=3\" title=\"Edit section: References\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><div class=\"reflist\" style=\"list-style-type: decimal;\"><ol class=\"references\"><li id=\"cite_note-urlFungorum_synonymy:_Lycoperdon_pyriforme-1\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-urlFungorum_synonymy:_Lycoperdon_pyriforme_1-0\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://www.speciesfungorum.org/Names/SynSpecies.asp?RecordID=123159\">\"<i>Lycoperdon pyriforme</i> Schaeff.\"</a>. <i>Species Fungorum</i>. International Mycological Association<span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2010-08-28</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALycoperdon+pyriforme&amp;rft.atitle=Lycoperdon+pyriforme+Schaeff.&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.speciesfungorum.org%2FNames%2FSynSpecies.asp%3FRecordID%3D123159&amp;rft.jtitle=Species+Fungorum&amp;rft.pub=International+Mycological+Association&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-urlMushroomExpert-2\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-urlMushroomExpert_2-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-urlMushroomExpert_2-1\"><sup><i><b>b</b></i></sup></a></span> <span class=\"reference-text\"><span class=\"citation web\">Kuo M. (November 2004). <a rel=\"nofollow\" class=\"external text\" href=\"http://www.mushroomexpert.com/morganella_pyriformis.html\">\"<i>Morganella pyriformis</i>\"</a>. MushroomExpert.Com.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALycoperdon+pyriforme&amp;rft.au=Kuo+M.&amp;rft.aulast=Kuo+M.&amp;rft.btitle=Morganella+pyriformis&amp;rft.date=November+2004&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.mushroomexpert.com%2Fmorganella_pyriformis.html&amp;rft.pub=MushroomExpert.Com&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-Lincoff_1981-3\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-Lincoff_1981_3-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-Lincoff_1981_3-1\"><sup><i><b>b</b></i></sup></a> <a href=\"#cite_ref-Lincoff_1981_3-2\"><sup><i><b>c</b></i></sup></a></span> <span class=\"reference-text\"><span class=\"citation book\">Lincoff GH. (1981). <i>National Audubon Society Field Guide to North American Mushrooms</i>. New York: Random House. p.&#160;826. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Book_Number\" title=\"International Standard Book Number\">ISBN</a>&#160;<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/0-394-51992-2\" title=\"Special:BookSources/0-394-51992-2\">0-394-51992-2</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALycoperdon+pyriforme&amp;rft.aulast=Lincoff+GH.&amp;rft.au=Lincoff+GH.&amp;rft.btitle=National+Audubon+Society+Field+Guide+to+North+American+Mushrooms&amp;rft.date=1981&amp;rft.genre=book&amp;rft.isbn=0-394-51992-2&amp;rft.pages=826&amp;rft.place=New+York&amp;rft.pub=Random+House&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-Schaeffer_1774-4\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-Schaeffer_1774_4-0\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation book\">Schaeffer JC. (1774). <i>Fungorum qui in Bavaria et Palatinatu Nascuntur Icones</i> <b>4</b>. p.&#160;128.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALycoperdon+pyriforme&amp;rft.aulast=Schaeffer+JC.&amp;rft.au=Schaeffer+JC.&amp;rft.btitle=Fungorum+qui+in+Bavaria+et+Palatinatu+Nascuntur+Icones&amp;rft.date=1774&amp;rft.genre=book&amp;rft.pages=128&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.volume=4\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-Kruger_2003-5\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-Kruger_2003_5-0\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Krüger D, Kreisel H. (2003). \"Proposing <i>Morganella</i> subgen. <i>Apioperdon</i> subgen. nov. for the puffball <i>Lycoperdon pyriforme</i>\". <i>Mycotaxon</i> <b>86</b>: 169–77.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALycoperdon+pyriforme&amp;rft.atitle=Proposing+Morganella+subgen.+Apioperdon+subgen.+nov.+for+the+puffball+Lycoperdon+pyriforme&amp;rft.au=Kr%C3%BCger+D%2C+Kreisel+H.&amp;rft.aulast=Kr%C3%BCger+D%2C+Kreisel+H.&amp;rft.date=2003&amp;rft.genre=article&amp;rft.jtitle=Mycotaxon&amp;rft.pages=169-77&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=86\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-Larsson_2008-6\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-Larsson_2008_6-0\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Larsson E, Jeppson M. (2008). \"Phylogenetic relationships among species and genera of Lycoperdaceae based on ITS and LSU sequence data from north European taxa\". <i>Mycological Research</i> <b>112</b> (Pt 1): 4–22. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Digital_object_identifier\" title=\"Digital object identifier\">doi</a>:<a rel=\"nofollow\" class=\"external text\" target=\"wikipedia\" href=\"http://dx.doi.org/10.1016%2Fj.mycres.2007.10.018\">10.1016/j.mycres.2007.10.018</a>. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/PubMed_Identifier\" title=\"PubMed Identifier\" class=\"mw-redirect\">PMID</a>&#160;<a rel=\"nofollow\" class=\"external text\" target=\"wikipedia\" href=\"http://www.ncbi.nlm.nih.gov/pubmed/18207380\">18207380</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALycoperdon+pyriforme&amp;rft.atitle=Phylogenetic+relationships+among+species+and+genera+of+Lycoperdaceae+based+on+ITS+and+LSU+sequence+data+from+north+European+taxa&amp;rft.au=Larsson+E%2C+Jeppson+M.&amp;rft.aulast=Larsson+E%2C+Jeppson+M.&amp;rft.date=2008&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1016%2Fj.mycres.2007.10.018&amp;rft_id=info%3Apmid%2F18207380&amp;rft.issue=Pt+1&amp;rft.jtitle=Mycological+Research&amp;rft.pages=4-22&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=112\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li></ol></div></div></div></div></div>"
       ],
       "taxonomy": {
         "usageKey": 5243232,
@@ -2696,7 +2668,7 @@ export const mushrooms = [
           "language": "it"
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 2526530,
         "scientificName": "Pleurotus ostreatus (Jacq.) P.Kumm.",
@@ -2764,7 +2736,7 @@ export const mushrooms = [
           "language": "fr"
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 5242777,
         "scientificName": "Coprinopsis picacea (Bull.) Redhead, Vilgalys & Moncalvo",
@@ -2830,7 +2802,7 @@ export const mushrooms = [
           "language": "en"
         },
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 5248508,
         "scientificName": "Hericium erinaceus (Bull.) Pers.",
@@ -2950,7 +2922,7 @@ export const mushrooms = [
           "eol_preferred": true
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 9072021,
         "scientificName": "Laetiporus sulphureus (Bull.) Murrill",
@@ -3036,7 +3008,7 @@ export const mushrooms = [
           "language": "pt"
         },
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 2554662,
         "scientificName": "Craterellus cornucopioides (L.) Pers.",
@@ -3103,7 +3075,7 @@ export const mushrooms = [
           "language": "fr"
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 2531052,
         "scientificName": "Clitocybe rivulosa (Pers.) P.Kumm.",
@@ -3203,7 +3175,7 @@ export const mushrooms = [
           "eol_preferred": true
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 2537250,
         "scientificName": "Marasmius oreades (Bolton) Fr.",
@@ -3270,10 +3242,10 @@ export const mushrooms = [
         },
         {
           "vernacularName": "Sancha",
-          "language": "fr"         
+          "language": "pt"         
         },
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 5248648,
         "scientificName": "Lactarius sanguifluus (Paulet) Fr.",
@@ -3363,7 +3335,7 @@ export const mushrooms = [
           "language": "fr"
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 5955395,
         "acceptedUsageKey": 6014677,
@@ -3471,7 +3443,7 @@ export const mushrooms = [
           "language": "pt"
         }
       ],
-      "descriptions": [],
+      
       "taxonomy": {
         "usageKey": 5248629,
         "scientificName": "Lactarius deliciosus (L.) Gray",
@@ -3559,9 +3531,6 @@ export const mushrooms = [
           "eol_preferred": true
         },
       ],
-      "descriptions": [
-        "<div class=\"textile\"><p><img src=\"http://upload.wikimedia.org/wikipedia/commons/2/28/Fistulina_hepatica.JPG\" style=\"width:300px;\" alt=\"\" /></p>&nbsp;<p><em>Fistulina hepatica</em> or beefsteak fungus or beefsteak polypore as it is commonly called is a common edible fungus in the Great Britain, but is less common in NOrth America. It is found in many parts of the world like North America, Australia and Europe. It is usually found growing on mature living oaks or chestnuts and is known to cause brown heart rot. It is a bracket fungus commonly called as beefsteak fungus or ox tongue fungus due to its striking resemblance to a chunk of fresh meat or liver. It is widely used as a substitute for meat and has been known to be used a lot by the Europeans especially the French. In the natural environment where this fungus is found it is very easy to identify this fungus as it looks like a mass of red meat sticking to a log. <br />&nbsp;<em>Fistulina</em> is not considered as a &#8220;true&#8221; polpore inspite its tubes being packed tightly because the tubes are discrete units like the bristles of a brush. Thus leading the &#8220;Polyporologists&#8221; to classify and give <em>F. hepatica</em> its own family Fistulinaceae</p></div>"
-      ],
       "taxonomy": {
         "usageKey": 2531012,
         "scientificName": "Fistulina hepatica (Schaeff.) With.",
@@ -3588,5 +3557,1081 @@ export const mushrooms = [
       },
       "family": "Fistulinaceae",
       "eolName": "Fistulina hepatica (Schaeff.) With. 1792"
+    },
+    {
+      "id": 134024,
+      "name": "Hericium americanum",
+      "images": [
+        "2012/06/12/06/97162_orig.jpg",
+        "2012/06/12/06/22547_orig.jpg",
+        "2012/10/09/02/43903_orig.jpg",
+        "2012/10/13/02/05295_orig.jpg",
+        "2015/03/12/10/23651_orig.jpg",
+        "2014/05/23/12/49781_orig.jpg",
+        "2013/08/23/21/61640_orig.jpg",
+        "2013/10/21/22/73066_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Bear's head tooth fungus",
+          "language": "en"
+        }
+      ],      
+      "taxonomy": {
+        "usageKey": 5248551,
+        "scientificName": "Hericium americanum Ginns",
+        "canonicalName": "Hericium americanum",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Fungi",
+        "phylum": "Basidiomycota",
+        "order": "Russulales",
+        "family": "Hericiaceae",
+        "genus": "Hericium",
+        "species": "Hericium americanum",
+        "kingdomKey": 5,
+        "phylumKey": 34,
+        "classKey": 186,
+        "orderKey": 1144,
+        "familyKey": 7612,
+        "genusKey": 5244571,
+        "speciesKey": 5248551,
+        "synonym": false,
+        "class": "Agaricomycetes"
+      },
+      "family": "Hericiaceae",
+      "eolName": "Hericium americanum Ginns 1984"
+    },
+    {
+      "id": 190897,
+      "name": "Entoloma abortivum",
+      "images": [
+        "2014/03/16/02/67177_orig.jpg",
+        "2012/06/12/06/50287_orig.jpg",
+        "2013/04/03/02/08036_orig.jpg",
+        "2012/06/12/06/86769_orig.jpg",
+        "2012/06/12/06/46115_orig.jpg",
+        "2012/06/12/06/59332_orig.jpg",
+        "2013/04/03/02/86494_orig.jpg",
+        "2013/04/03/02/30741_orig.jpg",
+        "2012/06/12/06/90141_orig.jpg",
+        "2013/04/03/02/24021_orig.jpg",
+        "2013/04/03/02/86104_orig.jpg",
+        "2013/04/03/02/32438_orig.jpg",
+        "2013/04/03/02/46010_orig.jpg",
+        "2013/04/03/02/42706_orig.jpg",
+        "2013/11/11/02/29031_orig.jpg",
+        "2015/03/12/12/88036_orig.jpg",
+        "2014/02/01/03/62838_orig.jpg",
+        "2014/02/01/03/10776_orig.jpg",
+        "2014/01/31/23/68103_orig.jpg",
+        "2014/02/01/04/44595_orig.jpg",
+        "2014/04/30/02/58443_orig.jpg",
+        "2014/04/30/02/75628_orig.jpg",
+        "2014/04/30/02/48718_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Entolome abortif",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Shrimp of the woods",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Aborted entoloma",
+          "language": "en"
+        },
+      ],
+      
+      "taxonomy": {
+        "usageKey": 2539731,
+        "scientificName": "Entoloma abortivum (Berk. & M.A.Curtis) Donk",
+        "canonicalName": "Entoloma abortivum",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 98,
+        "matchType": "EXACT",
+        "kingdom": "Fungi",
+        "phylum": "Basidiomycota",
+        "order": "Agaricales",
+        "family": "Entolomataceae",
+        "genus": "Entoloma",
+        "species": "Entoloma abortivum",
+        "kingdomKey": 5,
+        "phylumKey": 34,
+        "classKey": 186,
+        "orderKey": 1499,
+        "familyKey": 4174,
+        "genusKey": 2530002,
+        "speciesKey": 2539731,
+        "synonym": false,
+        "class": "Agaricomycetes"
+      },
+      "family": "Entolomataceae",
+      "eolName": "Entoloma abortivum (Berk. & M. A. Curtis) Donk 1949"
+    },
+    {
+      "id": 133420,
+      "name": "Hericium coralloides",
+      "images": [
+        "2015/01/06/04/60769_orig.jpg",
+        "2012/06/12/06/21250_orig.jpg",
+        "2012/06/12/06/28019_orig.jpg",
+        "2012/06/12/06/84552_orig.jpg",
+        "2012/06/12/06/79736_orig.jpg",
+        "2012/06/12/06/69113_orig.jpg",
+        "2012/06/12/06/72764_orig.jpg",
+        "2013/08/29/01/36414_orig.jpg",
+        "2014/09/20/08/96519_orig.jpg",
+        "2014/04/29/14/20176_orig.jpg",
+        "2014/04/29/14/92580_orig.jpg",
+        "2014/04/29/15/78696_orig.jpg",
+        "2014/04/29/12/98159_orig.jpg",
+        "2014/04/29/19/12383_orig.jpg",
+        "2014/04/29/10/86623_orig.jpg",
+        "2014/04/29/09/84710_orig.jpg",
+        "2014/04/29/13/97733_orig.jpg",
+        "2014/04/29/04/24969_orig.jpg",
+        "2014/04/29/03/32498_orig.jpg",
+        "2014/04/29/22/43551_orig.jpg",
+        "2014/04/29/20/16157_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Coral Tooth",
+          "language": "en",
+          "eol_preferred": true
+        }
+      ],
+      
+      "taxonomy": {
+        "usageKey": 5248532,
+        "scientificName": "Hericium coralloides (Scop.) Pers.",
+        "canonicalName": "Hericium coralloides",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Fungi",
+        "phylum": "Basidiomycota",
+        "order": "Russulales",
+        "family": "Hericiaceae",
+        "genus": "Hericium",
+        "species": "Hericium coralloides",
+        "kingdomKey": 5,
+        "phylumKey": 34,
+        "classKey": 186,
+        "orderKey": 1144,
+        "familyKey": 7612,
+        "genusKey": 5244571,
+        "speciesKey": 5248532,
+        "synonym": false,
+        "class": "Agaricomycetes"
+      },
+      "family": "Hericiaceae",
+      "eolName": "Hericium coralloides (Scop.) Pers. 1794"
+    },
+    {
+      "id": 1029487,
+      "name": "Hydnum umbilicatum",
+      "images": [
+        "2012/06/12/07/08555_orig.jpg",
+        "2014/04/29/23/75597_orig.jpg",
+        "2014/04/29/23/14807_orig.jpg",
+        "2014/04/29/23/49403_orig.jpg",
+        "2014/04/29/23/91663_orig.jpg",
+        "2014/04/29/23/57187_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Depressed hedgehog",
+          "language": "en"
+        }
+      ],      
+      "taxonomy": {
+        "usageKey": 2554706,
+        "scientificName": "Hydnum umbilicatum Peck",
+        "canonicalName": "Hydnum umbilicatum",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Fungi",
+        "phylum": "Basidiomycota",
+        "order": "Cantharellales",
+        "family": "Hydnaceae",
+        "genus": "Hydnum",
+        "species": "Hydnum umbilicatum",
+        "kingdomKey": 5,
+        "phylumKey": 34,
+        "classKey": 186,
+        "orderKey": 1300,
+        "familyKey": 8460,
+        "genusKey": 2513763,
+        "speciesKey": 2554706,
+        "synonym": false,
+        "class": "Agaricomycetes"
+      },
+      "family": "Hydnaceae",
+      "eolName": "Hydnum umbilicatum Peck 1902"
+    },
+    {
+      "id": 195539,
+      "name": "Clitocybe nuda",
+      "images": [
+        "2009/07/24/05/38554_orig.jpg",
+        "2010/03/24/04/41306_orig.jpg",
+        "2016/08/01/20/49415_orig.jpg",
+        "2016/08/01/20/01737_orig.jpg",
+        "2016/08/01/20/88923_orig.jpg",
+        "2016/08/02/15/21676_orig.jpg",
+        "2015/03/14/14/70628_orig.jpg",
+        "2013/02/26/14/18104_orig.jpg",
+        "2015/03/15/07/35435_orig.jpg",
+        "2014/10/08/22/07209_orig.jpg",
+        "2014/11/20/02/20672_orig.jpg",
+        "2014/11/20/02/32701_orig.jpg",
+        "2014/11/20/02/14814_orig.jpg",
+        "2014/01/31/15/52948_orig.jpg",
+        "2014/01/31/16/47503_orig.jpg",
+        "2014/01/31/16/87402_orig.jpg",
+        "2014/02/01/03/22417_orig.jpg",
+        "2014/02/01/02/49988_orig.jpg",
+        "2014/02/01/02/65704_orig.jpg",
+        "2014/02/01/12/94432_orig.jpg",
+        "2014/02/01/14/60972_orig.jpg",
+        "2014/02/01/11/79752_orig.jpg",
+        "2014/02/01/11/10062_orig.jpg",
+        "2014/01/31/17/46020_orig.jpg",
+        "2014/01/31/19/44149_orig.jpg",
+        "2014/02/01/04/70471_orig.jpg",
+        "2014/01/31/22/84598_orig.jpg",
+        "2014/02/01/06/97903_orig.jpg",
+        "2014/02/01/07/72570_orig.jpg",
+        "2014/02/01/09/67197_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Violetter Rötelritterling",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Nackter Rötelritterling",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Violetter Röteltrichterling",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Wood Blewit",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "the blewit",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Pied-bleu",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Pé-violeta",
+          "language": "pt",
+          "eol_preferred": true
+        }
+      ],
+      "taxonomy": {
+        "usageKey": 5242048,
+        "scientificName": "Clitocybe nuda (Bull.) Cooke",
+        "canonicalName": "Clitocybe nuda",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Fungi",
+        "phylum": "Basidiomycota",
+        "order": "Agaricales",
+        "family": "Tricholomataceae",
+        "genus": "Lepista",
+        "species": "Clitocybe nuda",
+        "kingdomKey": 5,
+        "phylumKey": 34,
+        "classKey": 186,
+        "orderKey": 1499,
+        "familyKey": 8787,
+        "genusKey": 2532282,
+        "speciesKey": 5242048,
+        "synonym": false,
+        "class": "Agaricomycetes"
+      },
+      "family": "Tricholomataceae",
+      "eolName": "Clitocybe nuda (Bull.) Cooke 1871"
+    },
+    {
+      "id": 1029436,
+      "name": "Armillaria mellea",
+      "images": [
+        "2012/11/14/04/69435_orig.jpg",
+        "2013/08/29/01/06110_orig.jpg",
+        "2014/10/18/04/18807_orig.jpg",
+        "2014/10/18/04/41458_orig.jpg",
+        "2014/10/18/04/15787_orig.jpg",
+        "2014/10/18/04/29603_orig.jpg",
+        "2014/10/18/04/95958_orig.jpg",
+        "2014/10/18/04/79695_orig.jpg",
+        "2014/10/18/04/59415_orig.jpg",
+        "2014/10/18/04/45322_orig.jpg",
+        "2014/10/18/04/66205_orig.jpg",
+        "2010/03/24/04/04863_orig.jpg",
+        "2013/11/19/03/91562_orig.jpg",
+        "2013/11/27/01/87538_orig.jpg",
+        "2013/11/27/01/94292_orig.jpg",
+        "2013/11/27/01/43338_orig.jpg",
+        "2013/11/27/01/12740_orig.jpg",
+        "2010/12/12/03/72621_orig.jpg",
+        "2010/12/22/01/91958_orig.jpg",
+        "2013/11/27/01/30328_orig.jpg",
+        "2013/11/27/01/11065_orig.jpg",
+        "2013/11/27/01/41462_orig.jpg",
+        "2013/11/27/01/34866_orig.jpg",
+        "2013/11/27/01/69679_orig.jpg",
+        "2013/11/27/01/68284_orig.jpg",
+        "2013/11/27/01/47505_orig.jpg",
+        "2013/11/27/01/08480_orig.jpg",
+        "2013/11/27/01/88673_orig.jpg",
+        "2013/11/27/01/34655_orig.jpg",
+        "2013/12/11/01/43044_orig.jpg",
+        "2012/06/12/05/73081_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Goldgelber Hallimasch",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Honiggelber Hallimasch",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Laubholzhallimasch",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Honey Fungus",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Armillaire couleur de miel",
+          "language": "fr",
+          "eol_preferred": true
+        }
+      ],
+      
+      "taxonomy": {
+        "usageKey": 2536891,
+        "scientificName": "Armillaria mellea (Vahl) P.Kumm.",
+        "canonicalName": "Armillaria mellea",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Fungi",
+        "phylum": "Basidiomycota",
+        "order": "Agaricales",
+        "family": "Physalacriaceae",
+        "genus": "Armillaria",
+        "species": "Armillaria mellea",
+        "kingdomKey": 5,
+        "phylumKey": 34,
+        "classKey": 186,
+        "orderKey": 1499,
+        "familyKey": 4182,
+        "genusKey": 2526021,
+        "speciesKey": 2536891,
+        "synonym": false,
+        "class": "Agaricomycetes"
+      },
+      "family": "Physalacriaceae",
+      "eolName": "Armillaria mellea (Vahl) P. Kumm. 1871"
+    },
+    {
+      "id": 199198,
+      "name": "Lepista personata",
+      "images": [
+        "2009/07/24/05/98269_orig.jpg",
+        "2010/03/24/04/06054_orig.jpg",
+        "2015/01/21/08/37307_orig.jpg",
+        "2014/02/01/05/42803_orig.jpg",
+        "2014/02/01/05/28950_orig.jpg",
+        "2014/01/31/23/46340_orig.jpg",
+        "2014/01/31/17/33330_orig.jpg",
+        "2014/01/31/17/03461_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Lilastiel-Rötelritterling",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Fleischbräunlicher Rötelritterling",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Maskierter Rötelritterling",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Field Blewit",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Blue-leg",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Pied violet",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Lépiste à pied violet,",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Pied améthyste",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Tricholome des oies",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Tricholome masqué",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Tricholome sinistre",
+          "language": "fr"
+        }
+      ],
+      
+      "taxonomy": {
+        "usageKey": 5242070,
+        "scientificName": "Lepista personata (Fr.) Cooke",
+        "canonicalName": "Lepista personata",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Fungi",
+        "phylum": "Basidiomycota",
+        "order": "Agaricales",
+        "family": "Tricholomataceae",
+        "genus": "Lepista",
+        "species": "Lepista personata",
+        "kingdomKey": 5,
+        "phylumKey": 34,
+        "classKey": 186,
+        "orderKey": 1499,
+        "familyKey": 8787,
+        "genusKey": 2532282,
+        "speciesKey": 5242070,
+        "synonym": false,
+        "class": "Agaricomycetes"
+      },
+      "family": "Tricholomataceae",
+      "eolName": "Lepista personata (Fr.) Cooke 1871"
+    },
+    {
+      "id": 11457548,
+      "name": "Laetiporus cincinnatus",
+      "images": [
+        "2013/11/23/01/16508_orig.jpg",
+        "2013/11/23/01/55088_orig.jpg",
+        "2014/01/20/01/97859_orig.jpg",
+        "2014/01/20/01/13817_orig.jpg",
+        "2012/09/11/02/41786_orig.jpg",
+        "2012/06/12/07/14950_orig.jpg",
+        "2012/06/12/07/61916_orig.jpg",
+        "2012/06/12/07/73812_orig.jpg",
+        "2012/06/12/07/74689_orig.jpg",
+        "2013/01/12/04/01641_orig.jpg",
+        "2013/07/02/01/90005_orig.jpg",
+        "2013/09/07/02/95979_orig.jpg",
+        "2015/07/08/00/40696_orig.jpg",
+        "2015/07/08/00/19354_orig.jpg",
+        "2015/08/09/22/85809_orig.jpg",
+        "2014/04/29/11/75016_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "White-pored chicken of the woods",
+          "language": "en"
+        }
+      ],
+      
+      "taxonomy": {
+        "usageKey": 2542235,
+        "acceptedUsageKey": 9072021,
+        "scientificName": "Laetiporus cincinnatus (Morgan) Burds., Banik & T.J.Volk",
+        "canonicalName": "Laetiporus cincinnatus",
+        "rank": "SPECIES",
+        "status": "SYNONYM",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Fungi",
+        "phylum": "Basidiomycota",
+        "order": "Polyporales",
+        "family": "Fomitopsidaceae",
+        "genus": "Laetiporus",
+        "species": "Laetiporus sulphureus",
+        "kingdomKey": 5,
+        "phylumKey": 34,
+        "classKey": 186,
+        "orderKey": 1145,
+        "familyKey": 7619,
+        "genusKey": 2542160,
+        "speciesKey": 9072021,
+        "synonym": true,
+        "class": "Agaricomycetes"
+      },
+      "family": "Fomitopsidaceae",
+      "eolName": "Laetiporus cincinnatus (Morgan) Burds., Banik & T. J. Volk 1998"
+    },
+    {
+      "id": 11449866,
+      "name": "Armillaria tabescens",
+      "images": [
+        "2012/09/23/02/20088_orig.jpg",
+        "2012/09/23/02/39114_orig.jpg",
+        "2012/10/17/02/63671_orig.jpg",
+        "2012/11/14/04/84243_orig.jpg",
+        "2012/11/14/04/21059_orig.jpg",
+        "2013/05/03/01/35328_orig.jpg",
+        "2013/06/08/01/96399_orig.jpg",
+        "2013/10/28/03/68736_orig.jpg",
+        "2014/12/04/08/87897_orig.jpg",
+        "2013/05/03/01/45589_orig.jpg",
+        "2013/05/03/01/10492_orig.jpg",
+        "2013/05/03/01/13667_orig.jpg",
+        "2012/06/12/05/55672_orig.jpg",
+        "2012/06/12/05/24673_orig.jpg",
+        "2012/06/12/05/38825_orig.jpg",
+        "2013/05/03/01/38837_orig.jpg",
+        "2013/05/03/01/00265_orig.jpg",
+        "2013/05/03/01/91416_orig.jpg",
+        "2012/06/12/05/16894_orig.jpg",
+        "2012/06/12/05/50545_orig.jpg",
+        "2012/09/15/02/57461_orig.jpg",
+        "2013/05/03/01/57096_orig.jpg",
+        "2016/08/01/04/33014_orig.jpg",
+        "2016/08/01/04/63684_orig.jpg",
+        "2016/08/01/04/61905_orig.jpg",
+        "2016/08/01/04/93055_orig.jpg",
+        "2016/08/01/04/95045_orig.jpg",
+        "2013/05/03/01/50551_orig.jpg",
+        "2012/11/14/04/84243_orig.jpg",
+        "2012/11/14/04/21059_orig.jpg",
+        "2013/05/03/01/35328_orig.jpg",
+        "2015/07/07/23/54899_orig.jpg",
+        "2014/02/01/03/51921_orig.jpg",
+        "2014/02/01/02/22510_orig.jpg",
+        "2014/02/01/04/31192_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Ringloser Hallimasch",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Ringless Honey Fungus",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Armillaire sans anneau",
+          "language": "fr",
+          "eol_preferred": true
+        }
+      ],
+      
+      "taxonomy": {
+        "usageKey": 2536857,
+        "acceptedUsageKey": 9713443,
+        "scientificName": "Armillaria tabescens (Scop.) Emel, 1921",
+        "canonicalName": "Armillaria tabescens",
+        "rank": "SPECIES",
+        "status": "SYNONYM",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Fungi",
+        "phylum": "Basidiomycota",
+        "order": "Agaricales",
+        "family": "Physalacriaceae",
+        "genus": "Desarmillaria",
+        "species": "Desarmillaria tabescens",
+        "kingdomKey": 5,
+        "phylumKey": 34,
+        "classKey": 186,
+        "orderKey": 1499,
+        "familyKey": 4182,
+        "genusKey": 9726177,
+        "speciesKey": 9713443,
+        "synonym": true,
+        "class": "Agaricomycetes"
+      },
+      "family": "Physalacriaceae",
+      "eolName": "Armillaria tabescens (Scop.) Emel 1921"
+    },
+    {
+      "id": 161714,
+      "name": "Sparassis crispa",
+      "images": [
+        "2012/06/12/09/43092_orig.jpg",
+        "2014/10/20/10/52541_orig.jpg",
+        "2014/10/07/03/82741_orig.jpg",
+        "2015/03/24/04/39512_orig.jpg",
+        "2013/12/08/23/26578_orig.jpg",
+        "2014/04/29/10/27640_orig.jpg",
+        "2014/04/29/04/14814_orig.jpg",
+        "2014/04/29/04/24807_orig.jpg",
+        "2014/04/29/03/81242_orig.jpg",
+        "2014/04/29/04/06111_orig.jpg",
+        "2014/04/29/03/02682_orig.jpg",
+        "2014/04/29/05/82743_orig.jpg",
+        "2014/04/29/05/84480_orig.jpg",
+        "2014/04/29/20/01021_orig.jpg",
+        "2014/04/30/05/37654_orig.jpg",
+        "2014/04/30/05/40260_orig.jpg",
+        "2014/04/30/05/67529_orig.jpg",
+        "2015/06/18/02/25701_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Krause Glucke",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Bärenschädel",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Fette Henne",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Wood Cauliflower",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Sparassis crépu",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Clavaire crépue",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Crête de coq",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Morille d'automne",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Morille des pins",
+          "language": "fr"
+        }
+      ],
+      
+      "taxonomy": {
+        "usageKey": 2550247,
+        "scientificName": "Sparassis crispa (Wulfen) Fr.",
+        "canonicalName": "Sparassis crispa",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Fungi",
+        "phylum": "Basidiomycota",
+        "order": "Polyporales",
+        "family": "Sparassidaceae",
+        "genus": "Sparassis",
+        "species": "Sparassis crispa",
+        "kingdomKey": 5,
+        "phylumKey": 34,
+        "classKey": 186,
+        "orderKey": 1145,
+        "familyKey": 7616,
+        "genusKey": 2550232,
+        "speciesKey": 2550247,
+        "synonym": false,
+        "class": "Agaricomycetes"
+      },
+      "family": "Sparassidaceae",
+      "eolName": "Sparassis crispa (Wulfen) Fr. 1821"
+    },
+    {
+      "id": 11446829,
+      "name": "Craterellus tubaeformis",
+      "images": [
+        "2013/08/11/01/83796_orig.jpg",
+        "2012/06/12/06/99060_orig.jpg",
+        "2012/06/12/06/32054_orig.jpg",
+        "2012/06/12/06/42410_orig.jpg",
+        "2012/06/12/06/65103_orig.jpg",
+        "2014/04/07/04/49491_orig.jpg",
+        "2014/04/07/04/41277_orig.jpg",
+        "2015/03/12/10/34710_orig.jpg",
+        "2015/03/12/10/49027_orig.jpg",
+        "2015/03/12/10/66346_orig.jpg",
+        "2015/03/12/10/94878_orig.jpg",
+        "2014/02/01/01/10707_orig.jpg",
+        "2014/01/31/15/99478_orig.jpg",
+        "2014/10/08/22/28937_orig.jpg",
+        "2015/03/24/03/77914_orig.jpg",
+        "2014/01/31/16/12496_orig.jpg",
+        "2014/02/01/01/56661_orig.jpg",
+        "2014/01/31/17/85610_orig.jpg",
+        "2014/01/31/19/38396_orig.jpg",
+        "2014/02/01/00/60279_orig.jpg",
+        "2014/02/01/01/01878_orig.jpg",
+        "2014/02/01/01/24083_orig.jpg",
+        "2014/02/01/01/26246_orig.jpg",
+        "2014/02/01/02/20963_orig.jpg",
+        "2014/01/31/17/16155_orig.jpg",
+        "2014/02/01/09/84828_orig.jpg",
+        "2014/02/01/09/75148_orig.jpg",
+        "2014/02/01/10/57525_orig.jpg",
+        "2014/01/31/19/27934_orig.jpg",
+        "2013/11/30/16/69256_orig.jpg",
+        "2014/01/31/17/18638_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Durchbohrter Leistling",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Trompetenpfifferling",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Trumpet Chanterelle",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Funnel Chanterelle",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Yellowfoot",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Chanterelle en tube",
+          "language": "fr",
+          "eol_preferred": true
+        }
+      ],
+      
+      "taxonomy": {
+        "usageKey": 2554536,
+        "acceptedUsageKey": 8871787,
+        "scientificName": "Craterellus tubaeformis (Fr.) Quél.",
+        "canonicalName": "Craterellus tubaeformis",
+        "rank": "SPECIES",
+        "status": "SYNONYM",
+        "confidence": 99,
+        "matchType": "EXACT",
+        "kingdom": "Fungi",
+        "phylum": "Basidiomycota",
+        "order": "Cantharellales",
+        "family": "Cantharellaceae",
+        "genus": "Craterellus",
+        "species": "Craterellus lutescens",
+        "kingdomKey": 5,
+        "phylumKey": 34,
+        "classKey": 186,
+        "orderKey": 1300,
+        "familyKey": 8457,
+        "genusKey": 2521421,
+        "speciesKey": 8871787,
+        "synonym": true,
+        "class": "Agaricomycetes"
+      },
+      "family": "Cantharellaceae",
+      "eolName": "Craterellus tubaeformis (Schaeff.) Quél. 1888"
+    },
+    {
+      "id": 1009245,
+      "name": "Sarcoscypha coccinea",
+      "images": [
+        "2012/06/12/09/85197_orig.jpg",
+        "2013/11/30/20/02667_orig.jpg",
+        "2013/11/25/23/60408_orig.jpg",
+        "2013/11/17/00/46464_orig.jpg",
+        "2013/11/16/19/88868_orig.jpg",
+        "2013/12/01/07/02702_orig.jpg",
+        "2013/11/30/19/36670_orig.jpg",
+        "2013/11/30/20/22632_orig.jpg",
+        "2013/11/24/21/23633_orig.jpg",
+        "2013/12/09/05/34914_orig.jpg",
+        "2013/12/09/05/66785_orig.jpg",
+        "2013/12/09/05/34854_orig.jpg",
+        "2013/12/09/05/94756_orig.jpg",
+        "2013/12/09/05/11100_orig.jpg",
+        "2013/12/09/05/37337_orig.jpg",
+        "2013/12/09/05/48976_orig.jpg",
+        "2013/12/09/06/47816_orig.jpg",
+        "2013/12/09/04/73513_orig.jpg",
+        "2013/12/09/04/03874_orig.jpg",
+        "2013/12/09/04/48537_orig.jpg",
+        "2013/12/09/04/16810_orig.jpg",
+        "2013/12/01/10/66705_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Scharlachroter Prachtsbecherling",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Scharlachroter Kelchbecherling",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Ruby elfcup",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Pézize écarlate",
+          "language": "fr",
+          "eol_preferred": true
+        }
+      ],
+      
+      "taxonomy": {
+        "usageKey": 2594941,
+        "acceptedUsageKey": 7444343,
+        "scientificName": "Sarcoscypha coccinea (Jacq.) Sacc., 1889",
+        "canonicalName": "Sarcoscypha coccinea",
+        "rank": "SPECIES",
+        "status": "SYNONYM",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Fungi",
+        "phylum": "Ascomycota",
+        "order": "Pezizales",
+        "family": "Sarcoscyphaceae",
+        "genus": "Sarcoscypha",
+        "species": "Sarcoscypha coccinea",
+        "kingdomKey": 5,
+        "phylumKey": 95,
+        "classKey": 316,
+        "orderKey": 1057,
+        "familyKey": 8400,
+        "genusKey": 2581823,
+        "speciesKey": 7444343,
+        "synonym": true,
+        "class": "Pezizomycetes"
+      },
+      "family": "Sarcoscyphaceae",
+      "eolName": "Sarcoscypha coccinea (Jacq.) Sacc. 1889"
+    },
+    {
+      "id": 1009613,
+      "name": "Polyporus squamosus",
+      "images": [
+        "2013/09/13/02/68691_orig.jpg",
+        "2015/01/18/05/99845_orig.jpg",
+        "2014/05/08/03/53596_orig.jpg",
+        "2014/05/08/03/25058_orig.jpg",
+        "2013/05/03/01/81628_orig.jpg",
+        "2012/06/12/08/46454_orig.jpg",
+        "2012/06/12/08/87292_orig.jpg",
+        "2013/03/30/01/40911_orig.jpg",
+        "2012/06/12/08/53113_orig.jpg",
+        "2012/06/12/08/11637_orig.jpg",
+        "2012/06/12/08/36293_orig.jpg",
+        "2013/03/30/01/89441_orig.jpg",
+        "2012/06/12/08/30716_orig.jpg",
+        "2013/03/30/01/80498_orig.jpg",
+        "2012/06/12/08/01423_orig.jpg",
+        "2013/05/03/01/76912_orig.jpg",
+        "2012/06/12/08/94892_orig.jpg",
+        "2013/03/30/01/18937_orig.jpg",
+        "2013/03/30/01/22928_orig.jpg",
+        "2012/07/19/04/69189_orig.jpg",
+        "2012/08/30/02/43023_orig.jpg",
+        "2013/03/30/01/99996_orig.jpg",
+        "2013/05/19/01/93675_orig.jpg",
+        "2013/05/19/01/00282_orig.jpg",
+        "2013/06/24/01/61964_orig.jpg",
+        "2015/07/08/00/81308_orig.jpg",
+        "2015/07/08/00/30952_orig.jpg",
+        "2015/07/08/00/79040_orig.jpg",
+        "2015/07/08/00/53430_orig.jpg",
+        "2013/05/15/03/14408_orig.jpg",
+        "2013/05/15/03/58840_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Schuppiger Porling",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Schuppiger Stielporling",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Dryad's Saddle",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Dryad’s Saddle",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Hawks Wing",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Polypore écailleux",
+          "language": "fr",
+          "eol_preferred": true
+        }
+      ],
+      
+      "taxonomy": {
+        "usageKey": 9004499,
+        "acceptedUsageKey": 2547092,
+        "scientificName": "Polyporus squamosus (Huds.) Fr., 1821",
+        "canonicalName": "Polyporus squamosus",
+        "rank": "SPECIES",
+        "status": "SYNONYM",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Fungi",
+        "phylum": "Basidiomycota",
+        "order": "Polyporales",
+        "family": "Polyporaceae",
+        "genus": "Cerioporus",
+        "species": "Cerioporus squamosus",
+        "kingdomKey": 5,
+        "phylumKey": 34,
+        "classKey": 186,
+        "orderKey": 1145,
+        "familyKey": 3286,
+        "genusKey": 7240748,
+        "speciesKey": 2547092,
+        "synonym": true,
+        "class": "Agaricomycetes"
+      },
+      "family": "Polyporaceae",
+      "eolName": "Polyporus squamosus (Huds.) Fr. 1821"
+    },
+    {
+      "id": 1005378,
+      "name": "Calvatia gigantea",
+      "images": [
+        "2009/07/24/05/01367_orig.jpg",
+        "2009/07/24/05/00480_orig.jpg",
+        "2012/06/12/05/73054_orig.jpg",
+        "2013/03/04/02/66198_orig.jpg",
+        "2012/10/01/04/85231_orig.jpg",
+        "2015/01/21/04/02577_orig.jpg",
+        "2014/02/01/03/51051_orig.jpg",
+        "2014/01/31/16/66735_orig.jpg",
+        "2014/01/31/15/76288_orig.jpg",
+        "2014/01/31/15/07645_orig.jpg",
+        "2014/02/01/11/02647_orig.jpg",
+        "2014/02/01/00/22709_orig.jpg",
+        "2014/02/01/00/46529_orig.jpg",
+        "2014/01/31/19/63294_orig.jpg",
+        "2014/02/01/02/54241_orig.jpg",
+        "2014/02/01/07/06977_orig.jpg",
+        "2014/01/31/17/80399_orig.jpg",
+        "2014/01/31/21/25922_orig.jpg"
+      ],
+      "names": [
+        {
+          "vernacularName": "Riesenbovist",
+          "language": "de",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Riesenstäubling",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Giant puffball",
+          "language": "en",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Vesse-de-loup géante",
+          "language": "fr",
+          "eol_preferred": true
+        },
+        {
+          "vernacularName": "Calvatie géante",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Tête de mort",
+          "language": "fr"
+        }
+      ],
+      
+      "taxonomy": {
+        "usageKey": 2536058,
+        "scientificName": "Calvatia gigantea (Batsch) Lloyd",
+        "canonicalName": "Calvatia gigantea",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 100,
+        "matchType": "EXACT",
+        "kingdom": "Fungi",
+        "phylum": "Basidiomycota",
+        "order": "Agaricales",
+        "family": "Agaricaceae",
+        "genus": "Calvatia",
+        "species": "Calvatia gigantea",
+        "kingdomKey": 5,
+        "phylumKey": 34,
+        "classKey": 186,
+        "orderKey": 1499,
+        "familyKey": 4170,
+        "genusKey": 9330501,
+        "speciesKey": 2536058,
+        "synonym": false,
+        "class": "Agaricomycetes"
+      },
+      "family": "Agaricaceae",
+      "eolName": "Calvatia gigantea (Batsch) Lloyd 1904"
     }    
   ];

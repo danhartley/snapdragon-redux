@@ -105,6 +105,12 @@ export const fungi = [
         group: 1
     },
     {
+        term: "Adnate",
+        definition: "Attached to and running downward along a stem or stipe, but curving inward just before the attachment point.",
+        level: 2,
+        group: 1
+    },
+    {
         term: "Decurrent",
         definition: "Gills or pores are broadly attached to and extend down the stipe.",
         level: 2,
@@ -217,6 +223,12 @@ export const fungi = [
     {
         term: "Umbonate",
         definition: "A mushroom having an umbo (raised area) in the centre of its cap.",
+        level: 2,
+        group: 2
+    },
+    {
+        term: "Emarginate",
+        definition: "Roughly same height for most of its length, becoming much shallower before attachment point.",
         level: 2,
         group: 2
     },
