@@ -93,7 +93,11 @@ const getActiveTrait = (traits, itemName, language, options) => {
     const traitValues = options.map(option => { 
         const traitName = option.name;
         const formatter = option.formatter;
-        return getTrait(traits, itemName, traitName, language, formatter) 
+        let activeTrait = getTrait(traits, itemName, traitName, language, formatter);
+        if(!activeTrait && language !== 'en') {
+            activeTrait = getTrait(traits, itemName, traitName, 'en', formatter);
+        }
+        return activeTrait;
     });
     return traitValues.reduce(reducer, '');
 }
@@ -117,9 +121,10 @@ const vernacularNames = (item, config) => {
 };
 
 const vernacularNamesForGroups = (items, config, itemGroup) => {
-    let names = itemGroup ? items.filter((item, index) => R.contains(index, itemGroup)).map(item => item.names): items.map(item => item.names);    
-    const vernaculars = names.map(itemNames => itemNames.filter(name => name.language === config.language));
-    return vernaculars.map(name => utils.capitaliseFirst(name[0].vernacularName));
+    const groupItems = items.filter((item, index) => R.contains(index, itemGroup));
+    return groupItems.map(groupItem => {
+        return( utils.capitaliseFirst(vernacularName(groupItem, config)) );
+    });
 };
 
 const itemNames = (items, itemGroup) => {

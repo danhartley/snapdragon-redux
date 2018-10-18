@@ -1178,7 +1178,7 @@ table {
 }
 
 .radio-buttons-group {
-  margin: 1em 0 0 0;
+  /* margin: 1em 0 0 0; */
   display: flex;
   flex-direction: column;
 }
@@ -1519,7 +1519,7 @@ iframe#birdsong {
 }
 
 .visual-match .imageSlider .carousel-item {
-  height: 50vh;
+  height: 30vh;
 }
 
 .visual-match .radio-buttons label {

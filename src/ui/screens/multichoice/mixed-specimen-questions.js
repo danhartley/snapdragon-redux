@@ -125,7 +125,7 @@ export const renderMixedSpecimenQuestions = ui => {
                 const isCorrect = answer === question;
                 const className = isCorrect ? 'snap-success' : 'snap-alert';
                 layer.classList.add(className);
-                document.querySelector('.question-container p:nth-child(2)').innerHTML = '';                
+                // document.querySelector('.question-container p:nth-child(2)').innerHTML = '';                
                 const icon = document.createElement('span');
                 icon.innerHTML = isCorrect 
                         ? '<span class="icon"><i class="fas fa-check-circle"></i></span>'

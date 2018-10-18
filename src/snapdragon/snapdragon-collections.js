@@ -89,71 +89,6 @@ export const rhsWeeds1 = {
     course: 'RHS Practical Horticulture'
 };
 
-export const mushrooms1 = { 
-    providerId: 1,
-    id: 5, 
-    name: 'Mushrooms I', 
-    type: 'species',
-    descriptions: [
-        '12 common mushrooms, 7 are edible, 5 are poisonous.',        
-        'Can you identify which are safe to eat?',        
-    ],
-    items: [ ...collections[7].items ],
-    collections: ['Mushrooms I'],
-    thumb: 'https://media.eol.org/content/2013/03/01/14/45554_orig.jpg',
-    moduleSize: 4,
-    curator: 'Snapdragon',
-    userLevel: 'Amateur mycologists',
-    lessonPlanLandscape: 3,
-    lessonPlanPortrait: 103,
-    glossary: ['fungi'],
-    courseId: 4,
-    course: 'Snapdragon'
-};
-
-export const mushrooms2 = { 
-    providerId: 1,
-    id: 6, name: 'Mushrooms II', 
-    type: 'species',
-    descriptions: [
-        '12 common mushrooms, 7 are edible, 5 are poisonous.',
-        'Can you identify which are safe to eat?'
-    ],
-    items: [ ...collections[8].items ],
-    collections: ['Mushrooms II'],
-    thumb: 'https://media.eol.org/content/2013/03/01/14/45554_orig.jpg',
-    moduleSize: 4,
-    curator: 'Snapdragon',
-    userLevel: 'Amateur mycologists',
-    lessonPlanLandscape: 3,
-    lessonPlanPortrait: 103,
-    glossary: ['fungi'],
-    courseId: 4,
-    course: 'Snapdragon'
-};
-
-export const mushrooms3 = { 
-    providerId: 1,
-    id: 7, 
-    name: 'Mushrooms III', 
-    type: 'species',
-    descriptions: [
-        '12 common mushrooms, 9 are edible, 3 are poisonous.',
-        'Can you identify which are safe to eat?'
-    ],
-    items: [ ...collections[9].items ],
-    collections: ['Mushrooms III'],
-    thumb: 'https://media.eol.org/content/2013/03/01/14/45554_orig.jpg',
-    moduleSize: 4,
-    curator: 'Snapdragon',
-    userLevel: 'Amateur mycologists',
-    lessonPlanLandscape: 3,
-    lessonPlanPortrait: 103,
-    glossary: ['fungi'],
-    courseId: 4,
-    course: 'Snapdragon'
-};
-
 export const mushroomCollection = {
     providerId: 1,
     type: 'species',
@@ -168,28 +103,43 @@ export const mushroomCollection = {
 };
 
 export const fallMushroomsEasternUSA = {
-    items: [ 
+    ...mushroomCollection,
+    id: 11,
+    name: 'Mushrooms Eastern US Fall',
+    itemNames: [ 
         'Grifola frondosa', 'Laetiporus sulphureus', 'Hericium erinaceus', 'Lycoperdon perlatum',
-        'Lycoperdon pyriforme',
-        'Laetiporus cincinnatus', 'Craterellus tubaeformis', 'Hydnum repandum', 'Hydnum umbilicatum', 
-        'Hericium americanum', 'Hericium coralloides', 'Calvatia gigantea', 'Clitocybe nuda',
-        'Armillaria mellea', 'Armillaria tabescens', 'Entoloma abortive'
+        'Lycoperdon pyriforme', 'Hydnum repandum',
+        'Laetiporus cincinnatus', 'Craterellus tubaeformis', 'Hydnum umbilicatum', 
+        'Hericium americanum', 'Hericium coralloides', 'Calvatia gigantea', 
+        'Clitocybe nuda', 'Armillaria mellea', 'Armillaria tabescens', 'Entoloma abortivum'
         
+    ],
+    descriptions: [
+        'A collection of mushrooms that can be found in the Fall in the Eastern United States.',
+        'Some of the species may be found in other seasons, and across the US.'
     ]
 }
 
 export const wildFoodUKTopTenBeginners = {
-    items: [
+    ...mushroomCollection,
+    id: 10,
+    name: '10 Safe Mushrooms for Beginners',
+    itemNames: [
         'Fistulina hepatica', 'Boletus edulis', 'Pleurotus ostreatus', 'Auricularia auricula-judae',
         'Calvatia gigantea', 'Hydnum repandum', 'Polyporus squamosus', 'Sarcoscypha coccinea',
-        'Sparassis crispa', 'Lepista saeva'
+        'Sparassis crispa', 'Lepista personata'
+    ],
+    descriptions: [
+        'A collection of 10 mushrooms that are distinctive in appearance and have no poisonous look-alikes.',
+        'A good start for beginners.',
+        'Specific to the UK.'
     ]
 };
 
 export const cogumelosEmPortugal = {
     ...mushroomCollection,
     id: 8,
-    name: 'Cogumelos comuns em Portugal',
+    name: 'Mushrooms of Portugal',
     itemNames: [
         'Boletus edulis', 'Lactarius deliciosus', 'Agaricus campestris', 'Macrolepiota procera',
         'Craterellus cornucopioides', 'Cantharellus cibarius', 'Amanita caesarea', 'Chlorophyllum rhacodes',
@@ -197,7 +147,7 @@ export const cogumelosEmPortugal = {
         'Amanita ponderosa', 'Tricholoma equestre', 'Boletus pinophilus', 'Hydnum repandum'
     ],
     descriptions: [
-        'Common local mushrooms'
+        'A collection of mushrooms, both edible and poisonous, common to one or more regions of Portugal.'
     ]
 };
 
@@ -209,7 +159,27 @@ cogumelosEmPortugal.items = cogumelosEmPortugal.itemNames.map(name => {
     }
 }).filter(item => item);
 
+wildFoodUKTopTenBeginners.items = wildFoodUKTopTenBeginners.itemNames.map(name => { 
+    if(R.contains(name, itemNames)) {
+        return collections[10].items.find(item => item.name === name);
+    }
+}).filter(item => item);
+
+fallMushroomsEasternUSA.items = fallMushroomsEasternUSA.itemNames.map(name => { 
+    if(R.contains(name, itemNames)) {
+        return collections[10].items.find(item => item.name === name);
+    }
+}).filter(item => item);
+
+fallMushroomsEasternUSA.items.forEach((item,index)=>{
+    item.snapIndex = index + 1;
+});
+
 cogumelosEmPortugal.items.forEach((item,index)=>{
+    item.snapIndex = index + 1;
+});
+
+wildFoodUKTopTenBeginners.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });
 
@@ -229,25 +199,12 @@ rhsWeeds1.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });
 
-mushrooms1.items.forEach((item,index)=>{
-    item.snapIndex = index + 1;
-});
-
-mushrooms2.items.forEach((item,index)=>{
-    item.snapIndex = index + 1;
-});
-
-mushrooms3.items.forEach((item,index)=>{
-    item.snapIndex = index + 1;
-});
-
 export const snapdragonCollections = [
     kitchenGarden,
     rhsTrees,
     commonBirds,
     rhsWeeds1,
-    mushrooms1,
-    mushrooms2,
-    mushrooms3,
-    cogumelosEmPortugal
+    wildFoodUKTopTenBeginners,
+    cogumelosEmPortugal,
+    fallMushroomsEasternUSA
 ];

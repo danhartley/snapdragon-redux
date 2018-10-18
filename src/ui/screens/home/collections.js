@@ -33,9 +33,13 @@ export const renderCollections = (counter) => {
         'Good luck!'
     ] };
 
-    const copy = collection.descriptions || snapdragon.descriptions;
+    const isCollectionSelected = !!collection.descriptions;
 
-    renderTemplate({ lessons, config, collection, language, copy }, template.content, DOM.rightBody);
+    const copy = isCollectionSelected ? collection.descriptions : snapdragon.descriptions;
+
+    const about = isCollectionSelected ? 'About the lesson' :  'About Snapdragon';  
+
+    renderTemplate({ lessons, config, collection, language, copy, about }, template.content, DOM.rightBody);
 
     const selectedCollection = collections.find(c => c.selected);
 
@@ -94,7 +98,7 @@ export const renderCollections = (counter) => {
             learningActionBtn.innerHTML = 'Begin lesson';
         }
 
-        aboutLabel.innerHTML = 'About the course';
+        aboutLabel.innerHTML = 'About the lesson';
     };
 
     // Selected lesson
@@ -148,6 +152,11 @@ export const renderCollections = (counter) => {
         config.language = language;
         languagesHeader.innerHTML = config.languages.find(l => l.lang === config.language).name;
         actions.boundUpdateLanguage(language);
+        if(config.isLandscapeMode && collectionId) {
+            collection.language = language;
+            actions.boundSelectCollection(collection);
+            renderSpeciesCollectionList(collection, null, true);
+        }
     });
 
     // User begins or continues lesson
