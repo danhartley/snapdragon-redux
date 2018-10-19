@@ -32,6 +32,14 @@ export const mushrooms = [
           "language": "pt"
         },
         {
+          "vernacularName": "Tortulho",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Tubareiro",
+          "language": "pt"
+        },
+        {
           "vernacularName": "Amanita ponderosa",
           "language": "en"
         },
@@ -109,18 +117,26 @@ export const mushrooms = [
           "language": "en"
         },
         {
-          "vernacularName": "Tortulho",
-          "language": "pt",
-          "eol_preferred": true
+          "vernacularName": "Míscaro-amarelo",
+          "language": "pt"
         },
         {
           "vernacularName": "Míscaro",
           "language": "pt"
         },
         {
-          "vernacularName": "Míscaro-amarelo",
+          "vernacularName": "Cánario",
           "language": "pt"
-        }
+        },
+        {
+          "vernacularName": "Limão",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Tortulho",
+          "language": "pt",
+          "eol_preferred": true
+        },
       ],
       "taxonomy": {
         "usageKey": 3324883,
@@ -185,6 +201,14 @@ export const mushrooms = [
           "vernacularName": "Cèpe des pins",
           "language": "fr",
           "eol_preferred": true
+        },
+        {
+          "vernacularName": "Cogumelo do soito",
+          "language": "pt",        
+        },
+        {
+          "vernacularName": "Cogumelo dos pinhos",
+          "language": "pt",        
         },
         {
           "vernacularName": "Boletus pinicola",
@@ -276,7 +300,19 @@ export const mushrooms = [
           "vernacularName": "Pé-de-cabra",
           "language": "pt",
           "eol_preferred": true
-        }
+        },
+        {
+          "vernacularName": "Língua-de-vaca",
+          "language": "pt",          
+        },
+        {
+          "vernacularName": "Febra",
+          "language": "pt",          
+        },
+        {
+          "vernacularName": "Pata-de-carneiro",
+          "language": "pt",          
+        },
       ],
       "taxonomy": {
         "usageKey": 2554716,
@@ -477,11 +513,23 @@ export const mushrooms = [
           "eol_preferred": true
         },
         {
-          "vernacularName": "Tartulho",
+          "vernacularName": "Boleto",
           "language": "pt"
         },
         {
-          "vernacularName": "Boleto",
+          "vernacularName": "Cabeçudo",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "cepa",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "pé-gordo",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "moncoso",
           "language": "pt"
         },
       ],
@@ -884,13 +932,25 @@ export const mushrooms = [
           "eol_preferred": true
         },
         {
+          "vernacularName": "Rapazinho",
+          "language": "pt"
+        },
+        {
           "vernacularName": "Cantarelo",
           "language": "pt",
           "eol_preferred": true
         },
         {
-          "vernacularName": "Rapazinho",
-          "language": "pt"
+          "vernacularName": "Flor",
+          "language": "pt",
+        },
+        {
+          "vernacularName": "Canário",
+          "language": "pt",
+        },
+        {
+          "vernacularName": "Crista de galo",
+          "language": "pt",
         },
       ],
       
@@ -1118,7 +1178,15 @@ export const mushrooms = [
           "language": "pt"
         },
         {
-          "vernacularName": "cogumelo silvestre",
+          "vernacularName": "Rosê",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Agárico",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "champinhom",
           "language": "pt"
         },
       ],
@@ -1233,6 +1301,14 @@ export const mushrooms = [
         },
         {
           "vernacularName": "Roca",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Gasalho",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Tortulho",
           "language": "pt"
         },
         {
@@ -1942,6 +2018,14 @@ export const mushrooms = [
           "vernacularName": "Rebenta-boi",
           "language": "pt"
         },
+        {
+          "vernacularName": "Raivoso",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Tortulho da cabra",
+          "language": "pt"
+        },
       ],
       
       "taxonomy": {
@@ -2404,6 +2488,14 @@ export const mushrooms = [
           "vernacularName": "Cicuta verde",
           "language": "pt"
         },
+        {
+          "vernacularName": "Arrebenta-bois",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Ovo bastardo",
+          "language": "pt"
+        },
       ],
       "taxonomy": {
         "usageKey": 5240325,
@@ -2456,9 +2548,25 @@ export const mushrooms = [
           "eol_preferred": true
         },
         {
+          "vernacularName": "Ovo-de-rei",
+          "language": "pt",         
+        },
+        {
           "vernacularName": "Cogumelo-dos-césares",
           "language": "pt",
           "eol_preferred": true
+        },
+        {
+          "vernacularName": "Laranja",
+          "language": "pt",         
+        },
+        {
+          "vernacularName": "Obesó",
+          "language": "pt",         
+        },
+        {
+          "vernacularName": "Briçosósso",
+          "language": "pt",         
         },
       ],
       "taxonomy": {
@@ -2996,6 +3104,14 @@ export const mushrooms = [
           "language": "pt"
         },
         {
+          "vernacularName": "Trompeta",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Corneta",
+          "language": "pt"
+        },
+        {
           "vernacularName": "corno da abundância",
           "language": "pt"
         },
@@ -3004,7 +3120,7 @@ export const mushrooms = [
           "language": "pt"
         },
         {
-          "vernacularName": "viuvinhas",
+          "vernacularName": "viuvinha",
           "language": "pt"
         },
       ],
@@ -3435,13 +3551,21 @@ export const mushrooms = [
           "eol_preferred": true
         },
         {
-          "vernacularName": "Míscaro",
+          "vernacularName": "Sancha",
           "language": "pt"
         },
         {
-          "vernacularName": "Sancha",
+          "vernacularName": "Verdete",
           "language": "pt"
-        }
+        },
+        {
+          "vernacularName": "Raivaca",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Pinheirinha",
+          "language": "pt"
+        },
       ],
       
       "taxonomy": {
@@ -3526,9 +3650,17 @@ export const mushrooms = [
           "eol_preferred": true
         },
         {
-          "vernacularName": "Língua de vaca",
+          "vernacularName": "Língua-de-vaca",
           "language": "pt",
           "eol_preferred": true
+        },
+        {
+          "vernacularName": "Figado-de-boi",
+          "language": "pt",
+        },
+        {
+          "vernacularName": "Febra",
+          "language": "pt",
         },
       ],
       "taxonomy": {

@@ -23,7 +23,9 @@ const RINGS = "Rings";
 const DAMP = "Damp";
 const TREE_BASE = "Tree base";
 const FOREST_EDGE = 'Forest edge';
-const PARK = "Park";
+const PARKS = "Parks";
+const STUMPS = 'Stumps';
+const TRUNKS = 'Trunks';
 
 export const habitats = {
     WOOD,
@@ -51,7 +53,9 @@ export const habitats = {
     DAMP,
     TREE_BASE,
     FOREST_EDGE,
-    PARK
+    PARKS,
+    TRUNKS,
+    STUMPS
 };
 
 const OAK = 'Oak';
@@ -85,6 +89,8 @@ const WILLOW = 'Willow';
 const MAPLE = "Maple";
 const LARCH = "Larch";
 const CEDAR = "Cedar";
+const YEW = 'Yew';
+const TURKEY_OAK = 'Turkey oak';
 
 export const treeTypes = {
     OAK,
@@ -117,7 +123,9 @@ export const treeTypes = {
     WILLOW,
     MAPLE,
     LARCH,
-    CEDAR
+    CEDAR,
+    YEW,
+    TURKEY_OAK
 }
 
 const DEADLY = 'Deadly';

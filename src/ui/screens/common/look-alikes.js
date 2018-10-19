@@ -47,11 +47,10 @@ export const lookALikes = (collection, item, traits, config) => {
         document.querySelector('.js-compare-species-link').addEventListener('click', ()=> {
             const parent = document.querySelector('#imageComparisonModal .js-modal-image');            
             imageSideBySlider(slides, parent, true, config);
-        });
+            let description = fungiDescriptions.find(trait => trait.type === 'lookalike' && R.contains(item.name, trait.ids));
+            description = description ? description.description : '';
 
-        let description = fungiDescriptions.find(trait => trait.type === 'lookalike' && R.contains(item.name, trait.ids));
-        description = description ? description.description : '';
-
-        document.querySelector('#imageComparisonModal .js-comparison-description div').innerHTML = description;
+            document.querySelector('#imageComparisonModal .js-comparison-description div').innerHTML = description;
+        });        
     }
 };

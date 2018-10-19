@@ -61,8 +61,10 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
         disableModalPopups(disableModal, config);
     });
 
-    if(document.querySelector('.js-comparison-description div').style.display !== '') {
-        document.querySelectorAll('.imageSlider .carousel-item').forEach(item => item.style.height = '50vh');
-        document.querySelector('.js-comparison-description').style.height = '20vh';
-    }
+    setTimeout(() => {
+        if(document.querySelector('.js-comparison-description div').innerHTML !== '') {
+            document.querySelectorAll('.imageSlider .carousel-item').forEach(item => item.style.height = '50vh');
+            document.querySelector('.js-comparison-description').style.height = '20vh';
+        }   
+    });
 };
