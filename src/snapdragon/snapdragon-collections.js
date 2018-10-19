@@ -89,7 +89,7 @@ export const rhsWeeds1 = {
     course: 'RHS Practical Horticulture'
 };
 
-export const mushroomCollection = {
+const mushroomCollection = {
     providerId: 1,
     type: 'species',
     thumb: 'https://media.eol.org/content/2013/03/01/14/45554_orig.jpg',
@@ -117,7 +117,8 @@ export const fallMushroomsEasternUSA = {
     descriptions: [
         'A collection of mushrooms that can be found in the Fall in the Eastern United States.',
         'Some of the species may be found in other seasons, and across the US.'
-    ]
+    ],
+    items: []
 }
 
 export const wildFoodUKTopTenBeginners = {
@@ -133,7 +134,8 @@ export const wildFoodUKTopTenBeginners = {
         'A collection of 10 mushrooms that are distinctive in appearance and have no poisonous look-alikes.',
         'A good start for beginners.',
         'Specific to the UK.'
-    ]
+    ],
+    items: []
 };
 
 export const cogumelosEmPortugal = {
@@ -142,32 +144,33 @@ export const cogumelosEmPortugal = {
     name: 'Mushrooms of Portugal',
     itemNames: [
         'Boletus edulis', 'Lactarius deliciosus', 'Agaricus campestris', 'Macrolepiota procera',
-        'Craterellus cornucopioides', 'Cantharellus cibarius', 'Amanita caesarea', 'Chlorophyllum rhacodes',
-        'Lactarius sanguifluus', 'Fistulina hepatica', 'Amanita phalloides', 'Amanita muscaria',
+        'Craterellus cornucopioides', 'Cantharellus cibarius', 'Amanita caesarea',
+        'Fistulina hepatica', 'Amanita phalloides', 'Amanita muscaria',
         'Amanita ponderosa', 'Tricholoma equestre', 'Boletus pinophilus', 'Hydnum repandum'
     ],
     descriptions: [
         'A collection of mushrooms, both edible and poisonous, common to one or more regions of Portugal.'
-    ]
+    ],
+    items: []
 };
 
-const itemNames = collections[10].items.map(item => item.name);
+const itemNames = collections[7].items.map(item => item.name);
 
 cogumelosEmPortugal.items = cogumelosEmPortugal.itemNames.map(name => { 
     if(R.contains(name, itemNames)) {
-        return collections[10].items.find(item => item.name === name);
+        return collections[7].items.find(item => item.name === name);
     }
 }).filter(item => item);
 
 wildFoodUKTopTenBeginners.items = wildFoodUKTopTenBeginners.itemNames.map(name => { 
     if(R.contains(name, itemNames)) {
-        return collections[10].items.find(item => item.name === name);
+        return collections[7].items.find(item => item.name === name);
     }
 }).filter(item => item);
 
 fallMushroomsEasternUSA.items = fallMushroomsEasternUSA.itemNames.map(name => { 
     if(R.contains(name, itemNames)) {
-        return collections[10].items.find(item => item.name === name);
+        return collections[7].items.find(item => item.name === name);
     }
 }).filter(item => item);
 

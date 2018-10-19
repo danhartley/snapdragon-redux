@@ -11,6 +11,11 @@ export const fungiDescriptions = [
         type: 'lookalike',
         description: 'The false morel (Gyromitra esculenta) has a wrinkled or cerebral appearance, the ridges and pit of the true morel ressemble honeycomb. The cap of the false morel is reddish-brown, purplish-brown or dark brown. Only the true morel has a hollow stem.'
     },
+    {
+        ids: ['Laetiporus sulphureus', 'Laetiporus cincinnatus'],
+        type: 'lookalike',
+        description: 'The pore surface of L. sulphureus is bright yellow and cream/white for L. cincinnatus. L. cincinnatus grows away from the tree in a rosette of individual caps. L. sulphureus grows in shelves at the base of the tree. Both favour oaks. '
+    },
 ];
 
 export const fungiTraits = [
@@ -229,8 +234,8 @@ export const fungiTraits = [
         { name: 'grouping', value : "usually gregarious", language: 'en' },
     ], context: [
         { name: 'look-alikes', values: [ 'Scleroderma citrinum', 'Amanita muscaria' ]},
-        { name: 'ecology', values: [ SD.treeTypes.MIXED_WOODLAND] },
-        { name: 'symbionts', values: [SD.treeTypes.DECIDUOUS] },  
+        { name: 'ecology', values: [ SD.treeTypes.MIXED_WOODLAND, SD.treeTypes.DECIDUOUS, SD.habitats.WOODLAND_LITTER, SD.habitats.PASTURE, SD.habitats.GRASSLAND ] },
+        { name: 'symbionts', values: [] },  
     ]},
     { name: 'Pleurotus ostreatus', traits: [
         { name: 'cap shape', value: SD.capShape.OFFSET, language: 'en' },
@@ -256,13 +261,15 @@ export const fungiTraits = [
         { name: 'spore print colour', value : "white", language: 'en' },
         { name: 'stipe character', value : "NA", language: 'en' },
         { name: 'gill attachment', value : "NA", language: 'en' },
+        { name: 'flesh', value : "white", language: 'en' },
     ], context: [
-        { name: 'look-alikes', values: [ ]},
-        { name: 'ecology', values: [SD.treeTypes.BEECH] },
-        { name: 'symbionts', values: [] },  
+        { name: 'look-alikes', values: ['Hericium cirrhatum' ]},
+        { name: 'ecology', values: [ SD.treeTypes.HARDWOODS, SD.habitats.TRUNKS, SD.habitats.DEAD_WOOD] },
+        { name: 'symbionts', values: [SD.treeTypes.BEECH, SD.treeTypes.TURKEY_OAK] },  
     ]},
     { name: 'Laetiporus sulphureus', traits: [
         { name: 'cap shape', value: SD.capShape.FLAT, language: 'en' },
+        { name: 'cap colour', value: 'sulpur yellow, fading', language: 'en' },
         { name: 'ecological type', value: `${SD.ecoType.SAPROTROPHIC}, ${SD.ecoType.PARASITIC}`, language: 'en' },
         { name: 'how edible', value: SD.howEdible.CHOICE, language: 'en' },
         { name: 'hymenium type', value : "pores", language: 'en' },
@@ -273,8 +280,8 @@ export const fungiTraits = [
         { name: 'grouping', value : "large groups", language: 'en' },
     ], context: [
         { name: 'look-alikes', values: ['Polyporus squamosus', 'Meripilus giganteus', 'Laetiporus huroniensis', 'Laetiporus gilbertsonii', 'Laetiporus cincinnatus' ]},
-        { name: 'ecology', values: [SD.habitats.DEAD_WOOD, SD.treeTypes.HARDWOODS, SD.treeTypes.BEECH, SD.treeTypes.OAK, SD.treeTypes.PRUNUS, SD.treeTypes.SALIX, SD.treeTypes.ROBINIA, SD.treeTypes.EUCALYPTUS, SD.treeTypes.CERATONIA] },
-        { name: 'symbionts', values: ['Acer pseudoplatanus'] },  
+        { name: 'ecology', values: [SD.habitats.DEAD_WOOD, SD.treeTypes.HARDWOODS, SD.habitats.TRUNKS, SD.habitats.STUMPS ] },
+        { name: 'symbionts', values: [SD.treeTypes.BEECH, SD.treeTypes.OAK, SD.treeTypes.PRUNUS, SD.treeTypes.SALIX, SD.treeTypes.ROBINIA, SD.treeTypes.EUCALYPTUS, SD.treeTypes.CERATONIA, SD.treeTypes.YEW] },  
     ]},
     { name: 'Craterellus cornucopioides', traits: [
         { name: 'cap shape', value: SD.capShape.INFUNDIBULIFORM, language: 'en' },
@@ -585,8 +592,8 @@ export const fungiTraits = [
         { name: 'grouping', value : "large groups", language: 'en' },
     ], context: [
         { name: 'look-alikes', values: [ 'Laetiporus sulphureus', 'Polyporus squamosus' ]},
-        { name: 'ecology', values: [SD.habitats.DEAD_WOOD, SD.treeTypes.HARDWOODS, SD.treeTypes.BEECH, SD.treeTypes.OAK, SD.treeTypes.PRUNUS, SD.treeTypes.SALIX, SD.treeTypes.ROBINIA, SD.treeTypes.EUCALYPTUS, SD.treeTypes.CERATONIA] },
-        { name: 'symbionts', values: ['Acer pseudoplatanus'] },  
+        { name: 'ecology', values: [SD.habitats.DEAD_WOOD, SD.treeTypes.HARDWOODS, ] },
+        { name: 'symbionts', values: [SD.treeTypes.BEECH, SD.treeTypes.OAK, SD.treeTypes.PRUNUS, SD.treeTypes.SALIX, SD.treeTypes.ROBINIA, SD.treeTypes.EUCALYPTUS, SD.treeTypes.CERATONIA] },  
     ]},
     { name: 'Craterellus tubaeformis', traits: [
         { name: 'cap shape', value: SD.capShape.INFUNDIBULIFORM },
@@ -764,7 +771,7 @@ export const fungiTraits = [
         { name: 'grouping', value : "fairy rings", language: 'en' },
     ], context: [
         { name: 'look-alikes', values: [ ]},
-        { name: 'ecology', values: [ SD.habitats.FOREST_EDGE, SD.habitats.PASTURE, SD.habitats.GRASSLAND, SD.habitats.PARK ] },
+        { name: 'ecology', values: [ SD.habitats.FOREST_EDGE, SD.habitats.PASTURE, SD.habitats.GRASSLAND, SD.habitats.PARKS ] },
         { name: 'symbionts', values: [] },
     ]},
 ];

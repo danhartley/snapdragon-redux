@@ -87,7 +87,7 @@ hr {
   padding: .25em 1em;
   border-bottom: 1px solid lightgray;
   border-top: 1px solid darkgray;
-  background-color: rgb(79, 106, 135,.4);
+  background-color: rgba(176, 110, 143,.4);
 }
 
 .collections a.dropdown-item, .languages a.dropdown-item {
@@ -1538,10 +1538,6 @@ iframe#birdsong {
 div.hide-empty:empty, span.hide-empty:empty {
   display: none;
 }
-
-/* .visual-match .radio.btn {
-  padding: .5em;
-} */
 
 .visual-match .description {
   background-color: rgb(200, 197, 172);
