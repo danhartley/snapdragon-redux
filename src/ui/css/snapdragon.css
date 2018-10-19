@@ -1194,7 +1194,7 @@ table {
 }
 
 .radio-buttons input {
-  margin: 0 .25em 0 0;
+  display: inline-flex;
 }
 
 .left-grid, .species-card-wiki-entry,
@@ -1539,9 +1539,9 @@ div.hide-empty:empty, span.hide-empty:empty {
   display: none;
 }
 
-.visual-match .radio.btn {
+/* .visual-match .radio.btn {
   padding: .5em;
-}
+} */
 
 .visual-match .description {
   background-color: rgb(200, 197, 172);
