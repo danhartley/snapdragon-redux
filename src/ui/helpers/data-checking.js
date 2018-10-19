@@ -121,7 +121,7 @@ const vernacularNames = (item, config) => {
 };
 
 const vernacularNamesForGroups = (items, config, itemGroup) => {
-    const groupItems = items.filter((item, index) => R.contains(index, itemGroup));
+    const groupItems = itemGroup ? items.filter((item, index) => R.contains(index, itemGroup)) : items;
     return groupItems.map(groupItem => {
         return( utils.capitaliseFirst(vernacularName(groupItem, config)) );
     });

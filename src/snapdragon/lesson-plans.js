@@ -446,7 +446,7 @@ const landscapeLesson3 = {
                 multiSpecimenLatinMatch
             ],
             wildcardLayouts : [],
-            reviewLayouts: [ commonToLatinMatch ]
+            reviewLayouts: [ latinToCommonMatch ]
         },
         {   id: 2,
             name:'Level 2',

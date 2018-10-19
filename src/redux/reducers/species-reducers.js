@@ -124,6 +124,9 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
             const collection = isRevision ? lessonPlan.collection : state;
             return { ...collection, isNextRound: false, layoutCount: action.data.layoutCount, isNextRound, layoutCounter, itemGroup };
         }
+        case types.NEXT_LEVEL: {
+            return { ...state, currentRound: 1 };
+        }
         default: {
             return state; 
         }

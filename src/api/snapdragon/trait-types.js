@@ -21,6 +21,9 @@ const HEDGEROWS = 'Hedgerows';
 const LAWNS = "Lawns";
 const RINGS = "Rings";
 const DAMP = "Damp";
+const TREE_BASE = "Tree base";
+const FOREST_EDGE = 'Forest edge';
+const PARK = "Park";
 
 export const habitats = {
     WOOD,
@@ -45,7 +48,10 @@ export const habitats = {
     HEDGEROWS,
     LAWNS,
     RINGS,
-    DAMP
+    DAMP,
+    TREE_BASE,
+    FOREST_EDGE,
+    PARK
 };
 
 const OAK = 'Oak';
@@ -73,7 +79,12 @@ const SWEET_CHESTNUT = 'Sweet chestnut';
 const POPLAR = "Poplar";
 const CORK = "Cork";
 const FIR = "Fir";
-const SPRUCE = "Spruce"
+const SPRUCE = "Spruce";
+const PLANE = 'Plane';
+const WILLOW = 'Willow';
+const MAPLE = "Maple";
+const LARCH = "Larch";
+const CEDAR = "Cedar";
 
 export const treeTypes = {
     OAK,
@@ -101,7 +112,12 @@ export const treeTypes = {
     POPLAR,
     CORK,
     FIR,
-    SPRUCE
+    SPRUCE,
+    PLANE,
+    WILLOW,
+    MAPLE,
+    LARCH,
+    CEDAR
 }
 
 const DEADLY = 'Deadly';
