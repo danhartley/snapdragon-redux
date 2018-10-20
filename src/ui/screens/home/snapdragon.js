@@ -19,9 +19,9 @@ export const renderSnapdragon = (counter) => {
 
     const collections = [ kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, wildFoodUKTopTenBeginners, cogumelosEmPortugal, fallMushroomsEasternUSA ];
 
-    collections.forEach(collection => {
-        collection.families = collection.items.map(item => item.family).filter(utils.onlyUnique);
-    });
+    // collections.forEach(collection => {
+    //     collection.families = collection.items.map(item => item.family).filter(utils.onlyUnique);
+    // });
 
     const context = { collections };
 

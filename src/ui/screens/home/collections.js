@@ -72,6 +72,7 @@ export const renderCollections = (counter) => {
 
         collectionId = parseInt(id);
         collection = { ...collection, ...collections.find(collection => collection.id === parseInt(id)) };
+        collection.items = collection.getItems();
         collectionsHeader.innerHTML = collection.name;
         const descriptions = collection.descriptions.map(description => `<span>${description}</span>`).join('');
         collectionDescription.innerHTML = descriptions;
