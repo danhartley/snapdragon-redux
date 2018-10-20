@@ -2,20 +2,20 @@ import * as R from 'ramda'
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
-import * as SD from 'api/snapdragon/trait-types';
+import * as SD from 'api/traits/trait-types';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { radioButonClickhandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { taxa } from 'api/snapdragon/taxa';
 import { lookALikes } from 'ui/screens/common/look-alikes';
-import { fungiTraits } from 'api/traits/fungi-traits';
+import { getFungiTraits } from 'api/traits/fungi-traits';
 import specimenCommonMatchTemplate from 'ui/screens/multichoice/visual-match-template.html';
 
 export const renderSpecimenMatch = collection => {
 
     const item = collection.nextItem;
 
-    const { config, lessonPlan, layout } = store.getState();
+    const { config, lessonPlan, layout, enums } = store.getState();
 
     const template = document.createElement('template');
 
@@ -35,7 +35,7 @@ export const renderSpecimenMatch = collection => {
         if(config.isLandscapeMode) {
             const taxon = taxa.find(t => t.name === item.genus);
             identification = taxon ? `Genus: ${taxon.descriptions[0].identification}` : '';
-            item.keyTrait = `How edible: ${itemProperties.getActiveTrait(fungiTraits, item.name, config.language, [{ name: 'how edible', formatter: trait => trait.value }])}`;
+            item.keyTrait = `How edible: ${itemProperties.getActiveTrait(getFungiTraits(enums), item.name, config.language, [{ name: 'how edible', formatter: trait => trait.value }])}`;
         }
 
         descriptions = [
@@ -81,7 +81,7 @@ export const renderSpecimenMatch = collection => {
                 break;
         }
                 
-        const traitValue = fungiTraits.find(trait => trait.name === item.name).traits.find(trait => trait.name === traitName).value;
+        const traitValue = getFungiTraits(enums).find(trait => trait.name === item.name).traits.find(trait => trait.name === traitName).value;
         question = { question: traitValue, binomial: item.name };
 
         let traits = [];
@@ -115,7 +115,7 @@ export const renderSpecimenMatch = collection => {
         }
 
         if(screen.trait === 'howEdible') {            
-            lookALikes(collection, item, fungiTraits, config);
+            lookALikes(collection, item, getFungiTraits(enums), config);
         }
     }
 

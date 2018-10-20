@@ -1,5 +1,3 @@
-import { subscription } from 'redux/subscriptions';
-
 export const observeStore = (store, select, onChange, domain, layout) => {
     let currentState = null;
   

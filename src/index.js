@@ -27,6 +27,8 @@ import { renderSnapdragon } from "./ui/screens/home/snapdragon";
 
 import { screenShare } from 'ui/screens/multichoice/mixed-specimen-shared';
 
+import { updateLanguage } from 'api/traits/trait-types';
+
 setTimeout( () => {
 
     const { config, counter: currentCounter, collection } = store.getState();
@@ -52,4 +54,5 @@ setTimeout( () => {
     subscription.add(renderScore, 'score', 'flow');
     
     subscription.add(screenShare.randomiseItems, 'collection', 'flow');
+    subscription.add(updateLanguage, 'config', 'localistation');
 });
