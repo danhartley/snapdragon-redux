@@ -173,10 +173,13 @@ export const renderCollections = (counter) => {
         subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
 
         if(config.isPortraitMode) {            
+            if(collection.items.length === 0) {
+                collection.items = collection.getItems();
+            }
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
             if(counter.isLessonPaused && collectionId === collection.id) {
                 renderSpeciesCollectionList(collection, null, true);
-            } else {
+            } else {                
                 actions.boundSelectCollection(collection);                
             }            
             actions.boundNewPage({ name: 'list'});
