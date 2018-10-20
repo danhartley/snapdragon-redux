@@ -2,9 +2,20 @@ import * as R from 'ramda';
 
 import { collections } from 'snapdragon/eol-collections';
 
-const kg = ['Herbs and Spices', 'Vegetables', 'Fruit', 'Insects'];
+const getItems = (collection, index) => {
+    const itemNames = collections[index].items.map(item => item.name);
+    const items = collection.itemNames.map(name => { 
+        if(R.contains(name, itemNames)) {
+            return collections[index].items.find(item => item.name === name);
+        }
+    });
+    
+    items.filter(item => item).forEach((item,index)=>{
+        item.snapIndex = index + 1;
+    });
 
-export const kitchenGardenLessons = collections.filter(collection => R.contains(collection.name, kg));
+    return items;
+};
 
 export const kitchenGarden = { 
     providerId: 1,
@@ -15,8 +26,7 @@ export const kitchenGarden = {
         'All of the species are either native or adapted to a Mediterranean climate.',
         'Later lessons will introduce you to families and the traits they share.'        
     ],    
-    items: [ ...kitchenGardenLessons[0].items, ...kitchenGardenLessons[1].items, ...kitchenGardenLessons[2].items, ...kitchenGardenLessons[3].items ],
-    collections: kg,
+    items: [],
     thumb: 'https://media.eol.org/content/2014/06/03/05/47795_orig.jpg',
     moduleSize: 6,
     curator: 'Snapdragon',
@@ -25,7 +35,70 @@ export const kitchenGarden = {
     lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
     courseId: 1,
-    course: 'Snapdragon'
+    course: 'Snapdragon',
+    speciesCount: 56,
+    familiesCount: 19,
+    itemNames: [
+        "Allium sativum",
+        "Coriandrum sativum",
+        "Cuminum cyminum",
+        "Origanum majorana",
+        "Cymbopogon citratus",
+        "Sinapis alba",
+        "Zingiber officinale",
+        "Brassica nigra",
+        "Carum carvi",
+        "Satureja hortensis",
+        "Piper nigrum",
+        "Laurus nobilis",
+        "Capsicum annuum",
+        "Salvia officinalis",
+        "Origanum vulgare",
+        "Foeniculum vulgare",
+        "Mentha spicata",
+        "Anethum graveolens",
+        "Thymus vulgaris",
+        "Petroselinum crispum",
+        "Ocimum basilicum",
+        "Allium schoenoprasum",
+        "Artemisia dracunculus",
+        "Rosmarinus officinalis",
+        "Borago officinalis",
+        "Cucumis sativus",
+        "Beta vulgaris",
+        "Spinacia oleracea",
+        "Raphanus sativus",
+        "Cucurbita pepo",
+        "Solanum lycopersicum",
+        "Brassica rapa",
+        "Vicia faba",
+        "Phaseolus coccineus",
+        "Pisum sativum",
+        "Pastinaca sativa",
+        "Solanum melongena",
+        "Cynara cardunculus",
+        "Lactuca sativa",
+        "Daucus carota",
+        "Brassica oleracea",
+        "Solanum tuberosum",
+        "Allium cepa",
+        "Vitis vinifera",
+        "Mespilus germanica",
+        "Prunus armeniaca",
+        "Prunus domestica",
+        "Prunus persica",
+        "Rubus idaeus",
+        "Citrus limon",
+        "Fragaria ananassa",
+        "Pyrus communis",
+        "Ficus carica",
+        "Malus domestica",
+        "Prunus avium",
+        "Apis mellifera"
+      ],
+    getItems: function() {
+        return getItems(this, 0);
+    },
 };
 
 export const rhsTrees = { 
@@ -33,7 +106,7 @@ export const rhsTrees = {
     id: 2, name: 'Deciduous and Evergreen Trees', 
     type: 'species',
     descriptions: ['This is an approved list of Deciduous and Evergreen Trees from the Royal Horticultural Society (RHS).', 'Students taking RHS courses in Practical Horticulture are required to learn some, or all, of these species.'],
-    items: [ ...collections[0].items ],
+    items: [],
     collections: ['Deciduous and evergreen trees'],
     thumb: 'https://media.eol.org/content/2012/06/12/18/89509_orig.jpg',
     moduleSize: 6,
@@ -43,7 +116,79 @@ export const rhsTrees = {
     lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
     courseId: 2,
-    course: 'RHS Practical Horticulture'
+    course: 'RHS Practical Horticulture',
+    speciesCount: 65,
+    familiesCount: 20,
+    itemNames: [
+        "Styrax hemsleyanus",
+        "Stewartia sinensis",
+        "Tilia euchlora",
+        "Sorbus cashmiriana",
+        "Tilia europaea",
+        "Stewartia pseudocamellia",
+        "Sorbus aucuparia",
+        "Salix sepulcralis",
+        "Sorbus aria",
+        "Salix alba",
+        "Robinia pseudoacacia",
+        "Quercus robur",
+        "Pyrus salicifolia",
+        "Quercus ilex",
+        "Quercus coccinea",
+        "Prunus serrula",
+        "Pyrus calleryana",
+        "Prunus subhirtella",
+        "Prunus cerasifera",
+        "Platanus orientalis",
+        "Populus nigra",
+        "Prunus avium",
+        "Olea europaea",
+        "Platanus acerifolia",
+        "Liriodendron chinense",
+        "Malus floribunda",
+        "Malus sylvestris",
+        "Liriodendron tulipifera",
+        "Laburnum watereri",
+        "Magnolia soulangeana",
+        "Liquidambar styraciflua",
+        "Ilex altaclerensis",
+        "Ligustrum lucidum",
+        "Eucryphia x nymansensis",
+        "Juglans regia",
+        "Eucalyptus pauciflora",
+        "Crataegus prunifolia",
+        "Fraxinus ornus",
+        "Eucalyptus gunnii",
+        "Gleditsia triacanthos",
+        "Fagus sylvatica",
+        "Fraxinus excelsior",
+        "Crataegus laevigata",
+        "Crataegus monogyna",
+        "Cercis siliquastrum",
+        "Cercidiphyllum japonicum",
+        "Cordyline australis",
+        "Catalpa bignonioides",
+        "Betula utilis",
+        "Amelanchier lamarckii",
+        "Castanea sativa",
+        "Carpinus betulus",
+        "Betula pendula",
+        "Amelanchier canadensis",
+        "Alnus cordata",
+        "Alnus glutinosa",
+        "Aesculus carnea",
+        "Aesculus hippocastanum",
+        "Acer rubrum",
+        "Acer platanoides",
+        "Acer pseudoplatanus",
+        "Acer davidii",
+        "Acer griseum",
+        "Acacia baileyana",
+        "Acacia dealbata"
+      ],
+    getItems: function() {
+        return getItems(this, 1);
+    },
 };
 
 export const commonBirds = { 
@@ -55,7 +200,7 @@ export const commonBirds = {
         'The list is taken from the RSPB Big Garden Birdwatch 2018 survey.',
         '420,489 people recorded 6,764,475 separate bird sightings.'
     ],
-    items: collections[5].items,
+    items: [],
     collections: ['RSPB Top 10 UK Birds'],
     thumb: 'https://media.eol.org/content/2015/01/21/07/32241_88_88.jpg',
     moduleSize: 4,
@@ -65,7 +210,24 @@ export const commonBirds = {
     lessonPlanPortrait: 101,
     glossary: ['animalia', 'common'],
     courseId: 3,
-    course: 'Snapdragon'
+    course: 'Snapdragon',
+    speciesCount: 10,
+    familiesCount: 7,
+    itemNames: [
+        "Passer domesticus",
+        "Sturnus vulgaris",
+        "Cyanistes caeruleus",
+        "Turdus merula",
+        "Columba palumbus",
+        "Carduelis carduelis",
+        "Parus major",
+        "Erithacus rubecula",
+        "Aegithalos caudatus",
+        "Fringilla coelebs"
+      ],
+    getItems: function() {
+        return getItems(this, 2);
+    },
 };
 
 export const rhsWeeds1 = { 
@@ -76,7 +238,7 @@ export const rhsWeeds1 = {
         'Part I of the approved list of Weeds for students taking Royal Horticultural Society Qualifications in Practical Horticulture.',
         'Snapdragon does not necessarily support the view that weeds are plants in the wrong place.'
     ],
-    items: [ ...collections[6].items ],
+    items: [],
     collections: ['RHS Weeds I'],
     thumb: 'https://media.eol.org/content/2012/06/13/04/53382_orig.jpg',
     moduleSize: 4,
@@ -86,7 +248,25 @@ export const rhsWeeds1 = {
     lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
     courseId: 2,
-    course: 'RHS Practical Horticulture'
+    course: 'RHS Practical Horticulture',
+    speciesCount: 11,
+    familiesCount: 7,
+    itemNames: [
+        "Elymus repens",
+        "Equisetum arvense",
+        "Dactylis glomerata",
+        "Convolvulus arvensis",
+        "Cerastium fontanum",
+        "Cirsium arvense",
+        "Calystegia sepium",
+        "Cardamine hirsuta",
+        "Aegopodium podagraria",
+        "Capsella bursa-pastoris",
+        "Bellis perennis"
+      ],
+    getItems: function() {
+        return getItems(this, 3);
+    },
 };
 
 const mushroomCollection = {
@@ -118,7 +298,12 @@ export const fallMushroomsEasternUSA = {
         'A collection of mushrooms that can be found in the Fall in the Eastern United States.',
         'Some of the species may be found in other seasons, and across the US.'
     ],
-    items: []
+    items: [],
+    speciesCount: 16,
+    familiesCount: 9,
+    getItems: function() {
+        return getItems(this, 4);
+    },
 }
 
 export const wildFoodUKTopTenBeginners = {
@@ -135,7 +320,12 @@ export const wildFoodUKTopTenBeginners = {
         'A good start for beginners.',
         'Specific to the UK.'
     ],
-    items: []
+    items: [],
+    speciesCount: 10,
+    familiesCount: 10,
+    getItems: function() {
+        return getItems(this, 4);
+    },
 };
 
 export const cogumelosEmPortugal = {
@@ -151,54 +341,15 @@ export const cogumelosEmPortugal = {
     descriptions: [
         'A collection of mushrooms, both edible and poisonous, common to one or more regions of Portugal.'
     ],
-    items: []
+    items: [],
+    speciesCount: 14,
+    familiesCount: 8,
+    getItems: function() {
+        return getItems(this, 4);
+    },
 };
 
-const itemNames = collections[7].items.map(item => item.name);
-
-cogumelosEmPortugal.items = cogumelosEmPortugal.itemNames.map(name => { 
-    if(R.contains(name, itemNames)) {
-        return collections[7].items.find(item => item.name === name);
-    }
-}).filter(item => item);
-
-wildFoodUKTopTenBeginners.items = wildFoodUKTopTenBeginners.itemNames.map(name => { 
-    if(R.contains(name, itemNames)) {
-        return collections[7].items.find(item => item.name === name);
-    }
-}).filter(item => item);
-
-fallMushroomsEasternUSA.items = fallMushroomsEasternUSA.itemNames.map(name => { 
-    if(R.contains(name, itemNames)) {
-        return collections[7].items.find(item => item.name === name);
-    }
-}).filter(item => item);
-
-fallMushroomsEasternUSA.items.forEach((item,index)=>{
-    item.snapIndex = index + 1;
-});
-
-cogumelosEmPortugal.items.forEach((item,index)=>{
-    item.snapIndex = index + 1;
-});
-
-wildFoodUKTopTenBeginners.items.forEach((item,index)=>{
-    item.snapIndex = index + 1;
-});
-
 kitchenGarden.items.forEach((item,index)=>{
-    item.snapIndex = index + 1;
-});
-
-rhsTrees.items.forEach((item,index)=>{
-    item.snapIndex = index + 1;
-});
-
-commonBirds.items.forEach((item,index)=>{
-    item.snapIndex = index + 1;
-});
-
-rhsWeeds1.items.forEach((item,index)=>{
     item.snapIndex = index + 1;
 });
 

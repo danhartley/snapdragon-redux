@@ -117,11 +117,11 @@ export const mushrooms = [
           "language": "en"
         },
         {
-          "vernacularName": "Míscaro-amarelo",
+          "vernacularName": "Míscaro",
           "language": "pt"
         },
         {
-          "vernacularName": "Míscaro",
+          "vernacularName": "Míscaro-amarelo",
           "language": "pt"
         },
         {
@@ -941,6 +941,11 @@ export const mushrooms = [
           "eol_preferred": true
         },
         {
+          "vernacularName": "Cantarela",
+          "language": "pt",
+          "eol_preferred": true
+        },
+        {
           "vernacularName": "Flor",
           "language": "pt",
         },
@@ -1297,6 +1302,10 @@ export const mushrooms = [
         },
         {
           "vernacularName": "Frade",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Tortulho",
           "language": "pt"
         },
         {
@@ -2552,6 +2561,10 @@ export const mushrooms = [
           "language": "pt",         
         },
         {
+          "vernacularName": "Amanita real",
+          "language": "pt",         
+        },
+        {
           "vernacularName": "Cogumelo-dos-césares",
           "language": "pt",
           "eol_preferred": true
@@ -3546,13 +3559,17 @@ export const mushrooms = [
           "language": "fr"
         },
         {
+          "vernacularName": "Sancha",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Míscaro",
+          "language": "pt"
+        },
+        {
           "vernacularName": "Lactário",
           "language": "pt",
           "eol_preferred": true
-        },
-        {
-          "vernacularName": "Sancha",
-          "language": "pt"
         },
         {
           "vernacularName": "Verdete",
