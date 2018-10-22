@@ -35,7 +35,7 @@ export const renderSpecimenMatch = collection => {
         if(config.isLandscapeMode) {
             const taxon = taxa.find(t => t.name === item.genus);
             identification = taxon ? `Genus: ${taxon.descriptions[0].identification}` : '';
-            item.keyTrait = `How edible: ${itemProperties.getActiveTrait(getFungiTraits(enums), item.name, config.language, [{ name: 'how edible', formatter: trait => trait.value }])}`;
+            item.keyTrait = `${utils.capitaliseFirst(enums.name.HOW_EDIBLE)}: ${itemProperties.getActiveTrait(getFungiTraits(enums), item.name, [{ name: enums.name.HOW_EDIBLE, formatter: trait => trait.value }])}`;
         }
 
         descriptions = [

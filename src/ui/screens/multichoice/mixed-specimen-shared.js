@@ -8,8 +8,6 @@ let items;
 
 const randomiseItems = collection => {
 
-    console.log('randomiseItems');
-
     const { ui } = store.getState();
 
     if(!collection.nextItem) return;
@@ -48,8 +46,8 @@ const getRandomImages = (currentItem, config) => {
     return images;
 };
 
-const selectImage = (selectedIndex, selectedName, isCorrectAnswer) => {
-    subscriptions.forEach(sub => sub(selectedIndex, selectedName, isCorrectAnswer));
+const selectImage = (selectedIndex, selectedName, isCorrectAnswer, correctAnswer) => {
+    subscriptions.forEach(sub => sub(selectedIndex, selectedName, isCorrectAnswer, correctAnswer));
 };
 
 const subscriptions = [];

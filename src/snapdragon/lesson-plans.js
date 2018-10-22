@@ -32,7 +32,7 @@ const speciesRevision = {
     score: 0,
     kind: 'S',
     points: 0,
-    given: 'Given species information',
+    given: 'Given species summary',
     requirement: 'Study species',
     screens: [
         { ...specimen },

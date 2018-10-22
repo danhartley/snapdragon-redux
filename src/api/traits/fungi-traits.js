@@ -103,7 +103,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SYMBIONTS, values: [ SD.treeTypes.OAK, SD.treeTypes.BEECH, SD.treeTypes.PINE, SD.treeTypes.CHESTNUT, SD.treeTypes.CORK] }
     ]},
     { name: 'Amanita muscaria', traits: [
-        { name: SD.name.CAP_SHAPE, value: SD.capShape.FLAT },
+        { name: SD.name.CAP_SHAPE, value: `${SD.capShape.FLAT}, ${SD.capShape.CONVEX}` },
         { name: SD.name.ECO_TYPE, value: SD.ecoType.MYCORRHIZAL },
         { name: SD.name.HOW_EDIBLE, value : SD.howEdible.POISONOUS, description: 'deadly in quantity' },
         { name: SD.name.HYMEMIUM_TYPE, value : SD.hymeniumType.GILLS },
@@ -503,7 +503,7 @@ export const getFungiTraits = (enums) => {
     { name: 'Fistulina hepatica', traits: [
         { name: SD.name.CAP_SHAPE, value: SD.capShape.FLAT },
         { name: SD.name.ECO_TYPE, value: SD.ecoType.PARASITIC },
-        { name: SD.name.HOW_EDIBLE, value: SD.howEdible.EDIBLE },
+        { name: SD.name.HOW_EDIBLE, value: SD.howEdible.CHOICE },
         { name: SD.name.HYMEMIUM_TYPE, value : SD.hymeniumType.PORES },
         { name: SD.name.SPORE_PRINT_COLOUR, value : "pink" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },

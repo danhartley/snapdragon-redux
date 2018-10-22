@@ -1,7 +1,6 @@
-import { traits } from 'api/traits/traits';
 import { itemProperties } from 'ui/helpers/data-checking';
 
-export const getBirdSong = (item, node, portrait) => {
+export const getBirdSong = (item, traits, node, portrait) => {
 
     if(item.taxonomy.class.toUpperCase() === 'AVES') {
 

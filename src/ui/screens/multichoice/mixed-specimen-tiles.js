@@ -18,7 +18,7 @@ export const renderMixedSpecimenTiles = (ui) => {
 
     template.innerHTML = mixedSpecimenTemplate;
 
-    const selectImage = (selectedIndex, selectedName, isCorrectAnswer) => {
+    const selectImage = (selectedIndex, selectedName, isCorrectAnswer, correctAnswer) => {
         const imageLayers = document.querySelectorAll('.js-tiles .square .layer');
         imageLayers.forEach(imageLayer => {
             if(imageLayer.children.length === 0) return;
@@ -30,6 +30,11 @@ export const renderMixedSpecimenTiles = (ui) => {
                     elem.addClassToSelected(imageLayers, imageLayer, ['snap-success', 'snap-alert'], 'snap-success' );
                 } else {
                     elem.addClassToSelected(imageLayers, imageLayer, ['snap-success', 'snap-alert'], 'snap-alert' );
+                    const imageLayerItems = [ ...imageLayers ];
+                    const correctImageLayer = imageLayerItems.find(il => il.dataset.itemname === correctAnswer);
+                    correctImageLayer.classList.add('snap-success');
+                    correctImageLayer.children[0].innerHTML = correctAnswer;
+                    correctImageLayer.setAttribute('style', 'font-size: 1em;');
                 }
             }
         });

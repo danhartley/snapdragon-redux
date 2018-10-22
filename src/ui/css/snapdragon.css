@@ -969,7 +969,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 #badgeListModal .modal-dialog {
-  min-width: 400px;
+  min-width: 320px;
+  max-width: 420px;
 }
 
 #badgeListModal .modal-text {

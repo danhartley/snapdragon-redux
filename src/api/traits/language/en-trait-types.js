@@ -19,11 +19,11 @@ export const english = {
         GILL_COLOUR : 'gill colour'
     },
     howEdible : {
-        CHOICE : 'Deadly',
-        EDIBLE : 'Poisonous',
+        CHOICE : 'Choice',
+        EDIBLE : 'Edible',
         INEDIBLE : 'Inedible',
-        POISONOUS : 'Edible',
-        DEADLY : 'Choice'
+        POISONOUS : 'Poisonous',
+        DEADLY : 'Deadly'
     },
     habitats : {
         WOOD : 'Wood',

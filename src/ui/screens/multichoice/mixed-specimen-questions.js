@@ -48,7 +48,7 @@ export const renderMixedSpecimenQuestions = ui => {
 
     if(config.isPortraitMode) {
         question1 = `Look through the images till you find one of ${itemProperties.vernacularName(item, config)} (${item.name}).`;
-        question2 = `When you've found a match click on the image. (There's' more than one correct answer.)`;
+        question2 = `When you've found a match click on the image. (There is more than one correct answer.)`;
         question3 = '';
     }
 
@@ -87,6 +87,11 @@ export const renderMixedSpecimenQuestions = ui => {
         const imageLayers = document.querySelectorAll('.question-images .layer');
 
         imageLayers.forEach((imageLayer) => {
+
+            if(imageLayer.dataset.itemname === item.name) {
+                imageLayer.isCorrectAnswer = true;
+            }
+
             imageLayer.addEventListener('click', event => {
 
                 if(elem.hasClass(imageLayer, 'disabled')) return;
@@ -100,8 +105,13 @@ export const renderMixedSpecimenQuestions = ui => {
                     elem.addClassToSelected(imageLayers, imageLayer, ['snap-success', 'snap-alert'], 'snap-success' );
                 } else {
                     elem.addClassToSelected(imageLayers, imageLayer, ['snap-success', 'snap-alert'], 'snap-alert' );
+                    const imageLayerItems = [ ...imageLayers ];
+                    const correctImageLayer = imageLayerItems.find(il => il.isCorrectAnswer);
+                    correctImageLayer.classList.add('snap-success');
+                    correctImageLayer.children[0].innerHTML = item.name;
+                    correctImageLayer.setAttribute('style', 'font-size: 1em;');
                 }
-                screenShare.selectImage(selectedIndex, selectedName, isCorrectAnswer);
+                screenShare.selectImage(selectedIndex, selectedName, isCorrectAnswer, item.name);
                 const question = item.name;
                 const answer = selectedName;
                 scoreHandler(score, question, answer, config);
@@ -125,7 +135,7 @@ export const renderMixedSpecimenQuestions = ui => {
                 const isCorrect = answer === question;
                 const className = isCorrect ? 'snap-success' : 'snap-alert';
                 layer.classList.add(className);
-                // document.querySelector('.question-container p:nth-child(2)').innerHTML = '';                
+                document.querySelector('.question-container p:nth-child(2)').innerHTML = '';                
                 const icon = document.createElement('span');
                 icon.innerHTML = isCorrect 
                         ? '<span class="icon"><i class="fas fa-check-circle"></i></span>'

@@ -19,11 +19,11 @@ export const portuguese = {
         GILL_COLOUR : 'gill colour'
     },
     howEdible: {
-        CHOICE : 'Mortal',
-        EDIBLE : 'Venenoso',
+        CHOICE : 'Bem comestível',
+        EDIBLE : 'Comestível',
         INEDIBLE : 'Não comestível',
-        POISONOUS : 'Comestível',
-        DEADLY : 'Bem comestível'
+        POISONOUS : 'Venenoso',
+        DEADLY : 'Mortal'
     },
     ecoType : {
         SAPROTROPHIC : 'Saprotrófico',

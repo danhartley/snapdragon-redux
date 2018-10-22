@@ -66,8 +66,15 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
     const changeCollection = (action, speciesStateHelper) => {
         
         const initialCollection = speciesStateHelper.collections.find(collection => collection.id === action.data.config.collection.id);
-        const clonedCollection = R.clone(initialCollection)
-        clonedCollection.items = action.data.items;        
+        const clonedCollection = R.clone(initialCollection);
+
+        let allItems = [];
+
+        if(action.data.config.mode === 'review') {
+            allItems = clonedCollection.items;
+        }
+
+        clonedCollection.items = action.data.items;
         
         let collection = speciesStateHelper.initCollection(clonedCollection);
         let nextItem = collection.items[collection.itemIndex];
@@ -79,6 +86,11 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
             collection.currentRound = collection.rounds;
             collection.isNextRound = true;
             collection.isLevelComplete = true;
+            collection.itemIndex = 0;
+            collection.nextItem = collection.items[collection.itemIndex];
+        }
+        if(action.data.config.mode === 'review') {
+            collection.allItems = allItems;
         }
         return { collection, nextItem };
     };

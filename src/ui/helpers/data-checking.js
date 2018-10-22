@@ -72,16 +72,12 @@ const familyVernacularNames = (name, language) => {
     return taxa.find(taxon => taxon.name.toUpperCase() === name.toUpperCase()).names.find(name => name.language === language).names;
 }
 
-const getTrait = (traits, itemName, name, language, formatter) => {
+const getTrait = (traits, itemName, name, formatter) => {
     const item = traits.find(t => t.name === itemName);
     if(!item || !item.traits) return '';
-    const trait = language 
-        ? item.traits.find(t => t.name === name && t.language === language) 
-        : item.traits.find(t => t.name === name);
+    const trait = item.traits.find(t => t.name === name);    
     if(!trait) return '';
-
     if(!formatter) return trait;
-
     return formatter(trait);
 }
 
@@ -89,15 +85,11 @@ const reducer = (acc, curr) => {
     return acc + curr;
 }
 
-const getActiveTrait = (traits, itemName, language, options) => {
+const getActiveTrait = (traits, itemName, options) => {
     const traitValues = options.map(option => { 
         const traitName = option.name;
         const formatter = option.formatter;
-        let activeTrait = getTrait(traits, itemName, traitName, language, formatter);
-        if(!activeTrait && language !== 'en') {
-            activeTrait = getTrait(traits, itemName, traitName, 'en', formatter);
-        }
-        return activeTrait;
+        return getTrait(traits, itemName, traitName, formatter);
     });
     return traitValues.reduce(reducer, '');
 }

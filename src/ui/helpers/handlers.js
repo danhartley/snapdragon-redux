@@ -31,7 +31,7 @@ const textAlertHandler = (score) => {
             <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
             </div>`
         : `<div class="answer-box-alert">
-            <span class="icon"><i class="fas fa-times-circle"></i></span><span>Answer: ${score.question}</span>
+            <span class="icon"><i class="fas fa-times-circle"></i></span><span>Correct answer: ${score.question}</span>
            </div>`;
 }
 
