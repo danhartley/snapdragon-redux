@@ -3,6 +3,7 @@ import { actions } from 'redux/actions/action-creators';
 import { english } from 'api/traits/language/en-trait-types';
 import { portuguese } from 'api/traits/language/pt-trait-types';
 
+export let name = english.name;
 export let howEdible = english.howEdible;
 export let habitats = english.habitats;
 export let ecoType = english.ecoType; 
@@ -14,6 +15,7 @@ export const updateLanguage = (config) => {
     
     switch(config.language) {
         case 'en':
+            name = english.name;
             howEdible = english.howEdible;
             habitats = english.habitats;
             ecoType = english.ecoType;
@@ -22,6 +24,7 @@ export const updateLanguage = (config) => {
             hymeniumType = english.hymeniumType;
         break;
         case 'pt':
+            name = portuguese.name;
             howEdible = portuguese.howEdible;
             ecoType = portuguese.ecoType;
             capShape = portuguese.capShape;
@@ -29,6 +32,7 @@ export const updateLanguage = (config) => {
     }
 
     const enums = {
+        name,
         habitats,
         treeTypes,
         howEdible,
