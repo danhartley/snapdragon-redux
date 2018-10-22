@@ -64,8 +64,7 @@ const changeCollection = (lessonStateMode, collections, collection, config, hist
                     break;
                 }
                 case 'learn-again': {
-                    const items = collections.find(c => c.id === collection.id).items;
-                    actions.boundChangeCollection({ config: config, items: items });
+                    actions.boundChangeCollection({ config, items: collection.allItems });
                 }
             }            
             break;      

@@ -1,4 +1,4 @@
-import * as SD from 'api/snapdragon/trait-types';
+import * as SD from 'api/traits/trait-types';
 
 export const taxa = [
     {

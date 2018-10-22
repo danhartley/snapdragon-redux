@@ -1,4 +1,6 @@
-import { fungiTraits } from 'api/traits/fungi-traits';
+import { getFungiTraits } from 'api/traits/fungi-traits';
 import { birdTraits } from 'api/traits/bird-traits';
 
-export const traits = [ ...birdTraits, ...fungiTraits ]
+export const getTraits = enums => {
+    return [ ...birdTraits, ...getFungiTraits(enums) ]
+}

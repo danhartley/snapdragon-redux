@@ -284,7 +284,7 @@ const mushroomCollection = {
 
 export const fallMushroomsEasternUSA = {
     ...mushroomCollection,
-    id: 11,
+    id: 5,
     name: 'Mushrooms Eastern US Fall',
     itemNames: [ 
         'Grifola frondosa', 'Laetiporus sulphureus', 'Hericium erinaceus', 'Lycoperdon perlatum',
@@ -308,7 +308,7 @@ export const fallMushroomsEasternUSA = {
 
 export const wildFoodUKTopTenBeginners = {
     ...mushroomCollection,
-    id: 10,
+    id: 6,
     name: '10 Safe Mushrooms for Beginners',
     itemNames: [
         'Fistulina hepatica', 'Boletus edulis', 'Pleurotus ostreatus', 'Auricularia auricula-judae',
@@ -330,7 +330,7 @@ export const wildFoodUKTopTenBeginners = {
 
 export const cogumelosEmPortugal = {
     ...mushroomCollection,
-    id: 8,
+    id: 7,
     name: 'Mushrooms of Portugal',
     itemNames: [
         'Boletus edulis', 'Lactarius deliciosus', 'Agaricus campestris', 'Macrolepiota procera',

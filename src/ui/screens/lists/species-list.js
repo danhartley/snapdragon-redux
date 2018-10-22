@@ -4,6 +4,7 @@ import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
 import { modalImageHandler } from 'ui/helpers/image-handlers';
 import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
+import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-list-table';
 
 export const renderSpeciesCollectionList = (collection, collectionFromLastRound, readOnlyMode = false) => {
@@ -14,11 +15,13 @@ export const renderSpeciesCollectionList = (collection, collectionFromLastRound,
     
     if(collection.id === 0) return;
 
-    const { config, history, counter, collections  } = store.getState();
+    const { config, history, counter, collections, enums  } = store.getState();
 
     config.collection = { id: collection.id };
 
-    buildTable(collection, config);
+    const traits = getTraits(enums);
+
+    buildTable(collection, config, traits);
 
     const headerCheckbox = document.querySelector(".table-header #inputCheckAll");
     const itemCheckboxes = document.querySelectorAll(".table-row .custom-control-input");

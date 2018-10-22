@@ -9,8 +9,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import landscapeTemplate from 'ui/screens/cards/card-template.html';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { getBirdSong } from 'xeno-canto/birdsong';
-import { traits } from 'api/traits/traits';
-import { fungiTraits } from 'api/traits/fungi-traits';
+import { getTraits } from 'api/traits/traits';
 import { lookALikes } from 'ui/screens/common/look-alikes';
 import { featureType } from 'ui/screens/common/feature';
 import { infoSlider } from 'ui/screens/common/info-slider';
@@ -19,7 +18,7 @@ export const renderCard = (collection) => {
 
     const item = collection.nextItem;
 
-    const { layout, config, lessonPlan } = store.getState();
+    const { layout, config, lessonPlan, enums } = store.getState();
 
     item.questionCount = lessonPlan.questionCount;
     item.layoutCount = lessonPlan.layoutCount;
@@ -32,12 +31,14 @@ export const renderCard = (collection) => {
 
     template.innerHTML = landscapeTemplate;
 
+    const traits = getTraits(enums)
+
     config.isPortraitMode
-        ? renderPortrait(template, item, config, collection)
-        : renderLandscape(template, item, config, collection);
+        ? renderPortrait(template, item, config, collection, traits)
+        : renderLandscape(template, item, config, collection, traits);
 };
 
-const renderLandscape = (template, item, config, collection) => {
+const renderLandscape = (template, item, config, collection, traits) => {
 
     const eolPage = template.content.querySelector('.js-species-card-eol-link');
 
@@ -45,7 +46,7 @@ const renderLandscape = (template, item, config, collection) => {
     eolPage.setAttribute('target', '_blank');
     eolPage.setAttribute('style', 'text-decoration: none');
 
-    renderCommonParts(template, config, item, collection);
+    renderCommonParts(template, config, item, collection, traits);
 
     setTimeout(()=>{
         const wikiLink = document.querySelector('.js-species-card-wiki');
@@ -86,12 +87,12 @@ const renderLandscape = (template, item, config, collection) => {
 
     const src = document.querySelector('.js-bird-song');
     
-    getBirdSong(item, src, config.isPortraitMode);    
+    getBirdSong(item, traits, src, config.isPortraitMode);    
 };
 
-const renderPortrait = (template, item, config, collection) => {
+const renderPortrait = (template, item, config, collection, traits) => {
 
-    renderCommonParts(template, config, item, collection);
+    renderCommonParts(template, config, item, collection, traits);
 
     const images = item.images.map((img, index) => { 
         return { index: index + 1, src: img, itemName: item.name };
@@ -103,7 +104,7 @@ const renderPortrait = (template, item, config, collection) => {
 
     const player = document.querySelector('.js-bird-song-player');
     
-    getBirdSong(item, player, config.isPortraitMode);
+    getBirdSong(item, traits, player, config.isPortraitMode);
 
     player.addEventListener('click', () => {
         const iframe = document.createElement('iframe');
@@ -120,7 +121,7 @@ const renderPortrait = (template, item, config, collection) => {
     });
 };
 
-const renderCommonParts = (template, config, item, collection) => {
+const renderCommonParts = (template, config, item, collection, traits) => {
 
     const species = item.name;    
     const name = itemProperties.vernacularName(item, config);
@@ -143,7 +144,7 @@ const renderCommonParts = (template, config, item, collection) => {
         { name: 'how edible', formatter: trait => trait.value }
     ]
 
-    let trait = itemProperties.getActiveTrait(traits, item.name, config.language, options);
+    let trait = itemProperties.getActiveTrait(traits, item.name, options);
 
     const clone = document.importNode(template.content, true);
     
@@ -189,7 +190,8 @@ const renderCommonParts = (template, config, item, collection) => {
             list.innerHTML = html;
         });
     }
-    let info = fungiTraits.find(c => c.name === item.name);
+
+    let info = traits.find(c => c.name === item.name);
 
     if(info) {
         infoSlider(info, document.querySelector('.js-info-box'));    
@@ -204,7 +206,7 @@ const renderCommonParts = (template, config, item, collection) => {
         namesBadge.classList.add('hide');    
     } else {
         namesBadge.addEventListener('click', event => {
-            document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = 'EOL Common Names';
+            document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = 'Common names';
             let html = `<ul>`;
             names.forEach(name => {
                 html+= `<li class="capitalise">${name}</li>`;
@@ -214,7 +216,7 @@ const renderCommonParts = (template, config, item, collection) => {
         });
     }
 
-    lookALikes(collection, item, fungiTraits, config);
-    featureType(collection, item, fungiTraits, config, document.querySelector('.js-ecology'), 'ecology');
-    featureType(collection, item, fungiTraits, config, document.querySelector('.js-symbionts'), 'symbionts');
+    lookALikes(collection, item, traits, config);
+    featureType(collection, item, traits, config, document.querySelector('.js-ecology'), 'ecology');
+    featureType(collection, item, traits, config, document.querySelector('.js-symbionts'), 'symbionts');
 };

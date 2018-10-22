@@ -13,3 +13,12 @@ export const config = (state = lessonConfig, action) => {
             return state;
     }
 };
+
+export const enums = (state = {}, action) => {
+    switch(action.type) {
+        case types.UPDATE_ENUMS:
+            return action.data;
+        default:
+            return state;
+    }
+}

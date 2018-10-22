@@ -1,5 +1,3 @@
-import * as SD from 'api/snapdragon/trait-types';
-
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import featureTemplate from 'ui/screens/common/feature-template.html';

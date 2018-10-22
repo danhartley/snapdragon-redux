@@ -5,7 +5,7 @@ import storage from 'redux-persist/lib/storage'; // defaults to localStorage for
 import { logger } from 'redux/middleware/logger';
 import { timeoutScheduler } from 'redux/middleware/timeoutScheduler';
 
-import { config } from 'redux/reducers/config-reducer';
+import { config, enums } from 'redux/reducers/config-reducer';
 import { collections, collection } from 'redux/reducers/species-reducers';
 import { counter, score, history, page } from 'redux/reducers/progress-reducers';
 import { lessonPlan, layout } from 'redux/reducers/layout-reducers';
@@ -21,7 +21,8 @@ const reducer = combineReducers({
     collections,
     history, 
     page,
-    ui 
+    ui, 
+    enums
 });
 
 const persistConfig = {

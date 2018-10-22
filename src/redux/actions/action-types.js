@@ -18,6 +18,8 @@ const UPDATE_LANGUAGE = '[UPDATE_LANGUAGE] Update the current language';
 
 const UPDATE_UI = '[UPDATE_UI] update UI elements';
 
+const UPDATE_ENUMS = '[UPDATE_ENUMS] update enums by config language';
+
 export const types = {
     CHANGE_LESSON_PLAN,
     NEXT_LESSON,
@@ -35,5 +37,6 @@ export const types = {
     SELECT_COLLECTION,
     UPDATE_LANGUAGE,
     CHANGE_PAGE,
-    UPDATE_UI
+    UPDATE_UI,
+    UPDATE_ENUMS
 };
