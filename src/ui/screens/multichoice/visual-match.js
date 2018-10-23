@@ -40,6 +40,7 @@ export const renderSpecimenMatch = collection => {
 
         descriptions = [
             'Can you identify the species?',
+            '',
             identification,
             item.keyTrait
         ];
@@ -71,13 +72,15 @@ export const renderSpecimenMatch = collection => {
                 traitName = 'how edible';
                 descriptions[0] = 'How edible is this mushroom?';
                 descriptions[1] = 'Click on an image to open the picture gallery.'
-                descriptions[2] = 'Stuck? Click here to reveal the name of this mushroom.';
+                descriptions[2] = '';
+                descriptions[3] = 'Stuck? Click here to reveal the name of this mushroom.';
                 break;
             case 'capShape':
                 traitName = 'cap shape';
                 descriptions[0] = 'How would you describe the pileus (cap) of this mushroom?';
                 descriptions[1] = 'Click on an image to open the picture gallery.'
-                descriptions[2] = 'Stuck? Click here to reveal the name of this mushroom.';
+                descriptions[2] = '';
+                descriptions[3] = 'Stuck? Click here to reveal the name of this mushroom.';
                 break;
         }
                 
