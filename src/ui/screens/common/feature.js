@@ -6,12 +6,12 @@ export const featureType = (collection, item, traits, config, parent, featureTyp
 
     const feature = itemProperties.itemContextProperty(traits, item, featureType);
 
-    if(feature && feature !== '' && feature.length !== 0) {
+    if(feature && feature !== '' && feature.length !== 0 && feature[0] !== '') {
         const template = document.createElement('template');
         template.innerHTML = featureTemplate;
         let label;
         switch(featureType) {
-            case 'ecology':
+            case 'ecology': 
                 label = 'Habitats: ';
                 break;
             case 'symbionts':
