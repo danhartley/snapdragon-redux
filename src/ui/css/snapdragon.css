@@ -893,15 +893,20 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .text-question {
   min-height: 2em;
+  padding: 0 0 0 .5em;
+}
+
+.text-entry .text-question {
+  padding: 0;
 }
 
 .text-question .icon {
   font-size: 1.5em;
-  margin: 0 0 0 .25em;
+  margin: 0;
 }
 
 .text-question span:nth-child(2) {
-  vertical-align: super;
+  vertical-align: text-bottom;
   margin: 0 0 0 .25em;
 }
 
@@ -1224,8 +1229,7 @@ table {
   padding: .4em .4em .3em .4em;
 }
 
-.question-container {
-  border: .05em solid var(--snap-question-background);
+.question-container {  
   padding: .5em;
   border-radius: .2rem;
 }

@@ -31,6 +31,7 @@ export const renderSpecimenMatch = collection => {
     if(layout.screens.find(screen => screen.name === 'visual-match')) {
 
         let identification;
+        let questionTxt = 'Can you identify this species?';
 
         if(config.isLandscapeMode) {
             const taxon = taxa.find(t => t.name === item.genus);
@@ -39,7 +40,7 @@ export const renderSpecimenMatch = collection => {
         }
 
         descriptions = [
-            'Can you identify the species?',
+            questionTxt,
             '',
             identification,
             item.keyTrait
@@ -58,7 +59,12 @@ export const renderSpecimenMatch = collection => {
                 : itemProperties.vernacularName(item, config);
 
         question = { question: questionValue, binomial: item.name, vernacular: vernacularName };
-        scorehandler(descriptions, question, utils.shuffleArray(answers));                
+
+        scorehandler(descriptions, question, utils.shuffleArray(answers));
+        
+        if(config.isPortraitMode) {
+            document.querySelector('.js-txt-question').innerHTML = questionTxt;
+        }
     }
 
     if(layout.screens.find(screen => screen.name === 'trait-property')) {
@@ -67,17 +73,21 @@ export const renderSpecimenMatch = collection => {
 
         let traitName;
 
+        let questionTxt;
+
         switch(screen.trait) {
             case 'howEdible':
                 traitName = 'how edible';
-                descriptions[0] = 'How edible is this mushroom?';
+                questionTxt = 'How edible is this mushroom?';
+                descriptions[0] = questionTxt;
                 descriptions[1] = 'Click on an image to open the picture gallery.'
                 descriptions[2] = '';
                 descriptions[3] = 'Stuck? Click here to reveal the name of this mushroom.';
                 break;
             case 'capShape':
                 traitName = 'cap shape';
-                descriptions[0] = 'How would you describe the pileus (cap) of this mushroom?';
+                questionTxt = 'How would you describe the pileus (cap) of this mushroom?';
+                descriptions[0] = questionTxt;
                 descriptions[1] = 'Click on an image to open the picture gallery.'
                 descriptions[2] = '';
                 descriptions[3] = 'Stuck? Click here to reveal the name of this mushroom.';
@@ -96,9 +106,7 @@ export const renderSpecimenMatch = collection => {
         if(config.isLandscapeMode) {
             const filteredTraits = R.take(4, traits.filter(trait => trait.toUpperCase() !== traitValue.toUpperCase()));            
             traits = utils.shuffleArray(filteredTraits);
-        }
-
-        if(config.isPortraitMode) {
+        } else {
             const filteredTraits = R.take(3, traits.filter(trait => trait.toUpperCase() !== traitValue.toUpperCase()));
             traits = utils.shuffleArray(filteredTraits);
         }
@@ -108,6 +116,10 @@ export const renderSpecimenMatch = collection => {
         answers = traits.filter(utils.onlyUnique);
 
         scorehandler(descriptions, question, utils.shuffleArray(answers));
+
+        if(config.isPortraitMode) {
+            document.querySelector('.js-txt-question').innerHTML = questionTxt;
+        }
 
         const hint = document.querySelector('.js-clickable-description');
         if(hint) {

@@ -140,6 +140,7 @@
 
     .text-question .icon {
         font-size: 2em;
+        margin: 0 0 0 .25em;
     }
 
     .text-question .icon span {
@@ -272,7 +273,19 @@
         height: 50vh;
       }
 
+    .question-container {
+        border: .05em solid var(--snap-question-background);
+    }
+
     .question-container > span:nth-child(1), .question-container > p:nth-child(1) {
         font-size: 1.2em;
+    }
+
+    .text-question span:nth-child(2) {
+        vertical-align: super;
+    }
+
+    .text-question {
+        padding: 0;
     }
 }
