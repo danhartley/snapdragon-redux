@@ -86,7 +86,7 @@ export const renderSpecimenMatch = collection => {
                 break;
             case 'capShape':
                 traitName = 'cap shape';
-                questionTxt = 'How would you describe the pileus (cap) of this mushroom?';
+                questionTxt = config.isLandscapeMode ? 'How would you describe the pileus (cap) of this mushroom?' : 'How would you describe this pileus (cap)?';
                 descriptions[0] = questionTxt;
                 descriptions[1] = 'Click on an image to open the picture gallery.'
                 descriptions[2] = '';
