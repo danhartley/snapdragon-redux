@@ -83,9 +83,15 @@ export const renderCompleteText = (collection) => {
 
     const updateScreen = (score, scoreUpdateTimer, config) => {
 
-        document.querySelector('.js-icon-response').innerHTML = score.success
+        const iconContainer = document.querySelector('.js-icon-response');
+
+        iconContainer.innerHTML = score.success
             ? `<span class="icon"><i class="fas fa-check-circle"></i></span>`
             : `<span class="icon"><i class="fas fa-times-circle"></i></span>`;
+
+        const iconColour  = score.success ? 'answer-box-success' : 'answer-box-alert';
+
+        iconContainer.classList.add(iconColour);
 
         const txtCorrect = 
             config.isPortraitMode 

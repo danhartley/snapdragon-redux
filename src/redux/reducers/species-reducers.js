@@ -88,6 +88,7 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
             collection.isLevelComplete = true;
             collection.itemIndex = 0;
             collection.nextItem = collection.items[collection.itemIndex];
+            collection.currentRound = 1;
         }
         if(action.data.config.mode === 'review') {
             collection.allItems = allItems;

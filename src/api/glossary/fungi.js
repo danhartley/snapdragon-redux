@@ -104,12 +104,12 @@ export const fungi = [
         level: 2,
         group: 1
     },
-    {
-        term: "Adnate",
-        definition: "Attached to and running downward along a stem or stipe, but curving inward just before the attachment point.",
-        level: 2,
-        group: 1
-    },
+    // {
+    //     term: "Adnate",
+    //     definition: "Attached to and running downward along a stem or stipe, but curving inward just before the attachment point.",
+    //     level: 2,
+    //     group: 1
+    // },
     {
         term: "Decurrent",
         definition: "Gills or pores are broadly attached to and extend down the stipe.",
@@ -137,7 +137,7 @@ export const fungi = [
     },
     {
         term: "Hypha",
-        definition: "Long, branching filamentous structure of a fungus and usally the main mode of vegetative growth.",
+        definition: "Long, branching filamentous structure of a fungus and usually the main mode of vegetative growth.",
         wiki: "https://en.wikipedia.org/wiki/Hypha",
         level: 1,
         group: 1

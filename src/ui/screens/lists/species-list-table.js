@@ -99,7 +99,7 @@ export const buildTable = (collection, config, traits) => {
     const filterFooter = document.createElement('td');
 
     imageFooter.innerHTML = '<div></div>';
-    indexFooter.innerHTML = '<div></div>';
+    indexFooter.innerHTML = '<span></span>';
     speciesFooter.innerHTML = '<div></div>';
     familyFooter.innerHTML = '<div></div>';
 
@@ -109,8 +109,8 @@ export const buildTable = (collection, config, traits) => {
     filterFooter.innerHTML = '<div></div>';
 
     if(wide) {
-        footerRow.appendChild(imageFooter);
         footerRow.appendChild(indexFooter);
+        footerRow.appendChild(imageFooter);
         footerRow.appendChild(speciesFooter);
         footerRow.appendChild(familyFooter);
         footerRow.appendChild(passesFooter);

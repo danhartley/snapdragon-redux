@@ -66,6 +66,7 @@ export const score = (state = R.clone(progressState.score), action) => {
             return R.clone(progressState.score);
         case types.NEXT_ROUND:
         case types.NEXT_LEVEL:
+        case types.CHANGE_COLLECTION:
             return { ...progressState.score, ...{ fails: [], passes: []} };
         default:
             return state;
