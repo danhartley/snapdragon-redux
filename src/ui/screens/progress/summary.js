@@ -27,7 +27,7 @@ export const renderSummary = (history) => {
 
         if(!collection.isLevelComplete) {
             header = `You have completed ${collection.currentRound} of ${collection.rounds} rounds on Level ${collection.lesson.level.id}`;
-            summary = `There are more species to learn in this lesson. Keep going!`;
+            summary = `You will be tested on more species at this level. Keep going!`;
         }
         if(collection.isLevelComplete) {
             header = `You have completed level ${collection.lesson.level.id} of ${collection.activeLevelCount} levels.`;

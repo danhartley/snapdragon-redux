@@ -340,9 +340,8 @@ hr {
   flex: auto;
 }
 
-.score-footer span {
+.round-footer, .score-footer span {
   color: var(--snap-green-ident-txt);
-  /* background-color: rgba(221, 229, 219, .2); */
   padding: .75em;
 }
 
@@ -351,7 +350,7 @@ hr {
 }
 
 .right-grid .footer {
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .txt-specimen-species {
@@ -1179,7 +1178,6 @@ table {
 }
 
 .radio-buttons-group {
-  /* margin: 1em 0 0 0; */
   display: flex;
   flex-direction: column;
 }
@@ -1196,6 +1194,7 @@ table {
 
 .radio-buttons input {
   display: inline-flex;
+  margin: 0 .25em 0 0;
 }
 
 .left-grid, .species-card-wiki-entry,

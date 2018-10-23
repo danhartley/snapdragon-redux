@@ -152,7 +152,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.GILL_ATTACHMENT, value : "NA" },
     ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ '' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeTypes.MIXED_WOODLAND ] },
+        { name: SD.name.ECOLOGY, values: [ SD.treeTypes.MIXED_WOODLAND, SD.habitats.DEAD_WOOD ] },
         { name: SD.name.SYMBIONTS, values: [ SD.treeTypes.ELDER, SD.treeTypes.SYCAMORE, SD.treeTypes.BEECH, SD.treeTypes.ASH, SD.treeTypes.DECIDUOUS ] },
     ]},
     { name: 'Coprinus comatus', traits: [
@@ -254,7 +254,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.GROUPING, value : "large clusters" },
     ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitats.MIXED_WOODLAND] },
+        { name: SD.name.ECOLOGY, values: [ SD.treeTypes.MIXED_WOODLAND] },
         { name: SD.name.SYMBIONTS, values: [SD.habitats.DEAD_WOOD, SD.treeTypes.BEECH, SD.treeTypes.DECIDUOUS] },  
     ]},
     { name: 'Hericium erinaceus', traits: [

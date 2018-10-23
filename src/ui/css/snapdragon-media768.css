@@ -271,4 +271,8 @@
     .visual-match .imageSlider .carousel-item {
         height: 50vh;
       }
+
+    .question-container > span:nth-child(1), .question-container > p:nth-child(1) {
+        font-size: 1.2em;
+    }
 }

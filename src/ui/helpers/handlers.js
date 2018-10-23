@@ -212,8 +212,9 @@ export const radioButonClickhandler = (config, template, descriptions, answers, 
     const description1 = descriptions[0] || '';
     const description2 = descriptions[1] || '';
     const description3 = descriptions[2] || '';
+    const description4 = descriptions[3] || '';
 
-    renderTemplate({ description1, description2, description3, answers }, template.content, parent);
+    renderTemplate({ description1, description2, description3, description4, answers }, template.content, parent);
     
     const updateBtn = document.createElement('template');
 
