@@ -24,14 +24,14 @@ export const scoreHandler = (type, test, callback, config, containers) => {
     }
 };
 
-const textAlertHandler = (score) => {
+const textAlertHandler = (response) => {
     const questionText = document.querySelector('.js-txt-question');
-    questionText.innerHTML = score.success
+    questionText.innerHTML = response.success
         ? `<div class="answer-box-success">
-            <span class="icon"><i class="fas fa-check-circle"></i></span><span>Correct</span>
+            <span class="icon"><i class="fas fa-check-circle"></i></span><span>${ response.correct }</span>
             </div>`
         : `<div class="answer-box-alert">
-            <span class="icon"><i class="fas fa-times-circle"></i></span><span>Correct answer: ${score.question}</span>
+            <span class="icon"><i class="fas fa-times-circle"></i></span><span>${response.incorrect}</span>
            </div>`;
 }
 
@@ -47,7 +47,7 @@ export const simpleScoreHandler = (test, config, callback) => {
 
     if(callback) callback(score, scoreUpdateTimer);
 
-    textAlertHandler(score);
+    textAlertHandler({ success: score.success, correct: 'Correct', incorrect: `Correct answer: ${score.question}` });
 }
 
 const genericScoreHandler = (_score, callback, config, containers) => {
@@ -68,7 +68,10 @@ const genericScoreHandler = (_score, callback, config, containers) => {
     
     const score = markTest(test);
 
-    textAlertHandler(score);
+    const correct = `Species: ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
+    const incorrect = `Species: ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
+
+    textAlertHandler({ success: score.success, correct, incorrect });
 
     if(containers) {
         containers.answerContainer.classList.add(score.colour);
@@ -144,7 +147,7 @@ const stripScoreHandler = (test, callback, config) => {
             
             if(callback) callback(score, scoreUpdateTimer);
 
-            textAlertHandler(score);
+            textAlertHandler({ success: score.success, correct: 'Correct', incorrect: `Correct answer: ${score.question}` });
 
             items.forEach(item => item.classList.add('disabled'));
         });

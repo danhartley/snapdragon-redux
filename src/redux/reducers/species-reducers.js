@@ -35,8 +35,7 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
         } else {
             layoutCounter = state.layoutCounter ? state.layoutCounter + 1 : 1;            
             isNextRound = layoutCounter === state.layoutCount;
-        }        
-        // let isNextRound = layoutCounter === state.layoutCount;
+        }
         let noLessonSelected = state.rounds === 0;
         let isLevelComplete = noLessonSelected ? false : state.currentRound === state.rounds;
 
