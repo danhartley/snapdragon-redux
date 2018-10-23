@@ -20,7 +20,7 @@ export const renderMultiStrips = (collection) => {
 
     const item = collection.nextItem;
 
-    const { config, lessonPlan, layout, score } = store.getState();
+    const { config, lessonPlan, layout } = store.getState();
 
     let parent = DOM.rightBody;
     parent.innerHTML = '';
@@ -84,7 +84,7 @@ export const renderMultiStrips = (collection) => {
 
         const taxon = { name: item.family, binomial: item.name, question: questionValue };
 
-        const test = { ...score, itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
+        const test = { itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
         const callback = renderAnswer;
 
         scoreHandler('strip', test, callback, config);

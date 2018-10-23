@@ -46,7 +46,7 @@ const changeCollection = (lessonStateMode, collections, collection, config, hist
             const mode = getMode(config.mode, collection.isLevelComplete, itemsToReview);
             config.mode = mode;
 
-            switch(mode) {
+            switch(mode) {  
                 case 'learn': {
                     if(collection.isLevelComplete) {                            
                         actions.boundNextLevel({ index: 0 });

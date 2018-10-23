@@ -2,16 +2,16 @@ import { utils } from 'utils/utils';
 
 const getItemScoreStats = (collection, history, config) => {
 
-    if(config.mode === 'review') return [];
-
     const reducer = (acc, curr) => {
         return { ...acc,  ...curr };
     }
 
     if(!history) return [];
 
-    const passesTotals = history.scores.map(score => score.passesTotals);
-    const failsTotals = history.scores.map(score => score.failsTotals);
+    const lastRound = history.scores[history.scores.length - 1];
+
+    const passesTotals = [ lastRound.passesTotals ];
+    const failsTotals = [ lastRound.failsTotals ];
 
     const passes = passesTotals.reduce(reducer, {});
     const fails = failsTotals.reduce(reducer, {});
