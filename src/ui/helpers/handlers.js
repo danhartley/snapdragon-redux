@@ -47,7 +47,10 @@ export const simpleScoreHandler = (test, config, callback) => {
 
     if(callback) callback(score, scoreUpdateTimer);
 
-    textAlertHandler({ success: score.success, correct: 'Correct', incorrect: `Correct answer: ${score.question}` });
+    const correct = `Species: ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
+    const incorrect = `Species: ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
+
+    textAlertHandler({ success: score.success, correct, incorrect });
 }
 
 const genericScoreHandler = (_score, callback, config, containers) => {
@@ -147,7 +150,10 @@ const stripScoreHandler = (test, callback, config) => {
             
             if(callback) callback(score, scoreUpdateTimer);
 
-            textAlertHandler({ success: score.success, correct: 'Correct', incorrect: `Correct answer: ${score.question}` });
+            const correct = `Species: ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
+            const incorrect = `Species: ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
+
+            textAlertHandler({ success: score.success, correct, incorrect });
 
             items.forEach(item => item.classList.add('disabled'));
         });
