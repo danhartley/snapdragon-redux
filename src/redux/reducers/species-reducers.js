@@ -27,14 +27,16 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
     const getNextItem = (action, state) => {
         let itemIndex = action.data;
         let nextItem = state.items[itemIndex];
-        let layoutCounter;
-        if(!isRehydrated) {
-            layoutCounter = state.layoutCounter ? state.layoutCounter + 1 : 1;            
-        } else {
+        let layoutCounter, isNextRound;
+        if(isRehydrated) {
             layoutCounter = state.layoutCounter === 0 ? 1 : state.layoutCounter;
+            isNextRound = state.isNextRound;
             isRehydrated = false;
+        } else {
+            layoutCounter = state.layoutCounter ? state.layoutCounter + 1 : 1;            
+            isNextRound = layoutCounter === state.layoutCount;
         }        
-        let isNextRound = layoutCounter === state.layoutCount;
+        // let isNextRound = layoutCounter === state.layoutCount;
         let noLessonSelected = state.rounds === 0;
         let isLevelComplete = noLessonSelected ? false : state.currentRound === state.rounds;
 
