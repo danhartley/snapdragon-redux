@@ -76,7 +76,7 @@ export const renderMultiStrips = (collection) => {
             });
             document.querySelector('.js-question').style.display = 'none';
             if(screen.name === 'species-vernaculars') {
-                document.querySelector('.js-txt-species-name').innerHTML = score.question
+                document.querySelector('.js-txt-species-name').innerHTML =  question
             } else if(screen.name === 'species-scientifics') {
                 document.querySelector('.js-txt-species').innerHTML = score.question;
             }            

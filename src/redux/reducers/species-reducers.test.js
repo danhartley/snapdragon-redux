@@ -65,7 +65,7 @@ test('collection should return correct itemIndex for action type NEXT_ITEM', () 
 
 });
 
-test.skip('collection should return correct itemIndex and currentRound over several rounds', () => {
+test('collection should return correct itemIndex and currentRound over several rounds', () => {
 
   // round 1
 

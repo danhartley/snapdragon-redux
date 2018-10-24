@@ -2,12 +2,7 @@ import * as R from 'ramda';
 
 import { utils } from "utils/utils";
 
-export const capitaliseAll = str => {
-    if(!str) return str;
-    return utils.capitaliseAll(str);
-};
-
-export const isAnswerCorrect = score => {
+const isAnswerCorrect = score => {
     let isCorrect = score.answer.toUpperCase() === score.question.toUpperCase();
     switch(score.taxon) {
         case 'vernacular':

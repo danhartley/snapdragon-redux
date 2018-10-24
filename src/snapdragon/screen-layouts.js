@@ -81,21 +81,18 @@ const command = {
     cutLength: 5,
     domain: 'collection',
     template: 'js-letters-template',
-    // headers: { long: 'Put the name back together.', short: 'Complete the puzzle.'},
     question: 'Name puzzle'
   }
 };
 
 const leaf = {
   name: 'leaf-image',
-  // headers: { long: 'Enter the name for the leaf part.', short: 'Enter the name for the leaf part.'},
   domain: 'collection',
   template: 'js-leaf-image-template'     
 };
 
 const leafName = {
   name: 'leaf-text',
-  // headers: { long: 'Enter the name for the leaf part.', short: 'Enter the name for the leaf part.'},
   domain: 'collection',
   template: 'js-text-entry-template'     
 };

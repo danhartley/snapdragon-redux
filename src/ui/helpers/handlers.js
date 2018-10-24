@@ -21,6 +21,9 @@ export const scoreHandler = (type, test, callback, config, containers) => {
         case 'image':
             imageScoreHandler(test, callback, config);
             break;
+        case 'image-match':
+            simpleScoreHandler(test, callback, config);
+            break;
     }
 };
 
@@ -35,7 +38,7 @@ const textAlertHandler = (response) => {
            </div>`;
 }
 
-export const simpleScoreHandler = (test, config, callback) => {
+const simpleScoreHandler = (test, callback, config) => {
     
     const score = markTest(test);
 
@@ -47,7 +50,10 @@ export const simpleScoreHandler = (test, config, callback) => {
 
     if(callback) callback(score, scoreUpdateTimer);
 
-    textAlertHandler({ success: score.success, correct: 'Correct', incorrect: `Correct answer: ${score.question}` });
+    const correct = `Species: ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
+    const incorrect = `Species: ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
+
+    textAlertHandler({ success: score.success, correct, incorrect });
 }
 
 const genericScoreHandler = (_score, callback, config, containers) => {
@@ -56,20 +62,12 @@ const genericScoreHandler = (_score, callback, config, containers) => {
     const btn = target;
     const test = { itemId, ...question, answer, points, names };
 
-    let correctAnswer;
-
-    if(question.enumerated) {
-        correctAnswer = test.question.slice(0,3);
-        test.answer = test.answer.slice(3);
-        test.question = test.question.slice(3);
-    } else {
-        correctAnswer = test.question;
-    }
-    
     const score = markTest(test);
 
-    const correct = `Species: ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
-    const incorrect = `Species: ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
+    const responseTxt = test.names ? test.names[0] : test.binomial;
+
+    const correct = `Species: ${ responseTxt }`;
+    const incorrect = `Species: ${ responseTxt }`;
 
     textAlertHandler({ success: score.success, correct, incorrect });
 
@@ -147,7 +145,10 @@ const stripScoreHandler = (test, callback, config) => {
             
             if(callback) callback(score, scoreUpdateTimer);
 
-            textAlertHandler({ success: score.success, correct: 'Correct', incorrect: `Correct answer: ${score.question}` });
+            const correct = `Species: ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
+            const incorrect = `Species: ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
+
+            textAlertHandler({ success: score.success, correct, incorrect });
 
             items.forEach(item => item.classList.add('disabled'));
         });
@@ -205,7 +206,6 @@ export const selectHandler = (selector, callback) => {
         });
     });
 };
-
 
 export const radioButonClickhandler = (config, template, descriptions, answers, submitBtn, question) => {
     

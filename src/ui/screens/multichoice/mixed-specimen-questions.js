@@ -10,7 +10,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import mixedSpecimenTemplate from 'ui/screens/multichoice/mixed-specimen-questions-template.html';
 import questionTemple from 'ui/screens/common/question-template.html';
 import { screenShare } from 'ui/screens/multichoice/mixed-specimen-shared';
-import { simpleScoreHandler } from 'ui/helpers/handlers';
+import { scoreHandler } from 'ui/helpers/handlers';
 import { imageSlider } from 'ui/screens/common/image-slider';
 
 export const renderMixedSpecimenQuestions = ui => {
@@ -65,7 +65,7 @@ export const renderMixedSpecimenQuestions = ui => {
 
     renderTemplate( context, template.content, parent);
 
-    const renderAnswer = (score, scoreUpdateTimer) => {
+    const callback = (score, scoreUpdateTimer) => {
         const answer = document.querySelector('.js-answer');
         answer.innerHTML = 'Continue';
         answer.style.display = 'block';
@@ -77,9 +77,9 @@ export const renderMixedSpecimenQuestions = ui => {
         document.querySelector('.js-question').style.display = 'none';
     }
 
-    const scoreHandler = (score, question, answer, config) => {
+    const internalScoreHandler = (score, question, answer, config) => {
         const test = { ...score, itemId: item.id, question, answer, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
-        simpleScoreHandler(test, config, renderAnswer);
+        scoreHandler('image-match', test, callback, config);
     };
 
     if(config.isLandscapeMode) {
@@ -114,7 +114,7 @@ export const renderMixedSpecimenQuestions = ui => {
                 screenShare.selectImage(selectedIndex, selectedName, isCorrectAnswer, item.name);
                 const question = item.name;
                 const answer = selectedName;
-                scoreHandler(score, question, answer, config);
+                internalScoreHandler(score, question, answer, config);
                 imageLayers.forEach(item => item.classList.add('disabled'));                
             });
         });
@@ -141,7 +141,7 @@ export const renderMixedSpecimenQuestions = ui => {
                         : '<span class="icon"><i class="fas fa-times-circle"></i></span>';
 
                 layer.appendChild(icon);          
-                scoreHandler(score, question, answer, config);
+                internalScoreHandler(score, question, answer, config);
             });
         });
     }
