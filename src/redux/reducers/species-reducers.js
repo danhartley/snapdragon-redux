@@ -30,7 +30,7 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
         let layoutCounter, isNextRound;
         if(isRehydrated) {
             layoutCounter = state.layoutCounter === 0 ? 1 : state.layoutCounter;
-            isNextRound = state.isNextRound;
+            isNextRound = itemIndex === 0 ? false : state.isNextRound;
             isRehydrated = false;
         } else {
             layoutCounter = state.layoutCounter ? state.layoutCounter + 1 : 1;            
@@ -102,7 +102,8 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
         let isNextRound = collection.layoutCounter === collection.layoutCount;
         let layoutCounter = 0;
         let itemGroup = collection.itemGroups[collection.currentRound - 1];
-        return { collection, isNextRound, layoutCounter, itemGroup };
+        let layoutCount = action.data.lessonPlan.layoutCount;
+        return { collection, isNextRound, layoutCounter, itemGroup, layoutCount };
     };
     
     switch(action.type) {
@@ -133,8 +134,8 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
             return { ...state, itemIndex, currentRound, nextItem, layoutCounter, lesson };
         }
         case types.NEXT_LESSON: {
-            const { collection, isNextRound, layoutCounter, itemGroup } = getNextLesson(action, state);
-            return { ...collection, layoutCount: action.data.layoutCount, isNextRound, layoutCounter, itemGroup };            
+            const { collection, isNextRound, layoutCounter, itemGroup, layoutCount } = getNextLesson(action, state);
+            return { ...collection, layoutCount: action.data.layoutCount, isNextRound, layoutCounter, itemGroup, layoutCount };            
         }
         case types.NEXT_LEVEL: {
             return { ...state, currentRound: 1 };

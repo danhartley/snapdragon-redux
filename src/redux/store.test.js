@@ -63,13 +63,13 @@ test('when user selects a collection state should be populated', () => {
 
     actions.boundChangeCollection(data); // user action (clicking on a collection) triggers CHANGE_COLLECTION
 
-    let { config, collection, score } = store.getState();
+    const { config, collection, score } = store.getState();
 
     expect(config.collection.id).toEqual(1);
     expect(collection.name).toEqual('Kitchen Garden');
     expect(score).toEqual(progressState.score);
 
-    const _lessonPlan = { layouts: [] };
+    const _lessonPlan = { };
 
     _lessonPlan.layouts = [
         {
@@ -268,7 +268,7 @@ test('when user selects a collection state should be populated', () => {
         }
     ];
 
-    _lessonPlan.collection= {
+    const _collection = {
         currentRound: 1,
         itemGroups: [
             [
@@ -304,9 +304,9 @@ test('when user selects a collection state should be populated', () => {
         }
     };
 
-    actions.boundNextLessonPlan(_lessonPlan); // nextLesson(counter) triggers: NEXT_LESSON
+    actions.boundNextLessonPlan({ lessonPlan: _lessonPlan, collection : _collection});
 
-    let { counter, lessonPlan } = store.getState();
+    const { counter, lessonPlan } = store.getState();
 
     expect(counter.index).toEqual(0);
     expect(lessonPlan.layouts).toEqual(_lessonPlan.layouts);
@@ -321,9 +321,7 @@ test('when user selects a collection state should be populated', () => {
 
     actions.boundEndRevision(item);
 
-    counter = store.getState().counter;
-
-    expect(counter.index).toEqual(0);
+    expect(store.getState().counter.index).toEqual(0);
 
     actions.boundNextLayout({ layoutIndex: 1, itemIndex: 1});
 
@@ -333,7 +331,5 @@ test('when user selects a collection state should be populated', () => {
 
     actions.boundNextItem(1);
 
-    collection = store.getState().collection;
-
-    expect(collection.itemIndex).toEqual(1);
+    expect(store.getState().collection.itemIndex).toEqual(1);
 });

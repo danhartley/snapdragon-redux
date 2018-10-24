@@ -3,15 +3,15 @@ import * as R from 'ramda';
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 
-export const createLesson = (lessonName, levelName, moduleSize, isPortraitMode, layouts, progressScreens, collection, wildcardLayouts) => {
+export const createLesson = (lessonPlan, layouts, progressScreens, collection, wildcardLayouts) => {
 
-    let lessonPlan = { layouts: [] };
+    lessonPlan.layouts = [];
 
+    const { moduleSize, lessonName, levelName } = collection;
+    const itemsCountToDate = (collection.currentRound - 1) * moduleSize;
+    const itemsLeft = collection.items.length - itemsCountToDate;
 
-        const itemsCountToDate = (collection.currentRound - 1) * moduleSize;
-        const itemsLeft = collection.items.length - itemsCountToDate;
-
-        const layoutsToAdd = moduleSize > itemsLeft ? itemsLeft : moduleSize;
+    const layoutsToAdd = moduleSize > itemsLeft ? itemsLeft : moduleSize;
 
     layouts.forEach( (layout, index) => {
 
@@ -24,12 +24,9 @@ export const createLesson = (lessonName, levelName, moduleSize, isPortraitMode, 
 
     const revisionLayouts = lessonPlan.layouts.filter(layout => layout.type === 'revision' && layout.name !== 'screen-definition-card');
     const lessonLayouts = [ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts];
-    let offSet = (collection.currentRound - 1) * moduleSize;
-
-    offSet = offSet < 0 ? 0 : offSet;
 
     const newLessonLayouts = lessonLayouts.map( (layout, i) => {
-        layout.itemIndex = layout.itemIndex || utils.calcItemIndex(offSet, layoutsToAdd, i);
+        layout.itemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
         layout.progressIndex = i + 1;
         return { ...layout };
     });
@@ -37,7 +34,7 @@ export const createLesson = (lessonName, levelName, moduleSize, isPortraitMode, 
     const families = [];
 
     revisionLayouts.forEach( (layout, i) => {
-        const layoutItemIndex = layout.itemIndex || utils.calcItemIndex(offSet, layoutsToAdd, i);
+        const layoutItemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
         layout.itemIndex = layoutItemIndex;
         const arrayIndex = newLessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
         newLessonLayouts.splice(arrayIndex, 0, layout);
@@ -67,7 +64,7 @@ export const createLesson = (lessonName, levelName, moduleSize, isPortraitMode, 
     lessonPlan.levelName = levelName;
     lessonPlan.moduleSize = moduleSize;
 
-    const summaryLayout = isPortraitMode 
+    const summaryLayout = lessonPlan.portrait 
         ? {
             name: 'history',
             screens: [{ 
@@ -102,5 +99,5 @@ export const createLesson = (lessonName, levelName, moduleSize, isPortraitMode, 
     lessonPlan.layoutNames = lessonPlan.layouts.map(layout => layout.name);
     lessonPlan.wildcardLayouts = wildcardLayouts;
 
-    return lessonPlan;
+    return { updatedLessonPlan: lessonPlan, updatedCollection: collection };
 };

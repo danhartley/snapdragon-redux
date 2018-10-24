@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { store } from 'redux/store';
 import { lessonPlanner } from 'syllabus/lesson-planner';
 import { actions } from 'redux/actions/action-creators';
@@ -9,16 +11,11 @@ export const nextLesson = (counter) => {
 
     if(counter.isLessonPaused || config.collection.id === 0) return;
     
-    let lesson;
-
-    let planId = config.isPortraitMode ? collection.lessonPlanPortrait : collection.lessonPlanLandscape;
-    let defaultLessonPlan = lessonPlan || lessonPlans.find(plan => plan.id === planId && plan.portrait === config.isPortraitMode);
+    let planId = config.isPortraitMode ? _collection.lessonPlanPortrait : collection.lessonPlanLandscape;
+    let plan = lessonPlan || lessonPlans.find(plan => plan.id === planId && plan.portrait === config.isPortraitMode);
     
     if(collection.isNextRound) {
-        collection.lesson = collection.lesson || { ...defaultLessonPlan, level: { id: 1 } };
-        lesson = { ...defaultLessonPlan, ...lessonPlanner.createLessonPlan(defaultLessonPlan, config, collection) };        
-        collection.layoutCount = lesson.layoutCount;
-        lesson.collection = collection;
-        actions.boundNextLessonPlan(lesson);
+        const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(plan, config, R.clone(collection));
+        actions.boundNextLessonPlan({ lessonPlan: updatedLessonPlan, collection: updatedCollection });
     }
 };

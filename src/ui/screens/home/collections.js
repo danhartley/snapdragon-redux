@@ -53,6 +53,11 @@ export const renderCollections = (counter) => {
     const lessonHelp = document.querySelector('.js-lesson-help');
     const aboutLabel = document.querySelector('.js-about-label');
 
+    const getCollectionItems = collection => {
+         if(typeof collection.getItems === 'function') return collection.getItems(); 
+         else return snapdragonCollections.find(sc => sc.id === collectionId).getItems();
+    }; 
+
     if(counter.isLessonPaused && config.isLandscapeMode) {
         collectionDescription.innerHTML += `<span><span class='snap-alert snap-padding'>If you change lessons your current lesson score will be lost!</span></span>`;
     }
@@ -72,7 +77,7 @@ export const renderCollections = (counter) => {
 
         collectionId = parseInt(id);
         collection = { ...collection, ...collections.find(collection => collection.id === parseInt(id)) };
-        collection.items = collection.getItems();
+        collection.items = getCollectionItems(collection);
         collectionsHeader.innerHTML = collection.name;
         const descriptions = collection.descriptions.map(description => `<span>${description}</span>`).join('');
         collectionDescription.innerHTML = descriptions;
@@ -174,7 +179,7 @@ export const renderCollections = (counter) => {
 
         if(config.isPortraitMode) {            
             if(collection.items.length === 0) {
-                collection.items = collection.getItems();
+                collection.items = getCollectionItems(collection);
             }
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
             if(counter.isLessonPaused && collectionId === collection.id) {

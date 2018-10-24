@@ -6,7 +6,7 @@ export const lessonPlan = (state = null, action) => {
         case types.CHANGE_LESSON_PLAN:
             return action.data || state;
         case types.NEXT_LESSON:
-            return action.data || state;
+            return action.data.lessonPlan || state;
         default:
             return state;
     }

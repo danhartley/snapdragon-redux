@@ -1,34 +1,34 @@
 import { createLesson } from 'syllabus/lesson-builder';
 
+    const _lessonPlan = { portrait: false };
     const layout = { type: 'test', screens:[{}]} ;
     const layouts = [layout, layout, layout, layout];
     const progressScreens = [{},{}];
-    const collection = { currentRound: 1, items: [{},{},{},{},{},{}] };
-    const moduleSize = 4;
+    const _collection = { currentRound: 1, items: [{},{},{},{},{},{}], moduleSize: 4, lessonName: 'Lesson 1', levelName: 'Level 1' };
 
 test('createLesson should return new lesson plan with correct number of screens', () => {
-    const isPortraitMode = false;
     const summaryLayoutSie = 1;
-    const questionCount = (layouts.length * moduleSize);
+    const questionCount = (layouts.length * _collection.moduleSize);
     const layoutCount = questionCount + summaryLayoutSie;
-    const lessonPlan = createLesson('Lesson 1', 'Level 1', moduleSize, isPortraitMode, layouts, progressScreens, collection, []);
-    expect(lessonPlan.questionCount).toBe(questionCount);
-    expect(lessonPlan.layoutCount).toBe(layoutCount);
+    const { updatedLessonPlan, collection } = createLesson(_lessonPlan, layouts, progressScreens, _collection, []);
+    expect(updatedLessonPlan.questionCount).toBe(questionCount);
+    expect(updatedLessonPlan.layoutCount).toBe(layoutCount);
 });
 
 test('createLesson should return final summary layout with correct number of screens', () => {
-    const isPortraitMode = false;
     const firstLayout = {"itemIndex": 0, "lessonName": "Lesson 1", "levelName": "Level 1", "progressIndex": 1, "roundScoreCount": 0, "screens": [{}], "type": "test"};
     const finalSummaryLayout = {"itemIndex": 0, "layoutIndex": 16, "lessonName": "Lesson 1", "levelName": "Level 1", "name": "summary", "roundScoreCount": 0, "screens": [{}, {}]};
-    const lessonPlan = createLesson('Lesson 1', 'Level 1', moduleSize, isPortraitMode, layouts, progressScreens, collection, []);
-    expect(lessonPlan.layouts[0]).toEqual(firstLayout);
-    expect(lessonPlan.layouts[lessonPlan.layouts.length - 1]).toEqual(finalSummaryLayout);
-    expect(lessonPlan.layouts[lessonPlan.layouts.length - 1].name).toEqual('summary');
-    expect(lessonPlan.layouts[lessonPlan.layouts.length - 1].screens.length).toEqual(2);
+    const { updatedLessonPlan, collection } = createLesson(_lessonPlan, layouts, progressScreens, _collection, []);
+    expect(updatedLessonPlan.layouts[0]).toEqual(firstLayout);
+    expect(updatedLessonPlan.layouts[updatedLessonPlan.layouts.length - 1]).toEqual(finalSummaryLayout);
+    expect(updatedLessonPlan.layouts[updatedLessonPlan.layouts.length - 1].name).toEqual('summary');
+    expect(updatedLessonPlan.layouts[updatedLessonPlan.layouts.length - 1].screens.length).toEqual(2);
 });
 
 test('createLesson should return one screen for final layout for portrait mode', () => {
-    const isPortraitMode = true;
-    const lessonPlan = createLesson('Lesson 1', 'Level 1', moduleSize, isPortraitMode, layouts, progressScreens, collection, []);
-    expect(lessonPlan.layouts[lessonPlan.layouts.length - 1].screens.length).toEqual(1);
+    _lessonPlan.portrait = true;
+    const { updatedLessonPlan, collection } = createLesson(_lessonPlan, layouts, progressScreens, _collection, []);
+    expect(updatedLessonPlan.layouts[updatedLessonPlan.layouts.length - 1].screens.length).toEqual(1);
 });
+
+
