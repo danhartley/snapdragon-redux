@@ -34,27 +34,40 @@ test('intial state of the app should be consistent', () => {
     const received =  {"currentRound": 0, "descriptions": null, "id": 0, "isNextRound": true,"rounds": 0};
     expect(collection).toEqual(received);
 
-    const { counter, score, history, revision } = store.getState();
+    const { counter, score, history } = store.getState();
     expect(counter).toEqual(null);
     expect(score).toEqual(R.clone(progressState.score));
     expect(history).toEqual(null);
-    expect(revision).toEqual(undefined);// not in use, not visible in store
 });
 
-test.skip('when user selects a collection state should be populated', () => {
+test('when user selects a collection state should be populated', () => {
 
-    const action = {
-        type: types.CHANGE_COLLECTION,
-        data: 1
+    const data = {
+        config: {
+            collection: { 
+                id: 1 
+            },
+        },    
+        items: [
+            { 
+                "name": "Vitis vinifera",
+                "names": [
+                    {
+                      "vernacularName": "Vine",
+                      "language": "en"
+                    }
+                ]
+            }
+        ]    
     };
 
-    actions.boundChangeCollection({ collection: {id:'1'}}); // user action (clicking on a collection) triggers CHANGE_COLLECTION
+    actions.boundChangeCollection(data); // user action (clicking on a collection) triggers CHANGE_COLLECTION
 
     let { config, collection, score } = store.getState();
 
-    expect(config.collection.id).toEqual('1');
+    expect(config.collection.id).toEqual(1);
     expect(collection.name).toEqual('Kitchen Garden');
-    expect(score).toEqual(R.clone(progressState.score));
+    expect(score).toEqual(progressState.score);
 
     const _lessonPlan = { layouts: [] };
 
@@ -255,17 +268,54 @@ test.skip('when user selects a collection state should be populated', () => {
         }
     ];
 
-    actions.boundNextLessonPlan(_lessonPlan); // nextLesson(config) triggers: NEXT_LESSON
+    _lessonPlan.collection= {
+        currentRound: 1,
+        itemGroups: [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6,
+              7
+            ],
+            [
+              8,
+              9
+            ]
+          ],
+        items: [
+            { 
+                "name": "Vitis vinifera",
+                "names": [
+                    {
+                      "vernacularName": "Vine",
+                      "language": "en"
+                    }
+                ]
+            }
+        ],
+        lesson: {
+            level: {id:1}
+        }
+    };
 
-    let { counter, lessonPlan, layout } = store.getState();
+    actions.boundNextLessonPlan(_lessonPlan); // nextLesson(counter) triggers: NEXT_LESSON
+
+    let { counter, lessonPlan } = store.getState();
 
     expect(counter.index).toEqual(0);
     expect(lessonPlan.layouts).toEqual(_lessonPlan.layouts);
-    expect(layout).toEqual(_lessonPlan.layouts[0]);
+    
+    let layout = lessonPlan.layouts[counter.index];
 
-    // boundNextLayout(layout) triggers NEXT_LAYOUT but no state change
+    actions.boundNextLayout(layout);
 
-    // boundNextItem(layout.itemIndex) triggers NEXT_ITEM but no state change
+    actions.boundNextItem(layout.itemIndex);
 
     const item = {};
 
@@ -273,15 +323,13 @@ test.skip('when user selects a collection state should be populated', () => {
 
     counter = store.getState().counter;
 
-    expect(counter.index).toEqual(0); // triggers nextLayout(index)
+    expect(counter.index).toEqual(0);
 
     actions.boundNextLayout({ layoutIndex: 1, itemIndex: 1});
 
     layout = store.getState().layout;
 
-    console.log(layout)
-    
-    expect(layout.itemIndex).toEqual(1); // triggers nextItem(layout)
+    expect(layout.itemIndex).toEqual(1);
 
     actions.boundNextItem(1);
 

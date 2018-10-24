@@ -1,9 +1,4 @@
-import { capitaliseAll, markTest } from 'ui/helpers/score-handler';
-
-test('capitaliseAll should return first letter capitalised', () => {
-    expect(capitaliseAll('chives')).toBe('Chives');
-    expect(capitaliseAll('wild chives')).toBe('Wild Chives');
-});
+import { markTest } from 'ui/helpers/score-handler';
 
 test('should return correct  - true for success - for preferred common name', () => {
     const test = {

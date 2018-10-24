@@ -19,7 +19,8 @@ const getItems = (collection, index) => {
 
 export const kitchenGarden = { 
     providerId: 1,
-    id: 1, name: 'Kitchen Garden', 
+    id: 1, 
+    name: 'Kitchen Garden', 
     type: 'species',
     descriptions: [
         'Learn the common and scientific names of herbs, vegetables and fruit used in Western cooking.',

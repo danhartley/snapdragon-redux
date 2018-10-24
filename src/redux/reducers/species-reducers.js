@@ -98,12 +98,11 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
     };
 
     const getNextLesson = (action, state) => {
-        let lessonPlan = action.data;
-        let isRevision = !!(lessonPlan && lessonPlan.collection);
-        let isNextRound = state.layoutCounter === state.layoutCount;
+        let collection = { ...state, ...action.data.collection };
+        let isNextRound = collection.layoutCounter === collection.layoutCount;
         let layoutCounter = 0;
-        let itemGroup = state.itemGroups[state.currentRound - 1];
-        return { lessonPlan, isRevision, isNextRound, layoutCounter, itemGroup };
+        let itemGroup = collection.itemGroups[collection.currentRound - 1];
+        return { collection, isNextRound, layoutCounter, itemGroup };
     };
     
     switch(action.type) {
@@ -134,9 +133,8 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
             return { ...state, itemIndex, currentRound, nextItem, layoutCounter, lesson };
         }
         case types.NEXT_LESSON: {
-            const { lessonPlan, isRevision, isNextRound, layoutCounter, itemGroup } = getNextLesson(action, state);
-            const collection = isRevision ? lessonPlan.collection : state;
-            return { ...collection, isNextRound: false, layoutCount: action.data.layoutCount, isNextRound, layoutCounter, itemGroup };
+            const { collection, isNextRound, layoutCounter, itemGroup } = getNextLesson(action, state);
+            return { ...collection, layoutCount: action.data.layoutCount, isNextRound, layoutCounter, itemGroup };            
         }
         case types.NEXT_LEVEL: {
             return { ...state, currentRound: 1 };

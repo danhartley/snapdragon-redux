@@ -1,33 +1,34 @@
 import { createLesson } from 'syllabus/lesson-builder';
 
-test.skip('createLesson should return new lesson plan with correct number of screens', () => {
-    const layout = {screens:[{}]};
+    const layout = { type: 'test', screens:[{}]} ;
     const layouts = [layout, layout, layout, layout];
     const progressScreens = [{},{}];
-    const collection = [1,2,3];
-    expect(createLesson('Lesson 1', 'Level 1', collection.length, layouts, progressScreens).length).toBe(12);
+    const collection = { currentRound: 1, items: [{},{},{},{},{},{}] };
+    const moduleSize = 4;
+
+test('createLesson should return new lesson plan with correct number of screens', () => {
+    const isPortraitMode = false;
+    const summaryLayoutSie = 1;
+    const questionCount = (layouts.length * moduleSize);
+    const layoutCount = questionCount + summaryLayoutSie;
+    const lessonPlan = createLesson('Lesson 1', 'Level 1', moduleSize, isPortraitMode, layouts, progressScreens, collection, []);
+    expect(lessonPlan.questionCount).toBe(questionCount);
+    expect(lessonPlan.layoutCount).toBe(layoutCount);
 });
 
-test.skip('createLesson should return final layout with correct number of screens', () => {
-    const layout = {screens:[{}]};
-    const layouts = [layout, layout, layout, layout];
-    const progressScreens = [{},{}];
-    const collection = [1,2,3];
-    const lesson = createLesson('Lesson 1', 'Level 1', collection.length, layouts, progressScreens);
-    const firstLesson = { layoutIndex: 0, itemIndex: 0, progressIndex: 1, lessonName: 'Lesson 1', levelName: 'Level 1', screens: [{}]};
-    const finalLayout = { layoutIndex: 11, itemIndex: 2, progressIndex: 4, lessonName: 'Lesson 1', levelName: 'Level 1', screens: [{}, {}, {}]};
-    expect(lesson[0]).toEqual(firstLesson);
-    expect(lesson[lesson.length - 1]).toEqual(finalLayout);
+test('createLesson should return final summary layout with correct number of screens', () => {
+    const isPortraitMode = false;
+    const firstLayout = {"itemIndex": 0, "lessonName": "Lesson 1", "levelName": "Level 1", "progressIndex": 1, "roundScoreCount": 0, "screens": [{}], "type": "test"};
+    const finalSummaryLayout = {"itemIndex": 0, "layoutIndex": 16, "lessonName": "Lesson 1", "levelName": "Level 1", "name": "summary", "roundScoreCount": 0, "screens": [{}, {}]};
+    const lessonPlan = createLesson('Lesson 1', 'Level 1', moduleSize, isPortraitMode, layouts, progressScreens, collection, []);
+    expect(lessonPlan.layouts[0]).toEqual(firstLayout);
+    expect(lessonPlan.layouts[lessonPlan.layouts.length - 1]).toEqual(finalSummaryLayout);
+    expect(lessonPlan.layouts[lessonPlan.layouts.length - 1].name).toEqual('summary');
+    expect(lessonPlan.layouts[lessonPlan.layouts.length - 1].screens.length).toEqual(2);
 });
 
-test.skip('createLesson should return final layout with correct number of screens', () => {
-    const layout = {screens:[{}]};
-    const layouts = [layout, layout, layout, layout];
-    const progressScreens = [{},{}];
-    const collection = [1,2,3];
-    const lesson = createLesson('Lesson 1', 'Level 1', collection.length, layouts, progressScreens);
-    const firstLesson = { layoutIndex: 0, itemIndex: 0, progressIndex: 1, lessonName: 'Lesson 1', levelName: 'Level 1', screens: [{}]};
-    const finalLayout = { layoutIndex: 11, itemIndex: 2, progressIndex: 4, lessonName: 'Lesson 1', levelName: 'Level 1', screens: [{}, {}, {}]};
-    expect(lesson[0]).toEqual(firstLesson);
-    expect(lesson[lesson.length - 1]).toEqual(finalLayout);
+test('createLesson should return one screen for final layout for portrait mode', () => {
+    const isPortraitMode = true;
+    const lessonPlan = createLesson('Lesson 1', 'Level 1', moduleSize, isPortraitMode, layouts, progressScreens, collection, []);
+    expect(lessonPlan.layouts[lessonPlan.layouts.length - 1].screens.length).toEqual(1);
 });

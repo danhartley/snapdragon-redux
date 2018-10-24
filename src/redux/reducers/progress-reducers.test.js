@@ -15,24 +15,8 @@ test('score state should reflect correct answer', () => {
       fails: [],
       passes: []
     }
-  
-    const stateAfter = {
-      total: 11,
-      correct: 10,
-      taxon: 'name',
-      binomial: 'Anagallis arvensis',
-      question: 'Anagallis arvensis',
-      answer: 'Anagallis arvensis',
-      success: true,
-      incorrect: 0,
-      fails: [],
-      itemId: 1,
-      totalPoints: 0,
-      totalPassPoints: 0,
-      totalFailPoints: 0,
-      passes: [{ itemId: 1, taxon: 'name', binomial: 'Anagallis arvensis', question: 'Anagallis arvensis', answer: 'Anagallis arvensis'}],
-      passesTotals: { 1: 1 }
-    }
+
+    const stateAfter =  {"answer": "Anagallis arvensis", "binomial": "Anagallis arvensis", "correct": 10, "fails": [], "failsTotals": 0, "incorrect": 0, "itemId": 1, "passes": [{"answer": "Anagallis arvensis", "binomial": "Anagallis arvensis", "itemId": 1, "question": "Anagallis arvensis", "taxon": "name"}], "passesTotals": {"1": 1}, "question": "Anagallis arvensis", "questionTotal": 1, "success": true, "taxon": "name", "total": 11, "totalFailPoints": 0, "totalPassPoints": 0, "totalPoints": 0}
   
     const action = {
       type: types.UPDATE_SCORE,
@@ -52,7 +36,7 @@ test('score state should reflect correct answer', () => {
     expect(score(stateBefore, action)).toEqual(stateAfter);
   });
   
-  test.only('score state should reflect incorrect answer', () => {
+  test('score state should reflect incorrect answer', () => {
   
     const stateBefore = {
       total: 10,

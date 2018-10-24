@@ -18,6 +18,7 @@ export const nextLesson = (counter) => {
         collection.lesson = collection.lesson || { ...defaultLessonPlan, level: { id: 1 } };
         lesson = { ...defaultLessonPlan, ...lessonPlanner.createLessonPlan(defaultLessonPlan, config, collection) };        
         collection.layoutCount = lesson.layoutCount;
+        lesson.collection = collection;
         actions.boundNextLessonPlan(lesson);
     }
 };
