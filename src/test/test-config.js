@@ -1,0 +1,1 @@
+export const config = { lesson:  { name: 'Lesson 1', level: { name: 'Level 1'}}, moduleSize: 2, isPortraitMode: false, mode: 'learn' };

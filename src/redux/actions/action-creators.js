@@ -11,6 +11,7 @@ const makeActionCreator = action => {
     }
   }
 
+const changeLessonPlans = makeActionCreator(types.CHANGE_LESSON_PLANS);
 const changeLessonPlan = makeActionCreator(types.CHANGE_LESSON_PLAN);
 const nextLesson = makeActionCreator(types.NEXT_LESSON);
 const updateScore = makeActionCreator(types.UPDATE_SCORE);
@@ -31,6 +32,7 @@ const updateUI = makeActionCreator(types.UPDATE_UI);
 const updateEnums = makeActionCreator(types.UPDATE_ENUMS);
 
 const boundchangeLessonPlan = data => store.dispatch(changeLessonPlan(data));
+const boundchangeLessonPlans = data => store.dispatch(changeLessonPlans(data));
 const boundNextLessonPlan = data => store.dispatch(nextLesson(data));
 const boundUpdateScore = data => store.dispatch(updateScore(data));
 const boundNextLayout = data => store.dispatch(nextLayout(data));
@@ -50,6 +52,7 @@ const boundUpdateUI = data => store.dispatch(updateUI(data));
 const boundUpdateEnums = data => store.dispatch(updateEnums(data));
 
 export const actions = {
+    boundchangeLessonPlans,
     boundchangeLessonPlan,
     boundNextLessonPlan,
     boundUpdateScore,

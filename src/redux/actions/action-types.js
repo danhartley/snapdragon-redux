@@ -1,5 +1,6 @@
 const UPDATE_CONFIG = '[UPDATE_CONFIG] change to config';
 const STOP_START_LESSON = '[STOP_START_LESSON] Pause or play current lesson';
+const CHANGE_LESSON_PLANS = '[CHANGE_LESSON_PLANS] Edit the set of lesson plans';
 const CHANGE_LESSON_PLAN = '[CHANGE_LESSON_PLAN] Edit the original lesson plan';
 const SELECT_COLLECTION = '[SELECT_COLLECTION] Update the current selected collection';
 const CHANGE_PAGE = '[CHANGE_PAGE] Navigate to new page';
@@ -21,6 +22,7 @@ const UPDATE_UI = '[UPDATE_UI] update UI elements';
 const UPDATE_ENUMS = '[UPDATE_ENUMS] update enums by config language';
 
 export const types = {
+    CHANGE_LESSON_PLANS,
     CHANGE_LESSON_PLAN,
     NEXT_LESSON,
     NEXT_LAYOUT,

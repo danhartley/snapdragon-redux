@@ -9,7 +9,7 @@ import { familyProps } from 'redux/reducers/initial-state/species-state/species-
 
 const collections = [ kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, wildFoodUKTopTenBeginners, cogumelosEmPortugal, fallMushroomsEasternUSA ];
 
-const initCollection = (selectedCollection = collections[0]) => {
+const extendCollection = (selectedCollection = collections[0]) => {
 
     const { config } = store.getState();
 
@@ -51,5 +51,5 @@ const initCollection = (selectedCollection = collections[0]) => {
 
 export const speciesStateHelper = {
     collections,    
-    initCollection
+    extendCollection
 }

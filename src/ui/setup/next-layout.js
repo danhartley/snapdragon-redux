@@ -16,7 +16,7 @@ export const nextLayout = (counter) => {
 
     if(!layout) return;
 
-    actions.boundNextLayout(layout);     
+    actions.boundNextLayout(layout);
 
     screensSubscriptionHandler(layout, config);
 };
