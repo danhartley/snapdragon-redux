@@ -1,7 +1,7 @@
 import { types } from 'redux/actions/action-types';
 import { collection } from 'redux/reducers/species-reducers';
 import { speciesStateHelper } from 'redux/reducers/initial-state/initial-species-state';
-
+import { unextendedCollection } from 'test/test-collection';
 
 const herbCollection = {
   "name": "Mint and Basil Family",
@@ -43,7 +43,7 @@ test('collection should return default parameter state when there is no action t
   const action = { };  
   const state = collection(speciesStateHelper.collection, action);
 
-  const received = {"currentRound": 0, "descriptions": null, "id": 0, "isNextRound": true,"rounds": 0};
+  const received = {"currentRound": 1, "descriptions": null, "id": 0, "isNextRound": true,"rounds": 0};
 
   expect(state).toEqual(received);
 });
@@ -116,4 +116,82 @@ test('collection should return itemIndex of 0 and currentRound of 1 when moving 
 
   expect(state.currentRound).toBe(1);
   expect(state.itemIndex).toBe(0);
+});
+
+test('collection should return unextended (initial) collection when user selected', () => {
+  let action = { data: unextendedCollection, type: types.SELECT_COLLECTION };
+  let state = collection({}, action);
+  expect(state).toEqual(unextendedCollection);
+});
+
+test('collection should return extended collection when collection changed (extended)', () => {
+  let config = {
+    language: 'en',
+    moduleSize: 2,
+    isPortraitMode: false,
+    isLandscapeMode: true,
+    collection: {
+      id: 3
+    },
+    mode: 'learn'
+  };
+  let sparrow =  { 
+      name: 'Passer domesticus', 
+      names:[{
+        vernacularName: 'Sparrow',
+        language: 'en'
+    }]
+  };
+  let starling = {
+    name: 'Sturnus vulgaris',
+    names: [{
+        vernacularName: 'Starling',
+        language: 'en'
+      }]
+  };
+  let birds = [ sparrow, starling ];
+  let action = { data: birds, type: types.SELECT_COLLECTION };
+  let state = collection({}, action);
+  action = { data: { items: birds, config }, type: types.CHANGE_COLLECTION };
+  state = collection(state, action);  
+  expect(state.nextItem.genus).toEqual('Passer');
+  expect(state.nextItem.species).toEqual('domesticus');
+});
+
+test('collection should return extended collection when collection changed (extended)', () => {
+  let config = {
+    language: 'en',
+    moduleSize: 2,
+    isPortraitMode: false,
+    isLandscapeMode: true,
+    collection: {
+      id: 3
+    },
+    mode: 'learn'
+  };
+  let sparrow =  { 
+      name: 'Passer domesticus', 
+      names:[{
+        vernacularName: 'Sparrow',
+        language: 'en'
+    }]
+  };
+  let starling = {
+    name: 'Sturnus vulgaris',
+    names: [{
+        vernacularName: 'Starling',
+        language: 'en'
+      }]
+  };
+  let birds = [ sparrow, starling ];
+  let action = { data: birds, type: types.SELECT_COLLECTION };
+  let state = collection({}, action);
+  config.mode = 'review';
+  action = { data: { items: birds, config }, type: types.CHANGE_COLLECTION };
+  state = collection(state, action);
+  expect(state.allItems).toBeTruthy();
+  config.mode = 'learn';
+  action = { data: { items: state.items, config }, type: types.CHANGE_COLLECTION };
+  state = collection(state, action);
+  expect(state.items).toEqual(state.allItems);
 });

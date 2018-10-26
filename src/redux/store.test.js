@@ -31,7 +31,7 @@ test('intial state of the app should be consistent', () => {
 
     const { collections, collection } = store.getState();
     expect(collections.length).toBeGreaterThan(0);
-    const received =  {"currentRound": 0, "descriptions": null, "id": 0, "isNextRound": true,"rounds": 0};
+    const received =  {"currentRound": 1, "descriptions": null, "id": 0, "isNextRound": true,"rounds": 0};
     expect(collection).toEqual(received);
 
     const { counter, score, history } = store.getState();
@@ -66,7 +66,6 @@ test('when user selects a collection state should be populated', () => {
     const { config, collection, score } = store.getState();
 
     expect(config.collection.id).toEqual(1);
-    expect(collection.name).toEqual('Kitchen Garden');
     expect(score).toEqual(progressState.score);
 
     const _lessonPlan = { };

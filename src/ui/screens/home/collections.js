@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
@@ -16,7 +18,7 @@ export const renderCollections = (counter) => {
 
     const { collections, config, collection: stateCollection, history } = store.getState();
 
-    let collection = { ...stateCollection };
+    let collection = R.clone(stateCollection);
 
     const template = document.createElement('template');
     template.innerHTML = collectionsTemplate;
@@ -43,7 +45,7 @@ export const renderCollections = (counter) => {
 
     const selectedCollection = collections.find(c => c.selected);
 
-    collection = selectedCollection ? { ...collection, ...selectedCollection } : collection;
+    collection = collection ? collection : { ...collection, ...selectedCollection };
     
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
@@ -54,8 +56,8 @@ export const renderCollections = (counter) => {
     const aboutLabel = document.querySelector('.js-about-label');
 
     const getCollectionItems = collection => {
-         if(typeof collection.getItems === 'function') return collection.getItems(); 
-         else return snapdragonCollections.find(sc => sc.id === collectionId).getItems();
+        if(collection.items && collection.items.length > 0) return collection.items;
+         if(typeof collection.getItems === 'function') return collection.getItems();
     }; 
 
     if(counter.isLessonPaused && config.isLandscapeMode) {
@@ -110,6 +112,7 @@ export const renderCollections = (counter) => {
     // Selected lesson
 
     if(collection && collection.name) {
+        collection.items = getCollectionItems(collection);
         document.querySelectorAll(`[name="${collection.name}"]`)[0].classList.add('active');
         elem.show(learningActionBtn);
         elem.hide(learningActionBtnPlaceholder);

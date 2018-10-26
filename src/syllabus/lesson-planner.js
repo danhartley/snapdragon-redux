@@ -12,12 +12,12 @@ const createLessonPlan = (lessonPlan, config, collection) => {
 
     collection.activeLevelCount = lessonPlan.levels.filter(level => level.layouts.length > 0).length;
 
-    const goToNextLevelWithLayouts = (collection, lessonPlan) => {
+    const goToNextLevelThatHasLayouts = (collection, lessonPlan) => {
 
         let layouts = [], wildcardLayouts = [];
         let wildcards = [], lessonName = '', levelName = '';        
         
-        const iterateOverLevels = (intialValue) => {
+        const iterateOverLevelsCheckingForAvailableLayouts = (intialValue) => {
             
             let increment = intialValue;
 
@@ -26,18 +26,18 @@ const createLessonPlan = (lessonPlan, config, collection) => {
             const levelId = collection.lesson.level ? collection.lesson.level.id + increment : increment + 1;
             const level = lessonPlan.levels.find(level => level.id === levelId);
             collection.lesson.level = level;
-            lessonName = collection.lesson.name;
-            levelName = collection.lesson.level.name;
-            layouts = getLayouts(lessonPlan, collection, config.mode);
-            wildcards = config.mode === 'learn' ? getLayouts(lessonPlan, collection, 'wildcard') : [];
-            wildcardLayouts = wildcards.length > 0 ? getCollectionLayouts(wildcards, collection, collection.moduleSize) : [];
+            collection.lessonName = collection.lesson.name;
+            collection.levelName = collection.lesson.level.name;
+            layouts = getLayouts(getCurrentLevelFromLessonPlan(lessonPlan, levelId), config.mode);
+            wildcards = config.mode === 'learn' ? getLayouts(getCurrentLevelFromLessonPlan(lessonPlan, levelId), 'wildcard') : [];
+            wildcardLayouts = wildcards.length > 0 ? getCollectionLayouts(wildcards, collection) : [];
 
             increment++;
 
-            iterateOverLevels(increment);
+            iterateOverLevelsCheckingForAvailableLayouts(increment);
         }     
 
-        iterateOverLevels(0);
+        iterateOverLevelsCheckingForAvailableLayouts(0);
 
         return { lessonName, levelName, layouts, wildcardLayouts };
     }
@@ -47,10 +47,7 @@ const createLessonPlan = (lessonPlan, config, collection) => {
         collection.lesson.level = lessonPlan.levels.find(level => level.id === levelId);
     }
 
-    const { lessonName, levelName, layouts, wildcardLayouts } = goToNextLevelWithLayouts(collection, lessonPlan);
-
-    collection.lessonName = lessonName;
-    collection.levelName = levelName;
+    const { layouts, wildcardLayouts } = goToNextLevelThatHasLayouts(collection, lessonPlan);
 
     return createLesson(
         lessonPlan,
@@ -61,9 +58,11 @@ const createLessonPlan = (lessonPlan, config, collection) => {
     );        
 };
 
-const getLayouts = (lessonPlan, collection, mode) => {
-    const { lesson: { level: { id: levelId }} } = collection;
-    const currentLevel = lessonPlan.levels.find(level => level.id === levelId);
+const getCurrentLevelFromLessonPlan = (lessonPlan, levelId) => {
+    return lessonPlan.levels.find(level => level.id === levelId);
+}
+
+const getLayouts = (currentLevel, mode) => {    
     switch(mode) {
         case 'learn':
             return currentLevel.layouts;

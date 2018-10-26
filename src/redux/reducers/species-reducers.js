@@ -20,18 +20,18 @@ export const collections = (state = speciesStateHelper.collections, action) => {
     }
 };
 
-let isRehydrated = false;
+let isComingFromLocalStorage = false;
 
-export const collection = (state = { id: 0, descriptions: null, currentRound: 0, rounds: 0, isNextRound: true }, action) => {
+export const collection = (state = { id: 0, descriptions: null, currentRound: 1, rounds: 0, isNextRound: true }, action) => {
 
     const getNextItem = (action, state) => {
         let itemIndex = action.data;
         let nextItem = state.items[itemIndex];
         let layoutCounter, isNextRound;
-        if(isRehydrated) {
+        if(isComingFromLocalStorage) {
             layoutCounter = state.layoutCounter === 0 ? 1 : state.layoutCounter;
             isNextRound = itemIndex === 0 ? false : state.isNextRound;
-            isRehydrated = false;
+            isComingFromLocalStorage = false;
         } else {
             layoutCounter = state.layoutCounter ? state.layoutCounter + 1 : 1;            
             isNextRound = layoutCounter === state.layoutCount;
@@ -64,24 +64,18 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
         return { itemIndex, nextItem, layoutCounter, lesson, currentRound };
     };
 
-    const changeCollection = (action, speciesStateHelper) => {
+    const changeCollection = (state, action, speciesStateHelper) => {
         
-        const initialCollection = speciesStateHelper.collections.find(collection => collection.id === action.data.config.collection.id);
-        const clonedCollection = R.clone(initialCollection);
+        const initialCollection = { ...state, items: [...action.data.items] };
 
-        let allItems = [];
-
-        if(action.data.config.mode === 'review') {
-            allItems = clonedCollection.items;
-        }
-
-        clonedCollection.items = action.data.items;
-        
-        let collection = speciesStateHelper.initCollection(clonedCollection);
+        let collection = speciesStateHelper.extendCollection(R.clone(initialCollection));
         let nextItem = collection.items[collection.itemIndex];
         
+        if(action.data.config.mode === 'review') {
+            collection.allItems = collection.items;
+        }
         if(action.data.config.mode === 'learn') {
-            initialCollection.items = R.clone(clonedCollection.items);
+            if(collection.allItems) initialCollection.items = collection.allItems;
         }
         if(action.data.config.mode === 'learn-again') {
             collection.currentRound = collection.rounds;
@@ -91,9 +85,7 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
             collection.nextItem = collection.items[collection.itemIndex];
             collection.currentRound = 1;
         }
-        if(action.data.config.mode === 'review') {
-            collection.allItems = allItems;
-        }
+
         return { collection, nextItem };
     };
 
@@ -109,7 +101,7 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
     switch(action.type) {
 
         case 'persist/REHYDRATE':
-            isRehydrated = true;
+            isComingFromLocalStorage = true;
             return state;
 
         case types.SELECT_COLLECTION: {
@@ -122,7 +114,7 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 0,
             return _collection;
         }
         case types.CHANGE_COLLECTION: {
-            const { collection, nextItem } = changeCollection(action, speciesStateHelper);
+            const { collection, nextItem } = changeCollection(state, action, speciesStateHelper);
             return { ...state, ...collection, nextItem };
         }
         case types.NEXT_ITEM: {

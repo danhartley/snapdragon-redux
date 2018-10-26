@@ -11,7 +11,7 @@ export const nextLesson = (counter) => {
 
     if(counter.isLessonPaused || config.collection.id === 0) return;
     
-    let planId = config.isPortraitMode ? _collection.lessonPlanPortrait : collection.lessonPlanLandscape;
+    let planId = config.isPortraitMode ? collection.lessonPlanPortrait : collection.lessonPlanLandscape;
     let plan = lessonPlan || lessonPlans.find(plan => plan.id === planId && plan.portrait === config.isPortraitMode);
     
     if(collection.isNextRound) {

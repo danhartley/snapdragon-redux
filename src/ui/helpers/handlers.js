@@ -64,7 +64,10 @@ const genericScoreHandler = (_score, callback, config, containers) => {
 
     const score = markTest(test);
 
-    const responseTxt = test.names ? test.names[0] : test.binomial;
+    let responseTxt = test.names ? test.names[0] : test.binomial;
+
+    responseTxt = score.genus || responseTxt;
+    responseTxt = score.species || responseTxt;
 
     const correct = `Species: ${ responseTxt }`;
     const incorrect = `Species: ${ responseTxt }`;

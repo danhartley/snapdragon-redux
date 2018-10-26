@@ -31,7 +31,7 @@ import { updateLanguage } from 'api/traits/trait-types';
 
 setTimeout( () => {
 
-    const { config, counter: currentCounter, collection } = store.getState();
+    const { config, counter: currentCounter, collection, layout } = store.getState();
 
     config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
     config.isLandscapeMode = !config.isPortraitMode;

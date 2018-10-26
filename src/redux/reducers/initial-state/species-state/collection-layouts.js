@@ -6,7 +6,7 @@ import { getSpeciesCultivars } from 'redux/reducers/initial-state/species-state/
 import { syndromes } from 'api/snapdragon/syndromes';
 import { getGlossary } from 'api/glossary/glossary';
 
-export const getCollectionLayouts = (wildcards, collection, moduleSize) => {
+export const getCollectionLayouts = (wildcards, collection) => {
 
     const getScreens = (wildcards, wildcardName) => {
         
