@@ -10,8 +10,8 @@ import { state2 } from 'test/redux-test-collections/state-2';
 import { state3 } from 'test/redux-test-collections/state-3';
 import { state3Refresh } from 'test/redux-test-collections/state-3-refresh';
 import { state4 } from 'test/redux-test-collections/state-4';
-import { state5 } from 'test/redux-test-collections/state-5';
 import { snapdragon } from 'test/redux-test-snapdragon/state-1';
+import { lessonPlanner } from 'syllabus/lesson-planner';
 
 const herbCollection = {
   "name": "Mint and Basil Family",
@@ -266,15 +266,12 @@ test('collection state after user clicks on "Continue lesson" on summary page af
   expect(state.isLessonComplete).toEqual(false);
 });
 
-// test('collection level name updated after lessonPlan goes to next level', () => {
-//   let state = R.clone(state5);
-//   state = collection(state, { type: types.NEXT_ITEM, data: 0 } );
-//   expect(state.levelName).toEqual('Level 2');
-// });
-
-test.skip('next level', () => {
+test('Level should move to the next when the previous one has completed', () => {
   let state = R.clone(snapdragon.collection);
+  expect(state.currentRound).toBe(2);
   expect(state.lesson.level.id).toBe(1);
-  state = collection(state, { type: types.NEXT_LEVEL, data: 0 } );
+  const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(snapdragon.lessonPlan, snapdragon.config, snapdragon.collection);
+  state = collection(updatedCollection, { type: types.NEXT_LEVEL, data: 0 } );
+  expect(state.currentRound).toBe(1);
   expect(state.lesson.level.id).toBe(2);
 });
