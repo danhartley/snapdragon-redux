@@ -80,11 +80,11 @@ export const renderLessonPlans = (lessonPlanId) => {
         });
     });
 
-    let newLessonPlan = R.clone(lessonPlan);
+    let userEditedPlan = R.clone(lessonPlan);
     let screenName;
     
     const removeLayouts = (layoutType, levelId) => {
-        const currentLevelLayouts = newLessonPlan.levels.find(level => level.id === levelId)[layoutType];
+        const currentLevelLayouts = userEditedPlan.levels.find(level => level.id === levelId)[layoutType];
         const layouts = currentLevelLayouts.map(layout =>  { 
             if(layout.name === screenName) {
                 layout.isDeselected = true;
@@ -95,7 +95,7 @@ export const renderLessonPlans = (lessonPlanId) => {
     }
 
     const revertLayouts = (layoutType, levelId) => {
-        const layouts = newLessonPlan.levels.find(level => level.id === levelId)[layoutType];
+        const layouts = userEditedPlan.levels.find(level => level.id === levelId)[layoutType];
         layouts.forEach(layout => {
             if(layout.name === screenName) {
                 layout.isDeselected = false;
@@ -118,20 +118,19 @@ export const renderLessonPlans = (lessonPlanId) => {
     });
 
     document.querySelector('.js-lesson-plan-btn-action').addEventListener('click', event => {
-        newLessonPlan.levels = newLessonPlan.levels.map(level => { 
+        userEditedPlan.levels = userEditedPlan.levels.map(level => { 
             const layouts = level.layouts.filter(layout => { 
                 return layout.screens;
             });
             return { ...level, layouts: layouts.filter(layout => !layout.isDeselected) };
         });
-        newLessonPlan.levels = newLessonPlan.levels.map(level => { 
+        userEditedPlan.levels = userEditedPlan.levels.map(level => { 
             const wildcardLayouts = level.wildcardLayouts.filter(layout => { 
                 return layout.screens;
             });
             return { ...level, wildcardLayouts: wildcardLayouts.filter(layout => !layout.isDeselected) };
         });
-        actions.boundchangeLessonPlans(newLessonPlan);
-        // actions.boundchangeLessonPlan(newLessonPlan);
+        actions.boundchangeLessonPlans(userEditedPlan);
         event.target.classList.add('snap-success');
         event.target.innerHTML = 'Lesson plan updated';
         setTimeout(() => {
