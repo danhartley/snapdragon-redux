@@ -20,21 +20,16 @@ export const collections = (state = speciesStateHelper.collections, action) => {
     }
 };
 
-let isComingFromLocalStorage = false;
-
 export const collection = (state = { id: 0, descriptions: null, currentRound: 1, rounds: 0, isNextRound: true }, action) => {
 
     const getNextItem = (action, state) => {
         let itemIndex = action.data;
         let nextItem = state.items[itemIndex];
         let layoutCounter, isNextRound;
-        if(isComingFromLocalStorage) {
-            layoutCounter = state.layoutCounter === 0 ? 1 : state.layoutCounter;
-            isNextRound = itemIndex === 0 ? false : state.isNextRound;
-            isComingFromLocalStorage = false;
-        } else {
-            layoutCounter = state.layoutCounter ? state.layoutCounter + 1 : 1;            
-            isNextRound = layoutCounter === state.layoutCount;
+        layoutCounter = state.layoutCounter ? state.layoutCounter + 1 : 1; 
+        isNextRound = layoutCounter === state.layoutCount;
+        if(state.layoutName && state.layoutName === 'summary') {
+            isNextRound = true;
         }
         let noLessonSelected = state.rounds === 0;
         let isLevelComplete = noLessonSelected ? false : state.currentRound === state.rounds;
@@ -101,7 +96,6 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 1,
     switch(action.type) {
 
         case 'persist/REHYDRATE':
-            isComingFromLocalStorage = true;
             return state;
 
         case types.SELECT_COLLECTION: {
@@ -117,6 +111,8 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 1,
             const { collection, nextItem } = changeCollection(state, action, speciesStateHelper);
             return { ...state, ...collection, nextItem };
         }
+        case types.NEXT_LAYOUT:
+            return { ...state, layoutName: action.data.name };
         case types.NEXT_ITEM: {
             const { itemIndex, nextItem, layoutCounter, isNextRound, isLevelComplete, isLessonComplete } = getNextItem(action, state);
             return { ...state, itemIndex, nextItem, layoutCounter, isNextRound, isLevelComplete, userSelection: false, isLessonComplete };
@@ -128,7 +124,7 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 1,
         case types.NEXT_LESSON: {
             const { collection, isNextRound, layoutCounter, itemGroup, layoutCount } = getNextLesson(action, state);
             return { ...collection, layoutCount: action.data.layoutCount, isNextRound, layoutCounter, itemGroup, layoutCount };            
-        }
+        }        
         case types.NEXT_LEVEL: {
             return { ...state, currentRound: 1 };
         }

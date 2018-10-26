@@ -65,15 +65,20 @@ const genericScoreHandler = (_score, callback, config, containers) => {
     const score = markTest(test);
 
     let responseTxt = test.names ? test.names[0] : test.binomial;
+    let labelTxt = 'Species';
 
-    responseTxt = score.taxon === 'genus' 
-        ? score.genus 
-        : score.taxon === 'species' 
-                ? score.species 
-                : responseTxt;
+    if(score.taxon === 'genus') {
+        responseTxt = score.genus;
+        labelTxt = 'Genus name';
+    }
 
-    const correct = `Species: ${ responseTxt }`;
-    const incorrect = `Species: ${ responseTxt }`;
+    if(score.taxon === 'species') {
+        responseTxt = score.species;
+        labelTxt = 'Species name';
+    }
+
+    const correct = `${labelTxt}: ${ responseTxt }`;
+    const incorrect = `${labelTxt}: ${ responseTxt }`;
 
     textAlertHandler({ success: score.success, correct, incorrect });
 

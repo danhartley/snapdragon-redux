@@ -1,6 +1,5 @@
 import { types } from 'redux/actions/action-types';
 
-
 export const lessonPlans = (state = null, action) => {
     switch(action.type) {
         case types.CHANGE_LESSON_PLANS:
