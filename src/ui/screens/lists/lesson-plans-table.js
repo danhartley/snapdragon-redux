@@ -130,7 +130,8 @@ export const renderLessonPlans = (lessonPlanId) => {
             });
             return { ...level, wildcardLayouts: wildcardLayouts.filter(layout => !layout.isDeselected) };
         });
-        actions.boundchangeLessonPlan(newLessonPlan);        
+        actions.boundchangeLessonPlans(newLessonPlan);
+        // actions.boundchangeLessonPlan(newLessonPlan);
         event.target.classList.add('snap-success');
         event.target.innerHTML = 'Lesson plan updated';
         setTimeout(() => {
