@@ -77,6 +77,11 @@ const genericScoreHandler = (_score, callback, config, containers) => {
         labelTxt = 'Species name';
     }
 
+    if(score.taxon === 'family') {
+        responseTxt = score.question;
+        labelTxt = 'Family name';
+    }
+
     const correct = `${labelTxt}: ${ responseTxt }`;
     const incorrect = `${labelTxt}: ${ responseTxt }`;
 
