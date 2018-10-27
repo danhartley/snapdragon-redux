@@ -7,47 +7,48 @@ const { summary, history } = screens;
 const createLessonPlan = (lessonPlan, config, collection) => {
 
     collection.lesson = collection.lesson || { ...lessonPlan, level: { id: 1 } };
-
     collection.itemGroups = getItemGroups(collection);
-
+    collection.itemGroup = collection.itemGroups[collection.currentRound - 1];
+    collection.itemGroupFamilies = collection.itemGroup.map(i => { return { index: i, family: collection.families[i] }; });
     collection.activeLevelCount = lessonPlan.levels.filter(level => level.layouts.length > 0).length;
 
-    const goToNextLevelThatHasLayouts = (collection, lessonPlan) => {
+    const goToNextLevelThatHasLayouts = (collection, lessonPlan, levelId) => {
 
         let layouts = [], wildcardLayouts = [];
         let wildcards = [], lessonName = '', levelName = '';        
         
-        const iterateOverLevelsCheckingForAvailableLayouts = (intialValue) => {
+        const iterateOverLevelsCheckingForAvailableLayouts = (intialValue, levelId) => {
             
             let increment = intialValue;
 
             if(layouts.length > 0 || wildcardLayouts.length > 0) return;
 
-            const levelId = collection.lesson.level ? collection.lesson.level.id + increment : increment + 1;
-            const level = lessonPlan.levels.find(level => level.id === levelId);
+            const level = lessonPlan.levels.find(level => level.id === levelId + increment);
             collection.lesson.level = level;
             collection.lessonName = collection.lesson.name;
             collection.levelName = collection.lesson.level.name;
-            layouts = getLayouts(getCurrentLevelFromLessonPlan(lessonPlan, levelId), config.mode);
+            layouts = getLayouts(getCurrentLevelFromLessonPlan(lessonPlan, levelId  + increment), config.mode);
             wildcards = config.mode === 'learn' ? getLayouts(getCurrentLevelFromLessonPlan(lessonPlan, levelId), 'wildcard') : [];
             wildcardLayouts = wildcards.length > 0 ? getCollectionLayouts(wildcards, collection) : [];
 
             increment++;
 
-            iterateOverLevelsCheckingForAvailableLayouts(increment);
+            iterateOverLevelsCheckingForAvailableLayouts(increment, levelId);
         }     
 
-        iterateOverLevelsCheckingForAvailableLayouts(0);
+        iterateOverLevelsCheckingForAvailableLayouts(0, levelId);
 
         return { lessonName, levelName, layouts, wildcardLayouts };
     }
 
+    let levelId = collection.lesson.level.id;
+
     if(collection.isLevelComplete) {
-        const levelId = collection.lesson.level.id + 1;
+        levelId++;
         collection.lesson.level = lessonPlan.levels.find(level => level.id === levelId);
     }
 
-    const { layouts, wildcardLayouts } = goToNextLevelThatHasLayouts(collection, lessonPlan);
+    const { layouts, wildcardLayouts } = goToNextLevelThatHasLayouts(collection, lessonPlan, levelId);
 
     return createLesson(
         lessonPlan,

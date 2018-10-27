@@ -79,10 +79,6 @@ export const getCollectionLayouts = (wildcards, collection) => {
         }
     }
 
-    const currentRound = collection.currentRound || 1;
-
-    collection.itemGroup = collection.itemGroups[currentRound - 1];
-        
     if(utils.isIterable(wildcardLayouts)) {
         wildcardLayouts.forEach(layout => {
             if(R.contains(layout.itemIndex, collection.itemGroup)) {

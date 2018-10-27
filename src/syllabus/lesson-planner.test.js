@@ -1,10 +1,12 @@
+import * as R from 'ramda';
+
 import { lessonPlanner } from 'syllabus/lesson-planner';
-import { collection as _collection } from 'test/test-collection';
+import { extendedCollection as _collection } from 'test/test-collection';
 import { lessonPlans } from 'snapdragon/lesson-plans';
 import { config } from 'test/test-config';
 
-const lessonPlan = lessonPlans.find(plan => plan.id === 1 && plan.portrait === false);
-const collection = _collection;
+let lessonPlan = R.clone(lessonPlans.find(plan => plan.id === 1 && plan.portrait === false));
+const collection = _collection; // for debugging purposes, do not change.
 
 test('createLessonPlan returns initial plan and collection for landscape mode with moduleSize 4 (overrides config)', () => {        
     const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(lessonPlan, config, collection);    
@@ -26,16 +28,58 @@ test('createLessonPlan returns initial plan and collection for Lesson 1 for land
 
 test('createLessonPlan returns next level when level complete', () => {        
   collection.isLevelComplete = true;
+  expect(collection.lesson.level.name).toEqual('Level 1');
   const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(lessonPlan, config, collection);
-  expect(collection.lessonName).toEqual('Lesson 1');
-  expect(collection.levelName).toEqual('Level 2');
+  expect(updatedCollection.lessonName).toEqual('Lesson 1');
+  expect(updatedCollection.levelName).toEqual('Level 2');
 });
 
 test('createLessonPlan skips a level that has no active (non-revision) layouts', () => {        
+  lessonPlan = R.clone(lessonPlans.find(plan => plan.id === 1 && plan.portrait === false));
   collection.isLevelComplete = true;
   collection.lesson.level = lessonPlan.levels[0];
   lessonPlan.levels[1].layouts = [];
   lessonPlan.levels[1].wildcardLayouts = [];
   const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(lessonPlan, config, collection);
-  expect(collection.levelName).toEqual('Level 3');
+  expect(updatedCollection.levelName).toEqual('Level 3');
+});
+
+test('createLessonPlan skips two levels that have no active (non-revision) layouts', () => {      
+  lessonPlan = R.clone(lessonPlans.find(plan => plan.id === 1 && plan.portrait === false));  
+  collection.isLevelComplete = true;
+  collection.lesson.level = lessonPlan.levels[0];
+  lessonPlan.levels[1].layouts = [];
+  lessonPlan.levels[2].layouts = [];
+  lessonPlan.levels[1].wildcardLayouts = [];
+  lessonPlan.levels[2].wildcardLayouts = [];
+  const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(lessonPlan, config, collection);
+  expect(updatedCollection.levelName).toEqual('Level 4');
+});
+
+test('createLessonPlan skips two levels from which user has removed all screens', () => {      
+  lessonPlan = R.clone(lessonPlans.find(plan => plan.id === 1 && plan.portrait === false));  
+  collection.isLevelComplete = false;
+  collection.lesson.level = lessonPlan.levels[0];
+  lessonPlan.levels[0].layouts = [];
+  lessonPlan.levels[1].layouts = [];
+  lessonPlan.levels[0].wildcardLayouts = [];
+  lessonPlan.levels[1].wildcardLayouts = [];
+  const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(lessonPlan, config, collection);
+  expect(updatedCollection.levelName).toEqual('Level 3');
+});
+
+test('createLessonPlan skips four levels from which user has removed all screens', () => {      
+  lessonPlan = R.clone(lessonPlans.find(plan => plan.id === 1 && plan.portrait === false));  
+  collection.isLevelComplete = false;
+  collection.lesson.level = lessonPlan.levels[0];
+  lessonPlan.levels[0].layouts = [];
+  lessonPlan.levels[1].layouts = [];
+  lessonPlan.levels[2].layouts = [];
+  lessonPlan.levels[3].layouts = [];
+  lessonPlan.levels[0].wildcardLayouts = [];
+  lessonPlan.levels[1].wildcardLayouts = [];
+  lessonPlan.levels[2].wildcardLayouts = [];
+  lessonPlan.levels[3].wildcardLayouts = [];
+  const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(lessonPlan, config, collection);
+  expect(updatedCollection.levelName).toEqual('Level 5');
 });

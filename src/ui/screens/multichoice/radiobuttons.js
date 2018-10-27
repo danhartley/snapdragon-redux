@@ -17,7 +17,7 @@ export const renderRadioButtons = (collection) => {
 
     template.innerHTML = radiobuttonsTemplate;
 
-    let randomAnswers, question, answers;
+    let randomAnswers, question = {}, answers;
     let indices = config.isPortraitMode ? [4,5] : [5,6];
 
     const descriptions = ['','',''];
@@ -47,6 +47,7 @@ export const renderRadioButtons = (collection) => {
 
     if(screen) {
         screen.flavour = utils.shuffleArray(familyFlavours)[0];
+        question.taxon = 'family';
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
@@ -65,7 +66,7 @@ export const renderRadioButtons = (collection) => {
         const identification = families.find(f => f.name === family).descriptions[0].identification;
         descriptions[0] = `${species.toUpperCase()} belongs to a family whose Quick Id is '${identification}'`;
         descriptions[1] = 'What is the name of this FAMILY?';
-        question = { question: family, binomial: item.name };
+        question = { ...question,  question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 
         scorehandler(descriptions, question, answers);
@@ -74,7 +75,7 @@ export const renderRadioButtons = (collection) => {
     if(layout.screens.find(screen => screen.flavour === 'match-species-to-latin-family-name')) {
 
         descriptions[0] = `To which FAMILY does the species ${species.toUpperCase()} belong?`;        
-        question = { question: family, binomial: item.name };
+        question = { ...question,  question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
         
         scorehandler(descriptions, question, answers);
@@ -83,7 +84,7 @@ export const renderRadioButtons = (collection) => {
     if(layout.screens.find(screen => screen.flavour === 'match-species-to-common-family-name')) {
 
         descriptions[0] = `To which FAMILY does the species ${species.toUpperCase()} belong?`;
-        question = { question: commonFamilyName, binomial: item.name };
+        question = { ...question,  question: commonFamilyName, binomial: item.name };
         answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
         
         scorehandler(descriptions, question, answers);
@@ -94,7 +95,7 @@ export const renderRadioButtons = (collection) => {
         indices = config.isPortraitMode ? [4,5] : [5,6];
 
         descriptions[0] = `Which of the following common FAMILY names matches the latin name ${family.toUpperCase()}?`;
-        question = { question: commonFamilyName, binomial: item.name };
+        question = { ...question,  question: commonFamilyName, binomial: item.name };
         answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
         
         scorehandler(descriptions, question, answers);
@@ -105,7 +106,7 @@ export const renderRadioButtons = (collection) => {
         indices = config.isPortraitMode ? [4,5] : [5,6];
 
         descriptions[0] = `Which of the following common FAMILY names matches the latin name ${family.toUpperCase()}?`;
-        question = { question: commonFamilyName, binomial: item.name };
+        question = { ...question,  question: commonFamilyName, binomial: item.name };
         answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
         
         scorehandler(descriptions, question, answers);
@@ -121,7 +122,7 @@ export const renderRadioButtons = (collection) => {
         const subspecies = layout.cultivars.subspecies;
         const names = R.take(indices[1], R.flatten(subspecies.map(sub => sub.names.filter(name => name.language === config.language))).map(n => n.vernacularName)).join(', ');
         descriptions[0] = `${names} derive from one species. What is its name?`;
-        question = { question: item.name, binomial: item.name };
+        question = { ...question,  question: item.name, binomial: item.name };
         answers = utils.shuffleArray([item.name, ...randomAnswers]);
 
         scorehandler(descriptions, question, answers);

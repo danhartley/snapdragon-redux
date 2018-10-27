@@ -31,14 +31,20 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, w
 
     const families = [];
 
+    let groupFamilies = R.clone(collection.itemGroupFamilies);
+
     revisionLayouts.forEach( (layout, i) => {
         const layoutItemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
-        layout.itemIndex = layoutItemIndex;
-        const arrayIndex = lessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
-        lessonLayouts.splice(arrayIndex, 0, layout);
-        const family = collection.items.find((item, index) => index === layoutItemIndex).family;
-        if(!R.contains(family, families)) {
-            families.push(family);            
+        if(groupFamilies.find(f => f.index === layoutItemIndex)) {
+            layout.itemIndex = layoutItemIndex;
+            const arrayIndex = lessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
+            lessonLayouts.splice(arrayIndex, 0, layout);
+            const family = collection.items.find((item, index) => index === layoutItemIndex).family;
+            if(!R.contains(family, families)) {
+                families.push(family);
+            }
+            const familyName = groupFamilies.find(f => f.index === layoutItemIndex).family;
+            groupFamilies = groupFamilies.filter(f => f.family !== familyName);
         }
     });
 
