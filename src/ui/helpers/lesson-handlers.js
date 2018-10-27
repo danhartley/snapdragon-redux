@@ -42,7 +42,7 @@ const changeCollection = (lessonStateMode, collections, collection, config, hist
             break;
         }
         case 'nextRound': {
-            const itemsToReview = stats.getItemsForRevision(collection, history, config, 1);
+            const itemsToReview = stats.getItemsForRevision(collection, history, 1);
             const mode = getMode(config.mode, collection.isLevelComplete, itemsToReview);
             config.mode = mode;
 
@@ -60,7 +60,7 @@ const changeCollection = (lessonStateMode, collections, collection, config, hist
                     collection.moduleSize = (collection.moduleSize > collection.length) ? collection.length : collection.moduleSize;
                     collection.rounds = Math.ceil(collection.items.length / collection.moduleSize);
                     collection.itemIndex = 0;
-                    actions.boundChangeCollection({ config: config, items: itemsToReview });
+                    actions.boundChangeCollection({ config: config, items: itemsToReview, allItems: collection.items });
                     break;
                 }
                 case 'learn-again': {
