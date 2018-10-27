@@ -1,6 +1,6 @@
 import { utils } from 'utils/utils';
 
-const getItemScoreStats = (collection, history, config) => {
+const getItemScoreStats = (collection, history) => {
 
     const reducer = (acc, curr) => {
         return { ...acc,  ...curr };
@@ -8,10 +8,13 @@ const getItemScoreStats = (collection, history, config) => {
 
     if(!history) return [];
 
-    const lastRound = history.scores[history.scores.length - 1];
+    const passesTotals = history.scores.map(score => score.passesTotals);
+    const failsTotals = history.scores.map(score => score.failsTotals);
 
-    const passesTotals = [ lastRound.passesTotals ];
-    const failsTotals = [ lastRound.failsTotals ];
+    // const lastRound = history.scores[history.scores.length - 1];
+
+    // const passesTotals = [ lastRound.passesTotals ];
+    // const failsTotals = [ lastRound.failsTotals ];
 
     const passes = passesTotals.reduce(reducer, {});
     const fails = failsTotals.reduce(reducer, {});
@@ -27,11 +30,13 @@ const getItemScoreStats = (collection, history, config) => {
     return items;
 };
 
-const getItemsForRevision = (collection, history, config, minimumScore) => {
+const getItemsForRevision = (collection, history, minimumScore) => {
 
-    const items = getItemScoreStats(collection, history, config);
+    const items = getItemScoreStats(collection, history);
 
-    return items.filter(item => item.fails > minimumScore);
+    const itemsToReview = items.filter(item => item.fails > minimumScore);
+
+    return itemsToReview;
 };
 
 export const stats = {

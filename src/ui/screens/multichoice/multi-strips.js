@@ -97,8 +97,7 @@ export const renderMultiStrips = (collection) => {
         const vernacular = itemProperties.vernacularName(item, config);
         const questionText = config.isPortraitMode ? 'Select equivalent of common name' : `Select the latin equivalent of the common name`;
         const question = item.name;
-        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(collection.speciesNames)).filter(itemName => itemName !== item.name));
-        const answers = utils.shuffleArray([question, ...alternatives]);
+        const answers = itemProperties.answersFromList(itemProperties.itemNamesForGroups(collection.allItems), question, number);
 
         const description = { vernacular, name: '---' };
 
@@ -113,8 +112,8 @@ export const renderMultiStrips = (collection) => {
 
         const questionText = config.isPortraitMode ? 'Select equivalent of latin name' : `Select the common name equivalent of the latin`;
         const question = itemProperties.vernacularName(item, config);
-        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(collection.speciesVernacularNames)).filter(itemName => itemName !== question));
-        const answers = utils.shuffleArray([question, ...alternatives]);
+        const items = collection.allItems || collection.items;
+        const answers = itemProperties.answersFromList(itemProperties.vernacularNamesForGroups(items, config), question, number);
 
         const description = { vernacular: '---', name: item.name };
 

@@ -23,9 +23,7 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, w
     });
 
     const revisionLayouts = lessonPlan.layouts.filter(layout => layout.type === 'revision' && layout.name !== 'screen-definition-card');
-    const lessonLayouts = [ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts];
-
-    const newLessonLayouts = lessonLayouts.map( (layout, i) => {
+    const lessonLayouts = [ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts].map( (layout, i) => {
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
         layout.progressIndex = i + 1;
         return { ...layout };
@@ -36,29 +34,28 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, w
     revisionLayouts.forEach( (layout, i) => {
         const layoutItemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
         layout.itemIndex = layoutItemIndex;
-        const arrayIndex = newLessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
-        newLessonLayouts.splice(arrayIndex, 0, layout);
+        const arrayIndex = lessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
+        lessonLayouts.splice(arrayIndex, 0, layout);
         const family = collection.items.find((item, index) => index === layoutItemIndex).family;
         if(!R.contains(family, families)) {
             families.push(family);            
         }
-        
     });
 
     let hasGlossary = false;
     const glossary = lessonPlan.layouts.find(layout => layout.name === 'screen-definition-card');
 
     if(glossary) {
-        newLessonLayouts.forEach((layout, index) => {
+        lessonLayouts.forEach((layout, index) => {
             if(layout.name === 'screen-common-to-latin' && !hasGlossary) {
                 glossary.itemIndex = 0;
-                newLessonLayouts.splice(index, 0, glossary);
+                lessonLayouts.splice(index, 0, glossary);
                 hasGlossary = true;
             }
         });
     }
 
-    lessonPlan.layouts = [ ...newLessonLayouts ];
+    lessonPlan.layouts = [ ...lessonLayouts ];
 
     lessonPlan.lessonName = lessonName;
     lessonPlan.levelName = levelName;

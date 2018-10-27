@@ -46,9 +46,11 @@ export const renderSpecimenMatch = collection => {
             item.keyTrait
         ];
         
+        const number = config.isPortraitMode ? 4 : 6;
+
         answers = layout.screens[1].type === 'binomial' 
-                ? itemProperties.itemNames(collection.items, collection.itemGroup)
-                : itemProperties.vernacularNamesForGroups(collection.items, config, collection.itemGroup);
+                ? itemProperties.answersFromList(itemProperties.itemNamesForGroups(collection.items), item.name, number)
+                : itemProperties.answersFromList(itemProperties.vernacularNamesForGroups(collection.items, config), item.vernacularName, number);
 
         const questionValue = layout.screens[1].type === 'binomial'
                 ? item.name

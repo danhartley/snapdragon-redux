@@ -18,7 +18,7 @@ export const renderSummary = (history) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    const itemsToReview = stats.getItemsForRevision(collection, history, config, 1);
+    const itemsToReview = stats.getItemsForRevision(collection, history, 1);
     const mode = endOfRoundHandler.getMode(config.mode, collection.isLevelComplete, itemsToReview);
 
     let header, summary; 

@@ -117,3 +117,21 @@ test('should return vernacular family names when provided with latin name and la
   };
   expect(itemProperties.familyVernacularNames(family.name, 'en')).toEqual(['Mallows or Hibiscus']);
 });
+
+const list = [
+  "Fistulina hepatica",
+  "Boletus edulis",
+  "Pleurotus ostreatus",
+  "Auricularia auricula-judae",
+  "Calvatia gigantea",
+  "Hydnum repandum",
+  "Polyporus squamosus",
+  "Sarcoscypha coccinea",
+  "Sparassis crispa",
+  "Lepista personata"
+];
+
+test('answersFrom should return a new list matching the number requesting and including the correct answer', () => {
+  const answers = ["Fistulina hepatica","Boletus edulis","Pleurotus ostreatus",];
+  expect(itemProperties.answersFromList(list, 'Boletus edulis', 3).sort()).toEqual(answers.sort());
+});

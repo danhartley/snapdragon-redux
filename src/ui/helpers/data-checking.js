@@ -119,9 +119,15 @@ const vernacularNamesForGroups = (items, config, itemGroup) => {
     });
 };
 
-const itemNames = (items, itemGroup) => {
+const itemNamesForGroups = (items, itemGroup) => {
     const names = itemGroup ? items.filter((item, index) => R.contains(index, itemGroup)).map(item => item.name) : items.map(item => item.name);
     return names;
+};
+
+const answersFromList = (list, toInclude, number) => {
+    const answers = R.take(number - 1, list.filter(item => item !== toInclude));
+    answers.push(toInclude);
+    return utils.shuffleArray(answers);
 };
 
 const itemContextProperty = (traits, item, propertyName) => {
@@ -147,7 +153,8 @@ export const itemProperties = {
     getActiveTrait,
     vernacularNamesForItems,
     vernacularNamesForGroups,
-    itemNames,
+    itemNamesForGroups,
     itemContextProperty,
-    vernacularNames
+    vernacularNames,
+    answersFromList
 };

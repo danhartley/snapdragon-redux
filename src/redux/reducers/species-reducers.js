@@ -67,11 +67,9 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 1,
         let nextItem = collection.items[collection.itemIndex];
         
         if(action.data.config.mode === 'review') {
-            collection.allItems = collection.items;
+            collection.allItems = action.data.allItems;
         }
-        if(action.data.config.mode === 'learn') {
-            if(collection.allItems) initialCollection.items = collection.allItems;
-        }
+
         if(action.data.config.mode === 'learn-again') {
             collection.currentRound = collection.rounds;
             collection.isNextRound = true;

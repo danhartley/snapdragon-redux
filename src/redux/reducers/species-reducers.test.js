@@ -197,14 +197,57 @@ test('collection should return extended collection when collection changed (exte
   let birds = [ sparrow, starling ];
   let action = { data: birds, type: types.SELECT_COLLECTION };
   let state = collection({}, action);
-  config.mode = 'review';
+  action = { data: { items: birds, config }, type: types.CHANGE_COLLECTION };
+  state = collection(state, action);  
+  expect(state.families).toBeTruthy();
+  expect(state.familyStats).toBeTruthy();
+  expect(state.speciesNames).toBeTruthy();
+  expect(state.speciesVernacularNames).toBeTruthy();
+});
+
+test('collection should set allItems during review and reset items to this value when review complete (learn-again mode)', () => {
+
+  let config = {
+    language: 'en',
+    moduleSize: 2,
+    isPortraitMode: false,
+    isLandscapeMode: true,
+    collection: {
+      id: 3
+    },
+    mode: 'learn'
+  };
+  let sparrow =  { 
+      name: 'Passer domesticus', 
+      names:[{
+        vernacularName: 'Sparrow',
+        language: 'en'
+    }]
+  };
+  let starling = {
+    name: 'Sturnus vulgaris',
+    names: [{
+        vernacularName: 'Starling',
+        language: 'en'
+      }]
+  };
+  let birds = [ sparrow, starling ];
+  let action = { data: birds, type: types.SELECT_COLLECTION };
+  let state = collection({}, action);
+  config.mode = 'learn';
   action = { data: { items: birds, config }, type: types.CHANGE_COLLECTION };
   state = collection(state, action);
-  expect(state.allItems).toBeTruthy();
-  config.mode = 'learn';
+  birds = state.items;
+  config.mode = 'review';
+  const itemsToReview = R.take(2, state.items);
+  action = { data: { items: itemsToReview, config, allItems: state.items }, type: types.CHANGE_COLLECTION };
+  state = collection(state, action);
+  expect(state.items).toEqual(itemsToReview);
+  expect(state.allItems).toEqual(birds);
+  config.mode = 'learn-again';
   action = { data: { items: state.items, config }, type: types.CHANGE_COLLECTION };
   state = collection(state, action);
-  expect(state.items).toEqual(state.allItems);
+  expect(state.items).toEqual(birds);
 });
 
 // Tests based on birds collection, state taken from running the app
