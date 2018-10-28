@@ -1,10 +1,10 @@
 import { store } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
 import { DOM } from 'ui/dom';
+import { persistor } from 'redux/store';
 import { stats } from 'ui/helpers/stats';
 import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
 import { renderTemplate } from 'ui/helpers/templating';
-import { renderCollections } from 'ui/screens/home/collections';
 import summaryTemplate from 'ui/screens/progress/summary-template.html';
 
 export const renderSummary = (history) => {
@@ -21,7 +21,7 @@ export const renderSummary = (history) => {
     const itemsToReview = stats.getItemsForRevision(collection, history, 1);
     const mode = endOfRoundHandler.getMode(config.mode, collection.isLevelComplete, itemsToReview);
 
-    let header, summary; 
+    let header, summary, warning = ''; 
 
     if(mode === 'learn') {
 
@@ -49,10 +49,11 @@ export const renderSummary = (history) => {
         header = 'You have completed the lesson. Well done!';
         const nextLesson = collections.find(c => c.courseId === collection.courseId && c.id === collection.id + 1);
         if(nextLesson) summary = `The next lesson in this course is ${nextLesson.name}. Return to the home page and select it from the lesson menu.`
-        else summary = `Return to the home page and select a new lesson from the menu.`
+        else summary = 'Return to the home page and select a new lesson from the menu.'
+        warning = 'Warning! All record of this lesson, including your score, will now be erased. Future versions of Snapdragon will save a record of all your lessons.'
     }
 
-    renderTemplate({ score, history, collection, config, header, summary }, template.content, parent);
+    renderTemplate({ score, history, collection, config, header, summary, warning }, template.content, parent);
     
     const learnMoreBtn = document.querySelector('.js-summmary-btn-action');
 
@@ -63,8 +64,9 @@ export const renderSummary = (history) => {
         subscription.getByName('renderSummary').forEach(sub => subscription.remove(sub));
         subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
 
-        if(collection.isLessonComplete) {            
-            renderCollections({index: null, isLessonPaused: false});
+        if(collection.isLessonComplete) {
+            persistor.purge();
+            window.location.reload(true);
         }
         else endOfRoundHandler.changeCollection('nextRound', collections, collection, config, history);
     };

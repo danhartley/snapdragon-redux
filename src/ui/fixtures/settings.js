@@ -39,7 +39,7 @@ export const renderSettings = () => {
             clearCacheBtn.innerText = 'Cache cleared';
             setTimeout(() => {                                
                 setTimeout(() => {
-                    window.location.reload(true);               
+                    window.location.reload(true);
                 }, 500);
             }, 500);
         }, 1000);
