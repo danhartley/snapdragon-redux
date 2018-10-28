@@ -84,19 +84,19 @@ hr {
 }
 
 .dropdown-item-text {
-  padding: .25em 1em;
+  text-align: center;
   border-bottom: 1px solid lightgray;
   border-top: 1px solid darkgray;
-  background-color: rgba(176, 110, 143,.2);
+  background-color: var(--snap-species-highlight-background);
 }
 
 .collections a.dropdown-item, .languages a.dropdown-item {
-  padding: .5em 2em;
+  padding: .5em;
 }
 
 .collections a.dropdown-item:active, .collections a.dropdown-item.active {
-  color: var(--snap-text-light);
-  background-color: var(--snap-collection-active);  
+  color: var(--snap-text-dark);
+  background-color: rgba(79, 106, 135,.3);
 }
 
 .collections a.dropdown-item:hover{
