@@ -1,5 +1,4 @@
 import { store } from 'redux/store';
-import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
 import { modalImageHandler } from 'ui/helpers/image-handlers';
@@ -76,27 +75,33 @@ export const renderSpeciesCollectionList = (collection, collectionFromLastRound,
     // Portrait mode only
 
     if(continueLearningActionBtn) {
-        
+                
         if(history || counter.isLessonPaused) {
             continueLearningActionBtn.innerHTML = 'Continue lesson';
+        }
+        
+        if(collection.isLessonComplete) {
+            continueLearningActionBtn.innerHTML = 'End lesson (delete data) | Pick new lesson';
         }
 
         continueLearningActionBtn.addEventListener('click', event => {
 
-            if(readOnlyMode) {
-                const lessonStateMode = counter.isLessonPaused ? 'restartLesson' : 'nextRound';
-                endOfRoundHandler.changeCollection(lessonStateMode, collections, collection, config, history);
-            }
-            else {
-                endOfRoundHandler.changeCollection('newLesson', collections, collection, config, history, continueLearningActionBtn);
-            }
+            if(collection.isLessonComplete) {
+                endOfRoundHandler.purgeLesson();
+            } else {
+                if(readOnlyMode) {
+                    const lessonStateMode = counter.isLessonPaused ? 'restartLesson' : 'nextRound';
+                    endOfRoundHandler.changeCollection(lessonStateMode, collections, collection, config, history);
+                }
+                else {
+                    endOfRoundHandler.changeCollection('newLesson', collections, collection, config, history, continueLearningActionBtn);
+                }
 
-            actions.boundNewPage({ name: ''});
+                actions.boundNewPage({ name: ''});
 
-            subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
-            subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
-
-            // event.target.setAttribute("disabled", "disabled");
+                subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
+                subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
+            }            
         });
     }
 };

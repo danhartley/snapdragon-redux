@@ -1,4 +1,3 @@
-import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, wildFoodUKTopTenBeginners, cogumelosEmPortugal, fallMushroomsEasternUSA } from 'snapdragon/snapdragon-collections';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -18,10 +17,6 @@ export const renderSnapdragon = (counter) => {
     parent.innerHTML = '';
 
     const collections = [ kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, wildFoodUKTopTenBeginners, cogumelosEmPortugal, fallMushroomsEasternUSA ];
-
-    // collections.forEach(collection => {
-    //     collection.families = collection.items.map(item => item.family).filter(utils.onlyUnique);
-    // });
 
     const context = { collections };
 

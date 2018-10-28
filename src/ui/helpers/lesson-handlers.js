@@ -1,4 +1,5 @@
 import { store } from 'redux/store';
+import { persistor } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { stats } from 'ui/helpers/stats';
 
@@ -72,7 +73,13 @@ const changeCollection = (lessonStateMode, collections, collection, config, hist
     }
 };
 
+const purgeLesson = () => {
+    persistor.purge();
+    window.location.reload(true);
+};
+
 export const endOfRoundHandler = {
     getMode,
-    changeCollection
+    changeCollection,
+    purgeLesson
 }

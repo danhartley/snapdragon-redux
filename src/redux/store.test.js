@@ -47,7 +47,7 @@ test('when user selects a collection state should be populated', () => {
             collection: { 
                 id: 1 
             },
-        },    
+        },   
         items: [
             { 
                 "name": "Vitis vinifera",
