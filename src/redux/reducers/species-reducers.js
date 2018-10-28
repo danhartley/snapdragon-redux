@@ -35,8 +35,8 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 1,
         let isLevelComplete = noLessonSelected ? false : state.currentRound === state.rounds;
 
         let isLessonComplete = false;
-        if(state.lesson.level.id) {
-            isLessonComplete = isLevelComplete && state.lesson.level.id === state.activeLevelCount;
+        if(state.lesson.level.id && state.lesson.levels) {
+            isLessonComplete = isLevelComplete && (state.lesson.levels[state.lesson.levels.length -1].id === state.lesson.level.id);
         }
 
         return { itemIndex, nextItem, layoutCounter, isNextRound, isLevelComplete, isLessonComplete };

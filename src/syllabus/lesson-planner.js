@@ -35,7 +35,7 @@ const createLessonPlan = (lessonPlan, config, collection) => {
 
             iterateOverLevelsCheckingForAvailableLayouts(increment, levelId);
         }     
-
+        
         iterateOverLevelsCheckingForAvailableLayouts(0, levelId);
 
         return { lessonName, levelName, layouts, wildcardLayouts };
