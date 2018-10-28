@@ -1,7 +1,6 @@
 import { store } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
 import { DOM } from 'ui/dom';
-import { persistor } from 'redux/store';
 import { stats } from 'ui/helpers/stats';
 import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -65,8 +64,7 @@ export const renderSummary = (history) => {
         subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
 
         if(collection.isLessonComplete) {
-            persistor.purge();
-            window.location.reload(true);
+            endOfRoundHandler.purgeLesson();
         }
         else endOfRoundHandler.changeCollection('nextRound', collections, collection, config, history);
     };
