@@ -288,4 +288,8 @@
     .text-question {
         padding: 0;
     }
+
+    #speciesCardModal .modal-dialog {
+        max-width: 40vw;
+    }
 }

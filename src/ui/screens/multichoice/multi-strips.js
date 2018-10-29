@@ -42,8 +42,12 @@ export const renderMultiStrips = (collection) => {
     
     if(screen) {
         screen.flavour = utils.shuffleArray(familyFlavours)[0];
-    } else {
-        screen = layout.screens.find(screen => screen.name === 'species-scientifics') || layout.screens.find(screen => screen.name === 'species-vernaculars') || layout.screens.find(screen => screen.name === 'epithet') || layout.screens.find(screen => screen.name === 'definition') || layout.screens.find(screen => screen.name === 'wildcard-match')
+    } else { screen =    
+        layout.screens.find(screen => screen.name === 'species-scientifics') || 
+        layout.screens.find(screen => screen.name === 'species-vernaculars') || 
+        layout.screens.find(screen => screen.name === 'epithet') || 
+        layout.screens.find(screen => screen.name === 'definition') || 
+        layout.screens.find(screen => screen.name === 'wildcard-match')
     }
 
     if(!screen) return;

@@ -141,6 +141,10 @@ hr {
   display: none;
 }
 
+.hide-important {
+  display: none !important;
+}
+
 .home, .settings, .list, .glossary {
   cursor: pointer;
   font-size: 1.6em;
@@ -850,6 +854,30 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   height: 50vh;
 }
 
+#speciesCardModal .modal-dialog {
+  max-width: 100vw;
+}
+
+#speciesCardModal .modal-header {
+  display: none;
+  /* height: 2em;
+  padding: .5em; */
+}
+
+#speciesCardModal .modal-content {
+  height: 100%;
+}
+
+#speciesCardModal .modal-content .snapdragon-container {  
+  height: 70vh;
+  border: 0;
+  padding: 0;
+}
+
+#speciesCardModal .modal-content .snapdragon-container .species.revision.card {
+  margin: 0;
+}
+
 .delay-slider {
   margin: 1em 0;
 }
@@ -1149,7 +1177,6 @@ table {
   vertical-align: sub;
 }
 
-/* .table-header th:nth-child(3), .table-row td:nth-child(3), */
 .table-header th:nth-child(3), .table-row td:nth-child(3), .table-footer td:nth-child(3),
 .table-header th:nth-child(4), .table-row td:nth-child(4), .table-footer td:nth-child(4),
 .table-header th:nth-child(5), .table-row td:nth-child(5), .table-footer td:nth-child(5) {  
@@ -1157,12 +1184,6 @@ table {
   display: flex;
   align-items: center;
 }
-/* 
-.table-header th:nth-child(4), .table-row td:nth-child(4) {
-  flex: 1;
-  display: flex;
-  align-items: center;
-} */
 
 .trait.card li span:nth-child(1) {
   width: 25%;
@@ -1377,14 +1398,6 @@ table {
 #traitSlider .carousel-control-next-icon {
   color: black;
 }
-
-/* #traitSlider .carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23b3b19f' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
-}
-
-#traitSlider .carousel-control-next-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23b3b19f' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
-} */
 
 .carousel-control-prev-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");

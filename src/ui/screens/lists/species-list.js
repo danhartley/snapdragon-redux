@@ -1,6 +1,7 @@
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
+import { renderCard } from 'ui/screens/cards/card';
 import { modalImageHandler } from 'ui/helpers/image-handlers';
 import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
 import { getTraits } from 'api/traits/traits';
@@ -71,6 +72,17 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     });    
 
     const continueLearningActionBtn = document.querySelector('.js-species-list-btn-action');
+
+    setTimeout(() => {
+        const speciesCardLinks = document.querySelectorAll('.js-species-card-link span');
+        speciesCardLinks.forEach(link => {
+            link.addEventListener('click', event => {
+                const name = event.target.dataset.name;
+                const parent = document.querySelector('#speciesCardModal .js-modal-body');
+                renderCard(collection, true, collection.items.find(i => i.name === name), parent);
+            });
+        });
+    }, 1000);
 
     // Portrait mode only
 

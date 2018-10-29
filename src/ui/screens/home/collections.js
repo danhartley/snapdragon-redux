@@ -164,6 +164,7 @@ export const renderCollections = (counter) => {
         if(config.isLandscapeMode && collectionId) {
             collection.language = language;
             actions.boundSelectCollection(collection);
+            collection.items = getCollectionItems(collection);
             renderSpeciesCollectionList(collection, true);
         }
     });
@@ -175,6 +176,7 @@ export const renderCollections = (counter) => {
         if(config.isLandscapeMode) {
             subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));            
             const lessonStateMode = counter.isLessonPaused ? 'restartLesson' : 'newLesson';
+            collection.items = getCollectionItems(collection);
             endOfRoundHandler.changeCollection(lessonStateMode, collections, collection, config, history, learningActionBtn);            
         }
                 
