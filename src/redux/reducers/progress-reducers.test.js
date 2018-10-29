@@ -16,7 +16,7 @@ test('score state should reflect correct answer', () => {
       passes: []
     }
 
-    const stateAfter =  {"answer": "Anagallis arvensis", "binomial": "Anagallis arvensis", "correct": 10, "fails": [], "failsTotals": 0, "incorrect": 0, "itemId": 1, "passes": [{"answer": "Anagallis arvensis", "binomial": "Anagallis arvensis", "itemId": 1, "question": "Anagallis arvensis", "taxon": "name"}], "passesTotals": {"1": 1}, "question": "Anagallis arvensis", "questionTotal": 1, "success": true, "taxon": "name", "total": 11, "totalFailPoints": 0, "totalPassPoints": 0, "totalPoints": 0}
+    const stateAfter = {"answer": "Anagallis arvensis", "binomial": "Anagallis arvensis", "correct": 10, "fails": [], "failsTotals": {"1": 0}, "incorrect": 0, "itemId": 1, "passes": [{"answer": "Anagallis arvensis", "binomial": "Anagallis arvensis", "itemId": 1, "question": "Anagallis arvensis", "taxon": "name"}], "passesTotals": {"1": 1}, "question": "Anagallis arvensis", "questionTotal": 1, "success": true, "taxon": "name", "total": 11, "totalFailPoints": 0, "totalPassPoints": 0, "totalPoints": 0}
   
     const action = {
       type: types.UPDATE_SCORE,
@@ -56,7 +56,7 @@ test('score state should reflect correct answer', () => {
       correct: 9,
       taxon: 'name',
       binomial: 'Anagallis arvensis',
-      passesTotals: 0,
+      passesTotals: {"1": 0},
       question: 'Anagallis arvensis',
       questionTotal: 1,
       answer: 'Malva sylvestris',

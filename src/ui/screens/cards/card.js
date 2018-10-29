@@ -14,85 +14,89 @@ import { lookALikes } from 'ui/screens/common/look-alikes';
 import { featureType } from 'ui/screens/common/feature';
 import { infoSlider } from 'ui/screens/common/info-slider';
 
-export const renderCard = (collection) => {
+export const renderCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody) => {
 
-    const item = collection.nextItem;
+    const item = selectedItem || collection.nextItem;
 
     const { layout, config, lessonPlan, enums } = store.getState();
 
-    item.questionCount = lessonPlan.questionCount;
-    item.layoutCount = lessonPlan.layoutCount;
-    
-    const screen = layout.screens.filter(el => el.name === 'species-card')[0];
+    if(!isModalMode) {
+        item.questionCount = lessonPlan.questionCount;
+        item.layoutCount = lessonPlan.layoutCount;
+        
+        const screen = layout.screens.filter(el => el.name === 'species-card')[0];
 
-    if(!screen) return;
+        if(!screen) return;
+    }
     
     const template = document.createElement('template');
 
     template.innerHTML = landscapeTemplate;
 
-    const traits = getTraits(enums)
+    const traits = getTraits(enums);
+
+    renderCommonParts(template, config, item, collection, traits, isModalMode, parent);
 
     config.isPortraitMode
-        ? renderPortrait(template, item, config, collection, traits)
-        : renderLandscape(template, item, config, collection, traits);
+        ? renderPortrait(item, config, traits, isModalMode)
+        : renderLandscape(item, config, traits, isModalMode);
 };
 
-const renderLandscape = (template, item, config, collection, traits) => {
-
-    const eolPage = template.content.querySelector('.js-species-card-eol-link');
-
-    eolPage.setAttribute('href', `http://eol.org/pages/${item.id}/overview`);
-    eolPage.setAttribute('target', '_blank');
-    eolPage.setAttribute('style', 'text-decoration: none');
-
-    renderCommonParts(template, config, item, collection, traits);
-
-    setTimeout(()=>{
-        const wikiLink = document.querySelector('.js-species-card-wiki');
-        if(wikiLink) {
-            wikiLink.addEventListener('click', event => {
-                document.querySelector('.js-external-page-title').innerHTML = `${item.name}`;
-
-                const entry = document.querySelector('.species-card-wiki-entry').innerText;
-                const style = `
-                    <style type='text/css'>
-                    body {
-                        font-family: PT Sans', 'Roboto', arial,sans-serif;
-                    }
-                    a {
-                        text-decoration: none;
-                        border: solid 1px;
-                        border-top: none;
-                        border-left: none;
-                        border-right: none;
-                        color: black;
-                        cursor: pointer;
-                    }
-                </style>`;
-                const wiki = `<header>${style}</header><p>${entry}</p><p><a href='https://en.wikipedia.org/wiki/Salvia_officinalis' target='_blank'>Wikipedia page</a></p>`;
-
-                document.querySelector('.js-external-page-body').innerHTML = config.isPortraitMode
-                    ? `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="data:text/html,${wiki}"></iframe>`          
-                    : `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="${wikiLink.querySelector('span').dataset.src}"></iframe>`;
-                    
-                document.querySelector('#externalPageModal').focus();
-            });
-        }
-    });    
-
-    const wikiNode = document.querySelector('.js-species-card-wiki');
-
-    renderWiki(wikiNode, item, config.language);
+const renderLandscape = (item, config, traits, isModalMode) => {
 
     const src = document.querySelector('.js-bird-song');
     
-    getBirdSong(item, traits, src, config.isPortraitMode);    
+    getBirdSong(item, traits, src, config.isPortraitMode);
+
+    const eolPage = document.querySelector('.js-species-card-eol-link');
+    
+    if(isModalMode) {
+        eolPage.classList.add('hide');
+    } else {
+        eolPage.setAttribute('href', `http://eol.org/pages/${item.id}/overview`);
+        eolPage.setAttribute('target', '_blank');
+        eolPage.setAttribute('style', 'text-decoration: none');
+    
+        setTimeout(()=>{
+            const wikiLink = document.querySelector('.js-species-card-wiki');
+            if(wikiLink) {
+                wikiLink.addEventListener('click', event => {
+                    document.querySelector('.js-external-page-title').innerHTML = `${item.name}`;
+    
+                    const entry = document.querySelector('.species-card-wiki-entry').innerText;
+                    const style = `
+                        <style type='text/css'>
+                        body {
+                            font-family: PT Sans', 'Roboto', arial,sans-serif;
+                        }
+                        a {
+                            text-decoration: none;
+                            border: solid 1px;
+                            border-top: none;
+                            border-left: none;
+                            border-right: none;
+                            color: black;
+                            cursor: pointer;
+                        }
+                    </style>`;
+                    const wiki = `<header>${style}</header><p>${entry}</p><p><a href='https://en.wikipedia.org/wiki/Salvia_officinalis' target='_blank'>Wikipedia page</a></p>`;
+    
+                    document.querySelector('.js-external-page-body').innerHTML = config.isPortraitMode
+                        ? `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="data:text/html,${wiki}"></iframe>`          
+                        : `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="${wikiLink.querySelector('span').dataset.src}"></iframe>`;
+                        
+                    document.querySelector('#externalPageModal').focus();
+                });
+            }
+        });    
+    
+        const wikiNode = document.querySelector('.js-species-card-wiki');
+    
+        renderWiki(wikiNode, item, config.language);    
+    }
 };
 
-const renderPortrait = (template, item, config, collection, traits) => {
-
-    renderCommonParts(template, config, item, collection, traits);
+const renderPortrait = (item, config, traits, isModalMode) => {
 
     const images = item.images.map((img, index) => { 
         return { index: index + 1, src: img, itemName: item.name };
@@ -101,6 +105,8 @@ const renderPortrait = (template, item, config, collection, traits) => {
     const parent = document.querySelector('.js-species-card-images');
 
     imageSlider(config, images, parent, true);
+
+    if(isModalMode) return;
 
     const player = document.querySelector('.js-bird-song-player');
     
@@ -121,7 +127,7 @@ const renderPortrait = (template, item, config, collection, traits) => {
     });
 };
 
-const renderCommonParts = (template, config, item, collection, traits) => {
+const renderCommonParts = (template, config, item, collection, traits, isModalMode, parent) => {
 
     const species = item.name;    
     const name = itemProperties.vernacularName(item, config);
@@ -148,19 +154,6 @@ const renderCommonParts = (template, config, item, collection, traits) => {
 
     const clone = document.importNode(template.content, true);
     
-    const continueBtn = clone.querySelector('.js-species-card-btn button');
-
-    continueBtn.disabled = true;
-
-    setTimeout(() => {
-        continueBtn.disabled = false;            
-    }, 500);
-
-    continueBtn.addEventListener('click', event => {
-        actions.boundEndRevision(item);
-    });
-
-    const parent = DOM.rightBody;
     parent.innerHTML = '';
     
     renderTemplate({ species, name, latin, rank, subSpeciesCount, family: family.name, itemImage, familyName, trait, nameCount }, template.content, parent, clone);
@@ -219,4 +212,21 @@ const renderCommonParts = (template, config, item, collection, traits) => {
     lookALikes(collection, item, traits, config);
     featureType(collection, item, traits, config, document.querySelector('.js-ecology'), 'ecology');
     featureType(collection, item, traits, config, document.querySelector('.js-symbionts'), 'symbionts');
+
+    const continueBtn = document.querySelector('.js-species-card-btn button');
+
+    if(isModalMode) {
+        continueBtn.classList.add('hide-important');
+    } else {
+        
+        continueBtn.disabled = true;
+
+        setTimeout(() => {
+            continueBtn.disabled = false;            
+        }, 500);
+
+        continueBtn.addEventListener('click', event => {
+            actions.boundEndRevision(item);
+        });
+    }
 };

@@ -32,9 +32,7 @@ export const renderHistory = (history) => {
     requiringRevision.header = 'Species requiring revision';
     learnt.header = 'Species correctly answered';
 
-    const items = stats.getItemScoreStats(collection, history, config);
+    collection.items = stats.getItemScoreStats(collection, history, config);
 
-    const collectionFromLastRound =  { ...collection, ...{ items: items }};
-
-    renderSpeciesCollectionList(collection, collectionFromLastRound, true);
+    renderSpeciesCollectionList(collection, true);
 }    
