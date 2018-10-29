@@ -6,7 +6,7 @@ import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
 import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-list-table';
 
-export const renderSpeciesCollectionList = (collection, collectionFromLastRound, readOnlyMode = false) => {
+export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
     if(collection.userSelection) return;
 

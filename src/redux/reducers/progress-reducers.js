@@ -34,9 +34,6 @@ export const score = (state = R.clone(progressState.score), action) => {
 
             const score = { ...state, ...action.data };
             
-            score.passesTotals = 0;
-            score.failsTotals = 0;
-
             score.totalPoints = score.totalPoints || 0;
             score.totalPassPoints = score.totalPassPoints || 0;
             score.totalFailPoints = score.totalFailPoints || 0;
@@ -55,13 +52,24 @@ export const score = (state = R.clone(progressState.score), action) => {
                 score.fails.push({ itemId: score.itemId, taxon: score.taxon, binomial: score.binomial, question: score.question, answer: score.answer });
             }
             score.questionTotal = score.passes.length + score.fails.length;
-            if(score.passes.map(pass => pass.itemId).length > 0) {
-                score.passesTotals = score.passes.map(pass => pass.itemId).reduce(utils.itemCountReducer, {});
+            
+            score.passesTotals = R.clone(state.passesTotals) || {};
+            score.failsTotals = R.clone(state.failsTotals) || {};
+
+            if(score.success) {
+                score.passesTotals[score.itemId] = score.passesTotals[score.itemId] ? score.passesTotals[score.itemId] + 1 : 1;
+                if(!score.failsTotals[score.itemId]) {
+                    score.failsTotals[score.itemId] = 0;
+                }
+            } else {
+                score.failsTotals[score.itemId] = score.failsTotals[score.itemId] ? score.failsTotals[score.itemId] + 1 : 1;
+                if(!score.passesTotals[score.itemId]) {
+                    score.passesTotals[score.itemId] = 0;
+                }
             }
-            if(score.fails.map(fail => fail.itemId).length > 0) {
-                score.failsTotals = score.fails.map(fail => fail.itemId).reduce(utils.itemCountReducer, {});
-            }
+            
             return { ...state, ...score};
+
         case types.SELECT_COLLECTION:
             return R.clone(progressState.score);
         case types.NEXT_ROUND:

@@ -164,7 +164,7 @@ export const renderCollections = (counter) => {
         if(config.isLandscapeMode && collectionId) {
             collection.language = language;
             actions.boundSelectCollection(collection);
-            renderSpeciesCollectionList(collection, null, true);
+            renderSpeciesCollectionList(collection, true);
         }
     });
 

@@ -19,6 +19,7 @@ import taxonCard from 'ui/screens/cards/taxon-card-template.html';
 export const renderMultiStrips = (collection) => {
 
     const item = collection.nextItem;
+    const items = collection.allItems || collection.items;
 
     const { config, lessonPlan, layout } = store.getState();
 
@@ -97,7 +98,7 @@ export const renderMultiStrips = (collection) => {
         const vernacular = itemProperties.vernacularName(item, config);
         const questionText = config.isPortraitMode ? 'Select equivalent of common name' : `Select the latin equivalent of the common name`;
         const question = item.name;
-        const answers = itemProperties.answersFromList(itemProperties.itemNamesForGroups(collection.allItems), question, number);
+        const answers = itemProperties.answersFromList(itemProperties.itemNamesForGroups(items), question, number);
 
         const description = { vernacular, name: '---' };
 
@@ -111,8 +112,7 @@ export const renderMultiStrips = (collection) => {
         const number = config.isPortraitMode ? 6 : config.isLandscapeMode ? 6 : 6;
 
         const questionText = config.isPortraitMode ? 'Select equivalent of latin name' : `Select the common name equivalent of the latin`;
-        const question = itemProperties.vernacularName(item, config);
-        const items = collection.allItems || collection.items;
+        const question = itemProperties.vernacularName(item, config);        
         const answers = itemProperties.answersFromList(itemProperties.vernacularNamesForGroups(items, config), question, number);
 
         const description = { vernacular: '---', name: item.name };
@@ -149,7 +149,7 @@ export const renderMultiStrips = (collection) => {
         const getTraits = (traits) => {
             const _traits = [];
             traits.forEach(trait => {
-                const _trait = collection.items.map( (item, i) => {                
+                const _trait = items.map( (item, i) => {                
                     return {
                         traits: R.flatten(syndromes.traits.map(trait => {
                             const t = trait.keys.find(key => key.key === trait);

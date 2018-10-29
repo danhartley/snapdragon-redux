@@ -1,9 +1,26 @@
+import * as R from 'ramda';
+
 import { utils } from 'utils/utils';
 
 const getItemScoreStats = (collection, history) => {
 
-    const reducer = (acc, curr) => {
-        return { ...acc,  ...curr };
+    const collectionItems  = R.clone(collection.items);
+
+    const reducer = (acc, curr) => {        
+        if (Object.keys(acc).length === 0 && acc.constructor === Object) return curr;
+
+        for(var itemProp in curr) {
+            if(!acc[itemProp]) {
+                acc[itemProp] = 0;
+            }
+        }
+
+        for (var itemProp in acc) {
+            const itemValue = curr[itemProp] || 0;
+            acc[itemProp] += itemValue;
+          }
+
+        return acc;  
     }
 
     if(!history) return [];
@@ -11,23 +28,15 @@ const getItemScoreStats = (collection, history) => {
     const passesTotals = history.scores.map(score => score.passesTotals);
     const failsTotals = history.scores.map(score => score.failsTotals);
 
-    // const lastRound = history.scores[history.scores.length - 1];
+    const passes = R.clone(passesTotals).reduce(reducer, {});
+    const fails = R.clone(failsTotals).reduce(reducer, {});
 
-    // const passesTotals = [ lastRound.passesTotals ];
-    // const failsTotals = [ lastRound.failsTotals ];
-
-    const passes = passesTotals.reduce(reducer, {});
-    const fails = failsTotals.reduce(reducer, {});
-    const all = { ...passes, ...fails };
-
-    const items = utils.sortBy(collection.items.filter(item => all[item.id]), 'snapIndex', 'desc');
-    
-    items.forEach(item => { 
+    collectionItems.forEach(item => { 
         item.passes = passes[item.id] || 0;
         item.fails = fails[item.id] || 0;
     });
 
-    return items;
+    return collectionItems;
 };
 
 const getItemsForRevision = (collection, history, minimumScore) => {
