@@ -441,8 +441,7 @@ const landscapeLesson3 = {
                 { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
                 { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'capShape') },
                 multiSpecimenCommonMatch,
-                mixedSpeciesMatch,
-                definitionRevision, 
+                mixedSpeciesMatch,                
                 multiSpecimenLatinMatch
             ],
             wildcardLayouts : [],
@@ -451,6 +450,7 @@ const landscapeLesson3 = {
         {   id: 2,
             name:'Level 2',
             layouts: [ 
+                definitionRevision,
                 commonToLatinMatch,
                 commonEntry,                
             ],
