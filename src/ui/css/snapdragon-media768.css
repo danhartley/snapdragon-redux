@@ -110,6 +110,7 @@
     }
 
     .letterbox-entry {
+        color: var(--snap-text-medium-light);
         flex: auto;
         margin: 1em 0;
         border: .1em solid var(--snap-border-dark);

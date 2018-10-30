@@ -835,7 +835,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .modal-title {
-  color: var(--snap-modal-title);
+  color: var(--snap-text-medium-light);
 }
 
 #menuModal .modal-content {
@@ -1022,7 +1022,13 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   max-width: 420px;
 }
 
+#badgeListModal .modal-body {
+  background-color: rgb(142, 160, 119);
+}
+
 #badgeListModal .modal-text {
+  background-color: rgb(142, 160, 119);
+  color: rgb(29, 33, 36);
   margin: 0;
 }
 
@@ -1269,7 +1275,7 @@ table {
 }
 
 .question-container {  
-  color: rgb(73, 80, 87);
+  color: var(--snap-text-medium-light);
   padding: .5em;
   border-radius: .2rem;
 }
@@ -1511,7 +1517,7 @@ table {
 }
 
 .bird-song div:nth-child(2) {
-  background-color: rgba(194, 183, 91,.2)
+  background-color: rgb(142, 160, 119);
 }
 
 .bird-song-bg {
