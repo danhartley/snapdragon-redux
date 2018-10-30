@@ -640,54 +640,6 @@ export const taxa = [
     },
     {
         taxon: 'family',
-        name: 'Iridaceae',
-        thumb: "http://media.eol.org/content/2009/07/24/04/85444_98_68.jpg",
-        names: [ { language: "en", names: ['Iris family']} ,
-        { language: "fr", names:[ 'Iridacées' ]},
-        { language: "de", names:[ 'Schwertliliengewächse' ]},
-        { language: "es", names:[ 'Iridáceas' ]},
-        { language: "pt", names:[ 'Iris' ]},
-        { language: "it", names:[ 'Iris family' ]}],
-        species:  2244,
-        genera: 66,
-        traits: [ { language: "en", name: 'pollination', values: ['Solitary Bees', 'Butterflies', 'Moths', 'Birds', 'Flies'] } ],
-        descriptions: [
-            {
-                language: 'en',
-                summary: 'Widespread family of perennial plants, with a bulb, corm or rhizome. The plants grow erect, and have leaves that are generally grass-like, with a sharp central fold.',
-                identification: 'Lily-like flowers, grass-like leaves.'
-            }
-        ],
-        members: ['Dianthus caryophyllus'],
-        eol: "http://eol.org/pages/4183/overview",
-        wiki: "https://en.wikipedia.org/wiki/Iridaceae"
-    },
-    {
-        taxon: 'family',
-        name: 'Iridaceae',
-        thumb: "http://media.eol.org/content/2009/07/24/04/85444_98_68.jpg",
-        names: [ { language: "en", names: ['Iris family']} ,
-        { language: "fr", names:[ 'Iridacées' ]},
-        { language: "de", names:[ 'Schwertliliengewächse' ]},
-        { language: "es", names:[ 'Iridáceas' ]},
-        { language: "pt", names:[ 'Iris' ]},
-        { language: "it", names:[ 'Iris family' ]}],
-        species:  2244,
-        genera: 66,
-        traits: [ { language: "en", name: 'pollination', values: ['Solitary Bees', 'Butterflies', 'Moths', 'Birds', 'Flies'] } ],
-        descriptions: [
-            {
-                language: 'en',
-                summary: 'Widespread family of perennial plants, with a bulb, corm or rhizome. The plants grow erect, and have leaves that are generally grass-like, with a sharp central fold.',
-                identification: 'Lily-like flowers, grass-like leaves.'
-            }
-        ],
-        members: ['Dianthus caryophyllus'],
-        eol: "http://eol.org/pages/4183/overview",
-        wiki: "https://en.wikipedia.org/wiki/Iridaceae"
-    },
-    {
-        taxon: 'family',
         name: 'Mimosaceae',
         thumb: "2015/01/19/17/65438_88_88.jpg",
         names: [ { language: "en", names: ['Mimosoideae']} ,
@@ -1173,12 +1125,12 @@ export const taxa = [
         taxon: 'family',
         name: 'Altingiaceae',
         thumb: "2013/02/26/12/81796_88_88.jpg",
-        names: [ { language: "en", names: ['']} ,
-        { language: "fr", names:[ '' ]},
-        { language: "de", names:[ '' ]},
-        { language: "es", names:[ '' ]},
-        { language: "pt", names:[ '' ]},
-        { language: "it", names:[ '' ]}],
+        names: [ { language: "en", names: ['Altingiaceae']} ,
+        { language: "fr", names:[ 'Altingiaceae' ]},
+        { language: "de", names:[ 'Altingiaceae' ]},
+        { language: "es", names:[ 'Altingiaceae' ]},
+        { language: "pt", names:[ 'Altingiaceae' ]},
+        { language: "it", names:[ 'Altingiaceae' ]}],
         species: 15,
         genera: 1,
         traits: [ { language: "en", name: 'pollination', values: [ 'Wind'] } ],
@@ -2116,7 +2068,7 @@ export const taxa = [
         taxon: 'family',
         name: 'Sparassidaceae',
         thumb: "2015/01/14/02/78915_88_88.jpg",
-        names: [ { language: "en", names: ['']} ,
+        names: [ { language: "en", names: ['Sparassidaceae']} ,
         { language: "fr", names:[ 'Sparassidaceae' ]},
         { language: "de", names:[ 'Sparassidaceae' ]},
         { language: "es", names:[ 'Sparassidaceae' ]},
@@ -2311,7 +2263,7 @@ export const taxa = [
     {
         taxon: 'genus',
         name: 'Tylopilus',
-        names: [ { language: "en", names: ['']}],
+        names: [ { language: "en", names: ['Boletes']}],
         traits: [ 
             { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND, SD.habitats.WOODLAND_LITTER, SD.habitats.MOSS ] },
             { language: "en", name: 'cap size cms', values: [ '10-20' ] },
@@ -2327,7 +2279,7 @@ export const taxa = [
     {
         taxon: 'genus',
         name: 'Boletus',
-        names: [ { language: "en", names: ['']}],
+        names: [ { language: "en", names: ['Boletes']}],
         traits: [ 
             { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND, SD.habitats.WOODLAND_LITTER, SD.habitats.MOSS ] },
             { language: "en", name: 'cap size cms', values: [ '10-20' ] },
