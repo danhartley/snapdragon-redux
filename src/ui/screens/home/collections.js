@@ -146,7 +146,7 @@ export const renderCollections = (counter) => {
         if(optionCollection.providerId !== currentProviderId && optionCollection.course !== '') {
             var courseHeader = document.createElement('span');
             courseHeader.classList.add('dropdown-item-text');
-            courseHeader.innerHTML = optionCollection.course;
+            // courseHeader.innerHTML = optionCollection.course;
             option.before(courseHeader);            
         }
         currentProviderId = optionCollection.providerId;
