@@ -41,7 +41,7 @@ export const renderTaxonCard = collection => {
         wiki: taxon.wiki ? taxon.wiki.replace('en', config.language) : '',
         occurrences: collection.familyStats[taxon.name],
         toxic: taxon.toxic ? `Toxic species: ${taxon.toxic.members.join(', ')}` : '',
-        members: taxon.members ? R.take(2, taxon.members).join(', ') : ''
+        notableMembers: taxon.members ? R.take(2, taxon.members).join(', ') : ''
     }
 
     const continueBtn = clone.querySelector('.js-taxon-card-btn button');
@@ -67,8 +67,7 @@ export const renderTaxonCard = collection => {
 
     document.querySelector('.badge').addEventListener('click', event => {
         document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = `Members of the ${item.family} family`;
-        const collectionPool = collections.find(c => c.id === collection.id);
-        const members = collectionPool.items.filter(i => i.family === item.family);
+        const members = collection.items.filter(i => i.family === item.family);
         const list = document.querySelector('#badgeListModal .js-modal-text');
         list.innerHTML = '';
         members.forEach(member => {
