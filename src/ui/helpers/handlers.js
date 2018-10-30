@@ -50,8 +50,8 @@ const simpleScoreHandler = (test, callback, config) => {
 
     if(callback) callback(score, scoreUpdateTimer);
 
-    const correct = `Species: ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
-    const incorrect = `Species: ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
+    let correct = `You selected a match for ${test.question}.`;
+    let incorrect = `You selected ${test.answer}.`;
 
     textAlertHandler({ success: score.success, correct, incorrect });
 }
