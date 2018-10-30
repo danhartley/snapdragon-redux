@@ -1541,6 +1541,7 @@ iframe#birdsong {
 .definition.revision.card {
   height: 60vh;
   border: 0;
+  margin: 0 0 1em 0;
 }
 
 .definition.revision.card div>div {

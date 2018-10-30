@@ -22,6 +22,11 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, w
         } while (i < layoutsToAdd);
     });
 
+    wildcardLayouts.forEach(layout => {
+        layout.lessonName = lessonName;
+        layout.levelName = levelName;
+    });
+
     const revisionLayouts = lessonPlan.layouts.filter(layout => layout.type === 'revision' && layout.name !== 'screen-definition-card');
     const lessonLayouts = [ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts].map( (layout, i) => {
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
@@ -53,7 +58,7 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, w
 
     if(glossary) {
         lessonLayouts.forEach((layout, index) => {
-            if(layout.name === 'screen-common-to-latin' && !hasGlossary) {
+            if(!hasGlossary) {
                 glossary.itemIndex = 0;
                 lessonLayouts.splice(index, 0, glossary);
                 hasGlossary = true;

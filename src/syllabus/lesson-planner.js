@@ -27,8 +27,8 @@ const createLessonPlan = (lessonPlan, config, collection) => {
             collection.lesson.level = level;
             collection.lessonName = collection.lesson.name;
             collection.levelName = collection.lesson.level.name;
-            layouts = getLayouts(getCurrentLevelFromLessonPlan(lessonPlan, levelId  + increment), config.mode);
-            wildcards = config.mode === 'learn' ? getLayouts(getCurrentLevelFromLessonPlan(lessonPlan, levelId), 'wildcard') : [];
+            layouts = getLayouts(getCurrentLevelFromLessonPlan(lessonPlan, levelId + increment), config.mode);
+            wildcards = config.mode === 'learn' ? getLayouts(getCurrentLevelFromLessonPlan(lessonPlan, levelId + increment), 'wildcard') : [];
             wildcardLayouts = wildcards.length > 0 ? getCollectionLayouts(wildcards, collection) : [];
 
             increment++;
