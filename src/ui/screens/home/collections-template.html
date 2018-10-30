@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+
+
 <div class="snapdragon-container">
     <div>
         <div class="snapdragon-options">
@@ -7,7 +10,7 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <div data-repeat-collection="{{ lessons }}">
-                        <a class="dropdown-item" id="{{ collection.id }}" name="{{ collection.name }}" href="#">{{ collection.name }} ({{ collection.speciesCount }})</a>
+                        <a class="dropdown-item icon" id="{{ collection.id }}" name="{{ collection.name }}" href="#">{{ collection.name }}</a>
                     </div>
                 </div>
             </div>                        
@@ -19,7 +22,7 @@
                 Languages
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ config.languages }}">
-                    <a class="dropdown-item" id="{{ language.lang }}" href="#">{{ language.name }}</a>
+                    <a class="dropdown-item icon" id="{{ language.lang }}" href="#">{{ language.name }}</a>
                 </div>
             </div>                        
         </div>

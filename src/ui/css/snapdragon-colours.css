@@ -1,19 +1,19 @@
 :root {
 
+    --snap-dropdown-bg: rgb(233, 236, 239);
+    --snap-dropdown-hover: rgb(248, 249, 250);
+
     --snap-text-dark: rgb(45,45,45);
+    --snap-text-medium-dark: rgb(52, 58, 64);
     --snap-text-light:rgb(255, 255, 255);
     --snap-green-ident: rgb(20, 39, 15);
-    --snap-green-ident-txt: rgb(39, 76, 30);
+    --snap-green-feature-txt: rgb(16, 66, 28);
     
     --snap-primary: rgba(52, 105, 23, .3);
     --snap-collection: rgba(79, 106, 135,.9);
     --snap-collection-active: rgba(95, 125, 89,1);
-    --snap-collection-hover: rgba(95, 126, 89,.2);
     
-    --snap-language-hover: rgba(95, 126, 89,.2);
-    
-    --snap-language: rgba(158, 201, 239, .6);
-    --snap-language-hover: rgba(158, 201, 239, .2);
+    --snap-language: rgb(186, 214, 229);
 
     --snap-lesson: rgb(52, 105, 23);
     
@@ -30,8 +30,8 @@
     --snap-question-radio: rgb(147, 208, 244);
     --snap-id-border: rgb(129, 67, 101);
 
-    --snap-progress-bg: rgb(45,45,45);
-    --snap-progress-bar: rgb(233, 232, 111);
+    --snap-progress-bg: rgb(128, 128, 128);
+    --snap-progress-bar: rgb(48, 94, 37);
     --snap-no-progress-bar: rgb(48, 94, 37);
   
     --snap-block-light: rgba(255, 255, 255,.9);

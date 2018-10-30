@@ -83,37 +83,46 @@ hr {
   background-color: var(--snap-lesson);
 }
 
-.dropdown-item-text {
-  text-align: center;
-  border-bottom: 1px solid lightgray;
-  border-top: 1px solid darkgray;
-  background-color: var(--snap-species-highlight-background);
+/* .dropdown-item-text {
+  color: var(--snap-collection);
+} */
+
+.icon.active::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
+  content: "\f00c";
+  padding: 0 .5em 0 0;
+  color: var(--snap-collection);
 }
 
-.collections a.dropdown-item, .languages a.dropdown-item {
-  padding: .5em;
+.dropdown-menu {
+  margin: .15em 0 0 0;
+  padding: 0;
+  background-color: var(--snap-dropdown-bg);
 }
 
-.collections a.dropdown-item:active, .collections a.dropdown-item.active {
-  color: var(--snap-text-dark);
-  background-color: rgba(79, 106, 135,.3);
+.dropdown-item.active {
+  color: var(--snap-text-medium-dark);
+  background-color: var(--snap-dropdown-bg);
 }
 
-.collections a.dropdown-item:hover{
-  background-color: var(--snap-collection-hover);
+a.dropdown-item {
+  color: var(--snap-text-medium-dark);
+  padding: .5em 1em;
+  background-color: var(--snap-dropdown-bg);
+  border-bottom: 1px solid rgb(236, 244, 252);
 }
 
-.languages a.dropdown-item:hover{
-  background-color: var(--snap-language-hover);
-}
-
-.languages a.dropdown-item.active, .js-languages a.dropdown-item:active {
-  color: var(--snap-text-dark);
-  background-color: var(--snap-language);  
+a.dropdown-item:hover {
+  background-color: var(--snap-dropdown-hover);
 }
 
 .btn-language {
-  /* color: var(--snap-text-dark); */
   color:rgb(68, 68, 68);
   background-color: var(--snap-language);
   border-color: var(--snap-language);
@@ -163,7 +172,12 @@ hr {
   align-items: center;
   color: white;
   width: 100%;
+  border-radius: .25rem .25rem 0 0;
 }
+
+/* .snapdragon-container.lessons-list {
+  background-color: rgb(230, 232, 215);
+} */
 
 .lessons-list > div:nth-child(1) > div {    
   padding: 0 .5em;
@@ -172,15 +186,20 @@ hr {
 .lessons-list .card {
   height: 60vh;
   text-align: left;
+  background-color: rgba(230, 232, 215, .6);
 }
 
 .lessons-list .lesson-item {
   display: flex;
   margin: 0 0 2em 0;
+  background-color: rgb(164, 177, 154);
 }
 
 .lessons-list .lesson-item > div:nth-child(2) {
   flex: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .lessons-list .lesson-item > div > img {
@@ -227,7 +246,8 @@ hr {
   display: flex;
   flex-direction: column;
   padding: .5em;
-  background-color: var(--snap-container-background);
+  /* background-color: var(--snap-container-background); */
+  background-color: rgb(230, 232, 215);
   justify-content: space-between;
 }
 
@@ -311,9 +331,10 @@ hr {
   grid-template-rows: 1fr .3em 10fr 1fr;
 }
 
-.left-body , .right-body {
+.left-body, .right-body {
   display: grid;
   grid-auto-flow: row;
+  background-color: rgb(230, 232, 215);
 }
 
 .header, .footer {
@@ -329,7 +350,7 @@ hr {
 }
 
 .header-text {
-  color: var(--snap-green-ident-txt);
+  color: var(--snap-text-medium-dark);
 }
 
 .footer {  
@@ -345,7 +366,7 @@ hr {
 }
 
 .round-footer, .score-footer span {
-  color: var(--snap-green-ident-txt);
+  color: var(--snap-text-medium-dark);
   padding: .75em;
 }
 
@@ -450,11 +471,8 @@ hr {
 
 .snapdragon.card {
   border: 0;  
+  background-color: rgb(230, 232, 215);
 }
-
-/* .snapdragon.card > div {
-  margin: 1em 0 0 0;
-} */
 
 .taxon-highlight {  
   background-color: var(--snap-taxon-card-background);
@@ -716,7 +734,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .dropdown div {
   white-space: nowrap;
-  margin: .25em 0;
 }
 
 .collection:hover {
@@ -1036,6 +1053,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   height: 2.5rem;
   position: sticky;  
   z-index: 10;
+  border-radius: .25rem .25rem 0 0;
 }
 
 .table-header {
@@ -1209,7 +1227,7 @@ table {
 }
 
 .radio-buttons label {
-  color: var(--snap-text-dark);
+  color: var(--snap-text-medium-dark);
   background-color: var(--snap-strips-background);
   width: 100%;
 }
@@ -1251,6 +1269,7 @@ table {
 }
 
 .question-container {  
+  color: rgb(73, 80, 87);
   padding: .5em;
   border-radius: .2rem;
 }
@@ -1302,7 +1321,7 @@ table {
 }
 
 .feature-label {
-  color: var(--snap-green-ident-txt);
+  color: var(--snap-green-feature-txt);
 }
 
 .compare-species-link {
@@ -1565,7 +1584,6 @@ div.hide-empty:empty, span.hide-empty:empty {
 
 .visual-match .description span {
   flex: 1;
-  background-color: rgb(230, 226, 190);
   padding: .5em;
 }
 
