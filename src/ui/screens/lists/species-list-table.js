@@ -1,3 +1,5 @@
+import * as SD from 'api/traits/trait-types';
+
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
@@ -16,7 +18,7 @@ export const buildTable = (collection, config, traits) => {
 
     collection.items.forEach(item => { 
         item.image = item.list || item.images[0];
-        item.vernacularName = itemProperties.vernacularName(item, config);
+        item.vernacularName = itemProperties.vernacularName(item, config, true);
         item.passes = item.passes || '--';
         item.fails = item.fails || '--';
         item.binomial = item.name;
@@ -32,6 +34,32 @@ export const buildTable = (collection, config, traits) => {
     template.innerHTML = wide ? speciesTemplate : speciesPortraitTemplate;
 
     renderTemplate({ collection }, template.content, parent);
+
+    const vernacularNames = document.querySelectorAll('.js-species-card-link');
+
+    vernacularNames.forEach(vn => {        
+        const keyTrait = vn.dataset.keyTrait;
+        const span = document.createElement('span');
+        switch(keyTrait) {                
+            case SD.howEdible.CHOICE:
+                span.innerHTML = '<span class="icon choice"></span>';
+                vn.append(span);
+                break;
+            case SD.howEdible.EDIBLE:
+                span.innerHTML = '<span class="icon edible"></span>';
+                vn.append(span);
+                break;
+            case SD.howEdible.INEDIBLE:
+                span.innerHTML = '<span class="icon inedible"></span>';
+                vn.append(span);
+                break;
+            case SD.howEdible.POISONOUS:
+            case SD.howEdible.DEADLY:
+                span.innerHTML = '<span class="icon toxic"></span>';
+                vn.append(span);
+                break;
+        }
+    });
 
     const table = document.querySelector('.species-table');
     const tbody = document.querySelector('.species-table tbody');

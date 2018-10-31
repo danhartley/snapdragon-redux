@@ -4228,6 +4228,7 @@ export const mushrooms = [
       "names": [
         {
           "vernacularName": "White-pored chicken of the woods",
+          "shortForm" : "WP chicken of the woods",
           "language": "en"
         }
       ],

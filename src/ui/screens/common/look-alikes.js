@@ -42,7 +42,7 @@ export const lookALikes = (collection, item, traits, config) => {
 
         document.querySelector('.js-compare-species-label').innerHTML = `Look-alikes:`;
         
-        if(!config.isLandscapeMode) return;
+        if(config.isPortraitMode) return;
 
         document.querySelector('.js-compare-species-link').addEventListener('click', ()=> {
             const parent = document.querySelector('#imageComparisonModal .js-modal-image');            

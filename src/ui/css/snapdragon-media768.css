@@ -244,9 +244,21 @@
 
     .snapdragon-container {
         border: .05em solid var(--snap-primary);
-    }    
+    }
+    
     .info-box #traitSlider {     
-        width: 60%;
+        min-width: 23.5em;
+        max-width: 28.5em;
+    }    
+
+    .bird-song div {
+        float: right;
+        min-width: 23.5em;
+        max-width: 28.5em;
+    }
+
+    #speciesCardModal .modal-content .snapdragon-container {  
+        height: 60vh;
     }
     
     #traitSlider .carousel-item div {
@@ -291,6 +303,7 @@
     }
 
     #speciesCardModal .modal-dialog {
-        max-width: 40vw;
+        min-width: 25em;
+        max-width: 30em;
     }
 }
