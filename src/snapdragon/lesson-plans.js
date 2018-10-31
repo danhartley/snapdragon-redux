@@ -553,7 +553,6 @@ const portraitLesson3 = {
                 { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'capShape') },
                 multiSpecimenCommonMatch,
                 mixedSpeciesMatch,
-                definitionRevision, 
                 multiSpecimenLatinMatch
             ],
             wildcardLayouts : [],
@@ -563,9 +562,10 @@ const portraitLesson3 = {
             name:'Level 2',
             layouts: [ 
                 commonToLatinMatch,
-                commonEntry,                
+                commonEntry,           
+                definitionRevision,      
             ],
-            wildcardLayouts : [glossaryTerms    ],
+            wildcardLayouts : [ glossaryTerms ],
             reviewLayouts: [ 
                 commonToLatinMatch,
                 commonEntry,
