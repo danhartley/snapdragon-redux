@@ -35,7 +35,7 @@ export const buildTable = (collection, config, traits) => {
 
     renderTemplate({ collection }, template.content, parent);
 
-    const vernacularNames = document.querySelectorAll('.js-species-card-link');
+    const vernacularNames = document.querySelectorAll('.js-vernacular-name');
 
     vernacularNames.forEach(vn => {        
         const keyTrait = vn.dataset.keyTrait;
