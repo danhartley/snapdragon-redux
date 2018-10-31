@@ -17,7 +17,7 @@ export const infoSlider = (info, parent) => {
     
     renderTemplate({ info }, slider.content, parent);
     
-    document.querySelector('.carousel-item').classList.add('active');
+    document.querySelector('#traitSlider .carousel-item:nth-child(1)').classList.add('active');
 
     const traitCount = info.traits.length;
 

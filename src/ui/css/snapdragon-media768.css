@@ -256,6 +256,10 @@
         min-width: 23.5em;
         max-width: 28.5em;
     }
+
+    #speciesCardModal .modal-content .snapdragon-container {  
+        height: 60vh;
+    }
     
     #traitSlider .carousel-item div {
         padding: .5em;
