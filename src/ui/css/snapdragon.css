@@ -886,7 +886,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 #speciesCardModal .modal-content .snapdragon-container {  
-  height: 70vh;
+  height: 60vh;
   border: 0;
   padding: 0;
 }
@@ -1121,9 +1121,9 @@ table {
   flex-direction: row;
 }
 
-.table-row {
+/* .table-row {
   padding: .2em 0;
-}
+} */
 
 .table-row img, table input {
   cursor: pointer;
@@ -1334,6 +1334,12 @@ table {
   cursor: pointer;
 }
 
+#speciesCardModal .compare-species-link {
+  pointer-events: none;
+  border: none;
+  color: var(--snap-text-dark) !important;
+}
+
 .imageSlider .carousel-inner {
   display: flex;
   flex-direction: column;
@@ -1506,14 +1512,6 @@ table {
 
 .lesson-plan-btn {
   padding: 0em .5em;
-}
-
-.bird-song {
-  display: flex;    
-}
-
-.bird-song div {
-  flex: 1;
 }
 
 .bird-song div:nth-child(2) {

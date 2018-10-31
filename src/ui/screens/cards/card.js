@@ -209,7 +209,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
         });
     }
 
-    lookALikes(collection, item, traits, config);
+    lookALikes(collection, item, traits, config, isModalMode);
     featureType(collection, item, traits, config, document.querySelector('.js-ecology'), 'ecology');
     featureType(collection, item, traits, config, document.querySelector('.js-symbionts'), 'symbionts');
 
