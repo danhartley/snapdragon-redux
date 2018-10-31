@@ -11,7 +11,7 @@
                             <img id="{{ item.name }}" src="https://media.eol.org/content/{{ item.image }}" alt="{{ item.name }}" data-toggle="modal" data-target="#imageModal" data-image="{{ item.image }}" data-id="{{ item.name }}" data-src="https://media.eol.org/content/{{ item.image }}">
                         </td>
                         <td>
-                            <span class="capitalise js-species-card-link" data-key-trait="{{ item.keyTrait }}" >
+                            <span class="capitalise js-species-card-link js-vernacular-name" data-key-trait="{{ item.keyTrait }}" >
                                 <span data-toggle="modal" data-name="{{ item.name }}" data-target="#speciesCardModal" class="underline-link">{{ item.vernacularName }}</span>
                             </span>
                             <span class="latin-name">{{ item.shortName }}</span>

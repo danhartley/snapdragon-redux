@@ -103,28 +103,28 @@ hr {
 .icon.choice::after {  
   font-weight: 900; 
   content: "\f2e7";
-  padding: 0 0 0 .5em;
+  padding: 0 0 0 .25em;
   color: var(--snap-success);
 }
 
 .icon.edible::after {  
   font-weight: 900; 
   content: "\f2e7";
-  padding: 0 0 0 .5em;
+  padding: 0 0 0 .25em;
   color: var(--snap-inactive);
 }
 
 .icon.inedible::after {  
   font-weight: 900; 
   content: "\f056";
-  padding: 0 0 0 .5em;
+  padding: 0 0 0 .25em;
   color: var(--snap-inactive);
 }
 
 .icon.toxic::after {  
   font-weight: 900; 
   content: "\f071";
-  padding: 0 0 0 .5em;
+  padding: 0 0 0 .25em;
   color: var(--snap-alert);
 }
 
