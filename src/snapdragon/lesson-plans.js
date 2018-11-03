@@ -283,7 +283,7 @@ const textCompleteSpecies = {
     type:'test',
     score: 1,
     points: 2,
-    kind: 'T',
+    kind: 'MC',
     given: 'Given genus name',
     requirement: 'Select species name',
     screens: [
@@ -311,7 +311,7 @@ const latinEpithets = {
     type: 'test',
     score: 1,
     points: 1,
-    kind: 'T',
+    kind: 'MC',
     given: 'Epithet',
     requirement: 'List epithet definitions',
     screens: [
@@ -354,7 +354,7 @@ const connections = {
     type: 'test',
     score: 1,
     points: 1,
-    kind: 'T',
+    kind: 'MC',
     given: 'List of traits',
     requirement: 'List of species',
     screens: [
@@ -434,48 +434,72 @@ const landscapeLesson3 = {
     default: false,
     levels: [
         {   id: 1,
-            name:'Level 1',            
+            name:'Level 1',
+            description: 'Species recognition',
             layouts: [ 
-                speciesRevision,                 
-                latinToCommonMatch, 
-                { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
-                { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'capShape') },
+                speciesRevision,                                 
                 multiSpecimenCommonMatch,
-                mixedSpeciesMatch,                
-                multiSpecimenLatinMatch
+                mixedSpeciesMatch
             ],
             wildcardLayouts : [],
-            reviewLayouts: [ latinToCommonMatch ]
+            reviewLayouts: [ multiSpecimenCommonMatch, mixedSpeciesMatch ]
         },
         {   id: 2,
             name:'Level 2',
+            description: 'The common name of species',
             layouts: [ 
-                definitionRevision,
-                commonToLatinMatch,
-                commonEntry,                
+                latinToCommonMatch,
+                commonEntry
             ],
-            wildcardLayouts : [glossaryTerms    ],
+            wildcardLayouts : [ ],
             reviewLayouts: [ 
-                commonToLatinMatch,
+                latinToCommonMatch,
                 commonEntry,
             ]
         },
         {   id: 3,
             name:'Level 3',
-            layouts: [ textCompleteGenus, genusEntry ],
-            wildcardLayouts : [],
-            reviewLayouts: [ textCompleteGenus, genusEntry ]
+            description: 'Species traits',
+            layouts: [ 
+                definitionRevision,
+                { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
+                { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'capShape') }                 
+            ],
+            wildcardLayouts : [ glossaryTerms ],
+            reviewLayouts: [ 
+                { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
+                { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'capShape') },
+             ]
         },
         {   id: 4,
             name:'Level 4',
-            layouts: [ textCompleteSpecies, speciesEntry ],
+            description: 'The genus name of species',
+            layouts: [ 
+                textCompleteGenus,
+                genusEntry
+            ],
             wildcardLayouts : [  ],
-            reviewLayouts: [ textCompleteSpecies, speciesEntry ]
+            reviewLayouts: [ textCompleteGenus, genusEntry ]
         },
         {   id: 5,
             name:'Level 5',
-            layouts: [ speciesGenusEntry ],
-            wildcardLayouts : [ connections ],
+            description: 'The species name of species',
+            layouts: [ 
+                textCompleteSpecies,
+                speciesEntry
+             ],
+            wildcardLayouts : [  ],
+            reviewLayouts: [ textCompleteSpecies, speciesEntry ]
+        },
+        {   id: 6,
+            name:'Level 6',
+            description: 'The full latin name of species',
+            layouts: [          
+                multiSpecimenLatinMatch,       
+                commonToLatinMatch,
+                speciesGenusEntry, 
+            ],
+            wildcardLayouts : [  ],
             reviewLayouts: [ speciesGenusEntry ]
         } 
     ]
@@ -545,48 +569,72 @@ const portraitLesson3 = {
     default: false,
     levels: [
         {   id: 1,
-            name:'Level 1',            
+            name:'Level 1',
+            description: 'Species recognition',
             layouts: [ 
-                speciesRevision,                 
-                latinToCommonMatch, 
-                { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
-                { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'capShape') },
+                speciesRevision,                                 
                 multiSpecimenCommonMatch,
-                mixedSpeciesMatch,
-                multiSpecimenLatinMatch
+                mixedSpeciesMatch
             ],
             wildcardLayouts : [],
-            reviewLayouts: [ commonToLatinMatch ]
+            reviewLayouts: [ multiSpecimenCommonMatch, mixedSpeciesMatch ]
         },
         {   id: 2,
             name:'Level 2',
+            description: 'The common name of species',
             layouts: [ 
-                commonToLatinMatch,
-                commonEntry,           
-                definitionRevision,      
+                latinToCommonMatch,
+                commonEntry
             ],
-            wildcardLayouts : [ glossaryTerms ],
+            wildcardLayouts : [ ],
             reviewLayouts: [ 
-                commonToLatinMatch,
+                latinToCommonMatch,
                 commonEntry,
             ]
         },
         {   id: 3,
             name:'Level 3',
-            layouts: [ textCompleteGenus, genusEntry ],
-            wildcardLayouts : [],
-            reviewLayouts: [ textCompleteGenus, genusEntry ]
+            description: 'Species traits',
+            layouts: [ 
+                definitionRevision,
+                { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
+                { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'capShape') }         
+            ],
+            wildcardLayouts : [ glossaryTerms ],
+            reviewLayouts: [ 
+                { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
+                { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'capShape') },
+             ]
         },
         {   id: 4,
             name:'Level 4',
-            layouts: [ textCompleteSpecies, speciesEntry ],
+            description: 'The genus name of species',
+            layouts: [ 
+                textCompleteGenus,
+                genusEntry
+            ],
             wildcardLayouts : [  ],
-            reviewLayouts: [ textCompleteSpecies, speciesEntry ]
+            reviewLayouts: [ textCompleteGenus, genusEntry ]
         },
         {   id: 5,
             name:'Level 5',
-            layouts: [ speciesGenusEntry ],
-            wildcardLayouts : [ connections ],
+            description: 'The species name of species',
+            layouts: [ 
+                textCompleteSpecies,
+                speciesEntry
+             ],
+            wildcardLayouts : [  ],
+            reviewLayouts: [ textCompleteSpecies, speciesEntry ]
+        },
+        {   id: 6,
+            name:'Level 6',
+            description: 'The full latin name of species',
+            layouts: [          
+                multiSpecimenLatinMatch,       
+                commonToLatinMatch,
+                speciesGenusEntry, 
+            ],
+            wildcardLayouts : [  ],
             reviewLayouts: [ speciesGenusEntry ]
         } 
     ]

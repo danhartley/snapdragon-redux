@@ -28,13 +28,16 @@ export const renderLessonPlans = (lessonPlanId) => {
         return [ ...level.layouts, ...level.wildcardLayouts ];
     });
 
+    const descriptions = lessonPlan.levels.map(level => level.description);
+
     levelLayouts.forEach((layouts, index) => {
 
         const parent = document.querySelector('#listModal .js-lesson-plans');
 
         const levelId = index + 1;
+        const description = descriptions[index] || '';
 
-        const level = `<tr class="table-row level${levelId}"><td class="lp-level">Level ${levelId}</td></tr>`;
+        const level = `<tr class="table-row level${levelId}"><td class="lp-level"><div><span>Level ${levelId}:</span><span>${description}</span></div></td></tr>`;
 
         parent.innerHTML += level;
 

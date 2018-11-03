@@ -1486,11 +1486,13 @@ table {
   font-style: initial;
 }
 
-.lp-level {
+.lp-level span:nth-child(1) {
   text-transform: uppercase;
+  margin: 0 .5em 0 0;
 }
 
 .lesson-plans .table-row {
+  padding: .5em 0;
   display: flex;
   flex-direction: row;
   background-color: rgba(194, 223, 245,.2);
@@ -1514,6 +1516,10 @@ table {
   flex: 4;
 }
 
+.table-row .lp-level {
+  justify-content: center;
+}
+
 .lesson-plans svg {
   margin: 0 .5em 0 0;
 }
@@ -1523,23 +1529,27 @@ table {
 }
 
 .lesson-plans .table-row.level1 {
-  background-color: rgba(211, 105, 14,.2);
+  background-color: rgba(211, 105, 14,.1);
 }
 
 .lesson-plans .table-row.level2 {
-  background-color: rgba(211, 105, 14,.4);
+  background-color: rgba(211, 105, 14,.2);
 }
 
 .lesson-plans .table-row.level3 {
-  background-color: rgba(211, 105, 14,.6);
+  background-color: rgba(211, 105, 14,.3);
 }
 
 .lesson-plans .table-row.level4 {
-  background-color: rgba(211, 105, 14,.8);
+  background-color: rgba(211, 105, 14,.4);
 }
 
 .lesson-plans .table-row.level5 {
-  background-color: rgb(211, 105, 14);
+  background-color: rgb(211, 105, 14,.5);
+}
+
+.lesson-plans .table-row.level6 {
+  background-color: rgb(211, 105, 14,.6);
 }
 
 .lesson-plan-btn {

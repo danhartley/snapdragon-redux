@@ -203,7 +203,8 @@
     }
 
     .lesson-plans .table-row th:nth-child(1), .lesson-plans .table-row th:nth-child(4),
-    .lesson-plans .table-row td:nth-child(1), .lesson-plans .table-row td:nth-child(4) {
+    .lesson-plans .table-row td:nth-child(1), .lesson-plans .table-row td:nth-child(4),
+     {
       flex: 1;
       align-self: center;
       display: flex;
