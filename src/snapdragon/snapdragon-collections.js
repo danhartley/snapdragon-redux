@@ -1,20 +1,34 @@
 import * as R from 'ramda';
 
 import { collections } from 'snapdragon/eol-collections';
+import { getInatSpecies } from 'api/inat/inat';
 
 const getItems = (collection, index) => {
-    const itemNames = collections[index].items.map(item => item.name);
-    const items = collection.itemNames.map(name => { 
-        if(R.contains(name, itemNames)) {
-            return collections[index].items.find(item => item.name === name);
-        }
-    });
-    
-    items.filter(item => item).forEach((item,index)=>{
-        item.snapIndex = index + 1;
-    });
 
-    return items;
+    if(collection.id === 8) {
+        return getInatSpecies().then(items => {
+            return new Set(items.filter(item => item));
+        });
+    }
+
+    else {
+        const itemNames = collections[index].items.map(item => item.name);
+        const items = collection.itemNames.map(name => { 
+            if(R.contains(name, itemNames)) {
+                return collections[index].items.find(item => item.name === name);
+            }
+        });
+        
+        // items.filter(item => item).forEach((item,index)=>{
+        //     item.snapIndex = index + 1;
+        // });
+
+        return new Promise(resolve => {
+            resolve(items);
+        });
+    }
+
+    // return items;
 };
 
 export const kitchenGarden = { 
@@ -233,7 +247,8 @@ export const commonBirds = {
 
 export const rhsWeeds1 = { 
     providerId: 2,
-    id: 4, name: 'RHS Weeds I', 
+    id: 4, 
+    name: 'RHS Weeds I', 
     type: 'species',
     descriptions: [
         'Part I of the approved list of Weeds for students taking Royal Horticultural Society Qualifications in Practical Horticulture.',
@@ -348,6 +363,29 @@ export const cogumelosEmPortugal = {
     getItems: function() {
         return getItems(this, 4);
     },
+};
+
+export const inatRandom = {
+    id: 8,
+    getItems: function() {    
+        return getItems(this);
+    },    
+    name: 'Local, seasonal species', 
+    type: 'species',
+    descriptions: [
+        'Local species.',
+        'Seaonal species.'
+    ],
+    speciesCount: '--',
+    familiesCount: '--',
+    glossary: ['plantae', 'common', 'fungi'],
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 101,
+    thumb: 'https://media.eol.org/content/2012/06/13/04/53382_orig.jpg',
+    moduleSize: 4,
+    curator: 'Snapdragon',
+    userLevel: 'All comers',
+    items: []
 };
 
 kitchenGarden.items.forEach((item,index)=>{

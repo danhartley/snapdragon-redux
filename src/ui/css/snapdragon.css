@@ -1382,6 +1382,10 @@ table {
   opacity: .5;
 }
 
+.carousel-control-next[disabled="disabled"], .carousel-control-prev[disabled="disabled"] {
+  pointer-events: none;
+}
+
 .imageSlider .carousel.slide {
   background-color: var(--snap-modal-background);
 }

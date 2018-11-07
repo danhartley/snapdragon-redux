@@ -1,4 +1,4 @@
-export const commonCityBirds = [
+export const birds = [
   {
     "id": 922241,
     "name": "Passer domesticus",

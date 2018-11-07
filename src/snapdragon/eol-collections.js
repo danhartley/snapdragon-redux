@@ -3,46 +3,13 @@ import { herbsAndSpices } from 'api/snapdragon/herbs-and-spices';
 import { vegetables } from 'api/snapdragon/vegetables';
 import { fruit } from 'api/snapdragon/fruit';
 import { insects } from 'api/snapdragon/insects';
-import { commonCityBirds } from 'api/snapdragon/common-city-birds';
+import { birds } from 'api/snapdragon/common-city-birds';
 import { mushrooms } from 'api/snapdragon/mushrooms';
 import { weeds1 } from 'api/rhs/weeds1';
 
 import { leaf } from 'api/leaf';
 
 export const collections = [
-    
-    // {
-    //     id: 2,
-    //     type: 'species',
-    //     name: 'Herbs and Spices',
-    //     items: herbsAndSpices,
-    //     eol_name: 'Herbs and Spices',
-    //     eol_link: 'https://eol.org/collections/139051'
-    // },
-    // {
-    //     id: 3,
-    //     type: 'species',
-    //     name: 'Vegetables',
-    //     items: vegetables,
-    //     eol_name: 'Vegetables',
-    //     eol_link: 'https://eol.org/collections/140088'
-    // },
-    // {
-    //     id: 4,
-    //     type: 'species',
-    //     name: 'Fruit',
-    //     items: fruit,
-    //     eol_name: 'Fruit',
-    //     eol_link: 'https://eol.org/collections/140297'
-    // },
-    // {
-    //     id: 5,
-    //     type: 'species',
-    //     name: 'Insects',
-    //     items: insects,
-    //     eol_name: 'Insects',
-    //     eol_link: 'https://eol.org/collections/140494'
-    // },
     {
         id: 1,
         type: 'species',
@@ -63,7 +30,7 @@ export const collections = [
         id: 3,
         type: 'species',
         name: 'RSPB Top 10 UK Birds',
-        items: commonCityBirds,
+        items: birds,
         eol_name: '13 Common City Birds',
         eol_link: 'https://eol.org/collections/140683'
     },
@@ -82,6 +49,14 @@ export const collections = [
         items: mushrooms,
         eol_name: 'Mushroom Quiz',
         eol_link: 'https://eol.org/collections/140498'        
+    },  
+    {
+        id: 6,
+        type: 'species',
+        name: 'Mushrooms',
+        items: [],
+        eol_name: '',
+        eol_link: ''        
     },  
     {
         id: 101,
