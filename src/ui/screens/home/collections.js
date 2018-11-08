@@ -205,16 +205,17 @@ export const renderCollections = (counter) => {
     });
     
     async function updateLocalLesson() {
+        const name = document.getElementById('8');
+        if(!name) return;
         const coordinates = await getLocation();            
         const latitude = coordinates['0'];
         const longitude = coordinates['1'];
         const place = await getPlace(longitude, latitude, config.language);
         const region = place.features.find(f => f.place_type[0] === 'place');
         const country = place.features.find(f => f.place_type[0] === 'country');
-        document.getElementById('8').innerHTML = `Species from ${region.text}, ${country.text}`;
+        name.innerHTML = `Species from ${region.text}, ${country.text}`;
 
         config.region = region;
-
         actions.boundUpdateConfig(config);
     }
 
