@@ -2243,7 +2243,6 @@ export const snapdragon = {
         'Aegithalos caudatus',
         'Fringilla coelebs'
       ],
-      userSelection: false,
       itemIndex: 0,
       families: [
         'Passeridae',

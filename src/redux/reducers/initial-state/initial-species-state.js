@@ -2,14 +2,14 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
-import { kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, wildFoodUKTopTenBeginners, cogumelosEmPortugal, fallMushroomsEasternUSA, inatRandom } from 'snapdragon/snapdragon-collections';
+import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
 import { helpers } from 'redux/reducers/helpers-for-reducers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
 
-const collections = [ kitchenGarden, rhsTrees, commonBirds, rhsWeeds1, wildFoodUKTopTenBeginners, cogumelosEmPortugal, fallMushroomsEasternUSA, inatRandom ];
+const collections = snapdragonCollections;
 
-const extendCollection = (selectedCollection = collections[0]) => {
+const extendCollection = selectedCollection => {
 
     const { config } = store.getState();
 

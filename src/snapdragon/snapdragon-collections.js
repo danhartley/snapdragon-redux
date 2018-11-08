@@ -1,36 +1,3 @@
-import * as R from 'ramda';
-
-import { collections } from 'snapdragon/eol-collections';
-import { getInatSpecies } from 'api/inat/inat';
-
-const getItems = (collection, index) => {
-
-    if(collection.id === 8) {
-        return getInatSpecies().then(items => {
-            return new Set(items.filter(item => item));
-        });
-    }
-
-    else {
-        const itemNames = collections[index].items.map(item => item.name);
-        const items = collection.itemNames.map(name => { 
-            if(R.contains(name, itemNames)) {
-                return collections[index].items.find(item => item.name === name);
-            }
-        });
-        
-        // items.filter(item => item).forEach((item,index)=>{
-        //     item.snapIndex = index + 1;
-        // });
-
-        return new Promise(resolve => {
-            resolve(items);
-        });
-    }
-
-    // return items;
-};
-
 export const kitchenGarden = { 
     providerId: 1,
     id: 1, 
@@ -40,8 +7,7 @@ export const kitchenGarden = {
         'Learn the common and scientific names of herbs, vegetables and fruit used in Western cooking.',
         'All of the species are either native or adapted to a Mediterranean climate.',
         'Later lessons will introduce you to families and the traits they share.'        
-    ],    
-    items: [],
+    ],
     thumb: 'https://media.eol.org/content/2014/06/03/05/47795_orig.jpg',
     moduleSize: 6,
     curator: 'Snapdragon',
@@ -111,9 +77,7 @@ export const kitchenGarden = {
         "Prunus avium",
         "Apis mellifera"
       ],
-    getItems: function() {
-        return getItems(this, 0);
-    },
+    index: 0
 };
 
 export const rhsTrees = { 
@@ -121,7 +85,6 @@ export const rhsTrees = {
     id: 2, name: 'Deciduous and Evergreen Trees', 
     type: 'species',
     descriptions: ['This is an approved list of Deciduous and Evergreen Trees from the Royal Horticultural Society (RHS).', 'Students taking RHS courses in Practical Horticulture are required to learn some, or all, of these species.'],
-    items: [],
     collections: ['Deciduous and evergreen trees'],
     thumb: 'https://media.eol.org/content/2012/06/12/18/89509_orig.jpg',
     moduleSize: 6,
@@ -201,9 +164,7 @@ export const rhsTrees = {
         "Acacia baileyana",
         "Acacia dealbata"
       ],
-    getItems: function() {
-        return getItems(this, 1);
-    },
+    index: 1
 };
 
 export const commonBirds = { 
@@ -215,7 +176,6 @@ export const commonBirds = {
         'The list is taken from the RSPB Big Garden Birdwatch 2018 survey.',
         '420,489 people recorded 6,764,475 separate bird sightings.'
     ],
-    items: [],
     collections: ['RSPB Top 10 UK Birds'],
     thumb: 'https://media.eol.org/content/2015/01/21/07/32241_88_88.jpg',
     moduleSize: 4,
@@ -240,9 +200,7 @@ export const commonBirds = {
         "Aegithalos caudatus",
         "Fringilla coelebs"
       ],
-    getItems: function() {
-        return getItems(this, 2);
-    },
+    index: 2
 };
 
 export const rhsWeeds1 = { 
@@ -254,7 +212,6 @@ export const rhsWeeds1 = {
         'Part I of the approved list of Weeds for students taking Royal Horticultural Society Qualifications in Practical Horticulture.',
         'Snapdragon does not necessarily support the view that weeds are plants in the wrong place.'
     ],
-    items: [],
     collections: ['RHS Weeds I'],
     thumb: 'https://media.eol.org/content/2012/06/13/04/53382_orig.jpg',
     moduleSize: 4,
@@ -280,9 +237,7 @@ export const rhsWeeds1 = {
         "Capsella bursa-pastoris",
         "Bellis perennis"
       ],
-    getItems: function() {
-        return getItems(this, 3);
-    },
+    index: 3
 };
 
 const mushroomCollection = {
@@ -314,12 +269,9 @@ export const fallMushroomsEasternUSA = {
         'A collection of mushrooms that can be found in the Fall in the Eastern United States.',
         'Some of the species may be found in other seasons, and across the US.'
     ],
-    items: [],
     speciesCount: 16,
     familiesCount: 9,
-    getItems: function() {
-        return getItems(this, 4);
-    },
+    index: 4
 }
 
 export const wildFoodUKTopTenBeginners = {
@@ -336,12 +288,9 @@ export const wildFoodUKTopTenBeginners = {
         'A good start for beginners.',
         'Specific to the UK.'
     ],
-    items: [],
     speciesCount: 10,
     familiesCount: 10,
-    getItems: function() {
-        return getItems(this, 4);
-    },
+    index: 4
 };
 
 export const cogumelosEmPortugal = {
@@ -357,24 +306,19 @@ export const cogumelosEmPortugal = {
     descriptions: [
         'A collection of mushrooms, both edible and poisonous, common to one or more regions of Portugal.'
     ],
-    items: [],
     speciesCount: 14,
     familiesCount: 8,
-    getItems: function() {
-        return getItems(this, 4);
-    },
+    index: 4
 };
 
 export const inatRandom = {
     id: 8,
-    getItems: function() {    
-        return getItems(this);
-    },    
-    name: 'Local, seasonal species', 
+    name: 'Local species', 
     type: 'species',
     descriptions: [
-        'Local species.',
-        'Seaonal species.'
+        'Local plants, fungi and birds found in your area at this time of year.',
+        'The species in this lesson change and their number varies depending on the time of year and location.',
+        'Snapdragon covers only a few hundred species but this number is growing...'
     ],
     speciesCount: '--',
     familiesCount: '--',
@@ -384,13 +328,8 @@ export const inatRandom = {
     thumb: 'https://media.eol.org/content/2012/06/13/04/53382_orig.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
-    userLevel: 'All comers',
-    items: []
+    userLevel: 'All comers'
 };
-
-kitchenGarden.items.forEach((item,index)=>{
-    item.snapIndex = index + 1;
-});
 
 export const snapdragonCollections = [
     kitchenGarden,
@@ -399,5 +338,6 @@ export const snapdragonCollections = [
     rhsWeeds1,
     wildFoodUKTopTenBeginners,
     cogumelosEmPortugal,
-    fallMushroomsEasternUSA
+    fallMushroomsEasternUSA,
+    inatRandom
 ];

@@ -1029,7 +1029,6 @@ export const state1 = {
     'Aegithalos caudatus',
     'Fringilla coelebs'
   ],
-  userSelection: true,
   itemIndex: 0,
   families: [
     'Passeridae',

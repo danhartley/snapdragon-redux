@@ -4,6 +4,7 @@ import { store } from 'redux/store';
 import { lessonPlanner } from 'syllabus/lesson-planner';
 import { actions } from 'redux/actions/action-creators';
 import { lessonPlans } from 'snapdragon/lesson-plans';
+import { listenToItemChanges } from 'ui/helpers/item-handler';
 
 export const nextLesson = (counter) => {
 

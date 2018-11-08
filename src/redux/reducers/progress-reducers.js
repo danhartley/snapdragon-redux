@@ -8,8 +8,6 @@ export const counter = (state = null, action) => {
     switch(action.type) {
         case 'persist/REHYDRATE':
             return action.payload ? action.payload.counter : null;
-        case types.CHANGE_COLLECTION:
-            return { index: 0 };
         case types.UPDATE_CONFIG:
             return state;
         case types.NEXT_ROUND:

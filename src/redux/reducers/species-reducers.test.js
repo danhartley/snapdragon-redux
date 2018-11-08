@@ -134,14 +134,17 @@ test('collection should return unextended (initial) collection when user selecte
   expect(state).toEqual(unextendedCollection);
 });
 
-test('collection should return extended collection when collection changed (extended)', () => {
+test('collection should return next item', () => {
   let config = {
     language: 'en',
     moduleSize: 2,
     isPortraitMode: false,
     isLandscapeMode: true,
     collection: {
-      id: 3
+      id: 3,
+      items: [
+        {}
+      ], itemIndex: 0
     },
     mode: 'learn'
   };
@@ -162,47 +165,9 @@ test('collection should return extended collection when collection changed (exte
   let birds = [ sparrow, starling ];
   let action = { data: birds, type: types.SELECT_COLLECTION };
   let state = collection({}, action);
-  action = { data: { items: birds, config }, type: types.CHANGE_COLLECTION };
+  action = { data: { collection : { items: birds, itemIndex: 0 }, config }, type: types.CHANGE_COLLECTION };
   state = collection(state, action);  
-  expect(state.nextItem.genus).toEqual('Passer');
-  expect(state.nextItem.species).toEqual('domesticus');
-});
-
-test('collection should return extended collection when collection changed (extended)', () => {
-
-  let config = {
-    language: 'en',
-    moduleSize: 2,
-    isPortraitMode: false,
-    isLandscapeMode: true,
-    collection: {
-      id: 3
-    },
-    mode: 'learn'
-  };
-  let sparrow =  { 
-      name: 'Passer domesticus', 
-      names:[{
-        vernacularName: 'Sparrow',
-        language: 'en'
-    }]
-  };
-  let starling = {
-    name: 'Sturnus vulgaris',
-    names: [{
-        vernacularName: 'Starling',
-        language: 'en'
-      }]
-  };
-  let birds = [ sparrow, starling ];
-  let action = { data: birds, type: types.SELECT_COLLECTION };
-  let state = collection({}, action);
-  action = { data: { items: birds, config }, type: types.CHANGE_COLLECTION };
-  state = collection(state, action);  
-  expect(state.families).toBeTruthy();
-  expect(state.familyStats).toBeTruthy();
-  expect(state.speciesNames).toBeTruthy();
-  expect(state.speciesVernacularNames).toBeTruthy();
+  expect(state.nextItem.name).toEqual('Passer domesticus');
 });
 
 test('collection should set allItems during review and reset items to this value when review complete (learn-again mode)', () => {
@@ -235,7 +200,7 @@ test('collection should set allItems during review and reset items to this value
   let action = { data: birds, type: types.SELECT_COLLECTION };
   let state = collection({}, action);
   config.mode = 'learn';
-  action = { data: { items: birds, config }, type: types.CHANGE_COLLECTION };
+  action = { data: { collection: { items: birds, itemIndex: 0 }, config }, type: types.CHANGE_COLLECTION };
   state = collection(state, action);
   birds = state.items;
   config.mode = 'review';

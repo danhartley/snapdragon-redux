@@ -3,7 +3,6 @@ import * as R from 'ramda';
 import { observeStore } from 'redux/observe-store';
 import { store } from 'redux/store';
 
-import { types } from 'redux/actions/action-types';
 import { actions } from 'redux/actions/action-creators';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
 import { config as lessonConfig } from 'syllabus/lesson-config';
@@ -48,17 +47,21 @@ test('when user selects a collection state should be populated', () => {
                 id: 1 
             },
         },   
-        items: [
-            { 
-                "name": "Vitis vinifera",
-                "names": [
-                    {
-                      "vernacularName": "Vine",
-                      "language": "en"
-                    }
-                ]
-            }
-        ]    
+        collection: {
+            id:1,
+            items: [
+                { 
+                    "name": "Vitis vinifera",
+                    "names": [
+                        {
+                        "vernacularName": "Vine",
+                        "language": "en"
+                        }
+                    ]
+                }
+            ],
+            itemIndex: 0
+        }
     };
 
     actions.boundChangeCollection(data); // user action (clicking on a collection) triggers CHANGE_COLLECTION
@@ -116,7 +119,7 @@ test('when user selects a collection state should be populated', () => {
         levelName: 'Level 1'
         },
         {
-        type:'test',
+        type:'test.skip',
         screens: [
             {
             type:'specimen-images',
@@ -139,7 +142,7 @@ test('when user selects a collection state should be populated', () => {
         levelName: 'Level 1'
         },
         {
-        type:'test',
+        type:'test.skip',
         screens: [
             {
             type:'specimen-images',
@@ -162,7 +165,7 @@ test('when user selects a collection state should be populated', () => {
         levelName: 'Level 1'
         },
         {
-        type:'test',
+        type:'test.skip',
         screens: [
             {
             type:'specimen-images',
@@ -185,7 +188,7 @@ test('when user selects a collection state should be populated', () => {
         levelName: 'Level 1'
         },
         {
-        type:'test',
+        type:'test.skip',
         screens: [
             {
             type:'specimen-images',
@@ -208,7 +211,7 @@ test('when user selects a collection state should be populated', () => {
         levelName: 'Level 1'
         },
         {
-        type:'test',
+        type:'test.skip',
         screens: [
             {
             type:'specimen-images',
@@ -231,7 +234,7 @@ test('when user selects a collection state should be populated', () => {
         levelName: 'Level 1'
         },
         {
-        type:'test',
+        type:'test.skip',
         screens: [
             {
             type:'specimen-images',
@@ -300,14 +303,19 @@ test('when user selects a collection state should be populated', () => {
         ],
         lesson: {
             level: {id:1}
-        }
+        },
+        itemIndex: 0
     };
 
+    actions.boundChangeCollection({config, collection});
     actions.boundNextLessonPlan({ lessonPlan: _lessonPlan, collection : _collection});
 
-    const { counter, lessonPlan } = store.getState();
+    expect(store.getState().counter).toEqual(null);
 
+    actions.boundToggleLesson({ index: 0 });
+    const { counter, lessonPlan } = store.getState();
     expect(counter.index).toEqual(0);
+
     expect(lessonPlan.layouts).toEqual(_lessonPlan.layouts);
     
     let layout = lessonPlan.layouts[counter.index];

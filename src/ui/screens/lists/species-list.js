@@ -3,26 +3,38 @@ import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
 import { renderCard } from 'ui/screens/cards/card';
 import { modalImageHandler } from 'ui/helpers/image-handlers';
-import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
+import { nextRoundHandler } from 'ui/helpers/lesson-handlers';
 import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-list-table';
+import { itemHandler } from 'ui/helpers/item-handler';
+import { renderSpinner } from 'ui/screens/lists/species-pending';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
-    if(collection.userSelection) return;
+    if((collection.items && collection.itemIndex === 0)) return;
 
     subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
     
     if(collection.id === 0) return;
 
-    const { config, history, counter, collections, enums  } = store.getState();
+    const { config, history, counter, enums  } = store.getState();
 
     config.collection = { id: collection.id };
 
     const traits = getTraits(enums);
 
-    buildTable(collection, config, traits);
+    renderSpinner(config);
 
+    function callback(collection, config, traits) {
+        return function () {
+            buildTable(collection, config, traits);
+            doEveryThingElse();
+        }
+      }
+
+    itemHandler(collection, config, callback(collection, config, traits));
+
+    const doEveryThingElse = () => {
     const headerCheckbox = document.querySelector(".table-header #inputCheckAll");
     const itemCheckboxes = document.querySelectorAll(".table-row .custom-control-input");
 
@@ -99,14 +111,14 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
         continueLearningActionBtn.addEventListener('click', event => {
 
             if(collection.isLessonComplete) {
-                endOfRoundHandler.purgeLesson();
+                nextRoundHandler.purgeLesson();
             } else {
                 if(readOnlyMode) {
                     const lessonStateMode = counter.isLessonPaused ? 'restartLesson' : 'nextRound';
-                    endOfRoundHandler.changeCollection(lessonStateMode, collections, collection, config, history);
+                    nextRoundHandler.changeCollection(lessonStateMode, collection, config, history);
                 }
                 else {
-                    endOfRoundHandler.changeCollection('newLesson', collections, collection, config, history, continueLearningActionBtn);
+                    nextRoundHandler.changeCollection('newLesson', collection, config, history, continueLearningActionBtn);
                 }
 
                 actions.boundNewPage({ name: ''});
@@ -116,4 +128,5 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
             }            
         });
     }
+    };
 };

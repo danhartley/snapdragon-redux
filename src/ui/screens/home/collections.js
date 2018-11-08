@@ -11,8 +11,9 @@ import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { elem } from 'ui/helpers/class-behaviour';
 import { renderLessonPlans } from 'ui/screens/lists/lesson-plans-table';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
-import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
+import { nextRoundHandler } from 'ui/helpers/lesson-handlers';
 import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
+import { getLocation, getPlace } from 'geo/geo';
 
 export const renderCollections = (counter) => {
 
@@ -55,11 +56,6 @@ export const renderCollections = (counter) => {
     const lessonHelp = document.querySelector('.js-lesson-help');
     const aboutLabel = document.querySelector('.js-about-label');
 
-    const getCollectionItems = collection => {
-        if(collection.items && collection.items.length > 0) return collection.items;
-         if(typeof collection.getItems === 'function') return collection.getItems();
-    }; 
-
     if(counter.isLessonPaused && config.isLandscapeMode) {
         collectionDescription.innerHTML += `<span><span class='snap-alert snap-padding'>If you change lessons your current lesson score will be lost!</span></span>`;
     }
@@ -75,11 +71,28 @@ export const renderCollections = (counter) => {
         }
     }    
 
+    // Selected lesson
+
+    if(collection && collection.name) {
+        document.querySelectorAll(`[name="${collection.name}"]`)[0].classList.add('active');
+        elem.show(learningActionBtn);
+        elem.hide(learningActionBtnPlaceholder);
+        if(!counter.isLessonPaused) {
+            elem.show(lessonHelp);
+        }        
+        collectionsHeader.innerHTML = collection.name;
+        if(config.isLandscapeMode) {
+            subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
+        }
+    } else {
+        collectionsHeader.innerHTML = 'Lessons';        
+        elem.hide(lessonHelp);
+    }
+
     const changeCollection = id => {
 
         collectionId = parseInt(id);
         collection = { ...collection, ...collections.find(collection => collection.id === parseInt(id)) };
-        collection.items = getCollectionItems(collection);
         collectionsHeader.innerHTML = collection.name;
         const descriptions = collection.descriptions.map(description => `<span>${description}</span>`).join('');
         collectionDescription.innerHTML = descriptions;
@@ -108,25 +121,6 @@ export const renderCollections = (counter) => {
 
         aboutLabel.innerHTML = 'About the lesson';
     };
-
-    // Selected lesson
-
-    if(collection && collection.name) {
-        collection.items = getCollectionItems(collection);
-        document.querySelectorAll(`[name="${collection.name}"]`)[0].classList.add('active');
-        elem.show(learningActionBtn);
-        elem.hide(learningActionBtnPlaceholder);
-        if(!counter.isLessonPaused) {
-            elem.show(lessonHelp);
-        }        
-        collectionsHeader.innerHTML = collection.name;
-        if(config.isLandscapeMode) {
-            subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
-        }
-    } else {
-        collectionsHeader.innerHTML = 'Lessons';        
-        elem.hide(lessonHelp);
-    }
 
     // User selects lesson
     
@@ -164,9 +158,9 @@ export const renderCollections = (counter) => {
         if(config.isLandscapeMode && collectionId) {
             collection.language = language;
             actions.boundSelectCollection(collection);
-            collection.items = getCollectionItems(collection);
             renderSpeciesCollectionList(collection, true);
         }
+        updateLocalLesson();
     });
 
     // User begins or continues lesson
@@ -176,16 +170,12 @@ export const renderCollections = (counter) => {
         if(config.isLandscapeMode) {
             subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));            
             const lessonStateMode = counter.isLessonPaused ? 'restartLesson' : 'newLesson';
-            collection.items = getCollectionItems(collection);
-            endOfRoundHandler.changeCollection(lessonStateMode, collections, collection, config, history, learningActionBtn);            
+            nextRoundHandler.changeCollection(lessonStateMode, collection, config, history, learningActionBtn);            
         }
                 
         subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
 
         if(config.isPortraitMode) {            
-            if(collection.items.length === 0) {
-                collection.items = getCollectionItems(collection);
-            }
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
             if(counter.isLessonPaused && collectionId === collection.id) {
                 renderSpeciesCollectionList(collection, null, true);
@@ -214,4 +204,20 @@ export const renderCollections = (counter) => {
         renderLessonPlans(planId);
     });
     
+    async function updateLocalLesson() {
+        const coordinates = await getLocation();            
+        const latitude = coordinates['0'];
+        const longitude = coordinates['1'];
+        const place = await getPlace(longitude, latitude, config.language);
+        const region = place.features.find(f => f.place_type[0] === 'place');
+        const country = place.features.find(f => f.place_type[0] === 'country');
+        document.getElementById('8').innerHTML = `Species from ${region.text}, ${country.text}`;
+
+        config.region = region;
+
+        actions.boundUpdateConfig(config);
+    }
+
+    updateLocalLesson();
+
 };

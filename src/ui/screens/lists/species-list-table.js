@@ -7,16 +7,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 import speciesPortraitTemplate from 'ui/screens/lists/species-table-portrait-template.html';
 
-export async function buildTable(collection, config, traits) {
-    const items = collection.items || await collection.getItems();
-    collection.items = [ ...items ];
-    collection.items.forEach((item,index)=>{
-        item.snapIndex = index + 1;
-    });
-    callBuildTable(collection, config, traits);
-}
-
-const callBuildTable = (collection, config, traits) => {
+export const buildTable = (collection, config, traits) => {
 
     const template = document.createElement('template');
 

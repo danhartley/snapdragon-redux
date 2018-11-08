@@ -59,11 +59,9 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 1,
         return { itemIndex, nextItem, layoutCounter, lesson, currentRound };
     };
 
-    const changeCollection = (state, action, speciesStateHelper) => {
+    const changeCollection = (state, action) => {
         
-        const initialCollection = { ...state, items: [...action.data.items] };
-
-        let collection = speciesStateHelper.extendCollection(R.clone(initialCollection));
+        let collection = { ...state, ...action.data.collection };
         let nextItem = collection.items[collection.itemIndex];
         
         if(action.data.config.mode === 'review') {
@@ -100,20 +98,20 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 1,
             return action.data;
         }
         case types.CHANGE_COLLECTION_ITEMS: {
-            const _collection = R.clone(state);
-            _collection.items = action.data;
-            _collection.userSelection = true;
-            return _collection;
+            const collection = R.clone(state);
+            collection.excludedItems = action.data.filter(item => item.isDeselected);
+            collection.items = action.data.filter(item => !item.isDeselected);
+            return collection;
         }
         case types.CHANGE_COLLECTION: {
-            const { collection, nextItem } = changeCollection(state, action, speciesStateHelper);
+            const { collection, nextItem } = changeCollection(state, action);
             return { ...state, ...collection, nextItem };
         }
         case types.NEXT_LAYOUT:
             return { ...state, layoutName: action.data.name };
         case types.NEXT_ITEM: {
             const { itemIndex, nextItem, layoutCounter, isNextRound, isLevelComplete, isLessonComplete } = getNextItem(action, state);
-            return { ...state, itemIndex, nextItem, layoutCounter, isNextRound, isLevelComplete, userSelection: false, isLessonComplete };
+            return { ...state, itemIndex, nextItem, layoutCounter, isNextRound, isLevelComplete, isLessonComplete };
         }
         case types.NEXT_ROUND: {
             const { itemIndex, nextItem, layoutCounter, lesson, currentRound } = getNextRound(state);
