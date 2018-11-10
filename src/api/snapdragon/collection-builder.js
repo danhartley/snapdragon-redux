@@ -184,7 +184,7 @@ const getInatSpecies = (collection) => {
 
 async function getInatObservations() {
     const userId =  document.querySelector('#inputUserId').value;
-    const collectionUrl = `http://api.inaturalist.org/v1/observations?user_id=${userId}&order=desc&order_by=created_at`;
+    const collectionUrl = `https://api.inaturalist.org/v1/observations?user_id=${userId}&order=desc&order_by=created_at`;
     const response = await fetch(collectionUrl);
     const json = await response.json();
     return await getInatSpecies(json);
@@ -198,7 +198,7 @@ async function getInatImages(observation) {
     const taxon = observation.taxon;
     if(!taxon) return [];
     const taxonId = taxon.id;
-    const url = `http://api.inaturalist.org/v1/observations?id_please=true&photos=true&license=cc-by-nc&photo_license=cc-by-nc&taxon_id=${taxonId}&order=desc&order_by=created_at`;
+    const url = `https://api.inaturalist.org/v1/observations?id_please=true&photos=true&license=cc-by-nc&photo_license=cc-by-nc&taxon_id=${taxonId}&order=desc&order_by=created_at`;
     const response = await fetch(url);
     const json = await response.json();
     return await parseInatImages(json);
