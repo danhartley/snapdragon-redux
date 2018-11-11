@@ -6,6 +6,7 @@ import { insects } from 'api/snapdragon/insects';
 import { birds } from 'api/snapdragon/common-city-birds';
 import { mushrooms } from 'api/snapdragon/mushrooms';
 import { weeds1 } from 'api/rhs/weeds1';
+import { lichen } from 'api/snapdragon/lichen';
 
 import { leaf } from 'api/leaf';
 
@@ -50,11 +51,19 @@ export const collections = [
         eol_name: 'Mushroom Quiz',
         eol_link: 'https://eol.org/collections/140498'        
     },  
+    // {
+    //     id: 6,
+    //     type: 'species',
+    //     name: 'Mushrooms',
+    //     items: [],
+    //     eol_name: '',
+    //     eol_link: ''        
+    // },  
     {
         id: 6,
         type: 'species',
-        name: 'Mushrooms',
-        items: [],
+        name: 'Lichen',
+        items: lichen,
         eol_name: '',
         eol_link: ''        
     },  

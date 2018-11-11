@@ -203,20 +203,27 @@ export const renderCollections = (counter) => {
         const planId = config.isPortraitMode ? snapdragonCollection.lessonPlanPortrait : snapdragonCollection.lessonPlanLandscape;
         renderLessonPlans(planId);
     });
-    
+
+    const localCollection = document.getElementById('8');
+    localCollection.classList.add('collection-disabled');
+    localCollection.innerHTML += ' (unavailable)';
+
     async function updateLocalLesson() {
-        const name = document.getElementById('8');
-        if(!name) return;
+        if(!localCollection) return;
         const coordinates = await getLocation();            
         const latitude = coordinates['0'];
         const longitude = coordinates['1'];
         const place = await getPlace(longitude, latitude, config.language);
-        const region = place.features.find(f => f.place_type[0] === 'place');
-        const country = place.features.find(f => f.place_type[0] === 'country');
-        name.innerHTML = `Species from ${region.text}, ${country.text}`;
+        if(place) {
+            const region = place.features.find(f => f.place_type[0] === 'place');
+            const country = place.features.find(f => f.place_type[0] === 'country');
+            localCollection.innerHTML = `Species from ${region.text}, ${country.text}`;
 
-        config.region = region;
-        actions.boundUpdateConfig(config);
+            config.region = region || country;
+            actions.boundUpdateConfig(config);
+
+            localCollection.classList.remove('collection-disabled');
+        }
     }
 
     updateLocalLesson();

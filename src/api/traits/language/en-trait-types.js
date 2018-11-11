@@ -119,5 +119,9 @@ export const english = {
         SMOOTH: 'Smooth',
         TEETH: 'Teeth',
         RIDGES: 'Ridges'
+    },
+    associate : {
+        ALGA: 'Alga',
+        CYNOBACTERIUM: 'cyanobacterium'
     }
 };

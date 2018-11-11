@@ -136,7 +136,7 @@ hr {
 
 .dropdown-item.active {
   color: var(--snap-text-medium-dark);
-  background-color: var(--snap-dropdown-bg);
+  background-color: var(--snap-dropdown-hover);
 }
 
 a.dropdown-item {
@@ -1754,4 +1754,9 @@ th.lessonScore {
 .slow-spin {
   -webkit-animation: fa-spin 6s infinite linear;
   animation: fa-spin 6s infinite linear;
+}
+
+a.collection-disabled {
+  color: grey;
+  pointer-events: none; 
 }

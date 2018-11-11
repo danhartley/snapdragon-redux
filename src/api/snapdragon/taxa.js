@@ -2291,5 +2291,65 @@ export const taxa = [
                 identification: 'Pileus has spongy surface of pores. Stipe is thick and may bulge. Pileus (cap) and stipe (stem) are clearly differentiated.'
             }
         ]
-    },    
+    },
+    {
+        taxon: 'genus',
+        name: 'Cladonia',
+        names: [ { language: "en", names: ['Pixie Cup Lichens']}],
+        traits: [ 
+            { language: "en", name: 'Associate with', values: [ SD.associate.ALGA ] },          
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Grow on acid substrates. While some grow directly of tree bark, others grow on rotting wood, among moss, or directly on bare soil surfaces.',
+                identification: 'Classic composition is a number of small leaf-like basal squamules from which grow upright structures (podetia) bearing the fruiting bodies.'
+            }
+        ]
+    },
+    {
+        taxon: 'genus',
+        name: 'Peltigeras',
+        names: [ { language: "en", names: ['Felt Lichens']}],
+        traits: [ 
+            { language: "en", name: 'Associate with', values: [ SD.associate.CYNOBACTERIUM ] },          
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Grow on acid substrates. While some grow directly of tree bark, others grow on rotting wood, among moss, or directly on bare soil surfaces.',
+                identification: 'Foliose, large (20-30 cm in diameter), grey-brown, darker, glossy when wet.'
+            }
+        ]
+    },
+    {
+        taxon: 'genus',
+        name: 'Usnea',
+        names: [ { language: "en", names: ['Old Man\'s Beard']}],
+        traits: [ 
+            { language: "en", name: 'Associate with', values: [ SD.associate.ALGA ] },          
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Numerous. Found in areas of low atmospheric pollution.',
+                identification: 'Stringy or fibrous appearance, fruticose, usually found on tree bark.'
+            }
+        ]
+    },
+    {
+        taxon: 'genus',
+        name: '',
+        names: [ { language: "en", names: ['Script Lichen']}],
+        traits: [ 
+            { language: "en", name: 'Associate with', values: [ SD.associate.ALGA ] },          
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Common on smooth-barked trees, especially those in shade.',
+                identification: 'Long drawn-out apothecia with appearance of hieroglyphics or handwriting.'
+            }
+        ]
+    },
 ];

@@ -311,7 +311,7 @@ export const cogumelosEmPortugal = {
     index: 4
 };
 
-export const inatRandom = {
+export const localSpecies = {
     id: 8,
     name: 'Local species', 
     type: 'species',
@@ -331,6 +331,34 @@ export const inatRandom = {
     userLevel: 'All comers'
 };
 
+const lichenCollection = {
+    providerId: 1,
+    type: 'species',
+    thumb: 'https://media.eol.org/content/2009/07/24/05/95087_98_68.jpg',
+    moduleSize: 4,
+    curator: 'Snapdragon',
+    userLevel: 'Amateur lichenologists',
+    lessonPlanLandscape: 3,
+    lessonPlanPortrait: 103,
+    glossary: ['lichen'],
+    course: 'Snapdragon'
+};
+
+export const beginnersLichenology = {
+    ...lichenCollection,
+    id: 9,
+    name: 'Common Lichen',
+    itemNames: [
+        'Xanthoria parietina', 'Physcia adscendens', 'Parmelia saxatilis', 'Graphis scripta'
+    ],
+    descriptions: [
+        'An introduction to common lichen.'
+    ],
+    speciesCount: 0,
+    familiesCount: 0,
+    index: 5
+};
+
 export const snapdragonCollections = [
     kitchenGarden,
     rhsTrees,
@@ -339,5 +367,6 @@ export const snapdragonCollections = [
     wildFoodUKTopTenBeginners,
     cogumelosEmPortugal,
     fallMushroomsEasternUSA,
-    inatRandom
+    localSpecies,
+    beginnersLichenology
 ];

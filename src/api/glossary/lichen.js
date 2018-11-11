@@ -45,4 +45,19 @@ export const lichen = [
         definition: "Means of distinuguishing lichen e.g. foliose, crustose.", 
         level: 2
     },
+    {
+        term: "Squamule",
+        definition: "One of the scalelike lobes of the thallus of a lichen.", 
+        level: 2
+    },
+    {
+        term: "Podetium",
+        definition: "The upright secondary thallus in Cladonia lichens. It is a hollow stalk extending from the primary thallus.", 
+        level: 2
+    },
+    {
+        term: "Apothecium",
+        definition: "Wide, open, saucer-shaped or cup-shaped fruit body. Sessile and fleshy.", 
+        level: 2
+    },
 ];

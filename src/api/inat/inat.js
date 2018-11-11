@@ -8,6 +8,7 @@ import { insects } from 'api/snapdragon/insects';
 import { herbsAndSpices } from 'api/snapdragon/herbs-and-spices';
 import { deciduousAndEvergreenTrees } from 'api/rhs/deciduous-evergreen-trees';
 import { weeds1 } from 'api/rhs/weeds1';
+import { lichen } from 'api/snapdragon/lichen';
 
 export const getInatSpecies = (latitude, longitude) => {
 
@@ -19,7 +20,8 @@ export const getInatSpecies = (latitude, longitude) => {
         ...insects,
         ...herbsAndSpices,
         ...deciduousAndEvergreenTrees,
-        ...weeds1
+        ...weeds1,
+        ...lichen
     ];
     
     const names = snapdragon.map(item => item.name);

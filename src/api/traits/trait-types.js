@@ -10,6 +10,7 @@ export let ecoType = english.ecoType;
 export let capShape = english.capShape;
 export let treeTypes = english.treeTypes;
 export let hymeniumType = english.hymeniumType;
+export let associate = english.associate;
 
 export const updateLanguage = (config) => {
     
@@ -38,7 +39,8 @@ export const updateLanguage = (config) => {
         howEdible,
         ecoType,
         capShape,
-        hymeniumType
+        hymeniumType,
+        associate
     }
 
     actions.boundUpdateEnums(enums);   

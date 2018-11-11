@@ -77,8 +77,10 @@ const trimLatinName = name => {
 };
 
 const familyVernacularNames = (name, language) => {
-    if(name === '') return '';
-    return taxa.find(taxon => taxon.name.toUpperCase() === name.toUpperCase()).names.find(name => name.language === language).names;
+    if(name === '') return;
+    const taxon = taxa.find(taxon => taxon.name.toUpperCase() === name.toUpperCase());
+    if(!taxon) return;
+    return taxon.names.find(name => name.language === language).names;
 }
 
 const getTrait = (traits, itemName, name, formatter) => {

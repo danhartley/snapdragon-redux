@@ -8,7 +8,7 @@ import { radioButonClickhandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { taxa } from 'api/snapdragon/taxa';
 import { lookALikes } from 'ui/screens/common/look-alikes';
-import { getFungiTraits } from 'api/traits/fungi-traits';
+import { getTraits } from 'api/traits/traits';
 import specimenCommonMatchTemplate from 'ui/screens/multichoice/visual-match-template.html';
 
 export const renderSpecimenMatch = collection => {
@@ -36,7 +36,10 @@ export const renderSpecimenMatch = collection => {
         if(config.isLandscapeMode) {
             const taxon = taxa.find(t => t.name === item.genus);
             identification = taxon ? `Genus: ${taxon.descriptions[0].identification}` : '';
-            item.keyTrait = `${utils.capitaliseFirst(enums.name.HOW_EDIBLE)}: ${itemProperties.getActiveTrait(getFungiTraits(enums), item.name, [{ name: enums.name.HOW_EDIBLE, formatter: trait => trait.value }])}`;
+            item.keyTrait = `
+                ${utils.capitaliseFirst(enums.name.HOW_EDIBLE)}: 
+                ${itemProperties.getActiveTrait(getTraits(enums), item.name, [{ name: enums.name.HOW_EDIBLE, formatter: trait => trait.value }])}
+            `;
         }
 
         descriptions = [
@@ -96,7 +99,7 @@ export const renderSpecimenMatch = collection => {
                 break;
         }
                 
-        const traitValue = getFungiTraits(enums).find(trait => trait.name === item.name).traits.find(trait => trait.name === traitName).value;
+        const traitValue = getTraits(enums).find(trait => trait.name === item.name).traits.find(trait => trait.name === traitName).value;
         question = { question: traitValue, binomial: item.name };
 
         let traits = [];
@@ -132,7 +135,7 @@ export const renderSpecimenMatch = collection => {
         }
 
         if(screen.trait === 'howEdible') {            
-            lookALikes(collection, item, getFungiTraits(enums), config);
+            lookALikes(collection, item, getTraits(enums), config);
         }
     }
 
