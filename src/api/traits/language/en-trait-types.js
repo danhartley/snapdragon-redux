@@ -16,7 +16,22 @@ export const english = {
         VITAMINS : 'vitamins',
         GROUPING : 'grouping',
         STIPE_COLOUR : 'stipe colour',
-        GILL_COLOUR : 'gill colour'
+        GILL_COLOUR : 'gill colour',
+        HABITAT: 'habitat',
+        SUBSTRATE: 'substrate',
+        THALLUS_TYPE: 'thallus type',
+        RHIZINE_TYPE: 'rhizine type',
+        ASSOCIATE: 'associate',
+        POLLUTION_TOLERANCE: 'pollution tolerance',
+        HEAVY_METAL_TOLERANCE: 'heavy metal tolerance',
+        MEDICINAL_PROPERTIES: 'Medicinal properties',
+        DISC_WIDTH: "Width",
+        COLOUR: "Colour",
+        USAGE: "Usage",
+        LOBE_WIDTH: "Lobe width",
+        LOBE_LENGTH: "Lobe length",
+        LOBE_DIAMETER: "Lobe diameter",
+        ACID_RAIN: "Acid rain tolerance"
     },
     howEdible : {
         CHOICE : 'Choice',
@@ -53,7 +68,12 @@ export const english = {
         FOREST_EDGE : 'Forest edge',
         PARKS : 'Parks',
         TRUNKS : 'Trunks',
-        STUMPS : 'Stumps'
+        STUMPS : 'Stumps',
+        BARK: 'Bark',
+        ROCK: 'Rock',
+        FENCES: 'Fences',
+        TREES: "Trees",
+        SHRUBS: "Shrubs"
     },
     ecoType : {
         SAPROTROPHIC : 'Saprotrophic',
@@ -122,6 +142,61 @@ export const english = {
     },
     associate : {
         ALGA: 'Alga',
-        CYNOBACTERIUM: 'cyanobacterium'
+        CYNOBACTERIUM: 'cyanobacterium',
+        FUNGUS: 'Fungus'
+    },
+    thallusType : {
+        FOLIOSE: 'Foliose',
+        FRUTICOSE: 'Fruticose',
+        CRUSTOSE: 'Crustose',
+        LEPROSE: 'Leprose',
+        EPIPHYTE: "Epiphyte"
+    },
+    rhizineType : {
+        SPARSE: 'Sparse',
+        HAPTER: 'Hapter'
+    }, 
+    substrate : {
+        WOOD: 'Wood',
+        BARK: 'Bark',
+        ROCK: 'Rock'
+    },
+    pollutionTolerance : {
+        HIGH: 'High',
+        MEDIUM: 'Medium',
+        LOW: 'Low'
+    },
+    heavyMetalTolerance: {
+        HIGH: 'High',
+        MEDIUM: 'Medium'
+    },
+    medicinalProperties : {
+        ANTIVIRAL: 'Antiviral',
+        ANTISPETIC: "Antiseptic",
+        ANTI_INFLAMMATORY: "Anti-inflammatory"
+    },
+    pHLevel : {
+
+    },
+    colour: {
+        WHITE: "White",
+        YELLOW: "Yellow",
+        GREEN: "Green",
+        WHITE_GREEN: "White-green",
+        BRIGHT_GREEN: "Bright green",
+        OLIVE_GREEN: "Oilive-green",
+        YELLOW_GREEN: "Yellow-green",
+        DARK_YELLOW: "Dark yellow",
+        ORANGE_RED: "Orange red",
+        GREY: "Grey",
+        GREY_GREEN: "Grey-green",
+        BROWN: "Brown",
+        PAPER_BROWN: "Paper brown",
+    },
+    usage: {
+        PERFUMERY: 'Perfumery',
+        TANNING: 'Tanning',
+        DYING: 'Dying',
+        BREWING: 'Brewing'
     }
 };

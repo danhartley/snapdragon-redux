@@ -9,6 +9,7 @@ export const renderSpinner = (config) => {
 
     const parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
     parent.innerHTML = '';
+    if(!config.region) return;
     renderTemplate({ area: config.region.text }, template.content, parent);
 
     const update = document.querySelector('.species-pending div:nth-child(4)');

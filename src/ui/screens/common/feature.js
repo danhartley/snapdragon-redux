@@ -19,7 +19,7 @@ export const featureType = (collection, item, traits, config, parent, featureTyp
         let label;
         switch(featureType) {
             case 'ecology': 
-                label = 'Habitats: ';
+                label = 'Habitat: ';
                 break;
             case 'symbionts':
                 label = 'Symbionts: ';

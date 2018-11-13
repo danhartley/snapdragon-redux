@@ -57,11 +57,11 @@ export const renderSpecimenMatch = collection => {
 
         const questionValue = layout.screens[1].type === 'binomial'
                 ? item.name
-                : itemProperties.vernacularName(item, config);
+                : item.vernacularName;
 
         const vernacularName = layout.screens[1].type === 'binomial'
                 ? ''
-                : itemProperties.vernacularName(item, config);
+                : item.vernacularName;
 
         question = { question: questionValue, binomial: item.name, vernacular: vernacularName };
 
@@ -130,7 +130,7 @@ export const renderSpecimenMatch = collection => {
         if(hint) {
             hint.classList.add('clickable');
             hint.addEventListener('click', () =>{
-                hint.innerHTML = `${itemProperties.vernacularName(item, config)} (${item.name})`;
+                hint.innerHTML = `${item.vernacularName} (${item.name})`;
             });
         }
 

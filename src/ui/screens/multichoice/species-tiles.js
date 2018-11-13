@@ -41,7 +41,7 @@ export const renderSpeciesTiles = (collection) => {
     parent = document.querySelector('.right-body .snapdragon-container');
 
     const name = item.name;
-    const vernacular = itemProperties.vernacularName(item, config);
+    const vernacular = item.vernacularName;
     template.innerHTML = speciesCard;
     renderTemplate( { name, vernacular, filter: '' }, template.content, parent);
     template.innerHTML = questionCard;

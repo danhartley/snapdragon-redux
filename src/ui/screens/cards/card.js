@@ -129,11 +129,9 @@ const renderPortrait = (item, config, traits, isModalMode) => {
 
 const renderCommonParts = (template, config, item, collection, traits, isModalMode, parent) => {
 
-    const species = item.name;    
-    const name = itemProperties.vernacularName(item, config);
-    const speciesName = itemProperties.speciesName(species);
-    const epithet = itemProperties.latin(speciesName);
-    const latin = epithet ? `${speciesName}: ${epithet.en}` : '';
+    const species = item.name;
+    const epithet = itemProperties.latin(item.speciesName);
+    const latin = epithet ? `${item.speciesName}: ${epithet.en}` : '';
     const rank = "species";
     const family = taxa.find(f => f.name === item.family);
     const familyName = family ? family.name : '';
@@ -158,7 +156,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     
     parent.innerHTML = '';
     
-    renderTemplate({ species, name, latin, rank, subSpeciesCount, familyName, itemImage, familyVernacularName, trait, nameCount }, template.content, parent, clone);
+    renderTemplate({ species, vernacularName: item.vernacularName, latin, rank, subSpeciesCount, familyName, itemImage, familyVernacularName, trait, nameCount }, template.content, parent, clone);
 
     const subspeciesBadge = document.querySelector('.js-subspecies-badge');
 

@@ -53,13 +53,13 @@ const item = {
 
 test('should return Menthe à longues feuilles for preferred french name', () => {
     const config = { language: 'fr'};
-    const fr = itemProperties.vernacularName(item, config);
+    const fr = itemProperties.getVernacularName(item, config);
     expect(fr).toEqual('Menthe à longues feuilles');
 });
 
 test('should return spearmint instead of missing preferred spanish name', () => {
     const config = { language: 'es'};
-    const es = itemProperties.vernacularName(item, config);
+    const es = itemProperties.getVernacularName(item, config);
     expect(es).toEqual('Spearmint');
 });
 
@@ -67,7 +67,7 @@ test('should return spearmint instead of missing preferred spanish name', () => 
 test('should return empty string when no match found for either english default or preferred spanish name', () => {
     const emptyItem = { names: [] };
     const config = { language: 'es'};
-    const es = itemProperties.vernacularName(emptyItem, config);
+    const es = itemProperties.getVernacularName(emptyItem, config);
     expect(es).toEqual('Unknown');
 });
 
@@ -96,13 +96,13 @@ test('should trim latin name', () => {
 test('should return genus name', () => {
   const item =  { name: 'Foeniculum vulgare' };
   const expected = 'Foeniculum';
-  expect(itemProperties.genusName(item.name)).toEqual(expected);
+  expect(itemProperties.getGenusName(item.name)).toEqual(expected);
 });
 
 test('should return species name', () => {
   const item =  { name: 'Foeniculum vulgare' };
   const expected = 'vulgare';
-  expect(itemProperties.speciesName(item.name)).toEqual(expected);
+  expect(itemProperties.getSpeciesName(item.name)).toEqual(expected);
 });
 
 test('should return vernacular family names when provided with latin name and language', () => {

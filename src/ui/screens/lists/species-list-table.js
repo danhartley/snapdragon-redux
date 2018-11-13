@@ -18,7 +18,6 @@ export const buildTable = (collection, config, traits) => {
 
     collection.items.forEach(item => { 
         item.image = item.list || item.images[0];
-        item.vernacularName = itemProperties.vernacularName(item, config, true);
         item.passes = item.passes || '--';
         item.fails = item.fails || '--';
         item.binomial = item.name;

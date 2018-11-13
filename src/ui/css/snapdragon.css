@@ -379,10 +379,17 @@ a.dropdown-item:hover {
 
 .header-text {
   color: var(--snap-text-medium-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 700;
 }
 
 .footer {  
   bottom: 0;
+  color: var(--snap-text-medium-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 700;
 }
 
 .left-body .footer, .right-body .footer {
@@ -601,21 +608,13 @@ a.dropdown-item:hover {
   height: 40vh;
 }
 
-.data-box, .id-box {  
+.id-box {  
   display: flex;
 }
 
 .id-box {
   border: 1px solid rgba(129, 67, 101, .3);
   padding: 1em 0;
-}
-
-.data-box > div {  
-  flex: 1;
-}
-
-.data-box > div:nth-child(2) {
-  flex: 2;
 }
 
 .id-box > div:nth-child(1) {
@@ -631,22 +630,32 @@ a.dropdown-item:hover {
   flex: 3 !important;
 }
 
-.data-box > div:nth-child(2), .id-box > div:nth-child(2) {  
-  padding: .25em .5em;
-  color: var(--snap-text-light);  
-  border-radius: .1rem;
-  display: flex;
-  flex-direction: column;
-  font-size: .9em;
-  max-width: 15em;;
+.data-box-container {
+  display: flex;  
 }
 
-.data-box > div:nth-child(2) {
-  text-align: left;
-  letter-spacing: .05em;
+.data-box-container div:nth-child(1) {
+  flex: 1;
+}
+
+.data-box {
   color: var(--snap-text-dark);
   border: .05em solid var(--snap-border-dark);
   background-color: var(--snap-grid-background);
+  text-align: left;
+}
+
+.taxon-data > span:nth-child(1) {
+  width: 5em;
+  text-align: right;
+  text-transform: capitalize;
+  padding: 0 .5em 0 0;
+  color: rgb(35,35,35);
+  background-color: rgba(128, 128, 128,.1);
+}
+
+.taxon-data > span:nth-child(2) {
+  padding: 0 .5em;
 }
 
 .id-box > div:nth-child(2) {  
@@ -663,17 +672,12 @@ a.dropdown-item:hover {
   flex-direction: row;
 }
 
-.taxon-data span:nth-child(1) {
-  flex: 1;  
-  text-transform: capitalize;
-}
-
-.taxon-data span:nth-child(2) {
-  flex: 2;
-}
-
 .taxon-data:nth-child(1) span:nth-child(2) {
   text-transform: uppercase;
+}
+
+.latin { 
+  font-style: italic;
 }
 
 .taxon-members {
@@ -1592,6 +1596,10 @@ iframe#birdsong {
   height: 60vh;
   border: 0;
   margin: 0 0 1em 0;
+}
+
+.modal-content .definition.revision.card {
+  margin: 0;
 }
 
 .definition.revision.card div>div {

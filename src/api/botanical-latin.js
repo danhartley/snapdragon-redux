@@ -582,4 +582,28 @@ export const epithets = [
         "latin" : ["calvus"],
         "en" : ["bald, without hair"]
     },
+    {
+        "latin" : ["thallus"],
+        "en" : ["a green shoot or twig"]
+    },
+    {
+        "latin" : ["vasculum"],
+        "en" : ["duct"]
+    },
+    {
+        "latin" : ["xylem"],
+        "en" : ["wood"]
+    },
+    {
+        "latin" : ["phloios"],
+        "en" : ["bark"]
+    },
+    {
+        "latin" : ["parietina"],
+        "en" : ["on walls"]
+    },
+    {
+        "latin" : ["eutrophos"],
+        "en" : ["well nourished"]
+    },
 ];

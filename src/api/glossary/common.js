@@ -45,4 +45,46 @@ export const commmon = [
         term: 'Genus',
         definition: 'Taxonomic category above species and below family.'
     },
+    {
+        term: 'Bioindicator',
+        definition: 'Species (an indicator species) or group of species whose function, population, or status reveals the qualitative status of the environment.'
+    },
+    {
+        term: 'Cellular differentiation',
+        definition: 'The process where a cell changes from one cell type to another.'
+    },
+    {
+        term: 'Vascular plants',
+        definition: 'Land plants with lignified tissues (xylem) for conducting water and minerals.'
+    },
+    {
+        term: 'Xylem',
+        definition: 'Tissue which transports water and nutrients from roots to shoots and leaves.'
+    },
+    {
+        term: 'Phloem',
+        definition: 'Tissue which transports products of photosynthesis ( e.g. sugars) throughout vascular plants (translocation).'
+    },
+    {
+        term: 'Frond',
+        definition: 'Large, divided leaf (also thallus).'
+    },
+    {
+        term: 'Propagule',
+        definition: 'Any material that functions in propagating an organism to the next stage in its life cycle, such as by dispersal.'
+    },
+    {
+        term: 'Eutrophication',
+        definition: 'When a body of water becomes overly enriched with minerals and nutrients that induce excessive growth of plants and algae.'
+    },
+    {
+        term: 'Eukaryotes',
+        definition: 'Organism with nucleus emclosed in a membrane.',
+        wiki: 'https://en.wikipedia.org/wiki/Eukaryote'
+    },
+    {
+        term: 'Endosymbiosis',
+        definition: 'One organism living within another.',
+        wiki: 'https://en.wikipedia.org/wiki/Symbiogenesis'
+    },
 ];

@@ -6,7 +6,7 @@
                 <div>
                     <div>
                         <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ nameCount }}</span>
-                        <span>{{ name }}</span>
+                        <span>{{ vernacularName }}</span>
                         <span class='rank'>{{ trait }}</span>
                     </div>
                     <div class="latin-name js-txt-species-name">
@@ -20,16 +20,13 @@
                 <img class="landscape" src="https://media.eol.org/content/{{ itemImage }}" alt="">
             </div>
         </div>                
-        <div class="landscape">
+        <div class="data-box-container landscape">                
+            <div></div>
             <div class="data-box">
-                <div></div>
-                <div>
-                    <div class="taxon-data"><span>Rank</span> <span>{{ rank }}</span></div>
-                    <div class="taxon-data"><span>Family</span> <span>{{ familyVernacularName }}</span></div>
-                    <div class="taxon-data"><span></span><span>{{ familyName }}</span></div>
-                </div>
-            </div>
-        </div>      
+                <div class="taxon-data"><span>Rank</span> <span>{{ rank }}</span></div>
+                <div class="taxon-data"><span>Family</span><span><span>{{ familyVernacularName }} </span><span class="latin">{{ familyName }}</span></span></div>
+            </div>                
+        </div>
         <hr class="landscape">
         <div class="landscape bird-song">
             <div class="hide-empty">

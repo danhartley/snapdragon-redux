@@ -40,6 +40,13 @@ const extendCollection = selectedCollection => {
         speciesVernacularNames: speciesVernacularNames
      };
 
+     collection.items.forEach(item => {
+        item.vernacularNames = itemProperties.getVernacularNames(item, config);
+        item.vernacularName = itemProperties.getVernacularName(item, config);
+        item.speciesName = itemProperties.getSpeciesName(item.name);
+        item.genusName = itemProperties.getGenusName(item.name);
+     });
+
      collections.forEach(c => {
         if(c.id === collection.id) {
             c = collection;

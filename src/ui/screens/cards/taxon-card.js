@@ -71,7 +71,7 @@ export const renderTaxonCard = collection => {
         const list = document.querySelector('#badgeListModal .js-modal-text');
         list.innerHTML = '';
         members.forEach(member => {
-            list.innerHTML += `<div>${member.name} (${itemProperties.vernacularName(member, config)})</div>`;
+            list.innerHTML += `<div>${member.name} (${item.vernacularName})</div>`;
         });
     });
 };

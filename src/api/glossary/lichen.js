@@ -1,13 +1,13 @@
 export const lichen = [
     {
         term: "Lichen",
-        definition: "Composite organism of algae or cyanobacteria and fungi living in a mutualistic relationship.",
+        definition: "Composite organism of algae or cyanobacteria (or rarely, both), fungi and yeast living in a mutualistic relationship.",
         wiki: "https://en.wikipedia.org/wiki/Lichen",
         level: 2
     },
     {
         term: "Fruticose",
-        definition: "Growing like tuft or multiple-branched leafless mini-shrub, upright or hanging down, flat or round 3D branches.",
+        definition: "Growing like tuft or multiple-branched leafless mini-shrub (beardy), upright or hanging down, flat or round 3D branches.",
         wiki: "https://en.wikipedia.org/wiki/Fruticose_lichen",
         level: 2
     },
@@ -19,7 +19,7 @@ export const lichen = [
     },
     {
         term: "Crustose",
-        definition: "Forming a crust that strongly adheres to a substrate.",
+        definition: "Forming a crust that strongly adheres to a substrate (crusty).",
         wiki: "https://en.wikipedia.org/wiki/Crustose_lichen",
         level: 2
     },
@@ -30,6 +30,12 @@ export const lichen = [
         level: 2
     },
     {
+        term: "Squamulose",
+        definition: "Composed of small, often overlapping squamules( scales).",
+        wiki: "https://en.wikipedia.org/wiki/Squamulose_lichen",
+        level: 2
+    },
+    {
         term: "Epiphyte",
         definition: "An organism that grows on the surface of a plant and derives its moisture and nutrients from the air, rain, water or surrounding debris.",
         wiki: "https://en.wikipedia.org/wiki/Epiphyte",
@@ -37,7 +43,7 @@ export const lichen = [
     },
     {
         term: "Thallus",
-        definition: "Nonreproductive tissues, or vegetative body part of a lichen. Usually visually prominent.", 
+        definition: "Nonreproductive, undifferentiated tissue, or vegetative body part of a lichen. Usually visually prominent.", 
         level: 2
     },
     {
@@ -59,5 +65,62 @@ export const lichen = [
         term: "Apothecium",
         definition: "Wide, open, saucer-shaped or cup-shaped fruit body. Sessile and fleshy.", 
         level: 2
+    },
+    {
+        term: 'Rhizine',
+        definition: 'Multiceullar, root-like structures which anchor licen to substrate.'
+    },
+    {
+        term: 'Erhizinate',
+        definition: 'Without rhizines.'
+    },
+    {
+        term: 'Hapter',
+        definition: 'Short, peg-like attachments of the lower surface of lichen to the substrate on which they grow.'
+    },
+    {
+        term: 'Soredium',
+        definition: 'Common reproductive structures of lichen.'
+    },
+    {
+        term: 'Cortex (lichen)',
+        definition: 'Composed of closely packed fungal hyphae that protects thallus from water loss (evaporation).'
+    },
+    {
+        term: 'Holdfast',
+        definition: 'Means by which a (bushy) lichen is attached to the substrate.'
+    },
+    {
+        term: 'Disc',
+        definition: 'Spore-bearing part of the fruiting body of a lichen.'
+    },
+    {
+        term: 'Lobe',
+        definition: 'Leaf-like part of a leafy (foliose) lichen.'
+    },
+    {
+        term: 'Medulla',
+        definition: 'Fungal part of the thallus situated below the skin like upper cortex.'
+    },
+    {
+        term: 'Mycobiont',
+        definition: 'Fungal component of a lichen.'
+    },
+    {
+        term: 'Photobiont',
+        definition: 'Photosynthetic partner in a lichen (alga or cyanobacterium).'
+    },
+    {
+        term: 'Cyanobacteria',
+        definition: 'Phylum of bacteria that obtain their energy through photosynthesis. They produce oxygen.'
+    },
+    {
+        term: '(Green) Algae',
+        definition: 'Heterogeneous grouping of eukaryotes photosynthesis'
+    },
+    {
+        term: 'Placodioid',
+        definition: 'Crustose lichen which radiates out from its centre.',
+        wiki: 'https://en.wikipedia.org/wiki/Placodioid_lichen'
     },
 ];

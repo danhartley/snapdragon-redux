@@ -99,12 +99,11 @@ export const renderMultiStrips = (collection) => {
 
         const number = config.isPortraitMode ? 6 : config.isLandscapeMode ? 6 : 6;
 
-        const vernacular = itemProperties.vernacularName(item, config);
         const questionText = config.isPortraitMode ? 'Select equivalent of common name' : `Select the latin equivalent of the common name`;
         const question = item.name;
         const answers = itemProperties.answersFromList(itemProperties.itemNamesForGroups(items), question, number);
 
-        const description = { vernacular, name: '---' };
+        const description = { vernacular: item.vernacularName, name: '---' };
 
         render(questionText, question, answers, speciesCard, description);
     }
@@ -116,7 +115,7 @@ export const renderMultiStrips = (collection) => {
         const number = config.isPortraitMode ? 6 : config.isLandscapeMode ? 6 : 6;
 
         const questionText = config.isPortraitMode ? 'Select equivalent of latin name' : `Select the common name equivalent of the latin`;
-        const question = itemProperties.vernacularName(item, config);        
+        const question = item.vernacularName;   
         const answers = itemProperties.answersFromList(itemProperties.vernacularNamesForGroups(items, config), question, number);
 
         const description = { vernacular: '---', name: item.name };

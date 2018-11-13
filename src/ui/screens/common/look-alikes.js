@@ -19,7 +19,7 @@ export const lookALikes = (collection, item, traits, config) => {
         const slides = [];
 
         let images = item.images.map((img, index) => { 
-            return { index: index + 1, src: img, itemName: item.name, itemCommon: itemProperties.vernacularName(item, config) };
+            return { index: index + 1, src: img, itemName: item.name, itemCommon: item.vernacularName };
         } );
 
         slides.push({ images });
@@ -29,9 +29,10 @@ export const lookALikes = (collection, item, traits, config) => {
         lookalikes.forEach(lookalike => {
             const lookalikeItem = collection.items.find(item => item.name === lookalike);
             if(!lookalikeItem) return;
-            names.push(itemProperties.vernacularName(lookalikeItem, config));
+            lookalikeItem.vernacularName = itemProperties.getVernacularName(lookalikeItem, config);
+            names.push(lookalikeItem.vernacularName);
             images = lookalikeItem.images.map((img, index) => { 
-                return { index: index + 1, src: img, itemName: lookalikeItem.name, itemCommon: itemProperties.vernacularName(lookalikeItem, config) };
+                return { index: index + 1, src: img, itemName: lookalikeItem.name, itemCommon: lookalikeItem.vernacularName };
             } );
             slides.push({ images });
         });

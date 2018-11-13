@@ -8,10 +8,6 @@
         margin: 0;
     }
 
-    .header-text {
-        font-size: 1.1em;
-    }
-
     .scrollable {
         overflow-y: scroll;
         height: 80vh;

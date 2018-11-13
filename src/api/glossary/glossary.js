@@ -2,6 +2,7 @@ import { plantae } from 'api/glossary/plantae';
 import { animalia } from 'api/glossary/animalia';
 import { commmon } from 'api/glossary/common';
 import { fungi } from 'api/glossary/fungi';
+import { lichen } from 'api/glossary/lichen';
 
 export const getGlossary = requiredGlossaries => {
     
@@ -20,6 +21,9 @@ export const getGlossary = requiredGlossaries => {
                 break;
             case 'fungi':
                 glossary = [ ...glossary, ...fungi ];
+                break;
+            case 'lichen':
+                glossary = [ ...glossary, ...lichen ];
                 break;
         }
     });

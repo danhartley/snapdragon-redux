@@ -277,7 +277,7 @@ export const fallMushroomsEasternUSA = {
 export const wildFoodUKTopTenBeginners = {
     ...mushroomCollection,
     id: 6,
-    name: '10 Safe Mushrooms for Beginners',
+    name: 'Mushrooms for Beginners',
     itemNames: [
         'Fistulina hepatica', 'Boletus edulis', 'Pleurotus ostreatus', 'Auricularia auricula-judae',
         'Calvatia gigantea', 'Hydnum repandum', 'Polyporus squamosus', 'Sarcoscypha coccinea',
@@ -340,7 +340,7 @@ const lichenCollection = {
     userLevel: 'Amateur lichenologists',
     lessonPlanLandscape: 3,
     lessonPlanPortrait: 103,
-    glossary: ['lichen'],
+    glossary: ['lichen', 'common'],
     course: 'Snapdragon'
 };
 
@@ -349,10 +349,13 @@ export const beginnersLichenology = {
     id: 9,
     name: 'Common Lichen',
     itemNames: [
-        'Xanthoria parietina', 'Physcia adscendens', 'Parmelia saxatilis', 'Graphis scripta'
+        'Xanthoria parietina', 'Physcia adscendens', 'Parmelia saxatilis', 'Graphis scripta',
+        'Ramalina farinacea', 'Evernia prunastri', 'Usnea florida'
     ],
     descriptions: [
-        'An introduction to common lichen.'
+        'Lichen are composite organisms formed from the symbiosis of a fungus (mycobiont) and a photosynthetic alga or cyanobacterium (photobiont).',
+        'Lichens grow on a range of substrates including bark and rock and \'in the air\' as epiphytes.',
+        'Lichens are important environmental indicators (bioindicators) notably air and water quality.'
     ],
     speciesCount: 0,
     familiesCount: 0,
