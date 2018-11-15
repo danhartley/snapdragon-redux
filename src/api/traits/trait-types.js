@@ -14,12 +14,13 @@ export let associate = english.associate;
 export let thallusType = english.thallusType;
 export let rhizineType = english.rhizineType;
 export let substrate = english.substrate;
-export let pollutionTolerance = english.pollutionTolerance;
-export let heavyMetalTolerance = english.heavyMetalTolerance;
+export let level = english.level;
 export let medicinalProperties = english.medicinalProperties;
 export let pHLevel = english.pHLevel;
 export let colour = english.colour;
 export let usage = english.usage;
+export let nonTaxaType = english.nonTaxaType;
+export let boolean = english.boolean;
 
 export const updateLanguage = (config) => {
     
@@ -53,12 +54,13 @@ export const updateLanguage = (config) => {
         thallusType,
         rhizineType,
         substrate,
-        pollutionTolerance,
-        heavyMetalTolerance,
+        level,
         medicinalProperties,
         pHLevel,
         colour,
-        usage
+        usage,
+        nonTaxaType,
+        boolean
     }
 
     actions.boundUpdateEnums(enums);   

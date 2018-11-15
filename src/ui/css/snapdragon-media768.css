@@ -29,7 +29,7 @@
         margin: 0;
     }
 
-    .species.revision.card {
+    .species.revision.card, .non-taxon.revision.card {
         margin: 0 0 1em 0;
       }
 
@@ -41,6 +41,10 @@
 
     .snapdragon-options .btn, .snapdragon-options .dropdown-menu.show {
         width: 20em;
+    }
+
+    .non-taxon-card .snapdragon-options {
+        text-align: right;
     }
 
     .species.card {

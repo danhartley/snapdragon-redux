@@ -123,4 +123,39 @@ export const lichen = [
         definition: 'Crustose lichen which radiates out from its centre.',
         wiki: 'https://en.wikipedia.org/wiki/Placodioid_lichen'
     },
+    {
+        term: 'Lecanorine',
+        definition: 'Shaped like a plate with a surrounding ring similar tissue to main non-fruiting body (after genus Lecanora).',
+        wiki: 'https://en.wikipedia.org/wiki/Lecanorine_lichen'
+    },
+    {
+        term: 'Apothecium',
+        definition: 'Wide, open, saucer-shaped or cup-shaped fruit body.',
+        wiki: 'https://en.wikipedia.org/wiki/Ascocarp#Apothecium'
+    },
+    {
+        term: 'Ascus',
+        definition: 'Spore-bearing cell produced in ascomycete fungi.',
+        wiki: 'https://en.wikipedia.org/wiki/Ascus'
+    },
+    {
+        term: 'Ascomycota, Ascomycetes (Sac fungi)',
+        definition: 'One of two main fungi divisions (phylum), characterised by spore-containing ascus. Majority of fungal symbionts in lichens are ascomycetes',
+        wiki: 'https://en.wikipedia.org/wiki/Ascomycota'
+    },
+    {
+        term: 'Basidiomycota, Basidiomycetes (Mushrooms)',
+        definition: 'Reproduce sexually via formation of specialised end cells (basidia) bearing external meiospores.',
+        wiki: 'https://en.wikipedia.org/wiki/Basidiomycota'
+    },
+    {
+        term: 'Soredium',
+        definition: 'Powdery (asexual) reproductive structure (propagule) composed of fungal hyphae wrapped around the photobiont.',
+        wiki: 'https://en.wikipedia.org/wiki/Soredium'
+    },
+    {
+        term: 'Isidium',
+        definition: 'Vegetative (asexual) reproductive structure. Outgrowths from the thallus.',
+        wiki: 'https://en.wikipedia.org/wiki/Isidium'
+    },
 ];

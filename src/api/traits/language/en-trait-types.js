@@ -31,7 +31,12 @@ export const english = {
         LOBE_WIDTH: "Lobe width",
         LOBE_LENGTH: "Lobe length",
         LOBE_DIAMETER: "Lobe diameter",
-        ACID_RAIN: "Acid rain tolerance"
+        ACID_RAIN: "Acid rain tolerance",
+        FORM : 'Form',
+        LIFE_SPAN: "Life span",
+        BIOINDICATOR: 'Bioindicator',
+        SUBSTRATE_ADHERANCE: 'Substrate adherance',
+        RANK: 'Rank'
     },
     howEdible : {
         CHOICE : 'Choice',
@@ -73,7 +78,8 @@ export const english = {
         ROCK: 'Rock',
         FENCES: 'Fences',
         TREES: "Trees",
-        SHRUBS: "Shrubs"
+        SHRUBS: "Shrubs",
+        EXPOSED_WOOD: "Exposed wood"
     },
     ecoType : {
         SAPROTROPHIC : 'Saprotrophic',
@@ -149,6 +155,7 @@ export const english = {
         FOLIOSE: 'Foliose',
         FRUTICOSE: 'Fruticose',
         CRUSTOSE: 'Crustose',
+        SQUAMULOSE: 'Squamulose',
         LEPROSE: 'Leprose',
         EPIPHYTE: "Epiphyte"
     },
@@ -159,21 +166,23 @@ export const english = {
     substrate : {
         WOOD: 'Wood',
         BARK: 'Bark',
-        ROCK: 'Rock'
+        ROCK: 'Rock',
+        SOIL: 'Soil'
     },
-    pollutionTolerance : {
+    level : {
         HIGH: 'High',
         MEDIUM: 'Medium',
-        LOW: 'Low'
-    },
-    heavyMetalTolerance: {
-        HIGH: 'High',
-        MEDIUM: 'Medium'
+        LOW: 'Low',
+        VARIABLE: 'Variable'
     },
     medicinalProperties : {
         ANTIVIRAL: 'Antiviral',
-        ANTISPETIC: "Antiseptic",
-        ANTI_INFLAMMATORY: "Anti-inflammatory"
+        ANTISEPTIC: "Antiseptic",
+        ANTI_INFLAMMATORY: "Anti-inflammatory",
+        ANTIBIOTIC: 'Antibiotic',
+        ANLAGESIC: 'Analgesic',
+        ANTIBACTERIAL: 'Antibacterial',
+        ANTICOAGULANT: 'Anticoagulant'
     },
     pHLevel : {
 
@@ -184,7 +193,8 @@ export const english = {
         GREEN: "Green",
         WHITE_GREEN: "White-green",
         BRIGHT_GREEN: "Bright green",
-        OLIVE_GREEN: "Oilive-green",
+        OLIVE_GREEN: "Olive-green",
+        BRIGHT_YELLOW_GREEN: "Bright yellow-green",
         YELLOW_GREEN: "Yellow-green",
         DARK_YELLOW: "Dark yellow",
         ORANGE_RED: "Orange red",
@@ -197,6 +207,18 @@ export const english = {
         PERFUMERY: 'Perfumery',
         TANNING: 'Tanning',
         DYING: 'Dying',
-        BREWING: 'Brewing'
+        BREWING: 'Brewing',
+        FOOD: 'Food',
+        BIRDS_NEST: "Bird\'s nest",
+        POISON: 'Poison'
+    },
+    nonTaxaType: {
+        FORM : 'Form'
+    },
+    boolean: {
+        YES: 'Yes',
+        NO: 'NO',
+        BOTH: 'Both',
+        OR: 'Or'
     }
 };

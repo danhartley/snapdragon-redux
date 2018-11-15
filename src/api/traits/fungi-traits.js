@@ -1,5 +1,3 @@
-// import * as R from 'ramda';
-
 import * as traitEnums from 'api/traits/trait-types';
 
 export const fungiDescriptions = [
@@ -784,21 +782,21 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}` },
         { name: SD.name.RHIZINE_TYPE, value: `${SD.rhizineType.SPARSE}, ${SD.rhizineType.HAPTER}` },
         { name: SD.name.ASSOCIATE, value: `${SD.associate.ALGA}`, photobiont: 'Trebouxia' },
-        { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.pollutionTolerance.HIGH}`},
-        { name: SD.name.HEAVY_METAL_TOLERANCE, value: `${SD.heavyMetalTolerance.MEDIUM}`},
+        { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.HIGH}`},
+        { name: SD.name.HEAVY_METAL_TOLERANCE, value: `${SD.level.MEDIUM}`},
         { name: SD.name.MEDICINAL_PROPERTIES, value: `${SD.medicinalProperties.ANTIVIRAL}`},
         { name: SD.name.DISC_WIDTH, value: `<8cm`},
         { name: SD.name.COLOUR, value: `${SD.colour.DARK_YELLOW} - ${SD.colour.ORANGE_RED}`},
         { name: SD.name.LOBE_DIAMETER, value: `1-4mm`},
     ]},
     { name: 'Ramalina fastigiata', traits: [
-        { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.pollutionTolerance.HIGH}`}
+        { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.HIGH}`}
     ]},
     { name: 'Ramalina farinacea', traits: [
         { name: SD.name.HABITAT, values: [ SD.habitats.BARK, SD.habitats.WOOD, SD.habitats.ROCK ] },
-        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}, ${SD.thallusType.EPIPHYTE}` },
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FRUTICOSE}, ${SD.thallusType.EPIPHYTE}` },
         { name: SD.name.ASSOCIATE, value: `${SD.associate.ALGA}`, photobiont: 'Trebouxia' },
-        { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.pollutionTolerance.HIGH}`},
+        { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.HIGH}`},
         { name: SD.name.COLOUR, value: `${SD.colour.GREEN} - ${SD.colour.GREY}`},
         { name: SD.name.DISC_WIDTH, value: `3-8cm`},
         { name: SD.name.LOBE_LENGTH, value: `1-5cm`},
@@ -808,7 +806,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.HABITAT, values: [ SD.treeTypes.OAK, SD.treeTypes.DECIDUOUS, SD.treeTypes.FIR, SD.treeTypes.PINE, SD.habitats.FENCES ] },
         { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}` },
         { name: SD.name.ASSOCIATE, value: `${SD.associate.ALGA}`, photobiont: '' },
-        { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.pollutionTolerance.MEDIUM}`},
+        { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.MEDIUM}`},
         { name: SD.name.DISC_WIDTH, value: `3-4cm`},
         { name: SD.name.COLOUR, value: `${SD.colour.YELLOW} - ${SD.colour.OLIVE_GREEN}`},
         { name: SD.name.USAGE, value: `${SD.usage.PERFUMERY}`},
@@ -818,7 +816,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.HABITAT, values: [ SD.treeTypes.DECIDUOUS ] },
         { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.CRUSTOSE}` },
         { name: SD.name.ASSOCIATE, value: `${SD.associate.FUNGUS}`, photobiont: 'Stigmidium microspilum.' },
-        { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.pollutionTolerance.HIGH}`},
+        { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.HIGH}`},
         { name: SD.name.COLOUR, value: `${SD.colour.WHITE_GREEN} - ${SD.colour.GREY_GREEN}`},
     ]},
     { name: 'Lobaria pulmonaria', traits: [
@@ -826,13 +824,33 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.HABITAT, values: [ SD.treeTypes.OAK, SD.treeTypes.BEECH, SD.treeTypes.MAPLE, SD.habitats.ROCK ] },
         { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}, ${SD.thallusType.EPIPHYTE}` },
         { name: SD.name.ASSOCIATE, value: `${SD.associate.ALGA}, ${SD.associate.CYNOBACTERIUM}`, photobiont: 'Dictyochloropsis reticulata' },        
-        { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.pollutionTolerance.LOW}`},
-        { name: SD.name.ACID_RAIN, value: `${SD.pollutionTolerance.LOW}`},
+        { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.LOW}`},
+        { name: SD.name.ACID_RAIN, value: `${SD.level.LOW}`},
         { name: SD.name.COLOUR, value: `${SD.colour.BRIGHT_GREEN} - ${SD.colour.PAPER_BROWN}`},
         { name: SD.name.DISC_WIDTH, value: `5-15cm`},
         { name: SD.name.LOBE_WIDTH, value: `1-3cm`},
         { name: SD.name.LOBE_LENGTH, value: `<7cm`},
-        { name: SD.name.MEDICINAL_PROPERTIES, value: `${SD.medicinalProperties.ANTISPETIC}, ${SD.medicinalProperties.ANTI_INFLAMMATORY}`},
+        { name: SD.name.MEDICINAL_PROPERTIES, value: `${SD.medicinalProperties.ANTISEPTIC}, ${SD.medicinalProperties.ANTI_INFLAMMATORY}`},
         { name: SD.name.USAGE, value: `${SD.usage.PERFUMERY}, ${SD.usage.TANNING}, ${SD.usage.DYING}, ${SD.usage.BREWING}`},
+    ]},
+    { name: 'Letharia vulpina', traits: [
+        { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.EXPOSED_WOOD}` },
+        { name: SD.name.HABITAT, values: [ SD.treeTypes.OAK, SD.treeTypes.CONIFERS ] },
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FRUTICOSE}}` },
+        { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.VARIABLE}`},
+        { name: SD.name.COLOUR, value: `${SD.colour.BRIGHT_YELLOW_GREEN}`},
+        { name: SD.name.DISC_WIDTH, value: `2-7cm`},
+        { name: SD.name.MEDICINAL_PROPERTIES, value: `${SD.medicinalProperties.ANTIBACTERIAL}, ${SD.medicinalProperties.ANTICOAGULANT}`},
+        { name: SD.name.USAGE, value: `${SD.usage.DYING}, ${SD.usage.POISON}`},
+    ]},
+    { name: 'Parmelia saxatilis', traits: [
+        // { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.EXPOSED_WOOD}` },
+        // { name: SD.name.HABITAT, values: [ SD.treeTypes.OAK, SD.treeTypes.CONIFERS ] },
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}}` },
+        // { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.VARIABLE}`},
+        // { name: SD.name.COLOUR, value: `${SD.colour.BRIGHT_YELLOW_GREEN}`},
+        // { name: SD.name.DISC_WIDTH, value: `2-7cm`},
+        // { name: SD.name.MEDICINAL_PROPERTIES, value: `${SD.medicinalProperties.ANTIBACTERIAL}, ${SD.medicinalProperties.ANTICOAGULANT}`},
+        // { name: SD.name.USAGE, value: `${SD.usage.DYING}, ${SD.usage.POISON}`},
     ]},
 ];};

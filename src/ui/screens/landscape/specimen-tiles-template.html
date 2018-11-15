@@ -1,8 +1,9 @@
 <div class="snapdragon-container">
     <div class="squares js-tiles" data-repeat-image="{{ images }}">
         <div class="square"                    
-                style="cursor: pointer; background-image: url('https://media.eol.org/content/{{ image }}'); background-size: cover;  background-position: center;"
+                style="cursor: pointer; background-image: url('https://media.eol.org/content/{{ image.url }}'); background-size: cover;  background-position: center;"
                 data-toggle="modal" data-target="#imageModal"
+                data-itemname="{{ image.itemName }}" 
                 data-src="https://media.eol.org/content/{{ image }}">
                 <div class="layer"></div>
         </div>

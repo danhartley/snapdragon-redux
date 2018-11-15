@@ -9,6 +9,8 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { taxa } from 'api/snapdragon/taxa';
 import { lookALikes } from 'ui/screens/common/look-alikes';
 import { getTraits } from 'api/traits/traits';
+import { renderFeatures } from 'ui/screens/common/feature';
+import * as traitTypes from 'api/traits/trait-types';
 import specimenCommonMatchTemplate from 'ui/screens/multichoice/visual-match-template.html';
 
 export const renderSpecimenMatch = collection => {
@@ -33,21 +35,7 @@ export const renderSpecimenMatch = collection => {
         let identification;
         let questionTxt = 'Can you identify this species?';
 
-        if(config.isLandscapeMode) {
-            const taxon = taxa.find(t => t.name === item.genus);
-            identification = taxon ? `Genus: ${taxon.descriptions[0].identification}` : '';
-            item.keyTrait = `
-                ${utils.capitaliseFirst(enums.name.HOW_EDIBLE)}: 
-                ${itemProperties.getActiveTrait(getTraits(enums), item.name, [{ name: enums.name.HOW_EDIBLE, formatter: trait => trait.value }])}
-            `;
-        }
-
-        descriptions = [
-            questionTxt,
-            '',
-            identification,
-            item.keyTrait
-        ];
+        descriptions = [ questionTxt ];
         
         const number = config.isPortraitMode ? 4 : 6;
 
@@ -69,6 +57,13 @@ export const renderSpecimenMatch = collection => {
         
         if(config.isPortraitMode) {
             document.querySelector('.js-txt-question').innerHTML = questionTxt;
+        } 
+        
+        if(config.isLandscapeMode) {
+            const taxon = taxa.find(t => t.name === item.genus);
+            identification = taxon ? `Genus: ${taxon.descriptions[0].identification}` : '';
+            const traits = getTraits(enums);
+            renderFeatures(item, traits, config, document.querySelector('.js-key-traits'),[traitTypes.name.ECOLOGY,traitTypes.name.SYMBIONTS, traitTypes.name.THALLUS_TYPE, traitTypes.name.HABITAT]);
         }
     }
 

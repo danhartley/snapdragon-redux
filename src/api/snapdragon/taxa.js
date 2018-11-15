@@ -2305,11 +2305,12 @@ export const taxa = [
                 summary: 'Grow on acid substrates. While some grow directly of tree bark, others grow on rotting wood, among moss, or directly on bare soil surfaces.',
                 identification: 'Classic composition is a number of small leaf-like basal squamules from which grow upright structures (podetia) bearing the fruiting bodies.'
             }
-        ]
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Cladonia"
     },
     {
         taxon: 'genus',
-        name: 'Peltigeras',
+        name: 'Peltigera',
         names: [ { language: "en", names: ['Felt Lichens']}],
         traits: [ 
             { language: "en", name: 'Associate with', values: [ SD.associate.CYNOBACTERIUM ] },          
@@ -2320,27 +2321,35 @@ export const taxa = [
                 summary: 'Grow on acid substrates. While some grow directly of tree bark, others grow on rotting wood, among moss, or directly on bare soil surfaces.',
                 identification: 'Foliose, large (20-30 cm in diameter), grey-brown, darker, glossy when wet.'
             }
-        ]
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Peltigera"
     },
     {
         taxon: 'genus',
         name: 'Usnea',
-        names: [ { language: "en", names: ['Old Man\'s Beard']}],
+        phylum: 'Ascomycota',
+        species: 87,
+        names: [ { language: "en", names: ['Old Man\'s Beard', 'Beard Lichen']}],
         traits: [ 
             { language: "en", name: 'Associate with', values: [ SD.associate.ALGA ] },          
         ],
         descriptions: [
             {
                 language: 'en',
+                type: SD.thallusType.FRUTICOSE,
+                ecology: { name: SD.name.ACID_RAIN, value: `${SD.level.LOW}`},
+                medicinal: { name: SD.name.MEDICINAL_PROPERTIES, value: `${SD.medicinalProperties.ANTISEPTIC}, ${SD.medicinalProperties.ANTI_INFLAMMATORY}, ${SD.medicinalProperties.ANTIBIOTIC}, ${SD.medicinalProperties.ANLAGESIC}`},
+                usage: { name: SD.name.USAGE, value: `${SD.usage.PERFUMERY}, ${SD.usage.DYING}`},
                 summary: 'Numerous. Found in areas of low atmospheric pollution.',
-                identification: 'Stringy or fibrous appearance, fruticose, usually found on tree bark.'
+                identification: 'Stringy or fibrous appearance, fruticose, usually found on tree bark. Branches somewhat elastic.'
             }
-        ]
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Usnea"
     },
     {
         taxon: 'genus',
         name: '',
-        names: [ { language: "en", names: ['Script Lichen']}],
+        names: [ { language: "en", names: ['Script Lichens']}],
         traits: [ 
             { language: "en", name: 'Associate with', values: [ SD.associate.ALGA ] },          
         ],
@@ -2349,6 +2358,83 @@ export const taxa = [
                 language: 'en',
                 summary: 'Common on smooth-barked trees, especially those in shade.',
                 identification: 'Long drawn-out apothecia with appearance of hieroglyphics or handwriting.'
+            }
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Script_lichen"
+    },
+    {
+        taxon: 'genus',
+        name: 'Lecanora',
+        names: [ { language: "en", names: ['Rim lichens']}],
+        traits: [ 
+            { language: "en", name: 'Associate with', values: [ SD.associate.ALGA ] },          
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: '',
+                identification: 'Roughly circular fruiting discs (apothecia) with rims of photosynthetic tissue similar to thallus.'
+            }
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Lecanora"
+    },
+    {
+        taxon: 'genus',
+        name: 'Ramalina',
+        names: [ { language: "en", names: ['Strap lichens, Cartilage lichens']}],
+        traits: [ 
+            { language: "en", name: 'Associate with', values: [ SD.associate.ALGA ] },          
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: '',
+                identification: 'Lecanorine. Greenish fruticose lichens that grow in the form of flattened, strap-like branches.'
+            }
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Ramalina"
+    },
+    {
+        taxon: 'genus',
+        name: 'Evernia',
+        names: [ { language: "en", names: ['Strap lichens, Cartilage lichens']}],
+        traits: [ 
+            { language: "en", name: 'Associate with', values: [ SD.associate.ALGA ] },          
+        ],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Abundant, grows on trees. Oakmoss (Evernia prunastri) used as a fixative agent in Eau de Cologne',
+                identification: 'Green on top, white on bottom, divides evenly into "forks". Very soft when wet.'
+            }
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Evernia"
+    },
+    {
+        taxon: 'phylum',
+        name: 'Ascomycota',
+        names: [ { language: "en", names: ['Sac Fungi']}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: '',
+                identification: '',
+                keyMembers: [],
+                usage: []
+            }
+        ]
+    },
+    {
+        taxon: 'phylum',
+        name: 'Basidiomycota',
+        names: [ { language: "en", names: ['Mushrooms, etc.']}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: '',
+                identification: '',
+                keyMembers: [],
+                usage: []
             }
         ]
     },

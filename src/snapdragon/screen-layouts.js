@@ -124,6 +124,16 @@ const taxon = {
   domain: 'collection'
 };
 
+const nonTaxon = {
+  name: 'non-taxon-card',
+  domain: 'collection'
+};
+
+const nonTaxonSpecimenTiles = {
+  name: 'non-taxon-specimen-tiles',
+  domain: 'collection'
+};
+
 const cultivarCard = {
   name: 'cultivar-card',
   domain: 'collection'
@@ -184,6 +194,8 @@ export const screens = {
   familyStrips,
   
   taxon,
+  nonTaxon,
+  nonTaxonSpecimenTiles,
   textComplete,
   cultivarCard,
   cultivar,

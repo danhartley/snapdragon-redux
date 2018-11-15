@@ -11,7 +11,7 @@ const collections = snapdragonCollections;
 
 const extendCollection = selectedCollection => {
 
-    const { config } = store.getState();
+    const { config, enums } = store.getState();
 
     const moduleSize = selectedCollection.moduleSize || config.moduleSize;
 

@@ -7,7 +7,6 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { taxa } from 'api/snapdragon/taxa';
 import { syndromes } from 'api/snapdragon/syndromes';
 import wildcardTemplate from 'ui/screens/cards/wildcard-card-template.html';
-import { symbionts } from 'api/snapdragon/symbiosis';
 
 export const renderWildcard = collection => {
 

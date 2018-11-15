@@ -3,6 +3,7 @@ import { renderSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
 import { renderHistory } from 'ui/screens/progress/history';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
+import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { renderSpeciesTiles } from 'ui/screens/multichoice/species-tiles';
 import { renderSummary } from 'ui/screens/progress/summary';
 import { renderLeafTile } from 'ui/screens/landscape/leaf-tile';
@@ -18,10 +19,12 @@ import { renderSpecimenMatch } from 'ui/screens/multichoice/visual-match';
 import { renderDefinitionCard } from 'ui/screens/cards/definition-card';
 import { renderMixedSpecimenTiles } from 'ui/screens/multichoice/mixed-specimen-tiles';
 import { renderMixedSpecimenQuestions } from 'ui/screens/multichoice/mixed-specimen-questions';
+import { renderNonTaxonCardSpecimenTiles } from 'ui/screens/cards/non-taxon-card-specimen-tiles';
 
 const functions = [
     { name: 'mixed-specimen-tiles', func: renderMixedSpecimenTiles },
     { name: 'mixed-specimen-questions', func: renderMixedSpecimenQuestions },
+    { name: 'non-taxon-specimen-tiles', func: renderNonTaxonCardSpecimenTiles },
     { name: 'text-entry', func: renderTextEntry },
     { name: 'specimen-images', func: renderSpecimenTiles },
     { name: 'collection', func: renderSpeciesCollectionList },
@@ -40,6 +43,7 @@ const functions = [
     { name: 'cultivar-match', func: renderRadioButtons },
     { name: 'family-strips', func: renderMultiStrips },
     { name: 'taxon-card', func: renderTaxonCard },
+    { name: 'non-taxon-card', func: renderNonTaxonCard },
     { name: 'text-complete', func: renderCompleteText },
     { name: 'cultivar-card', func: renderCultivarCard },
     { name: 'wildcard-card', func: renderWildcard },

@@ -606,4 +606,8 @@ export const epithets = [
         "latin" : ["eutrophos"],
         "en" : ["well nourished"]
     },
+    {
+        "latin" : ["askos"],
+        "en" : ["sac, wineskin"]
+    },
 ];

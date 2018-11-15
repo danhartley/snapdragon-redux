@@ -5,11 +5,11 @@ import { screens } from 'snapdragon/screen-layouts';
 const { 
     specimen, speciesCard, species, vernaculars, scientifics, text, 
     command, leaf, leafName, 
-    family, familyStrips, taxon, textComplete, cultivar, cultivarCard, 
+    family, familyStrips, taxon, nonTaxon, textComplete, cultivar, cultivarCard, 
     epithets, wildcardCard, wildcard, definitions, 
     specimenCommonMatch, specimenLatinMatch,
     definitionCard, traitProperty,
-    mixedSpecimenTiles,
+    mixedSpecimenTiles, nonTaxonSpecimenTiles,
     mixedSpecimenQuestions } = screens;
 
 const mixedSpeciesMatch = {
@@ -51,6 +51,20 @@ const taxonRevision = {
     screens: [
         { ...specimen },
         { ...taxon }
+    ]
+};
+
+const nonTaxonRevision = {
+    name: 'screen-non-taxon-card',
+    type:'revision',
+    score: 0,
+    kind: 'F',
+    points: 0,
+    given: 'Study',
+    requirement: 'Group summary',
+    screens: [
+        { ...nonTaxonSpecimenTiles },
+        { ...nonTaxon }
     ]
 };
 
@@ -437,7 +451,8 @@ const landscapeLesson3 = {
             name:'Level 1',
             description: 'Species recognition',
             layouts: [ 
-                speciesRevision,                                 
+                // speciesRevision,
+                nonTaxonRevision,                                 
                 multiSpecimenCommonMatch,
                 mixedSpeciesMatch
             ],
@@ -572,7 +587,8 @@ const portraitLesson3 = {
             name:'Level 1',
             description: 'Species recognition',
             layouts: [ 
-                speciesRevision,                                 
+                // speciesRevision,   
+                nonTaxonRevision,                              
                 multiSpecimenCommonMatch,
                 mixedSpeciesMatch
             ],

@@ -79,6 +79,10 @@ hr {
   background-color: var(--snap-collection);
 }
 
+.btn-non-taxa {
+  background-color: rgb(165, 159, 131);
+}
+
 .btn-lesson {
   background-color: var(--snap-lesson);
 }
@@ -274,14 +278,17 @@ a.dropdown-item:hover {
   display: flex;
   flex-direction: column;
   padding: .5em;
-  /* background-color: var(--snap-container-background); */
   background-color: rgb(230, 232, 215);
   justify-content: space-between;
 }
 
-.taxon.revision.card, .species.revision.card, .cultivar.revision.card {
+.taxon.revision.card, .species.revision.card, .cultivar.revision.card, .non-taxon.revision.card {
   margin: 0 0 1em 0;
   justify-content: space-between;
+}
+
+.non-taxon.revision.card {
+  background-color: rgb(205, 212, 216);
 }
 
 .species.revision.card {
@@ -381,7 +388,6 @@ a.dropdown-item:hover {
   color: var(--snap-text-medium-dark);
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  font-weight: 700;
 }
 
 .footer {  
@@ -389,7 +395,6 @@ a.dropdown-item:hover {
   color: var(--snap-text-medium-dark);
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  font-weight: 700;
 }
 
 .left-body .footer, .right-body .footer {
@@ -628,6 +633,11 @@ a.dropdown-item:hover {
 
 .id-box > div:nth-child(2) {
   flex: 3 !important;
+  padding: 0 0 0 .5em;
+  text-align: left;
+  flex: auto;
+  color: var(--snap-text-dark);
+  border-left: .25em dotted var(--snap-progress-bar);
 }
 
 .data-box-container {
@@ -656,13 +666,6 @@ a.dropdown-item:hover {
 
 .taxon-data > span:nth-child(2) {
   padding: 0 .5em;
-}
-
-.id-box > div:nth-child(2) {  
-  text-align: left;
-  flex: auto;
-  color: var(--snap-text-dark);
-  border-left: .25em solid var(--snap-id-border);
 }
 
 .taxon-data {
@@ -1033,7 +1036,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: var(--snap-alert);
 }
 
-.species-card-images {
+.species-card-images, .non-taxon-card-images {
   width: 100%;
   height: initial;
   display: grid;
@@ -1300,8 +1303,10 @@ table {
 }
 
 .badge-light {
-  color: var(--snap-text-light);
-  background-color: var(--snap-collection);
+  /* color: var(--snap-text-light);
+  background-color: var(--snap-collection); */
+  color: inherit;
+  background-color: transparent;
   margin: -.25em 0 0 .25em;
   padding: .4em .4em .3em .4em;
 }

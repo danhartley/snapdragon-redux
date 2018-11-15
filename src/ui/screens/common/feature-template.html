@@ -1,1 +1,4 @@
-<div><span class="feature-label">{{ label }}</span><span>{{ feature }}</span></div>
+<div data-repeat-feature="{{ features }}">
+    <span class="feature-label">{{ feature.label }}</span><span>{{ feature.feature }}</span>
+    <br>
+</div>

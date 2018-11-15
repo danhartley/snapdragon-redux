@@ -350,7 +350,15 @@ export const beginnersLichenology = {
     name: 'Common Lichen',
     itemNames: [
         'Xanthoria parietina', 'Physcia adscendens', 'Parmelia saxatilis', 'Graphis scripta',
-        'Ramalina farinacea', 'Evernia prunastri', 'Usnea florida'
+        'Ramalina farinacea', 'Evernia prunastri', 'Usnea florida', 
+        'Xanthoparmelia mougeotii', 'Physcia tenella', 'Placynthium nigrum', 'Physcia aipolia',
+        'Physcia adscendens', 'Rhizocarpon geographicum', 'Ochrolechia parella',
+        'Platismatia glauca', 'Diploicia canescens', 'Graphina anguina',
+        'Caloplaca aurantia', 'Lecanora muralis', 'Usnea subfloridana',
+        'Cladonia pocillum', 'Peltigera membranacea', 'Cladonia portentosa', 'Cladonia squamosa',
+        'Ramalina fastigiata', 'Flavoparmelia caperata', 'Parmotrema perlatum', 'Parmelia sulcata',
+        'Lecidella elaeochroma', 'Lecanora chlarotera'
+        // 'Caloplaca flavescens'
     ],
     descriptions: [
         'Lichen are composite organisms formed from the symbiosis of a fungus (mycobiont) and a photosynthetic alga or cyanobacterium (photobiont).',

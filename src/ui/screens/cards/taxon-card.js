@@ -11,7 +11,7 @@ import taxonTemplate from 'ui/screens/cards/taxon-template.html';
 export const renderTaxonCard = collection => {
   
     const item = collection.nextItem;
-    const { lessonPlan, config, collections } = store.getState();
+    const { lessonPlan, config } = store.getState();
 
     item.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
     item.layoutCount = lessonPlan.layouts.length;

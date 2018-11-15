@@ -521,7 +521,20 @@ export const lichen = [
       "id": 998440,
       "name": "Caloplaca flavescens",
       "images": [],
-      "names": [],
+      "names": [
+        {
+          "vernacularName": "Hepp's Schönfleck",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Hepp's Schönfleck",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Strahlige Schönflechte",
+          "language": "de"
+        },
+      ],
       "taxonomy": {
         "usageKey": 2610170,
         "scientificName": "Caloplaca flavescens (Huds.) J.R.Laundon",
@@ -583,7 +596,11 @@ export const lichen = [
         {
           "vernacularName": "Salted Shield Lichen",
           "language": "en"
-        }
+        },
+        {
+          "vernacularName": "Crottle",
+          "language": "en"
+        },
       ],
       "taxonomy": {
         "usageKey": 2605955,
@@ -920,7 +937,15 @@ export const lichen = [
           "vernacularName": "pencilmark lichen",
           "language": "en",
           "eol_preferred": true
-        }
+        },
+        {
+          "vernacularName": "script lichen",
+          "language": "en",          
+        },
+        {
+          "vernacularName": "secret writing lichen",
+          "language": "en",          
+        },
       ],
       "taxonomy": {
         "usageKey": 7249709,
@@ -1237,10 +1262,6 @@ export const lichen = [
           "vernacularName": "farinose cartilage lichen",
           "language": "en",
           "eol_preferred": true
-        },
-        {
-          "vernacularName": "A lichen",
-          "language": "en"
         },
         {
           "vernacularName": "Dotted Ramalina",
