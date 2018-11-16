@@ -43,18 +43,28 @@ export const listenToItemChanges = listener => {
     listeners.push(listener);
 };
 
-export async function itemHandler(collection, config, callback) {
-    
-    collection.items = await getItems(collection);
-
-    collection.items.filter(item => item).forEach((item,index)=>{
-        item.snapIndex = index + 1;
-        item.collectionId =  collection.id;
+export const keepItems = collection => {
+    return new Promise(resolve => {
+        resolve(collection.items);
     });
+}
 
-    collection = speciesStateHelper.extendCollection(collection);
+export async function itemHandler(collection, config, counter, callback) {
+    
+    if(counter.isLessonPaused || counter.isLessonRehydrated) {
+        collection.items = await keepItems(collection);
+    } else {    
+        collection.items = await getItems(collection);
 
-    actions.boundChangeCollection({ config, collection });
+        collection.items.filter(item => item).forEach((item,index)=>{
+            item.snapIndex = index + 1;
+            item.collectionId =  collection.id;
+        });
+
+        collection = speciesStateHelper.extendCollection(collection);
+
+        actions.boundChangeCollection({ config, collection });
+    }
 
     callback();
     listeners.forEach(listener => listener());

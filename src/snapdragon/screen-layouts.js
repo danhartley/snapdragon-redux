@@ -1,7 +1,7 @@
 const specimen = {
   name: 'specimen-images',
   domain: 'collection',
-  template: 'js-specimen-images-template'     
+  // template: 'js-specimen-images-template'     
 };
 
 const history = { 
@@ -13,7 +13,7 @@ const history = {
 const speciesCard = {
   name: 'species-card',
   domain: 'collection',
-  template: 'js-card-revision-template'
+  // template: 'js-card-revision-template'
 };
 
 const definitionCard = {

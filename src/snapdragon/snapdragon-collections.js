@@ -361,9 +361,9 @@ export const beginnersLichenology = {
         // 'Caloplaca flavescens'
     ],
     descriptions: [
-        'Lichen are composite organisms formed from the symbiosis of a fungus (mycobiont) and a photosynthetic alga or cyanobacterium (photobiont).',
-        'Lichens grow on a range of substrates including bark and rock and \'in the air\' as epiphytes.',
-        'Lichens are important environmental indicators (bioindicators) notably air and water quality.'
+        'Lichens are composite organisms formed from the symbiosis of a fungus (mycobiont) and a photosynthetic alga or cyanobacterium (photobiont).',
+        // 'Lichens grow on a range of substrates including bark and rock and \'in the air\' as epiphytes.',
+        'Lichens are important environmental indicators (bioindicators) of air and water quality.'
     ],
     speciesCount: 0,
     familiesCount: 0,

@@ -21,7 +21,7 @@ export const subscribeToNonTaxaSelection = callback => {
 
 export const renderNonTaxonCard = collection => {
 
-    const { enums, config } = store.getState();
+    const { enums, config, lessonPlan } = store.getState();
 
     const nonTaxa = group.getNonTaxa(enums).filter(nt => nt.group === group.nonTaxaGroup[0].LICHEN_FORM);
 
@@ -78,18 +78,16 @@ export const renderNonTaxonCard = collection => {
         renderWiki(wikiNode, lookup, config.language);
     };
 
-    document.addEventListener("DOMContentLoaded", function() {
-        selectHandler('.dropdown.js-non-taxa .dropdown-item.icon', id => callback(id));
-        document.getElementById(`${nonTaxa[0].id}`).click();
-        
-        const continueBtn = document.querySelector('.js-non-taxon-card-btn button');
-        continueBtn.addEventListener('click', event => {
-            actions.boundEndRevision(collection.nextItem);
-        });
-    });
-
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
     renderTemplate({group: nonTaxa}, template.content, parent);
+
+    selectHandler('.dropdown.js-non-taxa .dropdown-item.icon', id => callback(id));
+    document.getElementById(`${nonTaxa[0].id}`).click();
+    
+    const continueBtn = document.querySelector('.js-non-taxon-card-btn button');
+    continueBtn.addEventListener('click', event => {
+        actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
+    });
 };

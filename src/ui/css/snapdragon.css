@@ -101,7 +101,7 @@ hr {
   font-weight: 900; 
   content: "\f00c";
   padding: 0 .5em 0 0;
-  color: var(--snap-collection);
+  color: var(--snap-success);
 }
 
 .icon.choice::after {  
@@ -288,7 +288,7 @@ a.dropdown-item:hover {
 }
 
 .non-taxon.revision.card {
-  background-color: rgb(205, 212, 216);
+  background-color: rgb(216, 227, 220);
 }
 
 .species.revision.card {
@@ -615,11 +615,9 @@ a.dropdown-item:hover {
 
 .id-box {  
   display: flex;
-}
-
-.id-box {
   border: 1px solid rgba(129, 67, 101, .3);
   padding: 1em 0;
+  background-color: var(--snap-taxon-card-background);
 }
 
 .id-box > div:nth-child(1) {
@@ -1497,6 +1495,7 @@ table {
 
 .lp-answer {
   font-style: initial;
+  font-weight: normal;
 }
 
 .lp-level span:nth-child(1) {

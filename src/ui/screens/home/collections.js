@@ -7,19 +7,21 @@ import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import { selectHandler } from 'ui/helpers/handlers';
 import { subscription } from 'redux/subscriptions';
+import { updateNavIcons } from 'ui/fixtures/navigation';
 import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { elem } from 'ui/helpers/class-behaviour';
-import { renderLessonPlans } from 'ui/screens/lists/lesson-plans-table';
+import { editLessonPlans } from 'ui/screens/lists/lesson-plans-editor';
+import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
+import { updateLocalLesson } from 'ui/helpers/local-collection';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
-import { nextRoundHandler } from 'ui/helpers/lesson-handlers';
-import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
-import { getLocation, getPlace } from 'geo/geo';
 
 export const renderCollections = (counter) => {
 
-    const { collections, config, collection: stateCollection, history } = store.getState();
+    const { collections, config, collection: collectionState, history } = store.getState();
 
-    let collection = R.clone(stateCollection);
+    let collection = R.clone(collectionState);
+
+    if(lessonLogicHandler.isSkippable(collection, counter, 'renderCollections')) return;
 
     const template = document.createElement('template');
     template.innerHTML = collectionsTemplate;
@@ -29,20 +31,7 @@ export const renderCollections = (counter) => {
 
     DOM.rightBody.innerHTML = '';
 
-    const snapdragon = { descriptions : [
-        'Snapdragon is a tool for studying the 1.3 million recorded species on Earth.',
-        'Related species are grouped and tested in lessons.',
-        'Lessons take the form of concise summaries followed by quick tests.',
-        'Good luck!'
-    ] };
-
-    const isCollectionSelected = !!collection.descriptions;
-
-    const copy = isCollectionSelected ? collection.descriptions : snapdragon.descriptions;
-
-    const about = isCollectionSelected ? 'About the lesson' :  'About Snapdragon';  
-
-    renderTemplate({ lessons, config, collection, language, copy, about }, template.content, DOM.rightBody);
+    renderTemplate({ lessons, config, collection, language }, template.content, DOM.rightBody);
 
     const selectedCollection = collections.find(c => c.selected);
 
@@ -54,7 +43,6 @@ export const renderCollections = (counter) => {
     const collectionDescription = document.querySelector('.js-selected-description');
     const languagesHeader = document.querySelector('.btn-language');
     const lessonHelp = document.querySelector('.js-lesson-help');
-    const aboutLabel = document.querySelector('.js-about-label');
 
     if(counter.isLessonPaused && config.isLandscapeMode) {
         collectionDescription.innerHTML += `<span><span class='snap-alert snap-padding'>If you change lessons your current lesson score will be lost!</span></span>`;
@@ -62,42 +50,21 @@ export const renderCollections = (counter) => {
     
     elem.hide(lessonHelp);
 
-    if(config.isPortraitMode) {
-        learningActionBtn.innerHTML =  'View lesson species';
-    } else {
-        learningActionBtn.innerHTML = 'Begin lesson'
-        if(collection.layoutCounter > 0) {
-            learningActionBtn.innerHTML = 'Continue lesson';
+    const changeCollectionHandler = collectionId => {
+
+        subscription.getByName('renderSnapdragon').forEach(sub => subscription.remove(sub));
+        subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
+
+        if(config.isLandscapeMode && collection.id === collectionId) {
+            learningActionBtn.querySelector('span.landscape').innerHTML = 'Continue lesson';
         }
-    }    
 
-    // Selected lesson
-
-    if(collection && collection.name) {
-        document.querySelectorAll(`[name="${collection.name}"]`)[0].classList.add('active');
-        elem.show(learningActionBtn);
-        elem.hide(learningActionBtnPlaceholder);
-        if(!counter.isLessonPaused) {
-            elem.show(lessonHelp);
-        }        
-        collectionsHeader.innerHTML = collection.name;
-        if(config.isLandscapeMode) {
-            subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
-        }
-    } else {
-        collectionsHeader.innerHTML = 'Lessons';        
-        elem.hide(lessonHelp);
-    }
-
-    const changeCollection = id => {
-
-        collectionId = parseInt(id);
-        collection = { ...collection, ...collections.find(collection => collection.id === parseInt(id)) };
+        collection = { ...collection, ...collections.find(collection => collection.id === collectionId) };
         collectionsHeader.innerHTML = collection.name;
         const descriptions = collection.descriptions.map(description => `<span>${description}</span>`).join('');
         collectionDescription.innerHTML = descriptions;
         
-        config.collection = { id: parseInt(id) };
+        config.collection = { id: collectionId };
 
         if(config.isLandscapeMode) {
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
@@ -113,45 +80,30 @@ export const renderCollections = (counter) => {
         elem.hide(learningActionBtnPlaceholder);        
         elem.show(lessonHelp);        
 
-        if(config.isPortraitMode && collection.id === collectionId) {
-            learningActionBtn.innerHTML = 'Continue lesson';
-        } else {
-            learningActionBtn.innerHTML = 'Begin lesson';
-        }
+        document.querySelector('.js-about-label').innerHTML = 'About the lesson';
 
-        aboutLabel.innerHTML = 'About the lesson';
+        editLessonPlans('.js-edit-lesson-link', collectionId, config);
     };
 
-    // User selects lesson
-    
+    if(collection && collection.name) {
+        setTimeout(() => {
+            document.getElementById(collection.id).click();
+        });        
+        if(config.isLandscapeMode) {
+            subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
+        }
+    } 
+        
     let collectionId = collection.id;
 
     selectHandler('.dropdown.js-collections .dropdown-item', id => {
-       changeCollection(id); 
+       changeCollectionHandler(parseInt(id)); 
     });
-
-    let currentProviderId;
-
-    document.querySelectorAll('.dropdown.js-collections .dropdown-item').forEach(option => {
-
-        subscription.getByName('renderSnapdragon').forEach(sub => subscription.remove(sub));
-
-        const optionCollection = collections.find(c => c.id === parseInt(option.id));
-        if(optionCollection.providerId !== currentProviderId && optionCollection.course !== '') {
-            var courseHeader = document.createElement('span');
-            courseHeader.classList.add('dropdown-item-text');
-            // courseHeader.innerHTML = optionCollection.course;
-            option.before(courseHeader);            
-        }
-        currentProviderId = optionCollection.providerId;
-    });
-
-    // Languages
 
     document.querySelector(`#${config.language}`).classList.add('active');
     languagesHeader.innerHTML = config.languages.find(l => l.lang === config.language).name;
 
-    selectHandler('.dropdown.js-languages .dropdown-item', language => {        
+    const changeLanguageHandler = language => {
         config.language = language;
         languagesHeader.innerHTML = config.languages.find(l => l.lang === config.language).name;
         actions.boundUpdateLanguage(language);
@@ -160,20 +112,20 @@ export const renderCollections = (counter) => {
             actions.boundSelectCollection(collection);
             renderSpeciesCollectionList(collection, true);
         }
-        updateLocalLesson();
-    });
+        updateLocalLesson(document.getElementById('8'), config);
+    };
 
-    // User begins or continues lesson
+    selectHandler('.dropdown.js-languages .dropdown-item', language => {        
+        changeLanguageHandler(language);
+    });
 
     learningActionBtn.addEventListener('click', () => {
 
         if(config.isLandscapeMode) {
             subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));            
             const lessonStateMode = counter.isLessonPaused ? 'restartLesson' : 'newLesson';
-            nextRoundHandler.changeCollection(lessonStateMode, collection, config, history, learningActionBtn);            
+            lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, learningActionBtn);            
         }
-                
-        subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
 
         if(config.isPortraitMode) {            
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
@@ -188,44 +140,5 @@ export const renderCollections = (counter) => {
         updateNavIcons();        
     });
 
-    const updateNavIcons = () => {
-        document.querySelector('.js-home').classList.remove('active-icon');
-        const svg = document.querySelector('.js-home svg');
-        if(svg) {
-            svg.classList.remove('active-icon');
-        }
-    };
-
-    // Populates lesson plan modal
-
-    lessonHelp.addEventListener('click', event => {
-        const snapdragonCollection = snapdragonCollections.find(sc => sc.id === collectionId);
-        const planId = config.isPortraitMode ? snapdragonCollection.lessonPlanPortrait : snapdragonCollection.lessonPlanLandscape;
-        renderLessonPlans(planId);
-    });
-
-    const localCollection = document.getElementById('8');
-    localCollection.classList.add('collection-disabled');
-    localCollection.innerHTML += ' (unavailable)';
-
-    async function updateLocalLesson() {
-        if(!localCollection) return;
-        const coordinates = await getLocation();            
-        const latitude = coordinates['0'];
-        const longitude = coordinates['1'];
-        const place = await getPlace(longitude, latitude, config.language);
-        if(place) {
-            const region = place.features.find(f => f.place_type[0] === 'place');
-            const country = place.features.find(f => f.place_type[0] === 'country');
-            localCollection.innerHTML = `Species from ${region.text}, ${country.text}`;
-
-            config.region = region || country;
-            actions.boundUpdateConfig(config);
-
-            localCollection.classList.remove('collection-disabled');
-        }
-    }
-
-    updateLocalLesson();
-
+    updateLocalLesson(document.getElementById('8'), config);
 };

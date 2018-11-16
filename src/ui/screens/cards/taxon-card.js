@@ -13,9 +13,6 @@ export const renderTaxonCard = collection => {
     const item = collection.nextItem;
     const { lessonPlan, config } = store.getState();
 
-    item.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
-    item.layoutCount = lessonPlan.layouts.length;
-
     const template = document.createElement('template');
 
     template.innerHTML = taxonTemplate;
@@ -53,7 +50,7 @@ export const renderTaxonCard = collection => {
     }, 500);
 
     continueBtn.addEventListener('click', event => {
-        actions.boundEndRevision(item);
+        actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
     });
 
     renderTemplate(context, template.content, parent, clone);

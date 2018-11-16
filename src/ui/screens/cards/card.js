@@ -22,12 +22,8 @@ export const renderCard = (collection, isModalMode = false, selectedItem, parent
 
     const { layout, config, lessonPlan, enums } = store.getState();
 
-    if(!isModalMode) {
-        item.questionCount = lessonPlan.questionCount;
-        item.layoutCount = lessonPlan.layoutCount;
-        
+    if(!isModalMode) {        
         const screen = layout.screens.filter(el => el.name === 'species-card')[0];
-
         if(!screen) return;
     }
     
@@ -37,7 +33,7 @@ export const renderCard = (collection, isModalMode = false, selectedItem, parent
 
     const traits = getTraits(enums);
 
-    renderCommonParts(template, config, item, collection, traits, isModalMode, parent);
+    renderCommonParts(template, config, item, collection, traits, isModalMode, parent, lessonPlan);
 
     config.isPortraitMode
         ? renderPortrait(item, config, traits, isModalMode)
@@ -101,7 +97,7 @@ const renderPortrait = (item, config, traits, isModalMode) => {
     });
 };
 
-const renderCommonParts = (template, config, item, collection, traits, isModalMode, parent) => {
+const renderCommonParts = (template, config, item, collection, traits, isModalMode, parent, lessonPlan) => {
 
     const species = item.name;
     const epithet = itemProperties.latin(item.speciesName);
@@ -202,7 +198,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
         }, 500);
 
         continueBtn.addEventListener('click', event => {
-            actions.boundEndRevision(item);
+            actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
         });
     }
 };

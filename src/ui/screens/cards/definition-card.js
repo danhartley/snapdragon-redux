@@ -10,11 +10,6 @@ export const renderDefinitionCard = collection => {
 
     const { lessonPlan } = store.getState();
 
-    const item = collection.nextItem;
-
-    item.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
-    item.layoutCount = lessonPlan.layouts.length;
-
     const template = document.createElement('template');
 
     template.innerHTML = definitionCardTemplate;
@@ -29,6 +24,6 @@ export const renderDefinitionCard = collection => {
     renderTemplate({ glossary }, template.content, parent);
 
     document.querySelector('.js-definition-card-btn').addEventListener('click', event => {
-        actions.boundEndRevision(item);
+        actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
     });
 };

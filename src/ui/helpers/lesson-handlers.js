@@ -80,8 +80,16 @@ const purgeLesson = () => {
     window.location.reload(true);
 };
 
-export const nextRoundHandler = {
+const isSkippable = (collection, counter, caller) => {
+    if(!collection.items) return false;
+    const isLessonRehydrated = counter.isLessonRehydrated && collection.itemIndex !== 0;
+    const isReady = collection.itemIndex === 0;
+    return (isLessonRehydrated || isReady);
+};
+
+export const lessonLogicHandler = {
     getMode,
     changeCollection,
-    purgeLesson
+    purgeLesson,
+    isSkippable
 }
