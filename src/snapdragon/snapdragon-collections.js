@@ -352,7 +352,7 @@ export const beginnersLichenology = {
         'Xanthoria parietina', 'Physcia adscendens', 'Parmelia saxatilis', 'Graphis scripta',
         'Ramalina farinacea', 'Evernia prunastri', 'Usnea florida', 
         'Xanthoparmelia mougeotii', 'Physcia tenella', 'Placynthium nigrum', 'Physcia aipolia',
-        'Physcia adscendens', 'Rhizocarpon geographicum', 'Ochrolechia parella',
+        'Rhizocarpon geographicum', 'Ochrolechia parella',
         'Platismatia glauca', 'Diploicia canescens', 'Graphina anguina',
         'Caloplaca aurantia', 'Lecanora muralis', 'Usnea subfloridana',
         'Cladonia pocillum', 'Peltigera membranacea', 'Cladonia portentosa', 'Cladonia squamosa',

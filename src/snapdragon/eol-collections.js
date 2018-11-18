@@ -50,22 +50,14 @@ export const collections = [
         items: mushrooms,
         eol_name: 'Mushroom Quiz',
         eol_link: 'https://eol.org/collections/140498'        
-    },  
-    // {
-    //     id: 6,
-    //     type: 'species',
-    //     name: 'Mushrooms',
-    //     items: [],
-    //     eol_name: '',
-    //     eol_link: ''        
-    // },  
+    },
     {
-        id: 6,
+        id: 8,
         type: 'species',
         name: 'Lichen',
         items: lichen,
         eol_name: '',
-        eol_link: ''        
+        eol_link: 'https://eol.org/collections/8'
     },  
     {
         id: 101,

@@ -4,8 +4,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
-      app: './src/index.js',
-      utils: './src/utils/utils.js',
+      app: './src/api/snapdragon/collection-builder.js',
+      // app: './src/index.js',
+      utils: './src/utils/utils.js',      
       wiki: './src/wikipedia/wiki.js'
     },
     output: {
