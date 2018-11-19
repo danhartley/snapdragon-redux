@@ -20,7 +20,7 @@ const licenses = [
     { key: 'snapdragon default - excluding not for commercial use', value: noneExcludedFromCommercialUse }
 ];
 
-let selectedLicence = licenses[1].key;
+let selectedLicence = licenses[1].value;
 
 const getSpecies = (collection) => {
     
@@ -70,7 +70,9 @@ async function getSpeciesData(item) {
     const languages = [ 'en', 'pt', 'es', 'de', 'fr', 'it', 'eng' ];
     const response = await fetch(item.detailsUrl);
     const json = await response.json();
-    const imagesCollection = json.dataObjects ? json.dataObjects.filter(item => item.mediaURL || item.eolMediaURL).map(media => {
+    const taxonConcept = json.taxonConcept;
+    if(!json.taxonConcept) return;
+    const imagesCollection = taxonConcept.dataObjects ? taxonConcept.dataObjects.filter(item => item.mediaURL || item.eolMediaURL).map(media => {
         return {
             title: media.title, // as original title
             rightsHolder: media.rightsHolder,
@@ -80,14 +82,14 @@ async function getSpeciesData(item) {
             photographer: media.agents.find(agent => agent.role === 'photographer')            
         }
     }) : [];
-    const namesCollection = json.vernacularNames ? json.vernacularNames.filter(item => R.contains(item.language, languages)) : [];
+    const namesCollection = taxonConcept.vernacularNames ? taxonConcept.vernacularNames.filter(item => R.contains(item.language, languages)) : [];
     // const descriptions = [];
-    // const objs = json.dataObjects.filter(obj => {
+    // const objs = taxonConcept.dataObjects.filter(obj => {
     //     return (obj.mimeType === 'text/plain' || obj.mimeType === 'text/html') && obj.vettedStatus === "Trusted" }
     // );
     // objs.length > 0 ? objs.forEach(obj => {descriptions.push(obj.description)}) : [];
     // return { id: item.id,  name: item.name, images: imagesCollection, names: namesCollection, descriptions: descriptions };
-    return { id: item.id,  name: json.scientificName, images: imagesCollection, names: namesCollection };
+    return { id: item.id,  name: taxonConcept.scientificName, images: imagesCollection, names: namesCollection };
 }
 
 const items = [];
@@ -108,12 +110,13 @@ const getBinomial = item => {
 
 const init = () => {
     getCollection().then(collection => {
-        collection.forEach(item => {
+        collection.forEach(item => {            
             getSpeciesData(item).then(data => {
+                if(!data) return;
                 item.name = data.name;
                 const binomial = getBinomial(item);
                 getTaxonomy(item.name).then(taxonomy => {
-                    data.taxonomy = taxonomy;
+                    // data.taxonomy = taxonomy;
                     data.family = taxonomy.family;
                     data.eolName = item.name; 
                     data.name = binomial;

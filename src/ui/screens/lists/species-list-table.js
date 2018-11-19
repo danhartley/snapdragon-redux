@@ -18,6 +18,10 @@ export const buildTable = (collection, config, traits) => {
 
     collection.items.forEach(item => { 
         item.image = item.list || item.images[0];
+        item.license = item.image.license;
+        item.url = item.image.url;
+        item.rightsHolder = item.image.rightsHolder;
+        item.source = item.image.source;
         item.passes = item.passes || '--';
         item.fails = item.fails || '--';
         item.binomial = item.name;

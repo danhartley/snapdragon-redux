@@ -8,7 +8,7 @@ export const kitchenGarden = {
         'All of the species are either native or adapted to a Mediterranean climate.',
         'Later lessons will introduce you to families and the traits they share.'        
     ],
-    thumb: 'https://media.eol.org/content/2014/06/03/05/47795_orig.jpg',
+    thumb: 'https://content.eol.org/data/media/2014/06/03/05/47795_orig.jpg',
     moduleSize: 6,
     curator: 'Snapdragon',
     userLevel: 'General Interest',
@@ -86,7 +86,7 @@ export const rhsTrees = {
     type: 'species',
     descriptions: ['This is an approved list of Deciduous and Evergreen Trees from the Royal Horticultural Society (RHS).', 'Students taking RHS courses in Practical Horticulture are required to learn some, or all, of these species.'],
     collections: ['Deciduous and evergreen trees'],
-    thumb: 'https://media.eol.org/content/2012/06/12/18/89509_orig.jpg',
+    thumb: 'https://content.eol.org/data/media/2012/06/12/18/89509_orig.jpg',
     moduleSize: 6,
     curator: 'Snapdragon',
     userLevel: 'RHS students',
@@ -177,7 +177,7 @@ export const commonBirds = {
         '420,489 people recorded 6,764,475 separate bird sightings.'
     ],
     collections: ['RSPB Top 10 UK Birds'],
-    thumb: 'https://media.eol.org/content/2015/01/21/07/32241_88_88.jpg',
+    thumb: 'https://content.eol.org/data/media/2015/01/21/07/32241_88_88.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'General Interest',
@@ -213,7 +213,7 @@ export const rhsWeeds1 = {
         'Snapdragon does not necessarily support the view that weeds are plants in the wrong place.'
     ],
     collections: ['RHS Weeds I'],
-    thumb: 'https://media.eol.org/content/2012/06/13/04/53382_orig.jpg',
+    thumb: 'https://content.eol.org/data/media/2012/06/13/04/53382_orig.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'RHS students',
@@ -243,7 +243,7 @@ export const rhsWeeds1 = {
 const mushroomCollection = {
     providerId: 1,
     type: 'species',
-    thumb: 'https://media.eol.org/content/2013/03/01/14/45554_orig.jpg',
+    thumb: 'https://content.eol.org/data/media/2013/03/01/14/45554_orig.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'Amateur mycologists',
@@ -325,7 +325,7 @@ export const localSpecies = {
     glossary: ['plantae', 'common', 'fungi'],
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
-    thumb: 'https://media.eol.org/content/2012/06/13/04/53382_orig.jpg',
+    thumb: 'https://content.eol.org/data/media/2012/06/13/04/53382_orig.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'All comers'
@@ -334,7 +334,7 @@ export const localSpecies = {
 const lichenCollection = {
     providerId: 1,
     type: 'species',
-    thumb: 'https://media.eol.org/content/2009/07/24/05/95087_98_68.jpg',
+    thumb: 'https://content.eol.org/data/media/2009/07/24/05/95087_98_68.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'Amateur lichenologists',
@@ -351,14 +351,17 @@ export const beginnersLichenology = {
     itemNames: [
         'Xanthoria parietina', 'Physcia adscendens', 'Parmelia saxatilis', 'Graphis scripta',
         'Ramalina farinacea', 'Evernia prunastri', 'Usnea florida', 
-        'Xanthoparmelia mougeotii', 'Physcia tenella', 'Placynthium nigrum', 'Physcia aipolia',
+        'Physcia tenella', 'Placynthium nigrum', 'Physcia aipolia',
         'Rhizocarpon geographicum', 'Ochrolechia parella',
-        'Platismatia glauca', 'Diploicia canescens', 'Graphina anguina',
-        'Caloplaca aurantia', 'Lecanora muralis', 'Usnea subfloridana',
+        'Platismatia glauca', 'Diploicia canescens', 'Usnea subfloridana',
         'Cladonia pocillum', 'Peltigera membranacea', 'Cladonia portentosa', 'Cladonia squamosa',
         'Ramalina fastigiata', 'Flavoparmelia caperata', 'Parmotrema perlatum', 'Parmelia sulcata',
         'Lecidella elaeochroma', 'Lecanora chlarotera'
         // 'Caloplaca flavescens'
+        // 'Lecanora muralis'
+        // 'Xanthoparmelia mougeotii'
+        // 'Graphina anguina'
+        // 'Caloplaca aurantia'
     ],
     descriptions: [
         'Lichens are composite organisms formed from the symbiosis of a fungus (mycobiont) and a photosynthetic alga or cyanobacterium (photobiont).',

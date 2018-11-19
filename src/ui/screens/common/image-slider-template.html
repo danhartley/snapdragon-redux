@@ -5,7 +5,13 @@
       <div data-repeat-image="{{ images }}">
         <div class="carousel-item">
             <div class="d-block w-100" 
-                style="background-image: url('https://media.eol.org/content/{{ image.src }}');" data-src="https://media.eol.org/content/{{ image.src }}">    
+                style="background-image: url('https://content.eol.org/data/media/{{ image.src.url }}');" 
+                data-title="{{ image.itemName }}"
+                data-source="{{ image.src.source }}"
+                data-license="{{ image.src.license }}"
+                data-rightsHolder="{{ image.src.rightsHolder }}"
+                data-photographersName="{{ image.src.photographersName }}"
+                data-src="https://content.eol.org/data/media/{{ image.src.url }}">
                   <div data-itemname="{{ image.itemName }}" class="layer"></div>
         </div>
         </div>

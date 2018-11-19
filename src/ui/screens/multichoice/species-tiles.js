@@ -66,7 +66,7 @@ export const renderSpeciesTiles = (collection) => {
             const name = event.target.parentElement.dataset.name || event.target.parentElement.parentElement.dataset.name;
             const src = event.target.parentElement.dataset.src || event.target.parentElement.parentElement.dataset.src;
             DOM.modalImageTitle.innerHTML = name;
-            const style = `background-image: url(https://media.eol.org/content/${src}); background-size: cover;  background-position: center;`;
+            const style = `background-image: url(https://content.eol.org/data/media/${src}); background-size: cover;  background-position: center;`;
             DOM.modalImage.style = style;
         });
     });

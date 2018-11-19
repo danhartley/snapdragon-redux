@@ -1,6 +1,7 @@
 import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
+import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
 
 export const modalImagesHandler = (images, item, collection, config, displayNameType) => {
     images.forEach(image => {
@@ -15,6 +16,9 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
         const images = selectedItem.images.map((image, index) => {
             selectedItem.vernacularName = itemProperties.getVernacularName(selectedItem, config);
             return { src: image, itemName: selectedItem.name, itemCommon: selectedItem.vernacularName };
+        });
+        images.forEach(image => {
+            image.src.photographersName = image.src.photographer ? image.src.photographer.full_name || '' : '';
         });
         imageSlider(config, images, parent, false, image);
         let displayName = '';
@@ -32,5 +36,7 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
                 displayName = `<span class="common-name">${selectedItem.vernacularName}</span> <span class="latin-name">(${selectedItem.name})</span>`;
         }
         DOM.modalImageTitle.innerHTML = displayName;
+
+        handleRightsAttribution(selectedItem);
     })
 };

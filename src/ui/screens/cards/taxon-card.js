@@ -27,7 +27,7 @@ export const renderTaxonCard = collection => {
     const context = {
         rank: 'family',
         name: item.family,
-        img: `https://media.eol.org/content/${taxon.thumb}`,
+        img: `https://content.eol.org/data/media/${taxon.thumb}`,
         alt: taxon.alt,
         common: itemProperties.getNestedTaxonProp(taxon, config.language, 'names', 'names', '0'),
         species: taxon.species || '--',

@@ -7,6 +7,7 @@ import { birds } from 'api/snapdragon/common-city-birds';
 import { mushrooms } from 'api/snapdragon/mushrooms';
 import { weeds1 } from 'api/rhs/weeds1';
 import { lichen } from 'api/snapdragon/lichen';
+import { lichens } from 'api/snapdragon/lichens';
 
 import { leaf } from 'api/leaf';
 

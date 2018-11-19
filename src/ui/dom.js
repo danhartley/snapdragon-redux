@@ -21,6 +21,7 @@ export const DOM = {
     stateChangeAlertTxt: document.getElementsByClassName('js-state-change-alert')[0],
 
     modalImageTitle: document.querySelector('.js-modal-image-title span:nth-child(1)'),
+    modalImageRightsAttribution: document.querySelector('.js-modal-rights-attribution'),
     modalTextTitle: document.getElementsByClassName('js-modal-text-title')[0],
     modalText: document.getElementsByClassName('js-modal-text')[0],
     modalImage: document.getElementsByClassName('js-modal-image')[0]
