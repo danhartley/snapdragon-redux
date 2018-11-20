@@ -15,10 +15,10 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
         const selectedItem = item || collection.items.find(item => item.name === image.dataset.itemname);
         const images = selectedItem.images.map((image, index) => {
             selectedItem.vernacularName = itemProperties.getVernacularName(selectedItem, config);
-            return { src: image, itemName: selectedItem.name, itemCommon: selectedItem.vernacularName };
+            return { ...image, itemName: selectedItem.name, itemCommon: selectedItem.vernacularName };
         });
         images.forEach(image => {
-            image.src.photographersName = image.src.photographer ? image.src.photographer.full_name || '' : '';
+            image.photographersName = image.photographer ? image.photographer.full_name || '' : '';
         });
         imageSlider(config, images, parent, false, image);
         let displayName = '';

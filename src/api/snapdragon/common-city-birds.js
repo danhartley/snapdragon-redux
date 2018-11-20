@@ -3,17 +3,90 @@ export const birds = [
     "id": 922241,
     "name": "Passer domesticus",
     "images": [
-      "2012/06/13/17/56733_orig.jpg",
-      "2012/06/13/17/12554_orig.jpg",
-      "2012/06/13/17/97022_orig.jpg",
-      "2013/09/13/13/71550_orig.jpg",
-      "2012/06/13/17/37561_orig.jpg",
-      "2012/06/13/17/28480_orig.jpg",
-      "2012/06/13/17/04879_orig.jpg",
-      "2012/06/13/17/26690_orig.jpg",
-      "2012/06/13/17/57539_orig.jpg",
-      "2012/06/13/17/07300_orig.jpg",
-      "2012/06/13/17/55437_orig.jpg"
+      {
+        "rightsHolder": "Neil Gilham",
+        "source": "https://www.inaturalist.org/photos/6471293",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "48/b2/11/18.https___www_inaturalist_org_photos_6471293.jpg",
+        "thumb": "48/b2/11/18.https___www_inaturalist_org_photos_6471293.98x68.jpg"
+      },
+      {
+        "rightsHolder": "Loks",
+        "source": "https://www.inaturalist.org/photos/6471788",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "48/b2/dd/18.https___www_inaturalist_org_photos_6471788.jpg",
+        "thumb": "48/b2/dd/18.https___www_inaturalist_org_photos_6471788.98x68.jpg"
+      },
+      {
+        "rightsHolder": "Oscar Zavalza Pulido",
+        "source": "https://www.inaturalist.org/photos/647796",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "48/bc/c0/18.https___www_inaturalist_org_photos_647796.jpg",
+        "thumb": "48/bc/c0/18.https___www_inaturalist_org_photos_647796.98x68.jpg"
+      },
+      {
+        "rightsHolder": "lotsofheadbands",
+        "source": "https://www.inaturalist.org/photos/6491245",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "48/d1/ec/18.https___www_inaturalist_org_photos_6491245.jpg",
+        "thumb": "48/d1/ec/18.https___www_inaturalist_org_photos_6491245.98x68.jpg"
+      },
+      {
+        "rightsHolder": "missypelican",
+        "source": "https://www.inaturalist.org/photos/6496223",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "48/da/08/18.https___www_inaturalist_org_photos_6496223.jpg",
+        "thumb": "48/da/08/18.https___www_inaturalist_org_photos_6496223.98x68.jpg"
+      },
+      {
+        "rightsHolder": "Lizzye Bushong",
+        "source": "https://www.inaturalist.org/photos/6496394",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "48/da/5d/18.https___www_inaturalist_org_photos_6496394.jpg",
+        "thumb": "48/da/5d/18.https___www_inaturalist_org_photos_6496394.98x68.jpg"
+      },
+      {
+        "rightsHolder": "Aurelio Molina Hdez.",
+        "source": "https://www.inaturalist.org/photos/6498730",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "48/dd/3e/18.https___www_inaturalist_org_photos_6498730.jpg",
+        "thumb": "48/dd/3e/18.https___www_inaturalist_org_photos_6498730.98x68.jpg"
+      },
+      {
+        "rightsHolder": "Alfredo Tapia Tapia",
+        "source": "https://www.inaturalist.org/photos/6503398",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "48/e4/fc/18.https___www_inaturalist_org_photos_6503398.jpg",
+        "thumb": "48/e4/fc/18.https___www_inaturalist_org_photos_6503398.98x68.jpg"
+      },
+      {
+        "rightsHolder": "Erick Noe Tapia Banda",
+        "source": "https://www.inaturalist.org/photos/6513398",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "48/f3/e7/18.https___www_inaturalist_org_photos_6513398.jpg",
+        "thumb": "48/f3/e7/18.https___www_inaturalist_org_photos_6513398.98x68.jpg"
+      },
+      {
+        "rightsHolder": "Erick Noe Tapia Banda",
+        "source": "https://www.inaturalist.org/photos/6513415",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "48/f3/f0/18.https___www_inaturalist_org_photos_6513415.jpg",
+        "thumb": "48/f3/f0/18.https___www_inaturalist_org_photos_6513415.98x68.jpg"
+      },
+      {
+        "rightsHolder": "Nicholas Cowey",
+        "source": "https://www.inaturalist.org/photos/6513999",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "48/f4/e5/18.https___www_inaturalist_org_photos_6513999.jpg",
+        "thumb": "48/f4/e5/18.https___www_inaturalist_org_photos_6513999.98x68.jpg"
+      },
+      {
+        "rightsHolder": "Joelle Belmonte",
+        "source": "https://www.inaturalist.org/photos/6516987",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "48/f9/ac/18.https___www_inaturalist_org_photos_6516987.jpg",
+        "thumb": "48/f9/ac/18.https___www_inaturalist_org_photos_6516987.98x68.jpg"
+      }
     ],
     "names": [
       {
@@ -176,14 +249,55 @@ export const birds = [
     "id": 922253,
     "name": "Sturnus vulgaris",
     "images": [
-      "2012/06/14/17/94516_orig.jpg",
-      "2012/07/26/22/29825_orig.jpg",
-      "2012/06/14/17/67732_orig.jpg",
-      "2009/07/24/13/08245_orig.jpg",
-      "2012/07/26/22/16230_orig.jpg",
-      "2012/07/26/22/97131_orig.jpg",
-      "2012/06/14/17/58924_orig.jpg",
-      "2012/07/26/22/22348_orig.jpg"
+      {
+        "rightsHolder": "Greg Lasley",
+        "source": "https://www.inaturalist.org/photos/426086",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "3b/85/ac/18.https___www_inaturalist_org_photos_426086.jpg",
+        "thumb": "3b/85/ac/18.https___www_inaturalist_org_photos_426086.98x68.jpg"
+      },
+      {
+        "rightsHolder": "Oscar",
+        "source": "https://www.inaturalist.org/photos/6645266",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "49/c4/28/18.https___www_inaturalist_org_photos_6645266.jpg",
+        "thumb": "49/c4/28/18.https___www_inaturalist_org_photos_6645266.98x68.jpg"
+      },
+      {
+        "rightsHolder": "molanic",
+        "source": "https://www.inaturalist.org/photos/6664871",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "49/e1/2b/18.https___www_inaturalist_org_photos_6664871.jpg",
+        "thumb": "49/e1/2b/18.https___www_inaturalist_org_photos_6664871.98x68.jpg"
+      },
+      {
+        "rightsHolder": "kathawk",
+        "source": "https://www.inaturalist.org/photos/6666938",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "49/e4/dd/18.https___www_inaturalist_org_photos_6666938.jpg",
+        "thumb": "49/e4/dd/18.https___www_inaturalist_org_photos_6666938.98x68.jpg"
+      },
+      {
+        "rightsHolder": "kathawk",
+        "source": "https://www.inaturalist.org/photos/6666946",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "49/e4/e1/18.https___www_inaturalist_org_photos_6666946.jpg",
+        "thumb": "49/e4/e1/18.https___www_inaturalist_org_photos_6666946.98x68.jpg"
+      },
+      {
+        "rightsHolder": "reddad",
+        "source": "https://www.inaturalist.org/photos/6673369",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "49/ef/a8/18.https___www_inaturalist_org_photos_6673369.jpg",
+        "thumb": "49/ef/a8/18.https___www_inaturalist_org_photos_6673369.98x68.jpg"
+      },
+      {
+        "rightsHolder": "John Metcalf",
+        "source": "https://www.inaturalist.org/photos/6730146",
+        "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+        "url": "4a/42/2b/18.https___www_inaturalist_org_photos_6730146.jpg",
+        "thumb": "4a/42/2b/18.https___www_inaturalist_org_photos_6730146.98x68.jpg"
+      }
     ],
     "names": [
       {
@@ -288,14 +402,139 @@ export const birds = [
       "id": 1051997,
       "name": "Cyanistes caeruleus",
       "images": [
-        "2015/01/21/07/32241_orig.jpg",
-        "2014/12/28/22/94944_orig.jpg",
-        "2015/01/20/05/14639_orig.jpg",
-        "2012/06/13/05/65775_orig.jpg",
-        "2012/06/13/05/94188_orig.jpg",
-        "2012/06/13/05/25999_orig.jpg",
-        "2016/08/04/15/99579_orig.jpg",
-        "2015/02/21/12/22894_orig.jpg"
+        {
+          "rightsHolder": "Michael",
+          "source": "https://www.inaturalist.org/photos/1715427",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "2b/fb/ef/18.https___www_inaturalist_org_photos_1715427.jpg",
+          "thumb": "2b/fb/ef/18.https___www_inaturalist_org_photos_1715427.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Beate & Heinz Beyerlein",
+          "source": "https://www.inaturalist.org/photos/1715908",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "2b/fc/9c/18.https___www_inaturalist_org_photos_1715908.jpg",
+          "thumb": "2b/fc/9c/18.https___www_inaturalist_org_photos_1715908.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Paul Cools",
+          "source": "https://www.inaturalist.org/photos/1860445",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "2c/cf/95/18.https___www_inaturalist_org_photos_1860445.jpg",
+          "thumb": "2c/cf/95/18.https___www_inaturalist_org_photos_1860445.98x68.jpg"
+        },
+        {
+          "rightsHolder": "wildlifesamus",
+          "source": "https://www.inaturalist.org/photos/1867057",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "2c/d8/22/18.https___www_inaturalist_org_photos_1867057.jpg",
+          "thumb": "2c/d8/22/18.https___www_inaturalist_org_photos_1867057.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Stas & Lana",
+          "source": "https://www.inaturalist.org/photos/1891955",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "2c/fd/26/18.https___www_inaturalist_org_photos_1891955.jpg",
+          "thumb": "2c/fd/26/18.https___www_inaturalist_org_photos_1891955.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Don Loarie",
+          "source": "https://www.inaturalist.org/photos/191066",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "2d/1b/36/18.https___www_inaturalist_org_photos_191066.jpg",
+          "thumb": "2d/1b/36/18.https___www_inaturalist_org_photos_191066.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Petra Saracbasi",
+          "source": "https://www.inaturalist.org/photos/1935850",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "2d/42/5c/18.https___www_inaturalist_org_photos_1935850.jpg",
+          "thumb": "2d/42/5c/18.https___www_inaturalist_org_photos_1935850.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Donald Hobern",
+          "source": "https://www.inaturalist.org/photos/2126087",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "2e/72/f0/18.https___www_inaturalist_org_photos_2126087.jpg",
+          "thumb": "2e/72/f0/18.https___www_inaturalist_org_photos_2126087.98x68.jpg"
+        },
+        {
+          "rightsHolder": "at8eqeq3",
+          "source": "https://www.inaturalist.org/photos/2164160",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "2e/ae/2b/18.https___www_inaturalist_org_photos_2164160.jpg",
+          "thumb": "2e/ae/2b/18.https___www_inaturalist_org_photos_2164160.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Donald Hobern",
+          "source": "https://www.inaturalist.org/photos/2204289",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "2e/ee/35/18.https___www_inaturalist_org_photos_2204289.jpg",
+          "thumb": "2e/ee/35/18.https___www_inaturalist_org_photos_2204289.98x68.jpg"
+        },
+        {
+          "rightsHolder": "colinmorita",
+          "source": "https://www.inaturalist.org/photos/2206932",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "2e/f2/65/18.https___www_inaturalist_org_photos_2206932.jpg",
+          "thumb": "2e/f2/65/18.https___www_inaturalist_org_photos_2206932.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Kirill Ignatyev",
+          "source": "https://www.inaturalist.org/photos/222540",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "2f/10/d4/18.https___www_inaturalist_org_photos_222540.jpg",
+          "thumb": "2f/10/d4/18.https___www_inaturalist_org_photos_222540.98x68.jpg"
+        },
+        {
+          "rightsHolder": "James Bailey",
+          "source": "https://www.inaturalist.org/photos/2277903",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "2f/66/23/18.https___www_inaturalist_org_photos_2277903.jpg",
+          "thumb": "2f/66/23/18.https___www_inaturalist_org_photos_2277903.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Beate & Heinz Beyerlein",
+          "source": "https://www.inaturalist.org/photos/2283069",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "2f/6f/9c/18.https___www_inaturalist_org_photos_2283069.jpg",
+          "thumb": "2f/6f/9c/18.https___www_inaturalist_org_photos_2283069.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Beate & Heinz Beyerlein",
+          "source": "https://www.inaturalist.org/photos/2283070",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "2f/6f/9e/18.https___www_inaturalist_org_photos_2283070.jpg",
+          "thumb": "2f/6f/9e/18.https___www_inaturalist_org_photos_2283070.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Martin Grimm",
+          "source": "https://www.inaturalist.org/photos/2460410",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "30/85/1d/18.https___www_inaturalist_org_photos_2460410.jpg",
+          "thumb": "30/85/1d/18.https___www_inaturalist_org_photos_2460410.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Beate & Heinz Beyerlein",
+          "source": "https://www.inaturalist.org/photos/2603711",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "31/61/fc/18.https___www_inaturalist_org_photos_2603711.jpg",
+          "thumb": "31/61/fc/18.https___www_inaturalist_org_photos_2603711.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Finlay Cox",
+          "source": "https://www.inaturalist.org/photos/263263",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "31/8e/0e/18.https___www_inaturalist_org_photos_263263.jpg",
+          "thumb": "31/8e/0e/18.https___www_inaturalist_org_photos_263263.98x68.jpg"
+        },
+        {
+          "rightsHolder": "reddad",
+          "source": "https://www.inaturalist.org/photos/2643676",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "31/9f/d2/18.https___www_inaturalist_org_photos_2643676.jpg",
+          "thumb": "31/9f/d2/18.https___www_inaturalist_org_photos_2643676.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -410,13 +649,41 @@ export const birds = [
       "id": 1177498,
       "name": "Turdus merula",
       "images": [
-        "2015/12/01/11/13825_orig.jpg",
-        "2012/06/12/22/82380_orig.jpg",
-        "2012/06/12/22/61837_orig.jpg",
-        "2012/06/12/22/25194_orig.jpg",
-        "2012/06/12/22/82216_orig.jpg",
-        "2012/06/12/22/09755_orig.jpg",
-        "2012/06/12/22/34309_orig.jpg"
+        {
+          "rightsHolder": "Bruno Rosa",
+          "source": "https://www.inaturalist.org/photos/6350517",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "47/ea/d7/18.https___www_inaturalist_org_photos_6350517.jpg",
+          "thumb": "47/ea/d7/18.https___www_inaturalist_org_photos_6350517.98x68.jpg"
+        },
+        {
+          "rightsHolder": "inasiebert",
+          "source": "https://www.inaturalist.org/photos/6322847",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "47/be/38/18.https___www_inaturalist_org_photos_6322847.jpg",
+          "thumb": "47/be/38/18.https___www_inaturalist_org_photos_6322847.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Wouter Koch",
+          "source": "https://www.inaturalist.org/photos/6394695",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "48/31/eb/18.https___www_inaturalist_org_photos_6394695.jpg",
+          "thumb": "48/31/eb/18.https___www_inaturalist_org_photos_6394695.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Martin Grimm",
+          "source": "https://www.inaturalist.org/photos/6409505",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "48/49/47/18.https___www_inaturalist_org_photos_6409505.jpg",
+          "thumb": "48/49/47/18.https___www_inaturalist_org_photos_6409505.98x68.jpg"
+        },
+        {
+          "rightsHolder": "inasiebert",
+          "source": "https://www.inaturalist.org/photos/6415538",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "48/54/14/18.https___www_inaturalist_org_photos_6415538.jpg",
+          "thumb": "48/54/14/18.https___www_inaturalist_org_photos_6415538.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -506,16 +773,90 @@ export const birds = [
       "id": 1049693,
       "name": "Columba palumbus",
       "images": [
-        "2015/05/20/09/96688_orig.jpg",
-        "2015/04/30/03/00948_orig.jpg",
-        "2011/11/01/15/93754_orig.jpg",
-        "2012/05/23/10/70480_orig.jpg",
-        "2011/11/02/00/33144_orig.jpg",
-        "2016/08/01/19/68979_orig.jpg",
-        "2016/08/01/09/74595_orig.jpg",
-        "2016/08/01/10/38005_orig.jpg",
-        "2016/08/03/10/91552_orig.jpg",
-        "2016/08/03/18/35813_orig.jpg"
+        {
+          "rightsHolder": "dendzo",
+          "source": "https://www.inaturalist.org/photos/4601353",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "3d/85/30/18.https___www_inaturalist_org_photos_4601353.jpg",
+          "thumb": "3d/85/30/18.https___www_inaturalist_org_photos_4601353.98x68.jpg"
+        },
+        {
+          "rightsHolder": "dendzo",
+          "source": "https://www.inaturalist.org/photos/4606803",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "3d/8e/10/18.https___www_inaturalist_org_photos_4606803.jpg",
+          "thumb": "3d/8e/10/18.https___www_inaturalist_org_photos_4606803.98x68.jpg"
+        },
+        {
+          "rightsHolder": "dendzo",
+          "source": "https://www.inaturalist.org/photos/4606905",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "3d/8e/5a/18.https___www_inaturalist_org_photos_4606905.jpg",
+          "thumb": "3d/8e/5a/18.https___www_inaturalist_org_photos_4606905.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Enrico Castello",
+          "source": "https://www.inaturalist.org/photos/4727689",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "3e/3b/31/18.https___www_inaturalist_org_photos_4727689.jpg",
+          "thumb": "3e/3b/31/18.https___www_inaturalist_org_photos_4727689.98x68.jpg"
+        },
+        {
+          "rightsHolder": "dendzo",
+          "source": "https://www.inaturalist.org/photos/4734636",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "3e/46/18/18.https___www_inaturalist_org_photos_4734636.jpg",
+          "thumb": "3e/46/18/18.https___www_inaturalist_org_photos_4734636.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Beate & Heinz Beyerlein",
+          "source": "https://www.inaturalist.org/photos/4736967",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "3e/49/8a/18.https___www_inaturalist_org_photos_4736967.jpg",
+          "thumb": "3e/49/8a/18.https___www_inaturalist_org_photos_4736967.98x68.jpg"
+        },
+        {
+          "rightsHolder": "dendzo",
+          "source": "https://www.inaturalist.org/photos/4793368",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "3e/a0/0e/18.https___www_inaturalist_org_photos_4793368.jpg",
+          "thumb": "3e/a0/0e/18.https___www_inaturalist_org_photos_4793368.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Jakob Fahr",
+          "source": "https://www.inaturalist.org/photos/4847373",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "3e/ee/d9/18.https___www_inaturalist_org_photos_4847373.jpg",
+          "thumb": "3e/ee/d9/18.https___www_inaturalist_org_photos_4847373.98x68.jpg"
+        },
+        {
+          "rightsHolder": "inasiebert",
+          "source": "https://www.inaturalist.org/photos/4849930",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "3e/f2/86/18.https___www_inaturalist_org_photos_4849930.jpg",
+          "thumb": "3e/f2/86/18.https___www_inaturalist_org_photos_4849930.98x68.jpg"
+        },
+        {
+          "rightsHolder": "inasiebert",
+          "source": "https://www.inaturalist.org/photos/4849994",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "3e/f2/9a/18.https___www_inaturalist_org_photos_4849994.jpg",
+          "thumb": "3e/f2/9a/18.https___www_inaturalist_org_photos_4849994.98x68.jpg"
+        },
+        {
+          "rightsHolder": "tkoffel",
+          "source": "https://www.inaturalist.org/photos/5118019",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "40/65/c5/18.https___www_inaturalist_org_photos_5118019.jpg",
+          "thumb": "40/65/c5/18.https___www_inaturalist_org_photos_5118019.98x68.jpg"
+        },
+        {
+          "rightsHolder": "reddad",
+          "source": "https://www.inaturalist.org/photos/5820891",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "44/7f/5f/18.https___www_inaturalist_org_photos_5820891.jpg",
+          "thumb": "44/7f/5f/18.https___www_inaturalist_org_photos_5820891.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -611,17 +952,107 @@ export const birds = [
       "id": 1051079,
       "name": "Carduelis carduelis",
       "images": [
-        "2016/08/30/19/54849_orig.jpg",
-        "2016/12/31/12/21834_orig.jpg",
-        "2013/12/01/23/15478_orig.jpg",
-        "2013/12/10/02/54036_orig.jpg",
-        "2013/11/30/20/90252_orig.jpg",
-        "2013/12/07/17/97056_orig.jpg",
-        "2012/06/12/10/38629_orig.jpg",
-        "2013/11/30/10/89179_orig.jpg",
-        "2013/12/10/02/96135_orig.jpg",
-        "2013/12/10/02/56352_orig.jpg",
-        "2013/12/10/02/78587_orig.jpg"
+        {
+          "title": "Female European Goldfinch - Canio, Madeira, Portugal",
+          "rightsHolder": "David d'O / Schaapmans",
+          "source": "https://www.flickr.com/photos/david_o/10840850035/",
+          "license": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
+          "url": "7e/41/1b/542.10840850035.jpg",
+          "thumb": "7e/41/1b/542.10840850035.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/13718235@N00'>David d'O / Schaapmans</a>",
+            "homepage": "http://www.flickr.com/photos/13718235@N00",
+            "role": "photographer"
+          }
+        },
+        {
+          "rightsHolder": "Maurice",
+          "source": "https://www.inaturalist.org/photos/1239941",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "29/3f/d8/18.https___www_inaturalist_org_photos_1239941.jpg",
+          "thumb": "29/3f/d8/18.https___www_inaturalist_org_photos_1239941.98x68.jpg"
+        },
+        {
+          "title": "Male European Goldfinch - Canio, Madeira, Portugal",
+          "rightsHolder": "David d'O / Schaapmans",
+          "source": "https://www.flickr.com/photos/david_o/10841553004/",
+          "license": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
+          "url": "7e/41/3b/542.10841553004.jpg",
+          "thumb": "7e/41/3b/542.10841553004.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/13718235@N00'>David d'O / Schaapmans</a>",
+            "homepage": "http://www.flickr.com/photos/13718235@N00",
+            "role": "photographer"
+          }
+        },
+        {
+          "rightsHolder": "Jon Sullivan",
+          "source": "https://www.inaturalist.org/photos/1298494",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "29/81/2e/18.https___www_inaturalist_org_photos_1298494.jpg",
+          "thumb": "29/81/2e/18.https___www_inaturalist_org_photos_1298494.98x68.jpg"
+        },
+        {
+          "title": "Female European Goldfinch - Canio, Madeira, Portugal",
+          "rightsHolder": "David d'O / Schaapmans",
+          "source": "https://www.flickr.com/photos/david_o/10841645665/",
+          "license": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
+          "url": "7e/41/45/542.10841645665.jpg",
+          "thumb": "7e/41/45/542.10841645665.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/13718235@N00'>David d'O / Schaapmans</a>",
+            "homepage": "http://www.flickr.com/photos/13718235@N00",
+            "role": "photographer"
+          }
+        },
+        {
+          "rightsHolder": "ecologyelise",
+          "source": "https://www.inaturalist.org/photos/1354298",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "29/d4/23/18.https___www_inaturalist_org_photos_1354298.jpg",
+          "thumb": "29/d4/23/18.https___www_inaturalist_org_photos_1354298.98x68.jpg"
+        },
+        {
+          "title": "Male European Goldfinch - Canio, Madeira, Portugal",
+          "rightsHolder": "David d'O / Schaapmans",
+          "source": "https://www.flickr.com/photos/david_o/10842113313/",
+          "license": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
+          "url": "7e/41/57/542.10842113313.jpg",
+          "thumb": "7e/41/57/542.10842113313.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/13718235@N00'>David d'O / Schaapmans</a>",
+            "homepage": "http://www.flickr.com/photos/13718235@N00",
+            "role": "photographer"
+          }
+        },
+        {
+          "rightsHolder": "Kevin Daniel Chase",
+          "source": "https://www.inaturalist.org/photos/1490192",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "2a/a3/71/18.https___www_inaturalist_org_photos_1490192.jpg",
+          "thumb": "2a/a3/71/18.https___www_inaturalist_org_photos_1490192.98x68.jpg"
+        },
+        {
+          "rightsHolder": "anis",
+          "source": "https://www.inaturalist.org/photos/1505511",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "2a/bd/ff/18.https___www_inaturalist_org_photos_1505511.jpg",
+          "thumb": "2a/bd/ff/18.https___www_inaturalist_org_photos_1505511.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Beate & Heinz Beyerlein",
+          "source": "https://www.inaturalist.org/photos/1642779",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "2b/92/6a/18.https___www_inaturalist_org_photos_1642779.jpg",
+          "thumb": "2b/92/6a/18.https___www_inaturalist_org_photos_1642779.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Cecilie Svenningsen",
+          "source": "https://www.inaturalist.org/photos/1721710",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "2c/06/8a/18.https___www_inaturalist_org_photos_1721710.jpg",
+          "thumb": "2c/06/8a/18.https___www_inaturalist_org_photos_1721710.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -730,17 +1161,111 @@ export const birds = [
       "id": 1051974,
       "name": "Parus major",
       "images": [
-        "2015/04/27/05/41188_orig.jpg",
-        "2015/04/27/05/22078_orig.jpg",
-        "2016/08/02/05/74716_orig.jpg",
-        "2016/08/02/05/59828_orig.jpg",
-        "2016/08/04/15/83315_orig.jpg",
-        "2012/06/13/05/19172_orig.jpg",
-        "2016/08/06/04/17413_orig.jpg",
-        "2012/06/13/05/93978_orig.jpg",
-        "2012/06/13/05/98189_orig.jpg",
-        "2015/03/21/14/16241_orig.jpg",
-        "2013/11/25/22/11572_orig.jpg"
+        {
+          "rightsHolder": "reddad",
+          "source": "https://www.inaturalist.org/photos/6351510",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "47/ec/7b/18.https___www_inaturalist_org_photos_6351510.jpg",
+          "thumb": "47/ec/7b/18.https___www_inaturalist_org_photos_6351510.98x68.jpg"
+        },
+        {
+          "rightsHolder": "katunchik",
+          "source": "https://www.inaturalist.org/photos/6352146",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "47/ed/79/18.https___www_inaturalist_org_photos_6352146.jpg",
+          "thumb": "47/ed/79/18.https___www_inaturalist_org_photos_6352146.98x68.jpg"
+        },
+        {
+          "rightsHolder": "katunchik",
+          "source": "https://www.inaturalist.org/photos/6352149",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "47/ed/7c/18.https___www_inaturalist_org_photos_6352149.jpg",
+          "thumb": "47/ed/7c/18.https___www_inaturalist_org_photos_6352149.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Chris Cheatle",
+          "source": "https://www.inaturalist.org/photos/6352201",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "47/ed/98/18.https___www_inaturalist_org_photos_6352201.jpg",
+          "thumb": "47/ed/98/18.https___www_inaturalist_org_photos_6352201.98x68.jpg"
+        },
+        {
+          "rightsHolder": "roby",
+          "source": "https://www.inaturalist.org/photos/6361621",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "47/fd/d4/18.https___www_inaturalist_org_photos_6361621.jpg",
+          "thumb": "47/fd/d4/18.https___www_inaturalist_org_photos_6361621.98x68.jpg"
+        },
+        {
+          "rightsHolder": "roby",
+          "source": "https://www.inaturalist.org/photos/6362121",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "47/fe/ad/18.https___www_inaturalist_org_photos_6362121.jpg",
+          "thumb": "47/fe/ad/18.https___www_inaturalist_org_photos_6362121.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Wouter Koch",
+          "source": "https://www.inaturalist.org/photos/6381273",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "48/1c/38/18.https___www_inaturalist_org_photos_6381273.jpg",
+          "thumb": "48/1c/38/18.https___www_inaturalist_org_photos_6381273.98x68.jpg"
+        },
+        {
+          "rightsHolder": "redhat",
+          "source": "https://www.inaturalist.org/photos/6393384",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "48/2f/ec/18.https___www_inaturalist_org_photos_6393384.jpg",
+          "thumb": "48/2f/ec/18.https___www_inaturalist_org_photos_6393384.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Wouter Koch",
+          "source": "https://www.inaturalist.org/photos/6394708",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "48/31/f2/18.https___www_inaturalist_org_photos_6394708.jpg",
+          "thumb": "48/31/f2/18.https___www_inaturalist_org_photos_6394708.98x68.jpg"
+        },
+        {
+          "rightsHolder": "inasiebert",
+          "source": "https://www.inaturalist.org/photos/6415505",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "48/53/f8/18.https___www_inaturalist_org_photos_6415505.jpg",
+          "thumb": "48/53/f8/18.https___www_inaturalist_org_photos_6415505.98x68.jpg"
+        },
+        {
+          "rightsHolder": "inasiebert",
+          "source": "https://www.inaturalist.org/photos/6452172",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "48/91/d7/18.https___www_inaturalist_org_photos_6452172.jpg",
+          "thumb": "48/91/d7/18.https___www_inaturalist_org_photos_6452172.98x68.jpg"
+        },
+        {
+          "rightsHolder": "redhat",
+          "source": "https://www.inaturalist.org/photos/6452208",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "48/91/fb/18.https___www_inaturalist_org_photos_6452208.jpg",
+          "thumb": "48/91/fb/18.https___www_inaturalist_org_photos_6452208.98x68.jpg"
+        },
+        {
+          "rightsHolder": "reddad",
+          "source": "https://www.inaturalist.org/photos/6452920",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "48/93/61/18.https___www_inaturalist_org_photos_6452920.jpg",
+          "thumb": "48/93/61/18.https___www_inaturalist_org_photos_6452920.98x68.jpg"
+        },
+        {
+          "rightsHolder": "reddad",
+          "source": "https://www.inaturalist.org/photos/6474238",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "48/b6/c9/18.https___www_inaturalist_org_photos_6474238.jpg",
+          "thumb": "48/b6/c9/18.https___www_inaturalist_org_photos_6474238.98x68.jpg"
+        },
+        {
+          "rightsHolder": "reddad",
+          "source": "https://www.inaturalist.org/photos/6474327",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "48/b6/d6/18.https___www_inaturalist_org_photos_6474327.jpg",
+          "thumb": "48/b6/d6/18.https___www_inaturalist_org_photos_6474327.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -823,13 +1348,90 @@ export const birds = [
       "id": 1051567,
       "name": "Erithacus rubecula",
       "images": [
-        "2012/06/12/23/65810_orig.jpg",
-        "2012/06/12/23/28926_orig.jpg",
-        "2012/06/12/23/18687_orig.jpg",
-        "2012/06/12/23/37934_orig.jpg",
-        "2012/06/12/23/08809_orig.jpg",
-        "2015/04/07/04/85402_orig.jpg",
-        "2012/06/13/13/98179_orig.jpg"
+        {
+          "rightsHolder": "Marion ZÃ¶ller",
+          "source": "https://www.inaturalist.org/photos/1027003",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "28/29/e6/18.https___www_inaturalist_org_photos_1027003.jpg",
+          "thumb": "28/29/e6/18.https___www_inaturalist_org_photos_1027003.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Greg Lasley",
+          "source": "https://www.inaturalist.org/photos/1077092",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "28/68/ec/18.https___www_inaturalist_org_photos_1077092.jpg",
+          "thumb": "28/68/ec/18.https___www_inaturalist_org_photos_1077092.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Greg Lasley",
+          "source": "https://www.inaturalist.org/photos/1082487",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "28/71/84/18.https___www_inaturalist_org_photos_1082487.jpg",
+          "thumb": "28/71/84/18.https___www_inaturalist_org_photos_1082487.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Greg Lasley",
+          "source": "https://www.inaturalist.org/photos/1087468",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "28/78/d5/18.https___www_inaturalist_org_photos_1087468.jpg",
+          "thumb": "28/78/d5/18.https___www_inaturalist_org_photos_1087468.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Greg Lasley",
+          "source": "https://www.inaturalist.org/photos/1090953",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "28/7e/38/18.https___www_inaturalist_org_photos_1090953.jpg",
+          "thumb": "28/7e/38/18.https___www_inaturalist_org_photos_1090953.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Marion ZÃ¶ller",
+          "source": "https://www.inaturalist.org/photos/1094185",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "28/82/e0/18.https___www_inaturalist_org_photos_1094185.jpg",
+          "thumb": "28/82/e0/18.https___www_inaturalist_org_photos_1094185.98x68.jpg"
+        },
+        {
+          "rightsHolder": "wonderturquette",
+          "source": "https://www.inaturalist.org/photos/11500",
+          "license": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+          "url": "28/cc/ae/18.https___www_inaturalist_org_photos_11500.jpg",
+          "thumb": "28/cc/ae/18.https___www_inaturalist_org_photos_11500.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Duarte Frade",
+          "source": "https://www.inaturalist.org/photos/1151221",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "28/ce/34/18.https___www_inaturalist_org_photos_1151221.jpg",
+          "thumb": "28/ce/34/18.https___www_inaturalist_org_photos_1151221.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Petra Saracbasi",
+          "source": "https://www.inaturalist.org/photos/1315284",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "29/98/94/18.https___www_inaturalist_org_photos_1315284.jpg",
+          "thumb": "29/98/94/18.https___www_inaturalist_org_photos_1315284.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Petra Saracbasi",
+          "source": "https://www.inaturalist.org/photos/1315302",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "29/98/a3/18.https___www_inaturalist_org_photos_1315302.jpg",
+          "thumb": "29/98/a3/18.https___www_inaturalist_org_photos_1315302.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Petra Saracbasi",
+          "source": "https://www.inaturalist.org/photos/1315343",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "29/98/bd/18.https___www_inaturalist_org_photos_1315343.jpg",
+          "thumb": "29/98/bd/18.https___www_inaturalist_org_photos_1315343.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Martin Grimm",
+          "source": "https://www.inaturalist.org/photos/1318916",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "29/9d/65/18.https___www_inaturalist_org_photos_1318916.jpg",
+          "thumb": "29/9d/65/18.https___www_inaturalist_org_photos_1318916.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -910,14 +1512,111 @@ export const birds = [
       "id": 915636,
       "name": "Aegithalos caudatus",
       "images": [
-        "2014/02/01/20/03327_orig.jpg",
-        "2012/07/26/21/49865_orig.jpg",
-        "2014/04/30/04/02380_orig.jpg",
-        "2018/04/22/20/16219_orig.jpg",
-        "2012/06/13/05/78079_orig.jpg",
-        "2010/03/25/01/59545_orig.jpg",
-        "2012/06/13/05/97226_orig.jpg",
-        "2013/02/03/11/74209_orig.jpg"
+        {
+          "rightsHolder": "Martin Grimm",
+          "source": "https://www.inaturalist.org/photos/1079161",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "28/6c/80/18.https___www_inaturalist_org_photos_1079161.jpg",
+          "thumb": "28/6c/80/18.https___www_inaturalist_org_photos_1079161.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Martin Grimm",
+          "source": "https://www.inaturalist.org/photos/1079162",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "28/6c/81/18.https___www_inaturalist_org_photos_1079162.jpg",
+          "thumb": "28/6c/81/18.https___www_inaturalist_org_photos_1079162.98x68.jpg"
+        },
+        {
+          "rightsHolder": "harum.koh",
+          "source": "https://www.inaturalist.org/photos/1283848",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "29/6e/5e/18.https___www_inaturalist_org_photos_1283848.jpg",
+          "thumb": "29/6e/5e/18.https___www_inaturalist_org_photos_1283848.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Marion ZÃ¶ller",
+          "source": "https://www.inaturalist.org/photos/1368736",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "29/ee/0e/18.https___www_inaturalist_org_photos_1368736.jpg",
+          "thumb": "29/ee/0e/18.https___www_inaturalist_org_photos_1368736.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Albert Busom",
+          "source": "https://www.inaturalist.org/photos/1419651",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "2a/37/d3/18.https___www_inaturalist_org_photos_1419651.jpg",
+          "thumb": "2a/37/d3/18.https___www_inaturalist_org_photos_1419651.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Ryan McFarland",
+          "source": "https://www.inaturalist.org/photos/205539",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "2e/00/74/18.https___www_inaturalist_org_photos_205539.jpg",
+          "thumb": "2e/00/74/18.https___www_inaturalist_org_photos_205539.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Stas & Lana",
+          "source": "https://www.inaturalist.org/photos/2349379",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "2f/da/8e/18.https___www_inaturalist_org_photos_2349379.jpg",
+          "thumb": "2f/da/8e/18.https___www_inaturalist_org_photos_2349379.98x68.jpg"
+        },
+        {
+          "rightsHolder": "yaofong_tsao",
+          "source": "https://www.inaturalist.org/photos/2535866",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "30/f8/30/18.https___www_inaturalist_org_photos_2535866.jpg",
+          "thumb": "30/f8/30/18.https___www_inaturalist_org_photos_2535866.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Paul Cools",
+          "source": "https://www.inaturalist.org/photos/2548979",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "31/0c/6d/18.https___www_inaturalist_org_photos_2548979.jpg",
+          "thumb": "31/0c/6d/18.https___www_inaturalist_org_photos_2548979.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Kim, Hyun-tae",
+          "source": "https://www.inaturalist.org/photos/2681758",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "31/df/9a/18.https___www_inaturalist_org_photos_2681758.jpg",
+          "thumb": "31/df/9a/18.https___www_inaturalist_org_photos_2681758.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Kim, Hyun-tae",
+          "source": "https://www.inaturalist.org/photos/2685203",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "31/e4/dc/18.https___www_inaturalist_org_photos_2685203.jpg",
+          "thumb": "31/e4/dc/18.https___www_inaturalist_org_photos_2685203.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Kim, Hyun-tae",
+          "source": "https://www.inaturalist.org/photos/2698954",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "31/fd/03/18.https___www_inaturalist_org_photos_2698954.jpg",
+          "thumb": "31/fd/03/18.https___www_inaturalist_org_photos_2698954.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Kim, Hyun-tae",
+          "source": "https://www.inaturalist.org/photos/2698956",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "31/fd/05/18.https___www_inaturalist_org_photos_2698956.jpg",
+          "thumb": "31/fd/05/18.https___www_inaturalist_org_photos_2698956.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Kim, Hyun-tae",
+          "source": "https://www.inaturalist.org/photos/2698960",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "31/fd/0a/18.https___www_inaturalist_org_photos_2698960.jpg",
+          "thumb": "31/fd/0a/18.https___www_inaturalist_org_photos_2698960.98x68.jpg"
+        },
+        {
+          "rightsHolder": "yaofong_tsao",
+          "source": "https://www.inaturalist.org/photos/2739888",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "32/41/9a/18.https___www_inaturalist_org_photos_2739888.jpg",
+          "thumb": "32/41/9a/18.https___www_inaturalist_org_photos_2739888.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -999,16 +1698,102 @@ export const birds = [
       "id": 919235,
       "name": "Fringilla coelebs",
       "images": [
-        "2011/10/10/11/29282_orig.jpg",
-        "2014/10/09/01/67848_orig.jpg",
-        "2012/06/13/06/21233_orig.jpg",
-        "2011/10/10/11/20004_orig.jpg",
-        "2011/10/10/11/22498_orig.jpg",
-        "2011/10/10/11/04400_orig.jpg",
-        "2011/10/10/11/40352_orig.jpg",
-        "2011/10/10/11/71732_orig.jpg",
-        "2016/08/02/05/96458_orig.jpg",
-        "2016/08/02/05/35826_orig.jpg"
+        {
+          "title": "Fringilla coelebs maderensis",
+          "rightsHolder": "Jrg Hempel",
+          "source": "https://www.flickr.com/photos/joerghempel/8249763475/",
+          "license": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "url": "81/41/de/542.8249763475.jpg",
+          "thumb": "81/41/de/542.8249763475.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/32023375@N06'>Jrg Hempel</a>",
+            "homepage": "http://www.flickr.com/photos/32023375@N06",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Chaffinch Madeira.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Chaffinch_Madeira.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/0f/01/509.1444558.jpg",
+          "thumb": "56/0f/01/509.1444558.98x68.jpg"
+        },
+        {
+          "title": "Fringilla coelebs palmae 2 (5494752900).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fringilla_coelebs_palmae_2_(5494752900).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/85/1b/509.21115552.jpg",
+          "thumb": "57/85/1b/509.21115552.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Greg Lasley",
+          "source": "https://www.inaturalist.org/photos/428365",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "3b/a5/e5/18.https___www_inaturalist_org_photos_428365.jpg",
+          "thumb": "3b/a5/e5/18.https___www_inaturalist_org_photos_428365.98x68.jpg"
+        },
+        {
+          "title": "Buchfink Madeira.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Buchfink_Madeira.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5d/86/65/509.25557067.jpg",
+          "thumb": "5d/86/65/509.25557067.98x68.jpg"
+        },
+        {
+          "title": "Fringilla coelebs palmae 03.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fringilla_coelebs_palmae_03.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5d/8c/8b/509.25682692.jpg",
+          "thumb": "5d/8c/8b/509.25682692.98x68.jpg"
+        },
+        {
+          "title": "Fringilla coelebs palmae 2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fringilla_coelebs_palmae_2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "66/70/72/509.6206150.jpg",
+          "thumb": "66/70/72/509.6206150.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Bruno Rosa",
+          "source": "https://www.inaturalist.org/photos/6350514",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "47/ea/d5/18.https___www_inaturalist_org_photos_6350514.jpg",
+          "thumb": "47/ea/d5/18.https___www_inaturalist_org_photos_6350514.98x68.jpg"
+        },
+        {
+          "rightsHolder": "reddad",
+          "source": "https://www.inaturalist.org/photos/2753387",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "32/5a/b1/18.https___www_inaturalist_org_photos_2753387.jpg",
+          "thumb": "32/5a/b1/18.https___www_inaturalist_org_photos_2753387.98x68.jpg"
+        },
+        {
+          "rightsHolder": "reddad",
+          "source": "https://www.inaturalist.org/photos/4696781",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "3e/0e/80/18.https___www_inaturalist_org_photos_4696781.jpg",
+          "thumb": "3e/0e/80/18.https___www_inaturalist_org_photos_4696781.98x68.jpg"
+        },
+        {
+          "title": "File:PÃ¡jaro de Madeira (28608857392).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:P%C3%A1jaro_de_Madeira_(28608857392).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "63/bb/32/509.50532667.jpg",
+          "thumb": "63/bb/32/509.50532667.98x68.jpg"
+        },
+        {
+          "rightsHolder": "reddad",
+          "source": "https://www.inaturalist.org/photos/5704896",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "43/cd/7d/18.https___www_inaturalist_org_photos_5704896.jpg",
+          "thumb": "43/cd/7d/18.https___www_inaturalist_org_photos_5704896.98x68.jpg"
+        }
       ],
       "names": [
         {

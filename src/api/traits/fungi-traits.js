@@ -836,7 +836,7 @@ export const getFungiTraits = (enums) => {
     { name: 'Letharia vulpina', traits: [
         { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.EXPOSED_WOOD}` },
         { name: SD.name.HABITAT, values: [ SD.treeTypes.OAK, SD.treeTypes.CONIFERS ] },
-        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FRUTICOSE}}` },
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FRUTICOSE}` },
         { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.VARIABLE}`},
         { name: SD.name.COLOUR, value: `${SD.colour.BRIGHT_YELLOW_GREEN}`},
         { name: SD.name.DISC_WIDTH, value: `2-7cm`},
@@ -846,7 +846,7 @@ export const getFungiTraits = (enums) => {
     { name: 'Parmelia saxatilis', traits: [
         // { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.EXPOSED_WOOD}` },
         // { name: SD.name.HABITAT, values: [ SD.treeTypes.OAK, SD.treeTypes.CONIFERS ] },
-        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}}` },
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}` },
         // { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.VARIABLE}`},
         // { name: SD.name.COLOUR, value: `${SD.colour.BRIGHT_YELLOW_GREEN}`},
         // { name: SD.name.DISC_WIDTH, value: `2-7cm`},

@@ -1784,3 +1784,18 @@ a.collection-disabled {
   vertical-align: baseline;
   margin: 0 0 0 .25em;
 }
+
+.fungi-block {
+  color: white;
+  background-color: var(--snap-kingdom-fungi);
+}
+
+.animalia-block {
+  color: white;
+  background-color: var(--snap-kingdom-animalia);
+}
+
+.plantae-block {
+  color: white;
+  background-color: var(--snap-kingdom-plantae);
+}

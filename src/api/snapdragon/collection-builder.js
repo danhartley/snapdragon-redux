@@ -79,6 +79,7 @@ async function getSpeciesData(item) {
             source: media.source,
             license: media.license,
             url: media.eolMediaURL,
+            thumb: media.eolThumbnailURL,
             photographer: media.agents.find(agent => agent.role === 'photographer')            
         }
     }) : [];
@@ -116,8 +117,9 @@ const init = () => {
                 item.name = data.name;
                 const binomial = getBinomial(item);
                 getTaxonomy(item.name).then(taxonomy => {
-                    // data.taxonomy = taxonomy;
+                    data.taxonomy = taxonomy;
                     data.family = taxonomy.family;
+                    data.kingdom = taxonomy.kingdom;
                     data.eolName = item.name; 
                     data.name = binomial;
                     items.push(data);
@@ -300,7 +302,8 @@ document.addEventListener("DOMContentLoaded", function() {
                             getSpeciesData({ detailsUrl : speciesUrl(eolId) }).then(data => {
                                 const binomial = getBinomial(item);
                                 getTaxonomy(item.name).then(taxonomy => {
-                                    // data.taxonomy = taxonomy;
+                                    data.taxonomy = taxonomy;
+                                    data.kingdom = taxonomy.kingdom;
                                     data.family = taxonomy.family;
                                     data.eolName = item.name; 
                                     data.name = binomial;

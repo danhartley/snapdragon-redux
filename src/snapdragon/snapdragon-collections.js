@@ -243,7 +243,7 @@ export const rhsWeeds1 = {
 const mushroomCollection = {
     providerId: 1,
     type: 'species',
-    thumb: 'https://content.eol.org/data/media/2013/03/01/14/45554_orig.jpg',
+    thumb: 'https://content.eol.org/data/media/59/16/59/509.2840237.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'Amateur mycologists',
@@ -259,10 +259,10 @@ export const fallMushroomsEasternUSA = {
     name: 'Mushrooms Eastern US Fall',
     itemNames: [ 
         'Grifola frondosa', 'Laetiporus sulphureus', 'Hericium erinaceus', 'Lycoperdon perlatum',
-        'Lycoperdon pyriforme', 'Hydnum repandum',
-        'Laetiporus cincinnatus', 'Craterellus tubaeformis', 'Hydnum umbilicatum', 
-        'Hericium americanum', 'Hericium coralloides', 'Calvatia gigantea', 
-        'Clitocybe nuda', 'Armillaria mellea', 'Armillaria tabescens', 'Entoloma abortivum'
+        'Lycoperdon pyriforme', 'Hydnum repandum', 'Craterellus tubaeformis', 'Hydnum umbilicatum', 
+        'Hericium americanum', 'Hericium coralloides', 'Calvatia gigantea', 'Armillaria mellea', 'Armillaria tabescens', 'Entoloma abortivum'
+        //'Laetiporus cincinnatus'
+        //'Clitocybe nuda'
         
     ],
     descriptions: [
@@ -334,7 +334,7 @@ export const localSpecies = {
 const lichenCollection = {
     providerId: 1,
     type: 'species',
-    thumb: 'https://content.eol.org/data/media/2009/07/24/05/95087_98_68.jpg',
+    thumb: 'https://content.eol.org/data/media/80/d2/d6/542.6832443214.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'Amateur lichenologists',
@@ -357,11 +357,6 @@ export const beginnersLichenology = {
         'Cladonia pocillum', 'Peltigera membranacea', 'Cladonia portentosa', 'Cladonia squamosa',
         'Ramalina fastigiata', 'Flavoparmelia caperata', 'Parmotrema perlatum', 'Parmelia sulcata',
         'Lecidella elaeochroma', 'Lecanora chlarotera'
-        // 'Caloplaca flavescens'
-        // 'Lecanora muralis'
-        // 'Xanthoparmelia mougeotii'
-        // 'Graphina anguina'
-        // 'Caloplaca aurantia'
     ],
     descriptions: [
         'Lichens are composite organisms formed from the symbiosis of a fungus (mycobiont) and a photosynthetic alga or cyanobacterium (photobiont).',

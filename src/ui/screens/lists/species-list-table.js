@@ -17,7 +17,7 @@ export const buildTable = (collection, config, traits) => {
     const wide = window.matchMedia("(min-width: 1200px)").matches;
 
     collection.items.forEach(item => { 
-        item.image = item.list || item.images[0];
+        item.image = item.list ? item.images.find(i => i.url === item.list) : item.images[0];
         item.license = item.image.license;
         item.url = item.image.url;
         item.rightsHolder = item.image.rightsHolder;

@@ -39,7 +39,7 @@ const getRandomImages = (currentItem, config) => {
         } );
     } else {
         images = items.map((item, index) => { 
-            return { index: index + 1, src: item.images[0], itemName: item.name };
+            return { index: index + 1, ...item.images[0], itemName: item.name };
         } );
     }
 

@@ -16,10 +16,10 @@ export const renderSpecimenTiles = (collection) => {
     let images = R.take(4, utils.shuffleArray(R.clone(item.images)));
 
     images = images.map(img => {
-        return { url: img, itemName: item.name };
+        return { ...img, itemName: item.name };
     });
 
-    renderSpecimenImageTiles([ item ], images);
+    renderSpecimenImageTiles({ items: [item] }, images);
 };
 
 export const renderSpecimenImageTiles = (collection, images) => {

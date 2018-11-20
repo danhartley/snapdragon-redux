@@ -30,9 +30,9 @@ export const renderCompleteText = (collection) => {
 
     if(screen.type === 'text-complete-genus') {
 
-        question = item.genusName;
+        question = item.genus;
         genus = '---';
-        species = item.speciesName;
+        species = item.species;
         givenTaxon = 'genus';
         if(config.isPortraitMode) {
             description = `Complete the latin name for ${vernacular}.`            
@@ -59,9 +59,9 @@ export const renderCompleteText = (collection) => {
     const itemTaxons = [ ...collection.speciesNames ].map(item => {
         switch(givenTaxon) {
             case 'genus':
-                return item.genusName;
+                return itemProperties.getGenusName(item);
             case 'species':
-                return item.speciesName;
+                return itemProperties.getSpeciesName(item);
             default:
                 return item
         }

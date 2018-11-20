@@ -100,14 +100,14 @@ const renderPortrait = (item, config, traits, isModalMode) => {
 const renderCommonParts = (template, config, item, collection, traits, isModalMode, parent, lessonPlan) => {
 
     const species = item.name;
-    const epithet = itemProperties.latin(item.speciesName);
-    const latin = epithet ? `${item.speciesName}: ${epithet.en}` : '';
+    const epithet = itemProperties.latin(item.species);
+    const latin = epithet ? `${item.species}: ${epithet.en}` : '';
     const rank = "species";
     const family = taxa.find(f => f.name === item.family);
     const familyName = family ? family.name : item.taxonomy.family;
     const familyVernacularNames = itemProperties.familyVernacularNames(item.family, config.language);
     const familyVernacularName = familyVernacularNames ? familyVernacularNames[0] : '';
-    const itemImage = item.icon || item.images[0];
+    const itemImage = item.icon || item.images[0].url;
     
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const subSpeciesCount = specific ? specific.subspecies.length : 0;

@@ -28,7 +28,7 @@ const disableModalPopups = (disableModal, parent, config) => {
     }
 };
 
-export const imageSlider = (config, images, parent, disableModal = false, image) => {
+export const imageSlider = (config, images, parent, disableModal, image) => {
 
     const slider = document.createElement('template');
 
@@ -36,7 +36,8 @@ export const imageSlider = (config, images, parent, disableModal = false, image)
 
     parent.innerHTML = '';
 
-    renderTemplate({ images: utils.shuffleArray(images), index: '' }, slider.content, parent);
+    // renderTemplate({ images: utils.shuffleArray(images), index: '' }, slider.content, parent);
+    renderTemplate({ images, index: '' }, slider.content, parent);
     selectActiveImage(image, parent);    
     disableModalPopups(disableModal, parent, config);
 
@@ -50,8 +51,7 @@ export const imageSlider = (config, images, parent, disableModal = false, image)
                 image: { ...src, ...{ photographer : { full_name: src.photographersName }}}
             };
             handleRightsAttribution(selectedItem);
-            console.log(active.dataset);   
-        });
+        },1000);
     });
 };
 

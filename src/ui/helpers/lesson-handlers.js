@@ -82,9 +82,9 @@ const purgeLesson = () => {
 
 const isSkippable = (collection, counter, caller) => {
     if(!collection.items) return false;
-    const isLessonRehydrated = counter.isLessonRehydrated && collection.itemIndex !== 0;
-    const isReady = collection.itemIndex === 0;
-    return (isLessonRehydrated || isReady);
+    const isLessonRehydrated = counter.isLessonRehydrated;
+    const isReady = collection.itemIndex === 0 && !isLessonRehydrated;
+    return isReady;
 };
 
 export const lessonLogicHandler = {

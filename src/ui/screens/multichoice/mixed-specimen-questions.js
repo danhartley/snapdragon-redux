@@ -30,7 +30,7 @@ export const renderMixedSpecimenQuestions = ui => {
         const multiImages = utils.flatten(images.map(image => { 
             const srcs = R.take(3, image.srcs);
             return srcs.map((src, index) => {
-                return { src: src, itemName: image.itemName, index: index};
+                return { ...src, itemName: image.itemName, index: index};
             });
         }));
         return multiImages;

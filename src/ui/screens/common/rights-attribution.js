@@ -34,6 +34,18 @@ export const handleRightsAttribution = (selectedItem) => {
             break;
         case 'http://creativecommons.org/licenses/by-nc-sa/3.0/':
             text = 'CC BY NC-SA 3.0';
+            break;        
+        case 'http://creativecommons.org/licenses/by/4.0/':        
+            text = 'CC 4.0';
+            break;
+        case 'http://creativecommons.org/licenses/by-nc/4.0/':
+            text = 'CC BY NC 4.0';
+            break;
+        case 'http://creativecommons.org/licenses/by-nc-sa/4.0/':
+            text = 'CC BY NC-SA 4.0';
+            break;
+        case 'http://creativecommons.org/licenses/by-sa/4.0/':
+            text = 'CC BY SA 4.0';
             break;
         default: 
             text = src.license;
