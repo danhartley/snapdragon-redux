@@ -1,14 +1,18 @@
 import * as R from 'ramda';
 
-import { birds } from 'api/snapdragon/common-city-birds';
-import { mushrooms } from 'api/snapdragon/mushrooms';
 import { fruit } from 'api/snapdragon/fruit';
 import { vegetables } from 'api/snapdragon/vegetables';
 import { insects } from 'api/snapdragon/insects';
 import { herbsAndSpices } from 'api/snapdragon/herbs-and-spices';
 import { deciduousAndEvergreenTrees } from 'api/rhs/deciduous-evergreen-trees';
+
+
+import { birds } from 'api/snapdragon/common-city-birds';
+import { mushrooms } from 'api/snapdragon/mushrooms';
 import { weeds1 } from 'api/rhs/weeds1';
 import { lichen } from 'api/snapdragon/lichen';
+
+import { plants } from 'api/snapdragon/plants';
 
 export const getInatSpecies = (latitude, longitude) => {
 
@@ -21,7 +25,8 @@ export const getInatSpecies = (latitude, longitude) => {
         ...herbsAndSpices,
         ...deciduousAndEvergreenTrees,
         ...weeds1,
-        ...lichen
+        ...lichen,
+        ...plants
     ];
     
     const names = snapdragon.map(item => item.name);

@@ -3493,21 +3493,107 @@ export const mushrooms = [
       "id": 1009706,
       "name": "Amanita phalloides",
       "images": [
-        "2008/10/08/13/48354_orig.jpg",
-        "2012/06/12/05/61980_orig.jpg",
-        "2014/05/08/03/99506_orig.jpg",
-        "2014/05/08/03/69334_orig.jpg",
-        "2011/04/28/02/24078_orig.jpg",
-        "2012/06/12/05/45741_orig.jpg",
-        "2013/08/11/01/73532_orig.jpg",
-        "2016/08/01/21/73170_orig.jpg",
-        "2016/08/01/21/44211_orig.jpg",
-        "2014/10/20/07/13179_orig.jpg",
-        "2015/04/07/05/05214_orig.jpg",
-        "2014/01/31/15/47633_orig.jpg",
-        "2014/01/31/15/75280_orig.jpg",
-        "2014/01/31/16/51328_orig.jpg",
-        "2014/01/31/16/84369_orig.jpg"
+        {
+          "title": "n24_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://www.flickr.com/photos/biodivlibrary/6459622393/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/a0/32/542.6459622393.jpg",
+          "thumb": "80/a0/32/542.6459622393.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+            "homepage": "http://www.flickr.com/photos/61021753@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Amanita phalloides - young.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_phalloides_-_young.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/96/4c/509.11756337.jpg",
+          "thumb": "55/96/4c/509.11756337.98x68.jpg"
+        },
+        {
+          "title": "Amanita phalloides - deathcap.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_phalloides_-_deathcap.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/e0/d4/509.12880529.jpg",
+          "thumb": "55/e0/d4/509.12880529.98x68.jpg"
+        },
+        {
+          "title": "2011-10-26 Amanita phalloides (Fr.) Link 177883.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:2011-10-26_Amanita_phalloides_(Fr.)_Link_177883.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/a8/8e/509.17146189.jpg",
+          "thumb": "56/a8/8e/509.17146189.98x68.jpg"
+        },
+        {
+          "title": "2009-05 Amanita phalloides crop.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:2009-05_Amanita_phalloides_crop.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/fa/f0/509.18563265.jpg",
+          "thumb": "56/fa/f0/509.18563265.98x68.jpg"
+        },
+        {
+          "title": "01 Amanita phalloides in Zalas, Poland.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:01_Amanita_phalloides_in_Zalas,_Poland.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/44/54/509.24740135.jpg",
+          "thumb": "58/44/54/509.24740135.98x68.jpg"
+        },
+        {
+          "title": "02 Amanita phalloides in Zalas, Poland.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:02_Amanita_phalloides_in_Zalas,_Poland.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/44/55/509.24740138.jpg",
+          "thumb": "58/44/55/509.24740138.98x68.jpg"
+        },
+        {
+          "title": "03 Amanita phalloides in Zalas, Poland.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:03_Amanita_phalloides_in_Zalas,_Poland.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/44/56/509.24740146.jpg",
+          "thumb": "58/44/56/509.24740146.98x68.jpg"
+        },
+        {
+          "title": "Amanita phalloides Muchomor sromotnikowy.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_phalloides_Muchomor_sromotnikowy.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/28/7b/509.28987398.jpg",
+          "thumb": "59/28/7b/509.28987398.98x68.jpg"
+        },
+        {
+          "title": "File:Amanita phalloides weiÃ (2).JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_phalloides_wei%C3%9F_(2).JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/96/4b/509.31551043.jpg",
+          "thumb": "59/96/4b/509.31551043.98x68.jpg"
+        },
+        {
+          "title": "File:GrÃ¼ner Knolli.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Gr%C3%BCner_Knolli.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5e/97/c8/509.31551948.jpg",
+          "thumb": "5e/97/c8/509.31551948.98x68.jpg"
+        },
+        {
+          "title": "Amanita phalloides a1 (2).JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_phalloides_a1_(2).JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/5b/5d/509.35600672.jpg",
+          "thumb": "5f/5b/5d/509.35600672.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -3594,19 +3680,76 @@ export const mushrooms = [
       "id": 161521,
       "name": "Amanita caesarea",
       "images": [
-        "2010/03/24/04/80443_orig.jpg",
-        "2010/03/24/04/23708_orig.jpg",
-        "2014/03/08/03/98879_orig.jpg",
-        "2012/06/12/05/03677_orig.jpg",
-        "2012/09/11/02/69583_orig.jpg",
-        "2015/03/04/21/49980_orig.jpg",
-        "2014/01/31/15/75280_orig.jpg",
-        "2014/01/31/17/99353_orig.jpg",
-        "2014/02/01/05/83974_orig.jpg",
-        "2014/01/31/22/01189_orig.jpg",
-        "2015/05/20/00/35046_orig.jpg",
-        "2015/06/18/01/43127_orig.jpg"
-      ],
+        {
+          "title": "n20_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://www.flickr.com/photos/biodivlibrary/6459658015/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/a0/6f/542.6459658015.jpg",
+          "thumb": "80/a0/6f/542.6459658015.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+            "homepage": "http://www.flickr.com/photos/61021753@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Amanita caesarea Sakhalin.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_caesarea_Sakhalin.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/6d/6f/509.11059477.jpg",
+          "thumb": "55/6d/6f/509.11059477.98x68.jpg"
+        },
+        {
+          "title": "Ovulo (Cocco) rinvenuto a Sasso Pisano.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Ovulo_(Cocco)_rinvenuto_a_Sasso_Pisano.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/2f/2e/509.14993740.jpg",
+          "thumb": "56/2f/2e/509.14993740.98x68.jpg"
+        },
+        {
+          "title": "Ovulo (Cocco) Sasso Pisano (PI).JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Ovulo_(Cocco)_Sasso_Pisano_(PI).JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/2f/30/509.14993750.jpg",
+          "thumb": "56/2f/30/509.14993750.98x68.jpg"
+        },
+        {
+          "title": "Oronges.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Oronges.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/81/c5/509.3118101.jpg",
+          "thumb": "59/81/c5/509.3118101.98x68.jpg"
+        },
+        {
+          "title": "Amanita caesarea MS7 (1).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_caesarea_MS7_(1).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "64/32/30/509.52234176.jpg",
+          "thumb": "64/32/30/509.52234176.98x68.jpg"
+        },
+        {
+          "title": "HONGO COMESTIBLE, AMANITA CAESAREA - panoramio.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:HONGO_COMESTIBLE,_AMANITA_CAESAREA_-_panoramio.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "64/57/0d/509.52928044.jpg",
+          "thumb": "64/57/0d/509.52928044.98x68.jpg"
+        },
+        {
+          "title": "Amanita caesarea 54730.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_caesarea_54730.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "67/d9/48/509.7994920.jpg",
+          "thumb": "67/d9/48/509.7994920.98x68.jpg"
+        }
+      ] ,
       "names": [
         {
           "vernacularName": "Caesar's Mushroom",
@@ -4234,16 +4377,102 @@ export const mushrooms = [
       "id": 989800,
       "name": "Coprinopsis picacea",
       "images": [
-        "2015/03/21/15/04416_orig.jpg",
-        "2014/01/31/17/47116_orig.jpg",
-        "2014/01/31/16/05632_orig.jpg",
-        "2011/07/26/06/80590_orig.jpg",
-        "2014/02/01/13/26299_orig.jpg",
-        "2014/01/31/19/35484_orig.jpg",
-        "2014/01/31/19/37947_orig.jpg",
-        "2014/01/31/21/39552_orig.jpg",
-        "2014/05/01/16/62431_orig.jpg",
-        "2014/05/01/16/70299_orig.jpg"
+        {
+          "title": "Coprinus picaeus.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Coprinus_picaeus.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/85/ec/509.1142749.jpg",
+          "thumb": "55/85/ec/509.1142749.98x68.jpg"
+        },
+        {
+          "title": "Spechttintling.jpeg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Spechttintling.jpeg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/e6/ba/509.130645.jpg",
+          "thumb": "55/e6/ba/509.130645.98x68.jpg"
+        },
+        {
+          "title": "Spechttintlinge Herbstwald cropped.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Spechttintlinge_Herbstwald_cropped.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/ee/17/509.13289245.jpg",
+          "thumb": "55/ee/17/509.13289245.98x68.jpg"
+        },
+        {
+          "title": "File:TrÃ¡s-os-Montes, Portugal (2084520172).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Tr%C3%A1s-os-Montes,_Portugal_(2084520172).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/77/4d/509.25327085.jpg",
+          "thumb": "58/77/4d/509.25327085.98x68.jpg"
+        },
+        {
+          "title": "Pilz1.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pilz1.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "59/1b/d2/509.28603020.jpg",
+          "thumb": "59/1b/d2/509.28603020.98x68.jpg"
+        },
+        {
+          "title": "Spechttintling002.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Spechttintling002.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/9e/99/509.31677586.jpg",
+          "thumb": "59/9e/99/509.31677586.98x68.jpg"
+        },
+        {
+          "title": "Edible and poisonous mushrooms (PL. 14) (8515013713).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Edible_and_poisonous_mushrooms_(PL._14)_(8515013713).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "61/1f/af/509.43088235.jpg",
+          "thumb": "61/1f/af/509.43088235.98x68.jpg"
+        },
+        {
+          "title": "File:ÐÐ°Ð²Ð¾Ð·Ð½Ð¸Ðº ÑÐ¼Ð¾Ð»Ð¸ÑÑÑÐ¹ - Coprinopsis picacea - Magpie fungus - ÐÐ¾Ð¿ÑÐ¸Ð½ÐºÐ° C. picaceus - Specht-Tintling (22301208304).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0%D0%B2%D0%BE%D0%B7%D0%BD%D0%B8%D0%BA_%D1%81%D0%BC%D0%BE%D0%BB%D0%B8%D1%81%D1%82%D1%8B%D0%B9_-_Coprinopsis_picacea_-_Magpie_fungus_-_%D0%9A%D0%BE%D0%BF%D1%80%D0%B8%D0%BD%D0%BA%D0%B0_C._picaceus_-_Specht-Tintling_(22301208304).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "62/d9/4c/509.46963435.jpg",
+          "thumb": "62/d9/4c/509.46963435.98x68.jpg"
+        },
+        {
+          "title": "File:ÐÐ°Ð²Ð¾Ð·Ð½Ð¸Ðº ÑÐ¼Ð¾Ð»Ð¸ÑÑÑÐ¹ - Coprinopsis picacea - Magpie fungus - ÐÐ¾Ð¿ÑÐ¸Ð½ÐºÐ° C. picaceus - Specht-Tintling (10559685815).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0%D0%B2%D0%BE%D0%B7%D0%BD%D0%B8%D0%BA_%D1%81%D0%BC%D0%BE%D0%BB%D0%B8%D1%81%D1%82%D1%8B%D0%B9_-_Coprinopsis_picacea_-_Magpie_fungus_-_%D0%9A%D0%BE%D0%BF%D1%80%D0%B8%D0%BD%D0%BA%D0%B0_C._picaceus_-_Specht-Tintling_(10559685815).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "62/d9/4e/509.46963439.jpg",
+          "thumb": "62/d9/4e/509.46963439.98x68.jpg"
+        },
+        {
+          "title": "Spechttintling.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Spechttintling.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "63/67/bc/509.4955861.jpg",
+          "thumb": "63/67/bc/509.4955861.98x68.jpg"
+        },
+        {
+          "title": "Coprinus picaceus 4.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Coprinus_picaceus_4.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "65/a8/12/509.60965695.jpg",
+          "thumb": "65/a8/12/509.60965695.98x68.jpg"
+        },
+        {
+          "title": "Coprinus picaceus.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Coprinus_picaceus.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "67/7b/12/509.6826993.jpg",
+          "thumb": "67/7b/12/509.6826993.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -5002,26 +5231,78 @@ export const mushrooms = [
       "id": 1029355,
       "name": "Marasmius oreades",
       "images": [
-        "2012/06/12/07/69639_orig.jpg",
-        "2012/06/12/07/02823_orig.jpg",
-        "2012/06/12/07/09169_orig.jpg",
-        "2012/06/12/07/62582_orig.jpg",
-        "2012/06/12/07/05021_orig.jpg",
-        "2013/04/25/01/60683_orig.jpg",
-        "2012/06/12/07/47670_orig.jpg",
-        "2012/06/12/07/18934_orig.jpg",
-        "2014/01/31/15/60361_orig.jpg",
-        "2015/03/04/21/79585_orig.jpg",
-        "2014/10/06/22/34704_orig.jpg",
-        "2015/03/24/03/95380_orig.jpg",
-        "2014/02/01/03/14080_orig.jpg",
-        "2014/02/01/00/32762_orig.jpg",
-        "2014/02/01/05/80600_orig.jpg",
-        "2014/02/01/06/08358_orig.jpg",
-        "2014/01/31/22/09729_orig.jpg",
-        "2014/02/01/07/24359_orig.jpg",
-        "2014/02/01/07/07682_orig.jpg",
-        "2014/10/10/15/81881_orig.jpg"
+        {
+          "title": "Marasmius oreades G3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Marasmius_oreades_G3.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/b1/9d/509.22106691.jpg",
+          "thumb": "57/b1/9d/509.22106691.98x68.jpg"
+        },
+        {
+          "title": "Feldschwindling 01.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Feldschwindling_01.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/9e/54/509.31676655.jpg",
+          "thumb": "59/9e/54/509.31676655.98x68.jpg"
+        },
+        {
+          "title": "Feldschwindling 02.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Feldschwindling_02.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/9e/55/509.31676670.jpg",
+          "thumb": "59/9e/55/509.31676670.98x68.jpg"
+        },
+        {
+          "title": "File:Marasmius oreades â Flora Batava â Volume v11.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Marasmius_oreades_%E2%80%94_Flora_Batava_%E2%80%94_Volume_v11.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5c/0f/30/509.18907086.jpg",
+          "thumb": "5c/0f/30/509.18907086.98x68.jpg"
+        },
+        {
+          "title": "Feldschwindling 02.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Feldschwindling_02.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5e/9f/95/509.31676670.jpg",
+          "thumb": "5e/9f/95/509.31676670.98x68.jpg"
+        },
+        {
+          "title": "Brownish mushroom on green grass 3.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Brownish_mushroom_on_green_grass_3.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5f/1c/a5/509.3412902.jpg",
+          "thumb": "5f/1c/a5/509.3412902.98x68.jpg"
+        },
+        {
+          "title": "Marasmius oreades a3 (2).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Marasmius_oreades_a3_(2).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "63/57/f9/509.49237425.jpg",
+          "thumb": "63/57/f9/509.49237425.98x68.jpg"
+        },
+        {
+          "title": "Marasmius oreades.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Marasmius_oreades.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "67/95/0a/509.7198015.jpg",
+          "thumb": "67/95/0a/509.7198015.98x68.jpg"
+        },
+        {
+          "title": "n134_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://farm9.staticflickr.com/8510/8510525468_3cbf78c69e_o.jpg",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "00/3e/6c/8.8510525468.jpg",
+          "thumb": "00/3e/6c/8.8510525468.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -5172,21 +5453,102 @@ export const mushrooms = [
       "id": 196338,
       "name": "Chlorophyllum rhacodes",
       "images": [
-        "2015/03/12/23/71397_orig.jpg",
-        "2015/03/21/06/82924_orig.jpg",
-        "2013/11/15/05/69985_orig.jpg",
-        "2013/11/17/04/48709_orig.jpg",
-        "2013/11/16/16/33555_orig.jpg",
-        "2013/11/16/16/04625_orig.jpg",
-        "2013/11/17/01/85208_orig.jpg",
-        "2013/11/15/06/80632_orig.jpg",
-        "2013/11/15/06/41022_orig.jpg",
-        "2013/11/30/12/87680_orig.jpg",
-        "2013/11/30/12/45078_orig.jpg",
-        "2013/11/30/10/00282_orig.jpg",
-        "2013/12/10/06/61547_orig.jpg",
-        "2013/12/10/09/80327_orig.jpg",
-        "2013/12/10/09/68100_orig.jpg"
+        {
+          "title": "Coprinus picaeus.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Coprinus_picaeus.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/85/ec/509.1142749.jpg",
+          "thumb": "55/85/ec/509.1142749.98x68.jpg"
+        },
+        {
+          "title": "Spechttintling.jpeg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Spechttintling.jpeg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/e6/ba/509.130645.jpg",
+          "thumb": "55/e6/ba/509.130645.98x68.jpg"
+        },
+        {
+          "title": "Spechttintlinge Herbstwald cropped.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Spechttintlinge_Herbstwald_cropped.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/ee/17/509.13289245.jpg",
+          "thumb": "55/ee/17/509.13289245.98x68.jpg"
+        },
+        {
+          "title": "File:TrÃ¡s-os-Montes, Portugal (2084520172).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Tr%C3%A1s-os-Montes,_Portugal_(2084520172).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/77/4d/509.25327085.jpg",
+          "thumb": "58/77/4d/509.25327085.98x68.jpg"
+        },
+        {
+          "title": "Pilz1.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pilz1.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "59/1b/d2/509.28603020.jpg",
+          "thumb": "59/1b/d2/509.28603020.98x68.jpg"
+        },
+        {
+          "title": "Spechttintling002.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Spechttintling002.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/9e/99/509.31677586.jpg",
+          "thumb": "59/9e/99/509.31677586.98x68.jpg"
+        },
+        {
+          "title": "Edible and poisonous mushrooms (PL. 14) (8515013713).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Edible_and_poisonous_mushrooms_(PL._14)_(8515013713).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "61/1f/af/509.43088235.jpg",
+          "thumb": "61/1f/af/509.43088235.98x68.jpg"
+        },
+        {
+          "title": "File:ÐÐ°Ð²Ð¾Ð·Ð½Ð¸Ðº ÑÐ¼Ð¾Ð»Ð¸ÑÑÑÐ¹ - Coprinopsis picacea - Magpie fungus - ÐÐ¾Ð¿ÑÐ¸Ð½ÐºÐ° C. picaceus - Specht-Tintling (22301208304).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0%D0%B2%D0%BE%D0%B7%D0%BD%D0%B8%D0%BA_%D1%81%D0%BC%D0%BE%D0%BB%D0%B8%D1%81%D1%82%D1%8B%D0%B9_-_Coprinopsis_picacea_-_Magpie_fungus_-_%D0%9A%D0%BE%D0%BF%D1%80%D0%B8%D0%BD%D0%BA%D0%B0_C._picaceus_-_Specht-Tintling_(22301208304).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "62/d9/4c/509.46963435.jpg",
+          "thumb": "62/d9/4c/509.46963435.98x68.jpg"
+        },
+        {
+          "title": "File:ÐÐ°Ð²Ð¾Ð·Ð½Ð¸Ðº ÑÐ¼Ð¾Ð»Ð¸ÑÑÑÐ¹ - Coprinopsis picacea - Magpie fungus - ÐÐ¾Ð¿ÑÐ¸Ð½ÐºÐ° C. picaceus - Specht-Tintling (10559685815).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0%D0%B2%D0%BE%D0%B7%D0%BD%D0%B8%D0%BA_%D1%81%D0%BC%D0%BE%D0%BB%D0%B8%D1%81%D1%82%D1%8B%D0%B9_-_Coprinopsis_picacea_-_Magpie_fungus_-_%D0%9A%D0%BE%D0%BF%D1%80%D0%B8%D0%BD%D0%BA%D0%B0_C._picaceus_-_Specht-Tintling_(10559685815).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "62/d9/4e/509.46963439.jpg",
+          "thumb": "62/d9/4e/509.46963439.98x68.jpg"
+        },
+        {
+          "title": "Spechttintling.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Spechttintling.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "63/67/bc/509.4955861.jpg",
+          "thumb": "63/67/bc/509.4955861.98x68.jpg"
+        },
+        {
+          "title": "Coprinus picaceus 4.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Coprinus_picaceus_4.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "65/a8/12/509.60965695.jpg",
+          "thumb": "65/a8/12/509.60965695.98x68.jpg"
+        },
+        {
+          "title": "Coprinus picaceus.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Coprinus_picaceus.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "67/7b/12/509.6826993.jpg",
+          "thumb": "67/7b/12/509.6826993.98x68.jpg"
+        }
       ],
       "names": [
         {

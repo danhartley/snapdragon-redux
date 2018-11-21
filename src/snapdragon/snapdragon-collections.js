@@ -8,7 +8,7 @@ export const kitchenGarden = {
         'All of the species are either native or adapted to a Mediterranean climate.',
         'Later lessons will introduce you to families and the traits they share.'        
     ],
-    thumb: 'https://content.eol.org/data/media/2014/06/03/05/47795_orig.jpg',
+    thumb: 'https://content.eol.org/data/media/81/3f/ae/542.8232814894.jpg',
     moduleSize: 6,
     curator: 'Snapdragon',
     userLevel: 'General Interest',
@@ -30,16 +30,19 @@ export const kitchenGarden = {
         "Brassica nigra",
         "Carum carvi",
         "Satureja hortensis",
+
         "Piper nigrum",
         "Laurus nobilis",
         "Capsicum annuum",
         "Salvia officinalis",
         "Origanum vulgare",
+
         "Foeniculum vulgare",
         "Mentha spicata",
         "Anethum graveolens",
         "Thymus vulgaris",
         "Petroselinum crispum",
+
         "Ocimum basilicum",
         "Allium schoenoprasum",
         "Artemisia dracunculus",
@@ -50,6 +53,7 @@ export const kitchenGarden = {
         "Spinacia oleracea",
         "Raphanus sativus",
         "Cucurbita pepo",
+
         "Solanum lycopersicum",
         "Brassica rapa",
         "Vicia faba",
@@ -60,6 +64,7 @@ export const kitchenGarden = {
         "Cynara cardunculus",
         "Lactuca sativa",
         "Daucus carota",
+
         "Brassica oleracea",
         "Solanum tuberosum",
         "Allium cepa",
@@ -69,13 +74,14 @@ export const kitchenGarden = {
         "Prunus domestica",
         "Prunus persica",
         "Rubus idaeus",
+
         "Citrus limon",
-        "Fragaria ananassa",
+        // "Fragaria ananassa",
         "Pyrus communis",
         "Ficus carica",
-        "Malus domestica",
+        // "Malus domestica",
         "Prunus avium",
-        "Apis mellifera"
+        // "Apis mellifera"
       ],
     index: 0
 };
@@ -177,7 +183,7 @@ export const commonBirds = {
         '420,489 people recorded 6,764,475 separate bird sightings.'
     ],
     collections: ['RSPB Top 10 UK Birds'],
-    thumb: 'https://content.eol.org/data/media/2015/01/21/07/32241_88_88.jpg',
+    thumb: 'https://content.eol.org/data/media/2d/1b/36/18.https___www_inaturalist_org_photos_191066.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'General Interest',
@@ -213,7 +219,7 @@ export const rhsWeeds1 = {
         'Snapdragon does not necessarily support the view that weeds are plants in the wrong place.'
     ],
     collections: ['RHS Weeds I'],
-    thumb: 'https://content.eol.org/data/media/2012/06/13/04/53382_orig.jpg',
+    thumb: 'https://content.eol.org/data/media/55/9d/2c/509.118977.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'RHS students',
@@ -257,6 +263,7 @@ export const fallMushroomsEasternUSA = {
     ...mushroomCollection,
     id: 5,
     name: 'Mushrooms Eastern US Fall',
+    thumb: 'https://content.eol.org/data/media/55/b5/47/509.12337524.jpg',
     itemNames: [ 
         'Grifola frondosa', 'Laetiporus sulphureus', 'Hericium erinaceus', 'Lycoperdon perlatum',
         'Lycoperdon pyriforme', 'Hydnum repandum', 'Craterellus tubaeformis', 'Hydnum umbilicatum', 
@@ -277,6 +284,7 @@ export const fallMushroomsEasternUSA = {
 export const wildFoodUKTopTenBeginners = {
     ...mushroomCollection,
     id: 6,
+    thumb: 'https://content.eol.org/data/media/59/81/c6/509.3118102.jpg',
     name: 'Mushrooms for Beginners',
     itemNames: [
         'Fistulina hepatica', 'Boletus edulis', 'Pleurotus ostreatus', 'Auricularia auricula-judae',
@@ -297,11 +305,13 @@ export const cogumelosEmPortugal = {
     ...mushroomCollection,
     id: 7,
     name: 'Mushrooms of Portugal',
+    thumb: 'https://content.eol.org/data/media/55/6d/bc/509.11062931.jpg',
     itemNames: [
         'Boletus edulis', 'Lactarius deliciosus', 'Agaricus campestris', 'Macrolepiota procera',
         'Craterellus cornucopioides', 'Cantharellus cibarius', 'Amanita caesarea',
-        'Fistulina hepatica', 'Amanita phalloides', 'Amanita muscaria',
-        'Amanita ponderosa', 'Tricholoma equestre', 'Boletus pinophilus', 'Hydnum repandum'
+        'Fistulina hepatica', 'Amanita muscaria', 'Tricholoma equestre', 'Boletus pinophilus', 
+        'Hydnum repandum', 'Amanita phalloides'
+        //'Amanita ponderosa'
     ],
     descriptions: [
         'A collection of mushrooms, both edible and poisonous, common to one or more regions of Portugal.'
@@ -325,7 +335,7 @@ export const localSpecies = {
     glossary: ['plantae', 'common', 'fungi'],
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
-    thumb: 'https://content.eol.org/data/media/2012/06/13/04/53382_orig.jpg',
+    thumb: 'https://content.eol.org/data/media/7f/09/1a/542.26637311774.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'All comers'
@@ -338,8 +348,8 @@ const lichenCollection = {
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'Amateur lichenologists',
-    lessonPlanLandscape: 3,
-    lessonPlanPortrait: 103,
+    lessonPlanLandscape: 4,
+    lessonPlanPortrait: 4,
     glossary: ['lichen', 'common'],
     course: 'Snapdragon'
 };
@@ -370,7 +380,7 @@ export const beginnersLichenology = {
 
 export const snapdragonCollections = [
     kitchenGarden,
-    rhsTrees,
+    // rhsTrees,
     commonBirds,
     rhsWeeds1,
     wildFoodUKTopTenBeginners,

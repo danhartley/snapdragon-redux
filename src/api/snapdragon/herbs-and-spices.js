@@ -231,10 +231,38 @@ export const herbsAndSpices = [
       "eolName": "Cuminum cyminum L.",
       "icon": "2015/06/18/03/35954_orig.jpg",
       "images": [
-        "2011/10/06/00/35014_orig.jpg",
-        "2011/10/06/00/67312_orig.jpg",
-        "2014/10/05/05/39722_orig.jpg",
-        "2015/06/18/03/35954_orig.jpg"
+        {
+          "title": "Siiragam.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Siiragam.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/5b/cf/08/509.17846402.jpg",
+          "thumb": "https://content.eol.org/data/media/5b/cf/08/509.17846402.98x68.jpg"
+        },
+        {
+          "title": "File:Cuminum cyminum - KÃ¶hlerâs Medizinal-Pflanzen-198.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cuminum_cyminum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-198.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "https://content.eol.org/data/media/5d/86/29/509.255540.jpg",
+          "thumb": "https://content.eol.org/data/media/5d/86/29/509.255540.98x68.jpg"
+        },
+        {
+          "title": "Cuminum cyminum.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cuminum_cyminum.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/61/41/24/509.43412097.jpg",
+          "thumb": "https://content.eol.org/data/media/61/41/24/509.43412097.98x68.jpg"
+        },
+        {
+          "title": "Cumin plant, Rajasthan (1).png",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cumin_plant,_Rajasthan_(1).png",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/65/0b/20/509.56916029.jpg",
+          "thumb": "https://content.eol.org/data/media/65/0b/20/509.56916029.98x68.jpg"
+        }
       ],
       "names": [
         {

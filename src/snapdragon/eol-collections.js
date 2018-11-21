@@ -5,17 +5,21 @@ import { fruit } from 'api/snapdragon/fruit';
 import { insects } from 'api/snapdragon/insects';
 import { birds } from 'api/snapdragon/common-city-birds';
 import { mushrooms } from 'api/snapdragon/mushrooms';
-import { weeds1 } from 'api/rhs/weeds1';
+import { weeds } from 'api/rhs/weeds';
+// import { weeds1 } from 'api/rhs/weeds1';
 import { lichen } from 'api/snapdragon/lichen';
 
 import { leaf } from 'api/leaf';
+
+import { plants } from 'api/snapdragon/plants';
 
 export const collections = [
     {
         id: 1,
         type: 'species',
         name: 'Kitchen Garden',
-        items: [ ...herbsAndSpices, ...vegetables, ...fruit, ...insects ],
+        items: [ ...plants ],
+        // items: [ ...herbsAndSpices, ...vegetables, ...fruit, ...insects ],
         eol_name: 'Herbs and Spices, Vegetables, Fruits, Insects',
         eol_link: ''        
     },
@@ -39,7 +43,7 @@ export const collections = [
         id: 4,
         type: 'species',
         name: 'RHS Weeds 1',
-        items: weeds1,
+        items: weeds,
         eol_name: 'WEEDS I',
         eol_link: 'https://eol.org/collections/140731'        
     },

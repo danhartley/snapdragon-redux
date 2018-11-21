@@ -79,8 +79,13 @@ hr {
   background-color: var(--snap-collection);
 }
 
-.btn-non-taxa {
+.btn.btn-non-taxa {
   background-color: rgb(165, 159, 131);
+  width: 15em;
+}
+
+.non-taxa .dropdown-menu {
+  width: 15em !important;
 }
 
 .btn-lesson {
@@ -240,6 +245,7 @@ a.dropdown-item:hover {
   max-width: 7.5em;
   height: 7.5em;
   margin: 0 1em 0 0;
+  object-fit: cover;
 }
 
 .nav-icons .icon {
@@ -1492,6 +1498,7 @@ table {
 
 .lp-context {
   font-style: italic;
+  font-weight: normal;
 }
 
 .lp-answer {

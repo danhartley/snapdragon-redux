@@ -79,10 +79,6 @@
         grid-column: 3;
     }
 
-    /* .table-header th {
-        font-size: 1em;
-    } */
-
     .tiles {
         height: 75%;
     }
@@ -92,17 +88,12 @@
         grid-template-rows: 1fr 1fr;
     }
 
-    .strips.description .strip div {
-        font-size: 1.1em;
-    }
-
     .strips {
         padding: 0 .5em;
     }
 
     .strip div {
         padding: .5em;
-        font-size: 1.2em;
     }
 
     .action-update-container {

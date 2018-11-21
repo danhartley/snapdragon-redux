@@ -28,7 +28,7 @@ const getSpecies = (collection) => {
         
     return eolCollection.map(species => {
         const speciesUrl = `https://eol.org/api/pages/1.0/${species.id}.json?details=true&images_per_page=100&licenses=${selectedLicence}&common_names=true`;
-        const speciesCors = `https://cors-anywhere.herokuapp.com/${speciesUrl} q:A`;
+        const speciesCors = `https://cors-anywhere.herokuapp.com/${speciesUrl}`;
         species.detailsUrl = speciesCors;
         return species;
     });
@@ -56,7 +56,7 @@ async function getCollection() {
     } else {
         const collectionId =  parseInt(document.querySelector('#inputCollection').value);
         const collectionUrl = `http://eol.org/api/collections/1.0/${collectionId}.json?page=1&per_page=100&filter=&sort_by=recently_added&sort_field=&cache_ttl=&language=en`;
-        const collectionCors = `https://cors-anywhere.herokuapp.com/${collectionUrl} q:A`;
+        const collectionCors = `https://cors-anywhere.herokuapp.com/${collectionUrl}`;
         const response = await fetch(collectionCors);
         collection = await response.json();
     }
@@ -164,7 +164,8 @@ const getImages = obj => {
         console.log('No images!');
     };
     species.images.forEach((image, index) => {
-        images = images + `<div><img id="${index}" width="300px" height="300px" style="cursor:pointer; object-fit: cover;" src="${image.url}"/></div>`
+        images = images + `<div><img id="${index}" width="98" height="68px" style="cursor:pointer; object-fit: cover;" src="${image.thumb}"/></div>`
+        // images = images + `<div><img id="${index}" width="300px" height="300px" style="cursor:pointer; object-fit: cover;" src="${image.url}"/></div>`
     });
     document.querySelector('#images').innerHTML = images;  
     document.querySelectorAll('img').forEach(image => {

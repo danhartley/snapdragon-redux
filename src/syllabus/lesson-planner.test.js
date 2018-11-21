@@ -12,9 +12,9 @@ test('createLessonPlan returns initial plan and collection for landscape mode wi
     const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(lessonPlan, config, collection);    
     let revisedScreens = [];
     updatedLessonPlan.layouts.map(l => l.screens.map(s => revisedScreens.push(s)));
-    expect(updatedLessonPlan.layouts.length).toEqual(17);
-    expect(updatedLessonPlan.layoutCount).toEqual(17); // 4 (layouts) * 4 (module size) + 1 (summary)
-    expect(revisedScreens.length).toEqual(34); // 2 * layouts (2 screens per layout in landscape mode)
+    expect(updatedLessonPlan.layouts.length).toEqual(13);
+    expect(updatedLessonPlan.layoutCount).toEqual(13); // 3 (layouts) * 4 (module size) + 1 (summary)
+    expect(revisedScreens.length).toEqual(26); // 2 * layouts (2 screens per layout in landscape mode)
 });
 
 test('createLessonPlan returns initial plan and collection for Lesson 1 for landscape mode with moduleSize 2 (overrides config)', () => {    
@@ -22,8 +22,8 @@ test('createLessonPlan returns initial plan and collection for Lesson 1 for land
     const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(lessonPlan, config, collection);
     let revisedScreens = [];
     updatedLessonPlan.layouts.map(l => l.screens.map(s => revisedScreens.push(s)));
-    expect(updatedLessonPlan.layoutCount).toEqual(9); // 4 (layouts) * 2 (module size) + 1 (summary)
-    expect(revisedScreens.length).toEqual(18); // 2 * layouts (2 screens per layout in landscape mode)
+    expect(updatedLessonPlan.layoutCount).toEqual(7); // 3 (layouts) * 2 (module size) + 1 (summary)
+    expect(revisedScreens.length).toEqual(14); // 2 * layouts (2 screens per layout in landscape mode)
 });
 
 test('createLessonPlan returns next level when level complete', () => {        

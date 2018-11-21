@@ -13,7 +13,7 @@ export const taxa = [
         { language: "it", names:[ 'Daisies' ]}],
         wiki: "https://en.wikipedia.org/wiki/Asteraceae",
         eol: "http://eol.org/pages/4206/overview",
-        thumb: '2017/02/18/22/29040_98_68.jpg',
+        thumb: '89/27/23/549.BI-image-109191.jpg',
         species: 32913,
         genera: 1911,
         descriptions: [
@@ -38,7 +38,7 @@ export const taxa = [
         { language: "es", names:[ 'Carrot or Parsley family' ]},
         { language: "pt", names:[ 'Carrot or Parsley family' ]},
         { language: "it", names:[ 'Carrot or Parsley family' ]}],
-        thumb: '2014/04/16/16/98519_88_88.jpg',
+        thumb: '8f/30/e4/607.http___bioimages_vanderbilt_edu_thomas_0280-01-07.260x190.jpg',
         members: [  'Daucus carota subsp. sativus', 'Coriandrum sativum', 'Petroselinum crispum', 'Foeniculum vulgare', 
                     'Anethum graveolens', 'Conium maculatum', 'Cuminum cyminum', 'Carum carvi', 'Anthriscus cerefolium',
                     'Myrrhis odorata', 'Pimpinella anisum', 'Levisticum officinale', 'Pastinaca sativa'],
@@ -75,7 +75,7 @@ export const taxa = [
         { language: "it", names:[ 'Mint' ]}],
         wiki: "https://en.wikipedia.org/wiki/Lamiaceae",
         eol: "http://eol.org/pages/4302/overview",
-        thumb: "2014/08/14/23/80866_88_88.jpg",
+        thumb: '85/9d/51/7.CalPhotos_0000_0000_0406_1220.jpg',
         members: ['Ocimum basilicum', 'Rosmarinus officinalis'],
         traits: [ { language: "en", name: 'pollination', values: ['Insects', 'Bumblebees', 'Single Bees'] } ],
         propagation: 'stem cuttings',
@@ -106,7 +106,7 @@ export const taxa = [
         { language: "es", names:[ 'Mustards' ]},
         { language: "pt", names:[ 'Mustards' ]},
         { language: "it", names:[ 'Mustards' ]}],
-        thumb: '2015/04/30/10/19667_88_88.jpg',
+        thumb: '86/e3/4c/7.CalPhotos_0000_0000_1006_1064.jpg',
         species: 4060,
         genera: 372,
         traits: [ { language: "en", name: 'pollination', values: ['Insects'] } ],
@@ -130,7 +130,7 @@ export const taxa = [
         { language: "es", names:[ 'Amaryllis' ]},
         { language: "pt", names:[ 'Amaryllis' ]},
         { language: "it", names:[ 'Amaryllis' ]}],
-        thumb: '2015/01/27/22/09266_98_68.jpg',
+        thumb: '77/59/25/539.HDICO_OM1593_Ammocharis_coranica_2_1328719702_JPG.jpg',
         species: 1600,
         genera: 75,
         descriptions: [
@@ -154,7 +154,7 @@ export const taxa = [
         { language: "es", names:[ 'Butterflies and Moths' ]},
         { language: "pt", names:[ 'Borboleta' ]},
         { language: "it", names:[ 'Butterflies and Moths' ]}],
-        thumb: '2017/01/25/21/74379_88_88.jpg',
+        thumb: '7e/64/05/542.13517914453.580x360.jpg',
         species: 180000,
         families: 126,
         descriptions: [
@@ -170,7 +170,7 @@ export const taxa = [
     {
         taxon: "order",
         name: "Hymenoptera",
-        thumb: "2013/02/03/12/43681_98_68.jpg",
+        thumb: "7f/70/1f/542.32969830352.jpg",
         names: [ { language: "en", names: ['Ants, Bees, and Wasps']},
         { language: "fr", names:[ 'Hyménoptères' ]},
         { language: "de", names:[ 'Hautflügler' ]},
@@ -196,7 +196,7 @@ export const taxa = [
         { language: "es", names:[ 'Bees' ]},
         { language: "pt", names:[ 'Bees' ]},
         { language: "it", names:[ 'Bees' ]}],
-        thumb: "2013/02/03/12/43681_98_68.jpg",
+        thumb: "81/22/92/542.7894625598.jpg",
         species: 5700,
         members: ["Apis mellifera"],
         traits: [ { language: "en", name: 'pollination', values: ['Flowering plants'] } ],
@@ -214,7 +214,7 @@ export const taxa = [
     {
         taxon: 'order',
         name: "Coleoptera",
-        thumb: "2015/01/26/11/41088_88_88.jpg",
+        thumb: "80/28/3f/542.5076516308.jpg",
         names: [ { language: "en", names: ['Beetles']},
         { language: "fr", names:[ 'Coléoptères' ]},
         { language: "de", names:[ 'Käfer' ]},
@@ -234,7 +234,7 @@ export const taxa = [
     {
         taxon: 'order',
         name: "Diptera",
-        thumb: "2015/01/31/00/39232_88_88.jpg",
+        thumb: "7e/e2/c7/542.22623853841.jpg",
         names: [ { language: "en", names: ['Flies']},
         { language: "fr", names:[ 'Diptères' ]},
         { language: "de", names:[ 'Zweiflügler' ]},
@@ -254,7 +254,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Poaceae',
-        thumb: "2012/05/23/07/89214_88_88.jpg",
+        thumb: '85/d8/6f/7.CalPhotos_0000_0000_0508_0518.jpg',
         alt: ['Poaceae', 'Gramineae'],
         names: [ { language: "en", names: ['Grasses', 'True Grasses'] } ,
         { language: "fr", names:[ 'Graminées' ]},
@@ -281,7 +281,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Zingiberaceae',
-        thumb: "2012/01/25/15/09074_98_68.jpg",
+        thumb: '88/6e/da/7.CalPhotos_8266_3203_3156_0064.jpg',
         names: [ { language: "en", names: ['Ginger family']} ,
         { language: "fr", names:[ 'Ginger family' ]},
         { language: "de", names:[ 'Ginger family' ]},
@@ -305,7 +305,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Piperaceae',
-        thumb: "2017/01/30/20/37424_88_88.jpg",
+        thumb: '81/9d/83/542.9768479402.jpg',
         names: [ { language: "en", names: ['Pepper family']} ,
         { language: "fr", names:[ 'Pepper family' ]},
         { language: "de", names:[ 'Pepper family' ]},
@@ -328,7 +328,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Fabaceae',
-        thumb: "2010/03/24/13/32972_98_68.jpg",
+        thumb: "87/ed/19/7.CalPhotos_1338_3161_0663_0023.jpg",
         alt: ['Leguminosae'],
         names: [ { language: "en", names: ['Pea family', 'Bean family', 'Legumes']} ,
         { language: "fr", names:[ 'Pea family' ]},
@@ -354,7 +354,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Rosaceae',
-        thumb: "2014/08/25/10/53156_88_88.jpg",
+        thumb: "84/dd/ed/7.CalPhotos_0000_0000_0109_1082.jpg",
         names: [ { language: "en", names: ['Rose family']} ,
         { language: "fr", names:[ 'Rosaceae' ]},
         { language: "de", names:[ 'Rosengewächse' ]},
@@ -379,7 +379,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Rutaceae',
-        thumb: "2012/05/23/09/05989_98_68.jpg",
+        thumb: "7e/55/3f/542.12003170514.jpg",
         names: [ { language: "en", names: ['Citrus family', 'Rue family']} ,
         { language: "fr", names:[ 'Citronnier' ]},
         { language: "de", names:[ 'Zitrone' ]},
@@ -402,7 +402,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Cucurbitaceae',
-        thumb: "2011/08/04/10/10257_88_88.jpg",
+        thumb: "79/0e/d7/539.MHPAC_BioBot02404-BB012678_1351011574_JPG.jpg",
         names: [ { language: "en", names: ['Gourd family', 'Cucurbits', 'Gourds, Melons, Squash, & Cucumbers']} ,
         { language: "fr", names:[ 'Cucurbitaceae' ]},
         { language: "de", names:[ 'Gourd family' ]},
@@ -425,7 +425,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Amaranthaceae',
-        thumb: "2012/06/12/15/54548_88_88.jpg",
+        thumb: "79/22/0d/539.MHPAC_BioBot10730-BB044660_1258047670_JPG.jpg",
         names: [ { language: "en", names: ['Amaranth family', 'Pigweed']} ,
         { language: "fr", names:[ 'Amaranthaceae' ]},
         { language: "de", names:[ 'Amaranth family' ]},
@@ -449,7 +449,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Solanaceae',
-        thumb: "2012/06/12/16/57629_98_68.jpg",
+        thumb: "85/5b/a1/7.CalPhotos_0000_0000_0307_0316.jpg",
         names: [ { language: "en", names: ['Nightshades']} ,
         { language: "fr", names:[ 'Solanacées' ]},
         { language: "de", names:[ 'Nachtschattengewächse' ]},
@@ -473,7 +473,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Moraceae',
-        thumb: "2014/08/15/04/78512_88_88.jpg",
+        thumb: "79/09/05/539.MHPAC_BioBot01550-BB008258_1271028422_JPG.jpg",
         names: [ { language: "en", names: ['Mulberry family', 'Fig family']} ,
         { language: "fr", names:[ 'Mulberry family' ]},
         { language: "de", names:[ 'Mulberry family' ]},
@@ -497,7 +497,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Vitaceae',
-        thumb: "2013/12/08/20/40721_88_88.jpg",
+        thumb: "7e/ca/b0/542.18637596315.jpg",
         names: [ { language: "en", names: ['Grape family','Wild grape family']} ,
         { language: "fr", names:[ 'Grape family' ]},
         { language: "de", names:[ 'Grape family' ]},
@@ -521,7 +521,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Lauraceae',
-        thumb: "2012/06/13/03/98939_88_88.jpg",
+        thumb: "7e/60/5b/542.132702206.jpg",
         names: [ { language: "en", names: ['Laurel family']} ,
         { language: "fr", names:[ 'Laurel family' ]},
         { language: "de", names:[ 'Laurel family' ]},
@@ -545,7 +545,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Ericaceae',
-        thumb: "2012/06/13/13/64173_88_88.jpg",
+        thumb: "85/2d/13/7.CalPhotos_0000_0000_0212_0104.260x190.jpg",
         names: [ { language: "en", names: ['Heath family', 'Heather family']} ,
         { language: "fr", names:[ 'Èricacées' ]},
         { language: "de", names:[ 'Heidekrautgewächse' ]},
@@ -569,7 +569,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Boraginaceae',
-        thumb: "http://media.eol.org/content/2014/10/05/05/78144_88_88.jpg",
+        thumb: "85/98/03/7.CalPhotos_0000_0000_0404_0269.260x190.jpg",
         names: [ { language: "en", names: ['Borage family', 'Borage']} ,
         { language: "fr", names:[ 'Bourraches' ]},
         { language: "de", names:[ 'Raublattgewächse' ]},
@@ -593,7 +593,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Caryophyllaceae',
-        thumb: "http://media.eol.org/content/2012/05/23/08/72167_88_88.jpg",
+        thumb: "55/da/e3/509.12793277.260x190.jpg",
         names: [ { language: "en", names: ['Carnation family', 'Pink family', 'Chickweed family']} ,
         { language: "fr", names:[ 'Caryophyllacées' ]},
         { language: "de", names:[ 'Nelkengewächse' ]},
@@ -617,7 +617,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Iridaceae',
-        thumb: "http://media.eol.org/content/2009/07/24/04/85444_98_68.jpg",
+        thumb: "66/56/12/509.61873118.jpg",
         names: [ { language: "en", names: ['Iris family']} ,
         { language: "fr", names:[ 'Iridacées' ]},
         { language: "de", names:[ 'Schwertliliengewächse' ]},
@@ -641,7 +641,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Mimosaceae',
-        thumb: "2015/01/19/17/65438_88_88.jpg",
+        thumb: "7f/4a/ed/542.3103584927.260x190.jpg",
         names: [ { language: "en", names: ['Mimosoideae']} ,
         { language: "fr", names:[ 'Mimosoideae' ]},
         { language: "de", names:[ 'Mimosoideae' ]},
@@ -664,7 +664,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Sapindaceae',
-        thumb: "2015/05/20/03/13849_88_88.jpg",
+        thumb: "80/ee/bb/542.7139571177.260x190.jpg",
         names: [ { language: "en", names: ['Soapberry family']} ,
         { language: "fr", names:[ 'Sapindacées' ]},
         { language: "de", names:[ 'Seifenbaumgewächse' ]},
@@ -687,7 +687,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Betulaceae',
-        thumb: "2015/04/30/07/54206_88_88.jpg",
+        thumb: "7e/9c/56/542.15435393043.260x190.jpg",
         names: [ { language: "en", names: ['Birch family']} ,
         { language: "fr", names:[ 'Bétulacée' ]},
         { language: "de", names:[ 'Birkengewächse' ]},
@@ -710,7 +710,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Fagaceae',
-        thumb: "2014/02/08/07/45589_88_88.jpg",
+        thumb: "57/a0/ac/509.21742238.260x190.jpg",
         names: [ { language: "en", names: ['Beech family']} ,
         { language: "fr", names:[ 'Fagacée' ]},
         { language: "de", names:[ 'Buchengewächse' ]},
@@ -733,7 +733,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Bignoniaceae',
-        thumb: "2014/09/14/00/14843_88_88.jpg",
+        thumb: "7e/87/42/542.14678051928.jpg",
         names: [ { language: "en", names: ['Bignonias']} ,
         { language: "fr", names:[ 'Bignonias' ]},
         { language: "de", names:[ 'Trompetenbaumgewächse' ]},
@@ -756,7 +756,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Caesalpiniaceae',
-        thumb: "2012/06/06/13/83275_88_88.jpg",
+        thumb: "5b/b8/4a/509.1739527.jpg",
         names: [ { language: "en", names: ['Caesalpinioideae']} ,
         { language: "fr", names:[ 'Caesalpinioideae' ]},
         { language: "de", names:[ 'Caesalpinioideae' ]},
@@ -779,7 +779,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Asparagaceae',
-        thumb: "2013/11/25/03/02174_88_88.jpg",
+        thumb: "86/41/2e/7.CalPhotos_0000_0000_0617_1953.260x190.jpg",
         names: [ { language: "en", names: ['Asparagus family']} ,
         { language: "fr", names:[ 'Asparagacées' ]},
         { language: "de", names:[ 'Spargelgewächse' ]},
@@ -802,7 +802,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Myrtaceae',
-        thumb: "2012/10/19/00/00976_88_88.jpg",
+        thumb: "87/e4/ed/7.CalPhotos_1335_3153_0220_0075.jpg",
         names: [ { language: "en", names: ['Myrtles']} ,
         { language: "fr", names:[ 'Myrtacées' ]},
         { language: "de", names:[ 'Myrtles' ]},
@@ -825,7 +825,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Cunoniaceae',
-        thumb: "2011/11/01/20/89856_88_88.jpg",
+        thumb: "55/a4/bb/509.12048086.260x190.jpg",
         names: [ { language: "en", names: ['Wild Alder family']} ,
         { language: "fr", names:[ 'Wild Alder family' ]},
         { language: "de", names:[ 'Wild Alder family' ]},
@@ -848,7 +848,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Oleaceae',
-        thumb: "2012/12/23/03/10152_88_88.jpg",
+        thumb: "7a/63/02/539.SAFH_OM3183_Olea_capensis_1286045400_JPG.jpg",
         names: [ { language: "en", names: ['Olive family']} ,
         { language: "fr", names:[ 'Olive family' ]},
         { language: "de", names:[ 'Ölbaumgewächse' ]},
@@ -871,7 +871,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Caesalpiniaceae',
-        thumb: "2012/06/06/13/83275_88_88.jpg",
+        thumb: "5b/b8/4a/509.1739527.jpg",
         names: [ { language: "en", names: ['Caesalpinioideae']} ,
         { language: "fr", names:[ 'Caesalpinioideae' ]},
         { language: "de", names:[ 'Caesalpinioideae' ]},
@@ -894,7 +894,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Aquifoliaceae',
-        thumb: "2014/09/13/01/38591_88_88.jpg",
+        thumb: "7e/42/c3/542.10935784183.jpg",
         names: [ { language: "en", names: ['Holly']} ,
         { language: "fr", names:[ 'Aquifoliacées' ]},
         { language: "de", names:[ 'Stechpalmengewächse' ]},
@@ -917,7 +917,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Juglandaceae',
-        thumb: "2015/04/30/18/90529_88_88.jpg",
+        thumb: "7e/4c/3f/542.114734451.260x190.jpg",
         names: [ { language: "en", names: ['Walnut family']} ,
         { language: "fr", names:[ 'Juglandacées' ]},
         { language: "de", names:[ 'Walnussgewächse' ]},
@@ -940,7 +940,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Papilionaceae',
-        thumb: "2012/07/26/21/36713_88_88.jpg",
+        thumb: "5b/b8/4a/509.1739527.jpg",
         names: [ { language: "en", names: ['Dillwynia, Peaflowers']} ,
         { language: "fr", names:[ 'Dillwynia' ]},
         { language: "de", names:[ 'Dillwynia' ]},
@@ -963,7 +963,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Hamamelidaceae',
-        thumb: "2013/02/26/12/81796_88_88.jpg",
+        thumb: "8f/87/92/643.13144909.260x190.jpg",
         names: [ { language: "en", names: ['Witch-hazel family']} ,
         { language: "fr", names:[ 'Witch-hazel family' ]},
         { language: "de", names:[ 'Witch-hazel family' ]},
@@ -986,7 +986,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Magnoliaceae',
-        thumb: "2014/05/01/13/34482_88_88.jpg",
+        thumb: "5b/b8/4a/509.1739527.jpg",
         names: [ { language: "en", names: ['Magnolia family']} ,
         { language: "fr", names:[ 'Magnolia family' ]},
         { language: "de", names:[ 'Magnolia family' ]},
@@ -1009,7 +1009,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Platanaceae',
-        thumb: "2012/06/13/14/08088_88_88.jpg",
+        thumb: "7e/a8/1f/542.15875631919.260x190.jpg",
         names: [ { language: "en", names: ['Plane Tree family']} ,
         { language: "fr", names:[ 'Plane Tree family' ]},
         { language: "de", names:[ 'Plane Tree family' ]},
@@ -1032,7 +1032,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Salicaceae',
-        thumb: "2012/05/24/01/44806_88_88.jpg",
+        thumb: "7e/5b/9f/542.12758652025.260x190.jpg",
         names: [ { language: "en", names: ['Willow family']} ,
         { language: "fr", names:[ 'Willow family' ]},
         { language: "de", names:[ 'Weidengewächse' ]},
@@ -1055,7 +1055,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Theaceae',
-        thumb: "2013/01/09/07/00837_88_88.jpg",
+        thumb: "7f/e6/91/542.4287509448.260x190.jpg",
         names: [ { language: "en", names: ['Tea family']} ,
         { language: "fr", names:[ 'Tea family' ]},
         { language: "de", names:[ 'Teestrauchgewächse' ]},
@@ -1078,7 +1078,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Styracaceae',
-        thumb: "2015/01/14/00/21247_88_88.jpg",
+        thumb: "55/2d/63/509.10046026.260x190.jpg",
         names: [ { language: "en", names: ['Storax family']} ,
         { language: "fr", names:[ 'Storax family' ]},
         { language: "de", names:[ 'Storax family' ]},
@@ -1101,7 +1101,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Malvaceae',
-        thumb: "2017/09/09/23/95319_88_88.jpg",
+        thumb: "8f/78/59/634.29863770.260x190.jpg",
         names: [ { language: "en", names: ['Mallows or Hibiscus']} ,
         { language: "fr", names:[ 'Mauves' ]},
         { language: "de", names:[ 'Malvengewächse' ]},
@@ -1124,7 +1124,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Altingiaceae',
-        thumb: "2013/02/26/12/81796_88_88.jpg",
+        thumb: "85/c5/a7/7.CalPhotos_0000_0000_0417_0239.260x190.jpg",
         names: [ { language: "en", names: ['Altingiaceae']} ,
         { language: "fr", names:[ 'Altingiaceae' ]},
         { language: "de", names:[ 'Altingiaceae' ]},
@@ -1147,7 +1147,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Paridae',
-        thumb: "2015/03/21/14/84751_98_68.jpg",
+        thumb: "7f/d3/4a/542.4055191461.260x190.jpg",
         names: [ { language: "en", names: ['Tits, chickadees']} ,
         { language: "fr", names:[ 'Tits, chickadees' ]},
         { language: "de", names:[ 'Meisen' ]},
@@ -1170,7 +1170,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Sturnidae',
-        thumb: "2015/04/30/03/95558_98_68.jpg",
+        thumb: "80/14/88/542.4819779815.260x190.jpg",
         names: [ { language: "en", names: ['Starlings']} ,
         { language: "fr", names:[ 'Starlings' ]},
         { language: "de", names:[ 'Stare' ]},
@@ -1193,7 +1193,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Apodidae',
-        thumb: "2014/04/16/09/52451_88_88.jpg",
+        thumb: "67/df/94/509.8056860.260x190.jpg",
         names: [ { language: "en", names: ['Swifts']} ,
         { language: "fr", names:[ 'Martinets et Salanganes' ]},
         { language: "de", names:[ 'Segler' ]},
@@ -1216,7 +1216,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Troglodytidae',
-        thumb: "2014/04/24/12/47487_98_68.jpg",
+        thumb: "57/3e/c2/509.19872637.260x190.jpg",
         names: [ { language: "en", names: ['Wrens']} ,
         { language: "fr", names:[ 'Wrens' ]},
         { language: "de", names:[ 'Segler' ]},
@@ -1239,7 +1239,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Muscicapidae',
-        thumb: "2012/06/12/23/53991_260_190.jpg",
+        thumb: "56/3e/2e/509.15227061.260x190.jpg",
         names: [ { language: "en", names: ['Old World flycatchers']} ,
         { language: "fr", names:[ 'Old World flycatchers' ]},
         { language: "de", names:[ 'Fliegenschnäpper' ]},
@@ -1262,7 +1262,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Passeridae',
-        thumb: "2015/06/17/14/46120_88_88.jpg",
+        thumb: "7e/8f/28/542.14939260212.260x190.jpg",
         names: [ { language: "en", names: ['Sparrows']} ,
         { language: "fr", names:[ 'Passéridés' ]},
         { language: "de", names:[ 'Sperlinge' ]},
@@ -1285,7 +1285,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Columbidae',
-        thumb: "2014/12/25/21/51614_88_88.jpg",
+        thumb: "58/cc/09/509.27062433.260x190.jpg",
         names: [ { language: "en", names: ['Pigeon']} ,
         { language: "fr", names:[ 'Pigeon' ]},
         { language: "de", names:[ 'Tauben' ]},
@@ -1308,7 +1308,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Convolvulaceae',
-        thumb: "2015/01/14/00/22186_88_88.jpg",
+        thumb: "85/ab/c0/7.CalPhotos_0000_0000_0412_0288.260x190.jpg",
         names: [ { language: "en", names: ['Morning-glory Family']} ,
         { language: "fr", names:[ 'Convolvulacées' ]},
         { language: "de", names:[ 'Windengewächse' ]},
@@ -1331,7 +1331,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Equisetaceae',
-        thumb: "2014/04/07/01/52227_orig.jpg",
+        thumb: "7e/49/46/542.11310017733.260x190.jpg",
         names: [ { language: "en", names: ['Horsetails']} ,
         { language: "fr", names:[ 'Prèle' ]},
         { language: "de", names:[ 'Schachtelhalmgewächse' ]},
@@ -1354,7 +1354,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Euphorbiaceae',
-        thumb: "2014/07/18/07/47489_88_88.jpg",
+        thumb: "85/bd/97/7.CalPhotos_0000_0000_0415_1738.260x190.jpg",
         names: [ { language: "en", names: ['Spurge family']} ,
         { language: "fr", names:[ 'Euphorbiacées' ]},
         { language: "de", names:[ 'Wolfsmilchgewächse' ]},
@@ -1377,7 +1377,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Ranunculaceae',
-        thumb: "2014/07/18/07/47489_88_88.jpg",
+        thumb: "55/33/18/509.10157728.260x190.jpg",
         names: [ { language: "en", names: ['Buttercup family', 'Crowfoot family']} ,
         { language: "fr", names:[ 'Renonculacées' ]},
         { language: "de", names:[ 'Hahnenfußgewächse' ]},
@@ -1400,7 +1400,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Polygonaceae',
-        thumb: "2014/07/18/07/47489_88_88.jpg",
+        thumb: "7e/c5/09/542.17384452171.260x190.jpg",
         names: [ { language: "en", names: ['Knotweed family', 'Smartweed family']} ,
         { language: "fr", names:[ 'Polygonacées' ]},
         { language: "de", names:[ 'Knöterichgewächse' ]},
@@ -1423,7 +1423,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Urticaceae',
-        thumb: "2014/07/18/07/47489_88_88.jpg",
+        thumb: "7f/7d/df/542.3387596748.260x190.jpg",
         names: [ { language: "en", names: ['Nettle family']} ,
         { language: "fr", names:[ 'Nettle family' ]},
         { language: "de", names:[ 'Brennnesselgewächse' ]},
@@ -1446,7 +1446,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Plantaginaceae',
-        thumb: "2014/07/18/07/47489_88_88.jpg",
+        thumb: "8b/04/57/562.233907.260x190.jpg",
         names: [ { language: "en", names: ['Plantain family']} ,
         { language: "fr", names:[ 'Plantaginacées' ]},
         { language: "de", names:[ 'Wegerichgewächse' ]},
@@ -1469,7 +1469,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Fringillidae',
-        thumb: "2012/06/15/20/32486_98_68.jpg",
+        thumb: "57/91/5a/509.21298991.260x190.jpg",
         names: [ { language: "en", names: ['Finches']} ,
         { language: "fr", names:[ 'Finches' ]},
         { language: "de", names:[ 'Finken' ]},
@@ -1492,7 +1492,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Aegithalidae',
-        thumb: "2012/07/26/21/49865_88_88.jpg",
+        thumb: "56/d9/fc/509.1801295.260x190.jpg",
         names: [ { language: "en", names: ['Bushtits', 'Long-tailed tits']} ,
         { language: "fr", names:[ 'Bushtits' ]},
         { language: "de", names:[ 'Schwanzmeisen' ]},
@@ -1515,7 +1515,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Amanitaceae',
-        thumb: "2011/11/02/05/30529_88_88.jpg",
+        thumb: "80/a0/36/542.6459624581.260x190.jpg",
         names: [ { language: "en", names: ['Amanita Family']} ,
         { language: "fr", names:[ 'Amanita Family' ]},
         { language: "de", names:[ 'Amanita Family' ]},
@@ -1538,7 +1538,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Mycenaceae',
-        thumb: "2017/01/27/21/45835_88_88.jpg",
+        thumb: "81/a0/41/542.9911897114.260x190.jpg",
         names: [ { language: "en", names: ['Bonnet mushrooms']} ,
         { language: "fr", names:[ 'Bonnet mushrooms' ]},
         { language: "de", names:[ 'Bonnet mushrooms' ]},
@@ -1561,7 +1561,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Tricholomataceae',
-        thumb: "2012/06/12/05/72724_88_88.jpg",
+        thumb: "81/9f/96/542.9870330465.260x190.jpg",
         names: [ { language: "en", names: ['Pale-Spore Mushroom Family']} ,
         { language: "fr", names:[ 'Pale-Spore Mushroom Family' ]},
         { language: "de", names:[ 'Ritterlingsverwandte' ]},
@@ -1584,7 +1584,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Boletaceae',
-        thumb: "2009/06/06/01/14807_88_88.jpg",
+        thumb: "56/f1/7f/509.18415691.260x190.jpg",
         names: [ { language: "en", names: ['Boletes']} ,
         { language: "fr", names:[ 'Boletaceae' ]},
         { language: "de", names:[ 'Dickröhrlingsverwandte' ]},
@@ -1607,7 +1607,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Hydnangiaceae',
-        thumb: "2015/01/06/17/88312_88_88.jpg",
+        thumb: "80/8d/3c/542.6215601000.260x190.jpg",
         names: [ { language: "en", names: ['Hydnangiaceae']} ,
         { language: "fr", names:[ 'Hydnangiaceae' ]},
         { language: "de", names:[ 'Hydnangiaceae' ]},
@@ -1630,7 +1630,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Sclerodermataceae',
-        thumb: "2013/12/02/08/57866_88_88.jpg",
+        thumb: "55/e2/e7/509.1294352.260x190.jpg",
         names: [ { language: "en", names: ['Earth-balls']} ,
         { language: "fr", names:[ 'Earth-balls' ]},
         { language: "de", names:[ 'Earth-balls' ]},
@@ -1653,7 +1653,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Auriculariaceae',
-        thumb: "2013/03/21/09/72709_88_88.jpg",
+        thumb: "58/27/6f/509.24302782.260x190.jpg",
         names: [ { language: "en", names: ['Jelly fungi']} ,
         { language: "fr", names:[ 'Jelly fungi' ]},
         { language: "de", names:[ 'Jelly fungi' ]},
@@ -1676,7 +1676,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Agaricaceae',
-        thumb: "2016/08/19/14/07661_88_88.jpg",
+        thumb: "8b/10/86/562.80446.260x190.jpg",
         names: [ { language: "en", names: ['Agaricus', 'True Mushrooms']} ,
         { language: "fr", names:[ 'Agaricus' ]},
         { language: "de", names:[ 'Agaricus' ]},
@@ -1699,7 +1699,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Cantharellaceae',
-        thumb: "2014/07/15/01/58726_260_190.jpg",
+        thumb: "89/a4/65/549.BI-image-22860.260x190.jpg",
         names: [ { language: "en", names: ['Chanterelle Family']} ,
         { language: "fr", names:[ 'Chanterelle Family' ]},
         { language: "de", names:[ 'Leistlingsartige' ]},
@@ -1722,7 +1722,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Discinaceae',
-        thumb: "2016/08/09/04/56138_88_88.jpg",
+        thumb: "85/e3/42/7.CalPhotos_0000_0000_0511_0014.260x190.jpg",
         names: [ { language: "en", names: ['Discinaceae']} ,
         { language: "fr", names:[ 'Discinaceae' ]},
         { language: "de", names:[ 'Discinaceae' ]},
@@ -1745,7 +1745,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Fomitopsidaceae',
-        thumb: "2015/01/14/02/81377_88_88.jpg",
+        thumb: "56/29/b9/509.14887652.260x190.jpg",
         names: [ { language: "en", names: ['Bracket Polypores']} ,
         { language: "fr", names:[ 'Bracket Polypores' ]},
         { language: "de", names:[ 'Bracket Polypores' ]},
@@ -1768,7 +1768,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Hericiaceae',
-        thumb: "2011/08/11/15/27368_88_88.jpg",
+        thumb: "55/7d/5d/509.11283568.260x190.jpg",
         names: [ { language: "en", names: ['Tooth Fungi']} ,
         { language: "fr", names:[ 'Tooth Fungi' ]},
         { language: "de", names:[ 'Tooth Fungi' ]},
@@ -1791,7 +1791,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Marasmiaceae',
-        thumb: "2011/08/18/07/33951_88_88.jpg",
+        thumb: "7f/ea/b5/542.4343067674.260x190.jpg",
         names: [ { language: "en", names: ['Marasmiaceae']} ,
         { language: "fr", names:[ 'Marasmiaceae' ]},
         { language: "de", names:[ 'Marasmiaceae' ]},
@@ -1814,7 +1814,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Meripilaceae',
-        thumb: "2012/02/03/03/83638_88_88.jpg",
+        thumb: "80/19/c1/542.4889052380.jpg",
         names: [ { language: "en", names: ['Meripilaceae']} ,
         { language: "fr", names:[ 'Meripilaceae' ]},
         { language: "de", names:[ 'Meripilaceae' ]},
@@ -1837,7 +1837,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Morchellaceae',
-        thumb: "2015/01/12/06/12029_98_68.jpg",
+        thumb: "55/cd/f0/509.1266580.260x190.jpg",
         names: [ { language: "en", names: ['Morchellaceae']} ,
         { language: "fr", names:[ 'Morchellaceae' ]},
         { language: "de", names:[ 'Morchellaceae' ]},
@@ -1860,7 +1860,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Omphalotaceae',
-        thumb: "2012/06/13/08/27040_88_88.jpg",
+        thumb: "55/43/a7/509.10437840.260x190.jpg",
         names: [ { language: "en", names: ['Marasmiaceae']} ,
         { language: "fr", names:[ 'Omphalotaceae' ]},
         { language: "de", names:[ 'Omphalotaceae' ]},
@@ -1883,7 +1883,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Pleurotaceae',
-        thumb: "2010/10/15/02/92478_88_88.jpg",
+        thumb: "56/5a/e0/509.15687325.260x190.jpg",
         names: [ { language: "en", names: ['Pleurotaceae']} ,
         { language: "fr", names:[ 'Pleurotaceae' ]},
         { language: "de", names:[ 'Pleurotaceae' ]},
@@ -1906,7 +1906,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Russulaceae',
-        thumb: "2012/05/24/01/44262_88_88.jpg",
+        thumb: "80/9a/6c/542.6358019607.260x190.jpg",
         names: [ { language: "en", names: ['Russulaceae']} ,
         { language: "fr", names:[ 'Russulaceae' ]},
         { language: "de", names:[ 'Täublingsartige' ]},
@@ -1929,7 +1929,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Fistulinaceae',
-        thumb: "2009/01/09/12/22980_98_68.jpg",
+        thumb: "80/a0/61/542.6459646533.260x190.jpg",
         names: [ { language: "en", names: ['Fistulinaceae']} ,
         { language: "fr", names:[ 'Fistulinaceae' ]},
         { language: "de", names:[ 'Fistulinaceae' ]},
@@ -1952,7 +1952,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Hygrophoropsidaceae',
-        thumb: "2012/12/12/02/73263_88_88.jpg",
+        thumb: "55/b2/a0/509.1229113.260x190.jpg",
         names: [ { language: "en", names: ['Hygrophoropsidaceae']} ,
         { language: "fr", names:[ 'Hygrophoropsidaceae' ]},
         { language: "de", names:[ 'Hygrophoropsidaceae' ]},
@@ -1975,7 +1975,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Psathyrellaceae',
-        thumb: "2014/12/02/15/00813_88_88.jpg",
+        thumb: "5a/b2/ff/509.1227570.260x190.jpg",
         names: [ { language: "en", names: ['Hygrophoropsidaceae']} ,
         { language: "fr", names:[ 'Hygrophoropsidaceae' ]},
         { language: "de", names:[ 'Hygrophoropsidaceae' ]},
@@ -1998,7 +1998,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Polyporaceae',
-        thumb: "2009/01/09/12/96758_88_88.jpg",
+        thumb: "55/a7/29/509.12097289.260x190.jpg",
         names: [ { language: "en", names: ['Bracket Polypores']} ,
         { language: "fr", names:[ 'Bracket Polypores' ]},
         { language: "de", names:[ 'Bracket Polypores' ]},
@@ -2021,7 +2021,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Hydnaceae',
-        thumb: "2014/07/15/01/34844_98_68.jpg",
+        thumb: "55/78/24/509.11210836.260x190.jpg",
         names: [ { language: "en", names: ['Hydnaceae']} ,
         { language: "fr", names:[ 'Hydnaceae' ]},
         { language: "de", names:[ 'Hydnaceae' ]},
@@ -2044,7 +2044,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Sarcoscyphaceae',
-        thumb: "2014/07/15/01/34844_98_68.jpg",
+        thumb: "80/b7/94/542.6651981919.260x190.jpg",
         names: [ { language: "en", names: ['Cup Fungi']} ,
         { language: "fr", names:[ 'Cup Fungi' ]},
         { language: "de", names:[ 'Cup Fungi' ]},
@@ -2067,7 +2067,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Sparassidaceae',
-        thumb: "2015/01/14/02/78915_88_88.jpg",
+        thumb: "55/ce/37/509.1266931.260x190.jpg",
         names: [ { language: "en", names: ['Sparassidaceae']} ,
         { language: "fr", names:[ 'Sparassidaceae' ]},
         { language: "de", names:[ 'Sparassidaceae' ]},
@@ -2090,7 +2090,7 @@ export const taxa = [
     {
         taxon: 'family',
         name: 'Entolomataceae',
-        thumb: "2015/02/03/05/66673_88_88.jpg",
+        thumb: "80/9a/70/542.6358020935.260x190.jpg",
         names: [ { language: "en", names: ['Entolomataceae']} ,
         { language: "fr", names:[ 'Entolomataceae' ]},
         { language: "de", names:[ 'Entolomataceae' ]},

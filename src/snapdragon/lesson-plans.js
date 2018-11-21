@@ -392,39 +392,66 @@ const landscapeLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
+            description: 'Species recognition',
             layouts: [ 
-                speciesRevision, 
-                latinToCommonMatch, 
-                mixedSpeciesMatch,
-                commonToLatinMatch 
+                speciesRevision,                        
+                multiSpecimenCommonMatch,
+                mixedSpeciesMatch
             ],
             wildcardLayouts : [],
-            reviewLayouts: [ latinToCommonMatch ]
+            reviewLayouts: [ multiSpecimenCommonMatch, mixedSpeciesMatch ]
         },
         {   id: 2,
             name:'Level 2',
-            layouts: [ commonEntry, textCompleteSpecies, genusEntry ],
-            wildcardLayouts : [ latinEpithets ],
-            reviewLayouts: [ commonEntry, textCompleteSpecies, genusEntry ]
+            description: 'The common name of species',
+            layouts: [ 
+                latinToCommonMatch,
+                commonEntry
+            ],
+            wildcardLayouts : [ ],
+            reviewLayouts: [ 
+                latinToCommonMatch,
+                commonEntry,
+            ]
         },
         {   id: 3,
             name:'Level 3',
-            layouts: [ speciesEntry ],
-            wildcardLayouts : [ glossaryTerms ],
-            reviewLayouts: [ speciesEntry ]
-        },
-        {   id: 4,
-            name:'Level 4',
-            layouts: [ speciesGenusEntry ],
-            wildcardLayouts : [ cultivars ],
-            reviewLayouts: [ speciesGenusEntry ]
-        },
-        {   id: 5,
-            name:'Level 5',
+            description: 'Family traits',
             layouts: [ taxonRevision, familyMatch, familyStripsMatch ],
             wildcardLayouts : [ connections ],
             reviewLayouts: [ familyStripsMatch ]
-        }   
+        },  
+        {   id: 4,
+            name:'Level 4',
+            description: 'The genus name of species',
+            layouts: [ 
+                textCompleteGenus,
+                genusEntry
+            ],
+            wildcardLayouts : [  ],
+            reviewLayouts: [ textCompleteGenus, genusEntry ]
+        },
+        {   id: 5,
+            name:'Level 5',
+            description: 'The species name of species',
+            layouts: [ 
+                textCompleteSpecies,
+                speciesEntry
+             ],
+            wildcardLayouts : [  ],
+            reviewLayouts: [ textCompleteSpecies, speciesEntry ]
+        },
+        {   id: 6,
+            name:'Level 6',
+            description: 'The full latin name of species',
+            layouts: [          
+                multiSpecimenLatinMatch,       
+                commonToLatinMatch,
+                speciesGenusEntry, 
+            ],
+            wildcardLayouts : [  ],
+            reviewLayouts: [ speciesGenusEntry ]
+        } 
     ]
 };
 
@@ -451,8 +478,7 @@ const landscapeLesson3 = {
             name:'Level 1',
             description: 'Species recognition',
             layouts: [ 
-                speciesRevision,
-                nonTaxonRevision,                                 
+                speciesRevision,                        
                 multiSpecimenCommonMatch,
                 mixedSpeciesMatch
             ],
@@ -656,11 +682,26 @@ const portraitLesson3 = {
     ]
 };
 
+const lichenLessonLandscape = { ...landscapeLesson3, id: 4 };
+lichenLessonLandscape.levels[0] = {   id: 1,
+    name:'Level 1',
+    description: 'Species recognition',
+    layouts: [ 
+        nonTaxonRevision,                              
+        speciesRevision,
+        multiSpecimenCommonMatch,
+        mixedSpeciesMatch
+    ],
+    wildcardLayouts : [],
+    reviewLayouts: [ multiSpecimenCommonMatch, mixedSpeciesMatch ]
+};
+
 export const lessonPlans = [
     landscapeLesson1,
     landscapeLesson2, 
     landscapeLesson3,
     portraitLesson1,
     portraitLesson2,
-    portraitLesson3
+    portraitLesson3,
+    lichenLessonLandscape
 ]
