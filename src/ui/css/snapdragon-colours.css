@@ -25,8 +25,7 @@
     
     --snap-link: rgb(0, 42, 84);
     --snap-info-background: rgba(26, 67, 91, .5);
-    --snap-id-background: rgb(193, 149, 167);
-    --snap-id-background: rgba(150, 43, 110,.8);
+  
     --snap-question-background: rgba(26, 67, 91,.4);
     --snap-question-radio: rgb(147, 208, 244);
     --snap-id-border: rgb(129, 67, 101);
@@ -56,6 +55,9 @@
     --snap-modal-background: rgb(50, 50, 50);
     --snap-modal-title: rgb(50, 50, 50);
 
-    --snap-type-colour: rgb(48, 96, 37);
     --snap-modal-content-background: rgb(211, 211, 211);
+    
+    --snap-kingdom-plantae: rgb(48, 96, 37);
+    --snap-kingdom-fungi: rgba(150, 43, 110,.8);
+    --snap-kingdom-animalia: rgb(96, 121, 147);
   }

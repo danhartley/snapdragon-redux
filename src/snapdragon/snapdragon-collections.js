@@ -1,22 +1,3 @@
-import * as R from 'ramda';
-
-import { collections } from 'snapdragon/eol-collections';
-
-const getItems = (collection, index) => {
-    const itemNames = collections[index].items.map(item => item.name);
-    const items = collection.itemNames.map(name => { 
-        if(R.contains(name, itemNames)) {
-            return collections[index].items.find(item => item.name === name);
-        }
-    });
-    
-    items.filter(item => item).forEach((item,index)=>{
-        item.snapIndex = index + 1;
-    });
-
-    return items;
-};
-
 export const kitchenGarden = { 
     providerId: 1,
     id: 1, 
@@ -26,9 +7,8 @@ export const kitchenGarden = {
         'Learn the common and scientific names of herbs, vegetables and fruit used in Western cooking.',
         'All of the species are either native or adapted to a Mediterranean climate.',
         'Later lessons will introduce you to families and the traits they share.'        
-    ],    
-    items: [],
-    thumb: 'https://media.eol.org/content/2014/06/03/05/47795_orig.jpg',
+    ],
+    thumb: 'https://content.eol.org/data/media/81/3f/ae/542.8232814894.jpg',
     moduleSize: 6,
     curator: 'Snapdragon',
     userLevel: 'General Interest',
@@ -50,16 +30,19 @@ export const kitchenGarden = {
         "Brassica nigra",
         "Carum carvi",
         "Satureja hortensis",
+
         "Piper nigrum",
         "Laurus nobilis",
         "Capsicum annuum",
         "Salvia officinalis",
         "Origanum vulgare",
+
         "Foeniculum vulgare",
         "Mentha spicata",
         "Anethum graveolens",
         "Thymus vulgaris",
         "Petroselinum crispum",
+
         "Ocimum basilicum",
         "Allium schoenoprasum",
         "Artemisia dracunculus",
@@ -70,6 +53,7 @@ export const kitchenGarden = {
         "Spinacia oleracea",
         "Raphanus sativus",
         "Cucurbita pepo",
+
         "Solanum lycopersicum",
         "Brassica rapa",
         "Vicia faba",
@@ -80,6 +64,7 @@ export const kitchenGarden = {
         "Cynara cardunculus",
         "Lactuca sativa",
         "Daucus carota",
+
         "Brassica oleracea",
         "Solanum tuberosum",
         "Allium cepa",
@@ -89,17 +74,16 @@ export const kitchenGarden = {
         "Prunus domestica",
         "Prunus persica",
         "Rubus idaeus",
+
         "Citrus limon",
-        "Fragaria ananassa",
+        // "Fragaria ananassa",
         "Pyrus communis",
         "Ficus carica",
-        "Malus domestica",
+        // "Malus domestica",
         "Prunus avium",
-        "Apis mellifera"
+        // "Apis mellifera"
       ],
-    getItems: function() {
-        return getItems(this, 0);
-    },
+    index: 0
 };
 
 export const rhsTrees = { 
@@ -107,9 +91,8 @@ export const rhsTrees = {
     id: 2, name: 'Deciduous and Evergreen Trees', 
     type: 'species',
     descriptions: ['This is an approved list of Deciduous and Evergreen Trees from the Royal Horticultural Society (RHS).', 'Students taking RHS courses in Practical Horticulture are required to learn some, or all, of these species.'],
-    items: [],
     collections: ['Deciduous and evergreen trees'],
-    thumb: 'https://media.eol.org/content/2012/06/12/18/89509_orig.jpg',
+    thumb: 'https://content.eol.org/data/media/2012/06/12/18/89509_orig.jpg',
     moduleSize: 6,
     curator: 'Snapdragon',
     userLevel: 'RHS students',
@@ -187,9 +170,7 @@ export const rhsTrees = {
         "Acacia baileyana",
         "Acacia dealbata"
       ],
-    getItems: function() {
-        return getItems(this, 1);
-    },
+    index: 1
 };
 
 export const commonBirds = { 
@@ -201,9 +182,8 @@ export const commonBirds = {
         'The list is taken from the RSPB Big Garden Birdwatch 2018 survey.',
         '420,489 people recorded 6,764,475 separate bird sightings.'
     ],
-    items: [],
     collections: ['RSPB Top 10 UK Birds'],
-    thumb: 'https://media.eol.org/content/2015/01/21/07/32241_88_88.jpg',
+    thumb: 'https://content.eol.org/data/media/2d/1b/36/18.https___www_inaturalist_org_photos_191066.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'General Interest',
@@ -226,22 +206,20 @@ export const commonBirds = {
         "Aegithalos caudatus",
         "Fringilla coelebs"
       ],
-    getItems: function() {
-        return getItems(this, 2);
-    },
+    index: 2
 };
 
 export const rhsWeeds1 = { 
     providerId: 2,
-    id: 4, name: 'RHS Weeds I', 
+    id: 4, 
+    name: 'RHS Weeds I', 
     type: 'species',
     descriptions: [
         'Part I of the approved list of Weeds for students taking Royal Horticultural Society Qualifications in Practical Horticulture.',
         'Snapdragon does not necessarily support the view that weeds are plants in the wrong place.'
     ],
-    items: [],
     collections: ['RHS Weeds I'],
-    thumb: 'https://media.eol.org/content/2012/06/13/04/53382_orig.jpg',
+    thumb: 'https://content.eol.org/data/media/55/9d/2c/509.118977.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'RHS students',
@@ -265,15 +243,13 @@ export const rhsWeeds1 = {
         "Capsella bursa-pastoris",
         "Bellis perennis"
       ],
-    getItems: function() {
-        return getItems(this, 3);
-    },
+    index: 3
 };
 
 const mushroomCollection = {
     providerId: 1,
     type: 'species',
-    thumb: 'https://media.eol.org/content/2013/03/01/14/45554_orig.jpg',
+    thumb: 'https://content.eol.org/data/media/59/16/59/509.2840237.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'Amateur mycologists',
@@ -287,30 +263,29 @@ export const fallMushroomsEasternUSA = {
     ...mushroomCollection,
     id: 5,
     name: 'Mushrooms Eastern US Fall',
+    thumb: 'https://content.eol.org/data/media/55/b5/47/509.12337524.jpg',
     itemNames: [ 
         'Grifola frondosa', 'Laetiporus sulphureus', 'Hericium erinaceus', 'Lycoperdon perlatum',
-        'Lycoperdon pyriforme', 'Hydnum repandum',
-        'Laetiporus cincinnatus', 'Craterellus tubaeformis', 'Hydnum umbilicatum', 
-        'Hericium americanum', 'Hericium coralloides', 'Calvatia gigantea', 
-        'Clitocybe nuda', 'Armillaria mellea', 'Armillaria tabescens', 'Entoloma abortivum'
+        'Lycoperdon pyriforme', 'Hydnum repandum', 'Craterellus tubaeformis', 'Hydnum umbilicatum', 
+        'Hericium americanum', 'Hericium coralloides', 'Calvatia gigantea', 'Armillaria mellea', 'Armillaria tabescens', 'Entoloma abortivum'
+        //'Laetiporus cincinnatus'
+        //'Clitocybe nuda'
         
     ],
     descriptions: [
         'A collection of mushrooms that can be found in the Fall in the Eastern United States.',
         'Some of the species may be found in other seasons, and across the US.'
     ],
-    items: [],
     speciesCount: 16,
     familiesCount: 9,
-    getItems: function() {
-        return getItems(this, 4);
-    },
+    index: 4
 }
 
 export const wildFoodUKTopTenBeginners = {
     ...mushroomCollection,
     id: 6,
-    name: '10 Safe Mushrooms for Beginners',
+    thumb: 'https://content.eol.org/data/media/59/81/c6/509.3118102.jpg',
+    name: 'Mushrooms for Beginners',
     itemNames: [
         'Fistulina hepatica', 'Boletus edulis', 'Pleurotus ostreatus', 'Auricularia auricula-judae',
         'Calvatia gigantea', 'Hydnum repandum', 'Polyporus squamosus', 'Sarcoscypha coccinea',
@@ -321,45 +296,96 @@ export const wildFoodUKTopTenBeginners = {
         'A good start for beginners.',
         'Specific to the UK.'
     ],
-    items: [],
     speciesCount: 10,
     familiesCount: 10,
-    getItems: function() {
-        return getItems(this, 4);
-    },
+    index: 4
 };
 
 export const cogumelosEmPortugal = {
     ...mushroomCollection,
     id: 7,
     name: 'Mushrooms of Portugal',
+    thumb: 'https://content.eol.org/data/media/55/6d/bc/509.11062931.jpg',
     itemNames: [
         'Boletus edulis', 'Lactarius deliciosus', 'Agaricus campestris', 'Macrolepiota procera',
         'Craterellus cornucopioides', 'Cantharellus cibarius', 'Amanita caesarea',
-        'Fistulina hepatica', 'Amanita phalloides', 'Amanita muscaria',
-        'Amanita ponderosa', 'Tricholoma equestre', 'Boletus pinophilus', 'Hydnum repandum'
+        'Fistulina hepatica', 'Amanita muscaria', 'Tricholoma equestre', 'Boletus pinophilus', 
+        'Hydnum repandum', 'Amanita phalloides'
+        //'Amanita ponderosa'
     ],
     descriptions: [
         'A collection of mushrooms, both edible and poisonous, common to one or more regions of Portugal.'
     ],
-    items: [],
     speciesCount: 14,
     familiesCount: 8,
-    getItems: function() {
-        return getItems(this, 4);
-    },
+    index: 4
 };
 
-kitchenGarden.items.forEach((item,index)=>{
-    item.snapIndex = index + 1;
-});
+export const localSpecies = {
+    id: 8,
+    name: 'Local species', 
+    type: 'species',
+    descriptions: [
+        'Local plants, fungi and birds found in your area at this time of year.',
+        'The species in this lesson change and their number varies depending on the time of year and location.',
+        'Snapdragon covers only a few hundred species but this number is growing...'
+    ],
+    speciesCount: '--',
+    familiesCount: '--',
+    glossary: ['plantae', 'common', 'fungi'],
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 101,
+    thumb: 'https://content.eol.org/data/media/7f/09/1a/542.26637311774.jpg',
+    moduleSize: 4,
+    curator: 'Snapdragon',
+    userLevel: 'All comers'
+};
+
+const lichenCollection = {
+    providerId: 1,
+    type: 'species',
+    thumb: 'https://content.eol.org/data/media/80/d2/d6/542.6832443214.jpg',
+    moduleSize: 4,
+    curator: 'Snapdragon',
+    userLevel: 'Amateur lichenologists',
+    lessonPlanLandscape: 4,
+    lessonPlanPortrait: 4,
+    glossary: ['lichen', 'common'],
+    course: 'Snapdragon'
+};
+
+export const beginnersLichenology = {
+    ...lichenCollection,
+    id: 9,
+    name: 'Common Lichen',
+    itemNames: [
+        'Xanthoria parietina', 'Physcia adscendens', 'Parmelia saxatilis', 'Graphis scripta',
+        'Ramalina farinacea', 'Evernia prunastri', 'Usnea florida', 
+        'Physcia tenella', 'Placynthium nigrum', 'Physcia aipolia',
+        'Rhizocarpon geographicum', 'Ochrolechia parella',
+        'Platismatia glauca', 'Diploicia canescens', 'Usnea subfloridana',
+        'Cladonia pocillum', 'Peltigera membranacea', 'Cladonia portentosa', 'Cladonia squamosa',
+        'Ramalina fastigiata', 'Flavoparmelia caperata', 'Parmotrema perlatum', 'Parmelia sulcata',
+        'Lecidella elaeochroma', 'Lecanora chlarotera'
+    ],
+    descriptions: [
+        'Lichens are composite organisms formed from the symbiosis of a fungus (mycobiont) and a photosynthetic alga or cyanobacterium (photobiont).',
+        // 'Lichens grow on a range of substrates including bark and rock and \'in the air\' as epiphytes.',
+        'Lichens are important environmental indicators (bioindicators) of air and water quality.'
+    ],
+    speciesCount: 0,
+    familiesCount: 0,
+    index: 5
+};
 
 export const snapdragonCollections = [
     kitchenGarden,
-    rhsTrees,
+    // rhsTrees,
     commonBirds,
     rhsWeeds1,
     wildFoodUKTopTenBeginners,
     cogumelosEmPortugal,
-    fallMushroomsEasternUSA
+    fallMushroomsEasternUSA,
+    localSpecies,
+    beginnersLichenology
 ];

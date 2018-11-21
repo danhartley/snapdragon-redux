@@ -26,10 +26,7 @@ export const renderCompleteText = (collection) => {
 
     let question, givenTaxon, description, description2, genus, species;
 
-    item.genus = itemProperties.genusName(item.name);
-    item.species = itemProperties.speciesName(item.name);
-
-    const vernacular = itemProperties.vernacularName(item, config).toUpperCase();
+    const vernacular = item.vernacularName.toUpperCase();
 
     if(screen.type === 'text-complete-genus') {
 
@@ -62,9 +59,9 @@ export const renderCompleteText = (collection) => {
     const itemTaxons = [ ...collection.speciesNames ].map(item => {
         switch(givenTaxon) {
             case 'genus':
-                return itemProperties.genusName(item);
+                return itemProperties.getGenusName(item);
             case 'species':
-                return itemProperties.speciesName(item);
+                return itemProperties.getSpeciesName(item);
             default:
                 return item
         }

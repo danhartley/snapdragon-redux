@@ -11,10 +11,7 @@ import taxonTemplate from 'ui/screens/cards/taxon-template.html';
 export const renderTaxonCard = collection => {
   
     const item = collection.nextItem;
-    const { lessonPlan, config, collections } = store.getState();
-
-    item.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
-    item.layoutCount = lessonPlan.layouts.length;
+    const { lessonPlan, config } = store.getState();
 
     const template = document.createElement('template');
 
@@ -30,7 +27,7 @@ export const renderTaxonCard = collection => {
     const context = {
         rank: 'family',
         name: item.family,
-        img: `https://media.eol.org/content/${taxon.thumb}`,
+        img: `https://content.eol.org/data/media/${taxon.thumb}`,
         alt: taxon.alt,
         common: itemProperties.getNestedTaxonProp(taxon, config.language, 'names', 'names', '0'),
         species: taxon.species || '--',
@@ -53,7 +50,7 @@ export const renderTaxonCard = collection => {
     }, 500);
 
     continueBtn.addEventListener('click', event => {
-        actions.boundEndRevision(item);
+        actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
     });
 
     renderTemplate(context, template.content, parent, clone);
@@ -71,7 +68,7 @@ export const renderTaxonCard = collection => {
         const list = document.querySelector('#badgeListModal .js-modal-text');
         list.innerHTML = '';
         members.forEach(member => {
-            list.innerHTML += `<div>${member.name} (${itemProperties.vernacularName(member, config)})</div>`;
+            list.innerHTML += `<div>${member.name} (${item.vernacularName})</div>`;
         });
     });
 };

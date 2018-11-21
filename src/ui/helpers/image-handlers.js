@@ -1,6 +1,7 @@
 import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
+import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
 
 export const modalImagesHandler = (images, item, collection, config, displayNameType) => {
     images.forEach(image => {
@@ -13,7 +14,11 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
         const parent = document.querySelector('#imageModal .js-modal-image');
         const selectedItem = item || collection.items.find(item => item.name === image.dataset.itemname);
         const images = selectedItem.images.map((image, index) => {
-            return { src: image, itemName: selectedItem.name, itemCommon: itemProperties.vernacularName(selectedItem, config) };
+            selectedItem.vernacularName = itemProperties.getVernacularName(selectedItem, config);
+            return { ...image, itemName: selectedItem.name, itemCommon: selectedItem.vernacularName };
+        });
+        images.forEach(image => {
+            image.photographersName = image.photographer ? image.photographer.full_name || '' : '';
         });
         imageSlider(config, images, parent, false, image);
         let displayName = '';
@@ -22,14 +27,16 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
                 displayName = selectedItem.name;
                 break;
             case 'vernacular':
-                displayName = itemProperties.vernacularName(item, config);
+                displayName = selectedItem.vernacularName;
                 break;
             case 'withheld':
                 displayName = 'Species name withheld';
                 break;
             default:
-                displayName = `<span class="common-name">${itemProperties.vernacularName(selectedItem, config)}</span> <span class="latin-name">(${selectedItem.name})</span>`;
+                displayName = `<span class="common-name">${selectedItem.vernacularName}</span> <span class="latin-name">(${selectedItem.name})</span>`;
         }
         DOM.modalImageTitle.innerHTML = displayName;
+
+        handleRightsAttribution(selectedItem);
     })
 };

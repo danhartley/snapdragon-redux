@@ -79,6 +79,15 @@ hr {
   background-color: var(--snap-collection);
 }
 
+.btn.btn-non-taxa {
+  background-color: rgb(165, 159, 131);
+  width: 15em;
+}
+
+.non-taxa .dropdown-menu {
+  width: 15em !important;
+}
+
 .btn-lesson {
   background-color: var(--snap-lesson);
 }
@@ -97,7 +106,8 @@ hr {
   font-weight: 900; 
   content: "\f00c";
   padding: 0 .5em 0 0;
-  color: var(--snap-collection);
+  margin: 0 0 0 -1.5em;
+  color: var(--snap-success);
 }
 
 .icon.choice::after {  
@@ -136,12 +146,12 @@ hr {
 
 .dropdown-item.active {
   color: var(--snap-text-medium-dark);
-  background-color: var(--snap-dropdown-bg);
+  background-color: var(--snap-dropdown-hover);
 }
 
 a.dropdown-item {
   color: var(--snap-text-medium-dark);
-  padding: .5em 1em;
+  padding: .5em 0 .5em 2em;
   background-color: var(--snap-dropdown-bg);
   border-bottom: 1px solid rgb(236, 244, 252);
 }
@@ -235,6 +245,7 @@ a.dropdown-item:hover {
   max-width: 7.5em;
   height: 7.5em;
   margin: 0 1em 0 0;
+  object-fit: cover;
 }
 
 .nav-icons .icon {
@@ -274,14 +285,17 @@ a.dropdown-item:hover {
   display: flex;
   flex-direction: column;
   padding: .5em;
-  /* background-color: var(--snap-container-background); */
   background-color: rgb(230, 232, 215);
   justify-content: space-between;
 }
 
-.taxon.revision.card, .species.revision.card, .cultivar.revision.card {
+.taxon.revision.card, .species.revision.card, .cultivar.revision.card, .non-taxon.revision.card {
   margin: 0 0 1em 0;
   justify-content: space-between;
+}
+
+.non-taxon.revision.card {
+  background-color: rgb(216, 227, 220);
 }
 
 .species.revision.card {
@@ -379,10 +393,15 @@ a.dropdown-item:hover {
 
 .header-text {
   color: var(--snap-text-medium-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
 }
 
 .footer {  
   bottom: 0;
+  color: var(--snap-text-medium-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
 }
 
 .left-body .footer, .right-body .footer {
@@ -601,21 +620,11 @@ a.dropdown-item:hover {
   height: 40vh;
 }
 
-.data-box, .id-box {  
+.id-box {  
   display: flex;
-}
-
-.id-box {
   border: 1px solid rgba(129, 67, 101, .3);
   padding: 1em 0;
-}
-
-.data-box > div {  
-  flex: 1;
-}
-
-.data-box > div:nth-child(2) {
-  flex: 2;
+  background-color: var(--snap-taxon-card-background);
 }
 
 .id-box > div:nth-child(1) {
@@ -629,31 +638,39 @@ a.dropdown-item:hover {
 
 .id-box > div:nth-child(2) {
   flex: 3 !important;
-}
-
-.data-box > div:nth-child(2), .id-box > div:nth-child(2) {  
-  padding: .25em .5em;
-  color: var(--snap-text-light);  
-  border-radius: .1rem;
-  display: flex;
-  flex-direction: column;
-  font-size: .9em;
-  max-width: 15em;;
-}
-
-.data-box > div:nth-child(2) {
-  text-align: left;
-  letter-spacing: .05em;
-  color: var(--snap-text-dark);
-  border: .05em solid var(--snap-border-dark);
-  background-color: var(--snap-grid-background);
-}
-
-.id-box > div:nth-child(2) {  
+  padding: 0 0 0 .5em;
   text-align: left;
   flex: auto;
   color: var(--snap-text-dark);
-  border-left: .25em solid var(--snap-id-border);
+  border-left: .25em dotted var(--snap-progress-bar);
+}
+
+.data-box-container {
+  display: flex;  
+}
+
+.data-box-container div:nth-child(1) {
+  flex: 1;
+}
+
+.data-box {
+  color: var(--snap-text-dark);
+  border: .05em solid var(--snap-border-dark);
+  background-color: var(--snap-grid-background);
+  text-align: left;
+}
+
+.taxon-data > span:nth-child(1) {
+  width: 5em;
+  text-align: right;
+  text-transform: capitalize;
+  padding: 0 .5em 0 0;
+  color: rgb(35,35,35);
+  background-color: rgba(128, 128, 128,.1);
+}
+
+.taxon-data > span:nth-child(2) {
+  padding: 0 .5em;
 }
 
 .taxon-data {
@@ -663,17 +680,12 @@ a.dropdown-item:hover {
   flex-direction: row;
 }
 
-.taxon-data span:nth-child(1) {
-  flex: 1;  
-  text-transform: capitalize;
-}
-
-.taxon-data span:nth-child(2) {
-  flex: 2;
-}
-
 .taxon-data:nth-child(1) span:nth-child(2) {
   text-transform: uppercase;
+}
+
+.latin { 
+  font-style: italic;
 }
 
 .taxon-members {
@@ -1029,7 +1041,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: var(--snap-alert);
 }
 
-.species-card-images {
+.species-card-images, .non-taxon-card-images {
   width: 100%;
   height: initial;
   display: grid;
@@ -1296,8 +1308,10 @@ table {
 }
 
 .badge-light {
-  color: var(--snap-text-light);
-  background-color: var(--snap-collection);
+  /* color: var(--snap-text-light);
+  background-color: var(--snap-collection); */
+  color: inherit;
+  background-color: transparent;
   margin: -.25em 0 0 .25em;
   padding: .4em .4em .3em .4em;
 }
@@ -1380,6 +1394,10 @@ table {
   width: 10%;
   background-color: rgba(211, 214, 173,.2);
   opacity: .5;
+}
+
+.carousel-control-next[disabled="disabled"], .carousel-control-prev[disabled="disabled"] {
+  pointer-events: none;
 }
 
 .imageSlider .carousel.slide {
@@ -1480,10 +1498,12 @@ table {
 
 .lp-context {
   font-style: italic;
+  font-weight: normal;
 }
 
 .lp-answer {
   font-style: initial;
+  font-weight: normal;
 }
 
 .lp-level span:nth-child(1) {
@@ -1588,6 +1608,10 @@ iframe#birdsong {
   height: 60vh;
   border: 0;
   margin: 0 0 1em 0;
+}
+
+.modal-content .definition.revision.card {
+  margin: 0;
 }
 
 .definition.revision.card div>div {
@@ -1735,4 +1759,50 @@ th.lessonScore {
   flex-direction: column;
   justify-content: center;
   padding: 0 .5em;
+}
+
+.species-pending .icon {
+  font-size: 5em;
+  color: rgb(210, 180, 140,.4);
+  text-align: center;
+}
+
+.species-pending div:nth-child(2), .species-pending div:nth-child(3), .species-pending div:nth-child(4) {
+  padding: 1em;
+}
+
+.slow-spin {
+  -webkit-animation: fa-spin 6s infinite linear;
+  animation: fa-spin 6s infinite linear;
+}
+
+a.collection-disabled {
+  color: grey;
+  pointer-events: none; 
+}
+
+.rights-attribution {
+  color: grey;
+  margin: .5em 1em;
+}
+
+.rights-attribution span {
+  font-size: .5rem;
+  vertical-align: baseline;
+  margin: 0 0 0 .25em;
+}
+
+.fungi-block {
+  color: white;
+  background-color: var(--snap-kingdom-fungi);
+}
+
+.animalia-block {
+  color: white;
+  background-color: var(--snap-kingdom-animalia);
+}
+
+.plantae-block {
+  color: white;
+  background-color: var(--snap-kingdom-plantae);
 }

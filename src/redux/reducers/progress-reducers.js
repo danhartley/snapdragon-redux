@@ -1,15 +1,12 @@
 import * as R from 'ramda';
 
-import { utils } from 'utils/utils';
 import { types } from 'redux/actions/action-types';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
 
 export const counter = (state = null, action) => {
     switch(action.type) {
         case 'persist/REHYDRATE':
-            return action.payload ? action.payload.counter : null;
-        case types.CHANGE_COLLECTION:
-            return { index: 0 };
+            return action.payload ? { ...action.payload.counter, isLessonRehydrated: true } : state;
         case types.UPDATE_CONFIG:
             return state;
         case types.NEXT_ROUND:

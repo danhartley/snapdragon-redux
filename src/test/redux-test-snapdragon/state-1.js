@@ -2243,7 +2243,6 @@ export const snapdragon = {
         'Aegithalos caudatus',
         'Fringilla coelebs'
       ],
-      userSelection: false,
       itemIndex: 0,
       families: [
         'Passeridae',
@@ -3398,7 +3397,7 @@ export const snapdragon = {
         ],
         course: 'Snapdragon',
         id: 6,
-        name: '10 Safe Mushrooms for Beginners',
+        name: 'Mushrooms for Beginners',
         itemNames: [
           'Fistulina hepatica',
           'Boletus edulis',

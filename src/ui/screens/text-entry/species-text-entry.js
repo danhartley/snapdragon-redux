@@ -11,9 +11,9 @@ export const renderTextEntry = (collection) => {
     
     if(!screen) return;
 
-    item.vernacular = itemProperties.vernacularName(item, config);
+    item.vernacular = item.vernacularName;
 
-    const question = { binomial: item.name, species: item.species, genus: item.genus, taxon: screen.taxon, question: item[screen.taxon], common: item.vernacular };
+    const question = { binomial: item.name, species: item.species, genus: item.genus, taxon: screen.taxon, question: item[screen.taxon], common: item.vernacularName };
 
     const hints = [
         { selector: 'span.js-genus', value: question.genus },

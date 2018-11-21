@@ -6,7 +6,7 @@
                 <div>
                     <div>
                         <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ nameCount }}</span>
-                        <span>{{ name }}</span>
+                        <span>{{ vernacularName }}</span>
                         <span class='rank'>{{ trait }}</span>
                     </div>
                     <div class="latin-name js-txt-species-name">
@@ -17,19 +17,16 @@
                         <span class="badge badge-light js-subspecies-badge" data-toggle="modal" data-target="#badgeListModal">{{ subSpeciesCount }}</span> <span class="sr-only">species of this family in the collection</span>                
                     </div>
                 </div>
-                <img class="landscape" src="https://media.eol.org/content/{{ itemImage }}" alt="">
+                <img class="landscape" src="https://content.eol.org/data/media/{{ itemImage }}" alt="">
             </div>
         </div>                
-        <div class="landscape">
+        <div class="data-box-container landscape">                
+            <div></div>
             <div class="data-box">
-                <div></div>
-                <div>
-                    <div class="taxon-data"><span>Rank</span> <span>{{ rank }}</span></div>
-                    <div class="taxon-data"><span>Family</span> <span>{{ familyName }}</span></div>
-                    <div class="taxon-data"><span></span><span>{{ family }}</span></div>
-                </div>
-            </div>
-        </div>      
+                <div class="taxon-data"><span>Rank</span> <span>{{ rank }}</span></div>
+                <div class="taxon-data"><span>Family</span><span><span>{{ familyVernacularName }} </span><span class="latin">{{ familyName }}</span></span></div>
+            </div>                
+        </div>
         <hr class="landscape">
         <div class="landscape bird-song">
             <div class="hide-empty">
@@ -38,8 +35,7 @@
             </div>
         </div>                
         <div class="lookalikes js-lookalikes"></div>
-        <div class="ecology js-ecology"></div>
-        <div class="landscape symbionts js-symbionts"></div>
+        <div class="js-feature-types"></div>
         <div class="info-box js-info-box"></div>
         <hr class="landscape">
         <div class="landscape species-card-wiki">

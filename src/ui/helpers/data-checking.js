@@ -4,7 +4,7 @@ import { utils } from 'utils/utils';
 import { epithets } from 'api/botanical-latin';
 import { taxa } from '../../api/snapdragon/taxa';
 
-const vernacularName = (item, config, useShortForm = false) => {
+const getVernacularName = (item, config, useShortForm = false) => {
     let shortForm;
     if(useShortForm) {
         let englishShortForm = item.names.find(name => name.language === 'en' && name.shortForm);
@@ -21,11 +21,11 @@ const vernacularName = (item, config, useShortForm = false) => {
     return utils.capitaliseFirst(name);
 };
 
-const genusName = binomial => {
+const getGenusName = binomial => {
     return binomial.split(' ')[0];
 };
 
-const speciesName = binomial => {
+const getSpeciesName = binomial => {
     return binomial.split(' ')[1];
 };
 
@@ -77,8 +77,10 @@ const trimLatinName = name => {
 };
 
 const familyVernacularNames = (name, language) => {
-    if(name === '') return '';
-    return taxa.find(taxon => taxon.name.toUpperCase() === name.toUpperCase()).names.find(name => name.language === language).names;
+    if(name === '') return;
+    const taxon = taxa.find(taxon => taxon.name.toUpperCase() === name.toUpperCase());
+    if(!taxon) return;
+    return taxon.names.find(name => name.language === language).names;
 }
 
 const getTrait = (traits, itemName, name, formatter) => {
@@ -116,7 +118,7 @@ const vernacularNamesForItems = (items, config) => {
     return vernaculars;
 };
 
-const vernacularNames = (item, config) => {
+const getVernacularNames = (item, config) => {
     const names = item.names.filter(name => name.language === config.language).map(name => utils.capitaliseAll(name.vernacularName));
     return names;
 };
@@ -124,7 +126,7 @@ const vernacularNames = (item, config) => {
 const vernacularNamesForGroups = (items, config, itemGroup) => {
     const groupItems = itemGroup ? items.filter((item, index) => R.contains(index, itemGroup)) : items;
     return groupItems.map(groupItem => {
-        return( utils.capitaliseFirst(vernacularName(groupItem, config)) );
+        return( utils.capitaliseFirst(getVernacularName(groupItem, config)) );
     });
 };
 
@@ -141,18 +143,18 @@ const answersFromList = (list, toInclude, number) => {
 
 const itemContextProperty = (traits, item, propertyName) => {
     const trait = traits.find(trait => trait.name === item.name);
-    if(!trait || !trait.context) return '';
-
-    const property = trait.context.find(c => c.name === propertyName);
+    if(!trait)return '';
+    let property = trait.traits.find(c => c.name === propertyName);
+    if(!property && trait.context) property = trait.context.find(c => c.name === propertyName);
     if(!property) return '';
 
-    return property.values;
+    return property.values || property.value;
 };
 
 export const itemProperties = {
-    vernacularName,
-    genusName,
-    speciesName,
+    getVernacularName,
+    getGenusName,
+    getSpeciesName,
     latin,
     getTaxonProp,
     getNestedTaxonProp,
@@ -164,6 +166,6 @@ export const itemProperties = {
     vernacularNamesForGroups,
     itemNamesForGroups,
     itemContextProperty,
-    vernacularNames,
+    getVernacularNames,
     answersFromList
 };

@@ -41,7 +41,6 @@ export const renderHeaders = page => {
         if(layout) {
     
             const item = collection.nextItem;
-            const vernacularName = item ? itemProperties.vernacularName(item, config) : '';
             const progressBar = document.querySelector('.js-right-grid progress');
             const questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;        
             const questionFormat = `Question ${ layout.progressIndex } of ${questionCount}`;
@@ -59,7 +58,7 @@ export const renderHeaders = page => {
                 case 'specimen-images':
                 case 'screen-image-to-image':
                 case 'screen-species-card':
-                    specimensHeaderText = `${vernacularName} specimens`;
+                    specimensHeaderText = `${item.vernacularName} specimens`;
                     break;
                 default:
                     specimensHeaderText = 'Species specimens';

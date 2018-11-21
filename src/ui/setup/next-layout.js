@@ -4,9 +4,7 @@ import { screensSubscriptionHandler } from 'ui/helpers/subscription-handler';
 
 export const nextLayout = (counter) => {
 
-    const isLessonPaused = (counter.log && counter.log.index !== counter.index);
-
-    if(isLessonPaused) return;
+    if(counter.isLessonPaused) return;
 
     const { lessonPlan, config } = store.getState();
 

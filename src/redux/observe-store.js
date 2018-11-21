@@ -10,6 +10,8 @@ export const observeStore = (store, select, onChange, domain, layout) => {
       if(currentState && nextState) {
         switch(layout) {
           case 'screen-species-card':
+          case 'screen-taxon-card':
+          case 'screen-non-taxon-card':
             hasStateSignificantlyChanged = currentState.itemIndex !== nextState.itemIndex;
             break;
           case 'screen-latin-to-common':

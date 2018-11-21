@@ -3,16 +3,18 @@ import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { taxa } from 'api/snapdragon/taxa';
 import { renderWiki } from 'wikipedia/wiki';
+import { renderWikiModal } from 'wikipedia/wiki-modal';
 import { infraspecifics } from 'api/snapdragon/infraspecifics';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
-import landscapeTemplate from 'ui/screens/cards/card-template.html';
+import cardTemplate from 'ui/screens/cards/card-template.html';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { getBirdSong } from 'xeno-canto/birdsong';
 import { getTraits } from 'api/traits/traits';
 import { lookALikes } from 'ui/screens/common/look-alikes';
-import { featureType } from 'ui/screens/common/feature';
+import { renderFeatures } from 'ui/screens/common/feature';
 import { infoSlider } from 'ui/screens/common/info-slider';
+import * as traitTypes from 'api/traits/trait-types';
 
 export const renderCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody) => {
 
@@ -20,22 +22,18 @@ export const renderCard = (collection, isModalMode = false, selectedItem, parent
 
     const { layout, config, lessonPlan, enums } = store.getState();
 
-    if(!isModalMode) {
-        item.questionCount = lessonPlan.questionCount;
-        item.layoutCount = lessonPlan.layoutCount;
-        
+    if(!isModalMode) {        
         const screen = layout.screens.filter(el => el.name === 'species-card')[0];
-
         if(!screen) return;
     }
     
     const template = document.createElement('template');
 
-    template.innerHTML = landscapeTemplate;
+    template.innerHTML = cardTemplate;
 
     const traits = getTraits(enums);
 
-    renderCommonParts(template, config, item, collection, traits, isModalMode, parent);
+    renderCommonParts(template, config, item, collection, traits, isModalMode, parent, lessonPlan);
 
     config.isPortraitMode
         ? renderPortrait(item, config, traits, isModalMode)
@@ -58,41 +56,13 @@ const renderLandscape = (item, config, traits, isModalMode) => {
         eolPage.setAttribute('style', 'text-decoration: none');
     
         setTimeout(()=>{
-            const wikiLink = document.querySelector('.js-species-card-wiki');
-            if(wikiLink) {
-                wikiLink.addEventListener('click', event => {
-                    document.querySelector('.js-external-page-title').innerHTML = `${item.name}`;
-    
-                    const entry = document.querySelector('.species-card-wiki-entry').innerText;
-                    const style = `
-                        <style type='text/css'>
-                        body {
-                            font-family: PT Sans', 'Roboto', arial,sans-serif;
-                        }
-                        a {
-                            text-decoration: none;
-                            border: solid 1px;
-                            border-top: none;
-                            border-left: none;
-                            border-right: none;
-                            color: black;
-                            cursor: pointer;
-                        }
-                    </style>`;
-                    const wiki = `<header>${style}</header><p>${entry}</p><p><a href='https://en.wikipedia.org/wiki/Salvia_officinalis' target='_blank'>Wikipedia page</a></p>`;
-    
-                    document.querySelector('.js-external-page-body').innerHTML = config.isPortraitMode
-                        ? `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="data:text/html,${wiki}"></iframe>`          
-                        : `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="${wikiLink.querySelector('span').dataset.src}"></iframe>`;
-                        
-                    document.querySelector('#externalPageModal').focus();
-                });
-            }
+            const wikiLink = document.querySelector('.js-species-card-wiki');            
+            renderWikiModal(item, wikiLink, config);
         });    
     
         const wikiNode = document.querySelector('.js-species-card-wiki');
     
-        renderWiki(wikiNode, item, config.language);    
+        renderWiki(wikiNode, item, config.language);  
     }
 };
 
@@ -127,17 +97,17 @@ const renderPortrait = (item, config, traits, isModalMode) => {
     });
 };
 
-const renderCommonParts = (template, config, item, collection, traits, isModalMode, parent) => {
+const renderCommonParts = (template, config, item, collection, traits, isModalMode, parent, lessonPlan) => {
 
-    const species = item.name;    
-    const name = itemProperties.vernacularName(item, config);
-    const speciesName = itemProperties.speciesName(species);
-    const epithet = itemProperties.latin(speciesName);
-    const latin = epithet ? `${speciesName}: ${epithet.en}` : '';
+    const species = item.name;
+    const epithet = itemProperties.latin(item.species);
+    const latin = epithet ? `${item.species}: ${epithet.en}` : '';
     const rank = "species";
     const family = taxa.find(f => f.name === item.family);
-    const familyName = itemProperties.familyVernacularNames(item.family, config.language)[0];
-    const itemImage = item.icon || item.images[0];
+    const familyName = family ? family.name : item.taxonomy.family;
+    const familyVernacularNames = itemProperties.familyVernacularNames(item.family, config.language);
+    const familyVernacularName = familyVernacularNames ? familyVernacularNames[0] : '';
+    const itemImage = item.icon || item.images[0].url;
     
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const subSpeciesCount = specific ? specific.subspecies.length : 0;
@@ -146,8 +116,8 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     const nameCount = names.length; 
 
     const options = [
-        { name: 'rank', formatter: trait => `UK # ${trait.value}` },
-        { name: 'how edible', formatter: trait => trait.value }
+        { name: traitTypes.name.RANK, formatter: trait => `UK # ${trait.value}` },
+        { name: traitTypes.name.HOW_EDIBLE, formatter: trait => trait.value }
     ]
 
     let trait = itemProperties.getActiveTrait(traits, item.name, options);
@@ -156,7 +126,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     
     parent.innerHTML = '';
     
-    renderTemplate({ species, name, latin, rank, subSpeciesCount, family: family.name, itemImage, familyName, trait, nameCount }, template.content, parent, clone);
+    renderTemplate({ species, vernacularName: item.vernacularName, latin, rank, subSpeciesCount, familyName, itemImage, familyVernacularName, trait, nameCount }, template.content, parent, clone);
 
     const subspeciesBadge = document.querySelector('.js-subspecies-badge');
 
@@ -187,10 +157,13 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     let info = traits.find(c => c.name === item.name);
 
     if(info) {
-        infoSlider(info, document.querySelector('.js-info-box'));    
+        infoSlider(info, document.querySelector('.js-info-box'));
     } else {
-        info = { traits: family.traits };
-        infoSlider(info, document.querySelector('.js-info-box'));    
+        if(family && family.traits) {
+            info = { traits: family.traits };
+            infoSlider(info, document.querySelector('.js-info-box'));    
+        }
+        
     }
 
     const namesBadge = document.querySelector('.js-names-badge');
@@ -210,9 +183,8 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     }
 
     lookALikes(collection, item, traits, config, isModalMode);
-    featureType(collection, item, traits, config, document.querySelector('.js-ecology'), 'ecology');
-    featureType(collection, item, traits, config, document.querySelector('.js-symbionts'), 'symbionts');
-
+    renderFeatures(item, traits, config, document.querySelector('.js-feature-types'),[traitTypes.name.ECOLOGY,traitTypes.name.SYMBIONTS, traitTypes.name.THALLUS_TYPE, traitTypes.name.HABITAT]);
+    
     const continueBtn = document.querySelector('.js-species-card-btn button');
 
     if(isModalMode) {
@@ -226,7 +198,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
         }, 500);
 
         continueBtn.addEventListener('click', event => {
-            actions.boundEndRevision(item);
+            actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
         });
     }
 };

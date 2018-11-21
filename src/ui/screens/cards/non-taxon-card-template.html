@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+
+<div class="snapdragon-container non-taxon-card js-non-taxon-card">
+    <div class="portrait-grid non-taxon-card-images carousel js-non-taxon-card-images"></div>        
+    
+    <div class="non-taxon revision card">
+        <div>
+            <div class="dropdown non-taxa js-non-taxa">
+                <button class="btn btn-non-taxa dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Group
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div data-repeat-item="{{ group }}">
+                        <a class="dropdown-item icon" id="{{ item.id }}"  href="#">{{ item.name }}</a>
+                    </div>
+                </div>
+            </div>                        
+        </div>
+        <div class="landscape js-non-taxa-definition"></div>
+        <div>
+            <div class="id-box">
+                <div>
+                    <div>Quick Id</div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div class="info-box js-info-box"></div>
+        <hr class="landscape">
+        <div class="landscape species-card-wiki">
+            <span class="js-non-taxon-card-wiki"></span>
+            <span><a class="non-taxon-card-eol-link js-non-taxon-card-eol-link underline-link">EOL</a></span>
+        </div>
+    </div>    
+    <div class="action-update-container">
+        <div class="species-card-btn action-update js-non-taxon-card-btn">
+            <div></div>
+            <button class="btn btn-light">Continue</button>
+        </div>
+    </div>
+</div>

@@ -76,7 +76,7 @@ const formatWiki = (entry) => {
 
 async function renderWiki(wikiNode, item, language) {
     const binomial = item.name;
-    const wikiSearchTerm = item.names.filter(name => name.language === language).find(name => name.wikiSearchTerm);
+    const wikiSearchTerm = item.names ? item.names.filter(name => name.language === language).find(name => name.wikiSearchTerm) : null;
     const searchTerm = wikiSearchTerm ? wikiSearchTerm.vernacularName : (item.searchTerms 
                             ? item.searchTerms.filter(term => term.language === language)[0].searchTerm 
                             : binomial);

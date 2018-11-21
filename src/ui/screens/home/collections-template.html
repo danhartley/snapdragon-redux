@@ -29,10 +29,17 @@
 
     <div class="snapdragon card align-left">
 
-        <div class="feature-label js-about-label">{{ about }}</div>
+        <div class="feature-label js-about-label">
+            About Snapdragon
+        </div>
 
-        <div class="course-description js-selected-description" data-repeat-text="{{ copy }}">
-            <span>{{ text }}</span>
+        <div class="course-description js-selected-description">
+            <span>
+                    <p>Snapdragon is a tool for studying the 1.3 million recorded species on Earth.</p>
+                    <p>Related species are grouped and tested in lessons.</p>
+                    <p>Lessons take the form of concise summaries followed by quick tests.</p>
+                    <p>Good luck!</p>
+            </span>
         </div>        
 
         <div class="toggle-content is-visible js-lesson-help">
@@ -52,7 +59,7 @@
             <br class="landscape">
 
             <div class="lesson-plan">
-                You can <span class="underline-link" data-toggle="modal" data-target="#listModal">edit</span> the plan for this lesson.
+                You can <span class="underline-link js-edit-lesson-link" data-toggle="modal" data-target="#listModal">edit</span> the plan for this lesson.
             </div>
         </div>
     </div>    
@@ -60,7 +67,10 @@
     <div class="action-update-container">
         <div class="action-update">
             <div></div>
-            <button class="btn btn-light js-lesson-btn-action toggle-content"></button>
+            <button class="btn btn-light js-lesson-btn-action toggle-content">
+                <span class="portrait">View lesson species</span>
+                <span class="landscape">Begin lesson</span>
+            </button>
             <button class="btn btn-placeholder js-lesson-btn-action-placeholder toggle-content is-visible">Pick a lesson to begin...</button>
         </div>
     </div>

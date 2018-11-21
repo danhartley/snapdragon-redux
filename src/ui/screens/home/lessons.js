@@ -18,5 +18,4 @@ export const renderLessons = () => {
     const lessons = [ { id: 1, name: 'lesson 1'}, { id: 2, name: 'lesson 2'} ];
 
     renderTemplate({ lessons }, template.content, parent);
-
 };

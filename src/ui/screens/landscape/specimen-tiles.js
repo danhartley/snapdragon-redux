@@ -13,6 +13,17 @@ export const renderSpecimenTiles = (collection) => {
 
     if(!item) return;
 
+    let images = R.take(4, utils.shuffleArray(R.clone(item.images)));
+
+    images = images.map(img => {
+        return { ...img, itemName: item.name };
+    });
+
+    renderSpecimenImageTiles({ items: [item] }, images);
+};
+
+export const renderSpecimenImageTiles = (collection, images) => {
+
     const { layout, config } = store.getState();
 
     let screen = layout.screens.find(el => el.name === 'specimen-images');
@@ -23,14 +34,12 @@ export const renderSpecimenTiles = (collection) => {
 
     const template = document.createElement('template');
 
-    template.innerHTML = landscapeTemplate;
-
-    const images = R.take(4, utils.shuffleArray(item.images));
+    template.innerHTML = landscapeTemplate;    
 
     const parent = DOM.leftBody;
     parent.innerHTML = '';
 
     renderTemplate({ images }, template.content, parent);
 
-    modalImagesHandler(document.querySelectorAll('.js-tiles .square'), item, null, config);
+    modalImagesHandler(document.querySelectorAll('.js-tiles .square'), null, collection, config);    
 };

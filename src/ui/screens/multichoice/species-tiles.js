@@ -41,7 +41,7 @@ export const renderSpeciesTiles = (collection) => {
     parent = document.querySelector('.right-body .snapdragon-container');
 
     const name = item.name;
-    const vernacular = itemProperties.vernacularName(item, config);
+    const vernacular = item.vernacularName;
     template.innerHTML = speciesCard;
     renderTemplate( { name, vernacular, filter: '' }, template.content, parent);
     template.innerHTML = questionCard;
@@ -66,7 +66,7 @@ export const renderSpeciesTiles = (collection) => {
             const name = event.target.parentElement.dataset.name || event.target.parentElement.parentElement.dataset.name;
             const src = event.target.parentElement.dataset.src || event.target.parentElement.parentElement.dataset.src;
             DOM.modalImageTitle.innerHTML = name;
-            const style = `background-image: url(https://media.eol.org/content/${src}); background-size: cover;  background-position: center;`;
+            const style = `background-image: url(https://content.eol.org/data/media/${src}); background-size: cover;  background-position: center;`;
             DOM.modalImage.style = style;
         });
     });

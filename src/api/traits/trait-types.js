@@ -10,6 +10,17 @@ export let ecoType = english.ecoType;
 export let capShape = english.capShape;
 export let treeTypes = english.treeTypes;
 export let hymeniumType = english.hymeniumType;
+export let associate = english.associate;
+export let thallusType = english.thallusType;
+export let rhizineType = english.rhizineType;
+export let substrate = english.substrate;
+export let level = english.level;
+export let medicinalProperties = english.medicinalProperties;
+export let pHLevel = english.pHLevel;
+export let colour = english.colour;
+export let usage = english.usage;
+export let nonTaxaType = english.nonTaxaType;
+export let boolean = english.boolean;
 
 export const updateLanguage = (config) => {
     
@@ -38,7 +49,18 @@ export const updateLanguage = (config) => {
         howEdible,
         ecoType,
         capShape,
-        hymeniumType
+        hymeniumType,
+        associate,
+        thallusType,
+        rhizineType,
+        substrate,
+        level,
+        medicinalProperties,
+        pHLevel,
+        colour,
+        usage,
+        nonTaxaType,
+        boolean
     }
 
     actions.boundUpdateEnums(enums);   

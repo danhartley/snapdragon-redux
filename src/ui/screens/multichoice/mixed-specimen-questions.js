@@ -30,7 +30,7 @@ export const renderMixedSpecimenQuestions = ui => {
         const multiImages = utils.flatten(images.map(image => { 
             const srcs = R.take(3, image.srcs);
             return srcs.map((src, index) => {
-                return { src: src, itemName: image.itemName, index: index};
+                return { ...src, itemName: image.itemName, index: index};
             });
         }));
         return multiImages;
@@ -42,12 +42,12 @@ export const renderMixedSpecimenQuestions = ui => {
 
     if(config.isPortraitMode) images = getPortraitImages(images);
     
-    let question1 = `Species identification: ${itemProperties.vernacularName(item, config)} (${item.name})`;
+    let question1 = `Species identification: ${item.vernacularName} (${item.name})`;
     let question2 = `Can you identify which of the 4 species on the left is ${item.name}? (Click on an image to view more examples.)`;
     let question3 = `When you've decided, click on the matching image below.`;
 
     if(config.isPortraitMode) {
-        question1 = `Look through the images till you find one of ${itemProperties.vernacularName(item, config)} (${item.name}).`;
+        question1 = `Look through the images till you find one of ${item.vernacularName} (${item.name}).`;
         question2 = `When you've found a match click on the image. (There is more than one correct answer.)`;
         question3 = '';
     }

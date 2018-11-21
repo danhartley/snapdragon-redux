@@ -17,7 +17,7 @@ const getLatestCounter = () => {
     return { index };
 };
 
-const changeCollection = (lessonStateMode, collections, collection, config, history, actionButton) => {
+const changeCollection = (lessonStateMode, collection, config, history, actionButton) => {
 
     switch(lessonStateMode) {
         case 'newLesson': {
@@ -29,8 +29,7 @@ const changeCollection = (lessonStateMode, collections, collection, config, hist
                 actionButton.innerHTML = 'Begin lesson';
             }, 2000);
             if(notEnoughItemsSelected) return;
-            const items = collection.items.filter(item => !item.isDeselected);      
-            actions.boundChangeCollection({ config: config, items: items });      
+            actions.boundToggleLesson({ index: 0 });
             break;
         }
         case 'pauseLesson': {
@@ -61,11 +60,14 @@ const changeCollection = (lessonStateMode, collections, collection, config, hist
                     collection.moduleSize = (collection.moduleSize > collection.length) ? collection.length : collection.moduleSize;
                     collection.rounds = Math.ceil(collection.items.length / collection.moduleSize);
                     collection.itemIndex = 0;
-                    actions.boundChangeCollection({ config: config, items: itemsToReview, allItems: collection.items });
+                    collection.allItems = collection.items;
+                    collection.items = itemsToReview;
+                    actions.boundChangeCollection({ config: config, collection });
                     break;
                 }
                 case 'learn-again': {
-                    actions.boundChangeCollection({ config, items: collection.allItems });
+                    collection.items = collection.allItems;
+                    actions.boundChangeCollection({ config, collection });
                 }
             }            
             break;      
@@ -78,8 +80,16 @@ const purgeLesson = () => {
     window.location.reload(true);
 };
 
-export const endOfRoundHandler = {
+const isSkippable = (collection, counter, caller) => {
+    if(!collection.items) return false;
+    const isLessonRehydrated = counter.isLessonRehydrated;
+    const isReady = collection.itemIndex === 0 && !isLessonRehydrated;
+    return isReady;
+};
+
+export const lessonLogicHandler = {
     getMode,
     changeCollection,
-    purgeLesson
+    purgeLesson,
+    isSkippable
 }

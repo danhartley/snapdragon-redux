@@ -2052,7 +2052,6 @@ export const state3Refresh = {
       3
     ],
     isLevelComplete: false,
-    userSelection: false,
     isLessonComplete: false,
     layoutName: 'summary'
   };

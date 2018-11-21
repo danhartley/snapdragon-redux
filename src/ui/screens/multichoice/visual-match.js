@@ -8,7 +8,9 @@ import { radioButonClickhandler } from 'ui/helpers/handlers';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { taxa } from 'api/snapdragon/taxa';
 import { lookALikes } from 'ui/screens/common/look-alikes';
-import { getFungiTraits } from 'api/traits/fungi-traits';
+import { getTraits } from 'api/traits/traits';
+import { renderFeatures } from 'ui/screens/common/feature';
+import * as traitTypes from 'api/traits/trait-types';
 import specimenCommonMatchTemplate from 'ui/screens/multichoice/visual-match-template.html';
 
 export const renderSpecimenMatch = collection => {
@@ -33,18 +35,7 @@ export const renderSpecimenMatch = collection => {
         let identification;
         let questionTxt = 'Can you identify this species?';
 
-        if(config.isLandscapeMode) {
-            const taxon = taxa.find(t => t.name === item.genus);
-            identification = taxon ? `Genus: ${taxon.descriptions[0].identification}` : '';
-            item.keyTrait = `${utils.capitaliseFirst(enums.name.HOW_EDIBLE)}: ${itemProperties.getActiveTrait(getFungiTraits(enums), item.name, [{ name: enums.name.HOW_EDIBLE, formatter: trait => trait.value }])}`;
-        }
-
-        descriptions = [
-            questionTxt,
-            '',
-            identification,
-            item.keyTrait
-        ];
+        descriptions = [ questionTxt ];
         
         const number = config.isPortraitMode ? 4 : 6;
 
@@ -54,11 +45,11 @@ export const renderSpecimenMatch = collection => {
 
         const questionValue = layout.screens[1].type === 'binomial'
                 ? item.name
-                : itemProperties.vernacularName(item, config);
+                : item.vernacularName;
 
         const vernacularName = layout.screens[1].type === 'binomial'
                 ? ''
-                : itemProperties.vernacularName(item, config);
+                : item.vernacularName;
 
         question = { question: questionValue, binomial: item.name, vernacular: vernacularName };
 
@@ -66,6 +57,13 @@ export const renderSpecimenMatch = collection => {
         
         if(config.isPortraitMode) {
             document.querySelector('.js-txt-question').innerHTML = questionTxt;
+        } 
+        
+        if(config.isLandscapeMode) {
+            const taxon = taxa.find(t => t.name === item.genus);
+            identification = taxon ? `Genus: ${taxon.descriptions[0].identification}` : '';
+            const traits = getTraits(enums);
+            renderFeatures(item, traits, config, document.querySelector('.js-key-traits'),[traitTypes.name.ECOLOGY,traitTypes.name.SYMBIONTS, traitTypes.name.THALLUS_TYPE, traitTypes.name.HABITAT]);
         }
     }
 
@@ -96,7 +94,7 @@ export const renderSpecimenMatch = collection => {
                 break;
         }
                 
-        const traitValue = getFungiTraits(enums).find(trait => trait.name === item.name).traits.find(trait => trait.name === traitName).value;
+        const traitValue = getTraits(enums).find(trait => trait.name === item.name).traits.find(trait => trait.name === traitName).value;
         question = { question: traitValue, binomial: item.name };
 
         let traits = [];
@@ -127,12 +125,12 @@ export const renderSpecimenMatch = collection => {
         if(hint) {
             hint.classList.add('clickable');
             hint.addEventListener('click', () =>{
-                hint.innerHTML = `${itemProperties.vernacularName(item, config)} (${item.name})`;
+                hint.innerHTML = `${item.vernacularName} (${item.name})`;
             });
         }
 
         if(screen.trait === 'howEdible') {            
-            lookALikes(collection, item, getFungiTraits(enums), config);
+            lookALikes(collection, item, getTraits(enums), config);
         }
     }
 

@@ -1,6 +1,7 @@
 import { utils } from 'utils/utils';
 import { renderTemplate } from 'ui/helpers/templating';
 import { modalImagesHandler } from 'ui/helpers/image-handlers';
+import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
 import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 
 const selectActiveImage = (image, parent) => {
@@ -27,7 +28,7 @@ const disableModalPopups = (disableModal, parent, config) => {
     }
 };
 
-export const imageSlider = (config, images, parent, disableModal = false, image) => {
+export const imageSlider = (config, images, parent, disableModal, image) => {
 
     const slider = document.createElement('template');
 
@@ -35,9 +36,23 @@ export const imageSlider = (config, images, parent, disableModal = false, image)
 
     parent.innerHTML = '';
 
-    renderTemplate({ images: utils.shuffleArray(images), index: '' }, slider.content, parent);
+    // renderTemplate({ images: utils.shuffleArray(images), index: '' }, slider.content, parent);
+    renderTemplate({ images, index: '' }, slider.content, parent);
     selectActiveImage(image, parent);    
     disableModalPopups(disableModal, parent, config);
+
+
+    document.querySelector('.carousel-control-next-icon').addEventListener('click', event => {
+        setTimeout(() => {
+            const active = document.querySelector('.carousel-item.active > div');        
+            const src = active.dataset;
+            const selectedItem = {
+                name: src.title,
+                image: { ...src, ...{ photographer : { full_name: src.photographersName }}}
+            };
+            handleRightsAttribution(selectedItem);
+        },1000);
+    });
 };
 
 export const imageSideBySlider = (slides, parent, disableModal = false, config) => {
@@ -57,8 +72,10 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
         const header = document.querySelector(`#imageComparisonModal .js-modal-image-title > span:nth-child(${index + 1})`);
         header.innerHTML = `<span class="common-name">${slide.images[0].itemCommon}</span><br><span class="latin-name">(${slide.images[0].itemName})</span>`;
         renderTemplate({ images: slide.images, index: index + 1 }, sideBySlider.content, parent);
-        document.querySelector(`#imageSlider${index + 1} .carousel-item`).classList.add('active');
+        const activeImage = document.querySelector(`#imageSlider${index + 1} .carousel-item`);
+        activeImage.classList.add('active');
         disableModalPopups(disableModal, config);
+        renderTemplate({ name: activeImage} )
     });
 
     setTimeout(() => {

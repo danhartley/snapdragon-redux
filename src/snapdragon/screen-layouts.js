@@ -1,7 +1,7 @@
 const specimen = {
   name: 'specimen-images',
   domain: 'collection',
-  template: 'js-specimen-images-template'     
+  // template: 'js-specimen-images-template'     
 };
 
 const history = { 
@@ -13,7 +13,7 @@ const history = {
 const speciesCard = {
   name: 'species-card',
   domain: 'collection',
-  template: 'js-card-revision-template'
+  // template: 'js-card-revision-template'
 };
 
 const definitionCard = {
@@ -124,6 +124,16 @@ const taxon = {
   domain: 'collection'
 };
 
+const nonTaxon = {
+  name: 'non-taxon-card',
+  domain: 'collection'
+};
+
+const nonTaxonSpecimenTiles = {
+  name: 'non-taxon-specimen-tiles',
+  domain: 'collection'
+};
+
 const cultivarCard = {
   name: 'cultivar-card',
   domain: 'collection'
@@ -184,6 +194,8 @@ export const screens = {
   familyStrips,
   
   taxon,
+  nonTaxon,
+  nonTaxonSpecimenTiles,
   textComplete,
   cultivarCard,
   cultivar,

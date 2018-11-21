@@ -8,7 +8,7 @@ import { subscription } from 'redux/subscriptions';
 import { renderCollections } from 'ui/screens/home/collections';
 import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { getGlossary } from 'api/glossary/glossary';
-import { endOfRoundHandler } from 'ui/helpers/lesson-handlers';
+import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
 import definitionCardTemplate from 'ui/screens/cards/definition-card-template.html';
 
@@ -51,18 +51,16 @@ export const renderNavigation = (page) => {
         }
     };
 
-    // setTimeout(() => {
-        switch(page.name) {
-            case 'home':
-                activateIcon('js-home');
-                break;
-            case 'list':
-                activateIcon('js-list');
-                break;
-            default:
-                navIcons.forEach(icon => icon.classList.remove('active-icon'));
-        }
-    // }); 
+    switch(page.name) {
+        case 'home':
+            activateIcon('js-home');
+            break;
+        case 'list':
+            activateIcon('js-list');
+            break;
+        default:
+            navIcons.forEach(icon => icon.classList.remove('active-icon'));
+    }
 
     let handleBodyClick = true;
 
@@ -89,7 +87,7 @@ export const renderNavigation = (page) => {
                     case 'home':
                         target.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));        
-                        endOfRoundHandler.changeCollection('pauseLesson', collections, collection, config, history); 
+                        lessonLogicHandler.changeCollection('pauseLesson', collection, config, history); 
                         const { counter } = store.getState();
                         renderCollections(counter);
                         break;
@@ -102,7 +100,7 @@ export const renderNavigation = (page) => {
                     case 'list':                        
                         target.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));                                   
-                        endOfRoundHandler.changeCollection('pauseLesson', collections, collection, config, history); 
+                        lessonLogicHandler.changeCollection('pauseLesson', collection, config, history); 
                         renderSpeciesCollectionList(collection, true);                   
                         break;
                     case 'glossary':
@@ -126,4 +124,12 @@ export const renderNavigation = (page) => {
             }
         )}
     );
+};
+
+export const updateNavIcons = () => {
+    document.querySelector('.js-home').classList.remove('active-icon');
+    const svg = document.querySelector('.js-home svg');
+    if(svg) {
+        svg.classList.remove('active-icon');
+    }
 };

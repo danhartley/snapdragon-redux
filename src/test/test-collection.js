@@ -5841,6 +5841,5 @@ export const extendedCollection = {
   layoutCounter: 1,
   layoutName: 'screen-species-card',
   isLevelComplete: false,
-  userSelection: false,
   isLessonComplete: false
 };

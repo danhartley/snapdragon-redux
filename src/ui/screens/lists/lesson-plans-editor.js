@@ -2,12 +2,13 @@ import * as R from 'ramda';
 
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
+import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
 import { renderTemplate } from 'ui/helpers/templating';
 import { lessonPlans } from 'snapdragon/lesson-plans';
 import lessonPlansTableTemplate from 'ui/screens/lists/lesson-plans-table-template.html';
 import lessonPlansTemplate from 'ui/screens/lists/lesson-plans-template.html';
 
-export const renderLessonPlans = (lessonPlanId) => {
+const renderLessonPlans = (lessonPlanId) => {
 
     const { config } = store.getState();
 
@@ -143,3 +144,13 @@ export const renderLessonPlans = (lessonPlanId) => {
 
     });
 };
+
+export const editLessonPlans = (selector, collectionId, config) => {
+    const link = document.querySelector(selector);
+    link.addEventListener('click', event => {
+        const snapdragonCollection = snapdragonCollections.find(sc => sc.id === collectionId);
+        const planId = config.isPortraitMode ? snapdragonCollection.lessonPlanPortrait : snapdragonCollection.lessonPlanLandscape;
+        renderLessonPlans(planId);
+    });
+}; 
+     

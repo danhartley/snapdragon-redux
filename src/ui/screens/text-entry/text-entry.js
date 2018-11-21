@@ -43,8 +43,7 @@ export const renderInput = (screen, question, hints) => {
     };
 
     const scoreEventHandler = event => {
-        const names = itemProperties.vernacularNames(item, config);
-        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names };
+        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames };
         scoreHandler('text', score, markingCallback, config);
     };
 
@@ -62,7 +61,7 @@ export const renderInput = (screen, question, hints) => {
     const name = clone.querySelector('.js-txt-name');
     if(name) name.innerHTML = item.name;
     const vernacular = clone.querySelector('.js-txt-vernacular');
-    if(vernacular) vernacular.innerHTML = itemProperties.vernacularName(item, config);
+    if(vernacular) vernacular.innerHTML = item.vernacularName;
 
     const parent = DOM.rightBody;
     parent.innerHTML = '';
@@ -95,7 +94,7 @@ const renderLandscape = (item, config, question) => {
 
     switch(question.taxon) {
         case 'vernacular':
-            pool = itemProperties.vernacularName(item, config).toLowerCase();
+            pool = item.vernacularName.toLowerCase();
             answer = question.common;
             break;
         case 'genus':

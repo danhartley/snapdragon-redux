@@ -20,7 +20,7 @@ export const renderLetters = (letters, item, callbackTime) => {
     
     template.innerHTML = lettersTemplate;
 
-    const name = itemProperties.vernacularName(item, config);
+    const name = item.vernacularName;
 
     const blocks = utils.shuffleArray(R.flatten(letters));
 
