@@ -37,6 +37,8 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
         }
         DOM.modalImageTitle.innerHTML = displayName;
 
-        handleRightsAttribution(selectedItem);
+        const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item > div');
+
+        handleRightsAttribution(selectedItem, activeNode);
     })
 };

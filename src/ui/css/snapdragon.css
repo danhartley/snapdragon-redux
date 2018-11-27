@@ -213,10 +213,6 @@ a.dropdown-item:hover {
   border-radius: .25rem .25rem 0 0;
 }
 
-/* .snapdragon-container.lessons-list {
-  background-color: rgb(230, 232, 215);
-} */
-
 .lessons-list > div:nth-child(1) > div {    
   padding: 0 .5em;
 }
@@ -395,6 +391,7 @@ a.dropdown-item:hover {
   color: var(--snap-text-medium-dark);
   text-transform: uppercase;
   letter-spacing: 0.07em;
+  font-size: .9em;
 }
 
 .footer {  
@@ -1410,8 +1407,7 @@ table {
 }
 
 .imageSlider .carousel-item > div {
-  height: 100%; 
-  cursor: pointer; 
+  height: 100%;  
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -1781,9 +1777,51 @@ a.collection-disabled {
   pointer-events: none; 
 }
 
+.attribution-layer {
+  height: 100%;
+  color: var(--snap-text-light);
+  position: relative;
+}
+
 .rights-attribution {
-  color: grey;
-  margin: .5em 1em;
+  color: var(--snap-modal-title);
+  width: 100%;
+  position: absolute;
+  bottom: .5em;
+  background-color: rgb(218, 225, 201);
+  padding: .5em;
+}
+
+.rights-link {
+  width: 100%;
+  position: absolute;
+  bottom: .5em;
+  background-color: rgb(128, 128, 128,.1);
+  padding: .5em 0 .5em .5em;
+}
+
+.rights-link > div > div, .rights-attribution > div > div:nth-child(1) {
+  background-color: var(--snap-collection);
+  padding: .125em .3em 0 .3em;
+  border-radius: .1em;
+  display: inline-block;
+  color: var(--snap-text-light);
+  font-size: 1rem;
+  cursor: pointer; 
+}
+
+.rights-attribution > div {
+  display: flex;
+  align-items: flex-end;
+}
+
+.rights-attribution > div > div:nth-child(1) {
+  margin: 0 .5em 0 0;
+}
+
+.rights-attribution > div > div:nth-child(2) {
+  flex: 1;  
+  font-size: .9em;
 }
 
 .rights-attribution span {

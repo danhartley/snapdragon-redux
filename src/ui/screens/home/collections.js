@@ -87,7 +87,9 @@ export const renderCollections = (counter) => {
 
     if(collection && collection.name) {
         setTimeout(() => {
-            document.getElementById(collection.id).click();
+            const preSelectedCollection = document.getElementById(collection.id);
+            if(!preSelectedCollection) return;
+            preSelectedCollection.click();
         });        
         if(config.isLandscapeMode) {
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');

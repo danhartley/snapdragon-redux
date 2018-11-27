@@ -16,6 +16,11 @@ export const fungiDescriptions = [
         type: 'lookalike',
         description: 'The pore surface of L. sulphureus is bright yellow and cream/white for L. cincinnatus. L. cincinnatus grows away from the tree in a rosette of individual caps. L. sulphureus grows in shelves at the base of the tree. Both favour oaks. '
     },
+    // {
+    //     ids: ['Laetiporus sulphureus', 'Polyporus squamosus'],
+    //     type: 'lookalike',
+    //     description: 'Something or other. '
+    // },
 ];
 
 export const getFungiTraits = (enums) => {
@@ -744,7 +749,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.GILL_ATTACHMENT, value : "NA" },
         // { name: SD.name.SPORE_PRINT_COLOUR, value : "pink" },
     ], context: [
-        { name: SD.name.LOOK_ALIKES, values: [ 'Laetiporus sulphureus']},
+        // { name: SD.name.LOOK_ALIKES, values: [ 'Laetiporus sulphureus']},
         { name: SD.name.ECOLOGY, values: [ SD.habitats.WOODLAND_LITTER, SD.habitats.DAMP, SD.habitats.DEAD_WOOD ] },
         { name: SD.name.SYMBIONTS, values: [ ] },
     ]},

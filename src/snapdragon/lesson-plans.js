@@ -682,8 +682,9 @@ const portraitLesson3 = {
     ]
 };
 
-const lichenLessonLandscape = { ...landscapeLesson3, id: 4 };
-lichenLessonLandscape.levels[0] = {   id: 1,
+const lichenLessonLandscape = { ...R.clone(landscapeLesson3), id: 4 };
+lichenLessonLandscape.levels[0] = { 
+    id: 1,
     name:'Level 1',
     description: 'Species recognition',
     layouts: [ 
