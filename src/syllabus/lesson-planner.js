@@ -8,12 +8,10 @@ const createLessonPlan = (lessonPlan, config, collection) => {
 
     collection.lesson = collection.lesson || { ...lessonPlan, level: { id: 1 } };
 
-
     // const skippedRoundsOffset = collection.rounds - collection.itemGroups.length;
     // const actualRound = skippedRoundsOffset >= collection.currentRound ? 1 : collection.currentRound - skippedRoundsOffset;
     
     // collection.itemGroup = collection.itemGroups[actualRound - 1];
-    
 
     collection.itemGroups = getItemGroups(collection);
     collection.itemGroup = collection.itemGroups[collection.currentRound - 1];

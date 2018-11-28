@@ -80,11 +80,13 @@ const purgeLesson = () => {
     window.location.reload(true);
 };
 
-const isSkippable = (collection, counter, caller) => {
+const isSkippable = (collection, counter, config) => {
     
     if(!Array.isArray(collection.items)) return false;
 
     if(counter.isLessonRehydrated && collection.itemIndex >= 0) return true;
+
+    if(collection.id !== config.collection.id) return false;
 
     const skip = !counter.isLessonRehydrated && !counter.isLessonPaused;
     return skip;
