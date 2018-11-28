@@ -29,7 +29,7 @@ export const renderMixedSpecimenQuestions = ui => {
         const multiImages = utils.flatten(images.map(image => { 
             const srcs = R.take(3, image.srcs);
             return srcs.map((src, index) => {
-                return { ...src, itemName: image.itemName, index: index};
+                return { ...src, itemName: image.itemName, index: index, photographersName: ''};
             });
         }));
         return multiImages;
@@ -139,7 +139,8 @@ export const renderMixedSpecimenQuestions = ui => {
                         ? '<span class="icon"><i class="fas fa-check-circle"></i></span>'
                         : '<span class="icon"><i class="fas fa-times-circle"></i></span>';
 
-                layer.appendChild(icon);          
+                layer.appendChild(icon);
+                document.querySelector('.attribution-layer').style.display = 'none';
                 internalScoreHandler(score, question, answer, config);
             });
         });

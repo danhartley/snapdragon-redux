@@ -21,7 +21,6 @@ const randomiseItems = collection => {
         const clonedItems = R.clone(collection.items);
         items = R.take(3, utils.shuffleArray(clonedItems.filter(ci => ci.name !== collection.nextItem.name)));
         items.push(clonedItems.find(i => i.name === collection.nextItem.name));
-        //items.push(clonedItems.find(i => i.name === clonedItems[0].name));
         actions.boundUpdateUI({ sharedItems: items.map(item => item.name)});
     }
 };

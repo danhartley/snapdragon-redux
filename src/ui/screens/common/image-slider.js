@@ -4,16 +4,15 @@ import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
 import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 
 const selectActiveNodeImage = (image, parent) => {
-    if(image) {
-        parent.querySelectorAll('.carousel-item').forEach(i => {        
-            const elemSrc = i.lastElementChild.dataset.src || i.lastElementChild.src;
-            if(elemSrc === image.dataset.src) {
-                i.classList.add('active');        
-            }
-        });
-    } else {
-        parent.querySelector('.carousel-item').classList.add('active');
-    }
+    parent.querySelectorAll('.carousel-item').forEach(i => {        
+        const elemSrc = i.lastElementChild.dataset.src || i.lastElementChild.src;
+        const src = image.dataset ? image.dataset.src : `https://content.eol.org/data/media/${image.url}`;
+        if(elemSrc === src) {
+            i.classList.add('active');        
+        }
+    });    
+    const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > div'); 
+    handleRightsAttribution({ name: image.title || image.itemName, image}, activeNode);
 };
 
 const disableModalPopups = (disableModal, parent, config) => {
@@ -48,7 +47,7 @@ export const imageSlider = (config, images, parent, disableModal, image) => {
     parent.innerHTML = '';
 
     renderTemplate({ images, index: '' }, slider.content, parent);
-    selectActiveNodeImage(image, parent);    
+    selectActiveNodeImage(image || images[0], parent);    
     disableModalPopups(disableModal, parent, config);
 
     document.querySelector('#imageSlider .carousel-control-prev').addEventListener('click', carouselControlHandler);
