@@ -81,10 +81,13 @@ const purgeLesson = () => {
 };
 
 const isSkippable = (collection, counter, caller) => {
-    if(!collection.items) return false;
-    const isLessonRehydrated = counter.isLessonRehydrated;
-    const isReady = collection.itemIndex === 0 && !isLessonRehydrated;
-    return isReady;
+    
+    if(!Array.isArray(collection.items)) return false;
+
+    if(counter.isLessonRehydrated && collection.itemIndex >= 0) return true;
+
+    const skip = !counter.isLessonRehydrated && !counter.isLessonPaused;
+    return skip;
 };
 
 export const lessonLogicHandler = {
