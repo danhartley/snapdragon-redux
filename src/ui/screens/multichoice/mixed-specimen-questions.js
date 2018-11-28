@@ -5,7 +5,6 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
-import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import mixedSpecimenTemplate from 'ui/screens/multichoice/mixed-specimen-questions-template.html';
 import questionTemple from 'ui/screens/common/question-template.html';

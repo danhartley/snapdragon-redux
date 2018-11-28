@@ -20,7 +20,9 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
         images.forEach(image => {
             image.photographersName = image.photographer ? image.photographer.full_name || '' : '';
         });
-        imageSlider(config, images, parent, false, image);
+        const selectedItemImage = selectedItem.images.find(i => i.url === image.dataset.uniqueUrl);
+        const selectedImage = { dataset: { ...image.dataset, ...selectedItemImage } };
+        imageSlider(config, images, parent, false, selectedImage);
         let displayName = '';
         switch(displayNameType) {
             case 'biomial':
@@ -36,9 +38,8 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
                 displayName = `<span class="common-name">${selectedItem.vernacularName}</span> <span class="latin-name">(${selectedItem.name})</span>`;
         }
         DOM.modalImageTitle.innerHTML = displayName;
-
-        const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item > div');
-
+        
+        const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > div');        
         handleRightsAttribution(selectedItem, activeNode);
     })
 };

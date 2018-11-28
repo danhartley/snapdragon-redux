@@ -41,5 +41,5 @@ export const renderSpecimenImageTiles = (collection, images) => {
 
     renderTemplate({ images }, template.content, parent);
 
-    modalImagesHandler(document.querySelectorAll('.js-tiles .square'), null, collection, config);    
+    modalImagesHandler(document.querySelectorAll('.js-tiles .square'), null, collection, config);
 };

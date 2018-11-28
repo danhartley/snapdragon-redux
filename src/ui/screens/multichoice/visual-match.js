@@ -136,10 +136,14 @@ export const renderSpecimenMatch = collection => {
 
     if(config.isPortraitMode) {
 
-        const images = item.images.map((img, index) => { 
-            return { index: index + 1, src: img, itemName: item.name };
-        } );
-    
+        const images = item.images.map((image, index) => { 
+            return { 
+                index: index + 1, 
+                ...image, 
+                itemName: item.name, 
+                photographersName : image.photographer ? image.photographer.full_name : '' };
+        });
+
         const parent = document.querySelector('.js-species-card-images');
 
         if(!parent) return;

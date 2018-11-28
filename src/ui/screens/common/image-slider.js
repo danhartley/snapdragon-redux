@@ -29,8 +29,7 @@ const disableModalPopups = (disableModal, parent, config) => {
 
 const carouselControlHandler = event => {
     setTimeout(() => {
-        const activeNode = document.querySelector(`${event.target.dataset.slider} .carousel-item.active > div`);    
-        // const activeNode = document.querySelector('#imageSlider .carousel-item.active > div');    
+        const activeNode = document.querySelector(`${event.target.dataset.slider} .carousel-item.active > div`);
         const src = activeNode.dataset;
         const selectedItem = {
             name: src.title,
