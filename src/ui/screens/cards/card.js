@@ -85,10 +85,13 @@ const renderPortrait = (item, config, traits, isModalMode) => {
 
     imageSlider(config, images, parent, true);
 
-    if(isModalMode) return;
-
     const player = document.querySelector('.js-bird-song-player');
-    
+
+    if(isModalMode) {
+        player.style.display = 'none';
+        return;
+    };
+
     getBirdSong(item, traits, player, config.isPortraitMode);
 
     player.addEventListener('click', () => {
