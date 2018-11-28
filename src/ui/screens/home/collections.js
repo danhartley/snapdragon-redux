@@ -21,7 +21,7 @@ export const renderCollections = (counter) => {
 
     let collection = R.clone(collectionState);
 
-    if(lessonLogicHandler.isSkippable(collection, counter, 'renderCollections')) return;
+    if(lessonLogicHandler.isSkippable(collection, counter, config)) return;
 
     const template = document.createElement('template');
     template.innerHTML = collectionsTemplate;
@@ -87,7 +87,9 @@ export const renderCollections = (counter) => {
 
     if(collection && collection.name) {
         setTimeout(() => {
-            document.getElementById(collection.id).click();
+            const preSelectedCollection = document.getElementById(collection.id);
+            if(!preSelectedCollection) return;
+            preSelectedCollection.click();
         });        
         if(config.isLandscapeMode) {
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');

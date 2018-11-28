@@ -2,7 +2,7 @@ import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
 import rightsAttributionTemplate from 'ui/screens/common/rights-attribution-template.html';
 
-export const handleRightsAttribution = (selectedItem) => {
+export const handleRightsAttribution = (selectedItem, activeNode) => {
 
     const template = document.createElement('template');
     template.innerHTML = rightsAttributionTemplate;    
@@ -57,8 +57,22 @@ export const handleRightsAttribution = (selectedItem) => {
     const author = src.rightsholder || src.rightsHolder;
     const source = src.source;
 
-    DOM.modalImageRightsAttribution.innerHTML = '';
+    renderTemplate({title,author,source,licence}, template.content, activeNode);
 
-    renderTemplate({title,author,source,licence}, template.content, DOM.modalImageRightsAttribution);
+    const rightsAttribution = activeNode.querySelector('.rights-attribution');
+    const rightsLink = activeNode.querySelector('.rights-link');
+
+    rightsAttribution.addEventListener('click', event => {
+        rightsAttribution.classList.add('hide-important');
+        rightsLink.classList.remove('hide-important');
+        rightsLink.style.display = 'inline-block';
+        event.stopPropagation();
+    });
+
+    rightsLink.addEventListener('click', event => {
+        rightsLink.classList.add('hide-important');
+        rightsAttribution.classList.remove('hide-important');
+        event.stopPropagation();
+    });
 
 };

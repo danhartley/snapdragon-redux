@@ -213,10 +213,6 @@ a.dropdown-item:hover {
   border-radius: .25rem .25rem 0 0;
 }
 
-/* .snapdragon-container.lessons-list {
-  background-color: rgb(230, 232, 215);
-} */
-
 .lessons-list > div:nth-child(1) > div {    
   padding: 0 .5em;
 }
@@ -395,6 +391,7 @@ a.dropdown-item:hover {
   color: var(--snap-text-medium-dark);
   text-transform: uppercase;
   letter-spacing: 0.07em;
+  font-size: .9em;
 }
 
 .footer {  
@@ -878,6 +875,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   color: var(--snap-text-medium-light);
 }
 
+.modal-title span {
+  display: block;
+}
+
 #menuModal .modal-content {
   color: var(--snap-text-dark);
 }
@@ -1350,7 +1351,7 @@ table {
   height: 100%;
   width: 100%;
   font-size: 10em;
-  color: rgb(101, 132, 37, .8);
+  color: rgb(101, 132, 37, 0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1410,8 +1411,7 @@ table {
 }
 
 .imageSlider .carousel-item > div {
-  height: 100%; 
-  cursor: pointer; 
+  height: 100%;  
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -1423,11 +1423,11 @@ table {
 }
 
 #imageModal .modal-body, #imageComparisonModal .modal-body {
-  height: 70vh;
+  height: 55vh;
 }
 
 #imageModal .modal-body .imageSlider .carousel-item {
-  height: 70vh;
+  height: 55vh;
 }
 
 #imageSlider1 {
@@ -1781,9 +1781,64 @@ a.collection-disabled {
   pointer-events: none; 
 }
 
+.attribution-layer {
+  height: 100%;
+  color: var(--snap-text-light);
+  position: relative;
+}
+
 .rights-attribution {
-  color: grey;
-  margin: .5em 1em;
+  color: var(--snap-modal-title);
+  width: 100%;
+  position: absolute;
+  bottom: .5em;
+  background-color: rgb(218, 225, 201);
+  /* background-color: rgb(0, 42, 84,.2); */
+  padding: .5em;
+}
+
+.rights-link {
+  width: 100%;
+  position: absolute;
+  bottom: .5em;
+  /* background-color: rgb(128, 128, 128,.1); */
+  /* background-color: rgb(0, 42, 84,.2); */
+  background-color: rgb(218, 225, 201,.2);
+  padding: .5em 0 .5em .5em;
+}
+
+.rights-link > div > div, .rights-attribution > div > div:nth-child(1) {
+  /* background-color: var(--snap-collection); */
+  /* background-color: rgba(79, 106, 135,.8); */
+  background-color: var(--snap-green-feature-txt);
+  padding: .125em .3em 0 .3em;
+  border-radius: .1em;
+  display: inline-block;
+  color: var(--snap-text-light);
+  font-size: 1rem;
+  cursor: pointer; 
+}
+/* 
+.rights-link > div {
+  text-align: center;
+} */
+
+/* .rights-attribution > div > div:nth-child(1) {
+  color: blue;  
+} */
+
+.rights-attribution > div {
+  display: flex;
+  align-items: flex-end;
+}
+
+.rights-attribution > div > div:nth-child(1) {
+  margin: 0 .5em 0 0;
+}
+
+.rights-attribution > div > div:nth-child(2) {
+  flex: 1;  
+  font-size: .9em;
 }
 
 .rights-attribution span {

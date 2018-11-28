@@ -298,4 +298,21 @@
         min-width: 25em;
         max-width: 30em;
     }
+
+    .header-text {
+        font-size: 1em;
+    }
+
+    .rights-link > div > div, .rights-attribution > div > div:nth-child(1) {
+        font-size: 1.5rem;
+    }
+
+    #imageModal .modal-body, #imageComparisonModal .modal-body {
+        height: 70vh;
+    }
+    
+    #imageModal .modal-body .imageSlider .carousel-item {
+        height: 70vh;
+    }
+      
 }

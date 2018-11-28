@@ -25,12 +25,14 @@ export const lookALikes = (collection, item, traits, config) => {
         slides.push({ images });
 
         const names = [];
+        const scientificNames = [];
 
         lookalikes.forEach(lookalike => {
             const lookalikeItem = collection.items.find(item => item.name === lookalike);
             if(!lookalikeItem) return;
             lookalikeItem.vernacularName = itemProperties.getVernacularName(lookalikeItem, config);
             names.push(lookalikeItem.vernacularName);
+            scientificNames.push(lookalikeItem.name);
             images = lookalikeItem.images.map((img, index) => { 
                 return { index: index + 1, src: img, itemName: lookalikeItem.name, itemCommon: lookalikeItem.vernacularName };
             } );
@@ -48,7 +50,7 @@ export const lookALikes = (collection, item, traits, config) => {
         document.querySelector('.js-compare-species-link').addEventListener('click', ()=> {
             const parent = document.querySelector('#imageComparisonModal .js-modal-image');            
             imageSideBySlider(slides, parent, true, config);
-            let description = fungiDescriptions.find(trait => trait.type === 'lookalike' && R.contains(item.name, trait.ids));
+            let description = fungiDescriptions.find(trait => trait.type === 'lookalike' && R.contains(item.name, trait.ids) && !!scientificNames.find(name => R.contains(name, trait.ids)));
             description = description ? description.description : '';
 
             document.querySelector('#imageComparisonModal .js-comparison-description div').innerHTML = description;

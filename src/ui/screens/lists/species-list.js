@@ -13,7 +13,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
     const { config, history, counter, enums  } = store.getState();
 
-    if(lessonLogicHandler.isSkippable(collection, counter, 'renderSpeciesCollectionList')) return;
+    if(lessonLogicHandler.isSkippable(collection, counter, config)) return;
 
     subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
     
