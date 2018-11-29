@@ -13,7 +13,7 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
     image.addEventListener('click', event => {
         if(!item && !collection.items) return;
         const parent = document.querySelector('#imageModal .js-modal-image');
-        const selectedItem = item || collection.items.find(item => item.name === image.dataset.itemname);
+        const selectedItem = item || collection.items.find(item => item.name === image.dataset.itemName);
         const images = selectedItem.images.map((image, index) => {
             selectedItem.vernacularName = itemProperties.getVernacularName(selectedItem, config);
             return { ...image, itemName: selectedItem.name, itemCommon: selectedItem.vernacularName };

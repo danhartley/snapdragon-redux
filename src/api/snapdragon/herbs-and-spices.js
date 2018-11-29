@@ -236,32 +236,32 @@ export const herbsAndSpices = [
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Siiragam.jpg",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/5b/cf/08/509.17846402.jpg",
-          "thumb": "https://content.eol.org/data/media/5b/cf/08/509.17846402.98x68.jpg"
+          "url": "5b/cf/08/509.17846402.jpg",
+          "thumb": "5b/cf/08/509.17846402.98x68.jpg"
         },
         {
           "title": "File:Cuminum cyminum - KÃ¶hlerâs Medizinal-Pflanzen-198.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Cuminum_cyminum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-198.jpg",
           "license": "http://creativecommons.org/licenses/publicdomain/",
-          "url": "https://content.eol.org/data/media/5d/86/29/509.255540.jpg",
-          "thumb": "https://content.eol.org/data/media/5d/86/29/509.255540.98x68.jpg"
+          "url": "5d/86/29/509.255540.jpg",
+          "thumb": "5d/86/29/509.255540.98x68.jpg"
         },
         {
           "title": "Cuminum cyminum.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Cuminum_cyminum.jpg",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/61/41/24/509.43412097.jpg",
-          "thumb": "https://content.eol.org/data/media/61/41/24/509.43412097.98x68.jpg"
+          "url": "61/41/24/509.43412097.jpg",
+          "thumb": "61/41/24/509.43412097.98x68.jpg"
         },
         {
           "title": "Cumin plant, Rajasthan (1).png",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Cumin_plant,_Rajasthan_(1).png",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/65/0b/20/509.56916029.jpg",
-          "thumb": "https://content.eol.org/data/media/65/0b/20/509.56916029.98x68.jpg"
+          "url": "65/0b/20/509.56916029.jpg",
+          "thumb": "65/0b/20/509.56916029.98x68.jpg"
         }
       ],
       "names": [
@@ -2088,16 +2088,94 @@ export const herbsAndSpices = [
         "Fennel (<i>Foeniculum vulgare</i>) is a native of the Mediterranean region (southern Europe, western Asia, and North Africa), but has been naturalized throughout much of Europe, North America, Central America, South America, the Pacific (Hawaii, Fiji, New Caledonia, Niue and French Polynesia), and Australia (see <a href=\"https://keyserver.lucidcentral.org/weeds/data/03030800-0b07-490a-8d04-0605030c0f01/media/Html/Foeniculum_vulgare.htm\">Fact Sheet</a> from the Queensland, Australia, Government Weeds of Australia Project). It is considered a seriously problematic weed in some regions.\r\n\r\nFennel is cultivated in a variety of countries, but India is the major producer of Fennel \"seed\". The \"seeds\" (actually tiny fruits), or the essential oil derived from them, are used to flavor bread, pastries, liqueurs, and fish dishes. The main constituent of the essential oil is <a href=\"https://en.wikipedia.org/wiki/Anethole\">anethole</a>, which is also obtained commercially from <a href=\"https://eol.org/pages/484056/overview\">Star Anise</a> (<i>Illicium verum</i>). The leaves of Fennel are used to flavor and garnish fish.  Florentine Fennel (Finocchio), a distinct cultivated form, is a short, stocky plant, around 30 cm tall, with greatly swollen leaf bases forming a sort of false \"bulb\" that has a strong anise flavor and is eaten as a vegetable. These swollen bases, each about the size of an apple, are eaten raw or cooked, often with cheese. The \"bulb\" is around 95% water. It contains little protein, fat, or sugar; a large amount of potassium and a range of other minerals; and carotenes and vitamin E and B complex vitamins, but little vitamin C (5 mg/100 g). The leaves resemble those of ordinary Fennel and the flowering stems are around 60 cm tall and bear <a href=\"https://en.wikipedia.org/wiki/Umbel\">umbels</a> of yellow flowers. Although it may have originated in the Azores, Florentine Fennel is closely associated with Italy, from which it was introduced to England in the early 18th Century.\r\n\r\nFennel is a perennial herb, reaching up to 2 m in height. The leaf segments (1 to 5 cm in length) are thread-like; the basal sheath may be up to 10 cm in length. The tiny fruits are around 4 mm long, oblong-ovoid, flattened, and greenish or yellowish brown or grayish, with yellow ridges\r\n\r\n(Vaughan and Geissler 1997)\r\n\r\n\r\n"
       ],
       "images": [
-        "2014/08/14/23/93299_orig.jpg",
-        "2014/08/15/05/10887_orig.jpg",
-        "2011/10/15/23/35225_orig.jpg",
-        "2011/10/15/23/51237_orig.jpg",
-        "2011/10/06/05/38735_orig.jpg",
-        "2011/10/06/05/13184_orig.jpg",
-        "2012/06/06/15/52330_orig.jpg",
-        "2011/08/04/11/96838_orig.jpg",
-        "2011/08/04/11/94609_orig.jpg",
-        "2016/08/06/15/05137_orig.jpg"
+        {
+          "title": "Foeniculum vulgare 002.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Foeniculum_vulgare_002.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/32/0f/509.10128640.jpg",
+          "thumb": "55/32/0f/509.10128640.98x68.jpg"
+        },
+        {
+          "title": "Foeniculum vulgare 003.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Foeniculum_vulgare_003.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/32/10/509.10128678.jpg",
+          "thumb": "55/32/10/509.10128678.98x68.jpg"
+        },
+        {
+          "title": "Foeniculum vulgare04.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Foeniculum_vulgare04.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/42/df/509.10432994.jpg",
+          "thumb": "55/42/df/509.10432994.98x68.jpg"
+        },
+        {
+          "title": "Foeniculum vulgare05.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Foeniculum_vulgare05.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/42/e0/509.10433001.jpg",
+          "thumb": "55/42/e0/509.10433001.98x68.jpg"
+        },
+        {
+          "title": "Fennel, Slapton Sands - geograph.org.uk - 517122.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fennel,_Slapton_Sands_-_geograph.org.uk_-_517122.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/e5/fa/509.13038454.jpg",
+          "thumb": "55/e5/fa/509.13038454.98x68.jpg"
+        },
+        {
+          "title": "Finocchio.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Finocchio.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/eb/9a/509.1324233.jpg",
+          "thumb": "55/eb/9a/509.1324233.98x68.jpg"
+        },
+        {
+          "title": "Foeniculum vulgare.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Foeniculum_vulgare.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/0c/2f/509.143076.jpg",
+          "thumb": "56/0c/2f/509.143076.98x68.jpg"
+        },
+        {
+          "title": "F. vulgare-2.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:F._vulgare-2.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/f5/f6/509.18497198.jpg",
+          "thumb": "56/f5/f6/509.18497198.98x68.jpg"
+        },
+        {
+          "title": "File:Foeniculum vulgare - KÃ¶hlerâs Medizinal-Pflanzen-148.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Foeniculum_vulgare_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-148.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "58/84/0a/509.255483.jpg",
+          "thumb": "58/84/0a/509.255483.98x68.jpg"
+        },
+        {
+          "title": "Foeniculum vulgare 003.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Foeniculum_vulgare_003.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5a/33/50/509.10128678.jpg",
+          "thumb": "5a/33/50/509.10128678.98x68.jpg"
+        },
+        {
+          "title": "Foeniculum vulgare inflorescencia.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Foeniculum_vulgare_inflorescencia.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5a/bf/11/509.1241167.jpg",
+          "thumb": "5a/bf/11/509.1241167.98x68.jpg"
+        }
       ],
       "names": [
         {

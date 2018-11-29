@@ -37,12 +37,6 @@ async function getItems(collection) {
     }
 };
 
-const listeners = [];
-
-export const listenToItemChanges = listener => { 
-    listeners.push(listener);
-};
-
 export const keepItems = collection => {
     return new Promise(resolve => {
         resolve(collection.items);
@@ -66,6 +60,7 @@ export async function itemHandler(collection, config, counter, callback) {
         actions.boundChangeCollection({ config, collection });
     }
 
-    callback();
-    listeners.forEach(listener => listener());
+    if(collection.items) {
+        callback();
+    }    
 }

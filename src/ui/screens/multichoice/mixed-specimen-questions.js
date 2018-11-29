@@ -87,7 +87,7 @@ export const renderMixedSpecimenQuestions = ui => {
 
         imageLayers.forEach((imageLayer) => {
 
-            if(imageLayer.dataset.itemname === item.name) {
+            if(imageLayer.dataset.itemName === item.name) {
                 imageLayer.isCorrectAnswer = true;
             }
 
@@ -96,7 +96,7 @@ export const renderMixedSpecimenQuestions = ui => {
                 if(elem.hasClass(imageLayer, 'disabled')) return;
 
                 const selectedIndex = imageLayer.children[0].innerHTML;
-                const selectedName = event.target.dataset.itemname || event.target.parentElement.dataset.itemname;
+                const selectedName = event.target.dataset.itemName || event.target.parentElement.dataset.itemName;
                 const isCorrectAnswer = selectedName === item.name;
                 imageLayer.children[0].innerHTML = selectedName;
                 imageLayer.setAttribute('style', 'font-size: 1em;');
@@ -128,7 +128,7 @@ export const renderMixedSpecimenQuestions = ui => {
         document.querySelectorAll('.carousel-item .layer').forEach(img => {
             img.addEventListener('click', event => {
                 const layer = event.target;
-                const selectedName = layer.dataset.itemname;
+                const selectedName = layer.dataset.itemName;
                 const question = item.name;
                 const answer = selectedName;
                 const isCorrect = answer === question;

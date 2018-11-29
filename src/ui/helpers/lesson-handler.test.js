@@ -46,7 +46,9 @@ describe('should skip home pages appropriately', () => {
             isLessonPaused: false
           }
         let collection = { items: [], itemIndex: 0 };
-        expect(lessonLogicHandler.isSkippable(collection, counter)).toBeTruthy();
+        let config = {};
+        let layout = {};
+        expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeTruthy();
     });
 
     test('try to change lesson to the same lesson has no effect', () => {
@@ -55,8 +57,9 @@ describe('should skip home pages appropriately', () => {
             isLessonPaused: false
         };
         let collection = { id: 1, items: [] };
-        let config = { collection: { id: 1 } }
-        expect(lessonLogicHandler.isSkippable(collection, counter, config)).toBeTruthy();
+        let config = { collection: { id: 1 } };
+        let layout = {};
+        expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeTruthy();
     });
 
     test('change lesson to a different lesson changes species list', () => {
@@ -65,7 +68,8 @@ describe('should skip home pages appropriately', () => {
             isLessonPaused: false
         };
         let collection = { id: 1, items: [] };
-        let config = { collection: { id: 2 } }
-        expect(lessonLogicHandler.isSkippable(collection, counter, config)).toBeFalsy();
+        let config = { collection: { id: 2 } };
+        let layout = {};
+        expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeFalsy();
     });
 });

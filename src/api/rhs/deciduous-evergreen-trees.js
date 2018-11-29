@@ -1482,16 +1482,139 @@ export const deciduousAndEvergreenTrees = [
       "id": 584265,
       "name": "Populus nigra",
       "images": [
-        "2010/03/24/04/60580_orig.jpg",
-        "2012/06/12/17/16080_orig.jpg",
-        "2012/01/10/01/00865_orig.jpg",
-        "2015/04/30/08/71267_orig.jpg",
-        "2015/04/30/09/97884_orig.jpg",
-        "2015/04/30/09/83620_orig.jpg",
-        "2015/04/30/14/79754_orig.jpg",
-        "2012/01/10/01/88698_orig.jpg",
-        "2012/01/10/02/15104_orig.jpg",
-        "2012/10/14/11/71949_orig.jpg"
+        {
+          "title": "File:Populus nigra 'Afghanica' Tikse Gompa.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Populus_nigra_%27Afghanica%27_Tikse_Gompa.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/2c/f3/509.10039742.jpg",
+          "thumb": "55/2c/f3/509.10039742.98x68.jpg"
+        },
+        {
+          "title": "File:Populus nigra 'Afghanica' Ladakh.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Populus_nigra_%27Afghanica%27_Ladakh.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/2c/f5/509.10039833.jpg",
+          "thumb": "55/2c/f5/509.10039833.98x68.jpg"
+        },
+        {
+          "title": "Poplar.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Poplar.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/4a/3c/509.105400.jpg",
+          "thumb": "55/4a/3c/509.105400.98x68.jpg"
+        },
+        {
+          "title": "Populus nigra betulifolia 136-8298.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Populus_nigra_betulifolia_136-8298.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/ab/c9/509.12179007.jpg",
+          "thumb": "55/ab/c9/509.12179007.98x68.jpg"
+        },
+        {
+          "title": "Populus nigra Italica(02).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Populus_nigra_Italica(02).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/05/fc/509.140707.jpg",
+          "thumb": "56/05/fc/509.140707.98x68.jpg"
+        },
+        {
+          "title": "Black Poplar and Isfield Church - geograph.org.uk - 1528119.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Black_Poplar_and_Isfield_Church_-_geograph.org.uk_-_1528119.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/0b/0c/509.14268871.jpg",
+          "thumb": "56/0b/0c/509.14268871.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.geograph.org.uk/profile/41439'>Peter Whitcomb</a>",
+            "homepage": "http://www.geograph.org.uk/profile/41439",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "File:MohutnÃ½ topol.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Mohutn%C3%BD_topol.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/1a/ee/509.14651846.jpg",
+          "thumb": "56/1a/ee/509.14651846.98x68.jpg"
+        },
+        {
+          "title": "Topola czarna w parku Zamkowym w Raciborzu 3.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Topola_czarna_w_parku_Zamkowym_w_Raciborzu_3.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/34/db/509.15100683.jpg",
+          "thumb": "56/34/db/509.15100683.98x68.jpg"
+        },
+        {
+          "title": "Saeulenpappel.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Saeulenpappel.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/08/aa/509.2339831.jpg",
+          "thumb": "58/08/aa/509.2339831.98x68.jpg"
+        },
+        {
+          "title": "PopulusNigra2a.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:PopulusNigra2a.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/17/55/509.28437455.jpg",
+          "thumb": "59/17/55/509.28437455.98x68.jpg"
+        },
+        {
+          "title": "PopulusNigra2e.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:PopulusNigra2e.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/17/5a/509.28437738.jpg",
+          "thumb": "59/17/5a/509.28437738.98x68.jpg"
+        },
+        {
+          "title": "Populus nigra sl4.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Populus_nigra_sl4.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/5b/61/509.30174371.jpg",
+          "thumb": "59/5b/61/509.30174371.98x68.jpg"
+        },
+        {
+          "title": "Prop de Can Bosquets P1240431.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Prop_de_Can_Bosquets_P1240431.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/c3/13/509.32503436.jpg",
+          "thumb": "59/c3/13/509.32503436.98x68.jpg"
+        },
+        {
+          "title": "Stockerauer Au sl7.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Stockerauer_Au_sl7.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/c8/04/509.32621565.jpg",
+          "thumb": "59/c8/04/509.32621565.98x68.jpg"
+        },
+        {
+          "title": "NDStmk 1566 Ligist Schwarzpappel Stock.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:NDStmk_1566_Ligist_Schwarzpappel_Stock.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/ce/a5/509.32772833.jpg",
+          "thumb": "59/ce/a5/509.32772833.98x68.jpg"
+        },
+        {
+          "title": "Schwarzpappel96-2.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Schwarzpappel96-2.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/ce/f4/509.32777107.jpg",
+          "thumb": "59/ce/f4/509.32777107.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -1713,20 +1836,75 @@ export const deciduousAndEvergreenTrees = [
       "id": 579181,
       "name": "Olea europaea",
       "images": [
-        "2014/08/15/04/65032_orig.jpg",
-        "2013/08/24/04/27929_orig.jpg",
-        "2011/10/16/01/19155_orig.jpg",
-        "2011/10/16/01/27000_orig.jpg",
-        "2011/10/16/01/81793_orig.jpg",
-        "2011/10/16/01/61938_orig.jpg",
-        "2011/10/16/01/85399_orig.jpg",
-        "2012/07/07/10/35483_orig.jpg",
-        "2012/05/23/20/74531_orig.jpg",
-        "2009/04/21/04/81734_orig.jpg",
-        "2009/04/21/04/13591_orig.jpg",
-        "2009/07/24/02/42817_orig.jpg",
-        "2009/07/24/02/29709_orig.jpg",
-        "2009/07/24/02/37637_orig.jpg"
+        {
+          "title": "Olea europaea cuspidata-africana - Cape Town.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_cuspidata-africana_-_Cape_Town.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/9c/11/509.11873933.jpg",
+          "thumb": "55/9c/11/509.11873933.98x68.jpg"
+        },
+        {
+          "title": "Olives",
+          "rightsHolder": "A.Poulos (Iya)",
+          "source": "https://www.flickr.com/photos/24918962@N07/2857699230/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "7f/22/97/542.2857699230.jpg",
+          "thumb": "7f/22/97/542.2857699230.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/24918962@N07'>A.Poulos (Iya)</a>",
+            "homepage": "http://www.flickr.com/photos/24918962@N07",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Olea europaea subsp cuspidata, groen en ryp vrugte, Buffelsdrift, b.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_subsp_cuspidata,_groen_en_ryp_vrugte,_Buffelsdrift,_b.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "62/f3/da/509.47464262.jpg",
+          "thumb": "62/f3/da/509.47464262.98x68.jpg"
+        },
+        {
+          "title": "Starr 070111-3138 Olea europaea subsp. cuspidata.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Starr_070111-3138_Olea_europaea_subsp._cuspidata.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "66/4f/60/509.6184665.jpg",
+          "thumb": "66/4f/60/509.6184665.98x68.jpg"
+        },
+        {
+          "title": "Starr 080611-8472 Olea europaea subsp. cuspidata.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Starr_080611-8472_Olea_europaea_subsp._cuspidata.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "66/51/38/509.6185726.jpg",
+          "thumb": "66/51/38/509.6185726.98x68.jpg"
+        },
+        {
+          "title": "Olea europaea Grove Wardija Ridge Malta 08.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_Grove_Wardija_Ridge_Malta_08.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/50/b0/509.10624599.jpg",
+          "thumb": "55/50/b0/509.10624599.98x68.jpg"
+        },
+        {
+          "title": "Olea-europaea-foliage.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Olea-europaea-foliage.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/72/1f/509.1112070.jpg",
+          "thumb": "55/72/1f/509.1112070.98x68.jpg"
+        },
+        {
+          "title": "Olive growing system g3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Olive_growing_system_g3.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/13/53/509.1455011.jpg",
+          "thumb": "56/13/53/509.1455011.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -3621,28 +3799,123 @@ export const deciduousAndEvergreenTrees = [
       "id": 628306,
       "name": "Crataegus monogyna",
       "images": [
-        "2013/11/25/10/36821_orig.jpg",
-        "2012/06/13/03/54825_orig.jpg",
-        "2013/12/08/02/87044_orig.jpg",
-        "2015/04/30/17/49875_orig.jpg",
-        "2014/12/02/15/37416_orig.jpg",
-        "2012/12/11/09/89630_orig.jpg",
-        "2012/12/05/19/54951_orig.jpg",
-        "2012/12/05/19/23245_orig.jpg",
-        "2012/12/05/19/42507_orig.jpg",
-        "2012/12/04/19/14643_orig.jpg",
-        "2012/12/04/19/72247_orig.jpg",
-        "2012/12/04/19/97094_orig.jpg",
-        "2012/05/23/10/50587_orig.jpg",
-        "2012/12/05/06/73756_orig.jpg",
-        "2011/11/14/01/52916_orig.jpg",
-        "2013/11/20/01/10232_orig.jpg",
-        "2014/10/27/08/34509_orig.jpg",
-        "2014/12/02/15/39510_orig.jpg",
-        "2012/12/12/02/72666_orig.jpg",
-        "2009/09/08/03/35357_orig.jpg",
-        "2016/08/02/22/47710_orig.jpg",
-        "2016/08/06/13/82849_orig.jpg"
+        {
+          "title": "May Blossom. Crataegus monogyna",
+          "rightsHolder": "gailhampshire",
+          "source": "https://www.flickr.com/photos/gails_pictures/26637311774/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "7f/09/1a/542.26637311774.jpg",
+          "thumb": "7f/09/1a/542.26637311774.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/43272765@N04'>gailhampshire</a>",
+            "homepage": "http://www.flickr.com/photos/43272765@N04",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Crataegus monogyna01.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Crataegus_monogyna01.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/43/55/509.10436025.jpg",
+          "thumb": "55/43/55/509.10436025.98x68.jpg"
+        },
+        {
+          "title": "Crataegus monogyna g2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Crataegus_monogyna_g2.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/67/3a/509.1096966.jpg",
+          "thumb": "55/67/3a/509.1096966.98x68.jpg"
+        },
+        {
+          "title": "Crataegus-monogyna-frugt.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Crataegus-monogyna-frugt.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/e2/33/509.129189.jpg",
+          "thumb": "55/e2/33/509.129189.98x68.jpg"
+        },
+        {
+          "title": "20100516 Bourgoyen (0031).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20100516_Bourgoyen_(0031).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/e6/ce/509.13068444.jpg",
+          "thumb": "55/e6/ce/509.13068444.98x68.jpg"
+        },
+        {
+          "title": "Crataegus monogyna.jpeg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Crataegus_monogyna.jpeg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/74/1e/509.1609548.jpg",
+          "thumb": "56/74/1e/509.1609548.98x68.jpg"
+        },
+        {
+          "title": "Crataegus monogyna(01).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Crataegus_monogyna(01).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/81/d7/509.163318.jpg",
+          "thumb": "56/81/d7/509.163318.98x68.jpg"
+        },
+        {
+          "title": "Crataegus monogyna NRM.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Crataegus_monogyna_NRM.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/b9/e1/509.2229981.jpg",
+          "thumb": "57/b9/e1/509.2229981.98x68.jpg"
+        },
+        {
+          "title": "PikiWiki Israel 30674 Cities in Israel.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_30674_Cities_in_Israel.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/6a/94/509.25199934.jpg",
+          "thumb": "58/6a/94/509.25199934.98x68.jpg"
+        },
+        {
+          "title": "20130525Weissdorn Saarbruecken3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20130525Weissdorn_Saarbruecken3.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "58/ad/de/509.26366235.jpg",
+          "thumb": "58/ad/de/509.26366235.98x68.jpg"
+        },
+        {
+          "title": "20130910Weissdorn2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20130910Weissdorn2.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "59/59/43/509.30113115.jpg",
+          "thumb": "59/59/43/509.30113115.98x68.jpg"
+        },
+        {
+          "title": "Benaocaz- espino albar bayas.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Benaocaz-_espino_albar_bayas.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/73/16/509.3078040.jpg",
+          "thumb": "59/73/16/509.3078040.98x68.jpg"
+        },
+        {
+          "title": "Prop de Can Bosquets P1240484.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Prop_de_Can_Bosquets_P1240484.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/c4/0a/509.32524389.jpg",
+          "thumb": "59/c4/0a/509.32524389.98x68.jpg"
+        },
+        {
+          "title": "Rotdorn Kaethe-Kollwitz-Strasse Methnerstrasse Frankfurt Oder 008.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rotdorn_Kaethe-Kollwitz-Strasse_Methnerstrasse_Frankfurt_Oder_008.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5a/1b/e8/509.34140486.jpg",
+          "thumb": "5a/1b/e8/509.34140486.98x68.jpg"
+        }
       ],
       "names": [
         {

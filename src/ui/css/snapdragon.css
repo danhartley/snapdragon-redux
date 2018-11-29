@@ -1846,3 +1846,8 @@ a.collection-disabled {
   color: white;
   background-color: var(--snap-kingdom-plantae);
 }
+
+.greek {
+  vertical-align: super;
+  font-size: .6em;
+}

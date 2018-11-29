@@ -31,7 +31,7 @@ export const renderMixedSpecimenTiles = (ui) => {
                 } else {
                     elem.addClassToSelected(imageLayers, imageLayer, ['snap-success', 'snap-alert'], 'snap-alert' );
                     const imageLayerItems = [ ...imageLayers ];
-                    const correctImageLayer = imageLayerItems.find(il => il.dataset.itemname === correctAnswer);
+                    const correctImageLayer = imageLayerItems.find(il => il.dataset.itemName === correctAnswer);
                     correctImageLayer.classList.add('snap-success');
                     correctImageLayer.children[0].innerHTML = correctAnswer;
                     correctImageLayer.setAttribute('style', 'font-size: 1em;');

@@ -13,7 +13,7 @@ const selectActiveNodeImage = (image, parent) => {
         }
     });    
     const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > div'); 
-    handleRightsAttribution({ name: image.dataset.title || image.dataset.itemname, image: image.dataset}, activeNode);
+    handleRightsAttribution({ name: image.dataset.title || image.dataset.itemName, image: image.dataset}, activeNode);
 };
 
 const disableModalPopups = (disableModal, parent, config) => {

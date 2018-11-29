@@ -8,7 +8,19 @@
                 <tbody data-repeat-item="{{ collection.items }}">
                     <tr class="table-row js-list-item">
                         <td>
-                            <img id="{{ item.name }}" src="https://content.eol.org/data/media/{{ item.url }}" alt="{{ item.name }}" data-toggle="modal" data-target="#imageModal" data-id="{{ item.name }}" data-src="https://content.eol.org/data/media/{{ item.url }}" data-image="{{ item.image }}" data-rights-holder="{{ item.rightsHolder }}" data-source="{{ item.source }}">
+                            <img 
+                            id="{{ item.name }}" 
+                            src="https://content.eol.org/data/media/{{ item.url }}" 
+                            alt="{{ item.name }}" 
+                            data-toggle="modal" 
+                            data-target="#imageModal" 
+                            data-id="{{ item.name }}" 
+                            data-src="https://content.eol.org/data/media/{{ item.url }}" 
+                            data-image="{{ item.image }}" 
+                            data-rights-holder="{{ item.rightsHolder }}" 
+                            data-title="{{ item.name }}"
+                            data-license="{{ item.license }}"                            
+                            data-source="{{ item.source }}">
                         </td>
                         <td>
                             <span class="capitalise js-species-card-link js-vernacular-name" data-key-trait="{{ item.keyTrait }}" >

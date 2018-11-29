@@ -7,23 +7,25 @@ import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-list-table';
 import { itemHandler } from 'ui/helpers/item-handler';
-import { renderSpinner } from 'ui/screens/lists/species-pending';
+import { updateLocalLesson } from 'ui/helpers/local-collection';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
-    const { config, history, counter, enums  } = store.getState();
+    const { config, history, counter, enums, layout  } = store.getState();
 
-    if(lessonLogicHandler.isSkippable(collection, counter, config)) return;
+    if(lessonLogicHandler.isSkippable(collection, counter, config, layout)) return;
 
     subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
     
     if(collection.id === 0) return;
 
+    if(collection.id === 8) {
+        updateLocalLesson(document.getElementById('8'), config);
+    }
+
     config.collection = { id: collection.id };
 
     const traits = getTraits(enums);
-
-    renderSpinner(config);
 
     function callback(collection, config, traits) {
         return function () {

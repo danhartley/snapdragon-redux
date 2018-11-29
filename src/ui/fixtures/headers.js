@@ -1,7 +1,6 @@
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
-import { itemProperties } from 'ui/helpers/data-checking';
-
+import { listenToPlaceChange } from 'geo/geo';
 export const renderHeaders = page => {
     
     let lessonPlan, config, counter, collection;
@@ -14,15 +13,17 @@ export const renderHeaders = page => {
         render();
     });
     
+    let PORTRAIT = false, LANDSCAPE = false, LANDSCAPE_HOME = false, COLLECTION = false, SPECIES_LIST = false;
+    let leftHeaderText = '', rightHeaderText = '';
+
     const render = () => {
         const layout = (lessonPlan && lessonPlan.layouts) ? lessonPlan.layouts[counter.index] : null;
 
-        const title = 'Snapdragon - learn the planet';    
+        const title = `Snapdragon<span class="greek">alpha</span> learn the planet`;
     
-        let leftHeaderText = title, rightHeaderText = title;
-    
-        let PORTRAIT = false, LANDSCAPE = false, LANDSCAPE_HOME = false, COLLECTION = false, SPECIES_LIST = false;
-    
+        leftHeaderText = title; 
+        rightHeaderText = title;
+        
         PORTRAIT = config.isPortraitMode;
         LANDSCAPE = config.isLandscapeMode;
     
@@ -91,4 +92,18 @@ export const renderHeaders = page => {
         DOM.leftHeaderTxt.innerHTML = leftHeaderText;
         DOM.rightHeaderTxt.innerHTML = rightHeaderText;
     };
+
+    const callback = (place) => {
+        const region = place.features.find(f => f.place_type[0] === 'place');
+        const country = place.features.find(f => f.place_type[0] === 'country');
+        const localCollectionText = LANDSCAPE ? `Species from ${region.text}, ${country.text}` : `Species from ${region.text}`;
+        if(LANDSCAPE) {
+            DOM.leftHeaderTxt.innerHTML = localCollectionText;
+        }
+        if(PORTRAIT) {
+            DOM.rightHeaderTxt.innerHTML = localCollectionText;
+        }
+    };
+
+    listenToPlaceChange(callback);
 };

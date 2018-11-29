@@ -333,17 +333,58 @@ export const vegetables = [
       "eolName": "Spinacia oleracea L."
     },
     {
-      "id": 583801,
+      // "id": 583801,
+      "id": 49307783,
       "name": "Raphanus sativus",
       "images": [
-        "2015/03/30/11/27516_orig.jpg",
-        "2011/10/16/02/89929_orig.jpg",
-        "2011/10/16/02/25567_orig.jpg",
-        "2012/05/24/00/12323_orig.jpg",
-        "2011/08/04/16/82298_orig.jpg",
-        "2014/07/24/01/01482_orig.jpg",
-        "2014/07/24/01/05700_orig.jpg",
-        "2016/08/06/14/70784_orig.jpg"
+        {
+          "title": "Raddish (raphanus caudatus).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Raddish_(raphanus_caudatus).jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/e0/22/509.12871531.jpg",
+          "thumb": "55/e0/22/509.12871531.98x68.jpg"
+        },
+        {
+          "title": "Radishes at Wilson Farm, Lexington MA.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Radishes_at_Wilson_Farm,_Lexington_MA.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/83/6f/509.31221057.jpg",
+          "thumb": "59/83/6f/509.31221057.98x68.jpg"
+        },
+        {
+          "title": "20140420Raphanus sativus3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20140420Raphanus_sativus3.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "59/bc/ac/509.32352366.jpg",
+          "thumb": "59/bc/ac/509.32352366.98x68.jpg"
+        },
+        {
+          "title": "20140420Raphanus sativus6.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20140420Raphanus_sativus6.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "59/bc/b1/509.32352410.jpg",
+          "thumb": "59/bc/b1/509.32352410.98x68.jpg"
+        },
+        {
+          "title": "20140626Raphanus sativus1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20140626Raphanus_sativus1.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "59/fc/19/509.33614296.jpg",
+          "thumb": "59/fc/19/509.33614296.98x68.jpg"
+        },
+        {
+          "title": "20140626Raphanus sativus2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20140626Raphanus_sativus2.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "59/fc/1a/509.33614322.jpg",
+          "thumb": "59/fc/1a/509.33614322.98x68.jpg"
+        }
       ],
       "names": [
         {
