@@ -2167,15 +2167,62 @@ export const mushrooms = [
       "name": "Agaricus xanthodermus",
       // "icon": "2015/03/04/21/14485_orig.jpg",
       "images": [
-        "2012/11/14/04/35981_orig.jpg",
-        "2012/11/14/04/68652_orig.jpg",
-        "2012/11/14/04/88935_orig.jpg",
-        "2012/06/12/04/38366_orig.jpg",
-        "2012/06/12/04/31916_orig.jpg",
-        "2015/03/04/21/14485_orig.jpg",
-        "2013/12/07/16/79860_orig.jpg",
-        "2013/11/25/04/30020_orig.jpg",
-        "2013/11/14/17/57436_orig.jpg"
+        {
+          "title": "Agaric xanthodermus1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Agaric_xanthodermus1.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/7d/7b/509.1128769.jpg",
+          "thumb": "55/7d/7b/509.1128769.98x68.jpg"
+        },
+        {
+          "title": "Agaricus xanthoderma eF.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Agaricus_xanthoderma_eF.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/3a/8f/509.1518110.jpg",
+          "thumb": "56/3a/8f/509.1518110.98x68.jpg"
+        },
+        {
+          "title": "2011-10-13 Agaricus xanthodermus Genev 181971.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:2011-10-13_Agaricus_xanthodermus_Genev_181971.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/bb/7d/509.17479485.jpg",
+          "thumb": "56/bb/7d/509.17479485.98x68.jpg"
+        },
+        {
+          "title": "2010-11-13 Agaricus xanthodermus Genev 120348 crop.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:2010-11-13_Agaricus_xanthodermus_Genev_120348_crop.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/79/e1/509.20911275.jpg",
+          "thumb": "57/79/e1/509.20911275.98x68.jpg"
+        },
+        {
+          "title": "Agaricus xanthoderma eF.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Agaricus_xanthoderma_eF.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5b/3b/cf/509.1518110.jpg",
+          "thumb": "5b/3b/cf/509.1518110.98x68.jpg"
+        },
+        {
+          "title": "Agaricus xanthodermus section.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Agaricus_xanthodermus_section.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5b/b4/40/509.17318467.jpg",
+          "thumb": "5b/b4/40/509.17318467.98x68.jpg"
+        },
+        {
+          "title": "Agaricus.xanthodermus.-.lindsey.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Agaricus.xanthodermus.-.lindsey.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "67/99/d6/509.7207669.jpg",
+          "thumb": "67/99/d6/509.7207669.98x68.jpg"
+        }
       ],
       "names": [
         {

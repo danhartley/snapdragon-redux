@@ -1,5 +1,6 @@
 import { getLocation, getPlace } from 'geo/geo';
 import { actions } from 'redux/actions/action-creators';
+import { renderSpinner } from 'ui/screens/lists/species-pending';
 
 export async function updateLocalLesson(localCollectionNode, config) {
         
@@ -23,4 +24,7 @@ export async function updateLocalLesson(localCollectionNode, config) {
   
         localCollectionNode.classList.remove('collection-disabled');
     }
+
+    renderSpinner(config);
+
   };

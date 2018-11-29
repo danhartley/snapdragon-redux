@@ -6,6 +6,8 @@ export const getLocation = () => {
   });
 }
 
+const listeners = [];
+
 export async function getPlace(long, lat, language ) {
   const token = 'pk.eyJ1IjoiZGFuaGFydGxleSIsImEiOiJjam84Zjd3aGowMDdoM2ttaDAzeDk4bHJ6In0.oEcO6w3DhHUv_mXrFW1clg';  
   const longitude = long || '-9.163009899999999';
@@ -14,5 +16,10 @@ export async function getPlace(long, lat, language ) {
   const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${longitude},${latitude}.json?language=${lang}&access_token=${token}`;
   const response = await fetch(url);
   const json = await response.json();
+  listeners.forEach(listener => listener(json));
   return await json;
+};
+
+export const listenToPlaceChange = listener => { 
+  listeners.push(listener);
 };

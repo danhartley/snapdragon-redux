@@ -12,16 +12,15 @@ import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { elem } from 'ui/helpers/class-behaviour';
 import { editLessonPlans } from 'ui/screens/lists/lesson-plans-editor';
 import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
-import { updateLocalLesson } from 'ui/helpers/local-collection';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
 
 export const renderCollections = (counter) => {
 
-    const { collections, config, collection: collectionState, history } = store.getState();
+    const { collections, config, collection: collectionState, history, layout } = store.getState();
 
     let collection = R.clone(collectionState);
 
-    if(lessonLogicHandler.isSkippable(collection, counter, config)) return;
+    if(lessonLogicHandler.isSkippable(collection, counter, config, layout)) return;
 
     const template = document.createElement('template');
     template.innerHTML = collectionsTemplate;
@@ -51,10 +50,6 @@ export const renderCollections = (counter) => {
     elem.hide(lessonHelp);
 
     const changeCollectionHandler = collectionId => {
-
-        if(collectionId === 8) {
-            updateLocalLesson(document.getElementById('8'), config);
-        }
 
         subscription.getByName('renderSnapdragon').forEach(sub => subscription.remove(sub));
         subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
@@ -118,7 +113,6 @@ export const renderCollections = (counter) => {
             actions.boundSelectCollection(collection);
             renderSpeciesCollectionList(collection, true);
         }
-        // updateLocalLesson(document.getElementById('8'), config);
     };
 
     selectHandler('.dropdown.js-languages .dropdown-item', language => {        
@@ -145,6 +139,4 @@ export const renderCollections = (counter) => {
         
         updateNavIcons();        
     });
-
-    // updateLocalLesson(document.getElementById('8'), config);
 };

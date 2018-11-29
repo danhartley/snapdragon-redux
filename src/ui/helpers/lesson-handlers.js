@@ -80,7 +80,9 @@ const purgeLesson = () => {
     window.location.reload(true);
 };
 
-const isSkippable = (collection, counter, config) => {
+const isSkippable = (collection, counter, config, layout) => {
+
+    if(!layout) return false;
     
     if(!Array.isArray(collection.items)) return false;
 
