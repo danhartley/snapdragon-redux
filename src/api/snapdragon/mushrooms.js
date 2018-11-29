@@ -1699,27 +1699,102 @@ export const mushrooms = [
       "name": "Omphalotus olearius",
       // "icon": "2012/07/03/00/21100_orig.jpg",
       "images": [
-        "2014/01/16/01/30757_orig.jpg",
-        "2012/06/12/08/99171_orig.jpg",
-        "2012/06/12/08/88165_orig.jpg",
-        "2012/06/12/08/49150_orig.jpg",
-        "2012/06/12/08/77211_orig.jpg",
-        "2012/06/12/08/61522_orig.jpg",
-        "2012/06/12/08/46759_orig.jpg",
-        "2012/06/12/08/02099_orig.jpg",
-        "2012/07/03/00/21100_orig.jpg",
-        "2012/08/22/02/86737_orig.jpg",
-        "2013/02/25/05/68496_orig.jpg",
-        "2013/03/30/01/82761_orig.jpg",
-        "2015/08/26/01/53157_orig.jpg",
-        "2013/10/26/03/55756_orig.jpg",
-        "2014/02/01/13/03319_orig.jpg",
-        "2015/03/21/17/56893_orig.jpg",
-        "2014/02/01/03/83336_orig.jpg",
-        "2014/02/01/04/63309_orig.jpg",
-        "2014/02/01/06/48320_orig.jpg",
-        "2014/01/31/23/95837_orig.jpg",
-        "2014/01/31/22/74830_orig.jpg"
+        {
+          "title": "Omphalotus olearius-Zavodnica.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Omphalotus_olearius-Zavodnica.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/59/7d/509.10745703.jpg",
+          "thumb": "55/59/7d/509.10745703.98x68.jpg"
+        },
+        {
+          "title": "Omphalotus olearius JPG16.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Omphalotus_olearius_JPG16.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/90/e7/509.11621359.jpg",
+          "thumb": "55/90/e7/509.11621359.98x68.jpg"
+        },
+        {
+          "title": "Omphalotus olearius, Champigon JPG11.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Omphalotus_olearius,_Champigon_JPG11.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/90/e8/509.11621422.jpg",
+          "thumb": "55/90/e8/509.11621422.98x68.jpg"
+        },
+        {
+          "title": "Omphalotus olearius.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Omphalotus_olearius.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/de/9f/509.1283794.jpg",
+          "thumb": "55/de/9f/509.1283794.98x68.jpg"
+        },
+        {
+          "title": "Omphalotus olearius2.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Omphalotus_olearius2.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/68/7c/509.2050110.jpg",
+          "thumb": "57/68/7c/509.2050110.98x68.jpg"
+        },
+        {
+          "title": "Omphalotus olearius Mallorca.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Omphalotus_olearius_Mallorca.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/20/7d/509.2881361.jpg",
+          "thumb": "59/20/7d/509.2881361.98x68.jpg"
+        },
+        {
+          "title": "Seta-Naranja-rafax.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Seta-Naranja-rafax.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/57/24/509.3005992.jpg",
+          "thumb": "59/57/24/509.3005992.98x68.jpg"
+        },
+        {
+          "title": "Setas naranjas rafax.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Setas_naranjas_rafax.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/58/98/509.3009896.jpg",
+          "thumb": "59/58/98/509.3009896.98x68.jpg"
+        },
+        {
+          "title": "Omphalotus olearius-Zavodnica.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Omphalotus_olearius-Zavodnica.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5a/5a/bd/509.10745703.jpg",
+          "thumb": "5a/5a/bd/509.10745703.98x68.jpg"
+        },
+        {
+          "title": "A composition of young and old Omphalotus olearus at Schaarsbergen Hoge Erf - panoramio.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:A_composition_of_young_and_old_Omphalotus_olearus_at_Schaarsbergen_Hoge_Erf_-_panoramio.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "64/84/98/509.54242920.jpg",
+          "thumb": "64/84/98/509.54242920.98x68.jpg"
+        },
+        {
+          "title": "Omphalotus olearius in NE IL.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Omphalotus_olearius_in_NE_IL.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "66/96/08/509.63166142.jpg",
+          "thumb": "66/96/08/509.63166142.98x68.jpg"
+        },
+        {
+          "title": "Omphalotus olearius 4.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Omphalotus_olearius_4.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "68/26/b9/509.8897318.jpg",
+          "thumb": "68/26/b9/509.8897318.98x68.jpg"
+        }
       ],
       "names": [
         {
