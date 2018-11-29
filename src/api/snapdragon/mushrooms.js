@@ -2623,26 +2623,128 @@ export const mushrooms = [
       "id": 1029661,
       "name": "Amanita pantherina",
       "images": [
-        "2013/09/13/02/40500_orig.jpg",
-        "2012/06/12/05/55018_orig.jpg",
-        "2012/06/12/05/40051_orig.jpg",
-        "2012/06/12/05/18448_orig.jpg",
-        "2016/08/03/16/56953_orig.jpg",
-        "2015/07/07/23/04059_orig.jpg",
-        "2015/03/20/08/14425_orig.jpg",
-        "2014/02/01/19/37794_orig.jpg",
-        "2015/03/04/21/60707_orig.jpg",
-        "2014/02/01/02/54224_orig.jpg",
-        "2014/10/20/05/80829_orig.jpg",
-        "2014/10/20/05/33097_orig.jpg",
-        "2014/11/20/02/71951_orig.jpg",
-        "2014/11/20/02/51202_orig.jpg",
-        "2014/11/20/02/04090_orig.jpg",
-        "2014/11/20/02/15132_orig.jpg",
-        "2014/11/20/02/27353_orig.jpg",
-        "2014/01/31/15/01218_orig.jpg",
-        "2014/01/31/20/25435_orig.jpg",
-        "2014/01/31/22/92451_orig.jpg"
+        {
+          "title": "Panthercap Mushroom (Amanita pantherina)",
+          "rightsHolder": "Bernard DUPONT",
+          "source": "https://www.flickr.com/photos/berniedup/35227498411/",
+          "license": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "url": "7f/8f/61/542.35227498411.jpg",
+          "thumb": "7f/8f/61/542.35227498411.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/65695019@N07'>Bernard DUPONT</a>",
+            "homepage": "http://www.flickr.com/photos/65695019@N07",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "n28_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://www.flickr.com/photos/biodivlibrary/6459623827/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/a0/34/542.6459623827.jpg",
+          "thumb": "80/a0/34/542.6459623827.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+            "homepage": "http://www.flickr.com/photos/61021753@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Amanita pantherina qtl2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_qtl2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/8c/b8/509.11541060.jpg",
+          "thumb": "55/8c/b8/509.11541060.98x68.jpg"
+        },
+        {
+          "title": "Amanita pantherina group.001.COPY.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_group.001.COPY.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/24/0f/509.14765980.jpg",
+          "thumb": "56/24/0f/509.14765980.98x68.jpg"
+        },
+        {
+          "title": "Amanita pantherina G25.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_G25.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/2d/71/509.14955322.jpg",
+          "thumb": "56/2d/71/509.14955322.98x68.jpg"
+        },
+        {
+          "title": "Fungi 036.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fungi_036.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/68/66/509.25166436.jpg",
+          "thumb": "58/68/66/509.25166436.98x68.jpg"
+        },
+        {
+          "title": "Amanita Pantherina 01.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_Pantherina_01.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/4f/c0/509.2987365.jpg",
+          "thumb": "59/4f/c0/509.2987365.98x68.jpg"
+        },
+        {
+          "title": "Pantherpilz Amanita pantherina.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pantherpilz_Amanita_pantherina.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/56/b9/509.30048748.jpg",
+          "thumb": "59/56/b9/509.30048748.98x68.jpg"
+        },
+        {
+          "title": "Amanita pantherina.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/6f/13/509.3065491.jpg",
+          "thumb": "59/6f/13/509.3065491.98x68.jpg"
+        },
+        {
+          "title": "Amanita pantherina (1).JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_(1).JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/96/3a/509.31550795.jpg",
+          "thumb": "59/96/3a/509.31550795.98x68.jpg"
+        },
+        {
+          "title": "Amanita pantherina (2).JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_(2).JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/96/3b/509.31550797.jpg",
+          "thumb": "59/96/3b/509.31550797.98x68.jpg"
+        },
+        {
+          "title": "Amanita pantherina 09.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_09.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/7b/9a/509.36518275.jpg",
+          "thumb": "5f/7b/9a/509.36518275.98x68.jpg"
+        },
+        {
+          "title": "Amanita pantherina 11.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_11.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/7b/9e/509.36518378.jpg",
+          "thumb": "5f/7b/9e/509.36518378.98x68.jpg"
+        },
+        {
+          "title": "Amanita pantherina 17.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_pantherina_17.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/7b/a4/509.36518422.jpg",
+          "thumb": "5f/7b/a4/509.36518422.98x68.jpg"
+        }
       ],
       "names": [
         {

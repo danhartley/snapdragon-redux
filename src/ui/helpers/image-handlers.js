@@ -11,6 +11,7 @@ export const modalImagesHandler = (images, item, collection, config, displayName
 
 export const modalImageHandler = (image, item, collection, config, displayNameType = 'binomial') => {
     image.addEventListener('click', event => {
+        if(!item && !collection.items) return;
         const parent = document.querySelector('#imageModal .js-modal-image');
         const selectedItem = item || collection.items.find(item => item.name === image.dataset.itemname);
         const images = selectedItem.images.map((image, index) => {
@@ -39,7 +40,7 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
         }
         DOM.modalImageTitle.innerHTML = displayName;
         
-        const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > div');        
-        handleRightsAttribution(selectedItem, activeNode);
+        // const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > div');        
+        // handleRightsAttribution(selectedItem, activeNode);
     })
 };

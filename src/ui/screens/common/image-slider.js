@@ -9,10 +9,11 @@ const selectActiveNodeImage = (image, parent) => {
         const src = image.dataset ? image.dataset.src : `https://content.eol.org/data/media/${image.url}`;
         if(elemSrc === src) {
             i.classList.add('active');        
+            return;
         }
     });    
     const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > div'); 
-    handleRightsAttribution({ name: image.title || image.itemName, image}, activeNode);
+    handleRightsAttribution({ name: image.dataset.title || image.dataset.itemname, image: image.dataset}, activeNode);
 };
 
 const disableModalPopups = (disableModal, parent, config) => {
@@ -22,18 +23,22 @@ const disableModalPopups = (disableModal, parent, config) => {
             img.removeAttribute('data-target');
         });
     } else {
-        modalImagesHandler(parent.querySelectorAll('.carousel-item'), null, config, null);
+        modalImagesHandler(parent.querySelectorAll('.carousel-item > div'), null, config, null);
     }
+};
+
+const prepImageData = (src) => {
+    return {
+        name: src.title,
+        image: { ...src, ...{ photographer : { full_name: src.photographersName }}}
+    };
 };
 
 const carouselControlHandler = event => {
     setTimeout(() => {
         const activeNode = document.querySelector(`${event.target.dataset.slider} .carousel-item.active > div`);
         const src = activeNode.dataset;
-        const selectedItem = {
-            name: src.title,
-            image: { ...src, ...{ photographer : { full_name: src.photographersName }}}
-        };
+        const selectedItem = prepImageData(src);
         handleRightsAttribution(selectedItem, activeNode);
     },1000);
 };
@@ -52,6 +57,13 @@ export const imageSlider = (config, images, parent, disableModal, image) => {
 
     document.querySelector('#imageSlider .carousel-control-prev').addEventListener('click', carouselControlHandler);
     document.querySelector('#imageSlider .carousel-control-next').addEventListener('click', carouselControlHandler);
+
+    // setTimeout(() => {
+    //     const activeNode = parent.querySelector('.imageSlider .carousel-item.active > div');        
+    //     const src = activeNode.dataset;
+    //     const selectedItem = prepImageData(src);
+    //     handleRightsAttribution(selectedItem, activeNode); 
+    // }, 1000);
 };
 
 export const imageSideBySlider = (slides, parent, disableModal = false, config) => {

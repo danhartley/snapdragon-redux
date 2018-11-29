@@ -52,6 +52,10 @@ export const renderCollections = (counter) => {
 
     const changeCollectionHandler = collectionId => {
 
+        if(collectionId === 8) {
+            updateLocalLesson(document.getElementById('8'), config);
+        }
+
         subscription.getByName('renderSnapdragon').forEach(sub => subscription.remove(sub));
         subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
 
@@ -114,7 +118,7 @@ export const renderCollections = (counter) => {
             actions.boundSelectCollection(collection);
             renderSpeciesCollectionList(collection, true);
         }
-        updateLocalLesson(document.getElementById('8'), config);
+        // updateLocalLesson(document.getElementById('8'), config);
     };
 
     selectHandler('.dropdown.js-languages .dropdown-item', language => {        
@@ -142,5 +146,5 @@ export const renderCollections = (counter) => {
         updateNavIcons();        
     });
 
-    updateLocalLesson(document.getElementById('8'), config);
+    // updateLocalLesson(document.getElementById('8'), config);
 };
