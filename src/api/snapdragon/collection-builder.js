@@ -72,7 +72,8 @@ async function getSpeciesData(item) {
     const json = await response.json();
     const taxonConcept = json.taxonConcept;
     if(!json.taxonConcept) return;
-    const imagesCollection = taxonConcept.dataObjects ? taxonConcept.dataObjects.filter(item => item.mediaURL || item.eolMediaURL).map(media => {
+    const taxon = taxonConcept.dataObjects ? taxonConcept : taxonConcept[1];
+    const imagesCollection = taxon.dataObjects.filter(item => item.mediaURL || item.eolMediaURL).map(media => {
         return {
             title: media.title, // as original title
             rightsHolder: media.rightsHolder,
@@ -82,15 +83,15 @@ async function getSpeciesData(item) {
             thumb: media.eolThumbnailURL,
             photographer: media.agents.find(agent => agent.role === 'photographer')            
         }
-    }) : [];
-    const namesCollection = taxonConcept.vernacularNames ? taxonConcept.vernacularNames.filter(item => R.contains(item.language, languages)) : [];
+    });
+    const namesCollection = taxon.vernacularNames ? taxon.vernacularNames.filter(item => R.contains(item.language, languages)) : [];
     // const descriptions = [];
     // const objs = taxonConcept.dataObjects.filter(obj => {
     //     return (obj.mimeType === 'text/plain' || obj.mimeType === 'text/html') && obj.vettedStatus === "Trusted" }
     // );
     // objs.length > 0 ? objs.forEach(obj => {descriptions.push(obj.description)}) : [];
     // return { id: item.id,  name: item.name, images: imagesCollection, names: namesCollection, descriptions: descriptions };
-    return { id: item.id,  name: taxonConcept.scientificName, images: imagesCollection, names: namesCollection };
+    return { id: item.id,  name: taxon.scientificName, images: imagesCollection, names: namesCollection };
 }
 
 const items = [];
@@ -116,7 +117,7 @@ const init = () => {
                 if(!data) return;
                 item.name = data.name;
                 const binomial = getBinomial(item);
-                getTaxonomy(item.name).then(taxonomy => {
+                getTaxonomy(binomial).then(taxonomy => {
                     data.taxonomy = taxonomy;
                     data.family = taxonomy.family;
                     data.kingdom = taxonomy.kingdom;
@@ -302,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             const eolId = response[0].eol_page_id;
                             getSpeciesData({ detailsUrl : speciesUrl(eolId) }).then(data => {
                                 const binomial = getBinomial(item);
-                                getTaxonomy(item.name).then(taxonomy => {
+                                getTaxonomy(binomial).then(taxonomy => {
                                     data.taxonomy = taxonomy;
                                     data.kingdom = taxonomy.kingdom;
                                     data.family = taxonomy.family;
