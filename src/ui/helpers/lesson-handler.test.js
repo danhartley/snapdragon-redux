@@ -86,4 +86,26 @@ describe('should skip home pages appropriately', () => {
         let layout = {};
         expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeFalsy();
     });
+
+    test('skip re-rendering if the language has not changed', () => {
+        let counter = {
+            isLessonRehydrated: false,
+            isLessonPaused: false
+        };
+        let collection = { id: 1, items: [], language: 'en' };
+        let config = { collection: { id: 1 }, language: 'en' };
+        let layout = {};
+        expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeTruthy();
+    });
+
+    test('re-render if the language has changed', () => {
+        let counter = {
+            isLessonRehydrated: false,
+            isLessonPaused: false
+        };
+        let collection = { id: 1, items: [], language: 'en' };
+        let config = { collection: { id: 1 }, language: 'pt' };
+        let layout = {};
+        expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeFalsy();
+    });
 });

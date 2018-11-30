@@ -134,5 +134,5 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                 }            
             });
         }
-        };
+    };    
 };

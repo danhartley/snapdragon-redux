@@ -110,7 +110,7 @@ export const renderCollections = (counter) => {
         languagesHeader.innerHTML = config.languages.find(l => l.lang === config.language).name;
         actions.boundUpdateLanguage(language);
         if(config.isLandscapeMode && collection.id) {
-            collection.language = language;
+            // collection.language = language;
             actions.boundSelectCollection(collection);
             renderSpeciesCollectionList(collection, true);
         }

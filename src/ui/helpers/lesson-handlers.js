@@ -94,6 +94,11 @@ const isSkippable = (collection, counter, config, layout, caller) => {
     if(counter.isLessonRehydrated && !layout) return false;
 
     if(collection.id === config.collection.id && counter.isLessonPaused) return false;
+
+    if(collection.language !== config.language) {
+        collection.language = config.language;
+        return false;
+    }
     
     return (collection.id === config.collection.id);
 };
