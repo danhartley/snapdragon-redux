@@ -1697,7 +1697,7 @@ export const mushrooms = [
     {
       "id": 190094,
       "name": "Omphalotus olearius",
-      // "icon": "2012/07/03/00/21100_orig.jpg",
+      "icon": "55/59/7d/509.10745703.jpg",
       "images": [
         {
           "title": "Omphalotus olearius-Zavodnica.JPG",

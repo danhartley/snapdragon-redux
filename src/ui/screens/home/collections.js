@@ -16,11 +16,12 @@ import collectionsTemplate from 'ui/screens/home/collections-template.html';
 
 export const renderCollections = (counter) => {
 
-    const { collections, config, collection: collectionState, history, layout } = store.getState();
+    const { collections, config: configState, collection: collectionState, history, layout } = store.getState();
 
     let collection = R.clone(collectionState);
+    let config = R.clone(configState);
 
-    if(lessonLogicHandler.isSkippable(collection, counter, config, layout)) return;
+    if(lessonLogicHandler.isSkippable(collection, counter, config, layout, 'renderCollections')) return;
 
     const template = document.createElement('template');
     template.innerHTML = collectionsTemplate;

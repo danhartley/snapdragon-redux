@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
@@ -11,9 +13,11 @@ import { updateLocalLesson } from 'ui/helpers/local-collection';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
-    const { config, history, counter, enums, layout  } = store.getState();
+    const { config: configState, history, counter, enums, layout  } = store.getState();
 
-    if(lessonLogicHandler.isSkippable(collection, counter, config, layout)) return;
+    let config = R.clone(configState);
+
+    if(lessonLogicHandler.isSkippable(collection, counter, config, layout, 'renderSpeciesCollectionList')) return;
 
     subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
     

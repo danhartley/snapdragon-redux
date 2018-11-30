@@ -6,8 +6,9 @@ describe('should skip home pages appropriately', () => {
         let collection = { };
         let counter = { 
             isLessonPaused: false
-        }    
-        expect(lessonLogicHandler.isSkippable(collection, counter)).toBeFalsy();
+        };
+        let config = { collection: { id: 0 } };    
+        expect(lessonLogicHandler.isSkippable(collection, counter, config)).toBeFalsy();
     });
     
     test('on returning to home with initial item selected', () => {
@@ -17,7 +18,7 @@ describe('should skip home pages appropriately', () => {
         };
         let collection = { items: [], itemIndex: 0, id: 1 };
         let config = { collection: { id: 1 } }
-        expect(lessonLogicHandler.isSkippable(collection, counter, config)).toBeFalsy();
+        expect(lessonLogicHandler.isSkippable(collection, counter, config, {}, 'renderSpeciesCollectionList')).toBeFalsy();
     });
     
     test('on returning to home with next item selected', () => {
@@ -27,7 +28,7 @@ describe('should skip home pages appropriately', () => {
         };
         let collection = { items: [], itemIndex: 1, id: 1 };
         let config = { collection: { id: 1 } }
-        expect(lessonLogicHandler.isSkippable(collection, counter, config)).toBeFalsy();
+        expect(lessonLogicHandler.isSkippable(collection, counter, config, {}, 'renderSpeciesCollectionList')).toBeFalsy();
     });
 
     test('refresh page after loading initial state', () => {
@@ -36,19 +37,32 @@ describe('should skip home pages appropriately', () => {
             isLessonPaused: false
         };
         let collection = { };
-        expect(lessonLogicHandler.isSkippable(collection, counter)).toBeFalsy();
+        let config = { collection: { id: 1 } }
+        expect(lessonLogicHandler.isSkippable(collection, counter, config)).toBeFalsy();
     });
 ``
-    test('refresh page with initial item selected', ()=> {
+    test('refresh page with collection selected and initial item selected', ()=> {
         let counter = {
             index: 1,
+            isLessonRehydrated: false,
+            isLessonPaused: false
+          }
+        let collection = { items: [], itemIndex: 0, id: 1 };
+        let config = { collection: { id: 1 } }
+        let layout = {};
+        expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeTruthy();
+    });
+``
+    test('refresh page with collection selected but lesson not yet started', ()=> {
+        let counter = {
+            index: 0,
             isLessonRehydrated: true,
             isLessonPaused: false
           }
         let collection = { items: [], itemIndex: 0 };
-        let config = {};
-        let layout = {};
-        expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeTruthy();
+        let config = { collection: { id: 1 } }
+        let layout = null;
+        expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeFalsy();
     });
 
     test('try to change lesson to the same lesson has no effect', () => {
