@@ -6,7 +6,7 @@ const isAnswerCorrect = score => {
     let isCorrect = score.answer.toUpperCase() === score.question.toUpperCase();
     switch(score.taxon) {
         case 'vernacular':
-            if(score.names) {
+            if(score.names && score.names.length > 0) {
                 const alsoCorrect = R.contains(utils.capitaliseAll(score.answer), score.names);                
                 if(!isCorrect && alsoCorrect) score.alternativeAccepted = true;
                 isCorrect = alsoCorrect;
