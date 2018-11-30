@@ -6,10 +6,9 @@ import { insects } from 'api/snapdragon/insects';
 import { herbsAndSpices } from 'api/snapdragon/herbs-and-spices';
 import { deciduousAndEvergreenTrees } from 'api/rhs/deciduous-evergreen-trees';
 
-
 import { birds } from 'api/snapdragon/common-city-birds';
 import { mushrooms } from 'api/snapdragon/mushrooms';
-import { weeds1 } from 'api/rhs/weeds1';
+import { weeds } from 'api/rhs/weeds';
 import { lichen } from 'api/snapdragon/lichen';
 
 import { plants } from 'api/snapdragon/plants';
@@ -24,7 +23,7 @@ export const getInatSpecies = (latitude, longitude) => {
         ...insects,
         ...herbsAndSpices,
         ...deciduousAndEvergreenTrees,
-        ...weeds1,
+        ...weeds,
         ...lichen,
         ...plants
     ];

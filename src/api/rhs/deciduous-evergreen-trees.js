@@ -719,20 +719,138 @@ export const deciduousAndEvergreenTrees = [
       "id": 704089,
       "name": "Robinia pseudoacacia",
       "images": [
-        "2015/04/30/05/20083_orig.jpg",
-        "2010/11/23/03/99978_orig.jpg",
-        "2010/11/23/03/49276_orig.jpg",
-        "2012/12/11/13/92879_orig.jpg",
-        "2012/06/06/18/17933_orig.jpg",
-        "2012/06/06/18/45652_orig.jpg",
-        "2012/12/12/05/74586_orig.jpg",
-        "2012/12/12/05/03932_orig.jpg",
-        "2012/12/12/05/77038_orig.jpg",
-        "2012/07/04/05/37607_orig.jpg",
-        "2013/09/13/16/98999_orig.jpg",
-        "2013/09/13/16/82821_orig.jpg",
-        "2014/07/08/10/09098_orig.jpg",
-        "2016/08/02/07/84717_orig.jpg"
+        {
+          "title": "Robinia pseudoacacia (Fabaceae) - whole tree (or vine) - view up trunk",
+          "rightsHolder": "Steven J. Baskauf",
+          "source": "http://bioimages.vanderbilt.edu/baskauf/11457",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "8f/05/35/607.http___bioimages_vanderbilt_edu_baskauf_11457.jpg",
+          "thumb": "8f/05/35/607.http___bioimages_vanderbilt_edu_baskauf_11457.98x68.jpg",
+          "photographer": {
+            "full_name": "Steven J. Baskauf",
+            "homepage": null,
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Robinia pseudoacacia (Fabaceae) - whole tree (or vine) - view up trunk",
+          "rightsHolder": "Steven J. Baskauf",
+          "source": "http://bioimages.vanderbilt.edu/baskauf/11504",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "8f/05/45/607.http___bioimages_vanderbilt_edu_baskauf_11504.jpg",
+          "thumb": "8f/05/45/607.http___bioimages_vanderbilt_edu_baskauf_11504.98x68.jpg",
+          "photographer": {
+            "full_name": "Steven J. Baskauf",
+            "homepage": null,
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "DSCF1069",
+          "rightsHolder": "Putneypics",
+          "source": "https://www.flickr.com/photos/38983646@N06/3593346477/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "7f/9a/1b/542.3593346477.jpg",
+          "thumb": "7f/9a/1b/542.3593346477.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/38983646@N06'>Putneypics</a>",
+            "homepage": "http://www.flickr.com/photos/38983646@N06",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "n376_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://www.flickr.com/photos/biodivlibrary/7899826628/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "81/23/51/542.7899826628.jpg",
+          "thumb": "81/23/51/542.7899826628.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+            "homepage": "http://www.flickr.com/photos/61021753@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Robinia pseudoacacia 2010.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Robinia_pseudoacacia_2010.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/44/ce/509.10460273.jpg",
+          "thumb": "55/44/ce/509.10460273.98x68.jpg"
+        },
+        {
+          "title": "Robinia pseudoacacia 001.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Robinia_pseudoacacia_001.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/69/bc/509.11016314.jpg",
+          "thumb": "55/69/bc/509.11016314.98x68.jpg"
+        },
+        {
+          "title": "Robinia pseudoacacia 003.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Robinia_pseudoacacia_003.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/69/be/509.11016411.jpg",
+          "thumb": "55/69/be/509.11016411.98x68.jpg"
+        },
+        {
+          "title": "Robinia pseudoacacia J2.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Robinia_pseudoacacia_J2.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/b1/b4/509.17286691.jpg",
+          "thumb": "56/b1/b4/509.17286691.98x68.jpg"
+        },
+        {
+          "title": "Tree in Paddington Sydney.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Tree_in_Paddington_Sydney.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/e9/45/509.18266216.jpg",
+          "thumb": "56/e9/45/509.18266216.98x68.jpg"
+        },
+        {
+          "title": "Robinia pseudoacacia in Minsk.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Robinia_pseudoacacia_in_Minsk.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/b6/ce/509.26517796.jpg",
+          "thumb": "58/b6/ce/509.26517796.98x68.jpg"
+        },
+        {
+          "title": "Esneux AR7aJPG.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Esneux_AR7aJPG.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/c2/75/509.2678507.jpg",
+          "thumb": "58/c2/75/509.2678507.98x68.jpg"
+        },
+        {
+          "title": "Robinia-pseudoacacia-12-V-2007-6227.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Robinia-pseudoacacia-12-V-2007-6227.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5e/6e/50/509.3060517.jpg",
+          "thumb": "5e/6e/50/509.3060517.98x68.jpg"
+        },
+        {
+          "title": "Robinia-pseudoacacia-Stangenholz-09-XI-2007-45.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Robinia-pseudoacacia-Stangenholz-09-XI-2007-45.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5e/74/08/509.3077224.jpg",
+          "thumb": "5e/74/08/509.3077224.98x68.jpg"
+        },
+        {
+          "title": "Brosen robinia pseudoacacia1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Brosen_robinia_pseudoacacia1.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5e/c2/6e/509.324624.jpg",
+          "thumb": "5e/c2/6e/509.324624.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -1193,23 +1311,118 @@ export const deciduousAndEvergreenTrees = [
       "id": 299081,
       "name": "Pyrus calleryana",
       "images": [
-        "2012/10/13/03/40161_orig.jpg",
-        "2013/12/08/23/02792_orig.jpg",
-        "2015/03/10/06/15711_orig.jpg",
-        "2015/03/10/06/91465_orig.jpg",
-        "2012/04/15/04/77021_orig.jpg",
-        "2011/10/16/02/57647_orig.jpg",
-        "2011/10/16/02/56247_orig.jpg",
-        "2011/10/16/02/08912_orig.jpg",
-        "2011/10/16/02/21748_orig.jpg",
-        "2009/04/21/06/60259_orig.jpg",
-        "2010/10/15/02/69703_orig.jpg",
-        "2010/10/15/02/91829_orig.jpg",
-        "2011/04/12/09/21387_orig.jpg",
-        "2011/04/12/09/41649_orig.jpg",
-        "2016/08/05/16/86997_orig.jpg",
-        "2016/08/05/16/11416_orig.jpg",
-        "2016/08/05/22/71124_orig.jpg"
+        {
+          "title": "Pyrus calleryana callery pear blossom.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pyrus_calleryana_callery_pear_blossom.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/87/8d/509.1646082.jpg",
+          "thumb": "56/87/8d/509.1646082.98x68.jpg"
+        },
+        {
+          "title": "Pyrus calleryana fruits.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pyrus_calleryana_fruits.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/c6/e3/509.17715885.jpg",
+          "thumb": "56/c6/e3/509.17715885.98x68.jpg"
+        },
+        {
+          "title": "Pyrus calleryana leaf.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pyrus_calleryana_leaf.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/c6/e4/509.17715910.jpg",
+          "thumb": "56/c6/e4/509.17715910.98x68.jpg"
+        },
+        {
+          "title": "Pyrus calleryana in Kasugai.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pyrus_calleryana_in_Kasugai.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/25/65/509.19344036.jpg",
+          "thumb": "57/25/65/509.19344036.98x68.jpg"
+        },
+        {
+          "title": "Pyrus calleryana flower.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pyrus_calleryana_flower.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/25/66/509.19344037.jpg",
+          "thumb": "57/25/66/509.19344037.98x68.jpg"
+        },
+        {
+          "title": "Pyrus calleryana flowers s2.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pyrus_calleryana_flowers_s2.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/88/57/509.25639032.jpg",
+          "thumb": "58/88/57/509.25639032.98x68.jpg"
+        },
+        {
+          "title": "Pyrus calleryana bud.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pyrus_calleryana_bud.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/88/58/509.25639034.jpg",
+          "thumb": "58/88/58/509.25639034.98x68.jpg"
+        },
+        {
+          "title": "Pyrus calleryana flowers s5.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pyrus_calleryana_flowers_s5.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/88/5b/509.25639039.jpg",
+          "thumb": "58/88/5b/509.25639039.98x68.jpg"
+        },
+        {
+          "title": "Pyrus calleryana flowers s3.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pyrus_calleryana_flowers_s3.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/88/5d/509.25639243.jpg",
+          "thumb": "58/88/5d/509.25639243.98x68.jpg"
+        },
+        {
+          "title": "Pyrus calleryana fruits and leaf.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pyrus_calleryana_fruits_and_leaf.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5c/45/11/509.19914137.jpg",
+          "thumb": "5c/45/11/509.19914137.98x68.jpg"
+        },
+        {
+          "title": "Pyrus calleryana flowers s2.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pyrus_calleryana_flowers_s2.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5d/89/97/509.25639032.jpg",
+          "thumb": "5d/89/97/509.25639032.98x68.jpg"
+        },
+        {
+          "title": "Pyrus calleryana bud.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pyrus_calleryana_bud.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5d/89/98/509.25639034.jpg",
+          "thumb": "5d/89/98/509.25639034.98x68.jpg"
+        },
+        {
+          "title": "Pyrus calleryana and bee.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pyrus_calleryana_and_bee.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5d/89/ba/509.25642235.jpg",
+          "thumb": "5d/89/ba/509.25642235.98x68.jpg"
+        },
+        {
+          "title": "2014-11-02 14 11 35 Bradford Pear during autumn along Hunters Ridge Drive in Hopewell Township, New Jersey.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:2014-11-02_14_11_35_Bradford_Pear_during_autumn_along_Hunters_Ridge_Drive_in_Hopewell_Township,_New_Jersey.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/8e/11/509.37003610.jpg",
+          "thumb": "5f/8e/11/509.37003610.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -2379,17 +2592,112 @@ export const deciduousAndEvergreenTrees = [
       "id": 1155834,
       "name": "Liriodendron tulipifera",
       "images": [
-        "2012/02/15/00/30214_orig.jpg",
-        "2014/08/05/01/59467_orig.jpg",
-        "2015/04/30/05/44524_orig.jpg",
-        "2013/11/15/08/62891_orig.jpg",
-        "2013/12/07/06/07682_orig.jpg",
-        "2012/08/28/02/91318_orig.jpg",
-        "2013/06/19/02/19349_orig.jpg",
-        "2012/07/04/05/09585_orig.jpg",
-        "2016/08/06/11/73181_orig.jpg",
-        "2016/08/06/11/20392_orig.jpg",
-        "2016/08/05/19/78559_orig.jpg"
+        {
+          "title": "Tulip tree",
+          "rightsHolder": "Chris Connelly",
+          "source": "https://www.flickr.com/photos/c_conn/3482373361/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "7f/89/f3/542.3482373361.jpg",
+          "thumb": "7f/89/f3/542.3482373361.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/25844732@N02'>Chris Connelly</a>",
+            "homepage": "http://www.flickr.com/photos/25844732@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Liriodendron  tulipifera Flower. Magnoliaceae",
+          "rightsHolder": "gailhampshire",
+          "source": "https://www.flickr.com/photos/gails_pictures/8412939481/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "81/51/d4/542.8412939481.jpg",
+          "thumb": "81/51/d4/542.8412939481.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/43272765@N04'>gailhampshire</a>",
+            "homepage": "http://www.flickr.com/photos/43272765@N04",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Baden 4157.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Baden_4157.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/49/61/509.10528828.jpg",
+          "thumb": "55/49/61/509.10528828.98x68.jpg"
+        },
+        {
+          "title": "Liriodendron tulipifera 005.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liriodendron_tulipifera_005.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/4f/ca/509.10614108.jpg",
+          "thumb": "55/4f/ca/509.10614108.98x68.jpg"
+        },
+        {
+          "title": "Liriodendron tulipifera 3.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liriodendron_tulipifera_3.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/7a/f7/509.20937022.jpg",
+          "thumb": "57/7a/f7/509.20937022.98x68.jpg"
+        },
+        {
+          "title": "Liriodendron tulipifera 7.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liriodendron_tulipifera_7.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/7a/f9/509.20937026.jpg",
+          "thumb": "57/7a/f9/509.20937026.98x68.jpg"
+        },
+        {
+          "title": "Liriodendron tulipifera11.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liriodendron_tulipifera11.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/96/d5/509.2144937.jpg",
+          "thumb": "57/96/d5/509.2144937.98x68.jpg"
+        },
+        {
+          "title": "Liriodendron, Exbury.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liriodendron,_Exbury.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/ad/dd/509.26366207.jpg",
+          "thumb": "58/ad/dd/509.26366207.98x68.jpg"
+        },
+        {
+          "title": "2013-05-04 17 24 28 Liriodendron tulipifera in the woods along the West Branch Shabakunk Creek near Dunmore Avenue.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:2013-05-04_17_24_28_Liriodendron_tulipifera_in_the_woods_along_the_West_Branch_Shabakunk_Creek_near_Dunmore_Avenue.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/fa/b3/509.27768270.jpg",
+          "thumb": "58/fa/b3/509.27768270.98x68.jpg"
+        },
+        {
+          "title": "Tulip tree (5762193541).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Tulip_tree_(5762193541).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/4f/d8/509.29876052.jpg",
+          "thumb": "59/4f/d8/509.29876052.98x68.jpg"
+        },
+        {
+          "title": "Liriodendron tulipifera RH (11).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liriodendron_tulipifera_RH_(11).jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5b/41/a7/509.15259677.jpg",
+          "thumb": "5b/41/a7/509.15259677.98x68.jpg"
+        },
+        {
+          "title": "File:Liriodendron tulipifera seed longitudinal section &amp; germination.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liriodendron_tulipifera_seed_longitudinal_section_%26_germination.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5c/36/85/509.19681544.jpg",
+          "thumb": "5c/36/85/509.19681544.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -2633,25 +2941,150 @@ export const deciduousAndEvergreenTrees = [
       "id": 594658,
       "name": "Liquidambar styraciflua",
       "images": [
-        "2013/02/26/12/81796_orig.jpg",
-        "2010/10/15/02/79757_orig.jpg",
-        "2010/10/15/02/69662_orig.jpg",
-        "2012/07/12/02/41828_orig.jpg",
-        "2013/05/14/01/49681_orig.jpg",
-        "2012/06/12/13/29006_orig.jpg",
-        "2012/06/12/14/82358_orig.jpg",
-        "2012/12/08/12/48075_orig.jpg",
-        "2012/12/16/15/05806_orig.jpg",
-        "2012/12/16/15/57146_orig.jpg",
-        "2012/11/18/10/19216_orig.jpg",
-        "2013/02/28/01/17845_orig.jpg",
-        "2009/04/21/03/08386_orig.jpg",
-        "2013/06/11/02/41995_orig.jpg",
-        "2012/12/30/02/77157_orig.jpg",
-        "2012/07/04/05/91185_orig.jpg",
-        "2012/07/04/05/69269_orig.jpg",
-        "2016/08/04/15/21960_orig.jpg",
-        "2016/08/04/18/06782_orig.jpg"
+        {
+          "title": "Liquidambar-styraciflua-foliage.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liquidambar-styraciflua-foliage.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/c0/68/509.175809.jpg",
+          "thumb": "56/c0/68/509.175809.98x68.jpg"
+        },
+        {
+          "title": "Liquidambar-styraciflua-fruit.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liquidambar-styraciflua-fruit.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/c0/69/509.175810.jpg",
+          "thumb": "56/c0/69/509.175810.98x68.jpg"
+        },
+        {
+          "title": "Liquidambar-styraciflua-ripen-fruit.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liquidambar-styraciflua-ripen-fruit.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/c3/f3/509.176547.jpg",
+          "thumb": "56/c3/f3/509.176547.98x68.jpg"
+        },
+        {
+          "title": "Liquidambar styraciflua (summertime).JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liquidambar_styraciflua_(summertime).JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/03/24/509.18705111.jpg",
+          "thumb": "57/03/24/509.18705111.98x68.jpg"
+        },
+        {
+          "title": "20120817Amberbaum Hockenheim3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20120817Amberbaum_Hockenheim3.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/75/28/509.20771965.jpg",
+          "thumb": "57/75/28/509.20771965.98x68.jpg"
+        },
+        {
+          "title": "L.styrax-flor-1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:L.styrax-flor-1.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/86/ba/509.25594871.jpg",
+          "thumb": "58/86/ba/509.25594871.98x68.jpg"
+        },
+        {
+          "title": "Liquidambar-otonno-20071028-2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liquidambar-otonno-20071028-2.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/4f/6e/509.2986332.jpg",
+          "thumb": "59/4f/6e/509.2986332.98x68.jpg"
+        },
+        {
+          "title": "Liquidambar-otonno-20071028-3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liquidambar-otonno-20071028-3.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/4f/76/509.2986425.jpg",
+          "thumb": "59/4f/76/509.2986425.98x68.jpg"
+        },
+        {
+          "title": "Liquidambar feuilles FR 2013.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liquidambar_feuilles_FR_2013.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/57/c7/509.30077843.jpg",
+          "thumb": "59/57/c7/509.30077843.98x68.jpg"
+        },
+        {
+          "title": "Liquidambar. Western Way, Exeter - geograph.org.uk - 1058382.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liquidambar._Western_Way,_Exeter_-_geograph.org.uk_-_1058382.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5a/ff/71/509.13754654.jpg",
+          "thumb": "5a/ff/71/509.13754654.98x68.jpg"
+        },
+        {
+          "title": "Liquidambar-styraciflua-foliage.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liquidambar-styraciflua-foliage.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5b/c1/a8/509.175809.jpg",
+          "thumb": "5b/c1/a8/509.175809.98x68.jpg"
+        },
+        {
+          "title": "Liquidambar-styraciflua-ripen-fruit.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liquidambar-styraciflua-ripen-fruit.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5b/c5/33/509.176547.jpg",
+          "thumb": "5b/c5/33/509.176547.98x68.jpg"
+        },
+        {
+          "title": "Liquidambar styraciflua MHNT.BOT.2006.0.1265.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liquidambar_styraciflua_MHNT.BOT.2006.0.1265.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5c/f7/75/509.23164794.jpg",
+          "thumb": "5c/f7/75/509.23164794.98x68.jpg"
+        },
+        {
+          "title": "Liquidambar-otonno-20071028-5.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liquidambar-otonno-20071028-5.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5e/50/b7/509.2986428.jpg",
+          "thumb": "5e/50/b7/509.2986428.98x68.jpg"
+        },
+        {
+          "title": "Liquidambar feuilles FR 2013.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liquidambar_feuilles_FR_2013.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5e/59/07/509.30077843.jpg",
+          "thumb": "5e/59/07/509.30077843.98x68.jpg"
+        },
+        {
+          "title": "Liquidambar styraciflua fruit to remain by winter.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liquidambar_styraciflua_fruit_to_remain_by_winter.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/72/cf/509.3627477.jpg",
+          "thumb": "5f/72/cf/509.3627477.98x68.jpg"
+        },
+        {
+          "title": "American Sweetgum (Liquidambar styraciflua) (22996237252).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:American_Sweetgum_(Liquidambar_styraciflua)_(22996237252).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "62/f4/14/509.47464716.jpg",
+          "thumb": "62/f4/14/509.47464716.98x68.jpg"
+        },
+        {
+          "title": "American Sweetgum Leaves - Flickr - treegrow (1).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:American_Sweetgum_Leaves_-_Flickr_-_treegrow_(1).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "63/8b/fd/509.49954255.jpg",
+          "thumb": "63/8b/fd/509.49954255.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -5226,17 +5659,143 @@ export const deciduousAndEvergreenTrees = [
       "id": 582246,
       "name": "Acer rubrum",
       "images": [
-        "2012/07/04/05/11295_orig.jpg",
-        "2010/11/23/03/35304_orig.jpg",
-        "2013/08/23/23/17505_orig.jpg",
-        "2015/04/30/09/32243_orig.jpg",
-        "2010/11/23/03/86047_orig.jpg",
-        "2015/05/20/09/17476_orig.jpg",
-        "2016/08/06/06/14493_orig.jpg",
-        "2016/08/05/12/87843_orig.jpg",
-        "2016/08/05/09/94302_orig.jpg",
-        "2016/08/05/22/32815_orig.jpg",
-        "2016/08/02/05/57133_orig.jpg"
+        {
+          "title": "Acer rubrum (Aceraceae) - fruit - as borne on the plant",
+          "rightsHolder": "Steven J. Baskauf",
+          "source": "http://bioimages.vanderbilt.edu/baskauf/10492",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "8f/03/c0/607.http___bioimages_vanderbilt_edu_baskauf_10492.jpg",
+          "thumb": "8f/03/c0/607.http___bioimages_vanderbilt_edu_baskauf_10492.98x68.jpg",
+          "photographer": {
+            "full_name": "Steven J. Baskauf",
+            "homepage": null,
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Acer rubrum (Aceraceae) - fruit - as borne on the plant",
+          "rightsHolder": "Steven J. Baskauf",
+          "source": "http://bioimages.vanderbilt.edu/baskauf/10495",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "8f/03/c3/607.http___bioimages_vanderbilt_edu_baskauf_10495.jpg",
+          "thumb": "8f/03/c3/607.http___bioimages_vanderbilt_edu_baskauf_10495.98x68.jpg",
+          "photographer": {
+            "full_name": "Steven J. Baskauf",
+            "homepage": null,
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Acer rubrum (Aceraceae) - inflorescence - whole - unspecified",
+          "rightsHolder": "Steven J. Baskauf",
+          "source": "http://bioimages.vanderbilt.edu/baskauf/00000",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "8f/03/6a/607.http___bioimages_vanderbilt_edu_baskauf_00000.jpg",
+          "thumb": "8f/03/6a/607.http___bioimages_vanderbilt_edu_baskauf_00000.98x68.jpg",
+          "photographer": {
+            "full_name": "Steven J. Baskauf",
+            "homepage": null,
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "2008_10_12_nhretreat_014",
+          "rightsHolder": "Doc Searls",
+          "source": "https://www.flickr.com/photos/docsearls/2936080579/",
+          "license": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "url": "7f/30/04/542.2936080579.jpg",
+          "thumb": "7f/30/04/542.2936080579.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/52614599@N00'>Doc Searls</a>",
+            "homepage": "http://www.flickr.com/photos/52614599@N00",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "n433_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://www.flickr.com/photos/biodivlibrary/7899838698/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "81/23/62/542.7899838698.jpg",
+          "thumb": "81/23/62/542.7899838698.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+            "homepage": "http://www.flickr.com/photos/61021753@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Acer rubrum Rocks State Park.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer_rubrum_Rocks_State_Park.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/8e/ca/509.11578926.jpg",
+          "thumb": "55/8e/ca/509.11578926.98x68.jpg"
+        },
+        {
+          "title": "Red-gold maple Duke Forest.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Red-gold_maple_Duke_Forest.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/a7/8a/509.12103323.jpg",
+          "thumb": "55/a7/8a/509.12103323.98x68.jpg"
+        },
+        {
+          "title": "2013-05-05 15 03 27 Closer view of an Acer rubrum full of new seeds along the Forest View Trail in Palisades Interstate Park.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:2013-05-05_15_03_27_Closer_view_of_an_Acer_rubrum_full_of_new_seeds_along_the_Forest_View_Trail_in_Palisades_Interstate_Park.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/fe/ee/509.27836687.jpg",
+          "thumb": "58/fe/ee/509.27836687.98x68.jpg"
+        },
+        {
+          "title": "Acer rubrum JPG1a.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer_rubrum_JPG1a.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/75/ff/509.3085493.jpg",
+          "thumb": "59/75/ff/509.3085493.98x68.jpg"
+        },
+        {
+          "title": "Acer platanoides Mariemont 2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer_platanoides_Mariemont_2.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/76/0b/509.3085627.jpg",
+          "thumb": "59/76/0b/509.3085627.98x68.jpg"
+        },
+        {
+          "title": "Acer rubrum (summertime).JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer_rubrum_(summertime).JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5c/04/60/509.18704973.jpg",
+          "thumb": "5c/04/60/509.18704973.98x68.jpg"
+        },
+        {
+          "title": "2014-08-28 11 05 01 Early fall color on a Red Maple along the south shore of the cove of Spring Lake in Berlin, New York.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:2014-08-28_11_05_01_Early_fall_color_on_a_Red_Maple_along_the_south_shore_of_the_cove_of_Spring_Lake_in_Berlin,_New_York.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/52/5f/509.35332832.jpg",
+          "thumb": "5f/52/5f/509.35332832.98x68.jpg"
+        },
+        {
+          "title": "2014-12-30 12 39 02 Red Maple at the intersection of King Avenue and Rhodes Avenue in Ewing, New Jersey.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:2014-12-30_12_39_02_Red_Maple_at_the_intersection_of_King_Avenue_and_Rhodes_Avenue_in_Ewing,_New_Jersey.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/bc/51/509.37745788.jpg",
+          "thumb": "5f/bc/51/509.37745788.98x68.jpg"
+        },
+        {
+          "title": "2015-04-12 13 38 54 Male Red Maple in flower along Terrace Boulevard in Ewing, New Jersey.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:2015-04-12_13_38_54_Male_Red_Maple_in_flower_along_Terrace_Boulevard_in_Ewing,_New_Jersey.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "60/1e/6f/509.39680220.jpg",
+          "thumb": "60/1e/6f/509.39680220.98x68.jpg"
+        }
       ],
       "names": [
         {
