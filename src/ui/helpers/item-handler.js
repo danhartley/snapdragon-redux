@@ -45,7 +45,7 @@ export const keepItems = collection => {
 
 export async function itemHandler(collection, config, counter, callback) {
     
-    if(counter.isLessonPaused || counter.isLessonRehydrated) {
+    if(counter.isLessonPaused) {
         collection.items = await keepItems(collection);
     } else {    
         collection.items = await getItems(collection);

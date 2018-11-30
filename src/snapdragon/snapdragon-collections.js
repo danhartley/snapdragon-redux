@@ -374,8 +374,8 @@ export const beginnersLichenology = {
         // 'Lichens grow on a range of substrates including bark and rock and \'in the air\' as epiphytes.',
         'Lichens are important environmental indicators (bioindicators) of air and water quality.'
     ],
-    speciesCount: 0,
-    familiesCount: 0,
+    speciesCount: 25,
+    familiesCount: 11,
     index: 5
 };
 

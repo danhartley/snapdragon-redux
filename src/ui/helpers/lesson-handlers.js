@@ -80,18 +80,27 @@ const purgeLesson = () => {
     window.location.reload(true);
 };
 
-const isSkippable = (collection, counter, config, layout) => {
+const isSkippable = (collection, counter, config, layout, caller) => {
 
-    if(!layout) return false;
-    
+    console.log('SKIPPABLE');
+    console.log('collection.items: ', collection.items ? collection.items.length : 'no items');
+    console.log('counter.isLessonPaused: ', counter.isLessonPaused);
+    console.log('counter.isLessonRehydrated: ', counter.isLessonRehydrated);
+    console.log('collection.id: ', collection.id);
+    console.log('config.collection.id: ', config.collection.id);
+
     if(!Array.isArray(collection.items)) return false;
 
-    if(counter.isLessonRehydrated && collection.itemIndex >= 0) return true;
+    if(counter.isLessonRehydrated && !layout) return false;
 
-    if(collection.id !== config.collection.id) return false;
+    if(collection.id === config.collection.id && counter.isLessonPaused) return false;
 
-    const skip = !counter.isLessonRehydrated && !counter.isLessonPaused;
-    return skip;
+    if(collection.language !== config.language) {
+        collection.language = config.language;
+        return false;
+    }
+    
+    return (collection.id === config.collection.id);
 };
 
 export const lessonLogicHandler = {
