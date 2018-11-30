@@ -64,7 +64,7 @@ const genericScoreHandler = (_score, callback, config, containers) => {
 
     const score = markTest(test);
 
-    let responseTxt = test.names ? test.names[0] : test.binomial;
+    let responseTxt = (test.names && test.names.length > 0) ? test.names[0] : test.binomial;
     let labelTxt = 'Species';
 
     if(score.taxon === 'genus') {
