@@ -7,14 +7,14 @@ import { getLocation } from 'geo/geo';
 
 import { speciesStateHelper } from 'redux/reducers/initial-state/initial-species-state';
 
-async function getItems(collection) {
+async function getItems(collection, config) {
     if(collection.id === 8) {
         if(collection.items && collection.items[0].collectionId === collection.id) {
             return new Promise(resolve => {
                 resolve(collection.items);
             });
         } else {
-            const coordinates = await getLocation();                        
+            const coordinates = await getLocation(config);                        
             const latitude = coordinates['0'];
             const longitude = coordinates['1'];
             return getInatSpecies(latitude, longitude).then(species => {
@@ -48,7 +48,7 @@ export async function itemHandler(collection, config, counter, callback) {
     if(counter.isLessonPaused) {
         collection.items = await keepItems(collection);
     } else {    
-        collection.items = await getItems(collection);
+        collection.items = await getItems(collection, config);
 
         collection.items.filter(item => item).forEach((item,index)=>{
             item.snapIndex = index + 1;

@@ -12,6 +12,7 @@ import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { elem } from 'ui/helpers/class-behaviour';
 import { editLessonPlans } from 'ui/screens/lists/lesson-plans-editor';
 import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
+import { handleLocalCollection } from 'ui/helpers/local-collection';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
 
 export const renderCollections = (counter) => {
@@ -66,6 +67,10 @@ export const renderCollections = (counter) => {
         
         config.collection = { id: collectionId };
 
+        if(collectionId === 8) {
+            handleLocalCollection(document.getElementById('8'), collectionsHeader, learningActionBtn, config, collection);
+        }    
+
         if(config.isLandscapeMode) {
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
             actions.boundSelectCollection(collection);
@@ -110,7 +115,6 @@ export const renderCollections = (counter) => {
         languagesHeader.innerHTML = config.languages.find(l => l.lang === config.language).name;
         actions.boundUpdateLanguage(language);
         if(config.isLandscapeMode && collection.id) {
-            // collection.language = language;
             actions.boundSelectCollection(collection);
             renderSpeciesCollectionList(collection, true);
         }
@@ -129,6 +133,9 @@ export const renderCollections = (counter) => {
         }
 
         if(config.isPortraitMode) {            
+            if(collection.id === 8) {
+                learningActionBtn.innerHTML = 'Fetching local species...';
+            }
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
             if(counter.isLessonPaused && collectionId === collection.id) {
                 renderSpeciesCollectionList(collection, null, true);
