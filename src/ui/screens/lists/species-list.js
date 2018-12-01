@@ -9,7 +9,6 @@ import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-list-table';
 import { itemHandler } from 'ui/helpers/item-handler';
-import { updateLocalLesson } from 'ui/helpers/local-collection';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
@@ -23,10 +22,6 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     
     if(collection.id === 0) return;
 
-    if(collection.id === 8) {
-        updateLocalLesson(document.getElementById('8'), config);
-    }
-
     config.collection = { id: collection.id };
 
     const traits = getTraits(enums);
@@ -36,7 +31,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
             buildTable(collection, config, traits);
             doEveryThingElse();
         }
-      }
+    }
 
     itemHandler(collection, config, counter, callback(collection, config, traits));
 

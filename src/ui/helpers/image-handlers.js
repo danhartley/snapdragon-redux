@@ -38,9 +38,6 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
             default:
                 displayName = `<span class="common-name">${selectedItem.vernacularName}</span> <span class="latin-name">(${selectedItem.name})</span>`;
         }
-        DOM.modalImageTitle.innerHTML = displayName;
-        
-        // const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > div');        
-        // handleRightsAttribution(selectedItem, activeNode);
+        DOM.modalImageTitle.innerHTML = displayName;        
     })
 };
