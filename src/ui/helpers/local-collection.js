@@ -15,8 +15,8 @@ export async function handleLocalCollection(localCollectionNode, collectionsHead
     localCollectionNode.innerHTML += ' (unavailable)';
   
     const coordinates = await getLocation(config);        
-    const latitude = coordinates['0'];
-    const longitude = coordinates['1'];
+    const latitude = coordinates['0'] || coordinates.lat;
+    const longitude = coordinates['1'] || coordinates.long;
     config.coordinates = { lat: latitude, long: longitude };
     const place = await getPlace(longitude, latitude, config);
 
@@ -34,14 +34,16 @@ export async function handleLocalCollection(localCollectionNode, collectionsHead
             learningActionBtn.disabled = false;
         }
   
-        config.place = place;
-        config.place.area = region || country;
-
-        if(config.isLandscapeMode) {
-            speciesPendingSpinner(config);
+        if(config.place !== place) {
+            config.place = place;
+            config.place.area = region || country;
+    
+            if(config.isLandscapeMode) {
+                speciesPendingSpinner(config);
+            }
+    
+            actions.boundUpdateConfig(config);
         }
-
-        actions.boundUpdateConfig(config);
   
         localCollectionNode.classList.remove('collection-disabled');
     }
