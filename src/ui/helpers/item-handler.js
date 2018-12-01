@@ -15,8 +15,8 @@ async function getItems(collection, config) {
             });
         } else {
             const coordinates = await getLocation(config);                        
-            const latitude = coordinates['0'];
-            const longitude = coordinates['1'];
+            const latitude = coordinates['0'] || coordinates.lat;
+            const longitude = coordinates['1'] || coordinates.long;
             return getInatSpecies(latitude, longitude).then(species => {
                 const items = new Set(species.filter(item => item));
                 return [ ...items ];
