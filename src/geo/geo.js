@@ -18,16 +18,30 @@ export const getLocation = (config) => {
 
 const listeners = [];
 
-async function getMapBoxPlace(long, lat, lang) {
+async function parseMapBoxPlace(json, config) {
+  const place = await json;
+  place.region = place.features.find(f => f.place_type[0] === 'place');
+  place.country = place.features.find(f => f.place_type[0] === 'country');
+  place.area = place.region || place.country;
+  place.summary = config.isLandscapeMode ? `Species from ${place.region.text}, ${place.country.text}` : `Species from ${place.region.text}`;
+  const placePromise = new Promise(resolve => {
+    resolve(place);
+  });
+  const updatedPlace = await placePromise;
+  return await updatedPlace;
+}
+
+async function getMapBoxPlace(long, lat, config) {
   const token = 'pk.eyJ1IjoiZGFuaGFydGxleSIsImEiOiJjam84Zjd3aGowMDdoM2ttaDAzeDk4bHJ6In0.oEcO6w3DhHUv_mXrFW1clg';  
   const longitude = long || '-9.163009899999999';
   const latitude = lat || '38.7155762';  
-  const language = lang || 'en';
+  const language = config.lang || 'en';
   const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${longitude},${latitude}.json?language=${language}&access_token=${token}`;
   const response = await fetch(url);
   const json = await response.json();
-  listeners.forEach(listener => listener(json));
-  return await json;
+  const place = await parseMapBoxPlace(json, config);
+  listeners.forEach(listener => listener(place));
+  return await place;
 }
 
 export async function getPlace(long, lat, config) {
@@ -36,9 +50,10 @@ export async function getPlace(long, lat, config) {
       resolve(config.place);
     });
     const json = await response;
+    listeners.forEach(listener => listener(json));
     return await json;
   } else {
-    return getMapBoxPlace(long, lat, config.language);
+    return getMapBoxPlace(long, lat, config);
   }
 };
 

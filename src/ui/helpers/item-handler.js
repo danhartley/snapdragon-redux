@@ -4,7 +4,6 @@ import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
 import { collections } from 'snapdragon/eol-collections';
 import { getLocation } from 'geo/geo';
-
 import { speciesStateHelper } from 'redux/reducers/initial-state/initial-species-state';
 
 async function getItems(collection, config) {

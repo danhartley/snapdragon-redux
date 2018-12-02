@@ -94,14 +94,13 @@ export const renderHeaders = page => {
     };
 
     const callback = (place) => {
-        const region = place.features.find(f => f.place_type[0] === 'place');
-        const country = place.features.find(f => f.place_type[0] === 'country');
-        const localCollectionText = LANDSCAPE ? `Species from ${region.text}, ${country.text}` : `Species from ${region.text}`;
         if(LANDSCAPE) {
-            DOM.leftHeaderTxt.innerHTML = localCollectionText;
+            DOM.leftHeaderTxt.innerHTML = place.summary;
+            collection.name = place.summary;
         }
         if(PORTRAIT) {
-            DOM.rightHeaderTxt.innerHTML = localCollectionText;
+            DOM.rightHeaderTxt.innerHTML = place.summary;
+            collection.name = place.summary;
         }
     };
 
