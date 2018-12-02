@@ -1,5 +1,6 @@
 import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
+import { listenToPlaceChange } from 'geo/geo';
 import spinnerTemplate from 'ui/screens/lists/species-pending-template.html';
 
 export const speciesPendingSpinner = (config) => {
@@ -10,7 +11,13 @@ export const speciesPendingSpinner = (config) => {
     const parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
     parent.innerHTML = '';
     
-    renderTemplate({ area: config.place.area.text }, template.content, parent);
+    renderTemplate({ }, template.content, parent);
+
+    const callback = place => {
+        document.querySelector('.species-pending .local-area').innerHTML = `the ${place.area.text} area`;
+    }
+
+    listenToPlaceChange(callback);
 
     const update = document.querySelector('.species-pending div:nth-child(4)');
 
@@ -20,5 +27,4 @@ export const speciesPendingSpinner = (config) => {
             update.innerHTML = 'The lesson is nearly ready...';
         }, 2000);
     },5000);
-
 };

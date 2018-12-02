@@ -9,6 +9,8 @@ export async function handleLocalCollection(localCollectionNode, collectionsHead
     if(config.isPortraitMode) {
         learningActionBtn.innerHTML = 'Checking location...';
         learningActionBtn.disabled = true;
+    } else {
+        speciesPendingSpinner(config);
     }
   
     localCollectionNode.classList.add('collection-disabled');
@@ -22,12 +24,9 @@ export async function handleLocalCollection(localCollectionNode, collectionsHead
 
     if(place) {
 
-        const region = place.features.find(f => f.place_type[0] === 'place');
-        const country = place.features.find(f => f.place_type[0] === 'country');
-        const collectionName = `Species from ${region.text}, ${country.text}`;
-        localCollectionNode.innerHTML = collectionName;
-        collectionsHeader.innerHTML = collectionName;
-        collection.name = collectionName;
+        localCollectionNode.innerHTML = place.summary;
+        collectionsHeader.innerHTML = place.summary;
+        collection.name = place.summary;
         
         if(config.isPortraitMode) {
             learningActionBtn.innerHTML = 'View lesson species';
@@ -36,15 +35,9 @@ export async function handleLocalCollection(localCollectionNode, collectionsHead
   
         if(config.place !== place) {
             config.place = place;
-            config.place.area = region || country;
-    
-            if(config.isLandscapeMode) {
-                speciesPendingSpinner(config);
-            }
-    
             actions.boundUpdateConfig(config);
         }
-  
+
         localCollectionNode.classList.remove('collection-disabled');
     }
   };
