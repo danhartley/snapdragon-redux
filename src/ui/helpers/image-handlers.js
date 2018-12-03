@@ -1,7 +1,6 @@
 import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
-import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
 
 export const modalImagesHandler = (images, item, collection, config, displayNameType) => {
     images.forEach(image => {

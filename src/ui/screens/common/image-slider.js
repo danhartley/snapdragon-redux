@@ -6,8 +6,9 @@ import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 const selectActiveNodeImage = (image, parent) => {
     parent.querySelectorAll('.carousel-item').forEach(i => {        
         const elemSrc = i.lastElementChild.dataset.src || i.lastElementChild.src;
+        const elemThumb = i.lastElementChild.dataset.thumb || i.lastElementChild.thumb;
         const src = image.dataset ? image.dataset.src : `https://content.eol.org/data/media/${image.url}`;
-        if(elemSrc === src) {
+        if(elemSrc === src || elemThumb === src) {
             i.classList.add('active');        
             return;
         }
@@ -58,13 +59,6 @@ export const imageSlider = (config, images, parent, disableModal, image) => {
 
     document.querySelector('#imageSlider .carousel-control-prev').addEventListener('click', carouselControlHandler);
     document.querySelector('#imageSlider .carousel-control-next').addEventListener('click', carouselControlHandler);
-
-    // setTimeout(() => {
-    //     const activeNode = parent.querySelector('.imageSlider .carousel-item.active > div');        
-    //     const src = activeNode.dataset;
-    //     const selectedItem = prepImageData(src);
-    //     handleRightsAttribution(selectedItem, activeNode); 
-    // }, 1000);
 };
 
 export const imageSideBySlider = (slides, parent, disableModal = false, config) => {

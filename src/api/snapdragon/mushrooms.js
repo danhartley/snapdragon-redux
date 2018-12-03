@@ -5607,14 +5607,46 @@ export const mushrooms = [
       "id": 6735143,
       "name": "Lactarius sanguifluus",
       "images": [
-        "2014/04/29/16/02932_orig.jpg",
-        "2014/04/29/14/51227_orig.jpg",
-        "2014/04/29/14/87968_orig.jpg",
-        "2014/04/29/15/06369_orig.jpg",
-        "2014/04/29/09/34667_orig.jpg",
-        "2014/04/29/04/00831_orig.jpg",
-        "2014/04/29/19/27198_orig.jpg",
-        "2014/04/30/05/07305_orig.jpg"
+        {
+          "title": "2011-11-30 Lactarius sanguifluus (Paulet) Fr 186488.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:2011-11-30_Lactarius_sanguifluus_(Paulet)_Fr_186488.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/76/a4/509.20825597.jpg",
+          "thumb": "57/76/a4/509.20825597.98x68.jpg"
+        },
+        {
+          "title": "2011-11-30 Lactarius sanguifluus (Paulet) Fr 186487.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:2011-11-30_Lactarius_sanguifluus_(Paulet)_Fr_186487.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/76/a7/509.20825744.jpg",
+          "thumb": "57/76/a7/509.20825744.98x68.jpg"
+        },
+        {
+          "title": "2011-11-30 Lactarius sanguifluus (Paulet) Fr 186489.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:2011-11-30_Lactarius_sanguifluus_(Paulet)_Fr_186489.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/76/a8/509.20825799.jpg",
+          "thumb": "57/76/a8/509.20825799.98x68.jpg"
+        },
+        {
+          "title": "Weinroter Kiefern-Reizker Lactarius sanguifluus.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Weinroter_Kiefern-Reizker_Lactarius_sanguifluus.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/04/7b/509.23332484.jpg",
+          "thumb": "58/04/7b/509.23332484.98x68.jpg"
+        },
+        {
+          "title": "Lactarius sanguifluus 64507.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Lactarius_sanguifluus_64507.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "68/54/24/509.9660877.jpg",
+          "thumb": "68/54/24/509.9660877.98x68.jpg"
+        }
       ],
       "names": [
         {
