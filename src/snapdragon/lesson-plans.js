@@ -697,6 +697,21 @@ lichenLessonLandscape.levels[0] = {
     reviewLayouts: [ multiSpecimenCommonMatch, mixedSpeciesMatch ]
 };
 
+const lichenLessonPortrait = { ...R.clone(landscapeLesson3), id: 5, portrait: true };
+lichenLessonPortrait.levels[0] = { 
+    id: 1,
+    name:'Level 1',
+    description: 'Species recognition',
+    layouts: [ 
+        nonTaxonRevision,                              
+        speciesRevision,
+        multiSpecimenCommonMatch,
+        mixedSpeciesMatch
+    ],
+    wildcardLayouts : [],
+    reviewLayouts: [ multiSpecimenCommonMatch, mixedSpeciesMatch ]
+};
+
 export const lessonPlans = [
     landscapeLesson1,
     landscapeLesson2, 
@@ -704,5 +719,6 @@ export const lessonPlans = [
     portraitLesson1,
     portraitLesson2,
     portraitLesson3,
-    lichenLessonLandscape
+    lichenLessonLandscape,
+    lichenLessonPortrait
 ]

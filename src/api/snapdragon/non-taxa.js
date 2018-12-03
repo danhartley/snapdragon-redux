@@ -57,19 +57,19 @@ export const getNonTaxa = (enums) => {
             examples: [ 'Graphis scripta', 'Diploschistes scruposus', 'Caloplaca ochracea', 'Ophioparma ventosa' ],
             wiki: 'https://en.wikipedia.org/wiki/Crustose'
         },
-        {
-            group: nonTaxaGroup[0].LICHEN_FORM,
-            id: SD.thallusType.SQUAMULOSE,
-            type: SD.nonTaxaType.FORM,
-            definition: lichen.find(l => l.term === 'Squamulose').definition,
-            quickId: 'Tightly clustered and slightly flattened pebble-like units',
-            names: [ { language: "en", name: 'Squamulose lichen'}],
-            traits: [
-                { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.ROCK}` },
-                { name: SD.name.SUBSTRATE_ADHERANCE, value: SD.level.MEDIUM }
-            ],
-            examples: [ 'Squamarina cartilaginea', 'Vahliella leucophaea', 'Cladonia subcervicornis' ],
-            wiki: 'https://en.wikipedia.org/wiki/Squamulose'
-        },
+        // {
+        //     group: nonTaxaGroup[0].LICHEN_FORM,
+        //     id: SD.thallusType.SQUAMULOSE,
+        //     type: SD.nonTaxaType.FORM,
+        //     definition: lichen.find(l => l.term === 'Squamulose').definition,
+        //     quickId: 'Tightly clustered and slightly flattened pebble-like units',
+        //     names: [ { language: "en", name: 'Squamulose lichen'}],
+        //     traits: [
+        //         { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.ROCK}` },
+        //         { name: SD.name.SUBSTRATE_ADHERANCE, value: SD.level.MEDIUM }
+        //     ],
+        //     examples: [ 'Squamarina cartilaginea', 'Vahliella leucophaea', 'Cladonia subcervicornis' ],
+        //     wiki: 'https://en.wikipedia.org/wiki/Squamulose'
+        // },
     ]
 }

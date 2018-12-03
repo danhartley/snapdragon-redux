@@ -350,7 +350,7 @@ const lichenCollection = {
     curator: 'Snapdragon',
     userLevel: 'Amateur lichenologists',
     lessonPlanLandscape: 4,
-    lessonPlanPortrait: 4,
+    lessonPlanPortrait: 5,
     glossary: ['lichen', 'common'],
     course: 'Snapdragon'
 };

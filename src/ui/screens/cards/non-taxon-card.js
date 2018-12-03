@@ -40,7 +40,7 @@ export const renderNonTaxonCard = collection => {
     const prepImages = (items) => {
         const itemImagesArray = items.map(item => {
             return item.images.map(image => {
-                return { ...image, itemName: item.name, index: '' }
+                return { ...image, photographersName: image.photographersName || '', itemName: item.name, index: '' }
             });
         });
         const itemImages = utils.shuffleArray([].concat(...itemImagesArray));
