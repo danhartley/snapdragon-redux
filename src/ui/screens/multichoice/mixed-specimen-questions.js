@@ -47,7 +47,7 @@ export const renderMixedSpecimenQuestions = ui => {
 
     if(config.isPortraitMode) {
         question1 = `Look through the images till you find one of ${item.vernacularName} (${item.name}).`;
-        question2 = `When you've found a match click on the image. (There is more than one correct answer.)`;
+        question2 = `When you've found a match click on the image. (There's more than one'.)`;
         question3 = '';
     }
 
