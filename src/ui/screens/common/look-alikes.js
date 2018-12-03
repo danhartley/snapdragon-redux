@@ -4,6 +4,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageSideBySlider } from 'ui/screens/common/image-slider';
 import visualComparisonTemplate from 'ui/screens/common/look-alikes-link-template.html';
+import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
 import { fungiDescriptions } from 'api/traits/fungi-traits'; // pass these in; consider a more generic visual comparison function
 
 export const lookALikes = (collection, item, traits, config) => {

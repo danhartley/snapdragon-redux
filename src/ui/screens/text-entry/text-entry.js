@@ -5,6 +5,7 @@ import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { scoreHandler } from 'ui/helpers/handlers';
+import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
 import landscapeTemplates from 'ui/screens/text-entry/text-entry-templates.html';
 import portraitTemplates from 'ui/screens/text-entry/text-entry-portrait-templates.html';
 import { imageSlider } from 'ui/screens/common/image-slider';
@@ -77,9 +78,7 @@ export const renderInput = (screen, question, hints) => {
 
 const renderPortrait = (item, config) => {
     
-    const images = item.images.map((img, index) => { 
-        return { index: index + 1, src: img, itemName: item.name };
-    } );
+    const images = prepImagesForCarousel(item, config, imageUseCases.TEXT_ENTRY);
 
     const parent = document.querySelector('.js-species-card-images');
 
