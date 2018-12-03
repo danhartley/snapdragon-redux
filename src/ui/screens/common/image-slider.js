@@ -6,9 +6,8 @@ import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 const selectActiveNodeImage = (image, parent) => {
     parent.querySelectorAll('.carousel-item').forEach(i => {        
         const elemSrc = i.lastElementChild.dataset.src || i.lastElementChild.src;
-        const elemThumb = i.lastElementChild.dataset.thumb || i.lastElementChild.thumb;
         const src = image.dataset ? image.dataset.src : `https://content.eol.org/data/media/${image.url}`;
-        if(elemSrc === src || elemThumb === src) {
+        if(elemSrc === src) {
             i.classList.add('active');        
             return;
         }
