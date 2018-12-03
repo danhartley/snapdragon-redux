@@ -19,7 +19,7 @@ export const buildTable = (collection, config, traits) => {
     collection.items.forEach(item => { 
         item.image = item.list ? item.images.find(i => i.url === item.list) : item.images[0];
         item.license = item.image.license;
-        item.url = config.isLandscapeMode ? item.image.url : item.image.thumb || item.image.url;
+        item.url = config.isLandscapeMode ? item.image.url : item.image.url.replace('.jpg', '.98x68.jpg');
         item.thumb = item.image.thumb || '';
         item.rightsHolder = item.image.rightsHolder;
         item.source = item.image.source;
