@@ -11,6 +11,7 @@ import * as group from 'api/snapdragon/non-taxa';
 import { renderWiki } from 'wikipedia/wiki';
 import { renderWikiModal } from 'wikipedia/wiki-modal';
 import { renderTemplate } from 'ui/helpers/templating';
+import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
 import cardTemplate from 'ui/screens/cards/non-taxon-card-template.html';
 
 const subscriptions = [];
@@ -39,9 +40,7 @@ export const renderNonTaxonCard = collection => {
 
     const prepImages = (items) => {
         const itemImagesArray = items.map(item => {
-            return item.images.map(image => {
-                return { ...image, photographersName: image.photographersName || '', itemName: item.name, index: '' }
-            });
+            return prepImagesForCarousel(item, config, imageUseCases.NON_TAXON_CARD);
         });
         const itemImages = utils.shuffleArray([].concat(...itemImagesArray));
         return R.take(4, itemImages);

@@ -11,6 +11,7 @@ import { lookALikes } from 'ui/screens/common/look-alikes';
 import { getTraits } from 'api/traits/traits';
 import { renderFeatures } from 'ui/screens/common/feature';
 import * as traitTypes from 'api/traits/trait-types';
+import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
 import specimenCommonMatchTemplate from 'ui/screens/multichoice/visual-match-template.html';
 
 export const renderSpecimenMatch = collection => {
@@ -136,13 +137,7 @@ export const renderSpecimenMatch = collection => {
 
     if(config.isPortraitMode) {
 
-        const images = item.images.map((image, index) => { 
-            return { 
-                index: index + 1, 
-                ...image, 
-                itemName: item.name, 
-                photographersName : image.photographer ? image.photographer.full_name : '' };
-        });
+        const images = prepImagesForCarousel(item, config, imageUseCases.VISUAL_MATCH);
 
         const parent = document.querySelector('.js-species-card-images');
 

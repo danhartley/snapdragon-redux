@@ -15,6 +15,7 @@ import { lookALikes } from 'ui/screens/common/look-alikes';
 import { renderFeatures } from 'ui/screens/common/feature';
 import { infoSlider } from 'ui/screens/common/info-slider';
 import * as traitTypes from 'api/traits/trait-types';
+import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
 
 export const renderCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody) => {
 
@@ -68,18 +69,7 @@ const renderLandscape = (item, config, traits, isModalMode) => {
 
 const renderPortrait = (item, config, traits, isModalMode) => {
 
-    const images = item.images.map((image, index) => { 
-        return { 
-            index: index + 1, 
-            ...image, 
-            itemName: item.name,
-            photographersName : image.photographer ? image.photographer.full_name || '' : ''
-        };
-    } );
-
-    images.forEach(image => {
-        image.photographersName = image.photographer ? image.photographer.full_name || '' : '';
-    });
+    const images = prepImagesForCarousel(item, config, imageUseCases.SPECIES_CARD);
 
     const parent = document.querySelector('.js-species-card-images');
 

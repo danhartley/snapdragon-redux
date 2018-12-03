@@ -1,16 +1,14 @@
-import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
 import rightsAttributionTemplate from 'ui/screens/common/rights-attribution-template.html';
 
-export const handleRightsAttribution = (selectedItem, activeNode) => {
+export const handleRightsAttribution = (image, activeNode) => {
 
     const template = document.createElement('template');
     template.innerHTML = rightsAttributionTemplate;    
 
-    const src = selectedItem.image;
     let text;
 
-    switch(src.license) {
+    switch(image.license) {
         case 'http://creativecommons.org/licenses/publicdomain/':
             text = 'CC PD';
             break;
@@ -48,14 +46,14 @@ export const handleRightsAttribution = (selectedItem, activeNode) => {
             text = 'CC BY SA 4.0';
             break;
         default: 
-            text = src.license;
+            text = image.license;
             break;
     };
 
-    const licence = { text, url: src.license };
-    const title = selectedItem.name;
-    const author = src.rightsholder || src.rightsHolder;
-    const source = src.source;
+    const licence = { text, url: image.license };
+    const title = image.title;
+    const author = image.rightsholder || image.rightsHolder;
+    const source = image.source;
 
     renderTemplate({title,author,source,licence}, template.content, activeNode);
 

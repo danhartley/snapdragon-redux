@@ -4,6 +4,7 @@ import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
+import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 import speciesPortraitTemplate from 'ui/screens/lists/species-table-portrait-template.html';
 
@@ -17,11 +18,13 @@ export const buildTable = (collection, config, traits) => {
     const wide = window.matchMedia("(min-width: 1200px)").matches;
 
     collection.items.forEach(item => { 
+        
         item.image = item.list ? item.images.find(i => i.url === item.list) : item.images[0];
         item.license = item.image.license;
-        item.url = config.isLandscapeMode ? item.image.url : item.image.thumb || item.image.url.replace('.jpg', '.98x68.jpg');
+        item.url = scaleImage(item.image, imageUseCases.SPECIES_LIST, config);
         item.rightsHolder = item.image.rightsHolder;
         item.source = item.image.source;
+
         item.passes = item.passes || '--';
         item.fails = item.fails || '--';
         item.binomial = item.name;
