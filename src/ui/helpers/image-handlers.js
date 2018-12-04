@@ -5,6 +5,7 @@ import { imageSlider } from 'ui/screens/common/image-slider';
 export const imageUseCases = {
     SPECIES_LIST: 'Species list',
     SPECIES_CARD: 'Species card',
+    SPECIES_SPECIMENS: 'Species specimens',
     NON_TAXON_CARD: 'Non-taxon card',
     VISUAL_MATCH: 'Visual match',
     MIXED_SPECIMENS: 'Mixed specimens',
@@ -18,6 +19,11 @@ export const denormaliseImages = images => {
         return image;
     });
     return denormalisedImages;
+};
+
+export const imageMatch = (elemSrc, src) => {
+    if(!src) return false;
+    return (elemSrc === src || elemSrc === src.replace('.98x68.jpg', '.jpg') || elemSrc === src.replace('.260x190.jpg', '.jpg'));
 };
 
 export const prepImagesForCarousel = (item, config, useCase) => {
@@ -38,15 +44,23 @@ export const prepImagesForCarousel = (item, config, useCase) => {
     return images;
 };
 
-
 export const scaleImage = (image, useCase, config) => {
+
+    if(!image.url) return '';
+
     switch(useCase) {
         case imageUseCases.SPECIES_LIST:
             return config.isLandscapeMode 
                 ? image.url.replace('.jpg', '.260x190.jpg')
                 : image.url.replace('.jpg', '.98x68.jpg');
         case imageUseCases.SPECIES_CARD:
-        case imageUseCases.NON_TAXON_CARD:        
+        return config.isLandscapeMode 
+            ? image.url.replace('.jpg', '.260x190.jpg')
+            : image.url.replace('.jpg', '.260x190.jpg');
+        case imageUseCases.NON_TAXON_CARD:
+            return config.isLandscapeMode 
+                ? image.url.replace('.jpg', '.260x190.jpg')
+                : image.url.replace('.jpg', '.260x190.jpg');
         case imageUseCases.VISUAL_MATCH:
         case imageUseCases.TEXT_ENTRY:
             return config.isLandscapeMode 
@@ -60,6 +74,8 @@ export const scaleImage = (image, useCase, config) => {
             return config.isLandscapeMode 
                 ? image.url ? image.url.replace('.jpg', '.260x190.jpg') : ''
                 : image.url.replace('.jpg', '.260x190.jpg');
+        default:
+            return image.url;
     }
     
 };
@@ -80,7 +96,7 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
             return { ...image, itemName: selectedItem.name, itemCommon: selectedItem.vernacularName };
         });
         images = denormaliseImages(images);
-        const selectedItemImage = selectedItem.images.find(i => i.url === image.dataset.uniqueUrl);
+        const selectedItemImage = selectedItem.images.find(i => imageMatch(i.url,image.dataset.uniqueUrl));
         const selectedImage = { dataset: { ...image.dataset, ...selectedItemImage } };
         imageSlider(config, images, parent, false, selectedImage);
         let displayName = '';

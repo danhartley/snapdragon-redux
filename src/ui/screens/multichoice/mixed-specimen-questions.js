@@ -11,7 +11,7 @@ import questionTemple from 'ui/screens/common/question-template.html';
 import { screenShare } from 'ui/screens/multichoice/mixed-specimen-shared';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { imageSlider } from 'ui/screens/common/image-slider';
-import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
+import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 
 export const renderMixedSpecimenQuestions = ui => {
 
@@ -37,6 +37,10 @@ export const renderMixedSpecimenQuestions = ui => {
     let images = utils.shuffleArray(screenShare.getRandomImages(item, config));
 
     if(!images) return;
+
+    images.forEach(image => {
+        image.url = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config);
+    });
 
     if(config.isPortraitMode) images = getPortraitImages(images);
     

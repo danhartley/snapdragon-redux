@@ -339,30 +339,191 @@ export const deciduousAndEvergreenTrees = [
     },
     {
       "id": 241042,
-      "name": "Sorbus aucuparia",
+      "name": "",
       "images": [
-        "2012/06/12/18/59221_orig.jpg",
-        "2012/06/12/18/89509_orig.jpg",
-        "2012/06/12/18/15982_orig.jpg",
-        "2012/06/12/18/01395_orig.jpg",
-        "2012/06/12/18/10218_orig.jpg",
-        "2011/12/27/01/77972_orig.jpg",
-        "2012/06/12/18/16570_orig.jpg",
-        "2012/06/12/18/94142_orig.jpg",
-        "2012/06/12/18/79155_orig.jpg",
-        "2012/06/12/18/04235_orig.jpg",
-        "2012/06/12/18/21177_orig.jpg",
-        "2012/12/05/02/84081_orig.jpg",
-        "2012/12/05/09/29860_orig.jpg",
-        "2012/05/24/02/34865_orig.jpg",
-        "2012/05/24/02/14474_orig.jpg",
-        "2009/09/08/03/74008_orig.jpg",
-        "2012/12/05/09/48008_orig.jpg",
-        "2012/06/12/18/07065_orig.jpg",
-        "2012/12/11/08/51486_orig.jpg",
-        "2012/12/05/12/51553_orig.jpg",
-        "2012/12/05/12/75351_orig.jpg",
-        "2012/12/05/12/61956_orig.jpg"
+        {
+          "rightsHolder": "Year: 2016.",
+          "source": "http://www.boldsystems.org/index.php/Taxbrowser_Taxonpage?taxid=292027",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/74/b0/75/539.BBYUK_CCDB-23321-E10_1457296884_JPG.jpg",
+          "thumb": "https://content.eol.org/data/media/74/b0/75/539.BBYUK_CCDB-23321-E10_1457296884_JPG.98x68.jpg"
+        },
+        {
+          "title": "Vogelbeeren 2010.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Vogelbeeren_2010.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/55/71/bc/509.11114957.jpg",
+          "thumb": "https://content.eol.org/data/media/55/71/bc/509.11114957.98x68.jpg"
+        },
+        {
+          "title": " 2010.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_2010.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/55/71/be/509.11114973.jpg",
+          "thumb": "https://content.eol.org/data/media/55/71/be/509.11114973.98x68.jpg"
+        },
+        {
+          "title": " in Donetsk 2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_in_Donetsk_2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/55/72/d4/509.11131466.jpg",
+          "thumb": "https://content.eol.org/data/media/55/72/d4/509.11131466.98x68.jpg"
+        },
+        {
+          "title": " in Donetsk 3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_in_Donetsk_3.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/55/72/d5/509.11131468.jpg",
+          "thumb": "https://content.eol.org/data/media/55/72/d5/509.11131468.98x68.jpg"
+        },
+        {
+          "title": " in Donetsk 1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_in_Donetsk_1.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/55/72/d6/509.11131470.jpg",
+          "thumb": "https://content.eol.org/data/media/55/72/d6/509.11131470.98x68.jpg"
+        },
+        {
+          "title": " 2009-11-22 DehesaBoyaldePuertollano.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_2009-11-22_DehesaBoyaldePuertollano.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "https://content.eol.org/data/media/55/78/79/509.11214994.jpg",
+          "thumb": "https://content.eol.org/data/media/55/78/79/509.11214994.98x68.jpg"
+        },
+        {
+          "title": "Pihlaja.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pihlaja.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/55/99/83/509.1181497.jpg",
+          "thumb": "https://content.eol.org/data/media/55/99/83/509.1181497.98x68.jpg"
+        },
+        {
+          "title": " Wilde lijsterbes bloeiwijze.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_Wilde_lijsterbes_bloeiwijze.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "https://content.eol.org/data/media/55/e3/dd/509.129710.jpg",
+          "thumb": "https://content.eol.org/data/media/55/e3/dd/509.129710.98x68.jpg"
+        },
+        {
+          "title": "Criafol - Rowanberries - geograph.org.uk - 519130.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Criafol_-_Rowanberries_-_geograph.org.uk_-_519130.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "https://content.eol.org/data/media/55/e5/ed/509.13037452.jpg",
+          "thumb": "https://content.eol.org/data/media/55/e5/ed/509.13037452.98x68.jpg"
+        },
+        {
+          "title": "Rowan Tree - geograph.org.uk - 946500.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rowan_Tree_-_geograph.org.uk_-_946500.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "https://content.eol.org/data/media/55/fb/19/509.13639705.jpg",
+          "thumb": "https://content.eol.org/data/media/55/fb/19/509.13639705.98x68.jpg"
+        },
+        {
+          "title": "Rowan tree - geograph.org.uk - 1006469.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rowan_tree_-_geograph.org.uk_-_1006469.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "https://content.eol.org/data/media/55/fc/d0/509.13705461.jpg",
+          "thumb": "https://content.eol.org/data/media/55/fc/d0/509.13705461.98x68.jpg"
+        },
+        {
+          "title": "Vosges du Nord - Sorbier en fleurs.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Vosges_du_Nord_-_Sorbier_en_fleurs.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/56/2b/c7/509.14929504.jpg",
+          "thumb": "https://content.eol.org/data/media/56/2b/c7/509.14929504.98x68.jpg"
+        },
+        {
+          "title": " no.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_no.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/56/44/89/509.15327195.jpg",
+          "thumb": "https://content.eol.org/data/media/56/44/89/509.15327195.98x68.jpg"
+        },
+        {
+          "title": "Liblarer See Fruchtstand der Vogelbeere oder Eberesche.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Liblarer_See_Fruchtstand_der_Vogelbeere_oder_Eberesche.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/56/6c/48/509.15978381.jpg",
+          "thumb": "https://content.eol.org/data/media/56/6c/48/509.15978381.98x68.jpg"
+        },
+        {
+          "title": "1  12 - 2011.07.20.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:1_Sorbus_aucuparia_12_-_2011.07.20.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/56/6d/5d/509.15993343.jpg",
+          "thumb": "https://content.eol.org/data/media/56/6d/5d/509.15993343.98x68.jpg"
+        },
+        {
+          "title": "File:1 nÃ¶vÃ©ny 29 - 2011.07.20.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:1_n%C3%B6v%C3%A9ny_29_-_2011.07.20.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "https://content.eol.org/data/media/56/6d/6b/509.15993526.jpg",
+          "thumb": "https://content.eol.org/data/media/56/6d/6b/509.15993526.98x68.jpg"
+        },
+        {
+          "title": " (fruits).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_(fruits).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/56/80/83/509.16305711.jpg",
+          "thumb": "https://content.eol.org/data/media/56/80/83/509.16305711.98x68.jpg"
+        },
+        {
+          "title": "Arbre avc fruits.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Arbre_avc_fruits.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/56/c6/08/509.17697190.jpg",
+          "thumb": "https://content.eol.org/data/media/56/c6/08/509.17697190.98x68.jpg"
+        },
+        {
+          "title": "20120815Eberesche Hockenheim3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20120815Eberesche_Hockenheim3.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "https://content.eol.org/data/media/57/71/6f/509.20684694.jpg",
+          "thumb": "https://content.eol.org/data/media/57/71/6f/509.20684694.98x68.jpg"
+        },
+        {
+          "title": " (8337815870).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_(8337815870).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/58/6d/55/509.25210822.jpg",
+          "thumb": "https://content.eol.org/data/media/58/6d/55/509.25210822.98x68.jpg"
+        },
+        {
+          "title": " kpjas 19082005 3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_kpjas_19082005_3.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "https://content.eol.org/data/media/59/0d/22/509.281892.jpg",
+          "thumb": "https://content.eol.org/data/media/59/0d/22/509.281892.98x68.jpg"
+        },
+        {
+          "title": " kpjas 19082005 4.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_kpjas_19082005_4.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "https://content.eol.org/data/media/59/0d/23/509.281894.jpg",
+          "thumb": "https://content.eol.org/data/media/59/0d/23/509.281894.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -436,8 +597,8 @@ export const deciduousAndEvergreenTrees = [
       ],
       "taxonomy": {
         "usageKey": 8416854,
-        "scientificName": "Sorbus aucuparia Poir.",
-        "canonicalName": "Sorbus aucuparia",
+        "scientificName": " Poir.",
+        "canonicalName": "",
         "rank": "SPECIES",
         "status": "DOUBTFUL",
         "confidence": 100,
@@ -447,7 +608,7 @@ export const deciduousAndEvergreenTrees = [
         "order": "Rosales",
         "family": "Rosaceae",
         "genus": "Sorbus",
-        "species": "Sorbus aucuparia",
+        "species": "",
         "kingdomKey": 6,
         "phylumKey": 7707728,
         "classKey": 220,
@@ -459,7 +620,7 @@ export const deciduousAndEvergreenTrees = [
         "class": "Magnoliopsida"
       },
       "family": "Rosaceae",
-      "eolName": "Sorbus aucuparia Poir."
+      "eolName": " Poir."
     },
     {
       "id": 485322,
@@ -958,21 +1119,134 @@ export const deciduousAndEvergreenTrees = [
       "id": 1151323,
       "name": "Quercus robur",
       "images": [
-        "2011/11/01/12/78541_orig.jpg",
-        "2012/06/12/14/83261_orig.jpg",
-        "2012/06/12/14/86413_orig.jpg",
-        "2009/09/08/02/99963_orig.jpg",
-        "2012/06/12/14/00967_orig.jpg",
-        "2012/06/12/14/63325_orig.jpg",
-        "2012/06/12/14/97545_orig.jpg",
-        "2012/12/05/22/93855_orig.jpg",
-        "2012/12/04/19/07240_orig.jpg",
-        "2012/12/04/19/82976_orig.jpg",
-        "2012/12/04/17/70097_orig.jpg",
-        "2012/12/04/17/61648_orig.jpg",
-        "2012/05/23/23/13055_orig.jpg",
-        "2009/09/08/02/20349_orig.jpg",
-        "2012/06/12/14/93435_orig.jpg"
+        {
+          "title": "Tamboureneiche.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Tamboureneiche.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/44/d7/509.10460665.jpg",
+          "thumb": "55/44/d7/509.10460665.98x68.jpg"
+        },
+        {
+          "title": "Quercus robur Marki.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Quercus_robur_Marki.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/47/e2/509.10505732.jpg",
+          "thumb": "55/47/e2/509.10505732.98x68.jpg"
+        },
+        {
+          "title": "Quercus robur 002.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Quercus_robur_002.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/67/96/509.10975416.jpg",
+          "thumb": "55/67/96/509.10975416.98x68.jpg"
+        },
+        {
+          "title": "Quercus robur 003.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Quercus_robur_003.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/67/98/509.10975438.jpg",
+          "thumb": "55/67/98/509.10975438.98x68.jpg"
+        },
+        {
+          "title": "French oak automn.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:French_oak_automn.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/9d/f7/509.11910583.jpg",
+          "thumb": "55/9d/f7/509.11910583.98x68.jpg"
+        },
+        {
+          "title": "Quercus Robur 031.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Quercus_Robur_031.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/a0/8f/509.1196103.jpg",
+          "thumb": "55/a0/8f/509.1196103.98x68.jpg"
+        },
+        {
+          "title": "Quercus-robur-hanblomster.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Quercus-robur-hanblomster.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/0d/8c/509.143631.jpg",
+          "thumb": "56/0d/8c/509.143631.98x68.jpg"
+        },
+        {
+          "title": "Fagales - Quercus robur - 013.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fagales_-_Quercus_robur_-_013.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/9f/ac/509.16981275.jpg",
+          "thumb": "56/9f/ac/509.16981275.98x68.jpg"
+        },
+        {
+          "title": "Quercus robur2 ies.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Quercus_robur2_ies.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/ea/29/509.2286474.jpg",
+          "thumb": "57/ea/29/509.2286474.98x68.jpg"
+        },
+        {
+          "title": "Looking up into trees Epping.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Looking_up_into_trees_Epping.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/ab/a7/509.263109.jpg",
+          "thumb": "58/ab/a7/509.263109.98x68.jpg"
+        },
+        {
+          "title": "Quercus robur JPG (d2).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Quercus_robur_JPG_(d2).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/95/f5/509.3154718.jpg",
+          "thumb": "59/95/f5/509.3154718.98x68.jpg"
+        },
+        {
+          "title": "Quercus robur - leaves.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Quercus_robur_-_leaves.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/bd/8d/509.323723.jpg",
+          "thumb": "59/bd/8d/509.323723.98x68.jpg"
+        },
+        {
+          "title": "Foglie di farnia.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Foglie_di_farnia.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/c0/98/509.32455402.jpg",
+          "thumb": "59/c0/98/509.32455402.98x68.jpg"
+        },
+        {
+          "title": "ID990 Sommereiche.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:ID990_Sommereiche.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/c6/05/509.32574111.jpg",
+          "thumb": "59/c6/05/509.32574111.98x68.jpg"
+        },
+        {
+          "title": "Quercus robur - mildew 01 ies.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Quercus_robur_-_mildew_01_ies.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/ea/38/509.3337339.jpg",
+          "thumb": "59/ea/38/509.3337339.98x68.jpg"
+        },
+        {
+          "title": "Quercus robur - mildew 02 ies.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Quercus_robur_-_mildew_02_ies.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/ea/39/509.3337348.jpg",
+          "thumb": "59/ea/39/509.3337348.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -1110,17 +1384,155 @@ export const deciduousAndEvergreenTrees = [
       "id": 1151536,
       "name": "Quercus ilex",
       "images": [
-        "2012/06/12/13/03827_orig.jpg",
-        "2012/06/12/13/65648_orig.jpg",
-        "2011/10/16/02/70740_orig.jpg",
-        "2011/10/16/02/27011_orig.jpg",
-        "2012/06/12/13/30110_orig.jpg",
-        "2016/08/04/08/37632_orig.jpg",
-        "2015/08/11/22/80876_orig.jpg",
-        "2015/08/11/22/95589_orig.jpg",
-        "2015/08/11/23/62247_orig.jpg",
-        "2014/10/28/00/23198_orig.jpg",
-        "2012/01/21/14/60830_orig.jpg"
+        {
+          "title": "Evergreen Oak (Quercus ilex) fruit.",
+          "rightsHolder": "Phil Sellens",
+          "source": "https://www.flickr.com/photos/phil_sellens/4993559238/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/21/40/542.4993559238.jpg",
+          "thumb": "80/21/40/542.4993559238.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/33303746@N07'>Phil Sellens</a>",
+            "homepage": "http://www.flickr.com/photos/33303746@N07",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Quercus rotundifolia7 agost06 012.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Quercus_rotundifolia7_agost06_012.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/3c/4e/509.1032710.jpg",
+          "thumb": "55/3c/4e/509.1032710.98x68.jpg"
+        },
+        {
+          "title": "Quercus ilex sbsp. ballota Trama 2009-5-17 DehesaBoyaldePuertollano.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Quercus_ilex_sbsp._ballota_Trama_2009-5-17_DehesaBoyaldePuertollano.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/b1/67/509.12273852.jpg",
+          "thumb": "55/b1/67/509.12273852.98x68.jpg"
+        },
+        {
+          "title": "Quercus ilex g2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Quercus_ilex_g2.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/f5/f3/509.1351196.jpg",
+          "thumb": "55/f5/f3/509.1351196.98x68.jpg"
+        },
+        {
+          "title": "Quercus ilex g3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Quercus_ilex_g3.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/f5/f4/509.1351206.jpg",
+          "thumb": "55/f5/f4/509.1351206.98x68.jpg"
+        },
+        {
+          "title": "Chaparra2.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Chaparra2.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/39/b2/509.19779866.jpg",
+          "thumb": "57/39/b2/509.19779866.98x68.jpg"
+        },
+        {
+          "title": "Quercus ilex 15.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Quercus_ilex_15.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/19/39/509.23946778.jpg",
+          "thumb": "58/19/39/509.23946778.98x68.jpg"
+        },
+        {
+          "title": "Carrasca de la Raboseras.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Carrasca_de_la_Raboseras.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/aa/21/509.26280092.jpg",
+          "thumb": "58/aa/21/509.26280092.98x68.jpg"
+        },
+        {
+          "title": "Alzina amb papallona Limenitis reducta prop del portell de Valldaura P1240298.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alzina_amb_papallona_Limenitis_reducta_prop_del_portell_de_Valldaura_P1240298.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/c5/23/509.32550114.jpg",
+          "thumb": "59/c5/23/509.32550114.98x68.jpg"
+        },
+        {
+          "title": "Frouzet fg03.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Frouzet_fg03.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/e5/52/509.3325847.jpg",
+          "thumb": "59/e5/52/509.3325847.98x68.jpg"
+        },
+        {
+          "title": "Frouzet fg04.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Frouzet_fg04.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/e5/53/509.3325859.jpg",
+          "thumb": "59/e5/53/509.3325859.98x68.jpg"
+        },
+        {
+          "title": "Frouzet fg05.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Frouzet_fg05.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/e5/57/509.3325869.jpg",
+          "thumb": "59/e5/57/509.3325869.98x68.jpg"
+        },
+        {
+          "title": "Frouzet fg05.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Frouzet_fg05.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5e/e6/97/509.3325869.jpg",
+          "thumb": "5e/e6/97/509.3325869.98x68.jpg"
+        },
+        {
+          "title": "QUERCUS ILEX - AGUDA - IB-179 (Alzinera).JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:QUERCUS_ILEX_-_AGUDA_-_IB-179_(Alzinera).JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/b4/80/509.37552131.jpg",
+          "thumb": "5f/b4/80/509.37552131.98x68.jpg"
+        },
+        {
+          "title": "Encina derribada por el viento.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Encina_derribada_por_el_viento.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "60/b8/2f/509.41793941.jpg",
+          "thumb": "60/b8/2f/509.41793941.98x68.jpg"
+        },
+        {
+          "title": "Quercus ilex.002 - Monfrague.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Quercus_ilex.002_-_Monfrague.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "60/c5/bb/509.4203695.jpg",
+          "thumb": "60/c5/bb/509.4203695.98x68.jpg"
+        },
+        {
+          "title": "Holly Oak (Quercus ilex) acorns, April, Sydney Royal Botanic Gardens, Australia (16498241353).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Holly_Oak_(Quercus_ilex)_acorns,_April,_Sydney_Royal_Botanic_Gardens,_Australia_(16498241353).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "61/b3/4c/509.45087503.jpg",
+          "thumb": "61/b3/4c/509.45087503.98x68.jpg"
+        },
+        {
+          "title": "RNK Crnika list i plod 1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:RNK_Crnika_list_i_plod_1.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "61/d3/c4/509.4528392.jpg",
+          "thumb": "61/d3/c4/509.4528392.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -3930,28 +4342,152 @@ export const deciduousAndEvergreenTrees = [
       "id": 1143547,
       "name": "Fagus sylvatica",
       "images": [
-        "2014/07/08/08/88382_orig.jpg",
-        "2012/06/12/16/55853_orig.jpg",
-        "2012/06/12/16/35010_orig.jpg",
-        "2012/06/12/16/50285_orig.jpg",
-        "2012/06/13/06/40669_orig.jpg",
-        "2012/06/13/06/23583_orig.jpg",
-        "2012/06/13/06/76969_orig.jpg",
-        "2012/06/12/16/54048_orig.jpg",
-        "2012/06/12/16/41355_orig.jpg",
-        "2012/06/12/16/46019_orig.jpg",
-        "2012/05/23/13/71103_orig.jpg",
-        "2012/05/23/13/72181_orig.jpg",
-        "2012/05/23/13/85136_orig.jpg",
-        "2012/05/23/13/06410_orig.jpg",
-        "2012/05/23/13/21423_orig.jpg",
-        "2009/09/08/02/73184_orig.jpg",
-        "2009/09/08/02/57903_orig.jpg",
-        "2009/09/08/02/30628_orig.jpg",
-        "2010/03/24/03/36589_orig.jpg",
-        "2010/03/24/03/78426_orig.jpg",
-        "2010/03/24/03/95628_orig.jpg",
-        "2010/03/24/03/48672_orig.jpg"
+        {
+          "title": "Lietzow Suentelbuchen2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Lietzow_Suentelbuchen2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/9c/c3/509.11889699.jpg",
+          "thumb": "55/9c/c3/509.11889699.98x68.jpg"
+        },
+        {
+          "title": "20060527 Montagne de Reims.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20060527_Montagne_de_Reims.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/1f/a2/509.14711379.jpg",
+          "thumb": "56/1f/a2/509.14711379.98x68.jpg"
+        },
+        {
+          "title": "Fau de Saint Basle Verzy 23 10 2011 5.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fau_de_Saint_Basle_Verzy_23_10_2011_5.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/a5/e8/509.17095560.jpg",
+          "thumb": "56/a5/e8/509.17095560.98x68.jpg"
+        },
+        {
+          "title": "European Beech (Fagus sylvatica), old specimen ...",
+          "rightsHolder": "Bernard DUPONT",
+          "source": "https://www.flickr.com/photos/berniedup/35123903180/",
+          "license": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "url": "7f/8e/1c/542.35123903180.jpg",
+          "thumb": "7f/8e/1c/542.35123903180.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/65695019@N07'>Bernard DUPONT</a>",
+            "homepage": "http://www.flickr.com/photos/65695019@N07",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Fau de la Demoiselle Verzy 23 10 2011 1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fau_de_la_Demoiselle_Verzy_23_10_2011_1.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/a6/e2/509.17117041.jpg",
+          "thumb": "56/a6/e2/509.17117041.98x68.jpg"
+        },
+        {
+          "title": "20121016Friedhof St Johann2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20121016Friedhof_St_Johann2.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/b3/9d/509.22143753.jpg",
+          "thumb": "57/b3/9d/509.22143753.98x68.jpg"
+        },
+        {
+          "title": "20121016Friedhof St Johann3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20121016Friedhof_St_Johann3.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/b3/9e/509.22143831.jpg",
+          "thumb": "57/b3/9e/509.22143831.98x68.jpg"
+        },
+        {
+          "title": "Fau de Verzy Feuilles 23 10 2011 1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fau_de_Verzy_Feuilles_23_10_2011_1.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/a7/16/509.17120683.jpg",
+          "thumb": "56/a7/16/509.17120683.98x68.jpg"
+        },
+        {
+          "title": "Fau de Verzy Feuilles 23 10 2011 2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fau_de_Verzy_Feuilles_23_10_2011_2.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/a7/18/509.17120774.jpg",
+          "thumb": "56/a7/18/509.17120774.98x68.jpg"
+        },
+        {
+          "title": "File:Fagus sylvatica 'atropurpurea pendula' leaves 01 by Line1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fagus_sylvatica_%27atropurpurea_pendula%27_leaves_01_by_Line1.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/e5/54/509.2277334.jpg",
+          "thumb": "57/e5/54/509.2277334.98x68.jpg"
+        },
+        {
+          "title": "File:Fagus sylvatica 'atropurpurea pendula' leaves 02 by Line1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fagus_sylvatica_%27atropurpurea_pendula%27_leaves_02_by_Line1.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/e5/55/509.2277339.jpg",
+          "thumb": "57/e5/55/509.2277339.98x68.jpg"
+        },
+        {
+          "title": "n300_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://www.flickr.com/photos/biodivlibrary/6972239904/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/e3/8e/542.6972239904.jpg",
+          "thumb": "80/e3/8e/542.6972239904.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+            "homepage": "http://www.flickr.com/photos/61021753@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Fau de Saint Basle Verzy 23 10 2011 2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fau_de_Saint_Basle_Verzy_23_10_2011_2.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5b/a7/21/509.17095428.jpg",
+          "thumb": "5b/a7/21/509.17095428.98x68.jpg"
+        },
+        {
+          "title": "PendulaNenndorf042004.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:PendulaNenndorf042004.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/17/98/509.284431.jpg",
+          "thumb": "59/17/98/509.284431.98x68.jpg"
+        },
+        {
+          "title": "Fau de Saint Basle Verzy 23 10 2011 5.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fau_de_Saint_Basle_Verzy_23_10_2011_5.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5b/a7/28/509.17095560.jpg",
+          "thumb": "5b/a7/28/509.17095560.98x68.jpg"
+        },
+        {
+          "title": "Fau de la Demoiselle Verzy 23 10 2011 3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fau_de_la_Demoiselle_Verzy_23_10_2011_3.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5b/a8/25/509.17117167.jpg",
+          "thumb": "5b/a8/25/509.17117167.98x68.jpg"
+        },
+        {
+          "title": "Fau de Verzy Feuilles 23 10 2011 1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fau_de_Verzy_Feuilles_23_10_2011_1.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5b/a8/56/509.17120683.jpg",
+          "thumb": "5b/a8/56/509.17120683.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -4038,21 +4574,146 @@ export const deciduousAndEvergreenTrees = [
       "id": 595387,
       "name": "Fraxinus excelsior",
       "images": [
-        "2012/06/12/17/40267_orig.jpg",
-        "2012/06/12/17/13898_orig.jpg",
-        "2012/06/12/17/01510_orig.jpg",
-        "2012/12/12/04/58584_orig.jpg",
-        "2012/12/12/04/44625_orig.jpg",
-        "2011/11/02/02/49848_orig.jpg",
-        "2015/04/30/14/62118_orig.jpg",
-        "2012/06/12/17/25787_orig.jpg",
-        "2012/05/23/13/70483_orig.jpg",
-        "2012/05/23/13/36889_orig.jpg",
-        "2012/12/05/11/88013_orig.jpg",
-        "2012/12/05/11/41272_orig.jpg",
-        "2012/12/05/11/01340_orig.jpg",
-        "2012/12/05/10/12105_orig.jpg",
-        "2012/12/05/10/23732_orig.jpg"
+        {
+          "rightsHolder": "National Museum Wales. National Museum Wales. Year: 2012.",
+          "source": "http://www.boldsystems.org/index.php/Taxbrowser_Taxonpage?taxid=288809",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "7a/25/32/539.POWNA_NMW6158_1328485916_jpg.jpg",
+          "thumb": "7a/25/32/539.POWNA_NMW6158_1328485916_jpg.98x68.jpg"
+        },
+        {
+          "title": "Ash flower.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Ash_flower.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/41/c2/509.104131.jpg",
+          "thumb": "55/41/c2/509.104131.98x68.jpg"
+        },
+        {
+          "title": "Fraxinus excelsior foliage and fruits.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fraxinus_excelsior_foliage_and_fruits.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/54/4c/509.10666984.jpg",
+          "thumb": "55/54/4c/509.10666984.98x68.jpg"
+        },
+        {
+          "title": "Fraxinus excelsior diversifolia.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fraxinus_excelsior_diversifolia.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/76/8e/509.11193449.jpg",
+          "thumb": "55/76/8e/509.11193449.98x68.jpg"
+        },
+        {
+          "title": "Fraxinus excelsior diversifolia1.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fraxinus_excelsior_diversifolia1.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/76/8f/509.11193457.jpg",
+          "thumb": "55/76/8f/509.11193457.98x68.jpg"
+        },
+        {
+          "title": "Ash Tree - geograph.org.uk - 590710.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Ash_Tree_-_geograph.org.uk_-_590710.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/e8/76/509.13127021.jpg",
+          "thumb": "55/e8/76/509.13127021.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.geograph.org.uk/profile/8417'>Brian Green</a>",
+            "homepage": "http://www.geograph.org.uk/profile/8417",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Magnificent Ash tree Higher Wraxall - geograph.org.uk - 842482.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Magnificent_Ash_tree_Higher_Wraxall_-_geograph.org.uk_-_842482.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/f6/98/509.13528698.jpg",
+          "thumb": "55/f6/98/509.13528698.98x68.jpg"
+        },
+        {
+          "title": "An ash tree beside the path - geograph.org.uk - 1536839.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:An_ash_tree_beside_the_path_-_geograph.org.uk_-_1536839.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/0b/4d/509.14278538.jpg",
+          "thumb": "56/0b/4d/509.14278538.98x68.jpg"
+        },
+        {
+          "title": "Fraxinus excelsior 4560.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fraxinus_excelsior_4560.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/58/55/509.1564105.jpg",
+          "thumb": "56/58/55/509.1564105.98x68.jpg"
+        },
+        {
+          "title": "Fraxinus excelsior Sturm10003.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fraxinus_excelsior_Sturm10003.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/98/26/509.16835844.jpg",
+          "thumb": "56/98/26/509.16835844.98x68.jpg"
+        },
+        {
+          "title": "Fraxinus excelsior Blatt.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fraxinus_excelsior_Blatt.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/f7/04/509.185121.jpg",
+          "thumb": "56/f7/04/509.185121.98x68.jpg"
+        },
+        {
+          "title": "Wzwz breakfast before photoshooting.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Wzwz_breakfast_before_photoshooting.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/a5/7e/509.21908276.jpg",
+          "thumb": "57/a5/7e/509.21908276.98x68.jpg"
+        },
+        {
+          "title": "Fraxinus-excelsior-male-leaves.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fraxinus-excelsior-male-leaves.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/fe/8e/509.232790.jpg",
+          "thumb": "57/fe/8e/509.232790.98x68.jpg"
+        },
+        {
+          "title": "Fraxinus excelsior tree.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fraxinus_excelsior_tree.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/bd/32/509.2665294.jpg",
+          "thumb": "58/bd/32/509.2665294.98x68.jpg"
+        },
+        {
+          "title": "Fraxinus excelsior leaves.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fraxinus_excelsior_leaves.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/bd/36/509.2665320.jpg",
+          "thumb": "58/bd/36/509.2665320.98x68.jpg"
+        },
+        {
+          "title": "Fraxinus excelsior 002.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fraxinus_excelsior_002.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/bd/60/509.2666059.jpg",
+          "thumb": "58/bd/60/509.2666059.98x68.jpg"
+        },
+        {
+          "title": "Ask-17029.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Ask-17029.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/ef/ab/509.33481801.jpg",
+          "thumb": "59/ef/ab/509.33481801.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -4733,19 +5394,142 @@ export const deciduousAndEvergreenTrees = [
       "id": 580329,
       "name": "Catalpa bignonioides",
       "images": [
-        "2014/08/15/04/58506_orig.jpg",
-        "2011/10/15/22/36015_orig.jpg",
-        "2011/10/15/22/07058_orig.jpg",
-        "2012/05/01/07/61189_orig.jpg",
-        "2012/10/14/09/77673_orig.jpg",
-        "2010/03/24/04/69620_orig.jpg",
-        "2014/07/08/09/69866_orig.jpg",
-        "2016/08/06/12/97274_orig.jpg",
-        "2014/09/20/05/84403_orig.jpg",
-        "2012/01/20/23/89355_orig.jpg",
-        "2008/10/06/12/16161_orig.jpg",
-        "2010/03/24/04/67395_orig.jpg",
-        "2012/06/12/13/69966_orig.jpg"
+        {
+          "title": "Sunlight through the leaves of a Catalpa bignonioides - geograph.org.uk - 1357850.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Sunlight_through_the_leaves_of_a_Catalpa_bignonioides_-_geograph.org.uk_-_1357850.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/06/6d/509.14090230.jpg",
+          "thumb": "56/06/6d/509.14090230.98x68.jpg"
+        },
+        {
+          "title": "Catalpa bignonioides inflorescence.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Catalpa_bignonioides_inflorescence.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/5d/9c/509.15730180.jpg",
+          "thumb": "56/5d/9c/509.15730180.98x68.jpg"
+        },
+        {
+          "title": "Le Roeulx AR1cJPG.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Le_Roeulx_AR1cJPG.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/b1/d9/509.2210984.jpg",
+          "thumb": "57/b1/d9/509.2210984.98x68.jpg"
+        },
+        {
+          "title": "Haine-Saint-Pierre AR1aJPG.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Haine-Saint-Pierre_AR1aJPG.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/0f/11/509.2359709.jpg",
+          "thumb": "58/0f/11/509.2359709.98x68.jpg"
+        },
+        {
+          "title": "Lamiales - Catalpa bignonioides 1 - 20120828.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Lamiales_-_Catalpa_bignonioides_1_-_20120828.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/7b/6b/509.25409053.jpg",
+          "thumb": "58/7b/6b/509.25409053.98x68.jpg"
+        },
+        {
+          "title": "Catalpa bignonioides.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Catalpa_bignonioides.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/7d/eb/509.2544797.jpg",
+          "thumb": "58/7d/eb/509.2544797.98x68.jpg"
+        },
+        {
+          "title": "Catalpa bignonioides (Samoens).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Catalpa_bignonioides_(Samoens).jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "59/2e/bc/509.29143895.jpg",
+          "thumb": "59/2e/bc/509.29143895.98x68.jpg"
+        },
+        {
+          "title": "Catalpa bignonioides Aurea JPG1b.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Catalpa_bignonioides_Aurea_JPG1b.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/8f/48/509.3142094.jpg",
+          "thumb": "59/8f/48/509.3142094.98x68.jpg"
+        },
+        {
+          "title": "P1240501 Paris V jardin des plantes Catalpa bignonioides rwk.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:P1240501_Paris_V_jardin_des_plantes_Catalpa_bignonioides_rwk.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/af/9b/509.32043362.jpg",
+          "thumb": "59/af/9b/509.32043362.98x68.jpg"
+        },
+        {
+          "title": "20130830Catalpa bignonioides1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20130830Catalpa_bignonioides1.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5a/07/0c/509.33686674.jpg",
+          "thumb": "5a/07/0c/509.33686674.98x68.jpg"
+        },
+        {
+          "title": "Sunlight through the leaves of a Catalpa bignonioides - geograph.org.uk - 1357850.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Sunlight_through_the_leaves_of_a_Catalpa_bignonioides_-_geograph.org.uk_-_1357850.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5b/07/ad/509.14090230.jpg",
+          "thumb": "5b/07/ad/509.14090230.98x68.jpg"
+        },
+        {
+          "title": "Catalpa bignonioides in Korea.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Catalpa_bignonioides_in_Korea.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "60/a5/fe/509.4141192.jpg",
+          "thumb": "60/a5/fe/509.4141192.98x68.jpg"
+        },
+        {
+          "title": "Catalpa bignonioides a1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Catalpa_bignonioides_a1.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "60/f2/c5/509.42646680.jpg",
+          "thumb": "60/f2/c5/509.42646680.98x68.jpg"
+        },
+        {
+          "title": "Catalpa bignonioides1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Catalpa_bignonioides1.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "62/c3/0c/509.4650.jpg",
+          "thumb": "62/c3/0c/509.4650.98x68.jpg"
+        },
+        {
+          "title": "Buda Arboreta. Upper garden. Cigartree (Catalpa bignonioides). - Budapest.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Buda_Arboreta._Upper_garden._Cigartree_(Catalpa_bignonioides)._-_Budapest.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "63/16/a0/509.48171143.jpg",
+          "thumb": "63/16/a0/509.48171143.98x68.jpg"
+        },
+        {
+          "title": "Boom - Trompetboom - Catalpa bignonioides-01.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Boom_-_Trompetboom_-_Catalpa_bignonioides-01.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "66/9b/6a/509.63303266.jpg",
+          "thumb": "66/9b/6a/509.63303266.98x68.jpg"
+        },
+        {
+          "title": "Catalpa bignoioides 004.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Catalpa_bignoioides_004.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "68/45/9f/509.9451990.jpg",
+          "thumb": "68/45/9f/509.9451990.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -4951,20 +5735,174 @@ export const deciduousAndEvergreenTrees = [
       "id": 1148508,
       "name": "Castanea sativa",
       "images": [
-        "2017/09/03/00/24439_orig.jpg",
-        "2012/06/12/17/42626_orig.jpg",
-        "2013/11/15/04/80335_orig.jpg",
-        "2012/06/12/17/60240_orig.jpg",
-        "2013/02/26/00/83307_orig.jpg",
-        "2015/01/08/04/39002_orig.jpg",
-        "2016/08/04/07/06571_orig.jpg",
-        "2016/08/01/00/97277_orig.jpg",
-        "2015/01/08/04/84485_orig.jpg",
-        "2016/08/01/04/21959_orig.jpg",
-        "2016/08/05/07/93570_orig.jpg",
-        "2016/08/05/07/82389_orig.jpg",
-        "2016/08/01/00/38517_orig.jpg",
-        "2015/08/11/22/53585_orig.jpg"
+        {
+          "title": "Castanea-sativa.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castanea-sativa.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/50/f9/509.10628176.jpg",
+          "thumb": "55/50/f9/509.10628176.98x68.jpg"
+        },
+        {
+          "title": "Castanea sativa UW.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castanea_sativa_UW.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/71/5a/509.11110179.jpg",
+          "thumb": "55/71/5a/509.11110179.98x68.jpg"
+        },
+        {
+          "title": "Castanea sativa 0001.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castanea_sativa_0001.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/8e/f8/509.11580850.jpg",
+          "thumb": "55/8e/f8/509.11580850.98x68.jpg"
+        },
+        {
+          "title": "Castanea sativa 0002.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castanea_sativa_0002.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/8e/fb/509.11580926.jpg",
+          "thumb": "55/8e/fb/509.11580926.98x68.jpg"
+        },
+        {
+          "title": "Castanea sativa 0005.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castanea_sativa_0005.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/8f/01/509.11580989.jpg",
+          "thumb": "55/8f/01/509.11580989.98x68.jpg"
+        },
+        {
+          "title": "Castanea sativa 0006.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castanea_sativa_0006.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/8f/04/509.11581005.jpg",
+          "thumb": "55/8f/04/509.11581005.98x68.jpg"
+        },
+        {
+          "title": "Feigen02.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Feigen02.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/ae/65/509.12224086.jpg",
+          "thumb": "55/ae/65/509.12224086.98x68.jpg"
+        },
+        {
+          "title": "Balmerino Abbey Chestnut tree - geograph.org.uk - 841250.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Balmerino_Abbey_Chestnut_tree_-_geograph.org.uk_-_841250.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/f6/6f/509.13523835.jpg",
+          "thumb": "55/f6/6f/509.13523835.98x68.jpg"
+        },
+        {
+          "title": "Chataigne.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Chataigne.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/31/ac/509.1503781.jpg",
+          "thumb": "56/31/ac/509.1503781.98x68.jpg"
+        },
+        {
+          "title": "Castanea sativa leaves and immature fruit.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castanea_sativa_leaves_and_immature_fruit.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/3e/fa/509.19873974.jpg",
+          "thumb": "57/3e/fa/509.19873974.98x68.jpg"
+        },
+        {
+          "title": "Illustration Castanea sativa0 clean.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Illustration_Castanea_sativa0_clean.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/6e/db/509.2062908.jpg",
+          "thumb": "57/6e/db/509.2062908.98x68.jpg"
+        },
+        {
+          "title": "Castanea sativa 20050703 433.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castanea_sativa_20050703_433.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/7d/df/509.210163.jpg",
+          "thumb": "57/7d/df/509.210163.98x68.jpg"
+        },
+        {
+          "title": "Castanea - chestnuts on a tree.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castanea_-_chestnuts_on_a_tree.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/96/4d/509.21435754.jpg",
+          "thumb": "57/96/4d/509.21435754.98x68.jpg"
+        },
+        {
+          "title": "Chataignier - Loire et Cher 2.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Chataignier_-_Loire_et_Cher_2.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/a3/52/509.21861316.jpg",
+          "thumb": "57/a3/52/509.21861316.98x68.jpg"
+        },
+        {
+          "title": "Edelkastanien.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Edelkastanien.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/83/98/509.2554061.jpg",
+          "thumb": "58/83/98/509.2554061.98x68.jpg"
+        },
+        {
+          "title": "File:Castanea sativa - KÃ¶hlerâs Medizinal-Pflanzen-173.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castanea_sativa_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-173.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "58/84/ab/509.255513.jpg",
+          "thumb": "58/84/ab/509.255513.98x68.jpg"
+        },
+        {
+          "title": "1 octobre 2006 037.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:1_octobre_2006_037.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/8f/70/509.25765511.jpg",
+          "thumb": "58/8f/70/509.25765511.98x68.jpg"
+        },
+        {
+          "title": "Chestnut tree Szakcs,Hungary August 2007.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Chestnut_tree_Szakcs,Hungary_August_2007.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/b5/a9/509.2649586.jpg",
+          "thumb": "58/b5/a9/509.2649586.98x68.jpg"
+        },
+        {
+          "title": "Castanea sativa eu.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castanea_sativa_eu.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/04/5b/509.27948980.jpg",
+          "thumb": "59/04/5b/509.27948980.98x68.jpg"
+        },
+        {
+          "title": "Castanea sativa 002.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castanea_sativa_002.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/14/5a/509.2832608.jpg",
+          "thumb": "59/14/5a/509.2832608.98x68.jpg"
+        },
+        {
+          "title": "2007-09-02Castanea sativa05.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:2007-09-02Castanea_sativa05.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/44/8e/509.2968428.jpg",
+          "thumb": "59/44/8e/509.2968428.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -5872,14 +6810,179 @@ export const deciduousAndEvergreenTrees = [
       "id": 583070,
       "name": "Acer platanoides",
       "images": [
-        "2015/04/30/19/57100_orig.jpg",
-        "2015/07/12/22/46819_orig.jpg",
-        "2012/06/12/14/09059_orig.jpg",
-        "2015/07/12/22/99429_orig.jpg",
-        "2010/03/24/03/69726_orig.jpg",
-        "2010/03/24/03/05658_orig.jpg",
-        "2014/07/01/22/88430_orig.jpg",
-        "2016/08/05/18/13824_orig.jpg"
+        {
+          "title": "n430_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://www.flickr.com/photos/biodivlibrary/7899838046/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "81/23/61/542.7899838046.jpg",
+          "thumb": "81/23/61/542.7899838046.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+            "homepage": "http://www.flickr.com/photos/61021753@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Plants in Donetsk 96.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Plants_in_Donetsk_96.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/46/4a/509.10484220.jpg",
+          "thumb": "55/46/4a/509.10484220.98x68.jpg"
+        },
+        {
+          "title": "Plants in Donetsk 97.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Plants_in_Donetsk_97.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/46/4b/509.10484222.jpg",
+          "thumb": "55/46/4b/509.10484222.98x68.jpg"
+        },
+        {
+          "title": "Plants in Donetsk 99.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Plants_in_Donetsk_99.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/46/4c/509.10484226.jpg",
+          "thumb": "55/46/4c/509.10484226.98x68.jpg"
+        },
+        {
+          "title": "Acer-platanoides-blade.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer-platanoides-blade.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/e2/27/509.129183.jpg",
+          "thumb": "55/e2/27/509.129183.98x68.jpg"
+        },
+        {
+          "title": "Acer-platanoides-farve.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer-platanoides-farve.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/e2/2e/509.129185.jpg",
+          "thumb": "55/e2/2e/509.129185.98x68.jpg"
+        },
+        {
+          "title": "Yellow-maple.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Yellow-maple.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/42/00/509.1528582.jpg",
+          "thumb": "56/42/00/509.1528582.98x68.jpg"
+        },
+        {
+          "title": "Ahorn bluehend2.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Ahorn_bluehend2.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/13/4a/509.1899585.jpg",
+          "thumb": "57/13/4a/509.1899585.98x68.jpg"
+        },
+        {
+          "title": "Yellow Canopy.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Yellow_Canopy.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/44/27/509.1992004.jpg",
+          "thumb": "57/44/27/509.1992004.98x68.jpg"
+        },
+        {
+          "title": "Illustration Acer platanoides0 clean.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Illustration_Acer_platanoides0_clean.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/6e/67/509.2062212.jpg",
+          "thumb": "57/6e/67/509.2062212.98x68.jpg"
+        },
+        {
+          "title": "Acer platanoides-cv. laciniatumAHA clean.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer_platanoides-cv._laciniatumAHA_clean.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/6f/d6/509.2064708.jpg",
+          "thumb": "57/6f/d6/509.2064708.98x68.jpg"
+        },
+        {
+          "title": "20120821Ahorn Friedhof Hockenheim2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20120821Ahorn_Friedhof_Hockenheim2.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/75/1e/509.20771181.jpg",
+          "thumb": "57/75/1e/509.20771181.98x68.jpg"
+        },
+        {
+          "title": "20120821Ahorn Friedhof Hockenheim4.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20120821Ahorn_Friedhof_Hockenheim4.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/75/20/509.20771230.jpg",
+          "thumb": "57/75/20/509.20771230.98x68.jpg"
+        },
+        {
+          "title": "20120821Ahorn Friedhof Hockenheim5.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20120821Ahorn_Friedhof_Hockenheim5.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/75/21/509.20771246.jpg",
+          "thumb": "57/75/21/509.20771246.98x68.jpg"
+        },
+        {
+          "title": "20120828Ahorn Staden3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20120828Ahorn_Staden3.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/aa/be/509.21981737.jpg",
+          "thumb": "57/aa/be/509.21981737.98x68.jpg"
+        },
+        {
+          "title": "Pol-30 Dikansky 8.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pol-30_Dikansky_8.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/91/17/509.25795337.jpg",
+          "thumb": "58/91/17/509.25795337.98x68.jpg"
+        },
+        {
+          "title": "Acer platanoides 1JPG.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer_platanoides_1JPG.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/b7/27/509.2652819.jpg",
+          "thumb": "58/b7/27/509.2652819.98x68.jpg"
+        },
+        {
+          "title": "Spitzahorn Haan2.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Spitzahorn_Haan2.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/2d/15/509.2909640.jpg",
+          "thumb": "59/2d/15/509.2909640.98x68.jpg"
+        },
+        {
+          "title": "2014-04-28 18 05 18 Norway Maple blossoms in Elko, Nevada.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:2014-04-28_18_05_18_Norway_Maple_blossoms_in_Elko,_Nevada.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/c6/20/509.32579691.jpg",
+          "thumb": "59/c6/20/509.32579691.98x68.jpg"
+        },
+        {
+          "title": "Acer in Autumn.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer_in_Autumn.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5b/0f/40/509.1438788.jpg",
+          "thumb": "5b/0f/40/509.1438788.98x68.jpg"
+        },
+        {
+          "title": "Maple leaf autumn.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Maple_leaf_autumn.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5b/16/18/509.1458140.jpg",
+          "thumb": "5b/16/18/509.1458140.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -5962,19 +7065,179 @@ export const deciduousAndEvergreenTrees = [
       "id": 583073,
       "name": "Acer pseudoplatanus",
       "images": [
-        "2012/06/19/04/57175_orig.jpg",
-        "2013/12/07/23/05578_orig.jpg",
-        "2009/07/24/02/97213_orig.jpg",
-        "2009/07/24/02/24497_orig.jpg",
-        "2010/03/24/03/96044_orig.jpg",
-        "2010/03/24/03/94541_orig.jpg",
-        "2014/01/02/01/87570_orig.jpg",
-        "2014/07/08/09/04388_orig.jpg",
-        "2013/09/02/02/81458_orig.jpg",
-        "2015/07/12/22/37580_orig.jpg",
-        "2013/10/09/00/02484_orig.jpg",
-        "2016/08/06/09/79530_orig.jpg",
-        "2016/08/03/02/74391_orig.jpg"
+        {
+          "title": "n421_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://www.flickr.com/photos/biodivlibrary/7899835524/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "81/23/5e/542.7899835524.jpg",
+          "thumb": "81/23/5e/542.7899835524.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+            "homepage": "http://www.flickr.com/photos/61021753@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Climbing points on Sycamore branch.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Climbing_points_on_Sycamore_branch.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/82/6c/509.11362388.jpg",
+          "thumb": "55/82/6c/509.11362388.98x68.jpg"
+        },
+        {
+          "title": "Acer-pseudoplatanus.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer-pseudoplatanus.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/83/f4/509.11391.jpg",
+          "thumb": "55/83/f4/509.11391.98x68.jpg"
+        },
+        {
+          "title": "Sycamore buds, Torquay - geograph.org.uk - 1235793.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Sycamore_buds,_Torquay_-_geograph.org.uk_-_1235793.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/03/3e/509.13958588.jpg",
+          "thumb": "56/03/3e/509.13958588.98x68.jpg"
+        },
+        {
+          "title": "Acer pseudoplatanus(03).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer_pseudoplatanus(03).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/05/92/509.140587.jpg",
+          "thumb": "56/05/92/509.140587.98x68.jpg"
+        },
+        {
+          "title": "Acer pseudoplatanus(01).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer_pseudoplatanus(01).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/05/9a/509.140594.jpg",
+          "thumb": "56/05/9a/509.140594.98x68.jpg"
+        },
+        {
+          "title": "Acer pseudoplatanus(04).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer_pseudoplatanus(04).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/05/b0/509.140608.jpg",
+          "thumb": "56/05/b0/509.140608.98x68.jpg"
+        },
+        {
+          "title": "Acer pseudoplatanus Inflorescence BavariaMay2005.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer_pseudoplatanus_Inflorescence_BavariaMay2005.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/98/65/509.168422.jpg",
+          "thumb": "56/98/65/509.168422.98x68.jpg"
+        },
+        {
+          "title": "Ahornfertig22.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Ahornfertig22.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/03/0d/509.18703330.jpg",
+          "thumb": "57/03/0d/509.18703330.98x68.jpg"
+        },
+        {
+          "title": "Acer pseudoplatanus 002.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer_pseudoplatanus_002.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/62/b6/509.2041644.jpg",
+          "thumb": "57/62/b6/509.2041644.98x68.jpg"
+        },
+        {
+          "title": "Schetteregg im Herbst 4.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Schetteregg_im_Herbst_4.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/ae/1b/509.22033058.jpg",
+          "thumb": "57/ae/1b/509.22033058.98x68.jpg"
+        },
+        {
+          "title": "Acer pseudoplatanus 003.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer_pseudoplatanus_003.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/f5/5d/509.2313443.jpg",
+          "thumb": "57/f5/5d/509.2313443.98x68.jpg"
+        },
+        {
+          "title": "AvenidaLiberdade.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:AvenidaLiberdade.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/51/20/509.24899345.jpg",
+          "thumb": "58/51/20/509.24899345.98x68.jpg"
+        },
+        {
+          "title": "Acer pseudoplatanus (8254853668).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer_pseudoplatanus_(8254853668).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/6b/ea/509.25210233.jpg",
+          "thumb": "58/6b/ea/509.25210233.98x68.jpg"
+        },
+        {
+          "title": "Pol-30 Dikansky 24.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pol-30_Dikansky_24.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/91/18/509.25795362.jpg",
+          "thumb": "58/91/18/509.25795362.98x68.jpg"
+        },
+        {
+          "title": "20110425 Amsterdam 56 Tree in de Oeverlanden.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20110425_Amsterdam_56_Tree_in_de_Oeverlanden.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/99/ff/509.25942114.jpg",
+          "thumb": "58/99/ff/509.25942114.98x68.jpg"
+        },
+        {
+          "title": "Maple leaves.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Maple_leaves.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/0f/6e/509.282480.jpg",
+          "thumb": "59/0f/6e/509.282480.98x68.jpg"
+        },
+        {
+          "title": "File:NAS-044 Acer pseudoplatanus &amp; platanoides.png",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:NAS-044_Acer_pseudoplatanus_%26_platanoides.png",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "59/28/53/509.28982889.jpg",
+          "thumb": "59/28/53/509.28982889.98x68.jpg"
+        },
+        {
+          "title": "Acer pseudoplatanus RJB.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acer_pseudoplatanus_RJB.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/77/d9/509.3089800.jpg",
+          "thumb": "59/77/d9/509.3089800.98x68.jpg"
+        },
+        {
+          "title": "20140420Acer pseudoplatanus1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20140420Acer_pseudoplatanus1.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "59/bd/53/509.32366645.jpg",
+          "thumb": "59/bd/53/509.32366645.98x68.jpg"
+        },
+        {
+          "title": "Zuid-Kennemerland esdoorn helikoptertjes.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Zuid-Kennemerland_esdoorn_helikoptertjes.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5a/00/84/509.33656467.jpg",
+          "thumb": "5a/00/84/509.33656467.98x68.jpg"
+        }
       ],
       "names": [
         {

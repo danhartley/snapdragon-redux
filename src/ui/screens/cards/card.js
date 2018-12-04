@@ -15,7 +15,7 @@ import { lookALikes } from 'ui/screens/common/look-alikes';
 import { renderFeatures } from 'ui/screens/common/feature';
 import { infoSlider } from 'ui/screens/common/info-slider';
 import * as traitTypes from 'api/traits/trait-types';
-import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
+import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 
 export const renderCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody) => {
 
@@ -109,7 +109,8 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     const familyName = family ? family.name : item.taxonomy.family;
     const familyVernacularNames = itemProperties.familyVernacularNames(item.family, config.language);
     const familyVernacularName = familyVernacularNames ? familyVernacularNames[0] : '';
-    const itemImage = item.icon || item.images[0].url;
+        
+    const itemImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
     
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const subSpeciesCount = specific ? specific.subspecies.length : 0;
@@ -164,8 +165,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
         if(family && family.traits) {
             info = { traits: family.traits };
             infoSlider(info, document.querySelector('.js-info-box'));    
-        }
-        
+        }        
     }
 
     const namesBadge = document.querySelector('.js-names-badge');

@@ -5,7 +5,8 @@ import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { modalImagesHandler } from 'ui/helpers/image-handlers';
 import { renderTemplate } from 'ui/helpers/templating';
-import landscapeTemplate from 'ui/screens/landscape/specimen-tiles-template.html';
+import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
+import specimensTemplate from 'ui/screens/landscape/specimen-tiles-template.html';
 
 export const renderSpecimenTiles = (collection) => {
 
@@ -13,11 +14,11 @@ export const renderSpecimenTiles = (collection) => {
 
     if(!item) return;
 
-    let images = R.take(4, utils.shuffleArray(R.clone(item.images)));
+    const { config } = store.getState();
 
-    images = images.map(img => {
-        return { ...img, itemName: item.name };
-    });
+    let images = R.take(9, utils.shuffleArray(R.clone(item.images)));
+
+    images = prepImagesForCarousel({ name: item.name, itemCommon: item.itemCommon, images }, config, imageUseCases.SPECIES_CARD);
 
     renderSpecimenImageTiles({ items: [item] }, images);
 };
@@ -34,7 +35,7 @@ export const renderSpecimenImageTiles = (collection, images) => {
 
     const template = document.createElement('template');
 
-    template.innerHTML = landscapeTemplate;    
+    template.innerHTML = specimensTemplate;    
 
     const parent = DOM.leftBody;
     parent.innerHTML = '';
