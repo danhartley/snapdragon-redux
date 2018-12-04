@@ -46,13 +46,16 @@ export const scaleImage = (image, useCase, config) => {
                 ? image.url.replace('.jpg', '.260x190.jpg')
                 : image.url.replace('.jpg', '.98x68.jpg');
         case imageUseCases.SPECIES_CARD:
-        case imageUseCases.NON_TAXON_CARD:
+        case imageUseCases.NON_TAXON_CARD:        
         case imageUseCases.VISUAL_MATCH:
-        case imageUseCases.MIXED_SPECIMENS:
         case imageUseCases.TEXT_ENTRY:
             return config.isLandscapeMode 
             ? image.url
             : image.url.replace('.jpg', '.260x190.jpg');
+        case imageUseCases.MIXED_SPECIMENS:
+            return config.isLandscapeMode 
+                ? image.url.replace('.jpg', '.260x190.jpg')
+                : image.url.replace('.jpg', '.260x190.jpg');
         case imageUseCases.CAROUSEL:
             return config.isLandscapeMode 
                 ? image.url ? image.url.replace('.jpg', '.260x190.jpg') : ''

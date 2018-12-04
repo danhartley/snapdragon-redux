@@ -57,12 +57,13 @@ const changeCollection = (lessonStateMode, collection, config, history, actionBu
                 }
                 case 'review' : {
                     collection.isLevelComplete = false;
-                    collection.moduleSize = (collection.moduleSize > collection.length) ? collection.length : collection.moduleSize;
-                    collection.rounds = Math.ceil(collection.items.length / collection.moduleSize);
+                    collection.moduleSize = (collection.moduleSize > itemsToReview.length) ? itemsToReview.length : collection.moduleSize;
+                    collection.rounds = Math.ceil(itemsToReview.length / collection.moduleSize);
                     collection.itemIndex = 0;
                     collection.allItems = collection.items;
                     collection.items = itemsToReview;
                     actions.boundChangeCollection({ config: config, collection });
+                    actions.boundNextRound({ index: 0 });
                     break;
                 }
                 case 'learn-again': {

@@ -1,7 +1,5 @@
 import * as R from 'ramda';
 
-import { utils } from 'utils/utils';
-
 const getItemScoreStats = (collection, history) => {
 
     const collectionItems  = R.clone(collection.items);

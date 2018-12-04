@@ -8,7 +8,7 @@ import { modalImageHandler } from 'ui/helpers/image-handlers';
 import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-list-table';
-import { itemHandler } from 'ui/helpers/item-handler';
+import { itemHandler, extendCollection } from 'ui/helpers/item-handler';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
@@ -28,11 +28,14 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
         const headerCheckbox = document.querySelector(".table-header #inputCheckAll");
         const itemCheckboxes = document.querySelectorAll(".table-row .custom-control-input");
 
+        let hasCollectionChanged = false;
+
         if(headerCheckbox) {
             if(readOnlyMode) {
                 headerCheckbox.disabled = true;
             } else {
                 headerCheckbox.addEventListener('click', event => {
+                    hasCollectionChanged = true;
                     if(headerCheckbox.checked) {
                         itemCheckboxes.forEach(checkbox => {
                             checkbox.checked = true;
@@ -54,6 +57,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                 checkbox.disabled = true;
             } else {     
                 checkbox.addEventListener('click', event => {
+                    hasCollectionChanged = true;
                     const name = checkbox.getAttribute('name');
                     const item = collection.items.find(item => item.name === name);
                     if(checkbox.checked) {
@@ -89,7 +93,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
         // Portrait mode only
 
         if(continueLearningActionBtn) {
-                    
+        
             if(history || counter.isLessonPaused) {
                 continueLearningActionBtn.innerHTML = 'Continue lesson';
             }
@@ -99,6 +103,10 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
             }
 
             continueLearningActionBtn.addEventListener('click', event => {
+
+                if(hasCollectionChanged) {
+                    extendCollection(config, collection);
+                }
 
                 if(collection.isLessonComplete) {
                     lessonLogicHandler.purgeLesson();
