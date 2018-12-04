@@ -80,7 +80,7 @@ const purgeLesson = () => {
     window.location.reload(true);
 };
 
-const isSkippable = (collection, counter, config, layout, caller) => {
+const isSkippable = (collection, counter, config, layout, caller, readOnlyMode) => {
 
     console.log('SKIPPABLE');
     console.log('collection.items: ', collection.items ? collection.items.length : 'no items');
@@ -90,6 +90,8 @@ const isSkippable = (collection, counter, config, layout, caller) => {
     console.log('config.collection.id: ', config.collection.id);
 
     if(!Array.isArray(collection.items)) return false;
+
+    if(readOnlyMode) return false;
 
     if(counter.isLessonRehydrated && !layout) return false;
 

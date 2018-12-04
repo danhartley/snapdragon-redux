@@ -98,14 +98,15 @@ describe('should skip home pages appropriately', () => {
         expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeTruthy();
     });
 
-    test('re-render if the language has changed', () => {
+    test('re-render if readOnlyMode (results page in portrait)', () => {
         let counter = {
             isLessonRehydrated: false,
             isLessonPaused: false
         };
         let collection = { id: 1, items: [], language: 'en' };
-        let config = { collection: { id: 1 }, language: 'pt' };
+        let config = { collection: { id: 1 }, language: 'en' };
         let layout = {};
-        expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeFalsy();
+        let readOnlyMode = true;
+        expect(lessonLogicHandler.isSkippable(collection, counter, config, layout, '', readOnlyMode)).toBeFalsy();
     });
 });

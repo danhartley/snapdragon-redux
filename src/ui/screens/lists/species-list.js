@@ -16,24 +16,13 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
     let config = R.clone(configState);
 
-    if(lessonLogicHandler.isSkippable(collection, counter, config, layout, 'renderSpeciesCollectionList')) return;
+    if(lessonLogicHandler.isSkippable(collection, counter, config, layout, 'renderSpeciesCollectionList', readOnlyMode)) return;
 
     subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
     
     if(collection.id === 0) return;
 
     config.collection = { id: collection.id };
-
-    const traits = getTraits(enums);
-
-    function callback(collection, config, traits) {
-        return function () {
-            buildTable(collection, config, traits);
-            doEveryThingElse();
-        }
-    }
-
-    itemHandler(collection, config, counter, callback(collection, config, traits));
 
     const doEveryThingElse = () => {
         const headerCheckbox = document.querySelector(".table-header #inputCheckAll");
@@ -130,4 +119,20 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
             });
         }
     };    
+
+    const traits = getTraits(enums);
+
+    if(readOnlyMode) {
+        buildTable(collection, config, traits);
+        doEveryThingElse();
+    }
+    else {        
+        function callback(collection, config, traits) {
+            return function () {
+                buildTable(collection, config, traits);
+                doEveryThingElse();
+            }
+        }
+        itemHandler(collection, config, counter, callback(collection, config, traits));
+    }
 };

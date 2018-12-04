@@ -22,7 +22,7 @@ export const renderCollections = (counter) => {
     let collection = R.clone(collectionState);
     let config = R.clone(configState);
 
-    if(lessonLogicHandler.isSkippable(collection, counter, config, layout, 'renderCollections')) return;
+    if(lessonLogicHandler.isSkippable(collection, counter, config, layout, 'renderCollections', false)) return;
 
     const template = document.createElement('template');
     template.innerHTML = collectionsTemplate;
