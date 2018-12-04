@@ -50,7 +50,7 @@ const simpleScoreHandler = (test, callback, config) => {
 
     if(callback) callback(score, scoreUpdateTimer);
 
-    let correct = `You selected a match for ${test.question}.`;
+    let correct = config.isLandcapeMode ? `You correctly selected a match for ${test.question}.` : `${test.question}'s correct`;
     let incorrect = `You selected ${test.answer}.`;
 
     textAlertHandler({ success: score.success, correct, incorrect });

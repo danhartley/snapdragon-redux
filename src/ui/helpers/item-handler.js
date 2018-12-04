@@ -63,3 +63,8 @@ export async function itemHandler(collection, config, counter, callback) {
         callback();
     }    
 }
+
+export const extendCollection = (config, collection) => {
+    const extendedCollection = speciesStateHelper.extendCollection(collection);
+    actions.boundChangeCollection({ config, collection: extendedCollection });
+};

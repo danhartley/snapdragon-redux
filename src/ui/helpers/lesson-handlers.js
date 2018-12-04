@@ -57,12 +57,13 @@ const changeCollection = (lessonStateMode, collection, config, history, actionBu
                 }
                 case 'review' : {
                     collection.isLevelComplete = false;
-                    collection.moduleSize = (collection.moduleSize > collection.length) ? collection.length : collection.moduleSize;
-                    collection.rounds = Math.ceil(collection.items.length / collection.moduleSize);
+                    collection.moduleSize = (collection.moduleSize > itemsToReview.length) ? itemsToReview.length : collection.moduleSize;
+                    collection.rounds = Math.ceil(itemsToReview.length / collection.moduleSize);
                     collection.itemIndex = 0;
                     collection.allItems = collection.items;
                     collection.items = itemsToReview;
                     actions.boundChangeCollection({ config: config, collection });
+                    actions.boundNextRound({ index: 0 });
                     break;
                 }
                 case 'learn-again': {
@@ -80,7 +81,7 @@ const purgeLesson = () => {
     window.location.reload(true);
 };
 
-const isSkippable = (collection, counter, config, layout, caller) => {
+const isSkippable = (collection, counter, config, layout, caller, readOnlyMode) => {
 
     console.log('SKIPPABLE');
     console.log('collection.items: ', collection.items ? collection.items.length : 'no items');
@@ -90,6 +91,8 @@ const isSkippable = (collection, counter, config, layout, caller) => {
     console.log('config.collection.id: ', config.collection.id);
 
     if(!Array.isArray(collection.items)) return false;
+
+    if(readOnlyMode) return false;
 
     if(counter.isLessonRehydrated && !layout) return false;
 

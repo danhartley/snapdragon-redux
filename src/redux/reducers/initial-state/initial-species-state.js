@@ -11,14 +11,16 @@ const collections = snapdragonCollections;
 
 const extendCollection = selectedCollection => {
 
-    const { config, enums } = store.getState();
+    const { config } = store.getState();
 
     const moduleSize = selectedCollection.moduleSize || config.moduleSize;
 
     let prepCollection = selectedCollection.type === 'skill'
         ? R.pipe(utils.shuffleArray)
         : R.pipe(helpers.extractScientificNames);
-    const items = utils.sortBy(prepCollection(selectedCollection.items), 'snapIndex');
+    const items = utils.sortBy(prepCollection(selectedCollection.items), 'snapIndex').filter(item => {
+        return item.isDeselected === undefined || !item.isDeselected
+    });
     const rounds = items.length / moduleSize;
 
     const families = familyProps.getFamilyNames(items);
@@ -43,8 +45,6 @@ const extendCollection = selectedCollection => {
      collection.items.forEach(item => {
         item.vernacularNames = itemProperties.getVernacularNames(item, config);
         item.vernacularName = itemProperties.getVernacularName(item, config);
-        // item.speciesName = itemProperties.getSpeciesName(item.name);
-        // item.genusName = itemProperties.getGenusName(item.name);
      });
 
      collections.forEach(c => {
