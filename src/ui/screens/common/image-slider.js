@@ -1,14 +1,14 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { modalImagesHandler } from 'ui/helpers/image-handlers';
 import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
-import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
+import { imageMatch, imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
 import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
 
 const selectActiveNodeImage = (image, parent) => {
     parent.querySelectorAll('.carousel-item').forEach(i => {        
         const elemSrc = i.lastElementChild.dataset.src || i.lastElementChild.src;
         const src = image.dataset ? image.dataset.src : `https://content.eol.org/data/media/${image.url}`;
-        if(elemSrc === src || elemSrc === src.replace('.98x68.jpg', '.jpg') || elemSrc === src.replace('.260x190.jpg', '.jpg')) {
+        if(imageMatch(elemSrc, src)) {
             i.classList.add('active');        
             return;
         }

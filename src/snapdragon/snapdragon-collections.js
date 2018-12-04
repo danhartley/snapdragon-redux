@@ -8,7 +8,7 @@ export const kitchenGarden = {
         'All of the species are either native or adapted to a Mediterranean climate.',
         'Later lessons will introduce you to families and the traits they share.'        
     ],
-    thumb: 'https://content.eol.org/data/media/81/3f/ae/542.8232814894.jpg',
+    thumb: 'https://content.eol.org/data/media/81/3f/ae/542.8232814894.260x190.jpg',
     moduleSize: 6,
     curator: 'Snapdragon',
     userLevel: 'General Interest',
@@ -92,7 +92,7 @@ export const rhsTrees = {
     type: 'species',
     descriptions: ['This is an approved list of Deciduous and Evergreen Trees from the Royal Horticultural Society (RHS).', 'Students taking RHS courses in Practical Horticulture are required to learn some, or all, of these species.'],
     collections: ['Deciduous and evergreen trees'],
-    thumb: 'https://content.eol.org/data/media/2012/06/12/18/89509_orig.jpg',
+    thumb: 'https://content.eol.org/data/media/2012/06/12/18/89509_orig.260x190.jpg',
     moduleSize: 6,
     curator: 'Snapdragon',
     userLevel: 'RHS students',
@@ -183,7 +183,7 @@ export const commonBirds = {
         '420,489 people recorded 6,764,475 separate bird sightings.'
     ],
     collections: ['RSPB Top 10 UK Birds'],
-    thumb: 'https://content.eol.org/data/media/2d/1b/36/18.https___www_inaturalist_org_photos_191066.jpg',
+    thumb: 'https://content.eol.org/data/media/2d/1b/36/18.https___www_inaturalist_org_photos_191066.260x190.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'General Interest',
@@ -219,7 +219,7 @@ export const rhsWeeds1 = {
         'Snapdragon does not necessarily support the view that weeds are plants in the wrong place.'
     ],
     collections: ['RHS Weeds I'],
-    thumb: 'https://content.eol.org/data/media/55/9d/2c/509.118977.jpg',
+    thumb: 'https://content.eol.org/data/media/55/9d/2c/509.118977.260x190.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'RHS students',
@@ -249,7 +249,7 @@ export const rhsWeeds1 = {
 const mushroomCollection = {
     providerId: 1,
     type: 'species',
-    thumb: 'https://content.eol.org/data/media/59/16/59/509.2840237.jpg',
+    thumb: 'https://content.eol.org/data/media/59/16/59/509.2840237.260x190.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'Amateur mycologists',
@@ -263,7 +263,7 @@ export const fallMushroomsEasternUSA = {
     ...mushroomCollection,
     id: 5,
     name: 'Mushrooms Eastern US Fall',
-    thumb: 'https://content.eol.org/data/media/55/b5/47/509.12337524.jpg',
+    thumb: 'https://content.eol.org/data/media/55/b5/47/509.12337524.260x190.jpg',
     itemNames: [ 
         'Grifola frondosa', 'Laetiporus sulphureus', 'Hericium erinaceus', 'Lycoperdon perlatum',
         'Lycoperdon pyriforme', 'Hydnum repandum', 'Craterellus tubaeformis', 'Hydnum umbilicatum', 
@@ -285,7 +285,7 @@ export const fallMushroomsEasternUSA = {
 export const wildFoodUKTopTenBeginners = {
     ...mushroomCollection,
     id: 6,
-    thumb: 'https://content.eol.org/data/media/59/81/c6/509.3118102.jpg',
+    thumb: 'https://content.eol.org/data/media/59/81/c6/509.3118102.260x190.jpg',
     name: 'Mushrooms for Beginners',
     itemNames: [
         'Fistulina hepatica', 'Boletus edulis', 'Pleurotus ostreatus', 'Auricularia auricula-judae',
@@ -306,7 +306,7 @@ export const cogumelosEmPortugal = {
     ...mushroomCollection,
     id: 7,
     name: 'Mushrooms of Portugal',
-    thumb: 'https://content.eol.org/data/media/55/6d/bc/509.11062931.jpg',
+    thumb: 'https://content.eol.org/data/media/55/6d/bc/509.11062931.260x190.jpg',
     itemNames: [
         'Boletus edulis', 'Lactarius deliciosus', 'Agaricus campestris', 'Macrolepiota procera',
         'Craterellus cornucopioides', 'Cantharellus cibarius', 'Amanita caesarea',
@@ -336,7 +336,7 @@ export const localSpecies = {
     glossary: ['plantae', 'common', 'fungi'],
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
-    thumb: 'https://content.eol.org/data/media/7f/09/1a/542.26637311774.jpg',
+    thumb: 'https://content.eol.org/data/media/7f/09/1a/542.26637311774.260x190.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'All comers'
@@ -345,7 +345,7 @@ export const localSpecies = {
 const lichenCollection = {
     providerId: 1,
     type: 'species',
-    thumb: 'https://content.eol.org/data/media/80/d2/d6/542.6832443214.jpg',
+    thumb: 'https://content.eol.org/data/media/80/d2/d6/542.6832443214.260x190.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
     userLevel: 'Amateur lichenologists',

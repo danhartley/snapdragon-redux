@@ -43,7 +43,7 @@ export const renderNonTaxonCard = collection => {
             return prepImagesForCarousel(item, config, imageUseCases.NON_TAXON_CARD);
         });
         const itemImages = utils.shuffleArray([].concat(...itemImagesArray));
-        return R.take(4, itemImages);
+        return R.take(9, itemImages);
     };
 
     const callback = id => {

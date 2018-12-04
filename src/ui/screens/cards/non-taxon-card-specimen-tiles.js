@@ -3,7 +3,7 @@ import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
 import { modalImagesHandler } from 'ui/helpers/image-handlers';
 import { subscribeToNonTaxaSelection } from 'ui/screens/cards/non-taxon-card';
-import mixedSpecimenTemplate from 'ui/screens/multichoice/mixed-specimen-tiles-template.html';
+import specimensTemplate from 'ui/screens/landscape/specimen-tiles-template.html';
 
 export const renderNonTaxonCardSpecimenTiles = collection => {
 
@@ -13,7 +13,7 @@ export const renderNonTaxonCardSpecimenTiles = collection => {
 
         const template = document.createElement('template');
 
-        template.innerHTML = mixedSpecimenTemplate;
+        template.innerHTML = specimensTemplate;
 
         const parent = DOM.leftBody;
         parent.innerHTML = '';
