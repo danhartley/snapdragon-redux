@@ -14,15 +14,15 @@
     }
 
     .left-grid, .right-grid {
-        grid-template-rows: 1fr .5em 10fr 1fr;
+        grid-template-rows: 1fr .5rem 10fr 1fr;
     }      
 
     .species-table {
-        font-size: .9em;
+        font-size: .9rem;
     }
 
     .species-table .table-row input {
-        margin: 0 0 .55em .25em;
+        margin: 0 0 .55rem .25rem;
     }
 
     th .custom-control-label::before, th .custom-control-label::after {
@@ -30,17 +30,17 @@
     }
 
     .species.revision.card, .non-taxon.revision.card {
-        margin: 0 0 1em 0;
+        margin: 0 0 1rem 0;
       }
 
     .taxon-highlight {
-        font-size: 1.1em;  
+        font-size: 1.1rem;  
         padding: 0;
         margin: 0;
     }
 
     .snapdragon-options .btn, .snapdragon-options .dropdown-menu.show {
-        width: 20em;
+        width: 20rem;
     }
 
     .non-taxon-card .snapdragon-options {
@@ -56,7 +56,7 @@
       }      
 
     .skills-collections button {
-        margin: 1em 0;
+        margin: 1rem 0;
     }
 
     .id-box > div:nth-child(2) {  
@@ -68,7 +68,7 @@
     }
 
     .grid {        
-        grid-template-columns: 10fr .25em 10fr;  
+        grid-template-columns: 10fr .25rem 10fr;  
     }
 
     .left-grid {
@@ -94,11 +94,11 @@
     }
 
     .strips {
-        padding: 0 .5em;
+        padding: 0 .5rem;
     }
 
     .strip div {
-        padding: .5em;
+        padding: .5rem;
     }
 
     .action-update-container {
@@ -108,23 +108,23 @@
     .letterbox-entry {
         color: var(--snap-text-medium-light);
         flex: auto;
-        margin: 1em 0;
-        border: .1em solid var(--snap-border-dark);
+        margin: 1rem 0;
+        border: .1rem solid var(--snap-border-dark);
         border-radius: .20rem;
         display: flex;
         flex-direction: column;
-        padding: .5em;
+        padding: .5rem;
       }
 
     .letterbox-entry div {
-        margin: .5em 0;
+        margin: .5rem 0;
         width: 80%;
     }
 
     .letterbox-entry input {
         width: 75%;
-        font-size: 1.5em;
-        padding: .25em;
+        font-size: 1.5rem;
+        padding: .25rem;
     }
 
     .letterbox-entry button:disabled {
@@ -132,37 +132,37 @@
     }
 
     .letterbox-entry button {
-        margin: .5em 0 0 0;
+        margin: .5rem 0 0 0;
     }
 
     .text-question .icon {
-        font-size: 2em;
-        margin: 0 0 0 .25em;
+        font-size: 2rem;
+        margin: 0 0 0 .25rem;
     }
 
     .text-question .icon span {
-        font-size: 1.4em;
+        font-size: 1.4rem;
     }
 
     .answer-container {
-        padding: .5em;
-        margin: 1em 0;
+        padding: .5rem;
+        margin: 1rem 0;
     }
 
     .block.given {
-        margin: 1em 0;
+        margin: 1rem 0;
     }
 
     .answer-container .icon {
-        font-size: 2em;
+        font-size: 2rem;
     }
 
     .text-question .icon-text {
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
 
     .block {
-        font-size: 1.4em;
+        font-size: 1.4rem;
     }
 
     .flex-provider .skills {
@@ -219,11 +219,11 @@
     .lesson-plans .table-row input {
         height: 1.75rem;
         width: 1.75rem;
-        margin: 0 0 0 1em;
+        margin: 0 0 0 1rem;
     }
 
     .lesson-plan-btn {
-        padding: 1em 2em;
+        padding: 1rem 2rem;
       }
 
     .flex-provider.skills, .species-card-wiki-entry,
@@ -240,18 +240,18 @@
     }
 
     .snapdragon-container {
-        border: .05em solid var(--snap-primary);
+        border: .05rem solid var(--snap-primary);
     }
     
     .info-box #traitSlider {     
-        min-width: 23.5em;
-        max-width: 28.5em;
+        min-width: 23.5rem;
+        max-width: 28.5rem;
     }    
 
     .bird-song div {
         float: right;
-        min-width: 23.5em;
-        max-width: 28.5em;
+        min-width: 23.5rem;
+        max-width: 28.5rem;
     }
 
     #speciesCardModal .modal-content .snapdragon-container {  
@@ -259,7 +259,7 @@
     }
     
     #traitSlider .carousel-item div {
-        padding: .5em;
+        padding: .5rem;
     }
 
     .imageSlider .carousel-item {
@@ -267,16 +267,16 @@
     }
 
     .text-question {
-        min-height: 3em;
+        min-height: 3rem;
     }
 
     .summary-scores {
         align-self: center;
-        margin: 2em 0 0 0;
+        margin: 2rem 0 0 0;
       }
 
     .course-description span {
-        margin: 0 0 1em 0;
+        margin: 0 0 1rem 0;
     }
 
     .visual-match .imageSlider .carousel-item {
@@ -284,11 +284,11 @@
       }
 
     .question-container {
-        border: .05em solid var(--snap-question-background);
+        border: .05rem solid var(--snap-question-background);
     }
 
     .question-container > span:nth-child(1), .question-container > p:nth-child(1) {
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
 
     .text-question span:nth-child(2) {
@@ -300,12 +300,12 @@
     }
 
     #speciesCardModal .modal-dialog {
-        min-width: 25em;
-        max-width: 30em;
+        min-width: 25rem;
+        max-width: 30rem;
     }
 
     .header-text {
-        font-size: 1em;
+        font-size: 1rem;
     }
 
     .rights-link > div > div, .rights-attribution > div > div:nth-child(1) {
