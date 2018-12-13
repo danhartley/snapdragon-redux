@@ -14,7 +14,9 @@ export const speciesPendingSpinner = (config) => {
     renderTemplate({ }, template.content, parent);
 
     const callback = place => {
-        document.querySelector('.species-pending .local-area').innerHTML = `the ${place.area.text} area`;
+        const localAreaText = document.querySelector('.species-pending .local-area');
+        if(!localAreaText) return;
+        localAreaText.innerHTML = `the ${place.area.text} area`;
     }
 
     listenToPlaceChange(callback);
