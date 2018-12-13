@@ -58,10 +58,10 @@ const nonTaxonRevision = {
     name: 'screen-non-taxon-card',
     type:'revision',
     score: 0,
-    kind: 'F',
+    kind: 'GR',
     points: 0,
-    given: 'Study',
-    requirement: 'Group summary',
+    given: 'Group summary',
+    requirement: 'Study',
     screens: [
         { ...nonTaxonSpecimenTiles },
         { ...nonTaxon }
@@ -147,7 +147,7 @@ const multiSpecimenCommonMatch = {
     points: 1,
     kind: 'VMC',
     given: 'Given specimen images',
-    requirement: 'Select commnon name',
+    requirement: 'Select common name',
     screens: [
         { ...specimen },
         { ...specimenCommonMatch }

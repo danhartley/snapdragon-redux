@@ -61,6 +61,11 @@ const renderLessonPlans = (lessonPlanId) => {
                         if(!config.isPortraitMode) kind.innerHTML += '<span>family info</span>'
                         kind.parentElement.parentElement.classList.add('taxon-background')
                         break;
+                    case 'GR':
+                        kind.innerHTML = `<span class="icon"><i class="fas fa-chalkboard"></i></i></span>`;
+                        if(!config.isPortraitMode) kind.innerHTML += '<span>group info</span>'
+                        kind.parentElement.parentElement.classList.add('taxon-background')
+                        break;
                     case 'G':
                         kind.innerHTML = `<span class="icon"><i class="fas fa-chalkboard"></i></i></span>`;
                         if(!config.isPortraitMode) kind.innerHTML += '<span>glossary</span>'
