@@ -56,7 +56,7 @@ export const renderSummary = (history) => {
     
     const learnMoreBtn = document.querySelector('.js-summmary-btn-action');
 
-    if(collection.isLessonComplete) learnMoreBtn.innerHTML = 'Pick a new lesson';
+    if(collection.isLessonComplete) learnMoreBtn.innerHTML = 'Choose a new lesson';
 
     const handleBtnClickEvent = event => {
 

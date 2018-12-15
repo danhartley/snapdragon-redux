@@ -23,7 +23,7 @@ async function parseMapBoxPlace(json, config) {
   place.region = place.features.find(f => f.place_type[0] === 'place');
   place.country = place.features.find(f => f.place_type[0] === 'country');
   place.area = place.region || place.country;
-  place.summary = config.isLandscapeMode ? `Species from ${place.region.text}, ${place.country.text}` : `Species from ${place.region.text}`;
+  place.summary = config.isLandscapeMode ? `Species from ${place.area.text}, ${place.country.text}` : `Species from ${place.area.text}`;
   const placePromise = new Promise(resolve => {
     resolve(place);
   });

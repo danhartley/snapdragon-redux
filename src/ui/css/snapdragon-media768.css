@@ -129,6 +129,7 @@
 
     .letterbox-entry button:disabled {
         color: var(--snap-text-dark);
+        pointer-events: none;
     }
 
     .letterbox-entry button {

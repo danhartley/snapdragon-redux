@@ -99,7 +99,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
             }
             
             if(collection.isLessonComplete) {
-                continueLearningActionBtn.innerHTML = 'End lesson (delete data) | Pick new lesson';
+                continueLearningActionBtn.innerHTML = 'End lesson (delete data) | Choose a new lesson';
             }
 
             continueLearningActionBtn.addEventListener('click', event => {

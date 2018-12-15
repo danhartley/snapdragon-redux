@@ -70,27 +70,33 @@ hr {
   height: 2.5rem;
 }
 
+.btn {
+  letter-spacing: .02rem;
+}
+
 .btn.btn-light, .btn.btn-light:focus {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-collection) !important;
 }
 
 .btn-collection {
-  background-color: var(--snap-collection);
+  background-color: var(--snap-collection);  
 }
 
-.btn.btn-non-taxa {
-  background-color: rgb(165, 159, 131);
-  width: 15rem;
-}
-
-.non-taxa .dropdown-menu {
-  width: 15rem !important;
+.btn-language {
+  color: var(--snap-text-dark);
+  background-color: var(--snap-language);
 }
 
 .btn-lesson {
   background-color: var(--snap-lesson);
 }
+
+.btn.btn-non-taxa {
+  width: 15rem;
+  background-color: var(--snap-non-taxa);
+}
+
 
 .icon::before, .icon::after {
   display: inline-block;
@@ -141,13 +147,32 @@ hr {
 .dropdown-menu {
   margin: .15rem 0 0 0;
   padding: 0;
-  background-color: var(--snap-dropdown-bg);
+  color: var(--snap-text-dark);
+  background-color: var(--snap-dd-collection-bg-intial);
+  border: 1px solid var(--snap-border-dark);
 }
 
-.dropdown-item.active {
+.languages .dropdown-menu {
+  background-color: var(--snap-dd-language-bg-intial);
+}
+
+.non-taxa .dropdown-menu {
+  width: 15rem !important;
+  background-color: var(--snap-dd-non-taxa-bg-intial);
+}
+
+a.dropdown-item.active {
   color: var(--snap-text-medium-dark);
-  background-color: var(--snap-dropdown-hover);
+  background-color: var(--snap-dd-collection-bg-active);
   cursor: default;
+}
+
+.languages a.dropdown-item.active {
+  background-color: var(--snap-dd-language-bg-active);
+}
+
+.non-taxa a.dropdown-item.active {
+  background-color: var(--snap-dd-non-taxa-bg-active);
 }
 
 a.dropdown-item {
@@ -158,15 +183,17 @@ a.dropdown-item {
 }
 
 a.dropdown-item:hover {
-  background-color: var(--snap-dropdown-hover);
+  color: var(--snap-dd-collection-bg-intial);
+  background-color: var(--snap-dd-collection-bg-hover);
 }
 
-.btn-language {
-  color:rgb(68, 68, 68);
-  background-color: var(--snap-language);
-  border-color: var(--snap-language);
+.languages a.dropdown-item:hover {
+  background-color: var(--snap-dd-language-bg-hover);
 }
 
+.non-taxa a.dropdown-item:hover {
+  background-color: var(--snap-dd-non-taxa-bg-hover);
+}
 
 /* generic */
 
@@ -206,12 +233,13 @@ a.dropdown-item:hover {
 
 .lessons-list > div:nth-child(1) {
   height: 2.5rem;
-  background-color: rgba(79, 106, 135,.8);
+  background-color: var(--snap-collection);
   display: flex;
   align-items: center;
   color: white;
   width: 100%;
   border-radius: .25rem .25rem 0 0;
+  letter-spacing: .02rem;
 }
 
 .lessons-list > div:nth-child(1) > div {    
@@ -758,10 +786,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   width: 50%;
 }
 
-.dropdown-menu {
-  border: 1px solid var(--snap-border-dark);
-}
-
 .species-count span {
   font-size: 1.2rem;
 }
@@ -1100,8 +1124,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .table-header, .table-footer {
   color: var(--snap-text-light);
-  background-color: var(--snap-list-header);
-  background-color: rgb(127, 151, 122);
+  background-color: var(--snap-list-bg);
   line-height: 2.5;
   cursor: pointer;
   display: flex;
@@ -1111,6 +1134,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   position: sticky;  
   z-index: 10;
   border-radius: .25rem .25rem 0 0;
+  letter-spacing: .02rem;
 }
 
 .table-header {
@@ -1304,7 +1328,7 @@ table {
 }
 
 .species-table td {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--snap-list-bg);
 }
 
 .species-table td .portrait input {

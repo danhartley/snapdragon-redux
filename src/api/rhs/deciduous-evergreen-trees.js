@@ -345,184 +345,184 @@ export const deciduousAndEvergreenTrees = [
           "rightsHolder": "Year: 2016.",
           "source": "http://www.boldsystems.org/index.php/Taxbrowser_Taxonpage?taxid=292027",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/74/b0/75/539.BBYUK_CCDB-23321-E10_1457296884_JPG.jpg",
-          "thumb": "https://content.eol.org/data/media/74/b0/75/539.BBYUK_CCDB-23321-E10_1457296884_JPG.98x68.jpg"
+          "url": "74/b0/75/539.BBYUK_CCDB-23321-E10_1457296884_JPG.jpg",
+          "thumb": "74/b0/75/539.BBYUK_CCDB-23321-E10_1457296884_JPG.98x68.jpg"
         },
         {
           "title": "Vogelbeeren 2010.JPG",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Vogelbeeren_2010.JPG",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/55/71/bc/509.11114957.jpg",
-          "thumb": "https://content.eol.org/data/media/55/71/bc/509.11114957.98x68.jpg"
+          "url": "55/71/bc/509.11114957.jpg",
+          "thumb": "55/71/bc/509.11114957.98x68.jpg"
         },
         {
           "title": " 2010.JPG",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_2010.JPG",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/55/71/be/509.11114973.jpg",
-          "thumb": "https://content.eol.org/data/media/55/71/be/509.11114973.98x68.jpg"
+          "url": "55/71/be/509.11114973.jpg",
+          "thumb": "55/71/be/509.11114973.98x68.jpg"
         },
         {
           "title": " in Donetsk 2.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_in_Donetsk_2.jpg",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/55/72/d4/509.11131466.jpg",
-          "thumb": "https://content.eol.org/data/media/55/72/d4/509.11131466.98x68.jpg"
+          "url": "55/72/d4/509.11131466.jpg",
+          "thumb": "55/72/d4/509.11131466.98x68.jpg"
         },
         {
           "title": " in Donetsk 3.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_in_Donetsk_3.jpg",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/55/72/d5/509.11131468.jpg",
-          "thumb": "https://content.eol.org/data/media/55/72/d5/509.11131468.98x68.jpg"
+          "url": "55/72/d5/509.11131468.jpg",
+          "thumb": "55/72/d5/509.11131468.98x68.jpg"
         },
         {
           "title": " in Donetsk 1.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_in_Donetsk_1.jpg",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/55/72/d6/509.11131470.jpg",
-          "thumb": "https://content.eol.org/data/media/55/72/d6/509.11131470.98x68.jpg"
+          "url": "55/72/d6/509.11131470.jpg",
+          "thumb": "55/72/d6/509.11131470.98x68.jpg"
         },
         {
           "title": " 2009-11-22 DehesaBoyaldePuertollano.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_2009-11-22_DehesaBoyaldePuertollano.jpg",
           "license": "http://creativecommons.org/licenses/publicdomain/",
-          "url": "https://content.eol.org/data/media/55/78/79/509.11214994.jpg",
-          "thumb": "https://content.eol.org/data/media/55/78/79/509.11214994.98x68.jpg"
+          "url": "55/78/79/509.11214994.jpg",
+          "thumb": "55/78/79/509.11214994.98x68.jpg"
         },
         {
           "title": "Pihlaja.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Pihlaja.jpg",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/55/99/83/509.1181497.jpg",
-          "thumb": "https://content.eol.org/data/media/55/99/83/509.1181497.98x68.jpg"
+          "url": "55/99/83/509.1181497.jpg",
+          "thumb": "55/99/83/509.1181497.98x68.jpg"
         },
         {
           "title": " Wilde lijsterbes bloeiwijze.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_Wilde_lijsterbes_bloeiwijze.jpg",
           "license": "http://creativecommons.org/licenses/publicdomain/",
-          "url": "https://content.eol.org/data/media/55/e3/dd/509.129710.jpg",
-          "thumb": "https://content.eol.org/data/media/55/e3/dd/509.129710.98x68.jpg"
+          "url": "55/e3/dd/509.129710.jpg",
+          "thumb": "55/e3/dd/509.129710.98x68.jpg"
         },
         {
           "title": "Criafol - Rowanberries - geograph.org.uk - 519130.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Criafol_-_Rowanberries_-_geograph.org.uk_-_519130.jpg",
           "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-          "url": "https://content.eol.org/data/media/55/e5/ed/509.13037452.jpg",
-          "thumb": "https://content.eol.org/data/media/55/e5/ed/509.13037452.98x68.jpg"
+          "url": "55/e5/ed/509.13037452.jpg",
+          "thumb": "55/e5/ed/509.13037452.98x68.jpg"
         },
         {
           "title": "Rowan Tree - geograph.org.uk - 946500.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Rowan_Tree_-_geograph.org.uk_-_946500.jpg",
           "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-          "url": "https://content.eol.org/data/media/55/fb/19/509.13639705.jpg",
-          "thumb": "https://content.eol.org/data/media/55/fb/19/509.13639705.98x68.jpg"
+          "url": "55/fb/19/509.13639705.jpg",
+          "thumb": "55/fb/19/509.13639705.98x68.jpg"
         },
         {
           "title": "Rowan tree - geograph.org.uk - 1006469.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Rowan_tree_-_geograph.org.uk_-_1006469.jpg",
           "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-          "url": "https://content.eol.org/data/media/55/fc/d0/509.13705461.jpg",
-          "thumb": "https://content.eol.org/data/media/55/fc/d0/509.13705461.98x68.jpg"
+          "url": "55/fc/d0/509.13705461.jpg",
+          "thumb": "55/fc/d0/509.13705461.98x68.jpg"
         },
         {
           "title": "Vosges du Nord - Sorbier en fleurs.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Vosges_du_Nord_-_Sorbier_en_fleurs.jpg",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/56/2b/c7/509.14929504.jpg",
-          "thumb": "https://content.eol.org/data/media/56/2b/c7/509.14929504.98x68.jpg"
+          "url": "56/2b/c7/509.14929504.jpg",
+          "thumb": "56/2b/c7/509.14929504.98x68.jpg"
         },
         {
           "title": " no.JPG",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_no.JPG",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/56/44/89/509.15327195.jpg",
-          "thumb": "https://content.eol.org/data/media/56/44/89/509.15327195.98x68.jpg"
+          "url": "56/44/89/509.15327195.jpg",
+          "thumb": "56/44/89/509.15327195.98x68.jpg"
         },
         {
           "title": "Liblarer See Fruchtstand der Vogelbeere oder Eberesche.JPG",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Liblarer_See_Fruchtstand_der_Vogelbeere_oder_Eberesche.JPG",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/56/6c/48/509.15978381.jpg",
-          "thumb": "https://content.eol.org/data/media/56/6c/48/509.15978381.98x68.jpg"
+          "url": "56/6c/48/509.15978381.jpg",
+          "thumb": "56/6c/48/509.15978381.98x68.jpg"
         },
         {
           "title": "1  12 - 2011.07.20.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:1_Sorbus_aucuparia_12_-_2011.07.20.jpg",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/56/6d/5d/509.15993343.jpg",
-          "thumb": "https://content.eol.org/data/media/56/6d/5d/509.15993343.98x68.jpg"
+          "url": "56/6d/5d/509.15993343.jpg",
+          "thumb": "56/6d/5d/509.15993343.98x68.jpg"
         },
         {
           "title": "File:1 nÃ¶vÃ©ny 29 - 2011.07.20.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:1_n%C3%B6v%C3%A9ny_29_-_2011.07.20.jpg",
           "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-          "url": "https://content.eol.org/data/media/56/6d/6b/509.15993526.jpg",
-          "thumb": "https://content.eol.org/data/media/56/6d/6b/509.15993526.98x68.jpg"
+          "url": "56/6d/6b/509.15993526.jpg",
+          "thumb": "56/6d/6b/509.15993526.98x68.jpg"
         },
         {
           "title": " (fruits).jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_(fruits).jpg",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/56/80/83/509.16305711.jpg",
-          "thumb": "https://content.eol.org/data/media/56/80/83/509.16305711.98x68.jpg"
+          "url": "56/80/83/509.16305711.jpg",
+          "thumb": "56/80/83/509.16305711.98x68.jpg"
         },
         {
           "title": "Arbre avc fruits.JPG",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Arbre_avc_fruits.JPG",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/56/c6/08/509.17697190.jpg",
-          "thumb": "https://content.eol.org/data/media/56/c6/08/509.17697190.98x68.jpg"
+          "url": "56/c6/08/509.17697190.jpg",
+          "thumb": "56/c6/08/509.17697190.98x68.jpg"
         },
         {
           "title": "20120815Eberesche Hockenheim3.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:20120815Eberesche_Hockenheim3.jpg",
           "license": "http://creativecommons.org/licenses/publicdomain/",
-          "url": "https://content.eol.org/data/media/57/71/6f/509.20684694.jpg",
-          "thumb": "https://content.eol.org/data/media/57/71/6f/509.20684694.98x68.jpg"
+          "url": "57/71/6f/509.20684694.jpg",
+          "thumb": "57/71/6f/509.20684694.98x68.jpg"
         },
         {
           "title": " (8337815870).jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_(8337815870).jpg",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/58/6d/55/509.25210822.jpg",
-          "thumb": "https://content.eol.org/data/media/58/6d/55/509.25210822.98x68.jpg"
+          "url": "58/6d/55/509.25210822.jpg",
+          "thumb": "58/6d/55/509.25210822.98x68.jpg"
         },
         {
           "title": " kpjas 19082005 3.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_kpjas_19082005_3.jpg",
           "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-          "url": "https://content.eol.org/data/media/59/0d/22/509.281892.jpg",
-          "thumb": "https://content.eol.org/data/media/59/0d/22/509.281892.98x68.jpg"
+          "url": "59/0d/22/509.281892.jpg",
+          "thumb": "59/0d/22/509.281892.98x68.jpg"
         },
         {
           "title": " kpjas 19082005 4.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Sorbus_aucuparia_kpjas_19082005_4.jpg",
           "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-          "url": "https://content.eol.org/data/media/59/0d/23/509.281894.jpg",
-          "thumb": "https://content.eol.org/data/media/59/0d/23/509.281894.98x68.jpg"
+          "url": "59/0d/23/509.281894.jpg",
+          "thumb": "59/0d/23/509.281894.98x68.jpg"
         }
       ],
       "names": [
@@ -1952,27 +1952,46 @@ export const deciduousAndEvergreenTrees = [
       "eolName": "Prunus subhirtella Miq."
     },
     {
-      "id": 631720,
+      "id": 301112,
       "name": "Prunus cerasifera",
       "images": [
-        "2012/05/23/23/43484_orig.jpg",
-        "2012/12/05/18/31439_orig.jpg",
-        "2015/01/08/05/85561_orig.jpg",
-        "2012/12/05/11/53630_orig.jpg",
-        "2012/12/05/11/23798_orig.jpg",
-        "2012/12/05/11/12245_orig.jpg",
-        "2012/12/05/11/79798_orig.jpg",
-        "2012/12/05/11/04971_orig.jpg",
-        "2012/05/23/23/92003_orig.jpg",
-        "2012/05/23/23/66464_orig.jpg",
-        "2012/05/23/23/13089_orig.jpg",
-        "2012/05/23/23/45599_orig.jpg",
-        "2012/05/23/23/11428_orig.jpg",
-        "2012/12/05/18/39707_orig.jpg",
-        "2012/12/05/18/72166_orig.jpg",
-        "2012/01/21/16/39390_orig.jpg",
-        "2011/10/06/08/15571_orig.jpg",
-        "2011/10/06/08/92610_orig.jpg"
+        {
+          "title": "Prunus cerasifera",
+          "rightsHolder": "Jrg Hempel",
+          "source": "https://www.flickr.com/photos/joerghempel/17202950412/",
+          "license": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "url": "7e/c3/1d/542.17202950412.jpg",
+          "thumb": "7e/c3/1d/542.17202950412.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/32023375@N06'>Jrg Hempel</a>",
+            "homepage": "http://www.flickr.com/photos/32023375@N06",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Kriechen 9646.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Kriechen_9646.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/79/78/509.16171508.jpg",
+          "thumb": "56/79/78/509.16171508.98x68.jpg"
+        },
+        {
+          "title": "20140302Prunus cerasifera Hockenheim1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20140302Prunus_cerasifera_Hockenheim1.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "59/8f/e1/509.31432268.jpg",
+          "thumb": "59/8f/e1/509.31432268.98x68.jpg"
+        },
+        {
+          "title": "Wildpflaume Althof-3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Wildpflaume_Althof-3.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5d/e3/04/509.27452847.jpg",
+          "thumb": "5d/e3/04/509.27452847.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -3641,20 +3660,99 @@ export const deciduousAndEvergreenTrees = [
       "id": 487035,
       "name": "Ligustrum lucidum",
       "images": [
-        "2012/02/21/00/74551_orig.jpg",
-        "2009/07/24/02/45623_orig.jpg",
-        "2013/01/01/06/44641_orig.jpg",
-        "2012/10/14/11/31008_orig.jpg",
-        "2012/06/06/15/92906_orig.jpg",
-        "2012/06/06/15/98419_orig.jpg",
-        "2012/06/06/15/99459_orig.jpg",
-        "2012/06/06/15/95531_orig.jpg",
-        "2016/08/01/05/72703_orig.jpg",
-        "2016/08/01/21/23686_orig.jpg",
-        "2016/08/05/10/07423_orig.jpg",
-        "2016/08/05/04/11196_orig.jpg",
-        "2016/08/04/10/37680_orig.jpg",
-        "2015/03/14/14/95133_orig.jpg"
+        {
+          "title": "Broad-leaf privet in fruit",
+          "rightsHolder": "John Tann",
+          "source": "https://www.flickr.com/photos/31031835@N08/3438117006/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "7f/84/3f/542.3438117006.jpg",
+          "thumb": "7f/84/3f/542.3438117006.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/31031835@N08'>John Tann</a>",
+            "homepage": "http://www.flickr.com/photos/31031835@N08",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Ligustrum lucidum EnfoqueFrutos 2010-11-05 ParqueGassetCiudadReal.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Ligustrum_lucidum_EnfoqueFrutos_2010-11-05_ParqueGassetCiudadReal.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/a2/00/509.11995957.jpg",
+          "thumb": "55/a2/00/509.11995957.98x68.jpg"
+        },
+        {
+          "title": "LigustrumLucidumFlowers.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:LigustrumLucidumFlowers.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/f0/8a/509.183988.jpg",
+          "thumb": "56/f0/8a/509.183988.98x68.jpg"
+        },
+        {
+          "title": "LigustrumLucidumBerries2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:LigustrumLucidumBerries2.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5a/5a/83/509.107412.jpg",
+          "thumb": "5a/5a/83/509.107412.98x68.jpg"
+        },
+        {
+          "title": "LigustrumLucidumFlowers.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:LigustrumLucidumFlowers.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5b/f1/ca/509.183988.jpg",
+          "thumb": "5b/f1/ca/509.183988.98x68.jpg"
+        },
+        {
+          "title": "Oleaceae - Ligustrum lucidum (8304697144).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Oleaceae_-_Ligustrum_lucidum_(8304697144).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5d/76/6c/509.25294489.jpg",
+          "thumb": "5d/76/6c/509.25294489.98x68.jpg"
+        },
+        {
+          "title": "Broad-leaf privet fruit (3392199506).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Broad-leaf_privet_fruit_(3392199506).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/e0/e1/509.38234263.jpg",
+          "thumb": "5f/e0/e1/509.38234263.98x68.jpg"
+        },
+        {
+          "title": "Broad-leaf privet (3159687960).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Broad-leaf_privet_(3159687960).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/e1/7e/509.38234753.jpg",
+          "thumb": "5f/e1/7e/509.38234753.98x68.jpg"
+        },
+        {
+          "title": "Ligustrum Floracion 2012-6-21 DehesaBoyaldePuertollano.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Ligustrum_Floracion_2012-6-21_DehesaBoyaldePuertollano.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "60/4f/ff/509.40342029.jpg",
+          "thumb": "60/4f/ff/509.40342029.98x68.jpg"
+        },
+        {
+          "title": "Ligustrum lucidum4.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Ligustrum_lucidum4.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "61/42/8a/509.4343692.jpg",
+          "thumb": "61/42/8a/509.4343692.98x68.jpg"
+        },
+        {
+          "title": "Flowers of Ligustrum lucidum 20160306.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Flowers_of_Ligustrum_lucidum_20160306.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "65/9d/6b/509.60723676.jpg",
+          "thumb": "65/9d/6b/509.60723676.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -7498,17 +7596,114 @@ export const deciduousAndEvergreenTrees = [
       "id": 684065,
       "name": "Acacia dealbata",
       "images": [
-        "2012/02/03/03/75414_orig.jpg",
-        "2013/03/03/12/57587_orig.jpg",
-        "2011/12/27/01/96812_orig.jpg",
-        "2015/04/29/21/59440_orig.jpg",
-        "2015/04/30/09/03089_orig.jpg",
-        "2015/04/29/21/67435_orig.jpg",
-        "2011/10/10/10/10456_orig.jpg",
-        "2011/10/10/10/69825_orig.jpg",
-        "2012/01/29/14/17947_orig.jpg",
-        "2016/08/05/22/67338_orig.jpg",
-        "2014/05/28/11/40282_orig.jpg"
+        {
+          "title": "Acacia dealbata",
+          "rightsHolder": "Donald Hobern",
+          "source": "https://www.flickr.com/photos/dhobern/5365020757/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/42/74/542.5365020757.jpg",
+          "thumb": "80/42/74/542.5365020757.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/25401497@N02'>Donald Hobern</a>",
+            "homepage": "http://www.flickr.com/photos/25401497@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Silver Wattle flower",
+          "rightsHolder": "John Tann",
+          "source": "https://www.flickr.com/photos/31031835@N08/6280768389/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/95/62/542.6280768389.jpg",
+          "thumb": "80/95/62/542.6280768389.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/31031835@N08'>John Tann</a>",
+            "homepage": "http://www.flickr.com/photos/31031835@N08",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Silver Wattle leaves",
+          "rightsHolder": "John Tann",
+          "source": "https://www.flickr.com/photos/31031835@N08/6280794815/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/95/64/542.6280794815.jpg",
+          "thumb": "80/95/64/542.6280794815.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/31031835@N08'>John Tann</a>",
+            "homepage": "http://www.flickr.com/photos/31031835@N08",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Silver Wattle flower",
+          "rightsHolder": "John Tann",
+          "source": "https://www.flickr.com/photos/31031835@N08/6281277698/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/95/6e/542.6281277698.jpg",
+          "thumb": "80/95/6e/542.6281277698.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/31031835@N08'>John Tann</a>",
+            "homepage": "http://www.flickr.com/photos/31031835@N08",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Acacia dealbata Habitus 2010-3-21 SierraMadrona.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acacia_dealbata_Habitus_2010-3-21_SierraMadrona.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/71/c0/509.11115014.jpg",
+          "thumb": "55/71/c0/509.11115014.98x68.jpg"
+        },
+        {
+          "title": "Acacia dealbata-1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acacia_dealbata-1.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5b/d1/63/509.1789982.jpg",
+          "thumb": "5b/d1/63/509.1789982.98x68.jpg"
+        },
+        {
+          "title": "Acacia mimosa - Madeira - IMG 0306.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acacia_mimosa_-_Madeira_-_IMG_0306.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5d/c2/ff/509.26763582.jpg",
+          "thumb": "5d/c2/ff/509.26763582.98x68.jpg"
+        },
+        {
+          "title": "Acacia dealbata NRM.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acacia_dealbata_NRM.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/c3/09/509.3791950.jpg",
+          "thumb": "5f/c3/09/509.3791950.98x68.jpg"
+        },
+        {
+          "title": "Acacia dealbata fruto.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acacia_dealbata_fruto.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "64/13/fb/509.51636.jpg",
+          "thumb": "64/13/fb/509.51636.98x68.jpg"
+        },
+        {
+          "title": "File:Acacia dealbata (37128586083).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acacia_dealbata_(37128586083).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "66/d5/a2/509.63744729.jpg",
+          "thumb": "66/d5/a2/509.63744729.98x68.jpg"
+        },
+        {
+          "title": "File:Acacia dealbata (37540484220).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Acacia_dealbata_(37540484220).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "66/d5/a3/509.63744730.jpg",
+          "thumb": "66/d5/a3/509.63744730.98x68.jpg"
+        }
       ],
       "names": [
         {

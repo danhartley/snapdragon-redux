@@ -6,7 +6,6 @@ import { insects } from 'api/snapdragon/insects';
 import { birds } from 'api/snapdragon/common-city-birds';
 import { mushrooms } from 'api/snapdragon/mushrooms';
 import { weeds } from 'api/rhs/weeds';
-// import { weeds1 } from 'api/rhs/weeds1';
 import { lichen } from 'api/snapdragon/lichen';
 
 import { leaf } from 'api/leaf';
@@ -19,7 +18,6 @@ export const collections = [
         type: 'species',
         name: 'Kitchen Garden',
         items: [ ...plants ],
-        // items: [ ...herbsAndSpices, ...vegetables, ...fruit, ...insects ],
         eol_name: 'Herbs and Spices, Vegetables, Fruits, Insects',
         eol_link: ''        
     },
