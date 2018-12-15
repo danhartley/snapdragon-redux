@@ -5,7 +5,7 @@
   }
 
   .grid {        
-    grid-template-columns: .5em 10fr .5em 10fr .5em;  
+    grid-template-columns: .5rem 10fr .5rem 10fr .5rem;  
   }
 
   .left-grid {
@@ -17,7 +17,7 @@
   }
 
   .species-table {
-    font-size: 1em;
+    font-size: 1rem;
   }
 
   .flex.wiki {
@@ -25,10 +25,10 @@
   }
 
   .block {
-    margin: .1em;
-    padding: .1em .2em;
-    letter-spacing: .1em;
-    border-radius: .2em;
-    font-size: 1.8em;
+    margin: .1rem;
+    padding: .1rem .2rem;
+    letter-spacing: .1rem;
+    border-radius: .2rem;
+    font-size: 1.8rem;
   }
 }

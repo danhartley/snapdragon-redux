@@ -1,7 +1,18 @@
 :root {
 
-    --snap-dropdown-bg: rgb(233, 236, 239);
-    --snap-dropdown-hover: rgb(248, 249, 250);
+    --snap-dd-collection-bg-intial: rgb(166, 183, 197);
+    --snap-dd-collection-bg-hover: rgb(198, 206, 217);
+    --snap-dd-collection-bg-active: rgb(198, 206, 217);
+
+    --snap-dd-language-bg-intial: rgb(223, 236, 243);
+    --snap-dd-language-bg-hover: rgb(218, 230, 237);
+    --snap-dd-language-bg-active: rgb(218, 230, 237);
+    
+    --snap-dd-non-taxa-bg-intial: rgb(197, 193, 175);
+    --snap-dd-non-taxa-bg-hover: rgb(229, 227, 220);
+    --snap-dd-non-taxa-bg-active: rgb(229, 227, 220);
+
+    --snap-list-bg:rgb(127, 151, 122);
 
     --snap-text-dark: rgb(45,45,45);
     --snap-text-medium-dark: rgb(52, 58, 64);
@@ -11,8 +22,10 @@
     --snap-green-feature-txt: rgb(16, 66, 28);
     
     --snap-primary: rgba(52, 105, 23, .3);
-    --snap-collection: rgba(79, 106, 135,.9);
+    
+    --snap-collection: rgb(94, 119, 143);
     --snap-collection-active: rgba(95, 125, 89,1);
+    --snap-non-taxa: rgb(165, 159, 131);
     
     --snap-language: rgb(186, 214, 229);
 

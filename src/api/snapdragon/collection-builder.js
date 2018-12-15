@@ -165,8 +165,7 @@ const getImages = obj => {
         console.log('No images!');
     };
     species.images.forEach((image, index) => {
-        images = images + `<div><img id="${index}" width="98" height="68px" style="cursor:pointer; object-fit: cover;" src="${image.thumb}"/></div>`
-        // images = images + `<div><img id="${index}" width="300px" height="300px" style="cursor:pointer; object-fit: cover;" src="${image.url}"/></div>`
+        images = images + `<div><img id="${index}" width="260px" height="190px" style="cursor:pointer; object-fit: cover;" src="${image.url.replace('.jpg', '.260x190.jpg')}"/></div>`
     });
     document.querySelector('#images').innerHTML = images;  
     document.querySelectorAll('img').forEach(image => {
