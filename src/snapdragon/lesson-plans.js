@@ -614,7 +614,7 @@ const portraitLesson3 = {
             description: 'Species recognition',
             layouts: [ 
                 speciesRevision,   
-                nonTaxonRevision,                              
+                // nonTaxonRevision,                              
                 multiSpecimenCommonMatch,
                 mixedSpeciesMatch
             ],
@@ -703,7 +703,7 @@ lichenLessonPortrait.levels[0] = {
     name:'Level 1',
     description: 'Species recognition',
     layouts: [ 
-        nonTaxonRevision,                              
+        // nonTaxonRevision,                              
         speciesRevision,
         multiSpecimenCommonMatch,
         mixedSpeciesMatch
