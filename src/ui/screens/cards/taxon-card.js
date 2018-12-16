@@ -8,7 +8,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { taxa } from 'api/snapdragon/taxa';
 import taxonTemplate from 'ui/screens/cards/taxon-template.html';
 
-export const renderTaxonCard = collection => {
+export const renderTaxonCard = (collection, isModalMode = false, parent = DOM.rightBody, family) => {
   
     const item = collection.nextItem;
     const { lessonPlan, config } = store.getState();
@@ -19,10 +19,10 @@ export const renderTaxonCard = collection => {
     
     const clone = document.importNode(template.content, true);
 
-    const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    const taxon = taxa.find(f => f.name === item.family);
+    const itemFamily = family || item.family;
+    const taxon = taxa.find(f => f.name === itemFamily);
     
     const context = {
         rank: 'family',
@@ -49,12 +49,17 @@ export const renderTaxonCard = collection => {
         continueBtn.disabled = false;            
     }, 500);
 
-    continueBtn.addEventListener('click', event => {
-        actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
-    });
-
     renderTemplate(context, template.content, parent, clone);
 
+    if(isModalMode) {
+        continueBtn.classList.add('hide-important');
+        document.querySelector('.js-external-links').classList.add('hide');
+    } else {
+        continueBtn.addEventListener('click', event => {
+            actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
+        });
+    }
+    
     // if(taxon.toxic) {
     //     document.querySelector('.js-taxon-toxic-warning').innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
     // }

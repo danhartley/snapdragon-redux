@@ -27,16 +27,12 @@
                                 <span data-toggle="modal" data-name="{{ item.name }}" data-target="#speciesCardModal" class="underline-link">{{ item.vernacularName }}</span>
                             </span>
                             <span class="latin-name">{{ item.binomial }}</span>
-                            <span class="capitalise js-vernacular-name"  data-key-trait="{{ item.keyTrait }}">{{ item.keyTrait }}</span>
                         </td>
                         <td>
-                            <span>{{ item.family }}</span>
+                            <span data-toggle="modal" data-url="{{ item.url }}" data-key-trait="{{ item.family }}" data-target="#speciesCardModal" class="capitalise underline-link js-family-link" data-family="{{ item.family }}">{{ item.family }}</span>
                         </td>
                         <td>
-                            <span>{{ item.passes }}</span>
-                        </td>
-                        <td>
-                            <span>{{ item.fails }}</span>
+                            <span data-toggle="modal" data-url="{{ item.url }}" data-key-trait="{{ item.keyTrait }}" data-target="#speciesCardModal" class="{{ item.linkClass }}" data-key-trait="{{ item.keyTrait }}">{{ item.keyTrait }}</span>
                         </td>
                         <td>
                             <div class="custom-control custom-checkbox">

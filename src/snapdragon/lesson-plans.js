@@ -394,7 +394,7 @@ const landscapeLesson1 = {
             name:'Level 1',
             description: 'Species recognition',
             layouts: [ 
-                speciesRevision,                        
+                // speciesRevision,                        
                 multiSpecimenCommonMatch,
                 mixedSpeciesMatch
             ],
@@ -478,7 +478,7 @@ const landscapeLesson3 = {
             name:'Level 1',
             description: 'Species recognition',
             layouts: [ 
-                speciesRevision,                        
+                // speciesRevision,                        
                 multiSpecimenCommonMatch,
                 mixedSpeciesMatch
             ],

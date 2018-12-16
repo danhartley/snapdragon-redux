@@ -4,10 +4,12 @@ import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
 import { renderCard } from 'ui/screens/cards/card';
+import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
+import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { modalImageHandler } from 'ui/helpers/image-handlers';
 import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { getTraits } from 'api/traits/traits';
-import { buildTable } from 'ui/screens/lists/species-list-table';
+import { buildTable } from 'ui/screens/lists/species-table-no-scores';
 import { itemHandler, extendCollection } from 'ui/helpers/item-handler';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
@@ -81,11 +83,26 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
         setTimeout(() => {
             const speciesCardLinks = document.querySelectorAll('.js-species-card-link span');
+            const parent = document.querySelector('#speciesCardModal .js-modal-body');
             speciesCardLinks.forEach(link => {
                 link.addEventListener('click', event => {
                     const name = event.target.dataset.name;
-                    const parent = document.querySelector('#speciesCardModal .js-modal-body');
                     renderCard(collection, true, collection.items.find(i => i.name === name), parent);
+                });
+            });
+            const traitCardLinks = document.querySelectorAll('.js-key-trait-link');
+            traitCardLinks.forEach(link => {
+                link.addEventListener('click', event => {
+                    const keyTrait = event.target.dataset.keyTrait;
+                    const imageUrl = event.target.dataset.url;              
+                    renderNonTaxonCard(collection, true, parent, keyTrait, imageUrl);
+                });
+            });
+            const familyCardLinks = document.querySelectorAll('.js-family-link');
+            familyCardLinks.forEach(link => {
+                link.addEventListener('click', event => {
+                    const family = event.target.dataset.family;
+                    renderTaxonCard(collection, true, parent, family);
                 });
             });
         }, 1000);
@@ -131,16 +148,16 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     const traits = getTraits(enums);
 
     if(readOnlyMode) {
-        buildTable(collection, config, traits);
+        buildTable(collection, config, traits, enums);
         doEveryThingElse();
     }
     else {        
-        function callback(collection, config, traits) {
+        function callback(collection, config, traits, enums) {
             return function () {
-                buildTable(collection, config, traits);
+                buildTable(collection, config, traits, enums);
                 doEveryThingElse();
             }
         }
-        itemHandler(collection, config, counter, callback(collection, config, traits));
+        itemHandler(collection, config, counter, callback(collection, config, traits, enums));
     }
 };

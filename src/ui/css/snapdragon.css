@@ -13,6 +13,10 @@ body {
   color: var(--snap-text-dark);
 }
 
+tbody {
+  font-size: .9rem;
+}
+
 h1 {
   font-size: 2rem;
 }
@@ -95,6 +99,7 @@ hr {
 .btn.btn-non-taxa {
   width: 15rem;
   background-color: var(--snap-non-taxa);
+  float: left;
 }
 
 
@@ -327,7 +332,7 @@ a.dropdown-item:hover {
   margin: .5rem 0 .5rem 0;
 }
 
-.species.revision.card img{
+.species.revision.card img, .non-taxon.revision.card img{
   height: 88px;
   width:88px;
 }
@@ -803,6 +808,10 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   cursor: pointer;
 }
 
+.dropdown {
+  position: initial;
+}
+
 .dropdown div {
   white-space: nowrap;
 }
@@ -952,8 +961,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 #speciesCardModal .modal-header {
   display: none;
-  /* height: 2rem;
-  padding: .5rem; */
 }
 
 #speciesCardModal .modal-content {
@@ -966,7 +973,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   padding: 0;
 }
 
-#speciesCardModal .modal-content .snapdragon-container .species.revision.card {
+#speciesCardModal .card {
   margin: 0;
 }
 
