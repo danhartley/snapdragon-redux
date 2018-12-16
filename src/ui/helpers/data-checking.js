@@ -4,7 +4,7 @@ import { utils } from 'utils/utils';
 import { epithets } from 'api/botanical-latin';
 import { taxa } from '../../api/snapdragon/taxa';
 
-const getVernacularName = (item, config, useShortForm = false) => {
+const getVernacularName = (item, config, useShortForm = false, namePart = 'vernacularName') => {
     let shortForm;
     if(useShortForm) {
         let englishShortForm = item.names.find(name => name.language === 'en' && name.shortForm);
@@ -13,11 +13,11 @@ const getVernacularName = (item, config, useShortForm = false) => {
         languageSortForm = languageSortForm ? languageSortForm.shortForm : undefined;
         shortForm = languageSortForm || englishShortForm;
     }
-    if(shortForm) return shortForm;
+    if(shortForm) return shortForm;    
     const englishNames = item.names.filter(name => name.language === 'en');
-    const english = englishNames.length > 0 ? englishNames[0].vernacularName : 'Unknown';
+    const english = englishNames.length > 0 ? englishNames[0][namePart] : 'Unknown';
     const names = item.names.filter(name => name.language === config.language);
-    const name = names.length > 0 ? names[0].vernacularName : english;
+    const name = names.length > 0 ? names[0][namePart] : english;
     return utils.capitaliseFirst(name);
 };
 
