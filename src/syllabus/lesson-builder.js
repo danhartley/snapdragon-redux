@@ -3,6 +3,25 @@ import * as R from 'ramda';
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 
+const addRevisonLayouts = (revisionLayouts, itemsCountToDate, layoutsToAdd, groupFamilies, lessonLayouts, collection, families) => {
+
+    revisionLayouts.forEach( (layout, i) => {
+        const layoutItemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
+        if(groupFamilies.find(f => f.index === layoutItemIndex)) {
+            layout.itemIndex = layoutItemIndex;
+            const arrayIndex = lessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
+            lessonLayouts.splice(arrayIndex, 0, layout);
+            const family = collection.items.find((item, index) => index === layoutItemIndex).family;
+            if(!R.contains(family, families)) { 
+                families.push(family);
+            }
+            const familyName = groupFamilies.find(f => f.index === layoutItemIndex).family;
+            groupFamilies = groupFamilies.filter(f => f.family !== familyName);
+        }
+    });
+
+};
+
 export const createLesson = (lessonPlan, layouts, progressScreens, collection, wildcardLayouts) => {
 
     lessonPlan.layouts = [];
@@ -38,20 +57,7 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, w
 
     let groupFamilies = R.clone(collection.itemGroupFamilies);
 
-    revisionLayouts.forEach( (layout, i) => {
-        const layoutItemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
-        if(groupFamilies.find(f => f.index === layoutItemIndex)) {
-            layout.itemIndex = layoutItemIndex;
-            const arrayIndex = lessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
-            lessonLayouts.splice(arrayIndex, 0, layout);
-            const family = collection.items.find((item, index) => index === layoutItemIndex).family;
-            if(!R.contains(family, families)) {
-                families.push(family);
-            }
-            const familyName = groupFamilies.find(f => f.index === layoutItemIndex).family;
-            groupFamilies = groupFamilies.filter(f => f.family !== familyName);
-        }
-    });
+    addRevisonLayouts(revisionLayouts, itemsCountToDate, layoutsToAdd, groupFamilies, lessonLayouts, collection, families);
 
     let hasGlossary = false;
     const glossary = lessonPlan.layouts.find(layout => layout.name === 'screen-definition-card');

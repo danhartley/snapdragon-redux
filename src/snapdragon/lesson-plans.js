@@ -688,8 +688,8 @@ lichenLessonLandscape.levels[0] = {
     name:'Level 1',
     description: 'Species recognition',
     layouts: [ 
-        nonTaxonRevision,                              
-        speciesRevision,
+        // nonTaxonRevision,                              
+        // speciesRevision,
         multiSpecimenCommonMatch,
         mixedSpeciesMatch
     ],
