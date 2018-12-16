@@ -3,6 +3,7 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
+import { itemProperties } from 'ui/helpers/data-checking';
 import { actions } from 'redux/actions/action-creators';
 import { selectHandler } from 'ui/helpers/handlers';
 import { infoSlider } from 'ui/screens/common/info-slider';
@@ -27,7 +28,7 @@ export const renderNonTaxonCard = collection => {
     const nonTaxa = group.getNonTaxa(enums).filter(nt => nt.group === group.nonTaxaGroup[0].LICHEN_FORM);
 
     nonTaxa.forEach(nt => {
-        nt.name = nt.names.find(name => name.language === config.language).name;
+        nt.name = itemProperties.getVernacularName(nt, config, false, 'name');
     });
 
     const template = document.createElement('template');
