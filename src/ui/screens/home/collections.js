@@ -116,7 +116,7 @@ export const renderCollections = (counter) => {
         actions.boundUpdateLanguage(language);
         if(config.isLandscapeMode && collection.id) {
             actions.boundSelectCollection(collection);
-            renderSpeciesCollectionList(collection, true);
+            renderSpeciesCollectionList(collection, false);
         }
     };
 
