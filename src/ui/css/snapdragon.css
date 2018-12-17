@@ -425,7 +425,7 @@ a.dropdown-item:hover {
   color: var(--snap-text-medium-dark);
   text-transform: uppercase;
   letter-spacing: 0.07rem;
-  font-size: .9rem;
+  font-size: .8rem;
 }
 
 .footer {  
@@ -809,7 +809,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 }
 
 .dropdown {
-  position: initial;
+  position: realtive;
 }
 
 .dropdown div {
@@ -1721,11 +1721,11 @@ div.hide-empty:empty, span.hide-empty:empty {
 }
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-  background-color: var(--snap-success);
+  background-color: var(--snap-success);  
 }
 
 .custom-checkbox .custom-control-input:disabled:checked~.custom-control-label::before {
-  background-color: rgba(41, 108, 44,.3);
+  background-color: rgba(41, 108, 44,.3);  
   pointer-events: none;
 }
 
@@ -1735,6 +1735,7 @@ div.hide-empty:empty, span.hide-empty:empty {
 
 .custom-control-label::before {
   background-color: var(--snap-grid-background);
+  border: .1rem solid var(--snap-border-dark);
 }
 
 .summary-header {

@@ -149,8 +149,7 @@
       }
 
       .table-header th:nth-child(3):after,
-      .table-header th:nth-child(5):after,
-      .table-header th:nth-child(6):after {
+      .table-header th:nth-child(5):after {
         display: inline-block;
         width: 0;
         height: 0;
