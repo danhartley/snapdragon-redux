@@ -1161,8 +1161,8 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   flex: 3;
 }
 
-.table-header th:nth-child(3):after, 
-.table-header th:nth-child(4):after {
+/* .table-header th:nth-child(3):after,  */
+.table-header th:nth-child(2):after {
   display: inline-block;
   width: 0;
   height: 0;
@@ -1732,6 +1732,10 @@ div.hide-empty:empty, span.hide-empty:empty {
 .custom-control-label::before {
   background-color: var(--snap-grid-background);
   border: .1rem solid var(--snap-border-dark);
+}
+
+th .custom-control-label::before {
+  border: .05rem solid var(--snap-border-light);
 }
 
 .summary-header {
