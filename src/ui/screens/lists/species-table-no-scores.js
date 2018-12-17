@@ -13,7 +13,7 @@ export const buildTable = (collection, config, traits, enums) => {
 
     const template = document.createElement('template');
 
-    const wide = window.matchMedia("(min-width: 1200px)").matches;
+    const wide = window.matchMedia("(min-width: 1024px)").matches;
 
     const getTraitName = (item, enums) => {
         let traitName = '';        
@@ -94,7 +94,6 @@ export const buildTable = (collection, config, traits, enums) => {
     
     const headerRow = document.createElement('tr');
     headerRow.classList.add('table-header');
-    const indexHeader = document.createElement('th');
     const imageHeader = document.createElement('th');
     const speciesHeader = document.createElement('th');
     const familyHeader = document.createElement('th');
@@ -117,14 +116,12 @@ export const buildTable = (collection, config, traits, enums) => {
     labelCheck.setAttribute('for', 'inputCheckAll');
     checkbox.appendChild(inputCheck);
     checkbox.appendChild(labelCheck);    
-    indexHeader.innerHTML = `<span></span>`;
     speciesHeader.innerHTML = '<span>Species</span';
     familyHeader.innerHTML = '<span>Family</span>';
     traitNameHeader.innerHTML = '<span>Key trait</span>';
     filterHeader.appendChild(checkbox); 
     imageHeader.innerHTML = '<div></div>';
     if(wide) {        
-        headerRow.appendChild(indexHeader);
         headerRow.appendChild(imageHeader);
         headerRow.appendChild(speciesHeader);    
         headerRow.appendChild(familyHeader);
@@ -142,21 +139,18 @@ export const buildTable = (collection, config, traits, enums) => {
     footerRow.classList.add('table-footer');
 
     const imageFooter = document.createElement('td');
-    const indexFooter = document.createElement('td');
     const speciesFooter = document.createElement('td');
     const familyFooter = document.createElement('td');
     const traitNameFooter = document.createElement('td');
     const filterFooter = document.createElement('td');
 
     imageFooter.innerHTML = '<div></div>';
-    indexFooter.innerHTML = '<span></span>';
     speciesFooter.innerHTML = '<div></div>';
     familyFooter.innerHTML = '<div></div>';
 
     filterFooter.innerHTML = '<div></div>';
 
     if(wide) {
-        footerRow.appendChild(indexFooter);
         footerRow.appendChild(imageFooter);
         footerRow.appendChild(speciesFooter);
         footerRow.appendChild(familyFooter);

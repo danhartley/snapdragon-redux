@@ -1153,15 +1153,13 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   font-weight: initial;
 }
 
-.table-footer td:nth-child(1), .table-footer td:nth-child(3),.table-footer td:nth-child(4) {
+.table-header th:nth-child(3),.table-row td:nth-child(3), .table-footer td:nth-child(3) {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.table-footer td:nth-child(2) {
-  flex: 3;
-}
-
-/* .table-header th:nth-child(3):after,  */
 .table-header th:nth-child(2):after {
   display: inline-block;
   width: 0;
@@ -1199,10 +1197,6 @@ table {
   flex-direction: row;
 }
 
-/* .table-row {
-  padding: .2rem 0;
-} */
-
 .table-row img, table input {
   cursor: pointer;
 }
@@ -1220,6 +1214,7 @@ table {
   width: 5rem;
   height: 5rem;
   object-fit: cover;  
+  padding: .5rem;
 }
 
 .table-row .lp-level {
@@ -1346,8 +1341,6 @@ table {
 }
 
 .badge-light {
-  /* color: var(--snap-text-light);
-  background-color: var(--snap-collection); */
   color: inherit;
   background-color: transparent;
   margin: -.25rem 0 0 .25rem;
