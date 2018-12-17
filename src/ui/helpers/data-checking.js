@@ -2,7 +2,6 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { epithets } from 'api/botanical-latin';
-import { taxa } from '../../api/snapdragon/taxa';
 
 const getVernacularName = (item, config, useShortForm = false, namePart = 'vernacularName') => {
     let shortForm;
@@ -76,12 +75,16 @@ const trimLatinName = name => {
     return binomial;
 };
 
-const familyVernacularNames = (name, language) => {
+const familyVernacularNames = (name, language, taxa) => {
     if(name === '') return;
     const taxon = taxa.find(taxon => taxon.name.toUpperCase() === name.toUpperCase());
     if(!taxon) return;
     return taxon.names.find(name => name.language === language).names;
-}
+};
+
+const familyHasTaxaData = (family, taxa) => {
+    return taxa.find(taxon => taxon.name === family);
+};
 
 const getTrait = (traits, itemName, name, formatter) => {
     const item = traits.find(t => t.name === itemName);
@@ -160,6 +163,7 @@ export const itemProperties = {
     getNestedTaxonProp,
     trimLatinName,
     familyVernacularNames,
+    familyHasTaxaData,
     getTrait,
     getActiveTrait,
     vernacularNamesForItems,

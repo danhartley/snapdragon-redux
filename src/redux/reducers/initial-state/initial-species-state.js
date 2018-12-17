@@ -23,7 +23,7 @@ const extendCollection = selectedCollection => {
     });
     const rounds = items.length / moduleSize;
 
-    const families = familyProps.getFamilyNames(items);
+    // const families = familyProps.getFamilyNames(items);
     const familyStats = familyProps.getFamilyStats(items);
     const speciesNames = items.map(item => item.name);
     const speciesVernacularNames = itemProperties.vernacularNamesForItems(items, config);
@@ -36,7 +36,7 @@ const extendCollection = selectedCollection => {
         currentRound: 1,
         moduleSize: moduleSize,
         rounds : items.length % moduleSize === 0 ? rounds : rounds === 1 ? 1 : Math.floor(rounds) + 1,
-        families: families,
+        // families: families,
         familyStats: familyStats,
         speciesNames: speciesNames,
         speciesVernacularNames: speciesVernacularNames

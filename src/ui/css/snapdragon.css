@@ -808,10 +808,6 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   cursor: pointer;
 }
 
-.dropdown {
-  position: realtive;
-}
-
 .dropdown div {
   white-space: nowrap;
 }

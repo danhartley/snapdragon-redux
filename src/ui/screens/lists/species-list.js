@@ -26,7 +26,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
     config.collection = { id: collection.id };
 
-    const doEveryThingElse = () => {
+    const handleUserEvents = () => {
         const headerCheckbox = document.querySelector(".table-header #inputCheckAll");
         const itemCheckboxes = document.querySelectorAll(".table-row .custom-control-input");
 
@@ -62,11 +62,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                     hasCollectionChanged = true;
                     const name = checkbox.getAttribute('name');
                     const item = collection.items.find(item => item.name === name);
-                    if(checkbox.checked) {
-                        item.isDeselected = false;
-                    } else { 
-                        item.isDeselected = true;
-                    }
+                    item.isDeselected = !checkbox.checked;
                     actions.boundChangeCollectionItems(collection.items);
                 });
             }
@@ -149,13 +145,13 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
     if(readOnlyMode) {
         buildTable(collection, config, traits, enums);
-        doEveryThingElse();
+        handleUserEvents();
     }
     else {        
         function callback(collection, config, traits, enums) {
             return function () {
                 buildTable(collection, config, traits, enums);
-                doEveryThingElse();
+                handleUserEvents();
             }
         }
         itemHandler(collection, config, counter, callback(collection, config, traits, enums));

@@ -3,23 +3,30 @@ import * as R from 'ramda';
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 
-const addRevisonLayouts = (revisionLayouts, itemsCountToDate, layoutsToAdd, groupFamilies, lessonLayouts, collection, families) => {
-
+const addRevisionLayouts = (revisionLayouts, itemsCountToDate, layoutsToAdd, lessonLayouts, collection) => {    
     revisionLayouts.forEach( (layout, i) => {
-        const layoutItemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
-        if(groupFamilies.find(f => f.index === layoutItemIndex)) {
-            layout.itemIndex = layoutItemIndex;
-            const arrayIndex = lessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
-            lessonLayouts.splice(arrayIndex, 0, layout);
-            const family = collection.items.find((item, index) => index === layoutItemIndex).family;
-            if(!R.contains(family, families)) { 
-                families.push(family);
-            }
-            const familyName = groupFamilies.find(f => f.index === layoutItemIndex).family;
-            groupFamilies = groupFamilies.filter(f => f.family !== familyName);
-        }
+        if(layout.kind === 'S') addSpeciesRevisonLayouts(layout, i, itemsCountToDate, layoutsToAdd, lessonLayouts);
+        if(layout.kind === 'F') addFamilyRevisonLayouts(layout, i, itemsCountToDate, layoutsToAdd, lessonLayouts, collection);
     });
+};
 
+const addSpeciesRevisonLayouts = (layout, i, itemsCountToDate, layoutsToAdd, lessonLayouts) => {
+    const layoutItemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
+    layout.itemIndex = layoutItemIndex;
+    const arrayIndex = lessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
+    lessonLayouts.splice(arrayIndex, 0, layout);
+};
+
+const addFamilyRevisonLayouts = (layout, i, itemsCountToDate, layoutsToAdd, lessonLayouts, collection) => {
+    let groupFamilies = [ ...new Set(collection.itemGroupFamilies.map(igf => igf.family)) ];
+    const layoutItemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
+    if(groupFamilies.find((f,i) => i === layoutItemIndex)) {
+        layout.itemIndex = layoutItemIndex;
+        const arrayIndex = lessonLayouts.findIndex(plan => plan.itemIndex === layout.itemIndex);
+        lessonLayouts.splice(arrayIndex, 0, layout);
+        const family = collection.items.find((item, index) => index === layoutItemIndex).family;
+        groupFamilies = groupFamilies.filter(f => f.family !== family);
+    }
 };
 
 export const createLesson = (lessonPlan, layouts, progressScreens, collection, wildcardLayouts) => {
@@ -53,11 +60,7 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, w
         return { ...layout };
     });
 
-    const families = [];
-
-    let groupFamilies = R.clone(collection.itemGroupFamilies);
-
-    addRevisonLayouts(revisionLayouts, itemsCountToDate, layoutsToAdd, groupFamilies, lessonLayouts, collection, families);
+    addRevisionLayouts(revisionLayouts, itemsCountToDate, layoutsToAdd, lessonLayouts, collection);
 
     let hasGlossary = false;
     const glossary = lessonPlan.layouts.find(layout => layout.name === 'screen-definition-card');

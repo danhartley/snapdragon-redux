@@ -107,7 +107,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     const rank = "species";
     const family = taxa.find(f => f.name === item.family);
     const familyName = family ? family.name : item.taxonomy.family;
-    const familyVernacularNames = itemProperties.familyVernacularNames(item.family, config.language);
+    const familyVernacularNames = itemProperties.familyVernacularNames(item.family, config.language, taxa);
     const familyVernacularName = familyVernacularNames ? familyVernacularNames[0] : '';
         
     const itemImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);

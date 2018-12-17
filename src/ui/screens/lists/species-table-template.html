@@ -29,10 +29,10 @@
                             <span class="latin-name">{{ item.binomial }}</span>
                         </td>
                         <td>
-                            <span data-toggle="modal" data-url="{{ item.url }}" data-key-trait="{{ item.family }}" data-target="#speciesCardModal" class="capitalise underline-link js-family-link" data-family="{{ item.family }}">{{ item.family }}</span>
+                            <span data-toggle="modal" data-url="{{ item.url }}" data-key-trait="{{ item.family }}" data-target="#speciesCardModal" class="{{ item.familyLinkClass }}" data-family="{{ item.family }}">{{ item.family }}</span>
                         </td>
                         <td>
-                            <span data-toggle="modal" data-url="{{ item.url }}" data-key-trait="{{ item.keyTrait }}" data-target="#speciesCardModal" class="{{ item.linkClass }}" data-key-trait="{{ item.keyTrait }}">{{ item.keyTrait }}</span>
+                            <span data-toggle="modal" data-url="{{ item.url }}" data-key-trait="{{ item.keyTrait }}" data-target="#speciesCardModal" class="{{ item.keyTratLinkClass }}" data-key-trait="{{ item.keyTrait }}">{{ item.keyTrait }}</span>
                         </td>
                         <td>
                             <div class="custom-control custom-checkbox">

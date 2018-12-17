@@ -26,7 +26,7 @@ export const renderTaxonCard = (collection, isModalMode = false, parent = DOM.ri
     
     const context = {
         rank: 'family',
-        name: item.family,
+        name: itemFamily,
         img: `https://content.eol.org/data/media/${taxon.thumb}`,
         alt: taxon.alt,
         common: itemProperties.getNestedTaxonProp(taxon, config.language, 'names', 'names', '0'),

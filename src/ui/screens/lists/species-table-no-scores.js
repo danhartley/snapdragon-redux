@@ -2,12 +2,12 @@ import * as SD from 'api/traits/trait-types';
 
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
+import { taxa } from 'api/snapdragon/taxa';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 import speciesPortraitTemplate from 'ui/screens/lists/species-table-portrait-template.html';
-import { is } from 'immutable';
 
 export const buildTable = (collection, config, traits, enums) => {
 
@@ -17,26 +17,26 @@ export const buildTable = (collection, config, traits, enums) => {
 
     const getTraitName = (item, enums) => {
         let traitName = '';        
-        let linkClass = 'capitalise underline-link js-key-trait-link';
+        let keyTratLinkClass = 'capitalise underline-link js-key-trait-link';
         if(item.taxonomy) {
             switch(item.taxonomy.phylum.toLowerCase()) {
                 case 'ascomycota':
                     traitName = item.taxonomy.order.toLowerCase() === 'pezizales'
                         ? enums.name.HOW_EDIBLE
                         : enums.name.THALLUS_TYPE;
-                    if(item.taxonomy.order.toLowerCase() === 'pezizales') linkClass = 'js-key-trait-link';
+                    if(item.taxonomy.order.toLowerCase() === 'pezizales') keyTratLinkClass = 'js-key-trait-link';
                     break;
                 case 'basidiomycota':
                     traitName = enums.name.HOW_EDIBLE;
-                    linkClass = 'js-key-trait-link';
+                    keyTratLinkClass = 'js-key-trait-link';
                     break;
                 default:
                     traitName = '-';
             }        
         } else {
-            linkClass = 'js-key-trait-link';
+            keyTratLinkClass = 'js-key-trait-link';
         }
-        return { traitName, linkClass };
+        return { traitName, keyTratLinkClass };
     }
 
     collection.items.forEach(item => { 
@@ -49,10 +49,11 @@ export const buildTable = (collection, config, traits, enums) => {
 
         item.binomial = item.name;
         item.shortName = itemProperties.trimLatinName(item.name);
-        const { traitName, linkClass } = getTraitName(item, enums);
+        const { traitName, keyTratLinkClass } = getTraitName(item, enums);
         const keyTrait = itemProperties.getActiveTrait(traits, item.name, [{ name: traitName, formatter: trait => trait.value }]);
         item.keyTrait = keyTrait.indexOf(',') > 0 ? keyTrait.split(',')[0] : keyTrait;
-        item.linkClass = linkClass;   
+        item.keyTratLinkClass = keyTratLinkClass;
+        item.familyLinkClass = itemProperties.familyHasTaxaData(item.family, taxa) ? 'capitalise underline-link js-family-link' : 'js-family-link' 
     });
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
