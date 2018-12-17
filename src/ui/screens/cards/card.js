@@ -115,7 +115,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const subSpeciesCount = specific ? specific.subspecies.length : 0;
 
-    const names = item.names.filter(name => name.language === config.language).map(name => name.vernacularName);
+    const names = [ ...new Set(item.names.filter(name => name.language === config.language).map(name => name.vernacularName.toLowerCase())) ];
     const nameCount = names.length; 
 
     const options = [

@@ -3149,16 +3149,96 @@ export const herbsAndSpices = [
         "Rosemary (<i>Rosmarinus officinalis</i>) is a member of the mint family (Lamiaceae) that is native to the Mediterranean region and grows well near the sea. It was long ago introduced widely in Europe. It is used as an herb to savor meat, savory dishes, and salads. It is used sparingly in herb mixes because of its intense scent. The essential oil is used in cosmetics and in some pharmaceutical preparations. \r\n\r\nRosemary is an erect, bushy shrub that may reach 2 m in height. Its evergreen leaves are dark green above and white hairy below. The leaves are 2 to 3.5 cm in length and are folded inward along the margins. The violet-blue or whitish flowers are borne in small axillary (i.e., emerging from the angle between the leaf and stem) <a href=\"https://en.wikipedia.org/wiki/Raceme\">racemes</a>. The calyx (the collective term for all the <a href=\"https://en.wikipedia.org/wiki/Flower#Morphology\">sepals</a> of a flower) and corolla (the collective term for all the petals in a flower) are two-lipped, the latter around 1.25 cm in length and enclosing two <a href=\"https://en.wikipedia.org/wiki/Pollen\">stamens</a>, the male sex organs in a flower.\r\n\r\n(Vaughan and Geissler 1997)\r\n\r\nAs is the case for mints (family Lamiaceae) in general, Rosemary plants are self-compatible (i.e., they can fertilize themselves), but as is also typical for the family, the <a href=\"https://en.wikipedia.org/wiki/Flower#Morphology\">anthers</a> (male pollen-producing structures in each flower) are finished producing <a href=\"https://en.wikipedia.org/wiki/Pollen\">pollen</a> before the <a href=\"https://en.wikipedia.org/wiki/Flower#Morphology\">stigmas</a> (female parts) in the same flower mature. Thus, the plants rely on insect pollinators to move their pollen from one flower to another. Often, pollen from one flower is moved to a mature stigma on another flower on the same plant, resulting in self-fertilization.  Self-fertilization in Rosemary plants tends to result in fewer and lighter seeds than cross-fertilization (i.e., fertilization of a flower by pollen from a flower on a different individual plant), an example of <a href=\"https://en.wikipedia.org/wiki/Inbreeding_depression\">inbreeding depression</a>. Like many species in the Lamiaceae, Rosemary is gynodioecious, i.e., populations are composed  of some plants with hermaphrodite flowers, which are functionally both male and female, and others whose flowers are functionally female, with the male organs reduced and sterile. Hidalgo and Ubera (2001) suggested that gynodioecy in Rosemary effectively increases outcrossing and thereby decreases inbreeding depression.\r\n\r\n"
       ],
       "images": [
-        "2012/05/24/00/10770_orig.jpg",
-        "2012/05/24/00/38069_orig.jpg",
-        "2014/10/13/23/20173_orig.jpg",
-        "2014/08/15/05/27225_orig.jpg",
-        "2009/07/24/03/41266_orig.jpg",
-        "2014/07/08/10/40886_orig.jpg",
-        "2016/08/02/08/48380_orig.jpg",
-        "2016/08/02/08/87694_orig.jpg",
-        "2016/08/03/09/78444_orig.jpg",
-        "2014/10/28/10/10710_orig.jpg"
+        {
+          "title": "2015-01-03-15.34.28 ZS PMax-Rosmarinus officinalis-1",
+          "rightsHolder": "John Rusk",
+          "source": "https://www.flickr.com/photos/john_d_rusk/16003508409/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "7e/ab/db/542.16003508409.jpg",
+          "thumb": "7e/ab/db/542.16003508409.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/12303842@N00'>John Rusk</a>",
+            "homepage": "http://www.flickr.com/photos/12303842@N00",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Rosemary Gorizia",
+          "rightsHolder": "Drew Avery",
+          "source": "https://www.flickr.com/photos/33590535@N06/3455879598/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "7f/86/96/542.3455879598.jpg",
+          "thumb": "7f/86/96/542.3455879598.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/33590535@N06'>Drew Avery</a>",
+            "homepage": "http://www.flickr.com/photos/33590535@N06",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Rosmarinus officinalis 0001.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rosmarinus_officinalis_0001.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/6a/83/509.11026897.jpg",
+          "thumb": "55/6a/83/509.11026897.98x68.jpg"
+        },
+        {
+          "title": "Rosmarinus officinalis 0003.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rosmarinus_officinalis_0003.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/6a/85/509.11026931.jpg",
+          "thumb": "55/6a/85/509.11026931.98x68.jpg"
+        },
+        {
+          "title": "Rosmarinus officinalis2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rosmarinus_officinalis2.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/74/c6/509.111643.jpg",
+          "thumb": "55/74/c6/509.111643.98x68.jpg"
+        },
+        {
+          "title": "Rosmarinus officinalis 1 (Corse).JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rosmarinus_officinalis_1_(Corse).JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/d6/3d/509.12735177.jpg",
+          "thumb": "55/d6/3d/509.12735177.98x68.jpg"
+        },
+        {
+          "title": "Rosmarinus officinalis 2 (Corse).JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rosmarinus_officinalis_2_(Corse).JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/d6/3e/509.12735178.jpg",
+          "thumb": "55/d6/3e/509.12735178.98x68.jpg"
+        },
+        {
+          "title": "Romarin Rosmarinus officinalis 2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Romarin_Rosmarinus_officinalis_2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/1c/aa/509.14669120.jpg",
+          "thumb": "56/1c/aa/509.14669120.98x68.jpg"
+        },
+        {
+          "title": "ChristianBauer flowering rosemary.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:ChristianBauer_flowering_rosemary.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/71/e9/509.20696.jpg",
+          "thumb": "57/71/e9/509.20696.98x68.jpg"
+        },
+        {
+          "title": "Rosemary (Rosmarinus officinalis) 3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rosemary_(Rosmarinus_officinalis)_3.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5a/15/32/509.33944832.jpg",
+          "thumb": "5a/15/32/509.33944832.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -3283,13 +3363,131 @@ export const herbsAndSpices = [
       "id": 580765,
       "name": "Borago officinalis",
       "images": [
-        "2012/12/12/00/35693_orig.jpg",
-        "2012/12/12/00/61147_orig.jpg",
-        "2012/12/12/00/02019_orig.jpg",
-        "2012/05/23/07/44639_orig.jpg",
-        "2012/05/23/07/99131_orig.jpg",
-        "2016/08/06/08/87485_orig.jpg",
-        "2016/08/06/10/63041_orig.jpg"
+        {
+          "title": "fleur de bourrache / borage flower",
+          "rightsHolder": "OliBac",
+          "source": "https://www.flickr.com/photos/olibac/3712419428/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "7f/ab/b4/542.3712419428.jpg",
+          "thumb": "7f/ab/b4/542.3712419428.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/47757737@N00'>OliBac</a>",
+            "homepage": "http://www.flickr.com/photos/47757737@N00",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Borrago officinalis a Villa dei Quintili IMG 0325.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Borrago_officinalis_a_Villa_dei_Quintili_IMG_0325.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/3a/23/509.10293970.jpg",
+          "thumb": "55/3a/23/509.10293970.98x68.jpg"
+        },
+        {
+          "title": "Borago officinalis, blue blossom.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Borago_officinalis,_blue_blossom.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/dd/ee/509.1282120.jpg",
+          "thumb": "55/dd/ee/509.1282120.98x68.jpg"
+        },
+        {
+          "title": "Borage or starflower crop - geograph.org.uk - 478645.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Borage_or_starflower_crop_-_geograph.org.uk_-_478645.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/e4/73/509.12993893.jpg",
+          "thumb": "55/e4/73/509.12993893.98x68.jpg"
+        },
+        {
+          "title": "Fallow Field - geograph.org.uk - 484492.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fallow_Field_-_geograph.org.uk_-_484492.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/e4/e1/509.13006731.jpg",
+          "thumb": "55/e4/e1/509.13006731.98x68.jpg"
+        },
+        {
+          "title": "Borago officinalis-4612.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Borago_officinalis-4612.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/57/77/509.15625405.jpg",
+          "thumb": "56/57/77/509.15625405.98x68.jpg"
+        },
+        {
+          "title": "Borago officinalis Sturm11007.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Borago_officinalis_Sturm11007.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/93/a2/509.16761146.jpg",
+          "thumb": "56/93/a2/509.16761146.98x68.jpg"
+        },
+        {
+          "title": "Borago officinalis g2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Borago_officinalis_g2.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/d4/78/509.1796068.jpg",
+          "thumb": "56/d4/78/509.1796068.98x68.jpg"
+        },
+        {
+          "title": "Borago-officinalis-flower.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Borago-officinalis-flower.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/1a/17/509.19115414.jpg",
+          "thumb": "57/1a/17/509.19115414.98x68.jpg"
+        },
+        {
+          "title": "Borago officinalis-IMG 4345.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Borago_officinalis-IMG_4345.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/7c/49/509.20980256.jpg",
+          "thumb": "57/7c/49/509.20980256.98x68.jpg"
+        },
+        {
+          "title": "20121007Ruderalwiese Reilingen05.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20121007Ruderalwiese_Reilingen05.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/a9/8d/509.21958940.jpg",
+          "thumb": "57/a9/8d/509.21958940.98x68.jpg"
+        },
+        {
+          "title": "20140419Borago officinalis1.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20140419Borago_officinalis1.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "59/bc/74/509.32347006.jpg",
+          "thumb": "59/bc/74/509.32347006.98x68.jpg"
+        },
+        {
+          "title": "Borretsch Borage.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Borretsch_Borage.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/ed/8a/509.33441004.jpg",
+          "thumb": "59/ed/8a/509.33441004.98x68.jpg"
+        },
+        {
+          "title": "File:Borago officinalis â Flora Batava â Volume v12.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Borago_officinalis_%E2%80%94_Flora_Batava_%E2%80%94_Volume_v12.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5c/0f/44/509.18907353.jpg",
+          "thumb": "5c/0f/44/509.18907353.98x68.jpg"
+        },
+        {
+          "title": "Bourrache officinale Vilmorin-Andrieux 1904.png",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Bourrache_officinale_Vilmorin-Andrieux_1904.png",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5c/65/3d/509.20427978.jpg",
+          "thumb": "5c/65/3d/509.20427978.98x68.jpg"
+        }
       ],
       "names": [
         {

@@ -1040,15 +1040,91 @@ export const fruit = [
       "id": 594632,
       "name": "Ficus carica",
       "images": [
-        "2012/06/12/13/66087_orig.jpg",
-        "2012/05/23/13/57540_orig.jpg",
-        "2014/08/15/06/36554_orig.jpg",
-        "2012/05/23/13/98613_orig.jpg",
-        "2014/08/15/05/80948_orig.jpg",
-        "2012/06/12/13/15099_orig.jpg",
-        "2014/08/15/05/53183_orig.jpg",
-        "2011/10/15/23/52680_orig.jpg",
-        "2016/08/05/21/98084_orig.jpg"
+        {
+          "title": "Ficus carica 005.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Ficus_carica_005.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/34/9c/509.10198026.jpg",
+          "thumb": "55/34/9c/509.10198026.98x68.jpg"
+        },
+        {
+          "title": "Ficus carica01.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Ficus_carica01.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/b2/d2/509.1229916.jpg",
+          "thumb": "55/b2/d2/509.1229916.98x68.jpg"
+        },
+        {
+          "title": "Fig.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fig.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/df/06/509.128459.jpg",
+          "thumb": "55/df/06/509.128459.98x68.jpg"
+        },
+        {
+          "title": "Fig tree.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fig_tree.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/df/07/509.128461.jpg",
+          "thumb": "55/df/07/509.128461.98x68.jpg"
+        },
+        {
+          "title": "Drvo smokve.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Drvo_smokve.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/e8/3f/509.1311965.jpg",
+          "thumb": "55/e8/3f/509.1311965.98x68.jpg"
+        },
+        {
+          "title": "Some figs.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Some_figs.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/fb/f4/509.136690.jpg",
+          "thumb": "55/fb/f4/509.136690.98x68.jpg",
+          "photographer": {
+            "full_name": "Jon Sullivan",
+            "homepage": null,
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Fig tree leaves.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fig_tree_leaves.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/f3/25/509.18444692.jpg",
+          "thumb": "56/f3/25/509.18444692.98x68.jpg"
+        },
+        {
+          "title": "Ficus carica-IMG 4355.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Ficus_carica-IMG_4355.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/7c/4d/509.20980261.jpg",
+          "thumb": "57/7c/4d/509.20980261.98x68.jpg"
+        },
+        {
+          "title": "Fig half.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fig_half.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/a5/81/509.21908746.jpg",
+          "thumb": "57/a5/81/509.21908746.98x68.jpg"
+        },
+        {
+          "title": "PikiWiki Israel 30141 Plants of Israel.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_30141_Plants_of_Israel.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/62/7f/509.25129875.jpg",
+          "thumb": "58/62/7f/509.25129875.98x68.jpg"
+        }
       ],
       "names": [
         {

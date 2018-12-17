@@ -6406,22 +6406,182 @@ export const deciduousAndEvergreenTrees = [
       "id": 1145874,
       "name": "Alnus glutinosa",
       "images": [
-        "2012/07/04/05/69216_orig.jpg",
-        "2012/05/23/04/02773_orig.jpg",
-        "2012/05/23/04/31642_orig.jpg",
-        "2012/05/23/04/86165_orig.jpg",
-        "2012/05/23/04/40048_orig.jpg",
-        "2010/03/24/03/29245_orig.jpg",
-        "2012/12/05/07/63376_orig.jpg",
-        "2012/12/05/07/73249_orig.jpg",
-        "2011/11/01/19/93727_orig.jpg",
-        "2011/11/01/19/14642_orig.jpg",
-        "2012/01/10/01/05392_orig.jpg",
-        "2012/12/05/11/85209_orig.jpg",
-        "2012/12/05/11/05505_orig.jpg",
-        "2012/07/04/05/35446_orig.jpg",
-        "2012/07/04/05/40701_orig.jpg",
-        "2016/08/02/17/80303_orig.jpg"
+        {
+          "title": "Corteza Alnus glutinosa RTonetti.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Corteza_Alnus_glutinosa_RTonetti.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/32/47/509.10133446.jpg",
+          "thumb": "55/32/47/509.10133446.98x68.jpg"
+        },
+        {
+          "title": "Stourton Lake - geograph.org.uk - 760107.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Stourton_Lake_-_geograph.org.uk_-_760107.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/f3/d5/509.13441098.jpg",
+          "thumb": "55/f3/d5/509.13441098.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa 001.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_001.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/f6/1d/509.1351530.jpg",
+          "thumb": "55/f6/1d/509.1351530.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa 006.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_006.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/f6/1f/509.1351537.jpg",
+          "thumb": "55/f6/1f/509.1351537.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa 004.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_004.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/f6/22/509.1351549.jpg",
+          "thumb": "55/f6/22/509.1351549.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa 010.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_010.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/0a/87/509.1424543.jpg",
+          "thumb": "56/0a/87/509.1424543.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa 008.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_008.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/0a/8a/509.1424551.jpg",
+          "thumb": "56/0a/8a/509.1424551.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa 009.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_009.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/0a/8b/509.1424556.jpg",
+          "thumb": "56/0a/8b/509.1424556.98x68.jpg"
+        },
+        {
+          "title": "Sprouting branch.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Sprouting_branch.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/57/aa/509.15628350.jpg",
+          "thumb": "56/57/aa/509.15628350.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa11.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa11.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/d0/e9/509.1791490.jpg",
+          "thumb": "56/d0/e9/509.1791490.98x68.jpg"
+        },
+        {
+          "title": "Fruchtstand der Schwarzerle, Alnus glutinosa 2.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fruchtstand_der_Schwarzerle,_Alnus_glutinosa_2.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/03/bd/509.18713522.jpg",
+          "thumb": "57/03/bd/509.18713522.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa AmentosEnfoque 2012-01-29 SierraMadrona.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_AmentosEnfoque_2012-01-29_SierraMadrona.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/55/34/509.20146216.jpg",
+          "thumb": "57/55/34/509.20146216.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa Bialowieza 002.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_Bialowieza_002.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/71/f4/509.2069693.jpg",
+          "thumb": "57/71/f4/509.2069693.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa Bialowieza 001.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_Bialowieza_001.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/71/fa/509.2069724.jpg",
+          "thumb": "57/71/fa/509.2069724.98x68.jpg"
+        },
+        {
+          "title": "Briesetal bei Briese.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Briesetal_bei_Briese.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/94/6f/509.2138464.jpg",
+          "thumb": "57/94/6f/509.2138464.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa MHNT.BOT.2004.0.10a.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_MHNT.BOT.2004.0.10a.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/9c/00/509.21585653.jpg",
+          "thumb": "57/9c/00/509.21585653.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa blomma.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_blomma.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/e6/de/509.22799893.jpg",
+          "thumb": "57/e6/de/509.22799893.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa 011.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_011.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/ed/cd/509.2294072.jpg",
+          "thumb": "57/ed/cd/509.2294072.98x68.jpg"
+        },
+        {
+          "title": "Black-alder-habitat.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Black-alder-habitat.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/42/68/509.24694911.jpg",
+          "thumb": "58/42/68/509.24694911.98x68.jpg"
+        },
+        {
+          "title": "Olsza 6.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Olsza_6.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/85/10/509.25556308.jpg",
+          "thumb": "58/85/10/509.25556308.98x68.jpg"
+        },
+        {
+          "title": "A glutinosa Gaertn. 01.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:A_glutinosa_Gaertn._01.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/86/1d/509.25580415.jpg",
+          "thumb": "58/86/1d/509.25580415.98x68.jpg"
+        },
+        {
+          "title": "Noname05.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Noname05.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/07/e7/509.280660.jpg",
+          "thumb": "59/07/e7/509.280660.98x68.jpg"
+        }
       ],
       "names": [
         {

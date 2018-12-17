@@ -12,6 +12,7 @@ import { weeds } from 'api/rhs/weeds';
 import { lichen } from 'api/snapdragon/lichen';
 
 import { plants } from 'api/snapdragon/plants';
+import { local } from 'api/snapdragon/local';
 
 export const getInatSpecies = (latitude, longitude) => {
 
@@ -25,7 +26,8 @@ export const getInatSpecies = (latitude, longitude) => {
         ...deciduousAndEvergreenTrees,
         ...weeds,
         ...lichen,
-        ...plants
+        ...plants,
+        ...local
     ];
     
     const names = snapdragon.map(item => item.name);
@@ -42,7 +44,7 @@ export const getInatSpecies = (latitude, longitude) => {
         const lng = longitude || `-9.163009899999999`;
         const iconicTaxa = 'Fungi,Plantae,Aves';
         const perPage = 200;
-        const radius = 500;
+        const radius = 50;
         const start = daysAway('past', 30);
         const end = daysAway('future', 30);
         // const endpoint = 'observations';
