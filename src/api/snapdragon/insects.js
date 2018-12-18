@@ -3,15 +3,92 @@ export const insects = [
         "id": 1045608,
         "name": "Apis mellifera",
         "images": [
-          "2015/04/05/06/22039_orig.jpg",
-          "2010/03/24/12/00070_orig.jpg",
-          "2014/08/15/06/55136_orig.jpg",
-          "2010/03/24/12/02978_orig.jpg",
-          "2012/06/12/22/41387_orig.jpg",
-          "2014/07/31/00/78856_orig.jpg",
-          "2015/03/08/05/80247_orig.jpg",
-          "2009/07/24/08/55585_orig.jpg",
-          "2012/05/23/05/76705_orig.jpg"
+          {
+            "title": "Bee Happy",
+            "rightsHolder": "Treesha Duncan",
+            "source": "https://www.flickr.com/photos/iamtreesha/7894625598/",
+            "license": "http://creativecommons.org/licenses/by/2.0/",
+            "url": "81/22/92/542.7894625598.jpg",
+            "thumb": "81/22/92/542.7894625598.98x68.jpg",
+            "photographer": {
+              "full_name": "<a href='http://www.flickr.com/photos/57720887@N05'>Treesha Duncan</a>",
+              "homepage": "http://www.flickr.com/photos/57720887@N05",
+              "role": "photographer"
+            }
+          },
+          {
+            "title": "Apis mellifera mellifera cutted out of image.png",
+            "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+            "source": "https://commons.wikimedia.org/wiki/File:Apis_mellifera_mellifera_cutted_out_of_image.png",
+            "license": "http://creativecommons.org/licenses/by/3.0/",
+            "url": "56/a0/4b/509.16991497.jpg",
+            "thumb": "56/a0/4b/509.16991497.98x68.jpg"
+          },
+          {
+            "title": "Bienenkoenigin 43a.jpg",
+            "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+            "source": "https://commons.wikimedia.org/wiki/File:Bienenkoenigin_43a.jpg",
+            "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "url": "57/78/48/509.2087897.jpg",
+            "thumb": "57/78/48/509.2087897.98x68.jpg"
+          },
+          {
+            "title": "Abeille-bee-honey.jpg",
+            "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+            "source": "https://commons.wikimedia.org/wiki/File:Abeille-bee-honey.jpg",
+            "license": "http://creativecommons.org/licenses/by/3.0/",
+            "url": "57/24/98/509.1932762.jpg",
+            "thumb": "57/24/98/509.1932762.98x68.jpg"
+          },
+          {
+            "rightsHolder": "Harvard-Westlake School. Year: 2017.",
+            "source": "http://www.boldsystems.org/index.php/Taxbrowser_Taxonpage?taxid=21767",
+            "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "url": "7a/85/ec/539.SDP605_BT-247_D3_1492539060_jpg.jpg",
+            "thumb": "7a/85/ec/539.SDP605_BT-247_D3_1492539060_jpg.98x68.jpg",
+            "photographer": {
+              "full_name": "Vineta Sondors",
+              "homepage": null,
+              "role": "photographer"
+            }
+          },
+          {
+            "title": "Bienenkoenigin 43a cropped.jpg",
+            "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+            "source": "https://commons.wikimedia.org/wiki/File:Bienenkoenigin_43a_cropped.jpg",
+            "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "url": "5b/93/d8/509.16726751.jpg",
+            "thumb": "5b/93/d8/509.16726751.98x68.jpg"
+          },
+          {
+            "title": "RSCN2701.jpg",
+            "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+            "source": "https://commons.wikimedia.org/wiki/File:RSCN2701.jpg",
+            "license": "http://creativecommons.org/licenses/by/3.0/",
+            "url": "63/50/49/509.49094284.jpg",
+            "thumb": "63/50/49/509.49094284.98x68.jpg"
+          },
+          {
+            "title": "Fraxinus angustifolia, bloeiwyses en bye, e, Tweeling.jpg",
+            "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+            "source": "https://commons.wikimedia.org/wiki/File:Fraxinus_angustifolia,_bloeiwyses_en_bye,_e,_Tweeling.jpg",
+            "license": "http://creativecommons.org/licenses/by/3.0/",
+            "url": "5c/ea/94/509.22846535.jpg",
+            "thumb": "5c/ea/94/509.22846535.98x68.jpg"
+          },
+          {
+            "title": "Bee Happy",
+            "rightsHolder": "Treesha Duncan",
+            "source": "https://www.flickr.com/photos/iamtreesha/7894625598/",
+            "license": "http://creativecommons.org/licenses/by/2.0/",
+            "url": "81/22/92/542.7894625598.jpg",
+            "thumb": "81/22/92/542.7894625598.98x68.jpg",
+            "photographer": {
+              "full_name": "<a href='http://www.flickr.com/photos/57720887@N05'>Treesha Duncan</a>",
+              "homepage": "http://www.flickr.com/photos/57720887@N05",
+              "role": "photographer"
+            }
+          }          
         ],
         "names": [
           {

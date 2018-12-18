@@ -14,7 +14,10 @@ import { lichen } from 'api/snapdragon/lichen';
 import { plants } from 'api/snapdragon/plants';
 import { local } from 'api/snapdragon/local';
 
-export const getInatSpecies = (latitude, longitude) => {
+import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
+import { listenToTaxaFiltersUpdate } from 'ui/helpers/iconic-taxa-handler';
+
+export const getInatSpecies = (latitude, longitude, config) => {
 
     const snapdragon = [ 
         ...birds,
@@ -39,12 +42,14 @@ export const getInatSpecies = (latitude, longitude) => {
         return dateFromDays;
     };
 
-    async function getInatObservations(latitude, longitude) {
+    let iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
+
+    async function getInatObservations(latitude, longitude, config) {
         const lat = latitude || `38.7155762`;
         const lng = longitude || `-9.163009899999999`;
-        const iconicTaxa = 'Fungi,Plantae,Aves';
+        const iconicTaxa = config.iconicTaxa || iconicTaxaKeys;
         const perPage = 200;
-        const radius = 10;
+        const radius = config.speciesRange || 10;
         const start = daysAway('past', 30);
         const end = daysAway('future', 30);
         // const endpoint = 'observations';
@@ -56,7 +61,7 @@ export const getInatSpecies = (latitude, longitude) => {
         return await json.results;
     }
 
-    const observations = getInatObservations(latitude, longitude).then(observations => {
+    const observations = getInatObservations(latitude, longitude, config).then(observations => {
         return observations.map(observation => {
             if(R.contains(observation.taxon.name, names)) {
                 return { ...snapdragon.find(item => item.name === observation.taxon.name) };

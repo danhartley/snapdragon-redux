@@ -14,13 +14,18 @@ import { editLessonPlans } from 'ui/screens/lists/lesson-plans-editor';
 import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { handleLocalCollection } from 'ui/helpers/local-collection';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
+import { handleIconicTaxaFilter } from 'ui/helpers/iconic-taxa-handler';
+import { listenToTaxaFiltersUpdate } from 'ui/helpers/iconic-taxa-handler';
+import { cpus } from 'os';
 
 export const renderCollections = (counter) => {
 
-    const { collections, config: configState, collection: collectionState, history, layout } = store.getState();
+    const { collections: collectionsState, config: configState, collection: collectionState, history, layout } = store.getState();
 
-    let collection = R.clone(collectionState);
     let config = R.clone(configState);
+    let collections = R.clone(collectionsState);
+    if(config.iconicTaxa && config.iconicTaxa.length > 0) collections = collections.filter(c => R.contains(c.iconicTaxon, config.iconicTaxa));
+    let collection = R.clone(collectionState);
 
     if(lessonLogicHandler.isSkippable(collection, counter, config, layout, 'renderCollections', false)) return;
 
@@ -147,4 +152,19 @@ export const renderCollections = (counter) => {
         
         updateNavIcons();        
     });
+
+    document.querySelector('.iconic-taxa-control').addEventListener('click', event => {
+        handleIconicTaxaFilter(config);
+        // event.stopPropagation();
+    });
+
+    listenToTaxaFiltersUpdate(filters => {
+        // const currentHeader = collectionsHeader.innerHTML;
+        // collections = collections.filter(collection => R.contains(collection.iconicTaxon, filters));
+        // const selectedCollection = collections.find(c => c.selected);
+        // if(!selectedCollection) collectionsHeader.innerHTML = 'Choose a lesson';
+        // let lessons = utils.sortBy(collections.filter(c => c.type === 'species'), 'providerId', 'asc');
+        // DOM.rightBody.innerHTML = '';
+        // renderTemplate({ lessons, config, collection, language }, template.content, DOM.rightBody);
+    });  
 };

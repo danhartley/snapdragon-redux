@@ -17,5 +17,7 @@ export const config = {
         { name: 'Italiano', lang: 'it' },
         { name: 'Français', lang: 'fr' },
         { name: 'Português', lang: 'pt' }
-    ]
+    ],
+    iconicTaxa: [],
+    speciesRange: 10
 };
