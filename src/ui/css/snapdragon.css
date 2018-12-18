@@ -696,8 +696,12 @@ a.dropdown-item:hover {
 .data-box {
   color: var(--snap-text-dark);
   border: .05rem solid var(--snap-border-dark);
-  background-color: var(--snap-grid-background);
+  background-color: var(--snap-data-box-bg);
   text-align: left;
+}
+
+.taxon-data:nth-child(1) {
+  border: .05rem solid var(--snap-border-dark);
 }
 
 .taxon-data > span:nth-child(1) {
@@ -706,7 +710,6 @@ a.dropdown-item:hover {
   text-transform: capitalize;
   padding: 0 .5rem 0 0;
   color: rgb(35,35,35);
-  background-color: rgba(128, 128, 128,.1);
 }
 
 .taxon-data > span:nth-child(2) {

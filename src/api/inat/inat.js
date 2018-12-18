@@ -44,7 +44,7 @@ export const getInatSpecies = (latitude, longitude) => {
         const lng = longitude || `-9.163009899999999`;
         const iconicTaxa = 'Fungi,Plantae,Aves';
         const perPage = 200;
-        const radius = 50;
+        const radius = 10;
         const start = daysAway('past', 30);
         const end = daysAway('future', 30);
         // const endpoint = 'observations';
