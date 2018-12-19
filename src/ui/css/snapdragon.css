@@ -1931,7 +1931,7 @@ a.collection-disabled {
 .iconic-taxa-control {
   margin: 0 0 0 .5rem;
   height: 2.5rem;
-  background-color: darkorange;
+  background-color: var(--snap-filters-ctrl);
   padding: 0 .5rem;
   display: flex;
   align-items: center;
@@ -1942,6 +1942,7 @@ a.collection-disabled {
 
 .iconic-taxa-control span:nth-child(1) {
   margin: 0 .5rem 0 0;
+  letter-spacing: .02rem;
 }
 
 .range-slider-control {
