@@ -15,7 +15,7 @@ import { plants } from 'api/snapdragon/plants';
 import { local } from 'api/snapdragon/local';
 
 import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
-import { listenToTaxaFiltersUpdate } from 'ui/helpers/iconic-taxa-handler';
+import { listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
 
 export const getInatSpecies = (latitude, longitude, config) => {
 
@@ -76,3 +76,9 @@ export const getInatSpecies = (latitude, longitude, config) => {
     return observations;
 
 }
+
+// listenToRangeUpdate((filters, config) => {
+//     const latitude = config.coordinates.lat;
+//     const longitude = config.coordinates.long;
+//     getInatSpecies(latitude, longitude, config);
+// });

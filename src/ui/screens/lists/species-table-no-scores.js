@@ -162,7 +162,7 @@ export const buildTable = (collection, config, traits, enums) => {
     footerRow.appendChild(filterFooter);
 
     tfoot.appendChild(footerRow);
-    table.appendChild(tfoot);
+    // table.appendChild(tfoot);
 
     utils.makeSortable(document);    
 }

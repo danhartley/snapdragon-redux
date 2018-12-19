@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { store } from 'redux/store';
 import { persistor } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';

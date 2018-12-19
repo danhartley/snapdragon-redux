@@ -590,20 +590,115 @@ export const fruit = [
       "id": 625333,
       "name": "Rubus idaeus",
       "images": [
-        "2012/05/24/00/23173_orig.jpg",
-        "2011/11/02/05/61043_orig.jpg",
-        "2012/11/18/08/10414_orig.jpg",
-        "2012/05/24/00/35094_orig.jpg",
-        "2009/09/08/03/90770_orig.jpg",
-        "2015/08/11/22/67667_orig.jpg",
-        "2014/06/10/18/26752_orig.jpg",
-        "2014/06/10/18/83674_orig.jpg",
-        "2014/06/10/18/35695_orig.jpg",
-        "2014/04/29/15/15447_orig.jpg",
-        "2014/04/29/11/30283_orig.jpg",
-        "2014/04/29/12/61321_orig.jpg",
-        "2014/04/29/10/59888_orig.jpg",
-        "2014/04/29/10/56219_orig.jpg"
+        {
+          "title": "n320_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://www.flickr.com/photos/biodivlibrary/7118321853/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/ed/e3/542.7118321853.jpg",
+          "thumb": "80/ed/e3/542.7118321853.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+            "homepage": "http://www.flickr.com/photos/61021753@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "File:Framboises sauvages en ArdÃ¨che.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Framboises_sauvages_en_Ard%C3%A8che.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/34/56/509.1019001.jpg",
+          "thumb": "55/34/56/509.1019001.98x68.jpg"
+        },
+        {
+          "title": "Rubus-idaeus-Raspberry.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rubus-idaeus-Raspberry.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/98/d0/509.11799027.jpg",
+          "thumb": "55/98/d0/509.11799027.98x68.jpg"
+        },
+        {
+          "title": "Rubus idaeus 1.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rubus_idaeus_1.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/e4/28/509.12981063.jpg",
+          "thumb": "55/e4/28/509.12981063.98x68.jpg"
+        },
+        {
+          "title": "Rubus idaeus 2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rubus_idaeus_2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/10/a3/509.14501277.jpg",
+          "thumb": "56/10/a3/509.14501277.98x68.jpg"
+        },
+        {
+          "title": "Woodlot NW of Kornilovo - raspberries - DSCF5596.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Woodlot_NW_of_Kornilovo_-_raspberries_-_DSCF5596.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/93/f6/509.21367450.jpg",
+          "thumb": "57/93/f6/509.21367450.98x68.jpg"
+        },
+        {
+          "title": "Wild raspberri.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Wild_raspberri.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "58/50/76/509.24895367.jpg",
+          "thumb": "58/50/76/509.24895367.98x68.jpg"
+        },
+        {
+          "title": "20130710Himbeere Schwetzinger Hardt4.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20130710Himbeere_Schwetzinger_Hardt4.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "58/d0/82/509.27194106.jpg",
+          "thumb": "58/d0/82/509.27194106.98x68.jpg"
+        },
+        {
+          "title": "Rubus idaeus - fruit.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rubus_idaeus_-_fruit.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/d3/23/509.27255237.jpg",
+          "thumb": "58/d3/23/509.27255237.98x68.jpg"
+        },
+        {
+          "title": "Malina2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Malina2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/15/0e/509.2835473.jpg",
+          "thumb": "59/15/0e/509.2835473.98x68.jpg"
+        },
+        {
+          "title": "Rubus-idaeus-Raspberry.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rubus-idaeus-Raspberry.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5a/9a/10/509.11799027.jpg",
+          "thumb": "5a/9a/10/509.11799027.98x68.jpg"
+        },
+        {
+          "title": "Rubus idaeus20100818 270.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rubus_idaeus20100818_270.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "60/1e/b2/509.39685468.jpg",
+          "thumb": "60/1e/b2/509.39685468.98x68.jpg"
+        },
+        {
+          "title": "Wild Rubus idaeus.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Wild_Rubus_idaeus.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "60/99/fe/509.4119134.jpg",
+          "thumb": "60/99/fe/509.4119134.98x68.jpg"
+        }
       ],
       "names": [
         {

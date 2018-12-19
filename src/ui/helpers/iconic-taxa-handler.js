@@ -4,10 +4,15 @@ import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
 
-const listeners = [];
+const filterListeners = [];
+const rangeListeners = [];
 
 export const listenToTaxaFiltersUpdate = listener => { 
-    listeners.push(listener);
+    filterListeners.push(listener);
+};
+
+export const listenToRangeUpdate = listener => {
+    rangeListeners.push(listener);
 };
 
 export const handleIconicTaxaFilter = (config) => {
@@ -20,7 +25,6 @@ export const handleIconicTaxaFilter = (config) => {
     document.querySelector('#plantae div:nth-child(2)').innerHTML = 'Plants';
 
     const filterAllBtn = document.querySelector('.js-lesson-filters > button:nth-child(1)');
-    // const filterLocalSpeciesBtn = document.querySelector('.js-lesson-filters > button:nth-child(2)');
     const setRangeBtn = document.querySelector('.js-set-range-btn');
 
     const filterSelectedClass = 'iconic-taxa-selected';
@@ -40,10 +44,8 @@ export const handleIconicTaxaFilter = (config) => {
     const checkButtonState = filters => {
         if(filters.length === 0 && !haveFiltersChanged) {
             filterAllBtn.disabled = true;
-            // filterLocalSpeciesBtn.disabled = true;
         } else {
             filterAllBtn.disabled = false;
-            // filterLocalSpeciesBtn.disabled = false;
         }
     };
 
@@ -69,23 +71,13 @@ export const handleIconicTaxaFilter = (config) => {
     });
 
     filterAllBtn.addEventListener('click', event => {
-        document.querySelector('#iconicTaxaFilters .close span').click();
+        if(config.collection.id !== 8) {
+            document.querySelector('#iconicTaxaFilters .close span').click();
+        }
         config.iconicTaxa = filters;
         actions.boundUpdateConfig(config);
-        listeners.forEach(listener => listener(filters));
+        filterListeners.forEach(listener => listener(filters, config));
     });
-
-    // filterLocalSpeciesBtn.addEventListener('click', event => {
-    //     config.iconicTaxa = filters;
-    //     actions.boundUpdateConfig(config);
-    //     filterLocalSpeciesBtn.innerHTML = 'Updating filters...'; 
-    //     setTimeout(() => {                
-    //         filterLocalSpeciesBtn.innerHTML = 'Filters updated';                
-    //         setTimeout(() => {
-    //             filterLocalSpeciesBtn.innerHTML = 'Set new filters';
-    //         }, 1500);
-    //     }, 1500);
-    // }); 
 
     const defaultRange = config.speciesRange;
     const range = document.getElementById('range');
@@ -105,6 +97,7 @@ export const handleIconicTaxaFilter = (config) => {
         config.speciesRange = parseInt(range.innerHTML);
         setRangeBtn.innerHTML = 'Updating range...';
         actions.boundUpdateConfig(config);
+        rangeListeners.forEach(listener => listener(filters, config));
         setTimeout(() => {                
             setRangeBtn.innerHTML = 'Range updated';                
             setTimeout(() => {

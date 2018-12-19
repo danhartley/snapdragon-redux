@@ -5223,19 +5223,118 @@ export const deciduousAndEvergreenTrees = [
       "id": 703834,
       "name": "Cercis siliquastrum",
       "images": [
-        "2014/08/15/01/58852_orig.jpg",
-        "2012/05/23/09/48300_orig.jpg",
-        "2009/09/08/04/80850_orig.jpg",
-        "2014/08/15/04/51918_orig.jpg",
-        "2014/08/15/04/58962_orig.jpg",
-        "2014/08/15/04/03221_orig.jpg",
-        "2009/09/08/04/83222_orig.jpg",
-        "2009/09/08/04/21159_orig.jpg",
-        "2016/08/03/22/13711_orig.jpg",
-        "2008/10/06/13/54454_orig.jpg",
-        "2008/10/06/13/57548_orig.jpg",
-        "2011/10/15/22/79435_orig.jpg",
-        "2012/01/22/05/64259_orig.jpg"
+        {
+          "title": "Cercis siliquastrum flowers3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_flowers3.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/3a/11/509.10292308.jpg",
+          "thumb": "55/3a/11/509.10292308.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum close-up flowers.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_close-up_flowers.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/43/3f/509.10435325.jpg",
+          "thumb": "55/43/3f/509.10435325.98x68.jpg"
+        },
+        {
+          "title": "Cersis siliquastrum Enfoqueflores 2010-4-11 DehesaBoyalPuertollano.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cersis_siliquastrum_Enfoqueflores_2010-4-11_DehesaBoyalPuertollano.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/70/93/509.11100241.jpg",
+          "thumb": "55/70/93/509.11100241.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum hojas.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_hojas.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/e1/f0/509.1291115.jpg",
+          "thumb": "55/e1/f0/509.1291115.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum 001.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_001.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/30/3a/509.15014416.jpg",
+          "thumb": "56/30/3a/509.15014416.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum 002.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_002.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/30/3d/509.15014438.jpg",
+          "thumb": "56/30/3d/509.15014438.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum 004.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_004.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/30/3e/509.15014458.jpg",
+          "thumb": "56/30/3e/509.15014458.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum 008.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_008.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/30/41/509.15014560.jpg",
+          "thumb": "56/30/41/509.15014560.98x68.jpg"
+        },
+        {
+          "title": "PikiWiki Israel 12610 klil david.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_12610_klil_david.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/31/e0/509.15040789.jpg",
+          "thumb": "56/31/e0/509.15040789.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum-IMG 0415.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum-IMG_0415.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/15/c7/509.19042355.jpg",
+          "thumb": "57/15/c7/509.19042355.98x68.jpg"
+        },
+        {
+          "title": "PikiWiki Israel 19977 Plants of Israel.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_19977_Plants_of_Israel.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/34/70/509.19672635.jpg",
+          "thumb": "57/34/70/509.19672635.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum - leaves.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_-_leaves.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/15/58/509.2836058.jpg",
+          "thumb": "59/15/58/509.2836058.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum flowers3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_flowers3.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5a/3b/51/509.10292308.jpg",
+          "thumb": "5a/3b/51/509.10292308.98x68.jpg"
+        },
+        {
+          "title": "Albero di Giuda - primavera.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Albero_di_Giuda_-_primavera.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5a/7c/b7/509.11250080.jpg",
+          "thumb": "5a/7c/b7/509.11250080.98x68.jpg"
+        }
       ],
       "names": [
         {

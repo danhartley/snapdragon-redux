@@ -1948,5 +1948,9 @@ a.collection-disabled {
 .range-slider-control {
   display: flex;
   justify-content: space-between;
-  width: 32rem;
+  width: 38rem;
+}
+
+.range-slider-control input {
+  width: 15rem;
 }

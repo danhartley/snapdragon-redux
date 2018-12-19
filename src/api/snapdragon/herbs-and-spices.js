@@ -1437,12 +1437,107 @@ export const herbsAndSpices = [
       "name": "Laurus nobilis",
       "eolName": "Laurus nobilis L.",
       "images": [
-        "2009/07/24/04/82936_orig.jpg",
-        "2011/10/16/00/32444_orig.jpg",
-        "2016/08/06/02/13515_orig.jpg",
-        "2015/08/11/22/86224_orig.jpg",
-        "2012/05/23/17/75756_orig.jpg",
-        "2009/07/24/04/15516_orig.jpg"
+        {
+          "title": "Laurus nobilis 002.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Laurus_nobilis_002.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/4d/97/509.10580640.jpg",
+          "thumb": "55/4d/97/509.10580640.98x68.jpg"
+        },
+        {
+          "title": "Laurel tree - geograph.org.uk - 1417175.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Laurel_tree_-_geograph.org.uk_-_1417175.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/08/44/509.14156798.jpg",
+          "thumb": "56/08/44/509.14156798.98x68.jpg"
+        },
+        {
+          "title": "Laurus-nobilis-flowers.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Laurus-nobilis-flowers.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/59/e0/509.156680.jpg",
+          "thumb": "56/59/e0/509.156680.98x68.jpg"
+        },
+        {
+          "title": "Laurus nobilis MHNT Fleurs.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Laurus_nobilis_MHNT_Fleurs.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/a1/8d/509.26059566.jpg",
+          "thumb": "58/a1/8d/509.26059566.98x68.jpg"
+        },
+        {
+          "title": "Laurus nobilis 002.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Laurus_nobilis_002.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5a/4e/d7/509.10580640.jpg",
+          "thumb": "5a/4e/d7/509.10580640.98x68.jpg"
+        },
+        {
+          "title": "Bay laurel - Defne - Laurus nobilis.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Bay_laurel_-_Defne_-_Laurus_nobilis.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/54/95/509.35393721.jpg",
+          "thumb": "5f/54/95/509.35393721.98x68.jpg"
+        },
+        {
+          "title": "Laurier sauce.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Laurier_sauce.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "61/67/eb/509.4430791.jpg",
+          "thumb": "61/67/eb/509.4430791.98x68.jpg"
+        },
+        {
+          "title": "Laurus nobilis (4).JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Laurus_nobilis_(4).JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "61/aa/d1/509.45008658.jpg",
+          "thumb": "61/aa/d1/509.45008658.98x68.jpg"
+        },
+        {
+          "title": "Bayleaf3800ppx.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Bayleaf3800ppx.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "67/77/d6/509.6793043.jpg",
+          "thumb": "67/77/d6/509.6793043.98x68.jpg"
+        },
+        {
+          "title": "Gardenology-IMG 4928 hunt10mar.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Gardenology-IMG_4928_hunt10mar.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "68/57/0b/509.9702121.jpg",
+          "thumb": "68/57/0b/509.9702121.98x68.jpg"
+        },
+        {
+          "title": "Gardenology-IMG 4931 hunt10mar.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Gardenology-IMG_4931_hunt10mar.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "68/57/0e/509.9702126.jpg",
+          "thumb": "68/57/0e/509.9702126.98x68.jpg"
+        },
+        {
+          "title": "n234_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://www.flickr.com/photos/biodivlibrary/6972228656/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/e3/7c/542.6972228656.jpg",
+          "thumb": "80/e3/7c/542.6972228656.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+            "homepage": "http://www.flickr.com/photos/61021753@N02",
+            "role": "photographer"
+          }
+        }
       ],
       "names": [
         {

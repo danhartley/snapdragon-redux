@@ -11,6 +11,8 @@ import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-table-no-scores';
 import { itemHandler, extendCollection } from 'ui/helpers/item-handler';
+import { listenToTaxaFiltersUpdate, listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
+import { renderSnapdragon } from "ui/screens/home/snapdragon";
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
@@ -19,6 +21,8 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     let config = R.clone(configState);
 
     if(lessonLogicHandler.isSkippable(collection, counter, config, layout, 'renderSpeciesCollectionList', readOnlyMode)) return;
+
+    if(config.iconicTaxa.length !== 0 && !R.contains(collection.iconicTaxon, config.iconicTaxa)) return;
 
     subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
     
@@ -157,3 +161,17 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
         itemHandler(collection, config, counter, callback(collection, config, traits, enums));
     }
 };
+
+listenToTaxaFiltersUpdate((filters, config) => {
+    const { collection, counter } = store.getState();
+    if(R.contains(collection.iconicTaxon, config.iconicTaxa)) {
+        renderSpeciesCollectionList(collection, false);
+    } else {
+        renderSnapdragon(counter);
+    }
+});
+
+listenToRangeUpdate((filters, config) => {
+    const { collection } = store.getState();
+    renderSpeciesCollectionList(collection, false);
+});

@@ -44,7 +44,7 @@ export const renderCollections = (counter) => {
     const selectedCollection = collections.find(c => c.selected);
 
     collection = collection ? collection : { ...collection, ...selectedCollection };
-    
+  
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
     const collectionsHeader = document.querySelector('.btn-collection');
@@ -68,6 +68,7 @@ export const renderCollections = (counter) => {
         }
 
         collection = { ...collection, ...collections.find(collection => collection.id === collectionId) };
+
         collectionsHeader.innerHTML = collection.name;
         const descriptions = collection.descriptions.map(description => `<span>${description}</span>`).join('');
         collectionDescription.innerHTML = descriptions;
@@ -160,7 +161,9 @@ export const renderCollections = (counter) => {
     });
 };
 
-listenToTaxaFiltersUpdate(filters => {
-    const { counter } = store.getState();
-    renderCollections(counter);
+listenToTaxaFiltersUpdate((filters, config) => {
+    if(config.collection.id !== 8) {
+        const { counter } = store.getState();
+        renderCollections(counter);
+    }
 });  
