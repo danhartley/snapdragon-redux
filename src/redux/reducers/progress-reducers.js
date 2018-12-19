@@ -8,7 +8,7 @@ export const counter = (state = null, action) => {
         case 'persist/REHYDRATE':
             return action.payload ? { ...action.payload.counter, isLessonRehydrated: true } : state;
         case types.UPDATE_CONFIG:
-            return state;
+            return { ...state, isLessonRehydrated: false };
         case types.NEXT_ROUND:
             return { index: 0 };
         case types.NEXT_LEVEL:

@@ -162,8 +162,6 @@ export const renderCollections = (counter) => {
 };
 
 listenToTaxaFiltersUpdate((filters, config) => {
-    if(config.collection.id !== 8) {
-        const { counter } = store.getState();
-        renderCollections(counter);
-    }
+    const { counter } = store.getState();
+    renderCollections(counter);
 });  

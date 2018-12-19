@@ -4,6 +4,7 @@ import { store } from 'redux/store';
 import { persistor } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { stats } from 'ui/helpers/stats';
+import { renderSpeciesCollectionList } from '../screens/lists/species-list';
 
 const getMode = (mode, isLevelComplete, itemsToReview) => {    
     const _mode = (mode === 'learn' && isLevelComplete && itemsToReview.length > 0)
@@ -83,31 +84,76 @@ const purgeLesson = () => {
     window.location.reload(true);
 };
 
+const noItems = items => {
+    return !Array.isArray(items);
+};
+
+const lessonNotBegun = (counter, layout, collection, config) => {
+    return !!counter.isLessonRehydrated && !layout;
+};
+
+const lessonIsPaused = (collection, config, counter) => {
+    return collection.id === config.collection.id && counter.isLessonPaused;
+};
+
+const languageHasChanged = (collection, config) => {
+    const hasChanged = collection.language !== config.language;
+    if(hasChanged) collection.language = config.language;
+    return hasChanged;
+};
+
+const speciesRangeHasChanged = (collection, config) => {
+    if(collection && config) return collection.speciesRange !== config.speciesRange;
+};
+
+const taxonFiltersHaveChanged = (collection, config) => {
+
+    let filterHasChanged;
+
+    if(config.collection.id ===8) {
+        if(collection.iconicTaxa === undefined && config.iconicTaxa.length === 0) {
+            filterHasChanged = false;
+        } else {
+            filterHasChanged = [ ...collection.iconicTaxa ].join(',') !== [ ...config.iconicTaxa ].join(',');
+        }
+    } else {
+        if(collection.iconicTaxon === undefined) {
+            filterHasChanged = false;
+        }
+        else {
+            if(config.iconicTaxa.length > 0) {
+                filterHasChanged = !R.contains(collection.iconicTaxon, [ ...config.iconicTaxa ]);
+            } else {
+                filterHasChanged = false;
+            }
+        }
+    }
+
+    return filterHasChanged;
+};
+
+const collectionHasChanged = (collection, config) => {
+    return collection.id === config.collection.id;
+}; 
+
 const isSkippable = (collection, counter, config, layout, caller, readOnlyMode) => {
 
-    console.log('SKIPPABLE');
-    console.log('collection.items: ', collection.items ? collection.items.length : 'no items');
-    console.log('counter.isLessonPaused: ', counter.isLessonPaused);
-    console.log('counter.isLessonRehydrated: ', counter.isLessonRehydrated);
-    console.log('collection.id: ', collection.id);
-    console.log('config.collection.id: ', config.collection.id);
-
-    if(!Array.isArray(collection.items)) return false;
+    if(noItems(collection.items)) return false;
 
     if(readOnlyMode) return false;
 
-    if(counter.isLessonRehydrated && !layout) return false;
+    if(lessonNotBegun(counter, layout, collection, config)) return false;
 
-    if(collection.id === config.collection.id && counter.isLessonPaused) return false;
+    if(lessonIsPaused(collection, config, counter)) return false;
 
-    if(collection.language !== config.language) {
-        collection.language = config.language;
-        return false;
-    }
-    
-    if(!R.contains(collection.iconicTaxon, config.iconicTaxa)) return false;
+    if(languageHasChanged(collection, config)) return false;
 
-    return (collection.id === config.collection.id);
+    if(speciesRangeHasChanged(collection, config)) return false;
+
+    if(taxonFiltersHaveChanged(collection, config)) return false;
+
+    if(collectionHasChanged(collection, config)) return true;
+    else return false;
 };
 
 export const lessonLogicHandler = {

@@ -1,5 +1,5 @@
 const getTaxa = (items, taxon) => {
-    const taxa = items.filter(item => item[taxon]);
+    const taxa = items.filter(item => item[taxon]) || [];
     return taxa;
 };
 

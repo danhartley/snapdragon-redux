@@ -13,9 +13,6 @@ export async function handleLocalCollection(localCollectionNode, collectionsHead
         speciesPendingSpinner(config);
     }
   
-    localCollectionNode.classList.add('collection-disabled');
-    localCollectionNode.innerHTML += ' (unavailable)';
-  
     const coordinates = await getLocation(config);        
     const latitude = coordinates['0'] || coordinates.lat;
     const longitude = coordinates['1'] || coordinates.long;
@@ -39,5 +36,8 @@ export async function handleLocalCollection(localCollectionNode, collectionsHead
         }
 
         localCollectionNode.classList.remove('collection-disabled');
+    } else {
+        localCollectionNode.classList.add('collection-disabled');
+        localCollectionNode.innerHTML += ' (unavailable)';
     }
   };

@@ -24,11 +24,10 @@ export const handleIconicTaxaFilter = (config) => {
     document.querySelector('#fungi div:nth-child(2)').innerHTML = 'Fungi & Lichens';
     document.querySelector('#plantae div:nth-child(2)').innerHTML = 'Plants';
 
-    const filterAllBtn = document.querySelector('.js-lesson-filters > button:nth-child(1)');
+    const filterBtn = document.querySelector('.js-lesson-filters > button:nth-child(1)');
     const setRangeBtn = document.querySelector('.js-set-range-btn');
 
     const filterSelectedClass = 'iconic-taxa-selected';
-    let haveFiltersChanged = false;
 
     const icons = document.querySelectorAll('.iconic-taxa-categories > div > div:nth-child(1)');
 
@@ -41,39 +40,36 @@ export const handleIconicTaxaFilter = (config) => {
         });
     }
 
-    const checkButtonState = filters => {
+    const checkButtonState = (filters, haveFiltersChanged) => {
         if(filters.length === 0 && !haveFiltersChanged) {
-            filterAllBtn.disabled = true;
+            filterBtn.disabled = true;
         } else {
-            filterAllBtn.disabled = false;
+            filterBtn.disabled = false;
         }
     };
 
-    let filters = config.iconicTaxa || [];
-    checkButtonState(filters);
+    let filters = [ ...config.iconicTaxa ] || [];
+    checkButtonState(filters, false);
 
     icons.forEach(category => {
         category.addEventListener('click', event => {
-            haveFiltersChanged = true;
+            const _category = category;
             const filter = event.currentTarget;
             const filterId = filter.parentElement.id;                       
-            if(elem.hasClass(filter, filterSelectedClass)) {
+
+            if(filters.find(f => f === filterId)) {
                 filter.classList.remove(filterSelectedClass);
                 filters = filters.filter(f => f !== filterId);
-            }
-            else {
+            } else {
                 filter.classList.add(filterSelectedClass);
                 filters.push(filterId);
-            }                
-            checkButtonState(filters);
-            event.stopPropagation();
+            }    
+            checkButtonState(filters, true);
         });
     });
 
-    filterAllBtn.addEventListener('click', event => {
-        if(config.collection.id !== 8) {
-            document.querySelector('#iconicTaxaFilters .close span').click();
-        }
+    filterBtn.addEventListener('click', event => {
+        document.querySelector('#iconicTaxaFilters .close span').click();
         config.iconicTaxa = filters;
         actions.boundUpdateConfig(config);
         filterListeners.forEach(listener => listener(filters, config));

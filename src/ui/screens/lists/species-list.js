@@ -22,8 +22,6 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
     if(lessonLogicHandler.isSkippable(collection, counter, config, layout, 'renderSpeciesCollectionList', readOnlyMode)) return;
 
-    if(config.iconicTaxa.length !== 0 && !R.contains(collection.iconicTaxon, config.iconicTaxa)) return;
-
     subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
     
     if(collection.id === 0) return;
@@ -161,16 +159,6 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
         itemHandler(collection, config, counter, callback(collection, config, traits, enums));
     }
 };
-
-listenToTaxaFiltersUpdate((filters, config) => {
-    const { collection, counter } = store.getState();
-    renderSpeciesCollectionList(collection, false);
-    // if(!collection.iconicTaxon || R.contains(collection.iconicTaxon, config.iconicTaxa)) {
-    //     renderSpeciesCollectionList(collection, false);
-    // } else {
-    //     renderSnapdragon(counter);
-    // }
-});
 
 listenToRangeUpdate((filters, config) => {
     const { collection } = store.getState();
