@@ -164,11 +164,12 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
 listenToTaxaFiltersUpdate((filters, config) => {
     const { collection, counter } = store.getState();
-    if(R.contains(collection.iconicTaxon, config.iconicTaxa)) {
-        renderSpeciesCollectionList(collection, false);
-    } else {
-        renderSnapdragon(counter);
-    }
+    renderSpeciesCollectionList(collection, false);
+    // if(!collection.iconicTaxon || R.contains(collection.iconicTaxon, config.iconicTaxa)) {
+    //     renderSpeciesCollectionList(collection, false);
+    // } else {
+    //     renderSnapdragon(counter);
+    // }
 });
 
 listenToRangeUpdate((filters, config) => {

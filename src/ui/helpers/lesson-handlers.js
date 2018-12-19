@@ -105,6 +105,8 @@ const isSkippable = (collection, counter, config, layout, caller, readOnlyMode) 
         return false;
     }
     
+    if(!R.contains(collection.iconicTaxon, config.iconicTaxa)) return false;
+
     return (collection.id === config.collection.id);
 };
 
