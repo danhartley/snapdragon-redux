@@ -1,13 +1,14 @@
 import * as R from 'ramda';
 
 import { DOM } from 'ui/dom';
+import { store } from 'redux/store';
 import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
 import { renderTemplate } from 'ui/helpers/templating';
 import snapdragonTemplate from 'ui/screens/home/snapdragon-template.html';
 import { listenToTaxaFiltersUpdate } from 'ui/helpers/iconic-taxa-handler';
 
 
-const renderSnapdragonTempla = (snapdragonTemplate, DOM, snapdragonCollections, renderTemplate) => {
+const renderSnapdragonTempla = (snapdragonTemplate, DOM, snapdragonCollections, renderTemplate, filters) => {
 
     const template = document.createElement('template');
 
@@ -18,7 +19,9 @@ const renderSnapdragonTempla = (snapdragonTemplate, DOM, snapdragonCollections, 
     const parent = DOM.leftBody;
     parent.innerHTML = '';
 
-    const collections = snapdragonCollections;
+    const collections = (filters && filters.length !== 0)
+        ? snapdragonCollections.filter(c => R.contains(c.iconicTaxon, filters))
+        : snapdragonCollections;
 
     const context = { collections };
 
@@ -29,11 +32,13 @@ export const renderSnapdragon = (counter) => {
 
     if(counter.isLessonPaused) return;
 
-    renderSnapdragonTempla(snapdragonTemplate, DOM, snapdragonCollections, renderTemplate);
+    const { config } = store.getState();
+
+    const filters = config.iconicTaxa;
+
+    renderSnapdragonTempla(snapdragonTemplate, DOM, snapdragonCollections, renderTemplate, filters);
 };
 
-listenToTaxaFiltersUpdate((filters, config) => {
-    let collections = snapdragonCollections.filter(c => R.contains(c.iconicTaxon, filters));
-    collections = collections.length === 0 ? snapdragonCollections : collections;
-    renderSnapdragonTempla(snapdragonTemplate, DOM, collections, renderTemplate);
+listenToTaxaFiltersUpdate((filters, config) => {    
+    renderSnapdragonTempla(snapdragonTemplate, DOM, snapdragonCollections, renderTemplate, filters);
 });  
