@@ -33,6 +33,7 @@ export const renderSnapdragon = (counter) => {
 };
 
 listenToTaxaFiltersUpdate((filters, config) => {
-    const collections = snapdragonCollections.filter(c => R.contains(c.iconicTaxon, filters));
+    let collections = snapdragonCollections.filter(c => R.contains(c.iconicTaxon, filters));
+    collections = collections.length === 0 ? snapdragonCollections : collections;
     renderSnapdragonTempla(snapdragonTemplate, DOM, collections, renderTemplate);
 });  
