@@ -103,7 +103,13 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                     renderTaxonCard(collection, true, parent, family);
                 });
             });
-        }, 1000);
+
+            document.querySelectorAll('.mushroom-icon').forEach(icon => {
+                icon.innerHTML = '<svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg>';
+            });
+        
+
+        });
 
         // Portrait mode only
 

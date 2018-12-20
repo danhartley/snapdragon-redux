@@ -51,6 +51,11 @@ export const handleIconicTaxaFilter = (config) => {
     let filters = [ ...config.iconicTaxa ] || [];
     checkButtonState(filters, false);
 
+    const fungiIcon = document.querySelector('#fungi > div');
+    if(elem.hasClass(fungiIcon, 'iconic-taxa-selected')) {
+        fungiIcon.querySelector('g g').classList.add('svg-icon-selected');
+    }
+
     icons.forEach(category => {
         category.addEventListener('click', event => {
             const _category = category;
@@ -58,9 +63,15 @@ export const handleIconicTaxaFilter = (config) => {
             const filterId = filter.parentElement.id;                       
 
             if(filters.find(f => f === filterId)) {
+                if(filterId === 'fungi') {
+                    filter.querySelector('g g').classList.remove('svg-icon-selected');                    
+                }
                 filter.classList.remove(filterSelectedClass);
                 filters = filters.filter(f => f !== filterId);
             } else {
+                if(filterId === 'fungi') {
+                    filter.querySelector('g g').classList.add('svg-icon-selected');
+                }
                 filter.classList.add(filterSelectedClass);
                 filters.push(filterId);
             }    

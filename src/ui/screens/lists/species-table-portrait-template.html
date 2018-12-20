@@ -28,6 +28,10 @@
                             <span class="latin-name">{{ item.shortName }}</span>
                         </td>
                         <td>
+                            <span><i class="{{ item.iconicTaxon }}"></i></span>
+                            <span class="mushroom-icon {{ item.hideFungiIcon }}"></span>
+                        </td>
+                        <td>
                             <div class="custom-control custom-checkbox">
                                 <input name="{{ item.binomial }}" type="checkbox" class="custom-control-input" id="inputCheck{{ item.snapIndex }}" checked>
                                 <label class="custom-control-label" for="inputCheck{{ item.snapIndex }}"></label>

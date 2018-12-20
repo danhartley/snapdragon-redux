@@ -6,6 +6,7 @@ import { taxa } from 'api/snapdragon/taxa';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
+import { iconicTaxa, matchTaxon, matchIcon } from 'api/snapdragon/iconic-taxa';
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 import speciesPortraitTemplate from 'ui/screens/lists/species-table-portrait-template.html';
 
@@ -53,7 +54,15 @@ export const buildTable = (collection, config, traits, enums) => {
         const keyTrait = itemProperties.getActiveTrait(traits, item.name, [{ name: traitName, formatter: trait => trait.value }]);
         item.keyTrait = keyTrait.indexOf(',') > 0 ? keyTrait.split(',')[0] : keyTrait;
         item.keyTratLinkClass = keyTratLinkClass;
-        item.familyLinkClass = itemProperties.familyHasTaxaData(item.family, taxa) ? 'capitalise underline-link js-family-link' : 'js-family-link' 
+        item.familyLinkClass = itemProperties.familyHasTaxaData(item.family, taxa) ? 'capitalise underline-link js-family-link' : 'js-family-link';
+        
+        if(matchTaxon(item.taxonomy, iconicTaxa) === 'fungi') {
+            item.iconicTaxon = 'hide';
+            item.hideFungiIcon = '';
+        } else {
+            item.iconicTaxon = matchIcon(item.taxonomy, iconicTaxa);
+            item.hideFungiIcon = 'hide';
+        }
     });
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
@@ -89,7 +98,6 @@ export const buildTable = (collection, config, traits, enums) => {
         }
     });
 
-    const table = document.querySelector('.species-table');
     const tbody = document.querySelector('.species-table tbody');
     
     const headerRow = document.createElement('tr');
@@ -98,7 +106,9 @@ export const buildTable = (collection, config, traits, enums) => {
     const speciesHeader = document.createElement('th');
     const familyHeader = document.createElement('th');
     const traitNameHeader = document.createElement('th');
+    const iconicTaxonHeader = document.createElement('th');
     const filterHeader = document.createElement('th');
+    
     filterHeader.classList.add('not-sortable');
 
     const checkbox = document.createElement('span');
@@ -119,6 +129,7 @@ export const buildTable = (collection, config, traits, enums) => {
     speciesHeader.innerHTML = '<span>Species</span';
     familyHeader.innerHTML = '<span>Family</span>';
     traitNameHeader.innerHTML = '<span>Key trait</span>';
+    iconicTaxonHeader.innerHTML = '<span><i class="fas fa-sliders-h"></i></span>';
     filterHeader.appendChild(checkbox); 
     imageHeader.innerHTML = '<div></div>';
     if(wide) {        
@@ -126,43 +137,15 @@ export const buildTable = (collection, config, traits, enums) => {
         headerRow.appendChild(speciesHeader);    
         headerRow.appendChild(familyHeader);
         headerRow.appendChild(traitNameHeader);
+        headerRow.appendChild(iconicTaxonHeader);
     } else {
         headerRow.appendChild(imageHeader);    
         headerRow.appendChild(speciesHeader);     
+        headerRow.appendChild(iconicTaxonHeader);
     }
     headerRow.appendChild(filterHeader);      
 
     tbody.insertBefore(headerRow, tbody.children[0]);
-
-    const tfoot = document.createElement('tfoot');
-    const footerRow = document.createElement('tr');
-    footerRow.classList.add('table-footer');
-
-    const imageFooter = document.createElement('td');
-    const speciesFooter = document.createElement('td');
-    const familyFooter = document.createElement('td');
-    const traitNameFooter = document.createElement('td');
-    const filterFooter = document.createElement('td');
-
-    imageFooter.innerHTML = '<div></div>';
-    speciesFooter.innerHTML = '<div></div>';
-    familyFooter.innerHTML = '<div></div>';
-
-    filterFooter.innerHTML = '<div></div>';
-
-    if(wide) {
-        footerRow.appendChild(imageFooter);
-        footerRow.appendChild(speciesFooter);
-        footerRow.appendChild(familyFooter);
-        footerRow.appendChild(traitNameFooter);
-    } else {
-        footerRow.appendChild(imageFooter);
-        footerRow.appendChild(speciesFooter);
-    }
-    footerRow.appendChild(filterFooter);
-
-    tfoot.appendChild(footerRow);
-    // table.appendChild(tfoot);
 
     utils.makeSortable(document);    
 }
