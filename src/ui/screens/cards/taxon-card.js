@@ -36,7 +36,7 @@ export const renderTaxonCard = (collection, isModalMode = false, parent = DOM.ri
         summary: itemProperties.getNestedTaxonProp(taxon, config.language, 'descriptions', 'summary'),
         eol: taxon.eol ? taxon.eol.replace('en', config.language) : '',
         wiki: taxon.wiki ? taxon.wiki.replace('en', config.language) : '',
-        occurrences: collection.familyStats[taxon.name],
+        occurrences: collection.familyStats ? collection.familyStats[taxon.name] : 0,
         toxic: taxon.toxic ? `Toxic species: ${taxon.toxic.members.join(', ')}` : '',
         notableMembers: taxon.members ? R.take(2, taxon.members).join(', ') : ''
     }
@@ -64,12 +64,16 @@ export const renderTaxonCard = (collection, isModalMode = false, parent = DOM.ri
     //     document.querySelector('.js-taxon-toxic-warning').innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
     // }
 
-    document.querySelector('.js-external-page-title').innerHTML = `${item.family}`;
-    document.querySelector('.js-external-page-body').innerHTML = `<iframe class="modal-iframe" title="Wikipedia page for ${item.family}" src="${context.wiki}"></iframe>`;
+    document.querySelector('.js-external-page-title').innerHTML = `${itemFamily}`;
+    document.querySelector('.js-external-page-body').innerHTML = `<iframe class="modal-iframe" title="Wikipedia page for ${itemFamily}" src="${context.wiki}"></iframe>`;
 
-    document.querySelector('.badge').addEventListener('click', event => {
-        document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = `Members of the ${item.family} family`;
-        const members = collection.items.filter(i => i.family === item.family);
+    const membersCount = document.querySelector('.badge');
+
+    if(context.occurrences === 0) membersCount.classList.add('hide');
+
+    membersCount.addEventListener('click', event => {
+        document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = `Members of the ${itemFamily} family`;
+        const members = collection.items.filter(i => i.family === itemFamily);
         const list = document.querySelector('#badgeListModal .js-modal-text');
         list.innerHTML = '';
         members.forEach(member => {
