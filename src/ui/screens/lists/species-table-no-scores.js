@@ -56,11 +56,13 @@ export const buildTable = (collection, config, traits, enums) => {
         item.keyTratLinkClass = keyTratLinkClass;
         item.familyLinkClass = itemProperties.familyHasTaxaData(item.family, taxa) ? 'capitalise underline-link js-family-link' : 'js-family-link';
         
-        if(matchTaxon(item.taxonomy, iconicTaxa) === 'fungi') {
-            item.iconicTaxon = 'hide';
+        item.iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa);
+
+        if(item.iconicTaxon === 'fungi') {
+            item.iconicTaxonIcon = 'hide';
             item.hideFungiIcon = '';
         } else {
-            item.iconicTaxon = matchIcon(item.taxonomy, iconicTaxa);
+            item.iconicTaxonIcon = matchIcon(item.taxonomy, iconicTaxa);
             item.hideFungiIcon = 'hide';
         }
     });

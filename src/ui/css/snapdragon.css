@@ -1209,6 +1209,20 @@ table {
   padding: 0 0 0 .5rem;
 }
 
+    .table-header th:nth-child(2):after,
+    .table-header th:nth-child(3):after {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-left: .255rem;
+      vertical-align: .255rem;
+      content: "";
+      border-top: .3rem solid;
+      border-right: .3rem solid transparent;
+      border-bottom: 0;
+      border-left: .3rem solid transparent
+  }
+
   .table-header th:nth-child(1) > div,
   .table-footer td:nth-child(1) > div {
       width: 5rem;
