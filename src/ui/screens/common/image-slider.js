@@ -14,6 +14,7 @@ const selectActiveNodeImage = (image, parent) => {
         }
     });    
     const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > div'); 
+    document.querySelector('.carousel-indicators li').classList.add('active');
     const img = image.dataset || image;
     img.title = img.title || img.itemName;
     handleRightsAttribution(img, activeNode);
@@ -33,7 +34,7 @@ const disableModalPopups = (disableModal, parent, config) => {
 const carouselControlHandler = event => {
     setTimeout(() => {
         const activeNode = document.querySelector(`${event.target.dataset.slider} .carousel-item.active > div`);
-        const image = activeNode.dataset;
+        const image = activeNode.dataset;        
         handleRightsAttribution(image, activeNode);
     },1000);
 };
@@ -45,6 +46,8 @@ export const imageSlider = (config, images, parent, disableModal, image) => {
     slider.innerHTML = imageSliderTemplate;
 
     parent.innerHTML = '';
+
+    images.forEach((img, i) => img.index = i);
 
     renderTemplate({ images, index: '' }, slider.content, parent);
     selectActiveNodeImage(image || images[0], parent);    
@@ -74,7 +77,7 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
         const images = prepImagesForCarousel(item, config, imageUseCases.CAROUSEL);
         renderTemplate({ images, index: index + 1 }, sideBySlider.content, parent);
         const activeNode = document.querySelector(`#imageSlider${index + 1} .carousel-item`);
-        activeNode.classList.add('active');
+        activeNode.classList.add('active');        
         disableModalPopups(disableModal, config);
         handleRightsAttribution(images[0], activeNode.querySelector('div'));
 

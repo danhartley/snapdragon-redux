@@ -74,20 +74,7 @@ export const insects = [
             "source": "https://commons.wikimedia.org/wiki/File:Fraxinus_angustifolia,_bloeiwyses_en_bye,_e,_Tweeling.jpg",
             "license": "http://creativecommons.org/licenses/by/3.0/",
             "url": "5c/ea/94/509.22846535.jpg",
-            "thumb": "5c/ea/94/509.22846535.98x68.jpg"
-          },
-          {
-            "title": "Bee Happy",
-            "rightsHolder": "Treesha Duncan",
-            "source": "https://www.flickr.com/photos/iamtreesha/7894625598/",
-            "license": "http://creativecommons.org/licenses/by/2.0/",
-            "url": "81/22/92/542.7894625598.jpg",
-            "thumb": "81/22/92/542.7894625598.98x68.jpg",
-            "photographer": {
-              "full_name": "<a href='http://www.flickr.com/photos/57720887@N05'>Treesha Duncan</a>",
-              "homepage": "http://www.flickr.com/photos/57720887@N05",
-              "role": "photographer"
-            }
+            "thumb": "5c/ea/94/509.22846535.98x68.jpg"          
           }          
         ],
         "names": [
