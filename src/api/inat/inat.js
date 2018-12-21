@@ -68,7 +68,7 @@ export const getInatSpecies = (latitude, longitude, config) => {
             } 
             else {
                 //return `** ${observation.taxon.name} **`;
-                console.log(observation.taxon.name);
+                // console.log(observation.taxon.name);
             }
         });
     });

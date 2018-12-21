@@ -11,8 +11,7 @@ import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-table-no-scores';
 import { itemHandler, extendCollection } from 'ui/helpers/item-handler';
-import { listenToTaxaFiltersUpdate, listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
-import { renderSnapdragon } from "ui/screens/home/snapdragon";
+import { listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 

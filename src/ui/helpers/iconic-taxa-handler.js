@@ -79,6 +79,7 @@ export const handleIconicTaxaFilter = (config) => {
         });
     });
 
+    filterBtn.removeEventListener('click');
     filterBtn.addEventListener('click', event => {
         document.querySelector('#iconicTaxaFilters .close span').click();
         config.iconicTaxa = filters;

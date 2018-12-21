@@ -3867,20 +3867,107 @@ export const deciduousAndEvergreenTrees = [
       "id": 487229,
       "name": "Juglans regia",
       "images": [
-        "2012/01/25/03/72481_orig.jpg",
-        "2012/06/12/16/22855_orig.jpg",
-        "2016/08/04/09/94359_orig.jpg",
-        "2016/08/04/09/37494_orig.jpg",
-        "2016/08/04/09/53755_orig.jpg",
-        "2016/08/04/09/51743_orig.jpg",
-        "2015/08/11/23/49876_orig.jpg",
-        "2014/06/14/18/73191_orig.jpg",
-        "2014/06/14/18/14055_orig.jpg",
-        "2011/10/16/00/73043_orig.jpg",
-        "2011/10/16/00/70660_orig.jpg",
-        "2012/10/14/03/07452_orig.jpg",
-        "2014/08/15/04/19743_orig.jpg",
-        "2012/12/11/14/54461_orig.jpg"
+        {
+          "title": "n240_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://www.flickr.com/photos/biodivlibrary/6972229828/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/e3/7e/542.6972229828.jpg",
+          "thumb": "80/e3/7e/542.6972229828.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+            "homepage": "http://www.flickr.com/photos/61021753@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Juglans regia (detail).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Juglans_regia_(detail).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/43/80/509.1043694.jpg",
+          "thumb": "55/43/80/509.1043694.98x68.jpg"
+        },
+        {
+          "title": "Juglans regia 006.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Juglans_regia_006.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/49/4e/509.10528124.jpg",
+          "thumb": "55/49/4e/509.10528124.98x68.jpg"
+        },
+        {
+          "title": "Juglans regia 007.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Juglans_regia_007.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/49/51/509.10528149.jpg",
+          "thumb": "55/49/51/509.10528149.98x68.jpg"
+        },
+        {
+          "title": "Walnuss - erfroren.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Walnuss_-_erfroren.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/39/fb/509.15172251.jpg",
+          "thumb": "56/39/fb/509.15172251.98x68.jpg"
+        },
+        {
+          "title": "Nogales en las fincas..jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Nogales_en_las_fincas..jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/b9/dd/509.17443040.jpg",
+          "thumb": "56/b9/dd/509.17443040.98x68.jpg"
+        },
+        {
+          "title": "Nuss Wargolshausen, 2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Nuss_Wargolshausen,_2.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/c3/26/509.17641272.jpg",
+          "thumb": "56/c3/26/509.17641272.98x68.jpg"
+        },
+        {
+          "title": "Walnuss female.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Walnuss_female.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/53/9b/509.2011871.jpg",
+          "thumb": "57/53/9b/509.2011871.98x68.jpg"
+        },
+        {
+          "title": "File:Juglans regia - KÃ¶hlerâs Medizinal-Pflanzen-081.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Juglans_regia_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-081.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "58/83/43/509.255358.jpg",
+          "thumb": "58/83/43/509.255358.98x68.jpg"
+        },
+        {
+          "title": "Juglans regia.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Juglans_regia.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/a1/fd/509.260688.jpg",
+          "thumb": "58/a1/fd/509.260688.98x68.jpg"
+        },
+        {
+          "title": "Noix en automne.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Noix_en_automne.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/0e/c9/509.2822917.jpg",
+          "thumb": "59/0e/c9/509.2822917.98x68.jpg"
+        },
+        {
+          "title": "Juglans flower female 20050526 064.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Juglans_flower_female_20050526_064.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/1c/5b/509.286265.jpg",
+          "thumb": "59/1c/5b/509.286265.98x68.jpg"
+        }
       ],
       "names": [
         {
