@@ -3,6 +3,7 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils'; 
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
+import { iconicTaxa, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
 
 let items;
 
@@ -12,13 +13,16 @@ const randomiseItems = collection => {
 
     if(!collection.nextItem) return;
 
+    const rank = matchTaxon(collection.nextItem.taxonomy, iconicTaxa).toLowerCase();
+
     if(!collection.items) {
         if(!ui.sharedItems) return;
         items = ui.sharedItems.map(item => {
             return collection.items.find(i => i.name === item.name);
         });
     } else {
-        const clonedItems = R.clone(collection.items);
+        const itemPool = collection.allItems || collection.items;
+        const clonedItems = R.clone(itemPool.filter(item => matchTaxonKey(item.taxonomy,[rank])));
         items = R.take(3, utils.shuffleArray(clonedItems.filter(ci => ci.name !== collection.nextItem.name)));
         const nextItem = clonedItems.find(i => i.name === collection.nextItem.name);
         if(nextItem) items.push(nextItem);

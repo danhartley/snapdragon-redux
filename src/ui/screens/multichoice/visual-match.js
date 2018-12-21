@@ -11,12 +11,15 @@ import { lookALikes } from 'ui/screens/common/look-alikes';
 import { getTraits } from 'api/traits/traits';
 import { renderFeatures } from 'ui/screens/common/feature';
 import * as traitTypes from 'api/traits/trait-types';
+import { iconicTaxa, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
 import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
 import specimenCommonMatchTemplate from 'ui/screens/multichoice/visual-match-template.html';
 
 export const renderSpecimenMatch = collection => {
 
     const item = collection.nextItem;
+
+    const rank = matchTaxon(item.taxonomy, iconicTaxa).toLowerCase();
 
     const { config, lessonPlan, layout, enums } = store.getState();
 
@@ -40,9 +43,19 @@ export const renderSpecimenMatch = collection => {
         
         const number = config.isPortraitMode ? 4 : 6;
 
-        answers = layout.screens[1].type === 'binomial' 
-                ? itemProperties.answersFromList(itemProperties.itemNamesForGroups(collection.items), item.name, number)
-                : itemProperties.answersFromList(itemProperties.vernacularNamesForGroups(collection.items, config), item.vernacularName, number);
+        let itemPool = collection.allItems || collection.items;
+
+        itemPool = R.clone(itemPool.filter(i => i.name !== item.name).filter(i => matchTaxonKey(i.taxonomy,[rank])));
+        
+        const names = R.take(number-1, utils.shuffleArray(itemPool.map(i => i.name)));
+        names.push(item.name);
+        
+        const vernaculars = R.take(number-1, utils.shuffleArray(itemProperties.vernacularNamesForItems(itemPool, config)));
+        vernaculars.push(itemProperties.getVernacularName(item, config));
+
+        answers = layout.screens[1].type === 'binomial'
+            ? utils.shuffleArray(names)
+            : utils.shuffleArray(vernaculars);
 
         const questionValue = layout.screens[1].type === 'binomial'
                 ? item.name

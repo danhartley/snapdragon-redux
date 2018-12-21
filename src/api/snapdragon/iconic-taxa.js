@@ -19,15 +19,19 @@ export const iconicTaxa = {
     ARACHNIDA: 'Arachnids'        
 };
 
+export const matchTaxonKey = (taxonomy, iconicTaxaKeys) => {
+    if(taxonomy.class && R.contains(taxonomy.class.toLowerCase(), iconicTaxaKeys)) return taxonomy.class.toLowerCase();
+    if(taxonomy.kingdom && R.contains(taxonomy.kingdom.toLowerCase(), iconicTaxaKeys)) return taxonomy.kingdom.toLowerCase();
+}
 
 export const matchTaxon = (taxonomy, iconicTaxa) => {
     if(!taxonomy) return false;
     let iconicTaxaKeys = Object.keys(iconicTaxa).map(key => key.toLowerCase());
-    if(taxonomy.class && R.contains(taxonomy.class.toLowerCase(), iconicTaxaKeys)) return taxonomy.class.toLowerCase();
-    if(taxonomy.kingdom && R.contains(taxonomy.kingdom.toLowerCase(), iconicTaxaKeys)) return taxonomy.kingdom.toLowerCase();
+    return matchTaxonKey(taxonomy, iconicTaxaKeys);
 };
 
 export const matchIcon = (taxonomy, iconicTaxa) => {
+    if(!taxonomy) return '';
     const rank = matchTaxon(taxonomy, iconicTaxa).toLowerCase();
     let icon;
     switch(rank) {
