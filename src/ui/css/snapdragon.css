@@ -488,8 +488,10 @@ a.dropdown-item:hover {
   display: grid;
   height: 100%;
   grid-auto-flow: row;                       
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr; */
 }
 
 .tiles {
@@ -500,10 +502,22 @@ a.dropdown-item:hover {
   grid-template-rows: 1fr 1fr;  
 }
 
+.squares.js-tiles > div {  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.squares.js-tiles > div > div {
+  width: 260px;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}  
+
 .squares img, .tiles img {
   cursor: pointer;
-  object-fit: cover;
-  width: 100%;
+  margin: 0 10rem;
 }
 
 .square, .tile {

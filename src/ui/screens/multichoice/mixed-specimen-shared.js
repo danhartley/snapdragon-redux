@@ -23,17 +23,17 @@ const randomiseItems = collection => {
     } else {
         const itemPool = collection.allItems || collection.items;
         const clonedItems = R.clone(itemPool.filter(item => matchTaxonKey(item.taxonomy,[rank])));
-        items = R.take(3, utils.shuffleArray(clonedItems.filter(ci => ci.name !== collection.nextItem.name)));
+        items = R.take(5, utils.shuffleArray(clonedItems.filter(ci => ci.name !== collection.nextItem.name)));
         const nextItem = clonedItems.find(i => i.name === collection.nextItem.name);
         if(nextItem) items.push(nextItem);
         actions.boundUpdateUI({ sharedItems: items.map(item => item.name)});
     }
 };
 
-const getRandomImages = (currentItem, config) => {
+const getRandomImages = (currentItem, config, number) => {
     if(!items) return;
-    items = items.filter(item => item !== currentItem);
-    items = R.take(3, items);
+    items = items.filter(item => item.name !== currentItem.name);
+    items = R.take(number-1, items);
     items.push(currentItem);
 
     let images;
@@ -48,6 +48,9 @@ const getRandomImages = (currentItem, config) => {
         } );
     }
 
+    images.forEach(i => {
+        i.url = i.url.replace('.jpg', '.260x190.jpg');
+    });
     return images;
 };
 

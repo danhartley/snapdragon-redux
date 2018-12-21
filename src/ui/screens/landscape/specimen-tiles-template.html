@@ -1,12 +1,15 @@
 <div class="snapdragon-container">
     <div class="squares js-tiles" data-repeat-image="{{ images }}">
-        <div class="square"                    
-                style="cursor: pointer; background-image: url('https://content.eol.org/data/media/{{ image.url }}'); background-size: cover;  background-position: center;"
+        <div>
+            <div>
+                <img class="square"                    
+                src="https://content.eol.org/data/media/{{ image.url }}"
                 data-toggle="modal" data-target="#imageModal"
                 data-item-name="{{ image.itemName }}" 
                 data-unique-url="{{ image.url }}"
-                data-src="https://content.eol.org/data/media/{{ image.url }}">
+                data-src="https://content.eol.org/data/media/{{ image.url }}" />
                 <div class="layer"></div>
-        </div>
+            </div>            
+        </div>                
     </div>
 </div>

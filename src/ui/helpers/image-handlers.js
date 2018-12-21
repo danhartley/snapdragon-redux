@@ -66,10 +66,10 @@ export const scaleImage = (image, useCase, config) => {
             return config.isLandscapeMode 
             ? image.url
             : image.url.replace('.jpg', '.260x190.jpg');
-        case imageUseCases.MIXED_SPECIMENS:
-            return config.isLandscapeMode 
-                ? image.url.replace('.jpg', '.260x190.jpg')
-                : image.url.replace('.jpg', '.260x190.jpg');
+        // case imageUseCases.MIXED_SPECIMENS:
+        //     return config.isLandscapeMode 
+        //         ? image.url.replace('.jpg', '.260x190.jpg')
+        //         : image.url.replace('.jpg', '.260x190.jpg');
         case imageUseCases.CAROUSEL:
             return config.isLandscapeMode 
                 ? image.url ? image.url.replace('.jpg', '.260x190.jpg') : ''

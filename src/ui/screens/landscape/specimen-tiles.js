@@ -16,7 +16,7 @@ export const renderSpecimenTiles = (collection) => {
 
     const { config } = store.getState();
 
-    let images = R.take(9, utils.shuffleArray(R.clone(item.images)));
+    let images = R.take(6, utils.shuffleArray(R.clone(item.images)));
 
     images = prepImagesForCarousel({ name: item.name, itemCommon: item.itemCommon, images }, config, imageUseCases.SPECIES_CARD);
 

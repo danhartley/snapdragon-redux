@@ -34,7 +34,7 @@ export const renderMixedSpecimenQuestions = ui => {
         return multiImages;
     }
 
-    let images = utils.shuffleArray(screenShare.getRandomImages(item, config));
+    let images = utils.shuffleArray(screenShare.getRandomImages(item, config, 4));
 
     if(!images) return;
 
