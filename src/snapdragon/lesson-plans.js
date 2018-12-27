@@ -21,7 +21,8 @@ const mixedSpeciesMatch = {
     given: 'Given species name',    
     requirement: 'Select species image',
     screens: [
-        { ...mixedSpecimenTiles },
+        { ...specimen },
+        // { ...mixedSpecimenTiles },
         { ...mixedSpecimenQuestions }
     ]
 };

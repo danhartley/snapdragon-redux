@@ -161,6 +161,14 @@ export const plants = [
       "name": "Origanum majorana",
       "images": [
         {
+          "title": "Marjoram (Origanum majorana) 01.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Marjoram_(Origanum_majorana)_01.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "63/18/81/509.48210955.jpg",
+          "thumb": "63/18/81/509.48210955.98x68.jpg"
+        },
+        {
           "title": "Bindon Hill (E), Mupe Bay - geograph.org.uk - 631203.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Bindon_Hill_(E),_Mupe_Bay_-_geograph.org.uk_-_631203.jpg",
@@ -199,14 +207,6 @@ export const plants = [
           "license": "http://creativecommons.org/licenses/publicdomain/",
           "url": "63/18/80/509.48210954.jpg",
           "thumb": "63/18/80/509.48210954.98x68.jpg"
-        },
-        {
-          "title": "Marjoram (Origanum majorana) 01.JPG",
-          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-          "source": "https://commons.wikimedia.org/wiki/File:Marjoram_(Origanum_majorana)_01.JPG",
-          "license": "http://creativecommons.org/licenses/publicdomain/",
-          "url": "63/18/81/509.48210955.jpg",
-          "thumb": "63/18/81/509.48210955.98x68.jpg"
         },
         {
           "title": "Starr 070906-8859 Origanum majorana.jpg",
@@ -262,6 +262,14 @@ export const plants = [
       "name": "Allium sativum",
       "images": [
         {
+          "title": "Allium sativum - Garlic 02.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Allium_sativum_-_Garlic_02.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/74/0a/509.1609454.jpg",
+          "thumb": "56/74/0a/509.1609454.98x68.jpg"
+        },
+        {
           "title": "Allium sativum harilik kyyslauk estonia.JPG",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Allium_sativum_harilik_kyyslauk_estonia.JPG",
@@ -284,14 +292,6 @@ export const plants = [
           "license": "http://creativecommons.org/licenses/publicdomain/",
           "url": "56/70/62/509.16043708.jpg",
           "thumb": "56/70/62/509.16043708.98x68.jpg"
-        },
-        {
-          "title": "Allium sativum - Garlic 02.jpg",
-          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-          "source": "https://commons.wikimedia.org/wiki/File:Allium_sativum_-_Garlic_02.jpg",
-          "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "56/74/0a/509.1609454.jpg",
-          "thumb": "56/74/0a/509.1609454.98x68.jpg"
         },
         {
           "title": "Purple Garlic.jpg",
@@ -914,6 +914,14 @@ export const plants = [
       "name": "Coriandrum sativum",
       "images": [
         {
+          "title": "A scene of Coriander leaves.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:A_scene_of_Coriander_leaves.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5b/d0/47/509.17870796.jpg",
+          "thumb": "5b/d0/47/509.17870796.98x68.jpg"
+        },
+        {
           "title": "Bloeiende koriander.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Bloeiende_koriander.jpg",
@@ -936,14 +944,6 @@ export const plants = [
           "license": "http://creativecommons.org/licenses/by/3.0/",
           "url": "59/02/5e/509.27916713.jpg",
           "thumb": "59/02/5e/509.27916713.98x68.jpg"
-        },
-        {
-          "title": "A scene of Coriander leaves.JPG",
-          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-          "source": "https://commons.wikimedia.org/wiki/File:A_scene_of_Coriander_leaves.JPG",
-          "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "5b/d0/47/509.17870796.jpg",
-          "thumb": "5b/d0/47/509.17870796.98x68.jpg"
         },
         {
           "title": "JfCamachilesMabalacatCoriandrumsativump495fvf.JPG",
@@ -1190,6 +1190,14 @@ export const plants = [
       "name": "Satureja hortensis",
       "images": [
         {
+          "title": "Satureja hortensis Prague 2011 3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Satureja_hortensis_Prague_2011_3.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/5d/73/509.20296254.jpg",
+          "thumb": "57/5d/73/509.20296254.98x68.jpg"
+        },
+        {
           "title": "Satureja hortensis 001.JPG",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Satureja_hortensis_001.JPG",
@@ -1204,14 +1212,6 @@ export const plants = [
           "license": "http://creativecommons.org/licenses/publicdomain/",
           "url": "56/1a/11/509.14650566.jpg",
           "thumb": "56/1a/11/509.14650566.98x68.jpg"
-        },
-        {
-          "title": "Satureja hortensis Prague 2011 3.jpg",
-          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-          "source": "https://commons.wikimedia.org/wiki/File:Satureja_hortensis_Prague_2011_3.jpg",
-          "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "57/5d/73/509.20296254.jpg",
-          "thumb": "57/5d/73/509.20296254.98x68.jpg"
         },
         {
           "title": "Summer Savoury in Hardwick Hall garden 2012 Satureja hortensis.jpg",
@@ -1401,6 +1401,14 @@ export const plants = [
       "name": "Carum carvi",
       "images": [
         {
+          "title": "File:Carum carvi - KÃ¶hlerâs Medizinal-Pflanzen-172.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Carum_carvi_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-172.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5d/85/e8/509.255512.jpg",
+          "thumb": "5d/85/e8/509.255512.98x68.jpg"
+        },
+        {
           "title": "Carum carvi 001.JPG",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Carum_carvi_001.JPG",
@@ -1415,14 +1423,6 @@ export const plants = [
           "license": "http://creativecommons.org/licenses/by/3.0/",
           "url": "55/3b/2d/509.10309770.jpg",
           "thumb": "55/3b/2d/509.10309770.98x68.jpg"
-        },
-        {
-          "title": "File:Carum carvi - KÃ¶hlerâs Medizinal-Pflanzen-172.jpg",
-          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-          "source": "https://commons.wikimedia.org/wiki/File:Carum_carvi_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-172.jpg",
-          "license": "http://creativecommons.org/licenses/publicdomain/",
-          "url": "5d/85/e8/509.255512.jpg",
-          "thumb": "5d/85/e8/509.255512.98x68.jpg"
         },
         {
           "title": "Illustration Carum carvi retuschiert.jpg",
@@ -1729,6 +1729,14 @@ export const plants = [
       "name": "Brassica nigra",
       "images": [
         {
+          "title": "Brassica nigra (4995050290).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Brassica_nigra_(4995050290).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/e3/76/509.22760692.jpg",
+          "thumb": "57/e3/76/509.22760692.98x68.jpg"
+        },
+        {
           "title": "20120703Saar Saarbruecken15.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:20120703Saar_Saarbruecken15.jpg",
@@ -1759,14 +1767,6 @@ export const plants = [
           "license": "http://creativecommons.org/licenses/publicdomain/",
           "url": "57/57/80/509.20183049.jpg",
           "thumb": "57/57/80/509.20183049.98x68.jpg"
-        },
-        {
-          "title": "Brassica nigra (4995050290).jpg",
-          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-          "source": "https://commons.wikimedia.org/wiki/File:Brassica_nigra_(4995050290).jpg",
-          "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "57/e3/76/509.22760692.jpg",
-          "thumb": "57/e3/76/509.22760692.98x68.jpg"
         },
         {
           "title": "Brassica nigra (4995050154).jpg",
@@ -1944,19 +1944,6 @@ export const plants = [
     "name": "Piper nigrum",
     "images": [
       {
-        "title": "Black pepper",
-        "rightsHolder": "Cyndy Sims Parr",
-        "source": "https://www.flickr.com/photos/cyanocorax/7841385706/",
-        "license": "http://creativecommons.org/licenses/by-sa/2.0/",
-        "url": "81/1e/15/542.7841385706.jpg",
-        "thumb": "81/1e/15/542.7841385706.98x68.jpg",
-        "photographer": {
-          "full_name": "<a href='http://www.flickr.com/photos/20462444@N00'>Cyndy Sims Parr</a>",
-          "homepage": "http://www.flickr.com/photos/20462444@N00",
-          "role": "photographer"
-        }
-      },
-      {
         "title": "n632_w1150",
         "rightsHolder": "Biodiversity Heritage Library",
         "source": "https://www.flickr.com/photos/biodivlibrary/8231737637/",
@@ -1966,6 +1953,19 @@ export const plants = [
         "photographer": {
           "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
           "homepage": "http://www.flickr.com/photos/61021753@N02",
+          "role": "photographer"
+        }
+      },
+      {
+        "title": "Black pepper",
+        "rightsHolder": "Cyndy Sims Parr",
+        "source": "https://www.flickr.com/photos/cyanocorax/7841385706/",
+        "license": "http://creativecommons.org/licenses/by-sa/2.0/",
+        "url": "81/1e/15/542.7841385706.jpg",
+        "thumb": "81/1e/15/542.7841385706.98x68.jpg",
+        "photographer": {
+          "full_name": "<a href='http://www.flickr.com/photos/20462444@N00'>Cyndy Sims Parr</a>",
+          "homepage": "http://www.flickr.com/photos/20462444@N00",
           "role": "photographer"
         }
       },

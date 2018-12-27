@@ -3,6 +3,8 @@ import { modalImagesHandler } from 'ui/helpers/image-handlers';
 import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
 import { imageMatch, imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
 import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
+import { renderItemSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
+import { store } from 'redux/store';
 
 const selectActiveNodeImage = (image, parent) => {
     parent.querySelectorAll('.carousel-item').forEach(i => {        
@@ -36,7 +38,17 @@ const carouselControlHandler = event => {
         const activeNode = document.querySelector(`${event.target.dataset.slider} .carousel-item.active > div`);
         const image = activeNode.dataset;        
         handleRightsAttribution(image, activeNode);
-    },1000);
+
+        const { collection } = store.getState();
+
+        const tiles = document.querySelectorAll('.js-tiles');
+
+        if(tiles) {
+            const name = document.querySelector('.carousel-item.active > div').dataset.title; 
+            const item = collection.items.find(i => i.name === name);
+            renderItemSpecimenTiles(item);
+        }
+    },1000);    
 };
 
 export const imageSlider = (config, images, parent, disableModal, image) => {

@@ -11,10 +11,12 @@ body {
   padding: 0;
   font-family: 'PT Sans', 'Roboto', arial,sans-serif;
   color: var(--snap-text-dark);
+  background-color: rgb(240, 240, 240);
 }
 
 tbody {
   font-size: .9rem;
+  border-bottom: .1rem solid var(--snap-border-dark);
 }
 
 h1 {
@@ -264,7 +266,7 @@ a.dropdown-item:hover {
 
 .lessons-list .lesson-item {
   display: flex;
-  margin: 0 0 2rem 0;
+  margin: 0 0 .5rem 0;
   background-color: rgb(164, 177, 154);
 }
 
@@ -305,7 +307,7 @@ a.dropdown-item:hover {
 
 .scrollable {
   overflow-y: scroll;
-  height: 60vh;
+  height: 72vh;
 }
 
 .modal-list.scrollable {
@@ -320,21 +322,26 @@ a.dropdown-item:hover {
   display: flex;
   flex-direction: column;
   padding: .5rem;
-  background-color: rgb(230, 232, 215);
+  background-color: white;
   justify-content: space-between;
 }
 
 .taxon.revision.card, .species.revision.card, .cultivar.revision.card, .non-taxon.revision.card {
-  margin: 0 0 1rem 0;
   justify-content: space-between;
+  background-color: rgb(249, 248, 238);
 }
 
 .non-taxon.revision.card {
   background-color: rgb(216, 227, 220);
 }
 
+.species.revision.card > div:nth-child(1) {
+  background-color: var(--snap-species-header-background);
+  border-bottom: .05rem solid var(--snap-border-dark);
+}
+
 .species.revision.card {
-  margin: .5rem 0 .5rem 0;
+  margin: .5rem 0;
 }
 
 .species.revision.card img, .non-taxon.revision.card img{
@@ -359,18 +366,20 @@ a.dropdown-item:hover {
   flex-grow: 1;
 }
 
-.scrollable {
-  height: 70vh;
-}
-
 .card {
   flex: auto;
   display: flex;
   flex-direction: column;
-  padding: .5rem;
+  /* padding: .5rem;
+  border: 1px solid var(--snap-border-dark); */
+  padding: 0;
+  border: 0;
   text-align: right;  
-  border: 1px solid var(--snap-border-dark);
   border-radius: .1rem;
+}
+
+.card > .card-txt-block {
+  margin: 0 .5rem 0 0;
 }
 
 .card.species, .lesson-plans .table-row.species-background:nth-child(n) {
@@ -396,22 +405,24 @@ a.dropdown-item:hover {
   display: grid;
   grid-template-columns: 100%;
   grid-column: 1;
-  grid-auto-flow: column;
-  background-color: var(--snap-grid-background);
+  grid-auto-flow: column;  
   grid-template-areas:  "header"
                         "progress"
                         "squares"
                         "footer";
 }
 
+.right-grid {
+  background-color: var(--snap-grid-background);
+}
+
 .left-grid, .right-grid {
-  grid-template-rows: 1fr .3rem 10fr 1fr;
+  grid-template-rows: 1fr .3rem 12fr 1fr;
 }
 
 .left-body, .right-body {
   display: grid;
-  grid-auto-flow: row;
-  background-color: rgb(230, 232, 215);
+  grid-auto-flow: row;  
 }
 
 .header, .footer {
@@ -453,8 +464,12 @@ a.dropdown-item:hover {
   padding: .75rem;
 }
 
-.header, .footer {
-  background-color: var(--snap-primary);
+.left-grid .header, .left-grid .footer {
+  background-color: var(--snap-landscape);
+}
+
+.right-grid .header, .right-grid .footer {
+  background-color: var(--snap-portrait);
 }
 
 .right-grid .footer {
@@ -576,7 +591,7 @@ a.dropdown-item:hover {
 
 .snapdragon.card {
   border: 0;  
-  background-color: rgb(230, 232, 215);
+  /* background-color: rgb(230, 232, 215); */
 }
 
 .taxon-highlight {  
@@ -681,7 +696,6 @@ a.dropdown-item:hover {
 
 .id-box {  
   display: flex;
-  border: 1px solid rgba(129, 67, 101, .3);
   padding: 1rem 0;
   background-color: var(--snap-taxon-card-background);
 }
@@ -717,22 +731,19 @@ a.dropdown-item:hover {
   border: .05rem solid var(--snap-border-dark);
   background-color: var(--snap-data-box-bg);
   text-align: left;
-}
-
-.taxon-data:nth-child(1) {
-  border: .05rem solid var(--snap-border-dark);
+  text-transform: capitalize;
+  padding: .25rem;
 }
 
 .taxon-data > span:nth-child(1) {
   width: 5rem;
-  text-align: right;
-  text-transform: capitalize;
-  padding: 0 .5rem 0 0;
+  padding: 0 0 0 .5rem;
   color: rgb(35,35,35);
 }
 
 .taxon-data > span:nth-child(2) {
   padding: 0 .5rem;
+  min-width: 7.5rem;
 }
 
 .taxon-data {
@@ -740,10 +751,6 @@ a.dropdown-item:hover {
   margin: 0;
   display: flex;
   flex-direction: row;
-}
-
-.taxon-data:nth-child(1) span:nth-child(2) {
-  text-transform: uppercase;
 }
 
 .latin { 
@@ -1017,7 +1024,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   padding: .5rem;
   position: relative;
   height: 55%;
-  border: .05rem solid var(--snap-primary);
+  border: .05rem solid var(--snap-portrait);
   margin: .5rem 0;
   display: flex;
   flex-direction: column;
@@ -1154,7 +1161,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  border: 1px solid transparent;
+  border: 0;
   height: 2.5rem;
   position: sticky;  
   z-index: 10;
@@ -1193,10 +1200,19 @@ table {
   flex: 1;
 }
 
-.list-group-item, .table-row {
-  background-color: var(--snap-list-background);
+.list-group-item, .table-row {  
   display: flex;
   flex-direction: row;
+  border-left: .05rem solid var(--snap-border-dark);
+  border-right: .05rem solid var(--snap-border-dark);
+}
+
+tr.table-row:nth-child(2n) {
+  background-color: var(--snap-list-background);
+}
+
+tr.table-row:nth-child(2n+1) {
+  background-color: var(--snap-list-alt-background);
 }
 
 .table-row img, table input {
@@ -1215,7 +1231,7 @@ table {
 .table-row img {
   width: 5rem;
   height: 5rem;
-  object-fit: cover;  
+  object-fit: scale-down;  
   padding: .5rem;
 }
 
@@ -1252,7 +1268,7 @@ table {
       display: flex;
       flex-direction: column;
       align-items: initial;
-      justify-content: space-around;
+      justify-content: space-evenly;
   }
 
   .table-header th:nth-child(3), .table-row td:nth-child(3),
@@ -1303,10 +1319,6 @@ table {
 .left-grid, .species-card-wiki-entry,
 .collection-preview, .collection button, .collections-skills {
     display: none;
-}
-
-.species-table td {
-  border-bottom: 1px solid var(--snap-list-bg);
 }
 
 .species-table td .portrait input {
@@ -1469,7 +1481,8 @@ table {
 .info-box #traitSlider {
   float: right;
   width: 100%;
-  border: .05rem solid rgba(128, 128, 128,.7);
+  /* border: .05rem solid rgba(128, 128, 128,.7); */
+  background-color: var(--snap-species-header-background);
 }
 
 #traitSlider .carousel-item div {
@@ -1732,6 +1745,7 @@ th .custom-control-label::before {
   transform-origin: bottom left;
   position: absolute;
   margin: 0 0 0 8rem;
+  font-weight: normal;
 }
 
 th.roundScore {

@@ -24,7 +24,17 @@
             <div></div>
             <div class="data-box">
                 <div class="taxon-data"><span>Rank</span> <span>{{ rank }}</span></div>
-                <div class="taxon-data"><span>Family</span><span><span>{{ familyVernacularName }} </span><span class="latin">{{ familyName }}</span></span></div>
+                <div class="taxon-data">
+                    <span>Family</span><span>
+                        <span class="hide-empty">{{ familyVernacularName }}</span>                        
+                    </span>                    
+                </div>
+                <div class="taxon-data">
+                    <span></span><span>
+                        <span class="latin hide-empty">{{ familyName }}</span>                        
+                    </span>
+                </div>
+                <div class="taxon-data"><span>Iconic</span> <span>{{ iconicTaxon }}</span></div>
             </div>                
         </div>
         <hr class="landscape">
@@ -34,11 +44,11 @@
                 </iframe>
             </div>
         </div>                
-        <div class="lookalikes js-lookalikes"></div>
-        <div class="js-feature-types"></div>
+        <div class="card-txt-block lookalikes js-lookalikes"></div>
+        <div class="card-txt-block js-feature-types"></div>
         <div class="info-box js-info-box"></div>
         <hr class="landscape">
-        <div class="landscape species-card-wiki">
+        <div class="landscape card-txt-block species-card-wiki">
             <span class="js-species-card-wiki"></span>
             <span><a class="species-card-eol-link js-species-card-eol-link underline-link">EOL</a></span>
         </div>

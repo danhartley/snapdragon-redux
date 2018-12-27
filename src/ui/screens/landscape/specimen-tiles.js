@@ -14,6 +14,11 @@ export const renderSpecimenTiles = (collection) => {
 
     if(!item) return;
 
+    renderItemSpecimenTiles(item);
+};
+
+export const renderItemSpecimenTiles = item => {
+    
     const { config } = store.getState();
 
     let images = R.take(6, utils.shuffleArray(R.clone(item.images)));

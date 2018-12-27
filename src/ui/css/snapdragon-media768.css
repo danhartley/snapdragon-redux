@@ -30,7 +30,13 @@
     }
 
     .species.revision.card, .non-taxon.revision.card {
-        margin: 0 0 1rem 0;
+        margin: 0 0 .5rem 0;
+        padding: 0 0 .5rem 0;
+        border: .05rem solid var(--snap-species-header-background);
+      }
+
+      .non-taxon.revision.card > div:nth-child(1) {
+          margin: .5rem;
       }
 
     .taxon-highlight {
@@ -49,6 +55,8 @@
 
     .species.card {
         margin: 0;
+        padding: 0;
+        border: 0;
       }
 
     .cultivar.card .scrollable {
@@ -246,7 +254,7 @@
     }
 
     .snapdragon-container {
-        border: .05rem solid var(--snap-primary);
+        border: .05rem solid var(--snap-portrait);
     }
     
     .info-box #traitSlider {     
@@ -268,17 +276,12 @@
         padding: .5rem;
     }
 
-    .imageSlider .carousel-item {
-        height: 70vh;
-    }
-
     .text-question {
         min-height: 3rem;
     }
 
     .summary-scores {
         align-self: center;
-        margin: 2rem 0 0 0;
       }
 
     .course-description span {
@@ -289,13 +292,17 @@
         height: 50vh;
       }
 
-    .question-container {
-        border: .05rem solid var(--snap-question-background);
-    }
-
     .question-container > span:nth-child(1), .question-container > p:nth-child(1) {
         font-size: 1.2rem;
     }
+
+    .radio-buttons-group {
+        margin: 1rem auto;
+        min-width: 80%;
+        border: .01rem solid var(--snap-border-dark);
+        padding: 1rem;
+        padding-bottom: 0.5rem;
+      }
 
     .text-question span:nth-child(2) {
         vertical-align: super;

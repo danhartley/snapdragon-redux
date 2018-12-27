@@ -25,7 +25,7 @@ import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
 import { renderSnapdragon } from "./ui/screens/home/snapdragon";
 
-import { screenShare } from 'ui/screens/multichoice/mixed-specimen-shared';
+// import { screenShare } from 'ui/screens/multichoice/mixed-specimen-shared';
 
 import { updateLanguage } from 'api/traits/trait-types';
 
@@ -53,6 +53,6 @@ setTimeout( () => {
     
     subscription.add(renderScore, 'score', 'flow');
     
-    subscription.add(screenShare.randomiseItems, 'collection', 'flow');
+    // subscription.add(screenShare.randomiseItems, 'collection', 'flow');
     subscription.add(updateLanguage, 'config', 'localistation');
 });

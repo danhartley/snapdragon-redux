@@ -15,6 +15,7 @@ import { lookALikes } from 'ui/screens/common/look-alikes';
 import { renderFeatures } from 'ui/screens/common/feature';
 import { infoSlider } from 'ui/screens/common/info-slider';
 import * as traitTypes from 'api/traits/trait-types';
+import { iconicTaxa, matchTaxon, matchIcon } from 'api/snapdragon/iconic-taxa';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 
 export const renderCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody) => {
@@ -108,7 +109,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     const family = taxa.find(f => f.name === item.family);
     const familyName = family ? family.name : item.taxonomy.family;
     const familyVernacularNames = itemProperties.familyVernacularNames(item.family, config.language, taxa);
-    const familyVernacularName = familyVernacularNames ? familyVernacularNames[0] : '';
+    const familyVernacularName = familyVernacularNames ? familyVernacularNames[0] : '---';
         
     const itemImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
     
@@ -117,6 +118,8 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
 
     const names = [ ...new Set(item.names.filter(name => name.language === config.language).map(name => name.vernacularName.toLowerCase())) ];
     const nameCount = names.length; 
+
+    const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa);
 
     const options = [
         { name: traitTypes.name.RANK, formatter: trait => `UK # ${trait.value}` },
@@ -129,7 +132,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     
     parent.innerHTML = '';
     
-    renderTemplate({ species, vernacularName: item.vernacularName, latin, rank, subSpeciesCount, familyName, itemImage, familyVernacularName, trait, nameCount }, template.content, parent, clone);
+    renderTemplate({ species, vernacularName: item.vernacularName, latin, rank, subSpeciesCount, familyName, itemImage, familyVernacularName, trait, nameCount, iconicTaxon }, template.content, parent, clone);
 
     const subspeciesBadge = document.querySelector('.js-subspecies-badge');
 

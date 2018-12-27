@@ -610,4 +610,24 @@ export const epithets = [
         "latin" : ["askos"],
         "en" : ["sac, wineskin"]
     },
+    {
+        "latin" : ["Suillus"],
+        "en" : ["of pigs"]
+    },
+    {
+        "latin" : ["sus"],
+        "en" : ["pig"]
+    },
+    {
+        "latin" : ["collinitus"],
+        "en" : ["smeared", "greased"]
+    },
+    {
+        "latin" : ["pyrrho"],
+        "en" : ["fire"]
+    },
+    {
+        "latin" : ["coris"],
+        "en" : ["bug"]
+    },
 ];

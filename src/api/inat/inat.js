@@ -67,8 +67,7 @@ export const getInatSpecies = (latitude, longitude, config) => {
                 return { ...snapdragon.find(item => item.name === observation.taxon.name) };
             } 
             else {
-                //return `** ${observation.taxon.name} **`;
-                // console.log(observation.taxon.name);
+                console.log(observation.taxon.name);
             }
         });
     });
@@ -76,9 +75,3 @@ export const getInatSpecies = (latitude, longitude, config) => {
     return observations;
 
 }
-
-// listenToRangeUpdate((filters, config) => {
-//     const latitude = config.coordinates.lat;
-//     const longitude = config.coordinates.long;
-//     getInatSpecies(latitude, longitude, config);
-// });

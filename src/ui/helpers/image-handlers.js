@@ -51,7 +51,7 @@ export const scaleImage = (image, useCase, config) => {
     switch(useCase) {
         case imageUseCases.SPECIES_LIST:
             return config.isLandscapeMode 
-                ? image.url.replace('.jpg', '.260x190.jpg')
+                ? image.url.replace('.jpg', '.98x68.jpg')
                 : image.url.replace('.jpg', '.98x68.jpg');
         case imageUseCases.SPECIES_CARD:
         return config.isLandscapeMode 
@@ -64,12 +64,12 @@ export const scaleImage = (image, useCase, config) => {
         case imageUseCases.VISUAL_MATCH:
         case imageUseCases.TEXT_ENTRY:
             return config.isLandscapeMode 
-            ? image.url
+            ? image.url.replace('.jpg', '.260x190.jpg')
             : image.url.replace('.jpg', '.260x190.jpg');
-        // case imageUseCases.MIXED_SPECIMENS:
-        //     return config.isLandscapeMode 
-        //         ? image.url.replace('.jpg', '.260x190.jpg')
-        //         : image.url.replace('.jpg', '.260x190.jpg');
+        case imageUseCases.MIXED_SPECIMENS:
+            return config.isLandscapeMode 
+                ? image.url.replace('.jpg', '.260x190.jpg')
+                : image.url.replace('.jpg', '.260x190.jpg');
         case imageUseCases.CAROUSEL:
             return config.isLandscapeMode 
                 ? image.url ? image.url.replace('.jpg', '.260x190.jpg') : ''

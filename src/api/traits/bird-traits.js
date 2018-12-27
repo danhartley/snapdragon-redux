@@ -48,4 +48,31 @@ export const birdTraits = [
         { name: 'rank', value: '10', description: 'common', language: 'en' },
         { name: 'song', value: '426190', description: 'xeno-canto id' },
     ] },
+    { name: 'Garrulus glandarius', traits: [
+        { name: 'song', value: '363897', description: 'xeno-canto id' },
+    ] },
+    { name: 'Gallinula chloropus', traits: [
+        { name: 'song', value: '435793', description: 'xeno-canto id' },
+    ] },
+    { name: 'Chroicocephalus ridibundus', traits: [
+        { name: 'song', value: '260311', description: 'xeno-canto id' },
+    ] },
+    { name: 'Anas platyrhynchos', traits: [
+        { name: 'song', value: '160324', description: 'xeno-canto id' },
+    ] },
+    { name: 'Ardea cinerea', traits: [
+        { name: 'song', value: '144318', description: 'xeno-canto id' },
+    ] },
+    { name: 'Actitis hypoleucos', traits: [
+        { name: 'song', value: '443741', description: 'xeno-canto id' },
+    ] },
+    { name: 'Phalacrocorax carbo', traits: [
+        { name: 'song', value: '385895', description: 'xeno-canto id' },
+    ] },
+    { name: 'Egretta garzetta', traits: [
+        { name: 'song', value: '280968', description: 'xeno-canto id' },
+    ] },
+    { name: 'Arenaria interpres', traits: [
+        { name: 'song', value: '403054', description: 'xeno-canto id' },
+    ] },
 ];

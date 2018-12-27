@@ -8,10 +8,11 @@ import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import mixedSpecimenTemplate from 'ui/screens/multichoice/mixed-specimen-questions-template.html';
 import questionTemple from 'ui/screens/common/question-template.html';
-import { screenShare } from 'ui/screens/multichoice/mixed-specimen-shared';
+import { renderItemSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
+import { iconicTaxa, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
 
 export const renderMixedSpecimenQuestions = ui => {
 
@@ -28,13 +29,23 @@ export const renderMixedSpecimenQuestions = ui => {
     const getPortraitImages = images => {
         if(!images) return;
         const multiImages = utils.flatten(images.map(image => { 
-            const item = { name: image.itemName, images: R.take(3, image.srcs) };
+            const item = { name: image.itemName, images: R.take(1, image.srcs) };
             return prepImagesForCarousel(item, config, imageUseCases.MIXED_SPECIMENS);
         }));
         return multiImages;
     }
 
-    let images = utils.shuffleArray(screenShare.getRandomImages(item, config, 4));
+    const rank = matchTaxon(collection.nextItem.taxonomy, iconicTaxa).toLowerCase();
+    const itemPool = collection.allItems || collection.items;
+    const clonedItems = R.clone(itemPool.filter(item => matchTaxonKey(item.taxonomy,[rank])));
+    const items = R.take(5, utils.shuffleArray(clonedItems.filter(ci => ci.name !== collection.nextItem.name)));
+    const nextItem = clonedItems.find(i => i.name === collection.nextItem.name);
+    if(nextItem) items.push(nextItem);
+
+
+    let images = items.map((item, index) => { 
+        return { index: index + 1, srcs: item.images, itemName: item.name };
+    });
 
     if(!images) return;
 
@@ -42,17 +53,11 @@ export const renderMixedSpecimenQuestions = ui => {
         image.url = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config);
     });
 
-    if(config.isPortraitMode) images = getPortraitImages(images);
-    
-    let question1 = `Species identification: ${item.vernacularName} (${item.name})`;
-    let question2 = `Can you identify which of the 4 species on the left is ${item.name}? (Click on an image to view more examples.)`;
-    let question3 = `When you've decided, click on the matching image below.`;
+    images = getPortraitImages(images);
 
-    if(config.isPortraitMode) {
-        question1 = `Look through the images till you find one of ${item.vernacularName} (${item.name}).`;
-        question2 = `When you've found a match click on the image. (There's more than one'.)`;
-        question3 = '';
-    }
+    const question1 = `Look through the images till you find one of ${item.vernacularName} (${item.name}).`;
+    const question2 = `When you've found a match click on the image. (There's more than one.)`;
+    const question3 = '';
 
     let parent = DOM.rightBody;
     parent.innerHTML = '';
@@ -84,68 +89,36 @@ export const renderMixedSpecimenQuestions = ui => {
         scoreHandler('image-match', test, callback, config);
     };
 
-    if(config.isLandscapeMode) {
+    parent = document.querySelector('.js-species-card-images');
 
-        const imageLayers = document.querySelectorAll('.question-images .layer');
+    imageSlider(config, utils.shuffleArray(images), parent, true);
 
-        imageLayers.forEach((imageLayer) => {
+    document.querySelectorAll('.carousel-item .layer').forEach(img => {
+        img.addEventListener('click', event => {
+            const layer = event.target;
+            const selectedName = layer.dataset.itemName;
+            const question = item.name;
+            const answer = selectedName;
+            const isCorrect = answer === question;
+            const className = isCorrect ? 'snap-success' : 'snap-alert';
+            layer.classList.add(className);       
+            const icon = document.createElement('span');
+            icon.innerHTML = isCorrect 
+                    ? '<span class="icon"><i class="fas fa-check-circle"></i></span>'
+                    : '<span class="icon"><i class="fas fa-times-circle"></i></span>';
 
-            if(imageLayer.dataset.itemName === item.name) {
-                imageLayer.isCorrectAnswer = true;
-            }
-
-            imageLayer.addEventListener('click', event => {
-
-                if(elem.hasClass(imageLayer, 'disabled')) return;
-
-                const selectedIndex = imageLayer.children[0].innerHTML;
-                const selectedName = event.target.dataset.itemName || event.target.parentElement.dataset.itemName;
-                const isCorrectAnswer = selectedName === item.name;
-                imageLayer.children[0].innerHTML = selectedName;
-                imageLayer.setAttribute('style', 'font-size: 1em;');
-                if(isCorrectAnswer) {
-                    elem.addClassToSelected(imageLayers, imageLayer, ['snap-success', 'snap-alert'], 'snap-success' );
-                } else {
-                    elem.addClassToSelected(imageLayers, imageLayer, ['snap-success', 'snap-alert'], 'snap-alert' );
-                    const imageLayerItems = [ ...imageLayers ];
-                    const correctImageLayer = imageLayerItems.find(il => il.isCorrectAnswer);
-                    correctImageLayer.classList.add('snap-success');
-                    correctImageLayer.children[0].innerHTML = item.name;
-                    correctImageLayer.setAttribute('style', 'font-size: 1em;');
-                }
-                screenShare.selectImage(selectedIndex, selectedName, isCorrectAnswer, item.name);
-                const question = item.name;
-                const answer = selectedName;
-                internalScoreHandler(score, question, answer, config);
-                imageLayers.forEach(item => item.classList.add('disabled'));                
-            });
+            layer.appendChild(icon);
+            document.querySelector('.attribution-layer').style.display = 'none';
+            internalScoreHandler(score, question, answer, config);
         });
+    });
+
+    const tiles = document.querySelectorAll('.js-tiles');
+
+    if(tiles) {
+        const name = document.querySelector('.carousel-item.active > div').dataset.title; 
+        const item = collection.items.find(i => i.name === name);
+        renderItemSpecimenTiles(item);
     }
 
-    if(config.isPortraitMode) {
-        
-        const parent = document.querySelector('.js-species-card-images');
-
-        imageSlider(config, utils.shuffleArray(images), parent, true);
-
-        document.querySelectorAll('.carousel-item .layer').forEach(img => {
-            img.addEventListener('click', event => {
-                const layer = event.target;
-                const selectedName = layer.dataset.itemName;
-                const question = item.name;
-                const answer = selectedName;
-                const isCorrect = answer === question;
-                const className = isCorrect ? 'snap-success' : 'snap-alert';
-                layer.classList.add(className);       
-                const icon = document.createElement('span');
-                icon.innerHTML = isCorrect 
-                        ? '<span class="icon"><i class="fas fa-check-circle"></i></span>'
-                        : '<span class="icon"><i class="fas fa-times-circle"></i></span>';
-
-                layer.appendChild(icon);
-                document.querySelector('.attribution-layer').style.display = 'none';
-                internalScoreHandler(score, question, answer, config);
-            });
-        });
-    }
 };
