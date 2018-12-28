@@ -630,4 +630,12 @@ export const epithets = [
         "latin" : ["coris"],
         "en" : ["bug"]
     },
+    {
+        "latin" : ["boreal"],
+        "en" : ["(far) northern"]
+    },
+    {
+        "latin" : ["physcia"],
+        "en" : ["inflated, sausage-like"]
+    },
 ];

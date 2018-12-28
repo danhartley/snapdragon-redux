@@ -4,7 +4,7 @@ export const english = {
         CAP_COLOUR : 'cap colour',
         ECO_TYPE : 'ecological type',
         HOW_EDIBLE : 'how edible',
-        HYMEMIUM_TYPE: 'hymenium type',
+        HYMENIUM_TYPE: 'hymenium type',
         SPORE_PRINT_COLOUR : 'spore print colour',
         STIPE_CHARACTER : 'stipe character',
         GILL_ATTACHMENT : 'gill attachment',
@@ -45,7 +45,7 @@ export const english = {
         POISONOUS : 'Poisonous',
         DEADLY : 'Deadly'
     },
-    habitats : {
+    habitat : {
         WOOD : 'Wood',
         WOODLAND : 'Woodland',
         WOODLAND_LITTER : 'Woodland litter',
@@ -79,7 +79,8 @@ export const english = {
         FENCES: 'Fences',
         TREES: "Trees",
         SHRUBS: "Shrubs",
-        EXPOSED_WOOD: "Exposed wood"
+        EXPOSED_WOOD: "Exposed wood",
+        BRANCHES: "Branches"
     },
     ecoType : {
         SAPROTROPHIC : 'Saprotrophic',
@@ -103,7 +104,7 @@ export const english = {
         HONEYCOMB : 'Honeycomb',
         HEMI_SPHERICAL : 'Hemispherical'
     },
-    treeTypes : {
+    treeType : {
         OAK : 'Oak',
         BEECH : 'Beech',
         BIRCH : 'Birch',
@@ -220,5 +221,8 @@ export const english = {
         NO: 'NO',
         BOTH: 'Both',
         OR: 'Or'
+    },
+    element: {
+        NITROGEN: 'Nitrogen'
     }
 };

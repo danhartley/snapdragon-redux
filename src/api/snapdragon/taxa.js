@@ -1708,7 +1708,7 @@ export const taxa = [
         { language: "it", names:[ 'Chanterelle Family' ]}],
         species: '90',
         genera: '5',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND_LITTER ] } ],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.WOODLAND_LITTER ] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1731,7 +1731,7 @@ export const taxa = [
         { language: "it", names:[ 'Discinaceae' ]}],
         species: '58',
         genera: '5',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND_LITTER ] } ],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.WOODLAND_LITTER ] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1754,7 +1754,7 @@ export const taxa = [
         { language: "it", names:[ 'Bracket Polypores' ]}],
         species: '--',
         genera: '14',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD ] } ],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.DEAD_WOOD ] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1777,7 +1777,7 @@ export const taxa = [
         { language: "it", names:[ 'Tooth Fungi' ]}],
         species: '--',
         genera: '5',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD ] } ],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.DEAD_WOOD ] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1800,7 +1800,7 @@ export const taxa = [
         { language: "it", names:[ 'Marasmiaceae' ]}],
         species: '1590',
         genera: '54',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD ] } ],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.DEAD_WOOD ] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1823,7 +1823,7 @@ export const taxa = [
         { language: "it", names:[ 'Meripilaceae' ]}],
         species: '57',
         genera: '7',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD ] } ],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.DEAD_WOOD ] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1846,7 +1846,7 @@ export const taxa = [
         { language: "it", names:[ 'Morchellaceae' ]}],
         species: '49+',
         genera: '9',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD, SD.habitats.WASTELAND, SD.habitats.WOODLAND, SD.habitats.FIELDS ] } ],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.DEAD_WOOD, SD.habitat.WASTELAND, SD.habitat.WOODLAND, SD.habitat.FIELDS ] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1869,7 +1869,7 @@ export const taxa = [
         { language: "it", names:[ 'Omphalotaceae' ]}],
         species: '1590',
         genera: '54',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD ] } ],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.DEAD_WOOD ] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1892,7 +1892,7 @@ export const taxa = [
         { language: "it", names:[ 'Pleurotaceae' ]}],
         species: '94',
         genera: '4',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD, SD.habitats.WOOD ] } ],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.DEAD_WOOD, SD.habitat.WOOD ] } ],
         descriptions: [
             {
                 language: 'en',
@@ -1915,7 +1915,7 @@ export const taxa = [
         { language: "it", names:[ 'Russulaceae' ]}],
         species: '1900',
         genera: '7',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD, SD.habitats.WOOD, SD.habitats.WOODLAND_LITTER]}],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.DEAD_WOOD, SD.habitat.WOOD, SD.habitat.WOODLAND_LITTER]}],
         descriptions: [
             {
                 language: 'en',
@@ -1938,7 +1938,7 @@ export const taxa = [
         { language: "it", names:[ 'Fistulinaceae' ]}],
         species: '--',
         genera: '3',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.WOOD ]}],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.WOOD ]}],
         descriptions: [
             {
                 language: 'en',
@@ -1961,7 +1961,7 @@ export const taxa = [
         { language: "it", names:[ 'Hygrophoropsidaceae' ]}],
         species: '18',
         genera: '2',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.WOOD ]}],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.WOOD ]}],
         descriptions: [
             {
                 language: 'en',
@@ -1984,7 +1984,7 @@ export const taxa = [
         { language: "it", names:[ 'Hygrophoropsidaceae' ]}],
         species: '500+',
         genera: '14',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD, SD.habitats.SOIL ]}],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.DEAD_WOOD, SD.habitat.SOIL ]}],
         descriptions: [
             {
                 language: 'en',
@@ -2007,7 +2007,7 @@ export const taxa = [
         { language: "it", names:[ 'Bracket Polypores' ]}],
         species: '1621',
         genera: '114',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD, SD.habitats.WOODLAND ]}],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.DEAD_WOOD, SD.habitat.WOODLAND ]}],
         descriptions: [
             {
                 language: 'en',
@@ -2030,7 +2030,7 @@ export const taxa = [
         { language: "it", names:[ 'Hydnaceae' ]}],
         species: '190',
         genera: '9',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND_LITTER ]}],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.WOODLAND_LITTER ]}],
         descriptions: [
             {
                 language: 'en',
@@ -2053,7 +2053,7 @@ export const taxa = [
         { language: "it", names:[ 'Cup Fungi' ]}],
         species: '102',
         genera: '13',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.DEAD_WOOD, SD.habitats.MOSS, SD.habitats.DAMP ]}],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.DEAD_WOOD, SD.habitat.MOSS, SD.habitat.DAMP ]}],
         descriptions: [
             {
                 language: 'en',
@@ -2076,7 +2076,7 @@ export const taxa = [
         { language: "it", names:[ 'Sparassidaceae' ]}],
         species: '10',
         genera: '2',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND ]}],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.WOODLAND ]}],
         descriptions: [
             {
                 language: 'en',
@@ -2099,7 +2099,7 @@ export const taxa = [
         { language: "it", names:[ 'Entolomataceae' ]}],
         species: '1500',
         genera: '9/10',
-        traits: [ { language: "en", name: 'habitat', values: [ SD.habitats.WIDESPREAD ]}],
+        traits: [ { language: "en", name: 'habitat', values: [ SD.habitat.WIDESPREAD ]}],
         descriptions: [
             {
                 language: 'en',
@@ -2118,7 +2118,7 @@ export const taxa = [
         name: 'Coprinus',
         names: [ { language: "en", names: ['Inkcaps']}],
         traits: [ 
-            { language: "en", name: 'habitat', values: [ SD.habitats.SOIL, SD.habitats.WOOD, SD.habitats.VEGETATION, SD.habitats.ROOTS, SD.habitats.DUNG ] },
+            { language: "en", name: 'habitat', values: [ SD.habitat.SOIL, SD.habitat.WOOD, SD.habitat.VEGETATION, SD.habitat.ROOTS, SD.habitat.DUNG ] },
             { language: "en", name: 'cap size cms', values: [ '.5-5' ] },
         ],
         descriptions: [
@@ -2134,7 +2134,7 @@ export const taxa = [
         name: 'Agaricus',
         names: [ { language: "en", names: ['Agarics']}],
         traits: [ 
-            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND_LITTER, SD.habitats.GRASSLAND ] },
+            { language: "en", name: 'habitat', values: [ SD.habitat.WOODLAND_LITTER, SD.habitat.GRASSLAND ] },
             { language: "en", name: 'smell', values: [ 'Mushroomy', 'Ink', 'Almonds' ] },
             { language: "en", name: 'cap size cms', values: [ '3-15' ] },
         ],
@@ -2151,7 +2151,7 @@ export const taxa = [
         name: 'Lactarius',
         names: [ { language: "en", names: ['Milkcaps']}],
         traits: [ 
-            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND_LITTER, SD.habitats.GRASSLAND ] },
+            { language: "en", name: 'habitat', values: [ SD.habitat.WOODLAND_LITTER, SD.habitat.GRASSLAND ] },
             { language: "en", name: 'cap size cms', values: [ '3-10' ] },
         ],
         descriptions: [
@@ -2167,7 +2167,7 @@ export const taxa = [
         name: 'Inocybe',
         names: [ { language: "en", names: ['Fibrecaps']}],
         traits: [ 
-            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND ] },
+            { language: "en", name: 'habitat', values: [ SD.habitat.WOODLAND ] },
             { language: "en", name: 'cap size cms', values: [ '1-8' ] },
             { language: "en", name: 'smell', values: [ 'Marzipan', 'Honey', 'Fish' ] },
         ],
@@ -2184,7 +2184,7 @@ export const taxa = [
         name: 'Scleroderma',
         names: [ { language: "en", names: ['Earthballs']}],
         traits: [ 
-            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND ] },
+            { language: "en", name: 'habitat', values: [ SD.habitat.WOODLAND ] },
             { language: "en", name: 'smell', values: [ 'Strong, unpleasant' ] },
             { language: "en", name: 'lookalikes', values: [ 'Lycoperdon (Puffballs)' ] },
         ],
@@ -2201,7 +2201,7 @@ export const taxa = [
         name: 'Macrolepiota',
         names: [ { language: "en", names: ['Parasols']}],
         traits: [ 
-            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND_LITTER, SD.habitats.DUNES, SD.habitats.GRASSLAND ] },
+            { language: "en", name: 'habitat', values: [ SD.habitat.WOODLAND_LITTER, SD.habitat.DUNES, SD.habitat.GRASSLAND ] },
             { language: "en", name: 'lookalikes', values: [ 'Amanita (Puffballs)' ] },
         ],
         descriptions: [
@@ -2217,7 +2217,7 @@ export const taxa = [
         name: 'Lycoperdon',
         names: [ { language: "en", names: ['Puffballs']}],
         traits: [ 
-            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND, SD.habitats.GRASSLAND ] },
+            { language: "en", name: 'habitat', values: [ SD.habitat.WOODLAND, SD.habitat.GRASSLAND ] },
             { language: "en", name: 'lookalikes', values: [ 'Scleroderma (Earthballs)' ] },
         ],
         descriptions: [
@@ -2233,7 +2233,7 @@ export const taxa = [
         name: 'Amanita',
         names: [ { language: "en", names: ['Amanita']}],
         traits: [ 
-            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND_LITTER, SD.habitats.GRASSLAND ] },
+            { language: "en", name: 'habitat', values: [ SD.habitat.WOODLAND_LITTER, SD.habitat.GRASSLAND ] },
             { language: "en", name: 'cap size cms', values: [ '5-10' ] },
         ],
         descriptions: [
@@ -2249,7 +2249,7 @@ export const taxa = [
         name: 'Mycena',
         names: [ { language: "en", names: ['Bonnets']}],
         traits: [ 
-            { language: "en", name: 'habitat', values: [ SD.habitats.WIDESPREAD ] },
+            { language: "en", name: 'habitat', values: [ SD.habitat.WIDESPREAD ] },
             { language: "en", name: 'cap size cms', values: [ '.5-3' ] },
         ],
         descriptions: [
@@ -2265,7 +2265,7 @@ export const taxa = [
         name: 'Tylopilus',
         names: [ { language: "en", names: ['Boletesnpm run watch']}],
         traits: [ 
-            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND, SD.habitats.WOODLAND_LITTER, SD.habitats.MOSS ] },
+            { language: "en", name: 'habitat', values: [ SD.habitat.WOODLAND, SD.habitat.WOODLAND_LITTER, SD.habitat.MOSS ] },
             { language: "en", name: 'cap size cms', values: [ '10-20' ] },
         ],
         descriptions: [
@@ -2281,7 +2281,7 @@ export const taxa = [
         name: 'Boletus',
         names: [ { language: "en", names: ['Boletes']}],
         traits: [ 
-            { language: "en", name: 'habitat', values: [ SD.habitats.WOODLAND, SD.habitats.WOODLAND_LITTER, SD.habitats.MOSS ] },
+            { language: "en", name: 'habitat', values: [ SD.habitat.WOODLAND, SD.habitat.WOODLAND_LITTER, SD.habitat.MOSS ] },
             { language: "en", name: 'cap size cms', values: [ '10-20' ] },
         ],
         descriptions: [

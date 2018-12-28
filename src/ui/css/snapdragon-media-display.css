@@ -8,7 +8,7 @@
 }
 
 @media (min-width: 768px) {
-    .portrait {
+    .portrait, .portrait-grid {
         display: none !important;
     }
 }

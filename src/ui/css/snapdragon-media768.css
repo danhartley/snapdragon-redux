@@ -122,8 +122,8 @@
         color: var(--snap-text-medium-light);
         flex: auto;
         margin: 1rem 0;
-        border: .1rem solid var(--snap-border-dark);
-        border-radius: .20rem;
+        /* border: .1rem solid var(--snap-border-dark); */
+        /* border-radius: .20rem; */
         display: flex;
         flex-direction: column;
         padding: .5rem;
@@ -131,7 +131,8 @@
 
     .letterbox-entry div {
         margin: .5rem 0;
-        width: 80%;
+        /* width: 80%; */
+        font-size: 1.2rem;
     }
 
     .letterbox-entry input {
@@ -257,10 +258,10 @@
         border: .05rem solid var(--snap-portrait);
     }
     
-    .info-box #traitSlider {     
+    /* .info-box #traitSlider {     
         min-width: 23.5rem;
         max-width: 28.5rem;
-    }    
+    }     */
 
     .bird-song div {
         float: right;

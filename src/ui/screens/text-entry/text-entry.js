@@ -67,7 +67,7 @@ export const renderInput = (screen, question, hints) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
     
-    const txtQuestion = `Enter the common name for the species ${item.name}:`;
+    const txtQuestion = `Enter the common name for the species ${item.name}`;
     renderTemplate({ txtQuestion }, template.content, parent, clone);
 
     if(config.isPortraitMode) renderPortrait(item, config);

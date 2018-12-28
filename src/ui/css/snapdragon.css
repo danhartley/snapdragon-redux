@@ -11,7 +11,7 @@ body {
   padding: 0;
   font-family: 'PT Sans', 'Roboto', arial,sans-serif;
   color: var(--snap-text-dark);
-  background-color: rgb(240, 240, 240);
+  background-color: var(--snap-body-bg);
 }
 
 tbody {
@@ -533,6 +533,8 @@ a.dropdown-item:hover {
 .squares img, .tiles img {
   cursor: pointer;
   margin: 0 10rem;
+  width: inherit;
+  height: inherit;
 }
 
 .square, .tile {
@@ -1653,7 +1655,7 @@ iframe#birdsong {
 }
 
 .visual-match .radio-buttons label {
-  background-color: rgb(211, 214, 173);
+  /* background-color: rgb(211, 214, 173); */
   font-size: 1.2rem; 
 }
 
@@ -1971,4 +1973,16 @@ a.collection-disabled {
 
 .carousel-indicators .active {
   background-color: var(--snap-success);
+}
+
+.question-header {
+  display: flex;
+  align-items: center;
+  height: 88px;
+  font-size: 1.2rem;
+  padding: .5rem;
+  background-color: var(--snap-species-header-background);
+  border-bottom: .05rem solid var(--snap-border-dark);
+  height: 88px;
+  color: var(--snap-text-medium-light);
 }

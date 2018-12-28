@@ -1,5 +1,7 @@
 :root {
 
+    --snap-body-bg: rgb(240, 240, 240);
+
     --snap-dd-collection-bg-intial: rgb(166, 183, 197);
     --snap-dd-collection-bg-hover: rgb(198, 206, 217);
     --snap-dd-collection-bg-active: rgb(198, 206, 217);

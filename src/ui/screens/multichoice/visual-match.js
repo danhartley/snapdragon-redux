@@ -77,44 +77,59 @@ export const renderSpecimenMatch = collection => {
             const taxon = taxa.find(t => t.name === item.genus);
             identification = taxon ? `Genus: ${taxon.descriptions[0].identification}` : '';
             const traits = getTraits(enums);
-            renderFeatures(item, traits, config, document.querySelector('.js-key-traits'),[traitTypes.name.ECOLOGY,traitTypes.name.SYMBIONTS, traitTypes.name.THALLUS_TYPE, traitTypes.name.HABITAT]);
+            // renderFeatures(item, traits, config, document.querySelector('.js-key-traits'),[traitTypes.name.ECOLOGY,traitTypes.name.SYMBIONTS, traitTypes.name.THALLUS_TYPE, traitTypes.name.HABITAT]);
         }
     }
 
     if(layout.screens.find(screen => screen.name === 'trait-property')) {
 
-        const screen = layout.screens.find(screen => screen.name === 'trait-property');
-
-        let traitName;
-
         let questionTxt;
-
-        switch(screen.trait) {
-            case 'howEdible':
-                traitName = 'how edible';
-                questionTxt = 'How edible is this mushroom?';
-                descriptions[0] = questionTxt;
-                descriptions[1] = 'Click on an image to open the picture gallery.'
-                descriptions[2] = '';
-                descriptions[3] = 'Stuck? Click here to reveal the name of this mushroom.';
-                break;
-            case 'capShape':
-                traitName = 'cap shape';
-                questionTxt = config.isLandscapeMode ? 'How would you describe the pileus (cap) of this mushroom?' : 'How would you describe this pileus (cap)?';
-                descriptions[0] = questionTxt;
-                descriptions[1] = 'Click on an image to open the picture gallery.'
-                descriptions[2] = '';
-                descriptions[3] = 'Stuck? Click here to reveal the name of this mushroom.';
-                break;
-        }
-                
-        const traitValue = getTraits(enums).find(trait => trait.name === item.name).traits.find(trait => trait.name === traitName).value;
+        
+        const speciesTraits = getTraits(enums).find(trait => trait.name === item.name);
+        const typedSpeciesTraits = traitTypes.typedSpecies(enums, speciesTraits);
+        if(!typedSpeciesTraits) return;
+        const trait = R.take(1, utils.shuffleArray(typedSpeciesTraits))[0];
+        
+        if(!trait) return;
+        const traitValue = trait.value || '';
         question = { question: traitValue, binomial: item.name };
 
-        let traits = [];
-        Object.keys(SD[screen.trait]).forEach(key => {
-            let value = SD[screen.trait][key];
-            traits.push(value);
+        switch(trait.type) {
+            case 'howEdible':                
+                questionTxt = 'How edible is this species?';
+                descriptions[0] = questionTxt;
+                break;
+            case 'capShape':
+                questionTxt = config.isLandscapeMode ? 'How would you describe the pileus (cap) of this mushroom?' : 'How would you describe this pileus (cap)?';
+                descriptions[0] = questionTxt;
+                break;
+            case 'hymeniumType':
+                questionTxt = 'What is the hymenium type of this mushroom?';
+                descriptions[0] = questionTxt;
+                break;
+            case 'ecoType':
+                questionTxt = 'What is the ecological type of this mushroom?';
+                descriptions[0] = questionTxt;
+                break;
+            case 'habitat':
+                questionTxt = 'Where would you expect to find this species?';
+                descriptions[0] = questionTxt;
+                break;
+            case 'thallusType':
+                questionTxt = 'What is this lichen\'s thallus type?';
+                descriptions[0] = questionTxt;
+                break;
+            default:
+                questionTxt = config.isLandscapeMode ? `${trait.name}` : `${trait.name}`;
+                descriptions[0] = questionTxt;
+        }
+
+        let traits = [ ];
+        Object.keys(SD[trait.type]).forEach(key => {
+            let value = SD[trait.type][key];
+            if(key !== 'type' && key !== 'name') {
+                traits.push(value);
+            }            
           });
 
         if(config.isLandscapeMode) {
@@ -143,7 +158,7 @@ export const renderSpecimenMatch = collection => {
             });
         }
 
-        if(screen.trait === 'howEdible') {            
+        if(trait.type === 'howEdible') {            
             lookALikes(collection, item, getTraits(enums), config);
         }
     }
