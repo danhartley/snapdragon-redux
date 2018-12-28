@@ -54,17 +54,17 @@ export const renderMultiStrips = (collection) => {
 
     const render = (questionText, questionValue, answers, card = taxonCard, ctxt = {description}) => {
     
-        renderTemplate({ answers }, template.content, parent);
+        renderTemplate({ description, answers }, template.content, parent);
         
         const strips = document.querySelectorAll('.js-rptr-strips .strip div');
 
         parent = document.querySelector('.right-body .snapdragon-container');
 
-        template.innerHTML = card;
+        // template.innerHTML = card;
 
-        const context = ctxt;
+        // const context = ctxt;
 
-        renderTemplate( context, template.content, parent);
+        // renderTemplate( context, template.content, parent);
 
         template.innerHTML = questionTemplate;
         
@@ -125,7 +125,7 @@ export const renderMultiStrips = (collection) => {
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
-        const number = config.isPortraitMode ? 3 : config.isLandscapeMode ? 4 : 5;
+        const number = config.isPortraitMode ? 3 : 4;
 
         const questionText = config.isPortraitMode ? 'Tap to match Quick ID' : `Click to match the Quick Id`;
         const question = families.find(f => f.name === item.family).descriptions[0].identification;
@@ -137,7 +137,7 @@ export const renderMultiStrips = (collection) => {
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
         
-        const number = config.isPortraitMode ? 3 : 5;
+        const number = config.isPortraitMode ? 3 : 4;
 
         const questionText = config.isPortraitMode ? 'Tap to match description' : `Click to match the description`;
         const question = families.find(f => f.name === item.family).descriptions[0].summary;

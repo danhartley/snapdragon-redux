@@ -533,9 +533,6 @@ a.dropdown-item:hover {
 
 .squares img, .tiles img {
   cursor: pointer;
-  margin: 0 10rem;
-  width: inherit;
-  height: inherit;
 }
 
 .square, .tile {
