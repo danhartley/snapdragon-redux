@@ -102,7 +102,7 @@ const renderPortrait = (item, config, traits, isModalMode) => {
 
 const renderCommonParts = (template, config, item, collection, traits, isModalMode, parent, lessonPlan) => {
 
-    const species = item.name;
+    const name = item.name;
     const epithet = itemProperties.latin(item.species);
     const latin = epithet ? `${item.species}: ${epithet.en}` : '';
     const rank = "species";
@@ -111,13 +111,13 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     const familyVernacularNames = itemProperties.familyVernacularNames(item.family, config.language, taxa);
     const familyVernacularName = familyVernacularNames ? familyVernacularNames[0] : '---';
         
-    const itemImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
+    const headerImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
     
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const subSpeciesCount = specific ? specific.subspecies.length : 0;
 
     const names = [ ...new Set(item.names.filter(name => name.language === config.language).map(name => name.vernacularName.toLowerCase())) ];
-    const nameCount = names.length; 
+    const occurrences = names.length; 
 
     const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa);
 
@@ -132,7 +132,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     
     parent.innerHTML = '';
     
-    renderTemplate({ species, vernacularName: item.vernacularName, latin, rank, subSpeciesCount, familyName, itemImage, familyVernacularName, trait, nameCount, iconicTaxon }, template.content, parent, clone);
+    renderTemplate({ name, vernacularName: item.vernacularName, latin, rank, subSpeciesCount, familyName, headerImage, familyVernacularName, trait, occurrences, iconicTaxon }, template.content, parent, clone);
 
     const subspeciesBadge = document.querySelector('.js-subspecies-badge');
 
@@ -173,7 +173,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
 
     const namesBadge = document.querySelector('.js-names-badge');
 
-    if(nameCount < 2) {
+    if(occurrences < 2) {
         namesBadge.classList.add('hide');    
     } else {
         namesBadge.addEventListener('click', event => {

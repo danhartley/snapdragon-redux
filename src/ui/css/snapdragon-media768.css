@@ -29,7 +29,7 @@
         margin: 0;
     }
 
-    .species.revision.card, .non-taxon.revision.card {
+    .species.revision.card, .taxon.revision.card, .non-taxon.revision.card {
         margin: 0 0 .5rem 0;
         padding: 0 0 .5rem 0;
         border: .05rem solid var(--snap-species-header-background);

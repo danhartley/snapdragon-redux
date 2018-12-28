@@ -5,6 +5,7 @@ import { imageSlider } from 'ui/screens/common/image-slider';
 export const imageUseCases = {
     SPECIES_LIST: 'Species list',
     SPECIES_CARD: 'Species card',
+    TAXON_CARD: 'Taxon card',
     SPECIES_SPECIMENS: 'Species specimens',
     NON_TAXON_CARD: 'Non-taxon card',
     VISUAL_MATCH: 'Visual match',
@@ -54,6 +55,7 @@ export const scaleImage = (image, useCase, config) => {
                 ? image.url.replace('.jpg', '.98x68.jpg')
                 : image.url.replace('.jpg', '.98x68.jpg');
         case imageUseCases.SPECIES_CARD:
+        case imageUseCases.TAXON_CARD:
         return config.isLandscapeMode 
             ? image.url.replace('.jpg', '.260x190.jpg')
             : image.url.replace('.jpg', '.260x190.jpg');

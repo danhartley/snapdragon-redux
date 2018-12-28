@@ -5,7 +5,7 @@
             <div class="species-header js-txt-species">
                 <div>
                     <div>
-                        <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ nameCount }}</span>
+                        <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ occurrences }}</span>
                         <span>{{ vernacularName }}</span>
                         <span class='rank'>{{ trait }}</span>
                     </div>
@@ -13,11 +13,11 @@
                         <span class="portrait bird-song-icon-disabled js-bird-song-player" data-src='player' data-toggle="modal" data-target="#menuModal">
                             <i class="fas fa-music"></i>
                         </span>
-                        <span>{{ species }}</span>
+                        <span>{{ name }}</span>
                         <span class="badge badge-light js-subspecies-badge" data-toggle="modal" data-target="#badgeListModal">{{ subSpeciesCount }}</span> <span class="sr-only">species of this family in the collection</span>                
                     </div>
                 </div>
-                <img class="landscape" src="https://content.eol.org/data/media/{{ itemImage }}" alt="">
+                <img class="landscape" src="https://content.eol.org/data/media/{{ headerImage }}" alt="">
             </div>
         </div>                
         <div class="data-box-container landscape">                

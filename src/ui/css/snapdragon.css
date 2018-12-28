@@ -335,7 +335,8 @@ a.dropdown-item:hover {
   background-color: rgb(216, 227, 220);
 }
 
-.species.revision.card > div:nth-child(1) {
+.species.revision.card > div:nth-child(1),
+.taxon.revision.card > div:nth-child(1) {
   background-color: var(--snap-species-header-background);
   border-bottom: .05rem solid var(--snap-border-dark);
 }
@@ -344,7 +345,7 @@ a.dropdown-item:hover {
   margin: .5rem 0;
 }
 
-.species.revision.card img, .non-taxon.revision.card img{
+.species.revision.card img, .taxon.revision.card img, .non-taxon.revision.card img{
   height: 88px;
   width:88px;
 }
@@ -614,9 +615,10 @@ a.dropdown-item:hover {
 }
 
 .taxon-highlight img {
-  height: 60px;
-  width: 60px;
+  height: 88px;
+  width: 88px;
   margin: 0 0 0 1rem;
+  object-fit: cover;
 }
 
 .latin-name {
