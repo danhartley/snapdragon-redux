@@ -29,6 +29,8 @@ const getItemScoreStats = (collection, history) => {
     const passes = R.clone(passesTotals).reduce(reducer, {});
     const fails = R.clone(failsTotals).reduce(reducer, {});
 
+    if(!passes) return collectionItems;
+
     collectionItems.forEach(item => { 
         item.passes = passes[item.id] || 0;
         item.fails = fails[item.id] || 0;

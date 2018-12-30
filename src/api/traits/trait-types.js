@@ -24,6 +24,7 @@ export let usage = english.usage;
 export let nonTaxaType = english.nonTaxaType;
 export let boolean = english.boolean;
 export let element = english.element;
+export let rank = english.rank;
 
 export const updateLanguage = (config) => {
     

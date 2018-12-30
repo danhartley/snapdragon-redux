@@ -868,4 +868,5 @@ export const getFungiTraits = (enums) => {
         // { name: SD.name.MEDICINAL_PROPERTIES, value: `${SD.medicinalProperties.ANTIBACTERIAL}, ${SD.medicinalProperties.ANTICOAGULANT}`},
         // { name: SD.name.USAGE, value: `${SD.usage.DYING}, ${SD.usage.POISON}`},
     ]},
-];};
+    ];
+};

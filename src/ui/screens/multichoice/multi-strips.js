@@ -60,11 +60,11 @@ export const renderMultiStrips = (collection) => {
 
         parent = document.querySelector('.right-body .snapdragon-container');
 
-        // template.innerHTML = card;
+        template.innerHTML = card;
 
-        // const context = ctxt;
+        const context = ctxt;
 
-        // renderTemplate( context, template.content, parent);
+        renderTemplate( context, template.content, parent);
 
         template.innerHTML = questionTemplate;
         
@@ -112,15 +112,17 @@ export const renderMultiStrips = (collection) => {
 
         if(!collection.speciesVernacularNames) return;
 
+       description = 'Can you identify the species?';
+
         const number = config.isPortraitMode ? 6 : config.isLandscapeMode ? 6 : 6;
 
         const questionText = config.isPortraitMode ? 'Select equivalent of latin name' : `Select the common name equivalent of the latin`;
         const question = item.vernacularName;   
         const answers = itemProperties.answersFromList(itemProperties.vernacularNamesForGroups(items, config), question, number);
 
-        const description = { vernacular: '---', name: item.name };
+        const placeHolderForAnswer = { vernacular: '---', name: item.name };
 
-        render(questionText, question, answers, speciesCard, description);
+        render(questionText, question, answers, speciesCard, placeHolderForAnswer);
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {

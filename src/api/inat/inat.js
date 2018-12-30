@@ -73,5 +73,28 @@ export const getInatSpecies = (latitude, longitude, config) => {
     });
 
     return observations;
+}
 
+export async function getInatPlaceId(place) {
+    const url = `https://api.inaturalist.org/v1/places/autocomplete?q=${place}`;
+    const response = await fetch(url);
+    const json  = await response.json();
+    return json;
+}
+
+export async function getInatTaxonStats(item, placeId) {
+
+    const endpoint = 'https://api.inaturalist.org/v1/observations/species_counts';
+    const verifiable = true;
+    const place = placeId || 'any';
+    const taxonName = item.name;
+    const europe = '97391';
+    const portugal = '7122';
+    const d1 = '2000-01-01';
+    const d2 = '3000-01-01'
+
+    const url = `${endpoint}?verifiable=${verifiable}&taxon_name=${taxonName}&place_id=${place}`;
+    const response = await fetch(url);
+    const json = await response.json();
+    return json;
 }

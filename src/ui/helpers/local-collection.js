@@ -13,11 +13,7 @@ export async function handleLocalCollection(localCollectionNode, collectionsHead
         speciesPendingSpinner(config);
     }
   
-    const coordinates = await getLocation(config);        
-    const latitude = coordinates['0'] || coordinates.lat;
-    const longitude = coordinates['1'] || coordinates.long;
-    config.coordinates = { lat: latitude, long: longitude };
-    const place = await getPlace(longitude, latitude, config);
+    const place = await getPlace(config);
 
     if(place) {
 

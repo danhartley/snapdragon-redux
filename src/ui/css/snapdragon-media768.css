@@ -257,11 +257,6 @@
     .snapdragon-container {
         border: .05rem solid var(--snap-portrait);
     }
-    
-    /* .info-box #traitSlider {     
-        min-width: 23.5rem;
-        max-width: 28.5rem;
-    }     */
 
     .bird-song div {
         float: right;
@@ -300,9 +295,9 @@
     .radio-buttons-group {
         margin: 1rem auto;
         min-width: 80%;
-        border: .01rem solid var(--snap-border-dark);
         padding: 1rem;
         padding-bottom: 0.5rem;
+        border: .08rem solid var(--snap-species-header-background);
       }
 
     .text-question span:nth-child(2) {

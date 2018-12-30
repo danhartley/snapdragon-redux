@@ -2,8 +2,9 @@
     <div class="portrait-grid species-card-images carousel js-species-card-images"></div>  
     <div class="species revision card">
         <div>
+            <div class="iconic-icon js-iconic-icon"><i class=""></i></div>
             <div class="species-header js-txt-species">
-                <div>
+                <div>                    
                     <div>
                         <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ occurrences }}</span>
                         <span>{{ vernacularName }}</span>
@@ -16,26 +17,14 @@
                         <span>{{ name }}</span>
                         <span class="badge badge-light js-subspecies-badge" data-toggle="modal" data-target="#badgeListModal">{{ subSpeciesCount }}</span> <span class="sr-only">species of this family in the collection</span>                
                     </div>
+                    <div><span class="hide-empty">{{ familyVernacularName }}</span> <span class="latin hide-empty">{{ familyName }}</span></div>
                 </div>
                 <img class="landscape" src="https://content.eol.org/data/media/{{ headerImage }}" alt="">
             </div>
         </div>                
         <div class="data-box-container landscape">                
-            <div></div>
-            <div class="data-box">
-                <div class="taxon-data"><span>Rank</span> <span>{{ rank }}</span></div>
-                <div class="taxon-data">
-                    <span>Family</span><span>
-                        <span class="hide-empty">{{ familyVernacularName }}</span>                        
-                    </span>                    
-                </div>
-                <div class="taxon-data">
-                    <span></span><span>
-                        <span class="latin hide-empty">{{ familyName }}</span>                        
-                    </span>
-                </div>
-                <div class="taxon-data"><span>Iconic</span> <span>{{ iconicTaxon }}</span></div>
-            </div>                
+            <div class="js-inat-box"></div>
+            <div class="landscape js-taxonomy-box"></div>             
         </div>
         <hr class="landscape">
         <div class="landscape bird-song">

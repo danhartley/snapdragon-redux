@@ -44,7 +44,7 @@ async function getMapBoxPlace(long, lat, config) {
   return await place;
 }
 
-export async function getPlace(long, lat, config) {
+export async function getPlace(config) {
   if(!!config.place) {
     const response = new Promise(resolve => {
       resolve(config.place);
@@ -53,7 +53,14 @@ export async function getPlace(long, lat, config) {
     listeners.forEach(listener => listener(json));
     return await json;
   } else {
-    return getMapBoxPlace(long, lat, config);
+
+    const coordinates = await getLocation(config);        
+    const latitude = coordinates['0'] || coordinates.lat;
+    const longitude = coordinates['1'] || coordinates.long;
+    config.coordinates = { lat: latitude, long: longitude };
+
+
+    return getMapBoxPlace(longitude, latitude, config);
   }
 };
 

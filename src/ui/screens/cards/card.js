@@ -7,7 +7,6 @@ import { renderWikiModal } from 'wikipedia/wiki-modal';
 import { infraspecifics } from 'api/snapdragon/infraspecifics';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
-import cardTemplate from 'ui/screens/cards/card-template.html';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { getBirdSong } from 'xeno-canto/birdsong';
 import { getTraits } from 'api/traits/traits';
@@ -17,6 +16,9 @@ import { infoSlider } from 'ui/screens/common/info-slider';
 import * as traitTypes from 'api/traits/trait-types';
 import { iconicTaxa, matchTaxon, matchIcon } from 'api/snapdragon/iconic-taxa';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
+import { renderInatDataBox } from 'ui/screens/common/inat-box';
+import { renderTaxonomyBox } from 'ui/screens/common/taxonomy-box';
+import cardTemplate from 'ui/screens/cards/card-template.html';
 
 export const renderCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody) => {
 
@@ -64,7 +66,25 @@ const renderLandscape = (item, config, traits, isModalMode) => {
     
         const wikiNode = document.querySelector('.js-species-card-wiki');
     
-        renderWiki(wikiNode, item, config.language);  
+        renderWiki(wikiNode, item, config.language);
+    }
+    const inatNode = document.querySelector('.js-inat-box');
+
+    renderInatDataBox(inatNode, item, config);
+
+    if(item.taxonomy.kingdom.toLowerCase() === 'fungi') {
+
+        const iconicIconContainer = document.querySelector('.js-iconic-icon');
+
+        iconicIconContainer.innerHTML = '<span class="mushroom-icon-header"><svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg></span>';
+
+    } else {
+
+        const iconicIcon = document.querySelector('.js-iconic-icon i');
+
+        const classes = matchIcon(item.taxonomy, iconicTaxa).split(' ');
+
+        classes.forEach(c => iconicIcon.classList.add(c));        
     }
 };
 
@@ -109,7 +129,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     const family = taxa.find(f => f.name === item.family);
     const familyName = family ? family.name : item.taxonomy.family;
     const familyVernacularNames = itemProperties.familyVernacularNames(item.family, config.language, taxa);
-    const familyVernacularName = familyVernacularNames ? familyVernacularNames[0] : '---';
+    const familyVernacularName = familyVernacularNames ? familyVernacularNames[0] : '';
         
     const headerImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
     
@@ -205,5 +225,9 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
         continueBtn.addEventListener('click', event => {
             actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
         });
+
+        const taxonomyNode = document.querySelector('.js-taxonomy-box');
+
+        renderTaxonomyBox(taxonomyNode, { rank, familyVernacularName, familyName, iconicTaxon });
     }
 };

@@ -104,192 +104,121 @@ export const local = [
         {
           "vernacularName": "Grey Heron",
           "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Grey heron",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Grey heron",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Grey heron",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Grey heron",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "grey heron",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "grey heron",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "grey heron",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "grey heron",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "grey heron",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Gray Heron",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Gray Heron",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Gray Heron",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Gray Heron",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Gray Heron",
-          "language": "en",
-          "eol_preferred": false
-        },
+          wikiSearchTerm: true
+        },        
         {
           "vernacularName": "Heron",
           "language": "en",
-          "eol_preferred": false
         },
         {
           "vernacularName": "Bernat pescaire",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Bernat pescaire",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Bernat pescaire",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Blauwe Reiger",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gray Heron",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gray Heron",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gray Heron",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gray Heron",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Grey Heron",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Grey Heron",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Grey Heron",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Grey Heron",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Grey Heron",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Grey Heron",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "grey heron",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Airone cenerino",
           "language": "it",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Garza real",
           "language": "es",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Graureiher",
           "language": "de",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Grey Heron",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Héron cendré",
           "language": "fr",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "garça-moura-europeia / garça-real",
           "language": "pt",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "gray heron",
           "language": "en",
-          "eol_preferred": false
+
         }
       ],
       "taxonomy": {
@@ -467,157 +396,157 @@ export const local = [
         {
           "vernacularName": "Eurasian Jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian Jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian Jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Arrendajo euroasitico",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Chara euroasitica",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eichelhher",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian Jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gaio",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Geai des chnes",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Urraca euroasitica",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "gaig",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Arrendajo Euroasiático",
           "language": "es",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eichelhäher",
           "language": "de",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian Jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Geai des chênes",
           "language": "fr",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ghiandaia",
           "language": "it",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Jay",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "gaio",
           "language": "pt",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian jay",
           "language": "en",
-          "eol_preferred": false
+
         }
       ],
       "taxonomy": {
@@ -732,492 +661,492 @@ export const local = [
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "-",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "-",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "-",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Canard colvert",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Canard colvert",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Domestic Duck",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Domestic Duck",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Domestic Duck",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Domestic Duck",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Germano reale",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Germano reale",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Germano reale",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Koi",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "MALL",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "MALL",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "MALL",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard Duck",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard Duck",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard Duck",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Pato de collar",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Pato de collar",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Pato de collar",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Pato-bravo",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Pato-bravo",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Pato-bravo",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Pato-real",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Pato-real",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Pato-real",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Stockente",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Stockente",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Stockente",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "anade real",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "canard colvert",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "duck",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "duck",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "duck",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "duck",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "mallards",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "nade real",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "nade real",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "nade real",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "nec collverd",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "nec collverd",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "nec collverd",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "sinisorsa",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "sinisorsa",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "sinisorsa",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Canard colvert",
           "language": "fr",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Germano reale",
           "language": "it",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Northern Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Stockente",
           "language": "de",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "pato-real",
           "language": "pt",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ánade azulón",
           "language": "es",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "germano reale",
           "language": "it",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "mallard",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "ánade azulón",
           "language": "es",
-          "eol_preferred": false
+
         }
       ],
       "taxonomy": {
@@ -1371,207 +1300,207 @@ export const local = [
         {
           "vernacularName": "Little egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little Egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little Egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little Egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little Egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gara-branca",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gara-branca-pequena",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "LIEG",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little Egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little Egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little Egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little Egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little Egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little Egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little Egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little Egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little Egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little Egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little Egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "aigrette garzette",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "aigrette garzette",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "aigrette garzette",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "aigrette garzette",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "aigrette garzette",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "aigrette garzette",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "aigrette garzette",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Aigrette garzette",
           "language": "fr",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Garceta Común",
           "language": "es",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Garceta común",
           "language": "es",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Garzetta",
           "language": "it",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Garça-branca-pequena",
           "language": "pt",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Little Egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Seidenreiher",
           "language": "de",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "garça-pequena-europeia / garça-branca",
           "language": "pt",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "garceta común",
           "language": "es",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "garzetta",
           "language": "it",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "little egret",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "little egret",
           "language": "en",
-          "eol_preferred": false
+
         }
       ],
       "taxonomy": {
@@ -1707,177 +1636,177 @@ export const local = [
         {
           "vernacularName": "Common moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Moor Hen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Water Hen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian Moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian Moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Alae ula",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gallineta frente roja",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gallineta frente roja",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "gallinule poule-d'eau",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "gallinule poule-d'eau",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "polla de agua",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Moorhen",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gallinella d'acqua",
           "language": "it",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gallineta común",
           "language": "es",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gallinule poule-d'eau",
           "language": "fr",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Teichhuhn",
           "language": "de",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "galinha-d'água-comum",
           "language": "pt",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Eurasian moorhen",
           "language": "en",
-          "eol_preferred": false
+
         }
       ],
       "taxonomy": {
@@ -2027,242 +1956,242 @@ export const local = [
         {
           "vernacularName": "Black-headed gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gulls, Terns, and Skimmers",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Antxeta mokogorria",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "BHGU",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gabbiano comune",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gabbiano comune",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gabbiano comune",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gaviota encapuchada",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gaviota encapuchada",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gaviota encapuchada",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gaviota reidora",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gaviotas y golondrinas marinas",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Guincho",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Guincho-comum",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Hettumafur",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Hettumfur",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Kokmeeuw",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Lachmove",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Lachmwe",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "mouette rieuse",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "mouette rieuse",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "mouette rieuse",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black-headed Gull",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gabbiano comune",
           "language": "it",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Gaviota reidora",
           "language": "es",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Lachmöwe",
           "language": "de",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Mouette rieuse",
           "language": "fr",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "guincho",
           "language": "pt",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "black-headed gull",
           "language": "en",
-          "eol_preferred": false
+
         }
       ],
       "taxonomy": {
@@ -2371,257 +2300,257 @@ export const local = [
         {
           "vernacularName": "Great cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "cormorn grande",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "grand cormoran",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "grand cormoran",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "great cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "white-breasted cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Black Shag",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Cormorano",
           "language": "it",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Cormorán grande",
           "language": "es",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Grand Cormoran",
           "language": "fr",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Kormoran",
           "language": "de",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "White-breasted Cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "corvo-marinho",
           "language": "pt",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "common cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "cormorán grande",
           "language": "es",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "great cormorant",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "long-tailed cormorant",
           "language": "en",
-          "eol_preferred": false
+
         }
       ],
       "taxonomy": {
@@ -2763,87 +2692,87 @@ export const local = [
         {
           "vernacularName": "Common sandpiper",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common sandpiper",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Sandpiper",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Sandpiper",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Sandpiper",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common sandpiper",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Sandpiper",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Sandpiper",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Andarríos chico",
           "language": "es",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Chevalier guignette",
           "language": "fr",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Common Sandpiper",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Flussuferläufer",
           "language": "de",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Piro piro piccolo",
           "language": "it",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "maçarico-das-rochas / maçarico-ribeirinho",
           "language": "pt",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "andarríos chico",
           "language": "es",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "common sandpiper",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "common sandpiper",
           "language": "en",
-          "eol_preferred": false
+
         }
       ],
       "taxonomy": {
@@ -2981,67 +2910,67 @@ export const local = [
         {
           "vernacularName": "Bermuda Buttercup",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Bermuda Buttercup",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Sourgrass",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Sourgrass",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Sourgrass",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Soursob",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Soursob",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Soursob",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "yellow sourgrass",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Bermuda buttercup",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Bermuda buttercup",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Bermuda buttercup",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Bermuda buttercup",
           "language": "en",
-          "eol_preferred": false
+
         }
       ],
       "taxonomy": {
@@ -3237,227 +3166,227 @@ export const local = [
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Akekeke",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Akekeke",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "RUTU",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Remena-rocs",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Rola-do-mar",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Rola-do-mar-comum",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Steenloper",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Steinwlzer",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Steinwlzer",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Vira-pedras",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Voltapietre",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Vuelvepiedras rojizo",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Vuelvepiedras rojizo",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Vuelvepiedras rojizo",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "tournepierre  collier",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "tournepierre  collier",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "tournepierre  collier",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Steinwälzer",
           "language": "de",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Tournepierre à collier",
           "language": "fr",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Turnstone",
           "language": "en",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Voltapietre",
           "language": "it",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "Vuelvepiedras común",
           "language": "es",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "vira-pedras / rola-do-mar",
           "language": "pt",
-          "eol_preferred": false
+
         },
         {
           "vernacularName": "ruddy turnstone",
           "language": "en",
-          "eol_preferred": false
+
         }
       ],
       "taxonomy": {

@@ -27,20 +27,24 @@ export const imageMatch = (elemSrc, src) => {
     return (elemSrc === src || elemSrc === src.replace('.98x68.jpg', '.jpg') || elemSrc === src.replace('.260x190.jpg', '.jpg'));
 };
 
+export const prepImageForCarousel = (image, index, item, config, useCase) => {
+    let img = { 
+        index: index + 1, 
+        ...image,
+        ...{ url : scaleImage(image, useCase, config) },
+        itemName: item.name,
+        itemCommon: item.itemCommon,
+        photographersName : image.photographer ? image.photographer.full_name || '' : ''            
+    };
+    if(image.src) {
+        img = { ...img, ...image.src };
+    }
+    return img;
+};
+
 export const prepImagesForCarousel = (item, config, useCase) => {
     const images = item.images.map((image, index) => { 
-        let img = { 
-            index: index + 1, 
-            ...image,
-            ...{ url : scaleImage(image, useCase, config) },
-            itemName: item.name,
-            itemCommon: item.itemCommon,
-            photographersName : image.photographer ? image.photographer.full_name || '' : ''            
-        };
-        if(image.src) {
-            img = { ...img, ...image.src };
-        }
-        return img;
+        return prepImageForCarousel(image, index, item, config, useCase);
     });
     return images;
 };

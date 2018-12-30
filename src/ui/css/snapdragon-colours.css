@@ -78,6 +78,10 @@
     --snap-kingdom-fungi: rgba(150, 43, 110,.8);
     --snap-kingdom-animalia: rgb(96, 121, 147);
 
-    --snap-data-box-bg: rgba(185, 200, 204);
+    --snap-data-box-bg: rgb(179, 197, 174);
+    --snap-traits-carousel: rgba(185, 200, 204,.4);
     --snap-filters-ctrl: rgb(246, 157, 53);
+    --snap-iconic-icon-header: rgb(193, 186, 112);
+
+    --snap-inat: rgb(202, 216, 154);
   }

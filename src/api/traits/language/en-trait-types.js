@@ -36,7 +36,10 @@ export const english = {
         LIFE_SPAN: "Life span",
         BIOINDICATOR: 'Bioindicator',
         SUBSTRATE_ADHERANCE: 'Substrate adherance',
-        RANK: 'Rank'
+        RANK: 'Rank',
+        SIZE: 'Size',
+        LENGTH: 'Length',
+        VOICE: 'Voice'
     },
     howEdible : {
         CHOICE : 'Choice',
