@@ -18,6 +18,7 @@ import { iconicTaxa, matchTaxon, matchIcon } from 'api/snapdragon/iconic-taxa';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import { renderInatDataBox } from 'ui/screens/common/inat-box';
 import { renderTaxonomyBox } from 'ui/screens/common/taxonomy-box';
+import { renderCalendar } from 'ui/screens/common/calendar';
 import cardTemplate from 'ui/screens/cards/card-template.html';
 
 export const renderCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody) => {
@@ -71,21 +72,6 @@ const renderLandscape = (item, config, traits, isModalMode) => {
     const inatNode = document.querySelector('.js-inat-box');
 
     renderInatDataBox(inatNode, item, config);
-
-    if(item.taxonomy.kingdom.toLowerCase() === 'fungi') {
-
-        const iconicIconContainer = document.querySelector('.js-iconic-icon');
-
-        iconicIconContainer.innerHTML = '<span class="mushroom-icon-header"><svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg></span>';
-
-    } else {
-
-        const iconicIcon = document.querySelector('.js-iconic-icon i');
-
-        const classes = matchIcon(item.taxonomy, iconicTaxa).split(' ');
-
-        classes.forEach(c => iconicIcon.classList.add(c));        
-    }
 };
 
 const renderPortrait = (item, config, traits, isModalMode) => {
@@ -226,8 +212,27 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
             actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
         });
 
-        const taxonomyNode = document.querySelector('.js-taxonomy-box');
+        // const taxonomyNode = document.querySelector('.js-taxonomy-box');
 
-        renderTaxonomyBox(taxonomyNode, { rank, familyVernacularName, familyName, iconicTaxon });
+        // renderTaxonomyBox(taxonomyNode, { rank, familyVernacularName, familyName, iconicTaxon });
+
+        const calendarNode = document.querySelector('.js-calendar-box');
+
+        renderCalendar(calendarNode, item, config);
+    }
+
+    if(item.taxonomy.kingdom.toLowerCase() === 'fungi') {
+
+        const iconicIconContainer = document.querySelector('.js-iconic-icon');
+
+        iconicIconContainer.innerHTML = '<span class="mushroom-icon-header"><svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg></span>';
+
+    } else {
+
+        const iconicIcon = document.querySelector('.js-iconic-icon i');
+
+        const classes = matchIcon(item.taxonomy, iconicTaxa).split(' ');
+
+        classes.forEach(c => iconicIcon.classList.add(c));        
     }
 };

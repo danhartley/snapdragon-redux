@@ -72,7 +72,7 @@ export const renderMultiStrips = (collection) => {
 
         const renderAnswer = (score, scoreUpdateTimer) => {
             const answer = document.querySelector('.js-answer');
-            answer.innerHTML = 'Continue';
+            answer.innerHTML = 'Continue lesson';
             answer.style.display = 'block';
             answer.style.cursor = 'pointer';
             answer.addEventListener('click', () => {

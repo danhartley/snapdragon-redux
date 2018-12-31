@@ -1,16 +1,15 @@
 <template class="js-genus-entry-template">                
     <div class="snapdragon-container"> 
-        <div class="question-header"><span>Enter the genus name</span></div>
+        <div class="question-header"><span>What is the genus of a <span class="js-txt-vernacular"></span>?</div>
         <div class="letterbox-entry">
             <div><input disabled class="short js-txt-input" type="text" placeholder="Genus"></div>
-            <div>The species name is <span class="js-txt-entry js-species"></span></div>            
-            <div>The common name is: <span class="js-txt-vernacular"></span></div>             
+            <div>The species is <span class="js-txt-entry js-species"></span></div>
             <div class="js-pool-letters pool"></div>
-            <div>
-                <button class="btn btn-dark js-delete-letter">Delete last letter</button>
-                <button class="btn btn-dark js-toggle-keyboard">Enable keyboard</button>
+            <div class="buttons">
+                <div><button class="btn btn-dark js-delete-letter">Delete last letter</button></div>
+                <div><button class="btn btn-dark js-toggle-keyboard">Enable keyboard</button></div>
             </div>
-            <div class="text-question js-txt-question"></div>
+            <div class="text-question js-txt-question hide-empty"></div>
         </div>        
         <div>
             <div class="action-update">
@@ -23,16 +22,17 @@
     
 <template class="js-species-entry-template">
     <div class="snapdragon-container">   
-        <div class="question-header"><span>Enter the species name</span></div>
+        <div class="question-header"><span>What is the species of a <span class="js-txt-vernacular"></span>?</span></div>
         <div class="letterbox-entry">
             <div><input disabled class="short js-txt-input" type="text" placeholder="species"></div>            
-            <div>The genus name is <span class="js-txt-entry js-genus"></span></div>
-            <div>The common name is: <span class="js-txt-vernacular"></span></div>             
-            <div class="text-question js-txt-question"></div>   
+            <div>The genus is <span class="js-txt-entry js-genus"></span></div>            
             <div class="js-pool-letters pool"></div>
-            <div><button class="btn btn-dark js-delete-letter">Delete last letter</button></div>    
-            <div><button class="btn btn-dark js-toggle-keyboard">Enable keyboard</button></div>         
-        </div>
+            <div class="buttons">
+                <div><button class="btn btn-dark js-delete-letter">Delete last letter</button></div>    
+                <div><button class="btn btn-dark js-toggle-keyboard">Enable keyboard</button></div>
+            </div>  
+            <div class="text-question js-txt-question hide-empty"></div>   
+        </div>        
         <div>
             <div class="action-update">
                 <div></div>
@@ -44,15 +44,17 @@
     
 <template class="js-species-genus-entry-template">
     <div class="snapdragon-container">
-        <div class="question-header"><span>Enter the genus and species names</span></div>
+        <div class="question-header"><span>What is the latin name of this species?</span></div>
         <div class="letterbox-entry">
             <div><input disabled class="long js-txt-input" type="text" placeholder="Genus species"></div>                
-            <div>The common name is: <span class="js-txt-vernacular"></span></div>             
-            <div class="text-question js-txt-question"></div>   
+            <div>The common name is <span class="js-txt-vernacular"></span>.</div>                         
             <div class="js-pool-letters pool"></div>
-            <div><button class="btn btn-dark js-delete-letter">Delete last letter</button></div>         
-            <div><button class="btn btn-dark js-toggle-keyboard">Enable keyboard</button></div>  
-        </div>
+            <div class="buttons">
+                <div><button class="btn btn-dark js-delete-letter">Delete last letter</button></div>         
+                <div><button class="btn btn-dark js-toggle-keyboard">Enable keyboard</button></div>  
+            </div>
+            <div class="text-question js-txt-question hide-empty"></div>
+        </div>        
         <div>
             <div class="action-update">
                 <div></div>
@@ -67,13 +69,13 @@
         <div class="question-header"><span>{{ txtQuestion }}</span></div>
         <div class="letterbox-entry">            
             <div><input disabled class="long js-txt-input" type="text" placeholder="Common name"></div>
-            <div>The latin name is: <span class="binomial js-txt-name"></span></div>             
+            <div>The latin name is <span class="binomial js-txt-name"></span></div>             
             <div class="js-pool-letters pool"></div>
-            <div>
+            <div class="buttons">
                 <button class="btn btn-dark js-delete-letter">Delete last letter</button>
                 <button class="btn btn-dark js-toggle-keyboard">Enable keyboard</button>
             </div>
-            <div class="text-question js-txt-question"></div>   
+            <div class="text-question js-txt-question hide-empty"></div>   
         </div>       
         <div>
             <div class="action-update">
@@ -90,8 +92,10 @@
         <div class="letterbox-entry">
             <div><input disabled class="js-txt-input" type="text" placeholder="Name"></div>                
             <div class="js-pool-letters pool"></div>
-            <div><button class="btn btn-dark js-delete-letter">Delete last letter</button></div>    
-            <div><button class="btn btn-dark js-toggle-keyboard">Enable keyboard</button></div>            
+            <div class="buttons">
+                <div><button class="btn btn-dark js-delete-letter">Delete last letter</button></div>    
+                <div><button class="btn btn-dark js-toggle-keyboard">Enable keyboard</button></div>
+            </div>          
         </div>
         <div>
             <div class="action-update">

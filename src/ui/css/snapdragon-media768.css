@@ -122,8 +122,6 @@
         color: var(--snap-text-medium-light);
         flex: auto;
         margin: 1rem 0;
-        /* border: .1rem solid var(--snap-border-dark); */
-        /* border-radius: .20rem; */
         display: flex;
         flex-direction: column;
         padding: .5rem;
@@ -131,7 +129,6 @@
 
     .letterbox-entry div {
         margin: .5rem 0;
-        /* width: 80%; */
         font-size: 1.2rem;
     }
 
@@ -145,6 +142,16 @@
         color: var(--snap-text-dark);
         pointer-events: none;
     }
+
+    .letterbox-entry .buttons {
+        display: flex;        
+    }
+
+    .letterbox-entry .buttons > div:nth-child(2) {
+        padding: 0 0 0 .5rem;
+    }
+
+
 
     .letterbox-entry button {
         margin: .5rem 0 0 0;
@@ -300,7 +307,8 @@
         border: .08rem solid var(--snap-species-header-background);
       }
 
-    .text-question span:nth-child(2) {
+    .text-question span:nth-child(2),
+    .text-question span:nth-child(3) {
         vertical-align: super;
     }
 

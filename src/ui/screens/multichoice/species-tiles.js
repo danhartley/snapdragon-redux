@@ -49,7 +49,7 @@ export const renderSpeciesTiles = (collection) => {
     renderTemplate( { question }, template.content, parent);
     const renderAnswer = (text, colour, correct, scoreUpdateTimer) => {
         const answer = document.querySelector('.js-answer');
-        answer.innerHTML = 'Continue';
+        answer.innerHTML = 'Continue lesson';
         answer.style.display = 'block'; 
         answer.style.cursor = 'pointer';
         answer.addEventListener('click', () => {

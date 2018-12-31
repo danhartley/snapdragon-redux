@@ -18,7 +18,7 @@ export async function renderInatDataBox(parent, item, config) {
         let taxonCount = 0, taxonId;
 
         stats.results.forEach(taxon => {
-            taxonCount =  Number.parseInt(taxon.count);
+            taxonCount += Number.parseInt(taxon.count);
             taxonId = taxon.taxon.id;
         }); 
 
