@@ -4,7 +4,7 @@ export const portuguese = {
         CAP_COLOUR : 'cor do chapéu',
         ECO_TYPE : 'ecological type',
         HOW_EDIBLE : 'comestível',
-        HYMEMIUM_TYPE: 'hymenium type',
+        HYMENIUM_TYPE: 'hymenium type',
         SPORE_PRINT_COLOUR : 'spore print colour',
         STIPE_CHARACTER : 'stipe character',
         GILL_ATTACHMENT : 'gill attachment',

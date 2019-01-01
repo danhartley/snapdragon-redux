@@ -154,7 +154,10 @@ const capitaliseAll = str => {
   return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 };
 
-const getCellValue = function(tr, idx){ return tr.children[idx].innerText || tr.children[idx].textContent; }
+const getCellValue = function(tr, idx){ 
+  const valueToSortOn = tr.children[idx].innerText || tr.children[idx].classList[0] || tr.children[idx].textContent; 
+  return valueToSortOn;
+}
 
 const comparer = function(idx, asc) { return function(a, b) { return function(v1, v2) {
         return v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2);

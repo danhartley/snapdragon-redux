@@ -14,8 +14,11 @@
                         <a class="dropdown-item icon" id="{{ item.id }}">{{ item.name }}</a>
                     </div>
                 </div>
-            </div>                        
-        </div>
+                <div class="species-header">
+                    <img class="landscape" src="https://content.eol.org/data/media/{{ imageUrl }}" alt="">
+                </div>                
+            </div>                                    
+        </div>        
         <div class="landscape js-non-taxa-definition"></div>
         <div>
             <div class="id-box">
@@ -31,13 +34,12 @@
         <hr class="landscape">
         <div class="landscape species-card-wiki">
             <span class="js-non-taxon-card-wiki"></span>
-            <span><a class="non-taxon-card-eol-link js-non-taxon-card-eol-link underline-link">EOL</a></span>
         </div>
     </div>    
     <div class="action-update-container">
         <div class="species-card-btn action-update js-non-taxon-card-btn">
             <div></div>
-            <button class="btn btn-light">Continue</button>
+            <button class="btn btn-light">Continue lesson</button>
         </div>
     </div>
 </div>

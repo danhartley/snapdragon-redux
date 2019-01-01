@@ -2,6 +2,11 @@
 
 <div id="imageSlider{{ index }}" class="imageSlider carousel slide" data-ride="carousel" data-interval="false">
     <div class="carousel-inner">
+
+      <ol class="landscape carousel-indicators"  data-repeat-image="{{ images }}">
+          <li data-target="#carouselExampleIndicators" data-slide-to="{{ image.index }}"></li>
+      </ol>
+
       <div data-repeat-image="{{ images }}">
         <div class="carousel-item">
             <div class="d-block w-100" 

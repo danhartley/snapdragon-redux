@@ -5,7 +5,6 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import * as traitTypes from 'api/traits/trait-types';
 import featureTemplate from 'ui/screens/common/feature-template.html';
-// import keyTraitTemplate from 'ui/screens/common/key-trait-template.html';
 
 const getFeature = (item, traits, config, type) => {
 
@@ -14,7 +13,7 @@ const getFeature = (item, traits, config, type) => {
     if(feature && feature !== '' && feature.length !== 0 && feature[0] !== '') {
 
         if(config.isPortraitMode) {
-            feature = R.take(3, feature);
+            feature = Array.isArray(feature) ? R.take(3, feature) : feature;
         }
         
         let label;
@@ -31,7 +30,19 @@ const getFeature = (item, traits, config, type) => {
     }
 };
 
-export const renderFeatures = (item, traits, config, parent, types) => {
+export const renderFeatures = (item, traits, config, parent) => {
+
+    const types = [ 
+        traitTypes.name.ECOLOGY,
+        traitTypes.name.SYMBIONTS, 
+        traitTypes.name.THALLUS_TYPE, 
+        traitTypes.name.HABITAT, 
+        traitTypes.name.USAGE,
+        traitTypes.name.HEIGHT,
+        traitTypes.name.HOW_EDIBLE,
+        traitTypes.name.BLADE,
+        traitTypes.name.COMPOUND,
+    ];
 
     const features = types.map(ft => {
         return getFeature(item, traits, config, ft)
@@ -44,15 +55,3 @@ export const renderFeatures = (item, traits, config, parent, types) => {
 
     renderTemplate({features}, template.content, parent);
 };
-
-// export const renderTraits = (traits, enums, item, identification, parent) => {
-//     const trait = `
-//         ${utils.capitaliseFirst(enums.name.HOW_EDIBLE)}: 
-//         ${itemProperties.getActiveTrait(traits, item.name, [{ name: enums.name.HOW_EDIBLE, formatter: trait => trait.value }])}
-//     `;
-    
-//     const template = document.createElement('template');
-//     template.innerHTML = keyTraitTemplate;
-
-//     renderTemplate({trait, identification}, template.content, parent);
-// };

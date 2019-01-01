@@ -29,8 +29,14 @@
         margin: 0;
     }
 
-    .species.revision.card, .non-taxon.revision.card {
-        margin: 0 0 1rem 0;
+    .species.revision.card, .taxon.revision.card, .non-taxon.revision.card {
+        margin: 0 0 .5rem 0;
+        padding: 0 0 .5rem 0;
+        border: .05rem solid var(--snap-species-header-background);
+      }
+
+      .non-taxon.revision.card > div:nth-child(1) {
+          margin: .5rem;
       }
 
     .taxon-highlight {
@@ -49,6 +55,8 @@
 
     .species.card {
         margin: 0;
+        padding: 0;
+        border: 0;
       }
 
     .cultivar.card .scrollable {
@@ -88,6 +96,11 @@
         grid-template-rows: 1fr 1fr;
     }
 
+    .big-squares > div {
+        width: 190px;
+        height: 260px;
+    }
+
     .squares { 
         height: 100%;
         grid-template-rows: 1fr 1fr 1fr;
@@ -109,8 +122,6 @@
         color: var(--snap-text-medium-light);
         flex: auto;
         margin: 1rem 0;
-        border: .1rem solid var(--snap-border-dark);
-        border-radius: .20rem;
         display: flex;
         flex-direction: column;
         padding: .5rem;
@@ -118,7 +129,7 @@
 
     .letterbox-entry div {
         margin: .5rem 0;
-        width: 80%;
+        font-size: 1.2rem;
     }
 
     .letterbox-entry input {
@@ -130,6 +141,18 @@
     .letterbox-entry button:disabled {
         color: var(--snap-text-dark);
         pointer-events: none;
+    }
+
+    .letterbox-entry .buttons {
+        display: flex;        
+    }
+
+    .letterbox-entry .buttons > div:nth-child(2) {
+        padding: 0 0 0 .5rem;
+    }
+
+    .text-question {
+        min-height: 5rem;
     }
 
     .letterbox-entry button {
@@ -241,13 +264,8 @@
     }
 
     .snapdragon-container {
-        border: .05rem solid var(--snap-primary);
+        border: .05rem solid var(--snap-portrait);
     }
-    
-    .info-box #traitSlider {     
-        min-width: 23.5rem;
-        max-width: 28.5rem;
-    }    
 
     .bird-song div {
         float: right;
@@ -263,17 +281,8 @@
         padding: .5rem;
     }
 
-    .imageSlider .carousel-item {
-        height: 70vh;
-    }
-
-    .text-question {
-        min-height: 3rem;
-    }
-
     .summary-scores {
         align-self: center;
-        margin: 2rem 0 0 0;
       }
 
     .course-description span {
@@ -284,15 +293,20 @@
         height: 50vh;
       }
 
-    .question-container {
-        border: .05rem solid var(--snap-question-background);
-    }
-
     .question-container > span:nth-child(1), .question-container > p:nth-child(1) {
         font-size: 1.2rem;
     }
 
-    .text-question span:nth-child(2) {
+    .radio-buttons-group {
+        margin: 1rem auto;
+        min-width: 80%;
+        padding: 1rem;
+        padding-bottom: 0.5rem;
+        border: .08rem solid var(--snap-species-header-background);
+      }
+
+    .text-question span:nth-child(2),
+    .text-question span:nth-child(3) {
         vertical-align: super;
     }
 
@@ -319,6 +333,5 @@
     
     #imageModal .modal-body .imageSlider .carousel-item {
         height: 70vh;
-    }
-      
+    }      
 }

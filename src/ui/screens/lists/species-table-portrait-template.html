@@ -27,11 +27,9 @@
                             </span>
                             <span class="latin-name">{{ item.shortName }}</span>
                         </td>
-                        <td>
-                            <span>{{ item.passes }}</span>
-                        </td>
-                        <td>
-                            <span>{{ item.fails }}</span>
+                        <td class="{{ item.iconicTaxon }}">
+                            <span><i class="{{ item.iconicTaxonIcon }}"></i></span>
+                            <span class="mushroom-icon {{ item.hideFungiIcon }}"></span>
                         </td>
                         <td>
                             <div class="custom-control custom-checkbox">

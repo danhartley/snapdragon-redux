@@ -1,5 +1,4 @@
 import { itemProperties } from 'ui/helpers/data-checking';
-import { epithets } from 'api/botanical-latin';
 
 const item = {
     "names": [
@@ -115,7 +114,8 @@ test('should return vernacular family names when provided with latin name and la
       { language: "pt", names:[ 'Storax family' ]},
       { language: "it", names:[ 'Storax family' ]}]
   };
-  expect(itemProperties.familyVernacularNames(family.name, 'en')).toEqual(['Mallows or Hibiscus']);
+  const taxa = [ family ];
+  expect(itemProperties.familyVernacularNames(family.name, 'en', taxa)).toEqual(['Mallows or Hibiscus']);
 });
 
 const list = [
@@ -134,4 +134,21 @@ const list = [
 test('answersFrom should return a new list matching the number requesting and including the correct answer', () => {
   const answers = ["Fistulina hepatica","Boletus edulis","Pleurotus ostreatus",];
   expect(itemProperties.answersFromList(list, 'Boletus edulis', 3).sort()).toEqual(answers.sort());
+});
+
+test('check family has added taxon data', () => {
+  let taxa = [
+    {
+        taxon: 'family',
+        name: 'Asteraceae'
+    }
+  ];
+  expect(itemProperties.familyHasTaxaData('Asteraceae', taxa)).toBeTruthy();
+  taxa = [
+    {
+        taxon: 'family',
+        name: 'Apiaceae'
+    }
+  ];
+  expect(itemProperties.familyHasTaxaData('Asteraceae', taxa)).toBeFalsy();
 });

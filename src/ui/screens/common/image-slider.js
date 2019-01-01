@@ -3,6 +3,8 @@ import { modalImagesHandler } from 'ui/helpers/image-handlers';
 import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
 import { imageMatch, imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
 import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
+import { renderItemSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
+import { store } from 'redux/store';
 
 const selectActiveNodeImage = (image, parent) => {
     parent.querySelectorAll('.carousel-item').forEach(i => {        
@@ -14,6 +16,7 @@ const selectActiveNodeImage = (image, parent) => {
         }
     });    
     const activeNode = parent.querySelector('.imageSlider.carousel .carousel-item.active > div'); 
+    document.querySelector('.carousel-indicators li').classList.add('active');
     const img = image.dataset || image;
     img.title = img.title || img.itemName;
     handleRightsAttribution(img, activeNode);
@@ -33,9 +36,19 @@ const disableModalPopups = (disableModal, parent, config) => {
 const carouselControlHandler = event => {
     setTimeout(() => {
         const activeNode = document.querySelector(`${event.target.dataset.slider} .carousel-item.active > div`);
-        const image = activeNode.dataset;
+        const image = activeNode.dataset;        
         handleRightsAttribution(image, activeNode);
-    },1000);
+
+        const { collection } = store.getState();
+
+        const tiles = document.querySelectorAll('.js-tiles');
+
+        if(tiles) {
+            const name = document.querySelector('.carousel-item.active > div').dataset.title; 
+            const item = collection.items.find(i => i.name === name);
+            renderItemSpecimenTiles(item);
+        }
+    },1000);    
 };
 
 export const imageSlider = (config, images, parent, disableModal, image) => {
@@ -45,6 +58,8 @@ export const imageSlider = (config, images, parent, disableModal, image) => {
     slider.innerHTML = imageSliderTemplate;
 
     parent.innerHTML = '';
+
+    images.forEach((img, i) => img.index = i);
 
     renderTemplate({ images, index: '' }, slider.content, parent);
     selectActiveNodeImage(image || images[0], parent);    
@@ -74,7 +89,7 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
         const images = prepImagesForCarousel(item, config, imageUseCases.CAROUSEL);
         renderTemplate({ images, index: index + 1 }, sideBySlider.content, parent);
         const activeNode = document.querySelector(`#imageSlider${index + 1} .carousel-item`);
-        activeNode.classList.add('active');
+        activeNode.classList.add('active');        
         disableModalPopups(disableModal, config);
         handleRightsAttribution(images[0], activeNode.querySelector('div'));
 

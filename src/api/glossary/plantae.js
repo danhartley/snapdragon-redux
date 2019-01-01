@@ -197,4 +197,9 @@ export const plantae = [
         term: 'Pseudanthium',
         definition: 'A "false flower" made up of several true flowers.'
     },    
+    {
+        term: 'Green manure',
+        definition: 'Created by leaving uprooted or sown crop parts to wither on a field so that they serve as a mulch.',
+        wiki: 'https://en.wikipedia.org/wiki/Green_manure'
+    },    
 ];

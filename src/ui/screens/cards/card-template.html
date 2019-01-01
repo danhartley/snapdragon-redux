@@ -2,10 +2,11 @@
     <div class="portrait-grid species-card-images carousel js-species-card-images"></div>  
     <div class="species revision card">
         <div>
+            <div class="iconic-icon js-iconic-icon"><i class=""></i></div>
             <div class="species-header js-txt-species">
-                <div>
+                <div>                    
                     <div>
-                        <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ nameCount }}</span>
+                        <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ occurrences }}</span>
                         <span>{{ vernacularName }}</span>
                         <span class='rank'>{{ trait }}</span>
                     </div>
@@ -13,19 +14,18 @@
                         <span class="portrait bird-song-icon-disabled js-bird-song-player" data-src='player' data-toggle="modal" data-target="#menuModal">
                             <i class="fas fa-music"></i>
                         </span>
-                        <span>{{ species }}</span>
+                        <span>{{ name }}</span>
                         <span class="badge badge-light js-subspecies-badge" data-toggle="modal" data-target="#badgeListModal">{{ subSpeciesCount }}</span> <span class="sr-only">species of this family in the collection</span>                
                     </div>
+                    <div><span class="hide-empty">{{ familyVernacularName }}</span> <span class="latin hide-empty">{{ familyName }}</span></div>
                 </div>
-                <img class="landscape" src="https://content.eol.org/data/media/{{ itemImage }}" alt="">
+                <img class="landscape" src="https://content.eol.org/data/media/{{ headerImage }}" alt="">
             </div>
         </div>                
         <div class="data-box-container landscape">                
-            <div></div>
-            <div class="data-box">
-                <div class="taxon-data"><span>Rank</span> <span>{{ rank }}</span></div>
-                <div class="taxon-data"><span>Family</span><span><span>{{ familyVernacularName }} </span><span class="latin">{{ familyName }}</span></span></div>
-            </div>                
+            <div class="inat-box js-inat-box"></div>
+            <div class="landscape calender-container js-calendar-box"></div>
+            <!-- <div class="landscape js-taxonomy-box"></div>  -->
         </div>
         <hr class="landscape">
         <div class="landscape bird-song">
@@ -34,11 +34,11 @@
                 </iframe>
             </div>
         </div>                
-        <div class="lookalikes js-lookalikes"></div>
-        <div class="js-feature-types"></div>
+        <div class="card-txt-block lookalikes js-lookalikes"></div>
+        <div class="card-txt-block js-feature-types"></div>
         <div class="info-box js-info-box"></div>
         <hr class="landscape">
-        <div class="landscape species-card-wiki">
+        <div class="landscape card-txt-block species-card-wiki">
             <span class="js-species-card-wiki"></span>
             <span><a class="species-card-eol-link js-species-card-eol-link underline-link">EOL</a></span>
         </div>
@@ -46,7 +46,7 @@
     <div class="action-update-container">
         <div class="species-card-btn action-update js-species-card-btn">
             <div></div>
-            <button class="btn btn-light">Continue</button>
+            <button class="btn btn-light">Continue lesson</button>
         </div>
     </div>
 </div>

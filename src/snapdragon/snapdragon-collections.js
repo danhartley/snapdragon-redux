@@ -83,7 +83,8 @@ export const kitchenGarden = {
         "Prunus avium",
         // "Apis mellifera"
       ],
-    index: 0
+    index: 0,
+    iconicTaxon: 'plantae'
 };
 
 export const rhsTrees = { 
@@ -170,7 +171,8 @@ export const rhsTrees = {
         "Acacia baileyana",
         "Acacia dealbata"
       ],
-    index: 1
+    index: 1,
+    iconicTaxon: 'plantae'
 };
 
 export const commonBirds = { 
@@ -206,7 +208,8 @@ export const commonBirds = {
         "Aegithalos caudatus",
         "Fringilla coelebs"
       ],
-    index: 2
+    index: 2,
+    iconicTaxon: 'aves'
 };
 
 export const rhsWeeds1 = { 
@@ -243,7 +246,8 @@ export const rhsWeeds1 = {
         "Capsella bursa-pastoris",
         "Bellis perennis"
       ],
-    index: 3
+    index: 3,
+    iconicTaxon: 'plantae'
 };
 
 const mushroomCollection = {
@@ -256,7 +260,8 @@ const mushroomCollection = {
     lessonPlanLandscape: 3,
     lessonPlanPortrait: 103,
     glossary: ['fungi'],
-    course: 'Snapdragon'
+    course: 'Snapdragon',
+    iconicTaxon: 'fungi'
 };
 
 export const fallMushroomsEasternUSA = {
@@ -352,7 +357,8 @@ const lichenCollection = {
     lessonPlanLandscape: 4,
     lessonPlanPortrait: 5,
     glossary: ['lichen', 'common'],
-    course: 'Snapdragon'
+    course: 'Snapdragon',
+    iconicTaxon: 'fungi'
 };
 
 export const beginnersLichenology = {

@@ -7,7 +7,6 @@ import { renderWikiModal } from 'wikipedia/wiki-modal';
 import { infraspecifics } from 'api/snapdragon/infraspecifics';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
-import cardTemplate from 'ui/screens/cards/card-template.html';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { getBirdSong } from 'xeno-canto/birdsong';
 import { getTraits } from 'api/traits/traits';
@@ -15,7 +14,12 @@ import { lookALikes } from 'ui/screens/common/look-alikes';
 import { renderFeatures } from 'ui/screens/common/feature';
 import { infoSlider } from 'ui/screens/common/info-slider';
 import * as traitTypes from 'api/traits/trait-types';
+import { iconicTaxa, matchTaxon, matchIcon } from 'api/snapdragon/iconic-taxa';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
+import { renderInatDataBox } from 'ui/screens/common/inat-box';
+import { renderTaxonomyBox } from 'ui/screens/common/taxonomy-box';
+import { renderCalendar } from 'ui/screens/common/calendar';
+import cardTemplate from 'ui/screens/cards/card-template.html';
 
 export const renderCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody) => {
 
@@ -63,8 +67,11 @@ const renderLandscape = (item, config, traits, isModalMode) => {
     
         const wikiNode = document.querySelector('.js-species-card-wiki');
     
-        renderWiki(wikiNode, item, config.language);  
+        renderWiki(wikiNode, item, config.language);
     }
+    const inatNode = document.querySelector('.js-inat-box');
+
+    renderInatDataBox(inatNode, item, config);
 };
 
 const renderPortrait = (item, config, traits, isModalMode) => {
@@ -101,22 +108,24 @@ const renderPortrait = (item, config, traits, isModalMode) => {
 
 const renderCommonParts = (template, config, item, collection, traits, isModalMode, parent, lessonPlan) => {
 
-    const species = item.name;
+    const name = item.name;
     const epithet = itemProperties.latin(item.species);
     const latin = epithet ? `${item.species}: ${epithet.en}` : '';
     const rank = "species";
     const family = taxa.find(f => f.name === item.family);
     const familyName = family ? family.name : item.taxonomy.family;
-    const familyVernacularNames = itemProperties.familyVernacularNames(item.family, config.language);
+    const familyVernacularNames = itemProperties.familyVernacularNames(item.family, config.language, taxa);
     const familyVernacularName = familyVernacularNames ? familyVernacularNames[0] : '';
         
-    const itemImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
+    const headerImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
     
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const subSpeciesCount = specific ? specific.subspecies.length : 0;
 
-    const names = item.names.filter(name => name.language === config.language).map(name => name.vernacularName);
-    const nameCount = names.length; 
+    const names = [ ...new Set(item.names.filter(name => name.language === config.language).map(name => name.vernacularName.toLowerCase())) ];
+    const occurrences = names.length; 
+
+    const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa);
 
     const options = [
         { name: traitTypes.name.RANK, formatter: trait => `UK # ${trait.value}` },
@@ -129,7 +138,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     
     parent.innerHTML = '';
     
-    renderTemplate({ species, vernacularName: item.vernacularName, latin, rank, subSpeciesCount, familyName, itemImage, familyVernacularName, trait, nameCount }, template.content, parent, clone);
+    renderTemplate({ name, vernacularName: item.vernacularName, latin, rank, subSpeciesCount, familyName, headerImage, familyVernacularName, trait, occurrences, iconicTaxon }, template.content, parent, clone);
 
     const subspeciesBadge = document.querySelector('.js-subspecies-badge');
 
@@ -157,20 +166,11 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
         });
     }
 
-    let info = traits.find(c => c.name === item.name);
-
-    if(info) {
-        infoSlider(info, document.querySelector('.js-info-box'));
-    } else {
-        if(family && family.traits) {
-            info = { traits: family.traits };
-            infoSlider(info, document.querySelector('.js-info-box'));    
-        }        
-    }
+    infoSlider(item, traits, family, document.querySelector('.js-info-box'));
 
     const namesBadge = document.querySelector('.js-names-badge');
 
-    if(nameCount < 2) {
+    if(occurrences < 2) {
         namesBadge.classList.add('hide');    
     } else {
         namesBadge.addEventListener('click', event => {
@@ -185,7 +185,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     }
 
     lookALikes(collection, item, traits, config, isModalMode);
-    renderFeatures(item, traits, config, document.querySelector('.js-feature-types'),[traitTypes.name.ECOLOGY,traitTypes.name.SYMBIONTS, traitTypes.name.THALLUS_TYPE, traitTypes.name.HABITAT]);
+    renderFeatures(item, traits, config, document.querySelector('.js-feature-types'));
     
     const continueBtn = document.querySelector('.js-species-card-btn button');
 
@@ -202,5 +202,28 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
         continueBtn.addEventListener('click', event => {
             actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
         });
+
+        // const taxonomyNode = document.querySelector('.js-taxonomy-box');
+
+        // renderTaxonomyBox(taxonomyNode, { rank, familyVernacularName, familyName, iconicTaxon });
+
+        const calendarNode = document.querySelector('.js-calendar-box');
+
+        renderCalendar(calendarNode, item, config);
+    }
+
+    if(item.taxonomy.kingdom.toLowerCase() === 'fungi') {
+
+        const iconicIconContainer = document.querySelector('.js-iconic-icon');
+
+        iconicIconContainer.innerHTML = '<span class="mushroom-icon-header"><svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg></span>';
+
+    } else {
+
+        const iconicIcon = document.querySelector('.js-iconic-icon i');
+
+        const classes = matchIcon(item.taxonomy, iconicTaxa).split(' ');
+
+        classes.forEach(c => iconicIcon.classList.add(c));        
     }
 };

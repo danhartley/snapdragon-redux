@@ -35,10 +35,10 @@ export const renderCompleteText = (collection) => {
         species = item.species;
         givenTaxon = 'genus';
         if(config.isPortraitMode) {
-            description = `Complete the latin name for ${vernacular}.`            
+            description = `Complete the latin name for a ${vernacular}.`            
         } else {
-            description = `Complete the latin name by selecting the correct GENUS name from the options below.`;
-            description2 = `Common name: ${vernacular}.`
+            description = `What is the genus of a ${vernacular}?`;
+            description2 = 'Complete the latin name below by selecting the approprite genus.'
         }
     } else if(screen.type === 'text-complete-species') {
 
@@ -47,10 +47,10 @@ export const renderCompleteText = (collection) => {
         species = '---';        
         givenTaxon = 'species';
         if(config.isPortraitMode) {
-            description = `Complete the latin name for ${vernacular}.`
+            description = `Complete the latin name for a ${vernacular}.`
         } else {
-            description = `Complete the latin name by selecting the correct SPECIES name from the options below.`;
-            description2 = `Common name: ${vernacular}.`
+            description = `What is the species of a ${vernacular}?`;
+            description2 = 'Complete the latin name below by selecting the approprite species.'
         }
     }
 
@@ -80,26 +80,17 @@ export const renderCompleteText = (collection) => {
 
     const updateScreen = (score, scoreUpdateTimer, config) => {
 
-        const iconContainer = document.querySelector('.js-icon-response');
+        const iconColour  = score.success ? 'answer-box-success' : 'answer-box-alert';
 
-        iconContainer.innerHTML = score.success
+        const icon = score.success
             ? `<span class="icon"><i class="fas fa-check-circle"></i></span>`
             : `<span class="icon"><i class="fas fa-times-circle"></i></span>`;
 
-        const iconColour  = score.success ? 'answer-box-success' : 'answer-box-alert';
 
-        iconContainer.classList.add(iconColour);
+        const txtCorrect = `<span class="icon-text"><span class="icon-container ${iconColour}">${icon}</span><span class="binomial">${score.binomial}</span><span> is correct.</span</span>`;
 
-        const txtCorrect = 
-            config.isPortraitMode 
-                ? `<span class="icon-text"><span class="binomial">${score.binomial}</span> is correct.</span>`
-                : `<span class="icon-text">Correct. The complete latin name is <span class="binomial">${score.binomial}</span>.</span>`;
-
-        const txtIncorrect = 
-            config.isPortraitMode
-                ? `<span class="icon-text">The correct name is <span class="binomial">${score.binomial}</span>.</span>`
-                : `<span class="icon-text">Incorrect. The complete latin name is <span class="binomial">${score.binomial}</span>.</span>`;
-
+        const txtIncorrect = `<span class="icon-text"><span class="icon-container ${iconColour}">${icon}</span><span>The correct name is </span<span class="binomial">${score.binomial}.</span></span>`;
+        
         document.querySelector('.js-txt-response').innerHTML = score.success ? txtCorrect : txtIncorrect;
 
         if(question === item.species) {
@@ -124,7 +115,7 @@ export const renderCompleteText = (collection) => {
 
         const txtBtn = document.querySelector('.js-text-btn');
 
-        txtBtn.innerHTML = 'Continue';
+        txtBtn.innerHTML = 'Continue lesson';
 
         txtBtn.style.cursor = 'pointer';
         txtBtn.disabled = false;

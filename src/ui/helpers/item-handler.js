@@ -8,7 +8,11 @@ import { speciesStateHelper } from 'redux/reducers/initial-state/initial-species
 
 async function getItems(collection, config) {
     if(collection.id === 8) {
-        if(collection.items && collection.items[0].collectionId === collection.id) {
+        const collectionIsUnchanged = 
+            collection.items && collection.items.length > 0 && collection.items[0].collectionId === collection.id && 
+            collection.speciesRange === config.speciesRange &&
+            collection.iconicTaxa === config.iconicTaxa;
+        if(collectionIsUnchanged) {
             return new Promise(resolve => {
                 resolve(collection.items);
             });
@@ -16,7 +20,7 @@ async function getItems(collection, config) {
             const coordinates = await getLocation(config);                        
             const latitude = coordinates['0'] || coordinates.lat;
             const longitude = coordinates['1'] || coordinates.long;
-            return getInatSpecies(latitude, longitude).then(species => {
+            return getInatSpecies(latitude, longitude, config).then(species => {
                 const items = new Set(species.filter(item => item));
                 return [ ...items ];
             });
@@ -55,6 +59,8 @@ export async function itemHandler(collection, config, counter, callback) {
         });
 
         collection = speciesStateHelper.extendCollection(collection);
+        collection.speciesRange = config.speciesRange;
+        collection.iconicTaxa = config.iconicTaxa;
 
         actions.boundChangeCollection({ config, collection });
     }

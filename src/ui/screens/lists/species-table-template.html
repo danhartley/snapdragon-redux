@@ -6,9 +6,6 @@
                 <tbody data-repeat-item="{{ collection.items }}">
                     <tr class="table-row js-list-item">
                         <td>
-                            <span>{{ item.snapIndex }}</span>
-                        </td>
-                        <td>
                             <img 
                                 id="{{ item.name }}" 
                                 src="https://content.eol.org/data/media/{{ item.url }}" 
@@ -27,16 +24,16 @@
                                 <span data-toggle="modal" data-name="{{ item.name }}" data-target="#speciesCardModal" class="underline-link">{{ item.vernacularName }}</span>
                             </span>
                             <span class="latin-name">{{ item.binomial }}</span>
-                            <span class="capitalise js-vernacular-name"  data-key-trait="{{ item.keyTrait }}">{{ item.keyTrait }}</span>
                         </td>
                         <td>
-                            <span>{{ item.family }}</span>
+                            <span data-toggle="modal" data-url="{{ item.url }}" data-key-trait="{{ item.family }}" data-target="#speciesCardModal" class="{{ item.familyLinkClass }}" data-family="{{ item.family }}">{{ item.family }}</span>
                         </td>
                         <td>
-                            <span>{{ item.passes }}</span>
+                            <span data-toggle="modal" data-url="{{ item.url }}" data-key-trait="{{ item.keyTrait }}" data-target="#speciesCardModal" class="{{ item.keyTratLinkClass }}" data-key-trait="{{ item.keyTrait }}">{{ item.keyTrait }}</span>
                         </td>
-                        <td>
-                            <span>{{ item.fails }}</span>
+                        <td class="{{ item.iconicTaxon }}">
+                            <span><i class="{{ item.iconicTaxonIcon }}"></i></span>
+                            <span class="mushroom-icon {{ item.hideFungiIcon }}"></span>
                         </td>
                         <td>
                             <div class="custom-control custom-checkbox">

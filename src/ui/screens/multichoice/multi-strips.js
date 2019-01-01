@@ -54,7 +54,7 @@ export const renderMultiStrips = (collection) => {
 
     const render = (questionText, questionValue, answers, card = taxonCard, ctxt = {description}) => {
     
-        renderTemplate({ answers }, template.content, parent);
+        renderTemplate({ description, answers }, template.content, parent);
         
         const strips = document.querySelectorAll('.js-rptr-strips .strip div');
 
@@ -72,7 +72,7 @@ export const renderMultiStrips = (collection) => {
 
         const renderAnswer = (score, scoreUpdateTimer) => {
             const answer = document.querySelector('.js-answer');
-            answer.innerHTML = 'Continue';
+            answer.innerHTML = 'Continue lesson';
             answer.style.display = 'block';
             answer.style.cursor = 'pointer';
             answer.addEventListener('click', () => {
@@ -112,20 +112,22 @@ export const renderMultiStrips = (collection) => {
 
         if(!collection.speciesVernacularNames) return;
 
+       description = 'Can you identify the species?';
+
         const number = config.isPortraitMode ? 6 : config.isLandscapeMode ? 6 : 6;
 
         const questionText = config.isPortraitMode ? 'Select equivalent of latin name' : `Select the common name equivalent of the latin`;
         const question = item.vernacularName;   
         const answers = itemProperties.answersFromList(itemProperties.vernacularNamesForGroups(items, config), question, number);
 
-        const description = { vernacular: '---', name: item.name };
+        const placeHolderForAnswer = { vernacular: '---', name: item.name };
 
-        render(questionText, question, answers, speciesCard, description);
+        render(questionText, question, answers, speciesCard, placeHolderForAnswer);
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
-        const number = config.isPortraitMode ? 3 : config.isLandscapeMode ? 4 : 5;
+        const number = config.isPortraitMode ? 3 : 4;
 
         const questionText = config.isPortraitMode ? 'Tap to match Quick ID' : `Click to match the Quick Id`;
         const question = families.find(f => f.name === item.family).descriptions[0].identification;
@@ -137,7 +139,7 @@ export const renderMultiStrips = (collection) => {
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
         
-        const number = config.isPortraitMode ? 3 : 5;
+        const number = config.isPortraitMode ? 3 : 4;
 
         const questionText = config.isPortraitMode ? 'Tap to match description' : `Click to match the description`;
         const question = families.find(f => f.name === item.family).descriptions[0].summary;

@@ -1,14 +1,22 @@
 <div class="snapdragon-container">
     <div class="taxon revision card">
-        <div class="taxon-highlight">
-            <div>{{ name }}</div>
-            <div class="badge badge-light" data-toggle="modal" data-target="#badgeListModal">{{ occurrences }}</div> <span class="sr-only">species of this family in the collection</span>
-            <img class="family-img js-img-family" src-="{{ img }}" alt="">                    
-        </div>
-        <div class="taxon-common-name">
-            <span>{{ common }}</span>
-            <hr>
-        </div>        
+            <div>
+                <div class="species-header js-txt-species">
+                    <div>
+                        <div>
+                            <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ occurrences }}</span>
+                            <span>{{ vernacularName }}</span>
+                        </div>
+                        <div class="latin-name js-txt-species-name">
+                            <span class="portrait bird-song-icon-disabled js-bird-song-player" data-src='player' data-toggle="modal" data-target="#menuModal">
+                                <i class="fas fa-music"></i>
+                            </span>
+                            <span>{{ name }}</span>                            
+                        </div>
+                    </div>
+                    <img class="landscape" src="https://content.eol.org/data/media/{{ headerImage }}" alt="">
+                </div>
+            </div>
         <div class="data-box-container">                
                 <div></div>
                 <div class="data-box">
@@ -29,7 +37,7 @@
         </div>
         <div class="landscape">{{ summary }}</div>
         <!-- <div class="landscape portrait"><span class="snap-alert-fg js-taxon-toxic-warning"></span> {{ toxic }}</div> -->
-        <div class="landscape">
+        <div class="landscape js-external-links">
             <a href="{{ eol }}" target="_blank" class="underline-link">EOL</a>
             <a href="{{ wiki }}" class="underline-link" data-toggle="modal" data-target="#externalPageModal">WIKI</a>
         </div>
@@ -37,7 +45,7 @@
     <div class="action-update-container">
         <div class="species-card-btn action-update js-taxon-card-btn">
             <div></div>
-            <button class="btn btn-light">Continue</button>
+            <button class="btn btn-light">Continue lesson</button>
         </div>
     </div>
 </div>

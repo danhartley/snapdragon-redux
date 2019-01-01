@@ -1,12 +1,15 @@
 import { createLesson } from 'syllabus/lesson-builder';
 import { screens } from 'snapdragon/screen-layouts';
 import { getCollectionLayouts } from 'redux/reducers/initial-state/species-state/collection-layouts';
+import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
 
 const { summary, history } = screens;
 
 const createLessonPlan = (lessonPlan, config, collection) => {
 
     collection.lesson = collection.lesson || { ...lessonPlan, level: { id: 1 } };
+
+    collection.families = familyProps.getFamilyNames(collection.items);
 
     collection.itemGroups = getItemGroups(collection);
     collection.itemGroup = collection.itemGroups[collection.currentRound - 1];

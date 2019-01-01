@@ -5,6 +5,7 @@ import { imageSlider } from 'ui/screens/common/image-slider';
 export const imageUseCases = {
     SPECIES_LIST: 'Species list',
     SPECIES_CARD: 'Species card',
+    TAXON_CARD: 'Taxon card',
     SPECIES_SPECIMENS: 'Species specimens',
     NON_TAXON_CARD: 'Non-taxon card',
     VISUAL_MATCH: 'Visual match',
@@ -26,20 +27,24 @@ export const imageMatch = (elemSrc, src) => {
     return (elemSrc === src || elemSrc === src.replace('.98x68.jpg', '.jpg') || elemSrc === src.replace('.260x190.jpg', '.jpg'));
 };
 
+export const prepImageForCarousel = (image, index, item, config, useCase) => {
+    let img = { 
+        index: index + 1, 
+        ...image,
+        ...{ url : scaleImage(image, useCase, config) },
+        itemName: item.name,
+        itemCommon: item.itemCommon,
+        photographersName : image.photographer ? image.photographer.full_name || '' : ''            
+    };
+    if(image.src) {
+        img = { ...img, ...image.src };
+    }
+    return img;
+};
+
 export const prepImagesForCarousel = (item, config, useCase) => {
     const images = item.images.map((image, index) => { 
-        let img = { 
-            index: index + 1, 
-            ...image,
-            ...{ url : scaleImage(image, useCase, config) },
-            itemName: item.name,
-            itemCommon: item.itemCommon,
-            photographersName : image.photographer ? image.photographer.full_name || '' : ''            
-        };
-        if(image.src) {
-            img = { ...img, ...image.src };
-        }
-        return img;
+        return prepImageForCarousel(image, index, item, config, useCase);
     });
     return images;
 };
@@ -51,9 +56,10 @@ export const scaleImage = (image, useCase, config) => {
     switch(useCase) {
         case imageUseCases.SPECIES_LIST:
             return config.isLandscapeMode 
-                ? image.url.replace('.jpg', '.260x190.jpg')
+                ? image.url.replace('.jpg', '.98x68.jpg')
                 : image.url.replace('.jpg', '.98x68.jpg');
         case imageUseCases.SPECIES_CARD:
+        case imageUseCases.TAXON_CARD:
         return config.isLandscapeMode 
             ? image.url.replace('.jpg', '.260x190.jpg')
             : image.url.replace('.jpg', '.260x190.jpg');
@@ -64,7 +70,7 @@ export const scaleImage = (image, useCase, config) => {
         case imageUseCases.VISUAL_MATCH:
         case imageUseCases.TEXT_ENTRY:
             return config.isLandscapeMode 
-            ? image.url
+            ? image.url.replace('.jpg', '.260x190.jpg')
             : image.url.replace('.jpg', '.260x190.jpg');
         case imageUseCases.MIXED_SPECIMENS:
             return config.isLandscapeMode 

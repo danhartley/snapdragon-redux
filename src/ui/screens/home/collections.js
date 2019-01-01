@@ -14,13 +14,20 @@ import { editLessonPlans } from 'ui/screens/lists/lesson-plans-editor';
 import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { handleLocalCollection } from 'ui/helpers/local-collection';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
+import { handleIconicTaxaFilter } from 'ui/helpers/iconic-taxa-handler';
+import { listenToTaxaFiltersUpdate } from 'ui/helpers/iconic-taxa-handler';
 
 export const renderCollections = (counter) => {
 
-    const { collections, config: configState, collection: collectionState, history, layout } = store.getState();
+    const { collections: collectionsState, config: configState, collection: collectionState, history, layout } = store.getState();
 
-    let collection = R.clone(collectionState);
     let config = R.clone(configState);
+    let collections = R.clone(collectionsState);
+    if(config.iconicTaxa && config.iconicTaxa.length > 0) {
+        const localSpecies = collections.find(c => c.name === 'Local species');
+        collections = [ ...collections.filter(c => R.contains(c.iconicTaxon, config.iconicTaxa)), localSpecies ];
+    }
+    let collection = R.clone(collectionState);
 
     if(lessonLogicHandler.isSkippable(collection, counter, config, layout, 'renderCollections', false)) return;
 
@@ -37,7 +44,7 @@ export const renderCollections = (counter) => {
     const selectedCollection = collections.find(c => c.selected);
 
     collection = collection ? collection : { ...collection, ...selectedCollection };
-    
+  
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
     const collectionsHeader = document.querySelector('.btn-collection');
@@ -61,6 +68,7 @@ export const renderCollections = (counter) => {
         }
 
         collection = { ...collection, ...collections.find(collection => collection.id === collectionId) };
+
         collectionsHeader.innerHTML = collection.name;
         const descriptions = collection.descriptions.map(description => `<span>${description}</span>`).join('');
         collectionDescription.innerHTML = descriptions;
@@ -147,4 +155,13 @@ export const renderCollections = (counter) => {
         
         updateNavIcons();        
     });
+
+    document.querySelector('.iconic-taxa-control').addEventListener('click', event => {
+        handleIconicTaxaFilter(config);        
+    });
 };
+
+listenToTaxaFiltersUpdate((filters, config) => {
+    const { counter } = store.getState();
+    renderCollections(counter);
+});  

@@ -21,7 +21,7 @@ export const subscribeToNonTaxaSelection = callback => {
     subscriptions.push(callback);
 };
 
-export const renderNonTaxonCard = collection => {
+export const renderNonTaxonCard = (collection, isModalMode = false, parent = DOM.rightBody, keyTrait, imageUrl) => {
 
     const { enums, config, lessonPlan } = store.getState();
 
@@ -74,20 +74,29 @@ export const renderNonTaxonCard = collection => {
         const infoNode = document.querySelector('.js-info-box');
         infoSlider({traits:nonTaxon.traits}, infoNode);
 
-        renderWikiModal(lookup, wikiNode, config);    
-        renderWiki(wikiNode, lookup, config.language);
+        if(isModalMode) {
+
+        } else {
+            renderWikiModal(lookup, wikiNode, config);    
+            renderWiki(wikiNode, lookup, config.language);
+        }
     };
 
-    const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    renderTemplate({group: nonTaxa}, template.content, parent);
+    renderTemplate({group: nonTaxa, imageUrl}, template.content, parent);
 
     selectHandler('.dropdown.js-non-taxa .dropdown-item.icon', id => callback(id));
-    document.getElementById(`${nonTaxa[0].id}`).click();
-    
+    const id = keyTrait || nonTaxa[0].id;
+    document.getElementById(id).click();
+     
     const continueBtn = document.querySelector('.js-non-taxon-card-btn button');
-    continueBtn.addEventListener('click', event => {
-        actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
-    });
+
+    if(isModalMode) {
+        continueBtn.classList.add('hide-important');
+    } else {
+        continueBtn.addEventListener('click', event => {
+            actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
+        });
+    }
 };

@@ -1,11 +1,14 @@
+import * as R from 'ramda';
+
 import { DOM } from 'ui/dom';
+import { store } from 'redux/store';
 import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
 import { renderTemplate } from 'ui/helpers/templating';
 import snapdragonTemplate from 'ui/screens/home/snapdragon-template.html';
+import { listenToTaxaFiltersUpdate } from 'ui/helpers/iconic-taxa-handler';
 
-export const renderSnapdragon = (counter) => {
 
-    if(counter.isLessonPaused) return;
+const renderSnapdragonTempla = (snapdragonTemplate, DOM, snapdragonCollections, renderTemplate, filters) => {
 
     const template = document.createElement('template');
 
@@ -16,9 +19,26 @@ export const renderSnapdragon = (counter) => {
     const parent = DOM.leftBody;
     parent.innerHTML = '';
 
-    const collections = snapdragonCollections;
+    const collections = (filters && filters.length !== 0)
+        ? snapdragonCollections.filter(c => R.contains(c.iconicTaxon, filters))
+        : snapdragonCollections;
 
     const context = { collections };
 
     renderTemplate(context, template.content, parent, clone);
 };
+
+export const renderSnapdragon = (counter) => {
+
+    if(counter.isLessonPaused) return;
+
+    const { config } = store.getState();
+
+    const filters = config.iconicTaxa;
+
+    renderSnapdragonTempla(snapdragonTemplate, DOM, snapdragonCollections, renderTemplate, filters);
+};
+
+listenToTaxaFiltersUpdate((filters, config) => {    
+    renderSnapdragonTempla(snapdragonTemplate, DOM, snapdragonCollections, renderTemplate, filters);
+});  

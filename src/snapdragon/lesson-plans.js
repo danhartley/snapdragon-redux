@@ -21,7 +21,8 @@ const mixedSpeciesMatch = {
     given: 'Given species name',    
     requirement: 'Select species image',
     screens: [
-        { ...mixedSpecimenTiles },
+        { ...specimen },
+        // { ...mixedSpecimenTiles },
         { ...mixedSpecimenQuestions }
     ]
 };
@@ -614,7 +615,7 @@ const portraitLesson3 = {
             description: 'Species recognition',
             layouts: [ 
                 speciesRevision,   
-                nonTaxonRevision,                              
+                // nonTaxonRevision,                              
                 multiSpecimenCommonMatch,
                 mixedSpeciesMatch
             ],
@@ -688,7 +689,7 @@ lichenLessonLandscape.levels[0] = {
     name:'Level 1',
     description: 'Species recognition',
     layouts: [ 
-        nonTaxonRevision,                              
+        // nonTaxonRevision,                              
         speciesRevision,
         multiSpecimenCommonMatch,
         mixedSpeciesMatch
@@ -703,7 +704,7 @@ lichenLessonPortrait.levels[0] = {
     name:'Level 1',
     description: 'Species recognition',
     layouts: [ 
-        nonTaxonRevision,                              
+        // nonTaxonRevision,                              
         speciesRevision,
         multiSpecimenCommonMatch,
         mixedSpeciesMatch

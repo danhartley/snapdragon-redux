@@ -310,7 +310,7 @@ test('when user selects a collection state should be populated', () => {
     actions.boundChangeCollection({config, collection});
     actions.boundNextLessonPlan({ lessonPlan: _lessonPlan, collection : _collection});
 
-    expect(store.getState().counter).toEqual(null);
+    expect(store.getState().counter).toEqual( {"isLessonRehydrated": false});
 
     actions.boundToggleLesson({ index: 0 });
     const { counter, lessonPlan } = store.getState();

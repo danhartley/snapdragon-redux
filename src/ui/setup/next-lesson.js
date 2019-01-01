@@ -15,7 +15,12 @@ export const nextLesson = (counter) => {
     const plan = R.clone(userEditedPlan) || R.clone(lessonPlans.find(plan => plan.id === planId && plan.portrait === config.isPortraitMode));
     
     if(collection.isNextRound) {
-        const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(plan, config, R.clone(collection));
-        actions.boundNextLessonPlan({ lessonPlan: updatedLessonPlan, collection: updatedCollection });
+        if(collection.items.length > 0) {
+            const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(plan, config, R.clone(collection));
+            actions.boundNextLessonPlan({ lessonPlan: updatedLessonPlan, collection: updatedCollection });
+        } else {
+            console.log("There are no items in the Snapdragon collection");
+        }
+        
     }
 };

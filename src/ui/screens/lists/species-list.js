@@ -4,11 +4,14 @@ import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
 import { renderCard } from 'ui/screens/cards/card';
+import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
+import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { modalImageHandler } from 'ui/helpers/image-handlers';
 import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { getTraits } from 'api/traits/traits';
-import { buildTable } from 'ui/screens/lists/species-list-table';
+import { buildTable } from 'ui/screens/lists/species-table-no-scores';
 import { itemHandler, extendCollection } from 'ui/helpers/item-handler';
+import { listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
@@ -24,7 +27,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
     config.collection = { id: collection.id };
 
-    const doEveryThingElse = () => {
+    const handleUserEvents = () => {
         const headerCheckbox = document.querySelector(".table-header #inputCheckAll");
         const itemCheckboxes = document.querySelectorAll(".table-row .custom-control-input");
 
@@ -60,11 +63,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                     hasCollectionChanged = true;
                     const name = checkbox.getAttribute('name');
                     const item = collection.items.find(item => item.name === name);
-                    if(checkbox.checked) {
-                        item.isDeselected = false;
-                    } else { 
-                        item.isDeselected = true;
-                    }
+                    item.isDeselected = !checkbox.checked;
                     actions.boundChangeCollectionItems(collection.items);
                 });
             }
@@ -81,14 +80,35 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
         setTimeout(() => {
             const speciesCardLinks = document.querySelectorAll('.js-species-card-link span');
+            const parent = document.querySelector('#speciesCardModal .js-modal-body');
             speciesCardLinks.forEach(link => {
                 link.addEventListener('click', event => {
                     const name = event.target.dataset.name;
-                    const parent = document.querySelector('#speciesCardModal .js-modal-body');
                     renderCard(collection, true, collection.items.find(i => i.name === name), parent);
                 });
             });
-        }, 1000);
+            const traitCardLinks = document.querySelectorAll('.js-key-trait-link');
+            traitCardLinks.forEach(link => {
+                link.addEventListener('click', event => {
+                    const keyTrait = event.target.dataset.keyTrait;
+                    const imageUrl = event.target.dataset.url.replace('.98x68.jpg', '.260x190.jpg');              
+                    renderNonTaxonCard(collection, true, parent, keyTrait, imageUrl);
+                });
+            });
+            const familyCardLinks = document.querySelectorAll('.js-family-link');
+            familyCardLinks.forEach(link => {
+                link.addEventListener('click', event => {
+                    const family = event.target.dataset.family;
+                    renderTaxonCard(collection, true, parent, family);
+                });
+            });
+
+            document.querySelectorAll('.mushroom-icon').forEach(icon => {
+                icon.innerHTML = '<svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg>';
+            });
+        
+
+        });
 
         // Portrait mode only
 
@@ -131,16 +151,21 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     const traits = getTraits(enums);
 
     if(readOnlyMode) {
-        buildTable(collection, config, traits);
-        doEveryThingElse();
+        buildTable(collection, config, traits, enums);
+        handleUserEvents();
     }
     else {        
-        function callback(collection, config, traits) {
+        function callback(collection, config, traits, enums) {
             return function () {
-                buildTable(collection, config, traits);
-                doEveryThingElse();
+                buildTable(collection, config, traits, enums);
+                handleUserEvents();
             }
         }
-        itemHandler(collection, config, counter, callback(collection, config, traits));
+        itemHandler(collection, config, counter, callback(collection, config, traits, enums));
     }
 };
+
+listenToRangeUpdate((filters, config) => {
+    const { collection } = store.getState();
+    renderSpeciesCollectionList(collection, false);
+});

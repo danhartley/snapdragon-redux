@@ -590,20 +590,115 @@ export const fruit = [
       "id": 625333,
       "name": "Rubus idaeus",
       "images": [
-        "2012/05/24/00/23173_orig.jpg",
-        "2011/11/02/05/61043_orig.jpg",
-        "2012/11/18/08/10414_orig.jpg",
-        "2012/05/24/00/35094_orig.jpg",
-        "2009/09/08/03/90770_orig.jpg",
-        "2015/08/11/22/67667_orig.jpg",
-        "2014/06/10/18/26752_orig.jpg",
-        "2014/06/10/18/83674_orig.jpg",
-        "2014/06/10/18/35695_orig.jpg",
-        "2014/04/29/15/15447_orig.jpg",
-        "2014/04/29/11/30283_orig.jpg",
-        "2014/04/29/12/61321_orig.jpg",
-        "2014/04/29/10/59888_orig.jpg",
-        "2014/04/29/10/56219_orig.jpg"
+        {
+          "title": "n320_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://www.flickr.com/photos/biodivlibrary/7118321853/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/ed/e3/542.7118321853.jpg",
+          "thumb": "80/ed/e3/542.7118321853.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+            "homepage": "http://www.flickr.com/photos/61021753@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "File:Framboises sauvages en ArdÃ¨che.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Framboises_sauvages_en_Ard%C3%A8che.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/34/56/509.1019001.jpg",
+          "thumb": "55/34/56/509.1019001.98x68.jpg"
+        },
+        {
+          "title": "Rubus-idaeus-Raspberry.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rubus-idaeus-Raspberry.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/98/d0/509.11799027.jpg",
+          "thumb": "55/98/d0/509.11799027.98x68.jpg"
+        },
+        {
+          "title": "Rubus idaeus 1.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rubus_idaeus_1.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/e4/28/509.12981063.jpg",
+          "thumb": "55/e4/28/509.12981063.98x68.jpg"
+        },
+        {
+          "title": "Rubus idaeus 2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rubus_idaeus_2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/10/a3/509.14501277.jpg",
+          "thumb": "56/10/a3/509.14501277.98x68.jpg"
+        },
+        {
+          "title": "Woodlot NW of Kornilovo - raspberries - DSCF5596.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Woodlot_NW_of_Kornilovo_-_raspberries_-_DSCF5596.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/93/f6/509.21367450.jpg",
+          "thumb": "57/93/f6/509.21367450.98x68.jpg"
+        },
+        {
+          "title": "Wild raspberri.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Wild_raspberri.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "58/50/76/509.24895367.jpg",
+          "thumb": "58/50/76/509.24895367.98x68.jpg"
+        },
+        {
+          "title": "20130710Himbeere Schwetzinger Hardt4.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:20130710Himbeere_Schwetzinger_Hardt4.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "58/d0/82/509.27194106.jpg",
+          "thumb": "58/d0/82/509.27194106.98x68.jpg"
+        },
+        {
+          "title": "Rubus idaeus - fruit.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rubus_idaeus_-_fruit.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/d3/23/509.27255237.jpg",
+          "thumb": "58/d3/23/509.27255237.98x68.jpg"
+        },
+        {
+          "title": "Malina2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Malina2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/15/0e/509.2835473.jpg",
+          "thumb": "59/15/0e/509.2835473.98x68.jpg"
+        },
+        {
+          "title": "Rubus-idaeus-Raspberry.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rubus-idaeus-Raspberry.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5a/9a/10/509.11799027.jpg",
+          "thumb": "5a/9a/10/509.11799027.98x68.jpg"
+        },
+        {
+          "title": "Rubus idaeus20100818 270.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Rubus_idaeus20100818_270.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "60/1e/b2/509.39685468.jpg",
+          "thumb": "60/1e/b2/509.39685468.98x68.jpg"
+        },
+        {
+          "title": "Wild Rubus idaeus.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Wild_Rubus_idaeus.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "60/99/fe/509.4119134.jpg",
+          "thumb": "60/99/fe/509.4119134.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -1040,15 +1135,91 @@ export const fruit = [
       "id": 594632,
       "name": "Ficus carica",
       "images": [
-        "2012/06/12/13/66087_orig.jpg",
-        "2012/05/23/13/57540_orig.jpg",
-        "2014/08/15/06/36554_orig.jpg",
-        "2012/05/23/13/98613_orig.jpg",
-        "2014/08/15/05/80948_orig.jpg",
-        "2012/06/12/13/15099_orig.jpg",
-        "2014/08/15/05/53183_orig.jpg",
-        "2011/10/15/23/52680_orig.jpg",
-        "2016/08/05/21/98084_orig.jpg"
+        {
+          "title": "Ficus carica 005.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Ficus_carica_005.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/34/9c/509.10198026.jpg",
+          "thumb": "55/34/9c/509.10198026.98x68.jpg"
+        },
+        {
+          "title": "Ficus carica01.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Ficus_carica01.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/b2/d2/509.1229916.jpg",
+          "thumb": "55/b2/d2/509.1229916.98x68.jpg"
+        },
+        {
+          "title": "Fig.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fig.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/df/06/509.128459.jpg",
+          "thumb": "55/df/06/509.128459.98x68.jpg"
+        },
+        {
+          "title": "Fig tree.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fig_tree.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/df/07/509.128461.jpg",
+          "thumb": "55/df/07/509.128461.98x68.jpg"
+        },
+        {
+          "title": "Drvo smokve.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Drvo_smokve.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/e8/3f/509.1311965.jpg",
+          "thumb": "55/e8/3f/509.1311965.98x68.jpg"
+        },
+        {
+          "title": "Some figs.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Some_figs.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/fb/f4/509.136690.jpg",
+          "thumb": "55/fb/f4/509.136690.98x68.jpg",
+          "photographer": {
+            "full_name": "Jon Sullivan",
+            "homepage": null,
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Fig tree leaves.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fig_tree_leaves.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/f3/25/509.18444692.jpg",
+          "thumb": "56/f3/25/509.18444692.98x68.jpg"
+        },
+        {
+          "title": "Ficus carica-IMG 4355.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Ficus_carica-IMG_4355.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/7c/4d/509.20980261.jpg",
+          "thumb": "57/7c/4d/509.20980261.98x68.jpg"
+        },
+        {
+          "title": "Fig half.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fig_half.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/a5/81/509.21908746.jpg",
+          "thumb": "57/a5/81/509.21908746.98x68.jpg"
+        },
+        {
+          "title": "PikiWiki Israel 30141 Plants of Israel.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_30141_Plants_of_Israel.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/62/7f/509.25129875.jpg",
+          "thumb": "58/62/7f/509.25129875.98x68.jpg"
+        }
       ],
       "names": [
         {

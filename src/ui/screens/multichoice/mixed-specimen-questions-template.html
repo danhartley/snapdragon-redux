@@ -1,16 +1,9 @@
 <div class="snapdragon-container mixed-specimen-container">
-    <div class="portrait-grid species-card-images carousel js-species-card-images"></div>  
     <div class="question-container">
-        <p class="hide-empty">{{ question1 }}</p>
+        <p class="hide-empty question-header">{{ question1 }}</p>
         <p class="hide-empty">{{ question2 }}</p>
         <p class="hide-empty">{{ question3 }}</p>
     </div>
-    <div class="question-images landscape" data-repeat-image="{{ images }}">
-        <div class="layer-container" style="background-image: url('https://content.eol.org/data/media/{{ image.url }}');">
-            <div data-item-name="{{ image.itemName }}" class="layer">
-                <div>{{ image.index }}</div>
-            </div>
-        </div>         
-    </div>        
-    <div class="text-question js-txt-question"></div>    
+    <div class="species-card-images carousel js-species-card-images"></div>  
+    <div class="text-question js-txt-question "></div>    
 </div>

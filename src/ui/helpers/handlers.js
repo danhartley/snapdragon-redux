@@ -76,14 +76,18 @@ const genericScoreHandler = (_score, callback, config, containers) => {
         responseTxt = score.species;
         labelTxt = 'Species name';
     }
+    if(score.taxon === 'name') {
+        responseTxt = score.binomial;
+        labelTxt = 'Latin name';
+    }
 
     if(score.taxon === 'family') {
         responseTxt = score.question;
         labelTxt = 'Family name';
     }
 
-    const correct = `${labelTxt}: ${ responseTxt }`;
-    const incorrect = `${labelTxt}: ${ responseTxt }`;
+    const correct = `${ responseTxt } is correct`;
+    const incorrect = `The correct answer is ${ responseTxt }`;
 
     textAlertHandler({ success: score.success, correct, incorrect });
 
@@ -93,7 +97,7 @@ const genericScoreHandler = (_score, callback, config, containers) => {
             containers.questionContainer.classList.add('snap-success');
         }        
     }
-    btn.innerText = 'Continue';
+    btn.innerText = 'Continue lesson';
 
     score.layoutCount = layoutCount;
 
@@ -161,8 +165,8 @@ const stripScoreHandler = (test, callback, config) => {
             
             if(callback) callback(score, scoreUpdateTimer);
 
-            const correct = `Species: ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
-            const incorrect = `Species: ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
+            const correct = `${test.question ? test.taxon ? test.binomial : test.question : test.binomial } is correct`;
+            const incorrect = `The name is ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
 
             textAlertHandler({ success: score.success, correct, incorrect });
 

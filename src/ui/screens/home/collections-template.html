@@ -5,16 +5,23 @@
         <div class="snapdragon-options">
             <div class="dropdown collections js-collections">
                 <button class="btn btn-collection dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Choose a lesson
+                    <span>Choose a lesson</span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <div data-repeat-collection="{{ lessons }}">
                         <a class="dropdown-item icon" id="{{ collection.id }}" name="{{ collection.name }}">{{ collection.name }}</a>
                     </div>
                 </div>
-            </div>                        
+                <div class="iconic-taxa-control landscape"
+                        data-toggle="modal" 
+                        data-target="#iconicTaxaFilters">
+                    <span>Filters</span>
+                    <span class="iconic-taxa-filters">
+                        <i class="fas fa-sliders-h"></i>
+                    </span>            
+                </div>
+            </div>                                   
         </div>
-
         <div class="snapdragon-options">
             <div class="dropdown languages js-languages">
                 <button class="btn btn-language dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -76,4 +83,42 @@
             <button class="btn btn-placeholder js-lesson-btn-action-placeholder toggle-content is-visible disabled">Choose a lesson to begin...</button>
         </div>
     </div>
-</div>            
+</div>
+
+<div class="modal fade" id="iconicTaxaFilters" tabindex="-1" role="dialog" aria-labelledby="iconicTaxaFiltersLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title js-modal-text-title">Lesson Filters</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body js-modal-body">
+                    <h5>Categories</h5>
+                    <div class="iconic-taxa-categories">
+                        <div id="aves"><div><i class="fas fa-dove"></i></div><div></div></div>
+                        <div id="amphibia"><div><i class="fas fa-frog"></i></div><div></div></div>
+                        <div id="mammalia"><div><i class="fas fa-paw"></i></div><div></div></div>
+                        <div id="insecta"><div><i class="fas fa-bug"></i></div><div></div></div>
+                        <div id="fungi"><div><svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg></div><div></div></div>
+                        <div id="plantae"><div><i class="fas fa-leaf"></i></div><div></div></div>
+                    </div>
+                    <div class="js-lesson-filters">
+                        <button class="btn btn-light">Filter lessons</button>
+                    </div>
+                    <hr>
+                    <br>
+                    <h5>Location</h5>
+                    <div class="range-slider-control">
+                        <div>Distance from current location (<span id="range"></span>)</div>
+                        <div class="range-slider">
+                            <span>0 kms</span> <input class="js-set-range-input" type="range" min="0" max="100" value="10"><span> 100kms</span>
+                            <span class="js-range-text"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-light js-set-range-btn">Set range</button>
+                </div>                    
+            </div>
+        </div>
+</div>

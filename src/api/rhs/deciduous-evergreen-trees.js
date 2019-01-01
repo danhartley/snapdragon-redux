@@ -3867,20 +3867,107 @@ export const deciduousAndEvergreenTrees = [
       "id": 487229,
       "name": "Juglans regia",
       "images": [
-        "2012/01/25/03/72481_orig.jpg",
-        "2012/06/12/16/22855_orig.jpg",
-        "2016/08/04/09/94359_orig.jpg",
-        "2016/08/04/09/37494_orig.jpg",
-        "2016/08/04/09/53755_orig.jpg",
-        "2016/08/04/09/51743_orig.jpg",
-        "2015/08/11/23/49876_orig.jpg",
-        "2014/06/14/18/73191_orig.jpg",
-        "2014/06/14/18/14055_orig.jpg",
-        "2011/10/16/00/73043_orig.jpg",
-        "2011/10/16/00/70660_orig.jpg",
-        "2012/10/14/03/07452_orig.jpg",
-        "2014/08/15/04/19743_orig.jpg",
-        "2012/12/11/14/54461_orig.jpg"
+        {
+          "title": "n240_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://www.flickr.com/photos/biodivlibrary/6972229828/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/e3/7e/542.6972229828.jpg",
+          "thumb": "80/e3/7e/542.6972229828.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+            "homepage": "http://www.flickr.com/photos/61021753@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Juglans regia (detail).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Juglans_regia_(detail).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/43/80/509.1043694.jpg",
+          "thumb": "55/43/80/509.1043694.98x68.jpg"
+        },
+        {
+          "title": "Juglans regia 006.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Juglans_regia_006.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/49/4e/509.10528124.jpg",
+          "thumb": "55/49/4e/509.10528124.98x68.jpg"
+        },
+        {
+          "title": "Juglans regia 007.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Juglans_regia_007.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/49/51/509.10528149.jpg",
+          "thumb": "55/49/51/509.10528149.98x68.jpg"
+        },
+        {
+          "title": "Walnuss - erfroren.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Walnuss_-_erfroren.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/39/fb/509.15172251.jpg",
+          "thumb": "56/39/fb/509.15172251.98x68.jpg"
+        },
+        {
+          "title": "Nogales en las fincas..jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Nogales_en_las_fincas..jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/b9/dd/509.17443040.jpg",
+          "thumb": "56/b9/dd/509.17443040.98x68.jpg"
+        },
+        {
+          "title": "Nuss Wargolshausen, 2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Nuss_Wargolshausen,_2.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/c3/26/509.17641272.jpg",
+          "thumb": "56/c3/26/509.17641272.98x68.jpg"
+        },
+        {
+          "title": "Walnuss female.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Walnuss_female.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/53/9b/509.2011871.jpg",
+          "thumb": "57/53/9b/509.2011871.98x68.jpg"
+        },
+        {
+          "title": "File:Juglans regia - KÃ¶hlerâs Medizinal-Pflanzen-081.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Juglans_regia_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-081.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "58/83/43/509.255358.jpg",
+          "thumb": "58/83/43/509.255358.98x68.jpg"
+        },
+        {
+          "title": "Juglans regia.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Juglans_regia.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/a1/fd/509.260688.jpg",
+          "thumb": "58/a1/fd/509.260688.98x68.jpg"
+        },
+        {
+          "title": "Noix en automne.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Noix_en_automne.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/0e/c9/509.2822917.jpg",
+          "thumb": "59/0e/c9/509.2822917.98x68.jpg"
+        },
+        {
+          "title": "Juglans flower female 20050526 064.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Juglans_flower_female_20050526_064.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/1c/5b/509.286265.jpg",
+          "thumb": "59/1c/5b/509.286265.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -5223,19 +5310,118 @@ export const deciduousAndEvergreenTrees = [
       "id": 703834,
       "name": "Cercis siliquastrum",
       "images": [
-        "2014/08/15/01/58852_orig.jpg",
-        "2012/05/23/09/48300_orig.jpg",
-        "2009/09/08/04/80850_orig.jpg",
-        "2014/08/15/04/51918_orig.jpg",
-        "2014/08/15/04/58962_orig.jpg",
-        "2014/08/15/04/03221_orig.jpg",
-        "2009/09/08/04/83222_orig.jpg",
-        "2009/09/08/04/21159_orig.jpg",
-        "2016/08/03/22/13711_orig.jpg",
-        "2008/10/06/13/54454_orig.jpg",
-        "2008/10/06/13/57548_orig.jpg",
-        "2011/10/15/22/79435_orig.jpg",
-        "2012/01/22/05/64259_orig.jpg"
+        {
+          "title": "Cercis siliquastrum flowers3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_flowers3.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/3a/11/509.10292308.jpg",
+          "thumb": "55/3a/11/509.10292308.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum close-up flowers.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_close-up_flowers.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/43/3f/509.10435325.jpg",
+          "thumb": "55/43/3f/509.10435325.98x68.jpg"
+        },
+        {
+          "title": "Cersis siliquastrum Enfoqueflores 2010-4-11 DehesaBoyalPuertollano.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cersis_siliquastrum_Enfoqueflores_2010-4-11_DehesaBoyalPuertollano.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/70/93/509.11100241.jpg",
+          "thumb": "55/70/93/509.11100241.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum hojas.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_hojas.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/e1/f0/509.1291115.jpg",
+          "thumb": "55/e1/f0/509.1291115.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum 001.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_001.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/30/3a/509.15014416.jpg",
+          "thumb": "56/30/3a/509.15014416.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum 002.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_002.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/30/3d/509.15014438.jpg",
+          "thumb": "56/30/3d/509.15014438.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum 004.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_004.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/30/3e/509.15014458.jpg",
+          "thumb": "56/30/3e/509.15014458.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum 008.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_008.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/30/41/509.15014560.jpg",
+          "thumb": "56/30/41/509.15014560.98x68.jpg"
+        },
+        {
+          "title": "PikiWiki Israel 12610 klil david.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_12610_klil_david.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/31/e0/509.15040789.jpg",
+          "thumb": "56/31/e0/509.15040789.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum-IMG 0415.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum-IMG_0415.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/15/c7/509.19042355.jpg",
+          "thumb": "57/15/c7/509.19042355.98x68.jpg"
+        },
+        {
+          "title": "PikiWiki Israel 19977 Plants of Israel.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_19977_Plants_of_Israel.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/34/70/509.19672635.jpg",
+          "thumb": "57/34/70/509.19672635.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum - leaves.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_-_leaves.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/15/58/509.2836058.jpg",
+          "thumb": "59/15/58/509.2836058.98x68.jpg"
+        },
+        {
+          "title": "Cercis siliquastrum flowers3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Cercis_siliquastrum_flowers3.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5a/3b/51/509.10292308.jpg",
+          "thumb": "5a/3b/51/509.10292308.98x68.jpg"
+        },
+        {
+          "title": "Albero di Giuda - primavera.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Albero_di_Giuda_-_primavera.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5a/7c/b7/509.11250080.jpg",
+          "thumb": "5a/7c/b7/509.11250080.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -6406,22 +6592,182 @@ export const deciduousAndEvergreenTrees = [
       "id": 1145874,
       "name": "Alnus glutinosa",
       "images": [
-        "2012/07/04/05/69216_orig.jpg",
-        "2012/05/23/04/02773_orig.jpg",
-        "2012/05/23/04/31642_orig.jpg",
-        "2012/05/23/04/86165_orig.jpg",
-        "2012/05/23/04/40048_orig.jpg",
-        "2010/03/24/03/29245_orig.jpg",
-        "2012/12/05/07/63376_orig.jpg",
-        "2012/12/05/07/73249_orig.jpg",
-        "2011/11/01/19/93727_orig.jpg",
-        "2011/11/01/19/14642_orig.jpg",
-        "2012/01/10/01/05392_orig.jpg",
-        "2012/12/05/11/85209_orig.jpg",
-        "2012/12/05/11/05505_orig.jpg",
-        "2012/07/04/05/35446_orig.jpg",
-        "2012/07/04/05/40701_orig.jpg",
-        "2016/08/02/17/80303_orig.jpg"
+        {
+          "title": "Corteza Alnus glutinosa RTonetti.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Corteza_Alnus_glutinosa_RTonetti.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/32/47/509.10133446.jpg",
+          "thumb": "55/32/47/509.10133446.98x68.jpg"
+        },
+        {
+          "title": "Stourton Lake - geograph.org.uk - 760107.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Stourton_Lake_-_geograph.org.uk_-_760107.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/f3/d5/509.13441098.jpg",
+          "thumb": "55/f3/d5/509.13441098.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa 001.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_001.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/f6/1d/509.1351530.jpg",
+          "thumb": "55/f6/1d/509.1351530.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa 006.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_006.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/f6/1f/509.1351537.jpg",
+          "thumb": "55/f6/1f/509.1351537.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa 004.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_004.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/f6/22/509.1351549.jpg",
+          "thumb": "55/f6/22/509.1351549.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa 010.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_010.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/0a/87/509.1424543.jpg",
+          "thumb": "56/0a/87/509.1424543.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa 008.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_008.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/0a/8a/509.1424551.jpg",
+          "thumb": "56/0a/8a/509.1424551.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa 009.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_009.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/0a/8b/509.1424556.jpg",
+          "thumb": "56/0a/8b/509.1424556.98x68.jpg"
+        },
+        {
+          "title": "Sprouting branch.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Sprouting_branch.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/57/aa/509.15628350.jpg",
+          "thumb": "56/57/aa/509.15628350.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa11.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa11.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/d0/e9/509.1791490.jpg",
+          "thumb": "56/d0/e9/509.1791490.98x68.jpg"
+        },
+        {
+          "title": "Fruchtstand der Schwarzerle, Alnus glutinosa 2.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Fruchtstand_der_Schwarzerle,_Alnus_glutinosa_2.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/03/bd/509.18713522.jpg",
+          "thumb": "57/03/bd/509.18713522.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa AmentosEnfoque 2012-01-29 SierraMadrona.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_AmentosEnfoque_2012-01-29_SierraMadrona.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/55/34/509.20146216.jpg",
+          "thumb": "57/55/34/509.20146216.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa Bialowieza 002.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_Bialowieza_002.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/71/f4/509.2069693.jpg",
+          "thumb": "57/71/f4/509.2069693.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa Bialowieza 001.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_Bialowieza_001.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/71/fa/509.2069724.jpg",
+          "thumb": "57/71/fa/509.2069724.98x68.jpg"
+        },
+        {
+          "title": "Briesetal bei Briese.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Briesetal_bei_Briese.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/94/6f/509.2138464.jpg",
+          "thumb": "57/94/6f/509.2138464.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa MHNT.BOT.2004.0.10a.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_MHNT.BOT.2004.0.10a.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/9c/00/509.21585653.jpg",
+          "thumb": "57/9c/00/509.21585653.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa blomma.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_blomma.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/e6/de/509.22799893.jpg",
+          "thumb": "57/e6/de/509.22799893.98x68.jpg"
+        },
+        {
+          "title": "Alnus glutinosa 011.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Alnus_glutinosa_011.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/ed/cd/509.2294072.jpg",
+          "thumb": "57/ed/cd/509.2294072.98x68.jpg"
+        },
+        {
+          "title": "Black-alder-habitat.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Black-alder-habitat.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/42/68/509.24694911.jpg",
+          "thumb": "58/42/68/509.24694911.98x68.jpg"
+        },
+        {
+          "title": "Olsza 6.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Olsza_6.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/85/10/509.25556308.jpg",
+          "thumb": "58/85/10/509.25556308.98x68.jpg"
+        },
+        {
+          "title": "A glutinosa Gaertn. 01.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:A_glutinosa_Gaertn._01.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/86/1d/509.25580415.jpg",
+          "thumb": "58/86/1d/509.25580415.98x68.jpg"
+        },
+        {
+          "title": "Noname05.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Noname05.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/07/e7/509.280660.jpg",
+          "thumb": "59/07/e7/509.280660.98x68.jpg"
+        }
       ],
       "names": [
         {

@@ -23,14 +23,14 @@ export const renderInput = (screen, question, hints) => {
     hints.forEach(hint => {
         const el = template.content.querySelector(hint.selector);
         if(el)
-            template.content.querySelector(hint.selector).innerHTML = (hint && hint.value) ? hint.value.toUpperCase() : '';  
+            template.content.querySelector(hint.selector).innerHTML = (hint && hint.value) ? `${hint.value}.` : '';  
     });
 
     const clone = document.importNode(template.content, true);
 
     const markingCallback = (score, scoreUpdateTimer) => {        
         const answerBtn = document.querySelector('.js-check-answer');
-        answerBtn.innerHTML = 'Continue';
+        answerBtn.innerHTML = 'Continue lesson';
         answerBtn.disabled = false;
         answerBtn.classList.add(score.colour);
         answerBtn.removeEventListener('click', scoreEventHandler);
@@ -62,13 +62,13 @@ export const renderInput = (screen, question, hints) => {
     const name = clone.querySelector('.js-txt-name');
     if(name) name.innerHTML = item.name;
     const vernacular = clone.querySelector('.js-txt-vernacular');
-    if(vernacular) vernacular.innerHTML = item.vernacularName;
+    if(vernacular) vernacular.innerHTML = item.vernacularName.toLowerCase();
 
     const parent = DOM.rightBody;
     parent.innerHTML = '';
     
-    const txtQuestion = `Enter the common name for the species ${item.name}:`;
-    renderTemplate({ txtQuestion }, template.content, parent, clone);
+    const txtQuestion = `What is the common name of this species?`;
+    renderTemplate({ txtQuestion, name }, template.content, parent, clone);
 
     if(config.isPortraitMode) renderPortrait(item, config);
     else renderLandscape(item, config, question);
@@ -105,6 +105,7 @@ const renderLandscape = (item, config, question) => {
         case 'binomial':
         case 'name':
             pool = item.name.toLowerCase();
+            answer = question.binomial;
             break;
     }
 
