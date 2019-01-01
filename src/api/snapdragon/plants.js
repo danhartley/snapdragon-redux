@@ -7520,23 +7520,13 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "C rt",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
         "vernacularName": "Carota",
         "language": "en",
         "eol_preferred": false
       },
       {
         "vernacularName": "Carotte",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Carotte",
-        "language": "en",
+        "language": "fr",
         "eol_preferred": false
       },
       {
@@ -7551,7 +7541,7 @@ export const plants = [
       },
       {
         "vernacularName": "Cenoura",
-        "language": "en",
+        "language": "es",
         "eol_preferred": false
       },
       {

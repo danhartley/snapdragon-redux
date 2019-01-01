@@ -151,7 +151,9 @@
         padding: 0 0 0 .5rem;
     }
 
-
+    .text-question {
+        min-height: 5rem;
+    }
 
     .letterbox-entry button {
         margin: .5rem 0 0 0;
@@ -277,10 +279,6 @@
     
     #traitSlider .carousel-item div {
         padding: .5rem;
-    }
-
-    .text-question {
-        min-height: 3rem;
     }
 
     .summary-scores {

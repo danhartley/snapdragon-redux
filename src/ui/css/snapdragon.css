@@ -4,8 +4,6 @@
     padding: 0;
 }  
 
-/* tags */
-
 body { 
   margin: 0;
   padding: 0;
@@ -90,7 +88,6 @@ hr {
 }
 
 .btn-collection {
-  /* background-color: var(--snap-collection);   */
   background-color: rgb(87, 97, 99);
 }
 
@@ -108,7 +105,6 @@ hr {
   background-color: var(--snap-non-taxa);
   float: left;
 }
-
 
 .icon::before, .icon::after {
   display: inline-block;
@@ -207,8 +203,6 @@ a.dropdown-item:hover {
 .non-taxa a.dropdown-item:hover {
   background-color: var(--snap-dd-non-taxa-bg-hover);
 }
-
-/* generic */
 
 .underline-link {
   color: var(--snap-link) !important;
@@ -380,8 +374,6 @@ a.dropdown-item:hover {
   flex: auto;
   display: flex;
   flex-direction: column;
-  /* padding: .5rem;
-  border: 1px solid var(--snap-border-dark); */
   padding: 0;
   border: 0;
   text-align: right;  
@@ -515,7 +507,6 @@ a.dropdown-item:hover {
   grid-auto-flow: row;                       
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  /* background-color: rgba(185, 200, 204,.4); */
   background-color: var(--snap-species-header-background);
   padding: .25rem;
 }
@@ -601,7 +592,6 @@ a.dropdown-item:hover {
 
 .snapdragon.card {
   border: 0;  
-  /* background-color: rgb(230, 232, 215); */
 }
 
 .taxon-highlight {  
@@ -751,7 +741,6 @@ a.dropdown-item:hover {
 .data-box-container div:nth-child(1) {
   flex: 1;
   text-align: right;
-  /* padding: 0 .25rem 0 0; */
 }
 
 .data-box {
@@ -764,15 +753,10 @@ a.dropdown-item:hover {
 
 .js-inat-box .data-box {
   color: rgb(135, 157, 60);
-  /* background-color: var(--snap-inat); */
   background-color: rgb(202, 216, 154,0);
   height: 100%;
   border-left: 0;
 }
-
-/* .js-inat-box .data-box > div > div:nth-child(1) {
-  font-size: 1.1rem;
-} */
 
 .taxon-data > span:nth-child(1) {
   width: 5rem;
@@ -1085,7 +1069,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
 
 .text-question {
   min-height: 2rem;
-  padding: 0 0 0 .5rem;
+  padding: 0 0 0 .5rem;  
 }
 
 .text-entry .text-question {
@@ -2040,6 +2024,11 @@ a.collection-disabled {
   padding: 0 .5rem 0 0;
 }
 
+.calender-container {
+  width: 160px;
+  height: 80px;
+}
+
 .calendar-box {
   width: 160px;
   height: 80px;
@@ -2062,4 +2051,8 @@ a.collection-disabled {
   align-items: center;
   justify-content: center;
   width: 40px;
+}
+
+.observable {
+  color: var(--snap-success);
 }

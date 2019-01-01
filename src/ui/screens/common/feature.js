@@ -30,7 +30,19 @@ const getFeature = (item, traits, config, type) => {
     }
 };
 
-export const renderFeatures = (item, traits, config, parent, types) => {
+export const renderFeatures = (item, traits, config, parent) => {
+
+    const types = [ 
+        traitTypes.name.ECOLOGY,
+        traitTypes.name.SYMBIONTS, 
+        traitTypes.name.THALLUS_TYPE, 
+        traitTypes.name.HABITAT, 
+        traitTypes.name.USAGE,
+        traitTypes.name.HEIGHT,
+        traitTypes.name.HOW_EDIBLE,
+        traitTypes.name.BLADE,
+        traitTypes.name.COMPOUND,
+    ];
 
     const features = types.map(ft => {
         return getFeature(item, traits, config, ft)

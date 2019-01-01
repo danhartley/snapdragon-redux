@@ -25,6 +25,14 @@ export let nonTaxaType = english.nonTaxaType;
 export let boolean = english.boolean;
 export let element = english.element;
 export let rank = english.rank;
+export let blade = english.blade;
+export let leafType = english.leafType;
+export let leafVariation = english.leafVariation;
+export let leafShape = english.leafShape;
+export let sex = english.sex;
+export let longevity = english.longevity;
+export let stemArrangement = english.stemArrangement;
+export let leafEdge = english.leafEdge;
 
 export const updateLanguage = (config) => {
     
@@ -65,7 +73,16 @@ export const updateLanguage = (config) => {
         usage,
         nonTaxaType,
         boolean,
-        element
+        element,
+        rank,
+        leafType,
+        leafVariation,
+        leafShape,
+        sex,
+        blade,
+        longevity,
+        stemArrangement,
+        leafEdge
     }
 
     actions.boundUpdateEnums(enums);   

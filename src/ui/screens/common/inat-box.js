@@ -41,7 +41,7 @@ export async function renderInatDataBox(parent, item, config) {
         let placeTaxonCount = 0;
 
         stats.results.forEach(taxon => {
-            placeTaxonCount =  Number.parseInt(taxon.count);
+            placeTaxonCount += Number.parseInt(taxon.count);
         }); 
 
         document.querySelector('.js-place').innerHTML = country;

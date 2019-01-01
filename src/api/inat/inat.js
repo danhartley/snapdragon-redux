@@ -98,3 +98,15 @@ export async function getInatTaxonStats(item, placeId) {
     const json = await response.json();
     return json;
 }
+
+export async function getHistogram(item, placeId) {
+
+    const endpoint = 'https://api.inaturalist.org/v1/observations/histogram';
+    const place = placeId || 'any';
+    const taxonName = item.name;
+
+    const url = `${endpoint}?taxon_name=${taxonName}&place_id=${place}`;
+    const response = await fetch(url);
+    const json = await response.json();
+    return json;
+}

@@ -9,7 +9,6 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { taxa } from 'api/snapdragon/taxa';
 import { lookALikes } from 'ui/screens/common/look-alikes';
 import { getTraits } from 'api/traits/traits';
-import { renderFeatures } from 'ui/screens/common/feature';
 import * as traitTypes from 'api/traits/trait-types';
 import { iconicTaxa, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
 import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
@@ -77,7 +76,6 @@ export const renderSpecimenMatch = collection => {
             const taxon = taxa.find(t => t.name === item.genus);
             identification = taxon ? `Genus: ${taxon.descriptions[0].identification}` : '';
             const traits = getTraits(enums);
-            // renderFeatures(item, traits, config, document.querySelector('.js-key-traits'),[traitTypes.name.ECOLOGY,traitTypes.name.SYMBIONTS, traitTypes.name.THALLUS_TYPE, traitTypes.name.HABITAT]);
         }
     }
 

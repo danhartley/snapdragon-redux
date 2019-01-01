@@ -1,9 +1,7 @@
 <div class="calendar-box">
-
         <div data-repeat-row="{{ data }}" class="row">
             <div class="col" data-repeat-value="{{ row }}">
-                <div>{{ value }}</div>
+                <div class="{{ value.class }}">{{ value.month }}</div>
             </div>
         </div>
-
 </div>

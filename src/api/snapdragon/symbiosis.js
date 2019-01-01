@@ -1,93 +1,93 @@
-//https://en.wikipedia.org/wiki/List_of_crop_plants_pollinated_by_bees
+//https://en.wikipedia.org/wiki/List_of_crop_speciesAs_pollinated_by_bees
 
-const symbionts = [
+const symbiosis = [
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Pastinaca sativa' ], taxon: 'species' },
-        animals: [{names: [ 'Amphipyra tragopoginis' ] ,taxon: 'species' }]       
+        speciesA: { names: [ 'Pastinaca sativa' ], taxon: 'species' },
+        speciesB: [{names: [ 'Amphipyra tragopoginis' ] ,taxon: 'species' }]
     },
     {
         type: [ 'pollination', 'pollen', 'shelter' ],
-        plant: { names: [ 'Ficus carica' ], taxon: 'species' },
-        animals: [{names: [ 'Blastophaga psenes' ], taxon: 'species' }]       
+        speciesA: { names: [ 'Ficus carica' ], taxon: 'species' },
+        speciesB: [{names: [ 'Blastophaga psenes' ], taxon: 'species' }]       
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Apiaceae' ], taxon: 'family' },
-        animals: [
+        speciesA: { names: [ 'Apiaceae' ], taxon: 'family' },
+        speciesB: [
             { names: [ 'Xylocopinae', 'Megachilidae', 'Osmia' ], taxon: 'genus' },
             { names: [ 'Papilio polyxenes' ], taxon: 'species' }
         ]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Trifolium pratense' ], taxon: 'species' },
-        animals: [{names: [ 'Bombus terrestris' ], taxon: 'species' }]
+        speciesA: { names: [ 'Trifolium pratense' ], taxon: 'species' },
+        speciesB: [{names: [ 'Bombus terrestris' ], taxon: 'species' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Primula veris' ], taxon: 'species' },
-        animals: [{names: [ 'Bombus terrestris' ], taxon: 'species' }]
+        speciesA: { names: [ 'Primula veris' ], taxon: 'species' },
+        speciesB: [{names: [ 'Bombus terrestris' ], taxon: 'species' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Brassica napus' ], taxon: 'species' },
-        animals: [{names: [ 'Bombus terrestris' ], taxon: 'species' }]
+        speciesA: { names: [ 'Brassica napus' ], taxon: 'species' },
+        speciesB: [{names: [ 'Bombus terrestris' ], taxon: 'species' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Campanula rotundifolia' ], taxon: 'species' },
-        animals: [{names: [ 'Hylaeus' ], taxon: 'genus' }]     
+        speciesA: { names: [ 'Campanula rotundifolia' ], taxon: 'species' },
+        speciesB: [{names: [ 'Hylaeus' ], taxon: 'genus' }]     
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'multiple' ] },
-        animals: [{names: [ 'Bombus insularis' ], type: 'species' }]
+        speciesA: { names: [ 'multiple' ] },
+        speciesB: [{names: [ 'Bombus insularis' ], type: 'species' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'multiple' ] },
-        animals: [{names: [ 'Osmia lignaria' ], taxon: 'species' }]
+        speciesA: { names: [ 'multiple' ] },
+        speciesB: [{names: [ 'Osmia lignaria' ], taxon: 'species' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Borago officinalis' ], taxon: 'species' },
-        animals: [{names: [ 'Bombus pascuorum', 'Bombus pratorum', 'Bombus terrestris', 'Bombus lucorum' ], taxon: 'species' }]
+        speciesA: { names: [ 'Borago officinalis' ], taxon: 'species' },
+        speciesB: [{names: [ 'Bombus pascuorum', 'Bombus pratorum', 'Bombus terrestris', 'Bombus lucorum' ], taxon: 'species' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Tanacetum vulgare' ], taxon: 'species' },
-        animals: [{names: [ 'Apidae' ], taxon: 'family' }]      
+        speciesA: { names: [ 'Tanacetum vulgare' ], taxon: 'species' },
+        speciesB: [{names: [ 'Apidae' ], taxon: 'family' }]      
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Helichrysum italicum' ], taxon: 'species' },
-        animals: [{names: [ 'Apidae' ], taxon: 'family' }]
+        speciesA: { names: [ 'Helichrysum italicum' ], taxon: 'species' },
+        speciesB: [{names: [ 'Apidae' ], taxon: 'family' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Allium schoenoprasum' ], taxon: 'species' },
-        animals: [{names: [ 'Apidae' ], taxon: 'family' }]   
+        speciesA: { names: [ 'Allium schoenoprasum' ], taxon: 'species' },
+        speciesB: [{names: [ 'Apidae' ], taxon: 'family' }]   
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Angelica archangelica' ], taxon: 'species' },
-        animals: [{names: [ 'Insecta' ], taxon: 'class' }]
+        speciesA: { names: [ 'Angelica archangelica' ], taxon: 'species' },
+        speciesB: [{names: [ 'Insecta' ], taxon: 'class' }]
     },    
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Thymus vulgaris' ], taxon: 'species' },
-        animals: [{names: [ 'Apidae' ], taxon: 'family' }]
+        speciesA: { names: [ 'Thymus vulgaris' ], taxon: 'species' },
+        speciesB: [{names: [ 'Apidae' ], taxon: 'family' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Salvia officinalis' ], taxon: 'species' },
-        animals: [{names: [ 'Bombus hortorum' ], taxon: 'species' }]
+        speciesA: { names: [ 'Salvia officinalis' ], taxon: 'species' },
+        speciesB: [{names: [ 'Bombus hortorum' ], taxon: 'species' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Lamiaceae' ], taxon: 'family' },
-        animals: [
+        speciesA: { names: [ 'Lamiaceae' ], taxon: 'family' },
+        speciesB: [
             {names: [ 'Insecta' ], taxon: 'class' },
             {names: [ 'Bombus' ], taxon: 'genus' },
             {names: [ 'Apidae' ], taxon: 'family' },
@@ -96,97 +96,97 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Digitalis purpurea' ], taxon: 'species' },
-        animals: [{names: [ 'Bombus hortorum' ], taxon: 'species' }] 
+        speciesA: { names: [ 'Digitalis purpurea' ], taxon: 'species' },
+        speciesB: [{names: [ 'Bombus hortorum' ], taxon: 'species' }] 
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Hyssopus officinalis' ], taxon: 'species' },
-        animals: [{names: [ 'Insecta' ], taxon: 'class' }]
+        speciesA: { names: [ 'Hyssopus officinalis' ], taxon: 'species' },
+        speciesB: [{names: [ 'Insecta' ], taxon: 'class' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Origanum vulgare' ], taxon: 'species' },
-        animals: [{names: [ 'Insecta' ], taxon: 'class' }]
+        speciesA: { names: [ 'Origanum vulgare' ], taxon: 'species' },
+        speciesB: [{names: [ 'Insecta' ], taxon: 'class' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Papaver rhoeas' ], taxon: 'species' },
-        animals: [{names: [ 'Bombus', 'Xylocopa' ], taxon: 'genus' }]
+        speciesA: { names: [ 'Papaver rhoeas' ], taxon: 'species' },
+        speciesB: [{names: [ 'Bombus', 'Xylocopa' ], taxon: 'genus' }]
     },
     {
         type: [ 'pollination', 'pollen' ],
-        plant: { names: [ 'Papaver rhoeas' ], taxon: 'species' },
-        animals: [{names: [ 'Osmia' ], taxon: 'family' }]
+        speciesA: { names: [ 'Papaver rhoeas' ], taxon: 'species' },
+        speciesB: [{names: [ 'Osmia' ], taxon: 'family' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Campanula' ], taxon: 'genus' },
-        animals: [{names: [ 'Bombus' ], taxon: 'genus' }]
+        speciesA: { names: [ 'Campanula' ], taxon: 'genus' },
+        speciesB: [{names: [ 'Bombus' ], taxon: 'genus' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Lamium' ], taxon: 'genus' },
-        animals: [{names: [ 'Bombus' ], taxon: 'genus' }]
+        speciesA: { names: [ 'Lamium' ], taxon: 'genus' },
+        speciesB: [{names: [ 'Bombus' ], taxon: 'genus' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Trifolium' ], taxon: 'genus' },
-        animals: [{names: [ 'Bombus' ], taxon: 'genus' }]
+        speciesA: { names: [ 'Trifolium' ], taxon: 'genus' },
+        speciesB: [{names: [ 'Bombus' ], taxon: 'genus' }]
     },
     {
         type: [ 'pollination', 'forage' ],
-        plant: { names: [ 'Rosmarinus officinalis' ], taxon: 'species' },
-        animals: [{names: [ 'Bombus' ], taxon: 'genus' }]
+        speciesA: { names: [ 'Rosmarinus officinalis' ], taxon: 'species' },
+        speciesB: [{names: [ 'Bombus' ], taxon: 'genus' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Carduus' ], taxon: 'genus' },
-        animals: [{names: [ 'Bombus' ], taxon: 'genus' }]
+        speciesA: { names: [ 'Carduus' ], taxon: 'genus' },
+        speciesB: [{names: [ 'Bombus' ], taxon: 'genus' }]
     },
     {
         type: [ 'pollination', 'nectar' ],
-        plant: { names: [ 'Geranium' ], taxon: 'genus' },
-        animals: [{names: [ 'Bombus' ], taxon: 'genus' }]
+        speciesA: { names: [ 'Geranium' ], taxon: 'genus' },
+        speciesB: [{names: [ 'Bombus' ], taxon: 'genus' }]
     },
     {
         type: [ 'pollination', 'nectar' ],
-        plant: { names: [ 'Ribes' ], taxon: 'genus' },
-        animals: [{names: [ 'Bombus' ], taxon: 'genus' }]
+        speciesA: { names: [ 'Ribes' ], taxon: 'genus' },
+        speciesB: [{names: [ 'Bombus' ], taxon: 'genus' }]
     },
     {
         type: [ 'pollination', 'pollen' ],
-        plant: { names: [ 'Rosa' ], taxon: 'genus' },
-        animals: [{names: [ 'Bombus' ], taxon: 'genus' }]
+        speciesA: { names: [ 'Rosa' ], taxon: 'genus' },
+        speciesB: [{names: [ 'Bombus' ], taxon: 'genus' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Erica' ], taxon: 'genus' },
-        animals: [{names: [ 'Apidae' ], taxon: 'family' }]
+        speciesA: { names: [ 'Erica' ], taxon: 'genus' },
+        speciesB: [{names: [ 'Apidae' ], taxon: 'family' }]
     },
     {
         type: [ 'pollination', 'nectar' ],
-        plant: { names: [ 'Menth' ], taxon: 'genus' },
-        animals: [{names: [ 'Insecta' ], taxon: 'class' }]
+        speciesA: { names: [ 'Menth' ], taxon: 'genus' },
+        speciesB: [{names: [ 'Insecta' ], taxon: 'class' }]
     },
     {
         type: [ 'pollination', 'nectar' ],
-        plant: { names: [ 'Lavendula' ], taxon: 'genus' },
-        animals: [{names: [ 'Insecta' ], taxon: 'class' }]
+        speciesA: { names: [ 'Lavendula' ], taxon: 'genus' },
+        speciesB: [{names: [ 'Insecta' ], taxon: 'class' }]
     },
     {
         type: [ 'pollination', 'nectar' ],
-        plant: { names: [ 'Pulicaria dysenterica' ], taxon: 'species' },
-        animals: [{names: [ 'Insecta' ], taxon: 'class' }]
+        speciesA: { names: [ 'Pulicaria dysenterica' ], taxon: 'species' },
+        speciesB: [{names: [ 'Insecta' ], taxon: 'class' }]
     },
     {
         type: [ 'pollination', 'nectar', 'shelter' ],
-        plant: { names: [ 'Hedera helix' ], taxon: 'species' },
-        animals: [{names: [ 'Apidae' ], taxon: 'family' }]
+        speciesA: { names: [ 'Hedera helix' ], taxon: 'species' },
+        speciesB: [{names: [ 'Apidae' ], taxon: 'family' }]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Rutaceae' ], taxon: 'family' },
+        speciesA: { names: [ 'Rutaceae' ], taxon: 'family' },
         animal: [{ names: [ 'Insecta' ], taxon: 'class' }]
     },
     {
@@ -236,16 +236,16 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Solanum tuberosum' ], taxon: 'species' },
-        animals: [ 
+        speciesA: { names: [ 'Solanum tuberosum' ], taxon: 'species' },
+        speciesB: [ 
             { names: [ 'Bombus' ], taxon: 'genus' },
             { names: [ 'Apoidea' ], taxon: 'superfamily' } 
         ]
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Allium cepa' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Allium cepa' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -255,8 +255,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Apium graveolens' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Apium graveolens' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -266,8 +266,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Beta vulgaris' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Beta vulgaris' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { namess: [ 'Xylocopa' ], taxon: 'genus' },
             { namess: [ 'Megachile' ], taxon: 'genus' },
@@ -277,8 +277,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Capsicum annuum' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Capsicum annuum' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -289,8 +289,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Brassica nigra' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Brassica nigra' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -299,8 +299,8 @@ const symbionts = [
     },
     { 
         type: [ 'pollination' ],
-        plant: { names: [ 'Brassica oleracea' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Brassica oleracea' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -309,8 +309,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Brassica rapa' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Brassica rapa' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -319,8 +319,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Carum carvi' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Carum carvi' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -329,8 +329,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Daucus carota' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Daucus carota' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -339,8 +339,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Malus domestica' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Malus domestica' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -351,8 +351,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Vicia faba' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Vicia faba' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -362,8 +362,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Solanum melongena' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Solanum melongena' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
             { names: [ 'Osmia' ], taxon: 'genus' },
@@ -372,8 +372,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Solanum lycopersicum' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Solanum lycopersicum' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
             { names: [ 'Osmia' ], taxon: 'genus' },
@@ -382,8 +382,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Prunus domestica' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Prunus domestica' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -394,8 +394,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Prunus persica' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Prunus persica' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -406,8 +406,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Prunus dulcis' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Prunus dulcis' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -418,8 +418,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Prunus avium' ], taxon: 'species' },
-        animals: [{
+        speciesA: { names: [ 'Prunus avium' ], taxon: 'species' },
+        speciesB: [{
              names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -430,8 +430,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Pyrus communis' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Pyrus communis' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -442,8 +442,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Rubus fruticosus' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Rubus fruticosus' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -454,8 +454,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Foeniculum vulgare' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Foeniculum vulgare' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -465,8 +465,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Coriandrum sativum' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Coriandrum sativum' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -475,8 +475,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Cucumis sativus' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Cucumis sativus' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -487,8 +487,8 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Cucurbita pepo' ], taxon: 'species' },
-        animals: [
+        speciesA: { names: [ 'Cucurbita pepo' ], taxon: 'species' },
+        speciesB: [
             { names: [ 'Apis' ], taxon: 'genus' },
             { names: [ 'Xylocopa' ], taxon: 'genus' },
             { names: [ 'Megachile' ], taxon: 'genus' },
@@ -499,7 +499,13 @@ const symbionts = [
     },
     {
         type: [ 'pollination' ],
-        plant: { names: [ 'Citrus limon' ], taxon: 'species' },
-        animals: [{ names: [ 'Apis' ], taxon: 'genus' }]
+        speciesA: { names: [ 'Citrus limon' ], taxon: 'species' },
+        speciesB: [{ names: [ 'Apis' ], taxon: 'genus' }]
+    },
+    {
+        type: [ 'food' ],
+        speciesA: [{ names: [ 'Pieris rapae' ], taxon: 'species' }],
+        speciesB: { names: [ 'Sinapis alba', 'Pieris protodice' ], taxon: 'species' },
+        reward: [ 'nectar', 'foliage']
     },
 ];

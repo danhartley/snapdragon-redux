@@ -854,7 +854,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.LOBE_WIDTH, value: `<2mm`},
         { name: SD.name.LOBE_LENGTH, value: `<2mm`},
         { name: SD.name.COLOUR, value: `${SD.colour.GREY}`},
-        { name: SD.name.SUBSTRATE, value: `${SD.substrate.TREES}, ${SD.substrate.BRANCHES}` },
+        { name: SD.name.SUBSTRATE, value: `${SD.habitat.TREES}, ${SD.habitat.BRANCHES}` },
         { name: SD.name.HABITAT, value: `${SD.treeType.CONIFERS}` },
         { name: SD.name.BIOINDICATOR, value: SD.element.NITROGEN },
     ]},

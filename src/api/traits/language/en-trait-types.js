@@ -39,7 +39,16 @@ export const english = {
         RANK: 'Rank',
         SIZE: 'Size',
         LENGTH: 'Length',
-        VOICE: 'Voice'
+        VOICE: 'Voice',
+        HEIGHT: 'Height',
+        COMPOUND: 'Leaf type',
+        REPRODUCTION: 'Reproduction',
+        BLADE: 'Blade',
+        LEAF_VARIATION: 'Leaf variation',
+        LEAF_SHAPE: 'Leaf shape',
+        LONGEVITY: 'Longevity',
+        STEM_ARRANGEMENT: 'Stem arrangement',
+        LEAFEDGE: 'Leaf edge'
     },
     howEdible : {
         CHOICE : 'Choice',
@@ -214,7 +223,10 @@ export const english = {
         BREWING: 'Brewing',
         FOOD: 'Food',
         BIRDS_NEST: "Bird\'s nest",
-        POISON: 'Poison'
+        POISON: 'Poison',
+        FODDER: 'Fodder',
+        GREEN_MANURE: 'Green manure',
+        MEDICINE: 'Medicine'
     },
     nonTaxaType: {
         FORM : 'Form'
@@ -227,5 +239,50 @@ export const english = {
     },
     element: {
         NITROGEN: 'Nitrogen'
+    },
+    blade: {
+        SIMPLE: 'Simple ',
+        COMPOUND: 'Compound'
+    },
+    leafType: {
+        PALMATE: 'Palmate',
+        PINNATE: 'Pinnate',
+        ODD_PINNATE: 'Odd pinnate',
+        EVEN_PINNATE: 'Even pinnate',
+        BIPINNATE: 'Bipinnate',
+        TRIFOLIATE: 'Trifoliate',
+        PINNATIFID: 'Pinnatifid'        
+    },
+    leafVariation: {
+        HOMOBLASTIC: 'Homoblastic',
+        HETEROBLASTIC: 'Heteroblastic',        
+    },
+    sex: {
+        HERMAPHRODITE: 'Hermaphrodite'
+    },
+    longevity: {
+        PERENNIAL: 'Perennial',
+        ANNUAL: 'Annual',
+        BIENNIAL: 'Biennial',
+    },
+    leafShape: {
+        LINEAR: 'Linear',
+        OVATE: 'Ovate',
+        OBLANCEOLATE: 'Oblanceolate',
+        OBOVATE: 'Obovate'
+    },
+    stemArrangement: {
+        ALTERNATE: 'Alternate',
+        BASAL: 'Basal',
+        CAULINE: 'Cauline',
+        OPPOSITE: 'Opposite',
+        WHORLED: 'Whorled',
+        CAULINE: 'Rosulate',
+        ROWS: 'Rows',
+    },
+    leafEdge: {
+        DENTATE: 'Dentate',
+        SMOOTH: 'Smooth'
     }
+
 };

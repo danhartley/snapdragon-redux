@@ -1,7 +1,13 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import infoSliderTemplate from 'ui/screens/common/info-slider-template.html'
 
-export const infoSlider = (info, parent) => {
+export const infoSlider = (item, traits, family, parent) => {
+
+    const speciesTraits = traits.find(c => c.name === item.name) || { traits: [] };
+    const familyTraits = (family && family.traits) ? family.traits : [];
+    const info = { traits: speciesTraits.traits.concat(familyTraits) };
+
+    if(!info.traits) return;
 
     const slider = document.createElement('template');
 

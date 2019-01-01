@@ -166,16 +166,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
         });
     }
 
-    let info = traits.find(c => c.name === item.name);
-
-    if(info) {
-        infoSlider(info, document.querySelector('.js-info-box'));
-    } else {
-        if(family && family.traits) {
-            info = { traits: family.traits };
-            infoSlider(info, document.querySelector('.js-info-box'));    
-        }        
-    }
+    infoSlider(item, traits, family, document.querySelector('.js-info-box'));
 
     const namesBadge = document.querySelector('.js-names-badge');
 
@@ -194,7 +185,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     }
 
     lookALikes(collection, item, traits, config, isModalMode);
-    renderFeatures(item, traits, config, document.querySelector('.js-feature-types'),[traitTypes.name.ECOLOGY,traitTypes.name.SYMBIONTS, traitTypes.name.THALLUS_TYPE, traitTypes.name.HABITAT]);
+    renderFeatures(item, traits, config, document.querySelector('.js-feature-types'));
     
     const continueBtn = document.querySelector('.js-species-card-btn button');
 
