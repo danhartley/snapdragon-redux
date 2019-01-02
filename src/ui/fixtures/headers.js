@@ -50,6 +50,7 @@ export const renderHeaders = page => {
             progressBar.value = layout.progressIndex || progressBar.value;
             
             let specimensHeaderText = '';
+            let lessonHeaderText = document.querySelector('.js-right-header > div:nth-child(2)');
     
             switch(layout.name) {
                 case 'screen-latin-to-common':
@@ -60,6 +61,9 @@ export const renderHeaders = page => {
                 case 'screen-image-to-image':
                 case 'screen-species-card':
                     specimensHeaderText = `${item.vernacularName} specimens`;
+                    break;
+                case 'history':
+                    if(PORTRAIT) rightHeaderText = 'Snapdragon';
                     break;
                 default:
                     specimensHeaderText = 'Species specimens';
@@ -87,6 +91,9 @@ export const renderHeaders = page => {
             if(SUMMARY) rightHeaderText = 'Lesson progress';
             if(SPECIES_LIST && PORTRAIT) rightHeaderText = collection.name;
             if(LANDSCAPE_HOME) rightHeaderText = title;
+
+            lessonHeaderText.innerHTML = `${collection.name} (${collection.items.length})`;
+            // if(LANDSCAPE) lessonHeaderText.innerHTML = `${collection.name} (${collection.items.length})`;
         }
     
         DOM.leftHeaderTxt.innerHTML = leftHeaderText;
@@ -94,11 +101,11 @@ export const renderHeaders = page => {
     };
 
     const callback = (place) => {
-        if(LANDSCAPE) {
+        if(LANDSCAPE && collection.id === 8) {
             DOM.leftHeaderTxt.innerHTML = place.summary;
             collection.name = place.summary;
         }
-        if(PORTRAIT) {
+        if(PORTRAIT && collection.id === 8) {
             DOM.rightHeaderTxt.innerHTML = place.summary;
             collection.name = place.summary;
         }

@@ -13,6 +13,7 @@ import { lichen } from 'api/snapdragon/lichen';
 
 import { plants } from 'api/snapdragon/plants';
 import { local } from 'api/snapdragon/local';
+import { mammals } from 'api/snapdragon/mammals';
 
 import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
@@ -30,7 +31,8 @@ export const getInatSpecies = (latitude, longitude, config) => {
         ...weeds,
         ...lichen,
         ...plants,
-        ...local
+        ...local,
+        ...mammals
     ];
     
     const names = snapdragon.map(item => item.name);

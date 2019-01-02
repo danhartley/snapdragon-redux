@@ -17,8 +17,8 @@ export const kitchenGarden = {
     glossary: ['plantae', 'common'],
     courseId: 1,
     course: 'Snapdragon',
-    speciesCount: 56,
-    familiesCount: 19,
+    speciesCount: 53,
+    familiesCount: 16,
     itemNames: [
         "Allium sativum",
         "Coriandrum sativum",

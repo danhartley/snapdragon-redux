@@ -437,13 +437,18 @@ a.dropdown-item:hover {
 
 .header {
   top: 0;
-}
-
-.header-text {
-  color: var(--snap-text-medium-dark);
   text-transform: uppercase;
   letter-spacing: 0.07rem;
+  color: var(--snap-text-medium-dark);
+}
+
+.header-text {  
   font-size: .8rem;
+}
+
+.header > div:nth-child(2) {
+  font-size: .6rem;
+  max-width: 50%;
 }
 
 .footer {  
@@ -474,7 +479,7 @@ a.dropdown-item:hover {
   background-color: var(--snap-portrait);
 }
 
-.right-grid .footer {
+.right-grid .header, .right-grid .footer {
   justify-content: space-between;
 }
 
@@ -2008,7 +2013,6 @@ a.collection-disabled {
   display: flex;
   align-items: center;
   height: 88px;
-  font-size: 1.2rem;
   padding: .5rem;
   background-color: var(--snap-species-header-background);
   border-bottom: .05rem solid var(--snap-border-dark);
