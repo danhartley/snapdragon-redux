@@ -549,7 +549,7 @@ export const birds = [
         },
         {
           "vernacularName": "Blaumeise",
-          "language": "en"
+          "language": "de"
         },
         {
           "vernacularName": "Eurasian Blue Tit",

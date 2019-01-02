@@ -1683,179 +1683,52 @@ export const weeds = [
       ],
       "names": [
         {
-          "vernacularName": "Ackerwinde",
-          "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "CONARV",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Convolvolo",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Cornbine",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Cornbine",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Correhuela",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Correhuela",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Correhuela",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Correyuela",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "FIELD BINDWEED",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "FIELD BINDWEED",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "FIELD BINDWEED",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
           "vernacularName": "Field Bindweed",
           "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Field Bindweed",
-          "language": "en",
-          "eol_preferred": false
         },
         {
           "vernacularName": "Vilucchio comune",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "bindweed",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "bindweed",
-          "language": "en",
-          "eol_preferred": false
+          "language": "it",
         },
         {
           "vernacularName": "correyuela",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "kervinda",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "kervinda",
-          "language": "en",
-          "eol_preferred": false
+          "language": "es"
         },
         {
           "vernacularName": "liseron des champs",
-          "language": "en",
-          "eol_preferred": false
+          "language": "fr",
         },
         {
           "vernacularName": "orchard morning-glory",
           "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "orchard morning-glory",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "peltokierto",
-          "language": "en",
-          "eol_preferred": false
         },
         {
           "vernacularName": "bindweed",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
+        },
+        {
+          "vernacularName": "Ackerwinde",
+          "language": "de",
         },
         {
           "vernacularName": "Acker-Winde",
           "language": "de",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Ackerwinde",
-          "language": "de",
-          "eol_preferred": false
         },
         {
           "vernacularName": "Convolvolo",
           "language": "it",
-          "eol_preferred": false
         },
         {
           "vernacularName": "Correhuela",
-          "language": "es",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Field Bindweed",
-          "language": "en",
-          "eol_preferred": false
+          "language": "es",          
         },
         {
           "vernacularName": "Liseron des champs",
           "language": "fr",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "field bindweed",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "field bindweed",
-          "language": "en",
-          "eol_preferred": false
         },
         {
           "vernacularName": "Creeping jenny",
           "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Field bindweed",
-          "language": "en",
-          "eol_preferred": false
         }
       ],
       "taxonomy": {

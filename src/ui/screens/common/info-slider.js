@@ -5,6 +5,7 @@ export const infoSlider = (item, traits, family, parent) => {
 
     const speciesTraits = traits.find(c => c.name === item.name) || { traits: [] };
     const familyTraits = (family && family.traits) ? family.traits : [];
+    if(speciesTraits.traits.length === 0 && familyTraits.length ===0) return;
     const info = { traits: speciesTraits.traits.concat(familyTraits) };
 
     if(!info.traits) return;

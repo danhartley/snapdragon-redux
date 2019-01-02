@@ -474,395 +474,38 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "Ariana",
-        "language": "en",
-        "eol_preferred": true
+        "vernacularName": "Speckled Wood",
+        "language": "en", 
+      },
+      {
+        "vernacularName": "Speckled Wood (butterfly)",
+        "language": "en",  
+        wikiSearchTerm: true
       },
       {
         "vernacularName": "Ariana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Ariana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Ariana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Ariana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Ariana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Ariana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Ariana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Bruna boscana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bruna boscana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bruna boscana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bruna boscana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Egeria",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Egeria",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Egeria",
-        "language": "en",
-        
+        "language": "cat",        
       },
       {
         "vernacularName": "Malhadinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Malhadinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Malhadinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Malhadinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Malhadinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Malhadinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Malhadinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Malhadinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Skogringvinge",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Skogringvinge",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Skogringvinge",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Skogringvinge",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled wood",
-        "language": "en",
-        
+        "language": "es",      
       },
       {
         "vernacularName": "Tircis",
-        "language": "en",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "le Tircis",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "le Tircis",
-        "language": "en",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "maculada",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "tplpapurikko",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "tplpapurikko",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "tplpapurikko",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "tplpapurikko",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "tplpapurikko",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "tplpapurikko",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "tplpapurikko",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "speckled wood",
-        "language": "en",
-        
-      }
+        "language": "es",        
+      },      
     ],
     "taxonomy": {
       "usageKey": 8049830,
@@ -3701,19 +3344,12 @@ export const insects = [
       },
       {
         "vernacularName": "Llagosta mediterrnia",
-        "language": "en",
-        
+        "language": "es",        
       },
       {
         "vernacularName": "Locusta egiziana",
-        "language": "en",
-        
+        "language": "it",        
       },
-      {
-        "vernacularName": "Locusta egiziana",
-        "language": "en",
-        
-      }
     ],
     "taxonomy": {
       "usageKey": 1702101,
@@ -3908,18 +3544,11 @@ export const insects = [
     "names": [
       {
         "vernacularName": "22-spot Ladybird",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "Citroenlieveheersbeestje",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Zweiundzwanzigpunkt-Marienkfer",
-        "language": "en",
-        
+        "language": "de",        
       }
     ],
     "taxonomy": {
@@ -3975,13 +3604,8 @@ export const insects = [
       {
         "vernacularName": "american cockroach",
         "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "American cockroach",
-        "language": "en",
-        
-      }
+        wikiSearchTerm: true
+      },      
     ],
     "taxonomy": {
       "usageKey": 2000152,
@@ -4088,10 +3712,17 @@ export const insects = [
         }
       }
     ],
-    "names": [{
+    "names": [
+      {
       "vernacularName": "comb-clawed beetle",
       "language": "en",
-    },],
+      },
+      {
+      "vernacularName": "Alleculinae",
+      "language": "en",
+      wikiSearchTerm: true
+      },
+    ],
     "taxonomy": {
       "usageKey": 4454891,
       "scientificName": "Heliotaurus ruficollis (Fabricius, 1781)",
@@ -4200,94 +3831,32 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "Cetoniella",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "Ctoine funeste",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Drap mortuaire",
-        "language": "en",
-        
-      },
-      {
         "vernacularName": "Mediterranean Spotted Chafer",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mediterranean Spotted Chafer",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mediterranean Spotted Chafer",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mediterranean Spotted Chafer",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Trauer-Rosenkfer",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Trauer-Rosenkfer",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Trauer-Rosenkfer",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Trauer-Rosenkfer",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Trauer-Rosenkfer",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Brunidora",
-        "language": "es",
-        
+        "language": "es",        
       },
       {
         "vernacularName": "Cetoniella",
-        "language": "it",
-        
+        "language": "it",        
       },
       {
         "vernacularName": "Cétoine grise",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "Drap mortuaire",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "Escarabajo del sudario",
-        "language": "es",
-        
+        "language": "es",        
       },
       {
         "vernacularName": "Trauer-Rosenkäfer",
-        "language": "de",
-        
+        "language": "de",        
       }
     ],
     "taxonomy": {
@@ -4520,89 +4089,50 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "Broad Scarlet",
+        "vernacularName": "Scarlet Darter",
         "language": "en",
-        
+        wikiSearchTerm: true
+      },
+      {
+        "vernacularName": "Broad Scarlet",
+        "language": "en",        
       },
       {
         "vernacularName": "Feuerlibelle",
-        "language": "de",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "Frecciarossa",
-        "language": "it",
-        
+        "language": "it",        
       },
       {
         "vernacularName": "Libellule carlate",
-        "language": 'fr',
-        
+        "language": 'fr',        
       },
       {
         "vernacularName": "Liblula escarlate",
         "language": "es",
         
-      },
-      {
-        "vernacularName": "Scarlet Darter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Scarlet Darter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Scarlet Darter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Scarlet Darter",
-        "language": "en",
-        
-      },
+      },      
       {
         "vernacularName": "Scarlet Dragonfly",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "broad scarlet",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "scarlet darter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Broad Scarlet",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Common Scarlet-darter",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Feuerlibelle",
-        "language": "de",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "Libellule Écarlate",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "Libellule écarlate",
-        "language": "fr",
-        
+        "language": "fr",        
       },
     ],
     "taxonomy": {
@@ -4758,53 +4288,24 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Cardinale venerosse",
-        "language": "en",
-        "eol_preferred": true
+        "language": "it"
       },
       {
         "vernacularName": "Liblula de nervuras vermelhas",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red-veined Darter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red-veined Darter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red-veined Darter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red-veined Darter",
-        "language": "en",
-        
+        "language": "pt",        
       },
       {
         "vernacularName": "Frühe Heidelibelle",
-        "language": "de",
-        
-      },
-      {
-        "vernacularName": "Red-veined Darter",
-        "language": "en",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "Red-veined darter",
-        "language": "en",
-        
+        "language": "en",        
+        wikiSearchTerm: true
       },
       {
         "vernacularName": "Sympétrum de Fonscolombe",
-        "language": "fr",
-        
+        "language": "fr",        
       }
     ],
     "taxonomy": {
@@ -4959,88 +4460,27 @@ export const insects = [
       },
       {
         "vernacularName": "Borboleta-das-sardinheiras",
-        "language": "en",
-        
+        "language": "pt",        
       },
       {
         "vernacularName": "Brun des plargoniums",
-        "language": "en",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "Common Geranium-bronze",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Common Geranium-bronze",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Common Geranium-bronze",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Common Geranium-bronze",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Common Geranium-bronze",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Farfallina dei gerani",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Farfallina dei gerani",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Farfallina dei gerani",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Farfallina dei gerani",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Insectos",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Insects",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Insetti",
-        "language": "en",
-        
+        "language": "it",        
       },
       {
         "vernacularName": "Licenide dei gerani",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "insectes",
-        "language": "en",
-        
+        "language": "it",        
       },
       {
         "vernacularName": "pelargonium butterfly",
-        "language": "en",
-        
+        "language": "en",        
       }
     ],
     "taxonomy": {
@@ -5917,14 +5357,8 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "Dobbeltbndet svirreflue",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Dobbeltbndet svirreflue",
-        "language": "en",
-        
+        "vernacularName": "Marmalade Fly",
+        "language": "en",        
       },
       {
         "vernacularName": "Flower Fly",
@@ -5937,15 +5371,6 @@ export const insects = [
       {
         "vernacularName": "Hainschwebfliege",
         "language": "de",        
-      },
-      {
-        "vernacularName": "Hover Flies",
-        "language": "en",
-        
-      },      
-      {
-        "vernacularName": "Marmalade Fly",
-        "language": "en",        
       },
       {
         "vernacularName": "Marmalade hoverfly",
