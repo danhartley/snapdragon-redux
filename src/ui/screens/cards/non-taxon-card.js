@@ -21,7 +21,7 @@ export const subscribeToNonTaxaSelection = callback => {
     subscriptions.push(callback);
 };
 
-export const renderNonTaxonCard = (collection, isModalMode = false, parent = DOM.rightBody, keyTrait, imageUrl) => {
+export const renderNonTaxonCard = (collection, isModalMode = false, keyTrait, parent = DOM.rightBody, imageUrl) => {
 
     const { enums, config, lessonPlan } = store.getState();
 

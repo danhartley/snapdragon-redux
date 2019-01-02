@@ -12,6 +12,7 @@ import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-table-no-scores';
 import { itemHandler, extendCollection } from 'ui/helpers/item-handler';
 import { listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
+import { cardSlider } from 'ui/screens/common/card-slider';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
@@ -85,6 +86,8 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                 link.addEventListener('click', event => {
                     const name = event.target.dataset.name;
                     renderCard(collection, true, collection.items.find(i => i.name === name), parent);
+                    // cardSlider(collection, collection.items.find(i => i.name === name), );
+
                 });
             });
             const traitCardLinks = document.querySelectorAll('.js-key-trait-link');
@@ -92,7 +95,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                 link.addEventListener('click', event => {
                     const keyTrait = event.target.dataset.keyTrait;
                     const imageUrl = event.target.dataset.url.replace('.98x68.jpg', '.260x190.jpg');              
-                    renderNonTaxonCard(collection, true, parent, keyTrait, imageUrl);
+                    renderNonTaxonCard(collection, true, keyTrait, parent, imageUrl);
                 });
             });
             const familyCardLinks = document.querySelectorAll('.js-family-link');
@@ -106,8 +109,6 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
             document.querySelectorAll('.mushroom-icon').forEach(icon => {
                 icon.innerHTML = '<svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg>';
             });
-        
-
         });
 
         // Portrait mode only

@@ -7,7 +7,7 @@ import { renderItemSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
 import { store } from 'redux/store';
 
 const selectActiveNodeImage = (image, parent) => {
-    parent.querySelectorAll('.carousel-item').forEach(i => {        
+    parent.querySelectorAll('.carousel-item').forEach(i => {
         const elemSrc = i.lastElementChild.dataset.src || i.lastElementChild.src;
         const src = image.dataset ? image.dataset.src : `https://content.eol.org/data/media/${image.url}`;
         if(imageMatch(elemSrc, src)) {

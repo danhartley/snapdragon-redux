@@ -1,5 +1,5 @@
 import { renderTemplate } from 'ui/helpers/templating';
-import infoSliderTemplate from 'ui/screens/common/info-slider-template.html'
+import infoSliderTemplate from 'ui/screens/common/info-slider-template.html';
 
 export const infoSlider = (item, traits, family, parent) => {
 

@@ -255,6 +255,22 @@
         display: inline-block;
     }
 
+
+#speciesCardModal .carousel-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #speciesCardModal .carousel-inner .prev > span {
+    margin: 0 0 0 .6rem;
+  }
+  
+  #speciesCardModal .carousel-inner .next > span {
+    margin: 0 .6rem 0 0;
+    cursor: pointer;
+  }
+
     .left-grid {
         display: grid;
     }
@@ -336,10 +352,8 @@
         align-items: center;
         justify-content: center;
         font-size: 2.5rem;
-        width: 88px;
-        height: 88px;
     }
-
+    
     .rights-link > div > div, .rights-attribution > div > div:nth-child(1) {
         font-size: 1.5rem;
     }

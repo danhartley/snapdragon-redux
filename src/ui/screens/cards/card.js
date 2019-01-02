@@ -20,6 +20,7 @@ import { renderInatDataBox } from 'ui/screens/common/inat-box';
 import { renderTaxonomyBox } from 'ui/screens/common/taxonomy-box';
 import { renderCalendar } from 'ui/screens/common/calendar';
 import cardTemplate from 'ui/screens/cards/card-template.html';
+import { is } from 'immutable';
 
 export const renderCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody) => {
 
@@ -206,11 +207,11 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
         // const taxonomyNode = document.querySelector('.js-taxonomy-box');
 
         // renderTaxonomyBox(taxonomyNode, { rank, familyVernacularName, familyName, iconicTaxon });
-
-        const calendarNode = document.querySelector('.js-calendar-box');
-
-        renderCalendar(calendarNode, item, config);
     }
+
+    const calendarNode = document.querySelector('.js-calendar-box');
+
+    renderCalendar(calendarNode, item, config);
 
     if(item.taxonomy.kingdom.toLowerCase() === 'fungi') {
 
@@ -226,4 +227,48 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
 
         classes.forEach(c => iconicIcon.classList.add(c));        
     }
+
+    if(isModalMode) {        
+        document.querySelector('#speciesCardModal .js-modal-text-title').innerHTML = collection.name;
+
+        const prev = document.querySelector('#speciesCardModal .js-prev > span');
+        prev.dataset.id = item.id;
+        prev.dataset.transition = 'prev';
+
+        const next = document.querySelector('#speciesCardModal .js-next > span');
+        next.dataset.id = item.id;
+        next.dataset.transition = 'next';
+    }
 };
+
+let currentIndex = 0;
+
+const carouselControlHandler = event => {
+
+    const { collection } = store.getState();
+    
+    let id = event.target.dataset.id;
+    let transition = event.target.dataset.transition;
+
+    const prev = document.querySelector('#speciesCardModal .js-prev > span');
+    const next = document.querySelector('#speciesCardModal .js-next > span');
+
+    switch(transition) {
+        case 'prev':
+            currentIndex--;
+            currentIndex = currentIndex === -1 ? collection.items.length -1 : currentIndex;
+            prev.disabled = currentIndex === 0;
+            break;
+        case 'next':
+            currentIndex++;
+            currentIndex = currentIndex === collection.items.length -1 ? 0 : currentIndex;
+            break;
+    }
+
+    let nextItem = collection.items.find((item,index) => index === currentIndex);
+    const parent = document.querySelector('#speciesCardModal .js-modal-body');
+    renderCard(collection, true, nextItem, parent);
+};
+
+document.querySelector('#speciesCardModal .js-prev').addEventListener('click', carouselControlHandler);
+document.querySelector('#speciesCardModal .js-next').addEventListener('click', carouselControlHandler);
