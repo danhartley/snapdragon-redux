@@ -93,7 +93,6 @@ export const renderHeaders = page => {
             if(LANDSCAPE_HOME) rightHeaderText = title;
 
             lessonHeaderText.innerHTML = `${collection.name} (${collection.items.length})`;
-            // if(LANDSCAPE) lessonHeaderText.innerHTML = `${collection.name} (${collection.items.length})`;
         }
     
         DOM.leftHeaderTxt.innerHTML = leftHeaderText;
@@ -101,11 +100,11 @@ export const renderHeaders = page => {
     };
 
     const callback = (place) => {
-        if(LANDSCAPE && collection.id === 8) {
+        if(LANDSCAPE && collection.id === 1) {
             DOM.leftHeaderTxt.innerHTML = place.summary;
             collection.name = place.summary;
         }
-        if(PORTRAIT && collection.id === 8) {
+        if(PORTRAIT && collection.id === 1) {
             DOM.rightHeaderTxt.innerHTML = place.summary;
             collection.name = place.summary;
         }

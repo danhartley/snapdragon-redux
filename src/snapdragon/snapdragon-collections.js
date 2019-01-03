@@ -1,6 +1,6 @@
 export const kitchenGarden = { 
     providerId: 1,
-    id: 1, 
+    id: 8, 
     name: 'Kitchen Garden', 
     type: 'species',
     descriptions: [
@@ -328,7 +328,7 @@ export const cogumelosEmPortugal = {
 };
 
 export const localSpecies = {
-    id: 8,
+    id: 1,
     name: 'Local species', 
     type: 'species',
     descriptions: [
@@ -343,8 +343,8 @@ export const localSpecies = {
     lessonPlanPortrait: 101,
     thumb: 'https://content.eol.org/data/media/7f/09/1a/542.26637311774.260x190.jpg',
     moduleSize: 4,
-    curator: 'Snapdragon',
-    userLevel: 'All comers'
+    curator: 'Snapdragon | iNaturalist',
+    userLevel: 'General Interest'
 };
 
 const lichenCollection = {
@@ -386,6 +386,7 @@ export const beginnersLichenology = {
 };
 
 export const snapdragonCollections = [
+    localSpecies,
     kitchenGarden,
     // rhsTrees,
     commonBirds,
@@ -393,6 +394,5 @@ export const snapdragonCollections = [
     wildFoodUKTopTenBeginners,
     cogumelosEmPortugal,
     fallMushroomsEasternUSA,
-    localSpecies,
     beginnersLichenology
 ];

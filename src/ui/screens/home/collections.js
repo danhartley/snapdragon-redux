@@ -141,7 +141,7 @@ export const renderCollections = (counter) => {
         }
 
         if(config.isPortraitMode) {            
-            if(collection.id === 8) {
+            if(collection.id === 1) {
                 learningActionBtn.innerHTML = 'Fetching local species...';
             }
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');

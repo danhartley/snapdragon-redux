@@ -4,6 +4,10 @@
         font-size: 16px;
     }
 
+    h5 {
+        font-size: 1.1rem;
+    }
+
     div.taxon-data {
         margin: 0;
     }
@@ -331,8 +335,8 @@
     }
 
     #speciesCardModal .modal-dialog {
-        min-width: 25rem;
-        max-width: 30rem;
+        min-width: 32rem;
+        max-width: 32rem;
     }
 
     .header-text {

@@ -27,6 +27,7 @@ h2 {
 
 h5 {
   margin: 0 0 1rem 0;
+  font-size: 1rem;
 }
 
 a:hover {
@@ -755,14 +756,22 @@ a.dropdown-item:hover {
 }
 
 .inat-box .data-box {
-  color: rgb(135, 157, 60);
+  color: var(--snap-text-medium-light);
   height: 100%;
   border-left: 0;
 }
 
+.inat-box .data-box .underline-link {
+  color: var(--snap-inat) !important;
+}
+
 .inat-box .data-box > div:nth-child(1) {
   display: grid;
-  grid-template-columns: 3fr 3rem 1fr;
+  grid-template-columns: 3fr 3.5rem 1fr;
+}
+
+.inat-box .data-box > div:nth-child(1) > div:nth-child(1) {
+  padding: 0 .5rem 0 0;
 }
 
 .inat-box .data-box > div > div:nth-child(2) > div {

@@ -238,6 +238,10 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
         const next = document.querySelector('#speciesCardModal .js-next > span');
         next.dataset.id = item.id;
         next.dataset.transition = 'next';
+
+        const lines = document.getElementsByTagName('hr');
+
+        Array.from(lines).forEach(hr => hr.style.display = 'none');
     }
 };
 

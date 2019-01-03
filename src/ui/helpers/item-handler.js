@@ -7,7 +7,7 @@ import { getLocation } from 'geo/geo';
 import { speciesStateHelper } from 'redux/reducers/initial-state/initial-species-state';
 
 async function getItems(collection, config) {
-    if(collection.id === 8) {
+    if(collection.id === 1) {
         const collectionIsUnchanged = 
             collection.items && collection.items.length > 0 && collection.items[0].collectionId === collection.id && 
             collection.speciesRange === config.speciesRange &&
