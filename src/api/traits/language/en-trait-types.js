@@ -48,7 +48,14 @@ export const english = {
         LEAF_SHAPE: 'Leaf shape',
         LONGEVITY: 'Longevity',
         STEM_ARRANGEMENT: 'Stem arrangement',
-        LEAFEDGE: 'Leaf edge'
+        LEAFEDGE: 'Leaf edge',
+        MIGRATORY: 'Migratory',
+        CATERPILLAR_FOOD: 'Caterpillar food',
+        CATERPILLAR_LENGTH: 'Caterpillar length',
+        CATERPILLAR_COLOUR: 'Caterpillar colour',
+        HIBERNATING_STAGE: 'Hibernating stage',
+        WING_SPAN: 'Wing span',
+        FOOD: 'Food'
     },
     howEdible : {
         CHOICE : 'Choice',
@@ -92,7 +99,14 @@ export const english = {
         TREES: "Trees",
         SHRUBS: "Shrubs",
         EXPOSED_WOOD: "Exposed wood",
-        BRANCHES: "Branches"
+        BRANCHES: "Branches",
+        HILLS: 'Hills',
+        URBAN: 'Urban',
+        VALLEYS: 'Valleys',
+        MAQUIS: 'Maquis',
+        SAVANNA: 'Savanna',
+        FOREST_STEPPE: 'Forest steppe',        
+        MEADOW_STEPPE: 'meadow steppe',        
     },
     ecoType : {
         SAPROTROPHIC : 'Saprotrophic',
@@ -215,6 +229,8 @@ export const english = {
         GREY_GREEN: "Grey-green",
         BROWN: "Brown",
         PAPER_BROWN: "Paper brown",
+        BLACK: 'Black',
+        PALE_GREEN: 'Pale green'
     },
     usage: {
         PERFUMERY: 'Perfumery',
@@ -233,7 +249,7 @@ export const english = {
     },
     boolean: {
         YES: 'Yes',
-        NO: 'NO',
+        NO: 'No',
         BOTH: 'Both',
         OR: 'Or'
     },
@@ -283,6 +299,16 @@ export const english = {
     leafEdge: {
         DENTATE: 'Dentate',
         SMOOTH: 'Smooth'
+    },
+    foodType: {
+        GRASS: 'Grass',
+        ROTTEN_FRUIT: 'Rotten fruit',
+        NECTAR: 'Nectar',
+        HONEYDEW: 'Honeydew'
+    },
+    developmentStage: {
+        ADULT: 'Adult',
+        CATERPILLAR: 'Caterpillar',
+        PUPA: 'Pupa'
     }
-
 };

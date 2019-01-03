@@ -33,6 +33,8 @@ export let sex = english.sex;
 export let longevity = english.longevity;
 export let stemArrangement = english.stemArrangement;
 export let leafEdge = english.leafEdge;
+export let foodType = english.foodType;
+export let developmentStage = english.developmentStage;
 
 export const updateLanguage = (config) => {
     
@@ -82,7 +84,9 @@ export const updateLanguage = (config) => {
         blade,
         longevity,
         stemArrangement,
-        leafEdge
+        leafEdge, 
+        foodType,
+        developmentStage
     }
 
     actions.boundUpdateEnums(enums);   
