@@ -160,5 +160,5 @@ export const buildTable = (collection, config, traits) => {
     tfoot.appendChild(footerRow);
     table.appendChild(tfoot);
 
-    utils.makeSortable(document);    
+    utils.makeSortable(document);
 }

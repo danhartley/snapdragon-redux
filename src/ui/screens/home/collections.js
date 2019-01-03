@@ -24,7 +24,7 @@ export const renderCollections = (counter) => {
     let config = R.clone(configState);
     let collections = R.clone(collectionsState);
     if(config.iconicTaxa && config.iconicTaxa.length > 0) {
-        const localSpecies = collections.find(c => c.name === 'Local species');
+        const localSpecies = collections.find(c => c.id === 1);
         collections = [ ...collections.filter(c => R.contains(c.iconicTaxon, config.iconicTaxa)), localSpecies ];
     }
     let collection = R.clone(collectionState);

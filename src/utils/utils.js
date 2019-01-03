@@ -164,20 +164,26 @@ const comparer = function(idx, asc) { return function(a, b) { return function(v1
     }(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
 }};
 
-const makeSortable = document => {
+const makeSortable = (document, callback) => {
+
   Array.from(document.querySelectorAll('th > span:nth-child(1)')).forEach(function(sp) { sp.addEventListener('click', function() {
+          const names = [];
           var th = this.parentElement;
           if(th.classList[0] === 'not-sortable') return;
           var table = th.closest('table');
           var body = table.querySelector('tbody');
           var footer = table.querySelector('tfoot');          
+
           Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
               .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
               .forEach(function(tr) { 
                 if(tr !== footer) {
                   body.appendChild(tr);
+                  names.push(tr.cells[0].id);
                 }
-              });
+              });        
+
+              callback(names);
       })
   });
 };

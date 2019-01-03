@@ -1,5 +1,6 @@
 import * as SD from 'api/traits/trait-types';
 
+import { actions } from 'redux/actions/action-creators';
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { taxa } from 'api/snapdragon/taxa';
@@ -149,5 +150,18 @@ export const buildTable = (collection, config, traits, enums) => {
 
     tbody.insertBefore(headerRow, tbody.children[0]);
 
-    utils.makeSortable(document);    
+    const callback = names => {
+        const sortedItems = [];
+        names.forEach(name => {
+            collection.items.forEach(item => {
+                if(item.name === name) {
+                    sortedItems.push(item);
+                }
+            });
+        });
+        console.log(sortedItems);
+        actions.boundChangeCollectionItems(sortedItems);
+    };
+
+    utils.makeSortable(document, callback);    
 }
