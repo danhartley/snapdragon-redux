@@ -110,7 +110,7 @@ const taxonFiltersHaveChanged = (collection, config) => {
 
     let filterHasChanged;
 
-    if(config.collection.id ===8) {
+    if(config.collection.id === 1) {
         if(collection.iconicTaxa === undefined && config.iconicTaxa.length === 0) {
             filterHasChanged = false;
         } else {

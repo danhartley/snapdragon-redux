@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
 import { collections } from 'snapdragon/eol-collections';
@@ -51,7 +52,7 @@ export async function itemHandler(collection, config, counter, callback) {
     if(counter.isLessonPaused) {
         collection.items = await keepItems(collection);
     } else {    
-        collection.items = await getItems(collection, config);
+        collection.items = utils.shuffleArray(await getItems(collection, config));
 
         collection.items.filter(item => item).forEach((item,index)=>{
             item.snapIndex = index + 1;

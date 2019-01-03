@@ -75,8 +75,8 @@ export const renderCollections = (counter) => {
         
         config.collection = { id: collectionId };
 
-        if(collectionId === 8) {
-            handleLocalCollection(document.getElementById('8'), collectionsHeader, learningActionBtn, config, collection);
+        if(collectionId === 1) {
+            handleLocalCollection(document.getElementById('1'), collectionsHeader, learningActionBtn, config, collection);
         }    
 
         if(config.isLandscapeMode) {
