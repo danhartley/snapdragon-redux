@@ -411,18 +411,15 @@ export const weeds = [
         },
         {
           "vernacularName": "Cua de cavall petita",
-          "language": "en",
-          "eol_preferred": false
+          "language": "es"
         },
         {
           "vernacularName": "Equiseto dei campi",
-          "language": "it",
-          "eol_preferred": false
+          "language": "it"
         },
         {
           "vernacularName": "Mare's tail",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
           "vernacularName": "Prêle des champs",

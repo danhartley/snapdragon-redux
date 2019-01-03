@@ -62,6 +62,9 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 1,
     const changeCollection = (state, action) => {
         
         let collection = { ...state, ...action.data.collection };
+        if( state.id === action.data.collection.id ) {
+            collection.itemIndex = state.itemIndex;
+        }
         let nextItem = collection.items[collection.itemIndex];
         
         if(action.data.config.mode === 'review') {
