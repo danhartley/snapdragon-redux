@@ -334,10 +334,11 @@ a.dropdown-item:hover {
   background-color: rgb(216, 227, 220);
 }
 
-.species.revision.card > div:nth-child(1),
+.species.revision.card > div:nth-child(1) > div:nth-child(1),
 .taxon.revision.card > div:nth-child(1) {
   background-color: var(--snap-species-header-background);
   border-bottom: .05rem solid var(--snap-border-dark);
+  height: 88px;
 }
 
 .species.revision.card {
@@ -737,26 +738,35 @@ a.dropdown-item:hover {
 
 .data-box-container {
   display: flex;  
+  width: 100%;
+  margin: 1rem 0 0 0;
 }
 
 .data-box-container div:nth-child(1) {
   flex: 1;
-  text-align: right;
+  text-align: right;  
 }
 
 .data-box {
   color: var(--snap-text-dark);
   border: .05rem solid var(--snap-border-dark);
-  background-color: var(--snap-data-box-bg);
   text-align: left;
-  padding: .25rem;
+  padding: .25rem .5rem;
 }
 
-.js-inat-box .data-box {
+.inat-box .data-box {
   color: rgb(135, 157, 60);
-  background-color: rgb(202, 216, 154,0);
   height: 100%;
   border-left: 0;
+}
+
+.inat-box .data-box > div:nth-child(1) {
+  display: grid;
+  grid-template-columns: 3fr 3rem 1fr;
+}
+
+.inat-box .data-box > div > div:nth-child(2) > div {
+  text-align: center;
 }
 
 .taxon-data > span:nth-child(1) {
@@ -1231,8 +1241,8 @@ table {
 .list-group-item, .table-row {  
   display: flex;
   flex-direction: row;
-  border-left: .01em solid var(--snap-border-dark);
-  border-right: .1rem solid var(--snap-border-dark);
+  border-left: .075em solid var(--snap-border-dark);
+  border-right: .075rem solid var(--snap-border-dark);
 }
 
 tr.table-row:nth-child(2n) {
@@ -2018,10 +2028,6 @@ a.collection-disabled {
   border-bottom: .05rem solid var(--snap-border-dark);
   height: 88px;
   color: var(--snap-text-medium-light);
-}
-
-.inat-box > div {
-  padding: 0 .5rem 0 0;
 }
 
 .calender-container {
