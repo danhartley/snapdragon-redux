@@ -16,8 +16,8 @@ describe('should skip home pages appropriately', () => {
             isLessonRehydrated: undefined,
             isLessonPaused: true
         };
-        let collection = { items: [], itemIndex: 0, id: 1 };
-        let config = { collection: { id: 1 } }
+        let collection = { items: [], itemIndex: 0, id: 8 };
+        let config = { collection: { id: 8 } }
         expect(lessonLogicHandler.isSkippable(collection, counter, config, {}, 'renderSpeciesCollectionList')).toBeFalsy();
     });
     
@@ -26,8 +26,8 @@ describe('should skip home pages appropriately', () => {
             isLessonRehydrated: undefined,
             isLessonPaused: true
         };
-        let collection = { items: [], itemIndex: 1, id: 1 };
-        let config = { collection: { id: 1 } }
+        let collection = { items: [], itemIndex: 1, id: 8 };
+        let config = { collection: { id: 8 } }
         expect(lessonLogicHandler.isSkippable(collection, counter, config, {}, 'renderSpeciesCollectionList')).toBeFalsy();
     });
 
@@ -37,7 +37,7 @@ describe('should skip home pages appropriately', () => {
             isLessonPaused: false
         };
         let collection = { };
-        let config = { collection: { id: 1 } }
+        let config = { collection: { id: 8 } }
         expect(lessonLogicHandler.isSkippable(collection, counter, config)).toBeFalsy();
     });
 ``
@@ -47,8 +47,8 @@ describe('should skip home pages appropriately', () => {
             isLessonRehydrated: false,
             isLessonPaused: false
           }
-        let collection = { items: [], itemIndex: 0, id: 1 };
-        let config = { collection: { id: 1 } }
+        let collection = { items: [], itemIndex: 0, id: 8 };
+        let config = { collection: { id: 8 } }
         let layout = {};
         expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeTruthy();
     });
@@ -60,7 +60,7 @@ describe('should skip home pages appropriately', () => {
             isLessonPaused: false
           }
         let collection = { items: [], itemIndex: 0 };
-        let config = { collection: { id: 1 } }
+        let config = { collection: { id: 8 } }
         let layout = null;
         expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeFalsy();
     });
@@ -70,8 +70,8 @@ describe('should skip home pages appropriately', () => {
             isLessonRehydrated: false,
             isLessonPaused: false
         };
-        let collection = { id: 1, items: [], language: 'en' };
-        let config = { collection: { id: 1 }, language: 'en', iconicTaxa: [] };
+        let collection = { id: 8, items: [], language: 'en' };
+        let config = { collection: { id: 8 }, language: 'en', iconicTaxa: [] };
         let layout = {};
         expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeTruthy();
     });
@@ -81,7 +81,7 @@ describe('should skip home pages appropriately', () => {
             isLessonRehydrated: false,
             isLessonPaused: false
         };
-        let collection = { id: 1, items: [] };
+        let collection = { id: 8, items: [] };
         let config = { collection: { id: 2 } };
         let layout = {};
         expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeFalsy();
@@ -92,8 +92,8 @@ describe('should skip home pages appropriately', () => {
             isLessonRehydrated: false,
             isLessonPaused: false
         };
-        let collection = { id: 1, items: [], language: 'en' };
-        let config = { collection: { id: 1 }, language: 'pt', iconicTaxa: [] };
+        let collection = { id: 8, items: [], language: 'en' };
+        let config = { collection: { id: 8 }, language: 'pt', iconicTaxa: [] };
         let layout = {};
         expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeFalsy();
     });
@@ -103,8 +103,8 @@ describe('should skip home pages appropriately', () => {
             isLessonRehydrated: false,
             isLessonPaused: false
         };
-        let collection = { id: 1, items: [], language: 'en' };
-        let config = { collection: { id: 1 }, language: 'en', iconicTaxa: [] };
+        let collection = { id: 8, items: [], language: 'en' };
+        let config = { collection: { id: 8 }, language: 'en', iconicTaxa: [] };
         let layout = {};
         expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeTruthy();
     });
@@ -114,8 +114,8 @@ describe('should skip home pages appropriately', () => {
             isLessonRehydrated: false,
             isLessonPaused: false
         };
-        let collection = { id: 1, items: [], language: 'en' };
-        let config = { collection: { id: 1 }, language: 'en' };
+        let collection = { id: 8, items: [], language: 'en' };
+        let config = { collection: { id: 8 }, language: 'en' };
         let layout = {};
         let readOnlyMode = true;
         expect(lessonLogicHandler.isSkippable(collection, counter, config, layout, '', readOnlyMode)).toBeFalsy();

@@ -251,17 +251,12 @@ const carouselControlHandler = event => {
 
     const { collection } = store.getState();
     
-    let id = event.target.dataset.id;
     let transition = event.target.dataset.transition;
-
-    const prev = document.querySelector('#speciesCardModal .js-prev > span');
-    const next = document.querySelector('#speciesCardModal .js-next > span');
 
     switch(transition) {
         case 'prev':
             currentIndex--;
             currentIndex = currentIndex === -1 ? collection.items.length -1 : currentIndex;
-            prev.disabled = currentIndex === 0;
             break;
         case 'next':
             currentIndex++;
@@ -274,5 +269,8 @@ const carouselControlHandler = event => {
     renderCard(collection, true, nextItem, parent);
 };
 
-document.querySelector('#speciesCardModal .js-prev').addEventListener('click', carouselControlHandler);
-document.querySelector('#speciesCardModal .js-next').addEventListener('click', carouselControlHandler);
+const prev = document.querySelector('#speciesCardModal .js-prev');
+const next = document.querySelector('#speciesCardModal .js-next');
+
+if(prev) prev.addEventListener('click', carouselControlHandler);
+if(next) next.addEventListener('click', carouselControlHandler);

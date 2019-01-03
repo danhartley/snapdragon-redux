@@ -160,7 +160,9 @@ export const buildTable = (collection, config, traits, enums) => {
             });
         });
         console.log(sortedItems);
-        actions.boundChangeCollectionItems(sortedItems);
+        if(config.isLandscapeMode) {
+            actions.boundChangeCollectionItems(sortedItems);
+        }        
     };
 
     utils.makeSortable(document, callback);    

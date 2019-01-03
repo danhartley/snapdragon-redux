@@ -4,7 +4,6 @@ import { store } from 'redux/store';
 import { persistor } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { stats } from 'ui/helpers/stats';
-import { renderSpeciesCollectionList } from '../screens/lists/species-list';
 
 const getMode = (mode, isLevelComplete, itemsToReview) => {    
     const _mode = (mode === 'learn' && isLevelComplete && itemsToReview.length > 0)

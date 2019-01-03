@@ -12,7 +12,6 @@ import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-table-no-scores';
 import { itemHandler, extendCollection } from 'ui/helpers/item-handler';
 import { listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
-import { cardSlider } from 'ui/screens/common/card-slider';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
@@ -86,8 +85,6 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                 link.addEventListener('click', event => {
                     const name = event.target.dataset.name;
                     renderCard(collection, true, collection.items.find(i => i.name === name), parent);
-                    // cardSlider(collection, collection.items.find(i => i.name === name), );
-
                 });
             });
             const traitCardLinks = document.querySelectorAll('.js-key-trait-link');
