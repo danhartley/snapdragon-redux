@@ -4445,21 +4445,6 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Borboleta-das-sardinheiras",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "Borboleta-das-sardinheiras",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-das-sardinheiras",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-das-sardinheiras",
         "language": "pt",        
       },
       {

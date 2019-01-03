@@ -329,7 +329,7 @@ export const cogumelosEmPortugal = {
 
 export const localSpecies = {
     id: 1,
-    name: 'Local species', 
+    name: 'Your local wildlife', 
     type: 'species',
     descriptions: [
         'Local plants, fungi and birds found in your area at this time of year.',
