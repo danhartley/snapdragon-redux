@@ -12,12 +12,6 @@ export async function renderCalendar(parent, item, config) {
 
     parent.innerHTML = '';
 
-    // const data = [
-    //     [ 'J','F', 'M', 'A' ],
-    //     [ 'M','J', 'J', 'A' ],
-    //     [ 'S','O', 'N', 'D' ],
-    //   ];
-
     const place = await getPlace(config);
 
     const country = place.country.place_name_en;
@@ -122,6 +116,16 @@ export async function renderCalendar(parent, item, config) {
         });
 
         renderTemplate({ data }, template.content, parent);
+
+        const currentMonthIndex = new Date().getMonth();
+
+        const monthNodes = document.querySelectorAll('.calendar-box .col > div');
+    
+        monthNodes.forEach((node, index) => {
+            if(index === currentMonthIndex) {
+                node.classList.add('current-month');
+            }
+        });
     });
     
 };

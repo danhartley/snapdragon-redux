@@ -270,7 +270,7 @@
     margin: 0 0 0 .6rem;
   }
   
-  #speciesCardModal .carousel-inner .prev > span, #speciesCardModal .carousel-inner .next > span {
+  #speciesCardModal .carousel-inner .next > span {
     margin: 0 .6rem 0 0;
     cursor: pointer;
   }

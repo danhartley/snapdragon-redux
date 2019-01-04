@@ -8056,7 +8056,8 @@ export const insects = [
       },
       {
         "vernacularName": "Common Blue",
-        "language": "en",        
+        "language": "en",
+        wikiSearchTerm: true
       },
       {
         "vernacularName": "Gemeiner Bluling",

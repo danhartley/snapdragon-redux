@@ -2069,9 +2069,13 @@ a.collection-disabled {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
+  width: 2rem;
 }
 
 .observable {
   color: var(--snap-success);
+}
+
+.current-month {
+  border: .05rem solid rgb(215, 215, 215);
 }
