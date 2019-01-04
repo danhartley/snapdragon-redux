@@ -1846,6 +1846,10 @@ th.lessonScore {
   text-align: center;
 }
 
+.species-pending {
+  border: .05rem solid var(--snap-border-dark);
+}
+
 .species-pending div:nth-child(2), .species-pending div:nth-child(3), .species-pending div:nth-child(4) {
   padding: 1rem;
 }

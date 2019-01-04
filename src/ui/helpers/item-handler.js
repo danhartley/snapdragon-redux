@@ -51,8 +51,15 @@ export async function itemHandler(collection, config, counter, callback) {
     
     if(counter.isLessonPaused) {
         collection.items = await keepItems(collection);
-    } else {    
+    } else {         
         collection.items = utils.shuffleArray(await getItems(collection, config));
+
+        if(R.contains('lepidoptera', config.iconicTaxa) && !R.contains('insecta', config.iconicTaxa)) {
+            const insecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() === 'insecta');
+            const lepidoptera = insecta.filter(i => i.taxonomy.order.toLowerCase() === 'lepidoptera');
+            const noninsecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() !== 'insecta');
+            collection.items = [ ...lepidoptera, ...noninsecta ];
+        }
 
         collection.items.filter(item => item).forEach((item,index)=>{
             item.snapIndex = index + 1;

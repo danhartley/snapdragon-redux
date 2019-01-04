@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 
-import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
 
@@ -23,6 +22,7 @@ export const handleIconicTaxaFilter = (config) => {
     document.querySelector('#insecta div:nth-child(2)').innerHTML = 'Insects';
     document.querySelector('#fungi div:nth-child(2)').innerHTML = 'Fungi & Lichens';
     document.querySelector('#plantae div:nth-child(2)').innerHTML = 'Plants';
+    document.querySelector('#lepidoptera div:nth-child(2)').innerHTML = 'Butterflies & Moths';
 
     const filterBtn = document.querySelector('.js-lesson-filters > button:nth-child(1)');
     const setRangeBtn = document.querySelector('.js-set-range-btn');
@@ -58,7 +58,7 @@ export const handleIconicTaxaFilter = (config) => {
 
     icons.forEach(category => {
         category.addEventListener('click', event => {
-            const _category = category;
+            
             const filter = event.currentTarget;
             const filterId = filter.parentElement.id;                       
 

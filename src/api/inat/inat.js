@@ -44,12 +44,21 @@ export const getInatSpecies = (latitude, longitude, config) => {
         return dateFromDays;
     };
 
-    let iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
+    const iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
+
+    const getIconicTaxa = config => {        
+        const iconicTaxa = config.iconicTaxa || iconicTaxaKeys;
+        const taxa = iconicTaxa.map(taxon => {
+            if(taxon === 'lepidoptera') taxon = 'insecta';
+            return taxon;
+        });
+        return taxa;
+    };
 
     async function getInatObservations(latitude, longitude, config) {
         const lat = latitude || `38.7155762`;
         const lng = longitude || `-9.163009899999999`;
-        const iconicTaxa = config.iconicTaxa || iconicTaxaKeys;
+        const iconicTaxa = getIconicTaxa(config);
         const perPage = 200;
         const radius = config.speciesRange || 10;
         const start = daysAway('past', 30);

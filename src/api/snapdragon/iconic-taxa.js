@@ -16,10 +16,14 @@ export const iconicTaxa = {
     MAMMALIA: 'Mammals',
     INSECTA: 'Insects',
     ACTINOPTERYGII: 'Ray-finned fishes',
-    ARACHNIDA: 'Arachnids'        
+    ARACHNIDA: 'Arachnids',
+
+    //order
+    LEPIDOPTERA: 'Lepidoptera'
 };
 
 export const matchTaxonKey = (taxonomy, iconicTaxaKeys) => {
+    if(taxonomy.order && R.contains(taxonomy.order.toLowerCase(), iconicTaxaKeys)) return taxonomy.order.toLowerCase();
     if(taxonomy.class && R.contains(taxonomy.class.toLowerCase(), iconicTaxaKeys)) return taxonomy.class.toLowerCase();
     if(taxonomy.kingdom && R.contains(taxonomy.kingdom.toLowerCase(), iconicTaxaKeys)) return taxonomy.kingdom.toLowerCase();
 }
@@ -37,6 +41,9 @@ export const matchIcon = (taxonomy, iconicTaxa) => {
     switch(rank) {
         case 'aves':
             icon = 'fas fa-dove';
+            break;
+        case 'lepidoptera':
+            icon = 'fas fa-barcode';
             break;
         case 'amphibia':
             icon = 'fas fa-frog';
