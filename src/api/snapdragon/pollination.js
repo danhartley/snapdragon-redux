@@ -1,6 +1,6 @@
 //https://en.wikipedia.org/wiki/List_of_crop_speciesAs_pollinated_by_bees
 
-const symbiosis = [
+const pollination = [
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Pastinaca sativa' ], taxon: 'species' },
@@ -501,11 +501,5 @@ const symbiosis = [
         type: [ 'pollination' ],
         speciesA: { names: [ 'Citrus limon' ], taxon: 'species' },
         speciesB: [{ names: [ 'Apis' ], taxon: 'genus' }]
-    },
-    {
-        type: [ 'food' ],
-        speciesA: [{ names: [ 'Pieris rapae' ], taxon: 'species' }],
-        speciesB: { names: [ 'Sinapis alba', 'Pieris protodice' ], taxon: 'species' },
-        reward: [ 'nectar', 'foliage']
     },
 ];

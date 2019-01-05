@@ -46,7 +46,7 @@ export const getInsectTraits = (enums) => {
         { name: 'Pieris rapae', 
         symbionts: [ 
             { id: 'Brassica oleracea'}, { id: 'Armoracia rusticana'}, { id: 'Raphanus raphanistrum'}, 
-            { id: 'Brassica rapa'} ],
+            { id: 'Brassica rapa'}, { id: 'Sinapis alba'} ],
         traits: [
             { name: SD.name.WING_SPAN, value: '3.2-4.7cm' },
             { name: SD.name.HABITAT, value: `${SD.habitat.URBAN}, ${SD.habitat.VALLEYS}` },

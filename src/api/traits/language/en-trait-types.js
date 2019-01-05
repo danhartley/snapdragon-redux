@@ -55,7 +55,8 @@ export const english = {
         CATERPILLAR_COLOUR: 'Caterpillar colour',
         HIBERNATING_STAGE: 'Hibernating stage',
         WING_SPAN: 'Wing span',
-        FOOD: 'Food'
+        FOOD: 'Food',
+        TROPHIC_LEVEL: 'Trophic level'
     },
     howEdible : {
         CHOICE : 'Choice',

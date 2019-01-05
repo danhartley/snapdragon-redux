@@ -16,6 +16,18 @@ export const infoSlider = (item, traits, family, parent) => {
 
     parent.innerHTML = '';
 
+    const getDefaultLevel = item => {
+        if(item.taxonomy.kingdom.toUpperCase() === 'PLANTAE') return { name: 'Trophic level', value: 1 };
+        if(item.taxonomy.class.toUpperCase() === 'INSECTA') return { name: 'Trophic level', value: 2.2 };
+        if(item.taxonomy.class.toUpperCase() === 'AVES') return { name: 'Trophic level', value: 3.6 };
+        
+    };
+
+    let trophicLevel = info.traits.find(trait => trait.name === 'TROPHIC_LEVEL');
+
+    if(!trophicLevel) trophicLevel = getDefaultLevel(item);
+    if(trophicLevel) info.traits.push(trophicLevel);
+
     info.traits.forEach(trait => {
         if(!trait.value && trait.values) {
             trait.value = trait.values.join(', ');

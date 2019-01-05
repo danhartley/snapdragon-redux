@@ -8790,45 +8790,17 @@ export const plants = [
     ],
     "names": [
       {
+        "vernacularName": "onion",
+        "language": "en"
+      },
+      {
         "vernacularName": "Globe onion",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "onion",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "onion",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "onion",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "onion",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
         "vernacularName": "garden onion",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "garden onion",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Garden onion",
-        "language": "en",
-        "eol_preferred": false
-      }
+        "language": "en"
+      },      
     ],
     "taxonomy": {
       "usageKey": 2857697,

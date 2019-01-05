@@ -99,7 +99,8 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
             familyCardLinks.forEach(link => {
                 link.addEventListener('click', event => {
                     const family = event.target.dataset.family;
-                    renderTaxonCard(collection, true, parent, family);
+                    const name = event.target.dataset.speciesName;
+                    renderTaxonCard(collection, true, collection.items.find(i => i.name === name), parent, family);
                 });
             });
 

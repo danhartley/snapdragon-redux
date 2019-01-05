@@ -351,6 +351,14 @@ a.dropdown-item:hover {
   width:88px;
 }
 
+.taxon.revision.card .taxon-summary {
+  padding: 0 .5rem 0 0 ;
+}
+
+.taxon.revision.card .data-box {
+  margin: 0 .5rem 0 0;
+}
+
 .species.card-small {
   padding: .5rem;
 }
@@ -745,7 +753,6 @@ a.dropdown-item:hover {
 
 .data-box-container div:nth-child(1) {
   flex: 1;
-  text-align: right;  
 }
 
 .data-box {
@@ -2072,7 +2079,7 @@ a.collection-disabled {
   width: 2rem;
 }
 
-.observable {
+.most-observations {
   color: var(--snap-success);
 }
 

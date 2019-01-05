@@ -22,7 +22,7 @@ const getFeature = (item, traits, config, type) => {
                 label = 'Habitat: ';
                 break;
             default:
-                label = `${utils.capitaliseAll(type)}: `;
+                label = type ? `${utils.capitaliseAll(type)}: ` : '';
                 break;
         }
         const featureValue = Array.isArray(feature) ? feature.join(', ') : feature;

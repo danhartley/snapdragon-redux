@@ -111,15 +111,14 @@ const getActiveTrait = (traits, itemName, options) => {
 const vernacularNamesForItems = (items, config) => {
     let itemNames = items.map(item => item.names);
     let vernaculars = itemNames.map(itemNames => itemNames.filter(name => 
-        { return name.language === config.language || name.language === 'en' 
-    }));
+        { return name.language === config.language || name.language === 'en' }));
     if(vernaculars.length === 0) return [];
     vernaculars = vernaculars.map(vernacular => {
         let name = vernacular.find(v => v.language === config.language);
         if(!name) name = vernacular.find(v => v.language === 'en');
         if(!name) return '';
         return utils.capitaliseFirst(name.vernacularName);
-    });
+    }).filter(v => v !== '');
     return vernaculars;
 };
 

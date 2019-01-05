@@ -9,9 +9,10 @@ import { taxa } from 'api/snapdragon/taxa';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import taxonTemplate from 'ui/screens/cards/taxon-template.html';
 
-export const renderTaxonCard = (collection, isModalMode = false, parent = DOM.rightBody, family) => {
+export const renderTaxonCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody, family) => {
   
-    const item = collection.nextItem;
+    const item = selectedItem || collection.nextItem;
+
     const { lessonPlan, config } = store.getState();
 
     const template = document.createElement('template');
@@ -53,6 +54,7 @@ export const renderTaxonCard = (collection, isModalMode = false, parent = DOM.ri
     renderTemplate(context, template.content, parent, clone);
 
     if(isModalMode) {
+        document.querySelector('#speciesCardModal .js-modal-text-title').innerHTML = collection.name;
         continueBtn.classList.add('hide-important');
         document.querySelector('.js-external-links').classList.add('hide');
     } else {
@@ -78,7 +80,8 @@ export const renderTaxonCard = (collection, isModalMode = false, parent = DOM.ri
         const list = document.querySelector('#badgeListModal .js-modal-text');
         list.innerHTML = '';
         members.forEach(member => {
-            list.innerHTML += `<div>${member.name} (${item.vernacularName})</div>`;
+            list.innerHTML += `<div>${member.name}</div>`;
+            // list.innerHTML += `<div>${member.name} (${item.vernacularName})</div>`;
         });
     });
 };

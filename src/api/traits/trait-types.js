@@ -1,5 +1,3 @@
-import * as R from 'ramda';
-
 import { actions } from 'redux/actions/action-creators';
 
 import { english } from 'api/traits/language/en-trait-types';
@@ -36,9 +34,15 @@ export let leafEdge = english.leafEdge;
 export let foodType = english.foodType;
 export let developmentStage = english.developmentStage;
 
+let language;
+
 export const updateLanguage = (config) => {
     
-    switch(config.language) {
+    if(language === config.language) return;
+
+    language = config.language;
+
+    switch(language) {
         case 'en':
             name = english.name;
             howEdible = { ...english.howEdible, ...{ type: 'howEdible' }, ...{ name: english.name.HOW_EDIBLE } };
