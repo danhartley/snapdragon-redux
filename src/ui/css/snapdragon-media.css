@@ -85,7 +85,7 @@
         width: 0;
         height: 0;
         margin-left: .255rem;
-        vertical-align: .255rem;
+        vertical-align: middle;
         content: "";
         border-top: .3rem solid;
         border-right: .3rem solid transparent;

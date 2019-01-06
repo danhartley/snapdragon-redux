@@ -92,7 +92,7 @@ export const renderHeaders = page => {
             if(SPECIES_LIST && PORTRAIT) rightHeaderText = collection.name;
             if(LANDSCAPE_HOME) rightHeaderText = title;
 
-            lessonHeaderText.innerHTML = `${collection.name} (${collection.items.length})`;
+            if(LANDSCAPE) lessonHeaderText.innerHTML = `${collection.name} (${collection.items.length})`;
         }
     
         DOM.leftHeaderTxt.innerHTML = leftHeaderText;

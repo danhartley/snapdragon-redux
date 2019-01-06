@@ -88,13 +88,10 @@ hr {
   background-color: var(--snap-collection) !important;
 }
 
-.btn-collection {
+.btn-collection, .btn-language {
   background-color: rgb(87, 97, 99);
-}
-
-.btn-language {
+  background-color: var(--snap-filters-ctrl);
   color: var(--snap-text-dark);
-  background-color: var(--snap-language);
 }
 
 .btn-lesson {
@@ -160,11 +157,12 @@ hr {
   background-color: rgb(207, 218, 204);
   border: 1px solid var(--snap-border-dark);
   left: inherit !important;
+  background-color: rgb(248, 181, 102);
 }
 
-.languages .dropdown-menu {
+/* .languages .dropdown-menu {
   background-color: var(--snap-dd-language-bg-intial);
-}
+} */
 
 .non-taxa .dropdown-menu {
   width: 15rem !important;
@@ -174,12 +172,13 @@ hr {
 a.dropdown-item.active {
   color: var(--snap-text-medium-dark);
   background-color: rgb(226, 232, 233);
+  background-color: rgb(250, 205, 151);
   cursor: default;
 }
 
-.languages a.dropdown-item.active {
+/* .languages a.dropdown-item.active {
   background-color: var(--snap-dd-language-bg-active);
-}
+} */
 
 .non-taxa a.dropdown-item.active {
   background-color: var(--snap-dd-non-taxa-bg-active);
@@ -195,11 +194,12 @@ a.dropdown-item {
 a.dropdown-item:hover {
   color: var(--snap-dd-collection-bg-intial);
   background-color: rgb(226, 232, 233);
+  background-color: rgb(250, 205, 151);
 }
 
-.languages a.dropdown-item:hover {
+/* .languages a.dropdown-item:hover {
   background-color: var(--snap-dd-language-bg-hover);
-}
+} */
 
 .non-taxa a.dropdown-item:hover {
   background-color: var(--snap-dd-non-taxa-bg-hover);
@@ -349,6 +349,10 @@ a.dropdown-item:hover {
 .species.revision.card img, .taxon.revision.card img, .non-taxon.revision.card img{
   height: 88px;
   width:88px;
+}
+
+.species.revision.card .data-box > div:nth-child(2) {
+  text-align: right;
 }
 
 .taxon.revision.card .taxon-summary {
@@ -609,6 +613,24 @@ a.dropdown-item:hover {
   border: 0;  
 }
 
+.snapdragon.card.align-left {
+  /* margin: 0 0 .5rem 0; */
+  color: var(--snap-text-medium-dark);
+  /* background-color: rgb(247, 245, 233); */
+  padding: .5rem;
+}
+
+.snapdragon.card.align-left .feature-label {
+  letter-spacing: 1px;
+  font-size: .8rem;
+  text-transform: uppercase;
+  background-color: rgb(215, 223, 225,.6);
+  background-color: rgb(247, 245, 233);
+  padding: .5rem;
+  width: fit-content;
+  display: inline-table;
+}
+
 .taxon-highlight {  
   background-color: var(--snap-taxon-card-background);
   padding: .5rem;
@@ -643,8 +665,7 @@ a.dropdown-item:hover {
 
 .species-header {
   display: flex;
-  float: right;
-  font-size: 1.2rem;
+  float: right; 
 }
 
 .species-header img {
@@ -1221,6 +1242,7 @@ button.btn-light.focus, button.btn:focus, button.btn-light:focus, .show>.btn-lig
   z-index: 10;
   border-radius: .25rem .25rem 0 0;
   letter-spacing: .02rem;
+  align-items: center;
 }
 
 .table-header {
@@ -1257,7 +1279,7 @@ table {
 .list-group-item, .table-row {  
   display: flex;
   flex-direction: row;
-  border-left: .075em solid var(--snap-border-dark);
+  border-left: .1em solid var(--snap-border-dark);
   border-right: .075rem solid var(--snap-border-dark);
 }
 
@@ -1299,7 +1321,7 @@ tr.table-row:nth-child(2n+1) {
       width: 0;
       height: 0;
       margin-left: .255rem;
-      vertical-align: .255rem;
+      vertical-align: middle;
       content: "";
       border-top: .3rem solid;
       border-right: .3rem solid transparent;
@@ -1538,7 +1560,6 @@ tr.table-row:nth-child(2n+1) {
 .info-box #traitSlider {
   float: right;
   width: 100%;
-  /* background-color: var(--snap-traits-carousel); */
   background-color: var(--snap-species-header-background);
 }
 
@@ -1709,9 +1730,9 @@ iframe#birdsong {
   height: 30vh;
 }
 
-.visual-match .radio-buttons label {
+/* .visual-match .radio-buttons label {
   font-size: 1.2rem; 
-}
+} */
 
 .radio-buttons.disabled label {
   background-color: var(--snap-strips-background);  
@@ -1980,7 +2001,7 @@ a.collection-disabled {
   margin: 0 0 0 .5rem;
   height: 2.5rem;
   background-color: var(--snap-filters-ctrl);
-  padding: 0 .5rem;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
