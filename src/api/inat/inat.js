@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { fruit } from 'api/snapdragon/fruit';
 import { vegetables } from 'api/snapdragon/vegetables';
 import { insects } from 'api/snapdragon/insects';
-import { herbsAndSpices } from 'api/snapdragon/herbs-and-spices';
+// import { herbsAndSpices } from 'api/snapdragon/herbs-and-spices';
 import { deciduousAndEvergreenTrees } from 'api/rhs/deciduous-evergreen-trees';
 
 import { birds } from 'api/snapdragon/common-city-birds';
@@ -26,7 +26,7 @@ export const getInatSpecies = (latitude, longitude, config) => {
         ...fruit,
         ...vegetables,
         ...insects,
-        ...herbsAndSpices,
+        // ...herbsAndSpices,
         ...deciduousAndEvergreenTrees,
         ...weeds,
         ...lichen,
