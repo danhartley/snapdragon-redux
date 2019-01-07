@@ -39,9 +39,9 @@ export const renderFeatures = (item, traits, config, parent) => {
         traitTypes.name.HABITAT, 
         traitTypes.name.USAGE,
         traitTypes.name.HEIGHT,
-        traitTypes.name.HOW_EDIBLE,
-        traitTypes.name.BLADE,
-        traitTypes.name.COMPOUND,
+        // traitTypes.name.HOW_EDIBLE,
+        // traitTypes.name.BLADE,
+        // traitTypes.name.COMPOUND,
     ];
 
     const features = types.map(ft => {

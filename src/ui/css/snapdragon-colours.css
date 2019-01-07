@@ -26,7 +26,8 @@
     --snap-portrait: rgb(179, 197, 174);
     --snap-landscape: rgb(185, 200, 204);
     
-    --snap-collection: rgb(94, 119, 143);
+    /* --snap-collection: rgb(94, 119, 143); */
+    --snap-collection: rgb(87, 97, 99);
     --snap-collection-active: rgb(95, 125, 89);
     --snap-non-taxa: rgb(165, 159, 131);
     

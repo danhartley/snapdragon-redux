@@ -131,7 +131,7 @@ export const buildTable = (collection, config, traits, enums) => {
     checkbox.appendChild(labelCheck);    
     speciesHeader.innerHTML = '<span>Species</span';
     familyHeader.innerHTML = '<span>Family</span>';
-    traitNameHeader.innerHTML = '<span>Key trait</span>';
+    traitNameHeader.innerHTML = '<span>Feature</span>';
     iconicTaxonHeader.innerHTML = '<span><i class="fas fa-sliders-h"></i></span>';
     filterHeader.appendChild(checkbox); 
     imageHeader.innerHTML = '<div></div>';
