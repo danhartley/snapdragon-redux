@@ -1,5 +1,5 @@
-const MUTUALISM = 'Mutualism';
+// const MUTUALISM = 'Mutualism';
 
-export const types = [
-    MUTUALISM
-];
+// export const types = [
+//     MUTUALISM
+// ];

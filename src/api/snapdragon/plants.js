@@ -10853,5 +10853,199 @@ export const plants = [
     "family": "Rosaceae",
     "kingdom": "Plantae",
     "eolName": "Prunus avium (L.) L."
+  },
+  {
+    "id": "47118495",
+    "name": "Urtica dioica",
+    "images": [
+      {
+        "rightsHolder": "National Museum Wales. National Museum Wales. Year: 2012.",
+        "source": "http://www.boldsystems.org/index.php/Taxbrowser_Taxonpage?taxid=121629",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "7a/21/8a/539.POWNA_NMW3778_1328486100_jpg.jpg",
+        "thumb": "7a/21/8a/539.POWNA_NMW3778_1328486100_jpg.98x68.jpg"
+      },
+      {
+        "title": "Urtica dioica gracilis (5107357421).jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Urtica_dioica_gracilis_(5107357421).jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "57/e0/9d/509.22758073.jpg",
+        "thumb": "57/e0/9d/509.22758073.98x68.jpg"
+      },
+      {
+        "title": "Urtica dioica gracilis (5107953864).jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Urtica_dioica_gracilis_(5107953864).jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "5c/e1/d4/509.22758054.jpg",
+        "thumb": "5c/e1/d4/509.22758054.98x68.jpg"
+      },
+      {
+        "title": "Urtica dioica gracilis (5107357421).jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Urtica_dioica_gracilis_(5107357421).jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "5c/e1/dd/509.22758073.jpg",
+        "thumb": "5c/e1/dd/509.22758073.98x68.jpg"
+      },
+      {
+        "title": "Urtica dioica 001.JPG",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Urtica_dioica_001.JPG",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "55/86/4d/509.11435252.jpg",
+        "thumb": "55/86/4d/509.11435252.98x68.jpg"
+      },
+      {
+        "title": "Nokkosia.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Nokkosia.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "55/c9/08/509.12598660.jpg",
+        "thumb": "55/c9/08/509.12598660.98x68.jpg"
+      },
+      {
+        "title": "Stinging nettle at Brockfield - geograph.org.uk - 448748.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Stinging_nettle_at_Brockfield_-_geograph.org.uk_-_448748.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "55/e3/9b/509.12966702.jpg",
+        "thumb": "55/e3/9b/509.12966702.98x68.jpg"
+      },
+      {
+        "title": "Kopiva.JPG",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Kopiva.JPG",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "55/e8/3d/509.1311940.jpg",
+        "thumb": "55/e8/3d/509.1311940.98x68.jpg"
+      },
+      {
+        "title": "Common Nettle (Urtica dioica).jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Common_Nettle_(Urtica_dioica).jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "56/49/4d/509.15405180.jpg",
+        "thumb": "56/49/4d/509.15405180.98x68.jpg"
+      },
+      {
+        "title": "Urtica dioica 2839.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Urtica_dioica_2839.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "56/51/40/509.15547143.jpg",
+        "thumb": "56/51/40/509.15547143.98x68.jpg"
+      },
+      {
+        "title": "Urtica dioica 2841.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Urtica_dioica_2841.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "56/51/42/509.15547150.jpg",
+        "thumb": "56/51/42/509.15547150.98x68.jpg"
+      },
+      {
+        "title": "Urtica dioica1 ies.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Urtica_dioica1_ies.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "57/ec/d8/509.2292830.jpg",
+        "thumb": "57/ec/d8/509.2292830.98x68.jpg"
+      },
+      {
+        "title": "Urtica dioica05 ies.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Urtica_dioica05_ies.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "58/66/6a/509.2513891.jpg",
+        "thumb": "58/66/6a/509.2513891.98x68.jpg"
+      },
+      {
+        "title": "Urtica dioica13 ies.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Urtica_dioica13_ies.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "58/66/b9/509.2513923.jpg",
+        "thumb": "58/66/b9/509.2513923.98x68.jpg"
+      },
+      {
+        "title": "Urtica dioica17 ies.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Urtica_dioica17_ies.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "58/66/bd/509.2513929.jpg",
+        "thumb": "58/66/bd/509.2513929.98x68.jpg"
+      },
+      {
+        "title": "Urtica dioica18 ies.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Urtica_dioica18_ies.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "58/66/be/509.2513932.jpg",
+        "thumb": "58/66/be/509.2513932.98x68.jpg"
+      }
+    ],
+    "names": [
+      {
+        "vernacularName": "stinging nettle",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Common Nettle",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Grande ortie",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Große Brennnessel",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Ortica",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Ortiga mayor",
+        "language": "es",
+      },
+      {
+        "vernacularName": "Stinging Nettle",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Urtiga-maior",
+        "language": "pt"
+      },
+    ],
+    "taxonomy": {
+      "usageKey": 7960979,
+      "scientificName": "Urtica dioica L.",
+      "canonicalName": "Urtica dioica",
+      "rank": "SPECIES",
+      "status": "ACCEPTED",
+      "confidence": 97,
+      "matchType": "EXACT",
+      "kingdom": "Plantae",
+      "phylum": "Tracheophyta",
+      "order": "Rosales",
+      "family": "Urticaceae",
+      "genus": "Urtica",
+      "species": "Urtica dioica",
+      "kingdomKey": 6,
+      "phylumKey": 7707728,
+      "classKey": 220,
+      "orderKey": 691,
+      "familyKey": 6639,
+      "genusKey": 2984391,
+      "speciesKey": 7960979,
+      "synonym": false,
+      "class": "Magnoliopsida"
+    },
+    "family": "Urticaceae",
+    "kingdom": "Plantae",
+    "eolName": "Urtica dioica L."
   }
   ]

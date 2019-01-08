@@ -204,13 +204,13 @@ a.dropdown-item:hover {
 .underline-link {
   color: var(--snap-link) !important;
   text-decoration: none;
-  border: solid 1px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  border: solid 1px !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
   color: inherit;
   cursor: pointer;
-  padding: 0 0 .1rem 0;
+  padding: 0 0 .1rem 0 !important;
   font-size: .8rem;
   text-transform: uppercase;
 }
@@ -618,8 +618,6 @@ a.dropdown-item:hover {
 
 .snapdragon.card.align-left .feature-label {
   letter-spacing: .03rem;
-  /* font-size: .8rem;
-  text-transform: uppercase; */
   background-color: rgb(240, 244, 239);
   padding: .5rem;
   width: fit-content;
@@ -769,6 +767,7 @@ a.dropdown-item:hover {
 
 .data-box-container div:nth-child(1) {
   flex: 1;
+  text-align: right;
 }
 
 .data-box {
@@ -1561,6 +1560,7 @@ tr.table-row:nth-child(2n+1) {
   padding: 0rem;
   text-align: center;  
   margin: 0 15%;
+  font-size: .9rem;
 }
 
 #traitSlider .carousel-item div:nth-child(1) {
@@ -2104,4 +2104,38 @@ a.collection-disabled {
 
 #iconicTaxaFilters .modal-content {
   width: 60vw;
+}
+
+.feature-types {
+  margin: auto 0;
+}
+
+.feature-symbiont-list.scrollable {
+  border-bottom: 1px solid var(--snap-question-radio);
+  max-height: 6rem;
+  min-height: 5rem;
+  width: 100%;
+}
+
+.feature-symbiont-list table {
+  width: 100%;
+  border-collapse: inherit;
+}
+
+.feature-symbiont-list thead > tr:nth-child(1) {
+  background-color: rgb(201, 222, 241);
+  line-height: 1.5rem;
+}
+
+.feature-symbiont-list th, .feature-symbiont-list td {
+  text-align: left;
+  font-weight: normal;  
+  border: 0;
+  padding: 0 0 0 .5rem;
+  text-transform: capitalize;
+  font-size: .8rem;
+}
+
+.feature-symbiont-list th {
+  text-transform: uppercase;  
 }

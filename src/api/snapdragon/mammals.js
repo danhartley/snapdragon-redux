@@ -124,6 +124,10 @@ export const mammals = [
       ],
       "names": [
         {
+          "vernacularName": "Red Squirrel",
+          "language": "en"
+        },
+        {
           "vernacularName": "Eurasian Red Squirrel",
           "language": "en"
         },
@@ -134,10 +138,6 @@ export const mammals = [
         {
           "vernacularName": "Ecureuil Roux",
           "language": "fr"
-        },
-        {
-          "vernacularName": "Red Squirrel",
-          "language": "en"
         },
         {
           "vernacularName": "Eurasisches Eichhörnchen",

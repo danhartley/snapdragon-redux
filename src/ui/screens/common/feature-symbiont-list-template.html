@@ -1,0 +1,18 @@
+<div class="feature-symbiont-list scrollable">
+    <table>
+        <thead>
+            <tr>
+                <th>Association with</th>
+                <th>As</th>
+                <th>Relationship</th>
+            </tr>
+        </thead>
+        <tbody data-repeat-feature="{{ symbiontTraits }}">
+            <tr>
+                <td class="js-species-card-link"><span data-toggle="{{ feature.modal }}" data-name="{{ feature.symbiont }}" data-target="#speciesCardModal" class="{{ feature.className }}">{{ feature.symbiont }}</span></td>
+                <td>{{ feature.description }}</td>
+                <td>{{ feature.type }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

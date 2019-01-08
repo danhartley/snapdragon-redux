@@ -113,6 +113,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     const epithet = itemProperties.latin(item.species);
     const latin = epithet ? `${item.species}: ${epithet.en}` : '';
     const rank = "species";
+    item.vernacularName = item.vernacularName || itemProperties.getVernacularName(item, config);
     const family = taxa.find(f => f.name === item.family);
     const familyName = family ? family.name : item.taxonomy.family;
     const familyVernacularNames = itemProperties.familyVernacularNames(item.family, config.language, taxa);
@@ -186,7 +187,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     }
 
     lookALikes(collection, item, traits, config, isModalMode);
-    renderFeatures(item, traits, config, document.querySelector('.js-feature-types'));
+    renderFeatures(item, traits, config, document.querySelector('.js-feature-types'), isModalMode);
     
     const continueBtn = document.querySelector('.js-species-card-btn button');
 

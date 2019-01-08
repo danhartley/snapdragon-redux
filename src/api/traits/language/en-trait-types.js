@@ -56,7 +56,20 @@ export const english = {
         HIBERNATING_STAGE: 'Hibernating stage',
         WING_SPAN: 'Wing span',
         FOOD: 'Food',
-        TROPHIC_LEVEL: 'Trophic level'
+        TROPHIC_LEVEL: 'Trophic level',
+        SYMBIOSIS: 'Symbiosis',
+        LEAF_EDGE: 'Leaf edge',
+        SHELTER: 'Shelter',
+        ACTIVE: 'Active',
+        PREDATOR: 'Predator',
+        DISEASE: 'Disease',
+        THREAT: 'Threat',
+        SEXUAL_DIMORPHISM: 'Sexual dimorphism',
+        MATING: 'Mating',
+        LITTER_SIZE: 'Litter size',
+        YOUNG: 'Young',
+        GESTATION: 'Gestation',
+        WEANING: 'Weaning'
     },
     howEdible : {
         CHOICE : 'Choice',
@@ -107,7 +120,8 @@ export const english = {
         MAQUIS: 'Maquis',
         SAVANNA: 'Savanna',
         FOREST_STEPPE: 'Forest steppe',        
-        MEADOW_STEPPE: 'meadow steppe',        
+        MEADOW_STEPPE: 'meadow steppe',
+        BOREAL: 'Boreal'
     },
     ecoType : {
         SAPROTROPHIC : 'Saprotrophic',
@@ -305,11 +319,49 @@ export const english = {
         GRASS: 'Grass',
         ROTTEN_FRUIT: 'Rotten fruit',
         NECTAR: 'Nectar',
-        HONEYDEW: 'Honeydew'
+        HONEYDEW: 'Honeydew',
+        SEEDS: 'Seeds',
+        NUTS: 'Nuts',
+        BERRIES: 'Berries'
     },
     developmentStage: {
         ADULT: 'Adult',
         CATERPILLAR: 'Caterpillar',
         PUPA: 'Pupa'
+    },
+    symbiosis : {
+        MUTUALISM: 'Mutualism',
+        COMMENSALISM: 'Commensalism',
+        PREDATION: 'Predation',
+        PARASITISM: 'Parasitism',
+        HERBIVORY: 'Herbivory',        
+        COMPETITION: 'Competition',
+    },
+    shelter: {
+        DREY: 'Drey'
+    },
+    active: {
+        CREPUSCULAR: 'Crepuscular',
+        DIURNAL: 'Diurnal',
+        NOCTURNAL: 'Nocturnal',
+        MATUTINAL: 'Matutinal',
+        VESPERTINE: 'Vespertine'
+    },
+    month: {
+        JANUARY: 'January',
+        FEBRUARY: 'February',
+        MARCH: 'March',
+        APRIL: 'April',
+        MAY: 'May',
+        JUNE: 'June',
+        JULY: 'July',
+        AUGUST: 'August',
+        SEPTEMBER: 'September',
+        OCTOBER: 'October',
+        NOVEMBER: 'November',
+        DECEMBER: 'December',
+    },
+    young: {
+        KIT: 'Kit'
     }
 };

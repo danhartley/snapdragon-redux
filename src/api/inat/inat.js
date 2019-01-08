@@ -1,41 +1,12 @@
 import * as R from 'ramda';
 
-import { fruit } from 'api/snapdragon/fruit';
-import { vegetables } from 'api/snapdragon/vegetables';
-import { insects } from 'api/snapdragon/insects';
-// import { herbsAndSpices } from 'api/snapdragon/herbs-and-spices';
-import { deciduousAndEvergreenTrees } from 'api/rhs/deciduous-evergreen-trees';
-
-import { birds } from 'api/snapdragon/common-city-birds';
-import { mushrooms } from 'api/snapdragon/mushrooms';
-import { weeds } from 'api/rhs/weeds';
-import { lichen } from 'api/snapdragon/lichen';
-
-import { plants } from 'api/snapdragon/plants';
-import { local } from 'api/snapdragon/local';
-import { mammals } from 'api/snapdragon/mammals';
-
+import { species } from 'api/species';
 import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
 
 export const getInatSpecies = (latitude, longitude, config) => {
-
-    const snapdragon = [ 
-        ...birds,
-        ...mushrooms,
-        ...fruit,
-        ...vegetables,
-        ...insects,
-        // ...herbsAndSpices,
-        ...deciduousAndEvergreenTrees,
-        ...weeds,
-        ...lichen,
-        ...plants,
-        ...local,
-        ...mammals
-    ];
-    
-    const names = snapdragon.map(item => item.name);
+  
+    const names = species.map(item => item.name);
 
     const daysAway = (when, days) => {
         let dateFromDays = new Date();
@@ -75,7 +46,7 @@ export const getInatSpecies = (latitude, longitude, config) => {
     const observations = getInatObservations(latitude, longitude, config).then(observations => {
         return observations.map(observation => {
             if(R.contains(observation.taxon.name, names)) {
-                return { ...snapdragon.find(item => item.name === observation.taxon.name) };
+                return { ...species.find(item => item.name === observation.taxon.name) };
             } 
             else {
                 console.log(observation.taxon.name);

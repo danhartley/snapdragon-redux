@@ -997,304 +997,56 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Admiral",
-        "language": "en",
-        
-      },
-      {
         "vernacularName": "Almirante Rojo",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Almirante Rojo",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Almirante Rojo",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Almirante Rojo",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Almirante Rojo",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Almirante Rojo",
-        "language": "en",
-        
+        "language": "es",        
       },
       {
         "vernacularName": "Almirante-vermelho",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Almirante-vermelho",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Almirante-vermelho",
-        "language": "en",
-        
+        "language": "pt",        
       },
       {
         "vernacularName": "Atalanta",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Atalanta",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Atalanta",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Atalanta",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Atalanta",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Atalanta",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral (Northern Hemisphere)",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "amiraali",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "amiraali",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "numerada",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "numerada",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "numerada",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "numerada",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "red admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "red admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "vulcain",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "vulcain",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "vulcain",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
+        "language": "es",        
       },
       {
         "vernacularName": "Admiral",
-        "language": "de",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "Red Admiral",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "amiral",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "numerada",
-        "language": "es",
-        
+        "language": "es",        
       },
       {
         "vernacularName": "numéro quatre-vingt-dix-huit",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "papillon à numéro",
-        "language": "fr",
-        
-      },
-      {
-        "vernacularName": "red admiral",
-        "language": "en",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "vanesse amirale",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "vulcain",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "vulcano",
-        "language": "it",
-        
+        "language": "it",        
       },
       {
         "vernacularName": "Red admiral",
-        "language": "en",
-        
+        "language": "en",        
       }
     ],
     "taxonomy": {

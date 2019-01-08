@@ -1,7 +1,6 @@
 import * as traitEnums from 'api/traits/trait-types';
 
-export const getBirdTraits = (enums) => {
-    const SD = enums || traitEnums;
+const getTraits = SD => {    
     return [
     { name: 'Passer domesticus', traits: [
         { name: SD.name.RANK, value: '1', description: 'common', language: 'en' },
@@ -83,4 +82,15 @@ export const getBirdTraits = (enums) => {
         { name: 'song', value: '403054', description: 'xeno-canto id' },
     ] },
     ];
+};
+
+export const getBirdTraits = (enums) => {
+    const SD = enums || traitEnums;
+    const traits = getTraits(SD);
+    traits.forEach(species => {
+        if(!species.traits.find(trait => trait.name === 'TROPHIC_LEVEL')) {
+            species.traits.push({ name: SD.name.TROPHIC_LEVEL, value: 3.6 })
+        }
+    });
+    return traits;
 };

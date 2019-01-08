@@ -6,9 +6,9 @@ export const infoSlider = (item, traits, family, parent) => {
     const speciesTraits = traits.find(c => c.name === item.name) || { traits: [] };
     const familyTraits = (family && family.traits) ? family.traits : [];
     if(speciesTraits.traits.length === 0 && familyTraits.length ===0) return;
-    const info = { traits: speciesTraits.traits.concat(familyTraits) };
+    const species = { traits: speciesTraits.traits.concat(familyTraits) };
 
-    if(!info.traits) return;
+    if(!species.traits) return;
 
     const slider = document.createElement('template');
 
@@ -16,29 +16,17 @@ export const infoSlider = (item, traits, family, parent) => {
 
     parent.innerHTML = '';
 
-    const getDefaultLevel = item => {
-        if(item.taxonomy.kingdom.toUpperCase() === 'PLANTAE') return { name: 'Trophic level', value: 1 };
-        if(item.taxonomy.class.toUpperCase() === 'INSECTA') return { name: 'Trophic level', value: 2.2 };
-        if(item.taxonomy.class.toUpperCase() === 'AVES') return { name: 'Trophic level', value: 3.6 };
-        
-    };
-
-    let trophicLevel = info.traits.find(trait => trait.name === 'TROPHIC_LEVEL');
-
-    if(!trophicLevel) trophicLevel = getDefaultLevel(item);
-    if(trophicLevel) info.traits.push(trophicLevel);
-
-    info.traits.forEach(trait => {
+    species.traits.forEach(trait => {
         if(!trait.value && trait.values) {
             trait.value = trait.values.join(', ');
         }
     });
     
-    renderTemplate({ info }, slider.content, parent);
+    renderTemplate({ species }, slider.content, parent);
     
     document.querySelector('#traitSlider .carousel-item:nth-child(1)').classList.add('active');
 
-    const traitCount = info.traits.length;
+    const traitCount = species.traits.length;
 
     if(traitCount === 1) {
         document.querySelectorAll('.carousel.slide a').forEach(control => {

@@ -299,6 +299,7 @@
     
     #traitSlider .carousel-item div {
         padding: .5rem;
+        font-size: 1rem;
     }
 
     .summary-scores {
@@ -373,4 +374,7 @@
     #imageModal .modal-body .imageSlider .carousel-item {
         height: 70vh;
     }      
+    .feature-symbiont-list.scrollable {
+        max-height: 9rem;
+    }
 }
