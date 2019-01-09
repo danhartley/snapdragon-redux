@@ -38,6 +38,9 @@ export let shelter = english.shelter;
 export let active = english.active;
 export let young = english.young;
 export let month = english.month;
+export let female = english.female;
+export let male = english.male;
+export let diet = english.diet;
 
 let language;
 
@@ -100,7 +103,10 @@ export const updateLanguage = (config) => {
         shelter,
         active,
         month,
-        young
+        young,
+        female,
+        male,
+        diet
     }
 
     actions.boundUpdateEnums(enums);   

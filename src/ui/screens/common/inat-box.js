@@ -24,8 +24,8 @@ export async function renderInatDataBox(parent, item, config) {
 
         const taxonLink = `https://www.inaturalist.org/taxa/${taxonId}`;
 
-        document.querySelector('.js-taxon-count').innerHTML = taxonCount.toLocaleString();
-        document.querySelector('.js-taxon-link').setAttribute('href', taxonLink);
+        parent.querySelector('.js-taxon-count').innerHTML = taxonCount.toLocaleString();
+        parent.querySelector('.js-taxon-link').setAttribute('href', taxonLink);
     });
 
     const place = await getPlace(config);
@@ -44,8 +44,8 @@ export async function renderInatDataBox(parent, item, config) {
             placeTaxonCount += Number.parseInt(taxon.count);
         }); 
 
-        document.querySelector('.js-place').innerHTML = country;
-        document.querySelector('.js-place-taxon-count').innerHTML = placeTaxonCount.toLocaleString();
+        parent.querySelector('.js-place').innerHTML = country;
+        parent.querySelector('.js-place-taxon-count').innerHTML = placeTaxonCount.toLocaleString();
     });
     
 }

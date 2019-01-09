@@ -39,6 +39,10 @@
         border: .05rem solid var(--snap-species-header-background);
       }
 
+      .modal-content .species.revision.card {
+          padding: 0;
+      }
+
       .non-taxon.revision.card > div:nth-child(1) {
           margin: .5rem;
       }
@@ -297,7 +301,7 @@
         height: 60vh;
     }
     
-    #traitSlider .carousel-item div {
+    .info.carousel.slide .carousel-item div {
         padding: .5rem;
         font-size: 1rem;
     }

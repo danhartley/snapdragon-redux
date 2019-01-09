@@ -69,7 +69,17 @@ export const english = {
         LITTER_SIZE: 'Litter size',
         YOUNG: 'Young',
         GESTATION: 'Gestation',
-        WEANING: 'Weaning'
+        WEANING: 'Weaning',
+        PREY: 'Prey',
+        FEMALE: 'Female',
+        MALE: 'Male',
+        TAIL_LENGTH: 'Tail length',
+        MAX_SPEED: 'Maximum speed',
+        KIN_SELECTION: 'Kin selection',
+        DIET: 'Diet',
+        ALTRICIAL: 'Altricial',
+        MOULTING: 'Moulting',
+        MATURITY: 'Maturity'
     },
     howEdible : {
         CHOICE : 'Choice',
@@ -121,7 +131,8 @@ export const english = {
         SAVANNA: 'Savanna',
         FOREST_STEPPE: 'Forest steppe',        
         MEADOW_STEPPE: 'meadow steppe',
-        BOREAL: 'Boreal'
+        BOREAL: 'Boreal',
+        SCRUB: 'Scrub'
     },
     ecoType : {
         SAPROTROPHIC : 'Saprotrophic',
@@ -257,7 +268,8 @@ export const english = {
         POISON: 'Poison',
         FODDER: 'Fodder',
         GREEN_MANURE: 'Green manure',
-        MEDICINE: 'Medicine'
+        MEDICINE: 'Medicine',
+        FUR: 'Fur'
     },
     nonTaxaType: {
         FORM : 'Form'
@@ -322,7 +334,9 @@ export const english = {
         HONEYDEW: 'Honeydew',
         SEEDS: 'Seeds',
         NUTS: 'Nuts',
-        BERRIES: 'Berries'
+        BERRIES: 'Berries',
+        HERBAGE: 'Herbage',
+        SWARD: 'Sward'
     },
     developmentStage: {
         ADULT: 'Adult',
@@ -338,7 +352,10 @@ export const english = {
         COMPETITION: 'Competition',
     },
     shelter: {
-        DREY: 'Drey'
+        DREY: 'Drey',
+        BURROW: 'Burrow',
+        DEN: 'Den',
+        WARREN: 'Warren'
     },
     active: {
         CREPUSCULAR: 'Crepuscular',
@@ -363,5 +380,15 @@ export const english = {
     },
     young: {
         KIT: 'Kit'
+    },
+    female: {
+        VIXEN: 'Vixen',
+        DOE: 'Doe'
+    }, male: {
+        BUCK: 'Buck'
+    },
+    diet: {
+        OMNIVORE: 'Omnivore',
+        CARNIVORE: 'Carnivore'
     }
 };

@@ -84,7 +84,7 @@ export const renderFeatures = (item, traits, config, parent, isModalMode) => {
                 const name = event.target.dataset.name;
                 const selectedItem = species.find(i => i.name === name);
                 selectedItem.species = itemProperties.getSpeciesName(item.name);
-                renderCard({ name: 'Local species', items: species }, true, selectedItem, document.querySelector('#speciesCardModal .js-modal-body'));
+                renderCard({ name: 'Local species', items: species }, true, selectedItem, document.querySelector('#speciesCardModal .js-modal-body'), false);
             });
         });
         

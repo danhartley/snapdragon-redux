@@ -1550,28 +1550,28 @@ tr.table-row:nth-child(2n+1) {
   width: 100%;
 }
 
-.info-box #traitSlider {
+.info-box .carousel.slide {
   float: right;
   width: 100%;
   background-color: var(--snap-species-header-background);
 }
 
-#traitSlider .carousel-item div {
+.info.carousel.slide .carousel-item div {
   padding: 0rem;
   text-align: center;  
   margin: 0 15%;
   font-size: .9rem;
 }
 
-#traitSlider .carousel-item div:nth-child(1) {
+.info.carousel.slide .carousel-item div:nth-child(1) {
   background-color: rgba(128, 128, 128,.3);
 }
 
-#traitSlider .carousel-item div:nth-child(2) {
+.info.carousel.slide .carousel-item div:nth-child(2) {
   background-color: rgba(128, 128, 128,.1);
 }
 
-#traitSlider .carousel-control-next-icon {
+.info.carousel-control .carousel-control-next-icon {
   color: black;
 }
 
@@ -2115,6 +2115,7 @@ a.collection-disabled {
   max-height: 6rem;
   min-height: 5rem;
   width: 100%;
+  margin: 0 0 0 .05rem;
 }
 
 .feature-symbiont-list table {
@@ -2138,4 +2139,8 @@ a.collection-disabled {
 
 .feature-symbiont-list th {
   text-transform: uppercase;  
+}
+
+.feature-symbiont-list .underline-link {
+  text-transform: initial;
 }

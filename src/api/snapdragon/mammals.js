@@ -1038,5 +1038,678 @@ export const mammals = [
       "family": "Suidae",
       "kingdom": "Animalia",
       "eolName": "Sus scrofa Linnaeus, 1758"
+    },
+    {
+      "id": "328609",
+      "name": "Vulpes vulpes",
+      "images": [
+        {
+          "title": "My friend Kiki",
+          "rightsHolder": "normalityrelief",
+          "source": "https://www.flickr.com/photos/normalityrelief/5735258785/",
+          "license": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "url": "80/5f/6e/542.5735258785.jpg",
+          "thumb": "80/5f/6e/542.5735258785.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/42846332@N00'>normalityrelief</a>",
+            "homepage": "http://www.flickr.com/photos/42846332@N00",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Redfox - Flickr - USDAgov.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Redfox_-_Flickr_-_USDAgov.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/cb/c8/509.17800743.jpg",
+          "thumb": "56/cb/c8/509.17800743.98x68.jpg"
+        },
+        {
+          "title": "Vvflavescens.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Vvflavescens.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/3a/21/509.19789006.jpg",
+          "thumb": "57/3a/21/509.19789006.98x68.jpg"
+        },
+        {
+          "title": "Red Fox Lateral.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Red_Fox_Lateral.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/89/7f/509.11476300.jpg",
+          "thumb": "55/89/7f/509.11476300.98x68.jpg"
+        },
+        {
+          "title": "The fox beside the cottage 02.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:The_fox_beside_the_cottage_02.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/6e/a4/509.2062643.jpg",
+          "thumb": "57/6e/a4/509.2062643.98x68.jpg"
+        },
+        {
+          "title": "White Footed Fox pup with lizard kill.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:White_Footed_Fox_pup_with_lizard_kill.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "63/1b/1f/509.48225999.jpg",
+          "thumb": "63/1b/1f/509.48225999.98x68.jpg"
+        },
+        {
+          "title": "White Footed Fox pup suckling.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:White_Footed_Fox_pup_suckling.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "63/1b/20/509.48226000.jpg",
+          "thumb": "63/1b/20/509.48226000.98x68.jpg"
+        },
+        {
+          "title": "File:ã­ã¿ã­ãã - panoramio.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:%E3%82%AD%E3%82%BF%E3%82%AD%E3%83%84%E3%83%8D_-_panoramio.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "64/59/b6/509.53027965.jpg",
+          "thumb": "64/59/b6/509.53027965.98x68.jpg"
+        },
+        {
+          "title": "Vulpes vulpes schrencki 03.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Vulpes_vulpes_schrencki_03.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "68/56/61/509.9696626.jpg",
+          "thumb": "68/56/61/509.9696626.98x68.jpg"
+        },
+        {
+          "title": "Vulpes vulpes schrencki 07 a.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Vulpes_vulpes_schrencki_07_a.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "68/58/b8/509.9707494.jpg",
+          "thumb": "68/58/b8/509.9707494.98x68.jpg"
+        },
+        {
+          "title": "White-footed fox in its Desert Habitat (cropped).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:White-footed_fox_in_its_Desert_Habitat_(cropped).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "64/9d/af/509.54862125.jpg",
+          "thumb": "64/9d/af/509.54862125.98x68.jpg"
+        }
+      ],
+      "names": [
+        {
+          "vernacularName": "Fox",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Red fox",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Raposa-vermelha",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Raposa",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Black Fox",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Zorro Rojo",
+          "language": "es"
+        },
+        {
+          "vernacularName": "rabosa",
+          "language": "es"
+        },
+        {
+          "vernacularName": "zorro común",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Cross Fox",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Renard roux",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Renard commun",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Renard rouge",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Goupil",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Rotfuchs",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Silver Fox",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Zorro",
+          "language": "es"
+        }
+      ],
+      "taxonomy": {
+        "usageKey": 5219243,
+        "scientificName": "Vulpes vulpes (Linnaeus, 1758)",
+        "canonicalName": "Vulpes vulpes",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 98,
+        "matchType": "EXACT",
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "order": "Carnivora",
+        "family": "Canidae",
+        "genus": "Vulpes",
+        "species": "Vulpes vulpes",
+        "kingdomKey": 1,
+        "phylumKey": 44,
+        "classKey": 359,
+        "orderKey": 732,
+        "familyKey": 9701,
+        "genusKey": 5219234,
+        "speciesKey": 5219243,
+        "synonym": false,
+        "class": "Mammalia"
+      },
+      "family": "Canidae",
+      "kingdom": "Animalia",
+      "eolName": "Vulpes vulpes (Linnaeus, 1758)"
+    },
+    {
+      "id": "1178684",
+      "name": "Erinaceus europaeus",
+      "images": [
+        {
+          "title": "Erinaceus europaeus",
+          "rightsHolder": "Jrg Hempel",
+          "source": "https://www.flickr.com/photos/joerghempel/4197968070/",
+          "license": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "url": "7f/e1/9a/542.4197968070.jpg",
+          "thumb": "7f/e1/9a/542.4197968070.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/32023375@N06'>Jrg Hempel</a>",
+            "homepage": "http://www.flickr.com/photos/32023375@N06",
+            "role": "photographer"
+          }
+        },
+        {
+          "rightsHolder": "Tony Wills",
+          "source": "https://www.inaturalist.org/photos/1235342",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "29/3b/80/18.https___www_inaturalist_org_photos_1235342.jpg",
+          "thumb": "29/3b/80/18.https___www_inaturalist_org_photos_1235342.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Tony Wills",
+          "source": "https://www.inaturalist.org/photos/1430095",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "2a/48/93/18.https___www_inaturalist_org_photos_1430095.jpg",
+          "thumb": "2a/48/93/18.https___www_inaturalist_org_photos_1430095.98x68.jpg"
+        },
+        {
+          "rightsHolder": "Francesco Cecere",
+          "source": "https://www.inaturalist.org/photos/6179197",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "46/d5/f2/18.https___www_inaturalist_org_photos_6179197.jpg",
+          "thumb": "46/d5/f2/18.https___www_inaturalist_org_photos_6179197.98x68.jpg"
+        },
+        {
+          "title": "Erinaceus europaeus (Marek Szczepanek).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Erinaceus_europaeus_(Marek_Szczepanek).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/7b/c9/509.112571.jpg",
+          "thumb": "55/7b/c9/509.112571.98x68.jpg"
+        },
+        {
+          "title": "Erinaceus europaeus (head).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Erinaceus_europaeus_(head).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/90/c3/509.11617703.jpg",
+          "thumb": "55/90/c3/509.11617703.98x68.jpg"
+        },
+        {
+          "title": "Hedgehog (Erinaceus europeaus), Keen of Hamar - geograph.org.uk - 1372612.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Hedgehog_(Erinaceus_europeaus),_Keen_of_Hamar_-_geograph.org.uk_-_1372612.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/07/09/509.14107932.jpg",
+          "thumb": "56/07/09/509.14107932.98x68.jpg"
+        },
+        {
+          "title": "Erinaceus.europaeus.tracks.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Erinaceus.europaeus.tracks.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/7b/d7/509.1621750.jpg",
+          "thumb": "56/7b/d7/509.1621750.98x68.jpg"
+        }
+      ],
+      "names": [
+        {
+          "vernacularName": "Hedgehog",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Common hedgehog",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Western European hedgehog",
+          "language": "en"
+        },
+        {
+          "vernacularName": "ouriço-cacheiro",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "ouriço-terrestre",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Riccio comune",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Westeuropischer Igel",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Westigel",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Braunbrustigel",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Erizo Europeo Occidental",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Hérisson d'Europe occidentale",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Westigel",
+          "language": "de"
+        },
+      ],
+      "taxonomy": {
+        "usageKey": 5219616,
+        "scientificName": "Erinaceus europaeus Linnaeus, 1758",
+        "canonicalName": "Erinaceus europaeus",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 98,
+        "matchType": "EXACT",
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "order": "Erinaceomorpha",
+        "family": "Erinaceidae",
+        "genus": "Erinaceus",
+        "species": "Erinaceus europaeus",
+        "kingdomKey": 1,
+        "phylumKey": 44,
+        "classKey": 359,
+        "orderKey": 829,
+        "familyKey": 5722,
+        "genusKey": 8216553,
+        "speciesKey": 5219616,
+        "synonym": false,
+        "class": "Mammalia"
+      },
+      "family": "Erinaceidae",
+      "kingdom": "Animalia",
+      "eolName": "Erinaceus europaeus Linnaeus, 1758"
+    },
+    {
+      "id": "46559121",
+      "name": "Lutra lutra",
+      "images": [
+        {
+          "title": "European Otter {Lutra lutra}",
+          "rightsHolder": "Drew Avery",
+          "source": "https://www.flickr.com/photos/33590535@N06/5584351087/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/53/77/542.5584351087.jpg",
+          "thumb": "80/53/77/542.5584351087.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/33590535@N06'>Drew Avery</a>",
+            "homepage": "http://www.flickr.com/photos/33590535@N06",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Eurasian Otter (Lutra lutra) (3).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Eurasian_Otter_(Lutra_lutra)_(3).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/b5/a4/509.12340140.jpg",
+          "thumb": "55/b5/a4/509.12340140.98x68.jpg"
+        },
+        {
+          "title": "Otter entering the water - geograph.org.uk - 550660.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Otter_entering_the_water_-_geograph.org.uk_-_550660.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/e7/47/509.13088183.jpg",
+          "thumb": "55/e7/47/509.13088183.98x68.jpg"
+        },
+        {
+          "title": "Otters - geograph.org.uk - 550641.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Otters_-_geograph.org.uk_-_550641.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/e7/48/509.13088184.jpg",
+          "thumb": "55/e7/48/509.13088184.98x68.jpg"
+        },
+        {
+          "title": "Otter at Skeo Taing - geograph.org.uk - 603498.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Otter_at_Skeo_Taing_-_geograph.org.uk_-_603498.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/e9/36/509.13146447.jpg",
+          "thumb": "55/e9/36/509.13146447.98x68.jpg"
+        },
+        {
+          "title": "Otter cub at Skeo Taing - geograph.org.uk - 603494.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Otter_cub_at_Skeo_Taing_-_geograph.org.uk_-_603494.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/e9/37/509.13146448.jpg",
+          "thumb": "55/e9/37/509.13146448.98x68.jpg"
+        },
+        {
+          "title": "Otter in Loch Spelve - geograph.org.uk - 634211.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Otter_in_Loch_Spelve_-_geograph.org.uk_-_634211.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/e9/eb/509.13177635.jpg",
+          "thumb": "55/e9/eb/509.13177635.98x68.jpg"
+        },
+        {
+          "title": "The Otter Family - geograph.org.uk - 844362.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:The_Otter_Family_-_geograph.org.uk_-_844362.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/f6/b6/509.13532152.jpg",
+          "thumb": "55/f6/b6/509.13532152.98x68.jpg"
+        },
+        {
+          "title": "Lutra lutra 02 by-dpc.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Lutra_lutra_02_by-dpc.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/bc/f1/509.17502757.jpg",
+          "thumb": "56/bc/f1/509.17502757.98x68.jpg"
+        },
+        {
+          "title": "Nutria 2012-10-20 2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Nutria_2012-10-20_2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/b7/12/509.22228574.jpg",
+          "thumb": "57/b7/12/509.22228574.98x68.jpg"
+        },
+        {
+          "title": "Flickr - law keven - Just a Lazy Sunday Afternoon....jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Flickr_-_law_keven_-_Just_a_Lazy_Sunday_Afternoon....jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/c4/65/509.22482575.jpg",
+          "thumb": "57/c4/65/509.22482575.98x68.jpg"
+        },
+        {
+          "title": "Flickr - law keven - I sleep like a log...or should that be on a log..lol..-O))).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Flickr_-_law_keven_-_I_sleep_like_a_log...or_should_that_be_on_a_log..lol..-O))).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/c4/69/509.22482667.jpg",
+          "thumb": "57/c4/69/509.22482667.98x68.jpg"
+        },
+        {
+          "title": "Flickr - law keven - Wet n Wild...jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Flickr_-_law_keven_-_Wet_n_Wild...jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/c4/6c/509.22482725.jpg",
+          "thumb": "rootNode.querySelector57/c4/6c/509.22482725.98x68.jpg"
+        },
+        {
+          "title": "Otter 1 (2761803463).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Otter_1_(2761803463).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/d6/d1/509.27317033.jpg",
+          "thumb": "58/d6/d1/509.27317033.98x68.jpg"
+        }
+      ],
+      "names": [
+        {
+          "vernacularName": "common otter",
+          "language": "en"
+        },
+        {
+          "vernacularName": "european otter",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Eurasian river otter",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Eurasian Otter",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Europäischer Fischotter",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Loutre commune",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Loutre d'Europe",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Loutre de rivière",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Nutria Común",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Nutria",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Old World Otter",
+          "language": "en"
+        },
+        {
+          "vernacularName": "lontra comune",
+          "language": "it",
+          "eol_preferred": false
+        },
+        {
+          "vernacularName": "lontra",
+          "language": "it"
+        },        
+      ],
+      "taxonomy": {
+        "usageKey": 2433753,
+        "scientificName": "Lutra lutra (Linnaeus, 1758)",
+        "canonicalName": "Lutra lutra",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 98,
+        "matchType": "EXACT",
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "order": "Carnivora",
+        "family": "Mustelidae",
+        "genus": "Lutra",
+        "species": "Lutra lutra",
+        "kingdomKey": 1,
+        "phylumKey": 44,
+        "classKey": 359,
+        "orderKey": 732,
+        "familyKey": 5307,
+        "genusKey": 8226627,
+        "speciesKey": 2433753,
+        "synonym": false,
+        "class": "Mammalia"
+      },
+      "family": "Mustelidae",
+      "kingdom": "Animalia",
+      "eolName": "Lutra lutra (Linnaeus, 1758)"
+    },
+    {
+      "id": "328046",
+      "name": "Meles meles",
+      "images": [
+        {
+          "title": "Heubach badger.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Heubach_badger.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "https://content.eol.org/data/media/55/97/e2/509.1177965.jpg",
+          "thumb": "https://content.eol.org/data/media/55/97/e2/509.1177965.98x68.jpg"
+        },
+        {
+          "title": "Taesson passeyes.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Taesson_passeyes.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "https://content.eol.org/data/media/56/18/56/509.1463358.jpg",
+          "thumb": "https://content.eol.org/data/media/56/18/56/509.1463358.98x68.jpg"
+        },
+        {
+          "title": "Meles.meles.tracks.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Meles.meles.tracks.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "https://content.eol.org/data/media/56/7b/e1/509.1621810.jpg",
+          "thumb": "https://content.eol.org/data/media/56/7b/e1/509.1621810.98x68.jpg"
+        },
+        {
+          "title": "KCC2008Wildwood161.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:KCC2008Wildwood161.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/56/b6/1f/509.17383297.jpg",
+          "thumb": "https://content.eol.org/data/media/56/b6/1f/509.17383297.98x68.jpg"
+        },
+        {
+          "title": "Meles meles norway 1.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Meles_meles_norway_1.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "https://content.eol.org/data/media/5a/5f/7a/509.1080934.jpg",
+          "thumb": "https://content.eol.org/data/media/5a/5f/7a/509.1080934.98x68.jpg"
+        },
+        {
+          "title": "Meles.meles.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Meles.meles.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "https://content.eol.org/data/media/5b/7d/1f/509.1621804.jpg",
+          "thumb": "https://content.eol.org/data/media/5b/7d/1f/509.1621804.98x68.jpg"
+        },
+        {
+          "title": "British mammals (Pl. 18) BHL48418612.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:British_mammals_(Pl._18)_BHL48418612.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "https://content.eol.org/data/media/61/89/45/509.44593599.jpg",
+          "thumb": "https://content.eol.org/data/media/61/89/45/509.44593599.98x68.jpg"
+        }
+      ],
+      "names": [
+        {
+          "vernacularName": "badger",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Eurasian badger",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Old World badger",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Blaireau Européen",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Europäischer Dachs",
+          "language": "de"
+        },
+        {
+          "vernacularName": "tejón común",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Tejón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "teixó",
+          "language": "cat"
+        },
+        {
+          "vernacularName": "texugo-europeu",
+          "language": "pt"
+        }
+      ],
+      "taxonomy": {
+        "usageKey": 2433875,
+        "scientificName": "Meles meles (Linnaeus, 1758)",
+        "canonicalName": "Meles meles",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 98,
+        "matchType": "EXACT",
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "order": "Carnivora",
+        "family": "Mustelidae",
+        "genus": "Meles",
+        "species": "Meles meles",
+        "kingdomKey": 1,
+        "phylumKey": 44,
+        "classKey": 359,
+        "orderKey": 732,
+        "familyKey": 5307,
+        "genusKey": 2433867,
+        "speciesKey": 2433875,
+        "synonym": false,
+        "class": "Mammalia"
+      },
+      "family": "Mustelidae",
+      "kingdom": "Animalia",
+      "eolName": "Meles meles (Linnaeus, 1758)"
     }
   ]
