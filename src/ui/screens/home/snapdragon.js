@@ -19,9 +19,21 @@ const renderSnapdragonTempla = (snapdragonTemplate, DOM, snapdragonCollections, 
     const parent = DOM.leftBody;
     parent.innerHTML = '';
 
-    const collections = (filters && filters.length !== 0)
-        ? snapdragonCollections.filter(c => R.contains(c.iconicTaxon, filters))
-        : snapdragonCollections;
+    let collections = [];
+    
+    if(filters && filters.length !== 0) {
+        snapdragonCollections.forEach(collection => {
+            collection.iconicTaxa.forEach(iconicTaxon => {
+                filters.forEach(filter => {
+                    if(filter === iconicTaxon) {
+                        collections.push(collection);
+                    }
+                })
+            })
+        })
+    } else {
+        collections = snapdragonCollections;
+    }
 
     const context = { collections };
 

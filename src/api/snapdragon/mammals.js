@@ -964,7 +964,8 @@ export const mammals = [
       "names": [
         {
             "vernacularName": "wild boar",
-            "language": "en"
+            "language": "en",
+            wikiSearchTerm: true
         },
         {
           "vernacularName": "jabal",
@@ -1594,59 +1595,64 @@ export const mammals = [
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Heubach_badger.jpg",
           "license": "http://creativecommons.org/licenses/publicdomain/",
-          "url": "https://content.eol.org/data/media/55/97/e2/509.1177965.jpg",
-          "thumb": "https://content.eol.org/data/media/55/97/e2/509.1177965.98x68.jpg"
+          "url": "55/97/e2/509.1177965.jpg",
+          "thumb": "55/97/e2/509.1177965.98x68.jpg"
         },
         {
           "title": "Taesson passeyes.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Taesson_passeyes.jpg",
           "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-          "url": "https://content.eol.org/data/media/56/18/56/509.1463358.jpg",
-          "thumb": "https://content.eol.org/data/media/56/18/56/509.1463358.98x68.jpg"
+          "url": "56/18/56/509.1463358.jpg",
+          "thumb": "56/18/56/509.1463358.98x68.jpg"
         },
         {
           "title": "Meles.meles.tracks.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Meles.meles.tracks.jpg",
           "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-          "url": "https://content.eol.org/data/media/56/7b/e1/509.1621810.jpg",
-          "thumb": "https://content.eol.org/data/media/56/7b/e1/509.1621810.98x68.jpg"
+          "url": "56/7b/e1/509.1621810.jpg",
+          "thumb": "56/7b/e1/509.1621810.98x68.jpg"
         },
         {
           "title": "KCC2008Wildwood161.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:KCC2008Wildwood161.jpg",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/56/b6/1f/509.17383297.jpg",
-          "thumb": "https://content.eol.org/data/media/56/b6/1f/509.17383297.98x68.jpg"
+          "url": "56/b6/1f/509.17383297.jpg",
+          "thumb": "56/b6/1f/509.17383297.98x68.jpg"
         },
         {
           "title": "Meles meles norway 1.JPG",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Meles_meles_norway_1.JPG",
           "license": "http://creativecommons.org/licenses/by/3.0/",
-          "url": "https://content.eol.org/data/media/5a/5f/7a/509.1080934.jpg",
-          "thumb": "https://content.eol.org/data/media/5a/5f/7a/509.1080934.98x68.jpg"
+          "url": "5a/5f/7a/509.1080934.jpg",
+          "thumb": "5a/5f/7a/509.1080934.98x68.jpg"
         },
         {
           "title": "Meles.meles.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:Meles.meles.jpg",
           "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-          "url": "https://content.eol.org/data/media/5b/7d/1f/509.1621804.jpg",
-          "thumb": "https://content.eol.org/data/media/5b/7d/1f/509.1621804.98x68.jpg"
+          "url": "5b/7d/1f/509.1621804.jpg",
+          "thumb": "5b/7d/1f/509.1621804.98x68.jpg"
         },
         {
           "title": "British mammals (Pl. 18) BHL48418612.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
           "source": "https://commons.wikimedia.org/wiki/File:British_mammals_(Pl._18)_BHL48418612.jpg",
           "license": "http://creativecommons.org/licenses/publicdomain/",
-          "url": "https://content.eol.org/data/media/61/89/45/509.44593599.jpg",
-          "thumb": "https://content.eol.org/data/media/61/89/45/509.44593599.98x68.jpg"
+          "url": "61/89/45/509.44593599.jpg",
+          "thumb": "61/89/45/509.44593599.98x68.jpg"
         }
       ],
       "names": [
+        {
+          "vernacularName": "European badger",
+          "language": "en",
+          wikiSearchTerm: true
+        },
         {
           "vernacularName": "badger",
           "language": "en"

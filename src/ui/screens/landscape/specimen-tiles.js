@@ -27,15 +27,17 @@ export const renderItemSpecimenTiles = item => {
 
     const number = 6;
 
+    const collectionItems = collection.allItems || collection.items;
+
     if(R.contains(layout.screens[1].name, familes)) {                
-        images = R.take(number, R.flatten(collection.items.filter(i => i.family === item.family).map(i => {
+        images = R.take(number, R.flatten(collectionItems.filter(i => i.family === item.family).map(i => {
             return { images: i.images, item: { name: i.name, itemCommon: i.names[0].vernacularName, vernacularName: i.names[0].vernacularName, names: i.names } };
         })));
 
         if(images.length < number) {
             let required = number - images.length;
             let pool = images.map(image => {
-                const item = collection.items.find(i => i.name === image.item.name);
+                const item = collectionItems.find(i => i.name === image.item.name);
                 return {
                     images: item.images,
                     item: { 
@@ -60,7 +62,7 @@ export const renderItemSpecimenTiles = item => {
         items = images.map(image => image.item);
         items.forEach(i => {
             const itemName = i.name;
-            i.images = collection.items.find(i => i.name === itemName).images;
+            i.images = collectionItems.find(i => i.name === itemName).images;
         });
         images = images.map((image, index) => {
             return prepImageForCarousel(image.images[0], index, image.item, config, imageUseCases.SPECIES_CARD);

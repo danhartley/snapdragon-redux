@@ -18,9 +18,11 @@ const extendCollection = selectedCollection => {
     let prepCollection = selectedCollection.type === 'skill'
         ? R.pipe(utils.shuffleArray)
         : R.pipe(helpers.extractScientificNames);
+
     const items = utils.sortBy(prepCollection(selectedCollection.items), 'snapIndex').filter(item => {
         return item.isDeselected === undefined || !item.isDeselected
     });
+    
     const rounds = items.length / moduleSize;
 
     const families = familyProps.getFamilyNames(items);
@@ -57,6 +59,5 @@ const extendCollection = selectedCollection => {
 };
 
 export const speciesStateHelper = {
-    collections,    
-    extendCollection
+    collections
 }

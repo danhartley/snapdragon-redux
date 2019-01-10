@@ -85,19 +85,19 @@ const definitionRevision = {
 
 // 1 point
 
-const imageToImageMatch = {
-    name: 'screen-image-to-image',
-    type:'test',
-    score: 1,
-    points: 1,
-    kind: 'MC',
-    given: 'Species specimens',
-    requirement: 'Species images',
-    screens: [
-        { ...specimen },
-        { ...species }
-    ]
-};
+// const imageToImageMatch = {
+//     name: 'screen-image-to-image',
+//     type:'test',
+//     score: 1,
+//     points: 1,
+//     kind: 'MC',
+//     given: 'Species specimens',
+//     requirement: 'Species images',
+//     screens: [
+//         { ...specimen },
+//         { ...species }
+//     ]
+// };
 
 const latinToCommonMatch = {
     name: 'screen-latin-to-common',

@@ -1,11 +1,11 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
+import { itemProperties } from 'ui/helpers/data-checking';
 import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
 import { collections } from 'snapdragon/eol-collections';
 import { getLocation } from 'geo/geo';
-import { speciesStateHelper } from 'redux/reducers/initial-state/initial-species-state';
 
 async function getItems(collection, config) {
     if(collection.id === 1) {
@@ -66,9 +66,22 @@ export async function itemHandler(collection, config, counter, callback) {
             item.collectionId =  collection.id;
         });
 
-        collection = speciesStateHelper.extendCollection(collection);
+        collection.items.forEach(item => {
+            
+            item.vernacularNames = itemProperties.getVernacularNames(item, config);
+            item.vernacularName = itemProperties.getVernacularName(item, config);   
+
+            const names = item.name.split(' ');
+            item.genus = names[0];
+            item.species = names[1];
+            item.name = names.slice(0,2).join(' ');
+        })
+
         collection.speciesRange = config.speciesRange;
         collection.iconicTaxa = config.iconicTaxa;
+
+        collection.speciesNames = collection.items.map(item => item.name);
+        collection.speciesVernacularNames = itemProperties.vernacularNamesForItems(collection.items, config);
 
         actions.boundChangeCollection({ config, collection });
     }
@@ -76,9 +89,4 @@ export async function itemHandler(collection, config, counter, callback) {
     if(collection.items) {
         callback();
     }    
-}
-
-export const extendCollection = (config, collection) => {
-    const extendedCollection = speciesStateHelper.extendCollection(collection);
-    actions.boundChangeCollection({ config, collection: extendedCollection });
 };

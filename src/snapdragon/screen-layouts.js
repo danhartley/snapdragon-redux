@@ -179,7 +179,7 @@ export const screens = {
   definitionCard,
   scientifics,
   vernaculars,
-  species,
+  // species,
   text,
   summary,
 

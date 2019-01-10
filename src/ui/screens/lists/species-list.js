@@ -10,7 +10,7 @@ import { modalImageHandler } from 'ui/helpers/image-handlers';
 import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-table-no-scores';
-import { itemHandler, extendCollection } from 'ui/helpers/item-handler';
+import { itemHandler } from 'ui/helpers/item-handler';
 import { listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
@@ -122,10 +122,6 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
             }
 
             continueLearningActionBtn.addEventListener('click', event => {
-
-                if(hasCollectionChanged) {
-                    extendCollection(config, collection);
-                }
 
                 if(collection.isLessonComplete) {
                     lessonLogicHandler.purgeLesson();

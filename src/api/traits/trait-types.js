@@ -115,7 +115,7 @@ export const updateLanguage = (config) => {
 export const typedEnums = enums => {
     const typedEnums = [];
     for (var key in enums) {
-        if(enums[key].name) {
+        if(enums[key] && enums[key].name) {
             typedEnums.push({[key]: enums[key]});
         }        
     }

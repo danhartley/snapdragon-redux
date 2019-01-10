@@ -770,6 +770,10 @@ a.dropdown-item:hover {
   text-align: right;
 }
 
+.taxon.revision.card .data-box-container div:nth-child(1) {
+  text-align: left;
+}
+
 .data-box {
   color: var(--snap-text-dark);
   border: .05rem solid var(--snap-border-dark);

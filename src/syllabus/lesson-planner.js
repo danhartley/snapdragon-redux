@@ -7,9 +7,16 @@ const { summary, history } = screens;
 
 const createLessonPlan = (lessonPlan, config, collection) => {
 
+    collection.moduleSize = collection.moduleSize || config.moduleSize;
+    const rounds = collection.items.length / collection.moduleSize;
+    collection.rounds = collection.items.length % collection.moduleSize === 0 ? rounds : rounds === 1 ? 1 : Math.floor(rounds) + 1;
+    collection.itemIndex = 0;
+    collection.currentRound = 1;
+
     collection.lesson = collection.lesson || { ...lessonPlan, level: { id: 1 } };
 
     collection.families = familyProps.getFamilyNames(collection.items);
+    collection.familyStats = familyProps.getFamilyStats(collection.items);
 
     collection.itemGroups = getItemGroups(collection);
     collection.itemGroup = collection.itemGroups[collection.currentRound - 1];

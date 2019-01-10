@@ -84,7 +84,7 @@ export const kitchenGarden = {
         // "Apis mellifera"
       ],
     index: 0,
-    iconicTaxon: 'plantae'
+    iconicTaxa: [ 'plantae' ]
 };
 
 export const rhsTrees = { 
@@ -172,7 +172,7 @@ export const rhsTrees = {
         "Acacia dealbata"
       ],
     index: 1,
-    iconicTaxon: 'plantae'
+    iconicTaxa: [ 'plantae' ]
 };
 
 export const commonBirds = { 
@@ -209,7 +209,7 @@ export const commonBirds = {
         "Fringilla coelebs"
       ],
     index: 2,
-    iconicTaxon: 'aves'
+    iconicTaxa: [ 'aves' ]
 };
 
 export const rhsWeeds1 = { 
@@ -247,7 +247,7 @@ export const rhsWeeds1 = {
         "Bellis perennis"
       ],
     index: 3,
-    iconicTaxon: 'plantae'
+    iconicTaxa: [ 'plantae' ]
 };
 
 const mushroomCollection = {
@@ -261,7 +261,7 @@ const mushroomCollection = {
     lessonPlanPortrait: 103,
     glossary: ['fungi'],
     course: 'Snapdragon',
-    iconicTaxon: 'fungi'
+    iconicTaxa: [ 'fungi' ]
 };
 
 export const fallMushroomsEasternUSA = {
@@ -344,21 +344,22 @@ export const localSpecies = {
     thumb: 'https://content.eol.org/data/media/7f/09/1a/542.26637311774.260x190.jpg',
     moduleSize: 4,
     curator: 'Snapdragon | iNaturalist',
-    userLevel: 'General Interest'
+    userLevel: 'General Interest',
+    iconicTaxa: [ 'fungi', 'plantae', 'aves', 'lepidoptera', 'amphibia', 'mammalia', 'insecta' ]
 };
 
 const lichenCollection = {
     providerId: 1,
     type: 'species',
     thumb: 'https://content.eol.org/data/media/80/d2/d6/542.6832443214.260x190.jpg',
-    moduleSize: 4,
+    moduleSize: 2,
     curator: 'Snapdragon',
     userLevel: 'Amateur lichenologists',
     lessonPlanLandscape: 4,
     lessonPlanPortrait: 5,
     glossary: ['lichen', 'common'],
     course: 'Snapdragon',
-    iconicTaxon: 'fungi'
+    iconicTaxa: [ 'fungi' ]
 };
 
 export const beginnersLichenology = {

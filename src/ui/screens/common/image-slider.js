@@ -35,6 +35,7 @@ const disableModalPopups = (disableModal, parent, config) => {
 
 const carouselControlHandler = event => {
     setTimeout(() => {
+
         const activeNode = document.querySelector(`${event.target.dataset.slider} .carousel-item.active > div`);
         const image = activeNode.dataset;        
         handleRightsAttribution(image, activeNode);
@@ -43,12 +44,14 @@ const carouselControlHandler = event => {
 
         const tiles = document.querySelectorAll('.js-tiles');
 
+        const collectionItems = collection.allItems || collection.items;
+
         if(tiles) {
             const name = document.querySelector('.carousel-item.active > div').dataset.title; 
-            const item = collection.items.find(i => i.name === name);
+            const item = collectionItems.find(i => i.name === name);
             renderItemSpecimenTiles(item);
         }
-    },1000);    
+    },750);    
 };
 
 export const imageSlider = (config, images, parent, disableModal, image) => {
