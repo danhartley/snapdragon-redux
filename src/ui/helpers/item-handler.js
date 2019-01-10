@@ -83,6 +83,9 @@ export async function itemHandler(collection, config, counter, callback) {
         collection.speciesNames = collection.items.map(item => item.name);
         collection.speciesVernacularNames = itemProperties.vernacularNamesForItems(collection.items, config);
 
+        collection.itemIndex = 0;
+        collection.currentRound = 1;
+
         actions.boundChangeCollection({ config, collection });
     }
 
