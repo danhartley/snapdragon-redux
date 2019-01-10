@@ -3,7 +3,6 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import mixedSpecimenTemplate from 'ui/screens/multichoice/mixed-specimen-questions-template.html';

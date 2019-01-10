@@ -273,8 +273,8 @@ export const fallMushroomsEasternUSA = {
         'Grifola frondosa', 'Laetiporus sulphureus', 'Hericium erinaceus', 'Lycoperdon perlatum',
         'Lycoperdon pyriforme', 'Hydnum repandum', 'Craterellus tubaeformis', 'Hydnum umbilicatum', 
         'Hericium americanum', 'Hericium coralloides', 'Calvatia gigantea', 'Armillaria mellea', 'Armillaria tabescens', 'Entoloma abortivum'
-        , 'Polyporus squamosus'
-        //'Laetiporus cincinnatus'
+        , 'Polyporus squamosus',
+        'Laetiporus cincinnatus'
         //'Clitocybe nuda'
         
     ],

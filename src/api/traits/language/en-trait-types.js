@@ -355,7 +355,8 @@ export const english = {
         DREY: 'Drey',
         BURROW: 'Burrow',
         DEN: 'Den',
-        WARREN: 'Warren'
+        WARREN: 'Warren',
+        SETT: 'Sett'
     },
     active: {
         CREPUSCULAR: 'Crepuscular',
@@ -379,7 +380,9 @@ export const english = {
         DECEMBER: 'December',
     },
     young: {
-        KIT: 'Kit'
+        KIT: 'Kit',
+        SQUEAKER: 'Squeaker',
+        
     },
     female: {
         VIXEN: 'Vixen',

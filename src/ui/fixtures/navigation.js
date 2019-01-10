@@ -9,6 +9,8 @@ import { renderCollections } from 'ui/screens/home/collections';
 import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { getGlossary } from 'api/glossary/glossary';
 import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
+import { lookALikes } from 'ui/screens/common/look-alikes';
+import { getTraits } from 'api/traits/traits';
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
 import definitionCardTemplate from 'ui/screens/cards/definition-card-template.html';
 
@@ -133,3 +135,12 @@ export const updateNavIcons = () => {
         svg.classList.remove('active-icon');
     }
 };
+
+export const renderLookalikesIcon = collection => {
+
+    const item = collection.nextItem;
+
+    const { config } = store.getState();
+
+    lookALikes(collection, item, traits, config, true);
+}

@@ -7294,9 +7294,37 @@ export const mushrooms = [
       "eolName": "Lepista personata (Fr.) Cooke 1871"
     },
     {
-      "id": 11457548,
+      "id": 47391423,
       "name": "Laetiporus cincinnatus",
       "images": [
+          {
+            "rightsHolder": "Fluff Berger",
+            "source": "https://www.inaturalist.org/photos/4182373",
+            "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+            "url": "3b/0b/61/18.https___www_inaturalist_org_photos_4182373.jpg",
+            "thumb": "3b/0b/61/18.https___www_inaturalist_org_photos_4182373.98x68.jpg"
+          },
+          {
+            "rightsHolder": "michael_hodge",
+            "source": "https://www.inaturalist.org/photos/4432675",
+            "license": "http://creativecommons.org/licenses/by/4.0/",
+            "url": "3c/93/8a/18.https___www_inaturalist_org_photos_4432675.jpg",
+            "thumb": "3c/93/8a/18.https___www_inaturalist_org_photos_4432675.98x68.jpg"
+          },
+          {
+            "rightsHolder": "Benjamin Dion",
+            "source": "https://www.inaturalist.org/photos/6084680",
+            "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+            "url": "46/35/4c/18.https___www_inaturalist_org_photos_6084680.jpg",
+            "thumb": "46/35/4c/18.https___www_inaturalist_org_photos_6084680.98x68.jpg"
+          },
+          {
+            "rightsHolder": "Benjamin Dion",
+            "source": "https://www.inaturalist.org/photos/6084682",
+            "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+            "url": "46/35/4e/18.https___www_inaturalist_org_photos_6084682.jpg",
+            "thumb": "46/35/4e/18.https___www_inaturalist_org_photos_6084682.98x68.jpg"
+          }
       ],
       "names": [
         {

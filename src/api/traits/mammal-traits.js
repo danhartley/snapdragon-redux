@@ -103,8 +103,85 @@ const getTraits = SD => {
         { name: SD.name.PREDATOR, value: 'Mustela putorius, Neovison vison', type: SD.symbiosis.PREDATION },
         { name: SD.name.PREDATOR, value: 'Strigiformes', type: SD.symbiosis.PREDATION },
     ]
-    }
-    ]};
+    },
+    { name: 'Phocoena phocoena',
+    symbionts: [ 
+        { id: 'Delphinus delphis' }
+    ],            
+    traits: [
+        { name: SD.name.LIFE_SPAN, value: '8-13a' },
+        { name: SD.name.LENGTH, value: '1.4-1.9m' },
+        { name: SD.name.LOOK_ALIKES, values: [ 'Delphinus delphis' ]},
+    ]    
+},
+    { 
+        name: 'Meles meles',
+        symbionts: [ 
+            { id: 'Annelida' }, { id: 'Insecta' }, { id: 'Erinaceus europaeus' }
+        ],            
+        traits: [
+            { name: SD.name.SHELTER, value: `${SD.shelter.BURROW}, ${SD.shelter.SETT}` },
+            { name: SD.name.DIET, value: SD.diet.OMNIVORE },
+            { name: SD.name.FOOD, value: `Erinaceus europaeus`, type: SD.symbiosis.COMMENSALISM },
+            { name: SD.name.FOOD, value: `Annelida, Insecta`, type: SD.symbiosis.COMMENSALISM },
+        ]    
+    },
+    { 
+        name: 'Sus scrofa',
+        symbionts: [ 
+            { id: 'Annelida' }, { id: 'Insecta' },
+        ],            
+        traits: [
+            { name: SD.name.LIFE_SPAN, value: '10-14a' },
+            { name: SD.name.DIET, value: SD.diet.OMNIVORE },
+            { name: SD.name.FOOD, value: `${SD.foodType.SEEDS}, ${SD.foodType.BERRIES}, ${SD.foodType.NUTS}`, type: SD.symbiosis.COMMENSALISM },
+            { name: SD.name.FOOD, value: `Annelida, Insecta`, type: SD.symbiosis.COMMENSALISM },
+        ]    
+    },
+    { 
+    name: 'Lutra lutra',
+    symbionts: [ 
+        { id: 'Castor fiber' }
+    ],            
+    traits: [        
+            { name: SD.name.LENGTH, value: '57-95cm' },
+            { name: SD.name.TAIL_LENGTH, value: '35-45cm' },
+            { name: SD.name.FOOD, value: `Amphibia, Crustacea, Insecta`, type: SD.symbiosis.COMMENSALISM },
+            { name: SD.name.FOOD, value: `Aves, Castor fiber`, type: SD.symbiosis.COMMENSALISM },
+        ]    
+    },
+    { 
+    name: 'Delphinus delphis',
+    symbionts: [ 
+        { id: 'Phocoena phocoena' }, { id: 'Clupeidae' }, { id: 'Engraulidae' }, { id: 'Merlucciidae' },
+        { id: 'Cephalopoda' },
+    ],            
+    traits: [        
+        { name: SD.name.LOOK_ALIKES, values: [ 'Phocoena phocoena' ]},
+        { name: SD.name.LENGTH, value: '1.5-2.4m' },
+        { name: SD.name.FOOD, value: `Clupeidae, Engraulidae`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.FOOD, value: `Merlucciidae, Cephalopoda`, type: SD.symbiosis.COMMENSALISM },
+        ]    
+    },
+    { 
+    name: 'Erinaceus europaeus',
+    symbionts: [ 
+        { id: 'Gastropod '}, { id: 'Annelida '}, { id: 'Coleoptera '}, { id: 'Lepidoptera '},
+        { id: 'Carabus nemoralis' }, { id: 'Tachypodoiulus niger' }, { id: 'Carabus nemoralis '},
+        { id: 'Meles meles' }
+    ],            
+    traits: [        
+        { name: SD.name.LENGTH, value: '20-26cm' },
+        { name: SD.name.FOOD, value: `Gastropod, Annelida`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.FOOD, value: `Coleoptera, Lepidoptera`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.FOOD, value: `Glomeris marginata`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.FOOD, value: `Tachypodoiulus niger`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.FOOD, value: `Carabus nemoralis`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.PREY, value: `'Meles meles'`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.DIET, value: SD.diet.OMNIVORE },
+        ]    
+    },
+]};
 
 export const getMammalTraits = (enums) => {
     const SD = enums || traitEnums;
