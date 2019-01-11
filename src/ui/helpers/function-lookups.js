@@ -4,7 +4,6 @@ import { renderHistory } from 'ui/screens/progress/history';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
-import { renderSpeciesTiles } from 'ui/screens/multichoice/species-tiles';
 import { renderSummary } from 'ui/screens/progress/summary';
 import { renderLeafTile } from 'ui/screens/landscape/leaf-tile';
 import { renderNameEntry } from 'ui/screens/text-entry/leaf-text-entry';
@@ -31,7 +30,6 @@ const functions = [
     { name: 'species-card', func: renderCard },
     { name: 'species-scientifics', func: renderMultiStrips },
     { name: 'species-vernaculars', func: renderMultiStrips },
-    { name: 'species-images', func: renderSpeciesTiles },
     { name: 'summary', func: renderSummary },
     { name: 'history', func: renderHistory },
     { name: 'command', func: [renderSpecimenTiles, runTask] },

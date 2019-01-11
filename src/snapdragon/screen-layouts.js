@@ -63,11 +63,6 @@ const summary = {
   template: 'js-summary-template'
 };
 
-const mixedSpecimenTiles = {
-  name: 'mixed-specimen-tiles',
-  domain: 'ui'
-};
-
 const mixedSpecimenQuestions = {
   name: 'mixed-specimen-questions',
   domain: 'ui'
@@ -206,6 +201,5 @@ export const screens = {
   specimenLatinMatch,
   traitProperty,
 
-  mixedSpecimenTiles,
   mixedSpecimenQuestions
 };

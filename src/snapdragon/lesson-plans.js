@@ -9,7 +9,7 @@ const {
     epithets, wildcardCard, wildcard, definitions, 
     specimenCommonMatch, specimenLatinMatch,
     definitionCard, traitProperty,
-    mixedSpecimenTiles, nonTaxonSpecimenTiles,
+    nonTaxonSpecimenTiles,
     mixedSpecimenQuestions } = screens;
 
 const mixedSpeciesMatch = {
@@ -22,7 +22,6 @@ const mixedSpeciesMatch = {
     requirement: 'Select species image',
     screens: [
         { ...specimen },
-        // { ...mixedSpecimenTiles },
         { ...mixedSpecimenQuestions }
     ]
 };
@@ -82,22 +81,6 @@ const definitionRevision = {
         { ...definitionCard }
     ]
 };
-
-// 1 point
-
-// const imageToImageMatch = {
-//     name: 'screen-image-to-image',
-//     type:'test',
-//     score: 1,
-//     points: 1,
-//     kind: 'MC',
-//     given: 'Species specimens',
-//     requirement: 'Species images',
-//     screens: [
-//         { ...specimen },
-//         { ...species }
-//     ]
-// };
 
 const latinToCommonMatch = {
     name: 'screen-latin-to-common',

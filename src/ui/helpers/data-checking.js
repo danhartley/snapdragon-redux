@@ -47,7 +47,7 @@ const getTaxonProp = (taxon, language, prop) => {
 
 const getNestedTaxonProp = (taxon, language, prop1, prop2, index) => {
 
-    if(!taxon[prop1]) return '';
+    if(!taxon || !taxon[prop1]) return '';
 
     const prop1Value = taxon[prop1].find(name => name.language === language) ? taxon[prop1].find(name => name.language === language) : taxon[prop1].find(name => name.language === 'en');
 
