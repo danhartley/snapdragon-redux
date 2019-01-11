@@ -25,4 +25,4 @@ export const species = [
     ...plants,
     ...local,
     ...mammals
-];
+].filter(s => s.name);

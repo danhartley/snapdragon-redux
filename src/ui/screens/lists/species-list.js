@@ -101,7 +101,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
             taxonCardLinks.forEach(link => {
                 link.addEventListener('click', event => {
                     const taxon = event.target.dataset.family || event.target.dataset.order;
-                    const name = event.target.dataset.speciesName;
+                    const name = event.target.dataset.name;
                     const rank = event.target.dataset.rank;
                     document.querySelector('#taxonCardModal .prev > span').dataset.rank = rank;
                     document.querySelector('#taxonCardModal .next > span').dataset.rank = rank;

@@ -65,8 +65,10 @@ export const renderFeatures = (item, traits, config, parent, isModalMode) => {
         const template = document.createElement('template');
         template.innerHTML = symbiontTemplate;
 
-        symbiontTraits.forEach(trait => {
-            const linkedSpecies = species.find(s => s.name.toUpperCase() === trait.symbiont.toUpperCase());
+        symbiontTraits.forEach(trait => {            
+            const linkedSpecies = species.find(s => {
+                return s.name.toUpperCase() === trait.symbiont.toUpperCase();
+            });
             if(linkedSpecies && !isModalMode) {
                 trait.className = 'underline-link';
                 trait.modal = 'modal';

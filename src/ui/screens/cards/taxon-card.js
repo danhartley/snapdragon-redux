@@ -68,7 +68,7 @@ export const renderTaxonCard = (collection, isModalMode = false, selectedItem, p
     renderTemplate(context, template.content, parent, clone);
 
     if(isModalMode) {
-        // document.querySelector('#taxonCardModal .js-modal-text-title').innerHTML = collection.name;
+
         continueBtn.classList.add('hide-important');
         rootNode.querySelector('.js-external-links').classList.add('hide');
 

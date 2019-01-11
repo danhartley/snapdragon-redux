@@ -339,7 +339,7 @@ export const deciduousAndEvergreenTrees = [
     },
     {
       "id": 241042,
-      "name": "",
+      "name": "Sorbus aucuparia",
       "images": [
         {
           "rightsHolder": "Year: 2016.",

@@ -2454,4 +2454,53 @@ export const taxa = [
         families: 16,
         species: 286
     },
+    {
+        taxon: 'order',
+        name: 'Cetacea',
+        names: [ { language: "en", names: ['Cetaceans']}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Excellent eyesight and hearing adapted for both air and water. A layer of fat, or blubber, under the skin maintains body heat in cold water. Adept swimmers with streamlined bodies. Can teach, learn, cooperate, scheme and grieve.',
+                identification: 'Forelimbs modified into flippers and internal vestigial hindlimbs. Dorsal fin common and variable.',
+                keyMembers: [],
+                usage: []
+            }
+        ],
+        families: 13,
+        species: 89
+    },
+    {
+        taxon: 'order',
+        name: 'Lagomorpha',
+        names: [ { language: "en", names: ['Lagomorphs']}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Compromised of two living families: the Leporidae (hares and rabbits) and the Ochotonidae (pikas). They share a common ancestor with Rodentia (rodents). In decline.',
+                identification: 'Hairy, herbivorous tetrapods with 4 incisors in the upper jaw.',
+                keyMembers: [],
+                usage: []
+            }
+        ],
+        families: 2,
+        species: 87
+    },
+    {
+        taxon: 'order',
+        name: 'Rodentia',
+        names: [ { language: "en", names: ['Rodents']}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Most numerous (40%), diverse and widespread of mammals, they may be arboreal, fossorial (burrowing), or semiaquatic. Share common ancestor with Lagomorpha (rabbit, hares and pika).',
+                identification: 'A single pair of continuously growing incisors in each of the upper and lower jaws. Robust bodies, short limbs, and long tails.',
+                keyMembers: [],
+                usage: []
+            }
+        ],
+        families: 33,
+        genera: 481,
+        species: 2277
+    },
 ];
