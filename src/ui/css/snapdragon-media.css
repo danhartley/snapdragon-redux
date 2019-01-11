@@ -73,10 +73,6 @@
         line-height: initial;
     }
 
-    .table-header th:nth-child(3) span:nth-child(2) {
-        padding: 0 .1rem;
-    }
-
     .table-header th:nth-child(3):after {
         display: none;
     }
@@ -93,6 +89,10 @@
         border-bottom: 0;
         border-left: .3rem solid transparent;        
         cursor: default;
+    }
+
+    .table-header th:nth-child(3) span:nth-child(2):after {
+        margin-left: .355rem;
     }
 
     .table-header span:active, .table-header span:active:after {

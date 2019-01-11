@@ -9,11 +9,13 @@ import { taxa } from 'api/snapdragon/taxa';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import taxonTemplate from 'ui/screens/cards/taxon-template.html';
 
-export const renderTaxonCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody, family) => {
+export const renderTaxonCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody, speciesTaxon, rank) => {
   
     const item = selectedItem || collection.nextItem;
 
     const { lessonPlan, config } = store.getState();
+
+    const rootNode = isModalMode ? document.querySelector('#taxonCardModal') : document.querySelector('.right-body');
 
     const template = document.createElement('template');
 
@@ -23,12 +25,24 @@ export const renderTaxonCard = (collection, isModalMode = false, selectedItem, p
 
     parent.innerHTML = '';
 
-    const itemFamily = family || item.family;
-    const taxon = taxa.find(f => f.name === itemFamily);
+    let taxon, taxonName;
+
+    switch(rank.toUpperCase()) {
+        case 'FAMILY': 
+            taxonName = speciesTaxon || item.family;
+            taxon = taxa.find(f => f.name === taxonName);
+            rank = rank || 'family';
+            break;
+        case 'ORDER':
+            taxonName = speciesTaxon || item.taxonomy.order;
+            taxon = taxa.find(f => f.name === taxonName);
+            rank = rank || 'order';
+        break;
+    }
     
     const context = {
-        rank: 'family',
-        name: itemFamily,
+        rank: rank,
+        name: taxonName,
         headerImage: scaleImage({ url: item.images[0].url }, imageUseCases.TAXON_CARD, config),
         alt: taxon.alt,
         vernacularName: itemProperties.getNestedTaxonProp(taxon, config.language, 'names', 'names', '0'),
@@ -54,9 +68,22 @@ export const renderTaxonCard = (collection, isModalMode = false, selectedItem, p
     renderTemplate(context, template.content, parent, clone);
 
     if(isModalMode) {
-        document.querySelector('#speciesCardModal .js-modal-text-title').innerHTML = collection.name;
+        // document.querySelector('#taxonCardModal .js-modal-text-title').innerHTML = collection.name;
         continueBtn.classList.add('hide-important');
-        document.querySelector('.js-external-links').classList.add('hide');
+        rootNode.querySelector('.js-external-links').classList.add('hide');
+
+        rootNode.querySelector('#taxonCardModal .js-modal-text-title').innerHTML = collection.name;
+
+        const prev = rootNode.querySelector('#taxonCardModal .js-prev > span');
+        prev.dataset.id = item.id;
+        prev.dataset.transition = 'prev';
+        prev.dataset.modal = 'taxonCardModal';
+
+        const next = rootNode.querySelector('#taxonCardModal .js-next > span');
+        next.dataset.id = item.id;
+        next.dataset.transition = 'next';
+        next.dataset.modal = 'taxonCardModal';
+
     } else {
         continueBtn.addEventListener('click', event => {
             actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
@@ -67,16 +94,16 @@ export const renderTaxonCard = (collection, isModalMode = false, selectedItem, p
     //     document.querySelector('.js-taxon-toxic-warning').innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
     // }
 
-    document.querySelector('.js-external-page-title').innerHTML = `${itemFamily}`;
-    document.querySelector('.js-external-page-body').innerHTML = `<iframe class="modal-iframe" title="Wikipedia page for ${itemFamily}" src="${context.wiki}"></iframe>`;
+    document.querySelector('.js-external-page-title').innerHTML = `${taxonName}`;
+    document.querySelector('.js-external-page-body').innerHTML = `<iframe class="modal-iframe" title="Wikipedia page for ${taxonName}" src="${context.wiki}"></iframe>`;
 
     const membersCount = document.querySelector('.js-names-badge');
 
     if(context.occurrences === 0) membersCount.classList.add('hide');
 
     membersCount.addEventListener('click', event => {
-        document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = `Members of the ${itemFamily} family`;
-        const members = collection.items.filter(i => i.family === itemFamily);
+        document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = `Members of the ${taxonName} family`;
+        const members = collection.items.filter(i => i.family === taxonName);
         const list = document.querySelector('#badgeListModal .js-modal-text');
         list.innerHTML = '';
         members.forEach(member => {

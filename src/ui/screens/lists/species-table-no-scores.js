@@ -55,9 +55,15 @@ export const buildTable = (collection, config, traits, enums) => {
         const keyTrait = itemProperties.getActiveTrait(traits, item.name, [{ name: traitName, formatter: trait => trait.value }]);
         item.keyTrait = keyTrait.indexOf(',') > 0 ? keyTrait.split(',')[0] : keyTrait;
         item.keyTratLinkClass = keyTratLinkClass;
-        item.familyLinkClass = itemProperties.familyHasTaxaData(item.family, taxa) 
-            ? 'capitalise underline-link js-family-link' 
-            : 'js-family-link';
+        item.familyLinkClass = itemProperties.taxonHasTaxaData(item.family, taxa)
+            ? 'capitalise underline-link js-taxon-card-link' 
+            : 'js-taxon-card-link';
+        if(item.taxonomy && item.taxonomy.order) {
+            item.orderLinkClass = itemProperties.taxonHasTaxaData(item.taxonomy.order, taxa)
+                ? 'capitalise underline-link js-taxon-card-link' 
+                : 'js-taxon-card-link';
+        } else { item.orderLinkClass = 'js-taxon-card-link'; }
+        item.taxonomy = item.taxonomy || { family: '', order: ''}
         
         item.iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa);
 

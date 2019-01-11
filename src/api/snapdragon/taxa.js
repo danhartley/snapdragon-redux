@@ -2438,4 +2438,20 @@ export const taxa = [
             }
         ]
     },
+    {
+        taxon: 'order',
+        name: 'Carnivora',
+        names: [ { language: "en", names: ['Carnivorans']}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'The most diverse in size of any mammalian order',
+                identification: 'Last upper premolar (P4) and first lower molar (m1) have blade-like enamel crowns that work together as carnassial teeth to shear meat.',
+                keyMembers: [],
+                usage: []
+            }
+        ],
+        families: 16,
+        species: 286
+    },
 ];

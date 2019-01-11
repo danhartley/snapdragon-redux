@@ -36,9 +36,10 @@ export const matchTaxon = (taxonomy, iconicTaxa) => {
 
 export const matchIcon = (taxonomy, iconicTaxa) => {
     if(!taxonomy) return '';
-    const rank = matchTaxon(taxonomy, iconicTaxa).toLowerCase();
+    const rank = matchTaxon(taxonomy, iconicTaxa);
+    if(!rank) return ''
     let icon;
-    switch(rank) {
+    switch(rank.toLowerCase()) {
         case 'aves':
             icon = 'fas fa-dove';
             break;

@@ -82,8 +82,8 @@ const familyVernacularNames = (name, language, taxa) => {
     return taxon.names.find(name => name.language === language).names;
 };
 
-const familyHasTaxaData = (family, taxa) => {
-    return taxa.find(taxon => taxon.name === family);
+const taxonHasTaxaData = (taxon, taxa) => {
+    return taxa.find(t => t.name === taxon);
 };
 
 const getTrait = (traits, itemName, name, formatter) => {
@@ -164,7 +164,7 @@ export const itemProperties = {
     getNestedTaxonProp,
     trimLatinName,
     familyVernacularNames,
-    familyHasTaxaData,
+    taxonHasTaxaData,
     getTrait,
     getActiveTrait,
     vernacularNamesForItems,

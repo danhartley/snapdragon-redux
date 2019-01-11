@@ -26,8 +26,8 @@
                             <span class="latin-name">{{ item.binomial }}</span>
                         </td>
                         <td>
-                            <span data-toggle="modal" data-url="{{ item.url }}" data-family="{{ item.family }}" data-target="#speciesCardModal" class="{{ item.familyLinkClass }}">{{ item.family }}</span>
-                            <span>{{ item.taxonomy.order }}</span>
+                            <span data-toggle="modal" data-url="{{ item.url }}" data-rank="family" data-family="{{ item.family }}" data-target="#taxonCardModal" class="{{ item.familyLinkClass }}">{{ item.family }}</span>
+                            <span data-toggle="modal" data-url="{{ item.url }}" data-rank="order" data-order="{{ item.taxonomy.order }}" data-target="#taxonCardModal" class="{{ item.orderLinkClass }}">{{ item.taxonomy.order }}</span>
                         </td>
                         <td>
                             <span data-toggle="modal" data-url="{{ item.url }}" data-key-trait="{{ item.keyTrait }}" data-target="#speciesCardModal" class="{{ item.keyTratLinkClass }}">{{ item.keyTrait }}</span>

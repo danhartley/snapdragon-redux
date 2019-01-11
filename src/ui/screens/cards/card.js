@@ -243,43 +243,16 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
         const prev = rootNode.querySelector('#speciesCardModal .js-prev > span');
         prev.dataset.id = item.id;
         prev.dataset.transition = 'prev';
+        prev.dataset.modal = 'speciesCardModal';
 
         const next = rootNode.querySelector('#speciesCardModal .js-next > span');
         next.dataset.id = item.id;
         next.dataset.transition = 'next';
+        next.dataset.modal = 'speciesCardModal';
+        
 
         const lines = document.getElementsByTagName('hr');
 
         Array.from(lines).forEach(hr => hr.style.display = 'none');
     }
 };
-
-let currentIndex = 0;
-
-const carouselControlHandler = event => {
-
-    const { collection } = store.getState();
-    
-    let transition = event.target.dataset.transition;
-
-    switch(transition) {
-        case 'prev':
-            currentIndex--;
-            currentIndex = currentIndex === -1 ? collection.items.length -1 : currentIndex;
-            break;
-        case 'next':
-            currentIndex++;
-            currentIndex = currentIndex === collection.items.length -1 ? 0 : currentIndex;
-            break;
-    }
-
-    let nextItem = collection.items.find((item,index) => index === currentIndex);
-    const parent = document.querySelector('#speciesCardModal .js-modal-body');
-    renderCard(collection, true, nextItem, parent);
-};
-
-const prev = document.querySelector('#speciesCardModal .js-prev');
-const next = document.querySelector('#speciesCardModal .js-next');
-
-if(prev) prev.addEventListener('click', carouselControlHandler);
-if(next) next.addEventListener('click', carouselControlHandler);

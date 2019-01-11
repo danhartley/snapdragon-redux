@@ -143,12 +143,12 @@ test('check family has added taxon data', () => {
         name: 'Asteraceae'
     }
   ];
-  expect(itemProperties.familyHasTaxaData('Asteraceae', taxa)).toBeTruthy();
+  expect(itemProperties.taxonHasTaxaData('Asteraceae', taxa)).toBeTruthy();
   taxa = [
     {
         taxon: 'family',
         name: 'Apiaceae'
     }
   ];
-  expect(itemProperties.familyHasTaxaData('Asteraceae', taxa)).toBeFalsy();
+  expect(itemProperties.taxonHasTaxaData('Asteraceae', taxa)).toBeFalsy();
 });

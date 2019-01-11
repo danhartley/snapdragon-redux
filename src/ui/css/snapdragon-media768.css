@@ -272,17 +272,17 @@
     }
 
 
-#speciesCardModal .carousel-inner {
+#speciesCardModal .carousel-inner, #taxonCardModal .carousel-inner {
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
-  #speciesCardModal .carousel-inner .prev > span {
+  #speciesCardModal .carousel-inner .prev > span, #taxonCardModal .carousel-inner .prev > span {
     margin: 0 0 0 .6rem;
   }
   
-  #speciesCardModal .carousel-inner .next > span {
+  #speciesCardModal .carousel-inner .next > span, #taxonCardModal .carousel-inner .next > span {
     margin: 0 .6rem 0 0;
     cursor: pointer;
   }
@@ -305,7 +305,7 @@
         max-width: 28.5rem;
     }
 
-    #speciesCardModal .modal-content .snapdragon-container {  
+    #speciesCardModal .modal-content .snapdragon-container, #taxonCardModal .modal-content .snapdragon-container {  
         height: 60vh;
     }
     
@@ -347,7 +347,7 @@
         padding: 0;
     }
 
-    #speciesCardModal .modal-dialog {
+    #speciesCardModal .modal-dialog, #taxonCardModal .modal-dialog {
         min-width: 32rem;
         max-width: 32rem;
     }
