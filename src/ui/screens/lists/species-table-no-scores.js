@@ -55,7 +55,9 @@ export const buildTable = (collection, config, traits, enums) => {
         const keyTrait = itemProperties.getActiveTrait(traits, item.name, [{ name: traitName, formatter: trait => trait.value }]);
         item.keyTrait = keyTrait.indexOf(',') > 0 ? keyTrait.split(',')[0] : keyTrait;
         item.keyTratLinkClass = keyTratLinkClass;
-        item.familyLinkClass = itemProperties.familyHasTaxaData(item.family, taxa) ? 'capitalise underline-link js-family-link' : 'js-family-link';
+        item.familyLinkClass = itemProperties.familyHasTaxaData(item.family, taxa) 
+            ? 'capitalise underline-link js-family-link' 
+            : 'js-family-link';
         
         item.iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa);
 
@@ -130,7 +132,7 @@ export const buildTable = (collection, config, traits, enums) => {
     checkbox.appendChild(inputCheck);
     checkbox.appendChild(labelCheck);    
     speciesHeader.innerHTML = '<span>Species</span';
-    familyHeader.innerHTML = '<span>Family</span>';
+    familyHeader.innerHTML = '<span>Family</span><span>Order</span>';
     traitNameHeader.innerHTML = '<span>Feature</span>';
     iconicTaxonHeader.innerHTML = '<span><i class="fas fa-sliders-h"></i></span>';
     filterHeader.appendChild(checkbox); 

@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
@@ -152,6 +153,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     else {        
         function callback(collection, config, traits, enums) {
             return function () {
+                collection.items = utils.sortAlphabeticallyBy(collection.items, 'vernacularName');
                 buildTable(collection, config, traits, enums);
                 handleUserEvents();
             }

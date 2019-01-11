@@ -1623,9 +1623,12 @@ export const weeds = [
       ],
       "names": [
         {
+          "vernacularName": "Daisy",
+          "language": "en"
+        },
+        {
           "vernacularName": "English Daisy",
-          "language": "en",
-          "eol_preferred": true
+          "language": "en"
         },
         {
           "vernacularName": "Margarita",
