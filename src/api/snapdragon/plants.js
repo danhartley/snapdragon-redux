@@ -221,12 +221,28 @@ export const plants = [
         {
           "vernacularName": "sweet marjoram",
           "language": "en",
-          "eol_preferred": false
+          wikiSearchTerm: true
         },
         {
-          "vernacularName": "Sweet marjoram",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Süßer Majoran",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Mejorana",
+          "language": "es",
+          wikiSearchTerm: true
+        },
+        {
+          "vernacularName": "Origan marjolaine",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Maggiorana",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Manjerona",
+          "language": "pt"
         }
       ],
       "taxonomy": {
@@ -320,49 +336,69 @@ export const plants = [
       ],
       "names": [
         {
-          "vernacularName": "Garlic",
-          "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Garlic",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
           "vernacularName": "Knoblauch",
-          "language": "de",
-          "eol_preferred": false
+          "language": "de"
         },
         {
-          "vernacularName": "ail commun",
-          "language": "fr",
-          "eol_preferred": false
+          "vernacularName": "Großer Schlangerknoblauch",
+          "language": "de"
         },
         {
-          "vernacularName": "ail cultivé",
-          "language": "fr",
-          "eol_preferred": false
+          "vernacularName": "Garlic",
+          "language": "en",
+          wikiSearchTerm: true
         },
         {
-          "vernacularName": "ail",
-          "language": "fr",
-          "eol_preferred": false
+          "vernacularName": "Garlick",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Hardneck Garlic",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Pskem River Garlic",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Serpent Garlic",
+          "language": "en"
         },
         {
           "vernacularName": "cultivated garlic",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
-          "vernacularName": "cultivated garlic",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Ajo",
+          "language": "es"
         },
         {
-          "vernacularName": "Cultivated garlic",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Ail",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Ail rocambole",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Ail commun",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Ail cultivé",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Thériaque des pauvres",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Aglio",
+          "language": "it",
+        },
+        {
+          "vernacularName": "Alho",
+          "language": "pt"
         }
       ],
       "taxonomy": {
@@ -996,19 +1032,69 @@ export const plants = [
       ],
       "names": [
         {
-          "vernacularName": "coriander",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Koriander",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Chinesische Petersilie",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Indische Petersilie",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Wanzenkümmel",
+          "language": "de"
         },
         {
           "vernacularName": "coriander",
           "language": "en",
-          "eol_preferred": false
+          wikiSearchTerm: true
         },
         {
-          "vernacularName": "Coriander",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Chinese parsley",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Cilantro",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Indian parsley",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Cilantro",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Coriandro",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Coriandre",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Coriandre cultivée",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Persil arabe",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Punaise mâle",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Coriandolo",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Coentro",
+          "language": "pt"
         }
       ],
       "taxonomy": {
@@ -1142,19 +1228,120 @@ export const plants = [
       ],
       "names": [
         {
-          "vernacularName": "citronella grass",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Guatemaltekisches Lemongras",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Citronella",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Lemongras",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Westindisches Lemongras",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Zitronengras",
+          "language": "de"
         },
         {
           "vernacularName": "lemon grass",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
-          "vernacularName": "Lemon grass",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Citronella",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Fever grass",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Lemongrass",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Melissa grass",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Squinant",
+          "language": "en"
+        },
+        {
+          "vernacularName": "West Indian Lemon Grass",
+          "language": "en"
+        },
+        {
+          "vernacularName": "oil grass",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Citronella",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Caña de Limón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Hierba de Limón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Te de limón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Zacate de limón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "sontol",
+          "language": "es"
+        },
+        {
+          "vernacularName": "yerba de calentura",
+          "language": "es"
+        },
+        {
+          "vernacularName": "yerba de limón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Verveine des Indes",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Citronnelle",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Herbe à moutons",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Cimbopogone",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Capim-santo",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Capim-cidrão",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Erva-cidreira",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Erva-príncipe",
+          "language": "pt"
         }
       ],
       "taxonomy": {
@@ -1240,29 +1427,101 @@ export const plants = [
       ],
       "names": [
         {
-          "vernacularName": "Ajedrea de jardín",
-          "language": "es",
-          "eol_preferred": false
+          "vernacularName": "Bohnenkraut",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Kölle",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Pfefferkraut",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Saturei",
+          "language": "de"
         },
         {
           "vernacularName": "Sommer-Bohnenkraut",
-          "language": "de",
-          "eol_preferred": false
+          "language": "de"
+        },
+        {
+          "vernacularName": "Winterbergminze",
+          "language": "de"
+        },
+        {
+          "vernacularName": "savory",
+          "language": "en"
         },
         {
           "vernacularName": "summer savory",
           "language": "en",
-          "eol_preferred": false
+          wikiSearchTerm: true
         },
         {
-          "vernacularName": "summer savory",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "ajedrea",
+          "language": "es"
         },
         {
-          "vernacularName": "Summer savory",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Ajedrea*",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Jedrea&ast;",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Sabroso",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Sarriette annuelle",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Herbe de Saint-Julien",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Poivrette",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Sarriette",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Sarriette de montagne*",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Sarriette des champs",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "santoreggia domestica",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Santoreggia",
+          "language": "it"
+        },
+        {
+          "vernacularName": "savoreggia",
+          "language": "it"
+        },
+        {
+          "vernacularName": "segurelha",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Segurelha-das-hortas",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Segurelha-das-montanhas*",
+          "language": "pt"
         }
       ],
       "taxonomy": {
@@ -1353,19 +1612,48 @@ export const plants = [
       ],
       "names": [
         {
-          "vernacularName": "Ginger",
-          "language": "en",
-          "eol_preferred": true
+          "vernacularName": "Ingwer",
+          "language": "de"
+        },
+        {
+          "vernacularName": "ginger",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Canton Ginger",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Halia",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Spice Ginger",
+          "language": "en"
         },
         {
           "vernacularName": "garden ginger",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
-          "vernacularName": "garden ginger",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Jengibre",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Gingembre",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Zingiber officinale",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Zenzero",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Gengibre",
+          "language": "pt"
         }
       ],
       "taxonomy": {
@@ -1483,24 +1771,97 @@ export const plants = [
       ],
       "names": [
         {
-          "vernacularName": "Wiesen-Kümmel",
-          "language": "de",
-          "eol_preferred": false
+          "vernacularName": "Kümmel",
+          "language": "de"
         },
         {
           "vernacularName": "caraway",
           "language": "en",
-          "eol_preferred": false
+          wikiSearchTerm: true
         },
         {
-          "vernacularName": "caraway",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Carroway",
+          "language": "en"
         },
         {
-          "vernacularName": "Caraway",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Carvies",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Common Caraway",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Wild cumin",
+          "language": "en"
+        },
+        {
+          "vernacularName": "carum",
+          "language": "en"
+        },
+        {
+          "vernacularName": "wild caraway",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Carvi",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Alcaravea",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Comino de Prado",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Carvi",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Cumin des prés",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Anis des Vosges",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Grains de carvi",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "anis canadien",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "carvi commun",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "anis bâtard",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "anis sauvage",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Caro",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Carvi",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Cumino tedesco",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Alcaravia",
+          "language": "pt"
         }
       ],
       "taxonomy": {
@@ -1666,34 +2027,93 @@ export const plants = [
       ],
       "names": [
         {
-          "vernacularName": "Mostaza blanca",
-          "language": "es",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Moutarde blanche",
-          "language": "fr",
-          "eol_preferred": false
-        },
-        {
           "vernacularName": "Weißer Senf",
-          "language": "de",
-          "eol_preferred": false
+          "language": "de"
+        },
+        {
+          "vernacularName": "weiβe Senf",
+          "language": "de"
         },
         {
           "vernacularName": "white mustard",
           "language": "en",
-          "eol_preferred": false
+          wikiSearchTerm: true
+        },
+        {
+          "vernacularName": "Salade mustard",
+          "language": "en"
+        },
+        {
+          "vernacularName": "White mustard seed",
+          "language": "en"
+        },
+        {
+          "vernacularName": "bai jie",
+          "language": "en"
+        },
+        {
+          "vernacularName": "charlock",
+          "language": "en"
+        },
+        {
+          "vernacularName": "rough mustard",
+          "language": "en"
+        },
+        {
+          "vernacularName": "white charlock",
+          "language": "en"
         },
         {
           "vernacularName": "yellow mustard",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
-          "vernacularName": "White mustard",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Mostaza silvestre",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Moutarde blanche",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Moutarde",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Roquette cultivée",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "moutarde anglaise",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "moutarde cultivée",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "moutarde rude",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "petit bouquet jaune",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "senévé",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Senape biancha",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Mostarda-branca",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Mostarda branca",
+          "language": "pt"
         }
       ],
       "taxonomy": {
@@ -1859,54 +2279,108 @@ export const plants = [
       ],
       "names": [
         {
-          "vernacularName": "Black Mustard",
-          "language": "en",
-          "eol_preferred": true
+          "vernacularName": "Schwarzer Senf",
+          "language": "de"
         },
         {
-          "vernacularName": "Black Mustard",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Black Mustard",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Black Mustard",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Black Mustard",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Braunsenf",
+          "language": "de"
         },
         {
           "vernacularName": "black mustard",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
-          "vernacularName": "Senf-Kohl",
-          "language": "de",
-          "eol_preferred": false
+          "vernacularName": "Black mustard seed",
+          "language": "en"
         },
         {
-          "vernacularName": "black mustard",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Brown mustard seed",
+          "language": "en"
         },
         {
-          "vernacularName": "black mustard",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Indian mustard",
+          "language": "en"
         },
         {
-          "vernacularName": "Black mustard",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "mustard",
+          "language": "en"
+        },
+        {
+          "vernacularName": "shortpod mustard",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Mostaza negra",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Mostaza de Indias",
+          "language": "es"
+        },
+        {
+          "vernacularName": "jenabe ajenabo",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Moutarde noire",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Moutarde",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Moutarde brune",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Moutarde de Chine",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Moutarde de l'Inde",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Moutarde noire, Chou noir",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "moutarde sauvage",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "petit bouquet jaune",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "senévé",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "senévé noir",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Senape nera",
+          "language": "it"
+        },
+        {
+          "vernacularName": "senepa vera",
+          "language": "it"
+        },
+        {
+          "vernacularName": "senevra",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Mostarda (preta)",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "mostarda preta",
+          "language": "pt"
         }
       ],
       "taxonomy": {
@@ -2044,14 +2518,113 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "black pepper",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Pfeffer",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Grüner Pfeffer",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Schwarzer Pfeffer",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Weißer Pfeffer",
+        "language": "de"
       },
       {
         "vernacularName": "black pepper",
         "language": "en",
-        "eol_preferred": false
+        wikiSearchTerm: true
+      },
+      {
+        "vernacularName": "Common pepper",
+        "language": "en"
+      },
+      {
+        "vernacularName": "pepper",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Pimienta nigra",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Pimienta",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Pimienta blanca",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Pimienta negra",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Poivre",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Poivre blanc",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Poivre noir",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Poivre vert",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Poivrier noir",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Pepe",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Pepe bianco",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Pepe nero",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Pepe verde",
+        "language": "it"
+      },
+      {
+        "vernacularName": "pimenta",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Pimenta-branca",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Pimenta-da-índia",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Pimenta-do-reino",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Pimenta-negra",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Pimenta-preta",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Pimenta-verde",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -2203,49 +2776,84 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Bay Laurel",
-        "language": "en",
-        "eol_preferred": true
+        "vernacularName": "Lorbeer",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Lorbeerbaum",
+        "language": "de"
       },
       {
         "vernacularName": "Bay Laurel",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
+      },
+      {
+        "vernacularName": "(Sweet) Bay leaf",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Grecian Laurel",
+        "language": "en"
       },
       {
         "vernacularName": "Sweet laurel",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "Sweet laurel",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "bay tree",
+        "language": "en"
       },
       {
-        "vernacularName": "bay laurel",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "bay laurel",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "laurel",
+        "language": "en"
       },
       {
         "vernacularName": "sweet bay",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "sweet bay",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "lauro",
+        "language": "es"
       },
       {
-        "vernacularName": "Sweet bay",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Laural",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Laurier (noble)",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Laurier-sauce",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "alloro poetico",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Alloro",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Lauro",
+        "language": "it"
+      },
+      {
+        "vernacularName": "lauro poetico",
+        "language": "it"
+      },
+      {
+        "vernacularName": "lauro regale",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Loureiro",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Louro",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -2416,74 +3024,108 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Echter Salbei",
-        "language": "de",
-        "eol_preferred": false
+        "vernacularName": "Salbei",
+        "language": "de"
       },
       {
-        "vernacularName": "Heilsalbei",
-        "language": "de",
-        "eol_preferred": false
+        "vernacularName": "Echter Salbei",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Common Sage",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Berggarten Sage",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Garden Sage",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Golden Sage",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Holt's Mammoth Sage",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Purple Garden Sage",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Tricolor Sage",
+        "language": "en"
+      },
+      {
+        "vernacularName": "West Indian sage",
+        "language": "en"
+      },
+      {
+        "vernacularName": "kitchen sage",
+        "language": "en"
+      },
+      {
+        "vernacularName": "purple sage",
+        "language": "en"
+      },
+      {
+        "vernacularName": "sage",
+        "language": "en"
+      },
+      {
+        "vernacularName": "salvia",
+        "language": "es"
       },
       {
         "vernacularName": "Mermasangre",
-        "language": "es",
-        "eol_preferred": false
+        "language": "es"
       },
       {
-        "vernacularName": "Sage",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "salvia fina",
+        "language": "es"
       },
       {
-        "vernacularName": "Salvia Real",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Salvia fina",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Salvia",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Sauge Officinale",
-        "language": "fr",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Sauge officinale",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "salvia real",
+        "language": "es"
       },
       {
         "vernacularName": "Sauge",
-        "language": "fr",
-        "eol_preferred": false
+        "language": "fr"
       },
       {
-        "vernacularName": "common sage",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Sauge officinale",
+        "language": "fr"
       },
       {
-        "vernacularName": "kitchen sage",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Thé de la Grèce",
+        "language": "fr"
       },
       {
-        "vernacularName": "kitchen sage",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "salvia",
+        "language": "it"
       },
       {
-        "vernacularName": "Kitchen sage",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Salva",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Betónica",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Chá-da-Europa;",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Salva-mansa",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Salva-rubra",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -2617,169 +3259,129 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Dostenkraut",
+        "vernacularName": "oregano",
         "language": "de",
-        "eol_preferred": false
+        wikiSearchTerm: true
       },
       {
-        "vernacularName": "Echter Dost",
-        "language": "de",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Gemeiner Dost",
-        "language": "de",
-        "eol_preferred": false
+        "vernacularName": "Dost",
+        "language": "de"
       },
       {
         "vernacularName": "Gewöhnlicher Dost",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
       },
       {
-        "vernacularName": "Marjolaine sauvage",
-        "language": "fr",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Oregano",
-        "language": "de",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Origan",
-        "language": "fr",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Origano",
-        "language": "de",
-        "eol_preferred": false
+        "vernacularName": "Kostets",
+        "language": "de"
       },
       {
         "vernacularName": "Wilder Majoran",
-        "language": "de",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "furiégano",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "hissopo",
-        "language": "pt",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "mejorana silvestre",
-        "language": "es",
-        "eol_preferred": false
+        "language": "de"
       },
       {
         "vernacularName": "oregano",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "oregano",
-        "language": "pt",
-        "eol_preferred": false
+        "vernacularName": "Compact Oregano",
+        "language": "en"
       },
       {
-        "vernacularName": "oreganín",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Greek Oregano",
+        "language": "en"
       },
       {
-        "vernacularName": "orenga",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Oregan",
+        "language": "en"
       },
       {
-        "vernacularName": "oriégano",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Variegated Marjoram",
+        "language": "en"
       },
       {
-        "vernacularName": "orégano común",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Wild Marjoram",
+        "language": "en"
       },
       {
-        "vernacularName": "orégano nano",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Orégano",
+        "language": "es"
       },
       {
-        "vernacularName": "orégano trenzado",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Marjolaine bâtarde",
+        "language": "fr"
       },
       {
-        "vernacularName": "orégano turco",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Doste",
+        "language": "fr"
       },
       {
-        "vernacularName": "orégano",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Marazolette",
+        "language": "fr"
       },
       {
-        "vernacularName": "orégano",
-        "language": "pt",
-        "eol_preferred": false
+        "vernacularName": "Marjolaine sauvage",
+        "language": "fr"
       },
       {
-        "vernacularName": "orégão",
-        "language": "pt",
-        "eol_preferred": false
+        "vernacularName": "Origan",
+        "language": "fr"
       },
       {
-        "vernacularName": "orégãos",
-        "language": "pt",
-        "eol_preferred": false
+        "vernacularName": "Origan commun",
+        "language": "fr"
       },
       {
-        "vernacularName": "perigüel",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Origan d'Héraclée",
+        "language": "fr"
       },
       {
-        "vernacularName": "uriégano",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Pelevoué",
+        "language": "fr"
       },
       {
-        "vernacularName": "uriéganu",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Penevoué",
+        "language": "fr"
       },
       {
-        "vernacularName": "urégano",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Thym de berger",
+        "language": "fr"
       },
       {
-        "vernacularName": "wild marjoram",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Thé rouge",
+        "language": "fr"
       },
       {
-        "vernacularName": "órgano",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "origano commune",
+        "language": "it"
       },
       {
-        "vernacularName": "oregano",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Erba acciuga",
+        "language": "it"
       },
       {
-        "vernacularName": "Oregano",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Origano",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Origano comune",
+        "language": "it"
+      },
+      {
+        "vernacularName": "regano",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Orégão",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Oregâos",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Orégano",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -2894,59 +3496,100 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "bell pepper",
-        "language": "en",
-        "eol_preferred": true
+        "vernacularName": "Gemeine Rübe",
+        "language": "de"
       },
       {
-        "vernacularName": "Ají",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Rübe",
+        "language": "de"
       },
       {
-        "vernacularName": "Chile",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Zuckerrübe",
+        "language": "de"
       },
       {
-        "vernacularName": "Paprika",
-        "language": "de",
-        "eol_preferred": false
+        "vernacularName": "beet",
+        "language": "en"
       },
       {
-        "vernacularName": "Piment",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "Beet root",
+        "language": "en"
       },
       {
-        "vernacularName": "Pimentão",
-        "language": "pt",
-        "eol_preferred": false
+        "vernacularName": "Beetroot",
+        "language": "en"
       },
       {
-        "vernacularName": "Pimiento morrón",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Red Beet",
+        "language": "en"
       },
       {
-        "vernacularName": "cayenne pepper",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Sugar Beet",
+        "language": "en"
       },
       {
-        "vernacularName": "pepper",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Swiss chard",
+        "language": "en"
       },
       {
-        "vernacularName": "cayenne pepper",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "White beet",
+        "language": "en"
       },
       {
-        "vernacularName": "Cayenne pepper",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "common beet",
+        "language": "en"
+      },
+      {
+        "vernacularName": "common beet, sugar beet, Swiss chard",
+        "language": "en"
+      },
+      {
+        "vernacularName": "cultivated beet",
+        "language": "en"
+      },
+      {
+        "vernacularName": "sea beet",
+        "language": "en"
+      },
+      {
+        "vernacularName": "acelga",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Betterave commune, Bette-épinard",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Betterave fourragère",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Betterave rouge potagère",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Betterave sucrière",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "bieta a foglia",
+        "language": "it"
+      },
+      {
+        "vernacularName": "bietola da taglio",
+        "language": "it"
+      },
+      {
+        "vernacularName": "acelga",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Acelga-brava",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Beterraba-sacarina",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -3131,106 +3774,46 @@ export const plants = [
         "thumb": "5b/02/9d/509.13876558.98x68.jpg"
       }
     ],
-    "names": [
-      {
-        "vernacularName": "Adas Manis",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "Adas Manis",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Fennel",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Fennel",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Fennel",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Fennel",
-        "language": "en",
-        "eol_preferred": false
-      },
+    "names": [  
       {
         "vernacularName": "Fenouil",
-        "language": "en",
-        "eol_preferred": false
+        "language": "fr"
       },
       {
         "vernacularName": "Finocchio",
-        "language": "en",
-        "eol_preferred": false
+        "language": "it"
       },
       {
         "vernacularName": "Fonoll",
-        "language": "en",
-        "eol_preferred": false
+        "language": "cat"
       },
       {
         "vernacularName": "Funcho",
-        "language": "en",
-        "eol_preferred": false
+        "language": "pt"
       },
       {
         "vernacularName": "Hinojo",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Sweet Fennel",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Sweet Fennel",
-        "language": "en",
-        "eol_preferred": false
+        "language": "es"
       },
       {
         "vernacularName": "Wild Fennel",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
         "vernacularName": "ajenjo",
-        "language": "en",
-        "eol_preferred": false
+        "language": "es"
       },
       {
         "vernacularName": "fennel",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
         "vernacularName": "Echter Fenchel",
-        "language": "de",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "sweet fennel",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "sweet fennel",
-        "language": "en",
-        "eol_preferred": false
+        "language": "de"
       },
       {
         "vernacularName": "Sweet fennel",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       }
     ],
     "taxonomy": {
@@ -3356,304 +3939,85 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Grüne Minze",
-        "language": "de",
-        "eol_preferred": false
+        "vernacularName": "spearmint",
+        "language": "en",
+        wikiSearchTerm: true
       },
       {
-        "vernacularName": "Krause Minze",
-        "language": "de",
-        "eol_preferred": false
+        "vernacularName": "Curled Mint",
+        "language": "en"
       },
       {
-        "vernacularName": "Mentha viridis",
-        "language": "it",
-        "eol_preferred": false
+        "vernacularName": "Garden mint",
+        "language": "en"
       },
       {
-        "vernacularName": "Menthe Nana",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "bush mint",
+        "language": "en"
       },
       {
-        "vernacularName": "Menthe Nanah",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "bush mint (spearmint)",
+        "language": "en"
       },
       {
-        "vernacularName": "Menthe Verte",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "horse mint",
+        "language": "en"
       },
       {
-        "vernacularName": "Menthe crépue",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "wild mint",
+        "language": "en"
       },
       {
-        "vernacularName": "Menthe douce",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "Menthe à longues feuilles",
+        "language": "fr"
       },
       {
-        "vernacularName": "Menthe en Grappe",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "Baume",
+        "language": "fr"
       },
       {
-        "vernacularName": "Menthe en épi",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "Menthe",
+        "language": "fr"
       },
       {
-        "vernacularName": "Menthe frisée",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "Menthe en grappe",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Menthe en épi, Menthe verte",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Menthe glabre",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Menthe velue",
+        "language": "fr"
       },
       {
         "vernacularName": "Menthe verte",
-        "language": "fr",
-        "eol_preferred": false
+        "language": "fr"
       },
       {
-        "vernacularName": "Nanah",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "baume vert",
+        "language": "fr"
       },
       {
-        "vernacularName": "Spearmint",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "menthe romaine",
+        "language": "fr"
       },
       {
-        "vernacularName": "Spearmint",
-        "language": "de",
-        "eol_preferred": false
+        "vernacularName": "menthe à épis",
+        "language": "fr"
       },
       {
-        "vernacularName": "Speer-Minze",
-        "language": "de",
-        "eol_preferred": false
+        "vernacularName": "Mentastro verde",
+        "language": "it"
       },
       {
-        "vernacularName": "Wald-Minze",
-        "language": "de",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Waldminze",
-        "language": "de",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "batán",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "hierba buena común",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "hierba buena",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "hierba romana",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "hierbabuena",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "hierbahuerto",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "hojas de Santa María",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "hortelana",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "hortelã",
-        "language": "pt",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "hortelã-comum",
-        "language": "pt",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "hortelã-das-cozinhas",
-        "language": "pt",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "hortelã-das-hortas",
-        "language": "pt",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "hortelã-de-leite",
-        "language": "pt",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "hortelã-dos-temperos",
-        "language": "pt",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "hortelã-verde",
-        "language": "pt",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "hortelã-vulgar",
-        "language": "pt",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "mastranzo menor",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "mastranzo",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "menta griega",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "menta hortense",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "menta romana",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "menta verde",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "menta",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "salvia romana",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "spear mint",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "spearmint",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "sándalo de jardín",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "sándalo",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "yerba buena común",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "yerba buena de los huertos",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "yerba buena española",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "yerba buena",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "yerba de huerto",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "yerba del tiñoso",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "yerba olorosa",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "yerba santa",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "yerbabuena",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "yerbahuerto",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Ähren-Minze",
-        "language": "de",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Ährige Minze",
-        "language": "de",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "spearmint",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Spearmint",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Hortelã-verde",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -3772,28 +4136,68 @@ export const plants = [
     "names": [
       {
         "vernacularName": "dill",
-        "language": "en",
-        "eol_preferred": true
+        "language": "de"
+      },
+      {
+        "vernacularName": "Gurkenkraut",
+        "language": "de"
       },
       {
         "vernacularName": "dill",
         "language": "en",
-        "eol_preferred": false
+        wikiSearchTerm: true
       },
       {
-        "vernacularName": "dill",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Indian Dill",
+        "language": "en"
       },
       {
-        "vernacularName": "dill",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Hinojo hediondo",
+        "language": "es"
       },
       {
-        "vernacularName": "Dill",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Abesón",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Aneldo",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Eneldo",
+        "language": "es"
+      },
+      {
+        "vernacularName": "anís alemán",
+        "language": "es"
+      },
+      {
+        "vernacularName": "anise",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Aneth odorant",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Fenouil bâtard",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Aneto",
+        "language": "it"
+      },
+      {
+        "vernacularName": "oneto",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Endro",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Aneto",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -3911,94 +4315,80 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Tomillo",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "Tomillo",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Common Thyme",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Thymian",
+        "language": "de"
       },
       {
         "vernacularName": "Echter Thymian",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
       },
       {
-        "vernacularName": "English Thyme",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Römischer Quendel",
+        "language": "de"
       },
       {
-        "vernacularName": "Farigoule",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "garden thyme",
+        "language": "en"
       },
       {
-        "vernacularName": "Frigoule",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "Common Thyme",
+        "language": "en"
       },
       {
-        "vernacularName": "Garden Thyme",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Doretta Klaber Thyme",
+        "language": "en"
       },
       {
-        "vernacularName": "Thym Commun",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "English thyme",
+        "language": "en"
       },
       {
-        "vernacularName": "Thym commun",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "thyme",
+        "language": "en"
       },
       {
-        "vernacularName": "Thyme",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Tomilho",
-        "language": "pt",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Tomillo Común",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Tomillo limonero",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "tomillo común",
+        "language": "es"
       },
       {
         "vernacularName": "Tomillo",
-        "language": "es",
-        "eol_preferred": false
+        "language": "es"
       },
       {
-        "vernacularName": "garden thyme",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Thym (ordinaire)",
+        "language": "fr"
       },
       {
-        "vernacularName": "garden thyme",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Farigoule",
+        "language": "fr"
       },
       {
-        "vernacularName": "Garden thyme",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Frigoule",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Thym commun",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Thym commun, Farigoule",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "timo maggiore",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Timo",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Tomilho-ordinário",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Tomilho",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -4100,29 +4490,49 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Parsley",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
         "vernacularName": "parsley",
         "language": "en",
-        "eol_preferred": false
+        wikiSearchTerm: true
       },
       {
-        "vernacularName": "persil",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "Common garden parsley",
+        "language": "en"
       },
       {
-        "vernacularName": "parsley",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Curled Parsley",
+        "language": "en"
       },
       {
-        "vernacularName": "Parsley",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Garden Parsley",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Hamburg Parsley",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Plainleaf Parsley",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Garten-Petersilie",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Perejil",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Persil cultivé",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Prezzemolo",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Salsa",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -4284,124 +4694,81 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Basil",
-        "language": "en",
-        "eol_preferred": true
+        "vernacularName": "Basilikum",
+        "language": "de"
       },
       {
-        "vernacularName": "Basil",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Basilienkraut",
+        "language": "de"
       },
       {
-        "vernacularName": "Basil",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Königskraut",
+        "language": "de"
       },
       {
-        "vernacularName": "Selasih",
+        "vernacularName": "basil",
         "language": "en",
-        "eol_preferred": false
+        wikiSearchTerm: true
       },
       {
-        "vernacularName": "Selasih",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Basilie",
+        "language": "en"
       },
       {
-        "vernacularName": "Selasih",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Sweet Basil",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Sweet Basil",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Sweet Basil",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "albahaca blanca",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "albahaca blanca",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "albahaca blanca",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "guistia",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "guistia",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "guistia",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "ki 'a'ala",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "ki 'a'ala",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "ki 'a'ala",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "xpasimakatoro",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "xpasimakatoro",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "xpasimakatoro",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "common basil",
+        "language": "en"
       },
       {
         "vernacularName": "sweet basil",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "sweet basil",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "albahaca",
+        "language": "es"
       },
       {
-        "vernacularName": "Sweet basil",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Albacar",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Alfábega",
+        "language": "es"
+      },
+      {
+        "vernacularName": "albahaca de puerco",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Basilic",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Basilic commun",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Basilic commun, Basilic à épis nombreux",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Herbe royale",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "petit framboisin",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Basilico",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Manjericão",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Alfavaca",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -4633,54 +5000,85 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Borage",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "Borage",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Borage",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "boraja",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "boraja",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Gurkenkraut",
+        "language": "de"
       },
       {
         "vernacularName": "Borretsch",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
+      },
+      {
+        "vernacularName": "Einjähriger Borretsch",
+        "language": "de"
+      },
+      {
+        "vernacularName": "borage",
+        "language": "en",
+        wikiSearchTerm: true
+      },
+      {
+        "vernacularName": "Beebread",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Burrage",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Cool-Tankard",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Talewort",
+        "language": "en"
+      },
+      {
+        "vernacularName": "beeplant",
+        "language": "en"
+      },
+      {
+        "vernacularName": "bugloss",
+        "language": "en"
+      },
+      {
+        "vernacularName": "common borage",
+        "language": "en"
+      },
+      {
+        "vernacularName": "starflower",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Borraja",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Borrega",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Rabo de Alacrán",
+        "language": "es"
       },
       {
         "vernacularName": "Bourrache officinale",
-        "language": "fr",
-        "eol_preferred": false
+        "language": "fr"
       },
       {
-        "vernacularName": "common borage",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Borragine",
+        "language": "it"
       },
       {
-        "vernacularName": "common borage",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "boragine",
+        "language": "it"
       },
       {
-        "vernacularName": "Common borage",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "borandella",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Borragem",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -4819,44 +5217,100 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "beet",
-        "language": "en",
-        "eol_preferred": true
+        "vernacularName": "Gemeine Rübe",
+        "language": "de"
       },
       {
-        "vernacularName": "red beet",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Rübe",
+        "language": "de"
       },
       {
-        "vernacularName": "sugar beet",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Beta-Rübe",
-        "language": "de",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "common beet",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "common beet",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Common beet",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Zuckerrübe",
+        "language": "de"
       },
       {
         "vernacularName": "beet",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
+      },
+      {
+        "vernacularName": "Beet root",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Beetroot",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Red Beet",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Sugar Beet",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Swiss chard",
+        "language": "en"
+      },
+      {
+        "vernacularName": "White beet",
+        "language": "en"
+      },
+      {
+        "vernacularName": "common beet",
+        "language": "en"
+      },
+      {
+        "vernacularName": "common beet, sugar beet, Swiss chard",
+        "language": "en"
+      },
+      {
+        "vernacularName": "cultivated beet",
+        "language": "en"
+      },
+      {
+        "vernacularName": "sea beet",
+        "language": "en"
+      },
+      {
+        "vernacularName": "acelga",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Betterave commune, Bette-épinard",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Betterave fourragère",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Betterave rouge potagère",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Betterave sucrière",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "bieta a foglia",
+        "language": "it"
+      },
+      {
+        "vernacularName": "bietola da taglio",
+        "language": "it"
+      },
+      {
+        "vernacularName": "acelga",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Acelga-brava",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Beterraba-sacarina",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -5107,52 +5561,47 @@ export const plants = [
       }
     ],
     "names": [
-        {
-          "vernacularName": "Garten-Rettich",
-          "language": "de",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Radieschen",
-          "language": "de"
-        },
-        {
-          "vernacularName": "garden radish",
-          "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Daikon",
-          "language": "en"
-        },
-        {
-          "vernacularName": "cultivated radish",
-          "language": "en"
-        },
-        {
-          "vernacularName": "radish",
-          "language": "en",
-          wikiSearchTerm: true
-        },
-        {
-          "vernacularName": "wild radish",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Radis cultivé",
-          "language": "fr",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Rábano",
-          "language": "es",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Rabanete",
-          "language": "pt",
-          "eol_preferred": true
-        }
+      {
+        "vernacularName": "Garten-Rettich",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Radieschen",
+        "language": "de"
+      },
+      {
+        "vernacularName": "garden radish",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Daikon",
+        "language": "en"
+      },
+      {
+        "vernacularName": "cultivated radish",
+        "language": "en"
+      },
+      {
+        "vernacularName": "radish",
+        "language": "en",
+        wikiSearchTerm: true
+      },
+      {
+        "vernacularName": "wild radish",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Radis cultivé",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Rábano",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Rabanete",
+        "language": "pt"
+      }
       ],
       "taxonomy": {
       "usageKey": 7678610,
@@ -5269,19 +5718,37 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "spinach",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Spinat",
+        "language": "de"
       },
       {
         "vernacularName": "spinach",
         "language": "en",
-        "eol_preferred": false
+        wikiSearchTerm: true
       },
       {
-        "vernacularName": "Spinach",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Spinacia oleracea",
+        "language": "es"
+      },
+      {
+        "vernacularName": "espinaca",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Épinard",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Spinacia oleracea",
+        "language": "it"
+      },
+      {
+        "vernacularName": "spinacio",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Espinafre",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -5383,14 +5850,108 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "field pumpkin",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Gemüse-Kürbis",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Kürbis",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Patisson",
+        "language": "de"
+      },
+      {
+        "vernacularName": "zucchini",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Ölkürbis",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Pumpkin",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Summer Squash",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Delicata squash",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Pumpkinseeds",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Squash and gourd varieties",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Styrian Pumpkin",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Vegetable Gourd",
+        "language": "en"
+      },
+      {
+        "vernacularName": "autumn pumpkin",
+        "language": "en"
       },
       {
         "vernacularName": "field pumpkin",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
+      },
+      {
+        "vernacularName": "pattypan squash",
+        "language": "en"
+      },
+      {
+        "vernacularName": "pumpkin",
+        "language": "en"
+      },
+      {
+        "vernacularName": "spaghetti squash",
+        "language": "en"
+      },
+      {
+        "vernacularName": "vegetable marrow",
+        "language": "en"
+      },
+      {
+        "vernacularName": "yellow crookneck squash",
+        "language": "en"
+      },
+      {
+        "vernacularName": "zucchini squash",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Calabaza",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Zucchini",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Courge nue",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Courge pépon, Giraumon, Citrouille iroquoise, Courgette",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Pâtisson",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Abóbora",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -5508,44 +6069,73 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Chives",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "Chives",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Wild Chive",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Wild Chive",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
         "vernacularName": "Schnittlauch",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
+      },
+      {
+        "vernacularName": "Schnitt-Lauch",
+        "language": "de"
       },
       {
         "vernacularName": "wild chives",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "wild chives",
+        "vernacularName": "Chives",
         "language": "en",
-        "eol_preferred": false
+        wikiSearchTerm: true
       },
       {
-        "vernacularName": "Wild chives",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Common Chive",
+        "language": "en"
+      },
+      {
+        "vernacularName": "chive",
+        "language": "en"
+      },
+      {
+        "vernacularName": "wild chive",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Allium schoenoprasum",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Cebollino",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Ciboulette (botanique)",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Ciboulette",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Civette",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Civette, Ciboulette, Ciboule",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "cipollina",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Aglio ungherese",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Erba cipollina",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Cebolinha",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -5673,99 +6263,89 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Roman",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "Roman",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Roman",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Romero",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Romero",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Romero",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Romero",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Rosemary Gorizia",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Rosemary",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Rosemary",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Rosemary",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Rosmarin",
+        "language": "de"
       },
       {
         "vernacularName": "rosemary",
         "language": "en",
-        "eol_preferred": false
+        wikiSearchTerm: true
       },
       {
-        "vernacularName": "Alecrim",
-        "language": "pt",
-        "eol_preferred": false
+        "vernacularName": "Old Man",
+        "language": "en"
       },
       {
-        "vernacularName": "Romarin",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "Prostrate Rosemary",
+        "language": "en"
       },
       {
         "vernacularName": "Romero",
-        "language": "es",
-        "eol_preferred": false
+        "language": "en"
+      },
+      {
+        "vernacularName": "Romero",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Rosmario",
+        "language": "es"
+      },
+      {
+        "vernacularName": "roméro",
+        "language": "es"
+      },
+      {
+        "vernacularName": "yerba de la niña",
+        "language": "es"
       },
       {
         "vernacularName": "Rosmarin",
-        "language": "de",
-        "eol_preferred": false
+        "language": "fr"
       },
       {
-        "vernacularName": "rosemary",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Ecensier",
+        "language": "fr"
       },
       {
-        "vernacularName": "rosemary",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Romarin",
+        "language": "fr"
       },
       {
-        "vernacularName": "Rosemary",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Romarin, Romarin officinal",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Rosmarin encens",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Ramerino",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Rosmarino",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Alecrim",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "alecrim-do-jardim",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "erva-coroada",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "rosa-marinha",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "rosmarinho",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -5889,39 +6469,53 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "cucumber",
-        "language": "en",
-        "eol_preferred": true
+        "vernacularName": "Gurke",
+        "language": "de"
       },
       {
-        "vernacularName": "kohlrabi",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "garden cucumber",
+        "language": "en"
       },
       {
         "vernacularName": "Cucumber",
         "language": "en",
-        "eol_preferred": false
+        wikiSearchTerm: true
       },
       {
-        "vernacularName": "Cucumber",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Oriental Cucumber",
+        "language": "en"
       },
       {
-        "vernacularName": "garden cucumber",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Suyo Long Cucumber",
+        "language": "en"
       },
       {
-        "vernacularName": "garden cucumber",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "cucumbers",
+        "language": "en"
       },
       {
-        "vernacularName": "Garden cucumber",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "pepino",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Concombre cultivé, Concombre, Cornichon",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Cucumis sativus",
+        "language": "it"
+      },
+      {
+        "vernacularName": "cetriolo",
+        "language": "it"
+      },
+      {
+        "vernacularName": "cocomero",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Pepineiro",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -6112,59 +6706,49 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "tomato",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "tomato",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "tomato",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "tomato",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "tomato",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "tomato",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "tomato",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "tomato",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "tomate",
+        "language": "de"
       },
       {
         "vernacularName": "garden tomato",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"        
       },
       {
-        "vernacularName": "garden tomato",
+        "vernacularName": "tomato",
         "language": "en",
-        "eol_preferred": false
+        wikiSearchTerm: true
       },
       {
-        "vernacularName": "Garden tomato",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Tomate fino",
+        "language": "es"
+      },
+      {
+        "vernacularName": "jitomate",
+        "language": "es"
+      },
+      {
+        "vernacularName": "tomate",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Aubergine, Marignan",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Pomme d'amour",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Pomme de terre, Patate",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "pomidoro",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Tomateiro",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -6295,119 +6879,96 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "broad beans",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "broad beans",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "broad beans",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "broad beans",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "broad beans",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "broad beans",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "broad beans",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "broad beans",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "broad beans",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "broad beans",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "broad beans",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "broad beans",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "broad beans",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "broad beans",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "broad beans",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
         "vernacularName": "Ackerbohne",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
+      },
+      {
+        "vernacularName": "Saubohne",
+        "language": "de"
       },
       {
         "vernacularName": "Broad Bean",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "Fava",
-        "language": "it",
-        "eol_preferred": false
+        "vernacularName": "Broadbean",
+        "language": "en"
       },
       {
-        "vernacularName": "Fava",
-        "language": "pt",
-        "eol_preferred": false
+        "vernacularName": "Faba Bean",
+        "language": "en"
       },
       {
-        "vernacularName": "Fève",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "Fava Bean",
+        "language": "en"
       },
       {
-        "vernacularName": "Haba",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Field Bean",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Horse Bean",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Small Bean",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Tick Bean",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Windsor Bean",
+        "language": "en"
+      },
+      {
+        "vernacularName": "broad vetch",
+        "language": "en"
       },
       {
         "vernacularName": "horsebean",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "Fava bean",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Vicia faba",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Haba",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Féverolle",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Fève",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Fève des marais",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Vesce Fève",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Vesce cultivée, Poisette",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "goulgane",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Fava",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Fava",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -6581,24 +7142,92 @@ export const plants = [
     ],
     "names": [
       {
+        "vernacularName": "Feuerbohne",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Arabische Bohne",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Blumenbohne",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Feuer-Bohne",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Käferbohne",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Schminkbohne",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Stangenbohne",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Türkische Bohne",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Runner Bean",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Scarlet Runner Bean",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Cub",
+        "language": "en"
+      },
+      {
         "vernacularName": "Haricot d'Espagne",
-        "language": "fr",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "scarlet runner",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Haricot á Fleurs Rouges",
+        "language": "en"
       },
       {
-        "vernacularName": "scarlet runner",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Runner Beans",
+        "language": "en"
       },
       {
-        "vernacularName": "Scarlet runner",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Scarlet Runner",
+        "language": "en"
+      },
+      {
+        "vernacularName": "multiflora bean",
+        "language": "en"
+      },
+      {
+        "vernacularName": "scarlet bean",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Haricot d'Espagne",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Haricot écarlate",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Ayocote",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Fagiolo americano",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Phaseolus lunatus",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -6753,74 +7382,57 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Artichoke",
-        "language": "en",
-        "eol_preferred": true
+        "vernacularName": "Artischocke",
+        "language": "de"
       },
       {
         "vernacularName": "Artichoke",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Artichoke",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Artichoke",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Artichoke",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Artichoke",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Artichoke",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Artichoke",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "cado de Navidad",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "cado de Navidad",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "cardoon",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "cardoon",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "cardoon",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
         "vernacularName": "Cardoon",
         "language": "en",
-        "eol_preferred": false
+        wikiSearchTerm: true
+      },
+      {
+        "vernacularName": "artichoke thistle",
+        "language": "en"
+      },
+      {
+        "vernacularName": "wild artichoke",
+        "language": "en"
+      },
+      {
+        "vernacularName": "alcachofa",
+        "language": "es"
+      },
+      {
+        "vernacularName": "alcaucil",
+        "language": "es"
+      },
+      {
+        "vernacularName": "cardo de comer",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Artichaut",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Cardon, Carde",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "cardo",
+        "language": "it"
+      },
+      {
+        "vernacularName": "cardone",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Alcachofra",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -6962,29 +7574,37 @@ export const plants = [
     ],
     "names": [
       {
+        "vernacularName": "Patinak",
+        "language": "de"
+      },
+      {
         "vernacularName": "parsnip",
         "language": "en",
-        "eol_preferred": false
+        wikiSearchTerm: true
       },
       {
-        "vernacularName": "Gewöhnlicher Pastinak",
-        "language": "de",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "wild parsnip",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "wild parship",
+        "language": "en"
       },
       {
         "vernacularName": "wild parsnip",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "Wild parsnip",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "chirivía",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Panais cultivé, Pastinacier",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "pastinacá",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Cherovia",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -7158,19 +7778,81 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "garden pea",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Erbse",
+        "language": "de"
       },
       {
         "vernacularName": "garden pea",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "Garden pea",
+        "vernacularName": "Alverja",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Common Pea",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Field Pea",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Green Pea",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Peas",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Pois France",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Sugar Pea",
+        "language": "en"
+      },
+      {
+        "vernacularName": "pea",
         "language": "en",
-        "eol_preferred": false
+        wikiSearchTerm: true
+      },
+      {
+        "vernacularName": "Alverja",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Arveja",
+        "language": "es"
+      },
+      {
+        "vernacularName": "guisantes",
+        "language": "es"
+      },
+      {
+        "vernacularName": "pésol",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Pois",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Pois cultivé",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "pisello",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Pisum sativum",
+        "language": "it"
+      },
+      {
+        "vernacularName": "ervilha",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -7304,19 +7986,97 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "garden lettuce",
+        "vernacularName": "Gartensalat",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Grüner Salat",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Kopfsalat",
+        "language": "de"
+      },
+      {
+        "vernacularName": "lettuce",
         "language": "en",
-        "eol_preferred": false
+        wikiSearchTerm: true
+      },
+      {
+        "vernacularName": "Thridace",
+        "language": "en"
+      },
+      {
+        "vernacularName": "cultivated lettuce",
+        "language": "en"
       },
       {
         "vernacularName": "garden lettuce",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "Garden lettuce",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "lechuga",
+        "language": "es"
+      },
+      {
+        "vernacularName": "lechuga acogollada",
+        "language": "es"
+      },
+      {
+        "vernacularName": "lechuga cortar",
+        "language": "es"
+      },
+      {
+        "vernacularName": "lechuga repollada",
+        "language": "es"
+      },
+      {
+        "vernacularName": "lechuga romana",
+        "language": "es"
+      },
+      {
+        "vernacularName": "lechuguino",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Laitue cultivée, Salade",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Laitue scariole, Escarole",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "insalata",
+        "language": "it"
+      },
+      {
+        "vernacularName": "lattuga",
+        "language": "it"
+      },
+      {
+        "vernacularName": "lattuga a cappuccio",
+        "language": "it"
+      },
+      {
+        "vernacularName": "lattuga a testa",
+        "language": "it"
+      },
+      {
+        "vernacularName": "lattuga de taglio",
+        "language": "it"
+      },
+      {
+        "vernacularName": "lattuga romana",
+        "language": "it"
+      },
+      {
+        "vernacularName": "lattughetta",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Alface",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -7520,264 +8280,44 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Carota",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Carotte",
-        "language": "fr",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Carrot",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Caxtilln camohtli",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Cenoura",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "DAUCAR",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Fostinaja",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Gizr",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Gulerod",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Gulrt",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Havu",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Karot",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
         "vernacularName": "Karotte",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Karrota",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Marchew uprawna",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Moronen",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Morot",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Mrkev obecn",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Mrkva obyajn",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Mrkva",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Navadno korenje",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Pastenaca",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Porkkana",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "QUEEN ANNE'S LACE",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "QUEEN ANNE'S LACE",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "QUEEN ANNE'S LACE",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "QUEEN ANNE'S LACE",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "QUEEN ANNE'S LACE",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "QUEEN ANNE'S LACE",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Queen Anne's Lace",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Queen Anne's Lace",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Sanaria",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Srgarpa",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Valgomoji morka",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Wild Carrot",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Wild Carrot",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Wilde Mhre",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Wortel",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Yerkk",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Zanahoria",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Zanahoria",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Zanahoria",
-        "language": "en",
-        "eol_preferred": false
+        "language": "de"
       },
       {
         "vernacularName": "carrot",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
+      },
+      {
+        "vernacularName": "domesticated carrot",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Queen Anne's lace",
+        "language": "en"
+      },
+      {
+        "vernacularName": "bird's nest",
+        "language": "en"
       },
       {
         "vernacularName": "wild carrot",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "carrot",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Zanahoria",
+        "language": "es"
       },
       {
-        "vernacularName": "Carotte sauvage",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "Carota",
+        "language": "it"
       },
       {
-        "vernacularName": "Queen Anne's lace",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Carotte cultivée",
+        "language": "fr"
       },
       {
-        "vernacularName": "Wild Carrot",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "gewöhnliche Möhre",
-        "language": "de",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Queen Anne's lace",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Bird's nest",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Queen anne's lace",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Cenoura",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -7919,19 +8459,61 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "eggplant",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "aubergine",
+        "language": "de"
+      },
+      {
+        "vernacularName": "aubergine",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Asian Eggplant",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Egg Plant",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Eggplants",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Garden Eggplant",
+        "language": "en"
+      },
+      {
+        "vernacularName": "brinjal",
+        "language": "en"
       },
       {
         "vernacularName": "eggplant",
         "language": "en",
-        "eol_preferred": false
+        wikiSearchTerm: true
       },
       {
-        "vernacularName": "Eggplant",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "berenjena",
+        "language": "es"
+      },
+      {
+        "vernacularName": "aubergine",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Aubergine, Marignan",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "morelle",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "melanzana",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Beringela",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -8113,29 +8695,168 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Turnip",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
         "vernacularName": "Rübsen",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
+      },
+      {
+        "vernacularName": "turnip",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Chinese flowering cabbage",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Mustard Spinach",
+        "language": "en"
+      },
+      {
+        "vernacularName": "bird's rape",
+        "language": "en"
+      },
+      {
+        "vernacularName": "birdsrape mustard",
+        "language": "en"
+      },
+      {
+        "vernacularName": "bok choy",
+        "language": "en"
+      },
+      {
+        "vernacularName": "brown sarson",
+        "language": "en"
+      },
+      {
+        "vernacularName": "canola",
+        "language": "en"
+      },
+      {
+        "vernacularName": "celery cabbage",
+        "language": "en"
+      },
+      {
+        "vernacularName": "colza",
+        "language": "en"
       },
       {
         "vernacularName": "field mustard",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "field mustard",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "napa (nappa) cabbage",
+        "language": "en"
       },
       {
-        "vernacularName": "Field mustard",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "pak choi",
+        "language": "en"
+      },
+      {
+        "vernacularName": "rape",
+        "language": "en"
+      },
+      {
+        "vernacularName": "rape mustard",
+        "language": "en"
+      },
+      {
+        "vernacularName": "seventop turnip",
+        "language": "en"
+      },
+      {
+        "vernacularName": "turnip mustard",
+        "language": "en"
+      },
+      {
+        "vernacularName": "turnip rape",
+        "language": "en"
+      },
+      {
+        "vernacularName": "wild mustard",
+        "language": "en"
+      },
+      {
+        "vernacularName": "wild rutabaga",
+        "language": "en"
+      },
+      {
+        "vernacularName": "wild turnip",
+        "language": "en"
+      },
+      {
+        "vernacularName": "colza",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Moutarde des champs",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Navet potager",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Navet sauvage",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Navette d'été",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Navette des champs",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Rave",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "chou champêtre",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "chou-rave",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "moutarde d'Allemagne",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "moutarde des oiseaux",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "moutarde sauvage",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "navette d' Allemange",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "navette d'ete",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "navette des oiseaux",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "navette fourragere",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "navette oleagineuse",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "sénevé à feuilles lisses",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "nabo",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -8366,49 +9087,120 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Cavolo",
-        "language": "it",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Chou Commun",
-        "language": "fr",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Col Silvestre",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Gemüsekohl",
+        "language": "de"
       },
       {
         "vernacularName": "Gemüse-Kohl",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
       },
       {
-        "vernacularName": "Gemüsekohl",
-        "language": "de",
-        "eol_preferred": false
+        "vernacularName": "wild cabbage",
+        "language": "en"
       },
       {
-        "vernacularName": "Wild Mustard",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Chinese Broccoli",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Colewort",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Kale",
+        "language": "en"
+      },
+      {
+        "vernacularName": "broccoli",
+        "language": "en"
+      },
+      {
+        "vernacularName": "brussels sprouts",
+        "language": "en"
       },
       {
         "vernacularName": "cabbage",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "cabbage",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "collards",
+        "language": "en"
       },
       {
-        "vernacularName": "Cabbage",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "kohlrabi",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Lombarda",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Col",
+        "language": "es"
+      },
+      {
+        "vernacularName": "La Col Verde",
+        "language": "es"
+      },
+      {
+        "vernacularName": "repollo",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Chou",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Chou Brocoli",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Chou d'Aigrette",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Chou de Bruxelles",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Chou de Savoie",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Chou fleur",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Chou fourrager",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Chou frisé",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Chou moëllier",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Chou rave",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Chou sauvage, Chou commun",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "cavolo",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Col silvestre",
+        "language": "es"
+      },
+      {
+        "vernacularName": "couve",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -8527,128 +9319,52 @@ export const plants = [
     "names": [
       {
         "vernacularName": "Kartoffel",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Potato",
         "language": "en",
-        "eol_preferred": true
+        wikiSearchTerm: true
+      },
+      {
+        "vernacularName": "Irish potato",
+        "language": "en"
+      },
+      {
+        "vernacularName": "White Potato",
+        "language": "en"
+      },
+      {
+        "vernacularName": "potatoes",
+        "language": "en"
       },
       {
         "vernacularName": "Papa",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Po",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Potato",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Potato",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Psianka ziemniak",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "brambor",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "krompir",
-        "language": "en",
-        "eol_preferred": false
+        "language": "es"
       },
       {
         "vernacularName": "patata",
-        "language": "en",
-        "eol_preferred": false
+        "language": "es"
       },
       {
-        "vernacularName": "potato",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "potato",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "potato",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Erdapfel",
-        "language": "de",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Irish potato",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Kartoffel",
-        "language": "de",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "batata",
-        "language": "pt",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "batatinha",
-        "language": "pt",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "papa",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "patata",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "patata",
-        "language": "it",
-        "eol_preferred": false
+        "vernacularName": "Pomme de terre, Patate",
+        "language": "fr"
       },
       {
         "vernacularName": "patate",
-        "language": "fr",
-        "eol_preferred": false
+        "language": "it"
       },
       {
-        "vernacularName": "pomme de terre",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "pomi di terra",
+        "language": "it"
       },
       {
-        "vernacularName": "potato",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "tartufolo",
+        "language": "it"
       },
       {
-        "vernacularName": "Irish potato",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Irish potato",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "batateira",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -8790,17 +9506,66 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "onion",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Globe onion",
-        "language": "en"
+        "vernacularName": "Zwiebel",
+        "language": "de"
       },
       {
         "vernacularName": "garden onion",
         "language": "en"
-      },      
+      },
+      {
+        "vernacularName": "Scallion",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Tree Onion",
+        "language": "en"
+      },
+      {
+        "vernacularName": "onion",
+        "language": "en",
+        wikiSearchTerm: true
+      },
+      {
+        "vernacularName": "Allium cepa",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Cebolla",
+        "language": "es"
+      },
+      {
+        "vernacularName": "chalote",
+        "language": "es"
+      },
+      {
+        "vernacularName": "escaluña",
+        "language": "es"
+      },
+      {
+        "vernacularName": "oignon",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Ail à fleurs peu nombreuses",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Oignon, Ail oignon",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Cipolla",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Scalogna",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Cebola",
+        "language": "pt"
+      }    
     ],
     "taxonomy": {
       "usageKey": 2857697,
@@ -8978,69 +9743,96 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Common Grape Vine",
-        "language": "en",
-        "eol_preferred": true
+        "vernacularName": "Weinrebe",
+        "language": "de"
       },
       {
-        "vernacularName": "Grape",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Weinstock",
+        "language": "de"
       },
       {
-        "vernacularName": "Grapes",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "European Grape",
+        "language": "en"
       },
       {
-        "vernacularName": "Sultana raisin",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Table grape",
+        "language": "en"
       },
       {
-        "vernacularName": "Sultana",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Vine",
+        "language": "en"
       },
       {
-        "vernacularName": "Sultanina",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "grape",
+        "language": "en"
       },
       {
-        "vernacularName": "Echte Weinrebe",
-        "language": "de",
-        "eol_preferred": false
+        "vernacularName": "grapes",
+        "language": "en"
+      },
+      {
+        "vernacularName": "wild grape",
+        "language": "en"
+      },
+      {
+        "vernacularName": "wine grape",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Vid",
+        "language": "es"
+      },
+      {
+        "vernacularName": "vino",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Vigne",
+        "language": "fr"
       },
       {
         "vernacularName": "Lambrusque",
-        "language": "fr",
-        "eol_preferred": false
+        "language": "fr"
       },
       {
-        "vernacularName": "Vigne Sauvage",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "Vigne cultivée",
+        "language": "fr"
       },
       {
-        "vernacularName": "Wild Grape",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Vigne sauvage",
+        "language": "fr"
       },
       {
-        "vernacularName": "wine grape",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "ambrusca",
+        "language": "it"
       },
       {
-        "vernacularName": "wine grape",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "lebrusca",
+        "language": "it"
       },
       {
-        "vernacularName": "Wine grape",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "vite",
+        "language": "it"
+      },
+      {
+        "vernacularName": "vite selvatica",
+        "language": "it"
+      },
+      {
+        "vernacularName": "zampino",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Videira",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "vinha",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "vinho",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -9206,69 +9998,56 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "nspero europeo",
-        "language": "en",
-        "eol_preferred": true
+        "vernacularName": "mispel",
+        "language": "de"
       },
       {
-        "vernacularName": "nspero europeo",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "nspero europeo",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "nspero europeo",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Deutsche Mispel",
+        "language": "de"
       },
       {
         "vernacularName": "Echte Mispel",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
       },
       {
-        "vernacularName": "Medlar",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Mispelbaum",
+        "language": "de"
       },
       {
-        "vernacularName": "Mispel",
-        "language": "de",
-        "eol_preferred": false
+        "vernacularName": "medlar",
+        "language": "en"
       },
       {
-        "vernacularName": "Nespereira",
-        "language": "pt",
-        "eol_preferred": false
+        "vernacularName": "Nispero",
+        "language": "es"
       },
       {
-        "vernacularName": "Nespolo comune",
-        "language": "it",
-        "eol_preferred": false
+        "vernacularName": "Níspero Común",
+        "language": "es"
+      },
+      {
+        "vernacularName": "níspero europeo",
+        "language": "es"
       },
       {
         "vernacularName": "Néflier",
-        "language": "fr",
-        "eol_preferred": false
+        "language": "fr"
       },
       {
-        "vernacularName": "Níspero",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Néflier commun, Aubépine d'Allemagne",
+        "language": "fr"
       },
       {
-        "vernacularName": "medlar",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Mespilus germanica",
+        "language": "it"
       },
       {
-        "vernacularName": "medlar",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "nespolo",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Nespereira",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -9611,24 +10390,76 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "European plum",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Pflaume",
+        "language": "de"
       },
       {
         "vernacularName": "Zwetschge",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
+      },
+      {
+        "vernacularName": "common plum",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Damson",
+        "language": "en"
       },
       {
         "vernacularName": "European plum",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "European plum",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Prunes",
+        "language": "en"
+      },
+      {
+        "vernacularName": "bullace",
+        "language": "en"
+      },
+      {
+        "vernacularName": "bullace plum",
+        "language": "en"
+      },
+      {
+        "vernacularName": "damson plum",
+        "language": "en"
+      },
+      {
+        "vernacularName": "dawson",
+        "language": "en"
+      },
+      {
+        "vernacularName": "garden plum",
+        "language": "en"
+      },
+      {
+        "vernacularName": "plum",
+        "language": "en"
+      },
+      {
+        "vernacularName": "ciruela",
+        "language": "es"
+      },
+      {
+        "vernacularName": "ciruelo",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Prunier domestique",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Prunier domestique, Prunier",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "pruno",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Ameixeira-europeia",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -9778,64 +10609,61 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "peach",
-        "language": "en",
-        "eol_preferred": true
+        "vernacularName": "Pfirsich",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Pfirsichbaum",
+        "language": "de"
       },
       {
         "vernacularName": "peach",
         "language": "en",
-        "eol_preferred": false
+        wikiSearchTerm: true
       },
       {
-        "vernacularName": "Purple-Leaved Peach",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Akroot",
+        "language": "en"
       },
       {
-        "vernacularName": "White Nectarine",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Flowering Peach",
+        "language": "en"
       },
       {
-        "vernacularName": "Duraznero",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "Peach tree",
+        "language": "en"
       },
       {
-        "vernacularName": "Pesco",
-        "language": "it",
-        "eol_preferred": false
+        "vernacularName": "Melocotonero",
+        "language": "es"
       },
       {
-        "vernacularName": "Pêche",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "Persico",
+        "language": "es"
       },
       {
-        "vernacularName": "Pêssego",
-        "language": "pt",
-        "eol_preferred": false
+        "vernacularName": "duraznero",
+        "language": "es"
       },
       {
-        "vernacularName": "melocotonero",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "nectarine",
+        "language": "fr"
       },
       {
-        "vernacularName": "peach",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Pêcher",
+        "language": "fr"
       },
       {
-        "vernacularName": "peach",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Persico",
+        "language": "it"
       },
       {
-        "vernacularName": "Peach",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "pesco",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Pessegueiro",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -10023,64 +10851,88 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "red raspberry",
-        "language": "en",
-        "eol_preferred": true
+        "vernacularName": "Himbeere",
+        "language": "de"
       },
       {
-        "vernacularName": "red raspberry",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "red raspberry",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "frambuesa",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "raspberry",
+        "language": "en"
       },
       {
         "vernacularName": "American red raspberry",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "Framboesa",
-        "language": "pt",
-        "eol_preferred": false
+        "vernacularName": "European raspberry",
+        "language": "en"
       },
       {
-        "vernacularName": "Framboise",
-        "language": "fr",
-        "eol_preferred": false
+        "vernacularName": "common red raspberry",
+        "language": "en"
       },
       {
-        "vernacularName": "Frambuesa",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "garden raspberry",
+        "language": "en"
       },
       {
-        "vernacularName": "Himbeere",
-        "language": "de",
-        "eol_preferred": false
+        "vernacularName": "western red raspberry",
+        "language": "en"
+      },
+      {
+        "vernacularName": "wild red raspberry",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Frambueso",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Sangüeso",
+        "language": "es"
+      },
+      {
+        "vernacularName": "framboise",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Framboisier",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Ronce framboisier",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "framboisier des jardins",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "kiock",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "ronce du mont Ida",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "frambosa",
+        "language": "it"
       },
       {
         "vernacularName": "Lampone",
-        "language": "it",
-        "eol_preferred": false
+        "language": "it"
       },
       {
-        "vernacularName": "Raspberry",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "rovo ideo",
+        "language": "it"
       },
       {
-        "vernacularName": "American red raspberry",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Framboesa",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Fruto da framboeseira",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -10166,19 +11018,49 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Lemon",
-        "language": "en",
-        "eol_preferred": true
+        "vernacularName": "Zitrone",
+        "language": "de"
       },
       {
-        "vernacularName": "limn persa",
+        "vernacularName": "lemon",
         "language": "en",
-        "eol_preferred": false
+        wikiSearchTerm: true
       },
       {
-        "vernacularName": "Lemon",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Lemon-tree",
+        "language": "en"
+      },
+      {
+        "vernacularName": "limonero",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Limón",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Citronnier",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Bergamotte",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "citron",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Limone",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Limão",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "limoeiro azedo",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -10313,59 +11195,60 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Rostiezer pear",
-        "language": "en",
-        "eol_preferred": true
+        "vernacularName": "Gartenbirnbaum",
+        "language": "de"
       },
       {
-        "vernacularName": "Common Pear",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Birnbaum",
+        "language": "de"
       },
       {
-        "vernacularName": "European Pear",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "pear",
+        "language": "en"
       },
       {
-        "vernacularName": "Peral",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Cultivated Pear",
+        "language": "en"
       },
       {
         "vernacularName": "European Pear",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Peral europeo",
-        "language": "es",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Poirier commun",
-        "language": "fr",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Wildbirne",
-        "language": "de",
-        "eol_preferred": false
+        "language": "en"
       },
       {
         "vernacularName": "common pear",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "common pear",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "garden pear",
+        "language": "en"
       },
       {
-        "vernacularName": "Common pear",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "pera",
+        "language": "es"
+      },
+      {
+        "vernacularName": "peral",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Aigrin",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Poirier cultivé, Poirier commun",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "pera",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Pero",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Pereira",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -10520,94 +11403,72 @@ export const plants = [
     ],
     "names": [
       {
+        "vernacularName": "Echte Feige",
+        "language": "de"
+      },
+      {
         "vernacularName": "Feigenbaum",
-        "language": "en",
-        "eol_preferred": true
+        "language": "de"
+      },
+      {
+        "vernacularName": "common fig",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Acer monspessulanum",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Brevo",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Common fig tree",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Fig tree",
+        "language": "en"
+      },
+      {
+        "vernacularName": "edible fig",
+        "language": "en"
       },
       {
         "vernacularName": "fig",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "Fig Tree",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "fiku",
+        "language": "en"
       },
       {
-        "vernacularName": "common fig",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "piku",
+        "language": "en"
       },
       {
-        "vernacularName": "common fig",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Ficus carica",
+        "language": "es"
       },
       {
-        "vernacularName": "common fig",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "higuera",
+        "language": "es"
       },
       {
-        "vernacularName": "common fig",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Figuier d'Europe",
+        "language": "fr"
       },
       {
-        "vernacularName": "common fig",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Fico",
+        "language": "it"
       },
       {
-        "vernacularName": "common fig",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Figueira",
+        "language": "pt"
       },
       {
-        "vernacularName": "common fig",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "common fig",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "common fig",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "common fig",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Fig",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Gewöhnlicher Feigenbaum",
-        "language": "de",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "edible fig",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "edible fig",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Edible fig",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "behereira",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -10781,49 +11642,64 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "cerezo",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "cerezo",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "cerezo",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "cerezo",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "cerezo",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Süsskirsche",
+        "language": "de"
       },
       {
         "vernacularName": "Vogel-Kirsche",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
       },
       {
         "vernacularName": "Wild Cherry",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
+      },
+      {
+        "vernacularName": "Bird Cherry",
+        "language": "en"
+      },
+      {
+        "vernacularName": "gean",
+        "language": "en"
+      },
+      {
+        "vernacularName": "mazzard",
+        "language": "en"
       },
       {
         "vernacularName": "sweet cherry",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "Sweet cherry",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Cerezo",
+        "language": "es"
+      },
+      {
+        "vernacularName": "cerezo silvestre",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Cerisier commun",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Cerisier sauvage",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Merisier",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Prunier merisier",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "ciliegio",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Cerejeira-brava",
+        "language": "pt"
       }
     ],
     "taxonomy": {

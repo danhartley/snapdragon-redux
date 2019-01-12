@@ -63,6 +63,8 @@ export async function itemHandler(collection, config, counter, callback) {
             collection.items = [ ...lepidoptera, ...noninsecta ];
         }
 
+        collection.items = collection.items.filter(i => i);
+
         collection.items.filter(item => item).forEach((item,index)=>{
             item.snapIndex = index + 1;
             item.collectionId =  collection.id;

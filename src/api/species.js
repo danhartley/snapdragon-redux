@@ -16,8 +16,8 @@ import { mammals } from 'api/snapdragon/mammals';
 export const species = [
     ...birds,
     ...mushrooms,
-    ...fruit,
-    ...vegetables,
+    // ...fruit,
+    // ...vegetables,
     ...insects,
     ...deciduousAndEvergreenTrees,
     ...weeds,

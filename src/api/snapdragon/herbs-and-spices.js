@@ -2856,8 +2856,7 @@ export const herbsAndSpices = [
       "names": [
         {
           "vernacularName": "Basilikum",
-          "language": "de",
-          "eol_preferred": true
+          "language": "de"
         },
         {
           "vernacularName": "Basilienkraut",
@@ -2870,7 +2869,6 @@ export const herbsAndSpices = [
         {
           "vernacularName": "basil",
           "language": "en",
-          "eol_preferred": true,
           wikiSearchTerm: true
         },
         {
@@ -2887,8 +2885,7 @@ export const herbsAndSpices = [
         },
         {
           "vernacularName": "albahaca",
-          "language": "es",
-          "eol_preferred": true
+          "language": "es"
         },
         {
           "vernacularName": "Albacar",
@@ -2904,8 +2901,7 @@ export const herbsAndSpices = [
         },
         {
           "vernacularName": "Basilic",
-          "language": "fr",
-          "eol_preferred": true
+          "language": "fr"
         },
         {
           "vernacularName": "Basilic commun",
@@ -2925,13 +2921,11 @@ export const herbsAndSpices = [
         },
         {
           "vernacularName": "Basilico",
-          "language": "it",
-          "eol_preferred": true
+          "language": "it"
         },
         {
           "vernacularName": "Manjericão",
-          "language": "pt",
-          "eol_preferred": true
+          "language": "pt"
         },
         {
           "vernacularName": "Alfavaca",
