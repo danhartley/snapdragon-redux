@@ -154,7 +154,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
         buildTable(collection, config, traits, enums);
         handleUserEvents();
     }
-    else {        
+    else {      
         function callback(collection, config, traits, enums) {
             return function () {
                 collection.items = utils.sortAlphabeticallyBy(collection.items, 'vernacularName');

@@ -4,7 +4,7 @@ import { species } from 'api/species';
 import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
 
-export const getInatSpecies = (latitude, longitude, config) => {
+export const getInatSpecies = (inatConfig, config) => {
   
     const names = species.map(item => item.name);
 
@@ -43,18 +43,49 @@ export const getInatSpecies = (latitude, longitude, config) => {
         return await json.results;
     }
 
-    const observations = getInatObservations(latitude, longitude, config).then(observations => {
-        return observations.map(observation => {
-            if(R.contains(observation.taxon.name, names)) {
-                return { ...species.find(item => item.name === observation.taxon.name) };
-            } 
-            else {
-                console.log(observation.taxon.name);
-            }
-        });
-    });
+    async function getInatPlaceObservations(placeId) {
+        const perPage = 200;
+        const endpoint = 'observations/species_counts';
+        const url = `https://api.inaturalist.org/v1/${endpoint}?page=1&captive=false&hrank=species&lrank=species&place_id=${placeId}&quality_grade=research&per_page=${perPage}`;
+        const response = await fetch(url);
+        const json = await response.json();
+        return await json.results;
+    }
 
-    return observations;
+    const latitude = inatConfig.latitude;
+    const longitude = inatConfig.longitude;
+
+    let observations;
+
+    const placeId = inatConfig.placeId;
+
+    if(placeId) {
+        observations = getInatPlaceObservations(placeId).then(observations => {
+            return observations.map(observation => {
+                if(R.contains(observation.taxon.name, names)) {
+                    const item = { ...species.find(item => item.name === observation.taxon.name) };
+                    return { ...item, observationCount: observation.taxon.observations_count, iconicTaxon: observation.taxon.iconic_taxon_name };
+                } 
+                else {
+                    console.log(observation.taxon.name);
+                }
+            });
+        });
+        return observations;
+    } else {
+        observations = getInatObservations(latitude, longitude, config).then(observations => {
+            return observations.map(observation => {
+                if(R.contains(observation.taxon.name, names)) {
+                    const item = { ...species.find(item => item.name === observation.taxon.name) };
+                    return { ...item, observationCount: observation.taxon.observations_count, iconicTaxon: observation.taxon.iconic_taxon_name };
+                } 
+                else {
+                    console.log(observation.taxon.name);
+                }
+            });
+        });
+        return observations;
+    }
 }
 
 export async function getInatPlaceId(place) {

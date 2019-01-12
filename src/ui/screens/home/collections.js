@@ -17,7 +17,7 @@ import collectionsTemplate from 'ui/screens/home/collections-template.html';
 import { handleIconicTaxaFilter } from 'ui/helpers/iconic-taxa-handler';
 import { listenToTaxaFiltersUpdate } from 'ui/helpers/iconic-taxa-handler';
 
-export const renderCollections = (counter) => {
+export const renderCollections = (counter) => { 
 
     const { collections: collectionsState, config: configState, collection: collectionState, history, layout } = store.getState();
 
@@ -25,7 +25,8 @@ export const renderCollections = (counter) => {
     let collections = R.clone(collectionsState);
     if(config.iconicTaxa && config.iconicTaxa.length > 0) {
         const localSpecies = collections.find(c => c.id === 1);
-        collections = [ ...collections.filter(c => R.contains(c.iconicTaxon, config.iconicTaxa)), localSpecies ];
+        const arrabidaSpecies = collections.find(c => c.id === 2);
+        collections = [ ...collections.filter(c => R.contains(c.iconicTaxon, config.iconicTaxa)), localSpecies, arrabidaSpecies ];
     }
     let collection = R.clone(collectionState);
 
@@ -35,7 +36,7 @@ export const renderCollections = (counter) => {
     template.innerHTML = collectionsTemplate;
 
     let language = config.languages.find(l => l.lang === config.language);
-    let lessons = utils.sortBy(collections.filter(c => c.type === 'species'), 'providerId', 'asc');
+    let lessons = utils.sortBy(collections.filter(c => c.type === 'species'), 'id', 'asc');
 
     DOM.rightBody.innerHTML = '';
 

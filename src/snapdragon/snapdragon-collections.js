@@ -89,7 +89,7 @@ export const kitchenGarden = {
 
 export const rhsTrees = { 
     providerId: 2,
-    id: 2, name: 'Deciduous and Evergreen Trees', 
+    id: 10, name: 'Deciduous and Evergreen Trees', 
     type: 'species',
     descriptions: ['This is an approved list of Deciduous and Evergreen Trees from the Royal Horticultural Society (RHS).', 'Students taking RHS courses in Practical Horticulture are required to learn some, or all, of these species.'],
     collections: ['Deciduous and evergreen trees'],
@@ -177,7 +177,8 @@ export const rhsTrees = {
 
 export const commonBirds = { 
     providerId: 1,
-    id: 3, name: 'RSPB Top 10 UK Birds', 
+    id: 3, 
+    name: 'RSPB Top 10 UK Birds', 
     type: 'species',
     descriptions: [
         'This lesson will test you on the top 10 most common birds in the UK.',
@@ -213,8 +214,8 @@ export const commonBirds = {
 };
 
 export const rhsWeeds1 = { 
-    providerId: 2,
     id: 4, 
+    providerId: 2,
     name: 'RHS Weeds I', 
     type: 'species',
     descriptions: [
@@ -329,10 +330,34 @@ export const cogumelosEmPortugal = {
 
 export const localSpecies = {
     id: 1,
+    providerId: 3,
     name: 'Your local wildlife', 
     type: 'species',
     descriptions: [
-        'Local plants, fungi and birds found in your area at this time of year.',
+        'Wildlife found in your area at this time of year.',
+        'The species in this lesson change and their number varies depending on the time of year and location.',
+        'Snapdragon covers only a few hundred species but this number is growing...'
+    ],
+    speciesCount: '--',
+    familiesCount: '--',
+    glossary: ['plantae', 'common', 'fungi'],
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 101,
+    thumb: 'https://content.eol.org/data/media/7f/09/1a/542.26637311774.260x190.jpg',
+    moduleSize: 4,
+    curator: 'Snapdragon | iNaturalist',
+    userLevel: 'General Interest',
+    iconicTaxa: [ 'fungi', 'plantae', 'aves', 'lepidoptera', 'amphibia', 'mammalia', 'insecta' ]
+};
+
+export const arrabidaSpecies = {
+    id: 2,
+    providerId: 3,
+    placeId: 10061,
+    name: 'Parque Natural da Arrábida', 
+    type: 'species',
+    descriptions: [
+        'Wildlife found in the Parque Natural da Arrábida at this time of year.',
         'The species in this lesson change and their number varies depending on the time of year and location.',
         'Snapdragon covers only a few hundred species but this number is growing...'
     ],
@@ -388,6 +413,7 @@ export const beginnersLichenology = {
 
 export const snapdragonCollections = [
     localSpecies,
+    arrabidaSpecies,
     kitchenGarden,
     // rhsTrees,
     commonBirds,
