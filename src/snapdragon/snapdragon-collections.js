@@ -177,7 +177,7 @@ export const rhsTrees = {
 
 export const commonBirds = { 
     providerId: 1,
-    id: 3, 
+    id: 11, 
     name: 'RSPB Top 10 UK Birds', 
     type: 'species',
     descriptions: [
@@ -350,8 +350,31 @@ export const localSpecies = {
     iconicTaxa: [ 'fungi', 'plantae', 'aves', 'lepidoptera', 'amphibia', 'mammalia', 'insecta' ]
 };
 
-export const arrabidaSpecies = {
+export const monsantoSpecies = {
     id: 2,
+    providerId: 3,
+    placeId: 61034,
+    name: 'Parque Florestal Monsanto', 
+    type: 'species',
+    descriptions: [
+        'Wildlife found in the Parque Florestal Monsanto at this time of year.',
+        'The species in this lesson change and their number varies depending on the time of year and location.',
+        'Snapdragon covers only a few hundred species but this number is growing...'
+    ],
+    speciesCount: '--',
+    familiesCount: '--',
+    glossary: ['plantae', 'common', 'fungi'],
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 101,
+    thumb: 'https://content.eol.org/data/media/7f/09/1a/542.26637311774.260x190.jpg',
+    moduleSize: 4,
+    curator: 'Snapdragon | iNaturalist',
+    userLevel: 'General Interest',
+    iconicTaxa: [ 'fungi', 'plantae', 'aves', 'lepidoptera', 'amphibia', 'mammalia', 'insecta' ]
+};
+
+export const arrabidaSpecies = {
+    id: 3,
     providerId: 3,
     placeId: 10061,
     name: 'Parque Natural da Arrábida', 
@@ -414,6 +437,7 @@ export const beginnersLichenology = {
 export const snapdragonCollections = [
     localSpecies,
     arrabidaSpecies,
+    monsantoSpecies,
     kitchenGarden,
     // rhsTrees,
     commonBirds,

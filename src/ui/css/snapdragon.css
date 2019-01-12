@@ -120,14 +120,14 @@ hr {
   content: "\f00c";
   padding: 0 .5rem 0 0;
   margin: 0 0 0 -1.5rem;
-  color: var(--snap-success);
+  color: rgb(99, 127, 91);
 }
 
 .icon.choice::after {  
   font-weight: 900; 
   content: "\f2e7";
   padding: 0 0 0 .25rem;
-  color: var(--snap-success);
+  color: rgb(99, 127, 91);
 }
 
 .icon.edible::after {  
@@ -622,6 +622,7 @@ a.dropdown-item:hover {
   padding: .5rem;
   width: fit-content;
   display: inline-table;
+  border: 1px solid rgb(225, 225, 225);
 }
 
 .taxon-highlight {  
