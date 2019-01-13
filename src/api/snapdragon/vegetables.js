@@ -2102,6 +2102,10 @@ export const vegetables = [
           "eol_preferred": true
         },
         {
+          "vernacularName": "Queen Anne's lace",
+          "language": "en"
+        },
+        {
           "vernacularName": "carrot",
           "language": "en"
         },
@@ -2109,10 +2113,6 @@ export const vegetables = [
           "vernacularName": "domesticated carrot",
           "language": "en",
           "eol_preferred": true
-        },
-        {
-          "vernacularName": "Queen Anne's lace",
-          "language": "en"
         },
         {
           "vernacularName": "bird's nest",

@@ -91,11 +91,13 @@ export const renderFeatures = (item, traits, config, parent, isModalMode) => {
         });
         
     } else {
-        const features = types.map(ft => {
+        let features = types.map(ft => {
             return getFeature(item, traits, config, ft)
         }).filter(ft => ft);
     
         if(features.length === 0) return;
+
+        features = R.take(3, features);
     
         const template = document.createElement('template');
         template.innerHTML = featureTemplate;
