@@ -20,7 +20,7 @@ export const lichen = [
           "eol_preferred": true
         },
         {
-          "vernacularName": "Powdered Rock-shield Lichen",
+          "vernacularName": "Powdered rock-shield Lichen",
           "language": "en"
         }
       ],
@@ -2874,8 +2874,11 @@ export const lichen = [
       "names": [
         {
           "vernacularName": "Common Greenshield Lichen",
-          "language": "en",
-          "eol_preferred": true
+          "language": "en"
+        },
+        {
+          "vernacularName": "Caperatflechte",
+          "language": "de"
         },
         {
           "vernacularName": "flavoparmelia lichen",
@@ -3480,8 +3483,7 @@ export const lichen = [
       "names": [
         {
           "vernacularName": "Sulcatflechte",
-          "language": "de",
-          "eol_preferred": true
+          "language": "de"
         },
         {
           "vernacularName": "Furchen-Schüsselflechte",
@@ -3493,8 +3495,7 @@ export const lichen = [
         },
         {
           "vernacularName": "shield lichen",
-          "language": "en",
-          "eol_preferred": true
+          "language": "en"
         },
         {
           "vernacularName": "Hammered Crottle Lichen",
@@ -3502,6 +3503,10 @@ export const lichen = [
         },
         {
           "vernacularName": "Hammered Shield Lichen",
+          "language": "en"
+        },
+        {
+          "vernacularName": "cracked-shield lichen",
           "language": "en"
         },
         {
@@ -3513,7 +3518,15 @@ export const lichen = [
           "language": "en"
         },
         {
-          "vernacularName": "Waxpaper LIchen",
+          "vernacularName": "furrowed shield lichen",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Waxpaper Lichen",
+          "language": "en"
+        },
+        {
+          "vernacularName": "powdered crottle",
           "language": "en"
         }
       ],

@@ -11782,9 +11782,9 @@ export const plants = [
         "thumb": "55/c9/08/509.12598660.98x68.jpg"
       },
       {
-        "title": "Stinging nettle at Brockfield - geograph.org.uk - 448748.jpg",
+        "title": "Stinging nettle at BROCKSfield - geograph.org.uk - 448748.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-        "source": "https://commons.wikimedia.org/wiki/File:Stinging_nettle_at_Brockfield_-_geograph.org.uk_-_448748.jpg",
+        "source": "https://commons.wikimedia.org/wiki/File:Stinging_nettle_at_BROCKSfield_-_geograph.org.uk_-_448748.jpg",
         "license": "http://creativecommons.org/licenses/by-sa/3.0/",
         "url": "55/e3/9b/509.12966702.jpg",
         "thumb": "55/e3/9b/509.12966702.98x68.jpg"

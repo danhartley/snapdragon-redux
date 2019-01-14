@@ -2019,9 +2019,9 @@ export const deciduousAndEvergreenTrees = [
           }
         },
         {
-          "title": "Handbook of the trees of the northern states and Canada east of the Rocky mountains. Photo-descriptive",
+          "title": "Handbook of the trees of the northern states and Canada east of theRocky mountains. Photo-descriptive",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-          "source": "https://commons.wikimedia.org/wiki/File:Handbook_of_the_trees_of_the_northern_states_and_Canada_east_of_the_Rocky_mountains._Photo-descriptive_(1907)_(14598297620).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Handbook_of_the_trees_of_the_northern_states_and_Canada_east_of_the_ROCKSy_mountains._Photo-descriptive_(1907)_(14598297620).jpg",
           "license": "http://creativecommons.org/licenses/publicdomain/",
           "url": "60/ca/fb/509.42116546.jpg",
           "thumb": "60/ca/fb/509.42116546.98x68.jpg"
@@ -5414,9 +5414,9 @@ export const deciduousAndEvergreenTrees = [
           "thumb": "5d/b5/d4/509.26477296.98x68.jpg"
         },
         {
-          "title": "Handbook of the trees of the northern states and Canada east of the Rocky mountains. Photo-descriptive",
+          "title": "Handbook of the trees of the northern states and Canada east of theRocky mountains. Photo-descriptive",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-          "source": "https://commons.wikimedia.org/wiki/File:Handbook_of_the_trees_of_the_northern_states_and_Canada_east_of_the_Rocky_mountains._Photo-descriptive_(1907)_(14598666937).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Handbook_of_the_trees_of_the_northern_states_and_Canada_east_of_the_ROCKSy_mountains._Photo-descriptive_(1907)_(14598666937).jpg",
           "license": "http://creativecommons.org/licenses/publicdomain/",
           "url": "61/94/6b/509.44708288.jpg",
           "thumb": "61/94/6b/509.44708288.98x68.jpg"
@@ -7822,9 +7822,9 @@ export const deciduousAndEvergreenTrees = [
           "thumb": "56/50/45/509.15536146.98x68.jpg"
         },
         {
-          "title": "Brockhaus and Efron Encyclopedic Dictionary b35 186-1 cropped2.jpg",
+          "title": "BROCKShaus and Efron Encyclopedic Dictionary b35 186-1 cropped2.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-          "source": "https://commons.wikimedia.org/wiki/File:Brockhaus_and_Efron_Encyclopedic_Dictionary_b35_186-1_cropped2.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:BROCKShaus_and_Efron_Encyclopedic_Dictionary_b35_186-1_cropped2.jpg",
           "license": "http://creativecommons.org/licenses/publicdomain/",
           "url": "56/a2/e4/509.17036779.jpg",
           "thumb": "56/a2/e4/509.17036779.98x68.jpg"
@@ -7987,9 +7987,9 @@ export const deciduousAndEvergreenTrees = [
           "thumb": "56/99/59/509.1686014.98x68.jpg"
         },
         {
-          "title": "Brockhaus and Efron Encyclopedic Dictionary b35 186-1 cropped3.jpg",
+          "title": "BROCKShaus and Efron Encyclopedic Dictionary b35 186-1 cropped3.jpg",
           "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-          "source": "https://commons.wikimedia.org/wiki/File:Brockhaus_and_Efron_Encyclopedic_Dictionary_b35_186-1_cropped3.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:BROCKShaus_and_Efron_Encyclopedic_Dictionary_b35_186-1_cropped3.jpg",
           "license": "http://creativecommons.org/licenses/publicdomain/",
           "url": "56/a2/e7/509.17037239.jpg",
           "thumb": "56/a2/e7/509.17037239.98x68.jpg"

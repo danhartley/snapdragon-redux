@@ -153,7 +153,7 @@ const getTraits = SD => {
     { 
     name: 'Delphinus delphis',
     symbionts: [ 
-        { id: 'Phocoena phocoena' }, { id: 'Clupeidae' }, { id: 'Engraulidae' }, { id: 'Merlucciidae' },
+        { id: 'Clupeidae' }, { id: 'Engraulidae' }, { id: 'Merlucciidae' },
         { id: 'Cephalopoda' },
     ],            
     traits: [        

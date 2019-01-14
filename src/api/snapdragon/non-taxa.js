@@ -16,7 +16,7 @@ export const getNonTaxa = (enums) => {
             quickId: 'Free-standing branching tubes',            
             names: [ { language: "en", name: 'Fruticose lichen'}],
             traits: [
-                { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.SOIL}, ${SD.substrate.ROCK}` },  
+                { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.SOIL}, ${SD.substrate.ROCKS}` },  
                 { name: SD.name.SUBSTRATE_ADHERANCE, value: SD.level.LOW }
             ],
             examples: [ 'Letharia vulpina', 'Evernia prunastri', 'Ramalina polymorpha', 'Roccella phycopsis', 'Ramalina farinacea' ],
@@ -30,7 +30,7 @@ export const getNonTaxa = (enums) => {
             quickId: 'Leaflike, with flat sheets of tissue not tightly bound',
             names: [ { language: "en", name: 'Foliose lichen'}],
             traits: [
-                { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.ROCK}` },
+                { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.ROCKS}` },
                 { name: SD.name.SUBSTRATE_ADHERANCE, value: SD.level.LOW },
                 { name: SD.name.USAGE, value: SD.usage.FOOD, examples: [ { language: 'en', value: 'Deer, goats, and caribou' } ] },
                 { name: SD.name.USAGE, value: SD.usage.BIRDS_NEST },
@@ -51,7 +51,7 @@ export const getNonTaxa = (enums) => {
             quickId: 'Crustlike, growing tight against the substrate',
             names: [ { language: "en", name: 'Crustose lichen'}],
             traits: [
-                { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.ROCK}` },
+                { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.ROCKS}` },
                 { name: SD.name.SUBSTRATE_ADHERANCE, value: SD.level.HIGH }
             ],
             examples: [ 'Graphis scripta', 'Diploschistes scruposus', 'Caloplaca ochracea', 'Ophioparma ventosa' ],
@@ -65,7 +65,7 @@ export const getNonTaxa = (enums) => {
         //     quickId: 'Tightly clustered and slightly flattened pebble-like units',
         //     names: [ { language: "en", name: 'Squamulose lichen'}],
         //     traits: [
-        //         { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.ROCK}` },
+        //         { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.ROCKS}` },
         //         { name: SD.name.SUBSTRATE_ADHERANCE, value: SD.level.MEDIUM }
         //     ],
         //     examples: [ 'Squamarina cartilaginea', 'Vahliella leucophaea', 'Cladonia subcervicornis' ],

@@ -41,6 +41,8 @@ export let month = english.month;
 export let female = english.female;
 export let male = english.male;
 export let diet = english.diet;
+export let marginType = english.marginType;
+export let soilType = english.soilType;
 
 let language;
 
@@ -106,7 +108,9 @@ export const updateLanguage = (config) => {
         young,
         female,
         male,
-        diet
+        diet,
+        marginType,
+        soilType
     }
 
     actions.boundUpdateEnums(enums);   

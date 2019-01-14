@@ -2,11 +2,14 @@ export const english = {
     name: {
         CAP_SHAPE : 'cap shape',
         CAP_COLOUR : 'cap colour',
+        CAP_SIZE : 'cap size',
         ECO_TYPE : 'ecological type',
         HOW_EDIBLE : 'how edible',
         HYMENIUM_TYPE: 'hymenium type',
         SPORE_PRINT_COLOUR : 'spore print colour',
         STIPE_CHARACTER : 'stipe character',
+        STIPE_LENGTH : 'stipe length',
+        STIPE_WIDTH : 'stipe width',
         GILL_ATTACHMENT : 'gill attachment',
         FLESH : 'flesh',
         LOOK_ALIKES : 'look-alikes',
@@ -79,7 +82,12 @@ export const english = {
         DIET: 'Diet',
         ALTRICIAL: 'Altricial',
         MOULTING: 'Moulting',
-        MATURITY: 'Maturity'
+        MATURITY: 'Maturity',
+        MARGIN_TYPE: 'Margin type',
+        SOIL_TYPE: 'Soil type',
+        LICEN_CUP_COLOUR: 'Licen cup colour',
+        RIM: 'Rim',
+        CENTRE: 'Centre'
     },
     howEdible : {
         CHOICE : 'Choice',
@@ -118,7 +126,7 @@ export const english = {
         TRUNKS : 'Trunks',
         STUMPS : 'Stumps',
         BARK: 'Bark',
-        ROCK: 'Rock',
+        ROCKS: 'Rocks',
         FENCES: 'Fences',
         TREES: "Trees",
         SHRUBS: "Shrubs",
@@ -132,7 +140,9 @@ export const english = {
         FOREST_STEPPE: 'Forest steppe',        
         MEADOW_STEPPE: 'meadow steppe',
         BOREAL: 'Boreal',
-        SCRUB: 'Scrub'
+        SCRUB: 'Scrub',
+        WALLS: 'Walls',
+        MOORLAND: 'Moorland'
     },
     ecoType : {
         SAPROTROPHIC : 'Saprotrophic',
@@ -157,9 +167,9 @@ export const english = {
         HEMI_SPHERICAL : 'Hemispherical'
     },
     treeType : {
-        OAK : 'Oak',
-        BEECH : 'Beech',
-        BIRCH : 'Birch',
+        OAK : 'Quercus',
+        BEECH : 'Fagus',
+        BIRCH : 'Betula',
         DECIDUOUS : 'Deciduous',
         MIXED_WOODLAND : 'Mixed woodland',
         CONIFERS : 'Conifers',
@@ -189,7 +199,8 @@ export const english = {
         LARCH : 'Larch',
         CEDAR : 'Cedar',
         YEW : 'Yew',
-        TURKEY_OAK : 'Turkey oak'
+        TURKEY_OAK : 'Turkey oak',
+        HAWTHORN: 'Hawthorn'
     },
     hymeniumType : {
         GILLS: 'Gills',
@@ -219,7 +230,7 @@ export const english = {
     substrate : {
         WOOD: 'Wood',
         BARK: 'Bark',
-        ROCK: 'Rock',
+        ROCKS: 'Rocks',
         SOIL: 'Soil'
     },
     level : {
@@ -235,7 +246,8 @@ export const english = {
         ANTIBIOTIC: 'Antibiotic',
         ANLAGESIC: 'Analgesic',
         ANTIBACTERIAL: 'Antibacterial',
-        ANTICOAGULANT: 'Anticoagulant'
+        ANTICOAGULANT: 'Anticoagulant',
+        ANTIFUNGAL: 'Antifungal'
     },
     pHLevel : {
 
@@ -252,11 +264,18 @@ export const english = {
         DARK_YELLOW: "Dark yellow",
         ORANGE_RED: "Orange red",
         GREY: "Grey",
+        PALE_GREY: "Pale grey",
         GREY_GREEN: "Grey-green",
         BROWN: "Brown",
         PAPER_BROWN: "Paper brown",
         BLACK: 'Black',
-        PALE_GREEN: 'Pale green'
+        PALE_GREEN: 'Pale green',
+        PALE_YELLOW_GREEN: 'Pale yellow-green',
+        PALE_GREY_GREEN: 'Pale yellow-green',
+        GLAUCOUS: 'Glaucous',
+        GREY_YELLOW: 'Grey-yellow',
+        CREAM: 'Cream',
+        CHALKY: 'Chalky'
     },
     usage: {
         PERFUMERY: 'Perfumery',
@@ -281,7 +300,8 @@ export const english = {
         OR: 'Or'
     },
     element: {
-        NITROGEN: 'Nitrogen'
+        NITROGEN: 'Nitrogen',
+        SULPUR_DIOXIDE: 'Sulpur dioxide'
     },
     blade: {
         SIMPLE: 'Simple ',
@@ -393,5 +413,12 @@ export const english = {
     diet: {
         OMNIVORE: 'Omnivore',
         CARNIVORE: 'Carnivore'
+    },
+    marginType: {
+        LOBED: "Lobed"
+    }, 
+    soilType: {
+        SILICEOUS: 'Siliceous',
+        CALCAREOUS: 'Calcareous',
     }
 };

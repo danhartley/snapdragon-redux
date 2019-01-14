@@ -655,6 +655,7 @@ a.dropdown-item:hover {
 
 .common-name {
   font-style: normal;
+  text-transform: capitalize;
 }
 
 .species-header {
