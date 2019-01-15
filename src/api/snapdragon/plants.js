@@ -12418,5 +12418,131 @@ export const plants = [
     "family": "Adoxaceae",
     "kingdom": "Plantae",
     "eolName": "Sambucus nigra L."
+  },
+  {
+    "id": "596202",
+    "name": "Morus nigra",
+    "images": [
+      {
+        "title": "Morus alba fruits.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Morus_alba_fruits.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "55/99/9e/509.1181679.jpg",
+        "thumb": "55/99/9e/509.1181679.98x68.jpg"
+      },
+      {
+        "title": "Crni dud plod.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Crni_dud_plod.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "58/ad/a2/509.26358118.jpg",
+        "thumb": "58/ad/a2/509.26358118.98x68.jpg"
+      },
+      {
+        "title": "Mulberries on tree 3.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Mulberries_on_tree_3.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "58/ff/e9/509.27856724.jpg",
+        "thumb": "58/ff/e9/509.27856724.98x68.jpg"
+      },
+      {
+        "title": "Schildau Maulbeerbaum Fruechte rot 3.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Schildau_Maulbeerbaum_Fruechte_rot_3.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "5a/19/ac/509.34084816.jpg",
+        "thumb": "5a/19/ac/509.34084816.98x68.jpg",
+        "photographer": {
+          "full_name": "Radler59",
+          "homepage": null,
+          "role": "photographer"
+        }
+      },
+      {
+        "title": "Mulberry (Morus alba) China native (3462929877).jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Mulberry_(Morus_alba)_China_native_(3462929877).jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "61/00/ee/509.42784550.jpg",
+        "thumb": "61/00/ee/509.42784550.98x68.jpg",
+        "photographer": {
+          "full_name": "<a href='https://www.flickr.com/people/41597043@N00'>mauroguanandi</a>",
+          "homepage": "https://www.flickr.com/people/41597043@N00",
+          "role": "photographer"
+        }
+      },
+      {
+        "title": "Ripening mulberries.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Ripening_mulberries.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "61/ec/9b/509.4557910.jpg",
+        "thumb": "61/ec/9b/509.4557910.98x68.jpg",
+        "photographer": {
+          "full_name": "<a href='http://flickr.com/photos/9410163@N05'>Sandra Forbes</a>",
+          "homepage": "http://flickr.com/photos/9410163@N05",
+          "role": "photographer"
+        }
+      }
+    ],
+    "names": [
+      {
+        "vernacularName": "black mulberry",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Amoreira negra",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Moral",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Moro",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Mûrier noir",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Schwarze Maulbeere",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Black mulberry",
+        "language": "en"
+      }
+    ],
+    "taxonomy": {
+      "usageKey": 5361888,
+      "scientificName": "Morus nigra L.",
+      "canonicalName": "Morus nigra",
+      "rank": "SPECIES",
+      "status": "ACCEPTED",
+      "confidence": 98,
+      "matchType": "EXACT",
+      "kingdom": "Plantae",
+      "phylum": "Tracheophyta",
+      "order": "Rosales",
+      "family": "Moraceae",
+      "genus": "Morus",
+      "species": "Morus nigra",
+      "kingdomKey": 6,
+      "phylumKey": 7707728,
+      "classKey": 220,
+      "orderKey": 691,
+      "familyKey": 6640,
+      "genusKey": 2984545,
+      "speciesKey": 5361888,
+      "synonym": false,
+      "class": "Magnoliopsida"
+    },
+    "family": "Moraceae",
+    "kingdom": "Plantae",
+    "eolName": "Morus nigra L."
   }
   ]

@@ -51,7 +51,8 @@ export const renderFeatures = (item, traits, config, parent, isModalMode) => {
             const st = values.map(symbiont => {
                 if(R.contains(symbiont, symbionts)) {
                     return {
-                        description: trait.name,
+                        as: trait.name,
+                        role: trait.role,
                         type: trait.type,
                         symbiont: symbiont
                     };

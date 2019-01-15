@@ -87,7 +87,11 @@ export const english = {
         SOIL_TYPE: 'Soil type',
         LICEN_CUP_COLOUR: 'Licen cup colour',
         RIM: 'Rim',
-        CENTRE: 'Centre'
+        CENTRE: 'Centre',
+        HERBIVORE: 'Herbivore',
+        COMPETITOR: 'Competitor',
+        OCCUPANT: 'Lives in',
+        HOST: 'Host'
     },
     howEdible : {
         CHOICE : 'Choice',

@@ -27,7 +27,9 @@ export const renderTaxonCard = (collection, isModalMode = false, selectedItem, p
 
     let taxon, taxonName;
 
-    switch(rank.toUpperCase()) {
+    rank = rank ? rank.toUpperCase() : '';
+
+    switch(rank) {
         case 'FAMILY': 
             taxonName = speciesTaxon || item.family;
             taxon = taxa.find(f => f.name === taxonName);
@@ -37,7 +39,20 @@ export const renderTaxonCard = (collection, isModalMode = false, selectedItem, p
             taxonName = speciesTaxon || item.taxonomy.order;
             taxon = taxa.find(f => f.name === taxonName);
             rank = rank || 'order';
-        break;
+            break;
+        default:
+
+            let activeTaxon = itemProperties.taxonHasTaxaData(item.taxonomy.family, taxa) 
+                ? item.taxonomy.family
+                : itemProperties.taxonHasTaxaData(item.taxonomy.order, taxa)
+                    ? item.taxonomy.order
+                    : null
+        
+            taxonName = activeTaxon || item.taxonomy.order;
+            rank = taxonName;
+            taxon = taxa.find(f => f.name === taxonName);
+
+            break;
     }
     
     const context = {
@@ -99,7 +114,7 @@ export const renderTaxonCard = (collection, isModalMode = false, selectedItem, p
 
     const membersCount = document.querySelector('.js-names-badge');
 
-    if(context.occurrences === 0) membersCount.classList.add('hide');
+    if(!context.occurrences || context.occurrences === 0) membersCount.classList.add('hide');
 
     membersCount.addEventListener('click', event => {
         document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = `Members of the ${taxonName} family`;

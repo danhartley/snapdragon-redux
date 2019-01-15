@@ -23,8 +23,8 @@ const getItemScoreStats = (collection, history) => {
 
     if(!history) return [];
 
-    const passesTotals = history.scores.map(score => score.passesTotals);
-    const failsTotals = history.scores.map(score => score.failsTotals);
+    const passesTotals = history.scores.map(score => score.passesTotals).filter(p=>p);
+    const failsTotals = history.scores.map(score => score.failsTotals).filter(p=>p);
 
     const passes = R.clone(passesTotals).reduce(reducer, {});
     const fails = R.clone(failsTotals).reduce(reducer, {});

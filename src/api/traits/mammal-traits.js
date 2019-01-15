@@ -25,16 +25,16 @@ const getTraits = SD => {
         { name: SD.name.ACTIVE, value: SD.active.NOCTURNAL },
         { name: SD.name.ALTRICIAL, value: SD.boolean.YES },
         { name: SD.name.FEMALE, value: SD.female.VIXEN },
-        { name: SD.name.DISEASE, value: 'Sarcoptes scabiei', type: SD.symbiosis.PREDATION },
-        { name: SD.name.FOOD, value: `Oryctolagus cuniculus`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.FOOD, value: `Rodentia, Lagomorpha`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.FOOD, value: `Reptilia, Galliformes`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.FOOD, value: `Insecta, Gastropoda`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.FOOD, value: `Passeriformes, Annelida`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.FOOD, value: `${SD.foodType.NUTS}, ${SD.foodType.BERRIES}`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.PREY, value: `Canis lupus, Canis latrans`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.PREY, value: `Aquila chrysaetos`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.USAGE, value: `${SD.usage.FUR}`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.DISEASE, role: SD.name.HOST, value: 'Sarcoptes scabiei', type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREDATOR, value: `Oryctolagus cuniculus`, type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREDATOR, value: `Rodentia, Lagomorpha`, type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREDATOR, value: `Reptilia, Galliformes`, type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREDATOR, value: `Insecta, Gastropoda`, type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREDATOR, value: `Passeriformes, Annelida`, type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.HERBIVORE, value: `${SD.foodType.NUTS}, ${SD.foodType.BERRIES}`, type: SD.symbiosis.HERBIVORY },
+        { name: SD.name.FOOD, role: SD.name.PREY, value: `Canis lupus, Canis latrans`, type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREY, value: `Aquila chrysaetos`, type: SD.symbiosis.PREDATION },
+        { name: SD.name.USAGE, value: `${SD.usage.FUR}`, type: SD.symbiosis.PREDATION },
         { name: SD.name.KIN_SELECTION, value: SD.boolean.YES, type: SD.symbiosis.COMMENSALISM },
     ]
     },
@@ -63,16 +63,16 @@ const getTraits = SD => {
         { name: SD.name.MATURITY, value: '6-7m' },
         { name: SD.name.DIET, value: SD.diet.OMNIVORE },
         { name: SD.name.ALTRICIAL, value: SD.boolean.YES },
-        { name: SD.name.PREDATOR, value: `Martes martes, Felis silvestris`, type: SD.symbiosis.PREDATION },
-        { name: SD.name.PREDATOR, value: `Mustela erminea`, type: SD.symbiosis.PREDATION },
-        { name: SD.name.PREDATOR, value: `Strigiformes, Accipiter gentilis`, type: SD.symbiosis.PREDATION },
-        { name: SD.name.PREDATOR, value: `Buteo, Vulpes vulpes`, type: SD.symbiosis.PREDATION },
-        { name: SD.name.DISEASE, value: 'Squirrel parapoxvirus', type: SD.symbiosis.PREDATION },
-        { name: SD.name.THREAT, value: 'Sciurus carolinensis', type: SD.symbiosis.COMPETITION },
-        { name: SD.name.FOOD, value: `${SD.foodType.SEEDS}, Corylus, Fagus`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.FOOD, value: `${SD.foodType.SEEDS}, Castanea, Fungi`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.HABITAT, value: `Pinus sylvestris, Picea abies`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.HABITAT, value: `Pinus sibirica`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.FOOD, role: SD.name.PREY, value: `Martes martes, Felis silvestris`, type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREY, value: `Mustela erminea`, type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREY, value: `Strigiformes, Accipiter gentilis`, type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREY, value: `Buteo, Vulpes vulpes`, type: SD.symbiosis.PREDATION },
+        { name: SD.name.DISEASE, role: SD.name.PREY, value: 'Squirrel parapoxvirus', type: SD.symbiosis.PREDATION },
+        { name: SD.name.THREAT, role: SD.name.COMPETITOR, value: 'Sciurus carolinensis', type: SD.symbiosis.COMPETITION },
+        { name: SD.name.FOOD, role: SD.name.HERBIVORE, value: `${SD.foodType.SEEDS}, Corylus, Fagus`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.FOOD, role: SD.name.HERBIVORE, value: `Castanea, Fungi`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.HABITAT, role: SD.name.OCCUPANT, value: `Pinus sylvestris, Picea abies`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.HABITAT, role: SD.name.OCCUPANT, value: `Pinus sibirica`, type: SD.symbiosis.COMMENSALISM },
     ] },
     { name: 'Oryctolagus cuniculus',
     symbionts: [
@@ -93,20 +93,20 @@ const getTraits = SD => {
         { name: SD.name.WEANING, value: '18d' },
         { name: SD.name.MATURITY, value: '8-10w' },
         { name: SD.name.HABITAT, value: `${SD.habitat.WOODLAND}, ${SD.habitat.GRASSLAND}, ${SD.habitat.SCRUB}` },
-        { name: SD.name.FOOD, value: `Morus nigra`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.FOOD, value: `${SD.foodType.HERBAGE}, Festuca`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.FOOD, value: `${SD.foodType.GRASS}, ${SD.foodType.SWARD}`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.FOOD, role: SD.name.HERBIVORE, value: `Morus nigra`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.FOOD, role: SD.name.HERBIVORE, value: `${SD.foodType.HERBAGE}, Festuca`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.FOOD, role: SD.name.HERBIVORE, value: `${SD.foodType.GRASS}, ${SD.foodType.SWARD}`, type: SD.symbiosis.COMMENSALISM },
         { name: SD.name.DISEASE, value: 'Myxomatosis', type: SD.symbiosis.PREDATION },
         { name: SD.name.DISEASE, value: 'Rabbit haemorrhagic disease', type: SD.symbiosis.PREDATION },
-        { name: SD.name.PREDATOR, value: 'Vulpes vulpes, Meles meles', type: SD.symbiosis.PREDATION },
-        { name: SD.name.PREDATOR, value: 'Lynx pardinus, Aquila adalberti', type: SD.symbiosis.PREDATION },
-        { name: SD.name.PREDATOR, value: 'Mustela putorius, Neovison vison', type: SD.symbiosis.PREDATION },
-        { name: SD.name.PREDATOR, value: 'Strigiformes', type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREY, value: 'Vulpes vulpes, Meles meles', type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREY, value: 'Lynx pardinus, Aquila adalberti', type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREY, value: 'Mustela putorius, Neovison vison', type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREY, value: 'Strigiformes', type: SD.symbiosis.PREDATION },
     ]
     },
     { name: 'Phocoena phocoena',
     symbionts: [ 
-        { id: 'Delphinus delphis' }
+        // { id: 'Delphinus delphis' }
     ],            
     traits: [
         { name: SD.name.LIFE_SPAN, value: '8-13a' },
@@ -122,8 +122,8 @@ const getTraits = SD => {
         traits: [
             { name: SD.name.SHELTER, value: `${SD.shelter.BURROW}, ${SD.shelter.SETT}` },
             { name: SD.name.DIET, value: SD.diet.OMNIVORE },
-            { name: SD.name.FOOD, value: `Erinaceus europaeus`, type: SD.symbiosis.COMMENSALISM },
-            { name: SD.name.FOOD, value: `Annelida, Insecta`, type: SD.symbiosis.COMMENSALISM },
+            { name: SD.name.FOOD, role: SD.name.PREDATOR, value: `Erinaceus europaeus`, type: SD.symbiosis.PREDATION },
+            { name: SD.name.FOOD, role: SD.name.PREDATOR, value: `Annelida, Insecta`, type: SD.symbiosis.PREDATION },
         ]    
     },
     { 
@@ -134,8 +134,8 @@ const getTraits = SD => {
         traits: [
             { name: SD.name.LIFE_SPAN, value: '10-14a' },
             { name: SD.name.DIET, value: SD.diet.OMNIVORE },
-            { name: SD.name.FOOD, value: `${SD.foodType.SEEDS}, ${SD.foodType.BERRIES}, ${SD.foodType.NUTS}`, type: SD.symbiosis.COMMENSALISM },
-            { name: SD.name.FOOD, value: `Annelida, Insecta`, type: SD.symbiosis.COMMENSALISM },
+            { name: SD.name.FOOD, role: SD.name.HERBIVORE, value: `${SD.foodType.SEEDS}, ${SD.foodType.BERRIES}, ${SD.foodType.NUTS}`, type: SD.symbiosis.COMMENSALISM },
+            { name: SD.name.FOOD, role: SD.name.PREDATOR, value: `Annelida, Insecta`, type: SD.symbiosis.PREDATION },
         ]    
     },
     { 
@@ -146,8 +146,8 @@ const getTraits = SD => {
     traits: [        
             { name: SD.name.LENGTH, value: '57-95cm' },
             { name: SD.name.TAIL_LENGTH, value: '35-45cm' },
-            { name: SD.name.FOOD, value: `Amphibia, Crustacea, Insecta`, type: SD.symbiosis.COMMENSALISM },
-            { name: SD.name.FOOD, value: `Aves, Castor fiber`, type: SD.symbiosis.COMMENSALISM },
+            { name: SD.name.FOOD, role: SD.name.PREDATOR, value: `Amphibia, Crustacea, Insecta`, type: SD.symbiosis.PREDATION },
+            { name: SD.name.FOOD, role: SD.name.PREDATOR, value: `Aves, Castor fiber`, type: SD.symbiosis.PREDATION },
         ]    
     },
     { 
@@ -159,8 +159,8 @@ const getTraits = SD => {
     traits: [        
         { name: SD.name.LOOK_ALIKES, values: [ 'Phocoena phocoena' ]},
         { name: SD.name.LENGTH, value: '1.5-2.4m' },
-        { name: SD.name.FOOD, value: `Clupeidae, Engraulidae`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.FOOD, value: `Merlucciidae, Cephalopoda`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.FOOD, role: SD.name.PREDATOR, value: `Clupeidae, Engraulidae`, type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREDATOR, value: `Merlucciidae, Cephalopoda`, type: SD.symbiosis.PREDATION },
         ]    
     },
     { 
@@ -172,12 +172,12 @@ const getTraits = SD => {
     ],            
     traits: [        
         { name: SD.name.LENGTH, value: '20-26cm' },
-        { name: SD.name.FOOD, value: `Gastropod, Annelida`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.FOOD, value: `Coleoptera, Lepidoptera`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.FOOD, value: `Glomeris marginata`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.FOOD, value: `Tachypodoiulus niger`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.FOOD, value: `Carabus nemoralis`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.PREY, value: `'Meles meles'`, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.FOOD, role: SD.name.PREDATOR, value: 'Gastropod, Annelida', type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREDATOR, value: 'Coleoptera, Lepidoptera', type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREDATOR, value: 'Glomeris marginata', type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREDATOR, value: 'Tachypodoiulus niger', type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREDATOR, value: 'Carabus nemoralis', type: SD.symbiosis.PREDATION },
+        { name: SD.name.FOOD, role: SD.name.PREY, value: 'Meles meles', type: SD.symbiosis.PREDATION },
         { name: SD.name.DIET, value: SD.diet.OMNIVORE },
         ]    
     },

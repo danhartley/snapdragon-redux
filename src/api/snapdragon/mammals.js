@@ -732,6 +732,10 @@ export const mammals = [
       ],
       "names": [
         {
+          "vernacularName": "Short-beaked Common Dolphin",
+          "language": "en"
+        },
+        {
         "vernacularName": "Common Dolphin",
         "language": "en",
         wikiSearchTerm: true
@@ -771,11 +775,7 @@ export const mammals = [
         {
           "vernacularName": "Saddle-backed Dolphin",
           "language": "en"
-        },
-        {
-          "vernacularName": "Short-beaked Common Dolphin",
-          "language": "en"
-        },
+        },      
         {
           "vernacularName": "Short-beaked Saddleback Dolphin",
           "language": "en"
@@ -1717,5 +1717,464 @@ export const mammals = [
       "family": "Mustelidae",
       "kingdom": "Animalia",
       "eolName": "Meles meles (Linnaeus, 1758)"
+    },
+    {
+      "id": "1036116",
+      "name": "Castor fiber",
+      "images": [
+        {
+          "rightsHolder": "2013 Simon J. Tonge",
+          "source": "http://calphotos.berkeley.edu/cgi/img_query?seq_num=556714&one=T",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "85/32/69/7.CalPhotos_0000_0000_0213_1139.jpg",
+          "thumb": "85/32/69/7.CalPhotos_0000_0000_0213_1139.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://calphotos.berkeley.edu/cgi/photographer_query?where-name_full=Simon+J.+Tonge&one=T'>Simon J. Tonge</a>",
+            "homepage": "http://calphotos.berkeley.edu/cgi/photographer_query?where-name_full=Simon+J.+Tonge&one=T",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "File:Vee poole - ZaÄek.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Vee_poole_-_Za%C4%8Dek.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/a7/1b/509.12096440.jpg",
+          "thumb": "55/a7/1b/509.12096440.98x68.jpg"
+        },
+        {
+          "title": "Tayside Beaver mother and kit June 5, 2010 Ray Scott.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Tayside_Beaver_mother_and_kit_June_5,_2010_Ray_Scott.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/ce/6e/509.12670186.jpg",
+          "thumb": "55/ce/6e/509.12670186.98x68.jpg"
+        },
+        {
+          "title": "Castor fiber vistulanus.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castor_fiber_vistulanus.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/ec/86/509.22922233.jpg",
+          "thumb": "57/ec/86/509.22922233.98x68.jpg"
+        },
+        {
+          "title": "Castor fiber vistulanus2.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castor_fiber_vistulanus2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/ec/e0/509.22928968.jpg",
+          "thumb": "57/ec/e0/509.22928968.98x68.jpg"
+        },
+        {
+          "title": "Castor fiber vistulanus3.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castor_fiber_vistulanus3.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/ec/e1/509.22929028.jpg",
+          "thumb": "57/ec/e1/509.22929028.98x68.jpg"
+        },
+        {
+          "title": "Castor fiber vistulanus4.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castor_fiber_vistulanus4.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/f1/27/509.22993686.jpg",
+          "thumb": "57/f1/27/509.22993686.98x68.jpg"
+        },
+        {
+          "title": "Bever - Nationaal Park Drentsche Aa.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Bever_-_Nationaal_Park_Drentsche_Aa.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/dd/44/509.33059956.jpg",
+          "thumb": "59/dd/44/509.33059956.98x68.jpg"
+        },
+        {
+          "title": "Bever Drentsche Aa.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Bever_Drentsche_Aa.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/f4/4d/509.33574341.jpg",
+          "thumb": "59/f4/4d/509.33574341.98x68.jpg"
+        },
+        {
+          "title": "Leben im Dreistromland Demmin,,,,,.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Leben_im_Dreistromland_Demmin,,,,,.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "60/6b/b8/509.40608074.jpg",
+          "thumb": "60/6b/b8/509.40608074.98x68.jpg"
+        },
+        {
+          "title": "Castor fiber eating in Eskilstuna, Sweden.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Castor_fiber_eating_in_Eskilstuna,_Sweden.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "60/74/b8/509.40728711.jpg",
+          "thumb": "60/74/b8/509.40728711.98x68.jpg"
+        }
+      ],
+      "names": [
+        {
+          "vernacularName": "European beaver",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Eurasian Beaver",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Eurasischer Biber",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Biber",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Castor d'Eurasie",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Castor d'Europe",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Castor europeo",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Castor",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Castor",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Castoro europeo",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Castoro",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Europäischer Biber",
+          "language": "de"
+        },
+      ],
+      "taxonomy": {
+        "usageKey": 4409131,
+        "scientificName": "Castor fiber Linnaeus, 1758",
+        "canonicalName": "Castor fiber",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 98,
+        "matchType": "EXACT",
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "order": "Rodentia",
+        "family": "Castoridae",
+        "genus": "Castor",
+        "species": "Castor fiber",
+        "kingdomKey": 1,
+        "phylumKey": 44,
+        "classKey": 359,
+        "orderKey": 1459,
+        "familyKey": 5493,
+        "genusKey": 3240758,
+        "speciesKey": 4409131,
+        "synonym": false,
+        "class": "Mammalia"
+      },
+      "family": "Castoridae",
+      "kingdom": "Animalia",
+      "eolName": "Castor fiber Linnaeus, 1758"
+    },
+    {
+      "id": "347432",
+      "name": "Lynx pardinus",
+      "images": [
+        {
+          "title": "File:Lince en el parque de CabÃ¡rceno.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Lince_en_el_parque_de_Cab%C3%A1rceno.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/de/36/509.18095790.jpg",
+          "thumb": "56/de/36/509.18095790.98x68.jpg"
+        },
+        {
+          "title": "Linces4.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Linces4.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/1f/73/509.2419316.jpg",
+          "thumb": "58/1f/73/509.2419316.98x68.jpg"
+        },
+        {
+          "title": "Linces12.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Linces12.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/1f/78/509.2419335.jpg",
+          "thumb": "58/1f/78/509.2419335.98x68.jpg"
+        },
+        {
+          "title": "Iberian Lynx endrino03.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Iberian_Lynx_endrino03.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/da/fd/509.27381722.jpg",
+          "thumb": "58/da/fd/509.27381722.98x68.jpg",
+          "photographer": {
+            "full_name": "http://www.lynxexsitu.es",
+            "homepage": null,
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Iberian Lynx hidding.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Iberian_Lynx_hidding.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/db/01/509.27381726.jpg",
+          "thumb": "58/db/01/509.27381726.98x68.jpg"
+        },
+        {
+          "title": "Iberian Lynx endrino05.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Iberian_Lynx_endrino05.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/db/02/509.27381727.jpg",
+          "thumb": "58/db/02/509.27381727.98x68.jpg"
+        },
+        {
+          "title": "Iberian Lynx resting.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Iberian_Lynx_resting.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/db/06/509.27381732.jpg",
+          "thumb": "58/db/06/509.27381732.98x68.jpg"
+        },
+        {
+          "title": "Iberian Lynx sitting 03.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Iberian_Lynx_sitting_03.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/db/0a/509.27381737.jpg",
+          "thumb": "58/db/0a/509.27381737.98x68.jpg"
+        },
+        {
+          "title": "Iberian Lynx in den.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Iberian_Lynx_in_den.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/db/0b/509.27381738.jpg",
+          "thumb": "58/db/0b/509.27381738.98x68.jpg"
+        },
+        {
+          "title": "Iberian Lynx linces9.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Iberian_Lynx_linces9.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/db/0f/509.27381743.jpg",
+          "thumb": "58/db/0f/509.27381743.98x68.jpg"
+        },
+        {
+          "title": "Iberian Lynx stalking.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Iberian_Lynx_stalking.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/db/16/509.27381984.jpg",
+          "thumb": "58/db/16/509.27381984.98x68.jpg"
+        },
+        {
+          "title": "Iberian Lynx beta04.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Iberian_Lynx_beta04.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/db/19/509.27381988.jpg",
+          "thumb": "58/db/19/509.27381988.98x68.jpg"
+        }
+      ],
+      "names": [
+        {
+          "vernacularName": "Iberian lynx",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Iberischer Luchs",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Lince ibérico",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Lince ibérico",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Lince pardina",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Lynx d'Espagne",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Lynx ibérique",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Lynx pardelle",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Pardel Lynx",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Pardelluchs",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Spanish lynx",
+          "language": "en"
+        }
+      ],
+      "taxonomy": {
+        "usageKey": 2435261,
+        "scientificName": "Lynx pardinus (Temminck, 1827)",
+        "canonicalName": "Lynx pardinus",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 98,
+        "matchType": "EXACT",
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "order": "Carnivora",
+        "family": "Felidae",
+        "genus": "Lynx",
+        "species": "Lynx pardinus",
+        "kingdomKey": 1,
+        "phylumKey": 44,
+        "classKey": 359,
+        "orderKey": 732,
+        "familyKey": 9703,
+        "genusKey": 2435239,
+        "speciesKey": 2435261,
+        "synonym": false,
+        "class": "Mammalia"
+      },
+      "family": "Felidae",
+      "kingdom": "Animalia",
+      "eolName": "Lynx pardinus (Temminck, 1827)"
+    },
+    {
+      "id": "328020",
+      "name": "Martes martes",
+      "images": [
+        {
+          "title": "Pine Marten",
+          "rightsHolder": "Alastair Rae",
+          "source": "https://www.flickr.com/photos/merula/5922622659/",
+          "license": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "url": "80/6b/86/542.5922622659.jpg",
+          "thumb": "80/6b/86/542.5922622659.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/55663585@N00'>Alastair Rae</a>",
+            "homepage": "http://www.flickr.com/photos/55663585@N00",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Brehms Het Leven der Dieren Zoogdieren Orde 4 Edelmarter (Mustela martes).jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Brehms_Het_Leven_der_Dieren_Zoogdieren_Orde_4_Edelmarter_(Mustela_martes).jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/2a/0d/509.1489306.jpg",
+          "thumb": "56/2a/0d/509.1489306.98x68.jpg"
+        },
+        {
+          "title": "Martes martes crop.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Martes_martes_crop.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/97/d5/509.2590318.jpg",
+          "thumb": "58/97/d5/509.2590318.98x68.jpg"
+        },
+        {
+          "title": "Pine Marten in Spruce Tree3.JPG",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Pine_Marten_in_Spruce_Tree3.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5a/1d/2f/509.34161585.jpg",
+          "thumb": "5a/1d/2f/509.34161585.98x68.jpg"
+        },
+        {
+          "title": "Baummarder 01.jpg",
+          "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+          "source": "https://commons.wikimedia.org/wiki/File:Baummarder_01.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "67/1c/92/509.6421278.jpg",
+          "thumb": "67/1c/92/509.6421278.98x68.jpg"
+        }
+      ],
+      "names": [
+        {
+          "vernacularName": "pine marten",
+          "language": "en"
+        },
+        {
+          "vernacularName": "European pine marten",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Baummarder",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Edelmarder",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Marta",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Martre des pins",
+          "language": "fr"
+        },
+      ],
+      "taxonomy": {
+        "usageKey": 5218878,
+        "scientificName": "Martes martes (Linnaeus, 1758)",
+        "canonicalName": "Martes martes",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 98,
+        "matchType": "EXACT",
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "order": "Carnivora",
+        "family": "Mustelidae",
+        "genus": "Martes",
+        "species": "Martes martes",
+        "kingdomKey": 1,
+        "phylumKey": 44,
+        "classKey": 359,
+        "orderKey": 732,
+        "familyKey": 5307,
+        "genusKey": 2433765,
+        "speciesKey": 5218878,
+        "synonym": false,
+        "class": "Mammalia"
+      },
+      "family": "Mustelidae",
+      "kingdom": "Animalia",
+      "eolName": "Martes martes (Linnaeus, 1758)"
     }
   ]
