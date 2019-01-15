@@ -3496,102 +3496,134 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Gemeine Rübe",
+        "vernacularName": "Paprika",
         "language": "de"
       },
       {
-        "vernacularName": "Rübe",
+        "vernacularName": "Spanischer Pfeffer",
         "language": "de"
       },
       {
-        "vernacularName": "Zuckerrübe",
+        "vernacularName": "Zier-Pfeffer",
         "language": "de"
       },
       {
-        "vernacularName": "beet",
+        "vernacularName": "chili pepper",
         "language": "en"
       },
       {
-        "vernacularName": "Beet root",
+        "vernacularName": "Bell pepper",
         "language": "en"
       },
       {
-        "vernacularName": "Beetroot",
+        "vernacularName": "Chile pepper",
         "language": "en"
       },
       {
-        "vernacularName": "Red Beet",
+        "vernacularName": "Green pepper",
         "language": "en"
       },
       {
-        "vernacularName": "Sugar Beet",
+        "vernacularName": "Ornamental Pepper",
         "language": "en"
       },
       {
-        "vernacularName": "Swiss chard",
+        "vernacularName": "Pod pepper",
         "language": "en"
       },
       {
-        "vernacularName": "White beet",
+        "vernacularName": "Sweet pepper",
         "language": "en"
       },
       {
-        "vernacularName": "common beet",
+        "vernacularName": "cayenne pepper",
         "language": "en"
       },
       {
-        "vernacularName": "common beet, sugar beet, Swiss chard",
+        "vernacularName": "pepper",
         "language": "en"
       },
       {
-        "vernacularName": "cultivated beet",
-        "language": "en"
-      },
-      {
-        "vernacularName": "sea beet",
-        "language": "en"
-      },
-      {
-        "vernacularName": "acelga",
+        "vernacularName": "Paprika",
         "language": "es"
       },
       {
-        "vernacularName": "Betterave commune, Bette-épinard",
+        "vernacularName": "Chile",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Guindilla",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Pimentón",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Pimiento dulce",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Pimiento morrón",
+        "language": "es"
+      },
+      {
+        "vernacularName": "aji",
+        "language": "es"
+      },
+      {
+        "vernacularName": "aji picante",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Piment annuel",
         "language": "fr"
       },
       {
-        "vernacularName": "Betterave fourragère",
+        "vernacularName": "Paprika de Hongrie",
         "language": "fr"
       },
       {
-        "vernacularName": "Betterave rouge potagère",
+        "vernacularName": "Piment",
         "language": "fr"
       },
       {
-        "vernacularName": "Betterave sucrière",
+        "vernacularName": "Piment doux",
         "language": "fr"
       },
       {
-        "vernacularName": "bieta a foglia",
+        "vernacularName": "Piment doux d'Espagne",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Piment ornemental, Piment doux",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Poivre rouge",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "poivrons",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Peperone",
         "language": "it"
       },
       {
-        "vernacularName": "bietola da taglio",
+        "vernacularName": "Paprica",
         "language": "it"
       },
       {
-        "vernacularName": "acelga",
+        "vernacularName": "Pimentão doce",
         "language": "pt"
       },
       {
-        "vernacularName": "Acelga-brava",
-        "language": "pt"
-      },
-      {
-        "vernacularName": "Beterraba-sacarina",
+        "vernacularName": "Colorau",
         "language": "pt"
       }
-    ],
+    ],    
     "taxonomy": {
       "usageKey": 2932944,
       "scientificName": "Capsicum annuum L.",
@@ -6710,13 +6742,13 @@ export const plants = [
         "language": "de"
       },
       {
-        "vernacularName": "garden tomato",
-        "language": "en"        
-      },
-      {
         "vernacularName": "tomato",
         "language": "en",
         wikiSearchTerm: true
+      },
+      {
+        "vernacularName": "garden tomato",
+        "language": "en"        
       },
       {
         "vernacularName": "Tomate fino",
@@ -10398,11 +10430,15 @@ export const plants = [
         "language": "de"
       },
       {
-        "vernacularName": "common plum",
+        "vernacularName": "plum",
         "language": "en"
       },
       {
         "vernacularName": "Damson",
+        "language": "en"
+      },
+      {
+        "vernacularName": "common plum",
         "language": "en"
       },
       {
@@ -10431,10 +10467,6 @@ export const plants = [
       },
       {
         "vernacularName": "garden plum",
-        "language": "en"
-      },
-      {
-        "vernacularName": "plum",
         "language": "en"
       },
       {

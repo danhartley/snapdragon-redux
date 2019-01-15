@@ -953,5 +953,10 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.COLOUR, value: `${SD.colour.YELLOW_GREEN}-${SD.colour.GREY_YELLOW}`},
         { name: SD.name.HABITAT, value: `${SD.habitat.BRANCHES}, ${SD.habitat.ROCKS}` },
     ]},
+    { name: 'Usnea filipendula', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FRUTICOSE}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.PALE_GREY_GREEN}`},
+        { name: SD.name.HABITAT, value: `${SD.treeType.CONIFERS}` },
+    ]},
     ];
 };

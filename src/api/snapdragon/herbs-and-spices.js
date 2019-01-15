@@ -1673,8 +1673,7 @@ export const herbsAndSpices = [
       "names": [
         {
           "vernacularName": "Paprika",
-          "language": "de",
-          "eol_preferred": true
+          "language": "de"
         },
         {
           "vernacularName": "Spanischer Pfeffer",
@@ -1686,8 +1685,7 @@ export const herbsAndSpices = [
         },
         {
           "vernacularName": "chili pepper",
-          "language": "en",
-          "eol_preferred": true
+          "language": "en"
         },
         {
           "vernacularName": "Bell pepper",
@@ -1722,17 +1720,8 @@ export const herbsAndSpices = [
           "language": "en"
         },
         {
-          "vernacularName": "peppers",
-          "language": "en"
-        },
-        {
-          "vernacularName": "sweet and chili peppers",
-          "language": "en"
-        },
-        {
           "vernacularName": "Paprika",
-          "language": "es",
-          "eol_preferred": true
+          "language": "es"
         },
         {
           "vernacularName": "Chile",
@@ -1764,8 +1753,7 @@ export const herbsAndSpices = [
         },
         {
           "vernacularName": "Piment annuel",
-          "language": "fr",
-          "eol_preferred": true
+          "language": "fr"
         },
         {
           "vernacularName": "Paprika de Hongrie",
@@ -1797,8 +1785,7 @@ export const herbsAndSpices = [
         },
         {
           "vernacularName": "Peperone",
-          "language": "it",
-          "eol_preferred": true
+          "language": "it"
         },
         {
           "vernacularName": "Paprica",
@@ -1806,8 +1793,7 @@ export const herbsAndSpices = [
         },
         {
           "vernacularName": "Pimentão doce",
-          "language": "pt",
-          "eol_preferred": true
+          "language": "pt"
         },
         {
           "vernacularName": "Colorau",

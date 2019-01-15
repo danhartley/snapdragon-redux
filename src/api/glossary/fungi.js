@@ -239,4 +239,13 @@ export const fungi = [
         group: 2,
         wiki: 'https://en.wikipedia.org/wiki/Gasteroid_fungi'
     },
+    {
+        term: "Holdfast",
+        definition: "Single, central structure by which a lichen fastens to its substrate.",
+    },
+    {
+        term: "Rhizine",
+        definition: "Multicellular root-like structures that anchor a lichen to its substrate.",
+        wiki: 'https://en.wikipedia.org/wiki/Rhizine'
+    },
 ]
