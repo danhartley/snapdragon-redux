@@ -93,7 +93,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                 link.addEventListener('click', event => {
                     const keyTrait = event.target.dataset.keyTrait;
                     const imageUrl = event.target.dataset.url.replace('.98x68.jpg', '.260x190.jpg');              
-                    renderNonTaxonCard(collection, true, keyTrait, parent, imageUrl);
+                    renderNonTaxonCard(collection, true, keyTrait, speciesCardModal, imageUrl);
                 });
             });
             const taxonCardModal = document.querySelector('#taxonCardModal .js-modal-body');

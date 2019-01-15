@@ -105,6 +105,14 @@ hr {
   float: left;
 }
 
+.non-taxa-definition {
+  padding: 0 .5rem;
+}
+
+.non-taxon.revision.card .id-box, .non-taxon.revision.card .non-taxa-definition {
+  min-height: 5rem;
+}
+
 .icon::before, .icon::after {
   display: inline-block;
   font-style: normal;
