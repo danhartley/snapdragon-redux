@@ -43,10 +43,11 @@ export const getInatSpecies = (inatConfig, config) => {
         return await json.results;
     }
 
-    async function getInatPlaceObservations(placeId) {
+    async function getInatPlaceObservations(placeId, config) {
+        const iconicTaxa = getIconicTaxa(config);
         const perPage = 200;
         const endpoint = 'observations/species_counts';
-        const url = `https://api.inaturalist.org/v1/${endpoint}?page=1&captive=false&hrank=species&lrank=species&place_id=${placeId}&quality_grade=research&per_page=${perPage}`;
+        const url = `https://api.inaturalist.org/v1/${endpoint}?page=1&captive=false&hrank=species&lrank=species&place_id=${placeId}&quality_grade=research&per_page=${perPage}&iconic_taxa=${iconicTaxa}`;
         const response = await fetch(url);
         const json = await response.json();
         return await json.results;
@@ -60,7 +61,7 @@ export const getInatSpecies = (inatConfig, config) => {
     const placeId = inatConfig.placeId;
 
     if(placeId) {
-        observations = getInatPlaceObservations(placeId).then(observations => {
+        observations = getInatPlaceObservations(placeId, config).then(observations => {
             return observations.map(observation => {
                 if(R.contains(observation.taxon.name, names)) {
                     const item = { ...species.find(item => item.name === observation.taxon.name) };

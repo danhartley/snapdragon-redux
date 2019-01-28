@@ -659,6 +659,7 @@ a.dropdown-item:hover {
 
 .latin-name {
   font-style: italic;
+  font-family: serif;
 }
 
 .common-name {
@@ -835,6 +836,7 @@ a.dropdown-item:hover {
 
 .latin { 
   font-style: italic;
+  font-family: serif;
 }
 
 .taxon-members {
@@ -2130,8 +2132,12 @@ a.collection-disabled {
   margin: auto 0;
 }
 
-.feature-symbiont-list.scrollable {
+.feature-types {
   border-bottom: 1px solid var(--snap-question-radio);
+  padding: 0 0 .5rem 0;
+}
+
+.feature-symbiont-list.scrollable {  
   max-height: 6rem;
   min-height: 5rem;
   width: 100%;

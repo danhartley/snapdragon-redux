@@ -25,8 +25,9 @@ export const renderCollections = (counter) => {
     let collections = R.clone(collectionsState);
     if(config.iconicTaxa && config.iconicTaxa.length > 0) {
         const localSpecies = collections.find(c => c.id === 1);
-        const arrabidaSpecies = collections.find(c => c.id === 2);
-        collections = [ ...collections.filter(c => R.contains(c.iconicTaxon, config.iconicTaxa)), localSpecies, arrabidaSpecies ];
+        const monsantoSpecies = collections.find(c => c.id === 2);
+        const arrabidaSpecies = collections.find(c => c.id === 3);
+        collections = [ ...collections.filter(c => R.contains(c.iconicTaxon, config.iconicTaxa)), localSpecies, monsantoSpecies, arrabidaSpecies ];
     }
     let collection = R.clone(collectionState);
 
