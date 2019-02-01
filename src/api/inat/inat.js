@@ -36,7 +36,7 @@ export const getInatSpecies = (inatConfig, config) => {
         const end = daysAway('future', 30);
         // const endpoint = 'observations';
         const endpoint = 'observations/species_counts';
-        const url = `https://api.inaturalist.org/v1/${endpoint}?page=1&captive=false&hrank=species&iconic_taxa=${iconicTaxa}&lrank=species&m1=11&m2=1&photos=true&place_id=any&quality_grade=research&lat=${lat}&lng=${lng}&radius=${radius}&user_id=&per_page=${perPage}`;
+        const url = `https://api.inaturalist.org/v1/${endpoint}?page=1&captive=false&hrank=species&iconic_taxa=${iconicTaxa}&rank=species&m1=11&m2=1&photos=true&place_id=any&quality_grade=research&lat=${lat}&lng=${lng}&radius=${radius}&user_id=&per_page=${perPage}`;
         // const url = `https://api.inaturalist.org/v1/${endpoint}?page=1&captive=false&hrank=species&iconic_taxa=${iconicTaxa}&lrank=species&d1=${start}&d2=${end}&photos=true&place_id=any&quality_grade=research&lat=${lat}&lng=${lng}&radius=${radius}&user_id=&per_page=${perPage}`;
         const response = await fetch(url);
         const json = await response.json();
@@ -47,7 +47,7 @@ export const getInatSpecies = (inatConfig, config) => {
         const iconicTaxa = getIconicTaxa(config);
         const perPage = 200;
         const endpoint = 'observations/species_counts';
-        const url = `https://api.inaturalist.org/v1/${endpoint}?page=1&captive=false&hrank=species&lrank=species&place_id=${placeId}&quality_grade=research&per_page=${perPage}&iconic_taxa=${iconicTaxa}`;
+        const url = `https://api.inaturalist.org/v1/${endpoint}?page=1&captive=false&hrank=species&rank=species&place_id=${placeId}&quality_grade=research&per_page=${perPage}&iconic_taxa=${iconicTaxa}`;
         const response = await fetch(url);
         const json = await response.json();
         return await json.results;
@@ -59,6 +59,7 @@ export const getInatSpecies = (inatConfig, config) => {
     let observations;
 
     const placeId = inatConfig.placeId;
+    const taxonNames = [];
 
     if(placeId) {
         observations = getInatPlaceObservations(placeId, config).then(observations => {
@@ -67,11 +68,10 @@ export const getInatSpecies = (inatConfig, config) => {
                     const item = { ...species.find(item => item.name === observation.taxon.name) };
                     return { ...item, observationCount: observation.taxon.observations_count, iconicTaxon: observation.taxon.iconic_taxon_name };
                 } 
-                else {
-                    console.log(observation.taxon.name);
-                }
+                taxonNames.push(observation.taxon.name);
             });
         });
+        console.log(taxonNames);
         return observations;
     } else {
         observations = getInatObservations(latitude, longitude, config).then(observations => {
@@ -107,7 +107,7 @@ export async function getInatTaxonStats(item, placeId) {
     const d1 = '2000-01-01';
     const d2 = '3000-01-01'
 
-    const url = `${endpoint}?verifiable=${verifiable}&taxon_name=${taxonName}&place_id=${place}`;
+    const url = `${endpoint}?verifiable=${verifiable}&taxon_name=${taxonName}&place_id=${place}&rank=species`;
     const response = await fetch(url);
     const json = await response.json();
     return json;
