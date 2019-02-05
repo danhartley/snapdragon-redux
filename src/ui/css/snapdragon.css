@@ -159,6 +159,12 @@ hr {
   color: var(--snap-alert);
 }
 
+.icon span {
+  font-size: .7rem;
+  vertical-align: middle;
+  margin: 0 0 0 .25rem;
+}
+
 .dropdown-menu {
   margin: .15rem 0 0 0;
   padding: 0;
@@ -296,7 +302,7 @@ a.dropdown-item:hover {
 } */
 
 .nav-icons .active-icon {
-  color: var(--snap-active);
+  color: var(--orange);
 }
 
 .nav-icons .inactive-icon {
