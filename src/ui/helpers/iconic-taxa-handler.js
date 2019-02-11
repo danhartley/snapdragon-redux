@@ -114,3 +114,19 @@ export const handleIconicTaxaFilter = (config) => {
         }, 1500);
     });
 };
+
+//const languagesHeader = document.querySelector('.btn-language');
+
+// const changeLanguageHandler = language => {
+    //     config.language = language;
+    //     languagesHeader.innerHTML = config.languages.find(l => l.lang === config.language).name;
+    //     actions.boundUpdateLanguage(language);
+    //     if(config.isLandscapeMode && collection.id) {
+    //         actions.boundSelectCollection(collection);
+    //         renderSpeciesCollectionList(collection, false);
+    //     }
+    // };
+
+    // selectHandler('.dropdown.js-languages .dropdown-item', language => {        
+    //     changeLanguageHandler(language);
+    // });

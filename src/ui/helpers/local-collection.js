@@ -2,7 +2,7 @@ import { getLocation, getPlace } from 'geo/geo';
 import { actions } from 'redux/actions/action-creators';
 import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 
-export async function handleLocalCollection(localCollectionNode, collectionsHeader, learningActionBtn, config, collection) {
+export async function handleLocalCollection(localCollectionNode, learningActionBtn, config, collection) {
         
     if(!localCollectionNode) return;
 
@@ -17,8 +17,7 @@ export async function handleLocalCollection(localCollectionNode, collectionsHead
 
     if(place) {
 
-        localCollectionNode.innerHTML = place.summary;
-        collectionsHeader.innerHTML = place.summary;
+        localCollectionNode.querySelectorAll('span')[1].innerText = place.summary;       
         collection.name = place.summary;
         
         if(config.isPortraitMode) {
@@ -31,9 +30,9 @@ export async function handleLocalCollection(localCollectionNode, collectionsHead
             actions.boundUpdateConfig(config);
         }
 
-        localCollectionNode.classList.remove('collection-disabled');
+        // localCollectionNode.classList.remove('collection-disabled');
     } else {
-        localCollectionNode.classList.add('collection-disabled');
-        localCollectionNode.innerHTML += ' (unavailable)';
+        // localCollectionNode.classList.add('collection-disabled');
+        // localCollectionNode.innerHTML += ' (unavailable)';
     }
   };

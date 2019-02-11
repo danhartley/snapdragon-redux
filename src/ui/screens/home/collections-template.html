@@ -1,78 +1,73 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
 
-<div class="snapdragon-container">
-    <div>
-        <div class="snapdragon-options">
-            <div class="dropdown collections js-collections">
-                <button class="btn btn-collection dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span>Choose a lesson</span>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <div data-repeat-collection="{{ lessons }}">
-                        <a class="dropdown-item icon" id="{{ collection.id }}" name="{{ collection.name }}">{{ collection.name }}</a>
-                    </div>
-                </div>
-                <div class="iconic-taxa-control landscape"
+<div class="snapdragon-container">    
+    <div class="snapdragon-options">
+        <div class="js-collection-options">
+            <div class="lesson-option-headers js-collection-option-header">
+                Choose an ecosystem
+            </div>
+        
+            <div class="btn-group btn-group-toggle ecosystem" data-toggle="buttons" data-repeat-collection="{{ lessons }}">
+                <label class="btn btn-secondary">
+                    <div id="{{ collection.id }}"> <span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="collection" value="{{ collection.id }}" autocomplete="off"><span>{{ collection.name }}</span></div>
+                </label>
+            </div>
+
+            <div class="snapdragon-options landscape">
+                <div class="lesson-filters">
+                        <div class="iconic-taxa-control landscape"
                         data-toggle="modal" 
                         data-target="#iconicTaxaFilters">
-                    <span>Filters</span>
-                    <span class="iconic-taxa-filters">
-                        <i class="fas fa-sliders-h"></i>
-                    </span>            
-                </div>
-            </div>                                   
-        </div>
-        <div class="snapdragon-options">
-            <div class="dropdown languages js-languages">
-                <button class="btn btn-language dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Languages
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ config.languages }}">
-                    <a class="dropdown-item icon" id="{{ language.lang }}">{{ language.name }}</a>
-                </div>
-            </div>                        
-        </div>
-    </div>
-
-    <div class="snapdragon card align-left">
-
-        <div class="feature-label js-about-label">
-            About Snapdragon
-        </div>
-
-        <div class="course-description js-selected-description">
-            <span>
-                    <p>Snapdragon is a tool for studying the 1.3 million recorded species on Earth.</p>
-                    <p>Related species are grouped and tested in lessons.</p>
-                    <p>Lessons take the form of concise summaries followed by quick tests.</p>
-                    <p class="landscape">If you have any queries or would like to propose a lesson please <a target="_blank" class="underline-link" href="mailto:danhartleybcn@gmail.com?subject=Snapdragon">contact me</a>.</p>
-                    <p class="landscape">This site will change, and may break (it is a functional prototype that is updated regularly). If you are having problems click on the <i class="fas fa-cog"></i> at the bottom of the screen and delete the cache. This will reload the page (but also delete your score).</p>
-                    <p class="landscape">Good luck!</p>
-            </span>
-        </div>        
-
-        <div class="toggle-content is-visible js-lesson-help">
-
-            <hr class="landscape">
-
-            <div class="landscape feature-label">The lesson plan</div>
-
-            <br class="landscape">
-            <br class="landscape">
-
-            <div class="landscape">
-                You can add or remove species from the list to suit your needs or revision schedule. Click on the tick box to select or deselect a species.
+                            <span>Filters</span>
+                            <span class="iconic-taxa-filters">
+                                <i class="fas fa-sliders-h"></i>
+                            </span>            
+                        </div>
+                        <div>Filter by taxa and distance</div>
+                </div>                
             </div>
-            
-            <br class="landscape">
-            <br class="landscape">
 
-            <div class="lesson-plan">
+        </div>
+    </div>     
+
+    <hr>
+
+    <div class="snapdragon-options">
+        <div class="js-lesson-options">
+            <div class="lesson-option-headers js-lesson-option-header">
+                And a study method
+            </div>
+    
+            <div class="btn-group btn-group-toggle lesson-type" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                    <div id="speciesId"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="speciesId" autocomplete="off"> <span>Species identification</span></div>
+                    <!-- <div id="speciesId"><i class="fas fa-binoculars"></i> <input type="radio" name="lessonType" value="speciesId" autocomplete="off"> <span>Species identification</span></div> -->
+                </label>
+                <label class="btn btn-secondary">
+                    <div id="speciesInteraction"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="speciesInteraction" autocomplete="off"> <span>Species interaction</span></div>
+                    <!-- <div id="speciesInteraction"><i class="fas fa-search"></i> <input type="radio" name="lessonType" value="speciesInteraction" autocomplete="off"> <span>Species interaction</span></div> -->
+                </label>
+                <label class="btn btn-secondary">
+                    <div id="speciesAdaptation"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="speciesAdaptation" autocomplete="off"> <span>Species adaptation</span></div>
+                    <!-- <div id="speciesAdaptation"><i class="fas fa-chart-area"></i> <input type="radio" name="lessonType" value="speciesAdaptation" autocomplete="off"> <span>Species adaptation</span></div> -->
+                </label>          
+                <label class="btn btn-secondary">
+                    <div id="speciesTaxonomy"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="speciesTaxonomy" autocomplete="off"> <span>Taxonomy</span></div>
+                    <!-- <div id="speciesTaxonomy"><i class="fas fa-sitemap"></i> <input type="radio" name="lessonType" value="speciesTaxonomy" autocomplete="off"> <span>Taxonomy</span></div> -->
+                </label>
+            </div>
+        </div>
+
+        <div class="lesson-plan js-lesson-plan">
+            <div>
                 You can <span class="underline-link js-edit-lesson-link" data-toggle="modal" data-target="#listModal">edit</span> the plan for this lesson.
             </div>
         </div>
-    </div>    
 
+    </div>
+
+    <hr>
+    
     <div class="action-update-container">
         <div class="action-update">
             <div></div>
@@ -80,7 +75,7 @@
                 <span class="portrait">View lesson species</span>
                 <span class="landscape">Begin lesson</span>
             </button>
-            <button class="btn btn-placeholder js-lesson-btn-action-placeholder toggle-content is-visible disabled">Choose a lesson to begin...</button>
+            <button class="btn btn-placeholder js-lesson-btn-action-placeholder toggle-content is-visible disabled">Choose an ecosystem...</button>
         </div>
     </div>
 </div>

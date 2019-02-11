@@ -11,7 +11,7 @@ export const kitchenGarden = {
     thumb: 'https://content.eol.org/data/media/81/3f/ae/542.8232814894.260x190.jpg',
     moduleSize: 6,
     curator: 'Snapdragon',
-    userLevel: 'General Interest',
+    collectionType: 'Collection',
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
@@ -96,7 +96,7 @@ export const rhsTrees = {
     thumb: 'https://content.eol.org/data/media/7e/c3/1d/542.17202950412.260x190.jpg',
     moduleSize: 6,
     curator: 'Snapdragon',
-    userLevel: 'RHS students',
+    collectionType: 'Collection',
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
@@ -189,7 +189,7 @@ export const commonBirds = {
     thumb: 'https://content.eol.org/data/media/2d/1b/36/18.https___www_inaturalist_org_photos_191066.260x190.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
-    userLevel: 'General Interest',
+    collectionType: 'Collection',
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     glossary: ['animalia', 'common'],
@@ -226,7 +226,7 @@ export const rhsWeeds1 = {
     thumb: 'https://content.eol.org/data/media/55/9d/2c/509.118977.260x190.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
-    userLevel: 'RHS students',
+    collectionType: 'Collection',
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
@@ -257,7 +257,7 @@ const mushroomCollection = {
     thumb: 'https://content.eol.org/data/media/59/16/59/509.2840237.260x190.jpg',
     moduleSize: 4,
     curator: 'Snapdragon',
-    userLevel: 'Amateur mycologists',
+    collectionType: 'Collection',
     lessonPlanLandscape: 3,
     lessonPlanPortrait: 103,
     glossary: ['fungi'],
@@ -331,7 +331,7 @@ export const cogumelosEmPortugal = {
 export const localSpecies = {
     id: 1,
     providerId: 3,
-    name: 'Your local wildlife', 
+    name: 'Local Wildlife', 
     type: 'species',
     descriptions: [
         'Wildlife found in your area at this time of year.',
@@ -344,9 +344,10 @@ export const localSpecies = {
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     thumb: 'https://content.eol.org/data/media/7f/09/1a/542.26637311774.260x190.jpg',
+    icon: 'https://content.eol.org/data/media/7f/09/1a/542.26637311774.98x68.jpg',
     moduleSize: 4,
     curator: 'Snapdragon | iNaturalist',
-    userLevel: 'General Interest',
+    collectionType: 'Local Ecosystem',
     iconicTaxa: [ 'fungi', 'plantae', 'aves', 'lepidoptera', 'amphibia', 'mammalia', 'insecta' ]
 };
 
@@ -355,6 +356,7 @@ export const monsantoSpecies = {
     providerId: 3,
     placeId: 61034,
     thumb: 'https://content.eol.org/data/media/80/20/08/542.4976895245.260x190.jpg',
+    icon: 'https://content.eol.org/data/media/80/20/08/542.4976895245.98x68.jpg',
     name: 'Parque Florestal Monsanto', 
     type: 'species',
     descriptions: [
@@ -362,14 +364,14 @@ export const monsantoSpecies = {
         'The species in this lesson change and their number varies depending on the time of year and location.',
         'Snapdragon covers only a few hundred species but this number is growing...'
     ],
-    speciesCount: '--',
+    speciesCount: '~150',
     familiesCount: '--',
     glossary: ['plantae', 'common', 'fungi'],
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     moduleSize: 4,
     curator: 'Snapdragon | iNaturalist',
-    userLevel: 'General Interest',
+    collectionType: 'Protected Ecosystem',
     iconicTaxa: [ 'fungi', 'plantae', 'aves', 'lepidoptera', 'amphibia', 'mammalia', 'insecta' ]
 };
 
@@ -378,6 +380,7 @@ export const arrabidaSpecies = {
     providerId: 3,
     placeId: 10061,
     thumb: 'https://content.eol.org/data/media/81/4c/05/542.8349968670.260x190.jpg',
+    icon: 'https://content.eol.org/data/media/81/4c/05/542.8349968670.98x68.jpg',
     name: 'Parque Natural da Arrábida', 
     type: 'species',
     descriptions: [
@@ -385,14 +388,14 @@ export const arrabidaSpecies = {
         'The species in this lesson change and their number varies depending on the time of year and location.',
         'Snapdragon covers only a few hundred species but this number is growing...'
     ],
-    speciesCount: '--',
+    speciesCount: '~1400',
     familiesCount: '--',
     glossary: ['plantae', 'common', 'fungi'],
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     moduleSize: 4,
     curator: 'Snapdragon | iNaturalist',
-    userLevel: 'General Interest',
+    collectionType: 'Protected Ecosystem',
     iconicTaxa: [ 'fungi', 'plantae', 'aves', 'lepidoptera', 'amphibia', 'mammalia', 'insecta' ]
 };
 
@@ -402,7 +405,7 @@ const lichenCollection = {
     thumb: 'https://content.eol.org/data/media/80/d2/d6/542.6832443214.260x190.jpg',
     moduleSize: 2,
     curator: 'Snapdragon',
-    userLevel: 'Amateur lichenologists',
+    collectionType: 'Collection',
     lessonPlanLandscape: 4,
     lessonPlanPortrait: 5,
     glossary: ['lichen', 'common'],
@@ -438,12 +441,12 @@ export const snapdragonCollections = [
     localSpecies,
     arrabidaSpecies,
     monsantoSpecies,
-    kitchenGarden,
+    // kitchenGarden,
     // rhsTrees,
-    commonBirds,
-    rhsWeeds1,
-    wildFoodUKTopTenBeginners,
-    cogumelosEmPortugal,
-    fallMushroomsEasternUSA,
-    beginnersLichenology
+    // commonBirds,
+    // rhsWeeds1,
+    // wildFoodUKTopTenBeginners,
+    // cogumelosEmPortugal,
+    // fallMushroomsEasternUSA,
+    // beginnersLichenology
 ];

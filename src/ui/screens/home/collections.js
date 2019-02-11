@@ -5,7 +5,6 @@ import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
-import { selectHandler } from 'ui/helpers/handlers';
 import { subscription } from 'redux/subscriptions';
 import { updateNavIcons } from 'ui/fixtures/navigation';
 import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
@@ -30,6 +29,8 @@ export const renderCollections = (counter) => {
         collections = [ ...collections.filter(c => R.contains(c.iconicTaxon, config.iconicTaxa)), localSpecies, monsantoSpecies, arrabidaSpecies ];
     }
     let collection = R.clone(collectionState);
+    let hasChosenStudyType = false;
+    let hasChosenLesson = false;
 
     if(lessonLogicHandler.isSkippable(collection, counter, config, layout, 'renderCollections', false)) return;
 
@@ -49,16 +50,8 @@ export const renderCollections = (counter) => {
   
     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
     const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
-    const collectionsHeader = document.querySelector('.btn-collection');
-    const collectionDescription = document.querySelector('.js-selected-description');
-    const languagesHeader = document.querySelector('.btn-language');
-    const lessonHelp = document.querySelector('.js-lesson-help');
 
-    if(counter.isLessonPaused && config.isLandscapeMode) {
-        collectionDescription.innerHTML += `<span><span class='snap-alert snap-padding'>If you change lessons your current lesson score will be lost!</span></span>`;
-    }
-    
-    elem.hide(lessonHelp);
+    const studyMethod = config.studyMethod;
 
     const changeCollectionHandler = collectionId => {
 
@@ -71,14 +64,10 @@ export const renderCollections = (counter) => {
 
         collection = { ...collection, ...collections.find(collection => collection.id === collectionId) };
 
-        collectionsHeader.innerHTML = collection.name;
-        const descriptions = collection.descriptions.map(description => `<span>${description}</span>`).join('');
-        collectionDescription.innerHTML = descriptions;
-        
         config.collection = { id: collectionId };
 
         if(collectionId === 1) {
-            handleLocalCollection(document.getElementById('1'), collectionsHeader, learningActionBtn, config, collection);
+            handleLocalCollection(document.getElementById('1'), learningActionBtn, config, collection);
         }    
 
         if(config.isLandscapeMode) {
@@ -87,52 +76,61 @@ export const renderCollections = (counter) => {
             actions.boundNewPage({ name: 'list'});
         }
 
-        if(counter.isLessonPaused && config.isPortraitMode && collection.id !== collectionId) {
-            collectionDescription.innerHTML += `<span class='snap-alert'>If you change lessons your current lesson score will be lost!</span>`;
+        if(hasChosenStudyType) {
+            elem.show(learningActionBtn);
+            elem.hide(learningActionBtnPlaceholder);
+            document.querySelector('.js-lesson-plan').classList.add('active');
+        } else {
+            learningActionBtnPlaceholder.innerHTML = 'Choose a study method';
         }
-         
-        elem.show(learningActionBtn);
-        elem.hide(learningActionBtnPlaceholder);        
-        elem.show(lessonHelp);        
-
-        document.querySelector('.js-about-label').innerHTML = 'About the lesson';
 
         editLessonPlans('.js-edit-lesson-link', collectionId, config);
     };
 
     if(collection && collection.name) {
         setTimeout(() => {
-            const preSelectedCollection = document.getElementById(collection.id);
-            if(!preSelectedCollection) return;
-            preSelectedCollection.click();
-        });        
+            const preSelectedCollection = document.getElementById(collection.id).querySelectorAll('span')[1];
+            if(preSelectedCollection) {
+                preSelectedCollection.click();
+            }
+        });
         if(config.isLandscapeMode) {
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
         }
     } 
+
+    setTimeout(() => {
+        const preSelectedStudyMethod = document.getElementById(studyMethod);
+        if(preSelectedStudyMethod) {                
+            preSelectedStudyMethod.click();
+        }     
+    });
         
     let collectionId = collection.id;
 
-    selectHandler('.dropdown.js-collections .dropdown-item', id => {
-       changeCollectionHandler(parseInt(id)); 
-    });
+    document.querySelectorAll('.js-collection-options .btn.btn-secondary div').forEach(collection => collection.addEventListener('click', event => {
+        const target = event.target.id ? event.target : event.target.parentElement;
+        changeCollectionHandler(parseInt(target.id));
+        document.querySelectorAll('.js-collection-options .lesson-icon').forEach(icon => icon.innerHTML = '<i class="far fa-circle"></i>');
+        target.querySelector('i').classList.remove('fa-circle');
+        target.querySelector('i').classList.add('fa-dot-circle');
+        hasChosenLesson = true;        
+    }));
 
-    document.querySelector(`#${config.language}`).classList.add('active');
-    languagesHeader.innerHTML = config.languages.find(l => l.lang === config.language).name;
-
-    const changeLanguageHandler = language => {
-        config.language = language;
-        languagesHeader.innerHTML = config.languages.find(l => l.lang === config.language).name;
-        actions.boundUpdateLanguage(language);
-        if(config.isLandscapeMode && collection.id) {
-            actions.boundSelectCollection(collection);
-            renderSpeciesCollectionList(collection, false);
+    document.querySelectorAll('.js-lesson-options .btn.btn-secondary div').forEach(type => type.addEventListener('click', event => {        
+        const target = event.target.id ? event.target : event.target.parentElement;
+        hasChosenStudyType = true;
+        document.querySelectorAll('.js-lesson-options .lesson-icon').forEach(icon => icon.innerHTML = '<i class="far fa-circle"></i>');
+        target.querySelector('i').classList.remove('fa-circle');
+        target.querySelector('i').classList.add('fa-dot-circle');
+        if(hasChosenLesson) {
+            elem.show(learningActionBtn);
+            elem.hide(learningActionBtnPlaceholder);
+            document.querySelector('.js-lesson-plan').classList.add('active');
         }
-    };
-
-    selectHandler('.dropdown.js-languages .dropdown-item', language => {        
-        changeLanguageHandler(language);
-    });
+        config.studyMethod = target.id;
+        actions.boundSelectStudyMethod(config.studyMethod);        
+    }));
 
     learningActionBtn.addEventListener('click', () => {
 

@@ -53,12 +53,15 @@
         margin: 0;
     }
 
-    .snapdragon-options .btn, .snapdragon-options .dropdown-menu.show {
-        width: 20rem;
-    }
-
     .non-taxon-card .snapdragon-options {
         text-align: right;
+    }
+
+    .lesson-filters {
+        display: flex; 
+        flex-direction: row; 
+        align-items: center;
+        margin: .5rem 0 0 0;
     }
 
     .species.card {

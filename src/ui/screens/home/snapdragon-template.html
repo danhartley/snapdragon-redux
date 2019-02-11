@@ -1,6 +1,6 @@
 <div class="snapdragon-container lessons-list">
-    <div>
-        <div>Recommended Lessons</div>
+    <div class="grid-header">
+        <div>Ecosystems</div>
     </div>
     <div class="card scrollable">    
         <div data-repeat-collection="{{ collections }}">
@@ -9,10 +9,10 @@
                     <img src-="{{ collection.thumb }}" alt="{{ collection.name }}">
                 </div>
                 <div>
-                    <div>Name: {{ collection.name }}</div>  
-                    <div>Curator: {{ collection.curator }}</div>
-                    <div>Species: {{ collection.speciesCount }} Families: {{ collection.familiesCount }}</div>
-                    <div>Level: {{ collection.userLevel }}</div>
+                    <div>{{ collection.name }}</div>  
+                    <div>{{ collection.curator }}</div>
+                    <div>Species {{ collection.speciesCount }}</div>
+                    <div>{{ collection.collectionType }}</div>
                 </div>
             </div>
         </div>
