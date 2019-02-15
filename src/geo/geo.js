@@ -53,16 +53,13 @@ export async function getPlace(config) {
     const response = new Promise(resolve => {
       resolve(config.place);
     });
-    const json = await response;
-    listeners.forEach(listener => listener(json));
+    const json = await response;    
     return await json;
-  } else {
-
+  } else {    
     const coordinates = await getLocation(config);        
     const latitude = coordinates['0'] || coordinates.lat;
     const longitude = coordinates['1'] || coordinates.long;
     config.coordinates = { lat: latitude, long: longitude };
-
 
     return getMapBoxPlace(longitude, latitude, config);
   }

@@ -78,6 +78,11 @@ hr {
   letter-spacing: 0.03rem;
 }
 
+.snapdragon-options  .btn.btn-secondary {
+  height: 2rem;
+  letter-spacing: 0.03rem;
+}
+
 .btn.btn-light,
 .btn.btn-light:focus {
   color: var(--snap-text-light) !important;
@@ -219,6 +224,10 @@ a.dropdown-item {
   text-transform: uppercase;
 }
 
+.toUpperCase {
+  text-transform: uppercase;
+}
+
 .show {
   display: inline;
 }
@@ -294,6 +303,18 @@ a.dropdown-item {
   object-fit: cover;
 }
 
+.hover-box {
+  border: .05rem solid rgb(48, 94, 37,.8);
+  padding: .25rem;
+  margin: 0 0 0 -.25rem;
+  border-radius: 0.25rem;
+}
+
+/* .lesson-item-details div:nth-child(1) span:nth-child(1) {
+  border-bottom: .05rem solid var(--gray);
+  padding: 0 0 .25rem 0;
+} */
+
 .nav-icons .active-icon {
   color: var(--orange);
 }
@@ -313,6 +334,10 @@ a.dropdown-item {
 .scrollable {
   overflow-y: scroll;
   height: 72vh;
+}
+
+.modal-header {
+  display: initial;
 }
 
 .modal-list.scrollable {
@@ -1009,6 +1034,10 @@ button.btn-light:focus,
   background-color: var(--snap-success);
 }
 
+span.correct {
+  color: rgb(2, 107, 26);
+}
+
 .btn-dark {
   color: var(--snap-text-dark);
   background-color: var(--snap-block-light);
@@ -1453,27 +1482,43 @@ table input {
   border: 0;
   width: fit-content;
   border: none;
+  margin: 0 0 .25rem 0 !important;
 }
 
 .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active,
 .btn-secondary:not(:disabled):not(.disabled).focus, .btn-secondary:not(:disabled):not(.disabled):focus, 
-.show>.btn-secondary.dropdown-toggle {
+.show>.btn-secondary.dropdown-toggle 
+{
   background-color: rgb(252, 251, 246);
+  color: var(--snap-text-dark);  
+}
+
+/* .btn.btn-secondary.active svg {
   color: var(--snap-text-dark);
+} */
+
+.btn.btn-secondary:hover {
+  transition: none;
 }
 
-.btn.btn-secondary:hover, .btn.btn-secondary:active, .btn.btn-secondary:focus {
-  background-color: rgb(252, 251, 246);
+/* .btn.btn-secondary:hover .collectionName, .btn.btn-secondary:hover .guideName {
+  border-bottom: .05rem solid gray;
+  padding: 0 0 .25rem 0;  
 }
 
-.btn.btn-secondary:hover svg, .btn.btn-secondary:active svg, .btn.btn-secondary:focus svg,
-.btn.btn-secondary.active svg, .btn.btn-secondary.active svg, .btn.btn-secondary.active svg,
-.btn.btn-secondary.active.focus svg, .btn.btn-secondary.active.focus svg, .btn.btn-secondary.active.focus svg {
-  color: rgb(36, 114, 17);
+.btn.btn-secondary.active .collectionName, .btn.btn-secondary.active .guideName {
+  text-transform: uppercase;
+  font-size: .9rem;
+  border-bottom: none;
+  padding: 0;
+} */
+
+.btn.btn-secondary.disabled .collectionName, .btn.btn-secondary.active .guideName {
+  border: none;
 }
 
 label.btn.btn-secondary {
-  line-height: 2rem;
+  /* line-height: 2rem; */
   display: flex;
   align-items: center;
   background-color: var(--snap-list-alt-background);
@@ -1481,6 +1526,10 @@ label.btn.btn-secondary {
 
 label.btn.btn-secondary img {      
     margin: 0 .25rem 0 -.25rem;
+}
+
+label.btn.btn-secondary .lesson-icon {
+  font-size: .8rem;
 }
 
 .radio-buttons .btn,
@@ -1581,21 +1630,20 @@ label.btn.btn-secondary img {
   color: var(--snap-green-feature-txt);
 }
 
-.lesson-option-headers, .lesson-option-headers-faded {
+.lesson-option-headers {
     height: 2.5rem;
     display: flex;
     align-items: center;
     color: var(--snap-text-dark);
-    border-radius: 0.25rem;
     letter-spacing: 0.03rem;
     padding: 0;
     width: fit-content;
     font-size: 1.2rem;
-    padding: 0 .5rem;
+    font-family: "AtlasGrotesk","Open Sans",sans-serif;
 }
 
-.lesson-option-headers-faded {
-  color: var(--snap-text-medium-dark);
+.faded {
+  color: lightgray;
 }
 
 .compare-species-link {
@@ -2189,6 +2237,14 @@ a.collection-disabled {
   width: 15rem;
 }
 
+.location-control {
+  display: flex;
+}
+
+.location-control button:nth-child(1) {
+  margin: 1rem .5rem 1rem 0;
+}
+
 .iconic-taxa-categories svg {
   width: 16px;
   height: 16px;
@@ -2234,6 +2290,7 @@ a.collection-disabled {
   border-bottom: 0.05rem solid var(--snap-border-dark);
   height: 88px;
   color: var(--snap-text-medium-light);
+  justify-content: center;
 }
 
 .calender-container {

@@ -132,4 +132,18 @@
         border-left: .3rem solid transparent;
         cursor: default;
     }
+
+    .lesson-option-headers {
+        font-size: 1.4rem;
+    }
+
+    .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active,
+    .btn-secondary:not(:disabled):not(.disabled).focus, .btn-secondary:not(:disabled):not(.disabled):focus, 
+    .show>.btn-secondary.dropdown-toggle, .btn.btn-secondary:hover {
+        border: .05rem solid var(--snap-dd-collection-bg-intial);
+    }
+
+    .snapdragon-options  .btn.btn-secondary {
+        height: 2.5rem;
+    }
 }

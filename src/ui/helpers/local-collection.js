@@ -2,8 +2,8 @@ import { getLocation, getPlace } from 'geo/geo';
 import { actions } from 'redux/actions/action-creators';
 import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 
-export async function handleLocalCollection(localCollectionNode, learningActionBtn, config, collection) {
-        
+export async function handleCustomCollections(localCollectionNode, learningActionBtn, config, collection) {
+      
     if(!localCollectionNode) return;
 
     if(config.isPortraitMode) {
@@ -15,9 +15,15 @@ export async function handleLocalCollection(localCollectionNode, learningActionB
   
     const place = await getPlace(config);
 
-    if(place) {
+    const collectionText = localCollectionNode.querySelector('span.collectionName');
 
-        localCollectionNode.querySelectorAll('span')[1].innerText = place.summary;       
+    if(config.inatId) {
+        collectionText.innerText = `iNat observations for ${config.inatId}`;   
+    } 
+    
+    if(place && config.collection.id !== 4) {
+
+        collectionText.innerText = place.summary;       
         collection.name = place.summary;
         
         if(config.isPortraitMode) {
@@ -29,10 +35,5 @@ export async function handleLocalCollection(localCollectionNode, learningActionB
             config.place = place;
             actions.boundUpdateConfig(config);
         }
-
-        // localCollectionNode.classList.remove('collection-disabled');
-    } else {
-        // localCollectionNode.classList.add('collection-disabled');
-        // localCollectionNode.innerHTML += ' (unavailable)';
     }
   };

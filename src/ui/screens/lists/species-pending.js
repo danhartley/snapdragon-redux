@@ -13,13 +13,13 @@ export const speciesPendingSpinner = (config) => {
     
     renderTemplate({ }, template.content, parent);
 
-    const callback = place => {
+    const placeChangeHandler = place => {
         const localAreaText = document.querySelector('.species-pending .local-area');
         if(!localAreaText) return;
         localAreaText.innerHTML = `the ${place.area.text} area`;
     }
 
-    listenToPlaceChange(callback);
+    listenToPlaceChange(placeChangeHandler);
 
     const update = document.querySelector('.species-pending div:nth-child(4)');
 

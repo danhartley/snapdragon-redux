@@ -11,10 +11,12 @@ import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { elem } from 'ui/helpers/class-behaviour';
 import { editLessonPlans } from 'ui/screens/lists/lesson-plans-editor';
 import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
-import { handleLocalCollection } from 'ui/helpers/local-collection';
+import { handleCustomCollections } from 'ui/helpers/local-collection';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
 import { handleIconicTaxaFilter } from 'ui/helpers/iconic-taxa-handler';
 import { listenToTaxaFiltersUpdate } from 'ui/helpers/iconic-taxa-handler';
+
+const optionHoverListeners = [];
 
 export const renderCollections = (counter) => { 
 
@@ -66,8 +68,8 @@ export const renderCollections = (counter) => {
 
         config.collection = { id: collectionId };
 
-        if(collectionId === 1) {
-            handleLocalCollection(document.getElementById('1'), learningActionBtn, config, collection);
+        if(collectionId === 1 || collectionId === 4) {
+            handleCustomCollections(document.getElementById(`${collectionId}`), learningActionBtn, config, collection);
         }    
 
         if(config.isLandscapeMode) {
@@ -108,7 +110,7 @@ export const renderCollections = (counter) => {
         
     let collectionId = collection.id;
 
-    document.querySelectorAll('.js-collection-options .btn.btn-secondary div').forEach(collection => collection.addEventListener('click', event => {
+    document.querySelectorAll('.js-collection-options .btn.btn-secondary').forEach(collection => collection.addEventListener('click', event => {
         const target = event.target.id ? event.target : event.target.parentElement;
         changeCollectionHandler(parseInt(target.id));
         document.querySelectorAll('.js-collection-options .lesson-icon').forEach(icon => icon.innerHTML = '<i class="far fa-circle"></i>');
@@ -116,6 +118,15 @@ export const renderCollections = (counter) => {
         target.querySelector('i').classList.add('fa-dot-circle');
         hasChosenLesson = true;        
     }));
+
+    const inatOption = document.querySelectorAll('.js-collection-options .btn.btn-secondary')[3];
+    if(inatOption) {
+        if(!config.inatId) {
+            inatOption.classList.add('disabled');
+        } else {
+            inatOption.querySelector('.collectionName').innerHTML = `iNat observations for ${config.inatId}`;
+        }
+    }
 
     document.querySelectorAll('.js-lesson-options .btn.btn-secondary div').forEach(type => type.addEventListener('click', event => {        
         const target = event.target.id ? event.target : event.target.parentElement;
@@ -129,8 +140,16 @@ export const renderCollections = (counter) => {
             document.querySelector('.js-lesson-plan').classList.add('active');
         }
         config.studyMethod = target.id;
-        actions.boundSelectStudyMethod(config.studyMethod);        
+        actions.boundSelectStudyMethod(config.studyMethod);
     }));
+
+    document.querySelectorAll('.btn.btn-secondary > div').forEach(option => {
+        option.addEventListener('mouseover', event => {
+            const target = event.target.id ? event.target : event.target.parentElement;
+            const optionId = parseInt(target.id);
+            optionHoverListeners.forEach(listener => listener(optionId));
+        });
+    });
 
     learningActionBtn.addEventListener('click', () => {
 
@@ -159,6 +178,10 @@ export const renderCollections = (counter) => {
     document.querySelector('.iconic-taxa-control').addEventListener('click', event => {
         handleIconicTaxaFilter(config);        
     });
+};
+
+export const listenToCollectionOptionHoverEvent = listener => { 
+    optionHoverListeners.push(listener);
 };
 
 listenToTaxaFiltersUpdate((filters, config) => {

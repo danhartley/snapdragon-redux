@@ -34,10 +34,8 @@ export const getInatSpecies = (inatConfig, config) => {
         const radius = config.speciesRange || 10;
         const start = daysAway('past', 30);
         const end = daysAway('future', 30);
-        // const endpoint = 'observations';
         const endpoint = 'observations/species_counts';
         const url = `https://api.inaturalist.org/v1/${endpoint}?page=1&captive=false&hrank=species&iconic_taxa=${iconicTaxa}&rank=species&m1=11&m2=1&photos=true&place_id=any&quality_grade=research&lat=${lat}&lng=${lng}&radius=${radius}&user_id=&per_page=${perPage}`;
-        // const url = `https://api.inaturalist.org/v1/${endpoint}?page=1&captive=false&hrank=species&iconic_taxa=${iconicTaxa}&lrank=species&d1=${start}&d2=${end}&photos=true&place_id=any&quality_grade=research&lat=${lat}&lng=${lng}&radius=${radius}&user_id=&per_page=${perPage}`;
         const response = await fetch(url);
         const json = await response.json();
         return await json.results;
@@ -53,15 +51,39 @@ export const getInatSpecies = (inatConfig, config) => {
         return await json.results;
     }
 
+    async function getInatUserObservations(userId, config) {
+        const iconicTaxa = getIconicTaxa(config);
+        const perPage = 200;
+        const endpoint = 'observations/species_counts';
+        const url = `https://api.inaturalist.org/v1/${endpoint}?page=1&captive=false&hrank=species&rank=species&user_id=${userId}&quality_grade=research&per_page=${perPage}&iconic_taxa=${iconicTaxa}`;
+        const response = await fetch(url);
+        const json = await response.json();
+        return await json.results;
+    }
+
     const latitude = inatConfig.latitude;
     const longitude = inatConfig.longitude;
 
     let observations;
 
     const placeId = inatConfig.placeId;
+    const userId = inatConfig.userId;
     const taxonNames = [];
 
-    if(placeId) {
+    if(userId) {
+        observations = getInatUserObservations(userId, config).then(observations => {
+            return observations.map(observation => {
+                if(R.contains(observation.taxon.name, names)) {
+                    const item = { ...species.find(item => item.name === observation.taxon.name) };
+                    return { ...item, observationCount: observation.taxon.observations_count, iconicTaxon: observation.taxon.iconic_taxon_name };
+                } 
+                taxonNames.push(observation.taxon.name);
+            });
+        });
+        console.log(taxonNames);
+        return observations;
+    }
+    else if(placeId) {
         observations = getInatPlaceObservations(placeId, config).then(observations => {
             return observations.map(observation => {
                 if(R.contains(observation.taxon.name, names)) {

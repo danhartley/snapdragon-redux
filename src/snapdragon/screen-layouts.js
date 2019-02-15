@@ -1,7 +1,6 @@
 const specimen = {
   name: 'specimen-images',
   domain: 'collection',
-  // template: 'js-specimen-images-template'     
 };
 
 const history = { 
@@ -13,7 +12,6 @@ const history = {
 const speciesCard = {
   name: 'species-card',
   domain: 'collection',
-  // template: 'js-card-revision-template'
 };
 
 const definitionCard = {
@@ -35,14 +33,6 @@ const vernaculars = {
   question: 'Tap to match latin name',
   domain: 'collection',
   template: 'js-strips-template',
-  taxon: 'name'
-};
-
-const species = {
-  name: 'species-images',
-  question: 'Select specimen to match species',
-  domain: 'collection',
-  template: 'js-tiles-template',
   taxon: 'name'
 };
 
@@ -174,7 +164,6 @@ export const screens = {
   definitionCard,
   scientifics,
   vernaculars,
-  // species,
   text,
   summary,
 

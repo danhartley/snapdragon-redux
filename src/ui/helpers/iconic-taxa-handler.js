@@ -2,9 +2,11 @@ import * as R from 'ramda';
 
 import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
+import { getPlace } from 'geo/geo';
 
 const filterListeners = [];
 const rangeListeners = [];
+const userlisteners = [];
 
 export const listenToTaxaFiltersUpdate = listener => { 
     filterListeners.push(listener);
@@ -12,6 +14,10 @@ export const listenToTaxaFiltersUpdate = listener => {
 
 export const listenToRangeUpdate = listener => {
     rangeListeners.push(listener);
+};
+
+export const listenToiNaturalistUserChange = listener => { 
+    userlisteners.push(listener);
 };
 
 export const handleIconicTaxaFilter = (config) => {
@@ -26,6 +32,8 @@ export const handleIconicTaxaFilter = (config) => {
 
     const filterBtn = document.querySelector('.js-lesson-filters > button:nth-child(1)');
     const setRangeBtn = document.querySelector('.js-set-range-btn');
+    const setLocationBtn = document.querySelector('.js-set-location-btn');
+    const setiNatIdentityBtn = document.querySelector('.js-set-inat-identity-btn');
 
     const filterSelectedClass = 'iconic-taxa-selected';
 
@@ -112,6 +120,34 @@ export const handleIconicTaxaFilter = (config) => {
                 setRangeBtn.innerHTML = 'Set new range';
             }, 1500);
         }, 1500);
+    });
+
+    let place;
+
+    async function handleSetLocation() {
+        setLocationBtn.innerHTML = 'Updating location...'
+        place = await getPlace(config);
+        actions.boundUpdateConfig(config);
+        setLocationBtn.innerHTML = 'Location updated';
+        console.log(place);
+    }
+
+    setLocationBtn.addEventListener('click', handleSetLocation);
+
+    setiNatIdentityBtn.addEventListener('click', event => {
+        const id = document.querySelector('.js-inat-identity').value;
+        config.inatId = id;
+        actions.boundUpdateConfig(config);
+        const inatOption = document.querySelectorAll('.js-collection-options .btn.btn-secondary')[3];
+        inatOption.classList.remove('disabled');
+        inatOption.querySelector('.collectionName').innerHTML = `iNat observations for ${id}`;
+        userlisteners.forEach(listener => listener(id));
+        setTimeout(() => {                
+            setiNatIdentityBtn.innerHTML = 'Identity updated';                
+            setTimeout(() => {
+                setiNatIdentityBtn.innerHTML = 'Change identity';
+            }, 1000);
+        }, 500);        
     });
 };
 

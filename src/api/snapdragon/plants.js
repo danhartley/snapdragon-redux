@@ -894,7 +894,8 @@ export const plants = [
         {
           "vernacularName": "Olive",
           "language": "en",
-          "eol_preferred": false
+          "eol_preferred": false,
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "olive tree",

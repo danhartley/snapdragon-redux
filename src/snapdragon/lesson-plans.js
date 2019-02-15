@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { screens } from 'snapdragon/screen-layouts';
 
 const { 
-    specimen, speciesCard, species, vernaculars, scientifics, text, 
+    specimen, speciesCard, vernaculars, scientifics, text, 
     command, leaf, leafName, 
     family, familyStrips, taxon, nonTaxon, textComplete, cultivar, cultivarCard, 
     epithets, wildcardCard, wildcard, definitions, 
@@ -165,8 +165,6 @@ const traitPropertyMatch = {
         { ...traitProperty }
     ]
 };
-
-//  2 points
 
 const familyMatch = {
     name: 'screen-species-to-family',

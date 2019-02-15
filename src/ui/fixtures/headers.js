@@ -1,6 +1,7 @@
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { listenToPlaceChange } from 'geo/geo';
+import { listenToiNaturalistUserChange } from 'ui/helpers/iconic-taxa-handler';
 export const renderHeaders = page => {
     
     let lessonPlan, config, counter, collection;
@@ -97,9 +98,11 @@ export const renderHeaders = page => {
     
         DOM.leftHeaderTxt.innerHTML = leftHeaderText;
         DOM.rightHeaderTxt.innerHTML = rightHeaderText;
+
+        userChangeHandler(config.inatId);
     };
 
-    const callback = (place) => {
+    const placeChangeHandler = place => {
         if(LANDSCAPE && collection.id === 1) {
             DOM.leftHeaderTxt.innerHTML = place.summary;
             collection.name = place.summary;
@@ -110,5 +113,18 @@ export const renderHeaders = page => {
         }
     };
 
-    listenToPlaceChange(callback);
+    const userChangeHandler = userId => {
+        const collectionName = `iNat observations for ${userId}`;
+        if(LANDSCAPE && collection.id === 4) {
+            DOM.leftHeaderTxt.innerHTML = collectionName;
+            collection.name = collectionName;
+        }
+        if(PORTRAIT && collection.id === 4) {
+            DOM.rightHeaderTxt.innerHTML = collectionName;
+            collection.name = collectionName;
+        }
+    };
+
+    listenToPlaceChange(placeChangeHandler);
+    listenToiNaturalistUserChange(userChangeHandler);    
 };

@@ -214,7 +214,7 @@ export const commonBirds = {
 };
 
 export const rhsWeeds1 = { 
-    id: 4, 
+    id: 10, 
     providerId: 2,
     name: 'RHS Weeds I', 
     type: 'species',
@@ -331,7 +331,7 @@ export const cogumelosEmPortugal = {
 export const localSpecies = {
     id: 1,
     providerId: 3,
-    name: 'Local Wildlife', 
+    name: 'Your Local Wildlife', 
     type: 'species',
     descriptions: [
         'Wildlife found in your area at this time of year.',
@@ -348,6 +348,7 @@ export const localSpecies = {
     moduleSize: 4,
     curator: 'Snapdragon | iNaturalist',
     collectionType: 'Local Ecosystem',
+    iNatWidget: 'portugal',
     iconicTaxa: [ 'fungi', 'plantae', 'aves', 'lepidoptera', 'amphibia', 'mammalia', 'insecta' ]
 };
 
@@ -372,6 +373,7 @@ export const monsantoSpecies = {
     moduleSize: 4,
     curator: 'Snapdragon | iNaturalist',
     collectionType: 'Protected Ecosystem',
+    iNatWidget: 'parque-florestal-de-monsanto',
     iconicTaxa: [ 'fungi', 'plantae', 'aves', 'lepidoptera', 'amphibia', 'mammalia', 'insecta' ]
 };
 
@@ -379,7 +381,7 @@ export const arrabidaSpecies = {
     id: 3,
     providerId: 3,
     placeId: 10061,
-    thumb: 'https://content.eol.org/data/media/81/4c/05/542.8349968670.260x190.jpg',
+    thumb: 'https://static.inaturalist.org/photos/29127967/large.jpg?1544709952',
     icon: 'https://content.eol.org/data/media/81/4c/05/542.8349968670.98x68.jpg',
     name: 'Parque Natural da Arrábida', 
     type: 'species',
@@ -396,6 +398,26 @@ export const arrabidaSpecies = {
     moduleSize: 4,
     curator: 'Snapdragon | iNaturalist',
     collectionType: 'Protected Ecosystem',
+    iNatWidget: 'o-parque-natural-da-arrabida',
+    iconicTaxa: [ 'fungi', 'plantae', 'aves', 'lepidoptera', 'amphibia', 'mammalia', 'insecta' ]
+};
+
+export const useriNatSpecies = {
+    id: 4,
+    providerId: 3,
+    userId: 'danielhartley',
+    thumb: 'https://content.eol.org/data/media/81/4c/05/542.8349968670.260x190.jpg',
+    icon: 'https://content.eol.org/data/media/81/4c/05/542.8349968670.98x68.jpg',
+    name: 'Your iNaturalist observations', 
+    type: 'species',
+    speciesCount: '--',
+    familiesCount: '--',
+    glossary: ['plantae', 'common', 'fungi'],
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 101,
+    moduleSize: 4,
+    curator: 'Snapdragon | iNaturalist',
+    collectionType: 'Field Study',        
     iconicTaxa: [ 'fungi', 'plantae', 'aves', 'lepidoptera', 'amphibia', 'mammalia', 'insecta' ]
 };
 
@@ -441,6 +463,7 @@ export const snapdragonCollections = [
     localSpecies,
     arrabidaSpecies,
     monsantoSpecies,
+    useriNatSpecies
     // kitchenGarden,
     // rhsTrees,
     // commonBirds,

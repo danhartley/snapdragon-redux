@@ -16,7 +16,7 @@ import { listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
-    const { config: configState, history, counter, enums, layout  } = store.getState();
+    const { config: configState, history, counter, enums, layout, score  } = store.getState();
 
     let config = R.clone(configState);
 
@@ -112,6 +112,26 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
             document.querySelectorAll('.mushroom-icon').forEach(icon => {
                 icon.innerHTML = '<svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg>';
             });
+
+            const nthChild = config.isLandscapeMode ? 5 : 3;
+            const taxonIcons = document.querySelectorAll(`.table-row.js-list-item td:nth-child(${nthChild}) > span`);
+
+            if(!history) return;
+
+            const noWrongAnswersForThisSpecies = [];
+            history.scores.map(score => score.failsTotals).forEach(totals => {
+                for (let [key, anyWrongAnwers] of Object.entries(totals)) {
+                    if(anyWrongAnwers == false) {
+                        noWrongAnswersForThisSpecies.push(parseInt(key));
+                    }
+                }
+            });
+
+            taxonIcons.forEach(icon => {
+                if(R.contains(parseInt(icon.id), noWrongAnswersForThisSpecies)) {
+                    icon.classList.add('correct');
+                }
+            });
         });
 
         // Portrait mode only
@@ -157,7 +177,8 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     else {      
         function callback(collection, config, traits, enums) {
             return function () {
-                collection.items = utils.sortAlphabeticallyBy(collection.items, 'vernacularName');
+                // collection.items = utils.sortAlphabeticallyBy(collection.items, 'vernacularName');
+                collection.items = utils.sortBy(collection.items, 'observationCount', 'desc');
                 buildTable(collection, config, traits, enums);
                 handleUserEvents();
             }

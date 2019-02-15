@@ -9,11 +9,11 @@
         
             <div class="btn-group btn-group-toggle ecosystem" data-toggle="buttons" data-repeat-collection="{{ lessons }}">
                 <label class="btn btn-secondary">
-                    <div id="{{ collection.id }}"> <span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="collection" value="{{ collection.id }}" autocomplete="off"><span>{{ collection.name }}</span></div>
+                    <div id="{{ collection.id }}"> <span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="collection" value="{{ collection.id }}" autocomplete="off"><span class="collectionName">{{ collection.name }}</span></div>
                 </label>
             </div>
 
-            <div class="snapdragon-options landscape">
+            <div class="landscape">
                 <div class="lesson-filters">
                         <div class="iconic-taxa-control landscape"
                         data-toggle="modal" 
@@ -23,7 +23,7 @@
                                 <i class="fas fa-sliders-h"></i>
                             </span>            
                         </div>
-                        <div>Filter by taxa and distance</div>
+                        <div>Filter by taxa, location, range and iNaturalist users</div>
                 </div>                
             </div>
 
@@ -35,26 +35,25 @@
     <div class="snapdragon-options">
         <div class="js-lesson-options">
             <div class="lesson-option-headers js-lesson-option-header">
-                And a study method
+                And a guide
             </div>
     
             <div class="btn-group btn-group-toggle lesson-type" data-toggle="buttons">
                 <label class="btn btn-secondary">
-                    <div id="speciesId"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="speciesId" autocomplete="off"> <span>Species identification</span></div>
-                    <!-- <div id="speciesId"><i class="fas fa-binoculars"></i> <input type="radio" name="lessonType" value="speciesId" autocomplete="off"> <span>Species identification</span></div> -->
+                    <div id="speciesIdentification"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="speciesIdentification" autocomplete="off"> <span class="guideName">Species identification</span> <i class="fas fa-binoculars"></i></div>
                 </label>
                 <label class="btn btn-secondary">
-                    <div id="speciesInteraction"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="speciesInteraction" autocomplete="off"> <span>Species interaction</span></div>
-                    <!-- <div id="speciesInteraction"><i class="fas fa-search"></i> <input type="radio" name="lessonType" value="speciesInteraction" autocomplete="off"> <span>Species interaction</span></div> -->
+                    <div id="speciesInteraction"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="speciesInteraction" autocomplete="off"> <span class="guideName">Species interaction</span> <i class="fas fa-binoculars"></i></div>
                 </label>
                 <label class="btn btn-secondary">
-                    <div id="speciesAdaptation"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="speciesAdaptation" autocomplete="off"> <span>Species adaptation</span></div>
-                    <!-- <div id="speciesAdaptation"><i class="fas fa-chart-area"></i> <input type="radio" name="lessonType" value="speciesAdaptation" autocomplete="off"> <span>Species adaptation</span></div> -->
+                    <div id="speciesTaxonomy"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="speciesTaxonomy" autocomplete="off"> <span class="guideName">Abiotic factors</span> <i class="fas fa-binoculars"></i></div>
+                </label>
+                <label class="btn btn-secondary">
+                    <div id="speciesTraits"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="speciesTraits" autocomplete="off"> <span class="guideName">Species traits and taxonomy</span> <i class="fas fa-book-open"></i></div>
                 </label>          
-                <label class="btn btn-secondary">
-                    <div id="speciesTaxonomy"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="speciesTaxonomy" autocomplete="off"> <span>Taxonomy</span></div>
-                    <!-- <div id="speciesTaxonomy"><i class="fas fa-sitemap"></i> <input type="radio" name="lessonType" value="speciesTaxonomy" autocomplete="off"> <span>Taxonomy</span></div> -->
-                </label>
+                <!-- <label class="btn btn-secondary">
+                    <div id="detailedObservation"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="detailedObservation" autocomplete="off"> <span class="guideName">Detailed observation</span> <i class="fas fa-search"></i></div>
+                </label> -->
             </div>
         </div>
 
@@ -66,8 +65,6 @@
 
     </div>
 
-    <hr>
-    
     <div class="action-update-container">
         <div class="action-update">
             <div></div>
@@ -75,7 +72,7 @@
                 <span class="portrait">View lesson species</span>
                 <span class="landscape">Begin lesson</span>
             </button>
-            <button class="btn btn-placeholder js-lesson-btn-action-placeholder toggle-content is-visible disabled">Choose an ecosystem...</button>
+            <button class="btn btn-placeholder js-lesson-btn-action-placeholder toggle-content is-visible disabled">Choose an ecosystem and a guide</button>
         </div>
     </div>
 </div>
@@ -113,7 +110,17 @@
                             <span class="js-range-text"></span>
                         </div>
                     </div>
-                    <button class="btn btn-light js-set-range-btn">Set range</button>
+                    <div class="location-control">
+                        <button class="btn btn-light js-set-range-btn">Set range</button>
+                        <button class="btn btn-light js-set-location-btn">Update current location</button>
+                    </div>
+                    <hr>
+                    <br>
+                    <h5>iNat Identity</h5>
+                    <div>
+                        <input class="js-inat-identity" type="text">
+                    </div>
+                    <button class="btn btn-light js-set-inat-identity-btn">Set identity</button>
                 </div>                    
             </div>
         </div>
