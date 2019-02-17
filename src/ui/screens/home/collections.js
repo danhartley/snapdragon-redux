@@ -15,6 +15,7 @@ import { handleCustomCollections } from 'ui/helpers/local-collection';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
 import { handleIconicTaxaFilter } from 'ui/helpers/iconic-taxa-handler';
 import { listenToTaxaFiltersUpdate } from 'ui/helpers/iconic-taxa-handler';
+import { createGuideHandler } from 'ui/modals/create-guide';
 
 const optionHoverListeners = [];
 
@@ -175,8 +176,12 @@ export const renderCollections = (counter) => {
         updateNavIcons();        
     });
 
-    document.querySelector('.iconic-taxa-control').addEventListener('click', event => {
+    document.querySelector('.js-iconic-taxa-control').addEventListener('click', event => {
         handleIconicTaxaFilter(config);        
+    });
+
+    document.querySelector('.js-create-guide-link').addEventListener('click', event => {
+        createGuideHandler(1, config, collections);
     });
 };
 

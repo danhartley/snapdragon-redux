@@ -137,13 +137,178 @@
         font-size: 1.4rem;
     }
 
-    .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active,
-    .btn-secondary:not(:disabled):not(.disabled).focus, .btn-secondary:not(:disabled):not(.disabled):focus, 
-    .show>.btn-secondary.dropdown-toggle, .btn.btn-secondary:hover {
-        border: .05rem solid var(--snap-dd-collection-bg-intial);
+    .snapdragon-options .btn.btn-secondary {
+        height: 2.5rem;
     }
 
-    .snapdragon-options  .btn.btn-secondary {
-        height: 2.5rem;
+    #createGuide .modal-dialog {
+        width: 50%;
+    }
+
+    #createGuide .modal-header {
+        display: flex;
+        background-color: var(--snap-dd-collection-bg-hover);
+    }
+
+    #createGuide .modal-title {
+        flex: auto;
+        display: flex;
+        align-items: center;
+        align-content: space-between;
+    }
+
+    #createGuide .modal-title div { 
+        font-size: 1.3rem;
+        letter-spacing: .03rem;
+        font-family: "AtlasGrotesk","Open Sans",sans-serif;
+    }
+    
+    #createGuide .modal-title div:nth-child(1) {
+        flex: auto;
+    }
+
+    #createGuide .modal-title div:nth-child(2) {
+        flex: initial;
+        margin: 0 .5rem 0 0;
+        font-size: 1rem;
+    }
+
+    #createGuide .modal-header .close {
+        flex: initial;
+        margin: 0;        
+        display: inline-block;
+        padding: .1rem .4rem;
+        border: 1px solid var(--snap-text-medium-dark);
+    }
+
+    #createGuide .modal-body button {
+        margin: 0;
+    }
+
+    #createGuide .modal-body h5 {
+        font-size: 1.6rem;
+        margin: 0 0 1rem 0;
+        color: var(--snap-text-medium-light);
+    }
+
+    #createGuide .modal-body .guide-text {
+        font-size: 1.4rem;
+        margin: 0 0 1rem 0;
+        width: fit-content;
+    }
+
+    .modal-body.create-guide-body {
+        min-height: 30rem;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+    }
+
+    .modal-body.create-guide-body > div {
+        flex: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .modal-body.create-guide-body > div:nth-child(1), .modal-body.create-guide-body > div:nth-child(3) {
+        max-height: 4rem;
+    }
+
+    .modal-body .create-guide-progress > div {
+        display: flex;
+        border-bottom: .05rem solid lightgray;
+        padding: 0 0 .5rem 0;
+        width: 100%;
+    }
+    
+    .modal-body .create-guide-progress > div div {
+        flex: auto;
+        line-height: 3rem;
+        text-align: center;
+    }
+
+    .modal-body .btn-modal {
+        background-color: var(--snap-success);
+        background-color: var(--snap-collection-active);
+    }
+
+    .modal-body .create-guide-progress .completed {
+        background-color: lightgray;
+    }
+
+    .modal-body .create-guide-progress .active {
+        background-color: rgb(212, 225, 213);
+    }
+
+    .modal-body .create-guide-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--snap=--snap-text-dark);
+        background-color: var(--orange);
+        background-color: var(--snap-filters-ctrl);
+    }
+    
+    .modal-body .create-guide-navigation > div > div {
+        display: flex;
+        align-items: center;        
+    }
+
+    .modal-body .create-guide-navigation > div:nth-child(1) > div svg {
+        font-size: 2rem;
+        margin: 0 .25rem 0 .5rem;
+    }
+    
+    .modal-body .create-guide-navigation > div:nth-child(2) > div svg {
+        font-size: 2rem;
+        margin: 0 .5rem 0 .25rem;
+    }
+    
+    .modal-body .create-guide-navigation > div:nth-child(1),
+    .modal-body .create-guide-navigation > div:nth-child(2) {
+        color: var(--snap-text-dark);
+        cursor: pointer;
+    }
+    
+    .modal-body .create-guide-navigation > div:nth-child(1):hover,
+    .modal-body .create-guide-navigation > div:nth-child(2):hover {
+        color: white;
+    }
+
+    #createGuide .modal-body .location button {
+        background-color: var(--snap-collection-active);
+        margin: 1rem 0;
+    }
+
+    #createGuide .modal-body button {
+        color: var(--snap-text-dark);        
+    }
+
+    #createGuide .modal-body .categories > div:last-child {
+        display: flex;
+        align-items: center;
+        margin: 1rem 0 0 0;
+    }
+
+    #createGuide .modal-body .categories > div:last-child button {
+        margin: 0 1rem 0 0;
+    }
+
+    #createGuide .modal-body .categories > div:last-child div {
+        color: gray;
+    }
+ 
+    #createGuide .modal-body .guides > div:first-child {
+        display: flex;
+        flex-direction: column;
+        text-transform: capitalize;
+    }
+ 
+    #createGuide .modal-body button:hover {
+        color: white;
+    }
+ 
+    #createGuide .modal-body button:disabled {
+        color: var(--snap-text-dark);
     }
 }

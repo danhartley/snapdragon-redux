@@ -1482,46 +1482,29 @@ table input {
   border: 0;
   width: fit-content;
   border: none;
-  margin: 0 0 .25rem 0 !important;
+  /* margin: 0 0 .25rem 0 !important; */
 }
 
 .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active,
 .btn-secondary:not(:disabled):not(.disabled).focus, .btn-secondary:not(:disabled):not(.disabled):focus, 
 .show>.btn-secondary.dropdown-toggle 
 {
-  background-color: rgb(252, 251, 246);
+  /* background-color: rgb(252, 251, 246); */
   color: var(--snap-text-dark);  
 }
-
-/* .btn.btn-secondary.active svg {
-  color: var(--snap-text-dark);
-} */
 
 .btn.btn-secondary:hover {
   transition: none;
 }
-
-/* .btn.btn-secondary:hover .collectionName, .btn.btn-secondary:hover .guideName {
-  border-bottom: .05rem solid gray;
-  padding: 0 0 .25rem 0;  
-}
-
-.btn.btn-secondary.active .collectionName, .btn.btn-secondary.active .guideName {
-  text-transform: uppercase;
-  font-size: .9rem;
-  border-bottom: none;
-  padding: 0;
-} */
 
 .btn.btn-secondary.disabled .collectionName, .btn.btn-secondary.active .guideName {
   border: none;
 }
 
 label.btn.btn-secondary {
-  /* line-height: 2rem; */
   display: flex;
   align-items: center;
-  background-color: var(--snap-list-alt-background);
+  /* background-color: var(--snap-list-alt-background); */
 }
 
 label.btn.btn-secondary img {      
@@ -2047,17 +2030,14 @@ th.lessonScore {
 
 .summary-scores td:nth-child(1) {
   width: 8rem;
-  /* background-color: rgb(176, 113, 4, 0.6); */
 }
 
 .summary-scores td:nth-child(2) {
   width: 4rem;
-  /* background-color: rgb(176, 113, 4, 0.4); */
 }
 
 .summary-scores td:nth-child(3) {
   width: 4rem;
-  /* background-color: rgb(168, 74, 134, 0.2); */
 }
 
 .summary {
@@ -2174,8 +2154,7 @@ a.collection-disabled {
   font-size: 0.6rem;
 }
 
-.iconic-taxa-categories,
-.js-lesson-filters {
+.iconic-taxa-categories {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 1rem;

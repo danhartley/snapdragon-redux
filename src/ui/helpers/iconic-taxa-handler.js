@@ -127,6 +127,7 @@ export const handleIconicTaxaFilter = (config) => {
     async function handleSetLocation() {
         setLocationBtn.innerHTML = 'Updating location...'
         place = await getPlace(config);
+        config.place = place;
         actions.boundUpdateConfig(config);
         setLocationBtn.innerHTML = 'Location updated';
         console.log(place);
