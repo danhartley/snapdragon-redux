@@ -92,11 +92,11 @@ listenToPlaceChange(location => {
     renderSnapdragonTemplate(snapdragonTemplate, DOM, snapdragonCollections, renderTemplate, [], location);
 });
 
-listenToCollectionOptionHoverEvent(optionId => {
-    document.querySelectorAll('.lesson-item-details .collectionName').forEach(collection => {
-        collection.classList.remove('hover-box');
-        if(parseInt(collection.getAttribute('name')) === optionId) {
-            collection.classList.add('hover-box');
-        }
-    });
-});
+// listenToCollectionOptionHoverEvent(optionId => {
+//     document.querySelectorAll('.lesson-item-details .collectionName').forEach(collection => {
+//         collection.classList.remove('hover-box');
+//         if(parseInt(collection.getAttribute('name')) === optionId) {
+//             collection.classList.add('hover-box');
+//         }
+//     });
+// });

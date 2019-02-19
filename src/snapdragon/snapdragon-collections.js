@@ -374,7 +374,8 @@ export const monsantoSpecies = {
     curator: 'Snapdragon | iNaturalist',
     collectionType: 'Protected Ecosystem',
     iNatWidget: 'parque-florestal-de-monsanto',
-    iconicTaxa: [ 'fungi', 'plantae', 'aves', 'lepidoptera', 'amphibia', 'mammalia', 'insecta' ]
+    iconicTaxa: [ 'fungi', 'plantae', 'aves', 'lepidoptera', 'amphibia', 'mammalia', 'insecta' ],
+    countryCode: 'PT'
 };
 
 export const arrabidaSpecies = {
@@ -399,7 +400,8 @@ export const arrabidaSpecies = {
     curator: 'Snapdragon | iNaturalist',
     collectionType: 'Protected Ecosystem',
     iNatWidget: 'o-parque-natural-da-arrabida',
-    iconicTaxa: [ 'fungi', 'plantae', 'aves', 'lepidoptera', 'amphibia', 'mammalia', 'insecta' ]
+    iconicTaxa: [ 'fungi', 'plantae', 'aves', 'lepidoptera', 'amphibia', 'mammalia', 'insecta' ],
+    countryCode: 'PT'
 };
 
 export const useriNatSpecies = {
@@ -463,7 +465,7 @@ export const snapdragonCollections = [
     localSpecies,
     arrabidaSpecies,
     monsantoSpecies,
-    useriNatSpecies
+    // useriNatSpecies
     // kitchenGarden,
     // rhsTrees,
     // commonBirds,

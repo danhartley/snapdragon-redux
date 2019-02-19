@@ -1489,7 +1489,7 @@ table input {
 .btn-secondary:not(:disabled):not(.disabled).focus, .btn-secondary:not(:disabled):not(.disabled):focus, 
 .show>.btn-secondary.dropdown-toggle 
 {
-  /* background-color: rgb(252, 251, 246); */
+  background-color: white;
   color: var(--snap-text-dark);  
 }
 

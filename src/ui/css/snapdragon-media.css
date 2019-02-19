@@ -145,8 +145,14 @@
         width: 50%;
     }
 
+    #createGuide .modal-content {
+        min-width: 800px;;
+    }
+
     #createGuide .modal-header {
         display: flex;
+        align-items: center;
+        padding: 0 1rem;
         background-color: var(--snap-dd-collection-bg-hover);
     }
 
@@ -165,6 +171,9 @@
     
     #createGuide .modal-title div:nth-child(1) {
         flex: auto;
+        font-size: 1.1rem;
+        letter-spacing: .03rem;
+        text-transform: uppercase;
     }
 
     #createGuide .modal-title div:nth-child(2) {
@@ -175,10 +184,9 @@
 
     #createGuide .modal-header .close {
         flex: initial;
-        margin: 0;        
+        margin: 0 0 0 .5rem;        
         display: inline-block;
-        padding: .1rem .4rem;
-        border: 1px solid var(--snap-text-medium-dark);
+        font-size: 2rem;
     }
 
     #createGuide .modal-body button {
@@ -192,9 +200,15 @@
     }
 
     #createGuide .modal-body .guide-text {
-        font-size: 1.4rem;
-        margin: 0 0 1rem 0;
-        width: fit-content;
+        font-size: 1.6rem;
+        margin: 1rem 0;
+        font-family: Calluna,serif;
+        letter-spacing: .03rem;
+    }
+
+    #createGuide .modal-body .guide-sub-text {
+        font-size: 1rem;
+        margin: 0 0 .5rem 0;
     }
 
     .modal-body.create-guide-body {
@@ -210,12 +224,19 @@
         align-items: center;
     }
 
+    .modal-body.create-guide-body > div.create-guide-action {
+        flex-direction: column;
+        align-items: initial;
+        position: relative;
+    }
+
     .modal-body.create-guide-body > div:nth-child(1), .modal-body.create-guide-body > div:nth-child(3) {
         max-height: 4rem;
     }
 
     .modal-body .create-guide-progress > div {
         display: flex;
+        align-items: center;
         border-bottom: .05rem solid lightgray;
         padding: 0 0 .5rem 0;
         width: 100%;
@@ -223,13 +244,12 @@
     
     .modal-body .create-guide-progress > div div {
         flex: auto;
-        line-height: 3rem;
+        line-height: 3.45rem;
         text-align: center;
     }
 
     .modal-body .btn-modal {
-        background-color: var(--snap-success);
-        background-color: var(--snap-collection-active);
+        background-color: rgb(143, 163, 138);
     }
 
     .modal-body .create-guide-progress .completed {
@@ -275,33 +295,51 @@
         color: white;
     }
 
-    #createGuide .modal-body .location button {
-        background-color: var(--snap-collection-active);
+    #createGuide .modal-body .location .current {
+        display: flex;
+        align-items: center;
         margin: 1rem 0;
+    }
+
+    #createGuide .modal-body .chosen {
+        position: absolute;
+        bottom:.5rem;
+    }
+
+    #createGuide .modal-body .chosen span:nth-child(1) {
+        font-size: .8rem;
+        margin: 0 .25rem 0 0;
+    }
+
+    #createGuide .modal-body .chosen span:nth-child(2) {
+        text-transform: uppercase;
+        font-size: .9rem;
+    }
+
+    #createGuide .modal-body .location button {
+        margin: 0 1rem 0 0;
     }
 
     #createGuide .modal-body button {
         color: var(--snap-text-dark);        
     }
 
-    #createGuide .modal-body .categories > div:last-child {
+    #createGuide .modal-body .save-your-changes {
         display: flex;
         align-items: center;
         margin: 1rem 0 0 0;
     }
 
-    #createGuide .modal-body .categories > div:last-child button {
+    #createGuide .modal-body .save-your-changes button {
         margin: 0 1rem 0 0;
     }
 
-    #createGuide .modal-body .categories > div:last-child div {
+    #createGuide .modal-body .save-your-changes div {
         color: gray;
     }
  
     #createGuide .modal-body .guides > div:first-child {
         display: flex;
-        flex-direction: column;
-        text-transform: capitalize;
     }
  
     #createGuide .modal-body button:hover {

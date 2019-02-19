@@ -48,8 +48,8 @@ async function getMapBoxPlace(long, lat, config) {
   return await place;
 }
 
-export async function getPlace(config) {
-  if(!!config.place) {
+export async function getPlace(config, force = false) {
+  if(!!config.place && !force) {
     const response = new Promise(resolve => {
       resolve(config.place);
     });
@@ -67,4 +67,25 @@ export async function getPlace(config) {
 
 export const listenToPlaceChange = listener => { 
   listeners.push(listener);
+};
+
+async function IPLookup() {
+  const ACCESS_KEY = '69402a39530c7ae8218dfaf69ef78337';
+  const url = `http://api.ipstack.com/check?access_key=${ACCESS_KEY}`;
+  const response = await fetch(url);
+  const json = await response.json();
+  const { country_code, country_name } = await json;
+  return { country_code, country_name };
+}
+
+export async function getIPLocation(config, force = false) {
+     if(!!config.ipLocation && !force) {
+      const response = new Promise(resolve => {
+        resolve(config.ipLocation);
+      });
+      const json = await response;    
+      return await json;
+     } else {
+      return IPLookup();
+     }
 };

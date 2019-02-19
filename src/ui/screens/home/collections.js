@@ -17,8 +17,6 @@ import { handleIconicTaxaFilter } from 'ui/helpers/iconic-taxa-handler';
 import { listenToTaxaFiltersUpdate } from 'ui/helpers/iconic-taxa-handler';
 import { createGuideHandler } from 'ui/modals/create-guide';
 
-const optionHoverListeners = [];
-
 export const renderCollections = (counter) => { 
 
     const { collections: collectionsState, config: configState, collection: collectionState, history, layout } = store.getState();
@@ -129,67 +127,22 @@ export const renderCollections = (counter) => {
         }
     }
 
-    document.querySelectorAll('.js-lesson-options .btn.btn-secondary div').forEach(type => type.addEventListener('click', event => {        
-        const target = event.target.id ? event.target : event.target.parentElement;
-        hasChosenStudyType = true;
-        document.querySelectorAll('.js-lesson-options .lesson-icon').forEach(icon => icon.innerHTML = '<i class="far fa-circle"></i>');
-        target.querySelector('i').classList.remove('fa-circle');
-        target.querySelector('i').classList.add('fa-dot-circle');
-        if(hasChosenLesson) {
-            elem.show(learningActionBtn);
-            elem.hide(learningActionBtnPlaceholder);
-            document.querySelector('.js-lesson-plan').classList.add('active');
-        }
-        config.studyMethod = target.id;
-        actions.boundSelectStudyMethod(config.studyMethod);
-    }));
-
-    document.querySelectorAll('.btn.btn-secondary > div').forEach(option => {
-        option.addEventListener('mouseover', event => {
-            const target = event.target.id ? event.target : event.target.parentElement;
-            const optionId = parseInt(target.id);
-            optionHoverListeners.forEach(listener => listener(optionId));
-        });
-    });
-
-    learningActionBtn.addEventListener('click', () => {
-
-        if(config.isLandscapeMode) {
-            subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));            
-            const lessonStateMode = counter.isLessonPaused ? 'restartLesson' : 'newLesson';
-            lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, learningActionBtn);            
-        }
-
-        if(config.isPortraitMode) {            
-            if(collection.id === 1) {
-                learningActionBtn.innerHTML = 'Fetching local species...';
-            }
-            subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
-            if(counter.isLessonPaused && collectionId === collection.id) {
-                renderSpeciesCollectionList(collection, null, true);
-            } else {                
-                actions.boundSelectCollection(collection);                
-            }            
-            actions.boundNewPage({ name: 'list'});
-         } 
-        
-        updateNavIcons();        
-    });
-
-    document.querySelector('.js-iconic-taxa-control').addEventListener('click', event => {
-        handleIconicTaxaFilter(config);        
-    });
+    // document.querySelectorAll('.js-lesson-options .btn.btn-secondary div').forEach(type => type.addEventListener('click', event => {        
+    //     const target = event.target.id ? event.target : event.target.parentElement;
+    //     hasChosenStudyType = true;
+    //     document.querySelectorAll('.js-lesson-options .lesson-icon').forEach(icon => icon.innerHTML = '<i class="far fa-circle"></i>');
+    //     target.querySelector('i').classList.remove('fa-circle');
+    //     target.querySelector('i').classList.add('fa-dot-circle');
+    //     if(hasChosenLesson) {
+    //         elem.show(learningActionBtn);
+    //         elem.hide(learningActionBtnPlaceholder);
+    //         document.querySelector('.js-lesson-plan').classList.add('active');
+    //     }
+    //     config.studyMethod = target.id;
+    //     actions.boundSelectStudyMethod(config.studyMethod);
+    // }));
 
     document.querySelector('.js-create-guide-link').addEventListener('click', event => {
-        createGuideHandler(1, config, collections);
+        createGuideHandler(1, R.clone(config), R.clone(collections));
     });
 };
-
-export const listenToCollectionOptionHoverEvent = listener => { 
-    optionHoverListeners.push(listener);
-};
-
-listenToTaxaFiltersUpdate((filters, config) => {
-    const { counter } = store.getState();
-    renderCollections(counter);
-});  
