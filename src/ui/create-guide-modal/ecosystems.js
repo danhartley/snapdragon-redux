@@ -4,19 +4,17 @@ import ecosystemTemplate from 'ui/create-guide-modal/ecosystems-list-template.ht
 import { saveButton } from 'ui/create-guide-modal/common/save-button';
 import { rbEventHandler } from 'ui/create-guide-modal/common/rb-event-handler';
 
-export const renderEcosystems = (config, collections, modal) => {
+export const renderEcosystems = (modal, config, collections) => {
 
     const guideTxt = modal.querySelector('.guide-text');
     const guideSubTxt = modal.querySelector('.guide-sub-text');
     const chosen = modal.querySelector('.js-chosen span:nth-child(2)');
 
-    const saveYourChangesBtn = saveButton(modal.querySelector('.js-save-your-changes'), config);
+    const saveYourChangesBtn = saveButton(modal.querySelector('.js-save-your-changes'), config, chosen, 'ECOSYSTEM');
 
-    const location = config.place 
-            ? config.place.longLocation 
-            : config.ipLocation 
-                ? config.ipLocation.country_name
-                : null;
+    const location = config.locationType === 'auto' 
+            ? config.autoLocation 
+            : config.userLocation;
     
     let ecosystems = [];
 
@@ -43,6 +41,7 @@ export const renderEcosystems = (config, collections, modal) => {
                 preSelectedCollection.click();
             }
         });
+        chosen.innerHTML = config.ecosystem.name;
     }
 
     if(location) {
@@ -63,7 +62,6 @@ export const renderEcosystems = (config, collections, modal) => {
         if(ecosystemId !== (config.ecosystem && config.ecosystem.id)) {
             saveYourChangesBtn.disabled = false;
         }
-        config.ecosystem = { id: ecosystemId, name: target.innerText };
-        chosen.innerHTML = config.ecosystem.name;        
+        config.ecosystem = { id: ecosystemId, name: target.innerText }; 
     }));
 };

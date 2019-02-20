@@ -5,13 +5,13 @@ import { saveButton } from 'ui/create-guide-modal/common/save-button';
 import { renderTemplate } from 'ui/helpers/templating';
 import categoriesTemplate from 'ui/create-guide-modal/categories-list-template.html';
 
-export const renderCategories = (config, modal) => {
+export const renderCategories = (modal, config) => {
 
     const guideTxt = modal.querySelector('.guide-text');
     // const guideSubTxt = modal.querySelector('.guide-sub-text');
     const chosen = modal.querySelector('.js-chosen span:nth-child(2)');
 
-    const saveYourChangesBtn = saveButton(modal.querySelector('.js-save-your-changes'), config);
+    const saveYourChangesBtn = saveButton(modal.querySelector('.js-save-your-changes'), config, chosen, 'SPECIES');
 
     
     const filterSelectedClass = 'iconic-taxa-selected';

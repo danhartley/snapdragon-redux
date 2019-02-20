@@ -142,7 +142,7 @@ export const renderCollections = (counter) => {
     //     actions.boundSelectStudyMethod(config.studyMethod);
     // }));
 
-    document.querySelector('.js-create-guide-link').addEventListener('click', event => {
-        createGuideHandler(1, R.clone(config), R.clone(collections));
+    document.querySelector('.js-create-guide-link').addEventListener('click', event => {        
+        createGuideHandler(1);
     });
 };

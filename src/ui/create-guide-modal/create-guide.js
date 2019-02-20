@@ -1,7 +1,8 @@
+import * as R from 'ramda';
+
+import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
-import locationTemplate from 'ui/create-guide-modal/location-template.html';
 import { renderLocation } from 'ui/create-guide-modal/location';
-import inatUserTemplate from 'ui/create-guide-modal/inat-user-template.html';
 import { renderCategories } from 'ui/create-guide-modal/categories';
 import { renderEcosystems } from 'ui/create-guide-modal/ecosystems';
 import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
@@ -9,11 +10,9 @@ import { renderGuides } from 'ui/create-guide-modal/guides';
 
 class CreateGuide {
     
-    constructor(config, collections) {
+    constructor() {
         
         this.currentStep = 0;
-        this.config = config;
-        this.collections = collections;
         
         this.steps = [
             { number: 1, title: 'Create your Guide', description: 'Location', nextStep: 'Choose an ecosystem' },
@@ -45,33 +44,32 @@ class CreateGuide {
     }
 
     addStepActions() {
+        
         let template = '';
         const parent = this.modal.querySelector('.js-create-guide-action');
         parent.innerHTML = '';
         template = document.createElement('template');
         const description = this.steps.find(step => step.number === this.currentStep).description;
+
+        const { config: configState, collections: collectionsState } = store.getState();
+        const config = R.clone(configState);
+        const collections = R.clone(collectionsState);
+
+        template.innerHTML = actionsTemplate;
+        renderTemplate({}, template.content, parent);
+
         switch(description) {
-            case 'Location':                
-                template.innerHTML = actionsTemplate;
-                renderTemplate({}, template.content, parent);
-                renderLocation(this.config, this.modal);
-                // template.innerHTML = inatUserTemplate;
-                // renderTemplate({}, template.content, parent);                
+            case 'Location':                                
+                renderLocation(this.modal, config);       
                 break;
             case 'Ecosystem':
-                template.innerHTML = actionsTemplate;
-                renderTemplate({}, template.content, parent);
-                renderEcosystems(this.config, this.collections, this.modal);
+                renderEcosystems(this.modal, config, collections);
                 break;
             case 'Species':
-                template.innerHTML = actionsTemplate;
-                renderTemplate({}, template.content, parent);
-                renderCategories(this.config, this.modal);
+                renderCategories(this.modal, config);
                 break;
             case 'Guide':
-                template.innerHTML = actionsTemplate;
-                renderTemplate({}, template.content, parent);
-                renderGuides(this.config, this.modal);
+                renderGuides(this.modal, config);
                 break;
         }
     }
@@ -115,9 +113,9 @@ class CreateGuide {
     }
 };
 
-export const createGuideHandler = (step, config, collections) => {
+export const createGuideHandler = (step) => {
     
-    const guide = new CreateGuide(config, collections);
+    const guide = new CreateGuide();
 
     guide.createStep(step);
 
@@ -127,7 +125,7 @@ export const createGuideHandler = (step, config, collections) => {
     });
 
     guide.previousStepAction.addEventListener('click', event => {
-        const previousStep = guide.getCurrentStep - 1;
+        const previousStep = guide.getCurrentStep - 1;        
         guide.createStep(previousStep);
     });
 

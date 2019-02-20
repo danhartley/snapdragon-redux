@@ -153,7 +153,8 @@
         display: flex;
         align-items: center;
         padding: 0 1rem;
-        background-color: var(--snap-dd-collection-bg-hover);
+        /* background-color: var(--snap-dd-collection-bg-hover); */
+        background-color: rgb(199, 185, 195);
     }
 
     #createGuide .modal-title {
@@ -172,7 +173,6 @@
     #createGuide .modal-title div:nth-child(1) {
         flex: auto;
         font-size: 1.1rem;
-        letter-spacing: .03rem;
         text-transform: uppercase;
     }
 
@@ -257,7 +257,8 @@
     }
 
     .modal-body .create-guide-progress .active {
-        background-color: rgb(212, 225, 213);
+        /* background-color: rgb(212, 225, 213); */
+        background-color: rgb(221, 212, 219);
     }
 
     .modal-body .create-guide-navigation {
@@ -377,5 +378,15 @@
     .user-location input[type="text"] {
         margin: .5rem 0 0 0;
         height: 1.75rem;
+        color: var(--snap-text-dark);
+    }
+
+    .auto-location {
+        margin: 0 0 0 .15rem;
+    }
+
+    #auto .btn {
+        /* background-color: rgb(199, 185, 195); */
+        background-color: var(--snap-dd-collection-bg-hover);
     }
 }
