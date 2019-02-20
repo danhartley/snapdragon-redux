@@ -15,7 +15,7 @@ import { handleCustomCollections } from 'ui/helpers/local-collection';
 import collectionsTemplate from 'ui/screens/home/collections-template.html';
 import { handleIconicTaxaFilter } from 'ui/helpers/iconic-taxa-handler';
 import { listenToTaxaFiltersUpdate } from 'ui/helpers/iconic-taxa-handler';
-import { createGuideHandler } from 'ui/modals/create-guide';
+import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
 
 export const renderCollections = (counter) => { 
 

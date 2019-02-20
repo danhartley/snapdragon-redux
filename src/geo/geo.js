@@ -20,12 +20,17 @@ const listeners = [];
 
 async function parseMapBoxPlace(json, config) {
   const place = await json;
-  place.region = place.features.find(f => f.place_type[0] === 'place');
-  place.country = place.features.find(f => f.place_type[0] === 'country');
-  place.area = place.region || place.country;
+  const locality = place.features.find(f => f.place_type[0] === 'locality');
+  const region = place.features.find(f => f.place_type[0] === 'region');
+  const country = place.features.find(f => f.place_type[0] === 'country');
+
+  place.locality = locality ? locality.text : '';
+  place.region = region ? region.text : '';
+  place.country = country ? country.text : '';
+  // place.area = place.region || place.country;
   
-  place.shortLocation = place.area.text;
-  place.longLocation = place.area.text === place.country.text ? place.area.text : `${place.area.text}, ${place.country.text}`;
+  place.shortLocation = `${place.region}, ${place.country}`;
+  place.longLocation = `${place.locality}, ${place.region}, ${place.country}`;
  
   place.summary = config.isLandscapeMode ? `Species from ${place.longLocation}` : `Species from ${place.shortLocation}`;
   const placePromise = new Promise(resolve => {

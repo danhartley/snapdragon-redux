@@ -1,14 +1,11 @@
 import { renderTemplate } from 'ui/helpers/templating';
-import locationTemplate from 'ui/modals/location-template.html';
-import { renderLocation } from 'ui/modals/location';
-import inatUserTemplate from 'ui/modals/inat-user-template.html';
-// import categoriesTemplate from 'ui/modals/categories-template.html';
-import { renderCategories } from 'ui/modals/categories';
-// import ecosystemsTemplate from 'ui/modals/ecosystems-template.html';
-import { renderEcosystems } from 'ui/modals/ecosystems';
-import actionsTemplate from 'ui/modals/common/actions-template.html';
-// import guidesTemplate from 'ui/modals/guides-template.html';
-import { renderGuides } from 'ui/modals/guides';
+import locationTemplate from 'ui/create-guide-modal/location-template.html';
+import { renderLocation } from 'ui/create-guide-modal/location';
+import inatUserTemplate from 'ui/create-guide-modal/inat-user-template.html';
+import { renderCategories } from 'ui/create-guide-modal/categories';
+import { renderEcosystems } from 'ui/create-guide-modal/ecosystems';
+import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
+import { renderGuides } from 'ui/create-guide-modal/guides';
 
 class CreateGuide {
     
@@ -19,10 +16,10 @@ class CreateGuide {
         this.collections = collections;
         
         this.steps = [
-            { number: 1, title: 'Create a Guide', description: 'Location', nextStep: 'Choose an ecosystem' },
-            { number: 2, title: 'Create a Guide', description: 'Ecosystem', nextStep: 'Filter species' },
-            { number: 3, title: 'Create a Guide', description: 'Species', nextStep: 'Select guide type' },
-            { number: 4, title: 'Create a Guide', description: 'Guide', nextStep: 'Start Guide' },
+            { number: 1, title: 'Create your Guide', description: 'Location', nextStep: 'Choose an ecosystem' },
+            { number: 2, title: 'Create your Guide', description: 'Ecosystem', nextStep: 'Filter species' },
+            { number: 3, title: 'Create your Guide', description: 'Species', nextStep: 'Select guide type' },
+            { number: 4, title: 'Create your Guide', description: 'Guide', nextStep: 'Start Guide' },
         ];
         
         this.modal = document.getElementById('createGuide');
@@ -55,7 +52,7 @@ class CreateGuide {
         const description = this.steps.find(step => step.number === this.currentStep).description;
         switch(description) {
             case 'Location':                
-                template.innerHTML = locationTemplate;
+                template.innerHTML = actionsTemplate;
                 renderTemplate({}, template.content, parent);
                 renderLocation(this.config, this.modal);
                 // template.innerHTML = inatUserTemplate;

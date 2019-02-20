@@ -1,6 +1,7 @@
 import { renderTemplate } from 'ui/helpers/templating';
-import { saveButton } from 'ui/modals/common/save-button';
-import guidesTemplate from 'ui/modals/guides-list-template.html';
+import { saveButton } from 'ui/create-guide-modal/common/save-button';
+import { rbEventHandler } from 'ui/create-guide-modal/common/rb-event-handler';
+import guidesTemplate from 'ui/create-guide-modal/guides-list-template.html';
 
 export const renderGuides = (config, modal) => {
 
@@ -27,10 +28,7 @@ export const renderGuides = (config, modal) => {
     renderTemplate({ }, template.content, parent);
 
     modal.querySelectorAll('.btn.btn-secondary div').forEach(type => type.addEventListener('click', event => {        
-        const target = event.target.id ? event.target : event.target.parentElement;
-        modal.querySelectorAll('.lesson-icon').forEach(icon => icon.innerHTML = '<i class="far fa-circle"></i>');
-        target.querySelector('i').classList.remove('fa-circle');
-        target.querySelector('i').classList.add('fa-dot-circle');
+        const target = rbEventHandler(modal, event);
         saveYourChangesBtn.disabled = false;
         config.studyMethod = target.id;
         chosen.innerHTML = config.studyMethod;

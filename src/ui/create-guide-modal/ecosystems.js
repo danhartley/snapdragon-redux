@@ -1,7 +1,8 @@
 import { utils } from 'utils/utils';
 import { renderTemplate } from 'ui/helpers/templating';
-import ecosystemTemplate from 'ui/modals/ecosystems-list-template.html';
-import { saveButton } from 'ui/modals/common/save-button';
+import ecosystemTemplate from 'ui/create-guide-modal/ecosystems-list-template.html';
+import { saveButton } from 'ui/create-guide-modal/common/save-button';
+import { rbEventHandler } from 'ui/create-guide-modal/common/rb-event-handler';
 
 export const renderEcosystems = (config, collections, modal) => {
 
@@ -56,13 +57,10 @@ export const renderEcosystems = (config, collections, modal) => {
     
     renderTemplate({ ecosystems }, template.content, parent);
     
-    modal.querySelectorAll('.btn.btn-secondary div').forEach(type => type.addEventListener('click', event => {        
-        const target = event.target.id ? event.target : event.target.parentElement;
-        modal.querySelectorAll('.lesson-icon').forEach(icon => icon.innerHTML = '<i class="far fa-circle"></i>');
-        target.querySelector('i').classList.remove('fa-circle');
-        target.querySelector('i').classList.add('fa-dot-circle');
+    modal.querySelectorAll('.btn.btn-secondary div').forEach(type => type.addEventListener('click', event => {
+        const target = rbEventHandler(modal, event);
         const ecosystemId = target.id.slice(3);
-        if(ecosystemId !== config.ecosystem.id) {
+        if(ecosystemId !== (config.ecosystem && config.ecosystem.id)) {
             saveYourChangesBtn.disabled = false;
         }
         config.ecosystem = { id: ecosystemId, name: target.innerText };

@@ -1,6 +1,6 @@
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
-import saveButtonTemplate from 'ui/modals/common/save-button-template.html';
+import saveButtonTemplate from 'ui/create-guide-modal/common/save-button-template.html';
 
 export const saveButton = (parent, config) => {
 

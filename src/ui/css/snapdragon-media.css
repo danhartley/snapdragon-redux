@@ -342,11 +342,40 @@
         display: flex;
     }
  
+    #createGuide .modal-body button {
+        display: inline-block;
+        margin: 0 0 0 .25rem;
+    }
+
     #createGuide .modal-body button:hover {
         color: white;
     }
  
     #createGuide .modal-body button:disabled {
         color: var(--snap-text-dark);
+    }
+
+    .user-location {
+        display: inline-flex;
+    }
+
+    .user-location label {
+        width: 2rem;
+        float: left;
+    }
+    
+    .user-location label div {
+        width: .5rem;
+    }
+
+    .user-location input[type="radio"] {
+        position: absolute;
+        clip: rect(0,0,0,0);
+        pointer-events: none;
+    }
+    
+    .user-location input[type="text"] {
+        margin: .5rem 0 0 0;
+        height: 1.75rem;
     }
 }

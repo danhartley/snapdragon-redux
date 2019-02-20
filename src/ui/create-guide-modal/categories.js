@@ -1,9 +1,9 @@
 import * as R from 'ramda';
 
 import { elem } from 'ui/helpers/class-behaviour';
-import { saveButton } from 'ui/modals/common/save-button';
+import { saveButton } from 'ui/create-guide-modal/common/save-button';
 import { renderTemplate } from 'ui/helpers/templating';
-import categoriesTemplate from 'ui/modals/categories-list-template.html';
+import categoriesTemplate from 'ui/create-guide-modal/categories-list-template.html';
 
 export const renderCategories = (config, modal) => {
 
