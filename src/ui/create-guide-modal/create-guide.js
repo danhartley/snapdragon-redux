@@ -15,8 +15,8 @@ class CreateGuide {
         this.currentStep = 0;
         
         this.steps = [
-            { number: 1, title: 'Create your Guide', description: 'Location', nextStep: 'Choose an ecosystem' },
-            { number: 2, title: 'Create your Guide', description: 'Ecosystem', nextStep: 'Filter species' },
+            { number: 1, title: 'Create your Guide', description: 'Your Location', nextStep: 'Choose an environment' },
+            { number: 2, title: 'Create your Guide', description: 'Environment', nextStep: 'Select species' },
             { number: 3, title: 'Create your Guide', description: 'Species', nextStep: 'Select guide type' },
             { number: 4, title: 'Create your Guide', description: 'Guide', nextStep: 'Start Guide' },
         ];
@@ -59,10 +59,10 @@ class CreateGuide {
         renderTemplate({}, template.content, parent);
 
         switch(description) {
-            case 'Location':                                
+            case 'Your Location':                                
                 renderLocation(this.modal, config);       
                 break;
-            case 'Ecosystem':
+            case 'Environment':
                 renderEcosystems(this.modal, config, collections);
                 break;
             case 'Species':
@@ -84,10 +84,12 @@ class CreateGuide {
         this.nextStepActionTxt.innerHTML = currentStepProperties.map(csp => csp.nextStep);
 
         this.progressSteps.forEach((ps,index) => {
+
+            ps.classList.remove('active');
+
             if(index + 1 === this.currentStep) {
                 ps.classList.add('active');
                 for(let i = 0; i < index; i++) {
-                    this.progressSteps[i].classList.remove('active');
                     this.progressSteps[i].classList.add('completed');
                 }
             }

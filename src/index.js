@@ -18,12 +18,14 @@ import { nextItem } from 'ui/setup/next-item';
 
 import { renderHeaders } from 'ui/fixtures/headers';
 import { renderScore } from 'ui/fixtures/score';
-import { renderCollections } from 'ui/screens/home/collections';
+// import { renderCollections } from 'ui/screens/home/collections';
+import { renderHome } from 'ui/screens/home/home';
 import { renderNavigation } from 'ui/fixtures/navigation';
 
 import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
-import { renderSnapdragon } from "./ui/screens/home/snapdragon";
+import { renderSpeciesGrid } from "./ui/screens/home/species-grid";
+// import { renderSnapdragon } from "./ui/screens/home/snapdragon";
 
 // import { screenShare } from 'ui/screens/multichoice/mixed-specimen-shared';
 
@@ -43,10 +45,13 @@ setTimeout( () => {
 
     subscription.add(renderHeaders, 'page', 'flow');
     subscription.add(renderNavigation, 'page', 'flow');
-    subscription.add(renderCollections, 'counter', 'flow');
-    if(!config.isPortraitMode && (collection && !collection.name)) {
-        subscription.add(renderSnapdragon, 'counter', 'flow');
-    }
+    subscription.add(renderHome, 'counter', 'flow');
+    // subscription.add(renderCollections, 'counter', 'flow');
+    // if(!config.isPortraitMode && (collection && !collection.name)) {
+    //     subscription.add(renderSnapdragon, 'counter', 'flow');
+    // }
+
+    subscription.add(renderSpeciesGrid, 'counter', 'flow');
     subscription.add(nextLesson, 'counter', 'flow');
     subscription.add(nextLayout, 'counter', 'flow');
     subscription.add(nextItem, 'layout', 'flow');

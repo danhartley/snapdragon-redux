@@ -127,20 +127,20 @@ export const renderCollections = (counter) => {
         }
     }
 
-    // document.querySelectorAll('.js-lesson-options .btn.btn-secondary div').forEach(type => type.addEventListener('click', event => {        
-    //     const target = event.target.id ? event.target : event.target.parentElement;
-    //     hasChosenStudyType = true;
-    //     document.querySelectorAll('.js-lesson-options .lesson-icon').forEach(icon => icon.innerHTML = '<i class="far fa-circle"></i>');
-    //     target.querySelector('i').classList.remove('fa-circle');
-    //     target.querySelector('i').classList.add('fa-dot-circle');
-    //     if(hasChosenLesson) {
-    //         elem.show(learningActionBtn);
-    //         elem.hide(learningActionBtnPlaceholder);
-    //         document.querySelector('.js-lesson-plan').classList.add('active');
-    //     }
-    //     config.studyMethod = target.id;
-    //     actions.boundSelectStudyMethod(config.studyMethod);
-    // }));
+    document.querySelectorAll('.js-lesson-options .btn.btn-secondary div').forEach(type => type.addEventListener('click', event => {        
+        const target = event.target.id ? event.target : event.target.parentElement;
+        hasChosenStudyType = true;
+        document.querySelectorAll('.js-lesson-options .lesson-icon').forEach(icon => icon.innerHTML = '<i class="far fa-circle"></i>');
+        target.querySelector('i').classList.remove('fa-circle');
+        target.querySelector('i').classList.add('fa-dot-circle');
+        if(hasChosenLesson) {
+            elem.show(learningActionBtn);
+            elem.hide(learningActionBtnPlaceholder);
+            document.querySelector('.js-lesson-plan').classList.add('active');
+        }
+        config.studyMethod = target.id;
+        actions.boundSelectStudyMethod(config.studyMethod);
+    }));
 
     document.querySelector('.js-create-guide-link').addEventListener('click', event => {        
         createGuideHandler(1);

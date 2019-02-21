@@ -10,7 +10,7 @@ export const renderGuides = (modal, config) => {
 
     const saveYourChangesBtn = saveButton(modal.querySelector('.js-save-your-changes'), config, chosen, 'GUIDE');
 
-    guideTxt.innerHTML = 'Choose a guide type';
+    guideTxt.innerHTML = 'How do you want to study the species';
 
     if(config.studyMethod) {
         setTimeout(() => {

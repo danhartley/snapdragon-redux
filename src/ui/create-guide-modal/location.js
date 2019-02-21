@@ -39,7 +39,7 @@ export const renderLocation = (modal, config) => {
     handleAutoLocation();
 
     const setLocationBtn = modal.querySelector('.js-set-location-btn');
-    setLocationBtn.innerHTML = authorisedLocation ? 'Reset your location' : 'Set your location';
+    setLocationBtn.innerHTML = authorisedLocation ? 'Reset your location' : 'Pinpoint your location';
 
     if(config.locationType) {
         chosen.innerHTML = config.locationType === 'user'

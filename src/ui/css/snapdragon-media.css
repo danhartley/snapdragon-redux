@@ -145,16 +145,11 @@
         width: 50%;
     }
 
-    #createGuide .modal-content {
-        min-width: 800px;;
-    }
-
     #createGuide .modal-header {
         display: flex;
         align-items: center;
         padding: 0 1rem;
-        /* background-color: var(--snap-dd-collection-bg-hover); */
-        background-color: rgb(199, 185, 195);
+        background-color: var(--secondary);
     }
 
     #createGuide .modal-title {
@@ -162,18 +157,18 @@
         display: flex;
         align-items: center;
         align-content: space-between;
+        color: white;
     }
 
     #createGuide .modal-title div { 
         font-size: 1.3rem;
-        letter-spacing: .03rem;
+        letter-spacing: .05rem;
         font-family: "AtlasGrotesk","Open Sans",sans-serif;
     }
     
     #createGuide .modal-title div:nth-child(1) {
         flex: auto;
-        font-size: 1.1rem;
-        text-transform: uppercase;
+        font-size: 1.1rem;        
     }
 
     #createGuide .modal-title div:nth-child(2) {
@@ -187,22 +182,25 @@
         margin: 0 0 0 .5rem;        
         display: inline-block;
         font-size: 2rem;
+        color: white;
+        text-shadow: none;
     }
 
     #createGuide .modal-body button {
         margin: 0;
     }
 
-    #createGuide .modal-body h5 {
-        font-size: 1.6rem;
-        margin: 0 0 1rem 0;
-        color: var(--snap-text-medium-light);
+    #createGuide .modal-content {
+        background-color: initial;
+    }
+
+    #createGuide .modal-body {
+        background-color: var(--snap-list-alt-background);
     }
 
     #createGuide .modal-body .guide-text {
         font-size: 1.6rem;
         margin: 1rem 0;
-        font-family: Calluna,serif;
         letter-spacing: .03rem;
     }
 
@@ -240,12 +238,15 @@
         border-bottom: .05rem solid lightgray;
         padding: 0 0 .5rem 0;
         width: 100%;
+        text-transform: uppercase;
+        font-size: .9rem;
     }
     
     .modal-body .create-guide-progress > div div {
         flex: auto;
         line-height: 3.45rem;
         text-align: center;
+        letter-spacing: .08rem;
     }
 
     .modal-body .btn-modal {
@@ -257,8 +258,8 @@
     }
 
     .modal-body .create-guide-progress .active {
-        /* background-color: rgb(212, 225, 213); */
-        background-color: rgb(221, 212, 219);
+        color: white;
+        background-color: var(--snap-collection);        
     }
 
     .modal-body .create-guide-navigation {
@@ -266,7 +267,6 @@
         justify-content: space-between;
         align-items: center;
         color: var(--snap=--snap-text-dark);
-        background-color: var(--orange);
         background-color: var(--snap-filters-ctrl);
     }
     
@@ -322,7 +322,7 @@
     }
 
     #createGuide .modal-body button {
-        color: var(--snap-text-dark);        
+        color: rgb(35,35,35);     
     }
 
     #createGuide .modal-body .save-your-changes {
@@ -381,12 +381,43 @@
         color: var(--snap-text-dark);
     }
 
+    .user-location > div:last-child {
+        color: var(--secondary);
+        margin: 0 0 0 .5rem;
+        align-self: center;
+    }
+
     .auto-location {
         margin: 0 0 0 .15rem;
     }
 
     #auto .btn {
-        /* background-color: rgb(199, 185, 195); */
-        background-color: var(--snap-dd-collection-bg-hover);
+        background-color: rgb(219, 136, 144);
+    }
+
+    .home-container > div {
+        margin: 1rem;
+    }
+
+    .home-container > div > div > div {
+        margin: .5rem 0;
+    }
+
+    .home-container > div > div > div:first-child {
+        font-size: 3rem;
+        font-family: sentinel;
+        margin-bottom: 1rem;
+    }
+
+    .species-grid {
+        width: 600px;
+    }
+
+    .species-grid img {
+        width: 7.5rem;
+        max-width: 7.5rem;
+        height: 7.5rem;    
+        object-fit: cover;
+        float: left;
     }
 }

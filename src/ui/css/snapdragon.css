@@ -335,10 +335,10 @@ a.dropdown-item {
   overflow-y: scroll;
   height: 72vh;
 }
-
+/* 
 .modal-header {
   display: initial;
-}
+} */
 
 .modal-list.scrollable {
   height: 50vh;
@@ -2181,7 +2181,7 @@ a.collection-disabled {
 }
 
 .iconic-taxa-selected {
-  color: var(--snap-success);
+  color: var(--snap-green-feature-txt);
 }
 
 .dropdown.collections {

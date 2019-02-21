@@ -46,8 +46,8 @@ export const renderEcosystems = (modal, config, collections) => {
 
     if(location) {
         ecosystems.find(e => e.id === 1).name = `${location}`;
-        guideTxt.innerHTML = 'Choose an ecosystem';
-        guideSubTxt.innerHTML = `There are ${ecosystems.length} ecosystems in ${location.toUpperCase()}. Choose one to study.`
+        guideTxt.innerHTML = 'Define the boundaries of your guide';
+        // guideSubTxt.innerHTML = `There are ${ecosystems.length} ecosystems in ${location.toUpperCase()}. Choose one to study.`
     }
 
     const template = document.createElement('template');

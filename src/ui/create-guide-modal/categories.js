@@ -8,7 +8,6 @@ import categoriesTemplate from 'ui/create-guide-modal/categories-list-template.h
 export const renderCategories = (modal, config) => {
 
     const guideTxt = modal.querySelector('.guide-text');
-    // const guideSubTxt = modal.querySelector('.guide-sub-text');
     const chosen = modal.querySelector('.js-chosen span:nth-child(2)');
 
     const saveYourChangesBtn = saveButton(modal.querySelector('.js-save-your-changes'), config, chosen, 'SPECIES');
@@ -16,12 +15,7 @@ export const renderCategories = (modal, config) => {
     
     const filterSelectedClass = 'iconic-taxa-selected';
 
-    guideTxt.innerHTML = 'Filter species';
-    // guideSubTxt.innerHTML = '(You haven\'t applied any filters yet all species will be included in the guide.)'; 
-
-    // const addAndToEndOfList = (str, replacement = ', and ') => {
-    //     return str.replace(/,([^,]*)$/,replacement+'$1'); 
-    // };
+    guideTxt.innerHTML = 'Select the species you are interested in';
 
     let filtersCommon = [];
 
@@ -43,15 +37,6 @@ export const renderCategories = (modal, config) => {
             }
         });
     }
-
-    // const defaultNoFiltersTxt = '(You haven\'t applied any filters so all species will be included in the guide by default.)';
-    // const getFiltersTxt = str => {
-    //     return `Species will be included from ${str}.`;
-    // };
-
-    // guideSubTxt.innerHTML = filtersCommon.length > 0 
-    //         ? getFiltersTxt(addAndToEndOfList(filtersCommon.join(', ')))
-    //         : defaultNoFiltersTxt;
 
     chosen.innerHTML = filtersCommon.length > 0 ? filtersCommon.join(', ') : 'All categories';
 
@@ -91,10 +76,6 @@ export const renderCategories = (modal, config) => {
                 filters.push(filterId);
                 filtersCommon.push(commonName);
             }
-
-            // guideSubTxt.innerHTML = filters.length > 0 
-            //     ? getFiltersTxt(addAndToEndOfList(filtersCommon.join(', ')))
-            //     : defaultNoFiltersTxt;
 
             chosen.innerHTML = filtersCommon.join(', ');
 
