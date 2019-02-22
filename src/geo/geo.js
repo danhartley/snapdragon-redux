@@ -27,7 +27,7 @@ async function parseMapBoxPlace(json, config) {
   place.locality = locality ? locality.text : '';
   place.region = region ? region.text : '';
   place.country = country ? country.text : '';
-  // place.area = place.region || place.country;
+  place.area = place.region || place.country; // probably not wanted.....
   
   place.shortLocation = `${place.region}, ${place.country}`;
   place.longLocation = `${place.locality}, ${place.region}, ${place.country}`;

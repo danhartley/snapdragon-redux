@@ -13,12 +13,15 @@ import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-table-no-scores';
 import { itemHandler } from 'ui/helpers/item-handler';
 import { listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
+import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
     const { config: configState, history, counter, enums, layout, score  } = store.getState();
 
     let config = R.clone(configState);
+    
+    speciesPendingSpinner(config);
 
     if(lessonLogicHandler.isSkippable(collection, counter, config, layout, 'renderSpeciesCollectionList', readOnlyMode)) return;
 

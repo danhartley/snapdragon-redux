@@ -49,10 +49,13 @@ export const renderCategories = (modal, config) => {
     
     checkButtonState(filters, true);
 
-    const fungiIcon = modal.querySelector('#fungi > div');
-    if(elem.hasClass(fungiIcon, 'iconic-taxa-selected')) {
-        fungiIcon.querySelector('g g').classList.add('svg-icon-selected');
-    }
+    setTimeout(() => {
+        const fungiIcon = modal.querySelector('#fungi > div');
+        if(!fungiIcon) return;
+        if(elem.hasClass(fungiIcon, 'iconic-taxa-selected')) {
+            fungiIcon.querySelector('g g').classList.add('svg-icon-selected');
+        }   
+    },250);
     
     icons.forEach(category => {
         category.addEventListener('click', event => {

@@ -158,6 +158,7 @@
         align-items: center;
         align-content: space-between;
         color: rgb(250, 250, 250);
+        text-transform: uppercase;
     }
 
     #createGuide .modal-title div { 
@@ -414,40 +415,40 @@
         align-items: center;
     }
 
-    .home-container > div > div > div:first-child {
-        /* font-size: 4rem;
-        font-family: sentinel;
-        font-style: italic;
-        font-weight: bold; */
-
+    .home-container .snapdragon-header {
         font-size: 3.6rem;
         text-transform: uppercase;
         font-family: 'SharpGroteskWide', sans-serif;
         color: var(--snap-collection-active);
-        letter-spacing: .08rem;
-        font-weight: normal;
-        font-style: initial;
+        letter-spacing: .3rem;
+        font-family: sentinel;
     }
 
-    .home-container > div > div > div:nth-child(2) {
+    .home-container .snapdragon-tag {
         font-size: 3rem;
         font-family: unset;
+        height: 240px;
+
+        font-family: sentinel;
+        font-size: 3.5rem;
+        font-style: italic;
+        font-weight: bold;
     }
 
-    .home-container > div > div > div:nth-child(2) > div {
-        background-color: var(--snap-link);
+    .home-container .snapdragon-tag > div {
+        color: var(--snap-link);
+        background-color: rgb(250, 250, 250);
         padding: 0 1rem;
-        color: rgb(250, 250, 250);
         width: fit-content;
         height: fit-content;
         letter-spacing: .03rem;
     }
 
-    .home-container > div > div > div:nth-child(5) {
+    .home-container .snapdragon-create-guide {
         justify-content: flex-end;
     }
 
-    .home-container > div > div > div:nth-child(5) > div {
+    .home-container .snapdragon-create-guide > div {
         font-size: 2.6rem;
         text-transform: uppercase;
         font-family: 'SharpGroteskWide', sans-serif;        
@@ -455,7 +456,7 @@
         letter-spacing: .05rem;        
     }
 
-    .home-container > div > div > div:nth-child(5) span {
+    .home-container .snapdragon-create-guide span {
         font-size: 2.6rem;  
         font-family: "PT Sans", "Roboto", arial, sans-serif;
         letter-spacing: .05rem;
@@ -473,5 +474,11 @@
         height: 7.5rem;    
         object-fit: cover;
         float: left;
+    }
+
+    .home-guide {
+        display: flex;
+        flex-direction: column;
+        font-size: 2rem;
     }
 }

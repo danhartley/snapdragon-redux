@@ -8,17 +8,23 @@ import { renderEcosystems } from 'ui/create-guide-modal/ecosystems';
 import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
 import { renderGuides } from 'ui/create-guide-modal/guides';
 
+const closeModalListeners = [];
+
+export const listenToCloseCreateGuideModal = listener => { 
+    closeModalListeners.push(listener);
+  };  
+
 class CreateGuide {
     
-    constructor() {
+    constructor(step) {
         
-        this.currentStep = 0;
+        this.currentStep = step;
         
         this.steps = [
-            { number: 1, title: 'Create a Guide', description: 'Your Location', nextStep: 'Choose an environment' },
-            { number: 2, title: 'Create a Guide', description: 'Environment', nextStep: 'Select species' },
-            { number: 3, title: 'Create a Guide', description: 'Species', nextStep: 'Select guide type' },
-            { number: 4, title: 'Create a Guide', description: 'Guide', nextStep: 'Start Guide' },
+            { number: 1, title: 'Create Guide', description: 'Your Location', nextStep: 'Choose an environment' },
+            { number: 2, title: 'Create Guide', description: 'Environment', nextStep: 'Select species' },
+            { number: 3, title: 'Create Guide', description: 'Species', nextStep: 'Select guide type' },
+            { number: 4, title: 'Create Guide', description: 'Guide', nextStep: 'Start Guide' },
         ];
         
         this.modal = document.getElementById('createGuide');
@@ -78,6 +84,15 @@ class CreateGuide {
 
         this.currentStep = nextStep;
 
+        this.nextStepActionTxt.removeAttribute('data-dismiss');
+
+        if(nextStep > this.steps.length) {            
+            this.currentStep = 0;
+            this.nextStepActionTxt.setAttribute('data-dismiss','modal');
+            closeModalListeners.forEach(listener => listener());      
+            return;
+        };
+
         const currentStepProperties = this.steps.filter(s => s.number === this.currentStep);
         this.modalTitle.innerText = currentStepProperties.map(s => s.title);
         this.modalTitleSteps.innerHTML = `Step ${currentStepProperties.map(s => s.number)} of ${this.steps.length}`;
@@ -108,27 +123,21 @@ class CreateGuide {
             const previousStepProperties = this.steps.filter(s => s.number === (this.currentStep - 1));
             this.previousStepActionTxt.innerHTML = previousStepProperties.map(psp => psp.description);
         }
-
-        if(this.currentStep === this.steps.length + 1) {
-            this.nextStepActionTxt.setAttribute('data-dismiss','modal');
-        }   
     }
 };
 
 export const createGuideHandler = (step) => {
     
-    const guide = new CreateGuide();
+    const guide = new CreateGuide(step);
 
     guide.createStep(step);
 
     guide.nextStepAction.addEventListener('click', event => {
-        const nextStep = guide.getCurrentStep + 1;
-        guide.createStep(nextStep);
+        guide.createStep(guide.getCurrentStep + 1);
     });
 
     guide.previousStepAction.addEventListener('click', event => {
-        const previousStep = guide.getCurrentStep - 1;        
-        guide.createStep(previousStep);
+        guide.createStep(guide.getCurrentStep - 1);
     });
 
 }

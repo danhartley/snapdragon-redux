@@ -24,10 +24,6 @@ export const renderSpeciesGrid = () => {
         }
     });
 
-    // const images = R.take(20, species.map(sp => sp.images)).forEach(image => {
-    //     image.small = image.thumb.replace('98x68', '260x190');
-    // });
-
     const template = document.createElement('template');
     template.innerHTML = speciesGridTemplate;
 

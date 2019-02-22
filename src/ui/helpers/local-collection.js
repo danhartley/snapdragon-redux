@@ -4,7 +4,7 @@ import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 
 export async function handleCustomCollections(localCollectionNode, learningActionBtn, config, collection) {
       
-    if(!localCollectionNode) return;
+    // if(!localCollectionNode) return;
 
     if(config.isPortraitMode) {
         learningActionBtn.innerHTML = 'Checking location...';
@@ -15,7 +15,7 @@ export async function handleCustomCollections(localCollectionNode, learningActio
   
     const place = await getPlace(config);
 
-    const collectionText = localCollectionNode.querySelector('span.collectionName');
+    // const collectionText = localCollectionNode.querySelector('span.collectionName');
 
     if(config.inatId) {
         collectionText.innerText = `iNat observations for ${config.inatId}`;   
@@ -23,7 +23,7 @@ export async function handleCustomCollections(localCollectionNode, learningActio
     
     if(place && config.collection.id !== 4) {
 
-        collectionText.innerText = place.summary;       
+        // collectionText.innerText = place.summary;       
         collection.name = place.summary;
         
         if(config.isPortraitMode) {

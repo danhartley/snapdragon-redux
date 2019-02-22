@@ -58,10 +58,11 @@ export const renderEcosystems = (modal, config, collections) => {
     
     modal.querySelectorAll('.btn.btn-secondary div').forEach(type => type.addEventListener('click', event => {
         const target = rbEventHandler(modal, event);
-        const ecosystemId = target.id.slice(3);
+        const ecosystemId = parseInt(target.id.slice(3));
         if(ecosystemId !== (config.ecosystem && config.ecosystem.id)) {
             saveYourChangesBtn.disabled = false;
         }
-        config.ecosystem = { id: ecosystemId, name: target.innerText }; 
+        config.ecosystem = { id: ecosystemId, name: target.innerText };
+        config.collection.id = ecosystemId;
     }));
 };

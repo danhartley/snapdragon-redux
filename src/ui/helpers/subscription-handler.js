@@ -3,7 +3,7 @@ import { subscription } from 'redux/subscriptions';
 
 export const screensSubscriptionHandler = (layout, config) => {
 
-    subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
+    // subscription.getByName('renderCollections').forEach(sub => subscription.remove(sub));
     
     subscription.getByRole('screen').forEach(sub => subscription.remove(sub));
 

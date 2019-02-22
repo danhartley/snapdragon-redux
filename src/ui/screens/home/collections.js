@@ -67,9 +67,9 @@ export const renderCollections = (counter) => {
 
         config.collection = { id: collectionId };
 
-        if(collectionId === 1 || collectionId === 4) {
-            handleCustomCollections(document.getElementById(`${collectionId}`), learningActionBtn, config, collection);
-        }    
+        // if(collectionId === 1 || collectionId === 4) {
+        //     handleCustomCollections(document.getElementById(`${collectionId}`), learningActionBtn, config, collection);
+        // }    
 
         if(config.isLandscapeMode) {
             subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
