@@ -15,10 +15,10 @@ class CreateGuide {
         this.currentStep = 0;
         
         this.steps = [
-            { number: 1, title: 'Create your Guide', description: 'Your Location', nextStep: 'Choose an environment' },
-            { number: 2, title: 'Create your Guide', description: 'Environment', nextStep: 'Select species' },
-            { number: 3, title: 'Create your Guide', description: 'Species', nextStep: 'Select guide type' },
-            { number: 4, title: 'Create your Guide', description: 'Guide', nextStep: 'Start Guide' },
+            { number: 1, title: 'Create a Guide', description: 'Your Location', nextStep: 'Choose an environment' },
+            { number: 2, title: 'Create a Guide', description: 'Environment', nextStep: 'Select species' },
+            { number: 3, title: 'Create a Guide', description: 'Species', nextStep: 'Select guide type' },
+            { number: 4, title: 'Create a Guide', description: 'Guide', nextStep: 'Start Guide' },
         ];
         
         this.modal = document.getElementById('createGuide');
