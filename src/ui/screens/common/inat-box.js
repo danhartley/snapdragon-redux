@@ -30,7 +30,7 @@ export async function renderInatDataBox(parent, item, config) {
 
     const place = await getPlace(config);
 
-    const country = place.country.place_name_en;
+    const country = place.country.place_name_en || place.country;
 
     const places = await getInatPlaceId(country);
 

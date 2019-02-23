@@ -425,10 +425,8 @@
     }
 
     .home-container .snapdragon-tag {
-        font-size: 3rem;
-        font-family: unset;
+        justify-content: center;
         height: 240px;
-
         font-family: sentinel;
         font-size: 3.5rem;
         font-style: italic;
@@ -437,29 +435,44 @@
 
     .home-container .snapdragon-tag > div {
         color: var(--snap-link);
-        background-color: rgb(250, 250, 250);
-        padding: 0 1rem;
-        width: fit-content;
-        height: fit-content;
+        background-color: rgb(250, 250, 250);        
         letter-spacing: .03rem;
     }
 
     .home-container .snapdragon-create-guide {
-        justify-content: flex-end;
+        display: flex;        
+        flex-direction: column;
+        align-items: flex-end;
+        position: relative;
     }
 
     .home-container .snapdragon-create-guide > div {
         font-size: 2.6rem;
         text-transform: uppercase;
-        font-family: 'SharpGroteskWide', sans-serif;        
+        font-family: 'SharpGroteskWide', sans-serif;
         color: var(--snap-collection-active);
+        letter-spacing: .05rem;                
+    }
+    
+    .home-container .snapdragon-create-guide > div:nth-child(1) {
+        position: absolute;
+        bottom: 2rem;
+    }
+    
+    .home-container .snapdragon-create-guide > div:nth-child(2) {
+        position: absolute;
+        bottom: 0rem;
+    }
+
+    .home-container .snapdragon-create-guide > div:nth-child(1) > span {
+        font-size: 2.6rem;  
+        font-family: "PT Sans", "Roboto", arial, sans-serif;
         letter-spacing: .05rem;        
     }
 
-    .home-container .snapdragon-create-guide span {
-        font-size: 2.6rem;  
-        font-family: "PT Sans", "Roboto", arial, sans-serif;
-        letter-spacing: .05rem;
+    .home-container .snapdragon-create-guide > div:nth-child(2) > span {
+        font-size: .8rem;
+        color: var(--secondary);
     }
 
     .species-grid {

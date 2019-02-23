@@ -184,6 +184,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                 collection.items = utils.sortBy(collection.items, 'observationCount', 'desc');
                 buildTable(collection, config, traits, enums);
                 handleUserEvents();
+                listeners.forEach(listener => listener());
             }
         }
         itemHandler(collection, config, counter, callback(collection, config, traits, enums));
@@ -194,6 +195,13 @@ listenToRangeUpdate((filters, config) => {
     const { collection } = store.getState();
     renderSpeciesCollectionList(collection, false);
 });
+
+const listeners = [];
+
+export const listenToSpeciesCollectionListenReady = listener => { 
+    listeners.push(listener);
+  };
+  
 
 let currentIndex = 0;
 

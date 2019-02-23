@@ -87,9 +87,9 @@ class CreateGuide {
         this.nextStepActionTxt.removeAttribute('data-dismiss');
 
         if(nextStep > this.steps.length) {            
+            closeModalListeners.forEach(listener => listener(this.currentStep));
             this.currentStep = 0;
             this.nextStepActionTxt.setAttribute('data-dismiss','modal');
-            closeModalListeners.forEach(listener => listener());      
             return;
         };
 

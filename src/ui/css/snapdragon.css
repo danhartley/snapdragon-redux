@@ -2056,20 +2056,50 @@ th.lessonScore {
   padding: 0 0.5rem;
 }
 
-.species-pending .icon {
-  font-size: 5rem;
-  color: rgb(210, 180, 140, 0.4);
-  text-align: center;
-}
-
 .species-pending {
+  color: var(--snap-link);
+  background-color: var(--snap-list-alt-background);
   border: 0.05rem solid var(--snap-border-dark);
+  font-size: 1.4rem;
 }
 
-.species-pending div:nth-child(2),
-.species-pending div:nth-child(3),
-.species-pending div:nth-child(4) {
+.species-pending .icon {
+  font-size: 7.5rem;
+  color: rgb(90, 147, 252);
+  display: flex;
+  align-items: center;
+}
+
+.species-pending .underline-link {
+  font-size: 1.2rem;
+}
+
+.species-pending > div:nth-child(1),
+.species-pending > div:nth-child(3) {
   padding: 1rem;
+}
+
+.species-pending > div:nth-child(4) {
+  font-style: italic;
+  padding: 1rem;
+  font-size: 1.6rem;
+}
+
+.species-pending > div:nth-child(1) {
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  font-family: 'SharpGroteskWide', sans-serif;
+  color: var(--snap-link);
+  letter-spacing: .3rem;
+  font-family: sentinel;
+}
+
+.species-pending > div:nth-child(2) {
+  padding: 0;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slow-spin {
@@ -2355,4 +2385,14 @@ a.collection-disabled {
 
 .feature-symbiont-list .underline-link {
   text-transform: initial;
+}
+
+.delete-guide-link > span.active {
+  color: var(--snap-alert) !important; 
+  pointer-events: initial;
+}
+
+.delete-guide-link > span.disabled {
+  color: var(--secondary) !important;
+  pointer-events: none;
 }
