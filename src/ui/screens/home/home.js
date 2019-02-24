@@ -80,10 +80,12 @@ export const renderHome = () => {
             case 'BEGIN-LESSON':
                 actionLink.innerHTML = 'Begin';
                 actionLink.addEventListener('click', lessonHandler);
+                deleteLink.classList.remove('hide');
                 break;                
             case 'RESUME-LESSON':
                 actionLink.innerHTML = 'Resume';
                 actionLink.addEventListener('click', lessonHandler);
+                deleteLink.classList.remove('hide');
                 break;
 
         }   

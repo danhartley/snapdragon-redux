@@ -1,24 +1,20 @@
 import * as R from 'ramda';
 
 import { elem } from 'ui/helpers/class-behaviour';
-import { saveButton } from 'ui/create-guide-modal/common/save-button';
 import { renderTemplate } from 'ui/helpers/templating';
 import categoriesTemplate from 'ui/create-guide-modal/categories-list-template.html';
 
-export const renderCategories = (modal, config) => {
+export const renderCategories = (modal, config, createGuide) => {
 
     const guideTxt = modal.querySelector('.guide-text');
     const chosen = modal.querySelector('.js-chosen span:nth-child(2)');
+    const saveYourChangesBtn = createGuide.save(config, chosen, 'SPECIES');
 
-    const saveYourChangesBtn = saveButton(modal.querySelector('.js-save-your-changes'), config, chosen, 'SPECIES');
-
-    
     const filterSelectedClass = 'iconic-taxa-selected';
 
     guideTxt.innerHTML = 'Select the species you are interested in';
 
     let filtersCommon = [];
-
 
     const template = document.createElement('template');
     template.innerHTML = categoriesTemplate;

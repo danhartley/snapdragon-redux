@@ -1,17 +1,16 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { actions } from 'redux/actions/action-creators';
 import { getPlace, getIPLocation } from 'geo/geo';
-import { saveButton } from 'ui/create-guide-modal/common/save-button';
 import { rbEventHandler } from 'ui/create-guide-modal/common/rb-event-handler';
 import locationsTemplate from 'ui/create-guide-modal/locations-list-template.html';
 
-export const renderLocation = (modal, config) => {
+export const renderLocation = (modal, config, createGuide) => {
 
     const guideTxt = modal.querySelector('.guide-text');
     guideTxt.innerHTML = 'Where do you want to explore today?';
     
     const chosen = modal.querySelector('.js-chosen span:nth-child(2)');
-    const saveYourChangesBtn = saveButton(modal.querySelector('.js-save-your-changes'), config, chosen, 'LOCATION');
+    const saveYourChangesBtn = createGuide.save(config, chosen, 'LOCATION');
 
     let authorisedLocation = config.place ? config.place.longLocation : null;        
     let ipLocation;
@@ -23,6 +22,10 @@ export const renderLocation = (modal, config) => {
     const parent = modal.querySelector('.js-actions');
 
     renderTemplate({}, template.content, parent);
+
+    setTimeout(() => {
+        modal.querySelector('.btn.btn-secondary #auto').click();   
+    });
 
     const locationTypes = modal.querySelectorAll('.btn.btn-secondary div');
     const autoLocationTxt = modal.querySelector('.js-auto-location');

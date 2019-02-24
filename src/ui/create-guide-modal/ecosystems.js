@@ -1,16 +1,13 @@
 import { utils } from 'utils/utils';
 import { renderTemplate } from 'ui/helpers/templating';
 import ecosystemTemplate from 'ui/create-guide-modal/ecosystems-list-template.html';
-import { saveButton } from 'ui/create-guide-modal/common/save-button';
 import { rbEventHandler } from 'ui/create-guide-modal/common/rb-event-handler';
 
-export const renderEcosystems = (modal, config, collections) => {
+export const renderEcosystems = (modal, config, collections, createGuide) => {
 
     const guideTxt = modal.querySelector('.guide-text');
-    const guideSubTxt = modal.querySelector('.guide-sub-text');
     const chosen = modal.querySelector('.js-chosen span:nth-child(2)');
-
-    const saveYourChangesBtn = saveButton(modal.querySelector('.js-save-your-changes'), config, chosen, 'ECOSYSTEM');
+    const saveYourChangesBtn = createGuide.save(config, chosen, 'ECOSYSTEM');
 
     const location = config.locationType === 'auto' 
             ? config.autoLocation 

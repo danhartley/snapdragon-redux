@@ -5,7 +5,6 @@ import { actions } from 'redux/actions/action-creators';
 import { renderSettings } from 'ui/fixtures/settings';
 import { renderTemplate } from 'ui/helpers/templating';
 import { subscription } from 'redux/subscriptions';
-// import { renderCollections } from 'ui/screens/home/collections';
 import { renderHome } from 'ui/screens/home/home';
 import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { getGlossary } from 'api/glossary/glossary';
@@ -90,7 +89,6 @@ export const renderNavigation = (page) => {
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));        
                         lessonLogicHandler.changeCollection('pauseLesson', collection, config, history); 
                         const { counter } = store.getState();
-                        // renderCollections(counter);
                         renderHome(counter);
                         break;
                     case 'settings':

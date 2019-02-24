@@ -2,7 +2,7 @@ import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import saveButtonTemplate from 'ui/create-guide-modal/common/save-button-template.html';
 
-export const saveButton = (parent, config, chosen, step) => {
+export const saveButton = (parent, config, chosen, step, createGuide) => {
 
     const template = document.createElement('template');
     template.innerHTML = saveButtonTemplate;
@@ -10,8 +10,19 @@ export const saveButton = (parent, config, chosen, step) => {
 
     const btn = parent.querySelector('button');
     const txt = parent.querySelector('div');
+
+    const activeStep = createGuide.steps.find(step => step.number === createGuide.currentStep);
+
+    if(activeStep.disabled) {
+        createGuide.nextStepAction.classList.add('disabled');
+    } else if(createGuide.direction === 'PREVIOUS') {
+        createGuide.nextStepAction.classList.remove('disabled');
+    }
     
     const handleSaveEvent = () => {
+
+        activeStep.disabled = false;
+        createGuide.nextStepAction.classList.remove('disabled');
 
         if(chosen) {
             switch(step) {

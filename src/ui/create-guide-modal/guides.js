@@ -1,14 +1,12 @@
 import { renderTemplate } from 'ui/helpers/templating';
-import { saveButton } from 'ui/create-guide-modal/common/save-button';
 import { rbEventHandler } from 'ui/create-guide-modal/common/rb-event-handler';
 import guidesTemplate from 'ui/create-guide-modal/guides-list-template.html';
 
-export const renderGuides = (modal, config) => {
+export const renderGuides = (modal, config, createGuide) => {
 
     const guideTxt = modal.querySelector('.guide-text');
     const chosen = modal.querySelector('.js-chosen span:nth-child(2)');
-
-    const saveYourChangesBtn = saveButton(modal.querySelector('.js-save-your-changes'), config, chosen, 'GUIDE');
+    const saveYourChangesBtn = createGuide.save(config, chosen, 'GUIDE');
 
     guideTxt.innerHTML = 'How do you want to study the species';
 

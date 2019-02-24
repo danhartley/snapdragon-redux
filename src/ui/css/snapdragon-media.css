@@ -297,6 +297,11 @@
         cursor: pointer;
     }
     
+    .modal-body .create-guide-navigation > div:nth-child(2).disabled {
+        color: gray;
+        pointer-events: none;
+    }
+
     .modal-body .create-guide-navigation > div:nth-child(1):hover,
     .modal-body .create-guide-navigation > div:nth-child(2):hover {
         color: rgb(250, 250, 250);

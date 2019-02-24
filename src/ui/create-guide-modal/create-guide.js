@@ -5,8 +5,9 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { renderLocation } from 'ui/create-guide-modal/location';
 import { renderCategories } from 'ui/create-guide-modal/categories';
 import { renderEcosystems } from 'ui/create-guide-modal/ecosystems';
-import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
 import { renderGuides } from 'ui/create-guide-modal/guides';
+import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
+import { saveButton } from 'ui/create-guide-modal/common/save-button';
 
 const closeModalListeners = [];
 
@@ -21,10 +22,10 @@ class CreateGuide {
         this.currentStep = step;
         
         this.steps = [
-            { number: 1, title: 'Create Guide', description: 'Your Location', nextStep: 'Choose an environment' },
-            { number: 2, title: 'Create Guide', description: 'Environment', nextStep: 'Select species' },
-            { number: 3, title: 'Create Guide', description: 'Species', nextStep: 'Select guide type' },
-            { number: 4, title: 'Create Guide', description: 'Guide', nextStep: 'Start Guide' },
+            { number: 1, title: 'Create Guide', description: 'Your Location', nextStep: 'Choose an environment', disabled: true },
+            { number: 2, title: 'Create Guide', description: 'Environment', nextStep: 'Select species', disabled: true },
+            { number: 3, title: 'Create Guide', description: 'Species', nextStep: 'Select guide type', disabled: true },
+            { number: 4, title: 'Create Guide', description: 'Guide', nextStep: 'Start Guide', disabled: true },
         ];
         
         this.modal = document.getElementById('createGuide');
@@ -32,12 +33,12 @@ class CreateGuide {
         this.modalTitle = this.modal.querySelector('.js-modal-title div:nth-child(1)');
         this.modalTitleSteps = this.modal.querySelector('.js-modal-title div:nth-child(2)');
         this.progressSteps = this.modal.querySelectorAll('.js-create-guide-progress > div > div');
-        this.previousStepTitle = this.modal.querySelector('.js-create-guide-navigation > div:nth-child(1) > div');
         this.previousStepAction = this.modal.querySelector('.js-create-guide-navigation > div:nth-child(1)');
+        this.previousStepTitle = this.modal.querySelector('.js-create-guide-navigation > div:nth-child(1) > div');
         this.previousStepActionTxt = this.modal.querySelector('.js-create-guide-navigation > div:nth-child(1) > div > span:nth-child(2)');
         this.previousStepIcon = this.modal.querySelector('.js-create-guide-navigation > div:nth-child(1) > div > span:nth-child(1)');
-        this.nextStepTitle = this.modal.querySelector('.js-create-guide-navigation > div:nth-child(2) > div');
         this.nextStepAction = this.modal.querySelector('.js-create-guide-navigation > div:nth-child(2)');
+        this.nextStepTitle = this.modal.querySelector('.js-create-guide-navigation > div:nth-child(2) > div');
         this.nextStepActionTxt = this.modal.querySelector('.js-create-guide-navigation > div:nth-child(2) > div > span');
 
         this.progressSteps.forEach((ps,index) => {
@@ -66,23 +67,24 @@ class CreateGuide {
 
         switch(description) {
             case 'Your Location':                                
-                renderLocation(this.modal, config);       
+                renderLocation(this.modal, config, this);      
                 break;
             case 'Environment':
-                renderEcosystems(this.modal, config, collections);
+                renderEcosystems(this.modal, config, collections, this);
                 break;
             case 'Species':
-                renderCategories(this.modal, config);
+                renderCategories(this.modal, config, this);
                 break;
             case 'Guide':
-                renderGuides(this.modal, config);
+                renderGuides(this.modal, config, this);
                 break;
         }
     }
 
-    createStep(nextStep) {
+    createStep(nextStep, direction) {
 
         this.currentStep = nextStep;
+        this.direction = direction;
 
         this.nextStepActionTxt.removeAttribute('data-dismiss');
 
@@ -124,6 +126,11 @@ class CreateGuide {
             this.previousStepActionTxt.innerHTML = previousStepProperties.map(psp => psp.description);
         }
     }
+
+    save(config, chosen, stepDescription) {
+        const saveYourChangesBtn = saveButton(this.modal.querySelector('.js-save-your-changes'), config, chosen, stepDescription, this);
+        return saveYourChangesBtn;
+    }
 };
 
 export const createGuideHandler = (step) => {
@@ -133,11 +140,11 @@ export const createGuideHandler = (step) => {
     guide.createStep(step);
 
     guide.nextStepAction.addEventListener('click', event => {
-        guide.createStep(guide.getCurrentStep + 1);
+        guide.createStep(guide.getCurrentStep + 1, 'NEXT');
     });
 
     guide.previousStepAction.addEventListener('click', event => {
-        guide.createStep(guide.getCurrentStep - 1);
+        guide.createStep(guide.getCurrentStep - 1, 'PREVIOUS');
     });
 
 }
