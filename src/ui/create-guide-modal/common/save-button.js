@@ -22,9 +22,9 @@ export const saveButton = (parent, config, chosen, step, createGuide) => {
                             : config.guide.autoLocation;
                     }
                     break;
-                case 'ECOSYSTEM':
-                    if(config.guide.ecosystem) {
-                        chosen.innerHTML = config.guide.ecosystem.name;                        
+                case 'PLACE':
+                    if(config.guide.place) {
+                        chosen.innerHTML = config.guide.place.name;                        
                     }
                     break;
                 case 'GUIDE':

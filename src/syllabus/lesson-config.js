@@ -22,7 +22,7 @@ export const config = {
         iconicTaxa: [],
         autoLocation: '',
         locationType: 'auto',
-        ecosystem: {
+        place: {
             id: 1,
             name: ''
         },

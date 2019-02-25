@@ -5,7 +5,7 @@ import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderLocation } from 'ui/create-guide-modal/location';
 import { renderCategories } from 'ui/create-guide-modal/categories';
-import { renderEcosystems } from 'ui/create-guide-modal/ecosystems';
+import { renderPlace } from 'ui/create-guide-modal/place';
 import { renderGuides } from 'ui/create-guide-modal/guides';
 import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
 import { saveButton } from 'ui/create-guide-modal/common/save-button';
@@ -71,7 +71,7 @@ class CreateGuide {
                 renderLocation(this.modal, config, this);      
                 break;
             case 'Place':
-                renderEcosystems(this.modal, config, collections, this);
+                renderPlace(this.modal, config, collections, this);
                 break;
             case 'Species':
                 renderCategories(this.modal, config, this);
@@ -96,7 +96,7 @@ class CreateGuide {
             this.currentStep = 0;
             this.nextStepActionTxt.setAttribute('data-dismiss','modal');
             config.guide.ready = true;
-            config.collection.id = config.guide.ecosystem.id;
+            config.collection.id = config.guide.place.id;
             actions.boundUpdateConfig(config);
             return;
         };
