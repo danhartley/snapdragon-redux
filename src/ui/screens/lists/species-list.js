@@ -23,7 +23,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     
     speciesPendingSpinner(config);
 
-    if(lessonLogicHandler.isSkippable(collection, counter, config, layout, 'renderSpeciesCollectionList', readOnlyMode)) return;
+    // if(lessonLogicHandler.isSkippable(collection, counter, config, layout, 'renderSpeciesCollectionList', readOnlyMode)) return;
 
     subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
     

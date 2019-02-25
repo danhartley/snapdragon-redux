@@ -23,14 +23,16 @@ const changeCollection = (lessonStateMode, collection, config, history, actionBu
 
     switch(lessonStateMode) {
         case 'newLesson': {
-            const notEnoughItemsSelected = collection.items.filter(item => !item.isDeselected).length < collection.moduleSize;
-            if(notEnoughItemsSelected) {
-                actionButton.innerHTML = `You must select at least ${collection.moduleSize} items`;
-            }
-            setTimeout(() => {
-                actionButton.innerHTML = 'Begin lesson';
-            }, 2000);
-            if(notEnoughItemsSelected) return;
+            // const notEnoughItemsSelected = collection.items.filter(item => !item.isDeselected).length < collection.moduleSize;
+            // if(notEnoughItemsSelected) {
+            //     actionButton.innerHTML = `You must select at least ${collection.moduleSize} items`;
+            // }
+            // setTimeout(() => {
+            //     actionButton.innerHTML = 'Begin lesson';
+            // }, 2000);
+            // if(notEnoughItemsSelected) return;
+
+
             actions.boundToggleLesson({ index: 0 });
             break;
         }
