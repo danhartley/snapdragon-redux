@@ -59,7 +59,7 @@ export const renderTaxonCard = (collection, isModalMode = false, selectedItem, p
         rank: rank,
         name: taxonName,
         headerImage: scaleImage({ url: item.images[0].url }, imageUseCases.TAXON_CARD, config),
-        alt: taxon.alt,
+        alt: taxon ? taxon.alt : '',
         vernacularName: itemProperties.getNestedTaxonProp(taxon, config.language, 'names', 'names', '0'),
         species: taxon.species || '--',
         genera: taxon.genera || '--',

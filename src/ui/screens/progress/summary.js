@@ -60,8 +60,8 @@ export const renderSummary = (history) => {
 
     const handleBtnClickEvent = event => {
 
-        subscription.getByName('renderSummary').forEach(sub => subscription.remove(sub));
-        subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
+        subscription.remove(subscription.getByName('renderSummary'));
+        subscription.remove(subscription.getByName('renderHistory'));
 
         if(collection.isLessonComplete) {
             lessonLogicHandler.purgeLesson();

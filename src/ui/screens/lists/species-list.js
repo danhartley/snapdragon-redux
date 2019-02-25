@@ -23,10 +23,6 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     
     speciesPendingSpinner(config);
 
-    // if(lessonLogicHandler.isSkippable(collection, counter, config, layout, 'renderSpeciesCollectionList', readOnlyMode)) return;
-
-    subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
-    
     if(collection.id === 0) return;
 
     config.collection = { id: collection.id };
@@ -164,8 +160,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
                     actions.boundNewPage({ name: ''});
 
-                    subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
-                    subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
+                    subscription.remove(subscription.getByName('renderHistory'));
                 }            
             });
         }
@@ -184,7 +179,8 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                 collection.items = utils.sortBy(collection.items, 'observationCount', 'desc');
                 buildTable(collection, config, traits, enums);
                 handleUserEvents();
-                listeners.forEach(listener => listener());
+                const { counter } = store.getState();
+                listeners.forEach(listener => listener(counter));
             }
         }
         itemHandler(collection, config, counter, callback(collection, config, traits, enums));

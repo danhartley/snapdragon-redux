@@ -9,8 +9,7 @@ test('should return to initial state after adding and removing a subscription', 
     const render = () => {};
     const sub = subscription.add(render, 'domain', 'screen');    
     expect(subscription.getAll().length).toBe(1);
-    expect(subscription.getByName('render').length).toBe(1);
-    expect(subscription.getByName('render')[0].name === 'render').toBeTruthy();
+    expect(subscription.getByName('render').name === 'render').toBeTruthy();
     expect(subscription.getByRole('screen')[0].role === 'screen').toBeTruthy();
     subscription.remove(sub);
     expect(subscription.getAll().length).toBe(0);

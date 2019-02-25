@@ -11,9 +11,14 @@ import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
 import { renderGuideSummary } from 'ui/screens/home/home-guide';
 import { listenToCloseCreateGuideModal } from 'ui/create-guide-modal/create-guide';
 
-export const renderHome = counter => {
+let subscriptions;
 
-    let { config, collection } = store.getState();
+export const renderHome = () => {
+
+    let { counter, config, collection } = store.getState();
+    
+    const sub = subscription.getByName('renderHome');
+    if(sub) subscription.remove(sub);
 
     const template = document.createElement('template');
     template.innerHTML = homeTemplate;
@@ -27,7 +32,7 @@ export const renderHome = counter => {
                 ? 'RESUME-LESSON'
                 : 'PREVIEW-LESSON';
 
-    const actionLink = document.querySelector('.js-create-guide-link');
+    let actionLink = document.querySelector('.js-create-guide-link');
     const deleteLink = document.querySelector('.js-delete-guide-link');
     const deleteLinkTxt = document.querySelector('.js-delete-guide-link span');
     const deleteLinkCheckbox = document.querySelector('.js-delete-guide-link input');
@@ -41,23 +46,21 @@ export const renderHome = counter => {
         const { config, collections } = store.getState();  
         const id = parseInt(config.collection.id);
         const collection = collections.find(c => c.id === id);
-        // subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
-        renderSpeciesCollectionList(collection);        
+        
+        renderSpeciesCollectionList(collection);         
     };
 
     const lessonHandler = () => {
         const { collection, config, history } = store.getState();
         const lessonStateMode = 'newLesson';
         lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);
-        subscription.getByName('renderHome').forEach(sub => subscription.remove(sub));
-        subscription.getByName('renderSpeciesGrid').forEach(sub => subscription.remove(sub));
+        subscription.remove(subscription.getByName('renderSpeciesGrid'));
     };
 
     const resumeLessonHandler = () => {
-        subscription.getByName('renderHome').forEach(sub => subscription.remove(sub));
         const { collection, config, history } = store.getState();
         const lessonStateMode = 'restartLesson';
-        lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);
+        lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);        
     };
 
     const guidesummary = () => {
@@ -67,12 +70,8 @@ export const renderHome = counter => {
         deleteLink.classList.remove('hide');            
     };
 
-    actionLink.removeEventListener('click');
-
     const checkState = state => {
 
-        actionLink.removeEventListener('click');
-        
         switch(state) {
             case 'MODAL':
                 actionLink.setAttribute('data-toggle', 'modal');
@@ -80,21 +79,22 @@ export const renderHome = counter => {
                 actionLink.addEventListener('click', modalHandler);
                 break;
             case 'PREVIEW-LESSON':
-                actionLink.removeAttribute('data-toggle');                
+                actionLink.removeAttribute('data-toggle');               
                 actionLink.innerHTML = 'Preview';
                 guidesummary();
+                actionLink.removeEventListener(previewHandler);
                 actionLink.addEventListener('click', previewHandler);
                 break;
             case 'BEGIN-LESSON':
                 actionLink.innerHTML = 'Begin';
                 actionLink.addEventListener('click', lessonHandler);
-                // subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub)); 
+                
                 break;                
             case 'RESUME-LESSON':
+                actionLink.removeAttribute('data-toggle');
                 actionLink.innerHTML = 'Resume';    
                 guidesummary();
-                actionLink.addEventListener('click', resumeLessonHandler);
-                // subscription.add(renderSpeciesCollectionList, 'collection', 'screen');
+                actionLink.addEventListener('click', resumeLessonHandler);                
                 renderSpeciesCollectionList(collection);
                 break;
         }   
@@ -126,10 +126,14 @@ export const renderHome = counter => {
         checkState(state);
     });
 
-    listenToSpeciesCollectionListenReady(()=>{        
-        if(!counter.isLessonPaused) {
+
+    const handleBeginLessonState = counter => {        
+        if(!counter.isLessonPaused && counter.index === null) {
+            actionLink.removeEventListener('click', previewHandler);
             state = 'BEGIN-LESSON';
             checkState(state);
         }        
-    });
+    };
+
+    listenToSpeciesCollectionListenReady(handleBeginLessonState);
 };
