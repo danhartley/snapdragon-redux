@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderLocation } from 'ui/create-guide-modal/location';
@@ -22,8 +23,8 @@ class CreateGuide {
         this.currentStep = step;
         
         this.steps = [
-            { number: 1, title: 'Create Guide', description: 'Your Location', nextStep: 'Choose an environment', disabled: true },
-            { number: 2, title: 'Create Guide', description: 'Environment', nextStep: 'Select species', disabled: true },
+            { number: 1, title: 'Create Guide', description: 'Location', nextStep: 'Select a place', disabled: true },
+            { number: 2, title: 'Create Guide', description: 'Place', nextStep: 'Select species', disabled: true },
             { number: 3, title: 'Create Guide', description: 'Species', nextStep: 'Select guide type', disabled: true },
             { number: 4, title: 'Create Guide', description: 'Guide', nextStep: 'Start Guide', disabled: true },
         ];
@@ -66,10 +67,10 @@ class CreateGuide {
         renderTemplate({}, template.content, parent);
 
         switch(description) {
-            case 'Your Location':                                
+            case 'Location':                                
                 renderLocation(this.modal, config, this);      
                 break;
-            case 'Environment':
+            case 'Place':
                 renderEcosystems(this.modal, config, collections, this);
                 break;
             case 'Species':
@@ -89,9 +90,14 @@ class CreateGuide {
         this.nextStepActionTxt.removeAttribute('data-dismiss');
 
         if(nextStep > this.steps.length) {            
+            const { config: configState } = store.getState();
+            const config = R.clone(configState);
             closeModalListeners.forEach(listener => listener(this.currentStep));
             this.currentStep = 0;
             this.nextStepActionTxt.setAttribute('data-dismiss','modal');
+            config.guide.ready = true;
+            config.collection.id = config.guide.ecosystem.id;
+            actions.boundUpdateConfig(config);
             return;
         };
 
@@ -139,7 +145,7 @@ export const createGuideHandler = (step) => {
 
     guide.createStep(step);
 
-    guide.nextStepAction.addEventListener('click', event => {
+    guide.nextStepAction.addEventListener('click', event => {        
         guide.createStep(guide.getCurrentStep + 1, 'NEXT');
     });
 

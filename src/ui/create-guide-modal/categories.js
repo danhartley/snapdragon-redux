@@ -24,24 +24,24 @@ export const renderCategories = (modal, config, createGuide) => {
 
     const icons = parent.querySelectorAll('.iconic-taxa-categories > div > div:nth-child(1)');
 
-    if(config.iconicTaxa && config.iconicTaxa.length > 0) {
+    if(config.guide.iconicTaxa && config.guide.iconicTaxa.length > 0) {
         icons.forEach(icon => {
             const filterId = icon.parentElement.id;
-            if(R.contains(filterId, config.iconicTaxa)) {
+            if(R.contains(filterId, config.guide.iconicTaxa)) {
                 filtersCommon.push(icon.parentElement.innerText);
                 icon.classList.add(filterSelectedClass);
             }
         });
     }
 
-    chosen.innerHTML = filtersCommon.length > 0 ? filtersCommon.join(', ') : 'All categories';
+    chosen.innerHTML = filtersCommon.length > 0 ? filtersCommon.join(', ') : 'All taxa';
 
     const checkButtonState = (filters, noChangesToSave) => {
         saveYourChangesBtn.disabled = noChangesToSave;
-        config.iconicTaxa = filters;
+        config.guide.iconicTaxa = filters;
     };
 
-    let filters = [ ...config.iconicTaxa ] || [];
+    let filters = [ ...config.guide.iconicTaxa ] || [];
     
     checkButtonState(filters, true);
 

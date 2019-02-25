@@ -9,16 +9,16 @@ export const renderEcosystems = (modal, config, collections, createGuide) => {
     const chosen = modal.querySelector('.js-chosen span:nth-child(2)');
     const saveYourChangesBtn = createGuide.save(config, chosen, 'ECOSYSTEM');
 
-    const location = config.locationType === 'auto' 
-            ? config.autoLocation 
-            : config.userLocation;
+    const location = config.guide.locationType === 'auto' 
+            ? config.guide.autoLocation 
+            : config.guide.userLocation;
     
     let ecosystems = [];
 
-    if(config.iconicTaxa && config.iconicTaxa.length !== 0) {
+    if(config.guide.iconicTaxa && config.guide.iconicTaxa.length !== 0) {
         collections.forEach(collection => {
             collection.iconicTaxa.forEach(iconicTaxon => {
-                config.iconicTaxa.forEach(taxon => {
+                config.guide.iconicTaxa.forEach(taxon => {
                     if(taxon === iconicTaxon) {
                         if(!ecosystems.includes(collection)) {
                             ecosystems.push(collection);
@@ -31,20 +31,27 @@ export const renderEcosystems = (modal, config, collections, createGuide) => {
         ecosystems = utils.sortBy(collections.filter(c => c.type === 'species'), 'id', 'asc');
     }
 
-    if(config.ecosystem) {
+    if(config.guide.ecosystem) {
         setTimeout(() => {
-            const preSelectedCollection = modal.querySelector(`#id-${config.ecosystem.id}`).querySelectorAll('span')[1];
+            const preSelectedCollection = modal.querySelector(`#id-${config.guide.ecosystem.id}`).querySelectorAll('span')[1];
             if(preSelectedCollection) {
-                preSelectedCollection.click();
+                preSelectedCollection.click();                
             }
         });
-        chosen.innerHTML = config.ecosystem.name;
-    }
+        chosen.innerHTML = config.guide.ecosystem.name;
+    } 
+    // else {
+    //     setTimeout(() => {
+    //         const local = modal.querySelector('.btn.btn-secondary');
+    //         local.querySelector('#id-1').click();    
+    //         local.innerHTML += '<span class="default-local">The default based on your location</span>';
+    //         saveYourChangesBtn.click();
+    //     });
+    // }
 
     if(location) {
         ecosystems.find(e => e.id === 1).name = `${location}`;
-        guideTxt.innerHTML = 'Define the boundaries of your guide';
-        // guideSubTxt.innerHTML = `There are ${ecosystems.length} ecosystems in ${location.toUpperCase()}. Choose one to study.`
+        guideTxt.innerHTML = 'Choose a place based on your location';
     }
 
     const template = document.createElement('template');
@@ -56,10 +63,10 @@ export const renderEcosystems = (modal, config, collections, createGuide) => {
     modal.querySelectorAll('.btn.btn-secondary div').forEach(type => type.addEventListener('click', event => {
         const target = rbEventHandler(modal, event);
         const ecosystemId = parseInt(target.id.slice(3));
-        if(ecosystemId !== (config.ecosystem && config.ecosystem.id)) {
+        if(ecosystemId !== (config.guide.ecosystem && config.guide.ecosystem.id)) {
             saveYourChangesBtn.disabled = false;
         }
-        config.ecosystem = { id: ecosystemId, name: target.innerText };
+        config.guide.ecosystem = { id: ecosystemId, name: target.innerText };
         config.collection.id = ecosystemId;
     }));
 };

@@ -12,7 +12,7 @@ async function getItems(collection, config) {
         const collectionIsUnchanged = 
             collection.items && collection.items.length > 0 && collection.items[0].collectionId === collection.id && 
             collection.speciesRange === config.speciesRange &&
-            collection.iconicTaxa === config.iconicTaxa;
+            collection.iconicTaxa === config.guide.iconicTaxa;
         if(collectionIsUnchanged) {
             return new Promise(resolve => {
                 resolve(collection.items);
@@ -57,7 +57,7 @@ export async function itemHandler(collection, config, counter, callback) {
     } else {         
         collection.items = utils.shuffleArray(await getItems(collection, config));
 
-        if(R.contains('lepidoptera', config.iconicTaxa) && !R.contains('insecta', config.iconicTaxa)) {
+        if(R.contains('lepidoptera', config.guide.iconicTaxa) && !R.contains('insecta', config.guide.iconicTaxa)) {
             const insecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() === 'insecta');
             const lepidoptera = insecta.filter(i => i.taxonomy.order.toLowerCase() === 'lepidoptera');
             const noninsecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() !== 'insecta');
@@ -83,7 +83,7 @@ export async function itemHandler(collection, config, counter, callback) {
         })
 
         collection.speciesRange = config.speciesRange;
-        collection.iconicTaxa = config.iconicTaxa;
+        collection.iconicTaxa = config.guide.iconicTaxa;
 
         collection.speciesNames = collection.items.map(item => item.name);
         collection.speciesVernacularNames = itemProperties.vernacularNamesForItems(collection.items, config);

@@ -112,18 +112,18 @@ const taxonFiltersHaveChanged = (collection, config) => {
     let filterHasChanged;
 
     if(config.collection.id === 1) {
-        if(collection.iconicTaxa === undefined && config.iconicTaxa.length === 0) {
+        if(collection.iconicTaxa === undefined && config.guide.iconicTaxa.length === 0) {
             filterHasChanged = false;
         } else {
-            filterHasChanged = [ ...collection.iconicTaxa ].join(',') !== [ ...config.iconicTaxa ].join(',');
+            filterHasChanged = [ ...collection.iconicTaxa ].join(',') !== [ ...config.guide.iconicTaxa ].join(',');
         }
     } else {
         if(collection.iconicTaxon === undefined) {
             filterHasChanged = false;
         }
         else {
-            if(config.iconicTaxa.length > 0) {
-                filterHasChanged = !R.contains(collection.iconicTaxon, [ ...config.iconicTaxa ]);
+            if(config.guide.iconicTaxa.length > 0) {
+                filterHasChanged = !R.contains(collection.iconicTaxon, [ ...config.guide.iconicTaxa ]);
             } else {
                 filterHasChanged = false;
             }

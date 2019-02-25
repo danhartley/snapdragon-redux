@@ -18,6 +18,15 @@ export const config = {
         { name: 'Français', lang: 'fr' },
         { name: 'Português', lang: 'pt' }
     ],
-    iconicTaxa: [],
+    guide: {
+        iconicTaxa: [],
+        autoLocation: '',
+        locationType: 'auto',
+        ecosystem: {
+            id: 1,
+            name: ''
+        },
+        studyMethod: 'speciesIdentification'
+    },
     speciesRange: 10
 };

@@ -8,16 +8,16 @@ export const renderGuides = (modal, config, createGuide) => {
     const chosen = modal.querySelector('.js-chosen span:nth-child(2)');
     const saveYourChangesBtn = createGuide.save(config, chosen, 'GUIDE');
 
-    guideTxt.innerHTML = 'How do you want to study the species';
+    guideTxt.innerHTML = 'What do you want to concentrate on';
 
-    if(config.studyMethod) {
+    if(config.guide.studyMethod) {
         setTimeout(() => {
-            const preSelectedCollection = modal.querySelector(`#${config.studyMethod}`).querySelectorAll('span')[1];
+            const preSelectedCollection = modal.querySelector(`#${config.guide.studyMethod}`).querySelectorAll('span')[1];
             if(preSelectedCollection) {
                 preSelectedCollection.click();
             }
         });
-    }
+    } 
 
     const template = document.createElement('template');
     template.innerHTML = guidesTemplate;
@@ -28,7 +28,7 @@ export const renderGuides = (modal, config, createGuide) => {
     modal.querySelectorAll('.btn.btn-secondary div').forEach(type => type.addEventListener('click', event => {        
         const target = rbEventHandler(modal, event);
         saveYourChangesBtn.disabled = false;
-        config.studyMethod = target.id;
-        chosen.innerHTML = config.studyMethod;
+        config.guide.studyMethod = target.id;
+        chosen.innerHTML = config.guide.studyMethod;
     }));
 }

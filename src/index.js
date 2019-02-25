@@ -47,7 +47,11 @@ setTimeout( () => {
     subscription.add(updateLanguage, 'config', 'localistation');
 
     async function getApproximateLocation() {
-        await getIPLocation(config);
+        const ipLocation = await getIPLocation(config);
+        config.ipLocation = ipLocation;
+        config.guide.autoLocation = ipLocation.country_name;
+        config.guide.ecosystem.name = ipLocation.country_name;
+        actions.boundUpdateConfig(config);
     }
 
     getApproximateLocation();

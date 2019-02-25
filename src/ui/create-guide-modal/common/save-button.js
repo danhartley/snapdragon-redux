@@ -11,36 +11,25 @@ export const saveButton = (parent, config, chosen, step, createGuide) => {
     const btn = parent.querySelector('button');
     const txt = parent.querySelector('div');
 
-    const activeStep = createGuide.steps.find(step => step.number === createGuide.currentStep);
-
-    if(activeStep.disabled) {
-        createGuide.nextStepAction.classList.add('disabled');
-    } else if(createGuide.direction === 'PREVIOUS') {
-        createGuide.nextStepAction.classList.remove('disabled');
-    }
-    
     const handleSaveEvent = () => {
-
-        activeStep.disabled = false;
-        createGuide.nextStepAction.classList.remove('disabled');
 
         if(chosen) {
             switch(step) {
                 case 'LOCATION':
-                    if(config.locationType) {
-                        chosen.innerHTML = config.locationType === 'user'
-                            ? config.userLocation
-                            : config.autoLocation;
+                    if(config.guide.locationType) {
+                        chosen.innerHTML = config.guide.locationType === 'user'
+                            ? config.guide.userLocation
+                            : config.guide.autoLocation;
                     }
                     break;
                 case 'ECOSYSTEM':
-                    if(config.ecosystem) {
-                        chosen.innerHTML = config.ecosystem.name;
+                    if(config.guide.ecosystem) {
+                        chosen.innerHTML = config.guide.ecosystem.name;                        
                     }
                     break;
                 case 'GUIDE':
-                    if(config.studyMethod) {
-                        chosen.innerHTML = config.studyMethod;
+                    if(config.guide.studyMethod) {
+                        chosen.innerHTML = config.guide.studyMethod;
                     }
                     break;
             }
@@ -48,7 +37,7 @@ export const saveButton = (parent, config, chosen, step, createGuide) => {
 
         actions.boundUpdateConfig(config);
         btn.disabled = true;
-        txt.innerHTML = 'Your changes were saved';
+        txt.innerHTML = 'Your choice was saved';
         setTimeout(() => {
             txt.innerHTML = '';
         }, 1500);

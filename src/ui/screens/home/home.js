@@ -11,11 +11,11 @@ import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
 import { renderGuideSummary } from 'ui/screens/home/home-guide';
 import { listenToCloseCreateGuideModal } from 'ui/create-guide-modal/create-guide';
 
-let subscriptions;
-
 export const renderHome = () => {
 
     let { counter, config, collection } = store.getState();
+
+    if(counter.isLessonRehydrated && counter.index && counter.index > 0) return;
     
     const sub = subscription.getByName('renderHome');
     if(sub) subscription.remove(sub);

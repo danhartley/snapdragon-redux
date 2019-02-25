@@ -79,7 +79,7 @@ export const renderSnapdragon = (counter) => {
 
     const { config } = store.getState();
 
-    const filters = config.iconicTaxa;
+    const filters = config.guide.iconicTaxa;
 
     renderSnapdragonTemplate(snapdragonTemplate, DOM, snapdragonCollections, renderTemplate, filters);
 };

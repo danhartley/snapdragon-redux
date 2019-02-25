@@ -11,7 +11,7 @@ const add = (subscription, domain, role, layout) => {
     const sub = observeStore(store, select, onChange, domain, layout);
 
     subscriptions.push({ ...sub, role});
-    console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: blue;");
+    // console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: blue;");
     return sub;
 };
 
@@ -19,7 +19,7 @@ const remove = subscription => {
     console.log(`*** Calling unsubscribe on name: ${subscription.name}, role: ${subscription.role}`)
     subscription.unsubscribe();
     subscriptions = subscriptions.filter(sub => sub.name !== subscription.name);
-    console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: red;");
+    // console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: red;");
     return subscriptions;
 };
 

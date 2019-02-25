@@ -23,11 +23,11 @@
 
 //     let config = R.clone(configState);
 //     let collections = R.clone(collectionsState);
-//     if(config.iconicTaxa && config.iconicTaxa.length > 0) {
+//     if(config.guide.iconicTaxa && config.guide.iconicTaxa.length > 0) {
 //         const localSpecies = collections.find(c => c.id === 1);
 //         const monsantoSpecies = collections.find(c => c.id === 2);
 //         const arrabidaSpecies = collections.find(c => c.id === 3);
-//         collections = [ ...collections.filter(c => R.contains(c.iconicTaxon, config.iconicTaxa)), localSpecies, monsantoSpecies, arrabidaSpecies ];
+//         collections = [ ...collections.filter(c => R.contains(c.iconicTaxon, config.guide.iconicTaxa)), localSpecies, monsantoSpecies, arrabidaSpecies ];
 //     }
 //     let collection = R.clone(collectionState);
 //     let hasChosenStudyType = false;
@@ -52,7 +52,7 @@
 //     const learningActionBtn = document.querySelector('.js-lesson-btn-action');
 //     const learningActionBtnPlaceholder = document.querySelector('.js-lesson-btn-action-placeholder');
 
-//     const studyMethod = config.studyMethod;
+//     const studyMethod = config.guide.studyMethod;
 
 //     const changeCollectionHandler = collectionId => {
 
@@ -138,8 +138,8 @@
 //             elem.hide(learningActionBtnPlaceholder);
 //             document.querySelector('.js-lesson-plan').classList.add('active');
 //         }
-//         config.studyMethod = target.id;
-//         actions.boundSelectStudyMethod(config.studyMethod);
+//         config.guide.studyMethod = target.id;
+//         actions.boundSelectStudyMethod(config.guide.studyMethod);
 //     }));
 
 //     document.querySelector('.js-create-guide-link').addEventListener('click', event => {        

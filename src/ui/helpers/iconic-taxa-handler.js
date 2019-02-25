@@ -39,10 +39,10 @@ export const handleIconicTaxaFilter = (config) => {
 
     const icons = document.querySelectorAll('.iconic-taxa-categories > div > div:nth-child(1)');
 
-    if(config.iconicTaxa && config.iconicTaxa.length > 0) {
+    if(config.guide.iconicTaxa && config.guide.iconicTaxa.length > 0) {
         icons.forEach(icon => {
             const filterId = icon.parentElement.id;
-            if(R.contains(filterId, config.iconicTaxa)) {
+            if(R.contains(filterId, config.guide.iconicTaxa)) {
                 icon.classList.add(filterSelectedClass);
             }
         });
@@ -56,7 +56,7 @@ export const handleIconicTaxaFilter = (config) => {
         }
     };
 
-    let filters = [ ...config.iconicTaxa ] || [];
+    let filters = [ ...config.guide.iconicTaxa ] || [];
     checkButtonState(filters, false);
 
     const fungiIcon = document.querySelector('#fungi > div');
@@ -90,7 +90,7 @@ export const handleIconicTaxaFilter = (config) => {
     filterBtn.removeEventListener('click');
     filterBtn.addEventListener('click', event => {
         document.querySelector('#iconicTaxaFilters .close span').click();
-        config.iconicTaxa = filters;
+        config.guide.iconicTaxa = filters;
         actions.boundUpdateConfig(config);
         filterListeners.forEach(listener => listener(filters, config));
     });
