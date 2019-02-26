@@ -14,7 +14,7 @@ export const renderCategories = (modal, config, createGuide) => {
 
     guideTxt.innerHTML = 'Select the species you are interested in';
 
-    let filtersCommon = [];
+    let iconicTaxa = [ ...config.guide.iconicTaxa ] || [];
 
     const template = document.createElement('template');
     template.innerHTML = categoriesTemplate;
@@ -22,28 +22,25 @@ export const renderCategories = (modal, config, createGuide) => {
     parent.innerHTML = '';
     renderTemplate({}, template.content, parent);
 
-    const icons = parent.querySelectorAll('.iconic-taxa-categories > div > div:nth-child(1)');
+    const icons = parent.querySelectorAll('.js-iconic-taxa-categories > div > div:nth-child(1)');
 
     if(config.guide.iconicTaxa && config.guide.iconicTaxa.length > 0) {
         icons.forEach(icon => {
             const filterId = icon.parentElement.id;
             if(R.contains(filterId, config.guide.iconicTaxa)) {
-                filtersCommon.push(icon.parentElement.innerText);
                 icon.classList.add(filterSelectedClass);
             }
         });
     }
 
-    chosen.innerHTML = filtersCommon.length > 0 ? filtersCommon.join(', ') : 'All taxa';
+    chosen.innerHTML = (iconicTaxa && iconicTaxa.length > 0) ? iconicTaxa.map(taxon => taxon.common).join(', ') : 'All species';
 
     const checkButtonState = (filters, noChangesToSave) => {
         saveYourChangesBtn.disabled = noChangesToSave;
         config.guide.iconicTaxa = filters;
     };
 
-    let filters = [ ...config.guide.iconicTaxa ] || [];
-    
-    checkButtonState(filters, true);
+    checkButtonState(iconicTaxa, true);
 
     setTimeout(() => {
         const fungiIcon = modal.querySelector('#fungi > div');
@@ -60,25 +57,29 @@ export const renderCategories = (modal, config, createGuide) => {
             const filterId = filter.parentElement.id;        
             const commonName = filter.parentElement.innerText;              
 
-            if(filters.find(f => f === filterId)) {
+            if(iconicTaxa.find(taxon => taxon.id === filterId)) {
                 if(filterId === 'fungi') {
                     filter.querySelector('g g').classList.remove('svg-icon-selected');                    
                 }
                 filter.classList.remove(filterSelectedClass);
-                filters = filters.filter(f => f !== filterId);
-                filtersCommon = filtersCommon.filter(f => f !== commonName);
+                iconicTaxa = iconicTaxa.filter(taxon => taxon.id !== filterId);
             } else {
                 if(filterId === 'fungi') {
                     filter.querySelector('g g').classList.add('svg-icon-selected');
                 }
                 filter.classList.add(filterSelectedClass);
-                filters.push(filterId);
-                filtersCommon.push(commonName);
+
+                iconicTaxa.push(
+                    {
+                        id: filterId,
+                        common: commonName    
+                    }
+                )
             }
 
-            chosen.innerHTML = filtersCommon.join(', ');
+            chosen.innerHTML = iconicTaxa.map(taxon => taxon.common).join(', ');
 
-            checkButtonState(filters, false);
+            checkButtonState(iconicTaxa, false);
         });
     });
 };

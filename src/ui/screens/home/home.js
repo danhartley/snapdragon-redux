@@ -1,14 +1,14 @@
 import * as R from 'ramda';
 
 import { DOM } from 'ui/dom';
-import { store } from 'redux/store';
+import { store, persistor } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
 import { renderSpeciesCollectionList, listenToSpeciesCollectionListenReady } from 'ui/screens/lists/species-list';
 import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import homeTemplate from 'ui/screens/home/home-template.html';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
-import { renderGuideSummary } from 'ui/screens/home/home-guide';
+import { renderGuideSummary } from 'ui/screens/home/home-guide-summary';
 import { listenToCloseCreateGuideModal } from 'ui/create-guide-modal/create-guide';
 
 export const renderHome = () => {
@@ -64,7 +64,7 @@ export const renderHome = () => {
     };
 
     const guidesummary = () => {
-        const parent = document.querySelector('.home-container .snapdragon-tag');
+        const parent = document.querySelector('.home-container .js-snapdragon-tag');
         parent.innerHTML = '';
         renderGuideSummary(R.clone(config), parent);
         deleteLink.classList.remove('hide');            
@@ -102,9 +102,11 @@ export const renderHome = () => {
 
     checkState(state);
 
+    let deleteEnabled = false;
+
     deleteLinkCheckbox.addEventListener('click', event => {
-        const checked = event.target.checked;
-        if(checked) {
+        deleteEnabled = event.target.checked;
+        if(deleteEnabled) {
             deleteLinkTxt.classList.add('active');
             deleteLinkTxt.classList.remove('disabled');
         } else {
@@ -114,10 +116,13 @@ export const renderHome = () => {
     });
 
     deleteLinkTxt.addEventListener('click', event => {
-        // delete guide
-        actionLink.innerHTML = 'Create';
-        state = 'MODAL';
-        checkState(state);
+        if(deleteEnabled) {
+            actionLink.innerHTML = 'Create';
+            state = 'MODAL';
+            checkState(state);
+            persistor.purge();
+            window.location.reload(true);          
+        }
     });
 
     listenToCloseCreateGuideModal(()=>{

@@ -12,7 +12,7 @@ async function getItems(collection, config) {
         const collectionIsUnchanged = 
             collection.items && collection.items.length > 0 && collection.items[0].collectionId === collection.id && 
             collection.speciesRange === config.speciesRange &&
-            collection.iconicTaxa === config.guide.iconicTaxa;
+            collection.iconicTaxa === config.guide.iconicTaxa.map(taxon => taxon.id);
         if(collectionIsUnchanged) {
             return new Promise(resolve => {
                 resolve(collection.items);
@@ -57,7 +57,7 @@ export async function itemHandler(collection, config, counter, callback) {
     } else {         
         collection.items = utils.shuffleArray(await getItems(collection, config));
 
-        if(R.contains('lepidoptera', config.guide.iconicTaxa) && !R.contains('insecta', config.guide.iconicTaxa)) {
+        if(R.contains('lepidoptera', config.guide.iconicTaxa.map(taxon => taxon.id)) && !R.contains('insecta', config.guide.iconicTaxa.map(taxon => taxon.id))) {
             const insecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() === 'insecta');
             const lepidoptera = insecta.filter(i => i.taxonomy.order.toLowerCase() === 'lepidoptera');
             const noninsecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() !== 'insecta');

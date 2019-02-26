@@ -26,7 +26,7 @@ export const config = {
             id: 1,
             name: ''
         },
-        studyMethod: 'speciesIdentification'
-    },
-    speciesRange: 10
+        studyMethod: 'species_identification',
+        speciesRange: 10
+    },    
 };

@@ -345,7 +345,7 @@
         margin: 0 1rem 0 0;
     }
 
-    #createGuide .modal-body .save-your-changes div {
+    #createGuide .modal-body .saved {
         color: gray;
     }
  
@@ -379,7 +379,8 @@
         width: .5rem;
     }
 
-    .user-location input[type="radio"] {
+    .user-location input[type="radio"],
+    .btn-group.btn-group-toggle.place input[type="radio"] {
         position: absolute;
         clip: rect(0,0,0,0);
         pointer-events: none;
@@ -399,17 +400,16 @@
         background-color: var(--snap-landscape);
     }
 
-    .guides.actions .btn.btn-secondary:nth-child(1) {
-        height: 3rem;
-    }
-
     .guides.actions label {
         margin: 0;
     }
 
-    .default-local {
-        color: var(--secondary);
-        margin: 0 0 0 .5rem;
+    .create-guide-action .range-slider {
+        margin: 0 0 .75rem 1.75rem;
+    }
+
+    .create-guide-action .range-slider span {
+        margin: 0 .5rem 0 0;
     }
 
     .home-container {
@@ -444,10 +444,38 @@
         font-weight: bold;
     }
 
+
+    .delete-guide-link > span.active {
+        color: var(--snap-alert) !important; 
+        pointer-events: initial;
+    }
+    
+    .delete-guide-link > span.disabled {
+        color: var(--secondary) !important;
+        pointer-events: none;
+    }
+
+    .delete-guide-link input {
+        cursor: pointer;
+    }
+
+    #iNatWidgetModal .modal-dialog {
+        max-width: 45vw;
+    }
+
+    #iNatWidgetModal .modal-header {
+        font-size: 1.2rem;
+        display: inline;
+    }
+
     .home-container .snapdragon-tag > div {
         color: var(--snap-link);
-        background-color: rgb(250, 250, 250);        
         letter-spacing: .03rem;
+    }
+
+    .home-container .snapdragon-tag > div .underline-link {
+        font-size: 2rem;
+        text-transform: initial;
     }
 
     .home-container .snapdragon-create-guide {

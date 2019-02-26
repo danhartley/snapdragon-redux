@@ -1,4 +1,5 @@
 import { utils } from 'utils/utils';
+import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import placeTemplate from 'ui/create-guide-modal/place-list-template.html';
 import { rbEventHandler } from 'ui/create-guide-modal/common/rb-event-handler';
@@ -13,22 +14,22 @@ export const renderPlace = (modal, config, collections, createGuide) => {
             ? config.guide.autoLocation 
             : config.guide.userLocation;
     
-    let place = [];
+    let places = [];
 
     if(config.guide.iconicTaxa && config.guide.iconicTaxa.length !== 0) {
         collections.forEach(collection => {
             collection.iconicTaxa.forEach(iconicTaxon => {
                 config.guide.iconicTaxa.forEach(taxon => {
                     if(taxon === iconicTaxon) {
-                        if(!place.includes(collection)) {
-                            place.push(collection);
+                        if(!places.includes(collection)) {
+                            places.push(collection);
                         }                        
                     }
                 })
             })
         })
     } else {
-        place = utils.sortBy(collections.filter(c => c.type === 'species'), 'id', 'asc');
+        places = utils.sortBy(collections.filter(c => c.type === 'species'), 'id', 'asc');
     }
 
     if(config.guide.place) {
@@ -41,16 +42,20 @@ export const renderPlace = (modal, config, collections, createGuide) => {
         chosen.innerHTML = config.guide.place.name;
     } 
 
+    let place;
+
     if(location) {
-        place.find(e => e.id === 1).name = `${location}`;
+        place = places.find(place => place.id === 1);
+        place.name = `${location}`;
+        places = places.filter(place => place.id !== 1);
         guideTxt.innerHTML = 'Choose a place based on your location';
     }
 
     const template = document.createElement('template');
     template.innerHTML = placeTemplate;
-    const parent = modal.querySelector('.js-actions');
+    let parent = modal.querySelector('.js-actions');
     
-    renderTemplate({ place }, template.content, parent);
+    renderTemplate({ place, places }, template.content, parent);
     
     modal.querySelectorAll('.btn.btn-secondary div').forEach(type => type.addEventListener('click', event => {
         const target = rbEventHandler(modal, event);
@@ -61,4 +66,23 @@ export const renderPlace = (modal, config, collections, createGuide) => {
         config.guide.place = { id: placeId, name: target.innerText };
         config.collection.id = placeId;
     }));
+
+    let range = config.guide.speciesRange;
+
+    modal.querySelector('.js-set-range-input').value = range;
+
+    const slider = modal.querySelector('.js-set-range-input');
+    
+    const updateSlider  = event => {
+        range = event.target.value;
+        config.guide.speciesRange = range;
+        actions.boundUpdateConfig(config);
+        const txt = modal.querySelector('.js-range-saved');
+        txt.innerHTML = `Updated to within ${range} kms`;
+        setTimeout(() => {
+            txt.innerHTML = '';
+        }, 1500);
+    };
+    
+    slider.addEventListener('change', updateSlider);
 };

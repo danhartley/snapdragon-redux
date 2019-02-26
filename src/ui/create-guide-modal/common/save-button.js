@@ -29,7 +29,7 @@ export const saveButton = (parent, config, chosen, step, createGuide) => {
                     break;
                 case 'GUIDE':
                     if(config.guide.studyMethod) {
-                        chosen.innerHTML = config.guide.studyMethod;
+                        chosen.innerHTML = config.guide.studyMethod.replace('_', ' ');
                     }
                     break;
             }

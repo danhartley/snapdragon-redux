@@ -18,7 +18,7 @@ export const getInatSpecies = (inatConfig, config) => {
     const iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
 
     const getIconicTaxa = config => {        
-        const iconicTaxa = config.guide.iconicTaxa || iconicTaxaKeys;
+        const iconicTaxa = config.guide.iconicTaxa.map(taxon => taxon.id) || iconicTaxaKeys;
         const taxa = iconicTaxa.map(taxon => {
             if(taxon === 'lepidoptera') taxon = 'insecta';
             return taxon;

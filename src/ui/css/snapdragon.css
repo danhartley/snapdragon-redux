@@ -433,7 +433,7 @@ a.dropdown-item {
 }
 
 .card > .card-txt-block {
-  margin: 0 0.5rem 0 0;
+  margin: 0.5rem 0.5rem 0 0;
 }
 
 .card.species,
@@ -2385,14 +2385,4 @@ a.collection-disabled {
 
 .feature-symbiont-list .underline-link {
   text-transform: initial;
-}
-
-.delete-guide-link > span.active {
-  color: var(--snap-alert) !important; 
-  pointer-events: initial;
-}
-
-.delete-guide-link > span.disabled {
-  color: var(--secondary) !important;
-  pointer-events: none;
 }

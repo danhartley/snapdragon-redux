@@ -1,5 +1,15 @@
-<div class="btn-group btn-group-toggle place" data-toggle="buttons" data-repeat-collection="{{ place }}">
-    <label class="btn btn-secondary">
-        <div id="id-{{ collection.id }}"> <span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="collection" value="{{ collection.id }}" autocomplete="off"><span class="collectionName">{{ collection.name }}</span></div>
-    </label>
+<div class="btn-group btn-group-toggle place" data-toggle="buttons">
+    <div>
+        <label class="btn btn-secondary">
+            <div id="id-1"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="collection" value="1" autocomplete="off"><span class="collectionName">{{ place.name }}</span></div>
+        </label>
+        <div class="range-slider">
+            <span>Range from location</span><span>0 kms</span><input class="js-set-range-input" type="range" min="0" max="100" value="10"><span> 100kms</span><span class="saved js-range-saved"></span>
+        </div>
+    </div>
+    <div data-repeat-collection="{{ places }}">
+        <label class="btn btn-secondary">
+            <div id="id-{{ collection.id }}"> <span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="collection" value="{{ collection.id }}" autocomplete="off"><span class="collectionName">{{ collection.name }}</span></div>
+        </label>
+    </div>
 </div>

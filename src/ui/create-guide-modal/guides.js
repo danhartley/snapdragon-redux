@@ -29,6 +29,6 @@ export const renderGuides = (modal, config, createGuide) => {
         const target = rbEventHandler(modal, event);
         saveYourChangesBtn.disabled = false;
         config.guide.studyMethod = target.id;
-        chosen.innerHTML = config.guide.studyMethod;
+        chosen.innerHTML = config.guide.studyMethod.replace('_', ' ');;
     }));
 }

@@ -100,9 +100,7 @@ export const renderNavigation = (page) => {
                     case 'list':                        
                         target.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));                                   
-                        lessonLogicHandler.changeCollection('pauseLesson', collection, config, history); 
-                        
-                        // renderSpeciesCollectionList(collection, true);                   
+                        lessonLogicHandler.changeCollection('pauseLesson', collection, config, history);         
                         break;
                     case 'glossary':
                         if(page.glossary) {
