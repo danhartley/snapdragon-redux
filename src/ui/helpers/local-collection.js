@@ -15,15 +15,12 @@ export async function handleCustomCollections(localCollectionNode, learningActio
   
     const place = await getPlace(config);
 
-    // const collectionText = localCollectionNode.querySelector('span.collectionName');
-
     if(config.inatId) {
         collectionText.innerText = `iNat observations for ${config.inatId}`;   
     } 
     
     if(place && config.collection.id !== 4) {
 
-        // collectionText.innerText = place.summary;       
         collection.name = place.summary;
         
         if(config.isPortraitMode) {

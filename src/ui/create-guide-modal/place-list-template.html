@@ -4,7 +4,7 @@
             <div id="id-1"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="collection" value="1" autocomplete="off"><span class="collectionName">{{ place.name }}</span></div>
         </label>
         <div class="range-slider">
-            <span>Range from location</span><span>0 kms</span><input class="js-set-range-input" type="range" min="0" max="100" value="10"><span> 100kms</span><span class="saved js-range-saved"></span>
+            <span class="js-range">Include species within</span><span>0km</span><input class="set-range-input js-set-range-input" type="range" min="0" max="250" value="10"><span> 250km</span><span class="saved js-range-saved"></span>
         </div>
     </div>
     <div data-repeat-collection="{{ places }}">

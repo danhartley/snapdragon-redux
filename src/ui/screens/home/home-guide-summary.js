@@ -6,6 +6,7 @@ export const renderGuideSummary = (config, parent) => {
 
     const location = config.guide.locationType === 'auto' ? config.guide.autoLocation : config.guide.userLocation;
     const place = config.guide.place.name;
+    const range = config.guide.speciesRange;
     const taxa = config.guide.iconicTaxa.length > 0 ? config.guide.iconicTaxa.map(taxon => taxon.common).join(', ') : 'All species';
     const guide = config.guide.studyMethod.replace('_', ' ');
 
@@ -16,7 +17,7 @@ export const renderGuideSummary = (config, parent) => {
 
     const widgetLink = document.querySelector('.js-iNatWidget');
 
-    widgetLink.innerHTML = `<span data-toggle="modal" data-target="#iNatWidgetModal" class="underline-link">${place}</span`;
+    widgetLink.innerHTML = `<span data-toggle="modal" data-target="#iNatWidgetModal" class="underline-link">${place}</span><span class="species-range">within ${range}km range</span>`;
 
     const collection = snapdragonCollections.find(collection => collection.id === config.guide.place.id);
 
@@ -24,8 +25,8 @@ export const renderGuideSummary = (config, parent) => {
 
         document.querySelector('#iNatWidgetModal .modal-header').innerHTML = 
         config.guide.iconicTaxa.length > 0
-            ? `iNaturalist species observed in ${place} filtered by <span class="toUpperCase">${taxa}</span>`
-            : `iNaturalist species observed in ${place}`;
+            ? `iNaturalist species observed within ${range}km of ${place} filtered by <span class="toUpperCase">${taxa}</span>`
+            : `iNaturalist species observed within ${range}km of ${place}`;
 
         let params = collection.iNatWidget;
         if(config.guide.iconicTaxa.length > 0) {

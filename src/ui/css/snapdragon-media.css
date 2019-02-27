@@ -408,8 +408,21 @@
         margin: 0 0 .75rem 1.75rem;
     }
 
+    .create-guide-action .range-slider.disabled {
+        color: var(--secondary);
+    }
+
     .create-guide-action .range-slider span {
         margin: 0 .5rem 0 0;
+    }
+
+    .create-guide-action .set-range-input {
+        width: 15rem;
+        cursor: pointer;
+    }
+
+    .create-guide-action .range-slider.disabled .set-range-input {
+        pointer-events: none;
     }
 
     .home-container {
@@ -444,7 +457,6 @@
         font-weight: bold;
     }
 
-
     .delete-guide-link > span.active {
         color: var(--snap-alert) !important; 
         pointer-events: initial;
@@ -476,6 +488,13 @@
     .home-container .snapdragon-tag > div .underline-link {
         font-size: 2rem;
         text-transform: initial;
+    }
+    
+    .home-container .snapdragon-tag > div .species-range {
+        font-size: .8rem;
+        margin: 0 0 0 .25rem;
+        vertical-align: super;
+        color: var(--secondary);
     }
 
     .home-container .snapdragon-create-guide {

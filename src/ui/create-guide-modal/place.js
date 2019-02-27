@@ -65,9 +65,25 @@ export const renderPlace = (modal, config, collections, createGuide) => {
         }
         config.guide.place = { id: placeId, name: target.innerText };
         config.collection.id = placeId;
+        toggleSpeciesRange(placeId);
     }));
 
+
+    const toggleSpeciesRange = placeId => {
+        const rangeSlider = modal.querySelector('.range-slider');
+        const isRangeSensitive = collections.find(collection => collection.id === placeId).rangeSensitive;
+        isRangeSensitive 
+            ? rangeSlider.classList.remove('disabled') 
+            : rangeSlider.classList.add('disabled');
+    };
+
+    toggleSpeciesRange(place.id);
+
+    const txt = modal.querySelector('.js-range');
+    const txtSaved = modal.querySelector('.js-range-saved');
     let range = config.guide.speciesRange;
+
+    txt.innerHTML = `Include species within ${range}km range`;
 
     modal.querySelector('.js-set-range-input').value = range;
 
@@ -76,11 +92,11 @@ export const renderPlace = (modal, config, collections, createGuide) => {
     const updateSlider  = event => {
         range = event.target.value;
         config.guide.speciesRange = range;
-        actions.boundUpdateConfig(config);
-        const txt = modal.querySelector('.js-range-saved');
-        txt.innerHTML = `Updated to within ${range} kms`;
+        actions.boundUpdateConfig(config);        
+        txt.innerHTML = `Include species within ${range}km`;
+        txtSaved.innerHTML = `Updated to ${range}km`;
         setTimeout(() => {
-            txt.innerHTML = '';
+            txtSaved.innerHTML = '';
         }, 1500);
     };
     

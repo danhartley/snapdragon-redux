@@ -330,6 +330,7 @@ export const cogumelosEmPortugal = {
 
 export const localSpecies = {
     id: 1,
+    rangeSensitive: true,
     providerId: 3,
     name: 'Your Local Wildlife', 
     type: 'species',
@@ -406,6 +407,7 @@ export const arrabidaSpecies = {
 
 export const useriNatSpecies = {
     id: 4,
+    rangeSensitive: true,
     providerId: 3,
     userId: 'danielhartley',
     thumb: 'https://content.eol.org/data/media/81/4c/05/542.8349968670.260x190.jpg',
