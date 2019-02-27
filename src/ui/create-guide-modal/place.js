@@ -3,6 +3,7 @@ import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import placeTemplate from 'ui/create-guide-modal/place-list-template.html';
 import { rbEventHandler } from 'ui/create-guide-modal/common/rb-event-handler';
+import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 
 export const renderPlace = (modal, config, collections, createGuide) => {
 
@@ -48,7 +49,7 @@ export const renderPlace = (modal, config, collections, createGuide) => {
         place = places.find(place => place.id === 1);
         place.name = `${location}`;
         places = places.filter(place => place.id !== 1);
-        guideTxt.innerHTML = 'Choose a place based on your location';
+        guideTxt.innerHTML = 'Demarcate location by place or observer';
     }
 
     const template = document.createElement('template');
@@ -101,4 +102,7 @@ export const renderPlace = (modal, config, collections, createGuide) => {
     };
     
     slider.addEventListener('change', updateSlider);
+
+    inatAutocomplete(modal.querySelector('#inat-place'));
+    inatAutocomplete(modal.querySelector('#inat-id'));
 };

@@ -12,7 +12,8 @@
   },
   "jest": {
     "moduleFileExtensions": [
-      "js", "html"
+      "js",
+      "html"
     ],
     "moduleDirectories": [
       "node_modules"
@@ -20,7 +21,7 @@
     "modulePaths": [
       "src"
     ],
-    "moduleNameMapper": {      
+    "moduleNameMapper": {
       "ui/screens/.*/.*.html": "<rootDir>/src/empty.js",
       "ui/progress/.*.html": "<rootDir>/src/empty.js"
     }
@@ -76,6 +77,7 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "autocompleter": "^4.0.2",
     "babel-polyfill": "^6.26.0"
   }
 }

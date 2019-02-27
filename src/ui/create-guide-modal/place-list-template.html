@@ -7,9 +7,27 @@
             <span class="js-range">Include species within</span><span>0km</span><input class="set-range-input js-set-range-input" type="range" min="0" max="250" value="10"><span> 250km</span><span class="saved js-range-saved"></span>
         </div>
     </div>
-    <div data-repeat-collection="{{ places }}">
+    <!-- <div data-repeat-collection="{{ places }}" style="display:flex;">
         <label class="btn btn-secondary">
             <div id="id-{{ collection.id }}"> <span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="collection" value="{{ collection.id }}" autocomplete="off"><span class="collectionName">{{ collection.name }}</span></div>
         </label>
+    </div> -->
+    <div class="inat-user">
+        <label class="btn btn-secondary">
+            <div><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="collection" value=""></div>
+        </label>
+        <div>
+            <div><input id="inat-place" type="text" class="js-inat-user"><div>iNaturalist Place</div></div>
+            <div id="inat-place-autocomplete"></div>
+        </div>
+    </div>
+    <div class="inat-user">
+        <label class="btn btn-secondary">
+            <div><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="collection" value="" autocomplete="off"></div>            
+        </label>
+        <div>
+            <div><input id="inat-id" type="text" class="js-inat-user"><div>iNaturalist observer Id</div></div>
+            <div id="inat-id-autocomplete"></div>
+        </div>
     </div>
 </div>

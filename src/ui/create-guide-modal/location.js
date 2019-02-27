@@ -75,6 +75,7 @@ export const renderLocation = (modal, config, createGuide) => {
     if(locationType) {
         setTimeout(() => {
             modal.querySelector(`#${locationType}`).click();   
+            saveYourChangesBtn.disabled = true;
         });
     }      
 
