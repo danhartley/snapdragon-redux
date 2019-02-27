@@ -2,7 +2,7 @@ import * as R from 'ramda';
 
 import { species } from 'api/species';
 import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
-import { listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
+// import { listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
 
 export const getInatSpecies = (inatConfig, config) => {
   

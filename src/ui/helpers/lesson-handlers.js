@@ -85,81 +85,81 @@ const purgeLesson = () => {
     window.location.reload(true);
 };
 
-const noItems = items => {
-    return !Array.isArray(items);
-};
+// const noItems = items => {
+//     return !Array.isArray(items);
+// };
 
-const lessonNotBegun = (counter, layout, collection, config) => {
-    return !!counter.isLessonRehydrated && !layout;
-};
+// const lessonNotBegun = (counter, layout, collection, config) => {
+//     return !!counter.isLessonRehydrated && !layout;
+// };
 
-const lessonIsPaused = (collection, config, counter) => {
-    return collection.id === config.collection.id && counter.isLessonPaused;
-};
+// const lessonIsPaused = (collection, config, counter) => {
+//     return collection.id === config.collection.id && counter.isLessonPaused;
+// };
 
-const languageHasChanged = (collection, config) => {
-    const hasChanged = collection.language !== config.language;
-    if(hasChanged) collection.language = config.language;
-    return hasChanged;
-};
+// const languageHasChanged = (collection, config) => {
+//     const hasChanged = collection.language !== config.language;
+//     if(hasChanged) collection.language = config.language;
+//     return hasChanged;
+// };
 
-const speciesRangeHasChanged = (collection, config) => {
-    if(collection && config) return collection.speciesRange !== config.speciesRange;
-};
+// const speciesRangeHasChanged = (collection, config) => {
+//     if(collection && config) return collection.speciesRange !== config.speciesRange;
+// };
 
-const taxonFiltersHaveChanged = (collection, config) => {
+// const taxonFiltersHaveChanged = (collection, config) => {
 
-    let filterHasChanged;
+//     let filterHasChanged;
 
-    if(config.collection.id === 1) {
-        if(collection.iconicTaxa === undefined && config.guide.iconicTaxa.length === 0) {
-            filterHasChanged = false;
-        } else {
-            filterHasChanged = [ ...collection.iconicTaxa ].join(',') !== [ ...config.guide.iconicTaxa ].join(',');
-        }
-    } else {
-        if(collection.iconicTaxon === undefined) {
-            filterHasChanged = false;
-        }
-        else {
-            if(config.guide.iconicTaxa.length > 0) {
-                filterHasChanged = !R.contains(collection.iconicTaxon, [ ...config.guide.iconicTaxa ]);
-            } else {
-                filterHasChanged = false;
-            }
-        }
-    }
+//     if(config.collection.id === 1) {
+//         if(collection.iconicTaxa === undefined && config.guide.iconicTaxa.length === 0) {
+//             filterHasChanged = false;
+//         } else {
+//             filterHasChanged = [ ...collection.iconicTaxa ].join(',') !== [ ...config.guide.iconicTaxa ].join(',');
+//         }
+//     } else {
+//         if(collection.iconicTaxon === undefined) {
+//             filterHasChanged = false;
+//         }
+//         else {
+//             if(config.guide.iconicTaxa.length > 0) {
+//                 filterHasChanged = !R.contains(collection.iconicTaxon, [ ...config.guide.iconicTaxa ]);
+//             } else {
+//                 filterHasChanged = false;
+//             }
+//         }
+//     }
 
-    return filterHasChanged;
-};
+//     return filterHasChanged;
+// };
 
-const collectionHasChanged = (collection, config) => {
-    return collection.id === config.collection.id;
-}; 
+// const collectionHasChanged = (collection, config) => {
+//     return collection.id === config.collection.id;
+// }; 
 
-const isSkippable = (collection, counter, config, layout, caller, readOnlyMode) => {
+// const isSkippable = (collection, counter, config, layout, caller, readOnlyMode) => {
 
-    if(noItems(collection.items)) return false;
+//     if(noItems(collection.items)) return false;
 
-    if(readOnlyMode) return false;
+//     if(readOnlyMode) return false;
 
-    if(lessonNotBegun(counter, layout, collection, config)) return false;
+//     if(lessonNotBegun(counter, layout, collection, config)) return false;
 
-    if(lessonIsPaused(collection, config, counter)) return false;
+//     if(lessonIsPaused(collection, config, counter)) return false;
 
-    if(languageHasChanged(collection, config)) return false;
+//     if(languageHasChanged(collection, config)) return false;
 
-    if(speciesRangeHasChanged(collection, config)) return false;
+//     if(speciesRangeHasChanged(collection, config)) return false;
 
-    if(taxonFiltersHaveChanged(collection, config)) return false;
+//     if(taxonFiltersHaveChanged(collection, config)) return false;
 
-    if(collectionHasChanged(collection, config)) return true;
-    else return false;
-};
+//     if(collectionHasChanged(collection, config)) return true;
+//     else return false;
+// };
 
 export const lessonLogicHandler = {
     getMode,
     changeCollection,
     purgeLesson,
-    isSkippable
+    // isSkippable
 }
