@@ -1,25 +1,47 @@
 import autocomplete from 'autocompleter';
+import { getAutocompleteBy } from 'api/inat/inat';
 
-export const inatAutocomplete = input => {
+// https://github.com/kraaden/autocomplete
+
+export const inatAutocomplete = (input, type, container, rb) => {
+
+    async function getUserSuggestions(text) {
+        const users = await getAutocompleteBy(text, 'users');
+        return users.results.map(user => {
+            return { label: user.login_autocomplete, value: user.id };
+        });
+    }
     
-    var countries = [
-        { label: 'United Kingdom', value: 'UK' },
-        { label: 'United States', value: 'US' },
-        { label: 'United Gardens', value: 'UG' },
-        { label: 'United Nowhere', value: 'UN' },
-        { label: 'United Lost', value: 'UL' },
-    ];
+
+    async function getPlaceSuggestions(text) {
+        const users = await getAutocompleteBy(text, 'places');
+        return users.results.map(place => {
+            return { label: place.display_name, value: place.id };
+        });
+    }
     
     autocomplete({
         input: input,
         fetch: function(text, update) {
-            text = text.toLowerCase();
-            // you can also use AJAX requests instead of preloaded data
-            var suggestions = countries.filter(n => n.label.toLowerCase().startsWith(text))
-            update(suggestions);
+            switch(type) {
+                case 'users':
+                    getUserSuggestions(text).then(users => {
+                        update(users);
+                    });
+                    break;
+                case 'places':
+                    getPlaceSuggestions(text).then(places => {
+                        update(places);
+                    });
+                break;
+            }           
+
         },
         onSelect: function(item) {
-            alert(item.value); // will display 'US' or 'UK'
-        }
+            input.value = item.label;
+            input.name = item.value;
+        },
+        container: container,
+        rb: rb
     });
 };

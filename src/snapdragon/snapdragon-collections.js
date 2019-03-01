@@ -466,8 +466,8 @@ export const beginnersLichenology = {
 export const snapdragonCollections = [
     localSpecies,
     arrabidaSpecies,
-    monsantoSpecies,
-    // useriNatSpecies
+    // monsantoSpecies,
+    useriNatSpecies
     // kitchenGarden,
     // rhsTrees,
     // commonBirds,

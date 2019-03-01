@@ -1,8 +1,9 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { actions } from 'redux/actions/action-creators';
-import { getPlace, getIPLocation } from 'geo/geo';
+import { getPlace } from 'geo/geo';
 import { rbEventHandler } from 'ui/create-guide-modal/common/rb-event-handler';
 import locationsTemplate from 'ui/create-guide-modal/locations-list-template.html';
+import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 
 export const renderLocation = (modal, config, createGuide) => {
 
@@ -59,9 +60,19 @@ export const renderLocation = (modal, config, createGuide) => {
 
     setLocationBtn.addEventListener('click', handleSetLocation);
 
-    const userLocationInput = modal.querySelector('.js-user-location');
-    
-    const userLocationRB = modal.querySelectorAll('.btn.btn-secondary')[1];
+    const userLocationInput = modal.querySelector('#inat-place');
+
+    userLocationInput.addEventListener('keyup', event => {
+        inatAutocomplete(userLocationInput, 'places', 'inat-place-autocomplete', 'user');
+    });
+
+    const userLocationRB = modal.querySelector('#user');
+
+    userLocationRB.addEventListener('click', event => {
+        config.guide.place = { name: userLocationInput.value, id: '3', type: 'places' };
+        userLocation = userLocationInput.value;
+        config.guide.userLocation = userLocation;
+    });
 
     if(userLocation) {
         userLocationInput.value = userLocation;
@@ -78,18 +89,6 @@ export const renderLocation = (modal, config, createGuide) => {
             saveYourChangesBtn.disabled = true;
         });
     }      
-
-    userLocationInput.addEventListener('keyup', event => {
-
-        if(userLocationInput.value.length > 1) {
-            userLocationRB.classList.remove('disabled');
-        } else {
-            userLocationRB.classList.add('disabled');
-        }
-
-        userLocation = userLocationInput.value;
-        config.guide.userLocation = userLocation;
-    });
 
     locationTypes.forEach(type => type.addEventListener('click', event => {        
         

@@ -103,6 +103,23 @@ export const renderPlace = (modal, config, collections, createGuide) => {
     
     slider.addEventListener('change', updateSlider);
 
-    inatAutocomplete(modal.querySelector('#inat-place'));
-    inatAutocomplete(modal.querySelector('#inat-id'));
+    const inatPlace = modal.querySelector('#inat-place');
+
+    inatPlace.addEventListener('keyup', event => {
+        inatAutocomplete(inatPlace, 'places', 'inat-place-autocomplete', 'id-3');
+    });
+
+    modal.querySelector('#id-3').addEventListener('click', event => {
+        config.guide.place = { name: inatPlace.value, id: inatPlace.name, type: 'places' };
+    });
+
+    const inatUserId = modal.querySelector('#inat-user-id');
+
+    inatUserId.addEventListener('keyup', event => {        
+        inatAutocomplete(inatUserId, 'users', 'inat-user-id-autocomplete', 'id-4');
+    });
+
+    modal.querySelector('#id-4').addEventListener('click', event => {
+        config.guide.place = { name: inatUserId.value, id: inatUserId.name, type: 'users' };
+    });
 };

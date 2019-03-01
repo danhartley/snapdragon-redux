@@ -146,3 +146,11 @@ export async function getHistogram(item, placeId) {
     const json = await response.json();
     return json;
 }
+
+export async function getAutocompleteBy(q, by) {
+
+    const url = `https://api.inaturalist.org/v1/${by}/autocomplete?q=${q}`;
+    const response = await fetch(url);
+    const json = await response.json();
+    return json;
+}

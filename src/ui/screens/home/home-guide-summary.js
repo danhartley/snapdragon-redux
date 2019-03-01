@@ -23,16 +23,18 @@ export const renderGuideSummary = (config, parent) => {
 
     widgetLink.addEventListener('click', event => {
 
+        if(config.guide.place && config.guide.place.type === 'users') return;
+
         document.querySelector('#iNatWidgetModal .modal-header').innerHTML = 
         config.guide.iconicTaxa.length > 0
             ? `iNaturalist species observed within ${range}km of ${place} filtered by <span class="toUpperCase">${taxa}</span>`
             : `iNaturalist species observed within ${range}km of ${place}`;
 
-        let params = collection.iNatWidget;
+        let params = collection ? collection.iNatWidget : config.guide.place.id;
         if(config.guide.iconicTaxa.length > 0) {
-            params += `?taxon=${taxa}`;
+            params += `?taxon=${config.guide.iconicTaxa.map(taxon => taxon.id).join(',')}`;
         }
-        const widget = `<iframe width="100%" height="500" scrolling="auto" src="https://www.inaturalist.org/places/guide_widget/${params}"></iframe>`
+        const widget = `<iframe width="100%" height="500" scrolling="auto" src="https://www.inaturalist.org/places/guide_widget/${params}"></iframe>`;
         document.querySelector('#iNatWidgetModal .modal-body').innerHTML = widget;
     });
 };

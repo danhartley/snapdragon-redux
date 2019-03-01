@@ -368,6 +368,7 @@
 
     .user-location, .inat-user {
         display: inline-flex;
+        align-items: center;
     }
 
     .user-location label, .inat-user label {
@@ -418,6 +419,8 @@
 
     .create-guide-action .range-slider {
         margin: 0 0 .75rem 1.75rem;
+        background-color: var(--snap-dd-language-bg-active);
+        padding: .25rem;
     }
 
     .create-guide-action .range-slider.disabled {
@@ -565,13 +568,23 @@
         font-size: 2rem;
     }
 
-    #inat-place-autocomplete {
+    #inat-user-id-autocomplete, #inat-place-autocomplete {
         z-index: 9999;
         position: absolute;
         margin: 2rem 0 0 0;
         padding: 0 .25rem;
-        color: rgb(250, 250, 250);
-        letter-spacing: .03rem;
-        background-color: var(--secondary);
+        color: var(--snap-modal-title);
+        background-color: rgb(250, 250, 250);
+        letter-spacing: .04rem;
+        border: .05rem solid lightgray;
+    }
+
+    #inat-user-id-autocomplete .selected, #inat-place-autocomplete .selected {
+        color: var(--snap-dd-non-taxa-bg-hover);
+        background-color: var(--snap-text-medium-dark);
+    }
+
+    #inat-place, #inat-user-id {
+        width: 20rem;
     }
 }

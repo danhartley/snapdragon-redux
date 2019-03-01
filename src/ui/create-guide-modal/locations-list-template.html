@@ -1,12 +1,21 @@
-<div class="btn-group btn-group-toggle lesson-type" data-toggle="buttons">
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
     <label class="btn btn-secondary">
         <div id="auto"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="location" value="" autocomplete="off"> <span class="auto-location js-auto-location"></span><button class="btn btn-modal js-set-location-btn"></button></div>
     </label>
     <div class="guide-text">Or enter a place, town, country, etc.</div>
-    <div class="user-location">
+    <!-- <div class="user-location">
         <label class="btn btn-secondary">
             <div id="user"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="location" value="" autocomplete="off"></div>
         </label>
         <input type="text" class="js-user-location">
+    </div> -->
+    <div class="inat-user">
+        <label class="btn btn-secondary">
+            <div id="user"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="location" value="" autocomplete="off"></div>
+        </label>
+        <div>
+            <div><input id="inat-place" type="text"><div>iNaturalist Place</div></div>
+            <div class="hide-empty" id="inat-place-autocomplete"></div>
+        </div>
     </div>
 </div>
