@@ -8,7 +8,7 @@ import { collections } from 'snapdragon/eol-collections';
 import { getLocation } from 'geo/geo';
 
 async function getItems(collection, config) {
-    if(collection.providerId === 3) {
+    if(collection.providerId === 1) {
         const collectionIsUnchanged = 
             collection.items && collection.items.length > 0 && collection.items[0].collectionId === collection.id && 
             collection.speciesRange === config.speciesRange &&
@@ -22,8 +22,9 @@ async function getItems(collection, config) {
             const latitude = coordinates['0'] || coordinates.lat;
             const longitude = coordinates['1'] || coordinates.long;
             const inatConfig = {latitude, longitude};
-            if(collection.id !== 1) inatConfig.placeId = collection.placeId;
-            if(collection.id === 4) inatConfig.userId = config.inatId || collection.userId;
+            // if(collection.id !== 1) inatConfig.placeId = collection.placeId;
+            // if(collection.id === 4) inatConfig.userId = config.inatId || collection.userId;
+            inatConfig.locationType = config.guide.locationType;
             return getInatSpecies(inatConfig, config).then(species => {
                 const items = new Set(species.filter(item => item));
                 return [ ...items ];

@@ -23,7 +23,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     
     speciesPendingSpinner(config);
 
-    if(collection.id === 0) return;
+    if(collection.id === 0) return; // try with lesson not ready...
 
     config.collection = { id: collection.id };
 

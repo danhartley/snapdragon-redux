@@ -23,7 +23,7 @@ class CreateGuide {
         this.currentStep = step;
         
         this.steps = [
-            { number: 1, title: 'Create Guide', description: 'Location', nextStep: 'Select species', disabled: true },
+            { number: 1, title: 'Create Guide', description: 'Place', nextStep: 'Select species', disabled: true },
             // { number: 2, title: 'Create Guide', description: 'Place', nextStep: 'Select species', disabled: true },
             { number: 2, title: 'Create Guide', description: 'Species', nextStep: 'Select guide type', disabled: true },
             { number: 3, title: 'Create Guide', description: 'Guide', nextStep: 'Start Guide', disabled: true },
@@ -67,11 +67,12 @@ class CreateGuide {
         renderTemplate({}, template.content, parent);
 
         switch(description) {
-            case 'Location':                                
-                renderLocation(this.modal, config, this);      
-                break;
+            // case 'Location':                                
+            //     renderLocation(this.modal, config, this);      
+            //     break;
             case 'Place':
-                renderPlace(this.modal, config, collections, this);
+                renderLocation(this.modal, config, this);      
+                // renderPlace(this.modal, config, collections, this);
                 break;
             case 'Species':
                 renderCategories(this.modal, config, this);

@@ -8,7 +8,7 @@ import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 export const renderLocation = (modal, config, createGuide) => {
 
     const guideTxt = modal.querySelector('.guide-text');
-    guideTxt.innerHTML = 'Please provide your location';
+    guideTxt.innerHTML = 'Choose a place';
     
     const chosen = modal.querySelector('.js-chosen span:nth-child(2)');
     const saveYourChangesBtn = createGuide.save(config, chosen, 'LOCATION');
@@ -41,12 +41,6 @@ export const renderLocation = (modal, config, createGuide) => {
     const setLocationBtn = modal.querySelector('.js-set-location-btn');
     setLocationBtn.innerHTML = authorisedLocation ? 'Reset your location' : 'Pinpoint your location';
 
-    if(config.guide.locationType) {
-        chosen.innerHTML = config.guide.locationType === 'user'
-            ? config.guide.userLocation
-            : config.guide.autoLocation;
-    }
-
     async function handleSetLocation(event) {
         event.stopPropagation();
         setLocationBtn.innerHTML = 'Updating location...'
@@ -60,19 +54,55 @@ export const renderLocation = (modal, config, createGuide) => {
 
     setLocationBtn.addEventListener('click', handleSetLocation);
 
+    const toggleSpeciesRange = isRangeSensitive => {
+        const rangeSlider = modal.querySelector('.range-slider');
+        isRangeSensitive 
+            ? rangeSlider.classList.remove('disabled') 
+            : rangeSlider.classList.add('disabled');
+    };
+
+    if(config.guide.locationType) {
+        chosen.innerHTML = config.guide.locationType === 'user'
+            ? config.guide.userLocation
+            : config.guide.autoLocation;
+        
+        config.guide.locationType === 'user'
+            ? toggleSpeciesRange(false)
+            : toggleSpeciesRange(true);
+    }
+
     const userLocationInput = modal.querySelector('#inat-place');
 
     userLocationInput.addEventListener('keyup', event => {
-        inatAutocomplete(userLocationInput, 'places', 'inat-place-autocomplete', 'user');
+        inatAutocomplete(userLocationInput, 'places', 'inat-place-autocomplete', 'user');        
+    });
+
+    userLocationInput.addEventListener('focus', event => {
+        toggleSpeciesRange(false);
     });
 
     const userLocationRB = modal.querySelector('#user');
 
-    userLocationRB.addEventListener('click', event => {
-        config.guide.place = { name: userLocationInput.value, id: '3', type: 'places' };
-        userLocation = userLocationInput.value;
-        config.guide.userLocation = userLocation;
-    });
+    // userLocationRB.addEventListener('click', event => {
+    //     config.guide.place = { name: userLocationInput.value, id: '2', type: 'places' };
+    //     userLocation = userLocationInput.value;
+    //     config.guide.userLocation = userLocation;    
+    //     toggleSpeciesRange(false); 
+    //     locationType = 'user';
+    //     config.guide.locationType = locationType;
+    //     rbEventHandler(modal, event);
+    //     saveYourChangesBtn.disabled = false;
+    // });
+
+    // const autoLocationRB = modal.querySelector('#auto');
+
+    // autoLocationRB.addEventListener('click', event => {
+    //     toggleSpeciesRange(true); 
+    //     locationType = 'auto';
+    //     config.guide.locationType = locationType;
+    //     rbEventHandler(modal, event);
+    //     saveYourChangesBtn.disabled = false;
+    // });
 
     if(userLocation) {
         userLocationInput.value = userLocation;
@@ -85,7 +115,7 @@ export const renderLocation = (modal, config, createGuide) => {
 
     if(locationType) {
         setTimeout(() => {
-            modal.querySelector(`#${locationType}`).click();   
+            modal.querySelector(`#${locationType}`).click();
             saveYourChangesBtn.disabled = true;
         });
     }      
@@ -96,8 +126,35 @@ export const renderLocation = (modal, config, createGuide) => {
         if(rb) {
             locationType = rb.id;
             config.guide.locationType = locationType;
+            if(locationType === 'user') {
+                toggleSpeciesRange(false);
+                config.guide.place = { name: userLocationInput.value, id: '2', type: 'places' };
+                userLocation = userLocationInput.value;
+                config.guide.userLocation = userLocation;
+            } else {
+                toggleSpeciesRange(true);
+            }
         }
 
         saveYourChangesBtn.disabled = false;
     }));
+
+
+    const txt = modal.querySelector('.js-range');
+    let range = config.guide.speciesRange;
+
+    txt.innerHTML = `Include species within a radius of <span class="underline-link">${range}km</span>`;
+
+    modal.querySelector('.js-set-range-input').value = range;
+
+    const slider = modal.querySelector('.js-set-range-input');
+    
+    const updateSlider  = event => {
+        range = event.target.value;
+        config.guide.speciesRange = range;
+        actions.boundUpdateConfig(config);        
+        txt.innerHTML = `Include species within a radius of <span class="underline-link">${range}km</span>`;
+    };
+    
+    slider.addEventListener('change', updateSlider);
 };

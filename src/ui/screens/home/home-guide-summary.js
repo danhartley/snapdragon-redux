@@ -15,6 +15,8 @@ export const renderGuideSummary = (config, parent) => {
 
     renderTemplate({location, place, taxa, guide}, template.content, parent);
 
+    return;
+
     const widgetLink = document.querySelector('.js-iNatWidget');
 
     widgetLink.innerHTML = `<span data-toggle="modal" data-target="#iNatWidgetModal" class="underline-link">${place}</span><span class="species-range">within ${range}km range</span>`;

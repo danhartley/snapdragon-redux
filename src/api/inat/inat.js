@@ -27,6 +27,7 @@ export const getInatSpecies = (inatConfig, config) => {
     };
 
     async function getInatObservations(latitude, longitude, config) {
+        console.log('getInatObservations with radius');
         const lat = latitude || `38.7155762`;
         const lng = longitude || `-9.163009899999999`;
         const iconicTaxa = getIconicTaxa(config);
@@ -42,6 +43,7 @@ export const getInatSpecies = (inatConfig, config) => {
     }
 
     async function getInatPlaceObservations(placeId, config) {
+        console.log('getInatPlaceObservations without radius');
         const iconicTaxa = getIconicTaxa(config);
         const perPage = 200;
         const endpoint = 'observations/species_counts';
@@ -66,11 +68,11 @@ export const getInatSpecies = (inatConfig, config) => {
 
     let observations;
 
-    const placeId = inatConfig.placeId;
-    const userId = inatConfig.userId;
+    // const placeId = inatConfig.placeId;
+    // const userId = inatConfig.userId;
     const taxonNames = [];
 
-    if(userId) {
+    if(inatConfig.locationType === 'auto') {
         observations = getInatUserObservations(userId, config).then(observations => {
             return observations.map(observation => {
                 if(R.contains(observation.taxon.name, names)) {
@@ -83,7 +85,7 @@ export const getInatSpecies = (inatConfig, config) => {
         console.log(taxonNames);
         return observations;
     }
-    else if(placeId) {
+    else if(inatConfig.locationType === 'user') {
         observations = getInatPlaceObservations(placeId, config).then(observations => {
             return observations.map(observation => {
                 if(R.contains(observation.taxon.name, names)) {

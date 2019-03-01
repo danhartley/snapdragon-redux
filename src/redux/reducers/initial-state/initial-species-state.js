@@ -9,54 +9,54 @@ import { familyProps } from 'redux/reducers/initial-state/species-state/species-
 
 const collections = snapdragonCollections;
 
-const extendCollection = selectedCollection => {
+// const extendCollection = selectedCollection => {
 
-    const { config } = store.getState();
+//     const { config } = store.getState();
 
-    const moduleSize = selectedCollection.moduleSize || config.moduleSize;
+//     const moduleSize = selectedCollection.moduleSize || config.moduleSize;
 
-    let prepCollection = selectedCollection.type === 'skill'
-        ? R.pipe(utils.shuffleArray)
-        : R.pipe(helpers.extractScientificNames);
+//     let prepCollection = selectedCollection.type === 'skill'
+//         ? R.pipe(utils.shuffleArray)
+//         : R.pipe(helpers.extractScientificNames);
 
-    const items = utils.sortBy(prepCollection(selectedCollection.items), 'snapIndex').filter(item => {
-        return item.isDeselected === undefined || !item.isDeselected
-    });
+//     const items = utils.sortBy(prepCollection(selectedCollection.items), 'snapIndex').filter(item => {
+//         return item.isDeselected === undefined || !item.isDeselected
+//     });
     
-    const rounds = items.length / moduleSize;
+//     const rounds = items.length / moduleSize;
 
-    const families = familyProps.getFamilyNames(items);
-    const familyStats = familyProps.getFamilyStats(items);
-    const speciesNames = items.map(item => item.name);
-    const speciesVernacularNames = itemProperties.vernacularNamesForItems(items, config);
+//     const families = familyProps.getFamilyNames(items);
+//     const familyStats = familyProps.getFamilyStats(items);
+//     const speciesNames = items.map(item => item.name);
+//     const speciesVernacularNames = itemProperties.vernacularNamesForItems(items, config);
 
-    const collection = {
-        id: selectedCollection.id,
-        name: selectedCollection.name,
-        items : items,
-        itemIndex: 0,
-        currentRound: 1,
-        moduleSize: moduleSize,
-        rounds : items.length % moduleSize === 0 ? rounds : rounds === 1 ? 1 : Math.floor(rounds) + 1,
-        families: families,
-        familyStats: familyStats,
-        speciesNames: speciesNames,
-        speciesVernacularNames: speciesVernacularNames
-     };
+//     const collection = {
+//         id: selectedCollection.id,
+//         name: selectedCollection.name,
+//         items : items,
+//         itemIndex: 0,
+//         currentRound: 1,
+//         moduleSize: moduleSize,
+//         rounds : items.length % moduleSize === 0 ? rounds : rounds === 1 ? 1 : Math.floor(rounds) + 1,
+//         families: families,
+//         familyStats: familyStats,
+//         speciesNames: speciesNames,
+//         speciesVernacularNames: speciesVernacularNames
+//      };
 
-     collection.items.forEach(item => {
-        item.vernacularNames = itemProperties.getVernacularNames(item, config);
-        item.vernacularName = itemProperties.getVernacularName(item, config);
-     });
+//      collection.items.forEach(item => {
+//         item.vernacularNames = itemProperties.getVernacularNames(item, config);
+//         item.vernacularName = itemProperties.getVernacularName(item, config);
+//      });
 
-     collections.forEach(c => {
-        if(c.id === collection.id) {
-            c = collection;
-        }
-    });
+//      collections.forEach(c => {
+//         if(c.id === collection.id) {
+//             c = collection;
+//         }
+//     });
 
-     return collection;
-};
+//      return collection;
+// };
 
 export const speciesStateHelper = {
     collections

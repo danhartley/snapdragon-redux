@@ -8,7 +8,7 @@ export const renderGuides = (modal, config, createGuide) => {
     const chosen = modal.querySelector('.js-chosen span:nth-child(2)');
     const saveYourChangesBtn = createGuide.save(config, chosen, 'GUIDE');
 
-    guideTxt.innerHTML = 'What do you want to concentrate on';
+    guideTxt.innerHTML = 'And the type of guide you want';
 
     if(config.guide.studyMethod) {
         setTimeout(() => {

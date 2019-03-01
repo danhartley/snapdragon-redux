@@ -326,10 +326,10 @@
         text-transform: uppercase;
         font-size: .9rem;
     }
-
+/* 
     #createGuide .modal-body .location button {
         margin: 0 1rem 0 0;
-    }
+    } */
 
     #createGuide .modal-body button {
         color: rgb(35,35,35);     
@@ -369,6 +369,7 @@
     .user-location, .inat-user {
         display: inline-flex;
         align-items: center;
+        margin: .5rem 0;
     }
 
     .user-location label, .inat-user label {
@@ -418,8 +419,7 @@
     }
 
     .create-guide-action .range-slider {
-        margin: 0 0 .75rem 1.75rem;
-        background-color: var(--snap-dd-language-bg-active);
+        margin: .5rem 0 .75rem 1.75rem;
         padding: .25rem;
     }
 
@@ -431,6 +431,11 @@
         margin: 0 .5rem 0 0;
     }
 
+    .create-guide-action .range-slider > span:nth-child(2) {
+        border: .05rem solid lightgray;
+        padding: .5rem;
+    }
+
     .create-guide-action .set-range-input {
         width: 15rem;
         cursor: pointer;
@@ -439,6 +444,11 @@
     .create-guide-action .range-slider.disabled .set-range-input {
         pointer-events: none;
     }
+
+    /* .create-guide-action .range-slider .emphasis {
+        font-size: 1.1rem;
+        color: var(--snap-link);
+    } */
 
     .home-container {
         padding: 0 .5rem;

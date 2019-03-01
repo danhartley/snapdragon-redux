@@ -463,11 +463,34 @@ export const beginnersLichenology = {
     index: 5
 };
 
+const locationSpecies = {
+    id: 1,
+    providerId: 1,
+    rangeSensitive: true,
+    glossary: ['plantae', 'common', 'fungi'],
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 101,
+    moduleSize: 4,
+};
+
+const placeSpecies = {
+    id: 2, 
+    providerId: 1,
+    rangeSensitive: false,
+    rangeSensitive: true,
+    glossary: ['plantae', 'common', 'fungi'],
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 101,
+    moduleSize: 4,
+};
+
 export const snapdragonCollections = [
-    localSpecies,
-    arrabidaSpecies,
+    locationSpecies,
+    placeSpecies
+    // localSpecies,
+    // arrabidaSpecies,
     // monsantoSpecies,
-    useriNatSpecies
+    // useriNatSpecies
     // kitchenGarden,
     // rhsTrees,
     // commonBirds,
