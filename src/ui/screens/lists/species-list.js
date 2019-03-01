@@ -12,7 +12,6 @@ import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-table-no-scores';
 import { itemHandler } from 'ui/helpers/item-handler';
-// import { listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
 import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
@@ -23,7 +22,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     
     speciesPendingSpinner(config);
 
-    if(collection.id === 0) return; // try with lesson not ready...
+    if(!config.guide.ready || !collection) return;
 
     config.collection = { id: collection.id };
 
@@ -175,7 +174,6 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     else {      
         function callback(collection, config, traits, enums) {
             return function () {
-                // collection.items = utils.sortAlphabeticallyBy(collection.items, 'vernacularName');
                 collection.items = utils.sortBy(collection.items, 'observationCount', 'desc');
                 buildTable(collection, config, traits, enums);
                 handleUserEvents();
@@ -186,11 +184,6 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
         itemHandler(collection, config, counter, callback(collection, config, traits, enums));
     }
 };
-
-// listenToRangeUpdate((filters, config) => {
-//     const { collection } = store.getState();
-//     renderSpeciesCollectionList(collection, false);
-// });
 
 const listeners = [];
 

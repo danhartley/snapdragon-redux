@@ -49,7 +49,7 @@ setTimeout( () => {
     async function getApproximateLocation() {
         const ipLocation = await getIPLocation(config);
         config.ipLocation = ipLocation;
-        config.guide.autoLocation = ipLocation.country_name;
+        config.guide.locationLongLat = ipLocation.country_name;
         config.guide.place.name = ipLocation.country_name;
         actions.boundUpdateConfig(config);
     }

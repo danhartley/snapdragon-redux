@@ -15,8 +15,9 @@ export const renderLocation = (modal, config, createGuide) => {
 
     let authorisedLocation = config.place ? config.place.longLocation : null;        
     let ipLocation;
-    let userLocation = config.guide.userLocation;
-    let autoLocation = config.guide.autoLocation;
+    let locationPlace = config.guide.locationPlace;
+    let locationLongLat = config.guide.locationLongLat;
+    let autocompleteRef;
 
     const template = document.createElement('template');
     template.innerHTML = locationsTemplate;
@@ -25,34 +26,35 @@ export const renderLocation = (modal, config, createGuide) => {
     renderTemplate({}, template.content, parent);
 
     const locationTypes = modal.querySelectorAll('.btn.btn-secondary div');
-    const autoLocationTxt = modal.querySelector('.js-auto-location');
+    const locationLongLatTxt = modal.querySelector('.js-auto-location');
 
-    async function handleAutoLocation() {        
+    async function handleAutoLocationLongLat() {        
         ipLocation = config.ipLocation;
         config.ipLocation = ipLocation;
         actions.boundUpdateConfig(config);
-        autoLocation = authorisedLocation || ipLocation.country_name;
-        autoLocationTxt.innerHTML = autoLocation;
-        config.guide.autoLocation = autoLocation;
+        locationLongLat = authorisedLocation || ipLocation.country_name;
+        locationLongLatTxt.innerHTML = locationLongLat;
+        config.guide.locationLongLat = locationLongLat;
     }
 
-    handleAutoLocation();
+    handleAutoLocationLongLat();
 
-    const setLocationBtn = modal.querySelector('.js-set-location-btn');
-    setLocationBtn.innerHTML = authorisedLocation ? 'Reset your location' : 'Pinpoint your location';
+    const setLocationLongLatBtn = modal.querySelector('.js-set-location-btn');
+    setLocationLongLatBtn.innerHTML = authorisedLocation ? 'Reset your location' : 'Pinpoint your location';
 
-    async function handleSetLocation(event) {
+    async function handleSetLocationLongLat(event) {
         event.stopPropagation();
-        setLocationBtn.innerHTML = 'Updating location...'
+        setLocationLongLatBtn.innerHTML = 'Updating location...'
         const place = await getPlace(config, true);
         config.place = place;
-        config.guide.autoLocation = place.longLocation;
+        config.guide.locationLongLat = place.longLocation;
         actions.boundUpdateConfig(config);
-        autoLocationTxt.innerHTML = place.longLocation;
-        setLocationBtn.innerHTML = 'Reset your location';
+        locationLongLatTxt.innerHTML = place.longLocation;
+        setLocationLongLatBtn.innerHTML = 'Reset your location';
+        saveYourChangesBtn.disabled = false;
     }
 
-    setLocationBtn.addEventListener('click', handleSetLocation);
+    setLocationLongLatBtn.addEventListener('click', handleSetLocationLongLat);
 
     const toggleSpeciesRange = isRangeSensitive => {
         const rangeSlider = modal.querySelector('.range-slider');
@@ -62,53 +64,32 @@ export const renderLocation = (modal, config, createGuide) => {
     };
 
     if(config.guide.locationType) {
-        chosen.innerHTML = config.guide.locationType === 'user'
-            ? config.guide.userLocation
-            : config.guide.autoLocation;
+        chosen.innerHTML = config.guide.locationType === 'place'
+            ? config.guide.locationPlace
+            : config.guide.locationLongLat;
         
-        config.guide.locationType === 'user'
+        config.guide.locationType === 'place'
             ? toggleSpeciesRange(false)
             : toggleSpeciesRange(true);
     }
 
-    const userLocationInput = modal.querySelector('#inat-place');
+    const locationPlaceInput = modal.querySelector('#inat-place');
 
-    userLocationInput.addEventListener('keyup', event => {
-        inatAutocomplete(userLocationInput, 'places', 'inat-place-autocomplete', 'user');        
+    locationPlaceInput.addEventListener('keyup', event => {
+        autocompleteRef = inatAutocomplete(locationPlaceInput, 'places', 'inat-place-autocomplete', 'place');
     });
 
-    userLocationInput.addEventListener('focus', event => {
+    locationPlaceInput.addEventListener('focus', event => {
         toggleSpeciesRange(false);
     });
 
-    const userLocationRB = modal.querySelector('#user');
+    const locationPlaceRB = modal.querySelector('#place');
 
-    // userLocationRB.addEventListener('click', event => {
-    //     config.guide.place = { name: userLocationInput.value, id: '2', type: 'places' };
-    //     userLocation = userLocationInput.value;
-    //     config.guide.userLocation = userLocation;    
-    //     toggleSpeciesRange(false); 
-    //     locationType = 'user';
-    //     config.guide.locationType = locationType;
-    //     rbEventHandler(modal, event);
-    //     saveYourChangesBtn.disabled = false;
-    // });
-
-    // const autoLocationRB = modal.querySelector('#auto');
-
-    // autoLocationRB.addEventListener('click', event => {
-    //     toggleSpeciesRange(true); 
-    //     locationType = 'auto';
-    //     config.guide.locationType = locationType;
-    //     rbEventHandler(modal, event);
-    //     saveYourChangesBtn.disabled = false;
-    // });
-
-    if(userLocation) {
-        userLocationInput.value = userLocation;
-        userLocationRB.classList.remove('disabled');          
+    if(locationPlace) {
+        locationPlaceInput.value = locationPlace;
+        locationPlaceRB.classList.remove('disabled');          
     } else {
-        if(userLocationInput.value === '') userLocationRB.classList.add('disabled');
+        if(locationPlaceInput.value === '') locationPlaceRB.classList.add('disabled');
     }
     
     let locationType = config.guide.locationType;
@@ -126,13 +107,15 @@ export const renderLocation = (modal, config, createGuide) => {
         if(rb) {
             locationType = rb.id;
             config.guide.locationType = locationType;
-            if(locationType === 'user') {
+            if(locationType === 'place') {
                 toggleSpeciesRange(false);
-                config.guide.place = { name: userLocationInput.value, id: '2', type: 'places' };
-                userLocation = userLocationInput.value;
-                config.guide.userLocation = userLocation;
+                config.guide.place = { name: locationPlaceInput.value, id: locationPlaceInput.name, type: 'places' };
+                locationPlace = locationPlaceInput.value;
+                config.guide.locationPlace = locationPlace;
+                config.collection.id = 2;
             } else {
                 toggleSpeciesRange(true);
+                config.collection.id = 1;
             }
         }
 
@@ -157,4 +140,9 @@ export const renderLocation = (modal, config, createGuide) => {
     };
     
     slider.addEventListener('change', updateSlider);
+
+    createGuide.nextStepAction.addEventListener('click', event => {
+        if(autocompleteRef)
+            autocompleteRef.destroy();
+    });
 };

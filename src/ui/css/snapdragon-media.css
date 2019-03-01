@@ -366,42 +366,40 @@
         color: var(--snap-text-dark);
     }
 
-    .user-location, .inat-user {
+    .inat-place {
         display: inline-flex;
         align-items: center;
         margin: .5rem 0;
     }
 
-    .user-location label, .inat-user label {
+    .inat-place label {
         width: 2rem;
         float: left;
     }
     
-    .user-location label div, .inat-user label div {
+    .inat-place label div {
         width: .5rem;
     }
 
-    .user-location input[type="radio"],
-    .inat-user input[type="radio"],
+    .inat-place input[type="radio"],
     .btn-group.btn-group-toggle.place input[type="radio"] {
         position: absolute;
         clip: rect(0,0,0,0);
         pointer-events: none;
     }
     
-    .user-location input[type="text"] 
-    .inat-user input[type="text"] {
+    .inat-place input[type="text"] {
         margin: .5rem 0 0 0;
         height: 1.75rem;
         color: var(--snap-text-dark);
     }
 
-    .inat-user > div {
+    .inat-place > div {
         display: flex;
         flex-direction: column;
     }
 
-    .inat-user > div div:nth-child(1) {
+    .inat-place > div div:nth-child(1) {
         display: flex;
         align-items: center;
     }
@@ -578,7 +576,7 @@
         font-size: 2rem;
     }
 
-    #inat-user-id-autocomplete, #inat-place-autocomplete {
+    #inat-place-id-autocomplete, #inat-place-autocomplete {
         z-index: 9999;
         position: absolute;
         margin: 2rem 0 0 0;
@@ -589,12 +587,12 @@
         border: .05rem solid lightgray;
     }
 
-    #inat-user-id-autocomplete .selected, #inat-place-autocomplete .selected {
+    #inat-place-id-autocomplete .selected, #inat-place-autocomplete .selected {
         color: var(--snap-dd-non-taxa-bg-hover);
         background-color: var(--snap-text-medium-dark);
     }
 
-    #inat-place, #inat-user-id {
+    #inat-place, #inat-place-id {
         width: 20rem;
     }
 }

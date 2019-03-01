@@ -17,14 +17,9 @@ export const saveButton = (parent, config, chosen, step, createGuide) => {
             switch(step) {
                 case 'LOCATION':
                     if(config.guide.locationType) {
-                        chosen.innerHTML = config.guide.locationType === 'user'
-                            ? config.guide.userLocation
-                            : config.guide.autoLocation;
-                    }
-                    break;
-                case 'PLACE':
-                    if(config.guide.place) {
-                        chosen.innerHTML = config.guide.place.name;                        
+                        chosen.innerHTML = config.guide.locationType === 'place'
+                            ? config.guide.locationPlace
+                            : config.guide.locationLongLat;
                     }
                     break;
                 case 'GUIDE':

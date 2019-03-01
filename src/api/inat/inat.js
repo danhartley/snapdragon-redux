@@ -2,7 +2,6 @@ import * as R from 'ramda';
 
 import { species } from 'api/species';
 import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
-// import { listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
 
 export const getInatSpecies = (inatConfig, config) => {
   
@@ -42,10 +41,11 @@ export const getInatSpecies = (inatConfig, config) => {
         return await json.results;
     }
 
-    async function getInatPlaceObservations(placeId, config) {
+    async function getInatPlaceObservations(config) {
         console.log('getInatPlaceObservations without radius');
         const iconicTaxa = getIconicTaxa(config);
         const perPage = 200;
+        const placeId = config.guide.place.id;
         const endpoint = 'observations/species_counts';
         const url = `https://api.inaturalist.org/v1/${endpoint}?page=1&captive=false&hrank=species&rank=species&place_id=${placeId}&quality_grade=research&per_page=${perPage}&iconic_taxa=${iconicTaxa}`;
         const response = await fetch(url);
@@ -53,9 +53,10 @@ export const getInatSpecies = (inatConfig, config) => {
         return await json.results;
     }
 
-    async function getInatUserObservations(userId, config) {
+    async function getInatUserObservations(config) {
         const iconicTaxa = getIconicTaxa(config);
         const perPage = 200;
+        const userId = config.userId;
         const endpoint = 'observations/species_counts';
         const url = `https://api.inaturalist.org/v1/${endpoint}?page=1&captive=false&hrank=species&rank=species&user_id=${userId}&quality_grade=research&per_page=${perPage}&iconic_taxa=${iconicTaxa}`;
         const response = await fetch(url);
@@ -68,12 +69,10 @@ export const getInatSpecies = (inatConfig, config) => {
 
     let observations;
 
-    // const placeId = inatConfig.placeId;
-    // const userId = inatConfig.userId;
     const taxonNames = [];
 
-    if(inatConfig.locationType === 'auto') {
-        observations = getInatUserObservations(userId, config).then(observations => {
+    if(inatConfig.locationType === 'user') {
+        observations = getInatUserObservations(config).then(observations => {
             return observations.map(observation => {
                 if(R.contains(observation.taxon.name, names)) {
                     const item = { ...species.find(item => item.name === observation.taxon.name) };
@@ -82,11 +81,11 @@ export const getInatSpecies = (inatConfig, config) => {
                 taxonNames.push(observation.taxon.name);
             });
         });
-        console.log(taxonNames);
+        // console.log(taxonNames);
         return observations;
     }
-    else if(inatConfig.locationType === 'user') {
-        observations = getInatPlaceObservations(placeId, config).then(observations => {
+    else if(inatConfig.locationType === 'place') {
+        observations = getInatPlaceObservations(config).then(observations => {
             return observations.map(observation => {
                 if(R.contains(observation.taxon.name, names)) {
                     const item = { ...species.find(item => item.name === observation.taxon.name) };
@@ -97,7 +96,7 @@ export const getInatSpecies = (inatConfig, config) => {
         });
         console.log(taxonNames);
         return observations;
-    } else {
+    } else if(inatConfig.locationType === 'longLat') {
         observations = getInatObservations(latitude, longitude, config).then(observations => {
             return observations.map(observation => {
                 if(R.contains(observation.taxon.name, names)) {
@@ -105,7 +104,7 @@ export const getInatSpecies = (inatConfig, config) => {
                     return { ...item, observationCount: observation.taxon.observations_count, iconicTaxon: observation.taxon.iconic_taxon_name };
                 } 
                 else {
-                    console.log(observation.taxon.name);
+                    // console.log(observation.taxon.name);
                 }
             });
         });

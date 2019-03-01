@@ -97,7 +97,6 @@ class CreateGuide {
             this.currentStep = 0;
             this.nextStepActionTxt.setAttribute('data-dismiss','modal');
             config.guide.ready = true;
-            config.collection.id = config.guide.place.id;
             actions.boundUpdateConfig(config);
             return;
         };
@@ -146,7 +145,7 @@ export const createGuideHandler = (step) => {
 
     guide.createStep(step);
 
-    guide.nextStepAction.addEventListener('click', event => {        
+    guide.nextStepAction.addEventListener('click', event => {    
         guide.createStep(guide.getCurrentStep + 1, 'NEXT');
     });
 

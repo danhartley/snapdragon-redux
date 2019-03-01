@@ -22,8 +22,6 @@ async function getItems(collection, config) {
             const latitude = coordinates['0'] || coordinates.lat;
             const longitude = coordinates['1'] || coordinates.long;
             const inatConfig = {latitude, longitude};
-            // if(collection.id !== 1) inatConfig.placeId = collection.placeId;
-            // if(collection.id === 4) inatConfig.userId = config.inatId || collection.userId;
             inatConfig.locationType = config.guide.locationType;
             return getInatSpecies(inatConfig, config).then(species => {
                 const items = new Set(species.filter(item => item));
@@ -65,6 +63,7 @@ export async function itemHandler(collection, config, counter, callback) {
             collection.items = [ ...lepidoptera, ...noninsecta ];
         }
 
+        collection.name = config.guide.place.name;
         collection.items = collection.items.filter(i => i);
 
         collection.items.filter(item => item).forEach((item,index)=>{

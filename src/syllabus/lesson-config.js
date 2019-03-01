@@ -20,8 +20,9 @@ export const config = {
     ],
     guide: {
         iconicTaxa: [],
-        autoLocation: '',
-        locationType: 'auto',
+        locationLongLat: '',
+        locationPlace: '',
+        locationType: 'longLat',
         place: {
             id: 1,
             name: ''

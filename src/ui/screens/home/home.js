@@ -47,7 +47,7 @@ export const renderHome = () => {
         const id = parseInt(config.collection.id);
         const collection = collections.find(c => c.id === id);
         
-        renderSpeciesCollectionList(collection);         
+        renderSpeciesCollectionList(collection);
     };
 
     const lessonHandler = () => {

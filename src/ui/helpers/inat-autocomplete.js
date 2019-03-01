@@ -20,7 +20,7 @@ export const inatAutocomplete = (input, type, container, rb) => {
         });
     }
     
-    autocomplete({
+    const autocompleteRef = autocomplete({
         input: input,
         fetch: function(text, update) {
             switch(type) {
@@ -44,4 +44,6 @@ export const inatAutocomplete = (input, type, container, rb) => {
         container: container,
         rb: rb
     });
+
+    return autocompleteRef;
 };

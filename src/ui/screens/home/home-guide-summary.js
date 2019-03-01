@@ -4,7 +4,7 @@ import homeGuideTemplate from 'ui/screens/home/home-guide-summary-template.html'
 
 export const renderGuideSummary = (config, parent) => {
 
-    const location = config.guide.locationType === 'auto' ? config.guide.autoLocation : config.guide.userLocation;
+    const location = config.guide.locationType === 'longLat' ? config.guide.locationLongLat : config.guide.locationPlace;
     const place = config.guide.place.name;
     const range = config.guide.speciesRange;
     const taxa = config.guide.iconicTaxa.length > 0 ? config.guide.iconicTaxa.map(taxon => taxon.common).join(', ') : 'All species';
