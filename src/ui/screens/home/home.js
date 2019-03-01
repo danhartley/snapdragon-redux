@@ -63,10 +63,10 @@ export const renderHome = () => {
         lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);        
     };
 
-    const guidesummary = () => {
+    const guidesummary = (speciesCount) => {
         const parent = document.querySelector('.home-container .js-snapdragon-tag');
         parent.innerHTML = '';
-        renderGuideSummary(R.clone(config), parent);
+        renderGuideSummary(R.clone(config), parent, speciesCount);
         deleteLink.classList.remove('hide');            
     };
 
@@ -93,7 +93,7 @@ export const renderHome = () => {
             case 'RESUME-LESSON':
                 actionLink.removeAttribute('data-toggle');
                 actionLink.innerHTML = 'Resume';    
-                guidesummary();
+                guidesummary(collection.items.length);
                 actionLink.addEventListener('click', resumeLessonHandler);                
                 renderSpeciesCollectionList(collection);
                 break;
@@ -131,12 +131,12 @@ export const renderHome = () => {
         checkState(state);
     });
 
-
-    const handleBeginLessonState = counter => {        
+    const handleBeginLessonState = (counter, speciesCount) => {        
         if(!counter.isLessonPaused && counter.index === null) {
             actionLink.removeEventListener('click', previewHandler);
             state = 'BEGIN-LESSON';
             checkState(state);
+            guidesummary(speciesCount);
         }        
     };
 

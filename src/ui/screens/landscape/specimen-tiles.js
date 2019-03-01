@@ -14,7 +14,11 @@ export const renderSpecimenTiles = (collection) => {
 
     if(!item) return;
 
-    renderItemSpecimenTiles(item);
+    const { counter } = store.getState();
+
+    if(counter.index % 2 === 0) {
+        renderItemSpecimenTiles(item);
+    }
 };
 
 export const renderItemSpecimenTiles = item => {

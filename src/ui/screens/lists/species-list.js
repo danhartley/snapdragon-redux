@@ -178,7 +178,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                 buildTable(collection, config, traits, enums);
                 handleUserEvents();
                 const { counter } = store.getState();
-                listeners.forEach(listener => listener(counter));
+                listeners.forEach(listener => listener(counter, collection.items.length));
             }
         }
         itemHandler(collection, config, counter, callback(collection, config, traits, enums));
