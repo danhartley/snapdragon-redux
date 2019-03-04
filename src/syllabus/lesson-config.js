@@ -27,7 +27,8 @@ export const config = {
             id: 1,
             name: ''
         },
-        studyMethod: 'species_identification',
-        speciesRange: 10
+        studyMethod: 'quick_study',
+        speciesRange: 10,
+        ready: false
     },    
 };

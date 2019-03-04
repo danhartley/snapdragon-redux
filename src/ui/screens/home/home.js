@@ -27,10 +27,10 @@ export const renderHome = () => {
 
     renderTemplate({}, template.content, DOM.rightBody);
 
-    let state = config.collection.id === 0
+    let state = (config.collection.id === 0 || !config.guide.ready)
             ? 'MODAL' : (collection && collection.layoutCounter > 0)
                 ? 'RESUME-LESSON'
-                : 'PREVIEW-LESSON';
+                : 'PREPARE-LESSON';
 
     let actionLink = document.querySelector('.js-create-guide-link');
     const deleteLink = document.querySelector('.js-delete-guide-link');
@@ -42,7 +42,7 @@ export const renderHome = () => {
         createGuideHandler(step);
     };
 
-    const previewHandler = () => {
+    const prepareHandler = () => {
         const { config, collections } = store.getState();  
         const id = parseInt(config.collection.id);
         const collection = collections.find(c => c.id === id);
@@ -78,12 +78,12 @@ export const renderHome = () => {
                 actionLink.innerHTML = 'Create';
                 actionLink.addEventListener('click', modalHandler);
                 break;
-            case 'PREVIEW-LESSON':
+            case 'PREPARE-LESSON':
                 actionLink.removeAttribute('data-toggle');               
-                actionLink.innerHTML = 'Preview';
+                actionLink.innerHTML = 'Prepare';
                 guidesummary();
-                actionLink.removeEventListener(previewHandler);
-                actionLink.addEventListener('click', previewHandler);
+                actionLink.removeEventListener(prepareHandler);
+                actionLink.addEventListener('click', prepareHandler);
                 break;
             case 'BEGIN-LESSON':
                 actionLink.innerHTML = 'Begin';
@@ -127,13 +127,13 @@ export const renderHome = () => {
 
     listenToCloseCreateGuideModal(()=>{
         config = store.getState().config;
-        state = 'PREVIEW-LESSON';
+        state = 'PREPARE-LESSON';
         checkState(state);
     });
 
     const handleBeginLessonState = (counter, speciesCount) => {        
         if(!counter.isLessonPaused && counter.index === null) {
-            actionLink.removeEventListener('click', previewHandler);
+            actionLink.removeEventListener('click', prepareHandler);
             state = 'BEGIN-LESSON';
             checkState(state);
             guidesummary(speciesCount);

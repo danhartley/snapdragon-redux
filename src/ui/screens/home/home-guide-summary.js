@@ -19,13 +19,13 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
 
     renderTemplate({ location, place, taxa, guide }, template.content, parent);
 
-    return;
-
     const widgetLink = document.querySelector('.js-iNatWidget');
-
-    widgetLink.innerHTML = `<span data-toggle="modal" data-target="#iNatWidgetModal" class="underline-link">${place}</span><span class="species-range">within ${range}km range</span>`;
-
+    
+    widgetLink.innerHTML = `<span data-toggle="modal" data-target="#iNatWidgetModal">${place}</span><span class="species-range">within ${range}km range</span>`;
+    
     const collection = snapdragonCollections.find(collection => collection.id === config.guide.place.id);
+    
+    return;
 
     widgetLink.addEventListener('click', event => {
 

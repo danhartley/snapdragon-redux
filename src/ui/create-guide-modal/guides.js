@@ -8,7 +8,7 @@ export const renderGuides = (modal, config, createGuide) => {
     const chosen = modal.querySelector('.js-chosen span:nth-child(2)');
     const saveYourChangesBtn = createGuide.save(config, chosen, 'GUIDE');
 
-    guideTxt.innerHTML = 'And the type of guide you want';
+    guideTxt.innerHTML = 'Plan your lesson';
 
     if(config.guide.studyMethod) {
         setTimeout(() => {
@@ -25,9 +25,14 @@ export const renderGuides = (modal, config, createGuide) => {
     
     renderTemplate({ }, template.content, parent);
 
+    let showUpdate = false;
+
     modal.querySelectorAll('.btn.btn-secondary div').forEach(type => type.addEventListener('click', event => {        
         const target = rbEventHandler(modal, event);
-        saveYourChangesBtn.disabled = false;
+        if(showUpdate)
+            saveYourChangesBtn();
+        else
+            showUpdate = true;      
         config.guide.studyMethod = target.id;
         chosen.innerHTML = config.guide.studyMethod.replace('_', ' ');;
     }));

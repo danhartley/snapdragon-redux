@@ -12,7 +12,7 @@ export const renderCategories = (modal, config, createGuide) => {
 
     const filterSelectedClass = 'iconic-taxa-selected';
 
-    guideTxt.innerHTML = 'The species you are interested in';
+    guideTxt.innerHTML = 'Filter species by category';
 
     let iconicTaxa = [ ...config.guide.iconicTaxa ] || [];
 
@@ -35,9 +35,16 @@ export const renderCategories = (modal, config, createGuide) => {
 
     chosen.innerHTML = (iconicTaxa && iconicTaxa.length > 0) ? iconicTaxa.map(taxon => taxon.common).join(', ') : 'All species';
 
+    let showUpdate = false;
+
     const checkButtonState = (filters, noChangesToSave) => {
-        saveYourChangesBtn.disabled = noChangesToSave;
-        config.guide.iconicTaxa = filters;
+        
+        if(showUpdate)
+            saveYourChangesBtn();
+        else
+            showUpdate = true;        
+        
+            config.guide.iconicTaxa = filters;
     };
 
     checkButtonState(iconicTaxa, true);
@@ -80,6 +87,7 @@ export const renderCategories = (modal, config, createGuide) => {
             chosen.innerHTML = iconicTaxa.map(taxon => taxon.common).join(', ');
 
             checkButtonState(iconicTaxa, false);
+            
         });
     });
 };

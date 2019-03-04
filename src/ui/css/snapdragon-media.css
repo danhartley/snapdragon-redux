@@ -200,7 +200,7 @@
 
     #createGuide .modal-body .guide-text {
         font-size: 1.6rem;
-        margin: 1rem 0 .5rem 0;
+        margin: 1rem 0;
         letter-spacing: .03rem;
         color: var(--snap-text-medium-dark);
     }
@@ -347,6 +347,8 @@
 
     #createGuide .modal-body .saved {
         color: gray;
+        font-size: 1.1rem;
+        margin: 0 0 0 2rem;
     }
  
     #createGuide .modal-body .guides > div:first-child {
@@ -389,7 +391,7 @@
     }
     
     .inat-place input[type="text"] {
-        margin: .5rem 0 0 0;
+        margin: 0 .5rem 0 0;
         height: 1.75rem;
         color: var(--snap-text-dark);
     }
@@ -402,6 +404,7 @@
     .inat-place > div div:nth-child(1) {
         display: flex;
         align-items: center;
+        font-size: 1.1rem;
     }
 
     .auto-location {

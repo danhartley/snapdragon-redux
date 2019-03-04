@@ -20,7 +20,7 @@ export const renderHeaders = page => {
     const render = () => {
         const layout = (lessonPlan && lessonPlan.layouts) ? lessonPlan.layouts[counter.index] : null;
 
-        const title = `Snapdragon<span class="greek">alpha</span> learn the planet`;
+        const title = `learn the planet`;
     
         leftHeaderText = title; 
         rightHeaderText = title;

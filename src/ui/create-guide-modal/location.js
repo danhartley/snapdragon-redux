@@ -8,7 +8,7 @@ import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 export const renderLocation = (modal, config, createGuide) => {
 
     const guideTxt = modal.querySelector('.guide-text');
-    guideTxt.innerHTML = 'Choose a place';
+    guideTxt.innerHTML = 'Study species where you are';
     
     const chosen = modal.querySelector('.js-chosen span:nth-child(2)');
     const saveYourChangesBtn = createGuide.save(config, chosen, 'LOCATION');
@@ -51,7 +51,7 @@ export const renderLocation = (modal, config, createGuide) => {
         actions.boundUpdateConfig(config);
         locationLongLatTxt.innerHTML = place.longLocation;
         setLocationLongLatBtn.innerHTML = 'Reset your location';
-        saveYourChangesBtn.disabled = false;
+        saveYourChangesBtn();
     }
 
     setLocationLongLatBtn.addEventListener('click', handleSetLocationLongLat);
@@ -94,10 +94,11 @@ export const renderLocation = (modal, config, createGuide) => {
     
     let locationType = config.guide.locationType;
 
+    let showUpdate = false;
+
     if(locationType) {
         setTimeout(() => {
             modal.querySelector(`#${locationType}`).click();
-            saveYourChangesBtn.disabled = true;
         });
     }      
 
@@ -119,7 +120,10 @@ export const renderLocation = (modal, config, createGuide) => {
             }
         }
 
-        saveYourChangesBtn.disabled = false;
+        if(showUpdate)
+            saveYourChangesBtn();
+        else
+            showUpdate = true;
     }));
 
 
@@ -137,6 +141,7 @@ export const renderLocation = (modal, config, createGuide) => {
         config.guide.speciesRange = range;
         actions.boundUpdateConfig(config);        
         txt.innerHTML = `Include species within a radius of <span class="underline-link">${range}km</span>`;
+        saveYourChangesBtn();
     };
     
     slider.addEventListener('change', updateSlider);

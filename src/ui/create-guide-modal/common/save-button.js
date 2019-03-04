@@ -8,7 +8,6 @@ export const saveButton = (parent, config, chosen, step, createGuide) => {
     template.innerHTML = saveButtonTemplate;
     renderTemplate({}, template.content, parent);
 
-    const btn = parent.querySelector('button');
     const txt = parent.querySelector('div');
 
     const handleSaveEvent = () => {
@@ -31,14 +30,11 @@ export const saveButton = (parent, config, chosen, step, createGuide) => {
         }
 
         actions.boundUpdateConfig(config);
-        btn.disabled = true;
-        txt.innerHTML = 'Your choice was saved';
+        txt.innerHTML = 'Your preferences have been updated';
         setTimeout(() => {
             txt.innerHTML = '';
         }, 1500);
     }
 
-    btn.addEventListener('click', handleSaveEvent);
-
-    return btn;
+    return handleSaveEvent;
 }

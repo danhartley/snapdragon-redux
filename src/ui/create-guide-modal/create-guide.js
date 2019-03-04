@@ -5,7 +5,6 @@ import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderLocation } from 'ui/create-guide-modal/location';
 import { renderCategories } from 'ui/create-guide-modal/categories';
-import { renderPlace } from 'ui/create-guide-modal/place';
 import { renderGuides } from 'ui/create-guide-modal/guides';
 import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
 import { saveButton } from 'ui/create-guide-modal/common/save-button';
@@ -23,10 +22,9 @@ class CreateGuide {
         this.currentStep = step;
         
         this.steps = [
-            { number: 1, title: 'Create Guide', description: 'Place', nextStep: 'Select species', disabled: true },
-            // { number: 2, title: 'Create Guide', description: 'Place', nextStep: 'Select species', disabled: true },
-            { number: 2, title: 'Create Guide', description: 'Species', nextStep: 'Select guide type', disabled: true },
-            { number: 3, title: 'Create Guide', description: 'Guide', nextStep: 'Start Guide', disabled: true },
+            { number: 1, title: 'Create Lesson', description: 'Location', nextStep: 'Filter species by category', disabled: true },
+            { number: 2, title: 'Create Lesson', description: 'Species', nextStep: 'Plan your learning', disabled: true },
+            { number: 3, title: 'Create Lesson', description: 'Plan', nextStep: 'Start Lesson', disabled: true },
         ];
         
         this.modal = document.getElementById('createGuide');
@@ -59,25 +57,20 @@ class CreateGuide {
         template = document.createElement('template');
         const description = this.steps.find(step => step.number === this.currentStep).description;
 
-        const { config: configState, collections: collectionsState } = store.getState();
+        const { config: configState } = store.getState();
         const config = R.clone(configState);
-        const collections = R.clone(collectionsState);
 
         template.innerHTML = actionsTemplate;
         renderTemplate({}, template.content, parent);
 
         switch(description) {
-            // case 'Location':                                
-            //     renderLocation(this.modal, config, this);      
-            //     break;
-            case 'Place':
-                renderLocation(this.modal, config, this);      
-                // renderPlace(this.modal, config, collections, this);
+            case 'Location':
+                renderLocation(this.modal, config, this);
                 break;
             case 'Species':
                 renderCategories(this.modal, config, this);
                 break;
-            case 'Guide':
+            case 'Plan':
                 renderGuides(this.modal, config, this);
                 break;
         }
