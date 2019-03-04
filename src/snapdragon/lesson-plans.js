@@ -26,7 +26,8 @@ const {
     leafEntry,
     glossaryTerms,
     latinEpithets,
-    cultivars
+    cultivars,
+    mixedSpecimenImages
   } = layouts;
 
 const propertyTrait = (traitPropertyMatch, trait) => {
@@ -45,6 +46,8 @@ const landscapeLesson1 = {
             name:'Level 1',
             description: 'Species recognition',
             layouts: [ 
+
+                mixedSpecimenImages,
 
                 mixedSpeciesMatch,
 

@@ -1,14 +1,16 @@
 import { panels } from 'snapdragon/screen-panels';
 
 const { 
-    specimen, speciesCard, vernaculars, scientifics, text, 
+    specimenImages, speciesCard, vernaculars, scientifics, text, 
     command, leaf, leafName, 
     family, familyStrips, taxon, nonTaxon, textComplete, cultivar, cultivarCard, 
     epithets, wildcardCard, wildcard, definitions, 
     specimenCommonMatch, specimenLatinMatch,
     definitionCard, traitProperty,
     nonTaxonSpecimenTiles,
-    mixedSpecimenQuestions } = panels;
+    mixedSpecimenQuestions,
+    mixedSpecimensLeft,
+    mixedSpecimensRight } = panels;
 
 const mixedSpeciesMatch = {
     name: 'screen-mixed-species-match',
@@ -19,7 +21,7 @@ const mixedSpeciesMatch = {
     given: 'Given species name',    
     requirement: 'Select species image',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...mixedSpecimenQuestions }
     ]
 };
@@ -33,7 +35,7 @@ const speciesRevision = {
     given: 'Given species summary',
     requirement: 'Study species',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...speciesCard }
     ]
 };
@@ -47,7 +49,7 @@ const taxonRevision = {
     given: 'Study',
     requirement: 'Family summary',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...taxon }
     ]
 };
@@ -75,7 +77,7 @@ const definitionRevision = {
     given: 'Given glossary',
     requirement: 'Study definitions',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...definitionCard }
     ]
 };
@@ -89,7 +91,7 @@ const latinToCommonMatch = {
     given: 'Given latin name',
     requirement: 'Select common name',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...vernaculars }
     ]
 };
@@ -103,7 +105,7 @@ const commonToLatinMatch = {
     given: 'Given common name',
     requirement: 'Select latin name',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...scientifics }
     ]
 };
@@ -117,7 +119,7 @@ const textCompleteGenus = {
     given: 'Given species name',
     requirement: 'Select genus name',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...textComplete, type: 'text-complete-genus'  }
     ]
 };
@@ -128,10 +130,10 @@ const multiSpecimenCommonMatch = {
     score: 1,
     points: 1,
     kind: 'VMC',
-    given: 'Given specimen images',
+    given: 'Given specimenImages images',
     requirement: 'Select common name',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...specimenCommonMatch }
     ]
 };
@@ -142,10 +144,10 @@ const multiSpecimenLatinMatch = {
     score: 1,
     points: 1,
     kind: 'VMC',
-    given: 'Given specimen images',
+    given: 'Given specimenImages images',
     requirement: 'Select latin name',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...specimenLatinMatch }
     ]
 };
@@ -156,10 +158,10 @@ const traitPropertyMatch = {
     score: 1,
     points: 1,
     kind: 'MC',
-    given: 'Given specimen images',
+    given: 'Given specimenImages images',
     requirement: 'Select trait value',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...traitProperty }
     ]
 };
@@ -173,7 +175,7 @@ const familyMatch = {
     given: 'Species name',
     requirement: 'List families',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...family }
     ]
 };
@@ -187,7 +189,7 @@ const cultivarMatch = {
     given: 'Cultivar name',
     requirement: 'List species',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...cultivar }
     ]
 };
@@ -201,7 +203,7 @@ const familyStripsMatch = {
     given: 'Family description',
     requirement: 'List families',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...familyStrips }
     ]
 };
@@ -215,7 +217,7 @@ const genusEntry = {
     given: 'Given species name',
     requirement: 'Enter genus name',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...text, template: 'js-genus-entry-template', taxon: 'genus'}
     ]
 };
@@ -229,7 +231,7 @@ const speciesEntry = {
     given: 'Given genus name',
     requirement: 'Enter species name',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...text, template: 'js-species-entry-template', taxon: 'species'}
     ]
 };
@@ -243,7 +245,7 @@ const speciesGenusEntry = {
     given: 'Given common name',
     requirement: 'Enter latin name',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...text, template: 'js-species-genus-entry-template', taxon: 'name'}
     ]
 };
@@ -281,7 +283,7 @@ const textCompleteSpecies = {
     given: 'Given genus name',
     requirement: 'Select species name',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...textComplete, type: 'text-complete-species' }
     ]
 };
@@ -295,7 +297,7 @@ const commonEntry = {
     given: 'Species latin name',
     requirement: 'Enter common name',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Enter the common name', short: 'Enter the common name'}}
     ]
 };
@@ -309,7 +311,7 @@ const latinEpithets = {
     given: 'Epithet',
     requirement: 'List epithet definitions',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...epithets }
     ]
 };
@@ -323,7 +325,7 @@ const glossaryTerms = {
     given: 'Given glossary term',
     requirement: 'Select definition',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...definitions }
     ]
 };
@@ -337,7 +339,7 @@ const cultivars = {
     given: 'List of cultivars',
     requirement: 'List of species',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...cultivarCard },
         { ...cultivar }
     ]
@@ -352,10 +354,24 @@ const connections = {
     given: 'List of traits',
     requirement: 'List of species',
     screens: [
-        { ...specimen },
+        { ...specimenImages },
         { ...wildcardCard },
         { ...wildcard }
     ]
+};
+
+const mixedSpecimenImages = {
+  name: 'mixed-specimen-images',
+  type:'test',
+  score: 1,
+  points: 2,
+  kind: 'T',
+  given: 'Specimen images',
+  requirement: 'Select species image',
+  screens: [
+      { ...mixedSpecimensLeft },
+      { ...mixedSpecimensRight }
+  ]
 };
 
 export const layouts = {
@@ -382,5 +398,6 @@ export const layouts = {
   leafEntry,
   glossaryTerms,
   latinEpithets,
-  cultivars
+  cultivars,
+  mixedSpecimenImages
 }

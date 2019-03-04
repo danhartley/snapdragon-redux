@@ -20,6 +20,9 @@ import { renderMixedSpecimenTiles } from 'ui/screens/multichoice/mixed-specimen-
 import { renderMixedSpecimenQuestions } from 'ui/screens/multichoice/mixed-specimen-questions';
 import { renderNonTaxonCardSpecimenTiles } from 'ui/screens/cards/non-taxon-card-specimen-tiles';
 
+import { renderMixedSpecimenQuestion } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-question';
+import { renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-images';
+
 const functions = [
     { name: 'mixed-specimen-tiles', func: renderMixedSpecimenTiles },
     { name: 'mixed-specimen-questions', func: renderMixedSpecimenQuestions },
@@ -49,6 +52,10 @@ const functions = [
     { name: 'visual-match', func: renderSpecimenMatch },
     { name: 'trait-property', func: renderSpecimenMatch },
     { name: 'definition-card', func: renderDefinitionCard },
+    
+    
+    { name: 'mixed-specimen-question', func: renderMixedSpecimenQuestion },
+    { name: 'mixed-specimen-images', func: renderMixedSpecimenImages },
 ];
 
 export const funcByName = name => {

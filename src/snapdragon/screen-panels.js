@@ -1,4 +1,4 @@
-const specimen = {
+const specimenImages = {
     name: 'specimen-images',
     domain: 'collection',
   };
@@ -61,7 +61,7 @@ const specimen = {
   const command = {
     name: 'command', 
     domain: 'collection',
-    left: specimen,
+    left: specimenImages,
     right: {
       cutLength: 5,
       domain: 'collection',
@@ -155,9 +155,19 @@ const specimen = {
     name: 'trait-property',
     domain: 'collection'
   };
+
+  const mixedSpecimensLeft = {
+    name: 'mixed-specimen-question',
+    domain: 'collection'
+  };
+
+  const mixedSpecimensRight = {
+    name: 'mixed-specimen-images',
+    domain: 'collection'
+  };
   
   export const panels = {
-    specimen,
+    specimenImages,
     history,
   
     speciesCard,
@@ -190,5 +200,8 @@ const specimen = {
     specimenLatinMatch,
     traitProperty,
   
-    mixedSpecimenQuestions
+    mixedSpecimenQuestions,
+
+    mixedSpecimensLeft,
+    mixedSpecimensRight
   };
