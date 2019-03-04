@@ -30,10 +30,10 @@ export const saveButton = (parent, config, chosen, step, createGuide) => {
         }
 
         actions.boundUpdateConfig(config);
-        txt.innerHTML = 'Your preferences have been updated';
+        txt.innerHTML = 'Your preference has been updated';
         setTimeout(() => {
             txt.innerHTML = '';
-        }, 1500);
+        }, 2000);
     }
 
     return handleSaveEvent;

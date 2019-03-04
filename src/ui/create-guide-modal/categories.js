@@ -27,7 +27,7 @@ export const renderCategories = (modal, config, createGuide) => {
     if(config.guide.iconicTaxa && config.guide.iconicTaxa.length > 0) {
         icons.forEach(icon => {
             const filterId = icon.parentElement.id;
-            if(R.contains(filterId, config.guide.iconicTaxa)) {
+            if(R.contains(filterId, config.guide.iconicTaxa.map(taxon => taxon.id))) {
                 icon.classList.add(filterSelectedClass);
             }
         });
@@ -35,19 +35,7 @@ export const renderCategories = (modal, config, createGuide) => {
 
     chosen.innerHTML = (iconicTaxa && iconicTaxa.length > 0) ? iconicTaxa.map(taxon => taxon.common).join(', ') : 'All species';
 
-    let showUpdate = false;
-
-    const checkButtonState = (filters, noChangesToSave) => {
-        
-        if(showUpdate)
-            saveYourChangesBtn();
-        else
-            showUpdate = true;        
-        
-            config.guide.iconicTaxa = filters;
-    };
-
-    checkButtonState(iconicTaxa, true);
+    config.guide.iconicTaxa = iconicTaxa;        
 
     setTimeout(() => {
         const fungiIcon = modal.querySelector('#fungi > div');
@@ -86,7 +74,9 @@ export const renderCategories = (modal, config, createGuide) => {
 
             chosen.innerHTML = iconicTaxa.map(taxon => taxon.common).join(', ');
 
-            checkButtonState(iconicTaxa, false);
+            config.guide.iconicTaxa = iconicTaxa;
+
+            saveYourChangesBtn();
             
         });
     });
