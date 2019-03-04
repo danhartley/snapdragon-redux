@@ -186,7 +186,7 @@ const makeSortable = (document, callback) => {
                 }
               });        
 
-              callback(names);
+            callback(names);
       })
   });
 };

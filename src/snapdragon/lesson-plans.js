@@ -377,8 +377,13 @@ const landscapeLesson1 = {
             description: 'Species recognition',
             layouts: [ 
                 speciesRevision,                        
-                multiSpecimenCommonMatch,
-                mixedSpeciesMatch
+                // multiSpecimenCommonMatch, // only works portrait as in landscaped the photo is the same
+                mixedSpeciesMatch,
+                latinToCommonMatch,
+                commonEntry,
+                taxonRevision, 
+                familyMatch, 
+                familyStripsMatch
             ],
             wildcardLayouts : [],
             reviewLayouts: [ multiSpecimenCommonMatch, mixedSpeciesMatch ]

@@ -6,7 +6,7 @@ const specimen = {
 const history = { 
   name: 'history', 
   domain: 'history',
-  template: 'js-history-template'
+  // template: 'js-history-template'
 };
 
 const speciesCard = {
@@ -21,19 +21,19 @@ const definitionCard = {
 
 const scientifics = {
   name: 'species-scientifics',
-  headers: { long: 'Click the latin name to match the species', short: 'Click name to match species'},
-  question: 'Tap to match common name',
   domain: 'collection',
-  template: 'js-strips-template',
   taxon: 'name'
+  // headers: { long: 'Click the latin name to match the species', short: 'Click name to match species'},
+  // question: 'Tap to match common name',
+  // template: 'js-strips-template',
 };
 
 const vernaculars = {
   name: 'species-vernaculars',
-  question: 'Tap to match latin name',
   domain: 'collection',
-  template: 'js-strips-template',
   taxon: 'name'
+  // question: 'Tap to match latin name',
+  // template: 'js-strips-template',
 };
 
 const text = {
@@ -50,7 +50,7 @@ const textComplete = {
 const summary = { 
   name: 'summary', 
   domain: 'history',
-  template: 'js-summary-template'
+  // template: 'js-summary-template'
 };
 
 const mixedSpecimenQuestions = {
@@ -65,7 +65,7 @@ const command = {
   right: {
     cutLength: 5,
     domain: 'collection',
-    template: 'js-letters-template',
+    // template: 'js-letters-template',
     question: 'Name puzzle'
   }
 };
@@ -73,13 +73,13 @@ const command = {
 const leaf = {
   name: 'leaf-image',
   domain: 'collection',
-  template: 'js-leaf-image-template'     
+  // template: 'js-leaf-image-template'     
 };
 
 const leafName = {
   name: 'leaf-text',
   domain: 'collection',
-  template: 'js-text-entry-template'     
+  // template: 'js-text-entry-template'     
 };
 
 const epithets = {

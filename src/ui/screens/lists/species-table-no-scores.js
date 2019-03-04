@@ -167,7 +167,7 @@ export const buildTable = (collection, config, traits, enums) => {
                 }
             });
         });
-        console.log(sortedItems);
+    
         if(config.isLandscapeMode) {
             actions.boundChangeCollectionItems(sortedItems);
         }        

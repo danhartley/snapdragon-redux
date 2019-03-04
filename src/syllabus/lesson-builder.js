@@ -60,7 +60,7 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, w
         return { ...layout };
     });
 
-    addRevisionLayouts(revisionLayouts, itemsCountToDate, layoutsToAdd, lessonLayouts, collection);
+    // addRevisionLayouts(revisionLayouts, itemsCountToDate, layoutsToAdd, lessonLayouts, collection);
 
     let hasGlossary = false;
     const glossary = lessonPlan.layouts.find(layout => layout.name === 'screen-definition-card');

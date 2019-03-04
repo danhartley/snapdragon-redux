@@ -55,7 +55,7 @@ export const renderMixedSpecimenQuestions = ui => {
     images = getPortraitImages(images);
 
     const question1 = `Can you find a specimen of ${item.vernacularName}?`;
-    const question2 = `When you've found a match click on the image. (There's more than one.)`;
+    const question2 = `When you've found a match click on the image.`;
     const question3 = `${item.name}`;
 
     let parent = DOM.rightBody;
