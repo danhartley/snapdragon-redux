@@ -30,7 +30,7 @@ export const renderRadioButtons = (collection) => {
     const otherFamiliesLatinNames = otherFamilies.map(family => family.name);
     const otherFamiliesCommonNames = otherFamilies.filter(family => family.names.find(name => name.language === config.language)).map(family => family.names[0].names[0]);    
     const familyTaxon = families.find(family => family.name === item.family); 
-    const commonFamilyName = itemProperties.getTaxonProp(familyTaxon, config.language, 'names', 'names', '0').names[0];
+    const commonFamilyName = familyTaxon ? itemProperties.getTaxonProp(familyTaxon, config.language, 'names', 'names', '0').names[0] : '';
 
     indices = config.isPortraitMode ? [3,4] : [4,5];
 

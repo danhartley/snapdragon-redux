@@ -1,194 +1,386 @@
-const specimen = {
-  name: 'specimen-images',
-  domain: 'collection',
+import { panels } from 'snapdragon/screen-panels';
+
+const { 
+    specimen, speciesCard, vernaculars, scientifics, text, 
+    command, leaf, leafName, 
+    family, familyStrips, taxon, nonTaxon, textComplete, cultivar, cultivarCard, 
+    epithets, wildcardCard, wildcard, definitions, 
+    specimenCommonMatch, specimenLatinMatch,
+    definitionCard, traitProperty,
+    nonTaxonSpecimenTiles,
+    mixedSpecimenQuestions } = panels;
+
+const mixedSpeciesMatch = {
+    name: 'screen-mixed-species-match',
+    type: 'test',
+    score: 1,
+    kind: 'VMC',
+    points: 3,
+    given: 'Given species name',    
+    requirement: 'Select species image',
+    screens: [
+        { ...specimen },
+        { ...mixedSpecimenQuestions }
+    ]
 };
 
-const history = { 
-  name: 'history', 
-  domain: 'history',
-  // template: 'js-history-template'
+const speciesRevision = {
+    name: 'screen-species-card',
+    type: 'revision',
+    score: 0,
+    kind: 'S',
+    points: 0,
+    given: 'Given species summary',
+    requirement: 'Study species',
+    screens: [
+        { ...specimen },
+        { ...speciesCard }
+    ]
 };
 
-const speciesCard = {
-  name: 'species-card',
-  domain: 'collection',
+const taxonRevision = {
+    name: 'screen-taxon-card',
+    type:'revision',
+    score: 0,
+    kind: 'F',
+    points: 0,
+    given: 'Study',
+    requirement: 'Family summary',
+    screens: [
+        { ...specimen },
+        { ...taxon }
+    ]
 };
 
-const definitionCard = {
-  name: 'definition-card',
-  domain: 'collection'
+const nonTaxonRevision = {
+    name: 'screen-non-taxon-card',
+    type:'revision',
+    score: 0,
+    kind: 'GR',
+    points: 0,
+    given: 'Group summary',
+    requirement: 'Study',
+    screens: [
+        { ...nonTaxonSpecimenTiles },
+        { ...nonTaxon }
+    ]
 };
 
-const scientifics = {
-  name: 'species-scientifics',
-  domain: 'collection',
-  taxon: 'name'
-  // headers: { long: 'Click the latin name to match the species', short: 'Click name to match species'},
-  // question: 'Tap to match common name',
-  // template: 'js-strips-template',
+const definitionRevision = {
+    name: 'screen-definition-card',
+    type:'revision',
+    score: 0,
+    kind: 'G',
+    points: 0,
+    given: 'Given glossary',
+    requirement: 'Study definitions',
+    screens: [
+        { ...specimen },
+        { ...definitionCard }
+    ]
 };
 
-const vernaculars = {
-  name: 'species-vernaculars',
-  domain: 'collection',
-  taxon: 'name'
-  // question: 'Tap to match latin name',
-  // template: 'js-strips-template',
+const latinToCommonMatch = {
+    name: 'screen-latin-to-common',
+    type:'test',
+    score: 1,
+    points: 1,
+    kind: 'MC',
+    given: 'Given latin name',
+    requirement: 'Select common name',
+    screens: [
+        { ...specimen },
+        { ...vernaculars }
+    ]
 };
 
-const text = {
-  name: 'text-entry',
-  domain: 'collection'
+const commonToLatinMatch = {
+    name: 'screen-common-to-latin',
+    type:'test',
+    score: 1,
+    points: 1,
+    kind: 'MC',
+    given: 'Given common name',
+    requirement: 'Select latin name',
+    screens: [
+        { ...specimen },
+        { ...scientifics }
+    ]
 };
 
-const textComplete = {
-  name: 'text-complete',
-  domain: 'collection',
-  question: 'Complete the latin name',
+const textCompleteGenus = {
+    name: 'screen-genus-completion',
+    type:'test',
+    score: 1,
+    points: 1,
+    kind: 'MC',
+    given: 'Given species name',
+    requirement: 'Select genus name',
+    screens: [
+        { ...specimen },
+        { ...textComplete, type: 'text-complete-genus'  }
+    ]
 };
 
-const summary = { 
-  name: 'summary', 
-  domain: 'history',
-  // template: 'js-summary-template'
+const multiSpecimenCommonMatch = {
+    name: 'screen-specimens-common-match',
+    type:'test',
+    score: 1,
+    points: 1,
+    kind: 'VMC',
+    given: 'Given specimen images',
+    requirement: 'Select common name',
+    screens: [
+        { ...specimen },
+        { ...specimenCommonMatch }
+    ]
 };
 
-const mixedSpecimenQuestions = {
-  name: 'mixed-specimen-questions',
-  domain: 'ui'
+const multiSpecimenLatinMatch = {
+    name: 'screen-specimens-latin-match',
+    type:'test',
+    score: 1,
+    points: 1,
+    kind: 'VMC',
+    given: 'Given specimen images',
+    requirement: 'Select latin name',
+    screens: [
+        { ...specimen },
+        { ...specimenLatinMatch }
+    ]
 };
 
-const command = {
-  name: 'command', 
-  domain: 'collection',
-  left: specimen,
-  right: {
-    cutLength: 5,
-    domain: 'collection',
-    // template: 'js-letters-template',
-    question: 'Name puzzle'
-  }
+const traitPropertyMatch = {
+    name: 'trait-property-match',
+    type:'test',
+    score: 1,
+    points: 1,
+    kind: 'MC',
+    given: 'Given specimen images',
+    requirement: 'Select trait value',
+    screens: [
+        { ...specimen },
+        { ...traitProperty }
+    ]
 };
 
-const leaf = {
-  name: 'leaf-image',
-  domain: 'collection',
-  // template: 'js-leaf-image-template'     
+const familyMatch = {
+    name: 'screen-species-to-family',
+    type:'test',
+    score: 1,
+    points: 2,
+    kind: 'MC',
+    given: 'Species name',
+    requirement: 'List families',
+    screens: [
+        { ...specimen },
+        { ...family }
+    ]
 };
 
-const leafName = {
-  name: 'leaf-text',
-  domain: 'collection',
-  // template: 'js-text-entry-template'     
+const cultivarMatch = {
+    name: 'screen-cultivar-to-species',
+    type:'test',
+    score: 1,
+    points: 2,
+    kind: 'MC',
+    given: 'Cultivar name',
+    requirement: 'List species',
+    screens: [
+        { ...specimen },
+        { ...cultivar }
+    ]
 };
 
-const epithets = {
-  name: 'epithet',
-  domain: 'collection'
+const familyStripsMatch = {
+    name: 'screen-family-to-description',
+    type:'test',
+    score: 1,
+    points: 2,
+    kind: 'MC',
+    given: 'Family description',
+    requirement: 'List families',
+    screens: [
+        { ...specimen },
+        { ...familyStrips }
+    ]
 };
 
-const definitions = {
-  name: 'definition',
-  domain: 'collection'
+const genusEntry = {
+    name: 'screen-genus-entry',
+    type:'test',
+    score: 1,
+    points: 2,
+    kind: 'T',
+    given: 'Given species name',
+    requirement: 'Enter genus name',
+    screens: [
+        { ...specimen },
+        { ...text, template: 'js-genus-entry-template', taxon: 'genus'}
+    ]
 };
 
-const family = {
-  name: 'family',
-  domain: 'collection',
-  question: 'Match species family',
+const speciesEntry = {
+    name: 'screen-species-entry',
+    type:'test',
+    score: 1,
+    points: 2,
+    kind: 'T',
+    given: 'Given genus name',
+    requirement: 'Enter species name',
+    screens: [
+        { ...specimen },
+        { ...text, template: 'js-species-entry-template', taxon: 'species'}
+    ]
 };
 
-const familyStrips = {
-  name: 'family-strips',
-  domain: 'collection',
-  question: 'Match species family',
+const speciesGenusEntry = {
+    name: 'screen-binomial-entry',
+    type:'test',
+    score: 1,
+    points: 4,
+    kind: 'T',
+    given: 'Given common name',
+    requirement: 'Enter latin name',
+    screens: [
+        { ...specimen },
+        { ...text, template: 'js-species-genus-entry-template', taxon: 'name'}
+    ]
 };
 
-const taxon = {
-  name: 'taxon-card',
-  domain: 'collection'
+const commandLayout = {
+    name: 'screen-command',
+    type:'test',
+    score: 1,
+    points: 2,
+    kind: 'T',
+    given: 'Various',
+    requirement: 'various',
+    screens: [
+        { ...command },
+    ]
 };
 
-const nonTaxon = {
-  name: 'non-taxon-card',
-  domain: 'collection'
+const leafEntry = {
+    type:'test',
+    score: 1,
+    points: 3,
+    kind: 'T',
+    screens: [
+        { ...leaf },
+        { ...leafName, template: 'js-text-entry-template' }
+    ]
 };
 
-const nonTaxonSpecimenTiles = {
-  name: 'non-taxon-specimen-tiles',
-  domain: 'collection'
+const textCompleteSpecies = {
+    name: 'screen-species-completion',
+    type:'test',
+    score: 1,
+    points: 2,
+    kind: 'MC',
+    given: 'Given genus name',
+    requirement: 'Select species name',
+    screens: [
+        { ...specimen },
+        { ...textComplete, type: 'text-complete-species' }
+    ]
 };
 
-const cultivarCard = {
-  name: 'cultivar-card',
-  domain: 'collection'
+const commonEntry = {
+    name: 'screen-common-entry',
+    type:'test',
+    score: 1,
+    points: 2,
+    kind: 'T',
+    given: 'Species latin name',
+    requirement: 'Enter common name',
+    screens: [
+        { ...specimen },
+        { ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Enter the common name', short: 'Enter the common name'}}
+    ]
 };
 
-const cultivar = {
-  name: 'cultivar-match',
-  domain: 'collection'
+const latinEpithets = {
+    name: 'screen-epithets',
+    type: 'test',
+    score: 1,
+    points: 1,
+    kind: 'MC',
+    given: 'Epithet',
+    requirement: 'List epithet definitions',
+    screens: [
+        { ...specimen },
+        { ...epithets }
+    ]
 };
 
-const wildcardCard = {
-  name: 'wildcard-card',
-  domain: 'collection'
+const glossaryTerms = {
+    name: 'screen-definitions',
+    type: 'test',
+    score: 1,
+    points: 1,
+    kind: 'T',
+    given: 'Given glossary term',
+    requirement: 'Select definition',
+    screens: [
+        { ...specimen },
+        { ...definitions }
+    ]
 };
 
-const wildcard = {
-  name: 'wildcard-match',
-  domain: 'collection'
+const cultivars = {
+    name: 'screen-cultivars',
+    type: 'test',
+    score: 1,
+    points: 1,
+    kind: 'T',
+    given: 'List of cultivars',
+    requirement: 'List of species',
+    screens: [
+        { ...specimen },
+        { ...cultivarCard },
+        { ...cultivar }
+    ]
 };
 
-const specimenCommonMatch = {
-  name: 'visual-match',
-  domain: 'collection',
-  type: 'vernacular'
+const connections = {
+    name: 'screen-connections',
+    type: 'test',
+    score: 1,
+    points: 1,
+    kind: 'MC',
+    given: 'List of traits',
+    requirement: 'List of species',
+    screens: [
+        { ...specimen },
+        { ...wildcardCard },
+        { ...wildcard }
+    ]
 };
 
-const specimenLatinMatch = {
-  name: 'visual-match',
-  domain: 'collection',
-  type: 'binomial'
-};
-
-const traitProperty = {
-  name: 'trait-property',
-  domain: 'collection'
-};
-
-export const screens = {
-  specimen,
-  history,
-
-  speciesCard,
-  definitionCard,
-  scientifics,
-  vernaculars,
-  text,
-  summary,
-
-  command,
-
-  leaf,
-  leafName,
-
-  epithets,
-  definitions,
-  family,
-  familyStrips,
-  
-  taxon,
-  nonTaxon,
-  nonTaxonSpecimenTiles,
-  textComplete,
-  cultivarCard,
-  cultivar,
-  wildcardCard,
-  wildcard,
-
-  specimenCommonMatch,
-  specimenLatinMatch,
-  traitProperty,
-
-  mixedSpecimenQuestions
-};
+export const layouts = {
+  mixedSpeciesMatch,
+  speciesRevision,
+  taxonRevision,
+  nonTaxonRevision,
+  definitionRevision,
+  latinToCommonMatch,
+  commonToLatinMatch,
+  textCompleteGenus,
+  multiSpecimenCommonMatch,
+  multiSpecimenLatinMatch,
+  traitPropertyMatch,
+  familyMatch,
+  cultivarMatch,
+  familyStripsMatch,
+  genusEntry,
+  speciesEntry,
+  speciesGenusEntry,
+  textCompleteSpecies,
+  commonEntry,
+  connections,
+  leafEntry,
+  glossaryTerms,
+  latinEpithets,
+  cultivars
+}
