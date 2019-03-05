@@ -329,8 +329,36 @@
         height: 50vh;
       }
 
-    .question-container > span:nth-child(1), .question-container > p:nth-child(1) {
+    .question-container, .question-container .underline-link {
         font-size: 1.2rem;
+    }
+
+    .mixed-specimens {
+        color: var(--snap-text-medium-dark);
+        padding: 0 .5rem;
+        font-size: 1.2rem;
+    }
+
+    .mixed-specimens > p:nth-child(1) {
+        font-size: 1.4rem;
+    }
+
+    .mixed-specimens button {
+        display: inline-block;
+        color: rgb(35,35,35);
+        background-color: rgb(143, 163, 138);
+    }
+    
+    .mixed-specimens button:hover {
+        color: rgb(250, 250, 250);
+    }
+    
+    .small-icon {
+        font-size: .8rem;
+    }
+
+    .small-icon-success {
+        color: var(--snap-success);
     }
 
     .radio-buttons-group {
@@ -364,7 +392,9 @@
     }
 
     .question-header {
-        font-size: 1.2rem;
+        height: 120px;
+        font-size: 2rem;
+        border: none;
     }
 
     .question-header .binomial {

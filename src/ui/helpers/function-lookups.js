@@ -16,8 +16,8 @@ import { renderCultivarCard } from 'ui/screens/cards/cultivar-card';
 import { renderWildcard } from 'ui/screens/cards/wildcard-card';
 import { renderSpecimenMatch } from 'ui/screens/multichoice/visual-match';
 import { renderDefinitionCard } from 'ui/screens/cards/definition-card';
-import { renderMixedSpecimenTiles } from 'ui/screens/multichoice/mixed-specimen-tiles';
-import { renderMixedSpecimenQuestions } from 'ui/screens/multichoice/mixed-specimen-questions';
+import { renderMixedSpecimenTiles } from 'ui/screens/multichoice/portrait/mixed-specimen-tiles';
+import { renderMixedSpecimenQuestions } from 'ui/screens/multichoice/portrait/mixed-specimen-questions';
 import { renderNonTaxonCardSpecimenTiles } from 'ui/screens/cards/non-taxon-card-specimen-tiles';
 
 import { renderMixedSpecimenQuestion } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-question';

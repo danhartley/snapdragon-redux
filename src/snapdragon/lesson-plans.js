@@ -49,7 +49,7 @@ const landscapeLesson1 = {
 
                 mixedSpecimenImages,
 
-                mixedSpeciesMatch,
+                // mixedSpeciesMatch,
 
                 textCompleteGenus,  // works fine
                 textCompleteSpecies,

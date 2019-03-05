@@ -23,6 +23,7 @@ export const iconicTaxa = {
 };
 
 export const matchTaxonKey = (taxonomy, iconicTaxaKeys) => {
+    if(!taxonomy) return '';
     if(taxonomy.order && R.contains(taxonomy.order.toLowerCase(), iconicTaxaKeys)) return taxonomy.order.toLowerCase();
     if(taxonomy.class && R.contains(taxonomy.class.toLowerCase(), iconicTaxaKeys)) return taxonomy.class.toLowerCase();
     if(taxonomy.kingdom && R.contains(taxonomy.kingdom.toLowerCase(), iconicTaxaKeys)) return taxonomy.kingdom.toLowerCase();

@@ -15,6 +15,7 @@ import { renderFeatures } from 'ui/screens/common/feature';
 import { infoSlider } from 'ui/screens/common/info-slider';
 import * as traitTypes from 'api/traits/trait-types';
 import { iconicTaxa, matchTaxon, matchIcon } from 'api/snapdragon/iconic-taxa';
+import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import { renderInatDataBox } from 'ui/screens/common/inat-box';
 import { renderTaxonomyBox } from 'ui/screens/common/taxonomy-box';
@@ -222,20 +223,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
 
     renderCalendar(calendarNode, item, config);
 
-    if(item.taxonomy.kingdom.toLowerCase() === 'fungi') {
-
-        const iconicIconContainer = rootNode.querySelector('.js-iconic-icon');
-
-        iconicIconContainer.innerHTML = '<span class="mushroom-icon-header"><svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg></span>';
-
-    } else {
-
-        const iconicIcon = rootNode.querySelector('.js-iconic-icon i');
-
-        const classes = matchIcon(item.taxonomy, iconicTaxa).split(' ');
-
-        classes.forEach(c => iconicIcon.classList.add(c));        
-    }
+    renderIcon(item, rootNode);
 
     if(isModalMode) {        
         rootNode.querySelector('#speciesCardModal .js-modal-text-title').innerHTML = collection.name;

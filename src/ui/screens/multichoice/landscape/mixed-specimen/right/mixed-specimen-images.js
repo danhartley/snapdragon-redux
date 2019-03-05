@@ -1,5 +1,7 @@
 import * as R from 'ramda';
 
+import { species } from 'api/species';
+import { scoreHandler } from 'ui/helpers/handlers';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
@@ -8,9 +10,20 @@ import { iconicTaxa, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-tax
 import { renderTemplate } from 'ui/helpers/templating';
 import specimensTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-images-template.html';
 
+const listenersToImageSelection = [];
+const listenersToUserAnswer = [];
+
+export const listenToUserAnswer = listener => { 
+    listenersToUserAnswer.push(listener);
+};
+
+export const listenToImageSelection = listener => {
+    listenersToImageSelection.push(listener);
+};
+
 export const renderMixedSpecimenImages = collection => {
 
-    const { config } = store.getState();
+    const { config, score, lessonPlan } = store.getState();
 
     const item = collection.nextItem;
 
@@ -20,23 +33,45 @@ export const renderMixedSpecimenImages = collection => {
 
     template.innerHTML = specimensTemplate;
 
-    const parent = DOM.rightBody;
+    const parent = DOM.leftBody;
     parent.innerHTML = '';
 
     const itemRank = matchTaxon(item.taxonomy, iconicTaxa).toLowerCase();
-    const itemPool = collection.allItems || collection.items;
+    const itemPool = species;
     const clonedItems = R.clone(itemPool.filter(item => matchTaxonKey(item.taxonomy,[itemRank])));
     const mixedItems = R.take(5, utils.shuffleArray(clonedItems.filter(ci => ci.name !== item.name)));
-    
-    mixedItems.map(item => item.images.forEach(image => {
-        image.url = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config);
+    mixedItems.push(R.clone(item));
+
+    mixedItems.map(item => item.images.map(image => {
+        return image.url = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config);
     }));
 
-    let images = mixedItems.map(item => item.images[0]);
+    const images = utils.shuffleArray(mixedItems).map((item, index) => { 
+        return { index: index + 1, ...utils.shuffleArray(item.images)[0], itemName: item.name };
+    });
 
-    images = mixedItems.map((item, index) => { 
-        return { index: index + 1, ...item.images[0], itemName: item.name };
-    } );
+    listenersToImageSelection.forEach(listener => listener(images));
         
     renderTemplate({ images }, template.content, parent);
+
+    const callback = (score, scoreUpdateTimer) => {
+        console.log(score);
+        listenersToUserAnswer.forEach(listener => listener(score, scoreUpdateTimer));
+    };
+
+    document.querySelectorAll('.js-tiles').forEach(image => {
+        image.addEventListener('click', event => {
+
+            const selectedImage = event.target;
+            const selectedName = selectedImage.dataset.itemName;
+            const selectedItem = collection.items.find(item => item.name === selectedName);
+
+            const question = item.name;
+            const answer = selectedItem.name;
+
+            const test = { ...score, itemId: selectedItem.id, question, answer, binomial: selectedItem.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: 0};
+            scoreHandler('image-match', test, callback, config);
+        });
+    });
+
 };

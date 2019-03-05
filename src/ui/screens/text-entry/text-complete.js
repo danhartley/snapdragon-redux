@@ -113,7 +113,7 @@ export const renderCompleteText = (collection) => {
             });
         }
 
-        const txtBtn = document.querySelector('.js-text-btn');
+        const txtBtn = document.querySelector('.js-continue-lesson-btn');
 
         txtBtn.innerHTML = 'Continue lesson';
 
