@@ -12,5 +12,5 @@ export const renderQuestionHeader = (parent, item, question) => {
 
     renderTemplate({ question }, template.content, parent);
 
-    renderIcon(item, document);
+    return renderIcon(item, document);
 };

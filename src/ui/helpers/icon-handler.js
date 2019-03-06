@@ -2,11 +2,15 @@ import { iconicTaxa, matchIcon } from 'api/snapdragon/iconic-taxa';
 
 export const renderIcon = (item, rootNode) => {
 
+    let icon;
+
     if(item.taxonomy.kingdom.toLowerCase() === 'fungi') {
 
         const iconicIconContainer = rootNode.querySelector('.js-iconic-icon');
 
         iconicIconContainer.innerHTML = '<span class="mushroom-icon-header"><svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg></span>';
+
+        icon = iconicIconContainer.querySelector('i');
 
     } else {
 
@@ -14,8 +18,12 @@ export const renderIcon = (item, rootNode) => {
 
         const classes = matchIcon(item.taxonomy, iconicTaxa).split(' ');
 
-        classes.forEach(c => iconicIcon.classList.add(c));        
+        classes.forEach(c => iconicIcon.classList.add(c));   
+        
+        icon = iconicIcon;
     }
+
+    return rootNode.querySelector('.js-iconic-icon');
 };
 
 export const returnIcon = item => {

@@ -4,6 +4,7 @@ import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
+import { renderQuestionHeader } from 'ui/screens/common/question-header';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { scoreHandler } from 'ui/helpers/handlers';
@@ -26,7 +27,7 @@ export const renderCompleteText = (collection) => {
 
     let question, givenTaxon, description, description2, genus, species;
 
-    const vernacular = item.vernacularName.toUpperCase();
+    const vernacularName = item.vernacularName;
 
     if(screen.type === 'text-complete-genus') {
 
@@ -35,10 +36,10 @@ export const renderCompleteText = (collection) => {
         species = item.species;
         givenTaxon = 'genus';
         if(config.isPortraitMode) {
-            description = `Complete the latin name for a ${vernacular}.`            
+            description = `Complete the latin name for a ${vernacularName}.`            
         } else {
-            description = `What is the genus of a ${vernacular}?`;
-            description2 = 'Complete the latin name below by selecting the approprite genus.'
+            description = `What is the genus of a ${vernacularName}?`;
+            description2 = 'Select generic name'
         }
     } else if(screen.type === 'text-complete-species') {
 
@@ -47,9 +48,9 @@ export const renderCompleteText = (collection) => {
         species = '---';        
         givenTaxon = 'species';
         if(config.isPortraitMode) {
-            description = `Complete the latin name for a ${vernacular}.`
+            description = `Complete the latin name for a ${vernacularName}.`
         } else {
-            description = `What is the species of a ${vernacular}?`;
+            description = `What is the species of a ${vernacularName}?`;
             description2 = 'Complete the latin name below by selecting the approprite species.'
         }
     }
@@ -74,7 +75,7 @@ export const renderCompleteText = (collection) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    renderTemplate({ description, description2, vernacular, answers, genus, species }, template.content, parent);
+    renderTemplate({ description, description2, vernacularName, answers, genus, species }, template.content, parent);
 
     const score = { itemId: item.id, binomial: item.name, question: item[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length, points: layout.points };
 
@@ -137,4 +138,6 @@ export const renderCompleteText = (collection) => {
             scoreHandler('block', score, updateScreen, config);
         });
     });
+
+    renderQuestionHeader(document.querySelector('.js-question-container'), item, vernacularName);
 };

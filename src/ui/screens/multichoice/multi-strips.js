@@ -4,6 +4,7 @@ import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
+import { renderQuestionHeader } from 'ui/screens/common/question-header';
 import { taxa } from 'api/snapdragon/taxa';
 import { epithets } from 'api/botanical-latin';
 import { getGlossary } from 'api/glossary/glossary';

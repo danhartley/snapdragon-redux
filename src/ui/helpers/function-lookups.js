@@ -20,8 +20,8 @@ import { renderMixedSpecimenTiles } from 'ui/screens/multichoice/portrait/mixed-
 import { renderMixedSpecimenQuestions } from 'ui/screens/multichoice/portrait/mixed-specimen-questions';
 import { renderNonTaxonCardSpecimenTiles } from 'ui/screens/cards/non-taxon-card-specimen-tiles';
 
-import { renderMixedSpecimenQuestion } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-question';
-import { renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-images';
+import { renderMixedSpecimenQuestion } from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question';
+import { renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
 
 const functions = [
     { name: 'mixed-specimen-tiles', func: renderMixedSpecimenTiles },

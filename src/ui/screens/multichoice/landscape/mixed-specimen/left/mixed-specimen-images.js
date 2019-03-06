@@ -8,7 +8,7 @@ import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import { DOM } from 'ui/dom';
 import { iconicTaxa, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';
-import specimensTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-images-template.html';
+import specimensTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images-template.html';
 
 const listenersToImageSelection = [];
 const listenersToUserAnswer = [];
@@ -64,7 +64,7 @@ export const renderMixedSpecimenImages = collection => {
 
             const selectedImage = event.target;
             const selectedName = selectedImage.dataset.itemName;
-            const selectedItem = collection.items.find(item => item.name === selectedName);
+            const selectedItem = species.find(item => item.name === selectedName);
 
             const question = item.name;
             const answer = selectedItem.name;

@@ -1,13 +1,14 @@
 import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
+import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { returnIcon } from 'ui/helpers/icon-handler';
 import { species } from 'api/species';
 import { renderQuestionHeader } from 'ui/screens/common/question-header';
 import { itemProperties } from 'ui/helpers/data-checking';
-import { listenToImageSelection, listenToUserAnswer, renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-images';
+import { listenToImageSelection, listenToUserAnswer, renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
 import { renderTemplate } from 'ui/helpers/templating';
-import mixedSpecimenQuestionTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-question-template.html';
+import mixedSpecimenQuestionTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question-template.html';
 
 export const renderMixedSpecimenQuestion = collection => {
 
@@ -25,12 +26,12 @@ export const renderMixedSpecimenQuestion = collection => {
     parent.innerHTML = '';
 
     const itemVernacularName = itemProperties.getVernacularName(item, config);
+    const instructions = `Identify & Select`;
+    const binomial = item.name;
 
-    const instructions = `Click on the image of the ${itemVernacularName}`
+    renderTemplate({ instructions, binomial }, template.content, parent);
 
-    renderTemplate({ instructions }, template.content, parent);
-
-    renderQuestionHeader(document.querySelector('.js-question-container'), item, itemVernacularName);
+    const headerIconContainer = renderQuestionHeader(document.querySelector('.js-question-container'), item, itemVernacularName);
 
     listenToImageSelection(images => {
         const names = document.querySelector('.js-images-names-txt');      
@@ -51,21 +52,26 @@ export const renderMixedSpecimenQuestion = collection => {
 
     const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
 
-    continueLessonBtn.addEventListener('click', () => {
-        window.clearTimeout(scoreUpdateTimer);
-    });
-
-    let scoreUpdateTimer;
+    const pendingScore = {};
 
     listenToUserAnswer((score, scoreUpdateTimer) => {
+        
         continueLessonBtn.disabled = false;
-        scoreUpdateTimer = scoreUpdateTimer;
+        pendingScore.score = score;
+        pendingScore.scoreUpdateTimer = scoreUpdateTimer;
 
-        document.querySelectorAll('.js-images-names-txt li').forEach(name => {
-            if(name.id === score.answer && score.success) {
-                name.querySelector('svg').classList.add('small-icon-success');
-            }
-        });
+        const questionIcon = document.getElementById(score.question);
+        const answerIcon = document.getElementById(score.answer);
+
+        score.success ? answerIcon.classList.add('responsive-icon-success') : answerIcon.classList.add('responsive-icon-failure');
+
+        if(!score.success) questionIcon.classList.add('responsive-icon-success');
+        // score.success ? headerIconContainer.classList.add('responsive-icon-success') : headerIconContainer.classList.add('responsive-icon-failure');
+    });
+
+    continueLessonBtn.addEventListener('click', () => {
+        window.clearTimeout(pendingScore.scoreUpdateTimer);
+        actions.boundUpdateScore(pendingScore.score);
     });
 
     document.querySelector('.js-help-txt').addEventListener('click', () => {
