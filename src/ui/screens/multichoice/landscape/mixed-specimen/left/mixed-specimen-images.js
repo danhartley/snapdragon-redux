@@ -4,9 +4,10 @@ import { species } from 'api/species';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
+import { itemProperties } from 'ui/helpers/data-checking';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import { DOM } from 'ui/dom';
-import { iconicTaxa, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
+import { iconicTaxa, matchIcon, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';
 import specimensTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images-template.html';
 
@@ -59,9 +60,11 @@ export const renderMixedSpecimenImages = collection => {
         listenersToUserAnswer.forEach(listener => listener(score, scoreUpdateTimer));
     };
 
-    document.querySelectorAll('.js-tiles').forEach(image => {
-        image.addEventListener('click', event => {
+    const imageTiles = document.querySelectorAll('.js-tiles img');
 
+    imageTiles.forEach(image => {
+        image.addEventListener('click', event => {
+            
             const selectedImage = event.target;
             const selectedName = selectedImage.dataset.itemName;
             const selectedItem = species.find(item => item.name === selectedName);
@@ -69,7 +72,18 @@ export const renderMixedSpecimenImages = collection => {
             const question = item.name;
             const answer = selectedItem.name;
 
-            const test = { ...score, itemId: selectedItem.id, question, answer, binomial: selectedItem.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: 0};
+            imageTiles.forEach(tile => {
+                if(tile.dataset.itemName !== item.name) {
+                    tile.classList.add('desaturate');
+                }
+            });
+
+            const test = { ...score, itemId: selectedItem.id, 
+                question, answer, binomial: selectedItem.name, 
+                questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, 
+                points: 0, icon: matchIcon(item.taxonomy, iconicTaxa),
+                vernacularName: itemProperties.getVernacularName(species.find(sp => sp.name === question), config),
+                answerVernacularName: itemProperties.getVernacularName(species.find(sp => sp.name === answer), config)};
             scoreHandler('image-match', test, callback, config);
         });
     });

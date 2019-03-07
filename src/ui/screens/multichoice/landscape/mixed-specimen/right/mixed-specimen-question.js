@@ -25,16 +25,16 @@ export const renderMixedSpecimenQuestion = collection => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    const itemVernacularName = itemProperties.getVernacularName(item, config);
     const instructions = `Identify & Select`;
     const binomial = item.name;
 
     renderTemplate({ instructions, binomial }, template.content, parent);
 
-    const headerIconContainer = renderQuestionHeader(document.querySelector('.js-question-container'), item, itemVernacularName);
+    const headerIconContainer = renderQuestionHeader(document.querySelector('.js-question-container'), item, config);
 
-    listenToImageSelection(images => {
-        const names = document.querySelector('.js-images-names-txt');      
+    const speciesShown = document.querySelector('.js-images-names-txt');
+
+    listenToImageSelection(images => {        
         const getVernacularName = (itemName) => {
             const vernacularName = itemProperties.getVernacularName(species.find(sp => sp.name === itemName), config);
             return vernacularName;
@@ -43,10 +43,10 @@ export const renderMixedSpecimenQuestion = collection => {
             const icon = returnIcon(species.find(sp => sp.name === itemName));
             return icon;
         };
-        const itemNames = images.map(image => `<li id="${image.itemName}">${getIcon(image.itemName)} ${getVernacularName(image.itemName)}</li>`);
-        names.innerHTML = '';
+        const itemNames = images.map(image => `<li id="${image.itemName}">${getIcon(image.itemName)} <span>${getVernacularName(image.itemName)}</span></li>`);
+        speciesShown.innerHTML = '';
         utils.shuffleArray(itemNames).forEach(name => {
-            names.innerHTML += name;
+            speciesShown.innerHTML += name;
         });
     });
 
@@ -63,10 +63,17 @@ export const renderMixedSpecimenQuestion = collection => {
         const questionIcon = document.getElementById(score.question);
         const answerIcon = document.getElementById(score.answer);
 
-        score.success ? answerIcon.classList.add('responsive-icon-success') : answerIcon.classList.add('responsive-icon-failure');
+        // score.success ? answerIcon.classList.add('responsive-icon-success') : answerIcon.classList.add('responsive-icon-failure');
+        // score.success ? answerIcon.classList.add('responsive-text-success') : answerIcon.classList.add('responsive-text-failure');
 
-        if(!score.success) questionIcon.classList.add('responsive-icon-success');
-        // score.success ? headerIconContainer.classList.add('responsive-icon-success') : headerIconContainer.classList.add('responsive-icon-failure');
+        // if(!score.success) answerIcon.classList.add('responsive-text-failure');
+
+        // if(!score.success) questionIcon.classList.add('responsive-icon-success');
+        // if(!score.success) questionIcon.classList.add('responsive-text-success');
+
+        // questionIcon.classList.add('responsive-text-success');
+
+        // Array.from(speciesShown.querySelectorAll('li')).filter(species => species.id !== score.question && species.id !== score.answer).forEach(s => s.style.color = 'gray');
     });
 
     continueLessonBtn.addEventListener('click', () => {

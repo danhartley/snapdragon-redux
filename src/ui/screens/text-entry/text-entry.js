@@ -1,8 +1,8 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
+import { renderQuestionHeader } from 'ui/screens/common/question-header';
 import { utils } from 'utils/utils';
-import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
@@ -58,7 +58,6 @@ export const renderInput = (screen, question, hints) => {
         }, 1000);
     }
     
-
     const name = clone.querySelector('.js-txt-name');
     if(name) name.innerHTML = item.name;
     const vernacular = clone.querySelector('.js-txt-vernacular');
@@ -74,6 +73,8 @@ export const renderInput = (screen, question, hints) => {
     else renderLandscape(item, config, question);
 
     document.querySelector('.js-txt-input').focus();
+
+    renderQuestionHeader(document.querySelector('.js-question-container'), item, item.vernacularName);
 };
 
 const renderPortrait = (item, config) => {

@@ -404,14 +404,14 @@ a.dropdown-item {
 }
 
 .card.radio-buttons-container,
-.card.block-container,
+/* .card.block-container, */
 .card.mixed-specimen-container {
   margin: 0 0 0.5rem 0;
 }
 
-.card.block-container div {
+/* .card.block-container div {
   flex: 1;
-}
+} */
 
 .binomial {
   font-style: italic;
@@ -909,6 +909,14 @@ a.dropdown-item {
   text-transform: capitalize;
 }
 
+.uppercase {
+  text-transform: capitalize;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
 .clickable {
   cursor: pointer;
 }
@@ -995,8 +1003,8 @@ button.btn-light:focus,
 .image-border {
   text-align: center;
   margin: 0 0 2rem 0;
-  border: 0.05rem solid;
-  border-radius: 0.2rem;
+  border: .05rem solid;
+  border-radius: .2rem;
   padding: 1rem;
 }
 
@@ -1012,11 +1020,11 @@ button.btn-light:focus,
   width: fit-content;
   background-color: var(--snap-block-light);
   color: var(--snap-text-dark);
-  margin: 0.2rem;
-  padding: 0.1rem 0.4rem;
-  letter-spacing: 0.1rem;
-  border-radius: 0.2rem;
-  border: 0.05rem solid var(--snap-text-dark);
+  margin: .2rem;
+  padding: .1rem .4rem;
+  letter-spacing: .1rem;
+  border-radius: .2rem;
+  border: .05rem solid var(--snap-text-dark);
   font-size: 1.2rem;
 }
 
@@ -2292,13 +2300,8 @@ a.collection-disabled {
 
 .question-header {
   display: flex;
-  align-items: center;
-  height: 88px;
-  padding: 0.5rem;
   background-color: var(--snap-species-header-background);
-  border-bottom: 0.05rem solid var(--snap-border-dark);
-  height: 88px;
-  color: var(--snap-text-medium-light);
+  color: var(--snap-dark);
   justify-content: center;
 }
 

@@ -39,7 +39,7 @@ export const renderCompleteText = (collection) => {
             description = `Complete the latin name for a ${vernacularName}.`            
         } else {
             description = `What is the genus of a ${vernacularName}?`;
-            description2 = 'Select generic name'
+            description2 = 'Complete latin name';
         }
     } else if(screen.type === 'text-complete-species') {
 
@@ -51,7 +51,7 @@ export const renderCompleteText = (collection) => {
             description = `Complete the latin name for a ${vernacularName}.`
         } else {
             description = `What is the species of a ${vernacularName}?`;
-            description2 = 'Complete the latin name below by selecting the approprite species.'
+            description2 = 'Complete latin name';
         }
     }
 
@@ -64,7 +64,7 @@ export const renderCompleteText = (collection) => {
             case 'species':
                 return itemProperties.getSpeciesName(item);
             default:
-                return item
+                return item;
         }
     });
     const pool = R.take(numerOfItems, utils.shuffleArray(itemTaxons).filter(utils.onlyUnique).filter(itemTaxon => itemTaxon !== item[givenTaxon]));
@@ -84,15 +84,12 @@ export const renderCompleteText = (collection) => {
         const iconColour  = score.success ? 'answer-box-success' : 'answer-box-alert';
 
         const icon = score.success
-            ? `<span class="icon"><i class="fas fa-check-circle"></i></span>`
-            : `<span class="icon"><i class="fas fa-times-circle"></i></span>`;
+            ? `<span class="icon"><i class="fas fa-check"></i></span>`
+            : `<span class="icon"><i class="fas fa-times"></i></span>`;
 
-
-        const txtCorrect = `<span class="icon-text"><span class="icon-container ${iconColour}">${icon}</span><span class="binomial">${score.binomial}</span><span> is correct.</span</span>`;
-
-        const txtIncorrect = `<span class="icon-text"><span class="icon-container ${iconColour}">${icon}</span><span>The correct name is </span<span class="binomial">${score.binomial}.</span></span>`;
+        const response = score.success ? 'That is the correct answer.' : 'That is the wrong answer.';
         
-        document.querySelector('.js-txt-response').innerHTML = score.success ? txtCorrect : txtIncorrect;
+        document.querySelector('.js-txt-question').innerHTML = `<div class="${iconColour}"><span>${icon}</span><span>${ response }</span</div>`;        
 
         if(question === item.species) {
             const species = document.querySelector('.species');

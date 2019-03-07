@@ -27,14 +27,14 @@ export const scoreHandler = (type, test, callback, config, containers) => {
     }
 };
 
-const textAlertHandler = (response) => {
+const textAlertHandler = response => {
     const questionText = document.querySelector('.js-txt-question');
     questionText.innerHTML = response.success
         ? `<div class="answer-box-success">
-            <span class="icon"><i class="fas fa-check-circle"></i></span><span>${ response.correct }</span>
+            <span class="icon"><i class="fas fa-check"></i></span><span>${ response.correct }</span>
             </div>`
         : `<div class="answer-box-alert">
-            <span class="icon"><i class="fas fa-times-circle"></i></span><span>${response.incorrect}</span>
+            <span class="icon"><i class="fas fa-times"></i></span><span>${response.incorrect}</span>
            </div>`;
 }
 
@@ -50,8 +50,8 @@ const simpleScoreHandler = (test, callback, config) => {
 
     if(callback) callback(score, scoreUpdateTimer);
 
-    let correct = config.isLandcapeMode ? `You correctly selected a match for ${test.question}.` : `${test.question}'s correct`;
-    let incorrect = `You selected ${test.answer}.`;
+    let correct = config.isLandscapeMode ? `That is the right answer.` : `That is the right answer.`;
+    let incorrect = config.isLandscapeMode ? `That is the wrong answer.` : 'That is the wrong answer.';
 
     textAlertHandler({ success: score.success, correct, incorrect });
 }
@@ -86,8 +86,11 @@ const genericScoreHandler = (_score, callback, config, containers) => {
         labelTxt = 'Family name';
     }
 
-    const correct = `${ responseTxt } is correct`;
-    const incorrect = `The correct answer is ${ responseTxt }`;
+    // const correct = `${ responseTxt } is correct`;
+    // const incorrect = `The correct answer is ${ responseTxt }`;
+
+    let correct = config.isLandscapeMode ? `That is the right answer.` : `That is the right answer.`;
+    let incorrect = config.isLandscapeMode ? `That is the wrong answer.` : 'That is the wrong answer.';
 
     textAlertHandler({ success: score.success, correct, incorrect });
 
