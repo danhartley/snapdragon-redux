@@ -91,18 +91,6 @@ export const renderCompleteText = (collection) => {
         
         document.querySelector('.js-txt-question').innerHTML = `<div class="${iconColour}"><span>${icon}</span><span>${ response }</span</div>`;        
 
-        if(question === item.species) {
-            const species = document.querySelector('.species');
-            species.style.color = 'white';
-            species.style.borderColor = 'white';
-            species.classList.add(score.colour);
-        } else {
-            const genus = document.querySelector('.genus');
-            genus.style.color = 'white';
-            genus.style.borderColor = 'white';
-            genus.classList.add(score.colour);
-        }
-
         if(!score.success) {
             document.querySelectorAll('.block span').forEach(block => {
                 if(block.innerHTML === score.question) {
