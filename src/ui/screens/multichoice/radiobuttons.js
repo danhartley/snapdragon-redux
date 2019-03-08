@@ -36,7 +36,7 @@ export const renderRadioButtons = (collection) => {
 
     const scorehandler = (descriptions, question, answers) => {
         const questionFormat = { itemId: item.id, question, layoutCount: lessonPlan.layouts.length, points: layout.points };
-        radioButonClickhandler(config, template, descriptions, answers, '.js-rb-answer-btn', questionFormat);
+        radioButonClickhandler(config, template, descriptions, answers, '.js-rb-answer-btn', questionFormat, item);
     }
 
     const familyFlavours = config.isPortraitMode 
@@ -54,7 +54,7 @@ export const renderRadioButtons = (collection) => {
 
         const summary = families.find(f => f.name === family).descriptions[0].summary;
         descriptions[0] = `${species} is a member of which family?`;
-        descriptions[1] = `'${summary}'`;
+        // descriptions[1] = `'${summary}'`;
         question = { question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 
@@ -65,7 +65,7 @@ export const renderRadioButtons = (collection) => {
 
         const identification = families.find(f => f.name === family).descriptions[0].identification;
         descriptions[0] = `${species} is a member of which family?`;
-        descriptions[1] = `'${identification}'`;
+        // descriptions[1] = `'${identification}'`;
         question = { ...question,  question: family, binomial: item.name };
         answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 

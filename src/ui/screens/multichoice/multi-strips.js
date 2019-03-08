@@ -56,6 +56,8 @@ export const renderMultiStrips = (collection) => {
     const render = (questionText, questionValue, answers, card = taxonCard, ctxt = {description}) => {
     
         renderTemplate({ description, answers }, template.content, parent);
+
+        renderQuestionHeader(document.querySelector('.js-question-container'), item, item.vernacularName);
         
         const strips = document.querySelectorAll('.js-rptr-strips .strip div');
 

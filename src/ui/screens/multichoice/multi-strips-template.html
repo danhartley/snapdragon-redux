@@ -1,8 +1,14 @@
-<div class="snapdragon-container">
-    <div class="question-header landscape"><span>{{ description }}</span></div>
-    <div class="strips description js-rptr-strips" data-repeat-answer="{{ answers }}">
-        <div class="strip">
-            <div>{{ answer }}</div>
+<div class="snapdragon-container mixed-specimen-container">
+    <div class="js-question-container"></div>
+    <div class="mixed-specimens">
+        <div class="hide-empty question question-txt">
+            <span>Identify species</span>
+            <span>(Click on the name below.)</span>
+        </div>
+        <div class="strips description js-rptr-strips" data-repeat-answer="{{ answers }}">
+            <div class="strip">
+                <div>{{ answer }}</div>
+            </div>
         </div>
     </div>
     <div class="text-question js-txt-question landscape"></div>

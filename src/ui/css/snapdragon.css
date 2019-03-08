@@ -310,11 +310,6 @@ a.dropdown-item {
   border-radius: 0.25rem;
 }
 
-/* .lesson-item-details div:nth-child(1) span:nth-child(1) {
-  border-bottom: .05rem solid var(--gray);
-  padding: 0 0 .25rem 0;
-} */
-
 .nav-icons .active-icon {
   color: var(--orange);
 }
@@ -335,10 +330,6 @@ a.dropdown-item {
   overflow-y: scroll;
   height: 72vh;
 }
-/* 
-.modal-header {
-  display: initial;
-} */
 
 .modal-list.scrollable {
   height: 50vh;
@@ -404,14 +395,9 @@ a.dropdown-item {
 }
 
 .card.radio-buttons-container,
-/* .card.block-container, */
 .card.mixed-specimen-container {
   margin: 0 0 0.5rem 0;
 }
-
-/* .card.block-container div {
-  flex: 1;
-} */
 
 .binomial {
   font-style: italic;
@@ -619,16 +605,22 @@ a.dropdown-item {
   flex: initial;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 0 0.5rem;
-  background-color: var(--snap-strips-background);
   cursor: pointer;
 }
 
 .strip {
   flex: auto;
-  width: 100%;
-  margin: 0.5rem 0;
+  margin: 0.2rem 0;
+  border-radius: .25rem;
+  border: .2rem solid var(--orange);
+  width: fit-content;
+  background-color: rgb(250, 179, 123);
+  letter-spacing: .03rem;
+}
+
+.strip:hover {
+  border: .2rem solid var(--gray);
 }
 
 .strips.description .strip div {
@@ -636,9 +628,7 @@ a.dropdown-item {
 }
 
 .strip div {
-  border: solid 1px;
-  border-color: var(--snap-border-light);
-  padding: 0.25rem 0.5rem;
+  padding: 0.2rem 0.5rem;
 }
 
 .vernacular-name {
@@ -1055,7 +1045,10 @@ span.correct {
   color: var(--snap-inactive);
 }
 
-.snap-success,
+.snap-success {
+  border: 0.2rem solid var(--snap-success);
+}
+
 .btn.btn-light.snap-success {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-success) !important;
@@ -1066,7 +1059,10 @@ span.correct {
   color: var(--snap-alert);
 }
 
-.snap-alert,
+.snap-alert {
+  border: 0.2rem solid var(--snap-alert);
+}
+
 .btn.btn-light.snap-alert {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-alert) !important;

@@ -118,52 +118,19 @@
     }
 
     .strips {
-        padding: 0 .5rem;
+        padding: 0 .25rem;
     }
 
-    .strip div {
-        padding: .5rem;
+    .strip:hover div {
+        transition-duration: .5s;
     }
 
     .action-update-container {
         width: initial;
     }
 
-    .letterbox-entry {
-        color: var(--snap-text-medium-light);
-        flex: auto;
-        margin: 1rem 0;
-        display: flex;
-        flex-direction: column;
-        padding: .5rem;
-      }
-
-    .letterbox-entry div {
-        margin: .5rem 0;
-        font-size: 1.2rem;
-    }
-
-    .letterbox-entry input {
-        width: 75%;
-        font-size: 1.5rem;
-        padding: .25rem;
-    }
-
-    .letterbox-entry button:disabled {
-        color: var(--snap-text-dark);
-        pointer-events: none;
-    }
-
-    .letterbox-entry .buttons {
+    .horizontal-buttons {
         display: flex;        
-    }
-
-    .letterbox-entry .buttons > div:nth-child(2) {
-        padding: 0 0 0 .5rem;
-    }
-
-    .letterbox-entry button {
-        margin: .5rem 0 0 0;
     }
 
     .text-question .icon {
@@ -177,6 +144,10 @@
 
     .answer-container {
         padding: .5rem;
+        margin: 1rem 0;
+    }
+
+    .pool {
         margin: 1rem 0;
     }
 
@@ -230,8 +201,7 @@
     }
 
     .lesson-plans .table-row th:nth-child(1), .lesson-plans .table-row th:nth-child(4),
-    .lesson-plans .table-row td:nth-child(1), .lesson-plans .table-row td:nth-child(4),
-     {
+    .lesson-plans .table-row td:nth-child(1), .lesson-plans .table-row td:nth-child(4) {
       flex: 1;
       align-self: center;
       display: flex;
@@ -371,35 +341,41 @@
     }
     
     .question-sub-header {
-        margin: 0 .25rem 0 0 ;
         border-bottom: .05rem solid gray;
         padding: 0 0 .25rem 0;
         text-transform: uppercase;
         font-size: .8rem;
+        width: fit-content;
     }
 
-    /* .mixed-specimens > div:nth-child(2) span:nth-child(2) {
-        font-size: 1rem;
-    } */
-
-    .mixed-specimens > div:nth-child(4) {
+    .images-names-refresh {
         display: flex;
         align-items: center;
         width: fit-content;
         margin: 0;
     }
 
-    .mixed-specimens > div:nth-child(4) span {
+    .mixed-specimens .help-txt {
         font-size: 1.1rem;
         letter-spacing: .03rem;
+        margin: 1rem;
+    }
+
+    .mixed-specimens input[type="text"] {
+        width: 75%;
+        font-size: 1.5rem;
+        padding: .25rem;
     }
 
     .mixed-specimens button {
         display: inline-block;
         color: var(--snap-text-medium-dark);
         background-color: var(--snap-landscape);
-        margin: 0 0 0 .5rem;
         transition-duration: .5s;
+    }
+
+    .margin-left {
+        margin: 0 0 0 .5rem;
     }
     
     .mixed-specimens button:hover {
@@ -416,22 +392,6 @@
         opacity: .6;
         filter: grayscale(80%);
     }
-
-    /* .responsive-icon-success svg {
-        color: rgb(46, 125, 3);
-    }
-
-    .responsive-icon-failure svg {
-        color: rgb(255, 0, 0);
-    }
-
-    .responsive-text-success span {
-        text-transform: uppercase;
-    }
-
-    .responsive-text-failure span {
-        text-decoration: line-through;
-    } */
 
     .responsive-text-success span {
         color: var(--snap-text-dark);
@@ -481,11 +441,6 @@
         padding-bottom: 0.5rem;
         border: .08rem solid var(--snap-species-header-background);
       }
-
-    /* .text-question span:nth-child(2),
-    .text-question span:nth-child(3) {
-        vertical-align: super;
-    } */
 
     #speciesCardModal .modal-dialog, #taxonCardModal .modal-dialog {
         min-width: 32rem;
