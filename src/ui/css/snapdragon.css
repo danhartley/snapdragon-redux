@@ -1011,7 +1011,7 @@ button.btn-light:focus,
   background-color: var(--snap-block-light);
   color: var(--snap-text-dark);
   margin: .2rem;
-  padding: .1rem .4rem;
+  padding: .1rem .5rem;
   letter-spacing: .1rem;
   border-radius: .2rem;
   border: .05rem solid var(--snap-text-dark);

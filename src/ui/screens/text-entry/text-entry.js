@@ -54,7 +54,7 @@ export const renderInput = (screen, question) => {
     
     renderTemplate({}, template.content, parent, clone);
 
-    const questionTxt = document.querySelector('.question-txt');
+    const questionTxt = document.querySelector('.js-question-txt span:nth-child(1)');
     const inputTxt = document.querySelector('.js-txt-input');
     const helpTxt = document.querySelector('.js-help-txt');
 
@@ -68,12 +68,12 @@ export const renderInput = (screen, question) => {
             helpTxt.innerHTML = `${utils.capitaliseFirst(question.genus)} ---`;
             break;
         case 'name': 
-            questionTxt.innerHTML = 'Enter latin name';
+            questionTxt.innerHTML = 'Enter the latin name';
             inputTxt.setAttribute('placeholder', 'Latin name');
             helpTxt.innerHTML = `--- ---`;
             break;
         case 'vernacular':
-            questionTxt.innerHTML = 'Enter common name';
+            questionTxt.innerHTML = 'Enter the common name';
             inputTxt.setAttribute('placeholder', 'Common name');
             helpTxt.innerHTML = `-----`;
             break;

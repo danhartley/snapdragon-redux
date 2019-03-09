@@ -2110,6 +2110,73 @@ export const taxa = [
         eol: "http://eol.org/pages/5986/overview",
         wiki: "https://en.wikipedia.org/wiki/Entolomataceae"
     },
+    {
+        taxon: 'family',
+        name: 'Oxalidaceae',
+        thumb: "57/ab/e5/509.22004646.260x190.jpg",
+        names: [ { language: "en", names: ['Wood Sorrel Family']} ,
+        { language: "fr", names:[ 'Oxalidacées' ]},
+        { language: "de", names:[ 'Sauerkleegewächse' ]},
+        { language: "es", names:[ 'oxalidáceas' ]},
+        { language: "pt", names:[ 'Oxalidaceae' ]},
+        { language: "it", names:[ 'Oxalidaceae' ]}],
+        species: '570',
+        genera: '5',
+        traits: [ { language: "en", name: SD.name.USAGE, values: [ SD.usage.FOOD ]}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Small family of five genera of herbaceous plants, shrubs and small trees, most in the genus Oxalis (wood sorrels).',
+                identification: `Typically have divided 'shamrock' leaves, leaflets that spread open in light and close in darkness and flower parts in 5's.`
+            }
+        ],
+        eol: "http://eol.org/pages/4286/overview",
+        wiki: "https://en.wikipedia.org/wiki/Oxalidaceae"
+    },
+    {
+        taxon: 'family',
+        name: 'Papilionidae',
+        thumb: "55/6d/72/509.11059686.260x190.jpg",
+        names: [ { language: "en", names: ['Swallowtail butterfly']} ,
+        { language: "fr", names:[ 'Papilionidae' ]},
+        { language: "de", names:[ 'Ritterfalter' ]},
+        { language: "es", names:[ 'papiliónidos' ]},
+        { language: "pt", names:[ 'Cauda-de-andorinha' ]},
+        { language: "it", names:[ 'Papilionidae' ]}],
+        species: '~600',
+        genera: '31',
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Large, colorful butterflies family includes the largest, the birdwing butterflies.',
+                identification: `Forked hindwings. Caterpillar bears a repugnatorial organ called the osmeterium on its prothorax.`
+            }
+        ],
+        eol: "http://eol.org/pages/884/overview",
+        wiki: "https://en.wikipedia.org/wiki/Papilionidae"
+    },
+    {
+        taxon: 'family',
+        name: 'Anatidae',
+        thumb: "55/6d/72/509.11059686.260x190.jpg",
+        names: [ { language: "en", names: ['Ducks, geese and swans']} ,
+        { language: "fr", names:[ 'Anatidés' ]},
+        { language: "de", names:[ 'Entenvögel' ]},
+        { language: "es", names:[ 'Anatidae' ]},
+        { language: "pt", names:[ 'Anatidae' ]},
+        { language: "it", names:[ 'Anatidae' ]}],
+        species: '146',
+        genera: '43',
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Water birds adapted for swimming, floating and diving. Herbivorous, monogamous some migrate annually.',
+                identification: `Small-large birds with broad, elongated bodies and webbed feet. Short wings, rapid beats.`
+            }
+        ],
+        eol: "http://eol.org/pages/8027/overview",
+        wiki: "https://en.wikipedia.org/wiki/Anatidae"
+    },
 
     // genus data from: https://www.ukfungusday.co.uk/files/7814/9796/1077/Genus_information_sheets1.FINAL.pdf
 

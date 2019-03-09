@@ -39,7 +39,7 @@ export const renderCompleteText = (collection) => {
             description = `Complete the latin name for a ${vernacularName}.`            
         } else {
             description = `What is the genus of a ${vernacularName}?`;
-            description2 = 'Complete latin name';
+            description2 = 'Complete the latin name';
         }
     } else if(screen.type === 'text-complete-species') {
 
@@ -51,7 +51,7 @@ export const renderCompleteText = (collection) => {
             description = `Complete the latin name for a ${vernacularName}.`
         } else {
             description = `What is the species of a ${vernacularName}?`;
-            description2 = 'Complete latin name';
+            description2 = 'Complete the latin name';
         }
     }
 

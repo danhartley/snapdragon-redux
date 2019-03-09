@@ -10,7 +10,8 @@ const {
     nonTaxonSpecimenTiles,
     mixedSpecimenQuestions,
     mixedSpecimensLeft,
-    mixedSpecimensRight } = panels;
+    mixedSpecimensRight,
+    history, summary } = panels;
 
 const mixedSpeciesMatch = {
     name: 'screen-mixed-species-match',
@@ -399,5 +400,7 @@ export const layouts = {
   glossaryTerms,
   latinEpithets,
   cultivars,
-  mixedSpecimenImages
+  mixedSpecimenImages,
+  history,
+  summary
 }

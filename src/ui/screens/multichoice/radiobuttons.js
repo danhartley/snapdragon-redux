@@ -50,27 +50,25 @@ export const renderRadioButtons = (collection) => {
         question.taxon = 'family';
     }
 
-    if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
+    // if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
 
-        const summary = families.find(f => f.name === family).descriptions[0].summary;
-        descriptions[0] = `${species} is a member of which family?`;
-        // descriptions[1] = `'${summary}'`;
-        question = { question: family, binomial: item.name };
-        answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
+    //     const summary = families.find(f => f.name === family).descriptions[0].summary;
+    //     descriptions[0] = `${species} is a member of which family?`;
+    //     question = { question: family, binomial: item.name };
+    //     answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 
-        scorehandler(descriptions, question, answers);
-    }
+    //     scorehandler(descriptions, question, answers);
+    // }
 
-    if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
+    // if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
-        const identification = families.find(f => f.name === family).descriptions[0].identification;
-        descriptions[0] = `${species} is a member of which family?`;
-        // descriptions[1] = `'${identification}'`;
-        question = { ...question,  question: family, binomial: item.name };
-        answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
+    //     const identification = families.find(f => f.name === family).descriptions[0].identification;
+    //     descriptions[0] = `${species} is a member of which family?`;
+    //     question = { ...question,  question: family, binomial: item.name };
+    //     answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 
-        scorehandler(descriptions, question, answers);
-    }
+    //     scorehandler(descriptions, question, answers);
+    // }
     
     if(layout.screens.find(screen => screen.flavour === 'match-species-to-latin-family-name')) {
 

@@ -47,17 +47,17 @@ const landscapeLesson1 = {
             description: 'Species recognition',
             layouts: [ 
 
-                mixedSpecimenImages, // GOOD
-                textCompleteGenus, // GOOD
-                textCompleteSpecies, // GOOD
-                genusEntry, // GOOD
-                speciesEntry, // GOOD
-                speciesGenusEntry, // GOOD
-                commonEntry, // GOOD
+                // mixedSpecimenImages, // GOOD
+                // textCompleteGenus, // GOOD
+                // textCompleteSpecies, // GOOD
+                // genusEntry, // GOOD
+                // speciesEntry, // GOOD
+                // speciesGenusEntry, // GOOD
+                // commonEntry, // GOOD
 
                 speciesRevision, // excluded in lesson-builder                  
                 // multiSpecimenCommonMatch, // only works portrait as in landscape the photo is the same
-                // mixedSpeciesMatch, // replace with clickable rhs images
+                // mixedSpeciesMatch, // replace with clickable rhs images REMOVE
                 latinToCommonMatch,  // works fine
                 
                 taxonRevision, // excluded in lesson-builder                  

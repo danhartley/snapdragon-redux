@@ -232,13 +232,7 @@ export const radioButonClickhandler = (config, template, descriptions, answers, 
     parent.innerHTML = '';
 
     const description1 = 'Select family';
-    // const description1 = descriptions[0] || '';
-    // const description2 = descriptions[1] || '';
-    // const description3 = descriptions[2] || '';
-    // const description4 = descriptions[3] || '';
-
     renderTemplate({ description1, answers }, template.content, parent);
-    // renderTemplate({ description1, description2, description3, description4, answers }, template.content, parent);
 
     renderQuestionHeader(document.querySelector('.js-question-container'), item, item.vernacularName);
     
@@ -263,10 +257,10 @@ export const radioButonClickhandler = (config, template, descriptions, answers, 
     const callback = (score, scoreUpdateTimer) => {            
         answerBtn.disabled = false;
         answerBtn.removeEventListener('click', scoreEventHandler);     
-        answerBtn.addEventListener('click', () => {
+        // answerBtn.addEventListener('click', () => {
             window.clearTimeout(scoreUpdateTimer);
             actions.boundUpdateScore(score);
-        });
+        // });
     };
 
     const scoreEventHandler = event => {
