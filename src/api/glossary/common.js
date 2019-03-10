@@ -87,4 +87,14 @@ export const commmon = [
         definition: 'One organism living within another.',
         wiki: 'https://en.wikipedia.org/wiki/Symbiogenesis'
     },
+    {
+        term: 'Phenology',
+        definition: 'Study of periodic plant and animal life cycle events and how these are influenced by seasonal and interannual variations in climate, as well as habitat factors (such as elevation) e.g. flowering, leaf-out, egg-laying.',
+        wiki: 'https://en.wikipedia.org/wiki/Phenology'
+    },
+    {
+        term: 'Trophic level',
+        definition: 'The position an organism occupies in a food chain.',
+        wiki: 'https://en.wikipedia.org/wiki/Trophic_level'
+    },
 ];

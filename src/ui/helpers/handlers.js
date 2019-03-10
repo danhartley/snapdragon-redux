@@ -1,4 +1,5 @@
 import { DOM } from 'ui/dom';
+import { renderQuestionHeader } from 'ui/screens/common/question-header';
 import { actions } from 'redux/actions/action-creators';
 import { elem } from 'ui/helpers/class-behaviour';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -27,14 +28,14 @@ export const scoreHandler = (type, test, callback, config, containers) => {
     }
 };
 
-const textAlertHandler = (response) => {
+const textAlertHandler = response => {
     const questionText = document.querySelector('.js-txt-question');
     questionText.innerHTML = response.success
         ? `<div class="answer-box-success">
-            <span class="icon"><i class="fas fa-check-circle"></i></span><span>${ response.correct }</span>
+            <span class="icon"><i class="fas fa-check"></i></span><span>${ response.correct }</span>
             </div>`
         : `<div class="answer-box-alert">
-            <span class="icon"><i class="fas fa-times-circle"></i></span><span>${response.incorrect}</span>
+            <span class="icon"><i class="fas fa-times"></i></span><span>${response.incorrect}</span>
            </div>`;
 }
 
@@ -50,8 +51,8 @@ const simpleScoreHandler = (test, callback, config) => {
 
     if(callback) callback(score, scoreUpdateTimer);
 
-    let correct = config.isLandcapeMode ? `You correctly selected a match for ${test.question}.` : `${test.question}'s correct`;
-    let incorrect = `You selected ${test.answer}.`;
+    let correct = config.isLandscapeMode ? `That is the right answer.` : `That is the right answer.`;
+    let incorrect = config.isLandscapeMode ? `That is the wrong answer.` : 'That is the wrong answer.';
 
     textAlertHandler({ success: score.success, correct, incorrect });
 }
@@ -86,8 +87,8 @@ const genericScoreHandler = (_score, callback, config, containers) => {
         labelTxt = 'Family name';
     }
 
-    const correct = `${ responseTxt } is correct`;
-    const incorrect = `The correct answer is ${ responseTxt }`;
+    let correct = config.isLandscapeMode ? `That is the right answer.` : `That is the right answer.`;
+    let incorrect = config.isLandscapeMode ? `That is the wrong answer.` : 'That is the wrong answer.';
 
     textAlertHandler({ success: score.success, correct, incorrect });
 
@@ -97,7 +98,6 @@ const genericScoreHandler = (_score, callback, config, containers) => {
             containers.questionContainer.classList.add('snap-success');
         }        
     }
-    btn.innerText = 'Continue lesson';
 
     score.layoutCount = layoutCount;
 
@@ -143,7 +143,7 @@ const stripScoreHandler = (test, callback, config) => {
             test.answer = answer;
             const score = markTest(test);
 
-            target.classList.add(score.colour);
+            target.parentElement.classList.add(score.colour);
 
             items.forEach(strip => {   
                 const matchesScientificName = strip.innerText === taxon.name;
@@ -152,8 +152,7 @@ const stripScoreHandler = (test, callback, config) => {
                                                 : false;
                 const matchesQuestion = strip.innerText === taxon.question;
                 if(matchesScientificName || matchesVernacularName || matchesQuestion) {
-                    strip.classList.add('snap-success');
-                    strip.classList.add('snap-success');
+                    strip.parentElement.classList.add('snap-success');
                 }
             });     
             
@@ -165,8 +164,8 @@ const stripScoreHandler = (test, callback, config) => {
             
             if(callback) callback(score, scoreUpdateTimer);
 
-            const correct = `${test.question ? test.taxon ? test.binomial : test.question : test.binomial } is correct`;
-            const incorrect = `The name is ${test.question ? test.taxon ? test.binomial : test.question : test.binomial }`;
+            let correct = config.isLandscapeMode ? `That is the right answer.` : `That is the right answer.`;
+            let incorrect = config.isLandscapeMode ? `That is the wrong answer.` : 'That is the wrong answer.';
 
             textAlertHandler({ success: score.success, correct, incorrect });
 
@@ -227,17 +226,15 @@ export const selectHandler = (selector, callback) => {
     });
 };
 
-export const radioButonClickhandler = (config, template, descriptions, answers, submitBtn, question) => {
+export const radioButonClickhandler = (config, template, descriptions, answers, submitBtn, question, item) => {
     
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    const description1 = descriptions[0] || '';
-    const description2 = descriptions[1] || '';
-    const description3 = descriptions[2] || '';
-    const description4 = descriptions[3] || '';
+    const description1 = 'Select family';
+    renderTemplate({ description1, answers }, template.content, parent);
 
-    renderTemplate({ description1, description2, description3, description4, answers }, template.content, parent);
+    renderQuestionHeader(document.querySelector('.js-question-container'), item, item.vernacularName);
     
     const updateBtn = document.createElement('template');
 
@@ -260,10 +257,10 @@ export const radioButonClickhandler = (config, template, descriptions, answers, 
     const callback = (score, scoreUpdateTimer) => {            
         answerBtn.disabled = false;
         answerBtn.removeEventListener('click', scoreEventHandler);     
-        answerBtn.addEventListener('click', () => {
+        // answerBtn.addEventListener('click', () => {
             window.clearTimeout(scoreUpdateTimer);
             actions.boundUpdateScore(score);
-        });
+        // });
     };
 
     const scoreEventHandler = event => {

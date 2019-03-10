@@ -376,7 +376,7 @@ export const epithets = [
     },
     {
         "latin" : ["petro-"],
-        "en" : ["rock", "stone"]
+        "en" : ["ROCKS", "stone"]
     },
     {
         "latin" : ["phyto-"],

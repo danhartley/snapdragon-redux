@@ -154,30 +154,39 @@ const capitaliseAll = str => {
   return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 };
 
-const getCellValue = function(tr, idx){ 
-  const valueToSortOn = tr.children[idx].innerText || tr.children[idx].classList[0] || tr.children[idx].textContent; 
+const getCellValue = function(tr, idx, headerSortIndex){ 
+  const valueToSortOn = tr.children[idx].children[headerSortIndex].innerText || tr.children[idx].innerText || tr.children[idx].classList[0] || tr.children[idx].textContent; 
   return valueToSortOn;
 }
 
-const comparer = function(idx, asc) { return function(a, b) { return function(v1, v2) {
+const comparer = function(idx, asc, headerSortIndex) { return function(a, b) { return function(v1, v2) {
         return v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2);
-    }(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+    }(getCellValue(asc ? a : b, idx, headerSortIndex), getCellValue(asc ? b : a, idx, headerSortIndex));
 }};
 
-const makeSortable = document => {
-  Array.from(document.querySelectorAll('th > span:nth-child(1)')).forEach(function(sp) { sp.addEventListener('click', function() {
+const makeSortable = (document, callback) => {
+
+  Array.from(document.querySelectorAll('th > span')).forEach(function(sp) { sp.addEventListener('click', function() {
+
+          const headerSortIndex = this.innerText.toUpperCase() === 'ORDER' ? 1 : 0;
+
+          const names = [];
           var th = this.parentElement;
           if(th.classList[0] === 'not-sortable') return;
           var table = th.closest('table');
           var body = table.querySelector('tbody');
           var footer = table.querySelector('tfoot');          
+
           Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
-              .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+              .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc, headerSortIndex))
               .forEach(function(tr) { 
                 if(tr !== footer) {
                   body.appendChild(tr);
+                  names.push(tr.cells[0].id);
                 }
-              });
+              });        
+
+            callback(names);
       })
   });
 };

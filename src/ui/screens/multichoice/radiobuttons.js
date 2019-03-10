@@ -30,13 +30,13 @@ export const renderRadioButtons = (collection) => {
     const otherFamiliesLatinNames = otherFamilies.map(family => family.name);
     const otherFamiliesCommonNames = otherFamilies.filter(family => family.names.find(name => name.language === config.language)).map(family => family.names[0].names[0]);    
     const familyTaxon = families.find(family => family.name === item.family); 
-    const commonFamilyName = itemProperties.getTaxonProp(familyTaxon, config.language, 'names', 'names', '0').names[0];
+    const commonFamilyName = familyTaxon ? itemProperties.getTaxonProp(familyTaxon, config.language, 'names', 'names', '0').names[0] : '';
 
     indices = config.isPortraitMode ? [3,4] : [4,5];
 
     const scorehandler = (descriptions, question, answers) => {
         const questionFormat = { itemId: item.id, question, layoutCount: lessonPlan.layouts.length, points: layout.points };
-        radioButonClickhandler(config, template, descriptions, answers, '.js-rb-answer-btn', questionFormat);
+        radioButonClickhandler(config, template, descriptions, answers, '.js-rb-answer-btn', questionFormat, item);
     }
 
     const familyFlavours = config.isPortraitMode 
@@ -50,27 +50,25 @@ export const renderRadioButtons = (collection) => {
         question.taxon = 'family';
     }
 
-    if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
+    // if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
 
-        const summary = families.find(f => f.name === family).descriptions[0].summary;
-        descriptions[0] = `${species} is a member of which family?`;
-        descriptions[1] = `'${summary}'`;
-        question = { question: family, binomial: item.name };
-        answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
+    //     const summary = families.find(f => f.name === family).descriptions[0].summary;
+    //     descriptions[0] = `${species} is a member of which family?`;
+    //     question = { question: family, binomial: item.name };
+    //     answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 
-        scorehandler(descriptions, question, answers);
-    }
+    //     scorehandler(descriptions, question, answers);
+    // }
 
-    if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
+    // if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
-        const identification = families.find(f => f.name === family).descriptions[0].identification;
-        descriptions[0] = `${species} is a member of which family?`;
-        descriptions[1] = `'${identification}'`;
-        question = { ...question,  question: family, binomial: item.name };
-        answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
+    //     const identification = families.find(f => f.name === family).descriptions[0].identification;
+    //     descriptions[0] = `${species} is a member of which family?`;
+    //     question = { ...question,  question: family, binomial: item.name };
+    //     answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
 
-        scorehandler(descriptions, question, answers);
-    }
+    //     scorehandler(descriptions, question, answers);
+    // }
     
     if(layout.screens.find(screen => screen.flavour === 'match-species-to-latin-family-name')) {
 

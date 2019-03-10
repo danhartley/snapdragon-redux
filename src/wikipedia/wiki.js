@@ -8,6 +8,9 @@ const formatUrl = (name, root, encode) => {
     if(name.indexOf(' ') > 0) {
         let ranks = name.split(' ');
         binomial = ranks[0] + ' ' + ranks[1];
+        if(binomial.indexOf('Speckled wood') > -1) {
+            binomial += ' ' + ranks[2];
+        }
     }    
     return root + encode(binomial);
 };

@@ -20,10 +20,19 @@ const listeners = [];
 
 async function parseMapBoxPlace(json, config) {
   const place = await json;
-  place.region = place.features.find(f => f.place_type[0] === 'place');
-  place.country = place.features.find(f => f.place_type[0] === 'country');
-  place.area = place.region || place.country;
-  place.summary = config.isLandscapeMode ? `Species from ${place.area.text}, ${place.country.text}` : `Species from ${place.area.text}`;
+  const locality = place.features.find(f => f.place_type[0] === 'locality');
+  const region = place.features.find(f => f.place_type[0] === 'region');
+  const country = place.features.find(f => f.place_type[0] === 'country');
+
+  place.locality = locality ? locality.text : '';
+  place.region = region ? region.text : '';
+  place.country = country ? country.text : '';
+  place.area = place.region || place.country; // probably not wanted.....
+  
+  place.shortLocation = `${place.region}, ${place.country}`;
+  place.longLocation = `${place.locality}, ${place.region}, ${place.country}`;
+ 
+  place.summary = config.isLandscapeMode ? `Species from ${place.longLocation}` : `Species from ${place.shortLocation}`;
   const placePromise = new Promise(resolve => {
     resolve(place);
   });
@@ -44,21 +53,18 @@ async function getMapBoxPlace(long, lat, config) {
   return await place;
 }
 
-export async function getPlace(config) {
-  if(!!config.place) {
+export async function getPlace(config, force = false) {
+  if(!!config.place && !force) {
     const response = new Promise(resolve => {
       resolve(config.place);
     });
-    const json = await response;
-    listeners.forEach(listener => listener(json));
+    const json = await response;    
     return await json;
-  } else {
-
+  } else {    
     const coordinates = await getLocation(config);        
     const latitude = coordinates['0'] || coordinates.lat;
     const longitude = coordinates['1'] || coordinates.long;
     config.coordinates = { lat: latitude, long: longitude };
-
 
     return getMapBoxPlace(longitude, latitude, config);
   }
@@ -66,4 +72,25 @@ export async function getPlace(config) {
 
 export const listenToPlaceChange = listener => { 
   listeners.push(listener);
+};
+
+async function IPLookup() {
+  const ACCESS_KEY = '69402a39530c7ae8218dfaf69ef78337';
+  const url = `http://api.ipstack.com/check?access_key=${ACCESS_KEY}`;
+  const response = await fetch(url);
+  const json = await response.json();
+  const { country_code, country_name } = await json;
+  return { country_code, country_name };
+}
+
+export async function getIPLocation(config, force = false) {
+     if(!!config.ipLocation && !force) {
+      const response = new Promise(resolve => {
+        resolve(config.ipLocation);
+      });
+      const json = await response;    
+      return await json;
+     } else {
+      return IPLookup();
+     }
 };

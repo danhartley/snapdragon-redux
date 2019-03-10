@@ -549,7 +549,7 @@ export const birds = [
         },
         {
           "vernacularName": "Blaumeise",
-          "language": "en"
+          "language": "de"
         },
         {
           "vernacularName": "Eurasian Blue Tit",
@@ -1349,6 +1349,13 @@ export const birds = [
       "name": "Erithacus rubecula",
       "images": [
         {
+          "rightsHolder": "Duarte Frade",
+          "source": "https://www.inaturalist.org/photos/1151221",
+          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "url": "28/ce/34/18.https___www_inaturalist_org_photos_1151221.jpg",
+          "thumb": "28/ce/34/18.https___www_inaturalist_org_photos_1151221.98x68.jpg"
+        },
+        {
           "rightsHolder": "Marion ZÃ¶ller",
           "source": "https://www.inaturalist.org/photos/1027003",
           "license": "http://creativecommons.org/licenses/by-nc/4.0/",
@@ -1396,13 +1403,6 @@ export const birds = [
           "license": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
           "url": "28/cc/ae/18.https___www_inaturalist_org_photos_11500.jpg",
           "thumb": "28/cc/ae/18.https___www_inaturalist_org_photos_11500.98x68.jpg"
-        },
-        {
-          "rightsHolder": "Duarte Frade",
-          "source": "https://www.inaturalist.org/photos/1151221",
-          "license": "http://creativecommons.org/licenses/by-nc/4.0/",
-          "url": "28/ce/34/18.https___www_inaturalist_org_photos_1151221.jpg",
-          "thumb": "28/ce/34/18.https___www_inaturalist_org_photos_1151221.98x68.jpg"
         },
         {
           "rightsHolder": "Petra Saracbasi",

@@ -234,29 +234,12 @@ export const weeds = [
       "names": [
         {
           "vernacularName": "quackgrass",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
           "vernacularName": "Gewöhnliche Quecke",
-          "language": "de",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "quackgrass",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "quackgrass",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Quackgrass",
-          "language": "en",
-          "eol_preferred": false
-        }
+          "language": "de"
+        }        
       ],
       "taxonomy": {
         "usageKey": 5290299,
@@ -408,299 +391,93 @@ export const weeds = [
       "names": [
         {
           "vernacularName": "Acker-Schachtelhalm",
-          "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Acker-Schachtelhalm",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Ager-Padderok",
-          "language": "en",
-          "eol_preferred": false
+          "language": "de"
         },
         {
           "vernacularName": "Cavalinha",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Chszczka",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Coada-calului",
-          "language": "en",
-          "eol_preferred": false
+          "language": "pt"
         },
         {
           "vernacularName": "Coda cavallina dei campi",
-          "language": "en",
-          "eol_preferred": false
+          "language": "it"
         },
         {
           "vernacularName": "Coda cavallina",
-          "language": "en",
-          "eol_preferred": false
+          "language": "it"
         },
         {
           "vernacularName": "Cola de caballo del campo",
-          "language": "en",
-          "eol_preferred": false
+          "language": "es"
         },
         {
           "vernacularName": "Cua de cavall petita",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Dirvinis asiklis",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Duwock",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "EQUARV",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "EQUARV",
-          "language": "en",
-          "eol_preferred": false
+          "language": "es"
         },
         {
           "vernacularName": "Equiseto dei campi",
-          "language": "en",
-          "eol_preferred": false
+          "language": "it"
         },
         {
-          "vernacularName": "Field Horsetail",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "HORSETAIL",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "HORSETAIL",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "HORSETAIL",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "HORSETAIL",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "HORSETAIL",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Heermoes",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Klelfting",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Mares tail",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Mezei zsurl",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Paska",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Peltokorte",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Peslika roln",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Preslica",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Prle des champs",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Prle des champs",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Rastavi",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Skrzyp poly",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Tarla qatrquyruu",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Truma kosa",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Zinnkraut",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "common horsetail",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "common horsetail",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "field horsetail",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "field horsetail",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "kerfrken",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "kerfrken",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "kersnelle",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "mares tail",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "peltokorte",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "peltokorte",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "prle des champs",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "scouring rush",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "scouring rush",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "field horsetail",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Acker-Schachtelhalm",
-          "language": "de",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Cavalinha",
-          "language": "pt",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Coda cavallina dei campi",
-          "language": "it",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Cola de caballo del campo",
-          "language": "es",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Common Horsetail",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Field Horsetail",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Mare's tail",
+          "language": "en"
         },
         {
           "vernacularName": "Prêle des champs",
           "language": "fr",
-          "eol_preferred": false
+        },
+        {
+          "vernacularName": "Zinnkraut",
+          "language": "de",          
+        },
+        {
+          "vernacularName": "kerfrken",
+          "language": "de"
+        },
+        {
+          "vernacularName": "kersnelle",
+          "language": "de"
+        },
+        {
+          "vernacularName": "mares tail",
+          "language": "en"
+        },
+        {
+          "vernacularName": "prle des champs",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "scouring rush",
+          "language": "en"
+        },
+        
+        {
+          "vernacularName": "Acker-Schachtelhalm",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Cavalinha",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Coda cavallina dei campi",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Cola de caballo del campo",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Common Horsetail",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Prêle des champs",
+          "language": "fr"
         },
         {
           "vernacularName": "field horsetail",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
-        {
-          "vernacularName": "field horsetail",
-          "language": "en",
-          "eol_preferred": false
-        }
       ],
       "taxonomy": {
         "usageKey": 7924597,
@@ -1683,179 +1460,52 @@ export const weeds = [
       ],
       "names": [
         {
-          "vernacularName": "Ackerwinde",
-          "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "CONARV",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Convolvolo",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Cornbine",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Cornbine",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Correhuela",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Correhuela",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Correhuela",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Correyuela",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "FIELD BINDWEED",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "FIELD BINDWEED",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "FIELD BINDWEED",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
           "vernacularName": "Field Bindweed",
           "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Field Bindweed",
-          "language": "en",
-          "eol_preferred": false
         },
         {
           "vernacularName": "Vilucchio comune",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "bindweed",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "bindweed",
-          "language": "en",
-          "eol_preferred": false
+          "language": "it",
         },
         {
           "vernacularName": "correyuela",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "kervinda",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "kervinda",
-          "language": "en",
-          "eol_preferred": false
+          "language": "es"
         },
         {
           "vernacularName": "liseron des champs",
-          "language": "en",
-          "eol_preferred": false
+          "language": "fr",
         },
         {
           "vernacularName": "orchard morning-glory",
           "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "orchard morning-glory",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "peltokierto",
-          "language": "en",
-          "eol_preferred": false
         },
         {
           "vernacularName": "bindweed",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
+        },
+        {
+          "vernacularName": "Ackerwinde",
+          "language": "de",
         },
         {
           "vernacularName": "Acker-Winde",
           "language": "de",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Ackerwinde",
-          "language": "de",
-          "eol_preferred": false
         },
         {
           "vernacularName": "Convolvolo",
           "language": "it",
-          "eol_preferred": false
         },
         {
           "vernacularName": "Correhuela",
-          "language": "es",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Field Bindweed",
-          "language": "en",
-          "eol_preferred": false
+          "language": "es",          
         },
         {
           "vernacularName": "Liseron des champs",
           "language": "fr",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "field bindweed",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "field bindweed",
-          "language": "en",
-          "eol_preferred": false
         },
         {
           "vernacularName": "Creeping jenny",
           "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Field bindweed",
-          "language": "en",
-          "eol_preferred": false
         }
       ],
       "taxonomy": {
@@ -1973,9 +1623,12 @@ export const weeds = [
       ],
       "names": [
         {
+          "vernacularName": "Daisy",
+          "language": "en"
+        },
+        {
           "vernacularName": "English Daisy",
-          "language": "en",
-          "eol_preferred": true
+          "language": "en"
         },
         {
           "vernacularName": "Margarita",
@@ -2116,103 +1769,19 @@ export const weeds = [
       "names": [
         {
           "vernacularName": "Gewhnliches Hirtentaschel",
-          "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Gewhnliches Hirtentaschel",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Herderstasje",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Herderstasje",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "SHEPHERD'S PURSE",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "SHEPHERD'S PURSE",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "SHEPHERD'S PURSE",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "SHEPHERD'S PURSE",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Shepherd's Purse",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Shepherd's Purse",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Shepherd's Purse",
-          "language": "en",
-          "eol_preferred": false
+          "language": "de"
         },
         {
           "vernacularName": "bolsa de pastor",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "bolsa de pastor",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "shepherd's purse",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "shepherd's purse",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "shepherd's purse",
-          "language": "en",
-          "eol_preferred": false
+          "language": "es"
         },
         {
           "vernacularName": "Gewöhnliches Hirtentäschel",
           "language": "de",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "shepherd's purse",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "shepherd's purse",
-          "language": "en",
-          "eol_preferred": false
         },
         {
           "vernacularName": "Shepherd's purse",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         }
       ],
       "taxonomy": {

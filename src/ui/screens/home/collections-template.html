@@ -1,77 +1,69 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
 
-<div class="snapdragon-container">
-    <div>
-        <div class="snapdragon-options">
-            <div class="dropdown collections js-collections">
-                <button class="btn btn-collection dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span>Choose a lesson</span>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <div data-repeat-collection="{{ lessons }}">
-                        <a class="dropdown-item icon" id="{{ collection.id }}" name="{{ collection.name }}">{{ collection.name }}</a>
-                    </div>
-                </div>
-                <div class="iconic-taxa-control landscape"
-                        data-toggle="modal" 
-                        data-target="#iconicTaxaFilters">
-                    <span>Filters</span>
-                    <span class="iconic-taxa-filters">
-                        <i class="fas fa-sliders-h"></i>
-                    </span>            
-                </div>
-            </div>                                   
-        </div>
-        <div class="snapdragon-options">
-            <div class="dropdown languages js-languages">
-                <button class="btn btn-language dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Languages
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ config.languages }}">
-                    <a class="dropdown-item icon" id="{{ language.lang }}">{{ language.name }}</a>
-                </div>
-            </div>                        
-        </div>
-    </div>
-
-    <div class="snapdragon card align-left">
-
-        <div class="feature-label js-about-label">
-            About Snapdragon
-        </div>
-
-        <div class="course-description js-selected-description">
-            <span>
-                    <p>Snapdragon is a tool for studying the 1.3 million recorded species on Earth.</p>
-                    <p>Related species are grouped and tested in lessons.</p>
-                    <p>Lessons take the form of concise summaries followed by quick tests.</p>
-                    <p class="landscape">If you have any queries or would like to propose a lesson please <a target="_blank" class="underline-link" href="mailto:danhartleybcn@gmail.com?subject=Snapdragon">contact me</a>.</p>
-                    <p class="landscape">This site will change, and may break (it is a functional prototype that is updated regularly). If you are having problems click on the <i class="fas fa-cog"></i> at the bottom of the screen and delete the cache. This will reload the page (but also delete your score).</p>
-                    <p class="landscape">Good luck!</p>
-            </span>
-        </div>        
-
-        <div class="toggle-content is-visible js-lesson-help">
-
-            <hr class="landscape">
-
-            <div class="landscape feature-label">The lesson plan</div>
-
-            <br class="landscape">
-            <br class="landscape">
+<div class="snapdragon-container">    
+    <div class="snapdragon-options">
+        <div class="js-collection-options">
+            <div class="lesson-option-headers js-collection-option-header">
+                Choose an ecosystem
+            </div>
+        
+            <div class="btn-group btn-group-toggle ecosystem" data-toggle="buttons" data-repeat-collection="{{ lessons }}">
+                <label class="btn btn-secondary">
+                    <div id="{{ collection.id }}"> <span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="collection" value="{{ collection.id }}" autocomplete="off"><span class="collectionName">{{ collection.name }}</span></div>
+                </label>
+            </div>
 
             <div class="landscape">
-                You can add or remove species from the list to suit your needs or revision schedule. Click on the tick box to select or deselect a species.
+                <div class="lesson-filters">
+                        <div class="iconic-taxa-control js-iconic-taxa-control landscape"
+                        data-toggle="modal" 
+                        data-target="#iconicTaxaFilters">
+                            <span>Filters</span>
+                            <span class="iconic-taxa-filters">
+                                <i class="fas fa-sliders-h"></i>
+                            </span>            
+                        </div>
+                        <div>Filter by taxa, location, range and iNaturalist users</div>
+                </div>                
             </div>
-            
-            <br class="landscape">
-            <br class="landscape">
 
-            <div class="lesson-plan">
+        </div>
+    </div>     
+
+    <hr>
+
+    <div class="snapdragon-options">
+        <div class="js-lesson-options">
+            <div class="lesson-option-headers js-lesson-option-header">
+                And a guide
+            </div>
+    
+            <div class="btn-group btn-group-toggle lesson-type" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                    <div id="species_identification"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="species_identification" autocomplete="off"> <span class="guideName">Species identification</span> <i class="fas fa-binoculars"></i></div>
+                </label>
+                <label class="btn btn-secondary">
+                    <div id="species_interaction"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="species_interaction" autocomplete="off"> <span class="guideName">Species interaction</span> <i class="fas fa-binoculars"></i></div>
+                </label>
+                <label class="btn btn-secondary">
+                    <div id="speciesTaxonomy"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="speciesTaxonomy" autocomplete="off"> <span class="guideName">Abiotic factors</span> <i class="fas fa-binoculars"></i></div>
+                </label>
+                <label class="btn btn-secondary">
+                    <div id="species_traits"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="lessonType" value="species_traits" autocomplete="off"> <span class="guideName">Species traits and taxonomy</span> <i class="fas fa-book-open"></i></div>
+                </label>
+            </div>
+        </div>
+
+        <div class="lesson-plan js-lesson-plan">
+            <div>
                 You can <span class="underline-link js-edit-lesson-link" data-toggle="modal" data-target="#listModal">edit</span> the plan for this lesson.
             </div>
         </div>
-    </div>    
+        <div>
+            You can <span class="underline-link js-create-guide-link" data-toggle="modal" data-target="#createGuide">create</span> a new guide.
+        </div>
+
+    </div>
 
     <div class="action-update-container">
         <div class="action-update">
@@ -80,7 +72,7 @@
                 <span class="portrait">View lesson species</span>
                 <span class="landscape">Begin lesson</span>
             </button>
-            <button class="btn btn-placeholder js-lesson-btn-action-placeholder toggle-content is-visible disabled">Choose a lesson to begin...</button>
+            <button class="btn btn-placeholder js-lesson-btn-action-placeholder toggle-content is-visible disabled">Choose an ecosystem and a guide</button>
         </div>
     </div>
 </div>
@@ -103,6 +95,7 @@
                         <div id="insecta"><div><i class="fas fa-bug"></i></div><div></div></div>
                         <div id="fungi"><div><svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg></div><div></div></div>
                         <div id="plantae"><div><i class="fas fa-leaf"></i></div><div></div></div>
+                        <div id="lepidoptera"><div><i class="fas fa-barcode"></i></div><div></div></div>
                     </div>
                     <div class="js-lesson-filters">
                         <button class="btn btn-light">Filter lessons</button>
@@ -117,8 +110,52 @@
                             <span class="js-range-text"></span>
                         </div>
                     </div>
-                    <button class="btn btn-light js-set-range-btn">Set range</button>
+                    <div class="location-control">
+                        <button class="btn btn-light js-set-range-btn">Set range</button>
+                        <button class="btn btn-light js-set-location-btn">Update current location</button>
+                    </div>
+                    <hr>
+                    <br>
+                    <h5>iNat Identity</h5>
+                    <div>
+                        <input class="js-inat-identity" type="text">
+                    </div>
+                    <button class="btn btn-light js-set-inat-identity-btn">Set identity</button>
                 </div>                    
             </div>
         </div>
 </div>
+
+<div class="modal fade" id="createGuide" tabindex="-1" role="dialog" aria-labelledby="createGuideModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="modal-title js-modal-title">
+                <div>Step title</div><div>Step 1 of 3</div>
+            </div>                
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>        
+        <div class="modal-body create-guide-body">
+            <div class="create-guide-progress js-create-guide-progress">
+                <div>
+                    <div class="completed">Step 1</div>
+                    <div>Step 2</div>
+                    <div>Step 3</div>
+                    <div>Step 4</div>
+                </div>
+            </div>
+            <div class="create-guide-action js-create-guide-action">Step action</div>
+            <div class="create-guide-navigation js-create-guide-navigation">
+                <div>
+                    <div><span><i class="far fa-arrow-alt-circle-left"></i></span><span></span></div>
+                </div>
+                <div>
+                    <div><span></span><span><i class="far fa-arrow-alt-circle-right"></i></span></div>
+                </div>
+            </div>
+        </div>                    
+    </div>
+    </div>
+</div> -->

@@ -15,21 +15,31 @@ import { renderFeatures } from 'ui/screens/common/feature';
 import { infoSlider } from 'ui/screens/common/info-slider';
 import * as traitTypes from 'api/traits/trait-types';
 import { iconicTaxa, matchTaxon, matchIcon } from 'api/snapdragon/iconic-taxa';
+import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import { renderInatDataBox } from 'ui/screens/common/inat-box';
 import { renderTaxonomyBox } from 'ui/screens/common/taxonomy-box';
 import { renderCalendar } from 'ui/screens/common/calendar';
 import cardTemplate from 'ui/screens/cards/card-template.html';
 
-export const renderCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody) => {
+export const renderCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody, isInCarousel = true) => {
 
     const item = selectedItem || collection.nextItem;
 
     const { layout, config, lessonPlan, enums } = store.getState();
 
+    const rootNode = isModalMode ? document.querySelector('#speciesCardModal') : document.querySelector('.right-body');
+
     if(!isModalMode) {        
         const screen = layout.screens.filter(el => el.name === 'species-card')[0];
         if(!screen) return;
+    }
+
+    if(!isInCarousel) {
+        const prev = document.querySelector('#speciesCardModal .js-prev');
+        const next = document.querySelector('#speciesCardModal .js-next');
+        if(prev) prev.style.display = 'none';
+        if(next) next.style.display = 'none';
     }
     
     const template = document.createElement('template');
@@ -38,20 +48,20 @@ export const renderCard = (collection, isModalMode = false, selectedItem, parent
 
     const traits = getTraits(enums);
 
-    renderCommonParts(template, config, item, collection, traits, isModalMode, parent, lessonPlan);
+    renderCommonParts(template, config, item, collection, traits, isModalMode, parent, lessonPlan, rootNode);
 
     config.isPortraitMode
-        ? renderPortrait(item, config, traits, isModalMode)
-        : renderLandscape(item, config, traits, isModalMode);
+        ? renderPortrait(item, config, traits, isModalMode, rootNode)
+        : renderLandscape(item, config, traits, isModalMode, rootNode);
 };
 
-const renderLandscape = (item, config, traits, isModalMode) => {
+const renderLandscape = (item, config, traits, isModalMode, rootNode) => {
 
-    const src = document.querySelector('.js-bird-song');
+    const src = rootNode.querySelector('.js-bird-song');
     
     getBirdSong(item, traits, src, config.isPortraitMode);
 
-    const eolPage = document.querySelector('.js-species-card-eol-link');
+    const eolPage = rootNode.querySelector('.js-species-card-eol-link');
     
     if(isModalMode) {
         eolPage.classList.add('hide');
@@ -61,28 +71,28 @@ const renderLandscape = (item, config, traits, isModalMode) => {
         eolPage.setAttribute('style', 'text-decoration: none');
     
         setTimeout(()=>{
-            const wikiLink = document.querySelector('.js-species-card-wiki');            
+            const wikiLink = rootNode.querySelector('.js-species-card-wiki');            
             renderWikiModal(item, wikiLink, config);
         });    
     
-        const wikiNode = document.querySelector('.js-species-card-wiki');
+        const wikiNode = rootNode.querySelector('.js-species-card-wiki');
     
         renderWiki(wikiNode, item, config.language);
     }
-    const inatNode = document.querySelector('.js-inat-box');
+    const inatNode = rootNode.querySelector('.js-inat-box');
 
     renderInatDataBox(inatNode, item, config);
 };
 
-const renderPortrait = (item, config, traits, isModalMode) => {
+const renderPortrait = (item, config, traits, isModalMode, rootNode) => {
 
     const images = prepImagesForCarousel(item, config, imageUseCases.SPECIES_CARD);
 
-    const parent = document.querySelector('.js-species-card-images');
+    const parent = rootNode.querySelector('.js-species-card-images');
 
     imageSlider(config, images, parent, true);
 
-    const player = document.querySelector('.js-bird-song-player');
+    const player = rootNode.querySelector('.js-bird-song-player');
 
     if(isModalMode) {
         player.style.display = 'none';
@@ -96,9 +106,9 @@ const renderPortrait = (item, config, traits, isModalMode) => {
         iframe.id = 'birdsong';
         iframe.style.border = 0;
         iframe.src = player.dataset.src;
-        document.querySelector('#menuModal .modal-body').classList.add('bird-song-bg');
-        document.querySelector('#menuModal .js-modal-text-title').innerHTML = `${item.name}`;
-        const elm = document.querySelector('#menuModal .js-modal-text');
+        rootNode.querySelector('#menuModal .modal-body').classList.add('bird-song-bg');
+        rootNode.querySelector('#menuModal .js-modal-text-title').innerHTML = `${item.name}`;
+        const elm = rootNode.querySelector('#menuModal .js-modal-text');
         while (elm.firstChild) {
             elm.removeChild(elm.firstChild);
          }
@@ -106,12 +116,13 @@ const renderPortrait = (item, config, traits, isModalMode) => {
     });
 };
 
-const renderCommonParts = (template, config, item, collection, traits, isModalMode, parent, lessonPlan) => {
+const renderCommonParts = (template, config, item, collection, traits, isModalMode, parent, lessonPlan, rootNode) => {
 
     const name = item.name;
     const epithet = itemProperties.latin(item.species);
     const latin = epithet ? `${item.species}: ${epithet.en}` : '';
     const rank = "species";
+    item.vernacularName = item.vernacularName || itemProperties.getVernacularName(item, config);
     const family = taxa.find(f => f.name === item.family);
     const familyName = family ? family.name : item.taxonomy.family;
     const familyVernacularNames = itemProperties.familyVernacularNames(item.family, config.language, taxa);
@@ -140,7 +151,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     
     renderTemplate({ name, vernacularName: item.vernacularName, latin, rank, subSpeciesCount, familyName, headerImage, familyVernacularName, trait, occurrences, iconicTaxon }, template.content, parent, clone);
 
-    const subspeciesBadge = document.querySelector('.js-subspecies-badge');
+    const subspeciesBadge = rootNode.querySelector('.js-subspecies-badge');
 
     if(subSpeciesCount === 0) {
         subspeciesBadge.classList.add('hide');
@@ -150,7 +161,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
 
         subspeciesBadge.addEventListener('click', event => {
             document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = `Cultivars of ${item.name}`;            
-            const list = document.querySelector('#badgeListModal .js-modal-text');
+            const list = rootNode.querySelector('#badgeListModal .js-modal-text');
             let html = '<div class="modal-list scrollable">';
             members.forEach(member => {
                 html += `<div><span>subspecies: ${member.name}</span>`;
@@ -166,9 +177,9 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
         });
     }
 
-    infoSlider(item, traits, family, document.querySelector('.js-info-box'));
+    infoSlider(item, traits, family, rootNode.querySelector('.js-info-box'), isModalMode);
 
-    const namesBadge = document.querySelector('.js-names-badge');
+    const namesBadge = rootNode.querySelector('.js-names-badge');
 
     if(occurrences < 2) {
         namesBadge.classList.add('hide');    
@@ -185,9 +196,9 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     }
 
     lookALikes(collection, item, traits, config, isModalMode);
-    renderFeatures(item, traits, config, document.querySelector('.js-feature-types'));
+    renderFeatures(item, traits, config, rootNode.querySelector('.js-feature-types'), isModalMode);
     
-    const continueBtn = document.querySelector('.js-species-card-btn button');
+    const continueBtn = rootNode.querySelector('.js-species-card-btn button');
 
     if(isModalMode) {
         continueBtn.classList.add('hide-important');
@@ -203,27 +214,33 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
             actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
         });
 
-        // const taxonomyNode = document.querySelector('.js-taxonomy-box');
+        // const taxonomyNode = rootNode.querySelector('.js-taxonomy-box');
 
         // renderTaxonomyBox(taxonomyNode, { rank, familyVernacularName, familyName, iconicTaxon });
-
-        const calendarNode = document.querySelector('.js-calendar-box');
-
-        renderCalendar(calendarNode, item, config);
     }
 
-    if(item.taxonomy.kingdom.toLowerCase() === 'fungi') {
+    const calendarNode = rootNode.querySelector('.js-calendar-box');
 
-        const iconicIconContainer = document.querySelector('.js-iconic-icon');
+    renderCalendar(calendarNode, item, config);
 
-        iconicIconContainer.innerHTML = '<span class="mushroom-icon-header"><svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg></span>';
+    renderIcon(item, rootNode);
 
-    } else {
+    if(isModalMode) {        
+        rootNode.querySelector('#speciesCardModal .js-modal-text-title').innerHTML = collection.name;
 
-        const iconicIcon = document.querySelector('.js-iconic-icon i');
+        const prev = rootNode.querySelector('#speciesCardModal .js-prev > span');
+        prev.dataset.id = item.id;
+        prev.dataset.transition = 'prev';
+        prev.dataset.modal = 'speciesCardModal';
 
-        const classes = matchIcon(item.taxonomy, iconicTaxa).split(' ');
+        const next = rootNode.querySelector('#speciesCardModal .js-next > span');
+        next.dataset.id = item.id;
+        next.dataset.transition = 'next';
+        next.dataset.modal = 'speciesCardModal';
+        
 
-        classes.forEach(c => iconicIcon.classList.add(c));        
+        const lines = document.getElementsByTagName('hr');
+
+        Array.from(lines).forEach(hr => hr.style.display = 'none');
     }
 };

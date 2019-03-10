@@ -98,8 +98,7 @@ export const local = [
       "names": [
         {
           "vernacularName": "common heron",
-          "language": "en",
-          "eol_preferred": true
+          "language": "en"
         },
         {
           "vernacularName": "Grey Heron",
@@ -112,114 +111,36 @@ export const local = [
         },
         {
           "vernacularName": "Bernat pescaire",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Bernat pescaire",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Bernat pescaire",
-          "language": "en",
-
+          "language": "fr",
         },
         {
           "vernacularName": "Blauwe Reiger",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Gray Heron",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Gray Heron",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Gray Heron",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Gray Heron",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Grey Heron",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Grey Heron",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Grey Heron",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Grey Heron",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Grey Heron",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Grey Heron",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "grey heron",
-          "language": "en",
-
+          "language": "de",
         },
         {
           "vernacularName": "Airone cenerino",
           "language": "it",
-
         },
         {
           "vernacularName": "Garza real",
           "language": "es",
-
         },
         {
           "vernacularName": "Graureiher",
           "language": "de",
-
-        },
-        {
-          "vernacularName": "Grey Heron",
-          "language": "en",
-
         },
         {
           "vernacularName": "Héron cendré",
           "language": "fr",
-
         },
         {
-          "vernacularName": "garça-moura-europeia / garça-real",
+          "vernacularName": "garça-moura-europeia",
           "language": "pt",
-
         },
         {
-          "vernacularName": "gray heron",
-          "language": "en",
-
-        }
+          "vernacularName": "garça-real",
+          "language": "pt",
+        },
       ],
       "taxonomy": {
         "usageKey": 9797180,
@@ -391,163 +312,32 @@ export const local = [
         {
           "vernacularName": "Eurasian Jay",
           "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Eurasian Jay",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Eurasian jay",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Eurasian jay",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Eurasian jay",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Eurasian jay",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Eurasian jay",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Eurasian jay",
-          "language": "en",
-
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Jay",
           "language": "en",
-
-        },
-        {
-          "vernacularName": "Eurasian Jay",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Eurasian Jay",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Eurasian jay",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Eurasian jay",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Jay",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Arrendajo euroasitico",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Chara euroasitica",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Eichelhher",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Eurasian Jay",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Eurasian jay",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Gaio",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Geai des chnes",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Jay",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Urraca euroasitica",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "gaig",
-          "language": "en",
-
         },
         {
           "vernacularName": "Arrendajo Euroasiático",
           "language": "es",
-
         },
         {
           "vernacularName": "Eichelhäher",
           "language": "de",
-
-        },
-        {
-          "vernacularName": "Eurasian Jay",
-          "language": "en",
-
         },
         {
           "vernacularName": "Geai des chênes",
           "language": "fr",
-
         },
         {
           "vernacularName": "Ghiandaia",
           "language": "it",
-
-        },
-        {
-          "vernacularName": "Jay",
-          "language": "en",
-
         },
         {
           "vernacularName": "gaio",
           "language": "pt",
-
-        },
-        {
-          "vernacularName": "Eurasian jay",
-          "language": "en",
-
-        }
+        },        
       ],
       "taxonomy": {
         "usageKey": 5229493,
@@ -654,500 +444,41 @@ export const local = [
       ],
       "names": [
         {
-          "vernacularName": "Mallard",
-          "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "-",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "-",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "-",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Canard colvert",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Canard colvert",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Domestic Duck",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Domestic Duck",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Domestic Duck",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Domestic Duck",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Germano reale",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Germano reale",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Germano reale",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Koi",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "MALL",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "MALL",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "MALL",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard Duck",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard Duck",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard Duck",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Pato de collar",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Pato de collar",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Pato de collar",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Pato-bravo",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Pato-bravo",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Pato-bravo",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Pato-real",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Pato-real",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Pato-real",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Stockente",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Stockente",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Stockente",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "anade real",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "canard colvert",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "duck",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "duck",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "duck",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "duck",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "mallards",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "nade real",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "nade real",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "nade real",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "nec collverd",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "nec collverd",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "nec collverd",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "sinisorsa",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "sinisorsa",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "sinisorsa",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
-        },
-        {
           "vernacularName": "Canard colvert",
           "language": "fr",
-
         },
         {
           "vernacularName": "Common Mallard",
           "language": "en",
-
         },
         {
           "vernacularName": "Germano reale",
           "language": "it",
-
-        },
-        {
-          "vernacularName": "Mallard",
-          "language": "en",
-
         },
         {
           "vernacularName": "Northern Mallard",
           "language": "en",
-
         },
         {
           "vernacularName": "Stockente",
           "language": "de",
-
         },
         {
           "vernacularName": "pato-real",
           "language": "pt",
-
         },
         {
           "vernacularName": "Ánade azulón",
           "language": "es",
-
         },
         {
           "vernacularName": "Mallard",
           "language": "en",
-
         },
         {
           "vernacularName": "germano reale",
           "language": "it",
-
         },
-        {
-          "vernacularName": "mallard",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "ánade azulón",
-          "language": "es",
-
-        }
       ],
       "taxonomy": {
         "usageKey": 9761484,
@@ -1631,182 +962,59 @@ export const local = [
         {
           "vernacularName": "Common moorhen",
           "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Common moorhen",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common moorhen",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common moorhen",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common moorhen",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common moorhen",
-          "language": "en",
-
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Moor Hen",
           "language": "en",
-
         },
         {
           "vernacularName": "Moorhen",
           "language": "en",
-
         },
         {
           "vernacularName": "Water Hen",
           "language": "en",
-
         },
         {
           "vernacularName": "Eurasian Moorhen",
           "language": "en",
-
-        },
-        {
-          "vernacularName": "Eurasian Moorhen",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common moorhen",
-          "language": "en",
-
         },
         {
           "vernacularName": "Alae ula",
           "language": "en",
 
-        },
-        {
-          "vernacularName": "Common Moorhen",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common Moorhen",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common Moorhen",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common Moorhen",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common Moorhen",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common Moorhen",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common Moorhen",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common Moorhen",
-          "language": "en",
-
-        },
+        },        
         {
           "vernacularName": "Gallineta frente roja",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Gallineta frente roja",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Moorhen",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Moorhen",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Moorhen",
-          "language": "en",
-
+          "language": "es",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "gallinule poule-d'eau",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "gallinule poule-d'eau",
-          "language": "en",
-
+          "language": "fr",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "polla de agua",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common Moorhen",
-          "language": "en",
-
+          "language": "es",
         },
         {
           "vernacularName": "Gallinella d'acqua",
           "language": "it",
-
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Gallineta común",
           "language": "es",
-
-        },
-        {
-          "vernacularName": "Gallinule poule-d'eau",
-          "language": "fr",
-
-        },
+        },        
         {
           "vernacularName": "Teichhuhn",
           "language": "de",
-
         },
         {
           "vernacularName": "galinha-d'água-comum",
           "language": "pt",
-
-        },
-        {
-          "vernacularName": "Eurasian moorhen",
-          "language": "en",
-
         }
       ],
       "taxonomy": {
@@ -1949,250 +1157,46 @@ export const local = [
       ],
       "names": [
         {
-          "vernacularName": "Black headed gull",
-          "language": "en",
-          "eol_preferred": true
-        },
-        {
           "vernacularName": "Black-headed gull",
           "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Gulls, Terns, and Skimmers",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Antxeta mokogorria",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "BHGU",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common Black-headed Gull",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Gabbiano comune",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Gabbiano comune",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Gabbiano comune",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Gaviota encapuchada",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Gaviota encapuchada",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Gaviota encapuchada",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Gaviota reidora",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Gaviotas y golondrinas marinas",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Guincho",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Guincho-comum",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Hettumafur",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Hettumfur",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Kokmeeuw",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Lachmove",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Lachmwe",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "mouette rieuse",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "mouette rieuse",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "mouette rieuse",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Black-headed Gull",
-          "language": "en",
-
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Gabbiano comune",
           "language": "it",
-
+          wikiSearchTerm: true
+        },
+        {
+          "vernacularName": "Gaviota encapuchada",
+          "language": "es",
+          wikiSearchTerm: true
+        },
+        {
+          "vernacularName": "Gaviota encapuchada",
+          "language": "es",
         },
         {
           "vernacularName": "Gaviota reidora",
           "language": "es",
-
+        },
+        {
+          "vernacularName": "Guincho",
+          "language": "pt",
+        },
+        {
+          "vernacularName": "Guincho-comum",
+          "language": "pt",
+        },
+        {
+          "vernacularName": "mouette rieuse",
+          "language": "fr",
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Lachmöwe",
           "language": "de",
-
+          wikiSearchTerm: true
         },
-        {
-          "vernacularName": "Mouette rieuse",
-          "language": "fr",
-
-        },
-        {
-          "vernacularName": "guincho",
-          "language": "pt",
-
-        },
-        {
-          "vernacularName": "black-headed gull",
-          "language": "en",
-
-        }
       ],
       "taxonomy": {
         "usageKey": 6065824,
@@ -2295,262 +1299,55 @@ export const local = [
         {
           "vernacularName": "Great Cormorant",
           "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Great cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "cormorn grande",
-          "language": "en",
-
+          "language": "es",
         },
         {
           "vernacularName": "grand cormoran",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "grand cormoran",
-          "language": "en",
-
+          "language": "fr",
         },
         {
           "vernacularName": "great cormorant",
           "language": "en",
-
         },
         {
           "vernacularName": "white-breasted cormorant",
           "language": "en",
-
         },
         {
           "vernacularName": "Black Shag",
           "language": "en",
-
         },
         {
           "vernacularName": "Cormorano",
           "language": "it",
-
         },
         {
           "vernacularName": "Cormorant",
           "language": "en",
-
         },
         {
           "vernacularName": "Cormorán grande",
           "language": "es",
-
         },
         {
           "vernacularName": "Grand Cormoran",
           "language": "fr",
-
-        },
-        {
-          "vernacularName": "Great Cormorant",
-          "language": "en",
-
         },
         {
           "vernacularName": "Kormoran",
           "language": "de",
-
-        },
-        {
-          "vernacularName": "White-breasted Cormorant",
-          "language": "en",
-
         },
         {
           "vernacularName": "corvo-marinho",
           "language": "pt",
-
-        },
-        {
-          "vernacularName": "common cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "cormorant",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "cormorán grande",
-          "language": "es",
-
-        },
-        {
-          "vernacularName": "great cormorant",
-          "language": "en",
-
         },
         {
           "vernacularName": "long-tailed cormorant",
           "language": "en",
-
         }
       ],
       "taxonomy": {
@@ -2687,93 +1484,32 @@ export const local = [
         {
           "vernacularName": "Common sandpiper",
           "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Common sandpiper",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common sandpiper",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common Sandpiper",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common Sandpiper",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common Sandpiper",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common sandpiper",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common Sandpiper",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Common Sandpiper",
-          "language": "en",
-
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Andarríos chico",
-          "language": "es",
-
+          "language": "es"
         },
         {
           "vernacularName": "Chevalier guignette",
           "language": "fr",
-
-        },
-        {
-          "vernacularName": "Common Sandpiper",
-          "language": "en",
-
         },
         {
           "vernacularName": "Flussuferläufer",
           "language": "de",
-
         },
         {
           "vernacularName": "Piro piro piccolo",
           "language": "it",
-
         },
         {
-          "vernacularName": "maçarico-das-rochas / maçarico-ribeirinho",
+          "vernacularName": "maçarico-das-rochas",
           "language": "pt",
-
         },
         {
-          "vernacularName": "andarríos chico",
-          "language": "es",
-
+          "vernacularName": "maçarico-ribeirinho",
+          "language": "pt",
         },
-        {
-          "vernacularName": "common sandpiper",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "common sandpiper",
-          "language": "en",
-
-        }
       ],
       "taxonomy": {
         "usageKey": 2481800,
@@ -3160,234 +1896,49 @@ export const local = [
       "names": [
         {
           "vernacularName": "Canadian ruddy turnstone",
-          "language": "en",
-          "eol_preferred": true
+          "language": "en"
         },
         {
           "vernacularName": "Ruddy Turnstone",
           "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Akekeke",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Akekeke",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "RUTU",
-          "language": "en",
-
+          wikiSearchTerm: true
         },
         {
           "vernacularName": "Remena-rocs",
-          "language": "en",
-
+          "language": "cat",
         },
         {
           "vernacularName": "Rola-do-mar",
-          "language": "en",
-
+          "language": "pt",
         },
         {
           "vernacularName": "Rola-do-mar-comum",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Steenloper",
-          "language": "en",
-
+          "language": "pt",
         },
         {
           "vernacularName": "Steinwlzer",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Steinwlzer",
-          "language": "en",
-
+          "language": "de",
         },
         {
           "vernacularName": "Turnstone",
           "language": "en",
-
         },
         {
           "vernacularName": "Vira-pedras",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Voltapietre",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Vuelvepiedras rojizo",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Vuelvepiedras rojizo",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Vuelvepiedras rojizo",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "tournepierre  collier",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "tournepierre  collier",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "tournepierre  collier",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Ruddy Turnstone",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Steinwälzer",
-          "language": "de",
-
-        },
-        {
-          "vernacularName": "Tournepierre à collier",
-          "language": "fr",
-
-        },
-        {
-          "vernacularName": "Turnstone",
-          "language": "en",
-
+          "language": "es",
         },
         {
           "vernacularName": "Voltapietre",
           "language": "it",
-
         },
         {
-          "vernacularName": "Vuelvepiedras común",
+          "vernacularName": "Vuelvepiedras rojizo",
           "language": "es",
-
         },
         {
-          "vernacularName": "vira-pedras / rola-do-mar",
-          "language": "pt",
-
-        },
-        {
-          "vernacularName": "ruddy turnstone",
-          "language": "en",
-
-        }
+          "vernacularName": "tournepierre  collier",
+          "language": "fr",
+        },        
       ],
       "taxonomy": {
         "usageKey": 2481776,

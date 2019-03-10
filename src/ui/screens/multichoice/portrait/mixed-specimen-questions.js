@@ -3,10 +3,9 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
-import mixedSpecimenTemplate from 'ui/screens/multichoice/mixed-specimen-questions-template.html';
+import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen-questions-template.html';
 import questionTemple from 'ui/screens/common/question-template.html';
 import { renderItemSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
 import { scoreHandler } from 'ui/helpers/handlers';
@@ -55,9 +54,9 @@ export const renderMixedSpecimenQuestions = ui => {
 
     images = getPortraitImages(images);
 
-    const question1 = `Look through the images till you find one of ${item.vernacularName} (${item.name}).`;
-    const question2 = `When you've found a match click on the image. (There's more than one.)`;
-    const question3 = '';
+    const question1 = `Can you find a specimen of ${item.vernacularName}?`;
+    const question2 = `When you've found a match click on the image.`;
+    const question3 = `${item.name}`;
 
     let parent = DOM.rightBody;
     parent.innerHTML = '';

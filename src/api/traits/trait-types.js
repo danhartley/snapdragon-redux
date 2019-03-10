@@ -1,5 +1,3 @@
-import * as R from 'ramda';
-
 import { actions } from 'redux/actions/action-creators';
 
 import { english } from 'api/traits/language/en-trait-types';
@@ -33,10 +31,28 @@ export let sex = english.sex;
 export let longevity = english.longevity;
 export let stemArrangement = english.stemArrangement;
 export let leafEdge = english.leafEdge;
+export let foodType = english.foodType;
+export let developmentStage = english.developmentStage;
+export let symbiosis = english.symbiosis;
+export let shelter = english.shelter;
+export let active = english.active;
+export let young = english.young;
+export let month = english.month;
+export let female = english.female;
+export let male = english.male;
+export let diet = english.diet;
+export let marginType = english.marginType;
+export let soilType = english.soilType;
+
+let language;
 
 export const updateLanguage = (config) => {
     
-    switch(config.language) {
+    if(language === config.language) return;
+
+    language = config.language;
+
+    switch(language) {
         case 'en':
             name = english.name;
             howEdible = { ...english.howEdible, ...{ type: 'howEdible' }, ...{ name: english.name.HOW_EDIBLE } };
@@ -82,7 +98,19 @@ export const updateLanguage = (config) => {
         blade,
         longevity,
         stemArrangement,
-        leafEdge
+        leafEdge, 
+        foodType,
+        developmentStage,
+        symbiosis,
+        shelter,
+        active,
+        month,
+        young,
+        female,
+        male,
+        diet,
+        marginType,
+        soilType
     }
 
     actions.boundUpdateEnums(enums);   
@@ -91,7 +119,7 @@ export const updateLanguage = (config) => {
 export const typedEnums = enums => {
     const typedEnums = [];
     for (var key in enums) {
-        if(enums[key].name) {
+        if(enums[key] && enums[key].name) {
             typedEnums.push({[key]: enums[key]});
         }        
     }

@@ -1,15 +1,20 @@
 import { createLesson } from 'syllabus/lesson-builder';
-import { screens } from 'snapdragon/screen-layouts';
+import { layouts } from 'snapdragon/screen-layouts';
 import { getCollectionLayouts } from 'redux/reducers/initial-state/species-state/collection-layouts';
 import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
 
-const { summary, history } = screens;
+const { summary, history } = layouts;
 
 const createLessonPlan = (lessonPlan, config, collection) => {
+
+    collection.moduleSize = collection.moduleSize || config.moduleSize;
+    const rounds = collection.items.length / collection.moduleSize;
+    collection.rounds = collection.items.length % collection.moduleSize === 0 ? rounds : rounds === 1 ? 1 : Math.floor(rounds) + 1;
 
     collection.lesson = collection.lesson || { ...lessonPlan, level: { id: 1 } };
 
     collection.families = familyProps.getFamilyNames(collection.items);
+    collection.familyStats = familyProps.getFamilyStats(collection.items);
 
     collection.itemGroups = getItemGroups(collection);
     collection.itemGroup = collection.itemGroups[collection.currentRound - 1];

@@ -1,383 +1,34 @@
 import * as R from 'ramda';
 
-import { screens } from 'snapdragon/screen-layouts';
+import { layouts } from 'snapdragon/screen-layouts';
 
-const { 
-    specimen, speciesCard, species, vernaculars, scientifics, text, 
-    command, leaf, leafName, 
-    family, familyStrips, taxon, nonTaxon, textComplete, cultivar, cultivarCard, 
-    epithets, wildcardCard, wildcard, definitions, 
-    specimenCommonMatch, specimenLatinMatch,
-    definitionCard, traitProperty,
-    mixedSpecimenTiles, nonTaxonSpecimenTiles,
-    mixedSpecimenQuestions } = screens;
-
-const mixedSpeciesMatch = {
-    name: 'screen-mixed-species-match',
-    type: 'test',
-    score: 1,
-    kind: 'VMC',
-    points: 3,
-    given: 'Given species name',    
-    requirement: 'Select species image',
-    screens: [
-        { ...specimen },
-        // { ...mixedSpecimenTiles },
-        { ...mixedSpecimenQuestions }
-    ]
-};
-
-const speciesRevision = {
-    name: 'screen-species-card',
-    type: 'revision',
-    score: 0,
-    kind: 'S',
-    points: 0,
-    given: 'Given species summary',
-    requirement: 'Study species',
-    screens: [
-        { ...specimen },
-        { ...speciesCard }
-    ]
-};
-
-const taxonRevision = {
-    name: 'screen-taxon-card',
-    type:'revision',
-    score: 0,
-    kind: 'F',
-    points: 0,
-    given: 'Study',
-    requirement: 'Family summary',
-    screens: [
-        { ...specimen },
-        { ...taxon }
-    ]
-};
-
-const nonTaxonRevision = {
-    name: 'screen-non-taxon-card',
-    type:'revision',
-    score: 0,
-    kind: 'GR',
-    points: 0,
-    given: 'Group summary',
-    requirement: 'Study',
-    screens: [
-        { ...nonTaxonSpecimenTiles },
-        { ...nonTaxon }
-    ]
-};
-
-const definitionRevision = {
-    name: 'screen-definition-card',
-    type:'revision',
-    score: 0,
-    kind: 'G',
-    points: 0,
-    given: 'Given glossary',
-    requirement: 'Study definitions',
-    screens: [
-        { ...specimen },
-        { ...definitionCard }
-    ]
-};
-
-// 1 point
-
-const imageToImageMatch = {
-    name: 'screen-image-to-image',
-    type:'test',
-    score: 1,
-    points: 1,
-    kind: 'MC',
-    given: 'Species specimens',
-    requirement: 'Species images',
-    screens: [
-        { ...specimen },
-        { ...species }
-    ]
-};
-
-const latinToCommonMatch = {
-    name: 'screen-latin-to-common',
-    type:'test',
-    score: 1,
-    points: 1,
-    kind: 'MC',
-    given: 'Given latin name',
-    requirement: 'Select common name',
-    screens: [
-        { ...specimen },
-        { ...vernaculars }
-    ]
-};
-
-const commonToLatinMatch = {
-    name: 'screen-common-to-latin',
-    type:'test',
-    score: 1,
-    points: 1,
-    kind: 'MC',
-    given: 'Given common name',
-    requirement: 'Select latin name',
-    screens: [
-        { ...specimen },
-        { ...scientifics }
-    ]
-};
-
-const textCompleteGenus = {
-    name: 'screen-genus-completion',
-    type:'test',
-    score: 1,
-    points: 1,
-    kind: 'MC',
-    given: 'Given species name',
-    requirement: 'Select genus name',
-    screens: [
-        { ...specimen },
-        { ...textComplete, type: 'text-complete-genus'  }
-    ]
-};
-
-const multiSpecimenCommonMatch = {
-    name: 'screen-specimens-common-match',
-    type:'test',
-    score: 1,
-    points: 1,
-    kind: 'VMC',
-    given: 'Given specimen images',
-    requirement: 'Select common name',
-    screens: [
-        { ...specimen },
-        { ...specimenCommonMatch }
-    ]
-};
-
-const multiSpecimenLatinMatch = {
-    name: 'screen-specimens-latin-match',
-    type:'test',
-    score: 1,
-    points: 1,
-    kind: 'VMC',
-    given: 'Given specimen images',
-    requirement: 'Select latin name',
-    screens: [
-        { ...specimen },
-        { ...specimenLatinMatch }
-    ]
-};
-
-const traitPropertyMatch = {
-    name: 'trait-property-match',
-    type:'test',
-    score: 1,
-    points: 1,
-    kind: 'MC',
-    given: 'Given specimen images',
-    requirement: 'Select trait value',
-    screens: [
-        { ...specimen },
-        { ...traitProperty }
-    ]
-};
-
-//  2 points
-
-const familyMatch = {
-    name: 'screen-species-to-family',
-    type:'test',
-    score: 1,
-    points: 2,
-    kind: 'MC',
-    given: 'Species name',
-    requirement: 'List families',
-    screens: [
-        { ...specimen },
-        { ...family }
-    ]
-};
-
-const cultivarMatch = {
-    name: 'screen-cultivar-to-species',
-    type:'test',
-    score: 1,
-    points: 2,
-    kind: 'MC',
-    given: 'Cultivar name',
-    requirement: 'List species',
-    screens: [
-        { ...specimen },
-        { ...cultivar }
-    ]
-};
-
-const familyStripsMatch = {
-    name: 'screen-family-to-description',
-    type:'test',
-    score: 1,
-    points: 2,
-    kind: 'MC',
-    given: 'Family description',
-    requirement: 'List families',
-    screens: [
-        { ...specimen },
-        { ...familyStrips }
-    ]
-};
-
-const genusEntry = {
-    name: 'screen-genus-entry',
-    type:'test',
-    score: 1,
-    points: 2,
-    kind: 'T',
-    given: 'Given species name',
-    requirement: 'Enter genus name',
-    screens: [
-        { ...specimen },
-        { ...text, template: 'js-genus-entry-template', taxon: 'genus'}
-    ]
-};
-
-const speciesEntry = {
-    name: 'screen-species-entry',
-    type:'test',
-    score: 1,
-    points: 2,
-    kind: 'T',
-    given: 'Given genus name',
-    requirement: 'Enter species name',
-    screens: [
-        { ...specimen },
-        { ...text, template: 'js-species-entry-template', taxon: 'species'}
-    ]
-};
-
-const speciesGenusEntry = {
-    name: 'screen-binomial-entry',
-    type:'test',
-    score: 1,
-    points: 4,
-    kind: 'T',
-    given: 'Given common name',
-    requirement: 'Enter latin name',
-    screens: [
-        { ...specimen },
-        { ...text, template: 'js-species-genus-entry-template', taxon: 'name'}
-    ]
-};
-
-const commandLayout = {
-    name: 'screen-command',
-    type:'test',
-    score: 1,
-    points: 2,
-    kind: 'T',
-    given: 'Various',
-    requirement: 'various',
-    screens: [
-        { ...command },
-    ]
-};
-
-const leafEntry = {
-    type:'test',
-    score: 1,
-    points: 3,
-    kind: 'T',
-    screens: [
-        { ...leaf },
-        { ...leafName, template: 'js-text-entry-template' }
-    ]
-};
-
-const textCompleteSpecies = {
-    name: 'screen-species-completion',
-    type:'test',
-    score: 1,
-    points: 2,
-    kind: 'MC',
-    given: 'Given genus name',
-    requirement: 'Select species name',
-    screens: [
-        { ...specimen },
-        { ...textComplete, type: 'text-complete-species' }
-    ]
-};
-
-const commonEntry = {
-    name: 'screen-common-entry',
-    type:'test',
-    score: 1,
-    points: 2,
-    kind: 'T',
-    given: 'Species latin name',
-    requirement: 'Enter common name',
-    screens: [
-        { ...specimen },
-        { ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Enter the common name', short: 'Enter the common name'}}
-    ]
-};
-
-const latinEpithets = {
-    name: 'screen-epithets',
-    type: 'test',
-    score: 1,
-    points: 1,
-    kind: 'MC',
-    given: 'Epithet',
-    requirement: 'List epithet definitions',
-    screens: [
-        { ...specimen },
-        { ...epithets }
-    ]
-};
-
-const glossaryTerms = {
-    name: 'screen-definitions',
-    type: 'test',
-    score: 1,
-    points: 1,
-    kind: 'T',
-    given: 'Given glossary term',
-    requirement: 'Select definition',
-    screens: [
-        { ...specimen },
-        { ...definitions }
-    ]
-};
-
-const cultivars = {
-    name: 'screen-cultivars',
-    type: 'test',
-    score: 1,
-    points: 1,
-    kind: 'T',
-    given: 'List of cultivars',
-    requirement: 'List of species',
-    screens: [
-        { ...specimen },
-        { ...cultivarCard },
-        { ...cultivar }
-    ]
-};
-
-const connections = {
-    name: 'screen-connections',
-    type: 'test',
-    score: 1,
-    points: 1,
-    kind: 'MC',
-    given: 'List of traits',
-    requirement: 'List of species',
-    screens: [
-        { ...specimen },
-        { ...wildcardCard },
-        { ...wildcard }
-    ]
-};
+const {
+    mixedSpeciesMatch,
+    speciesRevision,
+    taxonRevision,
+    nonTaxonRevision,
+    definitionRevision,
+    latinToCommonMatch,
+    commonToLatinMatch,
+    textCompleteGenus,
+    multiSpecimenCommonMatch,
+    multiSpecimenLatinMatch,
+    traitPropertyMatch,
+    familyMatch,
+    cultivarMatch,
+    familyStripsMatch,
+    genusEntry,
+    speciesEntry,
+    speciesGenusEntry,
+    textCompleteSpecies,
+    commonEntry,
+    connections,
+    leafEntry,
+    glossaryTerms,
+    latinEpithets,
+    cultivars,
+    mixedSpecimenImages
+  } = layouts;
 
 const propertyTrait = (traitPropertyMatch, trait) => {
     const layout = R.clone(traitPropertyMatch);
@@ -395,9 +46,25 @@ const landscapeLesson1 = {
             name:'Level 1',
             description: 'Species recognition',
             layouts: [ 
-                speciesRevision,                        
-                multiSpecimenCommonMatch,
-                mixedSpeciesMatch
+
+                // mixedSpecimenImages, // GOOD
+                // textCompleteGenus, // GOOD
+                // textCompleteSpecies, // GOOD
+                // genusEntry, // GOOD
+                // speciesEntry, // GOOD
+                // speciesGenusEntry, // GOOD
+                // commonEntry, // GOOD
+
+                speciesRevision, // excluded in lesson-builder                  
+                // multiSpecimenCommonMatch, // only works portrait as in landscape the photo is the same
+                // mixedSpeciesMatch, // replace with clickable rhs images REMOVE
+                latinToCommonMatch,  // works fine
+                
+                taxonRevision, // excluded in lesson-builder                  
+                
+                familyMatch, // still working... missing family data an issue
+                familyStripsMatch,// still working... missing family data an issue
+                
             ],
             wildcardLayouts : [],
             reviewLayouts: [ multiSpecimenCommonMatch, mixedSpeciesMatch ]

@@ -10,6 +10,8 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <!-- <script src="https://kraaden.github.io/autocomplete/autocomplete.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://kraaden.github.io/autocomplete/autocomplete.css"> -->
         <script src="https://cdn.ravenjs.com/3.24.2/raven.min.js" crossorigin="anonymous"></script>
         <script>
             Raven.config('https://9d9d8654a6a345a3af09df89cb615bde@sentry.io/302756').install();
@@ -74,7 +76,8 @@
             </div>
             <div class="right-grid js-right-grid">
                 <div class="header js-right-header">
-                    <div class="header-text js-right-txt-header">Snapdragon<span class="greek">alpha</span> learn the planet</div>                   
+                    <div class="header-text js-right-txt-header">learn the planet</div>                   
+                    <div class=""></div>
                 </div>
                 <progress style="margin: 1000px 0 0 0" value="0" max="6"></progress>
                 <div class="right-body js-right-body"></div>
@@ -174,15 +177,51 @@
         <div class="modal fade" id="speciesCardModal" tabindex="-1" role="dialog" aria-labelledby="speciesCardLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header">                        
                     <h5 class="modal-title js-modal-text-title"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                     </div>
-                    <div class="modal-body js-modal-body">
-                        <div class="modal-text js-modal-text"></div>
-                    </div>                    
+                    <div class="carousel-inner">
+                        <a class="prev landscape js-prev" role="button">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <div class="modal-body js-modal-body">
+                            <div class="modal-text js-modal-text"></div>
+                        </div>                    
+                        <a class="next landscape js-next" role="button">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="taxonCardModal" tabindex="-1" role="dialog" aria-labelledby="taxonCardLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">                        
+                    <h5 class="modal-title js-modal-text-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="carousel-inner">
+                        <a class="prev landscape js-prev" role="button">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <div class="modal-body js-modal-body">
+                            <div class="modal-text js-modal-text"></div>
+                        </div>                    
+                        <a class="next landscape js-next" role="button">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

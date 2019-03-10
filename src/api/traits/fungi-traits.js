@@ -1,28 +1,5 @@
 import * as traitEnums from 'api/traits/trait-types';
 
-export const fungiDescriptions = [
-    {
-        ids: ['Cantharellus cibarius', 'Omphalotus olearius', 'Hygrophoropsis aurantiaca'],
-        type: 'lookalike',
-        description: 'The false chanterelle (Hygrophoropsis aurantiaca) has a similar appearance and can be confused with the chanterelle. Distinguishing factors are color (the true chanterelle is uniform egg-yellow, while the false chanterelle is more orange in hue and graded, with darker center) and attachment of gills to the stem (the true chanterelle has ridges or wrinkles, which can be quite deep, but not true gills).'
-    },
-    {
-        ids: ['Morchella esculenta', 'Gyromitra esculenta'],
-        type: 'lookalike',
-        description: 'The false morel (Gyromitra esculenta) has a wrinkled or cerebral appearance, the ridges and pit of the true morel ressemble honeycomb. The cap of the false morel is reddish-brown, purplish-brown or dark brown. Only the true morel has a hollow stem.'
-    },
-    {
-        ids: ['Laetiporus sulphureus', 'Laetiporus cincinnatus'],
-        type: 'lookalike',
-        description: 'The pore surface of L. sulphureus is bright yellow and cream/white for L. cincinnatus. L. cincinnatus grows away from the tree in a rosette of individual caps. L. sulphureus grows in shelves at the base of the tree. Both favour oaks. '
-    },
-    // {
-    //     ids: ['Laetiporus sulphureus', 'Polyporus squamosus'],
-    //     type: 'lookalike',
-    //     description: 'Something or other. '
-    // },
-];
-
 export const getFungiTraits = (enums) => {
     const SD = enums || traitEnums;
     return [
@@ -574,6 +551,9 @@ export const getFungiTraits = (enums) => {
     ]},
     { name: 'Hydnum repandum', traits: [
         { name: SD.name.CAP_SHAPE, value: SD.capShape.DEPRESSED },
+        { name: SD.name.CAP_SIZE, value: '<17cm' },
+        { name: SD.name.STIPE_LENGTH, value: '3-10cm' }, 
+        { name: SD.name.STIPE_WIDTH, value: '1-3cm' },
         { name: SD.name.ECO_TYPE, value: SD.ecoType.MYCORRHIZAL },
         { name: SD.name.HOW_EDIBLE, value: SD.howEdible.CHOICE},
         { name: SD.name.HYMENIUM_TYPE, value : SD.hymeniumType.TEETH },
@@ -618,6 +598,8 @@ export const getFungiTraits = (enums) => {
     ]},
     { name: 'Hydnum umbilicatum', traits: [
         { name: SD.name.CAP_SHAPE, value: SD.capShape.DEPRESSED },
+        { name: SD.name.CAP_SIZE, value: '3-5cm' }, 
+        { name: SD.name.STIPE_WIDTH, value: '.5-1cm' },
         { name: SD.name.ECO_TYPE, value: SD.ecoType.MYCORRHIZAL },
         { name: SD.name.HOW_EDIBLE, value: SD.howEdible.CHOICE},
         { name: SD.name.HYMENIUM_TYPE, value : SD.hymeniumType.TEETH },
@@ -782,7 +764,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SYMBIONTS, values: [] },
     ]},
     { name: 'Xanthoria parietina', traits: [
-        { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.WOOD}, ${SD.substrate.ROCK}` },
+        { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.WOOD}, ${SD.substrate.ROCKS}` },
         { name: SD.name.HABITAT, value: `${SD.treeType.POPLAR}, ${SD.treeType.HARDWOODS}` },
         { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}` },
         { name: SD.name.RHIZINE_TYPE, value: `${SD.rhizineType.SPARSE}, ${SD.rhizineType.HAPTER}` },
@@ -795,14 +777,17 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.LOBE_DIAMETER, value: `1-4mm`},
     ]},
     { name: 'Ramalina fastigiata', traits: [
-        { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.HIGH}`}
+        { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.HIGH}`},
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FRUTICOSE}` },
+        { name: SD.name.HABITAT, value: [ SD.treeType.DECIDUOUS, SD.habitat.TRUNKS, SD.habitat.BRANCHES ] },
+        { name: SD.name.COLOUR, value: `${SD.colour.GREY} - ${SD.colour.GREEN}`},
     ]},
     { name: 'Ramalina farinacea', traits: [
-        { name: SD.name.HABITAT, value: `${SD.habitat.BARK}, ${SD.habitat.WOOD}, ${SD.habitat.ROCK}` },
+        { name: SD.name.HABITAT, value: `${SD.habitat.BARK}, ${SD.habitat.WOOD}, ${SD.habitat.ROCKS}` },
         { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FRUTICOSE}, ${SD.thallusType.EPIPHYTE}` },
         { name: SD.name.ASSOCIATE, value: `${SD.associate.ALGA}`, photobiont: 'Trebouxia' },
         { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.HIGH}`},
-        { name: SD.name.COLOUR, value: `${SD.colour.GREEN} - ${SD.colour.GREY}`},
+        { name: SD.name.COLOUR, value: `${SD.colour.GREY} - ${SD.colour.GREEN}`},
         { name: SD.name.DISC_WIDTH, value: `3-8cm`},
         { name: SD.name.LOBE_LENGTH, value: `1-5cm`},
     ]},
@@ -826,7 +811,7 @@ export const getFungiTraits = (enums) => {
     ]},
     { name: 'Lobaria pulmonaria', traits: [
         { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}` },
-        { name: SD.name.HABITAT, value: [ SD.treeType.OAK, SD.treeType.BEECH, SD.treeType.MAPLE, SD.habitat.ROCK ] },
+        { name: SD.name.HABITAT, value: [ SD.treeType.OAK, SD.treeType.BEECH, SD.treeType.MAPLE, SD.habitat.ROCKS ] },
         { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}, ${SD.thallusType.EPIPHYTE}` },
         { name: SD.name.ASSOCIATE, value: `${SD.associate.ALGA}, ${SD.associate.CYNOBACTERIUM}`, photobiont: 'Dictyochloropsis reticulata' },        
         { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.LOW}`},
@@ -859,14 +844,119 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.BIOINDICATOR, value: SD.element.NITROGEN },
     ]},
     { name: 'Parmelia saxatilis', traits: [
-        // { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.EXPOSED_WOOD}` },
-        // { name: SD.name.HABITAT, value: [ SD.treeType.OAK, SD.treeType.CONIFERS ] },
         { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}` },
-        // { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.VARIABLE}`},
-        // { name: SD.name.COLOUR, value: `${SD.colour.BRIGHT_YELLOW_GREEN}`},
-        // { name: SD.name.DISC_WIDTH, value: `2-7cm`},
-        // { name: SD.name.MEDICINAL_PROPERTIES, value: `${SD.medicinalProperties.ANTIBACTERIAL}, ${SD.medicinalProperties.ANTICOAGULANT}`},
-        // { name: SD.name.USAGE, value: `${SD.usage.DYING}, ${SD.usage.POISON}`},
+        { name: SD.name.COLOUR, value: `${SD.colour.GREY_GREEN}`},        
+    ]},
+    { name: 'Physcia aipolia', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.GLAUCOUS}`},
+        { name: SD.name.DISC_WIDTH, value: `<6cm`},
+        { name: SD.name.LICEN_CUP_COLOUR, value: `${SD.name.RIM}: ${SD.colour.WHITE}, ${SD.name.CENTRE}: ${SD.colour.BROWN}-${SD.colour.BLACK}`},
+    ]},
+    { name: 'Parmotrema perlatum', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}` },
+    ]},
+    { name: 'Peltigera membranacea', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}` },
+        { name: SD.name.DISC_WIDTH, value: `<515cm`},
+        { name: SD.name.COLOUR, value: `${SD.colour.BROWN}-${SD.colour.GLAUCOUS}`},
+        { name: SD.name.LOBE_WIDTH, value: `1-2cm`},
+        { name: SD.name.LOBE_LENGTH, value: `<2cm`},
+    ]},
+    { name: 'Placynthium nigrum', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.CRUSTOSE}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.GLAUCOUS}`},
+    ]},
+    { name: 'Lecidella elaeochroma', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.CRUSTOSE}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.BROWN}-${SD.colour.BLACK}`},
+    ]},
+    { name: 'Ochrolechia parella', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.CRUSTOSE}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.PALE_GREY}`},
+    ]},
+    { name: 'Lecanora chlarotera', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.CRUSTOSE}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.CREAM}-${SD.colour.PALE_GREY}`},
+    ]},
+    { name: 'Rhizocarpon geographicum', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.CRUSTOSE}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.YELLOW_GREEN}`},
+        { name: SD.name.SUBSTRATE, value: `${SD.habitat.ROCKS}` },
+    ]},
+    { name: 'Cladonia pocillum', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.CRUSTOSE}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.CREAM}-${SD.colour.PALE_GREY}`},
+        { name: name.SOIL_TYPE, value: `${SD.soilType.CALCAREOUS}` },
+        { name: SD.name.LICEN_CUP_COLOUR, value: `${SD.colour.CHALKY}`},
+    ]},
+    { name: 'Diploicia canescens', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.CRUSTOSE}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.PALE_GREY}`},
+        { name: SD.name.MARGIN_TYPE, value: SD.marginType.LOBED},
+        { name: SD.name.ASSOCIATE, value: `${SD.associate.ALGA}`, photobiont: 'Chlorococcoid' },
+        { name: SD.name.DISC_WIDTH, value: `<6cm`},
+        { name: name.SOIL_TYPE, value: `${SD.soilType.SILICEOUS}, ${SD.soilType.CALCAREOUS}` },
+        { name: SD.name.SUBSTRATE, value: `${SD.habitat.ROCKS}, ${SD.habitat.WALLS}, ${SD.habitat.TREES}` },
+    ]},
+    { name: 'Flavoparmelia caperata', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.PALE_YELLOW_GREEN}`},
+        { name: SD.name.LOBE_WIDTH, value: `3-8mm`},
+        // { name: SD.name.LOOK_ALIKES, value: 'Flavoparmelia baltimorensis'},
+    ]},
+    { name: 'Parmelia sulcata', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.GLAUCOUS}`},        
+        { name: SD.name.ASSOCIATE, value: `${SD.associate.ALGA}`, photobiont: 'Trebouxia' },
+        { name: SD.name.LOBE_WIDTH, value: `2-5mm`},
+    ]},
+    { name: 'Ramalina fastigiata', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FRUTICOSE}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.GREY}-${SD.colour.GREEN}`},
+        { name: SD.name.SUBSTRATE, value: `${SD.habitat.TRUNKS}, ${SD.habitat.BRANCHES}` },
+        { name: SD.name.LOBE_WIDTH, value: `3-8mm`},
+        { name: SD.name.LOBE_LENGTH, value: `1-5cm`},
+        { name: SD.name.DYING, value: SD.usage.DYING},
+    ]},
+    { name: 'Cladonia squamosa', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FRUTICOSE}` },
+        { name: SD.name.HABITAT, value: `${SD.habitat.BARK}, ${SD.habitat.WALLS}, ${SD.habitat.ROCKS}` },
+    ]},
+    { name: 'Platismatia glauca', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FRUTICOSE}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.GLAUCOUS}-${SD.colour.PALE_GREEN}`},    
+    ]},
+    { name: 'Cladonia portentosa', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FRUTICOSE}` },
+        { name: SD.name.HABITAT, value: `${SD.habitat.BARK}, ${SD.habitat.WALLS}, ${SD.habitat.ROCKS}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.PALE_GREY_GREEN}`},
+        { name: SD.name.COLOUR, value: `${SD.colour.GREY}`},
+    ]},
+    { name: 'Physcia tenella', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}` },
+        { name: SD.name.HABITAT, value: `${SD.habitat.WOODLAND}, ${SD.habitat.HEATH}, ${SD.habitat.MOORLAND}` },
+        { name: SD.name.HABITAT, value: `${SD.habitat.ROCKS}, ${SD.habitat.TRUNKS}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.GREY}`},
+    ]},
+    { name: 'Usnea florida', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FRUTICOSE}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.YELLOW_GREEN}`},
+        { name: SD.name.HABITAT, value: `${SD.habitat.BRANCHES}, ${SD.habitat.SHRUBS}, ${SD.habitat.FENCES}` },
+        { name: SD.name.HABITAT, value: `${SD.treeType.BIRCH}, ${SD.treeType.OAK}` },
+        { name: SD.name.HABITAT, value: `${SD.treeType.LARCH}, ${SD.treeType.HAWTHORN}` },
+        { name: SD.name.MEDICINAL_PROPERTIES, value: `${SD.medicinalProperties.ANTIBIOTIC}, ${SD.medicinalProperties.ANTIFUNGAL}`},
+        { name: SD.name.BIOINDICATOR, value: SD.element.SULPUR_DIOXIDE },
+    ]},
+    { name: 'Usnea subfloridana', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FRUTICOSE}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.YELLOW_GREEN}-${SD.colour.GREY_YELLOW}`},
+        { name: SD.name.HABITAT, value: `${SD.habitat.BRANCHES}, ${SD.habitat.ROCKS}` },
+    ]},
+    { name: 'Usnea filipendula', traits: [
+        { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FRUTICOSE}` },
+        { name: SD.name.COLOUR, value: `${SD.colour.PALE_GREY_GREEN}`},
+        { name: SD.name.HABITAT, value: `${SD.treeType.CONIFERS}` },
     ]},
     ];
 };

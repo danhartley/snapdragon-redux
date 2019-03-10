@@ -7,7 +7,7 @@ import { renderItemSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
 import { store } from 'redux/store';
 
 const selectActiveNodeImage = (image, parent) => {
-    parent.querySelectorAll('.carousel-item').forEach(i => {        
+    parent.querySelectorAll('.carousel-item').forEach(i => {
         const elemSrc = i.lastElementChild.dataset.src || i.lastElementChild.src;
         const src = image.dataset ? image.dataset.src : `https://content.eol.org/data/media/${image.url}`;
         if(imageMatch(elemSrc, src)) {
@@ -35,6 +35,7 @@ const disableModalPopups = (disableModal, parent, config) => {
 
 const carouselControlHandler = event => {
     setTimeout(() => {
+
         const activeNode = document.querySelector(`${event.target.dataset.slider} .carousel-item.active > div`);
         const image = activeNode.dataset;        
         handleRightsAttribution(image, activeNode);
@@ -43,12 +44,14 @@ const carouselControlHandler = event => {
 
         const tiles = document.querySelectorAll('.js-tiles');
 
+        const collectionItems = collection.allItems || collection.items;
+
         if(tiles) {
             const name = document.querySelector('.carousel-item.active > div').dataset.title; 
-            const item = collection.items.find(i => i.name === name);
+            const item = collectionItems.find(i => i.name === name);
             renderItemSpecimenTiles(item);
         }
-    },1000);    
+    },750);    
 };
 
 export const imageSlider = (config, images, parent, disableModal, image) => {
@@ -84,7 +87,7 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
 
     slides.forEach((slide, index) => {
         const header = document.querySelectorAll(`#imageComparisonModal .js-modal-image-title > span`)[index];
-        header.innerHTML = `<span class="common-name">${slide.images[0].itemCommon}</span><br><span class="latin-name">(${slide.images[0].itemName})</span>`;
+        header.innerHTML = `<span class="common-name">${slide.images[0].itemCommon}</span><span class="latin-name">(${slide.images[0].itemName})</span>`;
         const item = { name: slide.images[0].itemName, itemCommon: slide.images[0].itemCommon, images: slide.images };
         const images = prepImagesForCarousel(item, config, imageUseCases.CAROUSEL);
         renderTemplate({ images, index: index + 1 }, sideBySlider.content, parent);

@@ -1,6 +1,7 @@
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
-import { listenToPlaceChange } from 'geo/geo';
+// import { listenToPlaceChange } from 'geo/geo';
+// import { listenToiNaturalistUserChange } from 'ui/helpers/iconic-taxa-handler';
 export const renderHeaders = page => {
     
     let lessonPlan, config, counter, collection;
@@ -19,7 +20,7 @@ export const renderHeaders = page => {
     const render = () => {
         const layout = (lessonPlan && lessonPlan.layouts) ? lessonPlan.layouts[counter.index] : null;
 
-        const title = `Snapdragon<span class="greek">alpha</span> learn the planet`;
+        const title = `learn the planet`;
     
         leftHeaderText = title; 
         rightHeaderText = title;
@@ -50,6 +51,7 @@ export const renderHeaders = page => {
             progressBar.value = layout.progressIndex || progressBar.value;
             
             let specimensHeaderText = '';
+            let lessonHeaderText = document.querySelector('.js-right-header > div:nth-child(2)');
     
             switch(layout.name) {
                 case 'screen-latin-to-common':
@@ -60,6 +62,9 @@ export const renderHeaders = page => {
                 case 'screen-image-to-image':
                 case 'screen-species-card':
                     specimensHeaderText = `${item.vernacularName} specimens`;
+                    break;
+                case 'history':
+                    if(PORTRAIT) rightHeaderText = 'Snapdragon';
                     break;
                 default:
                     specimensHeaderText = 'Species specimens';
@@ -87,22 +92,39 @@ export const renderHeaders = page => {
             if(SUMMARY) rightHeaderText = 'Lesson progress';
             if(SPECIES_LIST && PORTRAIT) rightHeaderText = collection.name;
             if(LANDSCAPE_HOME) rightHeaderText = title;
+
+            if(LANDSCAPE) lessonHeaderText.innerHTML = `${collection.name} (${collection.items.length})`;
         }
     
         DOM.leftHeaderTxt.innerHTML = leftHeaderText;
         DOM.rightHeaderTxt.innerHTML = rightHeaderText;
+
+        userChangeHandler(config.inatId);
     };
 
-    const callback = (place) => {
-        if(LANDSCAPE) {
-            DOM.leftHeaderTxt.innerHTML = place.summary;
-            collection.name = place.summary;
+    // const placeChangeHandler = place => {
+    //     if(LANDSCAPE && collection.id === 1) {
+    //         DOM.leftHeaderTxt.innerHTML = place.summary;
+    //         collection.name = place.summary;
+    //     }
+    //     if(PORTRAIT && collection.id === 1) {
+    //         DOM.rightHeaderTxt.innerHTML = place.summary;
+    //         collection.name = place.summary;
+    //     }
+    // };
+
+    const userChangeHandler = userId => {
+        const collectionName = `iNat observations for ${userId}`;
+        if(LANDSCAPE && collection.id === 4) {
+            DOM.leftHeaderTxt.innerHTML = collectionName;
+            collection.name = collectionName;
         }
-        if(PORTRAIT) {
-            DOM.rightHeaderTxt.innerHTML = place.summary;
-            collection.name = place.summary;
+        if(PORTRAIT && collection.id === 4) {
+            DOM.rightHeaderTxt.innerHTML = collectionName;
+            collection.name = collectionName;
         }
     };
 
-    listenToPlaceChange(callback);
+    // listenToPlaceChange(placeChangeHandler);
+    // listenToiNaturalistUserChange(userChangeHandler);    
 };

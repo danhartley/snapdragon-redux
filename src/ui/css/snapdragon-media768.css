@@ -4,6 +4,10 @@
         font-size: 16px;
     }
 
+    h5 {
+        font-size: 1.1rem;
+    }
+
     div.taxon-data {
         margin: 0;
     }
@@ -35,6 +39,10 @@
         border: .05rem solid var(--snap-species-header-background);
       }
 
+      .modal-content .species.revision.card {
+          padding: 0;
+      }
+
       .non-taxon.revision.card > div:nth-child(1) {
           margin: .5rem;
       }
@@ -45,12 +53,15 @@
         margin: 0;
     }
 
-    .snapdragon-options .btn, .snapdragon-options .dropdown-menu.show {
-        width: 20rem;
-    }
-
     .non-taxon-card .snapdragon-options {
         text-align: right;
+    }
+
+    .lesson-filters {
+        display: flex; 
+        flex-direction: row; 
+        align-items: center;
+        margin: .5rem 0 0 0;
     }
 
     .species.card {
@@ -107,56 +118,19 @@
     }
 
     .strips {
-        padding: 0 .5rem;
+        padding: 0 .25rem;
     }
 
-    .strip div {
-        padding: .5rem;
+    .strip:hover div {
+        transition-duration: .5s;
     }
 
     .action-update-container {
         width: initial;
     }
 
-    .letterbox-entry {
-        color: var(--snap-text-medium-light);
-        flex: auto;
-        margin: 1rem 0;
-        display: flex;
-        flex-direction: column;
-        padding: .5rem;
-      }
-
-    .letterbox-entry div {
-        margin: .5rem 0;
-        font-size: 1.2rem;
-    }
-
-    .letterbox-entry input {
-        width: 75%;
-        font-size: 1.5rem;
-        padding: .25rem;
-    }
-
-    .letterbox-entry button:disabled {
-        color: var(--snap-text-dark);
-        pointer-events: none;
-    }
-
-    .letterbox-entry .buttons {
+    .horizontal-buttons {
         display: flex;        
-    }
-
-    .letterbox-entry .buttons > div:nth-child(2) {
-        padding: 0 0 0 .5rem;
-    }
-
-    .text-question {
-        min-height: 5rem;
-    }
-
-    .letterbox-entry button {
-        margin: .5rem 0 0 0;
     }
 
     .text-question .icon {
@@ -173,6 +147,14 @@
         margin: 1rem 0;
     }
 
+    .pool {
+        margin: 1rem 0;
+    }
+
+    .block {
+        margin: .4rem .4rem;
+    }
+
     .block.given {
         margin: 1rem 0;
     }
@@ -183,10 +165,6 @@
 
     .text-question .icon-text {
         font-size: 1.2rem;
-    }
-
-    .block {
-        font-size: 1.4rem;
     }
 
     .flex-provider .skills {
@@ -223,8 +201,7 @@
     }
 
     .lesson-plans .table-row th:nth-child(1), .lesson-plans .table-row th:nth-child(4),
-    .lesson-plans .table-row td:nth-child(1), .lesson-plans .table-row td:nth-child(4),
-     {
+    .lesson-plans .table-row td:nth-child(1), .lesson-plans .table-row td:nth-child(4) {
       flex: 1;
       align-self: center;
       display: flex;
@@ -240,6 +217,14 @@
         flex: 3;    
     } 
 
+    .table-row td:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+        font-size: .8rem;
+        justify-content: space-evenly;
+        align-items: flex-start;
+      }
+
     .lesson-plans .table-row input {
         height: 1.75rem;
         width: 1.75rem;
@@ -254,6 +239,22 @@
     .collection-preview, .collection button, .collections-skills {
         display: inline-block;
     }
+
+
+#speciesCardModal .carousel-inner, #taxonCardModal .carousel-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #speciesCardModal .carousel-inner .prev > span, #taxonCardModal .carousel-inner .prev > span {
+    margin: 0 0 0 .6rem;
+  }
+  
+  #speciesCardModal .carousel-inner .next > span, #taxonCardModal .carousel-inner .next > span {
+    margin: 0 .6rem 0 0;
+    cursor: pointer;
+  }
 
     .left-grid {
         display: grid;
@@ -273,12 +274,13 @@
         max-width: 28.5rem;
     }
 
-    #speciesCardModal .modal-content .snapdragon-container {  
+    #speciesCardModal .modal-content .snapdragon-container, #taxonCardModal .modal-content .snapdragon-container {  
         height: 60vh;
     }
     
-    #traitSlider .carousel-item div {
+    .info.carousel.slide .carousel-item div {
         padding: .5rem;
+        font-size: 1rem;
     }
 
     .summary-scores {
@@ -293,8 +295,143 @@
         height: 50vh;
       }
 
-    .question-container > span:nth-child(1), .question-container > p:nth-child(1) {
+    .question-container, .question-container .underline-link {
         font-size: 1.2rem;
+    }
+
+    .mixed-specimen-container, .block-container {
+        position: relative;
+        justify-content: flex-start;
+    }
+    
+    .mixed-specimen-container .action-update-container {
+        position: absolute;
+        width: initial;
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    .mixed-specimens {
+        color: var(--snap-text-medium-dark);
+        padding: 0 .5rem;
+        font-size: 1.2rem;
+    }
+
+    .mixed-specimens .question , .block-container .question {
+        margin: 1rem 0;
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.07rem;
+        color: var(--snap-text-medium-dark);
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        align-items: center;
+    }
+
+    .mixed-specimens .question > span:nth-child(2), .block-container .question > span:nth-child(2) {
+        font-size: .8rem;
+        vertical-align: super;
+        text-transform: initial;
+        margin: -.25rem 0 0 0;
+    }
+
+    .mixed-specimens > div:nth-child(2) {
+        margin: 2rem 0 0 0;
+    }
+    
+    .question-sub-header {
+        border-bottom: .05rem solid gray;
+        padding: 0 0 .25rem 0;
+        text-transform: uppercase;
+        font-size: .8rem;
+        width: fit-content;
+    }
+
+    .images-names-refresh {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        margin: 0;
+    }
+
+    .mixed-specimens .help-txt {
+        font-size: 1.1rem;
+        letter-spacing: .03rem;
+        margin: 1rem;
+    }
+
+    .mixed-specimens input[type="text"] {
+        width: 75%;
+        font-size: 1.5rem;
+        padding: .25rem;
+    }
+
+    .mixed-specimens button {
+        display: inline-block;
+        color: var(--snap-text-medium-dark);
+        background-color: var(--snap-landscape);
+        transition-duration: .5s;
+    }
+
+    .margin-left {
+        margin: 0 0 0 .5rem;
+    }
+    
+    .mixed-specimens button:hover {
+        background-color: var(--snap-text-medium-light);
+        color: var(--snap-body-bg);
+    }
+    
+    .mixed-specimens .small-icon {
+        font-size: .7rem;
+        margin: 0 .25rem 0 0;
+    }
+
+    .desaturate {
+        opacity: .6;
+        filter: grayscale(80%);
+    }
+
+    .responsive-text-success span {
+        color: var(--snap-text-dark);
+    }
+
+    .mixed-specimens li {
+        display: flex;
+        align-items: baseline;
+        letter-spacing: .01rem;
+        text-transform: capitalize;
+        font-size: 1rem;
+        letter-spacing: .03rem;
+    }
+
+    .text-question {
+        position: absolute;
+        left: 1rem;
+        bottom: 4.5rem;
+        min-height: 2.5rem;
+        padding: 0;
+    }
+
+    .answer-box-success, .answer-box-alert {
+        display: flex;
+        align-items: center;
+    }
+
+    .answer-box-success > span:nth-child(2), 
+    .answer-box-alert > span:nth-child(2) {
+        color: var(--snap-success);
+        font-weight: bold;
+        letter-spacing: .05rem;
+        margin: 0 0 0 .5rem;
+        font-family: serif;
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+
+    .answer-box-alert > span:nth-child(2) {
+        color: var(--snap-alert);
     }
 
     .radio-buttons-group {
@@ -305,24 +442,50 @@
         border: .08rem solid var(--snap-species-header-background);
       }
 
-    .text-question span:nth-child(2),
-    .text-question span:nth-child(3) {
-        vertical-align: super;
-    }
-
-    .text-question {
-        padding: 0;
-    }
-
-    #speciesCardModal .modal-dialog {
-        min-width: 25rem;
-        max-width: 30rem;
+    #speciesCardModal .modal-dialog, #taxonCardModal .modal-dialog {
+        min-width: 32rem;
+        max-width: 32rem;
     }
 
     .header-text {
         font-size: 1rem;
     }
 
+    .header > div:nth-child(2) {
+        font-size: .8rem;
+    }
+
+    .question-container {
+        height: 100px;
+    }
+
+    .question-header {
+        font-size: 1.8rem;
+        border: none;
+        height: inherit;
+        letter-spacing: .03rem;
+        text-transform: capitalize;
+    }
+
+    .question-header div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        line-height: 1.2;
+    }
+
+    .question-header span.binomial {
+        font-size: 1rem;
+    }
+
+    .iconic-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+    }
+    
     .rights-link > div > div, .rights-attribution > div > div:nth-child(1) {
         font-size: 1.5rem;
     }
@@ -334,4 +497,8 @@
     #imageModal .modal-body .imageSlider .carousel-item {
         height: 70vh;
     }      
+
+    .feature-symbiont-list.scrollable {
+        max-height: 9rem;
+    }
 }

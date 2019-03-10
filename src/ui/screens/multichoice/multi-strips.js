@@ -4,6 +4,7 @@ import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
+import { renderQuestionHeader } from 'ui/screens/common/question-header';
 import { taxa } from 'api/snapdragon/taxa';
 import { epithets } from 'api/botanical-latin';
 import { getGlossary } from 'api/glossary/glossary';
@@ -55,6 +56,8 @@ export const renderMultiStrips = (collection) => {
     const render = (questionText, questionValue, answers, card = taxonCard, ctxt = {description}) => {
     
         renderTemplate({ description, answers }, template.content, parent);
+
+        renderQuestionHeader(document.querySelector('.js-question-container'), item, item.vernacularName);
         
         const strips = document.querySelectorAll('.js-rptr-strips .strip div');
 
@@ -130,7 +133,7 @@ export const renderMultiStrips = (collection) => {
         const number = config.isPortraitMode ? 3 : 4;
 
         const questionText = config.isPortraitMode ? 'Tap to match Quick ID' : `Click to match the Quick Id`;
-        const question = families.find(f => f.name === item.family).descriptions[0].identification;
+        const question = families.length > 0 ? families.find(f => f.name === item.family).descriptions[0].identification : 'no families available';
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family)).map(f => f.descriptions[0].identification);
         const answers = utils.shuffleArray([question, ...alternatives]);
 
@@ -142,7 +145,7 @@ export const renderMultiStrips = (collection) => {
         const number = config.isPortraitMode ? 3 : 4;
 
         const questionText = config.isPortraitMode ? 'Tap to match description' : `Click to match the description`;
-        const question = families.find(f => f.name === item.family).descriptions[0].summary;
+        const question = families.length > 0 ? families.find(f => f.name === item.family).descriptions[0].summary : 'no families available';
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family)).map(f => f.descriptions[0].summary);
         const answers = utils.shuffleArray([question, ...alternatives]);
 

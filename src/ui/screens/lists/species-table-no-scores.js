@@ -1,5 +1,6 @@
 import * as SD from 'api/traits/trait-types';
 
+import { actions } from 'redux/actions/action-creators';
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { taxa } from 'api/snapdragon/taxa';
@@ -54,7 +55,15 @@ export const buildTable = (collection, config, traits, enums) => {
         const keyTrait = itemProperties.getActiveTrait(traits, item.name, [{ name: traitName, formatter: trait => trait.value }]);
         item.keyTrait = keyTrait.indexOf(',') > 0 ? keyTrait.split(',')[0] : keyTrait;
         item.keyTratLinkClass = keyTratLinkClass;
-        item.familyLinkClass = itemProperties.familyHasTaxaData(item.family, taxa) ? 'capitalise underline-link js-family-link' : 'js-family-link';
+        item.familyLinkClass = itemProperties.taxonHasTaxaData(item.family, taxa)
+            ? 'capitalise underline-link js-taxon-card-link' 
+            : 'js-taxon-card-link';
+        if(item.taxonomy && item.taxonomy.order) {
+            item.orderLinkClass = itemProperties.taxonHasTaxaData(item.taxonomy.order, taxa)
+                ? 'capitalise underline-link js-taxon-card-link' 
+                : 'js-taxon-card-link';
+        } else { item.orderLinkClass = 'js-taxon-card-link'; }
+        item.taxonomy = item.taxonomy || { family: '', order: ''}
         
         item.iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa);
 
@@ -129,8 +138,8 @@ export const buildTable = (collection, config, traits, enums) => {
     checkbox.appendChild(inputCheck);
     checkbox.appendChild(labelCheck);    
     speciesHeader.innerHTML = '<span>Species</span';
-    familyHeader.innerHTML = '<span>Family</span>';
-    traitNameHeader.innerHTML = '<span>Key trait</span>';
+    familyHeader.innerHTML = '<span>Family</span><span>Order</span>';
+    traitNameHeader.innerHTML = '<span>Feature</span>';
     iconicTaxonHeader.innerHTML = '<span><i class="fas fa-sliders-h"></i></span>';
     filterHeader.appendChild(checkbox); 
     imageHeader.innerHTML = '<div></div>';
@@ -149,5 +158,20 @@ export const buildTable = (collection, config, traits, enums) => {
 
     tbody.insertBefore(headerRow, tbody.children[0]);
 
-    utils.makeSortable(document);    
+    const callback = names => {
+        const sortedItems = [];
+        names.forEach(name => {
+            collection.items.forEach(item => {
+                if(item.name === name) {
+                    sortedItems.push(item);
+                }
+            });
+        });
+    
+        if(config.isLandscapeMode) {
+            actions.boundChangeCollectionItems(sortedItems);
+        }        
+    };
+
+    utils.makeSortable(document, callback);    
 }

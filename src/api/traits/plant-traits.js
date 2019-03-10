@@ -1,7 +1,6 @@
 import * as traitEnums from 'api/traits/trait-types';
 
-export const getPlantTraits = (enums) => {
-    const SD = enums || traitEnums;
+export const getTraits = SD => {
         return [
         { name: 'Sinapis alba', traits: [
             { name: SD.name.HOW_EDIBLE, value: SD.howEdible.EDIBLE},
@@ -25,5 +24,34 @@ export const getPlantTraits = (enums) => {
             { name: SD.name.LONGEVITY, value: `${SD.longevity.PERENNIAL}` },
             { name: SD.name.LEAF_EDGE, value: `${SD.leafEdge.SMOOTH}` },
         ] },
+        { name: 'Daucus carota', traits: [
+            { name: SD.name.HOW_EDIBLE, value: SD.howEdible.EDIBLE},
+        ] },
+        { name: 'Pastinaca sativa', traits: [
+            { name: SD.name.HOW_EDIBLE, value: SD.howEdible.EDIBLE},
+        ] },
+        { name: 'Conium maculatum', traits: [
+            { name: SD.name.HOW_EDIBLE, value: SD.howEdible.POISONOUS},
+        ] },
+        { name: 'Allium ursinum', traits: [
+            { name: SD.name.HOW_EDIBLE, value: SD.howEdible.EDIBLE},
+        ] },
+        { name: 'Toxicoscordion fremontii', traits: [
+            { name: SD.name.HOW_EDIBLE, value: SD.howEdible.POISONOUS},
+        ] },
+        { name: 'Sambucus nigra', traits: [
+            { name: SD.name.HOW_EDIBLE, value: SD.howEdible.EDIBLE},
+        ] },
     ];
+};
+
+export const getPlantTraits = (enums) => {
+    const SD = enums || traitEnums;
+    const traits = getTraits(SD);
+    traits.forEach(species => {
+        if(!species.traits.find(trait => trait.name === SD.name.TROPHIC_LEVEL)) {
+            species.traits.push({ name: SD.name.TROPHIC_LEVEL, value: 1 })
+        }
+    });
+    return traits;
 };

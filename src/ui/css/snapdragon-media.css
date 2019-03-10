@@ -47,7 +47,7 @@
         font-size: 19px;
     }
     .block {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
     .taxon-highlight {
         font-size: 1rem;  
@@ -60,7 +60,46 @@
         border: 1rem solid var(--snap-container-background);
     }
 
-    .table-header th:nth-child(3), .table-row td:nth-child(3) {
+    .table-header th:nth-child(3) {
+        font-size: .7rem;
+        flex-direction: column;
+        flex: 3;
+        display: flex;
+        align-items: start;
+    }
+
+    .table-header th:nth-child(3) span {
+        flex: 1;
+        line-height: initial;
+    }
+
+    .table-header th:nth-child(3):after {
+        display: none;
+    }
+
+    .table-header th:nth-child(3) span:after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: .255rem;
+        vertical-align: middle;
+        content: "";
+        border-top: .3rem solid;
+        border-right: .3rem solid transparent;
+        border-bottom: 0;
+        border-left: .3rem solid transparent;        
+        cursor: default;
+    }
+
+    .table-header th:nth-child(3) span:nth-child(2):after {
+        margin-left: .355rem;
+    }
+
+    .table-header span:active, .table-header span:active:after {
+        color: var(--snap-filters-ctrl);
+    }
+
+    .table-row td:nth-child(3) {
         flex: 3;
         display: flex;
         align-items: center;
@@ -85,11 +124,479 @@
         width: 0;
         height: 0;
         margin-left: .255rem;
-        vertical-align: .255rem;
+        vertical-align: middle;
         content: "";
         border-top: .3rem solid;
         border-right: .3rem solid transparent;
         border-bottom: 0;
-        border-left: .3rem solid transparent
+        border-left: .3rem solid transparent;
+        cursor: default;
+    }
+
+    .lesson-option-headers {
+        font-size: 1.4rem;
+    }
+
+    .snapdragon-options .btn.btn-secondary {
+        height: 2.5rem;
+    }
+
+    #createGuide .modal-dialog {
+        width: 50%;
+    }
+
+    #createGuide .modal-header {
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        background-color: var(--secondary);
+    }
+
+    #createGuide .modal-title {
+        flex: auto;
+        display: flex;
+        align-items: center;
+        align-content: space-between;
+        color: rgb(250, 250, 250);
+        text-transform: uppercase;
+    }
+
+    #createGuide .modal-title div { 
+        font-size: 1.3rem;
+        letter-spacing: .05rem;
+    }
+    
+    #createGuide .modal-title div:nth-child(1) {
+        flex: auto;
+        font-size: 1.1rem;        
+    }
+
+    #createGuide .modal-title div:nth-child(2) {
+        flex: initial;
+        margin: 0 .5rem 0 0;
+        font-size: 1rem;
+    }
+
+    #createGuide .modal-header .close {
+        flex: initial;
+        margin: 0 0 0 .5rem;        
+        display: inline-block;
+        font-size: 2rem;
+        color: rgb(250, 250, 250);
+        text-shadow: none;
+    }
+
+    #createGuide .modal-body button {
+        margin: 0;
+    }
+
+    #createGuide .modal-content {
+        background-color: initial;
+    }
+
+    #createGuide .modal-body {
+        background-color: var(--snap-list-alt-background);
+    }
+
+    #createGuide .modal-body .guide-text {
+        font-size: 1.6rem;
+        margin: 1rem 0;
+        letter-spacing: .03rem;
+        color: var(--snap-text-medium-dark);
+    }
+
+    #createGuide .modal-body .guide-sub-text {
+        font-size: 1rem;
+        margin: 0 0 .5rem 0;
+    }
+
+    .modal-body.create-guide-body {
+        min-height: 30rem;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+    }
+
+    .modal-body.create-guide-body > div {
+        flex: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .modal-body.create-guide-body > div.create-guide-action {
+        flex-direction: column;
+        align-items: initial;
+        position: relative;
+    }
+
+    .modal-body.create-guide-body > div:nth-child(1), .modal-body.create-guide-body > div:nth-child(3) {
+        max-height: 4rem;
+    }
+
+    .modal-body .create-guide-progress > div {
+        display: flex;
+        align-items: center;
+        border-bottom: .05rem solid lightgray;
+        padding: 0 0 .5rem 0;
+        width: 100%;
+        text-transform: uppercase;
+        font-size: .9rem;
+    }
+    
+    .modal-body .create-guide-progress > div div {
+        flex: auto;
+        line-height: 3.45rem;
+        text-align: center;
+        letter-spacing: .08rem;
+    }
+
+    .modal-body .btn-modal {
+        background-color: rgb(143, 163, 138);
+    }
+
+    .modal-body .create-guide-progress > div > div {
+        border-right: .005rem solid var(--snap-border-dark);
+    }
+
+    .modal-body .create-guide-progress .completed {
+        background-color: lightgray;
+    }
+
+    .modal-body .create-guide-progress .active {
+        color: rgb(250, 250, 250);
+        background-color: var(--snap-collection);        
+    }
+
+    .modal-body .create-guide-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--snap=--snap-text-dark);
+        background-color: var(--snap-filters-ctrl);
+    }
+    
+    .modal-body .create-guide-navigation > div > div {
+        display: flex;
+        align-items: center;        
+    }
+
+    .modal-body .create-guide-navigation > div:nth-child(1) > div svg {
+        font-size: 2rem;
+        margin: 0 .25rem 0 .5rem;
+    }
+    
+    .modal-body .create-guide-navigation > div:nth-child(2) > div svg {
+        font-size: 2rem;
+        margin: 0 .5rem 0 .25rem;
+    }
+    
+    .modal-body .create-guide-navigation > div:nth-child(1),
+    .modal-body .create-guide-navigation > div:nth-child(2) {
+        color: var(--snap-text-dark);
+        cursor: pointer;
+    }
+    
+    .modal-body .create-guide-navigation > div:nth-child(2).disabled {
+        color: gray;
+        pointer-events: none;
+    }
+
+    .modal-body .create-guide-navigation > div:nth-child(1):hover,
+    .modal-body .create-guide-navigation > div:nth-child(2):hover {
+        color: rgb(250, 250, 250);
+    }
+
+    #createGuide .modal-body .location .current {
+        display: flex;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    #createGuide .modal-body .chosen {
+        position: absolute;
+        bottom:.5rem;
+    }
+
+    #createGuide .modal-body .chosen span:nth-child(1) {
+        font-size: .8rem;
+        margin: 0 .25rem 0 0;
+    }
+
+    #createGuide .modal-body .chosen span:nth-child(2) {
+        text-transform: uppercase;
+        font-size: .9rem;
+    }
+/* 
+    #createGuide .modal-body .location button {
+        margin: 0 1rem 0 0;
+    } */
+
+    #createGuide .modal-body button {
+        color: rgb(35,35,35);     
+    }
+
+    #createGuide .modal-body .save-your-changes {
+        display: flex;
+        align-items: center;
+        margin: 1rem 0 0 0;
+    }
+
+    #createGuide .modal-body .save-your-changes button {
+        margin: 0 1rem 0 0;
+    }
+
+    #createGuide .modal-body .saved {
+        color: gray;
+        font-size: 1.1rem;
+        margin: 0 0 0 2rem;
+    }
+ 
+    #createGuide .modal-body .guides > div:first-child {
+        display: flex;
+    }
+ 
+    #createGuide .modal-body button {
+        display: inline-block;
+        margin: 0 0 0 .5rem;
+    }
+
+    #createGuide .modal-body button:hover {
+        color: rgb(250, 250, 250);
+    }
+ 
+    #createGuide .modal-body button:disabled {
+        color: var(--snap-text-dark);
+    }
+
+    .inat-place {
+        display: inline-flex;
+        align-items: center;
+        margin: .5rem 0;
+    }
+
+    .inat-place label {
+        width: 2rem;
+        float: left;
+    }
+    
+    .inat-place label div {
+        width: .5rem;
+    }
+
+    .inat-place input[type="radio"],
+    .btn-group.btn-group-toggle.place input[type="radio"] {
+        position: absolute;
+        clip: rect(0,0,0,0);
+        pointer-events: none;
+    }
+    
+    .inat-place input[type="text"] {
+        margin: 0 .5rem 0 0;
+        height: 1.75rem;
+        color: var(--snap-text-dark);
+    }
+
+    .inat-place > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .inat-place > div div:nth-child(1) {
+        display: flex;
+        align-items: center;
+        font-size: 1.1rem;
+        margin: 1rem 0 0 0;
+    }
+
+    .auto-location {
+        margin: 0 0 0 .15rem;
+    }
+
+    #auto .btn {
+        background-color: var(--snap-landscape);
+    }
+
+    .guides.actions label {
+        margin: 0;
+    }
+
+    .create-guide-action .range-slider {
+        margin: .5rem 0 .75rem 1.75rem;
+        padding: .25rem;
+    }
+
+    .create-guide-action .range-slider.disabled {
+        color: var(--secondary);
+    }
+
+    .create-guide-action .range-slider span {
+        margin: 0 .5rem 0 0;
+    }
+
+    .create-guide-action .range-slider > span:nth-child(2) {
+        border: .05rem solid lightgray;
+        padding: .5rem;
+    }
+
+    .create-guide-action .set-range-input {
+        width: 15rem;
+        cursor: pointer;
+    }
+
+    .create-guide-action .range-slider.disabled .set-range-input {
+        pointer-events: none;
+    }
+
+    /* .create-guide-action .range-slider .emphasis {
+        font-size: 1.1rem;
+        color: var(--snap-link);
+    } */
+
+    .home-container {
+        padding: 0 .5rem;
+    }
+
+    .home-container > div {
+        margin: 0 1rem;
+    }
+
+    .home-container > div > div > div {
+        height: 120px;
+        display: flex;
+        align-items: center;
+    }
+
+    .home-container .snapdragon-header {
+        font-size: 3.6rem;
+        text-transform: uppercase;
+        font-family: 'SharpGroteskWide', sans-serif;
+        color: var(--snap-collection-active);
+        letter-spacing: .3rem;
+        font-family: sentinel;
+    }
+
+    .home-container .snapdragon-tag {
+        justify-content: center;
+        height: 240px;
+        font-family: sentinel;
+        font-size: 3.5rem;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    .delete-guide-link > span.active {
+        color: var(--snap-alert) !important; 
+        pointer-events: initial;
+    }
+    
+    .delete-guide-link > span.disabled {
+        color: var(--secondary) !important;
+        pointer-events: none;
+    }
+
+    .delete-guide-link input {
+        cursor: pointer;
+    }
+
+    #iNatWidgetModal .modal-dialog {
+        max-width: 45vw;
+    }
+
+    #iNatWidgetModal .modal-header {
+        font-size: 1.2rem;
+        display: inline;
+    }
+
+    .home-container .snapdragon-tag > div {
+        color: var(--snap-link);
+        letter-spacing: .03rem;
+    }
+
+    .home-container .snapdragon-tag > div .underline-link {
+        font-size: 2rem;
+        text-transform: initial;
+    }
+    
+    .home-container .snapdragon-tag > div .species-range {
+        font-size: .8rem;
+        margin: 0 0 0 .25rem;
+        vertical-align: super;
+        color: var(--secondary);
+    }
+
+    .home-container .snapdragon-create-guide {
+        display: flex;        
+        flex-direction: column;
+        align-items: flex-end;
+        position: relative;
+    }
+
+    .home-container .snapdragon-create-guide > div {
+        font-size: 2.6rem;
+        text-transform: uppercase;
+        font-family: 'SharpGroteskWide', sans-serif;
+        color: var(--snap-collection-active);
+        letter-spacing: .05rem;                
+    }
+    
+    .home-container .snapdragon-create-guide > div:nth-child(1) {
+        position: absolute;
+        bottom: 2rem;
+    }
+    
+    .home-container .snapdragon-create-guide > div:nth-child(2) {
+        position: absolute;
+        bottom: 0rem;
+    }
+
+    .home-container .snapdragon-create-guide > div:nth-child(1) > span {
+        font-size: 2.6rem;  
+        font-family: "PT Sans", "Roboto", arial, sans-serif;
+        letter-spacing: .05rem;        
+    }
+
+    .home-container .snapdragon-create-guide > div:nth-child(2) > span {
+        font-size: .8rem;
+        color: var(--secondary);
+    }
+
+    .species-grid {
+        width: 600px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .species-grid img {
+        width: 7.5rem;
+        max-width: 7.5rem;
+        height: 7.5rem;    
+        object-fit: cover;
+        float: left;
+    }
+
+    .home-guide {
+        display: flex;
+        flex-direction: column;
+        font-size: 2rem;
+    }
+
+    #inat-place-id-autocomplete, #inat-place-autocomplete {
+        z-index: 9999;
+        position: absolute;
+        margin: 2rem 0 0 0;
+        padding: 0 .25rem;
+        color: var(--snap-modal-title);
+        background-color: rgb(250, 250, 250);
+        letter-spacing: .04rem;
+        border: .05rem solid lightgray;
+    }
+
+    #inat-place-id-autocomplete .selected, #inat-place-autocomplete .selected {
+        color: var(--snap-dd-non-taxa-bg-hover);
+        background-color: var(--snap-text-medium-dark);
+    }
+
+    #inat-place, #inat-place-id {
+        width: 20rem;
     }
 }

@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
@@ -10,20 +11,18 @@ import { modalImageHandler } from 'ui/helpers/image-handlers';
 import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-table-no-scores';
-import { itemHandler, extendCollection } from 'ui/helpers/item-handler';
-import { listenToRangeUpdate } from 'ui/helpers/iconic-taxa-handler';
+import { itemHandler } from 'ui/helpers/item-handler';
+import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
-    const { config: configState, history, counter, enums, layout  } = store.getState();
+    const { config: configState, history, counter, enums, layout, score  } = store.getState();
 
     let config = R.clone(configState);
-
-    if(lessonLogicHandler.isSkippable(collection, counter, config, layout, 'renderSpeciesCollectionList', readOnlyMode)) return;
-
-    subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
     
-    if(collection.id === 0) return;
+    speciesPendingSpinner(config);
+
+    if(!config.guide.ready || !collection) return;
 
     config.collection = { id: collection.id };
 
@@ -80,11 +79,11 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
         setTimeout(() => {
             const speciesCardLinks = document.querySelectorAll('.js-species-card-link span');
-            const parent = document.querySelector('#speciesCardModal .js-modal-body');
+            const speciesCardModal = document.querySelector('#speciesCardModal .js-modal-body');
             speciesCardLinks.forEach(link => {
                 link.addEventListener('click', event => {
                     const name = event.target.dataset.name;
-                    renderCard(collection, true, collection.items.find(i => i.name === name), parent);
+                    renderCard(collection, true, collection.items.find(i => i.name === name), speciesCardModal);
                 });
             });
             const traitCardLinks = document.querySelectorAll('.js-key-trait-link');
@@ -92,22 +91,45 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                 link.addEventListener('click', event => {
                     const keyTrait = event.target.dataset.keyTrait;
                     const imageUrl = event.target.dataset.url.replace('.98x68.jpg', '.260x190.jpg');              
-                    renderNonTaxonCard(collection, true, parent, keyTrait, imageUrl);
+                    renderNonTaxonCard(collection, true, keyTrait, speciesCardModal, imageUrl);
                 });
             });
-            const familyCardLinks = document.querySelectorAll('.js-family-link');
-            familyCardLinks.forEach(link => {
+            const taxonCardModal = document.querySelector('#taxonCardModal .js-modal-body');
+            const taxonCardLinks = document.querySelectorAll('.js-taxon-card-link');
+            taxonCardLinks.forEach(link => {
                 link.addEventListener('click', event => {
-                    const family = event.target.dataset.family;
-                    renderTaxonCard(collection, true, parent, family);
+                    const taxon = event.target.dataset.family || event.target.dataset.order;
+                    const name = event.target.dataset.name;
+                    const rank = event.target.dataset.rank;
+                    document.querySelector('#taxonCardModal .prev > span').dataset.rank = rank;
+                    document.querySelector('#taxonCardModal .next > span').dataset.rank = rank;
+                    renderTaxonCard(collection, true, collection.items.find(i => i.name === name), taxonCardModal, taxon, rank);
                 });
             });
 
             document.querySelectorAll('.mushroom-icon').forEach(icon => {
                 icon.innerHTML = '<svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg>';
             });
-        
 
+            const nthChild = config.isLandscapeMode ? 5 : 3;
+            const taxonIcons = document.querySelectorAll(`.table-row.js-list-item td:nth-child(${nthChild}) > span`);
+
+            if(!history) return;
+
+            const noWrongAnswersForThisSpecies = [];
+            history.scores.map(score => score.failsTotals).forEach(totals => {
+                for (let [key, anyWrongAnwers] of Object.entries(totals)) {
+                    if(anyWrongAnwers == false) {
+                        noWrongAnswersForThisSpecies.push(parseInt(key));
+                    }
+                }
+            });
+
+            taxonIcons.forEach(icon => {
+                if(R.contains(parseInt(icon.id), noWrongAnswersForThisSpecies)) {
+                    icon.classList.add('correct');
+                }
+            });
         });
 
         // Portrait mode only
@@ -124,10 +146,6 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
             continueLearningActionBtn.addEventListener('click', event => {
 
-                if(hasCollectionChanged) {
-                    extendCollection(config, collection);
-                }
-
                 if(collection.isLessonComplete) {
                     lessonLogicHandler.purgeLesson();
                 } else {
@@ -141,8 +159,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
                     actions.boundNewPage({ name: ''});
 
-                    subscription.getByName('renderSpeciesCollectionList').forEach(sub => subscription.remove(sub));
-                    subscription.getByName('renderHistory').forEach(sub => subscription.remove(sub));
+                    subscription.remove(subscription.getByName('renderHistory'));
                 }            
             });
         }
@@ -154,18 +171,69 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
         buildTable(collection, config, traits, enums);
         handleUserEvents();
     }
-    else {        
+    else {      
         function callback(collection, config, traits, enums) {
             return function () {
+                collection.items = utils.sortBy(collection.items, 'observationCount', 'desc');
                 buildTable(collection, config, traits, enums);
                 handleUserEvents();
+                const { counter } = store.getState();
+                listeners.forEach(listener => listener(counter, collection.items.length));
             }
         }
         itemHandler(collection, config, counter, callback(collection, config, traits, enums));
     }
 };
 
-listenToRangeUpdate((filters, config) => {
+const listeners = [];
+
+export const listenToSpeciesCollectionListenReady = listener => { 
+    listeners.push(listener);
+  };
+  
+
+let currentIndex = 0;
+
+const carouselControlHandler = event => {
+
     const { collection } = store.getState();
-    renderSpeciesCollectionList(collection, false);
-});
+    
+    let transition = event.target.dataset.transition;
+    let modal = event.target.dataset.modal;
+    let rank =  event.target.dataset.rank;
+
+    switch(transition) {
+        case 'prev':
+            currentIndex--;
+            currentIndex = currentIndex === -1 ? collection.items.length -1 : currentIndex;
+            break;
+        case 'next':
+            currentIndex++;
+            currentIndex = currentIndex === collection.items.length -1 ? 0 : currentIndex;
+            break;
+    }
+
+    let nextItem = collection.items.find((item,index) => index === currentIndex);
+    const parent = document.querySelector(`#${modal} .js-modal-body`);
+    
+    switch(modal) {
+        case 'speciesCardModal':
+            renderCard(collection, true, nextItem, parent);
+            break;
+        case 'taxonCardModal':
+            renderTaxonCard(collection, true, nextItem, parent, null, rank);
+            break;    
+    }    
+};
+
+const prev = document.querySelector('#speciesCardModal .js-prev');
+const next = document.querySelector('#speciesCardModal .js-next');
+
+if(prev) prev.addEventListener('click', carouselControlHandler);
+if(next) next.addEventListener('click', carouselControlHandler);
+
+const prevTaxon = document.querySelector('#taxonCardModal .js-prev');
+const nextTaxon = document.querySelector('#taxonCardModal .js-next');
+
+if(prevTaxon) prevTaxon.addEventListener('click', carouselControlHandler);
+if(nextTaxon) nextTaxon.addEventListener('click', carouselControlHandler);

@@ -5,8 +5,8 @@ import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
 import { modalImagesHandler, imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import { renderTemplate } from 'ui/helpers/templating';
-import mixedSpecimenTemplate from 'ui/screens/multichoice/mixed-specimen-tiles-template.html';
-import { screenShare } from 'ui/screens/multichoice/mixed-specimen-shared';
+import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen-tiles-template.html';
+import { screenShare } from 'ui/screens/multichoice/portrait/mixed-specimen-shared';
 
 export const renderMixedSpecimenTiles = (ui) => {
 

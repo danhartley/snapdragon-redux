@@ -4,6 +4,7 @@ import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
+import { renderQuestionHeader } from 'ui/screens/common/question-header';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { scoreHandler } from 'ui/helpers/handlers';
@@ -26,7 +27,7 @@ export const renderCompleteText = (collection) => {
 
     let question, givenTaxon, description, description2, genus, species;
 
-    const vernacular = item.vernacularName.toUpperCase();
+    const vernacularName = item.vernacularName;
 
     if(screen.type === 'text-complete-genus') {
 
@@ -35,10 +36,10 @@ export const renderCompleteText = (collection) => {
         species = item.species;
         givenTaxon = 'genus';
         if(config.isPortraitMode) {
-            description = `Complete the latin name for a ${vernacular}.`            
+            description = `Complete the latin name for a ${vernacularName}.`            
         } else {
-            description = `What is the genus of a ${vernacular}?`;
-            description2 = 'Complete the latin name below by selecting the approprite genus.'
+            description = `What is the genus of a ${vernacularName}?`;
+            description2 = 'Complete the latin name';
         }
     } else if(screen.type === 'text-complete-species') {
 
@@ -47,10 +48,10 @@ export const renderCompleteText = (collection) => {
         species = '---';        
         givenTaxon = 'species';
         if(config.isPortraitMode) {
-            description = `Complete the latin name for a ${vernacular}.`
+            description = `Complete the latin name for a ${vernacularName}.`
         } else {
-            description = `What is the species of a ${vernacular}?`;
-            description2 = 'Complete the latin name below by selecting the approprite species.'
+            description = `What is the species of a ${vernacularName}?`;
+            description2 = 'Complete the latin name';
         }
     }
 
@@ -63,7 +64,7 @@ export const renderCompleteText = (collection) => {
             case 'species':
                 return itemProperties.getSpeciesName(item);
             default:
-                return item
+                return item;
         }
     });
     const pool = R.take(numerOfItems, utils.shuffleArray(itemTaxons).filter(utils.onlyUnique).filter(itemTaxon => itemTaxon !== item[givenTaxon]));
@@ -74,7 +75,7 @@ export const renderCompleteText = (collection) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    renderTemplate({ description, description2, vernacular, answers, genus, species }, template.content, parent);
+    renderTemplate({ description, description2, vernacularName, answers, genus, species }, template.content, parent);
 
     const score = { itemId: item.id, binomial: item.name, question: item[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length, points: layout.points };
 
@@ -83,27 +84,12 @@ export const renderCompleteText = (collection) => {
         const iconColour  = score.success ? 'answer-box-success' : 'answer-box-alert';
 
         const icon = score.success
-            ? `<span class="icon"><i class="fas fa-check-circle"></i></span>`
-            : `<span class="icon"><i class="fas fa-times-circle"></i></span>`;
+            ? `<span class="icon"><i class="fas fa-check"></i></span>`
+            : `<span class="icon"><i class="fas fa-times"></i></span>`;
 
-
-        const txtCorrect = `<span class="icon-text"><span class="icon-container ${iconColour}">${icon}</span><span class="binomial">${score.binomial}</span><span> is correct.</span</span>`;
-
-        const txtIncorrect = `<span class="icon-text"><span class="icon-container ${iconColour}">${icon}</span><span>The correct name is </span<span class="binomial">${score.binomial}.</span></span>`;
+        const response = score.success ? 'That is the correct answer.' : 'That is the wrong answer.';
         
-        document.querySelector('.js-txt-response').innerHTML = score.success ? txtCorrect : txtIncorrect;
-
-        if(question === item.species) {
-            const species = document.querySelector('.species');
-            species.style.color = 'white';
-            species.style.borderColor = 'white';
-            species.classList.add(score.colour);
-        } else {
-            const genus = document.querySelector('.genus');
-            genus.style.color = 'white';
-            genus.style.borderColor = 'white';
-            genus.classList.add(score.colour);
-        }
+        document.querySelector('.js-txt-question').innerHTML = `<div class="${iconColour}"><span>${icon}</span><span>${ response }</span</div>`;        
 
         if(!score.success) {
             document.querySelectorAll('.block span').forEach(block => {
@@ -113,7 +99,7 @@ export const renderCompleteText = (collection) => {
             });
         }
 
-        const txtBtn = document.querySelector('.js-text-btn');
+        const txtBtn = document.querySelector('.js-continue-lesson-btn');
 
         txtBtn.innerHTML = 'Continue lesson';
 
@@ -137,4 +123,6 @@ export const renderCompleteText = (collection) => {
             scoreHandler('block', score, updateScreen, config);
         });
     });
+
+    renderQuestionHeader(document.querySelector('.js-question-container'), item, vernacularName);
 };

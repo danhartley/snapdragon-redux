@@ -21,7 +21,12 @@ export const subscribeToNonTaxaSelection = callback => {
     subscriptions.push(callback);
 };
 
-export const renderNonTaxonCard = (collection, isModalMode = false, parent = DOM.rightBody, keyTrait, imageUrl) => {
+export const renderNonTaxonCard = (collection, isModalMode = false, keyTrait, parent = DOM.rightBody, imageUrl) => {
+
+    const prev = document.querySelector('#speciesCardModal .js-prev');
+    const next = document.querySelector('#speciesCardModal .js-next');
+    if(prev) prev.style.display = 'none';
+    if(next) next.style.display = 'none';
 
     const { enums, config, lessonPlan } = store.getState();
 
@@ -72,10 +77,9 @@ export const renderNonTaxonCard = (collection, isModalMode = false, parent = DOM
         definitionNode.innerHTML = nonTaxon.definition;
 
         const infoNode = document.querySelector('.js-info-box');
-        infoSlider({traits:nonTaxon.traits}, infoNode);
+        infoSlider({traits:nonTaxon.traits, name: `${keyTrait} lichen`}, nonTaxa, null, infoNode);
 
         if(isModalMode) {
-
         } else {
             renderWikiModal(lookup, wikiNode, config);    
             renderWiki(wikiNode, lookup, config.language);
@@ -85,6 +89,8 @@ export const renderNonTaxonCard = (collection, isModalMode = false, parent = DOM
     parent.innerHTML = '';
 
     renderTemplate({group: nonTaxa, imageUrl}, template.content, parent);
+
+    document.querySelector('#speciesCardModal .js-modal-text-title').innerHTML = `Lichen Forms`;
 
     selectHandler('.dropdown.js-non-taxa .dropdown-item.icon', id => callback(id));
     const id = keyTrait || nonTaxa[0].id;

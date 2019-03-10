@@ -5,7 +5,7 @@
             <table class="species-table list-group list-group-flush">
                 <tbody data-repeat-item="{{ collection.items }}">
                     <tr class="table-row js-list-item">
-                        <td>
+                        <td id="{{ item.name }}">
                             <img 
                                 id="{{ item.name }}" 
                                 src="https://content.eol.org/data/media/{{ item.url }}" 
@@ -26,13 +26,14 @@
                             <span class="latin-name">{{ item.binomial }}</span>
                         </td>
                         <td>
-                            <span data-toggle="modal" data-url="{{ item.url }}" data-key-trait="{{ item.family }}" data-target="#speciesCardModal" class="{{ item.familyLinkClass }}" data-family="{{ item.family }}">{{ item.family }}</span>
+                            <span data-toggle="modal" data-name="{{ item.name }}"data-url="{{ item.url }}" data-rank="family" data-family="{{ item.family }}" data-target="#taxonCardModal" class="{{ item.familyLinkClass }}">{{ item.family }}</span>
+                            <span data-toggle="modal" data-name="{{ item.name }}"data-url="{{ item.url }}" data-rank="order" data-order="{{ item.taxonomy.order }}" data-target="#taxonCardModal" class="{{ item.orderLinkClass }}">{{ item.taxonomy.order }}</span>
                         </td>
                         <td>
-                            <span data-toggle="modal" data-url="{{ item.url }}" data-key-trait="{{ item.keyTrait }}" data-target="#speciesCardModal" class="{{ item.keyTratLinkClass }}" data-key-trait="{{ item.keyTrait }}">{{ item.keyTrait }}</span>
+                            <span data-toggle="modal" data-url="{{ item.url }}" data-key-trait="{{ item.keyTrait }}" data-target="#speciesCardModal" class="{{ item.keyTratLinkClass }}">{{ item.keyTrait }}</span>
                         </td>
                         <td class="{{ item.iconicTaxon }}">
-                            <span><i class="{{ item.iconicTaxonIcon }}"></i></span>
+                            <span id="{{ item.id }}" name="{{ item.name }}"><i class="{{ item.iconicTaxonIcon }}"></i></span>
                             <span class="mushroom-icon {{ item.hideFungiIcon }}"></span>
                         </td>
                         <td>

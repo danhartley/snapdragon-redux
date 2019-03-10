@@ -1,8 +1,8 @@
+import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { utils } from 'utils/utils';
-import { itemProperties } from 'ui/helpers/data-checking';
+import { renderQuestionHeader } from 'ui/screens/common/question-header';
 import { renderTemplate } from 'ui/helpers/templating';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
@@ -10,34 +10,31 @@ import landscapeTemplates from 'ui/screens/text-entry/text-entry-templates.html'
 import portraitTemplates from 'ui/screens/text-entry/text-entry-portrait-templates.html';
 import { imageSlider } from 'ui/screens/common/image-slider';
 
-export const renderInput = (screen, question, hints) => {
+export const renderInput = (screen, question) => {
 
     const { lessonPlan, collection, config, layout } = store.getState();
     const templates = document.createElement('div');    
     templates.innerHTML = config.isPortraitMode ? portraitTemplates : landscapeTemplates;
 
-    const template = templates.querySelector(`.${screen.template}`);
+    const template = templates.querySelector(`.js-entry-template`);
 
     const item = collection.nextItem;
 
-    hints.forEach(hint => {
-        const el = template.content.querySelector(hint.selector);
-        if(el)
-            template.content.querySelector(hint.selector).innerHTML = (hint && hint.value) ? `${hint.value}.` : '';  
-    });
-
     const clone = document.importNode(template.content, true);
 
+    const answerBtn = clone.querySelector('.js-check-answer');
+
+    const boundScore = {};
+
     const markingCallback = (score, scoreUpdateTimer) => {        
-        const answerBtn = document.querySelector('.js-check-answer');
-        answerBtn.innerHTML = 'Continue lesson';
-        answerBtn.disabled = false;
-        answerBtn.classList.add(score.colour);
+        boundScore.scoreUpdateTimer = scoreUpdateTimer;
+        boundScore.score = score;        
         answerBtn.removeEventListener('click', scoreEventHandler);
-        answerBtn.addEventListener('click', () => {
-            window.clearTimeout(scoreUpdateTimer);
-            actions.boundUpdateScore(score);
-        });
+        if(score.success) {
+            document.querySelector('.js-help-txt').innerHTML = question.taxon === 'vernacular'
+                ? item.vernacularName
+                : item.name;
+        }
         if(score.alternativeAccepted) {
             document.querySelector('.js-text-alternative').innerHTML = `Alternative: ${score.question}`;
         }
@@ -46,34 +43,53 @@ export const renderInput = (screen, question, hints) => {
     const scoreEventHandler = event => {
         const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames };
         scoreHandler('text', score, markingCallback, config);
-    };
-
-    const answerBtn = clone.querySelector('.js-check-answer');
-    answerBtn.addEventListener('click', scoreEventHandler);
-
-    if(answerBtn) {
         answerBtn.disabled = true;
-        setTimeout(() => {
-            answerBtn.disabled = false;
-        }, 1000);
-    }
+        document.querySelector('.js-continue-lesson-btn').disabled = false;
+    };
     
-
-    const name = clone.querySelector('.js-txt-name');
-    if(name) name.innerHTML = item.name;
-    const vernacular = clone.querySelector('.js-txt-vernacular');
-    if(vernacular) vernacular.innerHTML = item.vernacularName.toLowerCase();
+    answerBtn.addEventListener('click', scoreEventHandler);
 
     const parent = DOM.rightBody;
     parent.innerHTML = '';
     
-    const txtQuestion = `What is the common name of this species?`;
-    renderTemplate({ txtQuestion, name }, template.content, parent, clone);
+    renderTemplate({}, template.content, parent, clone);
+
+    const questionTxt = document.querySelector('.js-question-txt span:nth-child(1)');
+    const inputTxt = document.querySelector('.js-txt-input');
+    const helpTxt = document.querySelector('.js-help-txt');
+
+    switch(question.taxon) {
+        case 'genus': 
+            inputTxt.setAttribute('placeholder', 'Genus');
+            helpTxt.innerHTML = `--- ${question.species}`;
+            break;
+        case 'species': 
+            inputTxt.setAttribute('placeholder', 'Species');
+            helpTxt.innerHTML = `${utils.capitaliseFirst(question.genus)} ---`;
+            break;
+        case 'name': 
+            questionTxt.innerHTML = 'Enter the latin name';
+            inputTxt.setAttribute('placeholder', 'Latin name');
+            helpTxt.innerHTML = `--- ---`;
+            break;
+        case 'vernacular':
+            questionTxt.innerHTML = 'Enter the common name';
+            inputTxt.setAttribute('placeholder', 'Common name');
+            helpTxt.innerHTML = `-----`;
+            break;
+    }
 
     if(config.isPortraitMode) renderPortrait(item, config);
     else renderLandscape(item, config, question);
 
     document.querySelector('.js-txt-input').focus();
+
+    renderQuestionHeader(document.querySelector('.js-question-container'), item, item.vernacularName);
+
+    document.querySelector('.js-continue-lesson-btn').addEventListener('click', event => {
+        window.clearTimeout(boundScore.scoreUpdateTimer);
+        actions.boundUpdateScore(boundScore.score);
+    });
 };
 
 const renderPortrait = (item, config) => {
@@ -160,7 +176,6 @@ const renderLandscape = (item, config, question) => {
             }
             if(input.value === answer.toLowerCase()) {
                 blocks.forEach(block => block.classList.add('correct'));
-                document.querySelector('.js-check-answer').click();
             }
         });
     });
@@ -174,7 +189,7 @@ const renderLandscape = (item, config, question) => {
     keyboardBtn.addEventListener('click', () =>{
         const disabled = input.hasAttribute('disabled');
         if(disabled) {
-            keyboardBtn.innerHTML = 'Disable keyboard';
+            keyboardBtn.innerHTML = 'Enable letters';
             input.removeAttribute('disabled');
             input.focus();
         } else {
@@ -194,7 +209,6 @@ const renderLandscape = (item, config, question) => {
         selectedBlock.classList.add('active');
         if(input.value === answer.toLowerCase()) {
             blockArray.forEach(block => block.classList.add('correct'));
-            document.querySelector('.js-check-answer').click();
         }
     });
 
@@ -204,5 +218,5 @@ const renderLandscape = (item, config, question) => {
             selectedBlock = blockArray.find(block => block.innerHTML === entry);
             selectedBlock.classList.remove('active');
           }            
-        });
+    });
 };

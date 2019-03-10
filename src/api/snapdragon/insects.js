@@ -474,395 +474,38 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "Ariana",
-        "language": "en",
-        "eol_preferred": true
+        "vernacularName": "Speckled Wood",
+        "language": "en", 
+      },
+      {
+        "vernacularName": "Speckled Wood (butterfly)",
+        "language": "en",  
+        wikiSearchTerm: true
       },
       {
         "vernacularName": "Ariana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Ariana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Ariana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Ariana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Ariana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Ariana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Ariana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bont zandoogje",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Bruna boscana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bruna boscana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bruna boscana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Bruna boscana",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Egeria",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Egeria",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Egeria",
-        "language": "en",
-        
+        "language": "cat",        
       },
       {
         "vernacularName": "Malhadinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Malhadinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Malhadinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Malhadinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Malhadinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Malhadinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Malhadinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Malhadinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Skogringvinge",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Skogringvinge",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Skogringvinge",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Skogringvinge",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled Wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled wood",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Speckled wood",
-        "language": "en",
-        
+        "language": "es",      
       },
       {
         "vernacularName": "Tircis",
-        "language": "en",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Waldbrettspiel",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "le Tircis",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "le Tircis",
-        "language": "en",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "maculada",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "tplpapurikko",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "tplpapurikko",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "tplpapurikko",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "tplpapurikko",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "tplpapurikko",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "tplpapurikko",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "tplpapurikko",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "speckled wood",
-        "language": "en",
-        
-      }
+        "language": "es",        
+      },      
     ],
     "taxonomy": {
       "usageKey": 8049830,
@@ -1354,304 +997,56 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Admiral",
-        "language": "en",
-        
-      },
-      {
         "vernacularName": "Almirante Rojo",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Almirante Rojo",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Almirante Rojo",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Almirante Rojo",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Almirante Rojo",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Almirante Rojo",
-        "language": "en",
-        
+        "language": "es",        
       },
       {
         "vernacularName": "Almirante-vermelho",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Almirante-vermelho",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Almirante-vermelho",
-        "language": "en",
-        
+        "language": "pt",        
       },
       {
         "vernacularName": "Atalanta",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Atalanta",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Atalanta",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Atalanta",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Atalanta",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Atalanta",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral (Northern Hemisphere)",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "amiraali",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "amiraali",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "numerada",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "numerada",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "numerada",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "numerada",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "red admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "red admiral",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "vulcain",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "vulcain",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "vulcain",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red Admiral",
-        "language": "en",
-        
+        "language": "es",        
       },
       {
         "vernacularName": "Admiral",
-        "language": "de",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "Red Admiral",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "amiral",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "numerada",
-        "language": "es",
-        
+        "language": "es",        
       },
       {
         "vernacularName": "numéro quatre-vingt-dix-huit",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "papillon à numéro",
-        "language": "fr",
-        
-      },
-      {
-        "vernacularName": "red admiral",
-        "language": "en",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "vanesse amirale",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "vulcain",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "vulcano",
-        "language": "it",
-        
+        "language": "it",        
       },
       {
         "vernacularName": "Red admiral",
-        "language": "en",
-        
+        "language": "en",        
       }
     ],
     "taxonomy": {
@@ -2074,178 +1469,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        "eol_preferred": true
+        "language": "en"
       },
       {
         "vernacularName": "Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Swallowtail",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Common Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Common Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Common Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Common Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Common Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Common Swallowtail",
-        "language": "en",
-        
+        "language": "pt",        
       },
       {
         "vernacularName": "Common Yellow Swallowtail",
@@ -2254,954 +1486,28 @@ export const insects = [
       },
       {
         "vernacularName": "Common Yellow Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Common Yellow Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Koninginnepage",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Lastoviar",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Lastoviar",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Lastoviar",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Lastoviar",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Lastoviar",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macan",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Macaone",
-        "language": "en",
-        
+        "language": "it",        
       },
       {
         "vernacularName": "Machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Machaon",
-        "language": "en",
-        
+        "language": "es",        
       },
       {
         "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mariposa cometa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World Swallowtail",
-        "language": "en",
-        
+        "language": "es",    
       },
       {
         "vernacularName": "Papallona reina",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Papallona reina",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Papallona reina",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Papallona reina",
-        "language": "en",
-        
+        "language": "cat",        
       },
       {
         "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Schwalbenschwanz",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Svalestjert",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Svalestjert",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Svalestjert",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Svalestjert",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "macaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "macaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "machaon",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Old World swallowtail",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "common yellow swallowtail",
-        "language": "en",
-        
-      }
+        "language": "de",        
+      },      
     ],
     "taxonomy": {
       "usageKey": 8225376,
@@ -3701,19 +2007,12 @@ export const insects = [
       },
       {
         "vernacularName": "Llagosta mediterrnia",
-        "language": "en",
-        
+        "language": "es",        
       },
       {
         "vernacularName": "Locusta egiziana",
-        "language": "en",
-        
+        "language": "it",        
       },
-      {
-        "vernacularName": "Locusta egiziana",
-        "language": "en",
-        
-      }
     ],
     "taxonomy": {
       "usageKey": 1702101,
@@ -3908,18 +2207,11 @@ export const insects = [
     "names": [
       {
         "vernacularName": "22-spot Ladybird",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "Citroenlieveheersbeestje",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Zweiundzwanzigpunkt-Marienkfer",
-        "language": "en",
-        
+        "language": "de",        
       }
     ],
     "taxonomy": {
@@ -3975,13 +2267,8 @@ export const insects = [
       {
         "vernacularName": "american cockroach",
         "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "American cockroach",
-        "language": "en",
-        
-      }
+        wikiSearchTerm: true
+      },      
     ],
     "taxonomy": {
       "usageKey": 2000152,
@@ -4088,10 +2375,17 @@ export const insects = [
         }
       }
     ],
-    "names": [{
+    "names": [
+      {
       "vernacularName": "comb-clawed beetle",
       "language": "en",
-    },],
+      },
+      {
+      "vernacularName": "Alleculinae",
+      "language": "en",
+      wikiSearchTerm: true
+      },
+    ],
     "taxonomy": {
       "usageKey": 4454891,
       "scientificName": "Heliotaurus ruficollis (Fabricius, 1781)",
@@ -4200,94 +2494,32 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "Cetoniella",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "Ctoine funeste",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Drap mortuaire",
-        "language": "en",
-        
-      },
-      {
         "vernacularName": "Mediterranean Spotted Chafer",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mediterranean Spotted Chafer",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mediterranean Spotted Chafer",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Mediterranean Spotted Chafer",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Trauer-Rosenkfer",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Trauer-Rosenkfer",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Trauer-Rosenkfer",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Trauer-Rosenkfer",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Trauer-Rosenkfer",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Brunidora",
-        "language": "es",
-        
+        "language": "es",        
       },
       {
         "vernacularName": "Cetoniella",
-        "language": "it",
-        
+        "language": "it",        
       },
       {
         "vernacularName": "Cétoine grise",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "Drap mortuaire",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "Escarabajo del sudario",
-        "language": "es",
-        
+        "language": "es",        
       },
       {
         "vernacularName": "Trauer-Rosenkäfer",
-        "language": "de",
-        
+        "language": "de",        
       }
     ],
     "taxonomy": {
@@ -4520,89 +2752,50 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "Broad Scarlet",
+        "vernacularName": "Scarlet Darter",
         "language": "en",
-        
+        wikiSearchTerm: true
+      },
+      {
+        "vernacularName": "Broad Scarlet",
+        "language": "en",        
       },
       {
         "vernacularName": "Feuerlibelle",
-        "language": "de",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "Frecciarossa",
-        "language": "it",
-        
+        "language": "it",        
       },
       {
         "vernacularName": "Libellule carlate",
-        "language": 'fr',
-        
+        "language": 'fr',        
       },
       {
         "vernacularName": "Liblula escarlate",
         "language": "es",
         
-      },
-      {
-        "vernacularName": "Scarlet Darter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Scarlet Darter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Scarlet Darter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Scarlet Darter",
-        "language": "en",
-        
-      },
+      },      
       {
         "vernacularName": "Scarlet Dragonfly",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "broad scarlet",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "scarlet darter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Broad Scarlet",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Common Scarlet-darter",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Feuerlibelle",
-        "language": "de",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "Libellule Écarlate",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "Libellule écarlate",
-        "language": "fr",
-        
+        "language": "fr",        
       },
     ],
     "taxonomy": {
@@ -4758,53 +2951,24 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Cardinale venerosse",
-        "language": "en",
-        "eol_preferred": true
+        "language": "it"
       },
       {
         "vernacularName": "Liblula de nervuras vermelhas",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red-veined Darter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red-veined Darter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red-veined Darter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Red-veined Darter",
-        "language": "en",
-        
+        "language": "pt",        
       },
       {
         "vernacularName": "Frühe Heidelibelle",
-        "language": "de",
-        
-      },
-      {
-        "vernacularName": "Red-veined Darter",
-        "language": "en",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "Red-veined darter",
-        "language": "en",
-        
+        "language": "en",        
+        wikiSearchTerm: true
       },
       {
         "vernacularName": "Sympétrum de Fonscolombe",
-        "language": "fr",
-        
+        "language": "fr",        
       }
     ],
     "taxonomy": {
@@ -4944,103 +3108,27 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Borboleta-das-sardinheiras",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "Borboleta-das-sardinheiras",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-das-sardinheiras",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Borboleta-das-sardinheiras",
-        "language": "en",
-        
+        "language": "pt",        
       },
       {
         "vernacularName": "Brun des plargoniums",
-        "language": "en",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "Common Geranium-bronze",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Common Geranium-bronze",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Common Geranium-bronze",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Common Geranium-bronze",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Common Geranium-bronze",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Farfallina dei gerani",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Farfallina dei gerani",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Farfallina dei gerani",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Farfallina dei gerani",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Insectos",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Insects",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Insetti",
-        "language": "en",
-        
+        "language": "it",        
       },
       {
         "vernacularName": "Licenide dei gerani",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "insectes",
-        "language": "en",
-        
+        "language": "it",        
       },
       {
         "vernacularName": "pelargonium butterfly",
-        "language": "en",
-        
+        "language": "en",        
       }
     ],
     "taxonomy": {
@@ -5917,14 +4005,8 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "Dobbeltbndet svirreflue",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Dobbeltbndet svirreflue",
-        "language": "en",
-        
+        "vernacularName": "Marmalade Fly",
+        "language": "en",        
       },
       {
         "vernacularName": "Flower Fly",
@@ -5937,15 +4019,6 @@ export const insects = [
       {
         "vernacularName": "Hainschwebfliege",
         "language": "de",        
-      },
-      {
-        "vernacularName": "Hover Flies",
-        "language": "en",
-        
-      },      
-      {
-        "vernacularName": "Marmalade Fly",
-        "language": "en",        
       },
       {
         "vernacularName": "Marmalade hoverfly",
@@ -6238,63 +4311,27 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Esperanzas",
-        "language": "en",
-        "eol_preferred": true
+        "language": "es"
       },
       {
         "vernacularName": "Great Green Bush-cricket",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Great Green Bush-cricket",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Great Green Bush-cricket",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Great Green Bush-cricket",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Grnes Heupferd",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Groes Grnes Heupferd",
-        "language": "en",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "Groes Heupferd",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Katydid family",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Katydids",
-        "language": "en",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "Longhorned Grasshopper",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Great green bushcricket",
-        "language": "en",
-        
+        "language": "en",        
       }
     ],
     "taxonomy": {
@@ -7382,28 +5419,19 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Gemeine Langbauchschwebfliege",
-        "language": "en",
-        "eol_preferred": true
+        "language": "de"
       },
       {
         "vernacularName": "Gemeine Stiftschwebfliege",
-        "language": "en",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "Gewhnliche Langbauchschwebfliege",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Hover Flies",
-        "language": "en",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "Long hoverfly",
-        "language": "en",
-        
+        "language": "en",        
       }
     ],
     "taxonomy": {
@@ -7918,29 +5946,60 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Two-tailed Pasha",
-        "language": "en",
-        "eol_preferred": true
+        "language": "en"
       },
       {
-        "vernacularName": "Two-tailed Pasha",
-        "language": "en",
-        
+        "vernacularName": "foxy emperor",
+        "language": "en"
       },
       {
-        "vernacularName": "Two-tailed Pasha",
-        "language": "en",
-        
+        "vernacularName": "mariposa del madroño",
+        "language": "es",        
       },
       {
-        "vernacularName": "baj de cuatrocolas",
-        "language": "en",
-        
+        "vernacularName": "bajá",
+        "language": "es",        
       },
       {
-        "vernacularName": "baj de cuatrocolas",
-        "language": "en",
-        
-      }
+        "vernacularName": "cuatro colas",
+        "language": "es",        
+      },
+      {
+        "vernacularName": "Nymphale de l'arbousier",
+        "language": "fr",        
+      },
+      {
+        "vernacularName": "Pacha à deux queues",
+        "language": "fr",        
+      },
+      {
+        "vernacularName": "Jason",
+        "language": "fr",        
+      },
+      {
+        "vernacularName": "Jasius",
+        "language": "fr",        
+      },
+      {
+        "vernacularName": "Erdbeerbaumfalter",
+        "language": "de",        
+      },
+      {
+        "vernacularName": "borboleta-do-medronheiro",
+        "language": "pt",        
+      },
+      {
+        "vernacularName": "imperador",
+        "language": "pt",        
+      },
+      {
+        "vernacularName": "ninfa del corbezzolo",
+        "language": "it",        
+      },
+      {
+        "vernacularName": "papallona de l'arboç",
+        "language": "cat",        
+      },
     ],
     "taxonomy": {
       "usageKey": 1896957,
@@ -8123,154 +6182,56 @@ export const insects = [
     ],
     "names": [
       {
+        "vernacularName": "large cabbage white",
+        "language": "en",        
+      },
+      {
         "vernacularName": "Borboleta das Couves",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "Cabbage White Butterfly",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Cabbage White Butterfly",
-        "language": "en",
-        
+        "language": "es"
       },
       {
         "vernacularName": "Cavolaia maggiore",
-        "language": "en",
-        
+        "language": "it",        
       },
       {
         "vernacularName": "Giant cabbage white butterfly",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Groer Kohlweiling",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Insectos",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Insects",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Insetti",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Large Cabbage White",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Large WHite Butterfly",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Large WHite Butterfly",
-        "language": "en",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "Large White Butterfly",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Large White Butterfly",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Large White Butterfly",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Large White Butterfly",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Large White Butterfly",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Large White",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Mariposa de la col",
-        "language": "en",
-        
+        "language": "es",        
       },
       {
         "vernacularName": "Papallona de la col",
-        "language": "en",
-        
+        "language": "cat",        
       },
       {
         "vernacularName": "blanca de la col",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "blanca de la col",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "insectes",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "large cabbage white",
-        "language": "en",
-        
+        "language": "cat",        
       },
       {
         "vernacularName": "cabbage butterfly",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "cabbage moth",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "cabbage white",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "large cabbage white",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "large white",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Large white",
-        "language": "en",
-        
+        "language": "en",        
       }
     ],
     "taxonomy": {
@@ -8991,9 +6952,12 @@ export const insects = [
     ],
     "names": [
       {
+        "vernacularName": "grasshopper",
+        "language": "en"
+      },
+      {
         "vernacularName": "saltamontes",
-        "language": "en",
-        "eol_preferred": true
+        "language": "es"
       }
     ],
     "taxonomy": {
@@ -9185,29 +7149,8 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "Insectos",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "Insects",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Insetti",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "insectes",
-        "language": "en",
-        
-      },
-      {
         "vernacularName": "Harlequin bug",
-        "language": "en",
-        
+        "language": "en",        
       }
     ],
     "taxonomy": {
@@ -9841,43 +7784,36 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Argus Icare",
-        "language": "fr",
-        "eol_preferred": true
+        "language": "fr"
       },
       {
         "vernacularName": "Argus bleu",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "Azur commun",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "Azur d'Icare",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "Azur de la bugrane",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "Blaveta comuna",
-        "language": "es",
-        
+        "language": "es",        
       },
       {
         "vernacularName": "Common Blue",
         "language": "en",
-        
+        wikiSearchTerm: true
       },
       {
         "vernacularName": "Gemeiner Bluling",
-        "language": "de",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "Hauhechel-Bluling",
@@ -9885,13 +7821,11 @@ export const insects = [
       },
       {
         "vernacularName": "Icare",
-        "language": "fr",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "Lycne Icare",
-        "language": "en",
-        
+        "language": "en",        
       },
     ],
     "taxonomy": {
@@ -13221,8 +11155,7 @@ export const insects = [
       },
       {
         "vernacularName": "Varied carpet beetle",
-        "language": "en",
-        
+        "language": "en",        
       }
     ],
     "taxonomy": {
@@ -13425,7 +11358,12 @@ export const insects = [
         "thumb": "5c/5d/3f/509.2026140.98x68.jpg"
       }
     ],
-    "names": [],
+    "names": [
+      {
+        "vernacularName": "convolvulus hawk-moth",
+        "language": "en",        
+      }
+    ],
     "taxonomy": {
       "usageKey": 1861644,
       "scientificName": "Agrius convolvuli (Linnaeus, 1758)",
@@ -13809,7 +11747,12 @@ export const insects = [
         "thumb": "67/24/79/509.64337081.98x68.jpg"
       }
     ],
-    "names": [],
+    "names": [
+      {
+        "vernacularName": "Large garden bumblebee",
+        "language": "en",        
+      }
+    ],
     "taxonomy": {
       "usageKey": 4485906,
       "scientificName": "Eurydema ornata (Linnaeus, 1758)",
@@ -13888,8 +11831,7 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Large garden bumblebee",
-        "language": "en",
-        
+        "language": "en",        
       }
     ],
     "taxonomy": {
@@ -13960,7 +11902,8 @@ export const insects = [
         "thumb": "4a/e6/12/18.https___www_inaturalist_org_photos_6837309.98x68.jpg"
       }
     ],
-    "names": [],
+    "names": [
+    ],
     "taxonomy": {
       "usageKey": 7619470,
       "scientificName": "Cryptocephalus rugicollis Olivier, 1791",

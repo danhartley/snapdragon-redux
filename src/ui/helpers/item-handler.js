@@ -1,17 +1,18 @@
 import * as R from 'ramda';
 
+import { utils } from 'utils/utils';
+import { itemProperties } from 'ui/helpers/data-checking';
 import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
 import { collections } from 'snapdragon/eol-collections';
 import { getLocation } from 'geo/geo';
-import { speciesStateHelper } from 'redux/reducers/initial-state/initial-species-state';
 
 async function getItems(collection, config) {
-    if(collection.id === 8) {
+    if(collection.providerId === 1) {
         const collectionIsUnchanged = 
             collection.items && collection.items.length > 0 && collection.items[0].collectionId === collection.id && 
             collection.speciesRange === config.speciesRange &&
-            collection.iconicTaxa === config.iconicTaxa;
+            collection.iconicTaxa === config.guide.iconicTaxa.map(taxon => taxon.id);
         if(collectionIsUnchanged) {
             return new Promise(resolve => {
                 resolve(collection.items);
@@ -20,7 +21,9 @@ async function getItems(collection, config) {
             const coordinates = await getLocation(config);                        
             const latitude = coordinates['0'] || coordinates.lat;
             const longitude = coordinates['1'] || coordinates.long;
-            return getInatSpecies(latitude, longitude, config).then(species => {
+            const inatConfig = {latitude, longitude};
+            inatConfig.locationType = config.guide.locationType;
+            return getInatSpecies(inatConfig, config).then(species => {
                 const items = new Set(species.filter(item => item));
                 return [ ...items ];
             });
@@ -48,19 +51,45 @@ export const keepItems = collection => {
 
 export async function itemHandler(collection, config, counter, callback) {
     
-    if(counter.isLessonPaused) {
+    if(counter.isLessonPaused) { // problem here when returning home and selecting new collection, or filtering current.... will always be that originally requested
         collection.items = await keepItems(collection);
-    } else {    
-        collection.items = await getItems(collection, config);
+    } else {         
+        collection.items = utils.shuffleArray(await getItems(collection, config));
+
+        if(R.contains('lepidoptera', config.guide.iconicTaxa.map(taxon => taxon.id)) && !R.contains('insecta', config.guide.iconicTaxa.map(taxon => taxon.id))) {
+            const insecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() === 'insecta');
+            const lepidoptera = insecta.filter(i => i.taxonomy.order.toLowerCase() === 'lepidoptera');
+            const noninsecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() !== 'insecta');
+            collection.items = [ ...lepidoptera, ...noninsecta ];
+        }
+
+        collection.name = config.guide.place.name;
+        collection.items = collection.items.filter(i => i);
 
         collection.items.filter(item => item).forEach((item,index)=>{
             item.snapIndex = index + 1;
             item.collectionId =  collection.id;
         });
 
-        collection = speciesStateHelper.extendCollection(collection);
+        collection.items.forEach(item => {
+            
+            item.vernacularNames = itemProperties.getVernacularNames(item, config);
+            item.vernacularName = itemProperties.getVernacularName(item, config);   
+
+            const names = item.name.split(' ');
+            item.genus = names[0];
+            item.species = names[1];
+            item.name = names.slice(0,2).join(' ');
+        })
+
         collection.speciesRange = config.speciesRange;
-        collection.iconicTaxa = config.iconicTaxa;
+        collection.iconicTaxa = config.guide.iconicTaxa;
+
+        collection.speciesNames = collection.items.map(item => item.name);
+        collection.speciesVernacularNames = itemProperties.vernacularNamesForItems(collection.items, config);
+
+        collection.itemIndex = 0;
+        collection.currentRound = 1;
 
         actions.boundChangeCollection({ config, collection });
     }
@@ -68,9 +97,4 @@ export async function itemHandler(collection, config, counter, callback) {
     if(collection.items) {
         callback();
     }    
-}
-
-export const extendCollection = (config, collection) => {
-    const extendedCollection = speciesStateHelper.extendCollection(collection);
-    actions.boundChangeCollection({ config, collection: extendedCollection });
 };

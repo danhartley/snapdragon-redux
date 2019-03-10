@@ -47,7 +47,7 @@ const getTaxonProp = (taxon, language, prop) => {
 
 const getNestedTaxonProp = (taxon, language, prop1, prop2, index) => {
 
-    if(!taxon[prop1]) return '';
+    if(!taxon || !taxon[prop1]) return '';
 
     const prop1Value = taxon[prop1].find(name => name.language === language) ? taxon[prop1].find(name => name.language === language) : taxon[prop1].find(name => name.language === 'en');
 
@@ -82,8 +82,8 @@ const familyVernacularNames = (name, language, taxa) => {
     return taxon.names.find(name => name.language === language).names;
 };
 
-const familyHasTaxaData = (family, taxa) => {
-    return taxa.find(taxon => taxon.name === family);
+const taxonHasTaxaData = (taxon, taxa) => {
+    return taxa.find(t => t.name === taxon);
 };
 
 const getTrait = (traits, itemName, name, formatter) => {
@@ -111,15 +111,14 @@ const getActiveTrait = (traits, itemName, options) => {
 const vernacularNamesForItems = (items, config) => {
     let itemNames = items.map(item => item.names);
     let vernaculars = itemNames.map(itemNames => itemNames.filter(name => 
-        { return name.language === config.language || name.language === 'en' 
-    }));
+        { return name.language === config.language || name.language === 'en' }));
     if(vernaculars.length === 0) return [];
     vernaculars = vernaculars.map(vernacular => {
         let name = vernacular.find(v => v.language === config.language);
         if(!name) name = vernacular.find(v => v.language === 'en');
         if(!name) return '';
         return utils.capitaliseFirst(name.vernacularName);
-    });
+    }).filter(v => v !== '');
     return vernaculars;
 };
 
@@ -165,7 +164,7 @@ export const itemProperties = {
     getNestedTaxonProp,
     trimLatinName,
     familyVernacularNames,
-    familyHasTaxaData,
+    taxonHasTaxaData,
     getTrait,
     getActiveTrait,
     vernacularNamesForItems,
