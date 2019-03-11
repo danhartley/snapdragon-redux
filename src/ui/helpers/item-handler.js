@@ -23,7 +23,7 @@ async function getItems(collection, config) {
             const longitude = coordinates['1'] || coordinates.long;
             const inatConfig = {latitude, longitude};
             inatConfig.locationType = config.guide.locationType;
-            return getInatSpecies(inatConfig, config).then(species => {
+            return getInatSpecies(inatConfig, config).then(species => { // take the first only (ignore close matches)
                 const items = new Set(species.filter(item => item));
                 return [ ...items ];
             });

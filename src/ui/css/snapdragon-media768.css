@@ -284,7 +284,8 @@
     }
 
     .summary-scores {
-        align-self: center;
+        display: flex;
+        flex-direction: column;
       }
 
     .course-description span {

@@ -257,10 +257,8 @@ export const radioButonClickhandler = (config, template, descriptions, answers, 
     const callback = (score, scoreUpdateTimer) => {            
         answerBtn.disabled = false;
         answerBtn.removeEventListener('click', scoreEventHandler);     
-        // answerBtn.addEventListener('click', () => {
-            window.clearTimeout(scoreUpdateTimer);
-            actions.boundUpdateScore(score);
-        // });
+        window.clearTimeout(scoreUpdateTimer);
+        actions.boundUpdateScore(score);
     };
 
     const scoreEventHandler = event => {
