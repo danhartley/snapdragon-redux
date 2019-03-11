@@ -54,9 +54,10 @@ export const renderSummary = (history) => {
 
     renderTemplate({ score, history, collection, config, header, summary, warning }, template.content, parent);
     
-    const learnMoreBtn = document.querySelector('.js-summmary-btn-action');
+    // const learnMoreBtn = document.querySelector('.js-summmary-btn-action');
+    let actionLink = document.querySelector('.js-create-guide-link');
 
-    if(collection.isLessonComplete) learnMoreBtn.innerHTML = 'Choose a new lesson';
+    if(collection.isLessonComplete) actionLink.innerHTML = 'Choose a new lesson';
 
     const handleBtnClickEvent = event => {
 
@@ -69,7 +70,7 @@ export const renderSummary = (history) => {
         else lessonLogicHandler.changeCollection('nextRound', collection, config, history);
     };
 
-    learnMoreBtn.removeEventListener('click', handleBtnClickEvent);
-    learnMoreBtn.addEventListener('click', handleBtnClickEvent);
+    actionLink.removeEventListener('click', handleBtnClickEvent);
+    actionLink.addEventListener('click', handleBtnClickEvent);
 };
 

@@ -1,44 +1,54 @@
-<div class="snapdragon-container">    
-        
-    <div class="summary-header js-summary-header"><span>{{ header }}</span></div>
-
-    <table class="summary-scores">
-            <thead>
-                <tr>
-                    <th class="roundScore">Round score</th>
-                    <th class="lessonScore">Lesson score</th>   
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Correct answers</td>
-                    <td>{{ score.correct }}</td>
-                    <td>{{ history.correct }}</td>                
-                </tr>
-                <tr>
-                    <td>Incorrect answers</td>
-                    <td>{{ score.incorrect }}</td>
-                    <td>{{ history.incorrect }}</td>                
-                </tr>
-                <tr>
-                    <td>Total questions</td>
-                    <td>{{ score.total }}</td>
-                    <td>{{ history.total }}</td>
-                </tr>
-            </tbody>
-    </table>
-
-    <div class="summary">
-        <div>{{ summary }}</div>        
-    </div>    
+<div class="snapdragon-container home-container">  
     <div>
-        <div class="snap-alert snap-padding hide-empty">{{ warning }}</div>
-    </div>
-    
-    <div class="action-update-container">
-        <div class="species-card-btn action-update">
-            <div></div>
-            <button class="btn btn-light js-summmary-btn-action">Continue lesson</button>
+        <div>
+            <div class="snapdragon-header">
+                <div>
+                    A lull
+                </div>
+            </div>
+
+            <div class="summary-scores">
+                <div class="floating-card"><span>{{ score.correct }}</span><span>correct answers in that round</span></div>
+                <div class="floating-card"><span>{{ history.correct }}</span><span>correct answers overa all</span></div>
+            </div>
+            <!-- <table class="summary-scores">
+                <thead>
+                    <tr>
+                        <th class="roundScore">Round score</th>
+                        <th class="lessonScore">Lesson score</th>   
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Correct answers</td>
+                        <td>{{ score.correct }}</td>
+                        <td>{{ history.correct }}</td>                
+                    </tr>
+                    <tr>
+                        <td>Incorrect answers</td>
+                        <td>{{ score.incorrect }}</td>
+                        <td>{{ history.incorrect }}</td>                
+                    </tr>
+                    <tr>
+                        <td>Total questions</td>
+                        <td>{{ score.total }}</td>
+                        <td>{{ history.total }}</td>
+                    </tr>
+                </tbody>
+            </table>
+     -->
+            <div class="summary">
+                <div>{{ summary }}</div>        
+            </div>  
+            <div class="snapdragon-create-guide">
+                <div>
+                    <span class="underline-link js-create-guide-link" data-toggle="modal" data-target="#createGuide">Resume</span> lesson
+                </div>
+                <div class="hide delete-guide-link js-delete-guide-link">
+                    <span class="underline-link disabled">Delete lesson</span>
+                    <input type="checkbox">
+                </div>
+            </div>            
         </div>
     </div>
 </div>

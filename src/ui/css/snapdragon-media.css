@@ -338,7 +338,7 @@
     #createGuide .modal-body .save-your-changes {
         display: flex;
         align-items: center;
-        margin: 1rem 0 0 0;
+        margin: .5rem 0 0 0;
     }
 
     #createGuide .modal-body .save-your-changes button {
@@ -348,7 +348,8 @@
     #createGuide .modal-body .saved {
         color: gray;
         font-size: 1.1rem;
-        margin: 0 0 0 2rem;
+        font-family: serif;
+        font-style: italic;
     }
  
     #createGuide .modal-body .guides > div:first-child {
@@ -371,7 +372,7 @@
     .inat-place {
         display: inline-flex;
         align-items: center;
-        margin: .5rem 0;
+        margin: 1rem 0;
     }
 
     .inat-place label {
@@ -404,8 +405,7 @@
     .inat-place > div div:nth-child(1) {
         display: flex;
         align-items: center;
-        font-size: 1.1rem;
-        margin: 1rem 0 0 0;
+        font-size: 1.1rem;        
     }
 
     .auto-location {
@@ -459,12 +459,12 @@
     .home-container > div {
         margin: 0 1rem;
     }
-
+/* 
     .home-container > div > div > div {
         height: 120px;
         display: flex;
         align-items: center;
-    }
+    } */
 
     .home-container .snapdragon-header {
         font-size: 3.6rem;
@@ -473,15 +473,20 @@
         color: var(--snap-collection-active);
         letter-spacing: .3rem;
         font-family: sentinel;
+        display: flex;
+        align-items: center;
+        height: 120px;
     }
 
     .home-container .snapdragon-tag {
         justify-content: center;
-        height: 240px;
+        height: 360px;
         font-family: sentinel;
         font-size: 3.5rem;
         font-style: italic;
         font-weight: bold;
+        display: flex;
+        align-items: center;
     }
 
     .delete-guide-link > span.active {
@@ -524,14 +529,15 @@
         color: var(--secondary);
     }
 
-    .home-container .snapdragon-create-guide {
+    .snapdragon-container .snapdragon-create-guide {
         display: flex;        
         flex-direction: column;
         align-items: flex-end;
         position: relative;
+        height: 120px;
     }
 
-    .home-container .snapdragon-create-guide > div {
+    .snapdragon-container .snapdragon-create-guide > div {
         font-size: 2.6rem;
         text-transform: uppercase;
         font-family: 'SharpGroteskWide', sans-serif;
@@ -539,23 +545,23 @@
         letter-spacing: .05rem;                
     }
     
-    .home-container .snapdragon-create-guide > div:nth-child(1) {
+    .snapdragon-container .snapdragon-create-guide > div:nth-child(1) {
         position: absolute;
         bottom: 2rem;
     }
     
-    .home-container .snapdragon-create-guide > div:nth-child(2) {
+    .snapdragon-container .snapdragon-create-guide > div:nth-child(2) {
         position: absolute;
         bottom: 0rem;
     }
 
-    .home-container .snapdragon-create-guide > div:nth-child(1) > span {
+    .snapdragon-container .snapdragon-create-guide > div:nth-child(1) > span {
         font-size: 2.6rem;  
         font-family: "PT Sans", "Roboto", arial, sans-serif;
         letter-spacing: .05rem;        
     }
 
-    .home-container .snapdragon-create-guide > div:nth-child(2) > span {
+    .snapdragon-container .snapdragon-create-guide > div:nth-child(2) > span {
         font-size: .8rem;
         color: var(--secondary);
     }
