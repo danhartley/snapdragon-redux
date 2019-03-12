@@ -54,5 +54,7 @@ setTimeout( () => {
         actions.boundUpdateConfig(config);
     }
 
-    getApproximateLocation();
+    if(!config.guide.locationType) {
+        getApproximateLocation();
+    }
 });

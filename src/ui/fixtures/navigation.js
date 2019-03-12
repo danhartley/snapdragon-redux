@@ -6,7 +6,6 @@ import { renderSettings } from 'ui/fixtures/settings';
 import { renderTemplate } from 'ui/helpers/templating';
 import { subscription } from 'redux/subscriptions';
 import { renderHome } from 'ui/screens/home/home';
-import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { getGlossary } from 'api/glossary/glossary';
 import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
@@ -87,7 +86,7 @@ export const renderNavigation = (page) => {
                     case 'home':
                         target.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));        
-                        lessonLogicHandler.changeCollection('pauseLesson', collection, config, history); 
+                        lessonLogicHandler.changeCollection('pause-lesson', collection, config, history); 
                         const { counter } = store.getState();
                         renderHome(counter);
                         break;
@@ -100,7 +99,7 @@ export const renderNavigation = (page) => {
                     case 'list':                        
                         target.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));                                   
-                        lessonLogicHandler.changeCollection('pauseLesson', collection, config, history);         
+                        lessonLogicHandler.changeCollection('pause-lesson', collection, config, history);         
                         break;
                     case 'glossary':
                         if(page.glossary) {

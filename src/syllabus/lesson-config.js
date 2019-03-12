@@ -22,7 +22,7 @@ export const config = {
         iconicTaxa: [],
         locationLongLat: '',
         locationPlace: '',
-        locationType: 'longLat',
+        locationType: null,
         place: {
             id: 1,
             name: ''

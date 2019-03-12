@@ -2508,7 +2508,8 @@ export const taxa = [
     {
         taxon: 'order',
         name: 'Carnivora',
-        names: [ { language: "en", names: ['Carnivorans']}],
+        names: [ { language: "en", names: ['Carnivorans']}
+        ],
         descriptions: [
             {
                 language: 'en',
@@ -2552,6 +2553,28 @@ export const taxa = [
         ],
         families: 2,
         species: 87
+    },
+    {
+        taxon: 'family',
+        name: 'Leporidae',
+        names: [ { language: "en", names: ['Rabbits and hares']},
+        { language: "fr", names:[ 'Lapins et Lièvres' ]},
+        { language: "de", names:[ 'Hasen' ]},
+        { language: "es", names:[ 'Conejos y Liebres' ]},
+        { language: "pt", names:[ 'Leporídeos' ]},
+        { language: "it", names:[ 'Leporidi' ]}],
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Widespread, rabbit and hares that are usally herbivorous and coprophagous. Rabbits use burrows for shelter.',
+                identification: 'Small-moderately sized mammals, adapted for rapid movement. Long hind legs, 4 toes on each foot, and shorter fore legs, with 5 toes. Soles of feet are hairy, to improve grip, with strong claws on all toes.',
+                keyMembers: [],
+                usage: []
+            }
+        ],
+        genera: 12,
+        species: 60,
+        wiki: 'https://en.wikipedia.org/wiki/Leporidae'
     },
     {
         taxon: 'order',

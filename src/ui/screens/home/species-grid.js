@@ -1,24 +1,31 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
+import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { species } from 'api/species';
+import { renderCard } from 'ui/screens/cards/card';
 import { renderTemplate } from 'ui/helpers/templating';
 import speciesGridTemplate from 'ui/screens/home/species-grid-template.html';
 
 export const renderSpeciesGrid = () => {
 
-    const speciesImages = R.take(30, utils.shuffleArray(species).map(sp => sp.images));
+    const { config } = store.getState();
+
+    const speciesImages = R.take(30, utils.shuffleArray(species).map(sp => {
+        return { images: sp.images, itemName: sp.name };
+    }));
 
     const images = [];
     let counter = 0;
 
-    speciesImages.forEach(imgs => {
+    speciesImages.forEach(si => {
         
-        if(imgs.length > 0 && imgs[0].thumb && imgs[0].thumb.indexOf('98x68') > 0) {
-            imgs[0].small = imgs[0].thumb.replace('98x68', '260x190');
+        if(si.images.length > 0 && si.images[0].thumb && si.images[0].thumb.indexOf('98x68') > 0) {
+            si.images[0].small = si.images[0].thumb.replace('98x68', '260x190');
             if(counter < 25) {
-                images.push(imgs[0]);
+                si.images[0].itemName = si.itemName;
+                images.push(si.images[0]);
                 counter++;
             }            
         }
@@ -30,4 +37,12 @@ export const renderSpeciesGrid = () => {
     DOM.leftBody.innerHTML = '';
 
     renderTemplate({ images }, template.content, DOM.leftBody);
+
+    const speciesCardModal = document.querySelector('#speciesCardModal .js-modal-body');
+    document.querySelectorAll('.species-grid img').forEach(image => {
+        image.addEventListener('click', event => {
+            const name = event.target.dataset.itemName;
+            renderCard({ items: species, name: 'Snapdragon specimen' }, true, species.find(i => i.name === name), speciesCardModal, false);
+        });
+    });
 };

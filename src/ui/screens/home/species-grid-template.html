@@ -1,3 +1,9 @@
 <div class="species-grid" data-repeat-image="{{ images }}">
-    <img src="https://content.eol.org/data/media/{{ image.small }}" alt="">
+    <img    
+        src="https://content.eol.org/data/media/{{ image.small }}"
+        data-toggle="modal" data-target="#speciesCardModal"
+        data-item-name="{{ image.itemName }}" 
+        data-unique-url="{{ image.url }}"
+        data-src="https://content.eol.org/data/media/{{ image.small }}"        
+    alt="">
 </div>

@@ -8,9 +8,9 @@ import { renderTemplate } from 'ui/helpers/templating';
 import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen-tiles-template.html';
 import { screenShare } from 'ui/screens/multichoice/portrait/mixed-specimen-shared';
 
-export const renderMixedSpecimenTiles = (ui) => {
+export const renderMixedSpecimenTiles = collection => {
 
-    const { collection, config } = store.getState();
+    const { config } = store.getState();
 
     const item = collection.nextItem;
 

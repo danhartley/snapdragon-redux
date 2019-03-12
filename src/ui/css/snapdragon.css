@@ -602,25 +602,38 @@ a.dropdown-item {
 }
 
 .strips {
-  flex: initial;
-  display: flex;
-  flex-direction: column;
-  padding: 0 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   cursor: pointer;
 }
 
 .strip {
-  flex: auto;
-  margin: 0.2rem 0;
-  border-radius: .25rem;
-  border: .2rem solid var(--orange);
-  width: fit-content;
-  background-color: rgb(250, 179, 123);
-  letter-spacing: .03rem;
+  background: #fff;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: .5rem;
+  padding: .8rem 1.1rem;
 }
 
+.strip.snap-success {
+  background-color: rgb(41, 108, 44,.4);
+  box-shadow: 0 2px 8px rgba(0,0,0,.8);
+  border: none;
+}
+
+.strip.snap-alert {
+  background-color: rgba(183, 12, 21,.4);
+  box-shadow: 0 2px 8px rgba(0,0,0,.8);
+  border: none;
+}
+
+
 .strip:hover {
-  border: .2rem solid var(--gray);
+  box-shadow: 0 2px 8px rgba(0,0,0,.8);
 }
 
 .strips.description .strip div {
@@ -1458,20 +1471,55 @@ table input {
   display: initial;
 }
 
-.radio-buttons-group {
+.btn-secondary:not(:disabled):not(.disabled).active {
+  background-color: white;
+  color: var(--snap-text-dark);
+}
+
+.rb.btn-group {
   display: flex;
   flex-direction: column;
 }
 
-.radio-buttons label {
-  color: var(--snap-text-medium-light);
-  background-color: var(--snap-strips-background);
-  width: 100%;
+.rb.btn-group .btn.btn-secondary.active {
+  color: var(--snap-success);
+  background-color: inherit;
+  border: none;
 }
 
+.btn-secondary:not(:disabled):not(.disabled):active {
+  color: var(--snap-text-medium-dark);
+  background-color: initial;
+  border: none;
+}
+
+.rb.btn-group .btn {
+  font-size: 1.6rem;
+}
+
+.rb.btn-group .btn:hover {
+  color: rgb(100, 100, 100);
+}
+
+.btn.btn-secondary.disabled.active {
+  opacity: 1;
+}
+
+.rb.btn-group label {
+  margin: 0 0 .5rem 0;
+}
+
+.rb.btn-group input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+  position: absolute;
+  clip: rect(0,0,0,0);
+  pointer-events: none;
+}
+/* 
 .btn-group .btn+.btn {
   margin: 0;
-}
+} */
 
 .btn-group.btn-group-toggle {
   border: 0;
@@ -1481,20 +1529,11 @@ table input {
 }
 
 .btn.btn-secondary {
-  color: var(--snap-text-dark);
+  color: var(--snap-text-medium-dark);
   background-color: var(--white);
   border: 0;
   width: fit-content;
   border: none;
-  /* margin: 0 0 .25rem 0 !important; */
-}
-
-.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active,
-.btn-secondary:not(:disabled):not(.disabled).focus, .btn-secondary:not(:disabled):not(.disabled):focus, 
-.show>.btn-secondary.dropdown-toggle 
-{
-  background-color: white;
-  color: var(--snap-text-dark);  
 }
 
 .btn.btn-secondary:hover {
@@ -1502,13 +1541,12 @@ table input {
 }
 
 .btn.btn-secondary.disabled .collectionName, .btn.btn-secondary.active .guideName {
-  border: none;
+  border: none;  
 }
 
 label.btn.btn-secondary {
   display: flex;
   align-items: center;
-  /* background-color: var(--snap-list-alt-background); */
 }
 
 label.btn.btn-secondary img {      
@@ -1517,18 +1555,6 @@ label.btn.btn-secondary img {
 
 label.btn.btn-secondary .lesson-icon {
   font-size: .8rem;
-}
-
-.radio-buttons .btn,
-.btn-group.btn-group-toggle .btn {
-  text-align: left;
-  border-radius: 0.2rem !important;
-}
-
-.radio-buttons input,
-.btn-group.btn-group-toggle input {
-  display: inline-flex;
-  margin: 0 0.25rem 0 0;
 }
 
 .left-grid,
@@ -1926,7 +1952,8 @@ iframe#birdsong {
 } */
 
 .radio-buttons.disabled label {
-  background-color: var(--snap-strips-background);
+  color: rgb(100,100,100);
+  /* background-color: var(--snap-strips-background); */
 }
 
 .visual-match .description div:empty,

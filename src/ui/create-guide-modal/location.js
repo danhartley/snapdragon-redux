@@ -51,6 +51,7 @@ export const renderLocation = (modal, config, createGuide) => {
         actions.boundUpdateConfig(config);
         locationLongLatTxt.innerHTML = place.longLocation;
         setLocationLongLatBtn.innerHTML = 'Reset your location';
+        modal.querySelector(`#longLat`).click();
         saveYourChangesBtn();
     }
 

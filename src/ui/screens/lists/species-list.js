@@ -150,11 +150,11 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                     lessonLogicHandler.purgeLesson();
                 } else {
                     if(readOnlyMode) {
-                        const lessonStateMode = counter.isLessonPaused ? 'restartLesson' : 'nextRound';
+                        const lessonStateMode = counter.isLessonPaused ? 'restart-lesson' : 'next-round';
                         lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history);
                     }
                     else {
-                        lessonLogicHandler.changeCollection('newLesson', collection, config, history, continueLearningActionBtn);
+                        lessonLogicHandler.changeCollection('new-lesson', collection, config, history, continueLearningActionBtn);
                     }
 
                     actions.boundNewPage({ name: ''});

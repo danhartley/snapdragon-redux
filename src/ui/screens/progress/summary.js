@@ -6,7 +6,7 @@ import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import summaryTemplate from 'ui/screens/progress/summary-template.html';
 
-export const renderSummary = (history) => {
+export const renderSummary = history => {
 
     const { score, collection, config, collections } = store.getState();
 
@@ -54,7 +54,6 @@ export const renderSummary = (history) => {
 
     renderTemplate({ score, history, collection, config, header, summary, warning }, template.content, parent);
     
-    // const learnMoreBtn = document.querySelector('.js-summmary-btn-action');
     let actionLink = document.querySelector('.js-create-guide-link');
 
     if(collection.isLessonComplete) actionLink.innerHTML = 'Choose a new lesson';
@@ -67,7 +66,7 @@ export const renderSummary = (history) => {
         if(collection.isLessonComplete) {
             lessonLogicHandler.purgeLesson();
         }
-        else lessonLogicHandler.changeCollection('nextRound', collection, config, history);
+        else lessonLogicHandler.changeCollection('next-round', collection, config, history);
     };
 
     actionLink.removeEventListener('click', handleBtnClickEvent);

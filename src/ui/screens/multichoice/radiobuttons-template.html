@@ -3,19 +3,23 @@
 
     <div class="mixed-specimens">
         <div class="hide-empty question question-txt">
-            <span>{{ description1 }}</span>
+            <span>{{ description }}</span>
             <span>(Click on the name below.)</span>
         </div>
 
-        <div class="radio-buttons-group btn-group btn-group-toggle" data-toggle="buttons" data-repeat-answer="{{ answers }}">                
-            <div class="radio-buttons">
-                <label class="btn">
-                    <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}" autocomplete="off" checked> {{ answer }}
-                </label>
-            </div>                
+        <div class="rb btn-group btn-group-toggle" data-toggle="buttons" data-repeat-answer="{{ answers }}">                    
+            <label id="{{ answer }}" class="btn btn-secondary">
+                <input type="radio" name="answer" value="{{ answer }}" id="{{ answer }}" autocomplete="off"> {{ answer }}
+            </label>
         </div>
+
     </div>
 
     <div class="text-question js-txt-question landscape"></div>    
-    <div class="js-update-btn"></div>
+    <div class="action-update-container">
+        <div class="action-update">
+            <div></div>
+            <button disabled class="btn btn-light js-continue-lesson-btn">Continue lesson</button>
+        </div>
+    </div>
 </div>

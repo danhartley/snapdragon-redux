@@ -13,9 +13,9 @@ import { imageSlider } from 'ui/screens/common/image-slider';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import { iconicTaxa, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
 
-export const renderMixedSpecimenQuestions = ui => {
+export const renderMixedSpecimenQuestions = collection => {
 
-    const { collection, config, lessonPlan, layout, score } = store.getState();
+    const { config, lessonPlan, layout, score } = store.getState();
 
     const item = collection.nextItem;
 
