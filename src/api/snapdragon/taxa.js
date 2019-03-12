@@ -2137,7 +2137,7 @@ export const taxa = [
         taxon: 'family',
         name: 'Papilionidae',
         thumb: "55/6d/72/509.11059686.260x190.jpg",
-        names: [ { language: "en", names: ['Swallowtail butterfly']} ,
+        names: [ { language: "en", names: ['Swallowtail butterflies']} ,
         { language: "fr", names:[ 'Papilionidae' ]},
         { language: "de", names:[ 'Ritterfalter' ]},
         { language: "es", names:[ 'papiliónidos' ]},
@@ -2154,6 +2154,50 @@ export const taxa = [
         ],
         eol: "http://eol.org/pages/884/overview",
         wiki: "https://en.wikipedia.org/wiki/Papilionidae"
+    },
+    {
+        taxon: 'family',
+        name: 'Pieridae',
+        thumb: "39/99/a8/18.https___www_inaturalist_org_photos_394666.260x190.jpg",
+        names: [ { language: "en", names: ['Yellow-White Butterflies']} ,
+        { language: "fr", names:[ 'Yellow-White Butterflies' ]},
+        { language: "de", names:[ 'Yellow-White Butterflies' ]},
+        { language: "es", names:[ 'Yellow-White Butterflies' ]},
+        { language: "pt", names:[ 'Yellow-White Butterflies' ]},
+        { language: "it", names:[ 'Papilionidae' ]}],
+        species: '~1100',
+        genera: '76',
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Most common tropical Asia & Africa but Pieris brassicae and Pieris rapae which feed on brassicas are widespread.',
+                identification: `Most pierid butterflies are white, yellow, or orange in coloration, often with black spots.`
+            }
+        ],
+        eol: "http://eol.org/pages/885/overview",
+        wiki: "https://en.wikipedia.org/wiki/Pieridae"
+    },
+    {
+        taxon: 'family',
+        name: 'Coccinellidae',
+        thumb: "58/3b/c7/509.24610757.260x190.jpg",
+        names: [ { language: "en", names: ['Ladybirds, lady beetles, ladybugs']} ,
+        { language: "fr", names:[ 'Ladybirds, lady beetles, ladybugs' ]},
+        { language: "de", names:[ 'Ladybirds, lady beetles, ladybugs' ]},
+        { language: "es", names:[ 'Ladybirds, lady beetles, ladybugs' ]},
+        { language: "pt", names:[ 'Ladybirds, lady beetles, ladybugs' ]},
+        { language: "it", names:[ 'Ladybirds, lady beetles, ladybugs' ]}],
+        species: '~6000',
+        genera: '360',
+        descriptions: [
+            {
+                language: 'en',
+                summary: 'Many prey on herbivorous homopterans such as aphids or scale insects.',
+                identification: 'Often conspicuously coloured yellow, orange, or red with small black spots on their wing covers, black legs, heads and antennae.'
+            }
+        ],
+        eol: "http://eol.org/pages/7459/overview",
+        wiki: "https://en.wikipedia.org/wiki/Coccinellidae"
     },
     {
         taxon: 'family',

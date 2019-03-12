@@ -71,5 +71,22 @@ export const renderSummary = history => {
 
     actionLink.removeEventListener('click', handleBtnClickEvent);
     actionLink.addEventListener('click', handleBtnClickEvent);
+
+    const progress = document.querySelector('.js-progress');
+
+    const scoreAverage = (score.correct/score.total);
+    const historyAverage = (history.correct/history.total);
+
+    progress.innerHTML = scoreAverage === historyAverage
+                ? 'Average' 
+                : scoreAverage > historyAverage
+                    ? 'Above average'
+                    : 'Below average';
+
+    scoreAverage === historyAverage
+            ? ''
+            : scoreAverage > historyAverage
+                ? progress.classList.add('above')
+                : progress.classList.add('below')
 };
 
