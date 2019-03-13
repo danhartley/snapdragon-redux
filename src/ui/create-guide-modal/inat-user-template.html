@@ -1,8 +1,22 @@
-<!-- <div class="inat-place">
-    <h5>iNaturalist username</h5>
-    <div>If you are an iNaturalist member, etc., etc.</div>
-    <div>
-        <input class="js-inat-identity" type="text" autofocus="true">
+<div class="inat-place">
+
+    <div class="inat-switch">
+        <div>iNat User</div>
+
+        <div class="inat-id-switch left js-inat-id-switch">
+            <div></div>
+        </div>
+
+        <div>iNat Project</div>
     </div>
-    <button class="btn btn-modal js-set-inat-identity-btn">Set identity</button>
-</div> -->
+
+    <div class="inat-entry">
+        <div>
+            <div>
+                <input id="inat-identity" type="text" autofocus="true">
+            </div>
+            <div class="hide-empty" id="inat-identity-autocomplete"></div>
+        </div>
+        <button id="set-inat-identity-btn" class="btn btn-modal js-set-inat-identity-btn">Save iNat User</button>
+    </div>    
+</div>

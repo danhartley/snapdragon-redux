@@ -13,11 +13,12 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
             ? config.guide.iconicTaxa.map(taxon => taxon.common).join(', ') 
             : 'All species';
     const guide = config.guide.studyMethod.replace('_', ' ');
+    const inatId = config.guide.inatId;
 
     const template = document.createElement('template');
     template.innerHTML = homeGuideTemplate;
 
-    renderTemplate({ location, place, taxa, guide }, template.content, parent);
+    renderTemplate({ location, place, taxa, guide, inatId }, template.content, parent);
 
     const widgetLink = document.querySelector('.js-iNatWidget');
     

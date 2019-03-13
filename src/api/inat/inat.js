@@ -35,7 +35,8 @@ export const getInatSpecies = (inatConfig, config) => {
         const start = daysAway('past', 30);
         const end = daysAway('future', 30);
         const endpoint = 'observations/species_counts';
-        const url = `https://api.inaturalist.org/v1/${endpoint}?page=1&captive=false&hrank=species&iconic_taxa=${iconicTaxa}&rank=species&m1=11&m2=1&photos=true&place_id=any&quality_grade=research&lat=${lat}&lng=${lng}&radius=${radius}&user_id=&per_page=${perPage}`;
+        const userId = config.guide.inatId || '';
+        const url = `https://api.inaturalist.org/v1/${endpoint}?page=1&captive=false&hrank=species&iconic_taxa=${iconicTaxa}&rank=species&m1=11&m2=1&photos=true&place_id=any&quality_grade=research&lat=${lat}&lng=${lng}&radius=${radius}&user_id=${userId}&per_page=${perPage}`;
         const response = await fetch(url);
         const json = await response.json();
         return await json.results;

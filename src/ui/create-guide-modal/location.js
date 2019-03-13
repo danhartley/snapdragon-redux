@@ -25,7 +25,7 @@ export const renderLocation = (modal, config, createGuide) => {
 
     renderTemplate({}, template.content, parent);
 
-    const locationTypes = modal.querySelectorAll('.btn.btn-secondary div');
+    const locationTypes = modal.querySelectorAll('.btn.btn-secondary div:nth-child(1)');
     const locationLongLatTxt = modal.querySelector('.js-auto-location');
 
     async function handleAutoLocationLongLat() {        
@@ -81,6 +81,7 @@ export const renderLocation = (modal, config, createGuide) => {
     });
 
     locationPlaceInput.addEventListener('focus', event => {
+        // event.target.value = '';
         toggleSpeciesRange(false);
     });
 
@@ -103,7 +104,7 @@ export const renderLocation = (modal, config, createGuide) => {
         });
     }      
 
-    locationTypes.forEach(type => type.addEventListener('click', event => {        
+    locationTypes.forEach(type => type.addEventListener('click', event => {
         
         const rb = rbEventHandler(modal, event);
         if(rb) {
@@ -126,7 +127,6 @@ export const renderLocation = (modal, config, createGuide) => {
         else
             showUpdate = true;
     }));
-
 
     const txt = modal.querySelector('.js-range');
     let range = config.guide.speciesRange;
