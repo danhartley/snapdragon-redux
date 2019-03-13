@@ -1,17 +1,22 @@
-<div class="btn-group btn-group-toggle location" data-toggle="buttons">
-    <label class="btn btn-secondary">
-        <div id="longLat"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="location" value="" autocomplete="off"> <span class="auto-location js-auto-location"></span><button class="btn btn-modal js-set-location-btn"></button></div>
-    </label>
-    <div class="range-slider">
-        <span class="js-range"></span><span><span class="emphasis">0km</span><input class="set-range-input js-set-range-input" type="range" min="0" max="250" value="10"><span class="emphasis"> 250km</span><span class="saved js-range-saved"></span></span>
+<div class="location inat-switch">
+    <div>Your location</div>
+    <div class="inat-id-switch left js-inat-id-switch">
+        <div></div>
     </div>
-    <div class="inat-location-place">
-        <label class="btn btn-secondary">
-            <div id="place"><span class="lesson-icon"><i class="far fa-circle"></i></span> <input type="radio" name="location" value="" autocomplete="off"></div>            
-        </label>
-        <div>
-            <div><input id="inat-place" type="text"><div>Or enter a place, town, country, etc.</div></div>            
-            <div class="hide-empty" id="inat-place-autocomplete"></div>
-        </div>
-    </div>    
+    <div>Place</div>
+</div>
+
+<div class="inat-location-location js-inat-location-location"><span class="auto-location js-auto-location"></span><button class="btn btn-modal js-set-location-btn"></button></div>
+
+<div class="inat-location-place js-inat-location-place">    
+    <div>
+        <input id="inat-place" type="text">
+        <div class="hide-empty" id="inat-place-autocomplete"></div>
+    </div>
+    <div>Enter place name</div> 
+    <button id="set-inat-location-btn" class="btn btn-modal js-set-inat-location-btn">Save place</button>
+</div>    
+
+<div class="range-slider">
+    <span class="js-range"></span><span><span class="emphasis">0km</span><input class="set-range-input js-set-range-input" type="range" min="0" max="250" value="10"><span class="emphasis"> 250km</span><span class="saved js-range-saved"></span></span>
 </div>
