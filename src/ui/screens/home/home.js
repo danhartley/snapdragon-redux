@@ -3,6 +3,7 @@ import * as R from 'ramda';
 import { DOM } from 'ui/dom';
 import { store, persistor } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
+import { renderSpeciesGrid } from 'ui/screens/home/species-grid';
 import { renderSpeciesCollectionList, listenToSpeciesCollectionListenReady } from 'ui/screens/lists/species-list';
 import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -33,10 +34,14 @@ export const renderHome = () => {
                 : 'PREPARE-LESSON';
 
     let actionLink = document.querySelector('.js-create-guide-link');
+
+    const editLink = document.querySelector('.js-edit-guide-link');
+    const editLinkTxt = document.querySelector('.js-edit-guide-link span');
+
     const deleteLink = document.querySelector('.js-delete-guide-link');
     const deleteLinkTxt = document.querySelector('.js-delete-guide-link span');
     const deleteLinkCheckbox = document.querySelector('.js-delete-guide-link input');
-    
+
     const modalHandler = () => {        
         const step = 1;
         createGuideHandler(step);
@@ -48,6 +53,7 @@ export const renderHome = () => {
         const collection = collections.find(c => c.id === id);
         
         renderSpeciesCollectionList(collection);
+        actionLink.disabled = true;
     };
 
     const lessonHandler = () => {
@@ -55,6 +61,7 @@ export const renderHome = () => {
         const lessonStateMode = 'new-lesson';
         lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);
         subscription.remove(subscription.getByName('renderSpeciesGrid'));
+        actionLink.disabled = false;
     };
 
     const resumeLessonHandler = () => {
@@ -63,11 +70,12 @@ export const renderHome = () => {
         lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);        
     };
 
-    const guidesummary = (speciesCount) => {
+    const guideSummary = (speciesCount) => {
         const parent = document.querySelector('.home-container .js-snapdragon-tag');
         parent.innerHTML = '';
         renderGuideSummary(R.clone(config), parent, speciesCount);
-        deleteLink.classList.remove('hide');            
+        deleteLink.classList.remove('hide');
+        editLink.classList.remove('hide');
     };
 
     const checkState = state => {
@@ -80,20 +88,20 @@ export const renderHome = () => {
                 break;
             case 'PREPARE-LESSON':
                 actionLink.removeAttribute('data-toggle');               
-                actionLink.innerHTML = 'Prepare';
-                guidesummary();
+                actionLink.innerHTML = 'Prepare';                
+                guideSummary();
                 actionLink.removeEventListener(prepareHandler);
                 actionLink.addEventListener('click', prepareHandler);
                 break;
-            case 'BEGIN-LESSON':
+            case 'BEGIN-LESSON':            
                 actionLink.innerHTML = 'Begin';
-                actionLink.addEventListener('click', lessonHandler);
-                
-                break;                
+                actionLink.addEventListener('click', lessonHandler);          
+                break;
             case 'RESUME-LESSON':
                 actionLink.removeAttribute('data-toggle');
                 actionLink.innerHTML = 'Resume';    
-                guidesummary(collection.items.length);
+                guideSummary(collection.items.length);
+                editLink.classList.add('hide');
                 actionLink.addEventListener('click', resumeLessonHandler);                
                 renderSpeciesCollectionList(collection);
                 break;
@@ -101,6 +109,10 @@ export const renderHome = () => {
     }; 
 
     checkState(state);
+
+    editLinkTxt.addEventListener('click', event => {
+        modalHandler();
+    });
 
     let deleteEnabled = false;
 
@@ -136,7 +148,7 @@ export const renderHome = () => {
             actionLink.removeEventListener('click', prepareHandler);
             state = 'BEGIN-LESSON';
             checkState(state);
-            guidesummary(speciesCount);
+            guideSummary(speciesCount);
         }        
     };
 

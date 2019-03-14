@@ -23,7 +23,7 @@ import { renderHome } from 'ui/screens/home/home';
 import { renderNavigation } from 'ui/fixtures/navigation';
 import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
-import { renderSpeciesGrid } from "./ui/screens/home/species-grid";
+import { renderSpeciesGrid } from 'ui/screens/home/species-grid';
 import { updateLanguage } from 'api/traits/trait-types';
 
 setTimeout( () => {

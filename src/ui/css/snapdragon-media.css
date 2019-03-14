@@ -669,23 +669,33 @@
     
     .snapdragon-container .snapdragon-create-guide > div:nth-child(1) {
         position: absolute;
-        bottom: 2rem;
+        bottom: 2.25rem;
+        width: fit-content;
     }
     
-    .snapdragon-container .snapdragon-create-guide > div:nth-child(2) {
+    .snapdragon-container .snapdragon-create-guide .toggle-links {
         position: absolute;
         bottom: 0rem;
+        right: .25rem;
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
     }
 
     .snapdragon-container .snapdragon-create-guide > div:nth-child(1) > span {
         font-size: 2.6rem;  
         font-family: "PT Sans", "Roboto", arial, sans-serif;
-        letter-spacing: .05rem;        
+        letter-spacing: .05rem;       
+        
     }
 
-    .snapdragon-container .snapdragon-create-guide > div:nth-child(2) > span {
+    .snapdragon-container .snapdragon-create-guide .toggle-links span {
         font-size: .8rem;
-        color: var(--secondary);
+        margin: 0 -.5rem 0 1rem;
+    }
+    
+    .snapdragon-container .snapdragon-create-guide .edit-guide-link {
+        color: var(--snap-lesson) !important;
     }
 
     .species-grid {
