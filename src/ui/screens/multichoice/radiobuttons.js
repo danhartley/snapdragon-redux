@@ -36,7 +36,8 @@ export const renderRadioButtons = (collection) => {
 
     const scorehandler = (descriptions, question, answers) => {
         const questionFormat = { itemId: item.id, question, layoutCount: lessonPlan.layouts.length, points: layout.points };
-        radioButonClickhandler(config, template, descriptions, answers, '.js-rb-answer-btn', questionFormat, item);
+        radioButonClickhandler(config, template, answers, questionFormat, item);
+        // radioButonClickhandler(config, template, descriptions, answers, '.js-rb-answer-btn', questionFormat, item);
     }
 
     const familyFlavours = config.isPortraitMode 

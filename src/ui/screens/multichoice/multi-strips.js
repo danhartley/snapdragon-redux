@@ -119,7 +119,7 @@ export const renderMultiStrips = (collection) => {
 
         const number = config.isPortraitMode ? 6 : config.isLandscapeMode ? 6 : 6;
 
-        const questionText = config.isPortraitMode ? 'Select equivalent of latin name' : `Select the common name equivalent of the latin`;
+        const questionText = config.isPortraitMode ? 'Select equivalent of latin name' : `Continue lesson`;
         const question = item.vernacularName;   
         const answers = itemProperties.answersFromList(itemProperties.vernacularNamesForGroups(items, config), question, number);
 

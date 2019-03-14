@@ -1,3 +1,4 @@
+import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import saveButtonTemplate from 'ui/create-guide-modal/common/save-button-template.html';
@@ -12,18 +13,22 @@ export const saveButton = (parent, config, chosen, step, createGuide) => {
 
     const handleSaveEvent = () => {
 
+        const { config: currentConfig } = store.getState();
+        let userPreferencesHaveChanged = false;
+
         if(chosen) {
+
             switch(step) {
                 case 'LOCATION':
                     if(config.guide.locationType) {
                         chosen.innerHTML = config.guide.locationType === 'place'
                             ? config.guide.locationPlace
-                            : config.guide.locationLongLat;
+                            : config.guide.locationLongLat;                            
                     }
                     break;
                 case 'GUIDE':
-                    if(config.guide.studyMethod) {
-                        chosen.innerHTML = config.guide.studyMethod.replace('_', ' ');
+                    if(config.guide.inatId) {
+                        chosen.innerHTML = config.guide.inatId.key || '';
                     }
                     break;
             }

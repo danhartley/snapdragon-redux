@@ -13,7 +13,7 @@ export const renderScore = (score) => {
 
     template.innerHTML = config.isPortraitMode
             ?   `<div><span>Score: {{ score.correct }} / {{ score.total }}</span></div>`
-            :   `<div style="display:none;" class="round-footer">{{ layout.levelName }}, round {{ collection.currentRound }}</div>
+            :   `<div class="round-footer">{{ layout.levelName }}, round {{ collection.currentRound }}</div>
                 <div class="score-footer">
                     <span>{{ score.correct }} {{ scoreText }}</span>
                     <span style="display:none;">Score: {{ score.correct }} / {{ score.total }}</span>

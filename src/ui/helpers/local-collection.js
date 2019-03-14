@@ -7,7 +7,7 @@ export async function handleCustomCollections(localCollectionNode, learningActio
     // if(!localCollectionNode) return;
 
     if(config.isPortraitMode) {
-        learningActionBtn.innerHTML = 'Checking location...';
+        learningActionBtn.innerHTML = 'Checking location…';
         learningActionBtn.disabled = true;
     } else {
         speciesPendingSpinner(config);
@@ -15,8 +15,8 @@ export async function handleCustomCollections(localCollectionNode, learningActio
   
     const place = await getPlace(config);
 
-    if(config.inatId) {
-        collectionText.innerText = `iNat observations for ${config.inatId}`;   
+    if(config.guide.inatId) {
+        collectionText.innerText = `iNat observations for ${config.guide.inatId.key}`;   
     } 
     
     if(place && config.collection.id !== 4) {

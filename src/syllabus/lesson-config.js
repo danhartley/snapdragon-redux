@@ -22,13 +22,14 @@ export const config = {
         iconicTaxa: [],
         locationLongLat: '',
         locationPlace: '',
-        locationType: 'longLat',
+        locationType: null,
         place: {
             id: 1,
             name: ''
         },
         studyMethod: 'quick_study',
         speciesRange: 10,
-        ready: false
+        ready: false,
+        inatId: { key: '', type: '' }
     },    
 };

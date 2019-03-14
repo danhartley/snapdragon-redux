@@ -6,7 +6,7 @@ import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import summaryTemplate from 'ui/screens/progress/summary-template.html';
 
-export const renderSummary = (history) => {
+export const renderSummary = history => {
 
     const { score, collection, config, collections } = store.getState();
 
@@ -30,18 +30,18 @@ export const renderSummary = (history) => {
         }
         if(collection.isLevelComplete) {
             header = `You have completed level ${collection.lesson.level.id} of ${collection.activeLevelCount} levels.`;
-            summary = 'Well done, you finished the level. Continue to the next level...';
+            summary = 'Well done, you finished the level. Continue to the next level…';
         }
     }
 
     if(mode === 'review') {
         header = `You have completed level ${collection.lesson.level.id}.`;
-        summary = 'But before going to the next level, there are a few questions to review...';
+        summary = 'But before going to the next level, there are a few questions to review…';
     }
 
     if(mode === 'learn-again' && !collection.isLessonComplete) {
         header = `You have completed the review of level ${collection.lesson.level.id}`;
-        summary = `Well done! On to the next level...`;
+        summary = `Well done! On to the next level…`;
     }
 
     if(collection.isLessonComplete) {
@@ -54,7 +54,6 @@ export const renderSummary = (history) => {
 
     renderTemplate({ score, history, collection, config, header, summary, warning }, template.content, parent);
     
-    // const learnMoreBtn = document.querySelector('.js-summmary-btn-action');
     let actionLink = document.querySelector('.js-create-guide-link');
 
     if(collection.isLessonComplete) actionLink.innerHTML = 'Choose a new lesson';
@@ -67,10 +66,27 @@ export const renderSummary = (history) => {
         if(collection.isLessonComplete) {
             lessonLogicHandler.purgeLesson();
         }
-        else lessonLogicHandler.changeCollection('nextRound', collection, config, history);
+        else lessonLogicHandler.changeCollection('next-round', collection, config, history);
     };
 
     actionLink.removeEventListener('click', handleBtnClickEvent);
     actionLink.addEventListener('click', handleBtnClickEvent);
+
+    const progress = document.querySelector('.js-progress');
+
+    const scoreAverage = (score.correct/score.total);
+    const historyAverage = (history.correct/history.total);
+
+    progress.innerHTML = scoreAverage === historyAverage
+                ? 'Average' 
+                : scoreAverage > historyAverage
+                    ? 'Above average'
+                    : 'Below average';
+
+    scoreAverage === historyAverage
+            ? ''
+            : scoreAverage > historyAverage
+                ? progress.classList.add('above')
+                : progress.classList.add('below')
 };
 

@@ -9,7 +9,7 @@ import { config, enums } from 'redux/reducers/config-reducer';
 import { collections, collection } from 'redux/reducers/species-reducers';
 import { counter, score, history, page } from 'redux/reducers/progress-reducers';
 import { lessonPlans, lessonPlan, layout } from 'redux/reducers/layout-reducers';
-import { ui } from 'redux/reducers/ui-reducers';
+// import { ui } from 'redux/reducers/ui-reducers';
 
 const reducer = combineReducers({
     counter,
@@ -22,7 +22,7 @@ const reducer = combineReducers({
     collections,
     history, 
     page,
-    ui, 
+    // ui, 
     enums
 });
 

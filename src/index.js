@@ -3,6 +3,8 @@ import "babel-polyfill";
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { utils } from 'utils/utils';
+
 import 'ui/css/snapdragon-colours.css';
 import 'ui/css/snapdragon.css';
 import 'ui/css/snapdragon-media.css';
@@ -33,6 +35,10 @@ setTimeout( () => {
 
     const counter = currentCounter ? { ...currentCounter } : { index: null };
 
+    const observableMonths = utils.getObservableMonths(new Date(), 3);
+
+    config.observableMonths = observableMonths;
+
     actions.boundUpdateConfig(config);
     actions.boundToggleLesson(counter);
 
@@ -47,12 +53,30 @@ setTimeout( () => {
     subscription.add(updateLanguage, 'config', 'localistation');
 
     async function getApproximateLocation() {
-        const ipLocation = await getIPLocation(config);
-        config.ipLocation = ipLocation;
-        config.guide.locationLongLat = ipLocation.country_name;
-        config.guide.place.name = ipLocation.country_name;
+        
+        try {
+            const ipLocation = await getIPLocation(config);
+            
+            if(ipLocation.country_name) {
+                config.ipLocation = ipLocation;
+                config.guide.locationType = 'longLat';
+                config.guide.locationLongLat = ipLocation.country_name;
+                config.guide.place.name = ipLocation.country_name;            
+            } else {
+                config.guide.locationPlace = 'Earth';
+                config.guide.locationType = 'place';
+                config.guide.place = { id: 'any', name: 'Earth' };
+            }
+        } catch(e) {            
+            config.guide.locationPlace = 'Earth';
+            config.guide.locationType = 'place';
+            config.guide.place = { id: 'any', name: 'Earth' };
+        }
+
         actions.boundUpdateConfig(config);
     }
 
-    getApproximateLocation();
+    if(!config.guide.locationType) {
+        getApproximateLocation();
+    }
 });

@@ -52,14 +52,14 @@ export const renderHome = () => {
 
     const lessonHandler = () => {
         const { collection, config, history } = store.getState();
-        const lessonStateMode = 'newLesson';
+        const lessonStateMode = 'new-lesson';
         lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);
         subscription.remove(subscription.getByName('renderSpeciesGrid'));
     };
 
     const resumeLessonHandler = () => {
         const { collection, config, history } = store.getState();
-        const lessonStateMode = 'restartLesson';
+        const lessonStateMode = 'restart-lesson';
         lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);        
     };
 

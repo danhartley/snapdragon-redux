@@ -87,7 +87,8 @@
     }
 
     .grid {        
-        grid-template-columns: 10fr .25rem 10fr;  
+        /* grid-template-columns: 8fr .25rem 12fr; */
+        grid-template-columns: 10fr .25rem 10fr;
     }
 
     .left-grid {
@@ -434,14 +435,6 @@
     .answer-box-alert > span:nth-child(2) {
         color: var(--snap-alert);
     }
-
-    .radio-buttons-group {
-        margin: 1rem auto;
-        min-width: 80%;
-        padding: 1rem;
-        padding-bottom: 0.5rem;
-        border: .08rem solid var(--snap-species-header-background);
-      }
 
     #speciesCardModal .modal-dialog, #taxonCardModal .modal-dialog {
         min-width: 32rem;

@@ -4,15 +4,14 @@ import { actions } from 'redux/actions/action-creators';
 import { elem } from 'ui/helpers/class-behaviour';
 import { renderTemplate } from 'ui/helpers/templating';
 import { markTest } from 'ui/helpers/score-handler';
-import updateBtnTemplate from 'ui/screens/multichoice/update-btn-template.html';
+// import updateBtnTemplate from 'ui/screens/multichoice/update-btn-template.html';
 
 export const scoreHandler = (type, test, callback, config, containers) => {
     
     switch(type) {
         case 'radio':
         case 'text':
-            genericScoreHandler(test, callback, config, containers);
-            break;
+            return genericScoreHandler(test, callback, config, containers);
         case 'block':
             blockScoreHander(test, callback, config);
             break;
@@ -57,10 +56,9 @@ const simpleScoreHandler = (test, callback, config) => {
     textAlertHandler({ success: score.success, correct, incorrect });
 }
 
-const genericScoreHandler = (_score, callback, config, containers) => {
+const genericScoreHandler = (_score, callback, config) => {
     
     const { itemId, question, answer, target, layoutCount, points, names } = _score;
-    const btn = target;
     const test = { itemId, ...question, answer, points, names };
 
     const score = markTest(test);
@@ -92,13 +90,6 @@ const genericScoreHandler = (_score, callback, config, containers) => {
 
     textAlertHandler({ success: score.success, correct, incorrect });
 
-    if(containers) {
-        containers.answerContainer.classList.add(score.colour);
-        if(containers.questionContainer) {
-            containers.questionContainer.classList.add('snap-success');
-        }        
-    }
-
     score.layoutCount = layoutCount;
 
     const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
@@ -107,7 +98,9 @@ const genericScoreHandler = (_score, callback, config, containers) => {
         actions.boundUpdateScore(score);        
     }, delay);
 
-    callback(score, scoreUpdateTimer);
+    if(callback) callback(score, scoreUpdateTimer);
+
+    return { score, scoreUpdateTimer };
 };
 
 const blockScoreHander = (test, callback, config) => {
@@ -226,57 +219,51 @@ export const selectHandler = (selector, callback) => {
     });
 };
 
-export const radioButonClickhandler = (config, template, descriptions, answers, submitBtn, question, item) => {
+export const radioButonClickhandler = (config, template, answers, question, item) => {
     
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    const description1 = 'Select family';
-    renderTemplate({ description1, answers }, template.content, parent);
+    const description = 'Select family';
+
+    renderTemplate({ description, answers }, template.content, parent);
 
     renderQuestionHeader(document.querySelector('.js-question-container'), item, item.vernacularName);
-    
-    const updateBtn = document.createElement('template');
 
-    updateBtn.innerHTML = updateBtnTemplate;
+    const answerBtn = document.querySelector('.js-continue-lesson-btn');
 
-    renderTemplate({}, updateBtn.content, document.querySelector('.js-update-btn'));
-
-    document.querySelector('input[name="answer"]:checked').checked = false;
-
-    const answerBtn = document.querySelector(submitBtn);
-
-    const radioButtons = document.querySelectorAll('.radio-buttons');
+    const radioButtons = document.querySelectorAll('.rb.btn-group label');
 
     radioButtons.forEach(rbContainer => {
-        rbContainer.addEventListener('click', () => {
-            answerBtn.innerHTML = 'Check your answer';
+        rbContainer.addEventListener('click', event => {
+            scoreEventHandler(event);
         });
     });
 
-    const callback = (score, scoreUpdateTimer) => {            
-        answerBtn.disabled = false;
-        answerBtn.removeEventListener('click', scoreEventHandler);     
-        window.clearTimeout(scoreUpdateTimer);
-        actions.boundUpdateScore(score);
-    };
+    const boundScore = {};
 
     const scoreEventHandler = event => {
-        let questionContainer;
-        document.querySelectorAll('input[name="answer"]').forEach((rb, index) => {
-            if(rb.id.toUpperCase() === question.question.question.toUpperCase()) {
-                questionContainer = rb.parentElement;
-            }
-        });
-        const answerContainer = document.querySelector('input[name="answer"]:checked').parentElement;
-        const answer = document.querySelector('input[name="answer"]:checked').value;
+        
+        answerBtn.disabled = false;
+
+        const answer = event.target.id;
+        
         const test = { ...question, answer, target: event.target };
-        scoreHandler('radio', test, callback, config, { answerContainer, questionContainer });         
+
+        const { score, scoreUpdateTimer } = scoreHandler('radio', test, null, config );         
+
+        boundScore.scoreUpdateTimer = scoreUpdateTimer;
+        boundScore.score = score;
+        
         radioButtons.forEach(rb => {
             rb.querySelector('input').readOnly; 
             rb.classList.add('disabled');
-        });
+        });        
     };
 
-    answerBtn.addEventListener('click', scoreEventHandler)
+    answerBtn.addEventListener('click', event => {
+        answerBtn.removeEventListener('click', scoreEventHandler);     
+        window.clearTimeout(boundScore.scoreUpdateTimer);
+        actions.boundUpdateScore(boundScore.score);
+    });
 };

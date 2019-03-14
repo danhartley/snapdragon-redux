@@ -8,41 +8,13 @@
             </div>
 
             <div class="summary-scores">
-                <div class="floating-card"><span>{{ score.correct }}</span><span>correct answers in that round</span></div>
-                <div class="floating-card"><span>{{ history.correct }}</span><span>correct answers overa all</span></div>
+                <div class=""><span>{{ score.correct }}</span><span>out of</span><span>{{ score.total }}</span><span>correct answers</span></div>
+                <div class=""><span>{{ history.correct }}</span><span>out of</span><span>{{ history.total }}</span><span>correct over all</span></div>
+                <div class="summary-progress">That session was:-<span class="js-progress"></span></div>
             </div>
-            <!-- <table class="summary-scores">
-                <thead>
-                    <tr>
-                        <th class="roundScore">Round score</th>
-                        <th class="lessonScore">Lesson score</th>   
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Correct answers</td>
-                        <td>{{ score.correct }}</td>
-                        <td>{{ history.correct }}</td>                
-                    </tr>
-                    <tr>
-                        <td>Incorrect answers</td>
-                        <td>{{ score.incorrect }}</td>
-                        <td>{{ history.incorrect }}</td>                
-                    </tr>
-                    <tr>
-                        <td>Total questions</td>
-                        <td>{{ score.total }}</td>
-                        <td>{{ history.total }}</td>
-                    </tr>
-                </tbody>
-            </table>
-     -->
-            <div class="summary">
-                <div>{{ summary }}</div>        
-            </div>  
             <div class="snapdragon-create-guide">
                 <div>
-                    <span class="underline-link js-create-guide-link" data-toggle="modal" data-target="#createGuide">Resume</span> lesson
+                    <span class="underline-link js-create-guide-link" data-toggle="modal" data-target="#createGuide">Continue</span> lesson
                 </div>
                 <div class="hide delete-guide-link js-delete-guide-link">
                     <span class="underline-link disabled">Delete lesson</span>

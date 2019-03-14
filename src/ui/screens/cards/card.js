@@ -119,8 +119,8 @@ const renderPortrait = (item, config, traits, isModalMode, rootNode) => {
 const renderCommonParts = (template, config, item, collection, traits, isModalMode, parent, lessonPlan, rootNode) => {
 
     const name = item.name;
-    const epithet = itemProperties.latin(item.species);
-    const latin = epithet ? `${item.species}: ${epithet.en}` : '';
+    // const epithet = itemProperties.latin(item.species);
+    // const latin = epithet ? `${item.species}: ${epithet.en}` : '';
     const rank = "species";
     item.vernacularName = item.vernacularName || itemProperties.getVernacularName(item, config);
     const family = taxa.find(f => f.name === item.family);
@@ -149,7 +149,8 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
     
     parent.innerHTML = '';
     
-    renderTemplate({ name, vernacularName: item.vernacularName, latin, rank, subSpeciesCount, familyName, headerImage, familyVernacularName, trait, occurrences, iconicTaxon }, template.content, parent, clone);
+    renderTemplate({ name, vernacularName: item.vernacularName, rank, subSpeciesCount, familyName, headerImage, familyVernacularName, trait, occurrences, iconicTaxon }, template.content, parent, clone);
+    // renderTemplate({ name, vernacularName: item.vernacularName, latin, rank, subSpeciesCount, familyName, headerImage, familyVernacularName, trait, occurrences, iconicTaxon }, template.content, parent, clone);
 
     const subspeciesBadge = rootNode.querySelector('.js-subspecies-badge');
 

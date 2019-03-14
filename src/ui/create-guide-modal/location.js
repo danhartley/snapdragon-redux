@@ -1,7 +1,6 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { actions } from 'redux/actions/action-creators';
 import { getPlace } from 'geo/geo';
-import { rbEventHandler } from 'ui/create-guide-modal/common/rb-event-handler';
 import locationsTemplate from 'ui/create-guide-modal/locations-list-template.html';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 
@@ -14,9 +13,7 @@ export const renderLocation = (modal, config, createGuide) => {
     const saveYourChangesBtn = createGuide.save(config, chosen, 'LOCATION');
 
     let authorisedLocation = config.place ? config.place.longLocation : null;        
-    let ipLocation;
     let locationPlace = config.guide.locationPlace;
-    let locationLongLat = config.guide.locationLongLat;
     let autocompleteRef;
 
     const template = document.createElement('template');
@@ -25,28 +22,17 @@ export const renderLocation = (modal, config, createGuide) => {
 
     renderTemplate({}, template.content, parent);
 
-    const locationTypes = modal.querySelectorAll('.btn.btn-secondary div');
     const locationLongLatTxt = modal.querySelector('.js-auto-location');
-
-    async function handleAutoLocationLongLat() {        
-        ipLocation = config.ipLocation;
-        config.ipLocation = ipLocation;
-        actions.boundUpdateConfig(config);
-        locationLongLat = authorisedLocation || ipLocation.country_name;
-        locationLongLatTxt.innerHTML = locationLongLat;
-        config.guide.locationLongLat = locationLongLat;
-    }
-
-    handleAutoLocationLongLat();
-
     const setLocationLongLatBtn = modal.querySelector('.js-set-location-btn');
     setLocationLongLatBtn.innerHTML = authorisedLocation ? 'Reset your location' : 'Pinpoint your location';
 
     async function handleSetLocationLongLat(event) {
         event.stopPropagation();
-        setLocationLongLatBtn.innerHTML = 'Updating location...'
+        setLocationLongLatBtn.innerHTML = 'Updating location…'
         const place = await getPlace(config, true);
+        config.guide.locationType = 'longLat';
         config.place = place;
+        config.collection.id = 1;
         config.guide.locationLongLat = place.longLocation;
         actions.boundUpdateConfig(config);
         locationLongLatTxt.innerHTML = place.longLocation;
@@ -56,21 +42,13 @@ export const renderLocation = (modal, config, createGuide) => {
 
     setLocationLongLatBtn.addEventListener('click', handleSetLocationLongLat);
 
-    const toggleSpeciesRange = isRangeSensitive => {
-        const rangeSlider = modal.querySelector('.range-slider');
-        isRangeSensitive 
-            ? rangeSlider.classList.remove('disabled') 
-            : rangeSlider.classList.add('disabled');
-    };
-
     if(config.guide.locationType) {
         chosen.innerHTML = config.guide.locationType === 'place'
             ? config.guide.locationPlace
-            : config.guide.locationLongLat;
-        
-        config.guide.locationType === 'place'
-            ? toggleSpeciesRange(false)
-            : toggleSpeciesRange(true);
+            : config.guide.locationLongLat;        
+
+        config.collection.id = config.guide.locationType === 'place' ? 2 : 1;
+        actions.boundUpdateConfig(config);
     }
 
     const locationPlaceInput = modal.querySelector('#inat-place');
@@ -78,54 +56,6 @@ export const renderLocation = (modal, config, createGuide) => {
     locationPlaceInput.addEventListener('keyup', event => {
         autocompleteRef = inatAutocomplete(locationPlaceInput, 'places', 'inat-place-autocomplete', 'place');
     });
-
-    locationPlaceInput.addEventListener('focus', event => {
-        toggleSpeciesRange(false);
-    });
-
-    const locationPlaceRB = modal.querySelector('#place');
-
-    if(locationPlace) {
-        locationPlaceInput.value = locationPlace;
-        locationPlaceRB.classList.remove('disabled');          
-    } else {
-        if(locationPlaceInput.value === '') locationPlaceRB.classList.add('disabled');
-    }
-    
-    let locationType = config.guide.locationType;
-
-    let showUpdate = false;
-
-    if(locationType) {
-        setTimeout(() => {
-            modal.querySelector(`#${locationType}`).click();
-        });
-    }      
-
-    locationTypes.forEach(type => type.addEventListener('click', event => {        
-        
-        const rb = rbEventHandler(modal, event);
-        if(rb) {
-            locationType = rb.id;
-            config.guide.locationType = locationType;
-            if(locationType === 'place') {
-                toggleSpeciesRange(false);
-                config.guide.place = { name: locationPlaceInput.value, id: locationPlaceInput.name, type: 'places' };
-                locationPlace = locationPlaceInput.value;
-                config.guide.locationPlace = locationPlace;
-                config.collection.id = 2;
-            } else {
-                toggleSpeciesRange(true);
-                config.collection.id = 1;
-            }
-        }
-
-        if(showUpdate)
-            saveYourChangesBtn();
-        else
-            showUpdate = true;
-    }));
-
 
     const txt = modal.querySelector('.js-range');
     let range = config.guide.speciesRange;
@@ -150,4 +80,65 @@ export const renderLocation = (modal, config, createGuide) => {
         if(autocompleteRef)
             autocompleteRef.destroy();
     });
-};
+
+    // Set this counter-intuitively because we will force a click thus reversing the position
+
+    let position = config.guide.locationType 
+            ? config.guide.locationType === 'longLat'
+                ? 'right'
+                : 'left'
+            : 'right';
+
+    const idSwitch = modal.querySelector('.inat-id-switch');
+    const idSwitchBtn = idSwitch.querySelector('div');
+
+    const switchInputs = position => {
+        switch(position) { 
+            case 'left':
+                locationPlaceInput.disabled = true;
+                locationPlaceInput.classList.remove('active');
+                modal.querySelector('.js-inat-location-place').classList.add('disabled');
+                modal.querySelector('.js-set-inat-location-btn').classList.add('disabled');
+                modal.querySelector('.js-inat-location-location').classList.remove('disabled');                
+                setLocationLongLatBtn.disabled = false;
+                break;
+            case 'right':
+                locationPlaceInput.disabled = false;
+                locationPlaceInput.classList.add('active');
+                modal.querySelector('.js-inat-location-place').classList.remove('disabled');
+                modal.querySelector('.js-set-inat-location-btn').classList.remove('disabled');
+                modal.querySelector('.js-inat-location-location').classList.add('disabled');
+                setLocationLongLatBtn.disabled = true;
+            break;
+        }
+    };
+
+    idSwitch.addEventListener('click', event => {
+        switch(position) { 
+            case 'left':
+                idSwitchBtn.parentElement.classList.add('right');
+                idSwitchBtn.parentElement.classList.remove('left');
+                position = 'right';
+                break;
+            case 'right':
+                idSwitchBtn.parentElement.classList.add('left');
+                idSwitchBtn.parentElement.classList.remove('right');
+                position = 'left';
+                break;
+        }
+        switchInputs(position);
+    });
+
+    idSwitch.click();
+
+    modal.querySelector('.js-set-inat-location-btn').addEventListener('click', event => {
+        config.guide.locationType = 'place';
+        config.guide.place = { name: locationPlaceInput.value, id: locationPlaceInput.name, type: 'places' };
+        locationPlace = locationPlaceInput.value;
+        config.guide.locationPlace = locationPlace;
+        config.collection.id = 2;
+        actions.boundUpdateConfig(config);
+        saveYourChangesBtn();
+        locationPlaceInput.value = '';
+    });
+}
