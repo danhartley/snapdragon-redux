@@ -17,6 +17,7 @@ export const saveButton = (parent, config, chosen, step, createGuide) => {
         let userPreferencesHaveChanged = false;
 
         if(chosen) {
+
             switch(step) {
                 case 'LOCATION':
                     if(config.guide.locationType) {
@@ -27,7 +28,7 @@ export const saveButton = (parent, config, chosen, step, createGuide) => {
                     break;
                 case 'GUIDE':
                     if(config.guide.inatId) {
-                        chosen.innerHTML = config.guide.inatId;
+                        chosen.innerHTML = config.guide.inatId.key || '';
                     }
                     break;
             }

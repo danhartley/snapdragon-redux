@@ -207,6 +207,34 @@ const flatten = array => {
   return flattenedArray;
 }
 
+const getObservableMonths = (date, span = 3) => {
+
+  const daysAway = (when, days) => {
+      let dateFromDays = date;
+      const direction = when === 'future' ? 1 : -1;
+      dateFromDays.setDate(dateFromDays.getDate() + direction * days);
+      return dateFromDays;
+  };
+
+  const startMonth = daysAway('past', 30).getMonth();
+  const thisMonth = date.getMonth() + 1;
+  const endMonth = daysAway('future', 30).getMonth() + 1;
+
+  const getMonthName = month => {    
+    const exampleDate = new Date(2000, month, 1);
+    const name = exampleDate.toLocaleString('en-uk', { month: 'long' });
+    return name;
+  }
+
+  const months = [ 
+      { index: startMonth, name: getMonthName(startMonth)}, 
+      { index: thisMonth, name: getMonthName(thisMonth)}, 
+      { index: endMonth, name: getMonthName(endMonth)}
+    ];
+
+  return months;
+};
+
 export const utils = {
   log,
   encodeQuery,
@@ -226,5 +254,6 @@ export const utils = {
   capitaliseAll,
   makeSortable,
   itemCountReducer,
-  flatten
+  flatten,
+  getObservableMonths
 };

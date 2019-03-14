@@ -358,6 +358,10 @@
         letter-spacing: .05rem;
     }
 
+    #createGuide .modal-body .inat-location-location button {
+        margin: 0 .5rem 0 0;
+    }
+
     #createGuide .modal-body button:hover {
         color: lightgray;
     }
@@ -374,6 +378,18 @@
     .inat-place {
         display: flex;
         flex-direction: column;
+    }
+    
+    .inat-place .months {
+        font-size: 1.4rem;
+        margin: 1rem 0 0 0;
+        letter-spacing: .05rem;
+        font-family: serif;
+        font-variant-caps: small-caps;
+    }
+
+    .inat-place .months span:nth-child(2) {
+        margin: 0 0 0 .5rem;        
     }
 
     .inat-place input[type="radio"],
@@ -559,7 +575,7 @@
         font-size: 2rem;
         font-style: italic;
         display: flex;
-        align-items: center;
+        /* align-items: center; */
         color: var(--snap-link);
         letter-spacing: .03rem;
     }
@@ -593,7 +609,7 @@
         vertical-align: super;
     }
 
-    .home-container .snapdragon-tag span {
+    .home-container .snapdragon-tag .inat-widget {
         font-style: initial;
         font-size: 3rem;
     }
@@ -626,12 +642,13 @@
         text-transform: initial;
     }
     
-    .home-container .snapdragon-tag > div .species-range {
+    .home-container .snapdragon-tag > div .super-text {
         display: inline-block;
         font-size: 1rem;
-        margin: 1rem 0 0 .25rem;
+        margin: .5rem 0 0 .25rem;
         vertical-align: top;
         color: var(--secondary);
+        font-style: italic;
     }
 
     .snapdragon-container .snapdragon-create-guide {

@@ -97,7 +97,7 @@ export const renderHeaders = page => {
         DOM.leftHeaderTxt.innerHTML = leftHeaderText;
         DOM.rightHeaderTxt.innerHTML = rightHeaderText;
 
-        userChangeHandler(config.inatId);
+        userChangeHandler(config.guide.inatId.key);
     };
 
     const userChangeHandler = userId => {

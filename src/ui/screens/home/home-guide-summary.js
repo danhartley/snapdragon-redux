@@ -13,16 +13,22 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
             ? config.guide.iconicTaxa.map(taxon => taxon.common).join(', ') 
             : 'All species';
     const guide = config.guide.studyMethod.replace('_', ' ');
-    const inatId = config.guide.inatId;
+    const inatId = config.guide.inatId ? config.guide.inatId.key : '';
+    const months = config.observableMonths.map(month => month.name);
+    const observableMonths = `${months[0]}-${months[months.length - 1]}`;
 
     const template = document.createElement('template');
     template.innerHTML = homeGuideTemplate;
 
-    renderTemplate({ location, place, taxa, guide, inatId }, template.content, parent);
+    renderTemplate({ location, place, taxa, guide, inatId, observableMonths }, template.content, parent);
+
+    const iNatId = document.querySelector('.js-iNatId');
+
+    iNatId.innerHTML = `<span>${inatId}</span><span class="super-text">${config.guide.inatId.type}</span>`;
 
     const widgetLink = document.querySelector('.js-iNatWidget');
     
-    widgetLink.innerHTML = `<span data-toggle="modal" data-target="#iNatWidgetModal">${place}</span><span class="species-range">within ${range}km range</span>`;
+    widgetLink.innerHTML = `<span data-toggle="modal" data-target="#iNatWidgetModal">${place}</span><span class="super-text">within ${range}km</span>`;
     
     const collection = snapdragonCollections.find(collection => collection.id === config.guide.place.id);
     

@@ -16,12 +16,13 @@ export const renderInatUser = (modal, config, saveYourChangesBtn, chosen) => {
     const setiNatIdentityBtn = modal.querySelector('.js-set-inat-identity-btn');
     setiNatIdentityBtn.disabled = true;
 
-    chosen.innerHTML = config.guide.inatId;
+    chosen.innerHTML = config.guide.inatId.key;
 
     setiNatIdentityBtn.addEventListener('click', event => {        
 
         const id = modal.querySelector('#inat-identity').value;
-        config.guide.inatId = id;
+        const type = position === 'left' ? 'iNat user ID' : 'iNat project ID';
+        config.guide.inatId = { key: id, type: type };
         actions.boundUpdateConfig(config);
 
         saveYourChangesBtn();

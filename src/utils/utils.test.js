@@ -166,3 +166,13 @@ const layouts = [
     const strCapialised = 'The Small Black Dog Jumped Over The Lazy Moon';
     expect(utils.capitaliseAll(str)).toEqual(strCapialised);
   });
+
+  test('should return observable months', () => {
+
+    const date = new Date(2019, 2, 14);
+
+    const months = utils.getObservableMonths(date, 3);
+
+    expect(months.map(month => month.index)).toEqual([1,2,3]);
+    expect(months.map(month => month.name)).toEqual(['February','March','April']);
+  });

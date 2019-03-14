@@ -9,4 +9,9 @@ export const renderGuides = (modal, config, createGuide) => {
     guideTxt.innerHTML = 'Plan your lesson';
 
     renderInatUser(modal, config, saveYourChangesBtn, chosen);
+
+    const months = config.observableMonths.map(month => month.name);
+    const observableMonths = `${months[0]}-${months[months.length - 1]}`;
+
+    modal.querySelector('.js-months span:nth-child(2)').innerHTML = observableMonths;
 }

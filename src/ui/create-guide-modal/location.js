@@ -13,9 +13,7 @@ export const renderLocation = (modal, config, createGuide) => {
     const saveYourChangesBtn = createGuide.save(config, chosen, 'LOCATION');
 
     let authorisedLocation = config.place ? config.place.longLocation : null;        
-    let ipLocation;
     let locationPlace = config.guide.locationPlace;
-    let locationLongLat = config.guide.locationLongLat;
     let autocompleteRef;
 
     const template = document.createElement('template');
@@ -25,28 +23,16 @@ export const renderLocation = (modal, config, createGuide) => {
     renderTemplate({}, template.content, parent);
 
     const locationLongLatTxt = modal.querySelector('.js-auto-location');
-
-    async function handleAutoLocationLongLat() {        
-        ipLocation = config.ipLocation;
-        config.ipLocation = ipLocation;
-        config.collection.id = 1;
-        actions.boundUpdateConfig(config);
-        locationLongLat = authorisedLocation || ipLocation.country_name;
-        locationLongLatTxt.innerHTML = locationLongLat;
-        config.guide.locationLongLat = locationLongLat;
-    }
-
-    handleAutoLocationLongLat();
-
     const setLocationLongLatBtn = modal.querySelector('.js-set-location-btn');
     setLocationLongLatBtn.innerHTML = authorisedLocation ? 'Reset your location' : 'Pinpoint your location';
 
     async function handleSetLocationLongLat(event) {
         event.stopPropagation();
-        setLocationLongLatBtn.innerHTML = 'Updating location...'
+        setLocationLongLatBtn.innerHTML = 'Updating location…'
         const place = await getPlace(config, true);
         config.guide.locationType = 'longLat';
         config.place = place;
+        config.collection.id = 1;
         config.guide.locationLongLat = place.longLocation;
         actions.boundUpdateConfig(config);
         locationLongLatTxt.innerHTML = place.longLocation;
@@ -60,6 +46,9 @@ export const renderLocation = (modal, config, createGuide) => {
         chosen.innerHTML = config.guide.locationType === 'place'
             ? config.guide.locationPlace
             : config.guide.locationLongLat;        
+
+        config.collection.id = config.guide.locationType === 'place' ? 2 : 1;
+        actions.boundUpdateConfig(config);
     }
 
     const locationPlaceInput = modal.querySelector('#inat-place');

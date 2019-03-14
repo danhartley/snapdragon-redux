@@ -29,6 +29,7 @@ export const config = {
         },
         studyMethod: 'quick_study',
         speciesRange: 10,
-        ready: false
+        ready: false,
+        inatId: { key: '', type: '' }
     },    
 };

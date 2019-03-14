@@ -33,7 +33,7 @@ export const renderSettings = () => {
     : `The current delay is ${delay} seconds`;
 
     clearCacheBtn.addEventListener('click', () => { 
-        clearCacheBtn.innerText = 'Clearing cache...';
+        clearCacheBtn.innerText = 'Clearing cache…';
         setTimeout(() => {
             persistor.purge();
             clearCacheBtn.innerText = 'Cache cleared';
@@ -46,7 +46,7 @@ export const renderSettings = () => {
     });
 
     setDelayBtn.addEventListener('click', () => {
-        setDelayBtn.innerHTML = 'Setting delay...';
+        setDelayBtn.innerHTML = 'Setting delay…';
         setTimeout(() => {
             const delay = setDelayInput.value;
             config.callbackTime = delay * 1000;
