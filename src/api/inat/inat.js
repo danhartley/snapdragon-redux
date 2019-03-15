@@ -3,14 +3,20 @@ import * as R from 'ramda';
 import { species } from 'api/species';
 import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
 
-export const getInatSpecies = (inatConfig, config) => {
-  
-    const names = species.map(item => item.name); 
+const getBasePath = config => {
+    
     const month = config.observableMonths.map(month => month.index).join(',');
 
     // quality_grade=research&
 
-    const BASEPATH = `https://api.inaturalist.org/v1/observations/species_counts?page=1&captive=false&rank=species&per_page=200&month=${month}`;
+    const basePath = `https://api.inaturalist.org/v1/observations/species_counts?page=1&captive=false&rank=species&per_page=200&month=${month}`;
+
+    return basePath;
+};
+
+export const getInatSpecies = (inatConfig, config) => {
+
+    const names = species.map(item => item.name); 
 
     const iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
 
@@ -29,7 +35,7 @@ export const getInatSpecies = (inatConfig, config) => {
         const iconicTaxa = getIconicTaxa(config);
         const radius = config.speciesRange || 10;
         const userId = config.guide.inatId ? config.guide.inatId.key : '';
-        const url = BASEPATH + `&iconic_taxa=${iconicTaxa}&user_id=${userId}&lat=${lat}&lng=${lng}&radius=${radius}`;
+        const url = getBasePath(config) + `&iconic_taxa=${iconicTaxa}&user_id=${userId}&lat=${lat}&lng=${lng}&radius=${radius}`;
         const response = await fetch(url);
         const json = await response.json();
         return await json.results;
@@ -40,7 +46,7 @@ export const getInatSpecies = (inatConfig, config) => {
         const iconicTaxa = getIconicTaxa(config);
         const placeId = config.guide.place.id;   
         const userId = config.guide.inatId ? config.guide.inatId.key : '';
-        const url = BASEPATH + `&iconic_taxa=${iconicTaxa}&user_id=${userId}&place_id=${placeId}`;
+        const url = getBasePath(config) + `&iconic_taxa=${iconicTaxa}&user_id=${userId}&place_id=${placeId}`;
         const response = await fetch(url);
         const json = await response.json();
         return await json.results;
@@ -50,7 +56,7 @@ export const getInatSpecies = (inatConfig, config) => {
 
         const iconicTaxa = getIconicTaxa(config);
         const userId = config.userId;
-        const url = BASEPATH + `&user_id=${userId}&iconic_taxa=${iconicTaxa}&place_id=any`;
+        const url = getBasePath(config) + `&user_id=${userId}&iconic_taxa=${iconicTaxa}&place_id=any`;
         const response = await fetch(url);
         const json = await response.json();
         return await json.results;
@@ -107,12 +113,12 @@ export async function getInatPlaceId(place) {
     return json;
 }
 
-export async function getInatTaxonStats(item, placeId) {
+export async function getInatTaxonStats(item, config, placeId) {
 
     const verifiable = true;
     const place = placeId || 'any';
     const taxonName = item.name;
-    const url = BASEPATH + `&verifiable=${verifiable}&taxon_name=${taxonName}&place_id=${place}&rank=species`;
+    const url = getBasePath(config) + `&verifiable=${verifiable}&taxon_name=${taxonName}&place_id=${place}&rank=species`;
     const response = await fetch(url);
     const json = await response.json();
     return json;
