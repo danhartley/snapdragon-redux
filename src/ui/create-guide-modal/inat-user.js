@@ -14,25 +14,24 @@ export const renderInatUser = (parent, config, save) => {
     let autocompleteRef;
 
     const setiNatIdentityBtn = parent.querySelector('.js-set-inat-identity-btn');
-    setiNatIdentityBtn.disabled = true;
 
     setiNatIdentityBtn.addEventListener('click', event => {        
         
         const key = parent.querySelector('#inat-identity').value;
-        const type = position === 'left' ? 'iNat user ID' : 'iNat project ID';
-        const param = position === 'left' ? 'user_id' : 'project_id';
         const id = parent.querySelector('#inat-identity').name;
-        config.guide.inatId = { key, type, param, id };
+        config.guide.inatId.key = key;
+        config.guide.inatId.id = id;
 
-        actions.boundUpdateConfig(config);
-        save();
+        if(key !== '') {
+            actions.boundUpdateConfig(config);
+            save();
 
-        parent.querySelector('#inat-identity').value = '';
-        setiNatIdentityBtn.disabled = true;
+            parent.querySelector('#inat-identity').value = '';
 
-        if(autocompleteRef) {
-            autocompleteRef.destroy();
-        }        
+            if(autocompleteRef) {
+                autocompleteRef.destroy();
+            }
+        }
     });
 
     const position = config.guide.inatId.param === 'user_id' ? 'left' : 'right';
@@ -43,7 +42,6 @@ export const renderInatUser = (parent, config, save) => {
 
     inatIdentityInput.addEventListener('keyup', event => {
         autocompleteRef = inatAutocomplete(inatIdentityInput, byType, 'inat-identity-autocomplete', '');
-        setiNatIdentityBtn.disabled = false;
     });
 
     const idSwitch = parent.querySelector('.snapdragon-switch');
@@ -55,6 +53,11 @@ export const renderInatUser = (parent, config, save) => {
             : 'Save iNat Project'
 
         byType = position === 'left' ? 'users' : 'projects';
+
+        const type = position === 'left' ? 'iNat user ID' : 'iNat project ID';
+        const param = position === 'left' ? 'user_id' : 'project_id';
+
+        config.guide.inatId = { type, param };
     };
 
     switchHandler(idSwitch, position, switchCallback);

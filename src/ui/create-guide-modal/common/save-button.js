@@ -5,12 +5,9 @@ import saveButtonTemplate from 'ui/create-guide-modal/common/save-button-templat
 
 export const saveButton = (parent, config, step, update = true) => {
 
-    const inatIdLabel = document.querySelector('.js-chosen div:nth-child(1) span:nth-child(1)');
-    const inatId = document.querySelector('.js-chosen div:nth-child(1) span:nth-child(2)');
-
-    const chosenLabel = document.querySelector('.js-chosen div:nth-child(2) span:nth-child(1)');
-    const chosen = document.querySelector('.js-chosen div:nth-child(2) span:nth-child(2)');
-
+    const chosenLabel = document.querySelector('.js-chosen span:nth-child(1)');
+    const chosen = document.querySelector('.js-chosen span:nth-child(2)');
+    
     const template = document.createElement('template');
     template.innerHTML = saveButtonTemplate;
     renderTemplate({}, template.content, parent);
@@ -21,6 +18,7 @@ export const saveButton = (parent, config, step, update = true) => {
 
         switch(step) {
             case 'LOCATION':
+
                 if(config.guide.locationType) {
                     chosen.innerHTML = config.guide.locationType === 'place'
                         ? config.guide.locationPlace
@@ -29,13 +27,20 @@ export const saveButton = (parent, config, step, update = true) => {
                 break;
 
             case 'SPECIES':
+
                 const iconicTaxa = config.guide.iconicTaxa;
                 chosen.innerHTML = iconicTaxa.length > 0 ? iconicTaxa.map(taxon => taxon.common).join(', ') : 'All species';
                 break;
 
             case 'GUIDE':
-                if(config.guide.inatId) {
-                    inatIdLabel.innerHTML = 'iNaturalist ID'
+
+                const inatIdLabel = document.querySelector('.js-chosen-inat span:nth-child(1)');
+                const inatId = document.querySelector('.js-chosen-inat span:nth-child(2)');
+        
+                if(config.guide.inatId.key) {
+                    inatIdLabel.innerHTML = config.guide.inatId.param === 'project_id' 
+                            ? 'iNaturalist Project'
+                            : 'iNaturalis User';
                     inatId.innerHTML = config.guide.inatId.key || '';
                 }
                 if(config.guide.season) {

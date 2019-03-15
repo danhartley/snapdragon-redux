@@ -8,10 +8,10 @@ import guidesTemplate from 'ui/create-guide-modal/guides.html';
 export const renderGuides = (modal, config, createGuide) => {
 
     const guideTxt = modal.querySelector('.guide-text');
-    createGuide.save(config, 'GUIDE', false)();
+
     const save = createGuide.save(config, 'GUIDE');
 
-    guideTxt.innerHTML = 'Plan your lesson';
+    guideTxt.innerHTML = 'Select a guide';
 
     const template = document.createElement('template');
     template.innerHTML = guidesTemplate;
@@ -46,4 +46,6 @@ export const renderGuides = (modal, config, createGuide) => {
     switchHandler(idSwitch, position, switchCallback);
 
     renderInatUser(modal.querySelector('.js-inat'), config, save);
+
+    createGuide.save(config, 'GUIDE', false)();
 }

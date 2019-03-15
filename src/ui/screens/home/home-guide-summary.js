@@ -34,7 +34,9 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
 
     const iNatId = document.querySelector('.js-iNatId');
 
-    iNatId.innerHTML = `<span>${inatId}</span><span class="super-text">${config.guide.inatId.type}</span>`;
+    iNatId.innerHTML = inatId 
+                ? `<span>${inatId}</span><span class="super-text">${config.guide.inatId.type}</span>`
+                : '';
 
     const widgetLink = document.querySelector('.js-iNatWidget');
     
