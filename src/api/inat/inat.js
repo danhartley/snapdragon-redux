@@ -5,7 +5,7 @@ import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
 
 const getBasePath = config => {
     
-    const month = config.observableMonths.map(month => month.index).join(',');
+    const month = config.guide.season.observableMonths.map(month => month.index).join(',');
 
     // quality_grade=research&
 
@@ -29,13 +29,21 @@ export const getInatSpecies = (inatConfig, config) => {
         return taxa;
     };
 
+    const getUserOrProjectIdParameter = config => {
+        const param = config.guide.inatId.param;
+        const id = config.guide.inatId.id;
+        const parameter = `${param}=${id}`;
+        return parameter;
+    };
+
     async function getInatLongLatObservations(latitude, longitude, config) {
+
         const lat = latitude || `38.7155762`;
         const lng = longitude || `-9.163009899999999`;
         const iconicTaxa = getIconicTaxa(config);
         const radius = config.speciesRange || 10;
-        const userId = config.guide.inatId ? config.guide.inatId.key : '';
-        const url = getBasePath(config) + `&iconic_taxa=${iconicTaxa}&user_id=${userId}&lat=${lat}&lng=${lng}&radius=${radius}`;
+        const id = getUserOrProjectIdParameter(config);
+        const url = getBasePath(config) + `&iconic_taxa=${iconicTaxa}&${id}&lat=${lat}&lng=${lng}&radius=${radius}`;
         const response = await fetch(url);
         const json = await response.json();
         return await json.results;
@@ -45,22 +53,23 @@ export const getInatSpecies = (inatConfig, config) => {
 
         const iconicTaxa = getIconicTaxa(config);
         const placeId = config.guide.place.id;   
-        const userId = config.guide.inatId ? config.guide.inatId.key : '';
-        const url = getBasePath(config) + `&iconic_taxa=${iconicTaxa}&user_id=${userId}&place_id=${placeId}`;
+        const id = getUserOrProjectIdParameter(config);
+        const url = getBasePath(config) + `&iconic_taxa=${iconicTaxa}&${id}&place_id=${placeId}`;
         const response = await fetch(url);
         const json = await response.json();
         return await json.results;
     }
 
-    async function getInatUserObservations(config) {
+    // async function getInatUserObservations(config) {
 
-        const iconicTaxa = getIconicTaxa(config);
-        const userId = config.userId;
-        const url = getBasePath(config) + `&user_id=${userId}&iconic_taxa=${iconicTaxa}&place_id=any`;
-        const response = await fetch(url);
-        const json = await response.json();
-        return await json.results;
-    }
+    //     const iconicTaxa = getIconicTaxa(config);
+    //     const id = config.guide.inatId.id;
+    //     const key = config.guide.inatId.id;
+    //     const url = getBasePath(config) + `&${id}=${key}&iconic_taxa=${iconicTaxa}&place_id=any`;
+    //     const response = await fetch(url);
+    //     const json = await response.json();
+    //     return await json.results;
+    // }
 
     const latitude = inatConfig.latitude;
     const longitude = inatConfig.longitude;
@@ -69,19 +78,20 @@ export const getInatSpecies = (inatConfig, config) => {
 
     const taxonNames = [];
 
-    if(inatConfig.locationType === 'user') {
-        observations = getInatUserObservations(config).then(observations => {
-            return observations.map(observation => {
-                if(R.contains(observation.taxon.name, names)) {
-                    const item = { ...species.find(item => item.name === observation.taxon.name) };
-                    return { ...item, observationCount: observation.taxon.observations_count, iconicTaxon: observation.taxon.iconic_taxon_name };
-                } 
-                taxonNames.push(observation.taxon.name);
-            });
-        });
-        return observations;
-    }
-    else if(inatConfig.locationType === 'place') {
+    // if(inatConfig.locationType === 'user') {
+    //     observations = getInatUserObservations(config).then(observations => {
+    //         return observations.map(observation => {
+    //             if(R.contains(observation.taxon.name, names)) {
+    //                 const item = { ...species.find(item => item.name === observation.taxon.name) };
+    //                 return { ...item, observationCount: observation.taxon.observations_count, iconicTaxon: observation.taxon.iconic_taxon_name };
+    //             } 
+    //             taxonNames.push(observation.taxon.name);
+    //         });
+    //     });
+    //     return observations;
+    // }
+    // else 
+    if(inatConfig.locationType === 'place') {
         observations = getInatPlaceObservations(config).then(observations => {
             return observations.map(observation => {
                 if(R.contains(observation.taxon.name, names)) {

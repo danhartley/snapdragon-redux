@@ -37,7 +37,8 @@ setTimeout( () => {
 
     const observableMonths = utils.getObservableMonths(new Date(), 3);
 
-    config.observableMonths = observableMonths;
+    config.guide.season.observableMonths = observableMonths;
+    config.guide.season.type = 'months';
 
     actions.boundUpdateConfig(config);
     actions.boundToggleLesson(counter);
@@ -62,10 +63,12 @@ setTimeout( () => {
                 config.guide.locationType = 'longLat';
                 config.guide.locationLongLat = ipLocation.country_name;
                 config.guide.place.name = ipLocation.country_name;            
+                config.collection.id = 2;
             } else {
                 config.guide.locationPlace = 'Earth';
                 config.guide.locationType = 'place';
                 config.guide.place = { id: 'any', name: 'Earth' };
+                config.collection.id = 1;
             }
         } catch(e) {            
             config.guide.locationPlace = 'Earth';

@@ -126,9 +126,9 @@ class CreateGuide {
         }
     }
 
-    save(config, chosen, stepDescription) {
-        const saveYourChangesBtn = saveButton(this.modal.querySelector('.js-save-your-changes'), config, chosen, stepDescription, this);
-        return saveYourChangesBtn;
+    save(config, stepDescription, update) {
+        const saveChanges = saveButton(this.modal.querySelector('.js-save-your-changes'), config, stepDescription, update);
+        return saveChanges;
     }
 };
 

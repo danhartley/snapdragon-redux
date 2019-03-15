@@ -346,7 +346,7 @@
         font-style: italic;
     }
  
-    #createGuide .modal-body .guides > div:first-child {
+    #createGuide .modal-body .actions > div:first-child {
         display: flex;
     }
  
@@ -375,12 +375,12 @@
         background-color: rgb(110, 138, 49);
     }
 
-    .inat-place {
+    #createGuide .guides {
         display: flex;
         flex-direction: column;
     }
     
-    .inat-place .months {
+    #createGuide .guides .months {
         font-size: 1.4rem;
         margin: 1rem 0 0 0;
         letter-spacing: .05rem;
@@ -388,17 +388,17 @@
         font-variant-caps: small-caps;
     }
 
-    .inat-place .months span:nth-child(2) {
+    #createGuide .guides .months span:nth-child(2) {
         margin: 0 0 0 .5rem;        
     }
 
-    .inat-place input[type="radio"],
+    /* .inat-place input[type="radio"],
     .inat-location-place input[type="radio"],
     .btn-group.btn-group-toggle.place input[type="radio"] {
         position: absolute;
         clip: rect(0,0,0,0);
         pointer-events: none;
-    }
+    } */
 
     .inat-location-place {
         display: flex;
@@ -425,13 +425,17 @@
         background-color: var(--snap-list-bg);
     }
 
-    .inat-place > .inat-entry {
+    .inat-switch.season {
+        background-color: rgb(111, 173, 251);
+    }
+
+    #createGuide .guides .inat-entry {
         display: flex;
         font-size: 1.1rem; 
         align-items: center;       
     }
 
-    .inat-place input[type="text"] {
+    #createGuide .guides input[type="text"] {
         margin: 0 .5rem 0 0;
         height: 1.75rem;
         color: var(--snap-text-dark);
@@ -446,7 +450,7 @@
         border: .1rem solid var(--snap-list-bg);
     }
 
-    .inat-id-switch {
+    .snapdragon-switch {
         width: 3.6rem;
         height: 2rem;
         padding: .2rem;
@@ -457,7 +461,7 @@
         transition: all 1s ease;
     }
 
-    .inat-id-switch div {
+    .snapdragon-switch div {
         height: 1.6rem;
         width: 1.6rem;
         border-radius: .2rem;
@@ -469,19 +473,19 @@
         position: absolute;
     }
 
-    .inat-id-switch.left {        
+    .snapdragon-switch.left {        
         background-color: var(--snap-text-medium-dark);        
     }
     
-    .inat-id-switch.left div {
+    .snapdragon-switch.left div {
         transform: translateX(0);
     }
 
-    .inat-id-switch.right {        
+    .snapdragon-switch.right {        
         background-color: var(--snap-container-background);
     }
 
-    .inat-id-switch.right div {
+    .snapdragon-switch.right div {
         transform: translateX(1.4rem);
     }
 
@@ -516,7 +520,7 @@
         background-color: var(--snap-landscape);
     }
 
-    .guides.actions label {
+    .actions label {
         margin: 0;
     }
 
