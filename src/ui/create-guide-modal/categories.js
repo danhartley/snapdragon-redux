@@ -2,13 +2,13 @@ import * as R from 'ramda';
 
 import { elem } from 'ui/helpers/class-behaviour';
 import { renderTemplate } from 'ui/helpers/templating';
-import categoriesTemplate from 'ui/create-guide-modal/categories-list-template.html';
+import categoriesTemplate from 'ui/create-guide-modal/categories-template.html';
 
 export const renderCategories = (modal, config, createGuide) => {
 
     const guideTxt = modal.querySelector('.guide-text');
-    const chosen = modal.querySelector('.js-chosen span:nth-child(2)');
-    const saveYourChangesBtn = createGuide.save(config, chosen, 'SPECIES');
+    createGuide.save(config, 'SPECIES', false)();
+    const saveYourChangesBtn = createGuide.save(config, 'SPECIES');
 
     const filterSelectedClass = 'iconic-taxa-selected';
 
@@ -32,8 +32,6 @@ export const renderCategories = (modal, config, createGuide) => {
             }
         });
     }
-
-    chosen.innerHTML = (iconicTaxa && iconicTaxa.length > 0) ? iconicTaxa.map(taxon => taxon.common).join(', ') : 'All species';
 
     config.guide.iconicTaxa = iconicTaxa;        
 
@@ -71,8 +69,6 @@ export const renderCategories = (modal, config, createGuide) => {
                     }
                 )
             }
-
-            chosen.innerHTML = iconicTaxa.map(taxon => taxon.common).join(', ');
 
             config.guide.iconicTaxa = iconicTaxa;
 

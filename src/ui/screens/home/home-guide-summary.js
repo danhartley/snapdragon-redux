@@ -5,7 +5,7 @@ import homeGuideTemplate from 'ui/screens/home/home-guide-summary-template.html'
 export const renderGuideSummary = (config, parent, speciesCount) => {
 
     const location = config.guide.locationType === 'longLat' ? config.guide.locationLongLat : config.guide.locationPlace;
-    const place = config.guide.locationType ? config.guide.locationLongLat.split(',')[0] : config.guide.place.name;
+    const place = config.guide.locationType === 'longLat' ? config.guide.locationLongLat.split(',')[0] : config.guide.place.name;
     const range = config.guide.speciesRange;
     const taxa = speciesCount 
         ? `${speciesCount} species` 
@@ -14,17 +14,29 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
             : 'All species';
     const guide = config.guide.studyMethod.replace('_', ' ');
     const inatId = config.guide.inatId ? config.guide.inatId.key : '';
-    const months = config.observableMonths.map(month => month.name);
-    const observableMonths = `${months[0]}-${months[months.length - 1]}`;
+    
+    const getSeason = config => {
+        if(config.guide.season.type === 'months') {
+            const months = config.guide.season.observableMonths.map(month => month.name);
+            const observableMonths = `${months[0]}-${months[months.length - 1]}`;
+            return observableMonths;
+        } else {
+            return 'All Year';
+        }
+    };
+
+    const season = getSeason(config);
 
     const template = document.createElement('template');
     template.innerHTML = homeGuideTemplate;
 
-    renderTemplate({ location, place, taxa, guide, inatId, observableMonths }, template.content, parent);
+    renderTemplate({ location, place, taxa, guide, inatId, season }, template.content, parent);
 
     const iNatId = document.querySelector('.js-iNatId');
 
-    iNatId.innerHTML = `<span>${inatId}</span><span class="super-text">${config.guide.inatId.type}</span>`;
+    iNatId.innerHTML = inatId 
+                ? `<span>${inatId}</span><span class="super-text">${config.guide.inatId.type}</span>`
+                : '';
 
     const widgetLink = document.querySelector('.js-iNatWidget');
     

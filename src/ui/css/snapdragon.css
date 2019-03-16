@@ -640,6 +640,10 @@ a.dropdown-item {
   font-size: 1rem;
 }
 
+.strip.snap-success > div.disabled {
+  color: var(--gray-dark) !important;
+}
+
 .strip div {
   padding: 0.2rem 0.5rem;
 }

@@ -202,6 +202,10 @@
         font-style: italic;
     }
 
+    #createGuide .modal-body .guides .guide-text {
+        margin: .5rem 0 .25rem 0;
+    }
+
     #createGuide .modal-body .guide-sub-text {
         font-size: 1rem;
         margin: 0 0 .5rem 0;
@@ -316,16 +320,29 @@
     #createGuide .modal-body .chosen {
         position: absolute;
         bottom:.5rem;
+        display: flex;
+        flex-direction: row;
     }
 
-    #createGuide .modal-body .chosen span:nth-child(1) {
+    #createGuide .modal-body .chosen-inat {
+        margin: 0 0 .5rem 0;
+    }
+
+    #createGuide .modal-body .chosen span:nth-child(1), 
+    #createGuide .modal-body .chosen-inat span:nth-child(1) {
         font-size: .8rem;
         margin: 0 .25rem 0 0;
+        text-transform: uppercase;
+        border-bottom: 1px solid gray;
+        vertical-align: text-top;
+        letter-spacing: .03rem;
     }
 
-    #createGuide .modal-body .chosen span:nth-child(2) {
+    #createGuide .modal-body .chosen span:nth-child(2),
+    #createGuide .modal-body .chosen-inat span:nth-child(2) {
         text-transform: uppercase;
-        font-size: .9rem;
+        font-size: 1rem;
+        color: var(--snap-collection-active);
     }
 
     #createGuide .modal-body .save-your-changes {
@@ -340,13 +357,13 @@
     }
 
     #createGuide .modal-body .saved {
-        color: gray;
+        color: var(--snap-green-ident);
         font-size: 1.3rem;
         font-family: serif;
         font-style: italic;
     }
  
-    #createGuide .modal-body .guides > div:first-child {
+    #createGuide .modal-body .actions > div:first-child {
         display: flex;
     }
  
@@ -372,15 +389,16 @@
 
     #createGuide .modal-body button.js-set-inat-identity-btn {
         color: white;        
-        background-color: rgb(110, 138, 49);
+        background-color: var(--snap-link);
     }
 
-    .inat-place {
+    #createGuide .guides {
         display: flex;
         flex-direction: column;
+        margin-top: -.5rem;
     }
     
-    .inat-place .months {
+    #createGuide .guides .months {
         font-size: 1.4rem;
         margin: 1rem 0 0 0;
         letter-spacing: .05rem;
@@ -388,16 +406,8 @@
         font-variant-caps: small-caps;
     }
 
-    .inat-place .months span:nth-child(2) {
+    #createGuide .guides .months span:nth-child(2) {
         margin: 0 0 0 .5rem;        
-    }
-
-    .inat-place input[type="radio"],
-    .inat-location-place input[type="radio"],
-    .btn-group.btn-group-toggle.place input[type="radio"] {
-        position: absolute;
-        clip: rect(0,0,0,0);
-        pointer-events: none;
     }
 
     .inat-location-place {
@@ -421,20 +431,26 @@
         letter-spacing: .05rem;
     }
 
-    .inat-switch.location {
+    /* .inat-switch > div:nth-child(1) {
+        color: var(--snap-text-medium-dark);
+    } */
+
+    .inat-switch.location, .inat-switch.inat, .inat-switch.season {
         background-color: var(--snap-list-bg);
     }
 
-    .inat-place > .inat-entry {
+    #createGuide .guides .inat-entry {
         display: flex;
         font-size: 1.1rem; 
-        align-items: center;       
+        align-items: center;
+        margin: 0 0 0 1rem;
     }
 
-    .inat-place input[type="text"] {
+    #createGuide .guides input[type="text"] {
         margin: 0 .5rem 0 0;
         height: 1.75rem;
-        color: var(--snap-text-dark);
+        color: var(--snap-text-medium-dark);
+        padding: 0 .1rem;
     }
 
     #inat-place, #inat-place-id {
@@ -446,18 +462,18 @@
         border: .1rem solid var(--snap-list-bg);
     }
 
-    .inat-id-switch {
+    .snapdragon-switch {
         width: 3.6rem;
         height: 2rem;
         padding: .2rem;
         border-radius: .2rem;
         cursor: pointer;
-        margin: 0 1rem;
+        margin: 0 .75rem;
         position: relative;
         transition: all 1s ease;
     }
 
-    .inat-id-switch div {
+    .snapdragon-switch div {
         height: 1.6rem;
         width: 1.6rem;
         border-radius: .2rem;
@@ -469,19 +485,19 @@
         position: absolute;
     }
 
-    .inat-id-switch.left {        
+    .snapdragon-switch.left {        
         background-color: var(--snap-text-medium-dark);        
     }
     
-    .inat-id-switch.left div {
+    .snapdragon-switch.left div {
         transform: translateX(0);
     }
 
-    .inat-id-switch.right {        
+    .snapdragon-switch.right {        
         background-color: var(--snap-container-background);
     }
 
-    .inat-id-switch.right div {
+    .snapdragon-switch.right div {
         transform: translateX(1.4rem);
     }
 
@@ -516,7 +532,7 @@
         background-color: var(--snap-landscape);
     }
 
-    .guides.actions label {
+    .actions label {
         margin: 0;
     }
 
@@ -623,6 +639,10 @@
         color: var(--secondary) !important;
         pointer-events: none;
     }
+    
+    #set-inat-location-btn.disabled {
+        color: var(--gray-dark) !important;     
+    }
 
     .delete-guide-link input {
         cursor: pointer;
@@ -669,23 +689,33 @@
     
     .snapdragon-container .snapdragon-create-guide > div:nth-child(1) {
         position: absolute;
-        bottom: 2rem;
+        bottom: 2.25rem;
+        width: fit-content;
     }
     
-    .snapdragon-container .snapdragon-create-guide > div:nth-child(2) {
+    .snapdragon-container .snapdragon-create-guide .toggle-links {
         position: absolute;
         bottom: 0rem;
+        right: .25rem;
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
     }
 
     .snapdragon-container .snapdragon-create-guide > div:nth-child(1) > span {
         font-size: 2.6rem;  
         font-family: "PT Sans", "Roboto", arial, sans-serif;
-        letter-spacing: .05rem;        
+        letter-spacing: .05rem;       
+        
     }
 
-    .snapdragon-container .snapdragon-create-guide > div:nth-child(2) > span {
+    .snapdragon-container .snapdragon-create-guide .toggle-links span {
         font-size: .8rem;
-        color: var(--secondary);
+        margin: 0 -.5rem 0 1rem;
+    }
+    
+    .snapdragon-container .snapdragon-create-guide .edit-guide-link {
+        color: var(--snap-lesson) !important;
     }
 
     .species-grid {

@@ -13,7 +13,7 @@ export async function renderInatDataBox(parent, item, config) {
 
     renderTemplate({}, template.content, parent);
     
-    getInatTaxonStats(item).then(stats => {
+    getInatTaxonStats(item, config).then(stats => {
 
         let taxonCount = 0, taxonId;
 
@@ -36,7 +36,7 @@ export async function renderInatDataBox(parent, item, config) {
 
     const placeId = places.results.find(place => place.display_name === country).id;
     
-    getInatTaxonStats(item, placeId).then(stats => {
+    getInatTaxonStats(item, config, placeId).then(stats => {
 
         let placeTaxonCount = 0;
 

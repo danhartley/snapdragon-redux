@@ -1,16 +1,17 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { actions } from 'redux/actions/action-creators';
 import { getPlace } from 'geo/geo';
-import locationsTemplate from 'ui/create-guide-modal/locations-list-template.html';
+import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
+import locationsTemplate from 'ui/create-guide-modal/locations-template.html';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 
 export const renderLocation = (modal, config, createGuide) => {
 
     const guideTxt = modal.querySelector('.guide-text');
     guideTxt.innerHTML = 'Study species where you are';
-    
-    const chosen = modal.querySelector('.js-chosen span:nth-child(2)');
-    const saveYourChangesBtn = createGuide.save(config, chosen, 'LOCATION');
+        
+    createGuide.save(config, 'LOCATION', false)();
+    const save = createGuide.save(config, 'LOCATION');
 
     let authorisedLocation = config.place ? config.place.longLocation : null;        
     let locationPlace = config.guide.locationPlace;
@@ -37,19 +38,10 @@ export const renderLocation = (modal, config, createGuide) => {
         actions.boundUpdateConfig(config);
         locationLongLatTxt.innerHTML = place.longLocation;
         setLocationLongLatBtn.innerHTML = 'Reset your location';
-        saveYourChangesBtn();
+        save();
     }
 
     setLocationLongLatBtn.addEventListener('click', handleSetLocationLongLat);
-
-    if(config.guide.locationType) {
-        chosen.innerHTML = config.guide.locationType === 'place'
-            ? config.guide.locationPlace
-            : config.guide.locationLongLat;        
-
-        config.collection.id = config.guide.locationType === 'place' ? 2 : 1;
-        actions.boundUpdateConfig(config);
-    }
 
     const locationPlaceInput = modal.querySelector('#inat-place');
 
@@ -71,7 +63,7 @@ export const renderLocation = (modal, config, createGuide) => {
         config.guide.speciesRange = range;
         actions.boundUpdateConfig(config);        
         txt.innerHTML = `Include species within a radius of <span class="underline-link">${range}km</span>`;
-        saveYourChangesBtn();
+        save();
     };
     
     slider.addEventListener('change', updateSlider);
@@ -81,55 +73,38 @@ export const renderLocation = (modal, config, createGuide) => {
             autocompleteRef.destroy();
     });
 
-    // Set this counter-intuitively because we will force a click thus reversing the position
+    const idSwitch = modal.querySelector('.snapdragon-switch');
 
-    let position = config.guide.locationType 
-            ? config.guide.locationType === 'longLat'
-                ? 'right'
-                : 'left'
-            : 'right';
-
-    const idSwitch = modal.querySelector('.inat-id-switch');
-    const idSwitchBtn = idSwitch.querySelector('div');
-
-    const switchInputs = position => {
+    const switchCallback = position => {
         switch(position) { 
             case 'left':
+                setLocationLongLatBtn.disabled = false;
+                modal.querySelector('.js-inat-location-location').classList.remove('disabled');             
+                
                 locationPlaceInput.disabled = true;
                 locationPlaceInput.classList.remove('active');
                 modal.querySelector('.js-inat-location-place').classList.add('disabled');
                 modal.querySelector('.js-set-inat-location-btn').classList.add('disabled');
-                modal.querySelector('.js-inat-location-location').classList.remove('disabled');                
-                setLocationLongLatBtn.disabled = false;
                 break;
             case 'right':
                 locationPlaceInput.disabled = false;
                 locationPlaceInput.classList.add('active');
                 modal.querySelector('.js-inat-location-place').classList.remove('disabled');
                 modal.querySelector('.js-set-inat-location-btn').classList.remove('disabled');
+
                 modal.querySelector('.js-inat-location-location').classList.add('disabled');
                 setLocationLongLatBtn.disabled = true;
-            break;
+                break;
         }
     };
 
-    idSwitch.addEventListener('click', event => {
-        switch(position) { 
-            case 'left':
-                idSwitchBtn.parentElement.classList.add('right');
-                idSwitchBtn.parentElement.classList.remove('left');
-                position = 'right';
-                break;
-            case 'right':
-                idSwitchBtn.parentElement.classList.add('left');
-                idSwitchBtn.parentElement.classList.remove('right');
-                position = 'left';
-                break;
-        }
-        switchInputs(position);
-    });
+    const position = config.guide.locationType 
+            ? config.guide.locationType === 'longLat'
+                ? 'left'
+                : 'right'
+            : 'left';
 
-    idSwitch.click();
+    switchHandler(idSwitch, position, switchCallback);
 
     modal.querySelector('.js-set-inat-location-btn').addEventListener('click', event => {
         config.guide.locationType = 'place';
@@ -138,7 +113,7 @@ export const renderLocation = (modal, config, createGuide) => {
         config.guide.locationPlace = locationPlace;
         config.collection.id = 2;
         actions.boundUpdateConfig(config);
-        saveYourChangesBtn();
+        save();
         locationPlaceInput.value = '';
     });
 }

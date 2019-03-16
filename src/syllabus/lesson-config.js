@@ -30,6 +30,7 @@ export const config = {
         studyMethod: 'quick_study',
         speciesRange: 10,
         ready: false,
-        inatId: { key: '', type: '' }
+        inatId: { key: '', type: '', param: 'user_id' },
+        season: {}
     },    
 };
