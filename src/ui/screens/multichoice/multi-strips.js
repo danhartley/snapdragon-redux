@@ -83,11 +83,11 @@ export const renderMultiStrips = (collection) => {
                 actions.boundUpdateScore(score);
             });
             document.querySelector('.js-question').style.display = 'none';
-            if(screen.name === 'species-vernaculars') {
-                document.querySelector('.js-txt-species-name').innerHTML =  score.question;
-            } else if(screen.name === 'species-scientifics') {
-                document.querySelector('.js-txt-species').innerHTML = score.question;
-            }            
+            // if(screen.name === 'species-vernaculars') {
+            //     document.querySelector('.js-txt-species-name').innerHTML =  score.question;
+            // } else if(screen.name === 'species-scientifics') {
+            //     document.querySelector('.js-txt-species').innerHTML = score.question;
+            // }            
         }
 
         const taxon = { name: item.family, binomial: item.name, question: questionValue };

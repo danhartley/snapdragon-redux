@@ -344,7 +344,7 @@ a.dropdown-item {
   flex-direction: column;
   padding: 0.5rem;
   background-color: white;
-  justify-content: space-between;
+  justify-content: flex-start;
   background-color: var(--snap-list-alt-background);
 }
 
@@ -615,8 +615,8 @@ a.dropdown-item {
   display: inline-block;
   font-size: 1.2rem;
   font-weight: 300;
-  margin: .5rem;
-  padding: .8rem 1.1rem;
+  margin: .25rem;
+  padding: .5rem .7rem;
 }
 
 .strip.snap-success {
@@ -746,12 +746,48 @@ a.dropdown-item {
   font-size: 0.9rem;
 }
 
-.iconic-icon,
-#speciesCardModal .iconic-icon {
+.iconic-icon, #speciesCardModal .iconic-icon {
   float: left;
-  font-size: 2rem;
-  padding: 0.5rem;
+  font-size: 1rem;
+  padding: 0 .5rem 0 0;
   color: var(--snap-iconic-icon-header);
+}
+
+.question-header div {
+  display: flex;
+  flex-direction: column;
+}
+
+.mixed-specimen-container, .block-container {
+  position: relative;
+  justify-content: flex-start;
+}
+
+.mixed-specimen-container .action-update-container {
+  position: absolute;
+  width: initial;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.mixed-specimens .question {
+  margin: .5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+  color: var(--snap-text-medium-dark);
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+}
+
+.text-question {
+  position: absolute;
+  left: 1rem;
+  bottom: 4.5rem;
+  min-height: 2.5rem;
+  padding: 0;
 }
 
 .species-common-name {
@@ -2219,7 +2255,7 @@ a.collection-disabled {
 
 .iconic-taxa-categories {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 1rem;
 }
 
@@ -2233,8 +2269,8 @@ a.collection-disabled {
   border: 1px solid grey;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 0.5rem 0.5rem 0;
+  justify-content: center;  
+  margin: 0 0.5rem 1rem 0;
   cursor: pointer;
 }
 
@@ -2332,6 +2368,7 @@ a.collection-disabled {
   background-color: var(--snap-species-header-background);
   color: var(--snap-dark);
   justify-content: center;
+  padding: .5rem 0;
 }
 
 .calender-container {
@@ -2429,4 +2466,401 @@ a.collection-disabled {
   font-weight: 300;
   margin: .5rem;
   padding: .8rem 1.1rem;
+}
+
+
+/* CREATE GUIDE */
+
+#createGuide .modal-dialog {
+  width: 100%;
+  margin: 0rem auto;
+}
+
+#createGuide .modal-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: var(--secondary);
+}
+
+#createGuide button.close {
+  width: fit-content;
+}
+
+#createGuide .modal-title {
+  flex: auto;
+  display: flex;
+  align-items: center;
+  align-content: space-between;
+  color: rgb(250, 250, 250);
+  text-transform: uppercase;
+}
+
+#createGuide .modal-title div { 
+  font-size: 1.3rem;
+  letter-spacing: .05rem;
+}
+
+#createGuide .modal-title div:nth-child(1) {
+  flex: auto;
+  font-size: .8rem;        
+}
+
+#createGuide .modal-title div:nth-child(2) {
+  flex: initial;
+  margin: 0 .5rem 0 0;
+  font-size: 1rem;
+}
+
+#createGuide .modal-header .close {
+  flex: initial;
+  margin: 0;
+  display: inline-block;
+  font-size: 2rem;
+  color: rgb(250, 250, 250);
+  text-shadow: none;
+  padding: .5rem;
+}
+
+#createGuide .modal-content {
+  background-color: initial;
+}
+
+#createGuide .modal-body {
+  background-color: var(--snap-list-alt-background);
+}
+
+#createGuide .modal-body .guide-text {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  letter-spacing: .03rem;
+  color: var(--snap-text-medium-light);
+  font-style: italic;
+}
+
+#createGuide .modal-body .guides .guide-text {
+  margin: .5rem 0 .25rem 0;
+}
+
+#createGuide .modal-body .guide-sub-text {
+  font-size: 1rem;
+  margin: 0 0 .5rem 0;
+}
+
+#createGuide .modal-body.create-guide-body {
+  min-height: 32rem;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+#createGuide .modal-body.create-guide-body > div {
+  flex: auto;
+  display: flex;
+  align-items: center;
+}
+
+#createGuide .modal-body.create-guide-body > div.create-guide-action {
+  flex-direction: column;
+  align-items: initial;
+  position: relative;
+}
+
+#createGuide .modal-body.create-guide-body > div:nth-child(1), .modal-body.create-guide-body > div:nth-child(3) {
+  max-height: 2.5rem;
+}
+
+#createGuide .modal-body .create-guide-progress > div {
+  display: flex;
+  align-items: center;
+  border-bottom: .05rem solid lightgray;
+  padding: 0 0 .5rem 0;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: .9rem;
+}
+
+#createGuide .modal-body .create-guide-progress > div div {
+  flex: auto;
+  line-height: 2rem;
+  text-align: center;
+  letter-spacing: .08rem;
+}
+
+#createGuide .modal-body .btn-modal {
+  background-color: rgb(143, 163, 138);
+}
+
+#createGuide .modal-body .create-guide-progress > div > div {
+  border-right: .005rem solid var(--snap-border-dark);
+}
+
+#createGuide .modal-body .create-guide-progress > div > div:last-child {
+  border-right: none;
+}
+
+#createGuide .modal-body .create-guide-progress .completed {
+  background-color: lightgray;
+}
+
+#createGuide .modal-body .create-guide-progress .active {
+  color: rgb(250, 250, 250);
+  background-color: var(--snap-collection);        
+}
+
+#createGuide .modal-body .create-guide-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--snap=--snap-text-dark);
+  background-color: var(--snap-filters-ctrl);
+}
+
+#createGuide .modal-body .create-guide-navigation > div > div {
+  display: flex;
+  align-items: center;        
+}
+
+#createGuide .modal-body .create-guide-navigation > div:nth-child(1) > div svg {
+  font-size: 2rem;
+  margin: 0 .25rem 0 .5rem;
+}
+
+#createGuide .modal-body .create-guide-navigation > div:nth-child(2) > div svg {
+  font-size: 2rem;
+  margin: 0 .5rem 0 .25rem;
+}
+
+#createGuide  .modal-body .create-guide-navigation > div:nth-child(1),
+#createGuide .modal-body .create-guide-navigation > div:nth-child(2) {
+  color: var(--snap-text-dark);
+  cursor: pointer;
+}
+
+#createGuide .modal-body .create-guide-navigation > div:nth-child(2).disabled {
+  color: gray;
+  pointer-events: none;
+}
+
+#createGuide .modal-body .create-guide-navigation > div:nth-child(1):hover,
+#createGuide .modal-body .create-guide-navigation > div:nth-child(2):hover {
+  color: rgb(250, 250, 250);
+}
+
+#createGuide .modal-body .location .current {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+#createGuide .modal-body .chosen {
+  position: absolute;
+  bottom:.5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+#createGuide .modal-body .chosen-inat {
+  margin: 0 0 .5rem 0;
+}
+
+#createGuide .modal-body .chosen span:nth-child(1), 
+#createGuide .modal-body .chosen-inat span:nth-child(1) {
+  font-size: .8rem;
+  margin: 0 .25rem 0 0;
+  text-transform: uppercase;
+  border-bottom: 1px solid gray;
+  vertical-align: text-top;
+  letter-spacing: .03rem;
+}
+
+#createGuide .modal-body .chosen span:nth-child(2),
+#createGuide .modal-body .chosen-inat span:nth-child(2) {
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--snap-collection-active);
+}
+
+#createGuide .modal-body .save-your-changes {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 2.5rem;
+}
+
+#createGuide .modal-body .save-your-changes button {
+  margin: 0 1rem 0 0;
+}
+
+#createGuide .modal-body .saved {
+  color: var(--snap-green-ident);
+  font-size: 1.3rem;
+  font-family: serif;
+  font-style: italic;
+}
+
+#createGuide .modal-body .actions > div:first-child {
+  display: flex;
+}
+
+#createGuide .modal-body button {
+  display: inline-block;
+  margin: 0;
+  background-color: var(--snap-list-bg);
+  color: rgb(250, 250, 250);
+  letter-spacing: .05rem;
+}
+
+#createGuide .modal-body .inat-location-location button {
+  margin: 0 .5rem 0 0;
+}
+
+#createGuide .modal-body button:hover {
+  color: lightgray;
+}
+
+#createGuide .modal-body button:disabled {
+  color: var(--snap-text-dark);
+}
+
+#createGuide .modal-body button.js-set-inat-identity-btn {
+  color: white;        
+  background-color: var(--snap-link);
+}
+
+#createGuide .guides {
+  display: flex;
+  flex-direction: column;
+  margin-top: -.5rem;
+}
+
+#createGuide .guides .months {
+  font-size: 1.4rem;
+  margin: 1rem 0 0 0;
+  letter-spacing: .05rem;
+  font-family: serif;
+  font-variant-caps: small-caps;
+}
+
+#createGuide .guides .months span:nth-child(2) {
+  margin: 0 0 0 .5rem;        
+}
+
+#createGuide #inat-place {
+  width: 100%;
+}
+
+#createGuide #inat-place::placeholder {
+  display: inline;
+}
+
+#createGuide .guides .inat-entry, #createGuide .guides input[type="text"] {
+  width: 100%;
+}
+
+/* SLIDER */
+
+.create-guide-action .range-slider {
+  margin: .5rem 0 0 0;
+  padding: .25rem;
+}
+
+.create-guide-action .range-slider.disabled {
+  color: var(--secondary);
+}
+
+.create-guide-action .range-slider span {
+  margin: 0 .5rem 0 0;
+}
+
+.create-guide-action .range-slider > span:nth-child(2) {
+  border: .05rem solid lightgray;
+  padding: .5rem;
+  display: inline-block;
+}
+
+.create-guide-action .set-range-input {
+  width: fit-content;
+  cursor: pointer;
+}
+
+.create-guide-action .range-slider.disabled .set-range-input {
+  pointer-events: none;
+}
+
+/* SNAPDRAGON SWITCH */
+
+.snapdragon-switch {
+  width: 3.6rem;
+  height: 2rem;
+  padding: .2rem;
+  border-radius: .2rem;
+  cursor: pointer;
+  margin: 0 .75rem;
+  position: relative;
+  transition: all 1s ease;
+}
+
+.snapdragon-switch div {
+  height: 1.6rem;
+  width: 1.6rem;
+  border-radius: .2rem;
+  background-color: var(--snap-collection);
+  transition-property: all;
+  transition-duration: .4s;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-delay: 0s;
+  position: absolute;
+}
+
+.snapdragon-switch .embedded-switch {
+  display: flex;
+  flex-direction: row;
+}
+
+.snapdragon-switch.left {        
+  background-color: var(--snap-text-medium-dark);        
+}
+
+.snapdragon-switch.left div {
+  transform: translateX(0);
+}
+
+.snapdragon-switch.right {        
+  background-color: var(--snap-container-background);
+}
+
+.snapdragon-switch.right div {
+  transform: translateX(1.4rem);
+}
+
+/* INAT SWITCH */
+
+.inat-switch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 0 1rem 0;
+  background-color: var(--snap-text-medium-light);
+  color: white;
+  padding: .5rem 1rem;
+  width: fit-content;
+  border-radius: .2rem;
+  background-color: rgb(110, 138, 49);
+  letter-spacing: .05rem;
+  width: 100%;
+}
+
+.guides .inat .inat-switch {
+  flex-direction: column;
+}
+
+.inat-switch .embedded-switch {
+  display: flex;
+  flex-direction: row;
+}
+
+.inat-switch.location, .inat-switch.inat, .inat-switch.season {
+  background-color: var(--snap-list-bg);
 }
