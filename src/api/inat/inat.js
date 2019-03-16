@@ -33,7 +33,7 @@ export const getInatSpecies = (inatConfig, config) => {
         const param = config.guide.inatId.param;
         const id = config.guide.inatId.id;
         const parameter = `${param}=${id}`;
-        return parameter;
+        return id ? parameter : '';
     };
 
     async function getInatLongLatObservations(latitude, longitude, config) {
