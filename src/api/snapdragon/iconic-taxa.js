@@ -65,3 +65,31 @@ export const matchIcon = (taxonomy, iconicTaxa) => {
     }
     return icon;
 }
+
+export const matchRank = rank => {
+    let icon;
+    switch(rank.toLowerCase()) {
+        case 'aves':
+            icon = 'fas fa-dove';
+            break;
+        case 'lepidoptera':
+            icon = 'fas fa-barcode';
+            break;
+        case 'amphibia':
+            icon = 'fas fa-frog';
+            break;
+        case 'mammalia':
+            icon = 'fas fa-paw';
+            break;
+        case 'insecta':
+            icon = 'fas fa-bug';
+            break;
+        case 'fungi':
+            icon = './icons/mushroom.svg';
+            break;
+        case 'plantae':
+            icon = 'fas fa-leaf';
+            break;
+    }
+    return icon;
+}

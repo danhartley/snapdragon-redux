@@ -54,6 +54,12 @@
     }
 }
 
+@media (min-height: 640px) {
+    .strips {
+        margin: 1rem;
+    }
+}
+
 @media (min-width: 1024px) {
 
     .lesson-plans {
@@ -144,7 +150,8 @@
     /* CREATE GUIDE */
 
     #createGuide .modal-dialog {
-        width: 100%;
+        width: 50%;
+        margin: 2rem auto;
     }
 
     #createGuide .modal-title div:nth-child(1) {
@@ -172,14 +179,43 @@
         margin: 0 0 0 .5rem;
     }
 
+    /* SLIDER */
+    
+    .create-guide-action .range-slider {
+        display: block;
+        font-size: initial;
+        padding: .25rem;
+    }
+
+    .create-guide-action .range-slider span {
+        margin: 0 .5rem 0 0;
+    }
+
+    #createGuide .create-guide-action .range-slider > span:nth-child(2) {
+        width: fit-content;
+        border: .05rem solid lightgray;
+        padding: .5rem;
+        margin: 0;
+    }
+
+    .emphasis {
+        display: initial;
+      }
+
     /* SNAPDRAGON SWITCH */
 
     .snapdragon-switch .embedded-switch {
         display: inline;
     }
 
+    #createGuide .guides .inat-entry, #createGuide .guides input[type="text"] {
+        width: fit-content;
+    }
+      
+
     .iconic-taxa-categories {
         grid-template-columns: 1fr 1fr 1fr;
+        margin: 0;
     }
 
     .iconic-taxa-categories > div > div:nth-child(1) { 
@@ -191,6 +227,14 @@
         flex-direction: row;
         align-items: center;
         margin: .5rem 0 0 0;
+    }
+
+    #createGuide .inat-location-place .custom-checkbox {
+        margin: 0 0 0 .5rem;
+      }
+
+    .inat-location-place > div:nth-child(2) {
+        margin: 0 0 0 .5rem;
     }
 
     #createGuide .guides .inat-entry {
@@ -207,6 +251,11 @@
         padding: 0 .1rem;
     }
 
+    .inat.inat-switch > div {
+        margin: 0;
+      }
+      
+
     #createGuide .guides .inat .inat-switch {
         flex-direction: row;        
     }
@@ -214,6 +263,11 @@
     #createGuide .inat-switch {
         width: fit-content;
     }
+
+    #createGuide #inat-place {
+        width: fit-content;
+        margin: 0;
+      }
 
     #createGuide #inat-place::placeholder {
         color: white;
@@ -224,46 +278,11 @@
         width: 20rem;        
     }
 
-    #inat-place.active {
-        border: .1rem solid var(--snap-list-bg);
-    }
-
-    #inat-place-autocomplete, #inat-identity-autocomplete {
-        z-index: 9999;
-        position: absolute;
-        padding: 0 .25rem;
-        color: var(--snap-modal-title);
-        background-color: rgb(250, 250, 250);
-        letter-spacing: .04rem;
-        border: .05rem solid lightgray;
-    }
-
-    #inat-place-autocomplete {
-        margin: 0 0 0 2.5rem;
-    }
-
-    #inat-place-autocomplete > div, #inat-identity-autocomplete div {
-        padding: .25rem;
-    }
-
-    #inat-place-autocomplete .selected, #inat-identity-autocomplete .selected {
-        color: var(--snap-dd-non-taxa-bg-hover);
-        background-color: var(--snap-text-medium-dark);
-    }
-
-    #place span {
-        margin: 0 .25rem 0 0;
-    }
-
-    #auto .btn {
-        background-color: var(--snap-landscape);
-    }
-
-    .actions label {
+    #createGuide .actions label {
         margin: 0;
     }
 
-    .create-guide-action .set-range-input {
+    #createGuide .create-guide-action .set-range-input {
         width: 15rem;
     }
 
@@ -285,7 +304,6 @@
         display: flex;
         align-items: center;
         height: 120px;
-        /* text-shadow: .7rem .7rem .3rem var(--snap-border-dark); */
     }
 
     .home-container .snapdragon-tag, .summary-scores {
@@ -295,7 +313,6 @@
         font-size: 2rem;
         font-style: italic;
         display: flex;
-        /* align-items: center; */
         color: var(--snap-link);
         letter-spacing: .03rem;
     }

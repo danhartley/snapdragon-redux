@@ -118,8 +118,8 @@ hr {
   min-height: 5rem;
 }
 
-.icon::before,
-.icon::after {
+.icon::after /* .icon::after  */
+{
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -128,7 +128,7 @@ hr {
   font-family: "Font Awesome 5 Free";
 }
 
-.icon.active::before {
+.icon.active::after {
   font-weight: 900;
   content: "\f00c";
   padding: 0 0.5rem 0 0;
@@ -2021,8 +2021,7 @@ span.hide-empty:empty {
   cursor: pointer;
 }
 
-.custom-control-label::before,
-.custom-control-label::after {
+.custom-control-label::before, .custom-control-label::after {
   width: 1.25rem;
   height: 1.25rem;
 }
@@ -2057,66 +2056,9 @@ span.hide-empty:empty {
   border: 0.1rem solid var(--snap-border-dark);
 }
 
-th .custom-control-label::before {
+th .custom-control-label::before, .custom-control-label::before {
   border: 0.05rem solid var(--snap-border-light);
 }
-
-  /* .summary-header {
-    padding: 0 0 0 0.5rem;
-    line-height: 2.5;
-    display: flex;
-    align-items: center;
-    height: 2.5rem;
-    font-size: 1.2rem;
-  }
-
-  .summary-scores {
-    width: fit-content;
-    height: 240px;
-    font-size: 1.05rem;
-    align-self: left;
-    margin: 4.5rem 0 0 0;
-  }
-
-  .summary-scores th {
-    transform-origin: bottom left;
-    position: absolute;
-    margin: 0 0 0 8rem;
-    font-weight: normal;
-  }
-
-  th.roundScore {
-    transform: translate(2.58rem, -2rem) rotate(-40deg);
-  }
-  th.lessonScore {
-    transform: translate(6.14rem, -2rem) rotate(-40deg);
-  }
-
-  .summary-scores td {
-    border: 1px solid white;
-    padding: 0.5rem 1rem;
-  }
-
-  .summary-scores td:nth-child(1) {
-    width: 8rem;
-  }
-
-  .summary-scores td:nth-child(2) {
-    width: 4rem;
-  }
-
-  .summary-scores td:nth-child(3) {
-    width: 4rem;
-  }
-
-  .summary {
-    padding: 0;
-    justify-content: space-between;
-    border: 0;
-    display: flex;
-    flex-direction: column;
-    height: 3rem;
-  } */
 
 .comparison-description {
   display: flex;
@@ -2257,6 +2199,7 @@ a.collection-disabled {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 1rem;
+  margin: 1rem 0 0 0;
 }
 
 .iconic-taxa-categories > div {
@@ -2323,10 +2266,18 @@ a.collection-disabled {
   margin: 1rem .5rem 1rem 0;
 }
 
-.iconic-taxa-categories svg {
+.iconic-taxa-categories svg, .iconic-taxa-categories-selected svg {
   width: 20px;
   height: 20px;
   margin: 0.25rem 0 0 0;
+}
+
+.iconic-taxa-categories-selected svg {
+  vertical-align: -.125em;
+}
+
+.iconic-taxa-categories-selected svg g {
+  fill: var(--snap-collection-active);
 }
 
 .mushroom-icon svg {
@@ -2533,7 +2484,7 @@ a.collection-disabled {
 
 #createGuide .modal-body .guide-text {
   font-size: 1.1rem;
-  margin: 1rem 0;
+  margin: .5rem 0 1rem 0;
   letter-spacing: .03rem;
   color: var(--snap-text-medium-light);
   font-style: italic;
@@ -2589,7 +2540,7 @@ a.collection-disabled {
 }
 
 #createGuide .modal-body .btn-modal {
-  background-color: rgb(143, 163, 138);
+  background-color: var(--snap-list-bg);
 }
 
 #createGuide .modal-body .create-guide-progress > div > div {
@@ -2662,16 +2613,16 @@ a.collection-disabled {
 }
 
 #createGuide .modal-body .chosen-inat {
-  margin: 0 0 .5rem 0;
+  margin: 0;
 }
 
-#createGuide .modal-body .chosen span:nth-child(1), 
+#createGuide .modal-body .chosen > div > span:nth-child(1), 
 #createGuide .modal-body .chosen-inat span:nth-child(1) {
   font-size: .8rem;
   margin: 0 .25rem 0 0;
   text-transform: uppercase;
   border-bottom: 1px solid gray;
-  vertical-align: text-top;
+  vertical-align: middle;
   letter-spacing: .03rem;
 }
 
@@ -2680,6 +2631,10 @@ a.collection-disabled {
   text-transform: uppercase;
   font-size: 1rem;
   color: var(--snap-collection-active);
+}
+
+#createGuide .modal-body .chosen > div span:nth-child(2) > span {
+  margin: 0 .25rem;
 }
 
 #createGuide .modal-body .save-your-changes {
@@ -2729,6 +2684,17 @@ a.collection-disabled {
   background-color: var(--snap-link);
 }
 
+#createGuide .inat-location-place .custom-checkbox {
+  position: relative;
+  margin: .5rem 0 0 0;
+}
+
+#createGuide .inat-location-place .custom-control-label {
+  vertical-align: text-top;
+  display: inline-block;
+  cursor: pointer;
+}
+
 #createGuide .guides {
   display: flex;
   flex-direction: column;
@@ -2749,6 +2715,7 @@ a.collection-disabled {
 
 #createGuide #inat-place {
   width: 100%;
+  margin: .5rem 0;
 }
 
 #createGuide #inat-place::placeholder {
@@ -2757,13 +2724,21 @@ a.collection-disabled {
 
 #createGuide .guides .inat-entry, #createGuide .guides input[type="text"] {
   width: 100%;
+  margin: 0 0 .25rem 0;
+}
+
+#createGuide .modal-body.create-guide-body > div:nth-child(1), .modal-body.create-guide-body > div:nth-child(3) {
+  max-height: 3rem;
 }
 
 /* SLIDER */
 
 .create-guide-action .range-slider {
-  margin: .5rem 0 0 0;
-  padding: .25rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: .9rem;
+  padding: 0;
+  margin: .5rem 0 0 0; 
 }
 
 .create-guide-action .range-slider.disabled {
@@ -2771,17 +2746,21 @@ a.collection-disabled {
 }
 
 .create-guide-action .range-slider span {
-  margin: 0 .5rem 0 0;
+  margin: 0;
+  width: 50%;
 }
 
-.create-guide-action .range-slider > span:nth-child(2) {
-  border: .05rem solid lightgray;
-  padding: .5rem;
-  display: inline-block;
+.create-guide-action .range-slider > span:nth-child(2) {  
+  width: fit-content;
+  margin: 0;
+}
+
+.emphasis {
+  display: none;
 }
 
 .create-guide-action .set-range-input {
-  width: fit-content;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -2837,6 +2816,10 @@ a.collection-disabled {
 
 /* INAT SWITCH */
 
+.inat.inat-switch > div {
+  margin: .25rem;
+}
+
 .inat-switch {
   display: flex;
   flex-direction: row;
@@ -2859,8 +2842,42 @@ a.collection-disabled {
 .inat-switch .embedded-switch {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .inat-switch.location, .inat-switch.inat, .inat-switch.season {
   background-color: var(--snap-list-bg);
+}
+
+/* AUTOCOMPLETE */
+
+#inat-place.active {
+  border: .1rem solid var(--snap-list-bg);
+}
+
+#inat-place-autocomplete, #inat-identity-autocomplete {
+  z-index: 9999;
+  position: absolute;
+  padding: 0 .25rem;
+  color: var(--snap-modal-title);
+  background-color: rgb(250, 250, 250);
+  letter-spacing: .04rem;
+  border: .05rem solid lightgray;
+}
+
+#inat-place-autocomplete {
+  margin: 0 0 0 2.5rem;
+}
+
+#inat-place-autocomplete > div, #inat-identity-autocomplete div {
+  padding: .25rem;
+}
+
+#inat-place-autocomplete .selected, #inat-identity-autocomplete .selected {
+  color: var(--snap-dd-non-taxa-bg-hover);
+  background-color: var(--snap-text-medium-dark);
+}
+
+#place span {
+  margin: 0 .25rem 0 0;
 }

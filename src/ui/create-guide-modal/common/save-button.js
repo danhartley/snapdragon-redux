@@ -1,4 +1,4 @@
-import { store } from 'redux/store';
+import { returnTaxonIcon } from 'ui/helpers/icon-handler';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import saveButtonTemplate from 'ui/create-guide-modal/common/save-button-template.html';
@@ -28,8 +28,19 @@ export const saveButton = (parent, config, step, update = true) => {
 
             case 'SPECIES':
 
+                chosen.innerHTML = '';
                 const iconicTaxa = config.guide.iconicTaxa;
-                chosen.innerHTML = iconicTaxa.length > 0 ? iconicTaxa.map(taxon => taxon.common).join(', ') : 'All species';
+                let icons = '';
+                if(iconicTaxa.length > 0) {
+                    iconicTaxa.forEach(taxon => {
+                        const icon = returnTaxonIcon(taxon.id.toLowerCase());
+                        icons += icon;
+                    })
+                    chosen.innerHTML = icons;
+                } else {
+                    chosen.innerHTML = 'All species';
+                }
+                // chosen.innerHTML = iconicTaxa.length > 0 ? iconicTaxa.map(taxon => taxon.common).join(', ') : 'All species';
                 break;
 
             case 'GUIDE':

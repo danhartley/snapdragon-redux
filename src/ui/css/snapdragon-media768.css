@@ -340,6 +340,10 @@
     .mixed-specimens > div:nth-child(2) {
         margin: 2rem 0 0 0;
     }
+
+    #createGuide .modal-body .chosen span:nth-child(1) {
+        vertical-align: middle;
+    }
     
     .question-sub-header {
         border-bottom: .05rem solid gray;
