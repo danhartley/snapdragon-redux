@@ -52,7 +52,9 @@ export const renderLocation = (modal, config, createGuide) => {
     const txt = modal.querySelector('.js-range');
     let range = config.guide.speciesRange;
 
-    txt.innerHTML = `Include species within a radius of <span class="underline-link">${range}km</span>`;
+    txt.innerHTML = config.isLandscapeMode 
+            ? `Include species within a radius of <span class="underline-link">${range}km</span>`
+            : `Species within <span class="underline-link">${range}km</span>`;
 
     modal.querySelector('.js-set-range-input').value = range;
 
@@ -62,7 +64,9 @@ export const renderLocation = (modal, config, createGuide) => {
         range = event.target.value;
         config.guide.speciesRange = range;
         actions.boundUpdateConfig(config);        
-        txt.innerHTML = `Include species within a radius of <span class="underline-link">${range}km</span>`;
+        txt.innerHTML = config.isLandscapeMode 
+                ? `Include species within a radius of <span class="underline-link">${range}km</span>`
+                : `Species within <span class="underline-link">${range}km</span>`;
         save();
     };
     
@@ -115,5 +119,11 @@ export const renderLocation = (modal, config, createGuide) => {
         actions.boundUpdateConfig(config);
         save();
         locationPlaceInput.value = '';
+    });
+
+    modal.querySelector('.js-planet-earth').addEventListener('click', event => {
+        config.guide.locationOverride = event.target.checked;
+        actions.boundUpdateConfig(config);        
+        save();
     });
 }

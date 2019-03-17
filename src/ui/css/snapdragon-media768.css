@@ -122,6 +122,11 @@
         padding: 0 .25rem;
     }
 
+    .strip {
+        margin: .5rem;
+        padding: .8rem 1.1rem;
+    }
+
     .strip:hover div {
         transition-duration: .5s;
     }
@@ -267,6 +272,7 @@
 
     .snapdragon-container {
         border: .05rem solid var(--snap-portrait);
+        justify-content: space-between;
     }
 
     .bird-song div {
@@ -301,25 +307,13 @@
         font-size: 1.2rem;
     }
 
-    .mixed-specimen-container, .block-container {
-        position: relative;
-        justify-content: flex-start;
-    }
-    
-    .mixed-specimen-container .action-update-container {
-        position: absolute;
-        width: initial;
-        bottom: 1rem;
-        right: 1rem;
-    }
-
     .mixed-specimens {
         color: var(--snap-text-medium-dark);
         padding: 0 .5rem;
         font-size: 1.2rem;
     }
 
-    .mixed-specimens .question , .block-container .question {
+    .block-container .question {
         margin: 1rem 0;
         font-size: 2rem;
         text-transform: uppercase;
@@ -331,6 +325,11 @@
         align-items: center;
     }
 
+    .mixed-specimens .question {
+        margin: 1rem 0;
+        font-size: 2rem; 
+    }
+
     .mixed-specimens .question > span:nth-child(2), .block-container .question > span:nth-child(2) {
         font-size: .8rem;
         vertical-align: super;
@@ -340,6 +339,10 @@
 
     .mixed-specimens > div:nth-child(2) {
         margin: 2rem 0 0 0;
+    }
+
+    #createGuide .modal-body .chosen span:nth-child(1) {
+        vertical-align: middle;
     }
     
     .question-sub-header {
@@ -408,14 +411,6 @@
         letter-spacing: .03rem;
     }
 
-    .text-question {
-        position: absolute;
-        left: 1rem;
-        bottom: 4.5rem;
-        min-height: 2.5rem;
-        padding: 0;
-    }
-
     .answer-box-success, .answer-box-alert {
         display: flex;
         align-items: center;
@@ -459,6 +454,7 @@
         height: inherit;
         letter-spacing: .03rem;
         text-transform: capitalize;
+        padding: .5rem 0;
     }
 
     .question-header div {
@@ -480,6 +476,11 @@
         font-size: 2rem;
     }
     
+    .iconic-icon, #speciesCardModal .iconic-icon {
+        font-size: 2rem;
+        padding: 0.5rem;
+      }
+
     .rights-link > div > div, .rights-attribution > div > div:nth-child(1) {
         font-size: 1.5rem;
     }

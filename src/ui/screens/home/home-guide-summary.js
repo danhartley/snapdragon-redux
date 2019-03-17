@@ -12,7 +12,6 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
         : config.guide.iconicTaxa.length > 0 
             ? config.guide.iconicTaxa.map(taxon => taxon.common).join(', ') 
             : 'All species';
-    const guide = config.guide.studyMethod.replace('_', ' ');
     const inatId = config.guide.inatId ? config.guide.inatId.key : '';
     
     const getSeason = config => {
@@ -30,7 +29,7 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
     const template = document.createElement('template');
     template.innerHTML = homeGuideTemplate;
 
-    renderTemplate({ location, place, taxa, guide, inatId, season }, template.content, parent);
+    renderTemplate({ location, place, taxa, inatId, season }, template.content, parent);
 
     const iNatId = document.querySelector('.js-iNatId');
 

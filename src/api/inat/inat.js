@@ -32,7 +32,7 @@ export const getInatSpecies = (inatConfig, config) => {
     const getUserOrProjectIdParameter = config => {
         const param = config.guide.inatId.param;
         const id = config.guide.inatId.id;
-        const parameter = `${param}=${id}`;
+        const parameter = `&${param}=${id}`;
         return id ? parameter : '';
     };
 
@@ -54,7 +54,7 @@ export const getInatSpecies = (inatConfig, config) => {
         const iconicTaxa = getIconicTaxa(config);
         const placeId = config.guide.place.id;   
         const id = getUserOrProjectIdParameter(config);
-        const url = getBasePath(config) + `&iconic_taxa=${iconicTaxa}&${id}&place_id=${placeId}`;
+        const url = getBasePath(config) + `&iconic_taxa=${iconicTaxa}${id}&place_id=${placeId}`;
         const response = await fetch(url);
         const json = await response.json();
         return await json.results;

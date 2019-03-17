@@ -60,7 +60,7 @@ const landscapeLesson1 = {
                 // mixedSpeciesMatch, // replace with clickable rhs images REMOVE
                 latinToCommonMatch,  // works fine
                 
-                taxonRevision, // excluded in lesson-builder                  
+                // taxonRevision, // excluded in lesson-builder ??             
                 
                 familyMatch, // still working... missing family data an issue
                 familyStripsMatch,// still working... missing family data an issue

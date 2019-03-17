@@ -1,4 +1,4 @@
-import { iconicTaxa, matchIcon } from 'api/snapdragon/iconic-taxa';
+import { iconicTaxa, matchIcon, matchRank } from 'api/snapdragon/iconic-taxa';
 
 export const renderIcon = (item, rootNode) => {
 
@@ -23,11 +23,19 @@ export const renderIcon = (item, rootNode) => {
 export const returnIcon = item => {
 
     if(item.taxonomy.kingdom.toLowerCase() === 'fungi') {
-
         return '<span class="mushroom-icon-header"><svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg></span>';
 
     } else {
-
         return `<i class="small-icon ${matchIcon(item.taxonomy, iconicTaxa)}"></i>`;
+    }
+};
+
+export const returnTaxonIcon = taxon => {
+
+    if(taxon === 'fungi') {
+        return '<span class="iconic-taxa-categories-selected"><svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg></span>';
+
+    } else {
+        return `<span><i class="small-icon ${matchRank(taxon)}"></i></span>`;
     }
 };
