@@ -2097,7 +2097,7 @@ th .custom-control-label::before, .custom-control-label::before {
 }
 
 .species-pending > div:nth-child(1) {
-  font-size: 3.6rem;
+  font-size: 2rem;
   text-transform: uppercase;
   font-family: 'SharpGroteskWide', sans-serif;
   color: var(--snap-link);
@@ -2107,7 +2107,7 @@ th .custom-control-label::before, .custom-control-label::before {
 
 .species-pending > div:nth-child(2) {
   padding: 0;
-  height: 240px;
+  height: 30vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2419,6 +2419,163 @@ a.collection-disabled {
   padding: .8rem 1.1rem;
 }
 
+/* HOME PAGE */
+
+.home-container {
+  padding: 0 .5rem;
+}
+
+.home-container > div {
+  margin: 0 1rem;
+}
+
+.home-container .snapdragon-header {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: 'SharpGroteskWide', sans-serif;
+  color: var(--snap-collection-active);
+  letter-spacing: .3rem;
+  font-family: sentinel;
+  display: flex;
+  align-items: center;
+  height: 120px;
+}
+
+.home-container .snapdragon-tag, .summary-scores {
+  justify-content: center;
+  /* height: 360px; */
+  height: 40vh;
+  font-family: sentinel;
+  font-size: 2rem;
+  font-style: italic;
+  display: flex;
+  color: var(--snap-link);
+  letter-spacing: .03rem;
+}
+
+.summary-scores .summary-progress {
+  margin: 1rem 0 0 0;
+  font-size: 1.4rem;
+  position: relative;
+}
+
+.summary-scores .summary-progress span {
+  margin: 0 0 0 .5rem;
+}
+
+.summary-scores .summary-progress span.above {
+  position: relative;
+  bottom: .5rem;
+}
+
+.summary-scores .summary-progress span.below {
+  position: relative;
+  top: .5rem;
+}
+
+.summary-scores span {
+  margin: 0 .25rem 0 0;
+}
+
+.summary-scores span:nth-child(2) {
+  font-size: .8rem;
+  vertical-align: super;
+}
+
+.home-container .snapdragon-tag .inat-widget {
+  font-style: initial;
+  font-size: 3rem;
+}
+
+.delete-guide-link > span.active {
+  color: var(--snap-alert) !important; 
+  pointer-events: initial;
+}
+
+.delete-guide-link > span.disabled, .disabled {
+  color: var(--secondary) !important;
+  pointer-events: none;
+}
+
+#set-inat-location-btn.disabled {
+  color: var(--gray-dark) !important;     
+}
+
+.delete-guide-link input {
+  cursor: pointer;
+}
+
+#iNatWidgetModal .modal-dialog {
+  max-width: 45vw;
+}
+
+#iNatWidgetModal .modal-header {
+  font-size: 1.2rem;
+  display: inline;
+}
+
+.home-container .snapdragon-tag > div .underline-link {
+  font-size: 2rem;
+  text-transform: initial;
+}
+
+.home-container .snapdragon-tag > div .super-text {
+  display: inline-block;
+  font-size: 1rem;
+  margin: .5rem 0 0 .25rem;
+  vertical-align: top;
+  color: var(--secondary);
+  font-style: italic;
+}
+
+.snapdragon-container .snapdragon-create-guide {
+  display: flex;        
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  height: 120px;
+}
+
+.snapdragon-container .snapdragon-create-guide > div {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-family: 'SharpGroteskWide', sans-serif;
+  color: var(--snap-collection-active);
+  letter-spacing: .05rem;                
+}
+
+.snapdragon-container .snapdragon-create-guide > div:nth-child(1) {
+  position: absolute;
+  bottom: 2.25rem;
+  width: fit-content;
+}
+
+.snapdragon-container .snapdragon-create-guide .toggle-links {
+  position: absolute;
+  bottom: 0rem;
+  right: .25rem;
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+}
+
+.snapdragon-container .snapdragon-create-guide > div:nth-child(1) > span {
+  font-size: 1.6rem;  
+  font-family: "PT Sans", "Roboto", arial, sans-serif;
+  letter-spacing: .05rem;       
+  
+}
+
+.snapdragon-container .snapdragon-create-guide .toggle-links span {
+  font-size: .8rem;
+  margin: 0 -.5rem 0 1rem;
+}
+
+.snapdragon-container .snapdragon-create-guide .edit-guide-link {
+  color: var(--snap-lesson) !important;
+}
+
+
 
 /* CREATE GUIDE */
 
@@ -2484,7 +2641,7 @@ a.collection-disabled {
 
 #createGuide .modal-body .guide-text {
   font-size: 1.1rem;
-  margin: .5rem 0 1rem 0;
+  margin: .25rem 0 .5rem 0;
   letter-spacing: .03rem;
   color: var(--snap-text-medium-light);
   font-style: italic;
@@ -2500,7 +2657,8 @@ a.collection-disabled {
 }
 
 #createGuide .modal-body.create-guide-body {
-  min-height: 32rem;
+  /* min-height: 32rem; */
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-content: flex-start;
@@ -2518,8 +2676,14 @@ a.collection-disabled {
   position: relative;
 }
 
-#createGuide .modal-body.create-guide-body > div:nth-child(1), .modal-body.create-guide-body > div:nth-child(3) {
-  max-height: 2.5rem;
+#createGuide .create-guide-progress {
+  min-height: 1.5rem;
+  max-height: 1.5rem;
+}
+
+#createGuide .create-guide-navigation {
+  min-height: 3rem;
+  max-height: 3rem;
 }
 
 #createGuide .modal-body .create-guide-progress > div {
@@ -2727,10 +2891,6 @@ a.collection-disabled {
   margin: 0 0 .25rem 0;
 }
 
-#createGuide .modal-body.create-guide-body > div:nth-child(1), .modal-body.create-guide-body > div:nth-child(3) {
-  max-height: 3rem;
-}
-
 /* SLIDER */
 
 .create-guide-action .range-slider {
@@ -2824,7 +2984,7 @@ a.collection-disabled {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0 0 1rem 0;
+  margin: 0 0 .5rem 0;
   background-color: var(--snap-text-medium-light);
   color: white;
   padding: .5rem 1rem;

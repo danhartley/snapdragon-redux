@@ -4,38 +4,3 @@
     margin: auto;
   }
 }
-
-/* @media (min-width: 1024px) {
-
-  body {
-    font-size: 16px;
-  }
-
-  .grid {        
-    grid-template-columns: .05rem 10fr .5rem 10fr .05rem;  
-  }
-
-  .left-grid {
-      grid-column: 2;
-  }
-
-  .right-grid {
-      grid-column: 4;
-  }
-
-  .species-table {
-    font-size: 1rem;
-  }
-
-  .flex.wiki {
-    display: block;
-  }
-
-  .block {
-    margin: .1rem;
-    padding: .1rem .2rem;
-    letter-spacing: .1rem;
-    border-radius: .2rem;
-    font-size: 1.8rem;
-  }
-} */

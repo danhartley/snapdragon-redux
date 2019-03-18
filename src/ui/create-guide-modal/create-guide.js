@@ -91,6 +91,12 @@ class CreateGuide {
             this.nextStepActionTxt.setAttribute('data-dismiss','modal');
             config.guide.ready = true;
             actions.boundUpdateConfig(config);
+
+            // handle listeners correctly; this won't work:
+
+            // guide.nextStepAction.removeEventListener('click');        
+            // guide.previousStepAction.removeEventListener('click');
+
             return;
         };
 
