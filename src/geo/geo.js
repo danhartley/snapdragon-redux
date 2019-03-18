@@ -1,8 +1,19 @@
 const getHTML5Location = () => {
   return new Promise(function (resolve, reject) {
-    navigator.geolocation.getCurrentPosition(function (position) {
+
+    function success(position) {
       resolve([position.coords.latitude, position.coords.longitude]);
-    });
+    }
+
+    function error(err) {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+      resolve({
+        '0': 0,
+        '1': 0,
+      });
+    }
+
+    navigator.geolocation.getCurrentPosition(success, error);
   });
 };
 
@@ -77,10 +88,14 @@ export const listenToPlaceChange = listener => {
 async function IPLookup() {
   const ACCESS_KEY = '69402a39530c7ae8218dfaf69ef78337';
   const url = `http://api.ipstack.com/check?access_key=${ACCESS_KEY}`;
-  const response = await fetch(url);
-  const json = await response.json();
-  const { country_code, country_name } = await json;
-  return { country_code, country_name };
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
+    const { country_code, country_name } = await json;
+    return { country_code, country_name };
+  } catch (error) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }  
 }
 
 export async function getIPLocation(config, force = false) {
