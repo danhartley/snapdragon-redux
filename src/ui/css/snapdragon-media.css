@@ -163,7 +163,7 @@
         margin: 0 0 0 .5rem;
     }
 
-    #createGuide .modal-body.create-guide-body > div:nth-child(1), .modal-body.create-guide-body > div:nth-child(3) {
+    #createGuide .create-guide-progress, #createGuide .create-guide-navigation {
         max-height: 4rem;
     }
 
@@ -286,7 +286,32 @@
         width: 15rem;
     }
 
-    .home-container {
+    .home-container .snapdragon-header {
+        font-size: 3.6rem;
+    }
+
+    .snapdragon-container .snapdragon-create-guide > div {
+        font-size: 2.6rem;
+    }
+
+    .snapdragon-container .snapdragon-create-guide > div:nth-child(1) > span {
+        font-size: 2.6rem;  
+    }
+
+    .home-container .snapdragon-tag, .summary-scores {
+        /* height: 360px; */
+        height: 48vh;
+    }
+
+    .species-pending > div:nth-child(1) {
+        font-size: 3.6rem;
+    }
+
+    .species-pending > div:nth-child(2) {
+        height: 240px;
+    }
+
+    /* .home-container {
         padding: 0 .5rem;
     }
 
@@ -437,7 +462,9 @@
     
     .snapdragon-container .snapdragon-create-guide .edit-guide-link {
         color: var(--snap-lesson) !important;
-    }
+    } */
+
+    /* 1200 */
 
     .species-grid {
         width: 600px;
