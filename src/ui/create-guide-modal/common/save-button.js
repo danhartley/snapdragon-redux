@@ -22,7 +22,9 @@ export const saveButton = (parent, config, step, update = true) => {
                 if(config.guide.locationType) {
                     chosen.innerHTML = config.guide.locationType === 'place'
                         ? config.guide.locationPlace
-                        : config.guide.locationLongLat;                            
+                        : config.isLandscapeMode
+                            ? config.guide.locationLongLat
+                            : config.guide.locationLongLat.split(',')[0];
                 }
                 break;
 

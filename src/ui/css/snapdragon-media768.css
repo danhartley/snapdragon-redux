@@ -1,4 +1,4 @@
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
 
     body {
         font-size: 16px;
@@ -86,8 +86,7 @@
         flex: auto;
     }
 
-    .grid {        
-        /* grid-template-columns: 8fr .25rem 12fr; */
+    .grid {
         grid-template-columns: 10fr .25rem 10fr;
     }
 
@@ -182,19 +181,19 @@
         border: 0;
     }
     
-    #externalPageModal .modal-dialog {
+    #wikiModal .modal-dialog {
         max-width: 60vw;
     } 
     
-    #externalPageModal .modal-content {
+    #wikiModal .modal-content {
         height: 70vh;
     }
 
-    #externalPageModal .modal-body {
+    #wikiModal .modal-body {
         height: 90%;
     }
 
-    #externalPageModal iframe {
+    #wikiModal iframe {
         height: 100%;
     }
     
@@ -496,4 +495,4 @@
     .feature-symbiont-list.scrollable {
         max-height: 9rem;
     }
-}
+} */

@@ -1,5 +1,7 @@
 import * as R from 'ramda';
 
+import 'ui/css/groups/species-list.css';
+
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';

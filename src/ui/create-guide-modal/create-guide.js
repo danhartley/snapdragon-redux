@@ -1,5 +1,7 @@
 import * as R from 'ramda';
 
+import 'ui/create-guide-modal/create-guide.css';
+
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';

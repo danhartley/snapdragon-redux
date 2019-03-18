@@ -1,6 +1,12 @@
-@media (min-width: 1200px) {
-  .grid {        
-    max-width: 1200px;
-    margin: auto;
+/* @media (min-width: 1200px) {
+    .grid {        
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .species-grid {
+      width: 600px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
-}
+} */

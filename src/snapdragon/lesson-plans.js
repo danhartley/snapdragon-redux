@@ -223,10 +223,13 @@ const portraitLesson1 = {
         {   id: 1,
             name:'Level 1',
             layouts: [ 
-                speciesRevision, 
-                latinToCommonMatch, 
                 mixedSpeciesMatch,
-                commonToLatinMatch 
+                textCompleteGenus, // GOOD
+                textCompleteSpecies, // GOOD
+                genusEntry, // GOOD
+                speciesEntry, // GOOD
+                speciesGenusEntry, // GOOD
+                commonEntry, // GOOD
             ],
             wildcardLayouts : [],
             reviewLayouts: [ latinToCommonMatch ]
