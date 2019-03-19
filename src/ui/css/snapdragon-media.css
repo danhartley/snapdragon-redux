@@ -106,16 +106,13 @@
 
     .home-container .snapdragon-header {
         font-size: 3.6rem;
+        height: 120px;
     }
 
-    .snapdragon-container .snapdragon-create-guide > div {
+    .snapdragon-create-guide > div:nth-child(1), .snapdragon-create-guide > div:nth-child(1) > span:nth-child(1) {
         font-size: 2.6rem;
     }
-
-    .snapdragon-container .snapdragon-create-guide > div:nth-child(1) > span {
-        font-size: 2.6rem;  
-    }
-
+      
     .home-container .snapdragon-tag, .summary-scores {
         /* height: 360px; */
         height: 48vh;

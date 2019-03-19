@@ -754,10 +754,10 @@ a.dropdown-item {
   color: var(--snap-iconic-icon-header);
 }
 
-.question-header div {
+/* .question-header div {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .mixed-specimen-container, .block-container {
   position: relative;
@@ -2190,7 +2190,7 @@ a.collection-disabled {
   font-family: sentinel;
   display: flex;
   align-items: center;
-  height: 120px;
+  height: 100px;
 }
 
 .home-container .snapdragon-tag, .summary-scores {
@@ -2284,48 +2284,33 @@ a.collection-disabled {
   position: relative;
 }
 
-.snapdragon-container .snapdragon-create-guide {
-  display: flex;        
-  flex-direction: column;
-  align-items: flex-end;  
-  height: 120px;
+.snapdragon-create-guide {
+  position: absolute;
+  bottom: .5rem;
+  right: 1rem;
 }
 
-.snapdragon-container .snapdragon-create-guide > div {
+.snapdragon-create-guide > div:nth-child(1) {
   font-size: 1.6rem;
+  letter-spacing: .05rem;
   text-transform: uppercase;
+}
+
+.snapdragon-create-guide > div:nth-child(1) > span:nth-child(1) {
+  font-family: "PT Sans", "Roboto", arial, sans-serif;
+  font-size: 1.6rem;
+}
+
+.snapdragon-create-guide > div:nth-child(1) > span:nth-child(2) {
   font-family: 'SharpGroteskWide', sans-serif;
   color: var(--snap-collection-active);
-  letter-spacing: .05rem;                
 }
 
-.snapdragon-container .snapdragon-create-guide > div:nth-child(1) {
-  position: absolute;
-  bottom: 2.25rem;
-  width: fit-content;
-}
-
-.snapdragon-container .snapdragon-create-guide .toggle-links {
-  position: absolute;
-  bottom: 0rem;
-  right: .25rem;
+.snapdragon-create-guide .toggle-links {
   display: flex;
-  flex-direction: row;
-  width: fit-content;
+  justify-content: flex-end;
 }
 
-.snapdragon-container .snapdragon-create-guide > div:nth-child(1) > span {
-  font-size: 1.6rem;  
-  font-family: "PT Sans", "Roboto", arial, sans-serif;
-  letter-spacing: .05rem;       
-  
-}
-
-.snapdragon-container .snapdragon-create-guide .toggle-links span {
-  font-size: .8rem;
-  margin-left: .5rem;
-}
-
-.snapdragon-container .snapdragon-create-guide .edit-guide-link {
-  color: var(--snap-lesson) !important;
+.snapdragon-create-guide .edit-guide-link {
+  margin: 0 .5rem 0 0;
 }

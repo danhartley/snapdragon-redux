@@ -8,12 +8,8 @@ import { utils } from 'utils/utils';
 import 'ui/css/snapdragon-colours.css';
 import 'ui/css/snapdragon.css';
 import 'ui/css/snapdragon-media.css';
-// import 'ui/css/snapdragon-media768.css';
-// import 'ui/css/snapdragon-media1200.css';
 import 'ui/css/snapdragon-media-display.css';
-
-
-// import 'ui/css/groups/species-list.css';
+import 'ui/css/groups/test-card.css';
 
 import { store } from 'redux/store';
 import { getIPLocation } from 'geo/geo';

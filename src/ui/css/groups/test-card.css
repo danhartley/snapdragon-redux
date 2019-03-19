@@ -1,0 +1,131 @@
+
+.question-header div {
+    display: flex;
+    flex-direction: column;
+  }
+
+.mixed-specimens {
+    color: var(--snap-text-medium-dark);
+    padding: 0 .5rem;
+    font-size: 1.2rem;
+}
+
+.mixed-specimens .question {
+    margin: 1rem 0;
+    font-size: 1.4rem; 
+}
+
+.mixed-specimens .question > span:nth-child(2), .block-container .question > span:nth-child(2) {
+    font-size: .8rem;
+    vertical-align: super;
+    text-transform: initial;
+    margin: -.25rem 0 0 0;
+}
+
+.mixed-specimens > div:nth-child(2) {
+    margin: 2rem 0 0 0;
+}
+
+.mixed-specimens .question-sub-header {
+    border-bottom: .05rem solid gray;
+    padding: 0 0 .25rem 0;
+    text-transform: uppercase;
+    font-size: .8rem;
+    width: fit-content;
+}
+
+.mixed-specimens .help-txt {
+    font-size: 1.1rem;
+    letter-spacing: .03rem;
+    margin: 1rem;
+}
+
+.mixed-specimens input[type="text"] {
+    width: 75%;
+    font-size: 1.5rem;
+    padding: .25rem;
+}
+
+.mixed-specimens button {
+    display: inline-block;
+    color: var(--snap-text-medium-dark);
+    background-color: var(--snap-landscape);
+    transition-duration: .5s;
+}
+
+.mixed-specimens button:hover {
+    background-color: var(--snap-text-medium-light);
+    color: var(--snap-body-bg);
+}
+
+.mixed-specimens .small-icon {
+    font-size: .7rem;
+    margin: 0 .25rem 0 0;
+}
+
+.mixed-specimens li {
+    display: flex;
+    align-items: baseline;
+    letter-spacing: .01rem;
+    text-transform: capitalize;
+    font-size: 1rem;
+    letter-spacing: .03rem;
+}
+
+/* SYSTEM RESPONSE */
+
+.answer-box-success > span:nth-child(2), 
+.answer-box-alert > span:nth-child(2) {
+    color: var(--snap-success);
+    font-weight: bold;
+    letter-spacing: .05rem;
+    margin: 0 0 0 .5rem;
+    font-family: serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.answer-box-alert > span:nth-child(2) {
+    color: var(--snap-alert);
+}
+
+@media (min-width: 768px) {
+
+    .question-container {
+        font-size: 1.2rem;
+        height: 100%;
+    }
+
+    .question-header {
+        font-size: 1.8rem;
+        border: none;
+        height: inherit;
+        letter-spacing: .03rem;
+        text-transform: capitalize;
+        padding: .5rem 0;
+    }
+
+    .question-header div {
+        align-items: center;
+        line-height: 1.2;
+    }
+
+    .mixed-specimens .question {
+        font-size: 2rem; 
+    }
+
+    .iconic-icon {
+        font-size: 2rem;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .question-header span.binomial {
+        font-size: 1rem;
+    }
+
+    .mixed-specimens button {
+        width: fit-content;
+    }
+}
