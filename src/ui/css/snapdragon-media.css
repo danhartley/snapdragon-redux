@@ -1,8 +1,8 @@
 @media (min-width: 320px) {
-    .squares { 
+    /* .squares { 
         height: 60%;
     }
-    
+     */
     .right {  
         color: var(--snap-text-dark);
         background-color: var(--snap-success);
@@ -22,9 +22,6 @@
     body {
         font-size: 18px;
     }
-    .strip div {
-        font-size: 1.1rem;
-    }
 }
 @media (min-width: 414px) {
     body {
@@ -39,8 +36,31 @@
 }
 
 @media (min-height: 640px) {
+    
+}
+
+/* iPHONE 6,7,8 */
+
+@media (max-width:375px) and (min-height:667px) {
     .strips {
-        margin: 1rem;
+        grid-template-columns: 1fr;
+    }
+    .strip {
+        padding: .75rem;
+    }
+}
+
+/* iPHONE 6,7,8 PLUS, iPHONE X, GALAXY S9/S9+ */
+
+@media  (max-width:414px) and (min-height:736px),
+        (max-width:375px) and (min-height:812px),
+        (max-width:360px) and (min-height:740px) {
+    .strips {
+        grid-template-columns: 1fr;
+    }
+    .strip {
+        font-size: 1.2rem;
+        padding: .65rem;
     }
 }
 
@@ -61,6 +81,14 @@
     .left-grid {
         display: grid;
     }    
+
+    .header-text {
+        font-size: 1rem;
+    }
+
+    .header > div:nth-child(2) {
+        font-size: .8rem;
+    }
 
     .modal-iframe  {
         margin: 0;
@@ -95,6 +123,10 @@
 }
 
 @media (min-width: 1024px) {
+
+    .grid {
+        max-height: 840px;
+    }
 
     .lesson-option-headers {
         font-size: 1.4rem;
@@ -136,12 +168,23 @@
         display: flex;
         flex-direction: column;
     }
+
+    .strip {
+        font-size: 1.3rem;
+        margin: .5rem .25rem;
+        padding: 1rem;
+    }
 }
 
 @media (min-width: 1200px) {
+    
     .grid {        
-      max-width: 1200px;
+      max-width: 1200px;      
       margin: auto;
+    }
+
+    .left-grid, .right-grid {
+        width: 600px;
     }
 
     .species-grid {
@@ -151,8 +194,8 @@
   }
 }
 
-@media (min-height: 1024px) {
+/* @media (min-height: 1024px) {
     .species-grid {
         height: 840px;
     }
-}
+} */

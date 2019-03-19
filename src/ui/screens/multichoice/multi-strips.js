@@ -12,10 +12,8 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { syndromes } from 'api/snapdragon/syndromes';
-import familyTemplate from 'ui/screens/multichoice/multi-strips-template.html';
-import questionTemplate from 'ui/screens/common/question-template.html';
-import speciesCard from 'ui/screens/cards/species-card-template.html';
-import taxonCard from 'ui/screens/cards/taxon-card-template.html';
+import testCardTemplate from 'ui/screens/common/test-card-template.html';
+import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 
 export const renderMultiStrips = (collection) => {
 
@@ -24,20 +22,22 @@ export const renderMultiStrips = (collection) => {
 
     const { config, lessonPlan, layout } = store.getState();
 
+    const template = document.createElement('template');
+    
+    template.innerHTML = testCardTemplate;
+
     let parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    const template = document.createElement('template');
-    
-    template.innerHTML = familyTemplate;
+    renderTemplate({ vernacularName: item.vernacularName, binomial: item.binomial, question: 'Match the name' }, template.content, parent);
+
+    renderQuestionHeader(document.querySelector('.js-question-container'), item, item.vernacularName);
 
     const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, collection.families));
 
-    let description = config.isPortraitMode ? `Family: ${item.family} ` : `Which of the above descriptions best fits the ${item.family}?`;
-
     const familyFlavours = config.isPortraitMode 
-    ? [ 'match-family-to-quick-id' ] 
-    : [ 'match-family-to-quick-id', 'match-family-to-summary' ];
+            ? [ 'match-family-to-quick-id' ] 
+            : [ 'match-family-to-quick-id', 'match-family-to-summary' ];
 
     let screen = layout.screens.find(screen => screen.name === 'family-strips');
     
@@ -53,47 +53,31 @@ export const renderMultiStrips = (collection) => {
 
     if(!screen) return;
 
-    const render = (questionText, questionValue, answers, card = taxonCard, ctxt = {description}) => {
+    const render = (questionValue, answers) => {
     
-        renderTemplate({ description, answers }, template.content, parent);
+        parent = document.querySelector('.js-test-card');
 
-        renderQuestionHeader(document.querySelector('.js-question-container'), item, item.vernacularName);
-        
+        template.innerHTML = stripTemplate;
+
+        renderTemplate({ answers }, template.content, parent);
+
         const strips = document.querySelectorAll('.js-rptr-strips .strip div');
-
-        parent = document.querySelector('.right-body .snapdragon-container');
-
-        template.innerHTML = card;
-
-        const context = ctxt;
-
-        renderTemplate( context, template.content, parent);
-
-        template.innerHTML = questionTemplate;
-        
-        renderTemplate( { question: questionText }, template.content, parent);
-
-        const renderAnswer = (score, scoreUpdateTimer) => {
-            const answer = document.querySelector('.js-answer');
-            answer.innerHTML = 'Continue lesson';
-            answer.style.display = 'block';
-            answer.style.cursor = 'pointer';
-            answer.addEventListener('click', () => {
-                window.clearTimeout(scoreUpdateTimer);
-                actions.boundUpdateScore(score);
-            });
-            document.querySelector('.js-question').style.display = 'none';
-            // if(screen.name === 'species-vernaculars') {
-            //     document.querySelector('.js-txt-species-name').innerHTML =  score.question;
-            // } else if(screen.name === 'species-scientifics') {
-            //     document.querySelector('.js-txt-species').innerHTML = score.question;
-            // }            
-        }
 
         const taxon = { name: item.family, binomial: item.name, question: questionValue };
 
         const test = { itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
-        const callback = renderAnswer;
+        
+        const callback = (score, scoreUpdateTimer) => {
+        
+            const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
+    
+            continueLessonBtn.disabled = false;
+    
+            continueLessonBtn.addEventListener('click', event => {
+                window.clearTimeout(scoreUpdateTimer);
+                actions.boundUpdateScore(score);
+            });
+        };
 
         scoreHandler('strip', test, callback, config);
     }
@@ -101,31 +85,21 @@ export const renderMultiStrips = (collection) => {
     if(screen.name === 'species-scientifics') {
 
         const number = config.isPortraitMode ? 6 : config.isLandscapeMode ? 6 : 6;
-
-        const questionText = config.isPortraitMode ? 'Select equivalent of common name' : `Select the latin equivalent of the common name`;
         const question = item.name;
         const answers = itemProperties.answersFromList(itemProperties.itemNamesForGroups(items), question, number);
 
-        const description = { vernacular: item.vernacularName, name: '---' };
-
-        render(questionText, question, answers, speciesCard, description);
+        render(question, answers);
     }
 
     if(screen.name === 'species-vernaculars') {
 
         if(!collection.speciesVernacularNames) return;
 
-       description = 'Can you identify the species?';
-
         const number = config.isPortraitMode ? 6 : config.isLandscapeMode ? 6 : 6;
-
-        const questionText = config.isPortraitMode ? 'Select equivalent of latin name' : `Continue lesson`;
         const question = item.vernacularName;   
         const answers = itemProperties.answersFromList(itemProperties.vernacularNamesForGroups(items, config), question, number);
 
-        const placeHolderForAnswer = { vernacular: '---', name: item.name };
-
-        render(questionText, question, answers, speciesCard, placeHolderForAnswer);
+        render(question, answers);
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
@@ -143,13 +117,11 @@ export const renderMultiStrips = (collection) => {
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
         
         const number = config.isPortraitMode ? 3 : 4;
-
-        const questionText = config.isPortraitMode ? 'Tap to match description' : `Click to match the description`;
         const question = families.length > 0 ? families.find(f => f.name === item.family).descriptions[0].summary : 'no families available';
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family)).map(f => f.descriptions[0].summary);
         const answers = utils.shuffleArray([question, ...alternatives]);
 
-        render(questionText, question, answers);
+        render(question, answers);
     }
 
     if(screen.name === 'wildcard-match') {
@@ -194,22 +166,16 @@ export const renderMultiStrips = (collection) => {
         if(!layout.epithet) return;
 
         const epithet = layout.epithet.latin[0];
-
-        description = config.isPortraitMode ? `In the species ${item.name}, what does \'${epithet}\' mean?` : `In the species ${item.name}, what is the meaning of the epithet ${epithet}?`;
-
         const number = config.isPortraitMode ? 6 : 6;
         
         let alternatives = R.take(number-1, utils.shuffleArray(epithets)).filter(e => !R.contains(e.latin, epithet));
         alternatives = alternatives.map(e => e.en.join(', '));
-        const questionText = config.isPortraitMode 
-            ? `Tap to match the epithet`
-            : `Click to match the epithet`
         let question = epithets.find(e => e.latin[0].toUpperCase() === epithet.toUpperCase());
         question = question ? question[config.language][0] : epithet;
         
         const answers = utils.shuffleArray([question, ...alternatives]);
 
-        render(questionText, question, answers);
+        render(question, answers);
     }
 
     if(screen.name === 'definition') {
@@ -218,19 +184,13 @@ export const renderMultiStrips = (collection) => {
 
         const { term, definition } = layout.definition;
 
-        description = `What does ${term} mean?`;
-
         const number = config.isPortraitMode ? 3 : 5;
-
         const definitions = getGlossary(collection.glossary);
-        
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(definitions)).filter(d => !R.contains(d.term, term))).map(d => d.definition);
-        const questionText = config.isPortraitMode 
-            ? `Tap the correct definition`
-            : `Click the correct definition`
+        
         const question = definition;
         const answers = utils.shuffleArray([question, ...alternatives]);
 
-        render(questionText, question, answers);
+        render(question, answers);
     }
 };

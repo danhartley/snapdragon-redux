@@ -4,14 +4,14 @@ import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
+import { renderQuestionHeader } from 'ui/screens/common/question-header';
 import { renderTemplate } from 'ui/helpers/templating';
-import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen-questions-template.html';
-import questionTemple from 'ui/screens/common/question-template.html';
-import { renderItemSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
+import testCardTemplate from 'ui/screens/common/test-card-template.html';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import { iconicTaxa, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
+
 
 export const renderMixedSpecimenQuestions = collection => {
 
@@ -23,7 +23,7 @@ export const renderMixedSpecimenQuestions = collection => {
 
     const template = document.createElement('template');
 
-    template.innerHTML = mixedSpecimenTemplate;
+    template.innerHTML = testCardTemplate;
 
     const getPortraitImages = images => {
         if(!images) return;
@@ -41,7 +41,6 @@ export const renderMixedSpecimenQuestions = collection => {
     const nextItem = clonedItems.find(i => i.name === collection.nextItem.name);
     if(nextItem) items.push(nextItem);
 
-
     let images = items.map((item, index) => { 
         return { index: index + 1, srcs: item.images, itemName: item.name };
     });
@@ -54,34 +53,26 @@ export const renderMixedSpecimenQuestions = collection => {
 
     images = getPortraitImages(images);
 
-    const question1 = `Can you find a specimen of ${item.vernacularName}?`;
-    const question2 = `When you've found a match click on the image.`;
-    const question3 = `${item.name}`;
-
     let parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    renderTemplate({ images, question1, question2, question3 }, template.content, parent);
+    renderTemplate({ vernacularName: item.vernacularName, binomial: item.binomial, question: 'Find the species' }, template.content, parent);
 
-    template.innerHTML = questionTemple;
-
-    parent = document.querySelector('.right-body .snapdragon-container');
-
-    const context = { question: 'Find the species' };
-
-    renderTemplate( context, template.content, parent);
+    renderQuestionHeader(document.querySelector('.js-question-container'), item, item.vernacularName);
+ 
+    document.querySelector('.js-test-card').innerHTML = '<div class="species-card-images carousel js-species-card-images"></div>';
 
     const callback = (score, scoreUpdateTimer) => {
-        const answer = document.querySelector('.js-answer');
-        answer.innerHTML = 'Continue lesson';
-        answer.style.display = 'block';
-        answer.style.cursor = 'pointer';    
-        answer.addEventListener('click', () => {
+        
+        const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
+
+        continueLessonBtn.disabled = false;
+
+        continueLessonBtn.addEventListener('click', event => {
             window.clearTimeout(scoreUpdateTimer);
             actions.boundUpdateScore(score);
         });
-        document.querySelector('.js-question').style.display = 'none';
-    }
+    };
 
     const internalScoreHandler = (score, question, answer, config) => {
         const test = { ...score, itemId: item.id, question, answer, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
@@ -94,10 +85,13 @@ export const renderMixedSpecimenQuestions = collection => {
 
     document.querySelectorAll('.carousel-item .layer').forEach(img => {
         img.addEventListener('click', event => {
+
+            // HANDLE THE LAYER COLOUR
+
             const layer = event.target;
             const selectedName = layer.dataset.itemName;
             const question = item.name;
-            const answer = selectedName;
+            const answer = selectedName || 'wrong answer!';
             const isCorrect = answer === question;
             const className = isCorrect ? 'snap-success' : 'snap-alert';
             layer.classList.add(className);       
@@ -111,13 +105,4 @@ export const renderMixedSpecimenQuestions = collection => {
             internalScoreHandler(score, question, answer, config);
         });
     });
-
-    const tiles = document.querySelectorAll('.js-tiles');
-
-    if(tiles) {
-        const name = document.querySelector('.carousel-item.active > div').dataset.title; 
-        const item = collection.items.find(i => i.name === name);
-        renderItemSpecimenTiles(item);
-    }
-
 };

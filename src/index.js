@@ -10,6 +10,7 @@ import 'ui/css/snapdragon.css';
 import 'ui/css/snapdragon-media.css';
 import 'ui/css/snapdragon-media-display.css';
 import 'ui/css/groups/test-card.css';
+import 'ui/css/groups/species-card.css';
 
 import { store } from 'redux/store';
 import { getIPLocation } from 'geo/geo';

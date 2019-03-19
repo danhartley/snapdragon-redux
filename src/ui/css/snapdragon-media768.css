@@ -1,12 +1,5 @@
 /* @media (min-width: 768px) {
 
-    body {
-        font-size: 16px;
-    }
-
-    h5 {
-        font-size: 1.1rem;
-    }
 
     div.taxon-data {
         margin: 0;
@@ -17,9 +10,7 @@
         height: 80vh;
     }
 
-    .left-grid, .right-grid {
-        grid-template-rows: 1fr .5rem 10fr 1fr;
-    }      
+    
 
     .species-table {
         font-size: .9rem;
@@ -86,18 +77,6 @@
         flex: auto;
     }
 
-    .grid {
-        grid-template-columns: 10fr .25rem 10fr;
-    }
-
-    .left-grid {
-        grid-column: 1;
-    }
-
-    .right-grid {
-        grid-column: 3;
-    }
-
     .tiles {
         height: 75%;
     }
@@ -115,15 +94,6 @@
     .squares { 
         height: 100%;
         grid-template-rows: 1fr 1fr 1fr;
-    }
-
-    .strips {
-        padding: 0 .25rem;
-    }
-
-    .strip {
-        margin: .5rem;
-        padding: .8rem 1.1rem;
     }
 
     .strip:hover div {
@@ -205,65 +175,13 @@
         max-width: 40vw;
     }
 
-    .lesson-plans .table-row th:nth-child(1), .lesson-plans .table-row th:nth-child(4),
-    .lesson-plans .table-row td:nth-child(1), .lesson-plans .table-row td:nth-child(4) {
-      flex: 1;
-      align-self: center;
-      display: flex;
-    }
-    
-    .lesson-plans .table-row th:nth-child(2),
-    .lesson-plans .table-row td:nth-child(2) {
-      flex: 4;
-    }
 
-    .lesson-plans .table-row th:nth-child(3), 
-    .lesson-plans .table-row td:nth-child(3) {
-        flex: 3;    
-    } 
-
-    .table-row td:nth-child(3) {
-        display: flex;
-        flex-direction: column;
-        font-size: .8rem;
-        justify-content: space-evenly;
-        align-items: flex-start;
-      }
-
-    .lesson-plans .table-row input {
-        height: 1.75rem;
-        width: 1.75rem;
-        margin: 0 0 0 1rem;
-    }
-
-    .lesson-plan-btn {
-        padding: 1rem 2rem;
-      }
 
     .flex-provider.skills, .species-card-wiki-entry,
     .collection-preview, .collection button, .collections-skills {
         display: inline-block;
     }
 
-
-#speciesCardModal .carousel-inner, #taxonCardModal .carousel-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  #speciesCardModal .carousel-inner .prev > span, #taxonCardModal .carousel-inner .prev > span {
-    margin: 0 0 0 .6rem;
-  }
-  
-  #speciesCardModal .carousel-inner .next > span, #taxonCardModal .carousel-inner .next > span {
-    margin: 0 .6rem 0 0;
-    cursor: pointer;
-  }
-
-    .left-grid {
-        display: grid;
-    }
 
     .left-body button, .right-body button, .dropdown-menu.show { 
         width: initial;
@@ -274,20 +192,9 @@
         justify-content: space-between;
     }
 
-    .bird-song div {
-        float: right;
-        min-width: 23.5rem;
-        max-width: 28.5rem;
-    }
 
-    #speciesCardModal .modal-content .snapdragon-container, #taxonCardModal .modal-content .snapdragon-container {  
-        height: 60vh;
-    }
     
-    .info.carousel.slide .carousel-item div {
-        padding: .5rem;
-        font-size: 1rem;
-    }
+
 
     .summary-scores {
         display: flex;
@@ -306,7 +213,7 @@
         font-size: 1.2rem;
     }
 
-    .mixed-specimens {
+    .test-card {
         color: var(--snap-text-medium-dark);
         padding: 0 .5rem;
         font-size: 1.2rem;
@@ -324,19 +231,19 @@
         align-items: center;
     }
 
-    .mixed-specimens .question {
+    .test-card .question {
         margin: 1rem 0;
         font-size: 2rem; 
     }
 
-    .mixed-specimens .question > span:nth-child(2), .block-container .question > span:nth-child(2) {
+    .test-card .question > span:nth-child(2), .block-container .question > span:nth-child(2) {
         font-size: .8rem;
         vertical-align: super;
         text-transform: initial;
         margin: -.25rem 0 0 0;
     }
 
-    .mixed-specimens > div:nth-child(2) {
+    .test-card > div:nth-child(2) {
         margin: 2rem 0 0 0;
     }
 
@@ -359,55 +266,24 @@
         margin: 0;
     }
 
-    .mixed-specimens .help-txt {
-        font-size: 1.1rem;
-        letter-spacing: .03rem;
-        margin: 1rem;
-    }
-
-    .mixed-specimens input[type="text"] {
-        width: 75%;
-        font-size: 1.5rem;
-        padding: .25rem;
-    }
-
-    .mixed-specimens button {
-        display: inline-block;
-        color: var(--snap-text-medium-dark);
-        background-color: var(--snap-landscape);
-        transition-duration: .5s;
-    }
 
     .margin-left {
         margin: 0 0 0 .5rem;
     }
     
-    .mixed-specimens button:hover {
+    .test-card button:hover {
         background-color: var(--snap-text-medium-light);
         color: var(--snap-body-bg);
     }
     
-    .mixed-specimens .small-icon {
+    .test-card .small-icon {
         font-size: .7rem;
         margin: 0 .25rem 0 0;
     }
 
-    .desaturate {
-        opacity: .6;
-        filter: grayscale(80%);
-    }
 
     .responsive-text-success span {
         color: var(--snap-text-dark);
-    }
-
-    .mixed-specimens li {
-        display: flex;
-        align-items: baseline;
-        letter-spacing: .01rem;
-        text-transform: capitalize;
-        font-size: 1rem;
-        letter-spacing: .03rem;
     }
 
     .answer-box-success, .answer-box-alert {
@@ -428,19 +304,6 @@
 
     .answer-box-alert > span:nth-child(2) {
         color: var(--snap-alert);
-    }
-
-    #speciesCardModal .modal-dialog, #taxonCardModal .modal-dialog {
-        min-width: 32rem;
-        max-width: 32rem;
-    }
-
-    .header-text {
-        font-size: 1rem;
-    }
-
-    .header > div:nth-child(2) {
-        font-size: .8rem;
     }
 
     .question-container {
@@ -475,11 +338,6 @@
         font-size: 2rem;
     }
     
-    .iconic-icon, #speciesCardModal .iconic-icon {
-        font-size: 2rem;
-        padding: 0.5rem;
-      }
-
     .rights-link > div > div, .rights-attribution > div > div:nth-child(1) {
         font-size: 1.5rem;
     }

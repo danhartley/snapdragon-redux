@@ -224,6 +224,9 @@ const portraitLesson1 = {
             name:'Level 1',
             layouts: [ 
                 mixedSpeciesMatch,
+                latinToCommonMatch,
+
+                
                 textCompleteGenus, // GOOD
                 textCompleteSpecies, // GOOD
                 genusEntry, // GOOD

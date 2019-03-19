@@ -129,7 +129,7 @@ table {
     }
     .scrollable {
         overflow-y: scroll;
-        height: 84vh;
+        height: 600px;
     }
   }
 
