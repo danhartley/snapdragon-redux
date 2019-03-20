@@ -26,7 +26,7 @@ export const renderMixedSpecimenQuestion = collection => {
     let parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    renderTemplate({ vernacularName: item.vernacularName, binomial: item.binomial, question: 'Find the species' }, template.content, parent);
+    renderTemplate({ vernacularName: item.vernacularName, binomial: item.binomial, question: 'Find the species', help: '(Click on the matching photo.)' }, template.content, parent);
 
     parent = document.querySelector('.js-test-card');
 

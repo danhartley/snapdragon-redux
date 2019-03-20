@@ -18,7 +18,7 @@ import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
-    const { config: configState, history, counter, enums, layout, score  } = store.getState();
+    const { config: configState, history, counter, enums  } = store.getState();
 
     let config = R.clone(configState);
     

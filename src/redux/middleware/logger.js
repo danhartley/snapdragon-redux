@@ -7,7 +7,7 @@ export const logger = store => next => action => {
     // console.log('next state', store.getState())
     // console.groupEnd(action.type)
 
-    console.clear();
+    // console.clear();
     console.log(`^^^ ${action.type}`);
   
     return result;

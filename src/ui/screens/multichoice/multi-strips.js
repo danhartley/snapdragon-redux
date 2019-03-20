@@ -4,7 +4,8 @@ import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { renderQuestionHeader } from 'ui/screens/common/question-header';
+import { renderIcon } from 'ui/helpers/icon-handler';
+import { species } from 'api/species';
 import { taxa } from 'api/snapdragon/taxa';
 import { epithets } from 'api/botanical-latin';
 import { getGlossary } from 'api/glossary/glossary';
@@ -29,10 +30,6 @@ export const renderMultiStrips = (collection) => {
     let parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    renderTemplate({ vernacularName: item.vernacularName, binomial: item.binomial, question: 'Match the name' }, template.content, parent);
-
-    renderQuestionHeader(document.querySelector('.js-question-container'), item, config);
-
     const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, collection.families));
 
     const familyFlavours = config.isPortraitMode 
@@ -48,12 +45,21 @@ export const renderMultiStrips = (collection) => {
         layout.screens.find(screen => screen.name === 'species-vernaculars') || 
         layout.screens.find(screen => screen.name === 'epithet') || 
         layout.screens.find(screen => screen.name === 'definition') || 
+        layout.screens.find(screen => screen.name === 'family') || 
         layout.screens.find(screen => screen.name === 'wildcard-match')
     }
 
     if(!screen) return;
 
-    const render = (questionValue, answers) => {
+    const render = (questionValue, answers, overrides) => {
+
+        const vernacularName = (overrides && overrides.vernacularName) ? overrides.vernacularName : item.vernacularName;
+        const binomial = (overrides && overrides.binomial) ? overrides.binomial : item.binomial;
+        const question = (overrides && overrides.question) ? overrides.question : 'Match the name';
+        
+        renderTemplate({ vernacularName, binomial, question, help: '(Click on the name below.)' }, template.content, parent);
+
+        const icon = renderIcon(item, document);
     
         parent = document.querySelector('.js-test-card');
 
@@ -88,7 +94,7 @@ export const renderMultiStrips = (collection) => {
         const question = item.name;
         const answers = itemProperties.answersFromList(itemProperties.itemNamesForGroups(items), question, number);
 
-        render(question, answers);
+        render(question, answers, { binomial: '--- ---', question: 'What is the latin name?' });
     }
 
     if(screen.name === 'species-vernaculars') {
@@ -99,7 +105,7 @@ export const renderMultiStrips = (collection) => {
         const question = item.vernacularName;   
         const answers = itemProperties.answersFromList(itemProperties.vernacularNamesForGroups(items, config), question, number);
 
-        render(question, answers);
+        render(question, answers, { vernacularName: '--- ---', question: 'What is the common name?' });
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
@@ -192,5 +198,33 @@ export const renderMultiStrips = (collection) => {
         const answers = utils.shuffleArray([question, ...alternatives]);
 
         render(question, answers);
+    }
+    if(screen.name === 'family') {
+
+        const indices = config.isPortraitMode ? [5,6] : [5,6];
+
+        const family = item.family;
+        const speciesFamilies = species.map(item => item.family).filter(utils.onlyUnique);
+        const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, speciesFamilies));
+        const otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name !== item.family));
+        const otherFamiliesLatinNames = otherFamilies.map(family => family.name);
+        const otherFamiliesCommonNames = otherFamilies.filter(family => family.names.find(name => name.language === config.language)).map(family => family.names[0].names[0]);
+        const familyTaxon = families.find(family => family.name === item.family); 
+        const commonFamilyName = familyTaxon ? itemProperties.getTaxonProp(familyTaxon, config.language, 'names', 'names', '0').names[0] : '';
+
+        let question, answers;
+
+        switch(screen.flavour) {            
+            case 'match-common-family-name-to-latin-family-name':
+                question = commonFamilyName;
+                answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
+                render(question, answers, { question: 'Match the family name' });
+            break;
+            case 'match-latin-family-name-to-common-family-name':
+                question = family;
+                answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
+                render(question, answers, { question: 'Match the family name' });
+            break;
+        } 
     }
 };

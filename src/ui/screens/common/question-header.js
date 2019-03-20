@@ -3,7 +3,7 @@ import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import questionHeaderTemplate from 'ui/screens/common/question-header-template.html';
 
-export const renderQuestionHeader = (parent, item, config) => {
+export const renderQuestionHeader = (parent, item, config, overrideVernacular, overrideBinomial) => {
 
     const template = document.createElement('template');
 
@@ -11,8 +11,8 @@ export const renderQuestionHeader = (parent, item, config) => {
 
     parent.innerHTML = '';
 
-    const vernacularName = itemProperties.getVernacularName(item, config);
-    const binomial = item.name;
+    const vernacularName = overrideVernacular || itemProperties.getVernacularName(item, config);
+    const binomial = overrideBinomial || item.name;
 
     renderTemplate({ vernacularName, binomial }, template.content, parent);
 

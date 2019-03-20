@@ -3,8 +3,7 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
-import { renderQuestionHeader } from 'ui/screens/common/question-header';
+import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import testCardTemplate from 'ui/screens/common/test-card-template.html';
 import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-questions-template.html';
@@ -56,9 +55,9 @@ export const renderMixedSpecimenQuestions = collection => {
     let parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    renderTemplate({ vernacularName: item.vernacularName, binomial: item.binomial, question: 'Find the species' }, template.content, parent);
+    renderTemplate({ vernacularName: item.vernacularName, binomial: item.binomial, question: 'Find the species', help: '' }, template.content, parent);
 
-    renderQuestionHeader(document.querySelector('.js-question-container'), item, config);
+    const icon = renderIcon(item, document);
  
     template.innerHTML = mixedSpecimenTemplate;
 

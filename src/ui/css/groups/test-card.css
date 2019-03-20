@@ -77,17 +77,12 @@
     margin: 1rem;
 }
 
-.test-card input[type="text"] {
-    width: 75%;
-    font-size: 1.5rem;
-    padding: .25rem;
-}
-
 .test-card button {
     display: inline-block;
     color: var(--snap-text-medium-dark);
     background-color: var(--snap-landscape);
     transition-duration: .5s;
+    width: 100%;
 }
 
 .test-card button:hover {
@@ -164,6 +159,34 @@
     align-items: center;
 }
 
+/* TEXT ENTRY */
+
+div.text-entry {
+    padding: 0;
+    position: relative;
+    margin: 1rem 0;
+    border: 0.05rem solid var(--snap-portrait);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+.text-entry input {
+    width: 100%;    
+    font-size: 1.5rem;
+    color: var(--snap-text-dark);
+  }
+  
+  .text-entry button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .text-entry .text-question {
+    padding: 0;
+  }
+
 @media (min-width: 768px) {
 
     .test-card-container .question-container {
@@ -184,6 +207,16 @@
 
     .test-card button {
         width: fit-content;
+    }
+
+    div.text-entry {
+        padding: 0.5rem;
+    }
+
+    .text-entry input {
+        width: 75%;
+        padding: 0.5rem;
+        border: 0.05rem solid var(--snap-border-dark);
     }
 }
 

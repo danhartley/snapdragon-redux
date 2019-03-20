@@ -68,11 +68,13 @@ const changeCollection = (lessonStateMode, collection, config, history, actionBu
                     collection.items = itemsToReview;
                     actions.boundChangeCollection({ config: config, collection });
                     actions.boundNextRound({ index: 0 });
+                    console.warn('lesson-handlers, review: boundChangeCollection');
                     break;
                 }
                 case 'learn-again': {
                     collection.items = collection.allItems;
                     actions.boundChangeCollection({ config, collection });
+                    console.warn('lesson-handlers, learn-again: boundChangeCollection');
                 }
             }            
             break;      

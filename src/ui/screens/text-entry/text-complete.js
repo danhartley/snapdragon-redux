@@ -4,11 +4,12 @@ import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { renderQuestionHeader } from 'ui/screens/common/question-header';
+import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { scoreHandler } from 'ui/helpers/handlers';
 
+import testCardTemplate from 'ui/screens/common/test-card-template.html';
 import completeTemplate from 'ui/screens/text-entry/text-complete-template.html';
 
 export const renderCompleteText = (collection) => {
@@ -23,27 +24,42 @@ export const renderCompleteText = (collection) => {
 
     const template = document.createElement('template');
 
-    template.innerHTML = completeTemplate;
+    let parent = DOM.rightBody;
+    parent.innerHTML = '';
 
-    let question, givenTaxon, genus, species;
+    template.innerHTML = testCardTemplate;
 
-    const vernacularName = item.vernacularName;
+    let question, genus, species, givenTaxon, vernacularName, binomial;
 
-    const title = 'Complete the latin name';
+    vernacularName = item.vernacularName;
+    binomial = item.name;
 
-    if(screen.type === 'text-complete-genus') {
+    // const question = 'Complete the latin name';
 
-        question = item.genus;
-        genus = '---';
-        species = item.species;
-        givenTaxon = 'genus';
-    } else if(screen.type === 'text-complete-species') {
-
-        question = item.species;
-        genus = item.genus;
-        species = '---';        
-        givenTaxon = 'species';
+    switch(screen.type) {
+        case 'text-complete-genus':
+            question = item.genus;
+            genus = '---';
+            species = item.species;
+            binomial = `--- ${item.species}`;
+            givenTaxon = 'genus';
+            break;
+        case 'text-complete-species':
+            question = item.species;
+            genus = item.genus;
+            species = '---';
+            binomial = `${item.genus} ---`;
+            givenTaxon = 'species';
+            break;
     }
+
+    renderTemplate({ vernacularName, binomial, question: 'Complete the latin name', help: '(Select the name below.)' }, template.content, parent);
+
+    const icon = renderIcon(item, document);
+
+    parent = document.querySelector('.js-test-card');
+
+    template.innerHTML = completeTemplate;
 
     const numerOfItems = config.isPortraitMode ? 4 : 5;
 
@@ -62,10 +78,7 @@ export const renderCompleteText = (collection) => {
 
     const answers = utils.shuffleArray(pool);
 
-    const parent = DOM.rightBody;
-    parent.innerHTML = '';
-
-    renderTemplate({ title, vernacularName, answers, genus, species }, template.content, parent);
+    renderTemplate({ genus, species, answers }, template.content, parent);
 
     const score = { itemId: item.id, binomial: item.name, question: item[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length, points: layout.points };
 
@@ -112,7 +125,5 @@ export const renderCompleteText = (collection) => {
             score.answer = answer;
             scoreHandler('block', score, updateScreen, config);
         });
-    });
-
-    renderQuestionHeader(document.querySelector('.js-question-container'), item, config);
+    });    
 };

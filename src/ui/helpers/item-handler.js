@@ -91,6 +91,7 @@ export async function itemHandler(collection, config, counter, callback) {
         collection.itemIndex = 0;
         collection.currentRound = 1;
 
+        console.warn('item-handler: boundChangeCollection');
         actions.boundChangeCollection({ config, collection });
     }
 
