@@ -31,7 +31,7 @@ export const renderMultiStrips = (collection) => {
 
     renderTemplate({ vernacularName: item.vernacularName, binomial: item.binomial, question: 'Match the name' }, template.content, parent);
 
-    renderQuestionHeader(document.querySelector('.js-question-container'), item, item.vernacularName);
+    renderQuestionHeader(document.querySelector('.js-question-container'), item, config);
 
     const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, collection.families));
 

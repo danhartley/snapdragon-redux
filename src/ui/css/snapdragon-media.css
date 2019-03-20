@@ -158,6 +158,10 @@
         height: 240px;
     }
 
+    .species-pending > div:nth-child(4) {
+        font-size: 1.6rem;
+      }
+
     .species-grid {
         width: 512px;
         display: grid;

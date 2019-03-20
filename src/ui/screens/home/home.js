@@ -68,6 +68,7 @@ export const renderHome = () => {
         const { collection, config, history } = store.getState();
         const lessonStateMode = 'restart-lesson';
         lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);        
+        subscription.remove(subscription.getByName('renderSpeciesGrid'));
     };
 
     const guideSummary = (speciesCount) => {

@@ -25,9 +25,11 @@ export const renderCompleteText = (collection) => {
 
     template.innerHTML = completeTemplate;
 
-    let question, givenTaxon, description, description2, genus, species;
+    let question, givenTaxon, genus, species;
 
     const vernacularName = item.vernacularName;
+
+    const title = 'Complete the latin name';
 
     if(screen.type === 'text-complete-genus') {
 
@@ -35,24 +37,12 @@ export const renderCompleteText = (collection) => {
         genus = '---';
         species = item.species;
         givenTaxon = 'genus';
-        if(config.isPortraitMode) {
-            description = `Complete the latin name for a ${vernacularName}.`            
-        } else {
-            description = `What is the genus of a ${vernacularName}?`;
-            description2 = 'Complete the latin name';
-        }
     } else if(screen.type === 'text-complete-species') {
 
         question = item.species;
         genus = item.genus;
         species = '---';        
         givenTaxon = 'species';
-        if(config.isPortraitMode) {
-            description = `Complete the latin name for a ${vernacularName}.`
-        } else {
-            description = `What is the species of a ${vernacularName}?`;
-            description2 = 'Complete the latin name';
-        }
     }
 
     const numerOfItems = config.isPortraitMode ? 4 : 5;
@@ -75,7 +65,7 @@ export const renderCompleteText = (collection) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    renderTemplate({ description, description2, vernacularName, answers, genus, species }, template.content, parent);
+    renderTemplate({ title, vernacularName, answers, genus, species }, template.content, parent);
 
     const score = { itemId: item.id, binomial: item.name, question: item[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length, points: layout.points };
 
@@ -124,5 +114,5 @@ export const renderCompleteText = (collection) => {
         });
     });
 
-    renderQuestionHeader(document.querySelector('.js-question-container'), item, vernacularName);
+    renderQuestionHeader(document.querySelector('.js-question-container'), item, config);
 };

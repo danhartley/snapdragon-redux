@@ -56,7 +56,6 @@ export const renderMixedSpecimenImages = collection => {
     renderTemplate({ images }, template.content, parent);
 
     const callback = (score, scoreUpdateTimer) => {
-        console.log(score);
         listenersToUserAnswer.forEach(listener => listener(score, scoreUpdateTimer));
     };
 

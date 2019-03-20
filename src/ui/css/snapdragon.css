@@ -719,37 +719,9 @@ a.dropdown-item {
   color: var(--snap-iconic-icon-header);
 }
 
-.test-card-container, .block-container {
+.block-container {
   position: relative;
   justify-content: flex-start;
-}
-
-.test-card-container .action-update-container {
-  position: absolute;
-  width: initial;
-  bottom: 1rem;
-  right: 1rem;
-}
-
-.test-card .question {
-  margin: .5rem;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.07rem;
-  color: var(--snap-text-medium-dark);
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  align-items: center;
-}
-
-.text-question {
-  position: absolute;
-  left: 1rem;
-  bottom: 4rem;
-  padding: 0;
-  min-height: 2rem;
-  padding: 0 0 0 0.5rem;
 }
 
 .species-common-name {
@@ -1064,6 +1036,11 @@ span.correct {
   border: 0.2rem solid var(--snap-success);
 }
 
+.layer.snap-success {
+  border: none;
+  color: rgb(40, 167, 69,.5);
+}
+
 .btn.btn-light.snap-success {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-success) !important;
@@ -1076,6 +1053,11 @@ span.correct {
 
 .snap-alert {
   border: 0.2rem solid var(--snap-alert);
+}
+
+.layer.snap-alert {
+  border: none;
+  color: rgb(255, 0, 0,.5);
 }
 
 .btn.btn-light.snap-alert {
@@ -1201,20 +1183,6 @@ span.correct {
   padding: 0;
 }
 
-.text-question .icon {
-  font-size: 1.5rem;
-  margin: 0;
-}
-
-.text-question span:nth-child(2),
-.text-question span:nth-child(3) {
-  vertical-align: text-bottom;
-}
-
-.text-question span:nth-child(2) {
-  margin: 0 0 0 0.25rem;
-}
-
 .answer-container .icon-container {
   position: relative;
   display: inline-block;
@@ -1273,11 +1241,16 @@ span.correct {
   cursor: pointer;
 }
 
-.right-body button,
+.species-card-images + div {
+  margin: 1rem .5rem 0 .5rem;
+  font-size: .9rem;
+}
+
+/* .right-body button,
 .right-body button,
 .dropdown-menu.show {
   width: 100%;
-}
+} */
 
 .modal-dialog {
   margin: 2rem auto;
@@ -1835,7 +1808,7 @@ th .custom-control-label::before, .custom-control-label::before {
 .species-pending > div:nth-child(4) {
   font-style: italic;
   padding: 1rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 .species-pending > div:nth-child(1) {

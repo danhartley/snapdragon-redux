@@ -47,7 +47,7 @@ const landscapeLesson1 = {
             description: 'Species recognition',
             layouts: [ 
 
-                mixedSpecimenImages, // GOOD
+                mixedSpecimenImages, // UPDATED (ICON CHANGE COLOUR IN LIST?)
                 // textCompleteGenus, // GOOD
                 // textCompleteSpecies, // GOOD
                 // genusEntry, // GOOD

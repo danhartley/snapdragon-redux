@@ -84,7 +84,7 @@ export const renderInput = (screen, question) => {
 
     document.querySelector('.js-txt-input').focus();
 
-    renderQuestionHeader(document.querySelector('.js-question-container'), item, item.vernacularName);
+    renderQuestionHeader(document.querySelector('.js-question-container'), item, config);
 
     document.querySelector('.js-continue-lesson-btn').addEventListener('click', event => {
         window.clearTimeout(boundScore.scoreUpdateTimer);
