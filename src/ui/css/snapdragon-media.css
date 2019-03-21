@@ -104,13 +104,17 @@
         height: 300px;
     }
 
+    .species-grid-container {
+        display: flex;
+        align-items: center;
+    }
+
     .species-grid {
         width: 389px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         height: 600px;
         overflow: hidden;
-        /* margin: auto; */
     }
 
     .species-grid img {

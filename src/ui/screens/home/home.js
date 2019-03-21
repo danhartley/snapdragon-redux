@@ -49,10 +49,10 @@ export const renderHome = counter => {
     const prepareHandler = () => {
         const { config, collections } = store.getState();  
         const id = parseInt(config.collection.id);
-        const collection = collections.find(c => c.id === id);
-        
+        const collection = collections.find(c => c.id === id);        
         renderSpeciesCollectionList(collection);
         actionLink.disabled = true;
+        actionLink.classList.add('disabled');        
     };
 
     const lessonHandler = () => {
