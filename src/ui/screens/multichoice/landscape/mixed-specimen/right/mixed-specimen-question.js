@@ -3,8 +3,9 @@ import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { returnIcon } from 'ui/helpers/icon-handler';
+import { renderIcon } from 'ui/helpers/icon-handler';
 import { species } from 'api/species';
-import { renderQuestionHeader } from 'ui/screens/common/question-header';
+// import { renderQuestionHeader } from 'ui/screens/common/question-header';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { listenToImageSelection, listenToUserAnswer, renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -37,7 +38,9 @@ export const renderMixedSpecimenQuestion = collection => {
 
     renderTemplate({ instructions, binomial }, template.content, parent);
 
-    const headerIconContainer = renderQuestionHeader(document.querySelector('.js-question-container'), item, config);
+    const icon = renderIcon(item, document);
+
+    // const headerIconContainer = renderQuestionHeader(document.querySelector('.js-question-container'), item, config);
 
     const speciesShown = document.querySelector('.js-images-names-txt');
 

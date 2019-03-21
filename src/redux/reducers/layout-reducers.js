@@ -23,14 +23,14 @@ export const lessonPlan = (state = null, action) => {
 export const layout = (state = null, action) => { 
     switch(action.type) {
         case types.NEXT_LAYOUT:
-            // if(action.data.screens && action.data.screens[1]) {
-            //     console.clear();
-            //     console.log('Layout name: ', action.data.name);
-            //     console.log('Screen name: ', action.data.screens[1].name);
-            // }
-            // if(action.data.screens[1].taxon) {
-            //     console.log('Taxon name: ', action.data.screens[1].taxon);
-            // }
+            if(action.data.screens && action.data.screens[1]) {
+                console.clear();
+                console.log('Layout name: ', action.data.name);
+                console.log('Screen name: ', action.data.screens[1].name);
+            }
+            if(action.data.screens[1].taxon) {
+                console.log('Taxon name: ', action.data.screens[1].taxon);
+            }
             return action.data;
         default: 
             return state;

@@ -47,6 +47,7 @@ const landscapeLesson1 = {
             description: 'Species recognition',
             layouts: [ 
 
+                mixedSpecimenImages, // UPDATED (ICON CHANGE COLOUR IN LIST?)
                 traitPropertyMatch,
                 // multiSpecimenCommonMatch, ?????
 
@@ -54,7 +55,6 @@ const landscapeLesson1 = {
                 speciesEntry,
                 speciesGenusEntry,
 
-                mixedSpecimenImages, // UPDATED (ICON CHANGE COLOUR IN LIST?)
                 textCompleteGenus, // GOOD
                 textCompleteSpecies, // GOOD
                 genusEntry, // GOOD
