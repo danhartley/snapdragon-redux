@@ -16,10 +16,13 @@ const add = (subscription, domain, role, layout) => {
 };
 
 const remove = subscription => {
-    console.log(`*** Calling unsubscribe on name: ${subscription.name}, role: ${subscription.role}`)
-    subscription.unsubscribe();
-    subscriptions = subscriptions.filter(sub => sub.name !== subscription.name);
-    // console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: red;");
+    
+    if(subscription) {
+        subscription.unsubscribe();
+        console.log(`*** Calling unsubscribe on name: ${subscription.name}, role: ${subscription.role}`);
+        subscriptions = subscriptions.filter(sub => sub.name !== subscription.name);
+        // console.log(`%cmy subs: ${subscriptions.map(s=>s.name).join(', ')}`, "color: red;");
+    }
     return subscriptions;
 };
 

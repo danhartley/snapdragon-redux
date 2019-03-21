@@ -24,7 +24,7 @@ export const renderWikiModal = (item, wikiLink, config) => {
                 ? `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="data:text/html,${wiki}"></iframe>`          
                 : `<iframe class="modal-iframe" title="Wikipedia page for the species ${item.name}" src="${wikiLink.querySelector('span').dataset.src}"></iframe>`;
                 
-            document.querySelector('#externalPageModal').focus();
+            document.querySelector('#wikiModal').focus();
         });
     }
 };

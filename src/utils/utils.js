@@ -12,7 +12,6 @@ Array.prototype.concatAll = function() {
   
   const log = msg => { 
       return array => {
-        console.log(msg, array); 
         return array; 
       }
     };

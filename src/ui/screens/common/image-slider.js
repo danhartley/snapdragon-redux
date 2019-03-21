@@ -40,7 +40,7 @@ const carouselControlHandler = event => {
         const image = activeNode.dataset;        
         handleRightsAttribution(image, activeNode);
 
-        const { collection } = store.getState();
+        const { collection, config } = store.getState();
 
         const tiles = document.querySelectorAll('.js-tiles');
 
@@ -49,7 +49,8 @@ const carouselControlHandler = event => {
         if(tiles) {
             const name = document.querySelector('.carousel-item.active > div').dataset.title; 
             const item = collectionItems.find(i => i.name === name);
-            renderItemSpecimenTiles(item);
+            if(config.isLandscapeMode)
+                renderItemSpecimenTiles(item);
         }
     },750);    
 };

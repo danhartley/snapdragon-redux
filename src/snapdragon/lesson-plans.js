@@ -47,13 +47,17 @@ const landscapeLesson1 = {
             description: 'Species recognition',
             layouts: [ 
 
-                mixedSpecimenImages, // GOOD
-                // textCompleteGenus, // GOOD
-                // textCompleteSpecies, // GOOD
-                // genusEntry, // GOOD
-                // speciesEntry, // GOOD
-                // speciesGenusEntry, // GOOD
-                // commonEntry, // GOOD
+                genusEntry,
+                speciesEntry,
+                speciesGenusEntry,
+
+                mixedSpecimenImages, // UPDATED (ICON CHANGE COLOUR IN LIST?)
+                textCompleteGenus, // GOOD
+                textCompleteSpecies, // GOOD
+                genusEntry, // GOOD
+                speciesEntry, // GOOD
+                speciesGenusEntry, // GOOD
+                commonEntry, // GOOD
 
                 speciesRevision, // excluded in lesson-builder                  
                 // multiSpecimenCommonMatch, // only works portrait as in landscape the photo is the same
@@ -223,10 +227,18 @@ const portraitLesson1 = {
         {   id: 1,
             name:'Level 1',
             layouts: [ 
-                speciesRevision, 
-                latinToCommonMatch, 
+                
+                genusEntry,
+                speciesEntry,
+                speciesGenusEntry,
+                
                 mixedSpeciesMatch,
-                commonToLatinMatch 
+                latinToCommonMatch,
+                commonToLatinMatch,
+                textCompleteGenus,                
+                textCompleteSpecies,
+                
+                commonEntry, // GOOD
             ],
             wildcardLayouts : [],
             reviewLayouts: [ latinToCommonMatch ]

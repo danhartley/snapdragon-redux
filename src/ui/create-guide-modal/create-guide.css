@@ -1,0 +1,681 @@
+/* CREATE GUIDE */
+
+#createGuide .modal-dialog {
+    width: 100%;
+    margin: 0rem auto;
+  }
+  
+  #createGuide .modal-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: var(--secondary);
+  }
+  
+  #createGuide button.close {
+    width: fit-content;
+  }
+  
+  #createGuide .modal-title {
+    flex: auto;
+    display: flex;
+    align-items: center;
+    color: rgb(250, 250, 250);
+    text-transform: uppercase;
+  }
+  
+  #createGuide .modal-title div { 
+    font-size: 1.3rem;
+    letter-spacing: .05rem;
+  }
+  
+  #createGuide .modal-title div:nth-child(1) {
+    flex: auto;
+    font-size: .8rem;        
+  }
+  
+  #createGuide .modal-title div:nth-child(2) {
+    flex: initial;
+    margin: 0 .5rem 0 0;
+    font-size: 1rem;
+  }
+  
+  #createGuide .modal-header .close {
+    flex: initial;
+    margin: 0;
+    display: inline-block;
+    font-size: 2rem;
+    color: rgb(250, 250, 250);
+    text-shadow: none;
+    padding: .5rem;
+  }
+  
+  #createGuide .modal-content {
+    background-color: initial;
+  }
+  
+  #createGuide .modal-body {
+    background-color: var(--snap-list-alt-background);
+  }
+  
+  #createGuide .modal-body .guide-text {
+    font-size: 1.1rem;
+    margin: .75rem 0 .5rem 0;
+    letter-spacing: .03rem;
+    color: var(--snap-text-medium-light);
+    font-style: italic;
+  }
+  
+  #createGuide .modal-body .guides .guide-text {
+    margin: .5rem 0 .25rem 0;
+  }
+  
+  #createGuide .modal-body .guide-sub-text {
+    font-size: 1rem;
+    margin: 0 0 .5rem 0;
+  }
+  
+  #createGuide .modal-body.create-guide-body {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+  }
+  
+  #createGuide .modal-body.create-guide-body > div {
+    flex: auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  #createGuide .modal-body.create-guide-body > div.create-guide-action {
+    flex-direction: column;
+    align-items: initial;
+    position: relative;
+  }
+  
+  #createGuide .create-guide-progress {
+    min-height: 1.5rem;
+    max-height: 1.5rem;
+  }
+  
+  #createGuide .create-guide-navigation {
+    min-height: 3rem;
+    max-height: 3rem;
+  }
+  
+  #createGuide .modal-body .create-guide-progress > div {
+    display: flex;
+    align-items: center;
+    border-bottom: .05rem solid lightgray;
+    padding: 0 0 .5rem 0;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: .9rem;
+  }
+  
+  #createGuide .modal-body .create-guide-progress > div div {
+    flex: auto;
+    line-height: 2rem;
+    text-align: center;
+    letter-spacing: .08rem;
+  }
+  
+  #createGuide .modal-body .btn-modal {
+    background-color: var(--snap-list-bg);    
+  }
+  
+  #createGuide .modal-body .create-guide-progress > div > div {
+    border-right: .005rem solid var(--snap-border-dark);
+  }
+  
+  #createGuide .modal-body .create-guide-progress > div > div:last-child {
+    border-right: none;
+  }
+  
+  #createGuide .modal-body .create-guide-progress .completed {
+    background-color: lightgray;
+  }
+  
+  #createGuide .modal-body .create-guide-progress .active {
+    color: rgb(250, 250, 250);
+    background-color: var(--snap-collection);        
+  }
+  
+  #createGuide .modal-body .create-guide-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--snap=--snap-text-dark);
+    background-color: var(--snap-filters-ctrl);
+  }
+  
+  #createGuide .modal-body .create-guide-navigation > div > div {
+    display: flex;
+    align-items: center;        
+  }
+  
+  #createGuide .modal-body .create-guide-navigation > div:nth-child(1) > div svg {
+    font-size: 2rem;
+    margin: 0 .25rem 0 .5rem;
+  }
+  
+  #createGuide .modal-body .create-guide-navigation > div:nth-child(2) > div svg {
+    font-size: 2rem;
+    margin: 0 .5rem 0 .25rem;
+  }
+  
+  #createGuide  .modal-body .create-guide-navigation > div:nth-child(1),
+  #createGuide .modal-body .create-guide-navigation > div:nth-child(2) {
+    color: var(--snap-text-dark);
+    cursor: pointer;
+  }
+  
+  #createGuide .modal-body .create-guide-navigation > div:nth-child(2).disabled {
+    color: gray;
+    pointer-events: none;
+  }
+  
+  #createGuide .modal-body .create-guide-navigation > div:nth-child(1):hover,
+  #createGuide .modal-body .create-guide-navigation > div:nth-child(2):hover {
+    color: rgb(250, 250, 250);
+  }
+  
+  #createGuide .modal-body .location .current {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+  }
+  
+  #createGuide .modal-body .chosen {
+    position: absolute;
+    bottom:.5rem;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  #createGuide .modal-body .chosen-inat {
+    margin: 0;
+  }
+  
+  #createGuide .modal-body .chosen > div > span:nth-child(1), 
+  #createGuide .modal-body .chosen-inat span:nth-child(1) {
+    font-size: .8rem;
+    margin: 0 .25rem 0 0;
+    text-transform: uppercase;
+    border-bottom: 1px solid gray;
+    vertical-align: middle;
+    letter-spacing: .03rem;
+  }
+  
+  #createGuide .modal-body .chosen span:nth-child(2),
+  #createGuide .modal-body .chosen-inat span:nth-child(2) {
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--snap-collection-active);
+  }
+  
+  #createGuide .modal-body .chosen > div span:nth-child(2) > span {
+    margin: 0 .25rem;
+  }
+  
+  #createGuide .modal-body .save-your-changes {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 2.5rem;
+  }
+  
+  #createGuide .modal-body .save-your-changes button {
+    margin: 0 1rem 0 0;
+  }
+  
+  #createGuide .modal-body .saved {
+    color: var(--snap-green-ident);
+    font-size: 1.3rem;
+    font-family: serif;
+    font-style: italic;
+  }
+  
+  #createGuide .modal-body .actions > div:first-child {
+    display: flex;
+  }
+  
+  #createGuide .modal-body button {
+    display: inline-block;
+    margin: 0;
+    background-color: var(--snap-list-bg);
+    color: rgb(250, 250, 250);
+    letter-spacing: .05rem;
+  }
+  
+  #createGuide .modal-body .inat-location-location button {
+    margin: 0 .5rem 0 0;
+  }
+  
+  #createGuide .modal-body button:hover {
+    color: lightgray;
+  }
+  
+  #createGuide .modal-body button:disabled {
+    color: var(--snap-text-dark);
+  }
+  
+  #createGuide .modal-body button.js-set-inat-identity-btn {
+    color: white;        
+    background-color: var(--snap-link);
+  }
+  
+  #createGuide .inat-location-place .custom-checkbox {
+    position: relative;
+    margin: .5rem 0 0 0;
+  }
+  
+  #createGuide .inat-location-place .custom-control-label {
+    vertical-align: text-top;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  #createGuide .guides {
+    display: flex;
+    flex-direction: column;
+    margin-top: -.5rem;
+  }
+  
+  #createGuide .guides .months {
+    font-size: 1.4rem;
+    margin: 1rem 0 0 0;
+    letter-spacing: .05rem;
+    font-family: serif;
+    font-variant-caps: small-caps;
+  }
+  
+  #createGuide .guides .months span:nth-child(2) {
+    margin: 0 0 0 .5rem;        
+  }
+  
+  #createGuide #inat-place {
+    width: 100%;
+    margin: .5rem 0;
+  }
+  
+  #createGuide #inat-place::placeholder {
+    display: inline;
+  }
+  
+  #createGuide .guides .inat-entry, #createGuide .guides input[type="text"] {
+    width: 100%;
+    margin: 0 0 .25rem 0;
+  }
+
+  /* SLIDER */
+
+.create-guide-action .range-slider {
+    display: flex;
+    justify-content: space-between;
+    font-size: .9rem;
+    padding: 0;
+    margin: .5rem 0 0 0; 
+  }
+  
+  .create-guide-action .range-slider.disabled {
+    color: var(--secondary);
+  }
+  
+  .create-guide-action .range-slider span {
+    margin: 0;
+    width: 50%;
+  }
+  
+  .create-guide-action .range-slider > span:nth-child(2) {  
+    width: fit-content;
+    margin: 0;
+  }
+  
+  .range-limits {
+    display: none;
+  }
+  
+  .create-guide-action .set-range-input {
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .create-guide-action .range-slider.disabled .set-range-input {
+    pointer-events: none;
+  }
+  
+  /* SNAPDRAGON SWITCH */
+  
+  .snapdragon-switch {
+    width: 3.6rem;
+    height: 2rem;
+    padding: .2rem;
+    border-radius: .2rem;
+    cursor: pointer;
+    margin: 0 .75rem;
+    position: relative;
+    transition: all 1s ease;
+  }
+  
+  .snapdragon-switch div {
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: .2rem;
+    background-color: var(--snap-collection);
+    transition-property: all;
+    transition-duration: .4s;
+    transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+    transition-delay: 0s;
+    position: absolute;
+  }
+  
+  .snapdragon-switch .embedded-switch {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .snapdragon-switch.left {        
+    background-color: var(--snap-text-medium-dark);        
+  }
+  
+  .snapdragon-switch.left div {
+    transform: translateX(0);
+  }
+  
+  .snapdragon-switch.right {        
+    background-color: var(--snap-container-background);
+  }
+  
+  .snapdragon-switch.right div {
+    transform: translateX(1.4rem);
+  }
+  
+  /* INAT SWITCH */
+  
+  .inat.inat-switch > div {
+    margin: .25rem;
+  }
+  
+  .inat-switch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0 .5rem 0;
+    background-color: var(--snap-text-medium-light);
+    color: white;
+    padding: .5rem 1rem;
+    width: fit-content;
+    border-radius: .2rem;
+    background-color: rgb(110, 138, 49);
+    letter-spacing: .05rem;
+    width: 100%;
+  }
+  
+  .guides .inat .inat-switch {
+    flex-direction: column;
+  }
+  
+  .inat-switch .embedded-switch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .inat-switch.location, .inat-switch.inat, .inat-switch.season {
+    background-color: var(--snap-list-bg);
+  }
+  
+  /* AUTOCOMPLETE */
+  
+  #inat-place.active {
+    border: .1rem solid var(--snap-list-bg);
+  }
+  
+  #inat-place-autocomplete, #inat-identity-autocomplete {
+    z-index: 9999;
+    position: absolute;
+    padding: 0 .25rem;
+    color: var(--snap-modal-title);
+    background-color: rgb(250, 250, 250);
+    letter-spacing: .04rem;
+    border: .05rem solid lightgray;
+  }
+  
+  #inat-place-autocomplete {
+    margin: 0 0 0 2.5rem;
+  }
+  
+  #inat-place-autocomplete > div, #inat-identity-autocomplete div {
+    padding: .25rem;
+  }
+  
+  #inat-place-autocomplete .selected, #inat-identity-autocomplete .selected {
+    color: var(--snap-dd-non-taxa-bg-hover);
+    background-color: var(--snap-text-medium-dark);
+  }
+  
+  #place span {
+    margin: 0 .25rem 0 0;
+  }
+
+  /* CATEGORIES */
+
+  .iconic-taxa-categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+    margin: 1rem 0 0 0;
+  }
+  
+  .iconic-taxa-categories > div {
+    display: flex;
+  }
+  
+  .iconic-taxa-categories > div > div:nth-child(1) {
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    margin: 0 0.5rem 1rem 0;
+    cursor: pointer;
+  }
+  
+  .iconic-taxa-categories > div > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+  }
+  
+  .iconic-taxa-selected {
+    color: var(--snap-lesson);
+  }
+  
+  .iconic-taxa-categories svg, .iconic-taxa-categories-selected svg {
+    width: 20px;
+    height: 20px;
+    margin: 0.25rem 0 0 0;
+  }
+  
+  .iconic-taxa-categories-selected svg {
+    vertical-align: -.125em;
+  }
+  
+  .iconic-taxa-categories-selected svg g {
+    fill: var(--snap-collection-active);
+  }
+  
+  .mushroom-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: black;
+  }
+  
+  .iconic-taxa-categories .svg-inline--fa.fa-w-16 {
+    width: 20px;
+  }
+  
+  .mushroom-icon-header svg {
+    width: 32px;
+    height: 32px;
+    fill: var(--snap-iconic-icon-header);
+  }
+  
+  .svg-icon {
+    margin: 0.25rem 0 0;
+  }
+  
+  .svg-icon-selected {
+    fill: var(--snap-success);
+  }  
+  
+  @media (min-width: 1024px) {
+
+    #createGuide .modal-body .btn-modal {
+        width: fit-content;
+      }
+
+    #createGuide .modal-dialog {
+        width: 60%;
+        max-width: 800px;
+        margin: 2rem auto;
+    }
+
+    #createGuide .modal-body.create-guide-body {
+        min-height: 32rem;
+    }
+
+    #createGuide .modal-title div:nth-child(1) {
+        flex: auto;
+        font-size: 1.1rem;        
+    }
+
+    #createGuide .modal-header .close {
+        margin: 0 0 0 .5rem;
+    }
+
+    #createGuide .create-guide-progress, #createGuide .create-guide-navigation {
+        max-height: 4rem;
+    }
+
+    #createGuide .modal-body .create-guide-progress > div div {
+        line-height: 3.45rem;
+    }
+
+    #createGuide .modal-body .guide-text {
+        font-size: 1.6rem;
+    }
+
+    #createGuide .modal-body button {
+        margin: 0 0 0 .5rem;
+    }
+
+    #createGuide .inat-location-place .custom-checkbox {
+        margin: 0 0 0 .5rem;
+    }
+
+    #createGuide .guides .inat-entry {
+        display: flex;
+        font-size: 1.1rem; 
+        align-items: center;
+        margin: 0 0 0 1rem;
+    }
+
+    #createGuide .guides input[type="text"] {
+        margin: 0 .5rem 0 0;
+        height: 1.75rem;
+        color: var(--snap-text-medium-dark);
+        padding: 0 .1rem;
+    }
+
+    #createGuide .guides .inat .inat-switch {
+        flex-direction: row;        
+    }
+
+    #createGuide .inat-switch {
+        width: fit-content;
+    }
+
+    #createGuide #inat-place {
+        width: fit-content;
+        margin: 0;
+      }
+
+    #createGuide #inat-place::placeholder {
+        color: white;
+    }
+
+    #inat-place, #inat-place-id {
+        margin: 0 .5rem  0 0;
+        width: 20rem;        
+    }
+
+    #createGuide .actions label {
+        margin: 0;
+    }
+
+    #createGuide .create-guide-action .set-range-input {
+        width: 15rem;
+    }
+
+    #createGuide .guides .inat-entry, #createGuide .guides input[type="text"] {
+        width: fit-content;
+    }  
+
+    /* SLIDER */
+    
+    .create-guide-action .range-slider {
+        display: block;
+        font-size: initial;
+        padding: .25rem;
+    }
+
+    .create-guide-action .range-slider span {
+        margin: 0 .5rem 0 0;
+    }
+
+    #createGuide .create-guide-action .range-slider > span:nth-child(2) {
+        width: fit-content;
+        border: .05rem solid lightgray;
+        padding: .5rem;
+        margin: 0;
+    }
+
+    .range-limits {
+        display: initial;
+    }
+
+    /* SNAPDRAGON SWITCH */
+
+    .snapdragon-switch .embedded-switch {
+        display: inline;
+    }
+
+    .iconic-taxa-categories {
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 0;
+    }
+
+    .iconic-taxa-categories > div > div:nth-child(1) { 
+        margin: 0 0.5rem 0.5rem 0;
+    }
+     
+    .inat-location-place {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: .5rem 0 0 0;
+    }
+
+    .inat-location-place > div:nth-child(2) {
+        margin: 0 0 0 .5rem;
+    }
+
+    .inat.inat-switch > div {
+        margin: 0;
+    }
+
+  }

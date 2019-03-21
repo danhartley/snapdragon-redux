@@ -16,15 +16,13 @@ import { renderCultivarCard } from 'ui/screens/cards/cultivar-card';
 import { renderWildcard } from 'ui/screens/cards/wildcard-card';
 import { renderSpecimenMatch } from 'ui/screens/multichoice/visual-match';
 import { renderDefinitionCard } from 'ui/screens/cards/definition-card';
-import { renderMixedSpecimenTiles } from 'ui/screens/multichoice/portrait/mixed-specimen-tiles';
-import { renderMixedSpecimenQuestions } from 'ui/screens/multichoice/portrait/mixed-specimen-questions';
+import { renderMixedSpecimenQuestions } from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-questions';
 import { renderNonTaxonCardSpecimenTiles } from 'ui/screens/cards/non-taxon-card-specimen-tiles';
 
 import { renderMixedSpecimenQuestion } from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question';
 import { renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
 
 const functions = [
-    { name: 'mixed-specimen-tiles', func: renderMixedSpecimenTiles },
     { name: 'mixed-specimen-questions', func: renderMixedSpecimenQuestions },
     { name: 'non-taxon-specimen-tiles', func: renderNonTaxonCardSpecimenTiles },
     { name: 'text-entry', func: renderTextEntry },
@@ -40,7 +38,8 @@ const functions = [
     { name: 'leaf-text', func: renderNameEntry },
     { name: 'epithet', func: renderMultiStrips },
     { name: 'definition', func: renderMultiStrips },
-    { name: 'family', func: renderRadioButtons },
+    { name: 'family', func: renderMultiStrips },
+    // { name: 'family', func: renderRadioButtons },
     { name: 'cultivar-match', func: renderRadioButtons },
     { name: 'family-strips', func: renderMultiStrips },
     { name: 'taxon-card', func: renderTaxonCard },

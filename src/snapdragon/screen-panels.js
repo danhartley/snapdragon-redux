@@ -55,7 +55,7 @@ const specimenImages = {
   
   const mixedSpecimenQuestions = {
     name: 'mixed-specimen-questions',
-    domain: 'ui'
+    domain: 'collection'
   };
   
   const command = {

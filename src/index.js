@@ -8,9 +8,9 @@ import { utils } from 'utils/utils';
 import 'ui/css/snapdragon-colours.css';
 import 'ui/css/snapdragon.css';
 import 'ui/css/snapdragon-media.css';
-import 'ui/css/snapdragon-media768.css';
-import 'ui/css/snapdragon-media1200.css';
 import 'ui/css/snapdragon-media-display.css';
+import 'ui/css/groups/test-card.css';
+import 'ui/css/groups/species-card.css';
 
 import { store } from 'redux/store';
 import { getIPLocation } from 'geo/geo';
@@ -35,6 +35,7 @@ setTimeout( () => {
         const { config, counter: currentCounter, collection } = store.getState();
 
         config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
+        // config.isPortraitMode = window.matchMedia("(max-width: 1023px)").matches;
         config.isLandscapeMode = !config.isPortraitMode;
 
         const counter = currentCounter ? { ...currentCounter } : { index: null };
@@ -88,7 +89,7 @@ setTimeout( () => {
         }
     }
     catch(e) {
-        persistor.purge();
-        window.location.reload(true);
+        // persistor.purge();
+        // window.location.reload(true);
     }
 });

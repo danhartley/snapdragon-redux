@@ -1,24 +1,8 @@
-@media (max-width: 768px) {
-    .modal-iframe  {
-        margin: 0;
-        padding: 0;
-        border: none;
-        resize: both;
-        overflow-y: scroll;
-        width: 1px;
-        min-width: 298px;
-        max-width: 298px;
-        min-height: 10px;
-        padding: 10px 0px 10px 10px;
-        height: 300px;
-    }
-}
-
 @media (min-width: 320px) {
-    .squares { 
+    /* .squares { 
         height: 60%;
     }
-    
+     */
     .right {  
         color: var(--snap-text-dark);
         background-color: var(--snap-success);
@@ -38,9 +22,6 @@
     body {
         font-size: 18px;
     }
-    .strip div {
-        font-size: 1.1rem;
-    }
 }
 @media (min-width: 414px) {
     body {
@@ -55,88 +36,96 @@
 }
 
 @media (min-height: 640px) {
+    
+}
+
+/* iPHONE 6,7,8 */
+
+@media (max-width:375px) and (min-height:667px) {
     .strips {
-        margin: 1rem;
+        grid-template-columns: 1fr;
+    }
+    .strip {
+        padding: .75rem;
+    }
+}
+
+/* iPHONE 6,7,8 PLUS, iPHONE X, GALAXY S9/S9+ */
+
+@media  (max-width:414px) and (min-height:736px),
+        (max-width:375px) and (min-height:812px),
+        (max-width:360px) and (min-height:740px) {
+    .strips {
+        grid-template-columns: 1fr;
+    }
+    .strip {
+        font-size: 1.2rem;
+        padding: .65rem;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .grid {
+        grid-template-columns: 10fr .25rem 10fr;
+    }
+
+    .left-grid {
+        grid-column: 1;
+    }
+
+    .right-grid {
+        grid-column: 3;
+    }
+
+    .left-grid {
+        display: grid;
+    }    
+
+    .header-text {
+        font-size: 1rem;
+    }
+
+    .header > div:nth-child(2) {
+        font-size: .8rem;
+    }
+
+    .modal-iframe  {
+        margin: 0;
+        padding: 0;
+        border: none;
+        resize: both;
+        overflow-y: scroll;
+        width: 1px;
+        min-width: 298px;
+        max-width: 298px;
+        min-height: 10px;
+        padding: 10px 0px 10px 10px;
+        height: 300px;
+    }
+
+    .species-grid {
+        width: 389px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        height: 600px;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    .species-grid img {
+        width: 7.5rem;
+        max-width: 7.5rem;
+        height: 7.5rem;    
+        object-fit: cover;
+        cursor: pointer;
     }
 }
 
 @media (min-width: 1024px) {
 
-    .lesson-plans {
-        border: 1rem solid var(--snap-container-background);
-    }
-
-    .table-header th:nth-child(3) {
-        font-size: .7rem;
-        flex-direction: column;
-        flex: 3;
-        display: flex;
-        align-items: start;
-    }
-
-    .table-header th:nth-child(3) span {
-        flex: 1;
-        line-height: initial;
-    }
-
-    .table-header th:nth-child(3):after {
-        display: none;
-    }
-
-    .table-header th:nth-child(3) span:after {
-        display: inline-block;
-        width: 0;
-        height: 0;
-        margin-left: .255rem;
-        vertical-align: middle;
-        content: "";
-        border-top: .3rem solid;
-        border-right: .3rem solid transparent;
-        border-bottom: 0;
-        border-left: .3rem solid transparent;        
-        cursor: default;
-    }
-
-    .table-header th:nth-child(3) span:nth-child(2):after {
-        margin-left: .355rem;
-    }
-
-    .table-header span:active, .table-header span:active:after {
-        color: var(--snap-filters-ctrl);
-    }
-
-    .table-row td:nth-child(3) {
-        flex: 3;
-        display: flex;
-        align-items: center;
-    }
-
-    .table-header th:nth-child(4), .table-row td:nth-child(4) {
-        flex: 2;
-        display: flex;
-        align-items: center;
-    }
-
-    .table-header th:nth-child(5), .table-row td:nth-child(5),
-    .table-header th:nth-child(6), .table-row td:nth-child(6) {
-        flex: 1;
-        display: flex;
-        align-items: center;
-    }
-
-    .table-header th:nth-child(4):after,
-    .table-header th:nth-child(5):after {
-        display: inline-block;
-        width: 0;
-        height: 0;
-        margin-left: .255rem;
-        vertical-align: middle;
-        content: "";
-        border-top: .3rem solid;
-        border-right: .3rem solid transparent;
-        border-bottom: 0;
-        border-left: .3rem solid transparent;
-        cursor: default;
+    .grid {
+        max-height: 840px;
     }
 
     .lesson-option-headers {
@@ -145,159 +134,17 @@
 
     .snapdragon-options .btn.btn-secondary {
         height: 2.5rem;
-    }
-
-    /* CREATE GUIDE */
-
-    #createGuide .modal-dialog {
-        width: 50%;
-        margin: 2rem auto;
-    }
-
-    #createGuide .modal-title div:nth-child(1) {
-        flex: auto;
-        font-size: 1.1rem;        
-    }
-
-    #createGuide .modal-header .close {
-        margin: 0 0 0 .5rem;
-    }
-
-    #createGuide .create-guide-progress, #createGuide .create-guide-navigation {
-        max-height: 4rem;
-    }
-
-    #createGuide .modal-body .create-guide-progress > div div {
-        line-height: 3.45rem;
-    }
-
-    #createGuide .modal-body .guide-text {
-        font-size: 1.6rem;
-    }
-
-    #createGuide .modal-body button {
-        margin: 0 0 0 .5rem;
-    }
-
-    /* SLIDER */
-    
-    .create-guide-action .range-slider {
-        display: block;
-        font-size: initial;
-        padding: .25rem;
-    }
-
-    .create-guide-action .range-slider span {
-        margin: 0 .5rem 0 0;
-    }
-
-    #createGuide .create-guide-action .range-slider > span:nth-child(2) {
-        width: fit-content;
-        border: .05rem solid lightgray;
-        padding: .5rem;
-        margin: 0;
-    }
-
-    .emphasis {
-        display: initial;
-      }
-
-    /* SNAPDRAGON SWITCH */
-
-    .snapdragon-switch .embedded-switch {
-        display: inline;
-    }
-
-    #createGuide .guides .inat-entry, #createGuide .guides input[type="text"] {
-        width: fit-content;
-    }
-      
-
-    .iconic-taxa-categories {
-        grid-template-columns: 1fr 1fr 1fr;
-        margin: 0;
-    }
-
-    .iconic-taxa-categories > div > div:nth-child(1) { 
-        margin: 0 0.5rem 0.5rem 0;
-    }
-     
-    .inat-location-place {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: .5rem 0 0 0;
-    }
-
-    #createGuide .inat-location-place .custom-checkbox {
-        margin: 0 0 0 .5rem;
-      }
-
-    .inat-location-place > div:nth-child(2) {
-        margin: 0 0 0 .5rem;
-    }
-
-    #createGuide .guides .inat-entry {
-        display: flex;
-        font-size: 1.1rem; 
-        align-items: center;
-        margin: 0 0 0 1rem;
-    }
-
-    #createGuide .guides input[type="text"] {
-        margin: 0 .5rem 0 0;
-        height: 1.75rem;
-        color: var(--snap-text-medium-dark);
-        padding: 0 .1rem;
-    }
-
-    .inat.inat-switch > div {
-        margin: 0;
-      }
-      
-
-    #createGuide .guides .inat .inat-switch {
-        flex-direction: row;        
-    }
-
-    #createGuide .inat-switch {
-        width: fit-content;
-    }
-
-    #createGuide #inat-place {
-        width: fit-content;
-        margin: 0;
-      }
-
-    #createGuide #inat-place::placeholder {
-        color: white;
-    }
-
-    #inat-place, #inat-place-id {
-        margin: 0 .5rem  0 0;
-        width: 20rem;        
-    }
-
-    #createGuide .actions label {
-        margin: 0;
-    }
-
-    #createGuide .create-guide-action .set-range-input {
-        width: 15rem;
-    }
+    } 
 
     .home-container .snapdragon-header {
         font-size: 3.6rem;
+        height: 120px;
     }
 
-    .snapdragon-container .snapdragon-create-guide > div {
+    .snapdragon-create-guide > div:nth-child(1), .snapdragon-create-guide > div:nth-child(1) > span:nth-child(1) {
         font-size: 2.6rem;
     }
-
-    .snapdragon-container .snapdragon-create-guide > div:nth-child(1) > span {
-        font-size: 2.6rem;  
-    }
-
+      
     .home-container .snapdragon-tag, .summary-scores {
         /* height: 360px; */
         height: 48vh;
@@ -311,178 +158,60 @@
         height: 240px;
     }
 
-    /* .home-container {
-        padding: 0 .5rem;
-    }
-
-    .home-container > div {
-        margin: 0 1rem;
-    }
-
-    .home-container .snapdragon-header {
-        font-size: 3.6rem;
-        text-transform: uppercase;
-        font-family: 'SharpGroteskWide', sans-serif;
-        color: var(--snap-collection-active);
-        letter-spacing: .3rem;
-        font-family: sentinel;
-        display: flex;
-        align-items: center;
-        height: 120px;
-    }
-
-    .home-container .snapdragon-tag, .summary-scores {
-        justify-content: center;
-        height: 360px;
-        font-family: sentinel;
-        font-size: 2rem;
-        font-style: italic;
-        display: flex;
-        color: var(--snap-link);
-        letter-spacing: .03rem;
-    }
-
-    .summary-scores .summary-progress {
-        margin: 1rem 0 0 0;
-        font-size: 1.4rem;
-        position: relative;
-    }
-
-    .summary-scores .summary-progress span {
-        margin: 0 0 0 .5rem;
-    }
-
-    .summary-scores .summary-progress span.above {
-        position: relative;
-        bottom: .5rem;
-    }
-
-    .summary-scores .summary-progress span.below {
-        position: relative;
-        top: .5rem;
-    }
-
-    .summary-scores span {
-        margin: 0 .25rem 0 0;
-    }
-
-    .summary-scores span:nth-child(2) {
-        font-size: .8rem;
-        vertical-align: super;
-    }
-
-    .home-container .snapdragon-tag .inat-widget {
-        font-style: initial;
-        font-size: 3rem;
-    }
-
-    .delete-guide-link > span.active {
-        color: var(--snap-alert) !important; 
-        pointer-events: initial;
-    }
-    
-    .delete-guide-link > span.disabled, .disabled {
-        color: var(--secondary) !important;
-        pointer-events: none;
-    }
-    
-    #set-inat-location-btn.disabled {
-        color: var(--gray-dark) !important;     
-    }
-
-    .delete-guide-link input {
-        cursor: pointer;
-    }
-
-    #iNatWidgetModal .modal-dialog {
-        max-width: 45vw;
-    }
-
-    #iNatWidgetModal .modal-header {
-        font-size: 1.2rem;
-        display: inline;
-    }
-
-    .home-container .snapdragon-tag > div .underline-link {
-        font-size: 2rem;
-        text-transform: initial;
-    }
-    
-    .home-container .snapdragon-tag > div .super-text {
-        display: inline-block;
-        font-size: 1rem;
-        margin: .5rem 0 0 .25rem;
-        vertical-align: top;
-        color: var(--secondary);
-        font-style: italic;
-    }
-
-    .snapdragon-container .snapdragon-create-guide {
-        display: flex;        
-        flex-direction: column;
-        align-items: flex-end;
-        position: relative;
-        height: 120px;
-    }
-
-    .snapdragon-container .snapdragon-create-guide > div {
-        font-size: 2.6rem;
-        text-transform: uppercase;
-        font-family: 'SharpGroteskWide', sans-serif;
-        color: var(--snap-collection-active);
-        letter-spacing: .05rem;                
-    }
-    
-    .snapdragon-container .snapdragon-create-guide > div:nth-child(1) {
-        position: absolute;
-        bottom: 2.25rem;
-        width: fit-content;
-    }
-    
-    .snapdragon-container .snapdragon-create-guide .toggle-links {
-        position: absolute;
-        bottom: 0rem;
-        right: .25rem;
-        display: flex;
-        flex-direction: row;
-        width: fit-content;
-    }
-
-    .snapdragon-container .snapdragon-create-guide > div:nth-child(1) > span {
-        font-size: 2.6rem;  
-        font-family: "PT Sans", "Roboto", arial, sans-serif;
-        letter-spacing: .05rem;       
-        
-    }
-
-    .snapdragon-container .snapdragon-create-guide .toggle-links span {
-        font-size: .8rem;
-        margin: 0 -.5rem 0 1rem;
-    }
-    
-    .snapdragon-container .snapdragon-create-guide .edit-guide-link {
-        color: var(--snap-lesson) !important;
-    } */
-
-    /* 1200 */
+    .species-pending > div:nth-child(4) {
+        font-size: 1.6rem;
+      }
 
     .species-grid {
-        width: 600px;
+        width: 512px;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-
-    .species-grid img {
-        width: 7.5rem;
-        max-width: 7.5rem;
-        height: 7.5rem;    
-        object-fit: cover;
-        float: left;
-        cursor: pointer;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
     .home-guide {
         display: flex;
         flex-direction: column;
     }
+
+    .strip {
+        font-size: 1.3rem;
+        margin: .5rem .25rem;
+        padding: 1rem;
+    }
+
+    .pool {
+        margin: 1rem 0;
+    }
+
+    .block {
+        margin: .4rem .4rem;
+    }
+
+    .block.given {
+        margin: 1rem 0;
+    }
 }
+
+@media (min-width: 1200px) {
+    
+    .grid {        
+      max-width: 1200px;      
+      margin: auto;
+    }
+
+    .left-grid, .right-grid {
+        width: 600px;
+    }
+
+    .species-grid {
+      width: 600px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* @media (min-height: 1024px) {
+    .species-grid {
+        height: 840px;
+    }
+} */

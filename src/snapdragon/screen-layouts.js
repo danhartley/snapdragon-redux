@@ -219,7 +219,8 @@ const genusEntry = {
     requirement: 'Enter genus name',
     screens: [
         { ...specimenImages },
-        { ...text, template: 'js-genus-entry-template', taxon: 'genus'}
+        { ...text, taxon: 'genus'}
+        // { ...text, template: 'js-genus-entry-template', taxon: 'genus'}
     ]
 };
 
@@ -233,7 +234,8 @@ const speciesEntry = {
     requirement: 'Enter species name',
     screens: [
         { ...specimenImages },
-        { ...text, template: 'js-species-entry-template', taxon: 'species'}
+        { ...text, taxon: 'species'}
+        // { ...text, template: 'js-species-entry-template', taxon: 'species'}
     ]
 };
 
@@ -247,7 +249,8 @@ const speciesGenusEntry = {
     requirement: 'Enter latin name',
     screens: [
         { ...specimenImages },
-        { ...text, template: 'js-species-genus-entry-template', taxon: 'name'}
+        { ...text, taxon: 'name'}
+        // { ...text, template: 'js-species-genus-entry-template', taxon: 'name'}
     ]
 };
 
@@ -271,7 +274,8 @@ const leafEntry = {
     kind: 'T',
     screens: [
         { ...leaf },
-        { ...leafName, template: 'js-text-entry-template' }
+        { ...leafName }
+        // { ...leafName, template: 'js-text-entry-template' }
     ]
 };
 
@@ -285,7 +289,8 @@ const textCompleteSpecies = {
     requirement: 'Select species name',
     screens: [
         { ...specimenImages },
-        { ...textComplete, type: 'text-complete-species' }
+        { ...textComplete }
+        // { ...textComplete, type: 'text-complete-species' }
     ]
 };
 
@@ -299,7 +304,8 @@ const commonEntry = {
     requirement: 'Enter common name',
     screens: [
         { ...specimenImages },
-        { ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Enter the common name', short: 'Enter the common name'}}
+        { ...text, taxon: 'vernacular'  }
+        // { ...text, template: 'js-vernacular-entry-template', taxon: 'vernacular', headers: { long: 'Enter the common name', short: 'Enter the common name'}}
     ]
 };
 

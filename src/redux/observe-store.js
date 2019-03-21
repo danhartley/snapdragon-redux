@@ -25,7 +25,7 @@ export const observeStore = (store, select, onChange, domain, layout) => {
 
       if (hasStateSignificantlyChanged) {
         currentState = nextState;
-        console.log(`*** ${onChange.name} called `);        
+        // console.log(`*** ${onChange.name} called `);  
         onChange(currentState);
       }
     }

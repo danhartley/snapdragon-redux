@@ -60,17 +60,6 @@ export const getInatSpecies = (inatConfig, config) => {
         return await json.results;
     }
 
-    // async function getInatUserObservations(config) {
-
-    //     const iconicTaxa = getIconicTaxa(config);
-    //     const id = config.guide.inatId.id;
-    //     const key = config.guide.inatId.id;
-    //     const url = getBasePath(config) + `&${id}=${key}&iconic_taxa=${iconicTaxa}&place_id=any`;
-    //     const response = await fetch(url);
-    //     const json = await response.json();
-    //     return await json.results;
-    // }
-
     const latitude = inatConfig.latitude;
     const longitude = inatConfig.longitude;
 
@@ -78,19 +67,6 @@ export const getInatSpecies = (inatConfig, config) => {
 
     const taxonNames = [];
 
-    // if(inatConfig.locationType === 'user') {
-    //     observations = getInatUserObservations(config).then(observations => {
-    //         return observations.map(observation => {
-    //             if(R.contains(observation.taxon.name, names)) {
-    //                 const item = { ...species.find(item => item.name === observation.taxon.name) };
-    //                 return { ...item, observationCount: observation.taxon.observations_count, iconicTaxon: observation.taxon.iconic_taxon_name };
-    //             } 
-    //             taxonNames.push(observation.taxon.name);
-    //         });
-    //     });
-    //     return observations;
-    // }
-    // else 
     if(inatConfig.locationType === 'place') {
         observations = getInatPlaceObservations(config).then(observations => {
             return observations.map(observation => {

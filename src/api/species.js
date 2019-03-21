@@ -1,5 +1,3 @@
-import { fruit } from 'api/snapdragon/fruit';
-import { vegetables } from 'api/snapdragon/vegetables';
 import { insects } from 'api/snapdragon/insects';
 import { deciduousAndEvergreenTrees } from 'api/rhs/deciduous-evergreen-trees';
 
@@ -16,8 +14,6 @@ import { mammals } from 'api/snapdragon/mammals';
 export const species = [
     ...birds,
     ...mushrooms,
-    // ...fruit,
-    // ...vegetables,
     ...insects,
     ...deciduousAndEvergreenTrees,
     ...weeds,

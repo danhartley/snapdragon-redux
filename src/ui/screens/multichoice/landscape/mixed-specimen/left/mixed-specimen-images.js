@@ -56,7 +56,6 @@ export const renderMixedSpecimenImages = collection => {
     renderTemplate({ images }, template.content, parent);
 
     const callback = (score, scoreUpdateTimer) => {
-        console.log(score);
         listenersToUserAnswer.forEach(listener => listener(score, scoreUpdateTimer));
     };
 
@@ -84,6 +83,7 @@ export const renderMixedSpecimenImages = collection => {
                 points: 0, icon: matchIcon(item.taxonomy, iconicTaxa),
                 vernacularName: itemProperties.getVernacularName(species.find(sp => sp.name === question), config),
                 answerVernacularName: itemProperties.getVernacularName(species.find(sp => sp.name === answer), config)};
+                
             scoreHandler('image-match', test, callback, config);
         });
     });

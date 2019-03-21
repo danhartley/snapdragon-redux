@@ -3,7 +3,6 @@ import * as R from 'ramda';
 import { DOM } from 'ui/dom';
 import { store, persistor } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
-import { renderSpeciesGrid } from 'ui/screens/home/species-grid';
 import { renderSpeciesCollectionList, listenToSpeciesCollectionListenReady } from 'ui/screens/lists/species-list';
 import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -12,11 +11,11 @@ import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
 import { renderGuideSummary } from 'ui/screens/home/home-guide-summary';
 import { listenToCloseCreateGuideModal } from 'ui/create-guide-modal/create-guide';
 
-export const renderHome = () => {
+export const renderHome = counter => {
 
-    let { counter, config, collection } = store.getState();
+    let { config, collection } = store.getState();
 
-    if(counter.isLessonRehydrated && counter.index && counter.index > 0) return;
+    if(counter.index && counter.index > 0) return;
     
     const sub = subscription.getByName('renderHome');
     if(sub) subscription.remove(sub);
@@ -68,6 +67,7 @@ export const renderHome = () => {
         const { collection, config, history } = store.getState();
         const lessonStateMode = 'restart-lesson';
         lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);        
+        subscription.remove(subscription.getByName('renderSpeciesGrid'));
     };
 
     const guideSummary = (speciesCount) => {

@@ -8,6 +8,7 @@ import { renderQuestionHeader } from 'ui/screens/common/question-header';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { listenToImageSelection, listenToUserAnswer, renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
 import { renderTemplate } from 'ui/helpers/templating';
+import testCardTemplate from 'ui/screens/common/test-card-template.html';
 import mixedSpecimenQuestionTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question-template.html';
 
 export const renderMixedSpecimenQuestion = collection => {
@@ -18,12 +19,18 @@ export const renderMixedSpecimenQuestion = collection => {
 
     if(!item) return;
 
-    const template = document.createElement('template');
+    let template = document.createElement('template');
+
+    template.innerHTML = testCardTemplate;
+
+    let parent = DOM.rightBody;
+    parent.innerHTML = '';
+
+    renderTemplate({ vernacularName: item.vernacularName, binomial: item.binomial, question: 'Find the species', help: '(Click on the matching photo.)' }, template.content, parent);
+
+    parent = document.querySelector('.js-test-card');
 
     template.innerHTML = mixedSpecimenQuestionTemplate;
-
-    const parent = DOM.rightBody;
-    parent.innerHTML = '';
 
     const instructions = `Identify & Select`;
     const binomial = item.name;
@@ -60,18 +67,7 @@ export const renderMixedSpecimenQuestion = collection => {
         pendingScore.score = score;
         pendingScore.scoreUpdateTimer = scoreUpdateTimer;
 
-        const questionIcon = document.getElementById(score.question);
-        const answerIcon = document.getElementById(score.answer);
-
-        // score.success ? answerIcon.classList.add('responsive-icon-success') : answerIcon.classList.add('responsive-icon-failure');
-        // score.success ? answerIcon.classList.add('responsive-text-success') : answerIcon.classList.add('responsive-text-failure');
-
-        // if(!score.success) answerIcon.classList.add('responsive-text-failure');
-
-        // if(!score.success) questionIcon.classList.add('responsive-icon-success');
-        // if(!score.success) questionIcon.classList.add('responsive-text-success');
-
-        // questionIcon.classList.add('responsive-text-success');
+        score.success ? headerIconContainer.classList.add('answer-success') : headerIconContainer.classList.add('answer-alert');
 
         // Array.from(speciesShown.querySelectorAll('li')).filter(species => species.id !== score.question && species.id !== score.answer).forEach(s => s.style.color = 'gray');
     });

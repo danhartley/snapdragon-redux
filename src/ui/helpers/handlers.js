@@ -4,7 +4,6 @@ import { actions } from 'redux/actions/action-creators';
 import { elem } from 'ui/helpers/class-behaviour';
 import { renderTemplate } from 'ui/helpers/templating';
 import { markTest } from 'ui/helpers/score-handler';
-// import updateBtnTemplate from 'ui/screens/multichoice/update-btn-template.html';
 
 export const scoreHandler = (type, test, callback, config, containers) => {
     
@@ -27,7 +26,7 @@ export const scoreHandler = (type, test, callback, config, containers) => {
     }
 };
 
-const textAlertHandler = response => {
+const showResponseToAnswerHandler = response => {
     const questionText = document.querySelector('.js-txt-question');
     questionText.innerHTML = response.success
         ? `<div class="answer-box-success">
@@ -37,6 +36,18 @@ const textAlertHandler = response => {
             <span class="icon"><i class="fas fa-times"></i></span><span>${response.incorrect}</span>
            </div>`;
 }
+
+const clickContinueLessonButtonHandler = (score, scoreUpdateTimer) => {
+        
+    const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
+
+    continueLessonBtn.disabled = false;
+
+    continueLessonBtn.addEventListener('click', event => {
+        window.clearTimeout(scoreUpdateTimer);
+        actions.boundUpdateScore(score);
+    });
+};
 
 const simpleScoreHandler = (test, callback, config) => {
     
@@ -48,12 +59,16 @@ const simpleScoreHandler = (test, callback, config) => {
         actions.boundUpdateScore(score);
     }, delay);
 
-    if(callback) callback(score, scoreUpdateTimer);
+    if(callback) {
+        callback(score, scoreUpdateTimer);
+    } else {
+        clickContinueLessonButtonHandler(score, scoreUpdateTimer);
+    }
 
     let correct = config.isLandscapeMode ? `That is the right answer.` : `That is the right answer.`;
     let incorrect = config.isLandscapeMode ? `That is the wrong answer.` : 'That is the wrong answer.';
 
-    textAlertHandler({ success: score.success, correct, incorrect });
+    showResponseToAnswerHandler({ success: score.success, correct, incorrect });
 }
 
 const genericScoreHandler = (_score, callback, config) => {
@@ -88,7 +103,7 @@ const genericScoreHandler = (_score, callback, config) => {
     let correct = config.isLandscapeMode ? `That is the right answer.` : `That is the right answer.`;
     let incorrect = config.isLandscapeMode ? `That is the wrong answer.` : 'That is the wrong answer.';
 
-    textAlertHandler({ success: score.success, correct, incorrect });
+    showResponseToAnswerHandler({ success: score.success, correct, incorrect });
 
     score.layoutCount = layoutCount;
 
@@ -160,7 +175,7 @@ const stripScoreHandler = (test, callback, config) => {
             let correct = config.isLandscapeMode ? `That is the right answer.` : `That is the right answer.`;
             let incorrect = config.isLandscapeMode ? `That is the wrong answer.` : 'That is the wrong answer.';
 
-            textAlertHandler({ success: score.success, correct, incorrect });
+            showResponseToAnswerHandler({ success: score.success, correct, incorrect });
 
             items.forEach(item => item.classList.add('disabled'));
         });
@@ -228,7 +243,7 @@ export const radioButonClickhandler = (config, template, answers, question, item
 
     renderTemplate({ description, answers }, template.content, parent);
 
-    renderQuestionHeader(document.querySelector('.js-question-container'), item, item.vernacularName);
+    renderQuestionHeader(document.querySelector('.js-question-container'), item, config);
 
     const answerBtn = document.querySelector('.js-continue-lesson-btn');
 

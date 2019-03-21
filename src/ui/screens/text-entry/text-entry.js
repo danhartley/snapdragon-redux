@@ -2,59 +2,55 @@ import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { renderQuestionHeader } from 'ui/screens/common/question-header';
+import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
-import landscapeTemplates from 'ui/screens/text-entry/text-entry-templates.html';
-import portraitTemplates from 'ui/screens/text-entry/text-entry-portrait-templates.html';
 import { imageSlider } from 'ui/screens/common/image-slider';
+
+import testCardTemplate from 'ui/screens/common/test-card-template.html';
+import textEntryTemplate from 'ui/screens/text-entry/text-entry-templates.html';
+import textEntryPortraitTemplate from 'ui/screens/text-entry/text-entry-portrait-templates.html';
 
 export const renderInput = (screen, question) => {
 
     const { lessonPlan, collection, config, layout } = store.getState();
-    const templates = document.createElement('div');    
-    templates.innerHTML = config.isPortraitMode ? portraitTemplates : landscapeTemplates;
 
-    const template = templates.querySelector(`.js-entry-template`);
+    const template = document.createElement('template');
+    template.innerHTML = testCardTemplate;
 
     const item = collection.nextItem;
 
-    const clone = document.importNode(template.content, true);
-
-    const answerBtn = clone.querySelector('.js-check-answer');
-
-    const boundScore = {};
-
-    const markingCallback = (score, scoreUpdateTimer) => {        
-        boundScore.scoreUpdateTimer = scoreUpdateTimer;
-        boundScore.score = score;        
-        answerBtn.removeEventListener('click', scoreEventHandler);
-        if(score.success) {
-            document.querySelector('.js-help-txt').innerHTML = question.taxon === 'vernacular'
-                ? item.vernacularName
-                : item.name;
-        }
-        if(score.alternativeAccepted) {
-            document.querySelector('.js-text-alternative').innerHTML = `Alternative: ${score.question}`;
-        }
-    };
-
-    const scoreEventHandler = event => {
-        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames };
-        scoreHandler('text', score, markingCallback, config);
-        answerBtn.disabled = true;
-        document.querySelector('.js-continue-lesson-btn').disabled = false;
-    };
-    
-    answerBtn.addEventListener('click', scoreEventHandler);
-
-    const parent = DOM.rightBody;
+    let parent = DOM.rightBody;
     parent.innerHTML = '';
-    
-    renderTemplate({}, template.content, parent, clone);
 
-    const questionTxt = document.querySelector('.js-question-txt span:nth-child(1)');
+    let vernacularName, binomial;
+
+    switch(question.taxon) {
+        case 'genus': 
+            vernacularName = item.vernacularName;
+            binomial = binomial = `--- ${question.species}`
+            break;
+        case 'species': 
+            vernacularName = item.vernacularName;
+            binomial = binomial = `${question.genus} ---`;
+            break;
+        case 'name': 
+            vernacularName = item.vernacularName;
+            binomial = binomial = `--- ---`;
+            break;
+        case 'vernacular':
+            vernacularName = '--- ---';
+            binomial = item.name;
+            break;
+    }
+
+    renderTemplate({ vernacularName, binomial, question: 'Complete the latin name', help: '(Complete the name below.)' }, template.content, parent);
+
+    parent = document.querySelector('.js-test-card');
+    template.innerHTML = config.isLandscapeMode ? textEntryTemplate : textEntryPortraitTemplate;
+    renderTemplate({ }, template.content, parent);
+
     const inputTxt = document.querySelector('.js-txt-input');
     const helpTxt = document.querySelector('.js-help-txt');
 
@@ -68,23 +64,41 @@ export const renderInput = (screen, question) => {
             helpTxt.innerHTML = `${utils.capitaliseFirst(question.genus)} ---`;
             break;
         case 'name': 
-            questionTxt.innerHTML = 'Enter the latin name';
             inputTxt.setAttribute('placeholder', 'Latin name');
             helpTxt.innerHTML = `--- ---`;
             break;
         case 'vernacular':
-            questionTxt.innerHTML = 'Enter the common name';
             inputTxt.setAttribute('placeholder', 'Common name');
             helpTxt.innerHTML = `-----`;
             break;
     }
 
+    const answerBtn = document.querySelector('.js-check-answer');
+
+    const boundScore = {};
+
+    const markingCallback = (score, scoreUpdateTimer) => {        
+        boundScore.scoreUpdateTimer = scoreUpdateTimer;
+        boundScore.score = score;        
+        answerBtn.removeEventListener('click', scoreEventHandler);
+    };
+
+    const scoreEventHandler = event => {
+        const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames };
+        scoreHandler('text', score, markingCallback, config);
+        answerBtn.disabled = true;
+        document.querySelector('.js-continue-lesson-btn').disabled = false;
+        helpTxt.innerHTML = item.name;
+    };
+
+    answerBtn.addEventListener('click', scoreEventHandler);
+    
     if(config.isPortraitMode) renderPortrait(item, config);
     else renderLandscape(item, config, question);
 
     document.querySelector('.js-txt-input').focus();
 
-    renderQuestionHeader(document.querySelector('.js-question-container'), item, item.vernacularName);
+    const icon = renderIcon(item, document);
 
     document.querySelector('.js-continue-lesson-btn').addEventListener('click', event => {
         window.clearTimeout(boundScore.scoreUpdateTimer);

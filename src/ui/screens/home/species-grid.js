@@ -10,9 +10,9 @@ import speciesGridTemplate from 'ui/screens/home/species-grid-template.html';
 
 export const renderSpeciesGrid = () => {
 
-    const { config } = store.getState();
+    const imageCount = 40;
 
-    const speciesImages = R.take(30, utils.shuffleArray(species).map(sp => {
+    const speciesImages = R.take(imageCount, utils.shuffleArray(species).map(sp => {
         return { images: sp.images, itemName: sp.name };
     }));
 
@@ -21,9 +21,9 @@ export const renderSpeciesGrid = () => {
 
     speciesImages.forEach(si => {
         
-        if(si.images.length > 0 && si.images[0].thumb && si.images[0].thumb.indexOf('98x68') > 0) {
-            si.images[0].small = si.images[0].thumb.replace('98x68', '260x190');
-            if(counter < 25) {
+        if(si.images.length > 0 && si.images[0].url) {
+            si.images[0].small = si.images[0].url.replace('.jpg', '.260x190.jpg');
+            if(counter < imageCount) {
                 si.images[0].itemName = si.itemName;
                 images.push(si.images[0]);
                 counter++;
