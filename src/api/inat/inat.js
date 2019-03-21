@@ -43,7 +43,7 @@ export const getInatSpecies = (inatConfig, config) => {
         const iconicTaxa = getIconicTaxa(config);
         const radius = config.speciesRange || 10;
         const id = getUserOrProjectIdParameter(config);
-        const url = getBasePath(config) + `&iconic_taxa=${iconicTaxa}&${id}&lat=${lat}&lng=${lng}&radius=${radius}`;
+        const url = getBasePath(config) + `&iconic_taxa=${iconicTaxa}${id}&lat=${lat}&lng=${lng}&radius=${radius}`;
         const response = await fetch(url);
         const json = await response.json();
         return await json.results;
