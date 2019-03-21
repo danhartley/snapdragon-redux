@@ -110,7 +110,7 @@
         grid-template-columns: 1fr 1fr 1fr;
         height: 600px;
         overflow: hidden;
-        margin: auto;
+        /* margin: auto; */
     }
 
     .species-grid img {

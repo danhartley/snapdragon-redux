@@ -437,7 +437,11 @@ a.dropdown-item {
   grid-template-rows: 1fr 0.3rem 12fr 1fr;
 }
 
-.left-body,
+.left-body {
+  display: flex;
+  align-items: center;
+}
+
 .right-body {
   display: grid;
   grid-auto-flow: row;
