@@ -48,8 +48,10 @@ const functions = [
     { name: 'cultivar-card', func: renderCultivarCard },
     { name: 'wildcard-card', func: renderWildcard },
     { name: 'wildcard-match', func: renderMultiStrips },
-    { name: 'visual-match', func: renderSpecimenMatch },
-    { name: 'trait-property', func: renderSpecimenMatch },
+    { name: 'visual-match', func: renderMultiStrips },
+    // { name: 'visual-match', func: renderSpecimenMatch },
+    { name: 'trait-property', func: renderMultiStrips },
+    // { name: 'trait-property', func: renderSpecimenMatch },
     { name: 'definition-card', func: renderDefinitionCard },
     
     

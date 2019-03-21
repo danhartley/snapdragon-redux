@@ -247,8 +247,9 @@ div.text-entry {
 
     .test-card-container .action-update-container {
         position: absolute;
-        width: initial;
+        width: fit-content;
         bottom: 1rem;
+        left: unset;
         right: 1rem;
     }
 }

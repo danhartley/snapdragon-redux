@@ -56,7 +56,7 @@ Array.prototype.concatAll = function() {
   
   const shuffleArray = array => {
 
-    if(!array) return;
+    if(!array || array.length === 0) return;
 
     var currentIndex = array.length, temporaryValue, randomIndex;
 

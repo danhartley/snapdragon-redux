@@ -16,6 +16,10 @@ import { syndromes } from 'api/snapdragon/syndromes';
 import testCardTemplate from 'ui/screens/common/test-card-template.html';
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 
+import { getTraits } from 'api/traits/traits';
+import * as traitTypes from 'api/traits/trait-types';
+import * as SD from 'api/traits/trait-types';
+
 export const renderMultiStrips = (collection) => {
 
     const item = collection.nextItem;
@@ -46,6 +50,7 @@ export const renderMultiStrips = (collection) => {
         layout.screens.find(screen => screen.name === 'epithet') || 
         layout.screens.find(screen => screen.name === 'definition') || 
         layout.screens.find(screen => screen.name === 'family') || 
+        layout.screens.find(screen => screen.name === 'trait-property') || 
         layout.screens.find(screen => screen.name === 'wildcard-match')
     }
 
@@ -56,8 +61,9 @@ export const renderMultiStrips = (collection) => {
         const vernacularName = (overrides && overrides.vernacularName) ? overrides.vernacularName : item.vernacularName;
         const binomial = (overrides && overrides.binomial) ? overrides.binomial : item.binomial;
         const question = (overrides && overrides.question) ? overrides.question : 'Match the name';
+        const help = (overrides && overrides.help) ? overrides.help : '(Click on the name below.)';
         
-        renderTemplate({ vernacularName, binomial, question, help: '(Click on the name below.)' }, template.content, parent);
+        renderTemplate({ vernacularName, binomial, question, help }, template.content, parent);
 
         const icon = renderIcon(item, document);
     
@@ -199,6 +205,7 @@ export const renderMultiStrips = (collection) => {
 
         render(question, answers);
     }
+
     if(screen.name === 'family') {
 
         const indices = config.isPortraitMode ? [5,6] : [5,6];
@@ -226,5 +233,72 @@ export const renderMultiStrips = (collection) => {
                 render(question, answers, { question: 'Match the family name' });
             break;
         } 
+    }
+
+    if(screen.name === 'trait-property') {
+
+        const { enums } = store.getState();
+
+        let help;
+        
+        const speciesTraits = getTraits(enums).find(trait => trait.name === item.name);
+
+        const typedSpeciesTraits = traitTypes.typedSpecies(enums, speciesTraits);
+        if(!typedSpeciesTraits) return;
+        const trait = R.take(1, utils.shuffleArray(typedSpeciesTraits))[0];
+
+        if(!trait) return;
+
+        switch(trait.type) {
+            case 'howEdible':                
+                help = 'How edible is this species?';
+                break;
+            case 'capShape':
+                help = config.isLandscapeMode ? 'How would you describe the pileus (cap) of this mushroom?' : 'How would you describe this pileus (cap)?';
+                break;
+            case 'hymeniumType':
+                help = 'What is the hymenium type of this mushroom?';
+                break;
+            case 'ecoType':
+                help = 'What is the ecological type of this mushroom?';
+                break;
+            case 'habitat':
+                help = 'Where would you expect to find this species?';
+                break;
+            case 'thallusType':
+                help = 'What is this lichen\'s thallus type?';
+                break;
+            default:
+                help = config.isLandscapeMode ? `${trait.name}` : `${trait.name}`;
+        }
+        
+        let traits = [ ];
+
+        if(trait.type) {
+            Object.keys(SD[trait.type]).forEach(key => {
+                let value = SD[trait.type][key];
+                if(key !== 'type' && key !== 'name') {
+                    traits.push(value);
+                }            
+            });
+        }
+
+        const question = trait.value.value 
+                            ? trait.value.value
+                            : trait.value.key
+                                ? trait.value.key
+                                : trait.value;
+                                
+        // const help = `(Select the ${trait.name} below.)`;
+        const answers = traits.map(trait => {
+            const t = trait.value 
+                        ? trait.value 
+                        : trait.key
+                            ? trait.value 
+                            : trait;
+            return t;
+        });
+          
+        render(question, answers, { question: 'Match the trait', help });
     }
 };

@@ -89,7 +89,7 @@ export const getBirdTraits = (enums) => {
     const traits = getTraits(SD);
     traits.forEach(species => {
         if(!species.traits.find(trait => trait.name === 'TROPHIC_LEVEL')) {
-            species.traits.push({ name: SD.name.TROPHIC_LEVEL, value: 3.6 })
+            species.traits.push({ name: SD.name.TROPHIC_LEVEL, value: SD.trophicLevel.PRIMARY_CONSUMER })
         }
     });
     return traits;

@@ -47,6 +47,9 @@ const landscapeLesson1 = {
             description: 'Species recognition',
             layouts: [ 
 
+                traitPropertyMatch,
+                // multiSpecimenCommonMatch, ?????
+
                 genusEntry,
                 speciesEntry,
                 speciesGenusEntry,
