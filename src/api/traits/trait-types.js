@@ -34,6 +34,7 @@ export let leafEdge = english.leafEdge;
 export let foodType = english.foodType;
 export let developmentStage = english.developmentStage;
 export let symbiosis = english.symbiosis;
+export let trophicLevel = english.trophicLevel;
 export let shelter = english.shelter;
 export let active = english.active;
 export let young = english.young;
@@ -61,6 +62,7 @@ export const updateLanguage = (config) => {
             capShape = { ...english.capShape, ...{ type: 'capShape' }, ...{ name: english.name.CAP_SHAPE } };
             hymeniumType = { ...english.hymeniumType, ... { type: 'hymeniumType' }, ...{ name: english.name.HYMENIUM_TYPE } };
             thallusType = { ...english.thallusType, ... { type: 'thallusType' }, ...{ name: english.name.THALLUS_TYPE } };
+            trophicLevel = { ...english.trophicLevel, ... { type: 'trophicLevel' }, ...{ name: english.name.TROPHIC_LEVEL } };
         break;
         case 'pt':
             name = portuguese.name;
@@ -102,6 +104,7 @@ export const updateLanguage = (config) => {
         foodType,
         developmentStage,
         symbiosis,
+        trophicLevel,
         shelter,
         active,
         month,
@@ -125,7 +128,8 @@ export const typedEnums = enums => {
     }
     return typedEnums.map(typedEnum => {
         for (var key in typedEnum) {
-            return { name: typedEnum[key].name, type: typedEnum[key].type };
+            const obj = { name: typedEnum[key].name, type: typedEnum[key].type };
+            return obj;
         }
     });
 };

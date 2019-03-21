@@ -47,11 +47,14 @@ const landscapeLesson1 = {
             description: 'Species recognition',
             layouts: [ 
 
+                mixedSpecimenImages, // UPDATED (ICON CHANGE COLOUR IN LIST?)
+                traitPropertyMatch,
+                // multiSpecimenCommonMatch, ?????
+
                 genusEntry,
                 speciesEntry,
                 speciesGenusEntry,
 
-                mixedSpecimenImages, // UPDATED (ICON CHANGE COLOUR IN LIST?)
                 textCompleteGenus, // GOOD
                 textCompleteSpecies, // GOOD
                 genusEntry, // GOOD

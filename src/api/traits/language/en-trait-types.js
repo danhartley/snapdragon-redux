@@ -375,6 +375,13 @@ export const english = {
         HERBIVORY: 'Herbivory',        
         COMPETITION: 'Competition',
     },
+    trophicLevel: {
+        PRIMARY_PRODUCER: { key: 1, value: 'Primary producer' },
+        PRIMARY_CONSUMER: { key: 2, value: 'Primary consumer' },
+        SECONDARY_CONSUMER: { key: 3, value: 'Secondary consumer' },
+        TERTIARY_CONSUMER: { key: 4, value: 'Tertiary consumer' },
+        APEX_PREDATOR: { key: 5, value: 'Apex predator' }
+    },
     shelter: {
         DREY: 'Drey',
         BURROW: 'Burrow',

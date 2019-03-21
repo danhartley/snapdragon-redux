@@ -1,20 +1,20 @@
-import { itemProperties } from 'ui/helpers/data-checking';
-import { renderIcon } from 'ui/helpers/icon-handler';
-import { renderTemplate } from 'ui/helpers/templating';
-import questionHeaderTemplate from 'ui/screens/common/question-header-template.html';
+// import { itemProperties } from 'ui/helpers/data-checking';
+// import { renderIcon } from 'ui/helpers/icon-handler';
+// import { renderTemplate } from 'ui/helpers/templating';
+// import questionHeaderTemplate from 'ui/screens/common/question-header-template.html';
 
-export const renderQuestionHeader = (parent, item, config, overrideVernacular, overrideBinomial) => {
+// export const renderQuestionHeader = (parent, item, config, overrideVernacular, overrideBinomial) => {
 
-    const template = document.createElement('template');
+//     const template = document.createElement('template');
 
-    template.innerHTML = questionHeaderTemplate;
+//     template.innerHTML = questionHeaderTemplate;
 
-    parent.innerHTML = '';
+//     parent.innerHTML = '';
 
-    const vernacularName = overrideVernacular || itemProperties.getVernacularName(item, config);
-    const binomial = overrideBinomial || item.name;
+//     const vernacularName = overrideVernacular || itemProperties.getVernacularName(item, config);
+//     const binomial = overrideBinomial || item.name;
 
-    renderTemplate({ vernacularName, binomial }, template.content, parent);
+//     renderTemplate({ vernacularName, binomial }, template.content, parent);
 
-    return renderIcon(item, document);
-};
+//     return renderIcon(item, document);
+// };

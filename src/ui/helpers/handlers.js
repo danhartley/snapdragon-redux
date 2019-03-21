@@ -234,51 +234,51 @@ export const selectHandler = (selector, callback) => {
     });
 };
 
-export const radioButonClickhandler = (config, template, answers, question, item) => {
+// export const radioButonClickhandler = (config, template, answers, question, item) => {
     
-    const parent = DOM.rightBody;
-    parent.innerHTML = '';
+//     const parent = DOM.rightBody;
+//     parent.innerHTML = '';
 
-    const description = 'Select family';
+//     const description = 'Select family';
 
-    renderTemplate({ description, answers }, template.content, parent);
+//     renderTemplate({ description, answers }, template.content, parent);
 
-    renderQuestionHeader(document.querySelector('.js-question-container'), item, config);
+//     renderQuestionHeader(document.querySelector('.js-question-container'), item, config);
 
-    const answerBtn = document.querySelector('.js-continue-lesson-btn');
+//     const answerBtn = document.querySelector('.js-continue-lesson-btn');
 
-    const radioButtons = document.querySelectorAll('.rb.btn-group label');
+//     const radioButtons = document.querySelectorAll('.rb.btn-group label');
 
-    radioButtons.forEach(rbContainer => {
-        rbContainer.addEventListener('click', event => {
-            scoreEventHandler(event);
-        });
-    });
+//     radioButtons.forEach(rbContainer => {
+//         rbContainer.addEventListener('click', event => {
+//             scoreEventHandler(event);
+//         });
+//     });
 
-    const boundScore = {};
+//     const boundScore = {};
 
-    const scoreEventHandler = event => {
+//     const scoreEventHandler = event => {
         
-        answerBtn.disabled = false;
+//         answerBtn.disabled = false;
 
-        const answer = event.target.id;
+//         const answer = event.target.id;
         
-        const test = { ...question, answer, target: event.target };
+//         const test = { ...question, answer, target: event.target };
 
-        const { score, scoreUpdateTimer } = scoreHandler('radio', test, null, config );         
+//         const { score, scoreUpdateTimer } = scoreHandler('radio', test, null, config );         
 
-        boundScore.scoreUpdateTimer = scoreUpdateTimer;
-        boundScore.score = score;
+//         boundScore.scoreUpdateTimer = scoreUpdateTimer;
+//         boundScore.score = score;
         
-        radioButtons.forEach(rb => {
-            rb.querySelector('input').readOnly; 
-            rb.classList.add('disabled');
-        });        
-    };
+//         radioButtons.forEach(rb => {
+//             rb.querySelector('input').readOnly; 
+//             rb.classList.add('disabled');
+//         });        
+//     };
 
-    answerBtn.addEventListener('click', event => {
-        answerBtn.removeEventListener('click', scoreEventHandler);     
-        window.clearTimeout(boundScore.scoreUpdateTimer);
-        actions.boundUpdateScore(boundScore.score);
-    });
-};
+//     answerBtn.addEventListener('click', event => {
+//         answerBtn.removeEventListener('click', scoreEventHandler);     
+//         window.clearTimeout(boundScore.scoreUpdateTimer);
+//         actions.boundUpdateScore(boundScore.score);
+//     });
+// };
