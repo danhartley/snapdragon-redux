@@ -54,25 +54,23 @@ export const renderInput = (screen, question) => {
     const inputTxt = document.querySelector('.js-txt-input');
     const helpTxt = document.querySelector('.js-help-txt');
 
-    if(config.isLandscapeMode) {
-        switch(question.taxon) {
-            case 'genus': 
-                inputTxt.setAttribute('placeholder', 'Genus');
-                helpTxt.innerHTML = `--- ${question.species}`;
-                break;
-            case 'species': 
-                inputTxt.setAttribute('placeholder', 'Species');
-                helpTxt.innerHTML = `${utils.capitaliseFirst(question.genus)} ---`;
-                break;
-            case 'name': 
-                inputTxt.setAttribute('placeholder', 'Latin name');
-                helpTxt.innerHTML = `--- ---`;
-                break;
-            case 'vernacular':
-                inputTxt.setAttribute('placeholder', 'Common name');
-                helpTxt.innerHTML = `-----`;
-                break;
-        }
+    switch(question.taxon) {
+        case 'genus': 
+            inputTxt.setAttribute('placeholder', 'Genus');
+            helpTxt.innerHTML = `--- ${question.species}`;
+            break;
+        case 'species': 
+            inputTxt.setAttribute('placeholder', 'Species');
+            helpTxt.innerHTML = `${utils.capitaliseFirst(question.genus)} ---`;
+            break;
+        case 'name': 
+            inputTxt.setAttribute('placeholder', 'Latin name');
+            helpTxt.innerHTML = `--- ---`;
+            break;
+        case 'vernacular':
+            inputTxt.setAttribute('placeholder', 'Common name');
+            helpTxt.innerHTML = `-----`;
+            break;
     }
 
     const answerBtn = document.querySelector('.js-check-answer');
@@ -83,14 +81,6 @@ export const renderInput = (screen, question) => {
         boundScore.scoreUpdateTimer = scoreUpdateTimer;
         boundScore.score = score;        
         answerBtn.removeEventListener('click', scoreEventHandler);
-        // if(score.alternativeAccepted) {
-        //     document.querySelector('.js-text-alternative').innerHTML = `Alternative: ${score.question}`;
-        // }
-        // else {
-        //     document.querySelector('.js-help-txt').innerHTML = question.taxon === 'vernacular'
-        //         ? item.vernacularName
-        //         : item.name;
-        // }
     };
 
     const scoreEventHandler = event => {
@@ -98,6 +88,7 @@ export const renderInput = (screen, question) => {
         scoreHandler('text', score, markingCallback, config);
         answerBtn.disabled = true;
         document.querySelector('.js-continue-lesson-btn').disabled = false;
+        helpTxt.innerHTML = item.name;
     };
 
     answerBtn.addEventListener('click', scoreEventHandler);

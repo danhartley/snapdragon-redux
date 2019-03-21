@@ -15,7 +15,7 @@ export const renderHome = counter => {
 
     let { config, collection } = store.getState();
 
-    if(counter.isLessonRehydrated && counter.index && counter.index > 0) return;
+    if(counter.index && counter.index > 0) return;
     
     const sub = subscription.getByName('renderHome');
     if(sub) subscription.remove(sub);
