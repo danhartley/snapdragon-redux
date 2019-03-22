@@ -22,15 +22,27 @@ import { renderTaxonomyBox } from 'ui/screens/common/taxonomy-box';
 import { renderCalendar } from 'ui/screens/common/calendar';
 import cardTemplate from 'ui/screens/cards/card-template.html';
 
-export const renderCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody, isInCarousel = true) => {
+export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, isInCarousel = true) => {
 
     const item = selectedItem || collection.nextItem;
 
     const { layout, config, lessonPlan, enums } = store.getState();
 
-    const rootNode = isModalMode ? document.querySelector('#speciesCardModal') : document.querySelector('.right-body');
+    let rootNode;
 
-    if(!isModalMode) {        
+    switch(mode) {
+        case 'STAND_ALONE':
+            rootNode = document.querySelector('.right-body');
+            break;
+        case 'SWAP_OUT':
+            rootNode = document.querySelector('.js-species-container');
+            break;
+        case 'MODAL':
+            rootNode = document.querySelector('#speciesCardModal');
+            break;
+    }
+
+    if(mode === 'STAND-ALONE') {        
         const screen = layout.screens.filter(el => el.name === 'species-card')[0];
         if(!screen) return;
     }
@@ -48,14 +60,14 @@ export const renderCard = (collection, isModalMode = false, selectedItem, parent
 
     const traits = getTraits(enums);
 
-    renderCommonParts(template, config, item, collection, traits, isModalMode, parent, lessonPlan, rootNode);
+    renderCommonParts(template, config, item, collection, traits, mode, parent, lessonPlan, rootNode);
 
     config.isPortraitMode
-        ? renderPortrait(item, config, traits, isModalMode, rootNode)
-        : renderLandscape(item, config, traits, isModalMode, rootNode);
+        ? renderPortrait(item, config, traits, mode, rootNode)
+        : renderLandscape(item, config, traits, mode, rootNode);
 };
 
-const renderLandscape = (item, config, traits, isModalMode, rootNode) => {
+const renderLandscape = (item, config, traits, mode, rootNode) => {
 
     const src = rootNode.querySelector('.js-bird-song');
     
@@ -63,7 +75,7 @@ const renderLandscape = (item, config, traits, isModalMode, rootNode) => {
 
     const eolPage = rootNode.querySelector('.js-species-card-eol-link');
     
-    if(isModalMode) {
+    if(mode === 'MODAL') {
         eolPage.classList.add('hide');
     } else {
         eolPage.setAttribute('href', `http://eol.org/pages/${item.id}/overview`);
@@ -84,7 +96,7 @@ const renderLandscape = (item, config, traits, isModalMode, rootNode) => {
     renderInatDataBox(inatNode, item, config);
 };
 
-const renderPortrait = (item, config, traits, isModalMode, rootNode) => {
+const renderPortrait = (item, config, traits, mode, rootNode) => {
 
     const images = prepImagesForCarousel(item, config, imageUseCases.SPECIES_CARD);
 
@@ -94,7 +106,7 @@ const renderPortrait = (item, config, traits, isModalMode, rootNode) => {
 
     const player = rootNode.querySelector('.js-bird-song-player');
 
-    if(isModalMode) {
+    if(mode =='MODAL') {
         player.style.display = 'none';
         return;
     };
@@ -116,7 +128,7 @@ const renderPortrait = (item, config, traits, isModalMode, rootNode) => {
     });
 };
 
-const renderCommonParts = (template, config, item, collection, traits, isModalMode, parent, lessonPlan, rootNode) => {
+const renderCommonParts = (template, config, item, collection, traits, mode, parent, lessonPlan, rootNode) => {
 
     const name = item.name;
     // const epithet = itemProperties.latin(item.species);
@@ -178,7 +190,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
         });
     }
 
-    infoSlider(item, traits, family, rootNode.querySelector('.js-info-box'), isModalMode);
+    infoSlider(item, traits, family, rootNode.querySelector('.js-info-box'), mode);
 
     const namesBadge = rootNode.querySelector('.js-names-badge');
 
@@ -196,12 +208,12 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
         });
     }
 
-    lookALikes(collection, item, traits, config, isModalMode);
-    renderFeatures(item, traits, config, rootNode.querySelector('.js-feature-types'), isModalMode);
+    lookALikes(collection, item, traits, config);
+    renderFeatures(item, traits, config, rootNode.querySelector('.js-feature-types'), mode);
     
     const continueBtn = rootNode.querySelector('.js-species-card-btn button');
 
-    if(isModalMode) {
+    if(mode === 'MODAL' || mode === 'SWAP_OUT') {
         continueBtn.classList.add('hide-important');
     } else {
         
@@ -226,7 +238,7 @@ const renderCommonParts = (template, config, item, collection, traits, isModalMo
 
     renderIcon(item, rootNode);
 
-    if(isModalMode) {        
+    if(mode === 'MODAL') {        
         rootNode.querySelector('#speciesCardModal .js-modal-text-title').innerHTML = collection.name;
 
         const prev = rootNode.querySelector('#speciesCardModal .js-prev > span');

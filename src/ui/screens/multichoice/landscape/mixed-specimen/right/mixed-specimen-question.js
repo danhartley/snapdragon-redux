@@ -1,15 +1,13 @@
 import { utils } from 'utils/utils';
-import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { returnIcon } from 'ui/helpers/icon-handler';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { species } from 'api/species';
-// import { renderQuestionHeader } from 'ui/screens/common/question-header';
+import { renderTestCardTemplate } from 'ui/screens/common/test-card';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { listenToImageSelection, listenToUserAnswer, renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
 import { renderTemplate } from 'ui/helpers/templating';
-import testCardTemplate from 'ui/screens/common/test-card-template.html';
 import mixedSpecimenQuestionTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question-template.html';
 
 export const renderMixedSpecimenQuestion = collection => {
@@ -20,16 +18,9 @@ export const renderMixedSpecimenQuestion = collection => {
 
     if(!item) return;
 
-    let template = document.createElement('template');
-
-    template.innerHTML = testCardTemplate;
-
-    let parent = DOM.rightBody;
-    parent.innerHTML = '';
-
-    renderTemplate({ vernacularName: item.vernacularName, binomial: item.binomial, question: 'Find the species', help: '(Click on the matching photo.)' }, template.content, parent);
-
-    parent = document.querySelector('.js-test-card');
+    const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.binomial, question: 'Find the species', help: '(Click on the matching photo.)' });
+    
+    const template = document.createElement('template');
 
     template.innerHTML = mixedSpecimenQuestionTemplate;
 
@@ -39,8 +30,6 @@ export const renderMixedSpecimenQuestion = collection => {
     renderTemplate({ instructions, binomial }, template.content, parent);
 
     const icon = renderIcon(item, document);
-
-    // const headerIconContainer = renderQuestionHeader(document.querySelector('.js-question-container'), item, config);
 
     const speciesShown = document.querySelector('.js-images-names-txt');
 
@@ -70,7 +59,7 @@ export const renderMixedSpecimenQuestion = collection => {
         pendingScore.score = score;
         pendingScore.scoreUpdateTimer = scoreUpdateTimer;
 
-        score.success ? headerIconContainer.classList.add('answer-success') : headerIconContainer.classList.add('answer-alert');
+        score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
 
         // Array.from(speciesShown.querySelectorAll('li')).filter(species => species.id !== score.question && species.id !== score.answer).forEach(s => s.style.color = 'gray');
     });

@@ -116,7 +116,7 @@ table {
 
 .scrollable {
     overflow-y: scroll;
-    height: 76vh;
+    height: 74vh;
 }
   
   @media (min-width: 768px) {

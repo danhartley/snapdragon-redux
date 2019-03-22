@@ -1,7 +1,7 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import infoSliderTemplate from 'ui/screens/common/info-slider-template.html';
 
-export const infoSlider = (item, traits, family, parent, isModalMode) => {
+export const infoSlider = (item, traits, family, parent, mode) => {
 
     const speciesTraits = traits.find(c => c.name === item.name) || { traits: [] };
     const familyTraits = (family && family.traits) ? family.traits : [];
@@ -22,7 +22,7 @@ export const infoSlider = (item, traits, family, parent, isModalMode) => {
         }
     });
 
-    const id = isModalMode ? 1 : 0;;
+    const id = mode === 'MODAL' ? 1 : 0;;
     
     renderTemplate({ id, species }, slider.content, parent);
     

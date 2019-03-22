@@ -1,11 +1,10 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
-import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
-import testCardTemplate from 'ui/screens/common/test-card-template.html';
+import { renderTestCardTemplate } from 'ui/screens/common/test-card';
 import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-questions-template.html';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { imageSlider } from 'ui/screens/common/image-slider';
@@ -19,10 +18,6 @@ export const renderMixedSpecimenQuestions = collection => {
     const item = collection.nextItem;
 
     if(!item) return;
-
-    const template = document.createElement('template');
-
-    template.innerHTML = testCardTemplate;
 
     const getPortraitImages = images => {
         if(!images) return;
@@ -52,17 +47,14 @@ export const renderMixedSpecimenQuestions = collection => {
 
     images = getPortraitImages(images);
 
-    let parent = DOM.rightBody;
-    parent.innerHTML = '';
-
-    renderTemplate({ vernacularName: item.vernacularName, binomial: item.binomial, question: 'Find the species', help: '' }, template.content, parent);
-
+    let parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.binomial, question: 'Find the species', help: '(Click on the matching photo.)' });
+    
     const icon = renderIcon(item, document);
- 
+    
+    const template = document.createElement('template');
+
     template.innerHTML = mixedSpecimenTemplate;
-
-    parent = document.querySelector('.js-test-card');
-
+    
     renderTemplate({}, template.content, parent);
 
     parent = document.querySelector('.js-species-card-images');

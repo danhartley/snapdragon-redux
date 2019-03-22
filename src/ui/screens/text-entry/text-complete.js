@@ -8,8 +8,7 @@ import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { scoreHandler } from 'ui/helpers/handlers';
-
-import testCardTemplate from 'ui/screens/common/test-card-template.html';
+import { renderTestCardTemplate } from 'ui/screens/common/test-card';
 import completeTemplate from 'ui/screens/text-entry/text-complete-template.html';
 
 export const renderCompleteText = (collection) => {
@@ -22,19 +21,10 @@ export const renderCompleteText = (collection) => {
     
     if(!screen) return;
 
-    const template = document.createElement('template');
-
-    let parent = DOM.rightBody;
-    parent.innerHTML = '';
-
-    template.innerHTML = testCardTemplate;
-
     let question, genus, species, givenTaxon, vernacularName, binomial;
 
     vernacularName = item.vernacularName;
     binomial = item.name;
-
-    // const question = 'Complete the latin name';
 
     switch(screen.type) {
         case 'text-complete-genus':
@@ -53,11 +43,11 @@ export const renderCompleteText = (collection) => {
             break;
     }
 
-    renderTemplate({ vernacularName, binomial, question: 'Complete the latin name', help: '(Select the name below.)' }, template.content, parent);
+    const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: 'Complete the latin name', help: '(Select the name below.)' });
 
     const icon = renderIcon(item, document);
 
-    parent = document.querySelector('.js-test-card');
+    const template = document.createElement('template');
 
     template.innerHTML = completeTemplate;
 

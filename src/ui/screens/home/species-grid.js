@@ -42,7 +42,7 @@ export const renderSpeciesGrid = () => {
     document.querySelectorAll('.species-grid img').forEach(image => {
         image.addEventListener('click', event => {
             const name = event.target.dataset.itemName;
-            renderCard({ items: species, name: 'Snapdragon specimen' }, true, species.find(i => i.name === name), speciesCardModal, false);
+            renderCard({ items: species, name: 'Snapdragon specimen' }, 'MODAL', species.find(i => i.name === name), speciesCardModal, false);
         });
     });
 };

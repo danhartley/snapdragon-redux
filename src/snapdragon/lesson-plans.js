@@ -232,13 +232,14 @@ const portraitLesson1 = {
             layouts: [ 
                 
                 genusEntry,
+                textCompleteGenus,                
+                latinToCommonMatch,
+                mixedSpeciesMatch,
+                
                 speciesEntry,
                 speciesGenusEntry,
                 
-                mixedSpeciesMatch,
-                latinToCommonMatch,
                 commonToLatinMatch,
-                textCompleteGenus,                
                 textCompleteSpecies,
                 
                 commonEntry, // GOOD
