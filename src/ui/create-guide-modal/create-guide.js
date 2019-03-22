@@ -18,9 +18,11 @@ export const listenToCloseCreateGuideModal = listener => {
   };  
 
 class CreateGuide {
-    
+
     constructor(step) {
         
+        this.listeners = [];
+
         this.currentStep = step;
         
         this.steps = [
@@ -57,6 +59,9 @@ class CreateGuide {
         const parent = this.modal.querySelector('.js-create-guide-action');
         parent.innerHTML = '';
         template = document.createElement('template');
+        console.log('***');
+        console.warn(this.currentStep);
+        console.log('***');
         const description = this.steps.find(step => step.number === this.currentStep).description;
 
         const { config: configState } = store.getState();
@@ -94,10 +99,12 @@ class CreateGuide {
             config.guide.ready = true;
             actions.boundUpdateConfig(config);
 
-            // handle listeners correctly; this won't work:
+            this.listeners.forEach((listener, index) => {
+                const wasListenerRemoved = listener.element.removeEventListener('click', listener.handler, 'true');
+                console.log(wasListenerRemoved);
+            });
 
-            // guide.nextStepAction.removeEventListener('click');        
-            // guide.previousStepAction.removeEventListener('click');
+            this.listeners = [];
 
             return;
         };
@@ -146,12 +153,20 @@ export const createGuideHandler = (step) => {
 
     guide.createStep(step);
 
-    guide.nextStepAction.addEventListener('click', event => {    
+    const handleNextStepAction = event => {
         guide.createStep(guide.getCurrentStep + 1, 'NEXT');
-    });
+        console.log(event.target.nodeName);
+        guide.listeners.push( { element: guide.nextStepAction, handler: handleNextStepAction });
+    };
 
-    guide.previousStepAction.addEventListener('click', event => {
+    guide.nextStepAction.addEventListener('click', handleNextStepAction, true);
+
+    const handlePreviousStepAction = event => {
         guide.createStep(guide.getCurrentStep - 1, 'PREVIOUS');
-    });
+        console.log(event.target.nodeName);
+        guide.listeners.push( { element: guide.previousStepAction, handler: handlePreviousStepAction });
+    };
+
+    guide.previousStepAction.addEventListener('click', handlePreviousStepAction, true);
 
 }

@@ -115,8 +115,8 @@ export const renderHome = counter => {
     });
 
     let deleteEnabled = false;
-
-    deleteLinkCheckbox.addEventListener('click', event => {
+    
+    const handleDeleteLinkCheckbox = event => {
         deleteEnabled = event.target.checked;
         if(deleteEnabled) {
             deleteLinkTxt.classList.add('active');
@@ -125,17 +125,21 @@ export const renderHome = counter => {
             deleteLinkTxt.classList.remove('active');
             deleteLinkTxt.classList.add('disabled');
         }
-    });
+    };
 
-    deleteLinkTxt.addEventListener('click', event => {
+    deleteLinkCheckbox.addEventListener('click', handleDeleteLinkCheckbox);
+
+    const handleDeleteLinkTxt = event => {
         if(deleteEnabled) {
             actionLink.innerHTML = 'Create';
             state = 'MODAL';
             checkState(state);
             persistor.purge();
-            window.location.reload(true);          
+            window.location.reload(true);
         }
-    });
+    };
+
+    deleteLinkTxt.addEventListener('click', handleDeleteLinkTxt);
 
     listenToCloseCreateGuideModal(()=>{
         config = store.getState().config;
