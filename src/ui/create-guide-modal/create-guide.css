@@ -61,7 +61,7 @@
   
   #createGuide .modal-body .guide-text {
     font-size: 1.1rem;
-    margin: .75rem 0 .5rem 0;
+    margin: 1rem 0 .5rem 0;
     letter-spacing: .03rem;
     color: var(--snap-text-medium-light);
     font-style: italic;
@@ -204,17 +204,17 @@
     font-size: .8rem;
     margin: 0 .25rem 0 0;
     text-transform: uppercase;
-    border-bottom: 1px solid gray;
+    /* border-bottom: 1px solid gray; */
     vertical-align: middle;
     letter-spacing: .03rem;
   }
   
-  #createGuide .modal-body .chosen span:nth-child(2),
+  /* #createGuide .modal-body .chosen span:nth-child(2),
   #createGuide .modal-body .chosen-inat span:nth-child(2) {
     text-transform: uppercase;
     font-size: 1rem;
     color: var(--snap-collection-active);
-  }
+  } */
   
   #createGuide .modal-body .chosen > div span:nth-child(2) > span {
     margin: 0 .25rem;
@@ -281,7 +281,6 @@
   #createGuide .guides {
     display: flex;
     flex-direction: column;
-    margin-top: -.5rem;
   }
   
   #createGuide .guides .months {
@@ -495,8 +494,8 @@
   }
   
   .iconic-taxa-categories svg, .iconic-taxa-categories-selected svg {
-    width: 20px;
-    height: 20px;
+    width: 2rem;
+    height: 2rem;
     margin: 0.25rem 0 0 0;
   }
   
@@ -509,18 +508,18 @@
   }
   
   .mushroom-icon svg {
-    width: 20px;
-    height: 20px;
+    width: 2rem;
+    height: 2rem;
     fill: black;
   }
   
   .iconic-taxa-categories .svg-inline--fa.fa-w-16 {
-    width: 20px;
+    width: 2rem;
   }
   
   .mushroom-icon-header svg {
-    width: 32px;
-    height: 32px;
+    width: 3rem;
+    height: 3rem;
     fill: var(--snap-iconic-icon-header);
   }
   

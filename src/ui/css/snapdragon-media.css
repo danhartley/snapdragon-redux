@@ -66,6 +66,10 @@
 
 @media (min-width: 768px) {
 
+    button {
+        width: fit-content;
+    }
+
     .grid {
         grid-template-columns: 10fr .25rem 10fr;
     }
@@ -123,6 +127,10 @@
         height: 7.5rem;    
         object-fit: cover;
         cursor: pointer;
+    }
+
+    .home-container .snapdragon-tag .inat-widget {
+        font-size: 3rem;
     }
 }
 

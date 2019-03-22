@@ -20,6 +20,7 @@ export const renderCategories = (modal, config, createGuide) => {
     template.innerHTML = categoriesTemplate;
     const parent = modal.querySelector('.js-actions');
     parent.innerHTML = '';
+    
     renderTemplate({}, template.content, parent);
 
     const icons = parent.querySelectorAll('.js-iconic-taxa-categories > div > div:nth-child(1)');

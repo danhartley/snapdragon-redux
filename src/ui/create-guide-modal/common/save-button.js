@@ -42,7 +42,6 @@ export const saveButton = (parent, config, step, update = true) => {
                 } else {
                     chosen.innerHTML = 'All species';
                 }
-                // chosen.innerHTML = iconicTaxa.length > 0 ? iconicTaxa.map(taxon => taxon.common).join(', ') : 'All species';
                 break;
 
             case 'GUIDE':
