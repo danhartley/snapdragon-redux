@@ -14,6 +14,10 @@ body {
   background-color: rgb(129, 67, 101,.1);
 }
 
+button {
+  width: 100%;
+}
+
 tbody {
   font-size: 0.9rem;
   border-bottom: 0.1rem solid var(--snap-border-dark);
@@ -220,14 +224,16 @@ a.dropdown-item {
 .underline-link {
   color: var(--snap-link) !important;
   text-decoration: none;
-  border: solid .05rem !important;
-  border-top: none !important;
-  border-left: none !important;
-  border-right: none !important;
+  border-bottom: solid .05rem !important;
   color: inherit;
   cursor: pointer;
   padding: 0 0 0.1rem 0 !important;
   font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.selected-text {
+  color: var(--snap-collection-active);
   text-transform: uppercase;
 }
 
@@ -1919,52 +1925,6 @@ a.collection-disabled {
   width: 15rem;
 }
 
-/* .location-control {
-  display: flex;
-}
-
-.location-control button:nth-child(1) {
-  margin: 1rem .5rem 1rem 0;
-} */
-
-/* .iconic-taxa-categories svg, .iconic-taxa-categories-selected svg {
-  width: 20px;
-  height: 20px;
-  margin: 0.25rem 0 0 0;
-}
-
-.iconic-taxa-categories-selected svg {
-  vertical-align: -.125em;
-}
-
-.iconic-taxa-categories-selected svg g {
-  fill: var(--snap-collection-active);
-}
-
-.mushroom-icon svg {
-  width: 20px;
-  height: 20px;
-  fill: black;
-}
-
-.iconic-taxa-categories .svg-inline--fa.fa-w-16 {
-  width: 20px;
-}
-
-.mushroom-icon-header svg {
-  width: 32px;
-  height: 32px;
-  fill: var(--snap-iconic-icon-header);
-}
-
-.svg-icon {
-  margin: 0.25rem 0 0;
-}
-
-.svg-icon-selected {
-  fill: var(--snap-success);
-} */
-
 .carousel-indicators li {
   background-color: black;
   width: 1rem;
@@ -2104,7 +2064,6 @@ a.collection-disabled {
 
 .home-container .snapdragon-tag, .summary-scores {
   justify-content: center;
-  /* height: 360px; */
   height: 40vh;
   font-family: sentinel;
   font-size: 2rem;
@@ -2112,6 +2071,11 @@ a.collection-disabled {
   display: flex;
   color: var(--snap-link);
   letter-spacing: .03rem;
+}
+
+.home-guide .taxa {
+  font-size: 2rem;
+  color: var(--snap-collection-active);
 }
 
 .summary-scores .summary-progress {
@@ -2145,7 +2109,7 @@ a.collection-disabled {
 
 .home-container .snapdragon-tag .inat-widget {
   font-style: initial;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .delete-guide-link > span.active {
