@@ -1241,14 +1241,12 @@ span.correct {
   font-size: .9rem;
 }
 
-/* .right-body button,
-.right-body button,
-.dropdown-menu.show {
-  width: 100%;
-} */
-
 .modal-dialog {
   margin: 2rem auto;
+}
+
+#menuModal .modal-body.settings-modal {
+  padding: 0;
 }
 
 #badgeListModal .modal-dialog {
@@ -1265,52 +1263,6 @@ span.correct {
   color: rgb(29, 33, 36);
   margin: 0;
 }
-
-/* .list-group {
-  padding: 0;
-}
-
-.list-group-header {
-  padding: 0.5rem;
-  color: var(--snap-text-light);
-  background-color: var(--snap-list-header);
-  border-radius: 0.2rem 0.2rem 0 0;
-}
-
-.scrollable .list-group.list-group-flush {
-  height: inherit;
-} */
-
-/* 
-.list-group-headers {
-  padding: 0.5rem;
-  color: var(--snap-text-light);
-  background-color: var(--snap-collection);
-  border-radius: 0.2rem 0.2rem 0 0;
-  display: flex;
-  flex-direction: row;
-  text-align: left;
-}
-
-.list-group-headers span {
-  flex: 1;
-}
-
-.list-group-item {
-  display: flex;
-  flex-direction: row;
-  border-left: 0.1em solid var(--snap-border-dark);
-  border-right: 0.075rem solid var(--snap-border-dark);
-}
-
-.list-group-item {
-  padding: 0.2rem 0.5rem;
-  border: 0;
-}
-
-.list-group li:nth-child(2n + 1) {
-  background-color: var(--snap-list-alt-background);
-} */
 
 .trait.card li span:nth-child(1) {
   width: 25%;
@@ -2156,6 +2108,10 @@ a.collection-disabled {
 #iNatWidgetModal .modal-header {
   font-size: 1.2rem;
   display: inline;
+}
+
+.modal-header button.close {
+  width: fit-content;
 }
 
 .home-container .snapdragon-tag > div .underline-link {
