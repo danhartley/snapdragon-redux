@@ -1063,7 +1063,6 @@ span.correct {
   color: var(--snap-text-light) !important;
   background-color: var(--snap-success) !important;
   border: none;
-  /* box-shadow: 0 2px 8px rgba(0,0,0,.2); */
 }
 
 .block.snap-alert {
