@@ -1,8 +1,5 @@
-import { DOM } from 'ui/dom';
-import { renderQuestionHeader } from 'ui/screens/common/question-header';
 import { actions } from 'redux/actions/action-creators';
 import { elem } from 'ui/helpers/class-behaviour';
-import { renderTemplate } from 'ui/helpers/templating';
 import { markTest } from 'ui/helpers/score-handler';
 
 export const scoreHandler = (type, test, callback, config, containers) => {
@@ -233,52 +230,3 @@ export const selectHandler = (selector, callback) => {
         });
     });
 };
-
-// export const radioButonClickhandler = (config, template, answers, question, item) => {
-    
-//     const parent = DOM.rightBody;
-//     parent.innerHTML = '';
-
-//     const description = 'Select family';
-
-//     renderTemplate({ description, answers }, template.content, parent);
-
-//     renderQuestionHeader(document.querySelector('.js-question-container'), item, config);
-
-//     const answerBtn = document.querySelector('.js-continue-lesson-btn');
-
-//     const radioButtons = document.querySelectorAll('.rb.btn-group label');
-
-//     radioButtons.forEach(rbContainer => {
-//         rbContainer.addEventListener('click', event => {
-//             scoreEventHandler(event);
-//         });
-//     });
-
-//     const boundScore = {};
-
-//     const scoreEventHandler = event => {
-        
-//         answerBtn.disabled = false;
-
-//         const answer = event.target.id;
-        
-//         const test = { ...question, answer, target: event.target };
-
-//         const { score, scoreUpdateTimer } = scoreHandler('radio', test, null, config );         
-
-//         boundScore.scoreUpdateTimer = scoreUpdateTimer;
-//         boundScore.score = score;
-        
-//         radioButtons.forEach(rb => {
-//             rb.querySelector('input').readOnly; 
-//             rb.classList.add('disabled');
-//         });        
-//     };
-
-//     answerBtn.addEventListener('click', event => {
-//         answerBtn.removeEventListener('click', scoreEventHandler);     
-//         window.clearTimeout(boundScore.scoreUpdateTimer);
-//         actions.boundUpdateScore(boundScore.score);
-//     });
-// };

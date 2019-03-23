@@ -9,12 +9,10 @@ import { renderLeafTile } from 'ui/screens/landscape/leaf-tile';
 import { renderNameEntry } from 'ui/screens/text-entry/leaf-text-entry';
 import { runTask } from 'ui/screens/command';
 import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
-// import { renderRadioButtons } from 'ui/screens/multichoice/radiobuttons';
 import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 import { renderCompleteText } from 'ui/screens/text-entry/text-complete';
 import { renderCultivarCard } from 'ui/screens/cards/cultivar-card';
 import { renderWildcard } from 'ui/screens/cards/wildcard-card';
-// import { renderSpecimenMatch } from 'ui/screens/multichoice/visual-match';
 import { renderDefinitionCard } from 'ui/screens/cards/definition-card';
 import { renderMixedSpecimenQuestions } from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-questions';
 import { renderNonTaxonCardSpecimenTiles } from 'ui/screens/cards/non-taxon-card-specimen-tiles';
@@ -39,8 +37,6 @@ const functions = [
     { name: 'epithet', func: renderMultiStrips },
     { name: 'definition', func: renderMultiStrips },
     { name: 'family', func: renderMultiStrips },
-    // { name: 'family', func: renderRadioButtons },
-    // { name: 'cultivar-match', func: renderRadioButtons },
     { name: 'family-strips', func: renderMultiStrips },
     { name: 'taxon-card', func: renderTaxonCard },
     { name: 'non-taxon-card', func: renderNonTaxonCard },
@@ -49,9 +45,7 @@ const functions = [
     { name: 'wildcard-card', func: renderWildcard },
     { name: 'wildcard-match', func: renderMultiStrips },
     { name: 'visual-match', func: renderMultiStrips },
-    // { name: 'visual-match', func: renderSpecimenMatch },
     { name: 'trait-property', func: renderMultiStrips },
-    // { name: 'trait-property', func: renderSpecimenMatch },
     { name: 'definition-card', func: renderDefinitionCard },
     
     
