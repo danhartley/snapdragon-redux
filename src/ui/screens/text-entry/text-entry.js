@@ -8,7 +8,7 @@ import { scoreHandler } from 'ui/helpers/handlers';
 import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
 import { imageSlider } from 'ui/screens/common/image-slider';
 
-import testCardTemplate from 'ui/screens/common/test-card-template.html';
+import { renderTestCardTemplate } from 'ui/screens/common/test-card';
 import textEntryTemplate from 'ui/screens/text-entry/text-entry-templates.html';
 import textEntryPortraitTemplate from 'ui/screens/text-entry/text-entry-portrait-templates.html';
 
@@ -16,13 +16,7 @@ export const renderInput = (screen, question) => {
 
     const { lessonPlan, collection, config, layout } = store.getState();
 
-    const template = document.createElement('template');
-    template.innerHTML = testCardTemplate;
-
     const item = collection.nextItem;
-
-    let parent = DOM.rightBody;
-    parent.innerHTML = '';
 
     let vernacularName, binomial;
 
@@ -45,10 +39,12 @@ export const renderInput = (screen, question) => {
             break;
     }
 
-    renderTemplate({ vernacularName, binomial, question: 'Complete the latin name', help: '(Complete the name below.)' }, template.content, parent);
-
-    parent = document.querySelector('.js-test-card');
+    const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: 'Complete the latin name', help: '(Complete the name below.)' });
+    
+    const template = document.createElement('template');
+    
     template.innerHTML = config.isLandscapeMode ? textEntryTemplate : textEntryPortraitTemplate;
+    
     renderTemplate({ }, template.content, parent);
 
     const inputTxt = document.querySelector('.js-txt-input');
@@ -77,15 +73,20 @@ export const renderInput = (screen, question) => {
 
     const boundScore = {};
 
-    const markingCallback = (score, scoreUpdateTimer) => {        
+    const callback = (score, scoreUpdateTimer) => {        
         boundScore.scoreUpdateTimer = scoreUpdateTimer;
         boundScore.score = score;        
         answerBtn.removeEventListener('click', scoreEventHandler);
+        if(config.isPortraitMode) {
+            answerBtn.innerHTML = item.name;
+            answerBtn.classList.add('portrait-answer');
+        }
+        score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
     };
 
     const scoreEventHandler = event => {
         const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames };
-        scoreHandler('text', score, markingCallback, config);
+        scoreHandler('text', score, callback, config);
         answerBtn.disabled = true;
         document.querySelector('.js-continue-lesson-btn').disabled = false;
         helpTxt.innerHTML = item.name;

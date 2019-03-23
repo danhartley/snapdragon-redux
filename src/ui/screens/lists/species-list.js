@@ -85,7 +85,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
             speciesCardLinks.forEach(link => {
                 link.addEventListener('click', event => {
                     const name = event.target.dataset.name;
-                    renderCard(collection, true, collection.items.find(i => i.name === name), speciesCardModal);
+                    renderCard(collection, 'MODAL', collection.items.find(i => i.name === name), speciesCardModal);
                 });
             });
             const traitCardLinks = document.querySelectorAll('.js-key-trait-link');
@@ -220,7 +220,7 @@ const carouselControlHandler = event => {
     
     switch(modal) {
         case 'speciesCardModal':
-            renderCard(collection, true, nextItem, parent);
+            renderCard(collection, 'MODAL', nextItem, parent);
             break;
         case 'taxonCardModal':
             renderTaxonCard(collection, true, nextItem, parent, null, rank);

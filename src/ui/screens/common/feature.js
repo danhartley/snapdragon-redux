@@ -33,7 +33,7 @@ const getFeature = (item, traits, config, type) => {
     }
 };
 
-export const renderFeatures = (item, traits, config, parent, isModalMode) => {
+export const renderFeatures = (item, traits, config, parent, mode) => {
 
     const types = [];
 
@@ -70,7 +70,7 @@ export const renderFeatures = (item, traits, config, parent, isModalMode) => {
             const linkedSpecies = species.find(s => {
                 return s.name.toUpperCase() === trait.symbiont.toUpperCase();
             });
-            if(linkedSpecies && !isModalMode) {
+            if(linkedSpecies && mode !== 'MODAL') {
                 trait.className = 'underline-link';
                 trait.modal = 'modal';
             } else {
@@ -87,7 +87,7 @@ export const renderFeatures = (item, traits, config, parent, isModalMode) => {
                 const name = event.target.dataset.name;
                 const selectedItem = species.find(i => i.name === name);
                 selectedItem.species = itemProperties.getSpeciesName(item.name);
-                renderCard({ name: 'Local species', items: species }, true, selectedItem, document.querySelector('#speciesCardModal .js-modal-body'), false);
+                renderCard({ name: 'Local species', items: species }, 'MODAL', selectedItem, document.querySelector('#speciesCardModal .js-modal-body'), false);
             });
         });
         

@@ -5,8 +5,7 @@ const specimenImages = {
   
   const history = { 
     name: 'history', 
-    domain: 'history',
-    // template: 'js-history-template'
+    domain: 'history'
   };
   
   const speciesCard = {
@@ -23,17 +22,12 @@ const specimenImages = {
     name: 'species-scientifics',
     domain: 'collection',
     taxon: 'name'
-    // headers: { long: 'Click the latin name to match the species', short: 'Click name to match species'},
-    // question: 'Tap to match common name',
-    // template: 'js-strips-template',
   };
   
   const vernaculars = {
     name: 'species-vernaculars',
     domain: 'collection',
     taxon: 'name'
-    // question: 'Tap to match latin name',
-    // template: 'js-strips-template',
   };
   
   const text = {
@@ -49,8 +43,7 @@ const specimenImages = {
   
   const summary = { 
     name: 'summary', 
-    domain: 'history',
-    // template: 'js-summary-template'
+    domain: 'history' 
   };
   
   const mixedSpecimenQuestions = {
@@ -65,21 +58,18 @@ const specimenImages = {
     right: {
       cutLength: 5,
       domain: 'collection',
-      // template: 'js-letters-template',
       question: 'Name puzzle'
     }
   };
   
   const leaf = {
     name: 'leaf-image',
-    domain: 'collection',
-    // template: 'js-leaf-image-template'     
+    domain: 'collection'
   };
   
   const leafName = {
     name: 'leaf-text',
-    domain: 'collection',
-    // template: 'js-text-entry-template'     
+    domain: 'collection'
   };
   
   const epithets = {

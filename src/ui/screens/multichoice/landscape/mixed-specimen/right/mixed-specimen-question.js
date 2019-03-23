@@ -1,15 +1,13 @@
 import { utils } from 'utils/utils';
-import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { returnIcon } from 'ui/helpers/icon-handler';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { species } from 'api/species';
-// import { renderQuestionHeader } from 'ui/screens/common/question-header';
+import { renderTestCardTemplate } from 'ui/screens/common/test-card';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { listenToImageSelection, listenToUserAnswer, renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
 import { renderTemplate } from 'ui/helpers/templating';
-import testCardTemplate from 'ui/screens/common/test-card-template.html';
 import mixedSpecimenQuestionTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question-template.html';
 
 export const renderMixedSpecimenQuestion = collection => {
@@ -20,16 +18,9 @@ export const renderMixedSpecimenQuestion = collection => {
 
     if(!item) return;
 
-    let template = document.createElement('template');
-
-    template.innerHTML = testCardTemplate;
-
-    let parent = DOM.rightBody;
-    parent.innerHTML = '';
-
-    renderTemplate({ vernacularName: item.vernacularName, binomial: item.binomial, question: 'Find the species', help: '(Click on the matching photo.)' }, template.content, parent);
-
-    parent = document.querySelector('.js-test-card');
+    const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question: 'Find the species', help: '(Click on the matching photo.)' });
+    
+    const template = document.createElement('template');
 
     template.innerHTML = mixedSpecimenQuestionTemplate;
 
@@ -40,25 +31,22 @@ export const renderMixedSpecimenQuestion = collection => {
 
     const icon = renderIcon(item, document);
 
-    // const headerIconContainer = renderQuestionHeader(document.querySelector('.js-question-container'), item, config);
-
     const speciesShown = document.querySelector('.js-images-names-txt');
 
-    listenToImageSelection(images => {        
-        const getVernacularName = (itemName) => {
-            const vernacularName = itemProperties.getVernacularName(species.find(sp => sp.name === itemName), config);
-            return vernacularName;
-        };
-        const getIcon = (itemName) => {
-            const icon = returnIcon(species.find(sp => sp.name === itemName));
-            return icon;
-        };
-        const itemNames = images.map(image => `<li id="${image.itemName}">${getIcon(image.itemName)} <span>${getVernacularName(image.itemName)}</span></li>`);
-        speciesShown.innerHTML = '';
-        utils.shuffleArray(itemNames).forEach(name => {
-            speciesShown.innerHTML += name;
+    if(!speciesShown) return;
+
+    const listenToImageChangeHandler = images => {        
+        let speciesToShow = '';        
+        utils.shuffleArray(images).forEach(image => {            
+            const i = image;
+            const vernacularName = itemProperties.getVernacularName(species.find(sp => sp.name === image.itemName), config);  
+            const taxonIcon = returnIcon(species.find(sp => sp.name === image.itemName));            
+            speciesToShow +=  `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;
         });
-    });
+        document.querySelector('.js-images-names-txt').innerHTML = speciesToShow;
+    };
+
+    listenToImageSelection(listenToImageChangeHandler);
 
     const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
 
@@ -70,9 +58,7 @@ export const renderMixedSpecimenQuestion = collection => {
         pendingScore.score = score;
         pendingScore.scoreUpdateTimer = scoreUpdateTimer;
 
-        score.success ? headerIconContainer.classList.add('answer-success') : headerIconContainer.classList.add('answer-alert');
-
-        // Array.from(speciesShown.querySelectorAll('li')).filter(species => species.id !== score.question && species.id !== score.answer).forEach(s => s.style.color = 'gray');
+        score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
     });
 
     continueLessonBtn.addEventListener('click', () => {

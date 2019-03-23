@@ -112,11 +112,18 @@ table {
     align-items: center;
   }
 
+ /* FUNGI ICONS */
+
+ .species-table .mushroom-icon svg {
+  width: 1rem;
+  height: 1rem;
+ }
+
   /* SCROLLING */
 
 .scrollable {
     overflow-y: scroll;
-    height: 76vh;
+    height: 74vh;
 }
   
   @media (min-width: 768px) {

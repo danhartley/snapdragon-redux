@@ -220,7 +220,6 @@ const genusEntry = {
     screens: [
         { ...specimenImages },
         { ...text, taxon: 'genus'}
-        // { ...text, template: 'js-genus-entry-template', taxon: 'genus'}
     ]
 };
 
@@ -235,7 +234,6 @@ const speciesEntry = {
     screens: [
         { ...specimenImages },
         { ...text, taxon: 'species'}
-        // { ...text, template: 'js-species-entry-template', taxon: 'species'}
     ]
 };
 
@@ -250,7 +248,6 @@ const speciesGenusEntry = {
     screens: [
         { ...specimenImages },
         { ...text, taxon: 'name'}
-        // { ...text, template: 'js-species-genus-entry-template', taxon: 'name'}
     ]
 };
 
@@ -289,8 +286,7 @@ const textCompleteSpecies = {
     requirement: 'Select species name',
     screens: [
         { ...specimenImages },
-        { ...textComplete }
-        // { ...textComplete, type: 'text-complete-species' }
+        { ...textComplete, type: 'text-complete-species' }
     ]
 };
 

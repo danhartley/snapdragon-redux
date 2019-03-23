@@ -24,7 +24,6 @@ export const returnIcon = item => {
 
     if(item.taxonomy.kingdom.toLowerCase() === 'fungi') {
         return '<span class="mushroom-icon-header"><svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg></span>';
-
     } else {
         return `<i class="small-icon ${matchIcon(item.taxonomy, iconicTaxa)}"></i>`;
     }

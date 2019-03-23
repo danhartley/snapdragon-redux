@@ -13,7 +13,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { syndromes } from 'api/snapdragon/syndromes';
-import testCardTemplate from 'ui/screens/common/test-card-template.html';
+import { renderTestCardTemplate } from 'ui/screens/common/test-card';
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 
 import { getTraits } from 'api/traits/traits';
@@ -26,13 +26,6 @@ export const renderMultiStrips = (collection) => {
     const items = collection.allItems || collection.items;
 
     const { config, lessonPlan, layout } = store.getState();
-
-    const template = document.createElement('template');
-    
-    template.innerHTML = testCardTemplate;
-
-    let parent = DOM.rightBody;
-    parent.innerHTML = '';
 
     const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, collection.families));
 
@@ -59,16 +52,16 @@ export const renderMultiStrips = (collection) => {
     const render = (questionValue, answers, overrides) => {
 
         const vernacularName = (overrides && overrides.vernacularName) ? overrides.vernacularName : item.vernacularName;
-        const binomial = (overrides && overrides.binomial) ? overrides.binomial : item.binomial;
+        const binomial = (overrides && overrides.binomial) ? overrides.binomial : item.name;
         const question = (overrides && overrides.question) ? overrides.question : 'Match the name';
         const help = (overrides && overrides.help) ? overrides.help : '(Click on the name below.)';
         
-        renderTemplate({ vernacularName, binomial, question, help }, template.content, parent);
+        const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help });
 
         const icon = renderIcon(item, document);
-    
-        parent = document.querySelector('.js-test-card');
 
+        const template = document.createElement('template');
+        
         template.innerHTML = stripTemplate;
 
         renderTemplate({ answers }, template.content, parent);
@@ -89,6 +82,8 @@ export const renderMultiStrips = (collection) => {
                 window.clearTimeout(scoreUpdateTimer);
                 actions.boundUpdateScore(score);
             });
+
+            score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
         };
 
         scoreHandler('strip', test, callback, config);

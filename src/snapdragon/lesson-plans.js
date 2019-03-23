@@ -36,6 +36,27 @@ const propertyTrait = (traitPropertyMatch, trait) => {
     return layout;
 };
 
+let landscapeLayouts = [
+    mixedSpecimenImages, // UPDATED (ICON CHANGE COLOUR IN LIST?)
+    traitPropertyMatch,
+    // multiSpecimenCommonMatch, ?????
+    textCompleteGenus, // GOOD
+    textCompleteSpecies, // GOOD
+    genusEntry, // GOOD
+    speciesEntry, // GOOD
+    speciesGenusEntry, // GOOD
+    commonEntry, // GOOD
+    speciesRevision, // excluded in lesson-builder                  
+    // multiSpecimenCommonMatch, // only works portrait as in landscape the photo is the same
+    // mixedSpeciesMatch, // replace with clickable rhs images REMOVE
+    latinToCommonMatch,  // works fine
+    // taxonRevision, // excluded in lesson-builder ??             
+    familyMatch, // still working... missing family data an issue
+    familyStripsMatch,// still working... missing family data an issue 
+];
+
+landscapeLayouts = [ textCompleteGenus, commonEntry ];
+
 const landscapeLesson1 = {
     id: 1,
     name:'Lesson 1',
@@ -45,34 +66,7 @@ const landscapeLesson1 = {
         {   id: 1,
             name:'Level 1',
             description: 'Species recognition',
-            layouts: [ 
-
-                mixedSpecimenImages, // UPDATED (ICON CHANGE COLOUR IN LIST?)
-                traitPropertyMatch,
-                // multiSpecimenCommonMatch, ?????
-
-                genusEntry,
-                speciesEntry,
-                speciesGenusEntry,
-
-                textCompleteGenus, // GOOD
-                textCompleteSpecies, // GOOD
-                genusEntry, // GOOD
-                speciesEntry, // GOOD
-                speciesGenusEntry, // GOOD
-                commonEntry, // GOOD
-
-                speciesRevision, // excluded in lesson-builder                  
-                // multiSpecimenCommonMatch, // only works portrait as in landscape the photo is the same
-                // mixedSpeciesMatch, // replace with clickable rhs images REMOVE
-                latinToCommonMatch,  // works fine
-                
-                // taxonRevision, // excluded in lesson-builder ??             
-                
-                familyMatch, // still working... missing family data an issue
-                familyStripsMatch,// still working... missing family data an issue
-                
-            ],
+            layouts: landscapeLayouts,
             wildcardLayouts : [],
             reviewLayouts: [ multiSpecimenCommonMatch, mixedSpeciesMatch ]
         },
@@ -221,6 +215,24 @@ const landscapeLesson3 = {
     ]
 };
 
+let portraitLayouts = [ 
+                
+    genusEntry,
+    textCompleteGenus,                
+    latinToCommonMatch,
+    mixedSpeciesMatch,
+    
+    speciesEntry,
+    speciesGenusEntry,
+    
+    commonToLatinMatch,
+    textCompleteSpecies,
+    
+    commonEntry,
+];
+
+portraitLayouts = [ textCompleteSpecies ];
+
 const portraitLesson1 = {
     id: 101,
     name:'Lesson 101',
@@ -229,20 +241,7 @@ const portraitLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ 
-                
-                genusEntry,
-                speciesEntry,
-                speciesGenusEntry,
-                
-                mixedSpeciesMatch,
-                latinToCommonMatch,
-                commonToLatinMatch,
-                textCompleteGenus,                
-                textCompleteSpecies,
-                
-                commonEntry, // GOOD
-            ],
+            layouts: portraitLayouts,
             wildcardLayouts : [],
             reviewLayouts: [ latinToCommonMatch ]
         },

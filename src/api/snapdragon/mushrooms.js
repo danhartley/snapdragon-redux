@@ -1,76 +1,76 @@
 export const mushrooms = [
-    {
-      "id": 2865836,
-      "name": "Amanita ponderosa",
-      "images": [
-        "2014/01/31/16/18899_orig.jpg",
-        "2014/01/31/16/09365_orig.jpg",
-        "2014/06/12/21/54701_orig.jpg"
-      ],
-      "names": [
-        {
-          "vernacularName": "Ponderosa-Wulstling",
-          "language": "de",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Amanite robuste",
-          "language": "fr",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Amanite compacte",
-          "language": "fr"
-        },
-        {
-          "vernacularName": "Silarca",
-          "language": "pt",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Gurumelo",
-          "language": "pt"
-        },
-        {
-          "vernacularName": "Tortulho",
-          "language": "pt"
-        },
-        {
-          "vernacularName": "Tubareiro",
-          "language": "pt"
-        },
-        {
-          "vernacularName": "Amanita ponderosa",
-          "language": "en"
-        },
-      ],
-      "taxonomy": {
-        "usageKey": 7241988,
-        "scientificName": "Amanita ponderosa Malençon & R.Heim",
-        "canonicalName": "Amanita ponderosa",
-        "rank": "SPECIES",
-        "status": "ACCEPTED",
-        "confidence": 100,
-        "matchType": "EXACT",
-        "kingdom": "Fungi",
-        "phylum": "Basidiomycota",
-        "order": "Agaricales",
-        "family": "Amanitaceae",
-        "genus": "Amanita",
-        "species": "Amanita ponderosa",
-        "kingdomKey": 5,
-        "phylumKey": 34,
-        "classKey": 186,
-        "orderKey": 1499,
-        "familyKey": 4171,
-        "genusKey": 2526057,
-        "speciesKey": 7241988,
-        "synonym": false,
-        "class": "Agaricomycetes"
-      },
-      "family": "Amanitaceae",
-      "eolName": "Amanita ponderosa Malençon & R. Heim 1942"
-    },
+    // {
+    //   "id": 2865836,
+    //   "name": "Amanita ponderosa",
+    //   "images": [
+    //     "2014/01/31/16/18899_orig.jpg",
+    //     "2014/01/31/16/09365_orig.jpg",
+    //     "2014/06/12/21/54701_orig.jpg"
+    //   ],
+    //   "names": [
+    //     {
+    //       "vernacularName": "Ponderosa-Wulstling",
+    //       "language": "de",
+    //       "eol_preferred": true
+    //     },
+    //     {
+    //       "vernacularName": "Amanite robuste",
+    //       "language": "fr",
+    //       "eol_preferred": true
+    //     },
+    //     {
+    //       "vernacularName": "Amanite compacte",
+    //       "language": "fr"
+    //     },
+    //     {
+    //       "vernacularName": "Silarca",
+    //       "language": "pt",
+    //       "eol_preferred": true
+    //     },
+    //     {
+    //       "vernacularName": "Gurumelo",
+    //       "language": "pt"
+    //     },
+    //     {
+    //       "vernacularName": "Tortulho",
+    //       "language": "pt"
+    //     },
+    //     {
+    //       "vernacularName": "Tubareiro",
+    //       "language": "pt"
+    //     },
+    //     {
+    //       "vernacularName": "Amanita ponderosa",
+    //       "language": "en"
+    //     },
+    //   ],
+    //   "taxonomy": {
+    //     "usageKey": 7241988,
+    //     "scientificName": "Amanita ponderosa Malençon & R.Heim",
+    //     "canonicalName": "Amanita ponderosa",
+    //     "rank": "SPECIES",
+    //     "status": "ACCEPTED",
+    //     "confidence": 100,
+    //     "matchType": "EXACT",
+    //     "kingdom": "Fungi",
+    //     "phylum": "Basidiomycota",
+    //     "order": "Agaricales",
+    //     "family": "Amanitaceae",
+    //     "genus": "Amanita",
+    //     "species": "Amanita ponderosa",
+    //     "kingdomKey": 5,
+    //     "phylumKey": 34,
+    //     "classKey": 186,
+    //     "orderKey": 1499,
+    //     "familyKey": 4171,
+    //     "genusKey": 2526057,
+    //     "speciesKey": 7241988,
+    //     "synonym": false,
+    //     "class": "Agaricomycetes"
+    //   },
+    //   "family": "Amanitaceae",
+    //   "eolName": "Amanita ponderosa Malençon & R. Heim 1942"
+    // },
     {
       "id": 134136,
       "name": "Tricholoma equestre",
@@ -1175,23 +1175,181 @@ export const mushrooms = [
     {
       "id": 1013415,
       "name": "Tylopilus felleus",
-      // "icon": "2015/03/24/03/26565_orig.jpg",
       "images": [
-        "2010/03/24/04/10174_orig.jpg",
-        "2010/03/24/04/88696_orig.jpg",
-        "2012/06/12/09/27469_orig.jpg",
-        "2012/07/30/03/58154_orig.jpg",
-        "2012/08/18/02/86528_orig.jpg",
-        "2015/03/24/03/26565_orig.jpg",
-        "2014/01/31/16/52922_orig.jpg",
-        "2014/01/31/16/37652_orig.jpg",
-        "2014/02/01/11/04828_orig.jpg",
-        "2014/02/01/04/40503_orig.jpg",
-        "2014/02/01/06/01193_orig.jpg",
-        "2014/01/31/17/14117_orig.jpg",
-        "2014/01/31/17/31734_orig.jpg",
-        "2014/02/01/06/00579_orig.jpg",
-        "2014/02/01/06/06732_orig.jpg"
+        {
+          "title": "Tylopilus felleus",
+          "rightsHolder": "Dick Culbert",
+          "source": "https://www.flickr.com/photos/92252798@N07/23431150244/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "7e/e8/66/542.23431150244.jpg",
+          "thumb": "7e/e8/66/542.23431150244.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/92252798@N07'>Dick Culbert</a>",
+            "homepage": "http://www.flickr.com/photos/92252798@N07",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Bitter Bolete Tylopilus felleus 3 (3)",
+          "rightsHolder": "gailhampshire",
+          "source": "https://www.flickr.com/photos/gails_pictures/39454470014/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "7f/c6/b9/542.39454470014.jpg",
+          "thumb": "7f/c6/b9/542.39454470014.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/43272765@N04'>gailhampshire</a>",
+            "homepage": "http://www.flickr.com/photos/43272765@N04",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Bittere boleet (Tylopilus felleus) - 20100910-01.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Bittere_boleet_(Tylopilus_felleus)_-_20100910-01.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/8a/65/509.11500005.jpg",
+          "thumb": "55/8a/65/509.11500005.98x68.jpg"
+        },
+        {
+          "title": "Tylopilus felleus 060914a.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Tylopilus_felleus_060914a.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/94/de/509.1172722.jpg",
+          "thumb": "55/94/de/509.1172722.98x68.jpg"
+        },
+        {
+          "title": "Tylopilus felleus 060914c.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Tylopilus_felleus_060914c.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/94/e1/509.1172731.jpg",
+          "thumb": "55/94/e1/509.1172731.98x68.jpg"
+        },
+        {
+          "title": "File:GallenrÃ¶hrling-1.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Gallenr%C3%B6hrling-1.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/b1/c3/509.1227590.jpg",
+          "thumb": "55/b1/c3/509.1227590.98x68.jpg"
+        },
+        {
+          "title": "2012-06-09 Tylopilus felleus (Bull.) P. Karst 226780 crop.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:2012-06-09_Tylopilus_felleus_(Bull.)_P._Karst_226780_crop.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/5d/a5/509.20301487.jpg",
+          "thumb": "57/5d/a5/509.20301487.98x68.jpg"
+        },
+        {
+          "title": "Tylopilus felleus by Danny S. - 001.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Tylopilus_felleus_by_Danny_S._-_001.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/6e/9d/509.20625791.jpg",
+          "thumb": "57/6e/9d/509.20625791.98x68.jpg"
+        },
+        {
+          "title": "Tylopilus felleus old.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Tylopilus_felleus_old.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/09/ee/509.2811017.jpg",
+          "thumb": "59/09/ee/509.2811017.98x68.jpg"
+        },
+        {
+          "title": "Tylopilus felleus (1).JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Tylopilus_felleus_(1).JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/09/ef/509.2811051.jpg",
+          "thumb": "59/09/ef/509.2811051.98x68.jpg"
+        },
+        {
+          "title": "Albatrellus ovinus 13.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Albatrellus_ovinus_13.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5a/90/e6/509.1159711.jpg",
+          "thumb": "5a/90/e6/509.1159711.98x68.jpg"
+        },
+        {
+          "title": "Pilze d. Heimat, T. 17 - Boletus felleus.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Pilze_d._Heimat,_T._17_-_Boletus_felleus.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5d/38/1d/509.24500154.jpg",
+          "thumb": "5d/38/1d/509.24500154.98x68.jpg"
+        },
+        {
+          "title": "Tylopilus felleus (1).JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Tylopilus_felleus_(1).JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5e/0b/2f/509.2811051.jpg",
+          "thumb": "5e/0b/2f/509.2811051.98x68.jpg"
+        },
+        {
+          "title": "Tylopilus.felleus2.-.lindsey.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Tylopilus.felleus2.-.lindsey.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5f/5b/09/509.3559646.jpg",
+          "thumb": "5f/5b/09/509.3559646.98x68.jpg"
+        },
+        {
+          "title": "Home cave 948674636.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Home_cave_948674636.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "60/9e/9a/509.4125776.jpg",
+          "thumb": "60/9e/9a/509.4125776.98x68.jpg"
+        },
+        {
+          "title": "Boletus felleus Bull.png",
+          "source": "https://commons.wikimedia.org/wiki/File:Boletus_felleus_Bull.png",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "62/c3/3c/509.46504317.jpg",
+          "thumb": "62/c3/3c/509.46504317.98x68.jpg"
+        },
+        {
+          "title": "Tylopilus felleus 1.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Tylopilus_felleus_1.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "62/d8/dd/509.4695160.jpg",
+          "thumb": "62/d8/dd/509.4695160.98x68.jpg"
+        },
+        {
+          "title": "Nice, but not tasty - Tylopilus felleus - panoramio.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Nice,_but_not_tasty_-_Tylopilus_felleus_-_panoramio.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "64/35/f4/509.52327790.jpg",
+          "thumb": "64/35/f4/509.52327790.98x68.jpg"
+        },
+        {
+          "title": "File:Gemeiner GallenrÃ¶hrling (Tylopilus felleus) - panoramio.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Gemeiner_Gallenr%C3%B6hrling_(Tylopilus_felleus)_-_panoramio.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "64/b6/2b/509.55034758.jpg",
+          "thumb": "64/b6/2b/509.55034758.98x68.jpg"
+        },
+        {
+          "title": "File:Gemeiner GallenrÃ¶hrling (Tylopilus felleus) - panoramio (1).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Gemeiner_Gallenr%C3%B6hrling_(Tylopilus_felleus)_-_panoramio_(1).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "64/b6/2c/509.55034766.jpg",
+          "thumb": "64/b6/2c/509.55034766.98x68.jpg"
+        },
+        {
+          "title": "File:Sengbachtalsperre 20.08.2017 Bitter Bolete - Tylopilus felleus (37154732850).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Sengbachtalsperre_20.08.2017_Bitter_Bolete_-_Tylopilus_felleus_(37154732850).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "66/a8/56/509.63534601.jpg",
+          "thumb": "66/a8/56/509.63534601.98x68.jpg"
+        },
+        {
+          "title": "File:Eichhof 06.08.2017 Bitter Bolete - Tylopilus felleus (36929909940).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Eichhof_06.08.2017_Bitter_Bolete_-_Tylopilus_felleus_(36929909940).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "66/a9/f1/509.63553206.jpg",
+          "thumb": "66/a9/f1/509.63553206.98x68.jpg"
+        },
+        {
+          "title": "n158_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://farm9.staticflickr.com/8525/8516130496_1e656ca6ee_o.jpg",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "00/3e/c9/8.8516130496.jpg",
+          "thumb": "00/3e/c9/8.8516130496.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -1253,21 +1411,201 @@ export const mushrooms = [
     {
       "id": 1029767,
       "name": "Scleroderma citrinum",
-      // "icon": "2014/01/31/19/28742_orig.jpg",
       "images": [
-        "2014/01/30/22/82571_orig.jpg",
-        "2012/06/12/09/51199_orig.jpg",
-        "2012/06/12/09/79939_orig.jpg",
-        "2012/06/12/09/75346_orig.jpg",
-        "2012/06/12/09/84772_orig.jpg",
-        "2013/11/14/15/60081_orig.jpg",
-        "2013/11/30/08/79070_orig.jpg",
-        "2013/11/30/08/68155_orig.jpg",
-        "2013/11/17/03/16066_orig.jpg",
-        "2013/12/01/07/83605_orig.jpg",
-        "2014/01/31/19/28742_orig.jpg",
-        "2013/11/25/09/91329_orig.jpg",
-        "2013/12/08/23/30842_orig.jpg"
+        {
+          "title": "Scleroderma citrinum",
+          "rightsHolder": "Jrg Hempel",
+          "source": "https://www.flickr.com/photos/joerghempel/2993028523/",
+          "license": "http://creativecommons.org/licenses/by-sa/2.0/",
+          "url": "7f/39/2d/542.2993028523.jpg",
+          "thumb": "7f/39/2d/542.2993028523.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/32023375@N06'>Jrg Hempel</a>",
+            "homepage": "http://www.flickr.com/photos/32023375@N06",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Boletus parasiticus on Scleroderma citrinum  poss",
+          "rightsHolder": "gailhampshire",
+          "source": "https://www.flickr.com/photos/gails_pictures/39266891175/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "7f/c4/9f/542.39266891175.jpg",
+          "thumb": "7f/c4/9f/542.39266891175.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/43272765@N04'>gailhampshire</a>",
+            "homepage": "http://www.flickr.com/photos/43272765@N04",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Scleroderma citrinum fungus on a rotting tree stump, Salisbury Trench Inclosure, New Forest - geograph.org.uk - 251138.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Scleroderma_citrinum_fungus_on_a_rotting_tree_stump,_Salisbury_Trench_Inclosure,_New_Forest_-_geograph.org.uk_-_251138.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/7d/76/509.11286737.jpg",
+          "thumb": "55/7d/76/509.11286737.98x68.jpg"
+        },
+        {
+          "title": "Kartoffelbovist-1.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Kartoffelbovist-1.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/e2/e7/509.1294352.jpg",
+          "thumb": "55/e2/e7/509.1294352.98x68.jpg"
+        },
+        {
+          "title": "Dickschaliger Kartoffelbovist 23. November 2006 006.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Dickschaliger_Kartoffelbovist_23._November_2006_006.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/03/e1/509.1399479.jpg",
+          "thumb": "56/03/e1/509.1399479.98x68.jpg"
+        },
+        {
+          "title": "Calvatia in Hrebenec.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Calvatia_in_Hrebenec.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/68/c3/509.15916203.jpg",
+          "thumb": "56/68/c3/509.15916203.98x68.jpg"
+        },
+        {
+          "title": "Pigskin Poison Puffball.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Pigskin_Poison_Puffball.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/6b/83/509.15963804.jpg",
+          "thumb": "56/6b/83/509.15963804.98x68.jpg"
+        },
+        {
+          "title": "Pigskin Poison Puffball 1.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Pigskin_Poison_Puffball_1.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/6b/86/509.15963814.jpg",
+          "thumb": "56/6b/86/509.15963814.98x68.jpg"
+        },
+        {
+          "title": "File:PotetrÃ¸yksopp.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Potetr%C3%B8yksopp.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/83/95/509.16370314.jpg",
+          "thumb": "56/83/95/509.16370314.98x68.jpg"
+        },
+        {
+          "title": "Scleroderma citrinum - earth ball - Kartoffelbovist - Boletales - Sclerodermatineae - 04.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Scleroderma_citrinum_-_earth_ball_-_Kartoffelbovist_-_Boletales_-_Sclerodermatineae_-_04.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/da/f1/509.18034839.jpg",
+          "thumb": "56/da/f1/509.18034839.98x68.jpg"
+        },
+        {
+          "title": "Scleroderma citrinum - earth ball - Kartoffelbovist - Boletales - Sclerodermatineae - 02.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Scleroderma_citrinum_-_earth_ball_-_Kartoffelbovist_-_Boletales_-_Sclerodermatineae_-_02.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/da/f4/509.18034843.jpg",
+          "thumb": "56/da/f4/509.18034843.98x68.jpg"
+        },
+        {
+          "title": "File:Lycoperdon bovista â Flora Batava â Volume v9.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Lycoperdon_bovista_%E2%80%94_Flora_Batava_%E2%80%94_Volume_v9.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/0d/8e/509.18902033.jpg",
+          "thumb": "57/0d/8e/509.18902033.98x68.jpg"
+        },
+        {
+          "title": "2009-09-03 Scleroderma citrinum Pers 55647.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:2009-09-03_Scleroderma_citrinum_Pers_55647.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/6a/11/509.20529638.jpg",
+          "thumb": "57/6a/11/509.20529638.98x68.jpg"
+        },
+        {
+          "title": "Gemeiner Kartoffelbovist Scleroderma citrinum.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Gemeiner_Kartoffelbovist_Scleroderma_citrinum.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/c1/63/509.22450338.jpg",
+          "thumb": "57/c1/63/509.22450338.98x68.jpg"
+        },
+        {
+          "title": "Earthballs (908565114).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Earthballs_(908565114).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/23/3b/509.24217142.jpg",
+          "thumb": "58/23/3b/509.24217142.98x68.jpg"
+        },
+        {
+          "title": "Dickschaliger Kartoffelbovist (Scleroderma citrinum).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Dickschaliger_Kartoffelbovist_(Scleroderma_citrinum).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/52/19/509.24908690.jpg",
+          "thumb": "58/52/19/509.24908690.98x68.jpg"
+        },
+        {
+          "title": "Scleroderma citrinum (3).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Scleroderma_citrinum_(3).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/0a/76/509.2811792.jpg",
+          "thumb": "59/0a/76/509.2811792.98x68.jpg"
+        },
+        {
+          "title": "Scleroderma citrinum (Aardappelbovist).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Scleroderma_citrinum_(Aardappelbovist).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/0b/dc/509.2815303.jpg",
+          "thumb": "59/0b/dc/509.2815303.98x68.jpg"
+        },
+        {
+          "title": "Scleroderma citrinum G6 (1).JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Scleroderma_citrinum_G6_(1).JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/1b/89/509.28594150.jpg",
+          "thumb": "59/1b/89/509.28594150.98x68.jpg"
+        },
+        {
+          "title": "Bagno Chlebowo, fungi (Scleroderma citrinum, 1).JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Bagno_Chlebowo,_fungi_(Scleroderma_citrinum,_1).JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/1c/c9/509.28646192.jpg",
+          "thumb": "59/1c/c9/509.28646192.98x68.jpg"
+        },
+        {
+          "title": "Scaly earthball2.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Scaly_earthball2.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/29/63/509.2901343.jpg",
+          "thumb": "59/29/63/509.2901343.98x68.jpg"
+        },
+        {
+          "title": "Scleroderma citrinum, Common Earthball, UK.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Scleroderma_citrinum,_Common_Earthball,_UK.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/30/4b/509.29195687.jpg",
+          "thumb": "59/30/4b/509.29195687.98x68.jpg"
+        },
+        {
+          "title": "Scleroderma citrinum, Common Earthball, UK 2.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Scleroderma_citrinum,_Common_Earthball,_UK_2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/47/10/509.29758314.jpg",
+          "thumb": "59/47/10/509.29758314.98x68.jpg"
+        },
+        {
+          "title": "Kartoffelbovist-1.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Kartoffelbovist-1.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5a/e4/27/509.1294352.jpg",
+          "thumb": "5a/e4/27/509.1294352.98x68.jpg"
+        },
+        {
+          "title": "Dickschaliger Kartoffelbovist (Scleroderma citrinum)-Reife Sporenmasse im Querschnitt.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Dickschaliger_Kartoffelbovist_(Scleroderma_citrinum)-Reife_Sporenmasse_im_Querschnitt.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5d/53/5b/509.24908813.jpg",
+          "thumb": "5d/53/5b/509.24908813.98x68.jpg"
+        },
+        {
+          "title": "Scleroderma citrinum - earth ball - Kartoffelbovist - Boletales - Sclerodermatineae - 09.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Scleroderma_citrinum_-_earth_ball_-_Kartoffelbovist_-_Boletales_-_Sclerodermatineae_-_09.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5e/63/c8/509.30339653.jpg",
+          "thumb": "5e/63/c8/509.30339653.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -1307,23 +1645,140 @@ export const mushrooms = [
     {
       "id": 1004634,
       "name": "Morchella esculenta",
-      // "icon": "2017/10/15/13/22940_orig.jpg",
       "images": [
-        "2009/07/24/05/02771_orig.jpg",
-        "2009/07/24/05/31897_orig.jpg",
-        "2011/10/06/07/62673_orig.jpg",
-        "2011/10/06/07/82661_orig.jpg",
-        "2017/10/15/13/22940_orig.jpg",
-        "2012/06/13/14/66203_orig.jpg",
-        "2015/03/21/14/50286_orig.jpg",
-        "2012/06/13/14/33968_orig.jpg",
-        "2015/02/27/01/22763_orig.jpg",
-        "2014/10/06/22/63735_orig.jpg",
-        "2014/10/06/22/45136_orig.jpg",
-        "2014/10/06/22/19360_orig.jpg",
-        "2014/10/06/22/77705_orig.jpg",
-        "2013/11/17/03/76374_orig.jpg",
-        "2013/11/14/15/69507_orig.jpg"
+        {
+          "title": "Speisemorchel-1.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Speisemorchel-1.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/cd/f0/509.1266580.jpg",
+          "thumb": "55/cd/f0/509.1266580.98x68.jpg"
+        },
+        {
+          "title": "2011-04-30 Morchella esculenta.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:2011-04-30_Morchella_esculenta.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/29/b6/509.14887558.jpg",
+          "thumb": "56/29/b6/509.14887558.98x68.jpg"
+        },
+        {
+          "title": "Morchella-esculenta-anglars.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Morchella-esculenta-anglars.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/d8/ac/509.17992786.jpg",
+          "thumb": "56/d8/ac/509.17992786.98x68.jpg"
+        },
+        {
+          "title": "File:Morchella esculenta â Flora Batava â Volume v9.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Morchella_esculenta_%E2%80%94_Flora_Batava_%E2%80%94_Volume_v9.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/0d/90/509.18902087.jpg",
+          "thumb": "57/0d/90/509.18902087.98x68.jpg"
+        },
+        {
+          "title": "MORILLE DSCN0923.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:MORILLE_DSCN0923.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/23/2b/509.19294939.jpg",
+          "thumb": "57/23/2b/509.19294939.98x68.jpg"
+        },
+        {
+          "title": "MORILLE DSCN1088.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:MORILLE_DSCN1088.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/23/2d/509.19294942.jpg",
+          "thumb": "57/23/2d/509.19294942.98x68.jpg"
+        },
+        {
+          "title": "MORILLE P1170685.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:MORILLE_P1170685.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/23/2e/509.19294944.jpg",
+          "thumb": "57/23/2e/509.19294944.98x68.jpg"
+        },
+        {
+          "title": "MORILLE DSCN1341.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:MORILLE_DSCN1341.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/23/2f/509.19294945.jpg",
+          "thumb": "57/23/2f/509.19294945.98x68.jpg"
+        },
+        {
+          "title": "Speise Morchel Morchella esculenta.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Speise_Morchel_Morchella_esculenta.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/24/04/509.19313219.jpg",
+          "thumb": "57/24/04/509.19313219.98x68.jpg"
+        },
+        {
+          "title": "Morchella esculenta 300405.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Morchella_esculenta_300405.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/77/da/509.208590.jpg",
+          "thumb": "57/77/da/509.208590.98x68.jpg"
+        },
+        {
+          "title": "Speise-Morchel Morchella esculenta.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Speise-Morchel_Morchella_esculenta.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/a0/0f/509.26036095.jpg",
+          "thumb": "58/a0/0f/509.26036095.98x68.jpg"
+        },
+        {
+          "title": "Morchella esculenta - DE - TH - 2013-05-01 - 01.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Morchella_esculenta_-_DE_-_TH_-_2013-05-01_-_01.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/f9/e7/509.27753655.jpg",
+          "thumb": "58/f9/e7/509.27753655.98x68.jpg"
+        },
+        {
+          "title": "Morchella esculenta - DE - TH - 2013-05-01 - 02.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Morchella_esculenta_-_DE_-_TH_-_2013-05-01_-_02.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/f9/e8/509.27753656.jpg",
+          "thumb": "58/f9/e8/509.27753656.98x68.jpg"
+        },
+        {
+          "title": "Morchella esculenta - DE - TH - 2013-05-02 - 02.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Morchella_esculenta_-_DE_-_TH_-_2013-05-02_-_02.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/f9/ea/509.27753660.jpg",
+          "thumb": "58/f9/ea/509.27753660.98x68.jpg"
+        },
+        {
+          "title": "Morchella esculenta 9622.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Morchella_esculenta_9622.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/61/ed/509.30327706.jpg",
+          "thumb": "59/61/ed/509.30327706.98x68.jpg"
+        },
+        {
+          "title": "Morchella-esculenta-1986.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Morchella-esculenta-1986.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/69/37/509.30506270.jpg",
+          "thumb": "59/69/37/509.30506270.98x68.jpg"
+        },
+        {
+          "title": "File:Morchella esculenta â Flora Batava â Volume v9.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Morchella_esculenta_%E2%80%94_Flora_Batava_%E2%80%94_Volume_v9.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5c/0e/d0/509.18902087.jpg",
+          "thumb": "5c/0e/d0/509.18902087.98x68.jpg"
+        },
+        {
+          "title": "MORILLE DSCN0923.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:MORILLE_DSCN0923.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5c/24/6b/509.19294939.jpg",
+          "thumb": "5c/24/6b/509.19294939.98x68.jpg"
+        },
+        {
+          "title": "Speise Morchel Morchella esculenta.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Speise_Morchel_Morchella_esculenta.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5c/25/44/509.19313219.jpg",
+          "thumb": "5c/25/44/509.19313219.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -1640,18 +2095,118 @@ export const mushrooms = [
     {
       "id": 188598,
       "name": "Gyromitra esculenta",
-      // "icon": "2016/08/15/22/55369_orig.jpg",
       "images": [
-        "2014/05/08/03/85444_orig.jpg",
-        "2012/06/12/06/77245_orig.jpg",
-        "2012/06/12/06/87029_orig.jpg",
-        "2015/02/27/01/22763_orig.jpg",
-        "2013/11/16/17/35994_orig.jpg",
-        "2013/12/01/07/52577_orig.jpg",
-        "2013/11/25/04/86098_orig.jpg",
-        "2013/12/01/03/26823_orig.jpg",
-        "2013/11/15/00/93782_orig.jpg",
-        "2016/08/15/22/55369_orig.jpg"
+        {
+          "title": "Gyromitra esculenta--  The False Morel",
+          "rightsHolder": "Dick Culbert",
+          "source": "https://www.flickr.com/photos/92252798@N07/32391377070/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "7f/65/40/542.32391377070.jpg",
+          "thumb": "7f/65/40/542.32391377070.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/92252798@N07'>Dick Culbert</a>",
+            "homepage": "http://www.flickr.com/photos/92252798@N07",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "File:FrÃ¼hjahrslorchel-1.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Fr%C3%BChjahrslorchel-1.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/f9/5b/509.1359569.jpg",
+          "thumb": "55/f9/5b/509.1359569.98x68.jpg"
+        },
+        {
+          "title": "2007-04-02 Gyromitra esculenta cropped.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:2007-04-02_Gyromitra_esculenta_cropped.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "56/45/be/509.15349802.jpg",
+          "thumb": "56/45/be/509.15349802.98x68.jpg"
+        },
+        {
+          "title": "Gyromitra esculenta - Fruehjahrslorchel 01-04-2009 04.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Gyromitra_esculenta_-_Fruehjahrslorchel_01-04-2009_04.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/48/d9/509.15398300.jpg",
+          "thumb": "56/48/d9/509.15398300.98x68.jpg"
+        },
+        {
+          "title": "Gyromitra esculenta - Fruehjahrslorchel 01-04-2009 08.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Gyromitra_esculenta_-_Fruehjahrslorchel_01-04-2009_08.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "56/48/da/509.15398323.jpg",
+          "thumb": "56/48/da/509.15398323.98x68.jpg"
+        },
+        {
+          "title": "File:Gyromitra esculenta in LempÃ¤Ã¤lÃ¤.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Gyromitra_esculenta_in_Lemp%C3%A4%C3%A4l%C3%A4.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/d7/d1/509.22726304.jpg",
+          "thumb": "57/d7/d1/509.22726304.98x68.jpg"
+        },
+        {
+          "title": "Gyromitra esculenta01.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Gyromitra_esculenta01.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/97/e2/509.25904479.jpg",
+          "thumb": "58/97/e2/509.25904479.98x68.jpg"
+        },
+        {
+          "title": "Gyromitra esculenta 02.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Gyromitra_esculenta_02.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/97/e3/509.25904481.jpg",
+          "thumb": "58/97/e3/509.25904481.98x68.jpg"
+        },
+        {
+          "title": "Gyromitra esculenta - Fruehjahrslorchel 01-04-2009 04.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Gyromitra_esculenta_-_Fruehjahrslorchel_01-04-2009_04.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5b/4a/19/509.15398300.jpg",
+          "thumb": "5b/4a/19/509.15398300.98x68.jpg"
+        },
+        {
+          "title": "False Morel.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:False_Morel.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5b/6b/da/509.15953959.jpg",
+          "thumb": "5b/6b/da/509.15953959.98x68.jpg"
+        },
+        {
+          "title": "Na ivance 01 - uchac obecny.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Na_ivance_01_-_uchac_obecny.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5d/9e/7f/509.26006221.jpg",
+          "thumb": "5d/9e/7f/509.26006221.98x68.jpg"
+        },
+        {
+          "title": "Icones Farlowianae (Pl. 102) (8489507598).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Icones_Farlowianae_(Pl._102)_(8489507598).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "61/20/33/509.43094531.jpg",
+          "thumb": "61/20/33/509.43094531.98x68.jpg"
+        },
+        {
+          "title": "Gyromitra esculenta (8863644818).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Gyromitra_esculenta_(8863644818).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "63/45/9c/509.48915500.jpg",
+          "thumb": "63/45/9c/509.48915500.98x68.jpg"
+        },
+        {
+          "title": "Gyromitra esculenta in Finland.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Gyromitra_esculenta_in_Finland.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "63/d8/d0/509.50892969.jpg",
+          "thumb": "63/d8/d0/509.50892969.98x68.jpg"
+        },
+        {
+          "title": "Strochok.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Strochok.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "67/81/83/509.6910082.jpg",
+          "thumb": "67/81/83/509.6910082.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -2358,25 +2913,216 @@ export const mushrooms = [
     {
       "id": 2865532,
       "name": "Amanita rubescens",
-      // "icon": "2015/03/04/21/97493_orig.jpg",
       "images": [
-        "2013/08/29/01/17648_orig.jpg",
-        "2014/02/03/01/07770_orig.jpg",
-        "2012/11/10/02/49553_orig.jpg",
-        "2015/03/19/14/74746_orig.jpg",
-        "2013/11/17/03/37579_orig.jpg",
-        "2013/11/17/03/77234_orig.jpg",
-        "2013/11/17/03/82476_orig.jpg",
-        "2015/01/20/20/97264_orig.jpg",
-        "2015/03/04/21/97493_orig.jpg",
-        "2013/12/07/14/93045_orig.jpg",
-        "2013/12/07/14/25399_orig.jpg",
-        "2014/11/19/22/45004_orig.jpg",
-        "2014/10/06/21/74011_orig.jpg",
-        "2013/11/16/17/20658_orig.jpg",
-        "2013/11/30/06/40473_orig.jpg",
-        "2013/11/30/18/76446_orig.jpg",
-        "2013/11/25/06/99357_orig.jpg"
+        {
+          "title": "n98_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://www.flickr.com/photos/biodivlibrary/6358013975/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/9a/54/542.6358013975.jpg",
+          "thumb": "80/9a/54/542.6358013975.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+            "homepage": "http://www.flickr.com/photos/61021753@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Amanita rubescens fungus in Denny Wood, New Forest - geograph.org.uk - 256724.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_rubescens_fungus_in_Denny_Wood,_New_Forest_-_geograph.org.uk_-_256724.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/7d/43/509.11279706.jpg",
+          "thumb": "55/7d/43/509.11279706.98x68.jpg"
+        },
+        {
+          "title": "Amanita rubescens qtl2.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_rubescens_qtl2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/8c/bd/509.11541077.jpg",
+          "thumb": "55/8c/bd/509.11541077.98x68.jpg"
+        },
+        {
+          "title": "Perlpilz-1.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Perlpilz-1.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/b1/c4/509.1227595.jpg",
+          "thumb": "55/b1/c4/509.1227595.98x68.jpg"
+        },
+        {
+          "title": "Fungi, Glenveagh National Park - geograph.org.uk - 899642.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Fungi,_Glenveagh_National_Park_-_geograph.org.uk_-_899642.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/f8/ae/509.13581388.jpg",
+          "thumb": "55/f8/ae/509.13581388.98x68.jpg"
+        },
+        {
+          "title": "Fungus, Tardree forest (1) - geograph.org.uk - 942974.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Fungus,_Tardree_forest_(1)_-_geograph.org.uk_-_942974.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/fa/fa/509.13636036.jpg",
+          "thumb": "55/fa/fa/509.13636036.98x68.jpg"
+        },
+        {
+          "title": "Blusher Amanita.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Blusher_Amanita.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/6a/89/509.15953527.jpg",
+          "thumb": "56/6a/89/509.15953527.98x68.jpg"
+        },
+        {
+          "title": "2011-07-30 Amanita rubescens 2.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:2011-07-30_Amanita_rubescens_2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/6a/ac/509.15954521.jpg",
+          "thumb": "56/6a/ac/509.15954521.98x68.jpg"
+        },
+        {
+          "title": "2011-07-30 Amanita rubescens 4.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:2011-07-30_Amanita_rubescens_4.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/6a/ae/509.15954559.jpg",
+          "thumb": "56/6a/ae/509.15954559.98x68.jpg"
+        },
+        {
+          "title": "2011-07-30 Amanita rubescens 5.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:2011-07-30_Amanita_rubescens_5.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/6a/b0/509.15954578.jpg",
+          "thumb": "56/6a/b0/509.15954578.98x68.jpg"
+        },
+        {
+          "title": "2011-07-30 Amanita rubescens 6.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:2011-07-30_Amanita_rubescens_6.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/6a/ba/509.15954695.jpg",
+          "thumb": "56/6a/ba/509.15954695.98x68.jpg"
+        },
+        {
+          "title": "Blusher Amanita with child.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Blusher_Amanita_with_child.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/6b/8d/509.15964023.jpg",
+          "thumb": "56/6b/8d/509.15964023.98x68.jpg"
+        },
+        {
+          "title": "Amanita rubescens giugno 2012.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_rubescens_giugno_2012.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/3d/69/509.19849182.jpg",
+          "thumb": "57/3d/69/509.19849182.98x68.jpg"
+        },
+        {
+          "title": "Amanita rubescens BW46.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_rubescens_BW46.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/6d/73/509.20595901.jpg",
+          "thumb": "57/6d/73/509.20595901.98x68.jpg"
+        },
+        {
+          "title": "Perlpilz Amanita rubescens.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Perlpilz_Amanita_rubescens.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/6f/18/509.20634178.jpg",
+          "thumb": "57/6f/18/509.20634178.98x68.jpg"
+        },
+        {
+          "title": "Perlpilz Amanita rubescens 2.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Perlpilz_Amanita_rubescens_2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/c6/a8/509.22502701.jpg",
+          "thumb": "57/c6/a8/509.22502701.98x68.jpg"
+        },
+        {
+          "title": "Amanita rubescens .JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_rubescens_.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/c7/2e/509.2251558.jpg",
+          "thumb": "57/c7/2e/509.2251558.98x68.jpg"
+        },
+        {
+          "title": "Amanita Rubescens (Cornay, France).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_Rubescens_(Cornay,_France).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "58/55/15/509.249501.jpg",
+          "thumb": "58/55/15/509.249501.98x68.jpg"
+        },
+        {
+          "title": "Amanita rubescens DSCF1393.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_rubescens_DSCF1393.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/01/ed/509.27902533.jpg",
+          "thumb": "59/01/ed/509.27902533.98x68.jpg"
+        },
+        {
+          "title": "Amanita rubescens DSCF1396.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_rubescens_DSCF1396.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/01/ee/509.27902534.jpg",
+          "thumb": "59/01/ee/509.27902534.98x68.jpg"
+        },
+        {
+          "title": "Amanita rubescens DSCF1411.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_rubescens_DSCF1411.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/01/f0/509.27902538.jpg",
+          "thumb": "59/01/f0/509.27902538.98x68.jpg"
+        },
+        {
+          "title": "1476421021 829ff7e891 b.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:1476421021_829ff7e891_b.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/19/72/509.2852177.jpg",
+          "thumb": "59/19/72/509.2852177.98x68.jpg"
+        },
+        {
+          "title": "Amanita rubescens (2).JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_rubescens_(2).JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/19/8c/509.2852607.jpg",
+          "thumb": "59/19/8c/509.2852607.98x68.jpg"
+        },
+        {
+          "title": "Amanita rubescens, The Blusher, Hertfordshire, UK.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_rubescens,_The_Blusher,_Hertfordshire,_UK.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/2a/ab/509.29043510.jpg",
+          "thumb": "59/2a/ab/509.29043510.98x68.jpg"
+        },
+        {
+          "title": "Amanita rubescens (23).JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_rubescens_(23).JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/96/60/509.31551318.jpg",
+          "thumb": "59/96/60/509.31551318.98x68.jpg"
+        },
+        {
+          "title": "Amanita rubescens (28).JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_rubescens_(28).JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/96/68/509.31551350.jpg",
+          "thumb": "59/96/68/509.31551350.98x68.jpg"
+        },
+        {
+          "title": "Amanita rubescens (33).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_rubescens_(33).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/96/73/509.31551440.jpg",
+          "thumb": "59/96/73/509.31551440.98x68.jpg"
+        },
+        {
+          "title": "JPGPerlpilz (1).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:JPGPerlpilz_(1).jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/96/89/509.31551957.jpg",
+          "thumb": "59/96/89/509.31551957.98x68.jpg"
+        },
+        {
+          "title": "Lage - 2014-06-15 - LIP-069 (15).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Lage_-_2014-06-15_-_LIP-069_(15).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/ed/dd/509.33446986.jpg",
+          "thumb": "59/ed/dd/509.33446986.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -2447,27 +3193,201 @@ export const mushrooms = [
       "id": 195773,
       "name": "Hygrophoropsis aurantiaca",
       "images": [
-        "2012/06/12/07/90772_orig.jpg",
-        "2012/06/12/07/27835_orig.jpg",
-        "2015/03/14/10/08984_orig.jpg",
-        "2015/03/14/10/31882_orig.jpg",
-        "2015/03/14/10/19530_orig.jpg",
-        "2013/02/26/17/08540_orig.jpg",
-        "2014/02/01/03/23714_orig.jpg",
-        "2014/02/01/13/65914_orig.jpg",
-        "2015/03/24/03/69838_orig.jpg",
-        "2014/01/31/15/71645_orig.jpg",
-        "2014/01/31/18/18127_orig.jpg",
-        "2014/02/01/04/19834_orig.jpg",
-        "2014/02/01/04/95199_orig.jpg",
-        "2014/02/01/05/80700_orig.jpg",
-        "2014/02/01/05/93522_orig.jpg",
-        "2014/02/01/06/47976_orig.jpg",
-        "2014/01/31/19/48180_orig.jpg",
-        "2014/02/01/09/39391_orig.jpg",
-        "2014/02/01/07/47689_orig.jpg",
-        "2014/01/31/18/36696_orig.jpg",
-        "2015/06/18/02/88312_orig.jpg"
+        {
+          "title": "Hygrophoropsis aurantiaca",
+          "rightsHolder": "Dick Culbert",
+          "source": "https://www.flickr.com/photos/92252798@N07/31054406124/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "7f/4b/30/542.31054406124.jpg",
+          "thumb": "7f/4b/30/542.31054406124.98x68.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/92252798@N07'>Dick Culbert</a>",
+            "homepage": "http://www.flickr.com/photos/92252798@N07",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Falscher Pfifferling-1.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Falscher_Pfifferling-1.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/b2/a0/509.1229113.jpg",
+          "thumb": "55/b2/a0/509.1229113.98x68.jpg"
+        },
+        {
+          "title": "Hygrophoropsis-aurantiaca-falscher-pfifferling.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis-aurantiaca-falscher-pfifferling.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/6a/db/509.15956814.jpg",
+          "thumb": "56/6a/db/509.15956814.98x68.jpg"
+        },
+        {
+          "title": "Hygrophoropsis aurantiaca Valevahvero C IMG 6186.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_Valevahvero_C_IMG_6186.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/8f/ce/509.16680700.jpg",
+          "thumb": "56/8f/ce/509.16680700.98x68.jpg"
+        },
+        {
+          "title": "Hygrophoropsis aurantiaca Valevahvero C IMG 6188.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_Valevahvero_C_IMG_6188.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/8f/cf/509.16680701.jpg",
+          "thumb": "56/8f/cf/509.16680701.98x68.jpg"
+        },
+        {
+          "title": "Hygrophoropsis aurantiaca anglars.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_anglars.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/d8/a6/509.17992651.jpg",
+          "thumb": "56/d8/a6/509.17992651.98x68.jpg"
+        },
+        {
+          "title": "2012-01-28 Hygrophoropsis aurantiaca var. rufa D.A. Reid 197128.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:2012-01-28_Hygrophoropsis_aurantiaca_var._rufa_D.A._Reid_197128.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/08/8e/509.18809755.jpg",
+          "thumb": "57/08/8e/509.18809755.98x68.jpg"
+        },
+        {
+          "title": "2012-01-28 Hygrophoropsis aurantiaca var. rufa D.A. Reid 197125 crop.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:2012-01-28_Hygrophoropsis_aurantiaca_var._rufa_D.A._Reid_197125_crop.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/08/94/509.18810136.jpg",
+          "thumb": "57/08/94/509.18810136.98x68.jpg"
+        },
+        {
+          "title": "File:Cantharellus cibarius â Flora Batava â Volume v9.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Cantharellus_cibarius_%E2%80%94_Flora_Batava_%E2%80%94_Volume_v9.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/0d/81/509.18901872.jpg",
+          "thumb": "57/0d/81/509.18901872.98x68.jpg"
+        },
+        {
+          "title": "False Chanterelle Hygrophoropsis aurantiaca.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:False_Chanterelle_Hygrophoropsis_aurantiaca.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/cc/50/509.22625306.jpg",
+          "thumb": "57/cc/50/509.22625306.98x68.jpg"
+        },
+        {
+          "title": "Hygrophoropsis aurantiaca (4037153619).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_(4037153619).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/20/d4/509.24214281.jpg",
+          "thumb": "58/20/d4/509.24214281.98x68.jpg"
+        },
+        {
+          "title": "Hygrophoropsis aurantiaca BW42 (1).JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_BW42_(1).JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/68/3e/509.25161626.jpg",
+          "thumb": "58/68/3e/509.25161626.98x68.jpg"
+        },
+        {
+          "title": "2012-01-28 Hygrophoropsis aurantiaca var. rufa D.A. Reid 197129.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:2012-01-28_Hygrophoropsis_aurantiaca_var._rufa_D.A._Reid_197129.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5c/0a/00/509.18815165.jpg",
+          "thumb": "5c/0a/00/509.18815165.98x68.jpg"
+        },
+        {
+          "title": "False Chanterelle Hygrophoropsis aurantiaca.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:False_Chanterelle_Hygrophoropsis_aurantiaca.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5c/cd/90/509.22625306.jpg",
+          "thumb": "5c/cd/90/509.22625306.98x68.jpg"
+        },
+        {
+          "title": "Hygrophoropsis rufa syn Hygrophoropsis aurantiaca var. rufa.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_rufa_syn_Hygrophoropsis_aurantiaca_var._rufa.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5e/24/52/509.28863528.jpg",
+          "thumb": "5e/24/52/509.28863528.98x68.jpg"
+        },
+        {
+          "title": "Hygrophoropsis aurantiaca - Lindsey.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_-_Lindsey.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5f/5a/f8/509.3559608.jpg",
+          "thumb": "5f/5a/f8/509.3559608.98x68.jpg"
+        },
+        {
+          "title": "Hygrophoropsis.aurantiaca2.-.lindsey.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis.aurantiaca2.-.lindsey.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5f/5a/f9/509.3559609.jpg",
+          "thumb": "5f/5a/f9/509.3559609.98x68.jpg"
+        },
+        {
+          "title": "Lepista.inversa3.-.lindsey.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Lepista.inversa3.-.lindsey.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5f/5e/b2/509.3566355.jpg",
+          "thumb": "5f/5e/b2/509.3566355.98x68.jpg"
+        },
+        {
+          "title": "Lepista.inversa4.-.lindsey.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Lepista.inversa4.-.lindsey.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5f/5e/b3/509.3566356.jpg",
+          "thumb": "5f/5e/b3/509.3566356.98x68.jpg"
+        },
+        {
+          "title": "Phyllotopsis.nidulans2.-.lindsey.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Phyllotopsis.nidulans2.-.lindsey.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5f/5f/08/509.3566693.jpg",
+          "thumb": "5f/5f/08/509.3566693.98x68.jpg"
+        },
+        {
+          "title": "Hygrophoropsis aurantiaca 1.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_1.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "60/b7/cf/509.4178782.jpg",
+          "thumb": "60/b7/cf/509.4178782.98x68.jpg"
+        },
+        {
+          "title": "Hygrophoropsis aurantiaca (23822624116).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_(23822624116).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "63/32/3b/509.48672519.jpg",
+          "thumb": "63/32/3b/509.48672519.98x68.jpg"
+        },
+        {
+          "title": "File:Hygrophoropsis aurantiaca^ (False chanterelle) - Flickr - S. Rae.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca%5E_(False_chanterelle)_-_Flickr_-_S._Rae.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "63/d0/27/509.50739010.jpg",
+          "thumb": "63/d0/27/509.50739010.98x68.jpg"
+        },
+        {
+          "title": "Mushroom-IMG 6463.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Mushroom-IMG_6463.JPG",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "63/ea/8b/509.5132878.jpg",
+          "thumb": "63/ea/8b/509.5132878.98x68.jpg"
+        },
+        {
+          "title": "Bresadola - Cantharellus auriantiacus.png",
+          "source": "https://commons.wikimedia.org/wiki/File:Bresadola_-_Cantharellus_auriantiacus.png",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "66/97/d9/509.63193627.jpg",
+          "thumb": "66/97/d9/509.63193627.98x68.jpg"
+        },
+        {
+          "title": "Hygrophoropsis aurantiaca 52882.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_52882.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "67/de/99/509.8045185.jpg",
+          "thumb": "67/de/99/509.8045185.98x68.jpg"
+        },
+        {
+          "title": "Hygrophoropsis aurantiaca 52878.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_52878.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "67/de/9b/509.8045215.jpg",
+          "thumb": "67/de/9b/509.8045215.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -2534,17 +3454,118 @@ export const mushrooms = [
       "id": 1029751,
       "name": "Amanita virosa",
       "images": [
-        "2015/01/21/06/35466_orig.jpg",
-        "2015/01/21/06/11846_orig.jpg",
-        "2014/11/20/02/25384_orig.jpg",
-        "2014/10/06/23/29897_orig.jpg",
-        "2014/01/31/15/83431_orig.jpg",
-        "2014/01/31/15/74661_orig.jpg",
-        "2014/01/31/16/34572_orig.jpg",
-        "2014/02/01/03/75849_orig.jpg",
-        "2014/01/31/22/50259_orig.jpg",
-        "2013/03/21/23/29209_orig.jpg",
-        "2014/02/01/12/95148_orig.jpg"
+        {
+          "title": "Amanita virosa qtl1.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_qtl1.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/8c/6f/509.11537896.jpg",
+          "thumb": "55/8c/6f/509.11537896.98x68.jpg"
+        },
+        {
+          "title": "Amanita virosa G1.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_G1.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/b6/f3/509.17394300.jpg",
+          "thumb": "56/b6/f3/509.17394300.98x68.jpg"
+        },
+        {
+          "title": "Destroying Angel (1046857062).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Destroying_Angel_(1046857062).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/22/8b/509.24216480.jpg",
+          "thumb": "58/22/8b/509.24216480.98x68.jpg"
+        },
+        {
+          "title": "Amanita virosa G1.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_G1.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5b/b8/33/509.17394300.jpg",
+          "thumb": "5b/b8/33/509.17394300.98x68.jpg"
+        },
+        {
+          "title": "Destroying Angel 02.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Destroying_Angel_02.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5d/0f/74/509.2356834.jpg",
+          "thumb": "5d/0f/74/509.2356834.98x68.jpg"
+        },
+        {
+          "title": "Amanita virosa a1 (7).JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_a1_(7).JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/3c/2a/509.34771302.jpg",
+          "thumb": "5f/3c/2a/509.34771302.98x68.jpg"
+        },
+        {
+          "title": "Amanita virosa 03.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_03.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/7b/65/509.36517748.jpg",
+          "thumb": "5f/7b/65/509.36517748.98x68.jpg"
+        },
+        {
+          "title": "Amanita virosa 01.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_01.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/7b/66/509.36517750.jpg",
+          "thumb": "5f/7b/66/509.36517750.98x68.jpg"
+        },
+        {
+          "title": "Amanita virosa 04.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_04.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/7b/6c/509.36517787.jpg",
+          "thumb": "5f/7b/6c/509.36517787.98x68.jpg"
+        },
+        {
+          "title": "Amanita virosa 05.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_05.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/b5/32/509.37573087.jpg",
+          "thumb": "5f/b5/32/509.37573087.98x68.jpg"
+        },
+        {
+          "title": "Amanita virosa 08.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_08.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/b5/34/509.37573090.jpg",
+          "thumb": "5f/b5/34/509.37573090.98x68.jpg"
+        },
+        {
+          "title": "Amanita virosa 09.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_09.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/b5/36/509.37573146.jpg",
+          "thumb": "5f/b5/36/509.37573146.98x68.jpg"
+        },
+        {
+          "title": "Amanita virosa 10.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_10.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/b5/37/509.37573147.jpg",
+          "thumb": "5f/b5/37/509.37573147.98x68.jpg"
+        },
+        {
+          "title": "Amanita virosa 12.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_virosa_12.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/b5/39/509.37573151.jpg",
+          "thumb": "5f/b5/39/509.37573151.98x68.jpg"
+        },
+        {
+          "title": "Amanita.virosa.-.lindsey.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita.virosa.-.lindsey.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "67/95/ec/509.7204953.jpg",
+          "thumb": "67/95/ec/509.7204953.98x68.jpg"
+        },
+        {
+          "title": "Amanita virosa.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amanita_virosa.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "68/1a/d5/509.873469.jpg",
+          "thumb": "68/1a/d5/509.873469.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -2805,21 +3826,111 @@ export const mushrooms = [
       "id": 1017419,
       "name": "Clitocybe odora",
       "images": [
-        "2012/06/12/05/03161_orig.jpg",
-        "2012/06/12/05/71046_orig.jpg",
-        "2012/06/12/05/30235_orig.jpg",
-        "2012/06/12/05/74058_orig.jpg",
-        "2012/10/13/02/75292_orig.jpg",
-        "2014/10/20/05/56793_orig.jpg",
-        "2014/01/31/15/74971_orig.jpg",
-        "2014/02/01/04/14596_orig.jpg",
-        "2014/02/01/01/11819_orig.jpg",
-        "2014/02/01/04/25512_orig.jpg",
-        "2014/02/01/05/24270_orig.jpg",
-        "2014/02/01/07/42895_orig.jpg",
-        "2014/01/31/17/57417_orig.jpg",
-        "2014/05/01/16/58904_orig.jpg",
-        "2014/05/01/16/45252_orig.jpg"
+        {
+          "title": "Clitocybe-odora.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Clitocybe-odora.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/9b/e8/509.11870559.jpg",
+          "thumb": "55/9b/e8/509.11870559.98x68.jpg"
+        },
+        {
+          "title": "2011-11-20 Clitocybe odora (Bull.) P. Kumm 183658.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:2011-11-20_Clitocybe_odora_(Bull.)_P._Kumm_183658.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/bb/82/509.17479542.jpg",
+          "thumb": "56/bb/82/509.17479542.98x68.jpg"
+        },
+        {
+          "title": "File:Agaricus odorus â Flora Batava â Volume v16.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Agaricus_odorus_%E2%80%94_Flora_Batava_%E2%80%94_Volume_v16.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/0f/5d/509.18924170.jpg",
+          "thumb": "57/0f/5d/509.18924170.98x68.jpg"
+        },
+        {
+          "title": "Clitocybe odora G2.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Clitocybe_odora_G2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/ac/b6/509.22015065.jpg",
+          "thumb": "57/ac/b6/509.22015065.98x68.jpg"
+        },
+        {
+          "title": "Clitocybe odora G2.1.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Clitocybe_odora_G2.1.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/ac/b7/509.22015066.jpg",
+          "thumb": "57/ac/b7/509.22015066.98x68.jpg"
+        },
+        {
+          "title": "Clitocybe odora G2.2.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Clitocybe_odora_G2.2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/ac/b8/509.22015137.jpg",
+          "thumb": "57/ac/b8/509.22015137.98x68.jpg"
+        },
+        {
+          "title": "Anistrichterling002.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Anistrichterling002.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/9e/bc/509.31678444.jpg",
+          "thumb": "59/9e/bc/509.31678444.98x68.jpg"
+        },
+        {
+          "title": "Anistrichterling003.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Anistrichterling003.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/9e/bd/509.31678451.jpg",
+          "thumb": "59/9e/bd/509.31678451.98x68.jpg"
+        },
+        {
+          "title": "Trichterling Anis-.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Trichterling_Anis-.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/9e/c2/509.31678549.jpg",
+          "thumb": "59/9e/c2/509.31678549.98x68.jpg"
+        },
+        {
+          "title": "Trichterling Anis (3).JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Trichterling_Anis_(3).JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/9e/c6/509.31678574.jpg",
+          "thumb": "59/9e/c6/509.31678574.98x68.jpg"
+        },
+        {
+          "title": "Clitocybe odora JPG3.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Clitocybe_odora_JPG3.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/b5/5e/509.3219224.jpg",
+          "thumb": "59/b5/5e/509.3219224.98x68.jpg"
+        },
+        {
+          "title": "Groene anijstrechterzwam (Clitocybe odora). Locatie, Hortus (Haren, Groningen) 02.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Groene_anijstrechterzwam_(Clitocybe_odora)._Locatie,_Hortus_(Haren,_Groningen)_02.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5f/7c/0b/509.36532964.jpg",
+          "thumb": "5f/7c/0b/509.36532964.98x68.jpg"
+        },
+        {
+          "title": "Groene anijstrechterzwam (Clitocybe odora). Locatie, Hortus (Haren, Groningen) 01.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Groene_anijstrechterzwam_(Clitocybe_odora)._Locatie,_Hortus_(Haren,_Groningen)_01.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5f/7c/0c/509.36532966.jpg",
+          "thumb": "5f/7c/0c/509.36532966.98x68.jpg"
+        },
+        {
+          "title": "Groene anijstrechterzwam (Clitocybe odora). Locatie, Hortus (Haren, Groningen) 03.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Groene_anijstrechterzwam_(Clitocybe_odora)._Locatie,_Hortus_(Haren,_Groningen)_03.JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5f/7c/0d/509.36532967.jpg",
+          "thumb": "5f/7c/0d/509.36532967.98x68.jpg"
+        },
+        {
+          "title": "Clitocybe odora a1 (1).JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Clitocybe_odora_a1_(1).JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "60/16/15/509.39477413.jpg",
+          "thumb": "60/16/15/509.39477413.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -3040,19 +4151,195 @@ export const mushrooms = [
       "id": 198567,
       "name": "Laccaria amethystina",
       "images": [
-        "2009/07/24/05/33818_orig.jpg",
-        "2012/10/13/02/33069_orig.jpg",
-        "2015/07/08/00/61013_orig.jpg",
-        "2014/10/20/06/61794_orig.jpg",
-        "2014/10/20/06/39705_orig.jpg",
-        "2014/10/20/09/01291_orig.jpg",
-        "2014/12/20/01/57742_orig.jpg",
-        "2013/06/11/05/45711_orig.jpg",
-        "2013/06/11/09/43433_orig.jpg",
-        "2013/11/17/00/32381_orig.jpg",
-        "2013/06/11/05/94983_orig.jpg",
-        "2014/04/30/05/28642_orig.jpg",
-        "2013/06/11/05/36719_orig.jpg"
+        {
+          "title": "Laccaria amethystea downside.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria_amethystea_downside.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/6a/dd/509.11033947.jpg",
+          "thumb": "55/6a/dd/509.11033947.98x68.jpg"
+        },
+        {
+          "title": "Laccaria amethystina.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria_amethystina.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/91/b1/509.11640078.jpg",
+          "thumb": "55/91/b1/509.11640078.98x68.jpg"
+        },
+        {
+          "title": "Laccaria amethystina1.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria_amethystina1.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/9b/44/509.11854950.jpg",
+          "thumb": "55/9b/44/509.11854950.98x68.jpg"
+        },
+        {
+          "title": "Mushroom - geograph.org.uk - 336860.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Mushroom_-_geograph.org.uk_-_336860.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "55/c3/e9/509.12509855.jpg",
+          "thumb": "55/c3/e9/509.12509855.98x68.jpg"
+        },
+        {
+          "title": "Lacktrichterling-1.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Lacktrichterling-1.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "55/cf/6a/509.1267478.jpg",
+          "thumb": "55/cf/6a/509.1267478.98x68.jpg"
+        },
+        {
+          "title": "Laccaria-amethystina-Laccaria amethystea.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria-amethystina-Laccaria_amethystea.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/99/3f/509.16856622.jpg",
+          "thumb": "56/99/3f/509.16856622.98x68.jpg"
+        },
+        {
+          "title": "Laccaria amethystina 2.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria_amethystina_2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/a2/4d/509.17025742.jpg",
+          "thumb": "56/a2/4d/509.17025742.98x68.jpg"
+        },
+        {
+          "title": "Violetter Lacktrichterling Laccaria amethystea.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Violetter_Lacktrichterling_Laccaria_amethystea.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/73/5f/509.20738198.jpg",
+          "thumb": "57/73/5f/509.20738198.98x68.jpg"
+        },
+        {
+          "title": "Laccaria amethystina G2.1.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria_amethystina_G2.1.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/9f/27/509.21690460.jpg",
+          "thumb": "57/9f/27/509.21690460.98x68.jpg"
+        },
+        {
+          "title": "Laccaria amethystina G2.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria_amethystina_G2.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/9f/28/509.21690461.jpg",
+          "thumb": "57/9f/28/509.21690461.98x68.jpg"
+        },
+        {
+          "title": "Unidentified fungi, delden, overijssel, the netherlands35.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Unidentified_fungi,_delden,_overijssel,_the_netherlands35.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/ba/9b/509.22316102.jpg",
+          "thumb": "57/ba/9b/509.22316102.98x68.jpg"
+        },
+        {
+          "title": "Unidentified fungi, delden, overijssel, the netherlands37.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Unidentified_fungi,_delden,_overijssel,_the_netherlands37.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/ba/9e/509.22316109.jpg",
+          "thumb": "57/ba/9e/509.22316109.98x68.jpg"
+        },
+        {
+          "title": "Laccaria amethystina G4 (1).JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria_amethystina_G4_(1).JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/51/f0/509.24907126.jpg",
+          "thumb": "58/51/f0/509.24907126.98x68.jpg"
+        },
+        {
+          "title": "Amethyst Deceiver (10100495433).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Amethyst_Deceiver_(10100495433).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/5c/7f/509.30182892.jpg",
+          "thumb": "59/5c/7f/509.30182892.98x68.jpg"
+        },
+        {
+          "title": "Laccaria-amethystina-381.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria-amethystina-381.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/6b/81/509.30568572.jpg",
+          "thumb": "59/6b/81/509.30568572.98x68.jpg"
+        },
+        {
+          "title": "Laccaria-amethystina-379.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria-amethystina-379.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/6b/82/509.30568573.jpg",
+          "thumb": "59/6b/82/509.30568573.98x68.jpg"
+        },
+        {
+          "title": "Violett. Lacktr..JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Violett._Lacktr..JPG",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "59/96/d5/509.31552651.jpg",
+          "thumb": "59/96/d5/509.31552651.98x68.jpg"
+        },
+        {
+          "title": "Laccaria amethystea downside.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria_amethystea_downside.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5a/6c/1d/509.11033947.jpg",
+          "thumb": "5a/6c/1d/509.11033947.98x68.jpg"
+        },
+        {
+          "title": "Laccaria amethystina1.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria_amethystina1.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5a/9c/84/509.11854950.jpg",
+          "thumb": "5a/9c/84/509.11854950.98x68.jpg"
+        },
+        {
+          "title": "Laccaria amethystina in Rya Forest, Gothenburg, Sweden 03.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria_amethystina_in_Rya_Forest,_Gothenburg,_Sweden_03.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "5f/55/57/509.35421969.jpg",
+          "thumb": "5f/55/57/509.35421969.98x68.jpg"
+        },
+        {
+          "title": "Laccaria amethystea 01 20140916.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria_amethystea_01_20140916.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/58/80/509.35522989.jpg",
+          "thumb": "5f/58/80/509.35522989.98x68.jpg"
+        },
+        {
+          "title": "Laccaria.amethystina2.-.lindsey.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria.amethystina2.-.lindsey.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5f/5e/9f/509.3566314.jpg",
+          "thumb": "5f/5e/9f/509.3566314.98x68.jpg"
+        },
+        {
+          "title": "Laccaria amethystea.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria_amethystea.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5f/95/af/509.371062.jpg",
+          "thumb": "5f/95/af/509.371062.98x68.jpg"
+        },
+        {
+          "title": "Violetter-lacktrichterling.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Violetter-lacktrichterling.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "60/8a/97/509.4087136.jpg",
+          "thumb": "60/8a/97/509.4087136.98x68.jpg"
+        },
+        {
+          "title": "Laccaria amethystina (8122143392).jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria_amethystina_(8122143392).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "63/45/95/509.48915488.jpg",
+          "thumb": "63/45/95/509.48915488.98x68.jpg"
+        },
+        {
+          "title": "Laccaria amethystina - gills detail.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria_amethystina_-_gills_detail.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "64/05/db/509.51585134.jpg",
+          "thumb": "64/05/db/509.51585134.98x68.jpg"
+        },
+        {
+          "title": "Laccaria amethystea Jplm.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Laccaria_amethystea_Jplm.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "64/21/6e/509.5184633.jpg",
+          "thumb": "64/21/6e/509.5184633.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -5507,11 +6794,48 @@ export const mushrooms = [
       "id": 1017394,
       "name": "Clitocybe rivulosa",
       "images": [
-        "2014/01/31/20/27647_orig.jpg",
-        "2014/02/01/03/20870_orig.jpg",
-        "2014/02/01/12/12052_orig.jpg",
-        "2014/02/01/12/97239_orig.jpg",
-        "2014/04/29/05/28187_orig.jpg"
+        {
+          "title": "Cllitocybe rivulosa BS17.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Cllitocybe_rivulosa_BS17.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "58/73/94/509.25259016.jpg",
+          "thumb": "58/73/94/509.25259016.98x68.jpg"
+        },
+        {
+          "title": "Clitocybe dealbata 1.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Clitocybe_dealbata_1.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/1b/11/509.2857339.jpg",
+          "thumb": "59/1b/11/509.2857339.98x68.jpg"
+        },
+        {
+          "title": "Clitocybe rivulosa G14.JPG",
+          "source": "https://commons.wikimedia.org/wiki/File:Clitocybe_rivulosa_G14.JPG",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5d/74/d5/509.25259017.jpg",
+          "thumb": "5d/74/d5/509.25259017.98x68.jpg"
+        },
+        {
+          "title": "Clitocybe dealbata 2 - Lindsey.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Clitocybe_dealbata_2_-_Lindsey.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "5f/5d/b4/509.3565628.jpg",
+          "thumb": "5f/5d/b4/509.3565628.98x68.jpg"
+        },
+        {
+          "title": "2012-04-18 Clitocybe rivulosa (Pers.) P. Kumm 213588.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:2012-04-18_Clitocybe_rivulosa_(Pers.)_P._Kumm_213588.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "65/11/e3/509.57039020.jpg",
+          "thumb": "65/11/e3/509.57039020.98x68.jpg"
+        },
+        {
+          "title": "Clitocybe rivulosa bottom.jpg",
+          "source": "https://commons.wikimedia.org/wiki/File:Clitocybe_rivulosa_bottom.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "67/b7/c9/509.7593063.jpg",
+          "thumb": "67/b7/c9/509.7593063.98x68.jpg"
+        }
       ],
       "names": [
         {
@@ -6831,72 +8155,6 @@ export const mushrooms = [
       },
       "family": "Hydnaceae",
       "eolName": "Hydnum umbilicatum Peck 1902"
-    },
-    {
-      "id": 195539,
-      "name": "Clitocybe nuda",
-      "images": [
-      ],
-      "names": [
-        {
-          "vernacularName": "Violetter Rötelritterling",
-          "language": "de",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Nackter Rötelritterling",
-          "language": "de"
-        },
-        {
-          "vernacularName": "Violetter Röteltrichterling",
-          "language": "de"
-        },
-        {
-          "vernacularName": "Wood Blewit",
-          "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "the blewit",
-          "language": "en"
-        },
-        {
-          "vernacularName": "Pied-bleu",
-          "language": "fr",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Pé-violeta",
-          "language": "pt",
-          "eol_preferred": true
-        }
-      ],
-      "taxonomy": {
-        "usageKey": 5242048,
-        "scientificName": "Clitocybe nuda (Bull.) Cooke",
-        "canonicalName": "Clitocybe nuda",
-        "rank": "SPECIES",
-        "status": "ACCEPTED",
-        "confidence": 100,
-        "matchType": "EXACT",
-        "kingdom": "Fungi",
-        "phylum": "Basidiomycota",
-        "order": "Agaricales",
-        "family": "Tricholomataceae",
-        "genus": "Lepista",
-        "species": "Clitocybe nuda",
-        "kingdomKey": 5,
-        "phylumKey": 34,
-        "classKey": 186,
-        "orderKey": 1499,
-        "familyKey": 8787,
-        "genusKey": 2532282,
-        "speciesKey": 5242048,
-        "synonym": false,
-        "class": "Agaricomycetes"
-      },
-      "family": "Tricholomataceae",
-      "eolName": "Clitocybe nuda (Bull.) Cooke 1871"
     },
     {
       "id": 1029436,

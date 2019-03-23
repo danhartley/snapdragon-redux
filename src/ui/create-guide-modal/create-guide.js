@@ -59,9 +59,9 @@ class CreateGuide {
         const parent = this.modal.querySelector('.js-create-guide-action');
         parent.innerHTML = '';
         template = document.createElement('template');
-        console.log('***');
-        console.warn(this.currentStep);
-        console.log('***');
+        // console.log('***');
+        // console.warn(this.currentStep);
+        // console.log('***');
         const description = this.steps.find(step => step.number === this.currentStep).description;
 
         const { config: configState } = store.getState();
@@ -100,8 +100,7 @@ class CreateGuide {
             actions.boundUpdateConfig(config);
 
             this.listeners.forEach((listener, index) => {
-                const wasListenerRemoved = listener.element.removeEventListener('click', listener.handler, 'true');
-                console.log(wasListenerRemoved);
+                listener.element.removeEventListener('click', listener.handler, 'true');
             });
 
             this.listeners = [];
@@ -155,7 +154,7 @@ export const createGuideHandler = (step) => {
 
     const handleNextStepAction = event => {
         guide.createStep(guide.getCurrentStep + 1, 'NEXT');
-        console.log(event.target.nodeName);
+        // console.log(event.target.nodeName);
         guide.listeners.push( { element: guide.nextStepAction, handler: handleNextStepAction });
     };
 
@@ -163,7 +162,7 @@ export const createGuideHandler = (step) => {
 
     const handlePreviousStepAction = event => {
         guide.createStep(guide.getCurrentStep - 1, 'PREVIOUS');
-        console.log(event.target.nodeName);
+        // console.log(event.target.nodeName);
         guide.listeners.push( { element: guide.previousStepAction, handler: handlePreviousStepAction });
     };
 

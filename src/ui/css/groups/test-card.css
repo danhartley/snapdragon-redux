@@ -1,6 +1,6 @@
 
 .test-card-container .question-header {
-    font-size: 1.3rem;
+    font-size: 1rem;
     border: none;
     height: inherit;
     letter-spacing: .03rem;
@@ -135,6 +135,13 @@
     min-height: 2rem;
 }
 
+.test-card .portrait-answer {
+    font-style: italic;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    letter-spacing: .08rem;
+}
+
 .answer-box-success > span:nth-child(2), 
 .answer-box-alert > span:nth-child(2) {
     color: var(--snap-success);
@@ -181,6 +188,14 @@ div.text-entry {
   
   .text-entry .text-question {
     padding: 0;
+  }
+
+  /* FUNGI ICONS */
+
+  .test-card .mushroom-icon-header svg {
+    width: .8rem;
+    height: .8rem;
+    margin: 0 .25rem 0 0;
   }
 
 @media (min-width: 768px) {

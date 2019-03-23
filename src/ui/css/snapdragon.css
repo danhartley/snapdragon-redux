@@ -58,6 +58,7 @@ progress {
   width: 100%;
   border: 0;
   background: var(--snap-progress-bg);
+  max-height: .3rem;
 }
 
 progress::-webkit-progress-bar {
@@ -312,6 +313,7 @@ a.dropdown-item {
 }
 
 .snapdragon-container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
@@ -340,7 +342,7 @@ a.dropdown-item {
 }
 
 .species.revision.card {
-  margin: 0.5rem 0;
+  margin: 0;
 }
 
 .species.revision.card img,
@@ -1057,6 +1059,17 @@ span.correct {
   border: 0.05rem solid var(--snap-success);
 }
 
+.block.snap-success, .block.snap-alert {
+  color: var(--snap-text-light) !important;
+  background-color: var(--snap-success) !important;
+  border: none;
+  /* box-shadow: 0 2px 8px rgba(0,0,0,.2); */
+}
+
+.block.snap-alert {
+  background-color: var(--snap-alert) !important;
+}
+
 .snap-alert-fg {
   color: var(--snap-alert);
 }
@@ -1447,7 +1460,7 @@ label.btn.btn-secondary .lesson-icon {
 }
 
 .answer-container {
-  border: 1px solid var(--snap-border-dark);
+  border: .05 solid var(--snap-dd-non-taxa-bg-active);
   padding: 0.25rem 0.5rem;
   margin: 2rem 0 1rem 0;
 }
@@ -1943,6 +1956,10 @@ a.collection-disabled {
   padding: .5rem 0;
 }
 
+.question-header .iconic-icon, .species.card .iconic-icon {
+  cursor: pointer;
+}
+
 .calender-container {
   width: 160px;
   height: 80px;
@@ -2071,6 +2088,9 @@ a.collection-disabled {
   display: flex;
   color: var(--snap-link);
   letter-spacing: .03rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home-guide .taxa {
@@ -2182,8 +2202,17 @@ a.collection-disabled {
 .snapdragon-create-guide .toggle-links {
   display: flex;
   justify-content: flex-end;
+  margin-right: .25rem;
 }
 
 .snapdragon-create-guide .edit-guide-link {
   margin: 0 .5rem 0 0;
+}
+
+.swap-in-card {
+  display: initial;
+}
+
+.swap-out-card {
+  display: none;
 }
