@@ -231,7 +231,7 @@ let portraitLayouts = [
     commonEntry,
 ];
 
-portraitLayouts = [ textCompleteSpecies ];
+// portraitLayouts = [ textCompleteSpecies ];
 
 const portraitLesson1 = {
     id: 101,
