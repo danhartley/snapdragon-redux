@@ -1,56 +1,56 @@
 export const lichen = [
-    {
-      "id": 195336,
-      "name": "Xanthoparmelia mougeotii",
-      "images": [
-      ],
-      "names": [
-        {
-          "vernacularName": "Mougeots Schüsselflechte",
-          "language": "de",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Mehlige Felsschüsselflechte",
-          "language": "de"
-        },
-        {
-          "vernacularName": "Mougeot's xanthoparmelia lichen",
-          "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Powdered rock-shield Lichen",
-          "language": "en"
-        }
-      ],
-      "taxonomy": {
-        "usageKey": 2604973,
-        "scientificName": "Xanthoparmelia mougeotii (Schaer.) Hale",
-        "canonicalName": "Xanthoparmelia mougeotii",
-        "rank": "SPECIES",
-        "status": "ACCEPTED",
-        "confidence": 100,
-        "matchType": "EXACT",
-        "kingdom": "Fungi",
-        "phylum": "Ascomycota",
-        "order": "Lecanorales",
-        "family": "Parmeliaceae",
-        "genus": "Xanthoparmelia",
-        "species": "Xanthoparmelia mougeotii",
-        "kingdomKey": 5,
-        "phylumKey": 95,
-        "classKey": 180,
-        "orderKey": 1048,
-        "familyKey": 8305,
-        "genusKey": 2603781,
-        "speciesKey": 2604973,
-        "synonym": false,
-        "class": "Lecanoromycetes"
-      },
-      "family": "Parmeliaceae",
-      "eolName": "Xanthoparmelia mougeotii (Schaer. ex D. Dietr.) Hale"
-    },
+    // {
+    //   "id": 195336,
+    //   "name": "Xanthoparmelia mougeotii",
+    //   "images": [
+    //   ],
+    //   "names": [
+    //     {
+    //       "vernacularName": "Mougeots Schüsselflechte",
+    //       "language": "de",
+    //       "eol_preferred": true
+    //     },
+    //     {
+    //       "vernacularName": "Mehlige Felsschüsselflechte",
+    //       "language": "de"
+    //     },
+    //     {
+    //       "vernacularName": "Mougeot's xanthoparmelia lichen",
+    //       "language": "en",
+    //       "eol_preferred": true
+    //     },
+    //     {
+    //       "vernacularName": "Powdered rock-shield Lichen",
+    //       "language": "en"
+    //     }
+    //   ],
+    //   "taxonomy": {
+    //     "usageKey": 2604973,
+    //     "scientificName": "Xanthoparmelia mougeotii (Schaer.) Hale",
+    //     "canonicalName": "Xanthoparmelia mougeotii",
+    //     "rank": "SPECIES",
+    //     "status": "ACCEPTED",
+    //     "confidence": 100,
+    //     "matchType": "EXACT",
+    //     "kingdom": "Fungi",
+    //     "phylum": "Ascomycota",
+    //     "order": "Lecanorales",
+    //     "family": "Parmeliaceae",
+    //     "genus": "Xanthoparmelia",
+    //     "species": "Xanthoparmelia mougeotii",
+    //     "kingdomKey": 5,
+    //     "phylumKey": 95,
+    //     "classKey": 180,
+    //     "orderKey": 1048,
+    //     "familyKey": 8305,
+    //     "genusKey": 2603781,
+    //     "speciesKey": 2604973,
+    //     "synonym": false,
+    //     "class": "Lecanoromycetes"
+    //   },
+    //   "family": "Parmeliaceae",
+    //   "eolName": "Xanthoparmelia mougeotii (Schaer. ex D. Dietr.) Hale"
+    // },
     {
       "id": 1007295,
       "name": "Physcia tenella",
@@ -1325,83 +1325,83 @@ export const lichen = [
       "family": "Parmeliaceae",
       "eolName": "Parmelia saxatilis (L.) Ach."
     },
-    {
-      "id": 197058,
-      "name": "Graphina anguina",
-      "images": [],
-      "names": [
-        {
-          "vernacularName": "graphina lichen",
-          "language": "en",
-          "eol_preferred": true
-        }
-      ],
-      "taxonomy": {
-        "usageKey": 8223225,
-        "scientificName": "Graphina anguina (Mont.) Müll.Arg.",
-        "canonicalName": "Graphina anguina",
-        "rank": "SPECIES",
-        "status": "ACCEPTED",
-        "confidence": 100,
-        "matchType": "EXACT",
-        "kingdom": "Fungi",
-        "phylum": "Ascomycota",
-        "order": "Ostropales",
-        "family": "Graphidaceae",
-        "genus": "Graphina",
-        "species": "Graphina anguina",
-        "kingdomKey": 5,
-        "phylumKey": 95,
-        "classKey": 180,
-        "orderKey": 1279,
-        "familyKey": 2176,
-        "genusKey": 2602073,
-        "speciesKey": 8223225,
-        "synonym": false,
-        "class": "Lecanoromycetes"
-      },
-      "family": "Graphidaceae",
-      "eolName": "Graphina anguina (Mont.) Müll. Arg."
-    },
-    {
-      "id": 133726,
-      "name": "Caloplaca aurantia",
-      "images": [
-      ],
-      "names": [
-        {
-          "vernacularName": "orange lichen",
-          "language": "en",
-          "eol_preferred": true
-        }
-      ],
-      "taxonomy": {
-        "usageKey": 2610136,
-        "scientificName": "Caloplaca aurantia (Pers.) Hellb.",
-        "canonicalName": "Caloplaca aurantia",
-        "rank": "SPECIES",
-        "status": "ACCEPTED",
-        "confidence": 100,
-        "matchType": "EXACT",
-        "kingdom": "Fungi",
-        "phylum": "Ascomycota",
-        "order": "Teloschistales",
-        "family": "Teloschistaceae",
-        "genus": "Caloplaca",
-        "species": "Caloplaca aurantia",
-        "kingdomKey": 5,
-        "phylumKey": 95,
-        "classKey": 180,
-        "orderKey": 1050,
-        "familyKey": 8368,
-        "genusKey": 2599921,
-        "speciesKey": 2610136,
-        "synonym": false,
-        "class": "Lecanoromycetes"
-      },
-      "family": "Teloschistaceae",
-      "eolName": "Caloplaca aurantia (Pers.) Hellb."
-    },
+    // {
+    //   "id": 197058,
+    //   "name": "Graphina anguina",
+    //   "images": [],
+    //   "names": [
+    //     {
+    //       "vernacularName": "graphina lichen",
+    //       "language": "en",
+    //       "eol_preferred": true
+    //     }
+    //   ],
+    //   "taxonomy": {
+    //     "usageKey": 8223225,
+    //     "scientificName": "Graphina anguina (Mont.) Müll.Arg.",
+    //     "canonicalName": "Graphina anguina",
+    //     "rank": "SPECIES",
+    //     "status": "ACCEPTED",
+    //     "confidence": 100,
+    //     "matchType": "EXACT",
+    //     "kingdom": "Fungi",
+    //     "phylum": "Ascomycota",
+    //     "order": "Ostropales",
+    //     "family": "Graphidaceae",
+    //     "genus": "Graphina",
+    //     "species": "Graphina anguina",
+    //     "kingdomKey": 5,
+    //     "phylumKey": 95,
+    //     "classKey": 180,
+    //     "orderKey": 1279,
+    //     "familyKey": 2176,
+    //     "genusKey": 2602073,
+    //     "speciesKey": 8223225,
+    //     "synonym": false,
+    //     "class": "Lecanoromycetes"
+    //   },
+    //   "family": "Graphidaceae",
+    //   "eolName": "Graphina anguina (Mont.) Müll. Arg."
+    // },
+    // {
+    //   "id": 133726,
+    //   "name": "Caloplaca aurantia",
+    //   "images": [
+    //   ],
+    //   "names": [
+    //     {
+    //       "vernacularName": "orange lichen",
+    //       "language": "en",
+    //       "eol_preferred": true
+    //     }
+    //   ],
+    //   "taxonomy": {
+    //     "usageKey": 2610136,
+    //     "scientificName": "Caloplaca aurantia (Pers.) Hellb.",
+    //     "canonicalName": "Caloplaca aurantia",
+    //     "rank": "SPECIES",
+    //     "status": "ACCEPTED",
+    //     "confidence": 100,
+    //     "matchType": "EXACT",
+    //     "kingdom": "Fungi",
+    //     "phylum": "Ascomycota",
+    //     "order": "Teloschistales",
+    //     "family": "Teloschistaceae",
+    //     "genus": "Caloplaca",
+    //     "species": "Caloplaca aurantia",
+    //     "kingdomKey": 5,
+    //     "phylumKey": 95,
+    //     "classKey": 180,
+    //     "orderKey": 1050,
+    //     "familyKey": 8368,
+    //     "genusKey": 2599921,
+    //     "speciesKey": 2610136,
+    //     "synonym": false,
+    //     "class": "Lecanoromycetes"
+    //   },
+    //   "family": "Teloschistaceae",
+    //   "eolName": "Caloplaca aurantia (Pers.) Hellb."
+    // },
     {
       "id": 1016387,
       "name": "Lecanora muralis",

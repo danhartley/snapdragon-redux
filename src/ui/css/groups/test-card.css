@@ -183,6 +183,14 @@ div.text-entry {
     padding: 0;
   }
 
+  /* FUNGI ICONS */
+
+  .test-card .mushroom-icon-header svg {
+    width: .8rem;
+    height: .8rem;
+    margin: 0 .25rem 0 0;
+  }
+
 @media (min-width: 768px) {
 
     .test-card-container .question-container {

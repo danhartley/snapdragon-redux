@@ -38,7 +38,7 @@ export const renderMixedSpecimenImages = collection => {
     parent.innerHTML = '';
 
     const itemRank = matchTaxon(item.taxonomy, iconicTaxa).toLowerCase();
-    const itemPool = species;
+    const itemPool = species.filter(sp => sp.images);
     const clonedItems = R.clone(itemPool.filter(item => matchTaxonKey(item.taxonomy,[itemRank])));
     const mixedItems = R.take(5, utils.shuffleArray(clonedItems.filter(ci => ci.name !== item.name)));
     mixedItems.push(R.clone(item));
@@ -51,10 +51,14 @@ export const renderMixedSpecimenImages = collection => {
         return { index: index + 1, ...utils.shuffleArray(item.images)[0], itemName: item.name };
     });
 
-    listenersToImageSelection.forEach(listener => listener(images));
-        
     renderTemplate({ images }, template.content, parent);
 
+    listenersToImageSelection.forEach((listener, index) => {
+        if(index === 0) {
+            listener(images);
+        }        
+    });
+        
     const callback = (score, scoreUpdateTimer) => {
         listenersToUserAnswer.forEach(listener => listener(score, scoreUpdateTimer));
     };
@@ -87,5 +91,4 @@ export const renderMixedSpecimenImages = collection => {
             scoreHandler('image-match', test, callback, config);
         });
     });
-
 };
