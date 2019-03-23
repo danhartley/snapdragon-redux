@@ -1,6 +1,6 @@
 
 .test-card-container .question-header {
-    font-size: 1.3rem;
+    font-size: 1rem;
     border: none;
     height: inherit;
     letter-spacing: .03rem;
@@ -133,6 +133,13 @@
     font-size: 1rem;
     padding: 0 0 0 0.5rem;
     min-height: 2rem;
+}
+
+.test-card .portrait-answer {
+    font-style: italic;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    letter-spacing: .08rem;
 }
 
 .answer-box-success > span:nth-child(2), 

@@ -77,6 +77,10 @@ export const renderInput = (screen, question) => {
         boundScore.scoreUpdateTimer = scoreUpdateTimer;
         boundScore.score = score;        
         answerBtn.removeEventListener('click', scoreEventHandler);
+        if(config.isPortraitMode) {
+            answerBtn.innerHTML = item.name;
+            answerBtn.classList.add('portrait-answer');
+        }
     };
 
     const scoreEventHandler = event => {

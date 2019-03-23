@@ -52,7 +52,7 @@ export const renderMultiStrips = (collection) => {
     const render = (questionValue, answers, overrides) => {
 
         const vernacularName = (overrides && overrides.vernacularName) ? overrides.vernacularName : item.vernacularName;
-        const binomial = (overrides && overrides.binomial) ? overrides.binomial : item.binomial;
+        const binomial = (overrides && overrides.binomial) ? overrides.binomial : item.name;
         const question = (overrides && overrides.question) ? overrides.question : 'Match the name';
         const help = (overrides && overrides.help) ? overrides.help : '(Click on the name below.)';
         

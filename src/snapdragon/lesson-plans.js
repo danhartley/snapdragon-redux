@@ -36,6 +36,27 @@ const propertyTrait = (traitPropertyMatch, trait) => {
     return layout;
 };
 
+const layouts1 = [
+    mixedSpecimenImages, // UPDATED (ICON CHANGE COLOUR IN LIST?)
+    traitPropertyMatch,
+    // multiSpecimenCommonMatch, ?????
+    textCompleteGenus, // GOOD
+    textCompleteSpecies, // GOOD
+    genusEntry, // GOOD
+    speciesEntry, // GOOD
+    speciesGenusEntry, // GOOD
+    commonEntry, // GOOD
+    speciesRevision, // excluded in lesson-builder                  
+    // multiSpecimenCommonMatch, // only works portrait as in landscape the photo is the same
+    // mixedSpeciesMatch, // replace with clickable rhs images REMOVE
+    latinToCommonMatch,  // works fine
+    // taxonRevision, // excluded in lesson-builder ??             
+    familyMatch, // still working... missing family data an issue
+    familyStripsMatch,// still working... missing family data an issue 
+];
+
+const _layouts = [ mixedSpecimenImages ];
+
 const landscapeLesson1 = {
     id: 1,
     name:'Lesson 1',
@@ -45,34 +66,7 @@ const landscapeLesson1 = {
         {   id: 1,
             name:'Level 1',
             description: 'Species recognition',
-            layouts: [ 
-
-                mixedSpecimenImages, // UPDATED (ICON CHANGE COLOUR IN LIST?)
-                traitPropertyMatch,
-                // multiSpecimenCommonMatch, ?????
-
-                genusEntry,
-                speciesEntry,
-                speciesGenusEntry,
-
-                textCompleteGenus, // GOOD
-                textCompleteSpecies, // GOOD
-                genusEntry, // GOOD
-                speciesEntry, // GOOD
-                speciesGenusEntry, // GOOD
-                commonEntry, // GOOD
-
-                speciesRevision, // excluded in lesson-builder                  
-                // multiSpecimenCommonMatch, // only works portrait as in landscape the photo is the same
-                // mixedSpeciesMatch, // replace with clickable rhs images REMOVE
-                latinToCommonMatch,  // works fine
-                
-                // taxonRevision, // excluded in lesson-builder ??             
-                
-                familyMatch, // still working... missing family data an issue
-                familyStripsMatch,// still working... missing family data an issue
-                
-            ],
+            layouts: _layouts,
             wildcardLayouts : [],
             reviewLayouts: [ multiSpecimenCommonMatch, mixedSpeciesMatch ]
         },

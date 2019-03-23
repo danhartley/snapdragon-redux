@@ -2077,6 +2077,9 @@ a.collection-disabled {
   display: flex;
   color: var(--snap-link);
   letter-spacing: .03rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home-guide .taxa {
