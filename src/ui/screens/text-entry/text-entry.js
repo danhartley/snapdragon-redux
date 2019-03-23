@@ -73,7 +73,7 @@ export const renderInput = (screen, question) => {
 
     const boundScore = {};
 
-    const markingCallback = (score, scoreUpdateTimer) => {        
+    const callback = (score, scoreUpdateTimer) => {        
         boundScore.scoreUpdateTimer = scoreUpdateTimer;
         boundScore.score = score;        
         answerBtn.removeEventListener('click', scoreEventHandler);
@@ -81,11 +81,12 @@ export const renderInput = (screen, question) => {
             answerBtn.innerHTML = item.name;
             answerBtn.classList.add('portrait-answer');
         }
+        score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
     };
 
     const scoreEventHandler = event => {
         const score = { itemId: item.id, question, answer: document.querySelector('.js-txt-input').value, target: event.target, layoutCount: lessonPlan.layouts.length, points: layout.points, names: item.vernacularNames };
-        scoreHandler('text', score, markingCallback, config);
+        scoreHandler('text', score, callback, config);
         answerBtn.disabled = true;
         document.querySelector('.js-continue-lesson-btn').disabled = false;
         helpTxt.innerHTML = item.name;

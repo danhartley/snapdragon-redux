@@ -2,12 +2,12 @@ import { actions } from 'redux/actions/action-creators';
 import { elem } from 'ui/helpers/class-behaviour';
 import { markTest } from 'ui/helpers/score-handler';
 
-export const scoreHandler = (type, test, callback, config, containers) => {
+export const scoreHandler = (type, test, callback, config) => {
     
     switch(type) {
         case 'radio':
         case 'text':
-            return genericScoreHandler(test, callback, config, containers);
+            return genericScoreHandler(test, callback, config);
         case 'block':
             blockScoreHander(test, callback, config);
             break;
@@ -74,9 +74,6 @@ const genericScoreHandler = (_score, callback, config) => {
     const test = { itemId, ...question, answer, points, names };
 
     const score = markTest(test);
-
-    let responseTxt = (test.names && test.names.length > 0) ? test.names[0] : test.binomial;
-    let labelTxt = 'Species';
 
     if(score.taxon === 'genus') {
         responseTxt = score.genus;

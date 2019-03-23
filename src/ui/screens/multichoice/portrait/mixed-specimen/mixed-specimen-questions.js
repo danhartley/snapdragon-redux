@@ -62,6 +62,7 @@ export const renderMixedSpecimenQuestions = collection => {
     imageSlider(config, utils.shuffleArray(images), parent, true);
 
     document.querySelectorAll('.carousel-item .layer').forEach(img => {
+        
         img.addEventListener('click', event => {
 
             const layer = event.target;
@@ -71,16 +72,21 @@ export const renderMixedSpecimenQuestions = collection => {
             const isCorrect = answer === question;
             const className = isCorrect ? 'snap-success' : 'snap-alert';
             layer.classList.add(className);       
-            const icon = document.createElement('span');
-            icon.innerHTML = isCorrect 
+            const answerIcon = document.createElement('span');
+            answerIcon.innerHTML = isCorrect 
                     ? '<span class="icon"><i class="fas fa-check-circle"></i></span>'
                     : '<span class="icon"><i class="fas fa-times-circle"></i></span>';
 
-            layer.appendChild(icon);
+            layer.appendChild(answerIcon);
             document.querySelector('.attribution-layer').style.display = 'none';
             
             const test = { ...score, itemId: item.id, question, answer, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
-            scoreHandler('image-match', test, null, config);
+
+            const callback = (score, scoreUpdateTimer) => {
+                score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
+            };
+
+            scoreHandler('image-match', test, callback, config);
         });
     });
 };

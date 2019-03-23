@@ -1059,6 +1059,17 @@ span.correct {
   border: 0.05rem solid var(--snap-success);
 }
 
+.block.snap-success, .block.snap-alert {
+  color: var(--snap-text-light) !important;
+  background-color: var(--snap-success) !important;
+  border: none;
+  /* box-shadow: 0 2px 8px rgba(0,0,0,.2); */
+}
+
+.block.snap-alert {
+  background-color: var(--snap-alert) !important;
+}
+
 .snap-alert-fg {
   color: var(--snap-alert);
 }
@@ -1449,7 +1460,7 @@ label.btn.btn-secondary .lesson-icon {
 }
 
 .answer-container {
-  border: 1px solid var(--snap-border-dark);
+  border: .05 solid var(--snap-dd-non-taxa-bg-active);
   padding: 0.25rem 0.5rem;
   margin: 2rem 0 1rem 0;
 }

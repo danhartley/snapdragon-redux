@@ -1,7 +1,6 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
-import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { renderIcon } from 'ui/helpers/icon-handler';
@@ -72,25 +71,28 @@ export const renderCompleteText = (collection) => {
 
     const score = { itemId: item.id, binomial: item.name, question: item[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length, points: layout.points };
 
-    const updateScreen = (score, scoreUpdateTimer, config) => {
+    const callback = (score, scoreUpdateTimer, config) => {
 
         const iconColour  = score.success ? 'answer-box-success' : 'answer-box-alert';
 
-        const icon = score.success
+        const answerIcon = score.success
             ? `<span class="icon"><i class="fas fa-check"></i></span>`
             : `<span class="icon"><i class="fas fa-times"></i></span>`;
 
         const response = score.success ? 'That is the correct answer.' : 'That is the wrong answer.';
         
-        document.querySelector('.js-txt-question').innerHTML = `<div class="${iconColour}"><span>${icon}</span><span>${ response }</span</div>`;        
+        document.querySelector('.js-txt-question').innerHTML = `<div class="${iconColour}"><span>${answerIcon}</span><span>${ response }</span</div>`;        
 
-        if(!score.success) {
-            document.querySelectorAll('.block span').forEach(block => {
-                if(block.innerHTML === score.question) {
-                    block.parentElement.classList.add('snap-success');
-                }
-            });
-        }
+        document.querySelectorAll('.block span').forEach(block => {
+            if(block.innerHTML === score.answer) {
+                score.success
+                    ? block.parentElement.classList.add('snap-success')
+                    : block.parentElement.classList.add('snap-alert');
+            }
+            if(block.innerHTML === score.question) {
+                block.parentElement.classList.add('snap-success');
+            }
+        });
 
         const txtBtn = document.querySelector('.js-continue-lesson-btn');
 
@@ -102,6 +104,8 @@ export const renderCompleteText = (collection) => {
             window.clearTimeout(scoreUpdateTimer);
             actions.boundUpdateScore(score);
         });
+
+        score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
     };
 
     document.querySelectorAll('.pool .block span').forEach(answer => {
@@ -113,7 +117,7 @@ export const renderCompleteText = (collection) => {
                 document.querySelector('.genus').innerHTML = answer;
             }
             score.answer = answer;
-            scoreHandler('block', score, updateScreen, config);
+            scoreHandler('block', score, callback, config);
         });
     });    
 };

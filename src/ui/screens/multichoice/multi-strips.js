@@ -82,6 +82,8 @@ export const renderMultiStrips = (collection) => {
                 window.clearTimeout(scoreUpdateTimer);
                 actions.boundUpdateScore(score);
             });
+
+            score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
         };
 
         scoreHandler('strip', test, callback, config);

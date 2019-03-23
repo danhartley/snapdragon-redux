@@ -36,7 +36,7 @@ const propertyTrait = (traitPropertyMatch, trait) => {
     return layout;
 };
 
-const layouts1 = [
+let landscapeLayouts = [
     mixedSpecimenImages, // UPDATED (ICON CHANGE COLOUR IN LIST?)
     traitPropertyMatch,
     // multiSpecimenCommonMatch, ?????
@@ -55,7 +55,7 @@ const layouts1 = [
     familyStripsMatch,// still working... missing family data an issue 
 ];
 
-const _layouts = [ mixedSpecimenImages ];
+landscapeLayouts = [ textCompleteGenus, commonEntry ];
 
 const landscapeLesson1 = {
     id: 1,
@@ -66,7 +66,7 @@ const landscapeLesson1 = {
         {   id: 1,
             name:'Level 1',
             description: 'Species recognition',
-            layouts: _layouts,
+            layouts: landscapeLayouts,
             wildcardLayouts : [],
             reviewLayouts: [ multiSpecimenCommonMatch, mixedSpeciesMatch ]
         },
@@ -215,6 +215,24 @@ const landscapeLesson3 = {
     ]
 };
 
+let portraitLayouts = [ 
+                
+    genusEntry,
+    textCompleteGenus,                
+    latinToCommonMatch,
+    mixedSpeciesMatch,
+    
+    speciesEntry,
+    speciesGenusEntry,
+    
+    commonToLatinMatch,
+    textCompleteSpecies,
+    
+    commonEntry,
+];
+
+portraitLayouts = [ textCompleteSpecies ];
+
 const portraitLesson1 = {
     id: 101,
     name:'Lesson 101',
@@ -223,21 +241,7 @@ const portraitLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ 
-                
-                genusEntry,
-                textCompleteGenus,                
-                latinToCommonMatch,
-                mixedSpeciesMatch,
-                
-                speciesEntry,
-                speciesGenusEntry,
-                
-                commonToLatinMatch,
-                textCompleteSpecies,
-                
-                commonEntry, // GOOD
-            ],
+            layouts: portraitLayouts,
             wildcardLayouts : [],
             reviewLayouts: [ latinToCommonMatch ]
         },

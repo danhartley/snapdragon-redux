@@ -40,8 +40,8 @@ export const renderMixedSpecimenQuestion = collection => {
         utils.shuffleArray(images).forEach(image => {            
             const i = image;
             const vernacularName = itemProperties.getVernacularName(species.find(sp => sp.name === image.itemName), config);  
-            const icon = returnIcon(species.find(sp => sp.name === image.itemName));            
-            speciesToShow +=  `<li id="${image.itemName}">${icon}<span>${vernacularName}</span></li>`;
+            const taxonIcon = returnIcon(species.find(sp => sp.name === image.itemName));            
+            speciesToShow +=  `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;
         });
         document.querySelector('.js-images-names-txt').innerHTML = speciesToShow;
     };
@@ -59,8 +59,6 @@ export const renderMixedSpecimenQuestion = collection => {
         pendingScore.scoreUpdateTimer = scoreUpdateTimer;
 
         score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
-
-        // Array.from(speciesShown.querySelectorAll('li')).filter(species => species.id !== score.question && species.id !== score.answer).forEach(s => s.style.color = 'gray');
     });
 
     continueLessonBtn.addEventListener('click', () => {

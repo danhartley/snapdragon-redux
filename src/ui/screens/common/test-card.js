@@ -45,5 +45,7 @@ export const renderTestCardTemplate = (collection, context) => {
 
     });
 
-    return document.querySelector('.js-test-card');
+    const testContentParent = document.querySelector('.js-test-card');
+
+    return testContentParent;
 };
