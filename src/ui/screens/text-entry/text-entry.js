@@ -97,7 +97,7 @@ export const renderInput = (screen, question) => {
     if(config.isPortraitMode) renderPortrait(item, config);
     else renderLandscape(item, config, question);
 
-    document.querySelector('.js-txt-input').focus();
+    // document.querySelector('.js-txt-input').focus();
 
     const icon = renderIcon(item, document);
 
@@ -206,7 +206,7 @@ const renderLandscape = (item, config, question) => {
         if(disabled) {
             keyboardBtn.innerHTML = 'Enable letters';
             input.removeAttribute('disabled');
-            input.focus();
+            // input.focus();
         } else {
             keyboardBtn.innerHTML = 'Enable keyboard'
             input.setAttribute('disabled', 'disabled');
