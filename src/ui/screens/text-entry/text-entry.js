@@ -206,7 +206,7 @@ const renderLandscape = (item, config, question) => {
         if(disabled) {
             keyboardBtn.innerHTML = 'Enable letters';
             input.removeAttribute('disabled');
-            // input.focus();
+            input.focus();
         } else {
             keyboardBtn.innerHTML = 'Enable keyboard'
             input.setAttribute('disabled', 'disabled');
