@@ -122,8 +122,13 @@ export const renderLocation = (modal, config, createGuide) => {
     });
 
     modal.querySelector('.js-planet-earth').addEventListener('click', event => {
+        config.guide.locationType = 'place';
+        config.guide.place = { name: 'Earth', id: 'any', type: 'places' };
+        locationPlace = 'Earth';
+        config.guide.locationPlace = locationPlace;
         config.guide.locationOverride = event.target.checked;
-        actions.boundUpdateConfig(config);        
+        config.collection.id = 2;
+        actions.boundUpdateConfig(config);
         save();
     });
 }
