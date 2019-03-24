@@ -63,36 +63,41 @@ export async function itemHandler(collection, config, counter, callback) {
             collection.items = [ ...lepidoptera, ...noninsecta ];
         }
 
-        collection.name = config.guide.place.name;
-        collection.items = collection.items.filter(i => i);
+        if(collection.items) {
 
-        collection.items.filter(item => item).forEach((item,index)=>{
-            item.snapIndex = index + 1;
-            item.collectionId =  collection.id;
-        });
+            collection.name = config.guide.place.name;
+            collection.items = collection.items.filter(i => i);
 
-        collection.items.forEach(item => {
-            
-            item.vernacularNames = itemProperties.getVernacularNames(item, config);
-            item.vernacularName = itemProperties.getVernacularName(item, config);   
+            collection.items.filter(item => item).forEach((item,index)=>{
+                item.snapIndex = index + 1;
+                item.collectionId =  collection.id;
+            });
 
-            const names = item.name.split(' ');
-            item.genus = names[0];
-            item.species = names[1];
-            item.name = names.slice(0,2).join(' ');
-        })
+            collection.items.forEach(item => {
+                
+                item.vernacularNames = itemProperties.getVernacularNames(item, config);
+                item.vernacularName = itemProperties.getVernacularName(item, config);   
 
-        collection.speciesRange = config.speciesRange;
-        collection.iconicTaxa = config.guide.iconicTaxa;
+                const names = item.name.split(' ');
+                item.genus = names[0];
+                item.species = names[1];
+                item.name = names.slice(0,2).join(' ');
+            })
 
-        collection.speciesNames = collection.items.map(item => item.name);
-        collection.speciesVernacularNames = itemProperties.vernacularNamesForItems(collection.items, config);
+            collection.speciesRange = config.speciesRange;
+            collection.iconicTaxa = config.guide.iconicTaxa;
 
-        collection.itemIndex = 0;
-        collection.currentRound = 1;
+            collection.speciesNames = collection.items.map(item => item.name);
+            collection.speciesVernacularNames = itemProperties.vernacularNamesForItems(collection.items, config);
 
-        console.warn('item-handler: boundChangeCollection');
+            collection.itemIndex = 0;
+            collection.currentRound = 1;
+        } else {
+            collection.items = [];
+        }
+         
         actions.boundChangeCollection({ config, collection });
+        
     }
 
     if(collection.items) {
