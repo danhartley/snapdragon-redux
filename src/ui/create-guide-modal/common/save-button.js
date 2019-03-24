@@ -52,7 +52,7 @@ export const saveButton = (parent, config, step, update = true) => {
                 if(config.guide.inatId.key) {
                     inatIdLabel.innerHTML = config.guide.inatId.param === 'project_id' 
                             ? 'iNaturalist Project'
-                            : 'iNaturalis User';
+                            : 'iNaturalist User';
                     inatId.innerHTML = config.guide.inatId.key || '';
                 }
                 if(config.guide.season) {
