@@ -5,7 +5,9 @@ import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
 
 const getBasePath = config => {
     
-    const month = config.guide.season.observableMonths.map(month => month.index).join(',');
+    const month = config.guide.season.type === 'all_year' 
+            ? ''
+            : config.guide.season.observableMonths.map(month => month.index).join(',');
 
     // quality_grade=research&
 

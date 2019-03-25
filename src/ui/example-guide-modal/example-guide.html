@@ -1,0 +1,9 @@
+<div class="btn-group btn-group-toggle js-rptr-lessons" data-toggle="buttons" data-repeat-lesson="{{ lessons }}">
+    <label class="btn btn-secondary active" id="{{ lesson.id }}">
+        <input type="radio" name="lessons" autocomplete="off">{{ lesson.name }}
+    </label>
+    <div>{{ lesson.taxa }}</div>
+</div>
+
+<button disabled id="confirm-lesson-btn" class="btn btn-modal js-confirm-lesson-btn">Confirm choice</button>
+        

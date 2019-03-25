@@ -15,7 +15,7 @@ const closeModalListeners = [];
 
 export const listenToCloseCreateGuideModal = listener => { 
     closeModalListeners.push(listener);
-  };  
+};
 
 class CreateGuide {
 
@@ -35,14 +35,14 @@ class CreateGuide {
 
         this.modalTitle = this.modal.querySelector('.js-modal-title div:nth-child(1)');
         this.modalTitleSteps = this.modal.querySelector('.js-modal-title div:nth-child(2)');
-        this.progressSteps = this.modal.querySelectorAll('.js-create-guide-progress > div > div');
-        this.previousStepAction = this.modal.querySelector('.js-create-guide-navigation > div:nth-child(1)');
-        this.previousStepTitle = this.modal.querySelector('.js-create-guide-navigation > div:nth-child(1) > div');
-        this.previousStepActionTxt = this.modal.querySelector('.js-create-guide-navigation > div:nth-child(1) > div > span:nth-child(2)');
-        this.previousStepIcon = this.modal.querySelector('.js-create-guide-navigation > div:nth-child(1) > div > span:nth-child(1)');
-        this.nextStepAction = this.modal.querySelector('.js-create-guide-navigation > div:nth-child(2)');
-        this.nextStepTitle = this.modal.querySelector('.js-create-guide-navigation > div:nth-child(2) > div');
-        this.nextStepActionTxt = this.modal.querySelector('.js-create-guide-navigation > div:nth-child(2) > div > span');
+        this.progressSteps = this.modal.querySelectorAll('.js-modal-guide-progress > div > div');
+        this.previousStepAction = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(1)');
+        this.previousStepTitle = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(1) > div');
+        this.previousStepActionTxt = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(1) > div > span:nth-child(2)');
+        this.previousStepIcon = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(1) > div > span:nth-child(1)');
+        this.nextStepAction = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(2)');
+        this.nextStepTitle = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(2) > div');
+        this.nextStepActionTxt = this.modal.querySelector('.js-modal-guide-navigation > div:nth-child(2) > div > span');
 
         this.progressSteps.forEach((ps,index) => {
             ps.innerHTML = this.steps[index].description;
@@ -56,12 +56,9 @@ class CreateGuide {
     addStepActions() {
         
         let template = '';
-        const parent = this.modal.querySelector('.js-create-guide-action');
+        const parent = this.modal.querySelector('.js-modal-guide-body');
         parent.innerHTML = '';
         template = document.createElement('template');
-        // console.log('***');
-        // console.warn(this.currentStep);
-        // console.log('***');
         const description = this.steps.find(step => step.number === this.currentStep).description;
 
         const { config: configState } = store.getState();
@@ -154,7 +151,6 @@ export const createGuideHandler = (step) => {
 
     const handleNextStepAction = event => {
         guide.createStep(guide.getCurrentStep + 1, 'NEXT');
-        // console.log(event.target.nodeName);
         guide.listeners.push( { element: guide.nextStepAction, handler: handleNextStepAction });
     };
 
@@ -162,7 +158,6 @@ export const createGuideHandler = (step) => {
 
     const handlePreviousStepAction = event => {
         guide.createStep(guide.getCurrentStep - 1, 'PREVIOUS');
-        // console.log(event.target.nodeName);
         guide.listeners.push( { element: guide.previousStepAction, handler: handlePreviousStepAction });
     };
 
