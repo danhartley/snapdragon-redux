@@ -485,10 +485,16 @@
     color: var(--snap-lesson);
   }
   
-  .iconic-taxa-categories svg, .selected-text .iconic-taxa-categories-selected svg {
+  .iconic-taxa-categories svg, 
+  .selected-text .iconic-taxa-categories-selected svg,
+  .lesson-taxa .iconic-taxa-categories-selected svg {
     width: 1rem;
     height: 1rem;
     margin: 0.25rem 0 0 0;
+  }
+
+  .lesson-taxa .iconic-taxa-categories-selected svg g {
+    fill: var(--snap-text-medium-dark);
   }
 
   .iconic-taxa-categories-selected svg {
@@ -527,6 +533,54 @@
   .svg-icon-selected {
     fill: var(--snap-success);
   }  
+
+  /* EXAMPLE LESSONS INC. RB LIST */
+
+  #exampleGuide .btn.btn-secondary {
+    height: fit-content;
+    margin: 1.25rem 0;
+    padding: 0.25rem 0 0.25rem 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: .9rem;
+  }
+
+  #exampleGuide .btn-secondary:not(:disabled):not(.disabled).active {
+    width: 100%;    
+    border-radius: .25rem;
+    color: white;
+    background-color: gray;
+  }
+
+  #exampleGuide .btn.btn-secondary.active + div.lesson-radio-button {
+    background-color: white;
+    border: .05rem solid gray;
+  }
+  
+  #exampleGuide .lesson-taxa {
+    font-size: .8rem;
+  }
+  
+  #exampleGuide .lesson-taxa span {
+    margin: 0 .15rem 0 0;
+  }
+
+  #exampleGuide .btn.btn-secondary.active .lesson-taxa .iconic-taxa-categories-selected svg g {
+    fill: white;
+  }
+
+  #exampleGuide #confirm-lesson-btn {
+    margin: 1.5rem 0;
+  }
+
+  #exampleGuide .lesson-radio-button {
+    width: 1rem;
+    height: 1rem;
+    margin: -3.5rem 0 0 0.25rem;
+    border-radius: 2rem;
+    z-index: 9999;
+    background-color: gray;
+  }
   
   @media (min-width: 1024px) {
 
@@ -676,23 +730,15 @@
 
     /* EXAMPLE LESSONS INC. RB LIST */
 
-    .btn.btn-secondary {
-      margin: .5rem 0;
+    #exampleGuide .btn.btn-secondary {
+      margin: 1.25rem 0;
+      padding: 0.25rem 0 0.25rem 4rem;
+      font-size: initial;
     }
 
-    .btn-secondary:not(:disabled):not(.disabled).active {
-      width: 100%;
-      border-radius: .25rem;
-      color: white;
-      background-color: gray;
-    }
-
-    .btn.btn-secondary ~ div {
-      margin: 0 0 0 1rem;
-      font-size: .8rem;
-    }
-
-    #confirm-lesson-btn {
-      margin: 1rem 0 0 .5rem;
+    #exampleGuide .lesson-radio-button {
+      width: 2rem;
+      height: 2rem;
+      margin: -4rem 0 0 1rem;
     }
   }

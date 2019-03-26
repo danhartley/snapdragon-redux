@@ -31,7 +31,7 @@ export const returnIcon = item => {
 
 export const returnTaxonIcon = taxon => {
 
-    if(taxon === 'fungi') {
+    if(taxon.toLowerCase() === 'fungi') {
         return '<span class="iconic-taxa-categories-selected"><svg-icon><src href="./icons/si-glyph-mushrooms.svg"/></svg></span>';
 
     } else {

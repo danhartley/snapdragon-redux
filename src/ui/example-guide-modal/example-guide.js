@@ -1,5 +1,5 @@
 import { actions } from 'redux/actions/action-creators';
-import { store } from 'redux/store';
+import { returnTaxonIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import exampleGuideTemplate from 'ui/example-guide-modal/example-guide.html';
 
@@ -108,6 +108,29 @@ export const renderExampleGuideHandler = config => {
                 ready: true
             }
         },
+        {
+            id: 3,
+            name: 'Snapdragon Fungi & Lichens',            
+            guide: {
+                locationPlace: 'Planet Earth',
+                locationType: 'place',
+                place: {
+                    name: 'Planet Earth',
+                    id: 'any',
+                    type: 'places'
+                },
+                season: {
+                    type: 'all_year'
+                },
+                iconicTaxa: [
+                    {
+                      id: 'fungi',
+                      common: 'Fungi & Lichens'
+                    }
+                ],
+                ready: true
+            }
+        },
     ];
 
     lessons.forEach(lesson => {
@@ -120,6 +143,22 @@ export const renderExampleGuideHandler = config => {
     template.innerHTML = exampleGuideTemplate;    
     renderTemplate({lessons}, template.content, parent);
 
+    const taxa = modal.querySelectorAll('.lesson-taxa');
+
+    taxa.forEach(taxon => {
+        const lessonId = parseInt(taxon.dataset.lessonId);
+        const lessonTaxa = lessons.find(lesson => lesson.id === lessonId).guide.iconicTaxa.map(taxon => taxon.id);
+
+        let icons = '';
+
+        lessonTaxa.forEach(taxon => {
+          const icon = returnTaxonIcon(taxon);
+          icons += icon;
+        });
+
+        taxon.innerHTML = icons;
+    });
+
     const confirmLessonBtn = modal.querySelector('.js-confirm-lesson-btn');
     const navigationBtn = modal.querySelector('.js-modal-guide-navigation div:nth-child(2)');
     navigationBtn.disabled = true;
@@ -129,7 +168,8 @@ export const renderExampleGuideHandler = config => {
     modal.querySelectorAll('.btn.btn-secondary').forEach(lesson => {
         lesson.addEventListener('click', event => {
             confirmLessonBtn.disabled = false;
-            selectedGuide = lessons.find(lesson => lesson.id === parseInt(event.target.id)).guide;
+            const id = event.target.id || event.target.dataset.lessonId;
+            selectedGuide = lessons.find(lesson => lesson.id === parseInt(id)).guide;
         });
     });
 
@@ -139,6 +179,13 @@ export const renderExampleGuideHandler = config => {
 
         navigationBtn.disabled = false;
         navigationBtn.setAttribute('data-dismiss','modal');
+
+        const txt = modal.querySelector('.js-saved');
+
+        txt.innerHTML = 'Your preference has been updated';
+          setTimeout(() => {
+              txt.innerHTML = '';
+          }, 2000);
     });
 
     navigationBtn.addEventListener('click', event => {

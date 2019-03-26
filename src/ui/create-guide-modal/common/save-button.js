@@ -35,7 +35,7 @@ export const saveButton = (parent, config, step, update = true) => {
                 let icons = '';
                 if(iconicTaxa.length > 0) {
                     iconicTaxa.forEach(taxon => {
-                        const icon = returnTaxonIcon(taxon.id.toLowerCase());
+                        const icon = returnTaxonIcon(taxon.id);
                         icons += icon;
                     })
                     chosen.innerHTML = icons;
