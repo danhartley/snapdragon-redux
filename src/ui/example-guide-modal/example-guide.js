@@ -59,6 +59,9 @@ export const renderExampleGuideHandler = config => {
                     }
                 ],
                 ready: true
+            },
+            collection: {
+              id: 2
             }
         },
         {
@@ -106,11 +109,14 @@ export const renderExampleGuideHandler = config => {
                     }
                 ],
                 ready: true
+            },
+            collection: {
+              id: 2
             }
         },
         {
             id: 3,
-            name: 'Snapdragon Fungi & Lichens',            
+            name: 'Snapdragon Lichens',            
             guide: {
                 locationPlace: 'Planet Earth',
                 locationType: 'place',
@@ -129,6 +135,9 @@ export const renderExampleGuideHandler = config => {
                     }
                 ],
                 ready: true
+            },
+            collection: {
+              id: 3
             }
         },
     ];
@@ -163,18 +172,21 @@ export const renderExampleGuideHandler = config => {
     const navigationBtn = modal.querySelector('.js-modal-guide-navigation div:nth-child(2)');
     navigationBtn.disabled = true;
 
-    let selectedGuide;
+    let selectedLesson;
 
-    modal.querySelectorAll('.btn.btn-secondary').forEach(lesson => {
+    const lessonSelectors = modal.querySelectorAll('.btn.btn-secondary');
+
+    lessonSelectors.forEach(lesson => {
         lesson.addEventListener('click', event => {
             confirmLessonBtn.disabled = false;
-            const id = event.target.id || event.target.dataset.lessonId;
-            selectedGuide = lessons.find(lesson => lesson.id === parseInt(id)).guide;
+            let id = event.target.id;
+            selectedLesson = lessons.find(lesson => lesson.id === parseInt(id));
         });
     });
 
     confirmLessonBtn.addEventListener('click', event => {        
-        config.guide = { ...config.guide, ...selectedGuide };
+        config.guide = { ...config.guide, ...selectedLesson.guide };
+        config.collection = { ...config.collection, ...selectedLesson.collection };
         actions.boundUpdateConfig(config);
 
         navigationBtn.disabled = false;

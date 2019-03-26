@@ -18,6 +18,14 @@
     padding: 0.5rem;
 }
 
+.vernacular-name-badge {
+    position: relative;
+}
+
+.names-badge {
+    position: absolute;
+    right: -.75rem;
+}
 
 
 #speciesCardModal .modal-content .snapdragon-container, #taxonCardModal .modal-content .snapdragon-container {  

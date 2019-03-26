@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-.test-card-container .question-header div {
+.test-card-container .question-header > div {
     align-items: center;
     line-height: 1.2;
     display: flex;
@@ -200,20 +200,33 @@ div.text-entry {
 
 @media (min-width: 768px) {
 
-    .test-card-container .question-container {
-        height: 100px;
+    .question-container .mushroom-icon-header svg {
+        width: 1.8rem;
+        height: 1.8rem;
+        fill: var(--snap-iconic-icon-header);
     }
 
-    .test-card-container .question-header {
-        font-size: 1.8rem;
+    .test-card-container .question-container {
+        height: 88px;
+        display: grid;
+        grid-template-columns: 2fr 4fr 2fr;
+        background-color: var(--snap-species-header-background);
     }
+
+    /* .test-card-container .question-header {
+        font-size: 1.3rem;
+    } */
 
     .test-card-container .question {
         font-size: 2rem; 
     }
 
     .test-card .help-txt {
-        margin: 1rem;
+        margin: 1rem .5rem;
+        font-size: 1.3rem;
+        font-family: serif;
+        font-weight: bold;
+        letter-spacing: .05rem;
     }
 
     .test-card {

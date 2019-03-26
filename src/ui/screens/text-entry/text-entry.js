@@ -18,7 +18,9 @@ export const renderInput = (screen, question) => {
 
     const item = collection.nextItem;
 
-    let vernacularName, binomial;
+    let vernacularName, binomial, questionTxt;
+
+    questionTxt = 'Complete the latin name';
 
     switch(question.taxon) {
         case 'genus': 
@@ -36,10 +38,11 @@ export const renderInput = (screen, question) => {
         case 'vernacular':
             vernacularName = '--- ---';
             binomial = item.name;
+            questionTxt = 'Give the common name';
             break;
     }
 
-    const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: 'Complete the latin name', help: '(Complete the name below.)' });
+    const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: questionTxt, help: '(Complete the name below.)' });
     
     const template = document.createElement('template');
     
@@ -89,7 +92,8 @@ export const renderInput = (screen, question) => {
         scoreHandler('text', score, callback, config);
         answerBtn.disabled = true;
         document.querySelector('.js-continue-lesson-btn').disabled = false;
-        helpTxt.innerHTML = item.name;
+        helpTxt.innerHTML = question.taxon === 'vernacular' ? item.vernacularName : item.name;
+        // if(question.taxon === 'vernacular') helpTxt.classList.remove('binomial');
     };
 
     answerBtn.addEventListener('click', scoreEventHandler);

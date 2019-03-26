@@ -700,9 +700,17 @@ a.dropdown-item {
   text-transform: capitalize;
 }
 
-.species-header {
+/* .species-header {
   display: flex;
   float: right;
+} */
+
+.taxon-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  padding: .5rem;
 }
 
 .species-header img {
