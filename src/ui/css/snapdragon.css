@@ -334,23 +334,24 @@ a.dropdown-item {
   background-color: rgb(216, 227, 220);
 }
 
-.species.revision.card > div:nth-child(1) > div:nth-child(1),
+/* .species.revision.card > div:nth-child(1) > div:nth-child(1),
 .taxon.revision.card > div:nth-child(1) {
   background-color: var(--snap-species-header-background);
   border-bottom: 0.05rem solid var(--snap-border-dark);
+  height: 64px;
   height: 88px;
-}
+} */
 
 .species.revision.card {
   margin: 0;
 }
 
-.species.revision.card img,
+/* .species.revision.card img,
 .taxon.revision.card img,
 .non-taxon.revision.card img {
   height: 88px;
   width: 88px;
-}
+} */
 
 .species.revision.card .data-box > div:nth-child(2) {
   text-align: right;
@@ -1685,11 +1686,11 @@ span.hide-empty:empty {
   padding: 0.5rem;
 }
 
-.names-badge {
+/* .names-badge {
   font-size: 0.8rem;
   vertical-align: super;
   cursor: pointer;
-}
+} */
 
 .custom-control-label::before, .custom-control-label::after {
   width: 1.25rem;
@@ -1812,6 +1813,7 @@ a.collection-disabled {
   bottom: 0.5rem;
   background-color: rgb(218, 225, 201, 0.2);
   padding: 0.5rem 0 0.5rem 0.5rem;
+  text-align: left;
 }
 
 .rights-link > div > div,

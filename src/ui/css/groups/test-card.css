@@ -213,10 +213,6 @@ div.text-entry {
         background-color: var(--snap-species-header-background);
     }
 
-    /* .test-card-container .question-header {
-        font-size: 1.3rem;
-    } */
-
     .test-card-container .question {
         font-size: 2rem; 
     }

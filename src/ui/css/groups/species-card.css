@@ -24,7 +24,11 @@
 
 .names-badge {
     position: absolute;
-    right: -.75rem;
+    right: -1rem;
+    top: 0;
+    font-size: 0.8rem;
+    vertical-align: super;
+    cursor: pointer;
 }
 
 
@@ -47,6 +51,21 @@
     cursor: pointer;
 }
 
+/* SPECIES HEADER */
+
+.question-container {
+  background-color: var(--snap-species-header-background);
+  border-bottom: 0.05rem solid var(--snap-border-dark);
+  height: 64px;  
+  margin: 0 0 .5rem 0;
+}
+
+.question-container img {
+    height: 64px;
+    width: 64px;
+    object-fit: scale-down;
+}
+
 @media (min-width: 768px) {
 
     /* SPECIES CARD MODAL */
@@ -56,10 +75,34 @@
         max-width: 32rem;
     }
 
+    .names-badge {
+        right: -.75rem;
+    }
+
     /* TRAITS CAROUSEL */
 
     .info.carousel.slide .carousel-item div {
         padding: .5rem;
         font-size: 1rem;
+    }
+
+    /* SPECIES HEADER */
+
+    .question-container {
+        height: 88px;
+    }
+
+    .question-container img {
+        height: 88px;
+        width: 88px;
+    }
+
+    .question-container > div:nth-child(1) {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 0 .5rem;
+        font-size: .9rem;
+        justify-content: center;
     }
 }
