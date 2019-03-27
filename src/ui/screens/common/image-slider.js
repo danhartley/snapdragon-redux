@@ -1,3 +1,4 @@
+import { species } from 'api/species';
 import { renderTemplate } from 'ui/helpers/templating';
 import { modalImagesHandler } from 'ui/helpers/image-handlers';
 import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
@@ -44,7 +45,8 @@ const carouselControlHandler = event => {
 
         const tiles = document.querySelectorAll('.js-tiles');
 
-        const collectionItems = collection.allItems || collection.items;
+        const collectionItems = species;
+        // const collectionItems = collection.allItems || collection.items;
 
         if(tiles) {
             const name = document.querySelector('.carousel-item.active > div').dataset.title; 

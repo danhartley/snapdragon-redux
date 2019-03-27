@@ -162,7 +162,6 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
     parent.innerHTML = '';
     
     renderTemplate({ name, vernacularName: item.vernacularName, rank, subSpeciesCount, familyName, headerImage, familyVernacularName, trait, occurrences, iconicTaxon }, template.content, parent, clone);
-    // renderTemplate({ name, vernacularName: item.vernacularName, latin, rank, subSpeciesCount, familyName, headerImage, familyVernacularName, trait, occurrences, iconicTaxon }, template.content, parent, clone);
 
     const subspeciesBadge = rootNode.querySelector('.js-subspecies-badge');
 

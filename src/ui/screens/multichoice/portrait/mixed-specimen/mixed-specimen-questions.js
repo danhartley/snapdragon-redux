@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { species } from 'api/species';
 import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
@@ -30,7 +31,8 @@ export const renderMixedSpecimenQuestions = collection => {
     }
 
     const rank = matchTaxon(collection.nextItem.taxonomy, iconicTaxa).toLowerCase();
-    const itemPool = collection.allItems || collection.items;
+    const itemPool = species;
+    // const itemPool = collection.allItems || collection.items;
     const clonedItems = R.clone(itemPool.filter(item => matchTaxonKey(item.taxonomy,[rank])));
     const items = R.take(5, utils.shuffleArray(clonedItems.filter(ci => ci.name !== collection.nextItem.name)));
     const nextItem = clonedItems.find(i => i.name === collection.nextItem.name);

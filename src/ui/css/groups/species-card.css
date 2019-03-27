@@ -105,4 +105,10 @@
         font-size: .9rem;
         justify-content: center;
     }
+
+    /* FEATURES */
+
+    .feature-symbiont-list.scrollable {
+        max-height: 15rem;
+    }
 }
