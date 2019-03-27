@@ -151,22 +151,7 @@
         border: 0;
     }
     
-    #wikiModal .modal-dialog {
-        max-width: 60vw;
-    } 
-    
-    #wikiModal .modal-content {
-        height: 70vh;
-    }
 
-    #wikiModal .modal-body {
-        height: 90%;
-    }
-
-    #wikiModal iframe {
-        height: 100%;
-    }
-    
     .modal-dialog {
         max-width: 70vw;
     }

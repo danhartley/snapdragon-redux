@@ -1,3 +1,11 @@
+.feature-symbiont-list.scrollable {
+    max-height: 7.5rem;
+}
+
+#speciesCardModal .feature-symbiont-list.scrollable {
+    max-height: 5rem;
+}
+
 /* TRAITS CAROUSEL */
 
 .bird-song iframe {
@@ -12,6 +20,20 @@
 }
 
 /* SPECIES CARD MODAL */
+
+#speciesCardModal .modal-dialog {
+    max-width: 100vw;
+}
+  
+#speciesCardModal .modal-content .snapdragon-container {
+    height: 70vh;
+    border: 0;
+    padding: 0;
+}
+
+#speciesCardModal .card {
+    margin: 0;
+}
 
 #speciesCardModal .iconic-icon {
     font-size: 2rem;
@@ -31,9 +53,8 @@
     cursor: pointer;
 }
 
-
-#speciesCardModal .modal-content .snapdragon-container, #taxonCardModal .modal-content .snapdragon-container {  
-    height: 60vh;
+#speciesCardModal .modal-content .snapdragon-container {  
+    height: 70vh;
 }
 
 #speciesCardModal .carousel-inner, #taxonCardModal .carousel-inner {
@@ -49,6 +70,12 @@
 #speciesCardModal .carousel-inner .next > span, #taxonCardModal .carousel-inner .next > span {
     margin: 0 .6rem 0 0;
     cursor: pointer;
+}
+
+/* TAXON CARD */
+
+#taxonCardModal .modal-content .snapdragon-container {  
+    height: 60vh;
 }
 
 /* SPECIES HEADER */
@@ -74,6 +101,8 @@
         min-width: 32rem;
         max-width: 32rem;
     }
+
+    /* CARD */
 
     .names-badge {
         right: -.75rem;
@@ -110,5 +139,13 @@
 
     .feature-symbiont-list.scrollable {
         max-height: 15rem;
+        width: 100%;
+        margin: 0 0 0 0.05rem;
+    }
+
+    /* FEATURES IN MODAL */
+
+    #speciesCardModal .feature-symbiont-list.scrollable {
+        max-height: 7.5rem;
     }
 }

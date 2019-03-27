@@ -80,7 +80,7 @@ export const renderInput = (screen, question) => {
         boundScore.score = score;        
         answerBtn.removeEventListener('click', scoreEventHandler);
         if(config.isPortraitMode) {
-            answerBtn.innerHTML = item.name;
+            answerBtn.innerHTML = question.taxon === 'vernacular' ? item.vernacularName : item.name;
             answerBtn.classList.add('portrait-answer');
         }
         score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');

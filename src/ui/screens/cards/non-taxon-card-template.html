@@ -5,21 +5,20 @@
     
     <div class="non-taxon revision card">
         <div>
-            <div class="dropdown non-taxa js-non-taxa">
-                <button class="btn btn-non-taxa dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Group
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <div data-repeat-item="{{ group }}">
-                        <a class="dropdown-item icon" id="{{ item.id }}">{{ item.name }}</a>
-                    </div>
+            <div class="non-taxa js-non-taxa">                
+                <div class="btn-group btn-group-toggle" data-toggle="buttons" data-repeat-taxon="{{ group }}">
+                    <label class="btn btn-secondary" id="{{ taxon.id }}">
+                        <input type="radio" name="options" id="{{ taxon.id }}" autocomplete="off" checked> {{ taxon.id }}
+                    </label>
                 </div>
-                <div class="species-header">
+                <div class="species-header js-species-header">
                     <img class="landscape" src="https://content.eol.org/data/media/{{ imageUrl }}" alt="">
                 </div>                
             </div>                                    
         </div>        
-        <div class="landscape non-taxa-definition js-non-taxa-definition"></div>
+        <div class="landscape non-taxa-definition js-non-taxa-definition">
+            <div></div>
+        </div>
         <div>
             <div class="id-box">
                 <div>

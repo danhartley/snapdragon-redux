@@ -20,7 +20,8 @@ export const getNonTaxa = (enums) => {
                 { name: SD.name.SUBSTRATE_ADHERANCE, value: SD.level.LOW }
             ],
             examples: [ 'Letharia vulpina', 'Evernia prunastri', 'Ramalina polymorpha', 'Roccella phycopsis', 'Ramalina farinacea' ],
-            wiki: 'https://en.wikipedia.org/wiki/Fruticose_lichen'
+            wiki: 'https://en.wikipedia.org/wiki/Fruticose_lichen',
+            url: '81/9d/a2/542.9769039745.260x190.jpg'
         },
         {
             group: nonTaxaGroup[0].LICHEN_FORM,
@@ -41,7 +42,8 @@ export const getNonTaxa = (enums) => {
             ],
             examples: [ 'Lobaria pulmonaria', 'Xanthoria parietina'  ],
             genera: [ 'Usnea', 'Cladonia' ],
-            wiki: 'https://en.wikipedia.org/wiki/Foliose_lichen'
+            wiki: 'https://en.wikipedia.org/wiki/Foliose_lichen',
+            url: '81/66/25/542.8580717370.260x190.jpg'
         },
         {
             group: nonTaxaGroup[0].LICHEN_FORM,
@@ -55,7 +57,8 @@ export const getNonTaxa = (enums) => {
                 { name: SD.name.SUBSTRATE_ADHERANCE, value: SD.level.HIGH }
             ],
             examples: [ 'Graphis scripta', 'Diploschistes scruposus', 'Caloplaca ochracea', 'Ophioparma ventosa' ],
-            wiki: 'https://en.wikipedia.org/wiki/Crustose'
+            wiki: 'https://en.wikipedia.org/wiki/Crustose',
+            url: '7f/69/15/542.3258067212.260x190.jpg'
         },
         // {
         //     group: nonTaxaGroup[0].LICHEN_FORM,

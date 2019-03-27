@@ -557,6 +557,10 @@
     pointer-events: none;
   }
 
+  .non-taxon .btn.btn-secondary input {
+    pointer-events: none;
+  }
+
   #exampleGuide .btn.btn-secondary.active + div.lesson-radio-button {
     background-color: white;
     border: .05rem solid gray;

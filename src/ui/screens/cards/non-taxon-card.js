@@ -54,18 +54,18 @@ export const renderNonTaxonCard = (collection, isModalMode = false, keyTrait, pa
 
     const callback = id => {
 
-        const header = document.querySelector('.btn-non-taxa');
-
         const nonTaxon = nonTaxa.find(nt => nt.id === id)
         const items = collection.items.filter(i => R.contains(i.name, nonTaxon.examples));
-
-        header.innerHTML = nonTaxon.name;
 
         const portraitImagesNode = document.querySelector('.js-non-taxon-card-images');
 
         const images = prepImages(items);
 
-        config.isPortraitMode ? imageSlider(config, images, portraitImagesNode, true) : onChange(images);
+        if(nonTaxon.type) {
+            document.querySelector('.js-species-header img').src = `https://content.eol.org/data/media/${nonTaxon.url}`;
+        } else {
+            config.isPortraitMode ? imageSlider(config, images, portraitImagesNode, true) : onChange(images);
+        }
 
         const wikiNode = document.querySelector('.js-non-taxon-card-wiki');
         const lookup = { name: nonTaxon.name };
@@ -73,7 +73,7 @@ export const renderNonTaxonCard = (collection, isModalMode = false, keyTrait, pa
         const idNode = document.querySelector('.id-box > div:nth-child(2) > div');
         idNode.innerHTML = nonTaxon.quickId;
 
-        const definitionNode = document.querySelector('.js-non-taxa-definition');
+        const definitionNode = document.querySelector('.js-non-taxa-definition div');
         definitionNode.innerHTML = nonTaxon.definition;
 
         const infoNode = document.querySelector('.js-info-box');
@@ -92,7 +92,13 @@ export const renderNonTaxonCard = (collection, isModalMode = false, keyTrait, pa
 
     document.querySelector('#speciesCardModal .js-modal-text-title').innerHTML = `Lichen Forms`;
 
-    selectHandler('.dropdown.js-non-taxa .dropdown-item.icon', id => callback(id));
+    document.querySelectorAll('.non-taxon .btn.btn-secondary').forEach(form => {
+        form.addEventListener('click', event => {
+            const id = event.target.id;
+            callback(id);
+        });
+    });
+
     const id = keyTrait || nonTaxa[0].id;
     document.getElementById(id).click();
      
