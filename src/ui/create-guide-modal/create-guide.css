@@ -484,7 +484,7 @@
   .iconic-taxa-selected {
     color: var(--snap-lesson);
   }
-  
+
   .iconic-taxa-categories svg, 
   .selected-text .iconic-taxa-categories-selected svg,
   .lesson-taxa .iconic-taxa-categories-selected svg {

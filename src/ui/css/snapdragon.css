@@ -1207,6 +1207,14 @@ span.correct {
   top: -0.9rem;
 }
 
+.taxa svg {
+  margin: 0 .25rem 0 0;
+}
+
+.taxa .si-glyph-mushrooms svg {
+  margin: 0;
+}
+
 .species-answer {
   display: none;
 }
