@@ -1,6 +1,7 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
+import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -61,6 +62,9 @@ export const renderMixedSpecimenQuestions = collection => {
 
     imageSlider(config, utils.shuffleArray(images), parent, true);
 
+    const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
+    const boundScore = {};
+
     document.querySelectorAll('.carousel-item .layer').forEach(img => {
         
         img.addEventListener('click', event => {
@@ -83,10 +87,18 @@ export const renderMixedSpecimenQuestions = collection => {
             const test = { ...score, itemId: item.id, question, answer, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
 
             const callback = (score, scoreUpdateTimer) => {
+                boundScore.score = score;
+                boundScore.scoreUpdateTimer = scoreUpdateTimer;
                 score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
+                continueLessonBtn.disabled = false;
             };
 
             scoreHandler('image-match', test, callback, config);
         });
+    });
+
+    continueLessonBtn.addEventListener('click', event => {
+        window.clearTimeout(boundScore.scoreUpdateTimer);
+        actions.boundUpdateScore(boundScore.score);
     });
 };

@@ -163,7 +163,6 @@
     }
       
     .home-container .snapdragon-tag, .summary-scores {
-        /* height: 360px; */
         height: 48vh;
     }
 
@@ -198,10 +197,6 @@
 
     .pool {
         margin: 1rem 0;
-    }
-
-    .block {
-        margin: .4rem .4rem;
     }
 
     .block.given {

@@ -1,5 +1,4 @@
 import { utils } from 'utils/utils';
-import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { renderIcon } from 'ui/helpers/icon-handler';

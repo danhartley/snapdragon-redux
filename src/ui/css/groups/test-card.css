@@ -42,7 +42,7 @@
   }
   
   .test-card .question {
-    margin: .5rem;
+    margin: 0 .5rem .5rem .5rem;
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.07rem;
@@ -131,7 +131,7 @@
     left: 0rem;
     bottom: 3.25rem;
     font-size: 1rem;
-    padding: 0 0 0 0.5rem;
+    padding: 0 0 0 1rem;
     min-height: 2rem;
 }
 

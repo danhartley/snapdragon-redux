@@ -1,8 +1,8 @@
 export const config = {
     language: 'en',
     moduleSize: 2,
-    callbackTime: 2000,
-    callbackDelay: 2000,
+    callbackTime: 2000000,
+    callbackDelay: 2000000,
     excludeRevision: false,
     isPortraitMode: false,
     isLandscapeMode: true,
