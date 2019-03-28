@@ -15,7 +15,7 @@ export const renderTaxonCard = (collection, isModalMode = false, selectedItem, p
 
     const { lessonPlan, config } = store.getState();
 
-    const rootNode = isModalMode ? document.querySelector('#taxonCardModal') : document.querySelector('.right-body');
+    const rootNode = isModalMode ? document.querySelector('#cardModal') : document.querySelector('.right-body');
 
     const template = document.createElement('template');
 
@@ -78,17 +78,17 @@ export const renderTaxonCard = (collection, isModalMode = false, selectedItem, p
 
         rootNode.querySelector('.js-external-links').classList.add('hide');
 
-        rootNode.querySelector('#taxonCardModal .js-modal-text-title').innerHTML = collection.name;
+        rootNode.querySelector('#cardModal .js-modal-text-title').innerHTML = collection.name;
 
-        const prev = rootNode.querySelector('#taxonCardModal .js-prev > span');
+        const prev = rootNode.querySelector('#cardModal .js-prev > span');
         prev.dataset.id = item.id;
         prev.dataset.transition = 'prev';
-        prev.dataset.modal = 'taxonCardModal';
+        prev.dataset.modal = 'cardModal';
 
-        const next = rootNode.querySelector('#taxonCardModal .js-next > span');
+        const next = rootNode.querySelector('#cardModal .js-next > span');
         next.dataset.id = item.id;
         next.dataset.transition = 'next';
-        next.dataset.modal = 'taxonCardModal';
+        next.dataset.modal = 'cardModal';
 
     }
     

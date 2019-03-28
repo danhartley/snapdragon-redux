@@ -57,24 +57,24 @@
     height: 70vh;
 }
 
-#cardModal .carousel-inner, #taxonCardModal .carousel-inner {
+#cardModal .carousel-inner, #cardModal .carousel-inner {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#cardModal .carousel-inner .prev > span, #taxonCardModal .carousel-inner .prev > span {
+#cardModal .carousel-inner .prev > span, #cardModal .carousel-inner .prev > span {
     margin: 0 0 0 .6rem;
 }
 
-#cardModal .carousel-inner .next > span, #taxonCardModal .carousel-inner .next > span {
+#cardModal .carousel-inner .next > span, #cardModal .carousel-inner .next > span {
     margin: 0 .6rem 0 0;
     cursor: pointer;
 }
 
 /* TAXON CARD */
 
-#taxonCardModal .modal-content .snapdragon-container {  
+#cardModal .modal-content .snapdragon-container {  
     height: 60vh;
 }
 
@@ -110,7 +110,7 @@
 
     /* SPECIES CARD MODAL */
 
-    #cardModal .modal-dialog, #taxonCardModal .modal-dialog {
+    #cardModal .modal-dialog, #cardModal .modal-dialog {
         min-width: 32rem;
         max-width: 32rem;
     }
