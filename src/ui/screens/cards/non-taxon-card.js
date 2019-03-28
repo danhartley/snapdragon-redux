@@ -101,14 +101,4 @@ export const renderNonTaxonCard = (collection, isModalMode = false, keyTrait, pa
 
     const id = keyTrait || nonTaxa[0].id;
     document.getElementById(id).click();
-     
-    const continueBtn = document.querySelector('.js-non-taxon-card-btn button');
-
-    if(isModalMode) {
-        continueBtn.classList.add('hide-important');
-    } else {
-        continueBtn.addEventListener('click', event => {
-            actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
-        });
-    }
 };

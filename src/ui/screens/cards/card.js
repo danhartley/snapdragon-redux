@@ -210,27 +210,6 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
     lookALikes(collection, item, traits, config);
     renderFeatures(item, traits, config, rootNode.querySelector('.js-feature-types'), mode);
     
-    const continueBtn = rootNode.querySelector('.js-species-card-btn button');
-
-    if(mode === 'MODAL' || mode === 'SWAP_OUT') {
-        continueBtn.classList.add('hide-important');
-    } else {
-        
-        continueBtn.disabled = true;
-
-        setTimeout(() => {
-            continueBtn.disabled = false;            
-        }, 500);
-
-        continueBtn.addEventListener('click', event => {
-            actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
-        });
-
-        // const taxonomyNode = rootNode.querySelector('.js-taxonomy-box');
-
-        // renderTaxonomyBox(taxonomyNode, { rank, familyVernacularName, familyName, iconicTaxon });
-    }
-
     const calendarNode = rootNode.querySelector('.js-calendar-box');
 
     renderCalendar(calendarNode, item, config);

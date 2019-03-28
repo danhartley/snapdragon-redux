@@ -72,19 +72,10 @@ export const renderTaxonCard = (collection, isModalMode = false, selectedItem, p
         notableMembers: taxon.members ? R.take(2, taxon.members).join(', ') : ''
     }
 
-    const continueBtn = clone.querySelector('.js-taxon-card-btn button');
-
-    continueBtn.disabled = true;
-
-    setTimeout(() => {
-        continueBtn.disabled = false;            
-    }, 500);
-
     renderTemplate(context, template.content, parent, clone);
 
     if(isModalMode) {
 
-        continueBtn.classList.add('hide-important');
         rootNode.querySelector('.js-external-links').classList.add('hide');
 
         rootNode.querySelector('#taxonCardModal .js-modal-text-title').innerHTML = collection.name;
@@ -99,10 +90,6 @@ export const renderTaxonCard = (collection, isModalMode = false, selectedItem, p
         next.dataset.transition = 'next';
         next.dataset.modal = 'taxonCardModal';
 
-    } else {
-        continueBtn.addEventListener('click', event => {
-            actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
-        });
     }
     
     // if(taxon.toxic) {
