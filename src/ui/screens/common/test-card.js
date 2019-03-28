@@ -25,7 +25,7 @@ export const renderTestCardTemplate = (collection, context) => {
 
         const item = collection.nextItem;
         
-        renderCard({ collection }, 'SWAP_OUT', item, speciesContainer, false);
+        renderCard(collection, 'SWAP_OUT', item, speciesContainer, false);
         
         testCard.classList.add('swap-out-card');
         testCard.classList.remove('swap-in-card');

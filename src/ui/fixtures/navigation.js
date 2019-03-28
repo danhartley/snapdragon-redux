@@ -88,7 +88,8 @@ export const renderNavigation = (page) => {
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));        
                         lessonLogicHandler.changeCollection('pause-lesson', collection, config, history); 
                         const { counter } = store.getState();
-                        renderHome(counter);
+                        const loadSpeciesList = false;
+                        config.isPortraitMode ? renderHome(counter, loadSpeciesList) : renderHome(counter);
                         break;
                     case 'settings':
                         target.classList.add('active-icon');
@@ -99,7 +100,11 @@ export const renderNavigation = (page) => {
                     case 'list':                        
                         target.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));                                   
-                        lessonLogicHandler.changeCollection('pause-lesson', collection, config, history);     
+                        lessonLogicHandler.changeCollection('pause-lesson', collection, config, history);
+                        if(config.isPortraitMode) {
+                            const { counter } = store.getState();
+                            renderHome(counter);
+                        } 
                         break;
                     case 'glossary':
                         if(page.glossary) {

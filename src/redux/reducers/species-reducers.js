@@ -1,9 +1,9 @@
 import * as R from 'ramda';
 
 import { types } from 'redux/actions/action-types';
-import { speciesStateHelper } from 'redux/reducers/initial-state/initial-species-state';
+import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
 
-export const collections = (state = speciesStateHelper.collections, action) => {
+export const collections = (state = snapdragonCollections, action) => {
     switch(action.type) {
         case types.SELECT_COLLECTION:
             const cols = [ ...state ];

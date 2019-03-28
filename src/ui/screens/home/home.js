@@ -8,14 +8,16 @@ import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import homeTemplate from 'ui/screens/home/home-template.html';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
+import { renderExampleGuideHandler } from 'ui/example-guide-modal/example-guide';
 import { renderGuideSummary } from 'ui/screens/home/home-guide-summary';
 import { listenToCloseCreateGuideModal } from 'ui/create-guide-modal/create-guide';
+import { listenToCloseExampleGuideModal } from 'ui/example-guide-modal/example-guide';
 
-export const renderHome = counter => {
+export const renderHome = (counter, loadSpeciesList = true) => {
 
     let { config, collection } = store.getState();
 
-    if(counter.index && counter.index > 0) return;
+    if(counter.index && counter.index > 0 && !counter.isLessonPaused) return;
     
     const sub = subscription.getByName('renderHome');
     if(sub) subscription.remove(sub);
@@ -41,9 +43,16 @@ export const renderHome = counter => {
     const deleteLinkTxt = document.querySelector('.js-delete-guide-link span');
     const deleteLinkCheckbox = document.querySelector('.js-delete-guide-link input');
 
+    const exampleLink = document.querySelector('.js-example-guide-link');
+    const exampleLinkTxt = document.querySelector('.js-example-guide-link span');
+
     const modalHandler = () => {        
         const step = 1;
         createGuideHandler(step);
+    };
+
+    const examplesHandler = () => {
+        renderExampleGuideHandler(config);
     };
 
     const prepareHandler = () => {
@@ -76,6 +85,7 @@ export const renderHome = counter => {
         renderGuideSummary(R.clone(config), parent, speciesCount);
         deleteLink.classList.remove('hide');
         editLink.classList.remove('hide');
+        exampleLink.classList.add('hide');
     };
 
     const checkState = state => {
@@ -102,13 +112,19 @@ export const renderHome = counter => {
                 actionLink.innerHTML = 'Resume';    
                 guideSummary(collection.items.length);
                 editLink.classList.add('hide');
-                actionLink.addEventListener('click', resumeLessonHandler);                
-                renderSpeciesCollectionList(collection);
+                actionLink.addEventListener('click', resumeLessonHandler);      
+                if(loadSpeciesList) {
+                    renderSpeciesCollectionList(collection);
+                }                          
                 break;
         }   
     }; 
 
     checkState(state);
+
+    exampleLinkTxt.addEventListener('click', event => {
+        examplesHandler();
+    });
 
     editLinkTxt.addEventListener('click', event => {
         modalHandler();
@@ -141,11 +157,15 @@ export const renderHome = counter => {
 
     deleteLinkTxt.addEventListener('click', handleDeleteLinkTxt);
 
-    listenToCloseCreateGuideModal(()=>{
+    const closeModalHandler = () => {
         config = store.getState().config;
         state = 'PREPARE-LESSON';
         checkState(state);
-    });
+    };
+
+    listenToCloseCreateGuideModal(closeModalHandler);
+
+    listenToCloseExampleGuideModal(closeModalHandler);
 
     const handleBeginLessonState = (counter, speciesCount) => {        
         if(!counter.isLessonPaused && counter.index === null) {

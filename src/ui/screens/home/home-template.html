@@ -24,13 +24,16 @@
                         <span class="underline-link disabled">Delete lesson</span>
                         <input type="checkbox">
                     </div>
+                    <div class="example-guide-link js-example-guide-link">
+                        <span class="underline-link" data-toggle="modal" data-target="#exampleGuide">Ready-made lessons</span>
+                    </div>                    
                 </div>
             </div>            
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="createGuide" tabindex="-1" role="dialog" aria-labelledby="createGuideModalLabel" aria-hidden="true">
+<div class="modal fade modal-guide-wrapper" id="createGuide" tabindex="-1" role="dialog" aria-labelledby="createGuideModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -41,16 +44,16 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>        
-        <div class="modal-body create-guide-body">
-            <div class="create-guide-progress js-create-guide-progress">
+        <div class="modal-body modal-guide-body">
+            <div class="modal-guide-progress js-modal-guide-progress">
                 <div>
                     <div class="completed">Step 1</div>
                     <div>Step 2</div>
                     <div>Step 3</div>
                 </div>
             </div>
-            <div class="create-guide-action js-create-guide-action">Step action</div>
-            <div class="create-guide-navigation js-create-guide-navigation">
+            <div class="modal-guide-body js-modal-guide-body">Step action</div>
+            <div class="modal-guide-navigation js-modal-guide-navigation">
                 <div>
                     <div><span><i class="far fa-arrow-alt-circle-left"></i></span><span></span></div>
                 </div>
@@ -58,7 +61,35 @@
                     <div><span></span><span><i class="far fa-arrow-alt-circle-right"></i></span></div>
                 </div>
             </div>
-        </div>                    
+        </div>
     </div>
     </div>
+</div>
+
+<div class="modal fade modal-guide-wrapper" id="exampleGuide" tabindex="-1" role="dialog" aria-labelledby="exampleGuideModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title js-modal-title">
+                    <div>Example lessons</div>
+                </div>                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>        
+            <div class="modal-body modal-guide-body">
+                <div class="modal-guide-body js-modal-guide-body">
+                    <div class="guide-text">Choose a lesson</div>
+                    <div></div>
+                </div>
+                <div class="modal-guide-navigation js-modal-guide-navigation">
+                    <div>                        
+                    </div>
+                    <div>
+                        <div><span>Start lesson</span><span><i class="far fa-arrow-alt-circle-right"></i></span></div>
+                    </div>
+                </div>
+            </div>                    
+        </div>
+        </div>
 </div>

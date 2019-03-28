@@ -94,13 +94,13 @@ export const renderCompleteText = (collection) => {
             }
         });
 
-        const txtBtn = document.querySelector('.js-continue-lesson-btn');
+        const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
 
-        txtBtn.innerHTML = 'Continue lesson';
+        continueLessonBtn.innerHTML = 'Continue lesson';
 
-        txtBtn.style.cursor = 'pointer';
-        txtBtn.disabled = false;
-        txtBtn.addEventListener('click', () => {
+        continueLessonBtn.style.cursor = 'pointer';
+        continueLessonBtn.disabled = false;
+        continueLessonBtn.addEventListener('click', () => {
             window.clearTimeout(scoreUpdateTimer);
             actions.boundUpdateScore(score);
         });

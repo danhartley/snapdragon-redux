@@ -1,8 +1,4 @@
 @media (min-width: 320px) {
-    /* .squares { 
-        height: 60%;
-    }
-     */
     .right {  
         color: var(--snap-text-dark);
         background-color: var(--snap-success);
@@ -92,9 +88,10 @@
 
     .header > div:nth-child(2) {
         font-size: .8rem;
+        max-width: initial;
     }
 
-    .modal-iframe  {
+    /* .modal-iframe  {
         margin: 0;
         padding: 0;
         border: none;
@@ -106,7 +103,7 @@
         min-height: 10px;
         padding: 10px 0px 10px 10px;
         height: 300px;
-    }
+    } */
 
     #menuModal .modal-body.settings-modal {
         padding: rem;
@@ -162,7 +159,6 @@
     }
       
     .home-container .snapdragon-tag, .summary-scores {
-        /* height: 360px; */
         height: 48vh;
     }
 
@@ -197,10 +193,6 @@
 
     .pool {
         margin: 1rem 0;
-    }
-
-    .block {
-        margin: .4rem .4rem;
     }
 
     .block.given {

@@ -43,6 +43,13 @@ export const renderFeatures = (item, traits, config, parent, mode) => {
 
     let speciesTraits = traits.find(trait => trait.name === item.name);
 
+    const getVernacularName = symbiont => {
+        const item = species.find(s => s.name === symbiont);
+        if(!item) return { id: symbiont, display: symbiont };
+        const vernacularName = itemProperties.getVernacularName(item, config);
+        return vernacularName ? { id: symbiont, display: vernacularName } : { id: symbiont, display: symbiont };
+    };
+
     if(speciesTraits && speciesTraits.symbionts) {
         const symbionts = speciesTraits.symbionts.map(s => s.id);;
         
@@ -52,9 +59,9 @@ export const renderFeatures = (item, traits, config, parent, mode) => {
                 if(R.contains(symbiont, symbionts)) {
                     return {
                         as: trait.name,
-                        role: trait.role,
+                        role: trait.role || '',
                         type: trait.type,
-                        symbiont: symbiont
+                        symbiont: getVernacularName(symbiont)
                     };
                 }
             });
@@ -68,7 +75,7 @@ export const renderFeatures = (item, traits, config, parent, mode) => {
 
         symbiontTraits.forEach(trait => {            
             const linkedSpecies = species.find(s => {
-                return s.name.toUpperCase() === trait.symbiont.toUpperCase();
+                return s.name.toUpperCase() === trait.symbiont.id.toUpperCase();
             });
             if(linkedSpecies && mode !== 'MODAL') {
                 trait.className = 'underline-link';
@@ -84,10 +91,10 @@ export const renderFeatures = (item, traits, config, parent, mode) => {
         const speciesCardLinks = document.querySelectorAll('.js-species-card-link span');
         speciesCardLinks.forEach(link => {
             link.addEventListener('click', event => {
-                const name = event.target.dataset.name;
+                const name = event.target.id || event.target.dataset.name;
                 const selectedItem = species.find(i => i.name === name);
                 selectedItem.species = itemProperties.getSpeciesName(item.name);
-                renderCard({ name: 'Local species', items: species }, 'MODAL', selectedItem, document.querySelector('#speciesCardModal .js-modal-body'), false);
+                renderCard({ name: 'Local species', items: species }, 'MODAL', selectedItem, document.querySelector('#cardModal .js-modal-body'), false);
             });
         });
         

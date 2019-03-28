@@ -8,7 +8,7 @@ export const inatAutocomplete = (input, type, container, rb) => {
     async function getUserSuggestions(text) {
         const users = await getAutocompleteBy(text, 'users');
         return users.results.map(user => {
-            return { label: user.login_autocomplete, value: user.id };
+            return { label: user.login_autocomplete, value: user.id, photo: user.icon, name: user.name };
         });
     }
 

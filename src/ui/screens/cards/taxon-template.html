@@ -2,6 +2,7 @@
     <div class="taxon revision card">
             <div>
                 <div class="species-header js-txt-species">
+                    <div></div>
                     <div>
                         <div>
                             <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ occurrences }}</span>
@@ -14,38 +15,36 @@
                             <span>{{ name }}</span>                            
                         </div>
                     </div>
-                    <img class="landscape" src="https://content.eol.org/data/media/{{ headerImage }}" alt="">
+                    <div>
+                        <img class="landscape" src="https://content.eol.org/data/media/{{ headerImage }}" alt="">
+                    </div>
                 </div>
             </div>
-        <div class="data-box-container">                
+        <div class="data-box-container">
                 <div></div>
                 <div class="data-box">
                     <div class="taxon-data"><span>Rank</span> <span>{{ rank }}</span></div>
                     <div class="taxon-data"><span>Species</span> <span>{{ species }}</span></div>
                     <div class="taxon-data"><span>Genera</span> <span>{{ genera }}</span></div>                                        
-                </div>                
-            </div>
+                </div>
+        </div>
         <div>
             <div class="id-box">
                 <div>
-                    <div>Quick Id</div>
+                    <div>Quick ID</div>
                 </div>
                 <div>
                     <div class="taxon-identification">{{ identification }}</div>
                 </div>
             </div>
         </div>
-        <div class="taxon-summary landscape">{{ summary }}</div>
+        <div class="taxon-summary">
+            <div>{{ summary }}</div>
+        </div>
         <!-- <div class="landscape portrait"><span class="snap-alert-fg js-taxon-toxic-warning"></span> {{ toxic }}</div> -->
         <div class="landscape js-external-links">
             <a href="{{ eol }}" target="_blank" class="underline-link">EOL</a>
             <a href="{{ wiki }}" class="underline-link" data-toggle="modal" data-target="#wikiModal">WIKI</a>
-        </div>
-    </div>
-    <div class="action-update-container">
-        <div class="species-card-btn action-update js-taxon-card-btn">
-            <div></div>
-            <button class="btn btn-light">Continue lesson</button>
         </div>
     </div>
 </div>

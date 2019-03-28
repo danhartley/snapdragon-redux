@@ -202,4 +202,9 @@ export const plantae = [
         definition: 'Created by leaving uprooted or sown crop parts to wither on a field so that they serve as a mulch.',
         wiki: 'https://en.wikipedia.org/wiki/Green_manure'
     },    
+    {
+        term: 'Taproot',
+        definition: 'Large, central, and dominant root from which other roots sprout laterally in dicots, e.g. carrot.',
+        wiki: 'https://en.wikipedia.org/wiki/Taproot'
+    },    
 ];

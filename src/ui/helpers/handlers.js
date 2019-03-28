@@ -220,13 +220,13 @@ const imageScoreHandler = (test, callback, config) => {
     });
 };
 
-export const selectHandler = (selector, callback) => {
-    document.querySelectorAll(selector).forEach(option => {
-        option.addEventListener('click', event => {
-            document.querySelectorAll(selector).forEach(option => option.classList.remove('active'));
-            event.target.classList.add('active');
-            const id = event.target.id;
-            callback(id);
-        });
-    });
-};
+// export const selectHandler = (selector, callback) => {
+//     document.querySelectorAll(selector).forEach(option => {
+//         option.addEventListener('click', event => {
+//             document.querySelectorAll(selector).forEach(option => option.classList.remove('active'));
+//             event.target.classList.add('active');
+//             const id = event.target.id;
+//             callback(id);
+//         });
+//     });
+// };

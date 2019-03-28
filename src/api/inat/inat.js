@@ -5,7 +5,9 @@ import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
 
 const getBasePath = config => {
     
-    const month = config.guide.season.observableMonths.map(month => month.index).join(',');
+    const month = config.guide.season.type === 'all_year' 
+            ? ''
+            : config.guide.season.observableMonths.map(month => month.index).join(',');
 
     // quality_grade=research&
 
@@ -70,6 +72,7 @@ export const getInatSpecies = (inatConfig, config) => {
     if(inatConfig.locationType === 'place') {
         observations = getInatPlaceObservations(config).then(observations => {
             return observations.map(observation => {
+                console.log(observation.taxon.name);
                 if(R.contains(observation.taxon.name, names)) {
                     const item = { ...species.find(item => item.name === observation.taxon.name) };
                     return { ...item, observationCount: observation.taxon.observations_count, iconicTaxon: observation.taxon.iconic_taxon_name };
@@ -81,6 +84,7 @@ export const getInatSpecies = (inatConfig, config) => {
     } else if(inatConfig.locationType === 'longLat') {
         observations = getInatLongLatObservations(latitude, longitude, config).then(observations => {
             return observations.map(observation => {
+                console.log(observation.taxon.name);
                 if(R.contains(observation.taxon.name, names)) {
                     const item = { ...species.find(item => item.name === observation.taxon.name) };
                     return { ...item, observationCount: observation.taxon.observations_count, iconicTaxon: observation.taxon.iconic_taxon_name };

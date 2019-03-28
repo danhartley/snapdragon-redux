@@ -1,11 +1,10 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
+import { species } from 'api/species';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
-import { actions } from 'redux/actions/action-creators';
-import { selectHandler } from 'ui/helpers/handlers';
 import { infoSlider } from 'ui/screens/common/info-slider';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import * as group from 'api/snapdragon/non-taxa';
@@ -21,10 +20,10 @@ export const subscribeToNonTaxaSelection = callback => {
     subscriptions.push(callback);
 };
 
-export const renderNonTaxonCard = (collection, isModalMode = false, keyTrait, parent = DOM.rightBody, imageUrl) => {
+export const renderNonTaxonCard = (collection, mode = 'STAND_ALONE', keyTrait, parent = DOM.rightBody, imageUrl) => {
 
-    const prev = document.querySelector('#speciesCardModal .js-prev');
-    const next = document.querySelector('#speciesCardModal .js-next');
+    const prev = document.querySelector('#cardModal .js-prev');
+    const next = document.querySelector('#cardModal .js-next');
     if(prev) prev.style.display = 'none';
     if(next) next.style.display = 'none';
 
@@ -54,18 +53,19 @@ export const renderNonTaxonCard = (collection, isModalMode = false, keyTrait, pa
 
     const callback = id => {
 
-        const header = document.querySelector('.btn-non-taxa');
-
         const nonTaxon = nonTaxa.find(nt => nt.id === id)
-        const items = collection.items.filter(i => R.contains(i.name, nonTaxon.examples));
-
-        header.innerHTML = nonTaxon.name;
+        const items = species.filter(i => R.contains(i.name, nonTaxon.examples));
+        // const items = collection.items.filter(i => R.contains(i.name, nonTaxon.examples));
 
         const portraitImagesNode = document.querySelector('.js-non-taxon-card-images');
 
         const images = prepImages(items);
 
-        config.isPortraitMode ? imageSlider(config, images, portraitImagesNode, true) : onChange(images);
+        if(nonTaxon.type) {
+            document.querySelector('.js-species-header img').src = `https://content.eol.org/data/media/${nonTaxon.url}`;
+        } else {
+            config.isPortraitMode ? imageSlider(config, images, portraitImagesNode, true) : onChange(images);
+        }
 
         const wikiNode = document.querySelector('.js-non-taxon-card-wiki');
         const lookup = { name: nonTaxon.name };
@@ -73,13 +73,13 @@ export const renderNonTaxonCard = (collection, isModalMode = false, keyTrait, pa
         const idNode = document.querySelector('.id-box > div:nth-child(2) > div');
         idNode.innerHTML = nonTaxon.quickId;
 
-        const definitionNode = document.querySelector('.js-non-taxa-definition');
+        const definitionNode = document.querySelector('.js-non-taxa-definition div');
         definitionNode.innerHTML = nonTaxon.definition;
 
         const infoNode = document.querySelector('.js-info-box');
         infoSlider({traits:nonTaxon.traits, name: `${keyTrait} lichen`}, nonTaxa, null, infoNode);
 
-        if(isModalMode) {
+        if(mode === 'MODAL') {
         } else {
             renderWikiModal(lookup, wikiNode, config);    
             renderWiki(wikiNode, lookup, config.language);
@@ -90,19 +90,15 @@ export const renderNonTaxonCard = (collection, isModalMode = false, keyTrait, pa
 
     renderTemplate({group: nonTaxa, imageUrl}, template.content, parent);
 
-    document.querySelector('#speciesCardModal .js-modal-text-title').innerHTML = `Lichen Forms`;
+    document.querySelector('#cardModal .js-modal-text-title').innerHTML = `Lichen Forms`;
 
-    selectHandler('.dropdown.js-non-taxa .dropdown-item.icon', id => callback(id));
+    document.querySelectorAll('.non-taxon .btn.btn-secondary').forEach(form => {
+        form.addEventListener('click', event => {
+            const id = event.target.id;
+            callback(id);
+        });
+    });
+
     const id = keyTrait || nonTaxa[0].id;
     document.getElementById(id).click();
-     
-    const continueBtn = document.querySelector('.js-non-taxon-card-btn button');
-
-    if(isModalMode) {
-        continueBtn.classList.add('hide-important');
-    } else {
-        continueBtn.addEventListener('click', event => {
-            actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
-        });
-    }
 };

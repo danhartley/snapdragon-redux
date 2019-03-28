@@ -1,0 +1,48 @@
+.modal-body {
+    padding: .5rem;
+}
+
+.modal-header {
+    padding: .5rem;
+}
+
+.modal-header button.close {
+    width: 5rem;
+    width: fit-content;
+}
+
+@media (min-width: 768px) {
+
+    .modal-body {
+        padding: 1rem;
+    }
+
+    .modal-header {
+        padding: .5rem;
+    }
+
+    iframe {
+        width: 100%;
+        border: 0;
+    }
+
+    /* WIKI */
+
+    #wikiModal .modal-dialog {
+        max-width: 60vw;
+    } 
+
+    #wikiModal .modal-content {
+        height: 70vh;
+    }
+
+    #wikiModal .modal-body {
+        height: 90%;
+    }
+
+    #wikiModal iframe {
+        height: 100%;
+    }
+
+     
+}

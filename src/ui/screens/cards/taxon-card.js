@@ -2,20 +2,28 @@ import * as R from 'ramda';
 
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
-import { actions } from 'redux/actions/action-creators';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { taxa } from 'api/snapdragon/taxa';
-import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
+import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import taxonTemplate from 'ui/screens/cards/taxon-template.html';
 
-export const renderTaxonCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody, speciesTaxon, rank) => {
+export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, speciesTaxon, rank) => {
   
     const item = selectedItem || collection.nextItem;
 
     const { lessonPlan, config } = store.getState();
 
-    const rootNode = isModalMode ? document.querySelector('#taxonCardModal') : document.querySelector('.right-body');
+    let rootNode;
+
+    switch(mode) {
+        case 'STAND_ALONE':
+            rootNode = document.querySelector('.right-body');
+            break;
+        case 'MODAL':
+            rootNode = document.querySelector('#cardModal');
+            break;
+    }
 
     const template = document.createElement('template');
 
@@ -72,37 +80,24 @@ export const renderTaxonCard = (collection, isModalMode = false, selectedItem, p
         notableMembers: taxon.members ? R.take(2, taxon.members).join(', ') : ''
     }
 
-    const continueBtn = clone.querySelector('.js-taxon-card-btn button');
-
-    continueBtn.disabled = true;
-
-    setTimeout(() => {
-        continueBtn.disabled = false;            
-    }, 500);
-
     renderTemplate(context, template.content, parent, clone);
 
-    if(isModalMode) {
+    if(mode === 'MODAL') {
 
-        continueBtn.classList.add('hide-important');
         rootNode.querySelector('.js-external-links').classList.add('hide');
 
-        rootNode.querySelector('#taxonCardModal .js-modal-text-title').innerHTML = collection.name;
+        rootNode.querySelector('#cardModal .js-modal-text-title').innerHTML = collection.name;
 
-        const prev = rootNode.querySelector('#taxonCardModal .js-prev > span');
+        const prev = rootNode.querySelector('#cardModal .js-prev > span');
         prev.dataset.id = item.id;
         prev.dataset.transition = 'prev';
-        prev.dataset.modal = 'taxonCardModal';
+        prev.dataset.modal = 'cardModal';
 
-        const next = rootNode.querySelector('#taxonCardModal .js-next > span');
+        const next = rootNode.querySelector('#cardModal .js-next > span');
         next.dataset.id = item.id;
         next.dataset.transition = 'next';
-        next.dataset.modal = 'taxonCardModal';
+        next.dataset.modal = 'cardModal';
 
-    } else {
-        continueBtn.addEventListener('click', event => {
-            actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
-        });
     }
     
     // if(taxon.toxic) {

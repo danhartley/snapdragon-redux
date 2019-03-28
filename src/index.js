@@ -11,6 +11,7 @@ import 'ui/css/snapdragon-media.css';
 import 'ui/css/snapdragon-media-display.css';
 import 'ui/css/groups/test-card.css';
 import 'ui/css/groups/species-card.css';
+import 'ui/css/groups/modal.css';
 
 import { store } from 'redux/store';
 import { getIPLocation } from 'geo/geo';
@@ -89,7 +90,7 @@ setTimeout( () => {
         }
     }
     catch(e) {
-        persistor.purge();
-        window.location.reload(true);
+        // persistor.purge();
+        // window.location.reload(true);
     }
 });

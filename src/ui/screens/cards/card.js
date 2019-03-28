@@ -1,6 +1,5 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
 import { taxa } from 'api/snapdragon/taxa';
 import { renderWiki } from 'wikipedia/wiki';
 import { renderWikiModal } from 'wikipedia/wiki-modal';
@@ -14,7 +13,7 @@ import { lookALikes } from 'ui/screens/common/look-alikes';
 import { renderFeatures } from 'ui/screens/common/feature';
 import { infoSlider } from 'ui/screens/common/info-slider';
 import * as traitTypes from 'api/traits/trait-types';
-import { iconicTaxa, matchTaxon, matchIcon } from 'api/snapdragon/iconic-taxa';
+import { iconicTaxa, matchTaxon } from 'api/snapdragon/iconic-taxa';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import { renderInatDataBox } from 'ui/screens/common/inat-box';
@@ -38,7 +37,7 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
             rootNode = document.querySelector('.js-species-container');
             break;
         case 'MODAL':
-            rootNode = document.querySelector('#speciesCardModal');
+            rootNode = document.querySelector('#cardModal');
             break;
     }
 
@@ -48,8 +47,8 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
     }
 
     if(!isInCarousel) {
-        const prev = document.querySelector('#speciesCardModal .js-prev');
-        const next = document.querySelector('#speciesCardModal .js-next');
+        const prev = document.querySelector('#cardModal .js-prev');
+        const next = document.querySelector('#cardModal .js-next');
         if(prev) prev.style.display = 'none';
         if(next) next.style.display = 'none';
     }
@@ -162,7 +161,6 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
     parent.innerHTML = '';
     
     renderTemplate({ name, vernacularName: item.vernacularName, rank, subSpeciesCount, familyName, headerImage, familyVernacularName, trait, occurrences, iconicTaxon }, template.content, parent, clone);
-    // renderTemplate({ name, vernacularName: item.vernacularName, latin, rank, subSpeciesCount, familyName, headerImage, familyVernacularName, trait, occurrences, iconicTaxon }, template.content, parent, clone);
 
     const subspeciesBadge = rootNode.querySelector('.js-subspecies-badge');
 
@@ -211,27 +209,6 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
     lookALikes(collection, item, traits, config);
     renderFeatures(item, traits, config, rootNode.querySelector('.js-feature-types'), mode);
     
-    const continueBtn = rootNode.querySelector('.js-species-card-btn button');
-
-    if(mode === 'MODAL' || mode === 'SWAP_OUT') {
-        continueBtn.classList.add('hide-important');
-    } else {
-        
-        continueBtn.disabled = true;
-
-        setTimeout(() => {
-            continueBtn.disabled = false;            
-        }, 500);
-
-        continueBtn.addEventListener('click', event => {
-            actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
-        });
-
-        // const taxonomyNode = rootNode.querySelector('.js-taxonomy-box');
-
-        // renderTaxonomyBox(taxonomyNode, { rank, familyVernacularName, familyName, iconicTaxon });
-    }
-
     const calendarNode = rootNode.querySelector('.js-calendar-box');
 
     renderCalendar(calendarNode, item, config);
@@ -239,17 +216,17 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
     renderIcon(item, rootNode);
 
     if(mode === 'MODAL') {        
-        rootNode.querySelector('#speciesCardModal .js-modal-text-title').innerHTML = collection.name;
+        rootNode.querySelector('#cardModal .js-modal-text-title').innerHTML = collection.name;
 
-        const prev = rootNode.querySelector('#speciesCardModal .js-prev > span');
+        const prev = rootNode.querySelector('#cardModal .js-prev > span');
         prev.dataset.id = item.id;
         prev.dataset.transition = 'prev';
-        prev.dataset.modal = 'speciesCardModal';
+        prev.dataset.modal = 'cardModal';
 
-        const next = rootNode.querySelector('#speciesCardModal .js-next > span');
+        const next = rootNode.querySelector('#cardModal .js-next > span');
         next.dataset.id = item.id;
         next.dataset.transition = 'next';
-        next.dataset.modal = 'speciesCardModal';
+        next.dataset.modal = 'cardModal';
         
 
         const lines = document.getElementsByTagName('hr');

@@ -1,11 +1,11 @@
 /* CREATE GUIDE */
 
-#createGuide .modal-dialog {
+.modal-guide-wrapper .modal-dialog {
     width: 100%;
     margin: 0rem auto;
   }
   
-  #createGuide .modal-header {
+  .modal-guide-wrapper .modal-header {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -13,11 +13,11 @@
     background-color: var(--secondary);
   }
   
-  #createGuide button.close {
+  .modal-guide-wrapper button.close {
     width: fit-content;
   }
   
-  #createGuide .modal-title {
+  .modal-guide-wrapper .modal-title {
     flex: auto;
     display: flex;
     align-items: center;
@@ -25,23 +25,23 @@
     text-transform: uppercase;
   }
   
-  #createGuide .modal-title div { 
+  .modal-guide-wrapper .modal-title div { 
     font-size: 1.3rem;
     letter-spacing: .05rem;
   }
   
-  #createGuide .modal-title div:nth-child(1) {
+  .modal-guide-wrapper .modal-title div:nth-child(1) {
     flex: auto;
     font-size: .8rem;        
   }
   
-  #createGuide .modal-title div:nth-child(2) {
+  .modal-guide-wrapper .modal-title div:nth-child(2) {
     flex: initial;
     margin: 0 .5rem 0 0;
     font-size: 1rem;
   }
   
-  #createGuide .modal-header .close {
+  .modal-guide-wrapper .modal-header .close {
     flex: initial;
     margin: 0;
     display: inline-block;
@@ -51,15 +51,15 @@
     padding: .5rem;
   }
   
-  #createGuide .modal-content {
+  .modal-guide-wrapper .modal-content {
     background-color: initial;
   }
   
-  #createGuide .modal-body {
+  .modal-guide-wrapper .modal-body {
     background-color: var(--snap-list-alt-background);
   }
   
-  #createGuide .modal-body .guide-text {
+  .modal-guide-wrapper .modal-body .guide-text {
     font-size: 1.1rem;
     margin: 1rem 0 .5rem 0;
     letter-spacing: .03rem;
@@ -67,45 +67,45 @@
     font-style: italic;
   }
   
-  #createGuide .modal-body .guides .guide-text {
+  .modal-guide-wrapper .modal-body .guides .guide-text {
     margin: .5rem 0 .25rem 0;
   }
   
-  #createGuide .modal-body .guide-sub-text {
+  .modal-guide-wrapper .modal-body .guide-sub-text {
     font-size: 1rem;
     margin: 0 0 .5rem 0;
   }
   
-  #createGuide .modal-body.create-guide-body {
+  .modal-guide-wrapper .modal-body.modal-guide-body {
     min-height: 90vh;
     display: flex;
     flex-direction: column;
     align-content: flex-start;
   }
   
-  #createGuide .modal-body.create-guide-body > div {
+  .modal-guide-wrapper .modal-body.modal-guide-body > div {
     flex: auto;
     display: flex;
     align-items: center;
   }
   
-  #createGuide .modal-body.create-guide-body > div.create-guide-action {
+  .modal-guide-wrapper .modal-body.modal-guide-body > div.modal-guide-body {
     flex-direction: column;
     align-items: initial;
     position: relative;
   }
   
-  #createGuide .create-guide-progress {
+  .modal-guide-wrapper .modal-guide-progress {
     min-height: 1.5rem;
     max-height: 1.5rem;
   }
   
-  #createGuide .create-guide-navigation {
+  .modal-guide-wrapper .modal-guide-navigation {
     min-height: 3rem;
     max-height: 3rem;
   }
   
-  #createGuide .modal-body .create-guide-progress > div {
+  .modal-guide-wrapper .modal-body .modal-guide-progress > div {
     display: flex;
     align-items: center;
     border-bottom: .05rem solid lightgray;
@@ -115,35 +115,35 @@
     font-size: .9rem;
   }
   
-  #createGuide .modal-body .create-guide-progress > div div {
+  .modal-guide-wrapper .modal-body .modal-guide-progress > div div {
     flex: auto;
     line-height: 2rem;
     text-align: center;
     letter-spacing: .08rem;
   }
   
-  #createGuide .modal-body .btn-modal {
+  .modal-guide-wrapper .modal-body .btn-modal {
     background-color: var(--snap-list-bg);    
   }
   
-  #createGuide .modal-body .create-guide-progress > div > div {
+  .modal-guide-wrapper .modal-body .modal-guide-progress > div > div {
     border-right: .005rem solid var(--snap-border-dark);
   }
   
-  #createGuide .modal-body .create-guide-progress > div > div:last-child {
+  .modal-guide-wrapper .modal-body .modal-guide-progress > div > div:last-child {
     border-right: none;
   }
   
-  #createGuide .modal-body .create-guide-progress .completed {
+  .modal-guide-wrapper .modal-body .modal-guide-progress .completed {
     background-color: lightgray;
   }
   
-  #createGuide .modal-body .create-guide-progress .active {
+  .modal-guide-wrapper .modal-body .modal-guide-progress .active {
     color: rgb(250, 250, 250);
     background-color: var(--snap-collection);        
   }
   
-  #createGuide .modal-body .create-guide-navigation {
+  .modal-guide-wrapper .modal-body .modal-guide-navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -151,98 +151,90 @@
     background-color: var(--snap-filters-ctrl);
   }
   
-  #createGuide .modal-body .create-guide-navigation > div > div {
+  .modal-guide-wrapper .modal-body .modal-guide-navigation > div > div {
     display: flex;
     align-items: center;        
   }
   
-  #createGuide .modal-body .create-guide-navigation > div:nth-child(1) > div svg {
+  .modal-guide-wrapper .modal-body .modal-guide-navigation > div:nth-child(1) > div svg {
     font-size: 2rem;
     margin: 0 .25rem 0 .5rem;
   }
   
-  #createGuide .modal-body .create-guide-navigation > div:nth-child(2) > div svg {
+  .modal-guide-wrapper .modal-body .modal-guide-navigation > div:nth-child(2) > div svg {
     font-size: 2rem;
     margin: 0 .5rem 0 .25rem;
   }
   
-  #createGuide  .modal-body .create-guide-navigation > div:nth-child(1),
-  #createGuide .modal-body .create-guide-navigation > div:nth-child(2) {
+  .modal-guide-wrapper  .modal-body .modal-guide-navigation > div:nth-child(1),
+  .modal-guide-wrapper .modal-body .modal-guide-navigation > div:nth-child(2) {
     color: var(--snap-text-dark);
     cursor: pointer;
   }
   
-  #createGuide .modal-body .create-guide-navigation > div:nth-child(2).disabled {
+  .modal-guide-wrapper .modal-body .modal-guide-navigation > div:nth-child(2).disabled {
     color: gray;
     pointer-events: none;
   }
   
-  #createGuide .modal-body .create-guide-navigation > div:nth-child(1):hover,
-  #createGuide .modal-body .create-guide-navigation > div:nth-child(2):hover {
+  .modal-guide-wrapper .modal-body .modal-guide-navigation > div:nth-child(1):hover,
+  .modal-guide-wrapper .modal-body .modal-guide-navigation > div:nth-child(2):hover {
     color: rgb(250, 250, 250);
   }
   
-  #createGuide .modal-body .location .current {
+  .modal-guide-wrapper .modal-body .location .current {
     display: flex;
     align-items: center;
     margin: 1rem 0;
   }
   
-  #createGuide .modal-body .chosen {
+  .modal-guide-wrapper .modal-body .chosen {
     position: absolute;
     bottom:.5rem;
     display: flex;
     flex-direction: row;
   }
   
-  #createGuide .modal-body .chosen-inat {
+  .modal-guide-wrapper .modal-body .chosen-inat {
     margin: 0;
   }
   
-  #createGuide .modal-body .chosen > div > span:nth-child(1), 
-  #createGuide .modal-body .chosen-inat span:nth-child(1) {
+  .modal-guide-wrapper .modal-body .chosen > div > span:nth-child(1), 
+  .modal-guide-wrapper .modal-body .chosen-inat span:nth-child(1) {
     font-size: .8rem;
     margin: 0 .25rem 0 0;
     text-transform: uppercase;
-    /* border-bottom: 1px solid gray; */
     vertical-align: middle;
     letter-spacing: .03rem;
   }
   
-  /* #createGuide .modal-body .chosen span:nth-child(2),
-  #createGuide .modal-body .chosen-inat span:nth-child(2) {
-    text-transform: uppercase;
-    font-size: 1rem;
-    color: var(--snap-collection-active);
-  } */
-  
-  #createGuide .modal-body .chosen > div span:nth-child(2) > span {
+  .modal-guide-wrapper .modal-body .chosen > div span:nth-child(2) > span {
     margin: 0 .25rem;
   }
   
-  #createGuide .modal-body .save-your-changes {
+  .modal-guide-wrapper .modal-body .save-your-changes {
     display: flex;
     align-items: center;
     position: absolute;
     bottom: 2.5rem;
   }
   
-  #createGuide .modal-body .save-your-changes button {
+  .modal-guide-wrapper .modal-body .save-your-changes button {
     margin: 0 1rem 0 0;
   }
   
-  #createGuide .modal-body .saved {
+  .modal-guide-wrapper .modal-body .saved {
     color: var(--snap-green-ident);
     font-size: 1.3rem;
     font-family: serif;
     font-style: italic;
   }
   
-  #createGuide .modal-body .actions > div:first-child {
+  .modal-guide-wrapper .modal-body .actions > div:first-child {
     display: flex;
   }
   
-  #createGuide .modal-body button {
+  .modal-guide-wrapper .modal-body button {
     display: inline-block;
     margin: 0;
     background-color: var(--snap-list-bg);
@@ -250,40 +242,40 @@
     letter-spacing: .05rem;
   }
   
-  #createGuide .modal-body .inat-location-location button {
+  .modal-guide-wrapper .modal-body .inat-location-location button {
     margin: 0 .5rem 0 0;
   }
   
-  #createGuide .modal-body button:hover {
+  .modal-guide-wrapper .modal-body button:hover {
     color: lightgray;
   }
   
-  #createGuide .modal-body button:disabled {
+  .modal-guide-wrapper .modal-body button:disabled {
     color: var(--snap-text-dark);
   }
   
-  #createGuide .modal-body button.js-set-inat-identity-btn {
+  .modal-guide-wrapper .modal-body button.js-set-inat-identity-btn {
     color: white;        
     background-color: var(--snap-link);
   }
   
-  #createGuide .inat-location-place .custom-checkbox {
+  .modal-guide-wrapper .inat-location-place .custom-checkbox {
     position: relative;
     margin: .5rem 0 0 0;
   }
   
-  #createGuide .inat-location-place .custom-control-label {
+  .modal-guide-wrapper .inat-location-place .custom-control-label {
     vertical-align: text-top;
     display: inline-block;
     cursor: pointer;
   }
   
-  #createGuide .guides {
+  .modal-guide-wrapper .guides {
     display: flex;
     flex-direction: column;
   }
   
-  #createGuide .guides .months {
+  .modal-guide-wrapper .guides .months {
     font-size: 1.4rem;
     margin: 1rem 0 0 0;
     letter-spacing: .05rem;
@@ -291,27 +283,27 @@
     font-variant-caps: small-caps;
   }
   
-  #createGuide .guides .months span:nth-child(2) {
+  .modal-guide-wrapper .guides .months span:nth-child(2) {
     margin: 0 0 0 .5rem;        
   }
   
-  #createGuide #inat-place {
+  .modal-guide-wrapper #inat-place {
     width: 100%;
     margin: .5rem 0;
   }
   
-  #createGuide #inat-place::placeholder {
+  .modal-guide-wrapper #inat-place::placeholder {
     display: inline;
   }
   
-  #createGuide .guides .inat-entry, #createGuide .guides input[type="text"] {
+  .modal-guide-wrapper .guides .inat-entry, .modal-guide-wrapper .guides input[type="text"] {
     width: 100%;
     margin: 0 0 .25rem 0;
   }
 
   /* SLIDER */
 
-.create-guide-action .range-slider {
+.modal-guide-body .range-slider {
     display: flex;
     justify-content: space-between;
     font-size: .9rem;
@@ -319,16 +311,16 @@
     margin: .5rem 0 0 0; 
   }
   
-  .create-guide-action .range-slider.disabled {
+  .modal-guide-body .range-slider.disabled {
     color: var(--secondary);
   }
   
-  .create-guide-action .range-slider span {
+  .modal-guide-body .range-slider span {
     margin: 0;
     width: 50%;
   }
   
-  .create-guide-action .range-slider > span:nth-child(2) {  
+  .modal-guide-body .range-slider > span:nth-child(2) {  
     width: fit-content;
     margin: 0;
   }
@@ -337,12 +329,12 @@
     display: none;
   }
   
-  .create-guide-action .set-range-input {
+  .modal-guide-body .set-range-input {
     width: 100%;
     cursor: pointer;
   }
   
-  .create-guide-action .range-slider.disabled .set-range-input {
+  .modal-guide-body .range-slider.disabled .set-range-input {
     pointer-events: none;
   }
   
@@ -492,11 +484,17 @@
   .iconic-taxa-selected {
     color: var(--snap-lesson);
   }
-  
-  .iconic-taxa-categories svg, .selected-text .iconic-taxa-categories-selected svg {
+
+  .iconic-taxa-categories svg, 
+  .selected-text .iconic-taxa-categories-selected svg,
+  .lesson-taxa .iconic-taxa-categories-selected svg {
     width: 1rem;
     height: 1rem;
     margin: 0.25rem 0 0 0;
+  }
+
+  .lesson-taxa .iconic-taxa-categories-selected svg g {
+    fill: var(--snap-text-medium-dark);
   }
 
   .iconic-taxa-categories-selected svg {
@@ -535,80 +533,149 @@
   .svg-icon-selected {
     fill: var(--snap-success);
   }  
+
+  /* EXAMPLE LESSONS INC. RB LIST */
+
+  #exampleGuide .btn.btn-secondary {
+    height: fit-content;
+    margin: 1.25rem 0;
+    padding: 0.25rem 0 0.25rem 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: .9rem;
+  }
+
+  #exampleGuide .btn-secondary:not(:disabled):not(.disabled).active {
+    width: 100%;    
+    border-radius: .25rem;
+    color: white;
+    background-color: gray;
+  }
+
+  /* prevent child elements of listener triggering an event */  
+  #exampleGuide .btn.btn-secondary > * {
+    pointer-events: none;
+  }
+
+  .non-taxon .btn.btn-secondary input {
+    pointer-events: none;
+  }
+
+  #exampleGuide .btn.btn-secondary.active + div.lesson-radio-button {
+    background-color: white;
+    border: .05rem solid gray;
+  }
+  
+  #exampleGuide .lesson-taxa {
+    font-size: .8rem;
+  }
+  
+  #exampleGuide .lesson-taxa span {
+    margin: 0 .15rem 0 0;
+  }
+
+  #exampleGuide .btn.btn-secondary.active .lesson-taxa .iconic-taxa-categories-selected svg g {
+    fill: white;
+  }
+
+  #exampleGuide #confirm-lesson-btn {
+    margin: 1.5rem 0;
+  }
+
+  #exampleGuide .lesson-radio-button {
+    width: 1rem;
+    height: 1rem;
+    margin: -3.5rem 0 0 0.25rem;
+    border-radius: 2rem;
+    z-index: 9999;
+    background-color: gray;
+  }
   
   @media (min-width: 1024px) {
 
-    #createGuide .modal-body .btn-modal {
+    .modal-guide-wrapper .modal-body .btn-modal {
         width: fit-content;
       }
 
-    #createGuide .modal-dialog {
+    .modal-guide-wrapper .modal-dialog {
         width: 60%;
         max-width: 800px;
         margin: 2rem auto;
     }
 
-    #createGuide .modal-body.create-guide-body {
+    .modal-guide-wrapper .modal-body.modal-guide-body {
         min-height: 32rem;
     }
 
-    #createGuide .modal-title div:nth-child(1) {
+    .modal-guide-wrapper .modal-title div:nth-child(1) {
         flex: auto;
         font-size: 1.1rem;        
     }
 
-    #createGuide .modal-header .close {
+    .modal-guide-wrapper .modal-header .close {
         margin: 0 0 0 .5rem;
     }
 
-    #createGuide .create-guide-progress, #createGuide .create-guide-navigation {
+    .modal-guide-wrapper .modal-guide-progress, .modal-guide-wrapper .modal-guide-navigation {
         max-height: 4rem;
     }
 
-    #createGuide .modal-body .create-guide-progress > div div {
+    .modal-guide-wrapper .modal-body .modal-guide-progress > div div {
         line-height: 3.45rem;
     }
 
-    #createGuide .modal-body .guide-text {
+    .modal-guide-wrapper .modal-body .guide-text {
         font-size: 1.6rem;
     }
 
-    #createGuide .modal-body button {
+    .modal-guide-wrapper .modal-body button {
         margin: 0 0 0 .5rem;
     }
 
-    #createGuide .inat-location-place .custom-checkbox {
+    .modal-guide-wrapper .inat-location-place .custom-checkbox {
         margin: 0 0 0 .5rem;
     }
 
-    #createGuide .guides .inat-entry {
+    .modal-guide-wrapper .guides .inat-entry {
         display: flex;
         font-size: 1.1rem; 
         align-items: center;
         margin: 0 0 0 1rem;
     }
 
-    #createGuide .guides input[type="text"] {
+    .modal-guide-wrapper .guides input[type="text"] {
         margin: 0 .5rem 0 0;
         height: 1.75rem;
         color: var(--snap-text-medium-dark);
         padding: 0 .1rem;
     }
 
-    #createGuide .guides .inat .inat-switch {
+    .modal-guide-wrapper .guides .inat .inat-switch {
         flex-direction: row;        
     }
 
-    #createGuide .inat-switch {
+    .modal-guide-wrapper .inat-switch {
+        width: 18rem;
         width: fit-content;
     }
 
-    #createGuide #inat-place {
-        width: fit-content;
+    .modal-guide-wrapper .inat.inat-switch {
+      width: 25rem;
+      width: fit-content;
+    }
+
+    .modal-guide-wrapper .season.inat-switch {
+      width: 20rem;
+      width: fit-content;
+    }
+
+    .modal-guide-wrapper #inat-place {
+        width: 16rem;
         margin: 0;
+        flex: 3;
       }
 
-    #createGuide #inat-place::placeholder {
+    .modal-guide-wrapper #inat-place::placeholder {
         color: white;
     }
 
@@ -617,31 +684,31 @@
         width: 20rem;        
     }
 
-    #createGuide .actions label {
+    .modal-guide-wrapper .actions label {
         margin: 0;
     }
 
-    #createGuide .create-guide-action .set-range-input {
+    .modal-guide-wrapper .modal-guide-body .set-range-input {
         width: 15rem;
     }
 
-    #createGuide .guides .inat-entry, #createGuide .guides input[type="text"] {
+    .modal-guide-wrapper .guides .inat-entry, .modal-guide-wrapper .guides input[type="text"] {
         width: fit-content;
     }  
 
     /* SLIDER */
     
-    .create-guide-action .range-slider {
+    .modal-guide-body .range-slider {
         display: block;
         font-size: initial;
         padding: .25rem;
     }
 
-    .create-guide-action .range-slider span {
+    .modal-guide-body .range-slider span {
         margin: 0 .5rem 0 0;
     }
 
-    #createGuide .create-guide-action .range-slider > span:nth-child(2) {
+    .modal-guide-wrapper .modal-guide-body .range-slider > span:nth-child(2) {
         width: fit-content;
         border: .05rem solid lightgray;
         padding: .5rem;
@@ -682,4 +749,17 @@
         margin: 0;
     }
 
+    /* EXAMPLE LESSONS INC. RB LIST */
+
+    #exampleGuide .btn.btn-secondary {
+      margin: 1.25rem 0;
+      padding: 0.25rem 0 0.25rem 4rem;
+      font-size: initial;
+    }
+
+    #exampleGuide .lesson-radio-button {
+      width: 2rem;
+      height: 2rem;
+      margin: -4rem 0 0 1rem;
+    }
   }
