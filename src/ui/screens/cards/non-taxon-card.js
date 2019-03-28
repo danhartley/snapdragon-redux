@@ -1,6 +1,7 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
+import { species } from 'api/species';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
@@ -19,7 +20,7 @@ export const subscribeToNonTaxaSelection = callback => {
     subscriptions.push(callback);
 };
 
-export const renderNonTaxonCard = (collection, isModalMode = false, keyTrait, parent = DOM.rightBody, imageUrl) => {
+export const renderNonTaxonCard = (collection, mode = 'STAND_ALONE', keyTrait, parent = DOM.rightBody, imageUrl) => {
 
     const prev = document.querySelector('#cardModal .js-prev');
     const next = document.querySelector('#cardModal .js-next');
@@ -53,7 +54,8 @@ export const renderNonTaxonCard = (collection, isModalMode = false, keyTrait, pa
     const callback = id => {
 
         const nonTaxon = nonTaxa.find(nt => nt.id === id)
-        const items = collection.items.filter(i => R.contains(i.name, nonTaxon.examples));
+        const items = species.filter(i => R.contains(i.name, nonTaxon.examples));
+        // const items = collection.items.filter(i => R.contains(i.name, nonTaxon.examples));
 
         const portraitImagesNode = document.querySelector('.js-non-taxon-card-images');
 
@@ -77,7 +79,7 @@ export const renderNonTaxonCard = (collection, isModalMode = false, keyTrait, pa
         const infoNode = document.querySelector('.js-info-box');
         infoSlider({traits:nonTaxon.traits, name: `${keyTrait} lichen`}, nonTaxa, null, infoNode);
 
-        if(isModalMode) {
+        if(mode === 'MODAL') {
         } else {
             renderWikiModal(lookup, wikiNode, config);    
             renderWiki(wikiNode, lookup, config.language);

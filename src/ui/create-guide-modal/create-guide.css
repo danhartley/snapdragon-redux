@@ -655,7 +655,18 @@
     }
 
     .modal-guide-wrapper .inat-switch {
+        width: 18rem;
         width: fit-content;
+    }
+
+    .modal-guide-wrapper .inat.inat-switch {
+      width: 25rem;
+      width: fit-content;
+    }
+
+    .modal-guide-wrapper .season.inat-switch {
+      width: 20rem;
+      width: fit-content;
     }
 
     .modal-guide-wrapper #inat-place {

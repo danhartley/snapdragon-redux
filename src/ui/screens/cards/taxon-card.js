@@ -2,20 +2,28 @@ import * as R from 'ramda';
 
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
-import { actions } from 'redux/actions/action-creators';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { taxa } from 'api/snapdragon/taxa';
-import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
+import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import taxonTemplate from 'ui/screens/cards/taxon-template.html';
 
-export const renderTaxonCard = (collection, isModalMode = false, selectedItem, parent = DOM.rightBody, speciesTaxon, rank) => {
+export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, speciesTaxon, rank) => {
   
     const item = selectedItem || collection.nextItem;
 
     const { lessonPlan, config } = store.getState();
 
-    const rootNode = isModalMode ? document.querySelector('#cardModal') : document.querySelector('.right-body');
+    let rootNode;
+
+    switch(mode) {
+        case 'STAND_ALONE':
+            rootNode = document.querySelector('.right-body');
+            break;
+        case 'MODAL':
+            rootNode = document.querySelector('#cardModal');
+            break;
+    }
 
     const template = document.createElement('template');
 
@@ -74,7 +82,7 @@ export const renderTaxonCard = (collection, isModalMode = false, selectedItem, p
 
     renderTemplate(context, template.content, parent, clone);
 
-    if(isModalMode) {
+    if(mode === 'MODAL') {
 
         rootNode.querySelector('.js-external-links').classList.add('hide');
 

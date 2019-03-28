@@ -91,7 +91,7 @@ export const renderFeatures = (item, traits, config, parent, mode) => {
         const speciesCardLinks = document.querySelectorAll('.js-species-card-link span');
         speciesCardLinks.forEach(link => {
             link.addEventListener('click', event => {
-                const name = event.target.id;
+                const name = event.target.id || event.target.dataset.name;
                 const selectedItem = species.find(i => i.name === name);
                 selectedItem.species = itemProperties.getSpeciesName(item.name);
                 renderCard({ name: 'Local species', items: species }, 'MODAL', selectedItem, document.querySelector('#cardModal .js-modal-body'), false);

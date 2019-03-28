@@ -90,7 +90,7 @@ setTimeout( () => {
         }
     }
     catch(e) {
-        persistor.purge();
-        window.location.reload(true);
+        // persistor.purge();
+        // window.location.reload(true);
     }
 });

@@ -113,7 +113,7 @@ export const renderMultiStrips = (collection) => {
 
         const number = config.isPortraitMode ? 3 : 4;
 
-        const questionText = config.isPortraitMode ? 'Tap to match Quick ID' : `Click to match the Quick Id`;
+        const questionText = config.isPortraitMode ? 'Tap to match Quick ID' : `Click to match the Quick ID`;
         const question = families.length > 0 ? families.find(f => f.name === item.family).descriptions[0].identification : 'no families available';
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family)).map(f => f.descriptions[0].identification);
         const answers = utils.shuffleArray([question, ...alternatives]);

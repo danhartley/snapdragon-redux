@@ -86,7 +86,7 @@ export const renderHeaders = page => {
             if(GLOSSARY) rightHeaderText = 'Glossary';
             if(TEST) rightHeaderText = questionFormat || '';
             if(SPECIES_CARD) rightHeaderText = 'Species summary';
-            if(FAMILY_CARD) rightHeaderText = 'Family summary & Quick id'
+            if(FAMILY_CARD) rightHeaderText = 'Family summary & Quick ID'
             if(SUMMARY) rightHeaderText = 'Lesson progress';
             if(SPECIES_LIST && PORTRAIT) rightHeaderText = collection.name;
             if(LANDSCAPE_HOME) rightHeaderText = title;

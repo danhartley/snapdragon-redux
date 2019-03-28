@@ -82,23 +82,26 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
         const cardModal = document.querySelector('#cardModal .js-modal-body');
 
         setTimeout(() => {
+            
             const speciesCardLinks = document.querySelectorAll('.js-species-card-link span');
-            // const cardModal = document.querySelector('#cardModal .js-modal-body');
             speciesCardLinks.forEach(link => {
                 link.addEventListener('click', event => {
                     const name = event.target.dataset.name;
+                    document.querySelector('#cardModal .prev > span').dataset.card = 'species-card';
+                    document.querySelector('#cardModal .next > span').dataset.card = 'species-card';
                     renderCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal);
                 });
             });
+
             const traitCardLinks = document.querySelectorAll('.js-key-trait-link');
             traitCardLinks.forEach(link => {
                 link.addEventListener('click', event => {
                     const keyTrait = event.target.dataset.keyTrait;
                     const imageUrl = event.target.dataset.url.replace('.98x68.jpg', '.260x190.jpg');              
-                    renderNonTaxonCard(collection, true, keyTrait, cardModal, imageUrl);
+                    renderNonTaxonCard(collection, 'MODAL', keyTrait, cardModal, imageUrl);
                 });
             });
-            // const cardModal = document.querySelector('#cardModal .js-modal-body');
+
             const taxonCardLinks = document.querySelectorAll('.js-taxon-card-link');
             taxonCardLinks.forEach(link => {
                 link.addEventListener('click', event => {
@@ -106,8 +109,10 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                     const name = event.target.dataset.name;
                     const rank = event.target.dataset.rank;
                     document.querySelector('#cardModal .prev > span').dataset.rank = rank;
+                    document.querySelector('#cardModal .prev > span').dataset.card = 'taxon-card';
                     document.querySelector('#cardModal .next > span').dataset.rank = rank;
-                    renderTaxonCard(collection, true, collection.items.find(i => i.name === name), cardModal, taxon, rank);
+                    document.querySelector('#cardModal .next > span').dataset.card = 'taxon-card';
+                    renderTaxonCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, taxon, rank);
                 });
             });
 
@@ -204,6 +209,7 @@ const carouselControlHandler = event => {
     
     let transition = event.target.dataset.transition;
     let modal = event.target.dataset.modal;
+    let card = event.target.dataset.card;
     let rank =  event.target.dataset.rank;
 
     switch(transition) {
@@ -220,12 +226,12 @@ const carouselControlHandler = event => {
     let nextItem = collection.items.find((item,index) => index === currentIndex);
     const parent = document.querySelector(`#${modal} .js-modal-body`);
     
-    switch(modal) {
-        case 'cardModal':
+    switch(card) {
+        case 'species-card':
             renderCard(collection, 'MODAL', nextItem, parent);
             break;
-        case 'cardModal':
-            renderTaxonCard(collection, true, nextItem, parent, null, rank);
+        case 'taxon-card':
+            renderTaxonCard(collection, 'MODAL', nextItem, parent, null, rank);
             break;    
     }    
 };

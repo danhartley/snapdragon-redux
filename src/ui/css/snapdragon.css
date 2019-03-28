@@ -375,8 +375,8 @@ a.dropdown-item {
 }
 
 .non-taxon.revision.card img {
-  height: 120px;
-  width: 120px;
+  height: 88px;
+  width: 88px;
 }
 
 .non-taxon .btn.btn-secondary {
@@ -396,13 +396,22 @@ a.dropdown-item {
   text-align: right;
 }
 
-.taxon.revision.card .taxon-summary {
+.taxon.revision.card {
   padding: 0 0.5rem 0 0;
 }
 
-.taxon.revision.card .data-box {
-  margin: 0 0.5rem 0 0;
+.taxon-summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: initial;
+  padding: 0 2rem;
 }
+
+/* .taxon.revision.card .data-box {
+  margin: 0 0.5rem 0 0;
+} */
 
 .species.card-small {
   padding: 0.5rem;
@@ -422,24 +431,6 @@ a.dropdown-item {
   flex-grow: 1;
 }
 
-.card {
-  flex: auto;
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  border: 0;
-  text-align: right;
-  border-radius: 0.1rem;
-}
-
-.card > .card-txt-block {
-  margin: 0.5rem 0.5rem 0 0;
-}
-
-.card.species {
-  background-color: var(--snap-species-highlight-background);
-}
-
 .lesson-plans .table-row.species-background:nth-child(n) {
   background-color: var(--snap-species-highlight-background);
 }
@@ -448,9 +439,9 @@ a.dropdown-item {
   background-color: var(--snap-taxon-card-background);
 }
 
-.card.taxon {
+/* .card.taxon {
   background-color: var(--snap-taxon-card-background);
-}
+} */
 
 .snapdragon-options {
   padding: 0 .5rem;
@@ -758,9 +749,9 @@ a.dropdown-item {
   object-fit: scale-down;
 }
 
-.species-header div {
+/* .species-header div {
   flex: 1;
-}
+} */
 
 .species-header > div:nth-child(1) {
   display: flex;
@@ -834,7 +825,7 @@ a.dropdown-item {
 
 .id-box {
   display: flex;
-  padding: 1rem 0;
+  padding: 1rem 0.5rem 1rem 0;
   background-color: var(--snap-taxon-card-background);
 }
 
@@ -859,16 +850,12 @@ a.dropdown-item {
 .data-box-container {
   display: flex;
   width: 100%;
-  margin: 1rem 0 0 0;
+  padding: .5rem 0;
 }
 
 .data-box-container div:nth-child(1) {
   flex: 1;
   text-align: right;
-}
-
-.taxon.revision.card .data-box-container div:nth-child(1) {
-  text-align: left;
 }
 
 .data-box {
@@ -1598,10 +1585,6 @@ label.btn.btn-secondary .lesson-icon {
   text-align: center;
 }
 
-.info-box {
-  width: 100%;
-}
-
 .info-box .carousel.slide {
   float: right;
   width: 100%;
@@ -1987,7 +1970,7 @@ a.collection-disabled {
 }
 
 .current-month {
-  border: 0.05rem solid var(--snap-text-medium-dark);
+  border: 0.05rem solid rgb(108, 117, 125,.8);
 }
 
 #iconicTaxaFilters .modal-content {
