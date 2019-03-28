@@ -1,6 +1,5 @@
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
-import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 import cultivarTemplate from 'ui/screens/cards/cultivar-card-template.html';
 
@@ -39,10 +38,6 @@ export const renderCultivarCard = collection => {
     }
 
     renderTemplate(context, template.content, parent);
-
-    document.querySelector('.js-cultivar-card-btn').addEventListener('click', event => {
-        actions.boundEndRevision(item);
-    });
 
     document.querySelectorAll('[title="N/A"]').forEach(a => a.style.display = 'none');
 };

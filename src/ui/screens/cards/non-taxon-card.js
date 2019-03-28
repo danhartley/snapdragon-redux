@@ -4,8 +4,6 @@ import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
-import { actions } from 'redux/actions/action-creators';
-import { selectHandler } from 'ui/helpers/handlers';
 import { infoSlider } from 'ui/screens/common/info-slider';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import * as group from 'api/snapdragon/non-taxa';

@@ -1,14 +1,11 @@
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 import { DOM } from 'ui/dom';
-import { actions } from 'redux/actions/action-creators';
 import definitionCardTemplate from 'ui/screens/cards/definition-card-template.html';
 import { renderTemplate } from 'ui/helpers/templating';
 import { getGlossary } from 'api/glossary/glossary';
 
 export const renderDefinitionCard = collection => {
-
-    const { lessonPlan } = store.getState();
 
     const template = document.createElement('template');
 
@@ -22,8 +19,4 @@ export const renderDefinitionCard = collection => {
     const glossary = utils.sortAlphabeticallyBy(filteredTerms, 'term');
     
     renderTemplate({ glossary }, template.content, parent);
-
-    document.querySelector('.js-definition-card-btn').addEventListener('click', event => {
-        actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
-    });
 };
