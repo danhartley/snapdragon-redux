@@ -285,6 +285,10 @@ export const renderMultiStrips = (collection) => {
                                 : trait.value;
                                 
         // const help = `(Select the ${trait.name} below.)`;
+
+        traits = R.take(5, traits.filter(t => t !== trait.type.value));
+        traits = [ ...traits, trait.value ];
+
         const answers = traits.map(trait => {
             const t = trait.value 
                         ? trait.value 
