@@ -772,7 +772,7 @@ a.dropdown-item {
   font-size: 0.9rem;
 }
 
-.iconic-icon, #speciesCardModal .iconic-icon {
+.iconic-icon {
   float: left;
   font-size: 1rem;
   padding: 0 .5rem 0 0;
@@ -1514,12 +1514,6 @@ label.btn.btn-secondary .lesson-icon {
 
 .compare-species-link {
   cursor: pointer;
-}
-
-#speciesCardModal .compare-species-link {
-  pointer-events: none;
-  border: none;
-  color: var(--snap-text-dark) !important;
 }
 
 .imageSlider .carousel-inner {

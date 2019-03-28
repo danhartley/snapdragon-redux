@@ -93,6 +93,19 @@
     object-fit: scale-down;
 }
 
+#speciesCardModal .iconic-icon {
+    float: left;
+    font-size: 1rem;
+    padding: 0 .5rem 0 0;
+    color: var(--snap-iconic-icon-header);
+  }
+
+  #speciesCardModal .compare-species-link {
+    pointer-events: none;
+    border: none;
+    color: var(--snap-text-dark) !important;
+  }
+
 @media (min-width: 768px) {
 
     /* SPECIES CARD MODAL */
