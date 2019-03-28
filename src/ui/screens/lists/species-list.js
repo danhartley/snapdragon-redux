@@ -81,11 +81,11 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
         setTimeout(() => {
             const speciesCardLinks = document.querySelectorAll('.js-species-card-link span');
-            const speciesCardModal = document.querySelector('#speciesCardModal .js-modal-body');
+            const cardModal = document.querySelector('#cardModal .js-modal-body');
             speciesCardLinks.forEach(link => {
                 link.addEventListener('click', event => {
                     const name = event.target.dataset.name;
-                    renderCard(collection, 'MODAL', collection.items.find(i => i.name === name), speciesCardModal);
+                    renderCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal);
                 });
             });
             const traitCardLinks = document.querySelectorAll('.js-key-trait-link');
@@ -93,7 +93,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                 link.addEventListener('click', event => {
                     const keyTrait = event.target.dataset.keyTrait;
                     const imageUrl = event.target.dataset.url.replace('.98x68.jpg', '.260x190.jpg');              
-                    renderNonTaxonCard(collection, true, keyTrait, speciesCardModal, imageUrl);
+                    renderNonTaxonCard(collection, true, keyTrait, cardModal, imageUrl);
                 });
             });
             const taxonCardModal = document.querySelector('#taxonCardModal .js-modal-body');
@@ -219,7 +219,7 @@ const carouselControlHandler = event => {
     const parent = document.querySelector(`#${modal} .js-modal-body`);
     
     switch(modal) {
-        case 'speciesCardModal':
+        case 'cardModal':
             renderCard(collection, 'MODAL', nextItem, parent);
             break;
         case 'taxonCardModal':
@@ -228,8 +228,8 @@ const carouselControlHandler = event => {
     }    
 };
 
-const prev = document.querySelector('#speciesCardModal .js-prev');
-const next = document.querySelector('#speciesCardModal .js-next');
+const prev = document.querySelector('#cardModal .js-prev');
+const next = document.querySelector('#cardModal .js-next');
 
 if(prev) prev.addEventListener('click', carouselControlHandler);
 if(next) next.addEventListener('click', carouselControlHandler);

@@ -94,7 +94,7 @@ export const renderFeatures = (item, traits, config, parent, mode) => {
                 const name = event.target.id;
                 const selectedItem = species.find(i => i.name === name);
                 selectedItem.species = itemProperties.getSpeciesName(item.name);
-                renderCard({ name: 'Local species', items: species }, 'MODAL', selectedItem, document.querySelector('#speciesCardModal .js-modal-body'), false);
+                renderCard({ name: 'Local species', items: species }, 'MODAL', selectedItem, document.querySelector('#cardModal .js-modal-body'), false);
             });
         });
         

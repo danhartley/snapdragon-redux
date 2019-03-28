@@ -21,8 +21,8 @@ export const subscribeToNonTaxaSelection = callback => {
 
 export const renderNonTaxonCard = (collection, isModalMode = false, keyTrait, parent = DOM.rightBody, imageUrl) => {
 
-    const prev = document.querySelector('#speciesCardModal .js-prev');
-    const next = document.querySelector('#speciesCardModal .js-next');
+    const prev = document.querySelector('#cardModal .js-prev');
+    const next = document.querySelector('#cardModal .js-next');
     if(prev) prev.style.display = 'none';
     if(next) next.style.display = 'none';
 
@@ -88,7 +88,7 @@ export const renderNonTaxonCard = (collection, isModalMode = false, keyTrait, pa
 
     renderTemplate({group: nonTaxa, imageUrl}, template.content, parent);
 
-    document.querySelector('#speciesCardModal .js-modal-text-title').innerHTML = `Lichen Forms`;
+    document.querySelector('#cardModal .js-modal-text-title').innerHTML = `Lichen Forms`;
 
     document.querySelectorAll('.non-taxon .btn.btn-secondary').forEach(form => {
         form.addEventListener('click', event => {

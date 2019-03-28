@@ -38,11 +38,11 @@ export const renderSpeciesGrid = () => {
 
     renderTemplate({ images }, template.content, DOM.leftBody);
 
-    const speciesCardModal = document.querySelector('#speciesCardModal .js-modal-body');
+    const cardModal = document.querySelector('#cardModal .js-modal-body');
     document.querySelectorAll('.species-grid img').forEach(image => {
         image.addEventListener('click', event => {
             const name = event.target.dataset.itemName;
-            renderCard({ items: species, name: 'Snapdragon specimen' }, 'MODAL', species.find(i => i.name === name), speciesCardModal, false);
+            renderCard({ items: species, name: 'Snapdragon specimen' }, 'MODAL', species.find(i => i.name === name), cardModal, false);
         });
     });
 };
