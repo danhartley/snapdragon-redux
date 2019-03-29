@@ -27,6 +27,7 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 1,
         let nextItem = state.items[itemIndex];
         let layoutCounter, isNextRound;
         layoutCounter = state.layoutCounter ? state.layoutCounter + 1 : 1; 
+        layoutCounter = layoutCounter > state.layoutCount ? state.layoutCount : layoutCounter;
         isNextRound = layoutCounter === state.layoutCount;
         if(state.layoutName && state.layoutName === 'summary') {
             isNextRound = true;
