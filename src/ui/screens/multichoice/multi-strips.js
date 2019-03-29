@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 
-import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
@@ -15,7 +14,8 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { syndromes } from 'api/snapdragon/syndromes';
 import { renderTestCardTemplate } from 'ui/screens/common/test-card';
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
-
+import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
+import { rebindLayoutState } from 'ui/screens/multichoice/missing-data-helper';
 import { getTraits } from 'api/traits/traits';
 import * as traitTypes from 'api/traits/trait-types';
 import * as SD from 'api/traits/trait-types';
@@ -47,7 +47,7 @@ export const renderMultiStrips = (collection) => {
         layout.screens.find(screen => screen.name === 'wildcard-match')
     }
 
-    if(!screen) return;
+    try {
 
     const render = (questionValue, answers, overrides) => {
 
@@ -67,6 +67,10 @@ export const renderMultiStrips = (collection) => {
         renderTemplate({ answers }, template.content, parent);
 
         const strips = document.querySelectorAll('.js-rptr-strips .strip div');
+
+        if(screen.name === 'definition') {
+            strips.forEach(strip => strip.classList.add('extra-small-text'));
+        }
 
         const taxon = { name: item.family, binomial: item.name, question: questionValue };
 
@@ -99,8 +103,6 @@ export const renderMultiStrips = (collection) => {
     }
 
     if(screen.name === 'species-vernaculars') {
-
-        if(!collection.speciesVernacularNames) return;
 
         const number = config.isPortraitMode ? 6 : config.isLandscapeMode ? 6 : 6;
         const question = item.vernacularName;   
@@ -170,7 +172,7 @@ export const renderMultiStrips = (collection) => {
 
     if(screen.name === 'epithet') {
         
-        if(!layout.epithet) return;
+        // if(!layout.epithet) return;
 
         const epithet = layout.epithet.latin[0];
         const number = config.isPortraitMode ? 6 : 6;
@@ -186,19 +188,20 @@ export const renderMultiStrips = (collection) => {
     }
 
     if(screen.name === 'definition') {
-        
-        if(!layout.definition) return;
 
         const { term, definition } = layout.definition;
 
-        const number = config.isPortraitMode ? 3 : 5;
-        const definitions = getGlossary(collection.glossary);
+        const number = config.isPortraitMode ? 3 : 4;
+
+        const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa), 'common' ]));
+
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(definitions)).filter(d => !R.contains(d.term, term))).map(d => d.definition);
         
         const question = definition;
         const answers = utils.shuffleArray([question, ...alternatives]);
 
         render(question, answers);
+        render(question, answers, { question: layout.definition.term, help: '(Match the definition)' });
     }
 
     if(screen.name === 'family') {
@@ -239,10 +242,8 @@ export const renderMultiStrips = (collection) => {
         const speciesTraits = getTraits(enums).find(trait => trait.name === item.name);
 
         const typedSpeciesTraits = traitTypes.typedSpecies(enums, speciesTraits);
-        if(!typedSpeciesTraits) return;
-        const trait = R.take(1, utils.shuffleArray(typedSpeciesTraits))[0];
 
-        if(!trait) return;
+        const trait = R.take(1, utils.shuffleArray(typedSpeciesTraits))[0];
 
         switch(trait.type) {
             case 'howEdible':                
@@ -266,6 +267,8 @@ export const renderMultiStrips = (collection) => {
             default:
                 help = config.isLandscapeMode ? `${trait.name}` : `${trait.name}`;
         }
+
+        help = `(${help})`;
         
         let traits = [ ];
 
@@ -286,7 +289,7 @@ export const renderMultiStrips = (collection) => {
                                 
         // const help = `(Select the ${trait.name} below.)`;
 
-        traits = R.take(5, traits.filter(t => t !== trait.type.value));
+        traits = R.take(5, traits.filter(t => t !== trait.value));
         traits = [ ...traits, trait.value ];
 
         const answers = traits.map(trait => {
@@ -300,4 +303,15 @@ export const renderMultiStrips = (collection) => {
           
         render(question, answers, { question: 'Match the trait', help });
     }
+} catch(e) {
+
+    console.log('Caught exception in render function:');
+    console.log(e);    
+    // console.log(`SCREEN NAME: ${screen.name}`);
+
+    rebindLayoutState(layout, config, item);
+
+    renderMultiStrips(collection);
+    
+}
 };

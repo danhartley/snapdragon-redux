@@ -151,6 +151,10 @@
     width: 100%;
   }
 
+  .extra-small-text {
+    font-size: .9rem;
+  }
+
   /* TAXON CARD  */
 
   .taxon.card {
