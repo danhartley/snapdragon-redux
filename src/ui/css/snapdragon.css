@@ -1701,12 +1701,6 @@ span.hide-empty:empty {
   padding: 0.5rem;
 }
 
-/* .names-badge {
-  font-size: 0.8rem;
-  vertical-align: super;
-  cursor: pointer;
-} */
-
 .custom-control-label::before, .custom-control-label::after {
   width: 1.25rem;
   height: 1.25rem;
@@ -1932,7 +1926,7 @@ a.collection-disabled {
   padding: .5rem 0;
 }
 
-.question-header .iconic-icon, .species.card .iconic-icon {
+.question-header .iconic-icon {
   cursor: pointer;
 }
 

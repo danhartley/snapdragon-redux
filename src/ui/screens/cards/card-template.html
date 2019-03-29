@@ -13,14 +13,17 @@
                     <span class="hide-empty">{{ familyVernacularName }}</span> <span class="latin hide-empty">{{ familyName }}</span>
                 </div>
                 <div class="hide-empty question-header">
-                    <!-- <span class="iconic-icon js-iconic-icon"><i class=""></i></span> -->
                     <div>
-                        <div class="vernacular-name-badge">
-                            <span>{{ vernacularName }}</span>
-                            <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ occurrences }}</span>                            
+                        <div class="names-container vernacular-name-badge">
+                            <div>
+                                <span>{{ vernacularName }}</span>
+                                <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ occurrences }}</span>
+                            </div>
+                            <span class="binomial">{{ name }}</span>
                         </div>
-                        <span class="binomial">{{ name }}</span>
-                        <span class="iconic-icon js-iconic-icon"><i class=""></i></span>
+                        <div>
+                            <span class="iconic-icon js-iconic-icon"><i class=""></i></span>
+                        </div>
                     </div>
                 </div>
                 <div class="landscape" class="species-header">                        

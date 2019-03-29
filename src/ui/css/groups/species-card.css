@@ -44,8 +44,7 @@
 }
 
 #cardModal .iconic-icon {
-    font-size: 1.6rem;
-    /* padding: 0.5rem; */
+    font-size: 2.4rem;
 }
 
 .vernacular-name-badge {
@@ -53,9 +52,6 @@
 }
 
 .names-badge {
-    position: absolute;
-    right: -1rem;
-    top: 0;
     font-size: 0.8rem;
     vertical-align: super;
     cursor: pointer;
@@ -117,7 +113,6 @@
 #cardModal .iconic-icon {
     float: left;
     font-size: 1rem;
-    /* padding: 0 .5rem 0 0; */
     color: var(--snap-iconic-icon-header);
   }
 
@@ -182,10 +177,12 @@
     }
 
     /* CARD */
-
+/* 
     .names-badge {
+        position: absolute;
+        top: 0;
         right: -.75rem;
-    }
+    } */
 
     .info-box {
         margin: .5rem 0 0 0;
