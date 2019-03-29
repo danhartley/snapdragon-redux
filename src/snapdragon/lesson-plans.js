@@ -55,7 +55,7 @@ let landscapeLayouts = [
     familyStripsMatch,// still working... missing family data an issue 
 ];
 
-// landscapeLayouts = [ textCompleteGenus, commonEntry ];
+landscapeLayouts = [ traitPropertyMatch ];
 
 const landscapeLesson1 = {
     id: 1,
@@ -67,7 +67,7 @@ const landscapeLesson1 = {
             name:'Level 1',
             description: 'Species recognition',
             layouts: landscapeLayouts,
-            wildcardLayouts : [],
+            wildcardLayouts : [ glossaryTerms ],
             reviewLayouts: [ multiSpecimenCommonMatch, mixedSpeciesMatch ]
         },
         {   id: 2,
