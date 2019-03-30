@@ -41,7 +41,9 @@ export const renderInput = (screen, question) => {
             break;
     }
 
-    const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: questionTxt, help: '(Complete the name below.)' });
+    const help = config.isLandscapeMode ? '(Complete the name below.)' : '';
+
+    const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: questionTxt, help });
     
     const template = document.createElement('template');
     
@@ -92,15 +94,12 @@ export const renderInput = (screen, question) => {
         answerBtn.disabled = true;
         document.querySelector('.js-continue-lesson-btn').disabled = false;
         helpTxt.innerHTML = question.taxon === 'vernacular' ? item.vernacularName : item.name;
-        // if(question.taxon === 'vernacular') helpTxt.classList.remove('binomial');
     };
 
     answerBtn.addEventListener('click', scoreEventHandler);
     
     if(config.isPortraitMode) renderPortrait(item, config);
     else renderLandscape(item, config, question);
-
-    // document.querySelector('.js-txt-input').focus();
 
     const icon = renderIcon(item, document);
 

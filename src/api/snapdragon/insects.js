@@ -1747,49 +1747,40 @@ export const insects = [
         
       },
       {
+        "vernacularName": "Cabbage White",
+        "language": "en",        
+      },
+      {
         "vernacularName": "Cabbage Butterfly",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Cabbage White Butterfly",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Cabbage White",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Cabbage White",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Cavolaia minore",
-        "language": "it",
-        
+        "language": "it",        
       },
       {
         "vernacularName": "Klein koolwitje",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Klein koolwitje",
-        "language": "de",
-        
+        "language": "de",    
       },
       {
         "vernacularName": "Kleiner Kohlweiling",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Kleiner Kohlweiling",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Kleiner Kohlweiling",
@@ -6186,6 +6177,10 @@ export const insects = [
         "language": "en",        
       },
       {
+        "vernacularName": "large cabbage white",
+        "language": "en",        
+      },
+      {
         "vernacularName": "Borboleta das Couves",
         "language": "es"
       },
@@ -9995,123 +9990,19 @@ export const insects = [
     "names": [
       {
         "vernacularName": "European Yellow Underwing",
-        "language": "en",
-        "eol_preferred": true
-      },
-      {
-        "vernacularName": "European Yellow Underwing",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "European Yellow Underwing",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "European Yellow Underwing",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "European Yellow Underwing",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "European Yellow Underwing",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Hausmutter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Hausmutter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Hausmutter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Hausmutter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Hausmutter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Hausmutter",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Large Yellow Underwing",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Large Yellow Underwing",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Large Yellow Underwing",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Large Yellow Underwing",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Large Yellow Underwing",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Large Yellow Underwing",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Large Yellow Underwing",
-        "language": "en",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "common yellow underwing moth",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Fiancée",
-        "language": "fr",
-        
-      },
-      {
-        "vernacularName": "Large Yellow Underwing",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "European yellow underwing moth",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Moth",
-        "language": "en",
-        
+        "language": "fr"        
       }
     ],
     "taxonomy": {

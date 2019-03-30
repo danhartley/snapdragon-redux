@@ -54,7 +54,7 @@ export const renderMultiStrips = (collection) => {
         const vernacularName = (overrides && overrides.vernacularName) ? overrides.vernacularName : item.vernacularName;
         const binomial = (overrides && overrides.binomial) ? overrides.binomial : item.name;
         const question = (overrides && overrides.question) ? overrides.question : 'Match the name';
-        const help = (overrides && overrides.help) ? overrides.help : '(Click on the name below.)';
+        const help = (overrides && overrides.help !== undefined) ? overrides.help : '(Click on the name below.)';
         
         const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help });
 
@@ -108,7 +108,9 @@ export const renderMultiStrips = (collection) => {
         const question = item.vernacularName;   
         const answers = itemProperties.answersFromList(itemProperties.vernacularNamesForGroups(items, config), question, number);
 
-        render(question, answers, { vernacularName: '--- ---', question: 'What is the common name?' });
+        const help = config.isLandscapeMode ? '(Click on the name below.)' : '';
+
+        render(question, answers, { vernacularName: '--- ---', question: 'What is the common name?', help });
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
@@ -191,7 +193,7 @@ export const renderMultiStrips = (collection) => {
 
         const { term, definition } = layout.definition;
 
-        const number = config.isPortraitMode ? 3 : 4;
+        const number = config.isPortraitMode ? 4 : 4;
 
         const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa), 'common' ]));
 
