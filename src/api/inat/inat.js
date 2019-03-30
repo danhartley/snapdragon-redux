@@ -79,7 +79,6 @@ export const getInatSpecies = (inatConfig, config) => {
 
     const taxonNames = [];
 
-    // const observations = getInatObservations(config, inatConfig).then(observations => {
     const observations = getAllInatObservations(config, inatConfig).then(observations => {
         return observations.map(observation => {
             console.log(observation.taxon.name);

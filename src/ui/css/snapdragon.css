@@ -1474,11 +1474,6 @@ label.btn.btn-secondary .lesson-icon {
   font-size: 5rem;
 }
 
-#imageModal .modal-body,
-#imageComparisonModal .modal-body {
-  padding: 0;
-}
-
 .feature-label {
   color: var(--snap-green-feature-txt);
 }
@@ -1538,24 +1533,19 @@ label.btn.btn-secondary .lesson-icon {
 
 .imageSlider .carousel-item > div {
   height: 100%;
-  background-size: contain;
+  background-size: inherit;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.imageSlider .carousel-item > div.contain-image {
+  background-size: contain;
 }
 
 .imageSlider .carousel-control-next-icon,
 .imageSlider .carousel-control-prev-icon {
   width: 1.5rem;
   height: 1.5rem;
-}
-
-#imageModal .modal-body,
-#imageComparisonModal .modal-body {
-  height: 55vh;
-}
-
-#imageModal .modal-body .imageSlider .carousel-item {
-  height: 55vh;
 }
 
 #imageSlider1 {
@@ -1583,6 +1573,19 @@ label.btn.btn-secondary .lesson-icon {
 #imageComparisonModal .modal-title span {
   flex: 1;
   text-align: center;
+}
+
+.carousel-inner .image-load-original {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  z-index: 1050;
+}
+
+.carousel-inner .image-load-original > div {
+  cursor: pointer;
 }
 
 .info-box .carousel.slide {
@@ -1906,6 +1909,11 @@ a.collection-disabled {
 
 .range-slider-control input {
   width: 15rem;
+}
+
+.carousel-indicators {
+  margin-right: 25%;
+  margin-left: 25%;
 }
 
 .carousel-indicators li {

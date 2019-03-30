@@ -11,6 +11,20 @@
     width: fit-content;
 }
 
+#imageModal .modal-body,
+#imageComparisonModal .modal-body {
+  padding: 0;
+}
+
+#imageModal .modal-body,
+#imageComparisonModal .modal-body {
+  height: 55vh;
+}
+
+#imageModal .modal-body .imageSlider .carousel-item {
+  height: 55vh;
+}
+
 @media (min-width: 768px) {
 
     .modal-body {
@@ -44,5 +58,8 @@
         height: 100%;
     }
 
+    #imageModal .modal-dialog {
+        max-width: 70vw;
+    }
      
 }

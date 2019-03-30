@@ -11,7 +11,8 @@ export const imageUseCases = {
     VISUAL_MATCH: 'Visual match',
     MIXED_SPECIMENS: 'Mixed specimens',
     CAROUSEL: 'Carousel',
-    TEXT_ENTRY: 'Text entry'
+    TEXT_ENTRY: 'Text entry',
+    ACTUAL_SIZE: 'Actual size'
 }
 
 export const denormaliseImages = images => {
@@ -77,9 +78,14 @@ export const scaleImage = (image, useCase, config) => {
                 ? image.url.replace('.jpg', '.260x190.jpg')
                 : image.url.replace('.jpg', '.260x190.jpg');
         case imageUseCases.CAROUSEL:
+            if(image.url.indexOf('.260x190.jpg') > 0) return image.url;
             return config.isLandscapeMode 
                 ? image.url ? image.url.replace('.jpg', '.260x190.jpg') : ''
                 : image.url.replace('.jpg', '.260x190.jpg');
+        case imageUseCases.ACTUAL_SIZE:
+            if(image.url.indexOf('.260x190.jpg') > 0) {
+                return image.url.replace('.260x190.jpg', '.jpg');
+            }
         default:
             return image.url;
     }
@@ -99,6 +105,7 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
         const selectedItem = item || collection.items.find(item => item.name === image.dataset.itemName);
         let images = selectedItem.images.map((image, index) => {
             selectedItem.vernacularName = itemProperties.getVernacularName(selectedItem, config);
+            image.url = scaleImage(image, imageUseCases.CAROUSEL, config);
             return { ...image, itemName: selectedItem.name, itemCommon: selectedItem.vernacularName };
         });
         images = denormaliseImages(images);
