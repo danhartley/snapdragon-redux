@@ -1,11 +1,7 @@
-import { species } from 'api/species';
 import { renderTemplate } from 'ui/helpers/templating';
-import { modalImagesHandler, scaleImage } from 'ui/helpers/image-handlers';
+import { modalImagesHandler, scaleImage, imageMatch, imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
 import { handleRightsAttribution } from 'ui/screens/common/rights-attribution';
-import { imageMatch, imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
 import imageSliderTemplate from 'ui/screens/common/image-slider-template.html';
-import { renderItemSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
-import { store } from 'redux/store';
 
 const selectActiveNodeImage = (image, parent, config) => {
     parent.querySelectorAll('.carousel-item').forEach(i => {
@@ -37,32 +33,23 @@ const disableModalPopups = (disableModal, parent, config) => {
     }
 };
 
+const getActiveBackgroundImage = () => {
+    const imageContainer = document.querySelector('.carousel-item.active > div');
+    const backgroundImage = imageContainer.style.backgroundImage.slice(4, -1).replace(/"/g, "");
+    return { imageContainer, backgroundImage };
+};
+
 const carouselControlHandler = event => {
 
     const originalImageLink = document.querySelector('.js-image-load-original > div');
+    originalImageLink.style.display = 'none';
 
-    originalImageLink.style.display = 'initial';
-
-    setTimeout(() => {
-
-        const activeNode = document.querySelector(`${event.target.dataset.slider} .carousel-item.active > div`);
-        const image = activeNode.dataset;        
-        handleRightsAttribution(image, activeNode);
-
-        const { config } = store.getState();
-
-        const tiles = document.querySelectorAll('.js-tiles');
-
-        const collectionItems = species;
-
-        if(tiles) {
-            const name = document.querySelector('.carousel-item.active > div').dataset.title; 
-            const item = collectionItems.find(i => i.name === name);
-            // if(config.isLandscapeMode) {
-            //     renderItemSpecimenTiles(item);
-            // } // What was this for?????
+    setTimeout(() => {        
+        const { backgroundImage } = getActiveBackgroundImage();
+        if(backgroundImage.indexOf('260x190') !== -1) {
+            originalImageLink.style.display = 'initial';
         }
-    },750);    
+    }, 750);
 };
 
 export const imageSlider = (config, images, parent, disableModal, image) => {
@@ -76,7 +63,7 @@ export const imageSlider = (config, images, parent, disableModal, image) => {
     images.forEach((img, i) => img.index = i);
 
     renderTemplate({ images, index: '' }, slider.content, parent);
-    const activeImage = selectActiveNodeImage(image || images[0], parent, config);    
+    selectActiveNodeImage(image || images[0], parent, config);    
     disableModalPopups(disableModal, parent, config);
 
     const originalImageLink = document.querySelector('.js-image-load-original > div');
@@ -85,8 +72,7 @@ export const imageSlider = (config, images, parent, disableModal, image) => {
     document.querySelector('#imageSlider .carousel-control-next').addEventListener('click', carouselControlHandler);
 
     originalImageLink.addEventListener('click', event => {
-        const imageContainer = document.querySelector('.carousel-item.active > div');
-        const backgroundImage = imageContainer.style.backgroundImage.slice(4, -1).replace(/"/g, "");
+        const { imageContainer, backgroundImage } = getActiveBackgroundImage();
         const orginalUrl = scaleImage({ url: backgroundImage }, imageUseCases.ACTUAL_SIZE, config);
         imageContainer.style["background-image"] = `url(${orginalUrl})`;
         imageContainer.classList.add('contain-image');
