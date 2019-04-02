@@ -234,6 +234,10 @@ const getObservableMonths = (date, span = 3) => {
   return months;
 };
 
+const getRandomInt = max => {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 export const utils = {
   log,
   encodeQuery,
@@ -254,5 +258,6 @@ export const utils = {
   makeSortable,
   itemCountReducer,
   flatten,
-  getObservableMonths
+  getObservableMonths,
+  getRandomInt
 };

@@ -22,6 +22,7 @@
 }
 
 .names-container {
+    font-size: .9rem;
     display: flex;
     flex-direction: column;
     text-align: left;

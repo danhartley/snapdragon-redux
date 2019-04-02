@@ -48,7 +48,7 @@ export const getTraits = SD => {
         ] },
         { name: 'Oxalis pes-caprae', traits: [
             { name: SD.name.USAGE, value: SD.usage.FOOD },
-            { name: SD.name.ROLE, value: 'US, Australia, Europe, Israel', type: SD.role.INVASIVE },
+            { name: SD.role.INVASIVE, value: 'US, Australia, Europe, Israel' },
         ] },
         { name: 'Robinia pseudoacacia', 
         symbionts: [ 
@@ -85,7 +85,7 @@ export const getTraits = SD => {
             { name: SD.name.HOW_EDIBLE, value: SD.howEdible.EDIBLE },
             { name: SD.name.FRUIT_TYPE, value: SD.fruitType.LEGUME} ,
             { name: SD.name.USAGE, value: SD.usage.TIMBER },
-            { name: SD.name.ROLE, value: 'Australia', type: SD.role.INVASIVE },
+            { name: SD.role.INVASIVE , value: 'Australia'},
         ] },
         { name: 'Foeniculum vulgare',
         symbionts: [ 

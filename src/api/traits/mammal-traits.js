@@ -51,7 +51,7 @@ const getTraits = SD => {
         { name: SD.name.LIFE_SPAN, value: '3-7a' },
         { name: SD.name.SHELTER, value: SD.shelter.DREY },
         { name: SD.name.ACTIVE, value: SD.active.CREPUSCULAR },        
-        { name: SD.name.SEXUAL_DIMORPHISM, value: SD.boolean.NO },
+        { name: SD.name.DISPLAY, value: SD.display.SEXUAL_DIMORPHISM },
         { name: SD.name.LENGTH, value: '19-20cm' },
         { name: SD.name.TAIL_LENGTH, value: '9-10cm' },
         { name: SD.name.MATING, value: `${SD.month.FEBRUARY}-${SD.month.MARCH}` },

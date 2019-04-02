@@ -3,10 +3,15 @@ import * as R from 'ramda';
 import { species } from 'api/species';
 import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
 
-const inatListeners = [];
+let inatListeners = [];
+
+const unsubscribe = listener => {
+    inatListeners = inatListeners.filter(l => l !== listener);
+};
 
 export const listenToInatRequests = listener => {
     inatListeners.push(listener);
+    return unsubscribe;
 };
 
 const getBasePath = config => {
@@ -26,11 +31,11 @@ export const getInatSpecies = (inatConfig, config) => {
 
     let names = species.map(item => item.name); 
 
-    names = [ 
-        'Xanthoria parietina',
-        'Robinia pseudoacacia', 'Oxalis pes-caprae', 'Laurus nobilis', 'Bellis perennis',
-        'Foeniculum vulgare', 'Gleditsia triacanthos', 'Bellis perennis', 'Daucus carota'
-    ];
+    // names = [ 
+    //     'Xanthoria parietina',
+    //     'Robinia pseudoacacia', 'Oxalis pes-caprae', 'Laurus nobilis', 'Bellis perennis',
+    //     'Foeniculum vulgare', 'Gleditsia triacanthos', 'Bellis perennis', 'Daucus carota'
+    // ];
 
     const iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
 

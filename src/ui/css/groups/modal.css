@@ -62,4 +62,12 @@
         max-width: 50vw;
     }
      
+    #imageModal .modal-title span {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #imageModal .modal-title span > span:nth-child(1) {
+        margin: 0 .5rem 0 0;
+    }
 }

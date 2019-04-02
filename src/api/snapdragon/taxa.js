@@ -2637,4 +2637,19 @@ export const taxa = [
         genera: 481,
         species: 2277
     },
+    {
+        taxon: 'suborder',
+        name: 'Caelifera',
+        names: [ { language: "en", names: ['Grasshoppers']}],
+    },
+    {
+        taxon: 'family',
+        name: 'Gryllidae',
+        names: [ { language: "en", names: ['True Crickets']}],
+    },
+    {
+        taxon: 'order',
+        name: 'Blattodea',
+        names: [ { language: "en", names: ['Cockroaches']}],
+    },
 ];

@@ -60,7 +60,7 @@ export const renderFeatures = (item, traits, config, parent, mode) => {
                 if(R.contains(symbiont, symbionts)) {
                     return {
                         as: trait.name,
-                        type: trait.type,
+                        type: trait.type || '---',
                         symbiont: getVernacularName(symbiont)
                     };
                 }

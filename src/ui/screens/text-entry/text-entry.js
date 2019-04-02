@@ -220,7 +220,9 @@ const renderLandscape = (item, config, question) => {
     let selectedBlock;
 
     input.addEventListener('input', event => {
-        const entry = event.data.toLowerCase();        
+        if(!event.data) return;
+        let entry = event.data.toLowerCase();
+        entry = entry === ' ' ? '&nbsp;' : entry;
         entries.push(entry);
         selectedBlock = blockArray.find(block => block.innerHTML === entry);
         selectedBlock.classList.add('active');

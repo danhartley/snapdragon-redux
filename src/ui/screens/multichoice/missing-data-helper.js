@@ -1,18 +1,25 @@
 import * as R from 'ramda';
 
 import { getGlossary } from 'api/glossary/glossary';
+import { epithets } from 'api/botanical-latin';
 import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 
-export const rebindLayoutState = (layout, config, item) => {
+export const rebindLayoutState = (layout, item) => {
       
-    const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa), 'common' ]));
+    const random = utils.getRandomInt(2);
 
-    const definition = definitions[0];
+    let definition, nextLayout, epithet;
 
-    let _layout = {
-        name: "screen-definitions",
+    switch(random) {
+      
+      case 0:
+
+      const epithet = utils.shuffleArray(epithets)[0];
+
+      nextLayout = {
+        name: "screen-epithets",
         type: "test",
         score: 1,
         screens: [
@@ -21,16 +28,44 @@ export const rebindLayoutState = (layout, config, item) => {
             "domain": "collection"
           },
           {
-            "name": "definition",
+            "name": "epithet",
             "domain": "collection"
           }
         ]
-    };
+      };
 
-    _layout.definition = definition;
+      nextLayout.epithet = epithet;
 
-    _layout = { ...R.clone(layout), ..._layout };
+      break;
 
-    actions.boundNextLayout(_layout);
-    // Use different test… e.g. epithet, definition, etc. and unlimite`d…
+      case 1: 
+
+        const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa), 'common' ]));
+
+        definition = definitions[0];
+    
+        nextLayout = {
+            name: "screen-definitions",
+            type: "test",
+            score: 1,
+            screens: [
+              {
+                "name": "specimen-images",
+                "domain": "collection"
+              },
+              {
+                "name": "definition",
+                "domain": "collection"
+              }
+            ]
+        };
+
+        nextLayout.definition = definition;
+
+        break;
+    }
+
+    nextLayout = { ...R.clone(layout), ...nextLayout };
+
+    actions.boundNextLayout(nextLayout);
 };

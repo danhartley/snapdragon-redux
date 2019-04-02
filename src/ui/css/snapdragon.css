@@ -228,7 +228,7 @@ a.dropdown-item {
   border-bottom: solid .05rem !important;
   color: inherit;
   cursor: pointer;
-  padding: 0 0 0.1rem 0 !important;
+  /* padding: 0 0 0.1rem 0 !important; */
   font-size: 0.8rem;
   text-transform: uppercase;
 }
@@ -409,10 +409,6 @@ a.dropdown-item {
   padding: 0 2rem;
 }
 
-/* .taxon.revision.card .data-box {
-  margin: 0 0.5rem 0 0;
-} */
-
 .species.card-small {
   padding: 0.5rem;
 }
@@ -424,6 +420,7 @@ a.dropdown-item {
 
 .binomial {
   font-style: italic;
+  text-transform: initial;
 }
 
 .list-group-collection {
@@ -2114,6 +2111,10 @@ a.collection-disabled {
   font-size: 2rem;
 }
 
+.example-guide-link span {
+  font-size: .9rem;
+}
+
 .delete-guide-link > span.active {
   color: var(--snap-alert) !important; 
   pointer-events: initial;
@@ -2161,7 +2162,7 @@ a.collection-disabled {
 
 .snapdragon-create-guide {
   position: absolute;
-  bottom: .5rem;
+  bottom: 1rem;
   right: 1rem;
 }
 
@@ -2184,7 +2185,7 @@ a.collection-disabled {
 .snapdragon-create-guide .toggle-links {
   display: flex;
   justify-content: flex-end;
-  margin-right: .25rem;
+  margin: .5rem .25rem 0 0;
 }
 
 .snapdragon-create-guide .edit-guide-link {

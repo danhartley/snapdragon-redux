@@ -26,6 +26,7 @@ const getTraits = SD => {
             { name: SD.name.HIBERNATING_STAGE, value: `${SD.developmentStage.CATERPILLAR}, ${SD.developmentStage.PUPA}` },
             { name: SD.name.WING_SPAN, value: '3.8-4.4cm' },
             { name: SD.name.HABITAT, value: `${SD.habitat.MEADOW}, ${SD.habitat.WOODLAND}, ${SD.habitat.HEDGEROWS}` },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.MONANDROUS },
         ] },
         { name: 'Maniola jurtina', 
         symbionts: [ 
@@ -96,6 +97,39 @@ const getTraits = SD => {
             { name: SD.name.POLLINATION, value: 'Plantae' },
             { name: SD.name.HOST, value: 'Varroa mite', type: SD.symbiosis.PARASITISM },
             { name: SD.name.HOST, value: 'Colony collapse disorder', type: SD.symbiosis.PARASITISM },
+        ] },
+        { name: 'Mantis Religiosa', 
+        symbionts: [
+            'Caelifera', 'Gryllidae', 'Blattodea'
+        ],
+        traits: [
+            { name: SD.name.DISPLAY, value: SD.display.DIEMATIC },
+            { name: SD.name.DISPLAY, value: SD.display.SEXUAL_DIMORPHISM },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.SEXUAL_CANNIBALISM },
+            { name: SD.name.TROPHIC_LEVEL, value: SD.trophicLevel.SECONDARY_CONSUMER },
+            { name: SD.name.PREY, value: 'Caelifera', type: SD.symbiosis.PREDATION },
+            { name: SD.name.PREY, value: 'Gryllidae', type: SD.symbiosis.PREDATION },
+            { name: SD.name.PREY, value: 'Blattodea', type: SD.symbiosis.PREDATION },
+            { name: SD.name.SENSORY_ACUITY, value: SD.sense.SIGHT },
+            { name: SD.name.SENSORY_ACUITY, value: SD.sense.MOVEMENT },
+        ] },
+        { name: 'Bombus terrestris', 
+        symbionts: [
+            'Primula veris', 'Brassica napus', 'Trifolium pratense'
+        ],
+        traits: [
+            { name: SD.name.ORGANISATION, value: SD.organisation.EUSOCIAL },
+            { name: SD.role.POLLINATOR, value: 'Primula veris', type: SD.symbiosis.MUTUALISM },
+            { name: SD.role.POLLINATOR, value: 'Brassica napus', type: SD.symbiosis.MUTUALISM },
+            { name: SD.role.POLLINATOR, value: 'Trifolium pratense', type: SD.symbiosis.MUTUALISM },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.MONANDROUS },
+        ] },
+        { name: 'Bombus pratorum', 
+        symbionts: [
+            
+        ],
+        traits: [
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.MONANDROUS },
         ] },
     ];
 };

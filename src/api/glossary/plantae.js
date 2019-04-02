@@ -251,7 +251,7 @@ export const plantae = [
     },
     {
         term: 'Dehiscence',
-        definition: 'Splitting along a built-in line of weakness in a plant structure in order to release its contents, and is common among fruits, anthers and sporangia.',
+        definition: 'Splitting along a built-in line of weakness in a plant structure in order to release its contents, common among fruits, anthers and sporangia.',
         wiki: 'https://en.wikipedia.org/wiki/Dehiscence_(botany)'
     },
     {

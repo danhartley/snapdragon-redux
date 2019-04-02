@@ -63,7 +63,9 @@ export const english = {
         VOICE: 'Voice',
         HEIGHT: 'Height',
         COMPOUND: 'Leaf type',
-        REPRODUCTION: 'Reproduction',        
+        REPRODUCTION: 'Reproduction',
+        DISPLAY: 'Display',
+        BEHAVIOUR: 'behaviour',
         
         SHELTER: 'Shelter',
         PREDATOR: 'Predator',
@@ -95,6 +97,7 @@ export const english = {
         YOUNG: 'Young',
         GESTATION: 'Gestation',
         WEANING: 'Weaning',
+        SENSORY_ACUITY: 'Sensory acuity',
         
         FEMALE: 'Female',
         MALE: 'Male',        
@@ -475,7 +478,8 @@ export const english = {
         SPECIALIST: 'Specialist',
         GENERALIST: 'Generalist',
         PIONEEER: 'Pioneeer',
-        INVASIVE: 'Invasive'
+        INVASIVE: 'Invasive',
+        POLLINATOR: 'Pollinator'
     },
     fruitType: {
         DRUPE: 'Drupe',
@@ -499,5 +503,17 @@ export const english = {
         ANNUAL: 'annual',
         BIENNIAL: 'Biennial',
         PERENNIAL: 'Perennial'
+    },
+    display: {
+        DIEMATIC: 'diematic',
+        SEXUAL_DIMORPHISM: 'Sexual dimorphism',        
+    },
+    behaviour: {
+        SEXUAL_CANNIBALISM: 'Sexual cannibalism',
+        MONANDROUS: 'Monandrous'
+    },
+    sense: {
+        SIGHT: 'Sight',
+        MOVEMENT: 'Movement'
     }
 };

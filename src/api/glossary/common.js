@@ -89,4 +89,33 @@ export const commmon = [
         definition: 'The position an organism occupies in a food chain.',
         wiki: 'https://en.wikipedia.org/wiki/Trophic_level'
     },
+    {
+        term: 'Deimatic behaviour',
+        definition: 'Pattern of bluffing behaviour in an animal that lacks strong defences, such as conspicuous eyespots.',
+        wiki: 'https://en.wikipedia.org/wiki/Deimatic_behaviour'
+    },
+    {
+        term: 'Sexual dimorphism',
+        definition: 'Condition where the two sexes of the same species (many animals, some plants) exhibit different characteristics beyond differences in their sexual organs.',
+        wiki: 'https://en.wikipedia.org/wiki/Sexual_dimorphism'
+    },
+    {
+        term: 'Sexual cannibalism',
+        definition: 'When a female cannibalizes her mate prior to, during, or after copulation.',
+        wiki: 'https://en.wikipedia.org/wiki/Sexual_cannibalism'
+    },
+    {
+        term: 'Conspecific',
+        definition: 'Belonging to the same species.'
+    },
+    {
+        term: 'Monandrous (animals)',
+        definition: 'Females has one mate at a time.',
+        wiki: 'https://en.wikipedia.org/wiki/Monandrous'
+    },
+    {
+        term: 'Monandrous (plants)',
+        definition: 'Having  a single stamen.',
+        wiki: 'https://en.wikipedia.org/wiki/Monandrous'
+    },
 ];

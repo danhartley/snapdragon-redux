@@ -28,8 +28,9 @@ const toggleLesson = makeActionCreator(types.STOP_START_LESSON);
 const selectCollection = makeActionCreator(types.SELECT_COLLECTION);
 const updateLanguage = makeActionCreator(types.UPDATE_LANGUAGE);
 const newPage = makeActionCreator(types.CHANGE_PAGE);
-const updateUI = makeActionCreator(types.UPDATE_UI);
+// const updateUI = makeActionCreator(types.UPDATE_UI);
 const updateEnums = makeActionCreator(types.UPDATE_ENUMS);
+// const skipItem = makeActionCreator(types.SKIP_ITEM);
 
 const boundchangeLessonPlan = data => store.dispatch(changeLessonPlan(data));
 const boundchangeLessonPlans = data => store.dispatch(changeLessonPlans(data));
@@ -48,8 +49,9 @@ const boundToggleLesson = data => store.dispatch(toggleLesson(data));
 const boundSelectCollection = data => store.dispatch(selectCollection(data));
 const boundUpdateLanguage = data => store.dispatch(updateLanguage(data));
 const boundNewPage = data => store.dispatch(newPage(data));
-const boundUpdateUI = data => store.dispatch(updateUI(data));
+// const boundUpdateUI = data => store.dispatch(updateUI(data));
 const boundUpdateEnums = data => store.dispatch(updateEnums(data));
+// const boundSkipItem = data => store.dispatch(skipItem(data));
 
 export const actions = {
     boundchangeLessonPlans,
@@ -69,6 +71,7 @@ export const actions = {
     boundSelectCollection,
     boundUpdateLanguage,
     boundNewPage,
-    boundUpdateUI,
-    boundUpdateEnums
+    // boundUpdateUI,
+    boundUpdateEnums,
+    // boundSkipItem
 };

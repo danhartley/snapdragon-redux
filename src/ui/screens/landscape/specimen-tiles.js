@@ -21,7 +21,7 @@ export const renderSpecimenTiles = (collection) => {
     // }
 };
 
-export const renderItemSpecimenTiles = item => {
+const renderItemSpecimenTiles = item => {
     
     const { config, collection, layout } = store.getState();
 

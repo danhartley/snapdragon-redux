@@ -552,6 +552,11 @@
     background-color: gray;
   }
 
+  #exampleGuide .lesson-taxa {
+    border-bottom: 1px solid var(--snap-dd-collection-bg-active);
+    text-align: left;
+  }
+
   /* prevent child elements of listener triggering an event */  
   #exampleGuide .btn.btn-secondary > * {
     pointer-events: none;
@@ -591,7 +596,7 @@
     background-color: gray;
   }
   
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
 
     .modal-guide-wrapper .modal-body .btn-modal {
         width: fit-content;

@@ -28,10 +28,16 @@ export const speciesPendingSpinner = (config) => {
         return i + "th";
     }
 
+    let unsubscribe;
+
     const callback = request => {
         const feedback = document.querySelector('.js-request-feedback');
-        feedback.innerHTML = `Making ${OrdinalSuffixOf(request.page)} request of ${request.numberOfRequests}`;
+        if(feedback) {
+            feedback.innerHTML = `Making ${OrdinalSuffixOf(request.page)} request of ${request.numberOfRequests}`;
+        } else {
+            unsubscribe(callback);
+        }
     };
 
-    listenToInatRequests(callback);
+    unsubscribe = listenToInatRequests(callback);
 };
