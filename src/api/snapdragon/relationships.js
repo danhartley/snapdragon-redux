@@ -1,193 +1,205 @@
 //https://en.wikipedia.org/wiki/List_of_crop_speciesAs_pollinated_by_bees
 
-const pollination = [
+export const relationships = [
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Pastinaca sativa' ], taxon: 'species' },
-        speciesB: [{names: [ 'Amphipyra tragopoginis' ] ,taxon: 'species' }]
+        speciesB: { names: [ 'Amphipyra tragopoginis' ], taxon: 'species' }
     },
     {
-        type: [ 'pollination', 'pollen', 'shelter' ],
+        type: [ 'shelter' ],
         speciesA: { names: [ 'Ficus carica' ], taxon: 'species' },
-        speciesB: [{names: [ 'Blastophaga psenes' ], taxon: 'species' }]       
+        speciesB: { names: [ 'Blastophaga psenes' ], taxon: 'species' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Apiaceae' ], taxon: 'family' },
-        speciesB: [
-            { names: [ 'Xylocopinae', 'Megachilidae', 'Osmia' ], taxon: 'genus' },
-            { names: [ 'Papilio polyxenes' ], taxon: 'species' }
-        ]
+        speciesB: { names: [ 'Xylocopinae', 'Megachilidae', 'Osmia' ], taxon: 'genus' }
+    },
+    {
+        type: [ 'pollination' ],
+        speciesA: { names: [ 'Apiaceae' ], taxon: 'family' },
+        speciesB: { names: [ 'Papilio polyxenes' ], taxon: 'species' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Trifolium pratense' ], taxon: 'species' },
-        speciesB: [{names: [ 'Bombus terrestris' ], taxon: 'species' }]
+        speciesB: { names: [ 'Bombus terrestris' ], taxon: 'species' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Primula veris' ], taxon: 'species' },
-        speciesB: [{names: [ 'Bombus terrestris' ], taxon: 'species' }]
+        speciesB: { names: [ 'Bombus terrestris' ], taxon: 'species' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Brassica napus' ], taxon: 'species' },
-        speciesB: [{names: [ 'Bombus terrestris' ], taxon: 'species' }]
+        speciesB: { names: [ 'Bombus terrestris' ], taxon: 'species' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Campanula rotundifolia' ], taxon: 'species' },
-        speciesB: [{names: [ 'Hylaeus' ], taxon: 'genus' }]     
+        speciesB: { names: [ 'Hylaeus' ], taxon: 'genus' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'multiple' ] },
-        speciesB: [{names: [ 'Bombus insularis' ], type: 'species' }]
+        speciesB: { names: [ 'Bombus insularis' ], type: 'species' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'multiple' ] },
-        speciesB: [{names: [ 'Osmia lignaria' ], taxon: 'species' }]
+        speciesB: { names: [ 'Osmia lignaria' ], taxon: 'species' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Borago officinalis' ], taxon: 'species' },
-        speciesB: [{names: [ 'Bombus pascuorum', 'Bombus pratorum', 'Bombus terrestris', 'Bombus lucorum' ], taxon: 'species' }]
+        speciesB: { names: [ 'Bombus pascuorum', 'Bombus pratorum', 'Bombus terrestris', 'Bombus lucorum' ], taxon: 'species' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Tanacetum vulgare' ], taxon: 'species' },
-        speciesB: [{names: [ 'Apidae' ], taxon: 'family' }]      
+        speciesB: { names: [ 'Apidae' ], taxon: 'family' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Helichrysum italicum' ], taxon: 'species' },
-        speciesB: [{names: [ 'Apidae' ], taxon: 'family' }]
+        speciesB: { names: [ 'Apidae' ], taxon: 'family' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Allium schoenoprasum' ], taxon: 'species' },
-        speciesB: [{names: [ 'Apidae' ], taxon: 'family' }]   
+        speciesB: { names: [ 'Apidae' ], taxon: 'family' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Angelica archangelica' ], taxon: 'species' },
-        speciesB: [{names: [ 'Insecta' ], taxon: 'class' }]
+        speciesB: { names: [ 'Insecta' ], taxon: 'class' }
     },    
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Thymus vulgaris' ], taxon: 'species' },
-        speciesB: [{names: [ 'Apidae' ], taxon: 'family' }]
+        speciesB: { names: [ 'Apidae' ], taxon: 'family' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Salvia officinalis' ], taxon: 'species' },
-        speciesB: [{names: [ 'Bombus hortorum' ], taxon: 'species' }]
+        speciesB: { names: [ 'Bombus hortorum' ], taxon: 'species' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Lamiaceae' ], taxon: 'family' },
-        speciesB: [
-            {names: [ 'Insecta' ], taxon: 'class' },
-            {names: [ 'Bombus' ], taxon: 'genus' },
-            {names: [ 'Apidae' ], taxon: 'family' },
-            {names: [ 'Bombus hortorum' ], taxon: 'species' }
-        ]
+        speciesB: { names: [ 'Insecta' ], taxon: 'class' }
+    },
+    {
+        type: [ 'pollination' ],
+        speciesA: { names: [ 'Lamiaceae' ], taxon: 'family' },
+        speciesB: { names: [ 'Bombus' ], taxon: 'genus' }
+    },
+    {
+        type: [ 'pollination' ],
+        speciesA: { names: [ 'Lamiaceae' ], taxon: 'family' },
+        speciesB: { names: [ 'Apidae' ], taxon: 'family' }
+    },
+    {
+        type: [ 'pollination' ],
+        speciesA: { names: [ 'Lamiaceae' ], taxon: 'family' },
+        speciesB: { names: [ 'Bombus hortorum' ], taxon: 'species' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Digitalis purpurea' ], taxon: 'species' },
-        speciesB: [{names: [ 'Bombus hortorum' ], taxon: 'species' }] 
+        speciesB: { names: [ 'Bombus hortorum' ], taxon: 'species' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Hyssopus officinalis' ], taxon: 'species' },
-        speciesB: [{names: [ 'Insecta' ], taxon: 'class' }]
+        speciesB: { names: [ 'Insecta' ], taxon: 'class' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Origanum vulgare' ], taxon: 'species' },
-        speciesB: [{names: [ 'Insecta' ], taxon: 'class' }]
+        speciesB: { names: [ 'Insecta' ], taxon: 'class' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Papaver rhoeas' ], taxon: 'species' },
-        speciesB: [{names: [ 'Bombus', 'Xylocopa' ], taxon: 'genus' }]
+        speciesB: { names: [ 'Bombus', 'Xylocopa' ], taxon: 'genus' }
     },
     {
         type: [ 'pollination', 'pollen' ],
         speciesA: { names: [ 'Papaver rhoeas' ], taxon: 'species' },
-        speciesB: [{names: [ 'Osmia' ], taxon: 'family' }]
+        speciesB: { names: [ 'Osmia' ], taxon: 'family' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Campanula' ], taxon: 'genus' },
-        speciesB: [{names: [ 'Bombus' ], taxon: 'genus' }]
+        speciesB: { names: [ 'Bombus' ], taxon: 'genus' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Lamium' ], taxon: 'genus' },
-        speciesB: [{names: [ 'Bombus' ], taxon: 'genus' }]
+        speciesB: { names: [ 'Bombus' ], taxon: 'genus' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Trifolium' ], taxon: 'genus' },
-        speciesB: [{names: [ 'Bombus' ], taxon: 'genus' }]
+        speciesB: { names: [ 'Bombus' ], taxon: 'genus' }
     },
     {
         type: [ 'pollination', 'forage' ],
         speciesA: { names: [ 'Rosmarinus officinalis' ], taxon: 'species' },
-        speciesB: [{names: [ 'Bombus' ], taxon: 'genus' }]
+        speciesB: { names: [ 'Bombus' ], taxon: 'genus' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Carduus' ], taxon: 'genus' },
-        speciesB: [{names: [ 'Bombus' ], taxon: 'genus' }]
+        speciesB: { names: [ 'Bombus' ], taxon: 'genus' }
     },
     {
         type: [ 'pollination', 'nectar' ],
         speciesA: { names: [ 'Geranium' ], taxon: 'genus' },
-        speciesB: [{names: [ 'Bombus' ], taxon: 'genus' }]
+        speciesB: { names: [ 'Bombus' ], taxon: 'genus' }
     },
     {
         type: [ 'pollination', 'nectar' ],
         speciesA: { names: [ 'Ribes' ], taxon: 'genus' },
-        speciesB: [{names: [ 'Bombus' ], taxon: 'genus' }]
+        speciesB: { names: [ 'Bombus' ], taxon: 'genus' }
     },
     {
         type: [ 'pollination', 'pollen' ],
         speciesA: { names: [ 'Rosa' ], taxon: 'genus' },
-        speciesB: [{names: [ 'Bombus' ], taxon: 'genus' }]
+        speciesB: { names: [ 'Bombus' ], taxon: 'genus' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Erica' ], taxon: 'genus' },
-        speciesB: [{names: [ 'Apidae' ], taxon: 'family' }]
+        speciesB: { names: [ 'Apidae' ], taxon: 'family' }
     },
     {
         type: [ 'pollination', 'nectar' ],
         speciesA: { names: [ 'Menth' ], taxon: 'genus' },
-        speciesB: [{names: [ 'Insecta' ], taxon: 'class' }]
+        speciesB: { names: [ 'Insecta' ], taxon: 'class' }
     },
     {
         type: [ 'pollination', 'nectar' ],
         speciesA: { names: [ 'Lavendula' ], taxon: 'genus' },
-        speciesB: [{names: [ 'Insecta' ], taxon: 'class' }]
+        speciesB: { names: [ 'Insecta' ], taxon: 'class' }
     },
     {
         type: [ 'pollination', 'nectar' ],
         speciesA: { names: [ 'Pulicaria dysenterica' ], taxon: 'species' },
-        speciesB: [{names: [ 'Insecta' ], taxon: 'class' }]
+        speciesB: { names: [ 'Insecta' ], taxon: 'class' }
     },
     {
         type: [ 'pollination', 'nectar', 'shelter' ],
         speciesA: { names: [ 'Hedera helix' ], taxon: 'species' },
-        speciesB: [{names: [ 'Apidae' ], taxon: 'family' }]
+        speciesB: { names: [ 'Apidae' ], taxon: 'family' }
     },
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Rutaceae' ], taxon: 'family' },
-        animal: [{ names: [ 'Insecta' ], taxon: 'class' }]
+        animal: { names: [ 'Insecta' ], taxon: 'class' }
     },
     {
         type: [ 'predation' ],
@@ -419,14 +431,32 @@ const pollination = [
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Prunus avium' ], taxon: 'species' },
-        speciesB: [{
-             names: [ 'Apis' ], taxon: 'genus' },
-            { names: [ 'Xylocopa' ], taxon: 'genus' },
-            { names: [ 'Megachile' ], taxon: 'genus' },
-            { names: [ 'Osmia' ], taxon: 'genus' },
-            { names: [ 'Bombus' ], taxon: 'genus' },
-            { names: [ 'Diptera' ], taxon: 'order' }
-        ]
+        speciesB: { names: [ 'Apis' ], taxon: 'genus' },
+    },
+    {
+        type: [ 'pollination' ],
+        speciesA: { names: [ 'Prunus avium' ], taxon: 'species' },
+        speciesB: { names: [ 'Xylocopa' ], taxon: 'genus' },
+    },
+    {
+        type: [ 'pollination' ],
+        speciesA: { names: [ 'Prunus avium' ], taxon: 'species' },
+        speciesB: { names: [ 'Megachile' ], taxon: 'genus' },
+    },
+    {
+        type: [ 'pollination' ],
+        speciesA: { names: [ 'Prunus avium' ], taxon: 'species' },
+        speciesB: { names: [ 'Osmia' ], taxon: 'genus' },
+    },
+    {
+        type: [ 'pollination' ],
+        speciesA: { names: [ 'Prunus avium' ], taxon: 'species' },
+        speciesB: { names: [ 'Bombus' ], taxon: 'genus' },
+    },
+    {
+        type: [ 'pollination' ],
+        speciesA: { names: [ 'Prunus avium' ], taxon: 'species' },
+        speciesB: { names: [ 'Diptera' ], taxon: 'order' },
     },
     {
         type: [ 'pollination' ],
@@ -500,6 +530,6 @@ const pollination = [
     {
         type: [ 'pollination' ],
         speciesA: { names: [ 'Citrus limon' ], taxon: 'species' },
-        speciesB: [{ names: [ 'Apis' ], taxon: 'genus' }]
+        speciesB: {  names: [ 'Apis' ], taxon: 'genus' }
     },
 ];

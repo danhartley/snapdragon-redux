@@ -207,4 +207,66 @@ export const plantae = [
         definition: 'Large, central, and dominant root from which other roots sprout laterally in dicots, e.g. carrot.',
         wiki: 'https://en.wikipedia.org/wiki/Taproot'
     },    
+    {
+        term: 'Pome',
+        definition: 'Type of fruit produced by flowering plants in the subtribe Malinae of the family Rosaceae.',
+        wiki: 'https://en.wikipedia.org/wiki/Pome'
+    },
+    {
+        term: 'Drupe',
+        definition: 'Indehiscent fruit in which an outer fleshy part surrounds a single shell of hardened endocarp with a seed inside.',
+        wiki: 'https://en.wikipedia.org/wiki/Drupe'
+    },
+    {
+        term: 'Berry',
+        definition: 'A fruit produced from the ovary of a single flower in which the outer layer of the ovary wall develops into an edible fleshy portion.',
+        wiki: 'https://en.wikipedia.org/wiki/Berry'
+    },
+    {
+        term: 'Baccate, bacciferous',
+        definition: 'Plant bearing berries.',
+    },
+    {
+        term: 'Aggregate fruit',
+        definition: 'A fruit that develops from the merger of several ovaries that were separate in a single flower.',
+        wiki: 'https://en.wikipedia.org/wiki/Aggregate_fruit'
+    },
+    {
+        term: 'Legume',
+        definition: 'Fruit from the Fabaceae family (also pulse).',
+        wiki: 'https://en.wikipedia.org/wiki/Legume'
+    },
+    {
+        term: 'Capsule',
+        definition: 'Simple, dry, though rarely fleshy dehiscent fruit produced by many species of angiosperms.',
+        wiki: 'https://en.wikipedia.org/wiki/Capsule_(fruit)'
+    },
+    {
+        term: 'Xylem',
+        definition: 'Tissue which transports water and nutrients from roots to shoots and leaves.'
+    },
+    {
+        term: 'Phloem',
+        definition: 'Tissue which transports products of photosynthesis ( e.g. sugars) throughout vascular plants (translocation).'
+    },
+    {
+        term: 'Dehiscence',
+        definition: 'Splitting along a built-in line of weakness in a plant structure in order to release its contents, and is common among fruits, anthers and sporangia.',
+        wiki: 'https://en.wikipedia.org/wiki/Dehiscence_(botany)'
+    },
+    {
+        term: 'Nut',
+        definition: 'Fruit composed of an inedible hard shell and a seed, which is generally edible.',
+        wiki: 'https://en.wikipedia.org/wiki/Nut_(fruit)'
+    },
+    {
+        term: 'Grain',
+        definition: 'Small, hard, dry seed, with or without an attached hull or fruit layer, harvested for human or animal consumption.',
+        wiki: 'https://en.wikipedia.org/wiki/Grain'
+    },
+    {
+        term: 'Multiple fruit',
+        definition: 'Fruiting bodies formed from a cluster of fruiting flowers, the inflorescence.',
+        wiki: 'https://en.wikipedia.org/wiki/Multiple_fruit'
+    },
 ];

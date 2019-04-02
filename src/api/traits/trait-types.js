@@ -21,6 +21,7 @@ export let colour = english.colour;
 export let usage = english.usage;
 export let nonTaxaType = english.nonTaxaType;
 export let boolean = english.boolean;
+export let whether = english.whether;
 export let element = english.element;
 export let rank = english.rank;
 export let blade = english.blade;
@@ -44,6 +45,10 @@ export let male = english.male;
 export let diet = english.diet;
 export let marginType = english.marginType;
 export let soilType = english.soilType;
+export let organisation = english.organisation;
+export let role = english.role;
+export let migratory = english.migratory;
+export let fruitType = english.fruitType;
 
 let language;
 
@@ -62,7 +67,11 @@ export const updateLanguage = (config) => {
             capShape = { ...english.capShape, ...{ type: 'capShape' }, ...{ name: english.name.CAP_SHAPE } };
             hymeniumType = { ...english.hymeniumType, ... { type: 'hymeniumType' }, ...{ name: english.name.HYMENIUM_TYPE } };
             thallusType = { ...english.thallusType, ... { type: 'thallusType' }, ...{ name: english.name.THALLUS_TYPE } };
-            trophicLevel = { ...english.trophicLevel, ... { type: 'trophicLevel' }, ...{ name: english.name.TROPHIC_LEVEL } };
+            // trophicLevel = { ...english.trophicLevel, ... { type: 'trophicLevel' }, ...{ name: english.name.TROPHIC_LEVEL } };
+            role = { ...english.role, ... { type: 'role' }, ...{ name: english.name.ROLE } };
+            migratory = { ...english.whether, ... { type: 'migratory' }, ...{ name: english.name.MIGRATORY } };
+            fruitType = { ...english.fruitType, ... { type: 'fruitType' }, ...{ name: english.name.FRUIT_TYPE } };
+            usage = { ...english.usage, ... { type: 'usage' }, ...{ name: english.name.USAGE } };
         break;
         case 'pt':
             name = portuguese.name;
@@ -91,6 +100,7 @@ export const updateLanguage = (config) => {
         usage,
         nonTaxaType,
         boolean,
+        whether,
         element,
         rank,
         leafType,
@@ -113,7 +123,11 @@ export const updateLanguage = (config) => {
         male,
         diet,
         marginType,
-        soilType
+        soilType,
+        organisation,
+        role,
+        migratory,
+        fruitType
     }
 
     actions.boundUpdateEnums(enums);   

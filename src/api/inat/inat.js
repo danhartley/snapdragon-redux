@@ -18,7 +18,12 @@ const getBasePath = config => {
 
 export const getInatSpecies = (inatConfig, config) => {
 
-    const names = species.map(item => item.name); 
+    let names = species.map(item => item.name); 
+
+    names = [ 
+        'Robinia pseudoacacia', 'Oxalis pes-caprae', 'Laurus nobilis', 'Bellis perennis',
+        'Foeniculum vulgare', 'Gleditsia triacanthos', 'Bellis perennis', 'Daucus carota'
+    ];
 
     const iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
 
@@ -81,7 +86,7 @@ export const getInatSpecies = (inatConfig, config) => {
 
     const observations = getAllInatObservations(config, inatConfig).then(observations => {
         return observations.map(observation => {
-            console.log(observation.taxon.name);
+            // console.log(observation.taxon.name);
             if(R.contains(observation.taxon.name, names)) {
                 const item = { ...species.find(item => item.name === observation.taxon.name) };
                 return { ...item, observationCount: observation.taxon.observations_count, iconicTaxon: observation.taxon.iconic_taxon_name };

@@ -44,7 +44,7 @@ setTimeout( () => {
         const observableMonths = utils.getObservableMonths(new Date(), 3);
 
         config.guide.season.observableMonths = observableMonths;
-        config.guide.season.type = 'months';
+        config.guide.season.type = config.guide.season.type || 'months';
 
         actions.boundUpdateConfig(config);
         actions.boundToggleLesson(counter);

@@ -241,7 +241,7 @@ export const renderMultiStrips = (collection) => {
 
         let help;
         
-        const speciesTraits = getTraits(enums).find(trait => trait.name === item.name);
+        const speciesTraits = getTraits(enums, item).find(trait => trait.name === item.name);
 
         const typedSpeciesTraits = traitTypes.typedSpecies(enums, speciesTraits);
 
@@ -307,8 +307,9 @@ export const renderMultiStrips = (collection) => {
     }
 } catch(e) {
 
-    console.log('Caught exception in render function:');
-    console.log(e);    
+    throw(e);
+    // console.log('Caught exception in render function:');
+    // console.log(e);    
     // console.log(`SCREEN NAME: ${screen.name}`);
 
     rebindLayoutState(layout, config, item);

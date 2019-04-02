@@ -51,7 +51,8 @@ export const renderFeatures = (item, traits, config, parent, mode) => {
     };
 
     if(speciesTraits && speciesTraits.symbionts) {
-        const symbionts = speciesTraits.symbionts.map(s => s.id);;
+
+        const symbionts = speciesTraits.symbionts.map(s => s.id);
         
         let symbiontTraits = speciesTraits.traits.map(trait => {
             const values = trait.value.split(',').map(t => t.trim());
@@ -59,7 +60,6 @@ export const renderFeatures = (item, traits, config, parent, mode) => {
                 if(R.contains(symbiont, symbionts)) {
                     return {
                         as: trait.name,
-                        role: trait.role || '',
                         type: trait.type,
                         symbiont: getVernacularName(symbiont)
                     };

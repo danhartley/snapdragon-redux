@@ -58,14 +58,6 @@ export const commmon = [
         definition: 'Land plants with lignified tissues (xylem) for conducting water and minerals.'
     },
     {
-        term: 'Xylem',
-        definition: 'Tissue which transports water and nutrients from roots to shoots and leaves.'
-    },
-    {
-        term: 'Phloem',
-        definition: 'Tissue which transports products of photosynthesis ( e.g. sugars) throughout vascular plants (translocation).'
-    },
-    {
         term: 'Frond',
         definition: 'Large, divided leaf (also thallus).'
     },

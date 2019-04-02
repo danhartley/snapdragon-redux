@@ -21,4 +21,9 @@ export const animalia = [
         definition: "Having young incapable of moving around on their own soon after hatching or being born.",
         wiki: 'https://en.wikipedia.org/wiki/Altriciality'
     },
+    {
+        term: "Eusociality",
+        definition: "Cooperative brood care, overlapping generations and division of labor into reproductive and non-reproductive groups.",
+        wiki: 'https://en.wikipedia.org/wiki/Eusociality'
+    },
 ];

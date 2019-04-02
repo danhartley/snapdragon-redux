@@ -638,4 +638,12 @@ export const epithets = [
         "latin" : ["physcia"],
         "en" : ["inflated, sausage-like"]
     },
+    {
+        "latin" : ["apis"],
+        "en" : ["bee"]
+    },
+    {
+        "latin" : ["mellifera"],
+        "en" : ["honey-bearing"]
+    },
 ];
