@@ -30,10 +30,13 @@ import { persistor } from 'redux/store';
 
 setTimeout( () => {
 
-    try {
+    let lessonPlan;
 
+    try {
         
-        const { config, counter: currentCounter, collection } = store.getState();
+        const { config, counter: currentCounter, lessonPlan: statePlans } = store.getState();
+
+        lessonPlan = statePlans;
 
         config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
         // config.isPortraitMode = window.matchMedia("(max-width: 1023px)").matches;
@@ -44,7 +47,7 @@ setTimeout( () => {
         const observableMonths = utils.getObservableMonths(new Date(), 3);
 
         config.guide.season.observableMonths = observableMonths;
-        config.guide.season.type = 'months';
+        config.guide.season.type = config.guide.season.type || 'months';
 
         actions.boundUpdateConfig(config);
         actions.boundToggleLesson(counter);
@@ -90,7 +93,6 @@ setTimeout( () => {
         }
     }
     catch(e) {
-        console.log(e);
         // persistor.purge();
         // window.location.reload(true);
     }

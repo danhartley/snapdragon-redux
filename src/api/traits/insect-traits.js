@@ -6,7 +6,7 @@ const getTraits = SD => {
         symbionts: [ 
             { id: 'Urtica dioica' }, { id: 'Buddleia'}, { id: 'Hedera'} ], 
         traits: [            
-            { name: SD.name.MIGRATORY, value: SD.boolean.YES },
+            { name: SD.name.MIGRATORY, value: SD.whether.YES },
             { name: SD.name.FOOD, value: `${SD.foodType.ROTTEN_FRUIT}, Buddleia`, type: SD.symbiosis.COMMENSALISM },
             { name: SD.name.CATERPILLAR_FOOD, value: 'Urtica dioica', type: SD.symbiosis.HERBIVORY },
             { name: SD.name.HIBERNATING_STAGE, value: SD.developmentStage.ADULT },
@@ -19,13 +19,14 @@ const getTraits = SD => {
         symbionts: [ 
             { id: 'Elymus repens' }, { id: 'Dactylis glomerata'} ], 
         traits: [
-            { name: SD.name.MIGRATORY, value: SD.boolean.NO },
+            { name: SD.name.MIGRATORY, value: SD.whether.NO },
             { name: SD.name.FOOD, value: `${SD.foodType.NECTAR}, ${SD.foodType.HONEYDEW}` },
             { name: SD.name.CATERPILLAR_FOOD, value: `${SD.foodType.GRASS}` },
             { name: SD.name.CATERPILLAR_FOOD, value: `Elymus repens, Dactylis glomerata`, type: SD.symbiosis.HERBIVORY },
             { name: SD.name.HIBERNATING_STAGE, value: `${SD.developmentStage.CATERPILLAR}, ${SD.developmentStage.PUPA}` },
             { name: SD.name.WING_SPAN, value: '3.8-4.4cm' },
             { name: SD.name.HABITAT, value: `${SD.habitat.MEADOW}, ${SD.habitat.WOODLAND}, ${SD.habitat.HEDGEROWS}` },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.MONANDROUS },
         ] },
         { name: 'Maniola jurtina', 
         symbionts: [ 
@@ -51,7 +52,7 @@ const getTraits = SD => {
             { name: SD.name.HABITAT, value: `${SD.habitat.URBAN}, ${SD.habitat.VALLEYS}` },
             { name: SD.name.CATERPILLAR_FOOD, value: `Brassica oleracea, Armoracia rusticana`, type: SD.symbiosis.HERBIVORY },
             { name: SD.name.CATERPILLAR_FOOD, value: `Raphanus raphanistrum`, type: SD.symbiosis.HERBIVORY },
-            { name: SD.name.MIGRATORY, value: SD.boolean.YES },
+            { name: SD.name.MIGRATORY, value: SD.whether.YES },
             { name: SD.name.FOOD, value: `${SD.foodType.NECTAR}, Brassica rapa`, type: SD.symbiosis.MUTUALISM },
         ] },
         { name: 'Charaxes jasius', 
@@ -79,7 +80,7 @@ const getTraits = SD => {
             symbionts: [ 
                 { id: 'Daucus carota' }, { id: 'Angelica sylvestris'}, { id: 'Foeniculum vulgare'} ], 
             traits: [            
-            { name: SD.name.MIGRATORY, value: SD.boolean.YES },
+            { name: SD.name.MIGRATORY, value: SD.whether.YES },
             { name: SD.name.WING_SPAN, value: '6.5-8.6cm' },
             { name: SD.name.FOOD, value: `${SD.foodType.NECTAR}` },
             { name: SD.name.CATERPILLAR_FOOD, value: `Daucus carota, Angelica sylvestris`, type: SD.symbiosis.HERBIVORY },
@@ -87,8 +88,48 @@ const getTraits = SD => {
             { name: SD.name.CATERPILLAR_COLOUR, value: `${SD.colour.WHITE}, ${SD.colour.BLACK}, ${SD.colour.GREEN}` },
             { name: SD.name.HABITAT, value: `${SD.habitat.MEADOW}, ${SD.habitat.HILLS}` },
         ] },
-        { name: 'Apis mellifera', traits: [
+        { name: 'Apis mellifera', 
+        symbionts: [
+            { id: 'Varroa mite'}
+        ],
+        traits: [
+            { name: SD.name.ORGANISATION, value: SD.organisation.EUSOCIAL },
+            { name: SD.name.POLLINATION, value: 'Plantae' },
+            { name: SD.name.HOST, value: 'Varroa mite', type: SD.symbiosis.PARASITISM },
+            { name: SD.name.HOST, value: 'Colony collapse disorder', type: SD.symbiosis.PARASITISM },
+        ] },
+        { name: 'Mantis Religiosa', 
+        symbionts: [
+            'Caelifera', 'Gryllidae', 'Blattodea'
+        ],
+        traits: [
+            { name: SD.name.DISPLAY, value: SD.display.DIEMATIC },
+            { name: SD.name.DISPLAY, value: SD.display.SEXUAL_DIMORPHISM },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.SEXUAL_CANNIBALISM },
+            { name: SD.name.TROPHIC_LEVEL, value: SD.trophicLevel.SECONDARY_CONSUMER },
+            { name: SD.name.PREY, value: 'Caelifera', type: SD.symbiosis.PREDATION },
+            { name: SD.name.PREY, value: 'Gryllidae', type: SD.symbiosis.PREDATION },
+            { name: SD.name.PREY, value: 'Blattodea', type: SD.symbiosis.PREDATION },
+            { name: SD.name.SENSORY_ACUITY, value: SD.sense.SIGHT },
+            { name: SD.name.SENSORY_ACUITY, value: SD.sense.MOVEMENT },
+        ] },
+        { name: 'Bombus terrestris', 
+        symbionts: [
+            'Primula veris', 'Brassica napus', 'Trifolium pratense'
+        ],
+        traits: [
+            { name: SD.name.ORGANISATION, value: SD.organisation.EUSOCIAL },
+            { name: SD.role.POLLINATOR, value: 'Primula veris', type: SD.symbiosis.MUTUALISM },
+            { name: SD.role.POLLINATOR, value: 'Brassica napus', type: SD.symbiosis.MUTUALISM },
+            { name: SD.role.POLLINATOR, value: 'Trifolium pratense', type: SD.symbiosis.MUTUALISM },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.MONANDROUS },
+        ] },
+        { name: 'Bombus pratorum', 
+        symbionts: [
             
+        ],
+        traits: [
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.MONANDROUS },
         ] },
     ];
 };

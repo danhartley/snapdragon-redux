@@ -18,9 +18,11 @@ const CHANGE_COLLECTION_ITEMS = '[CHANGE_COLLECTION_ITEMS] Change collection ite
 const NEXT_LEVEL = '[NEXT_LEVEL] Go to next level';
 const UPDATE_LANGUAGE = '[UPDATE_LANGUAGE] Update the current language';
 
-const UPDATE_UI = '[UPDATE_UI] update UI elements';
+// const UPDATE_UI = '[UPDATE_UI] Update UI elements';
 
-const UPDATE_ENUMS = '[UPDATE_ENUMS] update enums by config language';
+const UPDATE_ENUMS = '[UPDATE_ENUMS] Update enums by config language';
+
+// const SKIP_ITEM = '[SKIP_ITEM] Skip failed test, move to next item';
 
 export const types = {
     CHANGE_LESSON_PLANS,
@@ -41,6 +43,7 @@ export const types = {
     // SELECT_STUDY_METHOD,
     UPDATE_LANGUAGE,
     CHANGE_PAGE,
-    UPDATE_UI,
-    UPDATE_ENUMS
+    // UPDATE_UI,
+    UPDATE_ENUMS,
+    // SKIP_ITEM
 };

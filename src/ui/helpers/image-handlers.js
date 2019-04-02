@@ -2,6 +2,14 @@ import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
 
+const stripImageUrlOfScale = url => {
+    if(!url) return '';
+    url = url.replace('.260x190.jpg', '');
+    url = url.replace('.98x68.jpg', '');
+    url = url.replace('.jpg', '');
+    return url;
+};
+
 export const imageUseCases = {
     SPECIES_LIST: 'Species list',
     SPECIES_CARD: 'Species card',
@@ -11,7 +19,8 @@ export const imageUseCases = {
     VISUAL_MATCH: 'Visual match',
     MIXED_SPECIMENS: 'Mixed specimens',
     CAROUSEL: 'Carousel',
-    TEXT_ENTRY: 'Text entry'
+    TEXT_ENTRY: 'Text entry',
+    ACTUAL_SIZE: 'Actual size'
 }
 
 export const denormaliseImages = images => {
@@ -22,9 +31,12 @@ export const denormaliseImages = images => {
     return denormalisedImages;
 };
 
-export const imageMatch = (elemSrc, src) => {
-    if(!src) return false;
-    return (elemSrc === src || elemSrc === src.replace('.98x68.jpg', '.jpg') || elemSrc === src.replace('.260x190.jpg', '.jpg'));
+export const imageMatch = (src1, src2) => {
+    if(!src2) return false;
+    src1 = stripImageUrlOfScale(src1);
+    src2 = stripImageUrlOfScale(src2);
+    const isActiveImage = src1 === src2;
+    return isActiveImage;
 };
 
 export const prepImageForCarousel = (image, index, item, config, useCase) => {
@@ -51,35 +63,23 @@ export const prepImagesForCarousel = (item, config, useCase) => {
 
 export const scaleImage = (image, useCase, config) => {
 
-    if(!image.url) return '';
+    // if(!image.url) return '';
+
+    image.url = stripImageUrlOfScale(image.url);
 
     switch(useCase) {
         case imageUseCases.SPECIES_LIST:
-            return config.isLandscapeMode 
-                ? image.url.replace('.jpg', '.98x68.jpg')
-                : image.url.replace('.jpg', '.98x68.jpg');
+            return `${image.url}.98x68.jpg`;
         case imageUseCases.SPECIES_CARD:
-        case imageUseCases.TAXON_CARD:
-        return config.isLandscapeMode 
-            ? image.url.replace('.jpg', '.260x190.jpg')
-            : image.url.replace('.jpg', '.260x190.jpg');
+        case imageUseCases.TAXON_CARD:            
         case imageUseCases.NON_TAXON_CARD:
-            return config.isLandscapeMode 
-                ? image.url.replace('.jpg', '.260x190.jpg')
-                : image.url.replace('.jpg', '.260x190.jpg');
         case imageUseCases.VISUAL_MATCH:
         case imageUseCases.TEXT_ENTRY:
-            return config.isLandscapeMode 
-            ? image.url.replace('.jpg', '.260x190.jpg')
-            : image.url.replace('.jpg', '.260x190.jpg');
         case imageUseCases.MIXED_SPECIMENS:
-            return config.isLandscapeMode 
-                ? image.url.replace('.jpg', '.260x190.jpg')
-                : image.url.replace('.jpg', '.260x190.jpg');
         case imageUseCases.CAROUSEL:
-            return config.isLandscapeMode 
-                ? image.url ? image.url.replace('.jpg', '.260x190.jpg') : ''
-                : image.url.replace('.jpg', '.260x190.jpg');
+            return `${image.url}.260x190.jpg`;
+        case imageUseCases.ACTUAL_SIZE:
+            return `${image.url}.jpg`;
         default:
             return image.url;
     }
@@ -99,6 +99,7 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
         const selectedItem = item || collection.items.find(item => item.name === image.dataset.itemName);
         let images = selectedItem.images.map((image, index) => {
             selectedItem.vernacularName = itemProperties.getVernacularName(selectedItem, config);
+            image.url = scaleImage(image, imageUseCases.CAROUSEL, config);
             return { ...image, itemName: selectedItem.name, itemCommon: selectedItem.vernacularName };
         });
         images = denormaliseImages(images);

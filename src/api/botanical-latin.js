@@ -376,7 +376,7 @@ export const epithets = [
     },
     {
         "latin" : ["petro-"],
-        "en" : ["ROCKS", "stone"]
+        "en" : ["rock", "stone"]
     },
     {
         "latin" : ["phyto-"],
@@ -637,5 +637,13 @@ export const epithets = [
     {
         "latin" : ["physcia"],
         "en" : ["inflated, sausage-like"]
+    },
+    {
+        "latin" : ["apis"],
+        "en" : ["bee"]
+    },
+    {
+        "latin" : ["mellifera"],
+        "en" : ["honey-bearing"]
     },
 ];

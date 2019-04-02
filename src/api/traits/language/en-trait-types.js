@@ -12,32 +12,50 @@ export const english = {
         STIPE_WIDTH : 'stipe width',
         GILL_ATTACHMENT : 'gill attachment',
         FLESH : 'flesh',
-        LOOK_ALIKES : 'look-alikes',
-        ECOLOGY : 'ecology',
-        SYMBIONTS : 'symbionts',
-        SMELL : 'smell',
-        VITAMINS : 'vitamins',
-        GROUPING : 'grouping',
         STIPE_COLOUR : 'stipe colour',
         GILL_COLOUR : 'gill colour',
-        HABITAT: 'habitat',
         SUBSTRATE: 'substrate',
         THALLUS_TYPE: 'thallus type',
         RHIZINE_TYPE: 'rhizine type',
-        ASSOCIATE: 'associate',
-        POLLUTION_TOLERANCE: 'pollution tolerance',
-        HEAVY_METAL_TOLERANCE: 'heavy metal tolerance',
-        MEDICINAL_PROPERTIES: 'Medicinal properties',
         DISC_WIDTH: "Width",
-        COLOUR: "Colour",
-        USAGE: "Usage",
         LOBE_WIDTH: "Lobe width",
         LOBE_LENGTH: "Lobe length",
         LOBE_DIAMETER: "Lobe diameter",
+
+        ROLE: 'Role',
+        SYMBIOSIS: 'Symbiosis',
+        ASSOCIATE: 'associate',
+        SYMBIONTS : 'symbionts',
+
+        LOOK_ALIKES : 'look-alikes',
+        ECOLOGY : 'ecology',
+        HABITAT: 'habitat',
+        BIOINDICATOR: 'Bioindicator',
+        TROPHIC_LEVEL: 'Trophic level',        
+        HERBIVORE: 'Herbivore',
+        COMPETITOR: 'Competitor',
+        OCCUPANT: 'Lives in',
+        HOST: 'Host',
+        ORGANISATION: 'Organisation',
+        
+        SMELL : 'smell',
+        FRUIT_TYPE: 'Fruit',
+        SEED_COUNT: 'Seed count',
+        PH_TOLERANCE: 'pH tolerance',
+
+        VITAMINS : 'vitamins',
+        GROUPING : 'grouping',
+        POLLUTION_TOLERANCE: 'pollution tolerance',
+        HEAVY_METAL_TOLERANCE: 'heavy metal tolerance',
+        MEDICINAL_PROPERTIES: 'Medicinal properties',
         ACID_RAIN: "Acid rain tolerance",
+        
+        COLOUR: "Colour",
+        USAGE: "Usage",
         FORM : 'Form',
         LIFE_SPAN: "Life span",
-        BIOINDICATOR: 'Bioindicator',
+        LONGEVITY: 'Longevity',
+        ACTIVE: 'Active',
         SUBSTRATE_ADHERANCE: 'Substrate adherance',
         RANK: 'UK Rank',
         SIZE: 'Size',
@@ -46,36 +64,43 @@ export const english = {
         HEIGHT: 'Height',
         COMPOUND: 'Leaf type',
         REPRODUCTION: 'Reproduction',
+        DISPLAY: 'Display',
+        BEHAVIOUR: 'behaviour',
+        
+        SHELTER: 'Shelter',
+        PREDATOR: 'Predator',
+        DISEASE: 'Disease',
+        THREAT: 'Threat',        
+        PREY: 'Prey',
+        FOOD: 'Food',
+        
+        SEXUAL_DIMORPHISM: 'Sexual dimorphism',
+        
+        MIGRATORY: 'Migratory',
+        WING_SPAN: 'Wing span',
+
         BLADE: 'Blade',
         LEAF_VARIATION: 'Leaf variation',
         LEAF_SHAPE: 'Leaf shape',
-        LONGEVITY: 'Longevity',
         STEM_ARRANGEMENT: 'Stem arrangement',
-        LEAFEDGE: 'Leaf edge',
-        MIGRATORY: 'Migratory',
+        LEAF_EDGE: 'Leaf edge',
+        INFLORESCENCE: 'Inflorescence',
+        SEASONAL: 'Seasonal',
+
         CATERPILLAR_FOOD: 'Caterpillar food',
         CATERPILLAR_LENGTH: 'Caterpillar length',
         CATERPILLAR_COLOUR: 'Caterpillar colour',
         HIBERNATING_STAGE: 'Hibernating stage',
-        WING_SPAN: 'Wing span',
-        FOOD: 'Food',
-        TROPHIC_LEVEL: 'Trophic level',
-        SYMBIOSIS: 'Symbiosis',
-        LEAF_EDGE: 'Leaf edge',
-        SHELTER: 'Shelter',
-        ACTIVE: 'Active',
-        PREDATOR: 'Predator',
-        DISEASE: 'Disease',
-        THREAT: 'Threat',
-        SEXUAL_DIMORPHISM: 'Sexual dimorphism',
+        
         MATING: 'Mating',
         LITTER_SIZE: 'Litter size',
         YOUNG: 'Young',
         GESTATION: 'Gestation',
         WEANING: 'Weaning',
-        PREY: 'Prey',
+        SENSORY_ACUITY: 'Sensory acuity',
+        
         FEMALE: 'Female',
-        MALE: 'Male',
+        MALE: 'Male',        
         TAIL_LENGTH: 'Tail length',
         MAX_SPEED: 'Maximum speed',
         KIN_SELECTION: 'Kin selection',
@@ -83,15 +108,14 @@ export const english = {
         ALTRICIAL: 'Altricial',
         MOULTING: 'Moulting',
         MATURITY: 'Maturity',
+
         MARGIN_TYPE: 'Margin type',
         SOIL_TYPE: 'Soil type',
         LICEN_CUP_COLOUR: 'Licen cup colour',
         RIM: 'Rim',
         CENTRE: 'Centre',
-        HERBIVORE: 'Herbivore',
-        COMPETITOR: 'Competitor',
-        OCCUPANT: 'Lives in',
-        HOST: 'Host'
+
+        POLLINATION: 'Pollination'
     },
     howEdible : {
         CHOICE : 'Choice',
@@ -254,8 +278,11 @@ export const english = {
         ANTIFUNGAL: 'Antifungal'
     },
     pHLevel : {
-
+        ACIDIC: 'Acidic',
+        ALKALINE: 'Alkaline',
+        NEUTRAL: "Neutral"
     },
+    rank: {},
     colour: {
         WHITE: "White",
         YELLOW: "Yellow",
@@ -292,7 +319,9 @@ export const english = {
         FODDER: 'Fodder',
         GREEN_MANURE: 'Green manure',
         MEDICINE: 'Medicine',
-        FUR: 'Fur'
+        FUR: 'Fur',
+        NITROGEN_FIXING: 'Nitrogen fixing',
+        TIMBER: 'Timber'
     },
     nonTaxaType: {
         FORM : 'Form'
@@ -302,6 +331,10 @@ export const english = {
         NO: 'No',
         BOTH: 'Both',
         OR: 'Or'
+    },
+    whether: {
+        YES: 'Yes',
+        NO: 'No'
     },
     element: {
         NITROGEN: 'Nitrogen',
@@ -376,11 +409,12 @@ export const english = {
         COMPETITION: 'Competition',
     },
     trophicLevel: {
-        PRIMARY_PRODUCER: { key: 1, value: 'Primary producer' },
-        PRIMARY_CONSUMER: { key: 2, value: 'Primary consumer' },
-        SECONDARY_CONSUMER: { key: 3, value: 'Secondary consumer' },
-        TERTIARY_CONSUMER: { key: 4, value: 'Tertiary consumer' },
-        APEX_PREDATOR: { key: 5, value: 'Apex predator' }
+        PRIMARY_PRODUCER: 'Primary producer',
+        PRIMARY_CONSUMER: 'Primary consumer',
+        SECONDARY_CONSUMER: 'Secondary consumer',
+        OMNIVORE: 'Omnivore',
+        TERTIARY_CONSUMER: 'Tertiary consumer',
+        APEX_PREDATOR: 'Apex predator'
     },
     shelter: {
         DREY: 'Drey',
@@ -431,5 +465,55 @@ export const english = {
     soilType: {
         SILICEOUS: 'Siliceous',
         CALCAREOUS: 'Calcareous',
+    },
+    organisation: {
+        EUSOCIAL: 'Eusocial'
+    },
+    role: {
+        NATIVE: 'Native',
+        NONNATIVE: 'Nonnative', 
+        INDICATOR: 'Indicator', 
+        KEYSTONE: 'Keystone', 
+        FOUNDATION: 'Foundation',
+        SPECIALIST: 'Specialist',
+        GENERALIST: 'Generalist',
+        PIONEEER: 'Pioneeer',
+        INVASIVE: 'Invasive',
+        POLLINATOR: 'Pollinator'
+    },
+    fruitType: {
+        DRUPE: 'Drupe',
+        POME: 'Pome',
+        BERRY: 'Berry',
+        AGGREGATE_FRUIT : 'Aggregate fruit',
+        LEGUME: 'Legume',
+        CAPSULE: 'Capsule',
+        NUT: 'Nut',
+        GRAIN: 'Grain',
+        MULTIPLE_FRUIT: 'Multiple fruit'
+    },
+    inflorescence: {
+        CATKIN: 'catkin',
+        UMBEL: 'umbel',
+        SPIKE: 'spike',
+        RACEME: 'raceme',
+        CORYMB: 'corymb'
+    },
+    seasonal: {
+        ANNUAL: 'annual',
+        BIENNIAL: 'Biennial',
+        PERENNIAL: 'Perennial'
+    },
+    display: {
+        DIEMATIC: 'diematic',
+        SEXUAL_DIMORPHISM: 'Sexual dimorphism',        
+    },
+    behaviour: {
+        SEXUAL_CANNIBALISM: 'Sexual cannibalism',
+        MONANDROUS: 'Monandrous'
+    },
+    sense: {
+        SIGHT: 'Sight',
+        MOVEMENT: 'Movement'
     }
 };

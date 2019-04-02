@@ -2,10 +2,6 @@
     max-height: 7.5rem;
 }
 
-/* #cardModal .feature-symbiont-list.scrollable {
-    max-height: 5rem;
-} */
-
 #cardModal .imageSlider .carousel-item {
     height: 25vh;
   }
@@ -59,6 +55,7 @@
 
 #cardModal .modal-content .snapdragon-container {  
     height: 70vh;
+    padding: 0 .5rem;
 }
 
 #cardModal .carousel-inner {
@@ -147,7 +144,7 @@
   }
 
   .extra-small-text {
-    font-size: .9rem;
+    font-size: .8rem;
   }
 
   /* TAXON CARD  */

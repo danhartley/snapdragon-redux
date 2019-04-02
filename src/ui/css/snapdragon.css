@@ -228,7 +228,7 @@ a.dropdown-item {
   border-bottom: solid .05rem !important;
   color: inherit;
   cursor: pointer;
-  padding: 0 0 0.1rem 0 !important;
+  /* padding: 0 0 0.1rem 0 !important; */
   font-size: 0.8rem;
   text-transform: uppercase;
 }
@@ -409,10 +409,6 @@ a.dropdown-item {
   padding: 0 2rem;
 }
 
-/* .taxon.revision.card .data-box {
-  margin: 0 0.5rem 0 0;
-} */
-
 .species.card-small {
   padding: 0.5rem;
 }
@@ -424,6 +420,7 @@ a.dropdown-item {
 
 .binomial {
   font-style: italic;
+  text-transform: initial;
 }
 
 .list-group-collection {
@@ -856,6 +853,7 @@ a.dropdown-item {
 .data-box-container div:nth-child(1) {
   flex: 1;
   text-align: right;
+  font-size: 1rem;
 }
 
 .data-box {
@@ -1474,11 +1472,6 @@ label.btn.btn-secondary .lesson-icon {
   font-size: 5rem;
 }
 
-#imageModal .modal-body,
-#imageComparisonModal .modal-body {
-  padding: 0;
-}
-
 .feature-label {
   color: var(--snap-green-feature-txt);
 }
@@ -1533,29 +1526,24 @@ label.btn.btn-secondary .lesson-icon {
 
 .imageSlider .carousel-item {
   height: 30vh;
-  padding: 0 10%;
+  padding: .5rem 10%;
 }
 
 .imageSlider .carousel-item > div {
   height: 100%;
-  background-size: contain;
+  background-size: inherit;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.imageSlider .carousel-item > div.contain-image {
+  background-size: contain;
 }
 
 .imageSlider .carousel-control-next-icon,
 .imageSlider .carousel-control-prev-icon {
   width: 1.5rem;
   height: 1.5rem;
-}
-
-#imageModal .modal-body,
-#imageComparisonModal .modal-body {
-  height: 55vh;
-}
-
-#imageModal .modal-body .imageSlider .carousel-item {
-  height: 55vh;
 }
 
 #imageSlider1 {
@@ -1583,6 +1571,19 @@ label.btn.btn-secondary .lesson-icon {
 #imageComparisonModal .modal-title span {
   flex: 1;
   text-align: center;
+}
+
+.carousel-inner .image-load-original {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  z-index: 1050;
+}
+
+.carousel-inner .image-load-original > div {
+  cursor: pointer;
 }
 
 .info-box .carousel.slide {
@@ -1908,6 +1909,11 @@ a.collection-disabled {
   width: 15rem;
 }
 
+.carousel-indicators {
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
 .carousel-indicators li {
   background-color: black;
   width: 1rem;
@@ -2105,6 +2111,10 @@ a.collection-disabled {
   font-size: 2rem;
 }
 
+.example-guide-link span {
+  font-size: .9rem;
+}
+
 .delete-guide-link > span.active {
   color: var(--snap-alert) !important; 
   pointer-events: initial;
@@ -2152,7 +2162,7 @@ a.collection-disabled {
 
 .snapdragon-create-guide {
   position: absolute;
-  bottom: .5rem;
+  bottom: 1rem;
   right: 1rem;
 }
 
@@ -2175,7 +2185,7 @@ a.collection-disabled {
 .snapdragon-create-guide .toggle-links {
   display: flex;
   justify-content: flex-end;
-  margin-right: .25rem;
+  margin: .5rem .25rem 0 0;
 }
 
 .snapdragon-create-guide .edit-guide-link {

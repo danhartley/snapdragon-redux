@@ -58,14 +58,6 @@ export const commmon = [
         definition: 'Land plants with lignified tissues (xylem) for conducting water and minerals.'
     },
     {
-        term: 'Xylem',
-        definition: 'Tissue which transports water and nutrients from roots to shoots and leaves.'
-    },
-    {
-        term: 'Phloem',
-        definition: 'Tissue which transports products of photosynthesis ( e.g. sugars) throughout vascular plants (translocation).'
-    },
-    {
         term: 'Frond',
         definition: 'Large, divided leaf (also thallus).'
     },
@@ -96,5 +88,34 @@ export const commmon = [
         term: 'Trophic level',
         definition: 'The position an organism occupies in a food chain.',
         wiki: 'https://en.wikipedia.org/wiki/Trophic_level'
+    },
+    {
+        term: 'Deimatic behaviour',
+        definition: 'Pattern of bluffing behaviour in an animal that lacks strong defences, such as conspicuous eyespots.',
+        wiki: 'https://en.wikipedia.org/wiki/Deimatic_behaviour'
+    },
+    {
+        term: 'Sexual dimorphism',
+        definition: 'Condition where the two sexes of the same species (many animals, some plants) exhibit different characteristics beyond differences in their sexual organs.',
+        wiki: 'https://en.wikipedia.org/wiki/Sexual_dimorphism'
+    },
+    {
+        term: 'Sexual cannibalism',
+        definition: 'When a female cannibalizes her mate prior to, during, or after copulation.',
+        wiki: 'https://en.wikipedia.org/wiki/Sexual_cannibalism'
+    },
+    {
+        term: 'Conspecific',
+        definition: 'Belonging to the same species.'
+    },
+    {
+        term: 'Monandrous (animals)',
+        definition: 'Females has one mate at a time.',
+        wiki: 'https://en.wikipedia.org/wiki/Monandrous'
+    },
+    {
+        term: 'Monandrous (plants)',
+        definition: 'Having  a single stamen.',
+        wiki: 'https://en.wikipedia.org/wiki/Monandrous'
     },
 ];

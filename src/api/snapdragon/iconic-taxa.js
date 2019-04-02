@@ -32,7 +32,8 @@ export const matchTaxonKey = (taxonomy, iconicTaxaKeys) => {
 export const matchTaxon = (taxonomy, iconicTaxa) => {
     if(!taxonomy) return false;
     let iconicTaxaKeys = Object.keys(iconicTaxa).map(key => key.toLowerCase());
-    return matchTaxonKey(taxonomy, iconicTaxaKeys);
+    const taxon = matchTaxonKey(taxonomy, iconicTaxaKeys);
+    return taxon;
 };
 
 export const matchIcon = (taxonomy, iconicTaxa) => {

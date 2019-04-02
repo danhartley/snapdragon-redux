@@ -8143,7 +8143,8 @@ export const plants = [
   {
     "id": 581785,
     "name": "Daucus carota",
-    "images": [
+    "images": 
+    [
       {
         "title": "Wild carrot",
         "rightsHolder": "Andrew Ives",

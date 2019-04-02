@@ -19,13 +19,14 @@ import { rebindLayoutState } from 'ui/screens/multichoice/missing-data-helper';
 import { getTraits } from 'api/traits/traits';
 import * as traitTypes from 'api/traits/trait-types';
 import * as SD from 'api/traits/trait-types';
+import { renderSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
 
 export const renderMultiStrips = (collection) => {
 
     const item = collection.nextItem;
     const items = collection.allItems || collection.items;
 
-    const { config, lessonPlan, layout } = store.getState();
+    const { config, lessonPlan, layout, counter } = store.getState();
 
     const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, collection.families));
 
@@ -47,6 +48,8 @@ export const renderMultiStrips = (collection) => {
         layout.screens.find(screen => screen.name === 'wildcard-match')
     }
 
+    // if(!screen) return;
+
     try {
 
     const render = (questionValue, answers, overrides) => {
@@ -54,7 +57,7 @@ export const renderMultiStrips = (collection) => {
         const vernacularName = (overrides && overrides.vernacularName) ? overrides.vernacularName : item.vernacularName;
         const binomial = (overrides && overrides.binomial) ? overrides.binomial : item.name;
         const question = (overrides && overrides.question) ? overrides.question : 'Match the name';
-        const help = (overrides && overrides.help) ? overrides.help : '(Click on the name below.)';
+        const help = (overrides && overrides.help !== undefined) ? overrides.help : '(Click on the name below.)';
         
         const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help });
 
@@ -91,6 +94,8 @@ export const renderMultiStrips = (collection) => {
         };
 
         scoreHandler('strip', test, callback, config);
+
+        // renderSpecimenTiles(collection);
     }
 
     if(screen.name === 'species-scientifics') {
@@ -108,7 +113,9 @@ export const renderMultiStrips = (collection) => {
         const question = item.vernacularName;   
         const answers = itemProperties.answersFromList(itemProperties.vernacularNamesForGroups(items, config), question, number);
 
-        render(question, answers, { vernacularName: '--- ---', question: 'What is the common name?' });
+        const help = config.isLandscapeMode ? '(Click on the name below.)' : '';
+
+        render(question, answers, { vernacularName: '--- ---', question: 'What is the common name?', help });
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
@@ -172,26 +179,24 @@ export const renderMultiStrips = (collection) => {
 
     if(screen.name === 'epithet') {
         
-        // if(!layout.epithet) return;
-
-        const epithet = layout.epithet.latin[0];
+        const epithet = layout.epithet.latin.join(', ');
         const number = config.isPortraitMode ? 6 : 6;
         
         let alternatives = R.take(number-1, utils.shuffleArray(epithets)).filter(e => !R.contains(e.latin, epithet));
         alternatives = alternatives.map(e => e.en.join(', '));
-        let question = epithets.find(e => e.latin[0].toUpperCase() === epithet.toUpperCase());
+        let question = epithets.find(e => e.latin.join(', ').toUpperCase() === epithet.toUpperCase());
         question = question ? question[config.language][0] : epithet;
         
         const answers = utils.shuffleArray([question, ...alternatives]);
 
-        render(question, answers);
+        render(question, answers, { question: layout.epithet.latin.join(', '), help: '(Match the epithet)' });
     }
 
     if(screen.name === 'definition') {
 
         const { term, definition } = layout.definition;
 
-        const number = config.isPortraitMode ? 3 : 4;
+        const number = config.isPortraitMode ? 4 : 4;
 
         const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa), 'common' ]));
 
@@ -200,7 +205,6 @@ export const renderMultiStrips = (collection) => {
         const question = definition;
         const answers = utils.shuffleArray([question, ...alternatives]);
 
-        render(question, answers);
         render(question, answers, { question: layout.definition.term, help: '(Match the definition)' });
     }
 
@@ -239,7 +243,7 @@ export const renderMultiStrips = (collection) => {
 
         let help;
         
-        const speciesTraits = getTraits(enums).find(trait => trait.name === item.name);
+        const speciesTraits = getTraits(enums, item).find(trait => trait.name === item.name);
 
         const typedSpeciesTraits = traitTypes.typedSpecies(enums, speciesTraits);
 
@@ -305,11 +309,16 @@ export const renderMultiStrips = (collection) => {
     }
 } catch(e) {
 
-    console.log('Caught exception in render function:');
-    console.log(e);    
+
+    console.log(e);
+
+    // actions.boundSkipItem();
+    
+    // console.log('Caught exception in render function:');
+    // console.log(e);    
     // console.log(`SCREEN NAME: ${screen.name}`);
 
-    rebindLayoutState(layout, config, item);
+    rebindLayoutState(layout, item);
 
     renderMultiStrips(collection);
     

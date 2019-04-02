@@ -60,6 +60,15 @@
     }
 }
 
+@media (min-height:812px) {
+    .strip {
+        margin: .5rem;
+    }
+    .extra-small-text {
+        font-size: .9rem;
+    }
+}
+
 @media (min-width: 768px) {
 
     button {

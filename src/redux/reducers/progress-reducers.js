@@ -20,6 +20,8 @@ export const counter = (state = null, action) => {
         case types.END_REVISION:
             let i = (state.index + 1) <= action.data.layoutCount ? (state.index + 1) : state.index;
             return { index: i };
+        // case types.SKIP_ITEM:
+        //     return { index: state.index + 1 };
         default:
             return state;
     }
