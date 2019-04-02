@@ -1,6 +1,7 @@
 import { DOM } from 'ui/dom';
 import { renderTemplate } from 'ui/helpers/templating';
 import spinnerTemplate from 'ui/screens/lists/species-pending-template.html';
+import { listenToInatRequests } from 'api/inat/inat';
 
 export const speciesPendingSpinner = (config) => {
 
@@ -12,12 +13,25 @@ export const speciesPendingSpinner = (config) => {
     
     renderTemplate({ }, template.content, parent);
 
-    const update = document.querySelector('.species-pending div:nth-child(4)');
+    const OrdinalSuffixOf = i => {
+        var j = i % 10,
+            k = i % 100;
+        if (j == 1 && k != 11) {
+            return i + "st";
+        }
+        if (j == 2 && k != 12) {
+            return i + "nd";
+        }
+        if (j == 3 && k != 13) {
+            return i + "rd";
+        }
+        return i + "th";
+    }
 
-    setTimeout(() => {
-        update.innerHTML = 'Still searching';
-        setTimeout(() => {
-            update.innerHTML = 'Not long now';
-        }, 2000);
-    },5000);
+    const callback = request => {
+        const feedback = document.querySelector('.js-request-feedback');
+        feedback.innerHTML = `Making ${OrdinalSuffixOf(request.page)} request of ${request.numberOfRequests}`;
+    };
+
+    listenToInatRequests(callback);
 };

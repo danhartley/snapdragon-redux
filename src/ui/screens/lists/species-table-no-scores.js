@@ -43,7 +43,7 @@ export const buildTable = (collection, config, traits, enums) => {
 
     collection.items.forEach(item => { 
         
-        item.image = item.list ? item.images.find(i => i.url === item.list) : item.images[0];
+        item.image = item.list ? item.images.find(i => i.url === item.list) : utils.shuffleArray(item.images)[0];
         item.license = item.image.license;
         item.url = scaleImage(item.image, imageUseCases.SPECIES_LIST, config);
         item.rightsHolder = item.image.rightsHolder;

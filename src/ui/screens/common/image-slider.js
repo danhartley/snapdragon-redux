@@ -41,10 +41,15 @@ const getActiveBackgroundImage = () => {
 
 const carouselControlHandler = event => {
 
-    const originalImageLink = document.querySelector('.js-image-load-original > div');
-    originalImageLink.style.display = 'none';
-
     setTimeout(() => {        
+
+        const activeNode = document.querySelector(`${event.target.dataset.slider} .carousel-item.active > div`);
+        const image = activeNode.dataset;        
+        handleRightsAttribution(image, activeNode);
+    
+        const originalImageLink = document.querySelector('.js-image-load-original > div');
+        originalImageLink.style.display = 'none';
+        
         const { backgroundImage } = getActiveBackgroundImage();
         if(backgroundImage.indexOf('260x190') !== -1) {
             originalImageLink.style.display = 'initial';

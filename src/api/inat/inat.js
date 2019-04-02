@@ -3,6 +3,12 @@ import * as R from 'ramda';
 import { species } from 'api/species';
 import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
 
+const inatListeners = [];
+
+export const listenToInatRequests = listener => {
+    inatListeners.push(listener);
+};
+
 const getBasePath = config => {
     
     const month = config.guide.season.type === 'all_year' 
@@ -21,6 +27,7 @@ export const getInatSpecies = (inatConfig, config) => {
     let names = species.map(item => item.name); 
 
     names = [ 
+        'Xanthoria parietina',
         'Robinia pseudoacacia', 'Oxalis pes-caprae', 'Laurus nobilis', 'Bellis perennis',
         'Foeniculum vulgare', 'Gleditsia triacanthos', 'Bellis perennis', 'Daucus carota'
     ];
@@ -79,6 +86,10 @@ export const getInatSpecies = (inatConfig, config) => {
 
         const response = await fetch(url);
         const json = await response.json();
+        inatListeners.forEach(listener => listener(
+            { page: json.page, numberOfRequests: Math.ceil(json.total_results/json.per_page) }
+        ));
+        console.log({ page: json.page, numberOfRequests: Math.ceil(json.total_results/json.per_page) });
         return await json.results;
     }
 
