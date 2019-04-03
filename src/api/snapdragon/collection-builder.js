@@ -27,7 +27,7 @@ const getSpecies = (collection) => {
     let eolCollection = collection.collection_items.map(item => ({ id: item.object_id }));
         
     return eolCollection.map(species => {
-        const speciesUrl = `https://eol.org/api/pages/1.0/${species.id}.json?details=true&images_per_page=100&licenses=${selectedLicence}&common_names=true`;
+        const speciesUrl = `https://eol.org/api/pages/1.0/${species.id}.json?details=true&images_per_page=200&licenses=${selectedLicence}&common_names=true`;
         const speciesCors = `https://cors-anywhere.herokuapp.com/${speciesUrl}`;
         species.detailsUrl = speciesCors;
         return species;
@@ -55,7 +55,7 @@ async function getCollection() {
         collection = await getCollectionFromSpeciesList(speciesList);
     } else {
         const collectionId =  parseInt(document.querySelector('#inputCollection').value);
-        const collectionUrl = `http://eol.org/api/collections/1.0/${collectionId}.json?page=1&per_page=100&filter=&sort_by=recently_added&sort_field=&cache_ttl=&language=en`;
+        const collectionUrl = `http://eol.org/api/collections/1.0/${collectionId}.json?page=1&per_page=200&filter=&sort_by=recently_added&sort_field=&cache_ttl=&language=en`;
         const collectionCors = `https://cors-anywhere.herokuapp.com/${collectionUrl}`;
         const response = await fetch(collectionCors);
         collection = await response.json();

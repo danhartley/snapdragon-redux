@@ -10,7 +10,7 @@ export const rebindLayoutState = (layout, item) => {
       
     const random = utils.getRandomInt(2);
 
-    let definition, nextLayout, epithet;
+    let nextLayout;
 
     switch(random) {
       
@@ -42,7 +42,7 @@ export const rebindLayoutState = (layout, item) => {
 
         const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa), 'common' ]));
 
-        definition = definitions[0];
+        const definition = definitions[0];
     
         nextLayout = {
             name: "screen-definitions",

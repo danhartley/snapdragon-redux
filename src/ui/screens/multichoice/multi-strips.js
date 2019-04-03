@@ -263,7 +263,7 @@ export const renderMultiStrips = (collection) => {
                 help = 'What is the ecological type of this mushroom?';
                 break;
             case 'habitat':
-                help = 'Where would you expect to find this species?';
+                help = 'Where would you most likely find this species?';
                 break;
             case 'thallusType':
                 help = 'What is this lichen\'s thallus type?';
@@ -290,30 +290,49 @@ export const renderMultiStrips = (collection) => {
                             : trait.value.key
                                 ? trait.value.key
                                 : trait.value;
-                                
-        // const help = `(Select the ${trait.name} below.)`;
+                               
+        const variables = question.split(',').length;                                
+        const number = variables * 5;
 
-        traits = R.take(5, traits.filter(t => t !== trait.value));
+        traits = R.take(number, traits.filter(t => t !== trait.value));
         traits = [ ...traits, trait.value ];
 
-        const answers = traits.map(trait => {
-            const t = trait.value 
+        const pool = traits.map(trait => {
+            let t = trait.value 
                         ? trait.value 
                         : trait.key
                             ? trait.value 
                             : trait;
+            
+            if(trait.indexOf(',') > -1) {
+                t = null; // The answer may contain mulitple values e.g. 'Woodland, Valley, Meadow' 
+            }
+
             return t;
-        });
+        }).filter(item => item); // remove nulls
+
+        let answers;
+
+        if(variables === 1) {
+            answers = pool;
+        } else {
+            answers = [];
+            const pools = [];
+            while(pool.length) {
+                pools.push(pool.splice(0,5));
+            }
+            while(pools[0].length) {
+                const answer = pools.map(pool => pool.pop());
+                answers.push(answer.join(', '));
+            }
+            answers.push(trait.value);
+            answers = utils.shuffleArray(answers);
+        }
           
         render(question, answers, { question: 'Match the trait', help });
     }
 } catch(e) {
-
-
-    console.log(e);
-
-    // actions.boundSkipItem();
-    
+   
     // console.log('Caught exception in render function:');
     // console.log(e);    
     // console.log(`SCREEN NAME: ${screen.name}`);

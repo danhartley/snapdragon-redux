@@ -72,7 +72,7 @@ export const updateLanguage = (config) => {
             capShape = { ...english.capShape, ...{ type: 'capShape' }, ...{ name: english.name.CAP_SHAPE } };
             hymeniumType = { ...english.hymeniumType, ... { type: 'hymeniumType' }, ...{ name: english.name.HYMENIUM_TYPE } };
             thallusType = { ...english.thallusType, ... { type: 'thallusType' }, ...{ name: english.name.THALLUS_TYPE } };
-            trophicLevel = { ...english.trophicLevel, ... { type: 'trophicLevel' }, ...{ name: english.name.TROPHIC_LEVEL } };
+            // trophicLevel = { ...english.trophicLevel, ... { type: 'trophicLevel' }, ...{ name: english.name.TROPHIC_LEVEL } };
             role = { ...english.role, ... { type: 'role' }, ...{ name: english.name.ROLE } };
             migratory = { ...english.whether, ... { type: 'migratory' }, ...{ name: english.name.MIGRATORY } };
             fruitType = { ...english.fruitType, ... { type: 'fruitType' }, ...{ name: english.name.FRUIT_TYPE } };
