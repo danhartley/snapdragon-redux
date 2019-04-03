@@ -63,8 +63,6 @@ export const prepImagesForCarousel = (item, config, useCase) => {
 
 export const scaleImage = (image, useCase, config) => {
 
-    // if(!image.url) return '';
-
     image.url = stripImageUrlOfScale(image.url);
 
     switch(useCase) {
