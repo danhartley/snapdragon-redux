@@ -5,12 +5,13 @@ import { epithets } from 'api/botanical-latin';
 import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
+import { taxa } from 'api/snapdragon/taxa';
 
 export const rebindLayoutState = (layout, item) => {
       
-    const random = utils.getRandomInt(2);
+    const random = utils.getRandomInt(4);
 
-    let nextLayout;
+    let nextLayout, taxon;
 
     switch(random) {
       
@@ -40,7 +41,7 @@ export const rebindLayoutState = (layout, item) => {
 
       case 1: 
 
-        const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa), 'common' ]));
+        const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa).value, 'common' ]));
 
         const definition = definitions[0];
     
@@ -63,6 +64,50 @@ export const rebindLayoutState = (layout, item) => {
         nextLayout.definition = definition;
 
         break;
+
+        case 2:
+
+        taxon = taxa.find(taxon => taxon.name === item.name);
+
+        nextLayout = {
+          name: "familyMatch",
+          type: "test",
+          score: 1,
+          screens: [
+            {
+              name: "specimen-images",
+              domain: "collection"
+            },
+            {
+              name: "family",
+              domain: "collection"
+            }
+          ]
+      };
+
+      break;
+
+        case 3:
+
+        taxon = taxa.find(taxon => taxon.name === item.name);
+
+        nextLayout = {
+          name: "family",
+          type: "test",
+          score: 1,
+          screens: [
+            {
+              name: "specimen-images",
+              domain: "collection"
+            },
+            {
+              name: "family-strips",
+              domain: "collection"
+            }
+          ]
+      };
+
+      break;
     }
 
     nextLayout = { ...R.clone(layout), ...nextLayout };

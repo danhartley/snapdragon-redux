@@ -52,7 +52,7 @@ export const handleRightsAttribution = (image, activeNode) => {
 
     const licence = { text, url: image.license };
     const title = image.title;
-    const author = image.rightsholder || image.rightsHolder;
+    const author = image.rightsholder || image.rightsHolder || 'Public domain';
     const source = image.source;
 
     renderTemplate({title,author,source,licence}, template.content, activeNode);

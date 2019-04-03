@@ -46,7 +46,7 @@ export const buildTable = (collection, config, traits, enums) => {
         item.image = item.list ? item.images.find(i => i.url === item.list) : utils.shuffleArray(item.images)[0];
         item.license = item.image.license;
         item.url = scaleImage(item.image, imageUseCases.SPECIES_LIST, config);
-        item.rightsHolder = item.image.rightsHolder;
+        item.rightsHolder = item.image.rightsHolder || 'Public domain';
         item.source = item.image.source;
 
         item.binomial = item.name;
@@ -65,7 +65,7 @@ export const buildTable = (collection, config, traits, enums) => {
         } else { item.orderLinkClass = 'js-taxon-card-link'; }
         item.taxonomy = item.taxonomy || { family: '', order: ''}
         
-        item.iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa);
+        item.iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
 
         if(item.iconicTaxon === 'fungi') {
             item.iconicTaxonIcon = 'hide';

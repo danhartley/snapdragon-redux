@@ -1,3 +1,4 @@
+import { species } from 'api/species';
 import { createLesson } from 'syllabus/lesson-builder';
 import { layouts } from 'snapdragon/screen-layouts';
 import { getCollectionLayouts } from 'redux/reducers/initial-state/species-state/collection-layouts';
@@ -15,6 +16,10 @@ const createLessonPlan = (lessonPlan, config, collection) => {
 
     collection.families = familyProps.getFamilyNames(collection.items);
     collection.familyStats = familyProps.getFamilyStats(collection.items);
+
+    collection.snapdragon = {};
+    collection.snapdragon.families = familyProps.getFamilyNames(species);
+    collection.snapdragon.familyStats = familyProps.getFamilyStats(species);
 
     collection.itemGroups = getItemGroups(collection);
     collection.itemGroup = collection.itemGroups[collection.currentRound - 1];

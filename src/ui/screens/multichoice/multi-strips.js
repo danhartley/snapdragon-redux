@@ -9,6 +9,7 @@ import { taxa } from 'api/snapdragon/taxa';
 import { epithets } from 'api/botanical-latin';
 import { getGlossary } from 'api/glossary/glossary';
 import { itemProperties } from 'ui/helpers/data-checking';
+import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { syndromes } from 'api/snapdragon/syndromes';
@@ -19,7 +20,6 @@ import { rebindLayoutState } from 'ui/screens/multichoice/missing-data-helper';
 import { getTraits } from 'api/traits/traits';
 import * as traitTypes from 'api/traits/trait-types';
 import * as SD from 'api/traits/trait-types';
-import { renderSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
 
 export const renderMultiStrips = (collection) => {
 
@@ -28,7 +28,9 @@ export const renderMultiStrips = (collection) => {
 
     const { config, lessonPlan, layout, counter } = store.getState();
 
-    const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, collection.families));
+    const taxon = matchTaxon(item.taxonomy, iconicTaxa);
+    const inconicTaxonFamilies = familyProps.getUniqueFamiliesByIconicTaxon(species, taxon.rank, taxon.value);
+    const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, inconicTaxonFamilies));
 
     const familyFlavours = config.isPortraitMode 
             ? [ 'match-family-to-quick-id' ] 
@@ -47,8 +49,6 @@ export const renderMultiStrips = (collection) => {
         layout.screens.find(screen => screen.name === 'trait-property') || 
         layout.screens.find(screen => screen.name === 'wildcard-match')
     }
-
-    // if(!screen) return;
 
     try {
 
@@ -94,8 +94,6 @@ export const renderMultiStrips = (collection) => {
         };
 
         scoreHandler('strip', test, callback, config);
-
-        // renderSpecimenTiles(collection);
     }
 
     if(screen.name === 'species-scientifics') {
@@ -122,12 +120,11 @@ export const renderMultiStrips = (collection) => {
 
         const number = config.isPortraitMode ? 3 : 4;
 
-        const questionText = config.isPortraitMode ? 'Tap to match Quick ID' : `Click to match the Quick ID`;
         const question = families.length > 0 ? families.find(f => f.name === item.family).descriptions[0].identification : 'no families available';
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family)).map(f => f.descriptions[0].identification);
         const answers = utils.shuffleArray([question, ...alternatives]);
 
-        render(questionText, question, answers);
+        render(question, answers, { vernacularName: '--- ---', question: 'Match species family', help: '(Click on the description below.)' });
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
@@ -138,6 +135,7 @@ export const renderMultiStrips = (collection) => {
         const answers = utils.shuffleArray([question, ...alternatives]);
 
         render(question, answers);
+        render(question, answers, { vernacularName: '--- ---', question: 'Match species family', help: '(Click on the description below.)' });
     }
 
     if(screen.name === 'wildcard-match') {
@@ -198,7 +196,7 @@ export const renderMultiStrips = (collection) => {
 
         const number = config.isPortraitMode ? 4 : 4;
 
-        const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa), 'common' ]));
+        const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa).value, 'common' ]));
 
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(definitions)).filter(d => !R.contains(d.term, term))).map(d => d.definition);
         
@@ -212,6 +210,8 @@ export const renderMultiStrips = (collection) => {
 
         const indices = config.isPortraitMode ? [5,6] : [5,6];
 
+        // see lesson planner for initialising family names
+
         const family = item.family;
         const speciesFamilies = species.map(item => item.family).filter(utils.onlyUnique);
         const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, speciesFamilies));
@@ -223,13 +223,15 @@ export const renderMultiStrips = (collection) => {
 
         let question, answers;
 
-        switch(screen.flavour) {            
-            case 'match-common-family-name-to-latin-family-name':
+        const random = utils.getRandomInt(2);
+
+        switch(random) {            
+            case 0: //'match-common-family-name-to-latin-family-name':
                 question = commonFamilyName;
                 answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
                 render(question, answers, { question: 'Match the family name' });
             break;
-            case 'match-latin-family-name-to-common-family-name':
+            case 1:  //'match-latin-family-name-to-common-family-name':
                 question = family;
                 answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
                 render(question, answers, { question: 'Match the family name' });

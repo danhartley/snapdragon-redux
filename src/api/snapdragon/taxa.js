@@ -2652,4 +2652,11 @@ export const taxa = [
         name: 'Blattodea',
         names: [ { language: "en", names: ['Cockroaches']}],
     },
+    {
+        taxon: 'family',
+        name: 'Canidae',
+        genera: 14,
+        species: 34,
+        names: [ { language: "en", names: ['Canids']}],
+    },
 ];

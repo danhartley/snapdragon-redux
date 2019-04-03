@@ -147,7 +147,7 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
     const names = [ ...new Set(item.names.filter(name => name.language === config.language).map(name => name.vernacularName.toLowerCase())) ];
     const occurrences = names.length; 
 
-    const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa);
+    const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
 
     const options = [
         { name: traitTypes.name.RANK, formatter: trait => `UK # ${trait.value}` },

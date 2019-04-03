@@ -101,7 +101,7 @@ export const commmon = [
     },
     {
         term: 'Sexual cannibalism',
-        definition: 'When a female cannibalizes her mate prior to, during, or after copulation.',
+        definition: 'When a female cannibalises her mate prior to, during, or after copulation.',
         wiki: 'https://en.wikipedia.org/wiki/Sexual_cannibalism'
     },
     {

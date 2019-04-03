@@ -30,10 +30,10 @@ export const renderMixedSpecimenQuestions = collection => {
         return multiImages;
     }
 
-    const rank = matchTaxon(collection.nextItem.taxonomy, iconicTaxa).toLowerCase();
+    const rank = matchTaxon(collection.nextItem.taxonomy, iconicTaxa).value;
     const itemPool = species;
     // const itemPool = collection.allItems || collection.items;
-    const clonedItems = R.clone(itemPool.filter(item => matchTaxonKey(item.taxonomy,[rank])));
+    const clonedItems = R.clone(itemPool.filter(item => matchTaxonKey(item.taxonomy,[rank]).value));
     const items = R.take(5, utils.shuffleArray(clonedItems.filter(ci => ci.name !== collection.nextItem.name)));
     const nextItem = clonedItems.find(i => i.name === collection.nextItem.name);
     if(nextItem) items.push(nextItem);
