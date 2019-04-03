@@ -1641,72 +1641,38 @@ export const local = [
         {
           "vernacularName": "Bermuda Buttercup",
           "language": "en",
-          "eol_preferred": true
         },
         {
-          "vernacularName": "Bermuda Buttercup",
+          "vernacularName": "African wood-sorrel",
           "language": "en",
-
         },
         {
-          "vernacularName": "Bermuda Buttercup",
+          "vernacularName": "Bermuda sorrel",
           "language": "en",
-
         },
         {
           "vernacularName": "Sourgrass",
           "language": "en",
-
-        },
-        {
-          "vernacularName": "Sourgrass",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Sourgrass",
-          "language": "en",
-
-        },
+        },      
         {
           "vernacularName": "Soursob",
           "language": "en",
-
-        },
-        {
-          "vernacularName": "Soursob",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Soursob",
-          "language": "en",
-
         },
         {
           "vernacularName": "yellow sourgrass",
           "language": "en",
-
+        },        
+        {
+          "vernacularName": "buttercup oxalis",
+          "language": "en",
         },
         {
-          "vernacularName": "Bermuda buttercup",
+          "vernacularName": "Cape sorrel",
           "language": "en",
-
         },
         {
-          "vernacularName": "Bermuda buttercup",
+          "vernacularName": "English weed",
           "language": "en",
-
-        },
-        {
-          "vernacularName": "Bermuda buttercup",
-          "language": "en",
-
-        },
-        {
-          "vernacularName": "Bermuda buttercup",
-          "language": "en",
-
         }
       ],
       "taxonomy": {

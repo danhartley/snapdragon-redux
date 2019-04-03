@@ -54,6 +54,7 @@ export let seasonal = english.seasonal;
 export let display = english.display;
 export let behaviour = english.behaviour;
 export let sense = english.sense;
+export let crypsis = english.crypsis;
 
 let language;
 
@@ -137,7 +138,8 @@ export const updateLanguage = (config) => {
         seasonal,
         display,
         behaviour,
-        sense
+        sense,
+        crypsis
     }
 
     actions.boundUpdateEnums(enums);   

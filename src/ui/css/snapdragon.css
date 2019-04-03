@@ -889,13 +889,16 @@ a.dropdown-item {
 .taxon-data > span:nth-child(1) {
   width: 5rem;
   padding: 0 0 0 0.5rem;
-  color: rgb(35, 35, 35);
+  color: rgb(35, 35, 35);  
 }
+
+.data-box .taxon-data:nth-child(1) > span {
+  text-transform: uppercase;
+} 
 
 .taxon-data > span:nth-child(2) {
   padding: 0 0.5rem;
-  min-width: 7.5rem;
-  text-transform: capitalize;
+  min-width: 7.5rem;  
 }
 
 .taxon-data {
@@ -1287,13 +1290,14 @@ span.correct {
 }
 
 #badgeListModal .modal-body {
-  background-color: rgb(142, 160, 119);
+  background-color: var(--snap-language);
+  min-height: 5rem;
 }
 
-#badgeListModal .modal-text {
-  background-color: rgb(142, 160, 119);
-  color: rgb(29, 33, 36);
+#badgeListModal .modal-text {  
+  color: var(--snap-text-medium-dark);
   margin: 0;
+  font-size: .9rem;
 }
 
 .trait.card li span:nth-child(1) {

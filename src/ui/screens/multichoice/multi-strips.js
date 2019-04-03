@@ -124,7 +124,7 @@ export const renderMultiStrips = (collection) => {
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family)).map(f => f.descriptions[0].identification);
         const answers = utils.shuffleArray([question, ...alternatives]);
 
-        render(question, answers, { vernacularName: '--- ---', question: 'Match species family', help: '(Click on the description below.)' });
+        render(question, answers, { question: 'Match species family', help: '(Click on the description below.)' });
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
@@ -135,7 +135,7 @@ export const renderMultiStrips = (collection) => {
         const answers = utils.shuffleArray([question, ...alternatives]);
 
         render(question, answers);
-        render(question, answers, { vernacularName: '--- ---', question: 'Match species family', help: '(Click on the description below.)' });
+        render(question, answers, { question: 'Match species family', help: '(Click on the description below.)' });
     }
 
     if(screen.name === 'wildcard-match') {

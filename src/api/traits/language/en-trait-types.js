@@ -98,6 +98,7 @@ export const english = {
         GESTATION: 'Gestation',
         WEANING: 'Weaning',
         SENSORY_ACUITY: 'Sensory acuity',
+        CRYPSIS: 'Crypsis',
         
         FEMALE: 'Female',
         MALE: 'Male',        
@@ -510,10 +511,22 @@ export const english = {
     },
     behaviour: {
         SEXUAL_CANNIBALISM: 'Sexual cannibalism',
-        MONANDROUS: 'Monandrous'
+        MONANDROUS: 'Monandrous',
+        VOCALISATION: 'vocalisation',
+        CRYPSIS: 'Crypsis'
     },
     sense: {
         SIGHT: 'Sight',
-        MOVEMENT: 'Movement'
+        MOVEMENT: 'Movement',
+        SMELL: 'smell',
+    },
+    crypsis: {
+        CAMOUFLAGE: 'Camouflage',
+        NOCTURNALITY: 'Nocturnality',
+        SUBTERRANEAN: 'Subterranean',
+        MIMICRY: 'Mimicry',
+        VISUAL: 'Visual',
+        OLFACTORY: 'Olfactory',
+        AUDITORY: 'Auditory'
     }
 };

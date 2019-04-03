@@ -118,4 +118,9 @@ export const commmon = [
         definition: 'Having  a single stamen.',
         wiki: 'https://en.wikipedia.org/wiki/Monandrous'
     },
+    {
+        term: 'Crypsis',
+        definition: 'Ability of an animal to avoid observation or detection by other animals.',
+        wiki: 'https://en.wikipedia.org/wiki/Monandrous'
+    },
 ];
