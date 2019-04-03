@@ -2733,4 +2733,33 @@ export const taxa = [
             { name: SD.name.DISPLAY, value: SD.display.DIEMATIC },
          ],
     },
+    {
+        taxon: 'family',
+        name: 'Pinaceae',
+        genera: '11',
+        species: '~250',
+        names: [ { language: "en", names: ['Pine family']},
+            { language: "fr", names:[ 'Pinacées' ]},
+            { language: "de", names:[ 'Kieferngewächse' ]},
+            { language: "es", names:[ 'Pináceas' ]},
+            { language: "pt", names:[ 'Pinaceae' ]},
+            { language: "it", names:[ 'Pinacee' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Pinaceae",
+        eol: "https://eol.org/pages/6747",
+        thumb: '81/1a/20/542.7797050682.260x190.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Largest extant conifer family in species diversity, with between 220 and 250 species and second-largest (Cupressaceae) in geographical range (mostly temperate)',
+                identification: 'Most are trees (rarely shrubs) from 2-100m tall. Mostly evergreen, resinous, monoecious, with subopposite or whorled branches, spirally arranged, needles. 3-24 cotyledons.'
+            },
+        ],
+        traits: [ 
+            { name: SD.name.FEMALE_CONE_LENGTH, value: '2-60cm' },
+            { name: SD.name.MALE_CONE_LENGTH, value: '.5-6cm' },
+            { name: SD.name.ALLOCHORY, value: SD.allochory.ANEMOCHORY },
+            { name: SD.name.REPRODUCTIVE_CONTAINER, value: SD.reproductiveContainer.CONE }            
+         ],
+    },
 ];

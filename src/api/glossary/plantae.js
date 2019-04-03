@@ -269,4 +269,34 @@ export const plantae = [
         definition: 'Fruiting bodies formed from a cluster of fruiting flowers, the inflorescence.',
         wiki: 'https://en.wikipedia.org/wiki/Multiple_fruit'
     },
+    {
+        term: 'Allochory',
+        definition: 'Seed dispersal by vector or secondary agent.',
+        wiki: 'https://en.wikipedia.org/wiki/Seed_dispersal#Allochory'
+    },
+    {
+        term: 'Anemochory',
+        definition: 'Seed dispersal by wind.',
+        wiki: 'https://en.wikipedia.org/wiki/Seed_dispersal#Allochory'
+    },
+    {
+        term: 'Anemochory',
+        definition: 'Seed dispersal by wind.',
+        wiki: 'https://en.wikipedia.org/wiki/Seed_dispersal#Allochory'
+    },
+    {
+        term: 'Hydrochory',
+        definition: 'Seed dispersal by water.',
+        wiki: 'https://en.wikipedia.org/wiki/Seed_dispersal#Allochory'
+    },
+    {
+        term: 'Zoochory',
+        definition: 'Seed dispersal by animals.',
+        wiki: 'https://en.wikipedia.org/wiki/Seed_dispersal#Allochory'
+    },
+    {
+        term: 'Anthropochory',
+        definition: 'Seed dispersal by humans.',
+        wiki: 'https://en.wikipedia.org/wiki/Seed_dispersal#Allochory'
+    },
 ];

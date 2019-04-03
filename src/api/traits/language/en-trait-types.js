@@ -32,7 +32,6 @@ export const english = {
         HABITAT: 'habitat',
         BIOINDICATOR: 'Bioindicator',
         TROPHIC_LEVEL: 'Trophic level',        
-        HERBIVORE: 'Herbivore',
         COMPETITOR: 'Competitor',
         OCCUPANT: 'Lives in',
         HOST: 'Host',
@@ -42,7 +41,7 @@ export const english = {
         FRUIT_TYPE: 'Fruit',
         SEED_COUNT: 'Seed count',
         PH_TOLERANCE: 'pH tolerance',
-
+        
         VITAMINS : 'vitamins',
         GROUPING : 'grouping',
         POLLUTION_TOLERANCE: 'pollution tolerance',
@@ -66,12 +65,10 @@ export const english = {
         REPRODUCTION: 'Reproduction',
         DISPLAY: 'Display',
         BEHAVIOUR: 'behaviour',
-        
+
         SHELTER: 'Shelter',
-        PREDATOR: 'Predator',
         DISEASE: 'Disease',
         THREAT: 'Threat',        
-        PREY: 'Prey',
         FOOD: 'Food',
         
         SEXUAL_DIMORPHISM: 'Sexual dimorphism',
@@ -86,6 +83,10 @@ export const english = {
         LEAF_EDGE: 'Leaf edge',
         INFLORESCENCE: 'Inflorescence',
         SEASONAL: 'Seasonal',
+        FEMALE_CONE_LENGTH: 'Female cone length',
+        MALE_CONE_LENGTH: 'Male cone length',
+        ALLOCHORY: 'Allochory',
+        REPRODUCTIVE_CONTAINER: 'Reproductive container',
 
         CATERPILLAR_FOOD: 'Caterpillar food',
         CATERPILLAR_LENGTH: 'Caterpillar length',
@@ -480,7 +481,10 @@ export const english = {
         GENERALIST: 'Generalist',
         PIONEEER: 'Pioneeer',
         INVASIVE: 'Invasive',
-        POLLINATOR: 'Pollinator'
+        POLLINATOR: 'Pollinator',
+        PREDATOR: 'Predator',
+        HERBIVORE: 'Herbivore',
+        PREY: 'Prey',
     },
     fruitType: {
         DRUPE: 'Drupe',
@@ -528,5 +532,14 @@ export const english = {
         VISUAL: 'Visual',
         OLFACTORY: 'Olfactory',
         AUDITORY: 'Auditory'
+    },
+    allochory: {
+        ANEMOCHORY: 'Anemochory',
+        HYDROCHORY: 'Hydrochory',
+        ZOOCHORY: 'Zoochory',
+        ANTHROPOCHORY: 'Anthropochory'
+    },
+    reproductiveContainer: {
+        CONE: 'Cone'
     }
 };

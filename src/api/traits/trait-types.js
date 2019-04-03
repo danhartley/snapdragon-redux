@@ -55,6 +55,8 @@ export let display = english.display;
 export let behaviour = english.behaviour;
 export let sense = english.sense;
 export let crypsis = english.crypsis;
+export let allochory = english.allochory;
+export let reproductiveContainer = english.reproductiveContainer;
 
 let language;
 
@@ -139,7 +141,9 @@ export const updateLanguage = (config) => {
         display,
         behaviour,
         sense,
-        crypsis
+        crypsis,
+        allochory,
+        reproductiveContainer
     }
 
     actions.boundUpdateEnums(enums);   
