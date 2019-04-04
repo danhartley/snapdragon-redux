@@ -54,6 +54,9 @@ export let seasonal = english.seasonal;
 export let display = english.display;
 export let behaviour = english.behaviour;
 export let sense = english.sense;
+export let crypsis = english.crypsis;
+export let allochory = english.allochory;
+export let reproductiveContainer = english.reproductiveContainer;
 
 let language;
 
@@ -72,7 +75,7 @@ export const updateLanguage = (config) => {
             capShape = { ...english.capShape, ...{ type: 'capShape' }, ...{ name: english.name.CAP_SHAPE } };
             hymeniumType = { ...english.hymeniumType, ... { type: 'hymeniumType' }, ...{ name: english.name.HYMENIUM_TYPE } };
             thallusType = { ...english.thallusType, ... { type: 'thallusType' }, ...{ name: english.name.THALLUS_TYPE } };
-            trophicLevel = { ...english.trophicLevel, ... { type: 'trophicLevel' }, ...{ name: english.name.TROPHIC_LEVEL } };
+            // trophicLevel = { ...english.trophicLevel, ... { type: 'trophicLevel' }, ...{ name: english.name.TROPHIC_LEVEL } };
             role = { ...english.role, ... { type: 'role' }, ...{ name: english.name.ROLE } };
             migratory = { ...english.whether, ... { type: 'migratory' }, ...{ name: english.name.MIGRATORY } };
             fruitType = { ...english.fruitType, ... { type: 'fruitType' }, ...{ name: english.name.FRUIT_TYPE } };
@@ -137,7 +140,10 @@ export const updateLanguage = (config) => {
         seasonal,
         display,
         behaviour,
-        sense
+        sense,
+        crypsis,
+        allochory,
+        reproductiveContainer
     }
 
     actions.boundUpdateEnums(enums);   

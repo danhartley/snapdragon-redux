@@ -101,7 +101,7 @@ export const commmon = [
     },
     {
         term: 'Sexual cannibalism',
-        definition: 'When a female cannibalizes her mate prior to, during, or after copulation.',
+        definition: 'When a female cannibalises her mate prior to, during, or after copulation.',
         wiki: 'https://en.wikipedia.org/wiki/Sexual_cannibalism'
     },
     {
@@ -116,6 +116,11 @@ export const commmon = [
     {
         term: 'Monandrous (plants)',
         definition: 'Having  a single stamen.',
+        wiki: 'https://en.wikipedia.org/wiki/Monandrous'
+    },
+    {
+        term: 'Crypsis',
+        definition: 'Ability of an animal to avoid observation or detection by other animals.',
         wiki: 'https://en.wikipedia.org/wiki/Monandrous'
     },
 ];

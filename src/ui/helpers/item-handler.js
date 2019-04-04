@@ -51,7 +51,7 @@ export const keepItems = collection => {
 
 export async function itemHandler(collection, config, counter, callback) {
     
-    if(counter.isLessonPaused) { // problem here when returning home and selecting new collection, or filtering current.... will always be that originally requested
+    if(counter.isLessonPaused) {
         collection.items = await keepItems(collection);
     } else {         
         collection.items = utils.shuffleArray(await getItems(collection, config));
@@ -96,8 +96,7 @@ export async function itemHandler(collection, config, counter, callback) {
             collection.items = [];
         }
          
-        actions.boundChangeCollection({ config, collection });
-        
+        actions.boundChangeCollection({ config, collection });        
     }
 
     if(collection.items) {

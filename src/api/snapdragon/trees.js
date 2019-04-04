@@ -73,75 +73,53 @@ export const trees = [
       ],
       "names": [
         {
-          "vernacularName": "Pino pionero/Pi pinyer",
-          "language": "en",
-          "eol_preferred": true
+          "vernacularName": "Pino pionero",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Pi pinyer",
+          "language": "cat"
         },
         {
           "vernacularName": "Italian Stone Pine",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Italian stone pine",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
           "vernacularName": "Pin parasol",
-          "language": "fr",
-          "eol_preferred": false
+          "language": "fr"
         },
         {
           "vernacularName": "Pin pignon",
-          "language": "fr",
-          "eol_preferred": false
+          "language": "fr"        
         },
         {
           "vernacularName": "Pinheiro-manso",
-          "language": "pt",
-          "eol_preferred": false
+          "language": "pt"
         },
         {
           "vernacularName": "Pinie",
-          "language": "de",
-          "eol_preferred": false
+          "language": "de"
         },
         {
           "vernacularName": "Pino Piñonero",
-          "language": "es",
-          "eol_preferred": false
+          "language": "es"
         },
         {
           "vernacularName": "Pino da pinoli",
-          "language": "it",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Pino piñonero",
-          "language": "es",
-          "eol_preferred": false
+          "language": "it"
         },
         {
           "vernacularName": "Stone Pine",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
           "vernacularName": "Umbrella Pine",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
-          "vernacularName": "Italian stone pine",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "parasol pine",
+          "language": "en"
         },
-        {
-          "vernacularName": "Italian stone pine",
-          "language": "en",
-          "eol_preferred": false
-        }
       ],
       "taxonomy": {
         "usageKey": 5285165,

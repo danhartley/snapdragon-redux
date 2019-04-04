@@ -46,6 +46,7 @@ export const prepImageForCarousel = (image, index, item, config, useCase) => {
         ...{ url : scaleImage(image, useCase, config) },
         itemName: item.name,
         itemCommon: item.itemCommon,
+        rightsHolder: image.rightsHolder || '',
         photographersName : image.photographer ? image.photographer.full_name || '' : ''            
     };
     if(image.src) {
@@ -62,8 +63,6 @@ export const prepImagesForCarousel = (item, config, useCase) => {
 };
 
 export const scaleImage = (image, useCase, config) => {
-
-    // if(!image.url) return '';
 
     image.url = stripImageUrlOfScale(image.url);
 
@@ -94,7 +93,7 @@ export const modalImagesHandler = (images, item, collection, config, displayName
 
 export const modalImageHandler = (image, item, collection, config, displayNameType = 'binomial') => {
     image.addEventListener('click', event => {  
-        if(!item && !collection.items) return;
+        // if(!item && !collection.items) return;
         const parent = document.querySelector('#imageModal .js-modal-image');
         const selectedItem = item || collection.items.find(item => item.name === image.dataset.itemName);
         let images = selectedItem.images.map((image, index) => {

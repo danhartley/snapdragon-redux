@@ -84,20 +84,19 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
         setTimeout(() => {
             
             const speciesCardLinks = document.querySelectorAll('.js-species-card-link span');
-            speciesCardLinks.forEach(link => {
-                link.addEventListener('click', event => {
+            speciesCardLinks.forEach((link, index) => {                
+                link.addEventListener('click', event => {                    
                     const name = event.target.dataset.name;
                     document.querySelector('#cardModal .prev > span').dataset.card = 'species-card';
                     document.querySelector('#cardModal .next > span').dataset.card = 'species-card';
-                    renderCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal);
+                    renderCard(collection, 'MODAL', collection.items.find(i => i.name === name), cardModal, true);
                 });
             });
 
             const traitCardLinks = document.querySelectorAll('.js-key-trait-link');
             traitCardLinks.forEach(link => {
                 link.addEventListener('click', event => {
-                    const keyTrait = event.target.dataset.keyTrait;
-                    // const imageUrl = event.target.dataset.url.replace('.98x68.jpg', '.260x190.jpg');              
+                    const keyTrait = event.target.dataset.keyTrait;        
                     renderNonTaxonCard(collection, 'MODAL', keyTrait, cardModal, imageUrl);
                 });
             });
@@ -228,7 +227,7 @@ const carouselControlHandler = event => {
     
     switch(card) {
         case 'species-card':
-            renderCard(collection, 'MODAL', nextItem, parent);
+            renderCard(collection, 'MODAL', nextItem, parent, true);
             break;
         case 'taxon-card':
             renderTaxonCard(collection, 'MODAL', nextItem, parent, null, rank);

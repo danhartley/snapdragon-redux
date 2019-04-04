@@ -85,13 +85,13 @@ const specimenImages = {
   const family = {
     name: 'family',
     domain: 'collection',
-    question: 'Match species family',
+    // question: 'Match species family',
   };
   
   const familyStrips = {
     name: 'family-strips',
     domain: 'collection',
-    question: 'Match species family',
+    // question: 'Match species family',
   };
   
   const taxon = {

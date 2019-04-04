@@ -1,8 +1,6 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { taxa } from 'api/snapdragon/taxa';
-import { renderWiki } from 'wikipedia/wiki';
-import { renderWikiModal } from 'wikipedia/wiki-modal';
 import { infraspecifics } from 'api/snapdragon/infraspecifics';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
@@ -17,7 +15,6 @@ import { iconicTaxa, matchTaxon } from 'api/snapdragon/iconic-taxa';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import { renderInatDataBox } from 'ui/screens/common/inat-box';
-import { renderTaxonomyBox } from 'ui/screens/common/taxonomy-box';
 import { renderCalendar } from 'ui/screens/common/calendar';
 import cardTemplate from 'ui/screens/cards/card-template.html';
 
@@ -46,12 +43,12 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
         if(!screen) return;
     }
 
-    if(!isInCarousel) {
-        const prev = document.querySelector('#cardModal .js-prev');
-        const next = document.querySelector('#cardModal .js-next');
-        if(prev) prev.style.display = 'none';
-        if(next) next.style.display = 'none';
-    }
+    const prev = document.querySelector('#cardModal .js-prev');
+    const next = document.querySelector('#cardModal .js-next');
+
+
+    if(prev) isInCarousel ? prev.classList.remove('hide-important') : prev.classList.add('hide-important');
+    if(next) isInCarousel ? next.classList.remove('hide-important') : next.classList.add('hide-important');
     
     const template = document.createElement('template');
 
@@ -59,7 +56,7 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
 
     const traits = getTraits(enums);
 
-    renderCommonParts(template, config, item, collection, traits, mode, parent, lessonPlan, rootNode);
+    renderCommonParts(template, config, item, collection, traits, mode, parent, rootNode, isInCarousel);
 
     config.isPortraitMode
         ? renderPortrait(item, config, traits, mode, rootNode)
@@ -72,27 +69,9 @@ const renderLandscape = (item, config, traits, mode, rootNode) => {
     
     getBirdSong(item, traits, src, config.isPortraitMode);
 
-    const eolPage = rootNode.querySelector('.js-species-card-eol-link');
-    
-    if(mode === 'MODAL') {
-        eolPage.classList.add('hide');
-    } else {
-        eolPage.setAttribute('href', `http://eol.org/pages/${item.id}/overview`);
-        eolPage.setAttribute('target', '_blank');
-        eolPage.setAttribute('style', 'text-decoration: none');
-    
-        setTimeout(()=>{
-            const wikiLink = rootNode.querySelector('.js-species-card-wiki');            
-            renderWikiModal(item, wikiLink, config);
-        });    
-    
-        const wikiNode = rootNode.querySelector('.js-species-card-wiki');
-    
-        renderWiki(wikiNode, item, config.language);
-    }
     const inatNode = rootNode.querySelector('.js-inat-box');
 
-    renderInatDataBox(inatNode, item, config);
+    renderInatDataBox(inatNode, item, config, mode);
 };
 
 const renderPortrait = (item, config, traits, mode, rootNode) => {
@@ -127,11 +106,9 @@ const renderPortrait = (item, config, traits, mode, rootNode) => {
     });
 };
 
-const renderCommonParts = (template, config, item, collection, traits, mode, parent, lessonPlan, rootNode) => {
+const renderCommonParts = (template, config, item, collection, traits, mode, parent, rootNode, isInCarousel) => {
 
     const name = item.name;
-    // const epithet = itemProperties.latin(item.species);
-    // const latin = epithet ? `${item.species}: ${epithet.en}` : '';
     const rank = "species";
     item.vernacularName = item.vernacularName || itemProperties.getVernacularName(item, config);
     const family = taxa.find(f => f.name === item.family);
@@ -147,7 +124,7 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
     const names = [ ...new Set(item.names.filter(name => name.language === config.language).map(name => name.vernacularName.toLowerCase())) ];
     const occurrences = names.length; 
 
-    const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa);
+    const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
 
     const options = [
         { name: traitTypes.name.RANK, formatter: trait => `UK # ${trait.value}` },
@@ -206,8 +183,8 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
         });
     }
 
-    lookALikes(collection, item, traits, config);
-    renderFeatures(item, traits, config, rootNode.querySelector('.js-feature-types'), mode);
+    lookALikes(item, traits, config);
+    renderFeatures(item, traits, config, rootNode.querySelector('.js-feature-types'), mode, isInCarousel);
     
     const calendarNode = rootNode.querySelector('.js-calendar-box');
 
@@ -215,7 +192,8 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
 
     renderIcon(item, rootNode);
 
-    if(mode === 'MODAL') {        
+    if(mode === 'MODAL') {      
+          
         rootNode.querySelector('#cardModal .js-modal-text-title').innerHTML = collection.name;
 
         const prev = rootNode.querySelector('#cardModal .js-prev > span');
@@ -228,7 +206,6 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
         next.dataset.transition = 'next';
         next.dataset.modal = 'cardModal';
         
-
         const lines = document.getElementsByTagName('hr');
 
         Array.from(lines).forEach(hr => hr.style.display = 'none');

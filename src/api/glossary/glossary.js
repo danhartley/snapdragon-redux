@@ -3,6 +3,7 @@ import { animalia } from 'api/glossary/animalia';
 import { commmon } from 'api/glossary/common';
 import { fungi } from 'api/glossary/fungi';
 import { lichen } from 'api/glossary/lichen';
+import { insecta } from 'api/glossary/insecta';
 
 export const getGlossary = requiredGlossaries => {
     
@@ -24,6 +25,9 @@ export const getGlossary = requiredGlossaries => {
                 break;
             case 'lichen':
                 glossary = [ ...glossary, ...lichen ];
+                break;
+            case 'insecta':
+                glossary = [ ...glossary, ...insecta ];
                 break;
         }
     });

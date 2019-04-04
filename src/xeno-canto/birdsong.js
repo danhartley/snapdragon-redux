@@ -38,5 +38,6 @@ export const getBirdSong = (item, traits, node, portrait) => {
         }
     } else {
         node.style.display = 'none';
+        document.querySelector('.bird-song').style.display = 'none';
     }
 }

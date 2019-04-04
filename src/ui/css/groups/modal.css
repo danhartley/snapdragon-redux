@@ -13,12 +13,41 @@
 
 #imageModal .modal-body,
 #imageComparisonModal .modal-body {
-  padding: 0;
+    padding: 0;
+}
+
+#imageComparisonModal .modal-dialog {
+    width: 70%;
+    max-width: initial;
 }
 
 #imageModal .modal-body,
 #imageComparisonModal .modal-body {
-  height: 55vh;
+  height: 35vh;  
+}
+
+#imageComparisonModal .slideBySliderContainer {
+    display: flex;
+}
+
+#imageComparisonModal .modal-title {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#imageComparisonModal .modal-title span {
+    flex: 1;
+    text-align: center;
+} 
+
+#imageComparisonModal .imageSlider.carousel.slide {
+    margin: 0 .5rem;
+}
+
+#imageComparisonModal .carousel-indicators,
+#imageComparisonModal .image-load-original {
+    display: none;
 }
 
 #imageModal .modal-body .imageSlider .carousel-item {

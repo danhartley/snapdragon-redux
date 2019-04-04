@@ -1,14 +1,14 @@
 import { iconicTaxa, matchTaxon, matchIcon } from 'api/snapdragon/iconic-taxa';
 
 test('walk up taxonomic tree of an item until a matching iconic taxon is found', () => {
-    let item = { taxonomy: { class: 'aves' } };
-    expect(matchTaxon(item.taxonomy, iconicTaxa)).toEqual('aves');
+    let item = { taxonomy: { order: '', class: 'aves' } };
+    expect(matchTaxon(item.taxonomy, iconicTaxa).value).toEqual('aves');
     item = {
         taxonomy: {
             kingdom: 'fungi'
         }
     }
-    expect(matchTaxon(item.taxonomy, iconicTaxa)).toEqual('fungi')
+    expect(matchTaxon(item.taxonomy, iconicTaxa).value).toEqual('fungi')
 });
 
 test('given iconic taxon return apprpriate icon class', () => {

@@ -1,9 +1,13 @@
+import { utils } from 'utils/utils';
 import { renderTemplate } from 'ui/helpers/templating';
 import { getLocation, getPlace } from 'geo/geo';
 import { getInatTaxonStats, getInatPlaceId } from 'api/inat/inat';
 import inatBoxTemplate from 'ui/screens/common/inat-box-template.html';
 
-export async function renderInatDataBox(parent, item, config) {
+import { renderWiki } from 'wikipedia/wiki';
+import { renderWikiModal } from 'wikipedia/wiki-modal';
+
+export async function renderInatDataBox(parent, item, config, mode) {
 
     const template = document.createElement('template');
 
@@ -11,7 +15,17 @@ export async function renderInatDataBox(parent, item, config) {
 
     parent.innerHTML = '';
 
-    renderTemplate({}, template.content, parent);
+    const native = item.establishmentMeans 
+        ? {
+            range: `${utils.capitaliseFirst(item.establishmentMeans.establishment_means)} to ${item.establishmentMeans.place.display_name}`
+        }
+        : {
+            range: ''
+        };
+
+    native.font = native.range.length > 40 ? 'font-size:.8rem' : '';
+
+    renderTemplate({native}, template.content, parent);
     
     getInatTaxonStats(item, config).then(stats => {
 
@@ -44,8 +58,23 @@ export async function renderInatDataBox(parent, item, config) {
             placeTaxonCount += Number.parseInt(taxon.count);
         }); 
 
-        parent.querySelector('.js-place').innerHTML = country;
+        parent.querySelector('.js-world').innerHTML = mode === 'MODAL' ? 'Worldwide' : 'Worldwide observations';
+        parent.querySelector('.js-place').innerHTML = mode === 'MODAL' ? country : `${country} observations`;
         parent.querySelector('.js-place-taxon-count').innerHTML = placeTaxonCount.toLocaleString();
     });
     
+    const eolPage = document.querySelector('.js-species-card-eol-link');
+    
+    eolPage.setAttribute('href', `http://eol.org/pages/${item.id}/overview`);
+    eolPage.setAttribute('target', '_blank');
+    eolPage.setAttribute('style', 'text-decoration: none');
+
+    setTimeout(()=>{
+        const wikiLink = document.querySelector('.js-species-card-wiki');            
+        renderWikiModal(item, wikiLink, config);
+    });    
+
+    const wikiNode = document.querySelector('.js-species-card-wiki');
+
+    renderWiki(wikiNode, item, config.language);
 }

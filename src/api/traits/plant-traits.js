@@ -95,6 +95,24 @@ export const getTraits = SD => {
             { name: SD.name.USAGE, value: SD.usage.FOOD },
             { name: SD.name.FOOD, value: `Papilio machaon`, type: SD.symbiosis.HERBIVORY },
         ] },
+        { name: 'Urtica dioica',
+        symbionts: [ 
+            { id: 'Vanessa atalanta' }
+        ], 
+        traits: [
+            { name: SD.name.USAGE, value: SD.usage.FOOD },
+            { name: SD.role.HERBIVORE, value: 'Vanessa atalanta', type: SD.symbiosis.HERBIVORY },
+        ] },
+        { name: 'Pinus pinea',
+        symbionts: [ 
+            { id: 'Sciurus vulgaris' }
+        ], 
+        traits: [
+            { name: SD.name.USAGE, value: SD.usage.FOOD },
+            { name: SD.role.HERBIVORE, value: 'Sciurus vulgaris', type: SD.symbiosis.HERBIVORY },
+            { name: SD.name.ALLOCHORY, value: SD.allochory.ANEMOCHORY },
+            { name: SD.name.REPRODUCTIVE_CONTAINER, value: SD.reproductiveContainer.CONE }
+        ] },
     ];
 };
 

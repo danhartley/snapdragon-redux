@@ -37,9 +37,9 @@ export const renderMixedSpecimenImages = collection => {
     const parent = DOM.leftBody;
     parent.innerHTML = '';
 
-    const itemRank = matchTaxon(item.taxonomy, iconicTaxa).toLowerCase();
+    const itemRank = matchTaxon(item.taxonomy, iconicTaxa).value;
     const itemPool = species.filter(sp => sp.images);
-    const clonedItems = R.clone(itemPool.filter(item => matchTaxonKey(item.taxonomy,[itemRank])));
+    const clonedItems = R.clone(itemPool.filter(item => matchTaxonKey(item.taxonomy,[itemRank]).value));
     const mixedItems = R.take(5, utils.shuffleArray(clonedItems.filter(ci => ci.name !== item.name)));
     mixedItems.push(R.clone(item));
 

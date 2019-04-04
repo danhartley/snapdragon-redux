@@ -195,7 +195,7 @@
     }
 
     .strip {
-        font-size: 1.3rem;
+        /* font-size: 1.2rem; */
         margin: .5rem .25rem;
         padding: 1rem;
     }
@@ -206,6 +206,17 @@
 
     .block.given {
         margin: 1rem 0;
+    }
+
+    .data-box-container div.native {
+        font-family: serif;
+        font-style: italic;
+        letter-spacing: .03rem;
+        font-size: 1.2rem;
+    }
+
+    .carousel-inner .image-load-original > div {
+        cursor: pointer;
     }
 }
 
@@ -226,9 +237,3 @@
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
-
-/* @media (min-height: 1024px) {
-    .species-grid {
-        height: 840px;
-    }
-} */

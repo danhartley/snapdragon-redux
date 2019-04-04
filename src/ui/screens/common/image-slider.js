@@ -65,7 +65,10 @@ export const imageSlider = (config, images, parent, disableModal, image) => {
 
     parent.innerHTML = '';
 
-    images.forEach((img, i) => img.index = i);
+    images.forEach((img, i) => {
+        img.index = i;
+        img.rightsHolder = img.rightsHolder || 'Public domain';
+    });
 
     renderTemplate({ images, index: '' }, slider.content, parent);
     selectActiveNodeImage(image || images[0], parent, config);    

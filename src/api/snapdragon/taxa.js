@@ -11,8 +11,6 @@ export const taxa = [
         { language: "es", names:[ 'Daisies' ]},
         { language: "pt", names:[ 'Daisies' ]},
         { language: "it", names:[ 'Daisies' ]}],
-        wiki: "https://en.wikipedia.org/wiki/Asteraceae",
-        eol: "http://eol.org/pages/4206/overview",
         thumb: '89/27/23/549.BI-image-109191.jpg',
         species: 32913,
         genera: 1911,
@@ -2170,7 +2168,7 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Most common tropical Asia & Africa but Pieris brassicae and Pieris rapae which feed on brassicas are widespread.',
+                summary: 'Most common tropical Asia & Africa but Pieris brassicae and Pieris rapae both of which feed on brassicas are widespread.',
                 identification: `Most pierid butterflies are white, yellow, or orange in coloration, often with black spots.`
             }
         ],
@@ -2557,7 +2555,7 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'The most diverse in size of any mammalian order',
+                summary: 'The most diverse in size of any mammalian order.',
                 identification: 'Last upper premolar (P4) and first lower molar (m1) have blade-like enamel crowns that work together as carnassial teeth to shear meat.',
                 keyMembers: [],
                 usage: []
@@ -2651,5 +2649,117 @@ export const taxa = [
         taxon: 'order',
         name: 'Blattodea',
         names: [ { language: "en", names: ['Cockroaches']}],
+    },
+    {
+        taxon: 'family',
+        name: 'Canidae',
+        genera: 14,
+        species: 34,
+        names: [ { language: "en", names: ['Coyotes, Dogs, Foxes…']},
+        { language: "fr", names:[ 'Canidés' ]},
+        { language: "de", names:[ 'Hunde' ]},
+        { language: "es", names:[ 'Cánidos' ]},
+        { language: "pt", names:[ 'Canídeos' ]},
+        { language: "it", names:[ 'Canidi' ]}],
+        wiki: "https://en.wikipedia.org/wiki/Canidae",
+        eol: "https://eol.org/pages/7676",
+        thumb: '64/9d/af/509.54862125.260x190.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Found on all continents except Antarctica, arriving independently or introduced by humans. Social, co-operative, hierarchical and intelligent.',
+                identification: 'Mostly consistent body form, long muzzles, upright ears, teeth adapted for cracking bones and slicing flesh, long legs, and bushy tails. Size 24cm to 2 metres.'
+            },
+        ],
+        traits: [ 
+            { name: SD.name.ORGANISATION, value: SD.organisation.EUSOCIAL },
+            { name: SD.name.SENSORY_ACUITY, value: SD.sense.SMELL },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.VOCALISATION },
+         ],
+    },
+    {
+        taxon: 'family',
+        name: 'Nymphalidae',
+        genera: 14,
+        species: '~6000',
+        names: [ { language: "en", names: ['Brush-footed butterflies']},
+            { language: "fr", names:[ 'Brush-footed butterflies' ]},
+            { language: "de", names:[ 'Edelfalter' ]},
+            { language: "es", names:[ 'Ninfálidos' ]},
+            { language: "pt", names:[ 'Brush-footed butterflies' ]},
+            { language: "it", names:[ 'Brush-footed butterflies' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Nymphalidae",
+        eol: "https://eol.org/pages/876",
+        thumb: '42/c9/18/18.https___www_inaturalist_org_photos_5537882.260x190.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Largest family of butterflies with more than 6,000 species distributed throughout most of the world.',
+                identification: 'Usually medium-sized to large butterflies, often with a reduced pair of forelegs. Many hold their colourful wings flat when resting.'
+            },
+        ],
+        traits: [ 
+            { name: SD.name.CRYPSIS, value: SD.crypsis.CAMOUFLAGE },
+            { name: SD.name.CRYPSIS, value: SD.crypsis.MIMICRY },
+         ],
+    },
+    {
+        taxon: 'family',
+        name: 'Mantidae',
+        genera: '~400',
+        species: '~2000',
+        names: [ { language: "en", names: ['Praying Mantises']},
+            { language: "fr", names:[ 'Mantidé' ]},
+            { language: "de", names:[ 'Fangheuschrecken' ]},
+            { language: "es", names:[ 'Mántido' ]},
+            { language: "pt", names:[ 'Praying Mantises' ]},
+            { language: "it", names:[ 'Praying Mantises' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Mantidae",
+        eol: "https://eol.org/pages/418",
+        thumb: '3f/fe/3c/18.https___www_inaturalist_org_photos_504354.260x190.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Species mostly tropical or subtropical.',
+                identification: 'Large, slow-moving insects that are characterized by front legs with enlarged femurs.'
+            },
+        ],
+        traits: [ 
+            { name: SD.name.CRYPSIS, value: SD.crypsis.CAMOUFLAGE },
+            { name: SD.name.DISPLAY, value: SD.display.SEXUAL_DIMORPHISM },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.SEXUAL_CANNIBALISM },
+            { name: SD.name.DISPLAY, value: SD.display.DIEMATIC },
+         ],
+    },
+    {
+        taxon: 'family',
+        name: 'Pinaceae',
+        genera: '11',
+        species: '~250',
+        names: [ { language: "en", names: ['Pine family']},
+            { language: "fr", names:[ 'Pinacées' ]},
+            { language: "de", names:[ 'Kieferngewächse' ]},
+            { language: "es", names:[ 'Pináceas' ]},
+            { language: "pt", names:[ 'Pinaceae' ]},
+            { language: "it", names:[ 'Pinacee' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Pinaceae",
+        eol: "https://eol.org/pages/6747",
+        thumb: '81/1a/20/542.7797050682.260x190.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Largest extant conifer family in species diversity, with between 220 and 250 species and second-largest (Cupressaceae) in geographical range (mostly temperate)',
+                identification: 'Most are trees (rarely shrubs) from 2-100m tall. Mostly evergreen, resinous, monoecious, with subopposite or whorled branches, spirally arranged, needles. 3-24 cotyledons.'
+            },
+        ],
+        traits: [ 
+            { name: SD.name.FEMALE_CONE_LENGTH, value: '2-60cm' },
+            { name: SD.name.MALE_CONE_LENGTH, value: '.5-6cm' },
+            { name: SD.name.ALLOCHORY, value: SD.allochory.ANEMOCHORY },
+            { name: SD.name.REPRODUCTIVE_CONTAINER, value: SD.reproductiveContainer.CONE }            
+         ],
     },
 ];

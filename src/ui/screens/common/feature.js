@@ -6,34 +6,10 @@ import { renderTemplate } from 'ui/helpers/templating';
 import * as traitTypes from 'api/traits/trait-types';
 import { species } from 'api/species';
 import { renderCard } from 'ui/screens/cards/card';
-import featureTemplate from 'ui/screens/common/feature-template.html';
+import featureLookalike from 'ui/screens/common/feature-look-alike.html';
 import symbiontTemplate from 'ui/screens/common/feature-symbiont-list-template.html';
 
-const getFeature = (item, traits, config, type) => {
-
-    let feature = itemProperties.itemContextProperty(traits, item, type);
-
-    if(feature && feature !== '' && feature.length !== 0 && feature[0] !== '') {
-
-        if(config.isPortraitMode) {
-            feature = Array.isArray(feature) ? R.take(3, feature) : feature;
-        }
-        
-        let label;
-        switch(type) {
-            case traitTypes.name.ECOLOGY: 
-                label = 'Habitat: ';
-                break;
-            default:
-                label = type ? `${utils.capitaliseAll(type)}: ` : '';
-                break;
-        }
-        const featureValue = Array.isArray(feature) ? feature.join(', ') : feature;
-        return {label, feature: featureValue};
-    }
-};
-
-export const renderFeatures = (item, traits, config, parent, mode) => {
+export const renderFeatures = (item, traits, config, parent, mode, isInCarousel) => {
 
     const types = [];
 
@@ -48,6 +24,22 @@ export const renderFeatures = (item, traits, config, parent, mode) => {
         if(!item) return { id: symbiont, display: symbiont };
         const vernacularName = itemProperties.getVernacularName(item, config);
         return vernacularName ? { id: symbiont, display: vernacularName } : { id: symbiont, display: symbiont };
+    };
+
+    const addLinksToSpeciesCards = mode => {
+        if(!isInCarousel) {
+            const speciesCardLinks = mode === 'MODAL'
+                    ? document.querySelectorAll('#cardModal .js-species-card-link span')
+                    : document.querySelectorAll('.js-species-card-link span');
+            speciesCardLinks.forEach(link => {
+                link.addEventListener('click', event => {
+                    const name = event.target.id || event.target.dataset.name;
+                    const selectedItem = species.find(i => i.name === name);
+                    selectedItem.species = itemProperties.getSpeciesName(item.name);
+                    renderCard({ name: 'Local species', items: species }, 'MODAL', selectedItem, document.querySelector('#cardModal .js-modal-body'), false);
+                });
+            });
+        }
     };
 
     if(speciesTraits && speciesTraits.symbionts) {
@@ -88,28 +80,39 @@ export const renderFeatures = (item, traits, config, parent, mode) => {
 
         renderTemplate({ symbiontTraits }, template.content, parent);
 
-        const speciesCardLinks = document.querySelectorAll('.js-species-card-link span');
-        speciesCardLinks.forEach(link => {
-            link.addEventListener('click', event => {
-                const name = event.target.id || event.target.dataset.name;
-                const selectedItem = species.find(i => i.name === name);
-                selectedItem.species = itemProperties.getSpeciesName(item.name);
-                renderCard({ name: 'Local species', items: species }, 'MODAL', selectedItem, document.querySelector('#cardModal .js-modal-body'), false);
-            });
-        });
+        addLinksToSpeciesCards(mode);
         
     } else {
-        // let features = types.map(ft => {
-        //     return getFeature(item, traits, config, ft)
-        // }).filter(ft => ft);
-    
-        // if(features.length === 0) return;
 
-        // features = R.take(3, features);
+        const lookalikeNames = itemProperties.itemContextProperty(traits, item, 'look-alikes');
+
+        if(lookalikeNames) {
     
-        // const template = document.createElement('template');
-        // template.innerHTML = featureTemplate;
-    
-        // renderTemplate({features}, template.content, parent);
+            const template = document.createElement('template');
+            template.innerHTML = featureLookalike;
+
+            const modal = mode === 'MODAL' ? '' : 'modal';
+            const className = mode === 'MODAL' ? '' : 'underline-link'
+            const parent = mode === 'MODAL' ? document.querySelector('#cardModal .js-feature-types') : document.querySelector('.js-feature-types');
+
+            const lookalikes = lookalikeNames.map(name => {
+                const lookalike = species.find(s => s.name === name);
+                if(!lookalike) return;
+                return { 
+                    name: lookalike.name, 
+                    id: lookalike.id,
+                    modal,
+                    className
+                };
+            }).filter(lookalike => lookalike);
+        
+            if(lookalikes.length) {
+
+                renderTemplate({lookalikes}, template.content, parent);
+
+                addLinksToSpeciesCards(mode);
+
+            }            
+        }
     }     
 };

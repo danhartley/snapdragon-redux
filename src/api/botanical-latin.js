@@ -646,4 +646,8 @@ export const epithets = [
         "latin" : ["mellifera"],
         "en" : ["honey-bearing"]
     },
+    {
+        "latin" : ["instar"],
+        "en" : ["likeness, form"]
+    },
 ];

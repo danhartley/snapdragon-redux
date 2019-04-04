@@ -55,7 +55,7 @@ let landscapeLayouts = [
     familyStripsMatch,// still working... missing family data an issue 
 ];
 
-landscapeLayouts = [ traitPropertyMatch ];
+landscapeLayouts = [ familyStripsMatch ];
 
 const landscapeLesson1 = {
     id: 1,

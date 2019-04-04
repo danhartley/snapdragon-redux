@@ -14,11 +14,7 @@ export const renderSpecimenTiles = (collection) => {
 
     if(!item) return;
 
-    const { counter } = store.getState();
-
-    // if(counter.index % 2 === 0) { // depends on whether showing species card summary
-        renderItemSpecimenTiles(item);
-    // }
+    renderItemSpecimenTiles(item);
 };
 
 const renderItemSpecimenTiles = item => {
