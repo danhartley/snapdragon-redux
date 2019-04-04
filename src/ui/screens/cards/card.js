@@ -59,7 +59,7 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
 
     const traits = getTraits(enums);
 
-    renderCommonParts(template, config, item, collection, traits, mode, parent, lessonPlan, rootNode);
+    renderCommonParts(template, config, item, collection, traits, mode, parent, rootNode, isInCarousel);
 
     config.isPortraitMode
         ? renderPortrait(item, config, traits, mode, rootNode)
@@ -127,7 +127,7 @@ const renderPortrait = (item, config, traits, mode, rootNode) => {
     });
 };
 
-const renderCommonParts = (template, config, item, collection, traits, mode, parent, lessonPlan, rootNode) => {
+const renderCommonParts = (template, config, item, collection, traits, mode, parent, rootNode, isInCarousel) => {
 
     const name = item.name;
     const rank = "species";
@@ -205,7 +205,7 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
     }
 
     lookALikes(collection, item, traits, config);
-    renderFeatures(item, traits, config, rootNode.querySelector('.js-feature-types'), mode);
+    renderFeatures(item, traits, config, rootNode.querySelector('.js-feature-types'), mode, isInCarousel);
     
     const calendarNode = rootNode.querySelector('.js-calendar-box');
 

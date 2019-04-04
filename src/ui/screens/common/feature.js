@@ -33,7 +33,7 @@ const getFeature = (item, traits, config, type) => {
     }
 };
 
-export const renderFeatures = (item, traits, config, parent, mode) => {
+export const renderFeatures = (item, traits, config, parent, mode, isInCarousel) => {
 
     const types = [];
 
@@ -88,7 +88,7 @@ export const renderFeatures = (item, traits, config, parent, mode) => {
 
         renderTemplate({ symbiontTraits }, template.content, parent);
 
-        if(mode !== 'MODAL') {
+        if(!isInCarousel) {
             const speciesCardLinks = document.querySelectorAll('.js-species-card-link span');
             speciesCardLinks.forEach(link => {
                 link.addEventListener('click', event => {
