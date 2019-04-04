@@ -46,6 +46,7 @@ export const prepImageForCarousel = (image, index, item, config, useCase) => {
         ...{ url : scaleImage(image, useCase, config) },
         itemName: item.name,
         itemCommon: item.itemCommon,
+        rightsHolder: image.rightsHolder || '',
         photographersName : image.photographer ? image.photographer.full_name || '' : ''            
     };
     if(image.src) {

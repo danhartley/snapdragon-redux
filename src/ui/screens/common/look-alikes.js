@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { species } from 'api/species';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageSideBySlider } from 'ui/screens/common/image-slider';
@@ -33,7 +34,8 @@ export const lookALikes = (collection, item, traits, config) => {
         const scientificNames = [];
 
         lookalikes.forEach(lookalike => {
-            const lookalikeItem = collection.items.find(item => item.name === lookalike);
+            const lookalikeItem = species.find(item => item.name === lookalike);
+            // const lookalikeItem = collection.items.find(item => item.name === lookalike);
             if(!lookalikeItem) return;
             lookalikeItem.vernacularName = itemProperties.getVernacularName(lookalikeItem, config);
             names.push(lookalikeItem.vernacularName);

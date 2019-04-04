@@ -1540,21 +1540,6 @@ label.btn.btn-secondary .lesson-icon {
   flex: 1;
 }
 
-#imageComparisonModal .slideBySliderContainer {
-  display: flex;
-}
-
-#imageComparisonModal .modal-title {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-}
-
-#imageComparisonModal .modal-title span {
-  flex: 1;
-  text-align: center;
-}
-
 .carousel-inner .image-load-original {
   position: absolute;
   display: flex;
