@@ -105,7 +105,12 @@ export const getInatSpecies = (inatConfig, config) => {
             // console.log(observation.taxon.name);
             if(R.contains(observation.taxon.name, names)) {
                 const item = { ...species.find(item => item.name === observation.taxon.name) };
-                return { ...item, observationCount: observation.taxon.observations_count, iconicTaxon: observation.taxon.iconic_taxon_name };
+                return { 
+                    ...item, 
+                    observationCount: observation.taxon.observations_count, 
+                    iconicTaxon: observation.taxon.iconic_taxon_name,
+                    establishmentMeans: observation.taxon.establishment_means
+                };
             } 
             taxonNames.push(observation.taxon.name);
         });

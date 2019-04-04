@@ -1,3 +1,4 @@
+import { utils } from 'utils/utils';
 import { renderTemplate } from 'ui/helpers/templating';
 import { getLocation, getPlace } from 'geo/geo';
 import { getInatTaxonStats, getInatPlaceId } from 'api/inat/inat';
@@ -11,7 +12,17 @@ export async function renderInatDataBox(parent, item, config) {
 
     parent.innerHTML = '';
 
-    renderTemplate({}, template.content, parent);
+    const native = item.establishmentMeans 
+        ? {
+            range: `${utils.capitaliseFirst(item.establishmentMeans.establishment_means)} to ${item.establishmentMeans.place.display_name}`
+        }
+        : {
+            range: ''
+        };
+
+    native.font = native.length > 40 ? 'font-size:.8rem' : '';
+
+    renderTemplate({native}, template.content, parent);
     
     getInatTaxonStats(item, config).then(stats => {
 
