@@ -26,9 +26,21 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel)
         return vernacularName ? { id: symbiont, display: vernacularName } : { id: symbiont, display: symbiont };
     };
 
-    if(!speciesTraits || !speciesTraits.symbionts) {
-        document.querySelector('.js-feature-types').classList.remove('feature-types');
-    }
+    const addLinksToSpeciesCards = mode => {
+        if(!isInCarousel) {
+            const speciesCardLinks = mode === 'MODAL'
+                    ? document.querySelectorAll('#cardModal .js-species-card-link span')
+                    : document.querySelectorAll('.js-species-card-link span');
+            speciesCardLinks.forEach(link => {
+                link.addEventListener('click', event => {
+                    const name = event.target.id || event.target.dataset.name;
+                    const selectedItem = species.find(i => i.name === name);
+                    selectedItem.species = itemProperties.getSpeciesName(item.name);
+                    renderCard({ name: 'Local species', items: species }, 'MODAL', selectedItem, document.querySelector('#cardModal .js-modal-body'), false);
+                });
+            });
+        }
+    };
 
     if(speciesTraits && speciesTraits.symbionts) {
 
@@ -68,30 +80,39 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel)
 
         renderTemplate({ symbiontTraits }, template.content, parent);
 
-        if(!isInCarousel) {
-            const speciesCardLinks = document.querySelectorAll('.js-species-card-link span');
-            speciesCardLinks.forEach(link => {
-                link.addEventListener('click', event => {
-                    const name = event.target.id || event.target.dataset.name;
-                    const selectedItem = species.find(i => i.name === name);
-                    selectedItem.species = itemProperties.getSpeciesName(item.name);
-                    renderCard({ name: 'Local species', items: species }, 'MODAL', selectedItem, document.querySelector('#cardModal .js-modal-body'), false);
-                });
-            });
-        }
+        addLinksToSpeciesCards(mode);
         
     } else {
 
-        const lookalikes = itemProperties.itemContextProperty(traits, item, 'look-alikes');
+        const lookalikeNames = itemProperties.itemContextProperty(traits, item, 'look-alikes');
 
-        if(lookalikes) {
+        if(lookalikeNames) {
     
-            document.querySelector('.js-feature-types').classList.add('feature-types');
-
             const template = document.createElement('template');
             template.innerHTML = featureLookalike;
+
+            const modal = mode === 'MODAL' ? '' : 'modal';
+            const className = mode === 'MODAL' ? '' : 'underline-link'
+            const parent = mode === 'MODAL' ? document.querySelector('#cardModal .js-feature-types') : document.querySelector('.js-feature-types');
+
+            const lookalikes = lookalikeNames.map(name => {
+                const lookalike = species.find(s => s.name === name);
+                if(!lookalike) return;
+                return { 
+                    name: lookalike.name, 
+                    id: lookalike.id,
+                    modal,
+                    className
+                };
+            }).filter(lookalike => lookalike);
         
-            renderTemplate({lookalikes}, template.content, parent);
+            if(lookalikes.length) {
+
+                renderTemplate({lookalikes}, template.content, parent);
+
+                addLinksToSpeciesCards(mode);
+
+            }            
         }
     }     
 };

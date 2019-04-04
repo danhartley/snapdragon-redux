@@ -207,7 +207,6 @@
     /* FEATURES */
 
     .feature-types {
-        border-bottom: 1px solid rgb(52, 58, 64,.7);
         margin: 8rem 0 0 0;
     }
       
@@ -228,6 +227,10 @@
         line-height: 1.5rem;
         color: white;
         letter-spacing: .05rem;
+    }
+
+    .feature-symbiont-list tfoot td {
+        border-bottom: .05rem solid rgb(52, 58, 64,.7);
     }
     
     .feature-symbiont-list th,
