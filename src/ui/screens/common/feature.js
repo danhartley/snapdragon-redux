@@ -6,32 +6,8 @@ import { renderTemplate } from 'ui/helpers/templating';
 import * as traitTypes from 'api/traits/trait-types';
 import { species } from 'api/species';
 import { renderCard } from 'ui/screens/cards/card';
-import featureTemplate from 'ui/screens/common/feature-template.html';
+import featureLookalike from 'ui/screens/common/feature-look-alike.html';
 import symbiontTemplate from 'ui/screens/common/feature-symbiont-list-template.html';
-
-const getFeature = (item, traits, config, type) => {
-
-    let feature = itemProperties.itemContextProperty(traits, item, type);
-
-    if(feature && feature !== '' && feature.length !== 0 && feature[0] !== '') {
-
-        if(config.isPortraitMode) {
-            feature = Array.isArray(feature) ? R.take(3, feature) : feature;
-        }
-        
-        let label;
-        switch(type) {
-            case traitTypes.name.ECOLOGY: 
-                label = 'Habitat: ';
-                break;
-            default:
-                label = type ? `${utils.capitaliseAll(type)}: ` : '';
-                break;
-        }
-        const featureValue = Array.isArray(feature) ? feature.join(', ') : feature;
-        return {label, feature: featureValue};
-    }
-};
 
 export const renderFeatures = (item, traits, config, parent, mode, isInCarousel) => {
 
@@ -105,17 +81,17 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel)
         }
         
     } else {
-        // let features = types.map(ft => {
-        //     return getFeature(item, traits, config, ft)
-        // }).filter(ft => ft);
-    
-        // if(features.length === 0) return;
 
-        // features = R.take(3, features);
+        const lookalikes = itemProperties.itemContextProperty(traits, item, 'look-alikes');
+
+        if(lookalikes) {
     
-        // const template = document.createElement('template');
-        // template.innerHTML = featureTemplate;
-    
-        // renderTemplate({features}, template.content, parent);
+            document.querySelector('.js-feature-types').classList.add('feature-types');
+
+            const template = document.createElement('template');
+            template.innerHTML = featureLookalike;
+        
+            renderTemplate({lookalikes}, template.content, parent);
+        }
     }     
 };

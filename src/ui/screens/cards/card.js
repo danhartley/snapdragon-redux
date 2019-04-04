@@ -183,7 +183,7 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
         });
     }
 
-    lookALikes(collection, item, traits, config);
+    lookALikes(item, traits, config);
     renderFeatures(item, traits, config, rootNode.querySelector('.js-feature-types'), mode, isInCarousel);
     
     const calendarNode = rootNode.querySelector('.js-calendar-box');

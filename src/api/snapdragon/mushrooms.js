@@ -1131,17 +1131,23 @@ export const mushrooms = [
       "names": [
         {
           "vernacularName": "Devil's Snuffbox",
-          "language": "en",
-          "eol_preferred": true
+          "language": "en"
         },
         {
           "vernacularName": "Common Puffball",
           "language": "en"
         },
         {
+          "vernacularName": "warted puffball",
+          "language": "en"
+        },
+        {
+          "vernacularName": "gem-studded puffball",
+          "language": "en"
+        },
+        {
           "vernacularName": "Fungo-de-sapo",
-          "language": "pt",
-          "eol_preferred": true
+          "language": "pt"
         }
       ],
       
