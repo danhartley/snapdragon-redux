@@ -33,7 +33,7 @@ export const renderTestCardTemplate = (collection, context) => {
         speciesContainer.classList.add('swap-in-card');
         speciesContainer.classList.remove('swap-out-card');
         
-        speciesCard = document.querySelector('.species.card');        
+        speciesCard = document.querySelector('.card');
         speciesCardIcon = speciesCard.querySelector('.iconic-icon');
 
         speciesCardIcon.addEventListener('click', event => {

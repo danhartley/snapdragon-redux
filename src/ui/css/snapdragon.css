@@ -125,8 +125,8 @@ hr {
   padding: 0 0.5rem;
 }
 
-.non-taxon.revision.card .id-box,
-.non-taxon.revision.card .non-taxa-definition {
+.non-taxon.card .id-box,
+.non-taxon.card .non-taxa-definition {
   min-height: 5rem;
 }
 
@@ -322,32 +322,13 @@ a.dropdown-item {
   background-color: var(--snap-list-alt-background);
 }
 
-/* .taxon.revision.card,
-.species.revision.card,
-.cultivar.revision.card,
-.non-taxon.revision.card {
-  justify-content: space-between;
-  background-color: rgb(249, 248, 238);
-} */
-
-.non-taxon.revision.card {
+.non-taxon.card {
   background-color: rgb(216, 227, 220);
 }
 
-/* .species.revision.card > div:nth-child(1) > div:nth-child(1),
-.taxon.revision.card > div:nth-child(1) {
-  background-color: var(--snap-species-header-background);
-  border-bottom: 0.05rem solid var(--snap-border-dark);
-  height: 64px;
-  height: 88px;
-} */
-
-.species.revision.card {
+.species.card {
   margin: 0;
 }
-
-/* .species.revision.card img,
-.taxon.revision.card img, */
 
 /* LICHEN FORM */
 
@@ -369,12 +350,12 @@ a.dropdown-item {
   padding: 0 1.25rem 0 0;
 }
 
-.non-taxon.revision.card {
+.non-taxon.card {
   background-color: rgb(216, 227, 220);
   justify-content: space-between;
 }
 
-.non-taxon.revision.card img {
+.non-taxon.card img {
   height: 88px;
   width: 88px;
 }
@@ -392,11 +373,7 @@ a.dropdown-item {
   font-size: 1.1rem;
 }
 
-/* .species.revision.card .data-box > div:nth-child(2) {
-  text-align: right;
-} */
-
-.taxon.revision.card {
+.taxon.card {
   padding: 0 0.5rem 0 0;
 }
 
@@ -1656,22 +1633,21 @@ iframe#birdsong {
   vertical-align: text-top;
 }
 
-.definition.revision.card {
+/* GLOSSARY MODAL */
+
+.definition.card {
   height: 60vh;
   border: 0;
   margin: 0 0 1rem 0;
+  font-size: 1rem;
 }
 
-.modal-content .definition.revision.card {
-  margin: 0;
-}
-
-.definition.revision.card div > div {
+.definition.card div > div {
   margin: 0.5rem 0;
   padding: 0.15rem;
 }
 
-.definition.revision.card span:nth-child(1) {
+.definition.card span:nth-child(1) {
   text-underline-position: under;
   color: var(--snap-success);
   margin: 0 0.25rem 0 0;
@@ -1967,42 +1943,6 @@ a.collection-disabled {
 
 #iconicTaxaFilters .modal-content {
   width: 60vw;
-}
-
-.feature-types {
-  margin: 1rem 0 0 0;
-}
-
-.feature-symbiont-list table {
-  width: 100%;
-  border-collapse: inherit;
-}
-
-.feature-symbiont-list thead > tr:nth-child(1) {  
-  line-height: 1.5rem;
-  background-color: rgb(52, 58, 64,.7);
-  line-height: 1.5rem;
-  color: white;
-  letter-spacing: .05rem;
-}
-
-.feature-symbiont-list th,
-.feature-symbiont-list td {
-  text-align: left;
-  font-weight: normal;
-  border: 0;
-  padding: 0 0 0 0.5rem;
-  text-transform: capitalize;
-  font-size: 0.8rem;
-  line-height: 1.5rem;
-}
-
-.feature-symbiont-list th {
-  text-transform: uppercase;
-}
-
-.feature-symbiont-list .underline-link {
-  text-transform: initial;
 }
 
 .floating-card > span:nth-child(1) {

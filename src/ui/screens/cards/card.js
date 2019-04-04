@@ -43,12 +43,12 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
         if(!screen) return;
     }
 
-    if(!isInCarousel) {
-        const prev = document.querySelector('#cardModal .js-prev');
-        const next = document.querySelector('#cardModal .js-next');
-        if(prev) prev.style.display = 'none';
-        if(next) next.style.display = 'none';
-    }
+    const prev = document.querySelector('#cardModal .js-prev');
+    const next = document.querySelector('#cardModal .js-next');
+
+
+    if(prev) isInCarousel ? prev.classList.remove('hide-important') : prev.classList.add('hide-important');
+    if(next) isInCarousel ? next.classList.remove('hide-important') : next.classList.add('hide-important');
     
     const template = document.createElement('template');
 
