@@ -255,6 +255,9 @@
     /* FEATURES IN MODAL */
 
     #cardModal .feature-types {
+        position: absolute;
+        top: 220px;
+        width: 100%;
         margin: 0;
     }
 

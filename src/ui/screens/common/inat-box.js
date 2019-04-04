@@ -76,5 +76,7 @@ export async function renderInatDataBox(parent, item, config, mode) {
 
     const wikiNode = document.querySelector('.js-species-card-wiki');
 
+    wikiNode.innerHTML = '';
+
     renderWiki(wikiNode, item, config.language);
 }
