@@ -99,7 +99,7 @@ async function renderWiki(wikiNode, item, language) {
         const genus = binomial.split(' ')[0];
         const genusEntry = await fetchWiki(genus);
         if(genusEntry[2] !== '')
-            wikiNode.innerHTML+= formatWiki(genusEntry.slice(1));
+            wikiNode.innerHTML = formatWiki(genusEntry.slice(1));
         else if (language !== 'en') {
             renderWiki(wikiNode, binomial, 'en');
         }
