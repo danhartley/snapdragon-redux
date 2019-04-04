@@ -4,7 +4,10 @@ import { getLocation, getPlace } from 'geo/geo';
 import { getInatTaxonStats, getInatPlaceId } from 'api/inat/inat';
 import inatBoxTemplate from 'ui/screens/common/inat-box-template.html';
 
-export async function renderInatDataBox(parent, item, config) {
+import { renderWiki } from 'wikipedia/wiki';
+import { renderWikiModal } from 'wikipedia/wiki-modal';
+
+export async function renderInatDataBox(parent, item, config, mode) {
 
     const template = document.createElement('template');
 
@@ -20,7 +23,7 @@ export async function renderInatDataBox(parent, item, config) {
             range: ''
         };
 
-    native.font = native.length > 40 ? 'font-size:.8rem' : '';
+    native.font = native.range.length > 40 ? 'font-size:.8rem' : '';
 
     renderTemplate({native}, template.content, parent);
     
@@ -55,8 +58,23 @@ export async function renderInatDataBox(parent, item, config) {
             placeTaxonCount += Number.parseInt(taxon.count);
         }); 
 
-        parent.querySelector('.js-place').innerHTML = country;
+        parent.querySelector('.js-world').innerHTML = mode === 'MODAL' ? 'Worldwide' : 'Worldwide observations';
+        parent.querySelector('.js-place').innerHTML = mode === 'MODAL' ? country : `${country} observations`;
         parent.querySelector('.js-place-taxon-count').innerHTML = placeTaxonCount.toLocaleString();
     });
     
+    const eolPage = document.querySelector('.js-species-card-eol-link');
+    
+    eolPage.setAttribute('href', `http://eol.org/pages/${item.id}/overview`);
+    eolPage.setAttribute('target', '_blank');
+    eolPage.setAttribute('style', 'text-decoration: none');
+
+    setTimeout(()=>{
+        const wikiLink = document.querySelector('.js-species-card-wiki');            
+        renderWikiModal(item, wikiLink, config);
+    });    
+
+    const wikiNode = document.querySelector('.js-species-card-wiki');
+
+    renderWiki(wikiNode, item, config.language);
 }

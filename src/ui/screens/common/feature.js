@@ -50,6 +50,10 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel)
         return vernacularName ? { id: symbiont, display: vernacularName } : { id: symbiont, display: symbiont };
     };
 
+    if(!speciesTraits || !speciesTraits.symbionts) {
+        document.querySelector('.js-feature-types').classList.remove('feature-types');
+    }
+
     if(speciesTraits && speciesTraits.symbionts) {
 
         const symbionts = speciesTraits.symbionts.map(s => s.id);

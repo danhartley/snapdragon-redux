@@ -1,8 +1,6 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { taxa } from 'api/snapdragon/taxa';
-import { renderWiki } from 'wikipedia/wiki';
-import { renderWikiModal } from 'wikipedia/wiki-modal';
 import { infraspecifics } from 'api/snapdragon/infraspecifics';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
@@ -17,7 +15,6 @@ import { iconicTaxa, matchTaxon } from 'api/snapdragon/iconic-taxa';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import { renderInatDataBox } from 'ui/screens/common/inat-box';
-import { renderTaxonomyBox } from 'ui/screens/common/taxonomy-box';
 import { renderCalendar } from 'ui/screens/common/calendar';
 import cardTemplate from 'ui/screens/cards/card-template.html';
 
@@ -72,27 +69,9 @@ const renderLandscape = (item, config, traits, mode, rootNode) => {
     
     getBirdSong(item, traits, src, config.isPortraitMode);
 
-    const eolPage = rootNode.querySelector('.js-species-card-eol-link');
-    
-    if(mode === 'MODAL') {
-        eolPage.classList.add('hide');
-    } else {
-        eolPage.setAttribute('href', `http://eol.org/pages/${item.id}/overview`);
-        eolPage.setAttribute('target', '_blank');
-        eolPage.setAttribute('style', 'text-decoration: none');
-    
-        setTimeout(()=>{
-            const wikiLink = rootNode.querySelector('.js-species-card-wiki');            
-            renderWikiModal(item, wikiLink, config);
-        });    
-    
-        const wikiNode = rootNode.querySelector('.js-species-card-wiki');
-    
-        renderWiki(wikiNode, item, config.language);
-    }
     const inatNode = rootNode.querySelector('.js-inat-box');
 
-    renderInatDataBox(inatNode, item, config);
+    renderInatDataBox(inatNode, item, config, mode);
 };
 
 const renderPortrait = (item, config, traits, mode, rootNode) => {
@@ -213,7 +192,8 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
 
     renderIcon(item, rootNode);
 
-    if(mode === 'MODAL') {        
+    if(mode === 'MODAL') {      
+          
         rootNode.querySelector('#cardModal .js-modal-text-title').innerHTML = collection.name;
 
         const prev = rootNode.querySelector('#cardModal .js-prev > span');
@@ -226,7 +206,6 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
         next.dataset.transition = 'next';
         next.dataset.modal = 'cardModal';
         
-
         const lines = document.getElementsByTagName('hr');
 
         Array.from(lines).forEach(hr => hr.style.display = 'none');
