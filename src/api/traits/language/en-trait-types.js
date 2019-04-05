@@ -32,9 +32,7 @@ export const english = {
         HABITAT: 'habitat',
         BIOINDICATOR: 'Bioindicator',
         TROPHIC_LEVEL: 'Trophic level',        
-        COMPETITOR: 'Competitor',
         OCCUPANT: 'Lives in',
-        HOST: 'Host',
         ORGANISATION: 'Organisation',
         
         SMELL : 'smell',
@@ -61,10 +59,12 @@ export const english = {
         LENGTH: 'Length',
         VOICE: 'Voice',
         HEIGHT: 'Height',
+        WEIGHT: 'Weight',
         COMPOUND: 'Leaf type',
         REPRODUCTION: 'Reproduction',
         DISPLAY: 'Display',
         BEHAVIOUR: 'behaviour',
+        COMMUNICATION: 'Communication',
 
         SHELTER: 'Shelter',
         DISEASE: 'Disease',
@@ -100,6 +100,7 @@ export const english = {
         WEANING: 'Weaning',
         SENSORY_ACUITY: 'Sensory acuity',
         CRYPSIS: 'Crypsis',
+        CACHE_SIZE: 'Number of caches',
         
         FEMALE: 'Female',
         MALE: 'Male',        
@@ -393,6 +394,7 @@ export const english = {
         HONEYDEW: 'Honeydew',
         SEEDS: 'Seeds',
         NUTS: 'Nuts',
+        GRAINS: 'Grains',
         BERRIES: 'Berries',
         HERBAGE: 'Herbage',
         SWARD: 'Sward'
@@ -423,7 +425,8 @@ export const english = {
         BURROW: 'Burrow',
         DEN: 'Den',
         WARREN: 'Warren',
-        SETT: 'Sett'
+        SETT: 'Sett',
+        ROOKERY: 'Rookery'
     },
     active: {
         CREPUSCULAR: 'Crepuscular',
@@ -457,10 +460,6 @@ export const english = {
     }, male: {
         BUCK: 'Buck'
     },
-    diet: {
-        OMNIVORE: 'Omnivore',
-        CARNIVORE: 'Carnivore'
-    },
     marginType: {
         LOBED: "Lobed"
     }, 
@@ -469,7 +468,8 @@ export const english = {
         CALCAREOUS: 'Calcareous',
     },
     organisation: {
-        EUSOCIAL: 'Eusocial'
+        EUSOCIAL: 'Eusocial',
+        SOCIAL: 'Social',        
     },
     role: {
         NATIVE: 'Native',
@@ -484,7 +484,12 @@ export const english = {
         POLLINATOR: 'Pollinator',
         PREDATOR: 'Predator',
         HERBIVORE: 'Herbivore',
+        OMNIVORE: 'Omnivore',
+        CARNIVORE: 'Carnivore',
         PREY: 'Prey',
+        COMPETITOR: 'Competitor',
+        HOST: 'Host',
+        CARRIER: 'Carrier',
     },
     fruitType: {
         DRUPE: 'Drupe',
@@ -511,18 +516,31 @@ export const english = {
     },
     display: {
         DIEMATIC: 'diematic',
-        SEXUAL_DIMORPHISM: 'Sexual dimorphism',        
+        SEXUAL_DIMORPHISM: 'Sexual dimorphism',      
+        NO_SEXUAL_DIMORPHISM: 'No sexual dimorphism',
+        MELANISTIC: 'Melanistic'
     },
     behaviour: {
         SEXUAL_CANNIBALISM: 'Sexual cannibalism',
         MONANDROUS: 'Monandrous',
-        VOCALISATION: 'vocalisation',
-        CRYPSIS: 'Crypsis'
+        VOCALISATION: 'Vocalisation',
+        CRYPSIS: 'Crypsis',
+        HOARDING: 'Hoarding',
+        HIBERNATION: 'Hibernation',
+        GAME_PLAYING: 'Game playing',
+        PLAYFUL: 'Playful',
+        TERRITORIAL: 'Territorial',
+        BIPARENTAL: 'Biparental',
+        COOPERATIVE_BREEDING: 'Cooperative breeding',
+        TOOL_MAKING: 'Tool making'
+
     },
     sense: {
         SIGHT: 'Sight',
         MOVEMENT: 'Movement',
-        SMELL: 'smell',
+        SMELL: 'Smell',
+        SPATIAL: 'Spatial',
+        MEMORY: 'Memory'
     },
     crypsis: {
         CAMOUFLAGE: 'Camouflage',
@@ -541,5 +559,13 @@ export const english = {
     },
     reproductiveContainer: {
         CONE: 'Cone'
+    },
+    communication: {
+        VOCALISATION: 'Vocalisation',
+        POSTURING: 'Posturing'
+    },
+    mating: {
+        POLYGYNOUS: 'Polygynous',
+        MONOGAMOUS: 'Monogamous'
     }
 };

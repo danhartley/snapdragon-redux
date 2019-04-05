@@ -130,7 +130,8 @@ export const renderMultiStrips = (collection) => {
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
         
         const number = config.isPortraitMode ? 3 : 4;
-        const question = families.length > 0 ? families.find(f => f.name === item.family).descriptions[0].summary : 'no families available';
+        const itemFamily = families.find(f => f.name === item.family);
+        const question = itemFamily.descriptions[0].summary;
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family)).map(f => f.descriptions[0].summary);
         const answers = utils.shuffleArray([question, ...alternatives]);
 

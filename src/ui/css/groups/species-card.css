@@ -223,7 +223,7 @@
     
     .feature-symbiont-list thead > tr:nth-child(1) {  
         line-height: 1.5rem;
-        background-color: rgb(52, 58, 64,.7);
+        background-color: rgba(52, 58, 64,.7);
         line-height: 1.5rem;
         color: white;
         letter-spacing: .05rem;

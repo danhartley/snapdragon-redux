@@ -55,7 +55,7 @@ export const getTraits = SD => {
             { id: 'Odontota dorsalis' }
         ],
         traits: [
-            { name: SD.name.HOST, value: 'Odontota dorsalis', type: SD.symbiosis.PARASITISM },
+            { name: SD.role.HOST, value: 'Odontota dorsalis', type: SD.symbiosis.PARASITISM },
             { name: SD.name.HOW_EDIBLE, value: SD.howEdible.POISONOUS },
             { name: SD.name.USAGE, value: SD.usage.NITROGEN_FIXING },
             { name: SD.name.USAGE, value: SD.usage.TIMBER },
@@ -70,9 +70,9 @@ export const getTraits = SD => {
             { id: 'Odontota dorsalis' }
         ],
         traits: [
-            { name: SD.name.HOST, value: 'Chalara elegans', description: 'Black root rot', type: SD.symbiosis.PARASITISM },
-            { name: SD.name.HOST, value: 'Rhizoctonia solani', description: 'Crown rot', type: SD.symbiosis.PARASITISM },
-            { name: SD.name.HOST, value: 'Fusarium', description: 'Fusarium dry rot', type: SD.symbiosis.PARASITISM },
+            { name: SD.role.HOST, value: 'Chalara elegans', description: 'Black root rot', type: SD.symbiosis.PARASITISM },
+            { name: SD.role.HOST, value: 'Rhizoctonia solani', description: 'Crown rot', type: SD.symbiosis.PARASITISM },
+            { name: SD.role.HOST, value: 'Fusarium', description: 'Fusarium dry rot', type: SD.symbiosis.PARASITISM },
             { name: SD.name.USAGE, value: SD.usage.FOOD },
             { name: SD.name.USAGE, value: SD.usage.DYING },
         ] },

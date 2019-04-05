@@ -81,6 +81,12 @@ const getTraits = SD => {
     { name: 'Arenaria interpres', traits: [
         { name: 'song', value: '403054', description: 'xeno-canto id' },
     ] },
+    { name: 'Branta canadensis', traits: [
+        { name: 'song', value: '409020', description: 'xeno-canto id' },
+        { name: SD.name.MIGRATORY, value: SD.whether.YES },
+        { name: SD.role.HERBIVORE, value: SD.foodType.GRAINS },
+        { name: SD.role.HERBIVORE, value: SD.foodType.GRASS },
+    ] },
     ];
 };
 

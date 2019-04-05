@@ -12546,5 +12546,154 @@ export const plants = [
     "family": "Moraceae",
     "kingdom": "Plantae",
     "eolName": "Morus nigra L."
+  },
+  {
+    "id": "1127679",
+    "name": "Zantedeschia aethiopica",
+    "images": [
+      {
+        "title": "Galicia (Spain). Cala.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Galicia_(Spain)._Cala.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "55/37/fa/509.10258252.jpg"
+      },
+      {
+        "title": "Galicia (Spain). Cala 3.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Galicia_(Spain)._Cala_3.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "55/37/fd/509.10258469.jpg"
+      },
+      {
+        "title": "CallaLilyDroplets.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:CallaLilyDroplets.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "55/60/38/509.10845192.jpg"
+      },
+      {
+        "title": "Arty Zantedeschia aethiopica.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Arty_Zantedeschia_aethiopica.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "56/b7/97/509.17404776.jpg"
+      },
+      {
+        "title": "Zantedeschia aethiopica childsi 1.JPG",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Zantedeschia_aethiopica_childsi_1.JPG",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "56/ea/b3/509.18285776.jpg"
+      },
+      {
+        "title": "Field of Lilies (222275926).jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Field_of_Lilies_(222275926).jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "57/84/31/509.21112236.jpg"
+      },
+      {
+        "title": "Zantedeschia aethiopica RBGK.JPG",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Zantedeschia_aethiopica_RBGK.JPG",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "58/7f/1a/509.25466472.jpg"
+      },
+      {
+        "title": "Yangmingshan National Park - Jhuzihhu.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Yangmingshan_National_Park_-_Jhuzihhu.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "58/88/12/509.25632109.jpg"
+      },
+      {
+        "title": "Aronskelk (Zantedeschia aethiopica) 02.JPG",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Aronskelk_(Zantedeschia_aethiopica)_02.JPG",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "59/29/d8/509.29024379.jpg"
+      },
+      {
+        "title": "Zantedeschia aethiopica (4361170464).jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Zantedeschia_aethiopica_(4361170464).jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "59/ff/c4/509.33653586.jpg"
+      }
+    ],
+    "names": [
+      {
+        "vernacularName": "Alcatraz",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Arum blanc",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Arum dthiopie",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Arum lily",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Cala",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Cala de Etiopía",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Calla lily",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Calla",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Gewöhnliche calla",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Jarro",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Richarde",
+        "language": "fr"
+      }
+    ],
+    "taxonomy": {
+      "usageKey": 2868827,
+      "scientificName": "Zantedeschia aethiopica Spreng.",
+      "canonicalName": "Zantedeschia aethiopica",
+      "rank": "SPECIES",
+      "status": "ACCEPTED",
+      "confidence": 98,
+      "matchType": "EXACT",
+      "kingdom": "Plantae",
+      "phylum": "Tracheophyta",
+      "order": "Alismatales",
+      "family": "Araceae",
+      "genus": "Zantedeschia",
+      "species": "Zantedeschia aethiopica",
+      "kingdomKey": 6,
+      "phylumKey": 7707728,
+      "classKey": 196,
+      "orderKey": 551,
+      "familyKey": 6979,
+      "genusKey": 2868790,
+      "speciesKey": 2868827,
+      "synonym": false,
+      "class": "Liliopsida"
+    },
+    "family": "Araceae",
+    "kingdom": "Plantae",
+    "eolName": "Zantedeschia aethiopica (L.) Spreng."
   }
-  ]
+]

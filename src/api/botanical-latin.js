@@ -650,4 +650,12 @@ export const epithets = [
         "latin" : ["instar"],
         "en" : ["likeness, form"]
     },
+    {
+        "latin" : ["skia"],
+        "en" : ["shadow"]
+    },
+    {
+        "latin" : ["oura"],
+        "en" : ["tail"]
+    },
 ];

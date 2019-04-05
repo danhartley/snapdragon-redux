@@ -57,11 +57,11 @@ export const buildTable = (collection, config, traits, enums) => {
         item.keyTratLinkClass = keyTratLinkClass;
         item.familyLinkClass = itemProperties.taxonHasTaxaData(item.family, taxa)
             ? 'capitalise underline-link js-taxon-card-link' 
-            : 'js-taxon-card-link';
+            : 'js-taxon-card-link no-pointer-events';
         if(item.taxonomy && item.taxonomy.order) {
             item.orderLinkClass = itemProperties.taxonHasTaxaData(item.taxonomy.order, taxa)
                 ? 'capitalise underline-link js-taxon-card-link' 
-                : 'js-taxon-card-link';
+                : 'js-taxon-card-link no-pointer-events';
         } else { item.orderLinkClass = 'js-taxon-card-link'; }
         item.taxonomy = item.taxonomy || { family: '', order: ''}
         

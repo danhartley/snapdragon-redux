@@ -2176,5 +2176,168 @@ export const mammals = [
       "family": "Mustelidae",
       "kingdom": "Animalia",
       "eolName": "Martes martes (Linnaeus, 1758)"
+    },
+    {
+      "id": "347685",
+      "name": "Sciurus carolinensis",
+      "images": [
+        {
+          "rightsHolder": "Tim Hite",
+          "source": "https://www.inaturalist.org/photos/103360",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "28/32/bd/18.https___www_inaturalist_org_photos_103360.jpg"
+        },
+        {
+          "rightsHolder": "Tim Hite",
+          "source": "https://www.inaturalist.org/photos/109912",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "28/88/4d/18.https___www_inaturalist_org_photos_109912.jpg"
+        },
+        {
+          "rightsHolder": "cdmar10",
+          "source": "https://www.inaturalist.org/photos/1590877",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "2b/48/cd/18.https___www_inaturalist_org_photos_1590877.jpg"
+        },
+        {
+          "rightsHolder": "Jesse Rorabaugh",
+          "source": "https://www.inaturalist.org/photos/1888990",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "2c/f9/dd/18.https___www_inaturalist_org_photos_1888990.jpg"
+        },
+        {
+          "rightsHolder": "Melissa McMasters",
+          "source": "https://www.inaturalist.org/photos/1911101",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "2d/1b/d2/18.https___www_inaturalist_org_photos_1911101.jpg"
+        },
+        {
+          "rightsHolder": "cwwood",
+          "source": "https://www.inaturalist.org/photos/1989201",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "2d/97/7c/18.https___www_inaturalist_org_photos_1989201.jpg"
+        },
+        {
+          "rightsHolder": "cwwood",
+          "source": "https://www.inaturalist.org/photos/2029616",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "2d/d7/9c/18.https___www_inaturalist_org_photos_2029616.jpg"
+        },
+        {
+          "rightsHolder": "Tim Hite",
+          "source": "https://www.inaturalist.org/photos/219461",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "2e/df/12/18.https___www_inaturalist_org_photos_219461.jpg"
+        },
+        {
+          "rightsHolder": "Michelle Hellstern",
+          "source": "https://www.inaturalist.org/photos/2431023",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "30/59/35/18.https___www_inaturalist_org_photos_2431023.jpg"
+        },
+        {
+          "rightsHolder": "Michelle Hellstern",
+          "source": "https://www.inaturalist.org/photos/2431030",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "30/59/3b/18.https___www_inaturalist_org_photos_2431030.jpg"
+        }
+      ],
+      "names": [
+        {
+          "vernacularName": "Eastern gray squirrel",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Ardilla gris de las carolinas",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Eastern grey squirrel",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Esquirol gris",
+          "language": "cat"
+        },
+        {
+          "vernacularName": "Grauhrnchen",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Gray squirrel",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Grey squirrel",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Scoiattolo grigio",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Squirrel",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Cureuil gris",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Östliches grauhörnchen",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Ardilla gris",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Cat squirrel",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Esquilo-cinzento",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Grauhörnchen",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Migratroy squirrel",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Écureuil gris",
+          "language": "fr"
+        }
+      ],
+      "taxonomy": {
+        "usageKey": 5219681,
+        "scientificName": "Sciurus carolinensis Gmelin, 1788",
+        "canonicalName": "Sciurus carolinensis",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 98,
+        "matchType": "EXACT",
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "order": "Rodentia",
+        "family": "Sciuridae",
+        "genus": "Sciurus",
+        "species": "Sciurus carolinensis",
+        "kingdomKey": 1,
+        "phylumKey": 44,
+        "classKey": 359,
+        "orderKey": 1459,
+        "familyKey": 9456,
+        "genusKey": 2437489,
+        "speciesKey": 5219681,
+        "synonym": false,
+        "class": "Mammalia"
+      },
+      "family": "Sciuridae",
+      "kingdom": "Animalia",
+      "eolName": "Sciurus carolinensis Gmelin, 1788"
     }
   ]

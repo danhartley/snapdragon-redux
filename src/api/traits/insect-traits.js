@@ -95,8 +95,8 @@ const getTraits = SD => {
         traits: [
             { name: SD.name.ORGANISATION, value: SD.organisation.EUSOCIAL },
             { name: SD.name.POLLINATION, value: 'Plantae' },
-            { name: SD.name.HOST, value: 'Varroa mite', type: SD.symbiosis.PARASITISM },
-            { name: SD.name.HOST, value: 'Colony collapse disorder', type: SD.symbiosis.PARASITISM },
+            { name: SD.role.HOST, value: 'Varroa mite', type: SD.symbiosis.PARASITISM },
+            { name: SD.role.HOST, value: 'Colony collapse disorder', type: SD.symbiosis.PARASITISM },
         ] },
         { name: 'Mantis Religiosa', 
         symbionts: [
