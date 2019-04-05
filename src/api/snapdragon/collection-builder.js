@@ -6,6 +6,14 @@ const encodeQuery = q => {
     return encodeURIComponent(q.trim()) 
 };
 
+const capitaliseFirst = str => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+};  
+
+const onlyUnique = (value, index, self) => { 
+    return self.indexOf(value) === index;
+};
+
 // https://creativecommons.org/licenses/
 // CC BY:       Attribution                 (commerical allowed)
 // CC BY-SA:    Attribution-ShareAlike      (commerical allowed)
@@ -66,6 +74,37 @@ async function getCollection() {
 
 // https://wiki.creativecommons.org/wiki/Best_practices_for_attribution#This_is_an_ideal_attribution
 
+const parseNames = (names, languages) => {
+    
+    if(!names) return [];
+    
+    let parsedNames = names.filter(item => R.contains(item.language, languages));
+    parsedNames = parsedNames.map(name => {
+        return {
+            language: name.language,
+            vernacularName: name.vernacularName.toLowerCase()     
+        }
+    });
+
+    const uniqueParsedNames = [ ...new Set(parsedNames.map(name => name.vernacularName)) ]; // distinct names
+
+    const uniqueNames = uniqueParsedNames.map(name => {
+        const obj = {
+            vernacularName: name,
+            language: parsedNames.find(n => {
+                return n.vernacularName === name;
+            }).language
+        };
+        return obj;
+    });
+
+    uniqueNames.forEach(name => {
+        name.vernacularName = capitaliseFirst(name.vernacularName);
+    });
+
+    return uniqueNames;
+};
+
 async function getSpeciesData(item) {
     const languages = [ 'en', 'pt', 'es', 'de', 'fr', 'it', 'eng' ];
     const response = await fetch(item.detailsUrl);
@@ -76,21 +115,16 @@ async function getSpeciesData(item) {
     const imagesCollection = taxon.dataObjects.filter(item => item.mediaURL || item.eolMediaURL).map(media => {
         return {
             title: media.title, // as original title
-            rightsHolder: media.rightsHolder,
+            rightsHolder: media.rightsHolder || '',
             source: media.source,
             license: media.license,
             url: media.eolMediaURL,
-            thumb: media.eolThumbnailURL,
+            // thumb: media.eolThumbnailURL,
             photographer: media.agents.find(agent => agent.role === 'photographer')            
         }
     });
-    const namesCollection = taxon.vernacularNames ? taxon.vernacularNames.filter(item => R.contains(item.language, languages)) : [];
-    // const descriptions = [];
-    // const objs = taxonConcept.dataObjects.filter(obj => {
-    //     return (obj.mimeType === 'text/plain' || obj.mimeType === 'text/html') && obj.vettedStatus === "Trusted" }
-    // );
-    // objs.length > 0 ? objs.forEach(obj => {descriptions.push(obj.description)}) : [];
-    // return { id: item.id,  name: item.name, images: imagesCollection, names: namesCollection, descriptions: descriptions };
+    const namesCollection = parseNames(taxon.vernacularNames, languages);
+    // const namesCollection = taxon.vernacularNames ? taxon.vernacularNames.filter(item => R.contains(item.language, languages)) : [];
     return { id: item.id,  name: taxon.scientificName, images: imagesCollection, names: namesCollection };
 }
 
@@ -207,6 +241,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 });
             });
+            images.forEach(image => image.url = image.url.replace('https://content.eol.org/data/media/', ''));
             item.images = images;
             newCollection.push(item);
             document.querySelectorAll('.collectionCount').forEach(counter => counter.innerHTML = newCollection.length);

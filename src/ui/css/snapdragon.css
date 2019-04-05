@@ -841,6 +841,9 @@ a.dropdown-item {
   height: 100%;
   border-left: 0;
   font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .inat-box .data-box div:nth-child(2) span,
@@ -1265,6 +1268,7 @@ span.correct {
 #badgeListModal .modal-dialog {
   min-width: 320px;
   max-width: 420px;
+  margin: 5rem auto;
 }
 
 #badgeListModal .modal-body {
