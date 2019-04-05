@@ -58,6 +58,7 @@ export let crypsis = english.crypsis;
 export let allochory = english.allochory;
 export let reproductiveContainer = english.reproductiveContainer;
 export let communication = english.communication;
+export let mating = english.mating;
 
 let language;
 
@@ -145,7 +146,8 @@ export const updateLanguage = (config) => {
         crypsis,
         allochory,
         reproductiveContainer,
-        communication
+        communication,
+        mating
     }
 
     actions.boundUpdateEnums(enums);   

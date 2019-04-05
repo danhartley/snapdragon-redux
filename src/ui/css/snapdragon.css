@@ -381,9 +381,10 @@ a.dropdown-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
   text-align: initial;
   padding: 0 2rem;
+  position: absolute;
+  bottom: 1rem;
 }
 
 .species.card-small {
@@ -797,6 +798,11 @@ a.dropdown-item {
   height: 40vh;
 }
 
+.id-box-container {
+  position: absolute;
+  top: 250px;
+}
+
 .id-box {
   display: flex;
   padding: 1rem 0.5rem 1rem 0;
@@ -1125,6 +1131,7 @@ span.correct {
 
 .modal-title {
   color: var(--snap-text-medium-light);
+  text-transform: uppercase;
 }
 
 .modal-title span {
@@ -2108,4 +2115,8 @@ a.collection-disabled {
 
 .swap-out-card {
   display: none;
+}
+
+.no-pointer-events {
+  pointer-events: none;
 }

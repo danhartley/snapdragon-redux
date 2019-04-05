@@ -2179,19 +2179,19 @@ export const taxa = [
         taxon: 'family',
         name: 'Coccinellidae',
         thumb: "58/3b/c7/509.24610757.260x190.jpg",
-        names: [ { language: "en", names: ['Ladybirds, lady beetles, ladybugs']} ,
-        { language: "fr", names:[ 'Ladybirds, lady beetles, ladybugs' ]},
-        { language: "de", names:[ 'Ladybirds, lady beetles, ladybugs' ]},
-        { language: "es", names:[ 'Ladybirds, lady beetles, ladybugs' ]},
-        { language: "pt", names:[ 'Ladybirds, lady beetles, ladybugs' ]},
-        { language: "it", names:[ 'Ladybirds, lady beetles, ladybugs' ]}],
+        names: [ { language: "en", names: ['Ladybirds, ladybugs…']} ,
+        { language: "fr", names:[ 'Ladybirds, ladybugs…' ]},
+        { language: "de", names:[ 'Ladybirds, ladybugs…' ]},
+        { language: "es", names:[ 'Ladybirds, ladybugs…' ]},
+        { language: "pt", names:[ 'Ladybirds, ladybugs…' ]},
+        { language: "it", names:[ 'Ladybirds, ladybugs…' ]}],
         species: '~6000',
         genera: '360',
         descriptions: [
             {
                 language: 'en',
                 summary: 'Many prey on herbivorous homopterans such as aphids or scale insects.',
-                identification: 'Often conspicuously coloured yellow, orange, or red with small black spots on their wing covers, black legs, heads and antennae.'
+                identification: 'Often conspicuously coloured yellow, orange, or red with small black spots on their wing covers, back legs, heads and antennae.'
             }
         ],
         eol: "http://eol.org/pages/7459/overview",
@@ -2751,7 +2751,7 @@ export const taxa = [
         descriptions: [
             {   
                 language: 'en',
-                summary: 'Largest extant conifer family in species diversity, with between 220 and 250 species and second-largest (Cupressaceae) in geographical range (mostly temperate)',
+                summary: 'Largest extant conifer family in species diversity, with between 220 and 250 species and second-largest (Cupressaceae) in geographical range (mostly temperate).',
                 identification: 'Most are trees (rarely shrubs) from 2-100m tall. Mostly evergreen, resinous, monoecious, with subopposite or whorled branches, spirally arranged, needles. 3-24 cotyledons.'
             },
         ],
@@ -2760,6 +2760,151 @@ export const taxa = [
             { name: SD.name.MALE_CONE_LENGTH, value: '.5-6cm' },
             { name: SD.name.ALLOCHORY, value: SD.allochory.ANEMOCHORY },
             { name: SD.name.REPRODUCTIVE_CONTAINER, value: SD.reproductiveContainer.CONE }            
+         ],
+    },
+    {
+        taxon: 'family',
+        name: 'Laridae',
+        genera: '22',
+        species: '~100',
+        names: [ { language: "en", names: ['Gulls, terns and skimmers']},
+            { language: "fr", names:[ 'Laridé' ]},
+            { language: "de", names:[ 'Möwen' ]},
+            { language: "es", names:[ 'Gaviota' ]},
+            { language: "pt", names:[ 'Gulls, terns and skimmers' ]},
+            { language: "it", names:[ 'Gulls, terns and skimmers' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Laridae",
+        eol: "https://eol.org/pages/8001",
+        thumb: '44/ed/e2/18.https___www_inaturalist_org_photos_5885446.260x190.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Cosmopolitan. Mainly coastal, or inland near water.',
+                identification: 'Fairly small to large, heavy-bodied, long-winged seabirds. Stout bill, webbed feet, rounded tail. Mostly white below with pale grey to black back and wings.'
+            },
+        ],
+        traits: [ 
+                      
+         ],
+    },
+    {
+        taxon: 'family',
+        name: 'Sciuridae',
+        genera: '58',
+        species: '285',
+        names: [ { language: "en", names: ['Squirrels']},
+            { language: "fr", names:[ 'Sciuridés, Ecureuil' ]},
+            { language: "de", names:[ 'Eichhörnchen' ]},
+            { language: "es", names:[ 'Ardilla' ]},
+            { language: "pt", names:[ 'Esquilos' ]},
+            { language: "it", names:[ 'Scoiattoli' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Laridae",
+        eol: "https://eol.org/pages/8001",
+        thumb: '44/ed/e2/18.https___www_inaturalist_org_photos_5885446.260x190.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of small or medium-size rodents. Widespread, cosmopolitan.',
+                identification: 'Hind limbs longer than fore limbs. All species have 4 or 5 toes on each paw. Able to descend a tree head-first.'
+            },
+        ],
+        traits: [ 
+                      
+         ],
+    },
+    {
+        taxon: 'family',
+        name: 'Ardeidae',
+        genera: '21',
+        species: '64',
+        names: [ { language: "en", names: ['Herons, Egrets & Bitterns']},
+            { language: "fr", names:[ 'Ardéidés, Ardeidae' ]},
+            { language: "de", names:[ 'Reiher' ]},
+            { language: "es", names:[ 'Ardeidas' ]},
+            { language: "pt", names:[ 'Ardeidae' ]},
+            { language: "it", names:[ 'Herons, Egrets & Bitterns' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Ardeidae",
+        eol: "https://eol.org/pages/8013",
+        thumb: '31/f7/97/18.https___www_inaturalist_org_photos_2695519.260x190.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Widespread, migratory. Nonswimming waterbirds that feed on margins of lakes, rivers, the sea, etc.',
+                dentification: 'Medium-sized to large wading birds with a long neck and legs, rather short tail and broad wings. Long, dagger-shaped bill for hunting aquatic prey and small mammals and reptiles.'
+            },
+        ],
+        traits: [ 
+            { name: SD.name.MIGRATORY, value: SD.whether.YES },
+            { name: SD.role.CARNIVOROUS, value: 'Fish, reptiles, amphibians' },
+            { name: SD.role.CARNIVOROUS, value: 'Crustaceans, molluscs, aquatic insects' },
+         ],
+    },
+    {
+        taxon: 'family',
+        name: 'Parmeliaceae',
+        genera: '87',
+        species: '~2000',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Parmeliaceae",
+        eol: "https://eol.org/pages/6145",
+        thumb: '5c/e6/83/509.22772824.260x190.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Diverse family of Lecanoromycetes, the largest family of lichen forming fungi. Wide distribution and habitats.',
+                dentification: 'Most often foliose, fruticose, whitish-grey, green-yellow, or brown-black. Many are lobe forming.'
+            },
+        ],
+        traits: [ 
+            { name: SD.name.ASSOCIATE, value: `${SD.associate.ALGA}`, photobiont: 'Trebouxia' },
+         ],
+    },
+    {
+        taxon: 'family',
+        name: 'Corvidae',
+        genera: '--',
+        species: '120',
+        names: [ { language: "en", names: ['Crow family, Corvids']},
+            { language: "fr", names:[ 'Corvidés' ]},
+            { language: "de", names:[ 'Corvidae' ]},
+            { language: "es", names:[ 'Córvidos' ]},
+            { language: "pt", names:[ 'Corvidae' ]},
+            { language: "it", names:[ 'Corvidae' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Corvidae",
+        eol: "https://eol.org/pages/7557",
+        thumb: '48/32/37/18.https___www_inaturalist_org_photos_6394867.260x190.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Highly intelligent, self-aware, with tool-making ability & memorisation abilities. Highly social. Largely sedentary.',
+                dentification: 'Medium to large, with strong feet and bills, rictal bristles, and a single moult each year.'
+            },
+        ],
+        traits: [ 
+            { name: SD.name.ORGANISATION, value: SD.organisation.SOCIAL },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.BIPARENTAL },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.PLAYFUL },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.GAME_PLAYING },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.TERRITORIAL },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.COOPERATIVE_BREEDING },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.TOOL_MAKING },
+            { name: SD.role.OMNIVOROUS, value: 'Invertebrates, nestlings, small mammals' },
+            { name: SD.role.OMNIVOROUS, value: 'Berries, fruits, seeds, carrion' },
+            { name: SD.name.SHELTER, value: `${SD.shelter.ROOKERY}` },
+            { name: SD.name.MATING, value: SD.mating.MONOGAMOUS },
+            { name: SD.name.SENSORY_ACUITY, value: SD.sense.SPATIAL },
+            { name: SD.name.SENSORY_ACUITY, value: SD.sense.MEMORY },
+            { name: SD.role.HOST, value: 'West Nile virus', type: SD.symbiosis.PARASITISM },
          ],
     },
 ];

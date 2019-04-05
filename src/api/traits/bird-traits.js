@@ -84,7 +84,8 @@ const getTraits = SD => {
     { name: 'Branta canadensis', traits: [
         { name: 'song', value: '409020', description: 'xeno-canto id' },
         { name: SD.name.MIGRATORY, value: SD.whether.YES },
-        { name: SD.name.DIET, value: SD.diet.HERBIVORE },
+        { name: SD.role.HERBIVORE, value: SD.foodType.GRAINS },
+        { name: SD.role.HERBIVORE, value: SD.foodType.GRASS },
     ] },
     ];
 };

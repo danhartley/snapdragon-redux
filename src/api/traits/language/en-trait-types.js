@@ -394,6 +394,7 @@ export const english = {
         HONEYDEW: 'Honeydew',
         SEEDS: 'Seeds',
         NUTS: 'Nuts',
+        GRAINS: 'Grains',
         BERRIES: 'Berries',
         HERBAGE: 'Herbage',
         SWARD: 'Sward'
@@ -424,7 +425,8 @@ export const english = {
         BURROW: 'Burrow',
         DEN: 'Den',
         WARREN: 'Warren',
-        SETT: 'Sett'
+        SETT: 'Sett',
+        ROOKERY: 'Rookery'
     },
     active: {
         CREPUSCULAR: 'Crepuscular',
@@ -458,10 +460,6 @@ export const english = {
     }, male: {
         BUCK: 'Buck'
     },
-    diet: {
-        OMNIVORE: 'Omnivore',
-        CARNIVORE: 'Carnivore'
-    },
     marginType: {
         LOBED: "Lobed"
     }, 
@@ -471,7 +469,7 @@ export const english = {
     },
     organisation: {
         EUSOCIAL: 'Eusocial',
-        POLYGYNY: 'Polygyny'
+        SOCIAL: 'Social',        
     },
     role: {
         NATIVE: 'Native',
@@ -486,6 +484,8 @@ export const english = {
         POLLINATOR: 'Pollinator',
         PREDATOR: 'Predator',
         HERBIVORE: 'Herbivore',
+        OMNIVORE: 'Omnivore',
+        CARNIVORE: 'Carnivore',
         PREY: 'Prey',
         COMPETITOR: 'Competitor',
         HOST: 'Host',
@@ -523,16 +523,24 @@ export const english = {
     behaviour: {
         SEXUAL_CANNIBALISM: 'Sexual cannibalism',
         MONANDROUS: 'Monandrous',
-        VOCALISATION: 'vocalisation',
+        VOCALISATION: 'Vocalisation',
         CRYPSIS: 'Crypsis',
         HOARDING: 'Hoarding',
-        HIBERNATION: 'Hibernation'
+        HIBERNATION: 'Hibernation',
+        GAME_PLAYING: 'Game playing',
+        PLAYFUL: 'Playful',
+        TERRITORIAL: 'Territorial',
+        BIPARENTAL: 'Biparental',
+        COOPERATIVE_BREEDING: 'Cooperative breeding',
+        TOOL_MAKING: 'Tool making'
 
     },
     sense: {
         SIGHT: 'Sight',
         MOVEMENT: 'Movement',
-        SMELL: 'smell',
+        SMELL: 'Smell',
+        SPATIAL: 'Spatial',
+        MEMORY: 'Memory'
     },
     crypsis: {
         CAMOUFLAGE: 'Camouflage',
@@ -555,5 +563,9 @@ export const english = {
     communication: {
         VOCALISATION: 'Vocalisation',
         POSTURING: 'Posturing'
+    },
+    mating: {
+        POLYGYNOUS: 'Polygynous',
+        MONOGAMOUS: 'Monogamous'
     }
 };

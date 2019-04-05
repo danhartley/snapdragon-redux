@@ -46,7 +46,7 @@ let landscapeLayouts = [
     speciesEntry, // GOOD
     speciesGenusEntry, // GOOD
     commonEntry, // GOOD
-    speciesRevision, // excluded in lesson-builder                  
+    // speciesRevision, // excluded in lesson-builder                  
     // multiSpecimenCommonMatch, // only works portrait as in landscape the photo is the same
     // mixedSpeciesMatch, // replace with clickable rhs images REMOVE
     latinToCommonMatch,  // works fine
@@ -55,7 +55,7 @@ let landscapeLayouts = [
     familyStripsMatch,// still working... missing family data an issue 
 ];
 
-landscapeLayouts = [ familyStripsMatch ];
+// landscapeLayouts = [ familyStripsMatch ];
 
 const landscapeLesson1 = {
     id: 1,

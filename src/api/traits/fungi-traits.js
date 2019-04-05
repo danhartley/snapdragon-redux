@@ -719,8 +719,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SMELL, value : "watermelon rind" },
     ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Laetiporus sulphureus']},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.HARDWOODS, SD.habitat.DEAD_WOOD ] },
-        { name: SD.name.SYMBIONTS, values: [ SD.treeType.ELM, SD.treeType.MAPLE, SD.treeType.ASH, SD.treeType.PLANE, SD.treeType.WILLOW ] },
+        { name: SD.name.ECOLOGY, values: `${SD.treeType.HARDWOODS}, ${SD.habitat.DEAD_WOOD}` },
+        { name: SD.name.SYMBIONTS, values: `${SD.treeType.ELM}, ${SD.treeType.MAPLE}, ${SD.treeType.ASH}, ${SD.treeType.PLANE}, ${SD.treeType.WILLOW}` },
     ]},
     { name: 'Sarcoscypha coccinea', traits: [
         { name: SD.name.CAP_SHAPE, value: SD.capShape.NA },
@@ -732,7 +732,7 @@ export const getFungiTraits = (enums) => {
         // { name: SD.name.SPORE_PRINT_COLOUR, value : "pink" },
     ], context: [
         // { name: SD.name.LOOK_ALIKES, values: [ 'Laetiporus sulphureus']},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.WOODLAND_LITTER, SD.habitat.DAMP, SD.habitat.DEAD_WOOD ] },
+        { name: SD.name.ECOLOGY, values: `${SD.habitat.WOODLAND_LITTER}, ${SD.habitat.DAMP}, ${SD.habitat.DEAD_WOOD}` },
         { name: SD.name.SYMBIONTS, values: [ ] },
     ]},
     { name: 'Sparassis crispa', traits: [
@@ -745,7 +745,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.GILL_ATTACHMENT, value : "NA" },
     ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.CONIFERS, SD.habitat.TREE_BASE ] },
+        { name: SD.name.ECOLOGY, values: `${SD.treeType.CONIFERS}, ${SD.habitat.TREE_BASE}` },
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.LARCH, SD.treeType.SPRUCE, SD.treeType.PINE, SD.treeType.CEDAR] },
     ]},
     { name: 'Lepista personata', traits: [
@@ -760,7 +760,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.GROUPING, value : "fairy rings" },
     ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.FOREST_EDGE, SD.habitat.PASTURE, SD.habitat.GRASSLAND, SD.habitat.PARKS ] },
+        { name: SD.name.ECOLOGY, values: `${SD.habitat.FOREST_EDGE}, ${SD.habitat.PASTURE}, ${SD.habitat.GRASSLAND}, ${SD.habitat.PARKS}` },
         { name: SD.name.SYMBIONTS, values: [] },
     ]},
     { name: 'Xanthoria parietina', traits: [
@@ -779,7 +779,7 @@ export const getFungiTraits = (enums) => {
     { name: 'Ramalina fastigiata', traits: [
         { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.HIGH}`},
         { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FRUTICOSE}` },
-        { name: SD.name.HABITAT, value: [ SD.treeType.DECIDUOUS, SD.habitat.TRUNKS, SD.habitat.BRANCHES ] },
+        { name: SD.name.HABITAT, value: `${SD.treeType.DECIDUOUS}, ${SD.habitat.TRUNKS}, ${SD.habitat.BRANCHES}` },
         { name: SD.name.COLOUR, value: `${SD.colour.GREY} - ${SD.colour.GREEN}`},
     ]},
     { name: 'Ramalina farinacea', traits: [
@@ -793,7 +793,7 @@ export const getFungiTraits = (enums) => {
     ]},
     { name: 'Evernia prunastri', traits: [
         { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}, ${SD.substrate.WOOD}` },
-        { name: SD.name.HABITAT, value: [ SD.treeType.OAK, SD.treeType.DECIDUOUS, SD.treeType.FIR, SD.treeType.PINE, SD.habitat.FENCES ] },
+        { name: SD.name.HABITAT, value: ` ${SD.treeType.OAK}, ${SD.treeType.DECIDUOUS}, ${SD.treeType.FIR}, ${SD.treeType.PINE}, ${SD.habitat.FENCES}` },
         { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}` },
         { name: SD.name.ASSOCIATE, value: `${SD.associate.ALGA}`, photobiont: '' },
         { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.MEDIUM}`},
@@ -811,7 +811,7 @@ export const getFungiTraits = (enums) => {
     ]},
     { name: 'Lobaria pulmonaria', traits: [
         { name: SD.name.SUBSTRATE, value: `${SD.substrate.BARK}` },
-        { name: SD.name.HABITAT, value: [ SD.treeType.OAK, SD.treeType.BEECH, SD.treeType.MAPLE, SD.habitat.ROCKS ] },
+        { name: SD.name.HABITAT, value: ` ${SD.treeType.OAK}, ${SD.treeType.BEECH}, ${SD.treeType.MAPLE}, ${SD.habitat.ROCKS}` },
         { name: SD.name.THALLUS_TYPE, value: `${SD.thallusType.FOLIOSE}, ${SD.thallusType.EPIPHYTE}` },
         { name: SD.name.ASSOCIATE, value: `${SD.associate.ALGA}, ${SD.associate.CYNOBACTERIUM}`, photobiont: 'Dictyochloropsis reticulata' },        
         { name: SD.name.POLLUTION_TOLERANCE, value: `${SD.level.LOW}`},
