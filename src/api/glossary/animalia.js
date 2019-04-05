@@ -26,4 +26,9 @@ export const animalia = [
         definition: "Cooperative brood care, overlapping generations and division of labor into reproductive and non-reproductive groups.",
         wiki: 'https://en.wikipedia.org/wiki/Eusociality'
     },
+    {
+        term: "Hoarding",
+        definition: "Storage of food in locations hidden from the sight of both conspecifics and members of other species.",
+        wiki: 'https://en.wikipedia.org/wiki/Hoarding_(animal_behavior)'
+    },
 ];

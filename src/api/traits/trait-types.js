@@ -57,6 +57,7 @@ export let sense = english.sense;
 export let crypsis = english.crypsis;
 export let allochory = english.allochory;
 export let reproductiveContainer = english.reproductiveContainer;
+export let communication = english.communication;
 
 let language;
 
@@ -143,7 +144,8 @@ export const updateLanguage = (config) => {
         sense,
         crypsis,
         allochory,
-        reproductiveContainer
+        reproductiveContainer,
+        communication
     }
 
     actions.boundUpdateEnums(enums);   

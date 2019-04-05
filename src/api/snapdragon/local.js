@@ -1933,5 +1933,224 @@ export const local = [
       "family": "Scolopacidae",
       "kingdom": "Animalia",
       "eolName": "Arenaria interpres (Linnaeus, 1758)"
+    },
+    {
+      "id": "45510537",
+      "name": "Branta canadensis",
+      "images": [
+        {
+          "rightsHolder": "Wouter Koch",
+          "source": "https://www.inaturalist.org/photos/6700871",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "4a/18/3b/18.https___www_inaturalist_org_photos_6700871.jpg"
+        },
+        {
+          "rightsHolder": "ryanhodnett",
+          "source": "https://www.inaturalist.org/photos/6724104",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "4a/38/b1/18.https___www_inaturalist_org_photos_6724104.jpg"
+        },
+        {
+          "rightsHolder": "ryanhodnett",
+          "source": "https://www.inaturalist.org/photos/6886747",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "4b/2f/ce/18.https___www_inaturalist_org_photos_6886747.jpg"
+        },
+        {
+          "rightsHolder": "ryanhodnett",
+          "source": "https://www.inaturalist.org/photos/6886748",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "4b/2f/cf/18.https___www_inaturalist_org_photos_6886748.jpg"
+        },
+        {
+          "rightsHolder": "cwwood",
+          "source": "https://www.inaturalist.org/photos/6928809",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "4b/64/1a/18.https___www_inaturalist_org_photos_6928809.jpg"
+        },
+        {
+          "rightsHolder": "Sterling Sheehy",
+          "source": "https://www.inaturalist.org/photos/746805",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "4b/b8/6f/18.https___www_inaturalist_org_photos_746805.jpg"
+        },
+        {
+          "rightsHolder": "Don Loarie",
+          "source": "https://www.inaturalist.org/photos/770595",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "4b/db/9d/18.https___www_inaturalist_org_photos_770595.jpg"
+        },
+        {
+          "rightsHolder": "Tim Hite",
+          "source": "https://www.inaturalist.org/photos/839786",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "4c/35/fd/18.https___www_inaturalist_org_photos_839786.jpg"
+        },
+        {
+          "rightsHolder": "Sterling Sheehy",
+          "source": "https://www.inaturalist.org/photos/912450",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "4c/a6/19/18.https___www_inaturalist_org_photos_912450.jpg"
+        },
+        {
+          "rightsHolder": "Tim Hite",
+          "source": "https://www.inaturalist.org/photos/96997",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "4d/00/c4/18.https___www_inaturalist_org_photos_96997.jpg"
+        },
+        {
+          "rightsHolder": "InAweofGod'sCreation",
+          "source": "https://www.inaturalist.org/photos/991722",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "4d/1f/c9/18.https___www_inaturalist_org_photos_991722.jpg"
+        },
+        {
+          "rightsHolder": "InAweofGod'sCreation",
+          "source": "https://www.inaturalist.org/photos/993600",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "4d/22/88/18.https___www_inaturalist_org_photos_993600.jpg"
+        },
+        {
+          "rightsHolder": "Wesley Neely",
+          "source": "https://www.inaturalist.org/photos/5916515",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "45/24/9c/18.https___www_inaturalist_org_photos_5916515.jpg"
+        },
+        {
+          "rightsHolder": "Mark Tutty",
+          "source": "https://www.inaturalist.org/photos/5955590",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "45/65/83/18.https___www_inaturalist_org_photos_5955590.jpg"
+        },
+        {
+          "rightsHolder": "wingedwolfpsion",
+          "source": "https://www.inaturalist.org/photos/6133664",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "46/8b/44/18.https___www_inaturalist_org_photos_6133664.jpg"
+        },
+        {
+          "rightsHolder": "Sterling Sheehy",
+          "source": "https://www.inaturalist.org/photos/619168",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "46/e8/4e/18.https___www_inaturalist_org_photos_619168.jpg"
+        },
+        {
+          "rightsHolder": "Melissa McMasters",
+          "source": "https://www.inaturalist.org/photos/6341759",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "47/de/05/18.https___www_inaturalist_org_photos_6341759.jpg"
+        },
+        {
+          "rightsHolder": "Heather Marie",
+          "source": "https://www.inaturalist.org/photos/6380999",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "48/1b/c4/18.https___www_inaturalist_org_photos_6380999.jpg"
+        },
+        {
+          "rightsHolder": "Gwenn Danielson",
+          "source": "https://www.inaturalist.org/photos/6417801",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "48/55/ed/18.https___www_inaturalist_org_photos_6417801.jpg"
+        },
+        {
+          "rightsHolder": "Michael D Fox",
+          "source": "https://www.inaturalist.org/photos/6508136",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "48/ed/0d/18.https___www_inaturalist_org_photos_6508136.jpg"
+        },
+        {
+          "rightsHolder": "Marcus Rosten",
+          "source": "https://www.inaturalist.org/photos/6574543",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "49/52/63/18.https___www_inaturalist_org_photos_6574543.jpg"
+        },
+        {
+          "rightsHolder": "Wouter Koch",
+          "source": "https://www.inaturalist.org/photos/6645828",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "49/c5/4b/18.https___www_inaturalist_org_photos_6645828.jpg"
+        }
+      ],
+      "names": [
+        {
+          "vernacularName": "Canada goose",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Bernache du canada",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Canada geese",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Canadian goose",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Ganso canadiense",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Kanadagans",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Oca del canada",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Goose",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Barnacla canadiense grande",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Ganso-do-canadá",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Barnacla canadiense",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Ganso del Canadá",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Ganso do canadá",
+          "language": "pt"
+        }
+      ],
+      "taxonomy": {
+        "usageKey": 5232437,
+        "scientificName": "Branta canadensis (Linnaeus, 1758)",
+        "canonicalName": "Branta canadensis",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 98,
+        "matchType": "EXACT",
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "order": "Anseriformes",
+        "family": "Anatidae",
+        "genus": "Branta",
+        "species": "Branta canadensis",
+        "kingdomKey": 1,
+        "phylumKey": 44,
+        "classKey": 212,
+        "orderKey": 1108,
+        "familyKey": 2986,
+        "genusKey": 2498190,
+        "speciesKey": 5232437,
+        "synonym": false,
+        "class": "Aves"
+      },
+      "family": "Anatidae",
+      "kingdom": "Animalia",
+      "eolName": "Branta canadensis (Linnaeus, 1758)"
     }
   ];

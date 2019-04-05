@@ -32,9 +32,7 @@ export const english = {
         HABITAT: 'habitat',
         BIOINDICATOR: 'Bioindicator',
         TROPHIC_LEVEL: 'Trophic level',        
-        COMPETITOR: 'Competitor',
         OCCUPANT: 'Lives in',
-        HOST: 'Host',
         ORGANISATION: 'Organisation',
         
         SMELL : 'smell',
@@ -61,10 +59,12 @@ export const english = {
         LENGTH: 'Length',
         VOICE: 'Voice',
         HEIGHT: 'Height',
+        WEIGHT: 'Weight',
         COMPOUND: 'Leaf type',
         REPRODUCTION: 'Reproduction',
         DISPLAY: 'Display',
         BEHAVIOUR: 'behaviour',
+        COMMUNICATION: 'Communication',
 
         SHELTER: 'Shelter',
         DISEASE: 'Disease',
@@ -100,6 +100,7 @@ export const english = {
         WEANING: 'Weaning',
         SENSORY_ACUITY: 'Sensory acuity',
         CRYPSIS: 'Crypsis',
+        CACHE_SIZE: 'Number of caches',
         
         FEMALE: 'Female',
         MALE: 'Male',        
@@ -469,7 +470,8 @@ export const english = {
         CALCAREOUS: 'Calcareous',
     },
     organisation: {
-        EUSOCIAL: 'Eusocial'
+        EUSOCIAL: 'Eusocial',
+        POLYGYNY: 'Polygyny'
     },
     role: {
         NATIVE: 'Native',
@@ -485,6 +487,9 @@ export const english = {
         PREDATOR: 'Predator',
         HERBIVORE: 'Herbivore',
         PREY: 'Prey',
+        COMPETITOR: 'Competitor',
+        HOST: 'Host',
+        CARRIER: 'Carrier',
     },
     fruitType: {
         DRUPE: 'Drupe',
@@ -511,13 +516,18 @@ export const english = {
     },
     display: {
         DIEMATIC: 'diematic',
-        SEXUAL_DIMORPHISM: 'Sexual dimorphism',        
+        SEXUAL_DIMORPHISM: 'Sexual dimorphism',      
+        NO_SEXUAL_DIMORPHISM: 'No sexual dimorphism',
+        MELANISTIC: 'Melanistic'
     },
     behaviour: {
         SEXUAL_CANNIBALISM: 'Sexual cannibalism',
         MONANDROUS: 'Monandrous',
         VOCALISATION: 'vocalisation',
-        CRYPSIS: 'Crypsis'
+        CRYPSIS: 'Crypsis',
+        HOARDING: 'Hoarding',
+        HIBERNATION: 'Hibernation'
+
     },
     sense: {
         SIGHT: 'Sight',
@@ -542,7 +552,8 @@ export const english = {
     reproductiveContainer: {
         CONE: 'Cone'
     },
-    invaseHarm: {
-        
+    communication: {
+        VOCALISATION: 'Vocalisation',
+        POSTURING: 'Posturing'
     }
 };
