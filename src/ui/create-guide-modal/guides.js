@@ -11,7 +11,7 @@ export const renderGuides = (modal, config, createGuide) => {
 
     const save = createGuide.save(config, 'GUIDE');
 
-    guideTxt.innerHTML = 'Select a guide';
+    guideTxt.innerHTML = 'Select a guide.';
 
     const template = document.createElement('template');
     template.innerHTML = guidesTemplate;

@@ -41,6 +41,7 @@
 
 #cardModal .iconic-icon {
     font-size: 2.4rem;
+    cursor: initial;
 }
 
 .vernacular-name-badge {
@@ -205,11 +206,11 @@
     }
 
     /* FEATURES */
-
+/* 
     .feature-types {
         margin: 8rem 0 0 0;
     }
-      
+       */
     .feature-symbiont-list.scrollable {
         max-height: 15rem;
         width: 100%;
@@ -225,7 +226,7 @@
         line-height: 1.5rem;
         background-color: rgba(52, 58, 64,.7);
         line-height: 1.5rem;
-        color: white;
+        color: var(--snap-text-light);
         letter-spacing: .05rem;
     }
 
@@ -255,8 +256,8 @@
     /* FEATURES IN MODAL */
 
     #cardModal .feature-types {
-        position: absolute;
-        top: 220px;
+        /* position: absolute;
+        top: 220px; */
         width: 100%;
         margin: 0;
     }

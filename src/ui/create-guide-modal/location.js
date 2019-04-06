@@ -8,7 +8,7 @@ import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 export const renderLocation = (modal, config, createGuide) => {
 
     const guideTxt = modal.querySelector('.guide-text');
-    guideTxt.innerHTML = 'Study species where you are';
+    guideTxt.innerHTML = 'Choose the area you\'re interested in.';
         
     createGuide.save(config, 'LOCATION', false)();
     const save = createGuide.save(config, 'LOCATION');
@@ -23,9 +23,12 @@ export const renderLocation = (modal, config, createGuide) => {
 
     renderTemplate({}, template.content, parent);
 
+    const switchLocationTxt = modal.querySelector('.js-txt-left');
     const locationLongLatTxt = modal.querySelector('.js-auto-location');
     const setLocationLongLatBtn = modal.querySelector('.js-set-location-btn');
-    setLocationLongLatBtn.innerHTML = authorisedLocation ? 'Reset your location' : 'Pinpoint your location';
+    setLocationLongLatBtn.innerHTML = authorisedLocation ? 'Reset your current location' : 'Pinpoint your current location';
+
+    switchLocationTxt.innerHTML = config.isLandscapeMode ? 'Your current location' : 'Location';
 
     async function handleSetLocationLongLat(event) {
         event.stopPropagation();
@@ -36,8 +39,8 @@ export const renderLocation = (modal, config, createGuide) => {
         config.collection.id = 1;
         config.guide.locationLongLat = place.longLocation;
         actions.boundUpdateConfig(config);
-        locationLongLatTxt.innerHTML = place.longLocation;
-        setLocationLongLatBtn.innerHTML = 'Reset your location';
+        // locationLongLatTxt.innerHTML = place.longLocation;
+        setLocationLongLatBtn.innerHTML = 'Reset your current location';
         save();
     }
 

@@ -188,7 +188,7 @@ export const renderMultiStrips = (collection) => {
         
         const answers = utils.shuffleArray([question, ...alternatives]);
 
-        render(question, answers, { question: layout.epithet.latin.join(', '), help: '(Match the epithet)' });
+        render(question, answers, { question: layout.epithet.latin.join(', '), help: '(Match the latin term)' });
     }
 
     if(screen.name === 'definition') {

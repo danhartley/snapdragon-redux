@@ -1,5 +1,5 @@
 @media (min-width: 320px) {
-    .right {  
+    /* .right {  
         color: var(--snap-text-dark);
         background-color: var(--snap-success);
     }
@@ -7,7 +7,7 @@
     .wrong {
         color:var(--snap-text-dark);
         background-color: var(--snap-alert);
-    }
+    } */
 
     .tile span {
         padding: 0 .2rem;
@@ -139,8 +139,12 @@
         cursor: pointer;
     }
 
-    .home-container .snapdragon-tag .inat-widget {
+    .home-container .snapdragon-tag .inat-widget span:nth-child(1) {
         font-size: 3rem;
+    }
+
+    .snapdragon-intro, .snapdragon-help {
+        font-size: 1.4rem;
     }
 }
 

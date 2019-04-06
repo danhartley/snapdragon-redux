@@ -55,7 +55,9 @@ export const lookALikes = (item, traits, config) => {
 
         if(config.isPortraitMode) return;
 
-        document.querySelector('.js-compare-species-link').addEventListener('click', ()=> {
+        const speciesComparisonLink = document.querySelector('.js-compare-species-link');
+
+        speciesComparisonLink.addEventListener('click', ()=> {
             const parent = document.querySelector('#imageComparisonModal .js-modal-image');            
             imageSideBySlider(slides, parent, true, config);
             let description = lookalikeDescriptions.find(trait => trait.type === 'lookalike' && R.contains(item.name, trait.ids) && !!scientificNames.find(name => R.contains(name, trait.ids)));

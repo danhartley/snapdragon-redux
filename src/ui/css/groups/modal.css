@@ -21,7 +21,10 @@
     max-width: initial;
 }
 
-#imageModal .modal-body,
+#imageModal .modal-body {
+    height: 60vh;  
+}
+
 #imageComparisonModal .modal-body {
   height: 35vh;  
 }

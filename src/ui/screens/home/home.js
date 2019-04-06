@@ -97,14 +97,16 @@ export const renderHome = (counter, loadSpeciesList = true) => {
                 actionLink.addEventListener('click', modalHandler);
                 break;
             case 'PREPARE-LESSON':
-                actionLink.removeAttribute('data-toggle');               
-                actionLink.innerHTML = 'Prepare';                
+                actionLink.removeAttribute('data-toggle');    
+                actionLink.innerHTML = 'Get Species';     
+                document.querySelector('.js-for-text').classList.remove('hide');           
                 guideSummary();
                 actionLink.removeEventListener(prepareHandler);
                 actionLink.addEventListener('click', prepareHandler);
                 break;
             case 'BEGIN-LESSON':            
                 actionLink.innerHTML = 'Begin';
+                document.querySelector('.js-for-text').classList.add('hide');
                 actionLink.addEventListener('click', lessonHandler);          
                 break;
             case 'RESUME-LESSON':
@@ -177,4 +179,12 @@ export const renderHome = (counter, loadSpeciesList = true) => {
     };
 
     listenToSpeciesCollectionListenReady(handleBeginLessonState);
+
+    setTimeout(() => {
+        document.querySelector('.snapdragon-help').classList.add('fade-in'); 
+    }, 3000);
+
+    setTimeout(() => {
+        document.querySelector('.snapdragon-intro').classList.add('fade-away');        
+    }, 5000);
 };

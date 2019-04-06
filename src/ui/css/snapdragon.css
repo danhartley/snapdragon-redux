@@ -189,7 +189,7 @@ hr {
   background-color: rgb(207, 218, 204);
   border: .05rem solid var(--snap-border-dark);
   left: inherit !important;
-  background-color: white;
+  background-color: var(--snap-text-light);
 }
 
 .non-taxa .dropdown-menu {
@@ -304,6 +304,10 @@ a.dropdown-item {
   cursor: not-allowed;
 }
 
+.info-box .inactive-icon {
+  display: none;
+}
+
 .modal-list.scrollable {
   height: 50vh;
 }
@@ -317,7 +321,7 @@ a.dropdown-item {
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
-  background-color: white;
+  background-color: var(--snap-text-light);
   justify-content: flex-start;
   background-color: var(--snap-list-alt-background);
 }
@@ -641,11 +645,11 @@ a.dropdown-item {
   height: 0.5rem;
 }
 
-.right,
+/* .right,
 .wrong {
   padding: 0.1rem 0.5rem;
   display: inline-block;
-}
+} */
 
 .align-left {
   text-align: left;
@@ -699,6 +703,7 @@ a.dropdown-item {
 .latin-name {
   font-style: italic;
   font-family: serif;
+  text-transform: initial;
 }
 
 .common-name {
@@ -828,8 +833,8 @@ a.dropdown-item {
 }
 
 .data-box-container {
-  position: absolute;
-  top: 90px;
+  /* position: absolute;
+  top: 90px; */
   display: flex;
   width: 100%;
   padding: .5rem 0;
@@ -1132,6 +1137,7 @@ span.correct {
 .modal-title {
   color: var(--snap-text-medium-light);
   text-transform: uppercase;
+  font-size: .9rem;
 }
 
 .modal-title span {
@@ -1310,7 +1316,7 @@ span.correct {
 }
 
 .btn-secondary:not(:disabled):not(.disabled).active {
-  background-color: white;
+  background-color: var(--snap-text-light);
   color: var(--snap-text-dark);
   float: left;
 }
@@ -1835,17 +1841,17 @@ a.collection-disabled {
 }
 
 .fungi-block {
-  color: white;
+  color: var(--snap-text-light);
   background-color: var(--snap-kingdom-fungi);
 }
 
 .animalia-block {
-  color: white;
+  color: var(--snap-text-light);
   background-color: var(--snap-kingdom-animalia);
 }
 
 .plantae-block {
-  color: white;
+  color: var(--snap-text-light);
   background-color: var(--snap-kingdom-plantae);
 }
 
@@ -2023,7 +2029,7 @@ a.collection-disabled {
   vertical-align: super;
 }
 
-.home-container .snapdragon-tag .inat-widget {
+.home-container .snapdragon-tag .inat-widget span:nth-child(1) {
   font-style: initial;
   font-size: 2rem;
 }
@@ -2081,6 +2087,7 @@ a.collection-disabled {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
+  color: var(--snap-link);
 }
 
 .snapdragon-create-guide > div:nth-child(1) {
@@ -2097,6 +2104,11 @@ a.collection-disabled {
 .snapdragon-create-guide > div:nth-child(1) > span:nth-child(2) {
   font-family: 'SharpGroteskWide', sans-serif;
   color: var(--snap-collection-active);
+}
+
+.snapdragon-create-guide .for-text {
+  font-size: .7rem;
+  vertical-align: middle;
 }
 
 .snapdragon-create-guide .toggle-links {
@@ -2119,4 +2131,27 @@ a.collection-disabled {
 
 .no-pointer-events {
   pointer-events: none;
+}
+
+.snapdragon-intro {
+  opacity: 100;
+}
+
+.snapdragon-intro, .snapdragon-help {
+  font-size: 1.2rem;
+}
+
+.snapdragon-intro.fade-away {
+  transition: all 10s ease-out;
+  opacity: .25;  
+}
+
+.snapdragon-help {
+  margin: 1rem 0 0 0;
+  opacity: 0;
+}
+
+.snapdragon-help.fade-in {
+  transition: all 3s ease-out;
+  opacity: 100;
 }

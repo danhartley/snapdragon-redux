@@ -109,7 +109,7 @@
     display: flex;
     align-items: center;
     border-bottom: .05rem solid lightgray;
-    padding: 0 0 .5rem 0;
+    padding: .5rem 0;
     width: 100%;
     text-transform: uppercase;
     font-size: .9rem;
@@ -120,10 +120,6 @@
     line-height: 2rem;
     text-align: center;
     letter-spacing: .08rem;
-  }
-  
-  .modal-guide-wrapper .modal-body .btn-modal {
-    background-color: var(--snap-list-bg);    
   }
   
   .modal-guide-wrapper .modal-body .modal-guide-progress > div > div {
@@ -244,6 +240,7 @@
   
   .modal-guide-wrapper .modal-body .inat-location-location button {
     margin: 0 .5rem 0 0;
+    width: 16rem;
   }
   
   .modal-guide-wrapper .modal-body button:hover {
@@ -251,12 +248,12 @@
   }
   
   .modal-guide-wrapper .modal-body button:disabled {
-    color: var(--snap-text-dark);
+    color: var(--snap-text-medium-dark);
   }
   
   .modal-guide-wrapper .modal-body button.js-set-inat-identity-btn {
-    color: white;        
-    background-color: var(--snap-link);
+    color: var(--snap-text-light);        
+    background-color: var(--snap-text-medium-dark);
   }
   
   .modal-guide-wrapper .inat-location-place .custom-checkbox {
@@ -308,7 +305,8 @@
     justify-content: space-between;
     font-size: .9rem;
     padding: 0;
-    margin: .5rem 0 0 0; 
+    margin: 1.5rem 0 0 0; 
+    font-style: italic;
   }
   
   .modal-guide-body .range-slider.disabled {
@@ -367,17 +365,27 @@
     display: flex;
     flex-direction: row;
   }
-  
-  .snapdragon-switch.left {        
-    background-color: var(--snap-text-medium-dark);        
+
+  .snapdragon-switch.left {            
+    background-color: var(--snap-text-medium-dark);
   }
   
   .snapdragon-switch.left div {
     transform: translateX(0);
   }
   
-  .snapdragon-switch.right {        
-    background-color: var(--snap-container-background);
+  .inat-switch .txt-left, .inat-switch .txt-right {
+    color: var(--snap-text-medium-dark);
+    transition: all 1s ease;
+  }
+
+  .inat-switch .txt-left.selected, .inat-switch .txt-right.selected {
+    color: white;
+    transition: all 1s ease;
+  }
+
+  .snapdragon-switch.right {    
+    background-color: var(--snap-text-medium-dark);
   }
   
   .snapdragon-switch.right div {
@@ -396,13 +404,14 @@
     align-items: center;
     margin: 0 0 .5rem 0;
     background-color: var(--snap-text-medium-light);
-    color: white;
+    color: var(--snap-text-medium-dark);
     padding: .5rem 1rem;
     width: fit-content;
     border-radius: .2rem;
     background-color: rgb(110, 138, 49);
     letter-spacing: .05rem;
     width: 100%;
+    font-size: 1rem;
   }
   
   .guides .inat .inat-switch {
@@ -415,8 +424,15 @@
     align-items: center;
   }
   
-  .inat-switch.location, .inat-switch.inat, .inat-switch.season {
-    background-color: var(--snap-list-bg);
+  .inat-switch.location, .inat-switch.inat, .inat-switch.season,
+  .modal-guide-wrapper .modal-body .btn-modal {
+    background-color: rgb(98, 120, 94);
+    width: 8rem;
+    width: fit-content;
+  }
+
+  #set-inat-identity-btn {
+    width: 10rem;
   }
   
   /* AUTOCOMPLETE */
@@ -548,7 +564,7 @@
   #exampleGuide .btn-secondary:not(:disabled):not(.disabled).active {
     width: 100%;    
     border-radius: .25rem;
-    color: white;
+    color: var(--snap-text-light);
     background-color: gray;
   }
 
@@ -567,7 +583,7 @@
   }
 
   #exampleGuide .btn.btn-secondary.active + div.lesson-radio-button {
-    background-color: white;
+    background-color: var(--snap-text-light);
     border: .05rem solid gray;
   }
   
@@ -627,12 +643,17 @@
         max-height: 4rem;
     }
 
+
+    .modal-guide-wrapper .modal-body .modal-guide-progress > div {
+      padding: 0 0 .5rem 0;
+    }
+
     .modal-guide-wrapper .modal-body .modal-guide-progress > div div {
         line-height: 3.45rem;
     }
 
     .modal-guide-wrapper .modal-body .guide-text {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
     .modal-guide-wrapper .modal-body button {
@@ -662,17 +683,17 @@
     }
 
     .modal-guide-wrapper .inat-switch {
-        width: 18rem;
+        width: 24rem;
         width: fit-content;
     }
 
     .modal-guide-wrapper .inat.inat-switch {
-      width: 25rem;
+      width: 36rem;
       width: fit-content;
     }
 
     .modal-guide-wrapper .season.inat-switch {
-      width: 20rem;
+      width: 16rem;
       width: fit-content;
     }
 
@@ -683,7 +704,7 @@
       }
 
     .modal-guide-wrapper #inat-place::placeholder {
-        color: white;
+        color: var(--snap-text-light);
     }
 
     #inat-place, #inat-place-id {
@@ -700,6 +721,7 @@
     }
 
     .modal-guide-wrapper .guides .inat-entry, .modal-guide-wrapper .guides input[type="text"] {
+        width: 12rem;
         width: fit-content;
     }  
 
@@ -709,10 +731,11 @@
         display: block;
         font-size: initial;
         padding: .25rem;
+        margin: 1rem 0 0 0; 
     }
 
     .modal-guide-body .range-slider span {
-        margin: 0 .5rem 0 0;
+        margin: 0 .25rem 0 0;
     }
 
     .modal-guide-wrapper .modal-guide-body .range-slider > span:nth-child(2) {
@@ -734,7 +757,7 @@
 
     .iconic-taxa-categories {
         grid-template-columns: 1fr 1fr 1fr;
-        margin: 0;
+        margin: 2rem 0 0 0;
     }
 
     .iconic-taxa-categories > div > div:nth-child(1) { 

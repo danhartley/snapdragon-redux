@@ -2887,7 +2887,7 @@ export const taxa = [
             {   
                 language: 'en',
                 summary: 'Highly intelligent, self-aware, with tool-making ability & memorisation abilities. Highly social. Largely sedentary.',
-                dentification: 'Medium to large, with strong feet and bills, rictal bristles, and a single moult each year.'
+                identification: 'Medium to large, with strong feet and bills, rictal bristles, and a single moult each year.'
             },
         ],
         traits: [ 
