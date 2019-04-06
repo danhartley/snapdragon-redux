@@ -427,6 +427,12 @@
   .inat-switch.location, .inat-switch.inat, .inat-switch.season,
   .modal-guide-wrapper .modal-body .btn-modal {
     background-color: rgb(98, 120, 94);
+    width: 8rem;
+    width: fit-content;
+  }
+
+  #set-inat-identity-btn {
+    width: 10rem;
   }
   
   /* AUTOCOMPLETE */
@@ -677,17 +683,17 @@
     }
 
     .modal-guide-wrapper .inat-switch {
-        width: 18rem;
+        width: 24rem;
         width: fit-content;
     }
 
     .modal-guide-wrapper .inat.inat-switch {
-      width: 25rem;
+      width: 36rem;
       width: fit-content;
     }
 
     .modal-guide-wrapper .season.inat-switch {
-      width: 20rem;
+      width: 16rem;
       width: fit-content;
     }
 
@@ -715,6 +721,7 @@
     }
 
     .modal-guide-wrapper .guides .inat-entry, .modal-guide-wrapper .guides input[type="text"] {
+        width: 12rem;
         width: fit-content;
     }  
 

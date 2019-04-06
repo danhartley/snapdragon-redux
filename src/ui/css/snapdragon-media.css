@@ -142,6 +142,10 @@
     .home-container .snapdragon-tag .inat-widget span:nth-child(1) {
         font-size: 3rem;
     }
+
+    .snapdragon-intro, .snapdragon-help {
+        font-size: 1.4rem;
+    }
 }
 
 @media (min-width: 1024px) {

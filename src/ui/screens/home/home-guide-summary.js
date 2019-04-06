@@ -56,7 +56,7 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
                 ? `<span>${inatId}</span><span class="super-text">${config.guide.inatId.type}</span>`
                 : '';
 
-    if(config.isPortraitMode || config.guide.locationType === 'longLat') return;
+    if(config.isPortraitMode || config.guide.locationType === 'longLat' || config.guide.locationType === 'place' && config.guide.place.id === 'any') return;
 
     const widgetLink = document.querySelector('.js-iNatWidget');
     

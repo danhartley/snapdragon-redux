@@ -2087,6 +2087,7 @@ a.collection-disabled {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
+  color: var(--snap-link);
 }
 
 .snapdragon-create-guide > div:nth-child(1) {
@@ -2103,6 +2104,11 @@ a.collection-disabled {
 .snapdragon-create-guide > div:nth-child(1) > span:nth-child(2) {
   font-family: 'SharpGroteskWide', sans-serif;
   color: var(--snap-collection-active);
+}
+
+.snapdragon-create-guide .for-text {
+  font-size: .7rem;
+  vertical-align: middle;
 }
 
 .snapdragon-create-guide .toggle-links {
@@ -2125,4 +2131,27 @@ a.collection-disabled {
 
 .no-pointer-events {
   pointer-events: none;
+}
+
+.snapdragon-intro {
+  opacity: 100;
+}
+
+.snapdragon-intro, .snapdragon-help {
+  font-size: 1.2rem;
+}
+
+.snapdragon-intro.fade-away {
+  transition: all 10s ease-out;
+  opacity: .25;  
+}
+
+.snapdragon-help {
+  margin: 1rem 0 0 0;
+  opacity: 0;
+}
+
+.snapdragon-help.fade-in {
+  transition: all 3s ease-out;
+  opacity: 100;
 }
