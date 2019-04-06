@@ -205,11 +205,11 @@
     }
 
     /* FEATURES */
-
+/* 
     .feature-types {
         margin: 8rem 0 0 0;
     }
-      
+       */
     .feature-symbiont-list.scrollable {
         max-height: 15rem;
         width: 100%;
@@ -255,8 +255,8 @@
     /* FEATURES IN MODAL */
 
     #cardModal .feature-types {
-        position: absolute;
-        top: 220px;
+        /* position: absolute;
+        top: 220px; */
         width: 100%;
         margin: 0;
     }
