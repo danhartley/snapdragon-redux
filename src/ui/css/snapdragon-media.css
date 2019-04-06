@@ -1,5 +1,5 @@
 @media (min-width: 320px) {
-    .right {  
+    /* .right {  
         color: var(--snap-text-dark);
         background-color: var(--snap-success);
     }
@@ -7,7 +7,7 @@
     .wrong {
         color:var(--snap-text-dark);
         background-color: var(--snap-alert);
-    }
+    } */
 
     .tile span {
         padding: 0 .2rem;

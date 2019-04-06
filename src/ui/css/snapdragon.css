@@ -189,7 +189,7 @@ hr {
   background-color: rgb(207, 218, 204);
   border: .05rem solid var(--snap-border-dark);
   left: inherit !important;
-  background-color: white;
+  background-color: var(--snap-text-light);
 }
 
 .non-taxa .dropdown-menu {
@@ -321,7 +321,7 @@ a.dropdown-item {
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
-  background-color: white;
+  background-color: var(--snap-text-light);
   justify-content: flex-start;
   background-color: var(--snap-list-alt-background);
 }
@@ -645,11 +645,11 @@ a.dropdown-item {
   height: 0.5rem;
 }
 
-.right,
+/* .right,
 .wrong {
   padding: 0.1rem 0.5rem;
   display: inline-block;
-}
+} */
 
 .align-left {
   text-align: left;
@@ -1316,7 +1316,7 @@ span.correct {
 }
 
 .btn-secondary:not(:disabled):not(.disabled).active {
-  background-color: white;
+  background-color: var(--snap-text-light);
   color: var(--snap-text-dark);
   float: left;
 }
@@ -1841,17 +1841,17 @@ a.collection-disabled {
 }
 
 .fungi-block {
-  color: white;
+  color: var(--snap-text-light);
   background-color: var(--snap-kingdom-fungi);
 }
 
 .animalia-block {
-  color: white;
+  color: var(--snap-text-light);
   background-color: var(--snap-kingdom-animalia);
 }
 
 .plantae-block {
-  color: white;
+  color: var(--snap-text-light);
   background-color: var(--snap-kingdom-plantae);
 }
 

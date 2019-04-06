@@ -56,7 +56,7 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
                 ? `<span>${inatId}</span><span class="super-text">${config.guide.inatId.type}</span>`
                 : '';
 
-    if(config.isPortraitMode) return;
+    if(config.isPortraitMode || config.guide.locationType === 'longLat') return;
 
     const widgetLink = document.querySelector('.js-iNatWidget');
     
@@ -68,9 +68,11 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
 
         if(config.guide.place && config.guide.place.type === 'users') return;
 
+        const iconicTaxaCount = config.guide.iconicTaxa.length > 0 ? config.guide.iconicTaxa.map(taxon => taxon.common).join(', ') : 'All species';
+
         document.querySelector('#iNatWidgetModal .modal-header').innerHTML = 
         config.guide.iconicTaxa.length > 0
-            ? `iNaturalist species observed within ${range}km of ${place} filtered by <span class="toUpperCase">${taxa}</span>`
+            ? `iNaturalist species observed within ${range}km of ${place} filtered by <span class="toUpperCase">${iconicTaxaCount}</span>`
             : `iNaturalist species observed within ${range}km of ${place}`;
 
         let params = collection ? collection.iNatWidget : config.guide.place.id;

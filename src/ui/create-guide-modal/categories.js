@@ -12,7 +12,7 @@ export const renderCategories = (modal, config, createGuide) => {
 
     const filterSelectedClass = 'iconic-taxa-selected';
 
-    guideTxt.innerHTML = 'Filter species by category';
+    guideTxt.innerHTML = 'Filter species by taxon or category.';
 
     let iconicTaxa = [ ...config.guide.iconicTaxa ] || [];
 

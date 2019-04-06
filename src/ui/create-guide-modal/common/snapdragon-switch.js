@@ -2,19 +2,25 @@ export const switchHandler = (idSwitch, startingPosition, callback) => {
     
     const state = { position: startingPosition === 'left' ? 'right' : 'left' };
 
-    let button = idSwitch.querySelector('div');
+    let switchControl = idSwitch.querySelector('div');
+    let leftText = idSwitch.parentElement.querySelector('.txt-left');
+    let rightText = idSwitch.parentElement.querySelector('.txt-right');
 
     const switcher = () => {
         
         switch(state.position) { 
             case 'left':
-                button.parentElement.classList.add('right');
-                button.parentElement.classList.remove('left');                
+                switchControl.parentElement.classList.add('right');
+                switchControl.parentElement.classList.remove('left');
+                leftText.classList.remove('selected');
+                rightText.classList.add('selected');
                 state.position = 'right';
                 break;
             case 'right':
-                button.parentElement.classList.add('left');
-                button.parentElement.classList.remove('right');
+                switchControl.parentElement.classList.add('left');
+                switchControl.parentElement.classList.remove('right');
+                leftText.classList.add('selected');
+                rightText.classList.remove('selected');
                 state.position = 'left';
                 break;
         }
