@@ -304,6 +304,10 @@ a.dropdown-item {
   cursor: not-allowed;
 }
 
+.info-box .inactive-icon {
+  display: none;
+}
+
 .modal-list.scrollable {
   height: 50vh;
 }

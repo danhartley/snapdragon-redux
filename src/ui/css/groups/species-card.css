@@ -41,6 +41,7 @@
 
 #cardModal .iconic-icon {
     font-size: 2.4rem;
+    cursor: initial;
 }
 
 .vernacular-name-badge {
