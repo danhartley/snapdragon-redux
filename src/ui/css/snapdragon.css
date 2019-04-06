@@ -699,6 +699,7 @@ a.dropdown-item {
 .latin-name {
   font-style: italic;
   font-family: serif;
+  text-transform: initial;
 }
 
 .common-name {
@@ -1132,6 +1133,7 @@ span.correct {
 .modal-title {
   color: var(--snap-text-medium-light);
   text-transform: uppercase;
+  font-size: .9rem;
 }
 
 .modal-title span {
@@ -2023,7 +2025,7 @@ a.collection-disabled {
   vertical-align: super;
 }
 
-.home-container .snapdragon-tag .inat-widget {
+.home-container .snapdragon-tag .inat-widget span:nth-child(1) {
   font-style: initial;
   font-size: 2rem;
 }

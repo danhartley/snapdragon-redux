@@ -139,7 +139,7 @@
         cursor: pointer;
     }
 
-    .home-container .snapdragon-tag .inat-widget {
+    .home-container .snapdragon-tag .inat-widget span:nth-child(1) {
         font-size: 3rem;
     }
 }

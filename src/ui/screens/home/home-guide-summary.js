@@ -34,9 +34,9 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
 
     renderTemplate({ location, place, taxa, inatId, season }, template.content, parent);
 
-    if(config.isPortraitMode) {
+    // if(config.isPortraitMode) {
 
-        const taxa = document.querySelector('.js-taxa');
+        const taxaNode = document.querySelector('.js-taxa');
 
         let icons = '';
         if(config.guide.iconicTaxa.length > 0) {
@@ -44,11 +44,11 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
                 const icon = returnTaxonIcon(taxon.id.toLowerCase());
                 icons += icon;
             })
-            taxa.innerHTML = icons;
+            taxaNode.innerHTML = icons;
         } else {
-            taxa.innerHTML = 'All species';
+            taxaNode.innerHTML = 'All species';
         }
-    }
+    // }
 
     const iNatId = document.querySelector('.js-iNatId');
 
@@ -56,14 +56,14 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
                 ? `<span>${inatId}</span><span class="super-text">${config.guide.inatId.type}</span>`
                 : '';
 
+    if(config.isPortraitMode) return;
+
     const widgetLink = document.querySelector('.js-iNatWidget');
     
-    widgetLink.innerHTML = `<span data-toggle="modal" data-target="#iNatWidgetModal">${place}</span><span class="super-text">within ${range}km</span>`;
+    widgetLink.innerHTML = `<span data-toggle="modal" data-target="#iNatWidgetModal" class="underline-link">${place}</span><span class="super-text">within ${range}km</span>`;
     
     const collection = snapdragonCollections.find(collection => collection.id === config.guide.place.id);
     
-    return; // THIS COULD BE AVAILABLE SOMETIMES, NO?
-
     widgetLink.addEventListener('click', event => {
 
         if(config.guide.place && config.guide.place.type === 'users') return;
