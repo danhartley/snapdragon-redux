@@ -182,7 +182,7 @@ export const renderHome = (counter, loadSpeciesList = true) => {
 
     setTimeout(() => {
         document.querySelector('.snapdragon-help').classList.add('fade-in'); 
-    }, 3000);
+    }, 2500);
 
     setTimeout(() => {
         document.querySelector('.snapdragon-intro').classList.add('fade-away');        

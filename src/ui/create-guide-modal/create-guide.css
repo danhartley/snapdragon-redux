@@ -65,6 +65,7 @@
     letter-spacing: .03rem;
     color: var(--snap-text-medium-light);
     font-style: italic;
+    font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
   }
   
   .modal-guide-wrapper .modal-body .guides .guide-text {
@@ -189,6 +190,7 @@
     bottom:.5rem;
     display: flex;
     flex-direction: row;
+    font-family: sentinel;
   }
   
   .modal-guide-wrapper .modal-body .chosen-inat {
@@ -220,36 +222,42 @@
   }
   
   .modal-guide-wrapper .modal-body .saved {
-    color: var(--snap-green-ident);
-    font-size: 1.3rem;
-    font-family: serif;
+    color: var(--gray);
+    font-size: 1.2rem;
     font-style: italic;
+    font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
   }
   
   .modal-guide-wrapper .modal-body .actions > div:first-child {
     display: flex;
+    font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
   }
   
   .modal-guide-wrapper .modal-body button {
     display: inline-block;
     margin: 0;
-    background-color: var(--snap-list-bg);
-    color: rgb(250, 250, 250);
+    color: white;
     letter-spacing: .05rem;
   }
   
   .modal-guide-wrapper .modal-body .inat-location-location button {
     margin: 0 .5rem 0 0;
     width: 16rem;
+    background-color: var(--snap-text-medium-dark);
   }
   
   .modal-guide-wrapper .modal-body button:hover {
     color: lightgray;
   }
-  
-  .modal-guide-wrapper .modal-body button:disabled {
-    color: var(--snap-text-medium-dark);
+
+  .inat-location-place.disabled {
+    color: var(--secondary) !important;
+    pointer-events: none;
   }
+  
+  /* .modal-guide-wrapper .modal-body button:disabled {
+    color: var(--snap-text-medium-dark);
+  } */
   
   .modal-guide-wrapper .modal-body button.js-set-inat-identity-btn {
     color: var(--snap-text-light);        
@@ -306,7 +314,7 @@
     font-size: .9rem;
     padding: 0;
     margin: 1.5rem 0 0 0; 
-    font-style: italic;
+    /* font-style: italic; */
   }
   
   .modal-guide-body .range-slider.disabled {
@@ -424,19 +432,30 @@
     align-items: center;
   }
   
-  .inat-switch.location, .inat-switch.inat, .inat-switch.season,
-  .modal-guide-wrapper .modal-body .btn-modal {
+  .inat-switch.location, .inat-switch.inat, .inat-switch.season {
     background-color: rgb(98, 120, 94);
     width: 8rem;
     width: fit-content;
   }
 
-  #set-inat-identity-btn {
+  .inat-switch.location {
+    margin-bottom: 1.5rem;
+  }
+
+  .inat-location-place .btn-modal {
+    background-color: var(--snap-text-medium-dark);
+  }
+
+  #set-inat-identity-btn {  
     width: 10rem;
   }
   
   /* AUTOCOMPLETE */
   
+  /* #inat-place::placeholder {
+    color: gray;
+  } */
+
   #inat-place.active {
     border: .1rem solid var(--snap-list-bg);
   }
@@ -501,12 +520,16 @@
     color: var(--snap-lesson);
   }
 
-  .iconic-taxa-categories svg, 
+  .iconic-taxa-categories svg,
   .selected-text .iconic-taxa-categories-selected svg,
   .lesson-taxa .iconic-taxa-categories-selected svg {
     width: 1rem;
     height: 1rem;
-    margin: 0.25rem 0 0 0;
+    margin: 0.25rem 0 0 0;    
+  }
+
+  .selected-text svg {
+    color: var(--snap-collection-active);
   }
 
   .lesson-taxa .iconic-taxa-categories-selected svg g {
@@ -602,6 +625,7 @@
   #exampleGuide #confirm-lesson-btn {
     margin: 1.5rem 0;
     width: 9rem;
+    background-color: var(--snap-text-medium-dark);
   }
 
   #exampleGuide .lesson-radio-button {
@@ -653,7 +677,7 @@
     }
 
     .modal-guide-wrapper .modal-body .guide-text {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     .modal-guide-wrapper .modal-body button {
@@ -683,17 +707,18 @@
     }
 
     .modal-guide-wrapper .inat-switch {
-        width: 24rem;
+        font-size: 1.2rem;
+        width: 29rem;
         width: fit-content;
     }
 
     .modal-guide-wrapper .inat.inat-switch {
-      width: 36rem;
+      width: 37rem;
       width: fit-content;
     }
 
     .modal-guide-wrapper .season.inat-switch {
-      width: 16rem;
+      width: 18rem;
       width: fit-content;
     }
 
@@ -703,8 +728,19 @@
         flex: 3;
       }
 
-    .modal-guide-wrapper #inat-place::placeholder {
-        color: var(--snap-text-light);
+    .inat-location-place #inat-place::placeholder {
+        color: var(--gray);
+        font-size: 1rem;
+        font-style: italic;
+    }
+
+    .inat-location-place #inat-place:disabled::placeholder {
+        color: white;
+    }
+
+    #set-inat-location-btn {
+      width: 8rem;
+      width: fit-content;
     }
 
     #inat-place, #inat-place-id {
