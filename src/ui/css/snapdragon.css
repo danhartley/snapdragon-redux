@@ -234,8 +234,11 @@ a.dropdown-item {
 }
 
 .selected-text {
-  color: var(--snap-collection-active);
+  color: var(--snap-text-medium-light);
   text-transform: uppercase;
+  font-size: 1.1rem;
+  font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
+  letter-spacing: .05rem;
 }
 
 .toUpperCase {
@@ -2043,13 +2046,9 @@ a.collection-disabled {
   pointer-events: initial;
 }
 
-.delete-guide-link > span.disabled, .disabled {
+.delete-guide-link > span.disabled {
   color: var(--secondary) !important;
   pointer-events: none;
-}
-
-#set-inat-location-btn.disabled {
-  color: var(--gray-dark) !important;     
 }
 
 .delete-guide-link input {
