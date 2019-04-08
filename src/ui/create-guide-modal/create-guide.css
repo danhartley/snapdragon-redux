@@ -241,8 +241,7 @@
   }
   
   .modal-guide-wrapper .modal-body .inat-location-location button {
-    margin: 0 .5rem 0 0;
-    width: 16rem;
+    width: 100%;  
     background-color: var(--snap-text-medium-dark);
   }
   
@@ -254,11 +253,7 @@
     color: var(--secondary) !important;
     pointer-events: none;
   }
-  
-  /* .modal-guide-wrapper .modal-body button:disabled {
-    color: var(--snap-text-medium-dark);
-  } */
-  
+
   .modal-guide-wrapper .modal-body button.js-set-inat-identity-btn {
     color: var(--snap-text-light);        
     background-color: var(--snap-text-medium-dark);
@@ -303,7 +298,8 @@
   
   .modal-guide-wrapper .guides .inat-entry, .modal-guide-wrapper .guides input[type="text"] {
     width: 100%;
-    margin: 0 0 .25rem 0;
+    margin: 0;
+    padding: 0 .25rem;
   }
 
   /* SLIDER */
@@ -346,7 +342,7 @@
   
   /* SNAPDRAGON SWITCH */
   
-  .snapdragon-switch {
+  .inat-switch-slider {
     width: 3.6rem;
     height: 2rem;
     padding: .2rem;
@@ -357,7 +353,7 @@
     transition: all 1s ease;
   }
   
-  .snapdragon-switch div {
+  .inat-switch-slider div {
     height: 1.6rem;
     width: 1.6rem;
     border-radius: .2rem;
@@ -369,22 +365,29 @@
     position: absolute;
   }
   
-  .snapdragon-switch .embedded-switch {
-    display: flex;
-    flex-direction: row;
+  .embedded-switch > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .snapdragon-switch.left {            
+  .inat-switch-slider.left {            
     background-color: var(--snap-text-medium-dark);
   }
   
-  .snapdragon-switch.left div {
+  .inat-switch-slider.left div {
     transform: translateX(0);
   }
   
   .inat-switch .txt-left, .inat-switch .txt-right {
     color: var(--snap-text-medium-dark);
     transition: all 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .inat-switch .txt-right {
+    justify-content: flex-start;
   }
 
   .inat-switch .txt-left.selected, .inat-switch .txt-right.selected {
@@ -392,18 +395,18 @@
     transition: all 1s ease;
   }
 
-  .snapdragon-switch.right {    
-    background-color: var(--snap-text-medium-dark);
+  .inat-switch-slider.right {    
+    background-color: var(--snap-text-medium-dark);    
   }
   
-  .snapdragon-switch.right div {
+  .inat-switch-slider.right div {
     transform: translateX(1.4rem);
   }
   
   /* INAT SWITCH */
   
   .inat.inat-switch > div {
-    margin: .25rem;
+    margin: .25rem 0 .5rem 0;
   }
   
   .inat-switch {
@@ -413,7 +416,7 @@
     margin: 0 0 .5rem 0;
     background-color: var(--snap-text-medium-light);
     color: var(--snap-text-medium-dark);
-    padding: .5rem 1rem;
+    padding: .3rem .2rem;
     width: fit-content;
     border-radius: .2rem;
     background-color: rgb(110, 138, 49);
@@ -433,9 +436,9 @@
   }
   
   .inat-switch.location, .inat-switch.inat, .inat-switch.season {
+    width: 100%;
+    flex-direction: column;
     background-color: rgb(98, 120, 94);
-    width: 8rem;
-    width: fit-content;
   }
 
   .inat-switch.location {
@@ -447,15 +450,12 @@
   }
 
   #set-inat-identity-btn {  
-    width: 10rem;
+    width: 100%;
+    margin: .25rem 0 0 0;
   }
   
   /* AUTOCOMPLETE */
   
-  /* #inat-place::placeholder {
-    color: gray;
-  } */
-
   #inat-place.active {
     border: .1rem solid var(--snap-list-bg);
   }
@@ -654,6 +654,15 @@
         min-height: 32rem;
     }
 
+    .inat-switch.location, .inat-switch.inat, .inat-switch.season {
+      width: 8rem;
+      width: fit-content;
+    }
+
+    .inat-switch.inat, .guides .inat .inat-switch {
+      flex-direction: row;
+    }
+
     .modal-guide-wrapper .modal-title div:nth-child(1) {
         flex: auto;
         font-size: 1.1rem;        
@@ -667,6 +676,10 @@
         max-height: 4rem;
     }
 
+    .modal-guide-wrapper .modal-body .inat-location-location button {
+      margin: 0 .5rem 0 0;
+      width: 16rem;
+    }
 
     .modal-guide-wrapper .modal-body .modal-guide-progress > div {
       padding: 0 0 .5rem 0;
@@ -702,9 +715,13 @@
         padding: 0 .1rem;
     }
 
-    .modal-guide-wrapper .guides .inat .inat-switch {
-        flex-direction: row;        
+    .inat-switch {
+      padding: .5rem 1rem;
     }
+
+    /* .modal-guide-wrapper .guides .inat .inat-switch {
+        flex-direction: row;        
+    } */
 
     .modal-guide-wrapper .inat-switch {
         font-size: 1.2rem;
@@ -787,8 +804,12 @@
 
     /* SNAPDRAGON SWITCH */
 
-    .snapdragon-switch .embedded-switch {
+    .inat-switch-slider .embedded-switch {
         display: inline;
+    }
+
+    .embedded-switch > div {
+      display: flex;
     }
 
     .iconic-taxa-categories {
@@ -813,6 +834,10 @@
 
     .inat.inat-switch > div {
         margin: 0;
+    }
+
+    #set-inat-identity-btn {  
+      width: 10rem;
     }
 
     /* EXAMPLE LESSONS INC. RB LIST */

@@ -44,7 +44,7 @@ export const renderInatUser = (parent, config, save) => {
         autocompleteRef = inatAutocomplete(inatIdentityInput, byType, 'inat-identity-autocomplete', '');
     });
 
-    const idSwitch = parent.querySelector('.snapdragon-switch');
+    const idSwitch = parent.querySelector('.inat-switch-slider');
 
     const switchCallback = position => {
         

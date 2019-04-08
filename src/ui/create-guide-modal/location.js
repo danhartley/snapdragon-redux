@@ -80,7 +80,7 @@ export const renderLocation = (modal, config, createGuide) => {
             autocompleteRef.destroy();
     });
 
-    const idSwitch = modal.querySelector('.snapdragon-switch');
+    const idSwitch = modal.querySelector('.inat-switch-slider');
 
     const switchCallback = position => {
         switch(position) { 
