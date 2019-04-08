@@ -34,22 +34,19 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
 
     renderTemplate({ location, place, taxa, inatId, season }, template.content, parent);
 
-    // if(config.isPortraitMode) {
+    const taxaNode = document.querySelector('.js-taxa');
 
-        const taxaNode = document.querySelector('.js-taxa');
-
-        let icons = '';
-        if(config.guide.iconicTaxa.length > 0) {
-            config.guide.iconicTaxa.forEach(taxon => {
-                const icon = returnTaxonIcon(taxon.id.toLowerCase());
-                icons += icon;
-            })
-            taxaNode.innerHTML = icons;
-        } else {
-            taxaNode.innerHTML = 'All species';
-        }
-    // }
-
+    let icons = '';
+    if(config.guide.iconicTaxa.length > 0) {
+        config.guide.iconicTaxa.forEach(taxon => {
+            const icon = returnTaxonIcon(taxon.id.toLowerCase());
+            icons += icon;
+        })
+        taxaNode.innerHTML = icons;
+    } else {
+        taxaNode.innerHTML = 'All species';
+    }
+    
     const iNatId = document.querySelector('.js-iNatId');
 
     iNatId.innerHTML = inatId 

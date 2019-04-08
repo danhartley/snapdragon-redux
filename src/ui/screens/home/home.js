@@ -13,7 +13,7 @@ import { renderGuideSummary } from 'ui/screens/home/home-guide-summary';
 import { listenToCloseCreateGuideModal } from 'ui/create-guide-modal/create-guide';
 import { listenToCloseExampleGuideModal } from 'ui/example-guide-modal/example-guide';
 
-export const renderHome = (counter, loadSpeciesList = true) => {
+export const renderHome = (counter, loadSpeciesList = true, noRecords = false) => {
 
     let { config, collection } = store.getState();
 
@@ -30,9 +30,11 @@ export const renderHome = (counter, loadSpeciesList = true) => {
     renderTemplate({}, template.content, DOM.rightBody);
 
     let state = (config.collection.id === 0 || !config.guide.ready)
-            ? 'MODAL' : (collection && collection.layoutCounter > 0)
+            ? 'CREATE-LESSON' : (collection && collection.layoutCounter > 0)
                 ? 'RESUME-LESSON'
-                : 'PREPARE-LESSON';
+                : noRecords
+                    ? 'CREATE-LESSON'
+                    : 'PREPARE-LESSON';
 
     let actionLink = document.querySelector('.js-create-guide-link');
 
@@ -88,13 +90,21 @@ export const renderHome = (counter, loadSpeciesList = true) => {
         exampleLink.classList.add('hide');
     };
 
+    const noRecordsSummary = () => {
+        const intro = document.querySelector('.js-snapdragon-intro');
+        if(intro) intro.innerHTML = 'Your search returned no species.';
+        const help = document.querySelector('.js-snapdragon-help');
+        if(help) help.innerHTML = 'Please broaden your criteria.';
+    };
+
     const checkState = state => {
 
         switch(state) {
-            case 'MODAL':
+            case 'CREATE-LESSON':
                 actionLink.setAttribute('data-toggle', 'modal');
                 actionLink.innerHTML = 'Create';
                 actionLink.addEventListener('click', modalHandler);
+                if(noRecords) noRecordsSummary();
                 break;
             case 'PREPARE-LESSON':
                 actionLink.removeAttribute('data-toggle');    
@@ -106,7 +116,8 @@ export const renderHome = (counter, loadSpeciesList = true) => {
                 break;
             case 'BEGIN-LESSON':            
                 actionLink.innerHTML = 'Begin';
-                document.querySelector('.js-for-text').classList.add('hide');
+                const forText = document.querySelector('.js-for-text');
+                if(forText) forText.classList.add('hide');
                 actionLink.addEventListener('click', lessonHandler);          
                 break;
             case 'RESUME-LESSON':
@@ -150,7 +161,7 @@ export const renderHome = (counter, loadSpeciesList = true) => {
     const handleDeleteLinkTxt = event => {
         if(deleteEnabled) {
             actionLink.innerHTML = 'Create';
-            state = 'MODAL';
+            state = 'CREATE-LESSON';
             checkState(state);
             persistor.purge();
             window.location.reload(true);
@@ -181,10 +192,12 @@ export const renderHome = (counter, loadSpeciesList = true) => {
     listenToSpeciesCollectionListenReady(handleBeginLessonState);
 
     setTimeout(() => {
-        document.querySelector('.snapdragon-help').classList.add('fade-in'); 
+        const help = document.querySelector('.snapdragon-help');
+        if(help) help.classList.add('fade-in'); 
     }, 2500);
 
     setTimeout(() => {
-        document.querySelector('.snapdragon-intro').classList.add('fade-away');        
+        const intro = document.querySelector('.snapdragon-intro');
+        if(intro) intro.classList.add('fade-away');        
     }, 5000);
 };

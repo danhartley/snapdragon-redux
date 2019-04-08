@@ -49,10 +49,11 @@ export const keepItems = collection => {
     });
 }
 
-export async function itemHandler(collection, config, counter, callback) {
+export async function itemHandler(collection, config, counter, callback, noRecords) {
     
     if(counter.isLessonPaused) {
         collection.items = await keepItems(collection);
+        callback();
     } else {         
         collection.items = utils.shuffleArray(await getItems(collection, config));
 
@@ -92,14 +93,12 @@ export async function itemHandler(collection, config, counter, callback) {
 
             collection.itemIndex = 0;
             collection.currentRound = 1;
+
+            actions.boundChangeCollection({ config, collection });
+            callback(collection, config)();
         } else {
             collection.items = [];
+            noRecords();
         }
-         
-        actions.boundChangeCollection({ config, collection });        
     }
-
-    if(collection.items) {
-        callback();
-    }    
 };
