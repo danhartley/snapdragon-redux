@@ -3,7 +3,6 @@ const STOP_START_LESSON = '[STOP_START_LESSON] Pause or play current lesson';
 const CHANGE_LESSON_PLANS = '[CHANGE_LESSON_PLANS] Edit the set of lesson plans';
 const CHANGE_LESSON_PLAN = '[CHANGE_LESSON_PLAN] Edit the original lesson plan';
 const SELECT_COLLECTION = '[SELECT_COLLECTION] Update the current selected collection';
-// const SELECT_STUDY_METHOD = '[SELECT_STUDY_METHOD] Update the current selected study method';
 const CHANGE_PAGE = '[CHANGE_PAGE] Navigate to new page';
 const NEXT_ROUND = '[NEXT_ROUND] Go to next round';
 const NEXT_LESSON = '[NEXT_LESSON] Get (new) lesson plan';
@@ -18,11 +17,7 @@ const CHANGE_COLLECTION_ITEMS = '[CHANGE_COLLECTION_ITEMS] Change collection ite
 const NEXT_LEVEL = '[NEXT_LEVEL] Go to next level';
 const UPDATE_LANGUAGE = '[UPDATE_LANGUAGE] Update the current language';
 
-// const UPDATE_UI = '[UPDATE_UI] Update UI elements';
-
 const UPDATE_ENUMS = '[UPDATE_ENUMS] Update enums by config language';
-
-// const SKIP_ITEM = '[SKIP_ITEM] Skip failed test, move to next item';
 
 export const types = {
     CHANGE_LESSON_PLANS,
@@ -40,10 +35,7 @@ export const types = {
     UPDATE_CONFIG,
     STOP_START_LESSON,
     SELECT_COLLECTION,
-    // SELECT_STUDY_METHOD,
     UPDATE_LANGUAGE,
     CHANGE_PAGE,
-    // UPDATE_UI,
     UPDATE_ENUMS,
-    // SKIP_ITEM
 };

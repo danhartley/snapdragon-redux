@@ -18,7 +18,6 @@ import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { rebindLayoutState } from 'ui/screens/multichoice/missing-data-helper';
 import { getTraits } from 'api/traits/traits';
-import * as traitTypes from 'api/traits/trait-types';
 import * as SD from 'api/traits/trait-types';
 
 export const renderMultiStrips = (collection) => {
@@ -69,10 +68,14 @@ export const renderMultiStrips = (collection) => {
 
         renderTemplate({ answers }, template.content, parent);
 
-        const strips = document.querySelectorAll('.js-rptr-strips .strip div');
+        const strips = document.querySelectorAll('.js-rptr-strips .strip');
 
         if(screen.name === 'definition') {
             strips.forEach(strip => strip.classList.add('extra-small-text'));
+        }
+        
+        if(R.contains(screen.name, ['epithet', 'trait-property'])) {
+            strips.forEach(strip => strip.classList.add('big-padding'));
         }
 
         const taxon = { name: item.family, binomial: item.name, question: questionValue };
@@ -248,7 +251,7 @@ export const renderMultiStrips = (collection) => {
         
         const speciesTraits = getTraits(enums, item).find(trait => trait.name === item.name);
 
-        const typedSpeciesTraits = traitTypes.typedSpecies(enums, speciesTraits);
+        const typedSpeciesTraits = SD.typedSpecies(enums, speciesTraits);
 
         const trait = R.take(1, utils.shuffleArray(typedSpeciesTraits))[0];
 
@@ -280,8 +283,8 @@ export const renderMultiStrips = (collection) => {
         let traits = [ ];
 
         if(trait.type) {
-            Object.keys(SD[trait.type]).forEach(key => {
-                let value = SD[trait.type][key];
+            Object.keys(SD.enums[trait.type]).forEach(key => {
+                let value = SD.enums[trait.type][key];
                 if(key !== 'type' && key !== 'name') {
                     traits.push(value);
                 }            
@@ -308,38 +311,18 @@ export const renderMultiStrips = (collection) => {
                             : trait;
             
             if(trait.indexOf(',') > -1) {
-                t = null; // The answer may contain mulitple values e.g. 'Woodland, Valley, Meadow' 
+                t = null;
             }
 
             return t;
-        }).filter(item => item); // remove nulls
+        }).filter(item => item);
 
-        let answers;
+        const answers = utils.getSetOfAnswers(variables, pool, trait);
 
-        if(variables === 1) {
-            answers = pool;
-        } else {
-            answers = [];
-            const pools = [];
-            while(pool.length) {
-                pools.push(pool.splice(0,5));
-            }
-            while(pools[0].length) {
-                const answer = pools.map(pool => pool.pop());
-                answers.push(answer.join(', '));
-            }
-            answers.push(trait.value);
-            answers = utils.shuffleArray(answers);
-        }
-          
         render(question, answers, { question: 'Match the trait', help });
     }
 } catch(e) {
    
-    // console.log('Caught exception in render function:');
-    // console.log(e);    
-    // console.log(`SCREEN NAME: ${screen.name}`);
-
     rebindLayoutState(layout, item);
 
     renderMultiStrips(collection);

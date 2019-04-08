@@ -1,4 +1,6 @@
-import * as SD from 'api/traits/trait-types';
+import * as traitEnums from 'api/traits/trait-types';
+
+const SD = traitEnums.enums;
 
 export const taxa = [
     {
@@ -2905,6 +2907,45 @@ export const taxa = [
             { name: SD.name.SENSORY_ACUITY, value: SD.sense.SPATIAL },
             { name: SD.name.SENSORY_ACUITY, value: SD.sense.MEMORY },
             { name: SD.role.HOST, value: 'West Nile virus', type: SD.symbiosis.PARASITISM },
+         ],
+    },
+    {
+        taxon: 'family',
+        name: 'Phocoenidae',
+        genera: '3',
+        species: '7',
+        names: [ { language: "en", names: ['Porpoises']},
+            { language: "fr", names:[ 'Porpoises' ]},
+            { language: "de", names:[ 'Porpoises' ]},
+            { language: "es", names:[ 'Porpoises' ]},
+            { language: "pt", names:[ 'Porpoises' ]},
+            { language: "it", names:[ 'Porpoises' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Porpoise",
+        eol: "https://eol.org/pages/7653",
+        thumb: 'media/00/1a/57/8.6008530675.260x190.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Group of fully aquatic marine mammals (small toothed whales) very closely related to oceanic dolphins',
+                identification: 'Shorter beaks and flattened, spade-shaped teeth distinct from the conical teeth of dolphins.'
+            },
+        ],
+        traits: [ 
+            // { name: SD.name.ORGANISATION, value: SD.organisation.SOCIAL },
+            // { name: SD.name.BEHAVIOUR, value: SD.behaviour.BIPARENTAL },
+            // { name: SD.name.BEHAVIOUR, value: SD.behaviour.PLAYFUL },
+            // { name: SD.name.BEHAVIOUR, value: SD.behaviour.GAME_PLAYING },
+            // { name: SD.name.BEHAVIOUR, value: SD.behaviour.TERRITORIAL },
+            // { name: SD.name.BEHAVIOUR, value: SD.behaviour.COOPERATIVE_BREEDING },
+            // { name: SD.name.BEHAVIOUR, value: SD.behaviour.TOOL_MAKING },
+            // { name: SD.role.OMNIVOROUS, value: 'Invertebrates, nestlings, small mammals' },
+            // { name: SD.role.OMNIVOROUS, value: 'Berries, fruits, seeds, carrion' },
+            // { name: SD.name.SHELTER, value: `${SD.shelter.ROOKERY}` },
+            // { name: SD.name.MATING, value: SD.mating.MONOGAMOUS },
+            // { name: SD.name.SENSORY_ACUITY, value: SD.sense.SPATIAL },
+            // { name: SD.name.SENSORY_ACUITY, value: SD.sense.MEMORY },
+            // { name: SD.role.HOST, value: 'West Nile virus', type: SD.symbiosis.PARASITISM },
          ],
     },
 ];

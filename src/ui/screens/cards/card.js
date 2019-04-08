@@ -127,8 +127,8 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
     const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
 
     const options = [
-        { name: traitTypes.name.RANK, formatter: trait => `UK # ${trait.value}` },
-        { name: traitTypes.name.HOW_EDIBLE, formatter: trait => trait.value }
+        { name: traitTypes.enums.name.RANK, formatter: trait => `UK # ${trait.value}` },
+        { name: traitTypes.enums.name.HOW_EDIBLE, formatter: trait => trait.value }
     ]
 
     let trait = itemProperties.getActiveTrait(traits, item.name, options);

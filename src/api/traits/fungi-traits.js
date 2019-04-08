@@ -1,7 +1,7 @@
 import * as traitEnums from 'api/traits/trait-types';
 
 export const getFungiTraits = (enums) => {
-    const SD = enums || traitEnums;
+    const SD = Object.keys(enums).length ? enums : traitEnums.enums;
     return [
     { name: 'Agaricus bisporus', traits: [
         { name: SD.name.CAP_SHAPE, value: SD.capShape.CONVEX },

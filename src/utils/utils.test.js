@@ -176,3 +176,26 @@ const layouts = [
     expect(months.map(month => month.index)).toEqual([1,2,3]);
     expect(months.map(month => month.name)).toEqual(['February','March','April']);
   });
+
+  test('should create set of questions with equal number of elements', () => {
+
+    const pool = [
+      "Drey",
+      "Burrow",
+      "Den",
+      "Warren",
+      "Sett",
+      "Rookery"
+    ];
+
+    const variables = 2;
+
+    const trait = {
+      "name": "shelter",
+      "value": "Burrow, Sett",
+      "type": "shelter"
+    };
+
+    const answers = utils.getSetOfAnswers(variables, pool, trait);
+
+  });
