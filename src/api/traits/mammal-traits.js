@@ -125,6 +125,8 @@ const getTraits = SD => {
             { name: SD.role.OMNIVORE, value: SD.role.OMNIVORE },
             { name: SD.role.PREDATOR, value: `Erinaceus europaeus`, type: SD.symbiosis.PREDATION },
             { name: SD.role.PREDATOR, value: `Annelida, Insecta`, type: SD.symbiosis.PREDATION },
+            { name: SD.name.MALE, value: SD.male.BOAR },
+            { name: SD.name.FEMALE, value: SD.female.SOW },
         ]    
     },
     { 
@@ -208,7 +210,7 @@ const getTraits = SD => {
         { name: SD.name.WEANING, value: '10-16w' },
         { name: SD.name.MATURITY, value: '1-2y' },
         { name: SD.name.ALTRICIAL, value: SD.boolean.YES },
-        { name: SD.name.MATING, value: SD.mating.POLYGYNOUS },
+        { name: SD.name.MATING_SYSTEM, value: SD.mating.POLYGYNOUS },
         { name: SD.name.COMMUNICATION, value: SD.communication.VOCALISATION },
         { name: SD.name.COMMUNICATION, value: SD.communication.POSTURING },
         { name: SD.role.CARRIER, value: 'Squirrel parapoxvirus', type: SD.symbiosis.PARASITISM },

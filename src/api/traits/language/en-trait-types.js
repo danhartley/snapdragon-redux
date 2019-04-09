@@ -93,7 +93,8 @@ export const english = {
         CATERPILLAR_COLOUR: 'Caterpillar colour',
         HIBERNATING_STAGE: 'Hibernating stage',
         
-        MATING: 'Mating',
+        MATING: 'Mating season',
+        MATING_SYSTEM: 'mating system',
         LITTER_SIZE: 'Litter size',
         YOUNG: 'Young',
         GESTATION: 'Gestation',
@@ -452,13 +453,44 @@ export const english = {
     young: {
         KIT: 'Kit',
         SQUEAKER: 'Squeaker',
-        
+        CUB: 'Cub',
+        KITTEN: 'Kitten',
+        CHICK: 'Chick',
+        PUP: 'Pup',
+        CALF: 'Calf',
+        DUCKLING: 'Duckling',
+        EYAS: "Eyas",
+        MAGGOT: 'Maggot',
+        KID: 'Kid',
+        GOSLING: 'Gosling',
+        LEVERET: 'Leveret',
+        NYMPH: 'Nymph'
     },
     female: {
         VIXEN: 'Vixen',
-        DOE: 'Doe'
+        DOE: 'Doe',
+        JILL: 'Jill',
+        BITCH: 'Bitch',
+        SOW: 'Sow',
+        HEN: 'Hen',
+        DUCK: 'Duck',
+        VIXEN: 'Vixen',
+        GOOSE: 'Goose',
+        PEN: 'Pen'
     }, male: {
-        BUCK: 'Buck'
+        BUCK: 'Buck',
+        DOG: 'Dog',
+        BOAR: 'Boar',
+        TOM: 'Tom',
+        JACK: 'Jack',
+        COCK: 'Cock',
+        DRAKE: 'Drake',
+        REYNARD: 'Reynard',
+        DOG: 'Dog',
+        TOD: 'Tod',
+        TERCEL: 'Tercel',
+        GANDER: 'Gander',
+        COB: 'Cob'
     },
     marginType: {
         LOBED: "Lobed"
@@ -540,7 +572,8 @@ export const english = {
         MOVEMENT: 'Movement',
         SMELL: 'Smell',
         SPATIAL: 'Spatial',
-        MEMORY: 'Memory'
+        MEMORY: 'Memory',
+        ECHOLOCATION: 'Echolocation'
     },
     crypsis: {
         CAMOUFLAGE: 'Camouflage',

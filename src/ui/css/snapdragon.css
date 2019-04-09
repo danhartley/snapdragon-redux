@@ -1267,7 +1267,7 @@ span.correct {
 .bird-song {
   margin: 1rem .5rem 0 .5rem;
   font-size: .9rem;
-  margin-top: 130px;
+  /* margin-top: 130px; */
   display: flex;
   justify-content: center;
 }
