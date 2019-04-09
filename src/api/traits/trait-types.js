@@ -43,7 +43,7 @@ export const enums = {
     month: english.month,
     female: english.female,
     male: english.male,
-    // diet: english.diet,
+    diet: english.diet,
     marginType: english.marginType,
     soilType: english.soilType,
     organisation: english.organisation,
@@ -89,7 +89,8 @@ export const typedEnums = enums => {
     }
     return typedEnums.map(typedEnum => {
         for (var key in typedEnum) {
-            const obj = { name: typedEnum[key].name, type: typedEnum[key].type };
+            const help = typedEnum[key].help || '';
+            const obj = { name: typedEnum[key].name, type: typedEnum[key].type, help };
             return obj;
         }
     });

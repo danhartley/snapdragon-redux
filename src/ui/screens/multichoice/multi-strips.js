@@ -46,6 +46,7 @@ export const renderMultiStrips = (collection) => {
         layout.screens.find(screen => screen.name === 'definition') || 
         layout.screens.find(screen => screen.name === 'family') || 
         layout.screens.find(screen => screen.name === 'trait-property') || 
+        layout.screens.find(screen => screen.name === 'symbiotic-property') || 
         layout.screens.find(screen => screen.name === 'wildcard-match')
     }
 
@@ -243,49 +244,54 @@ export const renderMultiStrips = (collection) => {
         } 
     }
 
+    if(screen.name === 'symbiotic-property') {
+
+        const { enums } = store.getState();
+
+        const speciesTraits = getTraits(enums, item).find(trait => trait.name === item.name).traits;
+
+        const enumeratedRoles = SD.enums.role;
+
+        const roles = [];
+
+        for (var key in enumeratedRoles) {
+            roles.push(enumeratedRoles[key]);
+        }
+
+        const symbioticTraits = speciesTraits.filter(st => R.contains(st.name, roles));
+        const symbioticSpecies = symbioticTraits.map(st => st.value.split(',').map(value => {
+            if(value.indexOf(' ') > 0) {
+                return {
+                    name: st.name,
+                    value: value
+                }
+            } else { return null; }
+        })[0]).filter(ss => ss);
+
+        console.log(symbioticTraits);
+
+        // Not sure where to go with this yet!
+    }
+
     if(screen.name === 'trait-property') {
 
         const { enums } = store.getState();
 
-        let help;
-        
         const speciesTraits = getTraits(enums, item).find(trait => trait.name === item.name);
 
         const typedSpeciesTraits = SD.typedSpecies(enums, speciesTraits);
 
         const trait = R.take(1, utils.shuffleArray(typedSpeciesTraits))[0];
 
-        switch(trait.type) {
-            case 'howEdible':                
-                help = 'How edible is this species?';
-                break;
-            case 'capShape':
-                help = config.isLandscapeMode ? 'How would you describe the pileus (cap) of this mushroom?' : 'How would you describe this pileus (cap)?';
-                break;
-            case 'hymeniumType':
-                help = 'What is the hymenium type of this mushroom?';
-                break;
-            case 'ecoType':
-                help = 'What is the ecological type of this mushroom?';
-                break;
-            case 'habitat':
-                help = 'Where would you most likely find this species?';
-                break;
-            case 'thallusType':
-                help = 'What is this lichen\'s thallus type?';
-                break;
-            default:
-                help = config.isLandscapeMode ? `${trait.name}` : `${trait.name}`;
-        }
+        const help =  trait.help ? `(${trait.help})` : `(${trait.name})`;
 
-        help = `(${help})`;
-        
         let traits = [ ];
+        let propsToIgnore = [ 'type', 'name', 'help'];
 
         if(trait.type) {
             Object.keys(SD.enums[trait.type]).forEach(key => {
                 let value = SD.enums[trait.type][key];
-                if(key !== 'type' && key !== 'name') {
+                if(!R.contains(key, propsToIgnore)) {
                     traits.push(value);
                 }            
             });

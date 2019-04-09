@@ -85,8 +85,10 @@ export const listenToPlaceChange = listener => {
   listeners.push(listener);
 };
 
+// Use https://collectionCors-anywhere.herokuapp.com/
+
 async function IPLookup() {
-  const ACCESS_KEY = '69402a39530c7ae8218dfaf69ef78337';
+  const ACCESS_KEY = '69402a39530c7ae8218dfaf69ef78337';  
   const url = `http://api.ipstack.com/check?access_key=${ACCESS_KEY}`;
   try {
     const response = await fetch(url);

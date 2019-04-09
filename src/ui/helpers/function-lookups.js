@@ -46,6 +46,7 @@ const functions = [
     { name: 'wildcard-match', func: renderMultiStrips },
     { name: 'visual-match', func: renderMultiStrips },
     { name: 'trait-property', func: renderMultiStrips },
+    { name: 'symbiotic-property', func: renderMultiStrips },
     { name: 'definition-card', func: renderDefinitionCard },
     
     

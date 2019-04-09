@@ -6,7 +6,8 @@ const {
     family, familyStrips, taxon, nonTaxon, textComplete, cultivar, cultivarCard, 
     epithets, wildcardCard, wildcard, definitions, 
     specimenCommonMatch, specimenLatinMatch,
-    definitionCard, traitProperty,
+    definitionCard, 
+    traitProperty, symbioticProperty,
     nonTaxonSpecimenTiles,
     mixedSpecimenQuestions,
     mixedSpecimensLeft,
@@ -164,6 +165,20 @@ const traitPropertyMatch = {
     screens: [
         { ...specimenImages },
         { ...traitProperty }
+    ]
+};
+
+const symbioticPropertyMatch = {
+    name: 'symbiotic-property-match',
+    type:'test',
+    score: 1,
+    points: 1,
+    kind: 'MC',
+    given: 'Given specimenImages images',
+    requirement: 'Select symbiotic match',
+    screens: [
+        { ...specimenImages },
+        { ...symbioticProperty }
     ]
 };
 
@@ -389,6 +404,7 @@ export const layouts = {
   multiSpecimenCommonMatch,
   multiSpecimenLatinMatch,
   traitPropertyMatch,
+  symbioticPropertyMatch,
   familyMatch,
   cultivarMatch,
   familyStripsMatch,

@@ -94,7 +94,7 @@ export const getInatSpecies = (inatConfig, config) => {
         inatListeners.forEach(listener => listener(
             { page: json.page, numberOfRequests: Math.ceil(json.total_results/json.per_page) }
         ));
-        console.log({ page: json.page, numberOfRequests: Math.ceil(json.total_results/json.per_page) });
+        // console.log({ page: json.page, numberOfRequests: Math.ceil(json.total_results/json.per_page) });
         return await json.results;
     }
 
@@ -102,7 +102,7 @@ export const getInatSpecies = (inatConfig, config) => {
 
     const observations = getAllInatObservations(config, inatConfig).then(observations => {
         return observations.map(observation => {
-            // console.log(observation.taxon.name);
+            console.log(observation.taxon.name);
             if(R.contains(observation.taxon.name, names)) {
                 const item = { ...species.find(item => item.name === observation.taxon.name) };
                 return { 

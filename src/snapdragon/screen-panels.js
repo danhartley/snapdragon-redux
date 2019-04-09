@@ -145,6 +145,11 @@ const specimenImages = {
     name: 'trait-property',
     domain: 'collection'
   };
+  
+  const symbioticProperty = {
+    name: 'symbiotic-property',
+    domain: 'collection'
+  };
 
   const mixedSpecimensLeft = {
     name: 'mixed-specimen-question',
@@ -189,7 +194,8 @@ const specimenImages = {
     specimenCommonMatch,
     specimenLatinMatch,
     traitProperty,
-  
+    symbioticProperty,
+    
     mixedSpecimenQuestions,
 
     mixedSpecimensLeft,

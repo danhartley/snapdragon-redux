@@ -14,6 +14,7 @@ const {
     multiSpecimenCommonMatch,
     multiSpecimenLatinMatch,
     traitPropertyMatch,
+    symbioticPropertyMatch,
     familyMatch,
     cultivarMatch,
     familyStripsMatch,
@@ -52,7 +53,8 @@ let landscapeLayouts = [
     // taxonRevision, // excluded in lesson-builder ??             
     familyMatch,
     familyStripsMatch,
-    traitPropertyMatch,
+    
+    //symbioticPropertyMatch
 ];
 
 landscapeLayouts = [ traitPropertyMatch ];

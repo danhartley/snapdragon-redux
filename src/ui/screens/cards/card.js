@@ -110,7 +110,7 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
 
     const name = item.name;
     const rank = "species";
-    item.vernacularName = item.vernacularName || itemProperties.getVernacularName(item, config);
+          item.vernacularName = item.vernacularName || itemProperties.getVernacularName(item, config);
     const family = taxa.find(f => f.name === item.family);
     const familyName = family ? family.name : item.taxonomy.family;
     const familyVernacularNames = itemProperties.familyVernacularNames(item.family, config.language, taxa);
