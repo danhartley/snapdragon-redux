@@ -14,6 +14,7 @@ const {
     multiSpecimenCommonMatch,
     multiSpecimenLatinMatch,
     traitPropertyMatch,
+    symbioticPropertyMatch,
     familyMatch,
     cultivarMatch,
     familyStripsMatch,
@@ -37,25 +38,26 @@ const propertyTrait = (traitPropertyMatch, trait) => {
 };
 
 let landscapeLayouts = [
-    mixedSpecimenImages, // UPDATED (ICON CHANGE COLOUR IN LIST?)
     traitPropertyMatch,
-    // multiSpecimenCommonMatch, ?????
-    textCompleteGenus, // GOOD
-    textCompleteSpecies, // GOOD
-    genusEntry, // GOOD
-    speciesEntry, // GOOD
-    speciesGenusEntry, // GOOD
-    commonEntry, // GOOD
+    mixedSpecimenImages,    
+    textCompleteGenus,
+    textCompleteSpecies,
+    genusEntry,
+    speciesEntry,
+    speciesGenusEntry,
+    commonEntry,
     // speciesRevision, // excluded in lesson-builder                  
     // multiSpecimenCommonMatch, // only works portrait as in landscape the photo is the same
     // mixedSpeciesMatch, // replace with clickable rhs images REMOVE
-    latinToCommonMatch,  // works fine
+    latinToCommonMatch,
     // taxonRevision, // excluded in lesson-builder ??             
-    familyMatch, // still working... missing family data an issue
-    familyStripsMatch,// still working... missing family data an issue 
+    familyMatch,
+    familyStripsMatch,
+    
+    //symbioticPropertyMatch
 ];
 
-// landscapeLayouts = [ familyStripsMatch ];
+landscapeLayouts = [ traitPropertyMatch ];
 
 const landscapeLesson1 = {
     id: 1,

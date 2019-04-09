@@ -15,6 +15,7 @@ import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-table-no-scores';
 import { itemHandler } from 'ui/helpers/item-handler';
 import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
+import { renderHome } from 'ui/screens/home/home';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
@@ -173,23 +174,27 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
         }
     };    
 
-    const traits = getTraits(enums);
-
     if(readOnlyMode) {
-        buildTable(collection, config, traits, enums);
+        buildTable(collection, config, getTraits(enums), enums);
         handleUserEvents();
     }
-    else {      
-        function callback(collection, config, traits, enums) {
-            return function () {
-                collection.items = utils.sortBy(collection.items, 'observationCount', 'desc');
-                buildTable(collection, config, traits, enums);
-                handleUserEvents();
-                const { counter } = store.getState();
-                listeners.forEach(listener => listener(counter, collection.items.length));
+    else {
+        function callback(collection, config) {
+
+            if(collection.items && collection.items.length) {
+                return function () {
+                    collection.items = utils.sortBy(collection.items, 'observationCount', 'desc');
+                    buildTable(collection, config, getTraits(enums), enums);
+                    handleUserEvents();
+                    const { counter } = store.getState();
+                    listeners.forEach(listener => listener(counter, collection.items.length));
+                }
             }
         }
-        itemHandler(collection, config, counter, callback(collection, config, traits, enums));
+        function noRecords() {
+            renderHome(counter, false, true);
+        }
+        itemHandler(collection, config, counter, callback, noRecords);
     }
 };
 

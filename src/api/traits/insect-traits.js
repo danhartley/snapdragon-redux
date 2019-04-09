@@ -135,7 +135,7 @@ const getTraits = SD => {
 };
 
 export const getInsectTraits = (enums) => {
-    const SD = enums || traitEnums;
+    const SD = Object.keys(enums).length ? enums : traitEnums.enums;
     const traits = getTraits(SD);
     traits.forEach(species => {
         if(!species.traits.find(trait => trait.name === 'TROPHIC_LEVEL')) {

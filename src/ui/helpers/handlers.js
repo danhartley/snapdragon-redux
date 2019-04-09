@@ -157,7 +157,7 @@ const stripScoreHandler = (test, callback, config) => {
                                                 : false;
                 const matchesQuestion = strip.innerText === taxon.question;
                 if(matchesScientificName || matchesVernacularName || matchesQuestion) {
-                    strip.parentElement.classList.add('snap-success');
+                    strip.classList.add('snap-success');
                 }
             });     
             

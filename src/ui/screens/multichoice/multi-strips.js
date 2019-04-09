@@ -18,7 +18,6 @@ import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { rebindLayoutState } from 'ui/screens/multichoice/missing-data-helper';
 import { getTraits } from 'api/traits/traits';
-import * as traitTypes from 'api/traits/trait-types';
 import * as SD from 'api/traits/trait-types';
 
 export const renderMultiStrips = (collection) => {
@@ -47,6 +46,7 @@ export const renderMultiStrips = (collection) => {
         layout.screens.find(screen => screen.name === 'definition') || 
         layout.screens.find(screen => screen.name === 'family') || 
         layout.screens.find(screen => screen.name === 'trait-property') || 
+        layout.screens.find(screen => screen.name === 'symbiotic-property') || 
         layout.screens.find(screen => screen.name === 'wildcard-match')
     }
 
@@ -69,10 +69,14 @@ export const renderMultiStrips = (collection) => {
 
         renderTemplate({ answers }, template.content, parent);
 
-        const strips = document.querySelectorAll('.js-rptr-strips .strip div');
+        const strips = document.querySelectorAll('.js-rptr-strips .strip');
 
         if(screen.name === 'definition') {
             strips.forEach(strip => strip.classList.add('extra-small-text'));
+        }
+        
+        if(R.contains(screen.name, ['epithet', 'trait-property'])) {
+            strips.forEach(strip => strip.classList.add('big-padding'));
         }
 
         const taxon = { name: item.family, binomial: item.name, question: questionValue };
@@ -240,49 +244,54 @@ export const renderMultiStrips = (collection) => {
         } 
     }
 
+    if(screen.name === 'symbiotic-property') {
+
+        const { enums } = store.getState();
+
+        const speciesTraits = getTraits(enums, item).find(trait => trait.name === item.name).traits;
+
+        const enumeratedRoles = SD.enums.role;
+
+        const roles = [];
+
+        for (var key in enumeratedRoles) {
+            roles.push(enumeratedRoles[key]);
+        }
+
+        const symbioticTraits = speciesTraits.filter(st => R.contains(st.name, roles));
+        const symbioticSpecies = symbioticTraits.map(st => st.value.split(',').map(value => {
+            if(value.indexOf(' ') > 0) {
+                return {
+                    name: st.name,
+                    value: value
+                }
+            } else { return null; }
+        })[0]).filter(ss => ss);
+
+        console.log(symbioticTraits);
+
+        // Not sure where to go with this yet!
+    }
+
     if(screen.name === 'trait-property') {
 
         const { enums } = store.getState();
 
-        let help;
-        
         const speciesTraits = getTraits(enums, item).find(trait => trait.name === item.name);
 
-        const typedSpeciesTraits = traitTypes.typedSpecies(enums, speciesTraits);
+        const typedSpeciesTraits = SD.typedSpecies(enums, speciesTraits);
 
         const trait = R.take(1, utils.shuffleArray(typedSpeciesTraits))[0];
 
-        switch(trait.type) {
-            case 'howEdible':                
-                help = 'How edible is this species?';
-                break;
-            case 'capShape':
-                help = config.isLandscapeMode ? 'How would you describe the pileus (cap) of this mushroom?' : 'How would you describe this pileus (cap)?';
-                break;
-            case 'hymeniumType':
-                help = 'What is the hymenium type of this mushroom?';
-                break;
-            case 'ecoType':
-                help = 'What is the ecological type of this mushroom?';
-                break;
-            case 'habitat':
-                help = 'Where would you most likely find this species?';
-                break;
-            case 'thallusType':
-                help = 'What is this lichen\'s thallus type?';
-                break;
-            default:
-                help = config.isLandscapeMode ? `${trait.name}` : `${trait.name}`;
-        }
+        const help =  trait.help ? `(${trait.help})` : `(${trait.name})`;
 
-        help = `(${help})`;
-        
         let traits = [ ];
+        let propsToIgnore = [ 'type', 'name', 'help'];
 
         if(trait.type) {
-            Object.keys(SD[trait.type]).forEach(key => {
-                let value = SD[trait.type][key];
-                if(key !== 'type' && key !== 'name') {
+            Object.keys(SD.enums[trait.type]).forEach(key => {
+                let value = SD.enums[trait.type][key];
+                if(!R.contains(key, propsToIgnore)) {
                     traits.push(value);
                 }            
             });
@@ -308,38 +317,18 @@ export const renderMultiStrips = (collection) => {
                             : trait;
             
             if(trait.indexOf(',') > -1) {
-                t = null; // The answer may contain mulitple values e.g. 'Woodland, Valley, Meadow' 
+                t = null;
             }
 
             return t;
-        }).filter(item => item); // remove nulls
+        }).filter(item => item);
 
-        let answers;
+        const answers = utils.getSetOfAnswers(variables, pool, trait);
 
-        if(variables === 1) {
-            answers = pool;
-        } else {
-            answers = [];
-            const pools = [];
-            while(pool.length) {
-                pools.push(pool.splice(0,5));
-            }
-            while(pools[0].length) {
-                const answer = pools.map(pool => pool.pop());
-                answers.push(answer.join(', '));
-            }
-            answers.push(trait.value);
-            answers = utils.shuffleArray(answers);
-        }
-          
         render(question, answers, { question: 'Match the trait', help });
     }
 } catch(e) {
    
-    // console.log('Caught exception in render function:');
-    // console.log(e);    
-    // console.log(`SCREEN NAME: ${screen.name}`);
-
     rebindLayoutState(layout, item);
 
     renderMultiStrips(collection);

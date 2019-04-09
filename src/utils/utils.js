@@ -238,6 +238,37 @@ const getRandomInt = max => {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
+const getSetOfAnswers = (variables, pool, trait) => {
+  
+  let answers;
+
+  if(variables === 1) {
+      answers = pool;
+  } else {
+      answers = [];
+      const sets = [];
+      const combinations = pool.length/variables;
+      while(pool.length) {
+          const set = pool.splice(0,combinations);
+          sets.push(set);
+      }
+      while(sets[0].length) {
+          const answer = sets.map(item => {
+            const lastItem = item.pop();
+            return lastItem;
+          }).join(', ');
+          if(answer !== trait.value) {
+            answers.push(answer);
+          }
+      }
+      answers.push(trait.value);
+  }
+  
+  answers = utils.shuffleArray(answers);
+
+  return answers;
+};
+
 export const utils = {
   log,
   encodeQuery,
@@ -259,5 +290,6 @@ export const utils = {
   itemCountReducer,
   flatten,
   getObservableMonths,
-  getRandomInt
+  getRandomInt,
+  getSetOfAnswers
 };

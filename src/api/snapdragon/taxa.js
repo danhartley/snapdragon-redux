@@ -1,4 +1,6 @@
-import * as SD from 'api/traits/trait-types';
+import * as traitEnums from 'api/traits/trait-types';
+
+const SD = traitEnums.enums;
 
 export const taxa = [
     {
@@ -1756,7 +1758,7 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Most species are parasitic on woody plants, and cause brown rots (wood-dcay fungus).',
+                summary: 'Most species are parasitic on woody plants, and cause brown rots (wood-decay fungus).',
                 identification: ''
             }
         ],
@@ -2901,10 +2903,140 @@ export const taxa = [
             { name: SD.role.OMNIVOROUS, value: 'Invertebrates, nestlings, small mammals' },
             { name: SD.role.OMNIVOROUS, value: 'Berries, fruits, seeds, carrion' },
             { name: SD.name.SHELTER, value: `${SD.shelter.ROOKERY}` },
-            { name: SD.name.MATING, value: SD.mating.MONOGAMOUS },
+            { name: SD.name.MATING_SYSTEM, value: SD.mating.MONOGAMOUS },
             { name: SD.name.SENSORY_ACUITY, value: SD.sense.SPATIAL },
             { name: SD.name.SENSORY_ACUITY, value: SD.sense.MEMORY },
             { name: SD.role.HOST, value: 'West Nile virus', type: SD.symbiosis.PARASITISM },
          ],
+    },
+    {
+        taxon: 'family',
+        name: 'Phocoenidae',
+        genera: '3',
+        species: '7',
+        names: [ { language: "en", names: ['Porpoises']},
+            { language: "fr", names:[ 'Porpoises' ]},
+            { language: "de", names:[ 'Porpoises' ]},
+            { language: "es", names:[ 'Porpoises' ]},
+            { language: "pt", names:[ 'Porpoises' ]},
+            { language: "it", names:[ 'Porpoises' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Porpoise",
+        eol: "https://eol.org/pages/7653",
+        thumb: '00/1a/57/8.6008530675.260x190.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Group of fully aquatic marine mammals (small toothed whales) very closely related to oceanic dolphins.',
+                identification: 'Shorter beaks and flattened, spade-shaped teeth distinct from the conical teeth of dolphins.'
+            },
+        ],
+        traits: [
+            { name: SD.name.DISPLAY, value: SD.display.SEXUAL_DIMORPHISM },
+            { name: SD.name.SENSORY_ACUITY, value: SD.sense.ECHOLOCATION },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Erinaceidae',
+        genera: '12',
+        species: '43',
+        names: [ { language: "en", names: ['Hedgehogs and moonrats']},
+            { language: "fr", names:[ 'Érinacéidés' ]},
+            { language: "de", names:[ 'Erinaceidae' ]},
+            { language: "es", names:[ 'Erinaceidae' ]},
+            { language: "pt", names:[ 'Erinaceidae' ]},
+            { language: "it", names:[ 'Erinaceidae' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Erinaceidae",
+        eol: "https://eol.org/pages/1693",
+        thumb: '55/7b/c9/509.112571.260x190.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Contains the hedgehogs (Erinaceinae) and moonrats (Galericinae).',
+                identification: 'Shrew-like in form, with long snouts and short tails, 10-15cm in length.'
+            },
+        ],
+        traits: [
+            { name: SD.role.OMNIVOROUS, value: 'Insects, earthworms, small invertebrates' },
+            { name: SD.role.OMNIVOROUS, value: 'Seeds, fruit, bird\'s eggs' },
+            { name: SD.name.ACTIVE, value: SD.active.NOCTURNAL },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Paxillaceae',
+        genera: '9',
+        species: '78',
+        names: [ { language: "en", names: ['Paxillaceae']},
+            { language: "fr", names:[ 'Paxillaceae' ]},
+            { language: "de", names:[ 'Paxillaceae' ]},
+            { language: "es", names:[ 'Paxillaceae' ]},
+            { language: "pt", names:[ 'Paxillaceae' ]},
+            { language: "it", names:[ 'Paxillaceae' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Paxillaceae",
+        eol: "https://eol.org/pages/5948",
+        thumb: '56/5a/05/509.15670140.260x190.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of mushroom-forming fungi bearing close affinity to the boletes.',
+                identification: 'May hve decurrent gills (Paxillus), or decurrent pores (Gyrodon).'
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Suillaceae',
+        genera: '3',
+        species: '54',
+        names: [ { language: "en", names: ['Suillaceae']},
+            { language: "fr", names:[ 'Suillaceae' ]},
+            { language: "de", names:[ 'Suillaceae' ]},
+            { language: "es", names:[ 'Suillaceae' ]},
+            { language: "pt", names:[ 'Suillaceae' ]},
+            { language: "it", names:[ 'Suillaceae' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Suillaceae",
+        eol: "https://eol.org/pages/7653",
+        thumb: '55/c7/0a/509.1254327.260x190.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Contains the boletus-like Suillus, and the small truffle-like Truncocolumella.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Strophariaceae',
+        genera: '18',
+        species: '1316',
+        names: [ { language: "en", names: ['Strophariaceae']},
+            { language: "fr", names:[ 'Strophariaceae' ]},
+            { language: "de", names:[ 'Strophariaceae' ]},
+            { language: "es", names:[ 'Strophariaceae' ]},
+            { language: "pt", names:[ 'Strophariaceae' ]},
+            { language: "it", names:[ 'Strophariaceae' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Suillaceae",
+        eol: "https://eol.org/pages/7653",
+        thumb: 'media/00/1a/57/8.6008530675.260x190.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'All species in this group are saprotrophs, growing on various kinds of decaying organic matter.',
+                identification: 'Red-brown to dark brown spore prints.'
+            },
+        ],
+        traits: [
+        ],
     },
 ];

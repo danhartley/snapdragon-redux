@@ -23,6 +23,7 @@ export const english = {
         LOBE_DIAMETER: "Lobe diameter",
 
         ROLE: 'Role',
+        NATIVE: 'Native',
         SYMBIOSIS: 'Symbiosis',
         ASSOCIATE: 'associate',
         SYMBIONTS : 'symbionts',
@@ -93,7 +94,8 @@ export const english = {
         CATERPILLAR_COLOUR: 'Caterpillar colour',
         HIBERNATING_STAGE: 'Hibernating stage',
         
-        MATING: 'Mating',
+        MATING: 'Mating season',
+        MATING_SYSTEM: 'mating system',
         LITTER_SIZE: 'Litter size',
         YOUNG: 'Young',
         GESTATION: 'Gestation',
@@ -121,6 +123,7 @@ export const english = {
         POLLINATION: 'Pollination'
     },
     howEdible : {
+        help: 'How edible is this species?',
         CHOICE : 'Choice',
         EDIBLE : 'Edible',
         INEDIBLE : 'Inedible',
@@ -128,6 +131,7 @@ export const english = {
         DEADLY : 'Deadly'
     },
     habitat : {
+        help: 'Where would you most likely find this species?',
         WOOD : 'Wood',
         WOODLAND : 'Woodland',
         WOODLAND_LITTER : 'Woodland litter',
@@ -173,14 +177,16 @@ export const english = {
         BOREAL: 'Boreal',
         SCRUB: 'Scrub',
         WALLS: 'Walls',
-        MOORLAND: 'Moorland'
+        MOORLAND: 'Moorland',        
     },
     ecoType : {
+        help: 'What is the ecological type of this mushroom?',
         SAPROTROPHIC : 'Saprotrophic',
         PARASITIC : 'Parasitic',
         MYCORRHIZAL : 'Mycorrhizal'
     },
     capShape : {
+        help: 'How would you describe this pileus (cap)?',
         CONVEX : 'Convex',
         CONICAL : 'Conical',
         FLAT : 'Flat',
@@ -234,6 +240,7 @@ export const english = {
         HAWTHORN: 'Hawthorn'
     },
     hymeniumType : {
+        help: 'What is the hymenium type of this mushroom?',
         GILLS: 'Gills',
         PORES: 'Pores',
         GLEBA: 'Gleba',
@@ -247,6 +254,7 @@ export const english = {
         FUNGUS: 'Fungus'
     },
     thallusType : {
+        help: 'What is this lichen\'s thallus type?',
         FOLIOSE: 'Foliose',
         FRUTICOSE: 'Fruticose',
         CRUSTOSE: 'Crustose',
@@ -287,6 +295,7 @@ export const english = {
     },
     rank: {},
     colour: {
+        help: 'Which colour most closely describes this species?',
         WHITE: "White",
         YELLOW: "Yellow",
         GREEN: "Green",
@@ -312,6 +321,7 @@ export const english = {
         CHALKY: 'Chalky'
     },
     usage: {
+        help: 'To what use do humans put this species?',
         PERFUMERY: 'Perfumery',
         TANNING: 'Tanning',
         DYING: 'Dying',
@@ -323,7 +333,7 @@ export const english = {
         GREEN_MANURE: 'Green manure',
         MEDICINE: 'Medicine',
         FUR: 'Fur',
-        NITROGEN_FIXING: 'Nitrogen fixing',
+        NITROGEN_FIXING: 'Nitrogen fixing', // non0human use - place elsewhere
         TIMBER: 'Timber'
     },
     nonTaxaType: {
@@ -413,6 +423,7 @@ export const english = {
         COMPETITION: 'Competition',
     },
     trophicLevel: {
+        help: 'What is the trophic level or this species?',
         PRIMARY_PRODUCER: 'Primary producer',
         PRIMARY_CONSUMER: 'Primary consumer',
         SECONDARY_CONSUMER: 'Secondary consumer',
@@ -421,6 +432,7 @@ export const english = {
         APEX_PREDATOR: 'Apex predator'
     },
     shelter: {
+        help: 'What is the name of this species\`s shelter?',
         DREY: 'Drey',
         BURROW: 'Burrow',
         DEN: 'Den',
@@ -429,6 +441,7 @@ export const english = {
         ROOKERY: 'Rookery'
     },
     active: {
+        help: 'When is this species most active?',
         CREPUSCULAR: 'Crepuscular',
         DIURNAL: 'Diurnal',
         NOCTURNAL: 'Nocturnal',
@@ -450,15 +463,49 @@ export const english = {
         DECEMBER: 'December',
     },
     young: {
+        help: 'What is the name for the young of this species?',
         KIT: 'Kit',
         SQUEAKER: 'Squeaker',
-        
+        CUB: 'Cub',
+        KITTEN: 'Kitten',
+        CHICK: 'Chick',
+        PUP: 'Pup',
+        CALF: 'Calf',
+        DUCKLING: 'Duckling',
+        EYAS: "Eyas",
+        MAGGOT: 'Maggot',
+        KID: 'Kid',
+        GOSLING: 'Gosling',
+        LEVERET: 'Leveret',
+        NYMPH: 'Nymph'
     },
     female: {
+        help: 'What is the name for a female of this species?',
         VIXEN: 'Vixen',
-        DOE: 'Doe'
+        DOE: 'Doe',
+        JILL: 'Jill',
+        BITCH: 'Bitch',
+        SOW: 'Sow',
+        HEN: 'Hen',
+        DUCK: 'Duck',
+        VIXEN: 'Vixen',
+        GOOSE: 'Goose',
+        PEN: 'Pen'
     }, male: {
-        BUCK: 'Buck'
+        help: 'What is the name for a male of this species?',
+        BUCK: 'Buck',
+        DOG: 'Dog',
+        BOAR: 'Boar',
+        TOM: 'Tom',
+        JACK: 'Jack',
+        COCK: 'Cock',
+        DRAKE: 'Drake',
+        REYNARD: 'Reynard',
+        DOG: 'Dog',
+        TOD: 'Tod',
+        TERCEL: 'Tercel',
+        GANDER: 'Gander',
+        COB: 'Cob'
     },
     marginType: {
         LOBED: "Lobed"
@@ -468,8 +515,22 @@ export const english = {
         CALCAREOUS: 'Calcareous',
     },
     organisation: {
+        help: 'How is this species organised?',
         EUSOCIAL: 'Eusocial',
         SOCIAL: 'Social',        
+    },
+    diet: {
+        help: 'What is the feeding behaviour of this species?',
+        HERBIVORE: 'Herbivore',
+        OMNIVORE: 'Omnivore',
+        CARNIVORE: 'Carnivore',
+    },
+    native: {
+        NATIVE: 'Native',
+        NONNATIVE: 'Nonnative', 
+        ENDEMIC: 'Endemic',
+        INTRODUCED: 'Introduced',
+        INDIGENOUS: 'Indigenous'
     },
     role: {
         NATIVE: 'Native',
@@ -492,6 +553,7 @@ export const english = {
         CARRIER: 'Carrier',
     },
     fruitType: {
+        help: 'What fruit type does this plant have?',
         DRUPE: 'Drupe',
         POME: 'Pome',
         BERRY: 'Berry',
@@ -503,6 +565,7 @@ export const english = {
         MULTIPLE_FRUIT: 'Multiple fruit'
     },
     inflorescence: {
+        help: 'What type of inflorescence does this plant have?',
         CATKIN: 'catkin',
         UMBEL: 'umbel',
         SPIKE: 'spike',
@@ -510,17 +573,20 @@ export const english = {
         CORYMB: 'corymb'
     },
     seasonal: {
-        ANNUAL: 'annual',
+        help: 'What is the life cycle of this plant?',
+        ANNUAL: 'Annual',
         BIENNIAL: 'Biennial',
         PERENNIAL: 'Perennial'
     },
     display: {
+        help: 'Which form of display does this species exhibit?',
         DIEMATIC: 'diematic',
         SEXUAL_DIMORPHISM: 'Sexual dimorphism',      
         NO_SEXUAL_DIMORPHISM: 'No sexual dimorphism',
         MELANISTIC: 'Melanistic'
     },
     behaviour: {
+        help: 'This species exhibits which form of behaviour?',
         SEXUAL_CANNIBALISM: 'Sexual cannibalism',
         MONANDROUS: 'Monandrous',
         VOCALISATION: 'Vocalisation',
@@ -536,11 +602,13 @@ export const english = {
 
     },
     sense: {
+        help: 'Which sense does this species favour?',
         SIGHT: 'Sight',
         MOVEMENT: 'Movement',
         SMELL: 'Smell',
         SPATIAL: 'Spatial',
-        MEMORY: 'Memory'
+        MEMORY: 'Memory',
+        ECHOLOCATION: 'Echolocation'
     },
     crypsis: {
         CAMOUFLAGE: 'Camouflage',

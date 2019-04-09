@@ -20,7 +20,7 @@ const getTraits = SD => {
         { name: SD.name.LITTER_SIZE, value: `4-6` },
         { name: SD.name.LIFE_SPAN, value: '5a' },
         { name: SD.name.WEANING, value: '6-7m' },
-        { name: SD.role.OMNIVORE, value: SD.role.OMNIVORE },
+        { name: SD.name.DIET, value: SD.diet.OMNIVORE },
         { name: SD.name.ACTIVE, value: SD.active.CREPUSCULAR },
         { name: SD.name.ACTIVE, value: SD.active.NOCTURNAL },
         { name: SD.name.ALTRICIAL, value: SD.boolean.YES },
@@ -62,7 +62,7 @@ const getTraits = SD => {
         { name: SD.name.WEANING, value: '5-7w' },
         { name: SD.name.MATURITY, value: '6-7m' },
         { name: SD.name.ALTRICIAL, value: SD.boolean.YES },
-        { name: SD.role.OMNIVORE, value: SD.role.OMNIVORE },
+        { name: SD.name.DIET, value: SD.diet.OMNIVORE },
         { name: SD.role.PREY, value: `Martes martes, Felis silvestris`, type: SD.symbiosis.PREDATION },
         { name: SD.role.PREY, value: `Mustela erminea`, type: SD.symbiosis.PREDATION },
         { name: SD.role.PREY, value: `Strigiformes, Accipiter gentilis`, type: SD.symbiosis.PREDATION },
@@ -122,9 +122,11 @@ const getTraits = SD => {
         ],            
         traits: [
             { name: SD.name.SHELTER, value: `${SD.shelter.BURROW}, ${SD.shelter.SETT}` },
-            { name: SD.role.OMNIVORE, value: SD.role.OMNIVORE },
+            { name: SD.name.DIET, value: SD.diet.OMNIVORE },
             { name: SD.role.PREDATOR, value: `Erinaceus europaeus`, type: SD.symbiosis.PREDATION },
             { name: SD.role.PREDATOR, value: `Annelida, Insecta`, type: SD.symbiosis.PREDATION },
+            { name: SD.name.MALE, value: SD.male.BOAR },
+            { name: SD.name.FEMALE, value: SD.female.SOW },
         ]    
     },
     { 
@@ -134,7 +136,7 @@ const getTraits = SD => {
         ],            
         traits: [
             { name: SD.name.LIFE_SPAN, value: '10-14a' },
-            { name: SD.role.OMNIVORE, value: SD.role.OMNIVORE },
+            { name: SD.name.DIET, value: SD.diet.OMNIVORE },
             { name: SD.role.HERBIVORE, value: `${SD.foodType.SEEDS}, ${SD.foodType.BERRIES}, ${SD.foodType.NUTS}`, type: SD.symbiosis.COMMENSALISM },
             { name: SD.role.PREDATOR, value: `Annelida, Insecta`, type: SD.symbiosis.PREDATION },
         ]    
@@ -179,7 +181,7 @@ const getTraits = SD => {
         { name: SD.role.PREDATOR, value: 'Tachypodoiulus niger', type: SD.symbiosis.PREDATION },
         { name: SD.role.PREDATOR, value: 'Carabus nemoralis', type: SD.symbiosis.PREDATION },
         { name: SD.role.PREY, value: 'Meles meles', type: SD.symbiosis.PREDATION },
-        { name: SD.role.OMNIVORE, value: SD.role.OMNIVORE },
+        { name: SD.name.DIET, value: SD.diet.OMNIVORE },
         ]    
     },
     { 
@@ -189,7 +191,7 @@ const getTraits = SD => {
     ],            
     traits: [        
         { name: SD.role.COMPETITOR, value: 'Sciurus vulgaris', type: SD.symbiosis.COMPETITION },
-        { name: SD.role.OMNIVORE, value: SD.role.OMNIVORE },
+        { name: SD.name.DIET, value: SD.diet.OMNIVORE },
         { name: SD.name.DISPLAY, value: SD.display.NO_SEXUAL_DIMORPHISM },
         { name: SD.name.LENGTH, value: '23-30cm' },
         { name: SD.name.TAIL_LENGTH, value: '19-25cm' },
@@ -208,7 +210,7 @@ const getTraits = SD => {
         { name: SD.name.WEANING, value: '10-16w' },
         { name: SD.name.MATURITY, value: '1-2y' },
         { name: SD.name.ALTRICIAL, value: SD.boolean.YES },
-        { name: SD.name.MATING, value: SD.mating.POLYGYNOUS },
+        { name: SD.name.MATING_SYSTEM, value: SD.mating.POLYGYNOUS },
         { name: SD.name.COMMUNICATION, value: SD.communication.VOCALISATION },
         { name: SD.name.COMMUNICATION, value: SD.communication.POSTURING },
         { name: SD.role.CARRIER, value: 'Squirrel parapoxvirus', type: SD.symbiosis.PARASITISM },
@@ -223,7 +225,7 @@ const getTraits = SD => {
 ]};
 
 export const getMammalTraits = (enums) => {
-    const SD = enums || traitEnums;
+    const SD = Object.keys(enums).length ? enums : traitEnums.enums;
     const traits = getTraits(SD);
     // traits.forEach(species => {
     //     if(!species.traits.find(trait => trait.name === 'TROPHIC_LEVEL')) {

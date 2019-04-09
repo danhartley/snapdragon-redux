@@ -22,7 +22,7 @@ export const renderGuides = (modal, config, createGuide) => {
 
     renderTemplate({ observableMonths }, template.content, parent);
 
-    const idSwitch = parent.querySelector('.snapdragon-switch');
+    const idSwitch = parent.querySelector('.inat-switch-slider');
 
     const switchCallback = position => {
 

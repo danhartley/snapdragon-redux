@@ -228,7 +228,6 @@ a.dropdown-item {
   border-bottom: solid .05rem !important;
   color: inherit;
   cursor: pointer;
-  /* padding: 0 0 0.1rem 0 !important; */
   font-size: 0.8rem;
   text-transform: uppercase;
 }
@@ -1081,9 +1080,9 @@ span.correct {
   color: var(--snap-inactive);
 }
 
-.snap-success {
+/* .snap-success {
   border: 0.2rem solid var(--snap-success);
-}
+} */
 
 .layer.snap-success {
   border: none;
@@ -1110,9 +1109,9 @@ span.correct {
   color: var(--snap-alert);
 }
 
-.snap-alert {
+/* .snap-alert {
   border: 0.2rem solid var(--snap-alert);
-}
+} */
 
 .layer.snap-alert {
   border: none;
@@ -1268,7 +1267,7 @@ span.correct {
 .bird-song {
   margin: 1rem .5rem 0 .5rem;
   font-size: .9rem;
-  margin-top: 130px;
+  /* margin-top: 130px; */
   display: flex;
   justify-content: center;
 }
@@ -2153,4 +2152,8 @@ a.collection-disabled {
 .snapdragon-help.fade-in {
   transition: all 3s ease-out;
   opacity: 100;
+}
+
+.big-padding {
+  padding: 1rem !important;
 }
