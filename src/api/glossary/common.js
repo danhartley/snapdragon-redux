@@ -128,4 +128,29 @@ export const commmon = [
         definition: 'Positive interspecies associations between ants and other organisms such as plants, other arthropods, and fungi.',
         wiki: 'https://en.wikipedia.org/wiki/Myrmecophily'
     },
+    {
+        term: 'Crepuscular',
+        definition: 'Active primarily during twilight.',
+        wiki: 'https://en.wikipedia.org/wiki/Crepuscular_animal'
+    },
+    {
+        term: 'Matutinal',
+        definition: 'Significantly active during pre-dawn or early morning hours.',
+        wiki: 'https://en.wikipedia.org/wiki/Matutinal'
+    },
+    {
+        term: 'Diurnal',
+        definition: 'Characterised by activity during daytime, with a period of sleeping or other inactivity at night.',
+        wiki: 'https://en.wikipedia.org/wiki/Diurnality'
+    },
+    {
+        term: 'Nocturnal',
+        definition: 'Characterised by being active during the night and sleeping during the day.',
+        wiki: 'https://en.wikipedia.org/wiki/Nocturnality'
+    },
+    {
+        term: 'Vespertine',
+        definition: 'Becoming active in the evening (botany) or at dusk (zoology) and ceasing during darkness.',
+        wiki: 'https://en.wikipedia.org/wiki/Vespertine_(biology)'
+    },
 ];

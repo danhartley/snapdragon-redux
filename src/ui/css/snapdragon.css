@@ -1080,9 +1080,9 @@ span.correct {
   color: var(--snap-inactive);
 }
 
-.snap-success {
+/* .snap-success {
   border: 0.2rem solid var(--snap-success);
-}
+} */
 
 .layer.snap-success {
   border: none;
