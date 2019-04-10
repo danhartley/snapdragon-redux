@@ -53,7 +53,7 @@ export async function itemHandler(collection, config, counter, callback, noRecor
     
     if(counter.isLessonPaused) {
         collection.items = await keepItems(collection);
-        callback();
+        callback(collection, config)();
     } else {         
         collection.items = utils.shuffleArray(await getItems(collection, config));
 

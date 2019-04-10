@@ -77,4 +77,6 @@ export const renderCategories = (modal, config, createGuide) => {
             
         });
     });
+
+    document.querySelector('.js-arrow-wrapper').innerHTML = '<i class="far fa-arrow-alt-circle-right"></i>';
 };

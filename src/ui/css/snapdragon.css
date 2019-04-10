@@ -420,10 +420,6 @@ a.dropdown-item {
   background-color: var(--snap-taxon-card-background);
 }
 
-/* .card.taxon {
-  background-color: var(--snap-taxon-card-background);
-} */
-
 .snapdragon-options {
   padding: 0 .5rem;
 }
@@ -647,21 +643,9 @@ a.dropdown-item {
   height: 0.5rem;
 }
 
-/* .right,
-.wrong {
-  padding: 0.1rem 0.5rem;
-  display: inline-block;
-} */
-
 .align-left {
   text-align: left;
 }
-
-/* .species-card-wiki a,
-.species-card-eol-link,
-.species-card-wikipedia {
-  color: var(--snap-link);
-} */
 
 .snapdragon.card {
   border: 0;
@@ -713,11 +697,6 @@ a.dropdown-item {
   text-transform: capitalize;
 }
 
-/* .species-header {
-  display: flex;
-  float: right;
-} */
-
 .taxon-header {
   display: flex;
   justify-content: center;
@@ -730,10 +709,6 @@ a.dropdown-item {
   filter: grayscale(80%);
   object-fit: scale-down;
 }
-
-/* .species-header div {
-  flex: 1;
-} */
 
 .species-header > div:nth-child(1) {
   display: flex;
@@ -835,8 +810,6 @@ a.dropdown-item {
 }
 
 .data-box-container {
-  /* position: absolute;
-  top: 90px; */
   display: flex;
   width: 100%;
   padding: .5rem 0;
@@ -1267,7 +1240,6 @@ span.correct {
 .bird-song {
   margin: 1rem .5rem 0 .5rem;
   font-size: .9rem;
-  /* margin-top: 130px; */
   display: flex;
   justify-content: center;
 }
@@ -1567,10 +1539,6 @@ label.btn.btn-secondary .lesson-icon {
   height: 5rem;
   z-index: 1050;
 }
-
-/* .carousel-inner .image-load-original > div {
-  display: none;
-} */
 
 .info-box .carousel.slide {
   float: right;
