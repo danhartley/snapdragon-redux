@@ -8,7 +8,7 @@ import { utils } from 'utils/utils';
 import 'ui/css/snapdragon-colours.css';
 import 'ui/css/snapdragon.css';
 import 'ui/css/snapdragon-media.css';
-import 'ui/css/snapdragon-media-display.css';
+// import 'ui/css/snapdragon-media-display.css';
 import 'ui/css/groups/test-card.css';
 import 'ui/css/groups/species-card.css';
 import 'ui/css/groups/modal.css';

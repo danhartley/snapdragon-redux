@@ -309,8 +309,7 @@
     justify-content: space-between;
     font-size: .9rem;
     padding: 0;
-    margin: 1.5rem 0 0 0; 
-    /* font-style: italic; */
+    margin: 1.5rem 0 0 0;
   }
   
   .modal-guide-body .range-slider.disabled {
@@ -719,10 +718,6 @@
       padding: .5rem 1rem;
     }
 
-    /* .modal-guide-wrapper .guides .inat .inat-switch {
-        flex-direction: row;        
-    } */
-
     .modal-guide-wrapper .inat-switch {
         font-size: 1.2rem;
         width: 29rem;
@@ -853,12 +848,16 @@
       height: 2rem;
       margin: -4rem 0 0 1rem;
     }
+  }
 
-    #exampleGuide .start-lesson-wrapper.disabled {
-      pointer-events: none;
-    }    
+  #exampleGuide .start-lesson-wrapper.disabled {
+    pointer-events: none;
+  }    
 
-    #exampleGuide .modal-guide-progress {
-      cursor: pointer;
-    }
+  #exampleGuide .modal-guide-progress {
+    cursor: pointer;
+  }
+
+  #exampleGuide .modal-guide-progress span {
+    pointer-events: none;
   }

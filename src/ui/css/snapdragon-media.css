@@ -1,14 +1,4 @@
 @media (min-width: 320px) {
-    /* .right {  
-        color: var(--snap-text-dark);
-        background-color: var(--snap-success);
-    }
-    
-    .wrong {
-        color:var(--snap-text-dark);
-        background-color: var(--snap-alert);
-    } */
-
     .tile span {
         padding: 0 .2rem;
         font-size: 1.8rem;
@@ -69,7 +59,20 @@
     }
 }
 
+@media (max-width: 768px) {
+    .landscape {
+        display: none !important;
+    }
+    .portrait-grid {
+        display: grid;
+    }
+}
+
 @media (min-width: 768px) {
+
+    .portrait, .portrait-grid {
+        display: none !important;
+    }
 
     button {
         width: fit-content;
@@ -99,20 +102,6 @@
         font-size: .8rem;
         max-width: initial;
     }
-
-    /* .modal-iframe  {
-        margin: 0;
-        padding: 0;
-        border: none;
-        resize: both;
-        overflow-y: scroll;
-        width: 1px;
-        min-width: 298px;
-        max-width: 298px;
-        min-height: 10px;
-        padding: 10px 0px 10px 10px;
-        height: 300px;
-    } */
 
     #menuModal .modal-body.settings-modal {
         padding: rem;
