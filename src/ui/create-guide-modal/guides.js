@@ -48,4 +48,6 @@ export const renderGuides = (modal, config, createGuide) => {
     renderInatUser(modal.querySelector('.js-inat'), config, save);
 
     createGuide.save(config, 'GUIDE', false)();
+
+    document.querySelector('.js-arrow-wrapper').innerHTML = '<i class="fas fa-arrow-circle-down"></i>';
 }

@@ -853,4 +853,12 @@
       height: 2rem;
       margin: -4rem 0 0 1rem;
     }
+
+    #exampleGuide .start-lesson-wrapper.disabled {
+      pointer-events: none;
+    }    
+
+    #exampleGuide .modal-guide-progress {
+      cursor: pointer;
+    }
   }
