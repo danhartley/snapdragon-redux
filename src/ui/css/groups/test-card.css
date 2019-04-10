@@ -300,8 +300,12 @@ div.text-entry {
     .test-card-container .text-question {
         position: absolute;
         left: 1rem;
-        bottom: 4rem;        
+        bottom: 1rem;        
         min-height: 2rem;
+    }
+
+    .test-card-container .text-question {
+        padding: 0;
     }
 
     .answer-box-success > span:nth-child(2), 
