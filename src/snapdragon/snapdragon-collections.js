@@ -1,21 +1,76 @@
-const lichenCollection = {
+import { deciduousAndEvergreenTrees } from 'api/rhs/deciduous-evergreen-trees';
+import { birds } from 'api/snapdragon/common-city-birds';
+import { mushrooms } from 'api/snapdragon/mushrooms';
+import { weeds } from 'api/rhs/weeds';
+import { lichen } from 'api/snapdragon/lichen';
+
+import { leaf } from 'api/leaf';
+
+import { plants } from 'api/snapdragon/plants';
+
+const allIconicTaxa = [
+    {
+      id: 'fungi',
+      common: 'Fungi & Lichens'
+    },
+    {
+      id: 'amphibia',
+      common: 'Amphibians'
+    },
+    {
+      id: 'mammalia',
+      common: 'Mammals'
+    },
+    {
+      id: 'plantae',
+      common: 'Plants'
+    },
+    {
+      id: 'lepidoptera',
+      common: 'Butterflies & Moths'
+    },
+    {
+      id: 'insecta',
+      common: 'Insects'
+    },
+    {
+      id: 'aves',
+      common: 'Birds'
+    }
+];
+
+const snapdragonLichens = {
+    id: 3,
+    type: 'taxon',
+    name: 'Common Lichens',
+    guide: {
+        locationPlace: 'Common Lichens',
+        locationType: 'place',
+        place: {
+            name: 'Snapdragon Lichens',
+            id: 'any',
+            type: 'places'
+        },
+        season: {
+            type: 'all_year'
+        },
+        iconicTaxa: [
+            {
+              id: 'fungi',
+              common: 'Fungi & Lichens'
+            }
+        ],
+        ready: true
+    },
+    collection: {
+      id: 3
+    },
     providerId: 2,
-    type: 'species',
-    thumb: 'https://content.eol.org/data/media/80/d2/d6/542.6832443214.260x190.jpg',
     moduleSize: 2,
-    curator: 'Snapdragon',
-    collectionType: 'Collection',
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 1,
     glossary: ['lichen', 'common'],
-    course: 'Snapdragon',
-    iconicTaxa: [ 'fungi' ]
-};
-
-const snapdragonLichens = {
-    ...lichenCollection,
-    id: 3,
-    name: 'Common Lichen',
+    iconicTaxa: [ 'fungi' ],    
     itemNames: [
         'Xanthoria parietina', 'Physcia adscendens', 'Parmelia saxatilis', 'Graphis scripta',
         'Ramalina farinacea', 'Evernia prunastri', 'Usnea florida', 
@@ -26,17 +81,16 @@ const snapdragonLichens = {
         'Ramalina fastigiata', 'Flavoparmelia caperata', 'Parmotrema perlatum', 'Parmelia sulcata',
         'Lecidella elaeochroma', 'Lecanora chlarotera'
     ],
+    items: lichen,
     descriptions: [
         'Lichens are composite organisms formed from the symbiosis of a fungus (mycobiont), a photosynthetic alga or cyanobacterium (photobiont) and basidiomycete yeasts.',
         // 'Lichens grow on a range of substrates including bark and rocks and \'in the air\' as epiphytes.',
         'Lichens are important environmental indicators (bioindicators) of air and water quality.'
-    ],
-    speciesCount: 25,
-    familiesCount: 11,
-    index: 5
+    ]
 };
 
-const locationSpecies = {
+const locationDefaults = {
+    default: true,
     id: 1,
     providerId: 1,
     rangeSensitive: true,
@@ -46,38 +100,98 @@ const locationSpecies = {
     moduleSize: 4,
 };
 
-const placeSpecies = {
+const placeDefaults = {
+    default: true,
     id: 2, 
     providerId: 1,
-    rangeSensitive: false,
+    type: 'place',
     rangeSensitive: true,
     glossary: ['plantae', 'common', 'fungi'],
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     moduleSize: 4,
+    collection: {
+        id: 2
+    },
+    iconicTaxa: allIconicTaxa.map(all => all.id)
+};
+
+const placeMonsanto = {    
+    ...placeDefaults,  
+    default: false,  
+    name: 'Parque Florestal Monsanto',            
+    guide: {
+        locationPlace: 'Monsanto Forest Park, LI, PT',
+        locationType: 'place',
+        place: {
+            name: 'Monsanto Forest Park, LI, PT',
+            id: 61034,
+            type: 'places'
+        },
+        season: {
+            type: 'all_year'
+        },
+        iconicTaxa: allIconicTaxa,
+        ready: true
+    }
+}
+
+const placeArrabida = {
+    ...placeDefaults,
+    default: false,
+    name: 'O Parque Natural da Arrábida, SE, PT',            
+    guide: {
+        locationPlace: 'O Parque Natural da Arrábida, SE, PT',
+        locationType: 'place',
+        place: {
+            name: 'O Parque Natural da Arrábida, SE, PT',
+            id: 131416,
+            type: 'places'
+        },
+        season: {
+            type: 'all_year'
+        },
+        iconicTaxa: allIconicTaxa,
+        ready: true
+    } 
 };
 
 const snapdragonKitchenGarden = { 
+    id: 4,
     providerId: 2,
-    id: 4, 
-    name: 'Kitchen Garden', 
-    type: 'species',
-    descriptions: [
-        'Learn the common and scientific names of herbs, vegetables and fruit used in Western cooking.',
-        'All of the species are either native or adapted to a Mediterranean climate.',
-        'Later lessons will introduce you to families and the traits they share.'        
-    ],
-    thumb: 'https://content.eol.org/data/media/81/3f/ae/542.8232814894.260x190.jpg',
+    type: 'snapdragon',
+    name: 'Kitchen Garden',            
+    guide: {
+        locationPlace: 'Kitchen Garden',
+        locationType: 'place',
+        place: {
+            name: 'Kitchen Garden',
+            id: 'any',
+            type: 'places'
+        },
+        season: {
+            type: 'all_year'
+        },
+        iconicTaxa: [
+            {
+              id: 'plantae',
+              common: 'Plants'
+            },
+        ],
+        ready: true
+    },
+    collection: {
+      id: 4
+    },
+    // descriptions: [
+    //     'Learn the common and scientific names of herbs, vegetables and fruit used in Western cooking.',
+    //     'All of the species are either native or adapted to a Mediterranean climate.',
+    //     'Later lessons will introduce you to families and the traits they share.'        
+    // ],
     moduleSize: 6,
-    curator: 'Snapdragon',
-    collectionType: 'Collection',
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
-    courseId: 1,
-    course: 'Snapdragon',
-    speciesCount: 53,
-    familiesCount: 16,
     itemNames: [
         "Allium sativum",
         "Coriandrum sativum",
@@ -142,27 +256,18 @@ const snapdragonKitchenGarden = {
         "Prunus avium",
         // "Apis mellifera"
       ],
-    index: 0,
+    items: [ ...plants ],
     iconicTaxa: [ 'plantae' ]
 };
 
 const rhsTrees = { 
+    id: 5,
+    name: 'RHS Trees',
     providerId: 2,
-    id: 5, name: 'Deciduous and Evergreen Trees', 
-    type: 'species',
-    descriptions: ['This is an approved list of Deciduous and Evergreen Trees from the Royal Horticultural Society (RHS).', 'Students taking RHS courses in Practical Horticulture are required to learn some, or all, of these species.'],
-    collections: ['Deciduous and evergreen trees'],
-    thumb: 'https://content.eol.org/data/media/7e/c3/1d/542.17202950412.260x190.jpg',
     moduleSize: 6,
-    curator: 'Snapdragon',
-    collectionType: 'Collection',
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
-    courseId: 2,
-    course: 'RHS Practical Horticulture',
-    speciesCount: 65,
-    familiesCount: 20,
     itemNames: [
         "Styrax hemsleyanus",
         // "Stewartia sinensis",
@@ -230,31 +335,71 @@ const rhsTrees = {
         // "Acacia baileyana",
         "Acacia dealbata"
       ],
-    index: 1,
-    iconicTaxa: [ 'plantae' ]
+    items: deciduousAndEvergreenTrees,
+    iconicTaxa: [ 'plantae' ],
+    type: 'course',
+    guide: {
+        locationPlace: 'RHS Trees',
+        locationType: 'place',
+        place: {
+            name: 'RHS Trees',
+            id: 'any',
+            type: 'places'
+        },
+        season: {
+            type: 'all_year'
+        },
+        iconicTaxa: [
+            {
+                id: 'plantae',
+                common: 'Plants'
+            },
+        ],
+        ready: true
+    },
+    collection: {
+        id: 5
+    },
+    eol_link: 'https://eol.org/collections/140596',
+    externalLink: { text: 'RHS Practical Horticulture', url:'https://www.rhs.org.uk/education-learning/qualifications-and-training/rhs-qualifications/level-1-qualifications/level-1-intro-award-in-practical-horticulture' },
 };
 
 const rhsWeeds = { 
     id: 6, 
     providerId: 2,
     name: 'RHS Weeds I', 
-    type: 'species',
-    descriptions: [
-        'Part I of the approved list of Weeds for students taking Royal Horticultural Society Qualifications in Practical Horticulture.',
-        'Snapdragon does not necessarily support the view that weeds are plants in the wrong place.'
-    ],
-    collections: ['RHS Weeds I'],
-    thumb: 'https://content.eol.org/data/media/55/9d/2c/509.118977.260x190.jpg',
+    // descriptions: [
+    //     'Part I of the approved list of Weeds for students taking Royal Horticultural Society Qualifications in Practical Horticulture.',
+    //     'Snapdragon does not necessarily support the view that weeds are plants in the wrong place.'
+    // ],    
+    type: 'course',
+    guide: {
+        locationPlace: 'RHS Weeds',
+        locationType: 'place',
+        place: {
+            name: 'RHS Weeds',
+            id: 'any',
+            type: 'places'
+        },
+        season: {
+            type: 'all_year'
+        },
+        iconicTaxa: [
+            {
+              id: 'plantae',
+              common: 'Plants'
+            },
+        ],
+        ready: true
+    },
+    collection: {
+      id: 6
+    },
     moduleSize: 4,
-    curator: 'Snapdragon',
-    collectionType: 'Collection',
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
-    courseId: 2,
-    course: 'RHS Practical Horticulture',
-    speciesCount: 11,
-    familiesCount: 7,
+    items: weeds,
     itemNames: [
         "Elymus repens",
         "Equisetum arvense",
@@ -268,29 +413,48 @@ const rhsWeeds = {
         "Capsella bursa-pastoris",
         "Bellis perennis"
       ],
-    index: 3,
-    iconicTaxa: [ 'plantae' ]
+    iconicTaxa: [ 'plantae' ],
+    eol_link: 'https://eol.org/collections/140731',
+    externalLink: { text: 'RHS Practical Horticulture', url:'https://www.rhs.org.uk/education-learning/qualifications-and-training/rhs-qualifications/level-1-qualifications/level-1-intro-award-in-practical-horticulture' },
 };
 
-const mushroomCollection = {
+const mushroomDefaults = {
     providerId: 2,
-    type: 'species',
-    thumb: 'https://content.eol.org/data/media/59/16/59/509.2840237.260x190.jpg',
     moduleSize: 4,
-    curator: 'Snapdragon',
-    collectionType: 'Collection',
     lessonPlanLandscape: 3,
     lessonPlanPortrait: 103,
     glossary: ['fungi'],
-    course: 'Snapdragon',
-    iconicTaxa: [ 'fungi' ]
+    iconicTaxa: [ 'fungi' ],
+    items: mushrooms
 };
 
 const snapdragonMushroomsEasternUSA = {
-    ...mushroomCollection,
+    ...mushroomDefaults,
     id: 7,
-    name: 'Mushrooms Eastern US Fall',
-    thumb: 'https://content.eol.org/data/media/55/b5/47/509.12337524.260x190.jpg',
+    type: 'taxon',
+    name: 'Snapdragon Mushrooms Eastern USA',            
+    guide: {
+        locationPlace: 'Mushrooms Eastern USA',
+        locationType: 'place',
+        place: {
+            name: 'Snapdragon Mushrooms Eastern USA',
+            id: 'any',
+            type: 'places'
+        },
+        season: {
+            type: 'all_year'
+        },
+        iconicTaxa: [
+            {
+              id: 'fungi',
+              common: 'Fungi'
+            },
+        ],
+        ready: true
+    },
+    collection: {
+      id: 7
+    },
     itemNames: [ 
         'Grifola frondosa', 'Laetiporus sulphureus', 'Hericium erinaceus', 'Lycoperdon perlatum',
         'Lycoperdon pyriforme', 'Hydnum repandum', 'Craterellus tubaeformis', 'Hydnum umbilicatum', 
@@ -300,21 +464,24 @@ const snapdragonMushroomsEasternUSA = {
         //'Clitocybe nuda'
         
     ],
-    descriptions: [
-        'A collection of mushrooms that can be found in the Fall in the Eastern United States.',
-        'Some of the species may be found in other seasons, and across the US.'
-    ],
-    speciesCount: 16,
-    familiesCount: 9,
-    index: 4
+    // descriptions: [
+    //     'A collection of mushrooms that can be found in the Fall in the Eastern United States.',
+    //     'Some of the species may be found in other seasons, and across the US.'
+    // ],
 }
 
 export const snapdragonCollections = [
-    locationSpecies,
-    placeSpecies,
+    
+    locationDefaults,
+    
+    placeDefaults,
+    placeMonsanto,
+    placeArrabida,
+    
     snapdragonLichens,
     snapdragonKitchenGarden,
     snapdragonMushroomsEasternUSA,
+    
     rhsTrees,
     rhsWeeds
 ];

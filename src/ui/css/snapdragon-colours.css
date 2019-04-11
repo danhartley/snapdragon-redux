@@ -6,10 +6,9 @@
     --snap-dd-collection-bg-hover: rgb(198, 206, 217);
     --snap-dd-collection-bg-active: rgb(198, 206, 217);
 
-    --snap-dd-language-bg-intial: rgb(223, 236, 243);
-    --snap-dd-language-bg-hover: rgb(218, 230, 237);
-    --snap-dd-language-bg-active: rgb(218, 230, 237);
-    
+    --snap-lesson-row-blue: rgb(218, 230, 237);
+    --snap-lesson-row-green: rgb(216, 223, 210);
+
     --snap-dd-non-taxa-bg-intial: rgb(197, 193, 175);
     --snap-dd-non-taxa-bg-hover: rgb(229, 227, 220);
     --snap-dd-non-taxa-bg-active: rgb(229, 227, 220);

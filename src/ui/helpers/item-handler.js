@@ -4,7 +4,8 @@ import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
-import { collections } from 'snapdragon/eol-collections';
+// import { collections } from 'snapdragon/eol-collections';
+import { snapdragonCollections as collections } from 'snapdragon/snapdragon-collections';
 import { getLocation } from 'geo/geo';
 
 async function getItems(collection, config) {
@@ -30,10 +31,12 @@ async function getItems(collection, config) {
         }
     }
     else {
-        const itemNames = collections[collection.index].items.map(item => item.name);
+        const itemNames = collections.find(c => c.id === collection.id).items.map(item => item.name);
+        // const itemNames = collections[collection.index].items.map(item => item.name);
         const items = collection.itemNames.map(name => { 
             if(R.contains(name, itemNames)) {
-                return collections[collection.index].items.find(item => item.name === name);
+                return collections.find(c => c.id === collection.id).items.find(item => item.name === name);
+                // return collections[collection.index].items.find(item => item.name === name);
             }
         });
         

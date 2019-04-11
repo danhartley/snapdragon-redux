@@ -226,6 +226,8 @@
     font-size: 1.2rem;
     font-style: italic;
     font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
+    position: absolute;
+    bottom: 1rem;
   }
   
   .modal-guide-wrapper .modal-body .actions > div:first-child {
@@ -841,6 +843,15 @@
       margin: 1.25rem 0;
       padding: 0.25rem 0 0.25rem 4rem;
       font-size: initial;
+      width: 100%;
+    }
+
+    #exampleGuide .btn-group label:nth-of-type(2n) {
+      background-color: var(--snap-lesson-row-green);
+    }
+
+    #exampleGuide .btn-group label:nth-of-type(2n+1) {
+      background-color: var(--snap-lesson-row-blue);
     }
 
     #exampleGuide .lesson-radio-button {
