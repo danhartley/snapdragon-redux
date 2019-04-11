@@ -421,8 +421,8 @@ const rhsWeeds = {
 const mushroomDefaults = {
     providerId: 2,
     moduleSize: 4,
-    lessonPlanLandscape: 3,
-    lessonPlanPortrait: 103,
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 101,
     glossary: ['fungi'],
     iconicTaxa: [ 'fungi' ],
     items: mushrooms

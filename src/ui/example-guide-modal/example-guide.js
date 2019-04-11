@@ -60,7 +60,6 @@ export const renderExampleGuideHandler = config => {
         const lessonLink = modal.querySelector(`#${lesson.id} span`);
               lessonLink.innerHTML = 
                 l.externalLink !== undefined
-                    // ? `<a target="_blank" class="underline-link" href="${ l.externalLink.url }">${ l.externalLink.text }</a>` 
                     ? `(${ l.externalLink.text })` 
                     : '';
 
