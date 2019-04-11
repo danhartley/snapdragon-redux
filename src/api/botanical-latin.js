@@ -293,7 +293,7 @@ export const epithets = [
     },
     {
         "latin": ["hymen"],
-        "en": ["membrance"]
+        "en": ["membrane"]
     },
     {
         "latin" : ["hypo-", "hyp-"],

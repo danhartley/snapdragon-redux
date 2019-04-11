@@ -2983,7 +2983,7 @@ export const taxa = [
             {   
                 language: 'en',
                 summary: 'Family of mushroom-forming fungi bearing close affinity to the boletes.',
-                identification: 'May hve decurrent gills (Paxillus), or decurrent pores (Gyrodon).'
+                identification: 'May have decurrent gills (Paxillus), or decurrent pores (Gyrodon).'
             },
         ],
         traits: [
@@ -3028,12 +3028,362 @@ export const taxa = [
         ],
         wiki: "https://en.wikipedia.org/wiki/Suillaceae",
         eol: "https://eol.org/pages/7653",
-        thumb: 'media/00/1a/57/8.6008530675.260x190.jpg',
+        thumb: '00/1a/57/8.6008530675.260x190.jpg',
         descriptions: [
             {   
                 language: 'en',
                 summary: 'All species in this group are saprotrophs, growing on various kinds of decaying organic matter.',
                 identification: 'Red-brown to dark brown spore prints.'
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Cladoniaceae',
+        genera: '16',
+        species: '400+',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Cladoniaceae",
+        eol: "https://eol.org/pages/46718119",
+        thumb: '7a/54/ff/539.RRFNL_BIOUG24047-B12_1440089708_jpg.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family including reindeer moss and cup lichens (Cladonia), forms major part of diet of large mammals in taiga and tundra ecosystems.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Lecanoraceae',
+        genera: '60',
+        species: '--',
+        names: [ { language: "en", names: ['Rim Lichens']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Lecanoraceae",
+        eol: "https://eol.org/pages/6155",
+        thumb: '89/28/4b/549.BI-image-109462.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of lichenized fungi with widespread distribution in the order Lecanorales.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Ochrolechiaceae',
+        genera: '60',
+        species: '--',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Ochrolechiaceae",
+        eol: "https://eol.org/pages/8578664",
+        thumb: '89/28/4b/549.BI-image-109462.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of lichenized fungi in the order Pertusariales.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Placynthiaceae',
+        genera: '--',
+        species: '--',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Placynthiaceae",
+        eol: "https://eol.org/pages/6085",
+        thumb: '77/c1/c6/539.KNWRL_KNWR-Herb-9072_1386704246_jpg.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Lichenized family of fungi in the order Peltigerales. Species found largely in northern temperate regions.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Physciaceae',
+        genera: '17',
+        species: '512',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Physciaceae",
+        eol: "https://eol.org/pages/6143",
+        thumb: '89/c8/22/549.BI-image-31342.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of mostly lichen-forming fungi belonging to the class Lecanoromycetes in the division Ascomycota.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Teloschistaceae',
+        genera: '--',
+        species: '--',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Teloschistaceae",
+        eol: "https://eol.org/pages/6031",
+        thumb: '77/c1/ac/539.KNWRL_KNWR-Herb-9045_1386702194_jpg.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of mostly lichen-forming fungi belonging to the class Lecanoromycetes in the division Ascomycota.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Ramalinaceae',
+        genera: '--',
+        species: '--',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Ramalinaceae",
+        eol: "https://eol.org/pages/6139",
+        thumb: '81/9d/a2/542.9769039745.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Widespread family of lichenized fungi in the order Lecanorales.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Rhizocarpaceae',
+        genera: '--',
+        species: '--',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Rhizocarpaceae",
+        eol: "https://eol.org/pages/6138",
+        thumb: '81/85/65/542.9266791241.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of fungi in the Ascomycota, class Lecanoromycetes.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Graphidaceae',
+        genera: '--',
+        species: '--',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Graphidaceae",
+        eol: "https://eol.org/pages/6097",
+        thumb: '85/21/1d/7.CalPhotos_0000_0000_0209_1556.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of funghi in the order Ostropales.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Physalacriaceae',
+        genera: '21',
+        species: '~900',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Physalacriaceae",
+        eol: "https://eol.org/pages/5973",
+        thumb: '59/33/e3/509.2929514.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of fungi in the order Agaricales. Widespread distribution (from Arctic, the tropics, marine sites, fresh waters to semiarid forests).',
+                identification: 'Most species in the Physalacriaceae form fruit bodies with caps and stipes.'
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Peltigeraceae',
+        genera: '2',
+        species: '101',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Peltigeraceae",
+        eol: "https://eol.org/pages/6086",
+        thumb: '7e/6c/d7/542.14010002549.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Lichenized family of fungi in the order Peltigerales. Widespread distribution especially prevalent in temperate regions.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Araceae',
+        genera: '114',
+        species: '~3750',
+        names: [ { language: "en", names: ['Arum Family, Aroids']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Aronstabgewächse' ]},
+            { language: "es", names:[ 'Aráceas' ]},
+            { language: "pt", names:[ 'Aráceas' ]},
+            { language: "it", names:[ 'Aracee' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Araceae",
+        eol: "https://eol.org/pages/8191",
+        thumb: '59/ff/c4/509.33653586.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of monocotyledonous flowering plants in which flowers are borne on a type of inflorescence called a spadix.',
+                identification: 'Inflorescence is composed of a spadix, which is almost always surrounded by a modified leaf called a spathe.'
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Adoxaceae',
+        genera: '5',
+        species: '~150–200',
+        names: [ { language: "en", names: ['Moschatel Family']},
+            { language: "fr", names:[ 'Adoxacées' ]},
+            { language: "de", names:[ 'Moschuskrautgewächse' ]},
+            { language: "es", names:[ 'Adoxáceas' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Adoxaceae",
+        eol: "https://eol.org/pages/4257",
+        thumb: '55/99/9e/509.1181679.98x68.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Small family of flowering plants in the order Dipsacales.',
+                identification: 'Characterised by opposite toothed leaves, small 4 or 5-petalled flowers in cymose inflorescences. Fruit is a drupe.'
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Melanthiaceae',
+        genera: '17',
+        species: '173',
+        names: [ { language: "en", names: ['Bunch Flower Family']},
+            { language: "fr", names:[ 'Mélanthiacées' ]},
+            { language: "de", names:[ 'Germergewächse' ]},
+            { language: "es", names:[ 'Melanthiáceas' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Melanthiaceae",
+        eol: "https://eol.org/pages/5431",
+        thumb: '55/6d/56/509.11059011.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of flowering perennial herbs native to the Northern Hemisphere.',
+                identification: 'Sepals and petals closely resemble each other and are often large and showy like those of lilies.'
             },
         ],
         traits: [

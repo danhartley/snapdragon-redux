@@ -94,9 +94,10 @@ export async function itemHandler(collection, config, counter, callback, noRecor
             collection.itemIndex = 0;
             collection.currentRound = 1;
 
-            actions.boundChangeCollection({ config, collection });
+            actions.boundNewCollection({ config, collection });
             callback(collection, config)();
         } else {
+            console.log('** Hitting noRecords() **');
             collection.items = [];
             noRecords();
         }

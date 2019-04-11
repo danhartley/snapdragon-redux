@@ -8,6 +8,8 @@ const NEXT_ROUND = '[NEXT_ROUND] Go to next round';
 const NEXT_LESSON = '[NEXT_LESSON] Get (new) lesson plan';
 const NEXT_LAYOUT = '[NEXT_LAYOUT] Render next layout';
 const NEXT_ITEM = '[NEXT_ITEM] Get next item';
+
+const NEW_COLLECTION = '[NEW_COLLECTION] New collection';
 const CHANGE_COLLECTION = '[CHANGE_COLLECTION] Change collection';
 
 const UPDATE_SCORE = '[UPDATE_SCORE] Check user answer and update running score';
@@ -28,6 +30,7 @@ export const types = {
     UPDATE_SCORE,
     END_REVISION,
     UPDATE_HISTORY,
+    NEW_COLLECTION,
     CHANGE_COLLECTION,
     CHANGE_COLLECTION_ITEMS,
     NEXT_ROUND,

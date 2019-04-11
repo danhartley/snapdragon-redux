@@ -117,7 +117,6 @@ export const renderNavigation = (page) => {
                             DOM.modalTextTitle.innerHTML = 'Glossary';
                             const glossary = utils.sortAlphabeticallyBy(getGlossary(collection.glossary), 'term');
                             renderTemplate({ glossary }, template.content, DOM.modalText);
-                            document.querySelector('.js-definition-card-btn').style.display = 'none';
                         }
                         break;
                     case 'email':

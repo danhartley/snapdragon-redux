@@ -26,7 +26,7 @@ export const layout = (state = null, action) => {
             if(action.data && action.data.screens)
             {
                 if(action.data.screens[1]) {
-                    console.clear();
+                    // console.clear();
                     console.log('Layout name: ', action.data.name);
                     console.log('Screen name: ', action.data.screens[1].name);
                 }
