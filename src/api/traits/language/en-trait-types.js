@@ -598,7 +598,10 @@ export const english = {
         TERRITORIAL: 'Territorial',
         BIPARENTAL: 'Biparental',
         COOPERATIVE_BREEDING: 'Cooperative breeding',
-        TOOL_MAKING: 'Tool making'
+        TOOL_MAKING: 'Tool making',
+        PROBLEM_SOLVING: 'Problem solving',
+        DIVISION_OF_LABOUR: 'Division of labour',
+        SUPERORGANISM: 'Superorganism'
 
     },
     sense: {

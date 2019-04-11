@@ -3389,4 +3389,159 @@ export const taxa = [
         traits: [
         ],
     },
+    {
+        taxon: 'family',
+        name: 'Felidae',
+        genera: '17',
+        species: '36',
+        names: [ { language: "en", names: ['Cats, Felid']},
+            { language: "fr", names:[ 'Félidés' ]},
+            { language: "de", names:[ 'Katzen' ]},
+            { language: "es", names:[ 'Félidos' ]},
+            { language: "pt", names:[ 'Felídeos' ]},
+            { language: "it", names:[ 'Felidi' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Felidae",
+        eol: "https://eol.org/pages/7674",
+        thumb: '58/db/19/509.27381988.98x68.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Obligate carnivores, and most are solitary predators ambushing or stalking their prey.',
+                identification: 'Retractile claws, slender muscular bodies and strong flexible forelimbs. Teeth and facial muscles allow for a powerful bite.'
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Libellulidae',
+        genera: '140+',
+        species: '1000+',
+        names: [ { language: "en", names: ['Skimmers, Perchers']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Libellulidae",
+        eol: "https://eol.org/pages/963",
+        thumb: '58/f2/37/509.27642691.98x68.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Near worldwide distribution, these are almost certainly the most often seen of all dragonflies.',
+                identification: 'Stout-bodied larvae with the lower lip or labium developed into a mask over the lower part of the face.'
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Chrysomelidae',
+        genera: '~2500',
+        species: '~50000',
+        names: [ { language: "en", names: ['Leaf beetle']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Blattkäfer' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Chrysomelidae",
+        eol: "https://eol.org/pages/7463",
+        thumb: '41/74/d3/18.https___www_inaturalist_org_photos_5313071.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Large family of small to medium-sized beetles.',
+                identification: 'Most species are domed, and oval in dorsal view, often with metallic luster or multiple colors. Tarsal form is 5-5-5.'
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Syrphidae',
+        genera: '~200',
+        species: '~6000',
+        names: [ { language: "en", names: ['Hoverfly, Flower Flies']},
+            { language: "fr", names:[ 'Syrphes, Syrphides' ]},
+            { language: "de", names:[ 'Schwebfliegen' ]},
+            { language: "es", names:[ 'Sírfidos' ]},
+            { language: "pt", names:[ 'Mosca das flores' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Syrphidae",
+        eol: "https://eol.org/pages/9017",
+        thumb: '80/14/6e/542.4817238519.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Common worldwide, often seen hovering near or feeding on nectar of flowers.',
+                identification: 'Adults of many species feed mainly on nectar and pollen, while larvae (maggots) are omnivores or saprotrophs.',                
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Formicidae',
+        genera: '~12500',
+        species: '~22000',
+        names: [ { language: "en", names: ['Ants']},
+            { language: "fr", names:[ 'Fourmi' ]},
+            { language: "de", names:[ 'Ameisen' ]},
+            { language: "es", names:[ 'Formícidos' ]},
+            { language: "pt", names:[ 'Formiga' ]},
+            { language: "it", names:[ 'Formiche' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Formicidae",
+        eol: "https://eol.org/pages/699",
+        thumb: '67/fd/42/509.8277412.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Eusocial insects together with the related wasps and bees, belong to the order Hymenoptera.',
+                identification: 'Form colonies that range from a few dozen predatory individuals living to highly organised colonies of millions in large territories.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.ORGANISATION, value: SD.organisation.EUSOCIAL },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.PROBLEM_SOLVING },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.DIVISION_OF_LABOUR },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.SUPERORGANISM },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Lycaenidae',
+        genera: '479',
+        species: '+6000',
+        names: [ { language: "en", names: ['Gossamer-winged butterflies']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Bläulinge' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Lycaenidae",
+        eol: "https://eol.org/pages/855",
+        thumb: '63/98/33/509.50000957.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Divided into subfamilies of the blues (Polyommatinae), the coppers (Lycaeninae), the hairstreaks (Theclinae) and the harvesters (Miletinae).',
+                identification: 'Adults are small, under 5cm, and brightly coloured, sometimes with a metallic gloss.', 
+            },
+        ],
+        traits: [
+
+        ],
+    },
 ];

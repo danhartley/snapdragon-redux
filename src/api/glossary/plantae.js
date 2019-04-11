@@ -183,11 +183,11 @@ export const plantae = [
     },
     {
         term: 'Dicotyledon (dicot)',
-        definition : "plant group where seed has two embryonic leaves (cotyledons)."
+        definition : "Plant group where seed has two embryonic leaves (cotyledons)."
     },
     {
         term : "Monocotyledon (monocot)",
-        definition : "plant group where seed has one embryonic leaf (cotyledon)."
+        definition : "Plant group where seed has one embryonic leaf (cotyledon)."
     },
     {
         term: 'Self-pollination',
