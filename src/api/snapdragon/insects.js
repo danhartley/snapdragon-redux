@@ -2524,7 +2524,8 @@ export const insects = [
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
       "order": "Coleoptera",
-      "family": "Cetoniidae",
+      "family": "Scarabaeidae",
+      "subfamily": "Cetoniinae",
       "genus": "Oxythyrea",
       "species": "Oxythyrea funesta",
       "kingdomKey": 1,
@@ -2537,7 +2538,7 @@ export const insects = [
       "synonym": false,
       "class": "Insecta"
     },
-    "family": "Cetoniidae",
+    "family": "Scarabaeidae",
     "kingdom": "Animalia",
     "eolName": "Oxythyrea funesta (Poda, 1761)"
   },
@@ -6586,7 +6587,8 @@ export const insects = [
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
       "order": "Coleoptera",
-      "family": "Dynastidae",
+      "family": "Scarabaeidae",
+      "subfamily": "Dynastidae",
       "genus": "Oryctes",
       "species": "Oryctes nasicornis",
       "kingdomKey": 1,
@@ -6599,7 +6601,7 @@ export const insects = [
       "synonym": false,
       "class": "Insecta"
     },
-    "family": "Dynastidae",
+    "family": "Scarabaeidae",
     "kingdom": "Animalia",
     "eolName": "Oryctes nasicornis (Linnaeus, 1758)"
   },

@@ -314,4 +314,9 @@ export const plantae = [
         definition: 'Large bract or pair of bracts forming a sheath to enclose the flower cluster (Arums, Irises, Crocuses)',
         wiki: 'https://en.wikipedia.org/wiki/Bract#Spathe'
     },
+    {
+        term: "Aristate",
+        definition: "Having a spiny or bristly tip (of leaf)",
+        wiki: "https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#aristate"
+    },
 ];

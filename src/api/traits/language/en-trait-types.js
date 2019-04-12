@@ -407,7 +407,9 @@ export const english = {
         GRAINS: 'Grains',
         BERRIES: 'Berries',
         HERBAGE: 'Herbage',
-        SWARD: 'Sward'
+        SWARD: 'Sward',
+        LEAVES: 'Leaves',
+        WOOD: 'Wood'
     },
     developmentStage: {
         ADULT: 'Adult',
@@ -438,7 +440,9 @@ export const english = {
         DEN: 'Den',
         WARREN: 'Warren',
         SETT: 'Sett',
-        ROOKERY: 'Rookery'
+        ROOKERY: 'Rookery',
+        LODGE: 'Lodge',
+        DAM: 'Dam',
     },
     active: {
         help: 'When is this species most active?',
@@ -477,7 +481,9 @@ export const english = {
         KID: 'Kid',
         GOSLING: 'Gosling',
         LEVERET: 'Leveret',
-        NYMPH: 'Nymph'
+        NYMPH: 'Nymph',
+        CATERPILLAR: 'Caterpillar',
+        LARVA: 'Larva'
     },
     female: {
         help: 'What is the name for a female of this species?',
@@ -517,7 +523,8 @@ export const english = {
     organisation: {
         help: 'How is this species organised?',
         EUSOCIAL: 'Eusocial',
-        SOCIAL: 'Social',        
+        SOCIAL: 'Social',
+        SOLITARY: 'Solitary'  
     },
     diet: {
         help: 'What is the feeding behaviour of this species?',
@@ -547,6 +554,7 @@ export const english = {
         HERBIVORE: 'Herbivore',
         OMNIVORE: 'Omnivore',
         CARNIVORE: 'Carnivore',
+        MUCIVORE: 'Mucivore',
         PREY: 'Prey',
         COMPETITOR: 'Competitor',
         HOST: 'Host',
@@ -601,8 +609,11 @@ export const english = {
         TOOL_MAKING: 'Tool making',
         PROBLEM_SOLVING: 'Problem solving',
         DIVISION_OF_LABOUR: 'Division of labour',
-        SUPERORGANISM: 'Superorganism'
-
+        SUPERORGANISM: 'Superorganism',
+        ANAUTOGENY: 'Anautogeny',
+        MASS_PROVISIONING: 'Mass provisioning',
+        PRECOCIAL: 'Precocial',
+        ALTRICIAL: 'Altricial'
     },
     sense: {
         help: 'Which sense does this species favour?',
