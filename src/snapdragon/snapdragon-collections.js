@@ -432,7 +432,7 @@ const snapdragonMushroomsEasternUSA = {
     ...mushroomDefaults,
     id: 7,
     type: 'taxon',
-    name: 'Snapdragon Mushrooms Eastern USA',            
+    name: 'Mushrooms Eastern USA',            
     guide: {
         locationPlace: 'Mushrooms Eastern USA',
         locationType: 'place',
@@ -470,6 +470,58 @@ const snapdragonMushroomsEasternUSA = {
     // ],
 }
 
+const commonBritishBirds = { 
+    providerId: 2,
+    id: 8, 
+    name: 'RSPB Top 10 UK Birds',
+    type: 'taxon',
+    guide: {
+        locationPlace: 'Common British Birds',
+        locationType: 'place',
+        place: {
+            name: 'Snapdragon Common British Birds',
+            id: 'any',
+            type: 'places'
+        },
+        season: {
+            type: 'all_year'
+        },
+        iconicTaxa: [
+            {
+              id: 'aves',
+              common: 'Birds'
+            },
+        ],
+        ready: true
+    },
+    descriptions: [
+        'This lesson will test you on the top 10 most common birds in the UK.',
+        'The list is taken from the RSPB Big Garden Birdwatch 2018 survey.',
+        '420,489 people recorded 6,764,475 separate bird sightings.'
+    ],
+    moduleSize: 4,
+    lessonPlanLandscape: 1,
+    lessonPlanPortrait: 101,
+    glossary: ['animalia', 'common'],
+    items: birds,
+    itemNames: [
+        "Passer domesticus",
+        "Sturnus vulgaris",
+        "Cyanistes caeruleus",
+        "Turdus merula",
+        "Columba palumbus",
+        "Carduelis carduelis",
+        "Parus major",
+        "Erithacus rubecula",
+        "Aegithalos caudatus",
+        "Fringilla coelebs"
+      ],
+    iconicTaxa: [ 'aves' ],
+    collection: {
+        id: 8
+      },
+};
+
 export const snapdragonCollections = [
     
     locationDefaults,
@@ -481,6 +533,7 @@ export const snapdragonCollections = [
     snapdragonLichens,
     snapdragonKitchenGarden,
     snapdragonMushroomsEasternUSA,
+    commonBritishBirds,
     
     rhsTrees,
     rhsWeeds

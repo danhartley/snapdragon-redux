@@ -3569,7 +3569,7 @@ export const taxa = [
         traits: [
             { name: SD.name.SHELTER, value: `${SD.shelter.LODGE}` },
             { name: SD.name.SHELTER, value: `${SD.shelter.DAM}` },
-            { name: SD.role.HERBIVORE, value: `${foodType.GRASS},${foodType.LEAVES},${foodType.WOOD}` },
+            { name: SD.role.HERBIVORE, value: `${SD.foodType.GRASS},${SD.foodType.LEAVES},${SD.foodType.WOOD}` },
         ],
     },
     {
