@@ -20,6 +20,9 @@ import { renderNonTaxonCardSpecimenTiles } from 'ui/screens/cards/non-taxon-card
 import { renderMixedSpecimenQuestion } from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question';
 import { renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
 
+import { renderBirdsong } from 'ui/screens/media/media-birdsong';
+import { renderMediaPlayers } from 'ui/screens/media/landscape/media-players';
+
 const functions = [
     { name: 'mixed-specimen-questions', func: renderMixedSpecimenQuestions },
     { name: 'non-taxon-specimen-tiles', func: renderNonTaxonCardSpecimenTiles },
@@ -52,6 +55,10 @@ const functions = [
     
     { name: 'mixed-specimen-question', func: renderMixedSpecimenQuestion },
     { name: 'mixed-specimen-images', func: renderMixedSpecimenImages },
+    
+    { name: 'birdsong', func: renderMultiStrips },
+    // { name: 'birdsong', func: renderBirdsong },
+    { name: 'media-players', func: renderMediaPlayers },    
 ];
 
 export const funcByName = name => {

@@ -18,6 +18,7 @@ import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { rebindLayoutState } from 'ui/screens/multichoice/missing-data-helper';
 import { getTraits } from 'api/traits/traits';
+import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
 import * as SD from 'api/traits/trait-types';
 
 export const renderMultiStrips = (collection) => {
@@ -39,15 +40,8 @@ export const renderMultiStrips = (collection) => {
     
     if(screen) {
         screen.flavour = utils.shuffleArray(familyFlavours)[0];
-    } else { screen =    
-        layout.screens.find(screen => screen.name === 'species-scientifics') || 
-        layout.screens.find(screen => screen.name === 'species-vernaculars') || 
-        layout.screens.find(screen => screen.name === 'epithet') || 
-        layout.screens.find(screen => screen.name === 'definition') || 
-        layout.screens.find(screen => screen.name === 'family') || 
-        layout.screens.find(screen => screen.name === 'trait-property') || 
-        layout.screens.find(screen => screen.name === 'symbiotic-property') || 
-        layout.screens.find(screen => screen.name === 'wildcard-match')
+    } else { 
+        screen = layout.screens[1];
     }
 
     try {
@@ -145,7 +139,6 @@ export const renderMultiStrips = (collection) => {
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family && f.descriptions && f.descriptions[0].summary && f.descriptions[0].summary !== '')).map(f => f.descriptions[0].summary);
         const answers = utils.shuffleArray([question, ...alternatives]);
 
-        render(question, answers);
         render(question, answers, { question: 'Match species family', help: '(Click on the description below.)' });
     }
 
@@ -220,8 +213,6 @@ export const renderMultiStrips = (collection) => {
     if(screen.name === 'family') {
 
         const indices = config.isPortraitMode ? [5,6] : [5,6];
-
-        // see lesson planner for initialising family names
 
         const family = item.family;
         const speciesFamilies = species.map(item => item.family).filter(utils.onlyUnique);
@@ -333,11 +324,43 @@ export const renderMultiStrips = (collection) => {
 
         render(question, answers, { question: 'Match the trait', help });
     }
+
+    if(screen.name === 'birdsong') {
+
+        const { enums } = store.getState();
+
+        const traits = getTraits(enums);
+        const bird = traits.find(bird => bird.name === item.name);
+        
+        let birds = R.take(3, traits.filter(bird => bird.name !== item.name));
+            birds.push(bird);
+
+            birds = utils.shuffleArray(birds.map(bird => bird.name));
+
+        render(bird.name, birds, { question: 'Match the birdsong', vernacularName: '--- ---', binomial: '--- ---' });
+        
+        const parent = document.querySelector('.js-question-help');
+              parent.innerHTML = '';  
+
+        const template = document.createElement('template');
+              template.innerHTML = '';
+
+        template.innerHTML = audioMediaTemplate;
+
+        const xcID = bird.traits.find(trait => trait.name === 'song').value;
+
+        const mp3 = `./songs/${xcID}.mp3`;
+
+        console.clear();
+        console.log(mp3);
+
+        renderTemplate({ mp3, title: item.name }, template.content, parent);
+    }
 } catch(e) {
    
     rebindLayoutState(layout, item);
 
     renderMultiStrips(collection);
     
-}
+  }
 };

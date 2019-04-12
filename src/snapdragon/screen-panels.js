@@ -23,6 +23,16 @@ const specimenImages = {
     domain: 'collection',
     taxon: 'name'
   };
+
+  const birdsong = {
+    name: 'birdsong',
+    domain: 'collection',    
+  }
+
+  const mediaPlayers = {
+    name: 'media-players',
+    domain: 'collection',    
+  }
   
   const vernaculars = {
     name: 'species-vernaculars',
@@ -199,5 +209,8 @@ const specimenImages = {
     mixedSpecimenQuestions,
 
     mixedSpecimensLeft,
-    mixedSpecimensRight
+    mixedSpecimensRight,
+
+    birdsong,
+    mediaPlayers
   };

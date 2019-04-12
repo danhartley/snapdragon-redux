@@ -1,7 +1,7 @@
 import { insects } from 'api/snapdragon/insects';
 import { deciduousAndEvergreenTrees } from 'api/rhs/deciduous-evergreen-trees';
 
-import { birds } from 'api/snapdragon/common-city-birds';
+import { birds } from 'api/snapdragon/birds';
 import { mushrooms } from 'api/snapdragon/mushrooms';
 import { weeds } from 'api/rhs/weeds';
 import { lichen } from 'api/snapdragon/lichen';

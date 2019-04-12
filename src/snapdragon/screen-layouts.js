@@ -12,7 +12,8 @@ const {
     mixedSpecimenQuestions,
     mixedSpecimensLeft,
     mixedSpecimensRight,
-    history, summary } = panels;
+    history, summary, 
+    birdsong, mediaPlayers } = panels;
 
 const mixedSpeciesMatch = {
     name: 'screen-mixed-species-match',
@@ -392,6 +393,22 @@ const mixedSpecimenImages = {
   ]
 };
 
+const mediaMatch = {
+    name: 'media-match',
+    type:'test',
+    score: 1,
+    points: 2,
+    kind: 'T',
+    given: 'Species song',
+    requirement: 'Select species',
+    screens: [
+        { ...specimenImages },
+        // { ...mediaPlayers },
+        { ...birdsong }
+    ]
+
+};
+
 export const layouts = {
   mixedSpeciesMatch,
   speciesRevision,
@@ -420,5 +437,6 @@ export const layouts = {
   cultivars,
   mixedSpecimenImages,
   history,
-  summary
+  summary,
+  mediaMatch
 }

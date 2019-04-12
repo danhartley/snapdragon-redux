@@ -7,14 +7,17 @@ import { modalImagesHandler } from 'ui/helpers/image-handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageUseCases, prepImagesForCarousel, prepImageForCarousel } from 'ui/helpers/image-handlers';
 import specimensTemplate from 'ui/screens/landscape/specimen-tiles-template.html';
+import { renderSpeciesGrid } from 'ui/screens/home/species-grid';
 
 export const renderSpecimenTiles = (collection) => {
+
+    const { layout } = store.getState();
 
     const item = collection.nextItem;
 
     if(!item) return;
 
-    renderItemSpecimenTiles(item);
+    layout.screens[1].name === 'birdsong' ? renderSpeciesGrid() : renderItemSpecimenTiles(item);
 };
 
 const renderItemSpecimenTiles = item => {
@@ -76,7 +79,7 @@ const renderItemSpecimenTiles = item => {
     renderSpecimenImageTiles({ items: items }, images);
 };
 
-export const renderSpecimenImageTiles = (collection, images) => {
+const renderSpecimenImageTiles = (collection, images) => {
 
     const { layout, config } = store.getState();
 
