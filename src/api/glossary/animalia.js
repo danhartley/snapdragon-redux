@@ -22,6 +22,11 @@ export const animalia = [
         wiki: 'https://en.wikipedia.org/wiki/Altriciality'
     },
     {
+        term: "Precociality",
+        definition: "Having young relatively mature and mobile from the moment of birth or hatching.",
+        wiki: 'https://en.wikipedia.org/wiki/Precociality'
+    },
+    {
         term: "Eusociality",
         definition: "Cooperative brood care, overlapping generations and division of labor into reproductive and non-reproductive groups.",
         wiki: 'https://en.wikipedia.org/wiki/Eusociality'

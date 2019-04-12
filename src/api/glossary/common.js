@@ -71,7 +71,7 @@ export const commmon = [
     },
     {
         term: 'Eukaryotes',
-        definition: 'Organism with nucleus emclosed in a membrane.',
+        definition: 'Organism with nucleus enclosed in a membrane.',
         wiki: 'https://en.wikipedia.org/wiki/Eukaryote'
     },
     {

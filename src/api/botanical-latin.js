@@ -293,7 +293,7 @@ export const epithets = [
     },
     {
         "latin": ["hymen"],
-        "en": ["membrance"]
+        "en": ["membrane"]
     },
     {
         "latin" : ["hypo-", "hyp-"],
@@ -657,5 +657,25 @@ export const epithets = [
     {
         "latin" : ["oura"],
         "en" : ["tail"]
+    },
+    {
+        "latin" : ["geo"],
+        "en" : ["earth"]
+    },
+    {
+        "latin" : ["metron"],
+        "en" : ["measure"]
+    },
+    {
+        "latin" : ["pente"],
+        "en" : ["five"]
+    },
+    {
+        "latin" : ["tomos"],
+        "en" : ["section"]
+    },
+    {
+        "latin" : ["praecox"],
+        "en" : ["before its time"]
     },
 ];

@@ -2,6 +2,7 @@ import { actions } from 'redux/actions/action-creators';
 import { returnTaxonIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import exampleGuideTemplate from 'ui/example-guide-modal/example-guide.html';
+import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
 
 const closeModalListeners = [];
 
@@ -13,249 +14,9 @@ export const renderExampleGuideHandler = config => {
 
     const modal = document.getElementById('exampleGuide');
 
-    let type = 'place';
-    
-    const allIconicTaxa = [
-    {
-      id: 'fungi',
-      common: 'Fungi & Lichens'
-    },
-    {
-      id: 'amphibia',
-      common: 'Amphibians'
-    },
-    {
-      id: 'mammalia',
-      common: 'Mammals'
-    },
-    {
-      id: 'plantae',
-      common: 'Plants'
-    },
-    {
-      id: 'lepidoptera',
-      common: 'Butterflies & Moths'
-    },
-    {
-      id: 'insecta',
-      common: 'Insects'
-    },
-    {
-      id: 'aves',
-      common: 'Birds'
-    }
-];
+    let type = 'place', selectedLesson;
 
-    const lessons = [
-        {
-            type: 'place',
-            id: 1,
-            name: 'Parque Florestal Monsanto',            
-            guide: {
-                locationPlace: 'Monsanto Forest Park, LI, PT',
-                locationType: 'place',
-                place: {
-                    name: 'Monsanto Forest Park, LI, PT',
-                    id: 61034,
-                    type: 'places'
-                },
-                season: {
-                    type: 'all_year'
-                },
-                iconicTaxa: [
-                    {
-                      id: 'fungi',
-                      common: 'Fungi & Lichens'
-                    },
-                    {
-                      id: 'amphibia',
-                      common: 'Amphibians'
-                    },
-                    {
-                      id: 'mammalia',
-                      common: 'Mammals'
-                    },
-                    {
-                      id: 'plantae',
-                      common: 'Plants'
-                    },
-                    {
-                      id: 'lepidoptera',
-                      common: 'Butterflies & Moths'
-                    },
-                    {
-                      id: 'insecta',
-                      common: 'Insects'
-                    },
-                    {
-                      id: 'aves',
-                      common: 'Birds'
-                    }
-                ],
-                ready: true
-            },
-            collection: {
-              id: 2
-            }
-        },
-        {
-            type: 'place',
-            id: 2,
-            name: 'O Parque Natural da Arrábida, SE, PT',            
-            guide: {
-                locationPlace: 'O Parque Natural da Arrábida, SE, PT',
-                locationType: 'place',
-                place: {
-                    name: 'O Parque Natural da Arrábida, SE, PT',
-                    id: 131416,
-                    type: 'places'
-                },
-                season: {
-                    type: 'all_year'
-                },
-                iconicTaxa: allIconicTaxa,
-                ready: true
-            },
-            collection: {
-              id: 2
-            }
-        },
-        {
-            type: 'taxon',
-            id: 3,
-            name: 'Snapdragon Lichens',            
-            guide: {
-                locationPlace: 'Planet Earth',
-                locationType: 'place',
-                place: {
-                    name: 'Planet Earth',
-                    id: 'any',
-                    type: 'places'
-                },
-                season: {
-                    type: 'all_year'
-                },
-                iconicTaxa: [
-                    {
-                      id: 'fungi',
-                      common: 'Fungi & Lichens'
-                    }
-                ],
-                ready: true
-            },
-            collection: {
-              id: 3
-            }
-        },
-        {
-            type: 'snapdragon',
-            id: 4,
-            name: 'Kitchen Garden',            
-            guide: {
-                locationPlace: 'Planet Earth',
-                locationType: 'place',
-                place: {
-                    name: 'Planet Earth',
-                    id: 'any',
-                    type: 'places'
-                },
-                season: {
-                    type: 'all_year'
-                },
-                iconicTaxa: [
-                    {
-                      id: 'plantae',
-                      common: 'Plants'
-                    },
-                ],
-                ready: true
-            },
-            collection: {
-              id: 4
-            }
-        },
-        {
-            type: 'course',
-            id: 5,
-            name: 'RHS Trees',            
-            guide: {
-                locationPlace: 'Planet Earth',
-                locationType: 'place',
-                place: {
-                    name: 'Planet Earth',
-                    id: 'any',
-                    type: 'places'
-                },
-                season: {
-                    type: 'all_year'
-                },
-                iconicTaxa: [
-                    {
-                      id: 'plantae',
-                      common: 'Plants'
-                    },
-                ],
-                ready: true
-            },
-            collection: {
-              id: 5
-            }
-        },
-        {
-            type: 'course',
-            id: 6,
-            name: 'RHS Weeds',            
-            guide: {
-                locationPlace: 'Planet Earth',
-                locationType: 'place',
-                place: {
-                    name: 'Planet Earth',
-                    id: 'any',
-                    type: 'places'
-                },
-                season: {
-                    type: 'all_year'
-                },
-                iconicTaxa: [
-                    {
-                      id: 'plantae',
-                      common: 'Plants'
-                    },
-                ],
-                ready: true
-            },
-            collection: {
-              id: 6
-            }
-        },
-        {
-            type: 'taxon',
-            id: 7,
-            name: 'Snapdragon Mushrooms Eastern USA',            
-            guide: {
-                locationPlace: 'Planet Earth',
-                locationType: 'place',
-                place: {
-                    name: 'Planet Earth',
-                    id: 'any',
-                    type: 'places'
-                },
-                season: {
-                    type: 'all_year'
-                },
-                iconicTaxa: [
-                    {
-                      id: 'fungi',
-                      common: 'Fungi'
-                    },
-                ],
-                ready: true
-            },
-            collection: {
-              id: 7
-            }
-        },
-    ];
+    const lessons = snapdragonCollections.filter(lesson => !lesson.default);
 
     const loadLessons = () => {
 
@@ -286,24 +47,32 @@ export const renderExampleGuideHandler = config => {
           taxon.innerHTML = icons;
       });
 
-      const confirmLessonBtn = modal.querySelector('.js-confirm-lesson-btn');
       const navigationBtn = modal.querySelector('.js-modal-guide-navigation div:nth-child(2)');
       navigationBtn.disabled = true;
-  
-      let selectedLesson;
   
       const lessonSelectors = modal.querySelectorAll('.btn.btn-secondary');
 
       lessonSelectors.forEach(lesson => {
-          lesson.addEventListener('click', event => {
-              confirmLessonBtn.disabled = false;
-              let id = event.target.id;
-              selectedLesson = lessons.find(lesson => lesson.id === parseInt(id));
-              startLesson.classList.remove('disabled');
-          });
+
+        const lessonId = parseInt(lesson.id.replace('id_', ''));
+        const l = lessons.find(l => l.id === lessonId);
+
+        const lessonLink = modal.querySelector(`#${lesson.id} span`);
+              lessonLink.innerHTML = 
+                l.externalLink !== undefined
+                    ? `(${ l.externalLink.text })` 
+                    : '';
+
+        lesson.addEventListener('click', event => {
+            let id = event.target.id.replace('id_', '');
+            selectedLesson = lessons.find(lesson => lesson.id === parseInt(id));
+            startLesson.classList.remove('disabled');
+            saveChanges();
+        });
       });
 
-      confirmLessonBtn.addEventListener('click', event => {        
+      const saveChanges = () => {
+
         config.guide = { ...config.guide, ...selectedLesson.guide };
         config.collection = { ...config.collection, ...selectedLesson.collection };
         actions.boundUpdateConfig(config);
@@ -316,11 +85,11 @@ export const renderExampleGuideHandler = config => {
         txt.innerHTML = 'Your preference has been updated';
           setTimeout(() => {
               txt.innerHTML = '';
-          }, 2000);        
-        });
+          }, 2000);
+      };
 
-        navigationBtn.addEventListener('click', event => {
-          closeModalListeners.forEach(listener => listener());
+      navigationBtn.addEventListener('click', event => {
+        closeModalListeners.forEach(listener => listener());
       });
     };
 

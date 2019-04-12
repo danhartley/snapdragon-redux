@@ -122,10 +122,16 @@ export const renderMultiStrips = (collection) => {
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
 
+        const ffs = species.filter(s => s.kingdom === item.kingdom).map(s => s.family);
+        const ns = taxa.map(t => t.name);
+        const missing = ffs.filter(f => !R.contains(f,ns));
+        console.log(missing.filter(utils.onlyUnique));
+    
+
         const number = config.isPortraitMode ? 3 : 4;
 
         const question = families.length > 0 ? families.find(f => f.name === item.family).descriptions[0].identification : 'no families available';
-        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family)).map(f => f.descriptions[0].identification);
+        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family && f.descriptions && f.descriptions[0].identification && f.descriptions[0].identification !== '')).map(f => f.descriptions[0].identification);
         const answers = utils.shuffleArray([question, ...alternatives]);
 
         render(question, answers, { question: 'Match species family', help: '(Click on the description below.)' });
@@ -136,7 +142,7 @@ export const renderMultiStrips = (collection) => {
         const number = config.isPortraitMode ? 3 : 4;
         const itemFamily = families.find(f => f.name === item.family);
         const question = itemFamily.descriptions[0].summary;
-        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family)).map(f => f.descriptions[0].summary);
+        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family && f.descriptions && f.descriptions[0].summary && f.descriptions[0].summary !== '')).map(f => f.descriptions[0].summary);
         const answers = utils.shuffleArray([question, ...alternatives]);
 
         render(question, answers);

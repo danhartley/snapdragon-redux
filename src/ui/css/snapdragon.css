@@ -610,6 +610,12 @@ a.dropdown-item {
   padding: .75rem;
 }
 
+  /* prevent child elements of listener triggering an event */  
+  .strip > * {
+    pointer-events: none;
+  }
+
+
 .strip.snap-success {
   background-color: rgb(41, 108, 44,.4);
   box-shadow: 0 2px 8px rgba(0,0,0,.8);

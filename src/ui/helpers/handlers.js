@@ -148,7 +148,7 @@ const stripScoreHandler = (test, callback, config) => {
             test.answer = answer;
             const score = markTest(test);
 
-            target.parentElement.classList.add(score.colour);
+            target.classList.add(score.colour);
 
             items.forEach(strip => {   
                 const matchesScientificName = strip.innerText === taxon.name;

@@ -1989,7 +1989,7 @@ export const taxa = [
             {
                 language: 'en',
                 summary: '~50% species produce fruiting bodies that dissolve into ink-like ooze when the spores are mature via autodigestion.',
-                identification: 'Dark-spored agarics that generally have soft, fragile fruiting bodies; characterized by black, dark brown, rarely reddish spore prints.'
+                identification: 'Dark-spored agarics that generally have soft, fragile fruiting bodies; Characterised by black, dark brown, rarely reddish spore prints.'
             }
         ],
         eol: "http://eol.org/pages/5970/overview",
@@ -2674,9 +2674,9 @@ export const taxa = [
             },
         ],
         traits: [ 
-            { name: SD.name.ORGANISATION, value: SD.organisation.EUSOCIAL },
+            { name: SD.name.ORGANISATION, value: SD.organisation.EUSOCIAL },            
             { name: SD.name.SENSORY_ACUITY, value: SD.sense.SMELL },
-            { name: SD.name.BEHAVIOUR, value: SD.behaviour.VOCALISATION },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.VOCALISATION },            
          ],
     },
     {
@@ -2725,7 +2725,7 @@ export const taxa = [
             {   
                 language: 'en',
                 summary: 'Species mostly tropical or subtropical.',
-                identification: 'Large, slow-moving insects that are characterized by front legs with enlarged femurs.'
+                identification: 'Large, slow-moving insects that are Characterised by front legs with enlarged femurs.'
             },
         ],
         traits: [ 
@@ -2841,7 +2841,7 @@ export const taxa = [
         traits: [ 
             { name: SD.name.MIGRATORY, value: SD.whether.YES },
             { name: SD.role.CARNIVOROUS, value: 'Fish, reptiles, amphibians' },
-            { name: SD.role.CARNIVOROUS, value: 'Crustaceans, molluscs, aquatic insects' },
+            { name: SD.role.CARNIVOROUS, value: 'Crustaceans, molluscs, aquatic insects' },            
          ],
     },
     {
@@ -2900,8 +2900,8 @@ export const taxa = [
             { name: SD.name.BEHAVIOUR, value: SD.behaviour.TERRITORIAL },
             { name: SD.name.BEHAVIOUR, value: SD.behaviour.COOPERATIVE_BREEDING },
             { name: SD.name.BEHAVIOUR, value: SD.behaviour.TOOL_MAKING },
-            { name: SD.role.OMNIVOROUS, value: 'Invertebrates, nestlings, small mammals' },
-            { name: SD.role.OMNIVOROUS, value: 'Berries, fruits, seeds, carrion' },
+            { name: SD.role.OMNIVORE, value: 'Invertebrates, nestlings, small mammals' },
+            { name: SD.role.OMNIVORE, value: 'Berries, fruits, seeds, carrion' },
             { name: SD.name.SHELTER, value: `${SD.shelter.ROOKERY}` },
             { name: SD.name.MATING_SYSTEM, value: SD.mating.MONOGAMOUS },
             { name: SD.name.SENSORY_ACUITY, value: SD.sense.SPATIAL },
@@ -2959,8 +2959,8 @@ export const taxa = [
             },
         ],
         traits: [
-            { name: SD.role.OMNIVOROUS, value: 'Insects, earthworms, small invertebrates' },
-            { name: SD.role.OMNIVOROUS, value: 'Seeds, fruit, bird\'s eggs' },
+            { name: SD.role.OMNIVORE, value: 'Insects, earthworms, small invertebrates' },
+            { name: SD.role.OMNIVORE, value: 'Seeds, fruit, bird\'s eggs' },
             { name: SD.name.ACTIVE, value: SD.active.NOCTURNAL },
         ],
     },
@@ -2983,7 +2983,7 @@ export const taxa = [
             {   
                 language: 'en',
                 summary: 'Family of mushroom-forming fungi bearing close affinity to the boletes.',
-                identification: 'May hve decurrent gills (Paxillus), or decurrent pores (Gyrodon).'
+                identification: 'May have decurrent gills (Paxillus), or decurrent pores (Gyrodon).'
             },
         ],
         traits: [
@@ -3028,7 +3028,7 @@ export const taxa = [
         ],
         wiki: "https://en.wikipedia.org/wiki/Suillaceae",
         eol: "https://eol.org/pages/7653",
-        thumb: 'media/00/1a/57/8.6008530675.260x190.jpg',
+        thumb: '00/1a/57/8.6008530675.260x190.jpg',
         descriptions: [
             {   
                 language: 'en',
@@ -3037,6 +3037,906 @@ export const taxa = [
             },
         ],
         traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Cladoniaceae',
+        genera: '16',
+        species: '400+',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Cladoniaceae",
+        eol: "https://eol.org/pages/46718119",
+        thumb: '7a/54/ff/539.RRFNL_BIOUG24047-B12_1440089708_jpg.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family including reindeer moss and cup lichens (Cladonia), forms major part of diet of large mammals in taiga and tundra ecosystems.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Lecanoraceae',
+        genera: '60',
+        species: '--',
+        names: [ { language: "en", names: ['Rim Lichens']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Lecanoraceae",
+        eol: "https://eol.org/pages/6155",
+        thumb: '89/28/4b/549.BI-image-109462.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of lichenized fungi with widespread distribution in the order Lecanorales.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Ochrolechiaceae',
+        genera: '60',
+        species: '--',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Ochrolechiaceae",
+        eol: "https://eol.org/pages/8578664",
+        thumb: '89/28/4b/549.BI-image-109462.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of lichenized fungi in the order Pertusariales.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Placynthiaceae',
+        genera: '--',
+        species: '--',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Placynthiaceae",
+        eol: "https://eol.org/pages/6085",
+        thumb: '77/c1/c6/539.KNWRL_KNWR-Herb-9072_1386704246_jpg.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Lichenized family of fungi in the order Peltigerales. Species found largely in northern temperate regions.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Physciaceae',
+        genera: '17',
+        species: '512',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Physciaceae",
+        eol: "https://eol.org/pages/6143",
+        thumb: '89/c8/22/549.BI-image-31342.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of mostly lichen-forming fungi belonging to the class Lecanoromycetes in the division Ascomycota.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Teloschistaceae',
+        genera: '--',
+        species: '--',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Teloschistaceae",
+        eol: "https://eol.org/pages/6031",
+        thumb: '77/c1/ac/539.KNWRL_KNWR-Herb-9045_1386702194_jpg.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of mostly lichen-forming fungi belonging to the class Lecanoromycetes in the division Ascomycota.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Ramalinaceae',
+        genera: '--',
+        species: '--',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Ramalinaceae",
+        eol: "https://eol.org/pages/6139",
+        thumb: '81/9d/a2/542.9769039745.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Widespread family of lichenized fungi in the order Lecanorales.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Rhizocarpaceae',
+        genera: '--',
+        species: '--',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Rhizocarpaceae",
+        eol: "https://eol.org/pages/6138",
+        thumb: '81/85/65/542.9266791241.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of fungi in the Ascomycota, class Lecanoromycetes.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Graphidaceae',
+        genera: '--',
+        species: '--',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Graphidaceae",
+        eol: "https://eol.org/pages/6097",
+        thumb: '85/21/1d/7.CalPhotos_0000_0000_0209_1556.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of funghi in the order Ostropales.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Physalacriaceae',
+        genera: '21',
+        species: '~900',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Physalacriaceae",
+        eol: "https://eol.org/pages/5973",
+        thumb: '59/33/e3/509.2929514.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of fungi in the order Agaricales. Widespread distribution (from Arctic, the tropics, marine sites, fresh waters to semiarid forests).',
+                identification: 'Most species in the Physalacriaceae form fruit bodies with caps and stipes.'
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Peltigeraceae',
+        genera: '2',
+        species: '101',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Peltigeraceae",
+        eol: "https://eol.org/pages/6086",
+        thumb: '7e/6c/d7/542.14010002549.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Lichenized family of fungi in the order Peltigerales. Widespread distribution especially prevalent in temperate regions.',
+                identification: ''
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Araceae',
+        genera: '114',
+        species: '~3750',
+        names: [ { language: "en", names: ['Arum Family, Aroids']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Aronstabgewächse' ]},
+            { language: "es", names:[ 'Aráceas' ]},
+            { language: "pt", names:[ 'Aráceas' ]},
+            { language: "it", names:[ 'Aracee' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Araceae",
+        eol: "https://eol.org/pages/8191",
+        thumb: '59/ff/c4/509.33653586.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of monocotyledonous flowering plants in which flowers are borne on a type of inflorescence called a spadix.',
+                identification: 'Inflorescence is composed of a spadix, which is almost always surrounded by a modified leaf called a spathe.'
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Adoxaceae',
+        genera: '5',
+        species: '~150–200',
+        names: [ { language: "en", names: ['Moschatel Family']},
+            { language: "fr", names:[ 'Adoxacées' ]},
+            { language: "de", names:[ 'Moschuskrautgewächse' ]},
+            { language: "es", names:[ 'Adoxáceas' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Adoxaceae",
+        eol: "https://eol.org/pages/4257",
+        thumb: '55/99/9e/509.1181679.98x68.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Small family of flowering plants in the order Dipsacales.',
+                identification: 'Characterised by opposite toothed leaves, small 4 or 5-petalled flowers in cymose inflorescences. Fruit is a drupe.'
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Melanthiaceae',
+        genera: '17',
+        species: '173',
+        names: [ { language: "en", names: ['Bunch Flower Family']},
+            { language: "fr", names:[ 'Mélanthiacées' ]},
+            { language: "de", names:[ 'Germergewächse' ]},
+            { language: "es", names:[ 'Melanthiáceas' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Melanthiaceae",
+        eol: "https://eol.org/pages/5431",
+        thumb: '55/6d/56/509.11059011.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of flowering perennial herbs native to the Northern Hemisphere.',
+                identification: 'Sepals and petals closely resemble each other and are often large and showy like those of lilies.'
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Felidae',
+        genera: '17',
+        species: '36',
+        names: [ { language: "en", names: ['Cats, Felid']},
+            { language: "fr", names:[ 'Félidés' ]},
+            { language: "de", names:[ 'Katzen' ]},
+            { language: "es", names:[ 'Félidos' ]},
+            { language: "pt", names:[ 'Felídeos' ]},
+            { language: "it", names:[ 'Felidi' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Felidae",
+        eol: "https://eol.org/pages/7674",
+        thumb: '58/db/19/509.27381988.98x68.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Obligate carnivores, and most are solitary predators ambushing or stalking their prey.',
+                identification: 'Retractile claws, slender muscular bodies and strong flexible forelimbs. Teeth and facial muscles allow for a powerful bite.'
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Libellulidae',
+        genera: '140+',
+        species: '1000+',
+        names: [ { language: "en", names: ['Skimmers, Perchers']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Libellulidae",
+        eol: "https://eol.org/pages/963",
+        thumb: '58/f2/37/509.27642691.98x68.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Near worldwide distribution, these are almost certainly the most often seen of all dragonflies.',
+                identification: 'Stout-bodied larvae with the lower lip or labium developed into a mask over the lower part of the face.'
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Chrysomelidae',
+        genera: '~2500',
+        species: '~50000',
+        names: [ { language: "en", names: ['Leaf beetle']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Blattkäfer' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Chrysomelidae",
+        eol: "https://eol.org/pages/7463",
+        thumb: '41/74/d3/18.https___www_inaturalist_org_photos_5313071.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Large family of small to medium-sized beetles.',
+                identification: 'Most species are domed, and oval in dorsal view, often with metallic luster or multiple colors. Tarsal form is 5-5-5.'
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Syrphidae',
+        genera: '~200',
+        species: '~6000',
+        names: [ { language: "en", names: ['Hoverfly, Flower Flies']},
+            { language: "fr", names:[ 'Syrphes, Syrphides' ]},
+            { language: "de", names:[ 'Schwebfliegen' ]},
+            { language: "es", names:[ 'Sírfidos' ]},
+            { language: "pt", names:[ 'Mosca das flores' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Syrphidae",
+        eol: "https://eol.org/pages/9017",
+        thumb: '80/14/6e/542.4817238519.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Common worldwide, often seen hovering near or feeding on nectar of flowers.',
+                identification: 'Adults of many species feed mainly on nectar and pollen, while larvae (maggots) are omnivores or saprotrophs.',                
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Formicidae',
+        genera: '~12500',
+        species: '~22000',
+        names: [ { language: "en", names: ['Ants']},
+            { language: "fr", names:[ 'Fourmi' ]},
+            { language: "de", names:[ 'Ameisen' ]},
+            { language: "es", names:[ 'Formícidos' ]},
+            { language: "pt", names:[ 'Formiga' ]},
+            { language: "it", names:[ 'Formiche' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Formicidae",
+        eol: "https://eol.org/pages/699",
+        thumb: '67/fd/42/509.8277412.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Eusocial insects together with the related wasps and bees, belong to the order Hymenoptera.',
+                identification: 'Form colonies that range from a few dozen predatory individuals living to highly organised colonies of millions in large territories.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.ORGANISATION, value: SD.organisation.EUSOCIAL },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.PROBLEM_SOLVING },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.DIVISION_OF_LABOUR },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.SUPERORGANISM },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Lycaenidae',
+        genera: '479',
+        species: '+6000',
+        names: [ { language: "en", names: ['Gossamer-winged butterflies']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Bläulinge' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Lycaenidae",
+        eol: "https://eol.org/pages/855",
+        thumb: '63/98/33/509.50000957.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Divided into subfamilies of the blues (Polyommatinae), the coppers (Lycaeninae), the hairstreaks (Theclinae) and the harvesters (Miletinae).',
+                identification: 'Adults are small, under 5cm, and brightly coloured, sometimes with a metallic gloss.', 
+            },
+        ],
+        traits: [
+
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Castoridae',
+        genera: '1',
+        species: '2',
+        names: [ { language: "en", names: ['Beavers']},
+            { language: "fr", names:[ 'Castoridés' ]},
+            { language: "de", names:[ 'Biber' ]},
+            { language: "es", names:[ 'Castóridos' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Castoridae",
+        eol: "https://eol.org/pages/8684",
+        thumb: '60/74/b8/509.40728711.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Once a highly diverse group of rodents now restricted to a single genus, Castor.',
+                identification: 'Medium-sized mammals, large compared with most rodents. Semiaquatic, with sleek bodies and webbed hind feet, more agile in the water than on land. Tails flattened and scaly.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.SHELTER, value: `${SD.shelter.LODGE}` },
+            { name: SD.name.SHELTER, value: `${SD.shelter.DAM}` },
+            { name: SD.role.HERBIVORE, value: `${SD.foodType.GRASS},${SD.foodType.LEAVES},${SD.foodType.WOOD}` },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Geometridae',
+        genera: '393',
+        species: '~23,000',
+        names: [ { language: "en", names: ['Geometer moths, Geometrid moths']},
+            { language: "fr", names:[ 'Géométridé' ]},
+            { language: "de", names:[ 'Spanner' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Geometridae",
+        eol: "https://eol.org/pages/827",
+        thumb: '66/f4/40/509.63864145.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Name derived from the way their larvae, or inchworms, appear to "measure the earth".',
+                identification: 'Adults have slender abdomens and broad wings which are usually held flat with the hind wings visible.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.YOUNG, value: `${SD.young.CATERPILLAR }` },
+            { name: SD.name.YOUNG, value: `${SD.young.LARVA }` },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Acrididae',
+        genera: '115',
+        species: '~10,000',
+        names: [ { language: "en", names: ['Short Horned Grasshoppers']},
+            { language: "fr", names:[ 'Acrididae' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ 'Acrídidos' ]},
+            { language: "pt", names:[ 'Acrididae' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Acrididae",
+        eol: "https://eol.org/pages/6580",
+        thumb: '58/3c/34/509.24611071.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family contains all locusts (swarming grasshoppers).',
+                identification: 'Characterised by relatively short and stout antennae, and tympana on the side of the first abdominal segment.', 
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Pentatomidae',
+        genera: '115',
+        species: '~10,000',
+        names: [ { language: "en", names: ['Shield bugs, Stink bugs']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ 'Pentatómidos' ]},
+            { language: "pt", names:[ 'Acrididae' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Pentatomidae",
+        eol: "https://eol.org/pages/620",
+        thumb: '55/58/9d/509.1073240.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Release unpleasant odor from pores in the thorax when disturbed or crushed.',
+                identification: 'Their antennae have five sections. Scutellum body typically half of an inch long, green or brown color.', 
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Cerambycidae',
+        genera: '115',
+        species: '~26,000',
+        names: [ { language: "en", names: ['Longhorn beetle']},
+            { language: "fr", names:[ 'Longicornes' ]},
+            { language: "de", names:[ 'Bockkäfer' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Cerambycidae",
+        eol: "https://eol.org/pages/357",
+        thumb: '5a/e6/b8/509.13027675.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Large, cosmopolitan family.',
+                identification: 'Characterised by extremely long antennae, which are often as long as or longer than the beetle\'s body.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.CRYPSIS, value: SD.crypsis.MIMICRY },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Calliphoridae',
+        genera: '+150',
+        species: '~1200',
+        names: [ { language: "en", names: ['Blow flies, bluebottles']},
+            { language: "fr", names:[ 'Longicornes' ]},
+            { language: "de", names:[ 'Bockkäfer' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Calliphoridae",
+        eol: "https://eol.org/pages/493",
+        thumb: '67/99/24/509.7207162.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of insects in the order Diptera, with 1,200 known species.',
+                identification: 'Adults are commonly shiny with metallic colouring, often with blue, green, or black thoraces and abdomens. Antennae are three-segmented and aristate.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.ANAUTOGENY },
+            { name: SD.role.POLLINATOR, value: 'American pawpaw, Dead horse arum' },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Lygaeidae',
+        genera: '60',
+        species: '3000-5000',
+        names: [ { language: "en", names: ['Seed bugs']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Bodenwanzen, Langwanzen' ]},
+            { language: "es", names:[ 'Ligeidos' ]},
+            { language: "pt", names:[ 'ligeídeos' ]},
+            { language: "it", names:[ 'Ligeidi' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Lygaeidae",
+        eol: "https://eol.org/pages/601",
+        thumb: '33/30/d3/18.https___www_inaturalist_org_photos_2877219.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Many of the species feed on seeds, some feed on sap (mucivory), and a few, such as the wekiu bug, feed on insects.',
+                identification: 'Brown to brightly patterned with red, white, or black spots and bands. 3 to 15mm in length.', 
+            },
+        ],
+        traits: [
+            { name: SD.role.MUCIVORE, value: 'Plantae' },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Oxycarenidae',
+        genera: '+20',
+        species: '+140',
+        names: [ { language: "en", names: ['']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Oxycarenidae",
+        eol: "https://eol.org/pages/2644442",
+        thumb: '64/22/55/509.51869276.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of true bugs in the order Hemiptera.',
+                identification: '', 
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Tettigoniidae',
+        genera: '~138',
+        species: '+6400',
+        names: [ { language: "en", names: ['Bush crickets, katydids']},
+            { language: "fr", names:[ 'Sauterelles1' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ 'Saltamontes longicornios' ]},
+            { language: "pt", names:[ 'Esperanças' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Tettigoniidae",
+        eol: "https://eol.org/pages/972",
+        thumb: '59/32/44/509.29244933.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Primarily nocturnal in habit with strident mating calls.',
+                identification: 'Many exhibit mimicry and camouflage, commonly with shapes and colors similar to leaves.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.CRYPSIS, value: SD.crypsis.CAMOUFLAGE },
+            { name: SD.name.CRYPSIS, value: SD.crypsis.MIMICRY },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Bombycidae',
+        genera: '~22',
+        species: '+6400',
+        names: [ { language: "en", names: ['Silkworm Moths']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Echten Spinner' ]},
+            { language: "es", names:[ 'Bombícidos' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Bombycidae",
+        eol: "https://eol.org/pages/778",
+        thumb: '5d/bc/9d/509.26603664.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of moths undergoing reclassification.',
+                identification: 'Best-known species is Bombyx mori (Linnaeus) or silkworm, native to northern China and long domesticated.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.CRYPSIS, value: SD.crypsis.CAMOUFLAGE },
+            { name: SD.name.CRYPSIS, value: SD.crypsis.MIMICRY },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Eumenidae',
+        genera: '~200',
+        species: '~3000',
+        names: [ { language: "en", names: ['Potter and Mason Wasps']},
+            { language: "fr", names:[ 'Guêpes maçonnes' ]},
+            { language: "de", names:[ 'Solitären Faltenwespen' ]},
+            { language: "es", names:[ 'Eumeninos' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Eumenidae",
+        eol: "https://eol.org/pages/49316971",
+        thumb: '81/55/be/542.8450637332.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Cosmopolitan wasp group presently treated as a subfamily of Vespidae, formerly a separate family, Eumenidae.',
+                identification: 'Black or brown, commonly marked with strikingly contrasting patterns of yellow, white, orange, or red, faint to strong blue or green metallic highlights in tropical regions.', 
+            },
+        ],
+        traits: [
+            { name: SD.role.PREDATOR, value: `Beetle larvae, spiders, caterpillars`, type: SD.symbiosis.PREDATION },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.MASS_PROVISIONING },
+            { name: SD.name.ORGANISATION, value: SD.organisation.SOLITARY },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Scarabaeidae',
+        genera: '102',
+        species: '+30000',
+        names: [ { language: "en", names: ['Scarab beetles, lamellicorn beetles']},
+            { language: "fr", names:[ 'Scarabéidés' ]},
+            { language: "de", names:[ 'Blatthornkäfer' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ 'Escaravelho' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Scarabaeidae",
+        eol: "https://eol.org/pages/8134",
+        thumb: '57/69/76/509.20517278.jpg',
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Cosmopolitan family of 30,000 species whose classification is under review.',
+                identification: 'Stout-bodied beetles, many with bright metallic colours, 1.5 and 160mm in length. Distinctive, clubbed antennae.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.ACTIVE, value: SD.active.NOCTURNAL },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Vespidae',
+        genera: '106',
+        species: '~5000',
+        names: [ { language: "en", names: ['Wasps']},
+            { language: "fr", names:[ 'Guêpe' ]},
+            { language: "de", names:[ 'Faltenwespen' ]},
+            { language: "es", names:[ 'Avispa, Véspidos' ]},
+            { language: "pt", names:[ 'Vespa' ]},
+            { language: "it", names:[ 'Vespa' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Vespidae",
+        thumb: '59/9f/6f/509.3168239.jpg',
+        eol: "https://eol.org/pages/5242",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Cosmopolitan diverse, family of eusocial and solitary wasps.',
+                identification: 'Usually make nests out of papery wood pulp. Catch and kill other insect.', 
+            },
+        ],
+        traits: [
+            { name: SD.role.POLLINATOR, value: 'Plantae' },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Scolopacidae',
+        genera: '106',
+        species: '~5000',
+        names: [ { language: "en", names: ['Waders, sandpipers']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Schnepfenvögel' ]},
+            { language: "es", names:[ 'Escolopácidos' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Scolopacidae",
+        thumb: '55/b3/f1/509.12308344.jpg',
+        eol: "https://eol.org/pages/7988",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Majority eat small invertebrates picked from mud or soil. Different lengths of bills enable species to feed in the same habitat.',
+                identification: 'Long bodies and legs, narrow wings. Most have narrow bill, otherwise form and length are variable. Small to medium-sized birds, 12-66cmcm in length.', 
+            },
+        ],
+        traits: [
+            { name: SD.role.BEHAVIOUR, value: SD.behaviour.PRECOCIAL },
+        ],
+    },
+    {
+        taxon: 'subfamily',
+        name: 'Cetoniinae',
+        genera: '502',
+        species: '~4000',
+        names: [ { language: "en", names: ['Flower chafers']},
+            { language: "fr", names:[ 'Cetoniinae' ]},
+            { language: "de", names:[ 'Rosenkäfer' ]},
+            { language: "es", names:[ 'Cetoninos' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Cetoniinae",
+        thumb: '59/ee/57/509.33459647.jpg',
+        eol: "https://eol.org/pages/49317841",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Group of scarab beetles',
+                identification: 'Many species are diurnal and visit flowers for pollen and nectar, or to browse on the petals. Some feed on fruit.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.ACTIVE, value: SD.active.DIURNAL },
         ],
     },
 ];

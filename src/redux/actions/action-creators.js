@@ -19,6 +19,7 @@ const nextLayout = makeActionCreator(types.NEXT_LAYOUT);
 const nexItem = makeActionCreator(types.NEXT_ITEM);
 const endRevision = makeActionCreator(types.END_REVISION);
 const updateHistory = makeActionCreator(types.UPDATE_HISTORY)
+const newCollection = makeActionCreator(types.NEW_COLLECTION);
 const changeCollection = makeActionCreator(types.CHANGE_COLLECTION);
 const changeCollectionItems = makeActionCreator(types.CHANGE_COLLECTION_ITEMS);
 const nextRound = makeActionCreator(types.NEXT_ROUND);
@@ -38,6 +39,7 @@ const boundNextLayout = data => store.dispatch(nextLayout(data));
 const boundNextItem = data => store.dispatch(nexItem(data,{delay:500}));
 const boundEndRevision = data => store.dispatch(endRevision(data));
 const boundUpdateHistory = data => store.dispatch(updateHistory(data));
+const boundNewCollection = data => store.dispatch(newCollection(data));
 const boundChangeCollection = data => store.dispatch(changeCollection(data));
 const boundChangeCollectionItems = data => store.dispatch(changeCollectionItems(data));
 const boundNextRound = data => store.dispatch(nextRound(data));
@@ -58,6 +60,7 @@ export const actions = {
     boundNextLayout,
     boundEndRevision,
     boundUpdateHistory,
+    boundNewCollection,
     boundChangeCollection,
     boundChangeCollectionItems,
     boundNextRound,

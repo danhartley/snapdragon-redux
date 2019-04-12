@@ -183,11 +183,11 @@ export const plantae = [
     },
     {
         term: 'Dicotyledon (dicot)',
-        definition : "plant group where seed has two embryonic leaves (cotyledons)."
+        definition : "Plant group where seed has two embryonic leaves (cotyledons)."
     },
     {
         term : "Monocotyledon (monocot)",
-        definition : "plant group where seed has one embryonic leaf (cotyledon)."
+        definition : "Plant group where seed has one embryonic leaf (cotyledon)."
     },
     {
         term: 'Self-pollination',
@@ -298,5 +298,25 @@ export const plantae = [
         term: 'Anthropochory',
         definition: 'Seed dispersal by humans.',
         wiki: 'https://en.wikipedia.org/wiki/Seed_dispersal#Allochory'
+    },
+    {
+        term: 'Inflorescence',
+        definition: 'Group or cluster of flowers arranged on a stem composed of a main branch or complicated arrangement of branches.',
+        wiki: 'https://en.wikipedia.org/wiki/Inflorescence'
+    },
+    {
+        term: 'Spadix',
+        definition: 'Type of spike inflorescence having small flowers borne on a fleshy stem.',
+        wiki: 'https://en.wikipedia.org/wiki/Spadix_(botany)'
+    },
+    {
+        term: 'Spathe',
+        definition: 'Large bract or pair of bracts forming a sheath to enclose the flower cluster (Arums, Irises, Crocuses)',
+        wiki: 'https://en.wikipedia.org/wiki/Bract#Spathe'
+    },
+    {
+        term: "Aristate",
+        definition: "Having a spiny or bristly tip (of leaf)",
+        wiki: "https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#aristate"
     },
 ];

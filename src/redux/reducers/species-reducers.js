@@ -108,6 +108,9 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 1,
             collection.allItems = [ ...collection.items, ...collection.excludedItems ];
             return collection;
         }
+        case types.NEW_COLLECTION: {
+            return { ...state, ...action.data.collection };
+        }
         case types.CHANGE_COLLECTION: {
             const { collection, nextItem } = changeCollection(state, action);
             return { ...state, ...collection, nextItem };
