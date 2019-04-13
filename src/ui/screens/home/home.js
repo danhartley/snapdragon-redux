@@ -83,7 +83,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     const guideSummary = (speciesCount) => {
         const parent = document.querySelector('.home-container .js-snapdragon-tag');
-        parent.innerHTML = '';
+        if(parent) parent.innerHTML = '';
         renderGuideSummary(R.clone(config), parent, speciesCount);
         deleteLink.classList.remove('hide');
         editLink.classList.remove('hide');

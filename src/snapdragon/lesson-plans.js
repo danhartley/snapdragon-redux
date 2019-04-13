@@ -28,7 +28,8 @@ const {
     glossaryTerms,
     latinEpithets,
     cultivars,
-    mixedSpecimenImages
+    mixedSpecimenImages,
+    mediaMatch
   } = layouts;
 
 const propertyTrait = (traitPropertyMatch, trait) => {
@@ -57,7 +58,7 @@ let landscapeLayouts = [
     //symbioticPropertyMatch
 ];
 
-landscapeLayouts = [ traitPropertyMatch ];
+landscapeLayouts = [ mediaMatch ];
 
 const landscapeLesson1 = {
     id: 1,
@@ -69,8 +70,8 @@ const landscapeLesson1 = {
             name:'Level 1',
             description: 'Species recognition',
             layouts: landscapeLayouts,
-            wildcardLayouts : [ glossaryTerms ],
-            reviewLayouts: [ multiSpecimenCommonMatch, mixedSpeciesMatch ]
+            // wildcardLayouts : [ glossaryTerms ],
+            // reviewLayouts: [ multiSpecimenCommonMatch, mixedSpeciesMatch ]
         },
         {   id: 2,
             name:'Level 2',
@@ -234,6 +235,7 @@ let portraitLayouts = [
 ];
 
 // portraitLayouts = [ textCompleteSpecies ];
+portraitLayouts = [ mediaMatch ];
 
 const portraitLesson1 = {
     id: 101,
