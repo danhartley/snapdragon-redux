@@ -14,7 +14,7 @@ const getTraits = SD => {
     ] },
     { name: 'Cyanistes caeruleus', traits: [
         { name: SD.name.RANK, value: '3', description: 'common', language: 'en' },
-        { name: 'song', value: '431038', description: 'xeno-canto id' },
+        { name: 'song', value: '204387', description: 'xeno-canto id' },
     ]  },    
     { name: 'Turdus merula', traits: [
         { name: SD.name.RANK, value: '4', description: 'common', language: 'en' },
@@ -22,22 +22,22 @@ const getTraits = SD => {
     ] },
     { name: 'Erithacus rubecula', traits: [
         { name: SD.name.RANK, value: '8', description: 'common', language: 'en' },
-        { name: 'song', value: '401271', description: 'xeno-canto id' },
+        { name: 'song', value: '403639', description: 'xeno-canto id' },
     ] },
     { name: 'Apus apus', traits: [
-        { name: 'song', value: '429082', description: 'xeno-canto id' }
+        { name: 'song', value: '320418', description: 'xeno-canto id' }
     ] },
     { name: 'Sturnus vulgaris', traits: [
         { name: SD.name.RANK, value: '2', description: 'common', language: 'en' },
-        { name: 'song', value: '431714', description: 'xeno-canto id' },
+        { name: 'song', value: '281735', description: 'xeno-canto id' },
     ] },
     { name: 'Columba palumbus', traits: [
         { name: SD.name.RANK, value: '5', description: 'common', language: 'en' },
-        { name: 'song', value: '429089', description: 'xeno-canto id' },
+        { name: 'song', value: '462148', description: 'xeno-canto id' },
     ] },
     { name: 'Carduelis carduelis', traits: [
         { name: SD.name.RANK, value: '6', description: 'common', language: 'en' },
-        { name: 'song', value: '416636', description: 'xeno-canto id' },
+        { name: 'song', value: '75593', description: 'xeno-canto id' },
     ] },
     { name: 'Parus major', traits: [
         { name: SD.name.RANK, value: '7', description: 'common', language: 'en' },
@@ -45,11 +45,11 @@ const getTraits = SD => {
     ] },
     { name: 'Aegithalos caudatus', traits: [
         { name: SD.name.RANK, value: '9', description: 'common', language: 'en' },
-        { name: 'song', value: '404853', description: 'xeno-canto id' },
+        { name: 'song', value: '362773', description: 'xeno-canto id' },
     ] },
     { name: 'Fringilla coelebs', traits: [
         { name: SD.name.RANK, value: '10', description: 'common', language: 'en' },
-        { name: 'song', value: '426190', description: 'xeno-canto id' },
+        { name: 'song', value: '465544', description: 'xeno-canto id' },
         { name: SD.name.LENGTH, value: '14.5cm' },
         { name: SD.name.VOICE, value: 'Loud \'fink\'. Musical rattle with final flourish' },
         { name: SD.name.LOOK_ALIKES, values: [ 'Fringilla montifringilla', 'Pyrrhula pyrrhula' ]},
