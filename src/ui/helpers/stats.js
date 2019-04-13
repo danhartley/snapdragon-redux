@@ -39,6 +39,31 @@ const getItemScoreStats = (collection, history) => {
     return collectionItems;
 };
 
+export const getSpeciesRecords = history => {
+
+    const lastRoundIndex = history.scores.length -1;
+    const correctAnswers = history.scores.map(round => round.passes)[lastRoundIndex].map(answer => answer.binomial);
+    const incorrectAnswers = history.scores.map(round => round.fails)[lastRoundIndex].map(answer => answer.binomial);
+    const uniqueIncorrectAnswers = [ ...(new Set(incorrectAnswers)) ];
+    const uniqueCorrectAnswers = [ ...(new Set(correctAnswers)) ];
+
+    const speciesWithFails = collection.items.filter(function(item) {
+        return uniqueIncorrectAnswers.indexOf(item.name) !== -1;
+    });
+
+    const speciesWithPasses = collection.items.filter(function(item) {
+        return uniqueCorrectAnswers.indexOf(item.name) !== -1;
+    });
+
+    let speciesWithoutFails = new Set([...speciesWithPasses].filter(x => {
+            !new Set(speciesWithFails).has(x);
+        })
+    );
+
+    const requiringRevision = { ...collection, ...{ items : speciesWithFails } };
+    const learnt = { ...collection, ...{ items : speciesWithoutFails } };
+};
+
 const getItemsForRevision = (collection, history, minimumScore) => {
 
     const items = getItemScoreStats(collection, history);

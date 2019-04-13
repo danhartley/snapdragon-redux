@@ -407,10 +407,10 @@ a.dropdown-item {
   text-transform: initial;
 }
 
-.list-group-collection {
+/* .list-group-collection {
   flex: auto;
   flex-grow: 1;
-}
+} */
 
 .lesson-plans .table-row.species-background:nth-child(n) {
   background-color: var(--snap-species-highlight-background);

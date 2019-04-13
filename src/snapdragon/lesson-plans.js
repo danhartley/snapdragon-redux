@@ -69,22 +69,23 @@ const landscapeLesson1 = {
         {   id: 1,
             name:'Level 1',
             description: 'Species recognition',
-            layouts: landscapeLayouts,
+            layouts: [ familyMatch ],
             // wildcardLayouts : [ glossaryTerms ],
             // reviewLayouts: [ multiSpecimenCommonMatch, mixedSpeciesMatch ]
         },
         {   id: 2,
             name:'Level 2',
             description: 'The common name of species',
+            // layouts: landscapeLayouts
             layouts: [ 
                 latinToCommonMatch,
-                commonEntry
+                // commonEntry
             ],
-            wildcardLayouts : [ ],
-            reviewLayouts: [ 
-                latinToCommonMatch,
-                commonEntry,
-            ]
+            // wildcardLayouts : [ ],
+            // reviewLayouts: [ 
+            //     latinToCommonMatch,
+            //     commonEntry,
+            // ]
         },
         {   id: 3,
             name:'Level 3',
@@ -235,9 +236,9 @@ let portraitLayouts = [
 ];
 
 // portraitLayouts = [ textCompleteSpecies ];
-portraitLayouts = [ mediaMatch ];
+// portraitLayouts = [ mediaMatch ];
 
-const portraitLesson1 = {
+let portraitLesson1 = {
     id: 101,
     name:'Lesson 101',
     portrait: true,
@@ -245,15 +246,16 @@ const portraitLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: portraitLayouts,
+            layouts: [ mediaMatch ],
             wildcardLayouts : [],
             reviewLayouts: [ latinToCommonMatch ]
         },
         {   id: 2,
             name:'Level 2',
-            layouts: [ textCompleteGenus, commonEntry, textCompleteSpecies, genusEntry ],
-            wildcardLayouts : [ latinEpithets ],
-            reviewLayouts: [ commonEntry, textCompleteSpecies, genusEntry ]
+            layouts: portraitLayouts
+            // layouts: [ textCompleteGenus, commonEntry, textCompleteSpecies, genusEntry ],
+            // wildcardLayouts : [ latinEpithets ],
+            // reviewLayouts: [ commonEntry, textCompleteSpecies, genusEntry ]
         },
         {   id: 3,
             name:'Level 3',
@@ -275,6 +277,8 @@ const portraitLesson1 = {
         }   
     ]
 };
+
+portraitLesson1 = landscapeLesson1;
 
 const portraitLesson2 = {
     id: 102,

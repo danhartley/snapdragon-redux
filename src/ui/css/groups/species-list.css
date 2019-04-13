@@ -112,6 +112,18 @@ table {
     align-items: center;
   }
 
+  .table-header th:nth-child(5), .table-row td:nth-child(5) {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .table-header th:nth-child(6), .table-row td:nth-child(6) {
+      flex: 1;
+      display: flex;
+      align-items: center;
+  }
+
  /* FUNGI ICONS */
 
  .species-table .mushroom-icon svg {
@@ -154,13 +166,13 @@ table {
         flex: 2;
     }
     
-    .table-header th:nth-child(5), .table-row td:nth-child(5) {
+    /* .table-header th:nth-child(5), .table-row td:nth-child(5) {
         flex: 1;
     }
     
     .table-header th:nth-child(6), .table-row td:nth-child(6) {
         flex: 1;
-    }
+    } */
 
     /* SORT INDICATORS */
 

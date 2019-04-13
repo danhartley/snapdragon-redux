@@ -68,6 +68,18 @@
     }
 }
 
+@media (min-width: 1024px) {
+    .narrow-screen {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1024px) {    
+    .wide-screen {
+      display: none !important;
+    }
+}
+
 @media (min-width: 768px) {
 
     .portrait, .portrait-grid {
