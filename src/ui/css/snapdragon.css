@@ -1867,9 +1867,9 @@ a.collection-disabled {
 }
 
 .home-container .snapdragon-tag, .home-container .summary-scores {
+  font-size: 1.6rem;
   justify-content: center;
   font-family: sentinel;
-  font-size: 2rem;
   font-style: italic;
   display: flex;
   color: var(--snap-link);
@@ -1879,11 +1879,11 @@ a.collection-disabled {
   align-items: center;
   margin-top: 4rem; /* 1 + 3 */
   height: 100%;
-  margin: 0 auto 6rem; /* 5 + 1 */
+  margin: -2rem auto 6rem; /* 5 + 1 */
 }
 
 .home-guide .taxa {
-  font-size: 2rem;
+  /* font-size: 1.4rem; */
   color: var(--snap-collection-active);
 }
 
@@ -1918,7 +1918,7 @@ a.collection-disabled {
 
 .home-container .snapdragon-tag .inat-widget span:nth-child(1) {
   font-style: initial;
-  font-size: 2rem;
+  /* font-size: 1.4rem; */
 }
 
 .example-guide-link span {

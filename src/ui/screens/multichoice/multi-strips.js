@@ -200,7 +200,7 @@ export const renderMultiStrips = (collection) => {
 
         const { term, definition } = layout.definition;
 
-        const number = config.isPortraitMode ? 2 : 4;
+        const number = config.isPortraitMode ? 4 : 4;
 
         const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa).value, 'common' ]));
 
