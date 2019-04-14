@@ -466,7 +466,7 @@
     z-index: 9999;
     position: absolute;
     padding: 0 .25rem;
-    color: var(--snap-modal-title);
+    color: var(--snap-text-dark-medium-dark);
     background-color: rgb(250, 250, 250);
     letter-spacing: .04rem;
     border: .05rem solid lightgray;

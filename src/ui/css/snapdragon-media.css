@@ -115,10 +115,6 @@
         max-width: initial;
     }
 
-    #menuModal .modal-body.settings-modal {
-        padding: rem;
-    }
-
     .species-grid-container {
         display: flex;
         align-items: center;

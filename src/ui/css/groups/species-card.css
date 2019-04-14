@@ -2,10 +2,6 @@
     max-height: 7.5rem;
 }
 
-#cardModal .imageSlider .carousel-item {
-    height: 25vh;
-  }
-
 /* TRAITS CAROUSEL */
 
 .bird-song iframe {
@@ -42,18 +38,6 @@
     width: 64px;
     object-fit: scale-down;
 }
-
-#cardModal .iconic-icon {
-    float: left;
-    font-size: 1rem;
-    color: var(--snap-iconic-icon-header);
-  }
-
-  #cardModal .compare-species-link {
-    pointer-events: none;
-    border: none;
-    color: var(--snap-text-dark) !important;
-  }
 
   /* CARD */
 
@@ -99,13 +83,6 @@
   }
 
 @media (min-width: 768px) {
-
-    /* SPECIES CARD MODAL */
-
-    #cardModal .modal-dialog {
-        min-width: 32rem;
-        max-width: 32rem;
-    }
 
     /* CARD */
 
@@ -182,17 +159,5 @@
       
     .feature-symbiont-list .underline-link {
         text-transform: initial;
-    }    
-
-    /* FEATURES IN MODAL */
-
-    #cardModal .feature-types {
-        width: 100%;
-        margin: 0;
-    }
-
-    #cardModal .feature-symbiont-list.scrollable {        
-        max-height: 12rem;
-        margin: 0;
     }
 }
