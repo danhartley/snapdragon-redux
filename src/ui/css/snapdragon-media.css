@@ -164,13 +164,17 @@
         height: 120px;
     }
 
+    .snapdragon-create-guide {
+        height: 6rem;
+    }
+
     .snapdragon-create-guide > div:nth-child(1), .snapdragon-create-guide > div:nth-child(1) > span:nth-child(1) {
         font-size: 2.6rem;
     }
       
-    /* .home-container .snapdragon-tag, .summary-scores {
-        height: 48vh;
-    } */
+    .home-container .snapdragon-tag, .summary-scores {
+        margin: 0 auto 7rem; /* 6 + 1 */
+    }
 
     .species-pending > div:nth-child(1) {
         font-size: 3.6rem;
