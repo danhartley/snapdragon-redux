@@ -57,6 +57,73 @@
   height: 55vh;
 }
 
+
+/* SPECIES CARD MODAL */
+
+#cardModal .modal-dialog {
+    max-width: 100vw;
+}
+  
+#cardModal .modal-content .snapdragon-container {
+    height: 70vh;
+    border: 0;
+    padding: 0;
+}
+
+#cardModal .modal-body {
+    padding: 1rem 0;
+}
+
+#cardModal .card {
+    margin: 0;
+}
+
+#cardModal .iconic-icon {
+    font-size: 2.4rem;
+    cursor: initial;
+}
+
+
+#cardModal .modal-content .snapdragon-container {  
+    height: 70vh;
+    padding: 0 .5rem;
+}
+
+#cardModal .carousel-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cardModal .prev, #cardModal .next {
+    display: flex;
+    padding: 0 .5rem;
+}
+
+#cardModal .carousel-inner .prev > span,
+#cardModal .carousel-inner .next > span {
+    background-color: rgba(211, 214, 173, 0.2);
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+#cardModal .carousel-inner .prev > span:hover,
+#cardModal .carousel-inner .next > span:hover {
+    opacity: 1;
+}
+
+#cardModal .taxon.card .species-header img {
+    height: 88px;    
+    width: 88px;
+}
+
+#cardModal .taxon.card .species-header > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
 @media (min-width: 768px) {
 
     .modal-body {

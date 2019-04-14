@@ -172,9 +172,9 @@
         font-size: 2.6rem;
     }
       
-    .home-container .snapdragon-tag, .summary-scores {
+    /* .home-container .snapdragon-tag, .summary-scores {
         height: 48vh;
-    }
+    } */
 
     .species-pending > div:nth-child(1) {
         font-size: 3.6rem;

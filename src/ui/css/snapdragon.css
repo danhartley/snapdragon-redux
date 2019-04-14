@@ -1959,7 +1959,7 @@ a.collection-disabled {
 
 .home-container .snapdragon-tag, .summary-scores {
   justify-content: center;
-  height: 40vh;
+  /* height: 40vh; */
   font-family: sentinel;
   font-size: 2rem;
   font-style: italic;
