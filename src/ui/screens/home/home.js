@@ -108,7 +108,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
                 break;
             case 'PREPARE-LESSON':
                 actionLink.removeAttribute('data-toggle');    
-                actionLink.innerHTML = 'Get Species';     
+                actionLink.innerHTML = config.isLandscapeMode ? 'Get Species' : 'Species';
                 document.querySelector('.js-for-text').classList.remove('hide');           
                 guideSummary();
                 actionLink.removeEventListener(prepareHandler);

@@ -22,7 +22,9 @@
 }
 
 @media (min-height: 640px) {
-    
+    .home-container .snapdragon-tag, .home-container .summary-scores {
+        font-size: 2rem;
+    }
 }
 
 /* iPHONE 6,7,8 */
@@ -136,8 +138,16 @@
         cursor: pointer;
     }
 
+    .home-container .snapdragon-tag, .home-container .summary-scores {
+        font-size: 2rem;
+    }
+
     .home-container .snapdragon-tag .inat-widget span:nth-child(1) {
         font-size: 3rem;
+    }
+
+    .home-guide .taxa {
+        font-size: 2rem;
     }
 
     .snapdragon-intro, .snapdragon-help {
@@ -173,7 +183,7 @@
     }
       
     .home-container .snapdragon-tag, .summary-scores {
-        margin: 0 auto 7rem; /* 6 + 1 */
+        margin: -2rem auto 7rem; /* 6 + 1 */
     }
 
     .species-pending > div:nth-child(1) {
