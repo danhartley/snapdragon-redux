@@ -15,7 +15,7 @@ export const buildTable = (collection, config, traits, enums) => {
 
     const template = document.createElement('template');
 
-    const wide = window.matchMedia("(min-width: 1024px)").matches;
+    // const wide = window.matchMedia("(min-width: 1024px)").matches;
 
     const getTraitName = (item, enums) => {
         let traitName = '';        
@@ -79,7 +79,8 @@ export const buildTable = (collection, config, traits, enums) => {
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
     parent.innerHTML = '<div class="snapdragon-container species-list js-species-list"></div>';
     parent = parent.querySelector('.snapdragon-container.js-species-list');
-    template.innerHTML = wide ? speciesTemplate : speciesPortraitTemplate;
+    template.innerHTML = speciesTemplate;
+    // template.innerHTML = wide ? speciesTemplate : speciesPortraitTemplate;
 
     renderTemplate({ collection }, template.content, parent);
 
@@ -143,7 +144,7 @@ export const buildTable = (collection, config, traits, enums) => {
     iconicTaxonHeader.innerHTML = '<span><i class="fas fa-sliders-h"></i></span>';
     filterHeader.appendChild(checkbox); 
     imageHeader.innerHTML = '<div></div>';
-    if(wide) {        
+    if(window.matchMedia("(min-width: 1024px)").matches) {        
         headerRow.appendChild(imageHeader);
         headerRow.appendChild(speciesHeader);    
         headerRow.appendChild(familyHeader);

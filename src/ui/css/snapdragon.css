@@ -310,9 +310,7 @@ a.dropdown-item {
   display: none;
 }
 
-.modal-list.scrollable {
-  height: 50vh;
-}
+
 
 .scrollable.card {
   text-align: left;
@@ -407,10 +405,10 @@ a.dropdown-item {
   text-transform: initial;
 }
 
-.list-group-collection {
+/* .list-group-collection {
   flex: auto;
   flex-grow: 1;
-}
+} */
 
 .lesson-plans .table-row.species-background:nth-child(n) {
   background-color: var(--snap-species-highlight-background);
@@ -450,7 +448,8 @@ a.dropdown-item {
 
 .left-grid,
 .right-grid {
-  grid-template-rows: 1fr 0.3rem 12fr 1fr;
+  /* grid-template-rows: 1fr 0.3rem 12fr 1fr; */
+  grid-template-rows: 2.5rem 0.3rem 12fr 2.5rem;
 }
 
 .left-body,
@@ -1115,49 +1114,6 @@ span.correct {
   margin: 2rem 0 0 0;
 }
 
-.modal-title {
-  color: var(--snap-text-medium-light);
-  text-transform: uppercase;
-  font-size: .9rem;
-}
-
-.modal-title span {
-  display: block;
-}
-
-#menuModal .modal-content {
-  color: var(--snap-text-dark);
-}
-
-.modal-body button {
-  margin: 1rem 0;
-  display: block;
-}
-
-.modal-text {
-  margin: 1rem;
-}
-
-.modal-body.glossary-modal {
-  padding: 0;
-}
-
-.modal-body.glossary-modal .modal-text {
-  margin: 0;
-}
-
-.modal-body.settings-modal {
-  padding: 1rem;
-}
-
-#listModal .modal-content {
-  background-color: var(--snap-modal-content-background);
-}
-
-#listModal .scrollable {
-  height: 50vh;
-}
-
 .delay-slider {
   margin: 1rem 0;
 }
@@ -1167,6 +1123,10 @@ span.correct {
   flex: initial;
   display: flex;
   flex-direction: row;
+  position: absolute;
+  bottom: 0.5rem;
+  right: .5rem;
+  left: .5rem;
 }
 
 .action-update-container {
@@ -1250,30 +1210,6 @@ span.correct {
   justify-content: center;
 }
 
-.modal-dialog {
-  margin: 2rem auto;
-}
-
-#menuModal .modal-body.settings-modal {
-  padding: 0;
-}
-
-#badgeListModal .modal-dialog {
-  min-width: 320px;
-  max-width: 420px;
-  margin: 5rem auto;
-}
-
-#badgeListModal .modal-body {
-  background-color: var(--snap-language);
-  min-height: 5rem;
-}
-
-#badgeListModal .modal-text {  
-  color: var(--snap-text-medium-dark);
-  margin: 0;
-  font-size: .9rem;
-}
 
 .trait.card li span:nth-child(1) {
   width: 25%;
@@ -1500,7 +1436,7 @@ label.btn.btn-secondary .lesson-icon {
 }
 
 .imageSlider .carousel.slide {
-  background-color: var(--snap-modal-background);
+  background-color: var(--snap-text-dark-medium-dark);
 }
 
 .imageSlider .carousel-item {
@@ -1579,10 +1515,6 @@ label.btn.btn-secondary .lesson-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }
 
-#listModal .modal-body {
-  padding: 0;
-}
-
 .bird-song div:nth-child(2) {
   background-color: rgb(142, 160, 119);
 }
@@ -1609,26 +1541,6 @@ iframe#birdsong {
   border-radius: 0.24rem;
   display: inline-block;
   vertical-align: text-top;
-}
-
-/* GLOSSARY MODAL */
-
-.definition.card {
-  height: 60vh;
-  border: 0;
-  margin: 0 0 1rem 0;
-  font-size: 1rem;
-}
-
-.definition.card div > div {
-  margin: 0.5rem 0;
-  padding: 0.15rem;
-}
-
-.definition.card span:nth-child(1) {
-  text-underline-position: under;
-  color: var(--snap-success);
-  margin: 0 0.25rem 0 0;
 }
 
 .visual-match .imageSlider .carousel-item {
@@ -1710,7 +1622,7 @@ th .custom-control-label::before, .custom-control-label::before {
 .species-pending {
   color: var(--snap-link);
   background-color: var(--snap-list-alt-background);
-  border: 0.05rem solid var(--snap-border-dark);
+  /* border: 0.05rem solid var(--snap-border-dark); */
   font-size: 1.4rem;
 }
 
@@ -1768,7 +1680,7 @@ a.collection-disabled {
 }
 
 .rights-attribution {
-  color: var(--snap-modal-title);
+  color: var(--snap-text-dark-medium-dark);
   width: 80%;
   position: absolute;
   bottom: 0.5rem;
@@ -1919,10 +1831,6 @@ a.collection-disabled {
   border: 0.05rem solid rgb(108, 117, 125,.8);
 }
 
-#iconicTaxaFilters .modal-content {
-  width: 60vw;
-}
-
 .floating-card > span:nth-child(1) {
   background: #fff;
   border: none;
@@ -1943,6 +1851,7 @@ a.collection-disabled {
 
 .home-container > div {
   margin: 0 1rem;
+  height: 100%;
 }
 
 .home-container .snapdragon-header {
@@ -1952,14 +1861,13 @@ a.collection-disabled {
   color: var(--snap-collection-active);
   letter-spacing: .3rem;
   font-family: sentinel;
-  display: flex;
-  align-items: center;
-  height: 100px;
+  position: absolute;
+  top: 1rem;
+  height: 3rem;
 }
 
-.home-container .snapdragon-tag, .summary-scores {
+.home-container .snapdragon-tag, .home-container .summary-scores {
   justify-content: center;
-  height: 40vh;
   font-family: sentinel;
   font-size: 2rem;
   font-style: italic;
@@ -1969,6 +1877,9 @@ a.collection-disabled {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 4rem; /* 1 + 3 */
+  height: 100%;
+  margin: 0 auto 6rem; /* 5 + 1 */
 }
 
 .home-guide .taxa {
@@ -2028,15 +1939,6 @@ a.collection-disabled {
   cursor: pointer;
 }
 
-#iNatWidgetModal .modal-dialog {
-  max-width: 45vw;
-}
-
-#iNatWidgetModal .modal-header {
-  font-size: 1.2rem;
-  display: inline;
-}
-
 .home-container .snapdragon-tag > div .underline-link {
   font-size: 2rem;
   text-transform: initial;
@@ -2056,6 +1958,7 @@ a.collection-disabled {
 }
 
 .snapdragon-create-guide {
+  height: 5rem;
   position: absolute;
   bottom: 1rem;
   right: 1rem;

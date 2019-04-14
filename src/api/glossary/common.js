@@ -133,4 +133,9 @@ export const commmon = [
         definition: 'Consumption of feces including one\'s own for easier digestion (lagomorphs).' ,
         wiki: 'https://en.wikipedia.org/wiki/Coprophagia'
     },
+    {
+        term: 'Tubercle',
+        definition: 'Any round nodule, small eminence, or warty outgrowth found on external or internal organs of a plant or animal.' ,
+        wiki: 'https://en.wikipedia.org/wiki/Tubercle'
+    },
 ];

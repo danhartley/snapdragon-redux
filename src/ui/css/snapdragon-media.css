@@ -68,6 +68,18 @@
     }
 }
 
+@media (min-width: 1024px) {
+    .narrow-screen {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1024px) {    
+    .wide-screen {
+      display: none !important;
+    }
+}
+
 @media (min-width: 768px) {
 
     .portrait, .portrait-grid {
@@ -101,10 +113,6 @@
     .header > div:nth-child(2) {
         font-size: .8rem;
         max-width: initial;
-    }
-
-    #menuModal .modal-body.settings-modal {
-        padding: rem;
     }
 
     .species-grid-container {
@@ -156,12 +164,16 @@
         height: 120px;
     }
 
+    .snapdragon-create-guide {
+        height: 6rem;
+    }
+
     .snapdragon-create-guide > div:nth-child(1), .snapdragon-create-guide > div:nth-child(1) > span:nth-child(1) {
         font-size: 2.6rem;
     }
       
     .home-container .snapdragon-tag, .summary-scores {
-        height: 48vh;
+        margin: 0 auto 7rem; /* 6 + 1 */
     }
 
     .species-pending > div:nth-child(1) {

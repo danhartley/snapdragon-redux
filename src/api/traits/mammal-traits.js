@@ -11,7 +11,7 @@ const getTraits = SD => {
         { id: 'Oryctolagus cuniculus' }
     ],
     traits: [
-        { name: SD.name.YOUNG, value: SD.young.KIT },        
+        { name: SD.name.YOUNG, value: SD.young.KIT },
         { name: SD.name.LENGTH, value: '45–90cm' },
         { name: SD.name.TAIL_LENGTH, value: '30-55cm' },
         { name: SD.name.MAX_SPEED, value: '50 km/h' },
@@ -221,6 +221,15 @@ const getTraits = SD => {
         { name: SD.role.HERBIVORE, value: 'Acer pseudoplatanus, Fagus sylvatica', type: SD.symbiosis.PREDATION },
         { name: SD.name.OCCUPANT, value: `${SD.habitat.WOODLAND}, ${SD.habitat.URBAN}`, type: SD.symbiosis.COMMENSALISM },
     ] 
+    },
+    { 
+        name: 'Tarentola mauritanica',
+        symbionts: [ 
+            
+        ],            
+        traits: [        
+            { name: SD.name.YOUNG, value: SD.young.SALAMANQUESA },
+        ]
     },
 ]};
 

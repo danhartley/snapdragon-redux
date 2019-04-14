@@ -66,7 +66,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
         actionLink.classList.add('disabled');        
     };
 
-    const lessonHandler = () => {
+    const beginLessonHandler = () => {
         const { collection, config, history } = store.getState();
         const lessonStateMode = 'new-lesson';
         lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);
@@ -118,7 +118,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
                 actionLink.innerHTML = 'Begin';
                 const forText = document.querySelector('.js-for-text');
                 if(forText) forText.classList.add('hide');
-                actionLink.addEventListener('click', lessonHandler);          
+                actionLink.addEventListener('click', beginLessonHandler);          
                 break;
             case 'RESUME-LESSON':
                 actionLink.removeAttribute('data-toggle');

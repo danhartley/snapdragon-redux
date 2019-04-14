@@ -17,8 +17,8 @@ export const renderSummary = history => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    const itemsToReview = stats.getItemsForRevision(collection, history, 1);
-    const mode = lessonLogicHandler.getMode(config.mode, collection.isLevelComplete, itemsToReview);
+    // const itemsToReview = stats.getItemsForRevision(collection, history, 1);
+    // const mode = lessonLogicHandler.getMode(config.mode, collection.isLevelComplete, itemsToReview);
 
     let header, summary, warning = ''; 
 

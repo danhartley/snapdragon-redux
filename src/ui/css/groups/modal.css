@@ -1,3 +1,7 @@
+.modal-dialog {
+    margin: 2rem auto;
+}
+  
 .modal-body {
     padding: .5rem;
 }
@@ -10,6 +14,38 @@
     width: 5rem;
     width: fit-content;
 }
+
+.modal-title {
+    color: var(--snap-text-medium-light);
+    text-transform: uppercase;
+    font-size: .9rem;
+  }
+  
+  .modal-title span {
+    display: block;
+  }
+  
+  .modal-body button {
+    margin: 1rem 0;
+    display: block;
+  }
+  
+  .modal-text {
+    margin: 1rem;
+  }
+  
+  .modal-body.glossary-modal {
+    padding: 0;
+  }
+  
+  .modal-body.glossary-modal .modal-text {
+    margin: 0;
+  }
+  
+  .modal-body.settings-modal {
+    padding: 1rem;
+  }
+
 
 #imageModal .modal-body,
 #imageComparisonModal .modal-body {
@@ -57,6 +93,154 @@
   height: 55vh;
 }
 
+/* CARD MODAL */
+
+#cardModal .modal-dialog {
+    max-width: 100vw;
+}
+  
+#cardModal .modal-content .snapdragon-container {
+    height: 70vh;
+    border: 0;
+    padding: 0;
+}
+
+#cardModal .modal-body {
+    padding: 1rem 0;
+}
+
+#cardModal .card {
+    margin: 0;
+}
+
+#cardModal .iconic-icon {
+    font-size: 2.4rem;
+    cursor: initial;
+}
+
+
+#cardModal .modal-content .snapdragon-container {  
+    height: 70vh;
+    padding: 0 .5rem;
+}
+
+#cardModal .imageSlider .carousel-item {
+    height: 25vh;
+  }
+
+#cardModal .carousel-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cardModal .prev, #cardModal .next {
+    display: flex;
+    padding: 0 .5rem;
+}
+
+#cardModal .carousel-inner .prev > span,
+#cardModal .carousel-inner .next > span {
+    background-color: rgba(211, 214, 173, 0.2);
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+#cardModal .carousel-inner .prev > span:hover,
+#cardModal .carousel-inner .next > span:hover {
+    opacity: 1;
+}
+
+#cardModal .taxon.card .species-header img {
+    height: 88px;    
+    width: 88px;
+}
+
+#cardModal .taxon.card .species-header > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#cardModal .iconic-icon {
+    float: left;
+    font-size: 1rem;
+    color: var(--snap-iconic-icon-header);
+  }
+
+  #cardModal .compare-species-link {
+    pointer-events: none;
+    border: none;
+    color: var(--snap-text-dark) !important;
+  }
+  
+  #menuModal .modal-content {
+    color: var(--snap-text-dark);
+  }
+  
+  #listModal .modal-body {
+    padding: 0;
+  }
+
+  #listModal .modal-content {
+    background-color: var(--snap-text-light);
+  }
+  
+  #listModal .scrollable {
+    height: 50vh;
+  }
+
+  #menuModal .modal-body.settings-modal {
+    padding: 0;
+  }
+  
+  /* BADGE MODAL (Common names & Members of) */
+
+  #badgeListModal .modal-dialog {
+    min-width: 320px;
+    max-width: 420px;
+    margin: 5rem auto;
+  }
+  
+  #badgeListModal .modal-body {
+    background-color: var(--snap-language);
+    min-height: 5rem;
+  }
+  
+  #badgeListModal .modal-text {  
+    color: var(--snap-text-medium-dark);
+    margin: 0;
+    font-size: .9rem;
+  }
+
+  /* SCROLL */
+
+  .modal-list.scrollable {
+    height: 50vh;
+  }
+
+
+/* GLOSSARY MODAL */
+
+#menuModal .definition.card {
+    height: 60vh;
+    border: 0;
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+  }
+  
+  #menuModal .definition.card div > div {
+    margin: 0.5rem 0;
+    padding: 0.15rem;
+  }
+  
+  #menuModal .definition.card span:nth-child(1) {
+    text-underline-position: under;
+    color: var(--snap-success);
+    margin: 0 0.25rem 0 0;
+  }
+
 @media (min-width: 768px) {
 
     .modal-body {
@@ -70,6 +254,12 @@
     iframe {
         width: 100%;
         border: 0;
+    }
+
+    /* MENU MODAL */
+
+    #menuModal .modal-body.settings-modal {
+        padding: rem;
     }
 
     /* WIKI */
@@ -102,4 +292,34 @@
     #imageModal .modal-title span > span:nth-child(1) {
         margin: 0 .5rem 0 0;
     }
+
+    #iNatWidgetModal .modal-dialog {
+        max-width: 45vw;
+    }
+    
+    #iNatWidgetModal .modal-header {
+        font-size: 1.2rem;
+        display: inline;
+    }
+
+    /* CARD MODAL */
+
+    #cardModal .modal-dialog {
+        min-width: 32rem;
+        max-width: 32rem;
+    }
+
+    #cardModal .feature-types {
+        width: 100%;
+        margin: 0;
+    }
+
+    #cardModal .feature-symbiont-list.scrollable {        
+        max-height: 12rem;
+        margin: 0;
+    }
+    
+/* #iconicTaxaFilters .modal-content {
+        width: 60vw;
+    } */
 }

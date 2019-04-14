@@ -483,7 +483,8 @@ export const english = {
         LEVERET: 'Leveret',
         NYMPH: 'Nymph',
         CATERPILLAR: 'Caterpillar',
-        LARVA: 'Larva'
+        LARVA: 'Larva',
+        SALAMANQUESA: 'Salamanquesa'
     },
     female: {
         help: 'What is the name for a female of this species?',
@@ -613,7 +614,11 @@ export const english = {
         ANAUTOGENY: 'Anautogeny',
         MASS_PROVISIONING: 'Mass provisioning',
         PRECOCIAL: 'Precocial',
-        ALTRICIAL: 'Altricial'
+        ALTRICIAL: 'Altricial',
+        AUTOTOMIC: 'Autotomic',
+        ECTOTHERMIC: 'Ectothermic',
+        ADHESION: 'Adhesion',
+        POLYPHYODONT: 'Polyphyodont'
     },
     sense: {
         help: 'Which sense does this species favour?',

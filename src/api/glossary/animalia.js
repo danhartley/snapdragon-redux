@@ -71,4 +71,24 @@ export const animalia = [
         definition: 'Emitting calls and listening to the echoes of those calls returned from surrounding objects.',
         wiki: 'https://en.wikipedia.org/wiki/Animal_echolocation',        
     },
+    {
+        term: 'Autotomy',
+        definition: 'Behaviour whereby animal sheds one or more appendages, usually as a self-defence mechanism.',
+        wiki: 'https://en.wikipedia.org/wiki/Autotomy',        
+    },
+    {
+        term: 'Ectotherm',
+        definition: 'Organism in which internal physiological sources of heat are of negligible importance in controlling body temperature.',
+        wiki: 'https://en.wikipedia.org/wiki/Ectotherm',        
+    },
+    {
+        term: 'Polyphyodont',
+        definition: 'Animal whose teeth are continually replaced.',
+        wiki: 'https://en.wikipedia.org/wiki/Polyphyodont',        
+    },
+    {
+        term: 'Diphyodont',
+        definition: 'Characterised by having only two successive sets of teeth.',
+        wiki: 'https://en.wikipedia.org/wiki/Diphyodont',        
+    },
 ];

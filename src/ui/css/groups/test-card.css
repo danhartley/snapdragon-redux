@@ -45,7 +45,7 @@
   .test-card-container .action-update-container {
     position: absolute;
     width: 100%;
-    bottom: .5rem;
+    bottom: 0rem;
     left: 0;
     padding: 0 .5rem;
   }
@@ -147,7 +147,7 @@
     left: 0rem;
     bottom: 3.25rem;
     font-size: 1rem;
-    padding: 0 0 0 1rem;
+    padding: 0 0 0 .75rem;
     min-height: 2rem;
 }
 
@@ -302,10 +302,6 @@ div.text-entry {
         left: 1rem;
         bottom: 1rem;        
         min-height: 2rem;
-    }
-
-    .test-card-container .text-question {
-        padding: 0;
     }
 
     .answer-box-success > span:nth-child(2), 
