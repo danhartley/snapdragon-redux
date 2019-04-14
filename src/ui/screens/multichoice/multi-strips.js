@@ -65,7 +65,9 @@ export const renderMultiStrips = (collection) => {
 
         const strips = document.querySelectorAll('.js-rptr-strips .strip');
 
-        if(screen.name === 'definition') {
+        const wordyAnswers = [ 'family-strips', 'definition' ];
+
+        if(R.contains(screen.name, wordyAnswers)) {
             strips.forEach(strip => strip.classList.add('extra-small-text'));
         }
         

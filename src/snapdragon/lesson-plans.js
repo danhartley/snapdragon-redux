@@ -247,8 +247,8 @@ let portraitLesson1 = {
         {   id: 1,
             name:'Level 1',
             layouts: [ mediaMatch ],
-            wildcardLayouts : [],
-            reviewLayouts: [ latinToCommonMatch ]
+            // wildcardLayouts : [],
+            // reviewLayouts: [ latinToCommonMatch ]
         },
         {   id: 2,
             name:'Level 2',
@@ -277,8 +277,6 @@ let portraitLesson1 = {
         }   
     ]
 };
-
-portraitLesson1 = landscapeLesson1;
 
 const portraitLesson2 = {
     id: 102,
