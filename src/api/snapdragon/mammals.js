@@ -2339,5 +2339,147 @@ export const mammals = [
       "family": "Sciuridae",
       "kingdom": "Animalia",
       "eolName": "Sciurus carolinensis Gmelin, 1788"
+    },
+    {
+      "id": "47360118",
+      "name": "Tarentola mauritanica",
+      "images": [
+        {
+          "rightsHolder": "Daniel Capilla",
+          "source": "https://www.inaturalist.org/photos/5677555",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "43/a2/a1/18.https___www_inaturalist_org_photos_5677555.jpg"
+        },
+        {
+          "rightsHolder": "Daniel Capilla",
+          "source": "https://www.inaturalist.org/photos/5677562",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "43/a2/a7/18.https___www_inaturalist_org_photos_5677562.jpg"
+        },
+        {
+          "rightsHolder": "Zack Demirtshyan",
+          "source": "https://www.inaturalist.org/photos/94285",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "4c/d7/55/18.https___www_inaturalist_org_photos_94285.jpg"
+        },
+        {
+          "title": "File:IntrÃ©pide salamandre.jpg",
+          "rightsHolder": "",
+          "source": "https://commons.wikimedia.org/wiki/File:Intr%C3%A9pide_salamandre.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/54/6c/509.10668138.jpg"
+        },
+        {
+          "title": "Tarentola mauritanica by Danny S. - 737.jpg",
+          "rightsHolder": "",
+          "source": "https://commons.wikimedia.org/wiki/File:Tarentola_mauritanica_by_Danny_S._-_737.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "57/c8/36/509.22540514.jpg"
+        },
+        {
+          "title": "Moorish Gecko -Menorca (8950534933).jpg",
+          "rightsHolder": "",
+          "source": "https://commons.wikimedia.org/wiki/File:Moorish_Gecko_-Menorca_(8950534933).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "59/5c/95/509.30183032.jpg"
+        },
+        {
+          "title": "Calvisson-Gecko-20140705.jpg",
+          "rightsHolder": "",
+          "source": "https://commons.wikimedia.org/wiki/File:Calvisson-Gecko-20140705.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5a/11/69/509.33842568.jpg"
+        }
+      ],
+      "names": [
+        {
+          "vernacularName": "Common wall gecko",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Moorish gecko",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Salamanquesa",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Crocodile gecko",
+          "language": "en"
+        },
+        {
+          "vernacularName": "European common gecko",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Maurita naca gecko",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Mauergecko",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Salamanquesa común",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Tarente de Maurétanie",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Tarente du midi",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Tarente commune",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Geco comune",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Tarantola muraiola",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Osga-moura",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Osga-comum",
+          "language": "pt"
+        },
+
+      ],
+      "taxonomy": {
+        "usageKey": 2445034,
+        "scientificName": "Tarentola mauritanica (Linnaeus, 1758)",
+        "canonicalName": "Tarentola mauritanica",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 97,
+        "matchType": "EXACT",
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "order": "Squamata",
+        "family": "Phyllodactylidae",
+        "genus": "Tarentola",
+        "species": "Tarentola mauritanica",
+        "kingdomKey": 1,
+        "phylumKey": 44,
+        "classKey": 358,
+        "orderKey": 715,
+        "familyKey": 5789853,
+        "genusKey": 2447584,
+        "speciesKey": 2445034,
+        "synonym": false,
+        "class": "Reptilia"
+      },
+      "family": "Phyllodactylidae",
+      "kingdom": "Animalia",
+      "eolName": "Tarentola mauritanica"
     }
   ]

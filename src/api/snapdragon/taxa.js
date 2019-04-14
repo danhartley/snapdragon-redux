@@ -2676,7 +2676,7 @@ export const taxa = [
         traits: [ 
             { name: SD.name.ORGANISATION, value: SD.organisation.EUSOCIAL },            
             { name: SD.name.SENSORY_ACUITY, value: SD.sense.SMELL },
-            { name: SD.name.BEHAVIOUR, value: SD.behaviour.VOCALISATION },            
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.VOCALISATION },
          ],
     },
     {
@@ -3931,12 +3931,44 @@ export const taxa = [
         descriptions: [
             {   
                 language: 'en',
-                summary: 'Group of scarab beetles',
+                summary: 'Group of scarab beetles.',
                 identification: 'Many species are diurnal and visit flowers for pollen and nectar, or to browse on the petals. Some feed on fruit.', 
             },
         ],
         traits: [
             { name: SD.name.ACTIVE, value: SD.active.DIURNAL },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Phyllodactylidae',
+        genera: '10',
+        species: '113',
+        names: [ { language: "en", names: ['Geckos']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Blattfingergeckos' ]},
+            { language: "es", names:[ 'Filodactílidos' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Phyllodactylidae",
+        thumb: '5a/11/69/509.33842568.jpg',
+        eol: "https://eol.org/pages/12130030",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Distributed throughout the New World, North Africa, Europe and the Middle East.',
+                identification: 'Most cannot blink (and lack eyelids), but often lick their eyes to keep them clean and moist.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.ACTIVE, value: SD.active.NOCTURNAL },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.VOCALISATION },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.AUTOTOMIC },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.ECTOTHERMIC },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.ADHESION },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.POLYPHYODONT },
+            { name: SD.role.CARNIVORE, value: 'Insects' },
         ],
     },
 ];
