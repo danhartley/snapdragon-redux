@@ -16,6 +16,7 @@ table {
   border: 0;
   height: 2.5rem;
   position: sticky;
+  position: -webkit-sticky;
   z-index: 10;
   border-radius: 0.25rem 0.25rem 0 0;
   letter-spacing: 0.03rem;
@@ -131,16 +132,9 @@ table {
   height: 1rem;
  }
 
-  /* SCROLLING */
-
-.scrollable {
-    overflow-y: scroll;
-    position: fixed;
-    width: 100%;
-    top: 2.8rem;
-    left: 0;
-    right: 0;
-    bottom: 5.8rem; /* 2.5 + .3 + 2.5 + .5 */
+ .species-list .scrollable {    
+  top: 2.8rem;
+  bottom: 5.8rem; /* 2.5 + .3 + 2.5 + .5 */
 }
   
   @media (min-width: 768px) {
@@ -151,7 +145,10 @@ table {
         justify-content: space-evenly;
         align-items: flex-start;
     }
-    .scrollable {
+
+    /* SCROLLING */
+
+    .scrollable, .species-list .scrollable {
         bottom: 0;
         position: absolute;
         top: 0;
@@ -159,7 +156,7 @@ table {
   }
 
   @media (min-width: 1024px) {
-    
+     
     .table-header th:nth-child(2), .table-row td:nth-child(2) {
         flex: 4;
     }
