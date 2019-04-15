@@ -227,13 +227,14 @@ export const renderMultiStrips = (collection) => {
         const indices = config.isPortraitMode ? [5,6] : [5,6];
 
         const family = item.family;
-        const speciesFamilies = species.map(item => item.family).filter(utils.onlyUnique);
-        const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, speciesFamilies));
+        // const speciesFamilies = species.map(item => item.family).filter(utils.onlyUnique);
+        // const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, speciesFamilies));
         const otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name !== item.family));
         const otherFamiliesLatinNames = otherFamilies.map(family => family.name);
-        const otherFamiliesCommonNames = otherFamilies.filter(family => family.names.find(name => name.language === config.language)).map(family => family.names[0].names[0]);
+        const otherFamiliesCommonNames = otherFamilies.filter(family => family.names.find(name => name.language === config.language)).map(family => family.names[0].names[0]).filter(name => name !== '');
         const familyTaxon = families.find(family => family.name === item.family); 
-        const commonFamilyName = familyTaxon ? itemProperties.getTaxonProp(familyTaxon, config.language, 'names', 'names', '0').names[0] : '';
+        let commonFamilyName = familyTaxon ? itemProperties.getTaxonProp(familyTaxon, config.language, 'names', 'names', '0').names[0] : family;
+            commonFamilyName = commonFamilyName === '' ? family : commonFamilyName;
 
         let question, answers;
 
@@ -243,11 +244,13 @@ export const renderMultiStrips = (collection) => {
             case 0: //'match-common-family-name-to-latin-family-name':
                 question = commonFamilyName;
                 answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
+                if(question === undefined) console.log(item.name);
                 render(question, answers, { question: 'Match family name' });
             break;
             case 1:  //'match-latin-family-name-to-common-family-name':
                 question = family;
                 answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
+                if(question === undefined) console.log(item.name);
                 render(question, answers, { question: 'Match family name' });
             break;
         } 
