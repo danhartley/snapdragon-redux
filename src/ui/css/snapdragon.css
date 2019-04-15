@@ -320,10 +320,11 @@ a.dropdown-item {
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: 0;
   background-color: var(--snap-text-light);
   justify-content: flex-start;
   background-color: var(--snap-list-alt-background);
+  position: relative;
 }
 
 .non-taxon.card {
@@ -525,7 +526,7 @@ a.dropdown-item {
 .scrollable {
   overflow-y: scroll;
   position: fixed;
-  width: 100%;
+  /* width: 100%; */
   left: 0;
   right: 0;
 }
@@ -1060,6 +1061,7 @@ span.correct {
 .btn-dark {
   color: var(--snap-text-dark);
   background-color: var(--snap-block-light);
+  border: none;
 }
 
 .snap-inactive {
@@ -1204,6 +1206,7 @@ span.correct {
 
 .species-card-images,
 .non-taxon-card-images {
+  margin: .5rem 0 0 0;
   width: 100%;
   height: initial;
   display: grid;
@@ -1958,10 +1961,6 @@ a.collection-disabled {
   vertical-align: top;
   color: var(--secondary);
   font-style: italic;
-}
-
-.snapdragon-container {
-  position: relative;
 }
 
 .snapdragon-create-guide {

@@ -43,7 +43,7 @@ export const renderInput = (screen, question) => {
 
     const help = config.isLandscapeMode ? '(Complete the name below.)' : '';
 
-    const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: questionTxt, help });
+    const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: questionTxt, help, term: '' });
     
     const template = document.createElement('template');
     
@@ -56,19 +56,19 @@ export const renderInput = (screen, question) => {
 
     switch(question.taxon) {
         case 'genus': 
-            inputTxt.setAttribute('placeholder', 'Genus');
+            inputTxt.setAttribute('placeholder', 'Enter genus name');
             helpTxt.innerHTML = `--- ${question.species}`;
             break;
         case 'species': 
-            inputTxt.setAttribute('placeholder', 'Species');
+            inputTxt.setAttribute('placeholder', 'Enter species name');
             helpTxt.innerHTML = `${utils.capitaliseFirst(question.genus)} ---`;
             break;
         case 'name': 
-            inputTxt.setAttribute('placeholder', 'Latin name');
+            inputTxt.setAttribute('placeholder', 'Enter latin name');
             helpTxt.innerHTML = `--- ---`;
             break;
         case 'vernacular':
-            inputTxt.setAttribute('placeholder', 'Common name');
+            inputTxt.setAttribute('placeholder', 'Enter common name');
             helpTxt.innerHTML = `-----`;
             break;
     }

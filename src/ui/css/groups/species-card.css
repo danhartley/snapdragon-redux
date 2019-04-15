@@ -30,7 +30,7 @@
 .question-container {
   background-color: var(--snap-species-header-background);
   height: 64px;  
-  margin: 0 0 .5rem 0;
+  /* margin: 0 0 .5rem 0; */
 }
 
 .question-container img {
@@ -85,7 +85,7 @@
     /* SCROLLING */
 
     .test-card-container .scrollable {
-        top: 11rem;
+        top: 10rem;
         bottom: 9rem;
     }
 

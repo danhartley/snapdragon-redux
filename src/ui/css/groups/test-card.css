@@ -57,7 +57,7 @@
   }
   
   .test-card .question {
-    margin: 0 0 .5rem 0;
+    margin: .5rem 0 0 0;
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.07rem;
@@ -188,7 +188,7 @@
 div.text-entry {
     padding: 0;
     position: relative;
-    margin: 1rem 0 .5rem 0;
+    margin: .5rem;
     border: 0.05rem solid var(--snap-portrait);
     display: flex;
     flex-direction: column;
@@ -211,12 +211,21 @@ div.text-entry {
     padding: 0;
   }
 
+  .button-entry {
+    margin: 0 .5rem;
+  }
+
   /* FUNGI ICONS */
 
   .test-card .mushroom-icon-header svg {
     width: .8rem;
     height: .8rem;
     margin: 0 .25rem 0 0;
+  }
+
+  .test-card .scrollable {
+    left: .25rem;
+    right: .25rem;
   }
 
 @media (min-width: 768px) {
