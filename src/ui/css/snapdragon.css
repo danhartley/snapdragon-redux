@@ -1883,7 +1883,6 @@ a.collection-disabled {
 }
 
 .home-guide .taxa {
-  /* font-size: 1.4rem; */
   color: var(--snap-collection-active);
 }
 

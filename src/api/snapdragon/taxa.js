@@ -2835,7 +2835,7 @@ export const taxa = [
             {   
                 language: 'en',
                 summary: 'Widespread, migratory. Nonswimming waterbirds that feed on margins of lakes, rivers, the sea, etc.',
-                dentification: 'Medium-sized to large wading birds with a long neck and legs, rather short tail and broad wings. Long, dagger-shaped bill for hunting aquatic prey and small mammals and reptiles.'
+                identification: 'Medium-sized to large wading birds with a long neck and legs, rather short tail and broad wings. Long, dagger-shaped bill for hunting aquatic prey and small mammals and reptiles.'
             },
         ],
         traits: [ 
@@ -2863,7 +2863,7 @@ export const taxa = [
             {   
                 language: 'en',
                 summary: 'Diverse family of Lecanoromycetes, the largest family of lichen forming fungi. Wide distribution and habitats.',
-                dentification: 'Most often foliose, fruticose, whitish-grey, green-yellow, or brown-black. Many are lobe forming.'
+                identification: 'Most often foliose, fruticose, whitish-grey, green-yellow, or brown-black. Many are lobe forming.'
             },
         ],
         traits: [ 
