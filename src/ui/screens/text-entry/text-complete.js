@@ -42,7 +42,7 @@ export const renderCompleteText = (collection) => {
             break;
     }
 
-    const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: 'Complete the latin name', help: '(Select the name below.)' });
+    const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: 'Complete the latin name', help: '(Select the name below.)', term: '' });
 
     const icon = renderIcon(item, document);
 
