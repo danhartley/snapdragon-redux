@@ -2943,14 +2943,6 @@ export const plants = [
         "thumb": "57/20/a1/509.1924724.98x68.jpg"
       },
       {
-        "title": "Modell von Salvia officinalis (Echter Salbei).jpg",
-        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-        "source": "https://commons.wikimedia.org/wiki/File:Modell_von_Salvia_officinalis_(Echter_Salbei).jpg",
-        "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "57/5a/32/509.20218475.jpg",
-        "thumb": "57/5a/32/509.20218475.98x68.jpg"
-      },
-      {
         "title": "Knobloch Aromagarten Bild 3.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Knobloch_Aromagarten_Bild_3.JPG",

@@ -33,7 +33,7 @@ test('should return multiple epithet matches', () => {
       {
         "parts": [
           {
-            "en" : ["of or belonging to the officina (storeroom for medicines)."],
+            "en" : ["of or belonging to the officina (storeroom for medicines)"],
             "index": 1,
             "latin": [
               "officinalis"

@@ -341,12 +341,12 @@ export const epithets = [
     },
     {
         "latin" : ["officinale"],
-        "en" : ["of or belonging to the officina (storeroom for medicines)."],
+        "en" : ["of or belonging to the officina (storeroom for medicines)"],
         "wiki": "https://en.wikipedia.org/wiki/Officinalis"
     },
     {
         "latin" : ["officinalis"],
-        "en" : ["of or belonging to the officina (storeroom for medicines)."],
+        "en" : ["of or belonging to the officina (storeroom for medicines)"],
         "wiki": "https://en.wikipedia.org/wiki/Officinalis"
     },
     {

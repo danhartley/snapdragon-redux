@@ -136,7 +136,7 @@ export const renderMultiStrips = (collection) => {
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
         
-        const number = config.isPortraitMode ? 3 : 4;
+        const number = config.isPortraitMode ? 4 : 4;
         const itemFamily = families.find(f => f.name === item.family);
         const question = itemFamily.descriptions[0].summary;
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family && f.descriptions && f.descriptions[0].summary && f.descriptions[0].summary !== undefined && f.descriptions[0].summary !== '')).map(f => f.descriptions[0].summary);
@@ -169,7 +169,7 @@ export const renderMultiStrips = (collection) => {
             return options.map(option => option.join('; '));
         }
 
-        const number = config.isPortraitMode ? 1 : 2;
+        const number = config.isPortraitMode ? 2 : 2;
 
         const pollinators = R.take(number, utils.shuffleArray(['beetle', 'bird', 'butterfly', 'fly', 'moth', 'wind']));
         
@@ -185,7 +185,7 @@ export const renderMultiStrips = (collection) => {
     if(screen.name === 'epithet') {
         
         const epithet = layout.epithet.latin.join(', ');
-        const number = config.isPortraitMode ? 4 : 6;
+        const number = config.isPortraitMode ? 6 : 6;
         
         let alternatives = R.take(number-1, utils.shuffleArray(epithets)).filter(e => !R.contains(e.latin, epithet));
         alternatives = alternatives.map(e => e.en.join(', '));
