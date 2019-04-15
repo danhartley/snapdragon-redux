@@ -17,7 +17,13 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     let { config, collection } = store.getState();
 
-    if(counter.index && counter.index > 0 && !counter.isLessonPaused) return;
+    let skip = counter.index !== null && counter.index >= 0 && !counter.isLessonPaused;
+
+    if(skip) {
+        const sub = subscription.getByName('renderHome');
+        if(sub) subscription.remove(sub);    
+        return;
+    }
     
     const sub = subscription.getByName('renderHome');
     if(sub) subscription.remove(sub);
@@ -177,10 +183,12 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     };
 
     listenToCloseCreateGuideModal(closeModalHandler);
+    listenToCloseExampleGuideModal(closeModalHandler); 
 
-    listenToCloseExampleGuideModal(closeModalHandler);
-
-    const handleBeginLessonState = (counter, speciesCount) => {        
+    const handleBeginLessonState = (counter, speciesCount) => {
+        
+        if(config.isPortraitMode && !!speciesCount) return;
+        
         if(!counter.isLessonPaused && counter.index === null) {
             actionLink.removeEventListener('click', prepareHandler);
             state = 'BEGIN-LESSON';

@@ -448,8 +448,8 @@ a.dropdown-item {
 
 .left-grid,
 .right-grid {
-  /* grid-template-rows: 1fr 0.3rem 12fr 1fr; */
-  grid-template-rows: 2.5rem 0.3rem 12fr 2.5rem;
+  grid-template-rows: 1fr 0.3rem 12fr 1fr;
+  /* grid-template-rows: 2.5rem 0.3rem 12fr 2.5rem; */
 }
 
 .left-body,
@@ -1883,7 +1883,6 @@ a.collection-disabled {
 }
 
 .home-guide .taxa {
-  /* font-size: 1.4rem; */
   color: var(--snap-collection-active);
 }
 

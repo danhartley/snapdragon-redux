@@ -175,7 +175,7 @@ const landscapeLesson3 = {
             name:'Level 3',
             description: 'Species traits',
             layouts: [ 
-                definitionRevision,
+                // definitionRevision,
                 { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'howEdible') },
                 { ...traitPropertyMatch, ...propertyTrait(traitPropertyMatch, 'capShape') }                 
             ],
@@ -246,7 +246,9 @@ let portraitLesson1 = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            layouts: [ mediaMatch ],
+            // layouts: [ mediaMatch ],
+            layouts: [glossaryTerms],
+            wildcardLayouts : [ latinEpithets ],
             // wildcardLayouts : [],
             // reviewLayouts: [ latinToCommonMatch ]
         },

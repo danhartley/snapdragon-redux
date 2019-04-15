@@ -48,12 +48,13 @@ export const renderMultiStrips = (collection) => {
 
     const render = (questionValue, answers, overrides) => {
 
-        const vernacularName = (overrides && overrides.vernacularName) ? overrides.vernacularName : item.vernacularName;
-        const binomial = (overrides && overrides.binomial) ? overrides.binomial : item.name;
+        const vernacularName = (overrides && overrides.vernacularName !== undefined) ? overrides.vernacularName : item.vernacularName;
+        const binomial = (overrides && overrides.binomial !== undefined) ? overrides.binomial : item.name;
         const question = (overrides && overrides.question) ? overrides.question : 'Match the name';
         const help = (overrides && overrides.help !== undefined) ? overrides.help : '(Click on the name below.)';
+        const term = (overrides && overrides.term !== undefined) ? overrides.term: '';
         
-        const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help });
+        const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help, term });
 
         const icon = renderIcon(item, document);
 
@@ -124,10 +125,10 @@ export const renderMultiStrips = (collection) => {
         console.log(missing.filter(utils.onlyUnique));
     
 
-        const number = config.isPortraitMode ? 3 : 4;
+        const number = config.isPortraitMode ? 4 : 4;
 
         const question = families.length > 0 ? families.find(f => f.name === item.family).descriptions[0].identification : 'no families available';
-        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family && f.descriptions && f.descriptions[0].identification && f.descriptions[0].identification !== '')).map(f => f.descriptions[0].identification);
+        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family && f.descriptions && f.descriptions[0].identification && f.descriptions[0].identification !== undefined && f.descriptions[0].identification !== '')).map(f => f.descriptions[0].identification);
         const answers = utils.shuffleArray([question, ...alternatives]);
 
         render(question, answers, { question: 'Match species family', help: '(Click on the description below.)' });
@@ -138,7 +139,7 @@ export const renderMultiStrips = (collection) => {
         const number = config.isPortraitMode ? 3 : 4;
         const itemFamily = families.find(f => f.name === item.family);
         const question = itemFamily.descriptions[0].summary;
-        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family && f.descriptions && f.descriptions[0].summary && f.descriptions[0].summary !== '')).map(f => f.descriptions[0].summary);
+        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family && f.descriptions && f.descriptions[0].summary && f.descriptions[0].summary !== undefined && f.descriptions[0].summary !== '')).map(f => f.descriptions[0].summary);
         const answers = utils.shuffleArray([question, ...alternatives]);
 
         render(question, answers, { question: 'Match species family', help: '(Click on the description below.)' });
@@ -184,7 +185,7 @@ export const renderMultiStrips = (collection) => {
     if(screen.name === 'epithet') {
         
         const epithet = layout.epithet.latin.join(', ');
-        const number = config.isPortraitMode ? 6 : 6;
+        const number = config.isPortraitMode ? 4 : 6;
         
         let alternatives = R.take(number-1, utils.shuffleArray(epithets)).filter(e => !R.contains(e.latin, epithet));
         alternatives = alternatives.map(e => e.en.join(', '));
@@ -193,7 +194,12 @@ export const renderMultiStrips = (collection) => {
         
         const answers = utils.shuffleArray([question, ...alternatives]);
 
-        render(question, answers, { question: layout.epithet.latin.join(', '), help: '(Match the latin term)' });
+        
+        if(config.isLandscapeMode) {            
+            render(question, answers, { question: layout.epithet.latin.join(', '), help: '(Match the latin term)' });
+        } else {
+            render(question, answers, { question: 'Match latin word', help: '', vernacularName: '', binomial: '', term: layout.epithet.latin.join(', ') });
+        }
     }
 
     if(screen.name === 'definition') {
@@ -209,7 +215,11 @@ export const renderMultiStrips = (collection) => {
         const question = definition;
         const answers = utils.shuffleArray([question, ...alternatives]);
 
-        render(question, answers, { question: layout.definition.term, help: '(Match the definition)' });
+        if(config.isLandscapeMode) {            
+            render(question, answers, { question: layout.definition.term, help: '(Match the definition)' });
+        } else {
+            render(question, answers, { question: 'Match definition', help: '', vernacularName: '', binomial: '', term: layout.definition.term });
+        }
     }
 
     if(screen.name === 'family') {
@@ -217,13 +227,12 @@ export const renderMultiStrips = (collection) => {
         const indices = config.isPortraitMode ? [5,6] : [5,6];
 
         const family = item.family;
-        const speciesFamilies = species.map(item => item.family).filter(utils.onlyUnique);
-        const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, speciesFamilies));
         const otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name !== item.family));
         const otherFamiliesLatinNames = otherFamilies.map(family => family.name);
-        const otherFamiliesCommonNames = otherFamilies.filter(family => family.names.find(name => name.language === config.language)).map(family => family.names[0].names[0]);
+        const otherFamiliesCommonNames = otherFamilies.filter(family => family.names.find(name => name.language === config.language)).map(family => family.names[0].names[0]).filter(name => name !== '');
         const familyTaxon = families.find(family => family.name === item.family); 
-        const commonFamilyName = familyTaxon ? itemProperties.getTaxonProp(familyTaxon, config.language, 'names', 'names', '0').names[0] : '';
+        let commonFamilyName = familyTaxon ? itemProperties.getTaxonProp(familyTaxon, config.language, 'names', 'names', '0').names[0] : family;
+            commonFamilyName = commonFamilyName === '' ? family : commonFamilyName;
 
         let question, answers;
 
@@ -233,12 +242,14 @@ export const renderMultiStrips = (collection) => {
             case 0: //'match-common-family-name-to-latin-family-name':
                 question = commonFamilyName;
                 answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
-                render(question, answers, { question: 'Match the family name' });
+                if(question === undefined) console.log(item.name);
+                render(question, answers, { question: 'Match family name' });
             break;
             case 1:  //'match-latin-family-name-to-common-family-name':
                 question = family;
                 answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
-                render(question, answers, { question: 'Match the family name' });
+                if(question === undefined) console.log(item.name);
+                render(question, answers, { question: 'Match family name' });
             break;
         } 
     }
