@@ -500,7 +500,7 @@ const commonBritishBirds = {
         '420,489 people recorded 6,764,475 separate bird sightings.'
     ],
     moduleSize: 4,
-    lessonPlanLandscape: 1,
+    lessonPlanLandscape: 5,
     lessonPlanPortrait: 101,
     glossary: ['animalia', 'common'],
     items: birds,
