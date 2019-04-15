@@ -177,10 +177,12 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     };
 
     listenToCloseCreateGuideModal(closeModalHandler);
+    listenToCloseExampleGuideModal(closeModalHandler); 
 
-    listenToCloseExampleGuideModal(closeModalHandler);
-
-    const handleBeginLessonState = (counter, speciesCount) => {        
+    const handleBeginLessonState = (counter, speciesCount) => {
+        
+        if(config.isPortraitMode && !!speciesCount) return;
+        
         if(!counter.isLessonPaused && counter.index === null) {
             actionLink.removeEventListener('click', prepareHandler);
             state = 'BEGIN-LESSON';
