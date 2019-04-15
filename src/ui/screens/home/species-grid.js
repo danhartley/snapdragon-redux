@@ -12,7 +12,7 @@ export const renderSpeciesGrid = () => {
 
     const { layout } = store.getState();
 
-    const species = layout && layout.screens[1].name === 'birdsong' 
+    const species = layout && layout.screens[1] && layout.screens[1].name === 'birdsong' 
                 ? allSpecies.filter(species => species.taxonomy).filter(species => species.taxonomy.class.toLowerCase() === 'aves')
                 : allSpecies;
 

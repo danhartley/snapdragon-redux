@@ -76,7 +76,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
         const { collection, config, history } = store.getState();
         const lessonStateMode = 'new-lesson';
         lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);
-        subscription.remove(subscription.getByName('renderSpeciesGrid'));
+        // subscription.remove(subscription.getByName('renderSpeciesGrid'));
         actionLink.disabled = false;
     };
 
@@ -187,6 +187,8 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     const handleBeginLessonState = (counter, speciesCount) => {
         
+        subscription.remove(subscription.getByName('renderSpeciesGrid'));
+
         if(config.isPortraitMode && !!speciesCount) return;
         
         if(!counter.isLessonPaused && counter.index === null) {

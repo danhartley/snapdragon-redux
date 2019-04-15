@@ -352,6 +352,8 @@ export const renderMultiStrips = (collection) => {
 
         render(bird.name, birds, { question: 'Match the birdsong', vernacularName: '--- ---', binomial: '--- ---' });
         
+        document.querySelector('.js-rptr-strips').classList.add('birdsong-strips');
+        
         const parent = document.querySelector('.js-question-help');
               parent.innerHTML = '';  
 

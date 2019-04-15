@@ -57,7 +57,6 @@ const functions = [
     { name: 'mixed-specimen-images', func: renderMixedSpecimenImages },
     
     { name: 'birdsong', func: renderMultiStrips },
-    // { name: 'birdsong', func: renderBirdsong },
     { name: 'media-players', func: renderMediaPlayers },    
 ];
 
