@@ -463,8 +463,8 @@ a.dropdown-item {
   display: flex;
   align-items: center;
   padding: 0 0.55rem;
-  position: sticky;
-  position: -webkit-sticky;
+  /* position: sticky;
+  position: -webkit-sticky; */
 }
 
 .header {
