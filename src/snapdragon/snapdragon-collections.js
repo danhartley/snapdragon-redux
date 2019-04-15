@@ -66,7 +66,7 @@ const snapdragonLichens = {
       id: 3
     },
     providerId: 2,
-    moduleSize: 2,
+    moduleSize: 4,
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     glossary: ['lichen', 'common'],
