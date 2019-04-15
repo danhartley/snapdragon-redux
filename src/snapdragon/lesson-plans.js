@@ -15,6 +15,7 @@ const portraitFungi = { ...R.clone(landscapeFungi), id: 103, portrait: true };
 const portraitLichens = { ...R.clone(landscapeLichens), id: 104, portrait: true };
 
 export const lessonPlans = [
+
     landscapeDefault,
     landscapeFungi,    
     landscapeLichens,
@@ -25,4 +26,4 @@ export const lessonPlans = [
     portraitFungi,    
     portraitLichens,
     portraitLeaf
-]
+];

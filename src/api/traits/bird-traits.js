@@ -10,7 +10,7 @@ const getTraits = SD => {
         { name: 'song', value: '342145', description: 'xeno-canto id' }
     ] },
     { name: 'Troglodytes troglodytes', traits: [
-        { name: 'song', value: '432786', description: 'xeno-canto id' }
+        { name: 'song', value: '462617', description: 'xeno-canto id' }
     ] },
     { name: 'Cyanistes caeruleus', traits: [
         { name: SD.name.RANK, value: '3', description: 'common', language: 'en' },
