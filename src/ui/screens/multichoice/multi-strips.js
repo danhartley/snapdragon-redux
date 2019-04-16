@@ -105,18 +105,26 @@ export const renderMultiStrips = (collection) => {
 
     if(screen.name === 'species-scientifics') {
 
-        const number = config.isPortraitMode ? 6 : config.isLandscapeMode ? 6 : 6;
-        const question = item.name;
-        const answers = itemProperties.answersFromList(itemProperties.itemNamesForGroups(items), question, number);
+        let question = item.name;
+        let answers = species.filter(s => s.taxonomy).filter(s => s.taxonomy[taxon.rank].toLowerCase() === taxon.value);
+            answers = R.take(8, answers).filter(s => s.name !== item.name).map(s => s.name);
+            answers = R.take(5, answers);
+            answers.push(item.name);
+            answers = utils.shuffleArray(answers);
 
         render(question, answers, { binomial: '--- ---', question: 'What is the latin name?' });
     }
 
     if(screen.name === 'species-vernaculars') {
 
-        const number = config.isPortraitMode ? 6 : config.isLandscapeMode ? 6 : 6;
-        const question = item.vernacularName;   
-        const answers = itemProperties.answersFromList(itemProperties.vernacularNamesForGroups(items, config), question, number);
+        let question = item.vernacularName;   
+        let answers = species.filter(s => s.taxonomy).filter(s => s.taxonomy[taxon.rank].toLowerCase() === taxon.value);
+            answers = R.take(8, answers).filter(s => !R.contains(item.vernacularName, s.names.map(n => n.vernacularName)));
+            answers = answers.map(s => s.names.filter(n => n.language === 'en'));
+            answers = answers.filter(a => a.length).map(answer => utils.capitaliseAll(answer[0].vernacularName));
+            answers = R.take(5, answers);
+            answers.push(item.vernacularName);
+            answers = utils.shuffleArray(answers);
 
         const help = config.isLandscapeMode ? '(Click on the name below.)' : '';
 
@@ -369,9 +377,6 @@ export const renderMultiStrips = (collection) => {
         const xcID = bird.traits.find(trait => trait.name === 'song').value;
 
         const mp3 = `./songs/${xcID}.mp3`;
-
-        console.clear();
-        console.log(mp3);
 
         renderTemplate({ mp3, title: item.name }, template.content, parent);
     }

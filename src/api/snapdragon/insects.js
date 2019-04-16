@@ -1739,7 +1739,6 @@ export const insects = [
       {
         "vernacularName": "Borboleta-das-couves",
         "language": "es",
-        "eol_preferred": true
       },
       {
         "vernacularName": "Branca-das-couves",

@@ -17,13 +17,9 @@ const createLessonPlan = (lessonPlan, config, collection) => {
     collection.families = familyProps.getFamilyNames(collection.items);
     collection.familyStats = familyProps.getFamilyStats(collection.items);
 
-    collection.snapdragon = {};
-    collection.snapdragon.families = familyProps.getFamilyNames(species);
-    collection.snapdragon.familyStats = familyProps.getFamilyStats(species);
-
-    collection.itemGroups = getItemGroups(collection);
-    collection.itemGroup = collection.itemGroups[collection.currentRound - 1];
-    collection.itemGroupFamilies = collection.itemGroup.map(i => { return { index: i, family: collection.families[i] }; });
+    // collection.itemGroups = getItemGroups(collection);
+    // collection.itemGroup = collection.itemGroups[collection.currentRound - 1];
+    // collection.itemGroupFamilies = collection.itemGroup.map(i => { return { index: i, family: collection.families[i] }; });
     collection.activeLevelCount = lessonPlan.levels.filter(level => level.layouts.length > 0).length;
 
     const goToNextLevelThatHasLayouts = (collection, lessonPlan, levelId) => {

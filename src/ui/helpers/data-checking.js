@@ -127,17 +127,17 @@ const getVernacularNames = (item, config) => {
     return names;
 };
 
-const vernacularNamesForGroups = (items, config, itemGroup) => {
-    const groupItems = itemGroup ? items.filter((item, index) => R.contains(index, itemGroup)) : items;
-    return groupItems.map(groupItem => {
-        return( utils.capitaliseFirst(getVernacularName(groupItem, config)) );
-    });
-};
+// const vernacularNamesForGroups = (items, config, itemGroup) => {
+//     const groupItems = itemGroup ? items.filter((item, index) => R.contains(index, itemGroup)) : items;
+//     return groupItems.map(groupItem => {
+//         return( utils.capitaliseFirst(getVernacularName(groupItem, config)) );
+//     });
+// };
 
-const itemNamesForGroups = (items, itemGroup) => {
-    const names = itemGroup ? items.filter((item, index) => R.contains(index, itemGroup)).map(item => item.name) : items.map(item => item.name);
-    return names;
-};
+// const itemNamesForGroups = (items, itemGroup) => {
+//     const names = itemGroup ? items.filter((item, index) => R.contains(index, itemGroup)).map(item => item.name) : items.map(item => item.name);
+//     return names;
+// };
 
 const answersFromList = (list, toInclude, number) => {
     const answers = R.take(number - 1, list.filter(item => item !== toInclude));
@@ -168,8 +168,8 @@ export const itemProperties = {
     getTrait,
     getActiveTrait,
     vernacularNamesForItems,
-    vernacularNamesForGroups,
-    itemNamesForGroups,
+    // vernacularNamesForGroups,
+    // itemNamesForGroups,
     itemContextProperty,
     getVernacularNames,
     answersFromList

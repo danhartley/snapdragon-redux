@@ -26,9 +26,11 @@ export const landscapeDefault = {
         {   id: 1,
             name:'Level 1',
             description: 'Species recognition',
-            layouts: [ L.mixedSpecimenImages ],
-            wildcardLayouts : [ L.glossaryTerms ],
-            reviewLayouts: [ L.mixedSpecimenImages ]
+            layouts: [ L.commonToLatinMatch ],
+            // layouts: [ L.latinToCommonMatch ],
+            // layouts: [ L.mixedSpecimenImages ],
+            // wildcardLayouts : [ L.glossaryTerms ],
+            // reviewLayouts: [ L.mixedSpecimenImages ]
         },
         {   id: 2,
             name:'Level 2',

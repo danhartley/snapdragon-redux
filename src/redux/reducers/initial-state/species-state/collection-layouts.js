@@ -79,13 +79,13 @@ export const getCollectionLayouts = (wildcards, collection) => {
         }
     }
 
-    if(utils.isIterable(wildcardLayouts)) {
-        wildcardLayouts.forEach(layout => {
-            if(R.contains(layout.itemIndex, collection.itemGroup)) {
-                wildcardLayoutsForGroup.push(layout);
-            }         
-        })        
-    }
+    // if(utils.isIterable(wildcardLayouts)) {
+    //     wildcardLayouts.forEach(layout => {
+    //         if(R.contains(layout.itemIndex, collection.itemGroup)) {
+    //             wildcardLayoutsForGroup.push(layout);
+    //         }         
+    //     })        
+    // }
 
     // if(definitionScreens) {
 
