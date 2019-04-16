@@ -1947,6 +1947,9 @@ a.collection-disabled {
 
 .delete-guide-link input {
   cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: text-bottom;
 }
 
 .home-container .snapdragon-tag > div .underline-link {
