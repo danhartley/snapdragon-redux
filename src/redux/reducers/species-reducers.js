@@ -88,10 +88,8 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 1,
         let collection = { ...state, ...action.data.collection };
         let isNextRound = collection.layoutCounter === collection.layoutCount;
         let layoutCounter = 0;
-        // let itemGroup = collection.itemGroups[collection.currentRound - 1];
         let layoutCount = action.data.lessonPlan.layoutCount;
         return { collection, isNextRound, layoutCounter, layoutCount };
-        // return { collection, isNextRound, layoutCounter, itemGroup, layoutCount };
     };
     
     switch(action.type) {

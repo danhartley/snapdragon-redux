@@ -1,5 +1,3 @@
-import { is } from "immutable";
-
 const getTaxa = (items, taxon) => {
     const taxa = items.filter(item => item[taxon]) || [];
     return taxa;
