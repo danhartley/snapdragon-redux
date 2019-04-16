@@ -233,13 +233,57 @@ export const weeds = [
       ],
       "names": [
         {
+          "vernacularName": "Couch grass",
+          "language": "en"
+        },
+        {
+          "vernacularName": "twitch",
+          "language": "en"
+        },
+        {
+          "vernacularName": "quick grass",
+          "language": "en"
+        },
+        {
+          "vernacularName": "quitch grass",
+          "language": "en"
+        },
+        {
+          "vernacularName": "quitch",
+          "language": "en"
+        },
+        {
+          "vernacularName": "witchgrass",
+          "language": "en"
+        },
+        {
+          "vernacularName": "dog grass",
+          "language": "en"
+        },
+        {
+          "vernacularName": "scutch grass",
+          "language": "en"
+        },
+        {
           "vernacularName": "quackgrass",
           "language": "en"
         },
         {
+          "vernacularName": "Kriech-Quecke",
+          "language": "de"
+        },
+        {
           "vernacularName": "Gewöhnliche Quecke",
           "language": "de"
-        }        
+        },
+        {
+          "vernacularName": "Gemeine Quecke",
+          "language": "de"
+        },
+        {
+          "vernacularName": "grama",
+          "language": "es"
+        },
       ],
       "taxonomy": {
         "usageKey": 5290299,
@@ -608,29 +652,24 @@ export const weeds = [
       "names": [
         {
           "vernacularName": "creeping thistle",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
           "vernacularName": "Acker-Kratzdistel",
-          "language": "de",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Creeping Thistle",
-          "language": "en",
-          "eol_preferred": false
+          "language": "de"
         },
         {
           "vernacularName": "Canada thistle",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
-          "vernacularName": "Canada thistle",
-          "language": "en",
-          "eol_preferred": false
-        }
+          "vernacularName": "field thistle",
+          "language": "en"
+        },
+        {
+          "vernacularName": "way thistle",
+          "language": "en"
+        },
       ],
       "taxonomy": {
         "usageKey": 3113414,

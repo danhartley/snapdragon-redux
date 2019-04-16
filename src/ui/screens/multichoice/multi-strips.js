@@ -32,9 +32,10 @@ export const renderMultiStrips = (collection) => {
     const inconicTaxonFamilies = familyProps.getUniqueFamiliesByIconicTaxon(species, taxon.rank, taxon.value);
     const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, inconicTaxonFamilies));
 
-    const familyFlavours = config.isPortraitMode 
-            ? [ 'match-family-to-quick-id' ] 
-            : [ 'match-family-to-quick-id', 'match-family-to-summary' ];
+    const familyFlavours = [ 'match-family-to-quick-id', 'match-family-to-summary' ];
+    // const familyFlavours = config.isPortraitMode 
+    //         ? [ 'match-family-to-quick-id' ] 
+    //         : [ 'match-family-to-quick-id', 'match-family-to-summary' ];
 
     let screen = layout.screens.find(screen => screen.name === 'family-strips');
     
@@ -92,6 +93,11 @@ export const renderMultiStrips = (collection) => {
             });
 
             score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
+
+            if(screen.name === 'family-strips') {
+                document.querySelector('.js-question-question').innerHTML = item.family;
+                document.querySelector('.js-question-help').classList.add('hide');
+            }
         };
 
         scoreHandler('strip', test, callback, config);

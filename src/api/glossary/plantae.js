@@ -1,9 +1,9 @@
 export const plantae = [
-    // {
-    //     term: "Type species",
-    //     definition: "A type species (species typica) is the species name with which the name of a genus or subgenus is considered to be permanently taxonomically associated, i.e., the species that contains the biological type specimen(s).",
-    //     wiki: "https://en.wikipedia.org/wiki/Type_species"
-    // },
+    {
+        term: "Type species",
+        definition: "Species with which the name of a genus or subgenus is associated.",
+        wiki: "https://en.wikipedia.org/wiki/Type_species"
+    },
     {
         term: "Entomophily",
         definition: "Pollination of plants, particularly flowering plants, by insects.",
@@ -316,7 +316,29 @@ export const plantae = [
     },
     {
         term: "Aristate",
-        definition: "Having a spiny or bristly tip (of leaf)",
+        definition: "Having a spiny or bristly tip (of leaf).",
         wiki: "https://en.wikipedia.org/wiki/Glossary_of_leaf_morphology#aristate"
+    },
+    {
+        term: "C3 carbon fixation",
+        definition: "C3 plants tend to thrive in areas where sunlight intensity and temperatures are moderate.",
+        wiki: "https://en.wikipedia.org/wiki/C3_carbon_fixation",
+        examples: ['Cirsium arvense']
+    },
+    {
+        term: "Ruderal species",
+        definition: "Plant species that is first to colonize disturbed lands.",
+        wiki: "https://en.wikipedia.org/wiki/Ruderal_species",
+        examples: ['Cirsium arvense']
+    },
+    {
+        term: "Supertramp",
+        definition: "Animal which follows strategy of high dispersion among different habitats where it is not specialised.",
+        wiki: "https://en.wikipedia.org/wiki/Supertramp_(ecology)",
+    },
+    {
+        term: "Allelopathy",
+        definition: "Biological phenomenon by which an organism produces biochemicals that influence germination, growth, survival, and reproduction of other organisms.",
+        wiki: "https://en.wikipedia.org/wiki/Allelopathy",
     },
 ];

@@ -57,7 +57,7 @@ export const getTraits = SD => {
         traits: [
             { name: SD.role.HOST, value: 'Odontota dorsalis', type: SD.symbiosis.PARASITISM },
             { name: SD.name.HOW_EDIBLE, value: SD.howEdible.POISONOUS },
-            { name: SD.name.USAGE, value: SD.usage.NITROGEN_FIXING },
+            { name: SD.name.PHYSIOLOGY, value: SD.physiology.NITROGEN_FIXING },
             { name: SD.name.USAGE, value: SD.usage.TIMBER },
             { name: SD.name.FRUIT_TYPE, value: SD.fruitType.LEGUME} ,
             { name: SD.name.SEED_COUNT, value: '4-8' },
@@ -95,7 +95,7 @@ export const getTraits = SD => {
             { name: SD.name.USAGE, value: SD.usage.FOOD },
             { name: SD.name.FOOD, value: `Papilio machaon`, type: SD.symbiosis.HERBIVORY },
         ] },
-        { name: 'Urtica dioica',
+    { name: 'Urtica dioica',
         symbionts: [ 
             { id: 'Vanessa atalanta' }
         ], 
@@ -103,7 +103,7 @@ export const getTraits = SD => {
             { name: SD.name.USAGE, value: SD.usage.FOOD },
             { name: SD.role.HERBIVORE, value: 'Vanessa atalanta', type: SD.symbiosis.HERBIVORY },
         ] },
-        { name: 'Pinus pinea',
+    { name: 'Pinus pinea',
         symbionts: [ 
             { id: 'Sciurus vulgaris' }
         ], 
@@ -112,6 +112,16 @@ export const getTraits = SD => {
             { name: SD.role.HERBIVORE, value: 'Sciurus vulgaris', type: SD.symbiosis.HERBIVORY },
             { name: SD.name.ALLOCHORY, value: SD.allochory.ANEMOCHORY },
             { name: SD.name.REPRODUCTIVE_CONTAINER, value: SD.reproductiveContainer.CONE }
+        ] },
+    { name: 'Cirsium arvense',
+        symbionts: [ 
+            {}
+        ], 
+        traits: [
+            { name: SD.name.PHYSIOLOGY, value: SD.physiology.C3_CARBON_FIXATION },
+            { name: SD.name.PHYSIOLOGY, value: SD.physiology.HERBACEOUS },
+            { name: SD.name.LONGEVITY, value: `${SD.longevity.PERENNIAL}` },
+            { name: SD.role.RUDERAL, value: 'Everywhere' },
         ] },
     ];
 };
