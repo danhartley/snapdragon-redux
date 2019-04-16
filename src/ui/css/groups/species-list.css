@@ -6,9 +6,8 @@ table {
 
 .table-header,
 .table-footer {
-  color: var(--snap-text-dark);
   background-color: rgb(153, 172, 149);
-  background-color: var(--snap-landscape);
+  color: var(--snap-text-dark);
   line-height: 2.5;
   cursor: pointer;
   display: flex;
@@ -138,6 +137,12 @@ table {
 }
   
   @media (min-width: 768px) {
+
+    .table-header,
+    .table-footer {
+      background-color: var(--snap-landscape);
+    }
+
     .table-row td:nth-child(3) {
         display: flex;
         flex-direction: column;
