@@ -1,5 +1,7 @@
 export const switchHandler = (idSwitch, startingPosition, callback) => {
     
+    if(!idSwitch) return;
+    
     const state = { position: startingPosition === 'left' ? 'right' : 'left' };
 
     let switchControl = idSwitch.querySelector('div');
