@@ -33,19 +33,22 @@ export const renderExampleGuideHandler = config => {
 
       const taxa = modal.querySelectorAll('.lesson-taxa');
 
-      taxa.forEach(taxon => {
-          const lessonId = parseInt(taxon.dataset.lessonId);
-          const lessonTaxa = lessons.find(lesson => lesson.id === lessonId).guide.iconicTaxa.map(taxon => taxon.id);
+      const iconiseTaxon = taxon => {
 
-          let icons = '';
+        const lessonId = parseInt(taxon.dataset.lessonId);
+        const lessonTaxa = lessons.find(lesson => lesson.id === lessonId).guide.iconicTaxa.map(taxon => taxon.id);
 
-          lessonTaxa.forEach(taxon => {
-            const icon = returnTaxonIcon(taxon);
-            icons += icon;
-          });
+        let icons = '';
 
-          taxon.innerHTML = icons;
-      });
+        lessonTaxa.forEach(taxon => {
+          const icon = returnTaxonIcon(taxon);
+          icons += icon;
+        });
+
+        taxon.innerHTML = icons;
+      };
+
+      for (const taxon of taxa) { iconiseTaxon(taxon); }
 
       const navigationBtn = modal.querySelector('.js-modal-guide-navigation div:nth-child(2)');
       navigationBtn.disabled = true;
@@ -56,12 +59,6 @@ export const renderExampleGuideHandler = config => {
 
         const lessonId = parseInt(lesson.id.replace('id_', ''));
         const l = lessons.find(l => l.id === lessonId);
-
-        const lessonLink = modal.querySelector(`#${lesson.id} span`);
-              lessonLink.innerHTML = 
-                l.externalLink !== undefined
-                    ? `(${ l.externalLink.text })` 
-                    : '';
 
         lesson.addEventListener('click', event => {
             let id = event.target.id.replace('id_', '');

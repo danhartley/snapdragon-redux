@@ -1,10 +1,12 @@
 <div class="btn-group btn-group-toggle js-rptr-lessons" data-toggle="buttons" data-repeat-lesson="{{ lessons }}">
     <label class="btn btn-secondary" id="id_{{ lesson.id }}">
-        <input type="radio" name="lessons" autocomplete="off">
-        <div data-lesson-id="{{ lesson.id }}">{{ lesson.name }} <span class="lesson-link js-lesson-link"></span> </div>
-        <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>
+        <div class="lesson-radio-button"></div>
+        <div>
+            <input type="radio" name="lessons" autocomplete="off">
+            <div class="lesson-name" data-lesson-id="{{ lesson.id }}">{{ lesson.name }}</div>
+            <div class="lesson-taxa" data-lesson-id="{{ lesson.id }}">{{ lesson.taxa }}</div>
+        </div>
     </label>    
-    <div class="lesson-radio-button"></div>
 </div>
 
 <div class="saved js-saved"></div>

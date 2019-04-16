@@ -8,11 +8,14 @@ import { landscapeFungi, landscapeLichens } from 'snapdragon/plans/landscape/lan
 import { landscapeLeaf } from 'snapdragon/plans/landscape/landscape-leaf';
 
 const landscapeBirds = { ...R.clone(landscapeDefault), id: 5 };
-      landscapeBirds.levels[0].layouts.push(L.mediaMatch);  
+      landscapeBirds.levels[0].layouts.push(L.mediaMatch); 
 
 const portraitLeaf = { ...R.clone(landscapeLeaf), id: 102, portrait: true };
 const portraitFungi = { ...R.clone(landscapeFungi), id: 103, portrait: true };
 const portraitLichens = { ...R.clone(landscapeLichens), id: 104, portrait: true };
+
+const portraitBirds = { ...R.clone(portraitDefault), id: 105 };
+      portraitBirds.levels[0].layouts.push(L.mediaMatch); 
 
 export const lessonPlans = [
 
@@ -25,5 +28,6 @@ export const lessonPlans = [
     portraitDefault,
     portraitFungi,    
     portraitLichens,
-    portraitLeaf
+    portraitLeaf,
+    portraitBirds
 ];
