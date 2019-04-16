@@ -60,6 +60,7 @@ export const enums = {
     reproductiveContainer: english.reproductiveContainer,
     communication: english.communication,
     mating: english.mating,
+    physiology: english.physiology,
 }
 
 let language;
@@ -95,6 +96,8 @@ export const typedEnums = enums => {
         }
     });
 };
+
+// To check: I think all species are now typed automatically…
 
 export const typedSpecies = (enums, speciesTraits)=> {
     const typed = typedEnums(enums);
