@@ -61,7 +61,7 @@
   
   .modal-guide-wrapper .modal-body .guide-text {
     font-size: 1.1rem;
-    margin: 1rem 0 .5rem 0;
+    margin: 1rem 0 0 0;
     letter-spacing: .03rem;
     color: var(--snap-text-medium-light);
     font-style: italic;
@@ -581,8 +581,8 @@
     height: 4rem;
     margin: 1.25rem 0;
     padding: 0.25rem 0 0.25rem 1.5rem;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     font-size: .9rem;
   }
 
@@ -594,24 +594,32 @@
   }
 
   #exampleGuide .lesson-taxa {
-    border-bottom: 1px solid var(--snap-dd-collection-bg-active);
+    /* border-bottom: 1px solid var(--snap-dd-collection-bg-active); */
     text-align: left;
   }
 
   /* prevent child elements of listener triggering an event */  
   #exampleGuide .btn.btn-secondary > * {
-    pointer-events: none;
+    pointer-events: none;    
   }
 
   .non-taxon .btn.btn-secondary input {
     pointer-events: none;
   }
 
-  #exampleGuide .btn.btn-secondary.active + div.lesson-radio-button {
+  #exampleGuide .btn.btn-secondary.active div.lesson-radio-button {
     background-color: var(--snap-text-light);
     border: .05rem solid gray;
   }
   
+  #exampleGuide .lesson-name {
+    width: 100%;
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
   #exampleGuide .lesson-taxa {
     font-size: .8rem;
   }
@@ -631,12 +639,18 @@
   }
 
   #exampleGuide .lesson-radio-button {
-    width: 1rem;
-    height: 1rem;
-    margin: -3.5rem 0 0 0.25rem;
+    width: 1rem !important;
+    height: 1rem !important;
     border-radius: 2rem;
     z-index: 9999;
     background-color: gray;
+    margin: 0 .5rem 0 0;
+  }
+
+  #exampleGuide .guide-example-lessons {
+    padding: 0 .5rem;
+    margin-top: 3rem;
+    /* height: 100%; */
   }
   
   @media (min-width: 768px) {
@@ -838,28 +852,32 @@
       width: 10rem;
     }
 
-    /* EXAMPLE LESSONS INC. RB LIST */
-
-    #exampleGuide .btn.btn-secondary {
-      margin: 1.25rem 0;
-      padding: 0.25rem 0 0.25rem 4rem;
-      font-size: initial;
-      width: 100%;
+    #exampleGuide .guide-example-lessons {
+      padding: 0;
+      margin-top: 3.5rem;
     }
+  }
 
-    #exampleGuide .btn-group label:nth-of-type(2n) {
-      background-color: var(--snap-lesson-row-green);
-    }
+  /* PORTRAIT & LANDSCAPE EXAMPLE GUIDE */
 
-    #exampleGuide .btn-group label:nth-of-type(2n+1) {
-      background-color: var(--snap-lesson-row-blue);
-    }
+  #exampleGuide .btn.btn-secondary {
+    margin: 0 0 .5rem 0;
+    padding: .25rem 0 .25rem .5rem;
+    font-size: initial;
+    width: 100%;
+  }
 
-    #exampleGuide .lesson-radio-button {
-      width: 2rem;
-      height: 2rem;
-      margin: -4rem 0 0 1rem;
-    }
+  #exampleGuide .lesson-radio-button {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  #exampleGuide .btn-group label:nth-of-type(2n) {
+    background-color: var(--snap-lesson-row-green);
+  }
+
+  #exampleGuide .btn-group label:nth-of-type(2n+1) {
+    background-color: var(--snap-lesson-row-blue);
   }
 
   #exampleGuide .start-lesson-wrapper.disabled {

@@ -29,25 +29,30 @@ export const renderExampleGuideHandler = config => {
       const template = document.createElement('template');
       template.innerHTML = exampleGuideTemplate;
 
-      renderTemplate({lessons: lessons.filter(lesson => lesson.type === type)}, template.content, parent);
+      const typeLessons = lessons.filter(lesson => lesson.type === type);
+
+      renderTemplate({ lessons: typeLessons }, template.content, parent);
 
       const taxa = modal.querySelectorAll('.lesson-taxa');
 
-      taxa.forEach(taxon => {
-          const lessonId = parseInt(taxon.dataset.lessonId);
-          const lessonTaxa = lessons.find(lesson => lesson.id === lessonId).guide.iconicTaxa.map(taxon => taxon.id);
+      const iconiseTaxon = taxon => {
 
-          let icons = '';
+        const lessonId = parseInt(taxon.dataset.lessonId);
+        const lessonTaxa = lessons.find(lesson => lesson.id === lessonId).guide.iconicTaxa.map(taxon => taxon.id);
 
-          lessonTaxa.forEach(taxon => {
-            const icon = returnTaxonIcon(taxon);
-            icons += icon;
-          });
+        let icons = '';
 
-          taxon.innerHTML = icons;
-      });
+        lessonTaxa.forEach(taxon => {
+          const icon = returnTaxonIcon(taxon);
+          icons += icon;
+        });
 
-      const navigationBtn = modal.querySelector('.js-modal-guide-navigation div:nth-child(2)');
+        taxon.innerHTML = icons;
+      };
+
+      for (const taxon of taxa) { iconiseTaxon(taxon); }
+
+      const navigationBtn = modal.querySelector('.js-start-lesson-wrapper');
       navigationBtn.disabled = true;
   
       const lessonSelectors = modal.querySelectorAll('.btn.btn-secondary');
@@ -56,12 +61,6 @@ export const renderExampleGuideHandler = config => {
 
         const lessonId = parseInt(lesson.id.replace('id_', ''));
         const l = lessons.find(l => l.id === lessonId);
-
-        const lessonLink = modal.querySelector(`#${lesson.id} span`);
-              lessonLink.innerHTML = 
-                l.externalLink !== undefined
-                    ? `(${ l.externalLink.text })` 
-                    : '';
 
         lesson.addEventListener('click', event => {
             let id = event.target.id.replace('id_', '');
@@ -83,14 +82,23 @@ export const renderExampleGuideHandler = config => {
         const txt = modal.querySelector('.js-saved');
 
         txt.innerHTML = 'Your preference has been updated';
-          setTimeout(() => {
-              txt.innerHTML = '';
-          }, 2000);
-      };
+        setTimeout(() => {
+            txt.innerHTML = '';
+        }, 2000);
 
-      navigationBtn.addEventListener('click', event => {
-        closeModalListeners.forEach(listener => listener());
-      });
+        const closeModal = event => {
+          closeModalListeners.forEach(listener => listener());
+        };
+
+        navigationBtn.removeEventListener('click', closeModal, true);
+        navigationBtn.addEventListener('click', closeModal, true);
+      };     
+
+      const chooseText = typeLessons.length > 1 
+              ? `Choose from ${typeLessons.length} lessons`
+              : 'One lesson available'
+
+      modal.querySelector('.js-guide-text > span:nth-child(1)').innerHTML = chooseText;
     };
 
     loadLessons();

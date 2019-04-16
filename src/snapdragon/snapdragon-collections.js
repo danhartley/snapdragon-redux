@@ -139,7 +139,7 @@ const placeMonsanto = {
 const placeArrabida = {
     ...placeDefaults,
     default: false,
-    name: 'O Parque Natural da Arrábida, SE, PT',            
+    name: 'O Parque Natural da Arrábida, SE, PT',       
     guide: {
         locationPlace: 'O Parque Natural da Arrábida, SE, PT',
         locationType: 'place',
@@ -159,8 +159,8 @@ const placeArrabida = {
 const snapdragonKitchenGarden = { 
     id: 4,
     providerId: 2,
-    type: 'snapdragon',
-    name: 'Kitchen Garden',            
+    type: 'course',
+    name: 'Snapdragon Kitchen Garden', 
     guide: {
         locationPlace: 'Kitchen Garden',
         locationType: 'place',
@@ -501,7 +501,7 @@ const commonBritishBirds = {
     ],
     moduleSize: 4,
     lessonPlanLandscape: 5,
-    lessonPlanPortrait: 101,
+    lessonPlanPortrait: 105,
     glossary: ['animalia', 'common'],
     items: birds,
     itemNames: [

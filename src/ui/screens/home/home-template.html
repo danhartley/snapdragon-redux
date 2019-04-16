@@ -78,7 +78,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="modal-title js-modal-title">
-                    <div>Ready-made lessons by category</div>
+                    <div class="landscape">Ready-made lessons by category</div>
+                    <div class="portrait">Ready-made lessons</div>
                 </div>                
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -92,13 +93,14 @@
                         <div id="place" class="completed"><span class="landscape">Place-based</span><span class="portrait">Place</span></div>
                         <div id="taxon"><span class="landscape">Taxon specific</span><span class="portrait">Taxon</span></div>
                         <div id="course"><span class="landscape">Course related</span><span class="portrait">Course</span></div>
-                        <div id="snapdragon"><span class="landscape">Snapdragon</span><span class="portrait">Snapdragon</span></div>
                     </div>
                 </div>
 
                 <div class="modal-guide-body js-modal-guide-body">
-                    <div class="guide-text">Choose a lesson (click anywhere on the item).</div>
-                    <div></div>
+                    <div class="guide-text js-guide-text"><span>Choose a lesson</span><span class="landscape"> (click on the lesson)</span>.</div>
+                    <div class="guide-example-lessons scrollable">
+                        <!-- Lessons go here -->
+                    </div>
                 </div>
                 <div class="modal-guide-navigation js-modal-guide-navigation">
                     <div>                        

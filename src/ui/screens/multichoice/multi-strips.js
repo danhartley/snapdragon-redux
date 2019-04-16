@@ -358,9 +358,7 @@ export const renderMultiStrips = (collection) => {
               parent.innerHTML = '';  
 
         const template = document.createElement('template');
-              template.innerHTML = '';
-
-        template.innerHTML = audioMediaTemplate;
+              template.innerHTML = audioMediaTemplate;
 
         const xcID = bird.traits.find(trait => trait.name === 'song').value;
 
