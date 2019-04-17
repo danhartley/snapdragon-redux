@@ -17,7 +17,7 @@ export const renderSpecimenTiles = (collection) => {
 
     if(!item) return;
 
-    layout.screens[1].name === 'birdsong' ? renderSpeciesGrid() : renderItemSpecimenTiles(item);
+    layout.screens[1] && layout.screens[1].name === 'birdsong' ? renderSpeciesGrid() : renderItemSpecimenTiles(item);
 };
 
 const renderItemSpecimenTiles = item => {

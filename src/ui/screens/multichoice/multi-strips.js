@@ -23,10 +23,10 @@ import * as SD from 'api/traits/trait-types';
 
 export const renderMultiStrips = (collection) => {
 
+    const { config, lessonPlan, layout, counter, score } = store.getState();
+
     const item = collection.nextItem;
     const items = collection.allItems || collection.items;
-
-    const { config, lessonPlan, layout, counter } = store.getState();
 
     const taxon = matchTaxon(item.taxonomy, iconicTaxa);
     const inconicTaxonFamilies = familyProps.getUniqueFamiliesByIconicTaxon(species, taxon.rank, taxon.value);
@@ -377,8 +377,18 @@ export const renderMultiStrips = (collection) => {
         const xcID = bird.traits.find(trait => trait.name === 'song').value;
 
         const mp3 = `./songs/${xcID}.mp3`;
-
+        
         renderTemplate({ mp3, title: item.name }, template.content, parent);
+
+        var audio = document.querySelector("audio");
+
+        audio.addEventListener('canplay', (event) => {
+            console.log(event);
+            console.log(event.srcElement.attributes.src);
+            event.srcElement.attributes.src = event.srcElement.attributes.src;
+            console.log(event.currentTarget);
+            console.log(event.target);
+        });
     }
 } catch(e) {
    

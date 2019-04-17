@@ -27,11 +27,11 @@ export const layout = (state = null, action) => {
             {
                 if(action.data.screens[1]) {
                     // console.clear();
-                    console.log('Layout name: ', action.data.name);
-                    console.log('Screen name: ', action.data.screens[1].name);
+                    // console.log('Layout name: ', action.data.name);
+                    // console.log('Screen name: ', action.data.screens[1].name);
                 }
                 if(action.data.screens[1] && action.data.screens[1].taxon) {
-                    console.log('Taxon name: ', action.data.screens[1].taxon);
+                    // console.log('Taxon name: ', action.data.screens[1].taxon);
                 }
             }
             return action.data;
