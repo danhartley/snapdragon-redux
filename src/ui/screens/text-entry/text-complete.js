@@ -7,7 +7,7 @@ import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { scoreHandler } from 'ui/helpers/handlers';
-import { renderTestCardTemplate } from 'ui/screens/common/test-card';
+import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import completeTemplate from 'ui/screens/text-entry/text-complete-template.html';
 
 export const renderCompleteText = (collection) => {

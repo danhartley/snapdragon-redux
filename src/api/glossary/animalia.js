@@ -91,4 +91,9 @@ export const animalia = [
         definition: 'Characterised by having only two successive sets of teeth.',
         wiki: 'https://en.wikipedia.org/wiki/Diphyodont',        
     },
+    {
+        term: 'Sexual cannibalism',
+        definition: 'When a female cannibalises her mate prior to, during, or after copulation.',
+        wiki: 'https://en.wikipedia.org/wiki/Sexual_cannibalism'
+    },
 ];

@@ -13,7 +13,7 @@ import { familyProps } from 'redux/reducers/initial-state/species-state/species-
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { syndromes } from 'api/snapdragon/syndromes';
-import { renderTestCardTemplate } from 'ui/screens/common/test-card';
+import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { rebindLayoutState } from 'ui/screens/multichoice/missing-data-helper';
@@ -67,6 +67,8 @@ export const renderMultiStrips = (collection) => {
 
         const strips = document.querySelectorAll('.js-rptr-strips .strip');
 
+        if(overrides.italicise) strips.forEach(strip => strip.classList.add('binomial'));
+
         const wordyAnswers = [ 'family-strips', 'definition' ];
 
         if(R.contains(screen.name, wordyAnswers)) {
@@ -111,8 +113,10 @@ export const renderMultiStrips = (collection) => {
             answers = R.take(5, answers);
             answers.push(item.name);
             answers = utils.shuffleArray(answers);
+            
+        const help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
 
-        render(question, answers, { binomial: '--- ---', question: 'What is the latin name?', help: '' });
+        render(question, answers, { binomial: '--- ---', question: 'What is the latin name?', help, italicise: true });
     }
 
     if(screen.name === 'species-vernaculars') {
@@ -126,7 +130,7 @@ export const renderMultiStrips = (collection) => {
             answers.push(item.vernacularName);
             answers = utils.shuffleArray(answers);
 
-        const help = config.isLandscapeMode ? '' : '';
+        const help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
 
         render(question, answers, { vernacularName: '--- ---', question: 'What is the common name?', help });
     }
@@ -263,7 +267,7 @@ export const renderMultiStrips = (collection) => {
                 question = family;
                 answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
                 if(question === undefined) console.log(item.name);
-                render(question, answers, { question: 'Match family name' });
+                render(question, answers, { question: 'Match family name', italicise: true });
             break;
         } 
     }
@@ -379,16 +383,6 @@ export const renderMultiStrips = (collection) => {
         const mp3 = `./songs/${xcID}.mp3`;
         
         renderTemplate({ mp3, title: item.name }, template.content, parent);
-
-        var audio = document.querySelector("audio");
-
-        audio.addEventListener('canplay', (event) => {
-            console.log(event);
-            console.log(event.srcElement.attributes.src);
-            event.srcElement.attributes.src = event.srcElement.attributes.src;
-            console.log(event.currentTarget);
-            console.log(event.target);
-        });
     }
 } catch(e) {
    

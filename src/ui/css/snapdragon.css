@@ -46,7 +46,7 @@ a:hover {
 
 ul {
   margin: 0;
-  padding: 1rem;
+  padding: .5rem;
 }
 
 li {
@@ -351,6 +351,12 @@ a.dropdown-item {
   justify-content: space-evenly;
 }
 
+.taxon.card .species-header {
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  background-color: var(--snap-species-header-background);
+}
+
 .non-taxa .species-header {
   padding: 0 1.25rem 0 0;
 }
@@ -396,8 +402,7 @@ a.dropdown-item {
   padding: 0.5rem;
 }
 
-.card.radio-buttons-container,
-.card.test-card-container {
+.card.radio-buttons-container {
   margin: 0 0 0.5rem 0;
 }
 
@@ -405,11 +410,6 @@ a.dropdown-item {
   font-style: italic;
   text-transform: initial;
 }
-
-/* .list-group-collection {
-  flex: auto;
-  flex-grow: 1;
-} */
 
 .lesson-plans .table-row.species-background:nth-child(n) {
   background-color: var(--snap-species-highlight-background);
@@ -824,10 +824,17 @@ a.dropdown-item {
 }
 
 .data-box-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
   width: 100%;
   padding: .5rem 0;
   border-bottom: .05rem solid lightgray;
+  padding: .5rem 0;
+  border-bottom: .05rem solid lightgray;
+}
+
+.taxon.card .data-box-container {
+  display: initial;
 }
 
 .data-box {
@@ -1385,10 +1392,6 @@ label.btn.btn-secondary .lesson-icon {
 
 .layer > div {
   text-align: center;
-}
-
-.test-card-container .layer {
-  font-size: 5rem;
 }
 
 .feature-label {

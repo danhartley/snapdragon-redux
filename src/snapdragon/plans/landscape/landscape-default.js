@@ -26,24 +26,24 @@ export const landscapeDefault = {
         {   id: 1,
             name:'Level 1',
             description: 'Species recognition',
-            layouts: [ L.commonToLatinMatch ],
-            // layouts: [ L.latinToCommonMatch ],
-            // layouts: [ L.mixedSpecimenImages ],
+            layouts: [
+                L.mixedSpecimenImages,
+                L.latinToCommonMatch
+            ],
             // wildcardLayouts : [ L.glossaryTerms ],
             // reviewLayouts: [ L.mixedSpecimenImages ]
         },
         {   id: 2,
             name:'Level 2',
             description: 'The common name of species',
-            // layouts: landscapeLayouts
             layouts: [ 
-                L.latinToCommonMatch,
-                // commonEntry
+                L.commonToLatinMatch,
+                L.commonEntry
             ],
             // wildcardLayouts : [ ],
             // reviewLayouts: [ 
-            //     latinToCommonMatch,
-            //     commonEntry,
+            //     L.commonToLatinMatch,
+            //     L.commonEntry,
             // ]
         },
         {   id: 3,

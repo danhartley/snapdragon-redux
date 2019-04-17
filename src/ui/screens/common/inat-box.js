@@ -58,10 +58,10 @@ export async function renderInatDataBox(parent, item, config, mode) {
             placeTaxonCount += Number.parseInt(taxon.count);
         }); 
 
-        parent.querySelector('.js-place').innerHTML = `${country} observations`;
-        parent.querySelector('.js-world').innerHTML = 'Worldwide observations';
-        // parent.querySelector('.js-world').innerHTML = mode === 'MODAL' ? 'Worldwide' : 'Worldwide observations';
-        // parent.querySelector('.js-place').innerHTML = mode === 'MODAL' ? country : `${country} observations`;
+        // parent.querySelector('.js-place').innerHTML = `${country} observations`;
+        // parent.querySelector('.js-world').innerHTML = 'Worldwide observations';
+        parent.querySelector('.js-world').innerHTML = mode === 'MODAL' ? 'Worldwide' : 'Worldwide observations';
+        parent.querySelector('.js-place').innerHTML = mode === 'MODAL' ? country : `${country} observations`;
         parent.querySelector('.js-place-taxon-count').innerHTML = placeTaxonCount.toLocaleString();
     });
     

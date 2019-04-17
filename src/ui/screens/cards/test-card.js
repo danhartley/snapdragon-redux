@@ -1,7 +1,7 @@
 import { DOM } from 'ui/dom';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTemplate } from 'ui/helpers/templating';
-import testCardTemplate from 'ui/screens/common/test-card-template.html';
+import testCardTemplate from 'ui/screens/cards/test-card-template.html';
 
 export const renderTestCardTemplate = (collection, context) => {
 
@@ -11,6 +11,14 @@ export const renderTestCardTemplate = (collection, context) => {
 
     const parent = DOM.rightBody;
     parent.innerHTML = '';
+
+    const handleIconAppearance = selector => {
+        const icon = document.querySelector(selector);
+        icon.classList.add('depressed');        
+        setTimeout(() => {
+            icon.classList.remove('depressed');
+        }, 1000);
+    };
 
     renderTemplate(context, template.content, parent);
 
@@ -36,11 +44,15 @@ export const renderTestCardTemplate = (collection, context) => {
         speciesCard = document.querySelector('.card');
         speciesCardIcon = speciesCard.querySelector('.iconic-icon');
 
+        handleIconAppearance('#card-header .js-iconic-icon');
+
         speciesCardIcon.addEventListener('click', event => {
             testCard.classList.add('swap-in-card');
             testCard.classList.remove('swap-out-card');
             speciesContainer.classList.add('swap-out-card');
             speciesContainer.classList.remove('swap-in-card');
+
+            handleIconAppearance('#test-card-header .js-iconic-icon');
         });
 
     });

@@ -100,11 +100,6 @@ export const commmon = [
         wiki: 'https://en.wikipedia.org/wiki/Sexual_dimorphism'
     },
     {
-        term: 'Sexual cannibalism',
-        definition: 'When a female cannibalises her mate prior to, during, or after copulation.',
-        wiki: 'https://en.wikipedia.org/wiki/Sexual_cannibalism'
-    },
-    {
         term: 'Conspecific',
         definition: 'Belonging to the same species.'
     },

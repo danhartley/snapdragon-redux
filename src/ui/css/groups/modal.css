@@ -116,8 +116,8 @@
 #cardModal .iconic-icon {
     font-size: 2.4rem;
     cursor: initial;
+    color: var(--snap-iconic-icon-header);
 }
-
 
 #cardModal .modal-content .snapdragon-container {  
     height: 70vh;
@@ -163,12 +163,6 @@
     justify-content: center;
 }
 
-#cardModal .iconic-icon {
-    float: left;
-    font-size: 1rem;
-    color: var(--snap-iconic-icon-header);
-  }
-
   #cardModal .compare-species-link {
     pointer-events: none;
     border: none;
@@ -203,15 +197,29 @@
     margin: 5rem auto;
   }
   
+  #badgeListModal .modal-header {
+    color: var(--snap-text-dark);
+    background-color: var(--snap-species-header-background);
+  }
+
   #badgeListModal .modal-body {
-    background-color: var(--snap-language);
+    background-color: rgb(226, 222, 180,.2);
     min-height: 5rem;
+    font-size: 1rem;
   }
   
+  #badgeListModal li {  
+    line-height: 1.5rem;
+  }
+
   #badgeListModal .modal-text {  
     color: var(--snap-text-medium-dark);
     margin: 0;
     font-size: .9rem;
+  }
+
+  #badgeListModal ul {
+    padding: 0;
   }
 
   /* SCROLL */

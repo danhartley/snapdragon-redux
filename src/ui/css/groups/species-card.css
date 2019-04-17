@@ -23,6 +23,9 @@
     font-size: 0.8rem;
     vertical-align: super;
     cursor: pointer;
+    min-width: 1rem;
+    min-height: 1rem;
+    display: inline-block;
 }
 
 /* SPECIES HEADER */
@@ -61,8 +64,17 @@
 
   .info-box {
     position: absolute;
-    bottom: 0;
+    bottom: .5rem;
     width: 100%;
+  }
+
+  .taxa-container {
+    text-align: left;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--snap-text-medium-light);
   }
 
   .extra-small-text {
@@ -81,17 +93,6 @@
     letter-spacing: .05rem;
     font-size: 1.2rem;
   }
-
-    /* SCROLLING */
-
-    .test-card-container .scrollable {
-        top: 10rem;
-        bottom: 9rem;
-    }
-
-    .test-card-container .scrollable.birdsong-strips {
-        top: 13rem;
-    }
 
 @media (min-width: 768px) {
 
@@ -120,17 +121,18 @@
     }
 
     .question-container > div:nth-child(1) {
-        text-align: left;
+        padding: 0 0 0 1rem;
         display: flex;
-        flex-direction: column;
-        padding: 0 0 0 .5rem;
+        flex-direction: row;
         font-size: .9rem;
-        justify-content: center;
+        justify-content: left;
+        align-items: center;
     }
 
     /* FEATURES */
 
     .feature-symbiont-list.scrollable {
+        top: 14rem;
         max-height: 15rem;
         width: 100%;
         margin: 0 0 0 0.05rem;
