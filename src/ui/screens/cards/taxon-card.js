@@ -5,6 +5,7 @@ import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { taxa } from 'api/snapdragon/taxa';
+import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import taxonTemplate from 'ui/screens/cards/taxon-template.html';
 
@@ -19,6 +20,9 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
     switch(mode) {
         case 'STAND_ALONE':
             rootNode = document.querySelector('.right-body');
+            break;
+        case 'SWAP_OUT':
+            rootNode = document.querySelector('.js-taxon-container');
             break;
         case 'MODAL':
             rootNode = document.querySelector('#cardModal');
@@ -82,6 +86,8 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
     renderTemplate(context, template.content, parent, clone);
 
+    renderIcon(collection.nextItem, rootNode);
+
     if(mode === 'MODAL') {
 
         rootNode.querySelector('.js-external-links').classList.add('hide');
@@ -107,7 +113,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
     document.querySelector('.js-external-page-title').innerHTML = `${taxonName}`;
     document.querySelector('.js-external-page-body').innerHTML = `<iframe class="modal-iframe" title="Wikipedia page for ${taxonName}" src="${context.wiki}"></iframe>`;
 
-    const membersCount = document.querySelector('.js-names-badge');
+    const membersCount = document.querySelector('#taxon-card-header .js-names-badge');
 
     if(!context.occurrences || context.occurrences === 0) membersCount.classList.add('hide');
 

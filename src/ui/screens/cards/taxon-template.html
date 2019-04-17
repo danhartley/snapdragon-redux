@@ -1,32 +1,40 @@
-<div class="snapdragon-container">
+<div class="snapdragon-container test-card-container">
     <div class="taxon card">
-            <div>
-                <div class="species-header js-txt-species">
-                    <div></div>
+        <div id="taxon-card-header" class="question-container">
+                <div>
+                    <span class="iconic-icon js-iconic-icon"><i class=""></i></span>
+                </div>
+                <div class="hide-empty question-header">
                     <div>
-                        <div>
-                            <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ occurrences }}</span>
-                            <span>{{ vernacularName }}</span>
-                        </div>
-                        <div class="latin-name js-txt-species-name">
-                            <span class="portrait bird-song-icon-disabled js-bird-song-player" data-src='player' data-toggle="modal" data-target="#menuModal">
-                                <i class="fas fa-music"></i>
-                            </span>
-                            <span>{{ name }}</span>                            
+                        <div class="names-container vernacular-name-badge js-names-container">
+                            <div>
+                                <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ occurrences }}</span>
+                                <span>{{ vernacularName }}</span>
+                            </div>
+                            <div class="latin-name js-txt-species-name">
+                                <span class="portrait bird-song-icon-disabled js-bird-song-player" data-src='player' data-toggle="modal" data-target="#menuModal">
+                                    <i class="fas fa-music"></i>
+                                </span>
+                                <span>{{ name }}</span>                            
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <img class="landscape" src="https://content.eol.org/data/media/{{ headerImage }}" alt="">
-                    </div>
+                </div>
+                <div class="species-header landscape">                        
+                    <img src="https://content.eol.org/data/media/{{ headerImage }}" alt="">
+                </div>
+        </div>  
+        <div class="data-box-container">
+            <div></div>
+            <div class="data-box">
+                <div class="taxon-data"><span>Rank</span> <span>{{ rank }}</span></div>
+                <div class="taxon-data"><span>Species</span> <span>{{ species }}</span></div>
+                <div class="taxon-data"><span>Genera</span> <span>{{ genera }}</span></div>
+                <div class="landscape external-links js-external-links">
+                    <a href="{{ eol }}" target="_blank" class="underline-link">EOL</a>
+                    <a href="{{ wiki }}" class="underline-link" data-toggle="modal" data-target="#wikiModal">WIKI</a>
                 </div>
             </div>
-        <div class="data-box-container">
-                <div></div>
-                <div class="data-box">
-                    <div class="taxon-data"><span>Rank</span> <span>{{ rank }}</span></div>
-                    <div class="taxon-data"><span>Species</span> <span>{{ species }}</span></div>
-                    <div class="taxon-data"><span>Genera</span> <span>{{ genera }}</span></div>                                        
-                </div>
         </div>
         <div class="id-box-container">
             <div class="id-box">
@@ -42,10 +50,5 @@
             <div>{{ summary }}</div>
         </div>
         <!-- <div class="landscape portrait"><span class="snap-alert-fg js-taxon-toxic-warning"></span> {{ toxic }}</div> -->
-        <div class="landscape js-external-links">
-            <a href="{{ eol }}" target="_blank" class="underline-link">EOL</a>
-            <a href="{{ wiki }}" class="underline-link" data-toggle="modal" data-target="#wikiModal">WIKI</a>
-        </div>
     </div>
 </div>
-    

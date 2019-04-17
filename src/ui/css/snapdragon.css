@@ -351,11 +351,11 @@ a.dropdown-item {
   justify-content: space-evenly;
 }
 
-.taxon.card .species-header {
+/* .taxon.card .species-header {
   display: grid;
   grid-template-columns: 2fr 4fr 2fr;
   background-color: var(--snap-species-header-background);
-}
+} */
 
 .non-taxa .species-header {
   padding: 0 1.25rem 0 0;
@@ -384,9 +384,9 @@ a.dropdown-item {
   font-size: 1.1rem;
 }
 
-.taxon.card {
+/* .taxon.card {
   padding: 0 0.5rem 0 0;
-}
+} */
 
 .taxon-summary {
   display: flex;
@@ -796,7 +796,8 @@ a.dropdown-item {
 
 .id-box-container {
   position: absolute;
-  top: 250px;
+  top: 15rem;
+  padding: 0 2rem;
 }
 
 .id-box {
@@ -827,8 +828,7 @@ a.dropdown-item {
   display: grid;
   grid-template-columns: 2fr 3fr 2fr;
   width: 100%;
-  padding: .5rem 0;
-  border-bottom: .05rem solid lightgray;
+  height: 8rem;
   padding: .5rem 0;
   border-bottom: .05rem solid lightgray;
 }
@@ -2006,7 +2006,7 @@ a.collection-disabled {
 }
 
 .swap-out-card {
-  display: none;
+  display: none !important;
 }
 
 .no-pointer-events {

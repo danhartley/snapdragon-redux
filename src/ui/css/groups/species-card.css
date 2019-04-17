@@ -92,6 +92,11 @@
     font-family: sentinel;
     letter-spacing: .05rem;
     font-size: 1.2rem;
+    height: 8rem;
+  }
+
+  .external-links {
+      margin: 0 0 0 .5rem;
   }
 
 @media (min-width: 768px) {
