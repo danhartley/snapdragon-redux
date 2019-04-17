@@ -112,7 +112,7 @@ export const renderMultiStrips = (collection) => {
             answers.push(item.name);
             answers = utils.shuffleArray(answers);
 
-        render(question, answers, { binomial: '--- ---', question: 'What is the latin name?' });
+        render(question, answers, { binomial: '--- ---', question: 'What is the latin name?', help: '' });
     }
 
     if(screen.name === 'species-vernaculars') {
@@ -126,7 +126,7 @@ export const renderMultiStrips = (collection) => {
             answers.push(item.vernacularName);
             answers = utils.shuffleArray(answers);
 
-        const help = config.isLandscapeMode ? '(Click on the name below.)' : '';
+        const help = config.isLandscapeMode ? '' : '';
 
         render(question, answers, { vernacularName: '--- ---', question: 'What is the common name?', help });
     }
