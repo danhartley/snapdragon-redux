@@ -1,5 +1,13 @@
 .modal-dialog {
-    margin: 2rem auto;
+    width: auto;
+    margin: 2rem .5rem .5rem .5rem;
+}
+
+.modal-content {
+  border: none;
+  border-radius: 0;
+  border-top-left-radius: .3rem;
+  border-top-right-radius: .3rem;
 }
   
 .modal-body {
@@ -8,6 +16,7 @@
 
 .modal-header {
     padding: .5rem;
+    border-radius: 0;
 }
 
 .modal-header button.close {
@@ -16,9 +25,11 @@
 }
 
 .modal-title {
-    color: var(--snap-text-medium-light);
-    text-transform: uppercase;
-    font-size: .9rem;
+  color: var(--snap-text-dark);
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: .07rem;
+  font-family: sentinel;
   }
   
   .modal-title span {
@@ -234,22 +245,35 @@
 #menuModal .definition.card {
     height: 60vh;
     border: 0;
-    margin: 0 0 1rem 0;
     font-size: 1rem;
+    padding: 0 .5rem;
+    font-family: sentinel;
+    border-radius: 0;
   }
   
   #menuModal .definition.card div > div {
-    margin: 0.5rem 0;
-    padding: 0.15rem;
+    margin: 0.15rem 0;
+    padding: 0.25rem;
   }
+
+  /* #menuModal .definition.card div > div:nth-child(2n) {
+    background-color: rgba(229, 227, 220,.4);
+  } */
   
   #menuModal .definition.card span:nth-child(1) {
     text-underline-position: under;
-    color: var(--snap-success);
+    color: rgb(20, 20, 20);
     margin: 0 0.25rem 0 0;
+    font-style: italic;
+    font-size: 1.1rem;
+    letter-spacing: .03rem;
   }
 
 @media (min-width: 768px) {
+
+  .modal-dialog {
+    margin: 2rem auto;
+  }
 
     .modal-body {
         padding: 1rem;
