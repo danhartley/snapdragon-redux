@@ -21,12 +21,16 @@
     font-size: 1rem;
 }
 
+.text-card-content {
+    margin: 1rem 0 0 0;
+}
+
 .names-container {
     font-size: 1.2rem;
     display: flex;
     flex-direction: column;
     text-align: left;
-    padding: 0 0 0 .5rem;
+    padding: 0;
 }
 
 .term-header {
@@ -284,7 +288,6 @@ div.text-entry {
 
     .names-container {        
         align-items: center;
-        padding: 0;
     }
 
     .test-card-container .question-container {
@@ -318,19 +321,6 @@ div.text-entry {
     .test-card {
         padding: 0 .5rem;
     }
-
-    /* .test-card .question {
-        height: 6rem;
-        border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
-    } */
-
-    .test-card .question-sub-header {
-        margin: 2rem 0 0 0;
-    }
-
-    /* .test-card .images-names-txt {
-        margin: 1rem 0 0 0;
-    } */
 
     .test-card button {
         width: 12rem;
@@ -379,12 +369,8 @@ div.text-entry {
     }      
 
     .card-card .feature-symbiont-list.scrollable {
-        top: 12rem;
+        top: 11.75rem;
     }
-/* 
-    .test-card-container .scrollable {
-    top: 11.5rem;
-    } */
 
     .test-card-container .scrollable {
         bottom: 7rem;

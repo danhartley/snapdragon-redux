@@ -384,12 +384,8 @@ a.dropdown-item {
   font-size: 1.1rem;
 }
 
-/* .taxon.card {
-  padding: 0 0.5rem 0 0;
-} */
-
 .taxon-summary {
-  padding: 0 1rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -453,7 +449,6 @@ a.dropdown-item {
 .left-grid,
 .right-grid {
   grid-template-rows: 1fr 0.3rem 12fr 1fr;
-  /* grid-template-rows: 2.5rem 0.3rem 12fr 2.5rem; */
 }
 
 .left-body,
@@ -467,8 +462,6 @@ a.dropdown-item {
   display: flex;
   align-items: center;
   padding: 0 0.55rem;
-  /* position: sticky;
-  position: -webkit-sticky; */
 }
 
 .header {
@@ -888,7 +881,6 @@ a.dropdown-item {
 
 .taxon-data > span:nth-child(1) {
   width: 5rem;
-  /* padding: 0 0 0 0.5rem; */
   color: rgb(35, 35, 35);  
 }
 
@@ -902,8 +894,6 @@ a.dropdown-item {
 }
 
 .taxon-data {
-  /* flex: auto;
-  margin: 0; */
   display: flex;
   flex-direction: row;
 }
@@ -1228,8 +1218,6 @@ span.correct {
 
 .species-card-images,
 .non-taxon-card-images {
-  /* margin: .5rem 0 0 0; */
-  /* width: 100%; */
   height: initial;
   display: grid;
   grid-template-columns: 1fr;
@@ -1644,7 +1632,6 @@ th .custom-control-label::before, .custom-control-label::before {
 .species-pending {
   color: var(--snap-link);
   background-color: var(--snap-list-alt-background);
-  /* border: 0.05rem solid var(--snap-border-dark); */
   font-size: 1.4rem;
 }
 
@@ -1733,17 +1720,6 @@ a.collection-disabled {
   text-align: left;
 }
 
-/* .rights-link > div > div,
-.rights-attribution > div > div:nth-child(1) {
-  background-color: var(--snap-text-dark);
-  color: var(--snap-text-light);
-  padding: 0.125rem 0.3rem 0 0.3rem;
-  border-radius: 0.1rem;
-  display: inline-block;
-  font-size: 1rem;
-  cursor: pointer;
-} */
-
 .rights-attribution > div {
   display: flex;
   align-items: flex-end;
@@ -1826,10 +1802,6 @@ a.collection-disabled {
 }
 
 .calender-container {
-  /* width: 160px;
-  min-width: 160px;
-  max-width: 160px;
-  height: 106px; */
   display: flex;
   align-items: center;
 }
@@ -1953,7 +1925,6 @@ a.collection-disabled {
 
 .home-container .snapdragon-tag .inat-widget span:nth-child(1) {
   font-style: initial;
-  /* font-size: 1.4rem; */
 }
 
 .example-guide-link span {

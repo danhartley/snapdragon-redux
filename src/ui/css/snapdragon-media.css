@@ -50,12 +50,6 @@
         font-size: 1.2rem;
         padding: .65rem;
     }
-    /* .feature-symbiont-list.scrollable {
-        max-height: 20rem !important;
-    } */
-    /* .test-card-container.scrollable {
-        bottom: 8rem !important;
-    } */
 }
 
 @media (min-height:812px) {
@@ -249,8 +243,8 @@
     }
 
     .id-box-container {
-        top: 15rem;
-        padding: 0 2rem;
+        top: 12rem;
+        padding: 0 1rem;
     }
 
     .carousel-inner .image-load-original > div {
@@ -258,7 +252,8 @@
     }
 
     .taxon-summary {
-        padding: 0 2rem;
+        padding: 1rem 2rem;
+        margin: 0 1rem;
     }
 }
 
