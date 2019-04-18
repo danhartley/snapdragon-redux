@@ -11,7 +11,7 @@ body {
   height: 100vh;
   font-family: "PT Sans", "Roboto", arial, sans-serif;
   color: var(--snap-text-dark);
-  background-color: rgb(129, 67, 101,.1);
+  background-color: rgba(129, 67, 101,.1);
 }
 
 button {
@@ -291,7 +291,7 @@ a.dropdown-item {
 }
 
 .hover-box {
-  border: .05rem solid rgb(48, 94, 37,.8);
+  border: .05rem solid rgba(48, 94, 37,.8);
   padding: .25rem;
   margin: 0 0 0 -.25rem;
   border-radius: 0.25rem;
@@ -389,13 +389,16 @@ a.dropdown-item {
 } */
 
 .taxon-summary {
-  padding: 0 .5rem;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: initial;
   position: absolute;
   bottom: 1rem;
+  margin: 0 .5rem;
+  background-color: rgba(197, 193, 175,.2);
+  min-height: 5rem;
 }
 
 .species.card-small {
@@ -625,7 +628,7 @@ a.dropdown-item {
 
 
 .strip.snap-success {
-  background-color: rgb(41, 108, 44,.4);
+  background-color: rgba(41, 108, 44,.4);
   box-shadow: 0 2px 8px rgba(0,0,0,.8);
   border: none;
 }
@@ -809,19 +812,22 @@ a.dropdown-item {
 .id-box > div:nth-child(1) {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  padding: 0 0.5rem 0 0;
-  font-size: 0.9m;
+  font-size: 1.1rem;
+  font-style: italic;
 }
 
 .id-box > div:nth-child(2) {
   flex: 3 !important;
-  padding: 0 0 0 0.5rem;
+  padding: .5rem;
   text-align: left;
   flex: auto;
   color: var(--snap-text-dark);
   border-left: 0.25rem dotted var(--snap-progress-bar);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sub-header {
@@ -1090,7 +1096,7 @@ span.correct {
 
 .layer.snap-success {
   border: none;
-  color: rgb(40, 167, 69,.5);
+  color: rgba(40, 167, 69,.5);
 }
 
 .btn.btn-light.snap-success {
@@ -1119,7 +1125,7 @@ span.correct {
 
 .layer.snap-alert {
   border: none;
-  color: rgb(255, 0, 0,.5);
+  color: rgba(255, 0, 0,.5);
 }
 
 .btn.btn-light.snap-alert {
@@ -1222,8 +1228,8 @@ span.correct {
 
 .species-card-images,
 .non-taxon-card-images {
-  margin: .5rem 0 0 0;
-  width: 100%;
+  /* margin: .5rem 0 0 0; */
+  /* width: 100%; */
   height: initial;
   display: grid;
   grid-template-columns: 1fr;
@@ -1456,8 +1462,8 @@ label.btn.btn-secondary .lesson-icon {
 }
 
 .imageSlider .carousel-item {
-  height: 30vh;
-  padding: .5rem 10%;
+  height: 12.375rem;
+  padding: .25rem 10%;
 }
 
 .imageSlider .carousel-item > div {
@@ -1704,6 +1710,20 @@ a.collection-disabled {
   padding: 0.5rem;
 }
 
+.rights-link-copyright {
+    display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 .05rem 0;
+    background-color: var(--snap-text-dark);
+    color: var(--snap-text-light);
+    cursor: pointer;
+    border-radius: 0.1rem;
+    font-size: 1rem;
+}
+
 .rights-link {
   width: 80%;
   position: absolute;
@@ -1713,16 +1733,16 @@ a.collection-disabled {
   text-align: left;
 }
 
-.rights-link > div > div,
+/* .rights-link > div > div,
 .rights-attribution > div > div:nth-child(1) {
-  background-color: var(--snap-green-feature-txt);
+  background-color: var(--snap-text-dark);
+  color: var(--snap-text-light);
   padding: 0.125rem 0.3rem 0 0.3rem;
   border-radius: 0.1rem;
   display: inline-block;
-  color: var(--snap-text-light);
   font-size: 1rem;
   cursor: pointer;
-}
+} */
 
 .rights-attribution > div {
   display: flex;
@@ -1844,7 +1864,7 @@ a.collection-disabled {
 }
 
 .current-month {
-  border: 0.05rem solid rgb(108, 117, 125,.8);
+  border: 0.05rem solid rgba(108, 117, 125,.8);
 }
 
 .floating-card > span:nth-child(1) {

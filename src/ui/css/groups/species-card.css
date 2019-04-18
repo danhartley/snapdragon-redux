@@ -1,6 +1,6 @@
-.feature-symbiont-list.scrollable {
+/* .feature-symbiont-list.scrollable {
     max-height: 7.5rem;
-}
+} */
 
 /* TRAITS CAROUSEL */
 
@@ -110,7 +110,7 @@
 
     .feature-symbiont-list.scrollable {
     top: 12rem;
-    max-height: 15rem;
+    /* max-height: 15rem; */
     width: 100%;
     margin: 0 0 0 0.05rem;
 }
@@ -126,6 +126,8 @@
     line-height: 1.5rem;
     color: var(--snap-text-light);
     letter-spacing: .05rem;
+    position: sticky;
+    position: -webkit-sticky;
 }
 
 .feature-symbiont-list tfoot td {

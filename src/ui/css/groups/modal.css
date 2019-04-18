@@ -323,7 +323,7 @@
     }
 
     #cardModal .feature-symbiont-list.scrollable {        
-        max-height: 12rem;
+        /* max-height: 12rem; */
         margin: 0;
         margin-top: 230px;
     }

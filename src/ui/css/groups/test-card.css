@@ -163,7 +163,7 @@
 }
 
 .card-card .feature-symbiont-list.scrollable {
-    top: 18.5rem;
+    top: 20rem;
 }
 
 .test-card-container .scrollable.birdsong-strips {
@@ -377,10 +377,18 @@ div.text-entry {
     .test-card-container .layer {
         font-size: 5rem;
     }      
+
+    .card-card .feature-symbiont-list.scrollable {
+        top: 12rem;
+    }
 /* 
     .test-card-container .scrollable {
     top: 11.5rem;
     } */
+
+    .test-card-container .scrollable {
+        bottom: 7rem;
+    }
 }
 
 /* iPHONE 6,7,8 PLUS, iPHONE X, GALAXY S9/S9+ */

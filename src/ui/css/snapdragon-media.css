@@ -50,6 +50,12 @@
         font-size: 1.2rem;
         padding: .65rem;
     }
+    /* .feature-symbiont-list.scrollable {
+        max-height: 20rem !important;
+    } */
+    /* .test-card-container.scrollable {
+        bottom: 8rem !important;
+    } */
 }
 
 @media (min-height:812px) {
