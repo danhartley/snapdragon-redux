@@ -31,7 +31,7 @@ export const landscapeDefault = {
                 L.latinToCommonMatch
             ],
             // wildcardLayouts : [ L.glossaryTerms ],
-            // reviewLayouts: [ L.mixedSpecimenImages ]
+            reviewLayouts: [ L.mixedSpecimenImages ]
         },
         {   id: 2,
             name:'Level 2',

@@ -201,10 +201,18 @@
     padding: 0 0 0 .5rem;
     padding: .5rem;
     box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    transition: all 1s ease;
     cursor: pointer;
 }
 
 .iconic-icon.depressed {
+    transition: all .5s ease;
+    box-shadow: none;
+    /* box-shadow: inset 0 2px 8px rgba(0,0,0,.2); */
+}
+
+.iconic-icon.flat {
+    transition: all .5s ease;
     box-shadow: none;
 }
 
