@@ -1,51 +1,50 @@
 <div class="snapdragon-container test-card-container js-species-card">    
-    <div class="card">
-        <div>
-            <div class="question-container">
-                <div class="landscape" class="taxon-header">
-                    <span class='rank'>{{ trait }}</span>
-                    <span class="lookalikes js-lookalikes"></span>
-                    <span class="portrait bird-song-icon-disabled js-bird-song-player" data-src='player' data-toggle="modal" data-target="#menuModal">
-                        <i class="fas fa-music"></i>
-                    </span>                        
-                    <span class="badge badge-light js-subspecies-badge" data-toggle="modal" data-target="#badgeListModal">{{ subSpeciesCount }}</span> <span class="sr-only">species of this family in the collection</span>
-                    <span class="hide-empty">{{ familyVernacularName }}</span> <span class="latin hide-empty">{{ familyName }}</span>
-                </div>
-                <div class="hide-empty question-header">
-                    <div>
-                        <div class="names-container vernacular-name-badge js-names-container">
-                            <div>
-                                <span>{{ vernacularName }}</span>
-                                <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ occurrences }}</span>
-                            </div>
-                            <span class="binomial">{{ name }}</span>
+    <div class="card-card">
+        <div id="card-header" class="question-container">
+            <div>
+                <span class="iconic-icon js-iconic-icon"><i class=""></i></span>
+            </div>
+            <div class="hide-empty question-header">
+                <div>
+                    <div class="names-container vernacular-name-badge js-names-container">
+                        <div>
+                            <span>{{ vernacularName }}</span>
+                            <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ occurrences }}</span>
                         </div>
                         <div>
-                            <span class="iconic-icon js-iconic-icon"><i class=""></i></span>
+                            <span class="binomial">{{ name }}</span>
                         </div>
                     </div>
                 </div>
-                <div class="landscape" class="species-header">                        
-                    <img src="https://content.eol.org/data/media/{{ headerImage }}" alt="">
-                </div>
-            </div>            
-            <div class="data-box-container landscape">                
-                <div class="landscape calender-container">
-                    <div class="js-calendar-box"></div>
-                </div>
-                <div class="inat-box js-inat-box"></div>
+            </div>
+            <div class="species-header landscape">                        
+                <img src="https://content.eol.org/data/media/{{ headerImage }}" alt="">
+            </div>
+        </div>            
+        <div class="data-box-container sub-header landscape">
+            <div class="calender-container landscape">
+                <div class="js-calendar-box"></div>
+            </div>
+            <div class="inat-box js-inat-box"></div>
+            <div class="taxa-container landscape" class="taxon-header">
+                <span class='rank'>{{ trait }}</span>
+                <span class="lookalikes js-lookalikes"></span>
+                <span class="portrait bird-song-icon-disabled js-bird-song-player" data-src='player' data-toggle="modal" data-target="#menuModal">
+                    <i class="fas fa-music"></i>
+                </span>                        
+                <span class="badge badge-light js-subspecies-badge" data-toggle="modal" data-target="#badgeListModal">{{ subSpeciesCount }}</span> <span class="sr-only">species of this family in the collection</span>
+                <span class="hide-empty">{{ familyVernacularName }}</span> <span class="latin hide-empty">{{ familyName }}</span>
             </div>
         </div>
-        <hr class="landscape">
         <div class="portrait-grid species-card-images carousel js-species-card-images"></div>
         <div class="landscape bird-song">
             <div class="hide-empty">
                 <iframe class="js-bird-song" src='' scrolling='no' frameborder='0' width='80vw' height='115'>                    
                 </iframe>
             </div>
-    </div>   
+        </div>   
         <div class="card-txt-block lookalikes js-lookalikes"></div>
         <div class="feature-types js-feature-types"></div>
         <div class="info-box js-info-box"></div>
-    </div>    
+    </div>
 </div>

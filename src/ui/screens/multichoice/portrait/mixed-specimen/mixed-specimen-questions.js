@@ -6,7 +6,7 @@ import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
-import { renderTestCardTemplate } from 'ui/screens/common/test-card';
+import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-questions-template.html';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { imageSlider } from 'ui/screens/common/image-slider';

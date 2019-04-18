@@ -1,6 +1,6 @@
-.feature-symbiont-list.scrollable {
+/* .feature-symbiont-list.scrollable {
     max-height: 7.5rem;
-}
+} */
 
 /* TRAITS CAROUSEL */
 
@@ -23,19 +23,21 @@
     font-size: 0.8rem;
     vertical-align: super;
     cursor: pointer;
+    min-width: 1rem;
+    min-height: 1rem;
+    display: inline-block;
 }
 
 /* SPECIES HEADER */
 
 .question-container {
   background-color: var(--snap-species-header-background);
-  height: 64px;  
-  /* margin: 0 0 .5rem 0; */
+  height: 4rem;
 }
 
 .question-container img {
-    height: 64px;
-    width: 64px;
+    height: 4rem;
+    width: 4rem;
     object-fit: scale-down;
 }
 
@@ -61,8 +63,18 @@
 
   .info-box {
     position: absolute;
-    bottom: 0;
+    bottom: .5rem;
     width: 100%;
+  }
+
+  .taxa-container {
+    text-align: left;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--snap-text-medium-light);
+    margin: 0 .5rem;
   }
 
   .extra-small-text {
@@ -76,22 +88,67 @@
   }
 
   .taxon.card .data-box {
-    width: 100%;
     font-family: sentinel;
     letter-spacing: .05rem;
-    font-size: 1.2rem;
+    font-size: .9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-    /* SCROLLING */
+  .external-links {
+    margin: .5rem 0 0 .75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
 
-    .test-card-container .scrollable {
-        top: 10rem;
-        bottom: 9rem;
-    }
+    /* FEATURES */
 
-    .test-card-container .scrollable.birdsong-strips {
-        top: 13rem;
-    }
+    .feature-symbiont-list.scrollable {
+    top: 12rem;
+    width: 100%;
+    margin: 0 0 0 0.05rem;
+}
+
+.feature-symbiont-list table {
+    width: 100%;
+    border-collapse: inherit;
+}
+
+.feature-symbiont-list thead > tr:nth-child(1) {  
+    line-height: 1.5rem;
+    background-color: rgba(52, 58, 64,.7);
+    line-height: 1.5rem;
+    color: var(--snap-text-light);
+    letter-spacing: .05rem;
+    position: sticky;
+    position: -webkit-sticky;
+}
+
+.feature-symbiont-list tfoot td {
+    border-bottom: .05rem solid rgb(52, 58, 64,.7);
+}
+
+.feature-symbiont-list th,
+.feature-symbiont-list td {
+    text-align: left;
+    font-weight: normal;
+    border: 0;
+    padding: 0 0 0 0.5rem;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+}
+
+.feature-symbiont-list th {
+    text-transform: uppercase;
+}
+    
+.feature-symbiont-list .underline-link {
+    text-transform: initial;
+}
 
 @media (min-width: 768px) {
 
@@ -111,64 +168,20 @@
     /* SPECIES HEADER */
 
     .question-container {
-        height: 88px;
+        height: 5.5rem;
     }
 
     .question-container img {
-        height: 88px;
-        width: 88px;
+        height: 5.5rem;
+        width: 5.5rem;
     }
 
     .question-container > div:nth-child(1) {
-        text-align: left;
+        padding: 0 0 0 1rem;
         display: flex;
-        flex-direction: column;
-        padding: 0 0 0 .5rem;
+        flex-direction: row;
         font-size: .9rem;
-        justify-content: center;
-    }
-
-    /* FEATURES */
-
-    .feature-symbiont-list.scrollable {
-        max-height: 15rem;
-        width: 100%;
-        margin: 0 0 0 0.05rem;
-    }
-
-    .feature-symbiont-list table {
-        width: 100%;
-        border-collapse: inherit;
-    }
-    
-    .feature-symbiont-list thead > tr:nth-child(1) {  
-        line-height: 1.5rem;
-        background-color: rgba(52, 58, 64,.7);
-        line-height: 1.5rem;
-        color: var(--snap-text-light);
-        letter-spacing: .05rem;
-    }
-
-    .feature-symbiont-list tfoot td {
-        border-bottom: .05rem solid rgb(52, 58, 64,.7);
-    }
-    
-    .feature-symbiont-list th,
-    .feature-symbiont-list td {
-        text-align: left;
-        font-weight: normal;
-        border: 0;
-        padding: 0 0 0 0.5rem;
-        text-transform: capitalize;
-        font-size: 0.8rem;
-        line-height: 1.5rem;
-    }
-    
-    .feature-symbiont-list th {
-        text-transform: uppercase;
-    }
-      
-    .feature-symbiont-list .underline-link {
-        text-transform: initial;
+        justify-content: left;
+        align-items: center;
     }
 }

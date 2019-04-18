@@ -1067,7 +1067,7 @@ export const lichen = [
       ],
       "names": [
         {
-          "vernacularName": "Hepp's Schönfleck",
+          "vernacularName": "Caloplaca flavescens",
           "language": "en"
         },
         {

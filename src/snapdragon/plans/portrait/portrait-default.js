@@ -25,7 +25,9 @@ export const portraitDefault = {
         {   id: 1,
             name:'Level 1',
             // layouts: [ mediaMatch ],
-            layouts: [ L.mixedSpeciesMatch ],
+            layouts: [ L.commonToLatinMatch ],
+            // layouts: [ L.latinToCommonMatch ],
+            // layouts: [ L.mixedSpeciesMatch ],
             // wildcardLayouts : [ L.latinEpithets ],
             // wildcardLayouts : [],
             reviewLayouts: [ L.mixedSpeciesMatch ]

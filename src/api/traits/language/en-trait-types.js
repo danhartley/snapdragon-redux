@@ -93,6 +93,8 @@ export const english = {
         CATERPILLAR_LENGTH: 'Caterpillar length',
         CATERPILLAR_COLOUR: 'Caterpillar colour',
         HIBERNATING_STAGE: 'Hibernating stage',
+
+        PHYSIOLOGY: 'Physiology',
         
         MATING: 'Mating season',
         MATING_SYSTEM: 'mating system',
@@ -332,8 +334,7 @@ export const english = {
         FODDER: 'Fodder',
         GREEN_MANURE: 'Green manure',
         MEDICINE: 'Medicine',
-        FUR: 'Fur',
-        NITROGEN_FIXING: 'Nitrogen fixing', // non0human use - place elsewhere
+        FUR: 'Fur',        
         TIMBER: 'Timber'
     },
     nonTaxaType: {
@@ -560,6 +561,8 @@ export const english = {
         COMPETITOR: 'Competitor',
         HOST: 'Host',
         CARRIER: 'Carrier',
+        RUDERAL: 'Ruderal',
+        SUPERTRAMP: 'Supertramp'
     },
     fruitType: {
         help: 'What fruit type does this plant have?',
@@ -654,5 +657,10 @@ export const english = {
     mating: {
         POLYGYNOUS: 'Polygynous',
         MONOGAMOUS: 'Monogamous'
+    }, 
+    physiology: {
+        C3_CARBON_FIXATION: 'C3 carbon fixation',
+        NITROGEN_FIXING: 'Nitrogen fixing',
+        HERBACEOUS: 'Herbaceous'
     }
 };

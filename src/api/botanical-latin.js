@@ -678,4 +678,8 @@ export const epithets = [
         "latin" : ["praecox"],
         "en" : ["before its time"]
     },
+    {
+        "latin" : ["rudus"],
+        "en" : ["rubble"]
+    },
 ];

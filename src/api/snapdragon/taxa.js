@@ -67,7 +67,7 @@ export const taxa = [
         taxon: 'family',
         name: 'Lamiaceae',
         alt: ['Labiatae'],
-        names: [{ language: "en", names:[ 'Mint or Deadnettles', 'Mint or Basil', 'Labiatae', 'Mint', 'Deadnettles']},
+        names: [{ language: "en", names:[ 'Mint Family', 'Labiatae', 'Deadnettles']},
         { language: "fr", names:[ 'Menthes' ]},
         { language: "de", names:[ 'Lippenblütler' ]},
         { language: "es", names:[ 'Mint' ]},

@@ -28,7 +28,11 @@ export const renderSpeciesGrid = () => {
     speciesImages.forEach(si => {
         
         if(si.images.length > 0 && si.images[0].url) {
-            si.images[0].small = si.images[0].url.replace('.jpg', '.260x190.jpg');
+            if(si.images[0].url.indexOf('.jpg') > -1) {
+                si.images[0].small = si.images[0].url.replace('.jpg', '.260x190.jpg');
+            } else {
+                si.images[0].small = `${si.images[0].url}.260x190.jpg`;
+            }
             if(counter < imageCount) {
                 si.images[0].itemName = si.itemName;
                 images.push(si.images[0]);

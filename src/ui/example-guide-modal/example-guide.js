@@ -1,3 +1,4 @@
+import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
 import { returnTaxonIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -101,7 +102,7 @@ export const renderExampleGuideHandler = config => {
       modal.querySelector('.js-guide-text > span:nth-child(1)').innerHTML = chooseText;
     };
 
-    loadLessons();
+    // loadLessons();
 
     const startLesson = document.querySelector('.js-start-lesson-wrapper');
 
@@ -109,10 +110,16 @@ export const renderExampleGuideHandler = config => {
 
     const categories = document.querySelectorAll('#exampleGuide .js-modal-guide-progress > div div');
 
-    categories.forEach(category => category.addEventListener('click', event => {
-      categories.forEach(c => c.classList.remove('completed'));
-      type = event.target.id;
-      Array.from(categories).find(c => c.id === type).classList.add('completed');
-      loadLessons();
-    }));
+    categories.forEach(category => {
+      if(elem.hasClass(category, 'completed')) {
+        type = category.id;
+        loadLessons();
+      }
+      category.addEventListener('click', event => {
+        categories.forEach(c => c.classList.remove('completed'));
+        type = event.target.id;
+        Array.from(categories).find(c => c.id === type).classList.add('completed');
+        loadLessons();
+      })
+    });
 };

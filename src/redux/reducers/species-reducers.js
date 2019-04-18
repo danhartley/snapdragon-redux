@@ -88,9 +88,8 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 1,
         let collection = { ...state, ...action.data.collection };
         let isNextRound = collection.layoutCounter === collection.layoutCount;
         let layoutCounter = 0;
-        let itemGroup = collection.itemGroups[collection.currentRound - 1];
         let layoutCount = action.data.lessonPlan.layoutCount;
-        return { collection, isNextRound, layoutCounter, itemGroup, layoutCount };
+        return { collection, isNextRound, layoutCounter, layoutCount };
     };
     
     switch(action.type) {
@@ -126,8 +125,10 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 1,
             return { ...state, itemIndex, currentRound, nextItem, layoutCounter, lesson };
         }
         case types.NEXT_LESSON: {
-            const { collection, isNextRound, layoutCounter, itemGroup, layoutCount } = getNextLesson(action, state);
-            return { ...collection, layoutCount: action.data.layoutCount, isNextRound, layoutCounter, itemGroup, layoutCount };            
+            const { collection, isNextRound, layoutCounter, layoutCount } = getNextLesson(action, state);
+            return { ...collection, layoutCount: action.data.layoutCount, isNextRound, layoutCounter, layoutCount };        
+            // const { collection, isNextRound, layoutCounter, itemGroup, layoutCount } = getNextLesson(action, state);
+            // return { ...collection, layoutCount: action.data.layoutCount, isNextRound, layoutCounter, itemGroup, layoutCount };        
         }        
         case types.NEXT_LEVEL: {
             return { ...state, currentRound: 1 };

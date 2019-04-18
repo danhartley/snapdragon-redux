@@ -81,12 +81,7 @@ const snapdragonLichens = {
         'Ramalina fastigiata', 'Flavoparmelia caperata', 'Parmotrema perlatum', 'Parmelia sulcata',
         'Lecidella elaeochroma', 'Lecanora chlarotera'
     ],
-    items: lichen,
-    descriptions: [
-        'Lichens are composite organisms formed from the symbiosis of a fungus (mycobiont), a photosynthetic alga or cyanobacterium (photobiont) and basidiomycete yeasts.',
-        // 'Lichens grow on a range of substrates including bark and rocks and \'in the air\' as epiphytes.',
-        'Lichens are important environmental indicators (bioindicators) of air and water quality.'
-    ]
+    items: lichen
 };
 
 const locationDefaults = {
@@ -183,11 +178,6 @@ const snapdragonKitchenGarden = {
     collection: {
       id: 4
     },
-    // descriptions: [
-    //     'Learn the common and scientific names of herbs, vegetables and fruit used in Western cooking.',
-    //     'All of the species are either native or adapted to a Mediterranean climate.',
-    //     'Later lessons will introduce you to families and the traits they share.'        
-    // ],
     moduleSize: 6,
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,

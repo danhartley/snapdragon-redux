@@ -13,7 +13,7 @@ import { familyProps } from 'redux/reducers/initial-state/species-state/species-
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { syndromes } from 'api/snapdragon/syndromes';
-import { renderTestCardTemplate } from 'ui/screens/common/test-card';
+import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { rebindLayoutState } from 'ui/screens/multichoice/missing-data-helper';
@@ -23,18 +23,19 @@ import * as SD from 'api/traits/trait-types';
 
 export const renderMultiStrips = (collection) => {
 
+    const { config, lessonPlan, layout, counter, score } = store.getState();
+
     const item = collection.nextItem;
     const items = collection.allItems || collection.items;
-
-    const { config, lessonPlan, layout, counter } = store.getState();
 
     const taxon = matchTaxon(item.taxonomy, iconicTaxa);
     const inconicTaxonFamilies = familyProps.getUniqueFamiliesByIconicTaxon(species, taxon.rank, taxon.value);
     const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, inconicTaxonFamilies));
 
-    const familyFlavours = config.isPortraitMode 
-            ? [ 'match-family-to-quick-id' ] 
-            : [ 'match-family-to-quick-id', 'match-family-to-summary' ];
+    const familyFlavours = [ 'match-family-to-quick-id', 'match-family-to-summary' ];
+    // const familyFlavours = config.isPortraitMode 
+    //         ? [ 'match-family-to-quick-id' ] 
+    //         : [ 'match-family-to-quick-id', 'match-family-to-summary' ];
 
     let screen = layout.screens.find(screen => screen.name === 'family-strips');
     
@@ -66,6 +67,8 @@ export const renderMultiStrips = (collection) => {
 
         const strips = document.querySelectorAll('.js-rptr-strips .strip');
 
+        if(overrides.italicise) strips.forEach(strip => strip.classList.add('binomial'));
+
         const wordyAnswers = [ 'family-strips', 'definition' ];
 
         if(R.contains(screen.name, wordyAnswers)) {
@@ -92,6 +95,11 @@ export const renderMultiStrips = (collection) => {
             });
 
             score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
+
+            if(screen.name === 'family-strips') {
+                document.querySelector('.js-question-question').innerHTML = item.family;
+                document.querySelector('.js-question-help').classList.add('hide');
+            }
         };
 
         scoreHandler('strip', test, callback, config);
@@ -99,20 +107,30 @@ export const renderMultiStrips = (collection) => {
 
     if(screen.name === 'species-scientifics') {
 
-        const number = config.isPortraitMode ? 6 : config.isLandscapeMode ? 6 : 6;
-        const question = item.name;
-        const answers = itemProperties.answersFromList(itemProperties.itemNamesForGroups(items), question, number);
+        let question = item.name;
+        let answers = species.filter(s => s.taxonomy).filter(s => s.taxonomy[taxon.rank].toLowerCase() === taxon.value);
+            answers = R.take(8, answers).filter(s => s.name !== item.name).map(s => s.name);
+            answers = R.take(5, answers);
+            answers.push(item.name);
+            answers = utils.shuffleArray(answers);
+            
+        const help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
 
-        render(question, answers, { binomial: '--- ---', question: 'What is the latin name?' });
+        render(question, answers, { binomial: '--- ---', question: 'What is the latin name?', help, italicise: true });
     }
 
     if(screen.name === 'species-vernaculars') {
 
-        const number = config.isPortraitMode ? 6 : config.isLandscapeMode ? 6 : 6;
-        const question = item.vernacularName;   
-        const answers = itemProperties.answersFromList(itemProperties.vernacularNamesForGroups(items, config), question, number);
+        let question = item.vernacularName;   
+        let answers = species.filter(s => s.taxonomy).filter(s => s.taxonomy[taxon.rank].toLowerCase() === taxon.value);
+            answers = R.take(8, answers).filter(s => !R.contains(item.vernacularName, s.names.map(n => n.vernacularName)));
+            answers = answers.map(s => s.names.filter(n => n.language === 'en'));
+            answers = answers.filter(a => a.length).map(answer => utils.capitaliseAll(answer[0].vernacularName));
+            answers = R.take(5, answers);
+            answers.push(item.vernacularName);
+            answers = utils.shuffleArray(answers);
 
-        const help = config.isLandscapeMode ? '(Click on the name below.)' : '';
+        const help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
 
         render(question, answers, { vernacularName: '--- ---', question: 'What is the common name?', help });
     }
@@ -249,7 +267,7 @@ export const renderMultiStrips = (collection) => {
                 question = family;
                 answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
                 if(question === undefined) console.log(item.name);
-                render(question, answers, { question: 'Match family name' });
+                render(question, answers, { question: 'Match family name', italicise: true });
             break;
         } 
     }
@@ -363,10 +381,7 @@ export const renderMultiStrips = (collection) => {
         const xcID = bird.traits.find(trait => trait.name === 'song').value;
 
         const mp3 = `./songs/${xcID}.mp3`;
-
-        console.clear();
-        console.log(mp3);
-
+        
         renderTemplate({ mp3, title: item.name }, template.content, parent);
     }
 } catch(e) {

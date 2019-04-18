@@ -7,7 +7,7 @@ import { scoreHandler } from 'ui/helpers/handlers';
 import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
 import { imageSlider } from 'ui/screens/common/image-slider';
 
-import { renderTestCardTemplate } from 'ui/screens/common/test-card';
+import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import textEntryTemplate from 'ui/screens/text-entry/text-entry-templates.html';
 import textEntryPortraitTemplate from 'ui/screens/text-entry/text-entry-portrait-templates.html';
 

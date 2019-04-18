@@ -16,10 +16,16 @@ export const observeStore = (store, select, onChange, domain, layout) => {
             break;
           case 'screen-latin-to-common':
             hasStateSignificantlyChanged = currentState.speciesVernacularNames !== nextState.speciesVernacularNames;
+            break;
           case 'screen-common-to-latin':
             hasStateSignificantlyChanged = currentState.speciesNames !== nextState.speciesNames;
+            break;
           case 'screen-genus-completion':
             hasStateSignificantlyChanged = currentState.itemIndex !== nextState.itemIndex;
+            break;
+          case 'media-match':
+            hasStateSignificantlyChanged = currentState.speciesNames !== nextState.speciesNames;
+            break;
         }
       }
 

@@ -17,10 +17,13 @@ export const renderGuides = (modal, config, createGuide) => {
     template.innerHTML = guidesTemplate;
     const parent = modal.querySelector('.js-actions');
 
-    const months = config.guide.season.observableMonths.map(month => month.name);
-    const observableMonths = `${months[0]}-${months[months.length - 1]}`;
+    if(config.guide.season.observableMonths) {
+        
+        const months = config.guide.season.observableMonths.map(month => month.name);
+        const observableMonths = `${months[0]}-${months[months.length - 1]}`;
 
-    renderTemplate({ observableMonths }, template.content, parent);
+        renderTemplate({ observableMonths }, template.content, parent);
+    }
 
     const idSwitch = parent.querySelector('.inat-switch-slider');
 

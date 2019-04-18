@@ -153,6 +153,10 @@
     .snapdragon-intro, .snapdragon-help {
         font-size: 1.4rem;
     }
+
+    .card-card .test-card-container.scrollable {
+        top: 11rem;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -210,7 +214,7 @@
     }
 
     .strip {
-        margin: .5rem .25rem;
+        margin: .5rem;
         padding: .5rem;
     }
 
@@ -222,6 +226,15 @@
         margin: 1rem 0;
     }
 
+    .sub-header {
+        height: 6rem;
+        border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
+    }
+
+    .data-box-container {
+        margin: 0 .5rem;
+    }
+
     .data-box-container div.native {
         font-family: serif;
         font-style: italic;
@@ -229,8 +242,19 @@
         font-size: 1.2rem;
     }
 
+    .id-box-container {
+        top: 12rem;
+        padding: 0 1rem;
+        width: 100%;
+    }
+
     .carousel-inner .image-load-original > div {
         cursor: pointer;
+    }
+
+    .taxon-summary {
+        padding: 1rem 2rem;
+        margin: 0 1rem;
     }
 }
 

@@ -4,7 +4,7 @@ import { store } from 'redux/store';
 import { returnIcon } from 'ui/helpers/icon-handler';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { species } from 'api/species';
-import { renderTestCardTemplate } from 'ui/screens/common/test-card';
+import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { listenToImageSelection, listenToUserAnswer, renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
 import { renderTemplate } from 'ui/helpers/templating';

@@ -21,12 +21,16 @@
     font-size: 1rem;
 }
 
+.text-card-content {
+    margin: 1rem 0 0 0;
+}
+
 .names-container {
-    font-size: .9rem;
+    font-size: 1.2rem;
     display: flex;
     flex-direction: column;
     text-align: left;
-    padding: 0 0 0 .5rem;
+    padding: 0;
 }
 
 .term-header {
@@ -57,11 +61,10 @@
   }
   
   .test-card .question {
-    margin: .5rem 0 0 0;
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.07rem;
-    color: var(--snap-text-medium-dark);
+    color: var(--snap-text-dark);
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -80,11 +83,10 @@
     vertical-align: super;
     text-transform: initial;
     margin: -.25rem 0 0 0;
+    color: var(--snap-text-medium-light);
 }
 
 .test-card .question-sub-header {
-    border-bottom: .05rem solid gray;
-    padding: 0 0 .25rem 0;
     text-transform: uppercase;
     font-size: .8rem;
     width: fit-content;
@@ -157,6 +159,21 @@
     min-height: 2rem;
 }
 
+/* SCROLLING */
+
+.test-card-container .scrollable {
+    top: 11.5rem;
+    bottom: 9rem;   
+}
+
+.card-card .feature-symbiont-list.scrollable {
+    top: 20rem;
+}
+
+.test-card-container .scrollable.birdsong-strips {
+    top: 14rem;
+}
+
 .test-card .portrait-answer {
     font-style: italic;
     text-transform: capitalize;
@@ -178,9 +195,25 @@
 }
 
 .iconic-icon {
-    font-size: 2.4rem;
+    font-size: 2rem;
     display: flex;
     align-items: center;
+    padding: 0 0 0 .5rem;
+    padding: .5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    transition: all 1s ease;
+    cursor: pointer;
+}
+
+.iconic-icon.depressed {
+    transition: all .5s ease;
+    box-shadow: none;
+    /* box-shadow: inset 0 2px 8px rgba(0,0,0,.2); */
+}
+
+.iconic-icon.flat {
+    transition: all .5s ease;
+    box-shadow: none;
 }
 
 /* TEXT ENTRY */
@@ -228,7 +261,22 @@ div.text-entry {
     right: .25rem;
   }
 
+.question-container {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+}
+
+.question-container > div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @media (min-width: 768px) {
+
+    .question-container {
+        display: initial;
+    }
 
     .question-container .mushroom-icon-header svg {
         width: 1.8rem;
@@ -241,28 +289,25 @@ div.text-entry {
         justify-content: center;
         width: initial;
     }
-    
+
     .iconic-icon {
-        font-size: 1.6rem;
+        font-size: 2.4rem;
     }
 
     .names-container {        
         align-items: center;
-        padding: 0;
     }
 
     .test-card-container .question-container {
-        height: 88px;
+        height: 5.5rem;
         display: grid;
         grid-template-columns: 2fr 4fr 2fr;
         background-color: var(--snap-species-header-background);
     }
 
     .species-header {
-        height: 88px;
-        display: grid;
-        grid-template-columns: 2fr 4fr 2fr;
-        background-color: var(--snap-species-header-background);
+        height: 5.5rem;
+        text-align: right;
     }
 
     .test-card-container .question {
@@ -283,14 +328,6 @@ div.text-entry {
 
     .test-card {
         padding: 0 .5rem;
-    }
-
-    .test-card .question {
-        margin: .5rem 0 1rem 0;
-    }
-
-    .test-card .question-sub-header {
-        margin: 2rem 0 0 0;
     }
 
     .test-card button {
@@ -333,6 +370,18 @@ div.text-entry {
         bottom: 1rem;
         left: unset;
         right: 1rem;
+    }
+
+    .test-card-container .layer {
+        font-size: 5rem;
+    }      
+
+    .card-card .feature-symbiont-list.scrollable {
+        top: 11.75rem;
+    }
+
+    .test-card-container .scrollable {
+        bottom: 7rem;
     }
 }
 
