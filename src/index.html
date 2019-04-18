@@ -12,6 +12,13 @@
         <meta name="theme-color" content="#ffffff">
         <!-- <script src="https://kraaden.github.io/autocomplete/autocomplete.js"></script>
         <link rel="stylesheet" type="text/css" href="https://kraaden.github.io/autocomplete/autocomplete.css"> -->
+        <script>
+            if(window.location.origin.indexOf('http://www.learn-the-planet.com/')) {
+                if(window.location.protocol != 'https:') {
+                    location.href =   location.href.replace("http://", "https://");
+                }
+            }            
+        </script>
         <script src="https://cdn.ravenjs.com/3.24.2/raven.min.js" crossorigin="anonymous"></script>
         <script>
             Raven.config('https://9d9d8654a6a345a3af09df89cb615bde@sentry.io/302756').install();
