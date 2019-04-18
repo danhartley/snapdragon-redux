@@ -69,7 +69,7 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 1,
         let nextItem = collection.items[collection.itemIndex];
         
         if(action.data.config.mode === 'review') {
-            collection.allItems = action.data.allItems;
+            collection.allItems = action.data.collection.allItems;
         }
 
         if(action.data.config.mode === 'learn-again') {
