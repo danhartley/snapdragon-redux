@@ -8,14 +8,11 @@
                     <div>
                         <div class="names-container vernacular-name-badge js-names-container">
                             <div>
-                                <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ occurrences }}</span>
                                 <span>{{ vernacularName }}</span>
+                                <span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">{{ occurrences }}</span>
                             </div>
-                            <div class="latin-name js-txt-species-name">
-                                <span class="portrait bird-song-icon-disabled js-bird-song-player" data-src='player' data-toggle="modal" data-target="#menuModal">
-                                    <i class="fas fa-music"></i>
-                                </span>
-                                <span>{{ name }}</span>                            
+                            <div>
+                                <span class="binomial">{{ name }}</span>
                             </div>
                         </div>
                     </div>
@@ -24,16 +21,15 @@
                     <img src="https://content.eol.org/data/media/{{ headerImage }}" alt="">
                 </div>
         </div>  
-        <div class="data-box-container">
-            <div></div>
+        <div class="data-box-container sub-header">
             <div class="data-box">
                 <div class="taxon-data"><span>Rank</span> <span>{{ rank }}</span></div>
                 <div class="taxon-data"><span>Species</span> <span>{{ species }}</span></div>
                 <div class="taxon-data"><span>Genera</span> <span>{{ genera }}</span></div>
-                <div class="landscape external-links js-external-links">
-                    <a href="{{ eol }}" target="_blank" class="underline-link">EOL</a>
-                    <a href="{{ wiki }}" class="underline-link" data-toggle="modal" data-target="#wikiModal">WIKI</a>
-                </div>
+            </div>
+            <div class="landscape external-links js-external-links">
+                <div><a href="{{ eol }}" target="_blank" class="underline-link">EOL PAGE</a></div>
+                <div><a href="{{ wiki }}" class="underline-link" data-toggle="modal" data-target="#wikiModal">WIKI LINK</a></div>
             </div>
         </div>
         <div class="id-box-container">

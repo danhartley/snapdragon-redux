@@ -57,7 +57,6 @@
   }
   
   .test-card .question {
-    margin: .5rem 0 0 0;
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.07rem;
@@ -84,8 +83,6 @@
 }
 
 .test-card .question-sub-header {
-    /* border-bottom: .05rem solid gray;
-    padding: 0 0 .25rem 0; */
     text-transform: uppercase;
     font-size: .8rem;
     width: fit-content;
@@ -161,12 +158,16 @@
 /* SCROLLING */
 
 .test-card-container .scrollable {
-    top: 11rem;
+    top: 11.5rem;
     bottom: 9rem;   
 }
 
+.card-card .feature-symbiont-list.scrollable {
+    top: 18.5rem;
+}
+
 .test-card-container .scrollable.birdsong-strips {
-    top: 13rem;
+    top: 14rem;
 }
 
 .test-card .portrait-answer {
@@ -287,19 +288,19 @@ div.text-entry {
     }
 
     .test-card-container .question-container {
-        height: 88px;
+        height: 5.5rem;
         display: grid;
         grid-template-columns: 2fr 4fr 2fr;
         background-color: var(--snap-species-header-background);
     }
 
     .species-header {
-        height: 88px;
+        height: 5.5rem;
         text-align: right;
     }
 
     .test-card-container .question {
-        font-size: 1.6rem; 
+        font-size: 2rem; 
     }
 
     .test-card .question-help {
@@ -318,17 +319,18 @@ div.text-entry {
         padding: 0 .5rem;
     }
 
-    .test-card .question {
-        margin: .5rem 0 1rem 0;
-    }
+    /* .test-card .question {
+        height: 6rem;
+        border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
+    } */
 
     .test-card .question-sub-header {
         margin: 2rem 0 0 0;
     }
 
-    .test-card .images-names-txt {
+    /* .test-card .images-names-txt {
         margin: 1rem 0 0 0;
-    }
+    } */
 
     .test-card button {
         width: 12rem;
@@ -374,7 +376,11 @@ div.text-entry {
 
     .test-card-container .layer {
         font-size: 5rem;
-      }      
+    }      
+/* 
+    .test-card-container .scrollable {
+    top: 11.5rem;
+    } */
 }
 
 /* iPHONE 6,7,8 PLUS, iPHONE X, GALAXY S9/S9+ */

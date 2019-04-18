@@ -367,8 +367,8 @@ a.dropdown-item {
 }
 
 .non-taxon.card img {
-  height: 88px;
-  width: 88px;
+  height: 5.5rem;
+  width: 5.5rem;
 }
 
 .non-taxon .btn.btn-secondary {
@@ -389,11 +389,11 @@ a.dropdown-item {
 } */
 
 .taxon-summary {
+  padding: 0 .5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: initial;
-  padding: 0 2rem;
   position: absolute;
   bottom: 1rem;
 }
@@ -694,8 +694,8 @@ a.dropdown-item {
 }
 
 .taxon-highlight img {
-  height: 88px;
-  width: 88px;
+  height: 5.5rem;
+  width: 5.5rem;
   margin: 0 0 0 1rem;
   object-fit: cover;
 }
@@ -795,9 +795,9 @@ a.dropdown-item {
 }
 
 .id-box-container {
+  top: 9rem;
   position: absolute;
-  top: 15rem;
-  padding: 0 2rem;
+  padding: 0 .5rem;
 }
 
 .id-box {
@@ -824,24 +824,33 @@ a.dropdown-item {
   border-left: 0.25rem dotted var(--snap-progress-bar);
 }
 
+.sub-header {
+  height: 4.5rem;  
+}
+
 .data-box-container {
+  margin: 0;
   display: grid;
   grid-template-columns: 2fr 3fr 2fr;
-  width: 100%;
-  height: 8rem;
-  padding: .5rem 0;
-  border-bottom: .05rem solid lightgray;
 }
 
 .taxon.card .data-box-container {
-  display: initial;
+  grid-template-columns: 5fr 5.5rem;
 }
+
+/* .taxon.card .data-box-container {
+  display: initial;
+} */
 
 .data-box {
   color: var(--snap-text-dark);
   text-align: left;
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem;
 }
+
+/* .inat-box {
+  border: .03rem solid var(--snap-dd-non-taxa-bg-hover);
+} */
 
 .inat-box .data-box {
   color: var(--snap-text-medium-light);
@@ -873,7 +882,7 @@ a.dropdown-item {
 
 .taxon-data > span:nth-child(1) {
   width: 5rem;
-  padding: 0 0 0 0.5rem;
+  /* padding: 0 0 0 0.5rem; */
   color: rgb(35, 35, 35);  
 }
 
@@ -887,8 +896,8 @@ a.dropdown-item {
 }
 
 .taxon-data {
-  flex: auto;
-  margin: 0;
+  /* flex: auto;
+  margin: 0; */
   display: flex;
   flex-direction: row;
 }
@@ -1797,10 +1806,10 @@ a.collection-disabled {
 }
 
 .calender-container {
-  width: 160px;
+  /* width: 160px;
   min-width: 160px;
   max-width: 160px;
-  height: 106px;
+  height: 106px; */
   display: flex;
   align-items: center;
 }

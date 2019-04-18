@@ -152,8 +152,8 @@
 }
 
 #cardModal .taxon.card .species-header img, .taxon.card .species-header img {
-    height: 88px;    
-    width: 88px;
+    height: 5.5rem;    
+    width: 5.5rem;
 }
 
 #cardModal .taxon.card .species-header > div:nth-child(2) {
