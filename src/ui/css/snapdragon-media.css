@@ -8,9 +8,9 @@
     .taxon-summary {
         font-size: .9rem;
     }
-    /* .modal-guide-wrapper .modal-body.modal-guide-body {
-        min-height: 90vh;
-    } */
+    .modal-guide-wrapper .modal-body.modal-guide-body {  
+        height: 30rem;        
+    }
 }
 
 

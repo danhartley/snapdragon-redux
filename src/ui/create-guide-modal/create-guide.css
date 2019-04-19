@@ -569,11 +569,16 @@
     align-items: center;
   }
   
-  .mushroom-icon-header svg {
-    width: 3rem;
-    height: 3rem;
-    fill: var(--snap-iconic-icon-header);
+  /* .mushroom-icon-header {
+    width: 2rem;
+    height: 2rem;
   }
+
+  .mushroom-icon-header svg {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--snap-iconic-icon-header);
+  } */
   
   .svg-icon {
     margin: 0.25rem 0 0;
@@ -703,8 +708,7 @@
   }
 
   .modal-guide-wrapper .modal-body.modal-guide-body {  
-    min-height: 32rem;
-    max-height: 32rem;
+    height: 32rem;
   }
   
   @media (min-width: 768px) {

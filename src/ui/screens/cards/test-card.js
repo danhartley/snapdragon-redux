@@ -25,6 +25,8 @@ export const renderTestCardTemplate = (collection, context) => {
         }, 1000);
     };
 
+    context.className = context.className || '';
+
     renderTemplate(context, template.content, parent);
 
     const testCardContainer = document.querySelector('.test-card-container');
