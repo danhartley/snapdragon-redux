@@ -701,6 +701,11 @@
   #exampleGuide .modal-guide-progress span {
     pointer-events: none;
   }
+
+  .modal-guide-wrapper .modal-body.modal-guide-body {  
+    min-height: 32rem;
+    max-height: 32rem;
+  }
   
   @media (min-width: 768px) {
 
@@ -721,9 +726,10 @@
         margin: 2rem auto;
     }
 
-    .modal-guide-wrapper .modal-body.modal-guide-body {
-        min-height: 32rem;
-    }
+    /* .modal-guide-wrapper .modal-body.modal-guide-body {  
+      min-height: 32rem;
+      max-height: 32rem;
+    } */
 
     .inat-switch.location, .inat-switch.inat, .inat-switch.season {
       width: 8rem;

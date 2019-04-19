@@ -73,14 +73,7 @@ setTimeout( () => {
                     config.guide.locationLongLat = ipLocation;
                     config.guide.place.name = ipLocation;            
                     config.collection.id = 2;
-                } 
-                // if(ipLocation.country_name) {
-                //     config.ipLocation = ipLocation;
-                //     config.guide.locationType = 'longLat';
-                //     config.guide.locationLongLat = ipLocation.country_name;
-                //     config.guide.place.name = ipLocation.country_name;            
-                //     config.collection.id = 2;
-                // } 
+                }
                 else {
                     config.guide.locationPlace = 'Earth';
                     config.guide.locationType = 'place';
