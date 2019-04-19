@@ -18,12 +18,10 @@ export const renderTestCardTemplate = (collection, context) => {
         icon.classList.add('depressed');        
         setTimeout(() => {
             icon.classList.remove('depressed');
-            // icon.classList.add('flat');
-            // setTimeout(() => {
-            //     icon.classList.remove('flat');
-            // }, 1000);
         }, 1000);
     };
+
+    context.className = context.className || '';
 
     renderTemplate(context, template.content, parent);
 

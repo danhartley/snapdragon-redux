@@ -250,6 +250,17 @@ div.text-entry {
 
   /* FUNGI ICONS */
 
+  .mushroom-icon-header {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .mushroom-icon-header svg {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--snap-iconic-icon-header);
+  }
+
   .test-card .mushroom-icon-header svg {
     width: .8rem;
     height: .8rem;
@@ -270,6 +281,8 @@ div.text-entry {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 4rem;
+    height: 4rem;
 }
 
 @media (min-width: 768px) {
