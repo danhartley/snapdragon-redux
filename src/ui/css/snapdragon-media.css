@@ -250,6 +250,10 @@
         border-bottom: .03rem solid var(--snap-dd-non-taxa-bg-hover);
     }
 
+    .sub-header-tall {
+        height: 7.5rem;
+    }
+
     .data-box-container {
         margin: 0 .5rem;
     }
