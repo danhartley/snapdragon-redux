@@ -569,17 +569,6 @@
     align-items: center;
   }
   
-  /* .mushroom-icon-header {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .mushroom-icon-header svg {
-    width: 2rem;
-    height: 2rem;
-    fill: var(--snap-iconic-icon-header);
-  } */
-  
   .svg-icon {
     margin: 0.25rem 0 0;
   }
