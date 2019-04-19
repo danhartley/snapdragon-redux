@@ -61,7 +61,7 @@
   
   .modal-guide-wrapper .modal-body .guide-text {
     font-size: 1.1rem;
-    margin: 1.5rem 0 1rem 0;
+    margin: 1.5rem 0 1rem .5rem;
     letter-spacing: .03rem;
     color: var(--snap-text-medium-light);
     font-style: italic;
@@ -69,7 +69,7 @@
   }
   
   .modal-guide-wrapper .modal-body .guides .guide-text {
-    margin: .5rem 0 .25rem 0;
+    margin: .5rem 0 .25rem .5rem;
   }
   
   .modal-guide-wrapper .modal-body .guide-sub-text {
@@ -187,22 +187,20 @@
   .modal-guide-wrapper .modal-body .chosen {
     position: absolute;
     bottom:.5rem;
-    display: flex;
-    flex-direction: row;
-    font-family: sentinel;
+    left: .5rem;
   }
   
   .modal-guide-wrapper .modal-body .chosen-inat {
-    margin: 0;
+    margin: 0 0 0 .5rem;    
   }
   
   .modal-guide-wrapper .modal-body .chosen > div > span:nth-child(1), 
   .modal-guide-wrapper .modal-body .chosen-inat span:nth-child(1) {
-    font-size: .8rem;
     margin: 0 .25rem 0 0;
-    text-transform: uppercase;
-    vertical-align: middle;
     letter-spacing: .03rem;
+    font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
+    color: var(--snap-text-medium-light);
+    font-style: italic;
   }
   
   .modal-guide-wrapper .modal-body .chosen > div span:nth-child(2) > span {
@@ -513,11 +511,6 @@
     height: 2.5rem;
     margin: 0 .5rem 0 0;
   }
-  
-  /* .iconic-taxa-categories > div > div:nth-child(2) {
-    display: flex;
-    align-items: center;
-  } */
 
   .iconic-taxa-selected {
     color: var(--snap-lesson);
@@ -719,11 +712,6 @@
         margin: 2rem auto;
     }
 
-    /* .modal-guide-wrapper .modal-body.modal-guide-body {  
-      min-height: 32rem;
-      max-height: 32rem;
-    } */
-
     .inat-switch.location, .inat-switch.inat, .inat-switch.season {
       width: 8rem;
       width: fit-content;
@@ -761,7 +749,7 @@
 
     .modal-guide-wrapper .modal-body .guide-text {
       font-size: 1.2rem;
-      margin: .75rem 0 0 0;
+      margin: .75rem 0 .5rem .5rem;
     }
 
     .modal-guide-wrapper .modal-body button {
@@ -850,7 +838,7 @@
     .modal-guide-body .range-slider {
         display: block;
         font-size: initial;
-        padding: .25rem;
+        padding: .5rem 0 0 0;
         margin: 1rem 0 0 0; 
     }
 

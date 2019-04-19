@@ -202,12 +202,6 @@
   
   /* BADGE MODAL (Common names & Members of) */
 
-  #badgeListModal .modal-dialog {
-    min-width: 320px;
-    max-width: 420px;
-    margin: 5rem auto;
-  }
-  
   #badgeListModal .modal-header {
     color: var(--snap-text-dark);
     background-color: var(--snap-species-header-background);
@@ -256,10 +250,6 @@
     padding: 0.25rem;
   }
 
-  /* #menuModal .definition.card div > div:nth-child(2n) {
-    background-color: rgba(229, 227, 220,.4);
-  } */
-  
   #menuModal .definition.card span:nth-child(1) {
     text-underline-position: under;
     color: rgb(20, 20, 20);

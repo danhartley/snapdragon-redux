@@ -1,10 +1,14 @@
 <div>
-    <p>Clear all data</p>
-    <p>(This will delete your score but may be necessary!)</p>
+    <p>Clear all data (and delete your score).</p><span>
 </div>
-<button class="btn btn-light js-clear-cache-btn">Clear cache</button>
 <div>
-    <span>Time for answer to remain visible</span>
+    <button class="btn btn-light js-clear-cache-btn">Clear all data</button>
+</div>
+
+<hr>
+
+<div>
+    <span>Time for answer to remain visible:</span>
     <div class="delay-slider">
         <span>0 secs</span> <input class="js-set-delay-input" type="range" min="0" max="5" value="{{ delay }}"><span> 5 secs</span>
         <button class="btn btn-light js-set-delay-btn">Set delay</button>

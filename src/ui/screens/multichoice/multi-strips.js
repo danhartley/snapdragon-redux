@@ -117,7 +117,7 @@ export const renderMultiStrips = (collection) => {
             
         const help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
 
-        render(question, answers, { binomial: '--- ---', question: 'What is the latin name?', help, italicise: true });
+        render(question, answers, { binomial: 'Latin name', question: 'What is the latin name?', help, italicise: true });
     }
 
     if(screen.name === 'species-vernaculars') {
@@ -133,7 +133,7 @@ export const renderMultiStrips = (collection) => {
 
         const help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
 
-        render(question, answers, { vernacularName: '--- ---', question: 'What is the common name?', help });
+        render(question, answers, { vernacularName: 'Common name', question: 'What is the common name?', help });
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
@@ -369,7 +369,7 @@ export const renderMultiStrips = (collection) => {
 
             birds = utils.shuffleArray(birds.map(bird => bird.name));
 
-        render(bird.name, birds, { question: 'Match the birdsong', vernacularName: '--- ---', binomial: '--- ---', className: 'sub-header-tall' });
+        render(bird.name, birds, { question: 'Match the birdsong', vernacularName: 'Common name', binomial: 'Latin name', className: 'sub-header-tall' });
         
         document.querySelector('.js-rptr-strips').classList.add('birdsong-strips');
         

@@ -29,8 +29,8 @@ export const renderSettings = () => {
     document.querySelector('#menuModal .modal-body').classList.remove('bird-song-bg');
 
     delayTxt.innerHTML = delay === 1
-    ? `The current delay is ${delay} second`
-    : `The current delay is ${delay} seconds`;
+    ? `The current delay is ${delay} second.`
+    : `The current delay is ${delay} seconds.`;
 
     clearCacheBtn.addEventListener('click', () => { 
         clearCacheBtn.innerText = 'Clearing cache…';
@@ -53,8 +53,8 @@ export const renderSettings = () => {
             actions.boundUpdateConfig(config);
             setDelayBtn.innerHTML = 'Set delay';
             delayTxt.innerHTML = delay === '1'
-                ? `Delay updated to ${delay} second`
-                : `Delay updated to ${delay} seconds`;
+                ? `Delay updated to ${delay} second.`
+                : `Delay updated to ${delay} seconds.`;
         }, 500);        
     });
 };
