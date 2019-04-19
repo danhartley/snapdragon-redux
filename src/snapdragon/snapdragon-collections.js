@@ -1,6 +1,8 @@
 import { deciduousAndEvergreenTrees } from 'api/rhs/deciduous-evergreen-trees';
+import { deciduousAndEvergreenTrees2 } from 'api/rhs/deciduous-evergreen-trees2';
 import { birds } from 'api/snapdragon/birds';
 import { mushrooms } from 'api/snapdragon/mushrooms';
+import { mushrooms2 } from 'api/snapdragon/mushrooms2';
 import { weeds } from 'api/rhs/weeds';
 import { lichen } from 'api/snapdragon/lichen';
 
@@ -325,7 +327,7 @@ const rhsTrees = {
         // "Acacia baileyana",
         "Acacia dealbata"
       ],
-    items: deciduousAndEvergreenTrees,
+    items: [ ...deciduousAndEvergreenTrees, ...deciduousAndEvergreenTrees2 ],
     iconicTaxa: [ 'plantae' ],
     type: 'course',
     guide: {
@@ -415,7 +417,7 @@ const mushroomDefaults = {
     lessonPlanPortrait: 101,
     glossary: ['fungi'],
     iconicTaxa: [ 'fungi' ],
-    items: mushrooms
+    items: [ ...mushrooms, ...mushrooms2 ]
 };
 
 const snapdragonMushroomsEasternUSA = {
