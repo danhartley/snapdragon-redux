@@ -125,7 +125,6 @@ export async function getIPLocation(config, force = false) {
       const json = await response;    
       return await json;
      } else {
-      // return IPCountryLookup();
       const ip = await IPLookup();
       const country = await LocationLookup(ip);
       return country;

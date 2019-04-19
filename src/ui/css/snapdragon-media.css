@@ -8,9 +8,9 @@
     .taxon-summary {
         font-size: .9rem;
     }
-    .modal-guide-wrapper .modal-body.modal-guide-body {
+    /* .modal-guide-wrapper .modal-body.modal-guide-body {
         min-height: 90vh;
-    }
+    } */
 }
 
 
@@ -41,9 +41,9 @@
     .home-container .snapdragon-tag, .home-container .summary-scores {
         font-size: 2rem;
     }
-    .modal-guide-wrapper .modal-body.modal-guide-body {
+    /* .modal-guide-wrapper .modal-body.modal-guide-body {
         min-height: 80vh;
-    }
+    } */
 }
 
 /* iPHONE 6,7,8 */
