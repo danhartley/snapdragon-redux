@@ -139,7 +139,7 @@ const stripScoreHandler = (test, callback, config) => {
 
             if(elem.hasClass(target, 'disabled')) return;
 
-            const answer = target.innerText;
+            const answer = target.innerText.trim();
             const vernacular = target.dataset.vernacular;
 
             test.taxon = 'name';
@@ -151,11 +151,11 @@ const stripScoreHandler = (test, callback, config) => {
             target.classList.add(score.colour);
 
             items.forEach(strip => {   
-                const matchesScientificName = strip.innerText === taxon.name;
+                const matchesScientificName = strip.innerText.trim() === taxon.name;
                 const matchesVernacularName = vernacular 
                                                 ? strip.innerText.toLowerCase() ===  vernacular.toLowerCase() 
                                                 : false;
-                const matchesQuestion = strip.innerText === taxon.question;
+                const matchesQuestion = strip.innerText.trim() === taxon.question;
                 if(matchesScientificName || matchesVernacularName || matchesQuestion) {
                     strip.classList.add('snap-success');
                 }
