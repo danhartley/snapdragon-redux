@@ -67,13 +67,21 @@ setTimeout( () => {
             try {
                 const ipLocation = await getIPLocation(config);
                 
-                if(ipLocation.country_name) {
+                if(ipLocation) {
                     config.ipLocation = ipLocation;
                     config.guide.locationType = 'longLat';
-                    config.guide.locationLongLat = ipLocation.country_name;
-                    config.guide.place.name = ipLocation.country_name;            
+                    config.guide.locationLongLat = ipLocation;
+                    config.guide.place.name = ipLocation;            
                     config.collection.id = 2;
-                } else {
+                } 
+                // if(ipLocation.country_name) {
+                //     config.ipLocation = ipLocation;
+                //     config.guide.locationType = 'longLat';
+                //     config.guide.locationLongLat = ipLocation.country_name;
+                //     config.guide.place.name = ipLocation.country_name;            
+                //     config.collection.id = 2;
+                // } 
+                else {
                     config.guide.locationPlace = 'Earth';
                     config.guide.locationType = 'place';
                     config.guide.place = { id: 'any', name: 'Earth' };

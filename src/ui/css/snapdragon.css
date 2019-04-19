@@ -827,6 +827,10 @@ a.dropdown-item {
   height: 4.5rem;  
 }
 
+.sub-header-tall {
+  height: 6rem;  
+}
+
 .data-box-container {
   margin: 0;
   display: grid;

@@ -206,7 +206,7 @@ test('collection should set allItems during review and reset items to this value
   birds = state.items;
   config.mode = 'review';
   const itemsToReview = R.take(2, state.items);
-  action = { data: { items: itemsToReview, config, allItems: state.items }, type: types.CHANGE_COLLECTION };
+  action = { data: { config, collection: { items: itemsToReview, allItems: state.items }}, type: types.CHANGE_COLLECTION };
   state = collection(state, action);
   expect(state.items).toEqual(itemsToReview);
   expect(state.allItems).toEqual(birds);

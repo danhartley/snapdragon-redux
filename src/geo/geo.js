@@ -53,8 +53,8 @@ async function parseMapBoxPlace(json, config) {
 
 async function getMapBoxPlace(long, lat, config) {
   const token = 'pk.eyJ1IjoiZGFuaGFydGxleSIsImEiOiJjam84Zjd3aGowMDdoM2ttaDAzeDk4bHJ6In0.oEcO6w3DhHUv_mXrFW1clg';  
-  const longitude = long || '-9.163009899999999';
-  const latitude = lat || '38.7155762';  
+  const longitude = long;// || '-9.163009899999999';
+  const latitude = lat;// || '38.7155762';  
   const language = config.lang || 'en';
   const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${longitude},${latitude}.json?language=${language}&access_token=${token}`;
   const response = await fetch(url);
@@ -87,7 +87,7 @@ export const listenToPlaceChange = listener => {
 
 // Use https://collectionCors-anywhere.herokuapp.com/
 
-async function IPLookup() {
+async function IPCountryLookup() {
   const ACCESS_KEY = '69402a39530c7ae8218dfaf69ef78337';  
   const url = `http://api.ipstack.com/check?access_key=${ACCESS_KEY}`;
   try {
@@ -100,6 +100,23 @@ async function IPLookup() {
   }  
 }
 
+async function LocationLookup(ip) {
+  const ACCESS_KEY = 'a8563e7b75654ae8b016dc52719dee3b';
+  const url = `https://api.ipgeolocation.io/ipgeo?apiKey=${ACCESS_KEY}&ip=${ip}&fields=city&output=json`;
+  const response = await fetch(url);
+  const json = await response.json();
+  const { city } = await json; 
+  return city;
+}
+
+async function IPLookup() {  
+  const url = 'https://api.ipgeolocation.io/getip';
+  const response = await fetch(url);
+  const json = await response.json();
+  const { ip } = await json; 
+  return ip;
+}
+
 export async function getIPLocation(config, force = false) {
      if(!!config.ipLocation && !force) {
       const response = new Promise(resolve => {
@@ -108,6 +125,9 @@ export async function getIPLocation(config, force = false) {
       const json = await response;    
       return await json;
      } else {
-      return IPLookup();
+      // return IPCountryLookup();
+      const ip = await IPLookup();
+      const country = await LocationLookup(ip);
+      return country;
      }
 };

@@ -54,8 +54,9 @@ export const renderMultiStrips = (collection) => {
         const question = (overrides && overrides.question) ? overrides.question : 'Match the name';
         const help = (overrides && overrides.help !== undefined) ? overrides.help : '(Click on the name below.)';
         const term = (overrides && overrides.term !== undefined) ? overrides.term: '';
+        const className = (overrides && overrides.className !== undefined) ? overrides.className: '';
         
-        const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help, term });
+        const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help, term, className });
 
         const icon = renderIcon(item, document);
 
@@ -368,7 +369,7 @@ export const renderMultiStrips = (collection) => {
 
             birds = utils.shuffleArray(birds.map(bird => bird.name));
 
-        render(bird.name, birds, { question: 'Match the birdsong', vernacularName: '--- ---', binomial: '--- ---' });
+        render(bird.name, birds, { question: 'Match the birdsong', vernacularName: '--- ---', binomial: '--- ---', className: 'sub-header-tall' });
         
         document.querySelector('.js-rptr-strips').classList.add('birdsong-strips');
         
