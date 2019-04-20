@@ -95,7 +95,7 @@ export const renderExampleGuideHandler = config => {
         
         const txt = modal.querySelector('.js-saved');
         
-        txt.innerHTML = 'Your preference has been updated';
+        txt.innerHTML = 'Your preference has been updated.';
         setTimeout(() => {
           txt.innerHTML = '';
         }, 2000);        
