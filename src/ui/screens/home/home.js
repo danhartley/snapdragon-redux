@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { elem } from 'ui/helpers/class-behaviour';
 import { DOM } from 'ui/dom';
 import { store, persistor } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
@@ -42,17 +43,24 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
                     ? 'CREATE-LESSON'
                     : 'PREPARE-LESSON';
 
-    let actionLink = document.querySelector('.js-create-guide-link');
-
+    const actionLink = document.querySelector('.js-create-guide-link');
+    
     const editLink = document.querySelector('.js-edit-guide-link');
     const editLinkTxt = document.querySelector('.js-edit-guide-link span');
-
+    
     const deleteLink = document.querySelector('.js-delete-guide-link');
     const deleteLinkTxt = document.querySelector('.js-delete-guide-link span');
     const deleteLinkCheckbox = document.querySelector('.js-delete-guide-link input');
-
+    
     const exampleLink = document.querySelector('.js-example-guide-link');
-    const exampleLinkTxt = document.querySelector('.js-example-guide-link span');
+    const exampleLinkTxt = document.querySelector('.js-example-guide-link span');    
+
+    if(config.isLandscapeMode) {
+        actionLink.dataset.toggle = 'modal';
+        actionLink.dataset.target = '#createGuide';        
+        exampleLink.dataset.toggle = 'modal';
+        exampleLink.dataset.target = '#exampleGuide';
+    }
 
     const modalHandler = () => {        
         const step = 1;
@@ -88,11 +96,13 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     const guideSummary = (speciesCount) => {
         const parent = document.querySelector('.home-container .js-snapdragon-tag');
-        if(parent) parent.innerHTML = '';
-        renderGuideSummary(R.clone(config), parent, speciesCount);
-        deleteLink.classList.remove('hide');
-        editLink.classList.remove('hide');
-        exampleLink.classList.add('hide');
+        if(parent) {
+            parent.innerHTML = '';
+            renderGuideSummary(R.clone(config), parent, speciesCount);
+            deleteLink.classList.remove('hide');
+            editLink.classList.remove('hide');
+            exampleLink.classList.add('hide');
+        }
     };
 
     const noRecordsSummary = () => {
@@ -114,7 +124,10 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
             case 'PREPARE-LESSON':
                 actionLink.removeAttribute('data-toggle');    
                 actionLink.innerHTML = config.isLandscapeMode ? 'Get Species' : 'Species';
-                document.querySelector('.js-for-text').classList.remove('hide');           
+                // document.querySelector('.js-for-text').classList.remove('hide');   
+                
+                elem.removeClass(document.querySelector('.js-for-text'), 'hide');
+                
                 guideSummary();
                 actionLink.removeEventListener(prepareHandler);
                 actionLink.addEventListener('click', prepareHandler);
