@@ -37,7 +37,7 @@ h5 {
 }
 
 input[type="text"] {
-  padding: 0 0 0 .5rem;
+  padding: 0 0 0 .25rem;
 }
 
 figure {
@@ -242,6 +242,12 @@ a.dropdown-item {
   font-size: 1.1rem;
   font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
   letter-spacing: .05rem;
+  display: inline-block;
+  max-width: 20rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
 }
 
 .toUpperCase {
@@ -354,12 +360,6 @@ a.dropdown-item {
   margin: 0 1.5rem;
   justify-content: space-evenly;
 }
-
-/* .taxon.card .species-header {
-  display: grid;
-  grid-template-columns: 2fr 4fr 2fr;
-  background-color: var(--snap-species-header-background);
-} */
 
 .non-taxa .species-header {
   padding: 0 1.25rem 0 0;
@@ -845,19 +845,11 @@ a.dropdown-item {
   grid-template-columns: 5fr 5.5rem;
 }
 
-/* .taxon.card .data-box-container {
-  display: initial;
-} */
-
 .data-box {
   color: var(--snap-text-dark);
   text-align: left;
   padding: 0.5rem;
 }
-
-/* .inat-box {
-  border: .03rem solid var(--snap-dd-non-taxa-bg-hover);
-} */
 
 .inat-box .data-box {
   color: var(--snap-text-medium-light);

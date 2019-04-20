@@ -56,7 +56,7 @@ export const saveButton = (parent, config, step, update = true) => {
                     inatId.innerHTML = config.guide.inatId.key || '';
                 }
                 if(config.guide.season) {
-                    chosenLabel.innerHTML = 'Season:';
+                    chosenLabel.innerHTML = 'Current selection:';
                     if(config.guide.season.type === 'months') {
                         const months = config.guide.season.observableMonths.map(month => month.name);
                         const observableMonths = `${months[0]}-${months[months.length - 1]}`;
@@ -70,10 +70,10 @@ export const saveButton = (parent, config, step, update = true) => {
 
         if(update) {
             actions.boundUpdateConfig(config);
-            txt.innerHTML = 'Your preference has been updated';
+            txt.innerHTML = 'Your preference has been updated.';
             setTimeout(() => {
                 txt.innerHTML = '';
-            }, 2000);
+            }, 20000000);
         }
     }
 

@@ -17,15 +17,7 @@
         font-size: 1.8rem;
     }
 }
-@media (min-width: 375px) {
-    body {
-        font-size: 18px;
-    }
-}
 @media (min-width: 414px) {
-    body {
-        font-size: 19px;
-    }
     .block {
         font-size: 1.4rem;
     }

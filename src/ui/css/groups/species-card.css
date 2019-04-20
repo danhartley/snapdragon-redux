@@ -77,6 +77,10 @@
     margin: 0 .5rem;
   }
 
+  .small-text {
+    font-size: .8rem;
+  }
+
   .extra-small-text {
     font-size: .8rem;
   }
