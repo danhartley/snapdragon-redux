@@ -2,6 +2,7 @@ import * as R from 'ramda';
 
 import 'ui/create-guide-modal/create-guide.css';
 
+import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -10,6 +11,8 @@ import { renderCategories } from 'ui/create-guide-modal/categories';
 import { renderGuides } from 'ui/create-guide-modal/guides';
 import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
 import { saveButton } from 'ui/create-guide-modal/common/save-button';
+
+import createGuideTemplate from 'ui/create-guide-modal/create-guide-template.html';
 
 const closeModalListeners = [];
 
@@ -145,6 +148,13 @@ class CreateGuide {
 
 export const createGuideHandler = (step) => {
     
+    const template = document.createElement('template');
+    template.innerHTML = createGuideTemplate;
+
+    DOM.rightBody.innerHTML = '';
+
+    renderTemplate({}, template.content, DOM.rightBody);
+
     const guide = new CreateGuide(step);
 
     guide.createStep(step);

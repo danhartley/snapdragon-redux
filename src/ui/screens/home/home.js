@@ -75,8 +75,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     const beginLessonHandler = () => {
         const { collection, config, history } = store.getState();
         const lessonStateMode = 'new-lesson';
-        lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);
-        // subscription.remove(subscription.getByName('renderSpeciesGrid'));
+        lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);        
         actionLink.disabled = false;
     };
 
