@@ -2,14 +2,18 @@ import * as R from 'ramda';
 
 import 'ui/create-guide-modal/create-guide.css';
 
+import { DOM } from 'ui/dom';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
+import { renderHome } from 'ui/screens/home/home';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderLocation } from 'ui/create-guide-modal/location';
 import { renderCategories } from 'ui/create-guide-modal/categories';
 import { renderGuides } from 'ui/create-guide-modal/guides';
 import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
 import { saveButton } from 'ui/create-guide-modal/common/save-button';
+
+import createGuideTemplate from 'ui/create-guide-modal/create-guide-template.html';
 
 const closeModalListeners = [];
 
@@ -87,22 +91,26 @@ class CreateGuide {
 
         this.nextStepActionTxt.removeAttribute('data-dismiss');
 
-        if(nextStep > this.steps.length) {            
+        if(nextStep > this.steps.length) {
+
             const { config: configState } = store.getState();
             const config = R.clone(configState);
             closeModalListeners.forEach(listener => listener(this.currentStep));
             this.currentStep = 0;
-            this.nextStepActionTxt.setAttribute('data-dismiss','modal');
             config.guide.ready = true;
             actions.boundUpdateConfig(config);
-
-            this.listeners.forEach((listener, index) => {
-                listener.element.removeEventListener('click', listener.handler, 'true');
-            });
-
-            this.listeners = [];
-
-            return;
+            
+            if(config.isLandscapeMode) {
+                this.nextStepActionTxt.setAttribute('data-dismiss','modal');
+                this.listeners.forEach((listener, index) => {
+                    listener.element.removeEventListener('click', listener.handler, 'true');
+                });
+                this.listeners = [];
+                return;
+            } else {
+                renderHome(0);
+                return;
+            }
         };
 
         const currentStepProperties = this.steps.filter(s => s.number === this.currentStep);
@@ -144,7 +152,16 @@ class CreateGuide {
 };
 
 export const createGuideHandler = (step) => {
+
+    const { config } = store.getState();
     
+    if(config.isPortraitMode) {
+        const template = document.createElement('template');
+        template.innerHTML = createGuideTemplate;
+        DOM.rightBody.innerHTML = '';
+        renderTemplate({}, template.content, DOM.rightBody);
+    }
+
     const guide = new CreateGuide(step);
 
     guide.createStep(step);

@@ -1,9 +1,13 @@
+import { DOM } from 'ui/dom';
 import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
+import { renderHome } from 'ui/screens/home/home';
 import { returnTaxonIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
-import exampleGuideTemplate from 'ui/example-guide-modal/example-guide.html';
+import exampleGuideTemplate from 'ui/example-guide-modal/example-guide-template.html';
+import exampleLessonsTemplate from 'ui/example-guide-modal/example-guide.html';
 import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
+
 
 const closeModalListeners = [];
 
@@ -12,6 +16,15 @@ export const listenToCloseExampleGuideModal = listener => {
 };
 
 export const renderExampleGuideHandler = config => {
+    
+    let template;
+
+    if(config.isPortraitMode) {
+        template = document.createElement('template');
+        template.innerHTML = exampleGuideTemplate;
+        DOM.rightBody.innerHTML = '';
+        renderTemplate({}, template.content, DOM.rightBody);
+    }
 
     const modal = document.getElementById('exampleGuide');
 
@@ -27,8 +40,9 @@ export const renderExampleGuideHandler = config => {
 
       const parent = modal.querySelector('.js-modal-guide-body div:nth-child(2)');
             parent.innerHTML = '';
-      const template = document.createElement('template');
-      template.innerHTML = exampleGuideTemplate;
+      
+            template = document.createElement('template');
+      template.innerHTML = exampleLessonsTemplate;
 
       const typeLessons = lessons.filter(lesson => lesson.type === type);
 
@@ -78,21 +92,29 @@ export const renderExampleGuideHandler = config => {
         actions.boundUpdateConfig(config);
 
         navigationBtn.disabled = false;
-        navigationBtn.setAttribute('data-dismiss','modal');
-
+        
         const txt = modal.querySelector('.js-saved');
-
+        
         txt.innerHTML = 'Your preference has been updated';
         setTimeout(() => {
-            txt.innerHTML = '';
-        }, 2000);
+          txt.innerHTML = '';
+        }, 2000);        
 
-        const closeModal = event => {
-          closeModalListeners.forEach(listener => listener());
-        };
+        let startLessonHandler;
 
-        navigationBtn.removeEventListener('click', closeModal, true);
-        navigationBtn.addEventListener('click', closeModal, true);
+        if(config.isLandscapeMode) {
+          navigationBtn.setAttribute('data-dismiss','modal');        
+          startLessonHandler = event => {
+            closeModalListeners.forEach(listener => listener());
+          };
+        } else {
+          startLessonHandler = event => {
+            renderHome(0);
+          };
+        }
+
+        navigationBtn.removeEventListener('click', startLessonHandler, true);
+        navigationBtn.addEventListener('click', startLessonHandler, true);
       };     
 
       const chooseText = typeLessons.length > 1 
@@ -101,8 +123,6 @@ export const renderExampleGuideHandler = config => {
 
       modal.querySelector('.js-guide-text > span:nth-child(1)').innerHTML = chooseText;
     };
-
-    // loadLessons();
 
     const startLesson = document.querySelector('.js-start-lesson-wrapper');
 

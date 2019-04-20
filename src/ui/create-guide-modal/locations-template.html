@@ -10,20 +10,22 @@
     </div>
 </div>
 
-<div class="inat-location-location js-inat-location-location"><button class="btn btn-modal js-set-location-btn"></button><span class="landscape auto-location js-auto-location"></span></div>
-
-<div class="inat-location-place js-inat-location-place">    
-    <div>
-        <input id="inat-place" type="text" placeholder=" Start typing a place name">
-        <div class="hide-empty" id="inat-place-autocomplete"></div>
+<div class="location inat-location-elsewhere">
+    <div class="inat-location-location js-inat-location-location"><button class="btn btn-modal js-set-location-btn"></button><span class="landscape auto-location js-auto-location"></span></div>
+    <div></div>
+    <div class="inat-location-place js-inat-location-place">    
+        <div>
+            <input id="inat-place" type="text" placeholder=" Start typing a place name">
+            <div class="hide-empty" id="inat-place-autocomplete"></div>
+        </div>
+        <!-- <div class="landscape">Enter place name</div>  -->
+        <button id="set-inat-location-btn" class="btn btn-modal js-set-inat-location-btn">Save place</button>
+        <div class="custom-checkbox" style="display: none;">
+            <input name="planetEarth" type="checkbox" class="custom-control-input js-planet-earth" id="planetEarth">
+            <label class="custom-control-label" for="planetEarth">Planet Earth</label>
+        </div>
     </div>
-    <!-- <div class="landscape">Enter place name</div>  -->
-    <button id="set-inat-location-btn" class="btn btn-modal js-set-inat-location-btn">Save place</button>
-    <div class="custom-checkbox" style="display: none;">
-        <input name="planetEarth" type="checkbox" class="custom-control-input js-planet-earth" id="planetEarth">
-        <label class="custom-control-label" for="planetEarth">Planet Earth</label>
-    </div>
-</div>    
+</div>
 
 <div class="range-slider">
     <span class="js-range"></span><span><span class="range-limits">0km</span><input class="set-range-input js-set-range-input" type="range" min="0" max="250" value="10"><span class="range-limits"> 250km</span><span class="saved js-range-saved"></span></span>

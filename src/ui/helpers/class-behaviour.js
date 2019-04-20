@@ -15,21 +15,22 @@ const toggle = (elem) => {
 	elem.classList.toggle('is-visible');
 };
 
-const addClassToSelected = (collection, element, classesToRemove, classToAdd) => {
-    if(!element) return;
-    collection.forEach(elem => {
-        if(classesToRemove && classesToRemove.length > 0) 
-        classesToRemove.forEach(redundant => elem.classList.remove(redundant));
-    });    
-    if(classToAdd)
-        element.classList.add(classToAdd);
-};
-
 const hasClass = (elem, className) => {
+    if(!elem) return false;
     const classArray = [ ...elem.classList ];
     return R.contains(className, classArray);
 };
 
+const removeClass = (elem, className) => {
+    if(hasClass(elem, className)) {
+        elem.classList.forEach(c => {
+            if(c === className) {
+                elem.classList.remove(c);
+            }
+        });
+    }
+};
+
 export const elem = {
-    show, hide, toggle, addClassToSelected, hasClass
+    show, hide, toggle, hasClass, removeClass
 };

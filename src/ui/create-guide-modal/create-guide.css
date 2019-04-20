@@ -6,11 +6,7 @@
   }
   
   .modal-guide-wrapper .modal-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0 1rem;
-    background-color: var(--secondary);
+    display: none;
   }
   
   .modal-guide-wrapper button.close {
@@ -53,6 +49,7 @@
   
   .modal-guide-wrapper .modal-content {
     background-color: initial;
+    height: 100%;
   }
   
   .modal-guide-wrapper .modal-body {
@@ -239,6 +236,10 @@
     color: white;
     letter-spacing: .05rem;
   }
+
+  .modal-guide-wrapper .modal-body button.disabled {
+    color: rgb(150,150,150);
+  }
   
   .modal-guide-wrapper .modal-body .inat-location-location button {
     width: 100%;  
@@ -370,7 +371,8 @@
   }
 
   .inat-switch-slider.left {            
-    background-color: var(--snap-text-medium-dark);
+    /* background-color: var(--snap-text-medium-dark); */
+    background-color: white;
   }
   
   .inat-switch-slider.left div {
@@ -378,7 +380,8 @@
   }
   
   .inat-switch .txt-left, .inat-switch .txt-right {
-    color: var(--snap-text-medium-dark);
+    /* color: var(--snap-text-medium-dark); */
+    color: rgb(150,150,150);
     transition: all 1s ease;
     display: flex;
     align-items: center;
@@ -395,7 +398,8 @@
   }
 
   .inat-switch-slider.right {    
-    background-color: var(--snap-text-medium-dark);    
+    /* background-color: var(--snap-text-medium-dark);     */
+    background-color: white;
   }
   
   .inat-switch-slider.right div {
@@ -412,8 +416,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 0 0 .5rem 0;
+    /* margin: 0 0 .5rem 0; */
     background-color: var(--snap-text-medium-light);
+    /* background-color: var(--snap-text-medium-dark); */
     color: var(--snap-text-medium-dark);
     padding: .3rem .2rem;
     width: fit-content;
@@ -437,11 +442,18 @@
   .inat-switch.location, .inat-switch.inat, .inat-switch.season {
     width: 100%;
     flex-direction: column;
-    background-color: rgb(98, 120, 94);
+    /* background-color: rgb(98, 120, 94); */
+    background-color: var(--snap-text-medium-dark);
   }
 
+  /* .inat-location-location {
+    width: 50%;
+    float: left;
+    padding-right: .5rem;
+  } */
+
   .inat-switch.location {
-    margin-bottom: 1.5rem;
+    margin-bottom: .5rem;
   }
 
   .inat-location-place .btn-modal {
@@ -490,15 +502,17 @@
 
   .iconic-taxa-categories {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1rem;
-    margin: 1rem 0 0 0;
+    grid-template-columns: 1fr;
+  }
+
+  .iconic-taxa-categories > div {
+    height: 2.8rem;
   }
   
   .iconic-taxa-categories > div > div {
     display: flex;
     align-items: center;
-    margin: 1rem 0 0 0;
+    /* margin: 1rem 0 0 0; */
   }
   
   .iconic-taxa-categories > div > div > div:nth-child(1) {    
@@ -695,6 +709,14 @@
   
   @media (min-width: 768px) {
 
+    .modal-guide-wrapper .modal-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0 1rem;
+      background-color: var(--secondary);
+    }
+
     .btn-group.btn-group-toggle.scrollable {
       left: 0rem;
       right: 0rem;
@@ -734,10 +756,10 @@
         max-height: 4rem;
     }
 
-    .modal-guide-wrapper .modal-body .inat-location-location button {
-      margin: 0 .5rem 0 0;
-      width: 16rem;
-    }
+    /* .modal-guide-wrapper .modal-body .inat-location-location button {
+      margin: 0 .5rem 0 0; */
+      /* width: 16rem;
+    } */
 
     .modal-guide-wrapper .modal-body .modal-guide-progress > div {
       padding: 0 0 .5rem 0;
@@ -752,9 +774,9 @@
       margin: .75rem 0 .5rem .5rem;
     }
 
-    .modal-guide-wrapper .modal-body button {
-        margin: 0 0 0 .5rem;
-    }
+    /* .modal-guide-wrapper .modal-body button {
+        margin: 0 0 0 .5rem;        
+    } */
 
     .modal-guide-wrapper .inat-location-place .custom-checkbox {
         margin: 0 0 0 .5rem;
@@ -774,14 +796,15 @@
         padding: 0 .1rem;
     }
 
-    .inat-switch {
+    /* .inat-switch {
       padding: .5rem 1rem;
-    }
+    } */
 
     .modal-guide-wrapper .inat-switch {
-        font-size: 1.2rem;
-        width: 29rem;
-        width: fit-content;
+        /* font-size: 1.2rem; */
+        /* width: 29rem;
+        width: fit-content; */
+        width: 100%;
     }
 
     .modal-guide-wrapper .inat.inat-switch {
@@ -795,7 +818,7 @@
     }
 
     .modal-guide-wrapper #inat-place {
-        width: 16rem;
+        /* width: 16rem; */
         margin: 0;
         flex: 3;
       }
@@ -813,6 +836,7 @@
     #set-inat-location-btn {
       width: 8rem;
       width: fit-content;
+      margin-left: .5rem;
     }
 
     #inat-place, #inat-place-id {
@@ -864,13 +888,26 @@
     }
 
     .embedded-switch > div {
-      display: flex;
+      /* display: flex; */
+      grid-template-columns: 1fr 5rem 1fr;
+    }
+
+    .inat-location-elsewhere {
+      display: grid;
+      grid-template-columns: 1fr .5rem 1fr;
     }
 
     .iconic-taxa-categories {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 1rem;
+      margin: 2rem 0 0 0;
+    }
+/* 
+    .iconic-taxa-categories {
         grid-template-columns: 1fr 1fr 1fr;
         margin: 2rem 0 0 0;
-    }
+    } */
 
     .iconic-taxa-categories > div > div:nth-child(1) { 
         margin: 0 0.5rem 0.5rem 0;
@@ -880,7 +917,9 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin: .5rem 0 0 0;
+        /* margin: .5rem 0 0 0; */
+        /* padding-left: .5rem; */
+        /* width: 50% */
     }
 
     .inat-location-place > div:nth-child(2) {
