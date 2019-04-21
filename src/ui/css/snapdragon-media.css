@@ -30,6 +30,9 @@
     .home-container .snapdragon-tag, .home-container .summary-scores {
         font-size: 2rem;
     }
+    .imageSlider .carousel-item {
+        height: 12.375rem;
+    }
 }
 
 /* iPHONE 6,7,8 */

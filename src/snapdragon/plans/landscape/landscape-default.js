@@ -25,64 +25,28 @@ export const landscapeDefault = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            description: 'Species recognition',
-            layouts: [
-                L.mixedSpecimenImages,
-                L.latinToCommonMatch
-            ],
-            // wildcardLayouts : [ L.glossaryTerms ],
-            reviewLayouts: [ L.mixedSpecimenImages ]
+            layouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
+            reviewLayouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ]
         },
         {   id: 2,
             name:'Level 2',
-            description: 'The common name of species',
-            layouts: [ 
-                L.commonToLatinMatch,
-                L.commonEntry
-            ],
-            // wildcardLayouts : [ ],
-            // reviewLayouts: [ 
-            //     L.commonToLatinMatch,
-            //     L.commonEntry,
-            // ]
+            layouts: [ L.commonToLatinMatch, L.textCompleteGenus, L.textCompleteSpecies ],
+            reviewLayouts: [ L.commonToLatinMatch, L.textCompleteGenus, L.textCompleteSpecies ]
         },
         {   id: 3,
             name:'Level 3',
-            description: 'Family traits',
-            layouts: [ L.familyStripsMatch ],
-            wildcardLayouts : [ ],
-            reviewLayouts: [ ]
-        },  
+            layouts: [ L.commonEntry, L.familyMatch, L.familyStripsMatch, L.traitPropertyMatch ],
+            reviewLayouts: [ L.commonEntry, L.familyStripsMatch ]
+        },
         {   id: 4,
             name:'Level 4',
-            description: 'The genus name of species',
-            layouts: [ 
-                L.textCompleteGenus,
-                L.genusEntry
-            ],
-            wildcardLayouts : [  ],
-            reviewLayouts: [ ]
+            layouts: [ L.speciesEntry, L.genusEntry ],
+            reviewLayouts: [ L.speciesEntry, L.genusEntry ]
         },
         {   id: 5,
             name:'Level 5',
-            description: 'The species name of species',
-            layouts: [ 
-                L.textCompleteSpecies,
-                L.speciesEntry
-             ],
-            wildcardLayouts : [  ],
-            reviewLayouts: [ L.textCompleteSpecies ]
-        },
-        {   id: 6,
-            name:'Level 6',
-            description: 'The full latin name of species',
-            layouts: [          
-                L.multiSpecimenLatinMatch,       
-                L.commonToLatinMatch,
-                L.speciesGenusEntry, 
-            ],
-            wildcardLayouts : [  ],
+            layouts: [ L.speciesGenusEntry ],
             reviewLayouts: [ L.speciesGenusEntry ]
-        } 
+        }
     ]
 };

@@ -5,16 +5,13 @@ let portraitLayouts = [
     L.genusEntry,
     L.textCompleteGenus,                
     L.latinToCommonMatch,
-    L.mixedSpeciesMatch,    
+    L.mixedSpeciesMatch,
     L.speciesEntry,
     L.speciesGenusEntry,    
     L.commonToLatinMatch,
     L.textCompleteSpecies,    
     L.commonEntry,
 ];
-
-// portraitLayouts = [ textCompleteSpecies ];
-// portraitLayouts = [ mediaMatch ];
 
 export const portraitDefault = {
     id: 101,
@@ -24,38 +21,28 @@ export const portraitDefault = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            // layouts: [ mediaMatch ],
-            layouts: [ L.commonToLatinMatch ],
-            // layouts: [ L.latinToCommonMatch ],
-            // layouts: [ L.mixedSpeciesMatch ],
-            // wildcardLayouts : [ L.latinEpithets ],
-            // wildcardLayouts : [],
-            reviewLayouts: [ L.mixedSpeciesMatch ]
+            layouts: [ L.mixedSpeciesMatch, L.latinToCommonMatch ],
+            reviewLayouts: [ L.mixedSpeciesMatch, L.latinToCommonMatch ]
         },
         {   id: 2,
             name:'Level 2',
-            layouts: portraitLayouts
-            // layouts: [ textCompleteGenus, commonEntry, textCompleteSpecies, genusEntry ],
-            // wildcardLayouts : [ latinEpithets ],
-            // reviewLayouts: [ commonEntry, textCompleteSpecies, genusEntry ]
+            layouts: [ L.commonToLatinMatch, L.textCompleteGenus, L.textCompleteSpecies ],
+            reviewLayouts: [ L.commonToLatinMatch, L.textCompleteGenus, L.textCompleteSpecies ]
         },
         {   id: 3,
             name:'Level 3',
-            layouts: [ L.speciesEntry ],
-            wildcardLayouts : [ L.glossaryTerms ],
-            reviewLayouts: [ L.speciesEntry ]
+            layouts: [ L.commonEntry, L.familyMatch, L.familyStripsMatch ],
+            reviewLayouts: [ L.commonEntry, L.familyStripsMatch ]
         },
         {   id: 4,
             name:'Level 4',
-            layouts: [ L.speciesGenusEntry ],
-            wildcardLayouts : [ L.cultivars ],
-            reviewLayouts: [ L.speciesGenusEntry ]
+            layouts: [ L.speciesEntry, L.genusEntry ],
+            reviewLayouts: [ L.speciesEntry, L.genusEntry ]
         },
         {   id: 5,
             name:'Level 5',
-            layouts: [ L.familyMatch, L.familyStripsMatch ],
-            wildcardLayouts : [ L.connections ],
-            reviewLayouts: [ L.familyStripsMatch ]
-        }   
+            layouts: [ L.speciesGenusEntry ],
+            reviewLayouts: [ L.speciesGenusEntry ]
+        }
     ]
 };

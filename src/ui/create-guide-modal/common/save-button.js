@@ -73,7 +73,7 @@ export const saveButton = (parent, config, step, update = true) => {
             txt.innerHTML = 'Your preference has been updated.';
             setTimeout(() => {
                 txt.innerHTML = '';
-            }, 20000000);
+            }, 2000);
         }
     }
 
