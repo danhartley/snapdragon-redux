@@ -97,6 +97,7 @@
     font-size: 1.1rem;
     letter-spacing: .03rem;
     margin: 1rem 0;
+    margin: .25rem 0 0 .5rem;
 }
 
 .test-card button {

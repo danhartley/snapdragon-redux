@@ -594,149 +594,32 @@ export const plants = [
       "names": [
         {
           "vernacularName": "Espino albar, majuelo",
-          "language": "en",
-          "eol_preferred": true
-        },
-        {
-          "vernacularName": "Espino albar, majuelo",
-          "language": "en",
-          "eol_preferred": false
+          "language": "es",
         },
         {
           "vernacularName": "Ar blanc",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Ar blanc",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Ar blanc",
-          "language": "en",
-          "eol_preferred": false
+          "language": "fr"
         },
         {
           "vernacularName": "Common Hawthorn",
           "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Common Hawthorn",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Common Hawthorn",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Eenstijlige meidoorn",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Eenstijlige meidoorn",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Eenstijlige meidoorn",
-          "language": "en",
-          "eol_preferred": false
         },
         {
           "vernacularName": "Majuelo",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Majuelo",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Majuelo",
-          "language": "en",
-          "eol_preferred": false
-        },
+          "language": "es"
+        },        
         {
           "vernacularName": "May",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "May",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "May",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "majuelo",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "majuelo",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "majuelo",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "majuelo",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "majuelo",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "majuelo",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en",          
         },
         {
           "vernacularName": "hawthorn",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Eingriffliger Weißdorn",
-          "language": "de",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Hawthorn",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
           "vernacularName": "oneseed hawthorn",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "oneseed hawthorn",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Oneseed hawthorn",
-          "language": "en",
-          "eol_preferred": false
-        }
+          "language": "en"
+        }        
       ],
       "taxonomy": {
         "usageKey": 9220780,

@@ -41,10 +41,14 @@ export const renderInput = (screen, question) => {
             break;
     }
 
-    const help = config.isLandscapeMode ? '(Complete the name below.)' : '';
+    const help = config.isLandscapeMode ? '(Complete the name below.)' : '(Scroll to see more images.)';
 
     const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: questionTxt, help, term: '' });
     
+    if(config.isPortraitMode) {
+        document.querySelector('.js-test-card').classList.add('clearSpacing');
+    }
+
     const template = document.createElement('template');
     
     template.innerHTML = config.isLandscapeMode ? textEntryTemplate : textEntryPortraitTemplate;
