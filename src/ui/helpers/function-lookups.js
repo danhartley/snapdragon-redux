@@ -20,7 +20,6 @@ import { renderNonTaxonCardSpecimenTiles } from 'ui/screens/cards/non-taxon-card
 import { renderMixedSpecimenQuestion } from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question';
 import { renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
 
-import { renderBirdsong } from 'ui/screens/media/media-birdsong';
 import { renderMediaPlayers } from 'ui/screens/media/landscape/media-players';
 
 const functions = [

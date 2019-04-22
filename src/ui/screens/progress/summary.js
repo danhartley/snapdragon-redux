@@ -56,7 +56,7 @@ export const renderSummary = history => {
     
     let actionLink = document.querySelector('.js-create-guide-link');
 
-    if(collection.isLessonComplete) actionLink.innerHTML = 'Choose a new lesson';
+    if(collection.isLessonComplete) actionLink.innerHTML = 'Choose new';
 
     const handleBtnClickEvent = event => {
 
