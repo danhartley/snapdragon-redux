@@ -77,7 +77,7 @@ export const saveButton = (parent, config, step, update = true) => {
                 ? inatSavedTxt.innerHTML = 'Your preference has been updated.'
                 : savedTxt.innerHTML = 'Your preference has been updated.';
             setTimeout(() => {
-                inatSavedTxt.innerHTML = '';
+                if(inatSavedTxt) inatSavedTxt.innerHTML = '';
                 savedTxt.innerHTML = '';
             }, 2000);
         }
