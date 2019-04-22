@@ -51,9 +51,9 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, w
 
     const summaryLayout = lessonPlan.portrait 
         ? {
-            name: 'history',
+            name: 'summary',
             screens: [{ 
-                name: 'history', 
+                name: 'summary', 
                 domain: 'history', 
                 parent: DOM.rightBody
             }],

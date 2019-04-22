@@ -70,25 +70,21 @@ export const weeds = [
       ],
       "names": [
         {
-          "vernacularName": "common mouse-ear chickweed",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "common mouse-ear",
+          "language": "en"
         },
         {
           "vernacularName": "common mouse-ear chickweed",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
+        },
+        {
+          "vernacularName": "common mouse-ear chickweed",
+          "language": "en"
         },
         {
           "vernacularName": "Common mouse-ear chickweed",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
-        {
-          "vernacularName": "common mouse-ear",
-          "language": "en",
-          "eol_preferred": false
-        }
       ],
       "taxonomy": {
         "usageKey": 3085458,
