@@ -12,7 +12,8 @@ export const saveButton = (parent, config, step, update = true) => {
     template.innerHTML = saveButtonTemplate;
     renderTemplate({}, template.content, parent);
 
-    const txt = parent.querySelector('div');
+    const savedTxt = parent.querySelector('div');
+    let inatSavedTxt;
 
     const handleSaveEvent = () => {
 
@@ -46,13 +47,15 @@ export const saveButton = (parent, config, step, update = true) => {
 
             case 'GUIDE':
 
+                inatSavedTxt = document.querySelector('.js-saved-inat');
+
                 const inatIdLabel = document.querySelector('.js-chosen-inat span:nth-child(1)');
                 const inatId = document.querySelector('.js-chosen-inat span:nth-child(2)');
         
                 if(config.guide.inatId.key) {
                     inatIdLabel.innerHTML = config.guide.inatId.param === 'project_id' 
-                            ? 'iNaturalist Project'
-                            : 'iNaturalist User';
+                            ? 'iNaturalist Project:'
+                            : 'iNaturalist User:';
                     inatId.innerHTML = config.guide.inatId.key || '';
                 }
                 if(config.guide.season) {
@@ -70,9 +73,12 @@ export const saveButton = (parent, config, step, update = true) => {
 
         if(update) {
             actions.boundUpdateConfig(config);
-            txt.innerHTML = 'Your preference has been updated.';
+            config.guide.operation === 'inat' 
+                ? inatSavedTxt.innerHTML = 'Your preference has been updated.'
+                : savedTxt.innerHTML = 'Your preference has been updated.';
             setTimeout(() => {
-                txt.innerHTML = '';
+                inatSavedTxt.innerHTML = '';
+                savedTxt.innerHTML = '';
             }, 2000);
         }
     }

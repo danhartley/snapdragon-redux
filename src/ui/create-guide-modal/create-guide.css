@@ -65,9 +65,9 @@
     font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
   }
   
-  .modal-guide-wrapper .modal-body .guides .guide-text {
+  /* .modal-guide-wrapper .modal-body .guides .guide-text {
     margin: .5rem 0 .25rem .5rem;
-  }
+  } */
   
   .modal-guide-wrapper .modal-body .guide-sub-text {
     font-size: 1rem;
@@ -182,6 +182,10 @@
 
   /* Current Selection */
   
+  .modal-guide-wrapper .modal-body hr {
+    margin: .5rem;
+  }
+
   .modal-guide-wrapper .modal-body .chosen {
     position: absolute;
     bottom:.5rem;
@@ -193,9 +197,9 @@
     grid-template-columns: 8.2rem 1fr;
   }
   
-  .modal-guide-wrapper .modal-body .chosen-inat {
+  /* .modal-guide-wrapper .modal-body .chosen-inat {
     margin: 0 0 0 .5rem;    
-  }
+  } */
   
   .modal-guide-wrapper .modal-body .chosen > div > span:nth-child(1), 
   .modal-guide-wrapper .modal-body .chosen-inat span:nth-child(1) {
@@ -222,13 +226,23 @@
     margin: 0 1rem 0 0;
   }
   
-  .modal-guide-wrapper .modal-body .saved {
+  .modal-guide-wrapper .modal-body .saved,
+  .modal-guide-wrapper .modal-body .saved-inat {
     color: var(--gray);
     font-size: 1.2rem;
     font-style: italic;
     font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
+  }
+  
+  .modal-guide-wrapper .modal-body .saved {
     position: absolute;
     bottom: 1rem;
+  }
+  
+  .modal-guide-wrapper .modal-body .saved-inat {
+    min-height: 1.3rem;
+    margin: .5rem;
+    display: inline-block;
   }
 
   .modal-guide-wrapper .modal-body button {
