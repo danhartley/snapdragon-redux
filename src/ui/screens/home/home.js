@@ -57,7 +57,9 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     if(config.isLandscapeMode) {
         actionLink.dataset.toggle = 'modal';
-        actionLink.dataset.target = '#createGuide';        
+        actionLink.dataset.target = '#createGuide'; 
+        editLink.dataset.toggle = 'modal';
+        editLink.dataset.target = '#createGuide'; 
         exampleLink.dataset.toggle = 'modal';
         exampleLink.dataset.target = '#exampleGuide';
     }
@@ -123,11 +125,8 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
                 break;
             case 'PREPARE-LESSON':
                 actionLink.removeAttribute('data-toggle');    
-                actionLink.innerHTML = config.isLandscapeMode ? 'Get Species' : 'Species';
-                // document.querySelector('.js-for-text').classList.remove('hide');   
-                
-                elem.removeClass(document.querySelector('.js-for-text'), 'hide');
-                
+                actionLink.innerHTML = config.isLandscapeMode ? 'Get Species' : 'Species';                
+                elem.removeClass(document.querySelector('.js-for-text'), 'hide');                
                 guideSummary();
                 actionLink.removeEventListener(prepareHandler);
                 actionLink.addEventListener('click', prepareHandler);
