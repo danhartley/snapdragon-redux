@@ -861,14 +861,15 @@ a.dropdown-item {
   justify-content: center;
 }
 
-.inat-box .data-box div:nth-child(2) span,
+/* .inat-box .data-box div:nth-child(2) span,
 .inat-box .data-box div:nth-child(3) span {
   margin: 0 .5rem  0 0;
-}
+} */
 
-.inat-box .data-box > div:nth-child(1) {
-  display: flex;
-  flex-direction: row;
+.inat-box .data-box > div:nth-child(1), .inat-box .data-box > div:nth-child(2) {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: .25rem;
 }
 
 .inat-box .data-box > div:nth-child(2) > div:nth-child(1) {

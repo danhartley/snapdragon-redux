@@ -74,7 +74,13 @@
     flex-direction: column;
     justify-content: center;
     color: var(--snap-text-medium-light);
-    margin: 0 .5rem;
+  }
+
+  .taxa-container > span {
+    max-width: 8.4rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   .small-text {
