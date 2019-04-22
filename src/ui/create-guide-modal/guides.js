@@ -40,6 +40,7 @@ export const renderGuides = (modal, config, createGuide) => {
         actions.boundUpdateConfig(config);
         
         if(config.guide.season.type !== currentType) {
+            config.guide.operation = 'season';
             save();
         }        
     };

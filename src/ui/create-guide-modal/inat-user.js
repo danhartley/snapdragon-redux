@@ -24,6 +24,7 @@ export const renderInatUser = (parent, config, save) => {
 
         if(key !== '') {
             actions.boundUpdateConfig(config);
+            config.guide.operation = 'inat';
             save();
 
             parent.querySelector('#inat-identity').value = '';

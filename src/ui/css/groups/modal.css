@@ -45,6 +45,10 @@
     margin: 1rem;
   }
   
+  .modal-text hr {
+    margin: .5rem;
+  }
+  
   .modal-body.glossary-modal {
     padding: 0;
   }
