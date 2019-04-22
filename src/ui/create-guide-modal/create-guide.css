@@ -486,12 +486,9 @@
   .iconic-taxa-categories {
     display: grid;
     grid-template-columns: 1fr;
+    grid-gap: .25rem;
   }
 
-  .iconic-taxa-categories > div {
-    height: 2.2rem;
-  }
-  
   .iconic-taxa-categories > div > div {
     display: flex;
     align-items: center;
@@ -503,7 +500,7 @@
   .iconic-taxa-categories > div > div > div:nth-child(1) {    
     width: 1.8rem;
     height: 1.8rem;
-    font-size: 1rem;
+    padding: .5rem;
     margin: 0 .25rem 0 0;
     border: .05rem solid grey;
     display: flex;
@@ -811,10 +808,6 @@
         margin: 0;
     }
 
-    /* .modal-guide-wrapper .modal-guide-body .set-range-input {
-        width: 15rem;
-    } */
-
     .modal-guide-wrapper .guides .inat-entry, .modal-guide-wrapper .guides input[type="text"] {
         width: 12rem;
         width: fit-content;
@@ -889,15 +882,19 @@
   .home-container .snapdragon-tag, .home-container .summary-scores {
       font-size: 2rem;
   }
-  .iconic-taxa-categories > div {
-      height: 2.8rem;
-  }
   .iconic-taxa-categories > div > div > div:nth-child(1) {    
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 2.4rem;
+      height: 2.4rem;
       margin: 0 .5rem 0 0;
   }
   .modal-guide-wrapper .modal-body .modal-guide-navigation > div:nth-child(1) > div svg {
       font-size: 2rem;
+  }
+}
+
+@media (min-height: 736px) {
+  .iconic-taxa-categories > div > div > div:nth-child(1) {
+    width: 3rem;
+    height: 3rem;
   }
 }
