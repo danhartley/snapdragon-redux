@@ -12772,5 +12772,114 @@ export const insects = [
     "family": "Cicadidae",
     "kingdom": "Animalia",
     "eolName": "Cicada orni Linnaeus, 1758"
-  }
+  },
+  {
+  "id": "49317235",
+  "name": "Vespula germanica",
+  "images": [
+    {
+      "title": "Echte wespe.jpg",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Echte_wespe.jpg",
+      "license": "http://creativecommons.org/licenses/publicdomain/",
+      "url": "57/b8/4a/509.2226434.jpg"
+    },
+    {
+      "title": "Vespula germanica10.JPG",
+      "rightsHolder": "Photo2222",
+      "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica10.JPG",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "58/15/c0/509.2383993.jpg"
+    },
+    {
+      "title": "Vespula germanica (Fabricius 1793).jpg",
+      "rightsHolder": "Juan Emilio",
+      "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica_(Fabricius_1793).jpg",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "58/56/9f/509.24985823.jpg"
+    },
+    {
+      "title": "Vespula germanica-s.jpg",
+      "rightsHolder": "Magne Flåten",
+      "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica-s.jpg",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "58/83/89/509.25539008.jpg"
+    },
+    {
+      "title": "Vespula germanica Horizontalview Richard Bartz.jpg",
+      "rightsHolder": "Richard Bartz, Munich aka Makro Freak",
+      "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica_Horizontalview_Richard_Bartz.jpg",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "58/8f/e9/509.2577167.jpg"
+    },
+    {
+      "title": "Vespula germanica-pjt4.jpg",
+      "rightsHolder": "pjt56 --- |Permission= English: If you use the picture outside Wikipedia I would appreciate a short e-mail to pjt56@gmx.net or a message on my discussion page",
+      "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica-pjt4.jpg",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "58/ee/e5/509.27609216.jpg"
+    },
+    {
+      "title": "Wasp with ham 1.jpg",
+      "rightsHolder": "aconcagua (talk)",
+      "source": "https://commons.wikimedia.org/wiki/File:Wasp_with_ham_1.jpg",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "58/fa/67/509.27764833.jpg"
+    },
+    {
+      "title": "Wasp October 2007-6.jpg",
+      "rightsHolder": "Alvesgaspar",
+      "source": "https://commons.wikimedia.org/wiki/File:Wasp_October_2007-6.jpg",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "59/53/03/509.2995286.jpg"
+    },
+    {
+      "title": "Vespula germanica-gb.jpg",
+      "rightsHolder": "Gilbertus d'après Bernie  Vespula germanica 03.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica-gb.jpg",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "59/81/e1/509.31183993.jpg"
+    },
+    {
+      "title": "Wasp November 2007-3.jpg",
+      "rightsHolder": "Alvesgaspar",
+      "source": "https://commons.wikimedia.org/wiki/File:Wasp_November_2007-3.jpg",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "59/9f/6f/509.3168239.jpg"
+    }
+  ],
+  "names": [
+    {
+      "vernacularName": "European wasp",
+      "language": "en"
+    },
+    {
+      "vernacularName": "German wasp",
+      "language": "en"
+    },
+    {
+      "vernacularName": "German yellowjacke",
+      "language": "en"
+    },
+  ],
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Arthropoda",
+    "order": "Hymenoptera",
+    "family": "Vespidae",
+    "genus": "Vespula",
+    "species": "Vespula germanica",
+    "kingdomKey": 1,
+    "phylumKey": 54,
+    "classKey": 216,
+    "orderKey": 1457,
+    "familyKey": 4490,
+    "genusKey": 1311631,
+    "speciesKey": 1311649,
+    "class": "Insecta"
+  },
+  "family": "Vespidae",
+  "kingdom": "Animalia",
+  "eolName": "Vespula germanica"
+}
 ];

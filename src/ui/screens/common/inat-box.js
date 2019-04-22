@@ -25,7 +25,10 @@ export async function renderInatDataBox(parent, item, config, mode) {
 
     native.font = native.range.length > 40 ? 'font-size:.8rem' : '';
 
-    renderTemplate({native}, template.content, parent);
+    document.querySelector('.js-native-container').innerHTML = `<div class="native hide-empty" style="${native.font}">${native.range}</div>`;
+
+    renderTemplate({}, template.content, parent);
+    // renderTemplate({native}, template.content, parent);
     
     getInatTaxonStats(item, config).then(stats => {
 
@@ -58,10 +61,8 @@ export async function renderInatDataBox(parent, item, config, mode) {
             placeTaxonCount += Number.parseInt(taxon.count);
         }); 
 
-        // parent.querySelector('.js-place').innerHTML = `${country} observations`;
-        // parent.querySelector('.js-world').innerHTML = 'Worldwide observations';
-        parent.querySelector('.js-world').innerHTML = mode === 'MODAL' ? 'Worldwide' : 'Worldwide observations';
-        parent.querySelector('.js-place').innerHTML = mode === 'MODAL' ? country : `${country} observations`;
+        parent.querySelector('.js-world').innerHTML = mode === 'MODAL' ? 'Worldwide' : 'Worldwide sightings';
+        parent.querySelector('.js-place').innerHTML = mode === 'MODAL' ? country : `${country} sightings`;
         parent.querySelector('.js-place-taxon-count').innerHTML = placeTaxonCount.toLocaleString();
     });
     

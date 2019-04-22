@@ -251,7 +251,7 @@
         font-family: serif;
         font-style: italic;
         letter-spacing: .03rem;
-        font-size: 1.2rem;
+        /* font-size: 1.2rem; */
     }
 
     .id-box-container {

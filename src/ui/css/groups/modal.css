@@ -117,7 +117,7 @@
 }
 
 #cardModal .modal-body {
-    padding: 1rem 0;
+    padding: 0;
 }
 
 #cardModal .card {
@@ -328,12 +328,20 @@
 
     #cardModal .modal-dialog {
         min-width: 32rem;
-        max-width: 32rem;
+        max-width: 600px;
     }
 
     #cardModal .feature-types {
         width: 100%;
         margin: 0;
+    }
+
+    #cardModal .modal-body {
+      padding: 1rem 0;
+    }
+    
+    #cardModal .card-card .feature-symbiont-list.scrollable {
+      top: 16rem;
     }
 
     #cardModal .feature-symbiont-list.scrollable {        
