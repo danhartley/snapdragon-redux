@@ -69,12 +69,11 @@ export async function itemHandler(collection, config, counter, callback, noRecor
             collection.name = config.guide.place.name;
             collection.items = collection.items.filter(i => i);
 
-            collection.items.filter(item => item).forEach((item,index)=>{
+            collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
+            collection.items.forEach((item,index) => {
+
                 item.snapIndex = index + 1;
                 item.collectionId =  collection.id;
-            });
-
-            collection.items.forEach(item => {
                 
                 item.vernacularNames = itemProperties.getVernacularNames(item, config);
                 item.vernacularName = itemProperties.getVernacularName(item, config);   

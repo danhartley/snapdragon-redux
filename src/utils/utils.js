@@ -121,7 +121,7 @@ Array.prototype.concatAll = function() {
 const sortBy = (arr, prop, dir = 'asc') => {
   return dir === 'asc' 
     ? arr.sort((a, b) => parseFloat(a[prop]) - parseFloat(b[prop]))
-    : arr.sort((a, b) => parseFloat(b[prop]) - parseFloat(a[prop]));
+    : arr.sort((a, b) => parseFloat(b[prop]) - parseFloat(a[prop]));  
 };
 
 const sortAlphabeticallyBy = (arr, prop) => {
@@ -153,17 +153,26 @@ const capitaliseAll = str => {
   return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 };
 
-const getCellValue = function(tr, idx, headerSortIndex){ 
-  const valueToSortOn = tr.children[idx].children[headerSortIndex].innerText || tr.children[idx].innerText || tr.children[idx].classList[0] || tr.children[idx].textContent; 
+const getCellValue = function(tr, idx, headerSortIndex, wide){ 
+  let children = tr.children;
+  if(!wide) {
+    children = [...tr.children].filter(child => [...child.classList].join('').indexOf('wide-screen') === -1);
+  }
+  const valueToSortOn = 
+    children[idx].dataset.snapIndex ||
+    children[idx].children[headerSortIndex].innerText || 
+    children[idx].innerText || 
+    children[idx].classList[0] || 
+    children[idx].textContent;
   return valueToSortOn;
 }
 
-const comparer = function(idx, asc, headerSortIndex) { return function(a, b) { return function(v1, v2) {
+const comparer = function(idx, asc, headerSortIndex, wide) { return function(a, b) { return function(v1, v2) {
         return v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2);
-    }(getCellValue(asc ? a : b, idx, headerSortIndex), getCellValue(asc ? b : a, idx, headerSortIndex));
+    }(getCellValue(asc ? a : b, idx, headerSortIndex, wide), getCellValue(asc ? b : a, idx, headerSortIndex, wide));
 }};
 
-const makeSortable = (document, callback) => {
+const makeSortable = (document, callback, wide) => {
 
   Array.from(document.querySelectorAll('th > span')).forEach(function(sp) { sp.addEventListener('click', function() {
 
@@ -177,7 +186,7 @@ const makeSortable = (document, callback) => {
           var footer = table.querySelector('tfoot');          
 
           Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
-              .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc, headerSortIndex))
+              .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc, headerSortIndex, wide))
               .forEach(function(tr) { 
                 if(tr !== footer) {
                   body.appendChild(tr);

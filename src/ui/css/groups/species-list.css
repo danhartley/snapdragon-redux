@@ -85,10 +85,15 @@ table {
     cursor: default;
   }
   
-  .table-header th:nth-child(1) > div,
-  .table-footer td:nth-child(1) > div {
+  /* .table-header th:nth-child(1) > div,
+  .table-footer td:nth-child(1) > div { */
+  .table-header th:nth-child(1) > span,
+  .table-footer td:nth-child(1) > span {
     width: 5rem;
     height: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .table-header th:nth-child(2) {
