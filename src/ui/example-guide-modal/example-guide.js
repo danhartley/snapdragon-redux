@@ -1,3 +1,4 @@
+import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
@@ -15,8 +16,10 @@ export const listenToCloseExampleGuideModal = listener => {
     closeModalListeners.push(listener);
 };
 
-export const renderExampleGuideHandler = config => {
+export const renderExampleGuideHandler = () => {
     
+  let { config } = store.getState();
+
     let template;
 
     if(config.isPortraitMode) {

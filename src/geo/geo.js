@@ -55,7 +55,7 @@ async function getMapBoxPlace(long, lat, config) {
   const token = 'pk.eyJ1IjoiZGFuaGFydGxleSIsImEiOiJjam84Zjd3aGowMDdoM2ttaDAzeDk4bHJ6In0.oEcO6w3DhHUv_mXrFW1clg';  
   const longitude = long;// || '-9.163009899999999';
   const latitude = lat;// || '38.7155762';  
-  const language = config.lang || 'en';
+  const language = config.language || 'en';
   const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${longitude},${latitude}.json?language=${language}&access_token=${token}`;
   const response = await fetch(url);
   const json = await response.json();

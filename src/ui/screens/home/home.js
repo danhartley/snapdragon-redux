@@ -70,7 +70,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     };
 
     const examplesHandler = () => {
-        renderExampleGuideHandler(config);
+        renderExampleGuideHandler();
     };
 
     const prepareHandler = () => {

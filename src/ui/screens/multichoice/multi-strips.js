@@ -52,7 +52,8 @@ export const renderMultiStrips = (collection) => {
         const vernacularName = (overrides && overrides.vernacularName !== undefined) ? overrides.vernacularName : item.vernacularName;
         const binomial = (overrides && overrides.binomial !== undefined) ? overrides.binomial : item.name;
         const question = (overrides && overrides.question) ? overrides.question : 'Match the name';
-        const help = (overrides && overrides.help !== undefined) ? overrides.help : '(Click on the name below.)';
+        const helpDefault = config.isLandscapeMode ? '(Click on the name below.)' : '(Tap on the name below.)';
+        const help = (overrides && overrides.help !== undefined) ? overrides.help : helpDefault;
         const term = (overrides && overrides.term !== undefined) ? overrides.term: '';
         const className = (overrides && overrides.className !== undefined) ? overrides.className: '';
         
@@ -123,9 +124,14 @@ export const renderMultiStrips = (collection) => {
     if(screen.name === 'species-vernaculars') {
 
         let question = item.vernacularName;   
-        let answers = species.filter(s => s.taxonomy).filter(s => s.taxonomy[taxon.rank].toLowerCase() === taxon.value);
-            answers = R.take(8, answers).filter(s => !R.contains(item.vernacularName, s.names.map(n => n.vernacularName)));
-            answers = answers.map(s => s.names.filter(n => n.language === 'en'));
+        let filteredAnswers = species.filter(s => s.taxonomy).filter(s => s.taxonomy[taxon.rank].toLowerCase() === taxon.value);
+            filteredAnswers = R.take(8, filteredAnswers).filter(s => !R.contains(item.vernacularName, s.names.map(n => n.vernacularName)));
+        let answers = filteredAnswers.map(s => s.names.filter(n => n.language === config.language)).filter(a => a.length > 0);
+            const noOfAnswers = 8 - answers.length;
+            if(noOfAnswers > 0) {
+                const englishAnswers = R.take(noOfAnswers, filteredAnswers.map(s => s.names.filter(n => n.language === 'en')));
+                answers = [ ...answers, ...englishAnswers ];
+            }
             answers = answers.filter(a => a.length).map(answer => utils.capitaliseAll(answer[0].vernacularName));
             answers = R.take(5, answers);
             answers.push(item.vernacularName);
@@ -150,7 +156,9 @@ export const renderMultiStrips = (collection) => {
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family && f.descriptions && f.descriptions[0].identification && f.descriptions[0].identification !== undefined && f.descriptions[0].identification !== '')).map(f => f.descriptions[0].identification);
         const answers = utils.shuffleArray([question, ...alternatives]);
 
-        render(question, answers, { question: 'Match species family', help: '(Click on the description below.)' });
+        const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
+
+        render(question, answers, { question: 'Match species family', help });
     }
 
     if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
@@ -161,7 +169,9 @@ export const renderMultiStrips = (collection) => {
         const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family && f.descriptions && f.descriptions[0].summary && f.descriptions[0].summary !== undefined && f.descriptions[0].summary !== '')).map(f => f.descriptions[0].summary);
         const answers = utils.shuffleArray([question, ...alternatives]);
 
-        render(question, answers, { question: 'Match species family', help: '(Click on the description below.)' });
+        const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
+
+        render(question, answers, { question: 'Match species family', help });
     }
 
     if(screen.name === 'wildcard-match') {

@@ -50,6 +50,20 @@
     margin: 1rem 0;
     display: block;
   }
+
+  .modal-body .language-options {
+    margin-bottom: .5rem;
+  }
+
+  .modal-body .language-options button {
+    width: 100%;
+    margin: 0;
+    display: initial;
+  }
+
+  .language-options .dropdown-menu.show {
+    width: 100%;
+  }
   
   .modal-text {
     margin: 1rem;
@@ -279,90 +293,94 @@
     margin: 2rem auto;
   }
 
-    .modal-body {
-        padding: 1rem;
-    }
+  .modal-body {
+      padding: 1rem;
+  }
 
-    .modal-header {
-        padding: .5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+  .modal-header {
+      padding: .5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
 
-    iframe {
-        width: 100%;
-        border: 0;
-    }
+  iframe {
+      width: 100%;
+      border: 0;
+  }
 
-    /* MENU MODAL */
+  /* MENU MODAL */
 
-    #menuModal .modal-body.settings-modal {
-        padding: rem;
-    }
+  #menuModal .modal-body.settings-modal {
+      padding: rem;
+  }
 
-    /* WIKI */
+  /* WIKI */
 
-    #wikiModal .modal-dialog {
-        max-width: 60vw;
-    } 
+  #wikiModal .modal-dialog {
+      max-width: 60vw;
+  } 
 
-    #wikiModal .modal-content {
-        height: 70vh;
-    }
+  #wikiModal .modal-content {
+      height: 70vh;
+  }
 
-    #wikiModal .modal-body {
-        height: 90%;
-    }
+  #wikiModal .modal-body {
+      height: 90%;
+  }
 
-    #wikiModal iframe {
-        height: 100%;
-    }
+  #wikiModal iframe {
+      height: 100%;
+  }
 
-    #imageModal .modal-dialog {
-        max-width: 50vw;
-    }
-     
-    #imageModal .modal-title span {
-        display: flex;
-        flex-direction: row;
-    }
-
-    #imageModal .modal-title span > span:nth-child(1) {
-        margin: 0 .5rem 0 0;
-    }
-
-    #iNatWidgetModal .modal-dialog {
-        max-width: 45vw;
-    }
+  #imageModal .modal-dialog {
+      max-width: 50vw;
+  }
     
-    #iNatWidgetModal .modal-header {
-        font-size: 1.2rem;
-        display: inline;
-    }
+  #imageModal .modal-title span {
+      display: flex;
+      flex-direction: row;
+  }
 
-    /* CARD MODAL */
+  #imageModal .modal-title span > span:nth-child(1) {
+      margin: 0 .5rem 0 0;
+  }
 
-    #cardModal .modal-dialog {
-        min-width: 32rem;
-        max-width: 600px;
-    }
+  #iNatWidgetModal .modal-dialog {
+      max-width: 45vw;
+  }
+  
+  #iNatWidgetModal .modal-header {
+      font-size: 1.2rem;
+      display: inline;
+  }
 
-    #cardModal .feature-types {
-        width: 100%;
-        margin: 0;
-    }
+  /* CARD MODAL */
 
-    #cardModal .modal-body {
-      padding: 1rem 0;
-    }
-    
-    #cardModal .card-card .feature-symbiont-list.scrollable {
-      top: 16rem;
-    }
+  #cardModal .modal-dialog {
+      min-width: 32rem;
+      max-width: 600px;
+  }
 
-    #cardModal .feature-symbiont-list.scrollable {        
-        margin: 0;
-        margin-top: 230px;
-    }
+  #cardModal .feature-types {
+      width: 100%;
+      margin: 0;
+  }
+
+  #cardModal .modal-body {
+    padding: 1rem 0;
+  }
+  
+  #cardModal .card-card .feature-symbiont-list.scrollable {
+    top: 16rem;
+  }
+
+  #cardModal .feature-symbiont-list.scrollable {        
+      margin: 0;
+      margin-top: 230px;
+  }
+
+  .modal-body .language-options button {
+    width: initial;
+  }
 }

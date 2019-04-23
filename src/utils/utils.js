@@ -146,11 +146,16 @@ const isIterable = array => {
 };
 
 const capitaliseFirst = str => {
-  return str.charAt(0).toUpperCase() + str.slice(1);
+  const text = str.substr(0, 1).toUpperCase() + str.substr(1).toLowerCase();
+  return text;
 };
 
 const capitaliseAll = str => {
-  return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+  const text = str.toLowerCase()
+    .split(' ')
+    .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+    .join(' ');
+  return text;
 };
 
 const getCellValue = function(tr, idx, headerSortIndex, wide){ 

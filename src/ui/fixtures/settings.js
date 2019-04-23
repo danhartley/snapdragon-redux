@@ -19,7 +19,9 @@ export const renderSettings = () => {
 
     const delay = config.callbackTime/1000;
 
-    renderTemplate({ delay }, template.content, DOM.modalText);
+    const languages = config.languages;
+
+    renderTemplate({ delay, languages }, template.content, DOM.modalText);
     
     const clearCacheBtn = document.querySelector('.js-clear-cache-btn');
     const setDelayBtn = document.querySelector('.js-set-delay-btn');
@@ -56,5 +58,14 @@ export const renderSettings = () => {
                 ? `Delay updated to ${delay} second.`
                 : `Delay updated to ${delay} seconds.`;
         }, 500);        
+    });
+
+    document.querySelector('.js-selected-text').innerHTML = languages.find(l => l.lang === config.language).name;
+
+    document.querySelectorAll('.dropdown-item').forEach(language => {
+        language.addEventListener('click', event => {
+            actions.boundUpdateLanguage(languages.find(l => l.lang === event.target.id));
+            document.querySelector('.js-selected-text').innerHTML = languages.find(l => l.lang === event.target.id).name;
+        });
     });
 };
