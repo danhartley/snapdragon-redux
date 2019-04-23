@@ -7,7 +7,7 @@
             <table class="species-table list-group">
                 <tbody data-repeat-item="{{ collection.items }}">
                     <tr class="table-row js-list-item">
-                        <td id="{{ item.name }}">
+                        <td id="{{ item.name }}" data-snap-index="{{ item.snapIndex }}">
                             <img 
                                 id="{{ item.name }}" 
                                 src="https://content.eol.org/data/media/{{ item.url }}" 

@@ -1896,8 +1896,8 @@ a.collection-disabled {
 }
 
 .summary-scores .summary-progress {
+  font-size: 1.2rem;
   margin: 1rem 0 0 0;
-  font-size: 1.4rem;
   position: relative;
 }
 

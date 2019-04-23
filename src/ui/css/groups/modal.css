@@ -19,10 +19,10 @@
     border-radius: 0;
 }
 
-.modal-header button.close {
+/* .modal-header button.close {
     width: 2rem;
     width: fit-content;
-}
+} */
 
 .modal-title {
   color: var(--snap-text-dark);
@@ -36,6 +36,16 @@
     display: block;
   }
   
+  .modal-header .close {
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
   .modal-body button {
     margin: 1rem 0;
     display: block;
@@ -275,6 +285,9 @@
 
     .modal-header {
         padding: .5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     iframe {

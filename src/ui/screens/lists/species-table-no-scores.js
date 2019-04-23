@@ -9,13 +9,12 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import { iconicTaxa, matchTaxon, matchIcon } from 'api/snapdragon/iconic-taxa';
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
-import speciesPortraitTemplate from 'ui/screens/lists/species-table-portrait-template.html';
 
 export const buildTable = (collection, config, traits, enums) => {
 
     const template = document.createElement('template');
 
-    // const wide = window.matchMedia("(min-width: 1024px)").matches;
+    const wide = window.matchMedia("(min-width: 1024px)").matches;
 
     const getTraitName = (item, enums) => {
         let traitName = '';        
@@ -80,7 +79,6 @@ export const buildTable = (collection, config, traits, enums) => {
     parent.innerHTML = '<div class="snapdragon-container species-list js-species-list"></div>';
     parent = parent.querySelector('.snapdragon-container.js-species-list');
     template.innerHTML = speciesTemplate;
-    // template.innerHTML = wide ? speciesTemplate : speciesPortraitTemplate;
 
     renderTemplate({ collection }, template.content, parent);
 
@@ -143,8 +141,9 @@ export const buildTable = (collection, config, traits, enums) => {
     traitNameHeader.innerHTML = '<span>Feature</span>';
     iconicTaxonHeader.innerHTML = '<span><i class="fas fa-sliders-h"></i></span>';
     filterHeader.appendChild(checkbox); 
-    imageHeader.innerHTML = '<div></div>';
-    if(window.matchMedia("(min-width: 1024px)").matches) {        
+    imageHeader.innerHTML = '<span><i class="fas fa-undo"></i></span>';
+    // imageHeader.innerHTML = '<div></div>';
+    if(wide) {        
         headerRow.appendChild(imageHeader);
         headerRow.appendChild(speciesHeader);    
         headerRow.appendChild(familyHeader);
@@ -169,10 +168,8 @@ export const buildTable = (collection, config, traits, enums) => {
             });
         });
     
-        if(config.isLandscapeMode) {
-            actions.boundChangeCollectionItems(sortedItems);
-        }        
+        actions.boundChangeCollectionItems(sortedItems);        
     };
 
-    utils.makeSortable(document, callback);    
+    utils.makeSortable(document, callback, wide);
 }

@@ -183,7 +183,6 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
             if(collection.items && collection.items.length) {
                 return function () {
-                    collection.items = utils.sortBy(collection.items, 'observationCount', 'desc');
                     buildTable(collection, config, getTraits(enums), enums);
                     handleUserEvents();
                     const { counter } = store.getState();
