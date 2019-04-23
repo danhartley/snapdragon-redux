@@ -15,3 +15,29 @@
         <span class="js-delay-text"></span>
     </div>
 </div>
+
+<hr>
+
+<div>
+    <p>
+        Language for taxonic names.
+    </p>
+</div>
+
+<div class="language-options">
+    <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Languages
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ languages }}">
+            <a id="{{ language.lang }}" class="dropdown-item" href="#">{{ language.name }}</a>
+        </div>
+    </div>
+</div>
+
+<div class="chosen">
+    <div>
+        <span>Current selection:</span>
+        <span class="js-selected-text selected-text"></span>
+    </div>
+</div>

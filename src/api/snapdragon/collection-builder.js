@@ -99,7 +99,7 @@ const parseNames = (names, languages) => {
     });
 
     uniqueNames.forEach(name => {
-        name.vernacularName = capitaliseFirst(name.vernacularName);
+        name.vernacularName = capitaliseAll(name.vernacularName);
     });
 
     return uniqueNames;

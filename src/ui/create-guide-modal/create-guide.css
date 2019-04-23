@@ -241,7 +241,7 @@
   
   .modal-guide-wrapper .modal-body .saved-inat {
     min-height: 1.3rem;
-    margin: .5rem;
+    margin: .5rem 0;
     display: inline-block;
   }
 
