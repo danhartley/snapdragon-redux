@@ -892,10 +892,7 @@
     }
 }
 
-@media (min-height: 640px) {
-  .home-container .snapdragon-tag, .home-container .summary-scores {
-      font-size: 2rem;
-  }
+@media (min-height: 640px) {  
   .iconic-taxa-categories > div > div > div:nth-child(1) {    
       width: 2.4rem;
       height: 2.4rem;
