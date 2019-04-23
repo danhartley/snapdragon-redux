@@ -29,4 +29,10 @@ export const lookalikeDescriptions = [
         type: 'lookalike',
         description: 'H. americanum has downward-pointing spines half an inch or more in length and grouped in bundles; specimens generally fairly compact overall but with numerous branches revealed when the specimen is sliced. H. americanum only found east of the ROCKSies. H. coralloides spines mostly under half an inch in length that are at best inconsistently downward-pointing; specimens much more branched than compact.'
     },
+    {
+        ids: ['Phoenicurus ochruros', 'Phoenicurus phoenicurus'],
+        type: 'lookalike',
+        description: 'adapted to live at the heart of industrial and urban centres',
+        description2: 'Immediately identifiable by bright orange-red tails, which often quiver. Breeding males look smart, with slate grey upper parts, black faces and wings and orange rump and chest. Females and young are duller. Redstarts \'bob\' in a very robin-like manner, but spend little time at ground level.'
+    },
 ];

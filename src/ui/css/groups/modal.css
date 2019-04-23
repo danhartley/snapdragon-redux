@@ -101,7 +101,7 @@
 }
 
 #imageComparisonModal .modal-body {
-  height: 35vh;  
+  height: initial;  
 }
 
 #imageComparisonModal .slideBySliderContainer {
