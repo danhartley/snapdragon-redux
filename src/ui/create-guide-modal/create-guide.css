@@ -570,10 +570,10 @@
     background-color: gray;
   }
 
-  .locations .btn-secondary:not(:disabled):not(.disabled).active {
+  /* .locations .btn-secondary:not(:disabled):not(.disabled).active {
     color: var(--snap-text-dark-medium-dark);
     background-color: var(--snap-text-light);
-  }
+  } */
   
   /* .locations .btn-secondary:not(:disabled):not(.disabled).active .lesson-radio-button {
     background-color: var(--snap-collection);
