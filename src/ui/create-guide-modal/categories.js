@@ -12,7 +12,9 @@ export const renderCategories = (modal, config, createGuide) => {
 
     const filterSelectedClass = 'iconic-taxa-selected';
 
-    guideTxt.innerHTML = 'Filter species by taxon or category.';
+    guideTxt.innerHTML = config.isLandscapeMode
+                            ? 'Click on the taxa that interest you.'
+                            : 'Tap on the taxa that interest you.'
 
     let iconicTaxa = [ ...config.guide.iconicTaxa ] || [];
 

@@ -1,4 +1,3 @@
-import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 import { renderInatUser } from 'ui/create-guide-modal/inat-user';
@@ -11,7 +10,7 @@ export const renderGuides = (modal, config, createGuide) => {
 
     const save = createGuide.save(config, 'GUIDE');
 
-    guideTxt.innerHTML = 'Select a guide.';
+    guideTxt.innerHTML = 'Select a guide (iNat users only).';
 
     const template = document.createElement('template');
     template.innerHTML = guidesTemplate;
@@ -52,6 +51,4 @@ export const renderGuides = (modal, config, createGuide) => {
     renderInatUser(modal.querySelector('.js-inat'), config, save);
 
     createGuide.save(config, 'GUIDE', false)();
-
-    document.querySelector('.js-arrow-wrapper').innerHTML = '<i class="fas fa-arrow-circle-down"></i>';
 }

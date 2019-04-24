@@ -37,8 +37,8 @@
   }
   
   .modal-header .close {
-    width: 1rem;
-    height: 1rem;
+    /* width: 1rem;
+    height: 1rem; */
     display: flex;
     align-items: center;
     justify-content: center;

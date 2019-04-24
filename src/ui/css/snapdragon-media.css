@@ -95,6 +95,7 @@
     }
 
     button {
+        width: auto;
         width: fit-content;
     }
 

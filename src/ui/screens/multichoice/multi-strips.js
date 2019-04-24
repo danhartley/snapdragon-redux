@@ -132,7 +132,7 @@ export const renderMultiStrips = (collection) => {
                 const englishAnswers = R.take(noOfAnswers, filteredAnswers.map(s => s.names.filter(n => n.language === 'en')));
                 answers = [ ...answers, ...englishAnswers ];
             }
-            answers = answers.filter(a => a.length).map(answer => utils.capitaliseAll(answer[0].vernacularName));
+            answers = answers.filter(a => a.length).map(answer => utils.capitaliseFirst(answer[0].vernacularName));
             answers = R.take(5, answers);
             answers.push(item.vernacularName);
             answers = utils.shuffleArray(answers);

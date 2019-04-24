@@ -17,7 +17,7 @@ const getVernacularName = (item, config, useShortForm = false, namePart = 'verna
     const english = englishNames.length > 0 ? englishNames[0][namePart] : 'Unknown';
     const names = item.names.filter(name => name.language === config.language);
     const name = names.length > 0 ? names[0][namePart] : english;
-    return utils.capitaliseAll(name);
+    return utils.capitaliseFirst(name);
 };
 
 const getGenusName = binomial => {
@@ -123,7 +123,7 @@ const vernacularNamesForItems = (items, config) => {
 };
 
 const getVernacularNames = (item, config) => {
-    const names = item.names.filter(name => name.language === config.language).map(name => utils.capitaliseAll(name.vernacularName));
+    const names = item.names.filter(name => name.language === config.language).map(name => utils.capitaliseFirst(name.vernacularName));
     return names;
 };
 

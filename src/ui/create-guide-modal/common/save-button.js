@@ -1,19 +1,10 @@
 import { returnTaxonIcon } from 'ui/helpers/icon-handler';
 import { actions } from 'redux/actions/action-creators';
-import { renderTemplate } from 'ui/helpers/templating';
-import saveButtonTemplate from 'ui/create-guide-modal/common/save-button-template.html';
 
 export const saveButton = (parent, config, step, update = true) => {
 
     const chosenLabel = document.querySelector('.js-chosen span:nth-child(1)');
     const chosen = document.querySelector('.js-chosen span:nth-child(2)');
-    
-    const template = document.createElement('template');
-    template.innerHTML = saveButtonTemplate;
-    renderTemplate({}, template.content, parent);
-
-    const savedTxt = parent.querySelector('div');
-    let inatSavedTxt;
 
     const handleSaveEvent = () => {
 
@@ -47,8 +38,6 @@ export const saveButton = (parent, config, step, update = true) => {
 
             case 'GUIDE':
 
-                inatSavedTxt = document.querySelector('.js-saved-inat');
-
                 const inatIdLabel = document.querySelector('.js-chosen-inat span:nth-child(1)');
                 const inatId = document.querySelector('.js-chosen-inat span:nth-child(2)');
         
@@ -73,13 +62,6 @@ export const saveButton = (parent, config, step, update = true) => {
 
         if(update) {
             actions.boundUpdateConfig(config);
-            config.guide.operation === 'inat' 
-                ? inatSavedTxt.innerHTML = 'Your preference has been updated.'
-                : savedTxt.innerHTML = 'Your preference has been updated.';
-            setTimeout(() => {
-                if(inatSavedTxt) inatSavedTxt.innerHTML = '';
-                savedTxt.innerHTML = '';
-            }, 2000);
         }
     }
 
