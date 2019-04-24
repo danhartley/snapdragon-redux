@@ -32,8 +32,8 @@ export const renderLocation = (modal, config, createGuide) => {
     const shortLocation = document.querySelector('.js-short-location');
           shortLocation.innerHTML = config.place ? 
                                         config.isLandscapeMode 
-                                            ? config.place.shortLocation 
-                                            : config.place.locality 
+                                            ? `to: ${config.place.shortLocation}`
+                                            : `to: ${config.place.locality}`
                                         : '';
 
     locationSelectors.forEach(location => {
@@ -81,7 +81,9 @@ export const renderLocation = (modal, config, createGuide) => {
         actions.boundUpdateConfig(config);
         setLocationLongLatBtn.innerHTML = 'Refine your location';
         
-        shortLocation.innerHTML = config.isLandscapeMode ? place.shortLocation : place.locality;
+        shortLocation.innerHTML = config.isLandscapeMode 
+                                    ? `to: ${place.shortLocation}`
+                                    : `to: ${place.locality}`;
 
         save();
     }

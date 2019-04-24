@@ -1,20 +1,52 @@
 <div class="guides">
     
-    <div class='inat js-inat'></div>
+    <div>
+
+        <!-- <div class="landscape guide-text">Choose a language for taxon names.</div> -->
+
+        <div class="language-options">
+            <div class="dropdown">
+                <button class="btn btn-modal dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Taxon language
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ languages }}">
+                    <a id="{{ language.lang }}" class="dropdown-item" href="#">{{ language.name }}</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chosen-guide-filter js-chosen-language">
+            <span>Language:</span><span class="selected-text">-----</span>
+        </div>
+    </div>
 
     <hr>
 
-    <div class="guide-text">Choose a season.</div>
+    <div>
+        <!-- <div class="landscape guide-text">Choose a season.</div> -->
 
-    <div class="season inat-switch">
-        <div class="embedded-switch">
-            <div>
-                <div class="txt-left">{{ observableMonths }}</div>
-                <div class="inat-switch-slider left js-inat-switch-slider">
-                    <div></div>
+        <div class="season inat-switch">
+            <div class="embedded-switch">
+                <div>
+                    <div class="txt-left">{{ observableMonths }}</div>
+                    <div class="inat-switch-slider left js-inat-switch-slider">
+                        <div></div>
+                    </div>
+                    <div class="txt-right">All Year</div>
                 </div>
-                <div class="txt-right">All Year</div>
             </div>
         </div>
+
+        <div class="chosen-guide-filter js-chosen-season">
+            <span>Season:</span><span class="selected-text">-----</span>
+        </div>
     </div>
+
+    <hr>
+
+    <div>
+        <div class="guide-text">Select a guide (iNat users only).</div>
+        <div class='inat js-inat'></div>
+    </div>
+
 </div>

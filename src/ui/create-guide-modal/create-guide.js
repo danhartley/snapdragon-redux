@@ -32,7 +32,7 @@ class CreateGuide {
         this.steps = [
             { number: 1, title: 'Create Lesson', description: 'Location', nextStep: 'Filter species by category', disabled: true },
             { number: 2, title: 'Create Lesson', description: 'Species', nextStep: 'Find a guide', disabled: true },
-            { number: 3, title: 'Create Lesson', description: 'Guide', nextStep: 'Start Lesson', disabled: true },
+            { number: 3, title: 'Create Lesson', description: 'Filters', nextStep: 'Start Lesson', disabled: true },
         ];
         
         this.modal = document.getElementById('createGuide');
@@ -78,7 +78,7 @@ class CreateGuide {
             case 'Species':
                 renderCategories(this.modal, config, this);
                 break;
-            case 'Guide':
+            case 'Filters':
                 renderGuides(this.modal, config, this);
                 break;
         }

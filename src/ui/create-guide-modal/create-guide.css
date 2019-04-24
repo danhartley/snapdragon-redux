@@ -60,7 +60,7 @@
     font-size: 1.1rem;
     margin: .5rem 0;
     letter-spacing: .03rem;
-    color: var(--snap-text-medium-light);
+    color: var(--snap-text-dark-medium-dark);
     font-style: italic;
     font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
   }
@@ -200,7 +200,7 @@
   }
   
   .modal-guide-wrapper .modal-body .chosen > div > span:nth-child(1), 
-  .modal-guide-wrapper .modal-body .chosen-inat span:nth-child(1) {
+  .modal-guide-wrapper .modal-body .chosen-guide-filter span:nth-child(1) {
     margin: 0 .25rem 0 0;
     letter-spacing: .03rem;
     font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
@@ -224,25 +224,6 @@
     margin: 0 1rem 0 0;
   }
   
-  .modal-guide-wrapper .modal-body .saved,
-  .modal-guide-wrapper .modal-body .saved-inat {
-    color: var(--gray);
-    font-size: 1.2rem;
-    font-style: italic;
-    font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
-  }
-  
-  .modal-guide-wrapper .modal-body .saved {
-    position: absolute;
-    bottom: 1rem;
-  }
-  
-  .modal-guide-wrapper .modal-body .saved-inat {
-    min-height: 1.3rem;
-    margin: .5rem 0;
-    display: inline-block;
-  }
-
   .modal-guide-wrapper .modal-body button {
     display: inline-block;
     margin: 0;
@@ -270,7 +251,7 @@
 
   .modal-guide-wrapper .modal-body button.js-set-inat-identity-btn {
     color: var(--snap-text-light);        
-    background-color: var(--snap-text-medium-dark);
+    background-color: var(--snap-collection);
   }
   
   .modal-guide-wrapper .inat-location-place .custom-checkbox {
@@ -283,12 +264,7 @@
     display: inline-block;
     cursor: pointer;
   }
-  
-  .modal-guide-wrapper .guides {
-    display: flex;
-    flex-direction: column;
-  }
-  
+
   .modal-guide-wrapper .guides .months {
     font-size: 1.4rem;
     margin: 1rem 0 0 0;
@@ -304,7 +280,6 @@
   .modal-guide-wrapper #inat-place {
     width: 100%;
     margin: .5rem 0;
-    border: .1rem solid lightgray;
   }
   
   .modal-guide-wrapper #inat-place::placeholder {
@@ -444,7 +419,7 @@
   .inat-switch.location, .inat-switch.inat, .inat-switch.season {
     width: 100%;
     flex-direction: column;
-    background-color: var(--snap-text-medium-dark);
+    background-color: var(--snap-collection);
   }
 
   .inat-switch.location {
@@ -452,7 +427,7 @@
   }
 
   .inat-location-place .btn-modal, #set-inat-location-btn {
-    background-color: var(--snap-text-medium-dark);
+    background-color: var(--snap-collection);
   }
 
   #set-inat-identity-btn {  
@@ -498,7 +473,7 @@
   .iconic-taxa-categories {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: .25rem;
+    grid-gap: .25rem;    
   }
 
   .iconic-taxa-categories > div > div {
@@ -510,19 +485,22 @@
   /* Icon categories list, icon container and size */
 
   .iconic-taxa-categories > div > div > div:nth-child(1) {    
-    width: 1.8rem;
-    height: 1.8rem;
-    padding: .5rem;
-    margin: 0 .25rem 0 0;
-    border: .05rem solid grey;
+    padding: .25rem;
+    margin: .25rem .25rem 0 0;
     display: flex;
     align-items: center;
     justify-content: center;  
     cursor: pointer;
   }
 
-  .iconic-taxa-selected {
-    color: var(--snap-lesson);
+  .iconic-taxa-categories > div > div > div:nth-child(1) svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    color: var(--snap-collection);
+  }
+
+  .iconic-taxa-selected svg {
+    color: var(--snap-collection-active) !important;
   }
 
   /* Mushroom icon sizes */
@@ -571,6 +549,7 @@
   
   .svg-icon-selected {
     fill: var(--snap-success);
+    color: var(--snap-success);
   }  
 
   /* EXAMPLE LESSONS INC. RB LIST */
@@ -597,7 +576,7 @@
   }
   
   .locations .btn-secondary:not(:disabled):not(.disabled).active .lesson-radio-button {
-    background-color: var(--snap-text-dark);
+    background-color: var(--snap-collection);
     border: none;
   }
 
@@ -751,6 +730,7 @@
     width: 100%;
     border: .05rem solid lightgray;
     padding: 0 .5rem;
+    border-radius: 0;
   }
 
   @media (min-width: 768px) {
@@ -810,10 +790,6 @@
         line-height: 3.45rem;
     }
 
-    .modal-guide-wrapper .modal-body .guide-text {
-      font-size: 1.2rem;
-    }
-
     .modal-guide-wrapper .inat-location-place .custom-checkbox {
         margin: 0 0 0 .5rem;
     }
@@ -865,12 +841,6 @@
     #inat-place, #inat-place-id {
         margin: 0 .5rem  0 0;
         width: 20rem;        
-    }
-
-    .modal-guide-wrapper .actions label {
-      margin: 0;
-      margin: .5rem 0;
-      padding: 0 .5rem;
     }
 
     .modal-guide-wrapper .guides .inat-entry, .modal-guide-wrapper .guides input[type="text"] {
@@ -939,8 +909,6 @@
 
 @media (min-height: 640px) {  
   .iconic-taxa-categories > div > div > div:nth-child(1) {    
-      width: 2.4rem;
-      height: 2.4rem;
       margin: 0 .5rem 0 0;
   }
   .modal-guide-wrapper .modal-body .modal-guide-navigation > div:nth-child(1) > div svg {
@@ -948,9 +916,10 @@
   }
 }
 
-@media (min-height: 736px) {
-  .iconic-taxa-categories > div > div > div:nth-child(1) {
-    width: 3rem;
-    height: 3rem;
+@media (min-height: 667px) {
+
+  .iconic-taxa-categories > div > div > div:nth-child(1) svg {
+    width: 2rem;
+    height: 2rem;
   }
 }
