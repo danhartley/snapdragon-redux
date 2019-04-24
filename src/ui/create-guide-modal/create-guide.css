@@ -575,10 +575,10 @@
     background-color: var(--snap-text-light);
   }
   
-  .locations .btn-secondary:not(:disabled):not(.disabled).active .lesson-radio-button {
+  /* .locations .btn-secondary:not(:disabled):not(.disabled).active .lesson-radio-button {
     background-color: var(--snap-collection);
     border: none;
-  }
+  } */
 
   .lesson-taxa {
     text-align: left;
@@ -597,10 +597,10 @@
     pointer-events: none;
   }
 
-  .btn.btn-secondary.active div.lesson-radio-button {
+  /* .btn.btn-secondary.active div.lesson-radio-button {
     background-color: var(--snap-text-light);
     border: .05rem solid gray;
-  }
+  } */
   
   .lesson-name {
     width: 100%;
@@ -629,13 +629,17 @@
   }
 
   .lesson-radio-button {
+    margin-right: .5rem;
+  }
+
+  /* .lesson-radio-button {
     width: 1rem !important;
     height: 1rem !important;
     border-radius: .5rem;
     z-index: 9999;
     background-color: gray;
     margin: 0 .5rem 0 0;
-  }
+  } */
 
   .guide-example-lessons {
     padding: 0;
@@ -663,11 +667,11 @@
     width: 100%;
   }
 
-  .lesson-radio-button {
+  /* .lesson-radio-button {
     width: 2rem;
     height: 2rem;
     border-radius: 1rem;
-  }
+  } */
 
   #exampleGuide .btn-group label:nth-of-type(2n) {
     background-color: var(--snap-lesson-row-green);
@@ -728,7 +732,7 @@
 
   .locations .btn.btn-secondary {
     width: 100%;
-    border: .05rem solid lightgray;
+    /* border: .05rem solid lightgray; */
     padding: 0 .5rem;
     border-radius: 0;
   }
