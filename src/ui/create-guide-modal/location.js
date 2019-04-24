@@ -7,7 +7,7 @@ import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 export const renderLocation = (modal, config, createGuide) => {
 
     const guideTxt = modal.querySelector('.guide-text');
-    guideTxt.innerHTML = 'Choose the location that best suits you.';
+          guideTxt.innerHTML = 'Choose the location that best suits you.';
         
     createGuide.save(config, 'LOCATION', false)();
     const save = createGuide.save(config, 'LOCATION');
@@ -16,7 +16,7 @@ export const renderLocation = (modal, config, createGuide) => {
     let autocompleteRef;
 
     const template = document.createElement('template');
-    template.innerHTML = locationsTemplate;
+          template.innerHTML = locationsTemplate;
     const parent = modal.querySelector('.js-actions');
 
     renderTemplate({}, template.content, parent);
@@ -39,8 +39,12 @@ export const renderLocation = (modal, config, createGuide) => {
     locationSelectors.forEach(location => {
       location.addEventListener('click', event => {
         let id = event.target.id;
-            id = id === '' ? id = event.target.parentElement.id : id;
+            id = (id === '' || id === 'inat-place') ? id = event.target.parentElement.id : id;
             id = id === '' ? id = event.target.parentElement.parentElement.id : id;
+            id = id === '' ? id = event.target.parentElement.parentElement.parentElement.id : id;
+
+        modal.querySelectorAll('.lesson-radio-button').forEach(rb => rb.innerHTML = '<i class="far fa-circle"></i>');
+        modal.querySelector(`#${id} .lesson-radio-button`).innerHTML = '<i class="far fa-dot-circle"></i>';
         
         switch(id) {
             case 'ipLocation':
