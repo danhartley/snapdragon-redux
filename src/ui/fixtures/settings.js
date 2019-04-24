@@ -60,12 +60,12 @@ export const renderSettings = () => {
         }, 500);        
     });
 
-    document.querySelector('.js-selected-text').innerHTML = languages.find(l => l.lang === config.language).name;
+    // document.querySelector('.js-selected-text').innerHTML = languages.find(l => l.lang === config.language).name;
 
-    document.querySelectorAll('.dropdown-item').forEach(language => {
-        language.addEventListener('click', event => {
-            actions.boundUpdateLanguage(languages.find(l => l.lang === event.target.id));
-            document.querySelector('.js-selected-text').innerHTML = languages.find(l => l.lang === event.target.id).name;
-        });
-    });
+    // document.querySelectorAll('.dropdown-item').forEach(language => {
+    //     language.addEventListener('click', event => {
+    //         actions.boundUpdateLanguage(languages.find(l => l.lang === event.target.id));
+    //         document.querySelector('.js-selected-text').innerHTML = languages.find(l => l.lang === event.target.id).name;
+    //     });
+    // });
 };

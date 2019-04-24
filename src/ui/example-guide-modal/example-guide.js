@@ -95,13 +95,6 @@ export const renderExampleGuideHandler = () => {
         actions.boundUpdateConfig(config);
 
         navigationBtn.disabled = false;
-        
-        const txt = modal.querySelector('.js-saved');
-        
-        txt.innerHTML = 'Your preference has been updated.';
-        setTimeout(() => {
-          txt.innerHTML = '';
-        }, 2000);        
 
         let startLessonHandler;
 

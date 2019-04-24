@@ -1,4 +1,3 @@
-import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 import { renderInatUser } from 'ui/create-guide-modal/inat-user';
@@ -11,18 +10,34 @@ export const renderGuides = (modal, config, createGuide) => {
 
     const save = createGuide.save(config, 'GUIDE');
 
-    guideTxt.innerHTML = 'Select a guide.';
+    guideTxt.innerHTML = 'Filter by language & season.';
+
+    const genericSelectedtext = modal.querySelector('.js-chosen');
+          genericSelectedtext.classList.add('hide');
 
     const template = document.createElement('template');
-    template.innerHTML = guidesTemplate;
+          template.innerHTML = guidesTemplate;
     const parent = modal.querySelector('.js-actions');
+
+    const languages = config.languages;
 
     if(config.guide.season.observableMonths) {
         
         const months = config.guide.season.observableMonths.map(month => month.name);
         const observableMonths = `${months[0]}-${months[months.length - 1]}`;
 
-        renderTemplate({ observableMonths }, template.content, parent);
+        renderTemplate({ observableMonths,languages }, template.content, parent);
+
+        const selectedLanguage = document.querySelector('.js-chosen-language .selected-text');
+
+        selectedLanguage.innerHTML = languages.find(l => l.lang === config.language).name;
+
+        document.querySelectorAll('.dropdown-item').forEach(language => {
+            language.addEventListener('click', event => {
+                actions.boundUpdateLanguage(languages.find(l => l.lang === event.target.id));
+                selectedLanguage.innerHTML = languages.find(l => l.lang === event.target.id).name;
+            });
+        });
     }
 
     const idSwitch = parent.querySelector('.inat-switch-slider');
@@ -51,7 +66,5 @@ export const renderGuides = (modal, config, createGuide) => {
 
     renderInatUser(modal.querySelector('.js-inat'), config, save);
 
-    createGuide.save(config, 'GUIDE', false)();
-
-    document.querySelector('.js-arrow-wrapper').innerHTML = '<i class="fas fa-arrow-circle-down"></i>';
+    createGuide.save(config, 'GUIDE', false)();    
 }

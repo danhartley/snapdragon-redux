@@ -682,4 +682,12 @@ export const epithets = [
         "latin" : ["rudus"],
         "en" : ["rubble"]
     },
+    {
+        "latin" : ["phoinix"],
+        "en" : ["red"]
+    },
+    {
+        "latin" : ["ouros"],
+        "en" : ["tailed"]
+    },
 ];

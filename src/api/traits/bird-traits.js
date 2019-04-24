@@ -81,6 +81,14 @@ const getTraits = SD => {
     { name: 'Arenaria interpres', traits: [
         { name: 'song', value: '403054', description: 'xeno-canto id' },
     ] },
+    { name: 'Phoenicurus phoenicurus', traits: [
+        { name: 'song', value: '', description: 'xeno-canto id' },
+        { name: SD.name.LOOK_ALIKES, values: [ 'Phoenicurus ochruros' ]},
+    ] },
+    { name: 'Phoenicurus ochruros', traits: [
+        { name: 'song', value: '', description: 'xeno-canto id' },
+        { name: SD.name.LOOK_ALIKES, values: [ 'Phoenicurus phoenicurus' ]},
+    ] },
     { name: 'Branta canadensis', traits: [
         { name: 'song', value: '409020', description: 'xeno-canto id' },
         { name: SD.name.MIGRATORY, value: SD.whether.YES },
