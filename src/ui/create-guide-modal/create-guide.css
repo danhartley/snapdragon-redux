@@ -76,6 +76,7 @@
     color: var(--snap-text-dark-medium-dark);
     font-style: italic;
     font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
+    min-height: 1rem;
   }
   
   
@@ -92,8 +93,8 @@
   
   .modal-guide-wrapper .modal-body.modal-guide-body > div {
     flex: auto;
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
   }
   
   /* .modal-guide-wrapper .modal-body.modal-guide-body > div.modal-guide-body { */
@@ -116,7 +117,7 @@
     align-items: center;
     border-bottom: .05rem solid lightgray;
     padding: .5rem 0;
-    width: 100%;
+    /* width: 100%; */
     text-transform: uppercase;
     font-size: .9rem;
     margin: 0 .5rem;
@@ -338,19 +339,19 @@
   }
 
   .inat-switch-slider {
-    width: 3.6rem;
-    height: 2rem;
+    height: 1.6rem;
+    margin: 0 .5rem;
+    width: 4rem;
     padding: .2rem;
     border-radius: .2rem;
     cursor: pointer;
-    margin: 0 .75rem;
     position: relative;
     transition: all 1s ease;
   }
   
   .inat-switch-slider div {
-    height: 1.6rem;
-    width: 1.6rem;
+    height: 1.2rem;
+    width: 1.2rem;
     border-radius: .2rem;
     background-color: var(--snap-collection);
     transition-property: all;
@@ -365,6 +366,7 @@
   }
   
   .embedded-switch > div {
+    /* font-size: .8rem; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -395,34 +397,21 @@
     transition: all 1s ease;
   }
 
-  /* .inat.inat-switch .txt-left, .inat.inat-switch .txt-right {
-    color: var(--snap-text-medium-dark);
-  }
-
-  .inat.inat-switch .txt-left.selected, .inat.inat-switch .txt-right.selected {
-    color: white;
-    transition: all 1s ease;
-  } */
-
   .inat-switch-slider.right {    
     background-color: white;
   }
   
   .inat-switch-slider.right div {
-    transform: translateX(1.4rem);
+    transform: translateX(2.2rem);
   }
 
-  /* .inat.inat-switch > div {
-    margin: .25rem 0 .5rem 0;
-  } */
-  
   .inat-switch {
     display: flex;
     flex-direction: row;
     align-items: center;
     background-color: var(--snap-text-medium-light);
     color: var(--snap-text-medium-dark);
-    padding: .3rem .5rem;
+    padding: .25rem .5rem;
     width: fit-content;
     border-radius: .2rem;
     background-color: rgb(110, 138, 49);
@@ -444,7 +433,7 @@
   .inat-switch.location, .inat-switch.inat, .inat-switch.season {
     width: 100%;
     flex-direction: column;
-    background-color: rgba(87, 97, 99,.8);
+    background-color: var(--snap-collection);
   }
 
   .inat-switch.location {
@@ -732,10 +721,39 @@
     display: flex;    
     flex-direction: column;
     justify-content: space-evenly;
-    height: calc(100% - 6rem);
+    height: calc(100vh - 16rem);
+  }
+
+  #inat-identity {
+    width: 100%;
+    margin: .25rem 0;
+  }
+
+  .filter-options {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1rem;
   }
 
   @media (min-width: 768px) {
+
+    #taxonLanguageBtn, .inat-switch {
+      width: 100%;
+    }
+
+    #inat-identity {
+      width: 12rem;
+    }
+
+    .filter-options {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: .5rem;
+      width: 100%;
+    }
+
+    .actions {
+      height: calc(100vh - 26rem);
+    }
 
     .modal-guide-wrapper .modal-header {
       display: flex;
@@ -783,10 +801,10 @@
       width: initial;
     }
 
-    .inat-switch.location, .inat-switch.inat, .inat-switch.season {
+    /* .inat-switch.location, .inat-switch.inat, .inat-switch.season {
       width: 8rem;
       width: fit-content;
-    }
+    } */
 
     .inat-switch.inat, .guides .inat .inat-switch {
       flex-direction: row;
@@ -834,14 +852,15 @@
     }
 
     .modal-guide-wrapper .inat.inat-switch {
-      width: 37rem;
-      width: fit-content;
+      /* width: 37rem;
+      width: fit-content; */
+      width: auto;
     }
 
-    .modal-guide-wrapper .season.inat-switch {
+    /* .modal-guide-wrapper .season.inat-switch {
       width: 18rem;
       width: fit-content;
-    }
+    } */
 
     .location-option.place,
     .location-option.range {
@@ -912,11 +931,27 @@
 
     /* SNAPDRAGON SWITCH */
 
+    .inat-switch-slider {
+      height: 2rem;
+      width: 3.6rem;
+      margin: 0 .75rem;
+    }
+
+    .inat-switch-slider div {
+      height: 1.6rem;
+      width: 1.6rem;
+    }
+
+    .inat-switch-slider.right div {
+      transform: translateX(1.4rem);
+    }
+
     .inat-switch-slider .embedded-switch {
         display: inline;
     }
 
     .embedded-switch > div {
+      /* font-size: 1rem; */
       grid-template-columns: 1fr 5rem 1fr;
     }
 
@@ -935,10 +970,6 @@
     .iconic-taxa-categories > div > div:nth-child(1) { 
         margin: 0 0.5rem 0.5rem 0;
     }
-
-    /* #set-inat-identity-btn {  
-      width: 10rem;
-    } */
   }
 
 @media (min-height: 640px) {  

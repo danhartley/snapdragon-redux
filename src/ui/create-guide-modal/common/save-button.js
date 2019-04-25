@@ -3,7 +3,6 @@ import { actions } from 'redux/actions/action-creators';
 
 export const saveButton = (parent, config, step, update = true) => {
 
-    const chosenLabel = document.querySelector('.js-chosen span:nth-child(1)');
     const chosen = document.querySelector('.js-chosen span:nth-child(2)');
 
     const handleSaveEvent = () => {
@@ -45,16 +44,6 @@ export const saveButton = (parent, config, step, update = true) => {
                             ? 'iNaturalist Project:'
                             : 'iNaturalist User:';
                     inatId.innerHTML = config.guide.inatId.key || '';
-                }
-                if(config.guide.season) {
-                    const season = document.querySelector('.js-chosen-season span:nth-child(2)');
-                    if(config.guide.season.type === 'months') {
-                        const months = config.guide.season.observableMonths.map(month => month.name);
-                        const observableMonths = `${months[0]}-${months[months.length - 1]}`;
-                        season.innerHTML = observableMonths;    
-                    } else {
-                        season.innerHTML = 'All year';
-                    }
                 }
                 break;
         }
