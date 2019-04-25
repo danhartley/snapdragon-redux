@@ -55,7 +55,6 @@ export const renderNonTaxonCard = (collection, mode = 'STAND_ALONE', keyTrait, p
 
         const nonTaxon = nonTaxa.find(nt => nt.id === id)
         const items = species.filter(i => R.contains(i.name, nonTaxon.examples));
-        // const items = collection.items.filter(i => R.contains(i.name, nonTaxon.examples));
 
         const portraitImagesNode = document.querySelector('.js-non-taxon-card-images');
 
@@ -64,7 +63,7 @@ export const renderNonTaxonCard = (collection, mode = 'STAND_ALONE', keyTrait, p
         if(nonTaxon.type) {
             document.querySelector('.js-species-header img').src = `https://content.eol.org/data/media/${nonTaxon.url}`;
         } else {
-            config.isPortraitMode ? imageSlider(config, images, portraitImagesNode, true) : onChange(images);
+            config.isPortraitMode ? imageSlider({ config, images, portraitImagesNode, disableModal: true }) : onChange(images);
         }
 
         const wikiNode = document.querySelector('.js-non-taxon-card-wiki');

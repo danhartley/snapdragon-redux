@@ -62,7 +62,7 @@ export const renderMixedSpecimenQuestions = collection => {
 
     parent = document.querySelector('.js-species-card-images');
 
-    imageSlider(config, utils.shuffleArray(images), parent, true);
+    imageSlider({ config, images: utils.shuffleArray(images), parent, disableModal: true });
 
     const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
     const boundScore = {};

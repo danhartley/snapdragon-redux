@@ -482,8 +482,7 @@ export const mushrooms = [
     },
     {
       "id": 195761,
-      "name": "Boletus edulis",
-      "list": "56/0c/d6/509.14324775.jpg",
+      "name": "Boletus edulis", 
       "images": [
         {
           "rightsHolder": "Natural History Museum, University of Oslo, Norway. Siri Rui. Year: 2014.",

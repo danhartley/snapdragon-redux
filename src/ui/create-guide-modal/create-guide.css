@@ -8,6 +8,11 @@
   padding: 0 .5rem;
 }
 
+.landscape-inner-body > div:nth-child(1),
+.portait-inner-body > div:nth-child(1) {
+  height: 100%;
+}
+
 .modal-guide-wrapper .modal-dialog {
     width: 100%;
     margin: 0rem auto;
@@ -91,7 +96,8 @@
     align-items: center;
   }
   
-  .modal-guide-wrapper .modal-body.modal-guide-body > div.modal-guide-body {
+  /* .modal-guide-wrapper .modal-body.modal-guide-body > div.modal-guide-body { */
+  .modal-guide-wrapper .modal-body.modal-guide-body > .landscape-inner-body {
     flex-direction: column;
     align-items: initial;
     position: relative;
@@ -113,6 +119,7 @@
     width: 100%;
     text-transform: uppercase;
     font-size: .9rem;
+    margin: 0 .5rem;
   }
   
   .modal-guide-wrapper .modal-body .modal-guide-progress > div div {
@@ -197,8 +204,8 @@
 
   .modal-guide-wrapper .modal-body .chosen {
     position: absolute;
-    bottom:.5rem;
-    left: .5remrem;
+    bottom: 3rem;
+    left: .5rem;
   }
 
   .modal-guide-wrapper .modal-body .chosen > div {
@@ -285,7 +292,7 @@
     display: inline;
   }
   
-  .modal-guide-wrapper .guides .inat-entry, .modal-guide-wrapper .guides input[type="text"] {
+  .inat.inat-switch .inat-entry, .inat.inat-switch input[type="text"] {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -489,10 +496,14 @@
   /* CATEGORIES */
 
   .iconic-taxa-categories {
-    display: grid;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* display: grid;
     grid-template-columns: 1fr;
     grid-gap: .25rem;
-    margin-top: 1rem;
+    margin-top: 1rem; */
   }
 
   .iconic-taxa-categories > div > div {
@@ -688,6 +699,8 @@
     grid-template-rows: 1fr;
     width: 100%;
     line-height: 2rem;
+    font-family: "Libre Baskerville", Libre, Georgia, Times, serif;
+    letter-spacing: .03rem;
   }
 
   .location-option.place {
@@ -719,13 +732,10 @@
     display: flex;    
     flex-direction: column;
     justify-content: space-evenly;
+    height: calc(100% - 6rem);
   }
 
   @media (min-width: 768px) {
-
-    /* .actions {
-      height: 16rem;
-    } */
 
     .modal-guide-wrapper .modal-header {
       display: flex;
@@ -797,20 +807,21 @@
 
     .modal-guide-wrapper .modal-body .modal-guide-progress > div {
       padding: 0 0 .5rem 0;
+      margin: 0;
     }
 
     .modal-guide-wrapper .modal-body .modal-guide-progress > div div {
         line-height: 3.45rem;
     }
 
-    .modal-guide-wrapper .guides .inat-entry {
+    .inat.inat-switch .inat-entry {
         display: flex;
         font-size: 1.1rem; 
         align-items: center;
         margin: 0 0 0 1rem;
     }
 
-    .modal-guide-wrapper .guides input[type="text"] {
+    .inat.inat-switch input[type="text"] {
         margin: 0 .5rem 0 0;
         height: 1.75rem;
         color: var(--snap-text-medium-dark);
@@ -865,13 +876,14 @@
         width: 20rem;        
     }
 
-    .modal-guide-wrapper .guides .inat-entry, .modal-guide-wrapper .guides input[type="text"] {
+    .inat.inat-switch .inat-entry, .inat.inat-switch input[type="text"] {
         width: 12rem;
         width: fit-content;
         padding: 0 .25rem;
     }  
 
     .modal-guide-wrapper .modal-body .chosen {
+      bottom: .5rem;
       left: 0;
     }
 
@@ -924,9 +936,9 @@
         margin: 0 0.5rem 0.5rem 0;
     }
 
-    #set-inat-identity-btn {  
+    /* #set-inat-identity-btn {  
       width: 10rem;
-    }
+    } */
   }
 
 @media (min-height: 640px) {  

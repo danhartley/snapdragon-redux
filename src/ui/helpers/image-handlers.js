@@ -93,7 +93,6 @@ export const modalImagesHandler = (images, item, collection, config, displayName
 
 export const modalImageHandler = (image, item, collection, config, displayNameType = 'binomial') => {
     image.addEventListener('click', event => {  
-        // if(!item && !collection.items) return;
         const parent = document.querySelector('#imageModal .js-modal-image');
         const selectedItem = item || collection.items.find(item => item.name === image.dataset.itemName);
         let images = selectedItem.images.map((image, index) => {
