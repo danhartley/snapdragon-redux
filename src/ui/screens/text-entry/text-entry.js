@@ -119,7 +119,7 @@ const renderPortrait = (item, config) => {
 
     const parent = document.querySelector('.js-species-card-images');
 
-    imageSlider(config, images, parent, true);
+    imageSlider({ config, images, parent, disableModal: true });
 };
 
 const renderLandscape = (item, config, question) => {

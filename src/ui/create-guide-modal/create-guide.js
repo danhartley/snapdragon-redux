@@ -60,7 +60,7 @@ class CreateGuide {
     addStepActions() {
         
         let template = '';
-        const parent = this.modal.querySelector('.js-modal-guide-body');
+        const parent = this.modal.querySelector('.js-landscape-inner-body');
         parent.innerHTML = '';
         template = document.createElement('template');
         const description = this.steps.find(step => step.number === this.currentStep).description;

@@ -41,7 +41,7 @@ export const renderExampleGuideHandler = () => {
           lesson.taxa = lesson.guide.iconicTaxa.map(taxon => taxon.common).join(', ');
       });
 
-      const parent = modal.querySelector('.js-modal-guide-body div:nth-child(2)');
+      const parent = modal.querySelector('.js-landscape-inner-body div:nth-child(2)');
             parent.innerHTML = '';
       
             template = document.createElement('template');

@@ -33,31 +33,33 @@ const disableModalPopups = (disableModal, parent, config) => {
     }
 };
 
-const getActiveBackgroundImage = () => {
-    const imageContainer = document.querySelector('.carousel-item.active > div');
+const getActiveBackgroundImage = (parentScreen = document) => {
+    const imageContainer = parentScreen.querySelector('.carousel-item.active > div');
     const backgroundImage = imageContainer.style.backgroundImage.slice(4, -1).replace(/"/g, "");
     return { imageContainer, backgroundImage };
 };
 
-const carouselControlHandler = event => {
+const carouselControlHandler = (event, parentScreen = document) => {
 
     setTimeout(() => {        
 
-        const activeNode = document.querySelector(`${event.target.dataset.slider} .carousel-item.active > div`);
+        const activeNode = parentScreen.querySelector(`${event.target.dataset.slider} .carousel-item.active > div`);
         const image = activeNode.dataset;        
         handleRightsAttribution(image, activeNode);
     
-        const originalImageLink = document.querySelector('.js-image-load-original > div');
+        const originalImageLink = parentScreen.querySelector('.js-image-load-original > div');
         originalImageLink.style.display = 'none';
         
-        const { backgroundImage } = getActiveBackgroundImage();
+        const { backgroundImage } = getActiveBackgroundImage(parentScreen);
         if(backgroundImage.indexOf('260x190') !== -1) {
             originalImageLink.style.display = 'initial';
         }
     }, 750);
 };
 
-export const imageSlider = (config, images, parent, disableModal, image) => {
+export const imageSlider = sliderArgs => {
+
+    const { config, images, parent, disableModal, image, parentScreen = document, index = '' } = sliderArgs;
 
     const slider = document.createElement('template');
 
@@ -70,14 +72,14 @@ export const imageSlider = (config, images, parent, disableModal, image) => {
         img.rightsHolder = img.rightsHolder || 'Public domain';
     });
 
-    renderTemplate({ images, index: '' }, slider.content, parent);
+    renderTemplate({ images, index }, slider.content, parent);
     selectActiveNodeImage(image || images[0], parent, config);    
     disableModalPopups(disableModal, parent, config);
 
-    const originalImageLink = document.querySelector('.js-image-load-original > div');
+    const originalImageLink = parentScreen.querySelector('.js-image-load-original > div');
 
-    document.querySelector('#imageSlider .carousel-control-prev').addEventListener('click', carouselControlHandler);
-    document.querySelector('#imageSlider .carousel-control-next').addEventListener('click', carouselControlHandler);
+    parentScreen.querySelector(`#imageSlider${index} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen) );
+    parentScreen.querySelector(`#imageSlider${index} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen));
 
     originalImageLink.addEventListener('click', event => {
         const { imageContainer, backgroundImage } = getActiveBackgroundImage();
