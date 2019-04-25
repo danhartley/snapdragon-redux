@@ -16,6 +16,7 @@ body {
 
 button {
   width: 100%;
+  font-family: "PT Sans", "Roboto", arial, sans-serif !important;
 }
 
 tbody {

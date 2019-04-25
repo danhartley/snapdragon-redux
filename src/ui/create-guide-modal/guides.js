@@ -28,14 +28,13 @@ export const renderGuides = (modal, config, createGuide) => {
 
         renderTemplate({ observableMonths,languages }, template.content, parent);
 
-        const selectedLanguage = document.querySelector('.js-chosen-language .selected-text');
-
-        selectedLanguage.innerHTML = languages.find(l => l.lang === config.language).name;
+        const taxonLanguageBtn = document.querySelector('#taxonLanguageBtn');
+              taxonLanguageBtn.innerHTML = `Taxon language [${languages.find(l => l.lang === config.language).name}] `;
 
         document.querySelectorAll('.dropdown-item').forEach(language => {
             language.addEventListener('click', event => {
                 actions.boundUpdateLanguage(languages.find(l => l.lang === event.target.id));
-                selectedLanguage.innerHTML = languages.find(l => l.lang === event.target.id).name;
+                taxonLanguageBtn.innerHTML = `Taxon language [${languages.find(l => l.lang === event.target.id).name}] `;
             });
         });
     }

@@ -1,22 +1,17 @@
-<!-- <div class="guides"> -->
-    
+<div class="filter-options">
     <div>
         <div class="language-options">
             <div class="dropdown">
-                <button class="btn btn-modal dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-modal dropdown-toggle" type="button" id="taxonLanguageBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Taxon language
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ languages }}">
                     <a id="{{ language.lang }}" class="dropdown-item" href="#">{{ language.name }}</a>
                 </div>
             </div>
-        </div>
-        
-        <div class="chosen-guide-filter js-chosen-language">
-            <span>Language:</span><span class="selected-text">-----</span>
-        </div>
+        </div>        
     </div>
-
+        
     <div>
         <div class="season inat-switch">
             <div class="embedded-switch">
@@ -29,17 +24,12 @@
                 </div>
             </div>
         </div>
-
-        <div class="chosen-guide-filter js-chosen-season">
-            <span>Season:</span><span class="selected-text">-----</span>
-        </div>
     </div>
+</div>
 
-    <hr>
+<hr>
 
-    <div>
-        <div class="guide-text">Select a guide (iNat users only).</div>
-        <div class='inat js-inat'></div>
-    </div>
-
-<!-- </div> -->
+<div>
+    <div class="guide-text">Select a guide (iNat users only).</div>
+    <div class='inat js-inat'></div>
+</div>
