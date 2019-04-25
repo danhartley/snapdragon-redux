@@ -3,11 +3,14 @@ import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 import { renderTemplate } from 'ui/helpers/templating';
 import inatTemplate from 'ui/create-guide-modal/inat-user-template.html';
+import inatPortraitTemplate from 'ui/create-guide-modal/inat-user-template-portrait.html';
 
 export const renderInatUser = (parent, config, save) => {
 
     const template = document.createElement('template');
-    template.innerHTML = inatTemplate;
+    template.innerHTML = config.isLandscapeMode
+                            ? inatTemplate
+                            : inatPortraitTemplate;
     
     renderTemplate({ }, template.content, parent);
 

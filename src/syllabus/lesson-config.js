@@ -11,11 +11,11 @@ export const config = {
     },
     mode: 'learn',
     languages : [
+        { name: 'Deutsche', lang: 'de' },
         { name: 'English', lang: 'en' },
         { name: 'Español', lang: 'es' },
-        { name: 'Deutsche', lang: 'de' },
-        { name: 'Italiano', lang: 'it' },
         { name: 'Français', lang: 'fr' },
+        { name: 'Italiano', lang: 'it' },
         { name: 'Português', lang: 'pt' }
     ],
     guide: {

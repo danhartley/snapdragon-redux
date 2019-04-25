@@ -7,7 +7,7 @@ import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 export const renderLocation = (modal, config, createGuide) => {
 
     const guideTxt = modal.querySelector('.guide-text');
-          guideTxt.innerHTML = 'Choose the location that best suits you.';
+          guideTxt.innerHTML = 'Choose where you want to explore.';
         
     createGuide.save(config, 'LOCATION', false)();
     const save = createGuide.save(config, 'LOCATION');
@@ -22,58 +22,14 @@ export const renderLocation = (modal, config, createGuide) => {
     renderTemplate({}, template.content, parent);
 
     const setLocationLongLatBtn = modal.querySelector('.js-set-location-btn');
-          setLocationLongLatBtn.innerHTML = 'Refine your location';
+          setLocationLongLatBtn.innerHTML = 'Pinpoint your location';
 
     const currentLocation = modal.querySelector('.js-current-location');
-          currentLocation.innerHTML = config.ipLocation;
-
-    const locationSelectors = modal.querySelectorAll('.btn.btn-secondary');
-
-    const shortLocation = document.querySelector('.js-short-location');
-          shortLocation.innerHTML = config.place ? 
-                                        config.isLandscapeMode 
-                                            ? `to: ${config.place.shortLocation}`
-                                            : `to: ${config.place.locality}`
+          currentLocation.innerHTML = config.ipLocation
+                                        ? `Learn about species in ${config.ipLocation}.`
                                         : '';
 
-    locationSelectors.forEach(location => {
-      location.addEventListener('click', event => {
-        let id = event.target.id;
-            id = (id === '' || id === 'inat-place') ? id = event.target.parentElement.id : id;
-            id = id === '' ? id = event.target.parentElement.parentElement.id : id;
-            id = id === '' ? id = event.target.parentElement.parentElement.parentElement.id : id;
-
-        modal.querySelectorAll('.lesson-radio-button').forEach(rb => rb.innerHTML = '<i class="far fa-circle"></i>');
-        modal.querySelector(`#${id} .lesson-radio-button`).innerHTML = '<i class="far fa-dot-circle"></i>';
-        
-        switch(id) {
-            case 'ipLocation':
-                if(config.ipLocation) {
-                    config.guide.locationType = 'longLat';
-                    config.guide.locationLongLat = config.ipLocation;
-                    save();
-                }
-                break;
-            case 'locationLongLat':
-                if(config.place) {
-                    config.guide.locationType = 'longLat';
-                    config.guide.locationLongLat = config.place.longLocation;
-                    save();
-                }
-                break;     
-        }
-      });
-    });
-
-    const setSelectors = selectorId => {
-        const selectedSelector = [ ...locationSelectors ].find(locator => locator.id === selectorId);
-        locationSelectors.forEach(selector => selector.classList.remove('active'));
-        selectedSelector.classList.add('active');
-    };
-
     async function handleSetLocationLongLat(event) {
-
-        setSelectors('locationLongLat');
 
         event.stopPropagation();
         setLocationLongLatBtn.innerHTML = 'Updating location…'
@@ -83,11 +39,7 @@ export const renderLocation = (modal, config, createGuide) => {
         config.collection.id = 1;
         config.guide.locationLongLat = place.longLocation;
         actions.boundUpdateConfig(config);
-        setLocationLongLatBtn.innerHTML = 'Refine your location';
-        
-        shortLocation.innerHTML = config.isLandscapeMode 
-                                    ? `to: ${place.shortLocation}`
-                                    : `to: ${place.locality}`;
+        setLocationLongLatBtn.innerHTML = 'Pinpoint your location';
 
         save();
     }
@@ -95,21 +47,17 @@ export const renderLocation = (modal, config, createGuide) => {
     setLocationLongLatBtn.addEventListener('click', handleSetLocationLongLat);
 
     const locationPlaceInput = modal.querySelector('#inat-place');
-
-    locationPlaceInput.addEventListener('focus', event => {
-        setSelectors('locationPlace');
-    });
+          locationPlaceInput.placeholder = config.isLandscapeMode
+                                            ? 'Start typing the name of a place you are interested in.'
+                                            : 'Start typing the name of a place.'
 
     locationPlaceInput.addEventListener('keypress', event => {
         autocompleteRef = inatAutocomplete(locationPlaceInput, 'places', 'inat-place-autocomplete', 'place');
     });
 
-    const txt = modal.querySelector('.js-range');
     let range = config.guide.speciesRange;
-
-    txt.innerHTML = config.isLandscapeMode 
-            ? `Include species within a radius of ${range}km`
-            : `Species within ${range}km`;
+    const rangeTxt = modal.querySelector('.js-range');
+          rangeTxt.innerHTML = `Include species within a radius of ${range}km.`;
 
     modal.querySelector('.js-set-range-input').value = range;
 
@@ -119,9 +67,8 @@ export const renderLocation = (modal, config, createGuide) => {
         range = event.target.value;
         config.guide.speciesRange = range;
         actions.boundUpdateConfig(config);        
-        txt.innerHTML = config.isLandscapeMode 
-                ? `Include species within a radius of ${range}km`
-                : `Species within ${range}km`;
+        rangeTxt.innerHTML = `Include species within a radius of ${range}km.`;
+
         save();
     };
     
@@ -133,8 +80,6 @@ export const renderLocation = (modal, config, createGuide) => {
     });
 
     modal.querySelector('.js-set-inat-location-btn').addEventListener('click', event => {
-
-        setSelectors('locationPlace');
 
         config.guide.locationType = 'place';
         config.guide.place = { name: locationPlaceInput.value, id: locationPlaceInput.name, type: 'places' };
