@@ -1,31 +1,20 @@
-<div class="btn-group btn-group-toggle locations js-rptr-locations" data-toggle="buttons">
-    <label id="ipLocation" class="btn btn-secondary">
-        <div class="lesson-radio-button"><i class="far fa-circle"></i></div>
-        <input type="radio" name="locations" autocomplete="off">
-        <div class="location-option">
-            <div>You are in</div> <span class="uppercase js-current-location"></span>
-        </div>
-    </label>    
-    <label id="locationLongLat" class="btn btn-secondary">
-        <div class="lesson-radio-button"><i class="far fa-circle"></i></div>
-        <input type="radio" name="locations" autocomplete="off">
-        <div class="location-option">
-            <div class="landscape">You can </div><div class="inat-location-place"><button class="btn btn-modal js-set-location-btn"></button></div><div class="uppercase js-short-location"></div>
-        </div>
-    </label>    
-    <label id="locationPlace" class="btn btn-secondary">
-        <div class="lesson-radio-button"><i class="far fa-circle"></i></div>
-        <div class="location-option">
-            <div>Or</div>
-            <div>
-                <input id="inat-place" type="text" placeholder=" Enter place name">                
-                <div class="hide-empty" id="inat-place-autocomplete" style="width:unset;"></div>
-            </div>
-            <button id="set-inat-location-btn" class="btn btn-modal js-set-inat-location-btn">Save</button>
-        </div>
-    </label>    
+<div class="location-option">
+    <span class="hide-empty js-current-location"></span>
 </div>
-
-<div class="range-slider">
-    <span class="js-range"></span><span><span class="range-limits">0km</span><input class="set-range-input js-set-range-input" type="range" min="0" max="250" value="10"><span class="range-limits"> 250km</span><span class="saved js-range-saved"></span></span>
+<div class="location-option html5-location">
+    <div>Or at a more precise location: </div><div class="html5-location-place"><button class="btn btn-modal js-set-location-btn"></button><span class="landscape"></span></div>
+</div>
+<div class="location-option place">
+    <div><span class="landscape">Or</span><span class="portrait">Or somewhere else.</span></div>
+    <div>
+        <input id="inat-place" type="text" placeholder="Start typing the name of the place you are interested in">        
+        <div class="hide-empty" id="inat-place-autocomplete" style="width:unset;"></div>
+    </div>
+    <button id="set-inat-location-btn" class="btn btn-modal js-set-inat-location-btn">Save</button>
+</div>
+<div class="location-option range">
+    <div class="range-slider">
+        <div class="js-range"></div>
+        <div><span class="range-limits">0km</span><input class="set-range-input js-set-range-input" type="range" min="0" max="250" value="10"><span class="range-limits"> 250km</span><span class="saved js-range-saved"></span></div>
+    </div>
 </div>

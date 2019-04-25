@@ -102,11 +102,11 @@ async function IPCountryLookup() {
 
 async function LocationLookup(ip) {
   const ACCESS_KEY = 'a8563e7b75654ae8b016dc52719dee3b';
-  const url = `https://api.ipgeolocation.io/ipgeo?apiKey=${ACCESS_KEY}&ip=${ip}&fields=city&output=json`;
+  const url = `https://api.ipgeolocation.io/ipgeo?apiKey=${ACCESS_KEY}&ip=${ip}&fields=city,state_prov,country_name&output=json`;
   const response = await fetch(url);
   const json = await response.json();
-  const { city } = await json; 
-  return city;
+  const { city, state_prov, country_name } = await json; 
+  return { city, state_prov, country_name };
 }
 
 async function IPLookup() {  
@@ -126,7 +126,7 @@ export async function getIPLocation(config, force = false) {
       return await json;
      } else {
       const ip = await IPLookup();
-      const country = await LocationLookup(ip);
-      return country;
+      const { city, state_prov, country_name } = await LocationLookup(ip);
+      return { city, state_prov, country_name };
      }
 };

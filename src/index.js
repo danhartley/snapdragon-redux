@@ -67,10 +67,11 @@ setTimeout( () => {
                 const ipLocation = await getIPLocation(config);
                 
                 if(ipLocation) {
-                    config.ipLocation = ipLocation;
+                    const location = `${ipLocation.city}, ${ipLocation.country_name}`
+                    config.ipLocation = location;
                     config.guide.locationType = 'longLat';
-                    config.guide.locationLongLat = ipLocation;
-                    config.guide.place.name = ipLocation;            
+                    config.guide.locationLongLat = location;
+                    config.guide.place.name = location;            
                     config.collection.id = 2;
                 }
                 else {
