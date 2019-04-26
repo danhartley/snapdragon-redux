@@ -752,7 +752,7 @@
     }
 
     .actions {
-      height: calc(100vh - 26rem);
+      height: calc(100vh - 30rem);
     }
 
     .modal-guide-wrapper .modal-header {
@@ -782,7 +782,6 @@
     .location-option {
       display: flex;
       align-items: center;
-      margin: 1rem 0;
     }
   
     .modal-guide-wrapper .modal-body .html5-location-place button {
@@ -951,7 +950,6 @@
     }
 
     .embedded-switch > div {
-      /* font-size: 1rem; */
       grid-template-columns: 1fr 5rem 1fr;
     }
 
@@ -964,7 +962,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 1rem;
-      margin: 1rem;
+      margin: 2rem 1rem 0 1rem;
     }
 
     .iconic-taxa-categories > div > div:nth-child(1) { 

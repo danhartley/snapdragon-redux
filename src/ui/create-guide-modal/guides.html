@@ -1,26 +1,31 @@
-<div class="filter-options">
-    <div>
-        <div class="language-options">
-            <div class="dropdown">
-                <button class="btn btn-modal dropdown-toggle" type="button" id="taxonLanguageBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Taxon language
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ languages }}">
-                    <a id="{{ language.lang }}" class="dropdown-item" href="#">{{ language.name }}</a>
-                </div>
-            </div>
-        </div>        
-    </div>
+<div>
+    <div class="guide-text">Filter by language & season.</div>
+
+    <div class="filter-options">
         
-    <div>
-        <div class="season inat-switch">
-            <div class="embedded-switch">
-                <div>
-                    <div class="txt-left">{{ observableMonths }}</div>
-                    <div class="inat-switch-slider left js-inat-switch-slider">
-                        <div></div>
+        <div>
+            <div class="language-options">
+                <div class="dropdown">
+                    <button class="btn btn-modal dropdown-toggle" type="button" id="taxonLanguageBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Taxon language
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ languages }}">
+                        <a id="{{ language.lang }}" class="dropdown-item" href="#">{{ language.name }}</a>
                     </div>
-                    <div class="txt-right">All Year</div>
+                </div>
+            </div>        
+        </div>
+            
+        <div>
+            <div class="season inat-switch">
+                <div class="embedded-switch">
+                    <div>
+                        <div class="txt-left">{{ observableMonths }}</div>
+                        <div class="inat-switch-slider left js-inat-switch-slider">
+                            <div></div>
+                        </div>
+                        <div class="txt-right">All Year</div>
+                    </div>
                 </div>
             </div>
         </div>
