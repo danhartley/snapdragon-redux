@@ -103,7 +103,7 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
         images = denormaliseImages(images);
         const selectedItemImage = selectedItem.images.find(i => imageMatch(i.url,image.dataset.uniqueUrl));
         const selectedImage = { dataset: { ...image.dataset, ...selectedItemImage } };
-        imageSlider(config, images, parent, false, selectedImage);
+        imageSlider({ config, images, parent, disableModal: false, selectedImage });
         let displayName = '';
         switch(displayNameType) {
             case 'biomial':
