@@ -6,11 +6,11 @@ import guidesTemplate from 'ui/create-guide-modal/guides.html';
 
 export const renderGuides = (modal, config, createGuide) => {
 
-    const guideTxt = modal.querySelector('.guide-text');
+    // const guideTxt = modal.querySelector('.guide-text');
 
     const save = createGuide.save(config, 'GUIDE');
 
-    guideTxt.innerHTML = 'Filter by language & season.';
+    // guideTxt.innerHTML = 'Filter by language & season.';
 
     const genericSelectedtext = modal.querySelector('.js-chosen');
           genericSelectedtext.classList.add('hide');
