@@ -165,6 +165,10 @@
     padding: 0 .5rem;
 }
 
+#cardModal .mixed-container {
+  top: 12rem;
+}
+
 #cardModal .imageSlider .carousel-item {
     height: 25vh;
   }
@@ -373,14 +377,14 @@
     padding: 1rem 0;
   }
   
-  #cardModal .card-card .feature-symbiont-list.scrollable {
+  /* #cardModal .card-card .feature-symbiont-list.scrollable {
     top: 16rem;
-  }
+  } */
 
-  #cardModal .feature-symbiont-list.scrollable {        
+  /* #cardModal .feature-symbiont-list.scrollable {        
       margin: 0;
       margin-top: 230px;
-  }
+  } */
 
   .modal-body .language-options button {
     width: initial;

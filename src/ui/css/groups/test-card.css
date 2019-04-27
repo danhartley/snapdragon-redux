@@ -162,18 +162,18 @@
 
 /* SCROLLING */
 
-.test-card-container .scrollable {
+/* .test-card-container .scrollable {
     top: 11.5rem;
     bottom: 9rem;   
-}
+} */
 
-.card-card .feature-symbiont-list.scrollable {
+/* .card-card .feature-symbiont-list.scrollable {
     top: 20rem;
-}
+} */
 
-.test-card-container .scrollable.birdsong-strips {
+/* .test-card-container .scrollable.birdsong-strips {
     top: 14rem;
-}
+} */
 
 .test-card .portrait-answer {
     font-style: italic;
@@ -397,12 +397,13 @@ div.text-entry {
     }      
 
     .card-card .feature-symbiont-list.scrollable {
-        top: 11.75rem;
+        /* top: 11.75rem; */
+        height: 100%;
     }
 
-    .test-card-container .scrollable {
+    /* .test-card-container .scrollable {
         bottom: 7rem;
-    }
+    } */
 }
 
 /* iPHONE 6,7,8 PLUS, iPHONE X, GALAXY S9/S9+ */
