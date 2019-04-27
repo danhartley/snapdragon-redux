@@ -87,6 +87,11 @@ export const animalia = [
         wiki: 'https://en.wikipedia.org/wiki/Polyphyodont',        
     },
     {
+        term: 'Remiges',
+        definition: 'Flight feathers.',
+        wiki: 'https://en.wikipedia.org/wiki/Remiges',   
+    },
+    {
         term: 'Diphyodont',
         definition: 'Characterised by having only two successive sets of teeth.',
         wiki: 'https://en.wikipedia.org/wiki/Diphyodont',        

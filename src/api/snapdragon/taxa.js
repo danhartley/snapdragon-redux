@@ -3974,4 +3974,30 @@ export const taxa = [
             { name: SD.role.CARNIVORE, value: 'Insects' },
         ],
     },
+    {
+        taxon: 'family',
+        name: 'Accipitridae',
+        genera: '67',
+        species: '233',
+        names: [ { language: "en", names: ['Raptors']},
+            { language: "fr", names:[ 'Autour' ]},
+            { language: "de", names:[ 'Habichtartige' ]},
+            { language: "es", names:[ 'Azor' ]},
+            { language: "pt", names:[ 'Acípitre' ]},
+            { language: "it", names:[ 'Astore' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Accipitridae",
+        thumb: '20/2b/b6/18.https___www_inaturalist_org_photos_5076439.260x190.jpg',
+        eol: "https://eol.org/pages/8016",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Cosmopolitan distribution, some migratory.',
+                identification: 'Family of small to large birds with strongly hooked bills and variable morphology based on diet.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.DISPLAY, value: SD.display.SEXUAL_DIMORPHISM },
+        ],
+    },
 ];

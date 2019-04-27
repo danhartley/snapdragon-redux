@@ -117,11 +117,4 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
         document.querySelector(`#imageSlider${index + 1} .carousel-control-prev`).addEventListener('click', carouselControlHandler);
         document.querySelector(`#imageSlider${index + 1} .carousel-control-next`).addEventListener('click', carouselControlHandler);
     });
-
-    setTimeout(() => {
-        if(document.querySelector('.js-comparison-description div').innerHTML !== '') {
-            document.querySelectorAll('.imageSlider .carousel-item').forEach(item => item.style.height = '50vh');
-            document.querySelector('.js-comparison-description').style.height = '20vh';
-        }   
-    });
 };
