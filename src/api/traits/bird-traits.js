@@ -103,6 +103,18 @@ const getTraits = SD => {
         { name: 'song', value: '309239', description: 'xeno-canto id', type: 'call' },
         { name: SD.name.LOOK_ALIKES, values: [ 'Falco tinnunculus' ]},
     ] },
+    { name: 'Hirundo rustica', traits: [
+        { name: 'song', value: '289357', description: 'xeno-canto id', type: 'song' },
+        { name: SD.name.LOOK_ALIKES, values: [ 'Apus apus', 'Delichon urbicum' ]},
+    ] },
+    { name: 'Apus apus', traits: [
+        { name: 'song', value: '302766', description: 'xeno-canto id', type: 'song' },
+        { name: SD.name.LOOK_ALIKES, values: [ 'Hirundo rustica', 'Delichon urbicum' ]},
+    ] },
+    { name: 'Delichon urbicum', traits: [
+        { name: 'song', value: '192040', description: 'xeno-canto id', type: 'flight call' },
+        { name: SD.name.LOOK_ALIKES, values: [ 'Apus apus', 'Hirundo rustica' ]},
+    ] },
 ];
 };
 

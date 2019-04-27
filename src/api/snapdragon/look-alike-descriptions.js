@@ -64,4 +64,13 @@
             'Adult males have bluish-grey back and wings and orangey-brown bars on their chest and belly. Females/juveniles have brown back and wings, and brown bars underneath. Bright yellow or orangey eyes, long, yellow legs and long talons. Females larger than males.'
         ]
     },
+    {
+        ids: ['Hirundo rustica', 'Apus apus', 'Delichon urbicum'],
+        type: 'lookalike',
+        descriptions: [
+            'Small birds with dark, glossy-blue backs, red throats, pale underparts and highly distinctive forked tails. Agile flyers. Low flyers for larger insects over fields and water.',
+            'Medium-sized birds, superb flyers, often sleeping on the wing. Dark brown, black against the sky. Short, forked tail and long scimitar wings. Feeds high on small insects and spiders.',
+            'Small bird with glossy blue-black upper parts and pure white under parts and white lower back. Forked tail. Nests often to be seen under the eaves. Feeds on insects.'  
+        ]
+    },
 ];

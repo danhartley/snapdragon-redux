@@ -3350,5 +3350,288 @@ export const birds = [
       "family": "Accipitridae",
       "kingdom": "Animalia",
       "eolName": "Accipiter nisus (Linnaeus, 1758)"
+    },
+    {
+      "id": "45511468",
+      "name": "Delichon urbicum",
+      "images": [
+        {
+          "rightsHolder": "anis",
+          "source": "https://www.inaturalist.org/photos/2115412",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "2e/61/53/18.https___www_inaturalist_org_photos_2115412.jpg"
+        },
+        {
+          "rightsHolder": "Daniel Capilla",
+          "source": "https://www.inaturalist.org/photos/3512333",
+          "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+          "url": "37/28/de/18.https___www_inaturalist_org_photos_3512333.jpg"
+        },
+        {
+          "rightsHolder": "Jonathan Tollin",
+          "source": "https://www.inaturalist.org/photos/5368022",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "41/c6/2d/18.https___www_inaturalist_org_photos_5368022.jpg"
+        },
+        {
+          "title": "n168_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://www.flickr.com/photos/biodivlibrary/8291313820/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "81/46/7a/542.8291313820.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+            "homepage": "http://www.flickr.com/photos/61021753@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "House Martin (Delichon urbicum) (2).jpg",
+          "rightsHolder": "",
+          "source": "https://commons.wikimedia.org/wiki/File:House_Martin_(Delichon_urbicum)_(2).jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "55/b6/33/509.12340755.jpg"
+        },
+        {
+          "title": "Delichon urbicum -Iceland -flying-8.jpg",
+          "rightsHolder": "",
+          "source": "https://commons.wikimedia.org/wiki/File:Delichon_urbicum_-Iceland_-flying-8.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/48/2d/509.15386325.jpg"
+        },
+        {
+          "title": "Delichon urbicum -Ireland -flying-8.jpg",
+          "rightsHolder": "",
+          "source": "https://commons.wikimedia.org/wiki/File:Delichon_urbicum_-Ireland_-flying-8.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/48/47/509.15387284.jpg"
+        },
+        {
+          "title": "File:House Martin - Delichon urbicum - BÃ¦jasvala.jpg",
+          "rightsHolder": "",
+          "source": "https://commons.wikimedia.org/wiki/File:House_Martin_-_Delichon_urbicum_-_B%C3%A6jasvala.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "56/49/68/509.15405976.jpg"
+        },
+        {
+          "title": "Delichon urbicum lagopodum 1894.jpg",
+          "rightsHolder": "",
+          "source": "https://commons.wikimedia.org/wiki/File:Delichon_urbicum_lagopodum_1894.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "57/3a/00/509.19787746.jpg"
+        },
+        {
+          "title": "Mehlschwalbe Delichon urbicum.jpg",
+          "rightsHolder": "",
+          "source": "https://commons.wikimedia.org/wiki/File:Mehlschwalbe_Delichon_urbicum.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "60/8a/98/509.40871366.jpg"
+        }
+      ],
+      "names": [
+        {
+          "vernacularName": "Northern house martin",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Northern house-martin",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Sand martin",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Common house-martin",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Common house-martin and northern house-martin",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Common house martin",
+          "language": "en"
+        },
+        {
+          "vernacularName": "House martin",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Huiszwaluw",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Avión común",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Balestruccio",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Hirondelle de fenêtre",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Mehlschwalbe",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Andorinha-dos-beirais",
+          "language": "pt"
+        }
+      ],
+      "taxonomy": {
+        "usageKey": 2489214,
+        "scientificName": "Delichon urbicum (Linnaeus, 1758)",
+        "canonicalName": "Delichon urbicum",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 98,
+        "matchType": "EXACT",
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "order": "Passeriformes",
+        "family": "Hirundinidae",
+        "genus": "Delichon",
+        "species": "Delichon urbicum",
+        "kingdomKey": 1,
+        "phylumKey": 44,
+        "classKey": 212,
+        "orderKey": 729,
+        "familyKey": 5248,
+        "genusKey": 2489213,
+        "speciesKey": 2489214,
+        "synonym": false,
+        "class": "Aves"
+      },
+      "family": "Hirundinidae",
+      "kingdom": "Animalia",
+      "eolName": "Delichon urbicum (Linnaeus, 1758)"
+    },
+    {
+      "id": "45510773",
+      "name": "Apus apus",
+      "images": [
+        {
+          "rightsHolder": "Jonathan Tollin",
+          "source": "https://www.inaturalist.org/photos/6842781",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "4a/ef/08/18.https___www_inaturalist_org_photos_6842781.jpg"
+        },
+        {
+          "rightsHolder": "Jonathan Tollin",
+          "source": "https://www.inaturalist.org/photos/6842785",
+          "license": "http://creativecommons.org/licenses/by/4.0/",
+          "url": "4a/ef/0c/18.https___www_inaturalist_org_photos_6842785.jpg"
+        },
+        {
+          "title": "Swift (Apus apus)",
+          "rightsHolder": "Billy Lindblom",
+          "source": "https://www.flickr.com/photos/billyboysfotocolection/4754795436/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "80/10/ed/542.4754795436.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/41502344@N02'>Billy Lindblom</a>",
+            "homepage": "http://www.flickr.com/photos/41502344@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "n84_w1150",
+          "rightsHolder": "Biodiversity Heritage Library",
+          "source": "https://www.flickr.com/photos/biodivlibrary/8291306280/",
+          "license": "http://creativecommons.org/licenses/by/2.0/",
+          "url": "81/46/6e/542.8291306280.jpg",
+          "photographer": {
+            "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+            "homepage": "http://www.flickr.com/photos/61021753@N02",
+            "role": "photographer"
+          }
+        },
+        {
+          "title": "Apus apus flock flying.jpg",
+          "rightsHolder": "",
+          "source": "https://commons.wikimedia.org/wiki/File:Apus_apus_flock_flying.jpg",
+          "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "url": "57/bc/ce/509.2237997.jpg"
+        },
+        {
+          "title": "Zwei mauersegler schraeglage.jpg",
+          "rightsHolder": "",
+          "source": "https://commons.wikimedia.org/wiki/File:Zwei_mauersegler_schraeglage.jpg",
+          "license": "http://creativecommons.org/licenses/publicdomain/",
+          "url": "58/16/50/509.23863700.jpg"
+        },
+        {
+          "title": "Apus apus flock flying 1.jpg",
+          "rightsHolder": "",
+          "source": "https://commons.wikimedia.org/wiki/File:Apus_apus_flock_flying_1.jpg",
+          "license": "http://creativecommons.org/licenses/by/3.0/",
+          "url": "5e/0e/25/509.2817682.jpg"
+        }
+      ],
+      "names": [
+        {
+          "vernacularName": "Common swift",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Swift",
+          "language": "en"
+        },
+        {
+          "vernacularName": "European swift",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Martinet noir",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Mauersegler",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Rondone comune",
+          "language": "it"
+        },
+        {
+          "vernacularName": "Vencejo común",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Andorinhão-preto",
+          "language": "pt"
+        }
+      ],
+      "taxonomy": {
+        "usageKey": 5228676,
+        "scientificName": "Apus apus (Linnaeus, 1758)",
+        "canonicalName": "Apus apus",
+        "rank": "SPECIES",
+        "status": "ACCEPTED",
+        "confidence": 98,
+        "matchType": "EXACT",
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "order": "Apodiformes",
+        "family": "Apodidae",
+        "genus": "Apus",
+        "species": "Apus apus",
+        "kingdomKey": 1,
+        "phylumKey": 44,
+        "classKey": 212,
+        "orderKey": 1448,
+        "familyKey": 2993,
+        "genusKey": 2235048,
+        "speciesKey": 5228676,
+        "synonym": false,
+        "class": "Aves"
+      },
+      "family": "Apodidae",
+      "kingdom": "Animalia",
+      "eolName": "Apus apus (Linnaeus, 1758)"
     }
   ]
