@@ -4000,4 +4000,30 @@ export const taxa = [
             { name: SD.name.DISPLAY, value: SD.display.SEXUAL_DIMORPHISM },
         ],
     },
+    {
+        taxon: 'family',
+        name: 'Hirundinidae',
+        genera: '19',
+        species: '~90',
+        names: [ { language: "en", names: ['Swallows & martins']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Schwalben' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ 'Andorinha' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Hirundinidae",
+        thumb: '-8e/73/46/19.https___www_inaturalist_org_photos_2126227.260x190.jpg',
+        eol: "https://eol.org/pages/7544",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of passerine birds found around the world on all continents. Highly adapted to aerial feeding. A number of species are long-distance migrants.',
+                identification: 'Streamlined body and long pointed wings, which allow great maneuverability and endurance, as well as frequent periods of gliding. Metabolic rate of swallows in flight is 49–72% lower than equivalent passerines.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.DISPLAY, value: SD.display.SEXUAL_DIMORPHISM },
+        ],
+    },
 ];
