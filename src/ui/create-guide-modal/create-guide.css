@@ -663,6 +663,11 @@
     background-color: var(--snap-lesson-row-blue);
   }
 
+  #exampleGuide .btn-secondary:not(:disabled):not(.disabled).active {
+    background-color: gray;
+    color: white;
+  }
+
   .start-lesson-wrapper.disabled {
     pointer-events: none;
   }    

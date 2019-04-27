@@ -1,5 +1,8 @@
 import * as R from 'ramda';
 
+import { store } from 'redux/store';
+import { getTraits } from 'api/traits/traits';
+import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
 import { species } from 'api/species';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
@@ -55,15 +58,56 @@ export const lookALikes = (item, traits, config) => {
 
         if(config.isPortraitMode) return;
 
+        const getTrait = (itemName, parent) => {
+
+            let { enums } = store.getState();
+
+            const item = species.find(species => species.name === itemName);
+                
+            if(item.taxonomy.class.toLowerCase() === 'aves') {
+
+                const traits = getTraits(enums);
+
+                const bird = traits.find(bird => bird.name === item.name);
+
+                if(!bird) return;
+
+                const xcID = bird.traits.find(trait => trait.name === 'song').value;
+
+                if(!xcID) return;
+    
+                const mp3 = `./songs/${xcID}.mp3`;
+
+                const template = document.createElement('template');
+                      template.innerHTML = audioMediaTemplate;
+                
+                renderTemplate({ mp3, title: item.name }, template.content, parent);
+            }
+        }
+
         const speciesComparisonLink = document.querySelector('.js-compare-species-link');
 
         speciesComparisonLink.addEventListener('click', ()=> {
+
             const parent = document.querySelector('#imageComparisonModal .js-modal-image');            
             imageSideBySlider(slides, parent, true, config);
-            let description = lookalikeDescriptions.find(trait => trait.type === 'lookalike' && R.contains(item.name, trait.ids) && !!scientificNames.find(name => R.contains(name, trait.ids)));
-            description = description ? description.description : '';
+            const description = lookalikeDescriptions.find(trait => trait.type === 'lookalike' && R.contains(item.name, trait.ids) && !!scientificNames.find(name => R.contains(name, trait.ids)));
+            const descriptions = description ? description.descriptions : '';
 
-            document.querySelector('#imageComparisonModal .js-comparison-description div').innerHTML = description;
+            const species1 = document.querySelector(`.description${1}`);
+            const species2 = document.querySelector(`.description${2}`);
+            const species3 = document.querySelector(`.description${3}`);
+
+            species1.innerHTML = `<div>${descriptions[0]}</div><div></div>`;
+            species2.innerHTML = `<div>${descriptions[1]}</div><div></div>`;
+
+            getTrait(description.ids[0], species1.querySelector('div:nth-child(2)'));
+            getTrait(description.ids[1], species2.querySelector('div:nth-child(2)'));
+
+            if(species3) {
+                species3.innerHTML = `<div>descriptions[2]</div><div></div>`;
+                getTrait(description.ids[2], species3.querySelector('div:nth-child(2)'));
+            }
         });        
     }
 };

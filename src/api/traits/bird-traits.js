@@ -95,7 +95,15 @@ const getTraits = SD => {
         { name: SD.role.HERBIVORE, value: SD.foodType.GRAINS },
         { name: SD.role.HERBIVORE, value: SD.foodType.GRASS },
     ] },
-    ];
+    { name: 'Falco tinnunculus', traits: [
+        { name: 'song', value: '434309', description: 'xeno-canto id', type: 'flight call' },
+        { name: SD.name.LOOK_ALIKES, values: [ 'Accipiter nisus' ]},
+    ] },
+    { name: 'Accipiter nisus', traits: [
+        { name: 'song', value: '309239', description: 'xeno-canto id', type: 'call' },
+        { name: SD.name.LOOK_ALIKES, values: [ 'Falco tinnunculus' ]},
+    ] },
+];
 };
 
 export const getBirdTraits = (enums) => {
