@@ -9,11 +9,11 @@
     border: 0;
 }
 
-.bird-song div {
+/* .bird-song div {
     float: right;
     min-width: 23.5rem;
     max-width: 28.5rem;
-}
+} */
 
 .vernacular-name-badge {
     position: relative;
@@ -116,11 +116,11 @@
 
     /* FEATURES */
 
-    .feature-symbiont-list.scrollable {
+    /* .feature-symbiont-list.scrollable {
     top: 12rem;
     width: 100%;
     margin: 0 0 0 0.05rem;
-}
+} */
 
 .feature-symbiont-list table {
     width: 100%;
@@ -193,5 +193,16 @@
         font-size: .9rem;
         justify-content: left;
         align-items: center;
+    }
+
+    .mixed-container {
+      /* height: 100%; */
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      position: absolute;
+      top: 14rem;
+      left: 2rem;
+      right: 2rem;
     }
 }

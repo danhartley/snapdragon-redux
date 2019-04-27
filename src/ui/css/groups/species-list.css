@@ -158,10 +158,13 @@ table {
 
     /* SCROLLING */
 
-    .scrollable, .species-list .scrollable {
-        bottom: 0;
+    .scrollable {
         position: absolute;
-        top: 0;
+    }
+
+    .species-list .scrollable {
+      bottom: 0;
+      top: 0;
     }
   }
 

@@ -47,6 +47,8 @@ export const renderMixedSpecimenImages = collection => {
         return image.url = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config);
     }));
 
+    // mix up the images!
+
     const images = utils.shuffleArray(mixedItems).map((item, index) => { 
         return { index: index + 1, ...utils.shuffleArray(item.images)[0], itemName: item.name };
     });

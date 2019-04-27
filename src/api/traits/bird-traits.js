@@ -82,11 +82,11 @@ const getTraits = SD => {
         { name: 'song', value: '403054', description: 'xeno-canto id' },
     ] },
     { name: 'Phoenicurus phoenicurus', traits: [
-        { name: 'song', value: '', description: 'xeno-canto id' },
+        { name: 'song', value: '468777', description: 'xeno-canto id', type: 'song' },
         { name: SD.name.LOOK_ALIKES, values: [ 'Phoenicurus ochruros' ]},
     ] },
     { name: 'Phoenicurus ochruros', traits: [
-        { name: 'song', value: '', description: 'xeno-canto id' },
+        { name: 'song', value: '346214', description: 'xeno-canto id', type: 'song' },
         { name: SD.name.LOOK_ALIKES, values: [ 'Phoenicurus phoenicurus' ]},
     ] },
     { name: 'Branta canadensis', traits: [
