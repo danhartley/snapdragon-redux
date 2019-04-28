@@ -809,9 +809,12 @@ export const local = [
 
         },
         {
-          "vernacularName": "garça-pequena-europeia / garça-branca",
+          "vernacularName": "garça-pequena-europeia",
           "language": "pt",
-
+        },
+        {
+          "vernacularName": "garça-branca",
+          "language": "pt",
         },
         {
           "vernacularName": "garceta común",

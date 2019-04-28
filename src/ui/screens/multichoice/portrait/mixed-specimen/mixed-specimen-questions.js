@@ -83,7 +83,7 @@ export const renderMixedSpecimenQuestions = collection => {
                     ? '<span class="icon"><i class="fas fa-check-circle"></i></span>'
                     : '<span class="icon"><i class="fas fa-times-circle"></i></span>';
 
-            layer.appendChild(answerIcon);
+            // layer.appendChild(answerIcon);
             document.querySelector('.attribution-layer').style.display = 'none';
             
             const test = { ...score, itemId: item.id, question, answer, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};

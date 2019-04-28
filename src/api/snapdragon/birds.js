@@ -2013,7 +2013,11 @@ export const birds = [
           "language": "it"
         },
         {
-          "vernacularName": "Andorinha-de-bando / andorinha-das-chaminés",
+          "vernacularName": "Andorinha-de-bando",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Andorinha-das-chaminés",
           "language": "pt"
         },
         {
@@ -2432,7 +2436,11 @@ export const birds = [
           "language": "de"
         },
         {
-          "vernacularName": "Verdelhão / verdilhão",
+          "vernacularName": "Verdelhão",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Verdilhão",
           "language": "pt"
         },
         {
@@ -2615,7 +2623,11 @@ export const birds = [
           "language": "it"
         },
         {
-          "vernacularName": "Peneireiro-de-dorso-malhado / peneireiro",
+          "vernacularName": "Peneireiro-de-dorso-malhado",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Peneireiro",
           "language": "pt"
         }
       ],
