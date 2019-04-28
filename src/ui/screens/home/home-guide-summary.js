@@ -30,9 +30,10 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
     const season = getSeason(config);
 
     const template = document.createElement('template');
-    template.innerHTML = homeGuideTemplate;
+          template.innerHTML = homeGuideTemplate;
+    const language = config.languages.find(language => language.lang === config.language).name;
 
-    renderTemplate({ location, place, taxa, inatId, season }, template.content, parent);
+    renderTemplate({ location, place, taxa, inatId, season, language }, template.content, parent);
 
     const taxaNode = document.querySelector('.js-taxa');
 
