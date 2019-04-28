@@ -31,7 +31,7 @@ class CreateGuide {
         
         this.steps = [
             { number: 1, title: 'Create Lesson', description: 'Location', nextStep: 'Filter species by category', disabled: true },
-            { number: 2, title: 'Create Lesson', description: 'Species', nextStep: 'Find a guide', disabled: true },
+            { number: 2, title: 'Create Lesson', description: 'Species', nextStep: 'Apply filters', disabled: true },
             { number: 3, title: 'Create Lesson', description: 'Filters', nextStep: 'Start Lesson', disabled: true },
         ];
         

@@ -83,7 +83,8 @@
 }
 
 #imageComparisonModal .modal-dialog {
-    width: 70%;
+    /* width: 70%; */
+    min-width: 1024px;
     max-width: initial;
 }
 
@@ -116,13 +117,16 @@
 
 #imageComparisonModal .imageSlider.carousel.slide > div:nth-child(2) {
   padding: 1rem;
+  min-height: 18rem;
 }
 
 #imageComparisonModal .imageSlider.carousel.slide > div:nth-child(2) > div:nth-child(2) {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
+  margin: .5rem;
+  position: absolute;
+  bottom: 0;
 }
 
 #imageComparisonModal .carousel-indicators,

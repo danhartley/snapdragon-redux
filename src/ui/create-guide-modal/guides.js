@@ -1,3 +1,4 @@
+import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 import { renderInatUser } from 'ui/create-guide-modal/inat-user';
@@ -8,7 +9,7 @@ export const renderGuides = (modal, config, createGuide) => {
 
     // const guideTxt = modal.querySelector('.guide-text');
 
-    const save = createGuide.save(config, 'GUIDE');
+    // const save = createGuide.save(config, 'GUIDE');
 
     // guideTxt.innerHTML = 'Filter by language & season.';
 
@@ -32,7 +33,7 @@ export const renderGuides = (modal, config, createGuide) => {
               taxonLanguageBtn.innerHTML = `Taxon language [${languages.find(l => l.lang === config.language).name}] `;
 
         document.querySelectorAll('.dropdown-item').forEach(language => {
-            language.addEventListener('click', event => {
+            language.addEventListener('click', event => {            
                 actions.boundUpdateLanguage(languages.find(l => l.lang === event.target.id));
                 taxonLanguageBtn.innerHTML = `Taxon language [${languages.find(l => l.lang === event.target.id).name}] `;
             });
@@ -42,6 +43,8 @@ export const renderGuides = (modal, config, createGuide) => {
     const idSwitch = parent.querySelector('.inat-switch-slider');
 
     const switchCallback = position => {
+
+        const { config } = store.getState();
 
         const currentType = config.guide.season.type;
 
@@ -55,7 +58,7 @@ export const renderGuides = (modal, config, createGuide) => {
         
         if(config.guide.season.type !== currentType) {
             config.guide.operation = 'season';
-            save();
+            createGuide.save(config, 'GUIDE');
         }        
     };
 
@@ -63,7 +66,7 @@ export const renderGuides = (modal, config, createGuide) => {
 
     switchHandler(idSwitch, position, switchCallback);
 
-    renderInatUser(modal.querySelector('.js-inat'), config, save);
+    renderInatUser(modal.querySelector('.js-inat'), config, createGuide.save(config, 'GUIDE'));
 
     createGuide.save(config, 'GUIDE', false)();    
 }

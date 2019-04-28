@@ -105,7 +105,7 @@ export const lookALikes = (item, traits, config) => {
             getTrait(description.ids[1], species2.querySelector('div:nth-child(2)'));
 
             if(species3) {
-                species3.innerHTML = `<div>descriptions[2]</div><div></div>`;
+                species3.innerHTML = `<div>${descriptions[2]}</div><div></div>`;
                 getTrait(description.ids[2], species3.querySelector('div:nth-child(2)'));
             }
         });        
