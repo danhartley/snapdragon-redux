@@ -518,6 +518,11 @@
     color: var(--snap-collection);
   }
 
+  .iconic-taxa-categories g {
+    fill: var(--snap-collection);
+    /* fill: rgb(87, 97, 99); */
+  }
+
   .iconic-taxa-selected svg {
     color: var(--snap-collection-active) !important;
   }
