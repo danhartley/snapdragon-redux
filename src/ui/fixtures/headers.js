@@ -21,7 +21,7 @@ export const renderHeaders = page => {
         const title = `learn the planet`;
     
         leftHeaderText = title; 
-        rightHeaderText = title;
+        rightHeaderText = config.isLandscapeMode ? 'Save the planet' : title;
         
         PORTRAIT = config.isPortraitMode;
         LANDSCAPE = config.isLandscapeMode;
