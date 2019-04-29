@@ -23,7 +23,7 @@ import * as SD from 'api/traits/trait-types';
 
 export const renderMultiStrips = (collection) => {
 
-    const { config, lessonPlan, layout, counter, score } = store.getState();
+    const { config, lessonPlan, layout } = store.getState();
 
     const item = collection.nextItem;
     const items = collection.allItems || collection.items;
@@ -33,9 +33,6 @@ export const renderMultiStrips = (collection) => {
     const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, inconicTaxonFamilies));
 
     const familyFlavours = [ 'match-family-to-quick-id', 'match-family-to-summary' ];
-    // const familyFlavours = config.isPortraitMode 
-    //         ? [ 'match-family-to-quick-id' ] 
-    //         : [ 'match-family-to-quick-id', 'match-family-to-summary' ];
 
     let screen = layout.screens.find(screen => screen.name === 'family-strips');
     
@@ -77,7 +74,7 @@ export const renderMultiStrips = (collection) => {
             strips.forEach(strip => strip.classList.add('extra-small-text'));
         }
         
-        if(R.contains(screen.name, ['epithet', 'trait-property'])) {
+        if(R.contains(screen.name, ['epithet', 'trait-property', 'species-scientifics', 'species-vernaculars'])) {
             strips.forEach(strip => strip.classList.add('big-padding'));
         }
 

@@ -776,7 +776,7 @@ export const reptiles = [
           },
           {
             "vernacularName": "Lagartixa-do-mato-comum",
-            "language": "en"
+            "language": "pt"
           },
           {
             "vernacularName": "Large psammodromus",
