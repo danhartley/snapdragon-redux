@@ -235,6 +235,10 @@
         padding: .5rem;
     }
 
+    .big-padding {
+        padding: 1.25rem !important;
+    }
+
     .pool {
         margin: 1rem 0;
     }
