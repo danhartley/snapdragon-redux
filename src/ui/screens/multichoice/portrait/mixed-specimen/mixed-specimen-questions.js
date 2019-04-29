@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 
-import { species } from 'api/species';
 import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
@@ -11,7 +10,7 @@ import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specime
 import { scoreHandler } from 'ui/helpers/handlers';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
-import { iconicTaxa, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
+import { getPoolItems } from 'ui/screens/multichoice/missing-data-helper';
 
 export const renderMixedSpecimenQuestions = collection => {
 
@@ -22,7 +21,6 @@ export const renderMixedSpecimenQuestions = collection => {
     if(!item) return;
 
     const getPortraitImages = images => {
-        if(!images) return;
         const multiImages = utils.flatten(images.map(image => { 
             const item = { name: image.itemName, images: R.take(1, image.srcs) };
             return prepImagesForCarousel(item, config, imageUseCases.MIXED_SPECIMENS);
@@ -30,19 +28,11 @@ export const renderMixedSpecimenQuestions = collection => {
         return multiImages;
     }
 
-    const rank = matchTaxon(collection.nextItem.taxonomy, iconicTaxa).value;
-    const itemPool = species;
-    // const itemPool = collection.allItems || collection.items;
-    const clonedItems = R.clone(itemPool.filter(item => matchTaxonKey(item.taxonomy,[rank]).value));
-    const items = R.take(5, utils.shuffleArray(clonedItems.filter(ci => ci.name !== collection.nextItem.name)));
-    const nextItem = clonedItems.find(i => i.name === collection.nextItem.name);
-    if(nextItem) items.push(nextItem);
+    const items = getPoolItems(collection);
 
     let images = items.map((item, index) => { 
         return { index: index + 1, srcs: item.images, itemName: item.name };
     });
-
-    if(!images) return;
 
     images.forEach(image => {
         image.url = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config);

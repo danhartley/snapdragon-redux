@@ -4,8 +4,9 @@ import { getGlossary } from 'api/glossary/glossary';
 import { epithets } from 'api/botanical-latin';
 import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
-import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
+import { matchTaxon, iconicTaxa, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
 import { taxa } from 'api/snapdragon/taxa';
+import { species } from 'api/species';
 
 export const rebindLayoutState = (layout, item) => {
       
@@ -113,4 +114,39 @@ export const rebindLayoutState = (layout, item) => {
     nextLayout = { ...R.clone(layout), ...nextLayout };
 
     actions.boundNextLayout(nextLayout);
+};
+
+export const getPoolItems = collection => {
+
+  const item = collection.items.find(i => i.name === collection.nextItem.name);
+
+  const rank = matchTaxon(item.taxonomy, iconicTaxa).value;
+  const clonedItems = species.filter(item => matchTaxonKey(item.taxonomy,[rank]).value);
+  const speciesInSameTaxon = utils.shuffleArray(clonedItems.filter(ci => ci.name !== item.name));
+  
+  let speciesPool;
+
+  // To do: Handle case where e.g. taxon group has only 2 items (should top up with kingdom items).
+  // Can be solved by simply adding more data…
+
+  if(speciesInSameTaxon) {
+    speciesPool = speciesInSameTaxon;  
+  }
+  else {
+    const kingdom = item.taxonomy.kingdom;
+    const kingdomItems = species.filter(item => item.taxonomy).filter(item => item.taxonomy.kingdom.toLowerCase() === kingdom.toLowerCase());
+    const speciesInSameKingdom = utils.shuffleArray(kingdomItems.filter(ci => ci.name !== item.name));
+    if(speciesInSameKingdom) {
+      speciesPool = speciesInSameKingdom;
+    } else {
+      speciesPool = utils.shuffleArray(species.filter(ci => ci.name !== item));
+    }
+  }
+
+  const items = R.take(5, speciesPool);
+  
+  // Add the item being tested
+  items.push(item);
+
+  return items;
 };

@@ -54,9 +54,12 @@ export const matchIcon = (taxonomy, iconicTaxa) => {
             icon = 'fas fa-frog';
             break;
         case 'mammalia':
+        case 'reptilia':
+        case 'actinopterygii':
             icon = 'fas fa-paw';
             break;
         case 'insecta':
+        case 'arachnida':
             icon = 'fas fa-bug';
             break;
         case 'fungi':

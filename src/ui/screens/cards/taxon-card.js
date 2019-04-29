@@ -66,7 +66,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
             break;
     }
-    
+
     const context = {
         rank: rank,
         name: taxonName,

@@ -11,6 +11,7 @@ import { lichen } from 'api/snapdragon/lichen';
 import { plants } from 'api/snapdragon/plants';
 import { local } from 'api/snapdragon/local';
 import { mammals } from 'api/snapdragon/mammals';
+import { reptiles } from 'api/snapdragon/reptiles';
 
 import { trees } from 'api/snapdragon/trees';
 
@@ -27,5 +28,6 @@ export const species = [
     ...plants,
     ...local,
     ...mammals,
+    ...reptiles,
     ...trees
 ].filter(s => s.name);
