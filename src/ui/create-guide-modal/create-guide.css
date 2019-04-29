@@ -779,6 +779,10 @@
       margin: 3rem 0 0 0;
     }
 
+    .guide-example-lessons .btn-group.btn-group-toggle.scrollable {
+      margin: initial;
+    }
+
     .modal-guide-wrapper .modal-dialog {
         width: 60%;
         max-width: 600px;
