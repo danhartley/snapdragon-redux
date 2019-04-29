@@ -11,7 +11,7 @@ test('walk up taxonomic tree of an item until a matching iconic taxon is found',
     expect(matchTaxon(item.taxonomy, iconicTaxa).value).toEqual('fungi')
 });
 
-test('given iconic taxon return apprpriate icon class', () => {
+test('given iconic taxon return appropriate icon class', () => {
     let item = { taxonomy: { class: 'aves' } }; 
     expect(matchIcon(item.taxonomy, iconicTaxa)).toEqual('fas fa-dove');
     item = { taxonomy: { class: 'amphibia' } }; 

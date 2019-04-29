@@ -42,34 +42,7 @@ export const matchIcon = (taxonomy, iconicTaxa) => {
     if(!taxonomy) return '';
     const rank = matchTaxon(taxonomy, iconicTaxa).value;
     if(!rank) return ''
-    let icon;
-    switch(rank.toLowerCase()) {
-        case 'aves':
-            icon = 'fas fa-dove';
-            break;
-        case 'lepidoptera':
-            icon = 'fas fa-barcode';
-            break;
-        case 'amphibia':
-            icon = 'fas fa-frog';
-            break;
-        case 'mammalia':
-        case 'reptilia':
-        case 'actinopterygii':
-            icon = 'fas fa-paw';
-            break;
-        case 'insecta':
-        case 'arachnida':
-            icon = 'fas fa-bug';
-            break;
-        case 'fungi':
-            icon = './icons/mushroom.svg';
-            break;
-        case 'plantae':
-            icon = 'fas fa-leaf';
-            break;
-    }
-    return icon;
+    return matchRank(rank);
 }
 
 export const matchRank = rank => {
@@ -84,10 +57,15 @@ export const matchRank = rank => {
         case 'amphibia':
             icon = 'fas fa-frog';
             break;
-        case 'mammalia':
+        case 'mammalia':        
+        case 'actinopterygii':
             icon = 'fas fa-paw';
             break;
+        case 'reptilia':
+            icon = 'fas fa-registered';
+            break;
         case 'insecta':
+        case 'arachnida':
             icon = 'fas fa-bug';
             break;
         case 'fungi':
