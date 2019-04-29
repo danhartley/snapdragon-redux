@@ -10,6 +10,7 @@ import { DOM } from 'ui/dom';
 import { iconicTaxa, matchIcon, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';
 import specimensTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images-template.html';
+import { getPoolItems } from 'ui/screens/multichoice/missing-data-helper';
 
 const listenersToImageSelection = [];
 const listenersToUserAnswer = [];
@@ -37,11 +38,7 @@ export const renderMixedSpecimenImages = collection => {
     const parent = DOM.leftBody;
     parent.innerHTML = '';
 
-    const itemRank = matchTaxon(item.taxonomy, iconicTaxa).value;
-    const itemPool = species.filter(sp => sp.images);
-    const clonedItems = R.clone(itemPool.filter(item => matchTaxonKey(item.taxonomy,[itemRank]).value));
-    const mixedItems = R.take(5, utils.shuffleArray(clonedItems.filter(ci => ci.name !== item.name)));
-    mixedItems.push(R.clone(item));
+    const mixedItems = getPoolItems(collection);
 
     mixedItems.map(item => item.images.map(image => {
         return image.url = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config);

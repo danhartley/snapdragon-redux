@@ -4026,4 +4026,109 @@ export const taxa = [
             { name: SD.name.DISPLAY, value: SD.display.SEXUAL_DIMORPHISM },
         ],
     },
+    {
+        taxon: 'family',
+        name: 'Emydidae',
+        genera: '10',
+        species: '~50',
+        names: [ { language: "en", names: ['Turtles, Testudines, New World Pond Turtles']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Neuweltsumpfschildkröten' ]},
+            { language: "es", names:[ 'Emídidos' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Emydidae",
+        thumb: '4a/41/f7/18.https___www_inaturalist_org_photos_6729937.260x190.jpg',
+        eol: "https://eol.org/pages/8127",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'The limbs of these turtles are adapted for swimming, with every member having some level of toe webbing. Commonly called terrapins, pond turtles, or marsh turtles.',
+                identification: 'Upper shell (carapace) is the shape of a low arch, or dome. Carapace may have 1-2 ridges from front to back (keel). Prominent bridge often connects carapace to the bottom shell (plastron). Large plastrons and small skulls.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.DISPLAY, value: SD.display.SEXUAL_DIMORPHISM },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Lacertidae',
+        genera: '39',
+        species: '+300',
+        names: [ { language: "en", names: ['Wall lizards, True lizards, Lacertas' ]},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Echte Eidechsen' ]},
+            { language: "es", names:[ 'Lacértidos' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Lacertidae",
+        thumb: '47/de/99/18.https___www_inaturalist_org_photos_6342097.260x190.jpg',
+        eol: "https://eol.org/pages/1708",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Live in forest and scrub habitats (European and Mediterranean), grasslands and deserts (Asia) and rocky, arid areas (Africa).',
+                identification: 'Small or medium-sized lizards usually to 9cm exluding tail. Slender bodies, long tails but highly variable patterning and colours.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.DISPLAY, value: SD.display.SEXUAL_DIMORPHISM },
+            { name: SD.name.FOOD, value: 'Insecta' },
+        ],
+    },
+    {
+        taxon: 'subfamily',
+        name: 'Natricidae',
+        genera: '36',
+        species: '--',
+        names: [ { language: "en", names: ['Keelbacks' ]},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Natricidae",
+        thumb: '44/0e/c1/28.https___www_inaturalist_org_photos_574703.260x190.jpg',
+        eol: "https://eol.org/pages/1722",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Subfamily of Colubridae. Wide distribution esp. N. America.',
+                identification: 'Most semi-aquatic and feed on fish and amphibians.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.FOOD, value: 'Amphibia, Fish' },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Colubridae',
+        genera: '524',
+        species: '~1,760',
+        names: [ { language: "en", names: ['Keelbacks' ]},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Colubridae",
+        thumb: '44/0e/c1/28.https___www_inaturalist_org_photos_574703.260x190.jpg',
+        eol: "https://eol.org/pages/1722",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Largest snake family, and includes over half of all known living snake species.',
+                identification: 'Rarely venomous some have elongated, grooved teeth located in the back of their upper jaws (opisthoglyphous), often called "rear-fanged.', 
+            },
+        ],
+        traits: [
+            
+        ],
+    },
 ];

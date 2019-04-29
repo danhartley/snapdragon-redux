@@ -4918,114 +4918,36 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Chinche verde",
-        "language": "en",
-        "eol_preferred": true
+        "language": "es"
       },
       {
         "vernacularName": "Cimice verde",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Cimice verde",
-        "language": "en",
-        
+        "language": "it",        
       },
       {
         "vernacularName": "Green Vegetable Bug",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
-        "vernacularName": "Green Vegetable Bug",
-        "language": "en",
-        
+        "vernacularName": "Grüne Reiswanze",
+        "language": "de",        
       },
       {
-        "vernacularName": "Grne Reiswanze",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Grne Reiswanze",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Insectos",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Insects",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Insetti",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Lembing Hijau",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Lembing Hijau",
-        "language": "en",
-        
+        "vernacularName": "Südliche Stinkwanze",
+        "language": "de",       
       },
       {
         "vernacularName": "Punaise verte puante",
-        "language": "en",
-        
+        "language": "fr",        
       },
       {
         "vernacularName": "Southern Green Shieldbug",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "Southern Green Stink Bug",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Southern Green Stink Bug",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Southern Green Stink Bug",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Southern Green Stink Bug",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Southern Green Stink Bug",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "insectes",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "green stink bug",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Southern green stink bug",
-        "language": "en",
-        
-      }
+        "language": "en",        
+      },      
     ],
     "taxonomy": {
       "usageKey": 2078852,

@@ -13,6 +13,7 @@ async function getItems(collection, config) {
             collection.items && collection.items.length > 0 && collection.items[0].collectionId === collection.id && 
             collection.speciesRange === config.speciesRange &&
             collection.iconicTaxa === config.guide.iconicTaxa.map(taxon => taxon.id);
+
         if(collectionIsUnchanged) {
             return new Promise(resolve => {
                 resolve(collection.items);

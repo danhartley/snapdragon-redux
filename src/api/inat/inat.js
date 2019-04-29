@@ -31,18 +31,19 @@ export const getInatSpecies = (inatConfig, config) => {
 
     let names = species.map(item => item.name); 
 
-    // names = [ 
-    //     'Xanthoria parietina',
-    //     'Robinia pseudoacacia', 'Oxalis pes-caprae', 'Laurus nobilis', 'Bellis perennis',
-    //     'Foeniculum vulgare', 'Gleditsia triacanthos', 'Bellis perennis', 'Daucus carota'
-    // ];
-
     const iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
 
     const getIconicTaxa = config => {        
         const iconicTaxa = config.guide.iconicTaxa.map(taxon => taxon.id) || iconicTaxaKeys;
+
+        // Create new taxonic group for reptilia, etc?
+
+        if(iconicTaxa.find(taxon => taxon === 'mammalia')) {
+            iconicTaxa.push('reptilia');
+        }
+
         const taxa = iconicTaxa.map(taxon => {
-            if(taxon === 'lepidoptera') taxon = 'insecta';
+            if(taxon === 'lepidoptera') taxon = 'insecta';            
             return taxon;
         });
         return taxa;

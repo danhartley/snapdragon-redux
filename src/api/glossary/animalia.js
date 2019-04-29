@@ -101,4 +101,9 @@ export const animalia = [
         definition: 'When a female cannibalises her mate prior to, during, or after copulation.',
         wiki: 'https://en.wikipedia.org/wiki/Sexual_cannibalism'
     },
+    {
+        term: 'Carapace',
+        definition: 'Dorsal (upper) section of the exoskeleton or shell in a number of animal groups.',
+        wiki: 'https://en.wikipedia.org/wiki/Carapace',        
+    },
 ];
