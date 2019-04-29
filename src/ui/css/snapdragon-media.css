@@ -87,6 +87,10 @@
         font-size: 1rem;
     }
 
+    .strip-single-line {
+        padding: 1.5rem;
+    }
+
     .strips {
         height: initial;
     }
@@ -227,7 +231,7 @@
     }
 
     .strip {
-        margin: .5rem;
+        margin: .5rem 1rem;
         padding: .5rem;
     }
 

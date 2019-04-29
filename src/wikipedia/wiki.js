@@ -50,7 +50,7 @@ const cleanEntry = str => {
 
 const wikiLink = entry => {
     const src = cleanEntry(entry).replace('.wikipedia', '.m.wikipedia');
-    return `<span data-toggle="modal" data-target="#wikiModal" data-src="${src}" class="underline-link">Wikipedia</span>`;    
+    return `<span data-toggle="modal" data-target="#wikiModal" data-src="${src}" class="underline-link">Wiki modal</span>`;    
 };
 
 const formatWiki = (entry) => {
