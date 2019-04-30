@@ -1,6 +1,6 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { actions } from 'redux/actions/action-creators';
-import { getPlace } from 'geo/geo';
+import { getPlace, GooglePlaceDetails } from 'geo/geo';
 import locationsTemplate from 'ui/create-guide-modal/locations-template.html';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 
@@ -81,13 +81,31 @@ export const renderLocation = (modal, config, createGuide) => {
 
     modal.querySelector('.js-set-inat-location-btn').addEventListener('click', event => {
 
-        config.guide.locationType = 'place';
-        config.guide.place = { name: locationPlaceInput.value, id: locationPlaceInput.name, type: 'places' };
-        locationPlace = locationPlaceInput.value;
-        config.guide.locationPlace = locationPlace;
-        config.collection.id = 2;
-        actions.boundUpdateConfig(config);
-        save();
-        locationPlaceInput.value = '';
+        const iNatLookup = false;
+
+        if(iNatLookup) {
+            config.guide.locationType = 'place';
+            config.guide.place = { name: locationPlaceInput.value, id: locationPlaceInput.name, type: 'places' };
+            locationPlace = locationPlaceInput.value;
+            config.guide.locationPlace = locationPlace;
+            // etc…
+        } else {
+            // Google lookup
+            config.guide.locationType = 'longLat';
+            config.guide.locationLongLat = locationPlaceInput.value;
+            config.collection.id = 1;
+
+            const callback = geocoderResult => {
+                const lat = geocoderResult[0].geometry.location.lat();
+                const long = geocoderResult[0].geometry.location.lng();
+                config.guide.coordinates = { lat, long };
+
+                actions.boundUpdateConfig(config);
+                save();
+                locationPlaceInput.value = '';
+            };
+
+            GooglePlaceDetails(locationPlaceInput.name, callback);            
+        }
     });
 }
