@@ -20,8 +20,6 @@ const getBasePath = config => {
             ? ''
             : config.guide.season.observableMonths.map(month => month.index).join(',');
 
-    // quality_grade=research&
-
     const basePath = `https://api.inaturalist.org/v1/observations/species_counts?captive=false&rank=species&per_page=200&month=${month}`;
 
     return basePath;
@@ -110,7 +108,7 @@ export const getInatSpecies = (inatConfig, config) => {
                     ...item, 
                     observationCount: observation.taxon.observations_count, 
                     iconicTaxon: observation.taxon.iconic_taxon_name,
-                    establishmentMeans: observation.taxon.establishment_means
+                    // establishmentMeans: observation.taxon.establishment_means
                 };
             } 
             taxonNames.push(observation.taxon.name);
@@ -129,10 +127,9 @@ export async function getInatPlaceId(place) {
 
 export async function getInatTaxonStats(item, config, placeId) {
 
-    const verifiable = true;
     const place = placeId || 'any';
     const taxonName = item.name;
-    const url = getBasePath(config) + `&verifiable=${verifiable}&taxon_name=${taxonName}&place_id=${place}&rank=species`;
+    const url = `https://api.inaturalist.org/v1/observations/species_counts?&verifiable=true&taxon_name=${taxonName}&place_id=${place}`;
     const response = await fetch(url);
     const json = await response.json();
     return json;

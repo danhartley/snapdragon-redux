@@ -387,7 +387,6 @@ a.dropdown-item {
 }
 
 .taxon-summary {
-  width: 100%;
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -843,13 +842,13 @@ a.dropdown-item {
 }
 
 .taxon.card .data-box-container {
-  grid-template-columns: 5fr 5.5rem;
+  grid-template-columns: 1fr;
 }
 
 .data-box {
   color: var(--snap-text-dark);
   text-align: left;
-  padding: 0.5rem;
+  padding: 0.5rem .75rem;
 }
 
 .inat-box .data-box {

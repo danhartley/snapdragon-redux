@@ -1,7 +1,6 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { taxa } from 'api/snapdragon/taxa';
-import { infraspecifics } from 'api/snapdragon/infraspecifics';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
@@ -10,12 +9,12 @@ import { getTraits } from 'api/traits/traits';
 import { lookALikes } from 'ui/screens/common/look-alikes';
 import { renderFeatures } from 'ui/screens/common/feature';
 import { infoSlider } from 'ui/screens/common/info-slider';
-import * as traitTypes from 'api/traits/trait-types';
 import { iconicTaxa, matchTaxon } from 'api/snapdragon/iconic-taxa';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import { renderInatDataBox } from 'ui/screens/common/inat-box';
 import { renderCalendar } from 'ui/screens/common/calendar';
+import { renderTaxaBox } from 'ui/screens/common/taxa-box';
 import cardTemplate from 'ui/screens/cards/card-template.html';
 
 export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, isInCarousel = true) => {
@@ -109,7 +108,6 @@ const renderPortrait = (item, config, traits, mode, rootNode) => {
 const renderCommonParts = (template, config, item, collection, traits, mode, parent, rootNode, isInCarousel) => {
 
     const name = item.name;
-    const rank = "species";
           item.vernacularName = item.vernacularName || itemProperties.getVernacularName(item, config);
     const family = taxa.find(f => f.name === item.family);
     const familyName = family ? family.name : item.taxonomy.family;
@@ -118,52 +116,20 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
         
     const headerImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
     
-    const specific = infraspecifics.find(specific => specific.name === item.name);
-    const subSpeciesCount = specific ? specific.subspecies.length : 0;
-
     const names = [ ...new Set(item.names.filter(name => name.language === config.language).map(name => name.vernacularName.toLowerCase())) ];
     const occurrences = names.length; 
 
     const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
 
-    const options = [
-        { name: traitTypes.enums.name.RANK, formatter: trait => `UK # ${trait.value}` },
-        { name: traitTypes.enums.name.HOW_EDIBLE, formatter: trait => trait.value }
-    ]
-
-    let trait = itemProperties.getActiveTrait(traits, item.name, options);
-
     const clone = document.importNode(template.content, true);
     
     parent.innerHTML = '';
     
-    renderTemplate({ name, vernacularName: item.vernacularName, rank, subSpeciesCount, familyName, headerImage, familyVernacularName, trait, occurrences, iconicTaxon }, template.content, parent, clone);
+    renderTemplate({ name, vernacularName: item.vernacularName, headerImage, occurrences, iconicTaxon }, template.content, parent, clone);
 
-    const subspeciesBadge = rootNode.querySelector('.js-subspecies-badge');
+    const taxaBoxNode = rootNode.querySelector('.js-taxa-box');
 
-    if(subSpeciesCount === 0) {
-        subspeciesBadge.classList.add('hide');
-    } else {
-
-        const members = specific.subspecies;
-
-        subspeciesBadge.addEventListener('click', event => {
-            document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = `Cultivars of ${item.name}`;            
-            const list = rootNode.querySelector('#badgeListModal .js-modal-text');
-            let html = '<div class="modal-list scrollable">';
-            members.forEach(member => {
-                html += `<div><span>subspecies: ${member.name}</span>`;
-                html += `<ul>`;
-                member.names.forEach(name => {
-                    if(name.language === config.language)
-                        html += `<li>name: ${name.vernacularName}</li>`;
-                });
-                html += `</ul></div>`;
-            });
-            html += '</div>';
-            list.innerHTML = html;
-        });
-    }
+    renderTaxaBox(taxaBoxNode, { item, familyName, familyVernacularName, traits });
 
     infoSlider(item, traits, family, rootNode.querySelector('.js-info-box'), mode);
 

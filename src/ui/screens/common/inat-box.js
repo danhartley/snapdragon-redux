@@ -1,6 +1,6 @@
 import { utils } from 'utils/utils';
 import { renderTemplate } from 'ui/helpers/templating';
-import { getLocation, getPlace } from 'geo/geo';
+import { getPlace } from 'geo/geo';
 import { getInatTaxonStats, getInatPlaceId } from 'api/inat/inat';
 import inatBoxTemplate from 'ui/screens/common/inat-box-template.html';
 
@@ -15,29 +15,12 @@ export async function renderInatDataBox(parent, item, config, mode) {
 
     parent.innerHTML = '';
 
-    const native = item.establishmentMeans 
-        ? {
-            range: `${utils.capitaliseFirst(item.establishmentMeans.establishment_means)} to ${item.establishmentMeans.place.display_name}`
-        }
-        : {
-            range: ''
-        };
-
-    native.font = native.range.length > 40 ? 'font-size:.8rem' : '';
-
-    document.querySelector('.js-native-container').innerHTML = `<div class="native hide-empty" style="${native.font}">${native.range}</div>`;
-
     renderTemplate({}, template.content, parent);
-    // renderTemplate({native}, template.content, parent);
     
     getInatTaxonStats(item, config).then(stats => {
 
-        let taxonCount = 0, taxonId;
-
-        stats.results.forEach(taxon => {
-            taxonCount += Number.parseInt(taxon.count);
-            taxonId = taxon.taxon.id;
-        }); 
+        const taxonId = stats.results.find(stat => stat.taxon.name === item.name).taxon.id;
+        const taxonCount = stats.results.find(stat => stat.taxon.name === item.name).count;
 
         const taxonLink = `https://www.inaturalist.org/taxa/${taxonId}`;
 
@@ -55,11 +38,10 @@ export async function renderInatDataBox(parent, item, config, mode) {
     
     getInatTaxonStats(item, config, placeId).then(stats => {
 
-        let placeTaxonCount = 0;
+        const placeTaxonCount = stats.results.find(stat => stat.taxon.name === item.name).count;
+        const establishment = stats.results.find(stat => stat.taxon.name === item.name).taxon.preferred_establishment_means;
 
-        stats.results.forEach(taxon => {
-            placeTaxonCount += Number.parseInt(taxon.count);
-        }); 
+        document.querySelector('.js-native-container').innerHTML = establishment;
 
         parent.querySelector('.js-world').innerHTML = mode === 'MODAL' ? 'Worldwide' : 'Worldwide sightings';
         parent.querySelector('.js-place').innerHTML = mode === 'MODAL' ? country : `${country} sightings`;
