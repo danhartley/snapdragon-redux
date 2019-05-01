@@ -25,7 +25,7 @@ const getBasePath = config => {
     return basePath;
 };
 
-export const getInatSpecies = (inatConfig, config) => {
+export const getInatSpecies = config => {
 
     let names = species.map(item => item.name); 
 
@@ -54,12 +54,12 @@ export const getInatSpecies = (inatConfig, config) => {
         return id ? parameter : '';
     };
 
-    async function getAllInatObservations(config, inatConfig) {
+    async function getAllInatObservations(config) {
         let records = [];
         let keepGoing = true;
         let page = 1;
         while (keepGoing) {
-            let response = await getInatObservations(config, inatConfig, page);
+            let response = await getInatObservations(config, page);
             await records.push.apply(records, response);
             page = page + 1;
             if (response.length < 200) {
@@ -69,17 +69,17 @@ export const getInatSpecies = (inatConfig, config) => {
         }
     }
 
-    async function getInatObservations(config, inatConfig, page) {
+    async function getInatObservations(config, page) {
 
         let lat = '', lng = '', placeId = '', radius = '';
 
-        switch(inatConfig.locationType) {
+        switch(config.guide.locationType) {
             case 'place':
                 placeId = config.guide.place.id;
                 break;
             case 'longLat':
-                lat = inatConfig.latitude;
-                lng = inatConfig.longitude;
+                lat = config.guide.coordinates.lat;
+                lng = config.guide.coordinates.long;
                 radius = config.speciesRange || 10;
                 break;
         }
@@ -99,7 +99,7 @@ export const getInatSpecies = (inatConfig, config) => {
 
     const taxonNames = [];
 
-    const observations = getAllInatObservations(config, inatConfig).then(observations => {
+    const observations = getAllInatObservations(config).then(observations => {
         return observations.map(observation => {
             console.log(observation.taxon.name);
             if(R.contains(observation.taxon.name, names)) {

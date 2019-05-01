@@ -18,19 +18,30 @@ module.exports = {
             use: [
               'style-loader',
               'css-loader'
-            ]
-        },{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: {
-              loader: "babel-loader"
+            ]},
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                  loader: "babel-loader"
+                }
+            },
+            {
+              test: /\.html$/,
+              exclude: [ /node_modules/, path.resolve(__dirname, 'src/index.html')],
+              use: {loader: 'html-loader'}
+            },
+            {
+              test: /\.(png|svg|jpg|gif)$/,
+              use: [{
+                loader: 'file-loader',
+                options: {
+                  name: '[name].[ext]',
+                  ouputPath: 'img/',
+                  publicPath: 'img/'
+                }
+              }]
             }
-        },
-        {
-          test: /\.html$/,
-          exclude: [ /node_modules/, path.resolve(__dirname, 'src/index.html')],
-          use: {loader: 'html-loader'}
-        }
         ],
     },
     plugins: [

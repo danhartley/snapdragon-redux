@@ -2,7 +2,6 @@ import * as R from 'ramda';
 
 import 'ui/css/groups/species-list.css';
 
-import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { subscription } from 'redux/subscriptions';
@@ -190,10 +189,16 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                 }
             }
         }
-        function noRecords() {
+        function callbackWhenNoResults() {
+            const spinner = document.querySelector('.js-species-pending svg');
+                  spinner.classList.remove('slow-spin');
+
+            const feedback = document.querySelector('.js-request-feedback');
+                  feedback.innerHTML = 'That search returned no matches.';
+
             renderHome(counter, false, true);
         }
-        itemHandler(collection, config, counter, callback, noRecords);
+        itemHandler(collection, config, counter, callback, callbackWhenNoResults);
     }
 };
 
