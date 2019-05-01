@@ -85,8 +85,6 @@ export const listenToPlaceChange = listener => {
   listeners.push(listener);
 };
 
-// Use https://collectionCors-anywhere.herokuapp.com/
-
 async function IPCountryLookup() {
   const ACCESS_KEY = '69402a39530c7ae8218dfaf69ef78337';  
   const url = `http://api.ipstack.com/check?access_key=${ACCESS_KEY}`;
@@ -130,3 +128,60 @@ export async function getIPLocation(config, force = false) {
       return { city, state_prov, country_name };
      }
 };
+
+export async function GoogleFindPlace(place) {
+
+  // https://developers.google.com/places/web-service/search
+
+  const ACCESS_KEY = 'AIzaSyD1osYKD1sRb5Bzqq-OzJ6PgXqLtDt9YvU';
+
+  const url = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${place}&inputtype=textquery&key=${ACCESS_KEY}&fields=name`;
+
+  const response = await fetch(url);
+  const json = await response.json();
+  const { candidates } = await json; 
+  return candidates;
+}
+
+export async function GoogleAutocompleteServerSide(place) {
+
+  // https://developers.google.com/places/web-service/search
+
+  const ACCESS_KEY = 'AIzaSyD1osYKD1sRb5Bzqq-OzJ6PgXqLtDt9YvU';
+
+  const url = `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${place}&inputtype=textquery&key=${ACCESS_KEY}&fields=name`;
+
+  const response = await fetch(url);
+  const json = await response.json();
+  const { predictions } = await json; 
+  return predictions;
+}
+
+export function GoogleAutocomplete(place, callback) {
+
+  // https://developers.google.com/maps/documentation/javascript/examples/places-queryprediction
+
+  const displaySuggestions = function(predictions, status) {
+    if (status != google.maps.places.PlacesServiceStatus.OK) {
+      alert(status);
+      return;
+    }
+
+    callback(predictions);
+  };
+  
+  var service = new google.maps.places.AutocompleteService();
+      service.getPlacePredictions({ input: place }, displaySuggestions);
+}
+
+export function GooglePlaceDetails(placeId, callback) {
+  
+  // https://developers.google.com/maps/documentation/javascript/reference/geocoder
+
+  var request = {
+    placeId: placeId
+  };
+
+  var service = new google.maps.Geocoder();
+      service.geocode(request, callback);  
+}
