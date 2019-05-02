@@ -19,12 +19,7 @@ async function getItems(collection, config) {
                 resolve(collection.items);
             });
         } else {
-            const coordinates = await getLocation(config);                        
-            const latitude = coordinates['0'] || coordinates.lat;
-            const longitude = coordinates['1'] || coordinates.long;
-            const inatConfig = {latitude, longitude};
-            inatConfig.locationType = config.guide.locationType;
-            return getInatSpecies(inatConfig, config).then(species => { // take the first only (ignore close matches)
+            return getInatSpecies(config).then(species => {
                 const items = new Set(species.filter(item => item));
                 return [ ...items ];
             });
@@ -50,7 +45,7 @@ export const keepItems = collection => {
     });
 }
 
-export async function itemHandler(collection, config, counter, callback, noRecords) {
+export async function itemHandler(collection, config, counter, callback, callbackWhenNoResults) {
     
     if(counter.isLessonPaused) {
         collection.items = await keepItems(collection);
@@ -97,9 +92,9 @@ export async function itemHandler(collection, config, counter, callback, noRecor
             actions.boundNewCollection({ config, collection });
             callback(collection, config)();
         } else {
-            console.log('** Hitting noRecords() **');
+            console.log('** Hitting callbackWhenNoResults() **');
             collection.items = [];
-            noRecords();
+            callbackWhenNoResults();
         }
     }
 };

@@ -1,3 +1,5 @@
+import { utils } from 'utils/utils';
+
 const getHTML5Location = () => {
   return new Promise(function (resolve, reject) {
 
@@ -143,6 +145,12 @@ export async function GoogleFindPlace(place) {
   return candidates;
 }
 
+let service;
+let requireNewSession = true;
+let isScriptReady = false;
+let SESSION_TOKEN;
+let current_term = '';
+
 export async function GoogleAutocompleteServerSide(place) {
 
   // https://developers.google.com/places/web-service/search
@@ -157,31 +165,95 @@ export async function GoogleAutocompleteServerSide(place) {
   return predictions;
 }
 
+const createScriptRequest = (src, callback) => {
+  requireNewSession = false;
+  const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = src;
+    document.body.appendChild(script);
+    script.addEventListener("load", () => {
+      isScriptReady = true;
+      callback();
+    });
+}
+
+export function GoogleAutocomplete_Original(place, callback) {
+
+  const getPredictions = () => {
+    
+    if(!isScriptReady) return;
+
+    const displaySuggestions = function(predictions, status) {
+      if (status != google.maps.places.PlacesServiceStatus.OK) {
+        alert(status);
+        return;
+      }
+  
+      callback(predictions);
+    };
+    if(!service) {
+      service = new google.maps.places.AutocompleteService();      
+    }
+    
+    service.getPlacePredictions({ input: place }, displaySuggestions);
+  };
+
+  if(requireNewSession) {
+    const ACCESS_KEY = 'AIzaSyD1osYKD1sRb5Bzqq-OzJ6PgXqLtDt9YvU';
+    const SESSION_TOKEN = utils.createSessionToken();
+
+    const src = `https://maps.googleapis.com/maps/api/js?key=${ACCESS_KEY}&sessiontoken=${SESSION_TOKEN}&libraries=places`;
+
+    createScriptRequest(src, () => {
+      console.log('New session');
+      getPredictions();
+    });
+  } else {
+    console.log(place);
+    getPredictions();
+  }
+}
+
 export function GoogleAutocomplete(place, callback) {
 
-  // https://developers.google.com/maps/documentation/javascript/examples/places-queryprediction
+  const getPredictions = SESSION_TOKEN => {
 
-  const displaySuggestions = function(predictions, status) {
-    if (status != google.maps.places.PlacesServiceStatus.OK) {
-      alert(status);
-      return;
+    if(!service) {
+        service = new google.maps.places.AutocompleteService();      
     }
-
-    callback(predictions);
+    
+    service.getPlacePredictions(
+      { 
+        input: place,
+        // sessionToken: SESSION_TOKEN
+      }, 
+      callback);
   };
-  
-  var service = new google.maps.places.AutocompleteService();
-      service.getPlacePredictions({ input: place }, displaySuggestions);
+
+  if(requireNewSession) {
+    console.log('new session');
+    SESSION_TOKEN = new google.maps.places.AutocompleteSessionToken();
+    getPredictions(SESSION_TOKEN);
+    current_term = place;
+    requireNewSession = false; //or on expires/error, get a new one
+  } else {
+    console.log(place);
+    if(place !== current_term) {
+      getPredictions(SESSION_TOKEN);
+    }
+    current_term = place;
+  }
 }
 
 export function GooglePlaceDetails(placeId, callback) {
   
-  // https://developers.google.com/maps/documentation/javascript/reference/geocoder
-
   var request = {
-    placeId: placeId
+    placeId: placeId,
+    // sessionToken: SESSION_TOKEN
   };
 
   var service = new google.maps.Geocoder();
       service.geocode(request, callback);  
+
+  requireNewSession = true;
 }

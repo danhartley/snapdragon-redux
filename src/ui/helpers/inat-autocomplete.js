@@ -6,6 +6,8 @@ import { GoogleAutocomplete } from 'geo/geo';
 
 export const inatAutocomplete = (input, type, container, rb) => {
 
+    const MIN_LENGTH = 3;
+
     async function getUserSuggestions(text) {
         const users = await getAutocompleteBy(text, 'users');
         return users.results.map(user => {
@@ -13,14 +15,24 @@ export const inatAutocomplete = (input, type, container, rb) => {
         });
     }
 
+    async function getInatPlaceSuggestions(text) {        
+        const users = await getAutocompleteBy(text, 'places');
+        return users.results.map(place => {
+            console.log('Hit here');
+            return { label: place.display_name, value: place.id };
+        });
+    }    
+
     function getPlaceSuggestions(text, update) {
-        const callback = predictions => {
+        let callback = null;
+        callback = predictions => {
             update(predictions.map(prediction => {
+                console.log(prediction);
                 return { label: prediction.description, value: prediction.place_id };
             }));
         } 
         GoogleAutocomplete(text, callback);
-    }    
+    }
 
     async function getProjectSuggestions(text) {
         const projects = await getAutocompleteBy(text, 'projects');
@@ -39,6 +51,9 @@ export const inatAutocomplete = (input, type, container, rb) => {
                     });
                     break;
                 case 'places':
+                    // getInatPlaceSuggestions(text).then(places => {
+                    //     update(places);
+                    // });
                     getPlaceSuggestions(text, update);
                     break;
                 case 'projects':
@@ -55,7 +70,8 @@ export const inatAutocomplete = (input, type, container, rb) => {
         },
         container: container,
         rb: rb,
-        minLength: 3
+        minLength: MIN_LENGTH,
+        debounceWaitMs: 200
     });
 
     return autocompleteRef;
