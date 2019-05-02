@@ -90,7 +90,7 @@ export const renderExampleGuideHandler = () => {
 
       const saveChanges = () => {
 
-        config.guide = { ...config.guide, ...selectedLesson.guide };
+        config.guide = { ...config.guide, ...selectedLesson.guide, season: { ...config.guide.season } };
         config.collection = { ...config.collection, ...selectedLesson.collection };
         actions.boundUpdateConfig(config);
 
