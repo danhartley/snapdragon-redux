@@ -24,9 +24,10 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, w
         layout.levelName = levelName;
     });
 
-    const lessonLayouts = [ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts].map( (layout, i) => {
+    // const lessonLayouts = [ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts].map( (layout, i) => {
+    const lessonLayouts = [ ...lessonPlan.layouts, ...wildcardLayouts].map( (layout, i) => {
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
-        layout.progressIndex = i + 1;
+        // layout.progressIndex = i + 1;
         return { ...layout };
     });
 
