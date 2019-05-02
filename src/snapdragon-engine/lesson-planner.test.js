@@ -39,7 +39,7 @@ test('createLessonPlan skips a level that has no active (non-revision) layouts',
   collection.isLevelComplete = true;
   collection.lesson.level = lessonPlan.levels[0];
   lessonPlan.levels[1].layouts = [];
-  lessonPlan.levels[1].wildcardLayouts = [];
+  // lessonPlan.levels[1].wildcardLayouts = [];
   const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(lessonPlan, config, collection);
   expect(updatedCollection.levelName).toEqual('Level 3');
 });
@@ -50,8 +50,8 @@ test('createLessonPlan skips two levels that have no active (non-revision) layou
   collection.lesson.level = lessonPlan.levels[0];
   lessonPlan.levels[1].layouts = [];
   lessonPlan.levels[2].layouts = [];
-  lessonPlan.levels[1].wildcardLayouts = [];
-  lessonPlan.levels[2].wildcardLayouts = [];
+  // lessonPlan.levels[1].wildcardLayouts = [];
+  // lessonPlan.levels[2].wildcardLayouts = [];
   const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(lessonPlan, config, collection);
   expect(updatedCollection.levelName).toEqual('Level 4');
 });
@@ -62,8 +62,8 @@ test('createLessonPlan skips two levels from which user has removed all screens'
   collection.lesson.level = lessonPlan.levels[0];
   lessonPlan.levels[0].layouts = [];
   lessonPlan.levels[1].layouts = [];
-  lessonPlan.levels[0].wildcardLayouts = [];
-  lessonPlan.levels[1].wildcardLayouts = [];
+  // lessonPlan.levels[0].wildcardLayouts = [];
+  // lessonPlan.levels[1].wildcardLayouts = [];
   const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(lessonPlan, config, collection);
   expect(updatedCollection.levelName).toEqual('Level 3');
 });
@@ -76,10 +76,10 @@ test('createLessonPlan skips four levels from which user has removed all screens
   lessonPlan.levels[1].layouts = [];
   lessonPlan.levels[2].layouts = [];
   lessonPlan.levels[3].layouts = [];
-  lessonPlan.levels[0].wildcardLayouts = [];
-  lessonPlan.levels[1].wildcardLayouts = [];
-  lessonPlan.levels[2].wildcardLayouts = [];
-  lessonPlan.levels[3].wildcardLayouts = [];
+  // lessonPlan.levels[0].wildcardLayouts = [];
+  // lessonPlan.levels[1].wildcardLayouts = [];
+  // lessonPlan.levels[2].wildcardLayouts = [];
+  // lessonPlan.levels[3].wildcardLayouts = [];
   const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(lessonPlan, config, collection);
   expect(updatedCollection.levelName).toEqual('Level 5');
 });

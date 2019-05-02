@@ -1,6 +1,5 @@
 import { createLesson } from 'snapdragon-engine/lesson-builder';
 import { layouts } from 'snapdragon-config/screen-layouts';
-import { getCollectionLayouts } from 'redux/reducers/initial-state/species-state/collection-layouts';
 import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
 
 const { summary, history } = layouts;
@@ -20,22 +19,19 @@ const createLessonPlan = (lessonPlan, config, collection) => {
 
     const goToNextLevelThatHasLayouts = (collection, lessonPlan, levelId) => {
 
-        let layouts = [], wildcardLayouts = [];
-        let wildcards = [], lessonName = '', levelName = '';        
+        let layouts = [], lessonName = '', levelName = '';        
         
         const iterateOverLevelsCheckingForAvailableLayouts = (intialValue, levelId) => {
             
             let increment = intialValue;
 
-            if(layouts.length > 0 || wildcardLayouts.length > 0) return;
+            if(layouts.length > 0) return;
 
             const level = lessonPlan.levels.find(level => level.id === levelId + increment);
             collection.lesson.level = level;
             collection.lessonName = collection.lesson.name;
             collection.levelName = collection.lesson.level.name;
             layouts = getLayouts(getCurrentLevelFromLessonPlan(lessonPlan, levelId + increment), config.mode);
-            wildcards = config.mode === 'learn' ? getLayouts(getCurrentLevelFromLessonPlan(lessonPlan, levelId + increment), 'wildcard') : [];
-            wildcardLayouts = wildcards.length > 0 ? getCollectionLayouts(wildcards, collection) : [];
 
             increment++;
 
@@ -44,7 +40,7 @@ const createLessonPlan = (lessonPlan, config, collection) => {
         
         iterateOverLevelsCheckingForAvailableLayouts(0, levelId);
 
-        return { lessonName, levelName, layouts, wildcardLayouts };
+        return { lessonName, levelName, layouts };
     }
 
     let levelId = collection.lesson.level.id;
@@ -54,14 +50,13 @@ const createLessonPlan = (lessonPlan, config, collection) => {
         collection.lesson.level = lessonPlan.levels.find(level => level.id === levelId);
     }
 
-    const { layouts, wildcardLayouts } = goToNextLevelThatHasLayouts(collection, lessonPlan, levelId);
+    const { layouts } = goToNextLevelThatHasLayouts(collection, lessonPlan, levelId);
 
     return createLesson(
         lessonPlan,
         layouts, 
         [ summary, history ],
-        collection,
-        wildcardLayouts
+        collection
     );        
 };
 
@@ -73,8 +68,6 @@ const getLayouts = (currentLevel, mode) => {
     switch(mode) {
         case 'learn':
             return currentLevel.layouts;
-        case 'wildcard':
-            return currentLevel.wildcardLayouts || [];
         case 'review':
             return currentLevel.reviewLayouts || [];
         default:

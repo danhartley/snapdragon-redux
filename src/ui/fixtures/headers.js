@@ -44,11 +44,9 @@ export const renderHeaders = page => {
             const progressBar = document.querySelector('.js-right-grid progress');
             const questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;        
             const questionFormat = `Question ${ layout.itemIndex + 1 } of ${questionCount}`;
-            // const questionFormat = `Question ${ layout.progressIndex } of ${questionCount}`;
     
             progressBar.max = questionCount;
             progressBar.value = layout.itemIndex + 1 || progressBar.value;
-            // progressBar.value = layout.progressIndex || progressBar.value;
             
             let specimensHeaderText = '';
             let lessonHeaderText = document.querySelector('.js-right-header > div:nth-child(2)');

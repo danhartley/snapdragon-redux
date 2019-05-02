@@ -1,7 +1,7 @@
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 
-export const createLesson = (lessonPlan, layouts, progressScreens, collection, wildcardLayouts) => {
+export const createLesson = (lessonPlan, layouts, progressScreens, collection) => {
 
     lessonPlan.layouts = [];
 
@@ -19,30 +19,10 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, w
         } while (i < layoutsToAdd);
     });
 
-    wildcardLayouts.forEach(layout => {
-        layout.lessonName = lessonName;
-        layout.levelName = levelName;
-    });
-
-    // const lessonLayouts = [ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts].map( (layout, i) => {
-    const lessonLayouts = [ ...lessonPlan.layouts, ...wildcardLayouts].map( (layout, i) => {
+    const lessonLayouts = lessonPlan.layouts.map( (layout, i) => {
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
-        // layout.progressIndex = i + 1;
         return { ...layout };
     });
-
-    let hasGlossary = false;
-    const glossary = lessonPlan.layouts.find(layout => layout.name === 'screen-definition-card');
-
-    if(glossary) {
-        lessonLayouts.forEach((layout, index) => {
-            if(!hasGlossary) {
-                glossary.itemIndex = 0;
-                lessonLayouts.splice(index, 0, glossary);
-                hasGlossary = true;
-            }
-        });
-    }
 
     lessonPlan.layouts = [ ...lessonLayouts ];
 
@@ -83,7 +63,6 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, w
     lessonPlan.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
     lessonPlan.layoutCount = lessonPlan.layouts.length;
     lessonPlan.layoutNames = lessonPlan.layouts.map(layout => layout.name);
-    lessonPlan.wildcardLayouts = wildcardLayouts;
 
     return { updatedLessonPlan: lessonPlan, updatedCollection: collection };
 };
