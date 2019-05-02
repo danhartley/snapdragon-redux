@@ -105,11 +105,11 @@
   }
   
   .modal-guide-wrapper .modal-guide-progress {
-    max-height: 2.5rem;
+    height: 2.5rem;
   }
   
   .modal-guide-wrapper .modal-guide-navigation {
-    max-height: 2.8rem;
+    height: 2.8rem;
   }
   
   .modal-guide-wrapper .modal-body .modal-guide-progress > div {
@@ -685,9 +685,9 @@
     pointer-events: none;
   }
 
-  .modal.modal-guide-wrapper .modal-body.modal-guide-body {  
+  /* .modal.modal-guide-wrapper .modal-body.modal-guide-body {  
     height: 34rem;
-  }
+  } */
 
   .location-checkbox {
     line-height: 3rem;
@@ -771,6 +771,8 @@
 
     .actions {
       height: calc(100vh - 30rem);
+      max-height: 400px;
+      padding-bottom: 2rem;
     }
 
     .modal-guide-wrapper .modal-header {
@@ -841,7 +843,7 @@
     }
 
     .modal-guide-wrapper .modal-guide-progress, .modal-guide-wrapper .modal-guide-navigation {
-        max-height: 4rem;
+        height: 4rem;
     }
 
     .modal-guide-wrapper .modal-body .modal-guide-progress > div {

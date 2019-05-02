@@ -5,7 +5,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
 import { snapdragonCollections as collections } from 'snapdragon/snapdragon-collections';
-import { getLocation } from 'geo/geo';
+import { getPlace } from 'geo/geo';
 
 async function getItems(collection, config) {
     if(collection.providerId === 1) {
@@ -19,10 +19,30 @@ async function getItems(collection, config) {
                 resolve(collection.items);
             });
         } else {
-            return getInatSpecies(config).then(species => {
-                const items = new Set(species.filter(item => item));
-                return [ ...items ];
-            });
+
+            if(config.guide.locationType === 'longLat' && !config.guide.coordinates) {
+                
+                const place = await getPlace(config, true);
+
+                config.guide.coordinates = {
+                    long: place.query[0],
+                    lat: place.query[1]
+                };
+
+                actions.boundUpdateConfig(config);
+
+                return getInatSpecies(config).then(species => {
+                    const items = new Set(species.filter(item => item));
+                    return [ ...items ];
+                });
+            }
+
+            else {
+                return getInatSpecies(config).then(species => {
+                    const items = new Set(species.filter(item => item));
+                    return [ ...items ];
+                });
+            }            
         }
     }
     else {
