@@ -23,8 +23,8 @@ export const renderLocation = (modal, config, createGuide) => {
 
     renderTemplate({}, template.content, parent);
 
-    const googleLogo = document.getElementById('googleLogo');
-          googleLogo.src = googleLogoImg;
+    // const googleLogo = document.getElementById('googleLogo');
+    //       googleLogo.src = googleLogoImg;
 
     const setLocationLongLatBtn = modal.querySelector('.js-set-location-btn');
           setLocationLongLatBtn.innerHTML = 'Pinpoint your location';
@@ -58,6 +58,12 @@ export const renderLocation = (modal, config, createGuide) => {
 
     locationPlaceInput.addEventListener('keypress', event => {
         autocompleteRef = inatAutocomplete(locationPlaceInput, 'places', 'inat-place-autocomplete', 'place');
+        setTimeout(() => {
+            const googleImageContainer = modal.querySelector('#inat-place-autocomplete #googleLogoContainer');
+            if(!googleImageContainer) {
+                modal.querySelector('#inat-place-autocomplete').innerHTML += `<div id="googleLogoContainer"><img id="googleLogo" src="${googleLogoImg}" alt=""></div>`;
+            }            
+        },500);  
     });
 
     let range = config.guide.speciesRange;

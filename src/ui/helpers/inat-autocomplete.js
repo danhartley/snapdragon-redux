@@ -18,7 +18,6 @@ export const inatAutocomplete = (input, type, container, rb) => {
     async function getInatPlaceSuggestions(text) {        
         const users = await getAutocompleteBy(text, 'places');
         return users.results.map(place => {
-            console.log('Hit here');
             return { label: place.display_name, value: place.id };
         });
     }    
@@ -27,7 +26,6 @@ export const inatAutocomplete = (input, type, container, rb) => {
         let callback = null;
         callback = predictions => {
             update(predictions.map(prediction => {
-                console.log(prediction);
                 return { label: prediction.description, value: prediction.place_id };
             }));
         } 
