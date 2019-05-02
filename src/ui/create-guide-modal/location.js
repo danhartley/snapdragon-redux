@@ -3,7 +3,6 @@ import { actions } from 'redux/actions/action-creators';
 import { getPlace, GooglePlaceDetails } from 'geo/geo';
 import locationsTemplate from 'ui/create-guide-modal/locations-template.html';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
-import { GoogleCompleteAutocomplete } from 'geo/geo';
 import googleLogoImg from 'img/powered_by_google_on_white_hdpi.png';
 
 export const renderLocation = (modal, config, createGuide) => {
@@ -22,9 +21,6 @@ export const renderLocation = (modal, config, createGuide) => {
     const parent = modal.querySelector('.js-actions');
 
     renderTemplate({}, template.content, parent);
-
-    const googleLogo = document.getElementById('googleLogo');
-          googleLogo.src = googleLogoImg;
 
     const setLocationLongLatBtn = modal.querySelector('.js-set-location-btn');
           setLocationLongLatBtn.innerHTML = 'Pinpoint your location';
@@ -58,6 +54,12 @@ export const renderLocation = (modal, config, createGuide) => {
 
     locationPlaceInput.addEventListener('keypress', event => {
         autocompleteRef = inatAutocomplete(locationPlaceInput, 'places', 'inat-place-autocomplete', 'place');
+        setTimeout(() => {
+            const googleImageContainer = modal.querySelector('#inat-place-autocomplete #googleLogoContainer');
+            if(!googleImageContainer) {
+                modal.querySelector('#inat-place-autocomplete').innerHTML += `<div id="googleLogoContainer"><img id="googleLogo" src="${googleLogoImg}" alt=""></div>`;
+            }            
+        },500);  
     });
 
     let range = config.guide.speciesRange;
