@@ -21,6 +21,7 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection) =
 
     const lessonLayouts = lessonPlan.layouts.map( (layout, i) => {
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
+        layout.roundProgressIndex = i + 1;
         return { ...layout };
     });
 

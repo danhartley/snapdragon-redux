@@ -16,7 +16,7 @@ test('createLesson should return new lesson plan with correct number of screens'
 });
 
 test('createLesson should return final summary layout with correct number of screens', () => {
-    const firstLayout = {"itemIndex": 0, "lessonName": "Lesson 1", "levelName": "Level 1", "roundScoreCount": 0, "screens": [{}], "type": "test"};
+    const firstLayout = {"itemIndex": 0, "lessonName": "Lesson 1", "levelName": "Level 1", "roundScoreCount": 0, roundProgressIndex: 1, "screens": [{}], "type": "test"};
     const finalSummaryLayout = {"itemIndex": 0, "layoutIndex": 16, "lessonName": "Lesson 1", "levelName": "Level 1", "name": "summary", "roundScoreCount": 0, "screens": [{}, {}]};
     const { updatedLessonPlan, collection } = createLesson(_lessonPlan, layouts, progressScreens, _collection, []);
     expect(updatedLessonPlan.layouts[0]).toEqual(firstLayout);
