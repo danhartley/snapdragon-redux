@@ -4,7 +4,7 @@ import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
-import { snapdragonCollections as collections } from 'snapdragon/snapdragon-collections';
+import { snapdragonCollections as collections } from 'snapdragon-config/snapdragon-collections';
 import { getPlace } from 'geo/geo';
 
 async function getItems(collection, config) {

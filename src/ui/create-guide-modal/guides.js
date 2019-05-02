@@ -60,7 +60,9 @@ export const renderGuides = (modal, config, createGuide) => {
 
     switchHandler(idSwitch, position, switchCallback);
 
-    renderInatUser(modal.querySelector('.js-inat'), config, createGuide.save(config, 'GUIDE'));
+    const switchContainer = modal.querySelector('.js-inat');
+
+    renderInatUser(switchContainer, config, createGuide.save(config, 'GUIDE'));
 
     createGuide.save(config, 'GUIDE', false)();    
 }

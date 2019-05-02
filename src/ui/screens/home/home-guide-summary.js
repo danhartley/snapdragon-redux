@@ -1,5 +1,5 @@
 import { returnTaxonIcon } from 'ui/helpers/icon-handler';
-import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
+import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 import { renderTemplate } from 'ui/helpers/templating';
 import homeGuideTemplate from 'ui/screens/home/home-guide-summary-template.html';
 

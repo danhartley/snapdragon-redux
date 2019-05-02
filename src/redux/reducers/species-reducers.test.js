@@ -2,7 +2,7 @@ import * as R from 'ramda';
 
 import { types } from 'redux/actions/action-types';
 import { collection } from 'redux/reducers/species-reducers';
-import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
+import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 import { unextendedCollection } from 'test/test-collection';
 
 import { state1 } from 'test/redux-test-collections/state-1';
@@ -11,7 +11,7 @@ import { state3 } from 'test/redux-test-collections/state-3';
 import { state3Refresh } from 'test/redux-test-collections/state-3-refresh';
 import { state4 } from 'test/redux-test-collections/state-4';
 import { snapdragon } from 'test/redux-test-snapdragon/state-1';
-import { lessonPlanner } from 'syllabus/lesson-planner';
+import { lessonPlanner } from 'snapdragon-engine/lesson-planner';
 
 const herbCollection = {
   "name": "Mint and Basil Family",

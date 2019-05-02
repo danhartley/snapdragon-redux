@@ -1,9 +1,9 @@
 import * as R from 'ramda';
 
 import { store } from 'redux/store';
-import { lessonPlanner } from 'syllabus/lesson-planner';
+import { lessonPlanner } from 'snapdragon-engine/lesson-planner';
 import { actions } from 'redux/actions/action-creators';
-import { lessonPlans } from 'snapdragon/lesson-plans';
+import { lessonPlans } from 'snapdragon-config/lesson-plans';
 
 export const nextLesson = (counter) => {
 
