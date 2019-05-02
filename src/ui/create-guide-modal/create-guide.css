@@ -724,6 +724,7 @@
   #googleLogo {
     position: absolute;
     top: 40px;
+    left: 0;
     height: 12px;
   }
 
