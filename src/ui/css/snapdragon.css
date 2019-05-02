@@ -648,14 +648,22 @@ a.dropdown-item {
   text-align: center;
 }
 
-.vernacular-name {
+.names-container .vernacular-name {
+  max-width: 12rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* .vernacular-name {
   padding: 0.5rem 0 0 0.5rem;
   font-size: 0.8rem;
 }
 
 .vernacular-name p {
   height: 0.5rem;
-}
+} */
 
 .align-left {
   text-align: left;

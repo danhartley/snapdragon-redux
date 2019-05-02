@@ -287,6 +287,10 @@
     .summary-scores .summary-progress {
         font-size: 1.4rem;
     }
+
+    .names-container .vernacular-name {
+        max-width: none;
+      }
 }
 
 @media (min-width: 1200px) {

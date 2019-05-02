@@ -23,11 +23,11 @@ export const iconicTaxa = {
 };
 
 export const matchTaxonKey = (taxonomy, iconicTaxaKeys) => {
-    let taxon = { taxon: '', rank: '' };
+    let taxon = { rank: '', value: '' };
     if(!taxonomy) return taxon;
     if(taxonomy.order && R.contains(taxonomy.order.toLowerCase(), iconicTaxaKeys)) taxon = { rank: 'order', value: taxonomy.order.toLowerCase() };
-    if(taxonomy.class && R.contains(taxonomy.class.toLowerCase(), iconicTaxaKeys)) taxon = { rank: 'class', value: taxonomy.class.toLowerCase() };
-    if(taxonomy.kingdom && R.contains(taxonomy.kingdom.toLowerCase(), iconicTaxaKeys)) taxon = { rank: 'kingdom', value: taxonomy.kingdom.toLowerCase() };
+    if(taxon.value === '' && taxonomy.class && R.contains(taxonomy.class.toLowerCase(), iconicTaxaKeys)) taxon = { rank: 'class', value: taxonomy.class.toLowerCase() };
+    if(taxon.value === '' && taxonomy.kingdom && R.contains(taxonomy.kingdom.toLowerCase(), iconicTaxaKeys)) taxon = { rank: 'kingdom', value: taxonomy.kingdom.toLowerCase() };
     return taxon;
 }
 
