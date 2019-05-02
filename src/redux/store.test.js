@@ -5,7 +5,7 @@ import { store } from 'redux/store';
 
 import { actions } from 'redux/actions/action-creators';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
-import { config as lessonConfig } from 'syllabus/lesson-config';
+import { config as lessonConfig } from 'snapdragon-engine/lesson-config';
 
 test('observeStore should return unsubscribe function for every listener', () => {
     const onChange = () => {};
