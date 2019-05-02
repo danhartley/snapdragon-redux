@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 
 import { types } from 'redux/actions/action-types';
-import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
+import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 
 export const collections = (state = snapdragonCollections, action) => {
     switch(action.type) {

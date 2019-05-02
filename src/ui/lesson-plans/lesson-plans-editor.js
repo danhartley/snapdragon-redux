@@ -2,7 +2,7 @@ import * as R from 'ramda';
 
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
+import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 import { renderTemplate } from 'ui/helpers/templating';
 import { lessonPlans } from 'snapdragon-config/lesson-plans';
 import lessonPlansTableTemplate from 'ui/lesson-plans/lesson-plans-table-template.html';

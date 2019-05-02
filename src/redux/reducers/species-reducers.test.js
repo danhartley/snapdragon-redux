@@ -2,7 +2,7 @@ import * as R from 'ramda';
 
 import { types } from 'redux/actions/action-types';
 import { collection } from 'redux/reducers/species-reducers';
-import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
+import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 import { unextendedCollection } from 'test/test-collection';
 
 import { state1 } from 'test/redux-test-collections/state-1';

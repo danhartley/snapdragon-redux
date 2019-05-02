@@ -1,5 +1,5 @@
 import { createLesson } from 'snapdragon-engine/lesson-builder';
-import { layouts } from 'snapdragon/screen-layouts';
+import { layouts } from 'snapdragon-config/screen-layouts';
 import { getCollectionLayouts } from 'redux/reducers/initial-state/species-state/collection-layouts';
 import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
 

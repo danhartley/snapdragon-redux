@@ -7,7 +7,7 @@ import { returnTaxonIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import exampleGuideTemplate from 'ui/example-guide-modal/example-guide-template.html';
 import exampleLessonsTemplate from 'ui/example-guide-modal/example-guide.html';
-import { snapdragonCollections } from 'snapdragon/snapdragon-collections';
+import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 
 
 const closeModalListeners = [];
