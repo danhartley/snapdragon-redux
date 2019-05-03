@@ -5,11 +5,13 @@ import { renderTemplate } from 'ui/helpers/templating';
 
 export const renderScore = (score) => {
     
-    const { history, collection, config, layout } = store.getState();
+    const { history, collection, config, layout, lesson } = store.getState();
 
     const template = document.createElement('template');
 
     const scoreText = score.correct === 1 ? 'correct answer' : 'correct answers';
+
+     // lesson.currentRound
 
     template.innerHTML = config.isPortraitMode
             ?   `<div><span>Score: {{ score.correct }} / {{ score.total }}</span></div>`

@@ -7,7 +7,7 @@ import summaryTemplate from 'ui/screens/progress/summary-template.html';
 
 export const renderSummary = history => {
 
-    const { score, collection, config, collections } = store.getState();
+    const { score, collection, config, lesson } = store.getState();
 
     const template = document.createElement('template');
 
@@ -22,14 +22,14 @@ export const renderSummary = history => {
     
     let actionLink = document.querySelector('.js-create-guide-link');
 
-    if(collection.isLessonComplete) actionLink.innerHTML = 'Choose new';
+    if(collection.isLessonComplete) actionLink.innerHTML = 'Choose new'; // lesson.isLessonComplete
 
     const handleBtnClickEvent = event => {
 
         subscription.remove(subscription.getByName('renderSummary'));
         subscription.remove(subscription.getByName('renderHistory'));
 
-        if(collection.isLessonComplete) {
+        if(collection.isLessonComplete) { // lesson.isLessonComplete
             lessonHandler.purgeLesson();
         }
         else lessonHandler.getLessonItems('next-round', collection, config, history);

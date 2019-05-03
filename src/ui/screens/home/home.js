@@ -17,7 +17,7 @@ import homeTemplate from 'ui/screens/home/home-template.html';
 
 export const renderHome = (counter, loadSpeciesList = true, noRecords = false) => {
 
-    let { config, collection } = store.getState();
+    let { config, collection, lesson } = store.getState();
 
     let skip = counter.index !== null && counter.index >= 0 && !counter.isLessonPaused;
 
@@ -38,7 +38,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     renderTemplate({}, template.content, DOM.rightBody);
 
     let state = (config.collection.id === 0 || !config.guide.ready)
-            ? 'CREATE-LESSON' : (collection && collection.layoutCounter > 0)
+            ? 'CREATE-LESSON' : (collection && collection.layoutCounter > 0) // lesson.layoutCounter
                 ? 'RESUME-LESSON'
                 : noRecords
                     ? 'CREATE-LESSON'

@@ -21,6 +21,8 @@ const getLatestCounter = () => {
 
 const getLessonItems = (lessonStateMode, collection, config, history) => {    
 
+    const { lesson } = store.getState();
+
     switch(lessonStateMode) {
         case 'new-lesson': {
             actions.boundToggleLesson({ index: 0 });
@@ -37,20 +39,20 @@ const getLessonItems = (lessonStateMode, collection, config, history) => {
         }
         case 'next-round': {
             const itemsToReview = stats.getItemsForRevision(collection, history, 1);
-            const mode = getMode(config.mode, collection.isLevelComplete, itemsToReview);
+            const mode = getMode(config.mode, collection.isLevelComplete, itemsToReview); // lesson.isLevelComplete
             config.mode = mode;
 
             switch(mode) {  
                 case 'learn': {
-                    if(collection.isLevelComplete) {                            
+                    if(collection.isLevelComplete) { // lesson.isLevelComplete
                         actions.boundNextLevel({ index: 0 });
-                    } else if(collection.isNextRound) {
+                    } else if(collection.isNextRound) { // lesson.isNextRound
                         actions.boundNextRound({ index: 0 });
                     };
                     break;
                 }
                 case 'review' : {
-                    collection.isLevelComplete = false;
+                    collection.isLevelComplete = false; // lesson.isLevelComplete
                     collection.moduleSize = (collection.moduleSize > itemsToReview.length) ? itemsToReview.length : collection.moduleSize;
                     collection.rounds = Math.ceil(itemsToReview.length / collection.moduleSize);
                     collection.itemIndex = 0;

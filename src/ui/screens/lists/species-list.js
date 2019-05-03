@@ -18,7 +18,7 @@ import { renderHome } from 'ui/screens/home/home';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
-    const { config: configState, history, counter, enums  } = store.getState();
+    const { config: configState, history, counter, enums, lesson  } = store.getState();
 
     let config = R.clone(configState);
     
@@ -29,6 +29,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     config.collection = { id: collection.id };
 
     const handleUserEvents = () => {
+
         const headerCheckbox = document.querySelector(".table-header #inputCheckAll");
         const itemCheckboxes = document.querySelectorAll(".table-row .custom-control-input");
 
@@ -148,13 +149,13 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                 continueLearningActionBtn.innerHTML = 'Continue lesson';
             }
             
-            if(collection.isLessonComplete) {
+            if(collection.isLessonComplete) { // lesson.isLessonComplete
                 continueLearningActionBtn.innerHTML = 'End lesson (delete data) | Choose a new lesson';
             }
 
             continueLearningActionBtn.addEventListener('click', event => {
 
-                if(collection.isLessonComplete) {
+                if(collection.isLessonComplete) { // lesson.isLessonComplete
                     lessonHandler.purgeLesson();
                 } else {
                     if(readOnlyMode) {

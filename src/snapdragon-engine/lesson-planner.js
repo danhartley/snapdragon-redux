@@ -2,12 +2,15 @@ import { createLesson } from 'snapdragon-engine/lesson-builder';
 import { layouts } from 'snapdragon-config/screen-layouts';
 import { getNextActiveLayerLayouts } from 'snapdragon-engine/lesson-plan-handler';
 import { getBonusTests } from 'snapdragon-engine/bonus/bonus-test-handler';
+import { store } from 'redux/store';
 
 const { summary, history } = layouts;
 
 const createLessonPlan = (lessonPlan, config, collection) => {
 
-    collection.lesson = collection.lesson || { ...lessonPlan, level: { id: 1 } };
+    let { lesson } = store.getState(); // pass in
+
+    collection.lesson = collection.lesson || { ...lessonPlan, level: { id: 1 } }; // lesson
 
     const layouts = getNextActiveLayerLayouts(collection, lessonPlan, config);
     

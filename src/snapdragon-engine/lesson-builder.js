@@ -1,12 +1,15 @@
 import { DOM } from 'ui/dom';
+import { store } from 'redux/store';
 import { utils } from 'utils/utils';
 
 export const createLesson = (lessonPlan, layouts, progressScreens, collection, bonusTests, bonusLayouts) => {
 
+    const { lesson } = store.getState(); // pass in
+
     lessonPlan.layouts = [];
 
     const { moduleSize, lessonName, levelName } = collection;
-    const itemsCountToDate = (collection.currentRound - 1) * moduleSize;
+    const itemsCountToDate = (collection.currentRound - 1) * moduleSize; // lesson.currentRound MISSING! lesson
     const itemsLeft = collection.items.length - itemsCountToDate;
 
     const layoutsToAdd = moduleSize > itemsLeft ? itemsLeft : moduleSize;

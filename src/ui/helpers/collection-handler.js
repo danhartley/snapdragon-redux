@@ -2,6 +2,7 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
+import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
 import { snapdragonCollections as collections } from 'snapdragon-config/snapdragon-collections';
@@ -67,10 +68,13 @@ export const keepItems = collection => {
 
 export async function collectionHandler(collection, config, counter, callback, callbackWhenNoResults) {
     
+    const { lesson } = store.getState(); // or probably better, pass in
+
     if(counter.isLessonPaused) {
         collection.items = await keepItems(collection);
         callback(collection, config)();
-    } else {         
+    } else {
+           
         collection.items = utils.shuffleArray(await getItems(collection, config));
 
         if(R.contains('lepidoptera', config.guide.iconicTaxa.map(taxon => taxon.id)) && !R.contains('insecta', config.guide.iconicTaxa.map(taxon => taxon.id))) {
@@ -108,7 +112,7 @@ export async function collectionHandler(collection, config, counter, callback, c
             collection.iconicTaxa = config.guide.iconicTaxa;
 
             collection.itemIndex = 0;
-            collection.currentRound = 1;
+            collection.currentRound = 1; // lesson.currentRound
 
             actions.boundNewCollection({ config, collection });
             callback(collection, config)();

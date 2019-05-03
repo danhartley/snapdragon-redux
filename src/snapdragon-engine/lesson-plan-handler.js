@@ -1,3 +1,5 @@
+import { store } from 'redux/store';
+
 export const getNextActiveLayerLayouts = (collection, lessonPlan, config) => {
 
     // This is not currently in use. 
@@ -30,10 +32,12 @@ export const getNextActiveLayerLayouts = (collection, lessonPlan, config) => {
 
             if(layouts.length > 0) return;
 
+            let { lesson } = store.getState(); // pass in
+
             const level = lessonPlan.levels.find(level => level.id === levelId + increment);
-            collection.lesson.level = level;
-            collection.lessonName = collection.lesson.name;
-            collection.levelName = collection.lesson.level.name;
+            collection.lesson.level = level; // lesson.level
+            collection.lessonName = collection.lesson.name; // lesson.name
+            collection.levelName = collection.lesson.level.name; // lesson.level.name
             layouts = getLayouts(getCurrentLevelFromLessonPlan(lessonPlan, levelId + increment), config.mode);
 
             increment++;
