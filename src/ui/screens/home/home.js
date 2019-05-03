@@ -5,7 +5,7 @@ import { DOM } from 'ui/dom';
 import { store, persistor } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
 import { renderSpeciesCollectionList, listenToSpeciesCollectionListenReady } from 'ui/screens/lists/species-list';
-import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
+import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import homeTemplate from 'ui/screens/home/home-template.html';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
@@ -85,14 +85,14 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     const beginLessonHandler = () => {
         const { collection, config, history } = store.getState();
         const lessonStateMode = 'new-lesson';
-        lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);        
+        lessonHandler.getLessonItems(lessonStateMode, collection, config, history);        
         actionLink.disabled = false;
     };
 
     const resumeLessonHandler = () => {
         const { collection, config, history } = store.getState();
         const lessonStateMode = 'restart-lesson';
-        lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);        
+        lessonHandler.getLessonItems(lessonStateMode, collection, config, history);        
         subscription.remove(subscription.getByName('renderSpeciesGrid'));
     };
 

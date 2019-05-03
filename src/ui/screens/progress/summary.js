@@ -2,7 +2,7 @@ import { store } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
 import { DOM } from 'ui/dom';
 import { stats } from 'ui/helpers/stats';
-import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
+import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import summaryTemplate from 'ui/screens/progress/summary-template.html';
 
@@ -18,7 +18,7 @@ export const renderSummary = history => {
     parent.innerHTML = '';
 
     // const itemsToReview = stats.getItemsForRevision(collection, history, 1);
-    // const mode = lessonLogicHandler.getMode(config.mode, collection.isLevelComplete, itemsToReview);
+    // const mode = lessonHandler.getMode(config.mode, collection.isLevelComplete, itemsToReview);
 
     let header, summary, warning = ''; 
 
@@ -64,9 +64,9 @@ export const renderSummary = history => {
         subscription.remove(subscription.getByName('renderHistory'));
 
         if(collection.isLessonComplete) {
-            lessonLogicHandler.purgeLesson();
+            lessonHandler.purgeLesson();
         }
-        else lessonLogicHandler.changeCollection('next-round', collection, config, history);
+        else lessonHandler.getLessonItems('next-round', collection, config, history);
     };
 
     actionLink.removeEventListener('click', handleBtnClickEvent);

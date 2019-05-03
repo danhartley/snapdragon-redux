@@ -1,4 +1,4 @@
-// import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
+// import { lesson-handler } from 'ui/helpers/lesson-handler';
 
 // describe('should skip home pages appropriately', () => {
 
@@ -8,7 +8,7 @@
 //             isLessonPaused: false
 //         };
 //         let config = { collection: { id: 0 } };    
-//         expect(lessonLogicHandler.isSkippable(collection, counter, config)).toBeFalsy();
+//         expect(lesson-handler.isSkippable(collection, counter, config)).toBeFalsy();
 //     });
     
 //     test('on returning to home with initial item selected', () => {
@@ -18,7 +18,7 @@
 //         };
 //         let collection = { items: [], itemIndex: 0, id: 8 };
 //         let config = { collection: { id: 8 } }
-//         expect(lessonLogicHandler.isSkippable(collection, counter, config, {}, 'renderSpeciesCollectionList')).toBeFalsy();
+//         expect(lesson-handler.isSkippable(collection, counter, config, {}, 'renderSpeciesCollectionList')).toBeFalsy();
 //     });
     
 //     test('on returning to home with next item selected', () => {
@@ -28,7 +28,7 @@
 //         };
 //         let collection = { items: [], itemIndex: 1, id: 8 };
 //         let config = { collection: { id: 8 } }
-//         expect(lessonLogicHandler.isSkippable(collection, counter, config, {}, 'renderSpeciesCollectionList')).toBeFalsy();
+//         expect(lesson-handler.isSkippable(collection, counter, config, {}, 'renderSpeciesCollectionList')).toBeFalsy();
 //     });
 
 //     test('refresh page after loading initial state', () => {
@@ -38,7 +38,7 @@
 //         };
 //         let collection = { };
 //         let config = { collection: { id: 8 } }
-//         expect(lessonLogicHandler.isSkippable(collection, counter, config)).toBeFalsy();
+//         expect(lesson-handler.isSkippable(collection, counter, config)).toBeFalsy();
 //     });
 // ``
 //     test('refresh page with collection selected and initial item selected', ()=> {
@@ -50,7 +50,7 @@
 //         let collection = { items: [], itemIndex: 0, id: 8 };
 //         let config = { collection: { id: 8 } }
 //         let layout = {};
-//         expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeTruthy();
+//         expect(lesson-handler.isSkippable(collection, counter, config, layout)).toBeTruthy();
 //     });
 // ``
 //     test('refresh page with collection selected but lesson not yet started', ()=> {
@@ -62,7 +62,7 @@
 //         let collection = { items: [], itemIndex: 0 };
 //         let config = { collection: { id: 8 } }
 //         let layout = null;
-//         expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeFalsy();
+//         expect(lesson-handler.isSkippable(collection, counter, config, layout)).toBeFalsy();
 //     });
 
 //     test('try to change lesson to the same lesson has no effect', () => {
@@ -73,7 +73,7 @@
 //         let collection = { id: 8, items: [], language: 'en' };
 //         let config = { collection: { id: 8 }, language: 'en', iconicTaxa: [] };
 //         let layout = {};
-//         expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeTruthy();
+//         expect(lesson-handler.isSkippable(collection, counter, config, layout)).toBeTruthy();
 //     });
 
 //     test('change lesson to a different lesson changes species list', () => {
@@ -84,7 +84,7 @@
 //         let collection = { id: 8, items: [] };
 //         let config = { collection: { id: 2 } };
 //         let layout = {};
-//         expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeFalsy();
+//         expect(lesson-handler.isSkippable(collection, counter, config, layout)).toBeFalsy();
 //     });
 
 //     test('re-render if the language has changed', () => {
@@ -95,7 +95,7 @@
 //         let collection = { id: 8, items: [], language: 'en' };
 //         let config = { collection: { id: 8 }, language: 'pt', iconicTaxa: [] };
 //         let layout = {};
-//         expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeFalsy();
+//         expect(lesson-handler.isSkippable(collection, counter, config, layout)).toBeFalsy();
 //     });
 
 //     test('skip re-rendering if the language has not changed', () => {
@@ -106,7 +106,7 @@
 //         let collection = { id: 8, items: [], language: 'en' };
 //         let config = { collection: { id: 8 }, language: 'en', iconicTaxa: [] };
 //         let layout = {};
-//         expect(lessonLogicHandler.isSkippable(collection, counter, config, layout)).toBeTruthy();
+//         expect(lesson-handler.isSkippable(collection, counter, config, layout)).toBeTruthy();
 //     });
 
 //     test('re-render if readOnlyMode (results page in portrait)', () => {
@@ -118,6 +118,6 @@
 //         let config = { collection: { id: 8 }, language: 'en' };
 //         let layout = {};
 //         let readOnlyMode = true;
-//         expect(lessonLogicHandler.isSkippable(collection, counter, config, layout, '', readOnlyMode)).toBeFalsy();
+//         expect(lesson-handler.isSkippable(collection, counter, config, layout, '', readOnlyMode)).toBeFalsy();
 //     });
 // });

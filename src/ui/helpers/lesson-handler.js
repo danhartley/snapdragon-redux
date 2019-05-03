@@ -19,7 +19,7 @@ const getLatestCounter = () => {
     return { index };
 };
 
-const changeCollection = (lessonStateMode, collection, config, history, actionButton) => {
+const getLessonItems = (lessonStateMode, collection, config, history) => {    
 
     switch(lessonStateMode) {
         case 'new-lesson': {
@@ -59,14 +59,14 @@ const changeCollection = (lessonStateMode, collection, config, history, actionBu
                     actions.boundChangeCollection({ config: config, collection });
                     actions.boundNextRound({ index: 0 });
                     // console.clear();
-                    console.warn('lesson-handlers, review: boundChangeCollection');
+                    console.warn('lesson-handler, review: boundChangeCollection');
                     break;
                 }
                 case 'learn-again': {
                     collection.items = collection.allItems; // handle in reducer?
                     // console.clear();
                     actions.boundChangeCollection({ config, collection });
-                    console.warn('lesson-handlers, learn-again: boundChangeCollection');
+                    console.warn('lesson-handler, learn-again: boundChangeCollection');
                 }
             }            
             break;      
@@ -79,8 +79,8 @@ const purgeLesson = () => {
     window.location.reload(true);
 };
 
-export const lessonLogicHandler = {
+export const lessonHandler = {
     getMode,
-    changeCollection,
+    getLessonItems,    
     purgeLesson
 }

@@ -9,10 +9,10 @@ import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { modalImageHandler } from 'ui/helpers/image-handlers';
-import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
+import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-table-no-scores';
-import { itemHandler } from 'ui/helpers/item-handler';
+import { collectionHandler } from 'ui/helpers/collection-handler';
 import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 import { renderHome } from 'ui/screens/home/home';
 
@@ -155,14 +155,14 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
             continueLearningActionBtn.addEventListener('click', event => {
 
                 if(collection.isLessonComplete) {
-                    lessonLogicHandler.purgeLesson();
+                    lessonHandler.purgeLesson();
                 } else {
                     if(readOnlyMode) {
                         const lessonStateMode = counter.isLessonPaused ? 'restart-lesson' : 'next-round';
-                        lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history);
+                        lessonHandler.getLessonItems(lessonStateMode, collection, config, history);
                     }
                     else {
-                        lessonLogicHandler.changeCollection('new-lesson', collection, config, history, continueLearningActionBtn);
+                        lessonHandler.getLessonItems('new-lesson', collection, config, history);
                     }
 
                     actions.boundNewPage({ name: ''});
@@ -198,7 +198,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
             renderHome(counter, false, true);
         }
-        itemHandler(collection, config, counter, callback, callbackWhenNoResults);
+        collectionHandler(collection, config, counter, callback, callbackWhenNoResults);
     }
 };
 

@@ -45,7 +45,7 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 1,
 
     const getNextRound = state => {        
         let currentRound = (state.currentRound === state.rounds) ? 1 : state.currentRound + 1;
-        let itemIndex = state.moduleSize * (currentRound -1);
+        let itemIndex = state.moduleSize * (currentRound - 1);
         let nextItem = state.items[itemIndex];
         let layoutCounter = state.layoutCounter;
         let lesson = state.lesson;
@@ -127,8 +127,6 @@ export const collection = (state = { id: 0, descriptions: null, currentRound: 1,
         case types.NEXT_LESSON: {
             const { collection, isNextRound, layoutCounter, layoutCount } = getNextLesson(action, state);
             return { ...collection, layoutCount: action.data.layoutCount, isNextRound, layoutCounter, layoutCount };        
-            // const { collection, isNextRound, layoutCounter, itemGroup, layoutCount } = getNextLesson(action, state);
-            // return { ...collection, layoutCount: action.data.layoutCount, isNextRound, layoutCounter, itemGroup, layoutCount };        
         }        
         case types.NEXT_LEVEL: {
             return { ...state, currentRound: 1 };

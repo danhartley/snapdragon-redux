@@ -7,7 +7,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { subscription } from 'redux/subscriptions';
 import { renderHome } from 'ui/screens/home/home';
 import { getGlossary } from 'api/glossary/glossary';
-import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
+import { lessonHandler } from 'ui/helpers/lesson-handler';
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
 import definitionCardTemplate from 'ui/screens/cards/definition-card-template.html';
 
@@ -86,7 +86,7 @@ export const renderNavigation = (page) => {
                     case 'home':
                         target.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));        
-                        lessonLogicHandler.changeCollection('pause-lesson', collection, config, history); 
+                        lessonHandler.getLessonItems('pause-lesson', collection, config, history); 
                         const { counter } = store.getState();
                         const loadSpeciesList = false;
                         config.isPortraitMode ? renderHome(counter, loadSpeciesList) : renderHome(counter);
@@ -100,7 +100,7 @@ export const renderNavigation = (page) => {
                     case 'list':                        
                         target.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));                                   
-                        lessonLogicHandler.changeCollection('pause-lesson', collection, config, history);
+                        lessonHandler.getLessonItems('pause-lesson', collection, config, history);
                         if(config.isPortraitMode) {
                             const { counter } = store.getState();
                             renderHome(counter);
