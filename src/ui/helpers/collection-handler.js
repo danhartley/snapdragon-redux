@@ -89,7 +89,6 @@ export async function collectionHandler(collection, config, counter, callback, c
             collection.items.forEach((item,index) => {
 
                 item.snapIndex = index + 1;
-                item.collectionId =  collection.id;
                 
                 item.vernacularNames = itemProperties.getVernacularNames(item, config);
                 item.vernacularName = itemProperties.getVernacularName(item, config);   
@@ -100,11 +99,13 @@ export async function collectionHandler(collection, config, counter, callback, c
                 item.name = names.slice(0,2).join(' ');
             })
 
+            collection.moduleSize = collection.moduleSize || config.moduleSize;
+            const rounds = collection.items.length / collection.moduleSize;
+            collection.rounds = collection.items.length % collection.moduleSize === 0 ? rounds : rounds === 1 ? 1 : Math.floor(rounds) + 1;
+
+
             collection.speciesRange = config.speciesRange;
             collection.iconicTaxa = config.guide.iconicTaxa;
-
-            collection.speciesNames = collection.items.map(item => item.name);
-            collection.speciesVernacularNames = itemProperties.vernacularNamesForItems(collection.items, config);
 
             collection.itemIndex = 0;
             collection.currentRound = 1;

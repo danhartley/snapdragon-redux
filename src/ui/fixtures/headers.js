@@ -1,5 +1,6 @@
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
+
 export const renderHeaders = page => {
     
     let lessonPlan, config, counter, collection;

@@ -25,8 +25,12 @@ export const landscapeDefault = {
     levels: [
         {   id: 1,
             name:'Level 1',
+            // layouts: [ L.familyStripsMatch ],
+            // reviewLayouts: [],
+            // bonusLayouts: [ ]
             layouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
-            reviewLayouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ]
+            reviewLayouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
+            bonusLayouts: [ L.traitPropertyMatch ]
         },
         {   id: 2,
             name:'Level 2',
@@ -35,7 +39,7 @@ export const landscapeDefault = {
         },
         {   id: 3,
             name:'Level 3',
-            layouts: [ L.commonEntry, L.familyMatch, L.familyStripsMatch, L.traitPropertyMatch ],
+            layouts: [ L.commonEntry, L.familyMatch, L.familyStripsMatch ],
             reviewLayouts: [ L.commonEntry, L.familyStripsMatch ]
         },
         {   id: 4,

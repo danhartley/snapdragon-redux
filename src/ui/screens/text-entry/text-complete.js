@@ -8,6 +8,7 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
+
 import completeTemplate from 'ui/screens/text-entry/text-complete-template.html';
 
 export const renderCompleteText = (collection) => {
@@ -52,7 +53,8 @@ export const renderCompleteText = (collection) => {
 
     const numerOfItems = config.isPortraitMode ? 4 : 5;
 
-    const itemTaxons = [ ...collection.speciesNames ].map(item => {
+    // const itemTaxons = [ ...collection.speciesNames ].map(item => {
+    const itemTaxons = [ ...collection.itemNames ].map(item => {
         switch(givenTaxon) {
             case 'genus':
                 return itemProperties.getGenusName(item);

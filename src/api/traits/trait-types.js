@@ -104,7 +104,7 @@ export const typedSpecies = (enums, speciesTraits)=> {
     const species = [];
     speciesTraits.traits.map(trait => {
         typed.forEach(t => {
-            if(trait.name.toLowerCase() === t.name.toLowerCase())
+            if(trait.name && trait.name.toLowerCase() === t.name.toLowerCase())
             species.push({ ...trait, ...t });
         });
     });

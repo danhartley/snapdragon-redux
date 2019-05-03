@@ -7,12 +7,13 @@ import { subscription } from 'redux/subscriptions';
 import { renderSpeciesCollectionList, listenToSpeciesCollectionListenReady } from 'ui/screens/lists/species-list';
 import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { renderTemplate } from 'ui/helpers/templating';
-import homeTemplate from 'ui/screens/home/home-template.html';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
 import { renderExampleGuideHandler } from 'ui/example-guide-modal/example-guide';
 import { renderGuideSummary } from 'ui/screens/home/home-guide-summary';
 import { listenToCloseCreateGuideModal } from 'ui/create-guide-modal/create-guide';
 import { listenToCloseExampleGuideModal } from 'ui/example-guide-modal/example-guide';
+
+import homeTemplate from 'ui/screens/home/home-template.html';
 
 export const renderHome = (counter, loadSpeciesList = true, noRecords = false) => {
 

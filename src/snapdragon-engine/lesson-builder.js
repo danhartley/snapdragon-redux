@@ -1,7 +1,7 @@
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 
-export const createLesson = (lessonPlan, layouts, progressScreens, collection) => {
+export const createLesson = (lessonPlan, layouts, progressScreens, collection, bonusTests, bonusLayouts) => {
 
     lessonPlan.layouts = [];
 
@@ -19,29 +19,21 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection) =
         } while (i < layoutsToAdd);
     });
 
-    // collection layouts, indexed to match place in layout order (there my be more than 1 question per item)
-
-    const lessonLayouts = lessonPlan.layouts.map( (layout, i) => {
+    const lessonLayouts = lessonPlan.layouts.map((layout, i) => {
         layout.itemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
         layout.roundProgressIndex = i + 1;
         return { ...layout };
     });
 
-    // bonus layouts, variable depending on item traits, etc.
-
-    // these will kick in AFTER itemIndex has been set to zero, and BEFORE the summary. 
-
-    // new reducer, BONUS, will need to know:
-    // the bonus index
-    // the current item index (to use the species, or family, etc.)
+    // We need to look at the bonusTests and take out the ones relevant to this round based on:
+    // The collection.itemIndex and the collection.currentRound, then:
+    // Filter out the bonus questions we want and add a layout for each one
 
     // score: markBonusTest
 
     // remove all wildcard, definition panels and layouts, add new bonus panel and bonus-layout
 
     // option to 'wrap' collection screens, e.g. family name, to show family images. ('To which family/group/class do these species beling?')
-
-    const bonusLayouts = [];
 
     // we want to attach these to score (and then history) object, in order not to repeat questions
 
