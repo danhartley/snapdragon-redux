@@ -59,7 +59,7 @@ export const lesson = (state = { currentRound: 1, rounds: 0, isNextRound: true }
 
             let isNextRound = state.layoutCount ? state.layoutCounter === state.layoutCount : false;
             let layoutCounter = 0;
-            let layoutCount = action.data.lessonPlan.layoutCount;
+            let layoutCount = action.data.lesson.layoutCount;
             
             return { ...state, ...action.data.lesson, isNextRound, layoutCounter, layoutCount };
         }

@@ -29,9 +29,9 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, b
 
     lessonPlan.layouts = [ ...lessonLayouts, ...bonusLayouts ];
 
-    lessonPlan.lessonName = lessonName;
-    lessonPlan.levelName = levelName;
-    lessonPlan.moduleSize = moduleSize;
+    // lessonPlan.lessonName = lessonName;
+    // lessonPlan.levelName = levelName;
+    // lessonPlan.moduleSize = moduleSize;
 
     const summaryLayout = lessonPlan.portrait 
         ? {
@@ -62,10 +62,9 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, b
 
     lessonPlan.layouts.map(layout => layout.roundScoreCount = roundScoreCount);
 
-    lessonPlan.moduleSize = moduleSize;
-    lessonPlan.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
-    lessonPlan.layoutCount = lessonPlan.layouts.length;
-    lessonPlan.layoutNames = lessonPlan.layouts.map(layout => layout.name);
+    lesson.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
+    lesson.layoutCount = lessonPlan.layouts.length;
+    lesson.layoutNames = lessonPlan.layouts.map(layout => layout.name);
 
     return { updatedLessonPlan: lessonPlan, updatedCollection: collection, updatedLesson: lesson };
 };

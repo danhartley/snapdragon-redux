@@ -1,5 +1,3 @@
-import { actions } from 'redux/actions/action-creators';
-
 export const getNextActiveLayerLayouts = (collection, lessonPlan, config, lesson) => {
 
     // This is not currently in use. 
@@ -35,7 +33,7 @@ export const getNextActiveLayerLayouts = (collection, lessonPlan, config, lesson
             const level = lessonPlan.levels.find(level => level.id === levelId + increment);
             lesson.level = level;
 
-            actions.boundUpdateLesson(lesson);
+            // actions.boundUpdateLesson(lesson);
             lesson.level = level;
             lessonName = lesson.name;
             levelName = lesson.level.name;

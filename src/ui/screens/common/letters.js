@@ -11,7 +11,7 @@ import lettersTemplate from 'ui/screens/common/letters-template.html';
 
 export const renderLetters = (letters, item, callbackTime) => {
 
-    const { lessonPlan, config } = store.getState();
+    const { lessonPlan, lesson } = store.getState();
 
     let parent = DOM.rightBody;
     parent.innerHTML = '';
@@ -92,8 +92,8 @@ export const renderLetters = (letters, item, callbackTime) => {
         const success = false;
         const response = { ...question, answer, success };
         const { text, colour, correct } = markTest(response);
-        response.questionCount = lessonPlan.questionCount;
-        response.layoutCount = lessonPlan.layoutCount;
+        response.questionCount = lesson.questionCount;
+        response.layoutCount = lesson.layoutCount;
         reponse.itemId = item.id;
         setTimeout(()=>{
             actions.boundUpdateScore(response);

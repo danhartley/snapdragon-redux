@@ -22,7 +22,7 @@ import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
 
 export const renderMultiStrips = (collection, bonus) => {
 
-    const { config, lessonPlan, layout } = store.getState();
+    const { config, lesson, layout } = store.getState();
 
     const item = collection.nextItem;
 
@@ -70,7 +70,7 @@ export const renderMultiStrips = (collection, bonus) => {
 
         const taxon = { name: item.family, binomial: item.name, question: questionValue };
 
-        const test = { itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
+        const test = { itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points};
         
         const callback = (score, scoreUpdateTimer) => {
         

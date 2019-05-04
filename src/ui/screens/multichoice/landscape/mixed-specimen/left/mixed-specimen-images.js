@@ -25,7 +25,7 @@ export const listenToImageSelection = listener => {
 
 export const renderMixedSpecimenImages = collection => {
 
-    const { config, score, lessonPlan } = store.getState();
+    const { config, score, lesson } = store.getState();
 
     const item = collection.nextItem;
 
@@ -80,7 +80,7 @@ export const renderMixedSpecimenImages = collection => {
 
             const test = { ...score, itemId: selectedItem.id, 
                 question, answer, binomial: selectedItem.name, 
-                questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, 
+                questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, 
                 points: 0, icon: matchIcon(item.taxonomy, iconicTaxa),
                 vernacularName: itemProperties.getVernacularName(species.find(sp => sp.name === question), config),
                 answerVernacularName: itemProperties.getVernacularName(species.find(sp => sp.name === answer), config)};
