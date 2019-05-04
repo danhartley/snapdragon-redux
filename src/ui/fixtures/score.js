@@ -13,9 +13,12 @@ export const renderScore = (score) => {
 
      // lesson.currentRound
 
+     const currentRound = lesson.currentRound;
+    //  const currentRound = collection.currentRound;
+
     template.innerHTML = config.isPortraitMode
             ?   `<div><span>Score: {{ score.correct }} / {{ score.total }}</span></div>`
-            :   `<div class="round-footer">{{ layout.levelName }}, round {{ collection.currentRound }}</div>
+            :   `<div class="round-footer">{{ layout.levelName }}, round {{ currentRound }}</div>
                 <div class="score-footer">
                     <span>{{ score.correct }} {{ scoreText }}</span>
                     <span style="display:none;">Score: {{ score.correct }} / {{ score.total }}</span>
@@ -33,7 +36,7 @@ export const renderScore = (score) => {
 
     parent.innerHTML = '';
 
-    renderTemplate({ score, history: runningTotal, collection, config, layout, scoreText }, template.content, parent);
+    renderTemplate({ score, history: runningTotal, collection, config, layout, scoreText, currentRound }, template.content, parent);
 
     score.mode = config.mode;
 

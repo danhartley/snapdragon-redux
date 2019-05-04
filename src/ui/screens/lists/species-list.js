@@ -52,7 +52,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                         });                
                         collection.items.forEach(item => item.isDeselected = true);
                     }                
-                    actions.boundChangeCollectionItems(collection.items);
+                    actions.boundUpdateCollectionItems(collection.items);
                 });
             }
         }
@@ -66,7 +66,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                     const name = checkbox.getAttribute('name');
                     const item = collection.items.find(item => item.name === name);
                     item.isDeselected = !checkbox.checked;
-                    actions.boundChangeCollectionItems(collection.items);
+                    actions.boundUpdateCollectionItems(collection.items);
                 });
             }
         });
@@ -149,13 +149,13 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                 continueLearningActionBtn.innerHTML = 'Continue lesson';
             }
             
-            if(collection.isLessonComplete) { // lesson.isLessonComplete
+            if(lesson.isLessonComplete) {
                 continueLearningActionBtn.innerHTML = 'End lesson (delete data) | Choose a new lesson';
             }
 
             continueLearningActionBtn.addEventListener('click', event => {
 
-                if(collection.isLessonComplete) { // lesson.isLessonComplete
+                if(lesson.isLessonComplete) {
                     lessonHandler.purgeLesson();
                 } else {
                     if(readOnlyMode) {

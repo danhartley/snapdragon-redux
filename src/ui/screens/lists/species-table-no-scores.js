@@ -169,7 +169,7 @@ export const buildTable = (collection, config, traits, enums) => {
             });
         });
     
-        actions.boundChangeCollectionItems(sortedItems);        
+        actions.boundUpdateCollectionItems(sortedItems);        
     };
 
     utils.makeSortable(document, callback, wide);

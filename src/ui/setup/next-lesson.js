@@ -14,10 +14,10 @@ export const nextLesson = (counter) => {
     const planId = config.isPortraitMode ? collection.lessonPlanPortrait : collection.lessonPlanLandscape;    
     const plan = R.clone(userEditedPlan) || R.clone(lessonPlans.find(plan => plan.id === planId && plan.portrait === config.isPortraitMode));
     
-    if(collection.isNextRound && counter.index === 0) { // lesson.isNextRound
+    if(lesson.isNextRound && counter.index === 0) {
         if(collection.items.length > 0) {
-            const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(plan, config, R.clone(collection));
-            actions.boundNextLessonPlan({ lessonPlan: updatedLessonPlan, collection: updatedCollection });
+            const { updatedLessonPlan, updatedCollection, updatedLesson } = lessonPlanner.createLessonPlan(plan, config, R.clone(collection), R.clone(lesson));
+            actions.boundNextLesson({ lessonPlan: updatedLessonPlan, collection: updatedCollection, lesson: updatedLesson });
         } else {
             console.log("There are no items in the Snapdragon collection");
         }

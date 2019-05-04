@@ -7,8 +7,11 @@ export const lesson = (state = { currentRound: 1, rounds: 0, isNextRound: true }
         case 'persist/REHYDRATE':
             return state;
         
-        case types.NEXT_LAYOUT: {
+        case types.UPDATE_LESSON: {
+            return { ...state, ...action.data };
+        }
 
+        case types.NEXT_LAYOUT: {
             return { ...state, layoutName: action.data.name };
         }
 
@@ -28,7 +31,7 @@ export const lesson = (state = { currentRound: 1, rounds: 0, isNextRound: true }
             isLevelComplete = noLessonSelected ? false : state.currentRound === state.rounds;
     
             if(state.level && state.level.id && state.levels) {
-                isLessonComplete = isLevelComplete && (state.lesson.levels[state.lesson.levels.length -1].id === state.lesson.level.id);
+                isLessonComplete = isLevelComplete && (state.levels[state.levels.length -1].id === state.level.id);
             }
 
             return { ...state, layoutCounter, isNextRound, isLevelComplete, isLessonComplete };
@@ -40,12 +43,14 @@ export const lesson = (state = { currentRound: 1, rounds: 0, isNextRound: true }
 
             let layoutCounter = state.layoutCounter;
 
-            if(state.isLevelComplete) {
-                layoutCounter = 0;
-                let levelId = state.level.id + 1;
-                let level = state.levels.find(level => level.id === levelId);
-                currentRound = 1;
-            }
+            let level = state.level;
+
+            // if(state.isLevelComplete) {
+            //     layoutCounter = 0;
+            //     let levelId = state.level.id + 1;
+            //     level = state.levels.find(level => level.id === levelId);
+            //     currentRound = 1;
+            // }
 
             return { ...state, currentRound, layoutCounter, level };
         }
@@ -56,7 +61,7 @@ export const lesson = (state = { currentRound: 1, rounds: 0, isNextRound: true }
             let layoutCounter = 0;
             let layoutCount = action.data.lessonPlan.layoutCount;
             
-            return { ...state, isNextRound, layoutCounter, layoutCount };
+            return { ...state, ...action.data.lesson, isNextRound, layoutCounter, layoutCount };
         }
 
         case types.NEXT_LEVEL: {

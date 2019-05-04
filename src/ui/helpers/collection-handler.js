@@ -2,7 +2,6 @@ import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
-import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
 import { snapdragonCollections as collections } from 'snapdragon-config/snapdragon-collections';
@@ -68,8 +67,6 @@ export const keepItems = collection => {
 
 export async function collectionHandler(collection, config, counter, callback, callbackWhenNoResults) {
     
-    const { lesson } = store.getState(); // or probably better, pass in
-
     if(counter.isLessonPaused) {
         collection.items = await keepItems(collection);
         callback(collection, config)();
@@ -88,7 +85,6 @@ export async function collectionHandler(collection, config, counter, callback, c
 
             collection.name = config.guide.place.name;
             collection.items = collection.items.filter(i => i);
-
             collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
             collection.items.forEach((item,index) => {
 
@@ -101,20 +97,13 @@ export async function collectionHandler(collection, config, counter, callback, c
                 item.genus = names[0];
                 item.species = names[1];
                 item.name = names.slice(0,2).join(' ');
-            })
-
-            collection.moduleSize = collection.moduleSize || config.moduleSize;
-            const rounds = collection.items.length / collection.moduleSize;
-            collection.rounds = collection.items.length % collection.moduleSize === 0 ? rounds : rounds === 1 ? 1 : Math.floor(rounds) + 1;
-
-
+            });
             collection.speciesRange = config.speciesRange;
             collection.iconicTaxa = config.guide.iconicTaxa;
-
             collection.itemIndex = 0;
-            collection.currentRound = 1; // lesson.currentRound
 
             actions.boundNewCollection({ config, collection });
+            
             callback(collection, config)();
         } else {
             console.log('** Hitting callbackWhenNoResults() **');

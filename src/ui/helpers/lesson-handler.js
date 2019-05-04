@@ -39,36 +39,42 @@ const getLessonItems = (lessonStateMode, collection, config, history) => {
         }
         case 'next-round': {
             const itemsToReview = stats.getItemsForRevision(collection, history, 1);
-            const mode = getMode(config.mode, collection.isLevelComplete, itemsToReview); // lesson.isLevelComplete
+            const mode = getMode(config.mode, lesson.isLevelComplete, itemsToReview);
             config.mode = mode;
 
             switch(mode) {  
                 case 'learn': {
-                    if(collection.isLevelComplete) { // lesson.isLevelComplete
-                        actions.boundNextLevel({ index: 0 });
-                    } else if(collection.isNextRound) { // lesson.isNextRound
-                        actions.boundNextRound({ index: 0 });
+                    if(lesson.isLevelComplete) {
+                        actions.boundNextLevel({ index: 0, lesson });
+                    } else if(lesson.isNextRound) {
+                        actions.boundNextRound({ index: 0, lesson });
                     };
                     break;
                 }
                 case 'review' : {
-                    collection.isLevelComplete = false; // lesson.isLevelComplete
-                    collection.moduleSize = (collection.moduleSize > itemsToReview.length) ? itemsToReview.length : collection.moduleSize;
-                    collection.rounds = Math.ceil(itemsToReview.length / collection.moduleSize);
+                    
+                    lesson.isLevelComplete = false;
+                    lesson.moduleSize = (lesson.moduleSize > itemsToReview.length) ? itemsToReview.length : lesson.moduleSize;
+                    lesson.rounds = Math.ceil(itemsToReview.length / lesson.moduleSize);
+                    
+                    actions.boundUpdateLesson(lesson);
+
                     collection.itemIndex = 0;
                     collection.allItems = collection.items;
                     collection.items = itemsToReview;
-                    actions.boundChangeCollection({ config: config, collection });
-                    actions.boundNextRound({ index: 0 });
+                    
+                    actions.boundUpdateCollection({ config, collection });
+
+                    actions.boundNextRound({ index: 0, lesson });
                     // console.clear();
-                    console.warn('lesson-handler, review: boundChangeCollection');
+                    console.warn('lesson-handler, review: boundUpdateCollection');
                     break;
                 }
                 case 'learn-again': {
                     collection.items = collection.allItems; // handle in reducer?
                     // console.clear();
-                    actions.boundChangeCollection({ config, collection });
-                    console.warn('lesson-handler, learn-again: boundChangeCollection');
+                    actions.boundUpdateCollection({ config, collection });
+                    console.warn('lesson-handler, learn-again: boundUpdateCollection');
                 }
             }            
             break;      

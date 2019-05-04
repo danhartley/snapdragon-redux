@@ -7,11 +7,15 @@ export const counter = (state = null, action) => {
     switch(action.type) {
         case 'persist/REHYDRATE':
             return action.payload ? { ...action.payload.counter, isLessonRehydrated: true } : state;
-        case types.CHANGE_COLLECTION:    
+        case types.UPDATE_COLLECTION:    
             return { ...state, isLessonRehydrated: false };
         case types.NEXT_ROUND:
             return { index: 0 };
         case types.NEXT_LEVEL:
+            // const _counter = action.data;
+            // const isLessonPaused = (!!_counter && !!_counter.log);
+            // return { index: action.data.index, isLessonPaused };
+            return { ...state, index: action.data.index };
         case types.STOP_START_LESSON:
             const _counter = action.data;
             const isLessonPaused = (!!_counter && !!_counter.log);
@@ -73,7 +77,7 @@ export const score = (state = R.clone(progressState.score), action) => {
             return R.clone(progressState.score);
         case types.NEXT_ROUND:
         case types.NEXT_LEVEL:
-        case types.CHANGE_COLLECTION:
+        case types.UPDATE_COLLECTION:
             return { ...progressState.score, ...{ fails: [], passes: []} };
         default:
             return state;

@@ -64,7 +64,7 @@ test('when user selects a collection state should be populated', () => {
         }
     };
 
-    actions.boundChangeCollection(data); // user action (clicking on a collection) triggers CHANGE_COLLECTION
+    actions.boundUpdateCollection(data); // user action (clicking on a collection) triggers UPDATE_COLLECTION
 
     const { config, collection, score } = store.getState();
 
@@ -299,8 +299,8 @@ test('when user selects a collection state should be populated', () => {
         itemIndex: 0
     };
 
-    actions.boundChangeCollection({config, collection});
-    actions.boundNextLessonPlan({ lessonPlan: _lessonPlan, collection : _collection});
+    actions.boundUpdateCollection({config, collection});
+    actions.boundNextLesson({ lessonPlan: _lessonPlan, collection : _collection});
 
     expect(store.getState().counter).toEqual( {"isLessonRehydrated": false});
 

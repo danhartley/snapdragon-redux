@@ -22,14 +22,16 @@ export const renderSummary = history => {
     
     let actionLink = document.querySelector('.js-create-guide-link');
 
-    if(collection.isLessonComplete) actionLink.innerHTML = 'Choose new'; // lesson.isLessonComplete
+    if(lesson.isLessonComplete) actionLink.innerHTML = 'Choose new'; // lesson.isLessonComplete
+    // if(collection.isLessonComplete) actionLink.innerHTML = 'Choose new'; // lesson.isLessonComplete
 
     const handleBtnClickEvent = event => {
 
         subscription.remove(subscription.getByName('renderSummary'));
         subscription.remove(subscription.getByName('renderHistory'));
 
-        if(collection.isLessonComplete) { // lesson.isLessonComplete
+        // if(collection.isLessonComplete) { // lesson.isLessonComplete
+        if(lesson.isLessonComplete) { // lesson.isLessonComplete
             lessonHandler.purgeLesson();
         }
         else lessonHandler.getLessonItems('next-round', collection, config, history);
