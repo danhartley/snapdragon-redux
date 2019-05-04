@@ -72,13 +72,12 @@ export const lesson = (state = { currentRound: 1, rounds: 0, isNextRound: true }
         case types.UPDATE_COLLECTION: {
 
             if(action.data.config.mode === 'learn-again') {
-                const currentRound = state.rounds;
                 const isNextRound = true;
                 const isLevelComplete = true;
                 const currentRound = 1;
 
                 return { ...state, currentRound, isNextRound, isLevelComplete, currentRound };
-                
+
             } else {
                 return state;
             }
