@@ -7,13 +7,15 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { taxa } from 'api/snapdragon/taxa';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
+import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
+
 import taxonTemplate from 'ui/screens/cards/taxon-template.html';
 
 export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, speciesTaxon, rank) => {
   
     const item = selectedItem || collection.nextItem;
 
-    const { lessonPlan, config } = store.getState();
+    const { config } = store.getState();
 
     let rootNode;
 
@@ -67,6 +69,9 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
             break;
     }
 
+    const familyStats = familyProps.getFamilyStats(collection.items);
+    const occurrences = familyStats ? familyStats[taxon.name] : 0;
+    
     const context = {
         rank: rank,
         name: taxonName,
@@ -79,7 +84,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
         summary: itemProperties.getNestedTaxonProp(taxon, config.language, 'descriptions', 'summary'),
         eol: taxon.eol ? taxon.eol.replace('en', config.language) : '',
         wiki: taxon.wiki ? taxon.wiki.replace('en', config.language) : '',
-        occurrences: collection.familyStats ? collection.familyStats[taxon.name] : 0,
+        occurrences: occurrences,
         toxic: taxon.toxic ? `Toxic species: ${taxon.toxic.members.join(', ')}` : '',
         notableMembers: taxon.members ? R.take(2, taxon.members).join(', ') : ''
     }

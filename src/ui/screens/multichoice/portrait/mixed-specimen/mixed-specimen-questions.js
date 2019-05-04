@@ -14,7 +14,7 @@ import { getPoolItems } from 'ui/screens/multichoice/missing-data-helper';
 
 export const renderMixedSpecimenQuestions = collection => {
 
-    const { config, lessonPlan, layout, score } = store.getState();
+    const { config, lesson, layout, score } = store.getState();
 
     const item = collection.nextItem;
 
@@ -76,7 +76,7 @@ export const renderMixedSpecimenQuestions = collection => {
             // layer.appendChild(answerIcon);
             document.querySelector('.attribution-layer').style.display = 'none';
             
-            const test = { ...score, itemId: item.id, question, answer, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
+            const test = { ...score, itemId: item.id, question, answer, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points};
 
             const callback = (score, scoreUpdateTimer) => {
                 boundScore.score = score;

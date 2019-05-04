@@ -11,7 +11,7 @@ import wildcardTemplate from 'ui/screens/cards/wildcard-card-template.html';
 export const renderWildcard = collection => {
 
     const item = collection.nextItem;
-    const { lessonPlan } = store.getState();
+    const { lesson } = store.getState();
 
     const template = document.createElement('template');
 
@@ -41,7 +41,7 @@ export const renderWildcard = collection => {
     renderTemplate(context, template.content, parent);
 
     document.querySelector('.js-trait-card-btn').addEventListener('click', event => {
-        actions.boundEndRevision({ layoutCount: lessonPlan.layoutCount });
+        actions.boundEndRevision({ layoutCount: lesson.layoutCount });
     });
 
 };

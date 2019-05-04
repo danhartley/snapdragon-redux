@@ -161,6 +161,7 @@ const traitPropertyMatch = {
     score: 1,
     points: 1,
     kind: 'MC',
+    bonus: true,
     given: 'Given specimenImages images',
     requirement: 'Select trait value',
     screens: [

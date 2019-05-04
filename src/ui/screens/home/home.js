@@ -5,18 +5,19 @@ import { DOM } from 'ui/dom';
 import { store, persistor } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
 import { renderSpeciesCollectionList, listenToSpeciesCollectionListenReady } from 'ui/screens/lists/species-list';
-import { lessonLogicHandler } from 'ui/helpers/lesson-handlers';
+import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { renderTemplate } from 'ui/helpers/templating';
-import homeTemplate from 'ui/screens/home/home-template.html';
 import { createGuideHandler } from 'ui/create-guide-modal/create-guide';
 import { renderExampleGuideHandler } from 'ui/example-guide-modal/example-guide';
 import { renderGuideSummary } from 'ui/screens/home/home-guide-summary';
 import { listenToCloseCreateGuideModal } from 'ui/create-guide-modal/create-guide';
 import { listenToCloseExampleGuideModal } from 'ui/example-guide-modal/example-guide';
 
+import homeTemplate from 'ui/screens/home/home-template.html';
+
 export const renderHome = (counter, loadSpeciesList = true, noRecords = false) => {
 
-    let { config, collection } = store.getState();
+    let { config, collection, lesson } = store.getState();
 
     let skip = counter.index !== null && counter.index >= 0 && !counter.isLessonPaused;
 
@@ -37,7 +38,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     renderTemplate({}, template.content, DOM.rightBody);
 
     let state = (config.collection.id === 0 || !config.guide.ready)
-            ? 'CREATE-LESSON' : (collection && collection.layoutCounter > 0)
+            ? 'CREATE-LESSON' : (collection && collection.layoutCounter > 0) // lesson.layoutCounter
                 ? 'RESUME-LESSON'
                 : noRecords
                     ? 'CREATE-LESSON'
@@ -85,14 +86,14 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     const beginLessonHandler = () => {
         const { collection, config, history } = store.getState();
         const lessonStateMode = 'new-lesson';
-        lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);        
+        lessonHandler.getLessonItems(lessonStateMode, collection, config, history);        
         actionLink.disabled = false;
     };
 
     const resumeLessonHandler = () => {
         const { collection, config, history } = store.getState();
         const lessonStateMode = 'restart-lesson';
-        lessonLogicHandler.changeCollection(lessonStateMode, collection, config, history, actionLink);        
+        lessonHandler.getLessonItems(lessonStateMode, collection, config, history);        
         subscription.remove(subscription.getByName('renderSpeciesGrid'));
     };
 

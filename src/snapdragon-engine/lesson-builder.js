@@ -1,12 +1,14 @@
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 
-export const createLesson = (lessonPlan, layouts, progressScreens, collection, wildcardLayouts) => {
+export const createLesson = (lessonPlan, layouts, progressScreens, collection, bonusTests, bonusLayouts, lesson) => {
 
     lessonPlan.layouts = [];
 
-    const { moduleSize, lessonName, levelName } = collection;
-    const itemsCountToDate = (collection.currentRound - 1) * moduleSize;
+    const moduleSize = lesson.moduleSize;
+    const lessonName = lesson.name;
+    const levelName = lesson.level.name;
+    const itemsCountToDate = (lesson.currentRound - 1) * moduleSize;
     const itemsLeft = collection.items.length - itemsCountToDate;
 
     const layoutsToAdd = moduleSize > itemsLeft ? itemsLeft : moduleSize;
@@ -19,35 +21,13 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, w
         } while (i < layoutsToAdd);
     });
 
-    wildcardLayouts.forEach(layout => {
-        layout.lessonName = lessonName;
-        layout.levelName = levelName;
-    });
-
-    const lessonLayouts = [ ...lessonPlan.layouts.filter(layout => layout.type === 'test'), ...wildcardLayouts].map( (layout, i) => {
-        layout.itemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
-        layout.progressIndex = i + 1;
+    const lessonLayouts = lessonPlan.layouts.map((layout, i) => {
+        layout.itemIndex = layout.itemIndex === undefined ? utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i) : layout.itemIndex;
+        layout.roundProgressIndex = i + 1;
         return { ...layout };
     });
 
-    let hasGlossary = false;
-    const glossary = lessonPlan.layouts.find(layout => layout.name === 'screen-definition-card');
-
-    if(glossary) {
-        lessonLayouts.forEach((layout, index) => {
-            if(!hasGlossary) {
-                glossary.itemIndex = 0;
-                lessonLayouts.splice(index, 0, glossary);
-                hasGlossary = true;
-            }
-        });
-    }
-
-    lessonPlan.layouts = [ ...lessonLayouts ];
-
-    lessonPlan.lessonName = lessonName;
-    lessonPlan.levelName = levelName;
-    lessonPlan.moduleSize = moduleSize;
+    lessonPlan.layouts = [ ...lessonLayouts, ...bonusLayouts ];
 
     const summaryLayout = lessonPlan.portrait 
         ? {
@@ -78,11 +58,9 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, w
 
     lessonPlan.layouts.map(layout => layout.roundScoreCount = roundScoreCount);
 
-    lessonPlan.moduleSize = moduleSize;
-    lessonPlan.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
-    lessonPlan.layoutCount = lessonPlan.layouts.length;
-    lessonPlan.layoutNames = lessonPlan.layouts.map(layout => layout.name);
-    lessonPlan.wildcardLayouts = wildcardLayouts;
+    lesson.questionCount = lessonPlan.layouts.filter(layout => layout.type === 'test').length;
+    lesson.layoutCount = lessonPlan.layouts.length;
+    lesson.layoutNames = lessonPlan.layouts.map(layout => layout.name);
 
-    return { updatedLessonPlan: lessonPlan, updatedCollection: collection };
+    return { updatedLessonPlan: lessonPlan, updatedCollection: collection, updatedLesson: lesson };
 };

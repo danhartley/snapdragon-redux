@@ -3,7 +3,7 @@ import { config as lessonConfig } from 'snapdragon-config/lesson-config';
 
 export const config = (state = lessonConfig, action) => {
     switch(action.type) {
-        case types.CHANGE_COLLECTION:        
+        case types.UPDATE_COLLECTION:        
             return { ...action.data.config, ...{ coordinates: state.coordinates }, ...{ place: state.place } };    
         case types.UPDATE_CONFIG:
             return { ...state, ...action.data };

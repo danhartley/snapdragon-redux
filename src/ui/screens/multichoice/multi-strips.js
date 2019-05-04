@@ -12,35 +12,25 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
-import { syndromes } from 'api/snapdragon/syndromes';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
-import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { rebindLayoutState } from 'ui/screens/multichoice/missing-data-helper';
 import { getTraits } from 'api/traits/traits';
+
+import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
-import * as SD from 'api/traits/trait-types';
 
-export const renderMultiStrips = (collection) => {
+export const renderMultiStrips = (collection, bonus) => {
 
-    const { config, lessonPlan, layout } = store.getState();
+    const { config, lesson, layout } = store.getState();
 
     const item = collection.nextItem;
-    const items = collection.allItems || collection.items;
 
     const taxon = matchTaxon(item.taxonomy, iconicTaxa);
-    const inconicTaxonFamilies = familyProps.getUniqueFamiliesByIconicTaxon(species, taxon.rank, taxon.value);
-    const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, inconicTaxonFamilies));
+    const iconicTaxonFamilies = familyProps.getUniqueFamiliesByIconicTaxon(species, taxon.rank, taxon.value);
+    const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, iconicTaxonFamilies));
 
-    const familyFlavours = [ 'match-family-to-quick-id', 'match-family-to-summary' ];
-
-    let screen = layout.screens.find(screen => screen.name === 'family-strips');
-    
-    if(screen) {
-        screen.flavour = utils.shuffleArray(familyFlavours)[0];
-    } else { 
-        screen = layout.screens[1];
-    }
+    screen = layout.screens[1];
 
     try {
 
@@ -80,7 +70,7 @@ export const renderMultiStrips = (collection) => {
 
         const taxon = { name: item.family, binomial: item.name, question: questionValue };
 
-        const test = { itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lessonPlan.questionCount, layoutCount: lessonPlan.layoutCount, points: layout.points};
+        const test = { itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points};
         
         const callback = (score, scoreUpdateTimer) => {
         
@@ -139,73 +129,42 @@ export const renderMultiStrips = (collection) => {
         render(question, answers, { vernacularName: 'Common name', question: 'What is the common name?', help });
     }
 
-    if(layout.screens.find(screen => screen.flavour === 'match-family-to-quick-id')) {
+    if(screen.name === 'family-strips') {
 
-        const ffs = species.filter(s => s.kingdom === item.kingdom).map(s => s.family);
-        const ns = taxa.map(t => t.name);
-        const missing = ffs.filter(f => !R.contains(f,ns));
-        console.log(missing.filter(utils.onlyUnique));
+        const random = utils.getRandomInt(2);
     
+        // 'match-family-to-quick-id'
+        if(random === 0) {
 
-        const number = config.isPortraitMode ? 4 : 4;
-
-        const question = families.length > 0 ? families.find(f => f.name === item.family).descriptions[0].identification : 'no families available';
-        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family && f.descriptions && f.descriptions[0].identification && f.descriptions[0].identification !== undefined && f.descriptions[0].identification !== '')).map(f => f.descriptions[0].identification);
-        const answers = utils.shuffleArray([question, ...alternatives]);
-
-        const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
-
-        render(question, answers, { question: 'Match species family', help });
-    }
-
-    if(layout.screens.find(screen => screen.flavour === 'match-family-to-summary')) {
+            const ffs = species.filter(s => s.kingdom === item.kingdom).map(s => s.family);
+            const ns = taxa.map(t => t.name);
+            const missing = ffs.filter(f => !R.contains(f,ns));
+            console.log(missing.filter(utils.onlyUnique));
         
-        const number = config.isPortraitMode ? 4 : 4;
-        const itemFamily = families.find(f => f.name === item.family);
-        const question = itemFamily.descriptions[0].summary;
-        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family && f.descriptions && f.descriptions[0].summary && f.descriptions[0].summary !== undefined && f.descriptions[0].summary !== '')).map(f => f.descriptions[0].summary);
-        const answers = utils.shuffleArray([question, ...alternatives]);
+            const number = config.isPortraitMode ? 4 : 4;
 
-        const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
+            const question = families.length > 0 ? families.find(f => f.name === item.family).descriptions[0].identification : 'no families available';
+            const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family && f.descriptions && f.descriptions[0].identification && f.descriptions[0].identification !== undefined && f.descriptions[0].identification !== '')).map(f => f.descriptions[0].identification);
+            const answers = utils.shuffleArray([question, ...alternatives]);
 
-        render(question, answers, { question: 'Match species family', help });
-    }
+            const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
 
-    if(screen.name === 'wildcard-match') {
-
-        const getTraits = (traits) => {
-            const _traits = [];
-            traits.forEach(trait => {
-                const _trait = items.map( (item, i) => {                
-                    return {
-                        traits: R.flatten(syndromes.traits.map(trait => {
-                            const t = trait.keys.find(key => key.key === trait);
-                            return { trait: trait.name, value: t.value, description: t.description || '' };
-                        })),
-                        index: i
-                    };                
-                }).filter(c => c);
-                _traits.push(_trait[0].traits);
-            });
-
-            const options = _traits.map(trait => trait.map(t => {
-                return `${t.trait}: ${t.value}`;
-            }));
-
-            return options.map(option => option.join('; '));
+            render(question, answers, { question: 'Match species family', help });
         }
 
-        const number = config.isPortraitMode ? 2 : 2;
+        // 'match-family-to-summary'
+        if(random === 1) {
+            
+            const number = config.isPortraitMode ? 4 : 4;
+            const itemFamily = families.find(f => f.name === item.family);
+            const question = itemFamily.descriptions[0].summary;
+            const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family && f.descriptions && f.descriptions[0].summary && f.descriptions[0].summary !== undefined && f.descriptions[0].summary !== '')).map(f => f.descriptions[0].summary);
+            const answers = utils.shuffleArray([question, ...alternatives]);
 
-        const pollinators = R.take(number, utils.shuffleArray(['beetle', 'bird', 'butterfly', 'fly', 'moth', 'wind']));
-        
-        const traits = getTraits(pollinators);
-        const question = getTraits(['bee'])[0];
+            const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
 
-        const questionText = `Which set of traits best fits the ${item.family}?`;
-        const answers = utils.shuffleArray([question, ...traits]);
-
-        render(questionText, question, answers);
+            render(question, answers, { question: 'Match species family', help });
+        }
     }
 
     if(screen.name === 'epithet') {
@@ -280,88 +239,8 @@ export const renderMultiStrips = (collection) => {
         } 
     }
 
-    if(screen.name === 'symbiotic-property') {
-
-        const { enums } = store.getState();
-
-        const speciesTraits = getTraits(enums, item).find(trait => trait.name === item.name).traits;
-
-        const enumeratedRoles = SD.enums.role;
-
-        const roles = [];
-
-        for (var key in enumeratedRoles) {
-            roles.push(enumeratedRoles[key]);
-        }
-
-        const symbioticTraits = speciesTraits.filter(st => R.contains(st.name, roles));
-        const symbioticSpecies = symbioticTraits.map(st => st.value.split(',').map(value => {
-            if(value.indexOf(' ') > 0) {
-                return {
-                    name: st.name,
-                    value: value
-                }
-            } else { return null; }
-        })[0]).filter(ss => ss);
-
-        console.log(symbioticTraits);
-
-        // Not sure where to go with this yet!
-    }
-
     if(screen.name === 'trait-property') {
-
-        const { enums } = store.getState();
-
-        const speciesTraits = getTraits(enums, item).find(trait => trait.name === item.name);
-
-        const typedSpeciesTraits = SD.typedSpecies(enums, speciesTraits);
-
-        const trait = R.take(1, utils.shuffleArray(typedSpeciesTraits))[0];
-
-        const help =  trait.help ? `(${trait.help})` : `(${trait.name})`;
-
-        let traits = [ ];
-        let propsToIgnore = [ 'type', 'name', 'help'];
-
-        if(trait.type) {
-            Object.keys(SD.enums[trait.type]).forEach(key => {
-                let value = SD.enums[trait.type][key];
-                if(!R.contains(key, propsToIgnore)) {
-                    traits.push(value);
-                }            
-            });
-        }
-
-        const question = trait.value.value 
-                            ? trait.value.value
-                            : trait.value.key
-                                ? trait.value.key
-                                : trait.value;
-                               
-        const variables = question.split(',').length;                                
-        const number = variables * 5;
-
-        traits = R.take(number, traits.filter(t => t !== trait.value));
-        traits = [ ...traits, trait.value ];
-
-        const pool = traits.map(trait => {
-            let t = trait.value 
-                        ? trait.value 
-                        : trait.key
-                            ? trait.value 
-                            : trait;
-            
-            if(trait.indexOf(',') > -1) {
-                t = null;
-            }
-
-            return t;
-        }).filter(item => item);
-
-        const answers = utils.getSetOfAnswers(variables, pool, trait);
-
-        render(question, answers, { question: 'Match the trait', help });
+        render(bonus.question, bonus.answers, bonus.overrides);
     }
 
     if(screen.name === 'birdsong') {

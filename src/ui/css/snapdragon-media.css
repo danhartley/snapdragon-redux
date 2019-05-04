@@ -37,6 +37,14 @@
     }
 }
 
+/* Galaxy S5 */
+
+@media (min-width:360px) {
+    .names-container .vernacular-name {
+        max-width: 15rem;
+    }
+}
+
 /* iPHONE 6,7,8 PLUS, iPHONE X, GALAXY S9/S9+ */
 
 @media  (max-width:414px) and (min-height:736px),

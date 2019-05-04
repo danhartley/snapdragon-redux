@@ -1,5 +1,7 @@
 import { types } from 'redux/actions/action-types';
 
+
+// Only required if we reintorduce lesson plan editing
 export const lessonPlans = (state = null, action) => {
     switch(action.type) {
         case types.CHANGE_LESSON_PLANS:

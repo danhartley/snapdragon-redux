@@ -28,10 +28,10 @@ test('intial state of the app should be consistent', () => {
     expect(lessonPlan).toEqual(null);
     expect(layout).toEqual(null);
 
-    const { collections, collection } = store.getState();
+    const { collections, collection, lesson } = store.getState();
     expect(collections.length).toBeGreaterThan(0);
-    const received =  {"currentRound": 1, "descriptions": null, "id": 0, "isNextRound": true,"rounds": 0};
-    expect(collection).toEqual(received);
+    const received = {"currentRound": 1, "isNextRound": true, "rounds": 0};
+    expect(lesson).toEqual(received);
 
     const { counter, score, history } = store.getState();
     expect(counter).toEqual(null);
@@ -61,12 +61,15 @@ test('when user selects a collection state should be populated', () => {
                 }
             ],
             itemIndex: 0
+        }, 
+        lesson: {
+
         }
     };
 
-    actions.boundChangeCollection(data); // user action (clicking on a collection) triggers CHANGE_COLLECTION
+    actions.boundUpdateCollection(data); // user action (clicking on a collection) triggers UPDATE_COLLECTION
 
-    const { config, collection, score } = store.getState();
+    const { config, collection, score, lesosn } = store.getState();
 
     expect(config.collection.id).toEqual(1);
     expect(score).toEqual(progressState.score);
@@ -92,7 +95,6 @@ test('when user selects a collection state should be populated', () => {
         ],
         layoutIndex: 0,
         itemIndex: 0,
-        progressIndex: 1,
         lessonName: 'Lesson 1',
         levelName: 'Level 1'
         },
@@ -114,7 +116,6 @@ test('when user selects a collection state should be populated', () => {
         ],
         layoutIndex: 1,
         itemIndex: 1,
-        progressIndex: 1,
         lessonName: 'Lesson 1',
         levelName: 'Level 1'
         },
@@ -137,7 +138,6 @@ test('when user selects a collection state should be populated', () => {
         ],
         layoutIndex: 2,
         itemIndex: 0,
-        progressIndex: 2,
         lessonName: 'Lesson 1',
         levelName: 'Level 1'
         },
@@ -160,7 +160,6 @@ test('when user selects a collection state should be populated', () => {
         ],
         layoutIndex: 3,
         itemIndex: 1,
-        progressIndex: 2,
         lessonName: 'Lesson 1',
         levelName: 'Level 1'
         },
@@ -183,7 +182,6 @@ test('when user selects a collection state should be populated', () => {
         ],
         layoutIndex: 4,
         itemIndex: 0,
-        progressIndex: 3,
         lessonName: 'Lesson 1',
         levelName: 'Level 1'
         },
@@ -206,7 +204,6 @@ test('when user selects a collection state should be populated', () => {
         ],
         layoutIndex: 5,
         itemIndex: 1,
-        progressIndex: 3,
         lessonName: 'Lesson 1',
         levelName: 'Level 1'
         },
@@ -229,7 +226,6 @@ test('when user selects a collection state should be populated', () => {
         ],
         layoutIndex: 6,
         itemIndex: 0,
-        progressIndex: 4,
         lessonName: 'Lesson 1',
         levelName: 'Level 1'
         },
@@ -264,7 +260,6 @@ test('when user selects a collection state should be populated', () => {
         ],
         layoutIndex: 7,
         itemIndex: 1,
-        progressIndex: 4,
         lessonName: 'Lesson 1',
         levelName: 'Level 1'
         }
@@ -301,14 +296,15 @@ test('when user selects a collection state should be populated', () => {
                 ]
             }
         ],
-        lesson: {
-            level: {id:1}
-        },
         itemIndex: 0
     };
 
-    actions.boundChangeCollection({config, collection});
-    actions.boundNextLessonPlan({ lessonPlan: _lessonPlan, collection : _collection});
+    const _lesson = {
+        level: {id:1}
+    };
+
+    actions.boundUpdateCollection({config, collection});
+    actions.boundNextLesson({ lessonPlan: _lessonPlan, collection : _collection, lesson: _lesson});
 
     expect(store.getState().counter).toEqual( {"isLessonRehydrated": false});
 

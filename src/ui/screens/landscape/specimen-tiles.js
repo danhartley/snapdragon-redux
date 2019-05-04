@@ -3,13 +3,14 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils'; 
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
-import { modalImagesHandler } from 'ui/helpers/image-handlers';
 import { renderTemplate } from 'ui/helpers/templating';
+import { modalImagesHandler } from 'ui/helpers/image-handlers';
 import { imageUseCases, prepImagesForCarousel, prepImageForCarousel } from 'ui/helpers/image-handlers';
-import specimensTemplate from 'ui/screens/landscape/specimen-tiles-template.html';
 import { renderSpeciesGrid } from 'ui/screens/home/species-grid';
 
-export const renderSpecimenTiles = (collection) => {
+import specimensTemplate from 'ui/screens/landscape/specimen-tiles-template.html';
+
+export const renderSpecimenTiles = collection => {
 
     const { layout } = store.getState();
 

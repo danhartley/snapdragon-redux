@@ -16,11 +16,10 @@ import { renderWildcard } from 'ui/screens/cards/wildcard-card';
 import { renderDefinitionCard } from 'ui/screens/cards/definition-card';
 import { renderMixedSpecimenQuestions } from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-questions';
 import { renderNonTaxonCardSpecimenTiles } from 'ui/screens/cards/non-taxon-card-specimen-tiles';
-
 import { renderMixedSpecimenQuestion } from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question';
 import { renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
-
 import { renderMediaPlayers } from 'ui/screens/media/landscape/media-players';
+import { renderBonusTest } from 'ui/screens/bonus/bonus-test';
 
 const functions = [
     { name: 'mixed-specimen-questions', func: renderMixedSpecimenQuestions },
@@ -47,7 +46,8 @@ const functions = [
     { name: 'wildcard-card', func: renderWildcard },
     { name: 'wildcard-match', func: renderMultiStrips },
     { name: 'visual-match', func: renderMultiStrips },
-    { name: 'trait-property', func: renderMultiStrips },
+    // { name: 'trait-property', func: renderMultiStrips },
+    { name: 'trait-property', func: renderBonusTest },
     { name: 'symbiotic-property', func: renderMultiStrips },
     { name: 'definition-card', func: renderDefinitionCard },
     
