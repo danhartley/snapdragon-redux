@@ -28,10 +28,10 @@ test('intial state of the app should be consistent', () => {
     expect(lessonPlan).toEqual(null);
     expect(layout).toEqual(null);
 
-    const { collections, collection } = store.getState();
+    const { collections, collection, lesson } = store.getState();
     expect(collections.length).toBeGreaterThan(0);
-    const received =  {"currentRound": 1, "descriptions": null, "id": 0, "isNextRound": true,"rounds": 0};
-    expect(collection).toEqual(received);
+    const received = {"currentRound": 1, "isNextRound": true, "rounds": 0};
+    expect(lesson).toEqual(received);
 
     const { counter, score, history } = store.getState();
     expect(counter).toEqual(null);
@@ -61,12 +61,15 @@ test('when user selects a collection state should be populated', () => {
                 }
             ],
             itemIndex: 0
+        }, 
+        lesson: {
+
         }
     };
 
     actions.boundUpdateCollection(data); // user action (clicking on a collection) triggers UPDATE_COLLECTION
 
-    const { config, collection, score } = store.getState();
+    const { config, collection, score, lesosn } = store.getState();
 
     expect(config.collection.id).toEqual(1);
     expect(score).toEqual(progressState.score);
@@ -293,14 +296,15 @@ test('when user selects a collection state should be populated', () => {
                 ]
             }
         ],
-        lesson: {
-            level: {id:1}
-        },
         itemIndex: 0
     };
 
+    const _lesson = {
+        level: {id:1}
+    };
+
     actions.boundUpdateCollection({config, collection});
-    actions.boundNextLesson({ lessonPlan: _lessonPlan, collection : _collection});
+    actions.boundNextLesson({ lessonPlan: _lessonPlan, collection : _collection, lesson: _lesson});
 
     expect(store.getState().counter).toEqual( {"isLessonRehydrated": false});
 

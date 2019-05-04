@@ -22,16 +22,12 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, b
     });
 
     const lessonLayouts = lessonPlan.layouts.map((layout, i) => {
-        layout.itemIndex = layout.itemIndex || utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i);
+        layout.itemIndex = layout.itemIndex === undefined ? utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i) : layout.itemIndex;
         layout.roundProgressIndex = i + 1;
         return { ...layout };
     });
 
     lessonPlan.layouts = [ ...lessonLayouts, ...bonusLayouts ];
-
-    // lessonPlan.lessonName = lessonName;
-    // lessonPlan.levelName = levelName;
-    // lessonPlan.moduleSize = moduleSize;
 
     const summaryLayout = lessonPlan.portrait 
         ? {

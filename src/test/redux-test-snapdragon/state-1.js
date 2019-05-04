@@ -1173,6 +1173,575 @@ export const snapdragon = {
       itemIndex: 0,
       roundScoreCount: 4
     },
+    lesson: {
+      currentRound: 2,
+      rounds: 2,
+      isNextRound: true,
+      moduleSize: 4,
+      id: 1,
+      name: 'Lesson 1',
+      portrait: false,
+      'default': true,
+      levels: [
+        {
+          id: 1,
+          name: 'Level 1',
+          layouts: [
+            {
+              name: 'screen-latin-to-common',
+              type: 'test',
+              score: 1,
+              points: 1,
+              kind: 'MC',
+              given: 'Given latin name',
+              requirement: 'Select common name',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'species-vernaculars',
+                  question: 'Tap to match latin name',
+                  domain: 'collection',
+                  template: 'js-strips-template',
+                  taxon: 'name'
+                }
+              ]
+            }
+          ],
+          wildcardLayouts: [],
+          reviewLayouts: [
+            {
+              name: 'screen-latin-to-common',
+              type: 'test',
+              score: 1,
+              points: 1,
+              kind: 'MC',
+              given: 'Given latin name',
+              requirement: 'Select common name',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'species-vernaculars',
+                  question: 'Tap to match latin name',
+                  domain: 'collection',
+                  template: 'js-strips-template',
+                  taxon: 'name'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: 2,
+          name: 'Level 2',
+          layouts: [
+            {
+              name: 'screen-common-entry',
+              type: 'test',
+              score: 1,
+              points: 2,
+              kind: 'T',
+              given: 'Species latin name',
+              requirement: 'Enter common name',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'text-entry',
+                  domain: 'collection',
+                  template: 'js-vernacular-entry-template',
+                  taxon: 'vernacular',
+                  headers: {
+                    'long': 'Enter the common name',
+                    'short': 'Enter the common name'
+                  }
+                }
+              ]
+            },
+            {
+              name: 'screen-species-completion',
+              type: 'test',
+              score: 1,
+              points: 2,
+              kind: 'T',
+              given: 'Given genus name',
+              requirement: 'Select species name',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'text-complete',
+                  domain: 'collection',
+                  question: 'Complete the latin name',
+                  type: 'text-complete-species'
+                }
+              ]
+            },
+            {
+              name: 'screen-genus-entry',
+              type: 'test',
+              score: 1,
+              points: 2,
+              kind: 'T',
+              given: 'Given species name',
+              requirement: 'Enter genus name',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'text-entry',
+                  domain: 'collection',
+                  template: 'js-genus-entry-template',
+                  taxon: 'genus'
+                }
+              ]
+            }
+          ],
+          wildcardLayouts: [
+            {
+              name: 'screen-epithets',
+              type: 'test',
+              score: 1,
+              points: 1,
+              kind: 'T',
+              given: 'Epithet',
+              requirement: 'List epithet definitions',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'epithet',
+                  domain: 'collection'
+                }
+              ]
+            }
+          ],
+          reviewLayouts: [
+            {
+              name: 'screen-common-entry',
+              type: 'test',
+              score: 1,
+              points: 2,
+              kind: 'T',
+              given: 'Species latin name',
+              requirement: 'Enter common name',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'text-entry',
+                  domain: 'collection',
+                  template: 'js-vernacular-entry-template',
+                  taxon: 'vernacular',
+                  headers: {
+                    'long': 'Enter the common name',
+                    'short': 'Enter the common name'
+                  }
+                }
+              ]
+            },
+            {
+              name: 'screen-species-completion',
+              type: 'test',
+              score: 1,
+              points: 2,
+              kind: 'T',
+              given: 'Given genus name',
+              requirement: 'Select species name',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'text-complete',
+                  domain: 'collection',
+                  question: 'Complete the latin name',
+                  type: 'text-complete-species'
+                }
+              ]
+            },
+            {
+              name: 'screen-genus-entry',
+              type: 'test',
+              score: 1,
+              points: 2,
+              kind: 'T',
+              given: 'Given species name',
+              requirement: 'Enter genus name',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'text-entry',
+                  domain: 'collection',
+                  template: 'js-genus-entry-template',
+                  taxon: 'genus'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: 3,
+          name: 'Level 3',
+          layouts: [
+            {
+              name: 'screen-species-entry',
+              type: 'test',
+              score: 1,
+              points: 2,
+              kind: 'T',
+              given: 'Given genus name',
+              requirement: 'Enter species name',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'text-entry',
+                  domain: 'collection',
+                  template: 'js-species-entry-template',
+                  taxon: 'species'
+                }
+              ]
+            }
+          ],
+          wildcardLayouts: [
+            {
+              name: 'screen-definitions',
+              type: 'test',
+              score: 1,
+              points: 1,
+              kind: 'T',
+              given: 'Given glossary term',
+              requirement: 'Select definition',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'definition',
+                  domain: 'collection'
+                }
+              ]
+            }
+          ],
+          reviewLayouts: [
+            {
+              name: 'screen-species-entry',
+              type: 'test',
+              score: 1,
+              points: 2,
+              kind: 'T',
+              given: 'Given genus name',
+              requirement: 'Enter species name',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'text-entry',
+                  domain: 'collection',
+                  template: 'js-species-entry-template',
+                  taxon: 'species'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: 4,
+          name: 'Level 4',
+          layouts: [
+            {
+              name: 'screen-binomial-entry',
+              type: 'test',
+              score: 1,
+              points: 4,
+              kind: 'T',
+              given: 'Given common name',
+              requirement: 'Enter latin name',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'text-entry',
+                  domain: 'collection',
+                  template: 'js-species-genus-entry-template',
+                  taxon: 'name'
+                }
+              ]
+            }
+          ],
+          wildcardLayouts: [
+            {
+              name: 'screen-cultivars',
+              type: 'test',
+              score: 1,
+              points: 1,
+              kind: 'T',
+              given: 'List of cultivars',
+              requirement: 'List of species',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'cultivar-card',
+                  domain: 'collection'
+                },
+                {
+                  name: 'cultivar-match',
+                  domain: 'collection'
+                }
+              ]
+            }
+          ],
+          reviewLayouts: [
+            {
+              name: 'screen-binomial-entry',
+              type: 'test',
+              score: 1,
+              points: 4,
+              kind: 'T',
+              given: 'Given common name',
+              requirement: 'Enter latin name',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'text-entry',
+                  domain: 'collection',
+                  template: 'js-species-genus-entry-template',
+                  taxon: 'name'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: 5,
+          name: 'Level 5',
+          layouts: [
+            {
+              name: 'screen-taxon-card',
+              type: 'revision',
+              score: 0,
+              kind: 'F',
+              points: 0,
+              given: 'Study',
+              requirement: 'Family summary',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'taxon-card',
+                  domain: 'collection'
+                }
+              ]
+            },
+            {
+              name: 'screen-species-to-family',
+              type: 'test',
+              score: 1,
+              points: 2,
+              kind: 'MC',
+              given: 'Species name',
+              requirement: 'List families',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'family',
+                  domain: 'collection',
+                  question: 'Match species family'
+                }
+              ]
+            },
+            {
+              name: 'screen-family-to-description',
+              type: 'test',
+              score: 1,
+              points: 2,
+              kind: 'MC',
+              given: 'Family description',
+              requirement: 'List families',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'family-strips',
+                  domain: 'collection',
+                  question: 'Match species family'
+                }
+              ]
+            }
+          ],
+          wildcardLayouts: [
+            {
+              name: 'screen-connections',
+              type: 'test',
+              score: 1,
+              points: 1,
+              kind: 'T',
+              given: 'List of traits',
+              requirement: 'List of species',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'wildcard-card',
+                  domain: 'collection'
+                },
+                {
+                  name: 'wildcard-match',
+                  domain: 'collection'
+                }
+              ]
+            }
+          ],
+          reviewLayouts: [
+            {
+              name: 'screen-family-to-description',
+              type: 'test',
+              score: 1,
+              points: 2,
+              kind: 'MC',
+              given: 'Family description',
+              requirement: 'List families',
+              screens: [
+                {
+                  name: 'specimen-images',
+                  domain: 'collection',
+                  template: 'js-specimen-images-template'
+                },
+                {
+                  name: 'family-strips',
+                  domain: 'collection',
+                  question: 'Match species family'
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      level: {
+        id: 1,
+        name: 'Level 1',
+        layouts: [
+          {
+            name: 'screen-latin-to-common',
+            type: 'test',
+            score: 1,
+            points: 1,
+            kind: 'MC',
+            given: 'Given latin name',
+            requirement: 'Select common name',
+            screens: [
+              {
+                name: 'specimen-images',
+                domain: 'collection',
+                template: 'js-specimen-images-template'
+              },
+              {
+                name: 'species-vernaculars',
+                question: 'Tap to match latin name',
+                domain: 'collection',
+                template: 'js-strips-template',
+                taxon: 'name'
+              }
+            ]
+          }
+        ],
+        wildcardLayouts: [],
+        reviewLayouts: [
+          {
+            name: 'screen-latin-to-common',
+            type: 'test',
+            score: 1,
+            points: 1,
+            kind: 'MC',
+            given: 'Given latin name',
+            requirement: 'Select common name',
+            screens: [
+              {
+                name: 'specimen-images',
+                domain: 'collection',
+                template: 'js-specimen-images-template'
+              },
+              {
+                name: 'species-vernaculars',
+                question: 'Tap to match latin name',
+                domain: 'collection',
+                template: 'js-strips-template',
+                taxon: 'name'
+              }
+            ]
+          }
+        ]
+      },
+      layoutCount: 5,
+      layoutCounter: 5,
+      layoutName: 'summary',
+      isLevelComplete: true,
+      isLessonComplete: false,
+      activeLevelCount: 5,
+      lessonName: 'Lesson 1',
+      levelName: 'Level 1'
+    },
     config: {
       language: 'en',
       moduleSize: 2,
@@ -1219,9 +1788,6 @@ export const snapdragon = {
         'The list is taken from the RSPB Big Garden Birdwatch 2018 survey.',
         '420,489 people recorded 6,764,475 separate bird sightings.'
       ],
-      currentRound: 2,
-      rounds: 2,
-      isNextRound: true,
       providerId: 1,
       name: 'RSPB Top 10 UK Birds',
       type: 'species',
@@ -2465,563 +3031,6 @@ export const snapdragon = {
         genus: 'Passer',
         species: 'domesticus'
       },
-      lesson: {
-        id: 1,
-        name: 'Lesson 1',
-        portrait: false,
-        'default': true,
-        levels: [
-          {
-            id: 1,
-            name: 'Level 1',
-            layouts: [
-              {
-                name: 'screen-latin-to-common',
-                type: 'test',
-                score: 1,
-                points: 1,
-                kind: 'MC',
-                given: 'Given latin name',
-                requirement: 'Select common name',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'species-vernaculars',
-                    question: 'Tap to match latin name',
-                    domain: 'collection',
-                    template: 'js-strips-template',
-                    taxon: 'name'
-                  }
-                ]
-              }
-            ],
-            wildcardLayouts: [],
-            reviewLayouts: [
-              {
-                name: 'screen-latin-to-common',
-                type: 'test',
-                score: 1,
-                points: 1,
-                kind: 'MC',
-                given: 'Given latin name',
-                requirement: 'Select common name',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'species-vernaculars',
-                    question: 'Tap to match latin name',
-                    domain: 'collection',
-                    template: 'js-strips-template',
-                    taxon: 'name'
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            id: 2,
-            name: 'Level 2',
-            layouts: [
-              {
-                name: 'screen-common-entry',
-                type: 'test',
-                score: 1,
-                points: 2,
-                kind: 'T',
-                given: 'Species latin name',
-                requirement: 'Enter common name',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'text-entry',
-                    domain: 'collection',
-                    template: 'js-vernacular-entry-template',
-                    taxon: 'vernacular',
-                    headers: {
-                      'long': 'Enter the common name',
-                      'short': 'Enter the common name'
-                    }
-                  }
-                ]
-              },
-              {
-                name: 'screen-species-completion',
-                type: 'test',
-                score: 1,
-                points: 2,
-                kind: 'T',
-                given: 'Given genus name',
-                requirement: 'Select species name',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'text-complete',
-                    domain: 'collection',
-                    question: 'Complete the latin name',
-                    type: 'text-complete-species'
-                  }
-                ]
-              },
-              {
-                name: 'screen-genus-entry',
-                type: 'test',
-                score: 1,
-                points: 2,
-                kind: 'T',
-                given: 'Given species name',
-                requirement: 'Enter genus name',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'text-entry',
-                    domain: 'collection',
-                    template: 'js-genus-entry-template',
-                    taxon: 'genus'
-                  }
-                ]
-              }
-            ],
-            wildcardLayouts: [
-              {
-                name: 'screen-epithets',
-                type: 'test',
-                score: 1,
-                points: 1,
-                kind: 'T',
-                given: 'Epithet',
-                requirement: 'List epithet definitions',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'epithet',
-                    domain: 'collection'
-                  }
-                ]
-              }
-            ],
-            reviewLayouts: [
-              {
-                name: 'screen-common-entry',
-                type: 'test',
-                score: 1,
-                points: 2,
-                kind: 'T',
-                given: 'Species latin name',
-                requirement: 'Enter common name',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'text-entry',
-                    domain: 'collection',
-                    template: 'js-vernacular-entry-template',
-                    taxon: 'vernacular',
-                    headers: {
-                      'long': 'Enter the common name',
-                      'short': 'Enter the common name'
-                    }
-                  }
-                ]
-              },
-              {
-                name: 'screen-species-completion',
-                type: 'test',
-                score: 1,
-                points: 2,
-                kind: 'T',
-                given: 'Given genus name',
-                requirement: 'Select species name',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'text-complete',
-                    domain: 'collection',
-                    question: 'Complete the latin name',
-                    type: 'text-complete-species'
-                  }
-                ]
-              },
-              {
-                name: 'screen-genus-entry',
-                type: 'test',
-                score: 1,
-                points: 2,
-                kind: 'T',
-                given: 'Given species name',
-                requirement: 'Enter genus name',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'text-entry',
-                    domain: 'collection',
-                    template: 'js-genus-entry-template',
-                    taxon: 'genus'
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            id: 3,
-            name: 'Level 3',
-            layouts: [
-              {
-                name: 'screen-species-entry',
-                type: 'test',
-                score: 1,
-                points: 2,
-                kind: 'T',
-                given: 'Given genus name',
-                requirement: 'Enter species name',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'text-entry',
-                    domain: 'collection',
-                    template: 'js-species-entry-template',
-                    taxon: 'species'
-                  }
-                ]
-              }
-            ],
-            wildcardLayouts: [
-              {
-                name: 'screen-definitions',
-                type: 'test',
-                score: 1,
-                points: 1,
-                kind: 'T',
-                given: 'Given glossary term',
-                requirement: 'Select definition',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'definition',
-                    domain: 'collection'
-                  }
-                ]
-              }
-            ],
-            reviewLayouts: [
-              {
-                name: 'screen-species-entry',
-                type: 'test',
-                score: 1,
-                points: 2,
-                kind: 'T',
-                given: 'Given genus name',
-                requirement: 'Enter species name',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'text-entry',
-                    domain: 'collection',
-                    template: 'js-species-entry-template',
-                    taxon: 'species'
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            id: 4,
-            name: 'Level 4',
-            layouts: [
-              {
-                name: 'screen-binomial-entry',
-                type: 'test',
-                score: 1,
-                points: 4,
-                kind: 'T',
-                given: 'Given common name',
-                requirement: 'Enter latin name',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'text-entry',
-                    domain: 'collection',
-                    template: 'js-species-genus-entry-template',
-                    taxon: 'name'
-                  }
-                ]
-              }
-            ],
-            wildcardLayouts: [
-              {
-                name: 'screen-cultivars',
-                type: 'test',
-                score: 1,
-                points: 1,
-                kind: 'T',
-                given: 'List of cultivars',
-                requirement: 'List of species',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'cultivar-card',
-                    domain: 'collection'
-                  },
-                  {
-                    name: 'cultivar-match',
-                    domain: 'collection'
-                  }
-                ]
-              }
-            ],
-            reviewLayouts: [
-              {
-                name: 'screen-binomial-entry',
-                type: 'test',
-                score: 1,
-                points: 4,
-                kind: 'T',
-                given: 'Given common name',
-                requirement: 'Enter latin name',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'text-entry',
-                    domain: 'collection',
-                    template: 'js-species-genus-entry-template',
-                    taxon: 'name'
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            id: 5,
-            name: 'Level 5',
-            layouts: [
-              {
-                name: 'screen-taxon-card',
-                type: 'revision',
-                score: 0,
-                kind: 'F',
-                points: 0,
-                given: 'Study',
-                requirement: 'Family summary',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'taxon-card',
-                    domain: 'collection'
-                  }
-                ]
-              },
-              {
-                name: 'screen-species-to-family',
-                type: 'test',
-                score: 1,
-                points: 2,
-                kind: 'MC',
-                given: 'Species name',
-                requirement: 'List families',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'family',
-                    domain: 'collection',
-                    question: 'Match species family'
-                  }
-                ]
-              },
-              {
-                name: 'screen-family-to-description',
-                type: 'test',
-                score: 1,
-                points: 2,
-                kind: 'MC',
-                given: 'Family description',
-                requirement: 'List families',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'family-strips',
-                    domain: 'collection',
-                    question: 'Match species family'
-                  }
-                ]
-              }
-            ],
-            wildcardLayouts: [
-              {
-                name: 'screen-connections',
-                type: 'test',
-                score: 1,
-                points: 1,
-                kind: 'T',
-                given: 'List of traits',
-                requirement: 'List of species',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'wildcard-card',
-                    domain: 'collection'
-                  },
-                  {
-                    name: 'wildcard-match',
-                    domain: 'collection'
-                  }
-                ]
-              }
-            ],
-            reviewLayouts: [
-              {
-                name: 'screen-family-to-description',
-                type: 'test',
-                score: 1,
-                points: 2,
-                kind: 'MC',
-                given: 'Family description',
-                requirement: 'List families',
-                screens: [
-                  {
-                    name: 'specimen-images',
-                    domain: 'collection',
-                    template: 'js-specimen-images-template'
-                  },
-                  {
-                    name: 'family-strips',
-                    domain: 'collection',
-                    question: 'Match species family'
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        level: {
-          id: 1,
-          name: 'Level 1',
-          layouts: [
-            {
-              name: 'screen-latin-to-common',
-              type: 'test',
-              score: 1,
-              points: 1,
-              kind: 'MC',
-              given: 'Given latin name',
-              requirement: 'Select common name',
-              screens: [
-                {
-                  name: 'specimen-images',
-                  domain: 'collection',
-                  template: 'js-specimen-images-template'
-                },
-                {
-                  name: 'species-vernaculars',
-                  question: 'Tap to match latin name',
-                  domain: 'collection',
-                  template: 'js-strips-template',
-                  taxon: 'name'
-                }
-              ]
-            }
-          ],
-          wildcardLayouts: [],
-          reviewLayouts: [
-            {
-              name: 'screen-latin-to-common',
-              type: 'test',
-              score: 1,
-              points: 1,
-              kind: 'MC',
-              given: 'Given latin name',
-              requirement: 'Select common name',
-              screens: [
-                {
-                  name: 'specimen-images',
-                  domain: 'collection',
-                  template: 'js-specimen-images-template'
-                },
-                {
-                  name: 'species-vernaculars',
-                  question: 'Tap to match latin name',
-                  domain: 'collection',
-                  template: 'js-strips-template',
-                  taxon: 'name'
-                }
-              ]
-            }
-          ]
-        }
-      },
       itemGroups: [
         [
           0,
@@ -3036,20 +3045,12 @@ export const snapdragon = {
           7
         ]
       ],
-      activeLevelCount: 5,
-      lessonName: 'Lesson 1',
-      levelName: 'Level 1',
-      layoutCount: 5,
-      layoutCounter: 5,
       itemGroup: [
         4,
         5,
         6,
         7
-      ],
-      layoutName: 'summary',
-      isLevelComplete: true,
-      isLessonComplete: false
+      ]
     },
     score: {
       total: 4,

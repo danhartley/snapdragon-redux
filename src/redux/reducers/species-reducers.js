@@ -49,12 +49,8 @@ export const collection = (state = { id: 0 }, action) => {
         }
 
         if(action.data.config.mode === 'learn-again') {
-            collection.currentRound = collection.rounds;
-            collection.isNextRound = true;
-            collection.isLevelComplete = true;
             collection.itemIndex = 0;
-            collection.nextItem = collection.items[collection.itemIndex];
-            collection.currentRound = 1;
+            collection.nextItem = collection.items[collection.itemIndex];            
         }
 
         return { collection, nextItem };
@@ -69,6 +65,7 @@ export const collection = (state = { id: 0 }, action) => {
             return action.data;
         }
         case types.UPDATE_COLLECTION_ITEMS: {
+
             const collection = R.clone(state);
             collection.excludedItems = action.data.filter(item => item.isDeselected);
             collection.items = action.data.filter(item => !item.isDeselected);
@@ -81,6 +78,7 @@ export const collection = (state = { id: 0 }, action) => {
         }
 
         case types.UPDATE_COLLECTION: {
+            
             const { collection, nextItem } = updateCollection(state, action);
             return { ...state, ...collection, nextItem };
         }
@@ -106,7 +104,7 @@ export const collection = (state = { id: 0 }, action) => {
         }
 
         case types.NEXT_LEVEL: {
-            return { ...state, currentRound: 1 };
+            return state;
         }
 
         default: {

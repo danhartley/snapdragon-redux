@@ -11,10 +11,7 @@ export const renderScore = (score) => {
 
     const scoreText = score.correct === 1 ? 'correct answer' : 'correct answers';
 
-     // lesson.currentRound
-
-     const currentRound = lesson.currentRound;
-    //  const currentRound = collection.currentRound;
+    const currentRound = lesson.currentRound;
 
     template.innerHTML = config.isPortraitMode
             ?   `<div><span>Score: {{ score.correct }} / {{ score.total }}</span></div>`
