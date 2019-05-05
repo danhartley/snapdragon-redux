@@ -53,15 +53,15 @@ export const renderCompleteText = (collection) => {
 
     const numerOfItems = config.isPortraitMode ? 4 : 5;
 
-    // const itemTaxons = [ ...collection.speciesNames ].map(item => {
-    const itemTaxons = [ ...collection.itemNames ].map(item => {
+    // broaden pool to species matching iconic taxon
+    const itemTaxons = collection.items.map(item => {
         switch(givenTaxon) {
             case 'genus':
-                return itemProperties.getGenusName(item);
+                return itemProperties.getGenusName(item.name);
             case 'species':
-                return itemProperties.getSpeciesName(item);
+                return itemProperties.getSpeciesName(item.name);
             default:
-                return item;
+                return item.name;
         }
     });
     const pool = R.take(numerOfItems, utils.shuffleArray(itemTaxons).filter(utils.onlyUnique).filter(itemTaxon => itemTaxon !== item[givenTaxon]));

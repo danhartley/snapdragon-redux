@@ -1,7 +1,9 @@
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
 
-export const createLesson = (lessonPlan, layouts, progressScreens, collection, bonusTests, bonusLayouts, lesson) => {
+import { getBonusTests } from 'snapdragon-engine/bonus/bonus-test-handler';
+
+export const createLesson = (lessonPlan, layouts, progressScreens, collection, lesson) => {
 
     lessonPlan.layouts = [];
 
@@ -21,13 +23,21 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, b
         } while (i < layoutsToAdd);
     });
 
-    const lessonLayouts = lessonPlan.layouts.map((layout, i) => {
+    let lessonLayouts = lessonPlan.layouts.filter(layout => !layout.bonus).map((layout, i) => {
         layout.itemIndex = layout.itemIndex === undefined ? utils.calcItemIndex(itemsCountToDate, layoutsToAdd, i) : layout.itemIndex;
-        layout.roundProgressIndex = i + 1;
         return { ...layout };
     });
 
-    lessonPlan.layouts = [ ...lessonLayouts, ...bonusLayouts ];
+    const itemIndices = [ ...new Set(lessonPlan.layouts.map(layout => layout.itemIndex)) ];
+
+    const bonusTests = getBonusTests(collection, itemIndices, layouts.filter(layout => layout.bonus), lessonName, levelName);
+    
+    lessonPlan.layouts = [ ...lessonLayouts, ...bonusTests ];
+
+    lessonLayouts = lessonPlan.layouts.map((layout, i) => {
+        layout.roundProgressIndex = i + 1;
+        return { ...layout };
+    });
 
     const summaryLayout = lessonPlan.portrait 
         ? {

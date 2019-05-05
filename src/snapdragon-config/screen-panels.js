@@ -153,8 +153,7 @@ const specimenImages = {
   
   const traitProperty = {
     name: 'trait-property',
-    domain: 'collection'
-    // domain: 'collection'
+    domain: 'bonusLayout'
   };
   
   const symbioticProperty = {

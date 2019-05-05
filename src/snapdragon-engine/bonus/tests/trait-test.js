@@ -5,13 +5,13 @@ import { store } from 'redux/store';
 import { getTraits } from 'api/traits/traits';
 import * as SD from 'api/traits/trait-types';
 
-export const getTraitTests = collection => {
+export const getTraitTests = (collection, itemsInThisRound) => {
 
-    // We only need to get tests for items in this round, not the whole collection
+    if(itemsInThisRound === undefined) return [];
 
     // But for now…
 
-    const tests = collection.items.map(item => {
+    const tests = itemsInThisRound.map(item => {
 
         const { question, answers, overrides } = getTraitTest(collection, item);
 
@@ -33,6 +33,8 @@ const getTraitTest = (collection, item) => {
     const { enums } = store.getState();
 
     const speciesTraits = getTraits(enums, item).find(trait => trait.name === item.name);
+
+    if(!speciesTraits) return {};
 
     const typedSpeciesTraits = SD.typedSpecies(enums, speciesTraits);
 

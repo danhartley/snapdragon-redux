@@ -58,8 +58,9 @@ export const collection = (state = { id: 0 }, action) => {
     
     switch(action.type) {
 
-        case 'persist/REHYDRATE':
+        case 'persist/REHYDRATE': {
             return state;
+        }
 
         case types.SELECT_COLLECTION: {
             return action.data;
@@ -84,7 +85,8 @@ export const collection = (state = { id: 0 }, action) => {
         }
 
         case types.NEXT_LAYOUT: {
-            return { ...state, layoutName: action.data.name };
+            const layout = action.data;
+            return layout.bonus ? state : { ...state, layoutName: layout.name };
         }            
 
         case types.NEXT_ITEM: {
@@ -104,6 +106,29 @@ export const collection = (state = { id: 0 }, action) => {
         }
 
         case types.NEXT_LEVEL: {
+            return state;
+        }
+
+        default: {
+            return state; 
+        }
+    }
+};
+
+export const bonusLayout = (state = null, action) => {
+
+    switch(action.type) {
+
+        case 'persist/REHYDRATE': {
+            return state;
+        }
+
+        case types.NEXT_LAYOUT: {
+            const layout = action.data;
+
+            if(layout.bonus) {
+                state = layout;
+            }
             return state;
         }
 

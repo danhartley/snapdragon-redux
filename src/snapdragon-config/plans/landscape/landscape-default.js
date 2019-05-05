@@ -25,9 +25,6 @@ export const landscapeDefault = {
     levels: [
         {   id: 1,
             name:'Level 1',
-            // layouts: [ L.familyStripsMatch ],
-            // reviewLayouts: [],
-            // bonusLayouts: [ ]
             layouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
             reviewLayouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
             bonusLayouts: [ L.traitPropertyMatch ]

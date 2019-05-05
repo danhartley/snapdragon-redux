@@ -1,10 +1,11 @@
+import { store } from 'redux/store';
 import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 
-export const renderBonusTest = bonusCollection => {
+export const renderBonusTest = bonusLayout => {
 
     const { collection } = store.getState();
 
-    const bonus = bonusCollection.find(bonus => bonus.isActive); // or something
+    const bonus = bonusLayout; // temp hack
 
     renderMultiStrips(collection, bonus)
 };
