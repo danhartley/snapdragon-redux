@@ -45,23 +45,12 @@ const herbCollection = {
   "itemIndex": 0,
   "currentRound": 1,
   "moduleSize": 2,
-  "rounds": 3,
   lesson: { levels: [], level: {}}
 }
 
-test.skip('collection should return default parameter state when there is no action type', () => {
+const lessonDefault = {"currentRound": 1, "isNextRound": true,"moduleSize": 2,"rounds": 3};
 
-  const action = { };  
-
-const state = collection(snapdragonCollections, action);
-
-  const received = {"currentRound": 1, "descriptions": null, "id": 0, "isNextRound": true,"rounds": 0};
-
-  // expect(state).toEqual(received); // We now bring in all species...
-});
-
-
-test.skip('collection should return correct itemIndex for action type NEXT_ITEM', () => {
+test('collection should return correct itemIndex for action type NEXT_ITEM', () => {
 
   let action = { data: 0, type: types.NEXT_ITEM };
   let state = collection(herbCollection, action);
@@ -77,72 +66,71 @@ test.skip('collection should return correct itemIndex for action type NEXT_ITEM'
 
 });
 
-test.skip('collection should return correct itemIndex and currentRound over several rounds', () => {
+test('collection should return correct itemIndex and currentRound over several rounds', () => {
 
   // round 1
 
   let action = { data: 0, type: types.NEXT_ITEM };
   let state = collection(herbCollection, action);
-  let lessonState = lesson(herbCollection, action);
+  let lessonState = lesson(lessonDefault, action);
 
   expect(lessonState.currentRound).toBe(1);
   expect(state.itemIndex).toBe(0);
 
   // round 2
 
-  action = { data: 0, type: types.NEXT_ROUND };
+  action = { data: {lesson: lessonState}, type: types.NEXT_ROUND };
   state = collection(state, action);
-  lessonState = lesson(herbCollection, action);
+  lessonState = lesson(lessonState, action);
 
   expect(lessonState.currentRound).toBe(2);
   expect(state.itemIndex).toBe(2);
   
-  action = { data: 0, type: types.NEXT_ITEM };
+  action = { data: 3, type: types.NEXT_ITEM };
   state = collection(state, action);
-  lessonState = lesson(herbCollection, action);
+  lessonState = lesson(lessonState, action);
   
-  expect(state.itemIndex).toBe(0);
-
-  action = { data: 1, type: types.NEXT_ITEM };
-  state = collection(state, action);
-  expect(state.itemIndex).toBe(1);
+  expect(state.itemIndex).toBe(3);
 
   // round 3
 
-  action = { data: 0, type: types.NEXT_ROUND };
+  action = { data: {lesson: lessonState}, type: types.NEXT_ROUND };
   state = collection(state, action);
-  lessonState = lesson(herbCollection, action);
+  lessonState = lesson(lessonState, action);
+
+  action = { data: 4, type: types.NEXT_ITEM };
+  state = collection(state, action);
 
   expect(lessonState.currentRound).toBe(3);
   expect(state.itemIndex).toBe(4);
 
   // round 1, reset
 
-  action = { data: 0, type: types.NEXT_ROUND };
+  action = { data: {lesson: lessonState}, type: types.NEXT_ROUND };
   state = collection(state, action);
-  lessonState = lesson(herbCollection, action);
+  lessonState = lesson(lessonState, action);
 
   expect(lessonState.currentRound).toBe(1);
   expect(state.itemIndex).toBe(0);
 });
 
-test.skip('collection should return itemIndex of 0 and currentRound of 1 when moving to the next level', () => {
+test('collection should return itemIndex of 0 and currentRound of 1 when moving to the next level', () => {
   
   let action = { data: undefined, type: types.NEXT_LEVEL };
   let state = collection(herbCollection, action);
-  let lessonState = lesson(herbCollection, action);
+  let lessonState = lesson(lessonState, action);
 
   expect(lessonState.currentRound).toBe(1);
   expect(state.itemIndex).toBe(0);
 });
 
-test.skip('collection should return unextended (initial) collection when user selected', () => {
+test('collection should return unextended (initial) collection when user selected', () => {
   let action = { data: unextendedCollection, type: types.SELECT_COLLECTION };
   let state = collection({}, action);
   expect(state).toEqual(unextendedCollection);
 });
 
-test.skip('collection should return next item', () => {
+test('collection should return next item', () => {
   let config = {
     language: 'en',
     moduleSize: 2,
@@ -175,10 +163,10 @@ test.skip('collection should return next item', () => {
   let state = collection({}, action);
   action = { data: { collection : { items: birds, itemIndex: 0 }, config }, type: types.UPDATE_COLLECTION };
   state = collection(state, action);  
-  // expect(state.nextItem.name).toEqual('Passer domesticus');
+  expect(state.nextItem.name).toEqual('Passer domesticus');
 });
 
-test.skip('collection should set allItems during review and reset items to this value when review complete (learn-again mode)', () => {
+test('collection should set allItems during review and reset items to this value when review complete (learn-again mode)', () => {
 
   let config = {
     language: 'en',
@@ -225,69 +213,47 @@ test.skip('collection should set allItems during review and reset items to this 
 
 // Tests based on birds collection, state taken from running the app
 
-test.skip('collection state after user clicks on "Begin lesson" on home collections page', () => {
+test('collection state after user clicks on "Begin lesson" on home collections page', () => {
   let state = R.clone(state1);
   state = collection(state, { type: types.NEXT_ITEM, data: 0 } );
   expect(state.itemIndex).toEqual(0);
   expect(state.nextItem.name).toEqual('Passer domesticus');
-  expect(state.layoutCounter).toEqual(1);
-  expect(state.isNextRound).toEqual(false);
-  expect(state.isLevelComplete).toEqual(false);
-  expect(state.isLessonComplete).toEqual(false);
 });
 
-test.skip('collection state after user clicks on "Continue" on any screen', () => {
+test('collection state after user clicks on "Continue" on any screen', () => {
   let state = R.clone(state2);
   state = collection(state, { type: types.NEXT_ITEM, data: 1 } );
   expect(state.itemIndex).toEqual(1);
   expect(state.nextItem.name).toEqual('Sturnus vulgaris');
-  expect(state.layoutCounter).toEqual(2);
-  expect(state.isNextRound).toEqual(false);
-  expect(state.isLevelComplete).toEqual(false);
-  expect(state.isLessonComplete).toEqual(false);
 });
 
-test.skip('collection state after user clicks on "Continue lesson" on summary page', () => {
+test('collection state after user clicks on "Continue lesson" on summary page', () => {
   let state = R.clone(state3);
   state = collection(state, { type: types.NEXT_ITEM, data: 0 } );
   expect(state.itemIndex).toEqual(0);
   expect(state.nextItem.name).toEqual('Passer domesticus');
-  expect(state.layoutCounter).toEqual(5);
-  expect(state.isNextRound).toEqual(true);
-  expect(state.isLevelComplete).toEqual(false);
-  expect(state.isLessonComplete).toEqual(false);
 });
 
-test.skip('collection state after user completes a lesson', () => {
+test('collection state after user completes a lesson', () => {
   let state = R.clone(state4);
   state = collection(state, { type: types.NEXT_ITEM, data: 0 } );
   expect(state.itemIndex).toEqual(0);
   expect(state.nextItem.name).toEqual('Passer domesticus');
-  expect(state.layoutCounter).toEqual(5);
-  expect(state.isNextRound).toEqual(true);
-  expect(state.isLevelComplete).toEqual(true);
-  expect(state.isLessonComplete).toEqual(false);
 });
 
 // after page refresh
 
-test.skip('collection state after user clicks on "Continue lesson" on summary page after page refresh', () => {  
+test('collection state after user clicks on "Continue lesson" on summary page after page refresh', () => {  
   let state = R.clone(state3Refresh);
   state = collection(state, { type: types.NEXT_ITEM, data: 0 } );
   expect(state.itemIndex).toEqual(0);
   expect(state.nextItem.name).toEqual('Passer domesticus');
-  expect(state.layoutCounter).toEqual(2);
-  expect(state.isNextRound).toEqual(true);
-  expect(state.isLevelComplete).toEqual(false);
-  expect(state.isLessonComplete).toEqual(false);
 });
 
-test.skip('Level should move to the next when the previous one has completed', () => {
+test('Level should move to the next when the previous one has completed', () => {
   let state = R.clone(snapdragon.collection);
-  expect(state.currentRound).toBe(2);
-  expect(state.lesson.level.id).toBe(1);
-  const { updatedLessonPlan, updatedCollection } = lessonPlanner.createLessonPlan(snapdragon.lessonPlan, snapdragon.config, snapdragon.collection);
+  expect(state.itemIndex).toBe(0);
+  const { updatedLessonPlan, updatedCollection, updatedLesson } = lessonPlanner.createLessonPlan(snapdragon.lessonPlan, snapdragon.config, snapdragon.collection, snapdragon.lesson);
   state = collection(updatedCollection, { type: types.NEXT_LEVEL, data: 0 } );
-  expect(state.currentRound).toBe(1);
-  expect(state.lesson.level.id).toBe(2);
+  expect(state.itemIndex).toBe(0);
 });
