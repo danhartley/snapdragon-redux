@@ -47,23 +47,29 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
         case 'FAMILY': 
             taxonName = speciesTaxon || item.family;
             taxon = taxa.find(f => f.name === taxonName);
-            rank = rank || 'family';
             break;
         case 'ORDER':
             taxonName = speciesTaxon || item.taxonomy.order;
             taxon = taxa.find(f => f.name === taxonName);
-            rank = rank || 'order';
             break;
         default:
 
-            let activeTaxon = itemProperties.taxonHasTaxaData(item.taxonomy.family, taxa) 
-                ? item.taxonomy.family
-                : itemProperties.taxonHasTaxaData(item.taxonomy.order, taxa)
-                    ? item.taxonomy.order
-                    : null
-        
-            taxonName = activeTaxon || item.taxonomy.order;
-            rank = taxonName;
+            let props = itemProperties.taxonHasTaxaData(item.taxonomy.family, taxa);
+
+            if(props) {
+                rank = 'family';
+                taxonName = item.taxonomy.family;
+            } else {
+                props = itemProperties.taxonHasTaxaData(item.taxonomy.order, taxa);
+                if(props) {
+                    rank = 'order';
+                    taxonName = item.taxonomy.order;                   
+                } else {
+                    rank = 'class';
+                    taxonName = item.taxonomy.class;
+                }
+            }
+
             taxon = taxa.find(f => f.name === taxonName);
 
             break;

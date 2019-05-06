@@ -33,6 +33,9 @@ const getBirdsongTest = item => {
 
     const traits = getTraits(enums);
     const bird = traits.find(trait => trait.name === item.name);
+
+    if(!bird) return {};
+
     const birdsong = bird.traits.find(trait => trait.name === 'song');
     
     let birds = R.take(3, traits.filter(trait => trait.name !== item.name));

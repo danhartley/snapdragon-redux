@@ -595,7 +595,9 @@ export const english = {
     display: {
         help: 'Which form of display does this species exhibit?',
         DIEMATIC: 'diematic',
-        SEXUAL_DIMORPHISM: 'Sexual dimorphism',      
+        SEXUAL_COLOUR_DIMORPHISM: 'Sexual colour dimorphism',
+        NO_SEXUAL_COLOUR_DIMORPHISM: 'No sexual colour dimorphism',
+        SEXUAL_DIMORPHISM: 'Sexual dimorphism',
         NO_SEXUAL_DIMORPHISM: 'No sexual dimorphism',
         MELANISTIC: 'Melanistic'
     },

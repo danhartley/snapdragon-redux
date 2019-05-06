@@ -100,6 +100,7 @@ const getTraits = SD => {
         { name: SD.name.LOOK_ALIKES, values: [ 'Accipiter nisus' ]},
         { name: SD.name.ACTIVE, value: SD.active.DIURNAL },
         { name: SD.name.HABITAT, value: `${SD.habitat.HEATH}, ${SD.habitat.FIELDS}, ${SD.habitat.MARSHLAND}` },
+        { name: SD.name.DISPLAY, value: SD.display.SEXUAL_COLOUR_DIMORPHISM },
     ] },
     { name: 'Accipiter nisus', traits: [
         { name: 'song', value: '309239', description: 'xeno-canto id', type: 'call' },

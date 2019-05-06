@@ -1,6 +1,6 @@
 export const config = {
     language: 'en',
-    moduleSize: 2,
+    moduleSize: 4,
     callbackTime: 1500,
     callbackDelay: 2000,
     excludeRevision: false,

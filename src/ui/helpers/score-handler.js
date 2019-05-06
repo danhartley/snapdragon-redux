@@ -3,13 +3,14 @@ import * as R from 'ramda';
 import { utils } from "utils/utils";
 
 const isAnswerCorrect = score => {
-    let isCorrect = score.answer.toUpperCase() === score.question.toUpperCase();
+    let isCorrect = score.answer.toLowerCase() === score.question.toLowerCase();
     switch(score.taxon) {
         case 'vernacular':
+            score.names = score.names.map(name => name.toLowerCase());
             if(score.names && score.names.length > 0) {
-                const alsoCorrect = R.contains(utils.capitaliseAll(score.answer), score.names);                
-                if(!isCorrect && alsoCorrect) score.alternativeAccepted = true;
-                isCorrect = alsoCorrect;
+                const alternativeIsCorrect = R.contains(score.answer.toLowerCase(), score.names);                
+                if(!isCorrect && alternativeIsCorrect) score.alternativeAccepted = true;
+                isCorrect = isCorrect || alternativeIsCorrect;
             }
         break;
     }

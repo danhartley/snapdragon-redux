@@ -84,7 +84,9 @@ const renderSpecimenImageTiles = (collection, images) => {
 
     const { layout, config } = store.getState();
 
-    let screen = layout.screens.find(el => el.name === 'specimen-images');
+    const acceptableScreens = [ 'specimen-images', 'trait-images' ]; // lookalike options?
+
+    let screen = layout.screens.find(screen => R.contains(screen.name, acceptableScreens));
 
     if(layout.screens[0].name === 'command') screen = layout.screens[0].left;
 

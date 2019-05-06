@@ -7,7 +7,7 @@ const {
     epithets, wildcardCard, wildcard, definitions, 
     specimenCommonMatch, specimenLatinMatch,
     definitionCard, 
-    traitProperty, symbioticProperty,
+    traitProperty, symbioticProperty, traitImages,
     nonTaxonSpecimenTiles,
     mixedSpecimenQuestions,
     mixedSpecimensLeft,
@@ -162,10 +162,10 @@ const traitPropertyMatch = {
     points: 1,
     kind: 'MC',
     bonus: true,
-    given: 'Given specimenImages images',
+    given: 'Given traitImages images',
     requirement: 'Select trait value',
     screens: [
-        { ...specimenImages },
+        { ...traitImages },
         { ...traitProperty }
     ]
 };

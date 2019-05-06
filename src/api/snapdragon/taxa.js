@@ -4127,8 +4127,33 @@ export const taxa = [
                 identification: 'Rarely venomous some have elongated, grooved teeth located in the back of their upper jaws (opisthoglyphous), often called "rear-fanged.', 
             },
         ],
-        traits: [
-            
+        traits: [            
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Falconidae',
+        genera: '11',
+        species: '~60',
+        names: [ { language: "en", names: ['Falcons and caracaras' ]},
+            { language: "fr", names:[ 'Falconidés' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ 'Falcónidos' ]},
+            { language: "pt", names:[ 'Falconídeos' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Falconidae",
+        thumb: '32/40/f7/28.https___www_inaturalist_org_photos_2739509.260x190.jpg',
+        eol: "https://eol.org/pages/8007",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Differ from the eagles of Accipitridae, in killing with their beaks (using a "tooth" on the side of their beak) instead of their taloned feet.',
+                identification: 'Small to medium-sized birds of prey. Strongly hooked bills, sharply curved talons and excellent eyesight. Plumage brown, white, chestnut, black and grey, often with barring pattern.', 
+            },
+        ],
+        traits: [       
+            { name: SD.name.MATING_SYSTEM, value: SD.mating.MONOGAMOUS },     
         ],
     },
 ];

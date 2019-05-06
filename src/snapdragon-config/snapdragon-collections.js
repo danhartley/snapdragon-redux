@@ -497,8 +497,6 @@ const commonBritishBirds = {
     glossary: ['animalia', 'common'],
     items: birds,
     itemNames: [
-        "Falco tinnunculus",
-        "Branta canadensis",
         "Passer domesticus",
         "Sturnus vulgaris",
         "Cyanistes caeruleus",

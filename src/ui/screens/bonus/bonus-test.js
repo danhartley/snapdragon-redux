@@ -7,5 +7,7 @@ export const renderBonusTest = bonusLayout => {
 
     const bonus = bonusLayout;
 
+    collection.nextItem = bonusLayout.item;
+
     renderMultiStrips(collection, bonus)
 };
