@@ -241,36 +241,51 @@ export const renderMultiStrips = (collection, bonus) => {
 
     if(screen.name === 'trait-property') {
         render(bonus.question, bonus.answers, bonus.overrides);
+
+        if(bonus.overrides.trait && bonus.overrides.trait.name === 'song') {
+
+            const parent = document.querySelector('.js-question-help');
+                  parent.innerHTML = '';
+
+            const template = document.createElement('template');
+                  template.innerHTML = audioMediaTemplate;
+
+            const xcID = bonus.overrides.trait.value;
+
+            const mp3 = `./songs/${xcID}.mp3`;
+            
+            renderTemplate({ mp3, title: item.name }, template.content, parent);
+        }
     }
 
-    if(screen.name === 'birdsong') {
+    // if(screen.name === 'birdsong') {
 
-        const { enums } = store.getState();
+    //     const { enums } = store.getState();
 
-        const traits = getTraits(enums);
-        const bird = traits.find(bird => bird.name === item.name);
+    //     const traits = getTraits(enums);
+    //     const bird = traits.find(bird => bird.name === item.name);
         
-        let birds = R.take(3, traits.filter(bird => bird.name !== item.name));
-            birds.push(bird);
+    //     let birds = R.take(3, traits.filter(bird => bird.name !== item.name));
+    //         birds.push(bird);
 
-            birds = utils.shuffleArray(birds.map(bird => bird.name));
+    //         birds = utils.shuffleArray(birds.map(bird => bird.name));
 
-        render(bird.name, birds, { question: 'Match the birdsong', vernacularName: 'Common name', binomial: 'Latin name', className: 'sub-header-tall' });
+    //     render(bird.name, birds, { question: 'Match the birdsong', vernacularName: 'Common name', binomial: 'Latin name', className: 'sub-header-tall' });
         
-        document.querySelector('.js-rptr-strips').classList.add('birdsong-strips');
+    //     document.querySelector('.js-rptr-strips').classList.add('birdsong-strips');
         
-        const parent = document.querySelector('.js-question-help');
-              parent.innerHTML = '';  
+    //     const parent = document.querySelector('.js-question-help');
+    //           parent.innerHTML = '';  
 
-        const template = document.createElement('template');
-              template.innerHTML = audioMediaTemplate;
+    //     const template = document.createElement('template');
+    //           template.innerHTML = audioMediaTemplate;
 
-        const xcID = bird.traits.find(trait => trait.name === 'song').value;
+    //     const xcID = bird.traits.find(trait => trait.name === 'song').value;
 
-        const mp3 = `./songs/${xcID}.mp3`;
+    //     const mp3 = `./songs/${xcID}.mp3`;
         
-        renderTemplate({ mp3, title: item.name }, template.content, parent);
-    }
+    //     renderTemplate({ mp3, title: item.name }, template.content, parent);
+    // }
 } catch(e) {
    
     rebindLayoutState(layout, item);

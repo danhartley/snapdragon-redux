@@ -7,8 +7,7 @@ import { portraitDefault } from 'snapdragon-config/plans/portrait/portrait-defau
 import { landscapeFungi, landscapeLichens } from 'snapdragon-config/plans/landscape/landscape-fungi';
 import { landscapeLeaf } from 'snapdragon-config/plans/landscape/landscape-leaf';
 
-const landscapeBirds = { ...R.clone(landscapeDefault), id: 5 };
-      landscapeBirds.levels[0].layouts.push(L.mediaMatch); 
+const landscapeBirds = { ...R.clone(landscapeDefault), id: 5 }; // simply a copy of default
 
 const portraitLeaf = { ...R.clone(landscapeLeaf), id: 102, portrait: true };
 const portraitFungi = { ...R.clone(landscapeFungi), id: 103, portrait: true };

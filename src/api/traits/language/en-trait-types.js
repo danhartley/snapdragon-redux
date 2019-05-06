@@ -167,6 +167,8 @@ export const english = {
         FENCES: 'Fences',
         TREES: "Trees",
         SHRUBS: "Shrubs",
+        SHRUBLAND: "Shrubland",
+        MARSHLAND: "Marshland",
         EXPOSED_WOOD: "Exposed wood",
         BRANCHES: "Branches",
         HILLS: 'Hills',

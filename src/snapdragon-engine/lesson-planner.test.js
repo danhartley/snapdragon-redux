@@ -17,10 +17,10 @@ test('createLessonPlan returns initial plan and collection for landscape mode wi
     const { updatedLessonPlan, updatedCollection, updatedLesson } = lessonPlanner.createLessonPlan(lessonPlan, config, collection, lesson);    
     let revisedScreens = [];
     updatedLessonPlan.layouts.map(l => l.screens.map(s => revisedScreens.push(s)));
-    // expect(updatedLessonPlan.layouts.length).toEqual(13); // 3 lessons (1 bonus) * 4 (moduleSize) + summary
-    expect(updatedLessonPlan.layouts.length).toEqual(9); // 2 lessons (no bonus) * 4 (moduleSize) + summary
-    // expect(revisedScreens.length).toEqual(26); // 3 lessons (1 bonus) * 4 (moduleSize) * 2 screens (landscape) + summary + history
-    expect(revisedScreens.length).toEqual(18); // 2 lessons (0 bonus) * 4 (moduleSize) * 2 screens (landscape) + summary + history
+    expect(updatedLessonPlan.layouts.length).toEqual(13); // 3 lessons (1 bonus) * 4 (moduleSize) + summary
+    // expect(updatedLessonPlan.layouts.length).toEqual(9); // 2 lessons (no bonus) * 4 (moduleSize) + summary
+    expect(revisedScreens.length).toEqual(26); // 3 lessons (1 bonus) * 4 (moduleSize) * 2 screens (landscape) + summary + history
+    // expect(revisedScreens.length).toEqual(18); // 2 lessons (0 bonus) * 4 (moduleSize) * 2 screens (landscape) + summary + history
 });
 
 test('createLessonPlan returns initial plan and collection for Lesson 1 for landscape mode with moduleSize 2 (overrides config)', () => {    

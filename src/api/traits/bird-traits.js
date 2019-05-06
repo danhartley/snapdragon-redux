@@ -98,6 +98,8 @@ const getTraits = SD => {
     { name: 'Falco tinnunculus', traits: [
         { name: 'song', value: '434309', description: 'xeno-canto id', type: 'flight call' },
         { name: SD.name.LOOK_ALIKES, values: [ 'Accipiter nisus' ]},
+        { name: SD.name.ACTIVE, value: SD.active.DIURNAL },
+        { name: SD.name.HABITAT, value: `${SD.habitat.HEATH}, ${SD.habitat.FIELDS}, ${SD.habitat.MARSHLAND}` },
     ] },
     { name: 'Accipiter nisus', traits: [
         { name: 'song', value: '309239', description: 'xeno-canto id', type: 'call' },

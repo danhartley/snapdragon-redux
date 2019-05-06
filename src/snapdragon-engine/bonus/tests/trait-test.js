@@ -5,7 +5,7 @@ import { store } from 'redux/store';
 import { getTraits } from 'api/traits/traits';
 import * as SD from 'api/traits/trait-types';
 
-export const getTraitTests = (collection, itemsInThisRound) => {
+export const getTraitTests = itemsInThisRound => {
 
     if(itemsInThisRound === undefined) return [];
 
@@ -13,7 +13,7 @@ export const getTraitTests = (collection, itemsInThisRound) => {
 
     const tests = itemsInThisRound.map(item => {
 
-        const { question, answers, overrides } = getTraitTest(collection, item);
+        const { question, answers, overrides } = getTraitTest(item);
 
         if(!question) return {};
 
@@ -28,19 +28,23 @@ export const getTraitTests = (collection, itemsInThisRound) => {
     return tests;
 }
 
-const getTraitTest = (collection, item) => {
+const getTraitTest = item => {
 
     const { enums } = store.getState();
 
-    const speciesTraits = getTraits(enums, item).find(trait => trait.name === item.name);
+    const traitsToIgnore = [ 'song' ]; // add flag so that this does not need to be updated e.g. ignore: true in the trait data
 
-    if(!speciesTraits) return {};
+    let itemTraits = getTraits(enums, item).find(trait => trait.name === item.name);
+        itemTraits = itemTraits.traits.filter(trait => !R.contains(trait.name, traitsToIgnore));
+        itemTraits = { name: item.name, traits: itemTraits };
 
-    const typedSpeciesTraits = SD.typedSpecies(enums, speciesTraits);
+    if(!itemTraits) return {};
 
-    if(!typedSpeciesTraits.length) return {};
+    const typedItemTraits = SD.typedSpecies(enums, itemTraits);
 
-    const trait = R.take(1, utils.shuffleArray(typedSpeciesTraits))[0];
+    if(!typedItemTraits.length) return {};
+
+    const trait = R.take(1, utils.shuffleArray(typedItemTraits))[0];
 
     const help =  trait.help ? `(${trait.help})` : `(${trait.name})`;
 

@@ -26,7 +26,8 @@ const specimenImages = {
 
   const birdsong = {
     name: 'birdsong',
-    domain: 'collection',    
+    domain: 'bonusLayout',  
+    // domain: 'collection',  
   }
 
   const mediaPlayers = {

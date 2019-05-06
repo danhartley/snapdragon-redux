@@ -1,6 +1,6 @@
 export const getNextActiveLayerLayouts = (lessonPlan, config, lesson) => {
 
-    // All layouts are currently activated beause the lesson edit function is not in use.
+    // All layouts are currently activated because the lesson edit function is not in use.
 
     lesson.activeLevelCount = lessonPlan.levels.filter(level => level.layouts.length > 0).length;
 

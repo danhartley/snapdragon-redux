@@ -5,7 +5,7 @@ export const renderBonusTest = bonusLayout => {
 
     const { collection } = store.getState();
 
-    const bonus = bonusLayout; // temp hack
+    const bonus = bonusLayout;
 
     renderMultiStrips(collection, bonus)
 };
