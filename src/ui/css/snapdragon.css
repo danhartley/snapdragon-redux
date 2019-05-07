@@ -636,10 +636,6 @@ a.dropdown-item {
   border: none;
 }
 
-.strip:hover {
-  box-shadow: 0 2px 8px rgba(0,0,0,.8);
-}
-
 .strip.snap-success > div.disabled {
   color: var(--gray-dark) !important;
 }

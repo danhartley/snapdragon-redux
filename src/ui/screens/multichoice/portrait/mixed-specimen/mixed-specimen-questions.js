@@ -82,7 +82,7 @@ export const renderMixedSpecimenQuestions = collection => {
                 boundScore.score = score;
                 boundScore.scoreUpdateTimer = scoreUpdateTimer;
                 score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
-                continueLessonBtn.disabled = false;
+                continueLessonBtn.disabled = false;                
             };
 
             scoreHandler('image-match', test, callback, config);
@@ -90,6 +90,14 @@ export const renderMixedSpecimenQuestions = collection => {
     });
 
     continueLessonBtn.addEventListener('click', event => {
+
+
+        
+
+        if(!score.success) {
+            // delay, show correct answer if wrong + its name
+        }
+
         window.clearTimeout(boundScore.scoreUpdateTimer);
         actions.boundUpdateScore(boundScore.score);
     });

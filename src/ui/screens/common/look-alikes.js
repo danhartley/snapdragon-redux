@@ -14,25 +14,15 @@ import { lookalikeDescriptions } from 'api/snapdragon/look-alike-descriptions';
 export const lookALikes = (item, traits, config) => {
 
     const lookalikes = itemProperties.itemContextProperty(traits, item, 'look-alikes');
+          lookalikes.push(item.name);
 
-    if(lookalikes && lookalikes !== '') {
+    if(lookalikes.length > 1) {
 
         const matchTemplate = document.createElement('template');
         matchTemplate.innerHTML = visualComparisonTemplate;
         const lookalikeParent = document.querySelector('.js-lookalikes');
 
         const slides = [];
-
-        let images = item.images.map((img, index) => { 
-            return { 
-                index: index + 1, 
-                src: { ...img, url: scaleImage({ url: img.url }, imageUseCases.CAROUSEL, config) },
-                itemName: item.name, 
-                itemCommon: item.vernacularName };
-        } );
-
-        slides.push({ images });
-
         const names = [];
         const scientificNames = [];
 
@@ -42,7 +32,7 @@ export const lookALikes = (item, traits, config) => {
             lookalikeItem.vernacularName = itemProperties.getVernacularName(lookalikeItem, config);
             names.push(lookalikeItem.vernacularName);
             scientificNames.push(lookalikeItem.name);
-            images = lookalikeItem.images.map((img, index) => { 
+            const images = lookalikeItem.images.map((img, index) => { 
                 return { 
                         index: index + 1, 
                         src: { ...img, url: scaleImage({ url: img.url }, imageUseCases.CAROUSEL, config) },
@@ -52,11 +42,11 @@ export const lookALikes = (item, traits, config) => {
             slides.push({ images });
         });
 
-        if(slides.length === 1) return;
+        // if(slides.length === 1) return;
 
         renderTemplate({slides, names: names.join(', ')}, matchTemplate.content, lookalikeParent);
 
-        if(config.isPortraitMode) return;
+        // if(config.isPortraitMode) return;
 
         const getTrait = (itemName, parent) => {
 
@@ -87,7 +77,7 @@ export const lookALikes = (item, traits, config) => {
 
         const speciesComparisonLink = document.querySelector('.js-compare-species-link');
 
-        speciesComparisonLink.addEventListener('click', ()=> {
+        speciesComparisonLink.addEventListener('click', () => {
 
             const parent = document.querySelector('#imageComparisonModal .js-modal-image');            
             imageSideBySlider(slides, parent, true, config);

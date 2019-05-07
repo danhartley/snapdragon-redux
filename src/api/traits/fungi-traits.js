@@ -578,7 +578,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.FLESH, value : "yellow, orange, white" },
         { name: SD.name.GROUPING, value : "large groups" },
     ], context: [
-        { name: SD.name.LOOK_ALIKES, values: [ 'Laetiporus sulphureus', 'Polyporus squamosus' ]},
+        { name: SD.name.LOOK_ALIKES, values: [ 'Laetiporus sulphureus', 'Polyporus squamosus', 'Laetiporus cincinnatus' ]},
         { name: SD.name.ECOLOGY, values: [SD.habitat.DEAD_WOOD, SD.treeType.HARDWOODS, ] },
         { name: SD.name.SYMBIONTS, values: [SD.treeType.BEECH, SD.treeType.OAK, SD.treeType.PRUNUS, SD.treeType.SALIX, SD.treeType.ROBINIA, SD.treeType.EUCALYPTUS, SD.treeType.CERATONIA] },  
     ]},
@@ -718,7 +718,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.FLESH, value : "white" },
         { name: SD.name.SMELL, value : "watermelon rind" },
     ], context: [
-        { name: SD.name.LOOK_ALIKES, values: [ 'Laetiporus sulphureus']},
+        { name: SD.name.LOOK_ALIKES, values: [ 'Laetiporus sulphureus', 'Laetiporus cincinnatus']},
         { name: SD.name.ECOLOGY, values: `${SD.treeType.HARDWOODS}, ${SD.habitat.DEAD_WOOD}` },
         { name: SD.name.SYMBIONTS, values: `${SD.treeType.ELM}, ${SD.treeType.MAPLE}, ${SD.treeType.ASH}, ${SD.treeType.PLANE}, ${SD.treeType.WILLOW}` },
     ]},
