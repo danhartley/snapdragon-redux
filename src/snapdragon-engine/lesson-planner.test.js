@@ -44,6 +44,7 @@ test('createLessonPlan skips a level that has no active (non-revision) layouts',
   lesson.isLevelComplete = true;
   lesson.level = lessonPlan.levels[0];
   lessonPlan.levels[1].layouts = [];
+  lessonPlan.levels[1].bonusLayouts = [];
   const { updatedLessonPlan, updatedCollection, updatedLesson } = lessonPlanner.createLessonPlan(lessonPlan, config, collection, lesson);
   expect(updatedLesson.level.name).toEqual('Level 3');
 });
@@ -53,7 +54,9 @@ test('createLessonPlan skips two levels that have no active (non-revision) layou
   lesson.isLevelComplete = true;
   lesson.level = lessonPlan.levels[0];
   lessonPlan.levels[1].layouts = [];
+  lessonPlan.levels[1].bonusLayouts = [];
   lessonPlan.levels[2].layouts = [];
+  lessonPlan.levels[2].bonusLayouts = [];
   const { updatedLessonPlan, updatedCollection, updatedLesson } = lessonPlanner.createLessonPlan(lessonPlan, config, collection, lesson);
   expect(updatedLesson.level.name).toEqual('Level 4');
 });

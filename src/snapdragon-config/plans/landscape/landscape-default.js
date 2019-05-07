@@ -32,7 +32,8 @@ export const landscapeDefault = {
         {   id: 2,
             name:'Level 2',
             layouts: [ L.commonToLatinMatch, L.textCompleteGenus, L.textCompleteSpecies ],
-            reviewLayouts: [ L.commonToLatinMatch, L.textCompleteGenus, L.textCompleteSpecies ]
+            reviewLayouts: [ L.commonToLatinMatch, L.textCompleteGenus, L.textCompleteSpecies ],
+            bonusLayouts: [ L.traitPropertyMatch ]
         },
         {   id: 3,
             name:'Level 3',
