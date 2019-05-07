@@ -97,11 +97,12 @@ export const typedEnums = enums => {
     });
 };
 
-// To check: I think all species are now typed automatically…
+// To check: I think all species are now typed automatically… no! yes, no, etc.
 
 export const typedSpecies = (enums, speciesTraits)=> {
     const typed = typedEnums(enums);
     const species = [];
+    if(!speciesTraits.traits) return [];
     speciesTraits.traits.map(trait => {
         typed.forEach(t => {
             if(trait.name && trait.name.toLowerCase() === t.name.toLowerCase())

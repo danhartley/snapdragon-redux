@@ -28,6 +28,7 @@ export const matchTaxonKey = (taxonomy, iconicTaxaKeys) => {
     if(taxonomy.order && R.contains(taxonomy.order.toLowerCase(), iconicTaxaKeys)) taxon = { rank: 'order', value: taxonomy.order.toLowerCase() };
     if(taxon.value === '' && taxonomy.class && R.contains(taxonomy.class.toLowerCase(), iconicTaxaKeys)) taxon = { rank: 'class', value: taxonomy.class.toLowerCase() };
     if(taxon.value === '' && taxonomy.kingdom && R.contains(taxonomy.kingdom.toLowerCase(), iconicTaxaKeys)) taxon = { rank: 'kingdom', value: taxonomy.kingdom.toLowerCase() };
+
     return taxon;
 }
 

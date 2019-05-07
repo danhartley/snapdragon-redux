@@ -1,7 +1,6 @@
-export const getNextActiveLayerLayouts = (collection, lessonPlan, config, lesson) => {
+export const getNextActiveLayerLayouts = (lessonPlan, config, lesson) => {
 
-    // This is not currently in use. 
-    // It is only relevant if/when we allow users to remove levels from a lesson (in lesson editor which is currently not in the flow)
+    // All layouts are currently activated because the lesson edit function is not in use.
 
     lesson.activeLevelCount = lessonPlan.levels.filter(level => level.layouts.length > 0).length;
 
@@ -12,7 +11,8 @@ export const getNextActiveLayerLayouts = (collection, lessonPlan, config, lesson
     const getLayouts = (currentLevel, mode) => {    
         switch(mode) {
             case 'learn':
-                return currentLevel.layouts;
+                currentLevel.bonusLayouts = currentLevel.bonusLayouts || [];
+                return [ ...currentLevel.layouts, ...currentLevel.bonusLayouts ];
             case 'review':
                 return currentLevel.reviewLayouts || [];
             default:
@@ -20,7 +20,7 @@ export const getNextActiveLayerLayouts = (collection, lessonPlan, config, lesson
         }
     };
 
-    const goToNextLevelThatHasLayouts = (collection, lessonPlan, levelId) => {
+    const goToNextLevelThatHasLayouts = (lessonPlan, levelId) => {
 
         let layouts = [], lessonName = '', levelName = '';        
         
@@ -33,7 +33,6 @@ export const getNextActiveLayerLayouts = (collection, lessonPlan, config, lesson
             const level = lessonPlan.levels.find(level => level.id === levelId + increment);
             lesson.level = level;
 
-            // actions.boundUpdateLesson(lesson);
             lesson.level = level;
             lessonName = lesson.name;
             levelName = lesson.level.name;
@@ -56,7 +55,7 @@ export const getNextActiveLayerLayouts = (collection, lessonPlan, config, lesson
         lesson.level = lessonPlan.levels.find(level => level.id === levelId);
     }
 
-    const { layouts } = goToNextLevelThatHasLayouts(collection, lessonPlan, levelId);
+    const { layouts } = goToNextLevelThatHasLayouts(lessonPlan, levelId);
 
     return layouts;
 };

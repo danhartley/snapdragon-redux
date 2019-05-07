@@ -1,7 +1,11 @@
 import { store } from 'redux/store';
-import { DOM } from 'ui/dom';
-import { renderTemplate } from 'ui/helpers/templating';
+import { renderSpecimenTiles } from 'ui/screens/landscape/specimen-tiles';
 
-export const renderSpecimenTiles = bonus => {
+export const renderBonusSpecimenTiles = bonusLayout => {
 
+    const { collection } = store.getState();
+
+    collection.nextItem = bonusLayout.item;
+
+    renderSpecimenTiles(collection);
 };

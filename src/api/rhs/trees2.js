@@ -16,7 +16,7 @@ const t = [
     //     {
     //       "vernacularName": "Caucasian lime",
     //       "language": "en",
-    //       "eol_preferred": true
+    //       
     //     },
     //     {
     //       "vernacularName": "Common Lime",
@@ -29,7 +29,7 @@ const t = [
     //     {
     //       "vernacularName": "Tilleul de Crimée",
     //       "language": "fr",
-    //       "eol_preferred": true
+    //       
     //     }
     //   ],
     //   "descriptions": [],
@@ -81,7 +81,7 @@ const t = [
     //     {
     //       "vernacularName": "Common Lime",
     //       "language": "en",
-    //       "eol_preferred": true
+    //       
     //     },
     //     {
     //       "vernacularName": "European linden",
@@ -102,7 +102,7 @@ const t = [
     //     {
     //       "vernacularName": "Tilleul à feuilles cordées",
     //       "language": "fr",
-    //       "eol_preferred": true
+    //       
     //     },
     //     {
     //       "vernacularName": "Tilleul commun",
@@ -159,17 +159,17 @@ const t = [
     //     {
     //       "vernacularName": "Trauer-Weide",
     //       "language": "de",
-    //       "eol_preferred": true
+    //       
     //     },
     //     {
     //       "vernacularName": "weeping willow",
     //       "language": "en",
-    //       "eol_preferred": true
+    //       
     //     },
     //     {
     //       "vernacularName": "Saule pleureur doré",
     //       "language": "fr",
-    //       "eol_preferred": true
+    //       
     //     },
     //     {
     //       "vernacularName": "Saule pleureur",
@@ -224,7 +224,7 @@ const t = [
     //     {
     //       "vernacularName": "Tibetan Cherry",
     //       "language": "en",
-    //       "eol_preferred": true
+    //       
     //     }
     //   ],
     //   "descriptions": [
@@ -273,7 +273,7 @@ const t = [
     //     {
     //       "vernacularName": "Waterer's Laburnum",
     //       "language": "en",
-    //       "eol_preferred": true
+    //       
     //     },
     //     {
     //       "vernacularName": "Goldenchain Tree",
@@ -282,7 +282,7 @@ const t = [
     //     {
     //       "vernacularName": "Cytise hybride",
     //       "language": "fr",
-    //       "eol_preferred": true
+    //       
     //     }
     //   ],
     //   "descriptions": [
@@ -328,7 +328,7 @@ const t = [
     //     {
     //       "vernacularName": "Chinese magnolia",
     //       "language": "en",
-    //       "eol_preferred": true
+    //       
     //     },
     //     {
     //       "vernacularName": "Saucer Magnolia",
@@ -341,7 +341,7 @@ const t = [
     //     {
     //       "vernacularName": "Magnolia de Soulange-Bodin",
     //       "language": "fr",
-    //       "eol_preferred": true
+    //       
     //     }
     //   ],
     //   "descriptions": [
@@ -384,7 +384,7 @@ const t = [
     //     {
     //       "vernacularName": "Highclere Holly",
     //       "language": "en",
-    //       "eol_preferred": true
+    //       
     //     },
     //     {
     //       "vernacularName": "Holly",
@@ -430,7 +430,7 @@ const t = [
     //     {
     //         "vernacularName": "Nyman\'s hybrideucryphia 'Nymansay'",
     //         "language": "en",
-    //         "eol_preferred": true
+    //         
     //     },
     //     {
     //         "vernacularName": "Eucryphia",
@@ -474,7 +474,7 @@ const t = [
     //     {
     //         "vernacularName": "Snow Gum",
     //         "language": "en",
-    //         "eol_preferred": true
+    //         
     //     }
     //   ],
     //   "descriptions": [],
@@ -513,7 +513,7 @@ const t = [
     //     {
     //       "vernacularName": "Plum-leaf hawthorn",
     //       "language": "en",
-    //       "eol_preferred": true
+    //       
     //     }
     //   ],
     //   "descriptions": [],
@@ -563,7 +563,7 @@ const t = [
     //     {
     //       "vernacularName": "Rotblühende Roßkastanie",
     //       "language": "de",
-    //       "eol_preferred": true
+    //       
     //     },
     //     {
     //       "vernacularName": "Fleischrote Rosskastanie",
@@ -576,7 +576,7 @@ const t = [
     //     {
     //       "vernacularName": "red horse-chestnut",
     //       "language": "en",
-    //       "eol_preferred": true
+    //       
     //     },
     //     {
     //       "vernacularName": "Pink Horse Chestnut",
@@ -589,7 +589,7 @@ const t = [
     //     {
     //       "vernacularName": "Marronnier rose",
     //       "language": "fr",
-    //       "eol_preferred": true
+    //       
     //     },
     //     {
     //       "vernacularName": "Marronnier à fleurs couleur de chair",

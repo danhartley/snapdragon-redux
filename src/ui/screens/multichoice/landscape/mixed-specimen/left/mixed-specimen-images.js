@@ -1,5 +1,3 @@
-import * as R from 'ramda';
-
 import { species } from 'api/species';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { store } from 'redux/store';
@@ -7,7 +5,7 @@ import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import { DOM } from 'ui/dom';
-import { iconicTaxa, matchIcon, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
+import { iconicTaxa, matchIcon } from 'api/snapdragon/iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';
 import specimensTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images-template.html';
 import { getPoolItems } from 'ui/screens/multichoice/missing-data-helper';

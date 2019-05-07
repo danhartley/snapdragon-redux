@@ -22,7 +22,6 @@ export const landscapeFungi = {
                 L.multiSpecimenCommonMatch,
                 L.mixedSpeciesMatch
             ],
-            // wildcardLayouts : [],
             reviewLayouts: [ L.multiSpecimenCommonMatch, L.mixedSpeciesMatch ]
         },
         {   id: 2,
@@ -32,7 +31,6 @@ export const landscapeFungi = {
                 L.latinToCommonMatch,
                 L.commonEntry
             ],
-            // wildcardLayouts : [ ],
             reviewLayouts: [ 
                 L.latinToCommonMatch,
                 L.commonEntry,
@@ -45,7 +43,6 @@ export const landscapeFungi = {
                 { ...L.traitPropertyMatch, ...propertyTrait(L.traitPropertyMatch, 'howEdible') },
                 { ...L.traitPropertyMatch, ...propertyTrait(L.traitPropertyMatch, 'capShape') }                 
             ],
-            // wildcardLayouts : [ L.glossaryTerms ],
             reviewLayouts: [ 
                 { ...L.traitPropertyMatch, ...propertyTrait(L.traitPropertyMatch, 'howEdible') },
                 { ...L.traitPropertyMatch, ...propertyTrait(L.traitPropertyMatch, 'capShape') },
@@ -58,7 +55,6 @@ export const landscapeFungi = {
                 L.textCompleteGenus,
                 L.genusEntry
             ],
-            // wildcardLayouts : [  ],
             reviewLayouts: [ L.textCompleteGenus, L.genusEntry ]
         },
         {   id: 5,
@@ -68,7 +64,6 @@ export const landscapeFungi = {
                 L.textCompleteSpecies,
                 L.speciesEntry
              ],
-            // wildcardLayouts : [  ],
             reviewLayouts: [ L.textCompleteSpecies, L.speciesEntry ]
         },
         {   id: 6,
@@ -79,7 +74,6 @@ export const landscapeFungi = {
                 L.commonToLatinMatch,
                 L.speciesGenusEntry, 
             ],
-            // wildcardLayouts : [  ],
             reviewLayouts: [ L.speciesGenusEntry ]
         } 
     ]
@@ -95,6 +89,5 @@ landscapeLichens.levels[0] = {
         L.multiSpecimenCommonMatch,
         L.mixedSpeciesMatch
     ],
-    // wildcardLayouts : [],
     reviewLayouts: [ L.multiSpecimenCommonMatch, L.mixedSpeciesMatch ]
 };

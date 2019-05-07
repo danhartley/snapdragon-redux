@@ -41,7 +41,7 @@ export async function renderInatDataBox(parent, item, config, mode) {
         const placeTaxonCount = stats.results.find(stat => stat.taxon.name === item.name).count;
         const establishment = stats.results.find(stat => stat.taxon.name === item.name).taxon.preferred_establishment_means;
 
-        document.querySelector('.js-native-container').innerHTML = establishment;
+        document.querySelector('.js-native-container').innerHTML = establishment || '';
 
         parent.querySelector('.js-world').innerHTML = mode === 'MODAL' ? 'Worldwide' : 'Worldwide sightings';
         parent.querySelector('.js-place').innerHTML = mode === 'MODAL' ? country : `${country} sightings`;

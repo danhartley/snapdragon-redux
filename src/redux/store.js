@@ -6,11 +6,10 @@ import { logger } from 'redux/middleware/logger';
 import { timeoutScheduler } from 'redux/middleware/timeoutScheduler';
 
 import { config, enums } from 'redux/reducers/config-reducer';
-import { collections, collection } from 'redux/reducers/species-reducers';
+import { collections, collection, bonusLayout } from 'redux/reducers/species-reducers';
 import { counter, score, history, page } from 'redux/reducers/progress-reducers';
 import { lessonPlans, lessonPlan, layout } from 'redux/reducers/layout-reducers';
 import { lesson } from 'redux/reducers/lesson-reducers';
-// import { ui } from 'redux/reducers/ui-reducers';
 
 const reducer = combineReducers({
     counter,
@@ -23,9 +22,9 @@ const reducer = combineReducers({
     collections,
     history, 
     page,
-    // ui, 
     enums,
-    lesson
+    lesson,
+    bonusLayout
 });
 
 const persistConfig = {

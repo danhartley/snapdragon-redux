@@ -760,7 +760,7 @@ export const weeds = [
         {
           "vernacularName": "Hairy bittercress",
           "language": "en",
-          "eol_preferred": true
+          
         },
         {
           "vernacularName": "Hairy bittercress",
@@ -950,7 +950,7 @@ export const weeds = [
         {
           "vernacularName": "Hedge Bindweed",
           "language": "en",
-          "eol_preferred": true
+          
         },
         {
           "vernacularName": "Larger Bindweed",
@@ -1135,7 +1135,7 @@ export const weeds = [
         {
           "vernacularName": "Cocksfoot",
           "language": "en",
-          "eol_preferred": true
+          
         },
         {
           "vernacularName": "Cocksfoot",
@@ -1320,7 +1320,7 @@ export const weeds = [
         {
           "vernacularName": "Ground-Elder",
           "language": "en",
-          "eol_preferred": true
+          
         },
         {
           "vernacularName": "Gewöhnlicher Giersch",

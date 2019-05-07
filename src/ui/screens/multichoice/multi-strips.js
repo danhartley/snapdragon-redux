@@ -241,35 +241,21 @@ export const renderMultiStrips = (collection, bonus) => {
 
     if(screen.name === 'trait-property') {
         render(bonus.question, bonus.answers, bonus.overrides);
-    }
 
-    if(screen.name === 'birdsong') {
+        if(bonus.overrides.trait && bonus.overrides.trait.name === 'song') {
 
-        const { enums } = store.getState();
+            const parent = document.querySelector('.js-question-help');
+                  parent.innerHTML = '';
 
-        const traits = getTraits(enums);
-        const bird = traits.find(bird => bird.name === item.name);
-        
-        let birds = R.take(3, traits.filter(bird => bird.name !== item.name));
-            birds.push(bird);
+            const template = document.createElement('template');
+                  template.innerHTML = audioMediaTemplate;
 
-            birds = utils.shuffleArray(birds.map(bird => bird.name));
+            const xcID = bonus.overrides.trait.value;
 
-        render(bird.name, birds, { question: 'Match the birdsong', vernacularName: 'Common name', binomial: 'Latin name', className: 'sub-header-tall' });
-        
-        document.querySelector('.js-rptr-strips').classList.add('birdsong-strips');
-        
-        const parent = document.querySelector('.js-question-help');
-              parent.innerHTML = '';  
-
-        const template = document.createElement('template');
-              template.innerHTML = audioMediaTemplate;
-
-        const xcID = bird.traits.find(trait => trait.name === 'song').value;
-
-        const mp3 = `./songs/${xcID}.mp3`;
-        
-        renderTemplate({ mp3, title: item.name }, template.content, parent);
+            const mp3 = `./songs/${xcID}.mp3`;
+            
+            renderTemplate({ mp3, title: item.name }, template.content, parent);
+        }
     }
 } catch(e) {
    

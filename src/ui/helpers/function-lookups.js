@@ -20,6 +20,7 @@ import { renderMixedSpecimenQuestion } from 'ui/screens/multichoice/landscape/mi
 import { renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
 import { renderMediaPlayers } from 'ui/screens/media/landscape/media-players';
 import { renderBonusTest } from 'ui/screens/bonus/bonus-test';
+import { renderBonusSpecimenTiles } from 'ui/screens/bonus/bonus-specimen-tiles';
 
 const functions = [
     { name: 'mixed-specimen-questions', func: renderMixedSpecimenQuestions },
@@ -46,7 +47,7 @@ const functions = [
     { name: 'wildcard-card', func: renderWildcard },
     { name: 'wildcard-match', func: renderMultiStrips },
     { name: 'visual-match', func: renderMultiStrips },
-    // { name: 'trait-property', func: renderMultiStrips },
+    { name: 'trait-images', func: renderBonusSpecimenTiles },
     { name: 'trait-property', func: renderBonusTest },
     { name: 'symbiotic-property', func: renderMultiStrips },
     { name: 'definition-card', func: renderDefinitionCard },
@@ -55,7 +56,7 @@ const functions = [
     { name: 'mixed-specimen-question', func: renderMixedSpecimenQuestion },
     { name: 'mixed-specimen-images', func: renderMixedSpecimenImages },
     
-    { name: 'birdsong', func: renderMultiStrips },
+    { name: 'birdsong', func: renderBonusTest },
     { name: 'media-players', func: renderMediaPlayers },    
 ];
 

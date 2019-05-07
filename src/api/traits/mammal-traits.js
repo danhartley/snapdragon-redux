@@ -47,7 +47,7 @@ const getTraits = SD => {
         { id: 'Vulpes vulpes'}, { id: 'Squirrel parapoxvirus'}, { id: 'Sciurus carolinensis'},
     ], 
     traits: [            
-        { name: SD.name.HABITAT, value: `${SD.habitat.BOREAL}, ${SD.treeType.CONIFERS}, ${SD.treeType.BROAD_LEAF}`, type: SD.symbiosis.COMMENSALISM },        
+        { name: SD.name.HABITAT, value: `${SD.habitat.BOREAL}, ${SD.treeType.CONIFERS}, ${SD.treeType.BROAD_LEAF}`, type: SD.symbiosis.COMMENSALISM },
         { name: SD.name.LIFE_SPAN, value: '3-7a' },
         { name: SD.name.SHELTER, value: SD.shelter.DREY },
         { name: SD.name.ACTIVE, value: SD.active.CREPUSCULAR },        
