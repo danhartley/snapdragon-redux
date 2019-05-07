@@ -1,190 +1,172 @@
 export const insects = [
-    {
-        "id": 1045608,
-        "name": "Apis mellifera",
-        "images": [
-          {
-            "title": "Bee Happy",
-            "rightsHolder": "Treesha Duncan",
-            "source": "https://www.flickr.com/photos/iamtreesha/7894625598/",
-            "license": "http://creativecommons.org/licenses/by/2.0/",
-            "url": "81/22/92/542.7894625598.jpg",
-            "thumb": "81/22/92/542.7894625598.98x68.jpg",
-            "photographer": {
-              "full_name": "<a href='http://www.flickr.com/photos/57720887@N05'>Treesha Duncan</a>",
-              "homepage": "http://www.flickr.com/photos/57720887@N05",
-              "role": "photographer"
-            }
-          },
-          {
-            "title": "Apis mellifera mellifera cutted out of image.png",
-            "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-            "source": "https://commons.wikimedia.org/wiki/File:Apis_mellifera_mellifera_cutted_out_of_image.png",
-            "license": "http://creativecommons.org/licenses/by/3.0/",
-            "url": "56/a0/4b/509.16991497.jpg",
-            "thumb": "56/a0/4b/509.16991497.98x68.jpg"
-          },
-          {
-            "title": "Bienenkoenigin 43a.jpg",
-            "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-            "source": "https://commons.wikimedia.org/wiki/File:Bienenkoenigin_43a.jpg",
-            "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-            "url": "57/78/48/509.2087897.jpg",
-            "thumb": "57/78/48/509.2087897.98x68.jpg"
-          },
-          {
-            "title": "Abeille-bee-honey.jpg",
-            "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-            "source": "https://commons.wikimedia.org/wiki/File:Abeille-bee-honey.jpg",
-            "license": "http://creativecommons.org/licenses/by/3.0/",
-            "url": "57/24/98/509.1932762.jpg",
-            "thumb": "57/24/98/509.1932762.98x68.jpg"
-          },
-          {
-            "rightsHolder": "Harvard-Westlake School. Year: 2017.",
-            "source": "http://www.boldsystems.org/index.php/Taxbrowser_Taxonpage?taxid=21767",
-            "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-            "url": "7a/85/ec/539.SDP605_BT-247_D3_1492539060_jpg.jpg",
-            "thumb": "7a/85/ec/539.SDP605_BT-247_D3_1492539060_jpg.98x68.jpg",
-            "photographer": {
-              "full_name": "Vineta Sondors",
-              "homepage": null,
-              "role": "photographer"
-            }
-          },
-          {
-            "title": "Bienenkoenigin 43a cropped.jpg",
-            "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-            "source": "https://commons.wikimedia.org/wiki/File:Bienenkoenigin_43a_cropped.jpg",
-            "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-            "url": "5b/93/d8/509.16726751.jpg",
-            "thumb": "5b/93/d8/509.16726751.98x68.jpg"
-          },
-          {
-            "title": "RSCN2701.jpg",
-            "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-            "source": "https://commons.wikimedia.org/wiki/File:RSCN2701.jpg",
-            "license": "http://creativecommons.org/licenses/by/3.0/",
-            "url": "63/50/49/509.49094284.jpg",
-            "thumb": "63/50/49/509.49094284.98x68.jpg"
-          },
-          {
-            "title": "Fraxinus angustifolia, bloeiwyses en bye, e, Tweeling.jpg",
-            "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-            "source": "https://commons.wikimedia.org/wiki/File:Fraxinus_angustifolia,_bloeiwyses_en_bye,_e,_Tweeling.jpg",
-            "license": "http://creativecommons.org/licenses/by/3.0/",
-            "url": "5c/ea/94/509.22846535.jpg",
-            "thumb": "5c/ea/94/509.22846535.98x68.jpg"          
-          }          
-        ],
-        "names": [
-          {
-            "vernacularName": "Honigbiene",
-            "language": "de",
-            "eol_preferred": true
-          },
-          {
-            "vernacularName": "Südostafrikanische Hochlandbiene",
-            "language": "de"
-          },
-          {
-            "vernacularName": "Western Honeybee",
-            "language": "en",
-            "eol_preferred": true
-          },
-          {
-            "vernacularName": "A Honeybee",
-            "language": "en"
-          },
-          {
-            "vernacularName": "Cape honeybees",
-            "language": "en"
-          },
-          {
-            "vernacularName": "European honey bee",
-            "language": "en"
-          },
-          {
-            "vernacularName": "Queen honeybee",
-            "language": "en"
-          },
-          {
-            "vernacularName": "Western honey bee",
-            "language": "en",
-            wikiSearchTerm: true
-          },
-          {
-            "vernacularName": "bee",
-            "language": "en"
-          },
-          {
-            "vernacularName": "honey bee",
-            "language": "en"
-          },
-          {
-            "vernacularName": "honeybee",
-            "language": "en"
-          },
-          {
-            "vernacularName": "Apis mellifera",
-            "language": "es",
-            "eol_preferred": true
-          },
-          {
-            "vernacularName": "abeja de la miel",
-            "language": "es"
-          },
-          {
-            "vernacularName": "abeille domestique",
-            "language": "fr",
-            "eol_preferred": true
-          },
-          {
-            "vernacularName": "Abeille domestique, Abeille européenne",
-            "language": "fr"
-          },
-          {
-            "vernacularName": "ape del miele",
-            "language": "it",
-            "eol_preferred": true
-          },
-          {
-            "vernacularName": "abelha do mel",
-            "language": "pt",
-            "eol_preferred": true
-          }
-        ],
-        "descriptions": [
-          "The European honey bee, also known as the common or western honey bee (Apis mellifera) is so named because it produces large amounts of honey. It is believed that the honey bee originated in Africa and spread to northern Europe, India, and China. The honey bee is not native to North America, but was brought here with the first colonists. The honey bee is now distributed world wide.\r\n\r\nEuropean honey bees are variable in color, but are some shade of black or brown intermixed with yellow. The bee ranges from 3/8 to 3/4 of an inch long, with workers being the smallest and the queen being the largest. A queen bee is elongate and has a straight stinger with no barbs. A worker bee has hind legs specialized for collecting pollen - each leg is flattened and covered with long fringed hairs that form a pollen basket. A worker bee's stinger has barbs. A drone bee is stout-bodied and has large eyes.\r\n\r\nWild European honey bee nests are found in hollow trees or man-made structures. Managed colonies are often kept in wooden hives. Flowers in meadows, open woods, agricultural areas, and yards and gardens are visited by worker bees."
-        ],
-        "taxonomy": {
-          "usageKey": 1341976,
-          "scientificName": "Apis mellifera Linnaeus, 1758",
-          "canonicalName": "Apis mellifera",
-          "rank": "SPECIES",
-          "status": "ACCEPTED",
-          "confidence": 100,
-          "matchType": "EXACT",
-          "kingdom": "Animalia",
-          "phylum": "Arthropoda",
-          "order": "Hymenoptera",
-          "family": "Apidae",
-          "genus": "Apis",
-          "species": "Apis mellifera",
-          "kingdomKey": 1,
-          "phylumKey": 54,
-          "classKey": 216,
-          "orderKey": 1457,
-          "familyKey": 4334,
-          "genusKey": 7799978,
-          "speciesKey": 1341976,
-          "synonym": false,
-          "class": "Insecta"
-        },
-        "family": "Apidae",
-        "eolName": "Apis mellifera Linnaeus 1758"
+  {
+    "id": 1045608,
+    "name": "Apis mellifera",
+    "images": [
+      {
+        "title": "Bee Happy",
+        "rightsHolder": "Treesha Duncan",
+        "source": "https://www.flickr.com/photos/iamtreesha/7894625598/",
+        "license": "http://creativecommons.org/licenses/by/2.0/",
+        "url": "81/22/92/542.7894625598.jpg",
+        "thumb": "81/22/92/542.7894625598.98x68.jpg",
+        "photographer": {
+          "full_name": "<a href='http://www.flickr.com/photos/57720887@N05'>Treesha Duncan</a>",
+          "homepage": "http://www.flickr.com/photos/57720887@N05",
+          "role": "photographer"
+        }
       },
-
+      {
+        "title": "Apis mellifera mellifera cutted out of image.png",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Apis_mellifera_mellifera_cutted_out_of_image.png",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "56/a0/4b/509.16991497.jpg",
+        "thumb": "56/a0/4b/509.16991497.98x68.jpg"
+      },
+      {
+        "title": "Bienenkoenigin 43a.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Bienenkoenigin_43a.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "57/78/48/509.2087897.jpg",
+        "thumb": "57/78/48/509.2087897.98x68.jpg"
+      },
+      {
+        "title": "Abeille-bee-honey.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Abeille-bee-honey.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "57/24/98/509.1932762.jpg",
+        "thumb": "57/24/98/509.1932762.98x68.jpg"
+      },
+      {
+        "rightsHolder": "Harvard-Westlake School. Year: 2017.",
+        "source": "http://www.boldsystems.org/index.php/Taxbrowser_Taxonpage?taxid=21767",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "7a/85/ec/539.SDP605_BT-247_D3_1492539060_jpg.jpg",
+        "thumb": "7a/85/ec/539.SDP605_BT-247_D3_1492539060_jpg.98x68.jpg",
+        "photographer": {
+          "full_name": "Vineta Sondors",
+          "homepage": null,
+          "role": "photographer"
+        }
+      },
+      {
+        "title": "Bienenkoenigin 43a cropped.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Bienenkoenigin_43a_cropped.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "5b/93/d8/509.16726751.jpg",
+        "thumb": "5b/93/d8/509.16726751.98x68.jpg"
+      },
+      {
+        "title": "RSCN2701.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:RSCN2701.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "63/50/49/509.49094284.jpg",
+        "thumb": "63/50/49/509.49094284.98x68.jpg"
+      },
+      {
+        "title": "Fraxinus angustifolia, bloeiwyses en bye, e, Tweeling.jpg",
+        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+        "source": "https://commons.wikimedia.org/wiki/File:Fraxinus_angustifolia,_bloeiwyses_en_bye,_e,_Tweeling.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "5c/ea/94/509.22846535.jpg",
+        "thumb": "5c/ea/94/509.22846535.98x68.jpg"
+      }
+    ],
+    "names": [
+      {
+        "vernacularName": "Honigbiene",
+        "language": "de",
+        "eol_preferred": true
+      },
+      {
+        "vernacularName": "Südostafrikanische Hochlandbiene",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Western Honeybee",
+        "language": "en",
+        "eol_preferred": true
+      },
+      {
+        "vernacularName": "A Honeybee",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Cape honeybees",
+        "language": "en"
+      },
+      {
+        "vernacularName": "European honey bee",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Queen honeybee",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Western honey bee",
+        "language": "en",
+        "wikiSearchTerm": true
+      },
+      {
+        "vernacularName": "bee",
+        "language": "en"
+      },
+      {
+        "vernacularName": "honey bee",
+        "language": "en"
+      },
+      {
+        "vernacularName": "honeybee",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Apis mellifera",
+        "language": "es",
+        "eol_preferred": true
+      },
+      {
+        "vernacularName": "abeja de la miel",
+        "language": "es"
+      },
+      {
+        "vernacularName": "abeille domestique",
+        "language": "fr",
+        "eol_preferred": true
+      },
+      {
+        "vernacularName": "Abeille domestique, Abeille européenne",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "ape del miele",
+        "language": "it",
+        "eol_preferred": true
+      },
+      {
+        "vernacularName": "abelha do mel",
+        "language": "pt",
+        "eol_preferred": true
+      }
+    ],
+    "descriptions": [
+      "The European honey bee, also known as the common or western honey bee (Apis mellifera) is so named because it produces large amounts of honey. It is believed that the honey bee originated in Africa and spread to northern Europe, India, and China. The honey bee is not native to North America, but was brought here with the first colonists. The honey bee is now distributed world wide.\r\n\r\nEuropean honey bees are variable in color, but are some shade of black or brown intermixed with yellow. The bee ranges from 3/8 to 3/4 of an inch long, with workers being the smallest and the queen being the largest. A queen bee is elongate and has a straight stinger with no barbs. A worker bee has hind legs specialized for collecting pollen - each leg is flattened and covered with long fringed hairs that form a pollen basket. A worker bee's stinger has barbs. A drone bee is stout-bodied and has large eyes.\r\n\r\nWild European honey bee nests are found in hollow trees or man-made structures. Managed colonies are often kept in wooden hives. Flowers in meadows, open woods, agricultural areas, and yards and gardens are visited by worker bees."
+    ],
+    "taxonomy": {
+      "kingdom": "Animalia",
+      "phylum": "Arthropoda",
+      "class": "Insecta",
+      "order": "Hymenoptera",
+      "family": "Apidae"
+    },
+    "family": "Apidae",
+    "eolName": "Apis mellifera Linnaeus 1758"
+  },
   {
     "id": 1177347,
     "name": "Bombus terrestris",
@@ -275,78 +257,51 @@ export const insects = [
       },
       {
         "vernacularName": "Abejorro",
-        "language": "es",
-        
+        "language": "es"
       },
       {
         "vernacularName": "Abelho",
-        "language": "es",
-        
+        "language": "es"
       },
       {
         "vernacularName": "Buff-tailed Bumblebee",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Buff-tailed Bumblebee",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Bumble Bee",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Dunkle Erdhummel",
-        "language": "de",
-        
+        "language": "de"
       },
       {
         "vernacularName": "Large Earth Bumblebee",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Large Earth Bumblebee",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "bumble bee",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Buff-tailed bumblebee",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1340503,
-      "scientificName": "Bombus terrestris (Linnaeus, 1758)",
-      "canonicalName": "Bombus terrestris",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hymenoptera",
-      "family": "Apidae",
-      "genus": "Bombus",
-      "species": "Bombus terrestris",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1457,
-      "familyKey": 4334,
-      "genusKey": 1340278,
-      "speciesKey": 1340503,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Apidae"
     },
     "family": "Apidae",
     "kingdom": "Animalia",
@@ -475,12 +430,12 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Speckled Wood",
-        "language": "en", 
+        "language": "en"
       },
       {
         "vernacularName": "Speckled Wood (butterfly)",
-        "language": "en",  
-        wikiSearchTerm: true
+        "language": "en",
+        "wikiSearchTerm": true
       },
       {
         "vernacularName": "Ariana",
@@ -488,48 +443,31 @@ export const insects = [
       },
       {
         "vernacularName": "Bruna boscana",
-        "language": "cat",        
+        "language": "cat"
       },
       {
         "vernacularName": "Malhadinha",
-        "language": "es",      
+        "language": "es"
       },
       {
         "vernacularName": "Tircis",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "Waldbrettspiel",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "maculada",
-        "language": "es",        
-      },      
+        "language": "es"
+      }
     ],
     "taxonomy": {
-      "usageKey": 8049830,
-      "scientificName": "Pararge aegeria (Linnaeus, 1758)",
-      "canonicalName": "Pararge aegeria",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Nymphalidae",
-      "genus": "Pararge",
-      "species": "Pararge aegeria",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 7017,
-      "genusKey": 1894469,
-      "speciesKey": 8049830,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Nymphalidae"
     },
     "family": "Nymphalidae",
     "kingdom": "Animalia",
@@ -661,52 +599,35 @@ export const insects = [
     "names": [
       {
         "vernacularName": "southern swallowtail",
-        "language": "en",
+        "language": "en"
       },
       {
         "vernacularName": "southern scarce swallowtail",
-        "language": "en",
+        "language": "en"
       },
       {
         "vernacularName": "Iberische Segelfalter",
-        "language": "de",
+        "language": "de"
       },
       {
         "vernacularName": "chupaleches",
-        "language": "es",
+        "language": "es"
       },
       {
         "vernacularName": "Voilier blanc",
-        "language": "fr",
+        "language": "fr"
       },
       {
         "vernacularName": "Flambé ibérique",
-        "language": "fr",
-      },
+        "language": "fr"
+      }
     ],
     "taxonomy": {
-      "usageKey": 4690079,
-      "scientificName": "Iphiclides feisthamelii (Duponchel, 1832)",
-      "canonicalName": "Iphiclides feisthamelii",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Papilionidae",
-      "genus": "Iphiclides",
-      "species": "Iphiclides feisthamelii",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 9417,
-      "genusKey": 1938213,
-      "speciesKey": 4690079,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Papilionidae"
     },
     "family": "Papilionidae",
     "kingdom": "Animalia",
@@ -875,53 +796,31 @@ export const insects = [
       },
       {
         "vernacularName": "European Hoverfly",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Hover Flies",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Mistbiene",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Éristale gluante",
-        "language": "fr",
-        
+        "language": "fr"
       },
       {
         "vernacularName": "Drone fly",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1541217,
-      "scientificName": "Eristalis tenax (Linnaeus, 1758)",
-      "canonicalName": "Eristalis tenax",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Diptera",
-      "family": "Syrphidae",
-      "genus": "Eristalis",
-      "species": "Eristalis tenax",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 811,
-      "familyKey": 6920,
-      "genusKey": 1491190,
-      "speciesKey": 1541217,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Syrphidae"
     },
     "family": "Syrphidae",
     "kingdom": "Animalia",
@@ -998,80 +897,63 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Almirante Rojo",
-        "language": "es",        
+        "language": "es"
       },
       {
         "vernacularName": "Almirante-vermelho",
-        "language": "pt",        
+        "language": "pt"
       },
       {
         "vernacularName": "Atalanta",
-        "language": "es",        
+        "language": "es"
       },
       {
         "vernacularName": "Admiral",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "Red Admiral",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "amiral",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "numerada",
-        "language": "es",        
+        "language": "es"
       },
       {
         "vernacularName": "numéro quatre-vingt-dix-huit",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "papillon à numéro",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "vanesse amirale",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "vulcain",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "vulcano",
-        "language": "it",        
+        "language": "it"
       },
       {
         "vernacularName": "Red admiral",
-        "language": "en",        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1898286,
-      "scientificName": "Vanessa atalanta (Linnaeus, 1758)",
-      "canonicalName": "Vanessa atalanta",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Nymphalidae",
-      "genus": "Vanessa",
-      "species": "Vanessa atalanta",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 7017,
-      "genusKey": 1898261,
-      "speciesKey": 1898286,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Nymphalidae"
     },
     "family": "Nymphalidae",
     "kingdom": "Animalia",
@@ -1113,40 +995,23 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Italian striped bug",
-        "language": "en",
+        "language": "en"
       },
       {
         "vernacularName": "Graphosome d'Italie",
-        "language": "fr",
+        "language": "fr"
       },
       {
         "vernacularName": "Punaise arlequin",
-        "language": "fr",
-      },
+        "language": "fr"
+      }
     ],
     "taxonomy": {
-      "usageKey": 7437802,
-      "scientificName": "Graphosoma italicum (O.F.Müller, 1766)",
-      "canonicalName": "Graphosoma italicum",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hemiptera",
-      "family": "Pentatomidae",
-      "genus": "Graphosoma",
-      "species": "Graphosoma italicum",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 809,
-      "familyKey": 9650,
-      "genusKey": 4405318,
-      "speciesKey": 7437802,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Pentatomidae"
     },
     "family": "Pentatomidae",
     "kingdom": "Animalia",
@@ -1240,64 +1105,47 @@ export const insects = [
     "names": [
       {
         "vernacularName": "firebug",
-        "language": "en",
+        "language": "en"
       },
       {
         "vernacularName": "Gemeine Feuerwanze",
-        "language": "de",
+        "language": "de"
       },
       {
         "vernacularName": "chinche de la malva arbóre",
-        "language": "es",
+        "language": "es"
       },
       {
         "vernacularName": "zapatero",
-        "language": "es",
+        "language": "es"
       },
       {
         "vernacularName": "San Antonio",
-        "language": "es",
+        "language": "es"
       },
       {
         "vernacularName": "gendarme",
-        "language": "fr",
+        "language": "fr"
       },
       {
         "vernacularName": "pyrrhocore",
-        "language": "fr",
+        "language": "fr"
       },
       {
         "vernacularName": "pyrrhocore",
-        "language": "fr",
+        "language": "fr"
       },
       {
         "vernacularName": "cimice rosso nera",
-        "language": "it",
-      },
+        "language": "it"
+      }
     ],
     "taxonomy": {
-      "usageKey": 4486826,
-      "scientificName": "Pyrrhocoris apterus (Linnaeus, 1758)",
-      "canonicalName": "Pyrrhocoris apterus",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hemiptera",
-      "family": "Pyrrhocoridae",
-      "genus": "Pyrrhocoris",
-      "species": "Pyrrhocoris apterus",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 809,
-      "familyKey": 7895,
-      "genusKey": 4407618,
-      "speciesKey": 4486826,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Pyrrhocoridae"
     },
     "family": "Pyrrhocoridae",
     "kingdom": "Animalia",
@@ -1473,65 +1321,47 @@ export const insects = [
       },
       {
         "vernacularName": "Swallowtail",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Borboleta-cauda-de-andorinha",
-        "language": "pt",        
+        "language": "pt"
       },
       {
         "vernacularName": "Common Yellow Swallowtail",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Common Yellow Swallowtail",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Macaone",
-        "language": "it",        
+        "language": "it"
       },
       {
         "vernacularName": "Machaon",
-        "language": "es",        
+        "language": "es"
       },
       {
         "vernacularName": "Mariposa cometa",
-        "language": "es",    
+        "language": "es"
       },
       {
         "vernacularName": "Papallona reina",
-        "language": "cat",        
+        "language": "cat"
       },
       {
         "vernacularName": "Schwalbenschwanz",
-        "language": "de",        
-      },      
+        "language": "de"
+      }
     ],
     "taxonomy": {
-      "usageKey": 8225376,
-      "scientificName": "Papilio machaon Linnaeus, 1758",
-      "canonicalName": "Papilio machaon",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Papilionidae",
-      "genus": "Papilio",
-      "species": "Papilio machaon",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 9417,
-      "genusKey": 1920784,
-      "speciesKey": 8225376,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Papilionidae"
     },
     "family": "Papilionidae",
     "kingdom": "Animalia",
@@ -1561,36 +1391,19 @@ export const insects = [
     "names": [
       {
         "vernacularName": "short-horned grasshopper",
-        "language": "en",
+        "language": "en"
       },
       {
         "vernacularName": "Kleine Knarrschrecke",
-        "language": "de",
-      },
+        "language": "de"
+      }
     ],
     "taxonomy": {
-      "usageKey": 1710463,
-      "scientificName": "Pezotettix giornae (Rossi, 1794)",
-      "canonicalName": "Pezotettix giornae",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Orthoptera",
-      "family": "Acrididae",
-      "genus": "Pezotettix",
-      "species": "Pezotettix giornae",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1458,
-      "familyKey": 9394,
-      "genusKey": 1710455,
-      "speciesKey": 1710463,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Acrididae"
     },
     "family": "Acrididae",
     "kingdom": "Animalia",
@@ -1636,32 +1449,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Harvester ant",
-        "language": "en",
-      },
+        "language": "en"
+      }
     ],
     "taxonomy": {
-      "usageKey": 1316376,
-      "scientificName": "Messor barbarus (Linnaeus, 1767)",
-      "canonicalName": "Messor barbarus",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hymenoptera",
-      "family": "Formicidae",
-      "genus": "Messor",
-      "species": "Messor barbarus",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1457,
-      "familyKey": 4342,
-      "genusKey": 1316342,
-      "speciesKey": 1316376,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Formicidae"
     },
     "family": "Formicidae",
     "kingdom": "Animalia",
@@ -1738,143 +1534,111 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Borboleta-das-couves",
-        "language": "es",
+        "language": "es"
       },
       {
         "vernacularName": "Branca-das-couves",
-        "language": "es",
-        
+        "language": "es"
       },
       {
         "vernacularName": "Cabbage White",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Cabbage Butterfly",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Cabbage White Butterfly",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Cabbage White",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Cavolaia minore",
-        "language": "it",        
+        "language": "it"
       },
       {
         "vernacularName": "Klein koolwitje",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Klein koolwitje",
-        "language": "de",    
+        "language": "de"
       },
       {
         "vernacularName": "Kleiner Kohlweiling",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Kleiner Kohlweiling",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Kleiner Kohlweiling",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Kleiner Kohlweiling",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Kleiner Kohlweiling",
-        "language": "de",
-        
+        "language": "de"
       },
       {
         "vernacularName": "Lagarta-das-couves",
-        "language": "es",
-        
+        "language": "es"
       },
       {
         "vernacularName": "Lagarta-das-couves",
-        "language": "es",
-        
+        "language": "es"
       },
       {
         "vernacularName": "Mariposa blanca de la col",
-        "language": "es",
-        
+        "language": "es"
       },
       {
         "vernacularName": "Mariposa blanca de la col",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Pepe Ma",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Rapaiola",
-        "language": "it",
-        
+        "language": "it"
       },
       {
         "vernacularName": "Rbenweiling",
-        "language": "de",
-        
+        "language": "de"
       },
       {
         "vernacularName": "Small Cabbage White",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Small White",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "blanca de la col",
-        "language": "es",
-        
+        "language": "es"
       },
       {
         "vernacularName": "piride du chou",
-        "language": "fr",
-        
-      },
+        "language": "fr"
+      }
     ],
     "taxonomy": {
-      "usageKey": 1920496,
-      "scientificName": "Pieris rapae (Linnaeus, 1758)",
-      "canonicalName": "Pieris rapae",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Pieridae",
-      "genus": "Pieris",
-      "species": "Pieris rapae",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 5481,
-      "genusKey": 7236092,
-      "speciesKey": 1920496,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Pieridae"
     },
     "family": "Pieridae",
     "kingdom": "Animalia",
@@ -1997,36 +1761,19 @@ export const insects = [
       },
       {
         "vernacularName": "Llagosta mediterrnia",
-        "language": "es",        
+        "language": "es"
       },
       {
         "vernacularName": "Locusta egiziana",
-        "language": "it",        
-      },
+        "language": "it"
+      }
     ],
     "taxonomy": {
-      "usageKey": 1702101,
-      "scientificName": "Anacridium aegyptium (Linnaeus, 1764)",
-      "canonicalName": "Anacridium aegyptium",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Orthoptera",
-      "family": "Acrididae",
-      "genus": "Anacridium",
-      "species": "Anacridium aegyptium",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1458,
-      "familyKey": 9394,
-      "genusKey": 1702100,
-      "speciesKey": 1702101,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Acrididae"
     },
     "family": "Acrididae",
     "kingdom": "Animalia",
@@ -2074,53 +1821,31 @@ export const insects = [
       },
       {
         "vernacularName": "European carpenter bee",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "European carpenter bee",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Groe Holzbiene",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "black",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Carpenter bee",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1342108,
-      "scientificName": "Xylocopa violacea (Linnaeus, 1758)",
-      "canonicalName": "Xylocopa violacea",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hymenoptera",
-      "family": "Apidae",
-      "genus": "Xylocopa",
-      "species": "Xylocopa violacea",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1457,
-      "familyKey": 4334,
-      "genusKey": 1342048,
-      "speciesKey": 1342108,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Apidae"
     },
     "family": "Apidae",
     "kingdom": "Animalia",
@@ -2201,32 +1926,15 @@ export const insects = [
       },
       {
         "vernacularName": "Zweiundzwanzigpunkt-Marienkfer",
-        "language": "de",        
+        "language": "de"
       }
     ],
     "taxonomy": {
-      "usageKey": 4452252,
-      "scientificName": "Psyllobora vigintiduopunctata (Linnaeus, 1758)",
-      "canonicalName": "Psyllobora vigintiduopunctata",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Coccinellidae",
-      "genus": "Psyllobora",
-      "species": "Psyllobora vigintiduopunctata",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 7782,
-      "genusKey": 1043577,
-      "speciesKey": 4452252,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Coccinellidae"
     },
     "family": "Coccinellidae",
     "kingdom": "Animalia",
@@ -2257,32 +1965,15 @@ export const insects = [
       {
         "vernacularName": "american cockroach",
         "language": "en",
-        wikiSearchTerm: true
-      },      
+        "wikiSearchTerm": true
+      }
     ],
     "taxonomy": {
-      "usageKey": 2000152,
-      "scientificName": "Periplaneta americana (Linnaeus, 1758)",
-      "canonicalName": "Periplaneta americana",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Blattodea",
-      "family": "Blattidae",
-      "genus": "Periplaneta",
-      "species": "Periplaneta americana",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 800,
-      "familyKey": 5107,
-      "genusKey": 1993899,
-      "speciesKey": 2000152,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Blattidae"
     },
     "family": "Blattidae",
     "kingdom": "Animalia",
@@ -2367,38 +2058,21 @@ export const insects = [
     ],
     "names": [
       {
-      "vernacularName": "comb-clawed beetle",
-      "language": "en",
+        "vernacularName": "comb-clawed beetle",
+        "language": "en"
       },
       {
-      "vernacularName": "Alleculinae",
-      "language": "en",
-      wikiSearchTerm: true
-      },
+        "vernacularName": "Alleculinae",
+        "language": "en",
+        "wikiSearchTerm": true
+      }
     ],
     "taxonomy": {
-      "usageKey": 4454891,
-      "scientificName": "Heliotaurus ruficollis (Fabricius, 1781)",
-      "canonicalName": "Heliotaurus ruficollis",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Tenebrionidae",
-      "genus": "Heliotaurus",
-      "species": "Heliotaurus ruficollis",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 7857,
-      "genusKey": 4454887,
-      "speciesKey": 4454891,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Tenebrionidae"
     },
     "family": "Tenebrionidae",
     "kingdom": "Animalia",
@@ -2485,57 +2159,39 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Mediterranean Spotted Chafer",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Brunidora",
-        "language": "es",        
+        "language": "es"
       },
       {
         "vernacularName": "Cetoniella",
-        "language": "it",        
+        "language": "it"
       },
       {
         "vernacularName": "Cétoine grise",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "Drap mortuaire",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "Escarabajo del sudario",
-        "language": "es",        
+        "language": "es"
       },
       {
         "vernacularName": "Trauer-Rosenkäfer",
-        "language": "de",        
+        "language": "de"
       }
     ],
     "taxonomy": {
-      "usageKey": 1077130,
-      "scientificName": "Oxythyrea funesta (Poda, 1761)",
-      "canonicalName": "Oxythyrea funesta",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Scarabaeidae",
-      "subfamily": "Cetoniinae",
-      "genus": "Oxythyrea",
-      "species": "Oxythyrea funesta",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 4204,
-      "genusKey": 1077111,
-      "speciesKey": 1077130,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Scarabaeidae"
     },
     "family": "Scarabaeidae",
     "kingdom": "Animalia",
@@ -2577,33 +2233,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Leaf beetle",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 4460057,
-      "scientificName": "Chrysolina bankii (Fabricius, 1775)",
-      "canonicalName": "Chrysolina bankii",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Chrysomelidae",
-      "genus": "Chrysolina",
-      "species": "Chrysolina bankii",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 7780,
-      "genusKey": 1047378,
-      "speciesKey": 4460057,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Chrysomelidae"
     },
     "family": "Chrysomelidae",
     "kingdom": "Animalia",
@@ -2745,73 +2383,55 @@ export const insects = [
       {
         "vernacularName": "Scarlet Darter",
         "language": "en",
-        wikiSearchTerm: true
+        "wikiSearchTerm": true
       },
       {
         "vernacularName": "Broad Scarlet",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Feuerlibelle",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "Frecciarossa",
-        "language": "it",        
+        "language": "it"
       },
       {
         "vernacularName": "Libellule carlate",
-        "language": 'fr',        
+        "language": "fr"
       },
       {
         "vernacularName": "Liblula escarlate",
-        "language": "es",
-        
-      },      
+        "language": "es"
+      },
       {
         "vernacularName": "Scarlet Dragonfly",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Common Scarlet-darter",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Feuerlibelle",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "Libellule Écarlate",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "Libellule écarlate",
-        "language": "fr",        
-      },
+        "language": "fr"
+      }
     ],
     "taxonomy": {
-      "usageKey": 1427721,
-      "scientificName": "Crocothemis erythraea Brullé, 1832",
-      "canonicalName": "Crocothemis erythraea",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Odonata",
-      "family": "Libellulidae",
-      "genus": "Crocothemis",
-      "species": "Crocothemis erythraea",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 789,
-      "familyKey": 5936,
-      "genusKey": 8954298,
-      "speciesKey": 1427721,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Libellulidae"
     },
     "family": "Libellulidae",
     "kingdom": "Animalia",
@@ -2946,45 +2566,28 @@ export const insects = [
       },
       {
         "vernacularName": "Liblula de nervuras vermelhas",
-        "language": "pt",        
+        "language": "pt"
       },
       {
         "vernacularName": "Frühe Heidelibelle",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "Red-veined darter",
-        "language": "en",        
-        wikiSearchTerm: true
+        "language": "en",
+        "wikiSearchTerm": true
       },
       {
         "vernacularName": "Sympétrum de Fonscolombe",
-        "language": "fr",        
+        "language": "fr"
       }
     ],
     "taxonomy": {
-      "usageKey": 1428264,
-      "scientificName": "Sympetrum fonscolombii Selys, 1840",
-      "canonicalName": "Sympetrum fonscolombii",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Odonata",
-      "family": "Libellulidae",
-      "genus": "Sympetrum",
-      "species": "Sympetrum fonscolombii",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 789,
-      "familyKey": 5936,
-      "genusKey": 1428195,
-      "speciesKey": 1428264,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Libellulidae"
     },
     "family": "Libellulidae",
     "kingdom": "Animalia",
@@ -3099,52 +2702,35 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Borboleta-das-sardinheiras",
-        "language": "pt",        
+        "language": "pt"
       },
       {
         "vernacularName": "Brun des plargoniums",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "Common Geranium-bronze",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Farfallina dei gerani",
-        "language": "it",        
+        "language": "it"
       },
       {
         "vernacularName": "Licenide dei gerani",
-        "language": "it",        
+        "language": "it"
       },
       {
         "vernacularName": "pelargonium butterfly",
-        "language": "en",        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1932752,
-      "scientificName": "Cacyreus marshalli Butler, 1898",
-      "canonicalName": "Cacyreus marshalli",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Lycaenidae",
-      "genus": "Cacyreus",
-      "species": "Cacyreus marshalli",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 5473,
-      "genusKey": 1932749,
-      "speciesKey": 1932752,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Lycaenidae"
     },
     "family": "Lycaenidae",
     "kingdom": "Animalia",
@@ -3247,83 +2833,55 @@ export const insects = [
       },
       {
         "vernacularName": "Catarina de siete puntos",
-        "language": "es",
-        
+        "language": "es"
       },
       {
         "vernacularName": "Joaninha-de-sete-pintas",
-        "language": "es",
-        
-      },      
+        "language": "es"
+      },
       {
         "vernacularName": "Siebenpunkt",
-        "language": "de",
-        
+        "language": "de"
       },
       {
         "vernacularName": "Siebenpunkt-Marienkfer",
-        "language": "de",
-        
+        "language": "de"
       },
       {
         "vernacularName": "Zevenstippelig lieveheersbeestje",
-        "language": "de",
-        
+        "language": "de"
       },
       {
         "vernacularName": "Bête à Bon Dieu",
-        "language": "fr",
-        
+        "language": "fr"
       },
       {
         "vernacularName": "Coccinella dai sette punti",
-        "language": "it",
-        
+        "language": "it"
       },
       {
         "vernacularName": "Coccinelle",
-        "language": "fr",
-        
+        "language": "fr"
       },
       {
         "vernacularName": "Mariquita",
-        "language": "es",
-        
+        "language": "es"
       },
       {
         "vernacularName": "Siebenpunkt",
-        "language": "de",
-        
+        "language": "de"
       },
       {
         "vernacularName": "Siebenpunkt-Marienkäfer",
-        "language": "de",
-        
-      },
+        "language": "de"
+      }
     ],
     "taxonomy": {
-      "usageKey": 4990191,
-      "scientificName": "Coccinella septempunctata Linnaeus, 1758",
-      "canonicalName": "Coccinella septempunctata",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Coccinellidae",
-      "genus": "Coccinella",
-      "species": "Coccinella septempunctata",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 7782,
-      "genusKey": 1043502,
-      "speciesKey": 4990191,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Coccinellidae"
     },
     "family": "Coccinellidae",
     "kingdom": "Animalia",
@@ -3439,193 +2997,143 @@ export const insects = [
       },
       {
         "vernacularName": "Bufaforats",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Bufaforats",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Bufaforats",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Bufaforats",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Humming-bird Hawk-moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Hummingbird Hawk Moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Hummingbird Hawk Moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Hummingbird Hawk Moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Hummingbird Hawk Moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Hummingbird Hawk-moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Hummingbird Hawk-moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Hummingbird Hawk-moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Moro sphinx",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Moro sphinx",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Sfinge colibr",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Sfinge colibr",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Taubenschwnzchen",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Taubenschwnzchen",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Taubenschwnzchen",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Taubenschwnzchen",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Taubenschwnzchen",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "esfinge colibri",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "esfinge de colibr",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "esfinge de colibr",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "esfinge de colibr",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "hawk moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "hawk moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "hawk moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "hawk moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "hawk moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "hawk moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "hawk moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "hummingbird hawk-moth",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1864652,
-      "scientificName": "Macroglossum stellatarum (Linnaeus, 1758)",
-      "canonicalName": "Macroglossum stellatarum",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Sphingidae",
-      "genus": "Macroglossum",
-      "species": "Macroglossum stellatarum",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 8868,
-      "genusKey": 1864584,
-      "speciesKey": 1864652,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Sphingidae"
     },
     "family": "Sphingidae",
     "kingdom": "Animalia",
@@ -3700,153 +3208,111 @@ export const insects = [
     "names": [
       {
         "vernacularName": "European Mantis",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "European Mantis",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "European Mantis",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Europische Gottesanbeterin",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Europische Gottesanbeterin",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Louva-a-deus",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Louva-a-deus",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Mante religieuse",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Mantide religiosa",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Mantide religiosa",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Mantide religiosa",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Mantis",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Mantis",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Mantis",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Praying Mantis",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Praying Mantis",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Praying Mantis",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Pregadu",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "praying mantis",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "praying mantis",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "praying mantis",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "European mantis",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "praying mantis",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "European mantis",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "praying mantis",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 6258028,
-      "scientificName": "Mantis religiosa (Linné, 1758)",
-      "canonicalName": "Mantis religiosa",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Mantodea",
-      "family": "Mantidae",
-      "genus": "Mantis",
-      "species": "Mantis religiosa",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 788,
-      "familyKey": 9383,
-      "genusKey": 4394789,
-      "speciesKey": 6258028,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Mantidae"
     },
     "family": "Mantidae",
     "kingdom": "Animalia",
@@ -3997,56 +3463,39 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Marmalade Fly",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Flower Fly",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Gemeine Winterschwebfliege",
-        "language": "de",        
-      },      
+        "language": "de"
+      },
       {
         "vernacularName": "Hainschwebfliege",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "Marmalade hoverfly",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Marmalde Fly",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Syrphe  ceinture",
-        "language": "fr",        
-      },
+        "language": "fr"
+      }
     ],
     "taxonomy": {
-      "usageKey": 1536449,
-      "scientificName": "Episyrphus balteatus (De Geer, 1776)",
-      "canonicalName": "Episyrphus balteatus",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Diptera",
-      "family": "Syrphidae",
-      "genus": "Episyrphus",
-      "species": "Episyrphus balteatus",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 811,
-      "familyKey": 6920,
-      "genusKey": 1536427,
-      "speciesKey": 1536449,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Syrphidae"
     },
     "family": "Syrphidae",
     "kingdom": "Animalia",
@@ -4175,49 +3624,31 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Batman Hoverfly",
-        "language": "en",
+        "language": "en"
       },
       {
         "vernacularName": "Totenkopfschwebfliege",
-        "language": "de",
+        "language": "de"
       },
       {
         "vernacularName": "Gemeine Dolden-Schwebfliege",
-        "language": "de",
+        "language": "de"
       },
       {
         "vernacularName": "Éristale des fleurs",
-        "language": "fr",
+        "language": "fr"
       },
       {
         "vernacularName": "Syrphe tête de mort",
-        "language": "fr",
-      },
+        "language": "fr"
+      }
     ],
     "taxonomy": {
-      "usageKey": 4516754,
-      "acceptedUsageKey": 1541441,
-      "scientificName": "Myathropa florea (Linnaeus, 1758)",
-      "canonicalName": "Myathropa florea",
-      "rank": "SPECIES",
-      "status": "SYNONYM",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Diptera",
-      "family": "Syrphidae",
-      "genus": "Mallota",
-      "species": "Mallota florea",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 811,
-      "familyKey": 6920,
-      "genusKey": 1541361,
-      "speciesKey": 1541441,
-      "synonym": true,
-      "class": "Insecta"
+      "family": "Syrphidae"
     },
     "family": "Syrphidae",
     "kingdom": "Animalia",
@@ -4306,48 +3737,31 @@ export const insects = [
       },
       {
         "vernacularName": "Great Green Bush-cricket",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Groes Grnes Heupferd",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "Groes Heupferd",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "Longhorned Grasshopper",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Great green bushcricket",
-        "language": "en",        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1692898,
-      "scientificName": "Tettigonia viridissima (Linnaeus, 1758)",
-      "canonicalName": "Tettigonia viridissima",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 97,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Orthoptera",
-      "family": "Tettigoniidae",
-      "genus": "Tettigonia",
-      "species": "Tettigonia viridissima",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1458,
-      "familyKey": 3991,
-      "genusKey": 1692864,
-      "speciesKey": 1692898,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Tettigoniidae"
     },
     "family": "Tettigoniidae",
     "kingdom": "Animalia",
@@ -4504,193 +3918,143 @@ export const insects = [
       },
       {
         "vernacularName": "Clouded Yellow",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Clouded Yellow",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Clouded Yellow",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Clouded Yellow",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Clouded Yellow",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Clouded Yellow",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Colias crocea",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Colias crocea",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Colias crocea",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Colias crocea",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Colias crocea",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Colias croceus",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Colias croceus",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Common Clouded Yelow",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Edusa",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Maravilha",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Maravilha",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Maravilha",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Maravilha",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Maravilha",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Maravilha",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Maravilha",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Postillon",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Postillon",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Postillon",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Postillon",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Postillon",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Postillon",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Postillon",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Safranera de lalfals",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Safranera de lalfals",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Souci",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "common clouded yellow",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 5137612,
-      "scientificName": "Colias croceus (Fourcroy, 1785)",
-      "canonicalName": "Colias croceus",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Pieridae",
-      "genus": "Colias",
-      "species": "Colias croceus",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 5481,
-      "genusKey": 7786896,
-      "speciesKey": 5137612,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Pieridae"
     },
     "family": "Pieridae",
     "kingdom": "Animalia",
@@ -4735,32 +4099,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Cocktail ant",
-        "language": "en",
-      },
+        "language": "en"
+      }
     ],
     "taxonomy": {
-      "usageKey": 1325120,
-      "scientificName": "Crematogaster scutellaris (Olivier, 1792)",
-      "canonicalName": "Crematogaster scutellaris",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hymenoptera",
-      "family": "Formicidae",
-      "genus": "Crematogaster",
-      "species": "Crematogaster scutellaris",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1457,
-      "familyKey": 4342,
-      "genusKey": 1324306,
-      "speciesKey": 1325120,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Formicidae"
     },
     "family": "Formicidae",
     "kingdom": "Animalia",
@@ -4922,56 +4269,39 @@ export const insects = [
       },
       {
         "vernacularName": "Cimice verde",
-        "language": "it",        
+        "language": "it"
       },
       {
         "vernacularName": "Green Vegetable Bug",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Grüne Reiswanze",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "Südliche Stinkwanze",
-        "language": "de",       
+        "language": "de"
       },
       {
         "vernacularName": "Punaise verte puante",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "Southern Green Shieldbug",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Southern Green Stink Bug",
-        "language": "en",        
-      },      
+        "language": "en"
+      }
     ],
     "taxonomy": {
-      "usageKey": 2078852,
-      "scientificName": "Nezara viridula (Linnaeus, 1758)",
-      "canonicalName": "Nezara viridula",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hemiptera",
-      "family": "Pentatomidae",
-      "genus": "Nezara",
-      "species": "Nezara viridula",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 809,
-      "familyKey": 9650,
-      "genusKey": 2078851,
-      "speciesKey": 2078852,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Pentatomidae"
     },
     "family": "Pentatomidae",
     "kingdom": "Animalia",
@@ -5083,43 +4413,23 @@ export const insects = [
       },
       {
         "vernacularName": "Leopard Moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "moth, wood leopard",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Leopard moth",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1730978,
-      "scientificName": "Zeuzera pyrina (Linnaeus, 1761)",
-      "canonicalName": "Zeuzera pyrina",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Cossidae",
-      "genus": "Zeuzera",
-      "species": "Zeuzera pyrina",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 8840,
-      "genusKey": 1730935,
-      "speciesKey": 1730978,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Cossidae"
     },
     "family": "Cossidae",
     "kingdom": "Animalia",
@@ -5157,33 +4467,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Glass-winged Dronefly",
-        "language": "en",
-      },
+        "language": "en"
+      }
     ],
     "taxonomy": {
-      "usageKey": 4516874,
-      "acceptedUsageKey": 1541116,
-      "scientificName": "Eristalis similis (Fallén, 1817)",
-      "canonicalName": "Eristalis similis",
-      "rank": "SPECIES",
-      "status": "SYNONYM",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Diptera",
-      "family": "Syrphidae",
-      "genus": "Eristalis",
-      "species": "Eristalis pertinax",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 811,
-      "familyKey": 6920,
-      "genusKey": 1491190,
-      "speciesKey": 1541116,
-      "synonym": true,
-      "class": "Insecta"
+      "family": "Syrphidae"
     },
     "family": "Syrphidae",
     "kingdom": "Animalia",
@@ -5336,40 +4628,23 @@ export const insects = [
       },
       {
         "vernacularName": "Gemeine Stiftschwebfliege",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "Gewhnliche Langbauchschwebfliege",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "Long hoverfly",
-        "language": "en",        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1539177,
-      "scientificName": "Sphaerophoria scripta (Linnaeus, 1758)",
-      "canonicalName": "Sphaerophoria scripta",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Diptera",
-      "family": "Syrphidae",
-      "genus": "Sphaerophoria",
-      "species": "Sphaerophoria scripta",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 811,
-      "familyKey": 6920,
-      "genusKey": 1539106,
-      "speciesKey": 1539177,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Syrphidae"
     },
     "family": "Syrphidae",
     "kingdom": "Animalia",
@@ -5536,58 +4811,35 @@ export const insects = [
       },
       {
         "vernacularName": "Gamma-Eule",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Gamma-uil",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Gamma-uil",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Silver Y",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Silver Y",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Silver Y",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1792418,
-      "scientificName": "Autographa gamma (Linnaeus, 1758)",
-      "canonicalName": "Autographa gamma",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Noctuidae",
-      "genus": "Autographa",
-      "species": "Autographa gamma",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 7015,
-      "genusKey": 1792405,
-      "speciesKey": 1792418,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Noctuidae"
     },
     "family": "Noctuidae",
     "kingdom": "Animalia",
@@ -5657,44 +4909,27 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Veil",
-        "language": "en",
+        "language": "en"
       },
       {
         "vernacularName": "Rotgestreifter Wanderspanner",
-        "language": "de",
+        "language": "de"
       },
       {
         "vernacularName": "Rotstriemiger Vogelknöterichspanner",
-        "language": "de",
+        "language": "de"
       },
       {
         "vernacularName": "Schwefelgelber Schmuckspanner",
-        "language": "de",
-      },
+        "language": "de"
+      }
     ],
     "taxonomy": {
-      "usageKey": 1955694,
-      "scientificName": "Rhodometra sacraria (Linnaeus, 1767)",
-      "canonicalName": "Rhodometra sacraria",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Geometridae",
-      "genus": "Rhodometra",
-      "species": "Rhodometra sacraria",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 6950,
-      "genusKey": 1955678,
-      "speciesKey": 1955694,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Geometridae"
     },
     "family": "Geometridae",
     "kingdom": "Animalia",
@@ -5867,76 +5102,59 @@ export const insects = [
       },
       {
         "vernacularName": "mariposa del madroño",
-        "language": "es",        
+        "language": "es"
       },
       {
         "vernacularName": "bajá",
-        "language": "es",        
+        "language": "es"
       },
       {
         "vernacularName": "cuatro colas",
-        "language": "es",        
+        "language": "es"
       },
       {
         "vernacularName": "Nymphale de l'arbousier",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "Pacha à deux queues",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "Jason",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "Jasius",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "Erdbeerbaumfalter",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "borboleta-do-medronheiro",
-        "language": "pt",        
+        "language": "pt"
       },
       {
         "vernacularName": "imperador",
-        "language": "pt",        
+        "language": "pt"
       },
       {
         "vernacularName": "ninfa del corbezzolo",
-        "language": "it",        
+        "language": "it"
       },
       {
         "vernacularName": "papallona de l'arboç",
-        "language": "cat",        
-      },
+        "language": "cat"
+      }
     ],
     "taxonomy": {
-      "usageKey": 1896957,
-      "scientificName": "Charaxes jasius (Linnaeus, 1767)",
-      "canonicalName": "Charaxes jasius",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Nymphalidae",
-      "genus": "Charaxes",
-      "species": "Charaxes jasius",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 7017,
-      "genusKey": 7236053,
-      "speciesKey": 1896957,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Nymphalidae"
     },
     "family": "Nymphalidae",
     "kingdom": "Animalia",
@@ -6096,11 +5314,11 @@ export const insects = [
     "names": [
       {
         "vernacularName": "large cabbage white",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "large cabbage white",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Borboleta das Couves",
@@ -6108,72 +5326,55 @@ export const insects = [
       },
       {
         "vernacularName": "Cavolaia maggiore",
-        "language": "it",        
+        "language": "it"
       },
       {
         "vernacularName": "Giant cabbage white butterfly",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Groer Kohlweiling",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "Large White Butterfly",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Mariposa de la col",
-        "language": "es",        
+        "language": "es"
       },
       {
         "vernacularName": "Papallona de la col",
-        "language": "cat",        
+        "language": "cat"
       },
       {
         "vernacularName": "blanca de la col",
-        "language": "cat",        
+        "language": "cat"
       },
       {
         "vernacularName": "cabbage butterfly",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "cabbage moth",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "large cabbage white",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Large white",
-        "language": "en",        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1920506,
-      "scientificName": "Pieris brassicae (Linnaeus, 1758)",
-      "canonicalName": "Pieris brassicae",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Pieridae",
-      "genus": "Pieris",
-      "species": "Pieris brassicae",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 5481,
-      "genusKey": 7236092,
-      "speciesKey": 1920506,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Pieridae"
     },
     "family": "Pieridae",
     "kingdom": "Animalia",
@@ -6199,53 +5400,31 @@ export const insects = [
       },
       {
         "vernacularName": "Argentine Ant",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Hormiga argentina",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Argentine ant",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Argentine Ant",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Argentine ant",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1316908,
-      "scientificName": "Linepithema humile (Mayr, 1868)",
-      "canonicalName": "Linepithema humile",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hymenoptera",
-      "family": "Formicidae",
-      "genus": "Linepithema",
-      "species": "Linepithema humile",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1457,
-      "familyKey": 4342,
-      "genusKey": 1316904,
-      "speciesKey": 1316908,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Formicidae"
     },
     "family": "Formicidae",
     "kingdom": "Animalia",
@@ -6289,32 +5468,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "shield bug",
-        "language": "en",
-      },
+        "language": "en"
+      }
     ],
     "taxonomy": {
-      "usageKey": 4388683,
-      "scientificName": "Centrocoris variegatus Kolenati, 1845",
-      "canonicalName": "Centrocoris variegatus",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hemiptera",
-      "family": "Coreidae",
-      "genus": "Centrocoris",
-      "species": "Centrocoris variegatus",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 809,
-      "familyKey": 9649,
-      "genusKey": 4388674,
-      "speciesKey": 4388683,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Coreidae"
     },
     "family": "Coreidae",
     "kingdom": "Animalia",
@@ -6385,38 +5547,19 @@ export const insects = [
       },
       {
         "vernacularName": "potter wasp",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "potter wasp",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 5036694,
-      "scientificName": "Delta unguiculatum (Villers, 1789)",
-      "canonicalName": "Delta unguiculatum",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hymenoptera",
-      "family": "Eumenidae",
-      "genus": "Delta",
-      "species": "Delta unguiculatum",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1457,
-      "familyKey": 4240,
-      "genusKey": 1330315,
-      "speciesKey": 5036694,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Eumenidae"
     },
     "family": "Eumenidae",
     "kingdom": "Animalia",
@@ -6483,44 +5626,23 @@ export const insects = [
     "names": [
       {
         "vernacularName": "escarabajo rinoceronte.",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "escarabajo rinoceronte.",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "European rhinoceros beetle",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 4995700,
-      "scientificName": "Oryctes nasicornis (Linnaeus, 1758)",
-      "canonicalName": "Oryctes nasicornis",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Scarabaeidae",
-      "subfamily": "Dynastidae",
-      "genus": "Oryctes",
-      "species": "Oryctes nasicornis",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 4205,
-      "genusKey": 1075895,
-      "speciesKey": 4995700,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Scarabaeidae"
     },
     "family": "Scarabaeidae",
     "kingdom": "Animalia",
@@ -6614,41 +5736,23 @@ export const insects = [
       },
       {
         "vernacularName": "Mediterranean Katydid",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Mediterranean Katydid",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Mediterranean Katydid",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1686201,
-      "scientificName": "Phaneroptera Serville, 1831",
-      "canonicalName": "Phaneroptera",
-      "rank": "GENUS",
-      "status": "ACCEPTED",
-      "confidence": 92,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Orthoptera",
-      "family": "Tettigoniidae",
-      "genus": "Phaneroptera",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1458,
-      "familyKey": 3991,
-      "genusKey": 1686201,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Tettigoniidae"
     },
     "family": "Tettigoniidae",
     "kingdom": "Animalia",
@@ -6736,43 +5840,23 @@ export const insects = [
       },
       {
         "vernacularName": "Hover Flies",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "band-eyed drone fly",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Syrphid fly",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1542714,
-      "scientificName": "Eristalinus taeniops (Wiedemann, 1818)",
-      "canonicalName": "Eristalinus taeniops",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Diptera",
-      "family": "Syrphidae",
-      "genus": "Eristalinus",
-      "species": "Eristalinus taeniops",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 811,
-      "familyKey": 6920,
-      "genusKey": 1542672,
-      "speciesKey": 1542714,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Syrphidae"
     },
     "family": "Syrphidae",
     "kingdom": "Animalia",
@@ -6793,32 +5877,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Horvathiolus superbus",
-        "language": "en",
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 4486348,
-      "scientificName": "Horvathiolus superbus (Pollich, 1783)",
-      "canonicalName": "Horvathiolus superbus",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hemiptera",
-      "family": "Lygaeidae",
-      "genus": "Horvathiolus",
-      "species": "Horvathiolus superbus",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 809,
-      "familyKey": 7888,
-      "genusKey": 4407423,
-      "speciesKey": 4486348,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Lygaeidae"
     },
     "family": "Lygaeidae",
     "kingdom": "Animalia",
@@ -6879,28 +5946,11 @@ export const insects = [
       }
     ],
     "taxonomy": {
-      "usageKey": 1703295,
-      "scientificName": "Calliptamus barbarus (Costa & O.G., 1836)",
-      "canonicalName": "Calliptamus barbarus",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Orthoptera",
-      "family": "Acrididae",
-      "genus": "Calliptamus",
-      "species": "Calliptamus barbarus",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1458,
-      "familyKey": 9394,
-      "genusKey": 1703247,
-      "speciesKey": 1703295,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Acrididae"
     },
     "family": "Acrididae",
     "kingdom": "Animalia",
@@ -6962,44 +6012,27 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Broad Green-winged Grasshopper",
-        "language": "en",
+        "language": "en"
       },
       {
         "vernacularName": "Braune Strandschrecke",
-        "language": "de",
+        "language": "de"
       },
       {
         "vernacularName": "Oedipode automnale",
-        "language": "fr",
+        "language": "fr"
       },
       {
         "vernacularName": "Criquet farouche",
-        "language": "fr",
-      },
+        "language": "fr"
+      }
     ],
     "taxonomy": {
-      "usageKey": 1713302,
-      "scientificName": "Aiolopus strepens (Latreille, 1804)",
-      "canonicalName": "Aiolopus strepens",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Orthoptera",
-      "family": "Acrididae",
-      "genus": "Aiolopus",
-      "species": "Aiolopus strepens",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1458,
-      "familyKey": 9394,
-      "genusKey": 1713296,
-      "speciesKey": 1713302,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Acrididae"
     },
     "family": "Acrididae",
     "kingdom": "Animalia",
@@ -7068,32 +6101,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Harlequin bug",
-        "language": "en",        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 2007862,
-      "scientificName": "Lygaeus equestris (Linnaeus & C., 1758)",
-      "canonicalName": "Lygaeus equestris",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hemiptera",
-      "family": "Lygaeidae",
-      "genus": "Lygaeus",
-      "species": "Lygaeus equestris",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 809,
-      "familyKey": 7888,
-      "genusKey": 2007851,
-      "speciesKey": 2007862,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Lygaeidae"
     },
     "family": "Lygaeidae",
     "kingdom": "Animalia",
@@ -7217,58 +6233,35 @@ export const insects = [
       },
       {
         "vernacularName": "two-spotted ladybug",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "two-spotted ladybug",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "two-spotted ladybug",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "two-spotted ladybug",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "two-spotted ladybug",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Twospotted lady beetle",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1043097,
-      "scientificName": "Adalia bipunctata (Linnaeus, 1758)",
-      "canonicalName": "Adalia bipunctata",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Coccinellidae",
-      "genus": "Adalia",
-      "species": "Adalia bipunctata",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 7782,
-      "genusKey": 1043096,
-      "speciesKey": 1043097,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Coccinellidae"
     },
     "family": "Coccinellidae",
     "kingdom": "Animalia",
@@ -7312,33 +6305,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Devil's Coach Horse",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 5746121,
-      "scientificName": "Ocypus olens (Müller, 1764)",
-      "canonicalName": "Ocypus olens",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Staphylinidae",
-      "genus": "Ocypus",
-      "species": "Ocypus olens",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 7854,
-      "genusKey": 3262246,
-      "speciesKey": 5746121,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Staphylinidae"
     },
     "family": "Staphylinidae",
     "kingdom": "Animalia",
@@ -7384,38 +6359,19 @@ export const insects = [
     "names": [
       {
         "vernacularName": "codling moth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Codling moth",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1737847,
-      "scientificName": "Cydia pomonella (Linnaeus, 1758)",
-      "canonicalName": "Cydia pomonella",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Tortricidae",
-      "genus": "Cydia",
-      "species": "Cydia pomonella",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 5343,
-      "genusKey": 1737701,
-      "speciesKey": 1737847,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Tortricidae"
     },
     "family": "Tortricidae",
     "kingdom": "Animalia",
@@ -7706,69 +6662,52 @@ export const insects = [
       },
       {
         "vernacularName": "Argus bleu",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "Azur commun",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "Azur d'Icare",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "Azur de la bugrane",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "Blaveta comuna",
-        "language": "es",        
+        "language": "es"
       },
       {
         "vernacularName": "Common Blue",
         "language": "en",
-        wikiSearchTerm: true
+        "wikiSearchTerm": true
       },
       {
         "vernacularName": "Gemeiner Bluling",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "Hauhechel-Bluling",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "Icare",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "Lycne Icare",
-        "language": "en",        
-      },
+        "language": "en"
+      }
     ],
     "taxonomy": {
-      "usageKey": 5140214,
-      "scientificName": "Polyommatus icarus (Rottemburg, 1775)",
-      "canonicalName": "Polyommatus icarus",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Lycaenidae",
-      "genus": "Polyommatus",
-      "species": "Polyommatus icarus",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 5473,
-      "genusKey": 1933268,
-      "speciesKey": 5140214,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Lycaenidae"
     },
     "family": "Lycaenidae",
     "kingdom": "Animalia",
@@ -7837,32 +6776,15 @@ export const insects = [
       },
       {
         "vernacularName": "Pappelmarienkäfer",
-        "language": "de",
-      },
+        "language": "de"
+      }
     ],
     "taxonomy": {
-      "usageKey": 5877911,
-      "scientificName": "Oenopia conglobata (Linnaeus, 1758)",
-      "canonicalName": "Oenopia conglobata",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Coccinellidae",
-      "genus": "Oenopia",
-      "species": "Oenopia conglobata",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 7782,
-      "genusKey": 3263243,
-      "speciesKey": 5877911,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Coccinellidae"
     },
     "family": "Coccinellidae",
     "kingdom": "Animalia",
@@ -8062,55 +6984,38 @@ export const insects = [
         "thumb": "58/5e/1b/509.2510091.98x68.jpg"
       }
     ],
-    "names": [      
+    "names": [
       {
         "vernacularName": "Giurtina",
-        "language": "it",        
+        "language": "it"
       },
       {
         "vernacularName": "Groes Ochsenauge",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "Loba",
-        "language": "es",        
+        "language": "es"
       },
       {
         "vernacularName": "Meadow Brown",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Myrtil",
-        "language": "fr",        
+        "language": "fr"
       },
       {
         "vernacularName": "le Myrtil",
-        "language": "fr",        
-      },
+        "language": "fr"
+      }
     ],
     "taxonomy": {
-      "usageKey": 5135513,
-      "scientificName": "Maniola jurtina (Linnaeus, 1758)",
-      "canonicalName": "Maniola jurtina",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Nymphalidae",
-      "genus": "Maniola",
-      "species": "Maniola jurtina",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 7017,
-      "genusKey": 5135400,
-      "speciesKey": 5135513,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Nymphalidae"
     },
     "family": "Nymphalidae",
     "kingdom": "Animalia",
@@ -8290,258 +7195,195 @@ export const insects = [
       },
       {
         "vernacularName": "American Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "American Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "American Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "American Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "American Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "American Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "American Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Cuivr commun",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Kleiner Feuerfalter",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Kleiner Feuerfalter",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Kleiner Feuerfalter",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Kleiner Feuerfalter",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Kleiner Feuerfalter",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Kleiner Feuerfalter",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Kleiner Feuerfalter",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Kleiner Feuerfalter",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Kleiner Feuerfalter",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Kleiner Feuerfalter",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Kleiner Feuerfalter",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Manto bicolor",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Manto bicolor",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Manto bicolor",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Small Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Small Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Small Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Small Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Small Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Small Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Small Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Small Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Small Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Small Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "cuivr d'Amrique",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "cuivr d'Amrique",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "cuivr d'Amrique",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "cuivr d'Amrique",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "cuivr d'Amrique",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "cuivr d'Amrique",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "pikkukultasiipi",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "pikkukultasiipi",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "pikkukultasiipi",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "small copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Small Copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "American copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "common copper",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "small copper",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1929697,
-      "scientificName": "Lycaena phlaeas (Linnaeus, 1761)",
-      "canonicalName": "Lycaena phlaeas",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Lycaenidae",
-      "genus": "Lycaena",
-      "species": "Lycaena phlaeas",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 5473,
-      "genusKey": 1929153,
-      "speciesKey": 1929697,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Lycaenidae"
     },
     "family": "Lycaenidae",
     "kingdom": "Animalia",
@@ -8693,38 +7535,19 @@ export const insects = [
       },
       {
         "vernacularName": "Holly Blue",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "spring azure",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1925918,
-      "scientificName": "Celastrina argiolus (Linnaeus, 1758)",
-      "canonicalName": "Celastrina argiolus",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Lycaenidae",
-      "genus": "Celastrina",
-      "species": "Celastrina argiolus",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 5473,
-      "genusKey": 1925804,
-      "speciesKey": 1925918,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Lycaenidae"
     },
     "family": "Lycaenidae",
     "kingdom": "Animalia",
@@ -8811,40 +7634,23 @@ export const insects = [
     "names": [
       {
         "vernacularName": "southern gatekeeper",
-        "language": "en",
+        "language": "en"
       },
       {
         "vernacularName": "Ocellé de la canche",
-        "language": "fr",
+        "language": "fr"
       },
       {
         "vernacularName": "Amaryllis de Vallantin",
-        "language": "fr",
-      },
+        "language": "fr"
+      }
     ],
     "taxonomy": {
-      "usageKey": 7988274,
-      "scientificName": "Pyronia cecilia (Vallantin, 1894)",
-      "canonicalName": "Pyronia cecilia",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Nymphalidae",
-      "genus": "Pyronia",
-      "species": "Pyronia cecilia",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 7017,
-      "genusKey": 1919016,
-      "speciesKey": 7988274,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Nymphalidae"
     },
     "family": "Nymphalidae",
     "kingdom": "Animalia",
@@ -8970,52 +7776,35 @@ export const insects = [
     "names": [
       {
         "vernacularName": "false oil beetle",
-        "language": "en",
+        "language": "en"
       },
       {
         "vernacularName": "thick-legged flower beetle",
-        "language": "en",
+        "language": "en"
       },
       {
         "vernacularName": "swollen-thighed beetle",
-        "language": "en",
+        "language": "en"
       },
       {
         "vernacularName": "Grüne Scheinbockkäfer",
-        "language": "de",
+        "language": "de"
       },
       {
         "vernacularName": "Blaugrüner Schenkelkäfer",
-        "language": "de",
+        "language": "de"
       },
       {
         "vernacularName": "Oedémère noble",
-        "language": "fr",
-      },
+        "language": "fr"
+      }
     ],
     "taxonomy": {
-      "usageKey": 4458482,
-      "scientificName": "Oedemera nobilis (Scopoli, 1763)",
-      "canonicalName": "Oedemera nobilis",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Oedemeridae",
-      "genus": "Oedemera",
-      "species": "Oedemera nobilis",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 4749,
-      "genusKey": 9115310,
-      "speciesKey": 4458482,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Oedemeridae"
     },
     "family": "Oedemeridae",
     "kingdom": "Animalia",
@@ -9105,38 +7894,19 @@ export const insects = [
       },
       {
         "vernacularName": "Common Red Soldier Beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Soldier beetle",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 4429760,
-      "scientificName": "Rhagonycha fulva (Scopoli, 1763)",
-      "canonicalName": "Rhagonycha fulva",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Cantharidae",
-      "genus": "Rhagonycha",
-      "species": "Rhagonycha fulva",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 7777,
-      "genusKey": 4407026,
-      "speciesKey": 4429760,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Cantharidae"
     },
     "family": "Cantharidae",
     "kingdom": "Animalia",
@@ -9239,103 +8009,71 @@ export const insects = [
       },
       {
         "vernacularName": "Common Earwig",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Common Earwig",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Common Earwig",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Common Earwig",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Common Earwig",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "European Earwig",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "European earwig",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "European earwig",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "European earwig",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "European earwig",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "European earwig",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Forbice",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "European earwig",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Common European earwig",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "European earwig",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1419845,
-      "scientificName": "Forficula auricularia Linnaeus, 1758",
-      "canonicalName": "Forficula auricularia",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Dermaptera",
-      "family": "Forficulidae",
-      "genus": "Forficula",
-      "species": "Forficula auricularia",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1224,
-      "familyKey": 7861,
-      "genusKey": 1419844,
-      "speciesKey": 1419845,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Forficulidae"
     },
     "family": "Forficulidae",
     "kingdom": "Animalia",
@@ -9357,31 +8095,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Field cricket",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1404683,
-      "scientificName": "Gryllus Linnaeus, 1758",
-      "canonicalName": "Gryllus",
-      "rank": "GENUS",
-      "status": "ACCEPTED",
-      "confidence": 92,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Orthoptera",
-      "family": "Gryllidae",
-      "genus": "Gryllus",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1458,
-      "familyKey": 5925,
-      "genusKey": 1404683,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Gryllidae"
     },
     "family": "Gryllidae",
     "kingdom": "Animalia",
@@ -9587,198 +8309,147 @@ export const insects = [
       },
       {
         "vernacularName": "Black-lined Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Black-lined Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Black-lined Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Black-lined Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Black-lined Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Black-lined Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Black-lined Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Black-tailed Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Black-tailed Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Black-tailed Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Black-tailed Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Black-tailed Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Black-tailed Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Black-tailed Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Black-tailed Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Black-tailed Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Gewone oeverlibel",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Gewone oeverlibel",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Gewone oeverlibel",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Gewone oeverlibel",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Gewone oeverlibel",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Gewone oeverlibel",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Gewone oeverlibel",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Gewone oeverlibel",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Groer Blaupfeil",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Groer Blaupfeil",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Groer Blaupfeil",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Groer Blaupfeil",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Groer Blaupfeil",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Orttrum de cauda negra",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Orttrum de cauda negra",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Black-tailed Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "L'orthétrum Réticulé",
-        "language": "fr",
-        
+        "language": "fr"
       },
       {
         "vernacularName": "Orthétrum Réticulé",
-        "language": "fr",
-        
+        "language": "fr"
       }
     ],
     "taxonomy": {
-      "usageKey": 1428686,
-      "scientificName": "Orthetrum cancellatum Linnaeus, 1758",
-      "canonicalName": "Orthetrum cancellatum",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Odonata",
-      "family": "Libellulidae",
-      "genus": "Orthetrum",
-      "species": "Orthetrum cancellatum",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 789,
-      "familyKey": 5936,
-      "genusKey": 1428581,
-      "speciesKey": 1428686,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Libellulidae"
     },
     "family": "Libellulidae",
     "kingdom": "Animalia",
@@ -9857,36 +8528,19 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Iberian Bluetail",
-        "language": "en",
+        "language": "en"
       },
       {
         "vernacularName": "El cola azul ibérico",
-        "language": "es",
-      },
+        "language": "es"
+      }
     ],
     "taxonomy": {
-      "usageKey": 1423337,
-      "scientificName": "Ischnura graellsii Rambur, 1842",
-      "canonicalName": "Ischnura graellsii",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Odonata",
-      "family": "Coenagrionidae",
-      "genus": "Ischnura",
-      "species": "Ischnura graellsii",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 789,
-      "familyKey": 8577,
-      "genusKey": 1423281,
-      "speciesKey": 1423337,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Coenagrionidae"
     },
     "family": "Coenagrionidae",
     "kingdom": "Animalia",
@@ -9913,44 +8567,27 @@ export const insects = [
     "names": [
       {
         "vernacularName": "European Yellow Underwing",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Hausmutter",
-        "language": "de",        
+        "language": "de"
       },
       {
         "vernacularName": "common yellow underwing moth",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Fiancée",
-        "language": "fr"        
+        "language": "fr"
       }
     ],
     "taxonomy": {
-      "usageKey": 1789695,
-      "scientificName": "Noctua pronuba (Linnaeus, 1758)",
-      "canonicalName": "Noctua pronuba",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Noctuidae",
-      "genus": "Noctua",
-      "species": "Noctua pronuba",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 7015,
-      "genusKey": 1789671,
-      "speciesKey": 1789695,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Noctuidae"
     },
     "family": "Noctuidae",
     "kingdom": "Animalia",
@@ -10046,43 +8683,23 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Anax Napolitain",
-        "language": "fr",
-        
+        "language": "fr"
       },
       {
         "vernacularName": "Lesser Emperor",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "lesser emperor",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 5051752,
-      "scientificName": "Anax parthenope Selys, 1839",
-      "canonicalName": "Anax parthenope",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Odonata",
-      "family": "Aeshnidae",
-      "genus": "Anax",
-      "species": "Anax parthenope",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 789,
-      "familyKey": 4209,
-      "genusKey": 1424815,
-      "speciesKey": 5051752,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Aeshnidae"
     },
     "family": "Aeshnidae",
     "kingdom": "Animalia",
@@ -10164,38 +8781,19 @@ export const insects = [
       },
       {
         "vernacularName": "Scarce Bordered Straw",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "cotton bollworm",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 8108800,
-      "scientificName": "Helicoverpa armigera (Hubner, 1808)",
-      "canonicalName": "Helicoverpa armigera",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Noctuidae",
-      "genus": "Helicoverpa",
-      "species": "Helicoverpa armigera",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 7015,
-      "genusKey": 8109351,
-      "speciesKey": 8108800,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Noctuidae"
     },
     "family": "Noctuidae",
     "kingdom": "Animalia",
@@ -10285,40 +8883,23 @@ export const insects = [
       },
       {
         "vernacularName": "Black and Yellow Mud Dauber",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Vespa muratore",
-        "language": "it",        
+        "language": "it"
       },
       {
         "vernacularName": "Mud dauber",
-        "language": "en",        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 5041466,
-      "scientificName": "Sceliphron caementarium (Drury, 1773)",
-      "canonicalName": "Sceliphron caementarium",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hymenoptera",
-      "family": "Sphecidae",
-      "genus": "Sceliphron",
-      "species": "Sceliphron caementarium",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1457,
-      "familyKey": 4352,
-      "genusKey": 7763463,
-      "speciesKey": 5041466,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Sphecidae"
     },
     "family": "Sphecidae",
     "kingdom": "Animalia",
@@ -10475,53 +9056,31 @@ export const insects = [
       },
       {
         "vernacularName": "Ruddy Darter",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Le Sympétrum Rouge Sang",
-        "language": "fr",
-        
+        "language": "fr"
       },
       {
         "vernacularName": "Le Sympétrum Sanguin",
-        "language": "fr",
-        
+        "language": "fr"
       },
       {
         "vernacularName": "Ruddy Darter",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Sympétrum Sanguin",
-        "language": "fr",
-        
+        "language": "fr"
       }
     ],
     "taxonomy": {
-      "usageKey": 1428217,
-      "scientificName": "Sympetrum sanguineum Müller, 1764",
-      "canonicalName": "Sympetrum sanguineum",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Odonata",
-      "family": "Libellulidae",
-      "genus": "Sympetrum",
-      "species": "Sympetrum sanguineum",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 789,
-      "familyKey": 5936,
-      "genusKey": 1428195,
-      "speciesKey": 1428217,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Libellulidae"
     },
     "family": "Libellulidae",
     "kingdom": "Animalia",
@@ -10642,73 +9201,47 @@ export const insects = [
       },
       {
         "vernacularName": "Epaulet Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Orttrum de faixa branca",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Orttrum de faixa branca",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Rahmstreif-Blaupfeil",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Rahmstreif-Blaupfeil",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Epaulet Skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Epaulet skimmer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "L'orthétrum de Barbarie",
-        "language": "fr",
-        
+        "language": "fr"
       },
       {
         "vernacularName": "Orthétrum à Ptérostigmas Jaunes",
-        "language": "fr",
-        
+        "language": "fr"
       }
     ],
     "taxonomy": {
-      "usageKey": 1428673,
-      "scientificName": "Orthetrum chrysostigma Burmeister, 1839",
-      "canonicalName": "Orthetrum chrysostigma",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Odonata",
-      "family": "Libellulidae",
-      "genus": "Orthetrum",
-      "species": "Orthetrum chrysostigma",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 789,
-      "familyKey": 5936,
-      "genusKey": 1428581,
-      "speciesKey": 1428673,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Libellulidae"
     },
     "family": "Libellulidae",
     "kingdom": "Animalia",
@@ -10774,44 +9307,27 @@ export const insects = [
       },
       {
         "vernacularName": "Blue Bottlefly",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "Blue blowfly",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "European Blowfly",
-        "language": "en",        
+        "language": "en"
       },
       {
         "vernacularName": "mouche bleue",
-        "language": "fr",        
-      },
+        "language": "fr"
+      }
     ],
     "taxonomy": {
-      "usageKey": 1502577,
-      "scientificName": "Calliphora vicina Robineau-Desvoidy, 1830",
-      "canonicalName": "Calliphora vicina",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Diptera",
-      "family": "Calliphoridae",
-      "genus": "Calliphora",
-      "species": "Calliphora vicina",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 811,
-      "familyKey": 3335,
-      "genusKey": 1502535,
-      "speciesKey": 1502577,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Calliphoridae"
     },
     "family": "Calliphoridae",
     "kingdom": "Animalia",
@@ -10894,107 +9410,75 @@ export const insects = [
       },
       {
         "vernacularName": "Carpet Beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Coleottero dei tappeti",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Museumskfer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Museumskfer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Varied Carpet Beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Varied Carpet Beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Varied Carpet Beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Varied carpet beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Varied carpet beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Varied carpet beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Wollkrautbltenkfer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Wollkrautbltenkfer",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "carpet beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "carpet beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "carpet beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Varied carpet beetle",
-        "language": "en",        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1095895,
-      "scientificName": "Anthrenus verbasci (Linnaeus, 1767)",
-      "canonicalName": "Anthrenus verbasci",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Dermestidae",
-      "genus": "Anthrenus",
-      "species": "Anthrenus verbasci",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 9714,
-      "genusKey": 8200668,
-      "speciesKey": 1095895,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Dermestidae"
     },
     "family": "Dermestidae",
     "kingdom": "Animalia",
@@ -11052,28 +9536,11 @@ export const insects = [
     ],
     "names": [],
     "taxonomy": {
-      "usageKey": 1988064,
-      "scientificName": "Menophra abruptaria (Thunberg, 1792)",
-      "canonicalName": "Menophra abruptaria",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Geometridae",
-      "genus": "Menophra",
-      "species": "Menophra abruptaria",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 6950,
-      "genusKey": 1987995,
-      "speciesKey": 1988064,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Geometridae"
     },
     "family": "Geometridae",
     "kingdom": "Animalia",
@@ -11175,32 +9642,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "convolvulus hawk-moth",
-        "language": "en",        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1861644,
-      "scientificName": "Agrius convolvuli (Linnaeus, 1758)",
-      "canonicalName": "Agrius convolvuli",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Sphingidae",
-      "genus": "Agrius",
-      "species": "Agrius convolvuli",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 8868,
-      "genusKey": 1861607,
-      "speciesKey": 1861644,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Sphingidae"
     },
     "family": "Sphingidae",
     "kingdom": "Animalia",
@@ -11285,28 +9735,11 @@ export const insects = [
     ],
     "names": [],
     "taxonomy": {
-      "usageKey": 1311649,
-      "scientificName": "Vespula germanica (Fabricius, 1793)",
-      "canonicalName": "Vespula germanica",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hymenoptera",
-      "family": "Vespidae",
-      "genus": "Vespula",
-      "species": "Vespula germanica",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1457,
-      "familyKey": 4490,
-      "genusKey": 1311631,
-      "speciesKey": 1311649,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Vespidae"
     },
     "family": "Vespidae",
     "kingdom": "Animalia",
@@ -11368,28 +9801,11 @@ export const insects = [
     ],
     "names": [],
     "taxonomy": {
-      "usageKey": 4486332,
-      "scientificName": "Spilostethus furculus (Herrich-Schaeffer & G.H.W., 1850)",
-      "canonicalName": "Spilostethus furculus",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hemiptera",
-      "family": "Lygaeidae",
-      "genus": "Spilostethus",
-      "species": "Spilostethus furculus",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 809,
-      "familyKey": 7888,
-      "genusKey": 4407676,
-      "speciesKey": 4486332,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Lygaeidae"
     },
     "family": "Lygaeidae",
     "kingdom": "Animalia",
@@ -11450,28 +9866,11 @@ export const insects = [
     ],
     "names": [],
     "taxonomy": {
-      "usageKey": 5117189,
-      "scientificName": "Coscinia cribraria (Linnaeus, 1758)",
-      "canonicalName": "Coscinia cribraria",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Erebidae",
-      "genus": "Coscinia",
-      "species": "Coscinia cribraria",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 4532185,
-      "genusKey": 1814095,
-      "speciesKey": 5117189,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Erebidae"
     },
     "family": "Erebidae",
     "kingdom": "Animalia",
@@ -11564,32 +9963,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Large garden bumblebee",
-        "language": "en",        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 4485906,
-      "scientificName": "Eurydema ornata (Linnaeus, 1758)",
-      "canonicalName": "Eurydema ornata",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hemiptera",
-      "family": "Pentatomidae",
-      "genus": "Eurydema",
-      "species": "Eurydema ornata",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 809,
-      "familyKey": 9650,
-      "genusKey": 8781759,
-      "speciesKey": 4485906,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Pentatomidae"
     },
     "family": "Pentatomidae",
     "kingdom": "Animalia",
@@ -11645,32 +10027,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Large garden bumblebee",
-        "language": "en",        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1340383,
-      "scientificName": "Bombus ruderatus (Fabricius, 1775)",
-      "canonicalName": "Bombus ruderatus",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hymenoptera",
-      "family": "Apidae",
-      "genus": "Bombus",
-      "species": "Bombus ruderatus",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1457,
-      "familyKey": 4334,
-      "genusKey": 1340278,
-      "speciesKey": 1340383,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Apidae"
     },
     "family": "Apidae",
     "kingdom": "Animalia",
@@ -11716,31 +10081,13 @@ export const insects = [
         "thumb": "4a/e6/12/18.https___www_inaturalist_org_photos_6837309.98x68.jpg"
       }
     ],
-    "names": [
-    ],
+    "names": [],
     "taxonomy": {
-      "usageKey": 7619470,
-      "scientificName": "Cryptocephalus rugicollis Olivier, 1791",
-      "canonicalName": "Cryptocephalus rugicollis",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Chrysomelidae",
-      "genus": "Cryptocephalus",
-      "species": "Cryptocephalus rugicollis",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 7780,
-      "genusKey": 1048649,
-      "speciesKey": 7619470,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Chrysomelidae"
     },
     "family": "Chrysomelidae",
     "kingdom": "Animalia",
@@ -11852,28 +10199,11 @@ export const insects = [
     ],
     "names": [],
     "taxonomy": {
-      "usageKey": 4486330,
-      "scientificName": "Spilostethus pandurus (Scopoli, 1763)",
-      "canonicalName": "Spilostethus pandurus",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hemiptera",
-      "family": "Lygaeidae",
-      "genus": "Spilostethus",
-      "species": "Spilostethus pandurus",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 809,
-      "familyKey": 7888,
-      "genusKey": 4407676,
-      "speciesKey": 4486330,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Lygaeidae"
     },
     "family": "Lygaeidae",
     "kingdom": "Animalia",
@@ -11902,28 +10232,11 @@ export const insects = [
     ],
     "names": [],
     "taxonomy": {
-      "usageKey": 8310060,
-      "scientificName": "Rhynchophorus ferrugineus Heyne, A.-Taschenberg & O., 1908",
-      "canonicalName": "Rhynchophorus ferrugineus",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Dryophthoridae",
-      "genus": "Rhynchophorus",
-      "species": "Rhynchophorus ferrugineus",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 8494,
-      "genusKey": 1170237,
-      "speciesKey": 8310060,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Dryophthoridae"
     },
     "family": "Dryophthoridae",
     "kingdom": "Animalia",
@@ -11962,28 +10275,11 @@ export const insects = [
     ],
     "names": [],
     "taxonomy": {
-      "usageKey": 1988019,
-      "scientificName": "Menophra japygiaria (O.Costa, 1849)",
-      "canonicalName": "Menophra japygiaria",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Geometridae",
-      "genus": "Menophra",
-      "species": "Menophra japygiaria",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 6950,
-      "genusKey": 1987995,
-      "speciesKey": 1988019,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Geometridae"
     },
     "family": "Geometridae",
     "kingdom": "Animalia",
@@ -12013,33 +10309,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Variegated cutworm",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1792996,
-      "scientificName": "Peridroma saucia (Hubner, 1808)",
-      "canonicalName": "Peridroma saucia",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Noctuidae",
-      "genus": "Peridroma",
-      "species": "Peridroma saucia",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 7015,
-      "genusKey": 1792984,
-      "speciesKey": 1792996,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Noctuidae"
     },
     "family": "Noctuidae",
     "kingdom": "Animalia",
@@ -12069,33 +10347,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Weevil",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1191191,
-      "scientificName": "Hypera postica (Gyllenhal, 1813)",
-      "canonicalName": "Hypera postica",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Curculionidae",
-      "genus": "Hypera",
-      "species": "Hypera postica",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 4239,
-      "genusKey": 1190955,
-      "speciesKey": 1191191,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Curculionidae"
     },
     "family": "Curculionidae",
     "kingdom": "Animalia",
@@ -12137,28 +10397,11 @@ export const insects = [
     ],
     "names": [],
     "taxonomy": {
-      "usageKey": 8014296,
-      "scientificName": "Scopula imitaria (Hubner, 1799)",
-      "canonicalName": "Scopula imitaria",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Geometridae",
-      "genus": "Scopula",
-      "species": "Scopula imitaria",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 6950,
-      "genusKey": 1970574,
-      "speciesKey": 8014296,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Geometridae"
     },
     "family": "Geometridae",
     "kingdom": "Animalia",
@@ -12201,58 +10444,35 @@ export const insects = [
       },
       {
         "vernacularName": "Baco da seta",
-        "language": "it",
-        
+        "language": "it"
       },
       {
         "vernacularName": "Bicho-da-seda",
-        "language": "pt",
-        
+        "language": "pt"
       },
       {
         "vernacularName": "Domesticated Silkmoth",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Gusano de seda",
-        "language": "es",
-        
+        "language": "es"
       },
       {
         "vernacularName": "Seidenspinner",
-        "language": "de",
-        
+        "language": "de"
       },
       {
         "vernacularName": "Silkworm",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 1868664,
-      "scientificName": "Bombyx mori Linnaeus, 1758",
-      "canonicalName": "Bombyx mori",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Bombycidae",
-      "genus": "Bombyx",
-      "species": "Bombyx mori",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 8832,
-      "genusKey": 1868660,
-      "speciesKey": 1868664,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Bombycidae"
     },
     "family": "Bombycidae",
     "kingdom": "Animalia",
@@ -12313,63 +10533,39 @@ export const insects = [
       },
       {
         "vernacularName": "Rosemary Beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Rosemary Beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Rosemary Beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Rosemary Beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Rosemary Beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Rosemary Beetle",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Rosemary Beetle",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 4460066,
-      "scientificName": "Chrysolina americana (Linnaeus, 1758)",
-      "canonicalName": "Chrysolina americana",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Chrysomelidae",
-      "genus": "Chrysolina",
-      "species": "Chrysolina americana",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 7780,
-      "genusKey": 1047378,
-      "speciesKey": 4460066,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Chrysomelidae"
     },
     "family": "Chrysomelidae",
     "kingdom": "Animalia",
@@ -12419,26 +10615,11 @@ export const insects = [
     ],
     "names": [],
     "taxonomy": {
-      "usageKey": 4407280,
-      "scientificName": "Oxycarenus Fieber, 1837",
-      "canonicalName": "Oxycarenus",
-      "rank": "GENUS",
-      "status": "ACCEPTED",
-      "confidence": 92,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hemiptera",
-      "family": "Oxycarenidae",
-      "genus": "Oxycarenus",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 809,
-      "familyKey": 4323,
-      "genusKey": 4407280,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Oxycarenidae"
     },
     "family": "Oxycarenidae",
     "kingdom": "Animalia",
@@ -12488,28 +10669,11 @@ export const insects = [
     ],
     "names": [],
     "taxonomy": {
-      "usageKey": 1845270,
-      "scientificName": "Ethmia bipunctella (Fabricius, 1775)",
-      "canonicalName": "Ethmia bipunctella",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 98,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Lepidoptera",
-      "family": "Elachistidae",
-      "genus": "Ethmia",
-      "species": "Ethmia bipunctella",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 797,
-      "familyKey": 7297,
-      "genusKey": 1845266,
-      "speciesKey": 1845270,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Elachistidae"
     },
     "family": "Elachistidae",
     "kingdom": "Animalia",
@@ -12539,33 +10703,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Old house borer",
-        "language": "en",
-        
+        "language": "en"
       }
     ],
     "taxonomy": {
-      "usageKey": 7576840,
-      "scientificName": "Hylotrupes bajulus (Linné, 1758)",
-      "canonicalName": "Hylotrupes bajulus",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 97,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Coleoptera",
-      "family": "Cerambycidae",
-      "genus": "Hylotrupes",
-      "species": "Hylotrupes bajulus",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 1470,
-      "familyKey": 5602,
-      "genusKey": 1156722,
-      "speciesKey": 7576840,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Cerambycidae"
     },
     "family": "Cerambycidae",
     "kingdom": "Animalia",
@@ -12668,140 +10814,114 @@ export const insects = [
     ],
     "names": [],
     "taxonomy": {
-      "usageKey": 4482723,
-      "scientificName": "Cicada orni Linnaeus, 1758",
-      "canonicalName": "Cicada orni",
-      "rank": "SPECIES",
-      "status": "ACCEPTED",
-      "confidence": 97,
-      "matchType": "EXACT",
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
+      "class": "Insecta",
       "order": "Hemiptera",
-      "family": "Cicadidae",
-      "genus": "Cicada",
-      "species": "Cicada orni",
-      "kingdomKey": 1,
-      "phylumKey": 54,
-      "classKey": 216,
-      "orderKey": 809,
-      "familyKey": 6049,
-      "genusKey": 1682542,
-      "speciesKey": 4482723,
-      "synonym": false,
-      "class": "Insecta"
+      "family": "Cicadidae"
     },
     "family": "Cicadidae",
     "kingdom": "Animalia",
     "eolName": "Cicada orni Linnaeus, 1758"
   },
   {
-  "id": "49317235",
-  "name": "Vespula germanica",
-  "images": [
-    {
-      "title": "Echte wespe.jpg",
-      "rightsHolder": "",
-      "source": "https://commons.wikimedia.org/wiki/File:Echte_wespe.jpg",
-      "license": "http://creativecommons.org/licenses/publicdomain/",
-      "url": "57/b8/4a/509.2226434.jpg"
+    "id": "49317235",
+    "name": "Vespula germanica",
+    "images": [
+      {
+        "title": "Echte wespe.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Echte_wespe.jpg",
+        "license": "http://creativecommons.org/licenses/publicdomain/",
+        "url": "57/b8/4a/509.2226434.jpg"
+      },
+      {
+        "title": "Vespula germanica10.JPG",
+        "rightsHolder": "Photo2222",
+        "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica10.JPG",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "58/15/c0/509.2383993.jpg"
+      },
+      {
+        "title": "Vespula germanica (Fabricius 1793).jpg",
+        "rightsHolder": "Juan Emilio",
+        "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica_(Fabricius_1793).jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "58/56/9f/509.24985823.jpg"
+      },
+      {
+        "title": "Vespula germanica-s.jpg",
+        "rightsHolder": "Magne Flåten",
+        "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica-s.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "58/83/89/509.25539008.jpg"
+      },
+      {
+        "title": "Vespula germanica Horizontalview Richard Bartz.jpg",
+        "rightsHolder": "Richard Bartz, Munich aka Makro Freak",
+        "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica_Horizontalview_Richard_Bartz.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "58/8f/e9/509.2577167.jpg"
+      },
+      {
+        "title": "Vespula germanica-pjt4.jpg",
+        "rightsHolder": "pjt56 --- |Permission= English: If you use the picture outside Wikipedia I would appreciate a short e-mail to pjt56@gmx.net or a message on my discussion page",
+        "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica-pjt4.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "58/ee/e5/509.27609216.jpg"
+      },
+      {
+        "title": "Wasp with ham 1.jpg",
+        "rightsHolder": "aconcagua (talk)",
+        "source": "https://commons.wikimedia.org/wiki/File:Wasp_with_ham_1.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "58/fa/67/509.27764833.jpg"
+      },
+      {
+        "title": "Wasp October 2007-6.jpg",
+        "rightsHolder": "Alvesgaspar",
+        "source": "https://commons.wikimedia.org/wiki/File:Wasp_October_2007-6.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "59/53/03/509.2995286.jpg"
+      },
+      {
+        "title": "Vespula germanica-gb.jpg",
+        "rightsHolder": "Gilbertus d'après Bernie  Vespula germanica 03.jpg",
+        "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica-gb.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "59/81/e1/509.31183993.jpg"
+      },
+      {
+        "title": "Wasp November 2007-3.jpg",
+        "rightsHolder": "Alvesgaspar",
+        "source": "https://commons.wikimedia.org/wiki/File:Wasp_November_2007-3.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "59/9f/6f/509.3168239.jpg"
+      }
+    ],
+    "names": [
+      {
+        "vernacularName": "European wasp",
+        "language": "en"
+      },
+      {
+        "vernacularName": "German wasp",
+        "language": "en"
+      },
+      {
+        "vernacularName": "German yellowjacke",
+        "language": "en"
+      }
+    ],
+    "taxonomy": {
+      "kingdom": "Animalia",
+      "phylum": "Arthropoda",
+      "class": "Insecta",
+      "order": "Hymenoptera",
+      "family": "Vespidae"
     },
-    {
-      "title": "Vespula germanica10.JPG",
-      "rightsHolder": "Photo2222",
-      "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica10.JPG",
-      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-      "url": "58/15/c0/509.2383993.jpg"
-    },
-    {
-      "title": "Vespula germanica (Fabricius 1793).jpg",
-      "rightsHolder": "Juan Emilio",
-      "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica_(Fabricius_1793).jpg",
-      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-      "url": "58/56/9f/509.24985823.jpg"
-    },
-    {
-      "title": "Vespula germanica-s.jpg",
-      "rightsHolder": "Magne Flåten",
-      "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica-s.jpg",
-      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-      "url": "58/83/89/509.25539008.jpg"
-    },
-    {
-      "title": "Vespula germanica Horizontalview Richard Bartz.jpg",
-      "rightsHolder": "Richard Bartz, Munich aka Makro Freak",
-      "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica_Horizontalview_Richard_Bartz.jpg",
-      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-      "url": "58/8f/e9/509.2577167.jpg"
-    },
-    {
-      "title": "Vespula germanica-pjt4.jpg",
-      "rightsHolder": "pjt56 --- |Permission= English: If you use the picture outside Wikipedia I would appreciate a short e-mail to pjt56@gmx.net or a message on my discussion page",
-      "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica-pjt4.jpg",
-      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-      "url": "58/ee/e5/509.27609216.jpg"
-    },
-    {
-      "title": "Wasp with ham 1.jpg",
-      "rightsHolder": "aconcagua (talk)",
-      "source": "https://commons.wikimedia.org/wiki/File:Wasp_with_ham_1.jpg",
-      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-      "url": "58/fa/67/509.27764833.jpg"
-    },
-    {
-      "title": "Wasp October 2007-6.jpg",
-      "rightsHolder": "Alvesgaspar",
-      "source": "https://commons.wikimedia.org/wiki/File:Wasp_October_2007-6.jpg",
-      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-      "url": "59/53/03/509.2995286.jpg"
-    },
-    {
-      "title": "Vespula germanica-gb.jpg",
-      "rightsHolder": "Gilbertus d'après Bernie  Vespula germanica 03.jpg",
-      "source": "https://commons.wikimedia.org/wiki/File:Vespula_germanica-gb.jpg",
-      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-      "url": "59/81/e1/509.31183993.jpg"
-    },
-    {
-      "title": "Wasp November 2007-3.jpg",
-      "rightsHolder": "Alvesgaspar",
-      "source": "https://commons.wikimedia.org/wiki/File:Wasp_November_2007-3.jpg",
-      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-      "url": "59/9f/6f/509.3168239.jpg"
-    }
-  ],
-  "names": [
-    {
-      "vernacularName": "European wasp",
-      "language": "en"
-    },
-    {
-      "vernacularName": "German wasp",
-      "language": "en"
-    },
-    {
-      "vernacularName": "German yellowjacke",
-      "language": "en"
-    },
-  ],
-  "taxonomy": {
-    "kingdom": "Animalia",
-    "phylum": "Arthropoda",
-    "order": "Hymenoptera",
     "family": "Vespidae",
-    "genus": "Vespula",
-    "species": "Vespula germanica",
-    "kingdomKey": 1,
-    "phylumKey": 54,
-    "classKey": 216,
-    "orderKey": 1457,
-    "familyKey": 4490,
-    "genusKey": 1311631,
-    "speciesKey": 1311649,
-    "class": "Insecta"
-  },
-  "family": "Vespidae",
-  "kingdom": "Animalia",
-  "eolName": "Vespula germanica"
-}
+    "kingdom": "Animalia",
+    "eolName": "Vespula germanica"
+  }
 ];
