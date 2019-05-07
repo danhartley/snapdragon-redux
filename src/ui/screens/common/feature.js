@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 
-import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import * as traitTypes from 'api/traits/trait-types';
@@ -84,7 +83,9 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel)
         
     } else {
 
-        const lookalikeNames = itemProperties.itemContextProperty(traits, item, 'look-alikes');
+        let lookalikeNames = itemProperties.itemContextProperty(traits, item, 'look-alikes');
+
+            lookalikeNames = lookalikeNames.filter(name => name !== item.name);
 
         if(lookalikeNames) {
     

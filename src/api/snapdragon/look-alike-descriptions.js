@@ -17,11 +17,12 @@
         ]
     },
     {
-        ids: ['Laetiporus sulphureus', 'Laetiporus cincinnatus'],
+        ids: ['Laetiporus sulphureus', 'Laetiporus cincinnatus', 'Polyporus squamosus'],
         type: 'lookalike',
         descriptions: [
             'The pore surface is bright yellow. Grows in shelves at the base of the tree. Favours oaks.',
-            'The pore surface is cream/white. Grows away from the tree in a rosette of individual caps. Favours oaks.'
+            'The pore surface is cream/white. Grows away from the tree in a rosette of individual caps. Favours oaks.',
+            'Commonly attached to dead logs or stumps at one point with a thick stem. Body can be yellow to brown with squamules (scales) on its upper side. On the underside are pores characteristic of the genus Cerioporus; made up of tubes packed closely together.'
         ]
     },
     {
