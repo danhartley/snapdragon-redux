@@ -244,7 +244,7 @@ export const english = {
         HAWTHORN: 'Hawthorn'
     },
     hymeniumType : {
-        help: 'What is the hymenium type of this mushroom?',
+        help: 'What is the hymenium type?',
         GILLS: 'Gills',
         PORES: 'Pores',
         GLEBA: 'Gleba',
