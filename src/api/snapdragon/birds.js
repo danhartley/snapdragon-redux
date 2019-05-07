@@ -92,7 +92,7 @@ export const birds = [
       {
         "vernacularName": "Haussperling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Italiensperling",
@@ -117,7 +117,6 @@ export const birds = [
       {
         "vernacularName": "House Sparrow",
         "language": "en",
-        "eol_preferred": true,
         "wikiSearchTerm": true
       },
       {
@@ -143,7 +142,7 @@ export const birds = [
       {
         "vernacularName": "Gorrión común",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Europese huismus",
@@ -184,7 +183,7 @@ export const birds = [
       {
         "vernacularName": "moineau domestique",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Moineau cisalpin *",
@@ -197,7 +196,7 @@ export const birds = [
       {
         "vernacularName": "Passero domestico",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Passera europea",
@@ -210,7 +209,7 @@ export const birds = [
       {
         "vernacularName": "Pardal-comum",
         "language": "pt",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Pardal-dos-telhados",
@@ -286,7 +285,7 @@ export const birds = [
       {
         "vernacularName": "Star",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Starling",
@@ -295,7 +294,6 @@ export const birds = [
       {
         "vernacularName": "Common Starling",
         "language": "en",
-        "eol_preferred": true,
         "wikiSearchTerm": true
       },
       {
@@ -321,12 +319,12 @@ export const birds = [
       {
         "vernacularName": "Estornino pinto",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Etourneau sansonnet",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "",
@@ -343,12 +341,12 @@ export const birds = [
       {
         "vernacularName": "Storno",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Estorninho-malhado",
         "language": "pt",
-        "eol_preferred": true
+        
       }
     ],
     "descriptions": [
@@ -506,12 +504,12 @@ export const birds = [
       {
         "vernacularName": "Blaumeise",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Blue Tit",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Blaumeise",
@@ -541,7 +539,7 @@ export const birds = [
       {
         "vernacularName": "Herrerillo común",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Parus caeruleus",
@@ -550,7 +548,7 @@ export const birds = [
       {
         "vernacularName": "Mésange bleue",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Mésange de Fuerteventura",
@@ -571,7 +569,7 @@ export const birds = [
       {
         "vernacularName": "Cyanistes caeruleus",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Cinciarella",
@@ -580,7 +578,7 @@ export const birds = [
       {
         "vernacularName": "Chapim-azul",
         "language": "pt",
-        "eol_preferred": true
+        
       }
     ],
     "descriptions": [],
@@ -638,7 +636,7 @@ export const birds = [
       {
         "vernacularName": "Amsel",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Blackbird",
@@ -647,7 +645,6 @@ export const birds = [
       {
         "vernacularName": "Common Blackbird",
         "language": "en",
-        "eol_preferred": true,
         "wikiSearchTerm": true
       },
       {
@@ -669,7 +666,7 @@ export const birds = [
       {
         "vernacularName": "Mirlo común",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Turdus merula",
@@ -678,12 +675,12 @@ export const birds = [
       {
         "vernacularName": "merle noir",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Turdus merula",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Merlo",
@@ -794,12 +791,12 @@ export const birds = [
       {
         "vernacularName": "Ringeltaube",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Wood Pigeon",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Bar-tailed Cuckoo",
@@ -833,17 +830,17 @@ export const birds = [
       {
         "vernacularName": "Paloma torcaz",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Pigeon ramier",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Columba palumbus",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Colombaccio",
@@ -973,7 +970,7 @@ export const birds = [
       {
         "vernacularName": "Distelfink",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Stieglitz",
@@ -985,8 +982,7 @@ export const birds = [
       },
       {
         "vernacularName": "European Goldfinch",
-        "language": "en",
-        "eol_preferred": true,
+        "language": "en",        
         "wikiSearchTerm": true
       },
       {
@@ -1008,7 +1004,7 @@ export const birds = [
       {
         "vernacularName": "Jilguero Europeo",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Colorín",
@@ -1025,7 +1021,7 @@ export const birds = [
       {
         "vernacularName": "chardonneret èlègant",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "chardonneret élégant",
@@ -1034,12 +1030,12 @@ export const birds = [
       {
         "vernacularName": "Cardellino",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Pintassilgo",
         "language": "pt",
-        "eol_preferred": true
+        
       }
     ],
     "descriptions": [
@@ -1169,12 +1165,11 @@ export const birds = [
       {
         "vernacularName": "Kohlmeise",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Great Tit",
         "language": "en",
-        "eol_preferred": true,
         "wikiSearchTerm": true
       },
       {
@@ -1192,17 +1187,17 @@ export const birds = [
       {
         "vernacularName": "Carbonero común",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Mésange charbonnière",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Parus major",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Cinciallegra",
@@ -1211,7 +1206,7 @@ export const birds = [
       {
         "vernacularName": "Chapim-real",
         "language": "pt",
-        "eol_preferred": true
+        
       }
     ],
     "descriptions": [],
@@ -1318,7 +1313,7 @@ export const birds = [
       {
         "vernacularName": "Rotkehlchen",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Robin",
@@ -1327,7 +1322,6 @@ export const birds = [
       {
         "vernacularName": "European Robin",
         "language": "en",
-        "eol_preferred": true,
         "wikiSearchTerm": true
       },
       {
@@ -1337,12 +1331,12 @@ export const birds = [
       {
         "vernacularName": "Petirrojo",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Rougegorge",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Rougegorge familier",
@@ -1351,12 +1345,12 @@ export const birds = [
       {
         "vernacularName": "Pettirosso",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Pisco-de-peito-ruivo",
         "language": "pt",
-        "eol_preferred": true
+        
       }
     ],
     "descriptions": [
@@ -1486,12 +1480,12 @@ export const birds = [
       {
         "vernacularName": "Schwanzmeise",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Long-tailed Tit",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Long-tailed Bushtit",
@@ -1504,7 +1498,7 @@ export const birds = [
       {
         "vernacularName": "Mito Común",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Mito",
@@ -1513,12 +1507,12 @@ export const birds = [
       {
         "vernacularName": "Mésange à longue queue",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Codibugnolo",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Codibugnolo italiano",
@@ -1527,7 +1521,7 @@ export const birds = [
       {
         "vernacularName": "Chapim-rabilongo",
         "language": "pt",
-        "eol_preferred": true
+        
       }
     ],
     "descriptions": [],
@@ -1646,12 +1640,12 @@ export const birds = [
       {
         "vernacularName": "Buchfink",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Chaffinch",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Chaffinnch",
@@ -1669,7 +1663,7 @@ export const birds = [
       {
         "vernacularName": "Pinzón vulgar",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Fringilla coelebs",
@@ -1682,17 +1676,17 @@ export const birds = [
       {
         "vernacularName": "Pinson des arbres",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Fringuello",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Tentilh",
         "language": "pt",
-        "eol_preferred": true
+        
       }
     ],
     "descriptions": [

@@ -81,7 +81,7 @@ export const insects = [
       {
         "vernacularName": "Honigbiene",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Südostafrikanische Hochlandbiene",
@@ -90,7 +90,7 @@ export const insects = [
       {
         "vernacularName": "Western Honeybee",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "A Honeybee",
@@ -128,7 +128,7 @@ export const insects = [
       {
         "vernacularName": "Apis mellifera",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "abeja de la miel",
@@ -137,7 +137,7 @@ export const insects = [
       {
         "vernacularName": "abeille domestique",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Abeille domestique, Abeille européenne",
@@ -146,12 +146,12 @@ export const insects = [
       {
         "vernacularName": "ape del miele",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "abelha do mel",
         "language": "pt",
-        "eol_preferred": true
+        
       }
     ],
     "descriptions": [
@@ -253,7 +253,7 @@ export const insects = [
       {
         "vernacularName": "Aardhommel",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Abejorro",
@@ -792,7 +792,7 @@ export const insects = [
       {
         "vernacularName": "Dronefly",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "European Hoverfly",
@@ -1757,7 +1757,7 @@ export const insects = [
       {
         "vernacularName": "Egyptian Locust",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Llagosta mediterrnia",
@@ -1817,7 +1817,7 @@ export const insects = [
       {
         "vernacularName": "European carpenter bee",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "European carpenter bee",
@@ -2829,7 +2829,7 @@ export const insects = [
       {
         "vernacularName": "seven-spot ladybird",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Catarina de siete puntos",
@@ -2993,7 +2993,7 @@ export const insects = [
       {
         "vernacularName": "Bufaforats",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Bufaforats",
@@ -3914,7 +3914,7 @@ export const insects = [
       {
         "vernacularName": "Clouded Yellow",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Clouded Yellow",
@@ -4409,7 +4409,7 @@ export const insects = [
       {
         "vernacularName": "Leopard Moth",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Leopard Moth",
@@ -4807,7 +4807,7 @@ export const insects = [
       {
         "vernacularName": "Gamma-Eule",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Gamma-Eule",
@@ -5396,7 +5396,7 @@ export const insects = [
       {
         "vernacularName": "Argentine Ant",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Argentine Ant",
@@ -5543,7 +5543,7 @@ export const insects = [
       {
         "vernacularName": "potter wasp",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "potter wasp",
@@ -5732,7 +5732,7 @@ export const insects = [
       {
         "vernacularName": "Mediterranean Katydid",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Mediterranean Katydid",
@@ -5836,7 +5836,7 @@ export const insects = [
       {
         "vernacularName": "Hover Flies",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Hover Flies",
@@ -6229,7 +6229,7 @@ export const insects = [
       {
         "vernacularName": "two-spotted ladybug",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "two-spotted ladybug",
@@ -6762,17 +6762,17 @@ export const insects = [
       {
         "vernacularName": "Vloeivleklieveheersbeestje",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Poplar Ladybird",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Kugelige Marienkäfer",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Pappelmarienkäfer",
@@ -7191,7 +7191,7 @@ export const insects = [
       {
         "vernacularName": "American Copper",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "American Copper",
@@ -7531,7 +7531,7 @@ export const insects = [
       {
         "vernacularName": "Faulbaumbluling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Holly Blue",
@@ -7890,7 +7890,7 @@ export const insects = [
       {
         "vernacularName": "Common Red Soldier Beetle",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Common Red Soldier Beetle",
@@ -8005,7 +8005,7 @@ export const insects = [
       {
         "vernacularName": "Common Earwig",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Common Earwig",
@@ -8305,7 +8305,7 @@ export const insects = [
       {
         "vernacularName": "Black-lined Skimmer",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Black-lined Skimmer",
@@ -8777,7 +8777,7 @@ export const insects = [
       {
         "vernacularName": "Cotton Bollworm",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Scarce Bordered Straw",
@@ -8879,7 +8879,7 @@ export const insects = [
       {
         "vernacularName": "Avispa de lodo",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Black and Yellow Mud Dauber",
@@ -9052,7 +9052,7 @@ export const insects = [
       {
         "vernacularName": "Ruddy Darter",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Ruddy Darter",
@@ -9197,7 +9197,7 @@ export const insects = [
       {
         "vernacularName": "Epaulet Skimmer",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Epaulet Skimmer",
@@ -9303,7 +9303,7 @@ export const insects = [
       {
         "vernacularName": "Blaue Schmeifliege",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Blue Bottlefly",
@@ -9406,7 +9406,7 @@ export const insects = [
       {
         "vernacularName": "Carpet Beetle",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Carpet Beetle",
@@ -10440,7 +10440,7 @@ export const insects = [
       {
         "vernacularName": "gusano de seda",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Baco da seta",
@@ -10529,7 +10529,7 @@ export const insects = [
       {
         "vernacularName": "Rosemary Beetle",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Rosemary Beetle",

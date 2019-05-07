@@ -15,12 +15,8 @@ export const deciduousAndEvergreenTrees = [
     "names": [
       {
         "vernacularName": "Hemsley snowball",
-        "language": "en",
-        "eol_preferred": true
+        "language": "en"        
       }
-    ],
-    "descriptions": [
-      "Guizhou, Henan, Hubei, Hunan, Shaanxi, Sichuan."
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -65,10 +61,9 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Chinese stewartia",
         "language": "en",
-        "eol_preferred": true
+        
       }
     ],
-    "descriptions": [],
     "taxonomy": {
       "kingdom": "Plantae",
       "phylum": "Tracheophyta",
@@ -96,11 +91,8 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Kashmir Rowan",
         "language": "en",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "<div id=\"globalWrapper\"><div id=\"column-content\"><div id=\"content\"><div id=\"bodyContent\"><div></div><p><i><b>Sorbus cashmiriana</b></i> (<b>Kashmir rowan</b>), is a <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Species\" title=\"Species\">species</a> of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Flowering_plant\" title=\"Flowering plant\">flowering plant</a> in the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Family_(biology)\" title=\"Family (biology)\">family</a> Rosaceae, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Native_plant\" title=\"Native plant\">native</a> to the western Himalayas, including Kashmir.</p><p>It is a small, usually short-lived <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Deciduous\" title=\"Deciduous\">deciduous</a> <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Tree\" title=\"Tree\">tree</a> growing to 6–8&#160;m (20–26&#160;ft), with a trunk up to 25&#160;cm (10&#160;in) in diameter. The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Bark\" title=\"Bark\">bark</a> is smooth grey or red-grey. The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Leaf\" title=\"Leaf\">leaves</a> are 15–23&#160;cm (6–9&#160;in) long, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Pinnate\" title=\"Pinnate\" class=\"mw-redirect\">pinnate</a>, with 15–21 leaflets, dark green on top and lighter green underneath, the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Petiole_(botany)\" title=\"Petiole (botany)\">petiole</a> reddish, the leaflets 3–5.5&#160;cm (1–2&#160;in) long and 1.5–2&#160;cm broad, with serrated margins. The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Flower\" title=\"Flower\">flowers</a> are 7–10&#160;mm in diameter, with five very pale pink petals and pale yellowish stamens, produced in <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Corymb\" title=\"Corymb\" class=\"mw-redirect\">corymbs</a> in the spring. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Pollination\" title=\"Pollination\">Pollination</a> is by insects. The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Fruit\" title=\"Fruit\">fruit</a> is a white to whitish-pink <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Pome\" title=\"Pome\">pome</a> 12–15&#160;mm in diameter, ripening in the autumn and often persisting long after the leaf fall into winter.<sup id=\"cite_ref-rushforth_1-0\" class=\"reference\"><a href=\"#cite_note-rushforth-1\"><span>[</span>1<span>]</span></a></sup><sup id=\"cite_ref-afm_2-0\" class=\"reference\"><a href=\"#cite_note-afm-2\"><span>[</span>2<span>]</span></a></sup><sup id=\"cite_ref-afm2_3-0\" class=\"reference\"><a href=\"#cite_note-afm2-3\"><span>[</span>3<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"Cultivation\">Cultivation</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Sorbus_cashmiriana&amp;action=edit&amp;section=1\" title=\"Edit section: Cultivation\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><p>It is a popular <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Ornamental_tree\" title=\"Ornamental tree\" class=\"mw-redirect\">ornamental tree</a>, grown for its clusters of white fruit.<sup id=\"cite_ref-rushforth_1-1\" class=\"reference\"><a href=\"#cite_note-rushforth-1\"><span>[</span>1<span>]</span></a></sup><sup id=\"cite_ref-afm_2-1\" class=\"reference\"><a href=\"#cite_note-afm-2\"><span>[</span>2<span>]</span></a></sup><sup id=\"cite_ref-afm2_3-1\" class=\"reference\"><a href=\"#cite_note-afm2-3\"><span>[</span>3<span>]</span></a></sup> It has gained the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Royal_Horticultural_Society\" title=\"Royal Horticultural Society\" class=\"mw-redirect\">Royal Horticultural Society</a>'s <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Award_of_Garden_Merit\" title=\"Award of Garden Merit\">Award of Garden Merit</a>.<sup id=\"cite_ref-4\" class=\"reference\"><a href=\"#cite_note-4\"><span>[</span>4<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"References\">References</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Sorbus_cashmiriana&amp;action=edit&amp;section=2\" title=\"Edit section: References\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><div class=\"reflist\" style=\"list-style-type: decimal;\"><ol class=\"references\"><li id=\"cite_note-rushforth-1\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-rushforth_1-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-rushforth_1-1\"><sup><i><b>b</b></i></sup></a></span> <span class=\"reference-text\">Rushforth, K. (1999). <i>Trees of Britain and Europe</i>. Collins <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/0002200139\" class=\"internal mw-magiclink-isbn\">ISBN 0-00-220013-9</a>.</span></li><li id=\"cite_note-afm-2\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-afm_2-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-afm_2-1\"><sup><i><b>b</b></i></sup></a></span> <span class=\"reference-text\">Mitchell, A. F. (1974). <i>A Field Guide to the Trees of Britain and Northern Europe</i>. Collins <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/0002120356\" class=\"internal mw-magiclink-isbn\">ISBN 0-00-212035-6</a></span></li><li id=\"cite_note-afm2-3\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-afm2_3-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-afm2_3-1\"><sup><i><b>b</b></i></sup></a></span> <span class=\"reference-text\">Mitchell, A. F. (1982). <i>The Trees of Britain and Northern Europe</i>. Collins <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/0002190370\" class=\"internal mw-magiclink-isbn\">ISBN 0-00-219037-0</a></span></li><li id=\"cite_note-4\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-4\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://apps.rhs.org.uk/plantselector/plant?plantid=1856\">\"RHS Plant Selector - <i>Sorbus cashmiriana</i>\"</a><span class=\"reference-accessdate\">. Retrieved 4 June 2013</span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASorbus+cashmiriana&amp;rft.btitle=RHS+Plant+Selector+-+%27%27Sorbus+cashmiriana%27%27&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fapps.rhs.org.uk%2Fplantselector%2Fplant%3Fplantid%3D1856&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li></ol></div><!-- NewPP limit reportParsed by mw1191CPU time usage: 0.656 secondsReal time usage: 0.707 secondsPreprocessor visited node count: 3027/1000000Preprocessor generated node count: 16298/1500000Post‐expand include size: 10837/2048000 bytesTemplate argument size: 2366/2048000 bytesHighest expansion depth: 15/40Expensive parser function count: 0/500Lua time usage: 0.052/10.000 secondsLua memory usage: 2.73 MB/50 MB--><!-- Saved in parser cache with key enwiki:pcache:idhash:10999078-0!*!0!!*!4!* and timestamp 20140422092013 and revision id 605270999 --></div></div></div></div>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -217,15 +209,12 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Japanese Stewartia",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "False camellia",
         "language": "en"
       }
-    ],
-    "descriptions": [
-      "Barcode of Life Data Systems (BOLDS) Stats <br> Public Records: 4<br>Specimens with Barcodes: 8<br>Species With Barcodes: 1"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -429,7 +418,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Vogelbeere",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Eberesche",
@@ -442,7 +431,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "mountain ash",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "European Mountain-ash",
@@ -467,12 +456,12 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Serbal del cazador",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Sorbier des oiseleurs",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Sorbier des oiseleurs, Sorbier sauvage",
@@ -481,7 +470,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Sorbo degli uccellatori",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "sorbo degli uccelatori",
@@ -491,9 +480,6 @@ export const deciduousAndEvergreenTrees = [
         "vernacularName": "sorbo selvatico",
         "language": "it"
       }
-    ],
-    "descriptions": [
-      "Rowan grows best on dry, nutrient-rich grounds. It is found on sandy, loamy and peaty soils and is very resistant to frost. That's why rowan was one of the first woody plants to grow again in the Netherlands after the glacial period. Because of its tolerance to cold, it also grows well at high altitudes. Rowan is very popular among thrush, which explains why its name in other languages often refers to a bird. Many migrating birds  on the Wadden Islands, such as fieldfares and redwings, forage in the autumn especially off of the berries of rowan, sea buckthorn and wild cherry. In various European countries, rowan berries are made into marmelade, used as a surrogate coffee bean or added to alchoholic drinks for flavor."
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -594,7 +580,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Mehlbeere",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Echter Mehlbeerbaum",
@@ -607,7 +593,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Common Whitebeam",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "chess-apple",
@@ -620,12 +606,12 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Mostajo",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Alouchier, Alisier blanc",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Alisier blanc",
@@ -634,11 +620,8 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "sorbo montano",
         "language": "it",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "<div id=\"globalWrapper\"><div id=\"column-content\"><div id=\"content\"><div id=\"bodyContent\"><div></div><p><i><b>Sorbus aria</b></i> (<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Syn.\" title=\"Syn.\" class=\"mw-redirect\">syn.</a> <i>Aria nivea</i>), the <b>Whitebeam</b> or <b>Common Whitebeam</b> is a European and Near-Eastern <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Deciduous\" title=\"Deciduous\">deciduous</a> tree, the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Type_species\" title=\"Type species\">type species</a> of the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Subgenus\" title=\"Subgenus\">subgenus</a> of the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Whitebeam\" title=\"Whitebeam\">Whitebeams</a>. Typically compact and domed, with few upswept branches and almost-white underside of the leaves. It generally favours dry limestone and chalk soils. The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Plant_sexuality\" title=\"Plant sexuality\" class=\"mw-redirect\">hermaphrodite</a> cream-white flowers appear in May, are insect pollinated, and go on to produce scarlet berries, which are often eaten by birds.<sup id=\"cite_ref-1\" class=\"reference\"><a href=\"#cite_note-1\"><span>[</span>1<span>]</span></a></sup> Developed for garden use are the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Cultivars\" title=\"Cultivars\" class=\"mw-redirect\">cultivars</a> <i>S. aria</i> 'Lutescens',<sup id=\"cite_ref-2\" class=\"reference\"><a href=\"#cite_note-2\"><span>[</span>2<span>]</span></a></sup> with very whitish-green early leaves, and <i>S. aria</i> 'Majestica',<sup id=\"cite_ref-3\" class=\"reference\"><a href=\"#cite_note-3\"><span>[</span>3<span>]</span></a></sup> with large leaves. Both have gained the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Royal_Horticultural_Society\" title=\"Royal Horticultural Society\">Royal Horticultural Society</a>'s <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Award_of_Garden_Merit\" title=\"Award of Garden Merit\">Award of Garden Merit</a>.</p><h2><span class=\"mw-headline\" id=\"References\">References</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Sorbus_aria&amp;action=edit&amp;section=1\" title=\"Edit section: References\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><div class=\"reflist\" style=\"list-style-type: decimal;\"><ol class=\"references\"><li id=\"cite_note-1\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-1\">^</a></b></span> <span class=\"reference-text\">The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Reader%27s_Digest\" title=\"Reader's Digest\">Reader's Digest</a> Field Guide to the Trees and Shrubs of Britain <i>p.86</i>.</span></li><li id=\"cite_note-2\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-2\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://apps.rhs.org.uk/plantselector/plant?plantid=1852\">\"RHS Plant Selector - <i>Sorbus aria</i> 'Lutescens<span style=\"padding-right:0.2em;\">'</span>\"</a><span class=\"reference-accessdate\">. Retrieved 4 June 2013</span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASorbus+aria&amp;rft.btitle=RHS+Plant+Selector+-+%27%27Sorbus+aria%27%27+%27Lutescens%27&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fapps.rhs.org.uk%2Fplantselector%2Fplant%3Fplantid%3D1852&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-3\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-3\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://apps.rhs.org.uk/plantselector/plant?plantid=4151\">\"RHS Plant Selector - <i>Sorbus aria</i> 'Majestica<span style=\"padding-right:0.2em;\">'</span>\"</a><span class=\"reference-accessdate\">. Retrieved 4 June 2013</span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASorbus+aria&amp;rft.btitle=RHS+Plant+Selector+-+%27%27Sorbus+aria%27%27+%27Majestica%27&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fapps.rhs.org.uk%2Fplantselector%2Fplant%3Fplantid%3D4151&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li></ol></div><table class=\"mbox-small plainlinks\" style=\"border:1px solid #aaa;background-color:#f9f9f9;\"><tr><td class=\"mbox-image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/30px-Commons-logo.svg.png\" width=\"30\" height=\"40\" srcset=\"//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/45px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/59px-Commons-logo.svg.png 2x\" data-file-width=\"1024\" data-file-height=\"1376\" /></td><td class=\"mbox-text plainlist\">Wikimedia Commons has media related to <i><b><a target=\"wikipedia\" href=\"http://commons.wikimedia.org/wiki/Category:Sorbus_aria\" class=\"extiw\" title=\"commons:Category:Sorbus aria\">Sorbus aria</a></b></i>.</td></tr></table><p><br /></p><table class=\"metadata plainlinks stub\" style=\"background: transparent;\" role=\"presentation\"><tr><td><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Aardbei-bloemcloseup.jpg\" class=\"image\"><img alt=\"Stub icon\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Aardbei-bloemcloseup.jpg/40px-Aardbei-bloemcloseup.jpg\" width=\"40\" height=\"37\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Aardbei-bloemcloseup.jpg/60px-Aardbei-bloemcloseup.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Aardbei-bloemcloseup.jpg/80px-Aardbei-bloemcloseup.jpg 2x\" data-file-width=\"900\" data-file-height=\"834\" /></a></td><td><i>This <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Rosales\" title=\"Rosales\">Rosales</a> article is a <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Wikipedia:Stub\" title=\"Wikipedia:Stub\">stub</a>. You can help Wikipedia by <a class=\"external text\" target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Sorbus_aria&amp;action=edit\">expanding it</a>.</i><div class=\"plainlinks hlist navbar mini\" style=\"position: absolute; right: 15px; display: none;\"><ul><li class=\"nv-view\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Template:Rosales-stub\" title=\"Template:Rosales-stub\"><span title=\"View this template\" style=\"\">v</span></a></li><li class=\"nv-talk\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Template_talk:Rosales-stub\" title=\"Template talk:Rosales-stub\"><span title=\"Discuss this template\" style=\"\">t</span></a></li><li class=\"nv-edit\"><a class=\"external text\" target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Template:Rosales-stub&amp;action=edit\"><span title=\"Edit this template\" style=\"\">e</span></a></li></ul></div></td></tr></table><!-- NewPP limit reportParsed by mw1215CPU time usage: 0.564 secondsReal time usage: 0.612 secondsPreprocessor visited node count: 3200/1000000Preprocessor generated node count: 17931/1500000Post‐expand include size: 17631/2048000 bytesTemplate argument size: 2861/2048000 bytesHighest expansion depth: 15/40Expensive parser function count: 0/500Lua time usage: 0.032/10.000 secondsLua memory usage: 1.46 MB/50 MB--><!-- Saved in parser cache with key enwiki:pcache:idhash:13070029-0!*!0!*!*!4!* and timestamp 20140907004833 and revision id 624482023 --></div></div></div></div>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -851,12 +834,12 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Silber-Weide",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "white willow",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "golden willow",
@@ -865,12 +848,12 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "sauce blanco",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Saule blanc",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Saule Amarine",
@@ -887,11 +870,8 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Salice comune",
         "language": "it",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "<em>S. alba</em> occurs throughout much of the Palearctic, from the UK south to the Iberian Peninsula, Algeria and Morocco and east through Kazakhstan, the Caucasus and Russia to China. It also occurs in North America."
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -1044,7 +1024,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Falsche Akazie, Robinie",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Robinie",
@@ -1057,7 +1037,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "black locust",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Acacia (U.K.)",
@@ -1090,7 +1070,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Robinier faux-acacia, Carouge",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Acacia Blanc",
@@ -1111,10 +1091,9 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Robinia",
         "language": "it",
-        "eol_preferred": true
+        
       }
     ],
-    "descriptions": [],
     "taxonomy": {
       "kingdom": "Plantae",
       "phylum": "Tracheophyta",
@@ -1262,12 +1241,12 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Stiel-Eiche",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Pedunculate Oak",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Common Oak",
@@ -1288,7 +1267,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "roble",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Carballo",
@@ -1297,7 +1276,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Chêne pédonculé",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Chêne pédonculé, Gravelin",
@@ -1306,11 +1285,8 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Quercia comune",
         "language": "it",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "A tree 25 m or more tall. Leaves auricled at the base, ovate, 3.5-11.5 cm long, sinuately lobed or pinnatifid or -partite; lobes obtuse, upper surface dark green, lower pale green; petiole 4-6 mm long. Male flowers in lax catkins, 4-5.7 cm long; perianth segments lanceolate, c. 1.8 mm long, tomentose; stamens 4-9, filaments 1.5 mm long. Female flowers on stout peduncles; styles c. 1 mm long; stigma subcapitate. Acorn 2-2.4 cm long, glabrescent, yellowish-brown, 1/3 to 1/2 enclosed by the cupule, hemispherical, 2-2.2 cm broad, pubescent; scales broadly ovate, acute."
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -1379,11 +1355,8 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "willow-leaf pear",
         "language": "en",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "Chile Central"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -1553,7 +1526,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Holm Oak",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Evergreen Oak",
@@ -1566,17 +1539,17 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "encina",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Chêne vert",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "leccio",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "elice",
@@ -1585,7 +1558,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "azinheira",
         "language": "pt",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "azinheiro",
@@ -1596,7 +1569,6 @@ export const deciduousAndEvergreenTrees = [
         "language": "pt"
       }
     ],
-    "descriptions": [],
     "taxonomy": {
       "kingdom": "Plantae",
       "phylum": "Tracheophyta",
@@ -1703,16 +1675,13 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "scarlet oak",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Chêne écarlate",
         "language": "fr",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "Scarlet oak is found from southwestern Maine west to New York,&nbsp;               Ohio, southern Michigan, and Indiana; south to southern Illinois,&nbsp;               southeastern Missouri, and central Mississippi; east to southern&nbsp;               Alabama and southwestern Georgia; and north along the western&nbsp;               edge of the Coastal Plain to Virginia.<BR/><BR/>&nbsp;          &nbsp;          <I> <BR>&nbsp;               -The native range of scarlet oak.</I><BR/><BR/>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -1845,7 +1814,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Callery pear",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Bradford pear",
@@ -1858,11 +1827,8 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Poirier de Chine",
         "language": "fr",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "<p>The Callery Pear (<em>Pyrus calleryana</em>) is native to eastern Asia but planted widely as an ornamental in urban and suburban residential and commercial areas in the United States. Numerous cultivars have been developed and are <a href=\"http://en.wikipedia.org/wiki/Vegetative_cloning\">clonally propagated</a>. Wild populations of Callery Pear can now be found throughout much of the United States, generally in open or disturbed habitats.</p>\r\n<p>The Callery Pear was originally brought to the United States to address the problem of <a href=\"http://en.wikipedia.org/wiki/Fire_blight\">fire blight</a>, a bacterial disease spread by pollinators, that was affecting Common Pears (<em>Pyrus communis</em>). In the early 1900s, the cultivated pear industry in the western United States was suffering enormous losses due to fire blight. Callery Pears were used in breeding programs and as <a href=\"http://en.wikipedia.org/wiki/Rootstock\">rootstocks</a> in efforts to develop resistant <a href=\"http://en.wikipedia.org/wiki/Cultivar\">cultivars</a>. The ornamental value of the Callery Pear was soon recognized and by the early 1960s the &quot;Bradford&quot; cultivar was commercially available. The Bradford Pear quickly caught on and became a widely planted street tree. Many other cultivars followed--and it was realized that Bradfords had a problem in that the architecture of the branches often caused individual trees to split under their own weight after around 15 to 20 years of growth. The shortcomings of the Bradford Pear increased the popularity of other varieties and the diversity of Callery Pears being planted.</p>\r\n<p>In recent years, Callery Pear trees have begun to appear in many natural areas in the eastern United States. By 2005, wild trees had been found in more than two dozen states. Interestingly,&nbsp; the Callery Pear was not long ago viewed as unlikely to become an invasive species in part because of its <a href=\"http://en.wikipedia.org/wiki/Self-incompatibility_in_plants\">self-incompatibility</a>. Like many plants, Callery Pear exhibits a <a href=\"http://en.wikipedia.org/wiki/Self-incompatibility_in_plants#Gametophytic_self-incompatibility_.28GSI.29\">gametophytic incompatibility</a> whereby when pollen is transferred <a href=\"http://en.wikipedia.org/wiki/Pollen_tube\">pollen tubes</a> begin to grow down the <a href=\"http://simple.wikipedia.org/wiki/Pollen_tube\">styles</a> of both compatible and incompatible flowers, but if the <a href=\"http://simple.wikipedia.org/wiki/Haploid\">haploid</a> <a href=\"http://simple.wikipedia.org/wiki/Pollen_grain\">pollen grain</a> shares the same self-incompatibility <a href=\"http://en.wikipedia.org/wiki/Allele\">allele</a> as the <a href=\"http://simple.wikipedia.org/wiki/Diploid\">diploid</a> maternal tissue, the pollen tube is prevented from reaching the <a href=\"http://en.wikipedia.org/wiki/Ovule\">ovule</a>. It is now apparent, however, that as a consequence of the increasing diversity of the cultivars being planted, and the sprouting and flowering of rootstocks that are from different genetic stock than the <a href=\"http://en.wikipedia.org/wiki/Scion_%28grafting%29\">scion</a>, this incompatibility is often circumvented. Numerous other traits (e.g., seed dispersal by birds, broad environmental tolerance, few pests. rapid growth, early reproduction, and heavy fruit set) facilitate the rapid spread of the Callery Pear. Naturalized Callery Pears often form dense thickets and these are often thorny since even thornless cultivars apparently retain genes for thorniness that may be expressed in their mixed ancestry progeny. Although there is significant concern about the ecological impact of the Callery Pear in the United States, it remains to be seen whether it will ultimately persist as a minor non-native component of the ecosystem or will become a more serious problem,</p>\r\n<p>(Vincent 2005; <a href=\"http://mipn.org/Callery%20pear.pdf\">Culley and Hardiman 2007</a> and references therein; Hardiman and Culley 2010)</p>\r\n"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -1975,7 +1941,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "winter-flowering cherry",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Higan cherry",
@@ -1985,9 +1951,6 @@ export const deciduousAndEvergreenTrees = [
         "vernacularName": "Spring cherry",
         "language": "en"
       }
-    ],
-    "descriptions": [
-      "<h5>United States</h5><p><strong>Origin</strong>: Exotic</p><p><strong>Regularity</strong>: Regularly occurring</p><p><strong>Currently</strong>: Unknown/Undetermined</p><p><strong>Confidence</strong>: Confident</p>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -2045,12 +2008,11 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Kirschpflaume",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "cherry plum",
         "language": "en",
-        "eol_preferred": true,
         "wikiSearchTerm": true
       },
       {
@@ -2060,15 +2022,12 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Prunier-cerise",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Prunier myrobolan, Myrobolan",
         "language": "fr"
       }
-    ],
-    "descriptions": [
-      "In Great Britain and/or Ireland:<br>Foodplant / parasite<br><i>Erysiphe prunastri</i> parasitises <i>Prunus cerasifera</i><br><br>Plant / resting place / within<br>ovum of <i>Hoplocampa chrysorrhoea</i> may be found in ovary of <i>Prunus cerasifera</i><br><br>Foodplant / internal feeder<br>larva of <i>Phytobia cerasiferae</i> feeds within stem (cambium) of <i>Prunus cerasifera</i><br>Other: sole host/prey<br><br>Foodplant / pathogen<br><i>Plum Pox virus</i> infects and damages grooved, pitted, banded fruit of <i>Prunus cerasifera</i><br><br>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -2177,7 +2136,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Oriental Plane",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Oriental plane-tree",
@@ -2194,15 +2153,12 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Platane à feuilles d'érable",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Platane d'Orient",
         "language": "fr"
       }
-    ],
-    "descriptions": [
-      "Very widespread ranging from the east Mediterranean throughout the middle east to the south-east provinces of the Euro-Siberian region."
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -2356,7 +2312,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Schwarz-Pappel",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Säulen-Pappel",
@@ -2369,7 +2325,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "black poplar",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Balm of Gilead (USA)",
@@ -2390,7 +2346,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Populus nigra",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "alamo negro",
@@ -2399,7 +2355,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Peuplier noir",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Peuplier commun noir, Peuplier noir",
@@ -2412,15 +2368,12 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "albanu chiuppa",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "pioppo nero",
         "language": "it"
       }
-    ],
-    "descriptions": [
-      "Populus nigra the black or water poplar is Britain’s rarest native timber tree found alongside waterways in the UK.The black poplar is also found in Southern, Central and East Europe, North Africa and eastwards to Central Asia the Black or Water Poplar is almost certainly native to lowland England.Black poplar trees can live for over 250 years and there are historical records of trees approaching 300 years of age (White, 1993). A virulent disease Poplar scab has hit Populus nigra and generally takes around 3 years to kill a tree. The infection is caused by a fungal disease called Venturia populina, or its asexual stage Pollaccia elegans. A shortage of male trees and a changes in conditions necessary for germination and early establishment have also made natural sexual regeneration is extremely uncommon.Nationally is no special legislation to protect this species. The concerns over increasing threats and ongoing decline mean however that many local Biodiversity Action Plans have now adopted this species for targeted conservation."
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -2561,7 +2514,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Süsskirsche",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Vogel-Kirsche",
@@ -2570,7 +2523,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Wild Cherry",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Bird Cherry",
@@ -2591,7 +2544,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Cerezo",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "cerezo silvestre",
@@ -2600,7 +2553,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Cerisier commun",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Cerisier sauvage",
@@ -2617,16 +2570,13 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "ciliegio",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Cerejeira-brava",
         "language": "pt",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "<div id=\"globalWrapper\"><div id=\"column-content\"><div id=\"content\"><div id=\"bodyContent\"><div></div><p><i><b>Prunus avium</b></i>, commonly called <b>wild cherry</b>,<sup id=\"cite_ref-GRIN_2-0\" class=\"reference\"><a href=\"#cite_note-GRIN-2\"><span>[</span>2<span>]</span></a></sup> <b>sweet cherry</b>,<sup id=\"cite_ref-GRIN_2-1\" class=\"reference\"><a href=\"#cite_note-GRIN-2\"><span>[</span>2<span>]</span></a></sup> <b>bird cherry</b>,<sup id=\"cite_ref-GRIN_2-2\" class=\"reference\"><a href=\"#cite_note-GRIN-2\"><span>[</span>2<span>]</span></a></sup> or <b>gean</b>,<sup id=\"cite_ref-GRIN_2-3\" class=\"reference\"><a href=\"#cite_note-GRIN-2\"><span>[</span>2<span>]</span></a></sup> is a species of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Cherry\" title=\"Cherry\">cherry</a> native to <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Europe\" title=\"Europe\">Europe</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Anatolia\" title=\"Anatolia\">Anatolia</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Maghreb\" title=\"Maghreb\">Maghreb</a>, and western <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Asia\" title=\"Asia\">Asia</a>, from the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/British_Isles\" title=\"British Isles\">British Isles</a><sup id=\"cite_ref-3\" class=\"reference\"><a href=\"#cite_note-3\"><span>[</span>3<span>]</span></a></sup> south to <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Morocco\" title=\"Morocco\">Morocco</a> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Tunisia\" title=\"Tunisia\">Tunisia</a>, north to the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Trondheimsfjord\" title=\"Trondheimsfjord\">Trondheimsfjord</a> region in <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Norway\" title=\"Norway\">Norway</a> and east to the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Caucasus\" title=\"Caucasus\">Caucasus</a> and northern <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Iran\" title=\"Iran\">Iran</a>, with a small disjunct population in the western <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Himalaya\" title=\"Himalaya\" class=\"mw-redirect\">Himalaya</a>.<sup id=\"cite_ref-empp_4-0\" class=\"reference\"><a href=\"#cite_note-empp-4\"><span>[</span>4<span>]</span></a></sup><sup id=\"cite_ref-vf_5-0\" class=\"reference\"><a href=\"#cite_note-vf-5\"><span>[</span>5<span>]</span></a></sup> This species, in the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Rosaceae\" title=\"Rosaceae\">rose family (Rosaceae)</a>, has a <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Diploid\" title=\"Diploid\" class=\"mw-redirect\">diploid</a> set of sixteen <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Chromosome\" title=\"Chromosome\">chromosomes</a> (2<i>n</i>&#160;=&#160;16).<sup id=\"cite_ref-6\" class=\"reference\"><a href=\"#cite_note-6\"><span>[</span>6<span>]</span></a></sup> All parts of the plant except for the ripe fruit are slightly toxic, containing <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Cyanogenic_glycoside\" title=\"Cyanogenic glycoside\" class=\"mw-redirect\">cyanogenic glycosides</a>.</p><p></p><div id=\"toc\" class=\"toc\"><div id=\"toctitle\"><h2>Contents</h2></div><ul><li class=\"toclevel-1 tocsection-1\"><a href=\"#Nomenclature\"><span class=\"tocnumber\">1</span> <span class=\"toctext\">Nomenclature</span></a><ul><li class=\"toclevel-2 tocsection-2\"><a href=\"#Mazzard\"><span class=\"tocnumber\">1.1</span> <span class=\"toctext\">Mazzard</span></a></li></ul></li><li class=\"toclevel-1 tocsection-3\"><a href=\"#Description_and_ecology\"><span class=\"tocnumber\">2</span> <span class=\"toctext\">Description and ecology</span></a></li><li class=\"toclevel-1 tocsection-4\"><a href=\"#Cultivation_and_uses\"><span class=\"tocnumber\">3</span> <span class=\"toctext\">Cultivation and uses</span></a><ul><li class=\"toclevel-2 tocsection-5\"><a href=\"#Fruit\"><span class=\"tocnumber\">3.1</span> <span class=\"toctext\">Fruit</span></a></li><li class=\"toclevel-2 tocsection-6\"><a href=\"#Ornamental\"><span class=\"tocnumber\">3.2</span> <span class=\"toctext\">Ornamental</span></a></li><li class=\"toclevel-2 tocsection-7\"><a href=\"#Timber\"><span class=\"tocnumber\">3.3</span> <span class=\"toctext\">Timber</span></a></li><li class=\"toclevel-2 tocsection-8\"><a href=\"#Other_uses\"><span class=\"tocnumber\">3.4</span> <span class=\"toctext\">Other uses</span></a></li></ul></li><li class=\"toclevel-1 tocsection-9\"><a href=\"#Contribution_to_other_species\"><span class=\"tocnumber\">4</span> <span class=\"toctext\">Contribution to other species</span></a></li><li class=\"toclevel-1 tocsection-10\"><a href=\"#Cultural_history\"><span class=\"tocnumber\">5</span> <span class=\"toctext\">Cultural history</span></a></li><li class=\"toclevel-1 tocsection-11\"><a href=\"#References\"><span class=\"tocnumber\">6</span> <span class=\"toctext\">References</span></a></li></ul></div><p></p><h2><span class=\"mw-headline\" id=\"Nomenclature\">Nomenclature</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Prunus_avium&amp;action=edit&amp;section=1\" title=\"Edit section: Nomenclature\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><div class=\"thumb tright\"><div class=\"thumbinner\" style=\"width:222px;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Kirschblueten-2011-ffm-075.jpg\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Kirschblueten-2011-ffm-075.jpg/220px-Kirschblueten-2011-ffm-075.jpg\" width=\"220\" height=\"159\" class=\"thumbimage\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Kirschblueten-2011-ffm-075.jpg/330px-Kirschblueten-2011-ffm-075.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Kirschblueten-2011-ffm-075.jpg/440px-Kirschblueten-2011-ffm-075.jpg 2x\" data-file-width=\"3958\" data-file-height=\"2863\" /></a><div class=\"thumbcaption\"><div class=\"magnify\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Kirschblueten-2011-ffm-075.jpg\" class=\"internal\" title=\"Enlarge\"></a></div>Flowers</div></div></div><p>The early history of its classification is somewhat confused. In the first edition of <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Species_Plantarum\" title=\"Species Plantarum\">Species Plantarum</a></i> (1753), Linnaeus treated it as only a variety, <i>Prunus cerasus</i> var. <i>avium</i>, citing <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Gaspard_Bauhin\" title=\"Gaspard Bauhin\">Gaspard Bauhin</a>'s <i>Pinax theatri botanici</i> (1596) as a synonym;<sup class=\"noprint Inline-Template\" style=\"white-space:nowrap;\">[<i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Wikipedia:Please_clarify\" title=\"Wikipedia:Please clarify\"><span title=\"The text near this tag may need clarification or removal of jargon. (January 2011)\">clarification needed</span></a></i>]</sup> his description, <i>Cerasus racemosa hortensis</i> (\"Cherry with racemes, of gardens\")<sup class=\"noprint Inline-Template\" style=\"white-space:nowrap;\">[<i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Wikipedia:Please_clarify\" title=\"Wikipedia:Please clarify\"><span title=\"The text near this tag may need clarification or removal of jargon. (January 2011)\">clarification needed</span></a></i>]</sup> shows it was described from a cultivated plant.<sup id=\"cite_ref-L._7-0\" class=\"reference\"><a href=\"#cite_note-L.-7\"><span>[</span>7<span>]</span></a></sup> Linnaeus then changed from a variety to a species <i>Prunus avium</i> in the second edition of his <i>Flora Suecica</i> in 1755.<sup id=\"cite_ref-L.2_8-0\" class=\"reference\"><a href=\"#cite_note-L.2-8\"><span>[</span>8<span>]</span></a></sup></p><p>Sweet cherry was known historically as <b>Gean</b> or <b>Mazzard</b> (also 'massard'), until recently, both were largely obsolete names in modern English.</p><p>The name \"wild cherry\" is also commonly applied to other species of <i>Prunus</i> growing in their native habitats, particularly to the North American species <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Prunus_serotina\" title=\"Prunus serotina\">Prunus serotina</a></i>.</p><p><i>Prunus avium</i> means \"bird cherry\" in the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Latin_language\" title=\"Latin language\" class=\"mw-redirect\">Latin language</a>,<sup id=\"cite_ref-vf_5-1\" class=\"reference\"><a href=\"#cite_note-vf-5\"><span>[</span>5<span>]</span></a></sup> but in English \"bird cherry\" refers to <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Prunus_padus\" title=\"Prunus padus\">Prunus padus</a></i>.<sup id=\"cite_ref-fnwe2_9-0\" class=\"reference\"><a href=\"#cite_note-fnwe2-9\"><span>[</span>9<span>]</span></a></sup></p><h3><span class=\"mw-headline\" id=\"Mazzard\">Mazzard</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Prunus_avium&amp;action=edit&amp;section=2\" title=\"Edit section: Mazzard\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h3><p>More recently<sup class=\"noprint Inline-Template\" style=\"white-space:nowrap;\">[<i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style/Dates_and_numbers#Chronological_items\" title=\"Wikipedia:Manual of Style/Dates and numbers\"><span title=\"The time period mentioned near this tag is ambiguous. (February 2013)\">when?</span></a></i>]</sup> 'Mazzard' has been used to refer to a selected <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Self-pollination\" title=\"Self-pollination\">self-fertile</a> <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Cultivar\" title=\"Cultivar\">cultivar</a> that comes true from seed, and which is used as a seedling <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Grafting\" title=\"Grafting\">rootstock</a> for fruiting cultivars.<sup id=\"cite_ref-rhs_10-0\" class=\"reference\"><a href=\"#cite_note-rhs-10\"><span>[</span>10<span>]</span></a></sup><sup id=\"cite_ref-pfaf_11-0\" class=\"reference\"><a href=\"#cite_note-pfaf-11\"><span>[</span>11<span>]</span></a></sup> This term is still used particularly for the varieties of P. avium grown in North Devon and cultivated there, particularly in the orchards at <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Landkey\" title=\"Landkey\">Landkey</a>.</p><h2><span class=\"mw-headline\" id=\"Description_and_ecology\">Description and ecology</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Prunus_avium&amp;action=edit&amp;section=3\" title=\"Edit section: Description and ecology\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><div class=\"thumb tleft\"><div class=\"thumbinner\" style=\"width:222px;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Glandes_Prunus_avium.jpg\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Glandes_Prunus_avium.jpg/220px-Glandes_Prunus_avium.jpg\" width=\"220\" height=\"157\" class=\"thumbimage\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/5/53/Glandes_Prunus_avium.jpg/330px-Glandes_Prunus_avium.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/53/Glandes_Prunus_avium.jpg/440px-Glandes_Prunus_avium.jpg 2x\" data-file-width=\"1600\" data-file-height=\"1143\" /></a><div class=\"thumbcaption\"><div class=\"magnify\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Glandes_Prunus_avium.jpg\" class=\"internal\" title=\"Enlarge\"></a></div>Red glands (extrafloral nectaries) on the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Petiole_(botany)\" title=\"Petiole (botany)\">petiole</a>.</div></div></div><p><i>Prunus avium</i> is a <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Deciduous\" title=\"Deciduous\">deciduous</a> <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Tree\" title=\"Tree\">tree</a> growing to 15–32 m (50–100&#160;ft) tall, with a trunk up to 1.5&#160;m (5&#160;ft) in diameter. Young trees show strong <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Apical_dominance\" title=\"Apical dominance\">apical dominance</a> with a straight trunk and symmetrical conical crown, becoming rounded to irregular on old trees. The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Bark\" title=\"Bark\">bark</a> is smooth purplish-brown with prominent horizontal grey-brown <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Lenticel\" title=\"Lenticel\">lenticels</a> on young trees, becoming thick dark blackish-brown and fissured on old trees. The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Leaf\" title=\"Leaf\">leaves</a> are alternate, simple ovoid-acute, 7–14&#160;cm (3–6&#160;in) long and 4–7&#160;cm (2–3&#160;in) broad, glabrous matt or sub-shiny green above, variably finely downy beneath, with a serrated margin and an acuminate tip, with a green or reddish <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Petiole_(botany)\" title=\"Petiole (botany)\">petiole</a> 2–3.5&#160;cm (0.8–1.4&#160;in) long bearing two to five small red glands. The tip of each serrated edge of the leaves also bear small red glands.<sup id=\"cite_ref-Conrad_12-0\" class=\"reference\"><a href=\"#cite_note-Conrad-12\"><span>[</span>12<span>]</span></a></sup> In autumn, the leaves turn orange, pink or red before falling. The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Flower\" title=\"Flower\">flowers</a> are produced in early spring at the same time as the new leaves, borne in <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Corymb\" title=\"Corymb\" class=\"mw-redirect\">corymbs</a> of two to six together, each flower pendent on a 2–5&#160;cm (0.8–2&#160;in) peduncle, 2.5–3.5&#160;cm (1–1.4&#160;in) in diameter, with five pure white petals, yellowish stamens, and a superior ovary; they are <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Hermaphroditic\" title=\"Hermaphroditic\" class=\"mw-redirect\">hermaphroditic</a>, and pollinated by <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Bee\" title=\"Bee\">bees</a>. The ovary contains two <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Ovule\" title=\"Ovule\">ovules</a>, only one of the becomes the seed.<sup id=\"cite_ref-13\" class=\"reference\"><a href=\"#cite_note-13\"><span>[</span>13<span>]</span></a></sup> The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Fruit\" title=\"Fruit\">fruit</a> is a <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Drupe\" title=\"Drupe\">drupe</a> 1–2&#160;cm (0.4–0.8&#160;in) in diameter (larger in some cultivated selections), bright red to dark purple when mature in midsummer, edible, variably sweet to somewhat <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Astringent\" title=\"Astringent\">astringent</a> and bitter to eat fresh. Each fruit contains a single hard-shelled stone 8–12&#160;mm long, 7–10&#160;mm wide and 6–8&#160;mm thick, grooved along the flattest edge; the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Seed\" title=\"Seed\">seed</a> (kernel) inside the stone is 6–8&#160;mm long.</p><div class=\"thumb tright\"><div class=\"thumbinner\" style=\"width:222px;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:0_Prunus_avium_-_Havr%C3%A9_(1).JPG\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/0_Prunus_avium_-_Havr%C3%A9_%281%29.JPG/220px-0_Prunus_avium_-_Havr%C3%A9_%281%29.JPG\" width=\"220\" height=\"330\" class=\"thumbimage\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/7/7a/0_Prunus_avium_-_Havr%C3%A9_%281%29.JPG/330px-0_Prunus_avium_-_Havr%C3%A9_%281%29.JPG 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/7a/0_Prunus_avium_-_Havr%C3%A9_%281%29.JPG/440px-0_Prunus_avium_-_Havr%C3%A9_%281%29.JPG 2x\" data-file-width=\"2592\" data-file-height=\"3888\" /></a><div class=\"thumbcaption\"><div class=\"magnify\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:0_Prunus_avium_-_Havr%C3%A9_(1).JPG\" class=\"internal\" title=\"Enlarge\"></a></div>Prunus avium in spring.</div></div></div><p>The fruit are readily eaten by numerous kinds of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Bird\" title=\"Bird\">birds</a> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Mammal\" title=\"Mammal\">mammals</a>, which digest the fruit flesh and disperse the seeds in their droppings. Some <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Rodent\" title=\"Rodent\">rodents</a>, and a few birds (notably the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Hawfinch\" title=\"Hawfinch\">Hawfinch</a>), also crack open the stones to eat the kernel inside. All parts of the plant except for the ripe fruit are slightly toxic, containing <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Cyanogenic_glycoside\" title=\"Cyanogenic glycoside\" class=\"mw-redirect\">cyanogenic glycosides</a>.<sup id=\"cite_ref-rushforth_14-0\" class=\"reference\"><a href=\"#cite_note-rushforth-14\"><span>[</span>14<span>]</span></a></sup><sup id=\"cite_ref-mitchell_15-0\" class=\"reference\"><a href=\"#cite_note-mitchell-15\"><span>[</span>15<span>]</span></a></sup><sup id=\"cite_ref-fnwe_16-0\" class=\"reference\"><a href=\"#cite_note-fnwe-16\"><span>[</span>16<span>]</span></a></sup></p><dl><dd><i>See also <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/List_of_Lepidoptera_that_feed_on_Prunus\" title=\"List of Lepidoptera that feed on Prunus\">List of Lepidoptera that feed on Prunus</a></i></dd></dl><p>The leaves provide food for some animals, including <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Lepidoptera\" title=\"Lepidoptera\">Lepidoptera</a> such as the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Case-bearer\" title=\"Case-bearer\" class=\"mw-redirect\">case-bearer</a> <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Moth\" title=\"Moth\">moth</a> <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Coleophora_anatipennella\" title=\"Coleophora anatipennella\">Coleophora anatipennella</a></i>.</p><p>The tree exudes a <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Natural_gum\" title=\"Natural gum\">gum</a> from wounds in the bark, by which it seals the wounds to exclude <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Insect\" title=\"Insect\">insects</a> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Fungus\" title=\"Fungus\">fungal</a> infections.<sup id=\"cite_ref-vedel_17-0\" class=\"reference\"><a href=\"#cite_note-vedel-17\"><span>[</span>17<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"Cultivation_and_uses\">Cultivation and uses</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Prunus_avium&amp;action=edit&amp;section=4\" title=\"Edit section: Cultivation and uses\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><h3><span class=\"mw-headline\" id=\"Fruit\">Fruit</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Prunus_avium&amp;action=edit&amp;section=5\" title=\"Edit section: Fruit\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h3><div class=\"hatnote relarticle mainarticle\">Main article: <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Cherry\" title=\"Cherry\">Cherry</a></div><div class=\"thumb tright\"><div class=\"thumbinner\" style=\"width:222px;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Cherry_Stella444.jpg\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Cherry_Stella444.jpg/220px-Cherry_Stella444.jpg\" width=\"220\" height=\"220\" class=\"thumbimage\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Cherry_Stella444.jpg/330px-Cherry_Stella444.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Cherry_Stella444.jpg/440px-Cherry_Stella444.jpg 2x\" data-file-width=\"1200\" data-file-height=\"1200\" /></a><div class=\"thumbcaption\"><div class=\"magnify\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Cherry_Stella444.jpg\" class=\"internal\" title=\"Enlarge\"></a></div>Pair of fruit growing from the same stem</div></div></div><p>Some eighteenth and nineteenth century botanical authors<sup class=\"noprint Inline-Template\" style=\"white-space:nowrap;\">[<i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style/Words_to_watch#Unsupported_attributions\" title=\"Wikipedia:Manual of Style/Words to watch\"><span title=\"The material near this tag possibly uses too-vague attribution or weasel words. (January 2011)\">who?</span></a></i>]</sup> assumed a western Asia origin for the species based on the writings of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Pliny_the_Elder\" title=\"Pliny the Elder\">Pliny</a>; however, archaeological finds of seeds from prehistoric Europe contradict this view. Wild cherries have been an item of human food for several thousands of years. The stones have been found in deposits at <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Bronze_Age\" title=\"Bronze Age\">Bronze Age</a> settlements throughout Europe, including in Britain.<sup id=\"cite_ref-rhs_10-1\" class=\"reference\"><a href=\"#cite_note-rhs-10\"><span>[</span>10<span>]</span></a></sup> In one dated example, wild cherry macrofossils were found in a <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Core_sample\" title=\"Core sample\">core sample</a> from the detritus beneath a dwelling at an <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Early_Bronze_Age\" title=\"Early Bronze Age\" class=\"mw-redirect\">Early</a> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Middle_Bronze_Age\" title=\"Middle Bronze Age\" class=\"mw-redirect\">Middle Bronze Age</a> <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Stilt_house\" title=\"Stilt house\">pile-dwelling</a> site on and in the shore of a former lake at <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Desenzano_del_Garda\" title=\"Desenzano del Garda\">Desenzano del Garda</a> or <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Lonato\" title=\"Lonato\" class=\"mw-redirect\">Lonato</a>, near the southern shore of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Lake_Garda\" title=\"Lake Garda\">Lake Garda</a>, Italy. The date is estimated at Early Bronze Age IA, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Radiocarbon_dating\" title=\"Radiocarbon dating\">carbon dated</a> there to 2077 BC plus or minus 10 years. The natural forest was largely cleared at that time.<sup id=\"cite_ref-18\" class=\"reference\"><a href=\"#cite_note-18\"><span>[</span>18<span>]</span></a></sup></p><p>By 800 BC, cherries were being actively cultivated in <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Asia_Minor\" title=\"Asia Minor\" class=\"mw-redirect\">Asia Minor</a>, and soon after in <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Greece\" title=\"Greece\">Greece</a>.<sup id=\"cite_ref-rhs_10-2\" class=\"reference\"><a href=\"#cite_note-rhs-10\"><span>[</span>10<span>]</span></a></sup></p><p>As the main ancestor of the cultivated cherry, the sweet cherry is one of the two cherry species which supply most of the world's commercial <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Cultivar\" title=\"Cultivar\">cultivars</a> of edible cherry (the other is the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Sour_cherry\" title=\"Sour cherry\" class=\"mw-redirect\">sour cherry</a> <i>Prunus cerasus</i>, mainly used for cooking; a few other species have had a very small input).<sup id=\"cite_ref-rhs_10-3\" class=\"reference\"><a href=\"#cite_note-rhs-10\"><span>[</span>10<span>]</span></a></sup> Various cherry cultivars are now grown worldwide wherever the climate is suitable; the number of cultivars is now very large.<sup id=\"cite_ref-rhs_10-4\" class=\"reference\"><a href=\"#cite_note-rhs-10\"><span>[</span>10<span>]</span></a></sup> The species has also escaped from cultivation and become <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Naturalisation_(biology)\" title=\"Naturalisation (biology)\">naturalised</a> in some temperate regions, including southwestern <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Canada\" title=\"Canada\">Canada</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Japan\" title=\"Japan\">Japan</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/New_Zealand\" title=\"New Zealand\">New Zealand</a>, and the northeast and northwest of the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/United_States\" title=\"United States\">United States</a>.<sup id=\"cite_ref-vf_5-2\" class=\"reference\"><a href=\"#cite_note-vf-5\"><span>[</span>5<span>]</span></a></sup></p><h3><span class=\"mw-headline\" id=\"Ornamental\">Ornamental</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Prunus_avium&amp;action=edit&amp;section=6\" title=\"Edit section: Ornamental\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h3><p>It is often cultivated as a flowering tree. Because of the size of the tree, it is often used in parkland, and less often as a street or garden tree. The double-flowered form, 'Plena', is commonly found, rather than the wild single-flowered forms.<sup id=\"cite_ref-egf_19-0\" class=\"reference\"><a href=\"#cite_note-egf-19\"><span>[</span>19<span>]</span></a></sup></p><p>Two interspecific hybrids, <i>P. x schmittii</i> (<i>P. avium</i> x <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Prunus_canescens&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"Prunus canescens (page does not exist)\">P. canescens</a></i>) and <i>P. x fontenesiana</i> (<i>P. avium</i> x <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Prunus_mahaleb\" title=\"Prunus mahaleb\">P. mahaleb</a></i>) are also grown as ornamental trees.<sup id=\"cite_ref-egf_19-1\" class=\"reference\"><a href=\"#cite_note-egf-19\"><span>[</span>19<span>]</span></a></sup></p><h3><span class=\"mw-headline\" id=\"Timber\">Timber</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Prunus_avium&amp;action=edit&amp;section=7\" title=\"Edit section: Timber\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h3><p>The hard, reddish-brown <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Wood\" title=\"Wood\">wood</a> (cherry wood) is valued as a <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Hardwood\" title=\"Hardwood\">hardwood</a> for <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Woodturning\" title=\"Woodturning\">woodturning</a>, and making <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Cabinet_(furniture)\" title=\"Cabinet (furniture)\" class=\"mw-redirect\">cabinets</a> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Musical_instrument\" title=\"Musical instrument\">musical instruments</a>.<sup id=\"cite_ref-vedel_17-1\" class=\"reference\"><a href=\"#cite_note-vedel-17\"><span>[</span>17<span>]</span></a></sup> Cherry wood is also used for <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Smoking_(cooking)\" title=\"Smoking (cooking)\">smoking</a> foods, particularly meats, in North America, as it lends a distinct and pleasant flavor to the product.<sup class=\"noprint Inline-Template Template-Fact\" style=\"white-space:nowrap;\">[<i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Wikipedia:Citation_needed\" title=\"Wikipedia:Citation needed\"><span title=\"This claim needs references to reliable sources. (May 2012)\">citation needed</span></a></i>]</sup></p><h3><span class=\"mw-headline\" id=\"Other_uses\">Other uses</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Prunus_avium&amp;action=edit&amp;section=8\" title=\"Edit section: Other uses\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h3><p>The gum from bark wounds is aromatic and can be chewed as a substitute for <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Chewing_gum\" title=\"Chewing gum\">chewing gum</a>.</p><p>Medicine can be prepared from the stalks of the drupes that is <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Astringent\" title=\"Astringent\">astringent</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Antitussive\" title=\"Antitussive\" class=\"mw-redirect\">antitussive</a>, and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Diuretic\" title=\"Diuretic\">diuretic</a>.<sup id=\"cite_ref-pfaf_11-1\" class=\"reference\"><a href=\"#cite_note-pfaf-11\"><span>[</span>11<span>]</span></a></sup></p><p>A green <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Dye\" title=\"Dye\">dye</a> can also be prepared from the plant.<sup id=\"cite_ref-pfaf_11-2\" class=\"reference\"><a href=\"#cite_note-pfaf-11\"><span>[</span>11<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"Contribution_to_other_species\">Contribution to other species</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Prunus_avium&amp;action=edit&amp;section=9\" title=\"Edit section: Contribution to other species\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><p><i>Prunus avium</i> is thought to be one of the parent species of <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Prunus_cerasus\" title=\"Prunus cerasus\">Prunus cerasus</a></i> (sour cherry) by way of ancient crosses between it and <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Prunus_fruticosa\" title=\"Prunus fruticosa\">Prunus fruticosa</a></i> (dwarf cherry) in the areas where the two species overlap. All three species can breed with each other. <i>Prunus cerasus</i> is now a species in its own right having developed beyond a hybrid and stabilised.<sup id=\"cite_ref-20\" class=\"reference\"><a href=\"#cite_note-20\"><span>[</span>20<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"Cultural_history\">Cultural history</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Prunus_avium&amp;action=edit&amp;section=10\" title=\"Edit section: Cultural history\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><table class=\"metadata plainlinks ambox ambox-style ambox-Cleanup\" role=\"presentation\"><tr><td class=\"mbox-image\"><div style=\"width:52px\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/40px-Edit-clear.svg.png\" width=\"40\" height=\"40\" srcset=\"//upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/60px-Edit-clear.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/80px-Edit-clear.svg.png 2x\" data-file-width=\"48\" data-file-height=\"48\" /></div></td><td class=\"mbox-text\"><span class=\"mbox-text-span\">This section <b>may require <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Wikipedia:Cleanup\" title=\"Wikipedia:Cleanup\">cleanup</a> to meet Wikipedia's <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style\" title=\"Wikipedia:Manual of Style\">quality standards</a></b>. The specific problem is: <b>the flow has been spoiled</b>. <span class=\"hide-when-compact\">Please help <a class=\"external text\" target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Prunus_avium&amp;action=edit\">improve this section</a> if you can.</span> <small><i>(February 2012)</i></small></span></td></tr></table><p><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Pliny_The_Elder\" title=\"Pliny The Elder\" class=\"mw-redirect\">Pliny</a> distinguishes between <i>Prunus</i>, the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Plum\" title=\"Plum\">plum</a> fruit,<sup id=\"cite_ref-21\" class=\"reference\"><a href=\"#cite_note-21\"><span>[</span>21<span>]</span></a></sup> and <i>Cerasus</i>, the cherry fruit.<sup id=\"cite_ref-NH30_22-0\" class=\"reference\"><a href=\"#cite_note-NH30-22\"><span>[</span>22<span>]</span></a></sup> Already in Pliny quite a number of cultivars are cited, some possibly species or varieties, Aproniana, Lutatia, Caeciliana, and so on. Pliny grades them by flavour, including dulcis (\"sweet\") and acer (\"sharp\").<sup id=\"cite_ref-23\" class=\"reference\"><a href=\"#cite_note-23\"><span>[</span>23<span>]</span></a></sup></p><p>He goes so far as to say that before the Roman consul <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Lucullus\" title=\"Lucullus\">Lucius Licinius Lucullus</a> defeated <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Mithridates_VI_of_Pontus\" title=\"Mithridates VI of Pontus\">Mithridates</a> in 74 BC, <i>Cerasia ... non fuere in Italia</i>, \"There were no cherry trees in Italy\". According to him, Lucullus brought them in from <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Pontus\" title=\"Pontus\">Pontus</a> and in the 120 years since that time they had spread across Europe to Britain.<sup id=\"cite_ref-NH30_22-1\" class=\"reference\"><a href=\"#cite_note-NH30-22\"><span>[</span>22<span>]</span></a></sup></p><p>Although <b>cultivated / domesticated</b> varieties of <i>Prunus avium</i> (sweet cherry) didn’t exist in Britain or much of Europe, the tree in its <b>wild</b> state is native to most of Europe, including Britain. Evidence of consumption of the wild fruits has been found as far back as the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Bronze_Age\" title=\"Bronze Age\">Bronze Age</a> at a <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Crannog\" title=\"Crannog\">Crannog</a> in <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/County_Offaly\" title=\"County Offaly\">County Offaly</a>, in <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Ireland\" title=\"Ireland\">Ireland</a>.<sup id=\"cite_ref-24\" class=\"reference\"><a href=\"#cite_note-24\"><span>[</span>24<span>]</span></a></sup></p><p>Seeds of a number of cherry species have however been found in Bronze Age and Roman archaeological sites throughout Europe. The reference to \"sweet\" and \"sour\" supports the modern view that \"sweet\" was <i>Prunus avium</i>; there are no other candidates among the cherries found. In 1882 <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Alphonse_de_Candolle\" title=\"Alphonse de Candolle\" class=\"mw-redirect\">Alphonse de Candolle</a> pointed out that seeds of <i>Prunus avium</i> were found in the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Terramare_culture\" title=\"Terramare culture\">Terramare culture</a> of north <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Italy\" title=\"Italy\">Italy</a> (1500–1100 BC) and over the layers of the Swiss pile dwellings.<sup id=\"cite_ref-25\" class=\"reference\"><a href=\"#cite_note-25\"><span>[</span>25<span>]</span></a></sup> Of Pliny's statement he says (p.&#160;210):</p><blockquote><p>Since this error is perpetuated by its incessant repetition in classical schools, it must once more be said that cherry trees (at least the bird cherry) existed in Italy before Lucullus, and that the famous gourmet did not need to go far to seek the species with the sour or bitter fruit.</p></blockquote><p>De Candolle suggests that what Lucullus brought back was a particular cultivar of <i>Prunus avium</i> from the Caucasus. The origin of cultivars of <i>P. avium</i> is still an open question. Modern cultivated cherries differ from wild ones in having larger fruit, 2–3&#160;cm diameter. The trees are often grown on dwarfing rootstocks to keep them smaller for easier harvesting.<sup id=\"cite_ref-26\" class=\"reference\"><a href=\"#cite_note-26\"><span>[</span>26<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"References\">References</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Prunus_avium&amp;action=edit&amp;section=11\" title=\"Edit section: References\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><table class=\"mbox-small plainlinks sistersitebox\" style=\"border:1px solid #aaa;background-color:#f9f9f9\"><tr><td class=\"mbox-image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikispecies-logo.svg/34px-Wikispecies-logo.svg.png\" width=\"34\" height=\"40\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikispecies-logo.svg/51px-Wikispecies-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikispecies-logo.svg/68px-Wikispecies-logo.svg.png 2x\" data-file-width=\"941\" data-file-height=\"1103\" /></td><td class=\"mbox-text plainlist\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Wikispecies\" title=\"Wikispecies\">Wikispecies</a> has information related to: <i><b><a target=\"wikipedia\" href=\"http://species.wikimedia.org/wiki/Prunus_avium\" class=\"extiw\" title=\"wikispecies:Prunus avium\">Prunus avium</a></b></i></td></tr></table><table class=\"mbox-small plainlinks sistersitebox\" style=\"border:1px solid #aaa;background-color:#f9f9f9\"><tr><td class=\"mbox-image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/30px-Commons-logo.svg.png\" width=\"30\" height=\"40\" srcset=\"//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/45px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/59px-Commons-logo.svg.png 2x\" data-file-width=\"1024\" data-file-height=\"1376\" /></td><td class=\"mbox-text plainlist\">Wikimedia Commons has media related to <i><b><a target=\"wikipedia\" href=\"http://commons.wikimedia.org/wiki/Prunus_avium\" class=\"extiw\" title=\"commons:Prunus avium\">Prunus avium</a></b></i>.</td></tr></table><div class=\"reflist columns  \" style=\" -webkit-column-count: 3; column-count: 3; list-style-type: decimal;\"><ol class=\"references\"><li id=\"cite_note-1\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-1\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://www.theplantlist.org/tpl1.1/record/rjp-383\">\"The Plant List: A Working List of All Plant Species\"</a><span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">January 27,</span> 2014</span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APrunus+avium&amp;rft.btitle=The+Plant+List%3A+A+Working+List+of+All+Plant+Species&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.theplantlist.org%2Ftpl1.1%2Frecord%2Frjp-383&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-GRIN-2\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-GRIN_2-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-GRIN_2-1\"><sup><i><b>b</b></i></sup></a> <a href=\"#cite_ref-GRIN_2-2\"><sup><i><b>c</b></i></sup></a> <a href=\"#cite_ref-GRIN_2-3\"><sup><i><b>d</b></i></sup></a></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://www.ars-grin.gov/cgi-bin/npgs/html/taxon.pl?29844\">\"USDA GRIN taxonomy\"</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APrunus+avium&amp;rft.btitle=USDA+GRIN+taxonomy&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.ars-grin.gov%2Fcgi-bin%2Fnpgs%2Fhtml%2Ftaxon.pl%3F29844&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-3\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-3\">^</a></b></span> <span class=\"reference-text\"><a rel=\"nofollow\" class=\"external text\" href=\"http://www.british-trees.com/guide/wildcherry.htm\">British Trees Online</a></span></li><li id=\"cite_note-empp-4\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-empp_4-0\">^</a></b></span> <span class=\"reference-text\">Euro+Med Plantbase Project: <a rel=\"nofollow\" class=\"external text\" href=\"http://ww2.bgbm.org/_EuroPlusMed/PTaxonDetail.asp?NameId=31189&amp;PTRefFk=500000\"><i>Prunus avium</i></a></span></li><li id=\"cite_note-vf-5\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-vf_5-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-vf_5-1\"><sup><i><b>b</b></i></sup></a> <a href=\"#cite_ref-vf_5-2\"><sup><i><b>c</b></i></sup></a></span> <span class=\"reference-text\">Den Virtuella Floran: <a rel=\"nofollow\" class=\"external text\" href=\"http://linnaeus.nrm.se/flora/di/rosa/prunu/prunavi.html\"><i>Prunus avium</i></a> (in Swedish; with <a rel=\"nofollow\" class=\"external text\" href=\"http://linnaeus.nrm.se/flora/di/rosa/prunu/prunaviv.jpg\">map</a>)</span></li><li id=\"cite_note-6\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-6\">^</a></b></span> <span class=\"reference-text\">Tavaud, M.; Zanetto, A.; David, J.L.; Laigret, F.; Dirlewanger, E. (2004). Genetic relationships between diploid and allotetraploid cherry species (Prunus avium, Prunus xgondouinii and Prunus cerasus). <i>Heredity</i>. 93(6): 631–638.</span></li><li id=\"cite_note-L.-7\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-L._7-0\">^</a></b></span> <span class=\"reference-text\">Linnaeus, C. (1753). <i>Species Plantarum</i> 1: 474. <a rel=\"nofollow\" class=\"external text\" href=\"http://www.botanicus.org/page/358493\">Online facsimile.</a></span></li><li id=\"cite_note-L.2-8\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-L.2_8-0\">^</a></b></span> <span class=\"reference-text\">Linnaeus, C. (1755). <i>Flora Suecica</i>, ed. 2: 165.</span></li><li id=\"cite_note-fnwe2-9\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-fnwe2_9-0\">^</a></b></span> <span class=\"reference-text\">Flora of NW Europe: <a rel=\"nofollow\" class=\"external text\" href=\"http://ip30.eti.uva.nl/BIS/flora.php?selected=beschrijving&amp;menuentry=soorten&amp;id=2721\"><i>Prunus padus</i></a></span></li><li id=\"cite_note-rhs-10\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-rhs_10-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-rhs_10-1\"><sup><i><b>b</b></i></sup></a> <a href=\"#cite_ref-rhs_10-2\"><sup><i><b>c</b></i></sup></a> <a href=\"#cite_ref-rhs_10-3\"><sup><i><b>d</b></i></sup></a> <a href=\"#cite_ref-rhs_10-4\"><sup><i><b>e</b></i></sup></a></span> <span class=\"reference-text\">Huxley, A., ed. (1992). <i>New RHS Dictionary of Gardening</i>. Macmillan <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/0333474945\" class=\"internal mw-magiclink-isbn\">ISBN 0-333-47494-5</a>.</span></li><li id=\"cite_note-pfaf-11\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-pfaf_11-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-pfaf_11-1\"><sup><i><b>b</b></i></sup></a> <a href=\"#cite_ref-pfaf_11-2\"><sup><i><b>c</b></i></sup></a></span> <span class=\"reference-text\">Plants for a Future: <a rel=\"nofollow\" class=\"external text\" href=\"http://pfaf.org/user/Plant.aspx?LatinName=Prunus%20avium\"><i>Prunus avium</i></a></span></li><li id=\"cite_note-Conrad-12\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-Conrad_12-0\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://www.backyardnature.net/n/05/050612.htm\">\"Jim Conrad's Newsletter. Cherry leaf glands\"</a>. Backyardnature.net. 2005-06-12<span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2012-04-24</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APrunus+avium&amp;rft.btitle=Jim+Conrad%27s+Newsletter.+Cherry+leaf+glands&amp;rft.date=2005-06-12&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.backyardnature.net%2Fn%2F05%2F050612.htm&amp;rft.pub=Backyardnature.net&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-13\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-13\">^</a></b></span> <span class=\"reference-text\"><a rel=\"nofollow\" class=\"external free\" href=\"http://www.pollinator.ca/bestpractices/cherries.html\">http://www.pollinator.ca/bestpractices/cherries.html</a></span></li><li id=\"cite_note-rushforth-14\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-rushforth_14-0\">^</a></b></span> <span class=\"reference-text\">Rushforth, K. (1999). <i>Trees of Britain and Europe</i>. Collins <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/0002200139\" class=\"internal mw-magiclink-isbn\">ISBN 0-00-220013-9</a>.</span></li><li id=\"cite_note-mitchell-15\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-mitchell_15-0\">^</a></b></span> <span class=\"reference-text\">Mitchell, A. F. (1974). <i>Field Guide to the Trees of Britain and Northern Europe</i>. Collins <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/0002120356\" class=\"internal mw-magiclink-isbn\">ISBN 0-00-212035-6</a>.</span></li><li id=\"cite_note-fnwe-16\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-fnwe_16-0\">^</a></b></span> <span class=\"reference-text\">Flora of NW Europe: <a rel=\"nofollow\" class=\"external text\" href=\"http://ip30.eti.uva.nl/BIS/flora.php?selected=beschrijving&amp;menuentry=soorten&amp;id=2715\"><i>Prunus avium</i></a></span></li><li id=\"cite_note-vedel-17\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-vedel_17-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-vedel_17-1\"><sup><i><b>b</b></i></sup></a></span> <span class=\"reference-text\">Vedel, H., &amp; Lange, J. (1960). <i>Trees and Bushes in Wood and Hedgerow</i>. Metheun &amp; Co. Ltd., London.</span></li><li id=\"cite_note-18\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-18\">^</a></b></span> <span class=\"reference-text\">Marinis, R. C. de, Rapi, M., Ravazzi, C., Arpenti, E., Deaddis, M., &amp; Perego, R. (2005). Lavagnone (Desenzano del Garda): new excavations and palaeoecology of a Bronze Age pile dwelling site in northern Italy. In: DellaCasa, P. &amp; Trachsel, M., eds. <i>Wetland Economies and Societies</i>. Proceedings of the International Conference in Zurich, 10–13 March 2004. <i>Collectio Archæologica</i> 3: 221–232 Available <a rel=\"nofollow\" class=\"external text\" href=\"http://www.disat.unimib.it/Palinologia/download/Lavagnone%20De%20Marinis%20et%20al.pdf\">online (pdf file)</a></span></li><li id=\"cite_note-egf-19\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-egf_19-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-egf_19-1\"><sup><i><b>b</b></i></sup></a></span> <span class=\"reference-text\">European Garden Flora; Volume IV</span></li><li id=\"cite_note-20\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-20\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Stocks, Christopher (2009). \"Britain’s forgotten fruits\". <i>Flora</i> <b>1</b>: pages 1–200.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APrunus+avium&amp;rft.atitle=Britain%E2%80%99s+forgotten+fruits&amp;rft.aufirst=Christopher&amp;rft.aulast=Stocks&amp;rft.au=Stocks%2C+Christopher&amp;rft.date=2009&amp;rft.genre=article&amp;rft.jtitle=Flora&amp;rft.pages=pages+1-200&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=1\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-21\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-21\">^</a></b></span> <span class=\"reference-text\"><i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Natural_History_(Pliny)\" title=\"Natural History (Pliny)\">Natural History</a></i> Book XV Section XII.</span></li><li id=\"cite_note-NH30-22\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-NH30_22-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-NH30_22-1\"><sup><i><b>b</b></i></sup></a></span> <span class=\"reference-text\">Pliny. <i>Natural History</i> Book XV Section XXX.</span></li><li id=\"cite_note-23\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-23\">^</a></b></span> <span class=\"reference-text\">N.H. Book XV Sections XXXI–II.</span></li><li id=\"cite_note-24\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-24\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Milner, Edward (2011). \"Trees of Britain and Ireland\". <i>Flora</i> <b>1</b>: 148.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APrunus+avium&amp;rft.atitle=Trees+of+Britain+and+Ireland&amp;rft.aufirst=Edward&amp;rft.aulast=Milner&amp;rft.au=Milner%2C+Edward&amp;rft.date=2011&amp;rft.genre=article&amp;rft.jtitle=Flora&amp;rft.pages=148&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=1\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-25\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-25\">^</a></b></span> <span class=\"reference-text\">Candolle, A. de (1882). <i>Origine des plantes cultivées</i>. Geneva.</span></li><li id=\"cite_note-26\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-26\">^</a></b></span> <span class=\"reference-text\">Panda, S., Martin, J. P., &amp; Aquinagalde, I. (2003). Chloroplast DNA study in sweet cherry cultivars (Prunus avium L.) using PCR-RFLP method. <i>Genetic Resources and Crop Evolution</i> 50 (5): 489–495. <a rel=\"nofollow\" class=\"external text\" href=\"http://www.springerlink.com/content/x38n52lr4t28u608/\">Abstract</a></span></li></ol></div><div class=\"noprint portal tright\" style=\"border:solid #aaa 1px;margin:0.5em 0 0.5em 1em\"><table style=\"background:#f9f9f9;font-size:85%;line-height:110%;max-width:175px\"><tr style=\"vertical-align:middle\"><td style=\"text-align:center\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Tree_template.svg\" class=\"image\"><img alt=\"Portal icon\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Tree_template.svg/28px-Tree_template.svg.png\" width=\"28\" height=\"28\" class=\"noviewer\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/9/98/Tree_template.svg/42px-Tree_template.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/9/98/Tree_template.svg/56px-Tree_template.svg.png 2x\" data-file-width=\"48\" data-file-height=\"48\" /></a></td><td style=\"padding:0 0.2em;vertical-align:middle;font-style:italic;font-weight:bold\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Portal:Trees\" title=\"Portal:Trees\">Trees portal</a></td></tr></table></div><!-- NewPP limit reportParsed by mw1084CPU time usage: 0.534 secondsReal time usage: 0.680 secondsPreprocessor visited node count: 4987/1000000Preprocessor generated node count: 0/1500000Post‐expand include size: 41767/2097152 bytesTemplate argument size: 8483/2097152 bytesHighest expansion depth: 15/40Expensive parser function count: 9/500Lua time usage: 0.101/10.000 secondsLua memory usage: 2.86 MB/50 MB--><!-- Transclusion expansion time report (%,ms,calls,template)100.00%  494.507      1 - -total 29.18%  144.275      1 - Template:Taxobox 25.93%  128.233      1 - Template:Taxobox/core 18.24%   90.180      1 - Template:Reflist 14.48%   71.609      9 - Template:Category_handler 11.42%   56.468      2 - Template:Clarify 10.14%   50.140      1 - Template:Cleanup  9.72%   48.048      2 - Template:Fix-span  8.25%   40.811      9 - Template:Taxonomy  7.25%   35.828      3 - Template:Cite_web--><!-- Saved in parser cache with key enwiki:pcache:idhash:28331736-0!*!0!!en!4!* and timestamp 20150404170423 and revision id 654790804 --></div></div></div></div>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -2716,7 +2666,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "olive",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Ölbaum",
@@ -2729,7 +2679,6 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "olive",
         "language": "en",
-        "eol_preferred": true,
         "wikiSearchTerm": true
       },
       {
@@ -2759,7 +2708,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Olivo",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Aceituna",
@@ -2772,7 +2721,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "olive",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Olivier d'Europe",
@@ -2781,7 +2730,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Olivo",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Oliva",
@@ -2794,15 +2743,12 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Oliveira",
         "language": "pt",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Azeitona",
         "language": "pt"
       }
-    ],
-    "descriptions": [
-      "The Olive (<i>Olea europaea</i>) is a small evergreen tree that grows best in a Mediteranean climate. Spain, Italy, Greece, and other Mediterranean countries are major producers, but olives are also cultivated outside the Mediterranean region in regions with an appropriate climate (e.g., in in California and Argentina). The olive fruit has a skin, a fleshy pulp, and a stony kernel. As the fruit matures, it turns from green to black. \r\n\r\nSome archaeological evidence suggests that the Olive may have been domesticated in the eastern Mediterranean region 10,000 years ago. Certainly, this species has been closely associated with human religious, cultural, medical, and food uses for thousands of years. As food, olives are used both for their edible pulp (which contains up to 40% or more oil, in contrast to the kernel, which contains only a small amount of oil) and as the source of <a href=\"http://en.wikipedia.org/wiki/Olive_oil\">olive oil</a>.  The oil is monounsaturated, with a high percentage of the fatty acid <a href=\"http://en.wikipedia.org/wiki/Oleic_acid\">oleic acid</a>. Olive oil is used as a cooking oil, in salad dressings, and as a food preservative; in some places, such as the United Kingdom, it is used in a spread. Olive oil is also used in cosmetics and in the pharmaceutical industry, among other applications. Olives are cold-pressed and the first pressings, which require no further treatment, are known as \"virgin\" (\"extra virgin\" olive oil is virgin oil that has a specified low acidity). The residue left after pressing (pomace) is used in animal feed.\r\n\r\nBoth green (immature) and black olives are pickled in brine. These olives contain less oil than those used for oil extraction. Prior to pickling, the bittter glycoside <a href=\"http://en.wikipedia.org/wiki/Oleuropein \">oleuropein</a> is often neutralized with caustic soda or another lye solution. During processing, the olives may have their pits removed and sometimes replaced with <a href=\"http://en.wikipedia.org/wiki/Pimento\">pimentos</a>, <a href=\"http://en.wikipedia.org/wiki/Garlic\">garlic</a> (<a href=\"http://eol.org/pages/1084926/overview\"><i>Allium sativum</i></a>), or some other filling.\r\n\r\nOlive pollen is one of the most important causes of seasonal respiratory allergy in Mediterranean countries. In addition, cases of contact dermatitis and food allergy to the olive fruit and olive oil have been described. (Rodriguez et al. 2001; Esteve et al. 2012)\r\n\r\nThe Olive Fruit Fly (<i>Bactrocera oleae</i>) is an important economic pest wherever olives are grown (Daane and Johnson 2010). The historical biogeography of this fly, and its evolving relationship with <i>O. europea</i>, have been investigated by  Nardi et al. (2010).\r\n\r\nFeral Olive trees are significant weeds in Hawaii, Norfolk Island, and Australia (Spenneman and Allen 2000; Cuneo et al. 2010).\r\n\r\n (Vaughan and Geissler 1997)\r\n"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -2831,12 +2777,12 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Gewöhnliche Platane",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "London Plane",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "London Plane Tree",
@@ -2853,11 +2799,8 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Platane à feuilles d'érable",
         "language": "fr",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "<h5>Canada</h5><p><strong>Origin</strong>: Exotic</p><p><strong>Regularity</strong>: Regularly occurring</p><p><strong>Currently</strong>: Unknown/Undetermined</p><p><strong>Confidence</strong>: Confident</p><h5>United States</h5><p><strong>Origin</strong>: Exotic</p><p><strong>Regularity</strong>: Regularly occurring</p><p><strong>Currently</strong>: Unknown/Undetermined</p><p><strong>Confidence</strong>: Confident</p>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -2899,7 +2842,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Chinese Tulip Tree",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Chinese tuliptree",
@@ -2910,7 +2853,6 @@ export const deciduousAndEvergreenTrees = [
         "language": "en"
       }
     ],
-    "descriptions": [],
     "taxonomy": {
       "kingdom": "Plantae",
       "phylum": "Tracheophyta",
@@ -3010,12 +2952,12 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Vielblütiger Apfel",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Japanese flowering crabapple",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Japanese crab",
@@ -3040,15 +2982,12 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Pommier pourpre",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Pommier du Japon",
         "language": "fr"
       }
-    ],
-    "descriptions": [
-      "<h5>United States</h5><p><strong>Origin</strong>: Exotic</p><p><strong>Regularity</strong>: Regularly occurring</p><p><strong>Currently</strong>: Unknown/Undetermined</p><p><strong>Confidence</strong>: Confident</p>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -3173,7 +3112,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Holzapfel",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Holz-Apfel",
@@ -3186,7 +3125,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Crab Apple",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Common Crabapple",
@@ -3215,7 +3154,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Malus sylvestris",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "manzano montesco",
@@ -3228,7 +3167,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Pomièr",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Pommier sauvage",
@@ -3241,7 +3180,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Malus sylvestris",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Melo selvatico",
@@ -3251,9 +3190,6 @@ export const deciduousAndEvergreenTrees = [
         "vernacularName": "melo silvestre",
         "language": "it"
       }
-    ],
-    "descriptions": [
-      "\"Notes: Western Ghats, Cultivated, Native Europe\""
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -3380,7 +3316,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Amerikanischer Tulpenbaum",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Tulpenbaum",
@@ -3389,7 +3325,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Tulip Tree",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "American Tulip Tree",
@@ -3446,12 +3382,12 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Tulipero de Virginia",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Bois-canot",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Tulipier de Virginie",
@@ -3464,11 +3400,8 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Tulipifero",
         "language": "it",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "Magnoliaceae -- Magnolia family<BR/><BR/>&nbsp;          &nbsp;          Donald E. Beck<BR/><BR/>&nbsp;          &nbsp;          Yellow-poplar <I>(Liriodendron tulipifera), </I>also called&nbsp;               tuliptree, tulip-poplar, white-poplar, and whitewood, is one of&nbsp;               the most attractive and tallest of eastern hardwoods. It is fast&nbsp;               growing and may reach 300 years of age on deep, rich,&nbsp;               well-drained soils of forest coves and lower mountain slopes. The&nbsp;               wood has high commercial value because of its versatility and as&nbsp;               a substitute for increasingly scarce softwoods in furniture and&nbsp;               framing construction. Yellow-poplar is also valued as a honey&nbsp;               tree, a source of wildlife food, and a shade tree for large&nbsp;               areas.<BR/><BR/>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -3633,7 +3566,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Amberbaum",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Amerikanischer Amberbaum",
@@ -3642,7 +3575,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "American Sweetgum",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Alligator-wood",
@@ -3679,21 +3612,18 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Liquidámbar",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Liquidambar",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Liquidambra d'America",
         "language": "it",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "Hamamelidaceae -- Witch-hazel family<BR/><BR/>&nbsp;          &nbsp;          Paul P. Kormanik<BR/><BR/>&nbsp;          &nbsp;          Sweetgum <I>(Liquidambar styraciflua), </I>also called redgum,&nbsp;               sapgum, starleaf-gum, or bilsted, is a common bottom-land species&nbsp;               of the South where it grows biggest and is most abundant in the&nbsp;               lower Mississippi Valley. This moderate to rapidly growing tree&nbsp;               often pioneers in old fields and logged areas in the uplands and&nbsp;               Coastal Plain and may develop in a nearly pure stand. Sweetgurn&nbsp;               is one of the most important commercial hardwoods in the&nbsp;               Southeast and the handsome hard wood is put to a great many uses,&nbsp;               one of which is veneer for plywood. The small seeds are eaten by&nbsp;               birds, squirrels, and chipmunks. It is sometimes used as a shade&nbsp;               tree.<BR/><BR/>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -3807,7 +3737,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "chinese privet",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Chinese liguster",
@@ -3828,16 +3758,13 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Troène luisant",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Ligustro",
         "language": "pt",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "Evergreen shrub or small tree, introduced as an ornamental hedge. Leaves dark, glossy green, oblong. Flowers in large terminal panicles, white, heavily scented. Fruits in large clusters of shiny black berries."
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -3959,7 +3886,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Nussbaum",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Echte Walnuß",
@@ -3972,7 +3899,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "walnut",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Carpathian walnut",
@@ -3989,7 +3916,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Nogal",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Nogal común",
@@ -4006,7 +3933,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Noyer royal",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Noyer commun",
@@ -4015,12 +3942,12 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Noce comune",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Nogueira",
         "language": "pt",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Nogueira-européia",
@@ -4030,8 +3957,7 @@ export const deciduousAndEvergreenTrees = [
         "vernacularName": "nogueira-comum",
         "language": "pt"
       }
-    ],
-    "descriptions": [],
+    ],    
     "taxonomy": {
       "kingdom": "Plantae",
       "phylum": "Tracheophyta",
@@ -4195,12 +4121,12 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Manna-Esche",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "manna ash",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "The Manna Ash",
@@ -4213,7 +4139,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Fresno de flor",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Mana",
@@ -4222,7 +4148,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Orne, Frêne à fleurs, Orne d'Europe",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Frêne à fleurs",
@@ -4231,7 +4157,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "orno",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Frassino da manna",
@@ -4249,9 +4175,6 @@ export const deciduousAndEvergreenTrees = [
         "vernacularName": "orniello",
         "language": "it"
       }
-    ],
-    "descriptions": [
-      "Chile Central"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -4280,7 +4203,7 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "cider gum",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Apple Eucalyptus",
@@ -4293,11 +4216,8 @@ export const deciduousAndEvergreenTrees = [
       {
         "vernacularName": "Gommier à cidre",
         "language": "fr",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "In Great Britain and/or Ireland:<br>Foodplant / parasite<br><i>Golovinomyces orontii</i> parasitises live <i>Eucalyptus gunnii</i><br><br>Foodplant / gall<br>larva of <i>Ophelimus cf. maskelli</i> causes gall of live leaf of <i>Eucalyptus gunnii</i><br><br>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",

@@ -2506,6 +2506,13 @@ export const mushrooms2 = [
     "name": "Amanita muscaria",
     "images": [
       {
+        "title": "Yellow Fly-Agaric (2042872297).jpg",
+        "rightsHolder": "Jason Hollinger",
+        "source": "https://commons.wikimedia.org/wiki/File:Yellow_Fly-Agaric_(2042872297).jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "58/22/38/509.24216242.jpg"
+      },
+      {
         "title": "agaric mushroom",
         "rightsHolder": "Caleb Slemmons",
         "source": "https://www.flickr.com/photos/kenai/238661117/",

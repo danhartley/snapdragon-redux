@@ -1,6 +1,7 @@
 export const lichen = [
   {
     "id": 1007295,
+    "lichen": true,
     "name": "Physcia tenella",
     "images": [
       {
@@ -93,12 +94,12 @@ export const lichen = [
       {
         "vernacularName": "Zarte Schwielenflechte",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Fringed Rosette Lichen",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "rosette lichen",
@@ -117,6 +118,7 @@ export const lichen = [
   },
   {
     "id": 1007374,
+    "lichen": true,
     "name": "Placynthium nigrum",
     "images": [
       {
@@ -145,7 +147,7 @@ export const lichen = [
       {
         "vernacularName": "blackthread lichen",
         "language": "en",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -160,6 +162,7 @@ export const lichen = [
   },
   {
     "id": 197635,
+    "lichen": true,
     "name": "Physcia aipolia",
     "images": [
       {
@@ -283,12 +286,12 @@ export const lichen = [
       {
         "vernacularName": "Ziegen-Schwielenflechte",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Hoary Rosette Lichen",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "rosette lichen",
@@ -307,6 +310,7 @@ export const lichen = [
   },
   {
     "id": 197634,
+    "lichen": true,
     "name": "Physcia adscendens",
     "images": [
       {
@@ -391,7 +395,7 @@ export const lichen = [
       {
         "vernacularName": "rosette lichen",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Hooded Rosette Lichen",
@@ -410,6 +414,7 @@ export const lichen = [
   },
   {
     "id": 197736,
+    "lichen": true,
     "name": "Rhizocarpon geographicum",
     "images": [
       {
@@ -633,7 +638,7 @@ export const lichen = [
       {
         "vernacularName": "world map lichen",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Yellow Map Lichen",
@@ -652,6 +657,7 @@ export const lichen = [
   },
   {
     "id": 197388,
+    "lichen": true,
     "name": "Ochrolechia parella",
     "images": [
       {
@@ -692,7 +698,7 @@ export const lichen = [
       {
         "vernacularName": "Parelle",
         "language": "en",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -707,6 +713,7 @@ export const lichen = [
   },
   {
     "id": 195293,
+    "lichen": true,
     "name": "Platismatia glauca",
     "images": [
       {
@@ -770,7 +777,7 @@ export const lichen = [
       {
         "vernacularName": "Varied Rag Lichen",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "ragged lichen",
@@ -789,6 +796,7 @@ export const lichen = [
   },
   {
     "id": 133465,
+    "lichen": true,
     "name": "Diploicia canescens",
     "images": [
       {
@@ -824,7 +832,7 @@ export const lichen = [
       {
         "vernacularName": "diploicia lichen",
         "language": "en",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -839,6 +847,7 @@ export const lichen = [
   },
   {
     "id": 998440,
+    "lichen": true,
     "name": "Caloplaca flavescens",
     "images": [
       {
@@ -903,6 +912,7 @@ export const lichen = [
   },
   {
     "id": 197424,
+    "lichen": true,
     "name": "Parmelia saxatilis",
     "images": [
       {
@@ -1082,7 +1092,7 @@ export const lichen = [
       {
         "vernacularName": "shield lichen",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Salted Shield Lichen",
@@ -1105,6 +1115,7 @@ export const lichen = [
   },
   {
     "id": 1016387,
+    "lichen": true,
     "name": "Lecanora muralis",
     "images": [
       {
@@ -1266,7 +1277,7 @@ export const lichen = [
       {
         "vernacularName": "rim lichen",
         "language": "en",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -1281,6 +1292,7 @@ export const lichen = [
   },
   {
     "id": 1016133,
+    "lichen": true,
     "name": "Usnea florida",
     "images": [
       {
@@ -1302,7 +1314,7 @@ export const lichen = [
       {
         "vernacularName": "Florida beard lichen",
         "language": "en",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -1317,6 +1329,7 @@ export const lichen = [
   },
   {
     "id": 198001,
+    "lichen": true,
     "name": "Usnea subfloridana",
     "images": [
       {
@@ -1352,12 +1365,12 @@ export const lichen = [
       {
         "vernacularName": "Buschige Bartflechte",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Nit Beard Lichen",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "beard lichen",
@@ -1376,6 +1389,7 @@ export const lichen = [
   },
   {
     "id": 1009891,
+    "lichen": true,
     "name": "Cladonia polydactyla",
     "images": [
       {
@@ -1413,6 +1427,7 @@ export const lichen = [
   },
   {
     "id": 1009856,
+    "lichen": true,
     "name": "Graphis scripta",
     "images": [
       {
@@ -1542,7 +1557,7 @@ export const lichen = [
       {
         "vernacularName": "pencilmark lichen",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "script lichen",
@@ -1565,6 +1580,7 @@ export const lichen = [
   },
   {
     "id": 133626,
+    "lichen": true,
     "name": "Cladonia pocillum",
     "images": [
       {
@@ -1608,7 +1624,7 @@ export const lichen = [
       {
         "vernacularName": "Rosette Pixie-cup Lichen",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "cup lichen",
@@ -1627,6 +1643,7 @@ export const lichen = [
   },
   {
     "id": 197463,
+    "lichen": true,
     "name": "Peltigera membranacea",
     "images": [
       {
@@ -1697,7 +1714,7 @@ export const lichen = [
       {
         "vernacularName": "membraneous felt lichen",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Membranous Pelt Lichen",
@@ -1716,6 +1733,7 @@ export const lichen = [
   },
   {
     "id": 1007821,
+    "lichen": true,
     "name": "Cladonia portentosa",
     "images": [
       {
@@ -1870,6 +1888,7 @@ export const lichen = [
   },
   {
     "id": 2859608,
+    "lichen": true,
     "name": "Cladonia squamosa",
     "images": [
       {
@@ -1909,7 +1928,7 @@ export const lichen = [
       {
         "vernacularName": "Dragon Cladonia",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "cup lichen",
@@ -1928,6 +1947,7 @@ export const lichen = [
   },
   {
     "id": 1004913,
+    "lichen": true,
     "name": "Ramalina fastigiata",
     "images": [
       {
@@ -1963,12 +1983,12 @@ export const lichen = [
       {
         "vernacularName": "Buschige Astflechte",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Dotted Ribbon Lichen",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Tufted bush lichen",
@@ -1991,6 +2011,7 @@ export const lichen = [
   },
   {
     "id": 197723,
+    "lichen": true,
     "name": "Ramalina farinacea",
     "images": [
       {
@@ -2151,7 +2172,7 @@ export const lichen = [
       {
         "vernacularName": "farinose cartilage lichen",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Dotted Ramalina",
@@ -2174,6 +2195,7 @@ export const lichen = [
   },
   {
     "id": 133798,
+    "lichen": true,
     "name": "Flavoparmelia caperata",
     "images": [
       {
@@ -2409,6 +2431,7 @@ export const lichen = [
   },
   {
     "id": 6373465,
+    "lichen": true,
     "name": "Parmotrema perlatum",
     "images": [
       {
@@ -2501,7 +2524,7 @@ export const lichen = [
       {
         "vernacularName": "Black stone flower",
         "language": "en",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -2516,6 +2539,7 @@ export const lichen = [
   },
   {
     "id": 197053,
+    "lichen": true,
     "name": "Evernia prunastri",
     "images": [
       {
@@ -2719,7 +2743,7 @@ export const lichen = [
       {
         "vernacularName": "Oakmoss",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "ring lichen",
@@ -2738,6 +2762,7 @@ export const lichen = [
   },
   {
     "id": 1032749,
+    "lichen": true,
     "name": "Parmelia sulcata",
     "images": [
       {
@@ -3003,6 +3028,7 @@ export const lichen = [
   },
   {
     "id": 198033,
+    "lichen": true,
     "name": "Xanthoria parietina",
     "images": [
       {
@@ -3304,12 +3330,12 @@ export const lichen = [
       {
         "vernacularName": "Gelbe Waldflechte",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Maritime Sunburst Lichen",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Common orange lichen",
@@ -3332,6 +3358,7 @@ export const lichen = [
   },
   {
     "id": 2859064,
+    "lichen": true,
     "name": "Lecidella elaeochroma",
     "images": [
       {
@@ -3381,7 +3408,7 @@ export const lichen = [
       {
         "vernacularName": "lecidella lichen",
         "language": "en",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -3396,6 +3423,7 @@ export const lichen = [
   },
   {
     "id": 1016431,
+    "lichen": true,
     "name": "Lecanora chlarotera",
     "images": [
       {
@@ -3462,7 +3490,7 @@ export const lichen = [
       {
         "vernacularName": "rim lichen",
         "language": "en",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -3477,6 +3505,7 @@ export const lichen = [
   },
   {
     "id": 2858721,
+    "lichen": true,
     "name": "Letharia vulpina",
     "images": [
       {
@@ -3654,7 +3683,7 @@ export const lichen = [
       {
         "vernacularName": "Wolf Lichen",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "wolf lichen",
@@ -3674,6 +3703,7 @@ export const lichen = [
   },
   {
     "id": 197317,
+    "lichen": true,
     "name": "Lobaria pulmonaria",
     "images": [
       {
@@ -3962,6 +3992,7 @@ export const lichen = [
   },
   {
     "id": "1007308",
+    "lichen": true,
     "name": "Usnea filipendula",
     "images": [
       {

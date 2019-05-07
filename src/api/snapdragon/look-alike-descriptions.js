@@ -73,4 +73,13 @@
             'Small bird with glossy blue-black upper parts and pure white under parts and white lower back. Forked tail. Nests often to be seen under the eaves. Feeds on insects.'  
         ]
     },
+    {
+        ids: ['Lycoperdon pyriforme', 'Scleroderma citrinum', 'Amanita muscaria'],
+        type: 'lookalike',
+        descriptions: [
+            'Emerging in autumn, this puffball is common and abundant (often in dense clusters) on decaying logs or stumps (saprobic) of both deciduous and coniferous trees. The gleba is round and white when young, greenish-yellow to dark olive-brown and pear-shaped with age. Outer wall is thin as eggshell. There is a single opening on top through which the spores are dispersed.',
+            'Gleba is thick and white at first, becoming purple to purple-black from the center outwards; eventually blackish to brownish and dust-like. The peridium, or outer wall, is thick and firm, usually ochre yellow externally with irregular warts. Earthballa break up to release their spores.',
+            'The fruiting bodies emerge from the soil looking like white eggs with cap covered with numerous small white to yellow pyramid-shaped warts (remnants of the universal veil). At this stage there is a characteristic yellowish layer of skin under the veil. With age the cap changes from globose to hemispherical, and begins to show red.'  
+        ]
+    },
 ];

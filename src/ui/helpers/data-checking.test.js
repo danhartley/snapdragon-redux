@@ -5,7 +5,7 @@ const item = {
         {
           "vernacularName": "نعنع (نَعْنَع)، لمام ( لِمام)",
           "language": "ar",
-          "eol_preferred": true
+          
         },
         {
           "vernacularName": "حبق المويه(حَبَق المويه)، حبق الميه (حَبَق الميه)",
@@ -14,7 +14,7 @@ const item = {
         {
           "vernacularName": "spearmint",
           "language": "en",
-          "eol_preferred": true
+          
         },
         {
           "vernacularName": "Curled Mint",
@@ -27,7 +27,7 @@ const item = {
         {
           "vernacularName": "Menthe à longues feuilles",
           "language": "fr",
-          "eol_preferred": true
+          
         },
         {
           "vernacularName": "Baume",
@@ -36,12 +36,12 @@ const item = {
         {
           "vernacularName": "Hortelã-verde",
           "language": "pt",
-          "eol_preferred": true
+          
         },
         {
           "vernacularName": "欧薄荷",
           "language": "zh",
-          "eol_preferred": true
+          
         },
         {
           "vernacularName": "狗肉香菜",

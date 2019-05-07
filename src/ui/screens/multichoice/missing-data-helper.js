@@ -121,8 +121,15 @@ export const getPoolItems = collection => {
   const item = collection.items.find(i => i.name === collection.nextItem.name);
 
   const rank = matchTaxon(item.taxonomy, iconicTaxa).value;
-  const clonedItems = species.filter(item => matchTaxonKey(item.taxonomy,[rank]).value);
-  const speciesInSameTaxon = utils.shuffleArray(clonedItems.filter(ci => ci.name !== item.name));
+
+  let taxonicMatches = species.filter(item => matchTaxonKey(item.taxonomy,[rank]).value);
+
+  if(rank === 'fungi') {
+      const itemIsALichen = item.lichen;
+      taxonicMatches = itemIsALichen ? taxonicMatches.filter(item => item.lichen) : taxonicMatches.filter(item => !item.lichen);
+  }
+
+  const speciesInSameTaxon = utils.shuffleArray(taxonicMatches.filter(ci => ci.name !== item.name));
   
   let speciesPool;
 

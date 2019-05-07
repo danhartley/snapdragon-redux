@@ -156,7 +156,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Gemeine Gleditschie",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Amerikanische Gleditschie",
@@ -185,7 +185,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "common honeylocust",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Acacia Negra",
@@ -235,7 +235,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Algarroba Turca",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Acacia Negra",
@@ -260,7 +260,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Févier d'Amérique",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Carouge à miel",
@@ -277,7 +277,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Gleditsia triacanthos",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Spino di Giuda",
@@ -290,15 +290,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "espinheiro da Virginia",
         "language": "pt",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Espinheiro-da-Virginia",
         "language": "pt"
       }
-    ],
-    "descriptions": [
-      "Leguminosae -- Legume family<BR/><BR/>&nbsp;          &nbsp;          Robert M. Blair<BR/><BR/>&nbsp;          &nbsp;          Honeylocust <I>(Gleditsia triacanthos), </I>also called&nbsp;               sweet-locust or thorny-locust, is a moderately fast growing tree&nbsp;               commonly found on moist bottom lands or limestone soils. Because&nbsp;               it has proven very hardy and tolerant of drought and salinity, it&nbsp;               is widely planted for windbreaks and soil erosion control. The&nbsp;               thornless variety has been planted to replace the elm in many&nbsp;               urban areas. The wood is dense, hard, and durable but used only&nbsp;               locally. Honeylocust pods are sweet and eaten by livestock and&nbsp;               wildlife. The tree is relatively short lived, reaching the age of&nbsp;               125 years.<BR/><BR/>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -465,7 +462,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Rotbuche",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Blut-Buche",
@@ -478,7 +475,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "beech",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Copper-Beech",
@@ -491,12 +488,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "haya",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Hêtre",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Hêtre commun",
@@ -509,11 +506,8 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Faggio comune",
         "language": "it",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "Although often said to have been introduced to Britain by the Romans, the discovery of beech pollen dating from 6000 BC in Hampshire proves that this tree is indeed a native; it was present in Britain when the country became an island after the Ice Age. It spread naturally northwards to a line drawn between the Wash and the Bristol Channel, and was planted further north (4). This tree is known throughout much of Europe. (7)."
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -674,12 +668,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Gemeine Esche",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "European ash",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Common Ash",
@@ -692,12 +686,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "fresno",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Frêne commun",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Frêne élevé, Frêne commun",
@@ -706,15 +700,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "frassino",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Frassino comune",
         "language": "it"
       }
-    ],
-    "descriptions": [
-      "The ash flowers in April and May (2). The male flowers do not release pollen until after the styles of the female flowers belonging to the same tree have ceased to be receptive; this helps to avoid self-fertilisation (3). Ashes grow at an extremely fast rate until 50 years of age; after this point they cease to increase in height. They first begin to produce flowers and seeds after they reach 30 years of age (3).&nbsp;Ash wood is valued for its fast growth, strength and elasticity; it has been put to a wide range of uses and is still used to make hockey sticks, billiard cues and oars, as well as walking sticks, for its ability to withstand shock. The ancient technique of coppicing extends the life of the tree; in Suffolk a coppiced ash is estimated to be at least 1,000 years old (5).&nbsp;Scandinavian mythology holds that the ash was the 'tree of life'; it was believed to have healing powers in Britain, and was widely regarded as a source of magic and mystery.  Unfortunately, the mysterious aura of the ash has declined in modern times; it is now commonly viewed as a 'weed tree' due to its rapid colonisation of new areas and fast growth (5)."
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -839,12 +830,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Zweigriffrlige Weißdorn",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Midland Hawthorn",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "English hawthorn",
@@ -873,15 +864,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Aubépine à deux styles",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Aubépine à feuilles en éventail",
         "language": "fr"
       }
-    ],
-    "descriptions": [
-      "<span><em>Crataegus laevigata </em>is native to Europe. It is also cultivated widely in temperate zones and is naturalised in North America (USDA, ARS, National Genetic Resources Program <span> 2012). In Europe it occurs predominantly in Central Europe to the north Iberian Peninsula, Sicily and Romania at elevations between 450 and 1,200 m (Castroviejo <em>et al.</em> 1998).</span></span>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -1019,7 +1007,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Eingriffliger Weissdorn",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Eingriffeliger Weißdorn",
@@ -1028,7 +1016,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "hawthorn",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Common Hawthorn",
@@ -1061,7 +1049,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Espino majuelo",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "espino albar",
@@ -1070,7 +1058,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Aubépine à un style",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Aubépine",
@@ -1087,16 +1075,13 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Biancospino comune",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Pilriteiro",
         "language": "pt",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "Huge snowballs, that's what hawthorns can look like when they blossom in the spring. Hawthorns are resistant to sea winds and therefore were often chosen for planting in the dunes. The clusters of white flowers can be so massive, that they hide the rest of the shrub. Rose bushes have rosehips, hawthorns have haws! That's what their berries are officially called. The haws are highly desired by thrush and blackbirds, as well as by certain winter guests such as fieldfares and redwings. Hawthorns can reach the grand old age of 500. The wood is hard and sturdy, very suitable for wood carvings."
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -1229,7 +1214,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Gemeiner Judasbaum",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Judasbaum",
@@ -1238,7 +1223,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Judas-tree",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Arbol de Judea",
@@ -1263,7 +1248,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Árbol del amor",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Árbol de Judas",
@@ -1272,12 +1257,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Arbre de Judée, Gainier commun",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "albero di Giuda",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "chiantanella",
@@ -1290,15 +1275,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Árvore-de-Judas",
         "language": "pt",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "olaia",
         "language": "pt"
       }
-    ],
-    "descriptions": [
-      "Cercis siliquastrum is 1 of only 2 European native representatives of the Caesalpinioideae, the other being the carob tree, Ceratonia siliqua.The Caesalpinioideae is sometimes treated as a family but is now more usually a subfamily of the Fabaceae (Leguminosae).Molecular work shows this subfamily to be paraphyletic - the tribe Cercideae, which contains Bauhinia and Cercis, is basal and sister to the rest of the family. It is distinguished by its palmate venation, the leaf halves showing independent nyctitropic movement.<br /><br /><b>Species</b><br />The genus Cercis comprises 7 species:<ul><li>3 American</li><li>3 Asian</li><li>1 native European - C. siliquastrum</li></ul><br /><br /><b>Cultivars</b><br />C. siliquastrum is represented in cultivation by several selections. The most widely grown is the rich magenta flowered ‘Bodnant’, selected from plants grown at the north Wales garden of that name.‘Alba’ was awarded the Royal Horticulture Society’s Award of Merit from a plant grown by the Wellcome Foundation at Langley Court in Kent. It is rarely seen and was described by a recent guide as ‘curiously ineffective’.A variegated form with green and ivory zoned leaves is also rare in cultivation."
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -1364,7 +1346,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Kuchenbaum",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Katsurabaum",
@@ -1373,14 +1355,13 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "katsura tree",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Katsura-tree",
         "language": "en"
       }
     ],
-    "descriptions": [],
     "taxonomy": {
       "kingdom": "Plantae",
       "phylum": "Tracheophyta",
@@ -1472,7 +1453,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Cabbage Tree",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "New Zealand Cabbage Tree",
@@ -1489,15 +1470,14 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "cordyline",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Cordilínio",
         "language": "pt",
-        "eol_preferred": true
+        
       }
     ],
-    "descriptions": [],
     "taxonomy": {
       "kingdom": "Plantae",
       "phylum": "Tracheophyta",
@@ -1653,12 +1633,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "trompetenbaum",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "southern catalpa",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Caterpillar Tree",
@@ -1683,15 +1663,14 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "catalpa",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Catalpa, Arbre aux haricots",
         "language": "fr",
-        "eol_preferred": true
+        
       }
     ],
-    "descriptions": [],
     "taxonomy": {
       "kingdom": "Plantae",
       "phylum": "Tracheophyta",
@@ -1775,7 +1754,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Himalayan birch",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "bhojpatra",
@@ -1786,7 +1765,6 @@ export const deciduousAndEvergreenTrees2 = [
         "language": "en"
       }
     ],
-    "descriptions": [],
     "taxonomy": {
       "kingdom": "Plantae",
       "phylum": "Tracheophyta",
@@ -1955,7 +1933,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Amerikanische Felsenbirne",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Großblütige Felsenbirne",
@@ -1976,16 +1954,13 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "juneberry",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Amélanchier d'Amérique, Amélanchier de Lamark",
         "language": "fr",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "Juneberry begins and ends the season spectacularly: it is one of the first trees to blossom exuberantly with small white flowers in the spring and its leaves turn a burning red color in the autumn. It was originally imported from North America, cultivated in Drente and grew wild. Nowadays this specific species is no long found in southwestern Canada, its place of origin! It grows along the edges of woods and in areas where trees have been felled. The flowers produce full clusters of sweet, purplish-red berries, already appearing in June. They are a delicacy for birds and people alike. The dried berries used to be added as currants in pastries."
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -2174,7 +2149,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Edelkastanie",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Edel-Kastanie",
@@ -2183,7 +2158,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Sweet Chestnut",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "European chestnut",
@@ -2200,12 +2175,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "castaño",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Châtaignier cultivé",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Chataignier, Châtaignier commun",
@@ -2214,7 +2189,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Castagno europeo",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Castagno comune",
@@ -2229,7 +2204,6 @@ export const deciduousAndEvergreenTrees2 = [
         "language": "it"
       }
     ],
-    "descriptions": [],
     "taxonomy": {
       "kingdom": "Plantae",
       "phylum": "Tracheophyta",
@@ -2337,17 +2311,17 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Hagebuche",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "European hornbeam",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Charme",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Charme, Charmille",
@@ -2356,11 +2330,8 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Carpino comune",
         "language": "it",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "<div id=\"globalWrapper\"><div id=\"column-content\"><div id=\"content\"><div id=\"bodyContent\"><div></div><p><i><b>Carpinus betulus</b></i>, commonly known as the <b>European</b> or <b>common hornbeam</b>, is a <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Hornbeam\" title=\"Hornbeam\">hornbeam</a> native to Western Asia and central, eastern, and southern Europe, including southern England.<sup id=\"cite_ref-1\" class=\"reference\"><a href=\"#cite_note-1\"><span>[</span>1<span>]</span></a></sup> It requires a warm climate for good growth, and occurs only at elevations up to 600 metres (1,969&#160;ft). It grows in mixed stands with <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Oak\" title=\"Oak\">oak</a>, and in some areas <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Beech\" title=\"Beech\">beech</a>, and is also a common tree in <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Scree\" title=\"Scree\">scree</a> forests.</p><p></p><div id=\"toc\" class=\"toc\"><div id=\"toctitle\"><h2>Contents</h2></div><ul><li class=\"toclevel-1 tocsection-1\"><a href=\"#Description\"><span class=\"tocnumber\">1</span> <span class=\"toctext\">Description</span></a></li><li class=\"toclevel-1 tocsection-2\"><a href=\"#Cultivation\"><span class=\"tocnumber\">2</span> <span class=\"toctext\">Cultivation</span></a></li><li class=\"toclevel-1 tocsection-3\"><a href=\"#Gallery\"><span class=\"tocnumber\">3</span> <span class=\"toctext\">Gallery</span></a></li><li class=\"toclevel-1 tocsection-4\"><a href=\"#References\"><span class=\"tocnumber\">4</span> <span class=\"toctext\">References</span></a></li><li class=\"toclevel-1 tocsection-5\"><a href=\"#External_links\"><span class=\"tocnumber\">5</span> <span class=\"toctext\">External links</span></a></li></ul></div><p></p><h2><span class=\"mw-headline\" id=\"Description\">Description</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Carpinus_betulus&amp;action=edit&amp;section=1\" title=\"Edit section: Description\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><div class=\"thumb tleft\"><div class=\"thumbinner\" style=\"width:222px;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Carpinus_fruit.jpg\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Carpinus_fruit.jpg/220px-Carpinus_fruit.jpg\" width=\"220\" height=\"179\" class=\"thumbimage\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Carpinus_fruit.jpg/330px-Carpinus_fruit.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Carpinus_fruit.jpg/440px-Carpinus_fruit.jpg 2x\" data-file-width=\"663\" data-file-height=\"540\" /></a><div class=\"thumbcaption\"><div class=\"magnify\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Carpinus_fruit.jpg\" class=\"internal\" title=\"Enlarge\"></a></div>European Hornbeam <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Seed\" title=\"Seed\">seed</a> <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Catkins\" title=\"Catkins\" class=\"mw-redirect\">catkins</a></div></div></div><p>It is a small to medium-size <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Tree\" title=\"Tree\">tree</a> reaching heights of 15–25 metres (49–82&#160;ft), rarely 30&#160;m (98&#160;ft), and often has a fluted and crooked <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Trunk_(botany)\" title=\"Trunk (botany)\">trunk</a>. The bark is smooth and greenish-grey, even in old trees. The buds, unlike those of the beech, are 10&#160;mm (0.39&#160;in) long at the most, and pressed close to the twig. The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Leaf\" title=\"Leaf\">leaves</a> are alternate, 4–9&#160;cm (1.6–3.5&#160;in) long, with prominent veins giving a distinctive corrugated texture, and a serrated margin. It is <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Plant_sexuality\" title=\"Plant sexuality\" class=\"mw-redirect\">monoecious</a>, and the wind-pollinated male and female <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Catkin\" title=\"Catkin\">catkins</a> appear in early summer after the leaves. The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Fruit\" title=\"Fruit\">fruit</a> is a small 7–8&#160;mm (0.28–0.31&#160;in) long <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Nut_(fruit)\" title=\"Nut (fruit)\">nut</a>, partially surrounded by a three-pointed leafy <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Involucral_bract\" title=\"Involucral bract\" class=\"mw-redirect\">involucre</a> 3–4&#160;cm (1.2–1.6&#160;in) long; it matures in autumn. The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Seed\" title=\"Seed\">seeds</a> often do not germinate till the spring of the second year after sowing. The hornbeam is a prolific seeder and is marked by vigorous natural regeneration.</p><p><i>Carpinus betulus</i> is a shade-loving tree, which prefers moderate soil fertility and moisture. It has a shallow, wide-spreading root system and is marked by the production of stump sprouts when cut back. Because it stands up well to cutting back and has dense foliage, it has been much used in <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Landscape_gardening\" title=\"Landscape gardening\" class=\"mw-redirect\">landscape gardening</a>, mainly as tall <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Hedge_(barrier)\" title=\"Hedge (barrier)\" class=\"mw-redirect\">hedges</a> and for <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Topiary\" title=\"Topiary\">topiary</a>. The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Wood\" title=\"Wood\">wood</a> is heavy and hard, and is used for tools and building constructions. It also burns hot and slowly, making it a very suitable firewood.<sup id=\"cite_ref-2\" class=\"reference\"><a href=\"#cite_note-2\"><span>[</span>2<span>]</span></a></sup> This was the reason for lopping and hence indirectly the saving of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Epping_Forest\" title=\"Epping Forest\">Epping Forest</a>, where the hornbeam was a favoured <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Pollarding\" title=\"Pollarding\">pollarding</a> tree.</p><dl><dd><i>See also <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/List_of_Lepidoptera_that_feed_on_Carpinus\" title=\"List of Lepidoptera that feed on Carpinus\">List of Lepidoptera that feed on Carpinus</a></i></dd></dl><p>The leaves provide food for some animals, including <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Lepidoptera\" title=\"Lepidoptera\">Lepidoptera</a> such as the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Case-bearer\" title=\"Case-bearer\" class=\"mw-redirect\">case-bearer</a> <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Moth\" title=\"Moth\">moth</a> <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Coleophora_anatipennella\" title=\"Coleophora anatipennella\">Coleophora anatipennella</a></i>.</p><p>There are a number of notable forests where <i>C. betulus</i> is a dominant tree species, among which are:</p><ul><li><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Epping_Forest\" title=\"Epping Forest\">Epping Forest, Essex/London, UK</a></li><li><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Halltorp\" title=\"Halltorp\">Halltorp</a> Nature Reserve, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/%C3%96land\" title=\"Öland\">Öland</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Sweden\" title=\"Sweden\">Sweden</a></li></ul><h2><span class=\"mw-headline\" id=\"Cultivation\">Cultivation</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Carpinus_betulus&amp;action=edit&amp;section=2\" title=\"Edit section: Cultivation\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><p><i>Carpinus betulus</i> is cultivated as an <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Ornamental_tree\" title=\"Ornamental tree\" class=\"mw-redirect\">ornamental tree</a>, for planting in gardens and parks. There are several <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Cultivar\" title=\"Cultivar\">cultivars</a>, notably <i>C. betulus</i> 'Fastigiata' or 'Pyramidalis', a very <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Habit_(biology)#Structure\" title=\"Habit (biology)\">fastigiate</a> tree when young, which has become a popular urban <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Street#Landscaping\" title=\"Street\">street tree</a> in the United Kingdom.</p><p>Both the species<sup id=\"cite_ref-3\" class=\"reference\"><a href=\"#cite_note-3\"><span>[</span>3<span>]</span></a></sup> and the cultivar <i>C. betulus</i> 'Fastigiata'<sup id=\"cite_ref-4\" class=\"reference\"><a href=\"#cite_note-4\"><span>[</span>4<span>]</span></a></sup> have gained the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Royal_Horticultural_Society\" title=\"Royal Horticultural Society\">Royal Horticultural Society</a>'s <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Award_of_Garden_Merit\" title=\"Award of Garden Merit\">Award of Garden Merit</a>.</p><table class=\"mbox-small plainlinks sistersitebox\" style=\"border:1px solid #aaa;background-color:#f9f9f9\"><tr><td class=\"mbox-image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/30px-Commons-logo.svg.png\" width=\"30\" height=\"40\" srcset=\"//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/45px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/59px-Commons-logo.svg.png 2x\" data-file-width=\"1024\" data-file-height=\"1376\" /></td><td class=\"mbox-text plainlist\">Wikimedia Commons has media related to <i><b><a target=\"wikipedia\" href=\"http://commons.wikimedia.org/wiki/Category:Carpinus_betulus\" class=\"extiw\" title=\"commons:Category:Carpinus betulus\">Carpinus betulus</a></b></i>.</td></tr></table><h2><span class=\"mw-headline\" id=\"Gallery\">Gallery</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Carpinus_betulus&amp;action=edit&amp;section=3\" title=\"Edit section: Gallery\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><ul class=\"gallery mw-gallery-traditional\"><li class=\"gallerybox\" style=\"width: 155px\"><div style=\"width: 155px\"><div class=\"thumb\" style=\"width: 150px;\"><div style=\"margin:15px auto;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:CarpinusBetulusBark.jpg\" class=\"image\"><img alt=\"CarpinusBetulusBark.jpg\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/CarpinusBetulusBark.jpg/90px-CarpinusBetulusBark.jpg\" width=\"90\" height=\"120\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/9/94/CarpinusBetulusBark.jpg/135px-CarpinusBetulusBark.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/9/94/CarpinusBetulusBark.jpg/180px-CarpinusBetulusBark.jpg 2x\" data-file-width=\"2112\" data-file-height=\"2816\" /></a></div></div><div class=\"gallerytext\"></div></div></li><li class=\"gallerybox\" style=\"width: 155px\"><div style=\"width: 155px\"><div class=\"thumb\" style=\"width: 150px;\"><div style=\"margin:15px auto;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Herchies_JPG09.jpg\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Herchies_JPG09.jpg/80px-Herchies_JPG09.jpg\" width=\"80\" height=\"120\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/5/51/Herchies_JPG09.jpg/120px-Herchies_JPG09.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/51/Herchies_JPG09.jpg/160px-Herchies_JPG09.jpg 2x\" data-file-width=\"1152\" data-file-height=\"1728\" /></a></div></div><div class=\"gallerytext\"><p>European Hornbeam in winter</p></div></div></li><li class=\"gallerybox\" style=\"width: 155px\"><div style=\"width: 155px\"><div class=\"thumb\" style=\"width: 150px;\"><div style=\"margin:35px auto;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Carpinus_betulus_JPG.jpg\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Carpinus_betulus_JPG.jpg/120px-Carpinus_betulus_JPG.jpg\" width=\"120\" height=\"80\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/8/81/Carpinus_betulus_JPG.jpg/180px-Carpinus_betulus_JPG.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/81/Carpinus_betulus_JPG.jpg/240px-Carpinus_betulus_JPG.jpg 2x\" data-file-width=\"2025\" data-file-height=\"1350\" /></a></div></div><div class=\"gallerytext\"><p>Veteran tree</p></div></div></li><li class=\"gallerybox\" style=\"width: 155px\"><div style=\"width: 155px\"><div class=\"thumb\" style=\"width: 150px;\"><div style=\"margin:35px auto;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:La_Reid_AR1aJPG.jpg\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/La_Reid_AR1aJPG.jpg/120px-La_Reid_AR1aJPG.jpg\" width=\"120\" height=\"80\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/8/8b/La_Reid_AR1aJPG.jpg/180px-La_Reid_AR1aJPG.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/8b/La_Reid_AR1aJPG.jpg/240px-La_Reid_AR1aJPG.jpg 2x\" data-file-width=\"2250\" data-file-height=\"1500\" /></a></div></div><div class=\"gallerytext\"><p>Hornbeamtree-covered walk (573m)</p></div></div></li><li class=\"gallerybox\" style=\"width: 155px\"><div style=\"width: 155px\"><div class=\"thumb\" style=\"width: 150px;\"><div style=\"margin:35px auto;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Carpinus_betulus_MHNT.BOT.2004.0.494.jpg\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Carpinus_betulus_MHNT.BOT.2004.0.494.jpg/120px-Carpinus_betulus_MHNT.BOT.2004.0.494.jpg\" width=\"120\" height=\"80\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Carpinus_betulus_MHNT.BOT.2004.0.494.jpg/180px-Carpinus_betulus_MHNT.BOT.2004.0.494.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Carpinus_betulus_MHNT.BOT.2004.0.494.jpg/240px-Carpinus_betulus_MHNT.BOT.2004.0.494.jpg 2x\" data-file-width=\"5184\" data-file-height=\"3456\" /></a></div></div><div class=\"gallerytext\"><p>Carpinus betulus - <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/MHNT\" title=\"MHNT\" class=\"mw-redirect\">MHNT</a></p></div></div></li><li class=\"gallerybox\" style=\"width: 155px\"><div style=\"width: 155px\"><div class=\"thumb\" style=\"width: 150px;\"><div style=\"margin:15px auto;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Carpinus_betulus_bud.jpg\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Carpinus_betulus_bud.jpg/80px-Carpinus_betulus_bud.jpg\" width=\"80\" height=\"120\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/6/60/Carpinus_betulus_bud.jpg/120px-Carpinus_betulus_bud.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/60/Carpinus_betulus_bud.jpg/160px-Carpinus_betulus_bud.jpg 2x\" data-file-width=\"1747\" data-file-height=\"2621\" /></a></div></div><div class=\"gallerytext\"><p>bud</p></div></div></li></ul><h2><span class=\"mw-headline\" id=\"References\">References</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Carpinus_betulus&amp;action=edit&amp;section=4\" title=\"Edit section: References\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><div class=\"reflist\" style=\"list-style-type: decimal;\"><ol class=\"references\"><li id=\"cite_note-1\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-1\">^</a></b></span> <span class=\"reference-text\"><a rel=\"nofollow\" class=\"external free\" href=\"http://www.nhm.ac.uk/fff-pcp/glob.pl?report=pcfllist&amp;group=&amp;sort=&amp;inpos=nr6\">http://www.nhm.ac.uk/fff-pcp/glob.pl?report=pcfllist&amp;group=&amp;sort=&amp;inpos=nr6</a></span></li><li id=\"cite_note-2\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-2\">^</a></b></span> <span class=\"reference-text\"><a rel=\"nofollow\" class=\"external free\" href=\"http://www.gardeningcentral.org/hornbeam_tree/hornbeam_tree.html\">http://www.gardeningcentral.org/hornbeam_tree/hornbeam_tree.html</a> Tree Profile for Hornbeam</span></li><li id=\"cite_note-3\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-3\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://apps.rhs.org.uk/plantselector/plant?plantid=4410\">\"RHS Plant Selector - <i>Carpinus betulus</i>\"</a><span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">25 June</span> 2013</span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACarpinus+betulus&amp;rft.btitle=RHS+Plant+Selector+-+Carpinus+betulus&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fapps.rhs.org.uk%2Fplantselector%2Fplant%3Fplantid%3D4410&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-4\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-4\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://apps.rhs.org.uk/plantselector/plant?plantid=333\">\"RHS Plant Selector - <i>Carpinus betulus</i> 'Fastigiata<span style=\"padding-right:0.2em;\">'</span>\"</a><span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">25 June</span> 2013</span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACarpinus+betulus&amp;rft.btitle=RHS+Plant+Selector+-+Carpinus+betulus+%27Fastigiata%27&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fapps.rhs.org.uk%2Fplantselector%2Fplant%3Fplantid%3D333&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li></ol></div></div></div></div></div>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -2477,12 +2448,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Hänge-Birke",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Silver Birch",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Common Birch",
@@ -2503,12 +2474,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Abedul",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Bouleau pendant",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Bouleau verruqueux",
@@ -2517,11 +2488,8 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Betulla verrucosa",
         "language": "it",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "<div id=\"globalWrapper\"><div id=\"column-content\"><div id=\"content\"><div id=\"bodyContent\"><div style=\"display:none; right:10px;\" class=\"metadata topicon nopopups\" id=\"good-star\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Wikipedia:Good_articles\" title=\"This is a good article. Click here for more information.\"><img alt=\"This is a good article. Click here for more information.\" src=\"http://upload.wikimedia.org/wikipedia/en/thumb/9/94/Symbol_support_vote.svg/15px-Symbol_support_vote.svg.png\" width=\"15\" height=\"15\" srcset=\"//upload.wikimedia.org/wikipedia/en/thumb/9/94/Symbol_support_vote.svg/23px-Symbol_support_vote.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/9/94/Symbol_support_vote.svg/30px-Symbol_support_vote.svg.png 2x\" data-file-width=\"180\" data-file-height=\"185\" /></a></div><div class=\"hatnote\">\"Silver birch\" redirects here. For the racehorse, see <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Silver_Birch_(horse)\" title=\"Silver Birch (horse)\">Silver Birch (horse)</a>.</div><div></div><p><i><b>Betula pendula</b></i>, commonly known as <b>silver birch</b> or <b>warty birch</b>, is a <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Species\" title=\"Species\">species</a> of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Tree\" title=\"Tree\">tree</a> in the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Family_(biology)\" title=\"Family (biology)\">family</a> Betulaceae, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Native_plant\" title=\"Native plant\">native</a> to Europe and parts of Asia, though in southern Europe it is only found at higher altitudes. Its range extends into Siberia, China and southwest Asia in the mountains of northern Turkey, the Caucasus and northern Iran. It has been introduced into North America, where it is known as the <b>European white birch</b>, and is considered <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Invasive_species\" title=\"Invasive species\">invasive</a> in some states in USA and in parts of Canada.</p><p>The silver birch is a medium-sized <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Deciduous\" title=\"Deciduous\">deciduous</a> tree that owes its common name to the white peeling bark on the trunk. The twigs are slender and often pendulous and the leaves are roughly triangular with doubly serrate margins and turn yellow in autumn before they fall. The flowers are catkins and the light, winged seed get widely scattered by the wind. The silver birch is a hardy tree, a pioneer species, and one of the first trees to appear on bare or fire-swept land. Many species of birds and animals are found in birch woodland, the tree supports a wide range of insects and the light shade it casts allows shrubby and other plants to grow beneath its <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Canopy_(biology)\" title=\"Canopy (biology)\">canopy</a>. It is planted decoratively in parks and gardens and is used for forest products such as joinery timber, firewood, tanning, racecourse jumps and brooms. Various parts of the tree are used in <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Traditional_medicine\" title=\"Traditional medicine\">traditional medicine</a> and the bark contains <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Triterpene\" title=\"Triterpene\">triterpenes</a> which have been shown to have medicinal properties.</p><p></p><div id=\"toc\" class=\"toc\"><div id=\"toctitle\"><h2>Contents</h2></div><ul><li class=\"toclevel-1 tocsection-1\"><a href=\"#Description\"><span class=\"tocnumber\">1</span> <span class=\"toctext\">Description</span></a></li><li class=\"toclevel-1 tocsection-2\"><a href=\"#Distribution_and_habitat\"><span class=\"tocnumber\">2</span> <span class=\"toctext\">Distribution and habitat</span></a></li><li class=\"toclevel-1 tocsection-3\"><a href=\"#Taxonomy\"><span class=\"tocnumber\">3</span> <span class=\"toctext\">Taxonomy</span></a></li><li class=\"toclevel-1 tocsection-4\"><a href=\"#Ecology\"><span class=\"tocnumber\">4</span> <span class=\"toctext\">Ecology</span></a></li><li class=\"toclevel-1 tocsection-5\"><a href=\"#Uses\"><span class=\"tocnumber\">5</span> <span class=\"toctext\">Uses</span></a></li><li class=\"toclevel-1 tocsection-6\"><a href=\"#Cultivation\"><span class=\"tocnumber\">6</span> <span class=\"toctext\">Cultivation</span></a><ul><li class=\"toclevel-2 tocsection-7\"><a href=\"#Cultivars\"><span class=\"tocnumber\">6.1</span> <span class=\"toctext\">Cultivars</span></a></li></ul></li><li class=\"toclevel-1 tocsection-8\"><a href=\"#See_also\"><span class=\"tocnumber\">7</span> <span class=\"toctext\">See also</span></a></li><li class=\"toclevel-1 tocsection-9\"><a href=\"#References\"><span class=\"tocnumber\">8</span> <span class=\"toctext\">References</span></a></li></ul></div><p></p><h2><span class=\"mw-headline\" id=\"Description\">Description</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Betula_pendula&amp;action=edit&amp;section=1\" title=\"Edit section: Description\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><div class=\"thumb tleft\"><div class=\"thumbinner\" style=\"width:172px;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Illustration_Betula_pendula0.jpg\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Illustration_Betula_pendula0.jpg/170px-Illustration_Betula_pendula0.jpg\" width=\"170\" height=\"291\" class=\"thumbimage\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/7/78/Illustration_Betula_pendula0.jpg/255px-Illustration_Betula_pendula0.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/78/Illustration_Betula_pendula0.jpg/340px-Illustration_Betula_pendula0.jpg 2x\" data-file-width=\"1337\" data-file-height=\"2291\" /></a><div class=\"thumbcaption\"><div class=\"magnify\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Illustration_Betula_pendula0.jpg\" class=\"internal\" title=\"Enlarge\"></a></div>Silver birch</div></div></div><p>The silver birch is a medium-sized <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Deciduous\" title=\"Deciduous\">deciduous</a> tree, typically reaching 15 to 25&#160;m (49 to 82&#160;ft) tall (exceptionally up to 31 metres (102&#160;ft)),<sup id=\"cite_ref-Vedel_1-0\" class=\"reference\"><a href=\"#cite_note-Vedel-1\"><span>[</span>1<span>]</span></a></sup> with a slender trunk usually under 40&#160;cm (16&#160;in) diameter. The bark on the trunk and branches is golden-brown at first, but later this turns to white as a result of papery tissue developing on the surface and peeling off in flakes. The bark remains smooth until the tree gets quite large, but in older trees, the bark thickens, becoming irregular, dark and rugged. Young branches have whitish <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Resin\" title=\"Resin\">resin</a> warts and the twigs are slender, hairless and often <a target=\"wikipedia\" href=\"http://en.wiktionary.org/wiki/pendulous\" class=\"extiw\" title=\"wikt:pendulous\">pendulous</a>. The buds are small and sticky, and development is <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Sympodial\" title=\"Sympodial\">sympodial</a>, that is to say the terminal bud dies away and growth continues from a lateral bud. Some <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Shoot\" title=\"Shoot\">shoots</a> are long and bear the male <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Catkin\" title=\"Catkin\">catkins</a> at the tip, while others are short and bear female catkins. The immature male catkins are present during the winter but the female catkins develop in the spring, soon after the leaves unfurl.<sup id=\"cite_ref-Vedel_1-1\" class=\"reference\"><a href=\"#cite_note-Vedel-1\"><span>[</span>1<span>]</span></a></sup></p><p>The <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Leaf\" title=\"Leaf\">leaves</a> have short slender stalks and are 3 to 7&#160;cm (1.2 to 2.8&#160;in) long, triangular with broad, untoothed, wedge-shaped bases, slender pointed tips and coarsely double-toothed, serrated margins. They are sticky with resin at first but this dries as they age leaving small white scales. The foliage is a pale to medium green and turns yellow early in the autumn before the leaves fall. In mid-summer, the female catkins mature and the male catkins expand and release pollen, and wind pollination takes place. The small 1 to 2&#160;mm winged <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Seed\" title=\"Seed\">seeds</a> ripen in late summer on pendulous, cylindrical catkins 2 to 4&#160;cm (0.8 to 1.6&#160;in) long and 7&#160;mm (0.3&#160;in) broad. The seeds are very numerous and are separated by scales, and when ripe, the whole catkin disintegrates and the seeds are spread widely by the wind.<sup id=\"cite_ref-Vedel_1-2\" class=\"reference\"><a href=\"#cite_note-Vedel-1\"><span>[</span>1<span>]</span></a></sup><sup id=\"cite_ref-tfl_2-0\" class=\"reference\"><a href=\"#cite_note-tfl-2\"><span>[</span>2<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"Distribution_and_habitat\">Distribution and habitat</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Betula_pendula&amp;action=edit&amp;section=2\" title=\"Edit section: Distribution and habitat\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><p>The silver birch grows naturally from western Europe eastwards to <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Kazakhstan\" title=\"Kazakhstan\">Kazakhstan</a>, the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Sakha_Republic\" title=\"Sakha Republic\">Sakha Republic</a> in <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Siberia\" title=\"Siberia\">Siberia</a>, Mongolia and the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Xinjiang\" title=\"Xinjiang\">Xinjiang</a> province in China, and southwards to the mountains of the Caucasus and northern Iran, Iraq and Turkey. It is also native to northern Morocco and has become naturalised in some other parts of the world.<sup id=\"cite_ref-GRIN_3-0\" class=\"reference\"><a href=\"#cite_note-GRIN-3\"><span>[</span>3<span>]</span></a></sup> In the southern parts of its range it is mainly found in mountainous regions. Its light seeds are easily blown by the wind and it is a pioneer species, one of the first trees to sprout on bare land or after a forest fire. It needs plenty of light and does best on dry, acid soils and is found on heathland, mountainsides and clinging to crags.<sup id=\"cite_ref-Vedel_1-3\" class=\"reference\"><a href=\"#cite_note-Vedel-1\"><span>[</span>1<span>]</span></a></sup> Its tolerance to pollution make it suitable for planting in industrial areas and exposed sites.<sup id=\"cite_ref-Forestry_4-0\" class=\"reference\"><a href=\"#cite_note-Forestry-4\"><span>[</span>4<span>]</span></a></sup> It has been introduced into North America where it is known as the European white birch, and is considered <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Invasive_species\" title=\"Invasive species\">invasive</a> in the states of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Kentucky\" title=\"Kentucky\">Kentucky</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Maryland\" title=\"Maryland\">Maryland</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Washington_(state)\" title=\"Washington (state)\">Washington</a> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Wisconsin\" title=\"Wisconsin\">Wisconsin</a>.<sup id=\"cite_ref-USDA_5-0\" class=\"reference\"><a href=\"#cite_note-USDA-5\"><span>[</span>5<span>]</span></a></sup> It is <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Naturalisation_(biology)\" title=\"Naturalisation (biology)\">naturalised</a> and locally invasive in parts of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Canada\" title=\"Canada\">Canada</a>.<sup id=\"cite_ref-6\" class=\"reference\"><a href=\"#cite_note-6\"><span>[</span>6<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"Taxonomy\">Taxonomy</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Betula_pendula&amp;action=edit&amp;section=3\" title=\"Edit section: Taxonomy\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><div class=\"thumb tright\"><div class=\"thumbinner\" style=\"width:172px;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Betula_pendula_winter.jpg\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Betula_pendula_winter.jpg/170px-Betula_pendula_winter.jpg\" width=\"170\" height=\"227\" class=\"thumbimage\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Betula_pendula_winter.jpg/255px-Betula_pendula_winter.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Betula_pendula_winter.jpg/340px-Betula_pendula_winter.jpg 2x\" data-file-width=\"750\" data-file-height=\"1000\" /></a><div class=\"thumbcaption\"><div class=\"magnify\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Betula_pendula_winter.jpg\" class=\"internal\" title=\"Enlarge\"></a></div>Tree in winter</div></div></div><p>The closely related <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Betula_platyphylla\" title=\"Betula platyphylla\">Betula platyphylla</a></i> in northern Asia and <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Betula_szechuanica\" title=\"Betula szechuanica\">Betula szechuanica</a></i> of central Asia are also treated as varieties of silver birch by some botanists, as <i>B. pendula</i> var. <i>platyphylla</i> and <i>B. pendula</i> var. <i>szechuanica</i> respectively (see <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Birch_classification\" title=\"Birch classification\" class=\"mw-redirect\">birch classification</a>).<sup id=\"cite_ref-7\" class=\"reference\"><a href=\"#cite_note-7\"><span>[</span>7<span>]</span></a></sup></p><p><i>B. pendula</i> is distinguished from the related <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Downy_birch\" title=\"Downy birch\" class=\"mw-redirect\">downy birch</a> (<i>B. pubescens</i>, the other common European birch) in having hairless, warty shoots (hairy and without warts in downy birch), more triangular leaves with double serration on the margins (more ovoid and with single serrations in downy birch), and whiter bark often with scattered black fissures (greyer, less fissured, in downy birch). It is also distinguished <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Cell_biology\" title=\"Cell biology\">cytologically</a>, silver birch being <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Diploid\" title=\"Diploid\" class=\"mw-redirect\">diploid</a> (with two sets of chromosomes), whereas downy birch is <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Tetraploid\" title=\"Tetraploid\" class=\"mw-redirect\">tetraploid</a> (four sets of chromosomes). Hybrids between the two are known, but are very rare, and being triploid, are sterile.<sup id=\"cite_ref-8\" class=\"reference\"><a href=\"#cite_note-8\"><span>[</span>8<span>]</span></a></sup> The two have differences in <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Habitat_(ecology)\" title=\"Habitat (ecology)\" class=\"mw-redirect\">habitat</a> requirements, with silver birch found mainly on dry, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Sand\" title=\"Sand\">sandy</a> soils, and downy birch more common on wet, poorly drained sites such as <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Clay\" title=\"Clay\">clay</a> soils and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Peat_bog\" title=\"Peat bog\" class=\"mw-redirect\">peat bogs</a>. Silver birch also demands slightly more summer warmth than does downy birch, which is significant in the cooler parts of Europe. Many North American texts treat the two species as conspecific (and cause confusion by combining the downy birch's alternative vernacular name 'white birch', with the scientific name <i>B. pendula</i> of the other species), but they are regarded as distinct species throughout Europe.<sup id=\"cite_ref-tfl_2-1\" class=\"reference\"><a href=\"#cite_note-tfl-2\"><span>[</span>2<span>]</span></a></sup></p><p>Synonyms include <i>Betula pendula</i> var. <i>carelica</i> (Merckl.) Hämet-Ahti, <i>B. pendula</i> var. <i>laciniata</i> (Wahlenb.) Tidestr., <i>B. pendula</i> var. <i>lapponica</i> (Lindq.) Hämet-Ahti, <i>B. aetnensis</i> Raf., <i>B. montana</i> V.N.Vassil, <i>B. talassica</i> Poljakov, <i>B. verrucosa</i> Ehrh., <i>B. verrucosa</i> var. <i>lapponica</i> Lindq., and <i>B. fontqueri</i> Rothm.<sup id=\"cite_ref-9\" class=\"reference\"><a href=\"#cite_note-9\"><span>[</span>9<span>]</span></a></sup><sup id=\"cite_ref-10\" class=\"reference\"><a href=\"#cite_note-10\"><span>[</span>10<span>]</span></a></sup> The rejected name <i>Betula alba</i> L. also applied in part to <i>B. pendula</i>, though also to <i>B. pubescens</i>.<sup id=\"cite_ref-11\" class=\"reference\"><a href=\"#cite_note-11\"><span>[</span>11<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"Ecology\">Ecology</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Betula_pendula&amp;action=edit&amp;section=4\" title=\"Edit section: Ecology\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><p>The silver birch has an open canopy which allows plenty of light to reach the ground. This allows a variety of mosses, grasses and flowering plants to grow beneath which in turn attract insects. Flowering plants often found in birch woods include <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Primula_vulgaris\" title=\"Primula vulgaris\">primrose</a> (<i>Primula vulgaris</i>), <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Viola_riviniana\" title=\"Viola riviniana\">violet</a> (<i>Viola riviniana</i>), <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Hyacinthoides_non-scripta\" title=\"Hyacinthoides non-scripta\">bluebell</a> (<i>Hyacinthoides non-scripta</i>), <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Wood_anemone\" title=\"Wood anemone\">wood anemone</a> (<i>Anemone nemorosa</i>) and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Oxalis_acetosella\" title=\"Oxalis acetosella\">wood sorrel</a> (<i>Oxalis acetosella</i>). Small shrubs that grow on the forest floor include <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Blaeberry\" title=\"Blaeberry\" class=\"mw-redirect\">blaeberry</a> (<i>Vaccinium myrtillus</i>) and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Cowberry\" title=\"Cowberry\" class=\"mw-redirect\">cowberry</a> (<i>Vaccinium vitis-idaea</i>).<sup id=\"cite_ref-tfl_2-2\" class=\"reference\"><a href=\"#cite_note-tfl-2\"><span>[</span>2<span>]</span></a></sup> Birds found in birch woodland include the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Common_chaffinch\" title=\"Common chaffinch\">chaffinch</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Tree_pipit\" title=\"Tree pipit\">tree pipit</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Willow_warbler\" title=\"Willow warbler\">willow warbler</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Common_nightingale\" title=\"Common nightingale\">nightingale</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/European_robin\" title=\"European robin\">robin</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Eurasian_woodcock\" title=\"Eurasian woodcock\">woodcock</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Common_redpoll\" title=\"Common redpoll\">redpoll</a> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/European_green_woodpecker\" title=\"European green woodpecker\">green woodpecker</a>.<sup id=\"cite_ref-Forestry_4-1\" class=\"reference\"><a href=\"#cite_note-Forestry-4\"><span>[</span>4<span>]</span></a></sup></p><p>The branches of the silver birch often have tangled masses of twigs known as <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Witch%27s_broom\" title=\"Witch's broom\">witch's brooms</a> growing among them, caused by the fungus <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Taphrina\" title=\"Taphrina\">Taphrina betulina</a></i>. Old trees are often killed by the decay fungus <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Piptoporus_betulinus\" title=\"Piptoporus betulinus\">Piptoporus betulinus</a></i> and fallen branches rot rapidly on the forest floor. This tree commonly grows with the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Mycorrhiza\" title=\"Mycorrhiza\">mycorrhizal</a> fungus <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Amanita_muscaria\" title=\"Amanita muscaria\">Amanita muscaria</a></i> in a <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Mutualism_(biology)\" title=\"Mutualism (biology)\">mutualistic</a> relationship. This applies particularly to acidic or nutrient-poor soils. Other mycorrhizal associates include <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Leccinum_scabrum\" title=\"Leccinum scabrum\">Leccinum scabrum</a></i> and <i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Cantharellus_cibarius\" title=\"Cantharellus cibarius\" class=\"mw-redirect\">Cantharellus cibarius</a></i>.<sup id=\"cite_ref-tfl_2-3\" class=\"reference\"><a href=\"#cite_note-tfl-2\"><span>[</span>2<span>]</span></a></sup> It has been shown that, as well as mycorrhiza, the presence of microfauna in the soil assists the growth of the tree, as it enhances the mobilization of nutrients.<sup id=\"cite_ref-12\" class=\"reference\"><a href=\"#cite_note-12\"><span>[</span>12<span>]</span></a></sup></p><div class=\"thumb tright\"><div class=\"thumbinner\" style=\"width:222px;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Sawfly_larvae_on_silver_birch_140701_(Tony_Holkham).JPG\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Sawfly_larvae_on_silver_birch_140701_%28Tony_Holkham%29.JPG/220px-Sawfly_larvae_on_silver_birch_140701_%28Tony_Holkham%29.JPG\" width=\"220\" height=\"172\" class=\"thumbimage\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Sawfly_larvae_on_silver_birch_140701_%28Tony_Holkham%29.JPG/330px-Sawfly_larvae_on_silver_birch_140701_%28Tony_Holkham%29.JPG 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Sawfly_larvae_on_silver_birch_140701_%28Tony_Holkham%29.JPG/440px-Sawfly_larvae_on_silver_birch_140701_%28Tony_Holkham%29.JPG 2x\" data-file-width=\"3059\" data-file-height=\"2393\" /></a><div class=\"thumbcaption\"><div class=\"magnify\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Sawfly_larvae_on_silver_birch_140701_(Tony_Holkham).JPG\" class=\"internal\" title=\"Enlarge\"></a></div>Birch <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Sawfly\" title=\"Sawfly\">sawfly</a> (<i><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Craesus_septentrionalis\" title=\"Craesus septentrionalis\">Craesus septentrionalis</a></i>) larvae feeding on silver birch, West Wales, July 2014</div></div></div><p>The larvae of a large number of species of butterflies, moths and other insects feed on the leaves and other parts of the silver birch.<sup id=\"cite_ref-13\" class=\"reference\"><a href=\"#cite_note-13\"><span>[</span>13<span>]</span></a></sup> In Germany, almost 500 species of insect have been found on silver and downy birch including 106 beetles and 105 <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Lepidoptera\" title=\"Lepidoptera\">lepidopterans</a>, with 133 insect species feeding almost exclusively on birch.<sup id=\"cite_ref-14\" class=\"reference\"><a href=\"#cite_note-14\"><span>[</span>14<span>]</span></a></sup> In the United States, the wood is attacked by the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Bronze_birch_borer\" title=\"Bronze birch borer\">bronze birch borer</a> (<i>Agrilus anxius</i>), an insect pest to which it has no natural resistance.<sup id=\"cite_ref-USDA_5-1\" class=\"reference\"><a href=\"#cite_note-USDA-5\"><span>[</span>5<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"Uses\">Uses</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Betula_pendula&amp;action=edit&amp;section=5\" title=\"Edit section: Uses\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><p>Silver birch is often planted in parks and gardens, grown for its white bark and gracefully drooping shoots, sometimes even in warmer-than-optimum places such as <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Los_Angeles\" title=\"Los Angeles\">Los Angeles</a> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Sydney\" title=\"Sydney\">Sydney</a>. In Scandinavia and other regions of northern Europe, it is grown for forest products such as lumber and pulp, as well as for aesthetic purposes and ecosystem services. It is sometimes used as a <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Pioneer_species\" title=\"Pioneer species\">pioneer</a> and nurse tree elsewhere.<sup id=\"cite_ref-Vedel_1-4\" class=\"reference\"><a href=\"#cite_note-Vedel-1\"><span>[</span>1<span>]</span></a></sup></p><p>Silver birch wood is pale in colour with no distinct heartwood and is used in making furniture, plywood, veneers, parquet blocks, skis, kitchen utensils and in <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Turnery\" title=\"Turnery\" class=\"mw-redirect\">turnery</a>. It makes a good firewood that produces a good heat when burnt but is quickly consumed by the flames. Slabs of bark are used for making <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Wood_shingle\" title=\"Wood shingle\">roof shingles</a> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Clog\" title=\"Clog\">wooden footwear</a>.<sup id=\"cite_ref-Vedel_1-5\" class=\"reference\"><a href=\"#cite_note-Vedel-1\"><span>[</span>1<span>]</span></a></sup> Historically, the bark was used for <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Tanning\" title=\"Tanning\">tanning</a>. Bark can be heated and the resin collected; the resin is an excellent waterproof glue and useful for starting fires. The thin sheets of bark that peel off young wood contain a waxy resin and are easy to ignite even when wet. The dead twigs are also useful as kindling for outdoor fires.<sup id=\"cite_ref-Cox_15-0\" class=\"reference\"><a href=\"#cite_note-Cox-15\"><span>[</span>15<span>]</span></a></sup></p><div class=\"thumb tleft\"><div class=\"thumbinner\" style=\"width:222px;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:2014-10-30_09_58_18_European_Birch_foliage_during_autumn_along_Terrace_Boulevard_in_Ewing,_New_Jersey.JPG\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/2014-10-30_09_58_18_European_Birch_foliage_during_autumn_along_Terrace_Boulevard_in_Ewing%2C_New_Jersey.JPG/220px-2014-10-30_09_58_18_European_Birch_foliage_during_autumn_along_Terrace_Boulevard_in_Ewing%2C_New_Jersey.JPG\" width=\"220\" height=\"165\" class=\"thumbimage\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/2014-10-30_09_58_18_European_Birch_foliage_during_autumn_along_Terrace_Boulevard_in_Ewing%2C_New_Jersey.JPG/330px-2014-10-30_09_58_18_European_Birch_foliage_during_autumn_along_Terrace_Boulevard_in_Ewing%2C_New_Jersey.JPG 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/e5/2014-10-30_09_58_18_European_Birch_foliage_during_autumn_along_Terrace_Boulevard_in_Ewing%2C_New_Jersey.JPG/440px-2014-10-30_09_58_18_European_Birch_foliage_during_autumn_along_Terrace_Boulevard_in_Ewing%2C_New_Jersey.JPG 2x\" data-file-width=\"3264\" data-file-height=\"2448\" /></a><div class=\"thumbcaption\"><div class=\"magnify\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:2014-10-30_09_58_18_European_Birch_foliage_during_autumn_along_Terrace_Boulevard_in_Ewing,_New_Jersey.JPG\" class=\"internal\" title=\"Enlarge\"></a></div>Foliage coloring in Autumn</div></div></div><p>Birch brushwood is used for <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Steeple_chase\" title=\"Steeple chase\" class=\"mw-redirect\">racecourse jumps</a> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Besom\" title=\"Besom\">besom brooms</a>. In the spring, large quantities of sap rise up the trunk and this can be tapped. It contains around 1% sugars and can be used in a similar way to <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Maple_syrup\" title=\"Maple syrup\">maple syrup</a>, being drunk fresh, concentrated by evaporation or fermented into a \"wine\".<sup id=\"cite_ref-Cox_15-1\" class=\"reference\"><a href=\"#cite_note-Cox-15\"><span>[</span>15<span>]</span></a></sup> In <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Sweden\" title=\"Sweden\">Sweden</a>, the bark of birch trees was ground up and used to make <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Bark_bread\" title=\"Bark bread\">bark bread</a>, a form of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Famine_food\" title=\"Famine food\">famine food</a>. The removal of bark was at one time so widespread that <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Carl_Linnaeus\" title=\"Carl Linnaeus\">Carl Linnaeus</a> expressed his concern for the survival of the woodlands.<sup id=\"cite_ref-16\" class=\"reference\"><a href=\"#cite_note-16\"><span>[</span>16<span>]</span></a></sup></p><p>Silver birch is used in traditional medicine as a <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Diuretic\" title=\"Diuretic\">diuretic</a> and is reputed to be useful in the treatment of <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Hypertension\" title=\"Hypertension\">high blood pressure</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Hypercholesterolemia\" title=\"Hypercholesterolemia\">high cholesterol</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Obesity\" title=\"Obesity\">obesity</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Gout\" title=\"Gout\">gout</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Kidney_stone\" title=\"Kidney stone\">kidney stones</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Nephritis\" title=\"Nephritis\">nephritis</a>, <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Cystitis\" title=\"Cystitis\" class=\"mw-redirect\">cystitis</a>, digestive disturbances and respiratory diseases. For these purposes, a decoction of the bark or leaves is generally used. Externally silver birch is used to promote healing, relieve pain and treat inflammations and infections of the skin such as <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Eczema\" title=\"Eczema\" class=\"mw-redirect\">eczema</a> and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Psoriasis\" title=\"Psoriasis\">psoriasis</a>.<sup id=\"cite_ref-17\" class=\"reference\"><a href=\"#cite_note-17\"><span>[</span>17<span>]</span></a></sup></p><p>The outer part of the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Bark\" title=\"Bark\">bark</a> contains up to 20% <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Betulin\" title=\"Betulin\">betulin</a>. The main components in the essential oil of the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Buds\" title=\"Buds\" class=\"mw-redirect\">buds</a> are <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/%CE%91-copaene\" title=\"Α-copaene\" class=\"mw-redirect\">α-copaene</a> (~10%), <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Germacrene_D\" title=\"Germacrene D\" class=\"mw-redirect\">germacrene D</a> (~15%) and <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/%CE%94-cadinene\" title=\"Δ-cadinene\" class=\"mw-redirect\">δ-cadinene</a> (~13%).<sup id=\"cite_ref-18\" class=\"reference\"><a href=\"#cite_note-18\"><span>[</span>18<span>]</span></a></sup> Also present in the bark are other <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Triterpene\" title=\"Triterpene\">triterpene</a> substances which have been shown to have anti-inflammatory, antiviral and anti-cancer properties.<sup id=\"cite_ref-19\" class=\"reference\"><a href=\"#cite_note-19\"><span>[</span>19<span>]</span></a></sup></p><p>The silver birch is Finland's national tree.<sup id=\"cite_ref-20\" class=\"reference\"><a href=\"#cite_note-20\"><span>[</span>20<span>]</span></a></sup> Leafy, fragrant boughs of silver birch (called vihta or vasta) are used to gently beat oneself in the Finnish <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Sauna\" title=\"Sauna\">sauna</a> culture.<sup id=\"cite_ref-21\" class=\"reference\"><a href=\"#cite_note-21\"><span>[</span>21<span>]</span></a></sup></p><h2><span class=\"mw-headline\" id=\"Cultivation\">Cultivation</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Betula_pendula&amp;action=edit&amp;section=6\" title=\"Edit section: Cultivation\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><div class=\"thumb tright\"><div class=\"thumbinner\" style=\"width:172px;\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Betula_pendula_laciniata0.jpg\" class=\"image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Betula_pendula_laciniata0.jpg/170px-Betula_pendula_laciniata0.jpg\" width=\"170\" height=\"227\" class=\"thumbimage\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Betula_pendula_laciniata0.jpg/255px-Betula_pendula_laciniata0.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Betula_pendula_laciniata0.jpg/340px-Betula_pendula_laciniata0.jpg 2x\" data-file-width=\"480\" data-file-height=\"640\" /></a><div class=\"thumbcaption\"><div class=\"magnify\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Betula_pendula_laciniata0.jpg\" class=\"internal\" title=\"Enlarge\"></a></div><i>Betula pendula</i> 'Laciniata'</div></div></div><p>Successful birch cultivation requires a climate cool enough for at least the occasional winter snowfall. As they are shallow-rooted, they may require water during dry periods. They grow best in full sun planted in deep, well-drained soil.<sup id=\"cite_ref-22\" class=\"reference\"><a href=\"#cite_note-22\"><span>[</span>22<span>]</span></a></sup></p><h3><span class=\"mw-headline\" id=\"Cultivars\">Cultivars</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Betula_pendula&amp;action=edit&amp;section=7\" title=\"Edit section: Cultivars\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h3><ul><li>'Carelica' is called \"curly birch\" in Finland; the wood is hard and decorative and is used in wood-carving.<sup id=\"cite_ref-23\" class=\"reference\"><a href=\"#cite_note-23\"><span>[</span>23<span>]</span></a></sup></li><li>'Laciniata' <span class=\"smallcaps\" style=\"font-variant:small-caps;\">agm</span> (commonly misidentified as 'Darlecarlica') has deeply incised leaves and weeping branches.<sup id=\"cite_ref-24\" class=\"reference\"><a href=\"#cite_note-24\"><span>[</span>24<span>]</span></a></sup></li><li>'Purpurea' has dark purple leaves.<sup id=\"cite_ref-25\" class=\"reference\"><a href=\"#cite_note-25\"><span>[</span>25<span>]</span></a></sup></li><li>'Tristis' <span class=\"smallcaps\" style=\"font-variant:small-caps;\">agm</span> has an erect trunk with weeping branchlets.<sup id=\"cite_ref-26\" class=\"reference\"><a href=\"#cite_note-26\"><span>[</span>26<span>]</span></a></sup></li><li>'Youngii' has dense, twiggy weeping growth with no central leader and requires being grafted onto a standard stem of normal silver birch.<sup id=\"cite_ref-27\" class=\"reference\"><a href=\"#cite_note-27\"><span>[</span>27<span>]</span></a></sup></li></ul><p>The cultivars marked <span class=\"smallcaps\" style=\"font-variant:small-caps;\">agm</span> above have gained the <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Royal_Horticultural_Society\" title=\"Royal Horticultural Society\">Royal Horticultural Society</a>'s <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Award_of_Garden_Merit\" title=\"Award of Garden Merit\">Award of Garden Merit</a>.</p><h2><span class=\"mw-headline\" id=\"See_also\">See also</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Betula_pendula&amp;action=edit&amp;section=8\" title=\"Edit section: See also\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><div class=\"noprint portal tright\" style=\"border:solid #aaa 1px;margin:0.5em 0 0.5em 1em\"><table style=\"background:#f9f9f9;font-size:85%;line-height:110%;max-width:175px\"><tr style=\"vertical-align:middle\"><td style=\"text-align:center\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/File:Tree_template.svg\" class=\"image\"><img alt=\"Portal icon\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Tree_template.svg/28px-Tree_template.svg.png\" width=\"28\" height=\"28\" class=\"noviewer\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/9/98/Tree_template.svg/42px-Tree_template.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/9/98/Tree_template.svg/56px-Tree_template.svg.png 2x\" data-file-width=\"48\" data-file-height=\"48\" /></a></td><td style=\"padding:0 0.2em;vertical-align:middle;font-style:italic;font-weight:bold\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Portal:Trees\" title=\"Portal:Trees\">Trees portal</a></td></tr></table></div><ul><li><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/List_of_Lepidoptera_that_feed_on_birches\" title=\"List of Lepidoptera that feed on birches\">List of Lepidoptera that feed on birches</a></li></ul><h2><span class=\"mw-headline\" id=\"References\">References</span><span class=\"mw-editsection\"><span class=\"mw-editsection-bracket\">[</span><a target=\"wikipedia\" href=\"http://en.wikipedia.org/w/index.php?title=Betula_pendula&amp;action=edit&amp;section=9\" title=\"Edit section: References\">edit</a><span class=\"mw-editsection-bracket\">]</span></span></h2><table class=\"mbox-small plainlinks\" style=\"border:1px solid #aaa;background-color:#f9f9f9\"><tr><td class=\"mbox-image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/30px-Commons-logo.svg.png\" width=\"30\" height=\"40\" srcset=\"//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/45px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/59px-Commons-logo.svg.png 2x\" data-file-width=\"1024\" data-file-height=\"1376\" /></td><td class=\"mbox-text plainlist\">Wikimedia Commons has media related to <i><b><a target=\"wikipedia\" href=\"http://commons.wikimedia.org/wiki/Betula_pendula\" class=\"extiw\" title=\"commons:Betula pendula\">Betula pendula</a></b></i>.</td></tr></table><table class=\"mbox-small plainlinks\" style=\"border:1px solid #aaa;background-color:#f9f9f9\"><tr><td class=\"mbox-image\"><img alt=\"\" src=\"http://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikispecies-logo.svg/34px-Wikispecies-logo.svg.png\" width=\"34\" height=\"40\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikispecies-logo.svg/51px-Wikispecies-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikispecies-logo.svg/68px-Wikispecies-logo.svg.png 2x\" data-file-width=\"941\" data-file-height=\"1103\" /></td><td class=\"mbox-text plainlist\"><a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Wikispecies\" title=\"Wikispecies\">Wikispecies</a> has information related to: <i><b><a target=\"wikipedia\" href=\"http://species.wikimedia.org/wiki/Special:Search/Betula_pendula\" class=\"extiw\" title=\"wikispecies:Special:Search/Betula pendula\">Betula pendula</a></b></i></td></tr></table><div class=\"reflist columns  \" style=\" -webkit-  list-style-type: decimal;\"><ol class=\"references\"><li id=\"cite_note-Vedel-1\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-Vedel_1-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-Vedel_1-1\"><sup><i><b>b</b></i></sup></a> <a href=\"#cite_ref-Vedel_1-2\"><sup><i><b>c</b></i></sup></a> <a href=\"#cite_ref-Vedel_1-3\"><sup><i><b>d</b></i></sup></a> <a href=\"#cite_ref-Vedel_1-4\"><sup><i><b>e</b></i></sup></a> <a href=\"#cite_ref-Vedel_1-5\"><sup><i><b>f</b></i></sup></a></span> <span class=\"reference-text\"><span class=\"citation book\">Vedel, Helge; Lange, Johan (1960). <i>Trees and Bushes</i>. Methuen. pp.&#160;141–143. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Book_Number\" title=\"International Standard Book Number\">ISBN</a>&#160;<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/978-0-416-61780-1\" title=\"Special:BookSources/978-0-416-61780-1\">978-0-416-61780-1</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.aufirst=Helge&amp;rft.au=Lange%2C+Johan&amp;rft.aulast=Vedel&amp;rft.au=Vedel%2C+Helge&amp;rft.btitle=Trees+and+Bushes&amp;rft.date=1960&amp;rft.genre=book&amp;rft.isbn=978-0-416-61780-1&amp;rft.pages=141-143&amp;rft.pub=Methuen&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-tfl-2\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-tfl_2-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-tfl_2-1\"><sup><i><b>b</b></i></sup></a> <a href=\"#cite_ref-tfl_2-2\"><sup><i><b>c</b></i></sup></a> <a href=\"#cite_ref-tfl_2-3\"><sup><i><b>d</b></i></sup></a></span> <span class=\"reference-text\"><span class=\"citation web\">Featherstone, Alan Watson. <a rel=\"nofollow\" class=\"external text\" href=\"http://treesforlife.org.uk/forest/birch/\">\"Silver birch, downy birch\"</a>. Trees for Life<span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2014-05-28</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.au=Featherstone%2C+Alan+Watson&amp;rft.aulast=Featherstone%2C+Alan+Watson&amp;rft.btitle=Silver+birch%2C+downy+birch&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Ftreesforlife.org.uk%2Fforest%2Fbirch%2F&amp;rft.pub=Trees+for+Life&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-GRIN-3\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-GRIN_3-0\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://www.ars-grin.gov/cgi-bin/npgs/html/taxon.pl?7127\">\"GRIN Taxonomy for Plants - <i>Betula pendula</i>\"</a>. USDA Agricultural Research Service<span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2014-05-29</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.btitle=GRIN+Taxonomy+for+Plants+-+Betula+pendula&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.ars-grin.gov%2Fcgi-bin%2Fnpgs%2Fhtml%2Ftaxon.pl%3F7127&amp;rft.pub=USDA+Agricultural+Research+Service&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-Forestry-4\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-Forestry_4-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-Forestry_4-1\"><sup><i><b>b</b></i></sup></a></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://www.forestry.gov.uk/forestry/INFD-5NLDXL\">\"Silver birch: <i>Betula pendula</i>\"</a>. Forestry Commission<span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2014-05-28</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.btitle=Silver+birch%3A+Betula+pendula&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.forestry.gov.uk%2Fforestry%2FINFD-5NLDXL&amp;rft.pub=Forestry+Commission&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-USDA-5\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-USDA_5-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-USDA_5-1\"><sup><i><b>b</b></i></sup></a></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://www.na.fs.fed.us/fhp/invasive_plants/weeds/european-white-birch.pdf\">\"European White Birch - <i>Betula pendula</i>\"</a>. USDA Forest Service. 2006-09-01<span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2014-05-29</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.btitle=European+White+Birch+-+Betula+pendula&amp;rft.date=2006-09-01&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.na.fs.fed.us%2Ffhp%2Finvasive_plants%2Fweeds%2Feuropean-white-birch.pdf&amp;rft.pub=USDA+Forest+Service&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-6\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-6\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Diamond, Joshua; Browning, Mark; Williams, Andrew; Middleton, John (2003). <a rel=\"nofollow\" class=\"external text\" href=\"http://canadianfieldnaturalist.ca/index.php/cfn/article/view/741\">\"Lack of Evidence for Impact of the European White Birch, <i>Betula pendula</i>, on the Hydrology of Wainfleet Bog, Ontario\"</a>. <i>Canadian Field-Naturalist</i> <b>117</b> (3).</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.atitle=Lack+of+Evidence+for+Impact+of+the+European+White+Birch%2C+Betula+pendula%2C+on+the+Hydrology+of+Wainfleet+Bog%2C+Ontario&amp;rft.au=Diamond%2C+Joshua%3B+Browning%2C+Mark%3B+Williams%2C+Andrew%3B+Middleton%2C+John&amp;rft.aulast=Diamond%2C+Joshua%3B+Browning%2C+Mark%3B+Williams%2C+Andrew%3B+Middleton%2C+John&amp;rft.date=2003&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fcanadianfieldnaturalist.ca%2Findex.php%2Fcfn%2Farticle%2Fview%2F741&amp;rft.issue=3&amp;rft.jtitle=Canadian+Field-Naturalist&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=117\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-7\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-7\">^</a></b></span> <span class=\"reference-text\">Hunt, D., ed. (1993). <i>Betula</i>. Proceedings of the IDS Betula Symposium 2–4 October 1992. p. 51. International Dendrology Society <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/0950454451\" class=\"internal mw-magiclink-isbn\">ISBN 0-9504544-5-1</a>.</span></li><li id=\"cite_note-8\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-8\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation book\">OECD (2008). <a rel=\"nofollow\" class=\"external text\" href=\"http://books.google.com/books?id=JMW8UloBZqMC&amp;pg=RA1-PA58\"><i>Novel Food and Feed Safety SET 1: Safety Assessment of Transgenic Organisms OECD Consensus Documents Volumes 1 and 2</i></a>. OECD Publishing. p.&#160;58. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Book_Number\" title=\"International Standard Book Number\">ISBN</a>&#160;<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/978-92-64-05346-5\" title=\"Special:BookSources/978-92-64-05346-5\">978-92-64-05346-5</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.aulast=OECD&amp;rft.au=OECD&amp;rft.btitle=Novel+Food+and+Feed+Safety+SET+1%3A+Safety+Assessment+of+Transgenic+Organisms+OECD+Consensus+Documents+Volumes+1+and+2&amp;rft.date=2008&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fbooks.google.com%2Fbooks%3Fid%3DJMW8UloBZqMC%26pg%3DRA1-PA58&amp;rft.isbn=978-92-64-05346-5&amp;rft.pages=58&amp;rft.pub=OECD+Publishing&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-9\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-9\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\">Anderberg, Arne (1999-10-14). <a rel=\"nofollow\" class=\"external text\" href=\"http://linnaeus.nrm.se/flora/di/betula/betul/betupen.html\">\"<i>Betula pendula</i> Roth\"</a>. <i>Den virtuella floran</i>. Naturhistoriska riksmuseet<span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2014-05-29</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.atitle=Betula+pendula+Roth&amp;rft.au=Anderberg%2C+Arne&amp;rft.aulast=Anderberg%2C+Arne&amp;rft.date=1999-10-14&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Flinnaeus.nrm.se%2Fflora%2Fdi%2Fbetula%2Fbetul%2Fbetupen.html&amp;rft.jtitle=Den+virtuella+floran&amp;rft.pub=Naturhistoriska+riksmuseet&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-10\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-10\">^</a></b></span> <span class=\"reference-text\">Govaerts, R.; Frodin, D. G. (1998). <i>World Checklist and Bibliography of Fagales</i>. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/1900347466\" class=\"internal mw-magiclink-isbn\">ISBN 1-900347-46-6</a> <a rel=\"nofollow\" class=\"external text\" href=\"http://apps.kew.org/wcsp/\">online search</a></span></li><li id=\"cite_note-11\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-11\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Govaerts, R. (1996). \"Proposal to reject the name <i>Betula alba</i> (Betulaceae)\". <i>Taxon</i> <b>45</b>: 697–698. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Digital_object_identifier\" title=\"Digital object identifier\">doi</a>:<a rel=\"nofollow\" class=\"external text\" target=\"wikipedia\" href=\"http://dx.doi.org/10.2307%2F1224262\">10.2307/1224262</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.atitle=Proposal+to+reject+the+name+Betula+alba+%28Betulaceae%29&amp;rft.aufirst=R.&amp;rft.au=Govaerts%2C+R.&amp;rft.aulast=Govaerts&amp;rft.date=1996&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.2307%2F1224262&amp;rft.jtitle=Taxon&amp;rft.pages=697-698&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=45\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-12\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-12\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Setälä, Heikki; Huhta, Veikko (1991). \"Soil Fauna Increase <i>Betula pendula</i> Growth: Laboratory Experiments With Coniferous Forest Floor\". <i>Ecology</i> <b>72</b> (2): 665–671. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/JSTOR\" title=\"JSTOR\">JSTOR</a>&#160;<a rel=\"nofollow\" class=\"external text\" target=\"wikipedia\" href=\"http://www.jstor.org/stable/2937206\">2937206</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.atitle=Soil+Fauna+Increase+Betula+pendula+Growth%3A+Laboratory+Experiments+With+Coniferous+Forest+Floor&amp;rft.aulast=Set%C3%A4l%C3%A4%2C+Heikki%3B+Huhta%2C+Veikko&amp;rft.au=Set%C3%A4l%C3%A4%2C+Heikki%3B+Huhta%2C+Veikko&amp;rft.date=1991&amp;rft.genre=article&amp;rft.issue=2&amp;rft.jstor=2937206&amp;rft.jtitle=Ecology&amp;rft.pages=665-671&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=72\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-13\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-13\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://www.nhm.ac.uk/research-curation/research/projects/hostplants/\">\"HOSTS - a Database of the World's Lepidopteran Hostplants\"</a>. Natural History Museum<span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2014-05-29</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.btitle=HOSTS+-+a+Database+of+the+World%27s+Lepidopteran+Hostplants&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.nhm.ac.uk%2Fresearch-curation%2Fresearch%2Fprojects%2Fhostplants%2F&amp;rft.pub=Natural+History+Museum&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-14\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-14\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Brändle, Martin; Brandl, Roland (2001). \"Species richness of insects and mites on trees: expanding Southwood\". <i>Journal of Animal Ecology</i> <b>70</b> (3): 491–504. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Digital_object_identifier\" title=\"Digital object identifier\">doi</a>:<a rel=\"nofollow\" class=\"external text\" target=\"wikipedia\" href=\"http://dx.doi.org/10.1046%2Fj.1365-2656.2001.00506.x\">10.1046/j.1365-2656.2001.00506.x</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.atitle=Species+richness+of+insects+and+mites+on+trees%3A+expanding+Southwood&amp;rft.au=Br%C3%A4ndle%2C+Martin%3B+Brandl%2C+Roland&amp;rft.aulast=Br%C3%A4ndle%2C+Martin%3B+Brandl%2C+Roland&amp;rft.date=2001&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1046%2Fj.1365-2656.2001.00506.x&amp;rft.issue=3&amp;rft.jtitle=Journal+of+Animal+Ecology&amp;rft.pages=491-504&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=70\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-Cox-15\"><span class=\"mw-cite-backlink\">^ <a href=\"#cite_ref-Cox_15-0\"><sup><i><b>a</b></i></sup></a> <a href=\"#cite_ref-Cox_15-1\"><sup><i><b>b</b></i></sup></a></span> <span class=\"reference-text\"><span class=\"citation web\">Cox, Michael O. <a rel=\"nofollow\" class=\"external text\" href=\"http://www.woodstovewizard.com/firewood-types-silver-birch.html\">\"Firewood types: silver birch\"</a>. WoodstoveWizard.com<span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2014-05-29</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.au=Cox%2C+Michael+O.&amp;rft.aulast=Cox%2C+Michael+O.&amp;rft.btitle=Firewood+types%3A+silver+birch&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.woodstovewizard.com%2Ffirewood-types-silver-birch.html&amp;rft.pub=WoodstoveWizard.com&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-16\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-16\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\">Julie Lindahl (2011-01-09). <a rel=\"nofollow\" class=\"external text\" href=\"http://www.nordicwellbeing.com/Julies_Kitchen/2011/01/09/bark-bread-is-back/\">\"Bark Bread is back\"</a>. <i>Nordic Wellbeing</i><span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2011-07-21</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.atitle=Bark+Bread+is+back&amp;rft.au=Julie+Lindahl&amp;rft.aulast=Julie+Lindahl&amp;rft.date=2011-01-09&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.nordicwellbeing.com%2FJulies_Kitchen%2F2011%2F01%2F09%2Fbark-bread-is-back%2F&amp;rft.jtitle=Nordic+Wellbeing&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-17\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-17\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://www.pfaf.org/user/Plant.aspx?LatinName=Betula+pendula\">\"<i>Betula pendula</i> - Roth.\"</a>. <i>Plants for a future</i><span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2014-11-05</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.atitle=Betula+pendula+-+Roth.&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.pfaf.org%2Fuser%2FPlant.aspx%3FLatinName%3DBetula%2Bpendula&amp;rft.jtitle=Plants+for+a+future&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-18\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-18\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Demirci, Betül; Paper, Dietrich H.;Demirci, Fatih; Başer, K. Hüsnü Can; Franz, Gerhard (2004). \"Essential Oil of <i>Betula pendula</i> Roth. Buds\". <i>Evidence-Based Complementary and Alternative Medicine</i> <b>1</b> (3): 301–303. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Digital_object_identifier\" title=\"Digital object identifier\">doi</a>:<a rel=\"nofollow\" class=\"external text\" target=\"wikipedia\" href=\"http://dx.doi.org/10.1093%2Fecam%2Fneh041\">10.1093/ecam/neh041</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.atitle=Essential+Oil+of+Betula+pendula+Roth.+Buds&amp;rft.au=Demirci%2C+Bet%C3%BCl%3B+Paper%2C+Dietrich+H.%3BDemirci%2C+Fatih%3B+Ba%C5%9Fer%2C+K.+H%C3%BCsn%C3%BC+Can%3B+Franz%2C+Gerhard&amp;rft.aulast=Demirci%2C+Bet%C3%BCl%3B+Paper%2C+Dietrich+H.%3BDemirci%2C+Fatih%3B+Ba%C5%9Fer%2C+K.+H%C3%BCsn%C3%BC+Can%3B+Franz%2C+Gerhard&amp;rft.date=2004&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1093%2Fecam%2Fneh041&amp;rft.issue=3&amp;rft.jtitle=Evidence-Based+Complementary+and+Alternative+Medicine&amp;rft.pages=301-303&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=1\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-19\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-19\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation journal\">Kovac-Besović, E. E.; Durić, K.; Kalodera, Z.; Sofić, E (2009). \"Identification and isolation of pharmacologically active triterpenes in Betuale cortex, <i>Betula pendula</i> Roth., Betulaceae\". <i>Bosnian Journal of Basic Medical Sciences</i> <b>9</b> (1): 31–38. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/PubMed_Identifier\" title=\"PubMed Identifier\" class=\"mw-redirect\">PMID</a>&#160;<a rel=\"nofollow\" class=\"external text\" target=\"wikipedia\" href=\"http://www.ncbi.nlm.nih.gov/pubmed/19284392\">19284392</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.atitle=Identification+and+isolation+of+pharmacologically+active+triterpenes+in+Betuale+cortex%2C+Betula+pendula+Roth.%2C+Betulaceae&amp;rft.au=Kovac-Besovi%C4%87%2C+E.+E.%3B+Duri%C4%87%2C+K.%3B+Kalodera%2C+Z.%3B+Sofi%C4%87%2C+E&amp;rft.aulast=Kovac-Besovi%C4%87%2C+E.+E.%3B+Duri%C4%87%2C+K.%3B+Kalodera%2C+Z.%3B+Sofi%C4%87%2C+E&amp;rft.date=2009&amp;rft.genre=article&amp;rft_id=info%3Apmid%2F19284392&amp;rft.issue=1&amp;rft.jtitle=Bosnian+Journal+of+Basic+Medical+Sciences&amp;rft.pages=31-38&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=9\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-20\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-20\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\">Katriina Anttila (2005). <a rel=\"nofollow\" class=\"external text\" href=\"http://www.kolumbus.fi/webweaver/tunnus.html\">\"Suomen kansallistunnukset (Finland's national emblems)\"</a><span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2014-05-30</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.au=Katriina+Anttila&amp;rft.aulast=Katriina+Anttila&amp;rft.btitle=Suomen+kansallistunnukset+%28Finland%27s+national+emblems%29&amp;rft.date=2005&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.kolumbus.fi%2Fwebweaver%2Ftunnus.html&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-21\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-21\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://www.visitsauna.fi/fi/sauna/saunavihta/saunavihta\">\"Perinteinen saunavihta (Traditional sauna vihta)\"</a>. Visit sauna<span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2014-05-30</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.btitle=Perinteinen+saunavihta+%28Traditional+sauna+vihta%29&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.visitsauna.fi%2Ffi%2Fsauna%2Fsaunavihta%2Fsaunavihta&amp;rft.pub=Visit+sauna&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-22\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-22\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation book\">Botanica (1999). <i>Botanica's Trees &amp; Shrubs</i>. Laurel Glen Publishing A. p.&#160;139. <a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/International_Standard_Book_Number\" title=\"International Standard Book Number\">ISBN</a>&#160;<a target=\"wikipedia\" href=\"http://en.wikipedia.org/wiki/Special:BookSources/978-1-57145-649-6\" title=\"Special:BookSources/978-1-57145-649-6\">978-1-57145-649-6</a>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.au=Botanica&amp;rft.aulast=Botanica&amp;rft.btitle=Botanica%27s+Trees+%26+Shrubs&amp;rft.date=1999&amp;rft.genre=book&amp;rft.isbn=978-1-57145-649-6&amp;rft.pages=139&amp;rft.pub=Laurel+Glen+Publishing+A&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-23\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-23\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://www.mustila.fi/en/plants/betula/pendula/carelica\">\"<i>Betula pendula</i> var. carelica - curly birch\"</a>. Arboretum Mustila<span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2014-11-12</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.btitle=Betula+pendula+var.+carelica+-+curly+birch&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.mustila.fi%2Fen%2Fplants%2Fbetula%2Fpendula%2Fcarelica&amp;rft.pub=Arboretum+Mustila&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-24\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-24\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://apps.rhs.org.uk/plantselector/plant?plantid=246\">\"RHS Plant Selector - <i>Betula pendula</i> 'Laciniata<span style=\"padding-right:0.2em;\">'</span>\"</a>. Royal Horticultural Society<span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2013-06-14</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.btitle=RHS+Plant+Selector+-+Betula+pendula+%27Laciniata%27&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fapps.rhs.org.uk%2Fplantselector%2Fplant%3Fplantid%3D246&amp;rft.pub=Royal+Horticultural+Society&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-25\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-25\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"https://www.rhs.org.uk/Plants/97920/i-Betula-pendula-i-Purpurea/Details\">\"RHS Plant Selector - <i>Betula pendula</i> 'Purpurea<span style=\"padding-right:0.2em;\">'</span>\"</a>. Royal Horticultural Society<span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2014-11-12</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.btitle=RHS+Plant+Selector+-+Betula+pendula+%27Purpurea%27&amp;rft.genre=book&amp;rft_id=https%3A%2F%2Fwww.rhs.org.uk%2FPlants%2F97920%2Fi-Betula-pendula-i-Purpurea%2FDetails&amp;rft.pub=Royal+Horticultural+Society&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-26\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-26\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"http://apps.rhs.org.uk/plantselector/plant?plantid=247\">\"RHS Plant Selector - <i>Betula pendula</i> 'Tristis<span style=\"padding-right:0.2em;\">'</span>\"</a>. Royal Horticultural Society<span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2013-06-14</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.btitle=RHS+Plant+Selector+-+Betula+pendula+%27Tristis%27&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fapps.rhs.org.uk%2Fplantselector%2Fplant%3Fplantid%3D247&amp;rft.pub=Royal+Horticultural+Society&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li><li id=\"cite_note-27\"><span class=\"mw-cite-backlink\"><b><a href=\"#cite_ref-27\">^</a></b></span> <span class=\"reference-text\"><span class=\"citation web\"><a rel=\"nofollow\" class=\"external text\" href=\"https://www.rhs.org.uk/Plants/92990/i-Betula-pendula-i-Youngii/Details\">\"RHS Plant Selector - <i>Betula pendula</i> 'Youngii<span style=\"padding-right:0.2em;\">'</span>\"</a>. Royal Horticultural Society<span class=\"reference-accessdate\">. Retrieved <span class=\"nowrap\">2014-11-12</span></span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ABetula+pendula&amp;rft.btitle=RHS+Plant+Selector+-+Betula+pendula+%27Youngii%27&amp;rft.genre=book&amp;rft_id=https%3A%2F%2Fwww.rhs.org.uk%2FPlants%2F92990%2Fi-Betula-pendula-i-Youngii%2FDetails&amp;rft.pub=Royal+Horticultural+Society&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\"><span style=\"display:none;\">&#160;</span></span></span></li></ol></div><!-- NewPP limit reportParsed by mw1091CPU time usage: 0.570 secondsReal time usage: 0.677 secondsPreprocessor visited node count: 4602/1000000Preprocessor generated node count: 0/1500000Post‐expand include size: 53266/2097152 bytesTemplate argument size: 3044/2097152 bytesHighest expansion depth: 15/40Expensive parser function count: 2/500Lua time usage: 0.169/10.000 secondsLua memory usage: 5.72 MB/50 MB--><!-- Transclusion expansion time report (%,ms,calls,template)100.00%  516.496      1 - -total 35.70%  184.395      1 - Template:Reflist 20.57%  106.228      1 - Template:Taxobox 17.67%   91.241      1 - Template:Taxobox/core 11.75%   60.684     16 - Template:Cite_web 11.47%   59.260      6 - Template:Convert  9.31%   48.068      1 - Template:Good_article  8.88%   45.874      1 - Template:Top_icon  8.24%   42.538      1 - Template:Category_handler  7.65%   39.489      9 - Template:Taxonomy--><!-- Saved in parser cache with key enwiki:pcache:idhash:446844-0!*!0!!en!4!* and timestamp 20150304111044 and revision id 649825864 --></div></div></div></div>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -2622,7 +2590,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "shadblow",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Canadian serviceberry",
@@ -2651,11 +2619,8 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Amélanchier d'Amérique, Amélanchier de Lamark",
         "language": "fr",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "<div> <p>Amelanchier canadensis (L.) Medik.</p> <p>Distribution</p> <p>Wet pine flatwoods (WPF-T) and adjacent roadsides.</p> <p>Notes</p> <p> Rare. Mar&ndash;Apr ; May&ndash;Jun . Thornhill 1258 (NCSC). Specimens seen in the vicinity: Sandy Run [Hancock]: Taggart SARU 111 (WNC!). [= RAB, Weakley] </p> </div>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -2764,20 +2729,17 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Italian Alder",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Aulne glutineux, Verne",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Aulne cordé, Aulne à feuilles en cœur, Aulne de Corse, Aune cordiforme",
         "language": "fr"
       }
-    ],
-    "descriptions": [
-      "Chile Central"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -2974,12 +2936,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Schwarz-Erle",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "European alder",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Common Alder",
@@ -3000,12 +2962,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Aliso",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Aune glutineux",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Aulne glutineux, Verne",
@@ -3014,11 +2976,8 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Ontano comune",
         "language": "it",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "Betulaceae -- Birch family<BR/><BR/>&nbsp;          &nbsp;          David T. Funk<BR/><BR/>&nbsp;          &nbsp;          European alder <I>(Alnus glutinosa), </I>also called black alder&nbsp;               or European black alder, was introduced to eastern North America&nbsp;               in colonial times. This tree ranges in size from a large shrub to&nbsp;               a large tree. It has escaped cultivation and grows naturally on&nbsp;               lowlying lands. Its rapid growth, tolerance for acid soils, and&nbsp;               nitrogen-fixing role make European alder desirable for&nbsp;               shelterbelts, reclamation areas, landscapes, and biomass&nbsp;               production. It is valuable to wildlife for providing good cover&nbsp;               and a source of seeds.<BR/><BR/>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -3151,7 +3110,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Gemeine Rosskastanie",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Gewöhnliche Rosskastanie",
@@ -3168,7 +3127,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "European Horse-chestnut",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "European Horse chestnut",
@@ -3193,12 +3152,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "castaño de Indias",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Marronnier d'Inde, Marronnier commun",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Marronnier",
@@ -3207,15 +3166,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "castagna amara",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "castagne di cavalle",
         "language": "it"
       }
-    ],
-    "descriptions": [
-      "Horse Chestnut (<em>Aesculus hippocastanum</em>) is native to Greece and the central Balkan Peninsula and has been introduced throughout Europe and North America. It was introduced into the UK in the 17th century as an ornamental tree (Lack 2002, RBG Kew accessed 2013, Daws <em>et al</em>. 2004). Its native range includes Albania, Macedonia, Greece and a restricted area in eastern Bulgaria. In Greece, it is restricted to the Pindus mountain range in the regions of Epirus in the northwest, Thessaly in central Greece, Evrytania and Fthiotida in the south. It is found at altitudes up to 1,485 metres (Avtzis <em>et al. </em>2007). The extent of occurrence (EOO) of its native extant range is estimated at 163,642 km."
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -3373,12 +3329,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Rotahorn",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "red maple",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "scarlet maple",
@@ -3395,7 +3351,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Érable argenté, Érable de Virginie, Érable à sirop",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "plaine",
@@ -3409,9 +3365,6 @@ export const deciduousAndEvergreenTrees2 = [
         "vernacularName": "Érable rouge",
         "language": "fr"
       }
-    ],
-    "descriptions": [
-      "<i>Acer rubrum</i>, a medium to large tree native to North America, is called red maple for its red buds, flowers, fruits, brilliant fall foliage, and even twigs. It is the State Tree of Rhode Island (USNA 2011).<br><br>Red maple grows up to 20 m tall, usually with a narrow compact crown, and may occur singly or in a clump of stems that resprouted from a single stump after cutting or fire. Young bark is smooth, thin, and gray; older trees develop furrowed bark with scaly or even shaggy ridges. Leaves are deciduous, opposite, with blades 6-10 cm long and usually about as wide, with 3 to 5 shallow short-pointed and serrate or toothed lobes. Flowers are pink to red, in fascicles (clusters) or drooping racemes. Individual trees are monoecious (male and female flowers on separated trees) or bisexual (male and female flowers on the same tree, or segregated by branches within the tree—technically polygamo-dioecious). Fruits are paired samaras (winged nutlets) 2-2.5 cm long, clustered on long stalks (Wikipedia 2011).<br><br>Red maple is one of the most widely distributed trees in eastern North America (<a href=\"http://eol.org/pages/582246/maps\">see distribution map</a>). It tolerates a wide variety of soil types and site conditions, ranging from swamps and poorly drained soils to drier uplands, savannas, sandy dunes, and barrens (Barnes and Wagner 2004, Burns and Honkala 1990, Michigan Flora Online 2011). It is widely planted as a shade tree and in parks, with more than 50 cultivars that vary in leaf shape, fall color, and tree form (Van Geldrin et al. 2010). It has various timber uses, can yield maple syrup (but less than sugar maple), and was used by Native Americans and pioneers for medicinal and other purposes (see <a href=\"http://eol.org/pages/582246/details#benefits\">uses</a>).<br><br>Red maple has increased dramatically in abundance and distribution since the early 1800s, when early settlement records suggest that it was restricted to swampy sites. Fire suppression has allowed it to gain a competitive advantage and replace oaks in drier upland forests (Abrams 1998). It is a “supergeneralist” that can act as a pioneer species, quickly colonizing disturbed and cut-over sites, but capable of dominating later in succession (Abrams 1998). It is browsed less by deer and defoliated less by gypsy moths than oak species; the differential damage may indirectly benefit the red maple (Abrams 1998, Jedlicka et al. 2004). Its increased abundance may also be linked to the decline of <i>Ulmus americana</i> (American elm) from Dutch elm disease, and of <i>Castanea dentata</i> (American chestnut) from blight. By 2002, red maple was one of the 10 most abundant tree species in U.S. forests (FIA 2011). Its distribution has been further increased due to frequent naturalization from horticultural plantings.<br><br>Red maple leaves, twig, bark, and/or fruits are a food source for numerous mammals, birds, and insects. However, red maple leaves are extremely toxic to horses (Wikipedia 2011).<br>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -3605,22 +3558,22 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Spitz-Ahorn",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Norway maple",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Arce",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Érable plane",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Érable plane, Plane",
@@ -3641,15 +3594,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Acero platanoide",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Acero riccio",
         "language": "it"
       }
-    ],
-    "descriptions": [
-      "<i>Acer platanoides</i>, Norway maple, is a medium to large deciduous tree native to northern and central Europe and western Asia (Barnes and Wagner 2004). Its many cultivars are widely planted in North America as a lawn, park, and street tree because they are hardy and cold resistant, tolerate pollution, soil compaction, and other urban conditions, and are relatively free of insect pests and diseases. <br><br>The leaves are opposite and palmately lobed with five coarsely toothed lobes; petioles are 8–20 cm long. The tree grows 20–30 m tall with a trunk up to 1.5 m diameter. The yellow to yellow-green flowers, with 5 petals and 5 petal-like sepals, are each 3–4 mm long and occur in corymbs of 15–30 together. The flower clusters, which appear in early spring before leaves have emerged, are larger and more conspicuous than in many North American maples. The fruit, produced in large amounts, is generally a pair of widely diverging samaras (hard nutlets with winged seeds); clusters of three samaras sometimes occur. Maples were classified in their own family, Aceraceae, but are now generally included in Sapindaceae (Stevens 2001)—see <a href=\"http://eol.org/pages/583070/details#systematics_or_phylogenetics\"> Systematics</a>.<br><br>In the past 20–30 years, Norway maple has naturalized widely in North America, particularly in urban woodlots and forest edges (Barnes and Wager 2004, Cincotta et al. 2008), and can become dominant in mesic (moist) soils where <i>Acer saccharum</i> (sugar maple) would otherwise grow. Norway maple is classified as invasive in 20 Northeastern U.S. states (USFS 2011) and eastern Canada; it is banned from sale or planting in Massachusetts and New Hampshire. The species is, however, still available at nurseries in other states and continues to be widely planted.<br><br>Adverse ecological effects include inhibition of understory growth (including tree saplings) due to its densely shading canopy and its release of allelopathic (defensive) chemicals, so it tends to create bare, muddy run-off conditions immediately under the tree (Galbraith-Kent and Handel 2008; Swearingen et al. 2010). It suffers less herbivory and fewer fungal diseases than sugar maple, which may give it a competitive advantage over sugar maple (Cincotta et al. 2008). <br><br><i>A. platanoides</i> is sometimes confused with <i>A. saccharum</i> (sugar maple) in North America, but they can be distinguished in most characters. Norway maple leaves are usually broader than they are long, while sugar maple leaves are generally longer than wide (or with length=width). Norway maple seeds are flattened and its samara’s wings are widely spread (to 180 degrees); sugar maple seeds are globose, with wings diverging at 45 to 90 degrees. Norway maple terminal buds are large, rounded, and blunt, with only 2–3 pairs of scales; sugar maple has long, sharply pointed buds with many scales. Bark of mature Norway maples has small, often criss-crossing grooves (reminiscent of <i>Fraxinus americana</i>, white ash), while sugar maple bark occurs in broader flat or shaggy plates. Norway maple autumn leaf color is usually yellow to yellow-orange, rather than the brilliant oranges and reds of sugar maple. Finally, Norway maple tends to leaf out earlier in the spring and hold its leaves later in the autumn than sugar maple.<br>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -3843,12 +3793,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Berg-Ahorn",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "sycamore maple",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Great Maple",
@@ -3861,7 +3811,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Arce",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Arce blanco",
@@ -3878,7 +3828,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Faux platane",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Érable des montagnes",
@@ -3895,11 +3845,8 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Acero di monte",
         "language": "it",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "<i>Acer pseudoplatanus</i>, the sycamore or sycamore maple, is native to central Europe and southwestern Asia. It is not a member of the <i>Platanus</i> genus (sycamore or plane tree), but the superficial similarity of its leaves led to its being named “<i>pseudoplatanus</i>,” from the Greek “pseudo-” for “false.” (The name “sycamore” originally belongs to the fig, <i>Ficus sycomorus</i>, of southwest Asia—the sycamore or “sycamore” of the Bible [Wikipedia 2011].) This species is also sometimes confused with <i>Acer platanoides</i> (Norway maple).<br><br>The sycamore maple is a large deciduous tree, 20–35 m tall, with a broad, domed crown. Bark is smooth and grey on young trees, becoming rougher with age and breaking up in scales, exposing pale-brown-to-pinkish inner bark. The leaves are opposite, palmately veined with five lobes that have toothed edges. Leaves are generally dark green, but cultivars have been developed with purplish, yellowish, and salmon-colored leaves. The monoecious yellow-green flowers appear in the spring on 10–20 cm pendulous racemes, with 20–50 flowers on each stalk; the flowers are scented and produce nectar to attract insect pollinators, in contrast to many <i>Acer</i> species, which are often wind pollinated. The fruits are winged nutlets (samaras), with 5–10 mm diameter seeds, each with a 20–40 mm long wing to catch the wind and rotate when they fall (Wikipedia 2011).<br><br>Sycamore maple tolerates wind, urban pollution and salt spray, which makes it popular for planting in cities and along roads and coastal areas. It is widely cultivated north of its native range in northern Europe, notably in the British Isles and Scandinavia, and has naturalized widely during the past several hundred years. Its range is also expanding following the most recent glaciation, so that it is no longer always clear where the native range is within Europe, and where it is introduced or naturalized from plantings (Weidema and Buchwald 2010, Wikipedia 2011). It is, however, considered invasive in northern Norway, and is sometimes removed from natural forests in Great Britain to prevent its further spread (Binggeli 1992).<br><br>Sycamore maple has been planted in temperate and coastal areas worldwide. It is considered invasive in regions including New Zealand, Australia, and Chile (Wikipedia 2011, Binggeli 1992).  In North America, it has naturalized from plantings in New England, New York City, and the Pacific Northwest; it is prohibited for sale or planting in Connecticut and Massachusetts (USDA, NRCS 2011).<br><br>Sycamore maple is used for timber production in Europe, as an ornamental and specimen tree, and in Bonsai. Its medium-weight white wood is used for making musical instruments, furniture, wood flooring and parquetry. Occasional trees produce wavy-grained wood, known as rippled sycamore, which is valued for decorative veneers (Wikipedia 2011). The flowers are appreciated by apiarists for honey production. <br><br><i>A. pseudoplatanus</i> is the type species of the genus <i>Acer</i>. The genus is sometimes classified in its own family, Aceraceae, but is grouped in Sapindaceae (along with Hippocastanaceae) in the most recent version of the Angiosperm Phyologeny Group system (Stevens 2001).<br>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -3968,11 +3915,8 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Père David's Maple",
         "language": "en",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "Trees ca. 10 m tall, andromonoecious, but often with an androdioecious sex expression. Bark gray-brown. Branchlets brownish green or greenish purple, glabrous; winter buds oblong, small, glabrous, scales 2 pairs. Leaves deciduous; petioles 3-6 cm, rufous pubescent when young; leaf blade abaxially pale green, adaxially dark green, ovate, ovate-oblong, or suborbicular-ovate, (6-)8-12(-14) × (4-)5-8(-9) cm, papery, abaxially rufous pubescent on veins when young, glabrescent when mature, adaxially glabrous, veins 10-13 pairs, base subcordate or rounded, margin undivided or (3 or)5-lobed, serrulate or doubly serrate, apex acuminate or rarely caudate-acuminate; lobes apically obtuse or middle lobe triangular and lateral and basal lobes apically acute. Flowers greenish yellow. Inflorescence pendulous, racemose. Pedicel 1-1.5 cm, slender. Sepals 5, elliptic, ca. 4 mm, apex obtuse. Petals 5, obovate, ca. 4 mm. Stamens 8, ca. 3 mm, glabrous; anthers yellow. Disk glabrous, lobes intrastaminal. Ovary rudimentary. Fruit brownish yellow; nutlets flat, 8-10 × ca. 6 mm; wing including nutlet 2.5-2.8 cm, wings spreading horizontally or obtusely. Fl. Mar-Apr, fr. Sep. 2<i>n</i> = 26."
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -4081,11 +4025,8 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Paperbark Maple",
         "language": "en",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "SE Gansu, SW Henan, W Hubei, NW Hunan, S Shaanxi, S Shanxi, E Sichuan."
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -4154,7 +4095,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Bailey acacia",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Bailey's Wattle",
@@ -4175,11 +4116,8 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Mimosa de Bailey",
         "language": "fr",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "\"Notes: Western Ghats, Cultivated, Native of Australia\""
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -4308,7 +4246,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Silberakazie",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Mimose",
@@ -4321,7 +4259,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "Silver Wattle",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Aroma",
@@ -4334,12 +4272,12 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "mimosa",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Mimosa argenté, Mimosa des fleuristes, Mimosa de Bormes",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Acacia Blanc",
@@ -4348,11 +4286,8 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "acacia bianca",
         "language": "it",
-        "eol_preferred": true
+        
       }
-    ],
-    "descriptions": [
-      "<em>Unarmed</em> shrub or small tree, to 10 m. <em>Leaves grey-pruinose</em>: <em>rhachis bearing glands on upper side, only at the junction of each pair of pinnae</em>. Leaves with c.12-25 pairs of pinnae; leaflets to 5.5 mm, numerous.  <em>Flowers bright yellow<em>. Pods not or only slightly beaded.</em></em>"
     ],
     "taxonomy": {
       "kingdom": "Plantae",

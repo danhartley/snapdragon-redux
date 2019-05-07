@@ -109,12 +109,12 @@ export const mushrooms = [
       {
         "vernacularName": "Grünling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Man-on-Horseback",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Man on Horseback",
@@ -143,7 +143,7 @@ export const mushrooms = [
       {
         "vernacularName": "Tortulho",
         "language": "pt",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -221,7 +221,7 @@ export const mushrooms = [
       {
         "vernacularName": "Kiefernsteinpilz",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Gemeiner Steinpilz",
@@ -234,12 +234,12 @@ export const mushrooms = [
       {
         "vernacularName": "Pine Bolete",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Cèpe des pins",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Cogumelo do soito",
@@ -252,7 +252,7 @@ export const mushrooms = [
       {
         "vernacularName": "Boletus pinicola",
         "language": "pt",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -385,12 +385,12 @@ export const mushrooms = [
       {
         "vernacularName": "Semmel-Stoppelpilz",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Hedgehog Mushroom",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Wood Hedgehog",
@@ -399,12 +399,12 @@ export const mushrooms = [
       {
         "vernacularName": "Pied de mouton",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Pé-de-cabra",
         "language": "pt",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Língua-de-vaca",
@@ -625,7 +625,7 @@ export const mushrooms = [
       {
         "vernacularName": "Gemeiner Steinpilz",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Fichtensteinpilz",
@@ -642,7 +642,7 @@ export const mushrooms = [
       {
         "vernacularName": "King Bolete",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Cep",
@@ -655,7 +655,7 @@ export const mushrooms = [
       {
         "vernacularName": "Boletus edulis",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Calabaza",
@@ -764,12 +764,12 @@ export const mushrooms = [
       {
         "vernacularName": "Cèpe de Bordeaux",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "porcino",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Boleto",
@@ -1201,7 +1201,7 @@ export const mushrooms = [
       {
         "vernacularName": "Gallenröhrling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Bitterröhrling",
@@ -1210,12 +1210,12 @@ export const mushrooms = [
       {
         "vernacularName": "Bitter Bolete",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Bolet amer",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Bolet de fiel",
@@ -1439,7 +1439,7 @@ export const mushrooms = [
       {
         "vernacularName": "Common Earthball",
         "language": "en",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -1602,7 +1602,7 @@ export const mushrooms = [
       {
         "vernacularName": "Yellow Morel",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Morel",
@@ -1611,7 +1611,7 @@ export const mushrooms = [
       {
         "vernacularName": "Colmenilla",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Bolsita",
@@ -1664,7 +1664,7 @@ export const mushrooms = [
       {
         "vernacularName": "Spongiola",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "spugnola gialla",
@@ -1813,7 +1813,7 @@ export const mushrooms = [
       {
         "vernacularName": "Echter Pfifferling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Eierschwamm",
@@ -1826,7 +1826,7 @@ export const mushrooms = [
       {
         "vernacularName": "Chanterelle",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Rapazinho",
@@ -1835,12 +1835,12 @@ export const mushrooms = [
       {
         "vernacularName": "Cantarelo",
         "language": "pt",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Cantarela",
         "language": "pt",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Flor",
@@ -1985,12 +1985,12 @@ export const mushrooms = [
       {
         "vernacularName": "False Morel",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "giromitra esculenta",
         "language": "it",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -2109,12 +2109,12 @@ export const mushrooms = [
       {
         "vernacularName": "Jack O’Lantern",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Clitocybe illusoire",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Clitocybe trompeur",
@@ -2229,7 +2229,7 @@ export const mushrooms = [
       {
         "vernacularName": "Wiesen-Champignon",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Feld-Egerling",
@@ -2246,7 +2246,7 @@ export const mushrooms = [
       {
         "vernacularName": "Field Mushroom",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Pink Bottom",
@@ -2255,12 +2255,12 @@ export const mushrooms = [
       {
         "vernacularName": "Champiñon Silvestre",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Agaric champêtre",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Rosé des prés",
@@ -2405,7 +2405,7 @@ export const mushrooms = [
       {
         "vernacularName": "Gemeiner Riesenschirmling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Parasol",
@@ -2422,12 +2422,12 @@ export const mushrooms = [
       {
         "vernacularName": "Parasol Mushroom",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Lépiote élevée",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Baguette-de-tambour",
@@ -2557,7 +2557,7 @@ export const mushrooms = [
       {
         "vernacularName": "Tintenegerling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Karbolegerling",
@@ -2570,12 +2570,12 @@ export const mushrooms = [
       {
         "vernacularName": "Yellow Stainer",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Agaric jaunissant",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Psalliote jaunissante",
@@ -2810,7 +2810,7 @@ export const mushrooms = [
       {
         "vernacularName": "Perlpilz",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Rötender Knollenblätterpilz",
@@ -2823,7 +2823,7 @@ export const mushrooms = [
       {
         "vernacularName": "The Blusher",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "blusher",
@@ -2833,7 +2833,7 @@ export const mushrooms = [
       {
         "vernacularName": "Amanite rougissante",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Amanite vineuse",
@@ -3058,7 +3058,7 @@ export const mushrooms = [
       {
         "vernacularName": "Falscher Pfifferling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Falscher Eierschwamm",
@@ -3071,12 +3071,12 @@ export const mushrooms = [
       {
         "vernacularName": "False Chanterelle",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Fausse chanterelle",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Chanterelle orangée",
@@ -3218,7 +3218,7 @@ export const mushrooms = [
       {
         "vernacularName": "Spitzhütiger Knollenblätterpilz",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Kegelhütiger Knollenblätterpilz",
@@ -3231,7 +3231,7 @@ export const mushrooms = [
       {
         "vernacularName": "The Destroying Angel",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "European Destroying Angel",
@@ -3244,7 +3244,7 @@ export const mushrooms = [
       {
         "vernacularName": "Amanite vireuse",
         "language": "fr",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -3402,17 +3402,17 @@ export const mushrooms = [
       {
         "vernacularName": "Rosa Rettich-Helmling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Rosy Bonnet",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Mycène pure forme rose",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Gravelot de Mongolie",
@@ -3547,7 +3547,7 @@ export const mushrooms = [
       {
         "vernacularName": "Aniseed Cap",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Aniseed Funnel",
@@ -3695,12 +3695,12 @@ export const mushrooms = [
       {
         "vernacularName": "Pantherpilz",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Panthercap",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "panther amanita",
@@ -3709,7 +3709,7 @@ export const mushrooms = [
       {
         "vernacularName": "Amanite panthère",
         "language": "fr",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -3920,7 +3920,7 @@ export const mushrooms = [
       {
         "vernacularName": "Blauer Lacktrichterling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Amethyst Lacktrichterling",
@@ -3941,12 +3941,12 @@ export const mushrooms = [
       {
         "vernacularName": "Amethyst Deceiver",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Laccaire améthyste",
         "language": "fr",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -4209,7 +4209,7 @@ export const mushrooms = [
       {
         "vernacularName": "wood ear",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Jelly Ear",
@@ -4226,12 +4226,12 @@ export const mushrooms = [
       {
         "vernacularName": "oreja de Judas",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "orecchio di Giuda",
         "language": "it",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -4362,7 +4362,7 @@ export const mushrooms = [
       {
         "vernacularName": "Schopf-Tintling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Porzellantintling",
@@ -4379,7 +4379,7 @@ export const mushrooms = [
       {
         "vernacularName": "shaggy mane",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Lawyer’s Wig",
@@ -4396,7 +4396,7 @@ export const mushrooms = [
       {
         "vernacularName": "Barbuda",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "apagator",
@@ -4409,12 +4409,12 @@ export const mushrooms = [
       {
         "vernacularName": "agarico chiomato",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Coprino-barbudo",
         "language": "pt",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -4564,7 +4564,7 @@ export const mushrooms = [
       {
         "vernacularName": "Laubporling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Gemeiner Klapperschwamm",
@@ -4589,7 +4589,7 @@ export const mushrooms = [
       {
         "vernacularName": "Hen of the Woods",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "maitake",
@@ -4606,7 +4606,7 @@ export const mushrooms = [
       {
         "vernacularName": "Polypore en touffe",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Poule de bois",
@@ -4733,7 +4733,7 @@ export const mushrooms = [
       {
         "vernacularName": "Grüne Knollenblätterpilz",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Grüner Knollenblätterpilz",
@@ -4742,7 +4742,7 @@ export const mushrooms = [
       {
         "vernacularName": "The Death Cap",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Death Cap Mushroom",
@@ -4759,12 +4759,12 @@ export const mushrooms = [
       {
         "vernacularName": "Oronja Mortal",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Oronge ciguë verte",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Oronge verte",
@@ -4871,7 +4871,7 @@ export const mushrooms = [
       {
         "vernacularName": "Caesar's Mushroom",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Ovo-de-rei",
@@ -4884,7 +4884,7 @@ export const mushrooms = [
       {
         "vernacularName": "Cogumelo-dos-césares",
         "language": "pt",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Laranja",
@@ -5093,7 +5093,7 @@ export const mushrooms = [
       {
         "vernacularName": "Birnen-Bovist",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Birnen-Stäubling",
@@ -5106,7 +5106,7 @@ export const mushrooms = [
       {
         "vernacularName": "Stump Puffball",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Birnenbovist",
@@ -5127,7 +5127,7 @@ export const mushrooms = [
       {
         "vernacularName": "Vesse de loup en poire",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Vesse-de-loup piriforme",
@@ -5381,7 +5381,7 @@ export const mushrooms = [
       {
         "vernacularName": "Austernseitling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Austernpilz",
@@ -5394,12 +5394,12 @@ export const mushrooms = [
       {
         "vernacularName": "Oyster Mushroom",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "orellanes",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "pleuroto ostreato",
@@ -5408,12 +5408,12 @@ export const mushrooms = [
       {
         "vernacularName": "Pleurote en huître",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Pinella",
         "language": "it",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "agarico ostreato",
@@ -5543,7 +5543,7 @@ export const mushrooms = [
       {
         "vernacularName": "Spechttintling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Elsterntintling",
@@ -5552,12 +5552,12 @@ export const mushrooms = [
       {
         "vernacularName": "Magpie Inkcap",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Coprin pie",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Coprin noir et blanc",
@@ -5640,7 +5640,7 @@ export const mushrooms = [
       {
         "vernacularName": "Pom-pom Mushroom",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Bearded Tooth",
@@ -5827,7 +5827,7 @@ export const mushrooms = [
       {
         "vernacularName": "Gemeiner Schwefelporling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Schwefelgelber Porling",
@@ -5844,7 +5844,7 @@ export const mushrooms = [
       {
         "vernacularName": "Sulphur Shelf",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Bracket Fungus",
@@ -5877,7 +5877,7 @@ export const mushrooms = [
       {
         "vernacularName": "Polypore soufré",
         "language": "fr",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {
@@ -6116,7 +6116,7 @@ export const mushrooms = [
       {
         "vernacularName": "horn of plenty",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Trompeta-da-morte",
@@ -6204,7 +6204,7 @@ export const mushrooms = [
       {
         "vernacularName": "Rinnigbereifter Trichterling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Rinnigbereifter Gifttrichterling",
@@ -6213,7 +6213,7 @@ export const mushrooms = [
       {
         "vernacularName": "Sweating mushroom",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Fool’s Funnel",
@@ -6222,7 +6222,7 @@ export const mushrooms = [
       {
         "vernacularName": "Clitocybe du bord des routes",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Clitocybe blanchi",
@@ -6320,7 +6320,7 @@ export const mushrooms = [
       {
         "vernacularName": "Nelken-Schwindling",
         "language": "de",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Feld-Schwindling",
@@ -6329,7 +6329,7 @@ export const mushrooms = [
       {
         "vernacularName": "Fairy Ring Champignon",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "fairy-ring mushroom",
@@ -6338,7 +6338,7 @@ export const mushrooms = [
       {
         "vernacularName": "camasec",
         "language": "es",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "moxerno",
@@ -6351,7 +6351,7 @@ export const mushrooms = [
       {
         "vernacularName": "Faux mousseron",
         "language": "fr",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Marasme des Oréades",
@@ -6360,7 +6360,7 @@ export const mushrooms = [
       {
         "vernacularName": "gambe sèche",
         "language": "it",
-        "eol_preferred": true
+        
       }
     ],
     "taxonomy": {

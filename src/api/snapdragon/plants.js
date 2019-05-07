@@ -699,7 +699,7 @@ export const plants = [
       {
         "vernacularName": "European Olive",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Olijf",
@@ -4925,7 +4925,7 @@ export const plants = [
       {
         "vernacularName": "wild tarragon",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "wild tarragon",
@@ -9333,7 +9333,7 @@ export const plants = [
       {
         "vernacularName": "Apricot",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Apricot",

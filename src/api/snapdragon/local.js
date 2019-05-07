@@ -575,7 +575,7 @@ export const local = [
       {
         "vernacularName": "Little egret",
         "language": "en",
-        "eol_preferred": true
+        
       },
       {
         "vernacularName": "Little egret",
