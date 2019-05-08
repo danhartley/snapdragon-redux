@@ -71,6 +71,8 @@ const renderLandscape = (item, config, traits, mode, rootNode) => {
     const inatNode = rootNode.querySelector('.js-inat-box');
 
     renderInatDataBox(inatNode, item, config, mode);
+
+    lookALikes(item, traits, config);
 };
 
 const renderPortrait = (item, config, traits, mode, rootNode) => {
@@ -148,8 +150,7 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
             document.querySelector('#badgeListModal .js-modal-text').innerHTML = html;
         });
     }
-
-    lookALikes(item, traits, config);
+    
     renderFeatures(item, traits, config, rootNode.querySelector('.js-feature-types'), mode, isInCarousel);
     
     const calendarNode = rootNode.querySelector('.js-calendar-box');
