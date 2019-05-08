@@ -136,7 +136,7 @@ export const birds = [
         "language": "en"
       },
       {
-        "vernacularName": "sparrow, house",
+        "vernacularName": "house sparrow",
         "language": "en"
       },
       {

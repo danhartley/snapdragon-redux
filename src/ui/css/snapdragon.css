@@ -1004,12 +1004,9 @@ button.btn-light:focus,
   width: 50%;
 }
 
-.species-count span {
-  font-size: 1.2rem;
-}
-
-.species-count p {
-  margin: 1rem 0 0 0;
+.species-count {
+  font-size: .8rem;
+  vertical-align: super;
 }
 
 .clear-lesson button {
@@ -1096,10 +1093,6 @@ span.correct {
   color: var(--snap-inactive);
 }
 
-/* .snap-success {
-  border: 0.2rem solid var(--snap-success);
-} */
-
 .layer.snap-success {
   border: none;
   color: rgba(40, 167, 69,.5);
@@ -1124,10 +1117,6 @@ span.correct {
 .snap-alert-fg {
   color: var(--snap-alert);
 }
-
-/* .snap-alert {
-  border: 0.2rem solid var(--snap-alert);
-} */
 
 .layer.snap-alert {
   border: none;

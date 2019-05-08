@@ -97,7 +97,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
         subscription.remove(subscription.getByName('renderSpeciesGrid'));
     };
 
-    const guideSummary = (speciesCount) => {
+    const guideSummary = speciesCount => {
         const parent = document.querySelector('.home-container .js-snapdragon-tag');
         if(parent) {
             parent.innerHTML = '';
@@ -128,7 +128,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
                 actionLink.removeAttribute('data-toggle');    
                 actionLink.innerHTML = config.isLandscapeMode ? 'Get Species' : 'Species';                
                 elem.removeClass(document.querySelector('.js-for-text'), 'hide');                
-                guideSummary();
+                guideSummary(collection.items.length);
                 actionLink.removeEventListener(prepareHandler);
                 actionLink.addEventListener('click', prepareHandler);
                 break;

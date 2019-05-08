@@ -43,9 +43,9 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
             const icon = returnTaxonIcon(taxon.id.toLowerCase());
             icons += icon;
         })
-        taxaNode.innerHTML = icons;
+        taxaNode.innerHTML = `${icons}<span class="hide-empty species-count js-species-count">${speciesCount}</span` ;
     } else {
-        taxaNode.innerHTML = 'All species';
+        taxaNode.innerHTML = `All species<span class="hide-empty species-count js-species-count">${speciesCount}</span`;
     }
     
     const iNatId = document.querySelector('.js-iNatId');
