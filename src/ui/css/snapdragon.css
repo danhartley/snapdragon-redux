@@ -1271,6 +1271,10 @@ span.correct {
   float: left;
 }
 
+.non-taxon .btn-secondary:not(:disabled):not(.disabled).active {
+  background-color: var(--snap-species-header-background);
+}
+
 .rb.btn-group {
   display: flex;
   flex-direction: column;
