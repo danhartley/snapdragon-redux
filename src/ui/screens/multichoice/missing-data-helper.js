@@ -125,8 +125,8 @@ export const getPoolItems = collection => {
   let taxonicMatches = species.filter(item => matchTaxonKey(item.taxonomy,[rank]).value);
 
   if(rank === 'fungi') {
-      const itemIsALichen = item.lichen;
-      taxonicMatches = itemIsALichen ? taxonicMatches.filter(item => item.lichen) : taxonicMatches.filter(item => !item.lichen);
+      const isLichen = item.lichen;
+      taxonicMatches = isLichen ? taxonicMatches.filter(item => item.lichen) : taxonicMatches.filter(item => !item.lichen);
   }
 
   const speciesInSameTaxon = utils.shuffleArray(taxonicMatches.filter(ci => ci.name !== item.name));

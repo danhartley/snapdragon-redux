@@ -4156,4 +4156,29 @@ export const taxa = [
             { name: SD.name.MATING_SYSTEM, value: SD.mating.MONOGAMOUS },     
         ],
     },
+    {
+        taxon: 'family',
+        name: 'Cercidiphyllaceae',
+        genera: '1',
+        species: '2',
+        names: [ { language: "en", names: ['' ]},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ '' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "",
+        thumb: '57/01/ba/509.1867899.jpg',
+        eol: "https://eol.org/pages/4292",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Comprises a single genus and two deciduous tree species from China and Japan. Wind-pollinated.',
+                identification: 'Flowers are unisexual and lack perianth parts. Separate male and female plants. Flowers are actually clusters of flowers, each flower reduced to a few stamens or a single carpel.', 
+            },
+        ],
+        traits: [            
+        ],
+    },
 ];

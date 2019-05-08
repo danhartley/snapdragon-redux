@@ -38,7 +38,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     renderTemplate({}, template.content, DOM.rightBody);
 
     let state = (config.collection.id === 0 || !config.guide.ready)
-            ? 'CREATE-LESSON' : (collection && collection.layoutCounter > 0) // lesson.layoutCounter
+            ? 'CREATE-LESSON' : (lesson && lesson.layoutCounter > 0)
                 ? 'RESUME-LESSON'
                 : noRecords
                     ? 'CREATE-LESSON'

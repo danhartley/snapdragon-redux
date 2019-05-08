@@ -27,9 +27,9 @@ export const renderMultiStrips = (collection, bonus) => {
     const item = collection.nextItem;
 
     const taxon = matchTaxon(item.taxonomy, iconicTaxa);
-    const iconicTaxonFamilies = familyProps.getUniqueFamiliesByIconicTaxon(species, taxon.rank, taxon.value);
-    const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, iconicTaxonFamilies));
-
+    const iconicTaxonFamilies = familyProps.getUniqueFamiliesByIconicTaxon(species, taxon.rank, taxon.value, item.lichen);
+    let families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, iconicTaxonFamilies));
+  
     screen = layout.screens[1];
 
     try {
@@ -41,8 +41,9 @@ export const renderMultiStrips = (collection, bonus) => {
         const question = (overrides && overrides.question) ? overrides.question : 'Match the name';
         const helpDefault = config.isLandscapeMode ? '(Click on the name below.)' : '(Tap on the name below.)';
         const help = (overrides && overrides.help !== undefined) ? overrides.help : helpDefault;
-        const term = (overrides && overrides.term !== undefined) ? overrides.term: '';
-        const className = (overrides && overrides.className !== undefined) ? overrides.className: '';
+        const term = (overrides && overrides.term !== undefined) ? overrides.term : '';
+        const className = (overrides && overrides.className !== undefined) ? overrides.className : '';
+        const conceals = (overrides && overrides.conceals !== undefined) ? overrides.conceals : ['', '', '', '', '', ''];
         
         const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help, term, className });
 
@@ -52,7 +53,14 @@ export const renderMultiStrips = (collection, bonus) => {
         
         template.innerHTML = stripTemplate;
 
-        renderTemplate({ answers }, template.content, parent);
+        const options = answers.map((answer, index) => {
+            return {
+                answer,
+                conceal: conceals[index]
+            }
+        });
+
+        renderTemplate({ options }, template.content, parent);
 
         const strips = document.querySelectorAll('.js-rptr-strips .strip');
 
@@ -94,10 +102,19 @@ export const renderMultiStrips = (collection, bonus) => {
         scoreHandler('strip', test, callback, config);
     }
 
+    const getSpeciesFromSameIconicTaxon = (species, item, taxon) => {
+        let matches = species.filter(s => s.taxonomy).filter(s => s.taxonomy[taxon.rank].toLowerCase() === taxon.value);
+        if(taxon.value === 'fungi') {
+            const isLichen = item.lichen;
+            matches = isLichen ? matches.filter(match => match.lichen) : matches.filter(match => !match.lichen);
+        } 
+        return matches;
+    };
+
     if(screen.name === 'species-scientifics') {
 
         let question = item.name;
-        let answers = species.filter(s => s.taxonomy).filter(s => s.taxonomy[taxon.rank].toLowerCase() === taxon.value);
+        let answers = getSpeciesFromSameIconicTaxon(species, item, taxon);
             answers = R.take(8, answers).filter(s => s.name !== item.name).map(s => s.name);
             answers = R.take(5, answers);
             answers.push(item.name);
@@ -111,7 +128,7 @@ export const renderMultiStrips = (collection, bonus) => {
     if(screen.name === 'species-vernaculars') {
 
         let question = item.vernacularName;   
-        let filteredAnswers = species.filter(s => s.taxonomy).filter(s => s.taxonomy[taxon.rank].toLowerCase() === taxon.value);
+        let filteredAnswers = getSpeciesFromSameIconicTaxon(species, item, taxon);
             filteredAnswers = R.take(8, filteredAnswers).filter(s => !R.contains(item.vernacularName, s.names.map(n => n.vernacularName)));
         let answers = filteredAnswers.map(s => s.names.filter(n => n.language === config.language)).filter(a => a.length > 0);
             const noOfAnswers = 8 - answers.length;
@@ -132,39 +149,20 @@ export const renderMultiStrips = (collection, bonus) => {
     if(screen.name === 'family-strips') {
 
         const random = utils.getRandomInt(2);
-    
-        // 'match-family-to-quick-id'
-        if(random === 0) {
 
-            const ffs = species.filter(s => s.kingdom === item.kingdom).map(s => s.family);
-            const ns = taxa.map(t => t.name);
-            const missing = ffs.filter(f => !R.contains(f,ns));
-            console.log(missing.filter(utils.onlyUnique));
-        
-            const number = config.isPortraitMode ? 4 : 4;
+        const type = random === 0 ? 'identification' : 'summary';
 
-            const question = families.length > 0 ? families.find(f => f.name === item.family).descriptions[0].identification : 'no families available';
-            const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family && f.descriptions && f.descriptions[0].identification && f.descriptions[0].identification !== undefined && f.descriptions[0].identification !== '')).map(f => f.descriptions[0].identification);
-            const answers = utils.shuffleArray([question, ...alternatives]);
+        const number = config.isPortraitMode ? 4 : 4;
 
-            const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
+        const question = families.find(f => f.name === item.family).descriptions[0][type];
+        const alternativeFamilies = R.take(number-1, R.take(number, utils.shuffleArray(families)));
+        const alternatives = alternativeFamilies.filter(f => f.name !== item.family && f.descriptions && f.descriptions[0][type] && f.descriptions[0][type] !== undefined && f.descriptions[0][type] !== '').map(f => f.descriptions[0][type]);
+        const answers = utils.shuffleArray([question, ...alternatives]);
+        const answersFamilyNames = [ item.family, ...alternativeFamilies.map(af => af.name) ]
 
-            render(question, answers, { question: 'Match species family', help });
-        }
+        const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
 
-        // 'match-family-to-summary'
-        if(random === 1) {
-            
-            const number = config.isPortraitMode ? 4 : 4;
-            const itemFamily = families.find(f => f.name === item.family);
-            const question = itemFamily.descriptions[0].summary;
-            const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(families)).filter(f => f.name !== item.family && f.descriptions && f.descriptions[0].summary && f.descriptions[0].summary !== undefined && f.descriptions[0].summary !== '')).map(f => f.descriptions[0].summary);
-            const answers = utils.shuffleArray([question, ...alternatives]);
-
-            const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
-
-            render(question, answers, { question: 'Match species family', help });
-        }
+        render(question, answers, { question: 'Match species family', help, conceals: answersFamilyNames });
     }
 
     if(screen.name === 'epithet') {
