@@ -85,6 +85,8 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel)
 
         let lookalikeNames = itemProperties.itemContextProperty(traits, item, 'look-alikes');
 
+        if(lookalikeNames === '') return;
+
             lookalikeNames = lookalikeNames.filter(name => name !== item.name);
 
         if(lookalikeNames) {
