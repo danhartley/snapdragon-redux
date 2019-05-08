@@ -105,7 +105,7 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
 
     slides.forEach((slide, index) => {
         const header = document.querySelectorAll(`#imageComparisonModal .js-modal-image-title > span`)[index];
-        header.innerHTML = `<span class="common-name">${slide.images[0].itemCommon}</span><span class="latin-name">(${slide.images[0].itemName})</span>`;
+        header.innerHTML = `<span class="common-name">${slide.images[0].itemCommon}</span><span class="latin-name">${slide.images[0].itemName}</span>`;
         const item = { name: slide.images[0].itemName, itemCommon: slide.images[0].itemCommon, images: slide.images };
         const images = prepImagesForCarousel(item, config, imageUseCases.CAROUSEL);
         renderTemplate({ images, index: index + 1 }, sideBySlider.content, parent);

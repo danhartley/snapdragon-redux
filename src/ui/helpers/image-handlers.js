@@ -116,7 +116,7 @@ export const modalImageHandler = (image, item, collection, config, displayNameTy
                 displayName = 'Species name withheld';
                 break;
             default:
-                displayName = `<span>${selectedItem.vernacularName}</span> <span class="latin-name">(${selectedItem.name})</span>`;
+                displayName = `<span>${selectedItem.vernacularName}</span> <span class="latin-name">${selectedItem.name}</span>`;
         }
         DOM.modalImageTitle.innerHTML = displayName;        
     })

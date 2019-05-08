@@ -13,10 +13,12 @@ const getUniqueFamilies = items => {
     return [ ...new Set(families) ];
 };
 
-const getUniqueFamiliesByIconicTaxon = (items, iconicTaxonRank, iconicTaxonValue) => {
+const getUniqueFamiliesByIconicTaxon = (items, iconicTaxonRank, iconicTaxonValue, isLichen) => {
     const matchingItems = items.map(item => {
-        if(item.taxonomy && item.taxonomy[iconicTaxonRank] && item.taxonomy[iconicTaxonRank].toLowerCase() === iconicTaxonValue.toLowerCase()) {
-            return item;
+        if(item.taxonomy && item.taxonomy[iconicTaxonRank] && item.taxonomy[iconicTaxonRank].toLowerCase() === iconicTaxonValue.toLowerCase()) {            
+            if(iconicTaxonValue === 'fungi') {
+                return item.lichen === isLichen ? item : null;
+            }
         }
     }).filter(item => item);
     const families = getTaxa(matchingItems, 'family').map(item => item.family);
