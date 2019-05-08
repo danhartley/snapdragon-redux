@@ -135,10 +135,10 @@ const answersFromList = (list, toInclude, number) => {
 
 const itemContextProperty = (traits, item, propertyName) => {
     const trait = traits.find(trait => trait.name === item.name);
-    if(!trait)return '';
+    if(!trait)return [];
     let property = trait.traits.find(c => c.name === propertyName);
     if(!property && trait.context) property = trait.context.find(c => c.name === propertyName);
-    if(!property) return '';
+    if(!property) return [];
 
     return property.values || property.value;
 };

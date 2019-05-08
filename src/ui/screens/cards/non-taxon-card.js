@@ -5,7 +5,6 @@ import { species } from 'api/species';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
-import { infoSlider } from 'ui/screens/common/info-slider';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import * as group from 'api/snapdragon/non-taxa';
 import { renderWiki } from 'wikipedia/wiki';
@@ -20,14 +19,14 @@ export const subscribeToNonTaxaSelection = callback => {
     subscriptions.push(callback);
 };
 
-export const renderNonTaxonCard = (collection, mode = 'STAND_ALONE', keyTrait, parent = DOM.rightBody, imageUrl) => {
+export const renderNonTaxonCard = (mode = 'STAND_ALONE', keyTrait, parent = DOM.rightBody, url) => {
 
     const prev = document.querySelector('#cardModal .js-prev');
     const next = document.querySelector('#cardModal .js-next');
     if(prev) prev.style.display = 'none';
     if(next) next.style.display = 'none';
 
-    const { enums, config, lessonPlan } = store.getState();
+    const { enums, config } = store.getState();
 
     const nonTaxa = group.getNonTaxa(enums).filter(nt => nt.group === group.nonTaxaGroup[0].LICHEN_FORM);
 
@@ -70,13 +69,13 @@ export const renderNonTaxonCard = (collection, mode = 'STAND_ALONE', keyTrait, p
         const lookup = { name: nonTaxon.name };
 
         const idNode = document.querySelector('.id-box > div:nth-child(2) > div');
-        idNode.innerHTML = nonTaxon.quickId;
+              idNode.innerHTML = nonTaxon.quickId;
 
         const definitionNode = document.querySelector('.js-non-taxa-definition div');
-        definitionNode.innerHTML = nonTaxon.definition;
+              definitionNode.innerHTML = nonTaxon.definition;
 
-        const infoNode = document.querySelector('.js-info-box');
-        infoSlider({traits:nonTaxon.traits, name: `${keyTrait} lichen`}, nonTaxa, null, infoNode);
+        const nameNode = document.querySelector('.non-taxon.card .js-names-container > div:nth-child(1)');
+              nameNode.innerHTML = nonTaxon.id;
 
         if(mode === 'MODAL') {
         } else {
@@ -85,13 +84,29 @@ export const renderNonTaxonCard = (collection, mode = 'STAND_ALONE', keyTrait, p
         }
     };
 
+    let rootNode;
+
+    switch(mode) {
+        case 'STAND_ALONE':
+            rootNode = document.querySelector('.right-body');
+            break;
+        case 'SWAP_OUT':
+            rootNode = document.querySelector('.js-taxon-container');
+            break;
+        case 'MODAL':
+            rootNode = document.querySelector('#cardModal');
+            break;
+    }
+
     parent.innerHTML = '';
 
-    renderTemplate({group: nonTaxa, imageUrl}, template.content, parent);
+    renderTemplate({group: nonTaxa, imageUrl: url}, template.content, parent);
 
-    document.querySelector('#cardModal .js-modal-text-title').innerHTML = `Lichen Forms`;
+    if(mode === 'MODAL') {
+        rootNode.querySelector('#cardModal .js-modal-text-title').innerHTML = `Lichen Forms`;
+    }
 
-    document.querySelectorAll('.non-taxon .btn.btn-secondary').forEach(form => {
+    rootNode.querySelectorAll('.js-non-taxa .btn.btn-secondary').forEach(form => {
         form.addEventListener('click', event => {
             const id = event.target.id;
             callback(id);
