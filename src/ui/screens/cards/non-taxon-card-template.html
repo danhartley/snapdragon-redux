@@ -1,38 +1,52 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
 
-<div class="snapdragon-container non-taxon-card js-non-taxon-card">
-    <div class="portrait-grid non-taxon-card-images carousel js-non-taxon-card-images"></div>        
-    
+<div class="snapdragon-container test-card-container js-species-card">    
+    <div class="portrait-grid non-taxon-card-images carousel js-non-taxon-card-images"></div>    
     <div class="non-taxon card">
-        <div>
-            <div class="non-taxa js-non-taxa">                
-                <div class="btn-group btn-group-toggle" data-toggle="buttons" data-repeat-taxon="{{ group }}">
-                    <label class="btn btn-secondary" id="{{ taxon.id }}">
-                        <input type="radio" name="options" id="{{ taxon.id }}" autocomplete="off" checked> {{ taxon.id }}
-                    </label>
+        <div id="taxon-card-header" class="question-container">
+                <div>
+                    <span class="iconic-icon js-iconic-icon"><span class="mushroom-icon-header"><svg-icon class="si-glyph-mushrooms"><src href="./icons/si-glyph-mushrooms.svg"/></svg></span></span>
                 </div>
-                <div class="species-header js-species-header">
+                <div class="hide-empty question-header">
+                    <div>
+                        <div class="names-container vernacular-name-badge js-names-container">
+                            <div>
+                                Foliose
+                            </div>
+                            <div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="species-header landscape js-species-header">                        
                     <img class="landscape" src="https://content.eol.org/data/media/{{ imageUrl }}" alt="">
-                </div>                
-            </div>                                    
-        </div>        
-        <div class="landscape non-taxa-definition js-non-taxa-definition">
-            <div></div>
-        </div>
-        <div>
-            <div class="id-box">
-                <div>
-                    <div>Quick ID</div>
                 </div>
-                <div>
-                    <div></div>
+        </div>  
+        <div class="non-taxa js-non-taxa">                
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" data-repeat-taxon="{{ group }}">
+                <label class="btn btn-secondary" id="{{ taxon.id }}">
+                    <input type="radio" name="options" id="{{ taxon.id }}" autocomplete="off" checked> {{ taxon.id }}
+                </label>
+            </div>
+        </div>            
+        <div class="definitions">
+            <div class="non-taxa-definition js-non-taxa-definition">
+                <div></div>
+            </div>
+            <div>
+                <div class="id-box">
+                    <div>
+                        <div>Quick ID</div>
+                    </div>
+                    <div>
+                        <div></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="info-box js-info-box"></div>
-        <hr class="landscape">
-        <div class="landscape species-card-wiki">
-            <span class="js-non-taxon-card-wiki"></span>
+            <div class="landscape species-card-wiki">
+                <span class="non-taxon-card-wiki js-non-taxon-card-wiki"></span>
+            </div>
         </div>
     </div>
 </div>

@@ -20,7 +20,7 @@ export const portraitDefault = {
     default: true,
     levels: [
         {   id: 1,
-            name:'Level 1',
+            name:'Level 1',            
             layouts: [ L.mixedSpeciesMatch, L.latinToCommonMatch ],
             reviewLayouts: [ L.mixedSpeciesMatch, L.latinToCommonMatch ],
             bonusLayouts: [ L.traitPropertyMatch ]

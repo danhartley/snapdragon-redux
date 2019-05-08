@@ -299,7 +299,7 @@ export const english = {
     },
     rank: {},
     colour: {
-        help: 'Which colour most closely describes this species?',
+        help: 'Which colour best describes this species?',
         WHITE: "White",
         YELLOW: "Yellow",
         GREEN: "Green",

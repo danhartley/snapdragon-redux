@@ -196,6 +196,27 @@
     .taxon.card .data-box-container {
         grid-template-columns: 5fr 5.5rem;
     }
+
+    .non-taxa {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 1rem;
+    }
+
+    .non-taxa .btn-group {
+        width: 12rem;
+        flex-direction: column;
+        margin: 0 .5rem;
+    }
+
+    .non-taxa .btn.btn-secondary {
+        height: 3rem;
+    }
+
+    .non-taxon-card-wiki {
+        margin: 0 .5rem 0 0;
+    }
 }
 
 @media (min-width: 1024px) {

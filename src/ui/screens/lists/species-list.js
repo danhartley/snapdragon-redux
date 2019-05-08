@@ -97,8 +97,9 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
             const traitCardLinks = document.querySelectorAll('.js-key-trait-link');
             traitCardLinks.forEach(link => {
                 link.addEventListener('click', event => {
-                    const keyTrait = event.target.dataset.keyTrait;        
-                    renderNonTaxonCard(collection, 'MODAL', keyTrait, cardModal, imageUrl);
+                    const keyTrait = event.target.dataset.keyTrait;
+                    const url = event.target.dataset.url;
+                    renderNonTaxonCard('MODAL', keyTrait, cardModal, url);
                 });
             });
 

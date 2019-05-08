@@ -1,6 +1,7 @@
 import { DOM } from 'ui/dom';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
+import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { renderTemplate } from 'ui/helpers/templating';
 import testCardTemplate from 'ui/screens/cards/test-card-template.html';
 
@@ -66,11 +67,15 @@ export const renderTestCardTemplate = (collection, context) => {
 
         speciesIcon.addEventListener('click', event => {
 
-            renderTaxonCard(collection, 'SWAP_OUT', item, taxonContainer, false);
+            item.lichen 
+                ? renderNonTaxonCard('SWAP_OUT', item.keyTrait, taxonContainer, item.images[0].url)
+                : renderTaxonCard(collection, 'SWAP_OUT', item, taxonContainer, false);
             
             hideCurrentCard(speciesContainer, speciesCard);
 
-            const { card: taxonCard, icon: taxonIcon } = showNextCard(taxonContainer, '.taxon.card');
+            const { card: taxonCard, icon: taxonIcon } = item.lichen
+                ? showNextCard(taxonContainer, '.non-taxon.card')
+                : showNextCard(taxonContainer, '.taxon.card');
 
             handleIconAppearance('#taxon-card-header .js-iconic-icon');
 
