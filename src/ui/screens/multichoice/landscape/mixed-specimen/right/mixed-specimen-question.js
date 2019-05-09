@@ -17,12 +17,17 @@ export const renderMixedSpecimenQuestion = (...args) => {
     const collection = R.clone(args[0]);
     const bonus = args[1]; 
 
-    const { config } = store.getState();
+    const { config, layout } = store.getState();
 
     const item = collection.nextItem;
 
-    const question = bonus.overrides.question || 'Find the species';
-    const help = bonus.overrides.help || '(Click on the matching photo.)';
+    let question = 'Find the species';
+    let help = '(Click on the matching photo.)';
+
+    if(bonus) {
+        question = bonus.overrides.question || question;
+        help = bonus.overrides.help || help;
+    }
 
     const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question, help, term: '' });
     
@@ -73,6 +78,8 @@ export const renderMixedSpecimenQuestion = (...args) => {
     });
 
     document.querySelector('.js-help-txt').addEventListener('click', () => {
-        renderMixedSpecimenImages(collection, 6 / collection.items.length, collection.items);
+        const noOfImagesPerItem = layout.bonus ? 6 / collection.items.length : 1;
+        const preselectedItems = layout.bonus ? collection.items : null;
+        renderMixedSpecimenImages(collection, noOfImagesPerItem, preselectedItems);
     });    
 };
