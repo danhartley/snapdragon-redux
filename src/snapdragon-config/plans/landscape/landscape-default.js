@@ -27,7 +27,7 @@ export const landscapeDefault = {
             name:'Level 1',
             layouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
             reviewLayouts: [ L.mixedSpecimenImages, L.latinToCommonMatch ],
-            bonusLayouts: [ L.traitPropertyMatch ]
+            bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'look-alikes' ] } ]
         },
         {   id: 2,
             name:'Level 2',

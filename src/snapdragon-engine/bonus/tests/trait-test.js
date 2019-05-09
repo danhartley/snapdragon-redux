@@ -9,8 +9,6 @@ export const getTraitTests = itemsInThisRound => {
 
     if(itemsInThisRound === undefined) return [];
 
-    // But for now…
-
     const tests = itemsInThisRound.map(item => {
 
         const { question, answers, overrides } = getTraitTest(item);
@@ -32,7 +30,7 @@ const getTraitTest = item => {
 
     const { enums } = store.getState();
 
-    const traitsToIgnore = [ 'song' ]; // add flag so that this does not need to be updated e.g. ignore: true in the trait data
+    const traitsToIgnore = [ 'song', 'look-alikes' ]; // add flag so that this does not need to be updated e.g. ignore: true in the trait data
 
     let itemTraits = getTraits(enums, item).find(trait => trait.name === item.name);
 
@@ -91,7 +89,7 @@ const getTraitTest = item => {
 
     const answers = utils.getSetOfAnswers(variables, pool, trait);
 
-    const overrides = { question: 'Match the trait', help };
+    const overrides = { question: 'Match the trait', help, trait };
 
     return { question, answers, overrides };
 };

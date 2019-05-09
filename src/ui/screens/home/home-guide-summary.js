@@ -8,6 +8,8 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
     const location = config.guide.locationType === 'longLat' ? config.guide.locationLongLat : config.guide.locationPlace;
     const place = config.guide.locationType === 'longLat' ? config.guide.locationLongLat.split(',')[0] : config.guide.place.name;
     const range = config.guide.speciesRange;
+
+    speciesCount = speciesCount === 0 ? '' : speciesCount;
     
     const taxa = speciesCount 
         ? `${speciesCount} species` 
