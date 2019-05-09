@@ -57,6 +57,16 @@ export const renderMixedSpecimenQuestions = collection => {
     const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
     const boundScore = {};
 
+    const showCorrectAnswer = () => {
+  
+        setTimeout(() => {
+            const wrongAnswer = document.querySelector('.species-card-images .carousel-item.active');
+                  wrongAnswer.classList.remove('active');
+            const rightAnswer = document.querySelector(`[data-title="${item.name}"]`);
+                  rightAnswer.parentElement.classList.add('active');
+        }, 1000);
+    };
+
     document.querySelectorAll('.carousel-item .layer').forEach(img => {
         
         img.addEventListener('click', event => {
@@ -66,14 +76,11 @@ export const renderMixedSpecimenQuestions = collection => {
             const question = item.name;
             const answer = selectedName || 'wrong answer!';
             const isCorrect = answer === question;
-            const className = isCorrect ? 'snap-success' : 'snap-alert';
-            layer.classList.add(className);       
             const answerIcon = document.createElement('span');
             answerIcon.innerHTML = isCorrect 
                     ? '<span class="icon"><i class="fas fa-check-circle"></i></span>'
                     : '<span class="icon"><i class="fas fa-times-circle"></i></span>';
 
-            // layer.appendChild(answerIcon);
             document.querySelector('.attribution-layer').style.display = 'none';
             
             const test = { ...score, itemId: item.id, question, answer, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points};
@@ -85,20 +92,26 @@ export const renderMixedSpecimenQuestions = collection => {
                 continueLessonBtn.disabled = false;                
             };
 
+            if(!score.success) {
+                showCorrectAnswer();
+            }
+            
             scoreHandler('image-match', test, callback, config);
         });
     });
 
     continueLessonBtn.addEventListener('click', event => {
 
-
-        
-
         if(!score.success) {
-            // delay, show correct answer if wrong + its name
+            showCorrectAnswer(boundScore);
+            setTimeout(() => {
+                window.clearTimeout(boundScore.scoreUpdateTimer);
+                actions.boundUpdateScore(boundScore.score);
+            }, 1000);
+        } else {
+            window.clearTimeout(boundScore.scoreUpdateTimer);
+            actions.boundUpdateScore(boundScore.score);
         }
 
-        window.clearTimeout(boundScore.scoreUpdateTimer);
-        actions.boundUpdateScore(boundScore.score);
     });
 };
