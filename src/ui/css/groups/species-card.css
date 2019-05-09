@@ -1,7 +1,3 @@
-/* .feature-symbiont-list.scrollable {
-    max-height: 7.5rem;
-} */
-
 /* TRAITS CAROUSEL */
 
 .bird-song iframe {
@@ -9,19 +5,13 @@
     border: 0;
 }
 
-/* .bird-song div {
-    float: right;
-    min-width: 23.5rem;
-    max-width: 28.5rem;
-} */
-
 .vernacular-name-badge {
     position: relative;
 }
 
 .names-badge {
     font-size: 0.8rem;
-    vertical-align: super;
+    vertical-align: top;
     cursor: pointer;
     min-width: 1rem;
     min-height: 1rem;
@@ -111,16 +101,9 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* align-items: center; */
   }
 
-    /* FEATURES */
-
-    /* .feature-symbiont-list.scrollable {
-    top: 12rem;
-    width: 100%;
-    margin: 0 0 0 0.05rem;
-} */
+  /* FEATURES */
 
 .feature-symbiont-list table {
     width: 100%;
@@ -196,7 +179,6 @@
     }
 
     .mixed-container {
-      /* height: 100%; */
       display: flex;
       justify-content: space-between;
       flex-direction: column;

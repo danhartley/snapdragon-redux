@@ -21,7 +21,11 @@ export const listenToImageSelection = listener => {
     listenersToImageSelection.push(listener);
 };
 
-export const renderMixedSpecimenImages = collection => {
+export const renderMixedSpecimenImages = (...args) => {
+
+    const collection = args[0];
+    const noOfImagesPerItem = args[1] || 1;
+    const preselectedItems = args[2];
 
     const { config, score, lesson } = store.getState();
 
@@ -36,23 +40,32 @@ export const renderMixedSpecimenImages = collection => {
     const parent = DOM.leftBody;
     parent.innerHTML = '';
 
-    const mixedItems = getPoolItems(collection);
+    const mixedItems = preselectedItems || getPoolItems(collection);
 
     mixedItems.map(item => item.images.map(image => {
         return image.url = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config);
     }));
 
-    const images = utils.shuffleArray(mixedItems).map((item, index) => { 
-        return { index: index + 1, ...utils.shuffleArray(item.images)[0], itemName: item.name };
-    });
+    const images = utils.shuffleArray(mixedItems).map((item, index) => {
+        
+        const itemImages = utils.shuffleArray(item.images);
+
+        return itemImages.map((image, imageIndex) => {
+            if(imageIndex < noOfImagesPerItem) {
+                return { index: index + index + imageIndex, ...image, itemName: item.name };
+            }
+        }).filter(image => image);
+    }).flat();
 
     renderTemplate({ images }, template.content, parent);
 
-    listenersToImageSelection.forEach((listener, index) => {
-        if(index === 0) {
-            listener(images);
-        }        
-    });
+    setTimeout(() => {
+        listenersToImageSelection.forEach((listener, index) => {
+            if(index === 0) {
+                listener(images);
+            }
+        });
+    }, 250);
         
     const callback = (score, scoreUpdateTimer) => {
         listenersToUserAnswer.forEach(listener => listener(score, scoreUpdateTimer));

@@ -238,6 +238,7 @@ export const renderMultiStrips = (collection, bonus) => {
     }
 
     if(screen.name === 'trait-property') {
+        
         render(bonus.question, bonus.answers, bonus.overrides);
 
         if(bonus.overrides.trait && bonus.overrides.trait.name === 'song') {

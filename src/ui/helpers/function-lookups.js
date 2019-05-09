@@ -49,6 +49,7 @@ const functions = [
     { name: 'visual-match', func: renderMultiStrips },
     { name: 'trait-images', func: renderBonusSpecimenTiles },
     { name: 'trait-property', func: renderBonusTest },
+    { name: 'lookalike-property', func: renderBonusTest },
     { name: 'symbiotic-property', func: renderMultiStrips },
     { name: 'definition-card', func: renderDefinitionCard },
     

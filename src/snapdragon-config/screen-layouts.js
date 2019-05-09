@@ -7,7 +7,9 @@ const {
     epithets, wildcardCard, wildcard, definitions, 
     specimenCommonMatch, specimenLatinMatch,
     definitionCard, 
-    traitProperty, symbioticProperty, traitImages,
+    traitProperty, symbioticProperty
+    , lookalikeProperty
+    , traitImages,
     nonTaxonSpecimenTiles,
     mixedSpecimenQuestions,
     mixedSpecimensLeft,
@@ -167,6 +169,21 @@ const traitPropertyMatch = {
     screens: [
         { ...traitImages },
         { ...traitProperty }
+    ]
+};
+
+const lookalikePropertyMatch = {
+    name: 'lookalike-property-match',
+    type:'test',
+    score: 1,
+    points: 1,
+    kind: 'MC',
+    bonus: true,
+    given: 'Given traitImages images',
+    requirement: 'Select trait value',
+    screens: [
+        { ...traitImages },
+        { ...lookalikeProperty }
     ]
 };
 
@@ -423,6 +440,7 @@ export const layouts = {
   multiSpecimenCommonMatch,
   multiSpecimenLatinMatch,
   traitPropertyMatch,
+  lookalikePropertyMatch,
   symbioticPropertyMatch,
   familyMatch,
   cultivarMatch,

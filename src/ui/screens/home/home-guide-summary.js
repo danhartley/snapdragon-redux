@@ -8,6 +8,8 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
     const location = config.guide.locationType === 'longLat' ? config.guide.locationLongLat : config.guide.locationPlace;
     const place = config.guide.locationType === 'longLat' ? config.guide.locationLongLat.split(',')[0] : config.guide.place.name;
     const range = config.guide.speciesRange;
+
+    speciesCount = speciesCount === 0 ? '' : speciesCount;
     
     const taxa = speciesCount 
         ? `${speciesCount} species` 
@@ -43,9 +45,9 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
             const icon = returnTaxonIcon(taxon.id.toLowerCase());
             icons += icon;
         })
-        taxaNode.innerHTML = icons;
+        taxaNode.innerHTML = `${icons}<span class="hide-empty species-count js-species-count">${speciesCount}</span` ;
     } else {
-        taxaNode.innerHTML = 'All species';
+        taxaNode.innerHTML = `All species<span class="hide-empty species-count js-species-count">${speciesCount}</span`;
     }
     
     const iNatId = document.querySelector('.js-iNatId');

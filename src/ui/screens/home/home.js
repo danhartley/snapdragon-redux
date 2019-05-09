@@ -97,7 +97,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
         subscription.remove(subscription.getByName('renderSpeciesGrid'));
     };
 
-    const guideSummary = (speciesCount) => {
+    const guideSummary = speciesCount => {
         const parent = document.querySelector('.home-container .js-snapdragon-tag');
         if(parent) {
             parent.innerHTML = '';
@@ -117,6 +117,8 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     const checkState = state => {
 
+        const speciesCount = collection.items ? collection.items.length : 0;
+
         switch(state) {
             case 'CREATE-LESSON':
                 actionLink.setAttribute('data-toggle', 'modal');
@@ -128,7 +130,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
                 actionLink.removeAttribute('data-toggle');    
                 actionLink.innerHTML = config.isLandscapeMode ? 'Get Species' : 'Species';                
                 elem.removeClass(document.querySelector('.js-for-text'), 'hide');                
-                guideSummary();
+                guideSummary(speciesCount);
                 actionLink.removeEventListener(prepareHandler);
                 actionLink.addEventListener('click', prepareHandler);
                 break;
@@ -141,7 +143,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
             case 'RESUME-LESSON':
                 actionLink.removeAttribute('data-toggle');
                 actionLink.innerHTML = 'Resume';    
-                guideSummary(collection.items.length);
+                guideSummary(speciesCount);
                 editLink.classList.add('hide');
                 actionLink.addEventListener('click', resumeLessonHandler);      
                 if(loadSpeciesList) {

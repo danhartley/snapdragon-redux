@@ -1180,8 +1180,8 @@ export const taxa = [
         { language: "es", names:[ 'Starlings' ]},
         { language: "pt", names:[ 'Starlings' ]},
         { language: "it", names:[ 'Starlings' ]}],
-        species: '--',
-        genera: '--',
+        species: '~120',
+        genera: '~30',
         traits: [ { language: "en", name: 'diet', values: [ 'Insects', 'Fruit' ] } ],
         descriptions: [
             {

@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
@@ -10,15 +12,19 @@ import { listenToImageSelection, listenToUserAnswer, renderMixedSpecimenImages }
 import { renderTemplate } from 'ui/helpers/templating';
 import mixedSpecimenQuestionTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question-template.html';
 
-export const renderMixedSpecimenQuestion = collection => {
+export const renderMixedSpecimenQuestion = (...args) => {
+
+    const collection = R.clone(args[0]);
+    const bonus = args[1]; 
 
     const { config } = store.getState();
 
     const item = collection.nextItem;
 
-    if(!item) return;
+    const question = bonus.overrides.question || 'Find the species';
+    const help = bonus.overrides.help || '(Click on the matching photo.)';
 
-    const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question: 'Find the species', help: '(Click on the matching photo.)', term: '' });
+    const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question, help, term: '' });
     
     const template = document.createElement('template');
 
@@ -31,17 +37,17 @@ export const renderMixedSpecimenQuestion = collection => {
 
     const icon = renderIcon(item, document);
 
-    const speciesShown = document.querySelector('.js-images-names-txt');
-
-    if(!speciesShown) return;
-
     const listenToImageChangeHandler = images => {        
-        let speciesToShow = '';        
+        let speciesToShow = '';
+        const uniqueImages = [];
         utils.shuffleArray(images).forEach(image => {            
             const i = image;
             const vernacularName = itemProperties.getVernacularName(species.find(sp => sp.name === image.itemName), config);  
-            const taxonIcon = returnIcon(species.find(sp => sp.name === image.itemName));            
-            speciesToShow +=  `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;
+            const taxonIcon = returnIcon(species.find(sp => sp.name === image.itemName));
+            if(!R.contains(image.itemName, uniqueImages)) {
+                speciesToShow +=  `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;
+                uniqueImages.push(image.itemName);
+            }
         });
         document.querySelector('.js-images-names-txt').innerHTML = speciesToShow;
     };
@@ -67,6 +73,6 @@ export const renderMixedSpecimenQuestion = collection => {
     });
 
     document.querySelector('.js-help-txt').addEventListener('click', () => {
-        renderMixedSpecimenImages(collection) 
+        renderMixedSpecimenImages(collection, 6 / collection.items.length, collection.items);
     });    
 };

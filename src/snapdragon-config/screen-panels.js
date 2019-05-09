@@ -162,6 +162,11 @@ const traitImages = {
     domain: 'bonusLayout'
   };
   
+  const lookalikeProperty = {
+    name: 'lookalike-property',
+    domain: 'bonusLayout'
+  };
+  
   const symbioticProperty = {
     name: 'symbiotic-property',
     domain: 'collection'
@@ -210,6 +215,7 @@ const traitImages = {
     specimenCommonMatch,
     specimenLatinMatch,
     traitProperty,
+    lookalikeProperty,
     symbioticProperty,
     
     mixedSpecimenQuestions,

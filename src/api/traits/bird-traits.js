@@ -29,7 +29,7 @@ const getTraits = SD => {
     ] },
     { name: 'Sturnus vulgaris', traits: [
         { name: SD.name.RANK, value: '2', description: 'common', language: 'en' },
-        { name: 'song', value: '281735', description: 'xeno-canto id' },
+        { name: 'song', value: '281735', description: 'xeno-canto id', type: 'song' },
     ] },
     { name: 'Columba palumbus', traits: [
         { name: SD.name.RANK, value: '5', description: 'common', language: 'en' },
@@ -64,7 +64,7 @@ const getTraits = SD => {
         { name: 'song', value: '260311', description: 'xeno-canto id' },
     ] },
     { name: 'Anas platyrhynchos', traits: [
-        { name: 'song', value: '160324', description: 'xeno-canto id' },
+        { name: 'song', value: '309258', description: 'xeno-canto id', type: 'flight call' },
     ] },
     { name: 'Ardea cinerea', traits: [
         { name: 'song', value: '144318', description: 'xeno-canto id' },
