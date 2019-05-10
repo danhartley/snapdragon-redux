@@ -246,6 +246,7 @@ a.dropdown-item {
   overflow: hidden;
   white-space: nowrap;
   text-align: left;
+  font-weight: bold;
 }
 
 .toUpperCase {

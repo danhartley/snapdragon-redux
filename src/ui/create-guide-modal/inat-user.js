@@ -11,8 +11,10 @@ export const renderInatUser = (parent, config, save) => {
     template.innerHTML = config.isLandscapeMode
                             ? inatTemplate
                             : inatPortraitTemplate;
+
+    const inatId = config.guide.inatId.key || '-----';
     
-    renderTemplate({ }, template.content, parent);
+    renderTemplate({ inatId }, template.content, parent);
 
     let autocompleteRef;
 
@@ -65,4 +67,10 @@ export const renderInatUser = (parent, config, save) => {
     };
 
     switchHandler(idSwitch, position, switchCallback);
+
+    parent.querySelector('.js-remove-id-filter').addEventListener('click',  () => {
+        config.guide.inatId = { key: '', type: '', param: 'user_id' };
+        actions.boundUpdateConfig(config);
+        parent.querySelector('.js-chosen-inat .selected-text').innerHTML = '-----';
+    });  
 };
