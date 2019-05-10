@@ -7,7 +7,6 @@ import { renderIcon } from 'ui/helpers/icon-handler';
 import { species } from 'api/species';
 import { taxa } from 'api/snapdragon/taxa';
 import { epithets } from 'api/botanical-latin';
-import { getGlossary } from 'api/glossary/glossary';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
 import { scoreHandler } from 'ui/helpers/handlers';
@@ -15,7 +14,6 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { rebindLayoutState } from 'ui/screens/multichoice/missing-data-helper';
-import { getTraits } from 'api/traits/traits';
 
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
@@ -24,7 +22,7 @@ export const renderMultiStrips = (collection, bonus) => {
 
     const { config, lesson, layout } = store.getState();
 
-    const item = collection.nextItem;
+    const item = collection.nextItem || collection.items[collection.itemIndex];
 
     const taxon = matchTaxon(item.taxonomy, iconicTaxa);
     const iconicTaxonFamilies = familyProps.getUniqueFamiliesByIconicTaxon(species, taxon.rank, taxon.value, item.lichen);
@@ -186,23 +184,7 @@ export const renderMultiStrips = (collection, bonus) => {
     }
 
     if(screen.name === 'definition') {
-
-        const { term, definition } = layout.definition;
-
-        const number = config.isPortraitMode ? 4 : 4;
-
-        const definitions = utils.shuffleArray(getGlossary([ matchTaxon(item.taxonomy, iconicTaxa).value, 'common' ]));
-
-        const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(definitions)).filter(d => !R.contains(d.term, term))).map(d => d.definition);
-        
-        const question = definition;
-        const answers = utils.shuffleArray([question, ...alternatives]);
-
-        if(config.isLandscapeMode) {            
-            render(question, answers, { question: layout.definition.term, help: '(Match the definition)' });
-        } else {
-            render(question, answers, { question: 'Match definition', help: '', vernacularName: '', binomial: '', term: layout.definition.term });
-        }
+        render(bonus.question, bonus.answers, bonus.overrides);
     }
 
     if(screen.name === 'family') {

@@ -54,7 +54,8 @@ export const renderMixedSpecimenQuestion = (...args) => {
                 uniqueImages.push(image.itemName);
             }
         });
-        document.querySelector('.js-images-names-txt').innerHTML = speciesToShow;
+        const speciesList = document.querySelector('.js-images-names-txt');
+        if(speciesList) speciesList.innerHTML = speciesToShow;
     };
 
     listenToImageSelection(listenToImageChangeHandler);

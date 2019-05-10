@@ -13,7 +13,6 @@ import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 import { renderCompleteText } from 'ui/screens/text-entry/text-complete';
 import { renderCultivarCard } from 'ui/screens/cards/cultivar-card';
 import { renderWildcard } from 'ui/screens/cards/wildcard-card';
-import { renderDefinitionCard } from 'ui/screens/cards/definition-card';
 import { renderMixedSpecimenQuestions } from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-questions';
 import { renderNonTaxonCardSpecimenTiles } from 'ui/screens/cards/non-taxon-card-specimen-tiles';
 import { renderMixedSpecimenQuestion } from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question';
@@ -37,7 +36,7 @@ const functions = [
     { name: 'leaf-image', func: renderLeafTile },
     { name: 'leaf-text', func: renderNameEntry },
     { name: 'epithet', func: renderMultiStrips },
-    { name: 'definition', func: renderMultiStrips },
+    { name: 'definition', func: renderBonusTest },
     { name: 'family', func: renderMultiStrips },
     { name: 'family-strips', func: renderMultiStrips },
     { name: 'taxon-card', func: renderTaxonCard },
@@ -51,7 +50,6 @@ const functions = [
     { name: 'trait-property', func: renderBonusTest },
     { name: 'lookalike-property', func: renderBonusTest },
     { name: 'symbiotic-property', func: renderMultiStrips },
-    { name: 'definition-card', func: renderDefinitionCard },
     
     
     { name: 'mixed-specimen-question', func: renderMixedSpecimenQuestion },

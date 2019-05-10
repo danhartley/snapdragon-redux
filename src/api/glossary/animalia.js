@@ -13,6 +13,11 @@ export const animalia = [
         definition: "Expanse of short grass.",
     },
     {
+        term: 'Crypsis',
+        definition: 'Ability of an animal to avoid observation or detection by other animals.',
+        wiki: 'https://en.wikipedia.org/wiki/Monandrous'
+    },
+    {
         term: "Scat",
         definition: "Faeces.",
     },
