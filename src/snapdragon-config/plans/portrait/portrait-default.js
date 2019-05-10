@@ -23,7 +23,7 @@ export const portraitDefault = {
             name:'Level 1',            
             layouts: [ L.mixedSpeciesMatch, L.latinToCommonMatch ],
             reviewLayouts: [ L.mixedSpeciesMatch, L.latinToCommonMatch ],
-            bonusLayouts: [ L.traitPropertyMatch ]
+            bonusLayouts: [ { ...L.traitPropertyMatch, types: [ 'traits', 'song', 'definition' ] } ]
         },
         {   id: 2,
             name:'Level 2',

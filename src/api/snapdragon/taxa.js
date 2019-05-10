@@ -2613,7 +2613,7 @@ export const taxa = [
         descriptions: [
             {
                 language: 'en',
-                summary: 'Widespread, rabbit and hares that are usally herbivorous and coprophagous. Rabbits use burrows for shelter.',
+                summary: 'Widespread, rabbit and hares are usually herbivorous and coprophagous. Rabbits use burrows for shelter.',
                 identification: 'Small-moderately sized mammals, adapted for rapid movement. Long hind legs, 4 toes on each foot, and shorter fore legs, with 5 toes. Soles of feet are hairy, to improve grip, with strong claws on all toes.',
                 keyMembers: [],
                 usage: []

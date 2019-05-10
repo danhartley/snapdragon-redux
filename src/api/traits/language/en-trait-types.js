@@ -190,7 +190,7 @@ export const english = {
         MYCORRHIZAL : 'Mycorrhizal'
     },
     capShape : {
-        help: 'How would you describe this pileus (cap)?',
+        help: 'How would you describe the pileus?',
         CONVEX : 'Convex',
         CONICAL : 'Conical',
         FLAT : 'Flat',

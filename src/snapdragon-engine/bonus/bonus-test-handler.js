@@ -3,6 +3,7 @@ import * as R from 'ramda';
 import { getTraitTests } from 'snapdragon-engine/bonus/tests/trait-test';
 import { getBirdsongTests } from 'snapdragon-engine/bonus/tests/birdsong-test';
 import { getLookalikeTests } from 'snapdragon-engine/bonus/tests/lookalike-test';
+import { getDefinitionTests } from 'snapdragon-engine/bonus/tests/definition-test';
 
 export const getBonusTests = (collection, itemIndices, bonusLayouts, lessonName, levelName) => {
 
@@ -14,7 +15,7 @@ export const getBonusTests = (collection, itemIndices, bonusLayouts, lessonName,
 
     const addLayoutToTest = traitTests => {
         const lessonReadyTests = traitTests.map(traitTest => {             
-            traitTest.itemIndex = traitTest.item.itemIndex; 
+            traitTest.itemIndex = traitTest.item ? traitTest.item.itemIndex : 0; 
             traitTest = { ...traitTest, ...layout, lessonName, levelName };            
             return traitTest;
         });
@@ -39,7 +40,13 @@ export const getBonusTests = (collection, itemIndices, bonusLayouts, lessonName,
         return addLayoutToTest(traitTests);
     };
 
-    let traitTests = [], birdsongTests = [], lookalikeTests = [];
+    const getDefinitionTypeTests = item => {
+        let tests = getDefinitionTests(item);
+        return addLayoutToTest(tests);
+    };
+
+    let traitTests = [], birdsongTests = [], lookalikeTests = [], definitionTests = [];
+    let item = collection.items[0];
 
     let layout = bonusLayouts.find(layout => layout.name === "trait-property-match");
 
@@ -58,6 +65,9 @@ export const getBonusTests = (collection, itemIndices, bonusLayouts, lessonName,
                     case 'look-alikes':
                         lookalikeTests = getTraitTypeLookalikeTests(itemsInThisRound);
                         break;
+                    case 'definition':                        
+                        definitionTests = getDefinitionTypeTests(item);
+                        break;
                 }
             });
 
@@ -65,10 +75,11 @@ export const getBonusTests = (collection, itemIndices, bonusLayouts, lessonName,
             traitTests = getTraitTypeTests(itemsInThisRound);
             birdsongTests = getTraitTypeBirdsongTests(itemsInThisRound);            
             lookalikeTests = getTraitTypeLookalikeTests(itemsInThisRound);
+            definitionTests = getDefinitionTypeTests(item);
         }
     }
-        
-    const bonusTests = [ ...traitTests, ...birdsongTests, ...lookalikeTests ];
+
+    const bonusTests = [ ...traitTests, ...birdsongTests, ...lookalikeTests, ...definitionTests ];
 
     return bonusTests;
 };

@@ -95,7 +95,7 @@ const traitImages = {
   
   const definitions = {
     name: 'definition',
-    domain: 'collection'
+    domain: 'bonusLayout'
   };
   
   const family = {

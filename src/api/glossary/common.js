@@ -114,11 +114,6 @@ export const commmon = [
         wiki: 'https://en.wikipedia.org/wiki/Monandrous'
     },
     {
-        term: 'Crypsis',
-        definition: 'Ability of an animal to avoid observation or detection by other animals.',
-        wiki: 'https://en.wikipedia.org/wiki/Monandrous'
-    },
-    {
         term: 'Myrmecophily',
         definition: 'Positive interspecies associations between ants and other organisms such as plants, other arthropods, and fungi.',
         wiki: 'https://en.wikipedia.org/wiki/Myrmecophily'
