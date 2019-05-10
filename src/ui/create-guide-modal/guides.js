@@ -20,7 +20,7 @@ export const renderGuides = (modal, config, createGuide) => {
         
         const months = config.guide.season.observableMonths.map(month => month.name);
         const observableMonths = `${months[0]}-${months[months.length - 1]}`;
-
+        
         renderTemplate({ observableMonths,languages }, template.content, parent);
 
         const taxonLanguageBtn = document.querySelector('#taxonLanguageBtn');

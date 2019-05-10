@@ -30,9 +30,9 @@ class CreateGuide {
         this.currentStep = step;
         
         this.steps = [
-            { number: 1, title: 'Create Lesson', description: 'Location', nextStep: 'Filter species by category', disabled: true },
-            { number: 2, title: 'Create Lesson', description: 'Species', nextStep: 'Apply filters', disabled: true },
-            { number: 3, title: 'Create Lesson', description: 'Filters', nextStep: 'Start Lesson', disabled: true },
+            { number: 1, title: 'Create Lesson', description: 'Location', nextStep: 'Filter species by category', disabled: true, className:'location-actions' },
+            { number: 2, title: 'Create Lesson', description: 'Species', nextStep: 'Apply filters', disabled: true, className:'species-actions' },
+            { number: 3, title: 'Create Lesson', description: 'Filters', nextStep: 'Start Lesson', disabled: true, className:'filter-actions' },
         ];
         
         this.modal = document.getElementById('createGuide');
@@ -57,7 +57,7 @@ class CreateGuide {
         return this.currentStep;
     }
 
-    addStepActions() {
+    addStepActions(className) {
         
         let template = '';
         const parent = this.modal.querySelector('.js-landscape-inner-body');
@@ -69,7 +69,7 @@ class CreateGuide {
         const config = R.clone(configState);
 
         template.innerHTML = actionsTemplate;
-        renderTemplate({}, template.content, parent);
+        renderTemplate({ className }, template.content, parent);
 
         switch(description) {
             case 'Location':
@@ -130,7 +130,7 @@ class CreateGuide {
             }
         });
 
-        this.addStepActions();
+        this.addStepActions(this.steps.find(step => step.number === nextStep).className);
 
         if(this.currentStep === 1) {
             this.previousStepActionTxt.classList.add('hide-important');

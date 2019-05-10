@@ -75,7 +75,7 @@
     font-size: 1.1rem;
     margin: .5rem 0;
     letter-spacing: .03rem;
-    color: var(--snap-text-dark-medium-dark);
+    color: var(--snap-progress-bar);
     font-style: italic;
     font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
     min-height: 1.75rem;
@@ -737,6 +737,10 @@
     height: calc(100vh - 18rem);
   }
 
+  .filter-actions .actions {
+    display: block;
+  }
+
   #inat-identity {
     width: 100%;
     margin: .25rem 0;
@@ -773,9 +777,19 @@
     }
 
     .actions {
-      height: calc(100vh - 30rem);
-      max-height: 400px;
+      /* height: calc(100vh - 30rem);
+      max-height: 400px; */
+      height: 18rem;
       padding-bottom: 3rem;
+    }
+
+    #set-inat-identity-btn {  
+      width: 10rem;
+    }
+
+    .filter-actions .actions {
+      height: 20.25rem;
+      padding: 0;
     }
 
     .modal-guide-wrapper .modal-header {
