@@ -93,7 +93,6 @@ export const getInatSpecies = config => {
         inatListeners.forEach(listener => listener(
             { page: json.page, numberOfRequests: Math.ceil(json.total_results/json.per_page) }
         ));
-        // console.log({ page: json.page, numberOfRequests: Math.ceil(json.total_results/json.per_page) });
         return await json.results;
     }
 
@@ -107,8 +106,7 @@ export const getInatSpecies = config => {
                 return { 
                     ...item, 
                     observationCount: observation.taxon.observations_count, 
-                    iconicTaxon: observation.taxon.iconic_taxon_name,
-                    // establishmentMeans: observation.taxon.establishment_means
+                    iconicTaxon: observation.taxon.iconic_taxon_name
                 };
             } 
             taxonNames.push(observation.taxon.name);

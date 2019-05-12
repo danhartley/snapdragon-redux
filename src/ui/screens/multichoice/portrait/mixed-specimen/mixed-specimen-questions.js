@@ -3,6 +3,7 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
+import { itemProperties } from 'ui/helpers/data-checking';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
@@ -57,16 +58,6 @@ export const renderMixedSpecimenQuestions = collection => {
     const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
     const boundScore = {};
 
-    const showCorrectAnswer = () => {
-  
-        setTimeout(() => {
-            const wrongAnswer = document.querySelector('.species-card-images .carousel-item.active');
-                  wrongAnswer.classList.remove('active');
-            const rightAnswer = document.querySelector(`[data-title="${item.name}"]`);
-                  rightAnswer.parentElement.classList.add('active');
-        }, 1000);
-    };
-
     document.querySelectorAll('.carousel-item .layer').forEach(img => {
         
         img.addEventListener('click', event => {
@@ -89,21 +80,23 @@ export const renderMixedSpecimenQuestions = collection => {
                 boundScore.score = score;
                 boundScore.scoreUpdateTimer = scoreUpdateTimer;
                 score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
-                continueLessonBtn.disabled = false;                
+                continueLessonBtn.disabled = false;          
+                if(!score.success) {
+                    const wrongItem = items.find(item => item.name === score.answer);
+                    const vernacularName = itemProperties.getVernacularName(wrongItem, config);
+                    const name = vernacularName || score.answer;
+                    const wrongAnswerTxt = document.querySelector('.js-wrong-answer-txt');
+                          wrongAnswerTxt.innerHTML = score.answer ? `No, this is ${name}.` : '';      
+                }
             };
 
-            if(!score.success) {
-                showCorrectAnswer();
-            }
-            
-            scoreHandler('image-match', test, callback, config);
+            scoreHandler('image-match', test, callback, config);  
         });
     });
 
     continueLessonBtn.addEventListener('click', event => {
 
-        if(!score.success) {
-            showCorrectAnswer(boundScore);
+        if(!score.success) {            
             setTimeout(() => {
                 window.clearTimeout(boundScore.scoreUpdateTimer);
                 actions.boundUpdateScore(boundScore.score);

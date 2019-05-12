@@ -133,7 +133,7 @@ export const english = {
         DEADLY : 'Deadly'
     },
     habitat : {
-        help: 'Where would you most likely find this species?',
+        help: 'What is the habitat of this species?',
         WOOD : 'Wood',
         WOODLAND : 'Woodland',
         WOODLAND_LITTER : 'Woodland litter',
@@ -518,7 +518,8 @@ export const english = {
         COB: 'Cob'
     },
     marginType: {
-        LOBED: "Lobed"
+        LOBED: "Lobed",
+        CORTICATE: "Corticate"
     }, 
     soilType: {
         SILICEOUS: 'Siliceous',
