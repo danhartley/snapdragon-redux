@@ -2,7 +2,7 @@ export const config = {
     language: 'en',
     moduleSize: 4,
     callbackTime: 1500,
-    callbackDelay: 2000,
+    callbackDelay: 500,
     excludeRevision: false,
     isPortraitMode: false,
     isLandscapeMode: true,

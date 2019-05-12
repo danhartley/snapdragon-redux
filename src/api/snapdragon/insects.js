@@ -89,8 +89,7 @@ export const insects = [
       },
       {
         "vernacularName": "Western Honeybee",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
         "vernacularName": "A Honeybee",
@@ -126,32 +125,28 @@ export const insects = [
         "language": "en"
       },
       {
-        "vernacularName": "Apis mellifera",
-        "language": "es",
-        
-      },
-      {
         "vernacularName": "abeja de la miel",
         "language": "es"
       },
       {
         "vernacularName": "abeille domestique",
-        "language": "fr",
-        
+        "language": "fr"        
       },
       {
-        "vernacularName": "Abeille domestique, Abeille européenne",
+        "vernacularName": "Abeille domestique",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Abeille européenne",
         "language": "fr"
       },
       {
         "vernacularName": "ape del miele",
-        "language": "it",
-        
+        "language": "it"        
       },
       {
         "vernacularName": "abelha do mel",
-        "language": "pt",
-        
+        "language": "pt"
       }
     ],
     "descriptions": [
@@ -252,8 +247,7 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Aardhommel",
-        "language": "de",
-        
+        "language": "de",        
       },
       {
         "vernacularName": "Abejorro",
@@ -3913,141 +3907,24 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Clouded Yellow",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Clouded Yellow",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Clouded Yellow",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Clouded Yellow",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Clouded Yellow",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Clouded Yellow",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Clouded Yellow",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Colias crocea",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Colias crocea",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Colias crocea",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Colias crocea",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Colias crocea",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Colias croceus",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Colias croceus",
-        "language": "en"
+        "language": "en" 
       },
       {
         "vernacularName": "Common Clouded Yelow",
         "language": "en"
-      },
-      {
-        "vernacularName": "Edusa",
-        "language": "en"
-      },
+      },      
       {
         "vernacularName": "Maravilha",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Maravilha",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Maravilha",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Maravilha",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Maravilha",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Maravilha",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Maravilha",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Postillon",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Postillon",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Postillon",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Postillon",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Postillon",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Postillon",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Postillon",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Safranera de lalfals",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Safranera de lalfals",
-        "language": "en"
+        "language": "pt"
       },
       {
         "vernacularName": "Souci",
-        "language": "en"
+        "language": "fr"
       },
       {
-        "vernacularName": "common clouded yellow",
-        "language": "en"
-      }
+        "vernacularName": "Postillon",
+        "language": "de"
+      }      
     ],
     "taxonomy": {
       "kingdom": "Animalia",
@@ -7189,32 +7066,7 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "American Copper",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "American Copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "American Copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "American Copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "American Copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "American Copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "American Copper",
+        "vernacularName": "Small Copper",
         "language": "en"
       },
       {
@@ -7223,159 +7075,19 @@ export const insects = [
       },
       {
         "vernacularName": "Cuivr commun",
-        "language": "en"
+        "language": "fr"
       },
       {
         "vernacularName": "Kleiner Feuerfalter",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Kleiner Feuerfalter",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Kleiner Feuerfalter",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Kleiner Feuerfalter",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Kleiner Feuerfalter",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Kleiner Feuerfalter",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Kleiner Feuerfalter",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Kleiner Feuerfalter",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Kleiner Feuerfalter",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Kleiner Feuerfalter",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Kleiner Feuerfalter",
-        "language": "en"
+        "language": "de"
       },
       {
         "vernacularName": "Manto bicolor",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Manto bicolor",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Manto bicolor",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Small Copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Small Copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Small Copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Small Copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Small Copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Small Copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Small Copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Small Copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Small Copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Small Copper",
-        "language": "en"
+        "language": "es"
       },
       {
         "vernacularName": "cuivr d'Amrique",
-        "language": "en"
-      },
-      {
-        "vernacularName": "cuivr d'Amrique",
-        "language": "en"
-      },
-      {
-        "vernacularName": "cuivr d'Amrique",
-        "language": "en"
-      },
-      {
-        "vernacularName": "cuivr d'Amrique",
-        "language": "en"
-      },
-      {
-        "vernacularName": "cuivr d'Amrique",
-        "language": "en"
-      },
-      {
-        "vernacularName": "cuivr d'Amrique",
-        "language": "en"
-      },
-      {
-        "vernacularName": "pikkukultasiipi",
-        "language": "en"
-      },
-      {
-        "vernacularName": "pikkukultasiipi",
-        "language": "en"
-      },
-      {
-        "vernacularName": "pikkukultasiipi",
-        "language": "en"
-      },
-      {
-        "vernacularName": "small copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Small Copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "American copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "common copper",
-        "language": "en"
-      },
-      {
-        "vernacularName": "small copper",
-        "language": "en"
+        "language": "fr"
       }
     ],
     "taxonomy": {
