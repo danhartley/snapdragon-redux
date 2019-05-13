@@ -11,7 +11,7 @@ async function getItems(collection, config) {
     if(collection.providerId === 1) {
         const collectionIsUnchanged = 
             collection.items && collection.items.length > 0 && collection.items[0].collectionId === collection.id && 
-            collection.speciesRange === config.speciesRange &&
+            collection.speciesRange === config.guide.speciesRange &&
             collection.iconicTaxa === config.guide.iconicTaxa.map(taxon => taxon.id);
 
         if(collectionIsUnchanged) {
@@ -98,7 +98,7 @@ export async function collectionHandler(collection, config, counter, callback, c
                 item.species = names[1];
                 item.name = names.slice(0,2).join(' ');
             });
-            collection.speciesRange = config.speciesRange;
+            collection.speciesRange = config.guide.speciesRange;
             collection.iconicTaxa = config.guide.iconicTaxa;
             collection.itemIndex = 0;
 
