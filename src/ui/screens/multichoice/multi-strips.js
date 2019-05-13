@@ -128,7 +128,7 @@ export const renderMultiStrips = (collection, bonus) => {
         let question = item.vernacularName;   
         let filteredAnswers = getSpeciesFromSameIconicTaxon(species, item, taxon);
             filteredAnswers = R.take(8, filteredAnswers).filter(s => !R.contains(item.vernacularName, s.names.map(n => n.vernacularName)));
-        let answers = filteredAnswers.map(s => s.names.filter(n => n.language === config.language)).map(a => a[0]);
+        let answers = filteredAnswers.map(s => s.names.filter(n => n.language === config.language));//.map(a => a[0]);
             const noOfAnswers = 8 - answers.length;
             if(noOfAnswers > 0) {
                 const englishAnswers = R.take(noOfAnswers, filteredAnswers.map(s => s.names.filter(n => n.language === 'en')));
