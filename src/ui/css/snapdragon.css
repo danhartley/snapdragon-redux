@@ -1979,14 +1979,14 @@ a.collection-disabled {
 }
 
 .snapdragon-create-guide > div:nth-child(1) {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   letter-spacing: .05rem;
   text-transform: uppercase;
 }
 
 .snapdragon-create-guide > div:nth-child(1) > span:nth-child(1) {
+  font-size: 1.4rem;
   font-family: "PT Sans", "Roboto", arial, sans-serif;
-  font-size: 1.6rem;
 }
 
 .snapdragon-create-guide > div:nth-child(1) > span:nth-child(2) {

@@ -71,8 +71,10 @@ export const getInatSpecies = config => {
 
     async function getInatObservations(config, page) {
 
-        let lat = '', lng = '', placeId = '', radius = '';
+        let lat = '', lng = '', placeId = '';
 
+        const radius = config.guide.speciesRange ? parseInt(config.guide.speciesRange) : 10;
+        
         switch(config.guide.locationType) {
             case 'place':
                 placeId = config.guide.place.id;
@@ -80,7 +82,6 @@ export const getInatSpecies = config => {
             case 'longLat':
                 lat = config.guide.coordinates.lat;
                 lng = config.guide.coordinates.long;
-                radius = config.speciesRange || 10;
                 break;
         }
 

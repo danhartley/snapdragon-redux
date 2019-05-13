@@ -43,6 +43,13 @@
     .names-container .vernacular-name {
         max-width: 15rem;
     }
+    .snapdragon-create-guide > div:nth-child(1) {
+        font-size: 1.6rem;
+      }
+      
+      .snapdragon-create-guide > div:nth-child(1) > span:nth-child(1) {
+        font-size: 1.6rem;
+      }
 }
 
 /* iPHONE 6,7,8 PLUS, iPHONE X, GALAXY S9/S9+ */
