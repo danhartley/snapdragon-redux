@@ -135,7 +135,6 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
         list.innerHTML = '';
         members.forEach(member => {
             list.innerHTML += `<div>${member.name}</div>`;
-            // list.innerHTML += `<div>${member.name} (${item.vernacularName})</div>`;
         });
     });
 };

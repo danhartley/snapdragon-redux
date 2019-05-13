@@ -91,7 +91,7 @@ const locationDefaults = {
     id: 1,
     providerId: 1,
     rangeSensitive: true,
-    glossary: ['plantae', 'common', 'fungi'],
+    glossary: ['plantae', 'common', 'fungi', 'amphibia', 'insecta', 'lichen', 'animalia'],
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     moduleSize: 4,

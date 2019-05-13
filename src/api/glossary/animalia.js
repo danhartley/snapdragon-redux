@@ -111,4 +111,13 @@ export const animalia = [
         definition: 'Dorsal (upper) section of the exoskeleton or shell in a number of animal groups.',
         wiki: 'https://en.wikipedia.org/wiki/Carapace',        
     },
+    {
+        term: 'Neoteny',
+        definition: 'The delaying or slowing of the physiological (or somatic) development of an organism, typically an animal.',
+        wiki: 'https://en.wikipedia.org/wiki/Neoteny',  
+    },
+    {
+        term: 'Viviparous',
+        definition: 'Giving birth to live young.',    
+    },
 ];

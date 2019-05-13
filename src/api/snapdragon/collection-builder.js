@@ -152,10 +152,17 @@ const init = () => {
                 item.name = data.name;
                 const binomial = getBinomial(item);
                 getTaxonomy(binomial).then(taxonomy => {
-                    data.taxonomy = taxonomy;
+                    // data.taxonomy = taxonomy;
+                    data.taxonomy = {
+                        kingdom: taxonomy.kingdom,
+                        phylum: taxonomy.phylum,
+                        class: taxonomy.class,
+                        order: taxonomy.order,
+                        family: taxonomy.family
+                    };
                     data.family = taxonomy.family;
-                    data.kingdom = taxonomy.kingdom;
-                    data.eolName = item.name; 
+                    // data.kingdom = taxonomy.kingdom;
+                    // data.eolName = item.name; 
                     data.name = binomial;
                     items.push(data);
                     itemSelector(items);
@@ -338,10 +345,16 @@ document.addEventListener("DOMContentLoaded", function() {
                             getSpeciesData({ detailsUrl : speciesUrl(eolId) }).then(data => {
                                 const binomial = getBinomial(item);
                                 getTaxonomy(binomial).then(taxonomy => {
-                                    data.taxonomy = taxonomy;
-                                    data.kingdom = taxonomy.kingdom;
+                                    data.taxonomy = {
+                                        kingdom: taxonomy.kingdom,
+                                        phylum: taxonomy.phylum,
+                                        class: taxonomy.class,
+                                        order: taxonomy.order,
+                                        family: taxonomy.family
+                                    };
+                                    // data.kingdom = taxonomy.kingdom;
                                     data.family = taxonomy.family;
-                                    data.eolName = item.name; 
+                                    // data.eolName = item.name; 
                                     data.name = binomial;
                                     data.images = [ ...data.images, ...item.images ];
                                     inatItems.push(data);

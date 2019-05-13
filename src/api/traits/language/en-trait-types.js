@@ -626,7 +626,8 @@ export const english = {
         AUTOTOMIC: 'Autotomic',
         ECTOTHERMIC: 'Ectothermic',
         ADHESION: 'Adhesion',
-        POLYPHYODONT: 'Polyphyodont'
+        POLYPHYODONT: 'Polyphyodont',
+        VIVIPAROUS: 'Viviparous'
     },
     sense: {
         help: 'Which sense does this species favour?',

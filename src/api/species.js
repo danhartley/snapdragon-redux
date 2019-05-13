@@ -12,6 +12,7 @@ import { plants } from 'api/snapdragon/plants';
 import { local } from 'api/snapdragon/local';
 import { mammals } from 'api/snapdragon/mammals';
 import { reptiles } from 'api/snapdragon/reptiles';
+import { amphibians } from 'api/snapdragon/amphibians';
 
 import { trees } from 'api/snapdragon/trees';
 
@@ -29,5 +30,6 @@ export const species = [
     ...local,
     ...mammals,
     ...reptiles,
-    ...trees
+    ...trees,
+    ...amphibians
 ].filter(s => s.name);
