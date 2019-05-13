@@ -571,7 +571,6 @@ a.dropdown-item {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   background-color: rgb(238, 236, 230);
-  padding: 0.25rem;
 }
 
 .tiles {
@@ -587,12 +586,28 @@ a.dropdown-item {
   align-items: center;
   justify-content: center;
 }
+
 .squares.js-tiles > div > div {
   width: 260px;
   height: 190px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  
+}
+
+.squares.js-tiles > div:nth-child(odd) {
+  border-left: .05rem solid lightgray;
+  border-right: .05rem solid lightgray;
+}
+
+.squares.js-tiles > div:nth-child(even) {
+  border-right: .05rem solid lightgray;
+}
+
+.squares.js-tiles > div:nth-child(3),
+.squares.js-tiles > div:nth-child(4) {
+  border-top: .05rem solid lightgray;
+  border-bottom: .05rem solid lightgray;
 }
 
 .squares img,
