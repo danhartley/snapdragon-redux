@@ -4,6 +4,7 @@ import { commmon } from 'api/glossary/common';
 import { fungi } from 'api/glossary/fungi';
 import { lichen } from 'api/glossary/lichen';
 import { insecta } from 'api/glossary/insecta';
+import { amphibia } from 'api/glossary/amphibia';
 
 export const getGlossary = requiredGlossaries => {
     
@@ -28,6 +29,9 @@ export const getGlossary = requiredGlossaries => {
                 break;
             case 'insecta':
                 glossary = [ ...glossary, ...insecta ];
+                break;
+            case 'amphibia':
+                glossary = [ ...glossary, ...amphibia ];
                 break;
         }
     });

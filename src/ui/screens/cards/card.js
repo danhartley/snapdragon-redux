@@ -16,12 +16,13 @@ import { renderInatDataBox } from 'ui/screens/common/inat-box';
 import { renderCalendar } from 'ui/screens/common/calendar';
 import { renderTaxaBox } from 'ui/screens/common/taxa-box';
 import cardTemplate from 'ui/screens/cards/card-template.html';
+import { renderBadge } from 'ui/screens/common/badge';
 
 export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, isInCarousel = true) => {
 
     const item = selectedItem || collection.nextItem;
 
-    const { layout, config, lessonPlan, enums } = store.getState();
+    const { layout, config, enums } = store.getState();
 
     let rootNode;
 
@@ -119,7 +120,7 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
     const headerImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
     
     const names = [ ...new Set(item.names.filter(name => name.language === config.language).map(name => name.vernacularName.toLowerCase())) ];
-    const occurrences = names.length; 
+    const occurrences = names.length;
 
     const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
 
@@ -135,21 +136,9 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
 
     infoSlider(item, traits, family, rootNode.querySelector('.js-info-box'), mode);
 
-    const namesBadge = rootNode.querySelector('.js-names-badge');
+    const badge = rootNode.querySelector('.js-names-badge');
 
-    if(occurrences < 2) {
-        namesBadge.classList.add('hide');    
-    } else {
-        namesBadge.addEventListener('click', event => {
-            document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = 'Common species names';
-            let html = `<ul>`;
-            names.forEach(name => {
-                html+= `<li class="capitalise">${name}</li>`;
-            });
-            html+= `</ul>`;
-            document.querySelector('#badgeListModal .js-modal-text').innerHTML = html;
-        });
-    }
+    renderBadge(badge, occurrences, names);
     
     renderFeatures(item, traits, config, rootNode.querySelector('.js-feature-types'), mode, isInCarousel);
     

@@ -2679,7 +2679,7 @@ export const taxa = [
         traits: [ 
             { name: SD.name.ORGANISATION, value: SD.organisation.EUSOCIAL },            
             { name: SD.name.SENSORY_ACUITY, value: SD.sense.SMELL },
-            { name: SD.name.BEHAVIOUR, value: SD.behaviour.VOCALISATION },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.VOCALISATION },            
          ],
     },
     {
@@ -4179,6 +4179,57 @@ export const taxa = [
             },
         ],
         traits: [            
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Salamandridae',
+        genera: '20',
+        species: '74',
+        names: [ { language: "en", names: ['Newts and salamanders', 'Salamandrids']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ 'Salamándridos' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Salamandridae",
+        thumb: '33/94/46/18.https___www_inaturalist_org_photos_293689.jpg',
+        eol: "https://eol.org/pages/7527",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Distinguished from other salamanders by lack of rib or costal grooves along the sides of their bodies and rough skin which is very granular because of the number of poison glands.',
+                identification: 'Patterns of bright and contrasting colours, to warn potential predators of their toxicity. They have four well-developed limbs, with four toes on the fore limbs, and (in most cases) five toes on the hind limbs. 7 to 30cm in length.', 
+            },
+        ],
+        traits: [            
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.VIVIPAROUS },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Ranidae',
+        genera: '16',
+        species: '85',
+        names: [ { language: "en", names: ['True frogs']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Echte Frösche' ]},
+            { language: "es", names:[ 'Salamándridos' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Ranidae",
+        thumb: '2c/2a/08/18.https___www_inaturalist_org_photos_1746183.jpg',
+        eol: "https://eol.org/pages/7511",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Aquatic or live close to water. Most species lay their eggs in the water and go through a tadpole stage.',
+                identification: 'Smooth and moist-skinned, with large, powerful legs and extensively webbed feet. Vary greatly in size.', 
+            },
+        ],
+        traits: [
         ],
     },
 ];
