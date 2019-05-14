@@ -46,7 +46,7 @@ export const renderInput = (screen, question) => {
     const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: questionTxt, help, term: '' });
     
     if(config.isPortraitMode) {
-        document.querySelector('.js-test-card').classList.add('clearSpacing');
+        document.querySelector('.js-test-card-content').classList.add('clearSpacing');
     }
 
     const template = document.createElement('template');

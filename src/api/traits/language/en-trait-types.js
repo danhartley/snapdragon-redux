@@ -254,7 +254,7 @@ export const english = {
     },
     associate : {
         ALGA: 'Alga',
-        CYNOBACTERIUM: 'cyanobacterium',
+        CYNOBACTERIUM: 'Cyanobacterium',
         FUNGUS: 'Fungus'
     },
     thallusType : {

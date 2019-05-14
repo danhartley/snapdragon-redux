@@ -61,7 +61,7 @@ export const renderTestCardTemplate = (collection, context) => {
                 
         hideCurrentCard(testCardContainer, testCard);
 
-        const { card: speciesCard, icon: speciesIcon } = showNextCard(speciesContainer, '.card-card');
+        const { card: speciesCard, icon: speciesIcon } = showNextCard(speciesContainer, '.js-card-card');
 
         handleIconAppearance('#card-header .js-iconic-icon');
 
@@ -74,8 +74,8 @@ export const renderTestCardTemplate = (collection, context) => {
             hideCurrentCard(speciesContainer, speciesCard);
 
             const { card: taxonCard, icon: taxonIcon } = item.lichen
-                ? showNextCard(taxonContainer, '.non-taxon.card')
-                : showNextCard(taxonContainer, '.taxon.card');
+                ? showNextCard(taxonContainer, '.js-non-taxon-card')
+                : showNextCard(taxonContainer, '.js-taxon-card');
 
             handleIconAppearance('#taxon-card-header .js-iconic-icon');
 
@@ -83,14 +83,14 @@ export const renderTestCardTemplate = (collection, context) => {
     
                 hideCurrentCard(taxonContainer, taxonCard);
 
-                showNextCard(testCardContainer, '.test-card-card');
+                showNextCard(testCardContainer, '.js-test-card');
 
                 handleIconAppearance('#test-card-header .js-iconic-icon');
             });
         });
     });
 
-    const testContentParent = document.querySelector('.js-test-card');
+    const testContentParent = document.querySelector('.js-test-card-content');
 
     return testContentParent;
 };

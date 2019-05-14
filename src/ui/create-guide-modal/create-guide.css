@@ -86,30 +86,12 @@
     font-size: 1rem;
     margin: 0 0 .5rem 0;
   }
-  
-  /* .modal-guide-wrapper .modal-body.modal-guide-body {
-    display: flex;
-    flex-direction: column;
-    align-content: flex-start;
-  } */
-  
-  /* .modal-guide-wrapper .modal-body.modal-guide-body > div {
-    flex: auto;
-  } */
-  
+
   .modal-guide-wrapper .modal-body.modal-guide-body > .landscape-inner-body {
     flex-direction: column;
     align-items: initial;
     position: relative;    
   }
-  
-  /* .modal-guide-wrapper .modal-guide-progress {
-    height: 2.5rem;
-  } */
-  
-  /* .modal-guide-wrapper .modal-guide-navigation {
-    height: 2em;
-  } */
   
   .modal-guide-wrapper .modal-body .modal-guide-progress > div {
     display: flex;
@@ -365,7 +347,6 @@
   }
   
   .embedded-switch > div {
-    /* font-size: .8rem; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -379,7 +360,6 @@
   }
   
   .inat-switch .txt-left, .inat-switch .txt-right {
-    /* color: rgb(150,150,150); */
     color: var(--snap-text-medium-dark);
     transition: all 1s ease;
     display: flex;
@@ -488,10 +468,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    /* display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: .25rem;
-    margin-top: 1rem; */
   }
 
   .iconic-taxa-categories > div > div {
@@ -519,7 +495,6 @@
 
   .iconic-taxa-categories g {
     fill: var(--snap-collection);
-    /* fill: rgb(87, 97, 99); */
   }
 
   .iconic-taxa-selected svg {
@@ -689,12 +664,14 @@
   }
 
   .location-option {
+    padding: .25rem;
+    line-height: 1.4rem;
     display: grid;
     grid-template-rows: 1fr;
     width: 100%;
-    line-height: 2rem;
     font-family: "Libre Baskerville", Libre, Georgia, Times, serif;
     letter-spacing: .03rem;
+    border: .05rem solid lightgray;
   }
 
   .location-option.place {
@@ -705,6 +682,10 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+  }
+
+  .location-option.range {
+    border: none;
   }
 
   .location-option button {
@@ -777,8 +758,6 @@
     }
 
     .actions {
-      /* height: calc(100vh - 30rem);
-      max-height: 400px; */
       height: 18rem;
       padding-bottom: 3rem;
     }
@@ -1006,6 +985,16 @@
   }
   .modal-guide-wrapper .modal-body .modal-guide-navigation > div:nth-child(1) > div svg {
       font-size: 2rem;
+  }
+  .location-option {
+    line-height: 1.6rem;
+  }
+}
+
+@media (min-width: 736px) {
+  .location-option {
+    line-height: 2rem;
+    padding: .5rem;
   }
 }
 

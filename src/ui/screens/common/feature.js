@@ -41,9 +41,15 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel)
         }
     };
 
+    // Combine symbiotic relationships and lookalikes?
+
+    const setNumberOfRows = config.isLandscapeMode ? 10 : 4;
+
     if(speciesTraits && speciesTraits.symbionts) {
 
-        const symbionts = speciesTraits.symbionts.map(s => s.id);
+        let symbionts = speciesTraits.symbionts.map(s => s.id);
+
+        // symbionts = symbionts.filter(s => R.contains(s, species.map(s => s.name)));
         
         let symbiontTraits = speciesTraits.traits.map(trait => {
             const values = trait.value.split(',').map(t => t.trim());
@@ -77,6 +83,16 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel)
             }
         });
 
+        while(symbiontTraits.length < setNumberOfRows) {
+            symbiontTraits.push({
+                modal: '',
+                className: '',
+                symbiont: { id: '', display: '' },
+                as: '',
+                type: ''
+            });
+        }
+
         renderTemplate({ symbiontTraits }, template.content, parent);
 
         addLinksToSpeciesCards(mode);
@@ -85,20 +101,22 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel)
 
         let lookalikeNames = itemProperties.itemContextProperty(traits, item, 'look-alikes');
 
-        if(lookalikeNames.length === 0) return;
-
+        if(lookalikeNames.length > 0) {
             lookalikeNames = lookalikeNames.filter(name => name !== item.name);
+        }
 
-        if(lookalikeNames) {
+        let lookalikes = [];
+
+        const template = document.createElement('template');
+        template.innerHTML = featureLookalike;
+
+        const modal = mode === 'MODAL' ? '' : 'modal';
+        const className = mode === 'MODAL' ? '' : 'underline-link'
+        const parent = mode === 'MODAL' ? document.querySelector('#cardModal .js-feature-types') : document.querySelector('.js-feature-types');
+
+        if(lookalikeNames.length > 0) {
     
-            const template = document.createElement('template');
-            template.innerHTML = featureLookalike;
-
-            const modal = mode === 'MODAL' ? '' : 'modal';
-            const className = mode === 'MODAL' ? '' : 'underline-link'
-            const parent = mode === 'MODAL' ? document.querySelector('#cardModal .js-feature-types') : document.querySelector('.js-feature-types');
-
-            const lookalikes = lookalikeNames.map(name => {
+            lookalikes = lookalikeNames.map(name => {
                 const lookalike = species.find(s => s.name === name);
                 if(!lookalike) return;
                 return { 
@@ -108,14 +126,21 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel)
                     className
                 };
             }).filter(lookalike => lookalike);
-        
-            if(lookalikes.length) {
 
-                renderTemplate({lookalikes}, template.content, parent);
-
-                addLinksToSpeciesCards(mode);
-
-            }            
+            lookalikes.forEach(l => l.type = 'Lookalike');
         }
+
+        while(lookalikes.length < setNumberOfRows) {
+            lookalikes.push({
+                name: '',
+                modal: '',
+                className: '',
+                type: ''
+            });
+        }
+        
+        renderTemplate({lookalikes}, template.content, parent);
+
+        addLinksToSpeciesCards(mode);
     }     
 };
