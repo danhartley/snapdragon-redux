@@ -245,7 +245,7 @@ div.text-entry {
     fill: var(--snap-iconic-icon-header);
   }
 
-  .test-card .mushroom-icon-header svg {
+  .images-names-txt .mushroom-icon-header svg {
     width: .8rem;
     height: .8rem;
     margin: 0 .25rem 0 0;

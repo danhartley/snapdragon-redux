@@ -4241,10 +4241,6 @@ export const plants = [
         "wikiSearchTerm": true
       },
       {
-        "vernacularName": "Basilie",
-        "language": "en"
-      },
-      {
         "vernacularName": "common basil",
         "language": "en"
       },
@@ -4277,7 +4273,7 @@ export const plants = [
         "language": "fr"
       },
       {
-        "vernacularName": "Basilic commun, Basilic à épis nombreux",
+        "vernacularName": "Basilic à épis nombreux",
         "language": "fr"
       },
       {
@@ -6875,17 +6871,17 @@ export const plants = [
       {
         "vernacularName": "wild parship",
         "language": "en"
-      },
-      {
-        "vernacularName": "wild parsnip",
-        "language": "en"
-      },
+      },      
       {
         "vernacularName": "chirivía",
         "language": "es"
       },
       {
-        "vernacularName": "Panais cultivé, Pastinacier",
+        "vernacularName": "Panais cultivé",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Pastinacier",
         "language": "fr"
       },
       {
