@@ -14,9 +14,6 @@ import { mammals } from 'api/snapdragon/mammals';
 import { reptiles } from 'api/snapdragon/reptiles';
 import { amphibians } from 'api/snapdragon/amphibians';
 
-import { trees } from 'api/snapdragon/trees';
-
-
 export const species = [
     ...birds,
     ...mushrooms,
@@ -30,6 +27,5 @@ export const species = [
     ...local,
     ...mammals,
     ...reptiles,
-    ...trees,
     ...amphibians
 ].filter(s => s.name);

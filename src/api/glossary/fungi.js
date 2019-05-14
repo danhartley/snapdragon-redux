@@ -104,12 +104,6 @@ export const fungi = [
         level: 2,
         group: 1
     },
-    // {
-    //     term: "Adnate",
-    //     definition: "Attached to and running downward along a stem or stipe, but curving inward just before the attachment point.",
-    //     level: 2,
-    //     group: 1
-    // },
     {
         term: "Decurrent",
         definition: "Gills or pores are broadly attached to and extend down the stipe.",

@@ -66,6 +66,12 @@
     }
 }
 
+@media (min-height:640px) {
+    .strips {
+        height: 18rem;
+    }
+}
+
 @media (min-height:812px) {
     .strip {
         margin: .5rem;
@@ -117,6 +123,7 @@
     }
 
     .strips {
+        height: 20rem;
         height: initial;
     }
 
