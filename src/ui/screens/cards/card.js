@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
 import { taxa } from 'api/snapdragon/taxa';
@@ -45,7 +47,6 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
 
     const prev = document.querySelector('#cardModal .js-prev');
     const next = document.querySelector('#cardModal .js-next');
-
 
     if(prev) isInCarousel ? prev.classList.remove('hide-important') : prev.classList.add('hide-important');
     if(next) isInCarousel ? next.classList.remove('hide-important') : next.classList.add('hide-important');

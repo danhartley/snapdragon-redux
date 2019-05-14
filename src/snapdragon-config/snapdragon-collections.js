@@ -39,6 +39,10 @@ const allIconicTaxa = [
     {
       id: 'aves',
       common: 'Birds'
+    },
+    {
+      id: 'reptilia',
+      common: 'Reptiles'
     }
 ];
 
@@ -99,8 +103,7 @@ const locationDefaults = {
 };
 
 const placeDefaults = {
-    default: true,
-    id: 2, 
+    default: true,    
     providerId: 1,
     type: 'place',
     rangeSensitive: true,
@@ -116,6 +119,7 @@ const placeDefaults = {
 
 const placeMonsanto = {    
     ...placeDefaults,  
+    id: 1, 
     default: false,  
     name: 'Parque Florestal Monsanto',            
     guide: {
@@ -136,6 +140,7 @@ const placeMonsanto = {
 
 const placeArrabida = {
     ...placeDefaults,
+    id: 2, 
     default: false,
     name: 'O Parque Natural da Arrábida, SE, PT',       
     guide: {
@@ -257,7 +262,7 @@ const snapdragonKitchenGarden = {
 // snapdragonKitchenGarden.iconicTaxa = [ "animalia" ];
 // snapdragonKitchenGarden.items = [ ...mammals ];
 
-snapdragonKitchenGarden.itemNames = [ "Prunus avium" ];
+// snapdragonKitchenGarden.itemNames = [ "Prunus avium" ];
 
 const rhsTrees = { 
     id: 5,

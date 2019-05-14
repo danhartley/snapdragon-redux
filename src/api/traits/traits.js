@@ -12,7 +12,7 @@ export const getTraits = (enums, item) => {
 
     let symbionts;
 
-    const traits = [ 
+    let traits = [ 
         ...getBirdTraits(enums), ...getFungiTraits(enums), ...getPlantTraits(enums), 
         ...getInsectTraits(enums), ...getMammalTraits(enums)
     ];

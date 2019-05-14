@@ -45,6 +45,7 @@
 .test-card-container {
     position: relative;
     justify-content: flex-start;
+    height: 100%;
   }
   
   /* CONTINUE BUTTON */
@@ -270,11 +271,15 @@ div.text-entry {
 }
 
 .feature-symbiont-list {
-    padding: .5rem;
     height: 12rem;
+    padding: .5rem;
 }
 
 @media (min-width: 768px) {
+
+    .feature-symbiont-list {
+        height: 16rem;
+    }
 
     .question-container {
         display: initial;
@@ -403,5 +408,12 @@ div.text-entry {
 @media (max-height:568px) {
     .test-card .help-txt {
         display: none;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .feature-symbiont-list {
+        height: 20rem;
     }
 }
