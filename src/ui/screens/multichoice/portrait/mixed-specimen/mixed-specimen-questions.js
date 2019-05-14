@@ -86,7 +86,7 @@ export const renderMixedSpecimenQuestions = collection => {
                     const vernacularName = itemProperties.getVernacularName(wrongItem, config);
                     const name = vernacularName || score.answer;
                     const wrongAnswerTxt = document.querySelector('.js-wrong-answer-txt');
-                          wrongAnswerTxt.innerHTML = score.answer ? `No, this is ${name}.` : '';      
+                          wrongAnswerTxt.innerHTML = score.answer ? `${name} is not right.` : '';
                 }
             };
 

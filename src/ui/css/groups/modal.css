@@ -199,12 +199,7 @@
     opacity: 1;
 }
 
-#cardModal .taxon.card .species-header img, .taxon.card .species-header img {
-    height: 5.5rem;    
-    width: 5.5rem;
-}
-
-#cardModal .taxon.card .species-header > div:nth-child(2) {
+#cardModal .taxon.card-card .species-header > div:nth-child(2) {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -379,15 +374,6 @@
   #cardModal .modal-body {
     padding: 1rem 0;
   }
-  
-  /* #cardModal .card-card .feature-symbiont-list.scrollable {
-    top: 16rem;
-  } */
-
-  /* #cardModal .feature-symbiont-list.scrollable {        
-      margin: 0;
-      margin-top: 230px;
-  } */
 
   .modal-body .language-options button {
     width: initial;

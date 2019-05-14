@@ -27,7 +27,7 @@ export const renderLocation = (modal, config, createGuide) => {
 
     const currentLocation = modal.querySelector('.js-current-location');
           currentLocation.innerHTML = config.ipLocation
-                                        ? `Locally in ${config.ipLocation}.`
+                                        ? `Locally in ${config.ipLocation} (default).`
                                         : '';
 
     async function handleSetLocationLongLat(event) {

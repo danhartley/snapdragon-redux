@@ -83,11 +83,7 @@
 
   /* TAXON CARD  */
 
-  .taxon.card {
-      font-size: 1rem;
-  }
-
-  .taxon.card .data-box {
+  .taxon.card-card .data-box {
     font-family: sentinel;
     letter-spacing: .05rem;
     font-size: .9rem;
@@ -107,7 +103,7 @@
 
 .feature-symbiont-list table {
     width: 100%;
-    border-collapse: inherit;
+    border-collapse: collapse;
 }
 
 .feature-symbiont-list thead > tr:nth-child(1) {  
@@ -120,8 +116,8 @@
     position: -webkit-sticky;
 }
 
-.feature-symbiont-list tfoot td {
-    border-bottom: .05rem solid rgb(52, 58, 64,.7);
+td:empty:after{
+  content: "\00a0";
 }
 
 .feature-symbiont-list th,
@@ -129,6 +125,7 @@
     text-align: left;
     font-weight: normal;
     border: 0;
+    border: 1px solid lightgray;
     padding: 0 0 0 0.5rem;
     text-transform: capitalize;
     font-size: 0.8rem;
@@ -176,15 +173,5 @@
         font-size: .9rem;
         justify-content: left;
         align-items: center;
-    }
-
-    .mixed-container {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-      position: absolute;
-      top: 14rem;
-      left: 2rem;
-      right: 2rem;
     }
 }

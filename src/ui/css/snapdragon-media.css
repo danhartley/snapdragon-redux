@@ -196,11 +196,11 @@
     }
 
     .sub-header {
-        height: 6rem;
         margin-bottom: 1rem;
+        background-color: var(--snap-list-alt-background);
     }
 
-    .taxon.card .data-box-container {
+    .taxon.card-card .data-box-container {
         grid-template-columns: 5fr 5.5rem;
     }
 

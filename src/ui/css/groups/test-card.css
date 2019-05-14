@@ -67,6 +67,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+    padding: 1rem 0;
   }
 
   .test-card .question > div {
@@ -148,6 +149,7 @@
 
   .wrong-answer-txt {
       margin: 1rem .5rem 0 .75rem;
+      font-size: 1rem;
   }
 
 /* SYSTEM RESPONSE */
@@ -238,8 +240,8 @@ div.text-entry {
   /* FUNGI ICONS */
 
   .mushroom-icon-header svg {
-    width: 1rem;
-    height: 1rem;
+    width: 2rem;
+    height: 2rem;
     fill: var(--snap-iconic-icon-header);
   }
 
@@ -265,6 +267,11 @@ div.text-entry {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.feature-symbiont-list {
+    padding: .5rem;
+    height: 12rem;
 }
 
 @media (min-width: 768px) {
@@ -301,14 +308,12 @@ div.text-entry {
     }
 
     .test-card-container .question-container {
-        height: 5.5rem;
         display: grid;
         grid-template-columns: 2fr 4fr 2fr;
         background-color: var(--snap-species-header-background);
     }
 
     .species-header {
-        height: 5.5rem;
         text-align: right;
     }
 
@@ -328,7 +333,7 @@ div.text-entry {
         letter-spacing: .05rem;
     }
 
-    .test-card {
+    .test-card-content {
         padding: 0 .5rem;
     }
 
@@ -378,9 +383,11 @@ div.text-entry {
         font-size: 5rem;
     }      
 
-    /* .card-card .feature-symbiont-list.scrollable {
-        height: 100%;
-    } */
+    .card-card {
+        display: grid;
+        grid-gap: .5rem;
+        grid-template-columns: 1fr;
+    }
 }
 
 /* iPHONE 6,7,8 PLUS, iPHONE X, GALAXY S9/S9+ */
