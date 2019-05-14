@@ -6,7 +6,7 @@ import { getPlantTraits } from 'api/traits/plant-traits';
 import { getInsectTraits } from 'api/traits/insect-traits';
 import { getMammalTraits } from 'api/traits/mammal-traits';
 
-import { relationships } from 'api/snapdragon/relationships';
+import { getPollinators } from 'api/snapdragon/relationships';
 
 export const getTraits = (enums, item) => {
 
@@ -17,12 +17,12 @@ export const getTraits = (enums, item) => {
         ...getInsectTraits(enums), ...getMammalTraits(enums)
     ];
 
-    const addRelationshipTraits = false;
+    const addRelationshipTraits = true;
 
     if(item && addRelationshipTraits) {
 
         const getPollinationSymbionts = item => {
-            const targetSpecies = relationships.filter(species => species.speciesA);
+            const targetSpecies = getPollinators(enums).filter(species => species.speciesA);
             const candidates = targetSpecies.filter(symbiosis => R.contains(item.name, symbiosis.speciesA.names));
             return candidates;
         };
@@ -38,7 +38,8 @@ export const getTraits = (enums, item) => {
         if(symbionts) {
             symbionts.forEach(species => {
     
-                species.speciesB.names.forEach(name => {
+                species.speciesB.forEach(item => {
+                    const name = item.names[0];
                     itemTraits.traits.push({
                         name: species.type[0],
                         value: name,
@@ -46,7 +47,8 @@ export const getTraits = (enums, item) => {
                     });
                 });
     
-                species.speciesB.names.forEach(name => {
+                species.speciesB.forEach(item => {
+                    const name = item.names[0];
                     itemTraits.symbionts.push({ id: name });
                 });            
             });
