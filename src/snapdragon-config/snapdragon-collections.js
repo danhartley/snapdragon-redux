@@ -5,6 +5,7 @@ import { mushrooms } from 'api/snapdragon/mushrooms';
 import { mushrooms2 } from 'api/snapdragon/mushrooms2';
 import { weeds } from 'api/rhs/weeds';
 import { lichen } from 'api/snapdragon/lichen';
+import { mammals } from 'api/snapdragon/mammals';
 
 import { leaf } from 'api/leaf';
 
@@ -251,6 +252,12 @@ const snapdragonKitchenGarden = {
     items: [ ...plants ],
     iconicTaxa: [ 'plantae' ]
 };
+
+// snapdragonKitchenGarden.itemNames = [ "Vulpes vulpes" ];
+// snapdragonKitchenGarden.iconicTaxa = [ "animalia" ];
+// snapdragonKitchenGarden.items = [ ...mammals ];
+
+snapdragonKitchenGarden.itemNames = [ "Prunus avium" ];
 
 const rhsTrees = { 
     id: 5,
