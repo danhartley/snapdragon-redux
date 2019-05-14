@@ -1,9 +1,16 @@
+import * as R from 'ramda';
+
 import { renderTemplate } from 'ui/helpers/templating';
 import infoSliderTemplate from 'ui/screens/common/info-slider-template.html';
 
 export const infoSlider = (item, traits, family, parent, mode) => {
 
     const speciesTraits = traits.find(c => c.name === item.name) || { traits: [] };
+
+    const exclude = [ 'song', 'UK Rank' ];
+
+    speciesTraits.traits = speciesTraits.traits.filter(trait => !R.contains(trait.name, exclude));
+
     const familyTraits = (family && family.traits) ? family.traits : [];
     if(speciesTraits.traits.length === 0 && familyTraits.length ===0) return;
     const species = { traits: speciesTraits.traits.concat(familyTraits) };

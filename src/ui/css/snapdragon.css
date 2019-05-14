@@ -326,7 +326,7 @@ a.dropdown-item {
 }
 
 .snapdragon-container {
-  height: 100%;
+  /* height: 100%; */
   padding: 0;
   justify-content: flex-start;
   background-color: var(--snap-list-alt-background);
