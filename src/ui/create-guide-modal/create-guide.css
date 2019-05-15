@@ -73,13 +73,18 @@
   
   .modal-guide-wrapper .modal-body .guide-text {
     font-size: 1.1rem;
-    margin: .5rem 0;
-    letter-spacing: .03rem;
-    color: var(--snap-progress-bar);
+    margin-left: .5rem;
+    /* margin: .5rem 0 .5rem .5rem; */
+    /* letter-spacing: .03rem; */
+    color: var(--snap-text-dark-medium-dark);
     font-style: italic;
     font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
-    min-height: 1.75rem;
+    /* min-height: 1.75rem; */
     /* min-height: 2.5rem; */
+    /* min-height: 2rem; */
+    display: flex;
+    align-items: center;
+    padding-top: .5rem; 
   }
   
   
@@ -186,22 +191,29 @@
 
   .modal-guide-wrapper .modal-body .chosen {
     position: absolute;
-    bottom: 3.2rem;
+    bottom: 2.8rem;
     left: .5rem;
+    min-height: 2rem;
+    display: flex;
+    align-items: baseline;
   }
 
-  .modal-guide-wrapper .modal-body .chosen > div {
+  /* .modal-guide-wrapper .modal-body .chosen > div {
     display: grid;
     grid-template-columns: 8.2rem 1fr;
-  }
+  } */
   
   .modal-guide-wrapper .modal-body .chosen > div > span:nth-child(1), 
   .modal-guide-wrapper .modal-body .chosen-guide-filter span:nth-child(1) {
-    margin: 0 .25rem 0 0;
+    margin: 0 .25rem;
     letter-spacing: .03rem;
     font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
     color: var(--snap-text-medium-light);
     font-style: italic;
+  }
+
+  .modal-guide-wrapper .modal-body .chosen-guide-filter {
+    margin: .5rem 0;
   }
   
   .modal-guide-wrapper .modal-body .chosen > div span:nth-child(2) > span {
@@ -672,7 +684,7 @@
     width: 100%;
     font-family: "Libre Baskerville", Libre, Georgia, Times, serif;
     letter-spacing: .03rem;
-    border: .05rem solid lightgray;
+    /* border: .05rem solid lightgray; */
   }
 
   .location-option.place {
@@ -717,10 +729,29 @@
     flex-direction: column;
     justify-content: space-evenly;
     height: calc(100vh - 16rem);
+    margin-left: .25rem;
   }
 
   .filter-actions .actions {
-    display: block;
+    /* height: calc(100vh - 14rem); */
+    height: 100%;
+    justify-content: space-between; 
+  }
+
+  .filter-actions > .guide-text {
+    display: none !important;
+  }
+
+  .filter-actions + div {
+    display: none !important;
+  }
+
+  .remove-id-filter {
+    margin-bottom: 1rem;
+  }
+
+  .filter-actions .guide-text {
+    padding: .5rem 0;
   }
 
   #inat-identity {
@@ -735,6 +766,11 @@
   }
 
   @media (min-width: 768px) {
+
+    .modal-guide-wrapper .modal-body .chosen > div > span:nth-child(1), 
+    .modal-guide-wrapper .modal-body .chosen-guide-filter span:nth-child(1) {
+      margin: .15rem .25rem 0 0;
+    }
 
     #exampleGuide .landscape-inner-body {
       height: 300px;
@@ -767,10 +803,10 @@
       width: 10rem;
     }
 
-    .filter-actions .actions {
-      height: 20.25rem;
-      padding: 0;
-    }
+    /* .filter-actions .actions {
+      display: grid;
+      grid-template-rows: 100px 1fr;
+    } */
 
     .modal-guide-wrapper .modal-header {
       display: flex;
@@ -805,9 +841,9 @@
       align-items: center;
     }
   
-    .modal-guide-wrapper .modal-body .html5-location-place button {
+    /* .modal-guide-wrapper .modal-body .html5-location-place button {
       margin-left: .25rem;
-    }
+    } */
 
     .html5-location-place {
       width: auto;
@@ -892,17 +928,18 @@
     .modal-guide-wrapper #inat-place {
         flex: 3;
         margin: 0;
+        width: 24.5rem;
       }
 
     #inat-place::placeholder {
         color: var(--gray);
         font-size: 1rem;
-        font-style: italic;
+        /* font-style: italic; */
     }
 
     #inat-place, #inat-place-id {
         margin: 0 .5rem  0 0;
-        width: 20rem;        
+        /* width: 20rem; */
     }
 
     .inat.inat-switch .inat-entry, .inat.inat-switch input[type="text"] {

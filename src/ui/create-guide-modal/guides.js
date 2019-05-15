@@ -7,8 +7,8 @@ import guidesTemplate from 'ui/create-guide-modal/guides.html';
 
 export const renderGuides = (modal, config, createGuide) => {
 
-    const genericSelectedtext = modal.querySelector('.js-chosen');
-          genericSelectedtext.classList.add('hide');
+    // const genericSelectedtext = modal.querySelector('.js-chosen');
+    //       genericSelectedtext.display = 'none';
 
     const template = document.createElement('template');
           template.innerHTML = guidesTemplate;
