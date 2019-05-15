@@ -13,7 +13,7 @@ const lesson = {
   moduleSize: 4
 };
 
-test('createLessonPlan returns initial plan and collection for landscape mode with moduleSize 4 (overrides config)', () => {        
+test('createLessonPlan returns initial plan and collection for landscape mode with moduleSize 4 (overrides config)', () => {            
     const { updatedLessonPlan, updatedCollection, updatedLesson } = lessonPlanner.createLessonPlan(lessonPlan, config, collection, lesson);    
     let revisedScreens = [];
     updatedLessonPlan.layouts.map(l => l.screens.map(s => revisedScreens.push(s)));

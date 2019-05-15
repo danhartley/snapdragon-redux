@@ -1,7 +1,6 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
-import { store } from 'redux/store';
 import { getTraits } from 'api/traits/traits';
 import * as SD from 'api/traits/trait-types';
 
@@ -11,7 +10,7 @@ export const getTraitTests = itemsInThisRound => {
 
     const tests = itemsInThisRound.map(item => {
 
-        const { question, answers, overrides } = getTraitTest(item);
+        const { question, answers, overrides, enums } = getTraitTest(enums, item);
 
         if(!question) return {};
 
@@ -26,9 +25,7 @@ export const getTraitTests = itemsInThisRound => {
     return tests;
 }
 
-const getTraitTest = item => {
-
-    const { enums } = store.getState();
+const getTraitTest = (enums, item) => {
 
     const traitsToIgnore = [ 'song', 'look-alikes' ]; // add flag so that this does not need to be updated e.g. ignore: true in the trait data
 
