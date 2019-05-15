@@ -42,7 +42,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
                 ? 'RESUME-LESSON'
                 : noRecords
                     ? 'CREATE-LESSON'
-                    : 'PREPARE-LESSON';
+                    : 'GET_SPECIES';
 
     const actionLink = document.querySelector('.js-create-guide-link');
     
@@ -58,11 +58,11 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     if(config.isLandscapeMode) {
         actionLink.dataset.toggle = 'modal';
-        actionLink.dataset.target = '#createGuide'; 
+        actionLink.dataset.target = '#createGuide';
         editLink.dataset.toggle = 'modal';
         editLink.dataset.target = '#createGuide'; 
-        exampleLink.dataset.toggle = 'modal';
-        exampleLink.dataset.target = '#exampleGuide';
+        exampleLinkTxt.dataset.toggle = 'modal';
+        exampleLinkTxt.dataset.target = '#exampleGuide';
     }
 
     const modalHandler = () => {        
@@ -74,7 +74,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
         renderExampleGuideHandler();
     };
 
-    const prepareHandler = () => {
+    const getSpeciesHandler = () => {
         const { config, collections } = store.getState();  
         const id = parseInt(config.collection.id);
         const collection = collections.find(c => c.id === id);        
@@ -126,19 +126,19 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
                 actionLink.addEventListener('click', modalHandler);
                 if(noRecords) noRecordsSummary();
                 break;
-            case 'PREPARE-LESSON':
-                actionLink.removeAttribute('data-toggle');    
+            case 'GET_SPECIES':
+                actionLink.removeAttribute('data-toggle');
                 actionLink.innerHTML = 'Get Species';                
                 elem.removeClass(document.querySelector('.js-for-text'), 'hide');                
                 guideSummary(speciesCount);
-                actionLink.removeEventListener(prepareHandler);
-                actionLink.addEventListener('click', prepareHandler);
+                actionLink.removeEventListener(getSpeciesHandler);
+                actionLink.addEventListener('click', getSpeciesHandler);
                 break;
             case 'BEGIN-LESSON':            
                 actionLink.innerHTML = 'Begin';
                 const forText = document.querySelector('.js-for-text');
                 if(forText) forText.classList.add('hide');
-                actionLink.addEventListener('click', beginLessonHandler);          
+                actionLink.addEventListener('click', beginLessonHandler);   
                 break;
             case 'RESUME-LESSON':
                 actionLink.removeAttribute('data-toggle');
@@ -160,6 +160,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     });
 
     editLinkTxt.addEventListener('click', event => {
+        actionLink.removeEventListener('click', beginLessonHandler);
         modalHandler();
     });
 
@@ -192,7 +193,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     const closeModalHandler = () => {
         config = store.getState().config;
-        state = 'PREPARE-LESSON';
+        state = 'GET_SPECIES';
         checkState(state);
     };
 
@@ -206,7 +207,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
         if(config.isPortraitMode && !!speciesCount) return;
         
         if(!counter.isLessonPaused && counter.index === null) {
-            actionLink.removeEventListener('click', prepareHandler);
+            actionLink.removeEventListener('click', getSpeciesHandler);
             state = 'BEGIN-LESSON';
             checkState(state);
             guideSummary(speciesCount);

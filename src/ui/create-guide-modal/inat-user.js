@@ -16,6 +16,8 @@ export const renderInatUser = (parent, config, save) => {
     
     renderTemplate({ inatId }, template.content, parent);
 
+    const deleteIdAction = parent.querySelector('.js-remove-id-filter');
+
     let autocompleteRef;
 
     const setiNatIdentityBtn = parent.querySelector('.js-set-inat-identity-btn');
@@ -37,6 +39,8 @@ export const renderInatUser = (parent, config, save) => {
             if(autocompleteRef) {
                 autocompleteRef.destroy();
             }
+
+            deleteIdAction.classList.remove('hide');
         }
     });
 
@@ -68,9 +72,10 @@ export const renderInatUser = (parent, config, save) => {
 
     switchHandler(idSwitch, position, switchCallback);
 
-    parent.querySelector('.js-remove-id-filter').addEventListener('click',  () => {
+    deleteIdAction.addEventListener('click',  () => {
         config.guide.inatId = { key: '', type: '', param: 'user_id' };
         actions.boundUpdateConfig(config);
         parent.querySelector('.js-chosen-inat .selected-text').innerHTML = '-----';
+        deleteIdAction.classList.add('hide');
     });  
 };

@@ -81,7 +81,7 @@ export const renderNavigation = (page) => {
                 const target = event.target.parentElement;
                 const targetId = target.id === '' ? target.parentElement.id : target.id;
                 const name = targetId;                 
-                const { collections, collection, config, history } = store.getState();
+                const { collection, config, history } = store.getState();
                 switch(targetId) {                    
                     case 'home':
                         target.classList.add('active-icon');
@@ -122,6 +122,8 @@ export const renderNavigation = (page) => {
                     case 'email':
                         target.classList.add('active-icon');
                         break;
+                    default:
+                        return;
                 }
                 actions.boundNewPage({ name: name});
             }
