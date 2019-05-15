@@ -78,7 +78,7 @@ export const updateLanguage = (config) => {
 
     // migratory = { ...english.whether, ... { type: 'migratory' }, ...{ name: english.name.MIGRATORY } };
 
-    actions.boundUpdateEnums(enums);   
+    actions.boundUpdateEnums(enums);
 };
 
 export const typedEnums = enums => {

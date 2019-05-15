@@ -1,10 +1,12 @@
 //https://en.wikipedia.org/wiki/List_of_crop_speciesAs_pollinated_by_bees
 
+import * as traitEnums from 'api/traits/trait-types';
 import { store } from 'redux/store';
 
 export const getPollinators = SD => {
 
     SD = SD || store.getState().enums;
+    SD = SD && Object.keys(SD).length ? SD : traitEnums.enums;
 
     return [
     {

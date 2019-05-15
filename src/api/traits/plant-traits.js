@@ -127,7 +127,7 @@ export const getTraits = SD => {
 };
 
 export const getPlantTraits = enums => {
-    const SD = Object.keys(enums).length ? enums : traitEnums.enums;
+    const SD = enums && Object.keys(enums).length ? enums : traitEnums.enums;
     const traits = getTraits(SD);
     traits.forEach(species => {
         if(!species.traits.find(trait => trait.name === SD.name.TROPHIC_LEVEL)) {

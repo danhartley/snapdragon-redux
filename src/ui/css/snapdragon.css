@@ -532,6 +532,7 @@ a.dropdown-item {
 
 .scrollable {
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   position: fixed;
   left: 0;
   right: 0;
