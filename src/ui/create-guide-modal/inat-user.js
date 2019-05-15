@@ -18,6 +18,8 @@ export const renderInatUser = (parent, config, save) => {
 
     const deleteIdAction = parent.querySelector('.js-remove-id-filter');
 
+    if(config.guide.inatId) deleteIdAction.classList.remove('hide');
+
     let autocompleteRef;
 
     const setiNatIdentityBtn = parent.querySelector('.js-set-inat-identity-btn');

@@ -22,13 +22,15 @@ export const renderLocation = (modal, config, createGuide) => {
 
     renderTemplate({}, template.content, parent);
 
-    const setLocationLongLatBtn = modal.querySelector('.js-set-location-btn');
-          setLocationLongLatBtn.innerHTML = 'Pinpoint your location';
+    const defaultLocationTxt = 'Use your current location';
 
-    const currentLocation = modal.querySelector('.js-current-location');
-          currentLocation.innerHTML = config.ipLocation
-                                        ? `Locally in ${config.ipLocation} (default).`
-                                        : '';
+    const setLocationLongLatBtn = modal.querySelector('.js-set-location-btn');
+          setLocationLongLatBtn.innerHTML = defaultLocationTxt;
+
+    // const currentLocation = modal.querySelector('.js-current-location');
+    //       currentLocation.innerHTML = config.ipLocation
+    //                                     ? `Locally in ${config.ipLocation} (default).`
+    //                                     : '';
 
     async function handleSetLocationLongLat(event) {
 
@@ -40,7 +42,7 @@ export const renderLocation = (modal, config, createGuide) => {
         config.collection.id = 1;
         config.guide.locationLongLat = place.longLocation;
         actions.boundUpdateConfig(config);
-        setLocationLongLatBtn.innerHTML = 'Pinpoint your location';
+        setLocationLongLatBtn.innerHTML = defaultLocationTxt;
 
         save();
     }
