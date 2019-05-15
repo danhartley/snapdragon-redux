@@ -3142,10 +3142,6 @@ export const birds = [
         "language": "en"
       },
       {
-        "vernacularName": "Northern house-martin",
-        "language": "en"
-      },
-      {
         "vernacularName": "Sand martin",
         "language": "en"
       },
@@ -3154,19 +3150,7 @@ export const birds = [
         "language": "en"
       },
       {
-        "vernacularName": "Common house-martin and northern house-martin",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Common house martin",
-        "language": "en"
-      },
-      {
         "vernacularName": "House martin",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Huiszwaluw",
         "language": "en"
       },
       {
