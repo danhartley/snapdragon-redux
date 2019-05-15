@@ -1533,10 +1533,13 @@ label.btn.btn-secondary .lesson-icon {
 
 .bird-song-icon {
   color: rgba(0, 0, 0, 1);
+  margin-left: -.5rem;
 }
 
 .bird-song-icon-disabled {
   color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  margin-left: -.5rem;
 }
 
 iframe#birdsong {
