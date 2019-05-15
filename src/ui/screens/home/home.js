@@ -58,11 +58,11 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     if(config.isLandscapeMode) {
         actionLink.dataset.toggle = 'modal';
-        actionLink.dataset.target = '#createGuide'; 
+        actionLink.dataset.target = '#createGuide';
         editLink.dataset.toggle = 'modal';
         editLink.dataset.target = '#createGuide'; 
-        exampleLink.dataset.toggle = 'modal';
-        exampleLink.dataset.target = '#exampleGuide';
+        exampleLinkTxt.dataset.toggle = 'modal';
+        exampleLinkTxt.dataset.target = '#exampleGuide';
     }
 
     const modalHandler = () => {        
