@@ -29,8 +29,10 @@ const getLessonItems = (lessonStateMode, collection, config, history) => {
             break;
         }
         case 'pause-lesson': {
-            const { index } = getLatestCounter();
-            actions.boundToggleLesson({ index: 0, log: { index: index, collection: collection.id  } });
+            if(collection.items) {
+                const { index } = getLatestCounter();
+                actions.boundToggleLesson({ index: 0, log: { index: index, collection: collection.id  } });
+            }
             break;
         }
         case 'restart-lesson': {
