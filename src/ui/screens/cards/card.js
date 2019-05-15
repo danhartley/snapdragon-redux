@@ -74,7 +74,7 @@ const renderLandscape = (item, config, traits, mode, rootNode) => {
 
     renderInatDataBox(inatNode, item, config, mode);
 
-    lookALikes(item, traits, config);
+    lookALikes(item, traits, config, rootNode);
 };
 
 const renderPortrait = (item, config, traits, mode, rootNode) => {

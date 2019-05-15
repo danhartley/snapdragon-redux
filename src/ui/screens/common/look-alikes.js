@@ -11,7 +11,7 @@ import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import visualComparisonTemplate from 'ui/screens/common/look-alikes-link-template.html';
 import { lookalikeDescriptions } from 'api/snapdragon/look-alike-descriptions';
 
-export const lookALikes = (item, traits, config) => {
+export const lookALikes = (item, traits, config, rootNode = document) => {
 
     const lookalikes = itemProperties.itemContextProperty(traits, item, 'look-alikes');
           lookalikes.push(item.name);
@@ -20,7 +20,7 @@ export const lookALikes = (item, traits, config) => {
 
         const matchTemplate = document.createElement('template');
         matchTemplate.innerHTML = visualComparisonTemplate;
-        const lookalikeParent = document.querySelector('.js-lookalikes');
+        const lookalikeParent = rootNode.querySelector('.js-lookalikes');
 
         const slides = [];
         const names = [];
@@ -75,7 +75,7 @@ export const lookALikes = (item, traits, config) => {
             }
         }
 
-        const speciesComparisonLink = document.querySelector('.js-compare-species-link');
+        const speciesComparisonLink = rootNode.querySelector('.js-compare-species-link');
 
         speciesComparisonLink.addEventListener('click', () => {
 

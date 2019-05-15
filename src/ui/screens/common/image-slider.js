@@ -108,8 +108,8 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
         header.innerHTML = `<span class="common-name">${slide.images[0].itemCommon}</span><span class="latin-name">${slide.images[0].itemName}</span>`;
         const item = { name: slide.images[0].itemName, itemCommon: slide.images[0].itemCommon, images: slide.images };
         const images = prepImagesForCarousel(item, config, imageUseCases.CAROUSEL);
-        renderTemplate({ images, index: index + 1 }, sideBySlider.content, parent);
-        const activeNode = document.querySelector(`#imageSlider${index + 1} .carousel-item`);
+        renderTemplate({ images, index: index + 1, disableModal }, sideBySlider.content, parent);
+        const activeNode = document.querySelector(`#imageSlider_${ disableModal }_${index + 1} .carousel-item`);
         activeNode.classList.add('active');        
         disableModalPopups(disableModal, config);
         handleRightsAttribution(images[0], activeNode.querySelector('div'));
