@@ -99,9 +99,9 @@ const renderPortrait = (item, config, traits, mode, rootNode) => {
         iframe.id = 'birdsong';
         iframe.style.border = 0;
         iframe.src = player.dataset.src;
-        rootNode.querySelector('#menuModal .modal-body').classList.add('bird-song-bg');
-        rootNode.querySelector('#menuModal .js-modal-text-title').innerHTML = `${item.name}`;
-        const elm = rootNode.querySelector('#menuModal .js-modal-text');
+        document.querySelector('#menuModal .modal-body').classList.add('bird-song-bg');
+        document.querySelector('#menuModal .js-modal-text-title').innerHTML = `${item.name}`;
+        const elm = document.querySelector('#menuModal .js-modal-text');
         while (elm.firstChild) {
             elm.removeChild(elm.firstChild);
          }

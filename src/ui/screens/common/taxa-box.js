@@ -29,7 +29,9 @@ export const renderTaxaBox = async (parent, taxaBoxArgs) => {
     const subspeciesBadge = parent.querySelector('.js-subspecies-badge');
 
     if(subSpeciesCount === 0) {
+
         subspeciesBadge.classList.add('hide');
+        
     } else {
 
         const members = specific.subspecies;

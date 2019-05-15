@@ -568,7 +568,7 @@
 
   /* prevent child elements of listener triggering an event */  
   .btn.btn-secondary > * {
-    pointer-events: none;    
+    pointer-events: none;
   }
   
   .locations .btn.btn-secondary > * {
