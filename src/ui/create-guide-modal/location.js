@@ -49,11 +49,25 @@ export const renderLocation = (modal, config, createGuide) => {
                                             ? 'Start typing the name of a place you are interested in.'
                                             : 'Start typing the name of a place.'
 
+    let counter = 0;
+
+    locationPlaceInput.addEventListener('focus', event => {
+        counter = 0;
+    });
+
     locationPlaceInput.addEventListener('keypress', event => {
+        if(event.keyCode == 13) {
+            counter = 0;
+        }
+    });
+
+    locationPlaceInput.addEventListener('keypress', event => {
+        counter++;
+        console.log(counter);
         autocompleteRef = inatAutocomplete(locationPlaceInput, 'places', 'inat-place-autocomplete', 'place');
         setTimeout(() => {
             const googleImageContainer = modal.querySelector('#inat-place-autocomplete #googleLogoContainer');
-            if(!googleImageContainer) {
+            if(!googleImageContainer && counter >= 4) {
                 modal.querySelector('#inat-place-autocomplete').innerHTML += `<div id="googleLogoContainer"><img id="googleLogo" src="${googleLogoImg}" alt=""></div>`;
             }            
         },500);  
