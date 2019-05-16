@@ -27,11 +27,6 @@ export const renderLocation = (modal, config, createGuide) => {
     const setLocationLongLatBtn = modal.querySelector('.js-set-location-btn');
           setLocationLongLatBtn.innerHTML = defaultLocationTxt;
 
-    // const currentLocation = modal.querySelector('.js-current-location');
-    //       currentLocation.innerHTML = config.ipLocation
-    //                                     ? `Locally in ${config.ipLocation} (default).`
-    //                                     : '';
-
     async function handleSetLocationLongLat(event) {
 
         event.stopPropagation();
@@ -97,9 +92,7 @@ export const renderLocation = (modal, config, createGuide) => {
             config.guide.place = { name: locationPlaceInput.value, id: locationPlaceInput.name, type: 'places' };
             locationPlace = locationPlaceInput.value;
             config.guide.locationPlace = locationPlace;
-            // etc…
         } else {
-            // Google lookup
             config.guide.locationType = 'longLat';
             config.guide.locationLongLat = locationPlaceInput.value;
             config.collection.id = 1;

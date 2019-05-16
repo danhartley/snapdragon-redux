@@ -7,9 +7,6 @@ import guidesTemplate from 'ui/create-guide-modal/guides.html';
 
 export const renderGuides = (modal, config, createGuide) => {
 
-    // const genericSelectedtext = modal.querySelector('.js-chosen');
-    //       genericSelectedtext.display = 'none';
-
     const template = document.createElement('template');
           template.innerHTML = guidesTemplate;
     const parent = modal.querySelector('.js-actions');
@@ -26,10 +23,15 @@ export const renderGuides = (modal, config, createGuide) => {
         const taxonLanguageBtn = document.querySelector('#taxonLanguageBtn');
               taxonLanguageBtn.innerHTML = `Taxon language [${languages.find(l => l.lang === config.language).name}] `;
 
+        const taxonLanguageTxt = document.querySelector('#taxonLanguageTxt');
+              taxonLanguageTxt.innerHTML = languages.find(l => l.lang === config.language).name;
+
         document.querySelectorAll('.dropdown-item').forEach(language => {
             language.addEventListener('click', event => {            
                 actions.boundUpdateLanguage(languages.find(l => l.lang === event.target.id));
-                taxonLanguageBtn.innerHTML = `Taxon language [${languages.find(l => l.lang === event.target.id).name}] `;
+                const name = languages.find(l => l.lang === event.target.id).name;
+                taxonLanguageBtn.innerHTML = `Taxon language [${name}]`;
+                taxonLanguageTxt.innerHTML = name;
             });
         });
     }

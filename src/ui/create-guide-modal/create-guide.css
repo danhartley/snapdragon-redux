@@ -333,7 +333,7 @@
   }
 
   .inat-switch-slider {
-    height: 1.6rem;
+    height: 2rem;
     margin: 0 .5rem;
     width: 4rem;
     padding: .2rem;
@@ -344,8 +344,8 @@
   }
   
   .inat-switch-slider div {
-    height: 1.2rem;
-    width: 1.2rem;
+    height: 1.6rem;
+    width: 1.6rem;
     border-radius: .2rem;
     background-color: var(--snap-collection);
     transition-property: all;
@@ -684,7 +684,6 @@
     width: 100%;
     font-family: "Libre Baskerville", Libre, Georgia, Times, serif;
     letter-spacing: .03rem;
-    /* border: .05rem solid lightgray; */
   }
 
   .location-option.place {
@@ -695,6 +694,11 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+  }
+
+  .location-option.or-options {
+    text-align: center;
+    font-style: italic;
   }
 
   .location-option.range {
@@ -978,15 +982,15 @@
     /* SNAPDRAGON SWITCH */
 
     .inat-switch-slider {
-      height: 2rem;
+      /* height: 2rem; */
       width: 3.6rem;
       margin: 0 .75rem;
     }
 
-    .inat-switch-slider div {
+    /* .inat-switch-slider div {
       height: 1.6rem;
       width: 1.6rem;
-    }
+    } */
 
     .inat-switch-slider.right div {
       transform: translateX(1.4rem);
