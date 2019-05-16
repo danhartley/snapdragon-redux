@@ -400,6 +400,7 @@
     letter-spacing: .05rem;
     width: 100%;
     font-size: 1rem;
+    height: 2.5rem;
   }
 
   .guides .inat .inat-switch {
@@ -676,7 +677,7 @@
   }
 
   .location-option.place {
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
   }
 
   .location-option.or-options {
