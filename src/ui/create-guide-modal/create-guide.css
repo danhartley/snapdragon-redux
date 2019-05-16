@@ -73,18 +73,13 @@
   
   .modal-guide-wrapper .modal-body .guide-text {
     font-size: 1.1rem;
-    margin-left: .5rem;
-    /* margin: .5rem 0 .5rem .5rem; */
-    /* letter-spacing: .03rem; */
     color: var(--snap-text-dark-medium-dark);
     font-style: italic;
     font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
-    /* min-height: 1.75rem; */
-    /* min-height: 2.5rem; */
-    /* min-height: 2rem; */
     display: flex;
     align-items: center;
-    padding-top: .5rem; 
+    padding-top: .5rem;
+    margin-left: .5rem;
   }
   
   
@@ -198,11 +193,6 @@
     align-items: baseline;
   }
 
-  /* .modal-guide-wrapper .modal-body .chosen > div {
-    display: grid;
-    grid-template-columns: 8.2rem 1fr;
-  } */
-  
   .modal-guide-wrapper .modal-body .chosen > div > span:nth-child(1), 
   .modal-guide-wrapper .modal-body .chosen-guide-filter span:nth-child(1) {
     margin: 0 .25rem;
@@ -394,7 +384,7 @@
   }
   
   .inat-switch-slider.right div {
-    transform: translateX(2.2rem);
+    transform: translateX(2rem);
   }
 
   .inat-switch {
@@ -677,7 +667,6 @@
   }
 
   .location-option {
-    padding: .25rem;
     line-height: 1.8rem;
     display: grid;
     grid-template-rows: 1fr;
@@ -688,12 +677,6 @@
 
   .location-option.place {
     grid-template-rows: 1fr 1fr;
-  }
-
-  .location-option.place > div:nth-child(1) {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
   }
 
   .location-option.or-options {
@@ -733,11 +716,10 @@
     flex-direction: column;
     justify-content: space-evenly;
     height: calc(100vh - 16rem);
-    margin-left: .25rem;
+    margin: 0 .5rem;
   }
 
   .filter-actions .actions {
-    /* height: calc(100vh - 14rem); */
     height: 100%;
     justify-content: space-between; 
   }
@@ -756,6 +738,7 @@
 
   .filter-actions .guide-text {
     padding: .5rem 0;
+    margin-left: -.05rem !important;
   }
 
   #inat-identity {
@@ -785,7 +768,7 @@
     }
 
     #taxonLanguageBtn, .inat-switch {
-      width: 100%;
+      width: 50%;
     }
 
     #inat-identity {
@@ -793,9 +776,12 @@
     }
 
     .filter-options {
-      grid-template-columns: 1fr 1fr;
-      grid-gap: .5rem;
-      width: 100%;
+      grid-template-columns: 1fr;
+    }
+
+    .landscape-inner-body > div:nth-child(1),
+    .portait-inner-body > div:nth-child(1) {
+      height: 324px;
     }
 
     .actions {
@@ -806,11 +792,6 @@
     #set-inat-identity-btn {  
       width: 10rem;
     }
-
-    /* .filter-actions .actions {
-      display: grid;
-      grid-template-rows: 100px 1fr;
-    } */
 
     .modal-guide-wrapper .modal-header {
       display: flex;
@@ -842,12 +823,8 @@
 
     .location-option {
       display: flex;
-      align-items: center;
+      /* align-items: center; */
     }
-  
-    /* .modal-guide-wrapper .modal-body .html5-location-place button {
-      margin-left: .25rem;
-    } */
 
     .html5-location-place {
       width: auto;
@@ -859,6 +836,10 @@
 
     #set-inat-location-btn {
       width: initial;
+    }
+
+    .inat-switch.location, .inat-switch.inat, .inat-switch.season {
+      width: 50%;
     }
 
     .inat-switch.inat, .guides .inat .inat-switch {
@@ -912,17 +893,12 @@
 
     .location-option.place,
     .location-option.range {
-      grid-template-rows: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
     }
 
     .location-option.place {
       margin: 0;
-    }
-
-    .location-option.place > div:nth-child(1) {
-      display: initial;
-      margin-top: 0;
-      margin-right: .25rem;
     }
     
     .location-option.place > button {
@@ -930,20 +906,19 @@
     }
 
     .modal-guide-wrapper #inat-place {
-        flex: 3;
         margin: 0;
         width: 24.5rem;
+        float: left;
+        margin-right: .5rem;
       }
 
     #inat-place::placeholder {
         color: var(--gray);
         font-size: 1rem;
-        /* font-style: italic; */
     }
 
     #inat-place, #inat-place-id {
         margin: 0 .5rem  0 0;
-        /* width: 20rem; */
     }
 
     .inat.inat-switch .inat-entry, .inat.inat-switch input[type="text"] {
@@ -982,15 +957,9 @@
     /* SNAPDRAGON SWITCH */
 
     .inat-switch-slider {
-      /* height: 2rem; */
       width: 3.6rem;
       margin: 0 .75rem;
     }
-
-    /* .inat-switch-slider div {
-      height: 1.6rem;
-      width: 1.6rem;
-    } */
 
     .inat-switch-slider.right div {
       transform: translateX(1.4rem);
@@ -1036,7 +1005,7 @@
 @media (min-width: 736px) {
   .location-option {
     line-height: 2rem;
-    padding: .5rem;
+    /* padding: .5rem; */
   }
 }
 
