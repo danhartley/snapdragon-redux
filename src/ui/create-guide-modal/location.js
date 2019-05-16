@@ -67,10 +67,10 @@ export const renderLocation = (modal, config, createGuide) => {
         autocompleteRef = inatAutocomplete(locationPlaceInput, 'places', 'inat-place-autocomplete', 'place');
         setTimeout(() => {
             const googleImageContainer = modal.querySelector('#inat-place-autocomplete #googleLogoContainer');
-            if(!googleImageContainer && counter >= 4) {
+            if(!googleImageContainer && counter >= 3) {
                 modal.querySelector('#inat-place-autocomplete').innerHTML += `<div id="googleLogoContainer"><img id="googleLogo" src="${googleLogoImg}" alt=""></div>`;
             }            
-        },500);  
+        },750);  
     });
 
     let range = config.guide.speciesRange;

@@ -1,22 +1,5 @@
 
 <div style="height: 50%;">
-    <div class="guide-text">Filter by language.</div>
-    <div class="filter-options">
-        <div class="language-options">
-            <div class="dropdown">
-                <button class="btn btn-modal dropdown-toggle" type="button" id="taxonLanguageBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Taxon language
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ languages }}">
-                    <a id="{{ language.lang }}" class="dropdown-item" href="#">{{ language.name }}</a>
-                </div>
-            </div>
-        </div>        
-        <div class="filter-option">Show the common names for species and other taxonomic ranks in <span id="taxonLanguageTxt">English</span>.</div>
-    </div>
-</div>
-
-<div style="height: 50%;">
     <div class="guide-text">Filter by season.</div>
     <div class="filter-options">            
         <div class="season inat-switch">
@@ -34,6 +17,22 @@
     </div>
 </div>
 
+<div style="height: 50%;">
+    <div class="guide-text">Filter by language.</div>
+    <div class="filter-options">
+        <div class="language-options">
+            <div class="dropdown">
+                <button class="btn btn-modal dropdown-toggle" type="button" id="taxonLanguageBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Taxon language
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-repeat-language="{{ languages }}">
+                    <a id="{{ language.lang }}" class="dropdown-item" href="#">{{ language.name }}</a>
+                </div>
+            </div>
+        </div>        
+        <div class="filter-option">Show the common names for species and other taxonomic ranks in <span id="taxonLanguageTxt">English</span>.</div>
+    </div>
+</div>
 
 <div style="display:none;">
     <div class="guide-text">Select a guide (iNat users only).</div>
