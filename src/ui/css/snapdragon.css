@@ -2024,6 +2024,15 @@ a.collection-disabled {
   font-size: 1.2rem;
 }
 
+.snapdragon-intro > div {
+  line-height: 2.25rem;
+}
+
+.snapdragon-intro > div:nth-child(1),
+.snapdragon-intro > div:nth-child(2) {
+  margin-bottom: 1rem;
+}
+
 .snapdragon-intro.fade-away {
   transition: all 10s ease-out;
   opacity: .25;  

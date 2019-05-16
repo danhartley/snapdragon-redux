@@ -195,7 +195,8 @@
     }
 
     .snapdragon-intro, .snapdragon-help {
-        font-size: 1.4rem;
+        margin: 0 2rem;
+        font-size: 1.6rem;
     }
 
     .card-card .test-card-container.scrollable {
