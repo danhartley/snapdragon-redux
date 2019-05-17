@@ -1,7 +1,7 @@
 import { returnTaxonIcon } from 'ui/helpers/icon-handler';
 import { actions } from 'redux/actions/action-creators';
 
-export const saveButton = (parent, config, step, update = true) => {
+export const saveButton = (config, step, update = true) => {
 
     const chosen = document.querySelector('.js-chosen span:nth-child(2)');
 

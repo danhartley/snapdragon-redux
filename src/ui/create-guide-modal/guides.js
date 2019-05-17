@@ -4,7 +4,9 @@ import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 import { renderTemplate } from 'ui/helpers/templating';
 import guidesTemplate from 'ui/create-guide-modal/guides.html';
 
-export const renderGuides = (modal, config, createGuide) => {
+export const renderSeason = (modal, createGuide) => {
+
+    const { config } = store.getState();
 
     const template = document.createElement('template');
           template.innerHTML = guidesTemplate;
@@ -53,7 +55,7 @@ export const renderGuides = (modal, config, createGuide) => {
         
         if(config.guide.season.type !== currentType) {
             config.guide.operation = 'season';
-            createGuide.save(config, 'GUIDE');
+            createGuide.save('GUIDE');
         }        
     };
 
@@ -61,5 +63,5 @@ export const renderGuides = (modal, config, createGuide) => {
 
     switchHandler(idSwitch, position, switchCallback);
 
-    createGuide.save(config, 'GUIDE', false)();    
+    createGuide.save('GUIDE', false)();    
 }
