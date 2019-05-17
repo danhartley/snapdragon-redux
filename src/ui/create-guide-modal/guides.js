@@ -1,7 +1,6 @@
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
-import { renderInatUser } from 'ui/create-guide-modal/inat-user';
 import { renderTemplate } from 'ui/helpers/templating';
 import guidesTemplate from 'ui/create-guide-modal/guides.html';
 
@@ -61,10 +60,6 @@ export const renderGuides = (modal, config, createGuide) => {
     const position = config.guide.season.type === 'months' ? 'left' : 'right';
 
     switchHandler(idSwitch, position, switchCallback);
-
-    const switchContainer = modal.querySelector('.js-inat');
-
-    renderInatUser(switchContainer, config, createGuide.save(config, 'GUIDE'));
 
     createGuide.save(config, 'GUIDE', false)();    
 }

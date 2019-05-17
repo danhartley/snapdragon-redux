@@ -123,13 +123,15 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
             case 'CREATE-LESSON':
                 actionLink.setAttribute('data-toggle', 'modal');
                 actionLink.innerHTML = 'Create';
+                elem.removeClass(document.querySelector('.js-for-text'), 'hide');
+                document.querySelector('.js-for-text').innerHTML = 'a';
                 actionLink.addEventListener('click', modalHandler);
                 if(noRecords) noRecordsSummary();
                 break;
             case 'GET_SPECIES':
                 actionLink.removeAttribute('data-toggle');
-                actionLink.innerHTML = 'Get Species';                
-                elem.removeClass(document.querySelector('.js-for-text'), 'hide');                
+                actionLink.innerHTML = 'Get Species';                                
+                elem.removeClass(document.querySelector('.js-for-text'), 'hide');         
                 guideSummary(speciesCount);
                 actionLink.removeEventListener(getSpeciesHandler);
                 actionLink.addEventListener('click', getSpeciesHandler);
@@ -216,13 +218,13 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     listenToSpeciesCollectionListenReady(handleBeginLessonState);
 
-    setTimeout(() => {
-        const help = document.querySelector('.snapdragon-help');
-        if(help) help.classList.add('fade-in'); 
-    }, 2500);
+    // setTimeout(() => {
+    //     const help = document.querySelector('.snapdragon-help');
+    //     if(help) help.classList.add('fade-in'); 
+    // }, 2500);
 
-    setTimeout(() => {
-        const intro = document.querySelector('.snapdragon-intro');
-        if(intro) intro.classList.add('fade-away');        
-    }, 5000);
+    // setTimeout(() => {
+    //     const intro = document.querySelector('.snapdragon-intro');
+    //     if(intro) intro.classList.add('fade-away');        
+    // }, 6500);
 };

@@ -73,7 +73,8 @@ export const getInatSpecies = config => {
 
         let lat = '', lng = '', placeId = '';
 
-        const radius = config.guide.speciesRange ? parseInt(config.guide.speciesRange) : 10;
+        let radius = config.guide.speciesRange ? parseInt(config.guide.speciesRange) : 10;
+        let inat = '';
         
         switch(config.guide.locationType) {
             case 'place':
@@ -83,11 +84,18 @@ export const getInatSpecies = config => {
                 lat = config.guide.coordinates.lat;
                 lng = config.guide.coordinates.long;
                 break;
+            case 'inat':
+                lat = '';
+                lng = '';
+                placeId = '';
+                radius = '';
+                inat = `&${config.guide.inatId.param}=${config.guide.inatId.key}`;
+                break;
         }
 
         const iconicTaxa = getIconicTaxa(config);
-        const id = getUserOrProjectIdParameter(config);
-        const url = getBasePath(config) + `&page=${page}&iconic_taxa=${iconicTaxa}${id}&place_id=${placeId}&lat=${lat}&lng=${lng}&radius=${radius}`;
+        // const id = getUserOrProjectIdParameter(config);
+        const url = getBasePath(config) + `&page=${page}&iconic_taxa=${iconicTaxa}&place_id=${placeId}&lat=${lat}&lng=${lng}&radius=${radius}${inat}`;
 
         const response = await fetch(url);
         const json = await response.json();

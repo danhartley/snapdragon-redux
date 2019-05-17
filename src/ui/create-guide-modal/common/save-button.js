@@ -35,15 +35,15 @@ export const saveButton = (parent, config, step, update = true) => {
                 }
                 break;
 
-            case 'GUIDE':
+            case 'INAT':
                 
                 if(config.guide.inatId.key) {
-                    const inatIdLabel = document.querySelector('.js-chosen-inat span:nth-child(1)');
-                    const inatId = document.querySelector('.js-chosen-inat span:nth-child(2)');
-                    inatIdLabel.innerHTML = config.guide.inatId.param === 'project_id' 
-                            ? 'iNaturalist Project:'
-                            : 'iNaturalist User:';
-                    inatId.innerHTML = config.guide.inatId.key || '';
+                    // chosen.innerHTML = config.guide.inatId.param === 'project_id' 
+                    //         ? 'iNaturalist Project:'
+                    //         : 'iNaturalist User:';
+                    chosen.innerHTML = config.guide.inatId.key || '';
+                } else {
+                    chosen.innerHTML = '';
                 }
                 break;
         }
