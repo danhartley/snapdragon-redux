@@ -4682,30 +4682,21 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "Gamma-Eule",
-        "language": "en",
-        
+        "vernacularName": "Gammaeule",
+        "language": "de"        
       },
       {
-        "vernacularName": "Gamma-Eule",
-        "language": "en"
+        "vernacularName": "Pistoleneule",
+        "language": "de"        
       },
       {
-        "vernacularName": "Gamma-uil",
-        "language": "en"
+        "vernacularName": "Gamma",
+        "language": "fr"
       },
       {
-        "vernacularName": "Gamma-uil",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Silver Y",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Silver Y",
-        "language": "en"
-      },
+        "vernacularName": "Lambda",
+        "language": "fr"
+      },      
       {
         "vernacularName": "Silver Y",
         "language": "en"
@@ -9246,7 +9237,20 @@ export const insects = [
         "thumb": "66/cf/f1/509.63728619.98x68.jpg"
       }
     ],
-    "names": [],
+    "names": [
+      {
+        "vernacularName": "waved umbermoth",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Boarmie pétrifiée",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Phalène pétrifiée",
+        "language": "fr"
+      }
+    ],
     "taxonomy": {
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
@@ -9445,7 +9449,20 @@ export const insects = [
         "thumb": "59/9f/6f/509.3168239.98x68.jpg"
       }
     ],
-    "names": [],
+    "names": [
+      {
+        "vernacularName": "European wasp",
+        "language": "en"
+      },      
+      {
+        "vernacularName": "German wasp",
+        "language": "en"
+      },      
+      {
+        "vernacularName": "German yellowjacket",
+        "language": "en"
+      },            
+    ],
     "taxonomy": {
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
@@ -9511,7 +9528,12 @@ export const insects = [
         "thumb": "42/13/28/18.https___www_inaturalist_org_photos_5420515.98x68.jpg"
       }
     ],
-    "names": [],
+    "names": [
+      {
+        "vernacularName": "Seed bug",
+        "language": "en"
+      },
+    ],
     "taxonomy": {
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
@@ -9576,7 +9598,16 @@ export const insects = [
         "thumb": "66/cc/ef/509.63715348.98x68.jpg"
       }
     ],
-    "names": [],
+    "names": [
+      {
+        "vernacularName": "speckled footman",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Weiße Grasbär",
+        "language": "de"
+      },
+    ],
     "taxonomy": {
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
@@ -9740,7 +9771,15 @@ export const insects = [
       {
         "vernacularName": "Large garden bumblebee",
         "language": "en"
-      }
+      },
+      {
+        "vernacularName": "ruderal bumblebee",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Feldhummel",
+        "language": "de"
+      },
     ],
     "taxonomy": {
       "kingdom": "Animalia",
@@ -9793,7 +9832,12 @@ export const insects = [
         "thumb": "4a/e6/12/18.https___www_inaturalist_org_photos_6837309.98x68.jpg"
       }
     ],
-    "names": [],
+    "names": [
+      {
+        "vernacularName": "Leaf beetle",
+        "language": "en"
+      }
+    ],
     "taxonomy": {
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
@@ -9909,7 +9953,16 @@ export const insects = [
         "thumb": "68/1f/46/509.8794904.98x68.jpg"
       }
     ],
-    "names": [],
+    "names": [
+      {
+        "vernacularName": "Seed bug",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Pandur",
+        "language": "de"
+      },
+    ],
     "taxonomy": {
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
@@ -9942,7 +9995,24 @@ export const insects = [
         "thumb": "63/96/64/509.49993795.98x68.jpg"
       }
     ],
-    "names": [],
+    "names": [
+      {
+        "vernacularName": "palm weevil",
+        "language": "en"
+      },
+      {
+        "vernacularName": "picudo rojo",
+        "language": "es"
+      },
+      {
+        "vernacularName": "charançon rouge des palmiers",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "escaravelho-vermelho",
+        "language": "pt"
+      },
+    ],
     "taxonomy": {
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
@@ -9985,7 +10055,12 @@ export const insects = [
         }
       }
     ],
-    "names": [],
+    "names": [
+      {
+        "vernacularName": "Brassy Waved Umber",
+        "language": "en"
+      },
+    ],
     "taxonomy": {
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
@@ -10107,7 +10182,20 @@ export const insects = [
         "thumb": "61/d6/29/509.45325930.98x68.jpg"
       }
     ],
-    "names": [],
+    "names": [
+      {
+        "vernacularName": "small blood-vein",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Rötlichgelbe Kleinspanner",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Acidalie fausse-timandre",
+        "language": "fr"
+      },
+    ],
     "taxonomy": {
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
@@ -10151,8 +10239,7 @@ export const insects = [
     "names": [
       {
         "vernacularName": "gusano de seda",
-        "language": "en",
-        
+        "language": "es"        
       },
       {
         "vernacularName": "Baco da seta",
@@ -10163,21 +10250,17 @@ export const insects = [
         "language": "pt"
       },
       {
-        "vernacularName": "Domesticated Silkmoth",
+        "vernacularName": "Silkworm",
         "language": "en"
       },
       {
-        "vernacularName": "Gusano de seda",
-        "language": "es"
+        "vernacularName": "Domesticated Silkmoth",
+        "language": "en"
       },
       {
         "vernacularName": "Seidenspinner",
         "language": "de"
       },
-      {
-        "vernacularName": "Silkworm",
-        "language": "en"
-      }
     ],
     "taxonomy": {
       "kingdom": "Animalia",
@@ -10285,7 +10368,7 @@ export const insects = [
   },
   {
     "id": 3692711,
-    "name": "Oxycarenus (Oxycarenus)",
+    "name": "Oxycarenus annulipes",
     "images": [
       {
         "title": "Ground Bug",
@@ -10325,7 +10408,12 @@ export const insects = [
         "thumb": "64/22/55/509.51869276.98x68.jpg"
       }
     ],
-    "names": [],
+    "names": [
+      {
+        "vernacularName": "ground bug",
+        "language": "en"
+      },
+    ],
     "taxonomy": {
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
@@ -10379,7 +10467,12 @@ export const insects = [
         "thumb": "5b/a8/7a/509.17123644.98x68.jpg"
       }
     ],
-    "names": [],
+    "names": [
+      {
+        "vernacularName": "Viper's Bugloss Moth",
+        "language": "en"
+      },
+    ],
     "taxonomy": {
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
@@ -10524,7 +10617,12 @@ export const insects = [
         "thumb": "66/0b/02/509.61394006.98x68.jpg"
       }
     ],
-    "names": [],
+    "names": [
+      {
+        "vernacularName": "cicada",
+        "language": "en"
+      },
+    ],
     "taxonomy": {
       "kingdom": "Animalia",
       "phylum": "Arthropoda",
@@ -10623,7 +10721,23 @@ export const insects = [
       {
         "vernacularName": "German yellowjacke",
         "language": "en"
-      }
+      },
+      {
+        "vernacularName": "Deutsche Wespe",
+        "language": "de"
+      },
+      {
+        "vernacularName": "chaqueta amarilla",
+        "language": "es"
+      },
+      {
+        "vernacularName": "guêpe germanique",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "guêpe européenne",
+        "language": "fr"
+      },
     ],
     "taxonomy": {
       "kingdom": "Animalia",

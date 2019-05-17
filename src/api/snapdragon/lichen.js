@@ -1414,7 +1414,12 @@ export const lichen = [
         "url": "89/c7/de/549.BI-image-31281.jpg"
       }
     ],
-    "names": [],
+    "names": [
+      {
+        "vernacularName": "Podetia grey",
+        "language": "en"
+      }      
+    ],
     "taxonomy": {
       "kingdom": "Fungi",
       "phylum": "Ascomycota",
