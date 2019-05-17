@@ -104,6 +104,13 @@
 
 @media (min-width: 768px) {
 
+    .action-update,
+    .response-update {
+        left: 0;
+        right: 0;
+        justify-content: flex-end;
+    }
+
     .strip:hover {
         box-shadow: 0 2px 8px rgba(0,0,0,.8);
     }

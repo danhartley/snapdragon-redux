@@ -35,26 +35,26 @@ export const getTraits = (enums, item) => {
             itemTraits = { name: item.name, symbionts: [], traits: [] };            
         }
     
-        if(symbionts) {
-            symbionts.forEach(species => {
+        // if(symbionts) {
+        //     symbionts.forEach(species => {
     
-                species.speciesB.forEach(item => {
-                    const name = item.names[0];
-                    itemTraits.traits.push({
-                        name: species.type[0],
-                        value: name,
-                        type: 'Mutualism'
-                    });
-                });
+        //         species.speciesB.forEach(item => {
+        //             const name = item.names[0];
+        //             itemTraits.traits.push({
+        //                 name: species.type[0],
+        //                 value: name,
+        //                 type: 'Mutualism'
+        //             });
+        //         });
     
-                species.speciesB.forEach(item => {
-                    const name = item.names[0];
-                    itemTraits.symbionts.push({ id: name });
-                });            
-            });
+        //         species.speciesB.forEach(item => {
+        //             const name = item.names[0];
+        //             itemTraits.symbionts.push({ id: name });
+        //         });            
+        //     });
 
-            traits.push(itemTraits); // only add the traits if there are any...
-        }
+        //     traits.push(itemTraits); // only add the traits if there are any...
+        // }
     }
 
     return traits;

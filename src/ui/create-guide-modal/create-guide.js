@@ -9,7 +9,7 @@ import { renderHome } from 'ui/screens/home/home';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderLocation } from 'ui/create-guide-modal/location';
 import { renderCategories } from 'ui/create-guide-modal/categories';
-import { renderGuides } from 'ui/create-guide-modal/guides';
+import { renderSeason } from 'ui/create-guide-modal/guides';
 import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
 import { saveButton } from 'ui/create-guide-modal/common/save-button';
 
@@ -65,21 +65,21 @@ class CreateGuide {
         template = document.createElement('template');
         const description = this.steps.find(step => step.number === this.currentStep).description;
 
-        const { config: configState } = store.getState();
-        const config = R.clone(configState);
+        // const { config: configState } = store.getState();
+        // const config = R.clone(configState);
 
         template.innerHTML = actionsTemplate;
         renderTemplate({ className }, template.content, parent);
 
         switch(description) {
             case 'Location':
-                renderLocation(this.modal, config, this);
+                renderLocation(this.modal, this);
                 break;
             case 'Species':
-                renderCategories(this.modal, config, this);
+                renderCategories(this.modal, this);
                 break;
             case 'Season':
-                renderGuides(this.modal, config, this);
+                renderSeason(this.modal, this);
                 break;
         }
     }
@@ -145,8 +145,9 @@ class CreateGuide {
         }
     }
 
-    save(config, stepDescription, update) {
-        const saveChanges = saveButton(this.modal.querySelector('.js-save-your-changes'), config, stepDescription, update);
+    save(stepDescription, update) {
+        const { config } = store.getState();
+        const saveChanges = saveButton(config, stepDescription, update);
         return saveChanges;
     }
 };

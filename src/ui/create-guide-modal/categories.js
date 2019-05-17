@@ -1,14 +1,17 @@
 import * as R from 'ramda';
 
+import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
 import { renderTemplate } from 'ui/helpers/templating';
 import categoriesTemplate from 'ui/create-guide-modal/categories-template.html';
 
-export const renderCategories = (modal, config, createGuide) => {
+export const renderCategories = (modal, createGuide) => {
+
+    const { config } = store.getState();
 
     const guideTxt = modal.querySelector('.guide-text');
-    createGuide.save(config, 'SPECIES', false)();
-    const saveYourChangesBtn = createGuide.save(config, 'SPECIES');
+    createGuide.save('SPECIES', false)();
+    const saveYourChangesBtn = createGuide.save('SPECIES');
 
     const filterSelectedClass = 'iconic-taxa-selected';
 

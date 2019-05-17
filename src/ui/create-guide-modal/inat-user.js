@@ -1,3 +1,4 @@
+import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
@@ -5,10 +6,12 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { renderLocation } from 'ui/create-guide-modal/location';
 import inatPortraitTemplate from 'ui/create-guide-modal/inat-user-template-portrait.html';
 
-export const renderInatUser = (parent, config, createGuide, modal, locationType) => {
+export const renderInatUser = (createGuide, modal, locationType) => {
 
-    createGuide.save(config, 'INAT', false)();
-    const save = createGuide.save(config, 'INAT');
+    const { config } = store.getState();
+
+    createGuide.save('INAT', false)();
+    const save = createGuide.save( 'INAT');
 
     const template = document.createElement('template');
 
@@ -16,7 +19,13 @@ export const renderInatUser = (parent, config, createGuide, modal, locationType)
 
     const inatId = config.guide.inatId.key || '-----';
 
-    parent.innerHTML = '';
+    if(inatId) {
+        config.guide.locationType = 'inat';
+        actions.boundUpdateConfig(config);
+    }
+
+    const parent = modal.querySelector('.js-actions');
+          parent.innerHTML = '';
     
     renderTemplate({ inatId }, template.content, parent);
 
@@ -78,6 +87,6 @@ export const renderInatUser = (parent, config, createGuide, modal, locationType)
     const linktoStandardOptions = parent.querySelector('.js-location-options1 span:nth-child(1)');
 
     linktoStandardOptions.addEventListener('click', () => {
-        renderLocation(modal, config, createGuide, locationType);
+        renderLocation(modal, createGuide, locationType);
     });
 };

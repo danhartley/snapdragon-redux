@@ -1,3 +1,4 @@
+import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
 import { actions } from 'redux/actions/action-creators';
 import { getPlace, GooglePlaceDetails } from 'geo/geo';
@@ -6,7 +7,9 @@ import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 import locationsTemplate from 'ui/create-guide-modal/locations-template.html';
 import googleLogoImg from 'img/powered_by_google_on_white_hdpi.png';
 
-export const renderLocation = (modal, config, createGuide, locationType) => {
+export const renderLocation = (modal, createGuide, locationType) => {
+
+    const { config } = store.getState();
 
     if(locationType) {
         config.guide.locationType = locationType;
@@ -16,8 +19,8 @@ export const renderLocation = (modal, config, createGuide, locationType) => {
     const guideTxt = modal.querySelector('.guide-text');
           guideTxt.innerHTML = 'Choose where you want to explore.';
         
-    createGuide.save(config, 'LOCATION', false)();
-    const save = createGuide.save(config, 'LOCATION');
+    createGuide.save('LOCATION', false)();
+    const save = createGuide.save('LOCATION');
 
     let locationPlace = config.guide.locationPlace;
     let autocompleteRef;
@@ -135,10 +138,9 @@ export const renderLocation = (modal, config, createGuide, locationType) => {
     const linktoInatOptions = modal.querySelector('.js-location-options2 span:nth-child(2)');    
 
     linktoInatOptions.addEventListener('click', () => {
+
+        const { config } = store.getState();
         
-        const switchContainer = modal.querySelector('.js-actions');
-
-        renderInatUser(switchContainer, config, createGuide, modal, config.guide.locationType);
-
+        renderInatUser(createGuide, modal, config.guide.locationType);
     });
 }

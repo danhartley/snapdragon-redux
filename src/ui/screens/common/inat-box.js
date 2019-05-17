@@ -19,6 +19,8 @@ export async function renderInatDataBox(parent, item, config, mode) {
     
     getInatTaxonStats(item, config).then(stats => {
 
+        if(!stats.results) return;
+
         const taxonId = stats.results.find(stat => stat.taxon.name === item.name).taxon.id;
         const taxonCount = stats.results.find(stat => stat.taxon.name === item.name).count;
 
@@ -37,6 +39,8 @@ export async function renderInatDataBox(parent, item, config, mode) {
     const placeId = places.results.find(place => place.display_name === country).id;
     
     getInatTaxonStats(item, config, placeId).then(stats => {
+
+        if(stats.results.length === 0) return;
 
         const placeTaxonCount = stats.results.find(stat => stat.taxon.name === item.name).count;
         const establishment = stats.results.find(stat => stat.taxon.name === item.name).taxon.preferred_establishment_means;

@@ -74,7 +74,7 @@ export const renderNonTaxonCard = (mode = 'STAND_ALONE', keyTrait, parent = DOM.
         const definitionNode = document.querySelector('.js-non-taxa-definition div');
               definitionNode.innerHTML = nonTaxon.definition;
 
-        const nameNode = document.querySelector('.non-taxon.card .js-names-container > div:nth-child(1)');
+        const nameNode = document.querySelector('.js-non-taxon-card .js-names-container > div:nth-child(1)');
               nameNode.innerHTML = nonTaxon.id;
 
         if(mode === 'MODAL') {
