@@ -1,11 +1,17 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import { actions } from 'redux/actions/action-creators';
 import { getPlace, GooglePlaceDetails } from 'geo/geo';
-import locationsTemplate from 'ui/create-guide-modal/locations-template.html';
+import { renderInatUser } from 'ui/create-guide-modal/inat-user';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
+import locationsTemplate from 'ui/create-guide-modal/locations-template.html';
 import googleLogoImg from 'img/powered_by_google_on_white_hdpi.png';
 
-export const renderLocation = (modal, config, createGuide) => {
+export const renderLocation = (modal, config, createGuide, locationType) => {
+
+    if(locationType) {
+        config.guide.locationType = locationType;
+        actions.boundUpdateConfig(config);
+    }
  
     const guideTxt = modal.querySelector('.guide-text');
           guideTxt.innerHTML = 'Choose where you want to explore.';
@@ -19,6 +25,7 @@ export const renderLocation = (modal, config, createGuide) => {
     const template = document.createElement('template');
           template.innerHTML = locationsTemplate;
     const parent = modal.querySelector('.js-actions');
+          parent.innerHTML = '';
 
     renderTemplate({}, template.content, parent);
 
@@ -46,8 +53,8 @@ export const renderLocation = (modal, config, createGuide) => {
 
     const locationPlaceInput = modal.querySelector('#inat-place');
           locationPlaceInput.placeholder = config.isLandscapeMode
-                                            ? 'Start typing the name of a place you are interested in.'
-                                            : 'Start typing the name of a place.'
+                                            ? 'Or start typing the name of a place you are interested in.'
+                                            : 'Or start typing the name of a place.'
 
     let counter = 0;
 
@@ -75,7 +82,7 @@ export const renderLocation = (modal, config, createGuide) => {
 
     let range = config.guide.speciesRange;
     const rangeTxt = modal.querySelector('.js-range');
-          rangeTxt.innerHTML = `Include species within a radius of ${range}km.`;
+          rangeTxt.innerHTML = `Include species within ${range}km.`;
 
     modal.querySelector('.js-set-range-input').value = range;
 
@@ -85,7 +92,7 @@ export const renderLocation = (modal, config, createGuide) => {
         range = event.target.value;
         config.guide.speciesRange = range;
         actions.boundUpdateConfig(config);        
-        rangeTxt.innerHTML = `Include species within a radius of ${range}km.`;
+        rangeTxt.innerHTML = `Include species within ${range}km.`;
 
         save();
     };
@@ -123,5 +130,15 @@ export const renderLocation = (modal, config, createGuide) => {
 
             GooglePlaceDetails(locationPlaceInput.name, callback);            
         }
+    });
+
+    const linktoInatOptions = modal.querySelector('.js-location-options2 span:nth-child(2)');    
+
+    linktoInatOptions.addEventListener('click', () => {
+        
+        const switchContainer = modal.querySelector('.js-actions');
+
+        renderInatUser(switchContainer, config, createGuide, modal, config.guide.locationType);
+
     });
 }

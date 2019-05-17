@@ -1,4 +1,4 @@
-<div class="inat inat-switch">
+<div class="location-option inat inat-switch">
     <div class="embedded-switch">
         <div>
             <div class="txt-left">User</div>
@@ -9,19 +9,18 @@
         </div>
     </div>
 </div>
-<div class="inat-entry">
+<div class="location-option inat-entry">
     <div>
         <div>
-            <input id="inat-identity" type="text">
+            <input id="inat-identity" type="text" placeholder="Start typing an ID.">
         </div>
         <div class="hide-empty" id="inat-identity-autocomplete"></div>
+        <button id="set-inat-identity-btn" class="btn btn-modal js-set-inat-identity-btn">Save iNaturalist User</button>
     </div>
-    <button id="set-inat-identity-btn" class="btn btn-modal js-set-inat-identity-btn">Save iNat User</button>
 </div>
 
-<div class="chosen-guide-filter js-chosen-inat">
-    <span>ID:</span><span class="selected-text">{{ inatId }}</span>
+<div class="location-option chosen-guide-filter js-chosen-inat">
+    <div>Learn more about <a href="https://www.inaturalist.org/" target="_blank" class="underline-link">iNaturalist</a>.</div>
 </div>
-<div class="hide remove-id-filter js-remove-id-filter">
-    <span class="underline-link disabled">Remove iNaturalist filter</span>
-</div>
+
+<div class="location-options js-location-options1"><span class="underline-link">Go back</span></div>

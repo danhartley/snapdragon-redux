@@ -7,7 +7,7 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
 
     const location = config.guide.locationType === 'longLat' ? config.guide.locationLongLat : config.guide.locationPlace;
     const place = config.guide.locationType === 'longLat' ? config.guide.locationLongLat.split(',')[0] : config.guide.place.name;
-    const range = config.guide.speciesRange;
+    const range = config.guide.locationType === 'inat' ? 0 : config.guide.speciesRange;
 
     speciesCount = speciesCount === 0 ? '' : speciesCount;
     
@@ -17,7 +17,11 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
             ? config.guide.iconicTaxa.map(taxon => taxon.common).join(', ') 
             : 'All species';
 
-    const inatId = config.guide.inatId ? config.guide.inatId.key : '';
+    const inatId = config.guide.inatId 
+                        ? config.guide.locationType === 'inat'
+                            ? config.guide.inatId.key 
+                            : ''
+                        : '';
     
     const getSeason = config => {
         if(config.guide.season.type === 'months') {
@@ -58,9 +62,11 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
 
     if(config.isPortraitMode || config.guide.locationType === 'longLat' || config.guide.locationType === 'place' && config.guide.place.id === 'any') return;
 
+    const within = range === 0 ? '' : `<span class="super-text">within ${range}km</span>`;
+    
     const widgetLink = document.querySelector('.js-iNatWidget');
     
-    widgetLink.innerHTML = `<span data-toggle="modal" data-target="#iNatWidgetModal" class="underline-link">${place}</span><span class="super-text">within ${range}km</span>`;
+          widgetLink.innerHTML = `<span data-toggle="modal" data-target="#iNatWidgetModal" class="underline-link">${place}</span>${within}`;
     
     const collection = snapdragonCollections.find(collection => collection.id === config.guide.place.id);
     

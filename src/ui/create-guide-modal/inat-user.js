@@ -2,23 +2,25 @@ import { actions } from 'redux/actions/action-creators';
 import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 import { renderTemplate } from 'ui/helpers/templating';
-import inatTemplate from 'ui/create-guide-modal/inat-user-template.html';
+import { renderLocation } from 'ui/create-guide-modal/location';
 import inatPortraitTemplate from 'ui/create-guide-modal/inat-user-template-portrait.html';
 
-export const renderInatUser = (parent, config, save) => {
+export const renderInatUser = (parent, config, createGuide, modal, locationType) => {
+
+    createGuide.save(config, 'INAT', false)();
+    const save = createGuide.save(config, 'INAT');
 
     const template = document.createElement('template');
-    template.innerHTML = config.isLandscapeMode
-                            ? inatTemplate
-                            : inatPortraitTemplate;
+
+    template.innerHTML = inatPortraitTemplate;
 
     const inatId = config.guide.inatId.key || '-----';
+
+    parent.innerHTML = '';
     
     renderTemplate({ inatId }, template.content, parent);
 
-    const deleteIdAction = parent.querySelector('.js-remove-id-filter');
-
-    if(config.guide.inatId) deleteIdAction.classList.remove('hide');
+    document.querySelector('.js-chosen > div > span:nth-child(2)').innerHTML += '<div class="delete-guide-link js-toggle-filter"><input class="hide" type="checkbox"></div>';
 
     let autocompleteRef;
 
@@ -32,17 +34,16 @@ export const renderInatUser = (parent, config, save) => {
         config.guide.inatId.id = id;
 
         if(key !== '') {
+            config.guide.locationType = 'inat';
             actions.boundUpdateConfig(config);
             config.guide.operation = 'inat';
             save();
 
-            parent.querySelector('#inat-identity').value = '';
+            parent.querySelector('#inat-identity').value = '';            
 
             if(autocompleteRef) {
                 autocompleteRef.destroy();
             }
-
-            deleteIdAction.classList.remove('hide');
         }
     });
 
@@ -61,8 +62,8 @@ export const renderInatUser = (parent, config, save) => {
     const switchCallback = position => {
         
         setiNatIdentityBtn.innerHTML = position === 'left'
-            ? 'Save iNat User'
-            : 'Save iNat Project'
+            ? 'Save iNaturalist User'
+            : 'Save iNaturalist Project'
 
         byType = position === 'left' ? 'users' : 'projects';
 
@@ -74,10 +75,9 @@ export const renderInatUser = (parent, config, save) => {
 
     switchHandler(idSwitch, position, switchCallback);
 
-    deleteIdAction.addEventListener('click',  () => {
-        config.guide.inatId = { key: '', type: '', param: 'user_id' };
-        actions.boundUpdateConfig(config);
-        parent.querySelector('.js-chosen-inat .selected-text').innerHTML = '-----';
-        deleteIdAction.classList.add('hide');
-    });  
+    const linktoStandardOptions = parent.querySelector('.js-location-options1 span:nth-child(1)');
+
+    linktoStandardOptions.addEventListener('click', () => {
+        renderLocation(modal, config, createGuide, locationType);
+    });
 };
