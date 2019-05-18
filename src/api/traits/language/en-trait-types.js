@@ -181,7 +181,8 @@ export const english = {
         BOREAL: 'Boreal',
         SCRUB: 'Scrub',
         WALLS: 'Walls',
-        MOORLAND: 'Moorland',        
+        MOORLAND: 'Moorland',
+        COAST: 'Coast'
     },
     ecoType : {
         help: 'What is the ecological type of this mushroom?',
@@ -337,7 +338,8 @@ export const english = {
         GREEN_MANURE: 'Green manure',
         MEDICINE: 'Medicine',
         FUR: 'Fur',        
-        TIMBER: 'Timber'
+        TIMBER: 'Timber',
+        PEST_CONTROL: 'Pest control'
     },
     nonTaxaType: {
         FORM : 'Form'
@@ -487,7 +489,8 @@ export const english = {
         NYMPH: 'Nymph',
         CATERPILLAR: 'Caterpillar',
         LARVA: 'Larva',
-        SALAMANQUESA: 'Salamanquesa'
+        SALAMANQUESA: 'Salamanquesa',
+        NYMPH: 'Nymph'
     },
     female: {
         help: 'What is the name for a female of this species?',
@@ -536,6 +539,8 @@ export const english = {
         HERBIVORE: 'Herbivore',
         OMNIVORE: 'Omnivore',
         CARNIVORE: 'Carnivore',
+        XYLOPHAGOUS: 'Xylophagous',
+        POLYPHAGOUS: 'Polyphagous',
     },
     native: {
         NATIVE: 'Native',
@@ -627,7 +632,13 @@ export const english = {
         ECTOTHERMIC: 'Ectothermic',
         ADHESION: 'Adhesion',
         POLYPHYODONT: 'Polyphyodont',
-        VIVIPAROUS: 'Viviparous'
+        VIVIPAROUS: 'Viviparous',
+        REGURGITATION: 'Feeding through regurgitation',
+        MULTIVOLTINE: 'Multivoltine',
+        BIVOLTINE: 'Bivoltine',
+        UNIVOLTINE: 'Univoltine',
+        SEMIVOLTINE: 'Semivoltine',
+        METAMORPHOSIS: 'Metamorphosis'
     },
     sense: {
         help: 'Which sense does this species favour?',

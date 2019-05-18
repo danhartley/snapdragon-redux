@@ -4175,7 +4175,7 @@ export const taxa = [
             {   
                 language: 'en',
                 summary: 'Comprises a single genus and two deciduous tree species from China and Japan. Wind-pollinated.',
-                identification: 'Flowers are unisexual and lack perianth parts. Separate male and female plants. Flowers are actually clusters of flowers, each flower reduced to a few stamens or a single carpel.', 
+                identification: 'Having characteristic cerci, a pair of forceps-like pincers on their abdomen, and membranous wings folded underneath short, rarely used forewings.'
             },
         ],
         traits: [            
@@ -4232,6 +4232,189 @@ export const taxa = [
         traits: [
         ],
     },
+    {
+        taxon: 'family',
+        name: 'Forficulidae',
+        genera: '70',
+        species: '490',
+        names: [ { language: "en", names: ['Famiy of Earwigs']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ 'Forficúlidos' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Forficulidae",
+        thumb: '5f/f4/c7/509.38665280.260x190.jpg',
+        eol: "https://eol.org/pages/410",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of earwigs in the order Dermaptera.',
+                identification: 'Having characteristic cerci, a pair of forceps-like pincers on their abdomen, and membranous wings folded underneath short, rarely used forewings.', 
+            },
+        ],
+        traits: [
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Phalacrocoracidae',
+        genera: '3',
+        species: '~40',
+        names: [ { language: "en", names: ['Cormorants and shags']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Kormorane' ]},
+            { language: "es", names:[ 'Cormoranes' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Phalacrocoracidae",
+        thumb: '5f/f4/c7/509.38665280.260x190.jpg',
+        eol: "https://eol.org/pages/410",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of approximately 40 species of aquatic, birds who catch fish by diving.',
+                identification: 'Medium-to-large birds. Dark feathers long, thin and hooked bill, and webbed feet with 4 toes. Relatively short wings.', 
+            },
+        ],
+        traits: [
+            { language: "en", name: 'habitat', values: [ SD.habitat.COAST ] },
+            { name: SD.name.FOOD, value: 'Fish, eels, snakes' },
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.REGURGITATION },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Noctuidae',
+        genera: '1,089',
+        species: '11,772',
+        names: [ { language: "en", names: ['Owlet moths, cutworms']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Kormorane' ]},
+            { language: "es", names:[ 'Cormoranes' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Noctuidae",
+        thumb: '7f/33/d8/542.2946322294.260x190.jpg',
+        eol: "https://eol.org/pages/873",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'The second largest family in the subfamily Noctuoidea (order Lepidoptera). Cosmpolitan.',
+                identification: 'Most adults have drab wings, larva generally green or brown, pupa shiny brown to dark brown.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.MULTIVOLTINE },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Blattidae',
+        genera: '~40',
+        species: '~600',
+        names: [ { language: "en", names: ['Blattid Cockroaches']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ 'Blátidos' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Blattidae",
+        thumb: '61/8b/88/509.44612103.260x190.jpg',
+        eol: "https://eol.org/pages/680",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Common peridomestic pests worldwide.',
+                identification: 'Oval and flattened body shape; thorax covered by a large plate (pronotum), extending partly over head; chewing (mandibulate) mouthparts; compound eyes.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.BEHAVIOUR, value: SD.behaviour.METAMORPHOSIS },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Staphylinidae',
+        genera: '1000s',
+        species: '~63000',
+        names: [ { language: "en", names: ['Rove Beetles']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Kurzflügler' ]},
+            { language: "es", names:[ 'Estafilínidos' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Staphylinidae",
+        thumb: '2b/3a/76/18.https___www_inaturalist_org_photos_1582752.260x190.jpg',
+        eol: "https://eol.org/pages/8620",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'The largest extant family of organisms. Ecologically and morphologically diverse group of beetles, commonly encountered in terrestrial ecosystems.',
+                identification: 'Family chiefly distinguished by their short elytra (wing covers).', 
+            },
+        ],
+        traits: [
+            { name: SD.name.USAGE, value: SD.usage.PEST_CONTROL },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Oedemeridae',
+        genera: '100',
+        species: '~1500',
+        names: [ { language: "en", names: ['False blister beetles']},
+            { language: "fr", names:[ '' ]},
+            { language: "de", names:[ 'Scheinbockkäfer' ]},
+            { language: "es", names:[ 'Oedeméridos' ]},
+            { language: "pt", names:[ '' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Oedemeridae",
+        thumb: '55/56/e3/509.10702848.260x190.jpg',
+        eol: "https://eol.org/pages/8620",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Cosmopolitan family associated with rotting wood as larvae, though adults are quite common on flowers.',
+                identification: 'Slender, soft-bodied beetles of medium size found mostly on flowers and foliage. The head lacks a narrow neck, the antennae are long and filiform.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.DIET, value: SD.diet.XYLOPHAGOUS },
+        ],
+    },
+    {
+        taxon: 'family',
+        name: 'Dermaptera',
+        genera: '12',
+        species: '~2000',
+        names: [ { language: "en", names: ['False blister beetles']},
+            { language: "fr", names:[ 'Dermaptères' ]},
+            { language: "de", names:[ '' ]},
+            { language: "es", names:[ 'Dermápteros' ]},
+            { language: "pt", names:[ 'Tesourinhas' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Dermaptera",
+        thumb: '3b/0f/77/18.https___www_inaturalist_org_photos_4184685.260x190.jpg',
+        eol: "https://eol.org/pages/405",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Cosmopolitan family of insects found on all continents except Antarctica. Cause widespread damage to crops.',
+                identification: 'Slender, soft-bodied beetles of medium size found mostly on flowers and foliage. The head lacks a narrow neck, the antennae are long and filiform.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.ACTIVE, value: SD.active.NOCTURNAL },
+            { name: SD.name.DISPLAY, value: SD.display.SEXUAL_DIMORPHISM },
+            { name: SD.name.YOUNG, value: `${SD.young.NYMPH }` },
+        ],
+    },
 ];
-
-// Phalacrocoracidae

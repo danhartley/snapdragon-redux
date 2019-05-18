@@ -6,7 +6,7 @@ export const insecta = [
     },
     {
         term: "Anautogeny",
-        definition: "Reproductive strategy in which an adult female insect must eat a particular sort meal (generally vertebrate blood) before laying eggs.",
+        definition: "Reproductive strategy in which an adult female insect must eat a particular meal (generally vertebrate blood) before laying eggs.",
         wiki: "https://en.wikipedia.org/wiki/Anautogeny"
     },
     {
@@ -26,7 +26,7 @@ export const insecta = [
     },
     {
         term: "Scutellum",
-        definition: "Small sctructure like a shield",
+        definition: "Small sctructure like a shield.",
     },
     {
         term: "Mucivore",

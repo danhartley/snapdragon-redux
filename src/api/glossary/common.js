@@ -128,4 +128,8 @@ export const commmon = [
         definition: 'Any round nodule, small eminence, or warty outgrowth found on external or internal organs of a plant or animal.' ,
         wiki: 'https://en.wikipedia.org/wiki/Tubercle'
     },
+    {
+        term: 'Filiform',
+        definition: 'Thread-like.'
+    },
 ];
