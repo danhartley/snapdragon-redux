@@ -114,10 +114,34 @@ export const animalia = [
     {
         term: 'Neoteny',
         definition: 'The delaying or slowing of the physiological (or somatic) development of an organism, typically an animal.',
-        wiki: 'https://en.wikipedia.org/wiki/Neoteny',  
+        wiki: 'https://en.wikipedia.org/wiki/Neoteny'
     },
     {
         term: 'Viviparous',
         definition: 'Giving birth to live young.',    
+    },
+    {
+        term: 'Peridomestic',
+        definition: 'Living in and around human habitations.',    
+    },
+    {
+        term: 'Voltinism',
+        definition: 'Indication of the number of broods or generations of an organism in a year.',    
+        wiki: 'https://en.wikipedia.org/wiki/Voltinism'
+    },
+    {
+        term: 'Xylophagy',
+        definition: 'Describes the habits of herbivorous animals whose diet consist primarily (often solely) of wood.',    
+        wiki: 'https://en.wikipedia.org/wiki/Xylophagy'
+    },
+    {
+        term: 'Polyphagy',
+        definition: 'Ability of an animal to eat a variety of food.',    
+        wiki: 'https://en.wikipedia.org/wiki/Polyphagy'
+    },
+    {
+        term: 'Nymph',
+        definition: 'Immature form of some invertebrates, particularly insects, which undergoes gradual metamorphosis (hemimetabolism) before reaching its adult stage.',
+        wiki: 'https://en.wikipedia.org/wiki/Nymph_(biology)'
     },
 ];

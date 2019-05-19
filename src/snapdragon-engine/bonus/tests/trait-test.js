@@ -29,7 +29,7 @@ const getTraitTest = (enums, item) => {
 
     const traitsToIgnore = [ 'song', 'look-alikes' ]; // add flag so that this does not need to be updated e.g. ignore: true in the trait data
 
-    let itemTraits = getTraits(enums, item).find(trait => trait.name === item.name);
+    let itemTraits = getTraits(enums).find(trait => trait.name === item.name);
 
     if(!itemTraits) return {};
 

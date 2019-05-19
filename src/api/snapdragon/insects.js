@@ -7707,56 +7707,31 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Common Earwig",
-        "language": "en",
-        
+        "language": "en",        
       },
       {
-        "vernacularName": "Common Earwig",
-        "language": "en"
+        "vernacularName": "Gemeine Ohrwurm",
+        "language": "de"
       },
       {
-        "vernacularName": "Common Earwig",
-        "language": "en"
+        "vernacularName": "forficule",
+        "language": "fr"
       },
       {
-        "vernacularName": "Common Earwig",
-        "language": "en"
+        "vernacularName": "bicha-cadela",
+        "language": "pt"
       },
       {
-        "vernacularName": "Common Earwig",
-        "language": "en"
+        "vernacularName": "bicha-tesoura",
+        "language": "pt"
       },
       {
-        "vernacularName": "Common Earwig",
-        "language": "en"
-      },
-      {
-        "vernacularName": "European Earwig",
-        "language": "en"
-      },
-      {
-        "vernacularName": "European earwig",
-        "language": "en"
-      },
-      {
-        "vernacularName": "European earwig",
-        "language": "en"
-      },
-      {
-        "vernacularName": "European earwig",
-        "language": "en"
-      },
-      {
-        "vernacularName": "European earwig",
-        "language": "en"
-      },
-      {
-        "vernacularName": "European earwig",
-        "language": "en"
+        "vernacularName": "tijereta común",
+        "language": "es"  
       },
       {
         "vernacularName": "Forbice",
-        "language": "en"
+        "language": "it"
       },
       {
         "vernacularName": "European earwig",
@@ -7764,10 +7739,6 @@ export const insects = [
       },
       {
         "vernacularName": "Common European earwig",
-        "language": "en"
-      },
-      {
-        "vernacularName": "European earwig",
         "language": "en"
       }
     ],

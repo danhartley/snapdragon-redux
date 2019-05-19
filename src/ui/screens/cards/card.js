@@ -55,7 +55,7 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
 
     template.innerHTML = cardTemplate;
 
-    const traits = getTraits(enums, item);
+    const traits = getTraits(enums);
 
     renderCommonParts(template, config, item, collection, traits, mode, parent, rootNode, isInCarousel);
 

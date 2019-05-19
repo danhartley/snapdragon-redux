@@ -3,8 +3,7 @@ import * as traitEnums from 'api/traits/trait-types';
 const getTraits = SD => {    
         return [
         { name: 'Vanessa atalanta', 
-        symbionts: [ 
-            { id: 'Urtica dioica' }, { id: 'Buddleia'}, { id: 'Hedera'} ], 
+        symbionts: [ 'Urtica dioica', 'Buddleia', 'Hedera' ], 
         traits: [            
             { name: SD.name.MIGRATORY, value: SD.whether.YES },
             { name: SD.name.FOOD, value: `${SD.foodType.ROTTEN_FRUIT}, Buddleia`, type: SD.symbiosis.COMMENSALISM },
@@ -16,8 +15,7 @@ const getTraits = SD => {
             { name: SD.name.HABITAT, value: `Hedera, ${SD.habitat.WOODLAND}`, type: SD.symbiosis.COMMENSALISM },
         ] },
         { name: 'Pararge aegeria', 
-        symbionts: [ 
-            { id: 'Elymus repens' }, { id: 'Dactylis glomerata'} ], 
+        symbionts: [  'Elymus repens', 'Dactylis glomerata' ], 
         traits: [
             { name: SD.name.MIGRATORY, value: SD.whether.NO },
             { name: SD.name.FOOD, value: `${SD.foodType.NECTAR}, ${SD.foodType.HONEYDEW}` },
@@ -30,8 +28,8 @@ const getTraits = SD => {
         ] },
         { name: 'Maniola jurtina', 
         symbionts: [ 
-            { id: 'Pyronia tithonus' }, { id: 'Coenonympha pamphilus'}, { id: 'Hyponephele lycaon'}, 
-            { id: 'Dactylis glomerata'}, { id: 'Poaceae'}, { id: 'Erica'}, { id: 'Origanum'} ], 
+            'Pyronia tithonus', 'Coenonympha pamphilus', 'Hyponephele lycaon', 
+            'Dactylis glomerata', 'Poaceae', 'Erica', 'Origanum' ], 
         traits: [
             { name: SD.name.WING_SPAN, value: '4.0-6.0cm' },
             { name: SD.name.LOOK_ALIKES, values: [ 'Pyronia tithonus' ]},
@@ -45,8 +43,8 @@ const getTraits = SD => {
         ] },
         { name: 'Pieris rapae', 
         symbionts: [ 
-            { id: 'Brassica oleracea'}, { id: 'Armoracia rusticana'}, { id: 'Raphanus raphanistrum'}, 
-            { id: 'Brassica rapa'}, { id: 'Sinapis alba'} ],
+            'Brassica oleracea', 'Armoracia rusticana', 'Raphanus raphanistrum', 
+            'Brassica rapa', 'Sinapis alba' ],
         traits: [
             { name: SD.name.WING_SPAN, value: '3.2-4.7cm' },
             { name: SD.name.HABITAT, value: `${SD.habitat.URBAN}, ${SD.habitat.VALLEYS}` },
@@ -56,7 +54,7 @@ const getTraits = SD => {
             { name: SD.name.FOOD, value: `${SD.foodType.NECTAR}, Brassica rapa`, type: SD.symbiosis.MUTUALISM },
         ] },
         { name: 'Charaxes jasius', 
-        symbionts: [ { id: 'Arbutus unedo'}, { id: 'Laurus nobilis'}, { id: 'Prunus persica'} ],
+        symbionts: [ 'Arbutus unedo', 'Laurus nobilis', 'Prunus persica' ],
         traits: [
             { name: SD.name.WING_SPAN, value: '6.5-9.0cm' },
             { name: SD.name.CATERPILLAR_COLOUR, value: `${SD.colour.GREEN}, ${SD.colour.YELLOW}` },
@@ -66,7 +64,7 @@ const getTraits = SD => {
             { name: SD.name.HABITAT, value: `${SD.habitat.MAQUIS}, ${SD.habitat.SAVANNA}` },
         ] },
         { name: 'Polyommatus icarus', 
-        symbionts: [ { id: 'Vicia'}, { id: 'Leguminosae'}, { id: 'Trifolium'}, { id: 'Lotus corniculatus'} ],
+        symbionts: [ 'Vicia', 'Leguminosae', 'Trifolium', 'Lotus corniculatus' ],
         traits: [
             { name: SD.name.WING_SPAN, value: '2.8-3.6cm' },
             { name: SD.name.CATERPILLAR_COLOUR, value: `${SD.colour.PALE_GREEN}, ${SD.colour.YELLOW}` },
@@ -78,7 +76,7 @@ const getTraits = SD => {
 
         { name: 'Papilio machaon', 
             symbionts: [ 
-                { id: 'Daucus carota' }, { id: 'Angelica sylvestris'}, { id: 'Foeniculum vulgare'} ], 
+                'Daucus carota', 'Angelica sylvestris', 'Foeniculum vulgare' ], 
             traits: [            
             { name: SD.name.MIGRATORY, value: SD.whether.YES },
             { name: SD.name.WING_SPAN, value: '6.5-8.6cm' },
@@ -89,9 +87,7 @@ const getTraits = SD => {
             { name: SD.name.HABITAT, value: `${SD.habitat.MEADOW}, ${SD.habitat.HILLS}` },
         ] },
         { name: 'Apis mellifera', 
-        symbionts: [
-            { id: 'Varroa mite'}
-        ],
+        symbionts: [ 'Varroa mite' ],
         traits: [
             { name: SD.name.ORGANISATION, value: SD.organisation.EUSOCIAL },
             { name: SD.name.POLLINATION, value: 'Plantae' },
