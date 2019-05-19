@@ -41,16 +41,12 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel)
         }
     };
 
-    // Combine symbiotic relationships and lookalikes?
-
     const setNumberOfRows = config.isLandscapeMode ? 10 : 4;
 
     if(speciesTraits && speciesTraits.symbionts) {
 
-        let symbionts = speciesTraits.symbionts.map(s => s.id);
+        let symbionts = speciesTraits.symbionts;
 
-        // symbionts = symbionts.filter(s => R.contains(s, species.map(s => s.name)));
-        
         let symbiontTraits = speciesTraits.traits.map(trait => {
             const values = trait.value.split(',').map(t => t.trim());
             const st = values.map(symbiont => {

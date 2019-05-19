@@ -3,15 +3,76 @@
 import * as traitEnums from 'api/traits/trait-types';
 import { store } from 'redux/store';
 
-export const getPollinators = SD => {
+
+
+export const getPredators = SD => {
 
     SD = SD || store.getState().enums;
     SD = SD && Object.keys(SD).length ? SD : traitEnums.enums;
 
     return [
-    {
-        type: [ SD.name.POLLINATION ],
-        speciesA: { names: [ 'Pastinaca sativa' ], taxon: 'species' },
+        {
+            type: [ 'predation' ],
+            predator:{ names: [ 'Erinaceinae' ], taxon: 'subfamily' },
+            target: { names: [ 'Insecta' ], taxon: 'class' }
+        },
+        {
+            type: [ 'predation' ],
+            predator:{ names: [ 'Coccinellidae' ], taxon: 'family' },
+            target: { names: [ 'Insecta' ], taxon: 'class' }
+        },
+        {
+            type: [ 'predation' ],
+            predator:{ names: [ 'Coccinellidae' ], taxon: 'family' },
+            target: { names: [ 'Aphidoidea', 'Coccoidea' ], taxon: 'superfamily' }
+        },
+        {
+            type: [ 'predation' ],
+            predator:{ names: [ 'Apocrita' ], taxon: 'suborder' },
+            target: { names: [ 'Aphidoidea' ], taxon: 'superfamily' }
+        },
+        {
+            type: [ 'predation' ],
+            predator:{ names: [ 'Encarsia formosa' ], taxon: 'species' },
+            target: { names: [ 'Trialeurodes vaporariorum' ], taxon: 'species' }
+        },
+        {
+            type: [ 'predation' ],
+            predator:{ names: [ 'Nematoda' ], taxon: 'phylum' },
+            target: { names: [ 'Trialeurodes vaporariorum' ], taxon: 'species' }
+        },
+        {
+            type: [ 'predation' ],
+            predator:{ names: [ 'Nematoda' ], taxon: 'phylum' },
+            target:{ names: [ 'Noctuidae' ], taxon: 'family' },
+        },
+        {
+            type: [ 'predation' ],
+            predator:{ names: [ 'Gliocladium roseum' ], taxon: 'species' },
+            target:{ names: [ 'Nematoda' ], taxon: 'phylum' },
+        },
+        {
+            type: [ 'predation' ],
+            predator:{ names: [ 'Calendula officinalis' ], taxon: 'species' },
+            target:{ names: [ 'Nematoda' ], taxon: 'phylum' },
+        },
+    ]
+};
+
+export const getPollinators = SD => {
+
+    SD = SD || store.getState().enums;
+    SD = SD && Object.keys(SD).length ? SD : traitEnums.enums;
+    
+    return [
+        {
+            type: [ SD.name.POLLINATION ],
+            speciesA: { names: [ 'Trifolium pratense' ], taxon: 'species' },
+            speciesB: [{ names: [ 'Bombus terrestris' ], taxon: 'species' }]
+        },
+        {
+            type: [ SD.name.POLLINATION ],
+            speciesA: { names: [ 'Pastinaca sativa' ], taxon: 'species' },
         speciesB: [{ names: [ 'Amphipyra tragopoginis' ], taxon: 'species' }]
     },
     {
@@ -28,11 +89,6 @@ export const getPollinators = SD => {
         type: [ SD.name.POLLINATION ],
         speciesA: { names: [ 'Apiaceae' ], taxon: 'family' },
         speciesB: [{ names: [ 'Papilio polyxenes' ], taxon: 'species' }]
-    },
-    {
-        type: [ SD.name.POLLINATION ],
-        speciesA: { names: [ 'Trifolium pratense' ], taxon: 'species' },
-        speciesB: [{ names: [ 'Bombus terrestris' ], taxon: 'species' }]
     },
     {
         type: [ SD.name.POLLINATION ],
@@ -207,52 +263,7 @@ export const getPollinators = SD => {
     {
         type: [ SD.name.POLLINATION ],
         speciesA: { names: [ 'Rutaceae' ], taxon: 'family' },
-        animal: { names: [ 'Insecta' ], taxon: 'class' }
-    },
-    {
-        type: [ 'predation' ],
-        predator:{ names: [ 'Erinaceinae' ], taxon: 'subfamily' },
-        target: { names: [ 'Insecta' ], taxon: 'class' }
-    },
-    {
-        type: [ 'predation' ],
-        predator:{ names: [ 'Coccinellidae' ], taxon: 'family' },
-        target: { names: [ 'Insecta' ], taxon: 'class' }
-    },
-    {
-        type: [ 'predation' ],
-        predator:{ names: [ 'Coccinellidae' ], taxon: 'family' },
-        target: { names: [ 'Aphidoidea', 'Coccoidea' ], taxon: 'superfamily' }
-    },
-    {
-        type: [ 'predation' ],
-        predator:{ names: [ 'Apocrita' ], taxon: 'suborder' },
-        target: { names: [ 'Aphidoidea' ], taxon: 'superfamily' }
-    },
-    {
-        type: [ 'predation' ],
-        predator:{ names: [ 'Encarsia formosa' ], taxon: 'species' },
-        target: { names: [ 'Trialeurodes vaporariorum' ], taxon: 'species' }
-    },
-    {
-        type: [ 'predation' ],
-        predator:{ names: [ 'Nematoda' ], taxon: 'phylum' },
-        target: { names: [ 'Trialeurodes vaporariorum' ], taxon: 'species' }
-    },
-    {
-        type: [ 'predation' ],
-        predator:{ names: [ 'Nematoda' ], taxon: 'phylum' },
-        target:{ names: [ 'Noctuidae' ], taxon: 'family' },
-    },
-    {
-        type: [ 'predation' ],
-        predator:{ names: [ 'Gliocladium roseum' ], taxon: 'species' },
-        target:{ names: [ 'Nematoda' ], taxon: 'phylum' },
-    },
-    {
-        type: [ 'predation' ],
-        predator:{ names: [ 'Calendula officinalis' ], taxon: 'species' },
-        target:{ names: [ 'Nematoda' ], taxon: 'phylum' },
+        speciesB: [{ names: [ 'Insecta' ], taxon: 'class' }]
     },
     {
         type: [ SD.name.POLLINATION ],

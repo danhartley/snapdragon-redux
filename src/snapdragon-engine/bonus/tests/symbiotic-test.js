@@ -10,7 +10,7 @@ export const getSymbioticTest = collection => {
 
         const { enums } = store.getState();
 
-        const speciesTraits = getTraits(enums, item).find(trait => trait.name === item.name).traits;
+        const speciesTraits = getTraits(enums).find(trait => trait.name === item.name).traits;
 
         const enumeratedRoles = SD.enums.role;
 
