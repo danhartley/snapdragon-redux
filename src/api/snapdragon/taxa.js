@@ -177,13 +177,14 @@ export const taxa = [
         names: [ { language: "en", names: ['Ants, Bees, and Wasps']},
         { language: "fr", names:[ 'Hyménoptères' ]},
         { language: "de", names:[ 'Hautflügler' ]},
-        { language: "es", names:[ 'Ants, Bees, and Wasps' ]},
+        { language: "es", names:[ '' ]},
         { language: "pt", names:[ 'Vespa' ]},
-        { language: "it", names:[ 'Ants, Bees, and Wasps' ]}],
+        { language: "it", names:[ '' ]}],
         descriptions: [
             {
                 language: 'en',
-                summary: ""
+                summary: "A large order of insects, comprising the sawflies, wasps, bees, and ants.",
+                identification: 'A key characteristic of this order is that the hind wings are connected to the fore wings by a series of hooks.'
             }
         ],
         species: 150000,

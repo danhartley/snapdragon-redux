@@ -67,6 +67,7 @@ const snapdragonLichens = {
               common: 'Fungi & Lichens'
             }
         ],
+        iconicTaxaSummary: 'Lichens',
         ready: true
     },
     collection: {
@@ -78,6 +79,7 @@ const snapdragonLichens = {
     lessonPlanPortrait: 101,
     glossary: ['lichen', 'common'],
     iconicTaxa: [ 'fungi' ],    
+    iconicTaxaSummary: 'Lichens',
     itemNames: [
         'Xanthoria parietina', 'Physcia adscendens', 'Parmelia saxatilis', 'Graphis scripta',
         'Ramalina farinacea', 'Evernia prunastri', 'Usnea florida', 
@@ -114,7 +116,8 @@ const placeDefaults = {
     collection: {
         id: 2
     },
-    iconicTaxa: allIconicTaxa.map(all => all.id)
+    iconicTaxa: allIconicTaxa.map(all => all.id),
+    iconicTaxaSummary: 'All species'
 };
 
 const placeMonsanto = {    
@@ -134,6 +137,7 @@ const placeMonsanto = {
             type: 'all_year'
         },
         iconicTaxa: allIconicTaxa,
+        iconicTaxaSummary: 'All species',
         ready: true
     }
 }
@@ -155,6 +159,7 @@ const placeArrabida = {
             type: 'all_year'
         },
         iconicTaxa: allIconicTaxa,
+        iconicTaxaSummary: 'All species',
         ready: true
     } 
 };
@@ -255,7 +260,8 @@ const snapdragonKitchenGarden = {
         // "Apis mellifera"
       ],
     items: [ ...plants ],
-    iconicTaxa: [ 'plantae' ]
+    iconicTaxa: [ 'plantae' ],
+    iconicTaxaSummary: 'Plants',
 };
 
 // snapdragonKitchenGarden.itemNames = [ "Vulpes vulpes" ];
@@ -341,6 +347,7 @@ const rhsTrees = {
       ],
     items: [ ...deciduousAndEvergreenTrees, ...deciduousAndEvergreenTrees2 ],
     iconicTaxa: [ 'plantae' ],
+    iconicTaxaSummary: 'Plants',
     type: 'course',
     guide: {
         locationPlace: 'RHS Trees',
@@ -418,6 +425,7 @@ const rhsWeeds = {
         "Bellis perennis"
       ],
     iconicTaxa: [ 'plantae' ],
+    iconicTaxaSummary: 'Plants',
     eol_link: 'https://eol.org/collections/140731',
     externalLink: { text: 'RHS Practical Horticulture', url:'https://www.rhs.org.uk/education-learning/qualifications-and-training/rhs-qualifications/level-1-qualifications/level-1-intro-award-in-practical-horticulture' },
 };
@@ -429,6 +437,7 @@ const mushroomDefaults = {
     lessonPlanPortrait: 101,
     glossary: ['fungi'],
     iconicTaxa: [ 'fungi' ],
+    iconicTaxaSummary: 'Mushrooms',
     items: [ ...mushrooms, ...mushrooms2 ]
 };
 
@@ -521,6 +530,7 @@ const commonBritishBirds = {
         "Fringilla coelebs"
       ],
     iconicTaxa: [ 'aves' ],
+    iconicTaxaSummary: 'Birds',
     collection: {
         id: 8
       },
