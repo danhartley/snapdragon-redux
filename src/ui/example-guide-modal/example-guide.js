@@ -5,10 +5,10 @@ import { actions } from 'redux/actions/action-creators';
 import { renderHome } from 'ui/screens/home/home';
 import { returnTaxonIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
-import exampleGuideTemplate from 'ui/example-guide-modal/example-guide-template.html';
-import exampleLessonsTemplate from 'ui/example-guide-modal/example-guide.html';
 import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 
+import exampleGuideTemplate from 'ui/example-guide-modal/example-guide-template.html';
+import exampleLessonsTemplate from 'ui/example-guide-modal/example-guide.html';
 
 const closeModalListeners = [];
 
@@ -44,7 +44,7 @@ export const renderExampleGuideHandler = () => {
       const parent = modal.querySelector('.js-landscape-inner-body div:nth-child(2)');
             parent.innerHTML = '';
       
-            template = document.createElement('template');
+      template = document.createElement('template');
       template.innerHTML = exampleLessonsTemplate;
 
       const typeLessons = lessons.filter(lesson => lesson.type === type);
@@ -56,9 +56,10 @@ export const renderExampleGuideHandler = () => {
       const iconiseTaxon = taxon => {
 
         const lessonId = parseInt(taxon.dataset.lessonId);
-        const lessonTaxa = lessons.find(lesson => lesson.id === lessonId).guide.iconicTaxa.map(taxon => taxon.id);
+        const lesson = lessons.find(lesson => lesson.id === lessonId);
+        const lessonTaxa = lesson.guide.iconicTaxa.map(taxon => taxon.id);
 
-        let icons = '';
+        let icons = `${lesson.iconicTaxaSummary}: `;
 
         lessonTaxa.forEach(taxon => {
           const icon = returnTaxonIcon(taxon);

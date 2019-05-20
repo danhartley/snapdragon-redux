@@ -7,7 +7,7 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
 
     const location = config.guide.locationType === 'longLat' ? config.guide.locationLongLat : config.guide.locationPlace;
     const place = config.guide.locationType === 'longLat' ? config.guide.locationLongLat.split(',')[0] : config.guide.place.name;
-    const range = config.guide.locationType === 'inat' ? 0 : config.guide.speciesRange;
+    const range = (config.guide.locationType === 'inat' || config.guide.locationType === 'place') ? 0 : config.guide.speciesRange;
 
     speciesCount = speciesCount === 0 ? '' : speciesCount;
     

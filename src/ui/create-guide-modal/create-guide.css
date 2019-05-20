@@ -81,6 +81,10 @@
     padding-top: .5rem;
     margin-left: .5rem;
   }
+
+  .modal-guide-wrapper .modal-body .guide-example.guide-text {
+    margin-bottom: .5rem;
+  }
   
   
   .modal-guide-wrapper .modal-body .guide-sub-text {

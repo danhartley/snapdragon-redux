@@ -640,11 +640,13 @@ export const epithets = [
     },
     {
         "latin" : ["apis"],
-        "en" : ["bee"]
+        "en" : ["bee"],
+        species: [ 'Apis mellifera' ]
     },
     {
         "latin" : ["mellifera"],
-        "en" : ["honey-bearing"]
+        "en" : ["honey-bearing"],
+        species: [ 'Apis mellifera' ]
     },
     {
         "latin" : ["instar"],
