@@ -542,32 +542,80 @@ export const plants = [
     ],
     "names": [
       {
-        "vernacularName": "Espino albar, majuelo",
-        "language": "es"
+        "vernacularName": "Eingriffliger Weissdorn",
+        "language": "de"        
       },
       {
-        "vernacularName": "Ar blanc",
-        "language": "fr"
+        "vernacularName": "Eingriffeliger Weißdorn",
+        "language": "de"
+      },
+      {
+        "vernacularName": "hawthorn",
+        "language": "en"        
       },
       {
         "vernacularName": "Common Hawthorn",
         "language": "en"
       },
       {
-        "vernacularName": "Majuelo",
-        "language": "es"
-      },
-      {
-        "vernacularName": "May",
+        "vernacularName": "English hawthorn",
         "language": "en"
       },
       {
-        "vernacularName": "hawthorn",
+        "vernacularName": "May thorn",
+        "language": "en"
+      },
+      {
+        "vernacularName": "one-seeded hawthorn",
         "language": "en"
       },
       {
         "vernacularName": "oneseed hawthorn",
         "language": "en"
+      },
+      {
+        "vernacularName": "red hawthorn",
+        "language": "en"
+      },
+      {
+        "vernacularName": "singleseed hawthorn",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Espino majuelo",
+        "language": "es"        
+      },
+      {
+        "vernacularName": "espino albar",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Aubépine",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Aubépine à un style",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Épine noire",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Bois de mai",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "aubépine monogyne,",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Biancospino comune",
+        "language": "it"        
+      },
+      {
+        "vernacularName": "Pilriteiro",
+        "language": "pt"        
       }
     ],
     "taxonomy": {
@@ -578,172 +626,171 @@ export const plants = [
       "family": "Rosaceae"
     },
     "family": "Rosaceae",
-    "kingdom": "Plantae",
-    "eolName": "Crataegus monogyna Jacq."
+    "kingdom": "Plantae"
   },
-  {
-    "id": 579181,
-    "name": "Olea europaea",
-    "images": [
-      {
-        "title": "Olea europaea cuspidata-africana Cape Town.JPG",
-        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-        "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_cuspidata-africana_Cape_Town.JPG",
-        "license": "http://creativecommons.org/licenses/publicdomain/",
-        "url": "55/c6/17/509.12527750.jpg",
-        "thumb": "55/c6/17/509.12527750.98x68.jpg"
-      },
-      {
-        "title": "Olea europaea cuspidata-africana - Cape Town.JPG",
-        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-        "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_cuspidata-africana_-_Cape_Town.JPG",
-        "license": "http://creativecommons.org/licenses/publicdomain/",
-        "url": "5a/9d/51/509.11873933.jpg",
-        "thumb": "5a/9d/51/509.11873933.98x68.jpg"
-      },
-      {
-        "title": "Olives",
-        "rightsHolder": "A.Poulos (Iya)",
-        "source": "https://www.flickr.com/photos/24918962@N07/2857699230/",
-        "license": "http://creativecommons.org/licenses/by/2.0/",
-        "url": "7f/22/97/542.2857699230.jpg",
-        "thumb": "7f/22/97/542.2857699230.98x68.jpg",
-        "photographer": {
-          "full_name": "<a href='http://www.flickr.com/photos/24918962@N07'>A.Poulos (Iya)</a>",
-          "homepage": "http://www.flickr.com/photos/24918962@N07",
-          "role": "photographer"
-        }
-      },
-      {
-        "title": "Olea europaea subsp cuspidata, groen en ryp vrugte, Buffelsdrift, b.jpg",
-        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-        "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_subsp_cuspidata,_groen_en_ryp_vrugte,_Buffelsdrift,_b.jpg",
-        "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "62/f3/da/509.47464262.jpg",
-        "thumb": "62/f3/da/509.47464262.98x68.jpg"
-      },
-      {
-        "title": "Starr 010419-0057 Olea europaea subsp. cuspidata.jpg",
-        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-        "source": "https://commons.wikimedia.org/wiki/File:Starr_010419-0057_Olea_europaea_subsp._cuspidata.jpg",
-        "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "65/b6/8b/509.6108095.jpg",
-        "thumb": "65/b6/8b/509.6108095.98x68.jpg"
-      },
-      {
-        "title": "Starr 080611-8472 Olea europaea subsp. cuspidata.jpg",
-        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-        "source": "https://commons.wikimedia.org/wiki/File:Starr_080611-8472_Olea_europaea_subsp._cuspidata.jpg",
-        "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "66/51/38/509.6185726.jpg",
-        "thumb": "66/51/38/509.6185726.98x68.jpg"
-      },
-      {
-        "title": "Olea europaea Grove Wardija Ridge Malta 03.jpg",
-        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-        "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_Grove_Wardija_Ridge_Malta_03.jpg",
-        "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "55/50/aa/509.10624510.jpg",
-        "thumb": "55/50/aa/509.10624510.98x68.jpg"
-      },
-      {
-        "title": "Olea europaea Grove Wardija Ridge Malta 04.jpg",
-        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-        "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_Grove_Wardija_Ridge_Malta_04.jpg",
-        "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "55/50/ab/509.10624528.jpg",
-        "thumb": "55/50/ab/509.10624528.98x68.jpg"
-      },
-      {
-        "title": "Olea europaea Grove Wardija Ridge Malta 08.jpg",
-        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-        "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_Grove_Wardija_Ridge_Malta_08.jpg",
-        "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "55/50/b0/509.10624599.jpg",
-        "thumb": "55/50/b0/509.10624599.98x68.jpg"
-      },
-      {
-        "title": "Acebuche de Ocuri.JPG",
-        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-        "source": "https://commons.wikimedia.org/wiki/File:Acebuche_de_Ocuri.JPG",
-        "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "55/b0/fa/509.12270226.jpg",
-        "thumb": "55/b0/fa/509.12270226.98x68.jpg"
-      },
-      {
-        "title": "Olive-tree-fruit-august-0.jpg",
-        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-        "source": "https://commons.wikimedia.org/wiki/File:Olive-tree-fruit-august-0.jpg",
-        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "55/c1/ad/509.124464.jpg",
-        "thumb": "55/c1/ad/509.124464.98x68.jpg"
-      },
-      {
-        "title": "Olea europaea g9.jpg",
-        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-        "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_g9.jpg",
-        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "56/02/95/509.1393093.jpg",
-        "thumb": "56/02/95/509.1393093.98x68.jpg"
-      },
-      {
-        "title": "Olive growing system g3.jpg",
-        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-        "source": "https://commons.wikimedia.org/wiki/File:Olive_growing_system_g3.jpg",
-        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "56/13/53/509.1455011.jpg",
-        "thumb": "56/13/53/509.1455011.98x68.jpg"
-      }
-    ],
-    "names": [
-      {
-        "vernacularName": "European Olive",
-        "language": "en",
+  // {
+  //   "id": 579181,
+  //   "name": "Olea europaea",
+  //   "images": [
+  //     {
+  //       "title": "Olea europaea cuspidata-africana Cape Town.JPG",
+  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+  //       "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_cuspidata-africana_Cape_Town.JPG",
+  //       "license": "http://creativecommons.org/licenses/publicdomain/",
+  //       "url": "55/c6/17/509.12527750.jpg",
+  //       "thumb": "55/c6/17/509.12527750.98x68.jpg"
+  //     },
+  //     {
+  //       "title": "Olea europaea cuspidata-africana - Cape Town.JPG",
+  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+  //       "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_cuspidata-africana_-_Cape_Town.JPG",
+  //       "license": "http://creativecommons.org/licenses/publicdomain/",
+  //       "url": "5a/9d/51/509.11873933.jpg",
+  //       "thumb": "5a/9d/51/509.11873933.98x68.jpg"
+  //     },
+  //     {
+  //       "title": "Olives",
+  //       "rightsHolder": "A.Poulos (Iya)",
+  //       "source": "https://www.flickr.com/photos/24918962@N07/2857699230/",
+  //       "license": "http://creativecommons.org/licenses/by/2.0/",
+  //       "url": "7f/22/97/542.2857699230.jpg",
+  //       "thumb": "7f/22/97/542.2857699230.98x68.jpg",
+  //       "photographer": {
+  //         "full_name": "<a href='http://www.flickr.com/photos/24918962@N07'>A.Poulos (Iya)</a>",
+  //         "homepage": "http://www.flickr.com/photos/24918962@N07",
+  //         "role": "photographer"
+  //       }
+  //     },
+  //     {
+  //       "title": "Olea europaea subsp cuspidata, groen en ryp vrugte, Buffelsdrift, b.jpg",
+  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+  //       "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_subsp_cuspidata,_groen_en_ryp_vrugte,_Buffelsdrift,_b.jpg",
+  //       "license": "http://creativecommons.org/licenses/by/3.0/",
+  //       "url": "62/f3/da/509.47464262.jpg",
+  //       "thumb": "62/f3/da/509.47464262.98x68.jpg"
+  //     },
+  //     {
+  //       "title": "Starr 010419-0057 Olea europaea subsp. cuspidata.jpg",
+  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+  //       "source": "https://commons.wikimedia.org/wiki/File:Starr_010419-0057_Olea_europaea_subsp._cuspidata.jpg",
+  //       "license": "http://creativecommons.org/licenses/by/3.0/",
+  //       "url": "65/b6/8b/509.6108095.jpg",
+  //       "thumb": "65/b6/8b/509.6108095.98x68.jpg"
+  //     },
+  //     {
+  //       "title": "Starr 080611-8472 Olea europaea subsp. cuspidata.jpg",
+  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+  //       "source": "https://commons.wikimedia.org/wiki/File:Starr_080611-8472_Olea_europaea_subsp._cuspidata.jpg",
+  //       "license": "http://creativecommons.org/licenses/by/3.0/",
+  //       "url": "66/51/38/509.6185726.jpg",
+  //       "thumb": "66/51/38/509.6185726.98x68.jpg"
+  //     },
+  //     {
+  //       "title": "Olea europaea Grove Wardija Ridge Malta 03.jpg",
+  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+  //       "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_Grove_Wardija_Ridge_Malta_03.jpg",
+  //       "license": "http://creativecommons.org/licenses/by/3.0/",
+  //       "url": "55/50/aa/509.10624510.jpg",
+  //       "thumb": "55/50/aa/509.10624510.98x68.jpg"
+  //     },
+  //     {
+  //       "title": "Olea europaea Grove Wardija Ridge Malta 04.jpg",
+  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+  //       "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_Grove_Wardija_Ridge_Malta_04.jpg",
+  //       "license": "http://creativecommons.org/licenses/by/3.0/",
+  //       "url": "55/50/ab/509.10624528.jpg",
+  //       "thumb": "55/50/ab/509.10624528.98x68.jpg"
+  //     },
+  //     {
+  //       "title": "Olea europaea Grove Wardija Ridge Malta 08.jpg",
+  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+  //       "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_Grove_Wardija_Ridge_Malta_08.jpg",
+  //       "license": "http://creativecommons.org/licenses/by/3.0/",
+  //       "url": "55/50/b0/509.10624599.jpg",
+  //       "thumb": "55/50/b0/509.10624599.98x68.jpg"
+  //     },
+  //     {
+  //       "title": "Acebuche de Ocuri.JPG",
+  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+  //       "source": "https://commons.wikimedia.org/wiki/File:Acebuche_de_Ocuri.JPG",
+  //       "license": "http://creativecommons.org/licenses/by/3.0/",
+  //       "url": "55/b0/fa/509.12270226.jpg",
+  //       "thumb": "55/b0/fa/509.12270226.98x68.jpg"
+  //     },
+  //     {
+  //       "title": "Olive-tree-fruit-august-0.jpg",
+  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+  //       "source": "https://commons.wikimedia.org/wiki/File:Olive-tree-fruit-august-0.jpg",
+  //       "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+  //       "url": "55/c1/ad/509.124464.jpg",
+  //       "thumb": "55/c1/ad/509.124464.98x68.jpg"
+  //     },
+  //     {
+  //       "title": "Olea europaea g9.jpg",
+  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+  //       "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_g9.jpg",
+  //       "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+  //       "url": "56/02/95/509.1393093.jpg",
+  //       "thumb": "56/02/95/509.1393093.98x68.jpg"
+  //     },
+  //     {
+  //       "title": "Olive growing system g3.jpg",
+  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+  //       "source": "https://commons.wikimedia.org/wiki/File:Olive_growing_system_g3.jpg",
+  //       "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+  //       "url": "56/13/53/509.1455011.jpg",
+  //       "thumb": "56/13/53/509.1455011.98x68.jpg"
+  //     }
+  //   ],
+  //   "names": [
+  //     {
+  //       "vernacularName": "European Olive",
+  //       "language": "en",
         
-      },
-      {
-        "vernacularName": "Olijf",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Olive",
-        "language": "en",
-        "eol_preferred": false,
-        "wikiSearchTerm": true
-      },
-      {
-        "vernacularName": "olive tree",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "olive",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "olive",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Olive",
-        "language": "en",
-        "eol_preferred": false
-      }
-    ],
-    "taxonomy": {
-      "kingdom": "Plantae",
-      "phylum": "Tracheophyta",
-      "class": "Magnoliopsida",
-      "order": "Lamiales",
-      "family": "Oleaceae"
-    },
-    "family": "Oleaceae",
-    "kingdom": "Plantae",
-    "eolName": "Olea europaea L."
-  },
+  //     },
+  //     {
+  //       "vernacularName": "Olijf",
+  //       "language": "en",
+  //       "eol_preferred": false
+  //     },
+  //     {
+  //       "vernacularName": "Olive",
+  //       "language": "en",
+  //       "eol_preferred": false,
+  //       "wikiSearchTerm": true
+  //     },
+  //     {
+  //       "vernacularName": "olive tree",
+  //       "language": "en",
+  //       "eol_preferred": false
+  //     },
+  //     {
+  //       "vernacularName": "olive",
+  //       "language": "en",
+  //       "eol_preferred": false
+  //     },
+  //     {
+  //       "vernacularName": "olive",
+  //       "language": "en",
+  //       "eol_preferred": false
+  //     },
+  //     {
+  //       "vernacularName": "Olive",
+  //       "language": "en",
+  //       "eol_preferred": false
+  //     }
+  //   ],
+  //   "taxonomy": {
+  //     "kingdom": "Plantae",
+  //     "phylum": "Tracheophyta",
+  //     "class": "Magnoliopsida",
+  //     "order": "Lamiales",
+  //     "family": "Oleaceae"
+  //   },
+  //   "family": "Oleaceae",
+  //   "kingdom": "Plantae",
+  //   "eolName": "Olea europaea L."
+  // },
   {
     "id": 581687,
     "name": "Coriandrum sativum",

@@ -89,8 +89,8 @@ export const renderMixedSpecimenImages = (...args) => {
                 }
             });
 
-            const test = { ...score, itemId: selectedItem.id, 
-                question, answer, binomial: selectedItem.name, 
+            const test = { ...score, itemId: item.id, 
+                question, answer, binomial: item.name, 
                 questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, 
                 points: 0, icon: matchIcon(item.taxonomy, iconicTaxa),
                 vernacularName: itemProperties.getVernacularName(species.find(sp => sp.name === question), config),
