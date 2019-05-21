@@ -1449,7 +1449,8 @@ label.btn.btn-secondary .lesson-icon {
 }
 
 .imageSlider .carousel-item {
-  height: 9.375rem;
+  /* height: 9.375rem; */
+  height: 13.875rem;
   padding: 1rem 10%;
 }
 
