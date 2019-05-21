@@ -134,9 +134,9 @@ export const renderMultiStrips = (collection, bonus) => {
                 const englishAnswers = R.take(missingAnswers, filteredAnswers.map(s => s.names.filter(n => n.language === 'en')));
                 answers = [ ...answers, ...englishAnswers ];
             }
-            answers = answers.filter(a => a.length).map(answer => utils.capitaliseFirst(answer[0].vernacularName));
+            answers = answers.filter(a => a.length).map(answer => utils.capitaliseAll(answer[0].vernacularName));
             answers = R.take(5, answers);
-            answers.push(item.vernacularName);
+            answers.push(utils.capitaliseAll(item.vernacularName));
             answers = utils.shuffleArray(answers);
 
         const help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
@@ -174,7 +174,6 @@ export const renderMultiStrips = (collection, bonus) => {
         question = question ? question[config.language][0] : epithet;
         
         const answers = utils.shuffleArray([question, ...alternatives]);
-
         
         if(config.isLandscapeMode) {            
             render(question, answers, { question: layout.epithet.latin.join(', '), help: '(Match the latin term)' });
