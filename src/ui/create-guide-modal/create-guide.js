@@ -7,7 +7,7 @@ import { renderHome } from 'ui/screens/home/home';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderLocation } from 'ui/create-guide-modal/location';
 import { renderCategories } from 'ui/create-guide-modal/categories';
-import { renderSeason } from 'ui/create-guide-modal/guides';
+import { renderSeason } from 'ui/create-guide-modal/season';
 import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
 import { saveButton } from 'ui/create-guide-modal/common/save-button';
 

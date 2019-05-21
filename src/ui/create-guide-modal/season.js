@@ -1,7 +1,7 @@
 import { actions } from 'redux/actions/action-creators';
 import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 import { renderTemplate } from 'ui/helpers/templating';
-import guidesTemplate from 'ui/create-guide-modal/guides.html';
+import guidesTemplate from 'ui/create-guide-modal/season.html';
 
 export const renderSeason = (modal, createGuide) => {
 
