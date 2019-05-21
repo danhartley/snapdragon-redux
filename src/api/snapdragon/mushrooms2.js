@@ -4219,9 +4219,24 @@ export const mushrooms2 = [
     "names": [
       {
         "vernacularName": "Yellow fieldcap",
-        "language": "en",
-        "eol_preferred": true
-      }
+        "language": "en"
+      },
+      {
+        "vernacularName": "Gold-Mistpilz",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Gelbe Mistpilz",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Bolbice jaune d’œuf",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Bolbitie vitelline",
+        "language": "fr"
+      },
     ],
     "taxonomy": {
       "kingdom": "Fungi",
@@ -4505,9 +4520,32 @@ export const mushrooms2 = [
     "names": [
       {
         "vernacularName": "Wood blewit",
-        "language": "en",
-        "eol_preferred": true
-      }
+        "language": "en"
+      },
+      {
+        "vernacularName": "Violette Rötelritterling",
+        "language": "de"
+      },
+      {
+        "vernacularName": "seta de pie azul",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Pied bleu",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Lépiste nue",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Tricholome pied bleu",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "pé azul",
+        "language": "pt"
+      },
     ],
     "taxonomy": {
       "kingdom": "Fungi",
@@ -4894,53 +4932,27 @@ export const mushrooms2 = [
     "names": [
       {
         "vernacularName": "Candlesnuff Fungus",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "Candlesnuff Fungus",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Candlesnuff Fungus",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Candlesnuff Fungus",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Candlesnuff fungus",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Candlesnuff fungus",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Candlesnuff fungus",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Dead man's fingers",
+        "language": "en"
       },
       {
         "vernacularName": "Carbon Antlers",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
         "vernacularName": "Staghorn Fungus",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "candlesnuff fungus",
-        "language": "en",
-        "eol_preferred": false
+        "vernacularName": "Geweihförmige Holzkeule",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Xylaire du bois",
+        "language": "fr"
       }
     ],
     "taxonomy": {
@@ -5455,9 +5467,44 @@ export const mushrooms2 = [
     "names": [
       {
         "vernacularName": "Red cage stinkhorn",
-        "language": "en",
-        "eol_preferred": true
-      }
+        "language": "en"
+      },
+      {
+        "vernacularName": "clatro-vermelho",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "gaiola-de-bruxa",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "lanterna-das-bruxas",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Rote Gitterling",
+        "language": "de"
+      },
+      {
+        "vernacularName": "jaula roja",
+        "language": "es"
+      },
+      {
+        "vernacularName": "clathre rouge",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "clathre grillagé",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "cœur de sorcière",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "cage grillagée",
+        "language": "fr"
+      },
     ],
     "taxonomy": {
       "kingdom": "Fungi",

@@ -72,6 +72,18 @@
     }
 }
 
+@media (min-height:667px) {
+    .strips {
+        height: 21rem;
+    }
+}
+
+@media (min-height:736px) {
+    .strips {
+        height: 23rem;
+    }
+}
+
 @media (min-height:812px) {
     .strip {
         margin: .5rem;

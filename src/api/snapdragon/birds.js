@@ -782,13 +782,11 @@ export const birds = [
     "names": [
       {
         "vernacularName": "Ringeltaube",
-        "language": "de",
-        
+        "language": "de"        
       },
       {
         "vernacularName": "Wood Pigeon",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "Bar-tailed Cuckoo",
@@ -808,11 +806,11 @@ export const birds = [
         "language": "en"
       },
       {
-        "vernacularName": "Ring Dove or Cushat",
+        "vernacularName": "Ring Dove",
         "language": "en"
       },
       {
-        "vernacularName": "Wood Pigeon, Ring Dove or Cushat",
+        "vernacularName": "Cushat",
         "language": "en"
       },
       {
@@ -821,18 +819,23 @@ export const birds = [
       },
       {
         "vernacularName": "Paloma torcaz",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
         "vernacularName": "Pigeon ramier",
-        "language": "fr",
-        
+        "language": "fr"        
       },
       {
         "vernacularName": "Columba palumbus",
-        "language": "it",
-        
+        "language": "it"        
+      },
+      {
+        "vernacularName": "Esquizófilo Comum",
+        "language": "pt"        
+      },
+      {
+        "vernacularName": "Pombo-torcaz",
+        "language": "pt"        
       },
       {
         "vernacularName": "Colombaccio",

@@ -1134,73 +1134,63 @@ export const weeds = [
       "names": [
         {
           "vernacularName": "Cocksfoot",
-          "language": "en",
-          
-        },
-        {
-          "vernacularName": "Cocksfoot",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Cocksfoot",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"          
         },
         {
           "vernacularName": "gallo",
-          "language": "en",
-          "eol_preferred": false
+          "language": "es"
         },
         {
           "vernacularName": "orchard grass",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "cocksfoot",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
           "vernacularName": "Cock's-foot",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
           "vernacularName": "Orchard grass",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
           "vernacularName": "Rata trepadora",
-          "language": "es",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "cocksfoot",
-          "language": "en",
-          "eol_preferred": false
-        },
+          "language": "es"
+        },        
         {
           "vernacularName": "pasto ovillo",
-          "language": "es",
-          "eol_preferred": false
+          "language": "es"
         },
         {
           "vernacularName": "zacate del huerto",
-          "language": "es",
-          "eol_preferred": false
+          "language": "es"
         },
         {
           "vernacularName": "orchardgrass",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
-          "vernacularName": "Orchardgrass",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Dáctilo",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Dáctilo-comum",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Dáctilo-dos-lameiros",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Erva-dos-combros",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Panasco",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Dactila",
+          "language": "pt"
         }
       ],
       "taxonomy": {

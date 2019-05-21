@@ -394,8 +394,7 @@ export const lichen = [
     "names": [
       {
         "vernacularName": "rosette lichen",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "Hooded Rosette Lichen",
@@ -2176,8 +2175,7 @@ export const lichen = [
     "names": [
       {
         "vernacularName": "farinose cartilage lichen",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "Dotted Ramalina",
@@ -2418,6 +2416,10 @@ export const lichen = [
       {
         "vernacularName": "Caperatflechte",
         "language": "de"
+      },
+      {
+        "vernacularName": "caperata do flavoparmelia",
+        "language": "pt"
       },
       {
         "vernacularName": "flavoparmelia lichen",
@@ -2747,8 +2749,23 @@ export const lichen = [
     "names": [
       {
         "vernacularName": "Oakmoss",
-        "language": "en",
-        
+        "language": "en"        
+      },
+      {
+        "vernacularName": "Eichenmoos",
+        "language": "de"        
+      },
+      {
+        "vernacularName": "musgo arbóreo",
+        "language": "es"       
+      },
+      {
+        "vernacularName": "musgo del roble",
+        "language": "es"       
+      },
+      {
+        "vernacularName": "Musgo de carvalho",
+        "language": "pt"  
       },
       {
         "vernacularName": "ring lichen",

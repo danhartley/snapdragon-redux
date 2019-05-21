@@ -1022,13 +1022,12 @@ export const deciduousAndEvergreenTrees = [
     ],
     "names": [
       {
-        "vernacularName": "Falsche Akazie, Robinie",
-        "language": "de",
-        
+        "vernacularName": "Falsche Akazie",
+        "language": "de"        
       },
       {
         "vernacularName": "Robinie",
-        "language": "de"
+        "language": "de"        
       },
       {
         "vernacularName": "Scheinakazie",
@@ -1036,12 +1035,7 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "black locust",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Acacia (U.K.)",
-        "language": "en"
+        "language": "en"        
       },
       {
         "vernacularName": "Acacia Blanc",
@@ -1068,9 +1062,12 @@ export const deciduousAndEvergreenTrees = [
         "language": "en"
       },
       {
-        "vernacularName": "Robinier faux-acacia, Carouge",
-        "language": "fr",
-        
+        "vernacularName": "Robinier",
+        "language": "fr"        
+      },
+      {
+        "vernacularName": "Carouge",
+        "language": "fr"        
       },
       {
         "vernacularName": "Acacia Blanc",
@@ -1081,17 +1078,12 @@ export const deciduousAndEvergreenTrees = [
         "language": "fr"
       },
       {
-        "vernacularName": "Robinier",
-        "language": "fr"
-      },
-      {
-        "vernacularName": "Robinier faux-acacia",
-        "language": "fr"
+        "vernacularName": "Acácia-bastarda",
+        "language": "pt"
       },
       {
         "vernacularName": "Robinia",
-        "language": "it",
-        
+        "language": "it"        
       }
     ],
     "taxonomy": {
@@ -1239,14 +1231,16 @@ export const deciduousAndEvergreenTrees = [
     ],
     "names": [
       {
+        "vernacularName": "Stieleiche",
+        "language": "de"        
+      },
+      {
         "vernacularName": "Stiel-Eiche",
-        "language": "de",
-        
+        "language": "de"        
       },
       {
         "vernacularName": "Pedunculate Oak",
-        "language": "en",
-        
+        "language": "en"
       },
       {
         "vernacularName": "Common Oak",
@@ -1266,8 +1260,7 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "roble",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
         "vernacularName": "Carballo",
@@ -1275,17 +1268,23 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "Chêne pédonculé",
-        "language": "fr",
-        
+        "language": "fr"        
       },
       {
-        "vernacularName": "Chêne pédonculé, Gravelin",
+        "vernacularName": "Chêne pédonculé",
         "language": "fr"
       },
       {
+        "vernacularName": "Gravelin",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Carvalho-roble",
+        "language": "pt"
+      },
+      {
         "vernacularName": "Quercia comune",
-        "language": "it",
-        
+        "language": "it"        
       }
     ],
     "taxonomy": {
