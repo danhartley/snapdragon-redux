@@ -104,6 +104,10 @@
 
 @media (min-width: 768px) {
 
+    .left-body, .right-body {
+        margin: 0;
+    }
+
     .action-update,
     .response-update {
         left: 0;

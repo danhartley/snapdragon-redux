@@ -463,10 +463,10 @@ a.dropdown-item {
   grid-template-rows: 1fr 0.3rem 12fr 1fr;
 }
 
-.left-body,
-.right-body {
+.left-body, .right-body {
   display: grid;
   grid-auto-flow: row;
+  margin: 0 .25rem;
 }
 
 .header,

@@ -124,7 +124,8 @@
   }
   
   .modal-guide-wrapper .modal-body .modal-guide-progress .completed {
-    background-color: lightgray;
+    background-color: var(--snap-id-border);
+    color: white;
   }
   
   .modal-guide-wrapper .modal-body .modal-guide-progress .active {
