@@ -635,8 +635,7 @@ export const birds = [
     "names": [
       {
         "vernacularName": "Amsel",
-        "language": "de",
-        
+        "language": "de"
       },
       {
         "vernacularName": "Blackbird",
@@ -648,15 +647,7 @@ export const birds = [
         "wikiSearchTerm": true
       },
       {
-        "vernacularName": "Amsel",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Common blackbird and Eurasian blackbird",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Eurasian Blackbird",
+        "vernacularName": "Eurasian blackbird",
         "language": "en"
       },
       {
@@ -665,27 +656,28 @@ export const birds = [
       },
       {
         "vernacularName": "Mirlo común",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
-        "vernacularName": "Turdus merula",
-        "language": "es"
+        "vernacularName": "Mirlo",
+        "language": "es"        
       },
       {
         "vernacularName": "merle noir",
-        "language": "fr",
-        
+        "language": "fr"        
       },
       {
-        "vernacularName": "Turdus merula",
-        "language": "it",
-        
+        "vernacularName": "Melro-preto",
+        "language": "pt"        
+      },
+      {
+        "vernacularName": "Merlo nero",
+        "language": "it"
       },
       {
         "vernacularName": "Merlo",
         "language": "it"
-      }
+      },
     ],
     "descriptions": [],
     "taxonomy": {

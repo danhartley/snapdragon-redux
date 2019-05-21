@@ -3334,17 +3334,23 @@ export const lichen = [
     "names": [
       {
         "vernacularName": "Gelbe Waldflechte",
-        "language": "de",
-        
+        "language": "de"        
       },
       {
         "vernacularName": "Maritime Sunburst Lichen",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "Common orange lichen",
         "language": "en"
+      },
+      {
+        "vernacularName": "Pin-cushion sunburst lichen",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Líquen-dos-telhados",
+        "language": "pt"
       },
       {
         "vernacularName": "orange wall lichen",

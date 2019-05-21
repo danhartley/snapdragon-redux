@@ -899,10 +899,6 @@ export const mammals = [
         "wikiSearchTerm": true
       },
       {
-        "vernacularName": "jabal",
-        "language": "en"
-      },
-      {
         "vernacularName": "feral pig",
         "language": "en"
       },
@@ -937,6 +933,18 @@ export const mammals = [
       {
         "vernacularName": "Wildschwein",
         "language": "de"
+      },
+      {
+        "vernacularName": "Javali",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Javardo",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Cinghiale",
+        "language": "it"
       },
       {
         "vernacularName": "sanglier",
@@ -1401,6 +1409,10 @@ export const mammals = [
         "language": "en"
       },
       {
+        "vernacularName": "Fischotter",
+        "language": "de"
+      },
+      {
         "vernacularName": "Europäischer Fischotter",
         "language": "de"
       },
@@ -1430,8 +1442,11 @@ export const mammals = [
       },
       {
         "vernacularName": "lontra comune",
-        "language": "it",
-        "eol_preferred": false
+        "language": "it"
+      },
+      {
+        "vernacularName": "Lontra-europeia",
+        "language": "pt"
       },
       {
         "vernacularName": "lontra",

@@ -40,7 +40,6 @@ export const renderInatUser = (modal, createGuide) => {
 
         if(key !== '') {
             config.guide.locationType = 'inat';
-            config.guide.operation = 'inat';
 
             createGuide.setConfig(config);
             createGuide.saveStep('INAT');

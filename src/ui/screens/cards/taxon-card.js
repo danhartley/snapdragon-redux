@@ -69,15 +69,15 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
                 let props = itemProperties.taxonHasTaxaData(item.taxonomy.family, taxa);
 
                 if(props) {
-                    rank = 'family';
+                    rank = 'FAMILY';
                     taxonName = item.taxonomy.family;
                 } else {
                     props = itemProperties.taxonHasTaxaData(item.taxonomy.order, taxa);
                     if(props) {
-                        rank = 'order';
+                        rank = 'ORDER';
                         taxonName = item.taxonomy.order;                   
                     } else {
-                        rank = 'class';
+                        rank = 'CLASS';
                         taxonName = item.taxonomy.class;
                     }
                 }
@@ -89,8 +89,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
         const familyStats = familyProps.getFamilyStats(collection.items);
         const occurrences = familyStats ? familyStats[taxon.name] : 0;
-        
-        
+                
         const context = {
             rank: rank,
             name: taxonName,
@@ -110,7 +109,6 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
         }
 
         renderTemplate(context, template.content, parent, clone);
-
 
         switch(rank) {
             case 'FAMILY': 

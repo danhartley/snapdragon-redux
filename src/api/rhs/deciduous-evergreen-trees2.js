@@ -2934,14 +2934,16 @@ export const deciduousAndEvergreenTrees2 = [
     ],
     "names": [
       {
-        "vernacularName": "Schwarz-Erle",
-        "language": "de",
-        
+        "vernacularName": "Schwarz Erle",
+        "language": "de"        
+      },
+      {
+        "vernacularName": "black alder",
+        "language": "en"
       },
       {
         "vernacularName": "European alder",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "Common Alder",
@@ -2956,27 +2958,32 @@ export const deciduousAndEvergreenTrees2 = [
         "language": "en"
       },
       {
-        "vernacularName": "black alder",
-        "language": "en"
+        "vernacularName": "Aliso común",
+        "language": "es"        
       },
       {
         "vernacularName": "Aliso",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
         "vernacularName": "Aune glutineux",
-        "language": "fr",
-        
+        "language": "fr"        
       },
       {
-        "vernacularName": "Aulne glutineux, Verne",
+        "vernacularName": "Verne",
         "language": "fr"
       },
       {
+        "vernacularName": "Amieiro",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Ontano nero",
+        "language": "it"
+      },
+      {
         "vernacularName": "Ontano comune",
-        "language": "it",
-        
+        "language": "it"        
       }
     ],
     "taxonomy": {

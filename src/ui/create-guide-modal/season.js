@@ -1,4 +1,3 @@
-import { actions } from 'redux/actions/action-creators';
 import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 import { renderTemplate } from 'ui/helpers/templating';
 import guidesTemplate from 'ui/create-guide-modal/season.html';
@@ -27,8 +26,9 @@ export const renderSeason = (modal, createGuide) => {
               taxonLanguageTxt.innerHTML = languages.find(l => l.lang === config.language).name;
 
         document.querySelectorAll('.dropdown-item').forEach(language => {
-            language.addEventListener('click', event => {            
-                actions.boundUpdateLanguage(languages.find(l => l.lang === event.target.id));
+            language.addEventListener('click', event => {
+                config.language = languages.find(l => l.lang === event.target.id).lang;
+                createGuide.setConfig(config);
                 const name = languages.find(l => l.lang === event.target.id).name;
                 taxonLanguageBtn.innerHTML = `Taxon language [${name}]`;
                 taxonLanguageTxt.innerHTML = name;
@@ -53,8 +53,7 @@ export const renderSeason = (modal, createGuide) => {
         createGuide.setConfig(config);
         
         if(config.guide.season.type !== currentType) {
-            config.guide.operation = 'season';
-            createGuide.saveStep('GUIDE');
+            createGuide.saveStep('SEASON');
         }        
     };
 
@@ -62,5 +61,5 @@ export const renderSeason = (modal, createGuide) => {
 
     switchHandler(idSwitch, position, switchCallback);
 
-    createGuide.saveStep('GUIDE', false);
+    createGuide.saveStep('SEASON', false);
 }

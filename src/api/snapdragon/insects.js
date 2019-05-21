@@ -246,8 +246,8 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "Aardhommel",
-        "language": "de",        
+        "vernacularName": "Abejorro común",
+        "language": "es"
       },
       {
         "vernacularName": "Abejorro",
@@ -256,10 +256,6 @@ export const insects = [
       {
         "vernacularName": "Abelho",
         "language": "es"
-      },
-      {
-        "vernacularName": "Buff-tailed Bumblebee",
-        "language": "en"
       },
       {
         "vernacularName": "Buff-tailed Bumblebee",
@@ -278,16 +274,20 @@ export const insects = [
         "language": "en"
       },
       {
-        "vernacularName": "Large Earth Bumblebee",
-        "language": "en"
+        "vernacularName": "bourdon terrestre",
+        "language": "fr"
       },
       {
-        "vernacularName": "bumble bee",
-        "language": "en"
+        "vernacularName": "bombo terrestre",
+        "language": "it"
       },
       {
-        "vernacularName": "Buff-tailed bumblebee",
-        "language": "en"
+        "vernacularName": "abelhão",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "mamangaba-de-cauda-amarela-clara",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -2056,10 +2056,13 @@ export const insects = [
         "language": "en"
       },
       {
-        "vernacularName": "Alleculinae",
-        "language": "en",
-        "wikiSearchTerm": true
-      }
+        "vernacularName": "Toro del Sol",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Escaravelho-de-pescoço-vermelho",
+        "language": "pt"
+      },
     ],
     "taxonomy": {
       "kingdom": "Animalia",
@@ -2822,8 +2825,7 @@ export const insects = [
     "names": [
       {
         "vernacularName": "seven-spot ladybird",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "Catarina de siete puntos",
@@ -2839,10 +2841,6 @@ export const insects = [
       },
       {
         "vernacularName": "Siebenpunkt-Marienkfer",
-        "language": "de"
-      },
-      {
-        "vernacularName": "Zevenstippelig lieveheersbeestje",
         "language": "de"
       },
       {
@@ -2862,8 +2860,8 @@ export const insects = [
         "language": "es"
       },
       {
-        "vernacularName": "Siebenpunkt",
-        "language": "de"
+        "vernacularName": "Joaninha-dos-7-pontos",
+        "language": "pt"
       },
       {
         "vernacularName": "Siebenpunkt-Marienkäfer",
@@ -3726,7 +3724,11 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "Esperanzas",
+        "vernacularName": "Saltamontes esperanza",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Esperanza",
         "language": "es"
       },
       {
@@ -3744,6 +3746,14 @@ export const insects = [
       {
         "vernacularName": "Longhorned Grasshopper",
         "language": "en"
+      },
+      {
+        "vernacularName": "Grande sauterelle verte",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Esperança",
+        "language": "pt"
       },
       {
         "vernacularName": "Great green bushcricket",
@@ -4147,6 +4157,10 @@ export const insects = [
       {
         "vernacularName": "Cimice verde",
         "language": "it"
+      },
+      {
+        "vernacularName": "Maria Fedida",
+        "language": "pt"
       },
       {
         "vernacularName": "Green Vegetable Bug",
@@ -5185,7 +5199,7 @@ export const insects = [
         "language": "en"
       },
       {
-        "vernacularName": "large cabbage white",
+        "vernacularName": "Large white",
         "language": "en"
       },
       {
@@ -5205,37 +5219,17 @@ export const insects = [
         "language": "de"
       },
       {
-        "vernacularName": "Large White Butterfly",
-        "language": "en"
-      },
-      {
         "vernacularName": "Mariposa de la col",
         "language": "es"
-      },
-      {
-        "vernacularName": "Papallona de la col",
-        "language": "cat"
-      },
-      {
-        "vernacularName": "blanca de la col",
-        "language": "cat"
       },
       {
         "vernacularName": "cabbage butterfly",
         "language": "en"
       },
       {
-        "vernacularName": "cabbage moth",
-        "language": "en"
+        "vernacularName": "borboleta branca da couve",
+        "language": "pt"
       },
-      {
-        "vernacularName": "large cabbage white",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Large white",
-        "language": "en"
-      }
     ],
     "taxonomy": {
       "kingdom": "Animalia",
@@ -6874,8 +6868,8 @@ export const insects = [
         "language": "fr"
       },
       {
-        "vernacularName": "le Myrtil",
-        "language": "fr"
+        "vernacularName": "Borboleta Loba",
+        "language": "pt"
       }
     ],
     "taxonomy": {
@@ -7075,6 +7069,10 @@ export const insects = [
       {
         "vernacularName": "Manto bicolor",
         "language": "es"
+      },
+      {
+        "vernacularName": "Acobreada",
+        "language": "pt"
       },
       {
         "vernacularName": "cuivr d'Amrique",
