@@ -157,8 +157,8 @@
 
 .test-card-container .text-question {
     position: absolute;
-    left: 0rem;
     bottom: 3.25rem;
+    left: 0rem;
     font-size: 1rem;
     padding: 0 0 0 .75rem;
     min-height: 2rem;
