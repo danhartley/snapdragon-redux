@@ -1930,6 +1930,10 @@ a.collection-disabled {
   font-style: initial;
 }
 
+.home-container .vernacular-language {
+  font-size: 1rem;
+}
+
 .example-guide-link span {
   font-size: .9rem;
 }

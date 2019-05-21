@@ -43,7 +43,7 @@ export const renderMixedSpecimenQuestions = collection => {
 
     let parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question: 'Find the species', help: '(Click on the matching photo.)', term: '' });
     
-    const icon = renderIcon(item, document);
+    const icon = renderIcon(item.taxonomy, document);
     
     const template = document.createElement('template');
 

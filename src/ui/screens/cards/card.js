@@ -147,7 +147,7 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
 
     renderCalendar(calendarNode, item, config);
 
-    renderIcon(item, rootNode);
+    renderIcon(item.taxonomy, rootNode);
 
     if(mode === 'MODAL') {      
           

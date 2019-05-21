@@ -256,6 +256,28 @@ export const taxa = [
         eol: "http://eol.org/pages/421/overview"
     },
     {
+        taxon: 'order',
+        name: "Passeriformes",
+        thumb: "48/f3/f0/18.https___www_inaturalist_org_photos_6513415.260x190.jpg",
+        names: [ { language: "en", names: ['Perching birds']},
+        { language: "fr", names:[ '' ]},
+        { language: "de", names:[ '' ]},
+        { language: "es", names:[ '' ]},
+        { language: "pt", names:[ '' ]},
+        { language: "it", names:[ '' ]}],
+        families: '110',
+        species: '6409',
+        descriptions: [
+            {
+                language: "en",
+                summary: "The term passeriforme is derived from the scientific name of the house sparrow, Passer domesticus.",
+                identification: 'Distinguished by the arrangement of their toes (three pointing forward and one back), which facilitates perching.'
+            }
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Passeriformes",
+        eol: "http://eol.org/pages/1596/overview"
+    },
+    {
         taxon: 'family',
         name: 'Poaceae',
         thumb: '85/d8/6f/7.CalPhotos_0000_0000_0508_0518.jpg',

@@ -1,12 +1,10 @@
-import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
 import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 import { renderTemplate } from 'ui/helpers/templating';
-import guidesTemplate from 'ui/create-guide-modal/guides.html';
+import guidesTemplate from 'ui/create-guide-modal/season.html';
 
 export const renderSeason = (modal, createGuide) => {
 
-    const { config } = store.getState();
+    const config = createGuide.getConfig();
 
     const template = document.createElement('template');
           template.innerHTML = guidesTemplate;
@@ -28,8 +26,9 @@ export const renderSeason = (modal, createGuide) => {
               taxonLanguageTxt.innerHTML = languages.find(l => l.lang === config.language).name;
 
         document.querySelectorAll('.dropdown-item').forEach(language => {
-            language.addEventListener('click', event => {            
-                actions.boundUpdateLanguage(languages.find(l => l.lang === event.target.id));
+            language.addEventListener('click', event => {
+                config.language = languages.find(l => l.lang === event.target.id).lang;
+                createGuide.setConfig(config);
                 const name = languages.find(l => l.lang === event.target.id).name;
                 taxonLanguageBtn.innerHTML = `Taxon language [${name}]`;
                 taxonLanguageTxt.innerHTML = name;
@@ -41,7 +40,7 @@ export const renderSeason = (modal, createGuide) => {
 
     const switchCallback = position => {
 
-        const { config } = store.getState();
+        const config = createGuide.getConfig();
 
         const currentType = config.guide.season.type;
 
@@ -51,11 +50,10 @@ export const renderSeason = (modal, createGuide) => {
             config.guide.season.type = 'months';
         }
 
-        actions.boundUpdateConfig(config);
+        createGuide.setConfig(config);
         
         if(config.guide.season.type !== currentType) {
-            config.guide.operation = 'season';
-            createGuide.save('GUIDE');
+            createGuide.saveStep('SEASON');
         }        
     };
 
@@ -63,5 +61,5 @@ export const renderSeason = (modal, createGuide) => {
 
     switchHandler(idSwitch, position, switchCallback);
 
-    createGuide.save('GUIDE', false)();    
+    createGuide.saveStep('SEASON', false);
 }

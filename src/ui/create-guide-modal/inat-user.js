@@ -1,33 +1,29 @@
-import { store } from 'redux/store';
-import { actions } from 'redux/actions/action-creators';
 import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderLocation } from 'ui/create-guide-modal/location';
 import inatPortraitTemplate from 'ui/create-guide-modal/inat-user-template-portrait.html';
 
-export const renderInatUser = (createGuide, modal, locationType) => {
+export const renderInatUser = (modal, createGuide) => {
 
-    const { config } = store.getState();
-
-    createGuide.save('INAT', false)();
-    const save = createGuide.save( 'INAT');
+    const config = createGuide.getConfig();
 
     const template = document.createElement('template');
 
     template.innerHTML = inatPortraitTemplate;
 
-    const inatId = config.guide.inatId.key || '-----';
-
-    if(inatId) {
-        config.guide.locationType = 'inat';
-        actions.boundUpdateConfig(config);
+    if(config.guide.inatId.key !== '-----') {
+        if(config.guide.locationType !== 'inat') {
+            config.guide.locationType = 'inat';
+            createGuide.setConfig(config);
+        }
+        createGuide.saveStep('INAT');
     }
 
     const parent = modal.querySelector('.js-actions');
           parent.innerHTML = '';
     
-    renderTemplate({ inatId }, template.content, parent);
+    renderTemplate({ }, template.content, parent);
 
     document.querySelector('.js-chosen > div > span:nth-child(2)').innerHTML += '<div class="delete-guide-link js-toggle-filter"><input class="hide" type="checkbox"></div>';
 
@@ -44,9 +40,9 @@ export const renderInatUser = (createGuide, modal, locationType) => {
 
         if(key !== '') {
             config.guide.locationType = 'inat';
-            actions.boundUpdateConfig(config);
-            config.guide.operation = 'inat';
-            save();
+
+            createGuide.setConfig(config);
+            createGuide.saveStep('INAT');
 
             parent.querySelector('#inat-identity').value = '';            
 
@@ -79,14 +75,23 @@ export const renderInatUser = (createGuide, modal, locationType) => {
         const type = position === 'left' ? 'iNat user ID' : 'iNat project ID';
         const param = position === 'left' ? 'user_id' : 'project_id';
 
-        config.guide.inatId = { type, param };
+        config.guide.inatId.type = type;
+        config.guide.inatId.param = param;
+
+        createGuide.setConfig(config);
     };
 
     switchHandler(idSwitch, position, switchCallback);
 
     const linktoStandardOptions = parent.querySelector('.js-location-options1 span:nth-child(1)');
 
-    linktoStandardOptions.addEventListener('click', () => {
-        renderLocation(modal, createGuide, locationType);
-    });
+    const renderLookupLocation = () => {
+        const config = createGuide.getConfig();
+              config.guide.locationType = 'longLat';
+        createGuide.setConfig(config);
+        renderLocation(createGuide.modal, createGuide);
+    };
+
+    linktoStandardOptions.removeEventListener('click', renderLookupLocation, true);
+    linktoStandardOptions.addEventListener('click', renderLookupLocation, true);
 };

@@ -1,27 +1,25 @@
-import { store } from 'redux/store';
 import { renderTemplate } from 'ui/helpers/templating';
-import { actions } from 'redux/actions/action-creators';
 import { getPlace, GooglePlaceDetails } from 'geo/geo';
-import { renderInatUser } from 'ui/create-guide-modal/inat-user';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
+import { renderInatUser } from 'ui/create-guide-modal/inat-user';
+
 import locationsTemplate from 'ui/create-guide-modal/locations-template.html';
 import googleLogoImg from 'img/powered_by_google_on_white_hdpi.png';
 
-export const renderLocation = (modal, createGuide, locationType) => {
+export const renderLocation = (modal, createGuide) => {
 
-    const { config } = store.getState();
+    const config = createGuide.getConfig();
 
-    if(locationType) {
-        config.guide.locationType = locationType;
-        actions.boundUpdateConfig(config);
+    if(config.guide.locationType === 'inat') {
+        renderInatUser(modal, createGuide);
+        return;
     }
+
+    createGuide.saveStep('LOCATION');
  
     const guideTxt = modal.querySelector('.guide-text');
           guideTxt.innerHTML = 'Choose where you want to explore.';
         
-    createGuide.save('LOCATION', false)();
-    const save = createGuide.save('LOCATION');
-
     let locationPlace = config.guide.locationPlace;
     let autocompleteRef;
 
@@ -46,10 +44,10 @@ export const renderLocation = (modal, createGuide, locationType) => {
         config.place = place;
         config.collection.id = 1;
         config.guide.locationLongLat = place.longLocation;
-        actions.boundUpdateConfig(config);
         setLocationLongLatBtn.innerHTML = defaultLocationTxt;
-
-        save();
+        
+        createGuide.setConfig(config);
+        createGuide.saveStep('LOCATION');
     }
 
     setLocationLongLatBtn.addEventListener('click', handleSetLocationLongLat);
@@ -94,10 +92,9 @@ export const renderLocation = (modal, createGuide, locationType) => {
     const updateSlider  = event => {
         range = event.target.value;
         config.guide.speciesRange = range;
-        actions.boundUpdateConfig(config);        
         rangeTxt.innerHTML = `Include species within ${range}km.`;
 
-        save();
+        createGuide.setConfig(config);
     };
     
     slider.addEventListener('change', updateSlider);
@@ -126,9 +123,10 @@ export const renderLocation = (modal, createGuide, locationType) => {
                 const long = geocoderResult[0].geometry.location.lng();
                 config.guide.coordinates = { lat, long };
 
-                actions.boundUpdateConfig(config);
-                save();
                 locationPlaceInput.value = '';
+
+                createGuide.setConfig(config);
+                createGuide.saveStep('LOCATION');
             };
 
             GooglePlaceDetails(locationPlaceInput.name, callback);            
@@ -137,10 +135,10 @@ export const renderLocation = (modal, createGuide, locationType) => {
 
     const linktoInatOptions = modal.querySelector('.js-location-options2 span:nth-child(2)');    
 
-    linktoInatOptions.addEventListener('click', () => {
+    const renderInatUserLocation = () => {
+        renderInatUser(modal, createGuide);
+    };
 
-        const { config } = store.getState();
-        
-        renderInatUser(createGuide, modal, config.guide.locationType);
-    });
+    linktoInatOptions.removeEventListener('click', renderInatUserLocation, true);
+    linktoInatOptions.addEventListener('click', renderInatUserLocation, true);
 }
