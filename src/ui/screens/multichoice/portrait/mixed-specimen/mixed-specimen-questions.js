@@ -100,7 +100,7 @@ export const renderMixedSpecimenQuestions = collection => {
             setTimeout(() => {
                 window.clearTimeout(boundScore.scoreUpdateTimer);
                 actions.boundUpdateScore(boundScore.score);
-            }, 1000);
+            });
         } else {
             window.clearTimeout(boundScore.scoreUpdateTimer);
             actions.boundUpdateScore(boundScore.score);
