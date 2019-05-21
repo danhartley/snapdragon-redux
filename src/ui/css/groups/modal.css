@@ -380,9 +380,10 @@
   }
 }
 
-/* @media (min-height: 640px) {
+@media (min-height: 640px) {
     
   .imageSlider .carousel-item {
-      height: 12.375rem;
+    height: 13.875rem;
+    padding: 1rem 10%;
   }
-} */
+}
