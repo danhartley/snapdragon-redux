@@ -2,9 +2,9 @@ import { iconicTaxa, matchIcon, matchRank } from 'api/snapdragon/iconic-taxa';
 
 const mushroomIcon = '<svg-icon class="si-glyph-mushrooms"><src href="./icons/si-glyph-mushrooms.svg"/></svg>';
 
-export const renderIcon = (item, rootNode) => {
+export const renderIcon = (taxonomy, rootNode) => {
 
-    if(item.taxonomy.kingdom.toLowerCase() === 'fungi') {
+    if(taxonomy.kingdom.toLowerCase() === 'fungi') {
 
         const iconicIconContainer = rootNode.querySelector('.js-iconic-icon');
 
@@ -14,7 +14,7 @@ export const renderIcon = (item, rootNode) => {
 
         const iconicIcon = rootNode.querySelector('.js-iconic-icon i');
 
-        const classes = matchIcon(item.taxonomy, iconicTaxa).split(' ');
+        const classes = matchIcon(taxonomy, iconicTaxa).split(' ');
 
         classes.forEach(c => iconicIcon.classList.add(c));   
     }

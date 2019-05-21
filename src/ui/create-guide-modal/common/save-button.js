@@ -1,5 +1,4 @@
 import { returnTaxonIcon } from 'ui/helpers/icon-handler';
-import { actions } from 'redux/actions/action-creators';
 
 export const saveButton = (config, step, update = true) => {
 
@@ -46,10 +45,6 @@ export const saveButton = (config, step, update = true) => {
                     chosen.innerHTML = '';
                 }
                 break;
-        }
-
-        if(update) {
-            actions.boundUpdateConfig(config);
         }
     }
 

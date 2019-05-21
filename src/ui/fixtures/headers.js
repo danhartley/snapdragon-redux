@@ -97,19 +97,5 @@ export const renderHeaders = page => {
     
         DOM.leftHeaderTxt.innerHTML = leftHeaderText;
         DOM.rightHeaderTxt.innerHTML = rightHeaderText;
-
-        // userChangeHandler(config.guide.inatId.key);
     };
-
-    // const userChangeHandler = userId => {
-    //     const collectionName = `iNat observations for ${userId}`;
-    //     if(LANDSCAPE && collection.id === 4) {
-    //         DOM.leftHeaderTxt.innerHTML = collectionName;
-    //         collection.name = collectionName;
-    //     }
-    //     if(PORTRAIT && collection.id === 4) {
-    //         DOM.rightHeaderTxt.innerHTML = collectionName;
-    //         collection.name = collectionName;
-    //     }
-    // };
 };

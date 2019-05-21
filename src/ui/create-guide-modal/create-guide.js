@@ -1,5 +1,3 @@
-import * as R from 'ramda';
-
 import 'ui/create-guide-modal/create-guide.css';
 
 import { DOM } from 'ui/dom';
@@ -50,7 +48,18 @@ class CreateGuide {
 
         this.progressSteps.forEach((ps,index) => {
             ps.innerHTML = this.steps[index].description;
-        });      
+        });
+
+        this.config = this.config || store.getState().config;
+
+        this.getConfig = () => {
+            return this.config;
+        }
+    
+        this.setConfig = (config) => {
+            this.config = config;
+            actions.boundUpdateConfig(config);
+        }
     }
 
     get getCurrentStep() {
@@ -64,9 +73,6 @@ class CreateGuide {
         parent.innerHTML = '';
         template = document.createElement('template');
         const description = this.steps.find(step => step.number === this.currentStep).description;
-
-        // const { config: configState } = store.getState();
-        // const config = R.clone(configState);
 
         template.innerHTML = actionsTemplate;
         renderTemplate({ className }, template.content, parent);
@@ -92,13 +98,11 @@ class CreateGuide {
         this.nextStepActionTxt.removeAttribute('data-dismiss');
 
         if(nextStep > this.steps.length) {
-
-            const { config: configState } = store.getState();
-            const config = R.clone(configState);
             closeModalListeners.forEach(listener => listener(this.currentStep));
             this.currentStep = 0;
+            const config = this.getConfig();
             config.guide.ready = true;
-            actions.boundUpdateConfig(config);
+            this.setConfig(config);
             
             if(config.isLandscapeMode) {
                 this.nextStepActionTxt.setAttribute('data-dismiss','modal');
@@ -145,10 +149,8 @@ class CreateGuide {
         }
     }
 
-    save(stepDescription, update) {
-        const { config } = store.getState();
-        const saveChanges = saveButton(config, stepDescription, update);
-        return saveChanges;
+    saveStep(stepDescription, update = true) {
+        saveButton(this.getConfig(), stepDescription)();
     }
 };
 

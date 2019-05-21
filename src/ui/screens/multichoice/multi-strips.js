@@ -45,7 +45,7 @@ export const renderMultiStrips = (collection, bonus) => {
         
         const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help, term, className });
 
-        const icon = renderIcon(item, document);
+        const icon = renderIcon(item.taxonomy, document);
 
         const template = document.createElement('template');
         

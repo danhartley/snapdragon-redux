@@ -1,17 +1,14 @@
 import * as R from 'ramda';
 
-import { store } from 'redux/store';
 import { elem } from 'ui/helpers/class-behaviour';
 import { renderTemplate } from 'ui/helpers/templating';
 import categoriesTemplate from 'ui/create-guide-modal/categories-template.html';
 
 export const renderCategories = (modal, createGuide) => {
 
-    const { config } = store.getState();
+    const config = createGuide.getConfig();
 
     const guideTxt = modal.querySelector('.guide-text');
-    createGuide.save('SPECIES', false)();
-    const saveYourChangesBtn = createGuide.save('SPECIES');
 
     const filterSelectedClass = 'iconic-taxa-selected';
 
@@ -39,7 +36,7 @@ export const renderCategories = (modal, createGuide) => {
         });
     }
 
-    config.guide.iconicTaxa = iconicTaxa;        
+    config.guide.iconicTaxa = iconicTaxa;     
 
     setTimeout(() => {
         const fungiIcon = modal.querySelector('#fungi > div');
@@ -57,12 +54,15 @@ export const renderCategories = (modal, createGuide) => {
             const commonName = filter.parentElement.innerText;              
 
             if(iconicTaxa.find(taxon => taxon.id === filterId)) {
+                
                 if(filterId === 'fungi') {
                     filter.querySelector('g g').classList.remove('svg-icon-selected');                    
                 }
                 filter.classList.remove(filterSelectedClass);
                 iconicTaxa = iconicTaxa.filter(taxon => taxon.id !== filterId);
+
             } else {
+
                 if(filterId === 'fungi') {
                     filter.querySelector('g g').classList.add('svg-icon-selected');
                 }
@@ -78,7 +78,8 @@ export const renderCategories = (modal, createGuide) => {
 
             config.guide.iconicTaxa = iconicTaxa;
 
-            saveYourChangesBtn();
+            createGuide.setConfig(config);
+            createGuide.saveStep('SPECIES');
             
         });
     });

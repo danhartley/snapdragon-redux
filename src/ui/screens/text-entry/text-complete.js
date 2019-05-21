@@ -45,7 +45,7 @@ export const renderCompleteText = (collection) => {
 
     const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: 'Complete the latin name', help: '(Select the name below.)', term: '' });
 
-    const icon = renderIcon(item, document);
+    const icon = renderIcon(item.taxonomy, document);
 
     const template = document.createElement('template');
 

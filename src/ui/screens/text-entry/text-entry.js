@@ -105,7 +105,7 @@ export const renderInput = (screen, question) => {
     if(config.isPortraitMode) renderPortrait(item, config);
     else renderLandscape(item, config, question);
 
-    const icon = renderIcon(item, document);
+    const icon = renderIcon(item.taxonomy, document);
 
     document.querySelector('.js-continue-lesson-btn').addEventListener('click', event => {
         window.clearTimeout(boundScore.scoreUpdateTimer);

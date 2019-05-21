@@ -40,7 +40,7 @@ export const renderMixedSpecimenQuestion = (...args) => {
 
     renderTemplate({ instructions, binomial }, template.content, parent);
 
-    const icon = renderIcon(item, document);
+    const icon = renderIcon(item.taxonomy, document);
 
     const listenToImageChangeHandler = images => {        
         let speciesToShow = '';
