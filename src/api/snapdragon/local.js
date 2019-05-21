@@ -1496,6 +1496,42 @@ export const local = [
         "language": "en"
       },
       {
+        "vernacularName": "Oxalis des Bermudes",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Oxalis pied de chèvre",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Nickende Sauerklee",
+        "language": "de"
+      },
+      {
+        "vernacularName": "agrios",
+        "language": "es"
+      },
+      {
+        "vernacularName": "erva-canária",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "erva-azeda-amarela",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "trevo-azedo",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "chucha-meles",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Niedriger Sauerklee",
+        "language": "de"
+      },
+      {
         "vernacularName": "English weed",
         "language": "en"
       }

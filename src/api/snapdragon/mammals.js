@@ -140,6 +140,22 @@ export const mammals = [
         "language": "fr"
       },
       {
+        "vernacularName": "Europäisches Eichhörnchen",
+        "language": "de"
+      },
+      {
+        "vernacularName": "esquilo-vermelho",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "esquilo-vermelho-eurasiático",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Scoiattolo comune",
+        "language": "it"
+      },
+      {
         "vernacularName": "Eurasisches Eichhörnchen",
         "language": "de"
       }

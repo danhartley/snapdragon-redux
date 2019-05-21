@@ -781,24 +781,35 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Dronefly",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "European Hoverfly",
         "language": "en"
       },
       {
-        "vernacularName": "Hover Flies",
-        "language": "en"
+        "vernacularName": "Mistbiene",
+        "language": "de"
       },
       {
-        "vernacularName": "Mistbiene",
-        "language": "en"
+        "vernacularName": "Schlammbiene",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Scheinbienen-Keilfleckschwebfliege",
+        "language": "de"
       },
       {
         "vernacularName": "Éristale gluante",
         "language": "fr"
+      },
+      {
+        "vernacularName": "éristale tenace",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "mosca de flores",
+        "language": "pt"
       },
       {
         "vernacularName": "Drone fly",
@@ -990,6 +1001,10 @@ export const insects = [
       {
         "vernacularName": "Graphosome d'Italie",
         "language": "fr"
+      },
+      {
+        "vernacularName": "Percevejo-Arlequim",
+        "language": "pt"
       },
       {
         "vernacularName": "Punaise arlequin",
@@ -1524,11 +1539,15 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Borboleta-das-couves",
-        "language": "es"
+        "language": "pt"
       },
       {
         "vernacularName": "Branca-das-couves",
-        "language": "es"
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Borboleta-pequena-das-couves",
+        "language": "pt"
       },
       {
         "vernacularName": "Cabbage White",
@@ -1555,56 +1574,24 @@ export const insects = [
         "language": "en"
       },
       {
-        "vernacularName": "Klein koolwitje",
-        "language": "de"
-      },
-      {
-        "vernacularName": "Kleiner Kohlweiling",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Kleiner Kohlweiling",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Kleiner Kohlweiling",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Kleiner Kohlweiling",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Kleiner Kohlweiling",
-        "language": "de"
-      },
-      {
-        "vernacularName": "Lagarta-das-couves",
+        "vernacularName": "blanquita de la col",
         "language": "es"
       },
       {
+        "vernacularName": "Kleiner Kohlweiling",
+        "language": "en"
+      },
+      {
         "vernacularName": "Lagarta-das-couves",
-        "language": "es"
+        "language": "pt"
       },
       {
         "vernacularName": "Mariposa blanca de la col",
         "language": "es"
-      },
-      {
-        "vernacularName": "Mariposa blanca de la col",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Pepe Ma",
-        "language": "en"
       },
       {
         "vernacularName": "Rapaiola",
         "language": "it"
-      },
-      {
-        "vernacularName": "Rbenweiling",
-        "language": "de"
       },
       {
         "vernacularName": "Small Cabbage White",
@@ -1805,30 +1792,45 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "European carpenter bee",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "European carpenter bee",
+        "vernacularName": "Carpenter bee",
         "language": "en"
       },
       {
         "vernacularName": "European carpenter bee",
-        "language": "en"
+        "language": "en"        
       },
       {
         "vernacularName": "Groe Holzbiene",
-        "language": "en"
+        "language": "de"
       },
       {
-        "vernacularName": "black",
-        "language": "en"
+        "vernacularName": "Große Blaue Holzbien",
+        "language": "de"
       },
       {
-        "vernacularName": "Carpenter bee",
-        "language": "en"
-      }
+        "vernacularName": "Blauschwarze",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Violettflügelige Holzbiene",
+        "language": "de"
+      },
+      {
+        "vernacularName": "abejorro carpintero europeo",
+        "language": "es"
+      },
+      {
+        "vernacularName": "xylocope violet",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "ape legnaiola",
+        "language": "it"
+      },
+      {
+        "vernacularName": "abelha-carpinteira",
+        "language": "pt"
+      },
     ],
     "taxonomy": {
       "kingdom": "Animalia",
@@ -2175,6 +2177,10 @@ export const insects = [
         "language": "es"
       },
       {
+        "vernacularName": "Gafanhoto laranja",
+        "language": "pt"
+      },
+      {
         "vernacularName": "Trauer-Rosenkäfer",
         "language": "de"
       }
@@ -2417,7 +2423,11 @@ export const insects = [
       {
         "vernacularName": "Libellule écarlate",
         "language": "fr"
-      }
+      },
+      {
+        "vernacularName": "Libélula-escarlate",
+        "language": "pt"
+      },
     ],
     "taxonomy": {
       "kingdom": "Animalia",
@@ -3472,6 +3482,14 @@ export const insects = [
       {
         "vernacularName": "Marmalde Fly",
         "language": "en"
+      },
+      {
+        "vernacularName": "mosca cernidora",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Mosca-das-flores",
+        "language": "pt"
       },
       {
         "vernacularName": "Syrphe  ceinture",
@@ -6556,8 +6574,12 @@ export const insects = [
         "language": "fr"
       },
       {
+        "vernacularName": "Azul-comum",
+        "language": "pt"
+      },
+      {
         "vernacularName": "Lycne Icare",
-        "language": "en"
+        "language": "fr"
       }
     ],
     "taxonomy": {

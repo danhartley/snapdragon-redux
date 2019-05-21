@@ -70,8 +70,10 @@ export const renderMultiStrips = (collection, bonus) => {
             strips.forEach(strip => strip.classList.add('extra-small-text'));
         }
         
-        if(R.contains(screen.name, ['epithet', 'trait-property', 'species-scientifics', 'species-vernaculars'])) {
-            strips.forEach(strip => strip.classList.add('big-padding'));
+        if(config.isLandscapeMode) {
+            if(R.contains(screen.name, ['epithet', 'trait-property', 'species-scientifics', 'species-vernaculars'])) {
+                strips.forEach(strip => strip.classList.add('big-padding'));
+            }
         }
 
         const taxon = { name: item.family, binomial: item.name, question: questionValue };
