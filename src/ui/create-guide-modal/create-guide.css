@@ -448,7 +448,7 @@
     letter-spacing: .04rem;
     border: .05rem solid lightgray;
     text-align: left;
-    top: 2.6rem;
+    /* top: 2.6rem; */
   }
   
   #inat-place-autocomplete {
