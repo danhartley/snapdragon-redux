@@ -4042,7 +4042,7 @@ export const taxa = [
             {   
                 language: 'en',
                 summary: 'Family of passerine birds found around the world on all continents. Highly adapted to aerial feeding. A number of species are long-distance migrants.',
-                identification: 'Streamlined body and long pointed wings, which allow great maneuverability and endurance, as well as frequent periods of gliding. Metabolic rate of swallows in flight is 49–72% lower than equivalent passerines.', 
+                identification: 'Streamlined body and long pointed wings, which allow great manoeuvrability and endurance, as well as frequent periods of gliding. Metabolic rate of swallows in flight is 49–72% lower than equivalent passerines.', 
             },
         ],
         traits: [

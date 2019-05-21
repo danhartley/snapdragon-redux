@@ -68,15 +68,13 @@ const getLessonItems = (lessonStateMode, collection, config, history) => {
                     actions.boundUpdateCollection({ config, collection });
 
                     actions.boundNextRound({ index: 0, lesson });
-                    // console.clear();
-                    console.warn('lesson-handler, review: boundUpdateCollection');
                     break;
                 }
                 case 'learn-again': {
-                    collection.items = collection.allItems; // handle in reducer?
-                    // console.clear();
+                    collection.items = collection.allItems;
+                    lesson.moduleSize = collection.moduleSize || config.moduleSize;
+                    actions.boundUpdateLesson(lesson);
                     actions.boundUpdateCollection({ config, collection });
-                    console.warn('lesson-handler, learn-again: boundUpdateCollection');
                 }
             }            
             break;      

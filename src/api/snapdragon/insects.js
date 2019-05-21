@@ -432,16 +432,8 @@ export const insects = [
         "wikiSearchTerm": true
       },
       {
-        "vernacularName": "Ariana",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Bruna boscana",
-        "language": "cat"
-      },
-      {
         "vernacularName": "Malhadinha",
-        "language": "es"
+        "language": "pt"
       },
       {
         "vernacularName": "Tircis",
@@ -450,6 +442,10 @@ export const insects = [
       {
         "vernacularName": "Waldbrettspiel",
         "language": "de"
+      },
+      {
+        "vernacularName": "Ariana",
+        "language": "pt"
       },
       {
         "vernacularName": "maculada",

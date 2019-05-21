@@ -345,7 +345,7 @@ const rhsTrees = {
         // "Acacia baileyana",
         "Acacia dealbata"
       ],
-    items: [ ...deciduousAndEvergreenTrees, ...deciduousAndEvergreenTrees2 ],
+    items: [ ...plants, ...deciduousAndEvergreenTrees, ...deciduousAndEvergreenTrees2 ],
     iconicTaxa: [ 'plantae' ],
     iconicTaxaSummary: 'Plants',
     type: 'course',
