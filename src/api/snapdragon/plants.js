@@ -3460,6 +3460,10 @@ export const plants = [
         "language": "es"
       },
       {
+        "vernacularName": "Sweet fennel",
+        "language": "en"
+      },
+      {
         "vernacularName": "Wild Fennel",
         "language": "en"
       },
@@ -3475,10 +3479,6 @@ export const plants = [
         "vernacularName": "Echter Fenchel",
         "language": "de"
       },
-      {
-        "vernacularName": "Sweet fennel",
-        "language": "en"
-      }
     ],
     "taxonomy": {
       "kingdom": "Plantae",

@@ -700,4 +700,14 @@ export const epithets = [
         "latin" : ["noctua"],
         "en" : ["little owl"]
     },
+    {
+        "latin" : ["septem"],
+        "en" : ["seven"],
+        species: [ 'Coccinella septempunctata' ]      
+    },
+    {
+        "latin" : ["punctus"],
+        "en" : ["spot"],
+        species: [ 'Coccinella septempunctata' ]      
+    },
 ];
