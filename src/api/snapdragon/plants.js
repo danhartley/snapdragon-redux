@@ -4800,10 +4800,6 @@ export const plants = [
         "language": "en"
       },
       {
-        "vernacularName": "common beet, sugar beet, Swiss chard",
-        "language": "en"
-      },
-      {
         "vernacularName": "cultivated beet",
         "language": "en"
       },
@@ -4816,7 +4812,11 @@ export const plants = [
         "language": "es"
       },
       {
-        "vernacularName": "Betterave commune, Bette-épinard",
+        "vernacularName": "Betterave commune",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Bette-épinard",
         "language": "fr"
       },
       {
@@ -5917,7 +5917,15 @@ export const plants = [
         "language": "es"
       },
       {
-        "vernacularName": "Concombre cultivé, Concombre, Cornichon",
+        "vernacularName": "Concombre cultivé",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Concombre",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Cornichon",
         "language": "fr"
       },
       {
@@ -6116,32 +6124,12 @@ export const plants = [
         "wikiSearchTerm": true
       },
       {
-        "vernacularName": "garden tomato",
-        "language": "en"
-      },
-      {
         "vernacularName": "Tomate fino",
-        "language": "es"
-      },
-      {
-        "vernacularName": "jitomate",
         "language": "es"
       },
       {
         "vernacularName": "tomate",
         "language": "es"
-      },
-      {
-        "vernacularName": "Aubergine, Marignan",
-        "language": "fr"
-      },
-      {
-        "vernacularName": "Pomme d'amour",
-        "language": "fr"
-      },
-      {
-        "vernacularName": "Pomme de terre, Patate",
-        "language": "fr"
       },
       {
         "vernacularName": "pomidoro",
@@ -7289,28 +7277,15 @@ export const plants = [
         "language": "de"
       },
       {
-        "vernacularName": "Grüner Salat",
-        "language": "de"
-      },
-      {
         "vernacularName": "Kopfsalat",
         "language": "de"
       },
       {
+        "vernacularName": "Österreich",
+        "language": "de"
+      },
+      {
         "vernacularName": "lettuce",
-        "language": "en",
-        "wikiSearchTerm": true
-      },
-      {
-        "vernacularName": "Thridace",
-        "language": "en"
-      },
-      {
-        "vernacularName": "cultivated lettuce",
-        "language": "en"
-      },
-      {
-        "vernacularName": "garden lettuce",
         "language": "en"
       },
       {
@@ -7318,31 +7293,11 @@ export const plants = [
         "language": "es"
       },
       {
-        "vernacularName": "lechuga acogollada",
-        "language": "es"
-      },
-      {
-        "vernacularName": "lechuga cortar",
-        "language": "es"
-      },
-      {
-        "vernacularName": "lechuga repollada",
-        "language": "es"
-      },
-      {
-        "vernacularName": "lechuga romana",
-        "language": "es"
-      },
-      {
-        "vernacularName": "lechuguino",
-        "language": "es"
-      },
-      {
-        "vernacularName": "Laitue cultivée, Salade",
+        "vernacularName": "Laitue cultivée",
         "language": "fr"
       },
       {
-        "vernacularName": "Laitue scariole, Escarole",
+        "vernacularName": "Salade",
         "language": "fr"
       },
       {
@@ -7351,26 +7306,6 @@ export const plants = [
       },
       {
         "vernacularName": "lattuga",
-        "language": "it"
-      },
-      {
-        "vernacularName": "lattuga a cappuccio",
-        "language": "it"
-      },
-      {
-        "vernacularName": "lattuga a testa",
-        "language": "it"
-      },
-      {
-        "vernacularName": "lattuga de taglio",
-        "language": "it"
-      },
-      {
-        "vernacularName": "lattuga romana",
-        "language": "it"
-      },
-      {
-        "vernacularName": "lattughetta",
         "language": "it"
       },
       {
@@ -8548,10 +8483,6 @@ export const plants = [
         "language": "en"
       },
       {
-        "vernacularName": "potatoes",
-        "language": "en"
-      },
-      {
         "vernacularName": "Papa",
         "language": "es"
       },
@@ -8560,7 +8491,7 @@ export const plants = [
         "language": "es"
       },
       {
-        "vernacularName": "Pomme de terre, Patate",
+        "vernacularName": "Pomme de terre",
         "language": "fr"
       },
       {
@@ -11005,7 +10936,15 @@ export const plants = [
       },
       {
         "vernacularName": "cicuta",
-        "language": "en"
+        "language": "pt"
+      },
+      {
+        "vernacularName": "cicuta",
+        "language": "es"
+      },
+      {
+        "vernacularName": "cicuta",
+        "language": "it"
       },
       {
         "vernacularName": "Ciguë tachetée",

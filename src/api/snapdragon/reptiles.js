@@ -124,6 +124,10 @@ export const reptiles = [
         "language": "de"
       },
       {
+        "vernacularName": "Tartaruga-do-rio",
+        "language": "pt"
+      },
+      {
         "vernacularName": "Trachémyde à tempes rouges",
         "language": "fr"
       }
