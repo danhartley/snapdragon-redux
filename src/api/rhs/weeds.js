@@ -655,12 +655,36 @@ export const weeds = [
           "language": "de"
         },
         {
+          "vernacularName": "Ackerdistel",
+          "language": "de"
+        },
+        {
           "vernacularName": "Canada thistle",
           "language": "en"
         },
         {
           "vernacularName": "field thistle",
           "language": "en"
+        },
+        {
+          "vernacularName": "cirse des champs",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "cardo-das-vinhas",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "cardo-hemorroidal",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "cardo cundido",
+          "language": "es"
+        },
+        {
+          "vernacularName": "cardo-rasteiro",
+          "language": "pt"
         },
         {
           "vernacularName": "way thistle",
@@ -759,74 +783,52 @@ export const weeds = [
       "names": [
         {
           "vernacularName": "Hairy bittercress",
-          "language": "en",
-          
-        },
-        {
-          "vernacularName": "Hairy bittercress",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Hairy bittercress",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"          
         },
         {
           "vernacularName": "Kleine veldkers",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Kleine veldkers",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Kleine veldkers",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
         {
           "vernacularName": "Behaartes Schaumkraut",
-          "language": "de",
-          "eol_preferred": false
+          "language": "de"
         },
         {
           "vernacularName": "Gartenschaumkraut",
-          "language": "de",
-          "eol_preferred": false
+          "language": "de"
         },
         {
           "vernacularName": "Ruderal-Schaumkraut",
-          "language": "de",
-          "eol_preferred": false
+          "language": "de"
         },
         {
           "vernacularName": "Vielstängel-Schaumkraut",
-          "language": "de",
-          "eol_preferred": false
+          "language": "de"
         },
         {
           "vernacularName": "Viermänniges Schaumkraut",
-          "language": "de",
-          "eol_preferred": false
+          "language": "de"
         },
         {
-          "vernacularName": "hairy bittercress",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "cardamine hirsute",
+          "language": "fr"
         },
         {
-          "vernacularName": "hairy bittercress",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "cardamine hérissée",
+          "language": "fr"
         },
         {
-          "vernacularName": "Hairy bittercress",
-          "language": "en",
-          "eol_preferred": false
-        }
+          "vernacularName": "Agião-de-canário",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Agião-menor",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Cardamina-pilosa",
+          "language": "pt"
+        },
       ],
       "taxonomy": {
         "usageKey": 3046258,
@@ -1493,7 +1495,11 @@ export const weeds = [
           "language": "it",
         },
         {
-          "vernacularName": "correyuela",
+          "vernacularName": "correhuela",
+          "language": "es"
+        },
+        {
+          "vernacularName": "cahiruela",
           "language": "es"
         },
         {
@@ -1509,10 +1515,6 @@ export const weeds = [
           "language": "en"
         },
         {
-          "vernacularName": "Ackerwinde",
-          "language": "de",
-        },
-        {
           "vernacularName": "Acker-Winde",
           "language": "de",
         },
@@ -1521,17 +1523,29 @@ export const weeds = [
           "language": "it",
         },
         {
-          "vernacularName": "Correhuela",
-          "language": "es",          
-        },
-        {
           "vernacularName": "Liseron des champs",
           "language": "fr",
         },
         {
           "vernacularName": "Creeping jenny",
           "language": "en",
-        }
+        },
+        {
+          "vernacularName": "Corriola",
+          "language": "pt",
+        },
+        {
+          "vernacularName": "Corriola-campestre",
+          "language": "pt",
+        },
+        {
+          "vernacularName": "Corriola-mansa",
+          "language": "pt",
+        },
+        {
+          "vernacularName": "Erva-garriola",
+          "language": "pt",
+        },
       ],
       "taxonomy": {
         "usageKey": 2928390,
@@ -1657,29 +1671,48 @@ export const weeds = [
         },
         {
           "vernacularName": "Margarita",
-          "language": "en",
-          "eol_preferred": false
+          "language": "es"
         },
         {
-          "vernacularName": "Ausdauerndes Gänseblümchen",
-          "language": "de",
-          "eol_preferred": false
+          "vernacularName": "Gänseblümchen",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Maßliebchen",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Mehrjähriges Gänseblümchen",
+          "language": "de"
+        },
+        {
+          "vernacularName": "María",
+          "language": "es"
+        },
+        {
+          "vernacularName": "bella margarita",
+          "language": "es"
+        },
+        {
+          "vernacularName": "margarida",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "margarita",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Pâquerette",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Pratolina comune",
+          "language": "it"
         },
         {
           "vernacularName": "lawndaisy",
-          "language": "en",
-          "eol_preferred": false
+          "language": "en"
         },
-        {
-          "vernacularName": "lawndaisy",
-          "language": "en",
-          "eol_preferred": false
-        },
-        {
-          "vernacularName": "Lawndaisy",
-          "language": "en",
-          "eol_preferred": false
-        }
       ],
       "taxonomy": {
         "usageKey": 3117424,
@@ -1793,16 +1826,40 @@ export const weeds = [
       ],
       "names": [
         {
-          "vernacularName": "Gewhnliches Hirtentaschel",
-          "language": "de"
-        },
-        {
           "vernacularName": "bolsa de pastor",
           "language": "es"
         },
         {
           "vernacularName": "Gewöhnliches Hirtentäschel",
           "language": "de",
+        },
+        {
+          "vernacularName": "Bolsa-de-pastor",
+          "language": "pt",
+        },
+        {
+          "vernacularName": "Bourse à Pasteur",
+          "language": "fr",
+        },
+        {
+          "vernacularName": "Molette à Berger",
+          "language": "fr",
+        },
+        {
+          "vernacularName": "Bourse de Capucin",
+          "language": "fr",
+        },
+        {
+          "vernacularName": "Capselle",
+          "language": "fr",
+        },
+        {
+          "vernacularName": "Borsapastore Comune",
+          "language": "it",
+        },
+        {
+          "vernacularName": "Borsa del pastore",
+          "language": "it",
         },
         {
           "vernacularName": "Shepherd's purse",

@@ -461,21 +461,15 @@ export const deciduousAndEvergreenTrees2 = [
     "names": [
       {
         "vernacularName": "Rotbuche",
-        "language": "de",
-        
+        "language": "de"        
       },
       {
         "vernacularName": "Blut-Buche",
         "language": "de"
       },
       {
-        "vernacularName": "Rot-Buche",
-        "language": "de"
-      },
-      {
         "vernacularName": "beech",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "Copper-Beech",
@@ -487,26 +481,19 @@ export const deciduousAndEvergreenTrees2 = [
       },
       {
         "vernacularName": "haya",
-        "language": "es",
-        
-      },
-      {
-        "vernacularName": "Hêtre",
-        "language": "fr",
-        
+        "language": "es"        
       },
       {
         "vernacularName": "Hêtre commun",
-        "language": "fr"
+        "language": "fr"        
       },
       {
-        "vernacularName": "Hêtre, Fouteau",
-        "language": "fr"
+        "vernacularName": "Faia-europeia",
+        "language": "pt" 
       },
       {
         "vernacularName": "Faggio comune",
-        "language": "it",
-        
+        "language": "it"        
       }
     ],
     "taxonomy": {
@@ -3561,24 +3548,20 @@ export const deciduousAndEvergreenTrees2 = [
     ],
     "names": [
       {
-        "vernacularName": "Spitz-Ahorn",
-        "language": "de",
-        
+        "vernacularName": "Spitzahorn",
+        "language": "de"        
       },
       {
         "vernacularName": "Norway maple",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "Arce",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
         "vernacularName": "Érable plane",
-        "language": "fr",
-        
+        "language": "fr"        
       },
       {
         "vernacularName": "Érable plane, Plane",
@@ -3597,9 +3580,16 @@ export const deciduousAndEvergreenTrees2 = [
         "language": "fr"
       },
       {
+        "vernacularName": "ácer-da-noruega",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "bordo-da-noruega",
+        "language": "pt"
+      },
+      {
         "vernacularName": "Acero platanoide",
-        "language": "it",
-        
+        "language": "it"        
       },
       {
         "vernacularName": "Acero riccio",
@@ -3796,14 +3786,12 @@ export const deciduousAndEvergreenTrees2 = [
     ],
     "names": [
       {
-        "vernacularName": "Berg-Ahorn",
-        "language": "de",
-        
+        "vernacularName": "Bergahorn",
+        "language": "de"        
       },
       {
         "vernacularName": "sycamore maple",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "Great Maple",
@@ -3814,13 +3802,8 @@ export const deciduousAndEvergreenTrees2 = [
         "language": "en"
       },
       {
-        "vernacularName": "Arce",
-        "language": "es",
-        
-      },
-      {
         "vernacularName": "Arce blanco",
-        "language": "es"
+        "language": "es"        
       },
       {
         "vernacularName": "Falso plátano",
@@ -3831,26 +3814,28 @@ export const deciduousAndEvergreenTrees2 = [
         "language": "es"
       },
       {
+        "vernacularName": "Érable sycomore",
+        "language": "fr"        
+      },
+      {
         "vernacularName": "Faux platane",
-        "language": "fr",
-        
+        "language": "fr"        
       },
       {
         "vernacularName": "Érable des montagnes",
         "language": "fr"
       },
       {
-        "vernacularName": "Érable sycomore, Grand Érable",
+        "vernacularName": "Grand Érable",
         "language": "fr"
       },
       {
-        "vernacularName": "érable-sycomore",
-        "language": "fr"
+        "vernacularName": "Plátano-bastardo",
+        "language": "pt"
       },
       {
         "vernacularName": "Acero di monte",
-        "language": "it",
-        
+        "language": "it"        
       }
     ],
     "taxonomy": {

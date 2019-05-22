@@ -5380,8 +5380,7 @@ export const mushrooms = [
     "names": [
       {
         "vernacularName": "Austernseitling",
-        "language": "de",
-        
+        "language": "de"        
       },
       {
         "vernacularName": "Austernpilz",
@@ -5393,13 +5392,11 @@ export const mushrooms = [
       },
       {
         "vernacularName": "Oyster Mushroom",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "orellanes",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
         "vernacularName": "pleuroto ostreato",
@@ -5407,13 +5404,19 @@ export const mushrooms = [
       },
       {
         "vernacularName": "Pleurote en huître",
-        "language": "fr",
-        
+        "language": "fr"        
+      },
+      {
+        "vernacularName": "shimeji-preto",
+        "language": "pt" 
+      },
+      {
+        "vernacularName": "cogumelo ostra",
+        "language": "pt" 
       },
       {
         "vernacularName": "Pinella",
-        "language": "it",
-        
+        "language": "it"        
       },
       {
         "vernacularName": "agarico ostreato",
@@ -5826,8 +5829,7 @@ export const mushrooms = [
     "names": [
       {
         "vernacularName": "Gemeiner Schwefelporling",
-        "language": "de",
-        
+        "language": "de"        
       },
       {
         "vernacularName": "Schwefelgelber Porling",
@@ -5843,8 +5845,7 @@ export const mushrooms = [
       },
       {
         "vernacularName": "Sulphur Shelf",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "Bracket Fungus",
@@ -5875,9 +5876,16 @@ export const mushrooms = [
         "language": "en"
       },
       {
+        "vernacularName": "Frango Da Floresta",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "cogumelo de prateleira de enxofre",
+        "language": "pt"
+      },
+      {
         "vernacularName": "Polypore soufré",
-        "language": "fr",
-        
+        "language": "fr",        
       }
     ],
     "taxonomy": {

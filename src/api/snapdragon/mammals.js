@@ -352,6 +352,14 @@ export const mammals = [
         "language": "fr"
       },
       {
+        "vernacularName": "coelho-europeu",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "coelho-bravo",
+        "language": "pt"
+      },
+      {
         "vernacularName": "European rabbit",
         "language": "en"
       }

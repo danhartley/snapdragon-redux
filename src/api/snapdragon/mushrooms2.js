@@ -4338,35 +4338,25 @@ export const mushrooms2 = [
     ],
     "names": [
       {
-        "vernacularName": "Glimmertintling",
-        "language": "de",
-        "eol_preferred": true
+        "vernacularName": "Gemeine Glimmertintling",
+        "language": "de"
       },
       {
         "vernacularName": "Glistening Ink Cap",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "Glistening Inkcap",
-        "language": "en",
-        "eol_preferred": false
-      },
-      {
-        "vernacularName": "Hongo",
-        "language": "es",
-        "eol_preferred": false
+        "vernacularName": "coprino micáceo",
+        "language": "es"
       },
       {
         "vernacularName": "Mica Cap",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
-        "vernacularName": "Glistening Inkcap",
-        "language": "en",
-        "eol_preferred": false
-      }
+        "vernacularName": "coprin micacé",
+        "language": "fr"
+      },
     ],
     "taxonomy": {
       "kingdom": "Fungi",

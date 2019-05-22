@@ -1812,22 +1812,28 @@ export const deciduousAndEvergreenTrees = [
     "names": [
       {
         "vernacularName": "Callery pear",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "Bradford pear",
         "language": "en"
       },
       {
-        "vernacularName": "dou li",
-        "language": "en"
+        "vernacularName": "Poirier de Chine",
+        "language": "fr"        
       },
       {
-        "vernacularName": "Poirier de Chine",
-        "language": "fr",
-        
-      }
+        "vernacularName": "Peral de Callery",
+        "language": "es"   
+      },
+      {
+        "vernacularName": "peral de flor",
+        "language": "es"   
+      },
+      {
+        "vernacularName": "Pereira-de-jardim",
+        "language": "pt"   
+      },
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -3314,8 +3320,7 @@ export const deciduousAndEvergreenTrees = [
     "names": [
       {
         "vernacularName": "Amerikanischer Tulpenbaum",
-        "language": "de",
-        
+        "language": "de"        
       },
       {
         "vernacularName": "Tulpenbaum",
@@ -3323,8 +3328,7 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "Tulip Tree",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "American Tulip Tree",
@@ -3380,13 +3384,11 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "Tulipero de Virginia",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
         "vernacularName": "Bois-canot",
-        "language": "fr",
-        
+        "language": "fr"        
       },
       {
         "vernacularName": "Tulipier de Virginie",
@@ -3397,9 +3399,16 @@ export const deciduousAndEvergreenTrees = [
         "language": "fr"
       },
       {
+        "vernacularName": "Tulipeiro de Virginia",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "tulipeiro",
+        "language": "pt"
+      },
+      {
         "vernacularName": "Tulipifero",
-        "language": "it",
-        
+        "language": "it"        
       }
     ],
     "taxonomy": {
@@ -3564,8 +3573,7 @@ export const deciduousAndEvergreenTrees = [
     "names": [
       {
         "vernacularName": "Amberbaum",
-        "language": "de",
-        
+        "language": "de"        
       },
       {
         "vernacularName": "Amerikanischer Amberbaum",
@@ -3573,8 +3581,7 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "American Sweetgum",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "Alligator-wood",
@@ -3610,18 +3617,19 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "Liquidámbar",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
         "vernacularName": "Liquidambar",
-        "language": "fr",
-        
+        "language": "fr"        
+      },
+      {
+        "vernacularName": "árvore-do-estoraque",
+        "language": "pt"  
       },
       {
         "vernacularName": "Liquidambra d'America",
-        "language": "it",
-        
+        "language": "it"        
       }
     ],
     "taxonomy": {

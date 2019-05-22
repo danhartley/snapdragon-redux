@@ -1137,10 +1137,6 @@ export const insects = [
         "language": "fr"
       },
       {
-        "vernacularName": "pyrrhocore",
-        "language": "fr"
-      },
-      {
         "vernacularName": "cimice rosso nera",
         "language": "it"
       }
@@ -1958,7 +1954,19 @@ export const insects = [
         "vernacularName": "american cockroach",
         "language": "en",
         "wikiSearchTerm": true
-      }
+      },
+      {
+        "vernacularName": "Amerikanische Großschabe",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Blatte américaine",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Barata-americana",
+        "language": "pt"
+      },
     ],
     "taxonomy": {
       "kingdom": "Animalia",
@@ -3205,105 +3213,33 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "European Mantis",
-        "language": "en"
+        "vernacularName": "Europäische Gottesanbeterin",
+        "language": "de"
       },
       {
-        "vernacularName": "European Mantis",
-        "language": "en"
-      },
-      {
-        "vernacularName": "European Mantis",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Europische Gottesanbeterin",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Europische Gottesanbeterin",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Louva-a-deus",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Louva-a-deus",
-        "language": "en"
+        "vernacularName": "Santateresa",
+        "language": "es"
       },
       {
         "vernacularName": "Mante religieuse",
-        "language": "en"
+        "language": "fr"
       },
       {
         "vernacularName": "Mantide religiosa",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Mantide religiosa",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Mantide religiosa",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Mantis",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Mantis",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Mantis",
-        "language": "en"
+        "language": "it"
       },
       {
         "vernacularName": "Praying Mantis",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Praying Mantis",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Praying Mantis",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Pregadu",
-        "language": "en"
-      },
-      {
-        "vernacularName": "praying mantis",
-        "language": "en"
-      },
-      {
-        "vernacularName": "praying mantis",
-        "language": "en"
-      },
-      {
-        "vernacularName": "praying mantis",
         "language": "en"
       },
       {
         "vernacularName": "European mantis",
         "language": "en"
-      },
+      },      
       {
-        "vernacularName": "praying mantis",
-        "language": "en"
-      },
-      {
-        "vernacularName": "European mantis",
-        "language": "en"
-      },
-      {
-        "vernacularName": "praying mantis",
-        "language": "en"
-      }
+        "vernacularName": "Louva-a-Deus Europeu",
+        "language": "pt"
+      },      
     ],
     "taxonomy": {
       "kingdom": "Animalia",
@@ -7248,13 +7184,20 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "Faulbaumbluling",
-        "language": "de",
-        
+        "vernacularName": "Faulbaum-Bläuling",
+        "language": "de"        
       },
       {
         "vernacularName": "Holly Blue",
         "language": "en"
+      },
+      {
+        "vernacularName": "Azuré des nerpruns",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Azul-celeste",
+        "language": "pt"
       },
       {
         "vernacularName": "spring azure",
@@ -8568,8 +8511,7 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Avispa de lodo",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
         "vernacularName": "Black and Yellow Mud Dauber",
@@ -8578,6 +8520,10 @@ export const insects = [
       {
         "vernacularName": "Vespa muratore",
         "language": "it"
+      },
+      {
+        "vernacularName": "Taranta",
+        "language": "pt"
       },
       {
         "vernacularName": "Mud dauber",
@@ -9095,12 +9041,11 @@ export const insects = [
     "names": [
       {
         "vernacularName": "Carpet Beetle",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
-        "vernacularName": "Carpet Beetle",
-        "language": "en"
+        "vernacularName": "Lagarta de Escaravelho",
+        "language": "pt"
       },
       {
         "vernacularName": "Coleottero dei tappeti",
