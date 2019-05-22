@@ -45,7 +45,13 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel)
 
     if(speciesTraits && speciesTraits.symbionts) {
 
-        let symbionts = speciesTraits.symbionts;
+        let symbionts ;
+
+        if(speciesTraits.symbionts[0].id) {
+            symbionts = speciesTraits.symbionts.map(s => s.id);
+        } else {
+            symbionts = speciesTraits.symbionts;
+        }
 
         let symbiontTraits = speciesTraits.traits.map(trait => {
             const values = trait.value.split(',').map(t => t.trim());

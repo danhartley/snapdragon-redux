@@ -78,8 +78,8 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
 
         document.querySelector('#iNatWidgetModal .modal-header').innerHTML = 
         config.guide.iconicTaxa.length > 0
-            ? `iNaturalist species observed within ${range}km of ${place} filtered by <span class="toUpperCase">${iconicTaxaCount}</span>`
-            : `iNaturalist species observed within ${range}km of ${place}`;
+            ? `iNaturalist species observed in ${place} filtered by <span class="toUpperCase">${iconicTaxaCount}</span>`
+            : `iNaturalist species observed in ${place}`;
 
         let params = collection ? collection.iNatWidget : config.guide.place.id;
         if(config.guide.iconicTaxa.length > 0) {

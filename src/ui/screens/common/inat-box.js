@@ -42,8 +42,12 @@ export async function renderInatDataBox(parent, item, config, mode) {
 
         if(stats.results.length === 0) return;
 
-        const placeTaxonCount = stats.results.find(stat => stat.taxon.name === item.name).count;
-        const establishment = stats.results.find(stat => stat.taxon.name === item.name).taxon.preferred_establishment_means;
+        const itemStats = stats.results.find(stat => stat.taxon.name === item.name);
+
+        if(!itemStats) return;
+
+        const placeTaxonCount = itemStats.count;
+        const establishment = itemStats.taxon.preferred_establishment_means;
 
         document.querySelector('.js-native-container').innerHTML = establishment || '';
 
