@@ -98,14 +98,18 @@ export const english = {
         
         MATING: 'Mating season',
         MATING_SYSTEM: 'mating system',
+        PREGNANCY: 'Pregnancy',
+        
         LITTER_SIZE: 'Litter size',
         YOUNG: 'Young',
         GESTATION: 'Gestation',
         WEANING: 'Weaning',
+        LACTATION: 'Lactation',
         SENSORY_ACUITY: 'Sensory acuity',
         CRYPSIS: 'Crypsis',
         CACHE_SIZE: 'Number of caches',
         
+        COLLECTIVE: 'Collective',
         FEMALE: 'Female',
         MALE: 'Male',        
         TAIL_LENGTH: 'Tail length',
@@ -140,7 +144,6 @@ export const english = {
         GRASSLAND : 'Grassland',
         SOIL : 'Soil',
         VEGETATION : 'Vegetation',
-        ROOTS : 'Roots', 
         DUNG : 'Dung',
         DUNES : 'Dunes',
         WIDESPREAD : 'Widespread',
@@ -150,6 +153,8 @@ export const english = {
         FIELDS : 'Fields', 
         MOSS : 'Moss',
         PASTURE : 'Pasture',
+        BARK: 'Bark',
+        SHOOTS: 'Shoots',
         COMMONS : 'Common',
         HEATH : 'Heath',
         ORCHARDS : 'Orchards',
@@ -162,7 +167,6 @@ export const english = {
         PARKS : 'Parks',
         TRUNKS : 'Trunks',
         STUMPS : 'Stumps',
-        BARK: 'Bark',
         ROCKS: 'Rocks',
         FENCES: 'Fences',
         TREES: "Trees",
@@ -182,7 +186,11 @@ export const english = {
         SCRUB: 'Scrub',
         WALLS: 'Walls',
         MOORLAND: 'Moorland',
-        COAST: 'Coast'
+        COAST: 'Coast',
+        BRUSH: 'Brush',
+        WATER: 'Water',
+        SNOW: 'Snow',
+        NO_SNOW: 'No snow',
     },
     ecoType : {
         help: 'What is the ecological type of this mushroom?',
@@ -414,7 +422,13 @@ export const english = {
         HERBAGE: 'Herbage',
         SWARD: 'Sward',
         LEAVES: 'Leaves',
-        WOOD: 'Wood'
+        WOOD: 'Wood',
+        ROOTS : 'Roots', 
+        TUBERS: 'Tubers',
+        RHIZOMES: 'Rhizomes',
+        BULBS: 'Bulbs', 
+        BARK: 'Bark',
+        SHOOTS: 'Shoots',
     },
     developmentStage: {
         ADULT: 'Adult',
@@ -436,7 +450,8 @@ export const english = {
         SECONDARY_CONSUMER: 'Secondary consumer',
         OMNIVORE: 'Omnivore',
         TERTIARY_CONSUMER: 'Tertiary consumer',
-        APEX_PREDATOR: 'Apex predator'
+        APEX_PREDATOR: 'Apex predator',
+        SCAVENGER: 'Scavenger'
     },
     shelter: {
         help: 'What is the name of this species\`s shelter?',
@@ -448,6 +463,8 @@ export const english = {
         ROOKERY: 'Rookery',
         LODGE: 'Lodge',
         DAM: 'Dam',
+        NEST: 'Nest',
+        SHELTER: 'Shelter'
     },
     active: {
         help: 'When is this species most active?',
@@ -471,6 +488,11 @@ export const english = {
         NOVEMBER: 'November',
         DECEMBER: 'December',
     },
+    collective: {
+        help: 'What is the term for a collective of this species?',
+        SOUNDER: 'Sounder'
+    },
+
     young: {
         help: 'What is the name for the young of this species?',
         KIT: 'Kit',
@@ -490,7 +512,6 @@ export const english = {
         CATERPILLAR: 'Caterpillar',
         LARVA: 'Larva',
         SALAMANQUESA: 'Salamanquesa',
-        NYMPH: 'Nymph'
     },
     female: {
         help: 'What is the name for a female of this species?',
@@ -532,10 +553,11 @@ export const english = {
         help: 'How is this species organised?',
         EUSOCIAL: 'Eusocial',
         SOCIAL: 'Social',
-        SOLITARY: 'Solitary'  
+        SOLITARY: 'Solitary',
+        MATRIARCHY: 'Matriarchy'
     },
     diet: {
-        help: 'What is the feeding behaviour of this species?',
+        help: 'How is the diet of this species best described?',
         HERBIVORE: 'Herbivore',
         OMNIVORE: 'Omnivore',
         CARNIVORE: 'Carnivore',
@@ -618,6 +640,7 @@ export const english = {
         GAME_PLAYING: 'Game playing',
         PLAYFUL: 'Playful',
         TERRITORIAL: 'Territorial',
+        NON_TERRITORIAL: 'Non territorial',
         BIPARENTAL: 'Biparental',
         COOPERATIVE_BREEDING: 'Cooperative breeding',
         TOOL_MAKING: 'Tool making',
@@ -638,7 +661,11 @@ export const english = {
         BIVOLTINE: 'Bivoltine',
         UNIVOLTINE: 'Univoltine',
         SEMIVOLTINE: 'Semivoltine',
-        METAMORPHOSIS: 'Metamorphosis'
+        METAMORPHOSIS: 'Metamorphosis',
+        RUTTING: 'Rutting',
+        WHELPING: 'Whelping',
+        FARROWING: 'Farrowing',
+        SWIMMING: 'Swimming'
     },
     sense: {
         help: 'Which sense does this species favour?',
@@ -679,5 +706,10 @@ export const english = {
         C3_CARBON_FIXATION: 'C3 carbon fixation',
         NITROGEN_FIXING: 'Nitrogen fixing',
         HERBACEOUS: 'Herbaceous'
+    },
+    ecology: {
+        DIGGING: 'Digging', 
+        SCRAPING: 'Scraping',
+        ROOTING: 'Rooting' 
     }
 };

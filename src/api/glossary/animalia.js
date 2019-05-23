@@ -144,4 +144,9 @@ export const animalia = [
         definition: 'Immature form of some invertebrates, particularly insects, which undergoes gradual metamorphosis (hemimetabolism) before reaching its adult stage.',
         wiki: 'https://en.wikipedia.org/wiki/Nymph_(biology)'
     },
+    {
+        term: 'Artiodactyla',
+        definition: 'The even-toed ungulates.',
+        wiki: 'https://en.wikipedia.org/wiki/Even-toed_ungulate'
+    },
 ];

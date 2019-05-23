@@ -10,7 +10,6 @@ export const getTraits = (enums) => {
         ...getBirdTraits(enums), ...getFungiTraits(enums), ...getPlantTraits(enums), 
         ...getInsectTraits(enums), ...getMammalTraits(enums)
     ];
-
     // const addRelationshipTraits = true;
 
     // if(item && addRelationshipTraits) {

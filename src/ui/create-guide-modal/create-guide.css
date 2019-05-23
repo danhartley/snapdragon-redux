@@ -508,6 +508,10 @@
     color: var(--snap-collection-active) !important;
   }
 
+  .iconic-taxa-selected svg g {
+    fill: var(--snap-collection-active) !important;
+  }
+
   /* Mushroom icon sizes */
 
   .iconic-taxa-categories svg,

@@ -4440,4 +4440,30 @@ export const taxa = [
             { name: SD.name.YOUNG, value: `${SD.young.NYMPH }` },
         ],
     },
+    {
+        taxon: 'family',
+        name: 'Suidae',
+        genera: '17',
+        species: '4-8',
+        names: [ { language: "en", names: ['Pigs, hoars, boars']},
+            { language: "fr", names:[ 'Porcins, Suidés' ]},
+            { language: "de", names:[ 'Echte Schweine' ]},
+            { language: "es", names:[ 'Cerdos' ]},
+            { language: "pt", names:[ 'Suídeos' ]},
+            { language: "it", names:[ '' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Suidae",
+        thumb: '55/3d/7d/529.103509.260x190.jpg',
+        eol: "https://eol.org/pages/7681",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Family of artiodactyl mammals that includes the domestic pig.',
+                identification: 'Unlike most even-toed ungulates, they have 4 toes on each foot, but walk only on the middle two, and have a simple (non-ruminant) stomach.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.BEHAVIOUR, value: SD.active.NON_TERRITORIAL },
+        ],
+    },
 ];

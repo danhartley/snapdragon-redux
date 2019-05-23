@@ -2156,5 +2156,184 @@ export const mammals = [
     "family": "Sciuridae",
     "kingdom": "Animalia",
     "eolName": "Sciurus carolinensis Gmelin, 1788"
+  },
+  {
+    "id": "328607",
+    "name": "Canis lupus",
+    "images": [
+      {
+        "title": "Wolf 2",
+        "rightsHolder": "Robert Dewar",
+        "source": "https://www.flickr.com/photos/fremlin/2384478345/",
+        "license": "http://creativecommons.org/licenses/by/2.0/",
+        "url": "7e/eb/8a/542.2384478345.jpg",
+        "photographer": {
+          "full_name": "<a href='http://www.flickr.com/photos/14120815@N06'>Robert Dewar</a>",
+          "homepage": "http://www.flickr.com/photos/14120815@N06",
+          "role": "photographer"
+        }
+      },
+      {
+        "rightsHolder": "BOLD Systems. BOLD Systems. Year: 2014.",
+        "source": "http://www.boldsystems.org/index.php/Taxbrowser_Taxonpage?taxid=503070",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "76/ea/69/539.GBMA_karma_1393537843_JPG.jpg"
+      },
+      {
+        "title": "Gray wolf (female)",
+        "rightsHolder": "Drew Avery",
+        "source": "https://www.flickr.com/photos/33590535@N06/3520742410/",
+        "license": "http://creativecommons.org/licenses/by/2.0/",
+        "url": "7f/8f/43/542.3520742410.jpg",
+        "photographer": {
+          "full_name": "<a href='http://www.flickr.com/photos/33590535@N06'>Drew Avery</a>",
+          "homepage": "http://www.flickr.com/photos/33590535@N06",
+          "role": "photographer"
+        }
+      },
+      {
+        "title": "n50_w1150",
+        "rightsHolder": "Biodiversity Heritage Library",
+        "source": "https://www.flickr.com/photos/biodivlibrary/6216706189/",
+        "license": "http://creativecommons.org/licenses/by/2.0/",
+        "url": "80/8d/56/542.6216706189.jpg",
+        "photographer": {
+          "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+          "homepage": "http://www.flickr.com/photos/61021753@N02",
+          "role": "photographer"
+        }
+      },
+      {
+        "title": "Wolf on alert.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Wolf_on_alert.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "57/4e/e3/509.20047214.jpg"
+      },
+      {
+        "title": "Canis lupus signatus (Kerkrade Zoo) 09.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Canis_lupus_signatus_(Kerkrade_Zoo)_09.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "59/bf/4b/509.3242468.jpg"
+      },
+      {
+        "title": "Iberian Wolf.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Iberian_Wolf.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "5e/28/c2/509.28963314.jpg"
+      },
+      {
+        "title": "Canis lupus signatus - 01 white background.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Canis_lupus_signatus_-_01_white_background.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "62/4b/e7/509.45855185.jpg"
+      },
+      {
+        "title": "20151229 113609 Excrementos de lobo.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:20151229_113609_Excrementos_de_lobo.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "62/7e/d1/509.46005387.jpg"
+      },
+      {
+        "title": "20151229 132632 Excremento de lobo.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:20151229_132632_Excremento_de_lobo.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "62/7e/d3/509.46005389.jpg"
+      },
+      {
+        "title": "2819 wolf.jpg",
+        "rightsHolder": "shannon kringen",
+        "source": "https://commons.wikimedia.org/wiki/File:2819_wolf.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "55/85/ea/509.11427296.jpg"
+      }
+    ],
+    "names": [
+      {
+        "vernacularName": "Grey wolf",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Wolf",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Gray wolf",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Dingo",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Lobo gris",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Loup",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Arctic wolf",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Common wolf",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Lobo",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Loup commun",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Loup gris",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Loup vulgaire",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Mexican wolf",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Plains wolf",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Timber wolf",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Tundra wolf",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Wolf (der)",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Lupo",
+        "language": "it"
+      }
+    ],
+    "taxonomy": {
+      "kingdom": "Animalia",
+      "phylum": "Chordata",
+      "class": "Mammalia",
+      "order": "Carnivora",
+      "family": "Canidae"
+    },
+    "family": "Canidae"
   }
 ];

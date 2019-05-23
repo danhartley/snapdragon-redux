@@ -54,7 +54,9 @@
   .info-box {
     position: absolute;
     bottom: .5rem;
-    width: 100%;
+    left: .5rem;
+    right: .5rem;
+    /* width: 100%; */
   }
 
   .taxa-container {
@@ -144,9 +146,9 @@ td:empty:after{
 
     /* CARD */
 
-    .info-box {        
+    /* .info-box {        
         margin: .5rem 0 0 0;
-    }
+    } */
 
     /* TRAITS CAROUSEL */
 
