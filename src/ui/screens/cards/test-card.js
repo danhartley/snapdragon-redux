@@ -2,7 +2,9 @@ import { DOM } from 'ui/dom';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
+import { renderTraitCard } from 'ui/screens/cards/trait-card';
 import { renderTemplate } from 'ui/helpers/templating';
+
 import testCardTemplate from 'ui/screens/cards/test-card-template.html';
 
 export const renderTestCardTemplate = (collection, context) => {
@@ -89,6 +91,11 @@ export const renderTestCardTemplate = (collection, context) => {
             });
         });
     });
+
+    const traitCardLink = document.querySelector('.js-traits-icon');
+          traitCardLink.addEventListener('click', () => {
+            renderTraitCard(collection.nextItem);
+          });
 
     const testContentParent = document.querySelector('.js-test-card-content');
 

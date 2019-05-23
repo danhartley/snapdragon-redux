@@ -61,6 +61,8 @@ export const enums = {
     communication: english.communication,
     mating: english.mating,
     physiology: english.physiology,
+    collective: english.collective,
+    ecology: english.ecology,
 }
 
 let language;
