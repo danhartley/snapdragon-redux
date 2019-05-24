@@ -761,7 +761,7 @@ a.dropdown-item {
   color: var(--snap-iconic-icon-header);
 }
 
-.traits-icon {
+.traits-icon-container {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -769,7 +769,7 @@ a.dropdown-item {
   margin-right: 1rem;
 }
 
-.traits-icon > div {
+.traits-icon {
   box-shadow: 0 2px 8px rgba(0,0,0,.2);
   padding: 0 .75rem;
   cursor: pointer;
@@ -1938,6 +1938,20 @@ a.collection-disabled {
 .summary-scores span:nth-child(2) {
   font-size: .8rem;
   vertical-align: super;
+}
+
+.trait-line {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.trait-line .small-icon {
+  font-size: 1rem !important;
+  margin: 0 !important;
+}
+
+.trait-icon, .trait-icon > span {
+  margin: 0 !important;
 }
 
 .home-container .snapdragon-tag .inat-widget span:nth-child(1) {

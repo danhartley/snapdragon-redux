@@ -30,11 +30,11 @@
     padding: 0;
 }
 
-.term-header {
+/* .term-header {
     font-size: 1.4rem;
     font-style: italic;
     letter-spacing: .05rem;
-}
+} */
 
 .test-card {
     color: var(--snap-text-medium-dark);
@@ -117,13 +117,13 @@
     margin: 0 .25rem 0 0;
 }
 
-.test-card-container .iconic-icon.answer-success {
+/* .test-card-container .iconic-icon.answer-success {
     color: var(--snap-success);
 }
 
 .test-card-container .iconic-icon.answer-alert {
     color: var(--snap-alert);
-}
+} */
 
 .test-card li {
     display: flex;
@@ -196,15 +196,15 @@
     cursor: pointer;
 }
 
-.iconic-icon.depressed {
+.depressed {
     transition: all .5s ease;
     box-shadow: none;
 }
 
-.iconic-icon.flat {
+/* .iconic-icon.flat {
     transition: all .5s ease;
     box-shadow: none;
-}
+} */
 
 /* TEXT ENTRY */
 

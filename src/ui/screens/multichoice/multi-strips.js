@@ -28,7 +28,7 @@ export const renderMultiStrips = (collection, bonus) => {
     const iconicTaxonFamilies = familyProps.getUniqueFamiliesByIconicTaxon(species, taxon.rank, taxon.value, item.lichen);
     let families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, iconicTaxonFamilies));
   
-    screen = layout.screens[1];
+    screen = bonus ? bonus.screen || layout.screens[1] : layout.screens[1];
 
     try {
 
@@ -43,7 +43,7 @@ export const renderMultiStrips = (collection, bonus) => {
         const className = (overrides && overrides.className !== undefined) ? overrides.className : '';
         const conceals = (overrides && overrides.conceals !== undefined) ? overrides.conceals : ['', '', '', '', '', ''];
         
-        const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help, term, className });
+        const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help, term, className, bonus });
 
         const icon = renderIcon(item.taxonomy, document);
 
@@ -79,8 +79,24 @@ export const renderMultiStrips = (collection, bonus) => {
         const taxon = { name: item.family, binomial: item.name, question: questionValue };
 
         const test = { itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points};
-        
-        const callback = (score, scoreUpdateTimer) => {
+                
+        const callback = (score) => {
+
+            const updateScore = () => {
+                if(bonus && bonus.callback) {
+                    score.guid = bonus.guid;
+                    actions.boundUpdateTraitScore(score);
+                    bonus.callback(score);
+                } else {
+                    actions.boundUpdateScore(score);
+                }
+            };
+
+            const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
+
+            const scoreUpdateTimer = setTimeout(()=>{
+                updateScore();
+            }, delay);
         
             const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
     
@@ -88,7 +104,7 @@ export const renderMultiStrips = (collection, bonus) => {
     
             continueLessonBtn.addEventListener('click', event => {
                 window.clearTimeout(scoreUpdateTimer);
-                actions.boundUpdateScore(score);
+                updateScore();
             });
 
             score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');

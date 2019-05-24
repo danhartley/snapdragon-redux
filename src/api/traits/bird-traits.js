@@ -30,6 +30,7 @@ const getTraits = SD => {
     { name: 'Sturnus vulgaris', traits: [
         { name: SD.name.RANK, value: '2', description: 'common', language: 'en' },
         { name: 'song', value: '281735', description: 'xeno-canto id', type: 'song' },
+        { name: SD.name.COLLECTIVE, value: SD.collective.MURMURATION },
     ] },
     { name: 'Columba palumbus', traits: [
         { name: SD.name.RANK, value: '5', description: 'common', language: 'en' },

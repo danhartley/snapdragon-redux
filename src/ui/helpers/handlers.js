@@ -133,6 +133,7 @@ const stripScoreHandler = (test, callback, config) => {
     const { items, taxon } = test;
 
     items.forEach(selected => {
+        
         selected.addEventListener('click', event => {
             
             const target = event.target;
@@ -161,13 +162,7 @@ const stripScoreHandler = (test, callback, config) => {
                 }
             });     
             
-            const delay = score.success ? config.callbackTime : config.callbackTime + config.callbackDelay;
-            
-            const scoreUpdateTimer = setTimeout(()=>{
-                actions.boundUpdateScore(score);
-            }, delay);
-            
-            if(callback) callback(score, scoreUpdateTimer);
+            if(callback) callback(score);
 
             let correct = config.isLandscapeMode ? `That is the right answer.` : `That is the right answer.`;
             let incorrect = config.isLandscapeMode ? `That is the wrong answer.` : 'That is the wrong answer.';

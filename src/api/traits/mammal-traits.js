@@ -36,6 +36,7 @@ const getTraits = SD => {
         { name: SD.role.PREY, value: `Aquila chrysaetos`, type: SD.symbiosis.PREDATION },
         { name: SD.name.USAGE, value: `${SD.usage.FUR}`, type: SD.symbiosis.PREDATION },
         { name: SD.name.KIN_SELECTION, value: SD.boolean.YES, type: SD.symbiosis.COMMENSALISM },
+        { name: SD.name.COLLECTIVE, value: SD.collective.PACK },
     ]
     },
     { name: 'Sciurus vulgaris', 

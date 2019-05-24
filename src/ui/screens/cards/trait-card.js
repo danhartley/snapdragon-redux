@@ -1,26 +1,82 @@
-import { DOM } from 'ui/dom';
-import { store } from 'redux/store';
-import { renderTemplate } from 'ui/helpers/templating';
-import { getTraits } from 'api/traits/traits';
+import * as R from 'ramda';
 
-import traitCardTemplate from 'ui/screens/cards/trait-card-template.html';
+import { renderTemplate } from 'ui/helpers/templating';
+import { store } from 'redux/store';
+import { getTypedTraitsForSpecies } from 'api/traits/species-typed-traits';
+import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
+import { iconicTaxa, matchTaxon } from 'api/snapdragon/iconic-taxa';
+import { returnTaxonIcon } from 'ui/helpers/icon-handler';
+
+import summaryTemplate from 'ui/screens/cards/trait-card-summary-template.html';
 
 export const renderTraitCard = item => {
 
-    const template = document.createElement('template');
+    const enums = store.getState().enums;
+    const collection = R.clone(store.getState().collection);
+    const alreadyAskedQuestions = [];
+    const guid = new Date().getTime();
 
-    template.innerHTML = traitCardTemplate;
+    const getNextTrait = () => {
+        
+        let bonus;
 
-    const parent = DOM.rightBody;
-    parent.innerHTML = '';
+        while (true) {
+            
+            bonus = getTypedTraitsForSpecies(enums, item);
 
-    // const { enums } = store.getState();
+            if (!R.contains(bonus.overrides.trait.type, alreadyAskedQuestions) || alreadyAskedQuestions.length === bonus.traits.length) {            
+                break;
+            } 
+        }
 
-    // const traits = getTraits(enums);
+        if(alreadyAskedQuestions.length === bonus.traits.length) {
 
-    // let speciesTraits = traits.find(trait => trait.name === item.name);
+            const scores = store.getState().score;
+            const score = scores.bonusScores.filter(s => s.id === item.id && s.guid === guid) || [];
+            const total = score.length;
+            const correct = score.filter(s => s.success).length;
 
-    // render(bonus.question, bonus.answers, bonus.overrides);
+            const template = document.createElement('template');
 
-    renderTemplate({ item }, template.content, parent);
+            template.innerHTML = summaryTemplate;
+        
+            const parent = document.querySelector('.js-test-card-content');
+            parent.innerHTML = '';
+            
+            const context = { correct, total, name: item.vernacularName || item.name };
+            
+            renderTemplate(context, template.content, parent);
+            
+            const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
+            const icon = returnTaxonIcon(iconicTaxon);
+
+            document.querySelector('.js-trait-icon').innerHTML = icon;
+
+            document.querySelector('.js-try-again').addEventListener('click', () => {
+                renderTraitCard(item);
+            });
+
+            document.querySelector('.js-test-card-content').classList.add('trait-line');
+            document.querySelector('.js-question-question').innerHTML = 'Section complete';
+            document.querySelector('.js-question-help').innerHTML = '(Bonus questions.)';
+            document.querySelector('.js-txt-question').classList.add('hide-important');
+            document.querySelector('.js-continue-lesson-btn').classList.add('hide-important');
+
+            return;
+        }
+        
+        bonus.screen = { name: 'trait-property'};
+        bonus.overrides.binomial = 'TRAITS & ECOLOGY';
+        bonus.type = 'trait';
+        bonus.guid = guid;
+        bonus.callback = score => {
+            getNextTrait();
+        };
+
+        alreadyAskedQuestions.push(bonus.overrides.trait.type);
+
+        renderMultiStrips(collection, bonus);
+    };
+
+    getNextTrait();
 };

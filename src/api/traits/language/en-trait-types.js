@@ -490,7 +490,10 @@ export const english = {
     },
     collective: {
         help: 'What is the term for a collective of this species?',
-        SOUNDER: 'Sounder'
+        SOUNDER: 'Sounder',
+        SLOTH: 'Sloth',
+        MURMURATION: 'Murmuration',
+        PACK: 'Pack'
     },
 
     young: {
@@ -622,7 +625,7 @@ export const english = {
     },
     display: {
         help: 'Which form of display does this species exhibit?',
-        DIEMATIC: 'diematic',
+        DIEMATIC: 'Diematic',
         SEXUAL_COLOUR_DIMORPHISM: 'Sexual colour dimorphism',
         NO_SEXUAL_COLOUR_DIMORPHISM: 'No sexual colour dimorphism',
         SEXUAL_DIMORPHISM: 'Sexual dimorphism',
