@@ -96,7 +96,9 @@
 }
 
 #imageComparisonModal .slideBySliderContainer {
-    display: flex;
+    /* display: flex; */
+    display: grid;
+    grid-auto-flow: column;
 }
 
 #imageComparisonModal .modal-title {

@@ -1100,10 +1100,10 @@ span.correct {
   color: var(--snap-inactive);
 }
 
-.layer.snap-success {
+/* .layer.snap-success {
   border: none;
   color: rgba(40, 167, 69,.5);
-}
+} */
 
 .btn.btn-light.snap-success {
   color: var(--snap-text-light) !important;
@@ -1125,10 +1125,10 @@ span.correct {
   color: var(--snap-alert);
 }
 
-.layer.snap-alert {
+/* .layer.snap-alert {
   border: none;
   color: rgba(255, 0, 0,.5);
-}
+} */
 
 .btn.btn-light.snap-alert {
   color: var(--snap-text-light) !important;
@@ -1390,7 +1390,7 @@ label.btn.btn-secondary .lesson-icon {
   margin: 2rem 0 1rem 0;
 }
 
-.layer-container {
+/* .layer-container {
   cursor: pointer;
   background-size: cover;
   background-position: center;
@@ -1408,7 +1408,7 @@ label.btn.btn-secondary .lesson-icon {
 
 .layer > div {
   text-align: center;
-}
+} */
 
 .feature-label {
   color: var(--snap-green-feature-txt);
