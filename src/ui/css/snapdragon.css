@@ -765,8 +765,7 @@ a.dropdown-item {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  font-size: 3rem;
-  margin-right: 1rem;
+  width: 3rem;
 }
 
 .traits-icon {
