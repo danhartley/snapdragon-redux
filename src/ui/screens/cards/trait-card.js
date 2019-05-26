@@ -9,27 +9,50 @@ import { returnTaxonIcon } from 'ui/helpers/icon-handler';
 
 import summaryTemplate from 'ui/screens/cards/trait-card-summary-template.html';
 
-export const renderTraitCard = item => {
+export const getBonusQuestion = (item, alreadyAskedQuestions) => {
 
     const enums = store.getState().enums;
-    const collection = R.clone(store.getState().collection);
+
+    let bonus = null;
+
+    while (true) {
+        
+        bonus = getTypedTraitsForSpecies(enums, item);
+
+        if(bonus.overrides) {
+            if (!R.contains(bonus.overrides.trait.type, alreadyAskedQuestions) || alreadyAskedQuestions.length === bonus.typedItemTraits.length) {            
+                break;
+            } 
+        } else {
+            bonus.typedItemTraits = [];
+            break;
+        }
+    }
+
+    return { bonus };
+};
+
+export const renderTraitCard = item => {
+
     const alreadyAskedQuestions = [];
+
+    const collection = R.clone(store.getState().collection);
+    
     const guid = new Date().getTime();
 
     const getNextTrait = () => {
         
-        let bonus;
+        const { bonus } = getBonusQuestion(item, alreadyAskedQuestions);
 
-        while (true) {
-            
-            bonus = getTypedTraitsForSpecies(enums, item);
+        let numberOfQuestions = bonus.typedItemTraits.length === 0 ? '' : bonus.typedItemTraits.length;
+            numberOfQuestions = (numberOfQuestions - alreadyAskedQuestions.length);
+            numberOfQuestions = numberOfQuestions === 0 ? '' : numberOfQuestions;
 
-            if (!R.contains(bonus.overrides.trait.type, alreadyAskedQuestions) || alreadyAskedQuestions.length === bonus.traits.length) {            
-                break;
-            } 
-        }
+        setTimeout(() => {
+            document.querySelector('.js-traits-count-badge').innerHTML = numberOfQuestions;
+        });
 
-        if(alreadyAskedQuestions.length === bonus.traits.length) {
+        if(alreadyAskedQuestions.length === bonus.typedItemTraits.length) {
 
             const scores = store.getState().score;
             const score = scores.bonusScores.filter(s => s.id === item.id && s.guid === guid) || [];
@@ -56,7 +79,7 @@ export const renderTraitCard = item => {
                 renderTraitCard(item);
             });
 
-            document.querySelector('.js-test-card-content').classList.add('trait-line');
+            document.querySelector('.js-test-card-content').classList.add('trait-line');            
             document.querySelector('.js-question-question').innerHTML = 'Section complete';
             document.querySelector('.js-question-help').innerHTML = '(Bonus questions.)';
             document.querySelector('.js-txt-question').classList.add('hide-important');

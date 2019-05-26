@@ -124,7 +124,7 @@
   }
   
   .modal-guide-wrapper .modal-body .modal-guide-progress .completed {
-    background-color: var(--snap-id-border);
+    background-color: rgb(129, 67, 101,.8);
     color: white;
   }
   

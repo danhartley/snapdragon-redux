@@ -103,7 +103,10 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
             parent.innerHTML = '';
             renderGuideSummary(R.clone(config), parent, speciesCount);
             deleteLink.classList.remove('hide');
-            editLink.classList.remove('hide');
+            const editableTypes = [ 'place', 'longLat' ];
+            if(R.contains(config.guide.locationType, editableTypes)) {
+                editLink.classList.remove('hide');
+            }
             exampleLink.classList.add('hide');
         }
     };

@@ -41,7 +41,7 @@
 
 @media (min-width:360px) {
     .names-container .vernacular-name {
-        max-width: 15rem;
+        max-width: 13.5rem;
     }
     .snapdragon-create-guide > div:nth-child(1) {
         font-size: 1.6rem;

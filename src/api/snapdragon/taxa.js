@@ -4466,4 +4466,32 @@ export const taxa = [
             { name: SD.name.BEHAVIOUR, value: SD.active.NON_TERRITORIAL },
         ],
     },
+    {
+        taxon: 'family',
+        name: 'Cistaceae',
+        genera: '9',
+        species: '170-200',
+        names: [ { language: "en", names: ['Rock Rose family']},
+            { language: "fr", names:[ 'Cistacées' ]},
+            { language: "de", names:[ 'Zistrosengewächse' ]},
+            { language: "es", names:[ 'Esteva' ]},
+            { language: "pt", names:[ 'Esteva' ]},
+            { language: "it", names:[ 'Jara' ]}
+        ],
+        wiki: "https://en.wikipedia.org/wiki/Cistaceae",
+        thumb: '55/3d/7d/529.103509.260x190.jpg',
+        eol: "https://eol.org/pages/7681",
+        descriptions: [
+            {   
+                language: 'en',
+                summary: 'Low-lying shrubs (some herbaceous) prefering sunny habitats on poor soils in mainly temperate areas of Europe and the Mediterranean.',
+                identification: 'Short-lived sowy yellow, pink or white flowers. 5 petals (sometimes 3) and 5 sepals. Fruit is a capsule with 5 or 10 valves.', 
+            },
+        ],
+        traits: [
+            { name: SD.name.BEHAVIOUR, value: SD.active.NON_TERRITORIAL },
+            { name: SD.name.ROLE, value: SD.role.PIONEEER },
+            { name: SD.role.SYMBIOSIS, value: 'Tuber', type: SD.symbiosis.MYCORRHIZAL },
+        ],
+    },
 ];

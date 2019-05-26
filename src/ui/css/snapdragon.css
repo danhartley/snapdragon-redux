@@ -1955,6 +1955,15 @@ a.collection-disabled {
   margin: 0 !important;
 }
 
+.trait-icon .iconic-taxa-categories-selected svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.trait-icon svg g g {
+  fill: var(--snap-link);
+}
+
 .home-container .snapdragon-tag .inat-widget span:nth-child(1) {
   font-style: initial;
 }

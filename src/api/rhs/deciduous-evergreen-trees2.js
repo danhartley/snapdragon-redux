@@ -654,13 +654,11 @@ export const deciduousAndEvergreenTrees2 = [
     "names": [
       {
         "vernacularName": "Gemeine Esche",
-        "language": "de",
-        
+        "language": "de"        
       },
       {
         "vernacularName": "European ash",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "Common Ash",
@@ -672,22 +670,23 @@ export const deciduousAndEvergreenTrees2 = [
       },
       {
         "vernacularName": "fresno",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
         "vernacularName": "Frêne commun",
-        "language": "fr",
-        
+        "language": "fr"        
       },
       {
-        "vernacularName": "Frêne élevé, Frêne commun",
+        "vernacularName": "Frêne élevé",
         "language": "fr"
       },
       {
+        "vernacularName": "Freixo",
+        "language": "pt"
+      },
+      {
         "vernacularName": "frassino",
-        "language": "it",
-        
+        "language": "it"        
       },
       {
         "vernacularName": "Frassino comune",
@@ -1198,24 +1197,14 @@ export const deciduousAndEvergreenTrees2 = [
     "names": [
       {
         "vernacularName": "Gemeiner Judasbaum",
-        "language": "de",
-        
+        "language": "de"        
       },
       {
         "vernacularName": "Judasbaum",
         "language": "de"
       },
       {
-        "vernacularName": "Judas-tree",
-        "language": "en",
-        
-      },
-      {
         "vernacularName": "Arbol de Judea",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Ficus carica",
         "language": "en"
       },
       {
@@ -1240,14 +1229,16 @@ export const deciduousAndEvergreenTrees2 = [
         "language": "es"
       },
       {
-        "vernacularName": "Arbre de Judée, Gainier commun",
-        "language": "fr",
-        
+        "vernacularName": "Arbre de Judée",
+        "language": "fr"        
+      },
+      {
+        "vernacularName": "Gainier commun",
+        "language": "fr"        
       },
       {
         "vernacularName": "albero di Giuda",
-        "language": "it",
-        
+        "language": "it"        
       },
       {
         "vernacularName": "chiantanella",
@@ -1259,8 +1250,7 @@ export const deciduousAndEvergreenTrees2 = [
       },
       {
         "vernacularName": "Árvore-de-Judas",
-        "language": "pt",
-        
+        "language": "pt"        
       },
       {
         "vernacularName": "olaia",
@@ -1617,20 +1607,18 @@ export const deciduousAndEvergreenTrees2 = [
     "names": [
       {
         "vernacularName": "trompetenbaum",
-        "language": "de",
-        
-      },
-      {
-        "vernacularName": "southern catalpa",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "Caterpillar Tree",
-        "language": "en"
+        "language": "de"        
       },
       {
         "vernacularName": "Indian Bean Tree",
+        "language": "en"
+      },
+      {
+        "vernacularName": "southern catalpa",
+        "language": "en"        
+      },
+      {
+        "vernacularName": "Caterpillar Tree",
         "language": "en"
       },
       {
@@ -1647,13 +1635,15 @@ export const deciduousAndEvergreenTrees2 = [
       },
       {
         "vernacularName": "catalpa",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
-        "vernacularName": "Catalpa, Arbre aux haricots",
-        "language": "fr",
-        
+        "vernacularName": "Arbre aux haricots",
+        "language": "fr"        
+      },
+      {
+        "vernacularName": "Catalpa",
+        "language": "fr"        
       }
     ],
     "taxonomy": {
@@ -2137,13 +2127,8 @@ export const deciduousAndEvergreenTrees2 = [
         
       },
       {
-        "vernacularName": "Edel-Kastanie",
-        "language": "de"
-      },
-      {
         "vernacularName": "Sweet Chestnut",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "European chestnut",
@@ -2158,23 +2143,32 @@ export const deciduousAndEvergreenTrees2 = [
         "language": "en"
       },
       {
+        "vernacularName": "Castaño europeo",
+        "language": "es"        
+      },
+      {
         "vernacularName": "castaño",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
         "vernacularName": "Châtaignier cultivé",
-        "language": "fr",
-        
+        "language": "fr"        
       },
       {
-        "vernacularName": "Chataignier, Châtaignier commun",
+        "vernacularName": "Châtaignier commun",
         "language": "fr"
       },
       {
+        "vernacularName": "Chataignier",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Castanheiro",
+        "language": "pt"
+      },
+      {
         "vernacularName": "Castagno europeo",
-        "language": "it",
-        
+        "language": "it"        
       },
       {
         "vernacularName": "Castagno comune",
@@ -2432,13 +2426,11 @@ export const deciduousAndEvergreenTrees2 = [
     "names": [
       {
         "vernacularName": "Hänge-Birke",
-        "language": "de",
-        
+        "language": "de"        
       },
       {
         "vernacularName": "Silver Birch",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "Common Birch",
@@ -2458,22 +2450,23 @@ export const deciduousAndEvergreenTrees2 = [
       },
       {
         "vernacularName": "Abedul",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
         "vernacularName": "Bouleau pendant",
-        "language": "fr",
-        
+        "language": "fr"        
       },
       {
         "vernacularName": "Bouleau verruqueux",
         "language": "fr"
       },
       {
+        "vernacularName": "Vidoeiro-branco",
+        "language": "pt"
+      },
+      {
         "vernacularName": "Betulla verrucosa",
-        "language": "it",
-        
+        "language": "it"        
       }
     ],
     "taxonomy": {
@@ -3100,13 +3093,12 @@ export const deciduousAndEvergreenTrees2 = [
     ],
     "names": [
       {
-        "vernacularName": "Gemeine Rosskastanie",
-        "language": "de",
-        
-      },
-      {
         "vernacularName": "Gewöhnliche Rosskastanie",
         "language": "de"
+      },
+      {
+        "vernacularName": "Gemeine Rosskastanie",
+        "language": "de"        
       },
       {
         "vernacularName": "Rosskastanie",
@@ -3117,48 +3109,44 @@ export const deciduousAndEvergreenTrees2 = [
         "language": "de"
       },
       {
-        "vernacularName": "European Horse-chestnut",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "European Horse chestnut",
-        "language": "en"
-      },
-      {
         "vernacularName": "Horse-chestnut",
         "language": "en"
       },
       {
-        "vernacularName": "White Horse Chestnut",
-        "language": "en"
+        "vernacularName": "European Horse-chestnut",
+        "language": "en"        
       },
       {
-        "vernacularName": "common horse chestnut",
+        "vernacularName": "White Horse Chestnut",
         "language": "en"
-      },
+      },,
       {
         "vernacularName": "horse chestnut",
         "language": "en"
       },
       {
         "vernacularName": "castaño de Indias",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
-        "vernacularName": "Marronnier d'Inde, Marronnier commun",
-        "language": "fr",
-        
+        "vernacularName": "Marronnier d'Inde",
+        "language": "fr"        
+      },
+      {
+        "vernacularName": "Marronnier commun",
+        "language": "fr"        
       },
       {
         "vernacularName": "Marronnier",
         "language": "fr"
       },
       {
+        "vernacularName": "Castanheiro-da-índia",
+        "language": "pt"
+      },
+      {
         "vernacularName": "castagna amara",
-        "language": "it",
-        
+        "language": "it"        
       },
       {
         "vernacularName": "castagne di cavalle",
@@ -4235,8 +4223,7 @@ export const deciduousAndEvergreenTrees2 = [
     "names": [
       {
         "vernacularName": "Silberakazie",
-        "language": "de",
-        
+        "language": "de"        
       },
       {
         "vernacularName": "Mimose",
@@ -4248,11 +4235,10 @@ export const deciduousAndEvergreenTrees2 = [
       },
       {
         "vernacularName": "Silver Wattle",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
-        "vernacularName": "Aroma",
+        "vernacularName": "Blue Wattle",
         "language": "en"
       },
       {
@@ -4261,13 +4247,23 @@ export const deciduousAndEvergreenTrees2 = [
       },
       {
         "vernacularName": "mimosa",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
-        "vernacularName": "Mimosa argenté, Mimosa des fleuristes, Mimosa de Bormes",
-        "language": "fr",
-        
+        "vernacularName": "mimosa",
+        "language": "pt" 
+      },
+      {
+        "vernacularName": "Mimosa argenté",
+        "language": "fr"        
+      },
+      {
+        "vernacularName": "Mimosa des fleuristes",
+        "language": "fr"        
+      },
+      {
+        "vernacularName": "Mimosa de Bormes",
+        "language": "fr"        
       },
       {
         "vernacularName": "Acacia Blanc",
@@ -4275,8 +4271,7 @@ export const deciduousAndEvergreenTrees2 = [
       },
       {
         "vernacularName": "acacia bianca",
-        "language": "it",
-        
+        "language": "it"        
       }
     ],
     "taxonomy": {

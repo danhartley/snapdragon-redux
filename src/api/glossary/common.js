@@ -90,11 +90,6 @@ export const commmon = [
         wiki: 'https://en.wikipedia.org/wiki/Trophic_level'
     },
     {
-        term: 'Deimatic behaviour',
-        definition: 'Pattern of bluffing behaviour in an animal that lacks strong defences, such as conspicuous eyespots.',
-        wiki: 'https://en.wikipedia.org/wiki/Deimatic_behaviour'
-    },
-    {
         term: 'Sexual dimorphism',
         definition: 'Condition where the two sexes of the same species (many animals, some plants) exhibit different characteristics beyond differences in their sexual organs.',
         wiki: 'https://en.wikipedia.org/wiki/Sexual_dimorphism'
@@ -102,16 +97,6 @@ export const commmon = [
     {
         term: 'Conspecific',
         definition: 'Belonging to the same species.'
-    },
-    {
-        term: 'Monandrous (animals)',
-        definition: 'Females has one mate at a time.',
-        wiki: 'https://en.wikipedia.org/wiki/Monandrous'
-    },
-    {
-        term: 'Monandrous (plants)',
-        definition: 'Having  a single stamen.',
-        wiki: 'https://en.wikipedia.org/wiki/Monandrous'
     },
     {
         term: 'Myrmecophily',
@@ -131,5 +116,10 @@ export const commmon = [
     {
         term: 'Filiform',
         definition: 'Thread-like.'
+    },
+    {
+        term: "Dormancy",
+        definition: "Period in an organism's life cycle when growth, development, and (in animals) physical activity are temporarily stopped.",
+        wiki: "https://en.wikipedia.org/wiki/Dormancy",
     },
 ];

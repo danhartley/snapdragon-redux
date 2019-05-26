@@ -78,12 +78,32 @@ export const weeds = [
           "language": "en"
         },
         {
-          "vernacularName": "common mouse-ear chickweed",
-          "language": "en"
+          "vernacularName": "Gewöhnliches Hornkraut",
+          "language": "de"
         },
         {
-          "vernacularName": "Common mouse-ear chickweed",
-          "language": "en"
+          "vernacularName": "Gemeines Hornkraut",
+          "language": "de"
+        },
+        {
+          "vernacularName": "céraiste commun",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "céraiste des fontaines",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "merusa",
+          "language": "es"
+        },
+        {
+          "vernacularName": "oreja de ratón",
+          "language": "es"
+        },
+        {
+          "vernacularName": "orelha–de-rato-vulgar",
+          "language": "pt"
         },
       ],
       "taxonomy": {
@@ -279,6 +299,10 @@ export const weeds = [
         {
           "vernacularName": "grama",
           "language": "es"
+        },
+        {
+          "vernacularName": "grama-francesa",
+          "language": "pt"
         },
       ],
       "taxonomy": {
@@ -951,34 +975,36 @@ export const weeds = [
       "names": [
         {
           "vernacularName": "Hedge Bindweed",
-          "language": "en",
-          
+          "language": "en"          
         },
         {
-          "vernacularName": "Larger Bindweed",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "Rutland beauty",
+          "language": "en"
         },
         {
-          "vernacularName": "Hedge Bindweed",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "bugle vine",
+          "language": "en"
         },
         {
-          "vernacularName": "hedge false bindweed",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "heavenly trumpets",
+          "language": "en"
         },
         {
-          "vernacularName": "hedge false bindweed",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "granny-pop-out-of-bed",
+          "language": "en"
         },
         {
-          "vernacularName": "Hedge false bindweed",
-          "language": "en",
-          "eol_preferred": false
-        }
+          "vernacularName": "Echte Zaunwinde",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Liseron des haies",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Corriola-das-sebes",
+          "language": "pt"
+        },
       ],
       "taxonomy": {
         "usageKey": 2928441,
@@ -1171,6 +1197,10 @@ export const weeds = [
           "language": "en"
         },
         {
+          "vernacularName": "dactyle aggloméré",
+          "language": "fr"
+        },
+        {
           "vernacularName": "Dáctilo",
           "language": "pt"
         },
@@ -1310,29 +1340,64 @@ export const weeds = [
       ],
       "names": [
         {
+          "vernacularName": "Ground Elder",
+          "language": "en"          
+        },
+        {
           "vernacularName": "Ground-Elder",
-          "language": "en",
-          
+          "language": "en"          
+        },
+        {
+          "vernacularName": "Giersch",
+          "language": "de"
+        },
+        {
+          "vernacularName": "Podagrakraut",
+          "language": "de"
         },
         {
           "vernacularName": "Gewöhnlicher Giersch",
-          "language": "de",
-          "eol_preferred": false
+          "language": "de"
         },
         {
-          "vernacularName": "bishop's goutweed",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "pie de cabra",
+          "language": "es"
         },
         {
-          "vernacularName": "bishop's goutweed",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "podagraria",
+          "language": "es"
         },
         {
-          "vernacularName": "Bishop's goutweed",
-          "language": "en",
-          "eol_preferred": false
+          "vernacularName": "pequena-angélica",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "angélica menor",
+          "language": "pt"
+        },
+        {
+          "vernacularName": "Égopode podagraire",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "Herbe aux goutteux",
+          "language": "fr"
+        },
+        {
+          "vernacularName": "yerba de San Gerardo",
+          "language": "es"
+        },
+        {
+          "vernacularName": "Herb Gerard",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Bishop's Weed",
+          "language": "en"
+        },
+        {
+          "vernacularName": "Goutweed",
+          "language": "en"
         }
       ],
       "taxonomy": {

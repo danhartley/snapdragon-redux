@@ -18,6 +18,11 @@
     display: inline-block;
 }
 
+.traits-count-badge {
+  min-width: 1rem;
+  min-height: 1rem;
+}
+
 /* SPECIES HEADER
 
 .question-container {

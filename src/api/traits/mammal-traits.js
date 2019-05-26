@@ -62,7 +62,7 @@ const getTraits = SD => {
         { name: SD.name.GESTATION, value: '38-39d' },
         { name: SD.name.WEANING, value: '5-7w' },
         { name: SD.name.MATURITY, value: '6-7m' },
-        { name: SD.name.BEHAVIOUR, value: SD.behaviour.ALTRICIAL },
+        { name: SD.name.BEHAVIOUR, value: `${SD.behaviour.ALTRICIAL}, ${SD.behaviour.HOARDING}` },
         { name: SD.name.DIET, value: SD.diet.OMNIVORE },
         { name: SD.role.PREY, value: `Martes martes, Felis silvestris`, type: SD.symbiosis.PREDATION },
         { name: SD.role.PREY, value: `Mustela erminea`, type: SD.symbiosis.PREDATION },
@@ -74,7 +74,6 @@ const getTraits = SD => {
         { name: SD.role.HERBIVORE, value: `Castanea, Fungi`, type: SD.symbiosis.COMMENSALISM },
         { name: SD.name.OCCUPANT, value: `Pinus sylvestris, Picea abies`, type: SD.symbiosis.COMMENSALISM },
         { name: SD.name.OCCUPANT, value: `Pinus sibirica`, type: SD.symbiosis.COMMENSALISM },
-        { name: SD.name.BEHAVIOUR, value: SD.behaviour.HOARDING },
     ] },
     { name: 'Oryctolagus cuniculus',
     symbionts: [

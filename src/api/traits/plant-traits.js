@@ -24,9 +24,6 @@ export const getTraits = SD => {
             { name: SD.name.LONGEVITY, value: `${SD.longevity.PERENNIAL}` },
             { name: SD.name.LEAF_EDGE, value: `${SD.leafEdge.SMOOTH}` },
         ] },
-        { name: 'Daucus carota', traits: [
-            { name: SD.name.HOW_EDIBLE, value: SD.howEdible.EDIBLE },
-        ] },
         { name: 'Pastinaca sativa', traits: [
             { name: SD.name.HOW_EDIBLE, value: SD.howEdible.EDIBLE },
         ] },
@@ -67,14 +64,14 @@ export const getTraits = SD => {
         ] },
         { name: 'Daucus carota', 
         symbionts: [ 
-            { id: 'Odontota dorsalis' }
+            { id: 'Chalara elegans' }, { id: 'Rhizoctonia solani'}, { id: 'Fusarium'}
         ],
         traits: [
             { name: SD.role.HOST, value: 'Chalara elegans', description: 'Black root rot', type: SD.symbiosis.PARASITISM },
             { name: SD.role.HOST, value: 'Rhizoctonia solani', description: 'Crown rot', type: SD.symbiosis.PARASITISM },
             { name: SD.role.HOST, value: 'Fusarium', description: 'Fusarium dry rot', type: SD.symbiosis.PARASITISM },
-            { name: SD.name.USAGE, value: SD.usage.FOOD },
-            { name: SD.name.USAGE, value: SD.usage.DYING },
+            { name: SD.name.USAGE, value: `${SD.usage.FOOD}, ${SD.usage.DYING}` },
+            { name: SD.name.HOW_EDIBLE, value: SD.howEdible.EDIBLE },
         ] },
         { name: 'Bellis perennis',
         traits: [
@@ -118,10 +115,7 @@ export const getTraits = SD => {
             {}
         ], 
         traits: [
-            { name: SD.name.PHYSIOLOGY, value: SD.physiology.C3_CARBON_FIXATION },
-            { name: SD.name.PHYSIOLOGY, value: SD.physiology.HERBACEOUS },
-            { name: SD.name.LONGEVITY, value: `${SD.longevity.PERENNIAL}` },
-            { name: SD.role.RUDERAL, value: 'Everywhere' },
+            { name: SD.name.PHYSIOLOGY, value: SD.physiology.MYCORRHIZAL },
         ] },
     ];
 };
@@ -129,10 +123,10 @@ export const getTraits = SD => {
 export const getPlantTraits = enums => {
     const SD = enums && Object.keys(enums).length ? enums : traitEnums.enums;
     const traits = getTraits(SD);
-    traits.forEach(species => {
-        if(!species.traits.find(trait => trait.name === SD.name.TROPHIC_LEVEL)) {
-            species.traits.push({ name: SD.name.TROPHIC_LEVEL, value: SD.trophicLevel.PRIMARY_PRODUCER })
-        }
-    });
+    // traits.forEach(species => {
+    //     if(!species.traits.find(trait => trait.name === SD.name.TROPHIC_LEVEL)) {
+    //         species.traits.push({ name: SD.name.TROPHIC_LEVEL, value: SD.trophicLevel.PRIMARY_PRODUCER })
+    //     }
+    // });
     return traits;
 };

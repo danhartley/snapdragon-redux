@@ -306,7 +306,7 @@ export const english = {
         ALKALINE: 'Alkaline',
         NEUTRAL: "Neutral"
     },
-    rank: {},
+    // rank: {},
     colour: {
         help: 'Which colour best describes this species?',
         WHITE: "White",
@@ -442,6 +442,7 @@ export const english = {
         PARASITISM: 'Parasitism',
         HERBIVORY: 'Herbivory',        
         COMPETITION: 'Competition',
+        MYCORRHIZAL: 'Mycorrhizal'
     },
     trophicLevel: {
         help: 'What is the trophic level or this species?',
@@ -708,7 +709,9 @@ export const english = {
     physiology: {
         C3_CARBON_FIXATION: 'C3 carbon fixation',
         NITROGEN_FIXING: 'Nitrogen fixing',
-        HERBACEOUS: 'Herbaceous'
+        HERBACEOUS: 'Herbaceous',
+        MYCORRHIZAL: 'Mycorrhizal',
+        DORMANCY: 'Dormancy'
     },
     ecology: {
         DIGGING: 'Digging', 
