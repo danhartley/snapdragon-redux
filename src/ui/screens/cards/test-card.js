@@ -1,11 +1,17 @@
+import * as R from 'ramda';
+
+import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
-import { renderTraitCard } from 'ui/screens/cards/trait-card';
+import { renderTraitCard, getBonusQuestion } from 'ui/screens/cards/trait-card';
 import { renderTemplate } from 'ui/helpers/templating';
+import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 
 import testCardTemplate from 'ui/screens/cards/test-card-template.html';
+
+let isTraitCard = true;
 
 export const renderTestCardTemplate = (collection, context) => {
 
@@ -93,9 +99,30 @@ export const renderTestCardTemplate = (collection, context) => {
     });
 
     const traitCardLink = document.querySelector('.js-traits-icon');
-          traitCardLink.addEventListener('click', () => {
+
+    const layout = store.getState().layout;
+    
+    const multichoices = [ 'species-scientifics', 'species-vernaculars', 'epithet', 'definition', 'family-strips' ];
+
+    if(R.contains(layout.screens[1].name, multichoices)) {
+        document.querySelector('.traits-icon-container').classList.remove('hide-important');
+    }
+
+    const { bonus } = getBonusQuestion(collection.nextItem || {}, []);
+
+    if(bonus.typedItemTraits.length === 0) {
+        traitCardLink.style.display = 'none';
+    }
+
+    traitCardLink.addEventListener('click', () => {
+        if(isTraitCard) {            
             renderTraitCard(collection.nextItem);
-          });
+            isTraitCard = false;
+        } else {                  
+            renderMultiStrips(collection);
+            isTraitCard = true;
+        }
+    });
 
     const testContentParent = document.querySelector('.js-test-card-content');
 

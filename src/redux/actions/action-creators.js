@@ -15,6 +15,7 @@ const changeLessonPlans = makeActionCreator(types.CHANGE_LESSON_PLANS);
 const changeLessonPlan = makeActionCreator(types.CHANGE_LESSON_PLAN);
 const nextLesson = makeActionCreator(types.NEXT_LESSON);
 const updateScore = makeActionCreator(types.UPDATE_SCORE);
+const updateTraitScore = makeActionCreator(types.UPDATE_TRAIT_SCORE);
 const nextLayout = makeActionCreator(types.NEXT_LAYOUT);
 const nexItem = makeActionCreator(types.NEXT_ITEM);
 const endRevision = makeActionCreator(types.END_REVISION);
@@ -36,6 +37,7 @@ const boundchangeLessonPlan = data => store.dispatch(changeLessonPlan(data));
 const boundchangeLessonPlans = data => store.dispatch(changeLessonPlans(data));
 const boundNextLesson = data => store.dispatch(nextLesson(data));
 const boundUpdateScore = data => store.dispatch(updateScore(data));
+const boundUpdateTraitScore = data => store.dispatch(updateTraitScore(data));
 const boundNextLayout = data => store.dispatch(nextLayout(data));
 const boundNextItem = data => store.dispatch(nexItem(data,{delay:500}));
 const boundEndRevision = data => store.dispatch(endRevision(data));
@@ -58,6 +60,7 @@ export const actions = {
     boundchangeLessonPlan,
     boundNextLesson,
     boundUpdateScore,
+    boundUpdateTraitScore,
     boundNextItem,
     boundNextLayout,
     boundEndRevision,

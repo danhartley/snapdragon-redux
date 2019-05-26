@@ -13,6 +13,7 @@ const NEW_COLLECTION = '[NEW_COLLECTION] New collection';
 const UPDATE_COLLECTION = '[UPDATE_COLLECTION] Change collection';
 
 const UPDATE_SCORE = '[UPDATE_SCORE] Check user answer and update running score';
+const UPDATE_TRAIT_SCORE = '[UPDATE_TRAIT_SCORE] Check user answer and update running score';
 const END_REVISION = '[END_REVISION] Revision complete';
 const UPDATE_HISTORY = '[UPDATE_HISTORY] Copy round score to history';
 const UPDATE_COLLECTION_ITEMS = '[UPDATE_COLLECTION_ITEMS] Change collection items';
@@ -29,6 +30,7 @@ export const types = {
     NEXT_LAYOUT,
     NEXT_ITEM,
     UPDATE_SCORE,
+    UPDATE_TRAIT_SCORE,
     END_REVISION,
     UPDATE_HISTORY,
     NEW_COLLECTION,

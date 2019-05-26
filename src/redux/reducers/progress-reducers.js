@@ -34,7 +34,7 @@ export const counter = (state = null, action) => {
 export const score = (state = R.clone(progressState.score), action) => {
     switch(action.type) {
         case types.UPDATE_SCORE:
-
+        
             const score = { ...state, ...action.data };
             
             score.totalPoints = score.totalPoints || 0;
@@ -79,6 +79,17 @@ export const score = (state = R.clone(progressState.score), action) => {
         case types.NEXT_LEVEL:
         case types.UPDATE_COLLECTION:
             return { ...progressState.score, ...{ fails: [], passes: []} };
+        case types.UPDATE_TRAIT_SCORE:
+            const bonusScores = state.bonusScores || [];
+            bonusScores.push(
+                {
+                    id: action.data.itemId,
+                    name: action.data.binomial,
+                    success: action.data.success,
+                    guid: action.data.guid
+                }
+            );
+            return { ...state, bonusScores: bonusScores };
         default:
             return state;
     }       

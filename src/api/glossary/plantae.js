@@ -337,8 +337,18 @@ export const plantae = [
         wiki: "https://en.wikipedia.org/wiki/Supertramp_(ecology)",
     },
     {
+        term: "Capsule",
+        definition: "A type of simple, dry, though rarely fleshy dehiscent fruit produced by many species of angiosperms.",
+        wiki: "https://en.wikipedia.org/wiki/Capsule_(fruit)",
+    },
+    {
         term: "Allelopathy",
         definition: "Biological phenomenon by which an organism produces biochemicals that influence germination, growth, survival, and reproduction of other organisms.",
         wiki: "https://en.wikipedia.org/wiki/Allelopathy",
+    },
+    {
+        term: 'Monandrous (plants)',
+        definition: 'Having  a single stamen.',
+        wiki: 'https://en.wikipedia.org/wiki/Monandrous'
     },
 ];

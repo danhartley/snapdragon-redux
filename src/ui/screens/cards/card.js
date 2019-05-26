@@ -15,8 +15,9 @@ import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/ima
 import { renderInatDataBox } from 'ui/screens/common/inat-box';
 import { renderCalendar } from 'ui/screens/common/calendar';
 import { renderTaxaBox } from 'ui/screens/common/taxa-box';
-import cardTemplate from 'ui/screens/cards/card-template.html';
 import { renderBadge } from 'ui/screens/common/badge';
+
+import cardTemplate from 'ui/screens/cards/card-template.html';
 
 export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, isInCarousel = true) => {
 

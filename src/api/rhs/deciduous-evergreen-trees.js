@@ -438,10 +438,6 @@ export const deciduousAndEvergreenTrees = [
         "language": "en"
       },
       {
-        "vernacularName": "European mountain ash",
-        "language": "en"
-      },
-      {
         "vernacularName": "Rowan",
         "language": "en"
       },
@@ -464,17 +460,16 @@ export const deciduousAndEvergreenTrees = [
         
       },
       {
-        "vernacularName": "Sorbier des oiseleurs, Sorbier sauvage",
+        "vernacularName": "Sorbier sauvage",
         "language": "fr"
       },
       {
-        "vernacularName": "Sorbo degli uccellatori",
-        "language": "it",
-        
+        "vernacularName": "Tramazeira",
+        "language": "pt"
       },
       {
-        "vernacularName": "sorbo degli uccelatori",
-        "language": "it"
+        "vernacularName": "Sorbo degli uccellatori",
+        "language": "it"        
       },
       {
         "vernacularName": "sorbo selvatico",
@@ -833,13 +828,11 @@ export const deciduousAndEvergreenTrees = [
     "names": [
       {
         "vernacularName": "Silber-Weide",
-        "language": "de",
-        
+        "language": "de"        
       },
       {
         "vernacularName": "white willow",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "golden willow",
@@ -847,20 +840,18 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "sauce blanco",
-        "language": "es",
-        
+        "language": "es"        
+      },
+      {
+        "vernacularName": "Salgueiro-branco",
+        "language": "pt"  
       },
       {
         "vernacularName": "Saule blanc",
-        "language": "fr",
-        
+        "language": "fr"        
       },
       {
         "vernacularName": "Saule Amarine",
-        "language": "fr"
-      },
-      {
-        "vernacularName": "Saule blanc, Saule commun",
         "language": "fr"
       },
       {
@@ -869,8 +860,7 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "Salice comune",
-        "language": "it",
-        
+        "language": "it"        
       }
     ],
     "taxonomy": {
@@ -2012,8 +2002,7 @@ export const deciduousAndEvergreenTrees = [
     "names": [
       {
         "vernacularName": "Kirschpflaume",
-        "language": "de",
-        
+        "language": "de"        
       },
       {
         "vernacularName": "cherry plum",
@@ -2026,13 +2015,36 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "Prunier-cerise",
-        "language": "fr",
-        
+        "language": "fr"        
       },
       {
-        "vernacularName": "Prunier myrobolan, Myrobolan",
+        "vernacularName": "Prunier myrobolan",
         "language": "fr"
-      }
+      },
+      {
+        "vernacularName": "Myrobolan",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Abrunheiro-dos-jardins",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Ameixoeira-de-jardim",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "ciruelo mirobolano",
+        "language": "es"
+      },
+      {
+        "vernacularName": "ciruelo-cerezo",
+        "language": "es"
+      },
+      {
+        "vernacularName": "ciruelo de jardín",
+        "language": "es"
+      },
     ],
     "taxonomy": {
       "kingdom": "Plantae",
@@ -2315,25 +2327,19 @@ export const deciduousAndEvergreenTrees = [
     ],
     "names": [
       {
-        "vernacularName": "Schwarz-Pappel",
-        "language": "de",
-        
+        "vernacularName": "Schwarzpappel",
+        "language": "de"        
       },
       {
-        "vernacularName": "Säulen-Pappel",
-        "language": "de"
-      },
-      {
-        "vernacularName": "Säulenpappel oder Schwarzpappel",
+        "vernacularName": "SäulenPappel",
         "language": "de"
       },
       {
         "vernacularName": "black poplar",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
-        "vernacularName": "Balm of Gilead (USA)",
+        "vernacularName": "Balm of Gilead",
         "language": "en"
       },
       {
@@ -2341,29 +2347,23 @@ export const deciduousAndEvergreenTrees = [
         "language": "en"
       },
       {
-        "vernacularName": "Lombardy's poplar",
-        "language": "en"
-      },
-      {
         "vernacularName": "black cottonwood",
         "language": "en"
       },
       {
-        "vernacularName": "Populus nigra",
-        "language": "es",
-        
+        "vernacularName": "Álamo negro",
+        "language": "es"        
       },
       {
-        "vernacularName": "alamo negro",
-        "language": "es"
+        "vernacularName": "Álamo-negro",
+        "language": "pt"
       },
       {
         "vernacularName": "Peuplier noir",
-        "language": "fr",
-        
+        "language": "fr"        
       },
       {
-        "vernacularName": "Peuplier commun noir, Peuplier noir",
+        "vernacularName": "Peuplier commun noir",
         "language": "fr"
       },
       {
@@ -2372,8 +2372,7 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "albanu chiuppa",
-        "language": "it",
-        
+        "language": "it"        
       },
       {
         "vernacularName": "pioppo nero",
@@ -2669,9 +2668,8 @@ export const deciduousAndEvergreenTrees = [
     ],
     "names": [
       {
-        "vernacularName": "olive",
-        "language": "de",
-        
+        "vernacularName": "Olivenbaum",
+        "language": "de"        
       },
       {
         "vernacularName": "Ölbaum",
@@ -2695,15 +2693,7 @@ export const deciduousAndEvergreenTrees = [
         "language": "en"
       },
       {
-        "vernacularName": "Olive tree (cultivated varieties)",
-        "language": "en"
-      },
-      {
         "vernacularName": "True Olive",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Wild olive tree (wild varieties)",
         "language": "en"
       },
       {
@@ -2712,21 +2702,11 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "Olivo",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
-        "vernacularName": "Aceituna",
-        "language": "es"
-      },
-      {
-        "vernacularName": "Oliva",
-        "language": "es"
-      },
-      {
-        "vernacularName": "olive",
-        "language": "fr",
-        
+        "vernacularName": "Olivier",
+        "language": "fr"        
       },
       {
         "vernacularName": "Olivier d'Europe",
@@ -2734,12 +2714,7 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "Olivo",
-        "language": "it",
-        
-      },
-      {
-        "vernacularName": "Oliva",
-        "language": "it"
+        "language": "it"        
       },
       {
         "vernacularName": "Ulivo",
@@ -2747,11 +2722,10 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "Oliveira",
-        "language": "pt",
-        
+        "language": "pt"        
       },
       {
-        "vernacularName": "Azeitona",
+        "vernacularName": "zambujeiro",
         "language": "pt"
       }
     ],
@@ -3116,12 +3090,7 @@ export const deciduousAndEvergreenTrees = [
     "names": [
       {
         "vernacularName": "Holzapfel",
-        "language": "de",
-        
-      },
-      {
-        "vernacularName": "Holz-Apfel",
-        "language": "de"
+        "language": "de"        
       },
       {
         "vernacularName": "Wild-Apfel",
@@ -3129,8 +3098,7 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "Crab Apple",
-        "language": "en",
-        
+        "language": "en"        
       },
       {
         "vernacularName": "Common Crabapple",
@@ -3141,51 +3109,32 @@ export const deciduousAndEvergreenTrees = [
         "language": "en"
       },
       {
-        "vernacularName": "European crabapple",
-        "language": "en"
-      },
-      {
         "vernacularName": "Pommier sauvage",
         "language": "en"
-      },
-      {
-        "vernacularName": "high mallow",
-        "language": "en"
-      },
-      {
-        "vernacularName": "mallow",
-        "language": "en"
-      },
-      {
-        "vernacularName": "Malus sylvestris",
-        "language": "es",
-        
-      },
-      {
-        "vernacularName": "manzano montesco",
-        "language": "es"
       },
       {
         "vernacularName": "manzano silvestre",
         "language": "es"
       },
       {
+        "vernacularName": "manzano montesco",
+        "language": "es"
+      },
+      {
         "vernacularName": "Pomièr",
-        "language": "fr",
-        
+        "language": "fr"        
       },
       {
         "vernacularName": "Pommier sauvage",
         "language": "fr"
       },
       {
-        "vernacularName": "Pommier sauvage, Boquettier",
+        "vernacularName": "Boquettier",
         "language": "fr"
       },
       {
-        "vernacularName": "Malus sylvestris",
-        "language": "it",
-        
+        "vernacularName": "Macieira brava",
+        "language": "pt"
       },
       {
         "vernacularName": "Melo selvatico",
@@ -4126,18 +4075,12 @@ export const deciduousAndEvergreenTrees = [
     ],
     "names": [
       {
-        "vernacularName": "Manna-Esche",
-        "language": "de",
-        
+        "vernacularName": "MannaEsche",
+        "language": "de"        
       },
       {
         "vernacularName": "manna ash",
-        "language": "en",
-        
-      },
-      {
-        "vernacularName": "The Manna Ash",
-        "language": "en"
+        "language": "en"        
       },
       {
         "vernacularName": "flowering ash",
@@ -4145,17 +4088,23 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "Fresno de flor",
-        "language": "es",
-        
+        "language": "es"        
       },
       {
         "vernacularName": "Mana",
         "language": "es"
       },
       {
-        "vernacularName": "Orne, Frêne à fleurs, Orne d'Europe",
-        "language": "fr",
-        
+        "vernacularName": "freixo de flor",
+        "language": "pt"
+      },
+      {
+        "vernacularName": "Orne",
+        "language": "fr"        
+      },
+      {
+        "vernacularName": "Orne d'Europe",
+        "language": "fr"        
       },
       {
         "vernacularName": "Frêne à fleurs",
@@ -4163,8 +4112,7 @@ export const deciduousAndEvergreenTrees = [
       },
       {
         "vernacularName": "orno",
-        "language": "it",
-        
+        "language": "it"        
       },
       {
         "vernacularName": "Frassino da manna",

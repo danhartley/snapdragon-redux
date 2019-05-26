@@ -761,7 +761,7 @@ a.dropdown-item {
   color: var(--snap-iconic-icon-header);
 }
 
-.traits-icon {
+.traits-icon-container {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -769,10 +769,11 @@ a.dropdown-item {
   margin-right: 1rem;
 }
 
-.traits-icon > div {
+.traits-icon {
   box-shadow: 0 2px 8px rgba(0,0,0,.2);
   padding: 0 .75rem;
   cursor: pointer;
+  font-size: 1.5rem;
 }
 
 .block-container {
@@ -1367,7 +1368,7 @@ label.btn.btn-secondary .lesson-icon {
   padding: 0.4rem 0.4rem 0.3rem 0.4rem;
 }
 
-.question-container {
+/* .question-container {
   color: var(--snap-text-medium-light);
   border-radius: 0.2rem;
 }
@@ -1375,7 +1376,7 @@ label.btn.btn-secondary .lesson-icon {
 .question-container > span:nth-child(2) {
   margin: 0.5rem 0 0 0;
   display: block;
-}
+} */
 
 .question-images {
   display: grid;
@@ -1938,6 +1939,29 @@ a.collection-disabled {
 .summary-scores span:nth-child(2) {
   font-size: .8rem;
   vertical-align: super;
+}
+
+.trait-line {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.trait-line .small-icon {
+  font-size: 1rem !important;
+  margin: 0 !important;
+}
+
+.trait-icon, .trait-icon > span {
+  margin: 0 !important;
+}
+
+.trait-icon .iconic-taxa-categories-selected svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.trait-icon svg g g {
+  fill: var(--snap-link);
 }
 
 .home-container .snapdragon-tag .inat-widget span:nth-child(1) {

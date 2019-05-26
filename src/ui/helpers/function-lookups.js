@@ -12,7 +12,6 @@ import { renderSpeciesCollectionList } from 'ui/screens/lists/species-list';
 import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 import { renderCompleteText } from 'ui/screens/text-entry/text-complete';
 import { renderCultivarCard } from 'ui/screens/cards/cultivar-card';
-// import { renderWildcard } from 'ui/screens/cards/wildcard-card';
 import { renderMixedSpecimenQuestions } from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-questions';
 import { renderNonTaxonCardSpecimenTiles } from 'ui/screens/cards/non-taxon-card-specimen-tiles';
 import { renderMixedSpecimenQuestion } from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question';
@@ -43,7 +42,6 @@ const functions = [
     { name: 'non-taxon-card', func: renderNonTaxonCard },
     { name: 'text-complete', func: renderCompleteText },
     { name: 'cultivar-card', func: renderCultivarCard },
-    // { name: 'wildcard-card', func: renderWildcard },
     { name: 'wildcard-match', func: renderMultiStrips },
     { name: 'visual-match', func: renderMultiStrips },
     { name: 'trait-images', func: renderBonusSpecimenTiles },

@@ -149,4 +149,14 @@ export const animalia = [
         definition: 'The even-toed ungulates.',
         wiki: 'https://en.wikipedia.org/wiki/Even-toed_ungulate'
     },
+    {
+        term: 'Deimatic behaviour',
+        definition: 'Pattern of bluffing behaviour in an animal that lacks strong defences, such as conspicuous eyespots.',
+        wiki: 'https://en.wikipedia.org/wiki/Deimatic_behaviour'
+    },
+    {
+        term: 'Monandrous (animals)',
+        definition: 'Females has one mate at a time.',
+        wiki: 'https://en.wikipedia.org/wiki/Monandrous'
+    },
 ];

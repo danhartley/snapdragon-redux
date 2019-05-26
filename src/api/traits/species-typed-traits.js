@@ -67,5 +67,5 @@ export const getTypedTraitsForSpecies = (enums, item) => {
 
     const overrides = { question: 'Match the trait', help, trait };
 
-    return { question, answers, overrides };
+    return { question, answers, overrides, typedItemTraits };
 };  

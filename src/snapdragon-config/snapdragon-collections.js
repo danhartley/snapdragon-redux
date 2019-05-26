@@ -52,7 +52,7 @@ const snapdragonLichens = {
     name: 'Common Lichens',
     guide: {
         locationPlace: 'Common Lichens',
-        locationType: 'place',
+        locationType: 'taxon',
         place: {
             name: 'Snapdragon Lichens',
             id: 'any',
@@ -171,7 +171,7 @@ const snapdragonKitchenGarden = {
     name: 'Snapdragon Kitchen Garden', 
     guide: {
         locationPlace: 'Kitchen Garden',
-        locationType: 'place',
+        locationType: 'course',
         place: {
             name: 'Kitchen Garden',
             id: 'any',
@@ -351,7 +351,7 @@ const rhsTrees = {
     type: 'course',
     guide: {
         locationPlace: 'RHS Trees',
-        locationType: 'place',
+        locationType: 'course',
         place: {
             name: 'RHS Trees',
             id: 'any',
@@ -386,7 +386,7 @@ const rhsWeeds = {
     type: 'course',
     guide: {
         locationPlace: 'RHS Weeds',
-        locationType: 'place',
+        locationType: 'course',
         place: {
             name: 'RHS Weeds',
             id: 'any',
@@ -448,7 +448,7 @@ const snapdragonMushroomsEasternUSA = {
     name: 'Mushrooms Eastern USA',            
     guide: {
         locationPlace: 'Mushrooms Eastern USA',
-        locationType: 'place',
+        locationType: 'taxon',
         place: {
             name: 'Snapdragon Mushrooms Eastern USA',
             id: 'any',
@@ -490,7 +490,7 @@ const commonBritishBirds = {
     type: 'taxon',
     guide: {
         locationPlace: 'Common British Birds',
-        locationType: 'place',
+        locationType: 'taxon',
         place: {
             name: 'Snapdragon Common British Birds',
             id: 'any',
