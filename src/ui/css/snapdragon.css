@@ -1390,7 +1390,7 @@ label.btn.btn-secondary .lesson-icon {
   margin: 2rem 0 1rem 0;
 }
 
-/* .layer-container {
+.layer-container {
   cursor: pointer;
   background-size: cover;
   background-position: center;
@@ -1408,7 +1408,7 @@ label.btn.btn-secondary .lesson-icon {
 
 .layer > div {
   text-align: center;
-} */
+}
 
 .feature-label {
   color: var(--snap-green-feature-txt);

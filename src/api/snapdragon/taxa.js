@@ -4490,7 +4490,7 @@ export const taxa = [
         ],
         traits: [
             { name: SD.name.BEHAVIOUR, value: SD.active.NON_TERRITORIAL },
-            { name: SD.name.ROLE, value: SD.role.PIONEEER },
+            { name: SD.name.ROLE, value: SD.role.PIONEER },
             { name: SD.role.SYMBIOSIS, value: 'Tuber', type: SD.symbiosis.MYCORRHIZAL },
         ],
     },

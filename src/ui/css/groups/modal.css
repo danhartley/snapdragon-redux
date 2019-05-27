@@ -160,9 +160,9 @@
 }
 
 #cardModal .iconic-icon {
-    font-size: 2.4rem;
+    /* font-size: 2.4rem; */
     cursor: initial;
-    color: var(--snap-iconic-icon-header);
+    /* color: var(--snap-iconic-icon-header); */
 }
 
 #cardModal .modal-content .snapdragon-container {  

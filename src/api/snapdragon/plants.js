@@ -4272,6 +4272,10 @@ export const plants = [
         "wikiSearchTerm": true
       },
       {
+        "vernacularName": "Saint-Joseph's-wort",
+        "language": "en"
+      },
+      {
         "vernacularName": "common basil",
         "language": "en"
       },
@@ -12087,5 +12091,270 @@ export const plants = [
       "family": "Cistaceae"
     },
     "family": "Cistaceae"
+  },
+  {
+    "id": "49308900",
+    "name": "Taraxacum officinale",
+    "images": [
+      {
+        "title": "Loewenzahn Taraxacum officinale.jpg",
+        "rightsHolder": "Joe MiGo",
+        "source": "https://commons.wikimedia.org/wiki/File:Loewenzahn_Taraxacum_officinale.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "55/c3/ce/509.12504009.jpg"
+      },
+      {
+        "title": "File:GewÃ¶hnlicher LÃ¶wenzahn Taraxacum officinale agg. big.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Gew%C3%B6hnlicher_L%C3%B6wenzahn_Taraxacum_officinale_agg._big.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "56/07/81/509.141256.jpg"
+      },
+      {
+        "title": "Paardenbloemen.JPG",
+        "rightsHolder": "Onderwijsgek",
+        "source": "https://commons.wikimedia.org/wiki/File:Paardenbloemen.JPG",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "56/f5/73/509.18487228.jpg"
+      },
+      {
+        "title": "Dandelion (3483575184).jpg",
+        "rightsHolder": "Randi Hausken",
+        "source": "https://commons.wikimedia.org/wiki/File:Dandelion_(3483575184).jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "59/50/0e/509.29876615.jpg"
+      },
+      {
+        "title": "Taraxacum officinale 02.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Taraxacum_officinale_02.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "5a/3e/80/509.10348513.jpg"
+      },
+      {
+        "title": "Paardenbloemen.JPG",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Paardenbloemen.JPG",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "5b/f6/b3/509.18487228.jpg"
+      },
+      {
+        "rightsHolder": "Brian Gratwicke",
+        "source": "https://www.inaturalist.org/photos/437199",
+        "license": "http://creativecommons.org/licenses/by/4.0/",
+        "url": "3c/36/34/18.https___www_inaturalist_org_photos_437199.jpg"
+      },
+      {
+        "rightsHolder": "anro",
+        "source": "https://www.inaturalist.org/photos/5462809",
+        "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+        "url": "42/54/5e/18.https___www_inaturalist_org_photos_5462809.jpg"
+      },
+      {
+        "rightsHolder": "anro",
+        "source": "https://www.inaturalist.org/photos/5727754",
+        "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+        "url": "43/ee/9b/18.https___www_inaturalist_org_photos_5727754.jpg"
+      },
+      {
+        "title": "Loewenzahn Taraxacum officinale.jpg",
+        "rightsHolder": "Joe MiGo",
+        "source": "https://commons.wikimedia.org/wiki/File:Loewenzahn_Taraxacum_officinale.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "55/c3/ce/509.12504009.jpg"
+      },
+      {
+        "title": "File:GewÃ¶hnlicher LÃ¶wenzahn Taraxacum officinale agg. big.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Gew%C3%B6hnlicher_L%C3%B6wenzahn_Taraxacum_officinale_agg._big.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "56/07/81/509.141256.jpg"
+      }
+    ],
+    "names": [
+      {
+        "vernacularName": "dandelion",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Gewöhnlicher Löwenzahn",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Puschelkraut",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Pissenlit",
+        "language": "de"
+      },
+      {
+        "vernacularName": "dente di leon",
+        "language": "it"
+      },
+      {
+        "vernacularName": "diente de león",
+        "language": "es"
+      },
+      {
+        "vernacularName": "amargón",
+        "language": "es"
+      },
+      {
+        "vernacularName": "Dente-de-leão",
+        "language": "pt"
+      },
+    ],
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Tracheophyta",
+      "class": "Magnoliopsida",
+      "order": "Asterales",
+      "family": "Asteraceae"
+    },
+    "family": "Asteraceae"
+  },
+  {
+    "id": "819646",
+    "name": "Tussilago farfara",
+    "images": [
+      {
+        "title": "Tussilago farfara",
+        "rightsHolder": "Jrg Hempel",
+        "source": "https://www.flickr.com/photos/joerghempel/2995040682/",
+        "license": "http://creativecommons.org/licenses/by-sa/2.0/",
+        "url": "7f/39/9b/542.2995040682.jpg",
+        "photographer": {
+          "full_name": "<a href='http://www.flickr.com/photos/32023375@N06'>Jrg Hempel</a>",
+          "homepage": "http://www.flickr.com/photos/32023375@N06",
+          "role": "photographer"
+        }
+      },
+      {
+        "title": "Coltsfoot - Hestehov",
+        "rightsHolder": "Randi Hausken",
+        "source": "https://www.flickr.com/photos/randihausken/2387740240/",
+        "license": "http://creativecommons.org/licenses/by-sa/2.0/",
+        "url": "7e/eb/e0/542.2387740240.jpg",
+        "photographer": {
+          "full_name": "<a href='http://www.flickr.com/photos/46406832@N00'>Randi Hausken</a>",
+          "homepage": "http://www.flickr.com/photos/46406832@N00",
+          "role": "photographer"
+        }
+      },
+      {
+        "title": "n244_w1150",
+        "rightsHolder": "Biodiversity Heritage Library",
+        "source": "https://www.flickr.com/photos/biodivlibrary/6972230546/",
+        "license": "http://creativecommons.org/licenses/by/2.0/",
+        "url": "80/e3/7f/542.6972230546.jpg",
+        "photographer": {
+          "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+          "homepage": "http://www.flickr.com/photos/61021753@N02",
+          "role": "photographer"
+        }
+      },
+      {
+        "title": "Paiseleht.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Paiseleht.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "55/6a/ad/509.11027584.jpg"
+      },
+      {
+        "title": "Tussilago-farfara-huflattich.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Tussilago-farfara-huflattich.jpg",
+        "license": "http://creativecommons.org/licenses/by/3.0/",
+        "url": "56/1f/70/509.14706894.jpg"
+      },
+      {
+        "title": "20130401Huflattich Saarbruecken3.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:20130401Huflattich_Saarbruecken3.jpg",
+        "license": "http://creativecommons.org/licenses/publicdomain/",
+        "url": "58/81/8c/509.25514265.jpg"
+      },
+      {
+        "title": "File:Tussilago farfara - KÃ¶hlerâs Medizinal-Pflanzen-142.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Tussilago_farfara_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-142.jpg",
+        "license": "http://creativecommons.org/licenses/publicdomain/",
+        "url": "58/84/03/509.255476.jpg"
+      },
+      {
+        "title": "Huflattich-Schutthalde.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Huflattich-Schutthalde.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "59/92/8f/509.31492532.jpg"
+      },
+      {
+        "title": "20140319Tussilago farfara5.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:20140319Tussilago_farfara5.jpg",
+        "license": "http://creativecommons.org/licenses/publicdomain/",
+        "url": "59/a0/fc/509.31713189.jpg"
+      },
+      {
+        "title": "20140324Tussilago farfara3.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:20140324Tussilago_farfara3.jpg",
+        "license": "http://creativecommons.org/licenses/publicdomain/",
+        "url": "59/a5/74/509.31784999.jpg"
+      },
+      {
+        "title": "20140324Tussilago farfara4.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:20140324Tussilago_farfara4.jpg",
+        "license": "http://creativecommons.org/licenses/publicdomain/",
+        "url": "59/a5/75/509.31785107.jpg"
+      },
+      {
+        "title": "File:Colt's-foot (tussilago farfara) - geograph.org.uk - 744613.jpg",
+        "rightsHolder": "",
+        "source": "https://commons.wikimedia.org/wiki/File:Colt%27s-foot_(tussilago_farfara)_-_geograph.org.uk_-_744613.jpg",
+        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "url": "5a/f4/09/509.13410941.jpg"
+      }
+    ],
+    "names": [
+      {
+        "vernacularName": "Coltsfoot",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Huflattich",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Klein hoefblad",
+        "language": "en"
+      },
+      {
+        "vernacularName": "Tussilage",
+        "language": "fr"
+      },
+      {
+        "vernacularName": "Farfugio",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Paparacchio",
+        "language": "it"
+      },
+      {
+        "vernacularName": "Tossilaggine comune",
+        "language": "it"
+      }
+    ],
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Tracheophyta",
+      "class": "Magnoliopsida",
+      "order": "Asterales",
+      "family": "Asteraceae"
+    },
+    "family": "Asteraceae"
   }
 ];
