@@ -439,9 +439,9 @@ div.text-entry {
         right: 1rem;
     }
 
-    /* .test-card-container .layer {
+    .test-card-container .layer {
         font-size: 5rem;
-    }       */
+    }      
 
     .card-card {
         display: grid;

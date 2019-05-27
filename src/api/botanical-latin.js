@@ -710,4 +710,9 @@ export const epithets = [
         "en" : ["spot"],
         species: [ 'Coccinella septempunctata' ]      
     },
+    {
+        "latin" : ["tussis"],
+        "en" : ["cough"],
+        species: [ 'Tussilago farfara' ]      
+    },
 ];

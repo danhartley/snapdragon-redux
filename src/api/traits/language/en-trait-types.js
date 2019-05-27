@@ -126,7 +126,8 @@ export const english = {
         RIM: 'Rim',
         CENTRE: 'Centre',
 
-        POLLINATION: 'Pollination'
+        POLLINATION: 'Pollination',
+        PROPAGATION: 'Propagation'
     },
     howEdible : {
         help: 'How edible is this species?',
@@ -134,7 +135,8 @@ export const english = {
         EDIBLE : 'Edible',
         INEDIBLE : 'Inedible',
         POISONOUS : 'Poisonous',
-        DEADLY : 'Deadly'
+        DEADLY : 'Deadly',
+        TOXIC: 'Toxic'
     },
     habitat : {
         help: 'What is the habitat of this species?',
@@ -340,6 +342,8 @@ export const english = {
         DYING: 'Dying',
         BREWING: 'Brewing',
         FOOD: 'Food',
+        WINE: 'Wine',
+        COFFEE: 'Coffee',
         BIRDS_NEST: "Bird\'s nest",
         POISON: 'Poison',
         FODDER: 'Fodder',
@@ -583,7 +587,7 @@ export const english = {
         FOUNDATION: 'Foundation',
         SPECIALIST: 'Specialist',
         GENERALIST: 'Generalist',
-        PIONEEER: 'Pioneeer',
+        PIONEER: 'Pioneer',
         INVASIVE: 'Invasive',
         POLLINATOR: 'Pollinator',
         PREDATOR: 'Predator',

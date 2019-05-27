@@ -59,7 +59,7 @@ export const getTraits = SD => {
             { name: SD.name.FRUIT_TYPE, value: SD.fruitType.LEGUME} ,
             { name: SD.name.SEED_COUNT, value: '4-8' },
             { name: SD.name.PH_TOLERANCE, value: '4.6-8.2' },
-            { name: SD.name.ROLE, value: SD.role.PIONEEER },
+            { name: SD.name.ROLE, value: SD.role.PIONEER },
             { name: SD.name.USAGE, value: SD.usage.TIMBER },
         ] },
         { name: 'Daucus carota', 
@@ -116,8 +116,30 @@ export const getTraits = SD => {
         ], 
         traits: [
             { name: SD.name.PHYSIOLOGY, value: SD.physiology.MYCORRHIZAL },
-        ] },
-    ];
+        ] 
+    },
+    { name: 'Taraxacum officinale',
+        symbionts: [ 
+            
+        ], 
+        traits: [
+            { name: SD.name.LOOK_ALIKES, values: [ 'Tussilago farfara' ]},
+            { name: SD.name.ROLE, value: SD.role.PIONEER },
+            { name: SD.name.USAGE, value: `${SD.usage.MEDICINE}, ${SD.usage.FOOD}, ${SD.usage.COFFEE}, ${SD.usage.WINE}, ${SD.usage.DYING}` },
+        ] 
+    },
+    { name: 'Tussilago farfara',
+        symbionts: [ 
+            
+        ], 
+        traits: [
+            { name: SD.name.LOOK_ALIKES, values: [ 'Taraxacum officinale' ]},
+            { name: SD.name.PROPAGATION, value: [ `${SD.foodType.RHIZOMES}, ${SD.foodType.SEEDS}` ] },
+            { name: SD.name.USAGE, value: `${SD.usage.MEDICINE}` },
+            { name: SD.name.HOW_EDIBLE, value: SD.howEdible.TOXIC },
+        ] 
+    },
+  ];
 };
 
 export const getPlantTraits = enums => {

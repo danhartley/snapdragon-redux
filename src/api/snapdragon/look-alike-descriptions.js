@@ -83,4 +83,12 @@
             'The fruiting bodies emerge from the soil looking like white eggs with cap covered with numerous small white to yellow pyramid-shaped warts (remnants of the universal veil). At this stage there is a characteristic yellowish layer of skin under the veil. With age the cap changes from globose to hemispherical, and begins to show red.'  
         ]
     },
+    {
+        ids: ['Tussilago farfara', 'Taraxacum officinale'],
+        type: 'lookalike',
+        descriptions: [
+            'Flowers early spring. The leaves of colt\'s-foot appear after the flowers have set seed and wither and die in the early summer. The leaves have angular teeth on their margins.',
+            'Flowers late spring. Leaves appears before the flowers. Plant (stems) contains milky latex. The leaves are all basal, wide, and are oblanceolate, oblong, or obovate in shape.'
+        ]
+    }
 ];

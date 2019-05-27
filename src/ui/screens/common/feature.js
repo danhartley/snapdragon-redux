@@ -43,7 +43,7 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel)
 
     const setNumberOfRows = config.isLandscapeMode ? 10 : 4;
 
-    if(speciesTraits && speciesTraits.symbionts) {
+    if(speciesTraits && speciesTraits.symbionts && speciesTraits.symbionts.length > 0) {
 
         let symbionts ;
 
