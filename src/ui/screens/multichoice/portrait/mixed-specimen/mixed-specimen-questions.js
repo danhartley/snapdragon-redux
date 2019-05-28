@@ -53,12 +53,12 @@ export const renderMixedSpecimenQuestions = collection => {
 
     parent = document.querySelector('.js-species-card-images');
 
-    imageSlider({ config, images: utils.shuffleArray(images), parent, disableModal: true });
+    imageSlider({ config, images: utils.shuffleArray(images), parent, disableModal: true, identifier: 'mixed-specimens' });
 
     const continueLessonBtn = document.querySelector('.js-continue-lesson-btn');
     const boundScore = {};
 
-    document.querySelectorAll('.carousel-item .layer').forEach(img => {
+    document.querySelectorAll('#imageSlider_true_mixed-specimens .carousel-item .layer').forEach(img => {
         
         img.addEventListener('click', event => {
 
