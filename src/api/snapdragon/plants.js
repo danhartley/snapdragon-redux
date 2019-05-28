@@ -12342,5 +12342,338 @@ export const plants = [
       "family": "Asteraceae"
     },
     "family": "Asteraceae"
-  }
+  },
+  {
+  "id": "483849",
+  "name": "Lavandula stoechas",
+  "images": [
+    {
+      "title": "Lavendula stoechas.JPG",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Lavendula_stoechas.JPG",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "55/aa/1d/509.12147627.jpg"
+    },
+    {
+      "title": "Lavandula stoechas 3 (Corse).JPG",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Lavandula_stoechas_3_(Corse).JPG",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "55/d8/71/509.12759909.jpg"
+    },
+    {
+      "title": "Topped lavender02.jpg",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Topped_lavender02.jpg",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "56/b6/9e/509.173888.jpg"
+    },
+    {
+      "title": "Lavandula stoechas (topped lavender) Corsica, France.jpg",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Lavandula_stoechas_(topped_lavender)_Corsica,_France.jpg",
+      "license": "http://creativecommons.org/licenses/publicdomain/",
+      "url": "58/2f/9c/509.24413933.jpg"
+    },
+    {
+      "title": "Lavandula stoechas c.JPG",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Lavandula_stoechas_c.JPG",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "59/ac/2b/509.31958029.jpg"
+    },
+    {
+      "title": "Lavandula-stoechas-20080327.JPG",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Lavandula-stoechas-20080327.JPG",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "5f/cb/e7/509.3817366.jpg"
+    },
+    {
+      "title": "File:Lavande stÃ©chas.JPG",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Lavande_st%C3%A9chas.JPG",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "60/02/a4/509.3905297.jpg"
+    },
+    {
+      "title": "Lavandula stoechas.jpg",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Lavandula_stoechas.jpg",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "60/24/6d/509.39816.jpg"
+    },
+    {
+      "title": "Lavandula stoechas l.JPG",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Lavandula_stoechas_l.JPG",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "60/6a/a3/509.4058631.jpg"
+    },
+    {
+      "title": "Lavandula stoechas.006 - Monfrague.JPG",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Lavandula_stoechas.006_-_Monfrague.JPG",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "60/c5/b9/509.4203680.jpg"
+    },
+    {
+      "title": "File:Flore coloriÃ©e de poche du littoral mÃ©diterranÃ©en de GÃªnes Ã  Barcelone y compris la Corse (6244466478).jpg",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Flore_colori%C3%A9e_de_poche_du_littoral_m%C3%A9diterran%C3%A9en_de_G%C3%AAnes_%C3%A0_Barcelone_y_compris_la_Corse_(6244466478).jpg",
+      "license": "http://creativecommons.org/licenses/publicdomain/",
+      "url": "60/fe/99/509.42760568.jpg"
+    },
+    {
+      "title": "Schopf-Lavendel (Lavandula stoechas) (8153652410).jpg",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Schopf-Lavendel_(Lavandula_stoechas)_(8153652410).jpg",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "62/eb/be/509.47294022.jpg"
+    },
+    {
+      "title": "Starr 080117-1575 Lavandula stoechas.jpg",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Starr_080117-1575_Lavandula_stoechas.jpg",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "66/33/16/509.6167757.jpg"
+    },
+    {
+      "title": "Lavandula stoechas .jpg",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Lavandula_stoechas_.jpg",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "67/3c/5e/509.6448456.jpg"
+    }
+  ],
+  "names": [
+    {
+      "vernacularName": "French lavender",
+      "language": "en"
+    },
+    {
+      "vernacularName": "Spanish lavender",
+      "language": "en"
+    },
+    {
+      "vernacularName": "topped lavender",
+      "language": "en"
+    },
+    {
+      "vernacularName": "Cantueso",
+      "language": "es"
+    },
+    {
+      "vernacularName": "tomillo borriquero",
+      "language": "es"
+    },
+    {
+      "vernacularName": "Rosmaninho",
+      "language": "pt"
+    },
+    {
+      "vernacularName": "Schopf-lavendel",
+      "language": "de"
+    },
+    {
+      "vernacularName": "Lavanda selvatica",
+      "language": "it"
+    },
+    {
+      "vernacularName": "Steca",
+      "language": "it"
+    },
+    {
+      "vernacularName": "Stecaole",
+      "language": "it"
+    },
+    {
+      "vernacularName": "Stigadosso",
+      "language": "it"
+    },
+    {
+      "vernacularName": "Lavande à toupet",
+      "language": "fr"
+    },
+    {
+      "vernacularName": "Lavande papillon",
+      "language": "fr"
+    },
+    {
+      "vernacularName": "Lavande stéchade",
+      "language": "fr"
+    },
+    {
+      "vernacularName": "Lavande des îles d'Hyères",
+      "language": "fr"
+    },
+  ],
+  "taxonomy": {
+    "kingdom": "Plantae",
+    "phylum": "Tracheophyta",
+    "class": "Magnoliopsida",
+    "order": "Lamiales",
+    "family": "Lamiaceae"
+  },
+  "family": "Lamiaceae"
+},
+{
+  "id": "486837",
+  "name": "Lavandula angustifolia",
+  "images": [
+    {
+      "title": "n356_w1150",
+      "rightsHolder": "Biodiversity Heritage Library",
+      "source": "https://www.flickr.com/photos/biodivlibrary/6972249268/",
+      "license": "http://creativecommons.org/licenses/by/2.0/",
+      "url": "80/e3/9d/542.6972249268.jpg",
+      "photographer": {
+        "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
+        "homepage": "http://www.flickr.com/photos/61021753@N02",
+        "role": "photographer"
+      }
+    },
+    {
+      "title": "Lavandula angustifolia 003.JPG",
+      "rightsHolder": "H. Zell",
+      "source": "https://commons.wikimedia.org/wiki/File:Lavandula_angustifolia_003.JPG",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "55/4d/9c/509.10580760.jpg"
+    },
+    {
+      "title": "File:LofnarblÃ³m 01.jpg",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Lofnarbl%C3%B3m_01.jpg",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "55/72/27/509.11121541.jpg"
+    },
+    {
+      "title": "Lavandula angustifolia lavender Lavendel 05.jpg",
+      "rightsHolder": "Norbert Nagel, Mörfelden-Walldorf, Germany",
+      "source": "https://commons.wikimedia.org/wiki/File:Lavandula_angustifolia_lavender_Lavendel_05.jpg",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "56/5b/1c/509.15691936.jpg"
+    },
+    {
+      "title": "Lavandula-angustifolia-Ventoux.jpg",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Lavandula-angustifolia-Ventoux.jpg",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "5a/32/e9/509.1011884.jpg"
+    },
+    {
+      "title": "File:LofnarblÃ³m 01.jpg",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Lofnarbl%C3%B3m_01.jpg",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "5a/73/67/509.11121541.jpg"
+    },
+    {
+      "title": "Lavandula angustifolia lavender Lavendel 02.jpg",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Lavandula_angustifolia_lavender_Lavendel_02.jpg",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "5d/c8/9c/509.26905567.jpg"
+    },
+    {
+      "title": "Lavandula angustifolia OB10.jpg",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Lavandula_angustifolia_OB10.jpg",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "5f/a5/d1/509.37148687.jpg"
+    },
+    {
+      "title": "03-05 Primorska Provansa v Pregari.jpg",
+      "rightsHolder": "TICKoper",
+      "source": "https://commons.wikimedia.org/wiki/File:03-05_Primorska_Provansa_v_Pregari.jpg",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "61/71/d0/509.44410746.jpg"
+    },
+    {
+      "title": "Echter Lavendel (Lavandula angustifolia) (9480911322).jpg",
+      "rightsHolder": "",
+      "source": "https://commons.wikimedia.org/wiki/File:Echter_Lavendel_(Lavandula_angustifolia)_(9480911322).jpg",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "62/eb/82/509.47293756.jpg"
+    }
+  ],
+  "names": [
+    {
+      "vernacularName": "Common lavander",
+      "language": "en"
+    },
+    {
+      "vernacularName": "English lavender",
+      "language": "en"
+    },
+    {
+      "vernacularName": "Echter lavendel",
+      "language": "de"
+    },
+    {
+      "vernacularName": "English lavendar",
+      "language": "en"
+    },
+    {
+      "vernacularName": "Lavender",
+      "language": "en"
+    },
+    {
+      "vernacularName": "Fior di spigo",
+      "language": "it"
+    },
+    {
+      "vernacularName": "Lavanda vera",
+      "language": "it"
+    },
+    {
+      "vernacularName": "Spigo",
+      "language": "it"
+    },
+    {
+      "vernacularName": "Common lavender",
+      "language": "en"
+    },
+    {
+      "vernacularName": "Garden lavender",
+      "language": "en"
+    },
+    {
+      "vernacularName": "Espiego común",
+      "language": "es"
+    },
+    {
+      "vernacularName": "Lavanda fina",
+      "language": "es"
+    },
+    {
+      "vernacularName": "Lavandula",
+      "language": "es"
+    },
+    {
+      "vernacularName": "lavanda-inglesa",
+      "language": "pt"
+    },
+    {
+      "vernacularName": "alfazema",
+      "language": "pt"
+    },
+    {
+      "vernacularName": "Lavande à feuilles étroites",
+      "language": "fr"
+    },
+    {
+      "vernacularName": "Lavande vraie",
+      "language": "fr"
+    }
+  ],
+  "taxonomy": {
+    "kingdom": "Plantae",
+    "phylum": "Tracheophyta",
+    "class": "Magnoliopsida",
+    "order": "Lamiales",
+    "family": "Lamiaceae"
+  },
+  "family": "Lamiaceae"
+}
 ];

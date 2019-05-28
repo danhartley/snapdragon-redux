@@ -24,7 +24,6 @@ export const enums = {
     boolean: english.boolean,
     whether: english.whether,
     element: english.element,
-    // rank: english.rank,
     blade: english.blade,
     leafType: english.leafType,
     leafVariation: english.leafVariation,
@@ -47,10 +46,9 @@ export const enums = {
     soilType: english.soilType,
     organisation: english.organisation,
     role: english.role,
-    // migratory: english.migratory,
     fruitType: english.fruitType,
     inflorescence: english.inflorescence,
-    seasonal: english.seasonal,
+    // seasonal: english.seasonal,
     display: english.display,
     behaviour: english.behaviour,
     sense: english.sense,
@@ -63,6 +61,8 @@ export const enums = {
     collective: english.collective,
     ecology: english.ecology,
     characteristic: english.characteristic,
+    climate: english.climate,
+    pollination: english.pollination,
 }
 
 let language;
@@ -77,8 +77,6 @@ export const updateLanguage = (config) => {
         enums[prop].type = prop;
         enums[prop].name = prop.split(/(?=[A-Z])/).join(' ').toLowerCase();
     }
-
-    // migratory = { ...english.whether, ... { type: 'migratory' }, ...{ name: english.name.MIGRATORY } };
 
     actions.boundUpdateEnums(enums);
 };

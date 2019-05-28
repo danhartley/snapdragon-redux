@@ -257,7 +257,9 @@ const snapdragonKitchenGarden = {
         "Ficus carica",
         // "Malus domestica",
         "Prunus avium",
-        // "Apis mellifera"
+        // "Apis mellifera",
+        "Lavandula angustifolia",
+        "Lavandula stoechas"
       ],
     items: [ ...plants ],
     iconicTaxa: [ 'plantae' ],

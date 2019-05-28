@@ -59,7 +59,7 @@ const carouselControlHandler = (event, parentScreen = document) => {
 
 export const imageSlider = sliderArgs => {
 
-    const { config, images, parent, disableModal, image, parentScreen = document, index = '' } = sliderArgs;
+    const { config, images, parent, disableModal, image, parentScreen = document, identifier = '' } = sliderArgs;
 
     const slider = document.createElement('template');
 
@@ -72,14 +72,14 @@ export const imageSlider = sliderArgs => {
         img.rightsHolder = img.rightsHolder || 'Public domain';
     });
 
-    renderTemplate({ images, index, disableModal }, slider.content, parent);
+    renderTemplate({ images, identifier, disableModal }, slider.content, parent);
     selectActiveNodeImage(image || images[0], parent, config);    
     disableModalPopups(disableModal, parent, config);
 
     const originalImageLink = parentScreen.querySelector('.js-image-load-original > div');
 
-    parentScreen.querySelector(`#imageSlider_${ disableModal }_${index} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen));
-    parentScreen.querySelector(`#imageSlider_${ disableModal }_${index} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen));
+    parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', e => carouselControlHandler(e,parentScreen));
+    parentScreen.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', e => carouselControlHandler(e,parentScreen));
 
     originalImageLink.addEventListener('click', event => {
         const { imageContainer, backgroundImage } = getActiveBackgroundImage();
@@ -104,17 +104,20 @@ export const imageSideBySlider = (slides, parent, disableModal = false, config) 
     document.querySelector(`#imageComparisonModal .js-modal-image-title span:nth-child(4)`).innerHTML = '';
 
     slides.forEach((slide, index) => {
+
+        const identifier = slide.id.replace(' ', '_') || index + 1;
+
         const header = document.querySelectorAll(`#imageComparisonModal .js-modal-image-title > span`)[index];
         header.innerHTML = `<span class="common-name">${slide.images[0].itemCommon}</span><span class="latin-name">${slide.images[0].itemName}</span>`;
         const item = { name: slide.images[0].itemName, itemCommon: slide.images[0].itemCommon, images: slide.images };
         const images = prepImagesForCarousel(item, config, imageUseCases.CAROUSEL);
-        renderTemplate({ images, index: index + 1, disableModal }, sideBySlider.content, parent);
-        const activeNode = document.querySelector(`#imageSlider_${ disableModal }_${index + 1} .carousel-item`);
+        renderTemplate({ images, identifier, disableModal }, sideBySlider.content, parent);
+        const activeNode = document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-item`);
         activeNode.classList.add('active');        
         disableModalPopups(disableModal, config);
         handleRightsAttribution(images[0], activeNode.querySelector('div'));
 
-        document.querySelector(`#imageSlider_${ disableModal }_${index + 1} .carousel-control-prev`).addEventListener('click', carouselControlHandler);
-        document.querySelector(`#imageSlider_${ disableModal }_${index + 1} .carousel-control-next`).addEventListener('click', carouselControlHandler);
+        document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-prev`).addEventListener('click', carouselControlHandler);
+        document.querySelector(`#imageSlider_${ disableModal }_${identifier} .carousel-control-next`).addEventListener('click', carouselControlHandler);
     });
 };

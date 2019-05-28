@@ -19,7 +19,7 @@ export const lookALikes = (item, traits, config, rootNode = document) => {
     if(lookalikes.length > 1) {
 
         const matchTemplate = document.createElement('template');
-        matchTemplate.innerHTML = visualComparisonTemplate;
+              matchTemplate.innerHTML = visualComparisonTemplate;
         const lookalikeParent = rootNode.querySelector('.js-lookalikes');
 
         const slides = [];
@@ -39,14 +39,10 @@ export const lookALikes = (item, traits, config, rootNode = document) => {
                         itemName: lookalikeItem.name, 
                         itemCommon: lookalikeItem.vernacularName };
             } );
-            slides.push({ images });
+            slides.push({ id: lookalikeItem.name, images });
         });
 
-        // if(slides.length === 1) return;
-
         renderTemplate({slides, names: names.join(', ')}, matchTemplate.content, lookalikeParent);
-
-        // if(config.isPortraitMode) return;
 
         const getTrait = (itemName, parent) => {
 
@@ -80,24 +76,18 @@ export const lookALikes = (item, traits, config, rootNode = document) => {
         speciesComparisonLink.addEventListener('click', () => {
 
             const parent = document.querySelector('#imageComparisonModal .js-modal-image');            
+            
             imageSideBySlider(slides, parent, true, config);
-            const description = lookalikeDescriptions.find(trait => trait.type === 'lookalike' && R.contains(item.name, trait.ids) && !!scientificNames.find(name => R.contains(name, trait.ids)));
-            const descriptions = description ? description.descriptions : '';
+            
+            const lookalikes = lookalikeDescriptions.filter(lookalikes => lookalikes.type === 'lookalike').find(lookalikes => R.contains(item.name, lookalikes.ids));
 
-            const species1 = document.querySelector(`.description${1}`);
-            const species2 = document.querySelector(`.description${2}`);
-            const species3 = document.querySelector(`.description${3}`);
-
-            species1.innerHTML = `<div>${descriptions[0]}</div><div></div>`;
-            species2.innerHTML = `<div>${descriptions[1]}</div><div></div>`;
-
-            getTrait(description.ids[0], species1.querySelector('div:nth-child(2)'));
-            getTrait(description.ids[1], species2.querySelector('div:nth-child(2)'));
-
-            if(species3) {
-                species3.innerHTML = `<div>${descriptions[2]}</div><div></div>`;
-                getTrait(description.ids[2], species3.querySelector('div:nth-child(2)'));
-            }
+            lookalikes.species.forEach(sp => {
+                const identifier = `.description_${sp.id.replace(' ', '_')}`;
+                const description = document.querySelector(identifier);
+                    description.innerHTML = sp.description;
+                getTrait(sp.id, document.querySelector(`${identifier} + div`));
+            });
+            
         });        
     }
 };

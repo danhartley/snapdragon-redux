@@ -126,6 +126,100 @@ export const getTraits = SD => {
             { name: SD.name.PHYSIOLOGY, value: SD.physiology.MYCORRHIZAL },
         ] 
     },
+    { name: 'Ocimum basilicum',
+        symbionts: [ 
+            { id: 'Solanum lycopersicum', id: 'Botrytis cinerea', id: 'Peronospora belbahrii' }
+        ], 
+        traits: [
+            { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.FOOD}` },
+            { name: SD.name.CHARACTERISTIC, value: `${SD.characteristic.ANNUAL}, ${SD.characteristic.PERENNIAL}` },
+            { name: SD.name.CLIMATE_CONDITIONS, value: `${SD.climate.HOT}, ${SD.climate.DRY}` },
+            { name: SD.role.SYMBIONT, value: 'Solanum lycopersicum', type: SD.symbiosis.COMPANION },
+            { name: SD.role.HOST, value: 'Fusarium wilt', type: SD.symbiosis.PARASITISM },
+            { name: SD.role.HOST, value: 'Botrytis cinerea', type: SD.symbiosis.PARASITISM },
+            { name: SD.role.HOST, value: 'Peronospora belbahrii', type: SD.symbiosis.PARASITISM },
+        ] 
+    },
+    { name: 'Solanum lycopersicum',
+        symbionts: [ 
+            { id: 'Ocimum basilicum' }, { id: 'Petroselinum crispum'}, { id: 'Anthriscus sylvestris' }, { id: 'Anethum graveolens'}, { id: 'Manduca quinquemaculata'}
+        ], 
+        traits: [
+            { name: SD.name.USAGE, value: SD.usage.FOOD },
+            { name: SD.role.SYMBIONT, value: 'Ocimum basilicum, Petroselinum crispum, Anthriscus sylvestris, Anethum graveolens, Apiaceae, Lamiaceae, Allium, Taraxacum', type: SD.symbiosis.COMPANION },
+            { name: SD.name.CLIMATE_CONDITIONS, value: `${SD.climate.TEMPERATE}` },
+            { name: SD.name.BEHAVIOUR, value: `${SD.behaviour.DECUMBENT}, ${SD.behaviour.ETHYLENE_RIPENING}` },
+            { name: SD.name.POLLINATION, value: `${SD.pollination.ALLOGAMY}, ${SD.pollination.SONICATION}, ${SD.pollination.MELITTOPHILY}` },
+            { name: SD.name.CHARACTERISTIC, value: `${SD.characteristic.ANNUAL}, ${SD.characteristic.PERENNIAL}, ${SD.characteristic.DICOTYLEDON}, ${SD.characteristic.PUBESCENT}` },
+            { name: SD.name.FRUIT_TYPE, value: SD.fruitType.BERRY },
+            { name: SD.role.HOST, value: `Stink bugs, cutworms, tomato hornworms, aphids, Manduca quinquemaculata`, type: SD.symbiosis.PARASITISM },
+        ] 
+    },
+    { name: 'Petroselinum crispum',
+        symbionts: [ 
+            { id: 'Solanum lycopersicum' }
+        ], 
+        traits: [
+            { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.FOOD}` },
+            { name: SD.role.SYMBIONT, value: 'Solanum lycopersicum', type: SD.symbiosis.COMPANION },            
+        ] 
+    },
+    { name: 'Anethum graveolens',
+        symbionts: [ 
+            { id: 'Solanum lycopersicum' }
+        ], 
+        traits: [
+            { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.FOOD}` },
+            { name: SD.role.SYMBIONT, value: 'Solanum lycopersicum', type: SD.symbiosis.COMPANION },            
+        ] 
+    },
+    { name: 'Thymus vulgaris',
+        symbionts: [ 
+            
+        ], 
+        traits: [
+            { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.MEDICINE}, ${SD.usage.FOOD}` },
+            { name: SD.name.PHYSIOLOGY, value: SD.physiology.EVERGREEN },
+            { name: SD.name.SOIL_TYPE, value: SD.soilType.NUTRIENT_POOR },
+            { name: SD.name.CHARACTERISTIC, value: SD.characteristic.CHAMAEPHYTE }
+        ] 
+    },
+    { name: 'Rosmarinus officinalis',
+        symbionts: [ 
+            
+        ], 
+        traits: [
+            { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.PEST_CONTROL}, ${SD.usage.TEA}` },
+            { name: SD.name.PHYSIOLOGY, value: SD.physiology.EVERGREEN },
+            { name: SD.name.SOIL_TYPE, value: `${SD.pHLevel.NEUTRAL}, ${SD.pHLevel.ALKALINE}, ${SD.soilType.NUTRIENT_POOR}` },
+            { name: SD.name.CHARACTERISTIC, value: `${SD.characteristic.CHAMAEPHYTE}, ${SD.characteristic.PERENNIAL}, ${SD.characteristic.FIBROUS_ROOT_SYSTEM}, ${SD.characteristic.DROUGHT_TOLERANT}` },
+            { name: SD.name.CLIMATE_CONDITIONS, value: `${SD.climate.TEMPERATE}, ${SD.climate.COOL}` },
+        ] 
+    },
+    { name: 'Lavandula angustifolia',
+        symbionts: [ 
+            { id: 'Lavandula stoechas'}
+        ], 
+        traits: [
+            { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.MEDICINE}, ${SD.usage.PERFUMERY}, ${SD.usage.TEA}, ${SD.usage.ESSENTIAL_OIL}` },
+            { name: SD.name.PHYSIOLOGY, value: SD.physiology.EVERGREEN },
+            { name: SD.name.CHARACTERISTIC, value: SD.characteristic.CHAMAEPHYTE },
+            { name: SD.name.SOIL_TYPE, value: `${SD.pHLevel.NEUTRAL}, ${SD.pHLevel.ALKALINE}, ${SD.soilType.NUTRIENT_POOR}` },
+            { name: SD.name.LOOK_ALIKES, values: [ 'Lavandula stoechas' ]},
+        ] 
+    },
+    { name: 'Lavandula stoechas',
+        symbionts: [ 
+            { id: 'Lavandula angustifolia'}
+        ], 
+        traits: [
+            { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.MEDICINE}, ${SD.usage.PERFUMERY}, ${SD.usage.TEA}, ${SD.usage.ESSENTIAL_OIL}` },
+            { name: SD.name.PHYSIOLOGY, value: SD.physiology.EVERGREEN },
+            { name: SD.name.CHARACTERISTIC, value: SD.characteristic.CHAMAEPHYTE },
+            { name: SD.name.SOIL_TYPE, value: `${SD.pHLevel.NEUTRAL}, ${SD.pHLevel.ALKALINE}, ${SD.soilType.NUTRIENT_POOR}` },
+            { name: SD.name.LOOK_ALIKES, values: [ 'Lavandula angustifolia' ]},
+        ] 
+    },
     { name: 'Taraxacum officinale',
         symbionts: [ 
             

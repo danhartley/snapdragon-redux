@@ -22,8 +22,8 @@ export const plantae = [
         characteristics: 'Flowers tend to be small and inconspicuous with lots of pollen grains and large, feathery stigmas to catch the pollen.'
     },
     {
-        term: "Ambophilous",
-        definition: "Flowers which are both wind and insect pollinated."
+        term: "Ambophily",
+        definition: "Pollination of flowers by both wind and insects."
     },
     {
         term: "Apomixis",
@@ -355,5 +355,20 @@ export const plantae = [
         term: 'Dioecy',
         definition: '(Of a species), having distinct male and female individual organisms.',
         wiki: 'https://en.wikipedia.org/wiki/Dioecy'
+    },
+    {
+        term: 'Companion planting',
+        definition: 'Planting crops in proximity for reasons including pest control, pollination, providing habitat for beneficial creatures to increase crop productivity.',
+        wiki: 'https://en.wikipedia.org/wiki/Companion_planting'
+    },
+    {
+        term: 'Allogamy (cross-fertilisation)',
+        definition: 'The fertilization of an ovum from one individual with the spermatozoa of another.',
+        wiki: 'https://en.wikipedia.org/wiki/Allogamy'
+    },
+    {
+        term: 'Tomentose',
+        definition: 'Description of surfaces that are velvety or covered in (often matted) hairs.',
+        wiki: 'https://en.wikipedia.org/wiki/Tomentose'
     },
 ];

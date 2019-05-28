@@ -83,7 +83,7 @@ export const english = {
         STEM_ARRANGEMENT: 'Stem arrangement',
         LEAF_EDGE: 'Leaf edge',
         INFLORESCENCE: 'Inflorescence',
-        SEASONAL: 'Seasonal',
+        // SEASONAL: 'Seasonal',
         FEMALE_CONE_LENGTH: 'Female cone length',
         MALE_CONE_LENGTH: 'Male cone length',
         ALLOCHORY: 'Allochory',
@@ -127,7 +127,9 @@ export const english = {
         CENTRE: 'Centre',
 
         POLLINATION: 'Pollination',
-        PROPAGATION: 'Propagation'
+        PROPAGATION: 'Propagation',
+
+        CLIMATE_CONDITIONS: 'Climate conditions'
     },
     howEdible : {
         help: 'How edible is this species?',
@@ -252,7 +254,9 @@ export const english = {
         CEDAR : 'Cedar',
         YEW : 'Yew',
         TURKEY_OAK : 'Turkey oak',
-        HAWTHORN: 'Hawthorn'
+        HAWTHORN: 'Hawthorn',
+        BUSH: 'Bush',
+        SHRUB: 'Shrub',
     },
     hymeniumType : {
         help: 'What is the hymenium type?',
@@ -344,6 +348,7 @@ export const english = {
         FOOD: 'Food',
         WINE: 'Wine',
         COFFEE: 'Coffee',
+        TEA: 'Tea',
         BIRDS_NEST: "Bird\'s nest",
         POISON: 'Poison',
         FODDER: 'Fodder',
@@ -353,7 +358,9 @@ export const english = {
         TIMBER: 'Timber',
         PEST_CONTROL: 'Pest control',
         HERB: 'Herb',
-        SPICE: 'Spice'
+        SPICE: 'Spice',
+        ESSENTIAL_OIL: 'Essential oil',
+        PEST_CONTROL: 'Pest control'
     },
     nonTaxaType: {
         FORM : 'Form'
@@ -443,7 +450,8 @@ export const english = {
         PARASITISM: 'Parasitism',
         HERBIVORY: 'Herbivory',        
         COMPETITION: 'Competition',
-        MYCORRHIZAL: 'Mycorrhizal'
+        MYCORRHIZAL: 'Mycorrhizal',
+        COMPANION: 'Companion planting'
     },
     trophicLevel: {
         help: 'What is the trophic level or this species?',
@@ -452,8 +460,7 @@ export const english = {
         SECONDARY_CONSUMER: 'Secondary consumer',
         OMNIVORE: 'Omnivore',
         TERTIARY_CONSUMER: 'Tertiary consumer',
-        APEX_PREDATOR: 'Apex predator',
-        SCAVENGER: 'Scavenger'
+        APEX_PREDATOR: 'Apex predator'        
     },
     shelter: {
         help: 'What is the name of this species\`s shelter?',
@@ -516,7 +523,7 @@ export const english = {
         NYMPH: 'Nymph',
         CATERPILLAR: 'Caterpillar',
         LARVA: 'Larva',
-        SALAMANQUESA: 'Salamanquesa',
+        SALAMANQUESA: 'Salamanquesa',        
     },
     female: {
         help: 'What is the name for a female of this species?',
@@ -553,6 +560,7 @@ export const english = {
     soilType: {
         SILICEOUS: 'Siliceous',
         CALCAREOUS: 'Calcareous',
+        NUTRIENT_POOR: 'Nutrient poor'
     },
     organisation: {
         help: 'How is this species organised?',
@@ -597,7 +605,8 @@ export const english = {
         HOST: 'Host',
         CARRIER: 'Carrier',
         RUDERAL: 'Ruderal',
-        SUPERTRAMP: 'Supertramp'
+        SUPERTRAMP: 'Supertramp',
+        SYMBIONT: 'Symbiont'
     },
     fruitType: {
         help: 'What fruit type does this plant have?',
@@ -619,12 +628,12 @@ export const english = {
         RACEME: 'raceme',
         CORYMB: 'corymb'
     },
-    seasonal: {
-        help: 'What is the life cycle of this plant?',
-        ANNUAL: 'Annual',
-        BIENNIAL: 'Biennial',
-        PERENNIAL: 'Perennial'
-    },
+    // seasonal: {
+    //     help: 'What is the life cycle of this plant?',
+    //     ANNUAL: 'Annual',
+    //     BIENNIAL: 'Biennial',
+    //     PERENNIAL: 'Perennial'
+    // },
     display: {
         help: 'Which form of display does this species exhibit?',
         DIEMATIC: 'Diematic',
@@ -670,7 +679,9 @@ export const english = {
         RUTTING: 'Rutting',
         WHELPING: 'Whelping',
         FARROWING: 'Farrowing',
-        SWIMMING: 'Swimming'
+        SWIMMING: 'Swimming',
+        DECUMBENT: 'Decumbent', 
+        ETHYLENE_RIPENING: 'Ethylene ripening'      
     },
     sense: {
         help: 'Which sense does this species favour?',
@@ -711,18 +722,48 @@ export const english = {
         C3_CARBON_FIXATION: 'C3 carbon fixation',
         NITROGEN_FIXING: 'Nitrogen fixing',        
         MYCORRHIZAL: 'Mycorrhizal',
-        DORMANCY: 'Dormancy'
+        DORMANCY: 'Dormancy',
+        EVERGREEN: 'Evergreen',
+        DECIDUOUS : 'Deciduous',
     },
     ecology: {
         DIGGING: 'Digging', 
         SCRAPING: 'Scraping',
-        ROOTING: 'Rooting' 
+        ROOTING: 'Rooting' ,
+        SCAVENGING: 'Scavenging',
     },
     characteristic: {
+        help: 'Which characteritics does this species display?',
         PERENNIAL: 'Perennial',
         ANNUAL: 'Annual',
         BIENNIAL: 'Biennial',
         HERBACEOUS: 'Herbaceous',
-        DIOECIOUS: 'Dioecious'
+        DIOECIOUS: 'Dioecious',
+        DICOTYLEDON: 'Dicot',
+        MONOCOTYLEDON: 'Monocot',
+        PUBESCENT: 'Pubescent',
+        CHAMAEPHYTE: 'Chamaephyte',
+        FIBROUS_ROOT_SYSTEM: 'Fibrous root system',
+        TAPROOT_SYSTEM: 'Taproot system',
     },
+    climate: {
+        HOT: 'Hot',
+        DRY: 'Dry',
+        TEMPERATE: 'Temperate',
+        COOL: 'Cool',
+        TROPICAL: 'Tropical',
+        CONTINENTAL: 'Continental',
+        DROUGHT_TOLERANT: 'Drought-tolerant'
+    },
+    pollination: {
+        ALLOGAMY: 'Allogamy',
+        ANEMOPHILY: 'Anemophily',
+        HYDROPHILY: 'Hydrophily',
+        ENTOMOPHILY: 'Entomophily',
+        AMBOPHILY: 'Ambophily',
+        MELITTOPHILY: 'Melittophily',
+        PSYCHOPHILY: 'Psychophily',
+        PHALAENOPHILY: 'Phalaenophily',
+        SONICATION: 'Sonication',
+    }
 };
