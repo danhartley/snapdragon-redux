@@ -3,13 +3,14 @@ import * as R from 'ramda';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
+import { taxonInfoSlider } from 'ui/screens/common/info-slider';
 import { renderTemplate } from 'ui/helpers/templating';
 import { taxa } from 'api/snapdragon/taxa';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
 
-import taxonTemplate from 'ui/screens/cards/taxon-template.html';
+import taxonTemplate from 'ui/screens/cards/taxon-card-template.html';
 
 let transition;
 
@@ -29,7 +30,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
         const { config } = store.getState();
 
-        let rootNode;
+        let rootNode, props;
 
         switch(mode) {
             case 'STAND_ALONE':
@@ -66,7 +67,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
                 break;
             default:
 
-                let props = itemProperties.taxonHasTaxaData(item.taxonomy.family, taxa);
+                props = itemProperties.taxonHasTaxaData(item.taxonomy.family, taxa);
 
                 if(props) {
                     rank = 'FAMILY';
@@ -109,6 +110,11 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
         }
 
         renderTemplate(context, template.content, parent, clone);
+
+        if(props && props.traits) {
+            taxonInfoSlider(props.traits, rootNode.querySelector('.js-taxon-info-box'), mode);
+            console.log('I have props!')
+        }
 
         switch(rank) {
             case 'FAMILY': 

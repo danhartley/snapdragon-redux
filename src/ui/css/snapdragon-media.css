@@ -255,6 +255,10 @@
     .non-taxon-card-wiki {
         margin: 0 .5rem 0 0;
     }
+
+    .taxon-summary {
+        bottom: 6rem;
+    }
 }
 
 @media (min-width: 1024px) {
