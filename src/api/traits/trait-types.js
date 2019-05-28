@@ -30,7 +30,6 @@ export const enums = {
     leafVariation: english.leafVariation,
     leafShape: english.leafShape,
     sex: english.sex,
-    longevity: english.longevity,
     stemArrangement: english.stemArrangement,
     leafEdge: english.leafEdge,
     foodType: english.foodType,
@@ -63,6 +62,7 @@ export const enums = {
     physiology: english.physiology,
     collective: english.collective,
     ecology: english.ecology,
+    characteristic: english.characteristic,
 }
 
 let language;

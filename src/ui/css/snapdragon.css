@@ -393,13 +393,13 @@ a.dropdown-item {
 }
 
 .taxon-summary {
+  bottom: 4rem;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: initial;
   position: absolute;
-  bottom: 1rem;
   margin: 0 .5rem;
   background-color: rgba(197, 193, 175,.2);
   min-height: 5rem;
@@ -1472,6 +1472,7 @@ label.btn.btn-secondary .lesson-icon {
   background-size: inherit;
   background-repeat: no-repeat;
   background-position: center;
+  pointer-events: none;
 }
 
 .imageSlider .carousel-item > div.contain-image {

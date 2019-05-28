@@ -52,7 +52,6 @@ export const english = {
         USAGE: "Usage",
         FORM : 'Form',
         LIFE_SPAN: "Life span",
-        LONGEVITY: 'Longevity',
         ACTIVE: 'Active',
         SUBSTRATE_ADHERANCE: 'Substrate adherance',
         RANK: 'UK Rank',
@@ -65,6 +64,7 @@ export const english = {
         REPRODUCTION: 'Reproduction',
         DISPLAY: 'Display',
         BEHAVIOUR: 'behaviour',
+        CHARACTERISTIC: 'Characteristic',
         COMMUNICATION: 'Communication',
 
         SHELTER: 'Shelter',
@@ -351,7 +351,9 @@ export const english = {
         MEDICINE: 'Medicine',
         FUR: 'Fur',        
         TIMBER: 'Timber',
-        PEST_CONTROL: 'Pest control'
+        PEST_CONTROL: 'Pest control',
+        HERB: 'Herb',
+        SPICE: 'Spice'
     },
     nonTaxaType: {
         FORM : 'Form'
@@ -389,11 +391,6 @@ export const english = {
     },
     sex: {
         HERMAPHRODITE: 'Hermaphrodite'
-    },
-    longevity: {
-        PERENNIAL: 'Perennial',
-        ANNUAL: 'Annual',
-        BIENNIAL: 'Biennial',
     },
     leafShape: {
         LINEAR: 'Linear',
@@ -712,8 +709,7 @@ export const english = {
     }, 
     physiology: {
         C3_CARBON_FIXATION: 'C3 carbon fixation',
-        NITROGEN_FIXING: 'Nitrogen fixing',
-        HERBACEOUS: 'Herbaceous',
+        NITROGEN_FIXING: 'Nitrogen fixing',        
         MYCORRHIZAL: 'Mycorrhizal',
         DORMANCY: 'Dormancy'
     },
@@ -721,5 +717,12 @@ export const english = {
         DIGGING: 'Digging', 
         SCRAPING: 'Scraping',
         ROOTING: 'Rooting' 
-    }
+    },
+    characteristic: {
+        PERENNIAL: 'Perennial',
+        ANNUAL: 'Annual',
+        BIENNIAL: 'Biennial',
+        HERBACEOUS: 'Herbaceous',
+        DIOECIOUS: 'Dioecious'
+    },
 };
