@@ -715,4 +715,14 @@ export const epithets = [
         "en" : ["cough"],
         species: [ 'Tussilago farfara' ]      
     },
+    {
+        "latin" : ["stoechas"],
+        "en" : ["in rows"],
+        species: [ 'Lavandula stoechas' ]      
+    },
+    {
+        "latin" : ["ros marinus"],
+        "en" : ["dew of the sea"],
+        species: [ 'Rosmarinus officinalis' ]      
+    },
 ];

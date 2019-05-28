@@ -82,7 +82,7 @@ const renderPortrait = (item, config, traits, mode, rootNode) => {
 
     const parent = rootNode.querySelector('.js-species-card-images');
 
-    imageSlider({ config, images, parent, disableModal: mode === 'MODAL', parentScreen: rootNode.querySelector('.card-card'), index: 'card-card' });
+    imageSlider({ config, images, parent, disableModal: mode === 'MODAL', parentScreen: rootNode.querySelector('.card-card'), identifier: 'card-card' });
 
     const player = rootNode.querySelector('.js-bird-song-player');
 

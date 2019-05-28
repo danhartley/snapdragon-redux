@@ -484,7 +484,10 @@ export const taxa = [
         { language: "it", names:[ 'Nightshades' ]}],
         species: 2700,
         genera: 98,
-        traits: [ { language: "en", name: 'pollination', values: ['Insects'] } ],
+        traits: [ 
+            { language: "en", name: 'pollination', values: ['Insects'] } ,
+            { name: SD.role.HOST, value: 'Phthorimaea operculella', type: SD.symbiosis.PARASITISM },
+        ],
         descriptions: [
             {
                 language: 'en',
