@@ -19,7 +19,7 @@ export const lookALikes = (item, traits, config, rootNode = document) => {
     if(lookalikes.length > 1) {
 
         const matchTemplate = document.createElement('template');
-        matchTemplate.innerHTML = visualComparisonTemplate;
+              matchTemplate.innerHTML = visualComparisonTemplate;
         const lookalikeParent = rootNode.querySelector('.js-lookalikes');
 
         const slides = [];
@@ -84,9 +84,10 @@ export const lookALikes = (item, traits, config, rootNode = document) => {
             lookalikes.species.forEach(sp => {
                 const identifier = `.description_${sp.id.replace(' ', '_')}`;
                 const description = document.querySelector(identifier);
-                      description.innerHTML = sp.description;
+                    description.innerHTML = sp.description;
                 getTrait(sp.id, document.querySelector(`${identifier} + div`));
             });
+            
         });        
     }
 };

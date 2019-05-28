@@ -215,7 +215,7 @@
   #cardModal .compare-species-link {
     pointer-events: none;
     border: none;
-    color: var(--snap-text-dark) !important;
+    color: var(--snap-progress-bg);
   }
   
   #menuModal .modal-content {
