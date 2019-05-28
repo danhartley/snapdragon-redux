@@ -351,4 +351,9 @@ export const plantae = [
         definition: 'Having  a single stamen.',
         wiki: 'https://en.wikipedia.org/wiki/Monandrous'
     },
+    {
+        term: 'Dioecy',
+        definition: '(Of a species), having distinct male and female individual organisms.',
+        wiki: 'https://en.wikipedia.org/wiki/Dioecy'
+    },
 ];

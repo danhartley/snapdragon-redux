@@ -10,7 +10,7 @@ export const getTraits = SD => {
             { name: SD.name.COMPOUND, value: `${SD.leafType.PINNATE}` },
             { name: SD.name.LEAF_SHAPE, value: `${SD.leafShape.OVATE}, ${SD.leafShape.OBLANCEOLATE}, ${SD.leafShape.OBOVATE}` },
             { name: SD.name.STEM_ARRANGEMENT, value: `${SD.stemArrangement.ALTERNATE}` },
-            { name: SD.name.LONGEVITY, value: `${SD.longevity.ANNUAL}` },
+            { name: SD.name.CHARACTERISTIC, value: `${SD.characteristic.ANNUAL}` },
             { name: SD.name.LEAF_EDGE, value: `${SD.leafEdge.DENTATE}` },
         ] },
         { name: 'Allium sativum', traits: [
@@ -21,7 +21,7 @@ export const getTraits = SD => {
             { name: SD.name.BLADE, value: `${SD.blade.SIMPLE}` },
             { name: SD.name.LEAF_SHAPE, value: `${SD.leafShape.LINEAR}` },
             { name: SD.name.STEM_ARRANGEMENT, value: `${SD.stemArrangement.BASAL}` },
-            { name: SD.name.LONGEVITY, value: `${SD.longevity.PERENNIAL}` },
+            { name: SD.name.CHARACTERISTIC, value: `${SD.characteristic.PERENNIAL}` },
             { name: SD.name.LEAF_EDGE, value: `${SD.leafEdge.SMOOTH}` },
         ] },
         { name: 'Pastinaca sativa', traits: [
@@ -40,11 +40,11 @@ export const getTraits = SD => {
             { name: SD.name.HOW_EDIBLE, value: SD.howEdible.EDIBLE  },
         ] },
         { name: 'Laurus nobilis', traits: [
-            { name: SD.name.USAGE, value: SD.usage.FOOD },
+            { name: SD.name.USAGE, value: `${SD.usage.SPICE}, ${SD.usage.HERB}` },
             { name: SD.name.FRUIT_TYPE, value: SD.fruitType.DRUPE },
         ] },
         { name: 'Oxalis pes-caprae', traits: [
-            { name: SD.name.USAGE, value: SD.usage.FOOD },
+            { name: SD.name.USAGE, value: `${SD.usage.FOOD}, ${SD.usage.DYING}` },
             { name: SD.role.INVASIVE, value: 'US, Australia, Europe, Israel' },
         ] },
         { name: 'Robinia pseudoacacia', 
@@ -60,7 +60,6 @@ export const getTraits = SD => {
             { name: SD.name.SEED_COUNT, value: '4-8' },
             { name: SD.name.PH_TOLERANCE, value: '4.6-8.2' },
             { name: SD.name.ROLE, value: SD.role.PIONEER },
-            { name: SD.name.USAGE, value: SD.usage.TIMBER },
         ] },
         { name: 'Daucus carota', 
         symbionts: [ 
@@ -84,13 +83,13 @@ export const getTraits = SD => {
             { name: SD.name.USAGE, value: SD.usage.TIMBER },
             { name: SD.role.INVASIVE , value: 'Australia'},
         ] },
-        { name: 'Foeniculum vulgare',
+    { name: 'Foeniculum vulgare',
         symbionts: [ 
-            { id: 'Papilio machaon' }
+            { id: 'Papilio machaon' }, { id: 'Amphipyra tragopoginis'}
         ], 
         traits: [
-            { name: SD.name.USAGE, value: SD.usage.FOOD },
-            { name: SD.name.FOOD, value: `Papilio machaon`, type: SD.symbiosis.HERBIVORY },
+            { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.FOOD}` },
+            { name: SD.name.FOOD, value: `Papilio machaon, Amphipyra tragopoginis`, type: SD.symbiosis.HERBIVORY },
         ] },
     { name: 'Urtica dioica',
         symbionts: [ 
@@ -99,6 +98,7 @@ export const getTraits = SD => {
         traits: [
             { name: SD.name.USAGE, value: SD.usage.FOOD },
             { name: SD.role.HERBIVORE, value: 'Vanessa atalanta', type: SD.symbiosis.HERBIVORY },
+            { name: SD.name.CHARACTERISTIC, value: `${SD.characteristic.PERENNIAL}, ${SD.characteristic.DIOECIOUS}, ${SD.characteristic.HERBACEOUS}` },
         ] },
     { name: 'Pinus pinea',
         symbionts: [ 
@@ -113,6 +113,14 @@ export const getTraits = SD => {
     { name: 'Cirsium arvense',
         symbionts: [ 
             {}
+        ], 
+        traits: [
+            { name: SD.name.PHYSIOLOGY, value: SD.physiology.MYCORRHIZAL },
+        ] 
+    },
+    { name: 'Liquidambar styraciflua',
+        symbionts: [ 
+            { id: 'Actias luna'}
         ], 
         traits: [
             { name: SD.name.PHYSIOLOGY, value: SD.physiology.MYCORRHIZAL },

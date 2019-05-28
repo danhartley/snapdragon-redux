@@ -12104,13 +12104,6 @@ export const plants = [
         "url": "55/c3/ce/509.12504009.jpg"
       },
       {
-        "title": "File:GewÃ¶hnlicher LÃ¶wenzahn Taraxacum officinale agg. big.jpg",
-        "rightsHolder": "",
-        "source": "https://commons.wikimedia.org/wiki/File:Gew%C3%B6hnlicher_L%C3%B6wenzahn_Taraxacum_officinale_agg._big.jpg",
-        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "56/07/81/509.141256.jpg"
-      },
-      {
         "title": "Paardenbloemen.JPG",
         "rightsHolder": "Onderwijsgek",
         "source": "https://commons.wikimedia.org/wiki/File:Paardenbloemen.JPG",
@@ -12155,13 +12148,6 @@ export const plants = [
         "source": "https://www.inaturalist.org/photos/5727754",
         "license": "http://creativecommons.org/licenses/by-sa/4.0/",
         "url": "43/ee/9b/18.https___www_inaturalist_org_photos_5727754.jpg"
-      },
-      {
-        "title": "Loewenzahn Taraxacum officinale.jpg",
-        "rightsHolder": "Joe MiGo",
-        "source": "https://commons.wikimedia.org/wiki/File:Loewenzahn_Taraxacum_officinale.jpg",
-        "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "55/c3/ce/509.12504009.jpg"
       },
       {
         "title": "File:GewÃ¶hnlicher LÃ¶wenzahn Taraxacum officinale agg. big.jpg",
