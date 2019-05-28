@@ -1472,6 +1472,7 @@ label.btn.btn-secondary .lesson-icon {
   background-size: inherit;
   background-repeat: no-repeat;
   background-position: center;
+  pointer-events: none;
 }
 
 .imageSlider .carousel-item > div.contain-image {
