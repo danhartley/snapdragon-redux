@@ -1471,7 +1471,10 @@ label.btn.btn-secondary .lesson-icon {
   height: 100%;
   background-size: inherit;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center;  
+}
+
+#imageSlider_true_card-card .carousel-item > div, #imageSlider_false_card-card .carousel-item > div {
   pointer-events: none;
 }
 
