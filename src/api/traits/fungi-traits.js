@@ -91,7 +91,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.STIPE_CHARACTER, value : "ring and volva" },
         { name: SD.name.GILL_ATTACHMENT, value : "free" },
     ], context: [
-        { name: SD.name.LOOK_ALIKES, values: [ '' ]},
+        { name: SD.name.LOOK_ALIKES, values: [ 'Lycoperdon pyriforme', 'Scleroderma citrinum' ]},
         { name: SD.name.ECOLOGY, values: [ SD.habitat.MIXED_WOODLAND ] },
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.BEECH, SD.treeType.PINE, SD.treeType.BIRCH, SD.treeType.DECIDUOUS, SD.treeType.CONIFERS ] },
     ]},

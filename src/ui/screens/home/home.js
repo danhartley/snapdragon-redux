@@ -135,6 +135,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
                 actionLink.removeAttribute('data-toggle');
                 actionLink.innerHTML = 'Get Species';                                
                 elem.removeClass(document.querySelector('.js-for-text'), 'hide');         
+                document.querySelector('.js-for-text').innerHTML = 'for';
                 guideSummary(speciesCount);
                 actionLink.removeEventListener(getSpeciesHandler);
                 actionLink.addEventListener('click', getSpeciesHandler);
