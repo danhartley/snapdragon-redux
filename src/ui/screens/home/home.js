@@ -122,6 +122,8 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
         const speciesCount = collection.items ? collection.items.length : 0;
 
+        let forText;
+
         switch(state) {
             case 'CREATE-LESSON':
                 actionLink.setAttribute('data-toggle', 'modal');
@@ -134,15 +136,16 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
             case 'GET_SPECIES':
                 actionLink.removeAttribute('data-toggle');
                 actionLink.innerHTML = 'Get Species';                                
+                forText = document.querySelector('.js-for-text');
                 elem.removeClass(document.querySelector('.js-for-text'), 'hide');         
-                document.querySelector('.js-for-text').innerHTML = 'for';
+                if(forText) forText.innerHTML = 'for';
                 guideSummary(speciesCount);
                 actionLink.removeEventListener(getSpeciesHandler);
                 actionLink.addEventListener('click', getSpeciesHandler);
                 break;
             case 'BEGIN-LESSON':            
                 actionLink.innerHTML = 'Begin';
-                const forText = document.querySelector('.js-for-text');
+                forText = document.querySelector('.js-for-text');
                 if(forText) forText.classList.add('hide');
                 actionLink.addEventListener('click', beginLessonHandler);   
                 break;
