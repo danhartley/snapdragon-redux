@@ -23,19 +23,6 @@
   min-height: 1rem;
 }
 
-/* SPECIES HEADER
-
-.question-container {
-  background-color: var(--snap-species-header-background);
-  height: 4rem;
-} */
-
-/* .question-container img {
-    height: 4rem;
-    width: 4rem;
-    object-fit: scale-down;
-} */
-
   /* CARD */
 
 .card {
@@ -161,24 +148,4 @@ td:empty:after{
         padding: .5rem;
         font-size: 1rem;
     }
-
-    /* SPECIES HEADER */
-
-    /* .question-container {
-        height: 5.5rem;
-    } */
-
-    /* .question-container img {
-        height: 5.5rem;
-        width: 5.5rem;
-    } */
-
-    /* .question-container > div:nth-child(1) {
-        padding: 0 0 0 1rem;
-        display: flex;
-        flex-direction: row;
-        font-size: .9rem;
-        justify-content: left;
-        align-items: center;
-    } */
 }

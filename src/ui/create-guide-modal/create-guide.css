@@ -152,10 +152,6 @@
     line-height: unset;
   }
   
-  /* .modal-guide-wrapper .modal-body .modal-guide-navigation > div:nth-child(2) > div svg {
-    font-size: 2rem;
-    margin: 0 .5rem 0 .25rem;
-  } */
   .modal-guide-wrapper .modal-body .modal-guide-navigation .arrow-wrapper {
     font-size: 2rem;
     margin: 0 .5rem 0 .25rem;
@@ -213,6 +209,8 @@
     font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
     color: var(--snap-text-medium-light);
     font-style: italic;
+    display: inline-block;
+    overflow: hidden;
   }
 
   .modal-guide-wrapper .modal-body .chosen-guide-filter {
@@ -457,7 +455,6 @@
     letter-spacing: .04rem;
     border: .05rem solid lightgray;
     text-align: left;
-    /* top: 2.6rem; */
   }
   
   #inat-place-autocomplete {
@@ -486,6 +483,14 @@
     justify-content: space-evenly;
   }
 
+  .iconic-taxa-categories #fungi {
+    height: 1.5rem;
+  }
+
+  .iconic-taxa-categories #fungi svg {
+    margin-top: -.25rem;
+  }
+
   .iconic-taxa-categories > div > div {
     display: flex;
     align-items: center;
@@ -504,13 +509,16 @@
   }
 
   .iconic-taxa-categories > div > div > div:nth-child(1) svg {
-    width: 1.2rem;
-    height: 1.2rem;
     color: var(--snap-collection);
   }
 
   .iconic-taxa-categories g {
     fill: var(--snap-collection);
+  }
+
+  .iconic-taxa-categories i {
+    font-size: 1rem;
+    color: var(--snap-collection);
   }
 
   .iconic-taxa-selected svg {
@@ -519,6 +527,20 @@
 
   .iconic-taxa-selected svg g {
     fill: var(--snap-collection-active) !important;
+  }
+
+  .selected-text {
+    max-width: 14rem;
+    color: var(--snap-text-medium-light);
+    font-family: 'ff-tisa-web-pro,Georgia,Times New Roman,Times,serif';
+    letter-spacing: .05rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    size: 1.2rem;
+    display: inline-block;
   }
 
   /* Mushroom icon sizes */
@@ -534,7 +556,7 @@
     margin: 0;
   }
 
-  .selected-text svg {
+  .selected-text svg, .selected-text i, .iconic-taxa-selected i {
     color: var(--snap-collection-active);
   }
 
@@ -792,6 +814,18 @@
 
   @media (min-width: 768px) {
 
+    .iconic-taxa-categories #fungi svg {
+      margin-left: -.25rem;
+    }
+
+    .selected-text {
+      max-width: 20rem;
+    }
+
+    .iconic-taxa-categories i {
+      font-size: 1.5rem;
+    }
+
     .modal-guide-wrapper .modal-body .chosen > div > span:nth-child(1), 
     .modal-guide-wrapper .modal-body .chosen-guide-filter span:nth-child(1) {
       margin: .15rem .25rem 0 0;
@@ -876,7 +910,6 @@
 
     .location-option {
       display: flex;
-      /* align-items: center; */
     }
 
     .html5-location-place {

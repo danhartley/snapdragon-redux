@@ -70,10 +70,10 @@ export const renderTraitCard = item => {
             
             renderTemplate(context, template.content, parent);
             
-            const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
-            const icon = returnTaxonIcon(iconicTaxon);
+            // const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
+            // const icon = returnTaxonIcon(iconicTaxon);
 
-            document.querySelector('.js-trait-icon').innerHTML = icon;
+            // document.querySelector('.js-trait-icon').innerHTML = icon;
 
             document.querySelector('.js-try-again').addEventListener('click', () => {
                 renderTraitCard(item);
@@ -99,6 +99,13 @@ export const renderTraitCard = item => {
         alreadyAskedQuestions.push(bonus.overrides.trait.type);
 
         renderMultiStrips(collection, bonus);
+
+        const returnLink = document.querySelector('.js-traits-icon');
+        const returnTxt = returnLink.querySelector('span:nth-child(1)');
+              returnTxt.innerHTML = 'Main';
+    
+        const returnTxt2 = returnLink.querySelector('span:nth-child(2)');
+              returnTxt2.innerHTML = 'lesson';
     };
 
     getNextTrait();

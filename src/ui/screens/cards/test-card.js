@@ -34,9 +34,9 @@ export const renderTestCardTemplate = (collection, context) => {
 
     renderTemplate(context, template.content, parent);
 
-    setTimeout(() => {
-        document.querySelector('.js-iconic-icon').classList.remove('depressed');
-    }, 1000);
+    // setTimeout(() => {
+    //     document.querySelector('.js-iconic-icon').classList.remove('depressed');
+    // }, 1000);
 
     const testCardContainer = document.querySelector('.test-card-container');
     const testCard = document.querySelector('.test-card-container');
@@ -75,7 +75,7 @@ export const renderTestCardTemplate = (collection, context) => {
 
         const { card: speciesCard, icon: speciesIcon } = showNextCard(speciesContainer, '.js-card-card');
 
-        handleIconAppearance('#card-header .js-iconic-icon');
+        // handleIconAppearance('#card-header .js-iconic-icon');
 
         speciesIcon.addEventListener('click', event => {
 
@@ -89,7 +89,7 @@ export const renderTestCardTemplate = (collection, context) => {
                 ? showNextCard(taxonContainer, '.js-non-taxon-card')
                 : showNextCard(taxonContainer, '.js-taxon-card');
 
-            handleIconAppearance('#taxon-card-header .js-iconic-icon');
+            // handleIconAppearance('#taxon-card-header .js-iconic-icon');
 
             taxonIcon.addEventListener('click', event => {
     
@@ -97,7 +97,7 @@ export const renderTestCardTemplate = (collection, context) => {
 
                 showNextCard(testCardContainer, '.js-test-card');
 
-                handleIconAppearance('#test-card-header .js-iconic-icon');
+                // handleIconAppearance('#test-card-header .js-iconic-icon');
             });
         });
     });
@@ -109,7 +109,7 @@ export const renderTestCardTemplate = (collection, context) => {
     const multichoices = [ 'species-scientifics', 'species-vernaculars', 'epithet', 'definition', 'family-strips' ];
 
     if(R.contains(layout.screens[1].name, multichoices)) {
-        document.querySelector('.traits-icon-container').classList.remove('hide-important');
+        document.querySelector('.js-traits-icon').classList.remove('hide-important');
     }
 
     const { bonus } = getBonusQuestion(collection.nextItem || {}, []);

@@ -1,9 +1,14 @@
 <div class="snapdragon-container test-card-container js-species-card">    
     <div class="card-card js-card-card">
         <div id="card-header" class="question-container">
-            <div>
-                <span class="iconic-icon js-iconic-icon"><i class=""></i></span>
+            
+
+            <div class="species-header landscape">                        
+                <img src="https://content.eol.org/data/media/{{ headerImage }}" alt="">
             </div>
+
+            <div class="portrait"></div>
+
             <div class="hide-empty question-header">
                 <div>
                     <div class="names-container vernacular-name-badge js-names-container">
@@ -20,9 +25,14 @@
                     </div>
                 </div>
             </div>
-            <div class="species-header landscape">                        
-                <img src="https://content.eol.org/data/media/{{ headerImage }}" alt="">
+
+            <div class="iconic-icon-container">
+                <div class="iconic-icon js-iconic-icon">
+                    <span>Family</span>
+                    <span>card<i class="far fa-arrow-alt-circle-right"></i></span>
+                </div>
             </div>
+    
         </div>            
         <div class="data-box-container sub-header landscape">
             <div class="calender-container landscape">

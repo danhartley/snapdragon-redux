@@ -6,7 +6,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { taxonInfoSlider } from 'ui/screens/common/info-slider';
 import { renderTemplate } from 'ui/helpers/templating';
 import { taxa } from 'api/snapdragon/taxa';
-import { renderIcon } from 'ui/helpers/icon-handler';
+// import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
 
@@ -125,7 +125,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
                 break;
         }
 
-        renderIcon(item.taxonomy, rootNode);
+        // renderIcon(item.taxonomy, rootNode);
 
         if(mode === 'MODAL') {
 

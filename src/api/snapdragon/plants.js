@@ -8,124 +8,102 @@ export const plants = [
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Siiragam.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "5b/cf/08/509.17846402.jpg",
-        "thumb": "5b/cf/08/509.17846402.98x68.jpg"
+        "url": "5b/cf/08/509.17846402.jpg"
       },
       {
         "title": "File:Cuminum cyminum - KÃ¶hlerâs Medizinal-Pflanzen-198.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Cuminum_cyminum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-198.jpg",
         "license": "http://creativecommons.org/licenses/publicdomain/",
-        "url": "5d/86/29/509.255540.jpg",
-        "thumb": "5d/86/29/509.255540.98x68.jpg"
+        "url": "5d/86/29/509.255540.jpg"
       },
       {
         "title": "Cuminum cyminum.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Cuminum_cyminum.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "61/41/24/509.43412097.jpg",
-        "thumb": "61/41/24/509.43412097.98x68.jpg"
+        "url": "61/41/24/509.43412097.jpg"
       },
       {
         "title": "Cumin plant, Rajasthan (1).png",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Cumin_plant,_Rajasthan_(1).png",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "65/0b/20/509.56916029.jpg",
-        "thumb": "65/0b/20/509.56916029.98x68.jpg"
+        "url": "65/0b/20/509.56916029.jpg"
       }
     ],
     "names": [
       {
         "vernacularName": "Cominho",
-        "language": "pt",
-        "eol_preferred": false
+        "language": "pt"
       },
       {
         "vernacularName": "Comino",
-        "language": "es",
-        "eol_preferred": false
+        "language": "es"
       },
       {
         "vernacularName": "Cumin",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
       },
       {
         "vernacularName": "Cumin",
-        "language": "fr",
-        "eol_preferred": false
+        "language": "fr"
       },
       {
         "vernacularName": "Cumino",
-        "language": "it",
-        "eol_preferred": false
+        "language": "it"
       },
       {
         "vernacularName": "Kreuzkümmel",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
       },
       {
         "vernacularName": "Kumin",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
       },
       {
         "vernacularName": "Mutterkümmel",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
       },
       {
         "vernacularName": "Römischer Kümmel",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
       },
       {
         "vernacularName": "Weißer Kümmel",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
       },
       {
         "vernacularName": "Welscher Kümmel",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
       },
       {
         "vernacularName": "cumin blanc",
-        "language": "fr",
-        "eol_preferred": false
+        "language": "fr"
       },
       {
         "vernacularName": "cumin de Maroc",
-        "language": "fr",
-        "eol_preferred": false
+        "language": "fr"
       },
       {
         "vernacularName": "cumin",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
         "vernacularName": "cumino romano",
-        "language": "it",
-        "eol_preferred": false
+        "language": "it"
       },
       {
         "vernacularName": "faux anis",
-        "language": "fr",
-        "eol_preferred": false
+        "language": "fr"
       },
       {
         "vernacularName": "cumin",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
         "vernacularName": "Cumin",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       }
     ],
     "taxonomy": {
@@ -148,56 +126,49 @@ export const plants = [
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Marjoram_(Origanum_majorana)_01.JPG",
         "license": "http://creativecommons.org/licenses/publicdomain/",
-        "url": "63/18/81/509.48210955.jpg",
-        "thumb": "63/18/81/509.48210955.98x68.jpg"
+        "url": "63/18/81/509.48210955.jpg"
       },
       {
         "title": "Bindon Hill (E), Mupe Bay - geograph.org.uk - 631203.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Bindon_Hill_(E),_Mupe_Bay_-_geograph.org.uk_-_631203.jpg",
         "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "55/e9/cc/509.13172325.jpg",
-        "thumb": "55/e9/cc/509.13172325.98x68.jpg"
+        "url": "55/e9/cc/509.13172325.jpg"
       },
       {
         "title": "Marjolaine des jardins.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Marjolaine_des_jardins.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "57/6d/55/509.20592633.jpg",
-        "thumb": "57/6d/55/509.20592633.98x68.jpg"
+        "url": "57/6d/55/509.20592633.jpg"
       },
       {
         "title": "Majeranek1.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Majeranek1.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "61/5a/32/509.4395149.jpg",
-        "thumb": "61/5a/32/509.4395149.98x68.jpg"
+        "url": "61/5a/32/509.4395149.jpg"
       },
       {
         "title": "Majeranek2.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Majeranek2.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "61/5a/33/509.4395153.jpg",
-        "thumb": "61/5a/33/509.4395153.98x68.jpg"
+        "url": "61/5a/33/509.4395153.jpg"
       },
       {
         "title": "Marjoram (Origanum majorana) 02.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Marjoram_(Origanum_majorana)_02.JPG",
         "license": "http://creativecommons.org/licenses/publicdomain/",
-        "url": "63/18/80/509.48210954.jpg",
-        "thumb": "63/18/80/509.48210954.98x68.jpg"
+        "url": "63/18/80/509.48210954.jpg"
       },
       {
         "title": "Starr 070906-8859 Origanum majorana.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Starr_070906-8859_Origanum_majorana.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "66/54/4f/509.6186581.jpg",
-        "thumb": "66/54/4f/509.6186581.98x68.jpg"
+        "url": "66/54/4f/509.6186581.jpg"
       }
     ],
     "names": [
@@ -248,56 +219,49 @@ export const plants = [
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Allium_sativum_-_Garlic_02.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "56/74/0a/509.1609454.jpg",
-        "thumb": "56/74/0a/509.1609454.98x68.jpg"
+        "url": "56/74/0a/509.1609454.jpg"
       },
       {
         "title": "Allium sativum harilik kyyslauk estonia.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Allium_sativum_harilik_kyyslauk_estonia.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "55/8f/67/509.11591554.jpg",
-        "thumb": "55/8f/67/509.11591554.98x68.jpg"
+        "url": "55/8f/67/509.11591554.jpg"
       },
       {
         "title": "Aglio giugno.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Aglio_giugno.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "56/07/c9/509.14137609.jpg",
-        "thumb": "56/07/c9/509.14137609.98x68.jpg"
+        "url": "56/07/c9/509.14137609.jpg"
       },
       {
         "title": "Allium sativum var ophioscorodon IP0708029.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Allium_sativum_var_ophioscorodon_IP0708029.jpg",
         "license": "http://creativecommons.org/licenses/publicdomain/",
-        "url": "56/70/62/509.16043708.jpg",
-        "thumb": "56/70/62/509.16043708.98x68.jpg"
+        "url": "56/70/62/509.16043708.jpg"
       },
       {
         "title": "Purple Garlic.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Purple_Garlic.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "57/18/b9/509.19089814.jpg",
-        "thumb": "57/18/b9/509.19089814.98x68.jpg"
+        "url": "57/18/b9/509.19089814.jpg"
       },
       {
         "title": "Allium sativum 4 2014-03-28.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Allium_sativum_4_2014-03-28.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "59/a7/fe/509.31857303.jpg",
-        "thumb": "59/a7/fe/509.31857303.98x68.jpg"
+        "url": "59/a7/fe/509.31857303.jpg"
       },
       {
         "title": "Allium sativum 5 2014-03-28.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Allium_sativum_5_2014-03-28.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "59/a7/ff/509.31857304.jpg",
-        "thumb": "59/a7/ff/509.31857304.98x68.jpg"
+        "url": "59/a7/ff/509.31857304.jpg"
       }
     ],
     "names": [
@@ -388,7 +352,6 @@ export const plants = [
         "source": "https://www.flickr.com/photos/gails_pictures/26637311774/",
         "license": "http://creativecommons.org/licenses/by/2.0/",
         "url": "7f/09/1a/542.26637311774.jpg",
-        "thumb": "7f/09/1a/542.26637311774.98x68.jpg",
         "photographer": {
           "full_name": "<a href='http://www.flickr.com/photos/43272765@N04'>gailhampshire</a>",
           "homepage": "http://www.flickr.com/photos/43272765@N04",
@@ -400,144 +363,126 @@ export const plants = [
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Crataegus_monogyna_g2.jpg",
         "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "55/67/3a/509.1096966.jpg",
-        "thumb": "55/67/3a/509.1096966.98x68.jpg"
+        "url": "55/67/3a/509.1096966.jpg"
       },
       {
         "title": "Crataegus monogyna g3.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Crataegus_monogyna_g3.jpg",
         "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "55/67/45/509.1097014.jpg",
-        "thumb": "55/67/45/509.1097014.98x68.jpg"
+        "url": "55/67/45/509.1097014.jpg"
       },
       {
         "title": "Crataegus-monogyna-frugt.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Crataegus-monogyna-frugt.JPG",
         "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "55/e2/33/509.129189.jpg",
-        "thumb": "55/e2/33/509.129189.98x68.jpg"
+        "url": "55/e2/33/509.129189.jpg"
       },
       {
         "title": "Crataegus-monogyna-total.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Crataegus-monogyna-total.JPG",
         "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "55/e2/36/509.129190.jpg",
-        "thumb": "55/e2/36/509.129190.98x68.jpg"
+        "url": "55/e2/36/509.129190.jpg"
       },
       {
         "title": "May blossom - geograph.org.uk - 1304152.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:May_blossom_-_geograph.org.uk_-_1304152.jpg",
         "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "56/04/ef/509.14031890.jpg",
-        "thumb": "56/04/ef/509.14031890.98x68.jpg"
+        "url": "56/04/ef/509.14031890.jpg"
       },
       {
         "title": "Crataegus monogyna(01).jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Crataegus_monogyna(01).jpg",
         "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "56/81/d7/509.163318.jpg",
-        "thumb": "56/81/d7/509.163318.98x68.jpg"
+        "url": "56/81/d7/509.163318.jpg"
       },
       {
         "title": "Crataegus monogyna NRM.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Crataegus_monogyna_NRM.jpg",
         "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "57/b9/e1/509.2229981.jpg",
-        "thumb": "57/b9/e1/509.2229981.98x68.jpg"
+        "url": "57/b9/e1/509.2229981.jpg"
       },
       {
         "title": "20130315Weissdorn Hockenheim1.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:20130315Weissdorn_Hockenheim1.jpg",
         "license": "http://creativecommons.org/licenses/publicdomain/",
-        "url": "58/68/56/509.25165690.jpg",
-        "thumb": "58/68/56/509.25165690.98x68.jpg"
+        "url": "58/68/56/509.25165690.jpg"
       },
       {
         "title": "Crataegus monogyna J5.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Crataegus_monogyna_J5.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "58/df/68/509.27438593.jpg",
-        "thumb": "58/df/68/509.27438593.98x68.jpg"
+        "url": "58/df/68/509.27438593.jpg"
       },
       {
         "title": "Bijeli glog 0907.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Bijeli_glog_0907.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "59/0e/d8/509.2823042.jpg",
-        "thumb": "59/0e/d8/509.2823042.98x68.jpg"
+        "url": "59/0e/d8/509.2823042.jpg"
       },
       {
         "title": "20130910Weissdorn2.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:20130910Weissdorn2.jpg",
         "license": "http://creativecommons.org/licenses/publicdomain/",
-        "url": "59/59/43/509.30113115.jpg",
-        "thumb": "59/59/43/509.30113115.98x68.jpg"
+        "url": "59/59/43/509.30113115.jpg"
       },
       {
         "title": "Prop de Can Bosquets P1240482.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Prop_de_Can_Bosquets_P1240482.JPG",
         "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "59/c4/06/509.32524244.jpg",
-        "thumb": "59/c4/06/509.32524244.98x68.jpg"
+        "url": "59/c4/06/509.32524244.jpg"
       },
       {
         "title": "Prop de Can Bosquets P1240485.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Prop_de_Can_Bosquets_P1240485.JPG",
         "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "59/c4/0b/509.32524446.jpg",
-        "thumb": "59/c4/0b/509.32524446.98x68.jpg"
+        "url": "59/c4/0b/509.32524446.jpg"
       },
       {
         "title": "Costigiola biancospino-3.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Costigiola_biancospino-3.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "59/d8/a5/509.32960214.jpg",
-        "thumb": "59/d8/a5/509.32960214.98x68.jpg"
+        "url": "59/d8/a5/509.32960214.jpg"
       },
       {
         "title": "Rotdorn Kaethe-Kollwitz-Strasse Methnerstrasse Frankfurt Oder 007.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Rotdorn_Kaethe-Kollwitz-Strasse_Methnerstrasse_Frankfurt_Oder_007.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "5a/1b/e7/509.34140479.jpg",
-        "thumb": "5a/1b/e7/509.34140479.98x68.jpg"
+        "url": "5a/1b/e7/509.34140479.jpg"
       },
       {
         "title": "Rotdorn Kaethe-Kollwitz-Strasse Methnerstrasse Frankfurt Oder 008.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Rotdorn_Kaethe-Kollwitz-Strasse_Methnerstrasse_Frankfurt_Oder_008.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "5a/1b/e8/509.34140486.jpg",
-        "thumb": "5a/1b/e8/509.34140486.98x68.jpg"
+        "url": "5a/1b/e8/509.34140486.jpg"
       },
       {
         "title": "Crataegus monogyna01.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Crataegus_monogyna01.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "5a/44/95/509.10436025.jpg",
-        "thumb": "5a/44/95/509.10436025.98x68.jpg"
+        "url": "5a/44/95/509.10436025.jpg"
       },
       {
         "title": "Crataegus monogyna g2.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Crataegus_monogyna_g2.jpg",
         "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "5a/68/7a/509.1096966.jpg",
-        "thumb": "5a/68/7a/509.1096966.98x68.jpg"
+        "url": "5a/68/7a/509.1096966.jpg"
       }
     ],
     "names": [
@@ -628,169 +573,6 @@ export const plants = [
     "family": "Rosaceae",
     "kingdom": "Plantae"
   },
-  // {
-  //   "id": 579181,
-  //   "name": "Olea europaea",
-  //   "images": [
-  //     {
-  //       "title": "Olea europaea cuspidata-africana Cape Town.JPG",
-  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-  //       "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_cuspidata-africana_Cape_Town.JPG",
-  //       "license": "http://creativecommons.org/licenses/publicdomain/",
-  //       "url": "55/c6/17/509.12527750.jpg",
-  //       "thumb": "55/c6/17/509.12527750.98x68.jpg"
-  //     },
-  //     {
-  //       "title": "Olea europaea cuspidata-africana - Cape Town.JPG",
-  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-  //       "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_cuspidata-africana_-_Cape_Town.JPG",
-  //       "license": "http://creativecommons.org/licenses/publicdomain/",
-  //       "url": "5a/9d/51/509.11873933.jpg",
-  //       "thumb": "5a/9d/51/509.11873933.98x68.jpg"
-  //     },
-  //     {
-  //       "title": "Olives",
-  //       "rightsHolder": "A.Poulos (Iya)",
-  //       "source": "https://www.flickr.com/photos/24918962@N07/2857699230/",
-  //       "license": "http://creativecommons.org/licenses/by/2.0/",
-  //       "url": "7f/22/97/542.2857699230.jpg",
-  //       "thumb": "7f/22/97/542.2857699230.98x68.jpg",
-  //       "photographer": {
-  //         "full_name": "<a href='http://www.flickr.com/photos/24918962@N07'>A.Poulos (Iya)</a>",
-  //         "homepage": "http://www.flickr.com/photos/24918962@N07",
-  //         "role": "photographer"
-  //       }
-  //     },
-  //     {
-  //       "title": "Olea europaea subsp cuspidata, groen en ryp vrugte, Buffelsdrift, b.jpg",
-  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-  //       "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_subsp_cuspidata,_groen_en_ryp_vrugte,_Buffelsdrift,_b.jpg",
-  //       "license": "http://creativecommons.org/licenses/by/3.0/",
-  //       "url": "62/f3/da/509.47464262.jpg",
-  //       "thumb": "62/f3/da/509.47464262.98x68.jpg"
-  //     },
-  //     {
-  //       "title": "Starr 010419-0057 Olea europaea subsp. cuspidata.jpg",
-  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-  //       "source": "https://commons.wikimedia.org/wiki/File:Starr_010419-0057_Olea_europaea_subsp._cuspidata.jpg",
-  //       "license": "http://creativecommons.org/licenses/by/3.0/",
-  //       "url": "65/b6/8b/509.6108095.jpg",
-  //       "thumb": "65/b6/8b/509.6108095.98x68.jpg"
-  //     },
-  //     {
-  //       "title": "Starr 080611-8472 Olea europaea subsp. cuspidata.jpg",
-  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-  //       "source": "https://commons.wikimedia.org/wiki/File:Starr_080611-8472_Olea_europaea_subsp._cuspidata.jpg",
-  //       "license": "http://creativecommons.org/licenses/by/3.0/",
-  //       "url": "66/51/38/509.6185726.jpg",
-  //       "thumb": "66/51/38/509.6185726.98x68.jpg"
-  //     },
-  //     {
-  //       "title": "Olea europaea Grove Wardija Ridge Malta 03.jpg",
-  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-  //       "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_Grove_Wardija_Ridge_Malta_03.jpg",
-  //       "license": "http://creativecommons.org/licenses/by/3.0/",
-  //       "url": "55/50/aa/509.10624510.jpg",
-  //       "thumb": "55/50/aa/509.10624510.98x68.jpg"
-  //     },
-  //     {
-  //       "title": "Olea europaea Grove Wardija Ridge Malta 04.jpg",
-  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-  //       "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_Grove_Wardija_Ridge_Malta_04.jpg",
-  //       "license": "http://creativecommons.org/licenses/by/3.0/",
-  //       "url": "55/50/ab/509.10624528.jpg",
-  //       "thumb": "55/50/ab/509.10624528.98x68.jpg"
-  //     },
-  //     {
-  //       "title": "Olea europaea Grove Wardija Ridge Malta 08.jpg",
-  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-  //       "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_Grove_Wardija_Ridge_Malta_08.jpg",
-  //       "license": "http://creativecommons.org/licenses/by/3.0/",
-  //       "url": "55/50/b0/509.10624599.jpg",
-  //       "thumb": "55/50/b0/509.10624599.98x68.jpg"
-  //     },
-  //     {
-  //       "title": "Acebuche de Ocuri.JPG",
-  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-  //       "source": "https://commons.wikimedia.org/wiki/File:Acebuche_de_Ocuri.JPG",
-  //       "license": "http://creativecommons.org/licenses/by/3.0/",
-  //       "url": "55/b0/fa/509.12270226.jpg",
-  //       "thumb": "55/b0/fa/509.12270226.98x68.jpg"
-  //     },
-  //     {
-  //       "title": "Olive-tree-fruit-august-0.jpg",
-  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-  //       "source": "https://commons.wikimedia.org/wiki/File:Olive-tree-fruit-august-0.jpg",
-  //       "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-  //       "url": "55/c1/ad/509.124464.jpg",
-  //       "thumb": "55/c1/ad/509.124464.98x68.jpg"
-  //     },
-  //     {
-  //       "title": "Olea europaea g9.jpg",
-  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-  //       "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_g9.jpg",
-  //       "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-  //       "url": "56/02/95/509.1393093.jpg",
-  //       "thumb": "56/02/95/509.1393093.98x68.jpg"
-  //     },
-  //     {
-  //       "title": "Olive growing system g3.jpg",
-  //       "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-  //       "source": "https://commons.wikimedia.org/wiki/File:Olive_growing_system_g3.jpg",
-  //       "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-  //       "url": "56/13/53/509.1455011.jpg",
-  //       "thumb": "56/13/53/509.1455011.98x68.jpg"
-  //     }
-  //   ],
-  //   "names": [
-  //     {
-  //       "vernacularName": "European Olive",
-  //       "language": "en",
-        
-  //     },
-  //     {
-  //       "vernacularName": "Olijf",
-  //       "language": "en",
-  //       "eol_preferred": false
-  //     },
-  //     {
-  //       "vernacularName": "Olive",
-  //       "language": "en",
-  //       "eol_preferred": false,
-  //       "wikiSearchTerm": true
-  //     },
-  //     {
-  //       "vernacularName": "olive tree",
-  //       "language": "en",
-  //       "eol_preferred": false
-  //     },
-  //     {
-  //       "vernacularName": "olive",
-  //       "language": "en",
-  //       "eol_preferred": false
-  //     },
-  //     {
-  //       "vernacularName": "olive",
-  //       "language": "en",
-  //       "eol_preferred": false
-  //     },
-  //     {
-  //       "vernacularName": "Olive",
-  //       "language": "en",
-  //       "eol_preferred": false
-  //     }
-  //   ],
-  //   "taxonomy": {
-  //     "kingdom": "Plantae",
-  //     "phylum": "Tracheophyta",
-  //     "class": "Magnoliopsida",
-  //     "order": "Lamiales",
-  //     "family": "Oleaceae"
-  //   },
-  //   "family": "Oleaceae",
-  //   "kingdom": "Plantae",
-  //   "eolName": "Olea europaea L."
-  // },
   {
     "id": 581687,
     "name": "Coriandrum sativum",
@@ -800,80 +582,70 @@ export const plants = [
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:A_scene_of_Coriander_leaves.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "5b/d0/47/509.17870796.jpg",
-        "thumb": "5b/d0/47/509.17870796.98x68.jpg"
+        "url": "5b/d0/47/509.17870796.jpg"
       },
       {
         "title": "Bloeiende koriander.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Bloeiende_koriander.jpg",
         "license": "http://creativecommons.org/licenses/publicdomain/",
-        "url": "55/75/14/509.11171049.jpg",
-        "thumb": "55/75/14/509.11171049.98x68.jpg"
+        "url": "55/75/14/509.11171049.jpg"
       },
       {
         "title": "Coriander NP.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Coriander_NP.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "58/ac/43/509.26320860.jpg",
-        "thumb": "58/ac/43/509.26320860.98x68.jpg"
+        "url": "58/ac/43/509.26320860.jpg"
       },
       {
         "title": "Kottimiri.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Kottimiri.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "59/02/5e/509.27916713.jpg",
-        "thumb": "59/02/5e/509.27916713.98x68.jpg"
+        "url": "59/02/5e/509.27916713.jpg"
       },
       {
         "title": "JfCamachilesMabalacatCoriandrumsativump495fvf.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:JfCamachilesMabalacatCoriandrumsativump495fvf.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "5f/cc/3b/509.38177351.jpg",
-        "thumb": "5f/cc/3b/509.38177351.98x68.jpg"
+        "url": "5f/cc/3b/509.38177351.jpg"
       },
       {
         "title": "JfCamachilesMabalacatCoriandrumsativump498fvf.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:JfCamachilesMabalacatCoriandrumsativump498fvf.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "5f/cc/3e/509.38177355.jpg",
-        "thumb": "5f/cc/3e/509.38177355.98x68.jpg"
+        "url": "5f/cc/3e/509.38177355.jpg"
       },
       {
         "title": "JfCamachilesMabalacatCoriandrumsativump499fvf.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:JfCamachilesMabalacatCoriandrumsativump499fvf.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "5f/cc/3f/509.38177356.jpg",
-        "thumb": "5f/cc/3f/509.38177356.98x68.jpg"
+        "url": "5f/cc/3f/509.38177356.jpg"
       },
       {
         "title": "Flor de Coentro.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Flor_de_Coentro.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "5f/fc/dc/509.3884615.jpg",
-        "thumb": "5f/fc/dc/509.3884615.98x68.jpg"
+        "url": "5f/fc/dc/509.3884615.jpg"
       },
       {
         "title": "Coriandrum sativum sl1.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Coriandrum_sativum_sl1.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "60/99/1c/509.41170030.jpg",
-        "thumb": "60/99/1c/509.41170030.98x68.jpg"
+        "url": "60/99/1c/509.41170030.jpg"
       },
       {
         "title": "Koriander A.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Koriander_A.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "60/9f/bb/509.41281320.jpg",
-        "thumb": "60/9f/bb/509.41281320.98x68.jpg"
+        "url": "60/9f/bb/509.41281320.jpg"
       }
     ],
     "names": [
@@ -963,96 +735,84 @@ export const plants = [
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Cymbopogon_citratus_leaves.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "56/68/87/509.15913253.jpg",
-        "thumb": "56/68/87/509.15913253.98x68.jpg"
+        "url": "56/68/87/509.15913253.jpg"
       },
       {
         "title": "YosriNov04Pokok Serai.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:YosriNov04Pokok_Serai.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "57/13/2b/509.189911.jpg",
-        "thumb": "57/13/2b/509.189911.98x68.jpg"
+        "url": "57/13/2b/509.189911.jpg"
       },
       {
         "title": "Serai.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Serai.jpg",
         "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "57/13/2f/509.189917.jpg",
-        "thumb": "57/13/2f/509.189917.98x68.jpg"
+        "url": "57/13/2f/509.189917.jpg"
       },
       {
         "title": "CapimSantoDSC 6770.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:CapimSantoDSC_6770.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "5b/26/c8/509.14793401.jpg",
-        "thumb": "5b/26/c8/509.14793401.98x68.jpg"
+        "url": "5b/26/c8/509.14793401.jpg"
       },
       {
         "title": "YosriNov04Pokok Serai.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:YosriNov04Pokok_Serai.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "5c/14/6b/509.189911.jpg",
-        "thumb": "5c/14/6b/509.189911.98x68.jpg"
+        "url": "5c/14/6b/509.189911.jpg"
       },
       {
         "title": "Citronnelle Martinique.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Citronnelle_Martinique.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "60/02/97/509.39044264.jpg",
-        "thumb": "60/02/97/509.39044264.98x68.jpg"
+        "url": "60/02/97/509.39044264.jpg"
       },
       {
         "title": "0328jfPulilan Balatong Road Fields Lemon grass Bulacanfvf 09.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:0328jfPulilan_Balatong_Road_Fields_Lemon_grass_Bulacanfvf_09.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "60/f6/1b/509.42705072.jpg",
-        "thumb": "60/f6/1b/509.42705072.98x68.jpg"
+        "url": "60/f6/1b/509.42705072.jpg"
       },
       {
         "title": "0369jfPulilan Balatong Manggo Fields grass Bulacanfvf 31.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:0369jfPulilan_Balatong_Manggo_Fields_grass_Bulacanfvf_31.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "60/f6/22/509.42705504.jpg",
-        "thumb": "60/f6/22/509.42705504.98x68.jpg"
+        "url": "60/f6/22/509.42705504.jpg"
       },
       {
         "title": "0369jfPulilan Balatong Manggo Fields grass Bulacanfvf 43.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:0369jfPulilan_Balatong_Manggo_Fields_grass_Bulacanfvf_43.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "60/f6/26/509.42705516.jpg",
-        "thumb": "60/f6/26/509.42705516.98x68.jpg"
+        "url": "60/f6/26/509.42705516.jpg"
       },
       {
         "title": "Lemongrass (Cymbopogon citratus) 1.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Lemongrass_(Cymbopogon_citratus)_1.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "63/2b/43/509.48533948.jpg",
-        "thumb": "63/2b/43/509.48533948.98x68.jpg"
+        "url": "63/2b/43/509.48533948.jpg"
       },
       {
         "title": "Starr 071024-9896 Cymbopogon citratus.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Starr_071024-9896_Cymbopogon_citratus.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "66/22/13/509.6156057.jpg",
-        "thumb": "66/22/13/509.6156057.98x68.jpg"
+        "url": "66/22/13/509.6156057.jpg"
       },
       {
         "title": "Lemongrass.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Lemongrass.JPG",
         "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "67/dc/a6/509.802698.jpg",
-        "thumb": "67/dc/a6/509.802698.98x68.jpg"
+        "url": "67/dc/a6/509.802698.jpg"
       }
     ],
     "names": [
@@ -1193,48 +953,42 @@ export const plants = [
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Satureja_hortensis_Prague_2011_3.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "57/5d/73/509.20296254.jpg",
-        "thumb": "57/5d/73/509.20296254.98x68.jpg"
+        "url": "57/5d/73/509.20296254.jpg"
       },
       {
         "title": "Satureja hortensis 001.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Satureja_hortensis_001.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "55/6d/ae/509.11061608.jpg",
-        "thumb": "55/6d/ae/509.11061608.98x68.jpg"
+        "url": "55/6d/ae/509.11061608.jpg"
       },
       {
         "title": "Satureja hortensisCastelltallat.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Satureja_hortensisCastelltallat.JPG",
         "license": "http://creativecommons.org/licenses/publicdomain/",
-        "url": "56/1a/11/509.14650566.jpg",
-        "thumb": "56/1a/11/509.14650566.98x68.jpg"
+        "url": "56/1a/11/509.14650566.jpg"
       },
       {
         "title": "Summer Savoury in Hardwick Hall garden 2012 Satureja hortensis.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Summer_Savoury_in_Hardwick_Hall_garden_2012_Satureja_hortensis.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "57/78/ea/509.20895599.jpg",
-        "thumb": "57/78/ea/509.20895599.98x68.jpg"
+        "url": "57/78/ea/509.20895599.jpg"
       },
       {
         "title": "Satureja hortensisCastelltallat.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Satureja_hortensisCastelltallat.JPG",
         "license": "http://creativecommons.org/licenses/publicdomain/",
-        "url": "5b/1b/51/509.14650566.jpg",
-        "thumb": "5b/1b/51/509.14650566.98x68.jpg"
+        "url": "5b/1b/51/509.14650566.jpg"
       },
       {
         "title": "Satureja hortensis Prague 2011 1.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Satureja_hortensis_Prague_2011_1.jpg",
         "license": "http://creativecommons.org/licenses/by-sa/3.0/",
-        "url": "5c/5e/ae/509.20296048.jpg",
-        "thumb": "5c/5e/ae/509.20296048.98x68.jpg"
+        "url": "5c/5e/ae/509.20296048.jpg"
       }
     ],
     "names": [
@@ -1357,7 +1111,6 @@ export const plants = [
         "source": "https://www.flickr.com/photos/biodivlibrary/8232814894/",
         "license": "http://creativecommons.org/licenses/by/2.0/",
         "url": "81/3f/ae/542.8232814894.jpg",
-        "thumb": "81/3f/ae/542.8232814894.98x68.jpg",
         "photographer": {
           "full_name": "<a href='http://www.flickr.com/photos/61021753@N02'>Biodiversity Heritage Library</a>",
           "homepage": "http://www.flickr.com/photos/61021753@N02",
@@ -1369,40 +1122,35 @@ export const plants = [
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Ginger_Plant_vs.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "57/54/34/509.20134351.jpg",
-        "thumb": "57/54/34/509.20134351.98x68.jpg"
+        "url": "57/54/34/509.20134351.jpg"
       },
       {
         "title": "DCP 0779a.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:DCP_0779a.jpg",
         "license": "http://creativecommons.org/licenses/publicdomain/",
-        "url": "60/1e/0b/509.39672130.jpg",
-        "thumb": "60/1e/0b/509.39672130.98x68.jpg"
+        "url": "60/1e/0b/509.39672130.jpg"
       },
       {
         "title": "DCP 0785a.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:DCP_0785a.jpg",
         "license": "http://creativecommons.org/licenses/publicdomain/",
-        "url": "60/1e/10/509.39672223.jpg",
-        "thumb": "60/1e/10/509.39672223.98x68.jpg"
+        "url": "60/1e/10/509.39672223.jpg"
       },
       {
         "title": "Zingiber officinale.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Zingiber_officinale.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "68/16/97/509.8681881.jpg",
-        "thumb": "68/16/97/509.8681881.98x68.jpg"
+        "url": "68/16/97/509.8681881.jpg"
       },
       {
         "title": "n253_w1150",
         "rightsHolder": "Biodiversity Heritage Library",
         "source": "https://farm8.staticflickr.com/7783/26857199192_e6f462e59f_o.jpg",
         "license": "http://creativecommons.org/licenses/by/2.0/",
-        "url": "00/13/f5/8.26857199192.jpg",
-        "thumb": "00/13/f5/8.26857199192.98x68.jpg"
+        "url": "00/13/f5/8.26857199192.jpg"
       }
     ],
     "names": [
@@ -1471,56 +1219,49 @@ export const plants = [
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Carum_carvi_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-172.jpg",
         "license": "http://creativecommons.org/licenses/publicdomain/",
-        "url": "5d/85/e8/509.255512.jpg",
-        "thumb": "5d/85/e8/509.255512.98x68.jpg"
+        "url": "5d/85/e8/509.255512.jpg"
       },
       {
         "title": "Carum carvi 001.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Carum_carvi_001.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "55/3b/2c/509.10309739.jpg",
-        "thumb": "55/3b/2c/509.10309739.98x68.jpg"
+        "url": "55/3b/2c/509.10309739.jpg"
       },
       {
         "title": "Carum carvi 002.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Carum_carvi_002.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "55/3b/2d/509.10309770.jpg",
-        "thumb": "55/3b/2d/509.10309770.98x68.jpg"
+        "url": "55/3b/2d/509.10309770.jpg"
       },
       {
         "title": "Illustration Carum carvi retuschiert.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Illustration_Carum_carvi_retuschiert.jpg",
         "license": "http://creativecommons.org/licenses/publicdomain/",
-        "url": "5f/ed/a4/509.38549362.jpg",
-        "thumb": "5f/ed/a4/509.38549362.98x68.jpg"
+        "url": "5f/ed/a4/509.38549362.jpg"
       },
       {
         "title": "Carum carvi PID1842-2.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Carum_carvi_PID1842-2.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "60/94/76/509.41065215.jpg",
-        "thumb": "60/94/76/509.41065215.98x68.jpg"
+        "url": "60/94/76/509.41065215.jpg"
       },
       {
         "title": "Carum carvi PID1842-1.jpg",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Carum_carvi_PID1842-1.jpg",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "60/94/77/509.41065216.jpg",
-        "thumb": "60/94/77/509.41065216.98x68.jpg"
+        "url": "60/94/77/509.41065216.jpg"
       },
       {
         "title": "Carum carvi.JPG",
         "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
         "source": "https://commons.wikimedia.org/wiki/File:Carum_carvi.JPG",
         "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "60/ce/c7/509.4215340.jpg",
-        "thumb": "60/ce/c7/509.4215340.98x68.jpg"
+        "url": "60/ce/c7/509.4215340.jpg"
       },
       {
         "title": "Pink Caraway Carum carvi H5255 VI08 C.jpg",
@@ -4960,33 +4701,27 @@ export const plants = [
       },
       {
         "vernacularName": "wild tarragon",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
         "vernacularName": "Dragoncello o estragone",
-        "language": "it",
-        "eol_preferred": false
+        "language": "it"
       },
       {
         "vernacularName": "Estragon",
-        "language": "de",
-        "eol_preferred": false
+        "language": "de"
       },
       {
         "vernacularName": "Estragon",
-        "language": "fr",
-        "eol_preferred": false
+        "language": "fr"
       },
       {
         "vernacularName": "tarragon",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       },
       {
         "vernacularName": "tarragon",
-        "language": "en",
-        "eol_preferred": false
+        "language": "en"
       }
     ],
     "taxonomy": {
@@ -7457,14 +7192,6 @@ export const plants = [
         "license": "http://creativecommons.org/licenses/by-sa/3.0/",
         "url": "5a/fb/ae/509.13621702.jpg",
         "thumb": "5a/fb/ae/509.13621702.98x68.jpg"
-      },
-      {
-        "title": "Mrkva.JPG",
-        "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
-        "source": "https://commons.wikimedia.org/wiki/File:Mrkva.JPG",
-        "license": "http://creativecommons.org/licenses/by/3.0/",
-        "url": "5b/03/6f/509.1390674.jpg",
-        "thumb": "5b/03/6f/509.1390674.98x68.jpg"
       }
     ],
     "names": [

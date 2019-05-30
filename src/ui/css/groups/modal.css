@@ -20,12 +20,12 @@
 }
 
 .modal-title {
+  font-size: .7rem;
   color: var(--snap-text-dark);
   text-transform: uppercase;
-  font-size: 1rem;
   letter-spacing: .07rem;
   font-family: sentinel;
-  }
+}
   
   .modal-title span {
     display: block;
@@ -160,9 +160,8 @@
 }
 
 #cardModal .iconic-icon {
-    /* font-size: 2.4rem; */
     cursor: initial;
-    /* color: var(--snap-iconic-icon-header); */
+    display: none;
 }
 
 #cardModal .modal-content .snapdragon-container {  
@@ -298,6 +297,10 @@
   }
 
 @media (min-width: 768px) {
+
+  .modal-title {
+    font-size: 1rem;
+  }
 
   .modal-dialog {
     margin: 2rem auto;
