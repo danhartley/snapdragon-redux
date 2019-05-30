@@ -257,15 +257,18 @@ div.text-entry {
 }
 
 .iconic-icon {
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
     color: var(--snap-iconic-icon-header);
 }
 
 @media (min-width: 768px) {
 
+    .iconic-icon {
+        font-size: 2rem;
+    }
 
     .test-card-container .question-header span.binomial {
         font-size: 1rem;

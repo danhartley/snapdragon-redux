@@ -2,6 +2,7 @@ import * as R from 'ramda';
 
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
+import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
@@ -88,14 +89,18 @@ export const renderTestCardTemplate = (collection, context) => {
     
     const multichoices = [ 'species-scientifics', 'species-vernaculars', 'epithet', 'definition', 'family-strips' ];
 
+    renderIcon(collection.nextItem.taxonomy, document);
+
     if(R.contains(layout.screens[1].name, multichoices)) {
-        document.querySelector('.js-traits-link').classList.remove('hide-important');
+        traitCardLink.classList.remove('hide-important');
+        document.querySelector('.js-iconic-icon').classList.add('hide-important');
     }
 
     const { bonus } = getBonusQuestion(collection.nextItem || {}, []);
 
     if(bonus.typedItemTraits.length === 0) {
-        traitCardLink.style.display = 'none';
+        traitCardLink.classList.add('hide-important');
+        document.querySelector('.js-iconic-icon').classList.remove('hide-important');
     }
 
     traitCardLink.addEventListener('click', () => {
