@@ -96,7 +96,6 @@
 }
 
 #imageComparisonModal .slideBySliderContainer {
-    /* display: flex; */
     display: grid;
     grid-auto-flow: column;
 }
@@ -159,11 +158,6 @@
     margin: 0;
 }
 
-#cardModal .iconic-icon {
-    cursor: initial;
-    display: none;
-}
-
 #cardModal .modal-content .snapdragon-container {  
     height: 70vh;
     padding: 0 .5rem;
@@ -206,10 +200,6 @@
     flex-direction: column;
     justify-content: center;
 }
-
-/* #cardModal .taxon-summary {
-  bottom: 1rem;
-} */
 
   #cardModal .compare-species-link {
     pointer-events: none;

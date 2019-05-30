@@ -5,9 +5,6 @@
     .id-box > div:nth-child(2) {
         font-size: .9rem;
     }
-    /* .taxon-summary {
-        font-size: .9rem;
-    } */
 }
 
 
@@ -260,10 +257,6 @@
     .non-taxon-card-wiki {
         margin: 0 .5rem 0 0;
     }
-
-    /* .taxon-summary {
-        bottom: 6rem;
-    } */
 }
 
 @media (min-width: 1024px) {
