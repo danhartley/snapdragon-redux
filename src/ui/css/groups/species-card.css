@@ -9,8 +9,11 @@
     position: relative;
 }
 
-.names-badge {
-    font-size: 0.8rem;
+.names-container {
+  font-size: 0.8rem;
+}
+
+.names-badge {    
     vertical-align: top;
     cursor: pointer;
     min-width: 1rem;
