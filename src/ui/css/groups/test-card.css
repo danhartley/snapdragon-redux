@@ -19,7 +19,7 @@
 }
 
 .test-card-container .question-header span.binomial {
-    font-size: 1rem;
+    font-size: .8rem;
 }
 
 .names-container {
@@ -290,6 +290,11 @@ div.text-entry {
 }
 
 @media (min-width: 768px) {
+
+
+    .test-card-container .question-header span.binomial {
+        font-size: 1rem;
+    }
 
     .feature-symbiont-list {
         height: 16rem;
