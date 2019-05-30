@@ -13,6 +13,14 @@
   font-size: 0.8rem;
 }
 
+.names-container-large > div:nth-child(1) > span:nth-child(1)  {
+  font-size: 1.2rem;
+}
+
+.names-container-large > div:nth-child(2) {
+  display: none !important;
+}
+
 .names-badge {    
     vertical-align: top;
     cursor: pointer;

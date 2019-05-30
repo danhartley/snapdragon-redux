@@ -24,6 +24,7 @@ export const renderTestCardTemplate = (collection, context) => {
     parent.innerHTML = '';
 
     context.className = context.className || '';
+    context.headerClassName = context.headerClassName || '';
 
     renderTemplate(context, template.content, parent);
 
@@ -89,14 +90,16 @@ export const renderTestCardTemplate = (collection, context) => {
     
     const multichoices = [ 'species-scientifics', 'species-vernaculars', 'epithet', 'definition', 'family-strips' ];
 
-    renderIcon(collection.nextItem.taxonomy, document);
+    const item = collection.nextItem || collection.items[context.bonus.itemIndex];
+
+    renderIcon(item.taxonomy, document);
 
     if(R.contains(layout.screens[1].name, multichoices)) {
         traitCardLink.classList.remove('hide-important');
         document.querySelector('.js-iconic-icon').classList.add('hide-important');
     }
 
-    const { bonus } = getBonusQuestion(collection.nextItem || {}, []);
+    const { bonus } = getBonusQuestion(item || {}, []);
 
     if(bonus.typedItemTraits.length === 0) {
         traitCardLink.classList.add('hide-important');
@@ -105,7 +108,7 @@ export const renderTestCardTemplate = (collection, context) => {
 
     traitCardLink.addEventListener('click', () => {
         if(isTraitCard) {            
-            renderTraitCard(collection.nextItem);
+            renderTraitCard(item);
             isTraitCard = false;
         } else {                  
             renderMultiStrips(collection);
