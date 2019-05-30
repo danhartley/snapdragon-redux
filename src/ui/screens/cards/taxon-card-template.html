@@ -1,9 +1,14 @@
 <div class="snapdragon-container test-card-container">
     <div class="taxon card-card js-taxon-card">
         <div id="taxon-card-header" class="question-container">
-                <div>
-                    <span class="iconic-icon js-iconic-icon"><i class=""></i></span>
+                
+            
+                <div class="species-header landscape">                        
+                    <img src="https://content.eol.org/data/media/{{ headerImage }}" alt="">
                 </div>
+
+                <div class="portrait"></div>
+
                 <div class="hide-empty question-header">
                     <div>
                         <div class="names-container vernacular-name-badge js-names-container">
@@ -17,9 +22,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="species-header landscape">                        
-                    <img src="https://content.eol.org/data/media/{{ headerImage }}" alt="">
+            
+                <div class="iconic-icon-container">
+                    <div class="iconic-icon js-iconic-icon">
+                        <span>Test</span>
+                        <span>card<i class="far fa-arrow-alt-circle-right"></i></span>
+                    </div>
                 </div>
+
         </div>  
         <div class="data-box-container sub-header">
             <div class="data-box">
@@ -33,18 +43,20 @@
                 <div><a href="{{ wiki }}" class="underline-link" data-toggle="modal" data-target="#wikiModal">WIKI MODAL</a></div>
             </div>
         </div>
-        <div class="id-box-container">
-            <div class="id-box">
-                <div>
-                    <div>Quick ID</div>
-                </div>
-                <div>
-                    <div class="taxon-identification">{{ identification }}</div>
+        <div class="taxon-card-scrollable-container">
+            <div class="id-box-container">
+                <div class="id-box">
+                    <div>
+                        <div>Quick ID</div>
+                    </div>
+                    <div>
+                        <div class="taxon-identification">{{ identification }}</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="taxon-summary">
-            <div>{{ summary }}</div>
+            <div class="taxon-summary">
+                <div>{{ summary }}</div>
+            </div>
         </div>
         <div class="info-box js-taxon-info-box"></div>
         <!-- <div class="landscape portrait"><span class="snap-alert-fg js-taxon-toxic-warning"></span> {{ toxic }}</div> -->

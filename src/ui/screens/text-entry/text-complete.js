@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { renderIcon } from 'ui/helpers/icon-handler';
+// import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { scoreHandler } from 'ui/helpers/handlers';
@@ -45,7 +45,7 @@ export const renderCompleteText = (collection) => {
 
     const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: 'Complete the latin name', help: '(Select the name below.)', term: '' });
 
-    const icon = renderIcon(item.taxonomy, document);
+    // const icon = renderIcon(item.taxonomy, document);
 
     const template = document.createElement('template');
 
@@ -107,7 +107,7 @@ export const renderCompleteText = (collection) => {
             actions.boundUpdateScore(score);
         });
 
-        score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
+        // score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
     };
 
     document.querySelectorAll('.pool .block span').forEach(answer => {

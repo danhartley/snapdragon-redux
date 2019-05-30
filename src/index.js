@@ -11,6 +11,7 @@ import 'ui/css/snapdragon-media.css';
 import 'ui/css/groups/test-card.css';
 import 'ui/css/groups/species-card.css';
 import 'ui/css/groups/modal.css';
+import 'ui/css/groups/media-heights.css';
 
 import { store } from 'redux/store';
 import { getIPLocation } from 'geo/geo';

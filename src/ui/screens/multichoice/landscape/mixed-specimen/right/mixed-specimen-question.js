@@ -4,7 +4,7 @@ import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { returnIcon } from 'ui/helpers/icon-handler';
-import { renderIcon } from 'ui/helpers/icon-handler';
+// import { renderIcon } from 'ui/helpers/icon-handler';
 import { species } from 'api/species';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { itemProperties } from 'ui/helpers/data-checking';
@@ -40,7 +40,7 @@ export const renderMixedSpecimenQuestion = (...args) => {
 
     renderTemplate({ instructions, binomial }, template.content, parent);
 
-    const icon = renderIcon(item.taxonomy, document);
+    // const icon = renderIcon(item.taxonomy, document);
 
     const listenToImageChangeHandler = images => {        
         let speciesToShow = '';
@@ -70,7 +70,7 @@ export const renderMixedSpecimenQuestion = (...args) => {
         pendingScore.score = score;
         pendingScore.scoreUpdateTimer = scoreUpdateTimer;
 
-        score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
+        // score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
     });
 
     continueLessonBtn.addEventListener('click', () => {

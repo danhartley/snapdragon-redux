@@ -4,7 +4,7 @@ import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { itemProperties } from 'ui/helpers/data-checking';
-import { renderIcon } from 'ui/helpers/icon-handler';
+// import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-questions-template.html';
@@ -43,7 +43,7 @@ export const renderMixedSpecimenQuestions = collection => {
 
     let parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question: 'Find the species', help: '(Click on the matching photo.)', term: '' });
     
-    const icon = renderIcon(item.taxonomy, document);
+    // const icon = renderIcon(item.taxonomy, document);
     
     const template = document.createElement('template');
 
@@ -79,7 +79,7 @@ export const renderMixedSpecimenQuestions = collection => {
             const callback = (score, scoreUpdateTimer) => {
                 boundScore.score = score;
                 boundScore.scoreUpdateTimer = scoreUpdateTimer;
-                score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
+                // score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
                 continueLessonBtn.disabled = false;          
                 if(!score.success) {
                     const wrongItem = items.find(item => item.name === score.answer);

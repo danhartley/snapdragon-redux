@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { renderIcon } from 'ui/helpers/icon-handler';
+// import { renderIcon } from 'ui/helpers/icon-handler';
 import { species } from 'api/species';
 import { taxa } from 'api/snapdragon/taxa';
 import { epithets } from 'api/botanical-latin';
@@ -45,7 +45,7 @@ export const renderMultiStrips = (collection, bonus) => {
         
         const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help, term, className, bonus });
 
-        const icon = renderIcon(item.taxonomy, document);
+        // const icon = renderIcon(item.taxonomy, document);
 
         const template = document.createElement('template');
         
@@ -107,7 +107,7 @@ export const renderMultiStrips = (collection, bonus) => {
                 updateScore();
             });
 
-            score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
+            // score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
 
             if(screen.name === 'family-strips') {
                 document.querySelector('.js-question-question').innerHTML = item.family;

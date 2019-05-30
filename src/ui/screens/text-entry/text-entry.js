@@ -1,7 +1,7 @@
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { renderIcon } from 'ui/helpers/icon-handler';
+// import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
@@ -89,7 +89,7 @@ export const renderInput = (screen, question) => {
             answerBtn.innerHTML = question.taxon === 'vernacular' ? item.vernacularName : item.name;
             answerBtn.classList.add('portrait-answer');
         }
-        score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
+        // score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
     };
 
     const scoreEventHandler = event => {
@@ -105,7 +105,7 @@ export const renderInput = (screen, question) => {
     if(config.isPortraitMode) renderPortrait(item, config);
     else renderLandscape(item, config, question);
 
-    const icon = renderIcon(item.taxonomy, document);
+    // const icon = renderIcon(item.taxonomy, document);
 
     document.querySelector('.js-continue-lesson-btn').addEventListener('click', event => {
         window.clearTimeout(boundScore.scoreUpdateTimer);

@@ -192,11 +192,11 @@
 }
 
 .iconic-icon {
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
     padding: 0 0 0 .5rem;
     padding: .5rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    /* box-shadow: 0 2px 8px rgba(0,0,0,.2); */
     transition: all 1s ease;
     cursor: pointer;
 }
@@ -264,14 +264,9 @@ div.text-entry {
 
 /* CARD HEADER */
 
-/* .question-container {
-    background-color: var(--snap-species-header-background);
-    height: 4rem;
-  } */
-
 .question-container {
+    grid-template-columns: 1fr 3fr 1fr;
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
     background-color: var(--snap-species-header-background);
     height: 4rem;
     color: var(--snap-text-medium-light);
@@ -289,30 +284,6 @@ div.text-entry {
     object-fit: scale-down;
 }
 
-/* .question-container > div:nth-child(1) {
-    padding: 0 0 0 1rem;
-    display: flex;
-    flex-direction: row;
-    font-size: .9rem;
-    justify-content: left;
-    align-items: center;
-} */
-
-.question-container > div:nth-child(1), .question-container > div:nth-child(3) {
-    width: 3rem;
-    height: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    /* padding: 0 0 0 1rem;
-    display: flex;
-    flex-direction: row;
-    font-size: .9rem;
-    justify-content: left;
-    align-items: center; */
-}
-
 .feature-symbiont-list {
     height: 12rem;
     padding: .5rem;
@@ -327,6 +298,7 @@ div.text-entry {
     /* CARD HEADER */
 
     .question-container {
+        grid-template-columns: 1fr 4fr 1fr;
         height: 5.5rem;
         display: initial;
     }
@@ -354,8 +326,16 @@ div.text-entry {
     }
 
     .iconic-icon, .traits-icon {
-        font-size: 2.4rem;
+        font-size: 1rem;
     }
+
+    .iconic-icon i {
+        vertical-align: text-top;
+    }
+
+    .traits-icon i {
+        font-size: .8rem;
+      }
 
     .iconic-icon .mushroom-icon-header, .traits-icon .mushroom-icon-header {
         font-size: initial;
@@ -365,8 +345,7 @@ div.text-entry {
         font-size: 1.2rem;  
         align-items: center;
     }
-
-    /* .test-card-container .question-container { */
+    
     .question-container {
         display: grid;
         grid-template-columns: 1fr 4fr 1fr;

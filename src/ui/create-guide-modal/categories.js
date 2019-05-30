@@ -79,10 +79,11 @@ export const renderCategories = (modal, createGuide) => {
             config.guide.iconicTaxa = iconicTaxa;
 
             createGuide.setConfig(config);
-            createGuide.saveStep('SPECIES');
-            
+            createGuide.saveStep('SPECIES');            
         });
     });
+
+    createGuide.saveStep('SPECIES');
 
     document.querySelector('.js-arrow-wrapper').innerHTML = '<i class="far fa-arrow-alt-circle-right"></i>';
 };
