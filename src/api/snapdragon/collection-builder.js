@@ -119,7 +119,6 @@ async function getSpeciesData(item) {
             source: media.source,
             license: media.license,
             url: media.eolMediaURL,
-            // thumb: media.eolThumbnailURL,
             photographer: media.agents.find(agent => agent.role === 'photographer')            
         }
     });

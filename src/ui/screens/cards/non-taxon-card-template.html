@@ -4,9 +4,11 @@
     <div class="portrait-grid non-taxon-card-images carousel js-non-taxon-card-images"></div>    
     <div class="card-card card non-taxon js-non-taxon-card">
         <div id="taxon-card-header" class="question-container">
-                <div>
-                    <span class="iconic-icon js-iconic-icon"><span class="mushroom-icon-header"><svg-icon class="si-glyph-mushrooms"><src href="./icons/si-glyph-mushrooms.svg"/></svg></span></span>
+                
+                <div class="species-header landscape js-species-header">                        
+                    <img class="landscape" src="https://content.eol.org/data/media/{{ imageUrl }}" alt="">
                 </div>
+
                 <div class="hide-empty question-header">
                     <div>
                         <div class="names-container vernacular-name-badge js-names-container">
@@ -19,9 +21,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="species-header landscape js-species-header">                        
-                    <img class="landscape" src="https://content.eol.org/data/media/{{ imageUrl }}" alt="">
+                
+                <div class="iconic-icon-container">
+                    <span class="iconic-icon js-iconic-icon"><span class="mushroom-icon-header"><svg-icon class="si-glyph-mushrooms"><src href="./icons/si-glyph-mushrooms.svg"/></svg></span></span>
                 </div>
+    
+
         </div>  
         <div class="non-taxa js-non-taxa">                
             <div class="btn-group btn-group-toggle" data-toggle="buttons" data-repeat-taxon="{{ group }}">
