@@ -208,9 +208,9 @@
     justify-content: center;
 }
 
-#cardModal .taxon-summary {
+/* #cardModal .taxon-summary {
   bottom: 1rem;
-}
+} */
 
   #cardModal .compare-species-link {
     pointer-events: none;

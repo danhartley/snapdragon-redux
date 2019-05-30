@@ -5,9 +5,9 @@
     .id-box > div:nth-child(2) {
         font-size: .9rem;
     }
-    .taxon-summary {
+    /* .taxon-summary {
         font-size: .9rem;
-    }
+    } */
 }
 
 
@@ -256,9 +256,9 @@
         margin: 0 .5rem 0 0;
     }
 
-    .taxon-summary {
+    /* .taxon-summary {
         bottom: 6rem;
-    }
+    } */
 }
 
 @media (min-width: 1024px) {
@@ -351,8 +351,10 @@
     }
 
     .id-box-container {
-        top: 12rem;
-        padding: 0 1rem;        
+        /* position: absolute;
+        top: 12rem; */
+        padding: 0 1rem;
+        margin: 0; 
     }
 
     .carousel-inner .image-load-original > div {

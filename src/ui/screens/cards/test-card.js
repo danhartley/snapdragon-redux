@@ -34,6 +34,10 @@ export const renderTestCardTemplate = (collection, context) => {
 
     renderTemplate(context, template.content, parent);
 
+    setTimeout(() => {
+        document.querySelector('.js-iconic-icon').classList.remove('depressed');
+    }, 1000);
+
     const testCardContainer = document.querySelector('.test-card-container');
     const testCard = document.querySelector('.test-card-container');
     const testCardIcon = testCard.querySelector('.iconic-icon');
