@@ -100,7 +100,7 @@ export const renderTraitCard = item => {
 
         renderMultiStrips(collection, bonus);
 
-        const returnLink = document.querySelector('.js-traits-icon');
+        const returnLink = document.querySelector('.js-traits-link');
         const returnTxt = returnLink.querySelector('span:nth-child(1)');
               returnTxt.innerHTML = 'Main';
     

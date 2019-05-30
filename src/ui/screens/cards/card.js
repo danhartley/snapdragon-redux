@@ -10,7 +10,7 @@ import { lookALikes } from 'ui/screens/common/look-alikes';
 import { renderFeatures } from 'ui/screens/common/feature';
 import { infoSlider } from 'ui/screens/common/info-slider';
 import { iconicTaxa, matchTaxon } from 'api/snapdragon/iconic-taxa';
-// import { renderIcon } from 'ui/helpers/icon-handler';
+import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import { renderInatDataBox } from 'ui/screens/common/inat-box';
 import { renderCalendar } from 'ui/screens/common/calendar';
@@ -146,7 +146,7 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
 
     renderCalendar(calendarNode, item, config);
 
-    // renderIcon(item.taxonomy, rootNode);
+    renderIcon(item.taxonomy, rootNode);
 
     if(mode === 'MODAL') {      
           

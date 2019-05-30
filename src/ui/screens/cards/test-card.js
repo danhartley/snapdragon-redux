@@ -22,25 +22,13 @@ export const renderTestCardTemplate = (collection, context) => {
     const parent = DOM.rightBody;
     parent.innerHTML = '';
 
-    const handleIconAppearance = selector => {
-        const icon = document.querySelector(selector);
-        icon.classList.add('depressed');        
-        setTimeout(() => {
-            icon.classList.remove('depressed');
-        }, 1000);
-    };
-
     context.className = context.className || '';
 
     renderTemplate(context, template.content, parent);
 
-    // setTimeout(() => {
-    //     document.querySelector('.js-iconic-icon').classList.remove('depressed');
-    // }, 1000);
-
     const testCardContainer = document.querySelector('.test-card-container');
     const testCard = document.querySelector('.test-card-container');
-    const testCardIcon = testCard.querySelector('.iconic-icon');
+    const testCardIcon = testCard.querySelector('.js-card-link');
 
     const hideCurrentCard = (container, card) => {
 
@@ -57,7 +45,7 @@ export const renderTestCardTemplate = (collection, context) => {
         container.classList.add('swap-in-card');
 
         const card = document.querySelector(selector);
-        const icon = card.querySelector('.iconic-icon');
+        const icon = card.querySelector('.js-card-link');
 
         return { card, icon };
     }
@@ -75,8 +63,6 @@ export const renderTestCardTemplate = (collection, context) => {
 
         const { card: speciesCard, icon: speciesIcon } = showNextCard(speciesContainer, '.js-card-card');
 
-        // handleIconAppearance('#card-header .js-iconic-icon');
-
         speciesIcon.addEventListener('click', event => {
 
             item.lichen 
@@ -89,27 +75,21 @@ export const renderTestCardTemplate = (collection, context) => {
                 ? showNextCard(taxonContainer, '.js-non-taxon-card')
                 : showNextCard(taxonContainer, '.js-taxon-card');
 
-            // handleIconAppearance('#taxon-card-header .js-iconic-icon');
-
             taxonIcon.addEventListener('click', event => {
-    
                 hideCurrentCard(taxonContainer, taxonCard);
-
                 showNextCard(testCardContainer, '.js-test-card');
-
-                // handleIconAppearance('#test-card-header .js-iconic-icon');
             });
         });
     });
 
-    const traitCardLink = document.querySelector('.js-traits-icon');
+    const traitCardLink = document.querySelector('.js-traits-link');
 
     const layout = store.getState().layout;
     
     const multichoices = [ 'species-scientifics', 'species-vernaculars', 'epithet', 'definition', 'family-strips' ];
 
     if(R.contains(layout.screens[1].name, multichoices)) {
-        document.querySelector('.js-traits-icon').classList.remove('hide-important');
+        document.querySelector('.js-traits-link').classList.remove('hide-important');
     }
 
     const { bonus } = getBonusQuestion(collection.nextItem || {}, []);
