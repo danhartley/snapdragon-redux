@@ -116,6 +116,11 @@
 
 @media (min-width: 768px) {
 
+    .non-taxon.card img {
+        height: 5.5rem;
+        width: 5.5rem;
+      }
+
     .left-body, .right-body {
         margin: 0;
     }
