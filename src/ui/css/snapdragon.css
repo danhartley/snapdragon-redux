@@ -1887,6 +1887,10 @@ a.collection-disabled {
   margin: -2rem auto 6rem; /* 5 + 1 */
 }
 
+.summary-scores {
+  height: 10rem;
+}
+
 .home-guide .taxa {
   color: var(--snap-collection-active);
 }
