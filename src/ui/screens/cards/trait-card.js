@@ -69,11 +69,6 @@ export const renderTraitCard = item => {
             const context = { correct, total, name: item.vernacularName || item.name };
             
             renderTemplate(context, template.content, parent);
-            
-            // const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
-            // const icon = returnTaxonIcon(iconicTaxon);
-
-            // document.querySelector('.js-trait-icon').innerHTML = icon;
 
             document.querySelector('.js-try-again').addEventListener('click', () => {
                 renderTraitCard(item);
