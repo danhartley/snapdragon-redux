@@ -3,7 +3,6 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-// import { renderIcon } from 'ui/helpers/icon-handler';
 import { species } from 'api/species';
 import { taxa } from 'api/snapdragon/taxa';
 import { epithets } from 'api/botanical-latin';
@@ -41,11 +40,10 @@ export const renderMultiStrips = (collection, bonus) => {
         const help = (overrides && overrides.help !== undefined) ? overrides.help : helpDefault;
         const term = (overrides && overrides.term !== undefined) ? overrides.term : '';
         const className = (overrides && overrides.className !== undefined) ? overrides.className : '';
+        const headerClassName = (overrides && overrides.headerClassName !== undefined) ? overrides.headerClassName : '';
         const conceals = (overrides && overrides.conceals !== undefined) ? overrides.conceals : ['', '', '', '', '', ''];
         
-        const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help, term, className, bonus });
-
-        // const icon = renderIcon(item.taxonomy, document);
+        const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help, term, className, headerClassName, bonus });
 
         const template = document.createElement('template');
         
@@ -106,8 +104,6 @@ export const renderMultiStrips = (collection, bonus) => {
                 window.clearTimeout(scoreUpdateTimer);
                 updateScore();
             });
-
-            // score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
 
             if(screen.name === 'family-strips') {
                 document.querySelector('.js-question-question').innerHTML = item.family;
@@ -221,13 +217,13 @@ export const renderMultiStrips = (collection, bonus) => {
         const random = utils.getRandomInt(2);
 
         switch(random) {            
-            case 0: //'match-common-family-name-to-latin-family-name':
+            case 0:
                 question = commonFamilyName;
                 answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
                 if(question === undefined) console.log(item.name);
                 render(question, answers, { question: 'Match family name' });
             break;
-            case 1:  //'match-latin-family-name-to-common-family-name':
+            case 1:
                 question = family;
                 answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
                 if(question === undefined) console.log(item.name);
@@ -237,6 +233,8 @@ export const renderMultiStrips = (collection, bonus) => {
     }
 
     if(screen.name === 'trait-property') {
+
+        bonus.overrides.headerClassName = 'names-container-large';
         
         render(bonus.question, bonus.answers, bonus.overrides);
 
@@ -256,7 +254,9 @@ export const renderMultiStrips = (collection, bonus) => {
         }
     }
 } catch(e) {
-   
+
+    console.log('bugged out on strips');
+    
     rebindLayoutState(layout, item);
 
     renderMultiStrips(collection);

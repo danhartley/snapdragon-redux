@@ -21,7 +21,6 @@ button {
 
 tbody {
   font-size: 0.9rem;
-  /* border-bottom: 0.1rem solid var(--snap-border-dark); */
 }
 
 h1 {
@@ -1849,7 +1848,7 @@ a.collection-disabled {
   height: 3rem;
 }
 
-.home-container .snapdragon-tag, .home-container .summary-scores {
+.home-container .snapdragon-tag, .home-container .summary-scores, .trait-card-summary-container .summary-scores {
   font-size: 1.6rem;
   justify-content: center;
   font-family: sentinel;
@@ -1860,16 +1859,15 @@ a.collection-disabled {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4rem; /* 1 + 3 */  
+  margin-top: 4rem; /* 1 + 3 */    
 }
-
-.home-container .snapdragon-tag {
+.home-container .snapdragon-tag, .home-container .summary-scores {
   height: 100%;
   margin: -2rem auto 6rem; /* 5 + 1 */
 }
 
-.home-container .summary-scores {
-  height: 10rem;
+.trait-card-summary-container .summary-scores {
+  height: 10rem;  
 }
 
 .home-guide .taxa {
