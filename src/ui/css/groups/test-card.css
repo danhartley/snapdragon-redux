@@ -264,6 +264,15 @@ div.text-entry {
     color: var(--snap-iconic-icon-header);
 }
 
+.iconic-icon g {
+    fill: var(--snap-iconic-icon-header);
+}
+
+.iconic-icon .mushroom-icon-header svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
 @media (min-width: 768px) {
 
     .iconic-icon {

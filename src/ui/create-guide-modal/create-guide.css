@@ -545,16 +545,14 @@
 
   /* Mushroom icon sizes */
 
-  .iconic-taxa-categories svg,
-  .selected-text .iconic-taxa-categories-selected svg,
-  .lesson-taxa .iconic-taxa-categories-selected svg {
+  .iconic-taxa-categories svg, .iconic-taxa-categories-selected svg {
     width: 1rem;
     height: 1rem;
   }
 
-  .iconic-taxa-categories-selected svg {
+  /* .iconic-taxa-categories-selected svg {
     margin: 0;
-  }
+  } */
 
   .selected-text svg, .selected-text i, .iconic-taxa-selected i {
     color: var(--snap-collection-active);
@@ -562,11 +560,6 @@
 
   .lesson-taxa .iconic-taxa-categories-selected svg g {
     fill: var(--snap-text-medium-dark);
-  }
-
-  .iconic-taxa-categories-selected svg {
-    width: 2rem;
-    height: 2rem;
   }
   
   .iconic-taxa-categories-selected svg {
@@ -577,11 +570,11 @@
     fill: var(--snap-collection-active);
   }
   
-  .mushroom-icon svg {
+  /* .mushroom-icon svg {
     width: 2rem;
     height: 2rem;
     fill: black;
-  }
+  } */
 
   .svg-icon {
     margin: 0.25rem 0 0;
@@ -814,6 +807,11 @@
 
   @media (min-width: 768px) {
 
+    .iconic-taxa-categories svg, .iconic-taxa-categories-selected svg {
+      width: 2rem;
+      height: 2rem;
+    }
+
     .iconic-taxa-categories #fungi svg {
       margin-left: -.25rem;
     }
@@ -858,7 +856,7 @@
     }
 
     .location-options {
-      bottom: 2.4rem;
+      bottom: 3rem;
       right: .75rem;
     }
 
