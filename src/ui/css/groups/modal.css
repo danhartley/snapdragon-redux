@@ -140,6 +140,10 @@
 
 /* CARD MODAL */
 
+#cardModal .card-link {
+  display: none;
+}
+
 #cardModal .modal-dialog {
     max-width: 100vw;
 }
