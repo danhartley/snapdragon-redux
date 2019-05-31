@@ -197,6 +197,7 @@ export const renderMultiStrips = (collection, bonus) => {
     }
 
     if(screen.name === 'definition') {
+        bonus.overrides.headerClassName = 'names-container-large';
         render(bonus.question, bonus.answers, bonus.overrides);
     }
 
@@ -234,8 +235,6 @@ export const renderMultiStrips = (collection, bonus) => {
 
     if(screen.name === 'trait-property') {
 
-        bonus.overrides.headerClassName = 'names-container-large';
-        
         render(bonus.question, bonus.answers, bonus.overrides);
 
         if(bonus.overrides.trait && bonus.overrides.trait.name === 'song') {

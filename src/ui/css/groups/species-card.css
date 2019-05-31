@@ -14,12 +14,9 @@
 }
 
 .names-container-large > div:nth-child(1) > span:nth-child(1)  {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  margin-top: 1.25rem;
 }
-
-/* .names-container-large > div:nth-child(2) {
-  display: none !important;
-} */
 
 .names-badge {    
     vertical-align: top;
