@@ -51,7 +51,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
                     ? enums.lessonState.CREATE_LESSON
                     : enums.lessonState.GET_SPECIES;
 
-    const actionLink = document.querySelector('.js-create-guide-link');
+    const actionLink = document.querySelector('.js-action-link');
     
     const editLink = document.querySelector('.js-edit-guide-link');
     const editLinkTxt = document.querySelector('.js-edit-guide-link span');
@@ -120,6 +120,11 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
         if(help) help.innerHTML = 'Please broaden your criteria.';
     };
 
+    const resumeLessonHandler = () => {
+        lessonHandler.getLessonItems(enums.lessonState.RESUME_LESSON, collection, config, history);        
+        subscription.remove(subscription.getByName('renderSpeciesGrid'));
+    };
+
     const checkState = state => {
 
         const { collection, config, history } = store.getState();
@@ -128,13 +133,19 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
         const forText = document.querySelector('.js-for-text');
 
+        actionLink.removeEventListener('click', modalHandler);
+        actionLink.removeEventListener('click', getSpeciesHandler);
+        actionLink.removeEventListener('click', beginLessonHandler);     
+        actionLink.removeEventListener('click', resumeLessonHandler);
+
         switch(state) {
 
             case enums.lessonState.CREATE_LESSON:
 
                 actionLink.innerHTML = 'Create';
                 actionLink.setAttribute('data-toggle', 'modal');
-                actionLink.addEventListener('click', modalHandler);      
+                actionLink.addEventListener('click', modalHandler);
+                    
                 deleteLink.classList.add('hide');                
                 editLink.classList.add('hide');                
                 saveLink.classList.add('hide');                
@@ -153,8 +164,6 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
                 actionLink.innerHTML = 'Get Species';
                 actionLink.removeAttribute('data-toggle');
-                actionLink.removeEventListener('click', modalHandler);
-                actionLink.removeEventListener('click', getSpeciesHandler);
                 actionLink.addEventListener('click', getSpeciesHandler);
 
                 const editableTypes = [ 'place', 'longLat' ];
@@ -174,7 +183,8 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
             case enums.lessonState.BEGIN_LESSON:      
 
                 actionLink.innerHTML = 'Begin';
-                actionLink.addEventListener('click', beginLessonHandler);                
+                actionLink.addEventListener('click', beginLessonHandler);
+
                 editLink.classList.add('hide');  
 
                 if(forText) {
@@ -187,11 +197,8 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
                 actionLink.innerHTML = 'Resume';
                 actionLink.removeAttribute('data-toggle');
-                actionLink.removeEventListener('click', modalHandler);
-                actionLink.addEventListener('click', () => {
-                    lessonHandler.getLessonItems(enums.lessonState.RESUME_LESSON, collection, config, history);        
-                    subscription.remove(subscription.getByName('renderSpeciesGrid'));
-                });
+                actionLink.addEventListener('click', resumeLessonHandler);
+
                 editLink.classList.add('hide');
                 saveLink.classList.remove('hide');
 
