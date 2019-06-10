@@ -2,6 +2,7 @@ import * as R from 'ramda';
 
 import { types } from 'redux/actions/action-types';
 import { progressState } from 'redux/reducers/initial-state/initial-progress-state';
+import { enums } from 'ui/helpers/enum-helper';
 
 export const counter = (state = null, action) => {
     switch(action.type) {
@@ -142,7 +143,7 @@ export const history = (state = null, action) => {
     }
 };
 
-export const page = (state = { name: 'home', glossary: false }, action) => {
+export const page = (state = { name: enums.navigation.HOME, glossary: false }, action) => {
     switch(action.type) {
         case types.CHANGE_PAGE:
             return { ...state, ...action.data };
@@ -151,7 +152,7 @@ export const page = (state = { name: 'home', glossary: false }, action) => {
         case types.NEXT_LAYOUT:
             return { name: '', type: action.data.type, glossary: true };
         case types.PAUSE_LESSON: {
-            return { name: 'home', glossary: false };
+            return { name: enums.navigation.HOME, glossary: false };
         }
         case types.RESTART_LESSON: {
             return action.data.page;   

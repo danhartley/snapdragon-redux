@@ -146,6 +146,8 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
         // Portrait mode only
 
         if(continueLearningActionBtn) {
+
+            actions.boundNewPage({ name: 'LIST'});
         
             if(history || counter.isLessonPaused) {
                 continueLearningActionBtn.innerHTML = 'Continue lesson';

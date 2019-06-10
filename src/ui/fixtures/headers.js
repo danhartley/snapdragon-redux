@@ -1,15 +1,17 @@
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
+import { enums } from 'ui/helpers/enum-helper';
 
 export const renderHeaders = page => {
     
-    let lessonPlan, config, counter, collection;
+    let lessonPlan, config, counter, collection, layout;
 
     setTimeout(() => {
         lessonPlan = store.getState().lessonPlan;
         config = store.getState().config;
         counter = store.getState().counter;
         collection = store.getState().collection;
+        layout = store.getState().layout;
         render();
     });
     
@@ -17,7 +19,8 @@ export const renderHeaders = page => {
     let leftHeaderText = '', rightHeaderText = '';
 
     const render = () => {
-        const layout = (lessonPlan && lessonPlan.layouts) ? lessonPlan.layouts[counter.index] : null;
+
+        layout = layout ? layout : (lessonPlan && lessonPlan.layouts) ? lessonPlan.layouts[counter.index] : null;
 
         const title = `learn the planet`;
     
@@ -28,10 +31,10 @@ export const renderHeaders = page => {
         LANDSCAPE = config.isLandscapeMode;
     
         if(collection.name) {        
-            LANDSCAPE_HOME = page.name === 'home' && LANDSCAPE;
+            LANDSCAPE_HOME = page.name === enums.navigation.HOME && LANDSCAPE;
             COLLECTION = !!collection;
             if(COLLECTION) collection.name ? leftHeaderText = collection.name : title;
-            SPECIES_LIST = page.name === 'list' || page.name === 'home' && LANDSCAPE;
+            SPECIES_LIST = page.name === enums.navigation.LIST || page.name === enums.navigation.HOME && LANDSCAPE;
             if(SPECIES_LIST && PORTRAIT) rightHeaderText = collection.name;
             if(LANDSCAPE_HOME) {
                 leftHeaderText = collection.name;

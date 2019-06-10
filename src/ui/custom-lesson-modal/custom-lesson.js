@@ -22,7 +22,11 @@ export const renderSaveLesson = (parent) => {
 
     let collection, config, modal, name;
 
-    document.querySelector('.js-save').addEventListener('click', () => {
+    const saveLessonLink = document.querySelector('.js-save');
+
+    if(!saveLessonLink) return;
+
+    saveLessonLink.addEventListener('click', () => {
         
         collection = store.getState().collection;
         config = store.getState().config;
