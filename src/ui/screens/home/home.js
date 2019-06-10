@@ -15,6 +15,7 @@ import { listenToCloseExampleGuideModal } from 'ui/example-guide-modal/example-g
 import { renderSaveLesson, listenToCloseSaveLessonModal } from 'ui/custom-lesson-modal/custom-lesson';
 import { renderSpeciesGrid } from 'ui/screens/home/species-grid';
 import { enums } from 'ui/helpers/enum-helper';
+import { deactivateHomeIcon } from 'ui/fixtures/navigation';
 
 import homeTemplate from 'ui/screens/home/home-template.html';
 import introTemple from 'ui/screens/home/home-intro-template.html';
@@ -77,10 +78,16 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     const modalHandler = () => {        
         const step = 1;
         createGuideHandler(step);
+        if(config.isPortraitMode) {
+            deactivateHomeIcon();
+        }
     };
 
     const examplesHandler = () => {
         renderExampleGuideHandler();
+        if(config.isPortraitMode) {
+            deactivateHomeIcon();
+        }
     };
 
     const getSpeciesHandler = () => {
@@ -147,7 +154,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
                 actionLink.addEventListener('click', modalHandler);
                     
                 deleteLink.classList.add('hide');                
-                editLink.classList.add('hide');                
+                editLink.classList.add('hide');
                 saveLink.classList.add('hide');                
                 exampleLink.classList.remove('hide');
 

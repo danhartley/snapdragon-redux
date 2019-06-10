@@ -10,6 +10,16 @@ lessonState.initEnum([
     'NEXT_ROUND'
 ]);
 
+class navigation extends Enum {};
+navigation.initEnum([
+    'HOME', 
+    'SETTINGS', 
+    'LIST',
+    'GLOSSARY', 
+    'EMAIL'
+]);
+
 export const enums = {
-    lessonState
+    lessonState,
+    navigation
 };

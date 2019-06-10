@@ -138,6 +138,7 @@ export const renderExampleGuideHandler = () => {
           };
         } else {
           startLessonHandler = event => {
+            closeModalListeners.forEach(listener => listener(state));
             renderHome(0);
           };
         }
