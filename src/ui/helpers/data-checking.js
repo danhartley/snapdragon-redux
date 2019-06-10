@@ -4,27 +4,32 @@ import { utils } from 'utils/utils';
 import { epithets } from 'api/botanical-latin';
 
 const getVernacularName = (item, config, useShortForm = false, namePart = 'vernacularName') => {
-    let shortForm;
-    if(useShortForm) {
-        let englishShortForm = item.names.find(name => name.language === 'en' && name.shortForm);
-        englishShortForm = englishShortForm ? englishShortForm.shortForm : undefined;
-        let languageSortForm = item.names.find(name => name.language === config.language && name.shortForm);
-        languageSortForm = languageSortForm ? languageSortForm.shortForm : undefined;
-        shortForm = languageSortForm || englishShortForm;
+    try {
+        let shortForm;
+        if(useShortForm) {
+            let englishShortForm = item.names.find(name => name.language === 'en' && name.shortForm);
+            englishShortForm = englishShortForm ? englishShortForm.shortForm : undefined;
+            let languageSortForm = item.names.find(name => name.language === config.language && name.shortForm);
+            languageSortForm = languageSortForm ? languageSortForm.shortForm : undefined;
+            shortForm = languageSortForm || englishShortForm;
+        }
+        if(shortForm) return shortForm;    
+        const englishNames = item.names.filter(name => name.language === 'en');
+        const english = englishNames.length > 0 ? englishNames[0][namePart] : 'Unknown';
+        const names = item.names.filter(name => name.language === config.language);
+        const name = names.length > 0 ? names[0][namePart] : english;
+        const capitalisedNames = name.split(' ');
+        let capitalisedName;
+        if(config.language === 'fr') {        
+            capitalisedName = utils.capitaliseFirst(capitalisedNames.join(' '));
+        } else {
+            capitalisedName = capitalisedNames.map(name => utils.capitaliseFirst(name)).join(' ');
+        }
+        return capitalisedName;
+    } catch(e) {
+        console.log(item);
+        return '';
     }
-    if(shortForm) return shortForm;    
-    const englishNames = item.names.filter(name => name.language === 'en');
-    const english = englishNames.length > 0 ? englishNames[0][namePart] : 'Unknown';
-    const names = item.names.filter(name => name.language === config.language);
-    const name = names.length > 0 ? names[0][namePart] : english;
-    const capitalisedNames = name.split(' ');
-    let capitalisedName;
-    if(config.language === 'fr') {        
-        capitalisedName = utils.capitaliseFirst(capitalisedNames.join(' '));
-    } else {
-        capitalisedName = capitalisedNames.map(name => utils.capitaliseFirst(name)).join(' ');
-    }
-    return capitalisedName;
 };
 
 const getGenusName = binomial => {
@@ -130,8 +135,13 @@ const vernacularNamesForItems = (items, config) => {
 };
 
 const getVernacularNames = (item, config) => {
-    const names = item.names.filter(name => name.language === config.language).map(name => utils.capitaliseFirst(name.vernacularName));
-    return names;
+    try {
+        const names = item.names.filter(name => name.language === config.language).map(name => utils.capitaliseFirst(name.vernacularName));
+        return names;
+    } catch(e) {
+        console.log(item);
+        return '';
+    }
 };
 
 const answersFromList = (list, toInclude, number) => {

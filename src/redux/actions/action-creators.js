@@ -22,6 +22,7 @@ const endRevision = makeActionCreator(types.END_REVISION);
 const updateHistory = makeActionCreator(types.UPDATE_HISTORY)
 const newCollection = makeActionCreator(types.NEW_COLLECTION);
 const updateCollection = makeActionCreator(types.UPDATE_COLLECTION);
+const updateCollections = makeActionCreator(types.UPDATE_COLLECTIONS);
 const changeCollectionItems = makeActionCreator(types.UPDATE_COLLECTION_ITEMS);
 const nextRound = makeActionCreator(types.NEXT_ROUND);
 const nextLevel = makeActionCreator(types.NEXT_LEVEL);
@@ -32,6 +33,9 @@ const updateLanguage = makeActionCreator(types.UPDATE_LANGUAGE);
 const newPage = makeActionCreator(types.CHANGE_PAGE);
 const updateEnums = makeActionCreator(types.UPDATE_ENUMS);
 const updateLesson = makeActionCreator(types.UPDATE_LESSON);
+const pauseLesson = makeActionCreator(types.PAUSE_LESSON);
+const saveLesson = makeActionCreator(types.SAVE_LESSON);
+const restartLesson = makeActionCreator(types.RESTART_LESSON);
 
 const boundchangeLessonPlan = data => store.dispatch(changeLessonPlan(data));
 const boundchangeLessonPlans = data => store.dispatch(changeLessonPlans(data));
@@ -44,6 +48,7 @@ const boundEndRevision = data => store.dispatch(endRevision(data));
 const boundUpdateHistory = data => store.dispatch(updateHistory(data));
 const boundNewCollection = data => store.dispatch(newCollection(data));
 const boundUpdateCollection = data => store.dispatch(updateCollection(data));
+const boundUpdateCollections = data => store.dispatch(updateCollections(data));
 const boundUpdateCollectionItems = data => store.dispatch(changeCollectionItems(data));
 const boundNextRound = data => store.dispatch(nextRound(data));
 const boundNextLevel = data => store.dispatch(nextLevel(data));
@@ -54,6 +59,9 @@ const boundUpdateLanguage = data => store.dispatch(updateLanguage(data));
 const boundNewPage = data => store.dispatch(newPage(data));
 const boundUpdateEnums = data => store.dispatch(updateEnums(data));
 const boundUpdateLesson = data => store.dispatch(updateLesson(data));
+const boundPauseLesson = data => store.dispatch(pauseLesson(data));
+const boundSaveLesson = data => store.dispatch(saveLesson(data));
+const boundRestartLesson = data => store.dispatch(restartLesson(data));
 
 export const actions = {
     boundchangeLessonPlans,
@@ -67,6 +75,7 @@ export const actions = {
     boundUpdateHistory,
     boundNewCollection,
     boundUpdateCollection,
+    boundUpdateCollections,
     boundUpdateCollectionItems,
     boundNextRound,
     boundNextLevel,
@@ -76,5 +85,8 @@ export const actions = {
     boundUpdateLanguage,
     boundNewPage,
     boundUpdateEnums,
-    boundUpdateLesson
+    boundUpdateLesson,
+    boundPauseLesson,
+    boundSaveLesson,
+    boundRestartLesson
 };

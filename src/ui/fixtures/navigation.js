@@ -8,6 +8,8 @@ import { subscription } from 'redux/subscriptions';
 import { renderHome } from 'ui/screens/home/home';
 import { getGlossary } from 'api/glossary/glossary';
 import { lessonHandler } from 'ui/helpers/lesson-handler';
+import { enums } from 'ui/helpers/enum-helper';
+
 import navigationTemplate from 'ui/fixtures/navigation-template.html';
 import definitionCardTemplate from 'ui/screens/cards/definition-card-template.html';
 
@@ -64,6 +66,7 @@ export const renderNavigation = (page) => {
     let handleBodyClick = true;
 
     document.body.addEventListener('click', event => {
+
         if(handleBodyClick) {
             document.querySelector('.js-settings').classList.remove('active-icon');
             const svg = document.querySelector('.js-settings svg');
@@ -86,7 +89,7 @@ export const renderNavigation = (page) => {
                     case 'home':
                         target.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));        
-                        lessonHandler.getLessonItems('pause-lesson', collection, config, history); 
+                        lessonHandler.getLessonItems(enums.lessonState.PAUSE_LESSON, collection, config, history); 
                         const { counter } = store.getState();
                         const loadSpeciesList = false;
                         config.isPortraitMode ? renderHome(counter, loadSpeciesList) : renderHome(counter);
@@ -100,7 +103,7 @@ export const renderNavigation = (page) => {
                     case 'list':                        
                         target.classList.add('active-icon');
                         subscription.getByRole('screen').forEach(sub => subscription.remove(sub));                                   
-                        lessonHandler.getLessonItems('pause-lesson', collection, config, history);
+                        lessonHandler.getLessonItems(enums.lessonState.PAUSE_LESSON, collection, config, history);
                         if(config.isPortraitMode) {
                             const { counter } = store.getState();
                             renderHome(counter);

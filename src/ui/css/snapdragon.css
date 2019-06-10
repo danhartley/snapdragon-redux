@@ -487,12 +487,12 @@ a.dropdown-item {
 
 .left-grid .footer .nav-icons,
 .right-grid .footer .nav-icons,
-.right-grid .footer .footer-score {
+.right-grid {
   flex: auto;
 }
 
-.round-footer,
-.score-footer span {
+.footer-round,
+.footer-score span {
   color: var(--snap-text-medium-dark);
   padding: 0.75rem;
 }
@@ -2003,7 +2003,7 @@ a.collection-disabled {
   margin: .5rem .25rem 0 0;
 }
 
-.snapdragon-create-guide .edit-guide-link {
+.edit-guide-link, .save-guide-link {
   margin: 0 .5rem 0 0;
 }
 

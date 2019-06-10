@@ -1,9 +1,8 @@
-import * as R from 'ramda';
-
 import { store } from 'redux/store';
 import { persistor } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { stats } from 'ui/helpers/stats';
+import { enums } from 'ui/helpers/enum-helper';
 
 const getMode = (mode, isLevelComplete, itemsToReview) => {    
     const _mode = (mode === 'learn' && isLevelComplete && itemsToReview.length > 0)
@@ -19,27 +18,27 @@ const getLatestCounter = () => {
     return { index };
 };
 
-const getLessonItems = (lessonStateMode, collection, config, history) => {    
+const getLessonItems = (lessonState, collection, config, history) => {    
 
     const { lesson } = store.getState();
 
-    switch(lessonStateMode) {
-        case 'new-lesson': {
+    switch(lessonState) {
+        case enums.lessonState.BEGIN_LESSON: {
             actions.boundToggleLesson({ index: 0 });
             break;
         }
-        case 'pause-lesson': {
+        case enums.lessonState.PAUSE_LESSON: {
             if(collection.items) {
                 const { index } = getLatestCounter();
                 actions.boundToggleLesson({ index: 0, log: { index: index, collection: collection.id  } });
             }
             break;
         }
-        case 'restart-lesson': {
+        case enums.lessonState.RESUME_LESSON: {
             actions.boundToggleLesson(getLatestCounter());
             break;
         }
-        case 'next-round': {
+        case enums.lessonState.NEXT_ROUND: {
             const itemsToReview = stats.getItemsForRevision(collection, history, 1);
             const mode = getMode(config.mode, lesson.isLevelComplete, itemsToReview);
             config.mode = mode;

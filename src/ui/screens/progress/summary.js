@@ -3,6 +3,8 @@ import { subscription } from 'redux/subscriptions';
 import { DOM } from 'ui/dom';
 import { lessonHandler } from 'ui/helpers/lesson-handler';
 import { renderTemplate } from 'ui/helpers/templating';
+import { enums } from 'ui/helpers/enum-helper';
+
 import summaryTemplate from 'ui/screens/progress/summary-template.html';
 
 export const renderSummary = history => {
@@ -20,21 +22,19 @@ export const renderSummary = history => {
 
     renderTemplate({ score, history, collection, config, header, summary, warning }, template.content, parent);
     
-    let actionLink = document.querySelector('.js-create-guide-link');
+    let actionLink = document.querySelector('.js-continue-link');
 
-    if(lesson.isLessonComplete) actionLink.innerHTML = 'Choose new'; // lesson.isLessonComplete
-    // if(collection.isLessonComplete) actionLink.innerHTML = 'Choose new'; // lesson.isLessonComplete
+    if(lesson.isLessonComplete) actionLink.innerHTML = 'Choose new';
 
     const handleBtnClickEvent = event => {
 
         subscription.remove(subscription.getByName('renderSummary'));
         subscription.remove(subscription.getByName('renderHistory'));
 
-        // if(collection.isLessonComplete) { // lesson.isLessonComplete
-        if(lesson.isLessonComplete) { // lesson.isLessonComplete
+        if(lesson.isLessonComplete) {
             lessonHandler.purgeLesson();
         }
-        else lessonHandler.getLessonItems('next-round', collection, config, history);
+        else lessonHandler.getLessonItems(enums.lessonState.NEXT_ROUND, collection, config, history);
     };
 
     actionLink.removeEventListener('click', handleBtnClickEvent);

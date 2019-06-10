@@ -3119,7 +3119,7 @@ export const deciduousAndEvergreenTrees2 = [
       {
         "vernacularName": "White Horse Chestnut",
         "language": "en"
-      },,
+      },
       {
         "vernacularName": "horse chestnut",
         "language": "en"

@@ -1,6 +1,10 @@
+import * as R from 'ramda';
+
 import { types } from 'redux/actions/action-types';
 
-export const lesson = (state = { currentRound: 1, rounds: 0, isNextRound: true }, action) => {
+const initialState = { currentRound: 1, rounds: 0, isNextRound: true };
+
+export const lesson = (state = initialState, action) => {
 
     switch(action.type) {
 
@@ -45,13 +49,6 @@ export const lesson = (state = { currentRound: 1, rounds: 0, isNextRound: true }
 
             let level = state.level;
 
-            // if(state.isLevelComplete) {
-            //     layoutCounter = 0;
-            //     let levelId = state.level.id + 1;
-            //     level = state.levels.find(level => level.id === levelId);
-            //     currentRound = 1;
-            // }
-
             return { ...state, currentRound, layoutCounter, level };
         }
 
@@ -83,8 +80,36 @@ export const lesson = (state = { currentRound: 1, rounds: 0, isNextRound: true }
             }
         }
 
+        case types.PAUSE_LESSON: {            
+            return initialState;
+        }
+
+        case types.RESTART_LESSON: {
+            return action.data.lesson;   
+        }
+
         default: {
             return state; 
         }
+    }
+};
+
+export const lessons = (state = [], action) => {
+
+    switch(action.type) {
+        case types.SAVE_LESSON:
+            const savedLessonNames = state.map(lesson => lesson.name);
+            if(R.contains(action.data.collection.name, savedLessonNames)) {
+                const lessons = state.filter(lesson => lesson.name !== action.data.collection.name);
+                      lessons.push(action.data);
+                return lessons;
+            } else {
+                return [ ...state, action.data ];
+            }
+        case types.RESTART_LESSON: {
+            return state.filter(lesson => lesson.name !== action.data.collection.name);            
+        }    
+        default:
+            return state;
     }
 };

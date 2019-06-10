@@ -9637,9 +9637,17 @@ export const insects = [
     ],
     "names": [
       {
-        "vernacularName": "Large garden bumblebee",
+        "vernacularName": "Ornate Shieldbug",
         "language": "en"
-      }
+      },
+      {
+        "vernacularName": "Schmuckwanze",
+        "language": "de"
+      },
+      {
+        "vernacularName": "Punaise rouge du chou",
+        "language": "fr"
+      },
     ],
     "taxonomy": {
       "kingdom": "Animalia",

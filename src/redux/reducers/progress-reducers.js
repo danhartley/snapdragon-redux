@@ -12,9 +12,6 @@ export const counter = (state = null, action) => {
         case types.NEXT_ROUND:
             return { index: 0 };
         case types.NEXT_LEVEL:
-            // const _counter = action.data;
-            // const isLessonPaused = (!!_counter && !!_counter.log);
-            // return { index: action.data.index, isLessonPaused };
             return { ...state, index: action.data.index };
         case types.STOP_START_LESSON:
             const _counter = action.data;
@@ -24,8 +21,12 @@ export const counter = (state = null, action) => {
         case types.END_REVISION:
             let i = (state.index + 1) <= action.data.layoutCount ? (state.index + 1) : state.index;
             return { index: i };
-        // case types.SKIP_ITEM:
-        //     return { index: state.index + 1 };
+        case types.PAUSE_LESSON: {
+            return { };
+        }
+        case types.RESTART_LESSON: {
+            return action.data.counter;   
+        }
         default:
             return state;
     }
@@ -33,7 +34,7 @@ export const counter = (state = null, action) => {
 
 export const score = (state = R.clone(progressState.score), action) => {
     switch(action.type) {
-        case types.UPDATE_SCORE:
+        case types.UPDATE_SCORE: {
         
             const score = { ...state, ...action.data };
             
@@ -72,14 +73,14 @@ export const score = (state = R.clone(progressState.score), action) => {
             }
             
             return { ...state, ...score};
-
+        }
         case types.SELECT_COLLECTION:
             return R.clone(progressState.score);
         case types.NEXT_ROUND:
         case types.NEXT_LEVEL:
         case types.UPDATE_COLLECTION:
             return { ...progressState.score, ...{ fails: [], passes: []} };
-        case types.UPDATE_TRAIT_SCORE:
+        case types.UPDATE_TRAIT_SCORE: {
             const bonusScores = state.bonusScores || [];
             bonusScores.push(
                 {
@@ -90,6 +91,13 @@ export const score = (state = R.clone(progressState.score), action) => {
                 }
             );
             return { ...state, bonusScores: bonusScores };
+        }
+        case types.PAUSE_LESSON: {
+            return R.clone(progressState.score);
+        }
+        case types.RESTART_LESSON: {
+            return action.data.score;   
+        }
         default:
             return state;
     }       
@@ -123,12 +131,18 @@ export const history = (state = null, action) => {
         }
         case types.SELECT_COLLECTION:
             return null;   
+        case types.PAUSE_LESSON: {
+            return null;
+        }
+        case types.RESTART_LESSON: {
+            return action.data.history;   
+        }
         default:
             return state;
     }
 };
 
-export const page = (state = { name: 'home', glossary: false}, action) => {
+export const page = (state = { name: 'home', glossary: false }, action) => {
     switch(action.type) {
         case types.CHANGE_PAGE:
             return { ...state, ...action.data };
@@ -136,6 +150,12 @@ export const page = (state = { name: 'home', glossary: false}, action) => {
             return { name: '', glossary: true };
         case types.NEXT_LAYOUT:
             return { name: '', type: action.data.type, glossary: true };
+        case types.PAUSE_LESSON: {
+            return { name: 'home', glossary: false };
+        }
+        case types.RESTART_LESSON: {
+            return action.data.page;   
+        }
         default:
             return state;
     }

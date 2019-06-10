@@ -8,9 +8,10 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { renderLocation } from 'ui/create-guide-modal/location';
 import { renderCategories } from 'ui/create-guide-modal/categories';
 import { renderSeason } from 'ui/create-guide-modal/season';
-import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
 import { saveButton } from 'ui/create-guide-modal/common/save-button';
+import { enums } from 'ui/helpers/enum-helper';
 
+import actionsTemplate from 'ui/create-guide-modal/common/actions-template.html';
 import createGuideTemplate from 'ui/create-guide-modal/create-guide-template.html';
 
 const closeModalListeners = [];
@@ -34,6 +35,8 @@ class CreateGuide {
         ];
         
         this.modal = document.getElementById('createGuide');
+
+        if(!this.modal) return;
 
         this.modalTitle = this.modal.querySelector('.js-modal-title div:nth-child(1)');
         this.modalTitleSteps = this.modal.querySelector('.js-modal-title div:nth-child(2)');
@@ -98,7 +101,7 @@ class CreateGuide {
         this.nextStepActionTxt.removeAttribute('data-dismiss');
 
         if(nextStep > this.steps.length) {
-            closeModalListeners.forEach(listener => listener(this.currentStep));
+            closeModalListeners.forEach(listener => listener(enums.lessonState.GET_SPECIES));
             this.currentStep = 0;
             const config = this.getConfig();
             config.guide.ready = true;

@@ -21,7 +21,7 @@ export const saveButton = (config, step, update = true) => {
             case 'SPECIES':
 
                 chosen.innerHTML = '';
-                const iconicTaxa = config.guide.iconicTaxa;
+                let iconicTaxa = config.guide.iconicTaxa;
                 let icons = '';
                 if(iconicTaxa.length > 0) {
                     iconicTaxa.forEach(taxon => {
@@ -37,9 +37,6 @@ export const saveButton = (config, step, update = true) => {
             case 'INAT':
                 
                 if(config.guide.inatId.key) {
-                    // chosen.innerHTML = config.guide.inatId.param === 'project_id' 
-                    //         ? 'iNaturalist Project:'
-                    //         : 'iNaturalist User:';
                     chosen.innerHTML = config.guide.inatId.key || '';
                 } else {
                     chosen.innerHTML = '';

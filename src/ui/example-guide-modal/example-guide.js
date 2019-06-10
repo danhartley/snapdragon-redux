@@ -1,12 +1,14 @@
+import * as R from 'ramda';
+
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { elem } from 'ui/helpers/class-behaviour';
 import { actions } from 'redux/actions/action-creators';
 import { renderHome } from 'ui/screens/home/home';
 import { returnTaxonIcon } from 'ui/helpers/icon-handler';
-import { renderTemplate } from 'ui/helpers/templating';
-import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
+import { enums } from 'ui/helpers/enum-helper';
 
+import { renderTemplate } from 'ui/helpers/templating';
 import exampleGuideTemplate from 'ui/example-guide-modal/example-guide-template.html';
 import exampleLessonsTemplate from 'ui/example-guide-modal/example-guide.html';
 
@@ -18,7 +20,9 @@ export const listenToCloseExampleGuideModal = listener => {
 
 export const renderExampleGuideHandler = () => {
     
-  let { config } = store.getState();
+    let { config, collections, lessons: savedLessons } = store.getState();
+
+    const savedLessonNames = savedLessons.map(lesson => lesson.name);
 
     let template;
 
@@ -33,12 +37,17 @@ export const renderExampleGuideHandler = () => {
 
     let type = 'place', selectedLesson;
 
-    const lessons = snapdragonCollections.filter(lesson => !lesson.default);
+    const lessons = collections.filter(lesson => !lesson.default);
 
     const loadLessons = () => {
 
       lessons.forEach(lesson => {
-          lesson.taxa = lesson.guide.iconicTaxa.map(taxon => taxon.common).join(', ');
+        const isPaused = R.contains(lesson.name, savedLessonNames); 
+        lesson.taxa = lesson.iconicTaxa.map(taxon => taxon.common).join(', ');
+        lesson.savedState = isPaused
+            ? '(lesson paused)'
+            : '';
+        lesson.isPaused = isPaused;    
       });
 
       const parent = modal.querySelector('.js-landscape-inner-body div:nth-child(2)');
@@ -57,12 +66,13 @@ export const renderExampleGuideHandler = () => {
 
         const lessonId = parseInt(taxon.dataset.lessonId);
         const lesson = lessons.find(lesson => lesson.id === lessonId);
-        const lessonTaxa = lesson.guide.iconicTaxa.map(taxon => taxon.id);
+        const lessonTaxa = lesson.iconicTaxa;
 
-        let icons = `${lesson.iconicTaxaSummary}: `;
+        const iconicTaxaSummary = lessonTaxa.length === 8 ? 'All taxa' : lessonTaxa.map(taxon => taxon.common).join(',');
+        let icons = `${iconicTaxaSummary}: `;
 
         lessonTaxa.forEach(taxon => {
-          const icon = returnTaxonIcon(taxon);
+          const icon = returnTaxonIcon(taxon.id);
           icons += icon;
         });
 
@@ -72,7 +82,9 @@ export const renderExampleGuideHandler = () => {
       for (const taxon of taxa) { iconiseTaxon(taxon); }
 
       const navigationBtn = modal.querySelector('.js-start-lesson-wrapper');
-      navigationBtn.disabled = true;
+            navigationBtn.disabled = true;
+
+      const startText = navigationBtn.querySelector('span:nth-child(1)');
   
       const lessonSelectors = modal.querySelectorAll('.btn.btn-secondary');
 
@@ -91,18 +103,38 @@ export const renderExampleGuideHandler = () => {
 
       const saveChanges = () => {
 
-        config.guide = { ...config.guide, ...selectedLesson.guide, season: { ...config.guide.season } };
-        config.collection = { ...config.collection, ...selectedLesson.collection };
-        actions.boundUpdateConfig(config);
-
         navigationBtn.disabled = false;
+
+        let state;
+
+        if(selectedLesson.isPaused) {
+
+          state = enums.lessonState.RESUME_LESSON;
+
+          startText.innerHTML = 'Restart lesson';
+
+          const savedLesson = savedLessons.find(lesson => lesson.name === selectedLesson.name);
+          actions.boundRestartLesson(savedLesson);
+
+        } else {
+
+          state = enums.lessonState.GET_SPECIES;
+
+          startText.innerHTML = 'Start lesson';
+          
+          const { config } = store.getState();
+  
+          config.guide = { ...config.guide, ...selectedLesson.guide };
+          config.collection = { id: selectedLesson.id };
+          actions.boundUpdateConfig(config);      
+        }
 
         let startLessonHandler;
 
         if(config.isLandscapeMode) {
-          navigationBtn.setAttribute('data-dismiss','modal');        
+          navigationBtn.setAttribute('data-dismiss','modal');
           startLessonHandler = event => {
-            closeModalListeners.forEach(listener => listener());
+            closeModalListeners.forEach(listener => listener(state));
           };
         } else {
           startLessonHandler = event => {

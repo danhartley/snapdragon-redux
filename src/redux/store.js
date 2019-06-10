@@ -9,7 +9,7 @@ import { config, enums } from 'redux/reducers/config-reducer';
 import { collections, collection, bonusLayout } from 'redux/reducers/species-reducers';
 import { counter, score, history, page } from 'redux/reducers/progress-reducers';
 import { lessonPlans, lessonPlan, layout } from 'redux/reducers/layout-reducers';
-import { lesson } from 'redux/reducers/lesson-reducers';
+import { lesson, lessons } from 'redux/reducers/lesson-reducers';
 
 const reducer = combineReducers({
     counter,
@@ -24,7 +24,8 @@ const reducer = combineReducers({
     page,
     enums,
     lesson,
-    bonusLayout
+    bonusLayout,
+    lessons
 });
 
 const persistConfig = {
@@ -45,3 +46,16 @@ export const store = createStore(
 );
 
 export const persistor = persistStore(store);
+
+export const rootReducer = (state, action) => {
+
+    // For this use case we can use purge instead:
+
+    // https://stackoverflow.com/questions/35622588/how-to-reset-the-state-of-a-redux-store/35641992#35641992
+
+    if(action.type === 'INITIALISE_STATE') {
+        state = undefined;
+    }
+
+    return reducer(state, action);
+  }

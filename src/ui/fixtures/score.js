@@ -3,6 +3,8 @@ import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
 import { renderTemplate } from 'ui/helpers/templating';
 
+import scoreTemplate from 'ui/fixtures/score-template.html';
+
 export const renderScore = (score) => {
     
     const { history, collection, config, layout, lesson } = store.getState();
@@ -14,15 +16,12 @@ export const renderScore = (score) => {
     const currentRound = lesson.currentRound;
 
     template.innerHTML = config.isPortraitMode
-            ?   `<div><span>Score: {{ score.correct }} / {{ score.total }}</span></div>`
-            :   `<div class="round-footer">{{ layout.levelName }}, round {{ currentRound }}</div>
-                <div class="score-footer">
-                    <span>{{ score.correct }} {{ scoreText }}</span>
-                    <span style="display:none;">Score: {{ score.correct }} / {{ score.total }}</span>
-                    <span style="display:none;">History: {{ history.correct }} / {{ history.total }}</span>
-                </div>`;
-
-    if(!layout) return;
+            ?   layout 
+                    ? `<div><span>Score: {{ score.correct }} / {{ score.total }}</span></div>`
+                    : ''
+            :   layout 
+                    ? scoreTemplate
+                    : '';
 
     const runningTotal = history ? { ...history } : { correct: 0, total: 0 };
 
@@ -36,6 +35,8 @@ export const renderScore = (score) => {
     renderTemplate({ score, history: runningTotal, collection, config, layout, scoreText, currentRound }, template.content, parent);
 
     score.mode = config.mode;
+
+    if(!layout) return;
 
     if(score.total === layout.roundScoreCount) {
         actions.boundUpdateHistory(score);

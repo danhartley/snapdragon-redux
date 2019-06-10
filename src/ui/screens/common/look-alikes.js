@@ -79,7 +79,7 @@ export const lookALikes = (item, traits, config, rootNode = document) => {
             
             imageSideBySlider(slides, parent, true, config);
             
-            const lookalikes = lookalikeDescriptions.filter(lookalikes => lookalikes.type === 'lookalike').find(lookalikes => R.contains(item.name, lookalikes.ids));
+            const lookalikes = lookalikeDescriptions.find(lookalikes => R.contains(item.name, lookalikes.ids));
 
             lookalikes.species.forEach(sp => {
                 const identifier = `.description_${sp.id.replace(' ', '_')}`;

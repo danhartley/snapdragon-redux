@@ -5,13 +5,9 @@ import { mushrooms } from 'api/snapdragon/mushrooms';
 import { mushrooms2 } from 'api/snapdragon/mushrooms2';
 import { weeds } from 'api/rhs/weeds';
 import { lichen } from 'api/snapdragon/lichen';
-import { mammals } from 'api/snapdragon/mammals';
-
-import { leaf } from 'api/leaf';
-
 import { plants } from 'api/snapdragon/plants';
 
-const allIconicTaxa = [
+export const allIconicTaxa = [
     {
       id: 'fungi',
       common: 'Fungi & Lichens'
@@ -46,151 +42,118 @@ const allIconicTaxa = [
     }
 ];
 
-const snapdragonLichens = {
-    id: 3,
-    type: 'taxon',
-    name: 'Common Lichens',
-    guide: {
-        locationPlace: 'Common Lichens',
-        locationType: 'taxon',
-        place: {
-            name: 'Snapdragon Lichens',
-            id: 'any',
-            type: 'places'
-        },
-        season: {
-            type: 'all_year'
-        },
-        iconicTaxa: [
-            {
-              id: 'fungi',
-              common: 'Fungi & Lichens'
-            }
-        ],
-        iconicTaxaSummary: 'Lichens',
-        ready: true
-    },
-    collection: {
-      id: 3
-    },
-    providerId: 2,
-    moduleSize: 4,
-    lessonPlanLandscape: 1,
-    lessonPlanPortrait: 101,
-    glossary: ['lichen', 'common'],
-    iconicTaxa: [ 'fungi' ],    
-    iconicTaxaSummary: 'Lichens',
-    itemNames: [
-        'Xanthoria parietina', 'Physcia adscendens', 'Parmelia saxatilis', 'Graphis scripta',
-        'Ramalina farinacea', 'Evernia prunastri', 'Usnea florida', 
-        'Physcia tenella', 'Placynthium nigrum', 'Physcia aipolia',
-        'Rhizocarpon geographicum', 'Ochrolechia parella',
-        'Platismatia glauca', 'Diploicia canescens', 'Usnea subfloridana',
-        'Cladonia pocillum', 'Peltigera membranacea', 'Cladonia portentosa', 'Cladonia squamosa',
-        'Ramalina fastigiata', 'Flavoparmelia caperata', 'Parmotrema perlatum', 'Parmelia sulcata',
-        'Lecidella elaeochroma', 'Lecanora chlarotera'
-    ],
-    items: lichen
+const location = {
+  id:1000,
+  type: 'custom',
+  default: true,
+  behaviour: 'dynamic',
+  rangeSensitive: true,
+  glossary: ['plantae', 'common', 'fungi', 'amphibia', 'insecta', 'lichen', 'animalia'],
+  lessonPlanLandscape: 1,
+  lessonPlanPortrait: 101,
+  moduleSize: 4,
+  iconicTaxa: allIconicTaxa
 };
 
-const locationDefaults = {
-    default: true,
-    id: 1,
-    providerId: 1,
-    rangeSensitive: true,
-    glossary: ['plantae', 'common', 'fungi', 'amphibia', 'insecta', 'lichen', 'animalia'],
-    lessonPlanLandscape: 1,
-    lessonPlanPortrait: 101,
-    moduleSize: 4,
-};
-
-const placeDefaults = {
-    default: true,    
-    providerId: 1,
-    type: 'place',
-    rangeSensitive: true,
-    glossary: ['plantae', 'common', 'fungi'],
-    lessonPlanLandscape: 1,
-    lessonPlanPortrait: 101,
-    moduleSize: 4,
-    collection: {
-        id: 2
-    },
-    iconicTaxa: allIconicTaxa.map(all => all.id),
-    iconicTaxaSummary: 'All species'
+const place = {    
+  id: 2000,
+  default: true,    
+  behaviour: 'dynamic',
+  type: 'place',
+  rangeSensitive: true,
+  glossary: ['plantae', 'common', 'fungi'],
+  lessonPlanLandscape: 1,
+  lessonPlanPortrait: 101,
+  moduleSize: 4,
+  iconicTaxa: allIconicTaxa
 };
 
 const placeMonsanto = {    
-    ...placeDefaults,  
+    ...place,  
     id: 1, 
     default: false,  
-    name: 'Parque Florestal Monsanto',            
+    name: 'Parque Florestal Monsanto',
     guide: {
-        locationPlace: 'Monsanto Forest Park, LI, PT',
-        locationType: 'place',
-        place: {
-            name: 'Monsanto Forest Park, LI, PT',
-            id: 61034,
-            type: 'places'
-        },
-        season: {
-            type: 'all_year'
-        },
-        iconicTaxa: allIconicTaxa,
-        iconicTaxaSummary: 'All species',
-        ready: true
-    }
+      locationPlace: 'Monsanto Forest Park, LI, PT',
+      locationType: 'place',
+      place: {
+          name: 'Monsanto Forest Park, LI, PT',
+          id: 61034,
+          type: 'places'
+      },
+      season: {
+          type: 'all_year'
+      },
+      ready: true
+  }
 }
 
 const placeArrabida = {
-    ...placeDefaults,
+    ...place,
     id: 2, 
     default: false,
-    name: 'O Parque Natural da Arrábida, SE, PT',       
+    name: 'O Parque Natural da Arrábida, SE, PT',
     guide: {
-        locationPlace: 'O Parque Natural da Arrábida, SE, PT',
-        locationType: 'place',
-        place: {
-            name: 'O Parque Natural da Arrábida, SE, PT',
-            id: 131416,
-            type: 'places'
-        },
-        season: {
-            type: 'all_year'
-        },
-        iconicTaxa: allIconicTaxa,
-        iconicTaxaSummary: 'All species',
-        ready: true
-    } 
+      locationPlace: 'O Parque Natural da Arrábida, SE, PT',
+      locationType: 'place',
+      place: {
+          name: 'O Parque Natural da Arrábida, SE, PT',
+          id: 131416,
+          type: 'places'
+      },
+      season: {
+          type: 'all_year'
+      },
+      speciesRange: 0,
+      ready: true
+  }
+};
+
+const snapdragonLichens = {
+  id: 3,
+  type: 'taxon',
+  name: 'Common Lichens',
+  behaviour: 'static',
+  moduleSize: 4,
+  lessonPlanLandscape: 1,
+  lessonPlanPortrait: 101,
+  glossary: ['lichen', 'common'],
+  iconicTaxa: [ {
+      id: 'fungi',
+      common: 'Fungi & Lichens'
+    } ], 
+  itemNames: [
+      'Xanthoria parietina', 'Physcia adscendens', 'Parmelia saxatilis', 'Graphis scripta',
+      'Ramalina farinacea', 'Evernia prunastri', 'Usnea florida', 
+      'Physcia tenella', 'Placynthium nigrum', 'Physcia aipolia',
+      'Rhizocarpon geographicum', 'Ochrolechia parella',
+      'Platismatia glauca', 'Diploicia canescens', 'Usnea subfloridana',
+      'Cladonia pocillum', 'Peltigera membranacea', 'Cladonia portentosa', 'Cladonia squamosa',
+      'Ramalina fastigiata', 'Flavoparmelia caperata', 'Parmotrema perlatum', 'Parmelia sulcata',
+      'Lecidella elaeochroma', 'Lecanora chlarotera'
+  ],
+  items: lichen,
+  guide: {
+    locationPlace: 'Common Lichens',
+    locationType: 'taxon',
+    place: {
+        name: 'Common Lichens',
+        id: 'any',
+        type: 'places'
+    },
+    season: {
+        type: 'all_year'
+    },
+    speciesRange: 0,
+    ready: true
+  }
 };
 
 const snapdragonKitchenGarden = { 
     id: 4,
-    providerId: 2,
-    type: 'course',
-    name: 'Snapdragon Kitchen Garden', 
-    guide: {
-        locationPlace: 'Kitchen Garden',
-        locationType: 'course',
-        place: {
-            name: 'Kitchen Garden',
-            id: 'any',
-            type: 'places'
-        },
-        season: {
-            type: 'all_year'
-        },
-        iconicTaxa: [
-            {
-              id: 'plantae',
-              common: 'Plants'
-            },
-        ],
-        ready: true
-    },
-    collection: {
-      id: 4
-    },
+    behaviour: 'static',
+    type: 'custom',
+    name: 'Kitchen Garden', 
     moduleSize: 6,
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
@@ -262,20 +225,30 @@ const snapdragonKitchenGarden = {
         "Lavandula stoechas"
       ],
     items: [ ...plants ],
-    iconicTaxa: [ 'plantae' ],
-    iconicTaxaSummary: 'Plants',
+    iconicTaxa: [ {
+        id: 'plantae',
+        common: 'Plants'
+    } ],
+    guide: {
+      locationPlace: 'Kitchen Garden',
+      locationType: 'course',
+      place: {
+          name: 'Kitchen Garden',
+          id: 'any',
+          type: 'places'
+      },
+      season: {
+          type: 'all_year'
+      },
+      speciesRange: 0,
+      ready: true
+  }
 };
-
-// snapdragonKitchenGarden.itemNames = [ "Vulpes vulpes" ];
-// snapdragonKitchenGarden.iconicTaxa = [ "animalia" ];
-// snapdragonKitchenGarden.items = [ ...mammals ];
-
-// snapdragonKitchenGarden.itemNames = [ "Prunus avium" ];
 
 const rhsTrees = { 
     id: 5,
     name: 'RHS Trees',
-    providerId: 2,
+    behaviour: 'static',
     moduleSize: 6,
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
@@ -348,66 +321,38 @@ const rhsTrees = {
         "Acacia dealbata"
       ],
     items: [ ...plants, ...deciduousAndEvergreenTrees, ...deciduousAndEvergreenTrees2 ],
-    iconicTaxa: [ 'plantae' ],
-    iconicTaxaSummary: 'Plants',
-    type: 'course',
-    guide: {
-        locationPlace: 'RHS Trees',
-        locationType: 'course',
-        place: {
-            name: 'RHS Trees',
-            id: 'any',
-            type: 'places'
-        },
-        season: {
-            type: 'all_year'
-        },
-        iconicTaxa: [
-            {
-                id: 'plantae',
-                common: 'Plants'
-            },
-        ],
-        ready: true
-    },
-    collection: {
-        id: 5
-    },
+    iconicTaxa: [ {
+        id: 'plantae',
+        common: 'Plants'
+      } ],
+    type: 'custom',
     eol_link: 'https://eol.org/collections/140596',
     externalLink: { text: 'RHS Practical Horticulture', url:'https://www.rhs.org.uk/education-learning/qualifications-and-training/rhs-qualifications/level-1-qualifications/level-1-intro-award-in-practical-horticulture' },
+    guide: {
+      locationPlace: 'RHS Trees',
+      locationType: 'course',
+      place: {
+          name: 'RHS Trees',
+          id: 'any',
+          type: 'places'
+      },
+      season: {
+          type: 'all_year'
+      },
+      speciesRange: 0,
+      ready: true
+  }
 };
 
 const rhsWeeds = { 
     id: 6, 
-    providerId: 2,
+    behaviour: 'static',
     name: 'RHS Weeds I', 
     // descriptions: [
     //     'Part I of the approved list of Weeds for students taking Royal Horticultural Society Qualifications in Practical Horticulture.',
     //     'Snapdragon does not necessarily support the view that weeds are plants in the wrong place.'
     // ],    
-    type: 'course',
-    guide: {
-        locationPlace: 'RHS Weeds',
-        locationType: 'course',
-        place: {
-            name: 'RHS Weeds',
-            id: 'any',
-            type: 'places'
-        },
-        season: {
-            type: 'all_year'
-        },
-        iconicTaxa: [
-            {
-              id: 'plantae',
-              common: 'Plants'
-            },
-        ],
-        ready: true
-    },
-    collection: {
-      id: 6
-    },
+    type: 'custom',
     moduleSize: 4,
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
@@ -426,20 +371,38 @@ const rhsWeeds = {
         "Capsella bursa-pastoris",
         "Bellis perennis"
       ],
-    iconicTaxa: [ 'plantae' ],
-    iconicTaxaSummary: 'Plants',
+    iconicTaxa: [ {
+        id: 'plantae',
+        common: 'Plants'
+      } ],
     eol_link: 'https://eol.org/collections/140731',
     externalLink: { text: 'RHS Practical Horticulture', url:'https://www.rhs.org.uk/education-learning/qualifications-and-training/rhs-qualifications/level-1-qualifications/level-1-intro-award-in-practical-horticulture' },
+    guide: {
+      locationPlace: 'RHS Weeds',
+      locationType: 'course',
+      place: {
+          name: 'RHS Weeds',
+          id: 'any',
+          type: 'places'
+      },
+      season: {
+          type: 'all_year'
+      },
+      speciesRange: 0,
+      ready: true
+  }
 };
 
 const mushroomDefaults = {
-    providerId: 2,
+    behaviour: 'static',
     moduleSize: 4,
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     glossary: ['fungi'],
-    iconicTaxa: [ 'fungi' ],
-    iconicTaxaSummary: 'Mushrooms',
+    iconicTaxa: [ {
+        id: 'fungi',
+        common: 'Fungi & Lichens'
+      } ],
     items: [ ...mushrooms, ...mushrooms2 ]
 };
 
@@ -448,67 +411,34 @@ const snapdragonMushroomsEasternUSA = {
     id: 7,
     type: 'taxon',
     name: 'Mushrooms Eastern USA',            
-    guide: {
-        locationPlace: 'Mushrooms Eastern USA',
-        locationType: 'taxon',
-        place: {
-            name: 'Snapdragon Mushrooms Eastern USA',
-            id: 'any',
-            type: 'places'
-        },
-        season: {
-            type: 'all_year'
-        },
-        iconicTaxa: [
-            {
-              id: 'fungi',
-              common: 'Fungi'
-            },
-        ],
-        ready: true
-    },
-    collection: {
-      id: 7
-    },
     itemNames: [ 
         'Grifola frondosa', 'Laetiporus sulphureus', 'Hericium erinaceus', 'Lycoperdon perlatum',
         'Lycoperdon pyriforme', 'Hydnum repandum', 'Craterellus tubaeformis', 'Hydnum umbilicatum', 
         'Hericium americanum', 'Hericium coralloides', 'Calvatia gigantea', 'Armillaria mellea', 'Armillaria tabescens', 'Entoloma abortivum'
         , 'Polyporus squamosus',
-        'Laetiporus cincinnatus'
-        //'Clitocybe nuda'
-        
+        'Laetiporus cincinnatus'        
     ],
-    // descriptions: [
-    //     'A collection of mushrooms that can be found in the Fall in the Eastern United States.',
-    //     'Some of the species may be found in other seasons, and across the US.'
-    // ],
+    guide: {
+      locationPlace: 'Mushrooms Eastern USA',
+      locationType: 'taxon',
+      place: {
+          name: 'Mushrooms Eastern USA',
+          id: 'any',
+          type: 'places'
+      },
+      season: {
+          type: 'all_year'
+      },
+      speciesRange: 0,
+      ready: true
+  }
 }
 
 const commonBritishBirds = { 
-    providerId: 2,
+    behaviour: 'static',
     id: 8, 
     name: 'RSPB Top 10 UK Birds',
     type: 'taxon',
-    guide: {
-        locationPlace: 'Common British Birds',
-        locationType: 'taxon',
-        place: {
-            name: 'Snapdragon Common British Birds',
-            id: 'any',
-            type: 'places'
-        },
-        season: {
-            type: 'all_year'
-        },
-        iconicTaxa: [
-            {
-              id: 'aves',
-              common: 'Birds'
-            },
-        ],
-        ready: true
-    },
     descriptions: [
         'This lesson will test you on the top 10 most common birds in the UK.',
         'The list is taken from the RSPB Big Garden Birdwatch 2018 survey.',
@@ -531,18 +461,31 @@ const commonBritishBirds = {
         "Aegithalos caudatus",
         "Fringilla coelebs"
       ],
-    iconicTaxa: [ 'aves' ],
-    iconicTaxaSummary: 'Birds',
-    collection: {
-        id: 8
+    iconicTaxa: [ {
+        id: 'aves',
+        common: 'Birds'
+    } ],
+    guide: {
+      locationPlace: 'Common British Birds',
+      locationType: 'taxon',
+      place: {
+          name: 'Common British Birds',
+          id: 'any',
+          type: 'places'
       },
+      season: {
+          type: 'all_year'
+      },
+      speciesRange: 0,
+      ready: true
+  }
 };
 
 export const snapdragonCollections = [
     
-    locationDefaults,
-    
-    placeDefaults,
+    location,
+    place,
+
     placeMonsanto,
     placeArrabida,
     

@@ -3,8 +3,6 @@ import "babel-polyfill";
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { utils } from 'utils/utils';
-
 import 'ui/css/snapdragon-colours.css';
 import 'ui/css/snapdragon.css';
 import 'ui/css/snapdragon-media.css';
@@ -14,7 +12,6 @@ import 'ui/css/groups/modal.css';
 import 'ui/css/groups/media-heights.css';
 
 import { store } from 'redux/store';
-import { getIPLocation } from 'geo/geo';
 import { nextLesson } from 'ui/setup/next-lesson';
 import { nextLayout } from 'ui/setup/next-layout';
 import { nextItem } from 'ui/setup/next-item';
@@ -26,7 +23,7 @@ import { subscription } from 'redux/subscriptions';
 import { actions } from 'redux/actions/action-creators';
 import { renderSpeciesGrid } from 'ui/screens/home/species-grid';
 import { updateLanguage } from 'api/traits/trait-types';
-import { persistor } from 'redux/store';
+import { initialiseConfig } from 'ui/helpers/location-helper';
 
 setTimeout( () => {
 
@@ -39,15 +36,9 @@ setTimeout( () => {
         lessonPlan = statePlans;
 
         config.isPortraitMode = window.matchMedia("(max-width: 767px)").matches;
-        // config.isPortraitMode = window.matchMedia("(max-width: 1023px)").matches;
         config.isLandscapeMode = !config.isPortraitMode;
 
         const counter = currentCounter ? { ...currentCounter } : { index: null };
-
-        const observableMonths = utils.getObservableMonths(new Date(), 3);
-
-        config.guide.season.observableMonths = observableMonths;
-        config.guide.season.type = config.guide.season.type || 'months';
 
         actions.boundUpdateConfig(config);
         actions.boundToggleLesson(counter);
@@ -62,36 +53,13 @@ setTimeout( () => {
         subscription.add(renderScore, 'score', 'flow');
         subscription.add(updateLanguage, 'config', 'localistation');
 
-        async function getApproximateLocation() {
-            
-            try {
-                const ipLocation = await getIPLocation(config);
-                
-                if(ipLocation) {
-                    const location = `${ipLocation.city}, ${ipLocation.country_name}`
-                    config.ipLocation = location;
-                    config.guide.locationType = 'longLat';
-                    config.guide.locationLongLat = location;
-                    config.guide.place.name = location;            
-                    config.collection.id = 2;
-                }
-                else {
-                    config.guide.locationPlace = 'Earth';
-                    config.guide.locationType = 'place';
-                    config.guide.place = { id: 'any', name: 'Earth' };
-                    config.collection.id = 1;
-                }
-            } catch(e) {            
-                config.guide.locationPlace = 'Earth';
-                config.guide.locationType = 'place';
-                config.guide.place = { id: 'any', name: 'Earth' };
-            }
-
-            actions.boundUpdateConfig(config);
-        }
+        const updateConfig = async () => {
+            const initialisedConfig = await initialiseConfig(config);
+            actions.boundUpdateConfig(initialisedConfig);
+        };
 
         if(!config.guide.locationType) {
-            getApproximateLocation();
+            updateConfig();
         }
     }
     catch(e) {
