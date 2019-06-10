@@ -15,6 +15,12 @@ export const collections = (state = snapdragonCollections, action) => {
                 }
             });
             return cols;
+        case types.UPDATE_COLLECTIONS: {
+            return [ ...state, action.data ];
+        }
+        case types.PAUSE_LESSON: {
+            return state;
+        }
         default:
             return state;
     }
@@ -66,7 +72,6 @@ export const collection = (state = { id: 0 }, action) => {
             return action.data;
         }
         case types.UPDATE_COLLECTION_ITEMS: {
-
             const collection = R.clone(state);
             collection.excludedItems = action.data.filter(item => item.isDeselected);
             collection.items = action.data.filter(item => !item.isDeselected);
@@ -78,8 +83,7 @@ export const collection = (state = { id: 0 }, action) => {
             return { ...state, ...action.data.collection };
         }
 
-        case types.UPDATE_COLLECTION: {
-            
+        case types.UPDATE_COLLECTION: {            
             const { collection, nextItem } = updateCollection(state, action);
             return { ...state, ...collection, nextItem };
         }
@@ -102,11 +106,19 @@ export const collection = (state = { id: 0 }, action) => {
 
         case types.NEXT_LESSON: {
             const collection = { ...state, ...action.data.collection };
-            return { ...state, collection };
+            return { ...state, ...collection };
         }
 
         case types.NEXT_LEVEL: {
             return state;
+        }
+
+        case types.PAUSE_LESSON: {
+            return { id: 0 };
+        }
+
+        case types.RESTART_LESSON: {
+            return action.data.collection;   
         }
 
         default: {
@@ -130,6 +142,14 @@ export const bonusLayout = (state = null, action) => {
                 state = layout;
             }
             return state;
+        }
+
+        case types.PAUSE_LESSON: {
+            return null;
+        }
+
+        case types.RESTART_LESSON: {
+            return action.data.bonusLayout;   
         }
 
         default: {

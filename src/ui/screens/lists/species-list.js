@@ -15,10 +15,11 @@ import { buildTable } from 'ui/screens/lists/species-table-no-scores';
 import { collectionHandler } from 'ui/helpers/collection-handler';
 import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
 import { renderHome } from 'ui/screens/home/home';
+import { enums } from 'ui/helpers/enum-helper';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
-    const { config: configState, history, counter, enums, lesson  } = store.getState();
+    const { collections, config: configState, history, counter, enums: traitEnums, lesson  } = store.getState();
 
     let config = R.clone(configState);
     
@@ -160,11 +161,11 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                     lessonHandler.purgeLesson();
                 } else {
                     if(readOnlyMode) {
-                        const lessonStateMode = counter.isLessonPaused ? 'restart-lesson' : 'next-round';
-                        lessonHandler.getLessonItems(lessonStateMode, collection, config, history);
+                        const lessonState = counter.isLessonPaused ? enums.lessonState.RESUME_LESSON : enums.lessonState.NEXT_ROUND;
+                        lessonHandler.getLessonItems(lessonState, collection, config, history);
                     }
                     else {
-                        lessonHandler.getLessonItems('new-lesson', collection, config, history);
+                        lessonHandler.getLessonItems(enums.lessonState.BEGIN_LESSON, collection, config, history);
                     }
 
                     actions.boundNewPage({ name: ''});
@@ -176,7 +177,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     };    
 
     if(readOnlyMode) {
-        buildTable(collection, config, getTraits(enums), enums);
+        buildTable(collection, config, getTraits(traitEnums), traitEnums);
         handleUserEvents();
     }
     else {
@@ -184,15 +185,19 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
             if(collection.items && collection.items.length) {
                 return function () {
-                    buildTable(collection, config, getTraits(enums), enums);
+                    buildTable(collection, config, getTraits(traitEnums), traitEnums);
                     handleUserEvents();
                     const { counter } = store.getState();
                     listeners.forEach(listener => listener(counter, collection.items.length));
                 }
             }
+
+            else {
+                console.log('No items');
+            }
         }
         function callbackWhenNoResults() {
-            const spinner = document.querySelector('.js-species-pending svg');
+            const spinner = document.querySelector('.js-species-pending i');
                   spinner.classList.remove('slow-spin');
 
             const feedback = document.querySelector('.js-request-feedback');
@@ -200,7 +205,8 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
             renderHome(counter, false, true);
         }
-        collectionHandler(collection, config, counter, callback, callbackWhenNoResults);
+        if(config.collection.id === 0) return;
+        collectionHandler(collections, collection, config, counter, callback, callbackWhenNoResults);
     }
 };
 

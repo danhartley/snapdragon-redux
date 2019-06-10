@@ -1,8 +1,8 @@
 import * as R from 'ramda';
 
-import { elem } from 'ui/helpers/class-behaviour';
+import { actions } from 'redux/actions/action-creators';
 import { DOM } from 'ui/dom';
-import { store, persistor } from 'redux/store';
+import { store } from 'redux/store';
 import { subscription } from 'redux/subscriptions';
 import { renderSpeciesCollectionList, listenToSpeciesCollectionListenReady } from 'ui/screens/lists/species-list';
 import { lessonHandler } from 'ui/helpers/lesson-handler';
@@ -12,8 +12,12 @@ import { renderExampleGuideHandler } from 'ui/example-guide-modal/example-guide'
 import { renderGuideSummary } from 'ui/screens/home/home-guide-summary';
 import { listenToCloseCreateGuideModal } from 'ui/create-guide-modal/create-guide';
 import { listenToCloseExampleGuideModal } from 'ui/example-guide-modal/example-guide';
+import { renderSaveLesson, listenToCloseSaveLessonModal } from 'ui/custom-lesson-modal/custom-lesson';
+import { renderSpeciesGrid } from 'ui/screens/home/species-grid';
+import { enums } from 'ui/helpers/enum-helper';
 
 import homeTemplate from 'ui/screens/home/home-template.html';
+import introTemple from 'ui/screens/home/home-intro-template.html';
 
 export const renderHome = (counter, loadSpeciesList = true, noRecords = false) => {
 
@@ -23,7 +27,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     if(skip) {
         const sub = subscription.getByName('renderHome');
-        if(sub) subscription.remove(sub);    
+        if(sub) subscription.remove(sub);
         return;
     }
     
@@ -37,18 +41,23 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     renderTemplate({}, template.content, DOM.rightBody);
 
+    template.innerHTML = introTemple;
+    renderTemplate({}, template.content, document.querySelector('.js-snapdragon-tag'));
+
     let state = (config.collection.id === 0 || !config.guide.ready)
-            ? 'CREATE-LESSON' : (lesson && lesson.layoutCounter > 0)
-                ? 'RESUME-LESSON'
+            ? enums.lessonState.CREATE_LESSON : (lesson && lesson.layoutCounter > 0)
+                ? enums.lessonState.RESUME_LESSON
                 : noRecords
-                    ? 'CREATE-LESSON'
-                    : 'GET_SPECIES';
+                    ? enums.lessonState.CREATE_LESSON
+                    : enums.lessonState.GET_SPECIES;
 
     const actionLink = document.querySelector('.js-create-guide-link');
     
     const editLink = document.querySelector('.js-edit-guide-link');
     const editLinkTxt = document.querySelector('.js-edit-guide-link span');
     
+    const saveLink = document.querySelector('.js-save-guide-link');
+
     const deleteLink = document.querySelector('.js-delete-guide-link');
     const deleteLinkTxt = document.querySelector('.js-delete-guide-link span');
     const deleteLinkCheckbox = document.querySelector('.js-delete-guide-link input');
@@ -75,26 +84,23 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     };
 
     const getSpeciesHandler = () => {
-        const { config, collections } = store.getState();  
+        const { config, collections } = store.getState();
         const id = parseInt(config.collection.id);
-        const collection = collections.find(c => c.id === id);        
-        renderSpeciesCollectionList(collection);
+        const collection = collections.find(c => c.id === id);
+        if(collection.default) {
+            renderSpeciesCollectionList(R.clone(collection));
+        }
+        else {
+            renderSpeciesCollectionList(collection);
+        }
         actionLink.disabled = true;
         actionLink.classList.add('disabled');        
     };
 
     const beginLessonHandler = () => {
         const { collection, config, history } = store.getState();
-        const lessonStateMode = 'new-lesson';
-        lessonHandler.getLessonItems(lessonStateMode, collection, config, history);        
+        lessonHandler.getLessonItems(enums.lessonState.BEGIN_LESSON, collection, config, history);        
         actionLink.disabled = false;
-    };
-
-    const resumeLessonHandler = () => {
-        const { collection, config, history } = store.getState();
-        const lessonStateMode = 'restart-lesson';
-        lessonHandler.getLessonItems(lessonStateMode, collection, config, history);        
-        subscription.remove(subscription.getByName('renderSpeciesGrid'));
     };
 
     const guideSummary = speciesCount => {
@@ -103,10 +109,6 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
             parent.innerHTML = '';
             renderGuideSummary(R.clone(config), parent, speciesCount);
             deleteLink.classList.remove('hide');
-            const editableTypes = [ 'place', 'longLat' ];
-            if(R.contains(config.guide.locationType, editableTypes)) {
-                editLink.classList.remove('hide');
-            }
             exampleLink.classList.add('hide');
         }
     };
@@ -120,49 +122,95 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     const checkState = state => {
 
+        const { collection, config, history } = store.getState();
+
         const speciesCount = collection.items ? collection.items.length : 0;
 
-        let forText;
+        const forText = document.querySelector('.js-for-text');
 
         switch(state) {
-            case 'CREATE-LESSON':
-                actionLink.setAttribute('data-toggle', 'modal');
+
+            case enums.lessonState.CREATE_LESSON:
+
                 actionLink.innerHTML = 'Create';
-                elem.removeClass(document.querySelector('.js-for-text'), 'hide');
-                document.querySelector('.js-for-text').innerHTML = 'a';
-                actionLink.addEventListener('click', modalHandler);
+                actionLink.setAttribute('data-toggle', 'modal');
+                actionLink.addEventListener('click', modalHandler);      
+                deleteLink.classList.add('hide');                
+                editLink.classList.add('hide');                
+                saveLink.classList.add('hide');                
+                exampleLink.classList.remove('hide');
+
+                if(forText) {
+                    forText.classList.remove('hide');
+                    forText.innerHTML = 'a';
+                }
+                                    
                 if(noRecords) noRecordsSummary();
+
                 break;
-            case 'GET_SPECIES':
+
+            case enums.lessonState.GET_SPECIES:
+
+                actionLink.innerHTML = 'Get Species';
                 actionLink.removeAttribute('data-toggle');
-                actionLink.innerHTML = 'Get Species';                                
-                forText = document.querySelector('.js-for-text');
-                elem.removeClass(document.querySelector('.js-for-text'), 'hide');         
-                if(forText) forText.innerHTML = 'for';
-                guideSummary(speciesCount);
-                actionLink.removeEventListener(getSpeciesHandler);
+                actionLink.removeEventListener('click', modalHandler);
+                actionLink.removeEventListener('click', getSpeciesHandler);
                 actionLink.addEventListener('click', getSpeciesHandler);
-                break;
-            case 'BEGIN-LESSON':            
-                actionLink.innerHTML = 'Begin';
-                forText = document.querySelector('.js-for-text');
-                if(forText) forText.classList.add('hide');
-                actionLink.addEventListener('click', beginLessonHandler);   
-                break;
-            case 'RESUME-LESSON':
-                actionLink.removeAttribute('data-toggle');
-                actionLink.innerHTML = 'Resume';    
+
+                const editableTypes = [ 'place', 'longLat' ];
+                if(R.contains(config.guide.locationType, editableTypes) && state === enums.lessonState.GET_SPECIES) {
+                    editLink.classList.remove('hide');
+                }
+
+                if(forText) {
+                    forText.classList.remove('hide');
+                    forText.innerHTML = 'for';
+                }
+                                     
                 guideSummary(speciesCount);
-                editLink.classList.add('hide');
-                actionLink.addEventListener('click', resumeLessonHandler);      
-                if(loadSpeciesList) {
-                    renderSpeciesCollectionList(collection);
-                }                          
+                
                 break;
-        }   
+                
+            case enums.lessonState.BEGIN_LESSON:      
+
+                actionLink.innerHTML = 'Begin';
+                actionLink.addEventListener('click', beginLessonHandler);                
+                editLink.classList.add('hide');  
+
+                if(forText) {
+                    forText.classList.add('hide');
+                }
+                
+                break;
+
+            case enums.lessonState.RESUME_LESSON:
+
+                actionLink.innerHTML = 'Resume';
+                actionLink.removeAttribute('data-toggle');
+                actionLink.removeEventListener('click', modalHandler);
+                actionLink.addEventListener('click', () => {
+                    lessonHandler.getLessonItems(enums.lessonState.RESUME_LESSON, collection, config, history);        
+                    subscription.remove(subscription.getByName('renderSpeciesGrid'));
+                });
+                editLink.classList.add('hide');
+                saveLink.classList.remove('hide');
+
+                if(forText) {
+                    forText.classList.add('hide');
+                }
+
+                guideSummary(speciesCount);
+                                
+                if(loadSpeciesList) {
+                    renderSpeciesCollectionList(collection);                
+                }                
+                break;
+        }
     }; 
 
     checkState(state);
+
+    renderSaveLesson(saveLink);
 
     exampleLinkTxt.addEventListener('click', event => {
         examplesHandler();
@@ -190,24 +238,36 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
     const handleDeleteLinkTxt = event => {
         if(deleteEnabled) {
-            actionLink.innerHTML = 'Create';
-            state = 'CREATE-LESSON';
+            actions.boundPauseLesson();
+            renderSpeciesGrid();
+            state = enums.lessonState.CREATE_LESSON;
             checkState(state);
-            persistor.purge();
-            window.location.reload(true);
         }
     };
 
     deleteLinkTxt.addEventListener('click', handleDeleteLinkTxt);
 
-    const closeModalHandler = () => {
+    const closeModalHandler = (state = enums.lessonState.GET_SPECIES) => {
+        
         config = store.getState().config;
-        state = 'GET_SPECIES';
+        if(state === enums.lessonState.RESUME_LESSON) loadSpeciesList = true;
         checkState(state);
     };
 
     listenToCloseCreateGuideModal(closeModalHandler);
-    listenToCloseExampleGuideModal(closeModalHandler); 
+    listenToCloseExampleGuideModal(closeModalHandler);
+    
+    listenToCloseSaveLessonModal(()=>{        
+        
+        checkState(enums.lessonState.CREATE_LESSON);
+        renderSpeciesGrid();
+
+        const template = document.createElement('template');
+        template.innerHTML = introTemple;
+        const parent = document.querySelector('.js-snapdragon-tag');
+        parent.innerHTML = '';
+        renderTemplate({}, template.content, parent);
+    });
 
     const handleBeginLessonState = (counter, speciesCount) => {
         
@@ -215,23 +275,12 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
 
         if(config.isPortraitMode && !!speciesCount) return;
         
-        if(!counter.isLessonPaused && counter.index === null) {
+        if(!counter.isLessonPaused && !counter.index) {
             actionLink.removeEventListener('click', getSpeciesHandler);
-            state = 'BEGIN-LESSON';
-            checkState(state);
+            checkState(enums.lessonState.BEGIN_LESSON);
             guideSummary(speciesCount);
         }        
     };
 
     listenToSpeciesCollectionListenReady(handleBeginLessonState);
-
-    // setTimeout(() => {
-    //     const help = document.querySelector('.snapdragon-help');
-    //     if(help) help.classList.add('fade-in'); 
-    // }, 2500);
-
-    // setTimeout(() => {
-    //     const intro = document.querySelector('.snapdragon-intro');
-    //     if(intro) intro.classList.add('fade-away');        
-    // }, 6500);
 };

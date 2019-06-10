@@ -1,8 +1,10 @@
 import * as R from 'ramda';
 
 import { elem } from 'ui/helpers/class-behaviour';
-import { renderTemplate } from 'ui/helpers/templating';
 import categoriesTemplate from 'ui/create-guide-modal/categories-template.html';
+import { allIconicTaxa } from 'snapdragon-config/snapdragon-collections';
+
+import { renderTemplate } from 'ui/helpers/templating';
 
 export const renderCategories = (modal, createGuide) => {
 
@@ -36,7 +38,7 @@ export const renderCategories = (modal, createGuide) => {
         });
     }
 
-    config.guide.iconicTaxa = iconicTaxa;     
+    config.guide.iconicTaxa = iconicTaxa.length === 0 ? allIconicTaxa : iconicTaxa;     
 
     setTimeout(() => {
         const fungiIcon = modal.querySelector('#fungi > div');

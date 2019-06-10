@@ -78,6 +78,7 @@
   },
   "dependencies": {
     "autocompleter": "^4.0.2",
-    "babel-polyfill": "^6.26.0"
+    "babel-polyfill": "^6.26.0",
+    "enumify": "^1.0.4"
   }
 }

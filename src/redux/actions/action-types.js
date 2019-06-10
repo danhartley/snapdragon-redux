@@ -11,6 +11,7 @@ const NEXT_ITEM = '[NEXT_ITEM] Get next item';
 
 const NEW_COLLECTION = '[NEW_COLLECTION] New collection';
 const UPDATE_COLLECTION = '[UPDATE_COLLECTION] Change collection';
+const UPDATE_COLLECTIONS = '[UPDATE_COLLECTIONS] Update collections list';
 
 const UPDATE_SCORE = '[UPDATE_SCORE] Check user answer and update running score';
 const UPDATE_TRAIT_SCORE = '[UPDATE_TRAIT_SCORE] Check user answer and update running score';
@@ -22,6 +23,10 @@ const UPDATE_LANGUAGE = '[UPDATE_LANGUAGE] Update the current language';
 
 const UPDATE_ENUMS = '[UPDATE_ENUMS] Update enums by config language';
 const UPDATE_LESSON = '[UPDATE_LESSON] Create new lesson';
+const PAUSE_LESSON = '[PAUSE_LESSON] Pause lesson';
+
+const SAVE_LESSON = '[SAVE_LESSON] Add lesson to saved lessons';
+const RESTART_LESSON = '[RESTART_LESSON] Restart paused lesson';
 
 export const types = {
     CHANGE_LESSON_PLANS,
@@ -36,6 +41,7 @@ export const types = {
     NEW_COLLECTION,
     UPDATE_COLLECTION,
     UPDATE_COLLECTION_ITEMS,
+    UPDATE_COLLECTIONS,
     NEXT_ROUND,
     NEXT_LEVEL,
     UPDATE_CONFIG,
@@ -44,5 +50,8 @@ export const types = {
     UPDATE_LANGUAGE,
     CHANGE_PAGE,
     UPDATE_ENUMS,
-    UPDATE_LESSON
+    UPDATE_LESSON,
+    PAUSE_LESSON,
+    SAVE_LESSON,
+    RESTART_LESSON
 };

@@ -7,12 +7,12 @@ import { lessonPlans } from 'snapdragon-config/lesson-plans';
 
 export const nextLesson = (counter) => {
 
-    const { lessonPlans: userEditedPlan, collection, config, lesson } = store.getState();
+    const { lessonPlans: userEditedLessonPlans, collection, config, lesson } = store.getState();
 
     if(counter.isLessonPaused || config.collection.id === 0) return;
 
     const planId = config.isPortraitMode ? collection.lessonPlanPortrait : collection.lessonPlanLandscape;    
-    const lessonPlan = R.clone(userEditedPlan) || R.clone(lessonPlans.find(plan => plan.id === planId && plan.portrait === config.isPortraitMode));
+    const lessonPlan = R.clone(userEditedLessonPlans) || R.clone(lessonPlans.find(plan => plan.id === planId && plan.portrait === config.isPortraitMode));
     
     if(lesson.isNextRound && counter.index === 0) {
         if(collection.items.length > 0) {

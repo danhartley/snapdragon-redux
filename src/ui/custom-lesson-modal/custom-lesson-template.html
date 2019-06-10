@@ -1,0 +1,35 @@
+<span class="underline-link js-save" data-toggle="modal" data-target="#customLesson">Change lessons</span>
+
+<div class="modal fade" id="customLesson" tabindex="-1" role="dialog" aria-labelledby="customLessonlabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="modal-title js-modal-title">
+                <div>Save custom lesson</div>
+            </div>                
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>        
+        <div class="modal-body modal-guide-body">            
+            <div class="sd-save-lesson js-sd-save-lesson">
+
+                <div class="js-dynamic hide">
+                    <p>Before starting a new lesson, do you want to save your progress in the current lesson?</p>
+                    <label for="lesson">Lesson name</label>
+                    <input id="lesson" name="lesson" type="text">
+                    <button class="btn btn-light disabled js-btn-save" data-dismiss="modal">Save lesson progress</button>
+                </div>
+
+                <div class="js-static hide">
+                    <p>Do you want to save your progress in the current lesson?</p>
+                    <button class="btn btn-light js-btn-save" data-dismiss="modal">Save lesson progress</button>                                        
+                </div>
+
+                <p class="js-saved-location"></p>
+                
+            </div>
+        </div>                    
+    </div>
+    </div>
+</div>

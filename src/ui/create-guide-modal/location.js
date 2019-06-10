@@ -42,7 +42,7 @@ export const renderLocation = (modal, createGuide) => {
         const place = await getPlace(config, true);
         config.guide.locationType = 'longLat';
         config.place = place;
-        config.collection.id = 1;
+        // config.collection.id = 1;
         config.guide.locationLongLat = place.longLocation;
         setLocationLongLatBtn.innerHTML = defaultLocationTxt;
         
@@ -116,7 +116,7 @@ export const renderLocation = (modal, createGuide) => {
         } else {
             config.guide.locationType = 'longLat';
             config.guide.locationLongLat = locationPlaceInput.value;
-            config.collection.id = 1;
+            // config.collection.id = 1;
 
             const callback = geocoderResult => {
                 const lat = geocoderResult[0].geometry.location.lat();

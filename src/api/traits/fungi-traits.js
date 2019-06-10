@@ -276,7 +276,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
     ], context: [
-        { name: SD.name.LOOK_ALIKES, values: [ '' ]},
+        { name: SD.name.LOOK_ALIKES, values: [ 'Craterellus tubaeformis' ]},
         { name: SD.name.ECOLOGY, values: [ SD.habitat.WOODLAND_LITTER, SD.treeType.BEECH, SD.treeType.OAK, SD.treeType.BROAD_LEAF ] },
         { name: SD.name.SYMBIONTS, values: [ ] },
     ]},
@@ -592,7 +592,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
         { name: SD.name.GROUPING, value : "large groups" },
     ], context: [
-        { name: SD.name.LOOK_ALIKES, values: [ 'Laetiporus sulphureus', 'Polyporus squamosus' ]},
+        { name: SD.name.LOOK_ALIKES, values: [ 'Craterellus cornucopioides' ]},
         { name: SD.name.ECOLOGY, values: [SD.habitat.CONIFERS, SD.habitat.MOSS, SD.habitat.DEAD_WOOD ] },
         { name: SD.name.SYMBIONTS, values: ['Pseudotsuga menziesii', 'Tsuga heterophylla'] },  
     ]},
@@ -729,9 +729,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.HYMENIUM_TYPE, value : SD.hymeniumType.SMOOTH },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "NA" },
-        // { name: SD.name.SPORE_PRINT_COLOUR, value : "pink" },
     ], context: [
-        // { name: SD.name.LOOK_ALIKES, values: [ 'Laetiporus sulphureus']},
         { name: SD.name.ECOLOGY, values: `${SD.habitat.WOODLAND_LITTER}, ${SD.habitat.DAMP}, ${SD.habitat.DEAD_WOOD}` },
         { name: SD.name.SYMBIONTS, values: [ ] },
     ]},

@@ -4,20 +4,22 @@ import { utils } from 'utils/utils';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
-import { snapdragonCollections as collections } from 'snapdragon-config/snapdragon-collections';
 import { getPlace } from 'geo/geo';
 
-async function getItems(collection, config) {
-    if(collection.providerId === 1) {
+async function getItems(collections, collection, config) {
+
+    if(collection.behaviour === 'dynamic') {
+
         const collectionIsUnchanged = 
             collection.items && collection.items.length > 0 && collection.items[0].collectionId === collection.id && 
             collection.speciesRange === config.guide.speciesRange &&
-            collection.iconicTaxa === config.guide.iconicTaxa.map(taxon => taxon.id);
+            collection.iconicTaxa === config.guide.iconicTaxa;
 
         if(collectionIsUnchanged) {
             return new Promise(resolve => {
                 resolve(collection.items);
             });
+
         } else {
 
             if(config.guide.locationType === 'longLat' && !config.guide.coordinates) {
@@ -45,8 +47,9 @@ async function getItems(collection, config) {
             }            
         }
     }
-    else {
-        const itemNames = collections.find(c => c.id === collection.id).items.map(item => item.name);
+    else if(collection.behaviour === 'static') {
+
+        const itemNames = collections.find(c => c.id === collection.id).items.map(item => item.name);        
         const items = collection.itemNames.map(name => { 
             if(R.contains(name, itemNames)) {
                 return collections.find(c => c.id === collection.id).items.find(item => item.name === name);
@@ -60,19 +63,20 @@ async function getItems(collection, config) {
 };
 
 export const keepItems = collection => {
+
     return new Promise(resolve => {
         resolve(collection.items);
     });
 }
 
-export async function collectionHandler(collection, config, counter, callback, callbackWhenNoResults) {
+export async function collectionHandler(collections, collection, config, counter, callback, callbackWhenNoResults) {
     
     if(counter.isLessonPaused) {
         collection.items = await keepItems(collection);
         callback(collection, config)();
     } else {
            
-        collection.items = utils.shuffleArray(await getItems(collection, config));
+        collection.items = utils.shuffleArray(await getItems(collections, collection, config));
 
         if(R.contains('lepidoptera', config.guide.iconicTaxa.map(taxon => taxon.id)) && !R.contains('insecta', config.guide.iconicTaxa.map(taxon => taxon.id))) {
             const insecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() === 'insecta');
@@ -83,7 +87,12 @@ export async function collectionHandler(collection, config, counter, callback, c
 
         if(collection.items) {
 
-            collection.name = config.guide.place.name;
+            if(collection.behaviour === 'dynamic') {
+                collection.name = config.guide.place.name;
+                collection.speciesRange = config.guide.speciesRange;
+                collection.iconicTaxa = config.guide.iconicTaxa;
+            }
+
             collection.items = collection.items.filter(i => i);
             collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
             collection.items.forEach((item,index) => {
@@ -98,13 +107,16 @@ export async function collectionHandler(collection, config, counter, callback, c
                 item.species = names[1];
                 item.name = names.slice(0,2).join(' ');
             });
-            collection.speciesRange = config.guide.speciesRange;
-            collection.iconicTaxa = config.guide.iconicTaxa;
+
             collection.itemIndex = 0;
+
+            collection.glossary = [ ...collection.iconicTaxa, 'common'];
+            collection.default = false;
 
             actions.boundNewCollection({ config, collection });
             
             callback(collection, config)();
+
         } else {
             console.log('** Hitting callbackWhenNoResults() **');
             collection.items = [];

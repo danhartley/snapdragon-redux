@@ -1,6 +1,7 @@
+import { store } from 'redux/store';
 import { returnTaxonIcon } from 'ui/helpers/icon-handler';
-import { snapdragonCollections } from 'snapdragon-config/snapdragon-collections';
 import { renderTemplate } from 'ui/helpers/templating';
+
 import homeGuideTemplate from 'ui/screens/home/home-guide-summary-template.html';
 
 export const renderGuideSummary = (config, parent, speciesCount) => {
@@ -68,7 +69,9 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
     
           widgetLink.innerHTML = `<span data-toggle="modal" data-target="#iNatWidgetModal" class="underline-link">${place}</span>${within}`;
     
-    const collection = snapdragonCollections.find(collection => collection.id === config.guide.place.id);
+    const { collections } = store.getState();
+
+    const collection = collections.find(collection => collection.id === config.guide.place.id);
     
     widgetLink.addEventListener('click', event => {
 

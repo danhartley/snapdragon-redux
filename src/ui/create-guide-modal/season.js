@@ -1,5 +1,6 @@
 import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 import { renderTemplate } from 'ui/helpers/templating';
+
 import guidesTemplate from 'ui/create-guide-modal/season.html';
 
 export const renderSeason = (modal, createGuide) => {
@@ -11,6 +12,8 @@ export const renderSeason = (modal, createGuide) => {
     const parent = modal.querySelector('.js-actions');
 
     const languages = config.languages;
+
+    config.guide.season.observableMonths = config.guide.season.observableMonths || config.season.observableMonths;
 
     if(config.guide.season.observableMonths) {
         
