@@ -3,13 +3,14 @@ import { DOM } from 'ui/dom';
 
 export const renderHeaders = page => {
     
-    let lessonPlan, config, counter, collection;
+    let lessonPlan, config, counter, collection, layout;
 
     setTimeout(() => {
         lessonPlan = store.getState().lessonPlan;
         config = store.getState().config;
         counter = store.getState().counter;
         collection = store.getState().collection;
+        layout = store.getState().layout;
         render();
     });
     
@@ -17,7 +18,8 @@ export const renderHeaders = page => {
     let leftHeaderText = '', rightHeaderText = '';
 
     const render = () => {
-        const layout = (lessonPlan && lessonPlan.layouts) ? lessonPlan.layouts[counter.index] : null;
+
+        layout = layout ? layout : (lessonPlan && lessonPlan.layouts) ? lessonPlan.layouts[counter.index] : null;
 
         const title = `learn the planet`;
     
