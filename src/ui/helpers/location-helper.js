@@ -16,6 +16,7 @@ export async function initialiseConfig(originalConfig) {
     config.collection.id = 1000; 
     config.guide.locationPlace = '';
     config.guide.place.type = '';
+    config.guide.ready = false;
     
     try {
         
