@@ -167,7 +167,11 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
                         lessonHandler.getLessonItems(lessonState, collection, config, history);
                     }
                     else {
-                        lessonHandler.getLessonItems(enums.lessonState.BEGIN_LESSON, collection, config, history);
+                        if(counter.isLessonPaused) {
+                            lessonHandler.getLessonItems(enums.lessonState.RESUME_LESSON, collection, config, history);
+                        } else {
+                            lessonHandler.getLessonItems(enums.lessonState.BEGIN_LESSON, collection, config, history);
+                        }
                     }
 
                     actions.boundNewPage({ name: ''});

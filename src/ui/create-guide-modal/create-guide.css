@@ -111,7 +111,8 @@
   }
 
   .rptr-lessons {
-    height: 14.25rem;
+    /* height: 14.25rem; */
+    height: calc(100vh - 15rem);
   }
   
   .modal-guide-wrapper .modal-body .modal-guide-progress > div div {
