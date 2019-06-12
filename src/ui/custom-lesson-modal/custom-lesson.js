@@ -38,7 +38,7 @@ export const renderSaveLesson = (parent) => {
 
         const collectionName = collection.behaviour === 'dynamic' ? 'This lesson' : `"${collection.name}'`;
         const savedLocation = modal.querySelector('.js-saved-location');
-              savedLocation.innerHTML = `${collectionName} will be saved under the '${collection.type.toUpperCase()}' tab in SAVED LESSONS. You can return to it later.`;
+              savedLocation.innerHTML = `<p>${collectionName} will be saved under the '${collection.type.toUpperCase()}' tab in SAVED LESSONS.</p><p>You can return to it later.</p>`;
 
         const dynamicContents = modal.querySelector('.js-sd-save-lesson .js-dynamic');
         const staticContents = modal.querySelector('.js-sd-save-lesson .js-static');
