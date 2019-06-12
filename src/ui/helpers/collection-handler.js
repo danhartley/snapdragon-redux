@@ -49,7 +49,7 @@ async function getItems(collections, collection, config) {
     }
     else if(collection.behaviour === 'static') {
 
-        const itemNames = collections.find(c => c.id === collection.id).items.map(item => item.name);        
+        const itemNames = collections.find(c => c.id === collection.id).items.map(item => item.name);  
         const items = collection.itemNames.map(name => { 
             if(R.contains(name, itemNames)) {
                 return collections.find(c => c.id === collection.id).items.find(item => item.name === name);
