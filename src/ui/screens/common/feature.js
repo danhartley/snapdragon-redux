@@ -3,8 +3,9 @@ import * as R from 'ramda';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import * as traitTypes from 'api/traits/trait-types';
-import { species } from 'api/species';
 import { renderCard } from 'ui/screens/cards/card';
+import { firestore } from 'api/firebase/firestore';
+
 import featureLookalike from 'ui/screens/common/feature-look-alike.html';
 import symbiontTemplate from 'ui/screens/common/feature-symbiont-list-template.html';
 
@@ -33,7 +34,7 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel,
             speciesCardLinks.forEach(link => {
                 link.addEventListener('click', event => {
                     const name = event.target.id || event.target.dataset.name;
-                    const selectedItem = species.find(i => i.name === name);
+                    const selectedItem = firestore.getSpeciesName(name);
                     selectedItem.species = itemProperties.getSpeciesName(item.name);
                     renderCard({ name: 'Local species', items: [ selectedItem ] }, 'MODAL', selectedItem, document.querySelector('#cardModal .js-modal-body'), false);
                 });
@@ -73,9 +74,10 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel,
         template.innerHTML = symbiontTemplate;
 
         symbiontTraits.forEach(trait => {            
-            const linkedSpecies = species.find(s => {
-                return s.name.toUpperCase() === trait.symbiont.id.toUpperCase();
-            });
+            const linkedSpecies = firestore.getSpeciesName(trait.symbiont.id);
+            // species.find(s => {
+            //     return s.name.toUpperCase() === trait.symbiont.id.toUpperCase();
+            // });
             if(linkedSpecies && mode !== 'MODAL') {
                 trait.className = 'underline-link';
                 trait.modal = 'modal';

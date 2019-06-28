@@ -5,7 +5,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
 import { getPlace } from 'geo/geo';
-import { species } from 'api/species';
+import { firestore } from 'api/firebase/firestore';
 
 async function getItems(collections, collection, config) {
 
@@ -50,11 +50,7 @@ async function getItems(collections, collection, config) {
     }
     else if(collection.behaviour === 'static') {
 
-        const items = species.map(item => {
-            if(R.contains(item.name, collection.itemNames)) {
-                return item;
-            }
-        }).filter(item => item);
+        const items = firestore.getSpeciesFromList(collection.itemNames);
 
         return new Promise(resolve => {
             resolve(items);

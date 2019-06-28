@@ -4,9 +4,9 @@ import { getGlossary } from 'api/glossary/glossary';
 import { epithets } from 'api/botanical-latin';
 import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
-import { matchTaxon, iconicTaxa, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
+import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { taxa } from 'api/snapdragon/taxa';
-import { species } from 'api/species';
+import { firestore } from 'api/firebase/firestore';
 
 export const rebindLayoutState = (layout, item) => {
       
@@ -122,7 +122,7 @@ export const getPoolItems = collection => {
 
   const rank = matchTaxon(item.taxonomy, iconicTaxa).value;
 
-  let taxonicMatches = species.filter(item => matchTaxonKey(item.taxonomy,[rank]).value);
+  let taxonicMatches = firestore.getSpeciesByTaxonKey(item.taxonomy);
 
   if(rank === 'fungi') {
       const isLichen = item.lichen;
@@ -140,12 +140,12 @@ export const getPoolItems = collection => {
     speciesPool = speciesInSameTaxon;  
   }
   else {
-    const kingdom = item.taxonomy.kingdom;
-    const kingdomItems = species.filter(item => item.taxonomy).filter(item => item.taxonomy.kingdom.toLowerCase() === kingdom.toLowerCase());
+    const kingdomItems = firestore.getSpeciesByRank('kingdom', item.taxonomy.kingdom);
     const speciesInSameKingdom = utils.shuffleArray(kingdomItems.filter(ci => ci.name !== item.name));
     if(speciesInSameKingdom) {
       speciesPool = speciesInSameKingdom;
     } else {
+      const species = firestore.getSpecies();
       speciesPool = utils.shuffleArray(species.filter(ci => ci.name !== item));
     }
   }

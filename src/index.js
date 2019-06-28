@@ -76,14 +76,14 @@ setTimeout( () => {
 
     getHelloWorld();
 
-    '### FIREBASE API KEY ###'
-    const apiKey = 'AIzaSyBVLz0wVrYZ9JhJMobCFgSB-Edh6EnP0Yk';
+    // '### FIREBASE API KEY ###'
+    // const apiKey = 'AIzaSyBVLz0wVrYZ9JhJMobCFgSB-Edh6EnP0Yk';
 
-    '### FIREBASE AUTH DOMAIN ###'
-    const authDomain = 'localhost';
+    // '### FIREBASE AUTH DOMAIN ###'
+    // const authDomain = 'https://snapdragon-222014.web.app/';
 
-    '### CLOUD FIRESTORE PROJECT ID ###'
-    const projectId = 'snapdragon-222014';
+    // '### CLOUD FIRESTORE PROJECT ID ###'
+    // const projectId = 'snapdragon-222014';
 
     // Initialize Cloud Firestore through Firebase
     // firebase.initializeApp({

@@ -1,4 +1,4 @@
-import { species } from 'api/species';
+import { firestore } from 'api/firebase/firestore';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { store } from 'redux/store';
 import { utils } from 'utils/utils';
@@ -78,7 +78,7 @@ export const renderMixedSpecimenImages = (...args) => {
             
             const selectedImage = event.target;
             const selectedName = selectedImage.dataset.itemName;
-            const selectedItem = species.find(item => item.name === selectedName);
+            const selectedItem = firestore.getSpeciesByName(selectedName);
 
             const question = item.name;
             const answer = selectedItem.name;
@@ -93,8 +93,8 @@ export const renderMixedSpecimenImages = (...args) => {
                 question, answer, binomial: item.name, 
                 questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, 
                 points: 0, icon: matchIcon(item.taxonomy, iconicTaxa),
-                vernacularName: itemProperties.getVernacularName(species.find(sp => sp.name === question), config),
-                answerVernacularName: itemProperties.getVernacularName(species.find(sp => sp.name === answer), config)};
+                vernacularName: itemProperties.getVernacularName(firestore.getSpeciesByName(question), config),
+                answerVernacularName: itemProperties.getVernacularName(firestore.getSpeciesByName(answer), config)};
                 
             scoreHandler('image-match', test, callback, config);
         });

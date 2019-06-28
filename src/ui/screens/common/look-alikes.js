@@ -3,13 +3,14 @@ import * as R from 'ramda';
 import { store } from 'redux/store';
 import { getTraits } from 'api/traits/traits';
 import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
-import { species } from 'api/species';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageSideBySlider } from 'ui/screens/common/image-slider';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
-import visualComparisonTemplate from 'ui/screens/common/look-alikes-link-template.html';
 import { lookalikeDescriptions } from 'api/snapdragon/look-alike-descriptions';
+import { firestore } from 'api/firebase/firestore';
+
+import visualComparisonTemplate from 'ui/screens/common/look-alikes-link-template.html';
 
 export const lookALikes = (item, traits, config, rootNode = document) => {
 
@@ -27,7 +28,7 @@ export const lookALikes = (item, traits, config, rootNode = document) => {
         const scientificNames = [];
 
         lookalikes.forEach(lookalike => {
-            const lookalikeItem = species.find(item => item.name === lookalike);
+            const lookalikeItem = firestore.getSpeciesByName(lookalike);
             if(!lookalikeItem) return;
             lookalikeItem.vernacularName = itemProperties.getVernacularName(lookalikeItem, config);
             names.push(lookalikeItem.vernacularName);
@@ -48,7 +49,7 @@ export const lookALikes = (item, traits, config, rootNode = document) => {
 
             let { enums } = store.getState();
 
-            const item = species.find(species => species.name === itemName);
+            const item = firestore.getSpeciesByName(itemName);
                 
             if(item.taxonomy.class.toLowerCase() === 'aves') {
 

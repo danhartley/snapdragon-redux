@@ -3,9 +3,10 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
-import { species as allSpecies } from 'api/species';
 import { renderCard } from 'ui/screens/cards/card';
 import { renderTemplate } from 'ui/helpers/templating';
+import { firestore } from 'api/firebase/firestore';
+
 import speciesGridTemplate from 'ui/screens/home/species-grid-template.html';
 
 export const renderSpeciesGrid = () => {
@@ -13,8 +14,8 @@ export const renderSpeciesGrid = () => {
     const { layout } = store.getState();
 
     const species = layout && layout.screens[1] && layout.screens[1].name === 'birdsong' 
-                ? allSpecies.filter(species => species.taxonomy).filter(species => species.taxonomy.class.toLowerCase() === 'aves')
-                : allSpecies;
+                ? firestore.getSpecies().filter(species => species.taxonomy).filter(species => species.taxonomy.class.toLowerCase() === 'aves')
+                : firestore.getSpecies();
 
     const imageCount = 40;
 

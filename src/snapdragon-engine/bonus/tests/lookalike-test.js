@@ -1,9 +1,7 @@
-import * as R from 'ramda';
-
 import { itemProperties } from 'ui/helpers/data-checking';
-import { species } from 'api/species';
 import { store } from 'redux/store';
 import { getTraits } from 'api/traits/traits';
+import { firestore } from 'api/firebase/firestore';
 
 export const getLookalikeTests = itemsInThisRound => {
 
@@ -35,7 +33,7 @@ const getLookalikeTest = item => {
 
     if(lookalikes.length === 0) return {};
 
-    lookalikes = species.filter(item => R.contains(item.name, lookalikes));
+    lookalikes = firestore.getSpeciesFromList(lookalikes);
     lookalikes.push(item);
 
     if(lookalikes.length < 2) return {}; 

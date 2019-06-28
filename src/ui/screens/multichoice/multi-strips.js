@@ -3,16 +3,15 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { species } from 'api/species';
 import { taxa } from 'api/snapdragon/taxa';
 import { epithets } from 'api/botanical-latin';
 import { itemProperties } from 'ui/helpers/data-checking';
-import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { rebindLayoutState } from 'ui/screens/multichoice/missing-data-helper';
+import { firestore } from 'api/firebase/firestore';
 
 import stripTemplate from 'ui/screens/multichoice/multi-strips-template.html';
 import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
@@ -24,7 +23,7 @@ export const renderMultiStrips = (collection, bonus) => {
     const item = collection.nextItem || collection.items[collection.itemIndex];
 
     const taxon = matchTaxon(item.taxonomy, iconicTaxa);
-    const iconicTaxonFamilies = familyProps.getUniqueFamiliesByIconicTaxon(species, taxon.rank, taxon.value, item.lichen);
+    const iconicTaxonFamilies = firestore.getUniqueFamiliesByIconicTaxon(taxon.rank, taxon.value, item.lichen);
     let families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, iconicTaxonFamilies));
   
     screen = bonus ? bonus.screen || layout.screens[1] : layout.screens[1];
@@ -114,19 +113,10 @@ export const renderMultiStrips = (collection, bonus) => {
         scoreHandler('strip', test, callback, config);
     }
 
-    const getSpeciesFromSameIconicTaxon = (species, item, taxon) => {
-        let matches = species.filter(s => s.taxonomy).filter(s => s.taxonomy[taxon.rank].toLowerCase() === taxon.value);
-        if(taxon.value === 'fungi') {
-            const isLichen = item.lichen;
-            matches = isLichen ? matches.filter(match => match.lichen) : matches.filter(match => !match.lichen);
-        } 
-        return matches;
-    };
-
     if(screen.name === 'species-scientifics') {
 
         let question = item.name;
-        let answers = getSpeciesFromSameIconicTaxon(species, item, taxon);
+        let answers = firestore.getSpeciesByIconicTaxon(taxon, item.lichen);
             answers = R.take(8, answers).filter(s => s.name !== item.name).map(s => s.name);
             answers = R.take(5, answers);
             answers.push(item.name);
@@ -140,7 +130,7 @@ export const renderMultiStrips = (collection, bonus) => {
     if(screen.name === 'species-vernaculars') {
 
         let question = item.vernacularName;   
-        let filteredAnswers = getSpeciesFromSameIconicTaxon(species, item, taxon);
+        let filteredAnswers = firestore.getSpeciesByIconicTaxon(taxon, item.lichen);
             filteredAnswers = R.take(8, filteredAnswers).filter(s => !R.contains(item.vernacularName.toLowerCase(), s.names.map(n => n.vernacularName.toLowerCase())));
         let answers = filteredAnswers.map(s => s.names.filter(n => n.language === config.language)).filter(a => a.length > 0);
             const missingAnswers = 8 - answers.length;

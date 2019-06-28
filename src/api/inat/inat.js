@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-import { species } from 'api/species';
+import { firestore } from 'api/firebase/firestore';
 import { iconicTaxa } from 'api/snapdragon/iconic-taxa';
 
 let inatListeners = [];
@@ -27,7 +27,7 @@ const getBasePath = config => {
 
 export const getInatSpecies = config => {
 
-    let names = species.map(item => item.name); 
+    let names = firestore.getSpecies(item => item.name); 
 
     const iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
 
@@ -111,7 +111,7 @@ export const getInatSpecies = config => {
         return observations.map(observation => {
             console.log(observation.taxon.name);
             if(R.contains(observation.taxon.name, names)) {
-                const item = { ...species.find(item => item.name === observation.taxon.name) };
+                const item = firestore.getSpeciesByName(observation.taxon.name);
                 return { 
                     ...item, 
                     observationCount: observation.taxon.observations_count, 

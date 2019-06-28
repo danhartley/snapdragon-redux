@@ -4,8 +4,7 @@ import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { returnIcon } from 'ui/helpers/icon-handler';
-// import { renderIcon } from 'ui/helpers/icon-handler';
-import { species } from 'api/species';
+import { firestore } from 'api/firebase/firestore';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { listenToImageSelection, listenToUserAnswer, renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
@@ -40,15 +39,13 @@ export const renderMixedSpecimenQuestion = (...args) => {
 
     renderTemplate({ instructions, binomial }, template.content, parent);
 
-    // const icon = renderIcon(item.taxonomy, document);
-
     const listenToImageChangeHandler = images => {        
         let speciesToShow = '';
         const uniqueImages = [];
         utils.shuffleArray(images).forEach(image => {            
             const i = image;
-            const vernacularName = itemProperties.getVernacularName(species.find(sp => sp.name === image.itemName), config);  
-            const taxonIcon = returnIcon(species.find(sp => sp.name === image.itemName));
+            const vernacularName = itemProperties.getVernacularName(firestore.getSpeciesByName(image.itemName), config);  
+            const taxonIcon = returnIcon(firestore.getSpeciesByName(image.itemName));
             if(!R.contains(image.itemName, uniqueImages)) {
                 speciesToShow +=  `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;
                 uniqueImages.push(image.itemName);

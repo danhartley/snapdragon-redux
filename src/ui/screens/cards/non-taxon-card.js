@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
-import { species } from 'api/species';
+import { firestore } from 'api/firebase/firestore';
 import { store } from 'redux/store';
 import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
@@ -11,6 +11,7 @@ import { renderWiki } from 'wikipedia/wiki';
 import { renderWikiModal } from 'wikipedia/wiki-modal';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
+
 import cardTemplate from 'ui/screens/cards/non-taxon-card-template.html';
 
 const subscriptions = [];
@@ -53,7 +54,7 @@ export const renderNonTaxonCard = (mode = 'STAND_ALONE', keyTrait, parent = DOM.
     const callback = id => {
 
         const nonTaxon = nonTaxa.find(nt => nt.id === id)
-        const items = species.filter(i => R.contains(i.name, nonTaxon.examples));
+        const items = firestore.getSpeciesFromList(nonTaxon.examples);
 
         const portraitImagesNode = document.querySelector('.js-non-taxon-card-images');
 
