@@ -140,7 +140,7 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
 
     renderBadge(badge, occurrences, names);
     
-    renderFeatures(item, traits, config, rootNode.querySelector('.js-feature-types'), mode, isInCarousel);
+    renderFeatures(item, traits, config, rootNode.querySelector('.js-feature-types'), mode, isInCarousel, collection);
     
     const calendarNode = rootNode.querySelector('.js-calendar-box');
 

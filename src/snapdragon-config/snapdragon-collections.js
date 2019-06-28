@@ -1,12 +1,3 @@
-import { deciduousAndEvergreenTrees } from 'api/rhs/deciduous-evergreen-trees';
-import { deciduousAndEvergreenTrees2 } from 'api/rhs/deciduous-evergreen-trees2';
-import { birds } from 'api/snapdragon/birds';
-import { mushrooms } from 'api/snapdragon/mushrooms';
-import { mushrooms2 } from 'api/snapdragon/mushrooms2';
-import { weeds } from 'api/rhs/weeds';
-import { lichen } from 'api/snapdragon/lichen';
-import { plants } from 'api/snapdragon/plants';
-
 export const allIconicTaxa = [
     {
       id: 'fungi',
@@ -132,7 +123,7 @@ const snapdragonLichens = {
       'Ramalina fastigiata', 'Flavoparmelia caperata', 'Parmotrema perlatum', 'Parmelia sulcata',
       'Lecidella elaeochroma', 'Lecanora chlarotera'
   ],
-  items: lichen,
+  items: [],
   guide: {
     locationPlace: 'Common Lichens',
     locationType: 'taxon',
@@ -224,7 +215,7 @@ const snapdragonKitchenGarden = {
         "Lavandula angustifolia",
         "Lavandula stoechas"
       ],
-    items: [ ...plants ],
+    items: [],
     iconicTaxa: [ {
         id: 'plantae',
         common: 'Plants'
@@ -320,7 +311,7 @@ const rhsTrees = {
         // "Acacia baileyana",
         "Acacia dealbata"
       ],
-    items: [ ...plants, ...deciduousAndEvergreenTrees, ...deciduousAndEvergreenTrees2 ],
+    items: [],
     iconicTaxa: [ {
         id: 'plantae',
         common: 'Plants'
@@ -357,7 +348,7 @@ const rhsWeeds = {
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
-    items: weeds,
+    items: [],
     itemNames: [
         "Elymus repens",
         "Equisetum arvense",
@@ -403,7 +394,7 @@ const mushroomDefaults = {
         id: 'fungi',
         common: 'Fungi & Lichens'
       } ],
-    items: [ ...mushrooms, ...mushrooms2 ]
+    items: []
 };
 
 const snapdragonMushroomsEasternUSA = {
@@ -448,7 +439,7 @@ const commonBritishBirds = {
     lessonPlanLandscape: 5,
     lessonPlanPortrait: 105,
     glossary: ['animalia', 'common'],
-    items: birds,
+    items: [],
     itemNames: [
         "Passer domesticus",
         "Sturnus vulgaris",

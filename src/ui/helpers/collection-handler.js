@@ -5,6 +5,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
 import { getPlace } from 'geo/geo';
+import { species } from 'api/species';
 
 async function getItems(collections, collection, config) {
 
@@ -49,13 +50,12 @@ async function getItems(collections, collection, config) {
     }
     else if(collection.behaviour === 'static') {
 
-        const itemNames = collections.find(c => c.id === collection.id).items.map(item => item.name);  
-        const items = collection.itemNames.map(name => { 
-            if(R.contains(name, itemNames)) {
-                return collections.find(c => c.id === collection.id).items.find(item => item.name === name);
+        const items = species.map(item => {
+            if(R.contains(item.name, collection.itemNames)) {
+                return item;
             }
-        });
-        
+        }).filter(item => item);
+
         return new Promise(resolve => {
             resolve(items);
         });

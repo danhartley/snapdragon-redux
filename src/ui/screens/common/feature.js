@@ -8,7 +8,7 @@ import { renderCard } from 'ui/screens/cards/card';
 import featureLookalike from 'ui/screens/common/feature-look-alike.html';
 import symbiontTemplate from 'ui/screens/common/feature-symbiont-list-template.html';
 
-export const renderFeatures = (item, traits, config, parent, mode, isInCarousel) => {
+export const renderFeatures = (item, traits, config, parent, mode, isInCarousel, collection) => {
 
     const types = [];
 
@@ -19,7 +19,7 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel)
     let speciesTraits = traits.find(trait => trait.name === item.name);
 
     const getVernacularName = symbiont => {
-        const item = species.find(s => s.name === symbiont);
+        const item = collection.find(s => s.name === symbiont);
         if(!item) return { id: symbiont, display: symbiont };
         const vernacularName = itemProperties.getVernacularName(item, config);
         return vernacularName ? { id: symbiont, display: vernacularName } : { id: symbiont, display: symbiont };
@@ -35,7 +35,7 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel)
                     const name = event.target.id || event.target.dataset.name;
                     const selectedItem = species.find(i => i.name === name);
                     selectedItem.species = itemProperties.getSpeciesName(item.name);
-                    renderCard({ name: 'Local species', items: species }, 'MODAL', selectedItem, document.querySelector('#cardModal .js-modal-body'), false);
+                    renderCard({ name: 'Local species', items: [ selectedItem ] }, 'MODAL', selectedItem, document.querySelector('#cardModal .js-modal-body'), false);
                 });
             });
         }
