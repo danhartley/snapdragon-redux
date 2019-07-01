@@ -1,18 +1,17 @@
 import * as R from 'ramda';
 
 import { utils } from 'utils/utils';
-import { getTraits } from 'api/traits/traits';
 import * as SD from 'api/traits/trait-types';
 
 export const getTypedTraitsForSpecies = (enums, item) => {
 
-    const traitsToIgnore = [ 'song', 'look-alikes' ]; // add flag so that this does not need to be updated e.g. ignore: true in the trait data
+    const traitsToIgnore = [ 'song', 'look-alikes', 'symbionts' ];
 
-    let itemTraits = getTraits(enums).find(trait => trait.name === item.name);
+    let itemTraits = item.traits;
 
     if(!itemTraits) return {};
 
-        itemTraits = itemTraits.traits.filter(trait => !R.contains(trait.name, traitsToIgnore));
+        itemTraits = itemTraits.filter(trait => !R.contains(trait.name, traitsToIgnore));
         itemTraits = { name: item.name, traits: itemTraits };
 
     if(!itemTraits) return {};
@@ -37,11 +36,11 @@ export const getTypedTraitsForSpecies = (enums, item) => {
         });
     }
 
-    const question = trait.value.value 
-                        ? trait.value.value
-                        : trait.value.key
-                            ? trait.value.key
-                            : trait.value;
+    const question = trait.value 
+                        ? trait.value
+                        : trait.key
+                            ? trait.key
+                            : trait;
                            
     const variables = question.split(',').length;                                
     const number = variables * 5;

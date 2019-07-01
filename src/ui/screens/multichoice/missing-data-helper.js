@@ -5,14 +5,13 @@ import { epithets } from 'api/botanical-latin';
 import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
 import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
-import { taxa } from 'api/snapdragon/taxa';
 import { firestore } from 'api/firebase/firestore';
 
 export const rebindLayoutState = (layout, item) => {
       
     const random = utils.getRandomInt(4);
 
-    let nextLayout, taxon;
+    let nextLayout;
 
     switch(random) {
       
@@ -68,8 +67,6 @@ export const rebindLayoutState = (layout, item) => {
 
         case 2:
 
-        taxon = taxa.find(taxon => taxon.name === item.name);
-
         nextLayout = {
           name: "familyMatch",
           type: "test",
@@ -89,8 +86,6 @@ export const rebindLayoutState = (layout, item) => {
       break;
 
         case 3:
-
-        taxon = taxa.find(taxon => taxon.name === item.name);
 
         nextLayout = {
           name: "family",

@@ -3,14 +3,14 @@ import * as SD from 'api/traits/trait-types';
 import { actions } from 'redux/actions/action-creators';
 import { DOM } from 'ui/dom';
 import { utils } from 'utils/utils';
-import { taxa } from 'api/snapdragon/taxa';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import { iconicTaxa, matchTaxon, matchIcon } from 'api/snapdragon/iconic-taxa';
+
 import speciesTemplate from 'ui/screens/lists/species-table-template.html';
 
-export const buildTable = (collection, config, traits, enums) => {
+export const buildTable = (collection, config, enums) => {
 
     const template = document.createElement('template');
 
@@ -52,14 +52,14 @@ export const buildTable = (collection, config, traits, enums) => {
         item.binomial = item.name;
         item.shortName = itemProperties.trimLatinName(item.name);
         const { traitName, keyTratLinkClass } = getTraitName(item, enums);
-        const keyTrait = itemProperties.getActiveTrait(traits, item.name, [{ name: traitName, formatter: trait => trait.value }]);
+        const keyTrait = itemProperties.getActiveTrait(item, [{ name: traitName, formatter: trait => trait.value }]);
         item.keyTrait = keyTrait.indexOf(',') > 0 ? keyTrait.split(',')[0] : keyTrait;
         item.keyTratLinkClass = keyTratLinkClass;
-        item.familyLinkClass = itemProperties.taxonHasTaxaData(item.family, taxa)
+        item.familyLinkClass = item.family
             ? 'capitalise underline-link js-taxon-card-link' 
             : 'js-taxon-card-link no-pointer-events';
         if(item.taxonomy && item.taxonomy.order) {
-            item.orderLinkClass = itemProperties.taxonHasTaxaData(item.taxonomy.order, taxa)
+            item.orderLinkClass = item.order
                 ? 'capitalise underline-link js-taxon-card-link' 
                 : 'js-taxon-card-link no-pointer-events';
         } else { item.orderLinkClass = 'js-taxon-card-link'; }

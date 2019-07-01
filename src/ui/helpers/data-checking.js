@@ -94,13 +94,8 @@ const familyVernacularNames = (name, language, taxa) => {
     return taxon.names.find(name => name.language === language).names;
 };
 
-const taxonHasTaxaData = (taxon, taxa) => {
-    return taxa.find(t => t.name === taxon);
-};
-
-const getTrait = (traits, itemName, name, formatter) => {
-    const item = traits.find(t => t.name === itemName);
-    if(!item || !item.traits) return '';
+const getTrait = (item, name, formatter) => {
+    if(!item.traits) return '';
     const trait = item.traits.find(t => t.name === name);    
     if(!trait) return '';
     if(!formatter) return trait;
@@ -111,11 +106,11 @@ const reducer = (acc, curr) => {
     return acc + curr;
 }
 
-const getActiveTrait = (traits, itemName, options) => {
+const getActiveTrait = (item, options) => {
     const traitValues = options.map(option => { 
         const traitName = option.name;
         const formatter = option.formatter;
-        return getTrait(traits, itemName, traitName, formatter);
+        return getTrait(item, traitName, formatter);
     });
     return traitValues.reduce(reducer, '');
 }
@@ -160,6 +155,16 @@ const itemContextProperty = (traits, item, propertyName) => {
     return property.values || property.value;
 };
 
+const statsReducer = function(obj,elem){
+    obj[elem]=obj[elem] || 0;
+    obj[elem]++;
+    return obj;
+};
+
+const getFamilyStats = items => {
+    return items.map(item => item.taxonomy.family).reduce(statsReducer,{});
+}
+
 export const itemProperties = {
     getVernacularName,
     getGenusName,
@@ -169,11 +174,11 @@ export const itemProperties = {
     getNestedTaxonProp,
     trimLatinName,
     familyVernacularNames,
-    taxonHasTaxaData,
     getTrait,
     getActiveTrait,
     vernacularNamesForItems,
     itemContextProperty,
     getVernacularNames,
-    answersFromList
+    answersFromList,
+    getFamilyStats
 };

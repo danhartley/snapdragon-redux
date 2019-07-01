@@ -157,6 +157,7 @@ const init = () => {
                         phylum: taxonomy.phylum,
                         class: taxonomy.class,
                         order: taxonomy.order,
+                        genus: taxonomy.genus,
                         family: taxonomy.family
                     };
                     data.family = taxonomy.family;

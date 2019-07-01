@@ -10,7 +10,6 @@ import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { modalImageHandler } from 'ui/helpers/image-handlers';
 import { lessonHandler } from 'ui/helpers/lesson-handler';
-import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-table-no-scores';
 import { collectionHandler } from 'ui/helpers/collection-handler';
 import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
@@ -183,7 +182,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     };    
 
     if(readOnlyMode) {
-        buildTable(collection, config, getTraits(traitEnums), traitEnums);
+        buildTable(collection, config, traitEnums);
         handleUserEvents();
     }
     else {
@@ -191,7 +190,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
             if(collection.items && collection.items.length) {
                 return function () {
-                    buildTable(collection, config, getTraits(traitEnums), traitEnums);
+                    buildTable(collection, config, traitEnums);
                     handleUserEvents();
                     const { counter } = store.getState();
                     listeners.forEach(listener => listener(counter, collection.items.length));

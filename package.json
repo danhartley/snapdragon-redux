@@ -74,11 +74,12 @@
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^3.1.1",
-    "webpack-merge": "^4.1.2"
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "autocompleter": "^4.0.2",
     "babel-polyfill": "^6.26.0",
-    "enumify": "^1.0.4"
+    "enumify": "^1.0.4",
+    "fsevents": "^2.0.7"
   }
 }

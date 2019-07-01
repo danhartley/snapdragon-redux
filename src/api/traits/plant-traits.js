@@ -1,7 +1,8 @@
 import * as traitEnums from 'api/traits/trait-types';
 
-export const getTraits = SD => {
-        return [
+export const getPlantTraits = enums => {
+    const SD = enums && Object.keys(enums).length ? enums : traitEnums.enums;
+    return [
         { name: 'Sinapis alba', traits: [
             { name: SD.name.HOW_EDIBLE, value: SD.howEdible.EDIBLE },
             { name: SD.name.USAGE, value: `${SD.usage.FODDER}, ${SD.usage.GREEN_MANURE}, ${SD.usage.FOOD}` },
@@ -242,15 +243,4 @@ export const getTraits = SD => {
         ] 
     },
   ];
-};
-
-export const getPlantTraits = enums => {
-    const SD = enums && Object.keys(enums).length ? enums : traitEnums.enums;
-    const traits = getTraits(SD);
-    // traits.forEach(species => {
-    //     if(!species.traits.find(trait => trait.name === SD.name.TROPHIC_LEVEL)) {
-    //         species.traits.push({ name: SD.name.TROPHIC_LEVEL, value: SD.trophicLevel.PRIMARY_PRODUCER })
-    //     }
-    // });
-    return traits;
 };

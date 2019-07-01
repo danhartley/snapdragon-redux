@@ -1,0 +1,48 @@
+[debug] [2019-06-30T13:35:20.530Z] ----------------------------------------------------------------------
+[debug] [2019-06-30T13:35:20.532Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only hosting
+[debug] [2019-06-30T13:35:20.532Z] CLI Version:   7.0.2
+[debug] [2019-06-30T13:35:20.532Z] Platform:      darwin
+[debug] [2019-06-30T13:35:20.532Z] Node Version:  v11.15.0
+[debug] [2019-06-30T13:35:20.533Z] Time:          Sun Jun 30 2019 14:35:20 GMT+0100 (Western European Summer Time)
+[debug] [2019-06-30T13:35:20.533Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-06-30T13:35:20.543Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-06-30T13:35:20.544Z] > authorizing via signed-in user
+[debug] [2019-06-30T13:35:20.544Z] [iam] checking project snapdragon-222014 for permissions ["firebase.projects.get"]
+[debug] [2019-06-30T13:35:20.546Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/snapdragon-222014:testIamPermissions  
+
+[debug] [2019-06-30T13:35:21.568Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-30T13:35:21.570Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/snapdragon-222014  
+ 
+[debug] [2019-06-30T13:35:22.488Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-30T13:35:22.489Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/947213844747/clients/_:getWebAppConfig  
+ 
+[debug] [2019-06-30T13:35:22.943Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-07-01T06:42:10.607Z] ----------------------------------------------------------------------
+[debug] [2019-07-01T06:42:10.609Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only hosting
+[debug] [2019-07-01T06:42:10.610Z] CLI Version:   7.0.2
+[debug] [2019-07-01T06:42:10.610Z] Platform:      darwin
+[debug] [2019-07-01T06:42:10.610Z] Node Version:  v11.15.0
+[debug] [2019-07-01T06:42:10.611Z] Time:          Mon Jul 01 2019 07:42:10 GMT+0100 (Western European Summer Time)
+[debug] [2019-07-01T06:42:10.611Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-01T06:42:10.908Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-01T06:42:10.909Z] > authorizing via signed-in user
+[debug] [2019-07-01T06:42:10.909Z] [iam] checking project snapdragon-222014 for permissions ["firebase.projects.get"]
+[debug] [2019-07-01T06:42:10.911Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-07-01T06:42:10.912Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-07-01T06:42:11.312Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-01T06:42:12.166Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/snapdragon-222014:testIamPermissions  
+
+[debug] [2019-07-01T06:42:13.234Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-01T06:42:13.236Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/snapdragon-222014  
+ 
+[debug] [2019-07-01T06:42:14.257Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-01T06:42:14.259Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/947213844747/clients/_:getWebAppConfig  
+ 
+[debug] [2019-07-01T06:42:15.076Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist
+[info] ✔  hosting: Local server: http://localhost:5000

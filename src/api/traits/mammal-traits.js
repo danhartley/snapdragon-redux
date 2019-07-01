@@ -1,6 +1,7 @@
 import * as traitEnums from 'api/traits/trait-types';
 
-const getTraits = SD => {    
+export const getMammalTraits = enums => {    
+    const SD = enums && Object.keys(enums).length ? enums : traitEnums.enums;
     return [
     { name: 'Vulpes vulpes',
     symbionts: [
@@ -74,7 +75,8 @@ const getTraits = SD => {
         { name: SD.role.HERBIVORE, value: `Castanea, Fungi`, type: SD.symbiosis.COMMENSALISM },
         { name: SD.name.OCCUPANT, value: `Pinus sylvestris, Picea abies`, type: SD.symbiosis.COMMENSALISM },
         { name: SD.name.OCCUPANT, value: `Pinus sibirica`, type: SD.symbiosis.COMMENSALISM },
-    ] },
+    ] 
+    },
     { name: 'Oryctolagus cuniculus',
     symbionts: [
         { id: 'Vulpes vulpes'}, { id: 'Aquila adalberti'}, { id: 'Lynx pardinus'}, { id: 'Meles meles'},
@@ -257,16 +259,6 @@ const getTraits = SD => {
             { name: SD.name.YOUNG, value: SD.young.SALAMANQUESA },
         ]
     },
-]};
-
-export const getMammalTraits = (enums) => {
-    const SD = enums && Object.keys(enums).length ? enums : traitEnums.enums;
-    const traits = getTraits(SD);
-    // traits.forEach(species => {
-    //     if(!species.traits.find(trait => trait.name === 'TROPHIC_LEVEL')) {
-    //         species.traits.push({ name: SD.name.TROPHIC_LEVEL, value: '2.2' })
-    //     }
-    // });
-    return traits;
-}
+]
+};
 

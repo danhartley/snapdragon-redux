@@ -11,9 +11,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "brown" },
         { name: SD.name.STIPE_CHARACTER, value : "ring" },
         { name: SD.name.GILL_ATTACHMENT, value : "free" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ '' ]},
-        { name: SD.name.ECOLOGY, values: [ ''] }
+        { name: SD.name.ECOLOGY, value: '' }
     ]},
     { name: 'Amanita virosa', traits: [
         { name: SD.name.CAP_SHAPE, value: `${SD.capShape.CONVEX}, ${SD.capShape.FLAT}` },
@@ -24,9 +23,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.STIPE_CHARACTER, value : "ring and volva" },
         { name: SD.name.GILL_ATTACHMENT, value : "free" },
         { name: SD.name.FLESH, value : "pure white" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ '' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.MIXED_WOODLAND ] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.MIXED_WOODLAND}` },
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.DECIDUOUS, SD.treeType.CONIFERS ] },
     ]},
     { name: 'Mycena rosea', traits: [
@@ -37,9 +35,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "adnate" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ '' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.MIXED_WOODLAND] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.MIXED_WOODLAND}` },
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.DECIDUOUS ] },
     ]},
     { name: 'Clitocybe odora', traits: [
@@ -50,9 +47,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ '' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.MIXED_WOODLAND] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.MIXED_WOODLAND}` },
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.DECIDUOUS ] },
     ]},
     { name: 'Amanita pantherina', traits: [
@@ -63,9 +59,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white" },
         { name: SD.name.STIPE_CHARACTER, value : "ring and volva" },
         { name: SD.name.GILL_ATTACHMENT, value : "free" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ '' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.WOODLAND ] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.MIXED_WOODLAND}` },
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.BEECH ] },
     ]},
     { name: 'Boletus edulis', traits: [
@@ -76,10 +71,9 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "brown" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "adnate" },
-        { name: SD.name.FLESH, value : "white, yellowing" }
-    ], context: [
+        { name: SD.name.FLESH, value : "white, yellowing" },
         { name: SD.name.LOOK_ALIKES, values: [ 'Tylopilus felleus' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.MIXED_WOODLAND ]},
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.MIXED_WOODLAND}`},
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.OAK, SD.treeType.BEECH, SD.treeType.PINE, SD.treeType.CHESTNUT, SD.treeType.CORK] }
     ]},
     { name: 'Amanita muscaria', traits: [
@@ -90,9 +84,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white" },
         { name: SD.name.STIPE_CHARACTER, value : "ring and volva" },
         { name: SD.name.GILL_ATTACHMENT, value : "free" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Lycoperdon pyriforme', 'Scleroderma citrinum' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.MIXED_WOODLAND ] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.MIXED_WOODLAND}` },
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.BEECH, SD.treeType.PINE, SD.treeType.BIRCH, SD.treeType.DECIDUOUS, SD.treeType.CONIFERS ] },
     ]},
     { name: 'Laccaria amethystina', traits: [
@@ -103,9 +96,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ '' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.MIXED_WOODLAND ] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.MIXED_WOODLAND}` },
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.ELDER, SD.treeType.DECIDUOUS ] },
     ]},
     { name: 'Scleroderma citrinum', traits: [
@@ -117,9 +109,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.STIPE_CHARACTER, value : "NA" },
         { name: SD.name.GILL_ATTACHMENT, value : "NA" },
         { name: SD.name.FLESH, value : "off-white, purple, black" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Lycoperdon perlatum' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.COMMONS, SD.habitat.PASTURE, SD.habitat.HEATH, SD.treeType.MIXED_WOODLAND] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.COMMONS}, ${SD.habitat.PASTURE}, ${SD.habitat.HEATH}, ${SD.treeType.MIXED_WOODLAND}` },
         { name: SD.name.SYMBIONTS, values: [ ] },
     ]},
     { name: 'Auricularia auricula-judae', traits: [
@@ -130,9 +121,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white, cream" },
         { name: SD.name.STIPE_CHARACTER, value : "none or very short" },
         { name: SD.name.GILL_ATTACHMENT, value : "NA" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ '' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.MIXED_WOODLAND, SD.habitat.DEAD_WOOD ] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.MIXED_WOODLAND}, ${SD.habitat.DEAD_WOOD}` },
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.ELDER, SD.treeType.SYCAMORE, SD.treeType.BEECH, SD.treeType.ASH, SD.treeType.DECIDUOUS ] },
     ]},
     { name: 'Coprinus comatus', traits: [
@@ -145,9 +135,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.STIPE_CHARACTER, value : "ring" },
         { name: SD.name.GILL_ATTACHMENT, value : "free" },
         { name: SD.name.FLESH, value : "white" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Coprinopsis picacea' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.WASTELAND, SD.habitat.LAWNS ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.WASTELAND}, ${SD.habitat.LAWNS}` },
         { name: SD.name.SYMBIONTS, values: [] },  
     ]},
     { name: 'Coprinopsis picacea', traits: [
@@ -160,9 +149,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "free" },
         { name: SD.name.FLESH, value : "white" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Coprinus comatus' ]},       
-        { name: SD.name.ECOLOGY, values: [] },
+        { name: SD.name.ECOLOGY, value: [] },
         { name: SD.name.SYMBIONTS, values: [] },   
     ]},
     { name: 'Grifola frondosa', traits: [
@@ -173,9 +161,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white" },
         { name: SD.name.STIPE_CHARACTER, value : "NA" },
         { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Meripilus giganteus' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.WOODLAND ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.WOODLAND}` },
         { name: SD.name.SYMBIONTS, values: [SD.treeType.OAK, SD.treeType.DECIDUOUS] },  
     ]},
     { name: 'Amanita phalloides', traits: [
@@ -186,9 +173,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white" },
         { name: SD.name.STIPE_CHARACTER, value : "ring and volva" },
         { name: SD.name.GILL_ATTACHMENT, value : "free" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Amanita caesarea', 'Tricholoma equestre', 'Amanita muscaria' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.WOODLAND ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.WOODLAND}` },
         { name: SD.name.SYMBIONTS, values: [SD.treeType.OAK, SD.treeType.PINE, SD.treeType.CHESTNUT] },  
     ]},
     { name: 'Lycoperdon pyriforme', traits: [
@@ -201,9 +187,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.GILL_ATTACHMENT, value : "NA" },
         { name: SD.name.GROUPING, value : "gregarious, numerous" },  
         { name: SD.name.SMELL, value : "unpleasant, gas-like" },        
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Scleroderma citrinum', 'Amanita muscaria']},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.DEAD_WOOD ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.DEAD_WOOD}` },
         { name: SD.name.SYMBIONTS, values: [SD.treeType.DECIDUOUS, SD.treeType.CONIFERS] },  
     ]},
     { name: 'Lycoperdon perlatum', traits: [
@@ -216,9 +201,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.GILL_ATTACHMENT, value : "NA" },
         { name: SD.name.FLESH, value : "white, browning" },
         { name: SD.name.GROUPING, value : "usually gregarious" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Scleroderma citrinum', 'Amanita muscaria' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.MIXED_WOODLAND, SD.treeType.DECIDUOUS, SD.habitat.WOODLAND_LITTER, SD.habitat.PASTURE, SD.habitat.GRASSLAND ] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.MIXED_WOODLAND}, ${SD.treeType.DECIDUOUS}, ${SD.habitat.WOODLAND_LITTER}, ${SD.habitat.PASTURE}, ${SD.habitat.GRASSLAND}` },
         { name: SD.name.SYMBIONTS, values: [] },  
     ]},
     { name: 'Pleurotus ostreatus', traits: [
@@ -232,9 +216,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.FLESH, value : "white, tough in stem" },
         { name: SD.name.SMELL, value : "mushroomy" },
         { name: SD.name.GROUPING, value : "large clusters" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.MIXED_WOODLAND] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.MIXED_WOODLAND}` },
         { name: SD.name.SYMBIONTS, values: [SD.habitat.DEAD_WOOD, SD.treeType.BEECH, SD.treeType.DECIDUOUS] },  
     ]},
     { name: 'Hericium erinaceus', traits: [
@@ -246,9 +229,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.STIPE_CHARACTER, value : "NA" },
         { name: SD.name.GILL_ATTACHMENT, value : "NA" },
         { name: SD.name.FLESH, value : "white" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: ['Hericium cirrhatum' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.HARDWOODS, SD.habitat.TRUNKS, SD.habitat.DEAD_WOOD] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.HARDWOODS}, ${SD.habitat.TRUNKS}, ${SD.habitat.DEAD_WOOD}` },
         { name: SD.name.SYMBIONTS, values: [SD.treeType.BEECH, SD.treeType.TURKEY_OAK] },  
     ]},
     { name: 'Laetiporus sulphureus', traits: [
@@ -262,9 +244,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.GILL_ATTACHMENT, value : "no" },
         { name: SD.name.FLESH, value : "yellow, orange, white" },
         { name: SD.name.GROUPING, value : "large groups" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: ['Polyporus squamosus', 'Meripilus giganteus', 'Laetiporus huroniensis', 'Laetiporus gilbertsonii', 'Laetiporus cincinnatus' ]},
-        { name: SD.name.ECOLOGY, values: [SD.habitat.DEAD_WOOD, SD.treeType.HARDWOODS, SD.habitat.TRUNKS, SD.habitat.STUMPS ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.DEAD_WOOD}, ${SD.treeType.HARDWOODS}, ${SD.habitat.TRUNKS}, ${SD.habitat.STUMPS}` },
         { name: SD.name.SYMBIONTS, values: [SD.treeType.BEECH, SD.treeType.OAK, SD.treeType.PRUNUS, SD.treeType.SALIX, SD.treeType.ROBINIA, SD.treeType.EUCALYPTUS, SD.treeType.CERATONIA, SD.treeType.YEW] },  
     ]},
     { name: 'Craterellus cornucopioides', traits: [
@@ -275,9 +256,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "buff, cream" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Craterellus tubaeformis' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.WOODLAND_LITTER, SD.treeType.BEECH, SD.treeType.OAK, SD.treeType.BROAD_LEAF ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.WOODLAND_LITTER}, ${SD.treeType.BEECH}, ${SD.treeType.OAK}, ${SD.treeType.BROAD_LEAF}` },
         { name: SD.name.SYMBIONTS, values: [ ] },
     ]},
     { name: 'Gyromitra esculenta', traits: [
@@ -288,9 +268,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "buff, yellow" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "NA" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Morchella esculenta' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.WASTELAND ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.WASTELAND}` },
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.ELM, SD.treeType.ASH, SD.treeType.PINE, SD.treeType.BEECH, SD.treeType.SYCAMORE ] },
     ]},
     { name: 'Omphalotus olearius', traits: [
@@ -302,9 +281,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
         { name: SD.name.GROUPING, value : "clusters" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Cantharellus cibarius', 'Hygrophoropsis aurantiaca' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.ROOTS, SD.habitat.DEAD_WOOD ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.ROOTS}, ${SD.habitat.DEAD_WOOD}` },
     ]},
     { name: 'Amanita rubescens', traits: [
         { name: SD.name.CAP_SHAPE, value: SD.capShape.INFUNDIBULIFORM },
@@ -314,9 +292,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "yellow" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Macrolepiota procera' ]},     
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.DECIDUOUS ] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.DECIDUOUS}` },
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.CONIFERS ] }
     ]},
     { name: 'Cantharellus cibarius', traits: [
@@ -330,9 +307,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.FLESH, value : "white" },
         { name: SD.name.SMELL, value : "fruity" },
         { name: SD.name.VITAMINS, value : "C, D" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Omphalotus olearius', 'Omphalotus illudens', 'Hygrophoropsis aurantiaca' ] },
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.MOSS ] },
+        { name: SD.name.ECOLOGY, value: [ SD.habitat.MOSS ] },
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.OAK, SD.treeType.BEECH, SD.treeType.BIRCH ] }
     ]},
     { name: 'Hygrophoropsis aurantiaca', traits: [
@@ -343,10 +319,9 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white, cream" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
-        { name: SD.name.FLESH, value : "as cap" }
-    ], context: [
+        { name: SD.name.FLESH, value : "as cap" },
         { name: SD.name.LOOK_ALIKES, values: [ 'Cantharellus cibarius' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.MIXED_WOODLAND ] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.MIXED_WOODLAND}` },
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.OAK, SD.treeType.BEECH, SD.treeType.BIRCH] }
     ]},
     { name: 'Agaricus xanthodermus', traits: [
@@ -359,9 +334,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.GILL_ATTACHMENT, value : "free" },
         { name: SD.name.FLESH, value : "white, bruising yellow" },
         { name: SD.name.SMELL, value : "iodine, ink" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Agaricus campestris' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.MIXED_WOODLAND, SD.habitat.GRASSLAND, SD.habitat.HEDGEROWS ] }
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.MIXED_WOODLAND}, ${SD.habitat.GRASSLAND}, ${SD.habitat.HEDGEROWS}` }
     ]},
     { name: 'Clitocybe rivulosa', traits: [
         { name: SD.name.CAP_SHAPE, value: SD.capShape.DEPRESSED },
@@ -371,9 +345,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Marasmius oreades' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.LAWNS, SD.habitat.MEADOW ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.LAWNS}, ${SD.habitat.MEADOW}` },
         { name: SD.name.SYMBIONTS, values: [ ] }
     ]},
     { name: 'Agaricus campestris', traits: [
@@ -385,9 +358,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.STIPE_CHARACTER, value : "ring" },
         { name: SD.name.GILL_ATTACHMENT, value : "free" },
         { name: SD.name.FLESH, value : "white, bruising pink" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Agaricus xanthodermus' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.PASTURE, SD.habitat.MEADOW, SD.habitat.WASTELAND, SD.habitat.FIELDS ] }
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.PASTURE}, ${SD.habitat.MEADOW}, ${SD.habitat.WASTELAND}, ${SD.habitat.FIELDS}` }
     ]},
     { name: 'Marasmius oreades', traits: [
         { name: SD.name.CAP_SHAPE, value: `${SD.capShape.CONVEX}, ${SD.capShape.UMBONATE}` },
@@ -397,9 +369,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "adnate" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Clitocybe rivulosa' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.LAWNS, SD.habitat.MEADOW, SD.habitat.FIELDS, SD.habitat.DUNES ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.LAWNS}, ${SD.habitat.MEADOW}, ${SD.habitat.FIELDS}, ${SD.habitat.DUNES}` },
         { name: SD.name.SYMBIONTS, values: [ ] }
     ]},
     { name: 'Morchella esculenta', traits: [
@@ -412,9 +383,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.GILL_ATTACHMENT, value : "no" },
         { name: SD.name.FLESH, value : "thin, white" },
         { name: SD.name.GROUPING, value : "scattered clusters" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Gyromitra esculenta' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.ORCHARDS, SD.habitat.WOODLAND, SD.habitat.WASTELAND ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.ORCHARDS}, ${SD.habitat.WOODLAND}, ${SD.habitat.WASTELAND}` },
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.ELM, SD.treeType.ASH, SD.treeType.PINE, SD.treeType.BEECH, SD.treeType.SYCAMORE ] }
     ]},
     { name: 'Tylopilus felleus', traits: [
@@ -425,9 +395,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "pink, buff" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "adnate" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Boletus edulis' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.MIXED_WOODLAND ]},
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.MIXED_WOODLAND}`},
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.OAK, SD.treeType.BEECH] }
     ]},
     { name: 'Lactarius sanguifluus', traits: [
@@ -438,9 +407,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "tan" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ '' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.CONIFERS, SD.habitat.DUNES ]},
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.CONIFERS}, ${SD.habitat.DUNES}`},
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.PINE, 'Pseudotsuga menziesii', 'Onychium contiguum'] }
     ]},
     { name: 'Macrolepiota procera', traits: [
@@ -451,7 +419,6 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white" },
         { name: SD.name.STIPE_CHARACTER, value : "ring" },
         { name: SD.name.GILL_ATTACHMENT, value : "free" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Amanita rubescens', 'Amanitas', 'Posinous Lepiotas' ]},
     ]},
     { name: 'Amanita caesarea', traits: [
@@ -462,9 +429,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white" },
         { name: SD.name.STIPE_CHARACTER, value : "ring and volva" },
         { name: SD.name.GILL_ATTACHMENT, value : "free" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Amanita phalloides', 'Amanita muscaria' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.WOODLAND ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.WOODLAND}` },
         { name: SD.name.SYMBIONTS, values: [SD.treeType.OAK, SD.treeType.CONIFERS, SD.treeType.PINE, SD.treeType.CHESTNUT] },  
     ]},
     { name: 'Lactarius deliciosus', traits: [
@@ -475,9 +441,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "tan" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ '' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.WOODLAND ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.WOODLAND}` },
         { name: SD.name.SYMBIONTS, values: [SD.treeType.PINE, SD.treeType.CONIFERS] },  
     ]},
     { name: 'Fistulina hepatica', traits: [
@@ -488,9 +453,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SPORE_PRINT_COLOUR, value : "pink" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ '' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.DEAD_WOOD, SD.habitat.WOOD ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.DEAD_WOOD}, ${SD.habitat.WOOD}` },
         { name: SD.name.SYMBIONTS, values: [SD.treeType.OAK, SD.treeType.SWEET_CHESTNUT, SD.treeType.EUCALYPTUS, SD.treeType.POPLAR, SD.treeType.BIRCH] },  
     ]},
     { name: 'Chlorophyllum rhacodes', traits: [
@@ -513,9 +477,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.SMELL, value : "earthy" },
         { name: SD.name.FLESH, value : "white" },
         { name: 'contact air', value : "pinkish" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Amanita phalloides' , 'Amanita curtipes', 'Amanita verna' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.WOODLAND ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.WOODLAND}` },
         { name: SD.name.SYMBIONTS, values: [SD.treeType.OAK, SD.treeType.CORK, SD.treeType.PINE, SD.treeType.EUCALYPTUS] },  
     ]},
     { name: 'Tricholoma equestre', traits: [
@@ -529,9 +492,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.STIPE_COLOUR, value : "yellow" },
         { name: SD.name.GILL_ATTACHMENT, value : "adnexed" },
         { name: SD.name.GILL_COLOUR, value : "yellow" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ ]},
-        { name: SD.name.ECOLOGY, values: [ SD.habitat.WOODLAND ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.WOODLAND}` },
         { name: SD.name.SYMBIONTS, values: [] },  
     ]},
     { name: 'Boletus pinophilus', traits: [
@@ -543,10 +505,9 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "adnexed" },
         { name: SD.name.FLESH, value : "white, no change on bruising" },
-        { name: SD.name.SMELL, value : "pleasant, pork crackling" }
-    ], context: [
+        { name: SD.name.SMELL, value : "pleasant, pork crackling" },
         { name: SD.name.LOOK_ALIKES, values: [ 'Boletus edulis', 'Tylopilus felleus' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.MIXED_WOODLAND ]},
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.MIXED_WOODLAND}`},
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.PINE, SD.treeType.FIR, SD.treeType.SPRUCE] }
     ]},
     { name: 'Hydnum repandum', traits: [
@@ -561,10 +522,9 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
         { name: SD.name.FLESH, value : "white, orange on bruising" },
-        { name: SD.name.SMELL, value : "pleasant" }
-    ], context: [
+        { name: SD.name.SMELL, value : "pleasant" },
         { name: SD.name.LOOK_ALIKES, values: [ 'Hydnum umbilicatum', 'Hydnum albidum', 'Hydnum albomagnum', 'Hydnum rufescens' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.MIXED_WOODLAND, SD.habitat.MOSS, SD.habitat.RINGS, SD.habitat.SOIL ]},
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.MIXED_WOODLAND}, ${SD.habitat.MOSS}, ${SD.habitat.RINGS}, ${SD.habitat.SOIL}`},
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.CONIFERS, SD.treeType.DECIDUOUS] }
     ]},
     { name: 'Laetiporus cincinnatus', traits: [
@@ -577,9 +537,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.GILL_ATTACHMENT, value : "no" },
         { name: SD.name.FLESH, value : "yellow, orange, white" },
         { name: SD.name.GROUPING, value : "large groups" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Laetiporus sulphureus', 'Polyporus squamosus', 'Laetiporus cincinnatus' ]},
-        { name: SD.name.ECOLOGY, values: [SD.habitat.DEAD_WOOD, SD.treeType.HARDWOODS, ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.DEAD_WOOD}, ${SD.treeType.HARDWOODS}` },
         { name: SD.name.SYMBIONTS, values: [SD.treeType.BEECH, SD.treeType.OAK, SD.treeType.PRUNUS, SD.treeType.SALIX, SD.treeType.ROBINIA, SD.treeType.EUCALYPTUS, SD.treeType.CERATONIA] },  
     ]},
     { name: 'Craterellus tubaeformis', traits: [
@@ -591,9 +550,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
         { name: SD.name.GROUPING, value : "large groups" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Craterellus cornucopioides' ]},
-        { name: SD.name.ECOLOGY, values: [SD.habitat.CONIFERS, SD.habitat.MOSS, SD.habitat.DEAD_WOOD ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.CONIFERS}, ${SD.habitat.MOSS}, ${SD.habitat.DEAD_WOOD}` },
         { name: SD.name.SYMBIONTS, values: ['Pseudotsuga menziesii', 'Tsuga heterophylla'] },  
     ]},
     { name: 'Hydnum umbilicatum', traits: [
@@ -605,10 +563,9 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.HYMENIUM_TYPE, value : SD.hymeniumType.TEETH },
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
-        { name: SD.name.GILL_ATTACHMENT, value : "decurrent" }
-    ], context: [
+        { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
         { name: SD.name.LOOK_ALIKES, values: [ 'Hydnum repandum' ]},
-        { name: SD.name.ECOLOGY, values: [SD.habitat.CONIFERS, SD.habitat.DAMP ] },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.CONIFERS}, ${SD.habitat.DAMP}` },
         { name: SD.name.SYMBIONTS, values: [''] },  
     ]},
     { name: 'Hericium americanum', traits: [
@@ -618,10 +575,9 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.HYMENIUM_TYPE, value : SD.hymeniumType.TEETH },
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
-        { name: SD.name.GILL_ATTACHMENT, value : "NA" }
-    ], context: [
+        { name: SD.name.GILL_ATTACHMENT, value : "NA" },
         { name: SD.name.LOOK_ALIKES, values: [ 'Hericium coralloides' ]},
-        { name: SD.name.ECOLOGY, values: ['' ] },
+        { name: SD.name.ECOLOGY, value: '' },
         { name: SD.name.SYMBIONTS, values: [''] },  
     ]},
     { name: 'Hericium coralloides', traits: [
@@ -631,10 +587,9 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.HYMENIUM_TYPE, value : SD.hymeniumType.TEETH },
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
-        { name: SD.name.GILL_ATTACHMENT, value : "NA" }
-    ], context: [
+        { name: SD.name.GILL_ATTACHMENT, value : "NA" },
         { name: SD.name.LOOK_ALIKES, values: [ 'Hericium americanum' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.HARDWOODS ] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.HARDWOODS}` },
         { name: SD.name.SYMBIONTS, values: [''] },  
     ]},
     { name: 'Calvatia gigantea', traits: [
@@ -644,10 +599,9 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.HYMENIUM_TYPE, value : SD.hymeniumType.GLEBA },
         { name: SD.name.SPORE_PRINT_COLOUR, value : "brown" },
         { name: SD.name.STIPE_CHARACTER, value : "NA" },
-        { name: SD.name.GILL_ATTACHMENT, value : "NA" }
-    ], context: [
+        { name: SD.name.GILL_ATTACHMENT, value : "NA" },
         { name: SD.name.LOOK_ALIKES, values: [ 'Amanitas, Earthball' ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.DECIDUOUS, SD.habitat.MEADOW, SD.habitat.FIELDS ] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.DECIDUOUS}, ${SD.habitat.MEADOW}, ${SD.habitat.FIELDS}` },
         { name: SD.name.SYMBIONTS, values: [''] },  
     ]},
     { name: 'Clitocybe nuda', traits: [
@@ -657,10 +611,9 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.HYMENIUM_TYPE, value : SD.hymeniumType.GILLS },
         { name: SD.name.SPORE_PRINT_COLOUR, value : "pink" },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
-        { name: SD.name.GILL_ATTACHMENT, value : "emarginate" }
-    ], context: [
+        { name: SD.name.GILL_ATTACHMENT, value : "emarginate" },
         { name: SD.name.LOOK_ALIKES, values: [ SD.habitat.WOODLAND_LITTER ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.DECIDUOUS, SD.habitat.MEADOW, SD.habitat.FIELDS ] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.DECIDUOUS}, ${SD.habitat.MEADOW}, ${SD.habitat.FIELDS}` },
         { name: SD.name.SYMBIONTS, values: ['Picea abies', 'Pinus sylvestris'] },  
     ]},
     { name: 'Armillaria mellea', traits: [
@@ -670,10 +623,9 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.HYMENIUM_TYPE, value : SD.hymeniumType.GILLS },
         { name: SD.name.SPORE_PRINT_COLOUR, value : "white" },
         { name: SD.name.STIPE_CHARACTER, value : "ring" },
-        { name: SD.name.GILL_ATTACHMENT, value : "subdecurrent, adnate" }
-    ], context: [
+        { name: SD.name.GILL_ATTACHMENT, value : "subdecurrent, adnate" },
         { name: SD.name.LOOK_ALIKES, values: [ ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.HARDWOODS, SD.habitat.DEAD_WOOD ] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.HARDWOODS}, ${SD.habitat.DEAD_WOOD}` },
         { name: SD.name.SYMBIONTS, values: [ 'Entoloma abortivum', 'Pseudotsuga menziesii', 'Tsuga heterophylla'] },
     ]},
     { name: 'Armillaria tabescens', traits: [
@@ -685,9 +637,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "decurrent" },
         { name: SD.name.GROUPING, value : "clusters" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.HARDWOODS, SD.habitat.DEAD_WOOD ] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.HARDWOODS}, ${SD.habitat.DEAD_WOOD}` },
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.OAK] },
     ]},
     { name: 'Entoloma abortivum', traits: [
@@ -701,9 +652,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.GROUPING, value : "clusters" },
         { name: SD.name.FLESH, value : "white" },
         { name: SD.name.SMELL, value : "strongly mealy" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ ]},
-        { name: SD.name.ECOLOGY, values: [ SD.treeType.HARDWOODS, SD.habitat.WOODLAND_LITTER, SD.habitat.DEAD_WOOD ] },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.HARDWOODS}, ${SD.habitat.WOODLAND_LITTER}, ${SD.habitat.DEAD_WOOD}` },
         { name: SD.name.SYMBIONTS, values: [ 'Armillaria mellea'] },
     ]},
     { name: 'Polyporus squamosus', traits: [
@@ -717,9 +667,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.GROUPING, value : "clusters" },
         { name: SD.name.FLESH, value : "white" },
         { name: SD.name.SMELL, value : "watermelon rind" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ 'Laetiporus sulphureus', 'Laetiporus cincinnatus']},
-        { name: SD.name.ECOLOGY, values: `${SD.treeType.HARDWOODS}, ${SD.habitat.DEAD_WOOD}` },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.HARDWOODS}, ${SD.habitat.DEAD_WOOD}` },
         { name: SD.name.SYMBIONTS, values: `${SD.treeType.ELM}, ${SD.treeType.MAPLE}, ${SD.treeType.ASH}, ${SD.treeType.PLANE}, ${SD.treeType.WILLOW}` },
     ]},
     { name: 'Sarcoscypha coccinea', traits: [
@@ -729,8 +678,7 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.HYMENIUM_TYPE, value : SD.hymeniumType.SMOOTH },
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "NA" },
-    ], context: [
-        { name: SD.name.ECOLOGY, values: `${SD.habitat.WOODLAND_LITTER}, ${SD.habitat.DAMP}, ${SD.habitat.DEAD_WOOD}` },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.WOODLAND_LITTER}, ${SD.habitat.DAMP}, ${SD.habitat.DEAD_WOOD}` },
         { name: SD.name.SYMBIONTS, values: [ ] },
     ]},
     { name: 'Sparassis crispa', traits: [
@@ -741,9 +689,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.HYMENIUM_TYPE, value : SD.hymeniumType.SMOOTH },
         { name: SD.name.STIPE_CHARACTER, value : "bare or missing" },
         { name: SD.name.GILL_ATTACHMENT, value : "NA" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ ]},
-        { name: SD.name.ECOLOGY, values: `${SD.treeType.CONIFERS}, ${SD.habitat.TREE_BASE}` },
+        { name: SD.name.ECOLOGY, value: `${SD.treeType.CONIFERS}, ${SD.habitat.TREE_BASE}` },
         { name: SD.name.SYMBIONTS, values: [ SD.treeType.LARCH, SD.treeType.SPRUCE, SD.treeType.PINE, SD.treeType.CEDAR] },
     ]},
     { name: 'Lepista personata', traits: [
@@ -756,9 +703,8 @@ export const getFungiTraits = (enums) => {
         { name: SD.name.STIPE_CHARACTER, value : "bare" },
         { name: SD.name.GILL_ATTACHMENT, value : "emarginate" },
         { name: SD.name.GROUPING, value : "fairy rings" },
-    ], context: [
         { name: SD.name.LOOK_ALIKES, values: [ ]},
-        { name: SD.name.ECOLOGY, values: `${SD.habitat.FOREST_EDGE}, ${SD.habitat.PASTURE}, ${SD.habitat.GRASSLAND}, ${SD.habitat.PARKS}` },
+        { name: SD.name.ECOLOGY, value: `${SD.habitat.FOREST_EDGE}, ${SD.habitat.PASTURE}, ${SD.habitat.GRASSLAND}, ${SD.habitat.PARKS}` },
         { name: SD.name.SYMBIONTS, values: [] },
     ]},
     { name: 'Xanthoria parietina', traits: [

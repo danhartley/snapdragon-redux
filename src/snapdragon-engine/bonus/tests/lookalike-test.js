@@ -1,6 +1,5 @@
-import { itemProperties } from 'ui/helpers/data-checking';
 import { store } from 'redux/store';
-import { getTraits } from 'api/traits/traits';
+import { itemProperties } from 'ui/helpers/data-checking';
 import { firestore } from 'api/firebase/firestore';
 
 export const getLookalikeTests = itemsInThisRound => {
@@ -26,10 +25,15 @@ export const getLookalikeTests = itemsInThisRound => {
 
 const getLookalikeTest = item => {
 
-    const { enums, config } = store.getState();
+    const { config } = store.getState();
 
-    const traits = getTraits(enums);
-    let lookalikes = itemProperties.itemContextProperty(traits, item, 'look-alikes');
+    if(!item.traits || item.traits.length === 0) return;
+
+    const lookaliketraits = item.traits.find(trait => trait.name === 'look-alikes');
+
+    if(lookaliketraits.length === 0) return;
+
+    let lookalikes = lookaliketraits.values;
 
     if(lookalikes.length === 0) return {};
 

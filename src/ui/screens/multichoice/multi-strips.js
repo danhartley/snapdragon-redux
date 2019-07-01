@@ -3,7 +3,6 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-import { taxa } from 'api/snapdragon/taxa';
 import { epithets } from 'api/botanical-latin';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { scoreHandler } from 'ui/helpers/handlers';
@@ -23,8 +22,7 @@ export const renderMultiStrips = (collection, bonus) => {
     const item = collection.nextItem || collection.items[collection.itemIndex];
 
     const taxon = matchTaxon(item.taxonomy, iconicTaxa);
-    const iconicTaxonFamilies = firestore.getUniqueFamiliesByIconicTaxon(taxon.rank, taxon.value, item.lichen);
-    let families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, iconicTaxonFamilies));
+    const families = firestore.getFamiliesByIconicTaxon(taxon.rank, taxon.value, item.lichen);
   
     screen = bonus ? bonus.screen || layout.screens[1] : layout.screens[1];
 
@@ -73,9 +71,9 @@ export const renderMultiStrips = (collection, bonus) => {
             }
         }
 
-        const taxon = { name: item.family, binomial: item.name, question: questionValue };
+        const taxon = { name: item.taxonomy.family, binomial: item.name, question: questionValue };
 
-        const test = { itemId: item.id, items: strips, taxon: taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points};
+        const test = { itemId: item.id, items: strips, taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points};
                 
         const callback = (score) => {
 
@@ -105,7 +103,7 @@ export const renderMultiStrips = (collection, bonus) => {
             });
 
             if(screen.name === 'family-strips') {
-                document.querySelector('.js-question-question').innerHTML = item.family;
+                document.querySelector('.js-question-question').innerHTML = item.taxonomy.family;
                 document.querySelector('.js-question-help').classList.add('hide');
             }
         };
@@ -156,11 +154,11 @@ export const renderMultiStrips = (collection, bonus) => {
 
         const number = config.isPortraitMode ? 4 : 4;
 
-        const question = families.find(f => f.name === item.family).descriptions[0][type];
+        const question = families.find(f => f.name === item.taxonomy.family).descriptions[0][type];
         const alternativeFamilies = R.take(number-1, R.take(number, utils.shuffleArray(families)));
-        const alternatives = alternativeFamilies.filter(f => f.name !== item.family && f.descriptions && f.descriptions[0][type] && f.descriptions[0][type] !== undefined && f.descriptions[0][type] !== '').map(f => f.descriptions[0][type]);
+        const alternatives = alternativeFamilies.filter(f => f.name !== item.taxonomy.family && f.descriptions && f.descriptions[0][type] && f.descriptions[0][type] !== undefined && f.descriptions[0][type] !== '').map(f => f.descriptions[0][type]);
         const answers = utils.shuffleArray([question, ...alternatives]);
-        const answersFamilyNames = [ item.family, ...alternativeFamilies.map(af => af.name) ]
+        const answersFamilyNames = [ item.taxonomy.family, ...alternativeFamilies.map(af => af.name) ]
 
         const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
 
@@ -195,11 +193,11 @@ export const renderMultiStrips = (collection, bonus) => {
 
         const indices = config.isPortraitMode ? [5,6] : [5,6];
 
-        const family = item.family;
-        const otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name !== item.family));
+        const family = item.taxonomy.family;
+        const otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name !== item.taxonomy.family));
         const otherFamiliesLatinNames = otherFamilies.map(family => family.name);
         const otherFamiliesCommonNames = otherFamilies.filter(family => family.names.find(name => name.language === config.language)).map(family => family.names[0].names[0]).filter(name => name !== '');
-        const familyTaxon = families.find(family => family.name === item.family); 
+        const familyTaxon = families.find(family => family.name === item.taxonomy.family); 
         let commonFamilyName = familyTaxon ? itemProperties.getTaxonProp(familyTaxon, config.language, 'names', 'names', '0').names[0] : family;
             commonFamilyName = commonFamilyName === '' ? family : commonFamilyName;
 

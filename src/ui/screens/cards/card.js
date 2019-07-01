@@ -1,12 +1,10 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { taxa } from 'api/snapdragon/taxa';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { getBirdSong } from 'xeno-canto/birdsong';
-import { getTraits } from 'api/traits/traits';
-import { lookALikes } from 'ui/screens/common/look-alikes';
+import { lookalikeSpecies } from 'ui/screens/common/look-alikes';
 import { renderFeatures } from 'ui/screens/common/feature';
 import { infoSlider } from 'ui/screens/common/info-slider';
 import { iconicTaxa, matchTaxon } from 'api/snapdragon/iconic-taxa';
@@ -54,29 +52,27 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
 
     template.innerHTML = cardTemplate;
 
-    const traits = getTraits(enums);
-
-    renderCommonParts(template, config, item, collection, traits, mode, parent, rootNode, isInCarousel);
+    renderCommonParts(template, config, item, collection, mode, parent, rootNode, isInCarousel);
 
     config.isPortraitMode
-        ? renderPortrait(item, config, traits, mode, rootNode)
-        : renderLandscape(item, config, traits, mode, rootNode);
+        ? renderPortrait(item, config, mode, rootNode)
+        : renderLandscape(item, config, mode, rootNode);
 };
 
-const renderLandscape = (item, config, traits, mode, rootNode) => {
+const renderLandscape = (item, config, mode, rootNode) => {
 
     const src = rootNode.querySelector('.js-bird-song');
     
-    getBirdSong(item, traits, src, config.isPortraitMode);
+    getBirdSong(item, src, config.isPortraitMode);
 
     const inatNode = rootNode.querySelector('.js-inat-box');
 
     renderInatDataBox(inatNode, item, config, mode);
 
-    lookALikes(item, traits, config, rootNode);
+    lookalikeSpecies(item, config, rootNode);
 };
 
-const renderPortrait = (item, config, traits, mode, rootNode) => {
+const renderPortrait = (item, config, mode, rootNode) => {
 
     const images = prepImagesForCarousel(item, config, imageUseCases.SPECIES_CARD);
 
@@ -91,7 +87,7 @@ const renderPortrait = (item, config, traits, mode, rootNode) => {
         return;
     };
 
-    getBirdSong(item, traits, player, config.isPortraitMode);
+    getBirdSong(item, player, config.isPortraitMode);
 
     player.addEventListener('click', () => {
         const iframe = document.createElement('iframe');
@@ -108,13 +104,11 @@ const renderPortrait = (item, config, traits, mode, rootNode) => {
     });
 };
 
-const renderCommonParts = (template, config, item, collection, traits, mode, parent, rootNode, isInCarousel) => {
+const renderCommonParts = (template, config, item, collection, mode, parent, rootNode, isInCarousel) => {
 
     const name = item.name;
           item.vernacularName = item.vernacularName || itemProperties.getVernacularName(item, config);
-    const family = taxa.find(f => f.name === item.family);
-    const familyName = family ? family.name : item.taxonomy.family;
-    const familyVernacularNames = itemProperties.familyVernacularNames(item.family, config.language, taxa);
+    const familyVernacularNames = item.family.names.find(props => props.language === config.language).names;
     const familyVernacularName = familyVernacularNames ? familyVernacularNames[0] : '';
         
     const headerImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
@@ -132,15 +126,15 @@ const renderCommonParts = (template, config, item, collection, traits, mode, par
 
     const taxaBoxNode = rootNode.querySelector('.js-taxa-box');
 
-    renderTaxaBox(taxaBoxNode, { item, familyName, familyVernacularName, traits });
+    renderTaxaBox(taxaBoxNode, { item, familyName: item.taxonomy.family, familyVernacularName });
 
-    infoSlider(item, traits, family, rootNode.querySelector('.js-info-box'), mode);
+    infoSlider(item, item.family, rootNode.querySelector('.js-info-box'), mode);
 
     const badge = rootNode.querySelector('.js-names-badge');
 
     renderBadge(badge, occurrences, names);
     
-    renderFeatures(item, traits, config, rootNode.querySelector('.js-feature-types'), mode, isInCarousel, collection);
+    renderFeatures(item, config, rootNode.querySelector('.js-feature-types'), mode, isInCarousel, collection);
     
     const calendarNode = rootNode.querySelector('.js-calendar-box');
 

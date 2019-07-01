@@ -6,6 +6,8 @@ import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
 import { getPlace } from 'geo/geo';
 import { firestore } from 'api/firebase/firestore';
+import { enums } from 'ui/helpers/enum-helper';
+import { getTraits } from 'api/traits/traits';
 
 async function getItems(collections, collection, config) {
 
@@ -65,7 +67,7 @@ export const keepItems = collection => {
     });
 }
 
-export async function collectionHandler(collections, collection, config, counter, callback, callbackWhenNoResults) {
+export const collectionHandler = async (collections, collection, config, counter, callback, callbackWhenNoResults) => {
     
     if(counter.isLessonPaused) {
         collection.items = await keepItems(collection);
@@ -102,6 +104,13 @@ export async function collectionHandler(collections, collection, config, counter
                 item.genus = names[0];
                 item.species = names[1];
                 item.name = names.slice(0,2).join(' ');
+
+                item.family = firestore.getItemTaxonByName(item, enums.taxon.FAMILY) || null;
+                item.order = firestore.getItemTaxonByName(item, enums.taxon.ORDER);
+
+                const itemTraits = getTraits().find(trait => trait.name === item.name);
+                item.traits = itemTraits ? itemTraits.traits : [];
+                item.symbionts = itemTraits ? itemTraits.symbionts || [] : [];
             });
 
             collection.itemIndex = 0;

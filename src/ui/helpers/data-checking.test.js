@@ -135,20 +135,3 @@ test('answersFrom should return a new list matching the number requesting and in
   const answers = ["Fistulina hepatica","Boletus edulis","Pleurotus ostreatus",];
   expect(itemProperties.answersFromList(list, 'Boletus edulis', 3).sort()).toEqual(answers.sort());
 });
-
-test('check family has added taxon data', () => {
-  let taxa = [
-    {
-        taxon: 'family',
-        name: 'Asteraceae'
-    }
-  ];
-  expect(itemProperties.taxonHasTaxaData('Asteraceae', taxa)).toBeTruthy();
-  taxa = [
-    {
-        taxon: 'family',
-        name: 'Apiaceae'
-    }
-  ];
-  expect(itemProperties.taxonHasTaxaData('Asteraceae', taxa)).toBeFalsy();
-});

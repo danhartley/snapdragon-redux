@@ -29,7 +29,7 @@
                             <span class="latin-name narrow-screen">{{ item.shortName }}</span>
                         </td>
                         <td class="wide-screen">
-                            <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="family" data-family="{{ item.family }}" data-target="#cardModal" class="{{ item.familyLinkClass }}">{{ item.family }}</span>
+                            <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="family" data-family="{{ item.taxonomy.family }}" data-target="#cardModal" class="{{ item.familyLinkClass }}">{{ item.taxonomy.family }}</span>
                             <span data-toggle="modal" data-name="{{ item.name }}" data-url="{{ item.url }}" data-rank="order" data-order="{{ item.taxonomy.order }}" data-target="#cardModal" class="{{ item.orderLinkClass }}">{{ item.taxonomy.order }}</span>
                         </td>
                         <td class="wide-screen">

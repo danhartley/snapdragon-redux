@@ -1,8 +1,6 @@
 import * as R from 'ramda';
 
 import { store } from 'redux/store';
-import { getTraits } from 'api/traits/traits';
-import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageSideBySlider } from 'ui/screens/common/image-slider';
@@ -10,14 +8,18 @@ import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import { lookalikeDescriptions } from 'api/snapdragon/look-alike-descriptions';
 import { firestore } from 'api/firebase/firestore';
 
+import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
 import visualComparisonTemplate from 'ui/screens/common/look-alikes-link-template.html';
 
-export const lookALikes = (item, traits, config, rootNode = document) => {
+export const lookalikeSpecies = (item, config, rootNode = document) => {
 
-    const lookalikes = itemProperties.itemContextProperty(traits, item, 'look-alikes');
-          lookalikes.push(item.name);
+    let lookalikes = item.traits.find(c => c.name === 'look-alikes');
 
-    if(lookalikes.length > 1) {
+    if(lookalikes) {
+
+        lookalikes = lookalikes.values;
+
+        lookalikes.push(item.name);
 
         const matchTemplate = document.createElement('template');
               matchTemplate.innerHTML = visualComparisonTemplate;
@@ -53,13 +55,9 @@ export const lookALikes = (item, traits, config, rootNode = document) => {
                 
             if(item.taxonomy.class.toLowerCase() === 'aves') {
 
-                const traits = getTraits(enums);
+                if(item.traits.length === 0) return;
 
-                const bird = traits.find(bird => bird.name === item.name);
-
-                if(!bird) return;
-
-                const xcID = bird.traits.find(trait => trait.name === 'song').value;
+                const xcID = item.traits.find(trait => trait.name === 'song').value;
 
                 if(!xcID) return;
     

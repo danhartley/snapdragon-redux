@@ -9,15 +9,13 @@ import { firestore } from 'api/firebase/firestore';
 import featureLookalike from 'ui/screens/common/feature-look-alike.html';
 import symbiontTemplate from 'ui/screens/common/feature-symbiont-list-template.html';
 
-export const renderFeatures = (item, traits, config, parent, mode, isInCarousel, collection) => {
+export const renderFeatures = (item, config, parent, mode, isInCarousel, collection) => {
 
     const types = [];
 
     for (var property in traitTypes.name) {
         types.push(traitTypes.name[property]);
     }
-
-    let speciesTraits = traits.find(trait => trait.name === item.name);
 
     const getVernacularName = symbiont => {
         const item = collection.find(s => s.name === symbiont);
@@ -44,17 +42,17 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel,
 
     const setNumberOfRows = config.isLandscapeMode ? 10 : 4;
 
-    if(speciesTraits && speciesTraits.symbionts && speciesTraits.symbionts.length > 0) {
+    if(item.traits && item.traits.symbionts && item.traits.symbionts.length > 0) {
 
         let symbionts ;
 
-        if(speciesTraits.symbionts[0].id) {
-            symbionts = speciesTraits.symbionts.map(s => s.id);
+        if(item.traits.symbionts[0].id) {
+            symbionts = item.traits.symbionts.map(s => s.id);
         } else {
-            symbionts = speciesTraits.symbionts;
+            symbionts = item.traits.symbionts;
         }
 
-        let symbiontTraits = speciesTraits.traits.map(trait => {
+        let symbiontTraits = item.traits.traits.map(trait => {
             const values = trait.value.split(',').map(t => t.trim());
             const st = values.map(symbiont => {
                 if(R.contains(symbiont, symbionts)) {
@@ -75,9 +73,6 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel,
 
         symbiontTraits.forEach(trait => {            
             const linkedSpecies = firestore.getSpeciesName(trait.symbiont.id);
-            // species.find(s => {
-            //     return s.name.toUpperCase() === trait.symbiont.id.toUpperCase();
-            // });
             if(linkedSpecies && mode !== 'MODAL') {
                 trait.className = 'underline-link';
                 trait.modal = 'modal';
@@ -103,7 +98,8 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel,
         
     } else {
 
-        let lookalikeNames = itemProperties.itemContextProperty(traits, item, 'look-alikes');
+        let lookalikeTraits = item.traits.find(c => c.name === 'look-alikes');
+        let lookalikeNames = lookalikeTraits ? lookalikeTraits.values : [];
 
         if(lookalikeNames.length > 0) {
             lookalikeNames = lookalikeNames.filter(name => name !== item.name);
@@ -121,7 +117,7 @@ export const renderFeatures = (item, traits, config, parent, mode, isInCarousel,
         if(lookalikeNames.length > 0) {
     
             lookalikes = lookalikeNames.map(name => {
-                const lookalike = species.find(s => s.name === name);
+                const lookalike = firestore.getSpeciesByName(name);
                 if(!lookalike) return;
                 return { 
                     name: lookalike.name, 

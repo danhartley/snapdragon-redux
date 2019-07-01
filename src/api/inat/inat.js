@@ -27,7 +27,7 @@ const getBasePath = config => {
 
 export const getInatSpecies = config => {
 
-    let names = firestore.getSpecies(item => item.name); 
+    let names = firestore.getSpecies().map(item => item.name); 
 
     const iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
 

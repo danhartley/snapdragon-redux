@@ -19,7 +19,18 @@ navigation.initEnum([
     'EMAIL'
 ]);
 
+class taxon extends Enum {};
+taxon.initEnum([
+    'KINGDOM',
+    'PHYLUM',
+    'ORDER',
+    'FAMILY',
+    'GENUS',
+    'SPECIES',
+]);
+
 export const enums = {
     lessonState,
-    navigation
+    navigation,
+    taxon
 };

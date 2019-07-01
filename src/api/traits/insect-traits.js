@@ -1,7 +1,8 @@
 import * as traitEnums from 'api/traits/trait-types';
 
-const getTraits = SD => {    
-        return [
+export const getInsectTraits = enums => {    
+    const SD = enums && Object.keys(enums).length ? enums : traitEnums.enums;
+    return [
         { name: 'Vanessa atalanta', 
         symbionts: [ 'Urtica dioica', 'Buddleia', 'Hedera' ], 
         traits: [            
@@ -129,14 +130,3 @@ const getTraits = SD => {
         ] },
     ];
 };
-
-export const getInsectTraits = (enums) => {
-    const SD = enums && Object.keys(enums).length ? enums : traitEnums.enums;
-    const traits = getTraits(SD);
-    // traits.forEach(species => {
-    //     if(!species.traits.find(trait => trait.name === 'TROPHIC_LEVEL')) {
-    //         species.traits.push({ name: SD.name.TROPHIC_LEVEL, value: '2.2' })
-    //     }
-    // });
-    return traits;
-}

@@ -1,23 +1,13 @@
-const getTaxa = (items, taxon) => {
-    const taxa = items.filter(item => item[taxon]) || [];
-    return taxa;
-};
+// const reducer = function(obj,elem){
+//     obj[elem]=obj[elem] || 0;
+//     obj[elem]++;
+//     return obj;
+// };
 
-const getFamilyNames = items => {
-    const families = getTaxa(items, 'family').map(item => item.family);
-    return families;
-};
+// const getFamilyStats = items => {
+//     return items.map(item => item.taxonomy.family).reduce(reducer,{});
+// }
 
-const reducer = function(obj,elem){
-    obj[elem]=obj[elem] || 0;
-    obj[elem]++;
-    return obj;
-};
-
-const getFamilyStats = items => {
-    return getFamilyNames(items).reduce(reducer,{});
-}
-
-export const familyProps = {
-    getFamilyStats
-}
+// export const familyProps = {
+//     getFamilyStats
+// }

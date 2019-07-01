@@ -32,17 +32,18 @@ export const taxonInfoSlider = (traits, parent, mode) => {
     renderInfoSlider(traits, parent, id);
 };
 
-export const infoSlider = (item, traits, family, parent, mode) => {
+export const infoSlider = (item, family, parent, mode) => {
 
-    const speciesTraits = traits.find(c => c.name === item.name) || { traits: [] };
+    if(item.traits.length === 0) return;
 
     const exclude = [ 'song', 'UK Rank' ];
 
-    speciesTraits.traits = speciesTraits.traits.filter(trait => !R.contains(trait.name, exclude));
+    const speciesTraits = item.traits.filter(trait => !R.contains(trait.name, exclude));
+
+    if(speciesTraits.length === 0) return;
 
     const familyTraits = (family && family.traits) ? family.traits : [];
-    if(speciesTraits.traits.length === 0 && familyTraits.length === 0) return;
-    const species = { traits: speciesTraits.traits.concat(familyTraits) };
+    const species = { traits: speciesTraits.concat(familyTraits) };
 
     if(!species.traits) return;
 
