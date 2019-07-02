@@ -8,9 +8,9 @@ export const getLookalikeTests = itemsInThisRound => {
 
     const tests = itemsInThisRound.map(item => {
 
-        const { question, answers, overrides } = getLookalikeTest(item);
-
         if(!question) return {};
+
+        const { question, answers, overrides } = getLookalikeTest(item);
 
         return {
             item,

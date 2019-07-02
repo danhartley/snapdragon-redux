@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { taxa } from 'api/snapdragon/taxa';
 import { iconicTaxa, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
 import { species } from 'api/species';
-import { enums } from 'ui/helpers/enum-helper';
+import { getTraits } from 'api/traits/traits';
 
 // var db = firebase.firestore();
 
@@ -70,6 +70,10 @@ const getTaxonByName = (taxonName) => {
     return taxa.find(taxon => taxon.name.toLowerCase() === taxonName.toLowerCase()); 
 };
 
+const getTraitsBySpeciesName = name => {
+    return getTraits().find(trait => trait.name === name);
+};
+
 export const firestore = {
     getSpecies,
     getSpeciesFromList,
@@ -79,5 +83,6 @@ export const firestore = {
     getSpeciesByTaxonKey,
     getFamiliesByIconicTaxon,
     getItemTaxonByName,
-    getTaxonByName
+    getTaxonByName,
+    getTraitsBySpeciesName
 };

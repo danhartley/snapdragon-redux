@@ -112,7 +112,7 @@ export const buildTable = (collection, config, enums) => {
     const tbody = document.querySelector('.species-table tbody');
     
     const headerRow = document.createElement('tr');
-    headerRow.classList.add('table-header');
+          headerRow.classList.add('table-header');
     const imageHeader = document.createElement('th');
     const speciesHeader = document.createElement('th');
     const familyHeader = document.createElement('th');
@@ -133,8 +133,8 @@ export const buildTable = (collection, config, enums) => {
     inputCheck.checked = true;
     inputCheck.classList.add('custom-control-input');
     const labelCheck = document.createElement('label');
-    labelCheck.classList.add('custom-control-label');
-    labelCheck.setAttribute('for', 'inputCheckAll');
+          labelCheck.classList.add('custom-control-label');
+          labelCheck.setAttribute('for', 'inputCheckAll');
     checkbox.appendChild(inputCheck);
     checkbox.appendChild(labelCheck);    
     speciesHeader.innerHTML = '<span>Species</span';

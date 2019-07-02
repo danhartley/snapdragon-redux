@@ -10,9 +10,9 @@ export const getBirdsongTests = itemsInThisRound => {
         
         if(item.taxonomy.class && item.taxonomy.class.toLowerCase() !== 'aves') return [];
 
-        const { question, answers, overrides } = getBirdsongTest(item, itemsInThisRound);
-
         if(!question) return {};
+
+        const { question, answers, overrides } = getBirdsongTest(item, itemsInThisRound);
 
         return {
             item,

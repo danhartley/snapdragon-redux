@@ -8,7 +8,15 @@ const getIconicTaxon = item => {
 };
 
 const getSpecies = () => {
-    return species;
+    
+    var docRef = db.collection("species");
+    
+    docRef.get().then(querySnapshot => {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+        });
+    });
 };
 
 const addSpecies = function(species) {
@@ -36,6 +44,6 @@ export const examples = {
     getSpecies
 }
 
-addSpecies(species.find(s => s.id === 1037909)).then(() => {
-    console.log('Holy squirrels!');
-});
+// addSpecies(species.find(s => s.id === 1037909)).then(() => {
+//     console.log('Holy squirrels!');
+// });

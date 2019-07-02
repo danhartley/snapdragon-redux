@@ -7,7 +7,6 @@ import { getInatSpecies } from 'api/inat/inat';
 import { getPlace } from 'geo/geo';
 import { firestore } from 'api/firebase/firestore';
 import { enums } from 'ui/helpers/enum-helper';
-import { getTraits } from 'api/traits/traits';
 
 async function getItems(collections, collection, config) {
 
@@ -101,6 +100,7 @@ export const collectionHandler = async (collections, collection, config, counter
                 item.vernacularName = itemProperties.getVernacularName(item, config);   
 
                 const names = item.name.split(' ');
+                
                 item.genus = names[0];
                 item.species = names[1];
                 item.name = names.slice(0,2).join(' ');
@@ -108,7 +108,8 @@ export const collectionHandler = async (collections, collection, config, counter
                 item.family = firestore.getItemTaxonByName(item, enums.taxon.FAMILY) || null;
                 item.order = firestore.getItemTaxonByName(item, enums.taxon.ORDER);
 
-                const itemTraits = getTraits().find(trait => trait.name === item.name);
+                const itemTraits = firestore.getTraitsBySpeciesName(item.name);
+
                 item.traits = itemTraits ? itemTraits.traits : [];
                 item.symbionts = itemTraits ? itemTraits.symbionts || [] : [];
             });

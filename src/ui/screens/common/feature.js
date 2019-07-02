@@ -18,7 +18,7 @@ export const renderFeatures = (item, config, parent, mode, isInCarousel, collect
     }
 
     const getVernacularName = symbiont => {
-        const item = collection.find(s => s.name === symbiont);
+        const item = firestore.getSpeciesByName(symbiont);
         if(!item) return { id: symbiont, display: symbiont };
         const vernacularName = itemProperties.getVernacularName(item, config);
         return vernacularName ? { id: symbiont, display: vernacularName } : { id: symbiont, display: symbiont };
@@ -32,7 +32,7 @@ export const renderFeatures = (item, config, parent, mode, isInCarousel, collect
             speciesCardLinks.forEach(link => {
                 link.addEventListener('click', event => {
                     const name = event.target.id || event.target.dataset.name;
-                    const selectedItem = firestore.getSpeciesName(name);
+                    const selectedItem = firestore.getSpeciesByName(name);
                     selectedItem.species = itemProperties.getSpeciesName(item.name);
                     renderCard({ name: 'Local species', items: [ selectedItem ] }, 'MODAL', selectedItem, document.querySelector('#cardModal .js-modal-body'), false);
                 });
@@ -42,17 +42,17 @@ export const renderFeatures = (item, config, parent, mode, isInCarousel, collect
 
     const setNumberOfRows = config.isLandscapeMode ? 10 : 4;
 
-    if(item.traits && item.traits.symbionts && item.traits.symbionts.length > 0) {
+    if(item.traits && item.symbionts && item.symbionts.length > 0) {
 
         let symbionts ;
 
-        if(item.traits.symbionts[0].id) {
-            symbionts = item.traits.symbionts.map(s => s.id);
+        if(item.symbionts[0].id) {
+            symbionts = item.symbionts.map(s => s.id);
         } else {
-            symbionts = item.traits.symbionts;
+            symbionts = item.symbionts;
         }
 
-        let symbiontTraits = item.traits.traits.map(trait => {
+        let symbiontTraits = item.traits.map(trait => {
             const values = trait.value.split(',').map(t => t.trim());
             const st = values.map(symbiont => {
                 if(R.contains(symbiont, symbionts)) {
@@ -72,7 +72,7 @@ export const renderFeatures = (item, config, parent, mode, isInCarousel, collect
         template.innerHTML = symbiontTemplate;
 
         symbiontTraits.forEach(trait => {            
-            const linkedSpecies = firestore.getSpeciesName(trait.symbiont.id);
+            const linkedSpecies = firestore.getSpeciesByName(trait.symbiont.id);
             if(linkedSpecies && mode !== 'MODAL') {
                 trait.className = 'underline-link';
                 trait.modal = 'modal';
