@@ -111,7 +111,6 @@ export const collectionHandler = async (collections, collection, config, counter
                 const itemTraits = firestore.getTraitsBySpeciesName(item.name);
 
                 item.traits = itemTraits ? itemTraits.traits : [];
-                item.symbionts = itemTraits ? itemTraits.symbionts || [] : [];
             });
 
             collection.itemIndex = 0;

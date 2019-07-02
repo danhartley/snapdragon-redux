@@ -42,15 +42,9 @@ export const renderFeatures = (item, config, parent, mode, isInCarousel, collect
 
     const setNumberOfRows = config.isLandscapeMode ? 10 : 4;
 
-    if(item.traits && item.symbionts && item.symbionts.length > 0) {
+    if(item.traits) {
 
-        let symbionts ;
-
-        if(item.symbionts[0].id) {
-            symbionts = item.symbionts.map(s => s.id);
-        } else {
-            symbionts = item.symbionts;
-        }
+        const symbionts = item.traits.filter(i => i.type).map(i => i.value).join().split(',').map(s => s.trim());
 
         let symbiontTraits = item.traits.map(trait => {
             const values = trait.value.split(',').map(t => t.trim());
