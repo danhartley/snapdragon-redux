@@ -92,7 +92,8 @@ export const collectionHandler = async (collections, collection, config, counter
 
             collection.items = collection.items.filter(i => i);
             collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
-            collection.items.forEach((item,index) => {
+
+            collection.items.forEach(async(item,index) => {
 
                 item.snapIndex = index + 1;
                 
@@ -108,7 +109,7 @@ export const collectionHandler = async (collections, collection, config, counter
                 item.family = firestore.getItemTaxonByName(item, enums.taxon.FAMILY) || null;
                 item.order = firestore.getItemTaxonByName(item, enums.taxon.ORDER);
 
-                const itemTraits = firestore.getTraitsBySpeciesName(item.name);
+                const itemTraits = await firestore.getTraitsBySpeciesName(item.name);
 
                 item.traits = itemTraits ? itemTraits.traits : [];
             });

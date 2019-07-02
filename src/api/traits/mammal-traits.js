@@ -4,13 +4,6 @@ export const getMammalTraits = enums => {
     const SD = enums && Object.keys(enums).length ? enums : traitEnums.enums;
     return [
     { name: 'Vulpes vulpes',
-    symbionts: [
-        { id: 'Rodentia' }, { id: 'Lagomorpha' }, { id: 'Reptilia' },
-        { id: 'Galliformes' }, { id: 'Rosaceae' }, { id: 'Quercus' },
-        { id: 'Passeriformes' }, { id: 'Annelida' }, { id: 'Canis lupus' },
-        { id: 'Canis latrans' }, { id: 'Aquila chrysaetos' }, { id: 'Sarcoptes scabiei'},
-        { id: 'Oryctolagus cuniculus' }
-    ],
     traits: [
         { name: SD.name.YOUNG, value: SD.young.KIT },
         { name: SD.name.LENGTH, value: '45–90cm' },
@@ -41,13 +34,6 @@ export const getMammalTraits = enums => {
     ]
     },
     { name: 'Sciurus vulgaris', 
-    symbionts: [ 
-        { id: 'Corylus' }, { id: 'Fagus'}, { id: 'Castanea'}, { id: 'Fungi'},
-        { id: 'Pinus sylvestris'}, { id: 'Picea abies'}, { id: 'Pinus sibirica'},
-        { id: 'Martes martes'}, { id: 'Felis silvestris'}, { id: 'Mustela erminea'},
-        { id: 'Strigiformes'}, { id: 'Accipiter gentilis'}, { id: 'Buteo'},
-        { id: 'Vulpes vulpes'}, { id: 'Squirrel parapoxvirus'}, { id: 'Sciurus carolinensis'},
-    ], 
     traits: [            
         { name: SD.name.HABITAT, value: `${SD.habitat.BOREAL}, ${SD.treeType.CONIFERS}, ${SD.treeType.BROAD_LEAF}`, type: SD.symbiosis.COMMENSALISM },
         { name: SD.name.LIFE_SPAN, value: '3-7a' },
@@ -78,10 +64,6 @@ export const getMammalTraits = enums => {
     ] 
     },
     { name: 'Oryctolagus cuniculus',
-    symbionts: [
-        { id: 'Vulpes vulpes'}, { id: 'Aquila adalberti'}, { id: 'Lynx pardinus'}, { id: 'Meles meles'},
-        { id: 'Morus nigra'}, { id: 'Mustela putorius'}, { id: 'Neovison vison'}, { id: 'Strigiformes'}
-    ],
     traits: [
         { name: SD.name.SHELTER, value: `${SD.shelter.BURROW}, ${SD.shelter.WARREN}` },
         { name: SD.name.BEHAVIOUR, value: SD.behaviour.ALTRICIAL },
@@ -107,10 +89,7 @@ export const getMammalTraits = enums => {
         { name: SD.role.PREY, value: 'Strigiformes', type: SD.symbiosis.PREDATION },
     ]
     },
-    { name: 'Phocoena phocoena',
-    symbionts: [ 
-        // { id: 'Delphinus delphis' }
-    ],            
+    { name: 'Phocoena phocoena',     
     traits: [
         { name: SD.name.LIFE_SPAN, value: '8-13a' },
         { name: SD.name.LENGTH, value: '1.4-1.9m' },
@@ -119,9 +98,6 @@ export const getMammalTraits = enums => {
 },
     { 
         name: 'Meles meles',
-        symbionts: [ 
-            { id: 'Annelida' }, { id: 'Insecta' }, { id: 'Erinaceus europaeus' }
-        ],            
         traits: [
             { name: SD.name.SHELTER, value: `${SD.shelter.BURROW}, ${SD.shelter.SETT}` },
             { name: SD.name.DIET, value: SD.diet.OMNIVORE },
@@ -132,11 +108,7 @@ export const getMammalTraits = enums => {
         ]    
     },
     { 
-        name: 'Sus scrofa',
-        symbionts: [ 
-            { id: 'Annelida' }, { id: 'Insecta' },
-            { id: 'Querus'}, { id: 'Fagus'}, { id: 'Epilobium'}, { id: 'Pteridium aquilinum'}
-        ],            
+        name: 'Sus scrofa', 
         traits: [
             { name: SD.name.LIFE_SPAN, value: '10-14a' },
             { name: SD.name.DIET, value: SD.diet.OMNIVORE },
@@ -171,9 +143,6 @@ export const getMammalTraits = enums => {
     },
     { 
     name: 'Lutra lutra',
-    symbionts: [ 
-        { id: 'Castor fiber' }
-    ],            
     traits: [        
             { name: SD.name.LENGTH, value: '57-95cm' },
             { name: SD.name.TAIL_LENGTH, value: '35-45cm' },
@@ -183,10 +152,6 @@ export const getMammalTraits = enums => {
     },
     { 
     name: 'Delphinus delphis',
-    symbionts: [ 
-        { id: 'Clupeidae' }, { id: 'Engraulidae' }, { id: 'Merlucciidae' },
-        { id: 'Cephalopoda' },
-    ],            
     traits: [        
         { name: SD.name.LOOK_ALIKES, values: [ 'Phocoena phocoena' ]},
         { name: SD.name.LENGTH, value: '1.5-2.4m' },
@@ -196,11 +161,6 @@ export const getMammalTraits = enums => {
     },
     { 
     name: 'Erinaceus europaeus',
-    symbionts: [ 
-        { id: 'Gastropod '}, { id: 'Annelida '}, { id: 'Coleoptera '}, { id: 'Lepidoptera '},
-        { id: 'Carabus nemoralis' }, { id: 'Tachypodoiulus niger' }, { id: 'Carabus nemoralis '},
-        { id: 'Meles meles' }
-    ],            
     traits: [        
         { name: SD.name.LENGTH, value: '20-26cm' },
         { name: SD.role.PREDATOR, value: 'Gastropod, Annelida', type: SD.symbiosis.PREDATION },
@@ -214,9 +174,6 @@ export const getMammalTraits = enums => {
     },
     { 
     name: 'Sciurus carolinensis',
-    symbionts: [ 
-        { id: 'Sciurus vulgaris'},
-    ],            
     traits: [        
         { name: SD.role.COMPETITOR, value: 'Sciurus vulgaris', type: SD.symbiosis.COMPETITION },
         { name: SD.name.DIET, value: SD.diet.OMNIVORE },
@@ -252,9 +209,6 @@ export const getMammalTraits = enums => {
     },
     { 
         name: 'Tarentola mauritanica',
-        symbionts: [ 
-            
-        ],            
         traits: [        
             { name: SD.name.YOUNG, value: SD.young.SALAMANQUESA },
         ]

@@ -5,7 +5,19 @@ import { iconicTaxa, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-tax
 import { species } from 'api/species';
 import { getTraits } from 'api/traits/traits';
 
-// var db = firebase.firestore();
+const firebaseConfig = {
+    apiKey: "AIzaSyBVLz0wVrYZ9JhJMobCFgSB-Edh6EnP0Yk",
+    authDomain: "snapdragon-222014.firebaseapp.com",
+    databaseURL: "https://snapdragon-222014.firebaseio.com",
+    projectId: "snapdragon-222014",
+    storageBucket: "snapdragon-222014.appspot.com",
+    messagingSenderId: "947213844747",
+    appId: "1:947213844747:web:97c1a5e664a670de"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const db = firebase.firestore();
 
 const getSpecies = () => {
     return species;
@@ -70,8 +82,37 @@ const getTaxonByName = (taxonName) => {
     return taxa.find(taxon => taxon.name.toLowerCase() === taxonName.toLowerCase()); 
 };
 
-const getTraitsBySpeciesName = name => {
-    return getTraits().find(trait => trait.name === name);
+const getAsyncTraitsBySpeciesName = async (name, language) => {
+    
+    const languageTraits = db.collection(`traits_${language}`).where("name", "==", name);
+  
+    const traits = await languageTraits.get();
+  
+    return await traits;
+};
+
+// const getTraitsBySpeciesName = name => {
+//     return getTraits().find(trait => trait.name === name);
+// };
+
+const getTraitsBySpeciesName = async (name, language = 'en') => {
+
+    let traits;
+
+    const querySnapshot = await getAsyncTraitsBySpeciesName(name, language);
+    
+    if(querySnapshot.docs.length > 0) {
+      querySnapshot.forEach(doc => {
+        traits = doc.data();
+      });
+    } else {
+        // traits = Promise(resolve => {
+        //     resolve(getTraits().find(trait => trait.name === name));
+        // });
+        traits = getTraits().find(trait => trait.name === name);
+    }
+
+    return await traits;
 };
 
 export const firestore = {

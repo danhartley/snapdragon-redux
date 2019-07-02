@@ -49,9 +49,6 @@ export const getPlantTraits = enums => {
             { name: SD.role.INVASIVE, value: 'US, Australia, Europe, Israel' },
         ] },
         { name: 'Robinia pseudoacacia', 
-        symbionts: [ 
-            { id: 'Odontota dorsalis' }
-        ],
         traits: [
             { name: SD.role.HOST, value: 'Odontota dorsalis', type: SD.symbiosis.PARASITISM },
             { name: SD.name.HOW_EDIBLE, value: SD.howEdible.POISONOUS },
@@ -63,9 +60,6 @@ export const getPlantTraits = enums => {
             { name: SD.name.ROLE, value: SD.role.PIONEER },
         ] },
         { name: 'Daucus carota', 
-        symbionts: [ 
-            { id: 'Chalara elegans' }, { id: 'Rhizoctonia solani'}, { id: 'Fusarium'}
-        ],
         traits: [
             { name: SD.role.HOST, value: 'Chalara elegans', description: 'Black root rot', type: SD.symbiosis.PARASITISM },
             { name: SD.role.HOST, value: 'Rhizoctonia solani', description: 'Crown rot', type: SD.symbiosis.PARASITISM },
@@ -85,26 +79,17 @@ export const getPlantTraits = enums => {
             { name: SD.role.INVASIVE , value: 'Australia'},
         ] },
     { name: 'Foeniculum vulgare',
-        symbionts: [ 
-            { id: 'Papilio machaon' }, { id: 'Amphipyra tragopoginis'}
-        ], 
         traits: [
             { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.FOOD}` },
             { name: SD.name.FOOD, value: `Papilio machaon, Amphipyra tragopoginis`, type: SD.symbiosis.HERBIVORY },
         ] },
     { name: 'Urtica dioica',
-        symbionts: [ 
-            { id: 'Vanessa atalanta' }
-        ], 
         traits: [
             { name: SD.name.USAGE, value: SD.usage.FOOD },
             { name: SD.role.HERBIVORE, value: 'Vanessa atalanta', type: SD.symbiosis.HERBIVORY },
             { name: SD.name.CHARACTERISTIC, value: `${SD.characteristic.PERENNIAL}, ${SD.characteristic.DIOECIOUS}, ${SD.characteristic.HERBACEOUS}` },
         ] },
     { name: 'Pinus pinea',
-        symbionts: [ 
-            { id: 'Sciurus vulgaris' }
-        ], 
         traits: [
             { name: SD.name.USAGE, value: SD.usage.FOOD },
             { name: SD.role.HERBIVORE, value: 'Sciurus vulgaris', type: SD.symbiosis.HERBIVORY },
@@ -112,25 +97,16 @@ export const getPlantTraits = enums => {
             { name: SD.name.REPRODUCTIVE_CONTAINER, value: SD.reproductiveContainer.CONE }
         ] },
     { name: 'Cirsium arvense',
-        symbionts: [ 
-            {}
-        ], 
         traits: [
             { name: SD.name.PHYSIOLOGY, value: SD.physiology.MYCORRHIZAL },
         ] 
     },
     { name: 'Liquidambar styraciflua',
-        symbionts: [ 
-            { id: 'Actias luna'}
-        ], 
         traits: [
             { name: SD.name.PHYSIOLOGY, value: SD.physiology.MYCORRHIZAL },
         ] 
     },
     { name: 'Ocimum basilicum',
-        symbionts: [ 
-            { id: 'Solanum lycopersicum', id: 'Botrytis cinerea', id: 'Peronospora belbahrii' }
-        ], 
         traits: [
             { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.FOOD}` },
             { name: SD.name.CHARACTERISTIC, value: `${SD.characteristic.ANNUAL}, ${SD.characteristic.PERENNIAL}` },
@@ -142,9 +118,6 @@ export const getPlantTraits = enums => {
         ] 
     },
     { name: 'Solanum lycopersicum',
-        symbionts: [ 
-            { id: 'Ocimum basilicum' }, { id: 'Petroselinum crispum'}, { id: 'Anthriscus sylvestris' }, { id: 'Anethum graveolens'}, { id: 'Manduca quinquemaculata'}
-        ], 
         traits: [
             { name: SD.name.USAGE, value: SD.usage.FOOD },
             { name: SD.role.SYMBIONT, value: 'Ocimum basilicum, Petroselinum crispum, Anthriscus sylvestris, Anethum graveolens, Apiaceae, Lamiaceae, Allium, Taraxacum', type: SD.symbiosis.COMPANION },
@@ -157,27 +130,18 @@ export const getPlantTraits = enums => {
         ] 
     },
     { name: 'Petroselinum crispum',
-        symbionts: [ 
-            { id: 'Solanum lycopersicum' }
-        ], 
         traits: [
             { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.FOOD}` },
             { name: SD.role.SYMBIONT, value: 'Solanum lycopersicum', type: SD.symbiosis.COMPANION },            
         ] 
     },
     { name: 'Anethum graveolens',
-        symbionts: [ 
-            { id: 'Solanum lycopersicum' }
-        ], 
         traits: [
             { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.FOOD}` },
             { name: SD.role.SYMBIONT, value: 'Solanum lycopersicum', type: SD.symbiosis.COMPANION },            
         ] 
     },
     { name: 'Thymus vulgaris',
-        symbionts: [ 
-            
-        ], 
         traits: [
             { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.MEDICINE}, ${SD.usage.FOOD}` },
             { name: SD.name.PHYSIOLOGY, value: SD.physiology.EVERGREEN },
@@ -186,9 +150,6 @@ export const getPlantTraits = enums => {
         ] 
     },
     { name: 'Rosmarinus officinalis',
-        symbionts: [ 
-            
-        ], 
         traits: [
             { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.PEST_CONTROL}, ${SD.usage.TEA}` },
             { name: SD.name.PHYSIOLOGY, value: SD.physiology.EVERGREEN },
@@ -198,9 +159,6 @@ export const getPlantTraits = enums => {
         ] 
     },
     { name: 'Lavandula angustifolia',
-        symbionts: [ 
-            { id: 'Lavandula stoechas'}
-        ], 
         traits: [
             { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.MEDICINE}, ${SD.usage.PERFUMERY}, ${SD.usage.TEA}, ${SD.usage.ESSENTIAL_OIL}` },
             { name: SD.name.PHYSIOLOGY, value: SD.physiology.EVERGREEN },
@@ -209,10 +167,7 @@ export const getPlantTraits = enums => {
             { name: SD.name.LOOK_ALIKES, values: [ 'Lavandula stoechas' ]},
         ] 
     },
-    { name: 'Lavandula stoechas',
-        symbionts: [ 
-            { id: 'Lavandula angustifolia'}
-        ], 
+    { name: 'Lavandula stoechas',        
         traits: [
             { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.MEDICINE}, ${SD.usage.PERFUMERY}, ${SD.usage.TEA}, ${SD.usage.ESSENTIAL_OIL}` },
             { name: SD.name.PHYSIOLOGY, value: SD.physiology.EVERGREEN },
@@ -222,9 +177,6 @@ export const getPlantTraits = enums => {
         ] 
     },
     { name: 'Taraxacum officinale',
-        symbionts: [ 
-            
-        ], 
         traits: [
             { name: SD.name.LOOK_ALIKES, values: [ 'Tussilago farfara' ]},
             { name: SD.name.ROLE, value: SD.role.PIONEER },
@@ -232,9 +184,6 @@ export const getPlantTraits = enums => {
         ] 
     },
     { name: 'Tussilago farfara',
-        symbionts: [ 
-            
-        ], 
         traits: [
             { name: SD.name.LOOK_ALIKES, values: [ 'Taraxacum officinale' ]},
             { name: SD.name.PROPAGATION, value: [ `${SD.foodType.RHIZOMES}, ${SD.foodType.SEEDS}` ] },

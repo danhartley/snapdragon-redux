@@ -4,7 +4,6 @@ export const getInsectTraits = enums => {
     const SD = enums && Object.keys(enums).length ? enums : traitEnums.enums;
     return [
         { name: 'Vanessa atalanta', 
-        symbionts: [ 'Urtica dioica', 'Buddleia', 'Hedera' ], 
         traits: [            
             { name: SD.name.MIGRATORY, value: SD.whether.YES },
             { name: SD.name.FOOD, value: `${SD.foodType.ROTTEN_FRUIT}, Buddleia`, type: SD.symbiosis.COMMENSALISM },
@@ -15,8 +14,7 @@ export const getInsectTraits = enums => {
             { name: SD.name.CATERPILLAR_LENGTH, value: '2.5cm' },
             { name: SD.name.HABITAT, value: `Hedera, ${SD.habitat.WOODLAND}`, type: SD.symbiosis.COMMENSALISM },
         ] },
-        { name: 'Pararge aegeria', 
-        symbionts: [  'Elymus repens', 'Dactylis glomerata' ], 
+        { name: 'Pararge aegeria',
         traits: [
             { name: SD.name.MIGRATORY, value: SD.whether.NO },
             { name: SD.name.FOOD, value: `${SD.foodType.NECTAR}, ${SD.foodType.HONEYDEW}` },
@@ -27,10 +25,7 @@ export const getInsectTraits = enums => {
             { name: SD.name.HABITAT, value: `${SD.habitat.MEADOW}, ${SD.habitat.WOODLAND}, ${SD.habitat.HEDGEROWS}` },
             { name: SD.name.BEHAVIOUR, value: SD.behaviour.MONANDROUS },
         ] },
-        { name: 'Maniola jurtina', 
-        symbionts: [ 
-            'Pyronia tithonus', 'Coenonympha pamphilus', 'Hyponephele lycaon', 
-            'Dactylis glomerata', 'Poaceae', 'Erica', 'Origanum' ], 
+        { name: 'Maniola jurtina',
         traits: [
             { name: SD.name.WING_SPAN, value: '4.0-6.0cm' },
             { name: SD.name.LOOK_ALIKES, values: [ 'Pyronia tithonus' ]},
@@ -42,10 +37,7 @@ export const getInsectTraits = enums => {
             { name: SD.name.HABITAT, value: `${SD.habitat.MEADOW}, ${SD.habitat.WOODLAND}, ${SD.habitat.ORCHARDS}`},
             { name: SD.name.FOOD, value: `${SD.foodType.NECTAR}, Erica, Origanum`, type: SD.symbiosis.MUTUALISM },
         ] },
-        { name: 'Pieris rapae', 
-        symbionts: [ 
-            'Brassica oleracea', 'Armoracia rusticana', 'Raphanus raphanistrum', 
-            'Brassica rapa', 'Sinapis alba' ],
+        { name: 'Pieris rapae',
         traits: [
             { name: SD.name.WING_SPAN, value: '3.2-4.7cm' },
             { name: SD.name.HABITAT, value: `${SD.habitat.URBAN}, ${SD.habitat.VALLEYS}` },
@@ -54,8 +46,7 @@ export const getInsectTraits = enums => {
             { name: SD.name.MIGRATORY, value: SD.whether.YES },
             { name: SD.name.FOOD, value: `${SD.foodType.NECTAR}, Brassica rapa`, type: SD.symbiosis.MUTUALISM },
         ] },
-        { name: 'Charaxes jasius', 
-        symbionts: [ 'Arbutus unedo', 'Laurus nobilis', 'Prunus persica' ],
+        { name: 'Charaxes jasius',
         traits: [
             { name: SD.name.WING_SPAN, value: '6.5-9.0cm' },
             { name: SD.name.CATERPILLAR_COLOUR, value: `${SD.colour.GREEN}, ${SD.colour.YELLOW}` },
@@ -64,8 +55,7 @@ export const getInsectTraits = enums => {
             { name: SD.name.CATERPILLAR_FOOD, value: `Prunus persica`, type: SD.symbiosis.HERBIVORY },
             { name: SD.name.HABITAT, value: `${SD.habitat.MAQUIS}, ${SD.habitat.SAVANNA}` },
         ] },
-        { name: 'Polyommatus icarus', 
-        symbionts: [ 'Vicia', 'Leguminosae', 'Trifolium', 'Lotus corniculatus' ],
+        { name: 'Polyommatus icarus',
         traits: [
             { name: SD.name.WING_SPAN, value: '2.8-3.6cm' },
             { name: SD.name.CATERPILLAR_COLOUR, value: `${SD.colour.PALE_GREEN}, ${SD.colour.YELLOW}` },
@@ -75,9 +65,7 @@ export const getInsectTraits = enums => {
             { name: SD.name.FOOD, value: `${SD.foodType.NECTAR}` },
         ] },
 
-        { name: 'Papilio machaon', 
-            symbionts: [ 
-                'Daucus carota', 'Angelica sylvestris', 'Foeniculum vulgare' ], 
+        { name: 'Papilio machaon',
             traits: [            
             { name: SD.name.MIGRATORY, value: SD.whether.YES },
             { name: SD.name.WING_SPAN, value: '6.5-8.6cm' },
@@ -87,18 +75,14 @@ export const getInsectTraits = enums => {
             { name: SD.name.CATERPILLAR_COLOUR, value: `${SD.colour.WHITE}, ${SD.colour.BLACK}, ${SD.colour.GREEN}` },
             { name: SD.name.HABITAT, value: `${SD.habitat.MEADOW}, ${SD.habitat.HILLS}` },
         ] },
-        { name: 'Apis mellifera', 
-        symbionts: [ 'Varroa mite' ],
+        { name: 'Apis mellifera',
         traits: [
             { name: SD.name.ORGANISATION, value: SD.organisation.EUSOCIAL },
             { name: SD.name.POLLINATION, value: 'Plantae' },
             { name: SD.role.HOST, value: 'Varroa mite', type: SD.symbiosis.PARASITISM },
             { name: SD.role.HOST, value: 'Colony collapse disorder', type: SD.symbiosis.PARASITISM },
         ] },
-        { name: 'Mantis Religiosa', 
-        symbionts: [
-            'Caelifera', 'Gryllidae', 'Blattodea'
-        ],
+        { name: 'Mantis Religiosa',
         traits: [
             { name: SD.name.DISPLAY, value: SD.display.DIEMATIC },
             { name: SD.name.DISPLAY, value: SD.display.SEXUAL_DIMORPHISM },
@@ -110,10 +94,7 @@ export const getInsectTraits = enums => {
             { name: SD.name.SENSORY_ACUITY, value: SD.sense.SIGHT },
             { name: SD.name.SENSORY_ACUITY, value: SD.sense.MOVEMENT },
         ] },
-        { name: 'Bombus terrestris', 
-        symbionts: [
-            'Primula veris', 'Brassica napus', 'Trifolium pratense'
-        ],
+        { name: 'Bombus terrestris',
         traits: [
             { name: SD.name.ORGANISATION, value: SD.organisation.EUSOCIAL },
             { name: SD.role.POLLINATOR, value: 'Primula veris', type: SD.symbiosis.MUTUALISM },
@@ -121,10 +102,7 @@ export const getInsectTraits = enums => {
             { name: SD.role.POLLINATOR, value: 'Trifolium pratense', type: SD.symbiosis.MUTUALISM },
             { name: SD.name.BEHAVIOUR, value: SD.behaviour.MONANDROUS },
         ] },
-        { name: 'Bombus pratorum', 
-        symbionts: [
-            
-        ],
+        { name: 'Bombus pratorum',
         traits: [
             { name: SD.name.BEHAVIOUR, value: SD.behaviour.MONANDROUS },
         ] },

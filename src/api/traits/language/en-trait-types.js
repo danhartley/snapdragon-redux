@@ -27,7 +27,6 @@ export const english = {
         SYMBIOSIS: 'Symbiosis',
         ASSOCIATE: 'associate',
         SYMBIONTS : 'symbionts',
-
         LOOK_ALIKES : 'look-alikes',
         ECOLOGY : 'ecology',
         HABITAT: 'habitat',
