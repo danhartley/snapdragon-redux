@@ -91,10 +91,6 @@ const getAsyncTraitsBySpeciesName = async (name, language) => {
     return await traits;
 };
 
-// const getTraitsBySpeciesName = name => {
-//     return getTraits().find(trait => trait.name === name);
-// };
-
 const getTraitsBySpeciesName = async (name, language = 'en') => {
 
     let traits;
@@ -106,9 +102,6 @@ const getTraitsBySpeciesName = async (name, language = 'en') => {
         traits = doc.data();
       });
     } else {
-        // traits = Promise(resolve => {
-        //     resolve(getTraits().find(trait => trait.name === name));
-        // });
         traits = getTraits().find(trait => trait.name === name);
     }
 

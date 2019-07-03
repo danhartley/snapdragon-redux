@@ -109,10 +109,20 @@ export const collectionHandler = async (collections, collection, config, counter
                 item.family = firestore.getItemTaxonByName(item, enums.taxon.FAMILY) || null;
                 item.order = firestore.getItemTaxonByName(item, enums.taxon.ORDER);
 
-                const itemTraits = await firestore.getTraitsBySpeciesName(item.name);
+                // const itemTraits = await firestore.getTraitsBySpeciesName(item.name);
 
-                item.traits = itemTraits ? itemTraits.traits : [];
+                // item.traits = itemTraits ? itemTraits.traits : [];
             });
+
+            const loadTraitsInParallel = items => {
+                Promise.all(
+                    items.map(async(item) => {
+                    item.traits = itemTraits ? itemTraits.traits : [];
+                  })
+                );
+              };
+
+            loadTraitsInParallel(collection.items);
 
             collection.itemIndex = 0;
 
