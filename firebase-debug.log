@@ -1,0 +1,26 @@
+[debug] [2019-07-04T07:03:14.626Z] ----------------------------------------------------------------------
+[debug] [2019-07-04T07:03:14.628Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only hosting
+[debug] [2019-07-04T07:03:14.628Z] CLI Version:   7.0.2
+[debug] [2019-07-04T07:03:14.628Z] Platform:      darwin
+[debug] [2019-07-04T07:03:14.628Z] Node Version:  v11.15.0
+[debug] [2019-07-04T07:03:14.630Z] Time:          Thu Jul 04 2019 08:03:14 GMT+0100 (Western European Summer Time)
+[debug] [2019-07-04T07:03:14.630Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-04T07:03:14.801Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-04T07:03:14.801Z] > authorizing via signed-in user
+[debug] [2019-07-04T07:03:14.801Z] [iam] checking project snapdragon-222014 for permissions ["firebase.projects.get"]
+[debug] [2019-07-04T07:03:14.803Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-07-04T07:03:14.803Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-07-04T07:03:15.157Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-04T07:03:15.802Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/snapdragon-222014:testIamPermissions  
+
+[debug] [2019-07-04T07:03:17.525Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-04T07:03:17.527Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/snapdragon-222014  
+ 
+[debug] [2019-07-04T07:03:18.444Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-04T07:03:18.445Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/947213844747/clients/_:getWebAppConfig  
+ 
+[debug] [2019-07-04T07:03:18.939Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist
+[info] ✔  hosting: Local server: http://localhost:5000

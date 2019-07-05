@@ -371,4 +371,9 @@ export const plantae = [
         definition: 'Description of surfaces that are velvety or covered in (often matted) hairs.',
         wiki: 'https://en.wikipedia.org/wiki/Tomentose'
     },
+    {
+        term: 'Decumbent',
+        definition: 'Of a plant, which lies on the ground with tips turned upwards.',
+        wiki: 'https://en.wikipedia.org/wiki/decumbent'
+    },
 ];

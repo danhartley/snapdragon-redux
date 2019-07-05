@@ -102,25 +102,26 @@ export const collectionHandler = async (collections, collection, config, counter
 
                 const names = item.name.split(' ');
                 
-                item.genus = names[0];
+                item.genus = names[0]; // do we need these names? 
                 item.species = names[1];
                 item.name = names.slice(0,2).join(' ');
 
                 item.family = firestore.getItemTaxonByName(item, enums.taxon.FAMILY) || null;
                 item.order = firestore.getItemTaxonByName(item, enums.taxon.ORDER);
 
-                // const itemTraits = await firestore.getTraitsBySpeciesName(item.name);
-
-                // item.traits = itemTraits ? itemTraits.traits : [];
+                // add iconic taxon
             });
 
             const loadTraitsInParallel = items => {
                 Promise.all(
                     items.map(async(item) => {
-                    item.traits = itemTraits ? itemTraits.traits : [];
+                        const itemTraits = await firestore.getTraitsBySpeciesName(item.name);
+                        item.traits = itemTraits ? itemTraits.traits : [];                        
                   })
                 );
               };
+
+            console.clear();
 
             loadTraitsInParallel(collection.items);
 

@@ -20,7 +20,7 @@ export const getTypedTraitsForSpecies = (enums, item) => {
 
     if(!typedItemTraits.length) return {};
 
-    const trait = R.take(1, utils.shuffleArray(typedItemTraits))[0];
+    const trait = R.take(1, utils.shuffleArray(typedItemTraits))[0]; // this is expensive, getting all the types, then only using one
 
     const help =  trait.help ? `(${trait.help})` : `(${trait.name})`;
 

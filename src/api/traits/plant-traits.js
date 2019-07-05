@@ -6,7 +6,7 @@ export const getPlantTraits = enums => {
         { name: 'Sinapis alba', traits: [
             { name: SD.name.HOW_EDIBLE, value: SD.howEdible.EDIBLE },
             { name: SD.name.USAGE, value: `${SD.usage.FODDER}, ${SD.usage.GREEN_MANURE}, ${SD.usage.FOOD}` },
-            { name: SD.name.HEIGHT, value: '30-100cm' },
+            { name: SD.name.HEIGHT, value: '30-100', unit: 'cm' },
             { name: SD.name.BLADE, value: `${SD.blade.COMPOUND}` },
             { name: SD.name.COMPOUND, value: `${SD.leafType.PINNATE}` },
             { name: SD.name.LEAF_SHAPE, value: `${SD.leafShape.OVATE}, ${SD.leafShape.OBLANCEOLATE}, ${SD.leafShape.OBOVATE}` },
@@ -17,7 +17,7 @@ export const getPlantTraits = enums => {
         { name: 'Allium sativum', traits: [
             { name: SD.name.HOW_EDIBLE, value: SD.howEdible.EDIBLE },
             { name: SD.name.USAGE, value: `${SD.usage.MEDICINE}, ${SD.usage.FOOD}` },
-            { name: SD.name.HEIGHT, value: '<100cm' },
+            { name: SD.name.HEIGHT, value: '<100', unit: 'cm' },
             { name: SD.name.REPRODUCTION, value: `${SD.sex.HERMAPHRODITE}` },
             { name: SD.name.BLADE, value: `${SD.blade.SIMPLE}` },
             { name: SD.name.LEAF_SHAPE, value: `${SD.leafShape.LINEAR}` },

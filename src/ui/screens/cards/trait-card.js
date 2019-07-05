@@ -4,8 +4,6 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { store } from 'redux/store';
 import { getTypedTraitsForSpecies } from 'api/traits/species-typed-traits';
 import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
-import { iconicTaxa, matchTaxon } from 'api/snapdragon/iconic-taxa';
-import { returnTaxonIcon } from 'ui/helpers/icon-handler';
 
 import summaryTemplate from 'ui/screens/cards/trait-card-summary-template.html';
 

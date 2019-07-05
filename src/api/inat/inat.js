@@ -25,9 +25,11 @@ const getBasePath = config => {
     return basePath;
 };
 
-export const getInatSpecies = config => {
+export const getInatSpecies = async config => {
 
-    let names = firestore.getSpecies().map(item => item.name); 
+    const speciesNames = await firestore.getSpeciesNames();
+
+    const names = speciesNames ? speciesNames[0].value : firestore.getSpecies().map(item => item.name);
 
     const iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
 

@@ -23,6 +23,21 @@ const getSpecies = () => {
     return species;
 };
 
+const getSpeciesNames = async () => {
+
+    const speciesPropertiesRef = db.collection(`species`).where("collection_property", "==", 'names');
+
+    const querySnapshot = await speciesPropertiesRef.get();
+    
+    const docs = [];
+  
+    querySnapshot.forEach(doc => {
+      docs.push(doc.data());
+    });
+  
+    return await docs;
+};
+
 const getSpeciesByIconicTaxon = (taxon, isLichen) => {
 
     let matches = species.filter(s => s.taxonomy).filter(s => s.taxonomy[taxon.rank].toLowerCase() === taxon.value);
@@ -93,6 +108,8 @@ const getAsyncTraitsBySpeciesName = async (name, language) => {
 
 const getTraitsBySpeciesName = async (name, language = 'en') => {
 
+    // On page refresh, this is called again. Not good! (We already have them in local storage)
+
     let traits;
 
     const querySnapshot = await getAsyncTraitsBySpeciesName(name, language);
@@ -100,6 +117,8 @@ const getTraitsBySpeciesName = async (name, language = 'en') => {
     if(querySnapshot.docs.length > 0) {
       querySnapshot.forEach(doc => {
         traits = doc.data();
+        console.log(`Number of documents returned: ${querySnapshot.docs.length}`)
+        console.log(`I got traits for ${name}!`);
       });
     } else {
         traits = getTraits().find(trait => trait.name === name);
@@ -110,6 +129,7 @@ const getTraitsBySpeciesName = async (name, language = 'en') => {
 
 export const firestore = {
     getSpecies,
+    getSpeciesNames,
     getSpeciesFromList,
     getSpeciesByName,
     getSpeciesByIconicTaxon,

@@ -94,7 +94,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
         const { config, collections } = store.getState();
         const id = parseInt(config.collection.id);
         const collection = collections.find(c => c.id === id);
-        if(collection.default) {
+        if(collection && collection.default) {
             renderSpeciesCollectionList(R.clone(collection));
         }
         else {
