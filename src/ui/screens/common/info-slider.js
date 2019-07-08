@@ -38,22 +38,31 @@ export const infoSlider = (item, family, parent, mode) => {
 
     const exclude = [ 'song', 'UK Rank' ];
 
-    const speciesTraits = item.traits.filter(trait => !R.contains(trait.name, exclude));
+    // const speciesTraits = item.traits;
 
-    if(speciesTraits.length === 0) return;
+    // const speciesTraits = item.traits.filter(trait => !R.contains(trait.name, exclude));
+
+    // if(speciesTraits.length === 0) return;
 
     const familyTraits = (family && family.traits) ? family.traits : [];
-    const species = { traits: speciesTraits.concat(familyTraits) };
+    // const species = { traits: speciesTraits.concat(familyTraits) };
 
-    if(!species.traits) return;
+    // if(!species.traits) return;
 
-    species.traits.forEach(trait => {
-        if(!trait.value && trait.values) {
-            trait.value = trait.values.join(', ');
-        }
-    });
+    // species.traits.forEach(trait => {
+    //     if(!trait.value && trait.values) {
+    //         trait.value = trait.values.join(', ');
+    //     }
+    // });
+
+    const traits = [];
+
+    for (let [key, value] of Object.entries(item.traits)) {
+        traits.push({ name: key, value: value.value });
+    }
     
     const id = mode === 'MODAL' ? 1 : 0;
 
-    renderInfoSlider(species.traits, parent, id);
+    renderInfoSlider(traits, parent, id);
+    // renderInfoSlider(species.traits, parent, id);
 }

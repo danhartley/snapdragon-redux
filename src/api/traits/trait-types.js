@@ -21,18 +21,17 @@ export const enums = {
     colour: english.colour,
     usage: english.usage,
     nonTaxaType: english.nonTaxaType,
-    boolean: english.boolean,
-    whether: english.whether,
     element: english.element,
     blade: english.blade,
     leafType: english.leafType,
     leafVariation: english.leafVariation,
     leafShape: english.leafShape,
-    sex: english.sex,
+    reproduction: english.reproduction,
+    asexualReproduction: english.asexualReproduction,
     stemArrangement: english.stemArrangement,
     leafEdge: english.leafEdge,
-    foodType: english.foodType,
-    developmentStage: english.developmentStage,
+    food: english.food,
+    hibernatingStage: english.hibernatingStage,
     symbiosis: english.symbiosis,
     trophicLevel: english.trophicLevel,
     shelter: english.shelter,
@@ -56,13 +55,17 @@ export const enums = {
     allochory: english.allochory,
     reproductiveContainer: english.reproductiveContainer,
     communication: english.communication,
-    mating: english.mating,
+    matingSystem: english.matingSystem,
     physiology: english.physiology,
     collective: english.collective,
     ecology: english.ecology,
     characteristic: english.characteristic,
     climate: english.climate,
     pollination: english.pollination,
+    stipeCharacter: english.stipeCharacter,
+    gillAttachment: english.gillAttachment,
+    grouping: english.grouping,
+    propagation: english.propagation,
 }
 
 let language;
@@ -81,33 +84,33 @@ export const updateLanguage = (config) => {
     actions.boundUpdateEnums(enums);
 };
 
-export const typedEnums = enums => {
-    const typedEnums = [];
-    for (var key in enums) {
-        if(enums[key] && enums[key].name) {
-            typedEnums.push({[key]: enums[key]});
-        }        
-    }
-    return typedEnums.map(typedEnum => {
-        for (var key in typedEnum) {
-            const help = typedEnum[key].help || '';
-            const obj = { name: typedEnum[key].name, type: typedEnum[key].type, help };
-            return obj;
-        }
-    });
-};
+// export const typedEnums = enums => {
+//     const typedEnums = [];
+//     for (var key in enums) {
+//         if(enums[key] && enums[key].name) {
+//             typedEnums.push({[key]: enums[key]});
+//         }        
+//     }
+//     return typedEnums.map(typedEnum => {
+//         for (var key in typedEnum) {
+//             const help = typedEnum[key].help || '';
+//             const obj = { name: typedEnum[key].name, type: typedEnum[key].type, help };
+//             return obj;
+//         }
+//     });
+// };
 
 // To check: I think all species are now typed automatically… no! yes, no, etc.
 
-export const typedSpecies = (enums, speciesTraits)=> {
-    const typed = typedEnums(enums);
-    const species = [];
-    if(!speciesTraits.traits) return [];
-    speciesTraits.traits.map(trait => {
-        typed.forEach(t => {
-            if(trait.name && trait.name.toLowerCase() === t.name.toLowerCase())
-            species.push({ ...trait, ...t });
-        });
-    });
-    return species;
-}
+// export const typedSpecies = (enums, speciesTraits)=> {
+//     const typed = typedEnums(enums);
+//     const species = [];
+//     if(!speciesTraits.traits) return [];
+//     speciesTraits.traits.map(trait => {
+//         typed.forEach(t => {
+//             if(trait.name && trait.name.toLowerCase() === t.name.toLowerCase())
+//             species.push({ ...trait, ...t });
+//         });
+//     });
+//     return species;
+// }

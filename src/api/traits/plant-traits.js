@@ -18,7 +18,7 @@ export const getPlantTraits = enums => {
             { name: SD.name.HOW_EDIBLE, value: SD.howEdible.EDIBLE },
             { name: SD.name.USAGE, value: `${SD.usage.MEDICINE}, ${SD.usage.FOOD}` },
             { name: SD.name.HEIGHT, value: '<100', unit: 'cm' },
-            { name: SD.name.REPRODUCTION, value: `${SD.sex.HERMAPHRODITE}` },
+            { name: SD.name.REPRODUCTION, value: `${SD.reproduction.SELF_POLLINATION}` },
             { name: SD.name.BLADE, value: `${SD.blade.SIMPLE}` },
             { name: SD.name.LEAF_SHAPE, value: `${SD.leafShape.LINEAR}` },
             { name: SD.name.STEM_ARRANGEMENT, value: `${SD.stemArrangement.BASAL}` },
@@ -50,7 +50,7 @@ export const getPlantTraits = enums => {
         ] },
         { name: 'Robinia pseudoacacia', 
         traits: [
-            { name: SD.role.HOST, value: 'Odontota dorsalis', type: SD.symbiosis.PARASITISM },
+            { name: SD.name.ROLE, role: SD.role.HOST, value: 'Odontota dorsalis', type: SD.symbiosis.PARASITISM },
             { name: SD.name.HOW_EDIBLE, value: SD.howEdible.POISONOUS },
             { name: SD.name.PHYSIOLOGY, value: SD.physiology.NITROGEN_FIXING },
             { name: SD.name.USAGE, value: SD.usage.TIMBER },
@@ -61,9 +61,9 @@ export const getPlantTraits = enums => {
         ] },
         { name: 'Daucus carota', 
         traits: [
-            { name: SD.role.HOST, value: 'Chalara elegans', description: 'Black root rot', type: SD.symbiosis.PARASITISM },
-            { name: SD.role.HOST, value: 'Rhizoctonia solani', description: 'Crown rot', type: SD.symbiosis.PARASITISM },
-            { name: SD.role.HOST, value: 'Fusarium', description: 'Fusarium dry rot', type: SD.symbiosis.PARASITISM },
+            { name: SD.name.ROLE, role: SD.role.HOST, value: 'Chalara elegans', description: 'Black root rot', type: SD.symbiosis.PARASITISM },
+            { name: SD.name.ROLE, role: SD.role.HOST, value: 'Rhizoctonia solani', description: 'Crown rot', type: SD.symbiosis.PARASITISM },
+            { name: SD.name.ROLE, role: SD.role.HOST, value: 'Fusarium', description: 'Fusarium dry rot', type: SD.symbiosis.PARASITISM },
             { name: SD.name.USAGE, value: `${SD.usage.FOOD}, ${SD.usage.DYING}` },
             { name: SD.name.HOW_EDIBLE, value: SD.howEdible.EDIBLE },
         ] },
@@ -86,13 +86,13 @@ export const getPlantTraits = enums => {
     { name: 'Urtica dioica',
         traits: [
             { name: SD.name.USAGE, value: SD.usage.FOOD },
-            { name: SD.role.HERBIVORE, value: 'Vanessa atalanta', type: SD.symbiosis.HERBIVORY },
+            { name: SD.name.ROLE, role: SD.role.HERBIVORE, value: 'Vanessa atalanta', type: SD.symbiosis.HERBIVORY },
             { name: SD.name.CHARACTERISTIC, value: `${SD.characteristic.PERENNIAL}, ${SD.characteristic.DIOECIOUS}, ${SD.characteristic.HERBACEOUS}` },
         ] },
     { name: 'Pinus pinea',
         traits: [
             { name: SD.name.USAGE, value: SD.usage.FOOD },
-            { name: SD.role.HERBIVORE, value: 'Sciurus vulgaris', type: SD.symbiosis.HERBIVORY },
+            { name: SD.name.ROLE, role: SD.role.HERBIVORE, value: 'Sciurus vulgaris', type: SD.symbiosis.HERBIVORY },
             { name: SD.name.ALLOCHORY, value: SD.allochory.ANEMOCHORY },
             { name: SD.name.REPRODUCTIVE_CONTAINER, value: SD.reproductiveContainer.CONE }
         ] },
@@ -110,23 +110,23 @@ export const getPlantTraits = enums => {
         traits: [
             { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.FOOD}` },
             { name: SD.name.CHARACTERISTIC, value: `${SD.characteristic.ANNUAL}, ${SD.characteristic.PERENNIAL}` },
-            { name: SD.name.CLIMATE_CONDITIONS, value: `${SD.climate.HOT}, ${SD.climate.DRY}` },
+            { name: SD.name.CLIMATE, value: `${SD.climate.HOT}, ${SD.climate.DRY}` },
             { name: SD.role.SYMBIONT, value: 'Solanum lycopersicum', type: SD.symbiosis.COMPANION },
-            { name: SD.role.HOST, value: 'Fusarium wilt', type: SD.symbiosis.PARASITISM },
-            { name: SD.role.HOST, value: 'Botrytis cinerea', type: SD.symbiosis.PARASITISM },
-            { name: SD.role.HOST, value: 'Peronospora belbahrii', type: SD.symbiosis.PARASITISM },
+            { name: SD.name.ROLE, role: SD.role.HOST, value: 'Fusarium wilt', type: SD.symbiosis.PARASITISM },
+            { name: SD.name.ROLE, role: SD.role.HOST, value: 'Botrytis cinerea', type: SD.symbiosis.PARASITISM },
+            { name: SD.name.ROLE, role: SD.role.HOST, value: 'Peronospora belbahrii', type: SD.symbiosis.PARASITISM },
         ] 
     },
     { name: 'Solanum lycopersicum',
         traits: [
             { name: SD.name.USAGE, value: SD.usage.FOOD },
             { name: SD.role.SYMBIONT, value: 'Ocimum basilicum, Petroselinum crispum, Anthriscus sylvestris, Anethum graveolens, Apiaceae, Lamiaceae, Allium, Taraxacum', type: SD.symbiosis.COMPANION },
-            { name: SD.name.CLIMATE_CONDITIONS, value: `${SD.climate.TEMPERATE}` },
+            { name: SD.name.CLIMATE, value: `${SD.climate.TEMPERATE}` },
             { name: SD.name.BEHAVIOUR, value: `${SD.behaviour.DECUMBENT}, ${SD.behaviour.ETHYLENE_RIPENING}` },
             { name: SD.name.POLLINATION, value: `${SD.pollination.ALLOGAMY}, ${SD.pollination.SONICATION}, ${SD.pollination.MELITTOPHILY}` },
             { name: SD.name.CHARACTERISTIC, value: `${SD.characteristic.ANNUAL}, ${SD.characteristic.PERENNIAL}, ${SD.characteristic.DICOTYLEDON}, ${SD.characteristic.PUBESCENT}` },
             { name: SD.name.FRUIT_TYPE, value: SD.fruitType.BERRY },
-            { name: SD.role.HOST, value: `Stink bugs, cutworms, tomato hornworms, aphids, Manduca quinquemaculata`, type: SD.symbiosis.PARASITISM },
+            { name: SD.name.ROLE, role: SD.role.HOST, value: `Stink bugs, cutworms, tomato hornworms, aphids, Manduca quinquemaculata`, type: SD.symbiosis.PARASITISM },
         ] 
     },
     { name: 'Petroselinum crispum',
@@ -153,9 +153,10 @@ export const getPlantTraits = enums => {
         traits: [
             { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.PEST_CONTROL}, ${SD.usage.TEA}` },
             { name: SD.name.PHYSIOLOGY, value: SD.physiology.EVERGREEN },
-            { name: SD.name.SOIL_TYPE, value: `${SD.pHLevel.NEUTRAL}, ${SD.pHLevel.ALKALINE}, ${SD.soilType.NUTRIENT_POOR}` },
+            { name: SD.name.SOIL_TYPE, value: `${SD.soilType.NUTRIENT_POOR}` },
+            { name: SD.name.PH, value: `${SD.pHLevel.NEUTRAL}, ${SD.pHLevel.ALKALINE}` },
             { name: SD.name.CHARACTERISTIC, value: `${SD.characteristic.CHAMAEPHYTE}, ${SD.characteristic.PERENNIAL}, ${SD.characteristic.FIBROUS_ROOT_SYSTEM}, ${SD.characteristic.DROUGHT_TOLERANT}` },
-            { name: SD.name.CLIMATE_CONDITIONS, value: `${SD.climate.TEMPERATE}, ${SD.climate.COOL}` },
+            { name: SD.name.CLIMATE, value: `${SD.climate.TEMPERATE}, ${SD.climate.COOL}` },
         ] 
     },
     { name: 'Lavandula angustifolia',
@@ -163,7 +164,8 @@ export const getPlantTraits = enums => {
             { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.MEDICINE}, ${SD.usage.PERFUMERY}, ${SD.usage.TEA}, ${SD.usage.ESSENTIAL_OIL}` },
             { name: SD.name.PHYSIOLOGY, value: SD.physiology.EVERGREEN },
             { name: SD.name.CHARACTERISTIC, value: SD.characteristic.CHAMAEPHYTE },
-            { name: SD.name.SOIL_TYPE, value: `${SD.pHLevel.NEUTRAL}, ${SD.pHLevel.ALKALINE}, ${SD.soilType.NUTRIENT_POOR}` },
+            { name: SD.name.SOIL_TYPE, value: `${SD.soilType.NUTRIENT_POOR}` },
+            { name: SD.name.PH, value: `${SD.pHLevel.NEUTRAL}, ${SD.pHLevel.ALKALINE}` },
             { name: SD.name.LOOK_ALIKES, values: [ 'Lavandula stoechas' ]},
         ] 
     },
@@ -172,7 +174,8 @@ export const getPlantTraits = enums => {
             { name: SD.name.USAGE, value: `${SD.usage.HERB}, ${SD.usage.MEDICINE}, ${SD.usage.PERFUMERY}, ${SD.usage.TEA}, ${SD.usage.ESSENTIAL_OIL}` },
             { name: SD.name.PHYSIOLOGY, value: SD.physiology.EVERGREEN },
             { name: SD.name.CHARACTERISTIC, value: SD.characteristic.CHAMAEPHYTE },
-            { name: SD.name.SOIL_TYPE, value: `${SD.pHLevel.NEUTRAL}, ${SD.pHLevel.ALKALINE}, ${SD.soilType.NUTRIENT_POOR}` },
+            { name: SD.name.SOIL_TYPE, value: `${SD.soilType.NUTRIENT_POOR}` },
+            { name: SD.name.PH, value: `${SD.pHLevel.NEUTRAL}, ${SD.pHLevel.ALKALINE}` },
             { name: SD.name.LOOK_ALIKES, values: [ 'Lavandula angustifolia' ]},
         ] 
     },
@@ -186,7 +189,7 @@ export const getPlantTraits = enums => {
     { name: 'Tussilago farfara',
         traits: [
             { name: SD.name.LOOK_ALIKES, values: [ 'Taraxacum officinale' ]},
-            { name: SD.name.PROPAGATION, value: [ `${SD.foodType.RHIZOMES}, ${SD.foodType.SEEDS}` ] },
+            { name: SD.name.PROPAGATION, value: [ `${SD.propagation.RHIZOMES}, ${SD.propagation.SEEDS}` ] },
             { name: SD.name.USAGE, value: `${SD.usage.MEDICINE}` },
             { name: SD.name.HOW_EDIBLE, value: SD.howEdible.TOXIC },
         ] 

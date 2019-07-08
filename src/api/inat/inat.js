@@ -29,7 +29,7 @@ export const getInatSpecies = async config => {
 
     const speciesNames = await firestore.getSpeciesNames();
 
-    const names = speciesNames ? speciesNames[0].value : firestore.getSpecies().map(item => item.name);
+    const names = speciesNames ? speciesNames[0].value : firestore.getAllSpecies().map(item => item.name);
 
     const iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
 
@@ -71,6 +71,23 @@ export const getInatSpecies = async config => {
         }
     }
 
+    const loadSpeciesInParallel = async observations => {
+        try {
+            return Promise.all(observations.map(observation => {
+                return firestore.getSpeciesByName(observation.taxon.name).then(async item => {
+                    return await { 
+                        ...item[0], 
+                        observationCount: observation.taxon.observations_count, 
+                        iconicTaxon: observation.taxon.iconic_taxon_name
+                    };
+                })                    
+            }));
+
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     async function getInatObservations(config, page) {
 
         let lat = '', lng = '', placeId = '';
@@ -107,23 +124,10 @@ export const getInatSpecies = async config => {
         return await json.results;
     }
 
-    const taxonNames = [];
+    let observations = await getAllInatObservations(config);
+        observations = observations.filter(o => R.contains(o.taxon.name, names));
 
-    const observations = getAllInatObservations(config).then(observations => {
-        return observations.map(observation => {
-            console.log(observation.taxon.name);
-            if(R.contains(observation.taxon.name, names)) {
-                const item = firestore.getSpeciesByName(observation.taxon.name);
-                return { 
-                    ...item, 
-                    observationCount: observation.taxon.observations_count, 
-                    iconicTaxon: observation.taxon.iconic_taxon_name
-                };
-            } 
-            taxonNames.push(observation.taxon.name);
-        });
-    });
-    return observations;
+    return await loadSpeciesInParallel(observations);
 }
 
 export async function getInatPlaceId(place) {

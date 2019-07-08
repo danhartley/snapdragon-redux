@@ -134,10 +134,10 @@ const renderLandscape = (item, config, question) => {
             answer = question.common;
             break;
         case 'genus':
-            pool = item.genus.toLowerCase();
+            pool = item.genus.taxonomy.toLowerCase();
             break;
         case 'species':
-            pool = item.species.toLowerCase();
+            pool = item.taxonomy.species.toLowerCase();
             break;
         case 'binomial':
         case 'name':

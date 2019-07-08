@@ -50,15 +50,15 @@ const filterExcluded = collection => {
     return collection.filter(item => !item.exclude);
 };
 
-const extractScientificNames = collection => {
-    return collection.map(item => {
-        const names = item.name.split(' ');
-        item.genus = names[0];
-        item.species = names[1];
-        item.name = names.slice(0,2).join(' ');        
-        return item;
-    });
-};
+// const extractScientificNames = collection => {
+//     return collection.map(item => {
+//         const names = item.name.split(' ');
+//         item.genus = names[0];
+//         item.species = names[1];
+//         item.name = names.slice(0,2).join(' ');        
+//         return item;
+//     });
+// };
 
 export const helpers = {
     notItem,
@@ -66,5 +66,5 @@ export const helpers = {
     addMultipleImages,
     spliceArrays,
     filterExcluded,
-    extractScientificNames
+    // extractScientificNames
 };

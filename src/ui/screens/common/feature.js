@@ -9,7 +9,7 @@ import { firestore } from 'api/firebase/firestore';
 import featureLookalike from 'ui/screens/common/feature-look-alike.html';
 import symbiontTemplate from 'ui/screens/common/feature-symbiont-list-template.html';
 
-export const renderFeatures = (item, config, parent, mode, isInCarousel, collection) => {
+export const renderFeatures = async (item, config, parent, mode, isInCarousel, collection) => {
 
     const types = [];
 
@@ -17,22 +17,22 @@ export const renderFeatures = (item, config, parent, mode, isInCarousel, collect
         types.push(traitTypes.name[property]);
     }
 
-    const getVernacularName = symbiont => {
-        const item = firestore.getSpeciesByName(symbiont);
+    const getVernacularName = async symbiont => {
+        const item = await firestore.getSpeciesByName(symbiont);
         if(!item) return { id: symbiont, display: symbiont };
         const vernacularName = itemProperties.getVernacularName(item, config);
-        return vernacularName ? { id: symbiont, display: vernacularName } : { id: symbiont, display: symbiont };
+        return vernacularName ? { name: symbiont, display: vernacularName } : { name: symbiont, display: symbiont };
     };
 
-    const addLinksToSpeciesCards = mode => {
+    const addLinksToSpeciesCards = async mode => {
         if(!isInCarousel) {
             const speciesCardLinks = mode === 'MODAL'
                     ? document.querySelectorAll('#cardModal .js-species-card-link span')
                     : document.querySelectorAll('.js-species-card-link span');
-            speciesCardLinks.forEach(link => {
-                link.addEventListener('click', event => {
+            speciesCardLinks.forEach(async link => {
+                link.addEventListener('click', async event => {
                     const name = event.target.id || event.target.dataset.name;
-                    const selectedItem = firestore.getSpeciesByName(name);
+                    const selectedItem = await firestore.getSpeciesByName(name);
                     selectedItem.species = itemProperties.getSpeciesName(item.name);
                     renderCard({ name: 'Local species', items: [ selectedItem ] }, 'MODAL', selectedItem, document.querySelector('#cardModal .js-modal-body'), false);
                 });
@@ -44,49 +44,63 @@ export const renderFeatures = (item, config, parent, mode, isInCarousel, collect
 
     if(item.traits) {
 
-        const symbionts = item.traits.filter(i => i.type).map(i => i.value).join().split(',').map(s => s.trim());
+        const traitsWithSymbioticRelationship = [];
 
-        let symbiontTraits = item.traits.map(trait => {
-            const values = trait.value.split(',').map(t => t.trim());
-            const st = values.map(symbiont => {
-                if(R.contains(symbiont, symbionts)) {
-                    return {
+        for (let [key, value, type] of Object.entries(item.traits)) {
+            if(value.type) {
+                traitsWithSymbioticRelationship.push({ name: key, value: value.value, type: value.type });
+            }
+        }
+
+        const getSymbiosisData = async () => {
+            return Promise.all(traitsWithSymbioticRelationship.map(trait => {
+                return Promise.all(trait.value.map(async taxon => {
+                    return await {
                         as: trait.name,
                         type: trait.type || '---',
-                        symbiont: getVernacularName(symbiont)
+                        symbiont: await getVernacularName(taxon)
                     };
-                }
-            });
-            return st;
-        });
+                }));
+            }));
+        };
 
-        symbiontTraits = R.flatten(symbiontTraits.map(st => st)).filter(s=>s !== undefined);
+        let symbioses = await getSymbiosisData();
+
+        symbioses = R.flatten(symbioses.map(st => st)).filter(s=>s !== undefined);
 
         const template = document.createElement('template');
         template.innerHTML = symbiontTemplate;
 
-        symbiontTraits.forEach(trait => {            
-            const linkedSpecies = firestore.getSpeciesByName(trait.symbiont.id);
-            if(linkedSpecies && mode !== 'MODAL') {
-                trait.className = 'underline-link';
-                trait.modal = 'modal';
-            } else {
-                trait.className = '';
-                trait.modal = '';
-            }
-        });
+        const getSpeciesDetails = async () => {
+            symbioses.forEach(async trait => {            
+                const linkedSpecies = await firestore.getSpeciesByName(trait.symbiont.name);
+                if(linkedSpecies && mode !== 'MODAL') {
+                    trait.className = 'underline-link';
+                    trait.modal = 'modal';
+                } else {
+                    trait.className = '';
+                    trait.modal = '';
+                }
+            });
 
-        while(symbiontTraits.length < setNumberOfRows) {
-            symbiontTraits.push({
+            return await symbioses;
+        };
+
+        symbioses = await getSpeciesDetails();
+
+        // add lines to the grid (better than showing nothing)
+
+        while(symbioses.length < setNumberOfRows) {
+            symbioses.push({
                 modal: '',
                 className: '',
-                symbiont: { id: '', display: '' },
+                symbiont: { name: '', display: '' },
                 as: '',
                 type: ''
             });
         }
 
-        renderTemplate({ symbiontTraits }, template.content, parent);
+        renderTemplate({ symbioses }, template.content, parent);
 
         addLinksToSpeciesCards(mode);
         
@@ -110,8 +124,8 @@ export const renderFeatures = (item, config, parent, mode, isInCarousel, collect
 
         if(lookalikeNames.length > 0) {
     
-            lookalikes = lookalikeNames.map(name => {
-                const lookalike = firestore.getSpeciesByName(name);
+            lookalikes = lookalikeNames.map(async name => {
+                const lookalike = await firestore.getSpeciesByName(name);
                 if(!lookalike) return;
                 return { 
                     name: lookalike.name, 

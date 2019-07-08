@@ -8,7 +8,7 @@ import { getPlace } from 'geo/geo';
 import { firestore } from 'api/firebase/firestore';
 import { enums } from 'ui/helpers/enum-helper';
 
-async function getItems(collections, collection, config) {
+async function getItems(collection, config) {
 
     if(collection.behaviour === 'dynamic') {
 
@@ -35,17 +35,10 @@ async function getItems(collections, collection, config) {
 
                 actions.boundUpdateConfig(config);
 
-                return getInatSpecies(config).then(species => {
-                    const items = new Set(species.filter(item => item));
-                    return [ ...items ];
-                });
+                return await getInatSpecies(config);
             }
-
             else {
-                return getInatSpecies(config).then(species => {
-                    const items = new Set(species.filter(item => item));
-                    return [ ...items ];
-                });
+                return await getInatSpecies(config);
             }            
         }
     }
@@ -73,7 +66,7 @@ export const collectionHandler = async (collections, collection, config, counter
         callback(collection, config)();
     } else {
            
-        collection.items = utils.shuffleArray(await getItems(collections, collection, config));
+        collection.items = utils.shuffleArray(await getItems(collection, config));
 
         if(R.contains('lepidoptera', config.guide.iconicTaxa.map(taxon => taxon.id)) && !R.contains('insecta', config.guide.iconicTaxa.map(taxon => taxon.id))) {
             const insecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() === 'insecta');
@@ -96,14 +89,16 @@ export const collectionHandler = async (collections, collection, config, counter
             collection.items.forEach(async(item,index) => {
 
                 item.snapIndex = index + 1;
+                item.id = item.eolId;// remove later
                 
                 item.vernacularNames = itemProperties.getVernacularNames(item, config);
                 item.vernacularName = itemProperties.getVernacularName(item, config);   
-
+                                
                 const names = item.name.split(' ');
+
+                item.taxonomy.genus = names[0];                
+                item.taxonomy.species = names[1];
                 
-                item.genus = names[0]; // do we need these names? 
-                item.species = names[1];
                 item.name = names.slice(0,2).join(' ');
 
                 item.family = firestore.getItemTaxonByName(item, enums.taxon.FAMILY) || null;
@@ -113,17 +108,16 @@ export const collectionHandler = async (collections, collection, config, counter
             });
 
             const loadTraitsInParallel = items => {
-                Promise.all(
+                return Promise.all(
                     items.map(async(item) => {
                         const itemTraits = await firestore.getTraitsBySpeciesName(item.name);
-                        item.traits = itemTraits ? itemTraits.traits : [];                        
-                  })
+                        item.traits = itemTraits || [];
+                        return item;                 
+                    })
                 );
-              };
+            };
 
-            console.clear();
-
-            loadTraitsInParallel(collection.items);
+            const items = await loadTraitsInParallel(collection.items); // force wait till ready
 
             collection.itemIndex = 0;
 

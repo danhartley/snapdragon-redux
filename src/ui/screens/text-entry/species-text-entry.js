@@ -12,7 +12,7 @@ export const renderTextEntry = (collection) => {
 
     item.vernacular = item.vernacularName;
 
-    const question = { binomial: item.name, species: item.species, genus: item.genus, taxon: screen.taxon, question: item[screen.taxon], common: item.vernacularName };
+    const question = { binomial: item.name, species: item.taxonomy.species, genus: item.taxonomy.genus, taxon: screen.taxon, question: item[screen.taxon], common: item.vernacularName };
 
     renderInput(screen, question);
 };

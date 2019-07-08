@@ -28,17 +28,17 @@ export const renderCompleteText = (collection) => {
 
     switch(screen.type) {
         case 'text-complete-genus':
-            question = item.genus;
+            question = item.taxonomy.genus;
             genus = '---';
-            species = item.species;
-            binomial = `--- ${item.species}`;
+            species = item.taxonomy.species;
+            binomial = `--- ${item.taxonomy.species}`;
             givenTaxon = 'genus';
             break;
         case 'text-complete-species':
-            question = item.species;
-            genus = item.genus;
+            question = item.taxonomy.species;
+            genus = item.taxonomy.genus;
             species = '---';
-            binomial = `${item.genus} ---`;
+            binomial = `${item.taxonomy.genus} ---`;
             givenTaxon = 'species';
             break;
     }
@@ -113,7 +113,7 @@ export const renderCompleteText = (collection) => {
     document.querySelectorAll('.pool .block span').forEach(answer => {
         answer.addEventListener('click', event => {
             const answer = event.target.innerHTML;
-            if(question === item.species) {
+            if(question === item.taxonomy.species) {
                 document.querySelector('.species').innerHTML = answer;                
             } else {
                 document.querySelector('.genus').innerHTML = answer;

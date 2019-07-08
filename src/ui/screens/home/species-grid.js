@@ -14,8 +14,8 @@ export const renderSpeciesGrid = () => {
     const { layout } = store.getState();
 
     const species = layout && layout.screens[1] && layout.screens[1].name === 'birdsong' 
-                ? firestore.getSpecies().filter(species => species.taxonomy).filter(species => species.taxonomy.class.toLowerCase() === 'aves')
-                : firestore.getSpecies();
+                ? firestore.getAllSpecies().filter(species => species.taxonomy).filter(species => species.taxonomy.class.toLowerCase() === 'aves')
+                : firestore.getAllSpecies();
 
     const imageCount = 40;
 

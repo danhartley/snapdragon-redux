@@ -74,11 +74,11 @@ export const renderMixedSpecimenImages = (...args) => {
     const imageTiles = document.querySelectorAll('.js-tiles img');
 
     imageTiles.forEach(image => {
-        image.addEventListener('click', event => {
+        image.addEventListener('click', async event => {
             
             const selectedImage = event.target;
             const selectedName = selectedImage.dataset.itemName;
-            const selectedItem = firestore.getSpeciesByName(selectedName);
+            const selectedItem = await firestore.getSpeciesByName(selectedName);
 
             const question = item.name;
             const answer = selectedItem.name;
@@ -89,12 +89,15 @@ export const renderMixedSpecimenImages = (...args) => {
                 }
             });
 
+            const questionItem = await firestore.getSpeciesByName(question);
+            const answerItem = await firestore.getSpeciesByName(question);
+
             const test = { ...score, itemId: item.id, 
                 question, answer, binomial: item.name, 
                 questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, 
                 points: 0, icon: matchIcon(item.taxonomy, iconicTaxa),
-                vernacularName: itemProperties.getVernacularName(firestore.getSpeciesByName(question), config),
-                answerVernacularName: itemProperties.getVernacularName(firestore.getSpeciesByName(answer), config)};
+                vernacularName: itemProperties.getVernacularName(questionItem, config),
+                answerVernacularName: itemProperties.getVernacularName(answerItem, config)};
                 
             scoreHandler('image-match', test, callback, config);
         });

@@ -7,9 +7,9 @@
                 <th class="landscape">Relationship</th>
             </tr>
         </thead>
-        <tbody data-repeat-feature="{{ symbiontTraits }}">
+        <tbody data-repeat-feature="{{ symbioses }}">
             <tr>
-                <td class="js-species-card-link"><span data-toggle="{{ feature.modal }}" data-target="#cardModal" class="{{ feature.className }}" id="{{ feature.symbiont.id }}">{{ feature.symbiont.display }}</span></td>
+                <td class="js-species-card-link"><span data-toggle="{{ feature.modal }}" data-target="#cardModal" class="{{ feature.className }}" id="{{ feature.symbiont.name }}">{{ feature.symbiont.display }}</span></td>
                 <td>{{ feature.as }}</td>
                 <td class="landscape">{{ feature.type }}</td>
             </tr>

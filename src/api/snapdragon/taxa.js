@@ -2868,7 +2868,7 @@ export const taxa = [
             },
         ],
         traits: [ 
-            { name: SD.name.MIGRATORY, value: SD.whether.YES },
+            { name: SD.name.BEHAVIOUR, value: SD.characteristic.MIGRATORY},
             { name: SD.role.CARNIVOROUS, value: 'Fish, reptiles, amphibians' },
             { name: SD.role.CARNIVOROUS, value: 'Crustaceans, molluscs, aquatic insects' },            
          ],
@@ -2932,7 +2932,7 @@ export const taxa = [
             { name: SD.role.OMNIVORE, value: 'Invertebrates, nestlings, small mammals' },
             { name: SD.role.OMNIVORE, value: 'Berries, fruits, seeds, carrion' },
             { name: SD.name.SHELTER, value: `${SD.shelter.ROOKERY}` },
-            { name: SD.name.MATING_SYSTEM, value: SD.mating.MONOGAMOUS },
+            { name: SD.name.MATING_SYSTEM, value: SD.matingSystem.MONOGAMOUS },
             { name: SD.name.SENSORY_ACUITY, value: SD.sense.SPATIAL },
             { name: SD.name.SENSORY_ACUITY, value: SD.sense.MEMORY },
             { name: SD.role.HOST, value: 'West Nile virus', type: SD.symbiosis.PARASITISM },
@@ -3598,7 +3598,7 @@ export const taxa = [
         traits: [
             { name: SD.name.SHELTER, value: `${SD.shelter.LODGE}` },
             { name: SD.name.SHELTER, value: `${SD.shelter.DAM}` },
-            { name: SD.role.HERBIVORE, value: `${SD.foodType.GRASS},${SD.foodType.LEAVES},${SD.foodType.WOOD}` },
+            { name: SD.role.HERBIVORE, value: `${SD.food.GRASS},${SD.food.LEAVES},${SD.food.WOOD}` },
         ],
     },
     {
@@ -4179,7 +4179,7 @@ export const taxa = [
             },
         ],
         traits: [       
-            { name: SD.name.MATING_SYSTEM, value: SD.mating.MONOGAMOUS },     
+            { name: SD.name.MATING_SYSTEM, value: SD.matingSystem.MONOGAMOUS },     
         ],
     },
     {

@@ -91,9 +91,9 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     };
 
     const getSpeciesHandler = () => {
-        const { config, collections } = store.getState();
+        let { config, collection, collections } = store.getState();
         const id = parseInt(config.collection.id);
-        const collection = collections.find(c => c.id === id);
+        collection = collection.items ? collection : collections.find(c => c.id === id);
         if(collection && collection.default) {
             renderSpeciesCollectionList(R.clone(collection));
         }

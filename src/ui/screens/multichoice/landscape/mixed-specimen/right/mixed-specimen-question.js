@@ -40,19 +40,19 @@ export const renderMixedSpecimenQuestion = (...args) => {
     renderTemplate({ instructions, binomial }, template.content, parent);
 
     const listenToImageChangeHandler = images => {        
-        let speciesToShow = '';
         const uniqueImages = [];
-        utils.shuffleArray(images).forEach(image => {            
+        const speciesList = document.querySelector('.js-images-names-txt');
+        speciesList.innerHTML = "";
+        utils.shuffleArray(images).forEach(async image => {            
             const i = image;
-            const vernacularName = itemProperties.getVernacularName(firestore.getSpeciesByName(image.itemName), config);  
-            const taxonIcon = returnIcon(firestore.getSpeciesByName(image.itemName));
+            const imageItem = await firestore.getSpeciesByName(image.itemName);
+            const vernacularName = itemProperties.getVernacularName(imageItem, config);  
+            const taxonIcon = returnIcon(imageItem);
             if(!R.contains(image.itemName, uniqueImages)) {
-                speciesToShow +=  `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;
+                speciesList.innerHTML +=  `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;
                 uniqueImages.push(image.itemName);
             }
         });
-        const speciesList = document.querySelector('.js-images-names-txt');
-        if(speciesList) speciesList.innerHTML = speciesToShow;
     };
 
     listenToImageSelection(listenToImageChangeHandler);

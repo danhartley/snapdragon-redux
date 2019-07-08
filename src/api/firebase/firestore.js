@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { store } from 'redux/store';
 import { taxa } from 'api/snapdragon/taxa';
 import { iconicTaxa, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
 import { species } from 'api/species';
@@ -19,7 +20,42 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 
-const getSpecies = () => {
+const getCollection = () => {
+    return store.getState().collection;
+};
+
+const getSpeciesFromCollection = itemName => {
+    const collection = getCollection(); //call made before collection loaded into store (have to correct otherwise more calls to cloud)
+    if(!collection || !collection.items) return null;
+    return collection.items.find(i => i.name === itemName);
+};
+
+const getSpeciesWhere = async props => {
+
+    const { key, operator, value } = props;
+  
+    const speciesRef = db.collection(`species`).where(key, operator, value);
+  
+    const querySnapshot = await speciesRef.get();
+    
+    const docs = [];
+  
+    querySnapshot.forEach(doc => {
+      docs.push(doc.data());
+    });
+  
+    return await docs;
+};
+  
+const getSpecies = async props => {
+    const item = await getSpeciesWhere(props);
+    console.log(item);
+    if(!item || item.length === 0) {
+        return new Promise(resolve => resolve(species.find(s => s.name === props.value)));
+    }
+};
+
+const getAllSpecies = () => {
     return species;
 };
 
@@ -47,8 +83,11 @@ const getSpeciesByIconicTaxon = (taxon, isLichen) => {
     return matches;
 };
 
-const getSpeciesByName = name => {
-    return species.find(sp => sp.name === name);
+const getSpeciesByName = async itemName => {
+    const item = getSpeciesFromCollection(itemName);
+    if(item) return new Promise(resolve => resolve(item));
+    console.log(`item ${itemName} not found in collection, fetched from cloud`);
+    return await getSpecies({ key:'name', operator:'==', value:itemName });
 };
 
 const getSpeciesByRank = (taxonName, taxonValue) => {
@@ -113,6 +152,7 @@ const getTraitsBySpeciesName = async (name, language = 'en') => {
     let traits;
 
     const querySnapshot = await getAsyncTraitsBySpeciesName(name, language);
+    // const querySnapshot = { docs: [] };
     
     if(querySnapshot.docs.length > 0) {
       querySnapshot.forEach(doc => {
@@ -121,7 +161,9 @@ const getTraitsBySpeciesName = async (name, language = 'en') => {
         console.log(`I got traits for ${name}!`);
       });
     } else {
-        traits = getTraits().find(trait => trait.name === name);
+        console.log('Species traits not yet available in the cloud.')
+        const speciesTraits = getTraits().find(trait => trait.name === name);
+        traits = speciesTraits ? speciesTraits.traits : [];
     }
 
     return await traits;
@@ -129,6 +171,7 @@ const getTraitsBySpeciesName = async (name, language = 'en') => {
 
 export const firestore = {
     getSpecies,
+    getAllSpecies,
     getSpeciesNames,
     getSpeciesFromList,
     getSpeciesByName,

@@ -118,6 +118,10 @@ export const commmon = [
         definition: 'Thread-like.'
     },
     {
+        term: 'Monophagous',
+        definition: '(Of an animal) eating only one kind of food.'
+    },
+    {
         term: "Dormancy",
         definition: "Period in an organism's life cycle when growth, development, and (in animals) physical activity are temporarily stopped.",
         wiki: "https://en.wikipedia.org/wiki/Dormancy",

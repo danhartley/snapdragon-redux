@@ -116,13 +116,13 @@ const renderCommonParts = (template, config, item, collection, mode, parent, roo
     const names = [ ...new Set(item.names.filter(name => name.language === config.language).map(name => name.vernacularName.toLowerCase())) ];
     const occurrences = names.length;
 
-    const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
+    // const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
 
     const clone = document.importNode(template.content, true);
     
     parent.innerHTML = '';
     
-    renderTemplate({ name, vernacularName: item.vernacularName, headerImage, occurrences, iconicTaxon }, template.content, parent, clone);
+    renderTemplate({ name, vernacularName: item.vernacularName, headerImage, occurrences, iconicTaxon: item.iconicTaxon }, template.content, parent, clone);
 
     const taxaBoxNode = rootNode.querySelector('.js-taxa-box');
 

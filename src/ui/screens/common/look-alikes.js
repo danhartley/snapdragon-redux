@@ -13,11 +13,16 @@ import visualComparisonTemplate from 'ui/screens/common/look-alikes-link-templat
 
 export const lookalikeSpecies = (item, config, rootNode = document) => {
 
-    let lookalikes = item.traits.find(c => c.name === 'look-alikes');
+    // let lookalikes = item.traits.find(c => c.name === 'look-alikes');
+    let lookalikes = [];
 
-    if(lookalikes) {
+    for (let [key, value] of Object.entries(item.traits)) {
+        if(key === 'look-alikes') lookalikes.push({key,value});
+    }
 
-        lookalikes = lookalikes.values;
+    if(lookalikes.length > 0) {
+
+        lookalikes = lookalikes.map(lookalike => lookalike.value.value);
 
         lookalikes.push(item.name);
 
@@ -29,8 +34,8 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
         const names = [];
         const scientificNames = [];
 
-        lookalikes.forEach(lookalike => {
-            const lookalikeItem = firestore.getSpeciesByName(lookalike);
+        lookalikes.forEach(async lookalike => {
+            const lookalikeItem = await firestore.getSpeciesByName(lookalike);
             if(!lookalikeItem) return;
             lookalikeItem.vernacularName = itemProperties.getVernacularName(lookalikeItem, config);
             names.push(lookalikeItem.vernacularName);
@@ -47,11 +52,11 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
 
         renderTemplate({slides, names: names.join(', ')}, matchTemplate.content, lookalikeParent);
 
-        const getTrait = (itemName, parent) => {
+        const getTrait = async (itemName, parent) => {
 
             let { enums } = store.getState();
 
-            const item = firestore.getSpeciesByName(itemName);
+            const item = await firestore.getSpeciesByName(itemName);
                 
             if(item.taxonomy.class.toLowerCase() === 'aves') {
 
@@ -83,7 +88,7 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
             lookalikes.species.forEach(sp => {
                 const identifier = `.description_${sp.id.replace(' ', '_')}`;
                 const description = document.querySelector(identifier);
-                    description.innerHTML = sp.description;
+                      description.innerHTML = sp.description;
                 getTrait(sp.id, document.querySelector(`${identifier} + div`));
             });
             

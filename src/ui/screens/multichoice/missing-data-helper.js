@@ -140,7 +140,7 @@ export const getPoolItems = collection => {
     if(speciesInSameKingdom) {
       speciesPool = speciesInSameKingdom;
     } else {
-      const species = firestore.getSpecies();
+      const species = firestore.getAllSpecies();
       speciesPool = utils.shuffleArray(species.filter(ci => ci.name !== item));
     }
   }

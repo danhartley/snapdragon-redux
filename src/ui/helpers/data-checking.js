@@ -96,7 +96,16 @@ const familyVernacularNames = (name, language, taxa) => {
 
 const getTrait = (item, name, formatter) => {
     if(!item.traits) return '';
-    const trait = item.traits.find(t => t.name === name);    
+
+    let trait;
+
+    for (let [key, value] of Object.entries(item.traits)) {
+        if(key === name) {
+            trait = value.value;
+        }
+    }
+
+    // const trait = item.traits.find(t => t.name === name);    
     if(!trait) return '';
     if(!formatter) return trait;
     return formatter(trait);
