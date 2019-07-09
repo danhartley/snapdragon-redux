@@ -105,7 +105,6 @@ const getTrait = (item, name, formatter) => {
         }
     }
 
-    // const trait = item.traits.find(t => t.name === name);    
     if(!trait) return '';
     if(!formatter) return trait;
     return formatter(trait);

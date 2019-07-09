@@ -39,14 +39,15 @@ export const renderMixedSpecimenQuestion = (...args) => {
 
     renderTemplate({ instructions, binomial }, template.content, parent);
 
-    const listenToImageChangeHandler = images => {        
-        const uniqueImages = [];
+    const uniqueImages = [];
+
+    const listenToImageChangeHandler = async images => {        
         const speciesList = document.querySelector('.js-images-names-txt');
         speciesList.innerHTML = "";
-        utils.shuffleArray(images).forEach(async image => {            
-            const i = image;
+        const unorderedImages = utils.shuffleArray(images);
+        unorderedImages.forEach(async image => {            
             const imageItem = await firestore.getSpeciesByName(image.itemName);
-            const vernacularName = itemProperties.getVernacularName(imageItem, config);  
+            const vernacularName = itemProperties.getVernacularName(imageItem, config);
             const taxonIcon = returnIcon(imageItem);
             if(!R.contains(image.itemName, uniqueImages)) {
                 speciesList.innerHTML +=  `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;

@@ -52,8 +52,8 @@ export const buildTable = (collection, config, enums) => {
         item.binomial = item.name;
         item.shortName = itemProperties.trimLatinName(item.name);
         const { traitName, keyTratLinkClass } = getTraitName(item, enums);
-        const keyTrait = itemProperties.getActiveTrait(item, [{ name: traitName, formatter: trait => trait.value }]);
-        item.keyTrait = keyTrait.indexOf(',') > 0 ? keyTrait.split(',')[0] : keyTrait;
+        const keyTrait = itemProperties.getActiveTrait(item, [{ name: traitName, formatter: trait => trait[0] }]);
+        item.keyTrait = keyTrait || '';
         item.keyTratLinkClass = keyTratLinkClass;
         item.familyLinkClass = item.family
             ? 'capitalise underline-link js-taxon-card-link' 
@@ -64,8 +64,6 @@ export const buildTable = (collection, config, enums) => {
                 : 'js-taxon-card-link no-pointer-events';
         } else { item.orderLinkClass = 'js-taxon-card-link'; }
         item.taxonomy = item.taxonomy || { family: '', order: ''}
-        
-        item.iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
 
         if(item.iconicTaxon === 'fungi') {
             item.iconicTaxonIcon = 'hide';

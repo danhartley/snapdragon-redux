@@ -69,7 +69,9 @@ export const getTraitsPool = (trait, traits) => {
         }
     }
 
-    let help = traitValues ? traitValues.help : traitValues.name || '(no help)';
+    let help = traitValues 
+            ? traitValues.help || traitValues.name
+            : '(no help)';
 
     return { traitsPool, help };
 };

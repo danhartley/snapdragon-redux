@@ -58,7 +58,11 @@ export const infoSlider = (item, family, parent, mode) => {
     const traits = [];
 
     for (let [key, value] of Object.entries(item.traits)) {
-        traits.push({ name: key, value: value.value });
+        if(key !== 'name') {
+            value.value
+                ? traits.push({ name: key, value: value.value })
+                : traits.push({ name: key, value: value.values })
+        }
     }
     
     const id = mode === 'MODAL' ? 1 : 0;

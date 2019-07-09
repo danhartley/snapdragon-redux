@@ -24,6 +24,8 @@ export const renderIcon = (taxonomy, rootNode) => {
 
 export const returnIcon = item => {
 
+    if(!item.taxonomy) return '';
+
     if(item.taxonomy.kingdom.toLowerCase() === 'fungi') {
         return `<span class="mushroom-icon-header">${mushroomIcon}</span>`;
     } else {

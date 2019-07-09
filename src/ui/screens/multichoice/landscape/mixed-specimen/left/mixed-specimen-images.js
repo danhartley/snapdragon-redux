@@ -25,7 +25,7 @@ export const renderMixedSpecimenImages = (...args) => {
 
     const collection = args[0];
     const noOfImagesPerItem = args[1] || 1;
-    const preselectedItems = args[2];
+    const preselectedItems = args[2] || null;
 
     const { config, score, lesson } = store.getState();
 
@@ -40,66 +40,73 @@ export const renderMixedSpecimenImages = (...args) => {
     const parent = DOM.leftBody;
     parent.innerHTML = '';
 
-    const mixedItems = preselectedItems || getPoolItems(collection);
+    const renderSpecimenImages = async () => {
+ 
+        // const mixedItems = preselectedItems || getPoolItems(collection);
+        const mixedItems = await getPoolItems(collection);
 
-    mixedItems.map(item => item.images.map(image => {
-        return image.url = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config);
-    }));
+        mixedItems.map(item => item.images.map(image => {
+            return image.url = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config);
+        }));
 
-    const images = utils.shuffleArray(mixedItems).map((item, index) => {
-        
-        const itemImages = utils.shuffleArray(item.images);
-
-        return itemImages.map((image, imageIndex) => {
-            if(imageIndex < noOfImagesPerItem) {
-                return { index: index + index + imageIndex, ...image, itemName: item.name };
-            }
-        }).filter(image => image);
-    }).flat();
-
-    renderTemplate({ images }, template.content, parent);
-
-    setTimeout(() => {
-        listenersToImageSelection.forEach((listener, index) => {
-            if(index === 0) {
-                listener(images);
-            }
-        });
-    }, 250);
-        
-    const callback = (score, scoreUpdateTimer) => {
-        listenersToUserAnswer.forEach(listener => listener(score, scoreUpdateTimer));
-    };
-
-    const imageTiles = document.querySelectorAll('.js-tiles img');
-
-    imageTiles.forEach(image => {
-        image.addEventListener('click', async event => {
+        const images = utils.shuffleArray(mixedItems).map((item, index) => {
             
-            const selectedImage = event.target;
-            const selectedName = selectedImage.dataset.itemName;
-            const selectedItem = await firestore.getSpeciesByName(selectedName);
+            const itemImages = utils.shuffleArray(item.images);
 
-            const question = item.name;
-            const answer = selectedItem.name;
+            return itemImages.map((image, imageIndex) => {
+                if(imageIndex < noOfImagesPerItem) {
+                    return { index: index + index + imageIndex, ...image, itemName: item.name };
+                }
+            }).filter(image => image);
+        }).flat();
 
-            imageTiles.forEach(tile => {
-                if(tile.dataset.itemName !== item.name) {
-                    tile.classList.add('desaturate');
+        renderTemplate({ images }, template.content, parent);
+
+        // setTimeout(() => {
+            listenersToImageSelection.forEach((listener, index) => {
+                if(index === 0) {
+                    console.log(images);
+                    listener(images);
                 }
             });
+        // }, 250);
+            
+        const callback = (score, scoreUpdateTimer) => {
+            listenersToUserAnswer.forEach(listener => listener(score, scoreUpdateTimer));
+        };
 
-            const questionItem = await firestore.getSpeciesByName(question);
-            const answerItem = await firestore.getSpeciesByName(question);
+        const imageTiles = document.querySelectorAll('.js-tiles img');
 
-            const test = { ...score, itemId: item.id, 
-                question, answer, binomial: item.name, 
-                questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, 
-                points: 0, icon: matchIcon(item.taxonomy, iconicTaxa),
-                vernacularName: itemProperties.getVernacularName(questionItem, config),
-                answerVernacularName: itemProperties.getVernacularName(answerItem, config)};
+        imageTiles.forEach(image => {
+            image.addEventListener('click', async event => {
                 
-            scoreHandler('image-match', test, callback, config);
+                const selectedImage = event.target;
+                const selectedName = selectedImage.dataset.itemName;
+                const selectedItem = await firestore.getSpeciesByName(selectedName);
+
+                const question = item.name;
+                const answer = selectedItem.name;
+
+                imageTiles.forEach(tile => {
+                    if(tile.dataset.itemName !== item.name) {
+                        tile.classList.add('desaturate');
+                    }
+                });
+
+                const questionItem = await firestore.getSpeciesByName(question);
+                const answerItem = await firestore.getSpeciesByName(question);
+
+                const test = { ...score, itemId: item.id, 
+                    question, answer, binomial: item.name, 
+                    questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, 
+                    points: 0, icon: matchIcon(item.taxonomy, iconicTaxa),
+                    vernacularName: itemProperties.getVernacularName(questionItem, config),
+                    answerVernacularName: itemProperties.getVernacularName(answerItem, config)};
+                    
+                scoreHandler('image-match', test, callback, config);
+            });
         });
-    });
+    };
+
+    renderSpecimenImages();
 };

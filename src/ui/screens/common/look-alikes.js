@@ -11,20 +11,24 @@ import { firestore } from 'api/firebase/firestore';
 import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
 import visualComparisonTemplate from 'ui/screens/common/look-alikes-link-template.html';
 
-export const lookalikeSpecies = (item, config, rootNode = document) => {
-
-    // let lookalikes = item.traits.find(c => c.name === 'look-alikes');
-    let lookalikes = [];
-
+const getTraitProperties = item => {
+    const values = [];
     for (let [key, value] of Object.entries(item.traits)) {
-        if(key === 'look-alikes') lookalikes.push({key,value});
+        if(key === 'look-alikes') values.push({key,value});
     }
+    let properties = null;
+    if(values.length > 0) {
+        properties = values[0].value.values;
+        properties.push(item.name);
+    }
+    return properties.filter(property => property !== '');
+};
 
-    if(lookalikes.length > 0) {
+export const lookalikeSpecies = (item, config, rootNode = document) => {
+    
+    const lookalikes = getTraitProperties(item);
 
-        lookalikes = lookalikes.map(lookalike => lookalike.value.value);
-
-        lookalikes.push(item.name);
+    if(lookalikes) {
 
         const matchTemplate = document.createElement('template');
               matchTemplate.innerHTML = visualComparisonTemplate;
@@ -34,64 +38,69 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
         const names = [];
         const scientificNames = [];
 
-        lookalikes.forEach(async lookalike => {
-            const lookalikeItem = await firestore.getSpeciesByName(lookalike);
-            if(!lookalikeItem) return;
-            lookalikeItem.vernacularName = itemProperties.getVernacularName(lookalikeItem, config);
-            names.push(lookalikeItem.vernacularName);
-            scientificNames.push(lookalikeItem.name);
-            const images = lookalikeItem.images.map((img, index) => { 
-                return { 
-                        index: index + 1, 
-                        src: { ...img, url: scaleImage({ url: img.url }, imageUseCases.CAROUSEL, config) },
-                        itemName: lookalikeItem.name, 
-                        itemCommon: lookalikeItem.vernacularName };
-            } );
-            slides.push({ id: lookalikeItem.name, images });
-        });
+        async function renderLookalikes() {
 
-        renderTemplate({slides, names: names.join(', ')}, matchTemplate.content, lookalikeParent);
+            for(const lookalike of lookalikes) {
+                const lookalikeItem = await firestore.getSpeciesByName(lookalike);
+                if(!lookalikeItem) return;
+                lookalikeItem.vernacularName = itemProperties.getVernacularName(lookalikeItem, config);
+                names.push(lookalikeItem.vernacularName);
+                scientificNames.push(lookalikeItem.name);
+                const images = lookalikeItem.images.map((img, index) => { 
+                    return { 
+                            index: index + 1, 
+                            src: { ...img, url: scaleImage({ url: img.url }, imageUseCases.CAROUSEL, config) },
+                            itemName: lookalikeItem.name, 
+                            itemCommon: lookalikeItem.vernacularName };
+                } );
+                slides.push({ id: lookalikeItem.name, images });
+            };
 
-        const getTrait = async (itemName, parent) => {
+            renderTemplate({slides, names: names.join(', ')}, matchTemplate.content, lookalikeParent);
 
-            let { enums } = store.getState();
-
-            const item = await firestore.getSpeciesByName(itemName);
-                
-            if(item.taxonomy.class.toLowerCase() === 'aves') {
-
-                if(item.traits.length === 0) return;
-
-                const xcID = item.traits.find(trait => trait.name === 'song').value;
-
-                if(!xcID) return;
+            const getTrait = async (itemName, parent) => {
     
-                const mp3 = `./songs/${xcID}.mp3`;
-
-                const template = document.createElement('template');
-                      template.innerHTML = audioMediaTemplate;
-                
-                renderTemplate({ mp3, title: item.name }, template.content, parent);
+                let { enums } = store.getState();
+    
+                const item = await firestore.getSpeciesByName(itemName);
+                    
+                if(item.taxonomy.class.toLowerCase() === 'aves') {
+    
+                    if(item.traits.length === 0) return;
+    
+                    const xcID = item.traits.find(trait => trait.name === 'song').value;
+    
+                    if(!xcID) return;
+        
+                    const mp3 = `./songs/${xcID}.mp3`;
+    
+                    const template = document.createElement('template');
+                          template.innerHTML = audioMediaTemplate;
+                    
+                    renderTemplate({ mp3, title: item.name }, template.content, parent);
+                }
             }
+    
+            const speciesComparisonLink = rootNode.querySelector('.js-compare-species-link');
+    
+            speciesComparisonLink.addEventListener('click', () => {
+    
+                const parent = document.querySelector('#imageComparisonModal .js-modal-image');            
+                
+                imageSideBySlider(slides, parent, true, config);
+                
+                const lookalikes = lookalikeDescriptions.find(lookalikes => R.contains(item.name, lookalikes.ids));
+    
+                lookalikes.species.forEach(sp => {
+                    const identifier = `.description_${sp.id.replace(' ', '_')}`;
+                    const description = document.querySelector(identifier);
+                          description.innerHTML = sp.description;
+                    getTrait(sp.id, document.querySelector(`${identifier} + div`));
+                });
+                
+            });
         }
 
-        const speciesComparisonLink = rootNode.querySelector('.js-compare-species-link');
-
-        speciesComparisonLink.addEventListener('click', () => {
-
-            const parent = document.querySelector('#imageComparisonModal .js-modal-image');            
-            
-            imageSideBySlider(slides, parent, true, config);
-            
-            const lookalikes = lookalikeDescriptions.find(lookalikes => R.contains(item.name, lookalikes.ids));
-
-            lookalikes.species.forEach(sp => {
-                const identifier = `.description_${sp.id.replace(' ', '_')}`;
-                const description = document.querySelector(identifier);
-                      description.innerHTML = sp.description;
-                getTrait(sp.id, document.querySelector(`${identifier} + div`));
-            });
-            
-        });        
+        renderLookalikes();   
     }
 };

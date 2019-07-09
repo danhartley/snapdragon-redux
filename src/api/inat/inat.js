@@ -75,8 +75,8 @@ export const getInatSpecies = async config => {
         try {
             return Promise.all(observations.map(observation => {
                 return firestore.getSpeciesByName(observation.taxon.name).then(async item => {
-                    return await { 
-                        ...item[0], 
+                    return await {                         
+                        ...item, 
                         observationCount: observation.taxon.observations_count, 
                         iconicTaxon: observation.taxon.iconic_taxon_name
                     };

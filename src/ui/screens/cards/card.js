@@ -5,7 +5,7 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { getBirdSong } from 'xeno-canto/birdsong';
 import { lookalikeSpecies } from 'ui/screens/common/look-alikes';
-import { renderFeatures } from 'ui/screens/common/feature';
+import { linkedTaxa } from 'ui/screens/common/linked-taxa';
 import { infoSlider } from 'ui/screens/common/info-slider';
 import { iconicTaxa, matchTaxon } from 'api/snapdragon/iconic-taxa';
 import { renderIcon } from 'ui/helpers/icon-handler';
@@ -116,8 +116,6 @@ const renderCommonParts = (template, config, item, collection, mode, parent, roo
     const names = [ ...new Set(item.names.filter(name => name.language === config.language).map(name => name.vernacularName.toLowerCase())) ];
     const occurrences = names.length;
 
-    // const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
-
     const clone = document.importNode(template.content, true);
     
     parent.innerHTML = '';
@@ -134,7 +132,7 @@ const renderCommonParts = (template, config, item, collection, mode, parent, roo
 
     renderBadge(badge, occurrences, names);
     
-    renderFeatures(item, config, rootNode.querySelector('.js-feature-types'), mode, isInCarousel, collection);
+    linkedTaxa(item, config, rootNode.querySelector('.js-feature-types'), mode, isInCarousel, collection);
     
     const calendarNode = rootNode.querySelector('.js-calendar-box');
 

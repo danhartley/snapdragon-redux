@@ -25,16 +25,20 @@ const getCollection = () => {
 };
 
 const getSpeciesFromCollection = itemName => {
-    const collection = getCollection(); //call made before collection loaded into store (have to correct otherwise more calls to cloud)
+    const collection = getCollection();
     if(!collection || !collection.items) return null;
     return collection.items.find(i => i.name === itemName);
 };
 
 const getSpeciesWhere = async props => {
 
-    const { key, operator, value } = props;
+    const { key, operator, value, limit } = props;
   
-    const speciesRef = db.collection(`species`).where(key, operator, value);
+    let speciesRef;
+    
+    speciesRef = limit
+                    ? db.collection(`species`).where(key, operator, value).limit(limit)
+                    : db.collection(`species`).where(key, operator, value);
   
     const querySnapshot = await speciesRef.get();
     
@@ -49,10 +53,7 @@ const getSpeciesWhere = async props => {
   
 const getSpecies = async props => {
     const item = await getSpeciesWhere(props);
-    console.log(item);
-    if(!item || item.length === 0) {
-        return new Promise(resolve => resolve(species.find(s => s.name === props.value)));
-    }
+    return item;
 };
 
 const getAllSpecies = () => {
@@ -74,10 +75,13 @@ const getSpeciesNames = async () => {
     return await docs;
 };
 
-const getSpeciesByIconicTaxon = (taxon, isLichen) => {
+const getSpeciesByIconicTaxon = async (item, isLichen) => {
 
-    let matches = species.filter(s => s.taxonomy).filter(s => s.taxonomy[taxon.rank].toLowerCase() === taxon.value);
-    if(taxon.value === 'fungi') {
+    const rank = matchTaxon(item.taxonomy, iconicTaxa).value;
+
+    let matches = await getSpecies({ key:'iconicTaxon', operator:'==', value: rank, limit: 6 });
+
+    if(item.value === 'fungi') {
         matches = isLichen ? matches.filter(match => match.lichen) : matches.filter(match => !match.lichen);
     } 
     return matches;
@@ -87,18 +91,24 @@ const getSpeciesByName = async itemName => {
     const item = getSpeciesFromCollection(itemName);
     if(item) return new Promise(resolve => resolve(item));
     console.log(`item ${itemName} not found in collection, fetched from cloud`);
-    return await getSpecies({ key:'name', operator:'==', value:itemName });
+    const items = await getSpecies({ key:'name', operator:'==', value:itemName });
+    return items[0];
 };
 
 const getSpeciesByRank = (taxonName, taxonValue) => {
     return species.filter(item => item.taxonomy).filter(item => item.taxonomy[taxonName].toLowerCase() === taxonValue.toLowerCase());    
 };
 
-const getSpeciesByTaxonKey = itemTaxonomy => {
+const getSpeciesByTaxonKey = (itemTaxonomy, rank) => {
 
-    const rank = matchTaxon(itemTaxonomy, iconicTaxa).value;
-
-    return species.filter(item => matchTaxonKey(itemTaxonomy,[rank]).value);
+    const matchedSpecies = [];
+    species.forEach(item => {
+        const matchedTaxon = matchTaxonKey(itemTaxonomy,[rank]);
+        if(item.taxonomy[matchedTaxon.rank].toLowerCase() === matchedTaxon.value.toLowerCase()) {
+            matchedSpecies.push(item);
+        }
+    });
+    return matchedSpecies;
 };
 
 const getSpeciesFromList = arr => {

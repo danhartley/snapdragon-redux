@@ -1,11 +1,10 @@
-import { utils } from 'utils/utils';
 import { renderTemplate } from 'ui/helpers/templating';
 import { getPlace } from 'geo/geo';
 import { getInatTaxonStats, getInatPlaceId } from 'api/inat/inat';
-import inatBoxTemplate from 'ui/screens/common/inat-box-template.html';
-
 import { renderWiki } from 'wikipedia/wiki';
 import { renderWikiModal } from 'wikipedia/wiki-modal';
+
+import inatBoxTemplate from 'ui/screens/common/inat-box-template.html';
 
 export async function renderInatDataBox(parent, item, config, mode) {
 

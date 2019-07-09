@@ -11,8 +11,8 @@ export const renderTaxaBox = async (parent, taxaBoxArgs) => {
     const { item, familyName, familyVernacularName } = taxaBoxArgs;
 
     const options = [
-        { name: traitTypes.enums.name.RANK, formatter: trait => `UK # ${trait.value}` },
-        { name: traitTypes.enums.name.HOW_EDIBLE, formatter: trait => trait.value }
+        { name: traitTypes.enums.name.RANK, formatter: trait => `UK # ${trait[0]}` },
+        { name: traitTypes.enums.name.HOW_EDIBLE, formatter: trait => trait[0] }
     ];
 
     let trait = itemProperties.getActiveTrait(item, options);

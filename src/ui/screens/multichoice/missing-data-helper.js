@@ -111,13 +111,13 @@ export const rebindLayoutState = (layout, item) => {
     actions.boundNextLayout(nextLayout);
 };
 
-export const getPoolItems = collection => {
+export const getPoolItems = async collection => {
 
   const item = collection.items.find(i => i.name === collection.nextItem.name);
 
   const rank = matchTaxon(item.taxonomy, iconicTaxa).value;
 
-  let taxonicMatches = firestore.getSpeciesByTaxonKey(item.taxonomy);
+  let taxonicMatches = await firestore.getSpeciesByIconicTaxon(item, false); // islichen
 
   if(rank === 'fungi') {
       const isLichen = item.lichen;

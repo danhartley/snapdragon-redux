@@ -44,11 +44,29 @@ async function getItems(collection, config) {
     }
     else if(collection.behaviour === 'static') {
 
-        const items = firestore.getSpeciesFromList(collection.itemNames);
+        // const items = firestore.getSpeciesFromList(collection.itemNames);
 
-        return new Promise(resolve => {
-            resolve(items);
-        });
+        const loadSpeciesInParallel = async itemNames => {
+            try {
+                return Promise.all(itemNames.map(name => {                    
+                    return firestore.getSpeciesByName(name).then(async item => {
+                        return await {                         
+                            ...item
+                        }
+                    })                    
+                }));
+    
+            } catch (error) {
+                console.log(`${item} problem!!! For ${name}`)
+                console.error(error);
+            }
+        };
+
+        return loadSpeciesInParallel(collection.itemNames);
+
+        // return new Promise(resolve => {
+        //     resolve(items);
+        // });
     }
 };
 
@@ -101,7 +119,7 @@ export const collectionHandler = async (collections, collection, config, counter
                 
                 item.name = names.slice(0,2).join(' ');
 
-                item.family = firestore.getItemTaxonByName(item, enums.taxon.FAMILY) || null;
+                item.family = firestore.getItemTaxonByName(item, enums.taxon.FAMILY) || { names: [ item.taxonomy.family ]};
                 item.order = firestore.getItemTaxonByName(item, enums.taxon.ORDER);
 
                 // add iconic taxon
