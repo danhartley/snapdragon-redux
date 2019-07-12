@@ -42,8 +42,7 @@ export const renderMixedSpecimenImages = (...args) => {
 
     const renderSpecimenImages = async () => {
  
-        // const mixedItems = preselectedItems || getPoolItems(collection);
-        const mixedItems = await getPoolItems(collection);
+        const mixedItems = preselectedItems || await getPoolItems(collection);
 
         mixedItems.map(item => item.images.map(image => {
             return image.url = scaleImage(image, imageUseCases.MIXED_SPECIMENS, config);
@@ -60,12 +59,14 @@ export const renderMixedSpecimenImages = (...args) => {
             }).filter(image => image);
         }).flat();
 
+        parent.innerHTML = '';
+
         renderTemplate({ images }, template.content, parent);
 
         // setTimeout(() => {
             listenersToImageSelection.forEach((listener, index) => {
                 if(index === 0) {
-                    console.log(images);
+                    console.log('Listener images: ', images);
                     listener(images);
                 }
             });

@@ -2,7 +2,7 @@ import * as R from 'ramda';
 
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
-// import * as traitTypes from 'api/traits/trait-types';
+import { getLinkedTaxaTraits } from 'ui/helpers/traits-handler';
 import { renderCard } from 'ui/screens/cards/card';
 import { firestore } from 'api/firebase/firestore';
 
@@ -14,8 +14,8 @@ export const linkedTaxa = (item, config, parent, mode, isInCarousel, collection)
         
         if(!isInCarousel) {            
             const speciesCardLinks = mode === 'MODAL'
-                    ? document.querySelectorAll('#cardModal .js-species-card-link span')
-                    : document.querySelectorAll('.js-species-card-link span');
+                    ? document.querySelectorAll('#cardModal .js-test-card-container-link span')
+                    : document.querySelectorAll('.js-test-card-container-link span');
             
             speciesCardLinks.forEach(async link => {
                 link.addEventListener('click', async event => {
@@ -29,55 +29,38 @@ export const linkedTaxa = (item, config, parent, mode, isInCarousel, collection)
     };
 
     const getLinkedTaxa = async () => {
-        
-        // const types = [];
 
-        // for (var property in traitTypes.enums) {
-        //     types.push(traitTypes.enums[property]);
-        // }
-    
-        const getVernacularName = async symbiont => {
-            const item = await firestore.getSpeciesByName(symbiont);
-            if(!item) return { name: symbiont, display: symbiont };
+        const addVernacularName = async taxonName => {
+            const item = await firestore.getSpeciesByName(taxonName);
+            if(!item) return { name: taxonName, display: taxonName, isSpecies: false };
             const vernacularName = itemProperties.getVernacularName(item, config);
-            return vernacularName ? { name: symbiont, display: vernacularName } : { name: symbiont, display: symbiont };
+            return vernacularName ? { name: taxonName, display: taxonName, isSpecies: true } : { name: taxonName, display: taxonName, isSpecies: true };
         };
     
         const setNumberOfRows = config.isLandscapeMode ? 10 : 4;
 
-        const taxaTraits = [];
+        const taxaTraits = getLinkedTaxaTraits(item.traits);
 
-        for (let [key, value] of Object.entries(item.traits)) {
-            if(value.type) {
-                taxaTraits.push({ name: key, value: value.value, type: value.type });
-            } else if(key === 'look-alikes') {
-                taxaTraits.push({ name: key, value: value.values, type: 'lookalike' });
-            } else if(key === 'symbionts') {
-                taxaTraits.push({ name: key, value: value.values, type: 'symbionts' });
-            }
-        }
-
-        const getSymbiosisData = async () => {
+        const getLinkedTaxaDisplayProperties = async () => {
             return Promise.all(taxaTraits.map(trait => {
-                return Promise.all(trait.value.map(async taxon => {
+                return Promise.all(trait.value.map(async taxonName => {
                     return await {
                         as: trait.name,
                         type: trait.type || '---',
-                        symbiont: await getVernacularName(taxon)
+                        symbiont: await addVernacularName(taxonName)
                     };
                 }));
             }));
         };
 
-        let linkedTaxa = await getSymbiosisData();
+        let linkedTaxa = await getLinkedTaxaDisplayProperties();
 
-        linkedTaxa = R.flatten(linkedTaxa.map(st => st)).filter(s=>s !== undefined).filter(taxon => taxon.symbiont.name !== ''); 
+        linkedTaxa = R.flatten(linkedTaxa.map(taxon => taxon)).filter(props => props !== undefined).filter(taxon => taxon.symbiont.name !== ''); 
 
-        const getSpeciesDetails = async () => {
+        const addDisplayRules = async () => {
             for(const trait of linkedTaxa) {
                 try {
-                    const linkedSpecies = await firestore.getSpeciesByName(trait.symbiont.name);
-                    if(linkedSpecies && mode !== 'MODAL') {
+                    if(trait.symbiont.isSpecies && mode !== 'MODAL') {
                         trait.className = 'underline-link';
                         trait.modal = 'modal';
                     } else {
@@ -86,18 +69,18 @@ export const linkedTaxa = (item, config, parent, mode, isInCarousel, collection)
                     }
                 } catch(error) {
                     console.error(error);
-                    console.log(trait);
+                    console.error('Failing geting species details for: ', trait);
                 }
             };
 
             return await linkedTaxa;
         };
 
-        linkedTaxa = await getSpeciesDetails();
+        linkedTaxa = await addDisplayRules();
 
         // add lines to the grid (better than showing nothing)
 
-        while(linkedTaxa.length < setNumberOfRows) {
+        while (linkedTaxa.length < setNumberOfRows) {
             linkedTaxa.push({
                 modal: '',
                 className: '',

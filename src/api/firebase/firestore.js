@@ -32,23 +32,28 @@ const getSpeciesFromCollection = itemName => {
 
 const getSpeciesWhere = async props => {
 
-    const { key, operator, value, limit } = props;
-  
-    let speciesRef;
-    
-    speciesRef = limit
-                    ? db.collection(`species`).where(key, operator, value).limit(limit)
-                    : db.collection(`species`).where(key, operator, value);
-  
-    const querySnapshot = await speciesRef.get();
-    
-    const docs = [];
-  
-    querySnapshot.forEach(doc => {
-      docs.push(doc.data());
-    });
-  
-    return await docs;
+    try {
+        const { key, operator, value, limit } = props;
+
+        let speciesRef;
+
+        speciesRef = limit
+                        ? db.collection(`species`).where(key, operator, value).limit(limit)
+                        : db.collection(`species`).where(key, operator, value);
+
+        const querySnapshot = await speciesRef.get();
+
+        const docs = [];
+
+        querySnapshot.forEach(doc => {
+            docs.push(doc.data());
+        });
+
+        return await docs;
+
+    } catch(error) {
+        console.error('error for ', props.value, ', error: ', error);
+    }
 };
   
 const getSpecies = async props => {
@@ -62,36 +67,45 @@ const getAllSpecies = () => {
 
 const getSpeciesNames = async () => {
 
-    const speciesPropertiesRef = db.collection(`species`).where("collection_property", "==", 'names');
+    try {
+        const speciesPropertiesRef = db.collection(`species`).where("collection_property", "==", 'names');
 
-    const querySnapshot = await speciesPropertiesRef.get();
+        const querySnapshot = await speciesPropertiesRef.get();
+        
+        const docs = [];
     
-    const docs = [];
-  
-    querySnapshot.forEach(doc => {
-      docs.push(doc.data());
-    });
-  
-    return await docs;
+        querySnapshot.forEach(doc => {
+        docs.push(doc.data());
+        });
+    
+        return await docs;
+    } catch(error) {
+        console.error('error for species names', ', error: ', error);
+    }
 };
 
-const getSpeciesByIconicTaxon = async (item, isLichen) => {
+const getSpeciesByIconicTaxon = async (taxon, isLichen, limit = 6) => {
 
-    const rank = matchTaxon(item.taxonomy, iconicTaxa).value;
+    let matches = await getSpecies({ key:'iconicTaxon', operator:'==', value: taxon.value.toLowerCase(), limit });
 
-    let matches = await getSpecies({ key:'iconicTaxon', operator:'==', value: rank, limit: 6 });
-
-    if(item.value === 'fungi') {
+    if(taxon.value.toLowerCase() === 'fungi') {
         matches = isLichen ? matches.filter(match => match.lichen) : matches.filter(match => !match.lichen);
     } 
     return matches;
 };
 
 const getSpeciesByName = async itemName => {
+
+    if(!itemName) return '';
+
     const item = getSpeciesFromCollection(itemName);
+    
     if(item) return new Promise(resolve => resolve(item));
+    
     console.log(`item ${itemName} not found in collection, fetched from cloud`);
+    
     const items = await getSpecies({ key:'name', operator:'==', value:itemName });
+    
     return items[0];
 };
 
@@ -147,12 +161,18 @@ const getTaxonByName = (taxonName) => {
 };
 
 const getAsyncTraitsBySpeciesName = async (name, language) => {
+
+    try {
     
     const languageTraits = db.collection(`traits_${language}`).where("name", "==", name);
   
     const traits = await languageTraits.get();
   
     return await traits;
+    
+    } catch(error) {
+        console.error('error for ', name, ', error: ', error);
+    }
 };
 
 const getTraitsBySpeciesName = async (name, language = 'en') => {
@@ -162,7 +182,6 @@ const getTraitsBySpeciesName = async (name, language = 'en') => {
     let traits;
 
     const querySnapshot = await getAsyncTraitsBySpeciesName(name, language);
-    // const querySnapshot = { docs: [] };
     
     if(querySnapshot.docs.length > 0) {
       querySnapshot.forEach(doc => {

@@ -24,7 +24,7 @@ export const getBirdSong = (item, node, portrait) => {
             }
         };
 
-        const playerId = item.traits.find(trait => trait.name === 'song').value;
+        const playerId = item.traits.song.value[0];
             
         if(playerId) {
             loadPlayer(playerId);

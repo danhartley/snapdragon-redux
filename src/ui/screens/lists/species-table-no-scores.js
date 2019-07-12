@@ -65,7 +65,7 @@ export const buildTable = (collection, config, enums) => {
         } else { item.orderLinkClass = 'js-taxon-card-link'; }
         item.taxonomy = item.taxonomy || { family: '', order: ''}
 
-        if(item.iconicTaxon === 'fungi') {
+        if(item.iconicTaxon.toLowerCase() === 'fungi') {
             item.iconicTaxonIcon = 'hide';
             item.hideFungiIcon = '';
         } else {

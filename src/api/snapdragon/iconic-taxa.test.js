@@ -1,4 +1,4 @@
-import { iconicTaxa, matchTaxon, matchIcon } from 'api/snapdragon/iconic-taxa';
+import { iconicTaxa, matchTaxon, matchIcon, findRankByIconicTaxon } from 'api/snapdragon/iconic-taxa';
 
 test('walk up taxonomic tree of an item until a matching iconic taxon is found', () => {
     let item = { taxonomy: { order: '', class: 'aves' } };
@@ -24,4 +24,18 @@ test('given iconic taxon return appropriate icon class', () => {
     expect(matchIcon(item.taxonomy, iconicTaxa)).toEqual('./icons/mushroom.svg');
     item = { taxonomy: { kingdom: 'plantae' } }; 
     expect(matchIcon(item.taxonomy, iconicTaxa)).toEqual('fas fa-leaf');
+});
+
+test('given taxonomy and rank value, return rank', () => {
+    const taxonomy = {
+        "class": "Aves",
+        "family": "Anatidae",
+        "kingdom": "Animalia",
+        "order": "Anseriformes",
+        "phylum": "Chordata",
+        "genus": "Anas",
+        "species": "platyrhynchos"
+    };
+    const iconicTaxon = 'Aves';
+    expect(findRankByIconicTaxon(taxonomy, iconicTaxon)).toEqual('class');
 });

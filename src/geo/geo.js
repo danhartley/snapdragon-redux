@@ -237,7 +237,7 @@ export function GoogleAutocomplete(place, callback) {
     current_term = place;
     requireNewSession = false; //or on expires/error, get a new one
   } else {
-    console.log(place);
+    console.log('place:', place);
     if(place !== current_term) {
       getPredictions(SESSION_TOKEN);
     }

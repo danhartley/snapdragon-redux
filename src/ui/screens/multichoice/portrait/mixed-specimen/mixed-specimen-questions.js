@@ -4,14 +4,14 @@ import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { itemProperties } from 'ui/helpers/data-checking';
-// import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
-import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-questions-template.html';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import { getPoolItems } from 'ui/screens/multichoice/missing-data-helper';
+
+import mixedSpecimenTemplate from 'ui/screens/multichoice/portrait/mixed-specimen/mixed-specimen-questions-template.html';
 
 export const renderMixedSpecimenQuestions = collection => {
 
@@ -29,7 +29,7 @@ export const renderMixedSpecimenQuestions = collection => {
         return multiImages;
     }
 
-    const items = getPoolItems(collection);
+    const items = getPoolItems(collection); // needs await!!
 
     let images = items.map((item, index) => { 
         return { index: index + 1, srcs: item.images, itemName: item.name };
@@ -42,16 +42,14 @@ export const renderMixedSpecimenQuestions = collection => {
     images = getPortraitImages(images);
 
     let parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question: 'Find the species', help: '(Click on the matching photo.)', term: '' });
-    
-    // const icon = renderIcon(item.taxonomy, document);
-    
+        
     const template = document.createElement('template');
 
     template.innerHTML = mixedSpecimenTemplate;
     
     renderTemplate({}, template.content, parent);
 
-    parent = document.querySelector('.js-species-card-images');
+    parent = document.querySelector('.js-test-card-container-images');
 
     imageSlider({ config, images: utils.shuffleArray(images), parent, disableModal: true, identifier: 'mixed-specimens' });
 

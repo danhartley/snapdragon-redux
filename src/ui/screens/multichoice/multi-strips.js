@@ -26,6 +26,8 @@ export const renderMultiStrips = (collection, bonus) => {
   
     screen = bonus ? bonus.screen || layout.screens[1] : layout.screens[1];
 
+    const defaultQueryLimit = 6, defaultLanguage = 'en';
+
     try {
 
     const render = (questionValue, answers, overrides) => {
@@ -113,37 +115,55 @@ export const renderMultiStrips = (collection, bonus) => {
 
     if(screen.name === 'species-scientifics') {
 
-        let question = item.name;
-        let answers = firestore.getSpeciesByIconicTaxon(taxon, item.lichen);
-            answers = R.take(8, answers).filter(s => s.name !== item.name).map(s => s.name);
-            answers = R.take(5, answers);
-            answers.push(item.name);
-            answers = utils.shuffleArray(answers);
-            
-        const help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
+        const renderBinomialQuestions = async () => {
 
-        render(question, answers, { binomial: 'Latin name', question: 'What is the latin name?', help, italicise: true });
+            let question, answers, help;
+
+            const buildQuestion = async () => {
+
+                question = item.name;
+                answers = await firestore.getSpeciesByIconicTaxon(taxon, item.lichen, limit);
+                answers = R.take(8, answers).filter(s => s.name !== item.name).map(s => s.name);
+                answers = R.take(5, answers);
+                answers.push(item.name);
+                answers = utils.shuffleArray(answers);
+                
+                help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
+            }
+
+            await buildQuestion();
+
+            render(question, answers, { binomial: 'Latin name', question: 'What is the latin name?', help, italicise: true });
+        };
+
+        renderBinomialQuestions();
     }
 
     if(screen.name === 'species-vernaculars') {
 
-        let question = item.vernacularName;   
-        let filteredAnswers = firestore.getSpeciesByIconicTaxon(taxon, item.lichen);
-            filteredAnswers = R.take(8, filteredAnswers).filter(s => !R.contains(item.vernacularName.toLowerCase(), s.names.map(n => n.vernacularName.toLowerCase())));
-        let answers = filteredAnswers.map(s => s.names.filter(n => n.language === config.language)).filter(a => a.length > 0);
-            const missingAnswers = 8 - answers.length;
-            if(missingAnswers > 0 && config.language !== 'en') {
-                const englishAnswers = R.take(missingAnswers, filteredAnswers.map(s => s.names.filter(n => n.language === 'en')));
-                answers = [ ...answers, ...englishAnswers ];
-            }
-            answers = answers.filter(a => a.length).map(answer => utils.capitaliseAll(answer[0].vernacularName));
-            answers = R.take(5, answers);
-            answers.push(utils.capitaliseAll(item.vernacularName));
-            answers = utils.shuffleArray(answers);
+        const renderVernacularQuestions = async () => {
 
-        const help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
+            let question, answers, help;
 
-        render(question, answers, { vernacularName: 'Common name', question: 'What is the common name?', help });
+            const buildQuestion = async () => {
+
+                question = item.vernacularName;   
+                answers = await firestore.getSpeciesByIconicTaxon(taxon, item.lichen, defaultQueryLimit)
+                            
+                answers = answers.filter(i => i.name !== item.name).map(i => itemProperties.getVernacularName(i, defaultLanguage));
+                answers = R.take(defaultQueryLimit - 1, answers);
+
+                answers.push(item.vernacularName);
+        
+                help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
+            };
+
+            await buildQuestion();
+
+            render(question, answers, { vernacularName: 'Common name', question: 'What is the common name?', help });
+        };
+
+        renderVernacularQuestions();
     }
 
     if(screen.name === 'family-strips') {
@@ -209,13 +229,13 @@ export const renderMultiStrips = (collection, bonus) => {
             case 0:
                 question = commonFamilyName;
                 answers = utils.shuffleArray([commonFamilyName, ...otherFamiliesCommonNames]);
-                if(question === undefined) console.log(item.name);
+                if(question === undefined) console.log('Missing question - case 0 - in multi-strips for: ', item.name);
                 render(question, answers, { question: 'Match family name' });
             break;
             case 1:
                 question = family;
                 answers = utils.shuffleArray([family, ...otherFamiliesLatinNames]);
-                if(question === undefined) console.log(item.name);
+                if(question === undefined) console.log('Missing question - case 1 - in multi-strips for: ', item.name);
                 render(question, answers, { question: 'Match family name', italicise: true });
             break;
         } 
@@ -242,7 +262,7 @@ export const renderMultiStrips = (collection, bonus) => {
     }
 } catch(e) {
 
-    console.log('bugged out on strips');
+    console.error('Crashed out somwhere on multi-strips with this error: ', e);
     
     rebindLayoutState(layout, item);
 

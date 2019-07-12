@@ -39,18 +39,28 @@ export const renderMixedSpecimenQuestion = (...args) => {
 
     renderTemplate({ instructions, binomial }, template.content, parent);
 
-    const uniqueImages = [];
+    let uniqueImages = [];
 
     const listenToImageChangeHandler = async images => {        
-        const speciesList = document.querySelector('.js-images-names-txt');
-        speciesList.innerHTML = "";
-        const unorderedImages = utils.shuffleArray(images);
-        unorderedImages.forEach(async image => {            
+
+        let speciesList, unorderedImages;
+
+        unorderedImages = utils.shuffleArray(images);
+
+        unorderedImages.forEach(async (image, index) => {
+
+            if(index === 0) {
+                speciesList = document.querySelector('.js-images-names-txt');
+                speciesList.innerHTML = "";
+                uniqueImages = [];          
+            }
+
             const imageItem = await firestore.getSpeciesByName(image.itemName);
             const vernacularName = itemProperties.getVernacularName(imageItem, config);
             const taxonIcon = returnIcon(imageItem);
+            
             if(!R.contains(image.itemName, uniqueImages)) {
-                speciesList.innerHTML +=  `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;
+                speciesList.innerHTML += `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;
                 uniqueImages.push(image.itemName);
             }
         });
@@ -67,8 +77,6 @@ export const renderMixedSpecimenQuestion = (...args) => {
         continueLessonBtn.disabled = false;
         pendingScore.score = score;
         pendingScore.scoreUpdateTimer = scoreUpdateTimer;
-
-        // score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
     });
 
     continueLessonBtn.addEventListener('click', () => {

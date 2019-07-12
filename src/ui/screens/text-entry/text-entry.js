@@ -117,7 +117,7 @@ const renderPortrait = (item, config) => {
     
     const images = prepImagesForCarousel(item, config, imageUseCases.TEXT_ENTRY);
 
-    const parent = document.querySelector('.js-species-card-images');
+    const parent = document.querySelector('.js-test-card-container-images');
 
     imageSlider({ config, images, parent, disableModal: true });
 };

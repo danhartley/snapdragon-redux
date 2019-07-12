@@ -71,7 +71,7 @@ setTimeout( () => {
     async function getHelloWorld() {
         const url = `https://us-central1-snapdragon-api.cloudfunctions.net/function-1`;
         const result = await fetch(url);
-        console.log(result);    
+        // console.log(result);    
     }
 
     getHelloWorld();

@@ -1,4 +1,4 @@
-import * as R from 'ramda';
+import { hasTraitPropeties } from 'ui/helpers/traits-handler';
 
 import { renderTemplate } from 'ui/helpers/templating';
 import infoSliderTemplate from 'ui/screens/common/info-slider-template.html';
@@ -34,7 +34,7 @@ export const taxonInfoSlider = (traits, parent, mode) => {
 
 export const infoSlider = (item, family, parent, mode) => {
 
-    if(item.traits.length === 0) return;
+    if(!hasTraitPropeties(item.traits)) return;
 
     const exclude = [ 'song', 'UK Rank' ];
 
@@ -57,11 +57,11 @@ export const infoSlider = (item, family, parent, mode) => {
 
     const traits = [];
 
-    for (let [key, value] of Object.entries(item.traits)) {
+    for (let [key, obj] of Object.entries(item.traits)) {
         if(key !== 'name') {
-            value.value
-                ? traits.push({ name: key, value: value.value })
-                : traits.push({ name: key, value: value.values })
+            obj.value
+                ? traits.push({ name: key, value: obj.value })
+                : traits.push({ name: key, value: obj.values })
         }
     }
     

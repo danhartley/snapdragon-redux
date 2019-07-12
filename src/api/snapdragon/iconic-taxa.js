@@ -39,6 +39,10 @@ export const matchTaxon = (taxonomy, iconicTaxa) => {
     return taxon;
 };
 
+export const findRankByIconicTaxon = (taxonomy, iconicTaxon) => {
+    return Object.keys(taxonomy).find(key => taxonomy[key] === iconicTaxon);
+};
+
 export const matchIcon = (taxonomy, iconicTaxa) => {
     if(!taxonomy) return '';
     const rank = matchTaxon(taxonomy, iconicTaxa).value;

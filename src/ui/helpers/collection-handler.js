@@ -44,8 +44,6 @@ async function getItems(collection, config) {
     }
     else if(collection.behaviour === 'static') {
 
-        // const items = firestore.getSpeciesFromList(collection.itemNames);
-
         const loadSpeciesInParallel = async itemNames => {
             try {
                 return Promise.all(itemNames.map(name => {                    
@@ -63,10 +61,6 @@ async function getItems(collection, config) {
         };
 
         return loadSpeciesInParallel(collection.itemNames);
-
-        // return new Promise(resolve => {
-        //     resolve(items);
-        // });
     }
 };
 
@@ -119,6 +113,8 @@ export const collectionHandler = async (collections, collection, config, counter
                 
                 item.name = names.slice(0,2).join(' ');
 
+                // make await
+
                 item.family = firestore.getItemTaxonByName(item, enums.taxon.FAMILY) || { names: [ item.taxonomy.family ]};
                 item.order = firestore.getItemTaxonByName(item, enums.taxon.ORDER);
 
@@ -135,7 +131,7 @@ export const collectionHandler = async (collections, collection, config, counter
                 );
             };
 
-            const items = await loadTraitsInParallel(collection.items); // force wait till ready
+            await loadTraitsInParallel(collection.items);
 
             collection.itemIndex = 0;
 

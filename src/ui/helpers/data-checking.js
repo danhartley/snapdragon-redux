@@ -27,7 +27,7 @@ const getVernacularName = (item, config, useShortForm = false, namePart = 'verna
         }
         return capitalisedName;
     } catch(e) {
-        console.log(item);
+        console.error('Failing getting vernacular name for: ', item);
         return '';
     }
 };
@@ -99,9 +99,9 @@ const getTrait = (item, name, formatter) => {
 
     let trait;
 
-    for (let [key, value] of Object.entries(item.traits)) {
+    for (let [key, obj] of Object.entries(item.traits)) {
         if(key === name) {
-            trait = value.value;
+            trait = obj.value;
         }
     }
 
@@ -142,7 +142,7 @@ const getVernacularNames = (item, config) => {
         const names = item.names.filter(name => name.language === config.language).map(name => utils.capitaliseFirst(name.vernacularName));
         return names;
     } catch(e) {
-        console.log(item);
+        console.error('Failing getting vernacular names for: ', item);
         return '';
     }
 };
@@ -151,16 +151,6 @@ const answersFromList = (list, toInclude, number) => {
     const answers = R.take(number - 1, list.filter(item => item !== toInclude));
     answers.push(toInclude);
     return utils.shuffleArray(answers);
-};
-
-const itemContextProperty = (traits, item, propertyName) => {
-    const trait = traits.find(trait => trait.name === item.name);
-    if(!trait)return [];
-    let property = trait.traits.find(c => c.name === propertyName);
-    if(!property && trait.context) property = trait.context.find(c => c.name === propertyName);
-    if(!property) return [];
-
-    return property.values || property.value;
 };
 
 const statsReducer = function(obj,elem){
@@ -172,6 +162,19 @@ const statsReducer = function(obj,elem){
 const getFamilyStats = items => {
     return items.map(item => item.taxonomy.family).reduce(statsReducer,{});
 }
+
+const getCommonFamilyNames = (family, config) => {
+
+    const familyVernacularNames = family.name 
+            ? family.names.find(props => props.language === config.language).names
+            : family.names;
+    
+    return familyVernacularNames;
+};
+
+const getVernacularFamilyName = (family, config) => {
+    return getCommonFamilyNames(family, config)[0];
+};
 
 export const itemProperties = {
     getVernacularName,
@@ -185,8 +188,9 @@ export const itemProperties = {
     getTrait,
     getActiveTrait,
     vernacularNamesForItems,
-    itemContextProperty,
     getVernacularNames,
     answersFromList,
-    getFamilyStats
+    getFamilyStats,
+    getCommonFamilyNames,
+    getVernacularFamilyName
 };

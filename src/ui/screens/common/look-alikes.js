@@ -7,26 +7,14 @@ import { imageSideBySlider } from 'ui/screens/common/image-slider';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import { lookalikeDescriptions } from 'api/snapdragon/look-alike-descriptions';
 import { firestore } from 'api/firebase/firestore';
+import { getLookalikeTraitProperties } from 'ui/helpers/traits-handler';
 
 import audioMediaTemplate from 'ui/screens/common/audio-media-template.html';
 import visualComparisonTemplate from 'ui/screens/common/look-alikes-link-template.html';
 
-const getTraitProperties = item => {
-    const values = [];
-    for (let [key, value] of Object.entries(item.traits)) {
-        if(key === 'look-alikes') values.push({key,value});
-    }
-    let properties = null;
-    if(values.length > 0) {
-        properties = values[0].value.values;
-        properties.push(item.name);
-    }
-    return properties.filter(property => property !== '');
-};
-
 export const lookalikeSpecies = (item, config, rootNode = document) => {
     
-    const lookalikes = getTraitProperties(item);
+    const lookalikes = getLookalikeTraitProperties(item);
 
     if(lookalikes) {
 
@@ -40,21 +28,31 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
 
         async function renderLookalikes() {
 
-            for(const lookalike of lookalikes) {
-                const lookalikeItem = await firestore.getSpeciesByName(lookalike);
-                if(!lookalikeItem) return;
-                lookalikeItem.vernacularName = itemProperties.getVernacularName(lookalikeItem, config);
-                names.push(lookalikeItem.vernacularName);
-                scientificNames.push(lookalikeItem.name);
-                const images = lookalikeItem.images.map((img, index) => { 
-                    return { 
-                            index: index + 1, 
-                            src: { ...img, url: scaleImage({ url: img.url }, imageUseCases.CAROUSEL, config) },
-                            itemName: lookalikeItem.name, 
-                            itemCommon: lookalikeItem.vernacularName };
-                } );
-                slides.push({ id: lookalikeItem.name, images });
+            const readyLookalikesForRendering = async () => {
+                
+                for (const lookalike of lookalikes) {
+
+                    const lookalikeItem = await firestore.getSpeciesByName(lookalike);
+                    
+                    if(!lookalikeItem) return;
+                    
+                    lookalikeItem.vernacularName = itemProperties.getVernacularName(lookalikeItem, config);
+                    names.push(lookalikeItem.vernacularName);
+                    scientificNames.push(lookalikeItem.name);
+    
+                    const images = lookalikeItem.images.map((img, index) => { 
+                        return { 
+                                index: index + 1, 
+                                src: { ...img, url: scaleImage({ url: img.url }, imageUseCases.CAROUSEL, config) },
+                                itemName: lookalikeItem.name, 
+                                itemCommon: lookalikeItem.vernacularName };
+                    });
+    
+                    slides.push({ id: lookalikeItem.name, images });
+                };
             };
+
+            await readyLookalikesForRendering();
 
             renderTemplate({slides, names: names.join(', ')}, matchTemplate.content, lookalikeParent);
 

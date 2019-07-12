@@ -7,56 +7,81 @@ import { getBirdSong } from 'xeno-canto/birdsong';
 import { lookalikeSpecies } from 'ui/screens/common/look-alikes';
 import { linkedTaxa } from 'ui/screens/common/linked-taxa';
 import { infoSlider } from 'ui/screens/common/info-slider';
-import { iconicTaxa, matchTaxon } from 'api/snapdragon/iconic-taxa';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import { renderInatDataBox } from 'ui/screens/common/inat-box';
 import { renderCalendar } from 'ui/screens/common/calendar';
 import { renderTaxaBox } from 'ui/screens/common/taxa-box';
 import { renderBadge } from 'ui/screens/common/badge';
+import { enums } from 'ui/helpers/enum-helper';
 
 import cardTemplate from 'ui/screens/cards/card-template.html';
+import { firestore } from 'api/firebase/firestore';
 
 export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, isInCarousel = true) => {
 
-    const item = selectedItem || collection.nextItem;
+    const { layout, config } = store.getState();
 
-    const { layout, config, enums } = store.getState();
+    let item;
 
-    let rootNode;
+    const init = async () => {
 
-    switch(mode) {
-        case 'STAND_ALONE':
-            rootNode = document.querySelector('.right-body');
-            break;
-        case 'SWAP_OUT':
-            rootNode = document.querySelector('.js-species-container');
-            break;
-        case 'MODAL':
-            rootNode = document.querySelector('#cardModal');
-            break;
-    }
+        const getItemWithProps = async item => {
+            
+            const getItem = async item => {
+                return item.family
+                            ? new Promise(resolve => resolve(item))
+                            : await firestore.getSpeciesByName(item.name);
+            };
 
-    if(mode === 'STAND-ALONE') {        
-        const screen = layout.screens.filter(el => el.name === 'species-card')[0];
-        if(!screen) return;
-    }
+            const itemWithProps = await getItem(item);
 
-    const prev = document.querySelector('#cardModal .js-prev');
-    const next = document.querySelector('#cardModal .js-next');
+            itemWithProps.family = firestore.getItemTaxonByName(itemWithProps, enums.taxon.FAMILY) || { names: [ itemWithProps.taxonomy.family ]};
+            itemWithProps.order = firestore.getItemTaxonByName(itemWithProps, enums.taxon.ORDER);
+            itemWithProps.traits = await firestore.getTraitsBySpeciesName(item.name);
 
-    if(prev) isInCarousel ? prev.classList.remove('hide-important') : prev.classList.add('hide-important');
-    if(next) isInCarousel ? next.classList.remove('hide-important') : next.classList.add('hide-important');
+            return itemWithProps;
+        };
     
-    const template = document.createElement('template');
+        item = selectedItem ? await getItemWithProps(selectedItem) : collection.nextItem;
 
-    template.innerHTML = cardTemplate;
+        let rootNode;
+    
+        switch(mode) {
+            case 'STAND_ALONE':
+                rootNode = document.querySelector('.right-body');
+                break;
+            case 'SWAP_OUT':
+                rootNode = document.querySelector('.js-species-container');
+                break;
+            case 'MODAL':
+                rootNode = document.querySelector('#cardModal');
+                break;
+        }
+    
+        if(mode === 'STAND-ALONE') {        
+            const screen = layout.screens.filter(el => el.name === 'species-card')[0];
+            if(!screen) return;
+        }
+    
+        const prev = document.querySelector('#cardModal .js-prev');
+        const next = document.querySelector('#cardModal .js-next');
+    
+        if(prev) isInCarousel ? prev.classList.remove('hide-important') : prev.classList.add('hide-important');
+        if(next) isInCarousel ? next.classList.remove('hide-important') : next.classList.add('hide-important');
+        
+        const template = document.createElement('template');
+    
+        template.innerHTML = cardTemplate;
+    
+        renderCommonParts(template, config, item, collection, mode, parent, rootNode, isInCarousel);
+    
+        config.isPortraitMode
+            ? renderPortrait(item, config, mode, rootNode)
+            : renderLandscape(item, config, mode, rootNode);
+    };
 
-    renderCommonParts(template, config, item, collection, mode, parent, rootNode, isInCarousel);
-
-    config.isPortraitMode
-        ? renderPortrait(item, config, mode, rootNode)
-        : renderLandscape(item, config, mode, rootNode);
+    init();
 };
 
 const renderLandscape = (item, config, mode, rootNode) => {
@@ -76,7 +101,7 @@ const renderPortrait = (item, config, mode, rootNode) => {
 
     const images = prepImagesForCarousel(item, config, imageUseCases.SPECIES_CARD);
 
-    const parent = rootNode.querySelector('.js-species-card-images');
+    const parent = rootNode.querySelector('.js-test-card-container-images');
 
     imageSlider({ config, images, parent, disableModal: mode === 'MODAL', parentScreen: rootNode.querySelector('.card-card'), identifier: 'card-card' });
 
@@ -108,8 +133,7 @@ const renderCommonParts = (template, config, item, collection, mode, parent, roo
 
     const name = item.name;
           item.vernacularName = item.vernacularName || itemProperties.getVernacularName(item, config);
-    const familyVernacularNames = item.family.names.find(props => props.language === config.language).names;
-    const familyVernacularName = familyVernacularNames ? familyVernacularNames[0] : '';
+    const familyVernacularName = itemProperties.getVernacularFamilyName(item.family, config);
         
     const headerImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
     

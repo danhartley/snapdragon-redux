@@ -15,7 +15,7 @@ export const getDefinitionTests = item => {
 
     const definition = definitions[0];
 
-    const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(definitions)).filter(d => d.term !== definition.term)).map(d => d.definition);
+    const alternatives = R.take(number-1, R.take(number, utils.shuffleArray(definitions)).filter(d => d.term.toLowerCase() !== definition.term.toLowerCase())).map(d => utils.capitaliseFirst(d.definition));
     
     const question = definition.definition;
     const answers = utils.shuffleArray([question, ...alternatives]);

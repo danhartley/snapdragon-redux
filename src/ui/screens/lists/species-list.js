@@ -84,7 +84,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
         setTimeout(() => {
             
-            const speciesCardLinks = document.querySelectorAll('.js-species-card-link span');
+            const speciesCardLinks = document.querySelectorAll('.js-test-card-container-link span');
             speciesCardLinks.forEach((link, index) => {                
                 link.addEventListener('click', event => {                    
                     const name = event.target.dataset.name;
