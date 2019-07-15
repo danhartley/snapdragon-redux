@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import { utils } from 'utils/utils';
 
-export const getTrait = (traits, traitsToIgnore) => {    
+export const getRandomTrait = (traits, traitsToIgnore) => {    
 
     const allowedTraits = {};
 
@@ -132,9 +132,9 @@ export const getLinkedTaxaTraits = traits => {
         if(obj.type) {
             taxaTraits.push({ name: key, value: obj.value, type: obj.type });
         } else if(key === 'look-alikes') {
-            taxaTraits.push({ name: key, value: obj.values, type: 'lookalike' });
+            taxaTraits.push({ name: key, value: obj.value, type: 'lookalike' });
         } else if(key === 'symbionts') {
-            taxaTraits.push({ name: key, value: obj.values, type: 'symbionts' });
+            taxaTraits.push({ name: key, value: obj.value, type: 'symbionts' });
         }
     }
 
@@ -145,7 +145,7 @@ export const getLookalikeTraitProperties = item => {
     const traits = [];
     for (let [key, obj] of Object.entries(item.traits)) {
         if(key === 'look-alikes') {
-            const lookalikes = obj.values.filter(value => value !== '');
+            const lookalikes = obj.value.filter(value => value !== '');
             if(lookalikes.length > 0) {
                 traits.push({key,obj})
             }
@@ -153,8 +153,27 @@ export const getLookalikeTraitProperties = item => {
     }
     let properties = null;
     if(traits.length > 0) {
-        properties = R.clone(traits[0].obj.values);
+        properties = R.clone(traits[0].obj.value);
         properties.push(item.name);
     }
     return properties ? properties.filter(property => property !== '') : null;
+};
+
+export const getTraitsToExclude = () => {
+    return [ 'song', 'look-alikes', 'symbionts', 'voice', 'pollination', 'name' ];
+};
+
+export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude) => {
+
+    if(!hasTraitPropeties(traits)) return {};
+    
+    const includedTraits = [];
+
+    for (let [key, obj] of Object.entries(traits)) {
+        if(!R.contains(key, traitsToExclude)) {
+            includedTraits.push({ name: key, value: obj.value });
+        }
+    }
+    
+    return includedTraits;
 };

@@ -12402,5 +12402,188 @@ export const plants = [
     "family": "Lamiaceae"
   },
   "family": "Lamiaceae"
+},
+{
+  "id": 582422,
+  "name": "Oxalis pes-caprae",
+  "images": [
+    {
+      "title": "African Wood-sorrel",
+      "rightsHolder": "Katja Schulz",
+      "source": "https://www.flickr.com/photos/treegrow/8566229624/",
+      "license": "http://creativecommons.org/licenses/by/2.0/",
+      "url": "81/64/ef/542.8566229624.jpg",
+      
+      "photographer": {
+        "full_name": "<a href='http://www.flickr.com/photos/86548370@N00'>Katja Schulz</a>",
+        "homepage": "http://www.flickr.com/photos/86548370@N00",
+        "role": "photographer"
+      }
+    },
+    {
+      "title": "Zoo19feb (9).JPG",
+      "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+      "source": "https://commons.wikimedia.org/wiki/File:Zoo19feb_(9).JPG",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "56/9f/66/509.1697511.jpg",
+      
+    },
+    {
+      "title": "Trevo-2007-1.JPG",
+      "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+      "source": "https://commons.wikimedia.org/wiki/File:Trevo-2007-1.JPG",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "57/29/02/509.1942955.jpg",
+      
+    },
+    {
+      "title": "Yellow (6952156581).jpg",
+      "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+      "source": "https://commons.wikimedia.org/wiki/File:Yellow_(6952156581).jpg",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "57/84/6a/509.21113187.jpg",
+      
+    },
+    {
+      "title": "Oxalis-pes-caprae010d.jpg",
+      "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+      "source": "https://commons.wikimedia.org/wiki/File:Oxalis-pes-caprae010d.jpg",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "57/ab/e5/509.22004646.jpg",
+      
+    },
+    {
+      "title": "Klee.JPG",
+      "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+      "source": "https://commons.wikimedia.org/wiki/File:Klee.JPG",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "58/b5/07/509.26485802.jpg",
+      
+    },
+    {
+      "title": "File:Trevos em GuimarÃ£es.jpg",
+      "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+      "source": "https://commons.wikimedia.org/wiki/File:Trevos_em_Guimar%C3%A3es.jpg",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "5a/38/68/509.10241122.jpg",
+      
+    },
+    {
+      "title": "PikiWiki Israel 20012 Plants of Israel.jpg",
+      "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+      "source": "https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_20012_Plants_of_Israel.jpg",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "5c/37/31/509.19694563.jpg",
+      
+    },
+    {
+      "title": "Malta - Qrendi - Misrah tal-Maqluba - Il-Maqluba - Oxalis pes-caprae 01 ies.jpg",
+      "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+      "source": "https://commons.wikimedia.org/wiki/File:Malta_-_Qrendi_-_Misrah_tal-Maqluba_-_Il-Maqluba_-_Oxalis_pes-caprae_01_ies.jpg",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "5f/5f/e2/509.35687495.jpg",
+      
+    },
+    {
+      "title": "OxalisPesCaprae (34).JPG",
+      "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+      "source": "https://commons.wikimedia.org/wiki/File:OxalisPesCaprae_(34).JPG",
+      "license": "http://creativecommons.org/licenses/by/3.0/",
+      "url": "5f/8c/7e/509.3695019.jpg",
+      
+    },
+    {
+      "title": "OxalisPesCapraeAlgarve.jpg",
+      "rightsHolder": "licensed media from Wikimedia Commons in DwCA without owner",
+      "source": "https://commons.wikimedia.org/wiki/File:OxalisPesCapraeAlgarve.jpg",
+      "license": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "url": "5f/f7/79/509.38709337.jpg",
+      
+    }
+  ],
+  "names": [
+    {
+      "vernacularName": "Bermuda Buttercup",
+      "language": "en"
+    },
+    {
+      "vernacularName": "African wood-sorrel",
+      "language": "en"
+    },
+    {
+      "vernacularName": "Bermuda sorrel",
+      "language": "en"
+    },
+    {
+      "vernacularName": "Sourgrass",
+      "language": "en"
+    },
+    {
+      "vernacularName": "Soursob",
+      "language": "en"
+    },
+    {
+      "vernacularName": "yellow sourgrass",
+      "language": "en"
+    },
+    {
+      "vernacularName": "buttercup oxalis",
+      "language": "en"
+    },
+    {
+      "vernacularName": "Cape sorrel",
+      "language": "en"
+    },
+    {
+      "vernacularName": "Oxalis des Bermudes",
+      "language": "fr"
+    },
+    {
+      "vernacularName": "Oxalis pied de chèvre",
+      "language": "fr"
+    },
+    {
+      "vernacularName": "Nickende Sauerklee",
+      "language": "de"
+    },
+    {
+      "vernacularName": "agrios",
+      "language": "es"
+    },
+    {
+      "vernacularName": "erva-canária",
+      "language": "pt"
+    },
+    {
+      "vernacularName": "erva-azeda-amarela",
+      "language": "pt"
+    },
+    {
+      "vernacularName": "trevo-azedo",
+      "language": "pt"
+    },
+    {
+      "vernacularName": "chucha-meles",
+      "language": "pt"
+    },
+    {
+      "vernacularName": "Niedriger Sauerklee",
+      "language": "de"
+    },
+    {
+      "vernacularName": "English weed",
+      "language": "en"
+    }
+  ],
+  "taxonomy": {
+    "kingdom": "Plantae",
+    "phylum": "Tracheophyta",
+    "class": "Magnoliopsida",
+    "order": "Oxalidales",
+    "family": "Oxalidaceae"
+  },
+  "family": "Oxalidaceae",
+  "kingdom": "Plantae",
+  "eolName": "Oxalis pes-caprae L."
 }
 ];

@@ -1,4 +1,4 @@
-import { hasTraitPropeties } from 'ui/helpers/traits-handler';
+import { hasTraitPropeties, getTraitsToExclude, convertTraitsToNameValuePairsArray } from 'ui/helpers/traits-handler';
 
 import { renderTemplate } from 'ui/helpers/templating';
 import infoSliderTemplate from 'ui/screens/common/info-slider-template.html';
@@ -29,18 +29,21 @@ export const taxonInfoSlider = (traits, parent, mode) => {
 
     const id = mode === 'MODAL' ? 'taxon_1' : 'taxon_0';
 
-    renderInfoSlider(traits, parent, id);
+    const convertedTraits = convertTraitsToNameValuePairsArray(traits, getTraitsToExclude());
+
+    renderInfoSlider(convertedTraits, parent, id);
 };
 
 export const infoSlider = (item, family, parent, mode) => {
-
+    
     if(!hasTraitPropeties(item.traits)) return;
 
-    const exclude = [ 'song', 'UK Rank' ];
-
+    const traits = convertTraitsToNameValuePairsArray(item.traits, getTraitsToExclude());
+    
+    if(traits.length === 0) return;
     // const speciesTraits = item.traits;
 
-    // const speciesTraits = item.traits.filter(trait => !R.contains(trait.name, exclude));
+    // const speciesTraits = item.traits.filter(trait => !R.contains(trait.name, traitsToExclude));getTraitsToExclude();
 
     // if(speciesTraits.length === 0) return;
 
@@ -50,20 +53,20 @@ export const infoSlider = (item, family, parent, mode) => {
     // if(!species.traits) return;
 
     // species.traits.forEach(trait => {
-    //     if(!trait.value && trait.values) {
-    //         trait.value = trait.values.join(', ');
+    //     if(!trait.value && trait.value) {
+    //         trait.value = trait.value.join(', ');
     //     }
     // });
 
-    const traits = [];
+    // const traits = [];
 
-    for (let [key, obj] of Object.entries(item.traits)) {
-        if(key !== 'name') {
-            obj.value
-                ? traits.push({ name: key, value: obj.value })
-                : traits.push({ name: key, value: obj.values })
-        }
-    }
+    // for (let [key, obj] of Object.entries(item.traits)) {
+    //     if(key !== 'name') {
+    //         obj.value
+    //             ? traits.push({ name: key, value: obj.value })
+    //             : traits.push({ name: key, value: obj.value })
+    //     }
+    // }
     
     const id = mode === 'MODAL' ? 1 : 0;
 

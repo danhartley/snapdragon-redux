@@ -134,16 +134,16 @@ export const getPoolItems = async collection => {
   if(speciesInSameTaxon) {
     speciesPool = speciesInSameTaxon;  
   }
-  else {
-    const kingdomItems = firestore.getSpeciesByRank('kingdom', item.taxonomy.kingdom);
-    const speciesInSameKingdom = utils.shuffleArray(kingdomItems.filter(ci => ci.name !== item.name));
-    if(speciesInSameKingdom) {
-      speciesPool = speciesInSameKingdom;
-    } else {
-      const species = firestore.getAllSpecies();
-      speciesPool = utils.shuffleArray(species.filter(ci => ci.name !== item));
-    }
-  }
+  // else {
+  //   const kingdomItems = firestore.getSpeciesByRank('kingdom', item.taxonomy.kingdom);
+  //   const speciesInSameKingdom = utils.shuffleArray(kingdomItems.filter(ci => ci.name !== item.name));
+  //   if(speciesInSameKingdom) {
+  //     speciesPool = speciesInSameKingdom;
+  //   } else {
+  //     const species = firestore.getAllSpecies();
+  //     speciesPool = utils.shuffleArray(species.filter(ci => ci.name !== item));
+  //   }
+  // }
 
   const items = R.take(5, speciesPool);
   

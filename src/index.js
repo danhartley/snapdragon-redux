@@ -46,7 +46,7 @@ setTimeout( () => {
         subscription.add(renderHeaders, 'page', 'flow');
         subscription.add(renderNavigation, 'page', 'flow');
         subscription.add(renderHome, 'counter', 'flow');
-        subscription.add(renderSpeciesGrid, 'counter', 'flow');
+        // subscription.add(renderSpeciesGrid, 'counter', 'flow');
         subscription.add(nextLesson, 'counter', 'flow');
         subscription.add(nextLayout, 'counter', 'flow');
         subscription.add(nextItem, 'layout', 'flow');
@@ -74,7 +74,7 @@ setTimeout( () => {
         // console.log(result);    
     }
 
-    getHelloWorld();
+    // getHelloWorld();
 
     // '### FIREBASE API KEY ###'
     // const apiKey = 'AIzaSyBVLz0wVrYZ9JhJMobCFgSB-Edh6EnP0Yk';

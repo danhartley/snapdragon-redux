@@ -1,14 +1,12 @@
 import * as R from 'ramda';
 
-import { getTrait, getTraitsPoolForUnits, getTraitsPoolForRoles, getTraitsPool, getSetOfTraitAnswers } from 'ui/helpers/traits-handler';
+import { getRandomTrait, getTraitsPoolForUnits, getTraitsPoolForRoles, getTraitsPool, getSetOfTraitAnswers, getTraitsToExclude } from 'ui/helpers/traits-handler';
 
 export const getTypedTraitsForSpecies = (enums, item) => {
 
     if(item.traits === undefined || (Object.keys(item.traits).length === 0 && item.traits.constructor === Object)) return {};
 
-    const traitsToIgnore = [ 'song', 'look-alikes', 'symbionts', 'voice', 'pollination', 'name' ];
-
-    const trait = getTrait(item.traits, traitsToIgnore);
+    const trait = getRandomTrait(item.traits, getTraitsToExclude());
 
     if((Object.keys(trait).length === 0 && trait.constructor === Object)) return {};
  

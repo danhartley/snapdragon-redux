@@ -2,9 +2,6 @@ import * as R from 'ramda';
 
 import { store } from 'redux/store';
 import { taxa } from 'api/snapdragon/taxa';
-import { iconicTaxa, matchTaxon, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
-import { species } from 'api/species';
-import { getTraits } from 'api/traits/traits';
 
 const firebaseConfig = {
     apiKey: "AIzaSyBVLz0wVrYZ9JhJMobCFgSB-Edh6EnP0Yk",
@@ -61,10 +58,6 @@ const getSpecies = async props => {
     return item;
 };
 
-const getAllSpecies = () => {
-    return species;
-};
-
 const getSpeciesNames = async () => {
 
     try {
@@ -109,21 +102,21 @@ const getSpeciesByName = async itemName => {
     return items[0];
 };
 
-const getSpeciesByRank = (taxonName, taxonValue) => {
-    return species.filter(item => item.taxonomy).filter(item => item.taxonomy[taxonName].toLowerCase() === taxonValue.toLowerCase());    
-};
+// const getSpeciesByRank = (taxonName, taxonValue) => {
+//     return species.filter(item => item.taxonomy).filter(item => item.taxonomy[taxonName].toLowerCase() === taxonValue.toLowerCase());    
+// };
 
-const getSpeciesByTaxonKey = (itemTaxonomy, rank) => {
+// const getSpeciesByTaxonKey = (itemTaxonomy, rank) => {
 
-    const matchedSpecies = [];
-    species.forEach(item => {
-        const matchedTaxon = matchTaxonKey(itemTaxonomy,[rank]);
-        if(item.taxonomy[matchedTaxon.rank].toLowerCase() === matchedTaxon.value.toLowerCase()) {
-            matchedSpecies.push(item);
-        }
-    });
-    return matchedSpecies;
-};
+//     const matchedSpecies = [];
+//     species.forEach(item => {
+//         const matchedTaxon = matchTaxonKey(itemTaxonomy,[rank]);
+//         if(item.taxonomy[matchedTaxon.rank].toLowerCase() === matchedTaxon.value.toLowerCase()) {
+//             matchedSpecies.push(item);
+//         }
+//     });
+//     return matchedSpecies;
+// };
 
 const getSpeciesFromList = arr => {
     return species.filter(item => R.contains(item.name, arr));
@@ -152,12 +145,29 @@ const getFamiliesByIconicTaxon = (iconicTaxonRank, iconicTaxonValue, isLichen) =
     return families;
 };
 
-const getItemTaxonByName = (item, taxonName) => {
-    return taxa.find(taxon => taxon.name === item.taxonomy[taxonName.name.toLowerCase()]); 
-};
+const getItemTaxonByName = async (config, name) => {
 
-const getTaxonByName = (taxonName) => {
-    return taxa.find(taxon => taxon.name.toLowerCase() === taxonName.toLowerCase()); 
+    try {
+                
+        let taxon = {};
+
+        const taxaRef = db.collection(`taxa_${config.language}`).where('name', '==', name);
+
+        const querySnapshot = await taxaRef.get();
+        
+        if(querySnapshot.docs.length > 0) {
+            querySnapshot.forEach(doc => {
+                taxon = doc.data();
+                console.log(`Number of documents returned: ${querySnapshot.docs.length}`)
+                console.log(`I got taxon details for ${name}!`);
+          });
+        }
+
+        return taxon;
+
+    } catch (error) {
+        console.error('error for: ', name, error);
+    }
 };
 
 const getAsyncTraitsBySpeciesName = async (name, language) => {
@@ -177,22 +187,18 @@ const getAsyncTraitsBySpeciesName = async (name, language) => {
 
 const getTraitsBySpeciesName = async (name, language = 'en') => {
 
-    // On page refresh, this is called again. Not good! (We already have them in local storage)
-
     let traits;
 
     const querySnapshot = await getAsyncTraitsBySpeciesName(name, language);
-    
+
+    if(!querySnapshot || !querySnapshot.docs) return new Promise(resolve => resolve({}));
+
     if(querySnapshot.docs.length > 0) {
       querySnapshot.forEach(doc => {
         traits = doc.data();
         console.log(`Number of documents returned: ${querySnapshot.docs.length}`)
         console.log(`I got traits for ${name}!`);
       });
-    } else {
-        console.log('Species traits not yet available in the cloud.')
-        const speciesTraits = getTraits().find(trait => trait.name === name);
-        traits = speciesTraits ? speciesTraits.traits : [];
     }
 
     return await traits;
@@ -200,15 +206,11 @@ const getTraitsBySpeciesName = async (name, language = 'en') => {
 
 export const firestore = {
     getSpecies,
-    getAllSpecies,
     getSpeciesNames,
     getSpeciesFromList,
     getSpeciesByName,
     getSpeciesByIconicTaxon,
-    getSpeciesByRank,
-    getSpeciesByTaxonKey,
     getFamiliesByIconicTaxon,
     getItemTaxonByName,
-    getTaxonByName,
     getTraitsBySpeciesName
 };

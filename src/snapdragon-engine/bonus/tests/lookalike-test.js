@@ -33,7 +33,7 @@ const getLookalikeTest = item => {
 
     if(lookaliketraits.length === 0) return;
 
-    let lookalikes = lookaliketraits.values;
+    let lookalikes = lookaliketraits.value;
 
     if(lookalikes.length === 0) return {};
 

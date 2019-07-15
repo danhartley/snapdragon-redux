@@ -27,6 +27,8 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
     const init = async () => {
 
         const getItemWithProps = async item => {
+
+            if(item.eolId) return new Promise(resolve => resolve(item));
             
             const getItem = async item => {
                 return item.family
@@ -35,15 +37,18 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
             };
 
             const itemWithProps = await getItem(item);
-
-            itemWithProps.family = firestore.getItemTaxonByName(itemWithProps, enums.taxon.FAMILY) || { names: [ itemWithProps.taxonomy.family ]};
-            itemWithProps.order = firestore.getItemTaxonByName(itemWithProps, enums.taxon.ORDER);
+            
+            itemWithProps.family = await firestore.getItemTaxonByName(config, itemWithProps.taxonomy[enums.taxon.FAMILY.name.toLowerCase()]) || { names: [ itemWithProps.taxonomy.family ]};
+            itemWithProps.order = await firestore.getItemTaxonByName(config, itemWithProps.taxonomy[enums.taxon.ORDER.name.toLowerCase()]);
             itemWithProps.traits = await firestore.getTraitsBySpeciesName(item.name);
+            itemWithProps.vernacularName = itemWithProps.vernacularName || itemProperties.getVernacularName(item, config);
 
             return itemWithProps;
         };
     
-        item = selectedItem ? await getItemWithProps(selectedItem) : collection.nextItem;
+        item = selectedItem || collection.nextItem;
+
+        item = await getItemWithProps(item);
 
         let rootNode;
     
@@ -131,36 +136,25 @@ const renderPortrait = (item, config, mode, rootNode) => {
 
 const renderCommonParts = (template, config, item, collection, mode, parent, rootNode, isInCarousel) => {
 
-    const name = item.name;
-          item.vernacularName = item.vernacularName || itemProperties.getVernacularName(item, config);
-    const familyVernacularName = itemProperties.getVernacularFamilyName(item.family, config);
+    const familyVernacularName = item.family.names ? item.family.names[0] : '';
         
     const headerImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
     
-    const names = [ ...new Set(item.names.filter(name => name.language === config.language).map(name => name.vernacularName.toLowerCase())) ];
-    const occurrences = names.length;
-
     const clone = document.importNode(template.content, true);
     
     parent.innerHTML = '';
     
-    renderTemplate({ name, vernacularName: item.vernacularName, headerImage, occurrences, iconicTaxon: item.iconicTaxon }, template.content, parent, clone);
-
-    const taxaBoxNode = rootNode.querySelector('.js-taxa-box');
-
-    renderTaxaBox(taxaBoxNode, { item, familyName: item.taxonomy.family, familyVernacularName });
+    renderTemplate({ name: item.name, vernacularName: item.vernacularName, headerImage, iconicTaxon: item.iconicTaxon }, template.content, parent, clone);
+    
+    renderTaxaBox(rootNode.querySelector('.js-taxa-box'), { item, familyName: item.taxonomy.family, familyVernacularName });
 
     infoSlider(item, item.family, rootNode.querySelector('.js-info-box'), mode);
 
-    const badge = rootNode.querySelector('.js-names-badge');
-
-    renderBadge(badge, occurrences, names);
+    renderBadge(rootNode.querySelector('.js-names-badge'), item, config);
     
     linkedTaxa(item, config, rootNode.querySelector('.js-feature-types'), mode, isInCarousel, collection);
     
-    const calendarNode = rootNode.querySelector('.js-calendar-box');
-
-    renderCalendar(calendarNode, item, config);
+    renderCalendar(rootNode.querySelector('.js-calendar-box'), item, config);
 
     renderIcon(item.taxonomy, rootNode);
 

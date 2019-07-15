@@ -78,7 +78,8 @@ export const collectionHandler = async (collections, collection, config, counter
         callback(collection, config)();
     } else {
            
-        collection.items = utils.shuffleArray(await getItems(collection, config));
+        const items = await getItems(collection, config);
+        collection.items = items.filter(item => item.name);
 
         if(R.contains('lepidoptera', config.guide.iconicTaxa.map(taxon => taxon.id)) && !R.contains('insecta', config.guide.iconicTaxa.map(taxon => taxon.id))) {
             const insecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() === 'insecta');
@@ -98,10 +99,42 @@ export const collectionHandler = async (collections, collection, config, counter
             collection.items = collection.items.filter(i => i);
             collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
 
-            collection.items.forEach(async(item,index) => {
+            const families = [ ...new Set(collection.items.map(i => i.taxonomy.family)) ];
+            const orders = [ ...new Set(collection.items.map(i => i.taxonomy.order)) ];
+
+            const familyTaxa = [], orderTaxa = [];
+
+            const getFamilyTaxa = async families => {
+                return Promise.all(
+                    families.map(async(family) => {
+                        const familyTaxon = await firestore.getItemTaxonByName(config, family);
+                        familyTaxa.push(familyTaxon);
+                        return familyTaxon;
+                    })
+                );
+            };
+
+            await getFamilyTaxa(families);
+
+            const getOrderTaxa = async orders => {
+                return Promise.all(
+                    orders.map(async(order) => {
+                        const orderTaxon = await firestore.getItemTaxonByName(config, order);
+                        orderTaxa.push(orderTaxon);
+                        return orderTaxon;
+                    })
+                );
+            };
+
+            await getOrderTaxa(orders);
+
+            collection.items.forEach( async (item,index) => {
+
+                item.family = familyTaxa.find(family => family.name === item.taxonomy[enums.taxon.FAMILY.name.toLowerCase()]);
+                item.order = orderTaxa.find(order => order.name === item.taxonomy[enums.taxon.ORDER.name.toLowerCase()]);
 
                 item.snapIndex = index + 1;
-                item.id = item.eolId;// remove later
+                item.id = item.eolId;
                 
                 item.vernacularNames = itemProperties.getVernacularNames(item, config);
                 item.vernacularName = itemProperties.getVernacularName(item, config);   
@@ -112,13 +145,6 @@ export const collectionHandler = async (collections, collection, config, counter
                 item.taxonomy.species = names[1];
                 
                 item.name = names.slice(0,2).join(' ');
-
-                // make await
-
-                item.family = firestore.getItemTaxonByName(item, enums.taxon.FAMILY) || { names: [ item.taxonomy.family ]};
-                item.order = firestore.getItemTaxonByName(item, enums.taxon.ORDER);
-
-                // add iconic taxon
             });
 
             const loadTraitsInParallel = items => {

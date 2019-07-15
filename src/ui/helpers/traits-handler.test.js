@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import { getTrait, getTraitValues, getSetOfTraitAnswers, getTraitByKey, getTraitValueByKey, hasTraitPropeties } from 'ui/helpers/traits-handler';
+import { getRandomTrait, getTraitValues, getSetOfTraitAnswers, getTraitByKey, getTraitValueByKey, hasTraitPropeties, getTraitsToExclude } from 'ui/helpers/traits-handler';
 
 const fox = {
     "name": "Vulpes vulpes",
@@ -201,15 +201,15 @@ const notAllowedTraitsSpecies = {
   'voice': { key:'', value:'' }
 };
 
-const traitsToIgnore = [ 'song', 'look-alikes', 'symbionts', 'voice', 'pollination' ];
+const traitsToExclude = getTraitsToExclude();
 
 test('should exclude specified traits', () => {  
-  const trait = getTrait(fox, traitsToIgnore);
-  expect(!R.contains(trait.key, traitsToIgnore)).toBe(true);
+  const trait = getRandomTrait(fox, traitsToExclude);
+  expect(!R.contains(trait.key, traitsToExclude)).toBe(true);
 });
 
 test('should return null when there are no allowed traits', () => {  
-  const trait = getTrait(notAllowedTraitsSpecies, traitsToIgnore);
+  const trait = getRandomTrait(notAllowedTraitsSpecies, traitsToExclude);
   expect(trait).toEqual({"key": undefined, "value": undefined});
 });
 

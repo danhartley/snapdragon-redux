@@ -29,7 +29,9 @@ export const getInatSpecies = async config => {
 
     const speciesNames = await firestore.getSpeciesNames();
 
-    const names = speciesNames ? speciesNames[0].value : firestore.getAllSpecies().map(item => item.name);
+    const names = speciesNames[0].value;
+
+    // const names = speciesNames ? speciesNames[0].value : firestore.getAllSpecies().map(item => item.name);
 
     const iconicTaxaKeys = Object.keys(iconicTaxa).join(',');
 

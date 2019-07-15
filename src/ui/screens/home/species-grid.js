@@ -11,17 +11,23 @@ import speciesGridTemplate from 'ui/screens/home/species-grid-template.html';
 
 export const renderSpeciesGrid = () => {
 
-    const { layout } = store.getState();
+    const { layout, collection } = store.getState();
 
-    const species = layout && layout.screens[1] && layout.screens[1].name === 'birdsong' 
-                ? firestore.getAllSpecies().filter(species => species.taxonomy).filter(species => species.taxonomy.class.toLowerCase() === 'aves')
-                : firestore.getAllSpecies();
+    // const species = layout && layout.screens[1] && layout.screens[1].name === 'birdsong' 
+    //             ? firestore.getAllSpecies().filter(species => species.taxonomy).filter(species => species.taxonomy.class.toLowerCase() === 'aves')
+    //             : firestore.getAllSpecies();
+
+    const species = collection.items;
 
     const imageCount = 40;
 
-    const speciesImages = R.take(imageCount, utils.shuffleArray(species).map(sp => {
+    const speciesImages = R.take(imageCount, utils.shuffleArray(collection.items).map(sp => {
         return { images: sp.images, itemName: sp.name };
     }));
+    
+    // const speciesImages = R.take(imageCount, utils.shuffleArray(species).map(sp => {
+    //     return { images: sp.images, itemName: sp.name };
+    // }));
 
     const images = [];
     let counter = 0;

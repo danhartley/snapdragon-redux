@@ -95,6 +95,7 @@ const familyVernacularNames = (name, language, taxa) => {
 };
 
 const getTrait = (item, name, formatter) => {
+    
     if(!item.traits) return '';
 
     let trait;
@@ -163,19 +164,6 @@ const getFamilyStats = items => {
     return items.map(item => item.taxonomy.family).reduce(statsReducer,{});
 }
 
-const getCommonFamilyNames = (family, config) => {
-
-    const familyVernacularNames = family.name 
-            ? family.names.find(props => props.language === config.language).names
-            : family.names;
-    
-    return familyVernacularNames;
-};
-
-const getVernacularFamilyName = (family, config) => {
-    return getCommonFamilyNames(family, config)[0];
-};
-
 export const itemProperties = {
     getVernacularName,
     getGenusName,
@@ -190,7 +178,5 @@ export const itemProperties = {
     vernacularNamesForItems,
     getVernacularNames,
     answersFromList,
-    getFamilyStats,
-    getCommonFamilyNames,
-    getVernacularFamilyName
+    getFamilyStats
 };

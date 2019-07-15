@@ -7,7 +7,6 @@ import { taxonInfoSlider } from 'ui/screens/common/info-slider';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
-// import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
 
 import taxonTemplate from 'ui/screens/cards/taxon-card-template.html';
 
@@ -54,10 +53,10 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
         rank = rank ? rank.toUpperCase() : '';
 
         const taxon = rank 
-                    ? rank === 'FAMILY' 
-                        ? item.family 
-                        : item.order
-                    : item.family || item.order;
+                        ? rank === 'FAMILY' 
+                            ? item.family 
+                            : item.order
+                        : item.family || item.order;
 
         const familyStats = itemProperties.getFamilyStats(collection.items);
         const occurrences = familyStats ? familyStats[taxon.name] : 0;
@@ -67,12 +66,12 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
             name: taxon.name,
             headerImage: scaleImage({ url: item.images[0].url }, imageUseCases.TAXON_CARD, config),
             alt: taxon ? taxon.alt : '',
-            vernacularName: itemProperties.getNestedTaxonProp(taxon, config.language, 'names', 'names', '0').split(',')[0],
+            vernacularName: taxon.vernacularName || itemProperties.getNestedTaxonProp(taxon, config.language, 'names', 'names', '0').split(',')[0],
             species: taxon.species || '--',
             genera: taxon.genera || '--',
             families: taxon.families || '--',
-            identification: itemProperties.getNestedTaxonProp(taxon, config.language, 'descriptions', 'identification'),
-            summary: itemProperties.getNestedTaxonProp(taxon, config.language, 'descriptions', 'summary'),
+            identification: taxon.identification,
+            summary: taxon.summary,
             eol: taxon.eol ? taxon.eol.replace('en', config.language) : '',
             wiki: taxon.wiki ? taxon.wiki.replace('en', config.language) : '',
             occurrences: occurrences,
