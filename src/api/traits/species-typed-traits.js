@@ -1,5 +1,6 @@
 import * as R from 'ramda';
 
+import { utils } from 'utils/utils';
 import { getRandomTrait, getTraitsPoolForUnits, getTraitsPoolForRoles, getTraitsPool, getSetOfTraitAnswers, getTraitsToExclude } from 'ui/helpers/traits-handler';
 
 export const getTypedTraitsForSpecies = (enums, item) => {
@@ -23,9 +24,11 @@ export const getTypedTraitsForSpecies = (enums, item) => {
                            
     const variables = trait.value.length; 
 
+    trait.value = trait.value.map(t => utils.capitaliseFirst(t));
+
     const number = variables * 5;
 
-    traitsPool = R.take(number, traitsPool);
+    traitsPool = R.take(number, traitsPool.filter(t => t.toLowerCase() !== trait.value.join(',').toLowerCase()));
     traitsPool = [ ...traitsPool, trait.value.join(',') ];    
 
     const answers = getSetOfTraitAnswers(variables, traitsPool, trait);

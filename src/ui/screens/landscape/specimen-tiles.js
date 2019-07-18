@@ -33,8 +33,8 @@ const renderItemSpecimenTiles = item => {
 
     const collectionItems = collection.allItems || collection.items;
 
-    if(R.contains(layout.screens[1].name, familes)) {                
-        images = R.take(number, R.flatten(collectionItems.filter(i => i.family === item.taxonomy.family).map(i => {
+    if(R.contains(layout.screens[1].name, familes)) {
+        images = R.take(number, R.flatten(collectionItems.filter(i => i.family.name.toLowerCase() === item.taxonomy.family.toLowerCase()).map(i => {
             return { images: i.images, item: { name: i.name, itemCommon: i.names[0].vernacularName, vernacularName: i.names[0].vernacularName, names: i.names } };
         })));
 

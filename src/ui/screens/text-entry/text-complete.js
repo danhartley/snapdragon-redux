@@ -3,9 +3,7 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-// import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
-import { itemProperties } from 'ui/helpers/data-checking';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 
@@ -45,8 +43,6 @@ export const renderCompleteText = (collection) => {
 
     const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question: 'Complete the latin name', help: '(Select the name below.)', term: '' });
 
-    // const icon = renderIcon(item.taxonomy, document);
-
     const template = document.createElement('template');
 
     template.innerHTML = completeTemplate;
@@ -57,21 +53,21 @@ export const renderCompleteText = (collection) => {
     const itemTaxons = collection.items.map(item => {
         switch(givenTaxon) {
             case 'genus':
-                return itemProperties.getGenusName(item.name);
+                return item.taxonomy.genus;
             case 'species':
-                return itemProperties.getSpeciesName(item.name);
+                return item.taxonomy.species;
             default:
                 return item.name;
         }
     });
-    const pool = R.take(numerOfItems, utils.shuffleArray(itemTaxons).filter(utils.onlyUnique).filter(itemTaxon => itemTaxon !== item[givenTaxon]));
-    pool.push(item[givenTaxon]);
+    const pool = R.take(numerOfItems, utils.shuffleArray(itemTaxons).filter(utils.onlyUnique).filter(itemTaxon => itemTaxon !== item.taxonomy[givenTaxon])).filter(item => item !== undefined);
+    pool.push(item.taxonomy[givenTaxon]);
 
     const answers = utils.shuffleArray(pool);
 
     renderTemplate({ genus, species, answers }, template.content, parent);
 
-    const score = { itemId: item.id, binomial: item.name, question: item[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length, points: layout.points };
+    const score = { itemId: item.id, binomial: item.name, question: item.taxonomy[givenTaxon], callbackTime: config.callbackTime, layoutCount: lessonPlan.layouts.length, points: layout.points };
 
     const callback = (score, scoreUpdateTimer, config) => {
 
@@ -106,8 +102,6 @@ export const renderCompleteText = (collection) => {
             window.clearTimeout(scoreUpdateTimer);
             actions.boundUpdateScore(score);
         });
-
-        // score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
     };
 
     document.querySelectorAll('.pool .block span').forEach(answer => {

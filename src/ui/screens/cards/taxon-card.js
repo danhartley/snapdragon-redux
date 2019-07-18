@@ -81,9 +81,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
         renderTemplate(context, template.content, parent, clone);
 
-        if(taxon && taxon.traits) {
-            taxonInfoSlider(taxon.traits, rootNode.querySelector('.js-taxon-info-box'), mode);
-        }
+        taxonInfoSlider(taxon.traits, rootNode.querySelector('.js-taxon-info-box'), mode);
 
         switch(rank) {
             case 'FAMILY': 

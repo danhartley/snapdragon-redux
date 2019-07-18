@@ -126,7 +126,7 @@ export const renderMultiStrips = (collection, bonus) => {
 
                         question = item.name;
                         answers = await firestore.getSpeciesByIconicTaxon(taxon, item.lichen, 8);
-                        answers = R.take(8, answers).filter(s => s.name !== item.name).map(s => s.name);
+                        answers = R.take(8, answers).filter(s => s.name.toLowerCase() !== item.name.toLowerCase()).map(s => s.name);
                         answers = R.take(5, answers);
                         answers.push(item.name);
                         answers = utils.shuffleArray(answers);
@@ -153,7 +153,7 @@ export const renderMultiStrips = (collection, bonus) => {
                         question = item.vernacularName;   
                         answers = await firestore.getSpeciesByIconicTaxon(taxon, item.lichen, defaultQueryLimit)
                                     
-                        answers = answers.filter(i => i.name !== item.name).map(i => itemProperties.getVernacularName(i, defaultLanguage));
+                        answers = answers.filter(i => i.name.toLowerCase() !== item.name.toLowerCase()).map(i => itemProperties.getVernacularName(i, defaultLanguage));
                         answers = R.take(defaultQueryLimit - 1, answers);
 
                         answers.push(item.vernacularName);
@@ -177,15 +177,14 @@ export const renderMultiStrips = (collection, bonus) => {
 
                 const number = config.isPortraitMode ? 4 : 4;
 
-                const question = families.find(f => f.name === item.taxonomy.family)[type];
-                const alternativeFamilies = R.take(number-1, R.take(number, utils.shuffleArray(families)));
-                const alternatives = alternativeFamilies.filter(f => f.name !== item.taxonomy.family && f.descriptions && f[type] && f[type] !== undefined && f[type] !== '').map(f => f[type]);
+                const question = { type: item.family[type], name: item.family.name } || { type: `Missing ${type}`, name: item.family.name };
+                const alternativeFamilies = R.take(number-1, R.take(number, utils.shuffleArray(families))).filter(f => f.name.toLowerCase() !== item.taxonomy.family.toLowerCase());
+                const alternatives = alternativeFamilies.filter(f => f[type] && f[type] !== undefined && f[type] !== '').map(f => { return { type: f[type], name: f.name } });
                 const answers = utils.shuffleArray([question, ...alternatives]);
-                const answersFamilyNames = [ item.taxonomy.family, ...alternativeFamilies.map(af => af.name) ]
-
+                
                 const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
 
-                render(question, answers, { question: 'Match species family', help, conceals: answersFamilyNames });
+                render(question.type, answers.map(a => a.type), { question: 'Match species family', help, conceals: answers.map(a => a.name) });
             }
 
             if(screen.name === 'epithet') {
@@ -217,12 +216,10 @@ export const renderMultiStrips = (collection, bonus) => {
                 const indices = config.isPortraitMode ? [5,6] : [5,6];
 
                 const family = item.taxonomy.family;
-                const otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name !== item.taxonomy.family));
+                const otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name.toLowerCase() !== item.taxonomy.family.toLowerCase()));
                 const otherFamiliesLatinNames = otherFamilies.map(family => family.name);
-                const otherFamiliesCommonNames = otherFamilies.filter(family => family.names.find(name => name.language === config.language)).map(family => family.names[0].names[0]).filter(name => name !== '');
-                const familyTaxon = families.find(family => family.name === item.taxonomy.family); 
-                let commonFamilyName = familyTaxon ? itemProperties.getTaxonProp(familyTaxon, config.language, 'names', 'names', '0').names[0] : family;
-                    commonFamilyName = commonFamilyName === '' ? family : commonFamilyName;
+                const otherFamiliesCommonNames = otherFamilies.map(of => of.names[0]);
+                const commonFamilyName = item.family.names[0];
 
                 let question, answers;
 

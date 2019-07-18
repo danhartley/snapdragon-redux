@@ -31,7 +31,7 @@ const getBirdsongTest = (item, itemsInThisRound) => {
 
     const birdsong = item.traits.find(trait => trait.name === 'song');
     
-    let birds = R.take(3, itemsInThisRound.filter(bird => bird.name !== item.name));
+    let birds = R.take(3, itemsInThisRound.filter(bird => bird.name.toLowerCase() !== item.name.toLowerCase()));
         birds.push(item);
 
     const birdNames = utils.shuffleArray(birds.map(bird => bird.name));

@@ -31,7 +31,9 @@ export const taxonInfoSlider = (traits, parent, mode) => {
 
     const convertedTraits = convertTraitsToNameValuePairsArray(traits, getTraitsToExclude());
 
-    renderInfoSlider(convertedTraits, parent, id);
+    if(convertedTraits.length > 0) {
+        renderInfoSlider(convertedTraits, parent, id);
+    }    
 };
 
 export const infoSlider = (item, family, parent, mode) => {

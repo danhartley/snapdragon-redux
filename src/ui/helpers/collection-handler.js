@@ -10,6 +10,8 @@ import { enums } from 'ui/helpers/enum-helper';
 
 async function getItems(collection, config) {
 
+    console.log(collection.behaviour);
+
     if(collection.behaviour === 'dynamic') {
 
         const collectionIsUnchanged = 
@@ -43,6 +45,8 @@ async function getItems(collection, config) {
         }
     }
     else if(collection.behaviour === 'static') {
+
+        console.log(collection.behaviour);
 
         const loadSpeciesInParallel = async itemNames => {
             try {
@@ -145,13 +149,14 @@ export const collectionHandler = async (collections, collection, config, counter
                 item.taxonomy.species = names[1];
                 
                 item.name = names.slice(0,2).join(' ');
+
             });
 
             const loadTraitsInParallel = items => {
                 return Promise.all(
                     items.map(async(item) => {
                         const itemTraits = await firestore.getTraitsBySpeciesName(item.name);
-                        item.traits = itemTraits || [];
+                        item.traits = itemTraits || {};
                         return item;                 
                     })
                 );

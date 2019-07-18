@@ -96,6 +96,8 @@ const getSpeciesByName = async itemName => {
     
     const items = await getSpecies({ key:'name', operator:'==', value:itemName });
     
+    console.log(item);
+
     return items[0];
 };
 
