@@ -1,7 +1,6 @@
 import * as R from 'ramda';
 
 import { store } from 'redux/store';
-import { taxa } from 'api/snapdragon/taxa';
 
 const firebaseConfig = {
     apiKey: "AIzaSyBVLz0wVrYZ9JhJMobCFgSB-Edh6EnP0Yk",
@@ -32,9 +31,7 @@ const getSpeciesWhere = async props => {
     try {
         const { key, operator, value, limit } = props;
 
-        let speciesRef;
-
-        speciesRef = limit
+        let speciesRef = limit
                         ? db.collection(`species`).where(key, operator, value).limit(limit)
                         : db.collection(`species`).where(key, operator, value);
 
@@ -79,7 +76,7 @@ const getSpeciesNames = async () => {
 
 const getSpeciesByIconicTaxon = async (taxon, isLichen, limit = 6) => {
 
-    let matches = await getSpecies({ key:'iconicTaxon', operator:'==', value: taxon.value.toLowerCase(), limit });
+    let matches = await getSpeciesWhere({ key:'iconicTaxon', operator:'==', value: taxon.value.toLowerCase(), limit });
 
     if(taxon.value.toLowerCase() === 'fungi') {
         matches = isLichen ? matches.filter(match => match.lichen) : matches.filter(match => !match.lichen);
@@ -102,47 +99,32 @@ const getSpeciesByName = async itemName => {
     return items[0];
 };
 
-// const getSpeciesByRank = (taxonName, taxonValue) => {
-//     return species.filter(item => item.taxonomy).filter(item => item.taxonomy[taxonName].toLowerCase() === taxonValue.toLowerCase());    
-// };
-
-// const getSpeciesByTaxonKey = (itemTaxonomy, rank) => {
-
-//     const matchedSpecies = [];
-//     species.forEach(item => {
-//         const matchedTaxon = matchTaxonKey(itemTaxonomy,[rank]);
-//         if(item.taxonomy[matchedTaxon.rank].toLowerCase() === matchedTaxon.value.toLowerCase()) {
-//             matchedSpecies.push(item);
-//         }
-//     });
-//     return matchedSpecies;
-// };
-
 const getSpeciesFromList = arr => {
     return species.filter(item => R.contains(item.name, arr));
 };
 
-const getUniqueFamiliesByIconicTaxon = (iconicTaxonRank, iconicTaxonValue, isLichen) => {
+const getTaxaWhere = async props => {
 
-    const matchingItems = species.map(item => {
-        if(item.taxonomy && item.taxonomy[iconicTaxonRank] && item.taxonomy[iconicTaxonRank].toLowerCase() === iconicTaxonValue.toLowerCase()) {            
-            if(iconicTaxonValue === 'fungi') {
-                return item.lichen === isLichen ? item : null;
-            } else {
-                return item;
-            }
-        }
-    }).filter(item => item);
-
-    const families = matchingItems.map(item => item.taxonomy.family);
-    
-    return [ ...new Set(families) ];
+    const { language, key, operator, value, limit } = props;
+  
+    const taxaRef = limit
+                        ? db.collection(`taxa_en`).where(key, operator, value).limit(limit)
+                        : db.collection(`taxa_en`).where(key, operator, value);
+  
+    const querySnapshot = await taxaRef.get();
+  
+    const docs = [];
+  
+    querySnapshot.forEach(doc => {
+      console.log(doc.data());
+      docs.push(doc.data());
+    });
+  
+    return await docs;
 };
-
-const getFamiliesByIconicTaxon = (iconicTaxonRank, iconicTaxonValue, isLichen) => {
-    const iconicTaxonFamilies = getUniqueFamiliesByIconicTaxon(iconicTaxonRank, iconicTaxonValue, isLichen);
-    const families = taxa.filter(taxon => taxon.taxon === 'family').filter(family => R.contains(family.name, iconicTaxonFamilies));
-    return families;
+  
+const getFamiliesByIconicTaxon = async (iconicTaxonRank, iconicTaxonValue, isLichen, config) => {
+    return await getTaxaWhere({ language: config.language, key: 'iconicTaxon', operator: '==', value: iconicTaxonValue, limit: 7 });
 };
 
 const getItemTaxonByName = async (config, name) => {
@@ -151,7 +133,7 @@ const getItemTaxonByName = async (config, name) => {
                 
         let taxon = {};
 
-        const taxaRef = db.collection(`taxa_${config.language}`).where('name', '==', name);
+        const taxaRef = db.collection(`taxa_en`).where('name', '==', name);
 
         const querySnapshot = await taxaRef.get();
         
@@ -174,7 +156,7 @@ const getAsyncTraitsBySpeciesName = async (name, language) => {
 
     try {
     
-    const languageTraits = db.collection(`traits_${language}`).where("name", "==", name);
+    const languageTraits = db.collection(`traits_en`).where("name", "==", name);
   
     const traits = await languageTraits.get();
   
@@ -194,7 +176,7 @@ const getTraitsBySpeciesName = async (name, language = 'en') => {
     if(!querySnapshot || !querySnapshot.docs) return new Promise(resolve => resolve({}));
 
     if(querySnapshot.docs.length > 0) {
-      querySnapshot.forEach(doc => {
+        querySnapshot.forEach(doc => {
         traits = doc.data();
         console.log(`Number of documents returned: ${querySnapshot.docs.length}`)
         console.log(`I got traits for ${name}!`);
