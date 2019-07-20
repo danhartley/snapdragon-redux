@@ -51,7 +51,7 @@ setTimeout( () => {
         subscription.add(nextLayout, 'counter', 'flow');
         subscription.add(nextItem, 'layout', 'flow');
         subscription.add(renderScore, 'score', 'flow');
-        subscription.add(updateLanguage, 'config', 'localistation');
+        // subscription.add(updateLanguage, 'config', 'localistation');
 
         const updateConfig = async () => {
             const initialisedConfig = await initialiseConfig(config);

@@ -152,11 +152,11 @@ const stripScoreHandler = (test, callback, config) => {
             target.classList.add(score.colour);
 
             items.forEach(strip => {   
-                const matchesScientificName = strip.innerText.trim() === taxon.name;
+                const matchesScientificName = strip.innerText.trim().toLowerCase() === taxon.name.trim().toLowerCase();
                 const matchesVernacularName = vernacular 
-                                                ? strip.innerText.toLowerCase() ===  vernacular.toLowerCase() 
+                                                ? strip.innerText.toLowerCase() === vernacular.toLowerCase() 
                                                 : false;
-                const matchesQuestion = strip.innerText.trim() === taxon.question;
+                const matchesQuestion = strip.innerText.trim().toLowerCase() === taxon.question.trim().toLowerCase();
                 if(matchesScientificName || matchesVernacularName || matchesQuestion) {
                     strip.classList.add('snap-success');
                 }
@@ -198,7 +198,7 @@ const imageScoreHandler = (test, callback, config) => {
             items.forEach(tile => {
                 tile.style.filter = 'saturate(10%)';
                 tile.style.opacity = .3;
-                if(tile.dataset.answer === taxon.name) {
+                if(tile.dataset.answer.trim().toLowerCase() === taxon.name.trim().toLowerCase()) {
                     tile.style.filter = 'saturate(100%)';
                     tile.style.opacity = 1;
                 }

@@ -17,7 +17,6 @@ export const screensSubscriptionHandler = (layout, config) => {
             if(func) {
                 if(config.isPortraitMode) {
                     if(index === 1 || screen.name === 'summary') subscription.add(func, screen.domain, 'screen', layout.name);
-                    // if(index === 1 || screen.name === 'history') subscription.add(func, screen.domain, 'screen', layout.name);
                 } else {
                     subscription.add(func, screen.domain, 'screen', layout.name);
                 }                           

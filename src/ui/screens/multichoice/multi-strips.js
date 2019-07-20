@@ -19,19 +19,17 @@ export const renderMultiStrips = (collection, bonus) => {
 
     try {
 
+        const { config, lesson, layout } = store.getState();
+
+        const item = collection.nextItem || collection.items[collection.itemIndex];
+
+        const taxon = matchTaxon(item.taxonomy, iconicTaxa);                        
+    
+        screen = bonus ? bonus.screen || layout.screens[1] : layout.screens[1];
+
+        const defaultQueryLimit = 6, defaultLanguage = 'en';
+
         const init = async () => {
-
-            const { config, lesson, layout } = store.getState();
-
-            const item = collection.nextItem || collection.items[collection.itemIndex];
-
-            const taxon = matchTaxon(item.taxonomy, iconicTaxa);
-            
-            const families = await firestore.getFamiliesByIconicTaxon(taxon.rank, taxon.value, item.lichen, config);
-        
-            screen = bonus ? bonus.screen || layout.screens[1] : layout.screens[1];
-
-            const defaultQueryLimit = 6, defaultLanguage = 'en';
 
             const render = (questionValue, answers, overrides) => {
 
@@ -43,7 +41,8 @@ export const renderMultiStrips = (collection, bonus) => {
                 const term = (overrides && overrides.term !== undefined) ? overrides.term : '';
                 const className = (overrides && overrides.className !== undefined) ? overrides.className : '';
                 const headerClassName = (overrides && overrides.headerClassName !== undefined) ? overrides.headerClassName : '';
-                const conceals = (overrides && overrides.conceals !== undefined) ? overrides.conceals : ['', '', '', '', '', ''];
+                const conceal = (overrides && overrides.conceal !== undefined) ? overrides.conceal : ['', '', '', '', '', ''];
+                const clue = (overrides && overrides.clue !== undefined) ? overrides.clue : null;
                 
                 const parent = renderTestCardTemplate(collection, { vernacularName, binomial, question, help, term, className, headerClassName, bonus });
 
@@ -54,7 +53,7 @@ export const renderMultiStrips = (collection, bonus) => {
                 const options = answers.map((answer, index) => {
                     return {
                         answer,
-                        conceal: conceals[index]
+                        conceal: conceal[index]
                     }
                 });
 
@@ -78,7 +77,7 @@ export const renderMultiStrips = (collection, bonus) => {
 
                 const taxon = { name: item.taxonomy.family, binomial: item.name, question: questionValue };
 
-                const test = { itemId: item.id, items: strips, taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points};
+                const test = { itemId: item.id, items: strips, taxon, binomial: item.name, questionCount: lesson.questionCount, layoutCount: lesson.layoutCount, points: layout.points, clue};
                         
                 const callback = (score) => {
 
@@ -177,6 +176,7 @@ export const renderMultiStrips = (collection, bonus) => {
 
                 const number = config.isPortraitMode ? 4 : 4;
 
+                const families = await firestore.getFamiliesByIconicTaxon(taxon.rank, taxon.value, item.lichen, config);
                 const question = { type: item.family[type], name: item.family.name } || { type: `Missing ${type}`, name: item.family.name };
                 const alternativeFamilies = R.take(number-1, R.take(number, utils.shuffleArray(families))).filter(f => f.name.toLowerCase() !== item.taxonomy.family.toLowerCase());
                 const alternatives = alternativeFamilies.filter(f => f[type] && f[type] !== undefined && f[type] !== '').map(f => { return { type: f[type], name: f.name } });
@@ -184,7 +184,7 @@ export const renderMultiStrips = (collection, bonus) => {
                 
                 const help = config.isLandscapeMode ? '(Click on the description below.)' : '(Tap on the description.)';
 
-                render(question.type, answers.map(a => a.type), { question: 'Match species family', help, conceals: answers.map(a => a.name) });
+                render(question.type, answers.map(a => a.type), { question: 'Match species family', help, conceal: answers.map(a => a.name), clue: item.taxonomy.family });
             }
 
             if(screen.name === 'epithet') {
@@ -215,6 +215,7 @@ export const renderMultiStrips = (collection, bonus) => {
 
                 const indices = config.isPortraitMode ? [5,6] : [5,6];
 
+                const families = await firestore.getFamiliesByIconicTaxon(taxon.rank, taxon.value, item.lichen, config);
                 const family = item.taxonomy.family;
                 const otherFamilies = R.take(indices[0], R.take(indices[1], utils.shuffleArray(families)).filter(family => family.name.toLowerCase() !== item.taxonomy.family.toLowerCase()));
                 const otherFamiliesLatinNames = otherFamilies.map(family => family.name);
@@ -269,9 +270,9 @@ export const renderMultiStrips = (collection, bonus) => {
 
         console.error('Crashed out somwhere on multi-strips with this error: ', e);
         
-        rebindLayoutState(layout, item);
+        // rebindLayoutState(layout, item);
 
-        renderMultiStrips(collection);
+        // renderMultiStrips(collection);
         
     }
 };

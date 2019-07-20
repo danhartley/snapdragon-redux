@@ -1,15 +1,14 @@
 import { utils } from 'utils/utils';
 import { store } from 'redux/store';
 import { actions } from 'redux/actions/action-creators';
-// import { renderIcon } from 'ui/helpers/icon-handler';
 import { renderTemplate } from 'ui/helpers/templating';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { imageUseCases, prepImagesForCarousel } from 'ui/helpers/image-handlers';
 import { imageSlider } from 'ui/screens/common/image-slider';
-
-import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import textEntryTemplate from 'ui/screens/text-entry/text-entry-templates.html';
 import textEntryPortraitTemplate from 'ui/screens/text-entry/text-entry-portrait-templates.html';
+
+import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 
 export const renderInput = (screen, question) => {
 
@@ -24,7 +23,7 @@ export const renderInput = (screen, question) => {
     switch(question.taxon) {
         case 'genus': 
             vernacularName = item.vernacularName;
-            binomial = binomial = `--- ${question.species}`
+            binomial = binomial = `--- ${question.species}`;
             break;
         case 'species': 
             vernacularName = item.vernacularName;
@@ -89,7 +88,6 @@ export const renderInput = (screen, question) => {
             answerBtn.innerHTML = question.taxon === 'vernacular' ? item.vernacularName : item.name;
             answerBtn.classList.add('portrait-answer');
         }
-        // score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
     };
 
     const scoreEventHandler = event => {
@@ -104,8 +102,6 @@ export const renderInput = (screen, question) => {
     
     if(config.isPortraitMode) renderPortrait(item, config);
     else renderLandscape(item, config, question);
-
-    // const icon = renderIcon(item.taxonomy, document);
 
     document.querySelector('.js-continue-lesson-btn').addEventListener('click', event => {
         window.clearTimeout(boundScore.scoreUpdateTimer);
@@ -134,7 +130,7 @@ const renderLandscape = (item, config, question) => {
             answer = question.common;
             break;
         case 'genus':
-            pool = item.genus.taxonomy.toLowerCase();
+            pool = item.taxonomy.genus.toLowerCase();
             break;
         case 'species':
             pool = item.taxonomy.species.toLowerCase();
@@ -229,7 +225,7 @@ const renderLandscape = (item, config, question) => {
         entry = entry === ' ' ? '&nbsp;' : entry;
         entries.push(entry);
         selectedBlock = blockArray.find(block => block.innerHTML === entry);
-        selectedBlock.classList.add('active');
+        if(selectedBlock) selectedBlock.classList.add('active');
         if(input.value === answer.toLowerCase()) {
             blockArray.forEach(block => block.classList.add('correct'));
         }
@@ -239,7 +235,7 @@ const renderLandscape = (item, config, question) => {
           if(event.keyCode === 8) {
             const entry = entries.pop();
             selectedBlock = blockArray.find(block => block.innerHTML === entry);
-            selectedBlock.classList.remove('active');
+            if(selectedBlock) selectedBlock.classList.remove('active');
           }            
     });
 };

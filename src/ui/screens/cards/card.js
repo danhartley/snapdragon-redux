@@ -29,6 +29,8 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
         const getItemWithProps = async item => {
 
             if(item.eolId) return new Promise(resolve => resolve(item));
+
+            console.log('CALLING CLOUD!');
             
             const getItem = async item => {
                 return item.family
@@ -42,6 +44,11 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
             itemWithProps.order = await firestore.getItemTaxonByName(config, itemWithProps.taxonomy[enums.taxon.ORDER.name.toLowerCase()]);
             itemWithProps.traits = await firestore.getTraitsBySpeciesName(item.name);
             itemWithProps.vernacularName = itemWithProps.vernacularName || itemProperties.getVernacularName(item, config);
+
+            const names = item.name.split(' ');
+
+            itemWithProps.taxonomy.genus = names[0];                
+            itemWithProps.taxonomy.species = names[1];
 
             return itemWithProps;
         };

@@ -231,13 +231,13 @@ export function GoogleAutocomplete(place, callback) {
   };
 
   if(requireNewSession) {
-    console.log('new session');
+    // console.log('new session');
     SESSION_TOKEN = new google.maps.places.AutocompleteSessionToken();
     getPredictions(SESSION_TOKEN);
     current_term = place;
     requireNewSession = false; //or on expires/error, get a new one
   } else {
-    console.log('place:', place);
+    // console.log('place:', place);
     if(place !== current_term) {
       getPredictions(SESSION_TOKEN);
     }

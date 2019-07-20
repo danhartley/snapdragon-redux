@@ -68,18 +68,18 @@ export const enums = {
     propagation: english.propagation,
 }
 
-let language;
+// let language;
 
-export const updateLanguage = (config) => {
+// export const updateLanguage = (config) => {
     
-    if(language === config.language) return;
+//     if(language === config.language) return;
 
-    language = config.language;
+//     language = config.language;
 
-    for(let prop in enums) {
-        enums[prop].type = prop;
-        enums[prop].name = prop.split(/(?=[A-Z])/).join(' ').toLowerCase();
-    }
+//     for(let prop in enums) {
+//         enums[prop].type = prop;
+//         enums[prop].name = prop.split(/(?=[A-Z])/).join(' ').toLowerCase();
+//     }
 
-    actions.boundUpdateEnums(enums);
-};
+//     actions.boundUpdateEnums(enums);
+// };
