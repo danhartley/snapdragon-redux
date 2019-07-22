@@ -2,7 +2,6 @@
     <head>
         <title>Snapdragon collection builder</title>
         <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
-        <script src="./collection-builder.js"></script>
         <style media="screen" type="text/css">            
             select, button, input {
                 margin: 10px 5px;
@@ -12,6 +11,9 @@
             }
             input {
                 width: 100px;
+            }
+            li {
+                font-size: 1.2rem;
             }
             .container {
                 display: flex;
@@ -30,34 +32,63 @@
                 cursor: pointer;
                 margin: 0 0 0 1em;
             }
+            .hide {
+                display: none;
+            }
         </style>
     </head>
     <body>
-        <div id="top" class="container">
-            <input id="inputCollection" type="text" />
-            <select name="licences" id="licences" onchange="setLicence(this)"></select>
-            <select name="names" id="names" onchange="getImages(this)"></select>
-            <div id="speciesCount" class="text"></div>
-            <button id="btnGet">Get collection items</button>
-            <button class="btnAdd">Add to collection</button>
-            <div class="text collectionCount"></div>
+
+        <div id="admin-menu">
+            <ul>
+                <li id="speciesAdd">Add Species</li>
+                <li id="traitAdd">Add Trait</li>
+            </ul>
         </div>
-        <div class="container">
-            <input id="inputSpecies" type="text" />
+
+        <div id="species-add" class="hide">
+            <div id="top" class="container">
+                <input id="inputCollection" type="text" />
+                <select name="licences" id="licences" onchange="setLicence(this)"></select>
+                <select name="names" id="names"></select>
+                <div id="speciesCount" class="text"></div>
+                <button id="btnGet">Get collection items</button>
+                <button class="btnAdd">Add to collection</button>
+                <div class="text collectionCount"></div>
+            </div>
+            <div class="container">
+                <input id="inputSpecies" type="text" />
+            </div>
+            <div class="container">
+                <div id="images"></div>        
+            </div>
+            <div class="container">
+                <div class="text collectionCount"></div>
+                <button class="btnAdd">Add to collection</button>
+                <div class="text">New collection available in global object newCollection</div>
+                <a class="text jump" onclick="jumpto('top');">Go to top of page</a>
+            </div>
         </div>
-        <div class="container">
-            <div id="images"></div>        
+
+        <div id="trait-add" class="hide">
+
+            <div class="container">
+                <textarea name="trait" id="trait" cols="60" rows="20"></textarea>
+            </div>
+
         </div>
-        <div class="container">
-            <div class="text collectionCount"></div>
-            <button class="btnAdd">Add to collection</button>
-            <div class="text">New collection available in global object newCollection</div>
-            <a class="text jump" onclick="jumpto('top');">Go to top of page</a>
+
+        <div id="species-observations" class="hide">
+            <div class="container">Import species from iNaturalist user observations</div>
+            <div class="container">
+                <input id="inputUserId" type="text">
+                <button id="btnGetInatData">Get data</button>
+            </div>
         </div>
-        <div class="container">Import species from iNaturalist user observations</div>
-        <div class="container">
-            <input id="inputUserId" type="text">
-            <button id="btnGetInatData">Get data</button>
-        </div>
-    </body>
+
+        <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+    
+        <!-- <script src="/__/firebase/init.js"></script> -->
+    <script type="text/javascript" src="admin.bundle.js"></script></body>
 </html>
