@@ -17,7 +17,7 @@ export const renderLocation = (modal, createGuide) => {
 
     createGuide.saveStep('LOCATION');
  
-    const guideTxt = modal.querySelector('.guide-text');
+    const guideTxt = modal.querySelector('.js-guide-text');
           guideTxt.innerHTML = 'Choose where you want to explore.';
         
     let locationPlace = config.guide.locationPlace;

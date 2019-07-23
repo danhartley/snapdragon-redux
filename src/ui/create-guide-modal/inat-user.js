@@ -2,7 +2,8 @@ import { switchHandler } from 'ui/create-guide-modal/common/snapdragon-switch';
 import { inatAutocomplete } from 'ui/helpers/inat-autocomplete';
 import { renderTemplate } from 'ui/helpers/templating';
 import { renderLocation } from 'ui/create-guide-modal/location';
-import inatPortraitTemplate from 'ui/create-guide-modal/inat-user-template-portrait.html';
+
+import inatTemplate from 'ui/create-guide-modal/inat-user-template.html';
 
 export const renderInatUser = (modal, createGuide) => {
 
@@ -10,7 +11,7 @@ export const renderInatUser = (modal, createGuide) => {
 
     const template = document.createElement('template');
 
-    template.innerHTML = inatPortraitTemplate;
+    template.innerHTML = inatTemplate;
 
     if(config.guide.inatId.key !== '-----') {
         if(config.guide.locationType !== 'inat') {

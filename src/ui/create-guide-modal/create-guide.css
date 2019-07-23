@@ -70,6 +70,11 @@
   .modal-guide-wrapper .modal-body {
     background-color: var(--snap-list-alt-background);
   }
+
+  .guide-text-container {
+    display: flex;
+    justify-content: space-between;  
+  }
   
   .modal-guide-wrapper .modal-body .guide-text {
     font-size: 1.1rem;

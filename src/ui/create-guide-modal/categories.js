@@ -1,16 +1,22 @@
 import * as R from 'ramda';
 
 import { elem } from 'ui/helpers/class-behaviour';
-import categoriesTemplate from 'ui/create-guide-modal/categories-template.html';
 import { allIconicTaxa } from 'snapdragon-config/snapdragon-collections';
-
+import { renderSpeciesPicker } from 'ui/create-guide-modal/species-picker';
 import { renderTemplate } from 'ui/helpers/templating';
+
+import categoriesTemplate from 'ui/create-guide-modal/categories-template.html';
 
 export const renderCategories = (modal, createGuide) => {
 
     const config = createGuide.getConfig();
 
-    const guideTxt = modal.querySelector('.guide-text');
+    const guideTxt = modal.querySelector('.js-guide-text');
+    const linkTxt = modal.querySelector('.js-species-names-link');
+
+    linkTxt.classList.remove('hide-important');
+    linkTxt.removeEventListener('click',  renderSpeciesPicker);
+    linkTxt.addEventListener('click',  renderSpeciesPicker);
 
     const filterSelectedClass = 'iconic-taxa-selected';
 

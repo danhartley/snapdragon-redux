@@ -1,16 +1,7 @@
 import * as R from 'ramda';
 
 import { store } from 'redux/store';
-
-const firebaseConfig = {
-    apiKey: "AIzaSyBVLz0wVrYZ9JhJMobCFgSB-Edh6EnP0Yk",
-    authDomain: "snapdragon-222014.firebaseapp.com",
-    databaseURL: "https://snapdragon-222014.firebaseio.com",
-    projectId: "snapdragon-222014",
-    storageBucket: "snapdragon-222014.appspot.com",
-    messagingSenderId: "947213844747",
-    appId: "1:947213844747:web:97c1a5e664a670de"
-};
+import { firebaseConfig } from 'api/firebase/credentials';
 
 firebase.initializeApp(firebaseConfig);
 

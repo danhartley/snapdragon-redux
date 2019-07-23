@@ -67,30 +67,4 @@ setTimeout( () => {
         // persistor.purge();
         // window.location.reload(true);        
     }
-
-    async function getHelloWorld() {
-        const url = `https://us-central1-snapdragon-api.cloudfunctions.net/function-1`;
-        const result = await fetch(url);
-        // console.log(result);    
-    }
-
-    // getHelloWorld();
-
-    // '### FIREBASE API KEY ###'
-    // const apiKey = 'AIzaSyBVLz0wVrYZ9JhJMobCFgSB-Edh6EnP0Yk';
-
-    // '### FIREBASE AUTH DOMAIN ###'
-    // const authDomain = 'https://snapdragon-222014.web.app/';
-
-    // '### CLOUD FIRESTORE PROJECT ID ###'
-    // const projectId = 'snapdragon-222014';
-
-    // Initialize Cloud Firestore through Firebase
-    // firebase.initializeApp({
-    //     apiKey,
-    //     authDomain,
-    //     projectId
-    // });
-    
-    // var db = firebase.firestore();
 });
