@@ -12,11 +12,10 @@ export const renderCategories = (modal, createGuide) => {
     const config = createGuide.getConfig();
 
     const guideTxt = modal.querySelector('.js-guide-text');
-    const linkTxt = modal.querySelector('.js-species-names-link');
 
-    linkTxt.classList.remove('hide-important');
-    linkTxt.removeEventListener('click',  renderSpeciesPicker);
-    linkTxt.addEventListener('click',  renderSpeciesPicker);
+    const goToSpeciesPicker = () => {
+        renderSpeciesPicker(modal, createGuide);
+    };
 
     const filterSelectedClass = 'iconic-taxa-selected';
 
@@ -27,11 +26,17 @@ export const renderCategories = (modal, createGuide) => {
     let iconicTaxa = [ ...config.guide.iconicTaxa ] || [];
 
     const template = document.createElement('template');
-    template.innerHTML = categoriesTemplate;
+          template.innerHTML = categoriesTemplate;
+    
     const parent = modal.querySelector('.js-actions');
-    parent.innerHTML = '';
+          parent.innerHTML = '';
     
     renderTemplate({}, template.content, parent);
+
+    const linkTxt = modal.querySelector('.js-species-picker-link');
+
+    linkTxt.removeEventListener('click',  goToSpeciesPicker);
+    linkTxt.addEventListener('click',  goToSpeciesPicker);
 
     const icons = parent.querySelectorAll('.js-iconic-taxa-categories > div > div:nth-child(1)');
 

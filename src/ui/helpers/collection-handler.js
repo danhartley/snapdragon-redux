@@ -64,7 +64,9 @@ async function getItems(collection, config) {
             }
         };
 
-        return loadSpeciesInParallel(collection.itemNames);
+        const itemNames = collection.itemNames.length > 0 ? collection.itemNames : config.guide.itemNames;
+
+        return loadSpeciesInParallel(itemNames);
     }
 };
 

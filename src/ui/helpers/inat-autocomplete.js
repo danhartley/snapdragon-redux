@@ -4,7 +4,7 @@ import { GoogleAutocomplete } from 'geo/geo';
 
 // https://github.com/kraaden/autocomplete
 
-export const inatAutocomplete = (input, type, container, rb) => {
+export const inatAutocomplete = (input, type, className, rb) => {
 
     const MIN_LENGTH = 3;
 
@@ -66,7 +66,7 @@ export const inatAutocomplete = (input, type, container, rb) => {
             input.value = item.label;
             input.name = item.value;
         },
-        container: container,
+        className: className,
         rb: rb,
         minLength: MIN_LENGTH,
         debounceWaitMs: 200

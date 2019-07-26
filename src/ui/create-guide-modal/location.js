@@ -42,7 +42,6 @@ export const renderLocation = (modal, createGuide) => {
         const place = await getPlace(config, true);
         config.guide.locationType = 'longLat';
         config.place = place;
-        // config.collection.id = 1;
         config.guide.locationLongLat = place.longLocation;
         setLocationLongLatBtn.innerHTML = defaultLocationTxt;
         
@@ -72,11 +71,12 @@ export const renderLocation = (modal, createGuide) => {
     locationPlaceInput.addEventListener('keypress', event => {
         counter++;
         console.log(counter);
-        autocompleteRef = inatAutocomplete(locationPlaceInput, 'places', 'inat-place-autocomplete', 'place');
+        autocompleteRef = inatAutocomplete(locationPlaceInput, 'places', 'autocomplete-options-container', 'place');
         setTimeout(() => {
             const googleImageContainer = modal.querySelector('#inat-place-autocomplete #googleLogoContainer');
             if(!googleImageContainer && counter >= 3) {
-                modal.querySelector('#inat-place-autocomplete').innerHTML += `<div id="googleLogoContainer"><img id="googleLogo" src="${googleLogoImg}" alt=""></div>`;
+                const options = modal.querySelector('#inat-place-autocomplete');
+                if(options) options.innerHTML += `<div id="googleLogoContainer"><img id="googleLogo" src="${googleLogoImg}" alt=""></div>`;
             }            
         },750);  
     });
@@ -116,7 +116,6 @@ export const renderLocation = (modal, createGuide) => {
         } else {
             config.guide.locationType = 'longLat';
             config.guide.locationLongLat = locationPlaceInput.value;
-            // config.collection.id = 1;
 
             const callback = geocoderResult => {
                 const lat = geocoderResult[0].geometry.location.lat();

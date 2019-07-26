@@ -16,7 +16,9 @@ export const renderGuideSummary = (config, parent, speciesCount) => {
         ? `${speciesCount} species` 
         : config.guide.iconicTaxa.length > 0 
             ? config.guide.iconicTaxa.map(taxon => taxon.common).join(', ') 
-            : 'All species';
+            : config.guide.locationType === 'taxon'
+                ? 'Selected species'
+                : 'All species';
 
     const inatId = config.guide.inatId 
                         ? config.guide.locationType === 'inat'

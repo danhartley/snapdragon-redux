@@ -444,6 +444,35 @@ const commonBritishBirds = {
   }
 };
 
+const selectedItemsCollection = { 
+  id: 9,
+  behaviour: 'static',
+  type: 'custom',
+  name: 'User collection', 
+  moduleSize: 6,
+  lessonPlanLandscape: 1,
+  lessonPlanPortrait: 101,
+  glossary: ['common'],
+  itemNames: [],
+  items: [],
+  iconicTaxa: [],
+  guide: {
+    iconicTaxa: [],
+    locationPlace: 'User collection',
+    locationType: 'taxon',
+    place: {
+        name: 'User collection',
+        id: 'any',
+        type: 'places'
+    },
+    season: {
+        type: 'all_year'
+    },
+    speciesRange: 0,
+    ready: true
+}
+};
+
 export const snapdragonCollections = [
     
     location,
@@ -458,5 +487,7 @@ export const snapdragonCollections = [
     commonBritishBirds,
     
     rhsTrees,
-    rhsWeeds
+    rhsWeeds,
+
+    selectedItemsCollection
 ];
