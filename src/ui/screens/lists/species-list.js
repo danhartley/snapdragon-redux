@@ -18,7 +18,7 @@ import { enums } from 'ui/helpers/enum-helper';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
-    const { collections, config: configState, history, counter, enums: traitEnums, lesson  } = store.getState();
+    const { config: configState, history, counter, enums: traitEnums, lesson  } = store.getState();
 
     let config = R.clone(configState);
     
@@ -211,7 +211,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
             renderHome(counter, false, true);
         }
         if(config.collection.id === 0) return;
-        collectionHandler(collections, collection, config, counter, callback, callbackWhenNoResults);
+        collectionHandler(collection, config, counter, callback, callbackWhenNoResults);
     }
 };
 

@@ -85,7 +85,7 @@ export const getSetOfTraitAnswers = (variables, pool, trait) => {
     } else {
         answers = [];
         const sets = [];
-        const combinations = pool.length/variables;
+        const combinations = Math.round(pool.length/variables);
         while(pool.length) {
             const set = pool.splice(0,combinations);
             sets.push(set);
