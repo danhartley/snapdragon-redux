@@ -9,10 +9,10 @@ export const getBirdsongTests = itemsInThisRound => {
     const tests = itemsInThisRound.map(item => {
         
         if(item.taxonomy.class && item.taxonomy.class.toLowerCase() !== 'aves') return [];
+        
+        const { question, answers, overrides } = getBirdsongTest(item, itemsInThisRound);
 
         if(!question) return {};
-
-        const { question, answers, overrides } = getBirdsongTest(item, itemsInThisRound);
 
         return {
             item,
@@ -27,9 +27,10 @@ export const getBirdsongTests = itemsInThisRound => {
 
 const getBirdsongTest = (item, itemsInThisRound) => {
 
-    if(!item.traits || item.traits.length === 0) return;
+    if(!item.traits || Object.keys(item.traits).length === 0) return;
 
-    const birdsong = item.traits.find(trait => trait.name === 'song');
+    const name = 'song';
+    const birdsong = { name, ...item.traits[name] };
     
     let birds = R.take(3, itemsInThisRound.filter(bird => bird.name.toLowerCase() !== item.name.toLowerCase()));
         birds.push(item);

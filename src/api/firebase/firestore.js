@@ -92,10 +92,6 @@ const getSpeciesByName = async itemName => {
     return items[0];
 };
 
-const getSpeciesFromList = arr => {
-    return species.filter(item => R.contains(item.name, arr));
-};
-
 const getTaxaWhere = async props => {
 
     const { language, key, operator, value, limit } = props;
@@ -182,7 +178,6 @@ const getTraitsBySpeciesName = async (name, language = 'en') => {
 export const firestore = {
     getSpecies,
     getSpeciesNames,
-    getSpeciesFromList,
     getSpeciesByName,
     getSpeciesByIconicTaxon,
     getFamiliesByIconicTaxon,

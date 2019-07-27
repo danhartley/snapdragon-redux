@@ -71,9 +71,9 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
                     
                 if(item.taxonomy.class.toLowerCase() === 'aves') {
     
-                    if(item.traits.length === 0) return;
+                    if(item.traits && Object.keys(item.traits).length === 0) return;
     
-                    const xcID = item.traits.find(trait => trait.name === 'song').value;
+                    const xcID = item.traits['song'].value;
     
                     if(!xcID) return;
         

@@ -2,48 +2,89 @@ import { store } from 'redux/store';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { firestore } from 'api/firebase/firestore';
 
-export const getLookalikeTests = itemsInThisRound => {
+export const getLookalikeTests = async itemsInThisRound => {
 
-    if(itemsInThisRound === undefined) return [];
+    const init = async () => {
 
-    const tests = itemsInThisRound.map(item => {
+        // const loadSpeciesInParallel = async itemNames => {
+        //     try {
+        //         return Promise.all(itemNames.map(name => {                    
+        //             return firestore.getSpeciesByName(name).then(async item => {
+        //                 return await {                         
+        //                     ...item
+        //                 }
+        //             })                    
+        //         }));
+    
+        //     } catch (error) {
+        //         console.log(`${item} problem!!! For ${name}`)
+        //         console.error(error);
+        //     }
+        // };
+ 
+        if(itemsInThisRound === undefined) return new Promise(resolve => resolve([]));
 
-        if(!question) return {};
+        return Promise.all(itemsInThisRound.map(async item => {
+            
+            const { question, answers, overrides } = await getLookalikeTest(item);
 
-        const { question, answers, overrides } = getLookalikeTest(item);
+            console.log('overrides: ', overrides);
 
-        return {
-            item,
-            question,
-            answers,
-            overrides
-        }
-    });
+            if(!question) return new Promise(resolve => resolve({}));
+
+            return {
+                item,
+                question,
+                answers,
+                overrides
+            }
+        }));
+    }
+
+    const tests = await init();
+
+    console.log('tests: ', tests);
 
     return tests;
 }
 
 const getLookalikeTest = item => {
 
-    const { config } = store.getState();
+    const init = async () => {
 
-    if(!item.traits || item.traits.length === 0) return;
+        const { config } = store.getState();
 
-    const lookaliketraits = item.traits.find(trait => trait.name === 'look-alikes');
+        if(!item.traits || Object.keys(item.traits).length === 0) return {};
 
-    if(lookaliketraits.length === 0) return;
+        const lookaliketraits = item.traits['look-alikes'];
 
-    let lookalikes = lookaliketraits.value;
+        if(!lookaliketraits) return {};
 
-    if(lookalikes.length === 0) return {};
+        let lookalikes = lookaliketraits.value;
 
-    lookalikes = firestore.getSpeciesFromList(lookalikes);
-    lookalikes.push(item);
+        if(lookalikes.length === 0) return {};
 
-    if(lookalikes.length < 2) return {}; 
+        // should return place holder for these lookalikes
+        // which can be looked up at runtime.
+        // if not, the promise is passed as far as lesson-builder
 
-    const question = itemProperties.getVernacularName(item, config);
-    const answers = lookalikes.map(item => itemProperties.getVernacularName(item, config));
+        const getLookalikes = async () => {
+            return Promise.all(lookalikes.map(async name => {
+                return await firestore.getSpeciesByName(name);
+            })
+        )};
+        
+        lookalikes = await getLookalikes();
 
-    return { question, answers, overrides : { question: 'Avoid look-alikes', help: '(Pick one correct image)', binomial: 'Latin name', vernacularName: 'Common name', trait: { name: 'look-alikes', lookalikes } } };
+        if(lookalikes.length < 2) return {}; 
+
+        const question = itemProperties.getVernacularName(item, config);
+        const answers = lookalikes.map(item => itemProperties.getVernacularName(item, config));
+
+        console.log('answers: ', answers);
+
+        return { question, answers, overrides : { question: 'Avoid look-alikes', help: '(Pick one correct image)', binomial: 'Latin name', vernacularName: 'Common name', trait: { name: 'look-alikes', lookalikes } } };
+    };
+
+    return init();
 };

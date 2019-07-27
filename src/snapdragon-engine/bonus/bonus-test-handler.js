@@ -34,8 +34,10 @@ export const getBonusTests = (collection, itemIndices, bonusLayouts, lessonName,
         return addLayoutToTest(traitTests);
     };
 
-    const getTraitTypeLookalikeTests = itemsInThisRound => {
-        let traitTests = getLookalikeTests(itemsInThisRound).filter(trait => trait.question);
+    const getTraitTypeLookalikeTests = async itemsInThisRound => {
+        let traitTests = await getLookalikeTests(itemsInThisRound);
+        console.log('traitTests: ', traitTests);
+            traitTests = traitTests.filter(trait => trait.question);
             traitTests = traitTests.length > 0 ? traitTests.filter(trait => trait.question) : [];
         return addLayoutToTest(traitTests);
     };

@@ -108,9 +108,9 @@ export const renderTestCardTemplate = (collection, context) => {
         document.querySelector('.js-iconic-icon').classList.add('hide-important');
     }
 
-    const { bonus } = getBonusQuestion(item || {}, []);
+    const bonus = getBonusQuestion(item || {}, []);
 
-    if(bonus.typedItemTraits.length === 0) {
+    if(!bonus) {
         traitCardLink.classList.add('hide-important');
         document.querySelector('.js-iconic-icon').classList.remove('hide-important');
     }

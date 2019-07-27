@@ -249,12 +249,12 @@ export const renderMultiStrips = (collection, bonus) => {
                 if(bonus.overrides.trait && bonus.overrides.trait.name === 'song') {
 
                     const parent = document.querySelector('.js-question-help');
-                        parent.innerHTML = '';
+                          parent.innerHTML = '';
 
                     const template = document.createElement('template');
-                        template.innerHTML = audioMediaTemplate;
+                          template.innerHTML = audioMediaTemplate;
 
-                    const xcID = bonus.overrides.trait.value;
+                    const xcID = bonus.overrides.trait.value[0];
 
                     const mp3 = `./songs/${xcID}.mp3`;
                     

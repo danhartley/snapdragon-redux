@@ -14,9 +14,9 @@ import { renderCalendar } from 'ui/screens/common/calendar';
 import { renderTaxaBox } from 'ui/screens/common/taxa-box';
 import { renderBadge } from 'ui/screens/common/badge';
 import { enums } from 'ui/helpers/enum-helper';
+import { firestore } from 'api/firebase/firestore';
 
 import cardTemplate from 'ui/screens/cards/card-template.html';
-import { firestore } from 'api/firebase/firestore';
 
 export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, isInCarousel = true) => {
 

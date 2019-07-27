@@ -3,11 +3,13 @@ import * as R from 'ramda';
 import { utils } from 'utils/utils';
 import { getRandomTrait, getTraitsPoolForUnits, getTraitsPoolForRoles, getTraitsPool, getSetOfTraitAnswers, getTraitsToExclude } from 'ui/helpers/traits-handler';
 
-export const getTypedTraitsForSpecies = (enums, item) => {
+export const getTraitsForTests = (enums, item, alreadyTestedTraits = []) => {
 
     if(item.traits === undefined || (Object.keys(item.traits).length === 0 && item.traits.constructor === Object)) return {};
 
-    const trait = getRandomTrait(item.traits, getTraitsToExclude());
+    const excludedTraits = [ ...getTraitsToExclude(), ...alreadyTestedTraits ];
+
+    const trait = getRandomTrait(item.traits, excludedTraits);
 
     if((Object.keys(trait).length === 0 && trait.constructor === Object)) return {};
  
@@ -20,7 +22,7 @@ export const getTypedTraitsForSpecies = (enums, item) => {
 
     const question = trait.unit
                         ? trait.value.join('-')
-                        : trait.value.join(',');
+                        : trait.value.join(', ');
                            
     const variables = trait.value.length; 
 
@@ -28,8 +30,8 @@ export const getTypedTraitsForSpecies = (enums, item) => {
 
     const number = variables * 5;
 
-    traitsPool = R.take(number, traitsPool.filter(t => t.toLowerCase() !== trait.value.join(',').toLowerCase()));
-    traitsPool = [ ...traitsPool, trait.value.join(',') ];    
+    traitsPool = R.take(number, traitsPool.filter(t => t.toLowerCase() !== trait.value.join(', ').toLowerCase()));
+    traitsPool = [ ...traitsPool, trait.value.join(', ') ];    
 
     const answers = getSetOfTraitAnswers(variables, traitsPool, trait);
 

@@ -2,104 +2,100 @@ import * as R from 'ramda';
 
 import { renderTemplate } from 'ui/helpers/templating';
 import { store } from 'redux/store';
-import { getTypedTraitsForSpecies } from 'api/traits/species-typed-traits';
+import { getTraitsForTests } from 'api/traits/traits-for-tests';
 import { renderMultiStrips } from 'ui/screens/multichoice/multi-strips';
 
 import summaryTemplate from 'ui/screens/cards/trait-card-summary-template.html';
 
-export const getBonusQuestion = (item, alreadyAskedQuestions) => {
+export const getBonusQuestion = (item, alreadyTestedTraits) => {
 
     const enums = store.getState().enums;
 
-    let bonus = null;
+    let bonus = getTraitsForTests(enums, item, alreadyTestedTraits);
 
-    while (true) {
-        
-        bonus = getTypedTraitsForSpecies(enums, item);
-
-        if(bonus.overrides) {
-            if (!R.contains(bonus.overrides.trait.type, alreadyAskedQuestions) || alreadyAskedQuestions.length === bonus.typedItemTraits.length) {            
-                break;
-            } 
-        } else {
-            bonus.typedItemTraits = [];
-            break;
-        }
-    }
-
-    return { bonus };
+    return bonus;
 };
 
 export const renderTraitCard = item => {
 
-    const alreadyAskedQuestions = [];
+    const traitIterator = (function() {
+ 
+        const alreadyTestedTraits = [];
 
-    const collection = R.clone(store.getState().collection);
+        const collection = R.clone(store.getState().collection);
+
+        const guid = new Date().getTime();
+
+        return {
+
+            getTestTraits: function () {
+                return alreadyTestedTraits;
+            },
+
+            getNextTrait: function() {
+            
+                const bonus = getBonusQuestion(item, this.getTestTraits());
     
-    const guid = new Date().getTime();
+                if(Object.keys(bonus).length === 0) {
+    
+                    const scores = store.getState().score;
+                    const score = scores.bonusScores ? scores.bonusScores.filter(s => s.id === item.id && s.guid === guid) : [];
+                    const total = score.length;
+                    const correct = score.filter(s => s.success).length;
+    
+                    const template = document.createElement('template');
+                          template.innerHTML = summaryTemplate;
+                
+                    const parent = document.querySelector('.js-test-card-content');
+                          parent.innerHTML = '';
+                    
+                    const context = { correct, total, name: item.vernacularName || item.name };
+                    
+                    renderTemplate(context, template.content, parent);
+    
+                    document.querySelector('.js-try-again').addEventListener('click', () => {
+                        renderTraitCard(item);
+                    });
+    
+                    document.querySelector('.js-test-card-content').classList.add('trait-line');            
+                    document.querySelector('.js-question-question').innerHTML = 'Section complete';
+                    document.querySelector('.js-question-help').innerHTML = '(Bonus questions.)';
+                    document.querySelector('.js-txt-question').classList.add('hide-important');
+                    document.querySelector('.js-continue-lesson-btn').classList.add('hide-important');
+    
+                    return;
+                } else {
 
-    const getNextTrait = () => {
+                    let numberOfQuestions = Object.keys(bonus.typedItemTraits).length;
+                    numberOfQuestions = (numberOfQuestions - alreadyTestedTraits.length);
+                    numberOfQuestions = numberOfQuestions === 0 ? '' : numberOfQuestions;
+
+                    setTimeout(() => {
+                        document.querySelector('.js-traits-count-badge').innerHTML = numberOfQuestions;
+                    });
+                                    
+                    bonus.screen = { name: 'trait-property'};
+                    bonus.overrides.binomial = 'TRAITS & ECOLOGY';
+                    bonus.type = 'trait';
+                    bonus.guid = guid;
+                    bonus.callback = score => {
+                        this.getNextTrait();
+                    };
         
-        const { bonus } = getBonusQuestion(item, alreadyAskedQuestions);
-
-        let numberOfQuestions = bonus.typedItemTraits.length === 0 ? '' : bonus.typedItemTraits.length;
-            numberOfQuestions = (numberOfQuestions - alreadyAskedQuestions.length);
-            numberOfQuestions = numberOfQuestions === 0 ? '' : numberOfQuestions;
-
-        setTimeout(() => {
-            document.querySelector('.js-traits-count-badge').innerHTML = numberOfQuestions;
-        });
-
-        if(alreadyAskedQuestions.length === bonus.typedItemTraits.length) {
-
-            const scores = store.getState().score;
-            const score = scores.bonusScores.filter(s => s.id === item.id && s.guid === guid) || [];
-            const total = score.length;
-            const correct = score.filter(s => s.success).length;
-
-            const template = document.createElement('template');
-
-            template.innerHTML = summaryTemplate;
+                    alreadyTestedTraits.push(bonus.overrides.trait.key);
         
-            const parent = document.querySelector('.js-test-card-content');
-            parent.innerHTML = '';
-            
-            const context = { correct, total, name: item.vernacularName || item.name };
-            
-            renderTemplate(context, template.content, parent);
-
-            document.querySelector('.js-try-again').addEventListener('click', () => {
-                renderTraitCard(item);
-            });
-
-            document.querySelector('.js-test-card-content').classList.add('trait-line');            
-            document.querySelector('.js-question-question').innerHTML = 'Section complete';
-            document.querySelector('.js-question-help').innerHTML = '(Bonus questions.)';
-            document.querySelector('.js-txt-question').classList.add('hide-important');
-            document.querySelector('.js-continue-lesson-btn').classList.add('hide-important');
-
-            return;
+                    renderMultiStrips(collection, bonus);
+        
+                    const returnLink = document.querySelector('.js-traits-link');
+                    const returnTxt = returnLink.querySelector('span:nth-child(1)');
+                        returnTxt.innerHTML = 'Main';
+                
+                    const returnTxt2 = returnLink.querySelector('span:nth-child(2)');
+                        returnTxt2.innerHTML = 'lesson';
+                }
+            }
         }
-        
-        bonus.screen = { name: 'trait-property'};
-        bonus.overrides.binomial = 'TRAITS & ECOLOGY';
-        bonus.type = 'trait';
-        bonus.guid = guid;
-        bonus.callback = score => {
-            getNextTrait();
-        };
+    })();
 
-        alreadyAskedQuestions.push(bonus.overrides.trait.type);
-
-        renderMultiStrips(collection, bonus);
-
-        const returnLink = document.querySelector('.js-traits-link');
-        const returnTxt = returnLink.querySelector('span:nth-child(1)');
-              returnTxt.innerHTML = 'Main';
-    
-        const returnTxt2 = returnLink.querySelector('span:nth-child(2)');
-              returnTxt2.innerHTML = 'lesson';
-    };
-
-    getNextTrait();
+   traitIterator.getNextTrait();
 };

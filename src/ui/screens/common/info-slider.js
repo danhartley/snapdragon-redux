@@ -6,8 +6,7 @@ import infoSliderTemplate from 'ui/screens/common/info-slider-template.html';
 const renderInfoSlider = (traits, parent, id) => {
 
     const slider = document.createElement('template');
-
-    slider.innerHTML = infoSliderTemplate;
+          slider.innerHTML = infoSliderTemplate;
 
     parent.innerHTML = '';
     
