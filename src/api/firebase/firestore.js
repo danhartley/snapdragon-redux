@@ -83,12 +83,8 @@ const getSpeciesByName = async itemName => {
     
     if(item) return new Promise(resolve => resolve(item));
     
-    console.log(`item ${itemName} not found in collection, fetched from cloud`);
-    
     const items = await getSpecies({ key:'name', operator:'==', value:itemName });
     
-    console.log(item);
-
     return items[0];
 };
 
@@ -105,7 +101,6 @@ const getTaxaWhere = async props => {
     const docs = [];
   
     querySnapshot.forEach(doc => {
-      console.log(doc.data());
       docs.push(doc.data());
     });
   
@@ -129,8 +124,6 @@ const getItemTaxonByName = async (config, name) => {
         if(querySnapshot.docs.length > 0) {
             querySnapshot.forEach(doc => {
                 taxon = doc.data();
-                console.log(`Number of documents returned: ${querySnapshot.docs.length}`)
-                console.log(`I got taxon details for ${name}!`);
           });
         }
 
@@ -167,8 +160,6 @@ const getTraitsBySpeciesName = async (name, language = 'en') => {
     if(querySnapshot.docs.length > 0) {
         querySnapshot.forEach(doc => {
         traits = doc.data();
-        console.log(`Number of documents returned: ${querySnapshot.docs.length}`)
-        console.log(`I got traits for ${name}!`);
       });
     }
 

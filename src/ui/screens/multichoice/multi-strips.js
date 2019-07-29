@@ -155,7 +155,7 @@ export const renderMultiStrips = (collection, bonus) => {
                         answers = answers.filter(i => i.name.toLowerCase() !== item.name.toLowerCase()).map(i => itemProperties.getVernacularName(i, defaultLanguage));
                         answers = R.take(defaultQueryLimit - 1, answers);
 
-                        answers.push(item.vernacularName);
+                        answers = utils.shuffleArray([item.vernacularName, ...answers]);
                 
                         help = config.isLandscapeMode ? '(Click on the answer.)' : '(Tap on the answer.)';
                     };

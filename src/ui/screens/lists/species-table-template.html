@@ -5,7 +5,7 @@
     <div class="scrollable">
         <div>
             <table class="species-table list-group">
-                <tbody data-repeat-item="{{ collection.items }}">
+                <tbody data-repeat-item="{{ itemImages }}">
                     <tr class="table-row js-list-item">
                         <td id="{{ item.name }}" data-snap-index="{{ item.snapIndex }}">
                             <img 
@@ -25,7 +25,7 @@
                             <span class="js-test-card-container-link">
                                 <span data-toggle="modal" data-name="{{ item.name }}" data-target="#cardModal" class="capitalise underline-link">{{ item.vernacularName }}</span>
                             </span>
-                            <span class="latin-name wide-screen">{{ item.binomial }}</span>
+                            <span class="latin-name wide-screen">{{ item.name }}</span>
                             <span class="latin-name narrow-screen">{{ item.shortName }}</span>
                         </td>
                         <td class="wide-screen">
@@ -41,7 +41,7 @@
                         </td>
                         <td>
                             <div class="custom-control custom-checkbox">
-                                <input name="{{ item.binomial }}" type="checkbox" class="custom-control-input" id="inputCheck{{ item.snapIndex }}" checked>
+                                <input name="{{ item.name }}" type="checkbox" class="custom-control-input" id="inputCheck{{ item.snapIndex }}" checked>
                                 <label class="custom-control-label" for="inputCheck{{ item.snapIndex }}"></label>
                             </div>
                         </td>

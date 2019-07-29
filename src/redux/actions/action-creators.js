@@ -39,10 +39,7 @@ const restartLesson = makeActionCreator(types.RESTART_LESSON);
 
 const boundchangeLessonPlan = data => store.dispatch(changeLessonPlan(data));
 const boundchangeLessonPlans = data => store.dispatch(changeLessonPlans(data));
-
-
 const boundNextLesson = data => store.dispatch(boundAsyncNextLesson(data));
-
 
 const boundAsyncNextLesson = func => {
   return function(dispatch) {
@@ -51,8 +48,6 @@ const boundAsyncNextLesson = func => {
     })
   }  
 };
-
-
 
 const boundUpdateScore = data => store.dispatch(updateScore(data));
 const boundUpdateTraitScore = data => store.dispatch(updateTraitScore(data));

@@ -29,8 +29,6 @@ export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, paren
         const getItemWithProps = async item => {
 
             if(item.eolId) return new Promise(resolve => resolve(item));
-
-            console.log('CALLING CLOUD!');
             
             const getItem = async item => {
                 return item.family

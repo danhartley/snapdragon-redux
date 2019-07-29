@@ -27,6 +27,8 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
         const names = [];
         const scientificNames = [];
 
+        if(!speciesComparisonLink) return;
+
         async function renderLookalikes() {
 
             const readyLookalikesForRendering = async () => {
@@ -35,8 +37,6 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
 
                     const lookalikeItem = await firestore.getSpeciesByName(lookalike);
 
-                    console.log(lookalikeItem);
-                    
                     if(!lookalikeItem) return;
                     
                     lookalikeItem.vernacularName = itemProperties.getVernacularName(lookalikeItem, config);
@@ -64,8 +64,6 @@ export const lookalikeSpecies = (item, config, rootNode = document) => {
             speciesComparisonLink.classList.remove('hide');
 
             const getTrait = async (itemName, parent) => {
-    
-                // let { enums } = store.getState();
     
                 const item = await firestore.getSpeciesByName(itemName);
                     

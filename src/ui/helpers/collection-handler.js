@@ -10,8 +10,6 @@ import { enums } from 'ui/helpers/enum-helper';
 
 async function getItems(collection, config) {
 
-    console.log(collection.behaviour);
-
     if(collection.behaviour === 'dynamic') {
 
         const collectionIsUnchanged = 
@@ -45,8 +43,6 @@ async function getItems(collection, config) {
         }
     }
     else if(collection.behaviour === 'static') {
-
-        console.log(collection.behaviour);
 
         const loadSpeciesInParallel = async itemNames => {
             try {

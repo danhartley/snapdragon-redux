@@ -41,37 +41,62 @@ export const buildTable = (collection, config, enums) => {
         return { traitName, keyTratLinkClass };
     }
 
-    collection.items.forEach(item => { 
-        
-        item.image = utils.shuffleArray(item.images)[0];
-        item.license = item.image.license;
-        item.url = scaleImage(item.image, imageUseCases.SPECIES_LIST, config);
-        item.rightsHolder = item.image.rightsHolder || 'Public domain';
-        item.source = item.image.source;
-
-        item.binomial = item.name;
-        item.shortName = itemProperties.trimLatinName(item.name);
-        const { traitName, keyTratLinkClass } = getTraitName(item, enums);
-        const keyTrait = itemProperties.getActiveTrait(item, [{ name: traitName, formatter: trait => trait[0] }]);
-        item.keyTrait = keyTrait || '';
-        item.keyTratLinkClass = keyTratLinkClass;
-        item.familyLinkClass = item.family
-            ? 'capitalise underline-link js-taxon-card-link' 
-            : 'js-taxon-card-link no-pointer-events';
+    const getOrderLinkClass = item => {
+        let orderLinkClass;
         if(item.taxonomy && item.taxonomy.order) {
-            item.orderLinkClass = item.order
+            orderLinkClass = item.order
                 ? 'capitalise underline-link js-taxon-card-link' 
                 : 'js-taxon-card-link no-pointer-events';
-        } else { item.orderLinkClass = 'js-taxon-card-link'; }
-        item.taxonomy = item.taxonomy || { family: '', order: ''}
+        } else { orderLinkClass = 'js-taxon-card-link'; }
+        return orderLinkClass;
+    };
 
+    const getIconicTaxonIcon = item => {
+        let iconicTaxonIcon, hideFungiIcon;
         if(item.iconicTaxon.toLowerCase() === 'fungi') {
-            item.iconicTaxonIcon = 'hide';
-            item.hideFungiIcon = '';
+            iconicTaxonIcon = 'hide';
+            hideFungiIcon = '';
         } else {
-            item.iconicTaxonIcon = matchIcon(item.taxonomy, iconicTaxa);
-            item.hideFungiIcon = 'hide';
+            iconicTaxonIcon = matchIcon(item.taxonomy, iconicTaxa);
+            hideFungiIcon = 'hide';
         }
+        return { iconicTaxonIcon, hideFungiIcon };
+    };
+
+    const itemImages = collection.items.map(item => { 
+
+        const image = utils.shuffleArray(item.images)[0];
+        const { traitName, keyTratLinkClass } = getTraitName(item, enums);
+        const { iconicTaxonIcon, hideFungiIcon } = getIconicTaxonIcon(item);
+
+        const itemImage = {
+            id: item.id,
+            name: item.name,
+            shortName: itemProperties.trimLatinName(item.name),
+            taxonomy: item.taxonomy,
+            iconicTaxon: item.iconicTaxon,
+            vernacularName: item.vernacularName,
+            snapIndex: item.snapIndex,
+            license: image.license,
+            url: scaleImage(image, imageUseCases.SPECIES_LIST, config),
+            rightsHolder: image.rightsHolder || 'Public domain',
+            source: image.source,
+            shortName: itemProperties.trimLatinName(item.name),
+            keyTrait: itemProperties.getActiveTrait(item, [{ name: traitName, formatter: trait => trait[0] }]) || '',
+            keyTratLinkClass: keyTratLinkClass,
+            familyLinkClass: item.family
+                                ? 'capitalise underline-link js-taxon-card-link' 
+                                : 'js-taxon-card-link no-pointer-events',
+            familyLinkClass: item.family
+                                ? 'capitalise underline-link js-taxon-card-link' 
+                                : 'js-taxon-card-link no-pointer-events',
+            orderLinkClass: getOrderLinkClass(item),
+            taxonomy: item.taxonomy || { family: '', order: ''},
+            iconicTaxonIcon,
+            hideFungiIcon
+        };
+
+        return itemImage;
     });
 
     let parent = config.isPortraitMode ? DOM.rightBody : DOM.leftBody;
@@ -79,7 +104,7 @@ export const buildTable = (collection, config, enums) => {
     parent = parent.querySelector('.snapdragon-container.js-species-list');
     template.innerHTML = speciesTemplate;
 
-    renderTemplate({ collection }, template.content, parent);
+    renderTemplate({ itemImages }, template.content, parent);
 
     const keyTraits = document.querySelectorAll('.js-key-trait-link');
 

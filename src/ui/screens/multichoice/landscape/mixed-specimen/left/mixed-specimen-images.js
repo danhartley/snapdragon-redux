@@ -66,7 +66,6 @@ export const renderMixedSpecimenImages = (...args) => {
         setTimeout(() => {
             listenersToImageSelection.forEach((listener, index) => {
                 if(index === 0) {
-                    console.log('Listener images: ', images);
                     listener(images);
                 }
             });

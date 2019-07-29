@@ -16,10 +16,10 @@ export const nextLesson = counter => {
     
     if(lesson.isNextRound && counter.index === 0) {
         if(collection.items.length > 0) {
-            const func = lessonPlanner.createLessonPlan(lessonPlan, config, R.clone(collection), R.clone(lesson)).then(props => {
+            const asyncFunc = lessonPlanner.createLessonPlan(lessonPlan, config, R.clone(collection), R.clone(lesson)).then(props => {
                 return { lessonPlan: props.updatedLessonPlan, collection: props.updatedCollection, lesson: props.updatedLesson };
             });
-            actions.boundNextLesson(func);
+            actions.boundNextLesson(asyncFunc);
         } else {
             console.log("There are no items in the Snapdragon collection");
         }            
