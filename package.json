@@ -82,6 +82,7 @@
     "enumify": "^1.0.4",
     "firebase-admin": "^8.2.0",
     "firebase-functions": "^3.1.0",
-    "fsevents": "^2.0.7"
+    "fsevents": "^2.0.7",
+    "redux-thunk": "^2.3.0"
   }
 }

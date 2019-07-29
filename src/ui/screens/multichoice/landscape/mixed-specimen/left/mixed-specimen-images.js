@@ -63,14 +63,14 @@ export const renderMixedSpecimenImages = (...args) => {
 
         renderTemplate({ images }, template.content, parent);
 
-        // setTimeout(() => {
+        setTimeout(() => {
             listenersToImageSelection.forEach((listener, index) => {
                 if(index === 0) {
                     console.log('Listener images: ', images);
                     listener(images);
                 }
             });
-        // }, 250);
+        }, 250);
             
         const callback = (score, scoreUpdateTimer) => {
             listenersToUserAnswer.forEach(listener => listener(score, scoreUpdateTimer));

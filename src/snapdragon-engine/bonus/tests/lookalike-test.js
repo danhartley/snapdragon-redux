@@ -78,8 +78,10 @@ const getLookalikeTest = item => {
 
         if(lookalikes.length < 2) return {}; 
 
-        const question = itemProperties.getVernacularName(item, config);
-        const answers = lookalikes.map(item => itemProperties.getVernacularName(item, config));
+        const question = item.name;
+        const answers = [ question, ...lookalikes.map(item => item.name) ];
+        // const question = item.vernacularName;
+        // const answers = [ question, ...lookalikes.map(item => itemProperties.getVernacularName(item, config)) ];
 
         console.log('answers: ', answers);
 

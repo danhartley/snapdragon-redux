@@ -47,10 +47,13 @@ export const renderMixedSpecimenQuestion = (...args) => {
 
         unorderedImages = utils.shuffleArray(images);
 
+        speciesList = document.querySelector('.js-images-names-txt');
+
+        if(!speciesList) return;
+
         unorderedImages.forEach(async (image, index) => {
 
             if(index === 0) {
-                speciesList = document.querySelector('.js-images-names-txt');
                 speciesList.innerHTML = "";
                 uniqueImages = [];          
             }

@@ -5,7 +5,7 @@ import { getBirdsongTests } from 'snapdragon-engine/bonus/tests/birdsong-test';
 import { getLookalikeTests } from 'snapdragon-engine/bonus/tests/lookalike-test';
 import { getDefinitionTests } from 'snapdragon-engine/bonus/tests/definition-test';
 
-export const getBonusTests = (collection, itemIndices, bonusLayouts, lessonName, levelName) => {
+export const getBonusTests = async (collection, itemIndices, bonusLayouts, lessonName, levelName) => {
 
     const itemsInThisRound = collection.items.map((item, index) => {
         if(R.contains(index, itemIndices)) {
@@ -23,28 +23,19 @@ export const getBonusTests = (collection, itemIndices, bonusLayouts, lessonName,
     };
 
     const getTraitTypeTests = itemsInThisRound => {
-        let traitTests = getTraitTests(itemsInThisRound);
-            traitTests = traitTests.length > 0 ? traitTests.filter(trait => trait.question) : [];
-        return addLayoutToTest(traitTests);
+        return new Promise(resolve => resolve(getTraitTests(itemsInThisRound)));
     };
 
     const getTraitTypeBirdsongTests = itemsInThisRound => {
-        let traitTests = getBirdsongTests(itemsInThisRound).filter(trait => trait.question);
-            traitTests = traitTests.length > 0 ? traitTests.filter(trait => trait.question) : [];
-        return addLayoutToTest(traitTests);
+        return new Promise(resolve => resolve(getBirdsongTests(itemsInThisRound)));
     };
 
-    const getTraitTypeLookalikeTests = async itemsInThisRound => {
-        let traitTests = await getLookalikeTests(itemsInThisRound);
-        console.log('traitTests: ', traitTests);
-            traitTests = traitTests.filter(trait => trait.question);
-            traitTests = traitTests.length > 0 ? traitTests.filter(trait => trait.question) : [];
-        return addLayoutToTest(traitTests);
+    const getTraitTypeLookalikeTests = itemsInThisRound => {
+        return getLookalikeTests(itemsInThisRound);     
     };
 
     const getDefinitionTypeTests = item => {
-        let tests = getDefinitionTests(item);
-        return addLayoutToTest(tests);
+        return new Promise(resolve => resolve(getDefinitionTests(item)));
     };
 
     let traitTests = [], birdsongTests = [], lookalikeTests = [], definitionTests = [];
@@ -56,22 +47,31 @@ export const getBonusTests = (collection, itemIndices, bonusLayouts, lessonName,
 
         if(layout.types) {
 
-            layout.types.forEach(type => {
+            const getResolvedPromises = async () => {
+            const promises = await layout.types.map(async type => {
                 switch(type) {
                     case 'traits':
-                        traitTests = getTraitTypeTests(itemsInThisRound);
-                        break;
+                        return getTraitTypeTests(itemsInThisRound);
                     case 'song':
-                        birdsongTests = getTraitTypeBirdsongTests(itemsInThisRound);
-                        break;
+                        return getTraitTypeBirdsongTests(itemsInThisRound);
                     case 'look-alikes':
-                        lookalikeTests = getTraitTypeLookalikeTests(itemsInThisRound);
-                        break;
+                        return getTraitTypeLookalikeTests(itemsInThisRound);
                     case 'definition':                        
-                        definitionTests = getDefinitionTypeTests(item);
-                        break;
+                        return getDefinitionTypeTests(item);
                 }
             });
+
+            const testGroups = await Promise.all(promises);
+
+            const tests = testGroups.map(group => {
+                group = group.filter(g => g.question);
+                return addLayoutToTest(group);
+            });
+
+            return tests;
+        };
+
+        traitTests = await getResolvedPromises();
 
         } else {
             traitTests = getTraitTypeTests(itemsInThisRound);
@@ -81,7 +81,5 @@ export const getBonusTests = (collection, itemIndices, bonusLayouts, lessonName,
         }
     }
 
-    const bonusTests = [ ...traitTests, ...birdsongTests, ...lookalikeTests, ...definitionTests ];
-
-    return bonusTests;
+    return R.flatten(traitTests);
 };

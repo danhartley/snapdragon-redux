@@ -197,7 +197,7 @@ const mushroom = {
 };
 
 const notAllowedTraitsSpecies = {
-  'song': { key:'', value:'' },
+  // 'song': { key:'', value:'' },
   'voice': { key:'', value:'' }
 };
 

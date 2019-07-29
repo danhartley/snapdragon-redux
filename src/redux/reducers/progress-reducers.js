@@ -12,6 +12,8 @@ export const counter = (state = null, action) => {
             return { ...state, isLessonRehydrated: false };
         case types.NEXT_ROUND:
             return { index: 0 };
+        case types.NEXT_LESSON:
+            return { index: 0 };
         case types.NEXT_LEVEL:
             return { ...state, index: action.data.index };
         case types.STOP_START_LESSON:

@@ -5,7 +5,7 @@ import { lessonPlanner } from 'snapdragon-engine/lesson-planner';
 import { actions } from 'redux/actions/action-creators';
 import { lessonPlans } from 'snapdragon-config/lesson-plans';
 
-export const nextLesson = (counter) => {
+export const nextLesson = counter => {
 
     const { lessonPlans: userEditedLessonPlans, collection, config, lesson } = store.getState();
 
@@ -16,11 +16,12 @@ export const nextLesson = (counter) => {
     
     if(lesson.isNextRound && counter.index === 0) {
         if(collection.items.length > 0) {
-            const { updatedLessonPlan, updatedCollection, updatedLesson } = lessonPlanner.createLessonPlan(lessonPlan, config, R.clone(collection), R.clone(lesson));
-            actions.boundNextLesson({ lessonPlan: updatedLessonPlan, collection: updatedCollection, lesson: updatedLesson });
+            const func = lessonPlanner.createLessonPlan(lessonPlan, config, R.clone(collection), R.clone(lesson)).then(props => {
+                return { lessonPlan: props.updatedLessonPlan, collection: props.updatedCollection, lesson: props.updatedLesson };
+            });
+            actions.boundNextLesson(func);
         } else {
             console.log("There are no items in the Snapdragon collection");
-        }
-        
+        }            
     }
 };
