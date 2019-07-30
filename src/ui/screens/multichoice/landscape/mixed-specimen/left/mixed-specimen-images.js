@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { firestore } from 'api/firebase/firestore';
 import { scoreHandler } from 'ui/helpers/handlers';
 import { store } from 'redux/store';
@@ -7,8 +9,9 @@ import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
 import { DOM } from 'ui/dom';
 import { iconicTaxa, matchIcon } from 'api/snapdragon/iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';
-import specimensTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images-template.html';
 import { getPoolItems } from 'ui/screens/multichoice/missing-data-helper';
+
+import specimensTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images-template.html';
 
 const listenersToImageSelection = [];
 const listenersToUserAnswer = [];
@@ -21,15 +24,13 @@ export const listenToImageSelection = listener => {
     listenersToImageSelection.push(listener);
 };
 
-export const renderMixedSpecimenImages = (...args) => {
+export const renderMixedSpecimenImages = (collection, noOfImagesPerItem, preselectedItems) => {
 
-    const collection = args[0];
-    const noOfImagesPerItem = args[1] || 1;
-    const preselectedItems = args[2] || null;
+    const imagesPerItem = noOfImagesPerItem || 1;
 
     const { config, score, lesson } = store.getState();
 
-    const item = collection.nextItem;
+    const item = R.clone(collection.nextItem);
 
     if(!item) return;
 
@@ -53,7 +54,7 @@ export const renderMixedSpecimenImages = (...args) => {
             const itemImages = utils.shuffleArray(item.images);
 
             return itemImages.map((image, imageIndex) => {
-                if(imageIndex < noOfImagesPerItem) {
+                if(imageIndex < imagesPerItem) {
                     return { index: index + index + imageIndex, ...image, itemName: item.name };
                 }
             }).filter(image => image);

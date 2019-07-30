@@ -9,23 +9,21 @@ import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { listenToImageSelection, listenToUserAnswer, renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
 import { renderTemplate } from 'ui/helpers/templating';
+
 import mixedSpecimenQuestionTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question-template.html';
 
-export const renderMixedSpecimenQuestion = (...args) => {
-
-    const collection = R.clone(args[0]);
-    const bonus = args[1]; 
+export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
     const { config, layout } = store.getState();
 
-    const item = collection.nextItem;
+    const item = R.clone(collection.nextItem);
 
     let question = 'Find the species';
     let help = '(Click on the matching photo.)';
 
-    if(bonus) {
-        question = bonus.overrides.question || question;
-        help = bonus.overrides.help || help;
+    if(bonusLayout) {
+        question = bonusLayout.overrides.question || question;
+        help = bonusLayout.overrides.help || help;
     }
 
     const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question, help, term: '' });
@@ -88,8 +86,8 @@ export const renderMixedSpecimenQuestion = (...args) => {
     });
 
     document.querySelector('.js-help-txt').addEventListener('click', () => {
-        const noOfImagesPerItem = layout.bonus ? 6 / collection.items.length : 1;
-        const preselectedItems = layout.bonus ? collection.items : null;
+        const noOfImagesPerItem = layout.bonusLayout ? 6 / collection.items.length : 1;
+        const preselectedItems = layout.bonusLayout ? collection.items : null;
         renderMixedSpecimenImages(collection, noOfImagesPerItem, preselectedItems);
     });    
 };

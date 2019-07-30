@@ -17,7 +17,7 @@ export const renderMixedSpecimenQuestions = collection => {
 
     const { config, lesson, layout, score } = store.getState();
 
-    const item = collection.nextItem;
+    const item = R.clone(collection.nextItem);
 
     if(!item) return;
 
