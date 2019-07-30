@@ -248,17 +248,22 @@ export const renderMultiStrips = (collection, bonus) => {
 
                 if(bonus.overrides.trait && bonus.overrides.trait.name === 'song') {
 
-                    const parent = document.querySelector('.js-question-help');
-                          parent.innerHTML = '';
+                        const renderBirdsong = async () => {
 
-                    const template = document.createElement('template');
-                          template.innerHTML = audioMediaTemplate;
+                            const parent = document.querySelector('.js-question-help');
+                            parent.innerHTML = '';
 
-                    const xcID = bonus.overrides.trait.value[0];
+                            const template = document.createElement('template');
+                                    template.innerHTML = audioMediaTemplate;
 
-                    const mp3 = `./songs/${xcID}.mp3`;
-                    
-                    renderTemplate({ mp3, title: item.name }, template.content, parent);
+                            const xcID = bonus.overrides.trait.value[0];
+
+                            const mp3 = await firestore.getBirdsong(xcID);
+                            
+                            renderTemplate({ mp3, title: item.name }, template.content, parent);
+                        };
+
+                        renderBirdsong();
                 }
             }
 

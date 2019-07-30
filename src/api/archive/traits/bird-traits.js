@@ -51,9 +51,9 @@ export const getBirdTraits = enums => {
     ] },
     { name: 'Fringilla coelebs', traits: [
         { name: SD.name.RANK, value: '10', description: 'common', language: 'en' },
-        { name: SD.name.SONG, value: '465544', description: 'xeno-canto id' },
+        { name: SD.name.SONG, value: '483107', description: 'xeno-canto id' },
         { name: SD.name.LENGTH, value: '14.5', unit: 'cm' },
-        { name: SD.name.VOICE, value: 'Loud \'fink\'. Musical rattle with final flourish', unit: '' },
+        // { name: SD.name.VOICE, value: 'Loud \'fink\'. Musical rattle with final flourish', unit: '' },
         // { name: SD.name.LOOK_ALIKES, values: [ 'Fringilla montifringilla', 'Pyrrhula pyrrhula' ]},
     ] },
     { name: 'Garrulus glandarius', traits: [

@@ -389,7 +389,8 @@
 @media (min-height: 640px) {
     
   .imageSlider .carousel-item {
-    height: 13.875rem;
+    /* height: 13.875rem; */
+    height: 30vh;
     padding: 1rem 10%;
   }
 }

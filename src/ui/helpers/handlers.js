@@ -24,14 +24,15 @@ export const scoreHandler = (type, test, callback, config) => {
 };
 
 const showResponseToAnswerHandler = response => {
-    const questionText = document.querySelector('.js-txt-question');
-    questionText.innerHTML = response.success
-        ? `<div class="answer-box-success">
-            <span class="icon"><i class="fas fa-check"></i></span><span>${ response.correct }</span>
-            </div>`
-        : `<div class="answer-box-alert">
-            <span class="icon"><i class="fas fa-times"></i></span><span>${response.incorrect}</span>
-           </div>`;
+    const container = response.container || '.js-txt-question';
+    const questionText = document.querySelector(container);
+          questionText.innerHTML = response.success
+            ? `<div class="answer-box-success">
+                <span class="icon"><i class="fas fa-check"></i></span><span>${ response.correct }</span>
+                </div>`
+            : `<div class="answer-box-alert">
+                <span class="icon"><i class="fas fa-times"></i></span><span>${response.incorrect}</span>
+            </div>`;
 }
 
 const clickContinueLessonButtonHandler = (score, scoreUpdateTimer) => {
@@ -100,7 +101,9 @@ const genericScoreHandler = (_score, callback, config) => {
     let correct = config.isLandscapeMode ? `That is the right answer.` : `That is the right answer.`;
     let incorrect = config.isLandscapeMode ? `That is the wrong answer.` : 'That is the wrong answer.';
 
-    showResponseToAnswerHandler({ success: score.success, correct, incorrect });
+    const container = window.matchMedia("(max-height: 568px)").matches ? '.js-check-answer' : '.js-txt-question';
+
+    showResponseToAnswerHandler({ success: score.success, correct, incorrect,  container});
 
     score.layoutCount = layoutCount;
 

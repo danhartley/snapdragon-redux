@@ -5,6 +5,8 @@ import { firebaseConfig } from 'api/firebase/credentials';
 
 firebase.initializeApp(firebaseConfig);
 
+const storage = firebase.storage();
+
 const db = firebase.firestore();
 
 const getCollection = () => {
@@ -166,6 +168,13 @@ const getTraitsBySpeciesName = async (name, language = 'en') => {
     return await traits;
 };
 
+const getBirdsong = async xcID => {
+
+    const storageRef = storage.ref();
+    const url = await storageRef.child(`birdsong/${xcID}.mp3`).getDownloadURL();
+    return url;
+};
+
 export const firestore = {
     getSpecies,
     getSpeciesNames,
@@ -173,5 +182,6 @@ export const firestore = {
     getSpeciesByIconicTaxon,
     getFamiliesByIconicTaxon,
     getItemTaxonByName,
-    getTraitsBySpeciesName
+    getTraitsBySpeciesName,
+    getBirdsong
 };
