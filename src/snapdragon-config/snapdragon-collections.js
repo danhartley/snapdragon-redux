@@ -422,7 +422,7 @@ const commonBritishBirds = {
         // "Parus major",
         // "Erithacus rubecula",
         // "Aegithalos caudatus",
-        // "Fringilla coelebs",
+        "Fringilla coelebs",
 
         'Apus apus',
         'Delichon urbicum',

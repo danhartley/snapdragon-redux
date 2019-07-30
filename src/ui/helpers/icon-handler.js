@@ -1,6 +1,6 @@
 import { iconicTaxa, matchIcon, matchRank } from 'api/snapdragon/iconic-taxa';
 
-const mushroomIcon = '<svg-icon class="si-glyph-mushrooms"><src href="./icons/si-glyph-mushrooms.svg"/></svg>';
+const mushroomIcon = '<svg-icon class="si-glyph-mushrooms"><src href="./icons/si-glyph-mushrooms.svg"/></svg-icon>';
 
 export const renderIcon = (taxonomy, rootNode) => {
 

@@ -61,7 +61,10 @@ export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
             const taxonIcon = returnIcon(imageItem);
             
             if(!R.contains(image.itemName, uniqueImages)) {
-                speciesList.innerHTML += `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;
+                speciesList.innerHTML += 
+                    imageItem.iconicTaxon === 'fungi'
+                        ? `<li id="${image.itemName}"><span>${vernacularName}</span></li>`
+                        : `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;
                 uniqueImages.push(image.itemName);
             }
         });

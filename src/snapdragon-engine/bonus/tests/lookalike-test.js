@@ -51,6 +51,7 @@ const getLookalikeTest = item => {
         )};
         
         lookalikes = await getLookalikes();
+        lookalikes = lookalikes.filter(lookalike => lookalike);
 
         if(lookalikes.length < 2) return {}; 
 
