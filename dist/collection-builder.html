@@ -1,43 +1,128 @@
-<html>
+<html lang="en">
     <head>
-        <title>Snapdragon collection builder</title>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js"></script>
-        <style media="screen" type="text/css">            
-            select, button, input {
-                margin: 10px 5px;
-                height: 30px;
-                font-size: 16px;
-                width: 250px;
-            }
-            input {
-                width: 100px;
-            }
-            li {
-                font-size: 1.2rem;
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <title>Collection builder</title>
+        <style media="screen" type="text/css">  
+            .hide {
+                display: none;
             }
             .container {
-                display: flex;
-                flex-direction: row;                
-                border: 1px solid grey;
+                width: 100%;
+                max-width: 1300px;
+            }            
+            .sub.container {
+                width: 100%;
+                margin: 2rem 0;
+            }
+            .input-field {
+                margin-top: 0;
+            }
+            .input {
+                border-bottom: 1px solid rgb(99, 133, 95) !important;
+            }
+            .dropdown-content li>a, .dropdown-content li>span {
+                color: rgb(87, 97, 99);
             }
             #images {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;                
                 min-height: 80vh;
             }
-            .text {
-                align-self: center;
-            }
             .jump {
                 cursor: pointer;
                 margin: 0 0 0 1em;
             }
-            .hide {
-                display: none;
+            .btn {
+                background-color: rgb(87, 97, 99);
             }
         </style>
     </head>
-    <body>
+    <body class="container">
+
+        <nav class="z-depth-0 grey lighten-4">
+            <div class="nav-wrapper container">
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li class="logged-in hide">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+                    </li>
+                    <li class="logged-in hide">
+                    <a href="#" class="grey-text" id="logout">Logout</a>
+                    </li>
+                    <li class="logged-in hide">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Guide</a>
+                    </li>
+                    <li class="logged-out hide">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+                    </li>
+                    <li class="logged-out hide">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+                    </li>
+                </span>
+                </ul>
+            </div>
+        </nav>
+            
+         <!-- SIGN UP MODAL -->
+        <div id="modal-signup" class="modal">
+                <div class="modal-content">
+                <h4>Sign up</h4><br />
+                <form id="signup-form">
+                    <div class="input-field">
+                    <input type="email" id="signup-email" required />
+                    <label for="signup-email">Email address</label>
+                    </div>
+                    <div class="input-field">
+                    <input type="password" id="signup-password" required />
+                    <label for="signup-password">Choose password</label>
+                    </div>
+                    <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+                </form>
+                </div>
+        </div>
+        <!-- LOGIN MODAL -->
+        <div id="modal-login" class="modal">
+            <div class="modal-content">
+            <h4>Login</h4><br />
+            <form id="login-form">
+                <div class="input-field">
+                <input type="email" id="login-email" required />
+                <label for="login-email">Email address</label>
+                </div>
+                <div class="input-field">
+                <input type="password" id="login-password" required />
+                <label for="login-password">Your password</label>
+                </div>
+                <button class="btn yellow darken-2 z-depth-0">Login</button>
+            </form>
+            </div>
+        </div>
+        <!-- ACCOUNT MODAL -->
+        <div id="modal-account" class="modal">
+            <div class="modal-content center-align">
+            <h4>Account details</h4><br />
+            <div class="account-details"></div>
+            </div>
+        </div>
+        <!-- CREATE GUIDE MODAL -->
+        <div id="modal-create" class="modal">
+            <div class="modal-content">
+            <h4>Create Guide</h4><br />
+            <form id="create-form">
+                <div class="input-field">
+                <input type="text" id="title" required>
+                <label for="title">Guide Title</label>
+                </div>
+                <div class="input-field">
+                <textarea id="content" class="materialize-textarea" required></textarea>
+                <label for="content">Guide Content</label>
+                </div>
+                <button class="btn yellow darken-2 z-depth-0">Create</button>
+            </form>
+            </div>
+        </div>
 
         <div id="admin-menu">
             <ul>
@@ -46,29 +131,7 @@
             </ul>
         </div>
 
-        <div id="species-add" class="hide">
-            <div id="top" class="container">
-                <input id="inputCollection" type="text" />
-                <select name="licences" id="licences" onchange="setLicence(this)"></select>
-                <select name="names" id="names"></select>
-                <div id="speciesCount" class="text"></div>
-                <button id="btnGet">Get collection items</button>
-                <button class="btnAdd">Add to collection</button>
-                <div class="text collectionCount"></div>
-            </div>
-            <div class="container">
-                <input id="inputSpecies" type="text" />
-            </div>
-            <div class="container">
-                <div id="images"></div>        
-            </div>
-            <div class="container">
-                <div class="text collectionCount"></div>
-                <button class="btnAdd">Add to collection</button>
-                <div class="text">New collection available in global object newCollection</div>
-                <a class="text jump" onclick="jumpto('top');">Go to top of page</a>
-            </div>
-        </div>
+        <div id="species-add" class="js-species-add hide"></div>
 
         <div id="trait-add" class="hide">
 
@@ -88,7 +151,11 @@
 
         <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
-    
-        <!-- <script src="/__/firebase/init.js"></script> -->
+        <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-storage.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+        
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+        <script type="text/javascript" src="./stamp.js"></script>
     <script type="text/javascript" src="admin.bundle.js"></script></body>
 </html>

@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import { utils } from 'utils/utils';
 
 const parseNames = (names, languages) => {

@@ -1,0 +1,49 @@
+<div id="top"></div>
+
+<form>
+
+<div class="sub container">
+
+<div class="row">
+    <!-- <input id="inputCollection" type="text" /> -->
+    
+    <div class="input-field col s2">
+        <input placeholder="Placeholder" id="input-species" type="text" class="validate">
+        <label for="input-species">EOL ID</label>
+    </div>
+
+    <a id="btnGet" class="waves-effect waves-light btn">Get collection items</a>
+</div>
+
+<div class="row">
+    
+    <div class="input-field">
+        <select name="licences" id="licences"></select>
+    </div>
+    
+    
+    <div class="input-field">
+        <select name="names" id="names"></select>
+        <label>Materialize Select</label>
+    </div>
+
+
+    <div id="speciesCount" class="text"></div>
+</div>
+<div class="sub container">
+    <button class="btnAdd btn">Add to collection</button>
+    <div class="text collectionCount"></div>
+</div>
+<div class="sub container">
+    <div id="images"></div>        
+</div>
+<!-- <div class="snap-container">
+    <div class="text collectionCount"></div>
+    <button class="btnAdd">Add to collection</button>
+    <div class="text">New collection available in global object newCollection</div>
+    <a class="text jump" onclick="jumpto('top');">Go to top of page</a>
+</div> -->
+
+</div>
+
+</form>

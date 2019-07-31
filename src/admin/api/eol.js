@@ -23,7 +23,7 @@ const getCollectionFromSpeciesList = (speciesList) => {
 
 const getCollection = async selectedLicence => {
 
-    const speciesList = document.getElementById('inputSpecies').value;
+    const speciesList = document.getElementById('input-species').value;
 
     let collection = {};
 
@@ -47,6 +47,7 @@ const searchEOLByProvider = async (hierarchyId, Id) => {
 };
 
 export const eol = {
+    getSpecies,
     getCollection,
     searchEOLByProvider
 }

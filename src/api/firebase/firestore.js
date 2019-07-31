@@ -175,6 +175,34 @@ const getBirdsong = async xcID => {
     return url;
 };
 
+const addSpecies = async species => {
+
+    let docRef;
+
+    if(species.images) {
+        species.images = species.images.map(image => {
+            return {
+                license: image.license || '',
+                photographer: image.photographer || '',
+                rightsHolder: image.rightsHolder || '',
+                source: image.source || '',
+                title: image.title || '',
+                url: image.url || ''
+            }
+        });
+    }
+
+    console.log(species.images);
+
+    try {
+        docRef = await db.collection('species').add(species);
+    } catch(err) {
+        console.error("Error writing document: ", err);
+    }
+
+    return docRef;
+};
+
 export const firestore = {
     getSpecies,
     getSpeciesNames,
@@ -183,5 +211,6 @@ export const firestore = {
     getFamiliesByIconicTaxon,
     getItemTaxonByName,
     getTraitsBySpeciesName,
-    getBirdsong
+    getBirdsong,
+    addSpecies
 };
