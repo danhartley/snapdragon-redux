@@ -63,3 +63,16 @@
     padding: 1rem 0 !important;
     line-height: 1.15rem;
   }
+  .trait-repeater {
+      display: grid;
+      grid-gap: 2rem;
+      grid-template-columns: 1fr 1fr;
+  }
+
+  .trait-repeater li {
+      width: 100%;
+      padding: 0 .75rem;
+  }
+  input[type=text]:not(.browser-default)[readonly="readonly"] {
+      border: none;
+  }

@@ -10,7 +10,7 @@ import { eolAutocomplete } from 'admin/api/eol-autocomplete';
 import { speciesPicker } from 'admin/screens/species-picker';
 
 import addSpeciesTemplate from 'admin/screens/add-species-template.html';
-import removeSpeciesTemplate from 'admin/screens/remove-species-template.html';
+import updateSpeciesTemplate from 'admin/screens/update-species-template.html';
 
 const addSpecies = () => {
 
@@ -110,7 +110,8 @@ const addSpecies = () => {
         const speciesOptions = document.querySelector('#names');
     
         speciesOptions.addEventListener('change', event => {
-            const images = helpers.getImages(items, event.target);
+            const item = items.find(item => parseInt(item.id) === event.target.value);
+            const images = helpers.getImages(item);
             imageIds = images.imageIds;
             currentItemId = images.currentItemId;
             document.querySelectorAll('.btnAddSpecies').forEach(btn => {
@@ -212,7 +213,7 @@ const addSpecies = () => {
     //     loadInatCollection();
     // });
 
-    const addSpeciesToFirestore = btn => {
+    const addOrUpdateSpeciesToFirestore = (btn, callback) => {
 
         btn.addEventListener('click', async event => {
 
@@ -238,21 +239,30 @@ const addSpecies = () => {
             item.images = images;
 
             // document.querySelectorAll('.collectionCount').forEach(counter => counter.innerHTML = newCollection.length);
-
-            const response = await firestore.addSpecies(item);
-
-            const btnAddTraits = document.querySelector('.btnAddTraits');
-                  btnAddTraits.classList.remove('hide');
-                  btnAddTraits.addEventListener('click', event => {
-                    speciesHandler.addTraits(item.name);
-                  });
-
-            console.log('Add species response: ', response);
+        
+            if(callback) callback(item);            
         });
     };
 
+    const activateGetTraitsBtn = async item => {
+        
+        const response = await firestore.addSpecies(item);
+
+        const btnAddTraits = document.querySelector('.btnAddTraits');
+              btnAddTraits.classList.remove('hide');
+              btnAddTraits.addEventListener('click', event => {
+                global.species = item;
+                document.querySelector('#add-traits').click();
+              });
+
+        console.log('Add species response: ', response);
+    };
+
     document.querySelectorAll('.btnAddSpecies').forEach(btn => {
-        addSpeciesToFirestore(btn);
+        addOrUpdateSpeciesToFirestore(btn, () => {
+            const response = await firestore.udpateSpecies(item);
+            console.log(response);
+        });
     });
 
     document.querySelector('#licences').addEventListener('change', e => {
@@ -260,12 +270,12 @@ const addSpecies = () => {
     });
 };
 
-const removeSpeciesPicker = () => {
+const updateSpeciesPicker = () => {
     
     const template = document.createElement('template');
-          template.innerHTML = removeSpeciesTemplate;
+          template.innerHTML = updateSpeciesTemplate;
 
-    const parent = document.querySelector('#add-species-container');
+    const parent = document.querySelector('#content-container');
           parent.innerHTML = '';
 
     renderTemplate({}, template.content, parent);
@@ -273,13 +283,19 @@ const removeSpeciesPicker = () => {
     const btnRemoveSpecies = document.querySelector('.btnRemoveSpecies');
 
     const removeSpecies = () => {
-        const input = document.querySelector('#input-species-to-remove');              
+        // const input = document.querySelector('#input-species-to-update');              
         firestore.deleteSpeciesByName(input.value);
     };
 
+    const safety = document.querySelector("input[type='checkbox']");
+
+    safety.addEventListener('click', () => {
+        btnRemoveSpecies.disabled = !safety.checked;
+    });
+
     btnRemoveSpecies.addEventListener('click', removeSpecies);
 
-    const input = document.querySelector('#input-species-to-remove');
+    const input = document.querySelector('#input-species-to-update');
           input.focus();
 
     const listenForSpeciesSelection = async event => {
@@ -290,9 +306,25 @@ const removeSpeciesPicker = () => {
     };
 
     speciesPicker(input, listenForSpeciesSelection);
+
+    const btnGetPhotos = document.querySelector('#btnGetPhotos');
+
+    btnGetPhotos.addEventListener('click', async e => {
+
+        const item = await firestore.getSpeciesByName(input.value);
+
+        const images = helpers.getImages(item);
+        imageIds = images.imageIds;
+        currentItemId = images.currentItemId;
+    });
+
+    document.querySelectorAll('.btnUpdateSpecies').forEach(btn => {
+        addOrUpdateSpeciesToFirestore(btn, activateGetTraitsBtn);
+    });
+
 }
 
 export const speciesHandler = {
     addSpecies,
-    removeSpeciesPicker
+    updateSpeciesPicker
 };

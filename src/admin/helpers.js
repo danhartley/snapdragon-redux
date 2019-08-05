@@ -51,11 +51,11 @@ const getBinomial = item => {
     return binomial;
 };
 
-const getImages = (items, itemOption) => {
+const getImages = species => {
     let imageIds = [];
     let images = '';
-    let currentItemId = parseInt(itemOption.value);
-    const species = items.find(item => parseInt(item.id) === currentItemId);
+    // let currentItemId = parseInt(itemOption.value);
+    // const species = items.find(item => parseInt(item.id) === currentItemId);
     if(!species.images) {
         console.log('No images!');
     };

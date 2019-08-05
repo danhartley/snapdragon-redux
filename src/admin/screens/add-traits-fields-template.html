@@ -1,10 +1,8 @@
-<div data-repeat-field="{{ fields }}">
-    <ul>
-        <li>
-            <div class="input-field col s2">
-                <input type="text" class='trait-value' value="{{ field.value }}" data-field="{{ field.key }}" />
-                <label class='trait-key'>{{ field.key }}</label>
-            </div>
-        </li>
-    </ul>
-</div>
+<ul class="trait-repeater" data-repeat-field="{{ fields }}">
+    <li>
+        <div class="input-field">
+            <input type="text" class='trait-value' value="{{ field.value }}" data-field="{{ field.key }}" readonly="readonly" />
+            <label class='trait-key'>{{ field.key }}</label>
+        </div>
+    </li>
+</ul>

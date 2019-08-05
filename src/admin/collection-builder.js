@@ -7,6 +7,7 @@ import { speciesHandler } from 'admin/screens/species-handler';
 import { traitsHandler } from 'admin/screens/traits-handler';
 
 const auth = firebase.auth();
+const global = {};
 
 auth.onAuthStateChanged(user => {
     if (user) {
@@ -29,17 +30,21 @@ const links = document.querySelectorAll('li');
       });
 
 const addSpecies = document.querySelector('#add-species');
-      addSpecies.addEventListener('click', speciesHandler.addSpecies());
+      addSpecies.addEventListener('click', speciesHandler.addSpecies);
  
 const removeSpeciesClickHandler = e => {
-    speciesHandler.removeSpeciesPicker();
+    speciesHandler.updateSpeciesPicker();
+};
+
+const addTraitsClickHandler = e => {
+  traitsHandler.addTraits();
 };
       
-const removeSpeciesPicker = document.querySelector('#remove-species');
-      removeSpeciesPicker.addEventListener('click', removeSpeciesClickHandler);
+const updateSpeciesPicker = document.querySelector('#update-species');
+      updateSpeciesPicker.addEventListener('click', removeSpeciesClickHandler);
   
 const addTraits = document.querySelector('#add-traits');
-      addTraits.addEventListener('click', traitsHandler.addTraits());
+      addTraits.addEventListener('click', addTraitsClickHandler);
 
 const setupUI = (user) => {
   if (user) {

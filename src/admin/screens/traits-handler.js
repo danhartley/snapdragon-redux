@@ -9,7 +9,10 @@ import { renderAddTrait } from 'admin/screens/add-trait';
 import addTraitsTemplate from 'admin/screens/add-traits-template.html';
 import addTraitsFieldsTemplate from 'admin/screens/add-traits-fields-template.html';
 
-const addTraits = species => {
+const addTraits = () => {
+
+    let name;
+    let item = global.species;
 
     const template = document.createElement('template');
           template.innerHTML = addTraitsTemplate;
@@ -19,52 +22,110 @@ const addTraits = species => {
 
     renderTemplate({}, template.content, parent);
 
+    const renderTraits = async item => {
+        
+        const itemTraits = await firestore.getTraitsBySpeciesName(item.name);
+        const itemFamily = await firestore.getItemTaxonByName({language: 'en'}, item.taxonomy.family);
+              
+        item.traits = itemTraits
+        item.family = itemFamily;                
+        
+        const fields = [];
+
+        if(item.traits) {
+
+            for (let [key, obj] of Object.entries(item.traits)) {
+
+                if(key !== 'name') {
+                    const value = obj.value ? obj.value.join(', ') : '';
+                    fields.push({key,value: value});
+                }
+            }
+        }
+
+        template.innerHTML = addTraitsFieldsTemplate;
+
+        parent = document.querySelector('.js-traits');
+        parent.innerHTML = '';
+
+        renderTemplate({ fields }, template.content, parent);
+
+        M.updateTextFields();
+    };
+
+    const appendAutoTraitValue = (input, traitFields) => {
+        autocomplete({
+            input: input,
+            fetch: function(text, update) {
+                text = text.toLowerCase();
+                const suggestions = traitFields.filter(field => field.value.toLowerCase().startsWith(text))
+                update(suggestions);
+            },
+            onSelect: function(item) {
+                input.value = item.label;
+            },
+            minLength: 1,
+            debounceWaitMs: 200,
+            className: 'autocomplete-options-container'
+        });
+    };
+
+    const addFieldListeners = traits => {
+        document.querySelectorAll('.trait-value').forEach(input => {
+            if(input.dataset.field !== 'name') {
+                let traitFields = traits.find(trait => trait.key === input.dataset.field);
+                if(traitFields && traitFields.value) {
+                    traitFields = traitFields.value.map(name => {
+                        return {
+                            label: name,
+                            value: name
+                        }
+                    });
+                    appendAutoTraitValue(input, traitFields);
+                }
+            }
+        });
+    };
+
     const addTrait = document.querySelector('.js-add-trait');
 
-    renderAddTrait(species, addTrait);
+    const callback = async pair => {
+        
+        let trait = {};
+              
+        if(item.traits && item.traits[pair.key]) {
+            trait[pair.key] = { value: [ ...item.traits[pair.key].value, pair.value ] };
+        } else {
+            trait[pair.key] = { value: [ pair.value ] };
+        }
+
+        console.log(trait);
+
+        const log = await firestore.addSpeciesTraits(name, trait);
+
+        renderTraits(item);
+        renderAddTrait(addTrait, callback);
+    };
+
+    renderAddTrait(addTrait, callback);
 
     const inputSpecies = document.querySelector('#input-species-for-traits');
           inputSpecies.focus();
 
-    if(species) inputSpecies.value = species;
+    if(item) inputSpecies.value = item.name;
 
     const init = async () => {
 
         const listenForSpeciesSelection = async event => {
 
+            console.log(event);
+
             if(event.keyCode == 13) {
                 
-                const name = inputSpecies.value;
-                const item = await firestore.getSpeciesByName(name);
-                const itemTraits = await firestore.getTraitsBySpeciesName(item.name);
-                const itemFamily = await firestore.getItemTaxonByName({language: 'en'}, item.taxonomy.family);
-                      
-                item.traits = itemTraits
-                item.family = itemFamily;                
-                
-                const fields = [];
+                name = inputSpecies.value;
+                item = await firestore.getSpeciesByName(name);
 
-                if(item.traits) {
-
-                    for (let [key, obj] of Object.entries(item.traits)) {
-
-                        if(key !== 'name') {
-                            const value = obj.value ? obj.value[0] : '';
-                            fields.push({key,value: value});
-                        }
-                    }
-                }
-
-                template.innerHTML = addTraitsFieldsTemplate;
-
-                parent = document.querySelector('.js-traits');
-                parent.innerHTML = '';
-
-                renderTemplate({ fields }, template.content, parent);
-
-                M.updateTextFields();
-
-                addFieldListeners();
+                renderTraits(item);
             }
         };
 
@@ -103,39 +164,7 @@ const addTraits = species => {
 
         console.log(traits);
 
-        const appendAutoTraitValue = (input, traitFields) => {
-            autocomplete({
-                input: input,
-                fetch: function(text, update) {
-                    text = text.toLowerCase();
-                    const suggestions = traitFields.filter(field => field.value.toLowerCase().startsWith(text))
-                    update(suggestions);
-                },
-                onSelect: function(item) {
-                    input.value = item.label;
-                },
-                minLength: 1,
-                debounceWaitMs: 200,
-                className: 'autocomplete-options-container'
-            });
-        };
-
-        const addFieldListeners = () => {
-            document.querySelectorAll('.trait-value').forEach(input => {
-                if(input.dataset.field !== 'name') {
-                    let traitFields = traits.find(trait => trait.key === input.dataset.field);
-                    if(traitFields && traitFields.value) {
-                        traitFields = traitFields.value.map(name => {
-                            return {
-                                label: name,
-                                value: name
-                            }
-                        });
-                        appendAutoTraitValue(input, traitFields);
-                    }
-                }
-            });
-        };
+        addFieldListeners(traits);
     };
 
     init();
