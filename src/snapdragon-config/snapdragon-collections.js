@@ -413,20 +413,20 @@ const commonBritishBirds = {
     glossary: ['animalia', 'common'],
     items: [],
     itemNames: [
-        // "Passer domesticus",
-        // "Sturnus vulgaris",
-        // "Cyanistes caeruleus",
-        // "Turdus merula",
-        // "Columba palumbus",
-        // "Carduelis carduelis",
-        // "Parus major",
-        // "Erithacus rubecula",
-        // "Aegithalos caudatus",
+        "Passer domesticus",
+        "Sturnus vulgaris",
+        "Cyanistes caeruleus",
+        "Turdus merula",
+        "Columba palumbus",
+        "Carduelis carduelis",
+        "Parus major",
+        "Erithacus rubecula",
+        "Aegithalos caudatus",
         "Fringilla coelebs",
 
-        'Apus apus',
-        'Delichon urbicum',
-        'Hirundo rustica'
+        // 'Apus apus',
+        // 'Delichon urbicum',
+        // 'Hirundo rustica'
       ],
     iconicTaxa: [ {
         id: 'aves',

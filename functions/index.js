@@ -11,15 +11,15 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
-const newSpecies = functions.firestore.document('species/{speciesDoc}');
+const speciesTrigger = functions.firestore.document('species/{speciesDoc}');
 
-exports.addSpeciesName = newSpecies.onCreate(async(documentSnapshot, context) => {
+exports.addSpeciesName = speciesTrigger.onCreate(async(documentSnapshot, context) => {
 
         const species = documentSnapshot.data();
 
         const name = species.name;
 
-        // const ref = db.collection('test').doc('names');
+        console.log(name);
 
         let ref;
         const refs = await db.collection('species').where('collection_property', '==', 'names').get();
@@ -27,6 +27,26 @@ exports.addSpeciesName = newSpecies.onCreate(async(documentSnapshot, context) =>
 
         return ref.update({
             value: admin.firestore.FieldValue.arrayUnion(name)
+        })
+        .catch(err => {
+            return  console.log('Error adding new name to the species name list', err);
+        });
+});
+
+exports.deleteSpeciesName = speciesTrigger.onDelete(async(documentSnapshot, context) => {
+
+        const species = documentSnapshot.data();
+
+        const name = species.name;
+
+        console.log(name);
+
+        let ref;
+        const refs = await db.collection('species').where('collection_property', '==', 'names').get();
+        refs.forEach(r => ref = r.ref);
+
+        return ref.update({
+            value: admin.firestore.FieldValue.arrayRemove(name)
         })
         .catch(err => {
             return  console.log('Error adding new name to the species name list', err);

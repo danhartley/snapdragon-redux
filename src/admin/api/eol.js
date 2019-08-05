@@ -10,6 +10,13 @@ const getSpecies = (collection, selectedLicence) => {
     });
 };
 
+const getSpecisByName = async query => {
+    const search = `https://eol.org/api/search/1.0.json?q=${query}`;
+    const corsSearch = `https://cors-anywhere.herokuapp.com/${search}`;
+    const result = await fetch(corsSearch);
+    return await result.json();
+};
+
 const getCollectionFromSpeciesList = (speciesList) => {
     const ids = speciesList.split(',');
     const collection = {};
@@ -21,9 +28,7 @@ const getCollectionFromSpeciesList = (speciesList) => {
     });
 };
 
-const getCollection = async selectedLicence => {
-
-    const speciesList = document.getElementById('input-species').value;
+const getCollection = async (selectedLicence, speciesList) => {
 
     let collection = {};
 
@@ -49,5 +54,6 @@ const searchEOLByProvider = async (hierarchyId, Id) => {
 export const eol = {
     getSpecies,
     getCollection,
-    searchEOLByProvider
+    searchEOLByProvider,
+    getSpecisByName
 }

@@ -1,11 +1,12 @@
 import "babel-polyfill";
 
+import 'admin/css/admin.css';
+
 import { initMaterialize } from 'admin/scripts/materialize';
-import { addSpecies } from 'admin/screens/add-species';
+import { speciesHandler } from 'admin/screens/species-handler';
+import { traitsHandler } from 'admin/screens/traits-handler';
 
 const auth = firebase.auth();
-
-addSpecies(document);
 
 auth.onAuthStateChanged(user => {
     if (user) {
@@ -19,10 +20,32 @@ auth.onAuthStateChanged(user => {
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 
+const links = document.querySelectorAll('li');
+      links.forEach(link => {
+        link.addEventListener('click', e => {
+          links.forEach(li => li.classList.remove('active'));
+          e.target.parentElement.classList.add('active');
+        });
+      });
+
+const addSpecies = document.querySelector('#add-species');
+      addSpecies.addEventListener('click', speciesHandler.addSpecies());
+ 
+const removeSpeciesClickHandler = e => {
+    speciesHandler.removeSpeciesPicker();
+};
+      
+const removeSpeciesPicker = document.querySelector('#remove-species');
+      removeSpeciesPicker.addEventListener('click', removeSpeciesClickHandler);
+  
+const addTraits = document.querySelector('#add-traits');
+      addTraits.addEventListener('click', traitsHandler.addTraits());
+
 const setupUI = (user) => {
   if (user) {
     loggedInLinks.forEach(item => item.classList.remove('hide'));
     loggedOutLinks.forEach(item => item.classList.add('hide'));
+    addSpecies.click();
 } else {    
     loggedInLinks.forEach(item => item.classList.add('hide'));
     loggedOutLinks.forEach(item => item.classList.remove('hide'));
@@ -51,22 +74,3 @@ logout.addEventListener('click', (e) => {
 });
 
 initMaterialize();
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    document.querySelectorAll('#admin-menu li').forEach(action => {
-        action.addEventListener('click', event => {
-
-            document.getElementById('admin-menu').classList.add('hide');
-
-            switch(event.target.id) {
-                case 'speciesAdd': 
-                    document.getElementById('species-add').classList.remove('hide');
-                    break;
-                case 'traitAdd': 
-                    document.getElementById('trait-add').classList.remove('hide');
-                    break;
-            }
-        });
-    });
-});

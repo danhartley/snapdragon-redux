@@ -5,46 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <title>Collection builder</title>
-        <style media="screen" type="text/css">  
-            .hide {
-                display: none;
-            }
-            .container {
-                width: 100%;
-                max-width: 1300px;
-            }            
-            .sub.container {
-                width: 100%;
-                margin: 2rem 0;
-            }
-            .input-field {
-                margin-top: 0;
-            }
-            .input {
-                border-bottom: 1px solid rgb(99, 133, 95) !important;
-            }
-            .dropdown-content li>a, .dropdown-content li>span {
-                color: rgb(87, 97, 99);
-            }
-            #images {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;                
-                min-height: 80vh;
-            }
-            .jump {
-                cursor: pointer;
-                margin: 0 0 0 1em;
-            }
-            .btn {
-                background-color: rgb(87, 97, 99);
-            }
-        </style>
     </head>
     <body class="container">
 
         <nav class="z-depth-0 grey lighten-4">
             <div class="nav-wrapper container">
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
                     <li class="logged-in hide">
                     <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
                     </li>
@@ -52,7 +18,13 @@
                     <a href="#" class="grey-text" id="logout">Logout</a>
                     </li>
                     <li class="logged-in hide">
-                    <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Guide</a>
+                    <a href="#" class="grey-text" id="add-species">Add Species</a>
+                    </li>
+                    <li class="logged-in hide">
+                    <a href="#" class="grey-text" id="add-traits">Add Traits</a>
+                    </li>
+                    <li class="logged-in hide">
+                    <a href="#" class="grey-text" id="remove-species">Remove Species</a>
                     </li>
                     <li class="logged-out hide">
                     <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
@@ -88,7 +60,7 @@
             <h4>Login</h4><br />
             <form id="login-form">
                 <div class="input-field">
-                <input type="email" id="login-email" required />
+                <input type="email" id="login-email" required autofocus />
                 <label for="login-email">Email address</label>
                 </div>
                 <div class="input-field">
@@ -106,40 +78,19 @@
             <div class="account-details"></div>
             </div>
         </div>
-        <!-- CREATE GUIDE MODAL -->
-        <div id="modal-create" class="modal">
-            <div class="modal-content">
-            <h4>Create Guide</h4><br />
-            <form id="create-form">
-                <div class="input-field">
-                <input type="text" id="title" required>
-                <label for="title">Guide Title</label>
-                </div>
-                <div class="input-field">
-                <textarea id="content" class="materialize-textarea" required></textarea>
-                <label for="content">Guide Content</label>
-                </div>
-                <button class="btn yellow darken-2 z-depth-0">Create</button>
-            </form>
-            </div>
-        </div>
 
-        <div id="admin-menu">
-            <ul>
-                <li id="speciesAdd">Add Species</li>
-                <li id="traitAdd">Add Trait</li>
-            </ul>
-        </div>
+        <div id="content-container"></div>
+        <!-- <div id="add-species-container" class="hide"></div>
 
-        <div id="species-add" class="js-species-add hide"></div>
-
-        <div id="trait-add" class="hide">
-
+        <div id="add-traits-container" class="hide">
             <div class="container">
                 <textarea name="trait" id="trait" cols="60" rows="20"></textarea>
             </div>
-
         </div>
+
+        <div id="remove-species-container">
+            
+        </div> -->
 
         <div id="species-observations" class="hide">
             <div class="container">Import species from iNaturalist user observations</div>

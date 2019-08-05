@@ -1,49 +1,51 @@
-<div id="top"></div>
+<div></div>
 
-<form>
+    <div class="sub container">
 
-<div class="sub container">
-
-<div class="row">
-    <!-- <input id="inputCollection" type="text" /> -->
-    
-    <div class="input-field col s2">
-        <input placeholder="Placeholder" id="input-species" type="text" class="validate">
-        <label for="input-species">EOL ID</label>
+    <div class="row">
+        <div class="input-field col s2">
+            <input id="input-search" type="text" class="validate" autofocus>
+            <label for="input-search">Search by latin name</label>
+        </div>
+        <div class="autocomplete-options-container hide-empty" id="inat-identity-autocomplete"></div>
+        <!-- <div class="col s2"><a id="btnGetSpeciesByLookup" class="btn">Get EOL Ref</a></div> -->
+        <div class="async-progress hide col s2">Looking for matches on EOL…</div>
     </div>
 
-    <a id="btnGet" class="waves-effect waves-light btn">Get collection items</a>
-</div>
+    <div class="row">
+        <!-- <input id="inputCollection" type="text" /> -->
+        
+        <div class="input-field col s2">
+            <input id="input-species" type="text" class="validate">
+            <label for="input-species">Enter EOL ID</label>
+        </div>
 
-<div class="row">
-    
-    <div class="input-field">
-        <select name="licences" id="licences"></select>
-    </div>
-    
-    
-    <div class="input-field">
-        <select name="names" id="names"></select>
-        <label>Materialize Select</label>
+        <div class="col s2"><a id="btnGetSpeciesById" class="btn">Get EOL Ref</a></div>    
     </div>
 
+    <div class="row">
+        <div class="input-field">
+            <select name="licences" id="licences"></select>
+        </div>
+    </div>
+    
+    <div class="row">
+                
+        <div class="input-field col s4">
+            <select name="names" id="names"></select>
+            <label>Matching EOL species</label>
+        </div>
 
-    <div id="speciesCount" class="text"></div>
-</div>
-<div class="sub container">
-    <button class="btnAdd btn">Add to collection</button>
-    <div class="text collectionCount"></div>
-</div>
-<div class="sub container">
-    <div id="images"></div>        
-</div>
-<!-- <div class="snap-container">
-    <div class="text collectionCount"></div>
-    <button class="btnAdd">Add to collection</button>
-    <div class="text">New collection available in global object newCollection</div>
-    <a class="text jump" onclick="jumpto('top');">Go to top of page</a>
-</div> -->
+        <!-- <div id="speciesCount" class="col s1"></div> -->
+        
+        <div class="col s4">
+            <button class="btnAddSpecies btn hide">Save species</button>
+            <button class="btnAddTraits btn hide">Add traits</button>
+            <!-- <div class="text collectionCount"></div> -->
+        </div>
+    </div>
+    <div class="sub container">
+        <div id="images"></div>        
+    </div>
 
 </div>
-
-</form>
