@@ -77,8 +77,7 @@ const addTraits = () => {
             },
             minLength: 1,
             debounceWaitMs: 200,
-            className: 'autocomplete-options-container',
-            maxHeight: 
+            className: 'autocomplete-options-container'
         });
     };
 
@@ -129,16 +128,9 @@ const addTraits = () => {
     const init = async () => {
 
         const listenForSpeciesSelection = async event => {
-
-            console.log(event);
-
-            if(event.keyCode == 13) {
-                
-                name = inputSpecies.value;
-                item = await firestore.getSpeciesByName(name);
-
-                renderTraits(item);
-            }
+            name = inputSpecies.value;
+            item = await firestore.getSpeciesByName(name);
+            renderTraits(item);
         };
 
         speciesPicker(inputSpecies, listenForSpeciesSelection);

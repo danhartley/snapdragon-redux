@@ -1,16 +1,17 @@
-const getSpecies = (collection, selectedLicence) => {
-    
-    let eolCollection = collection.collection_items.map(item => ({ id: item.object_id }));
-        
-    return eolCollection.map(species => {
-        const speciesUrl = `https://eol.org/api/pages/1.0/${species.id}.json?details=true&images_per_page=200&licenses=${selectedLicence}&common_names=true`;
-        const speciesCors = `https://cors-anywhere.herokuapp.com/${speciesUrl}`;
-        species.detailsUrl = speciesCors;
-        return species;
+const getSpeciesUrl = (species, selectedLicence) => {
+    const speciesUrl = `https://eol.org/api/pages/1.0/${species.id}.json?details=true&images_per_page=200&licenses=${selectedLicence}&common_names=true`;
+    const speciesCors = `https://cors-anywhere.herokuapp.com/${speciesUrl}`;
+    species.detailsUrl = speciesCors;
+    return species;
+};
+
+const getSpeciesForCollection = (collection, selectedLicence) => {       
+    return collection.map(species => {
+        return getSpeciesUrl(species, selectedLicence);
     });
 };
 
-const getSpecisByName = async query => {
+const getSpeciesByName = async query => {
     const search = `https://eol.org/api/search/1.0.json?q=${query}`;
     const corsSearch = `https://cors-anywhere.herokuapp.com/${search}`;
     const result = await fetch(corsSearch);
@@ -42,7 +43,9 @@ const getCollection = async (selectedLicence, speciesList) => {
         collection = await response.json();
     }
 
-    return await getSpecies(collection, selectedLicence);
+    // let eolCollection = collection.collection_items.map(item => ({ id: item.object_id }));
+
+    return await getSpeciesForCollection(collection.collection_items.map(item => ({ id: item.object_id })), selectedLicence);
 };
 
 const searchEOLByProvider = async (hierarchyId, Id) => {
@@ -52,8 +55,9 @@ const searchEOLByProvider = async (hierarchyId, Id) => {
 };
 
 export const eol = {
-    getSpecies,
+    getSpeciesUrl,
+    getSpeciesForCollection,
     getCollection,
     searchEOLByProvider,
-    getSpecisByName
+    getSpeciesByName
 }

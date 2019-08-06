@@ -58,7 +58,8 @@ const getImagesLayout = (species, prefix) => {
         console.log('No images!');
     };
     species.images.forEach((image, index) => {
-        images = images + `<div><img id="${index}" width="260px" height="190px" style="cursor:pointer; object-fit: cover;" src="${prefix}${image.url.replace('.jpg', '.260x190.jpg')}"/></div>`
+        const url = prefix + image.url.replace('.jpg', '.260x190.jpg');
+        images = images + `<div><img id="${index}" width="260px" height="190px" style="cursor:pointer; object-fit: cover;" src="${url}"/></div>`;
     });
     document.querySelector('#images').innerHTML = images;  
     document.querySelectorAll('img').forEach(image => {
@@ -82,12 +83,12 @@ const getImagesLayout = (species, prefix) => {
 };
 
 const getSpeciesSelector = items => {
+
     let options = '<option value="0">Select species</option>';
     items.forEach(item => {
         options = options + `<option value="${item.id}">${item.name}</option>`;
     });
     document.querySelector('#names').innerHTML = options;
-    // document.querySelector('#speciesCount').innerHTML = items.length;
 
     const speciesOptions = document.querySelector('#names');
 

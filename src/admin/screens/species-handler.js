@@ -88,7 +88,7 @@ const addSpecies = () => {
                 ? asyncProgress.classList.remove('hide')
                 : asyncProgress.classList.add('hide');
         }, () => {
-            loadEOLCollection(document.getElementById('input-search').name);
+            getSpecies({id: document.getElementById('input-search').name});
             asyncProgress.classList.remove('hide');
             asyncProgress.innerHTML = 'Fetching matching species…';
             setTimeout(() => {
@@ -99,38 +99,26 @@ const addSpecies = () => {
 
     searchEOL();
 
-    helpers.getSpeciesSelector(items);
-
-    const loadEOLCollection = speciesList => {
-
-        eol.getCollection(selectedLicence, speciesList).then(collection => {
-            collection.forEach(item => {            
-                parseSpeciesData(item).then(data => {
-                    if(!data) return;
-                    item.name = data.name;
-                    const binomial = helpers.getBinomial(item);
-                    gbif.getTaxonomy(binomial).then(taxonomy => {
-                        data.taxonomy = {
-                            kingdom: taxonomy.kingdom,
-                            phylum: taxonomy.phylum,
-                            class: taxonomy.class,
-                            order: taxonomy.order,
-                            genus: taxonomy.genus,
-                            family: taxonomy.family
-                        };
-                        items.push(data);
-                        getSpeciesSelector(items);
-                    });
-                });
-            })
+    const getSpecies = async id => {
+        const item = await parseSpeciesData(eol.getSpeciesUrl(id, selectedLicence));
+        const binomial = helpers.getBinomial(item);
+        gbif.getTaxonomy(binomial).then(taxonomy => {
+            item.taxonomy = {
+                kingdom: taxonomy.kingdom,
+                phylum: taxonomy.phylum,
+                class: taxonomy.class,
+                order: taxonomy.order,
+                genus: taxonomy.genus,
+                family: taxonomy.family
+            };
         });
-    };
-
-    document.querySelector('#btnGetSpeciesById').addEventListener('click', event => {
-        loadEOLCollection(document.getElementById('input-species').value);
-    });
-
-    // loadInatCollection(inat, itis, eol, parseSpeciesData, gbif, inatItems);
+        const images = helpers.getImagesLayout(item, '');
+        imageIds = images.imageIds;
+        currentItemId = images.currentItemId;
+        document.querySelectorAll('.btnAddSpecies').forEach(btn => {
+            btn.classList.remove('hide');
+        });
+    }
 
     const addOrUpdateSpeciesToFirestore = (btn, callback) => {
 
@@ -219,11 +207,9 @@ const updateSpecies = () => {
 
     const listenForSpeciesSelection = async event => {
             
-        if(event.keyCode == 13) {            
-            btnRemoveSpecies.classList.remove('hide');
-            btnGetPhotos.classList.remove('hide');
-            chkSafety.classList.remove('hide');
-        }
+        btnRemoveSpecies.classList.remove('hide');
+        btnGetPhotos.classList.remove('hide');
+        chkSafety.classList.remove('hide');
     };
 
     speciesPicker(input, listenForSpeciesSelection);
@@ -235,6 +221,10 @@ const updateSpecies = () => {
         const item = await firestore.getSpeciesByName(input.value);
 
         const prefix = item.images ? 'https://content.eol.org/data/media/' : '';
+
+        if(images.length === 0) {
+            
+        }
 
         const images = helpers.getImagesLayout(item, prefix);
         imageIds = images.imageIds;

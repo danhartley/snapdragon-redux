@@ -13,7 +13,7 @@ export const eolAutocomplete = (input, type, className, feedbackCallback, onSele
             switch(type) {
                 case 'search':
                     feedbackCallback();
-                    eol.getSpecisByName(text).then(terms => {
+                    eol.getSpeciesByName(text).then(terms => {
                         update(terms.results);
                         feedbackCallback();
                     });

@@ -4,16 +4,14 @@
 
     <div class="row">
         <div class="input-field col s2">
-            <input id="input-search" type="text" class="validate" autofocus>
+            <input id="input-search" type="text" class="validate autocomplete" autofocus>
             <label for="input-search">Search by latin name</label>
         </div>
-        <div class="autocomplete-options-container hide-empty" id="inat-identity-autocomplete"></div>
-        <!-- <div class="col s2"><a id="btnGetSpeciesByLookup" class="btn">Get EOL Ref</a></div> -->
+
         <div class="async-progress hide col s2">Looking for matches on EOL…</div>
     </div>
 
     <div class="row">
-        <!-- <input id="inputCollection" type="text" /> -->
         
         <div class="input-field col s2">
             <input id="input-species" type="text" class="validate">
@@ -36,12 +34,9 @@
             <label>Matching EOL species</label>
         </div>
 
-        <!-- <div id="speciesCount" class="col s1"></div> -->
-        
         <div class="col s4">
             <button class="btnAddSpecies btn hide">Save species</button>
             <button class="btnAddTraits btn hide">Add traits</button>
-            <!-- <div class="text collectionCount"></div> -->
         </div>
     </div>
     <div class="sub container">
