@@ -32,16 +32,16 @@ const links = document.querySelectorAll('li');
 const addSpecies = document.querySelector('#add-species');
       addSpecies.addEventListener('click', speciesHandler.addSpecies);
  
-const removeSpeciesClickHandler = e => {
-    speciesHandler.updateSpeciesPicker();
+const updateSpeciesClickHandler = e => {
+    speciesHandler.updateSpecies();
 };
 
 const addTraitsClickHandler = e => {
   traitsHandler.addTraits();
 };
       
-const updateSpeciesPicker = document.querySelector('#update-species');
-      updateSpeciesPicker.addEventListener('click', removeSpeciesClickHandler);
+const updateSpecies = document.querySelector('#update-species');
+      updateSpecies.addEventListener('click', updateSpeciesClickHandler);
   
 const addTraits = document.querySelector('#add-traits');
       addTraits.addEventListener('click', addTraitsClickHandler);

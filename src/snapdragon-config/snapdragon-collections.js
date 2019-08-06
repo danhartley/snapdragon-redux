@@ -322,17 +322,19 @@ const rhsWeeds = {
     glossary: ['plantae', 'common'],
     items: [],
     itemNames: [
-        "Elymus repens",
-        "Equisetum arvense",
-        "Dactylis glomerata",
-        "Convolvulus arvensis",
-        "Cerastium fontanum",
-        "Cirsium arvense",
-        "Calystegia sepium",
-        "Cardamine hirsuta",
-        "Aegopodium podagraria",
-        "Capsella bursa-pastoris",
-        "Bellis perennis"
+
+      'Acer negundo'
+        // "Elymus repens",
+        // "Equisetum arvense",
+        // "Dactylis glomerata",
+        // "Convolvulus arvensis",
+        // "Cerastium fontanum",
+        // "Cirsium arvense",
+        // "Calystegia sepium",
+        // "Cardamine hirsuta",
+        // "Aegopodium podagraria",
+        // "Capsella bursa-pastoris",
+        // "Bellis perennis"
     ],
     iconicTaxa: [ {
         id: 'plantae',

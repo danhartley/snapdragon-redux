@@ -51,16 +51,14 @@ const getBinomial = item => {
     return binomial;
 };
 
-const getImages = species => {
+const getImagesLayout = (species, prefix) => {
     let imageIds = [];
     let images = '';
-    // let currentItemId = parseInt(itemOption.value);
-    // const species = items.find(item => parseInt(item.id) === currentItemId);
     if(!species.images) {
         console.log('No images!');
     };
     species.images.forEach((image, index) => {
-        images = images + `<div><img id="${index}" width="260px" height="190px" style="cursor:pointer; object-fit: cover;" src="${image.url.replace('.jpg', '.260x190.jpg')}"/></div>`
+        images = images + `<div><img id="${index}" width="260px" height="190px" style="cursor:pointer; object-fit: cover;" src="${prefix}${image.url.replace('.jpg', '.260x190.jpg')}"/></div>`
     });
     document.querySelector('#images').innerHTML = images;  
     document.querySelectorAll('img').forEach(image => {
@@ -80,12 +78,91 @@ const getImages = species => {
         });
     });
 
-    return { imageIds, currentItemId };
+    return imageIds;
+};
+
+const getSpeciesSelector = items => {
+    let options = '<option value="0">Select species</option>';
+    items.forEach(item => {
+        options = options + `<option value="${item.id}">${item.name}</option>`;
+    });
+    document.querySelector('#names').innerHTML = options;
+    // document.querySelector('#speciesCount').innerHTML = items.length;
+
+    const speciesOptions = document.querySelector('#names');
+
+    speciesOptions.addEventListener('change', event => {
+        const item = items.find(item => parseInt(item.id) === event.target.value);
+        const images = getImagesLayout(item);
+        imageIds = images.imageIds;
+        currentItemId = images.currentItemId;
+        document.querySelectorAll('.btnAddSpecies').forEach(btn => {
+            btn.classList.remove('hide');
+        });
+    });
+
+    const species = document.querySelector('#names');
+    const instances = M.FormSelect.init(species);
+};
+
+const loadInatCollection = (inat, itis, eol, parseSpeciesData, gbif, inatItems) => {
+    inat.getInatObservations().then(observations => {
+        observations.filter(i => i.taxon).forEach(observation => {
+            inat.getInatImages(observation).then(photos => {
+                let images = [];
+                if(photos.results) {
+                    images = flatten(photos.results.map(result => result.photos));
+                }
+                const item = {
+                    id: observation.taxon.id,
+                    name: observation.taxon.name,
+                    images,
+                    names: {
+                        vernacularName: observation.taxon.preferred_common_name,
+                        language: 'en'
+                    }
+                };
+                itis.binomialLookup(item.name).then(response => {
+                    if(response.scientificNames[0] === null) {
+                        console.log(item.name);
+                        return;
+                    }
+                    const itisId = response.scientificNames[0].tsn;
+                    eol.searchEOLByProvider(903, itisId).then(response => {
+                        if(response.length === 0) {
+                            console.log('response: ', response);
+                            return;
+                        }
+                        const eolId = response[0].eol_page_id;
+                        parseSpeciesData({ detailsUrl : speciesUrl(eolId) }).then(data => {
+                            const binomial = getBinomial(item);
+                            gbif.getTaxonomy(binomial).then(taxonomy => {
+                                data.taxonomy = {
+                                    kingdom: taxonomy.kingdom,
+                                    phylum: taxonomy.phylum,
+                                    class: taxonomy.class,
+                                    order: taxonomy.order,
+                                    genus: taxonomy.genus,
+                                    family: taxonomy.family
+                                };
+                                data.eolName = item.name; 
+                                data.name = binomial;
+                                data.images = [ ...data.images, ...item.images ];
+                                inatItems.push(data);
+                            });                                
+                        });                            
+                    });                            
+                });                    
+            });                
+        });
+    });
 };
 
 export const helpers = {
     parseNames,
     flatten,
     getBinomial,
-    getImages
+    getImagesLayout,
+    getSpeciesSelector,
+    loadInatCollection
 };

@@ -2,13 +2,13 @@
     <div class="row">
         <div class="input-field col s3">
             <input id="input-species-to-update" type="text" placeholder="Start typing latin species name" autofocus>            
-            <label for="input-species-to-update">Species picker</label>
+            <label for="input-species-to-update">Snapdragon species picker</label>
         </div>
         <div class="autocomplete-options-container hide-empty" id="snapdragon-species-autocomplete" style="width:unset;"></div>
 
         <div class="col s8">
             <button class="btnRemoveSpecies btn hide" disabled>Remove species</button>            
-            <span>
+            <span class="chkSafety hide">
                 <label>
                   <input type="checkbox" />
                   <span>Do you really want to delete this species?</span>
@@ -17,7 +17,12 @@
         </div>        
     </div>
     <div class="row">
-        <button class="btnGetPhotos btn hide" disabled>Get photos</button>
-        <button class="btnAddSpecies btn hide" disabled>Update species</button>
+        <div class="col s12">
+            <button class="btnGetPhotos btn hide">Get current photos</button>
+            <button class="btnAddSpecies btn hide">Update species</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12" id="images"></div>
     </div>
 </div>

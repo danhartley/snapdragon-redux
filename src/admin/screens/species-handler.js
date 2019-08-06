@@ -52,7 +52,7 @@ const addSpecies = () => {
     }
 
     licenceSelector(licenses);
-    // document.querySelector('#inputCollection').focus();
+
     document.getElementById('licences').value = noneExcludedFromCommercialUse;
 
     const parseSpeciesData = async (item) => {
@@ -99,29 +99,7 @@ const addSpecies = () => {
 
     searchEOL();
 
-    const speciesSelector = items => {
-        let options = '<option value="0">Select species</option>';
-        items.forEach(item => {
-            options = options + `<option value="${item.id}">${item.name}</option>`;
-        });
-        document.querySelector('#names').innerHTML = options;
-        // document.querySelector('#speciesCount').innerHTML = items.length;
-    
-        const speciesOptions = document.querySelector('#names');
-    
-        speciesOptions.addEventListener('change', event => {
-            const item = items.find(item => parseInt(item.id) === event.target.value);
-            const images = helpers.getImages(item);
-            imageIds = images.imageIds;
-            currentItemId = images.currentItemId;
-            document.querySelectorAll('.btnAddSpecies').forEach(btn => {
-                btn.classList.remove('hide');
-            });
-        });
-
-        const species = document.querySelector('#names');
-        const instances = M.FormSelect.init(species);
-    }
+    helpers.getSpeciesSelector(items);
 
     const loadEOLCollection = speciesList => {
 
@@ -141,7 +119,7 @@ const addSpecies = () => {
                             family: taxonomy.family
                         };
                         items.push(data);
-                        speciesSelector(items);
+                        getSpeciesSelector(items);
                     });
                 });
             })
@@ -151,67 +129,8 @@ const addSpecies = () => {
     document.querySelector('#btnGetSpeciesById').addEventListener('click', event => {
         loadEOLCollection(document.getElementById('input-species').value);
     });
-    
-    // document.querySelector('#btnGetSpeciesByLookup').addEventListener('click', event => {
-    //     loadEOLCollection(document.getElementById('input-search').name);
-    // });
 
-    const loadInatCollection = () => {
-        inat.getInatObservations().then(observations => {
-            observations.filter(i => i.taxon).forEach(observation => {
-                inat.getInatImages(observation).then(photos => {
-                    let images = [];
-                    if(photos.results) {
-                        images = helpers.flatten(photos.results.map(result => result.photos));
-                    }
-                    const item = {
-                        id: observation.taxon.id,
-                        name: observation.taxon.name,
-                        images,
-                        names: {
-                            vernacularName: observation.taxon.preferred_common_name,
-                            language: 'en'
-                        }
-                    };
-                    itis.binomialLookup(item.name).then(response => {
-                        if(response.scientificNames[0] === null) {
-                            console.log(item.name);
-                            return;
-                        }
-                        const itisId = response.scientificNames[0].tsn;
-                        eol.searchEOLByProvider(903, itisId).then(response => {
-                            if(response.length === 0) {
-                                console.log('response: ', response);
-                                return;
-                            }
-                            const eolId = response[0].eol_page_id;
-                            parseSpeciesData({ detailsUrl : speciesUrl(eolId) }).then(data => {
-                                const binomial = helpers.getBinomial(item);
-                                gbif.getTaxonomy(binomial).then(taxonomy => {
-                                    data.taxonomy = {
-                                        kingdom: taxonomy.kingdom,
-                                        phylum: taxonomy.phylum,
-                                        class: taxonomy.class,
-                                        order: taxonomy.order,
-                                        genus: taxonomy.genus,
-                                        family: taxonomy.family
-                                    };
-                                    data.eolName = item.name; 
-                                    data.name = binomial;
-                                    data.images = [ ...data.images, ...item.images ];
-                                    inatItems.push(data);
-                                });                                
-                            });                            
-                        });                            
-                    });                    
-                });                
-            });
-        });
-    };
-
-    // document.querySelector('#btnGetInatData').addEventListener('click', event => {
-    //     loadInatCollection();
-    // });
+    // loadInatCollection(inat, itis, eol, parseSpeciesData, gbif, inatItems);
 
     const addOrUpdateSpeciesToFirestore = (btn, callback) => {
 
@@ -259,10 +178,7 @@ const addSpecies = () => {
     };
 
     document.querySelectorAll('.btnAddSpecies').forEach(btn => {
-        addOrUpdateSpeciesToFirestore(btn, () => {
-            const response = await firestore.udpateSpecies(item);
-            console.log(response);
-        });
+        addOrUpdateSpeciesToFirestore(btn, activateGetTraitsBtn);
     });
 
     document.querySelector('#licences').addEventListener('change', e => {
@@ -270,7 +186,9 @@ const addSpecies = () => {
     });
 };
 
-const updateSpeciesPicker = () => {
+const updateSpecies = () => {
+
+    let imageIds = [], currentItemId;
     
     const template = document.createElement('template');
           template.innerHTML = updateSpeciesTemplate;
@@ -281,6 +199,7 @@ const updateSpeciesPicker = () => {
     renderTemplate({}, template.content, parent);
 
     const btnRemoveSpecies = document.querySelector('.btnRemoveSpecies');
+    const chkSafety = document.querySelector('.chkSafety');
 
     const removeSpecies = () => {
         // const input = document.querySelector('#input-species-to-update');              
@@ -302,29 +221,36 @@ const updateSpeciesPicker = () => {
             
         if(event.keyCode == 13) {            
             btnRemoveSpecies.classList.remove('hide');
+            btnGetPhotos.classList.remove('hide');
+            chkSafety.classList.remove('hide');
         }
     };
 
     speciesPicker(input, listenForSpeciesSelection);
 
-    const btnGetPhotos = document.querySelector('#btnGetPhotos');
+    const btnGetPhotos = document.querySelector('.btnGetPhotos');
 
     btnGetPhotos.addEventListener('click', async e => {
 
         const item = await firestore.getSpeciesByName(input.value);
 
-        const images = helpers.getImages(item);
+        const prefix = item.images ? 'https://content.eol.org/data/media/' : '';
+
+        const images = helpers.getImagesLayout(item, prefix);
         imageIds = images.imageIds;
         currentItemId = images.currentItemId;
     });
 
     document.querySelectorAll('.btnUpdateSpecies').forEach(btn => {
-        addOrUpdateSpeciesToFirestore(btn, activateGetTraitsBtn);
+        addOrUpdateSpeciesToFirestore(btn, async () => {
+            const response = await firestore.udpateSpecies(item);
+            console.log(response);
+        });
     });
 
 }
 
 export const speciesHandler = {
     addSpecies,
-    updateSpeciesPicker
+    updateSpecies
 };

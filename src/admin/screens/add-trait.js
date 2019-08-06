@@ -12,7 +12,7 @@ export const renderAddTrait = (parent, callback) => {
 
     const initTraitValues = async (traitValues, traitKey) => {
 
-        const values = [];
+        let values = [];
     
         const exclude = [ 'help', 'name', 'type' ];
     
@@ -21,12 +21,14 @@ export const renderAddTrait = (parent, callback) => {
                 values.push({label: obj.toLowerCase(), value: obj.toLowerCase()});
             }
         }
+
+        values = utils.sortAlphabeticallyBy(values, 'label');
     
         const input = document.querySelector('#input-trait-value');
               input.value = '';
         
         setTimeout(() => {
-            input.focus();    
+            input.focus();
         }, 250);
         
         autocomplete({
@@ -59,9 +61,9 @@ export const renderAddTrait = (parent, callback) => {
         });
         input.addEventListener('keydown', event => {
             if(event.keyCode == 9) {
-                const highlightedText = document.querySelector('.selected').innerText;
+                const highlightedText = document.querySelector('.selected');
                 if(highlightedText) {
-                    input.value = highlightedText;
+                    input.value = highlightedText.innerText;
                     saveTrait();
                 }
             }
@@ -81,11 +83,13 @@ export const renderAddTrait = (parent, callback) => {
 
         traitValues = await firestore.getTraitValues();
 
-        const keys = [];
+        let keys = [];
 
         for (let [key, obj] of Object.entries(traitValues['name'])) {
             keys.push({label: obj.toLowerCase(), value: obj.toLowerCase()});
         }
+
+        keys = utils.sortAlphabeticallyBy(keys, 'label');
 
         const input = document.querySelector('#input-trait-key');
 
@@ -112,9 +116,9 @@ export const renderAddTrait = (parent, callback) => {
 
         input.addEventListener('keydown', event => {
             if(event.keyCode == 9) {
-                const highlightedText = document.querySelector('.selected').innerText;
+                const highlightedText = document.querySelector('.selected');
                 if(highlightedText) {
-                    input.value = highlightedText;
+                    input.value = highlightedText.innerText;
                     document.querySelector('.autocomplete-options-container').innerHTML = '';
                     initTraitValues(traitValues, highlightedText);
                 }

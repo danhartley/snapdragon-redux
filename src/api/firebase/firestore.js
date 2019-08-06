@@ -1,5 +1,3 @@
-import * as R from 'ramda';
-
 import { enums } from 'admin/api/enums';
 import { store } from 'redux/store';
 import { firebaseConfig } from 'api/firebase/credentials';
@@ -280,6 +278,33 @@ const addSpeciesTraits = async (name, trait) => {
 
         return await speciesTraitsRef.update(trait); 
     }
+};
+
+const deleteSpeciesTraitField = async (name, field) => {
+
+    let querySnapshot, speciesTraitsRef;
+  
+    try {
+        try {
+          querySnapshot = await db.collection("traits_en").where("name", "==", name).get();
+      
+          querySnapshot.forEach(function(doc) {
+              speciesTraitsRef = doc.ref;
+              console.log(doc.data())
+          });
+        } catch(err) {
+            console.error("Error writing document: ", err);
+        }
+      
+        var removeField = speciesTraitsRef.update({
+            [field] : firebase.firestore.FieldValue.delete()
+        });
+  
+        return removeField;
+
+      } catch(err) {
+        console.error("Error writing document: ", err);
+    }    
   };
 
 export const firestore = {
@@ -291,10 +316,14 @@ export const firestore = {
     getItemTaxonByName,
     getTraitsBySpeciesName,
     getBirdsong,
-    addSpecies,
     getTraitValues,
-    deleteSpeciesByName,
+    
+    addSpecies,
     addTraits,
     addSpeciesTraits,
-    updateSpecies
+    
+    updateSpecies,
+
+    deleteSpeciesByName,
+    deleteSpeciesTraitField
 };

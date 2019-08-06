@@ -30,11 +30,9 @@
     background-color: rgb(87, 97, 99);
     text-transform: initial;
 }
-
 .trait-key .input-field.col label {
     left: .25rem;
 }
-
 .autocomplete-options-container {
     z-index: 9999;
     position: absolute;
@@ -44,19 +42,17 @@
     letter-spacing: .04rem;
     border: .05rem solid lightgray;
     text-align: left;
+    overflow-y: scroll;
   }
-  
   .autocomplete-options-container {
     width: initial;
   }
-  
   .autocomplete-options-container > div {
     padding: .25rem;
-  }
-  
+  }  
   .autocomplete-options-container .selected {
-    color: rgb(229, 227, 220);
-    background-color: rgb(52, 58, 64);
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, .8);
   }
   .async-progress, .feedback {
     font-size: .9rem;
@@ -66,7 +62,7 @@
   .trait-repeater {
       display: grid;
       grid-gap: 2rem;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   .trait-repeater li {
@@ -75,4 +71,16 @@
   }
   input[type=text]:not(.browser-default)[readonly="readonly"] {
       border: none;
+  }
+  i {
+      cursor: pointer;
+  }
+  .chkSafety {
+      margin: 0 0 0 1rem;
+  }
+  input[type=text]:not(.browser-default)[readonly="readonly"]+label {
+      color: rgba(0,0,0,0.7);
+  }
+  input[type=text]:not(.browser-default)[readonly="readonly"] {
+    color: rgba(0,0,0,0.6);
   }

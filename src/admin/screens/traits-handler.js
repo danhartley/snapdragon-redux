@@ -38,7 +38,8 @@ const addTraits = () => {
 
                 if(key !== 'name') {
                     const value = obj.value ? obj.value.join(', ') : '';
-                    fields.push({key,value: value});
+                    const unit = obj.unit || '';
+                    fields.push({key,value, unit});
                 }
             }
         }
@@ -51,6 +52,16 @@ const addTraits = () => {
         renderTemplate({ fields }, template.content, parent);
 
         M.updateTextFields();
+
+        const deleteIcons = document.querySelectorAll('i');
+        deleteIcons.forEach(icon => {
+            icon.addEventListener('click', async e => {
+                const field = e.target.id;
+                const response = await firestore.deleteSpeciesTraitField(item.name, field);
+                console.log(response);
+                renderTraits(item);
+            });
+        });
     };
 
     const appendAutoTraitValue = (input, traitFields) => {
@@ -66,7 +77,8 @@ const addTraits = () => {
             },
             minLength: 1,
             debounceWaitMs: 200,
-            className: 'autocomplete-options-container'
+            className: 'autocomplete-options-container',
+            maxHeight: 
         });
     };
 
