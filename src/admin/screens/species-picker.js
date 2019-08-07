@@ -5,6 +5,9 @@ export const speciesPicker = async (input, listener) => {
     let speciesNames = [];
 
     speciesNames = await firestore.getSpeciesNames();
+
+    if(!speciesNames) return;
+
     speciesNames = speciesNames[0].value;
   
     const data = {};

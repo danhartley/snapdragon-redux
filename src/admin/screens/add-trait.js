@@ -120,7 +120,7 @@ export const renderAddTrait = (parent, callback) => {
                 if(highlightedText) {
                     input.value = highlightedText.innerText;
                     document.querySelector('.autocomplete-options-container').innerHTML = '';
-                    initTraitValues(traitValues, highlightedText);
+                    initTraitValues(traitValues, highlightedText.innerText);
                 }
             }
         });

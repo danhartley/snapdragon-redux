@@ -51,8 +51,7 @@ const getBinomial = item => {
     return binomial;
 };
 
-const getImagesLayout = (species, prefix) => {
-    let imageIds = [];
+const getImagesLayout = (species, prefix, imageIds) => {
     let images = '';
     if(!species.images) {
         console.log('No images!');
@@ -78,32 +77,6 @@ const getImagesLayout = (species, prefix) => {
             }
         });
     });
-
-    return imageIds;
-};
-
-const getSpeciesSelector = items => {
-
-    let options = '<option value="0">Select species</option>';
-    items.forEach(item => {
-        options = options + `<option value="${item.id}">${item.name}</option>`;
-    });
-    document.querySelector('#names').innerHTML = options;
-
-    const speciesOptions = document.querySelector('#names');
-
-    speciesOptions.addEventListener('change', event => {
-        const item = items.find(item => parseInt(item.id) === event.target.value);
-        const images = getImagesLayout(item);
-        imageIds = images.imageIds;
-        currentItemId = images.currentItemId;
-        document.querySelectorAll('.btnAddSpecies').forEach(btn => {
-            btn.classList.remove('hide');
-        });
-    });
-
-    const species = document.querySelector('#names');
-    const instances = M.FormSelect.init(species);
 };
 
 const loadInatCollection = (inat, itis, eol, parseSpeciesData, gbif, inatItems) => {
@@ -159,11 +132,33 @@ const loadInatCollection = (inat, itis, eol, parseSpeciesData, gbif, inatItems) 
     });
 };
 
+const parseSpeciesData = async (item) => {
+
+    const languages = [ 'en', 'pt', 'es', 'de', 'fr', 'it', 'eng' ];
+    const response = await fetch(item.detailsUrl);
+    const json = await response.json();
+    const taxonConcept = json.taxonConcept;
+    if(!json.taxonConcept) return;
+    const taxon = taxonConcept.dataObjects ? taxonConcept : taxonConcept.taxonConcepts[1];
+    const imagesCollection = taxon.dataObjects.filter(item => item.mediaURL || item.eolMediaURL).map(media => {
+        return {
+            title: media.title, // as original title
+            rightsHolder: media.rightsHolder || '',
+            source: media.source,
+            license: media.license,
+            url: media.eolMediaURL,
+            photographer: media.agents.find(agent => agent.role === 'photographer')            
+        }
+    });
+    const namesCollection = helpers.parseNames(taxon.vernacularNames, languages);
+    return { id: item.id,  name: taxon.scientificName, images: imagesCollection, names: namesCollection };
+};
+
 export const helpers = {
     parseNames,
     flatten,
     getBinomial,
     getImagesLayout,
-    getSpeciesSelector,
-    loadInatCollection
+    loadInatCollection,
+    parseSpeciesData
 };

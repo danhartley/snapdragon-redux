@@ -32,7 +32,7 @@ export const enums = {
   TROPHIC_LEVEL: 'Trophic level',
   ORGANISATION: 'Organisation',
   SMELL: 'smell',
-  FRUIT_TYPE: 'Fruit',
+  FRUIT_TYPE: 'Fruit type',
   SEED_COUNT: 'Seed count',
   PH_TOLERANCE: 'pH tolerance',
   VITAMINS: 'vitamins',
@@ -682,6 +682,8 @@ export const enums = {
   NUT: 'Nut',
   GRAIN: 'Grain',
   MULTIPLE_FRUIT: 'Multiple fruit',
+  SAMARA: 'Samara',
+  ACHENE: 'Achene',
   type: 'fruitType',
   name: 'fruit type'
   },

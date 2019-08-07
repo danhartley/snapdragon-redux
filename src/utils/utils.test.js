@@ -176,3 +176,10 @@ const layouts = [
     expect(months.map(month => month.index)).toEqual([1,2,3]);
     expect(months.map(month => month.name)).toEqual(['February','March','April']);
   });
+
+  test('should return appropriate camel-cased text for any string', () => {
+    let string = 'Leaf blade';
+    expect(utils.toCamelCase(string)).toEqual('leafBlade');
+    string  = 'behaviour';
+    expect(utils.toCamelCase(string)).toEqual('behaviour');
+  });

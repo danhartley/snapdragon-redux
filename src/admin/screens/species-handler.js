@@ -2,9 +2,6 @@ import { matchTaxon, iconicTaxa } from 'api/snapdragon/iconic-taxa';
 import { renderTemplate } from 'ui/helpers/templating';
 import { helpers } from 'admin/helpers';
 import { eol } from 'admin/api/eol';
-import { inat } from 'admin/api/inat';
-import { itis } from 'admin/api/itis';
-import { gbif } from 'admin/api/gbif';
 import { firestore } from 'api/firebase/firestore';
 import { eolAutocomplete } from 'admin/api/eol-autocomplete';
 import { speciesPicker } from 'admin/screens/species-picker';
@@ -22,8 +19,7 @@ const addSpecies = () => {
 
     renderTemplate({}, template.content, parent);
 
-    const items = [], inatItems = [], newCollection = [];
-    let imageIds = [], currentItemId;
+    let item, imageIds = [];
 
     // https://creativecommons.org/licenses/
     // CC BY:       Attribution                 (commerical allowed)
@@ -54,28 +50,6 @@ const addSpecies = () => {
     licenceSelector(licenses);
 
     document.getElementById('licences').value = noneExcludedFromCommercialUse;
-
-    const parseSpeciesData = async (item) => {
-
-        const languages = [ 'en', 'pt', 'es', 'de', 'fr', 'it', 'eng' ];
-        const response = await fetch(item.detailsUrl);
-        const json = await response.json();
-        const taxonConcept = json.taxonConcept;
-        if(!json.taxonConcept) return;
-        const taxon = taxonConcept.dataObjects ? taxonConcept : taxonConcept[1];
-        const imagesCollection = taxon.dataObjects.filter(item => item.mediaURL || item.eolMediaURL).map(media => {
-            return {
-                title: media.title, // as original title
-                rightsHolder: media.rightsHolder || '',
-                source: media.source,
-                license: media.license,
-                url: media.eolMediaURL,
-                photographer: media.agents.find(agent => agent.role === 'photographer')            
-            }
-        });
-        const namesCollection = helpers.parseNames(taxon.vernacularNames, languages);
-        return { id: item.id,  name: taxon.scientificName, images: imagesCollection, names: namesCollection };
-    };
     
     const inputSearch = document.querySelector('#input-search');
     const asyncProgress = document.querySelector('.async-progress');
@@ -87,10 +61,18 @@ const addSpecies = () => {
             asyncProgress.classList.contains('hide')
                 ? asyncProgress.classList.remove('hide')
                 : asyncProgress.classList.add('hide');
-        }, () => {
-            getSpecies({id: document.getElementById('input-search').name});
+        }, async () => {
+            const id = {id: document.getElementById('input-search').name};
+            item = await eol.getSpecies(id, selectedLicence);
+            helpers.getImagesLayout(item, '', imageIds);
+            
             asyncProgress.classList.remove('hide');
             asyncProgress.innerHTML = 'Fetching matching species…';
+
+            document.querySelectorAll('.btnAddSpecies').forEach(btn => {
+                btn.classList.remove('hide');
+            });
+
             setTimeout(() => {
                 asyncProgress.classList.add('hide');
             }, 2550);
@@ -98,58 +80,6 @@ const addSpecies = () => {
     };
 
     searchEOL();
-
-    const getSpecies = async id => {
-        const item = await parseSpeciesData(eol.getSpeciesUrl(id, selectedLicence));
-        const binomial = helpers.getBinomial(item);
-        gbif.getTaxonomy(binomial).then(taxonomy => {
-            item.taxonomy = {
-                kingdom: taxonomy.kingdom,
-                phylum: taxonomy.phylum,
-                class: taxonomy.class,
-                order: taxonomy.order,
-                genus: taxonomy.genus,
-                family: taxonomy.family
-            };
-        });
-        const images = helpers.getImagesLayout(item, '');
-        imageIds = images.imageIds;
-        currentItemId = images.currentItemId;
-        document.querySelectorAll('.btnAddSpecies').forEach(btn => {
-            btn.classList.remove('hide');
-        });
-    }
-
-    const addOrUpdateSpeciesToFirestore = (btn, callback) => {
-
-        btn.addEventListener('click', async event => {
-
-            const currentItem = items.find(i => parseInt(i.id) === currentItemId);
-            const item = {
-                eolId: currentItem.id,
-                eolName: currentItem.name,
-                name: helpers.getBinomial(currentItem),
-                images: currentItem.images,
-                names: currentItem.names,
-                taxonomy: currentItem.taxonomy                
-            };
-            item.iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
-            const images = [];
-            item.images.forEach((image,index) => {
-                imageIds.forEach(id => {
-                    if(index === id) {
-                        images.push(image);
-                    }
-                });
-            });
-            images.forEach(image => image.url = image.url.replace('https://content.eol.org/data/media/', ''));
-            item.images = images;
-
-            // document.querySelectorAll('.collectionCount').forEach(counter => counter.innerHTML = newCollection.length);
-        
-            if(callback) callback(item);            
-        });
-    };
 
     const activateGetTraitsBtn = async item => {
         
@@ -166,7 +96,9 @@ const addSpecies = () => {
     };
 
     document.querySelectorAll('.btnAddSpecies').forEach(btn => {
-        addOrUpdateSpeciesToFirestore(btn, activateGetTraitsBtn);
+        btn.addEventListener('click', e => {
+            addOrUpdateSpeciesToFirestore(item, imageIds, activateGetTraitsBtn);
+        });
     });
 
     document.querySelector('#licences').addEventListener('change', e => {
@@ -176,8 +108,6 @@ const addSpecies = () => {
 
 const updateSpecies = () => {
 
-    let imageIds = [], currentItemId;
-    
     const template = document.createElement('template');
           template.innerHTML = updateSpeciesTemplate;
 
@@ -190,7 +120,6 @@ const updateSpecies = () => {
     const chkSafety = document.querySelector('.chkSafety');
 
     const removeSpecies = () => {
-        // const input = document.querySelector('#input-species-to-update');              
         firestore.deleteSpeciesByName(input.value);
     };
 
@@ -215,32 +144,51 @@ const updateSpecies = () => {
     speciesPicker(input, listenForSpeciesSelection);
 
     const btnGetPhotos = document.querySelector('.btnGetPhotos');
+    const btnUpdateSpecies = document.querySelector('.btnUpdateSpecies');
 
     btnGetPhotos.addEventListener('click', async e => {
 
-        const item = await firestore.getSpeciesByName(input.value);
+        let item = await firestore.getSpeciesByName(input.value);
 
         const prefix = item.images ? 'https://content.eol.org/data/media/' : '';
 
-        if(images.length === 0) {
-            
+        if(item.images.length === 0) {
+            item.images = await eol.getSpeciesPhotos(item.eolId, 'pd|cc-by|cc-by-sa|cc-by-nd');                                    
         }
 
-        const images = helpers.getImagesLayout(item, prefix);
-        imageIds = images.imageIds;
-        currentItemId = images.currentItemId;
-    });
+        const imageIds = [];
 
-    document.querySelectorAll('.btnUpdateSpecies').forEach(btn => {
-        addOrUpdateSpeciesToFirestore(btn, async () => {
-            const response = await firestore.udpateSpecies(item);
-            console.log(response);
+        helpers.getImagesLayout(item, '', imageIds);
+
+        btnUpdateSpecies.classList.remove('hide');
+
+        btnUpdateSpecies.addEventListener('click', e => {
+            addOrUpdateSpeciesToFirestore(item, imageIds, async () => {
+                const response = await firestore.updateSpecies(item);
+                console.log(response);
+            }); 
         });
     });
-
 }
 
 export const speciesHandler = {
     addSpecies,
     updateSpecies
+};
+
+const addOrUpdateSpeciesToFirestore = (item, imageIds, callback) => {
+
+    item.iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
+    const images = [];
+    item.images.forEach((image,index) => {
+        imageIds.forEach(id => {
+            if(index === id) {
+                images.push(image);
+            }
+        });
+    });
+    images.forEach(image => image.url = image.url.replace('https://content.eol.org/data/media/', ''));
+    item.images = images;
+
+    if(callback) callback(item);
 };
