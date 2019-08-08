@@ -3,7 +3,6 @@ import { renderTemplate } from 'ui/helpers/templating';
 import { helpers } from 'admin/helpers';
 import { eol } from 'admin/api/eol';
 import { firestore } from 'api/firebase/firestore';
-import { eolAutocomplete } from 'admin/api/eol-autocomplete';
 import { speciesPicker } from 'admin/screens/species-picker';
 
 import addSpeciesTemplate from 'admin/screens/add-species-template.html';
@@ -19,7 +18,7 @@ const addSpecies = () => {
 
     renderTemplate({}, template.content, parent);
 
-    let item, imageIds = [];
+    let item, imageIds = [], autocompleteRef;
 
     // https://creativecommons.org/licenses/
     // CC BY:       Attribution                 (commerical allowed)
@@ -54,32 +53,15 @@ const addSpecies = () => {
     const inputSearch = document.querySelector('#input-search');
     const asyncProgress = document.querySelector('.async-progress');
 
-    let autocompleteRef;
-
-    const searchEOL = async () => {        
-        autocompleteRef = eolAutocomplete(inputSearch, 'search', 'autocomplete-options-container', () => {
-            asyncProgress.classList.contains('hide')
-                ? asyncProgress.classList.remove('hide')
-                : asyncProgress.classList.add('hide');
-        }, async () => {
-            const id = {id: document.getElementById('input-search').name};
-            item = await eol.getSpecies(id, selectedLicence);
-            helpers.getImagesLayout(item, '', imageIds);
-            
-            asyncProgress.classList.remove('hide');
-            asyncProgress.innerHTML = 'Fetching matching species…';
-
-            document.querySelectorAll('.btnAddSpecies').forEach(btn => {
-                btn.classList.remove('hide');
-            });
-
-            setTimeout(() => {
-                asyncProgress.classList.add('hide');
-            }, 2550);
+    const searchEOLCallback = (species, ref) => {
+        item = species;
+        autocompleteRef = ref;
+        document.querySelectorAll('.btnAddSpecies').forEach(btn => {
+            btn.classList.remove('hide');
         });
     };
 
-    searchEOL();
+    eol.searchEOL(inputSearch, asyncProgress, searchEOLCallback, selectedLicence, imageIds);
 
     const activateGetTraitsBtn = async item => {
         
@@ -87,8 +69,7 @@ const addSpecies = () => {
 
         const btnAddTraits = document.querySelector('.btnAddTraits');
               btnAddTraits.classList.remove('hide');
-              btnAddTraits.addEventListener('click', event => {
-                global.species = item;
+              btnAddTraits.addEventListener('click', event => {                
                 document.querySelector('#add-traits').click();
               });
 
@@ -107,6 +88,8 @@ const addSpecies = () => {
 };
 
 const updateSpecies = () => {
+
+    let item = window.snapdragon.species;
 
     const template = document.createElement('template');
           template.innerHTML = updateSpeciesTemplate;
@@ -134,8 +117,9 @@ const updateSpecies = () => {
     const input = document.querySelector('#input-species-to-update');
           input.focus();
 
-    const listenForSpeciesSelection = async event => {
+    const listenForSpeciesSelection = async species => {
             
+        item = species;
         btnRemoveSpecies.classList.remove('hide');
         btnGetPhotos.classList.remove('hide');
         chkSafety.classList.remove('hide');
@@ -148,8 +132,6 @@ const updateSpecies = () => {
 
     btnGetPhotos.addEventListener('click', async e => {
 
-        let item = await firestore.getSpeciesByName(input.value);
-
         const prefix = item.images ? 'https://content.eol.org/data/media/' : '';
 
         if(item.images.length === 0) {
@@ -158,7 +140,7 @@ const updateSpecies = () => {
 
         const imageIds = [];
 
-        helpers.getImagesLayout(item, '', imageIds);
+        helpers.getImagesLayout(item, prefix, imageIds);
 
         btnUpdateSpecies.classList.remove('hide');
 
@@ -169,6 +151,15 @@ const updateSpecies = () => {
             }); 
         });
     });
+
+    if(item) {
+        
+        btnRemoveSpecies.classList.remove('hide');
+        btnGetPhotos.classList.remove('hide');
+        chkSafety.classList.remove('hide');
+
+        btnGetPhotos.click();
+    }
 }
 
 export const speciesHandler = {

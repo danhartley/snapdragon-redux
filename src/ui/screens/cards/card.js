@@ -141,7 +141,7 @@ const renderPortrait = (item, config, mode, rootNode) => {
 
 const renderCommonParts = (template, config, item, collection, mode, parent, rootNode, isInCarousel) => {
 
-    const familyVernacularName = item.family.names ? item.family.names[0] : '';
+    const familyVernacularName = item.family && item.family.names ? item.family.names[0] : '';
         
     const headerImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
     

@@ -11,8 +11,7 @@ import addTraitsFieldsTemplate from 'admin/screens/add-traits-fields-template.ht
 
 const addTraits = () => {
 
-    let name;
-    let item = global.species;
+    let item = window.snapdragon.species;
 
     const template = document.createElement('template');
           template.innerHTML = addTraitsTemplate;
@@ -30,16 +29,31 @@ const addTraits = () => {
         item.traits = itemTraits
         item.family = itemFamily;                
         
-        const fields = [];
+        const fields = [], relationships = [];
 
         if(item.traits) {
 
+            const traitsToIgnore = [ 'name', 'role' ];
+
             for (let [key, obj] of Object.entries(item.traits)) {
 
-                if(key !== 'name') {
+                if(!R.contains(key, traitsToIgnore)) {
                     const value = obj.value ? obj.value.join(', ') : '';
                     const unit = obj.unit || '';
                     fields.push({key,value, unit});
+                }
+                if(key === 'relationships') {
+                    obj.forEach(relationship => {
+                        relationships.push({
+                            key: key,
+                            type: relationship.value[0],
+                            speciesA: relationship.symbiont.name,
+                            speciesARole: relationship.symbiont.role,
+                            speciesB: item.name,
+                            speciesBRole: relationship.type,
+                            description: relationship.description
+                        })
+                    });
                 }
             }
         }
@@ -49,16 +63,16 @@ const addTraits = () => {
         parent = document.querySelector('.js-traits');
         parent.innerHTML = '';
 
-        renderTemplate({ fields }, template.content, parent);
+        renderTemplate({ fields, relationships }, template.content, parent);
 
         M.updateTextFields();
 
         const deleteIcons = document.querySelectorAll('i');
         deleteIcons.forEach(icon => {
             icon.addEventListener('click', async e => {
+                e.target.classList.add('alert');
                 const field = e.target.id;
-                const response = await firestore.deleteSpeciesTraitField(item.name, field);
-                console.log(response);
+                const response = await firestore.deleteSpeciesTraitField(item.name, field);                
                 renderTraits(item);
             });
         });
@@ -98,7 +112,7 @@ const addTraits = () => {
         });
     };
 
-    const addTrait = document.querySelector('.js-add-trait');
+    const addTraitParent = document.querySelector('.js-add-trait');
 
     const callback = async pair => {
         
@@ -112,24 +126,21 @@ const addTraits = () => {
 
         console.log(trait);
 
-        const log = await firestore.addSpeciesTraits(name, trait);
+        const log = await firestore.addSpeciesTraits(item.name, trait);
 
         renderTraits(item);
-        renderAddTrait(addTrait, callback);
+        renderAddTrait(addTraitParent, callback);
     };
 
-    renderAddTrait(addTrait, callback);
+    renderAddTrait(addTraitParent, callback);
 
     const inputSpecies = document.querySelector('#input-species-for-traits');
           inputSpecies.focus();
 
-    if(item) inputSpecies.value = item.name;
-
     const init = async () => {
 
-        const listenForSpeciesSelection = async event => {
+        const listenForSpeciesSelection = async item => {
             name = inputSpecies.value;
-            item = await firestore.getSpeciesByName(name);
             renderTraits(item);
         };
 
@@ -172,6 +183,11 @@ const addTraits = () => {
     };
 
     init();
+
+    if(item) {
+        inputSpecies.value = item.name;
+        renderTraits(item);
+    }
 };
 
 export const traitsHandler = {

@@ -5,5 +5,23 @@
             <label class='trait-key'>{{ field.key }} {{ field.unit }}</label>
             <i id="{{ field.key }}" class="fas fa-trash"></i>
         </div>
+    </li>    
+</ul>
+
+<ul class="" data-repeat-relationship="{{ relationships }}">
+    <li>
+        <div class="relationship-card">
+            <div class="cols">
+                <div>Relationship</div><div>{{ relationship.type }}</div>
+            </div>
+            <div class="cols">
+                <div>{{ relationship.speciesA }}</div><div>{{ relationship.speciesARole }}</div>
+            </div>
+            <div class="cols">
+                <div>{{ relationship.speciesB }}</div><div>{{ relationship.speciesBRole }}</div>
+            </div>
+            <div>{{ relationship.description }}</div>
+            <i id="{{ relationship.key }}" class="fas fa-trash"></i>
+        </div>        
     </li>
 </ul>

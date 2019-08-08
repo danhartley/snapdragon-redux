@@ -7,7 +7,7 @@
 }            
 .sub.container {
     width: 100%;
-    margin: 2rem 0;
+    margin: 2rem .75rem;
 }
 .input-field {
     margin-top: 0;
@@ -54,7 +54,7 @@
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, .8);
   }
-  .async-progress, .feedback {
+  .async-progress {
     font-size: .9rem;
     padding: 1rem 0 !important;
     line-height: 1.15rem;
@@ -83,4 +83,29 @@
   }
   input[type=text]:not(.browser-default)[readonly="readonly"] {
     color: rgba(0,0,0,0.6);
+  }
+
+  /* to move/copy */
+
+  .relationship-card .cols {
+      display: flex;
+  }
+
+  .relationship-card .cols > div:nth-child(1) {
+    margin: 0 1rem 0 0;
+  }
+  .active-species {
+    padding: 1rem 0 0 .75rem;
+  }
+  .alert {
+      color: rgba(183, 12, 21,.8);
+  }
+  .row-centered {
+    display: flex;
+    align-items: center;
+  }
+
+  .feedback {
+      margin: 0 0 0 .5rem;
+      font-style: italic;
   }

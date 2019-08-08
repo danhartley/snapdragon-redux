@@ -1,18 +1,19 @@
 <div class="feature-symbiont-list scrollable">
-    <table>
-        <thead>
-            <tr>
-                <th>Association with</th>
-                <th>As</th>
-                <th class="landscape">Relationship</th>
-            </tr>
-        </thead>
-        <tbody data-repeat-taxon="{{ linkedTaxa }}">
-            <tr>
-                <td class="js-test-card-container-link"><span data-toggle="{{ taxon.modal }}" data-target="#cardModal" class="{{ taxon.className }}" id="{{ taxon.symbiont.name }}">{{ taxon.symbiont.display }}</span></td>
-                <td>{{ taxon.as }}</td>
-                <td class="landscape">{{ taxon.type }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div data-repeat-relationship="{{ relationships }}">
+        <div class="relationship-card">
+            <div class="cols">
+                <div>Relationship</div><div>{{ relationship.type }}</div>
+            </div>
+            <div class="cols">
+                <div class="js-test-card-container-link">
+                    <span data-toggle="{{ relationship.modal }}" data-target="#cardModal" class="{{ relationship.className }}" id="{{ relationship.speciesA }}">{{ relationship.speciesA }}</span>
+                </div>                
+                <div>{{ relationship.speciesARole }}</div>
+            </div>
+            <div class="cols">
+                <div>{{ relationship.speciesB }}</div><div>{{ relationship.speciesBRole }}</div>
+            </div>
+            <div>{{ relationship.description }}</div>
+        </div>   
+    </div>
 </div>

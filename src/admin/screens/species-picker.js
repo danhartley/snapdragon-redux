@@ -1,5 +1,11 @@
 import { firestore } from 'api/firebase/firestore';
 
+const activeSpeciesListeners = [];
+
+export const listenForActiveSpecies = listener => {
+    activeSpeciesListeners.push(listener);
+};
+
 export const speciesPicker = async (input, listener) => {
 
     let speciesNames = [];
@@ -17,9 +23,11 @@ export const speciesPicker = async (input, listener) => {
 
     var instances = M.Autocomplete.init(input, {data});
 
-    input.addEventListener('keyup', e => {
+    input.addEventListener('keyup', async e => {
         if(e.keyCode == 13) {
-            listener();
+            const species = await firestore.getSpeciesByName(input.value);
+            listener(species);
+            activeSpeciesListeners.forEach(l => l(species));   
         }
     });
 };

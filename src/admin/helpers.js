@@ -140,7 +140,7 @@ const parseSpeciesData = async (item) => {
     const taxonConcept = json.taxonConcept;
     if(!json.taxonConcept) return;
     const taxon = taxonConcept.dataObjects ? taxonConcept : taxonConcept.taxonConcepts[1];
-    const imagesCollection = taxon.dataObjects.filter(item => item.mediaURL || item.eolMediaURL).map(media => {
+    const imagesCollection = taxon.dataObjects ? taxon.dataObjects.filter(item => item.mediaURL || item.eolMediaURL).map(media => {
         return {
             title: media.title, // as original title
             rightsHolder: media.rightsHolder || '',
@@ -149,7 +149,7 @@ const parseSpeciesData = async (item) => {
             url: media.eolMediaURL,
             photographer: media.agents.find(agent => agent.role === 'photographer')            
         }
-    });
+    }) : [];
     const namesCollection = helpers.parseNames(taxon.vernacularNames, languages);
     return { id: item.id,  name: taxon.scientificName, images: imagesCollection, names: namesCollection };
 };

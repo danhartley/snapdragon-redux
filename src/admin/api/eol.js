@@ -1,3 +1,4 @@
+import { eolAutocomplete } from 'admin/api/eol-autocomplete';
 import { gbif } from 'admin/api/gbif';
 import { helpers } from 'admin/helpers';
 
@@ -40,12 +41,37 @@ const getSpecies = async (id, selectedLicence) => {
 const getSpeciesPhotos = async (id, selectedLicence) => {
     const item = await helpers.parseSpeciesData(eol.getSpeciesUrl({id}, selectedLicence));
     return item.images;
-}
+};
+
+
+const searchEOL = async (input, asyncProgress, callback, selectedLicence = 'pd|cc-by|cc-by-sa|cc-by-nd', imageIds) => {        
+    let item;
+    const autocompleteRef = eolAutocomplete(input, 'search', 'autocomplete-options-container', () => {
+        asyncProgress.classList.contains('hide')
+            ? asyncProgress.classList.remove('hide')
+            : asyncProgress.classList.add('hide');
+    }, async () => {
+        
+        item = await getSpecies(input.name, selectedLicence);
+        
+        if(imageIds) helpers.getImagesLayout(item, '', imageIds);
+        
+        asyncProgress.classList.remove('hide');
+        asyncProgress.innerHTML = 'Fetching matching species…';
+
+        callback(item, autocompleteRef);
+
+        setTimeout(() => {
+            asyncProgress.classList.add('hide');
+        }, 2550);
+    });
+};
 
 export const eol = {
     getSpeciesUrl,
     searchEOLByProvider,
     getSpeciesByName,
     getSpecies,
-    getSpeciesPhotos
+    getSpeciesPhotos,
+    searchEOL
 }

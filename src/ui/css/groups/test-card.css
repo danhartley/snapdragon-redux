@@ -288,7 +288,11 @@ div.text-entry {
     }
 
     .feature-symbiont-list {
-        height: 16rem;
+        height: calc(90vh - 20rem);
+    }
+
+    .modal-content .feature-symbiont-list {
+        height: calc(70vh - 20rem);
     }
 
     /* CARD HEADER */
@@ -422,12 +426,5 @@ div.text-entry {
 @media (max-height:568px) {
     .test-card .help-txt {
         display: none;
-    }
-}
-
-@media (min-width: 768px) {
-
-    .feature-symbiont-list {
-        height: 20rem;
     }
 }

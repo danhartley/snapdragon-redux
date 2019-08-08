@@ -2,12 +2,16 @@ import "babel-polyfill";
 
 import 'admin/css/admin.css';
 
+import { listenForActiveSpecies } from 'admin/screens/species-picker';
 import { initMaterialize } from 'admin/scripts/materialize';
 import { speciesHandler } from 'admin/screens/species-handler';
 import { traitsHandler } from 'admin/screens/traits-handler';
+import { addRelationship } from 'admin/screens/add-relationship';
+import { addLookalike } from 'admin/screens/add-lookalike';
 
 const auth = firebase.auth();
-const global = {};
+
+window.snapdragon = {};
 
 auth.onAuthStateChanged(user => {
     if (user) {
@@ -46,11 +50,17 @@ const updateSpecies = document.querySelector('#update-species');
 const addTraits = document.querySelector('#add-traits');
       addTraits.addEventListener('click', addTraitsClickHandler);
 
+const addRelationshipParent = document.querySelector('#add-relationship');
+      addRelationshipParent.addEventListener('click', addRelationship);
+
+const addLookalikeParent = document.querySelector('#add-lookalike');
+      addLookalikeParent.addEventListener('click', addLookalike);
+
 const setupUI = (user) => {
   if (user) {
     loggedInLinks.forEach(item => item.classList.remove('hide'));
     loggedOutLinks.forEach(item => item.classList.add('hide'));
-    addSpecies.click();
+    addRelationshipParent.click();
 } else {    
     loggedInLinks.forEach(item => item.classList.add('hide'));
     loggedOutLinks.forEach(item => item.classList.remove('hide'));
@@ -79,3 +89,10 @@ logout.addEventListener('click', (e) => {
 });
 
 initMaterialize();
+
+listenForActiveSpecies(species => {
+  const activeSpecies = document.querySelector('.js-active-species > span:nth-child(2)');
+        activeSpecies.innerHTML = species.name;
+
+  window.snapdragon.species = species;
+});

@@ -280,6 +280,52 @@ const addSpeciesTraits = async (name, trait) => {
     }
 };
 
+const addSpeciesRelationship = async traits => {
+
+    try {
+        const batch = db.batch();
+
+        const readyBatch = async () => {
+            
+            return Promise.all(traits.map(async trait => {
+
+                let speciesTraitsRef;
+        
+                const querySnapshot = await db.collection("traits_en").where("name", "==", trait.name).get();
+
+                if(querySnapshot.empty) {
+                    trait.name = name;
+                    speciesTraitsRef = await db.collection(`traits_en`).add(trait);
+                    console.log(speciesTraitsRef);
+                } else {
+                    querySnapshot.forEach(function(doc) {
+                        speciesTraitsRef = doc.ref;
+                        console.log(speciesTraitsRef);
+                    });
+                }
+
+                console.log(speciesTraitsRef);
+
+                speciesTraitsRef.update({
+                    relationships: firebase.firestore.FieldValue.arrayUnion(trait.update)
+                });
+            }));
+        };
+
+        await readyBatch();
+
+        console.log('is batch ready');
+
+        await batch.commit();
+
+        return 'Relationship added.';
+
+    } catch (e) {
+        return e.message;
+    }
+
+};
+
 const deleteSpeciesTraitField = async (name, field) => {
 
     let querySnapshot, speciesTraitsRef;
@@ -321,6 +367,7 @@ export const firestore = {
     addSpecies,
     addTraits,
     addSpeciesTraits,
+    addSpeciesRelationship,
     
     updateSpecies,
 

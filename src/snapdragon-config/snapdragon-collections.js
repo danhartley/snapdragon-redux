@@ -323,7 +323,10 @@ const rhsWeeds = {
     items: [],
     itemNames: [
 
-      'Acer negundo'
+      'Acer negundo',
+      'Sciurus vulgaris',
+      'Vulpes vulpes',
+      'Martes martes'
         // "Elymus repens",
         // "Equisetum arvense",
         // "Dactylis glomerata",

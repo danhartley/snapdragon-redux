@@ -37,62 +37,44 @@ export const linkedTaxa = (item, config, parent, mode, isInCarousel, collection)
             return vernacularName ? { name: taxonName, display: taxonName, isSpecies: true } : { name: taxonName, display: taxonName, isSpecies: true };
         };
     
-        const setNumberOfRows = config.isLandscapeMode ? 10 : 4;
+        const relationshipTraits = item.traits ? item.traits.relationships : null;
 
-        const taxaTraits = getLinkedTaxaTraits(item.traits);
+        if(!relationshipTraits) return;
 
-        const getLinkedTaxaDisplayProperties = async () => {
-            return Promise.all(taxaTraits.map(trait => {
-                return Promise.all(trait.value.map(async taxonName => {
-                    return await {
-                        as: trait.name,
-                        type: trait.type || '---',
-                        symbiont: await addVernacularName(taxonName)
-                    };
-                }));
+        const convertTraitsForDisplay = async () => {
+            return Promise.all(relationshipTraits.map(trait => {
+                return  {
+                    type: trait.value[0],
+                    speciesA: trait.symbiont.name,
+                    speciesARole: trait.symbiont.role,
+                    speciesB: item.name,
+                    speciesBRole: trait.type,
+                    description: trait.description
+                };
             }));
         };
 
-        let linkedTaxa = await getLinkedTaxaDisplayProperties();
+        let relationships = await convertTraitsForDisplay();
 
-        linkedTaxa = R.flatten(linkedTaxa.map(taxon => taxon)).filter(props => props !== undefined).filter(taxon => taxon.symbiont.name !== ''); 
-
-        const addDisplayRules = async () => {
-            for(const trait of linkedTaxa) {
-                try {
-                    if(trait.symbiont.isSpecies && mode !== 'MODAL') {
-                        trait.className = 'underline-link';
-                        trait.modal = 'modal';
-                    } else {
-                        trait.className = '';
-                        trait.modal = '';
-                    }
-                } catch(error) {
-                    console.error(error);
-                    console.error('Failing geting species details for: ', trait);
+        const addDisplayRules = relationships => {
+            for(const relationship of relationships) {
+                if(mode !== 'MODAL') {
+                    relationship.className = 'underline-link';
+                    relationship.modal = 'modal';
+                } else {
+                    relationship.className = '';
+                    relationship.modal = '';
                 }
             };
 
-            return await linkedTaxa;
+            return relationships;
         };
 
-        linkedTaxa = await addDisplayRules();
-
-        // add lines to the grid (better than showing nothing)
-
-        while (linkedTaxa.length < setNumberOfRows) {
-            linkedTaxa.push({
-                modal: '',
-                className: '',
-                symbiont: { name: '', display: '' },
-                as: '',
-                type: ''
-            });
-        }
+        relationships = addDisplayRules(relationships);
 
         const template = document.createElement('template');
         template.innerHTML = linkedTaxaTemplate;
-        renderTemplate({ linkedTaxa }, template.content, parent);
+        renderTemplate({ relationships }, template.content, parent);
         addLinksToSpeciesCards(mode);
     }; 
 

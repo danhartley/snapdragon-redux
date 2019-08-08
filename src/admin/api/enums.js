@@ -668,6 +668,7 @@ export const enums = {
   SUPERTRAMP: 'Supertramp',
   SYMBIONT: 'Symbiont',
   OCCUPANT: 'Lives in',
+  PARASITE: 'Parasite',
   type: 'role',
   name: 'role'
   },
