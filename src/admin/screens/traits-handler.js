@@ -139,8 +139,8 @@ const addTraits = () => {
 
     const init = async () => {
 
-        const listenForSpeciesSelection = async item => {
-            name = inputSpecies.value;
+        const listenForSpeciesSelection = async species => {
+            item = species;
             renderTraits(item);
         };
 

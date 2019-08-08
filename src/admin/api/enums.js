@@ -70,7 +70,7 @@ export const enums = {
   LEAF_VARIATION: 'Leaf variation',
   LEAF_SHAPE: 'Leaf shape',
   LEAF_EDGE: 'Leaf edge',
-  STEM_ARRANGEMENT: 'Stem arrangement',
+  LEAF_ARRANGEMENT: 'Leaf arrangement',
   INFLORESCENCE: 'Inflorescence',
   FEMALE_CONE_LENGTH: 'Female cone length',
   MALE_CONE_LENGTH: 'Male cone length',
@@ -438,15 +438,15 @@ export const enums = {
   type: 'asexualReproduction',
   name: 'asexual reproduction'
   },
-  stemArrangement: {
+  leafArrangement: {
   ALTERNATE: 'Alternate',
   BASAL: 'Basal',
   CAULINE: 'Rosulate',
   OPPOSITE: 'Opposite',
   WHORLED: 'Whorled',
   ROWS: 'Rows',
-  type: 'stemArrangement',
-  name: 'stem arrangement'
+  type: 'leafArrangement',
+  name: 'leaf arrangement'
   },
   leafEdge: {
   ENTIRE: 'Entire',
@@ -695,6 +695,10 @@ export const enums = {
   SPIKE: 'spike',
   RACEME: 'raceme',
   CORYMB: 'corymb',
+  SPIKE: 'Spike',
+  SPADEX: 'Spadex',
+  SINGLE: 'Single',
+  PANICLE: 'Panicle',
   type: 'inflorescence',
   name: 'inflorescence'
   },
@@ -841,6 +845,7 @@ export const enums = {
   TAPROOT_SYSTEM: 'Taproot system',
   KIN_SELECTION: 'Kin selection',
   BIOINDICATOR: 'Bioindicator',
+  BROADLEAF: 'Broadleaf',
   type: 'characteristic',
   name: 'characteristic'
   },

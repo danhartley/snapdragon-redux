@@ -10,6 +10,8 @@ import addTraitTemplate from 'admin/screens/add-trait-template.html';
 
 export const renderAddTrait = (parent, callback) => {
 
+    let inputKey;
+
     const initTraitValues = async (traitValues, traitKey) => {
 
         let values = [];
@@ -52,6 +54,7 @@ export const renderAddTrait = (parent, callback) => {
                   savedText.innerHTML = `Trait, key: ${traitKey}, value: ${input.value}, saved.`;
             const trait = { key: traitKey, value: input.value };
             callback(trait);
+            inputKey.focus();
         };
     
         input.addEventListener('keypress', event => {
@@ -81,6 +84,8 @@ export const renderAddTrait = (parent, callback) => {
 
         renderTemplate({}, template.content, parent);
 
+        inputKey = document.querySelector('#input-trait-key');
+
         traitValues = await firestore.getTraitValues();
 
         let keys = [];
@@ -91,34 +96,32 @@ export const renderAddTrait = (parent, callback) => {
 
         keys = utils.sortAlphabeticallyBy(keys, 'label');
 
-        const input = document.querySelector('#input-trait-key');
-
         autocomplete({
-            input: input,
+            input: inputKey,
             fetch: function(text, update) {
                 text = text.toLowerCase();
                 const suggestions = keys.filter(n => n.value.toLowerCase().startsWith(text))
                 update(suggestions);
             },
             onSelect: function(item) {
-                input.value = item.label;
+                inputKey.value = item.label;
             },
             minLength: 0,
             debounceWaitMs: 200,
             className: 'autocomplete-options-container'
         });
 
-        input.addEventListener('keypress', event => {
+        inputKey.addEventListener('keypress', event => {
             if(event.keyCode == 13) {
                 initTraitValues(traitValues, event.target.value);
             }
         });
 
-        input.addEventListener('keydown', event => {
+        inputKey.addEventListener('keydown', event => {
             if(event.keyCode == 9) {
                 const highlightedText = document.querySelector('.selected');
                 if(highlightedText) {
-                    input.value = highlightedText.innerText;
+                    inputKey.value = highlightedText.innerText;
                     document.querySelector('.autocomplete-options-container').innerHTML = '';
                     initTraitValues(traitValues, highlightedText.innerText);
                 }

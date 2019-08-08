@@ -77,7 +77,7 @@ export const english = {
         BLADE: 'Blade',
         LEAF_VARIATION: 'Leaf variation',
         LEAF_SHAPE: 'Leaf shape',
-        STEM_ARRANGEMENT: 'Stem arrangement',
+        LEAF_ARRANGEMENT: 'Stem arrangement',
         LEAF_EDGE: 'Leaf edge',
         INFLORESCENCE: 'Inflorescence',
         FEMALE_CONE_LENGTH: 'Female cone length',
