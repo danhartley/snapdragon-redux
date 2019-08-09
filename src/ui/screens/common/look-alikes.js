@@ -1,6 +1,5 @@
 import * as R from 'ramda';
 
-import { store } from 'redux/store';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { renderTemplate } from 'ui/helpers/templating';
 import { imageSideBySlider } from 'ui/screens/common/image-slider';

@@ -10,13 +10,69 @@ import addTraitTemplate from 'admin/screens/add-trait-template.html';
 
 export const renderAddTrait = (parent, callback) => {
 
-    let inputKey;
+    let inputKey, inputValue, inputUnit;
+
+    const traitTriage = (traitValues, traitKey) => {
+
+        inputUnit = document.querySelector('#input-unit-value');
+        inputValue = document.querySelector('#input-trait-value');
+        
+        let units;
+
+        traitValues.units.forEach(unit => {
+            for (let [key, obj] of Object.entries(unit)) {
+                if(key === utils.toCamelCase(traitKey)) {
+                    units = obj;
+                }
+            }
+        });
+            
+        if(units) {
+            
+            inputUnit.parentElement.classList.remove('hide');
+
+            units = units.map(unit => { return { label: unit, value: unit }});
+
+            initAutocomplete(inputUnit, units);
+
+            const saveTrait = async () => {
+                const savedText = document.querySelector('.js-saved');
+                      savedText.classList.remove('hide');
+                      savedText.innerHTML = `Trait, key: ${traitKey}, value: ${inputValue.value} ${inputUnit.value}, saved.`;
+                const trait = { key: traitKey, value: inputValue.value, unit: inputUnit.value };
+                callback(trait);
+                inputKey.focus();
+            };
+        
+            inputUnit.addEventListener('keypress', event => {
+                if(event.keyCode == 13) {
+                    saveTrait();
+                }
+            });
+            inputUnit.addEventListener('keydown', event => {
+                if(event.keyCode == 9) {
+                    const highlightedText = document.querySelector('.selected');
+                    if(highlightedText) {
+                        inputUnit.value = highlightedText.innerText;
+                        saveTrait();
+                    }
+                }
+            });
+
+        } else {
+
+            inputUnit.parentElement.classList.add('hide');
+
+            initTraitValues(traitValues, traitKey);
+        }
+
+    };
 
     const initTraitValues = async (traitValues, traitKey) => {
 
         let values = [];
     
-        const exclude = [ 'help', 'name', 'type' ];
+        const exclude = [ 'help', 'name', 'type', 'units' ];
     
         for (let [key, obj] of Object.entries(traitValues[utils.toCamelCase(traitKey)])) {
             if(!R.contains(key, exclude)) {
@@ -26,47 +82,34 @@ export const renderAddTrait = (parent, callback) => {
 
         values = utils.sortAlphabeticallyBy(values, 'label');
     
-        const input = document.querySelector('#input-trait-value');
-              input.value = '';
+        
+        inputValue.value = '';
         
         setTimeout(() => {
-            input.focus();
+            inputValue.focus();
         }, 250);
         
-        autocomplete({
-            input: input,
-            fetch: function(text, update) {
-                text = text.toLowerCase();
-                const suggestions = values.filter(n => n.value.toLowerCase().startsWith(text))
-                update(suggestions);
-            },
-            onSelect: function(item) {
-                input.value = item.label;
-            },
-            minLength: 0,
-            debounceWaitMs: 200,
-            className: 'autocomplete-options-container'
-        });
-    
+        initAutocomplete(inputValue, values);
+
         const saveTrait = async () => {
             const savedText = document.querySelector('.js-saved');
                   savedText.classList.remove('hide');
-                  savedText.innerHTML = `Trait, key: ${traitKey}, value: ${input.value}, saved.`;
-            const trait = { key: traitKey, value: input.value };
+                  savedText.innerHTML = `Trait, key: ${traitKey}, value: ${inputValue.value}, saved.`;
+            const trait = { key: traitKey, value: inputValue.value };
             callback(trait);
             inputKey.focus();
         };
     
-        input.addEventListener('keypress', event => {
+        inputValue.addEventListener('keypress', event => {
             if(event.keyCode == 13) {
                 saveTrait();
             }
         });
-        input.addEventListener('keydown', event => {
+        inputValue.addEventListener('keydown', event => {
             if(event.keyCode == 9) {
                 const highlightedText = document.querySelector('.selected');
                 if(highlightedText) {
-                    input.value = highlightedText.innerText;
+                    inputValue.value = highlightedText.innerText;
                     saveTrait();
                 }
             }
@@ -96,24 +139,11 @@ export const renderAddTrait = (parent, callback) => {
 
         keys = utils.sortAlphabeticallyBy(keys, 'label');
 
-        autocomplete({
-            input: inputKey,
-            fetch: function(text, update) {
-                text = text.toLowerCase();
-                const suggestions = keys.filter(n => n.value.toLowerCase().startsWith(text))
-                update(suggestions);
-            },
-            onSelect: function(item) {
-                inputKey.value = item.label;
-            },
-            minLength: 0,
-            debounceWaitMs: 200,
-            className: 'autocomplete-options-container'
-        });
+        initAutocomplete(inputKey, keys);
 
         inputKey.addEventListener('keypress', event => {
             if(event.keyCode == 13) {
-                initTraitValues(traitValues, event.target.value);
+                traitTriage(traitValues, event.target.value);
             }
         });
 
@@ -123,11 +153,28 @@ export const renderAddTrait = (parent, callback) => {
                 if(highlightedText) {
                     inputKey.value = highlightedText.innerText;
                     document.querySelector('.autocomplete-options-container').innerHTML = '';
-                    initTraitValues(traitValues, highlightedText.innerText);
+                    traitTriage(traitValues, highlightedText.innerText);
                 }
             }
         });
     }
 
     init();
+};
+
+const initAutocomplete = (input, options)  => {
+    autocomplete({
+        input: input,
+        fetch: function(text, update) {
+            text = text.toLowerCase();
+            const suggestions = options.filter(n => n.value.toLowerCase().startsWith(text))
+            update(suggestions);
+        },
+        onSelect: function(item) {
+            input.value = item.label;
+        },
+        minLength: 0,
+        debounceWaitMs: 200,
+        className: 'autocomplete-options-container'
+    });
 };

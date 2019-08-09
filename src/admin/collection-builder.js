@@ -60,7 +60,7 @@ const setupUI = (user) => {
   if (user) {
     loggedInLinks.forEach(item => item.classList.remove('hide'));
     loggedOutLinks.forEach(item => item.classList.add('hide'));
-    addRelationshipParent.click();
+    addLookalikeParent.click();
 } else {    
     loggedInLinks.forEach(item => item.classList.add('hide'));
     loggedOutLinks.forEach(item => item.classList.remove('hide'));
@@ -91,6 +91,7 @@ logout.addEventListener('click', (e) => {
 initMaterialize();
 
 listenForActiveSpecies(species => {
+  
   const activeSpecies = document.querySelector('.js-active-species > span:nth-child(2)');
         activeSpecies.innerHTML = species.name;
 

@@ -79,18 +79,18 @@ export const addRelationship = () => {
 
         // add relationship
 
-        const btnAddRelationship = document.querySelector('.btnAddRelationship');
         const description = document.querySelector('#input-description');
+        const btnAddRelationship = document.querySelector('.btnAddRelationship');
 
         btnAddRelationship.addEventListener('click', async e => {
 
             if(snapdragonSpecies && EOLSpecies) {
 
-                const EOLSpeciesName = helpers.getBinomial(EOLSpecies);
-
                 const traits = [];
 
                 // Species A
+
+                const EOLSpeciesName = helpers.getBinomial(EOLSpecies);
 
                 const traitA = { name: snapdragonSpecies };
                 traitA.update = {
@@ -127,7 +127,7 @@ export const addRelationship = () => {
                     traits.push(traitB);
                 }
 
-                const log = await firestore.addSpeciesRelationship(traits);
+                const log = await firestore.addSpeciesRelationship('relationships', traits);
                 
                 const message = document.querySelector('.js-message');
 

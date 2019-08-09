@@ -9,6 +9,10 @@ const renderInfoSlider = (traits, parent, id) => {
           slider.innerHTML = infoSliderTemplate;
 
     parent.innerHTML = '';
+
+    traits.forEach(trait => {
+        trait.unit = trait.unit || '';
+    });
     
     renderTemplate({ id, traits }, slider.content, parent);
     

@@ -280,7 +280,7 @@ const addSpeciesTraits = async (name, trait) => {
     }
 };
 
-const addSpeciesRelationship = async traits => {
+const addSpeciesRelationship = async (type, traits) => {
 
     try {
         const batch = db.batch();
@@ -307,7 +307,7 @@ const addSpeciesRelationship = async traits => {
                 console.log(speciesTraitsRef);
 
                 speciesTraitsRef.update({
-                    relationships: firebase.firestore.FieldValue.arrayUnion(trait.update)
+                    [type]: firebase.firestore.FieldValue.arrayUnion(trait.update)
                 });
             }));
         };

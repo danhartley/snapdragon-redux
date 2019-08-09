@@ -324,7 +324,12 @@ const rhsWeeds = {
     itemNames: [
 
       'Acer negundo',
-      'Acer pseudoplatanus'
+      'Acer pseudoplatanus',
+      'Celtis australis',
+      'Cercis siliquastrum',
+      'Cupressus sempervirens',
+      'Eucalyptus globulus',
+      'Fraxinus angustifolia'
       // 'Sciurus vulgaris',
       // 'Vulpes vulpes',
       // 'Martes martes'

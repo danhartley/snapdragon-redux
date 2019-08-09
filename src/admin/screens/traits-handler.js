@@ -33,7 +33,7 @@ const addTraits = () => {
 
         if(item.traits) {
 
-            const traitsToIgnore = [ 'name', 'role' ];
+            const traitsToIgnore = [ 'name', 'role', 'relationships', 'units' ];
 
             for (let [key, obj] of Object.entries(item.traits)) {
 
@@ -124,6 +124,8 @@ const addTraits = () => {
             trait[pair.key] = { value: [ pair.value ] };
         }
 
+        if(pair.unit) trait[pair.key].unit = pair.unit;
+
         console.log(trait);
 
         const log = await firestore.addSpeciesTraits(item.name, trait);
@@ -150,11 +152,11 @@ const addTraits = () => {
 
         const traits = [];
 
-        const meta = [ 'name', 'help', 'type' ];
+        const meta = [ 'name', 'help', 'type', 'units' ];
 
         for (let [key, obj] of Object.entries(traitValues)) {
 
-            if(key !== 'name') {
+            if(!R.contains(key['name', 'units'])) {
 
                 const value = [];
                 
@@ -164,7 +166,12 @@ const addTraits = () => {
                     if(R.contains(_key, meta)) {
                         trait[_key.toLowerCase()] = _obj.toLowerCase();
                     } else {
-                        value.push(_obj.toLowerCase());
+                        try {
+                            value.push(_obj.toLowerCase());
+                        } catch (e) {
+                            console.log("_key", _key);
+                            console.log("_obj", _obj);
+                        }
                     }
                 }
 

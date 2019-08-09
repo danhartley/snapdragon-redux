@@ -74,6 +74,8 @@ const addSpecies = () => {
               });
 
         console.log('Add species response: ', response);
+
+        window.snapdragon.species = item;
     };
 
     document.querySelectorAll('.btnAddSpecies').forEach(btn => {

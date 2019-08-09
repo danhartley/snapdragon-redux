@@ -24,8 +24,10 @@ const searchEOLByProvider = async (hierarchyId, Id) => {
 
 const getSpecies = async (id, selectedLicence) => {
     const item = await helpers.parseSpeciesData(eol.getSpeciesUrl({id}, selectedLicence));
-    const binomial = helpers.getBinomial(item);
-    gbif.getTaxonomy(binomial).then(taxonomy => {
+    item.eolName = item.name;
+    item.name = helpers.getBinomial(item);
+    item.eolId = id;
+    gbif.getTaxonomy(item.name).then(taxonomy => {
         item.taxonomy = {
             kingdom: taxonomy.kingdom,
             phylum: taxonomy.phylum,
@@ -35,6 +37,7 @@ const getSpecies = async (id, selectedLicence) => {
             family: taxonomy.family
         };
     });
+    delete item.id;
     return item;
 }
 

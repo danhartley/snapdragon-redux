@@ -160,8 +160,7 @@ export const getLookalikeTraitProperties = item => {
 };
 
 export const getTraitsToExclude = () => {
-    return [ 'look-alikes', 'symbionts', 'voice', 'pollination', 'name' ];
-    // return [ 'song', 'look-alikes', 'symbionts', 'voice', 'pollination', 'name' ];
+    return [ 'look-alikes', 'symbionts', 'voice', 'pollination', 'name', 'relationships', 'units' ];
 };
 
 export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude) => {
@@ -172,7 +171,7 @@ export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude) => {
 
     for (let [key, obj] of Object.entries(traits)) {
         if(!R.contains(key, traitsToExclude)) {
-            includedTraits.push({ name: key, value: obj.value });
+            includedTraits.push({ name: key, value: obj.value, unit: obj.unit });
         }
     }
     
