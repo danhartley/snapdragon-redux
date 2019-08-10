@@ -33,7 +33,7 @@ const addTraits = () => {
 
         if(item.traits) {
 
-            const traitsToIgnore = [ 'name', 'role', 'relationships', 'units' ];
+            const traitsToIgnore = [ 'name', 'relationships', 'units' ];
 
             for (let [key, obj] of Object.entries(item.traits)) {
 

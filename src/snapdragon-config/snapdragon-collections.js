@@ -329,7 +329,14 @@ const rhsWeeds = {
       'Cercis siliquastrum',
       'Cupressus sempervirens',
       'Eucalyptus globulus',
-      'Fraxinus angustifolia'
+      'Fraxinus angustifolia',
+      'Fraxinus excelsior',
+      'Ginkgo biloba',
+      'Gleditsia triacanthus',
+      'Jacaranda mimosifolia',
+      'Olea europaea',
+      'Phoenix canariensis',
+      'Pinus pinea'
       // 'Sciurus vulgaris',
       // 'Vulpes vulpes',
       // 'Martes martes'

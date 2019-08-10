@@ -34,6 +34,7 @@ export const enums = {
   SMELL: 'smell',
   FRUIT_TYPE: 'Fruit type',
   SEED_COUNT: 'Seed count',
+  SEED_DISPERSAL: 'Seed dispersal',
   PH_TOLERANCE: 'pH tolerance',
   VITAMINS: 'vitamins',
   GROUPING: 'grouping',
@@ -403,7 +404,7 @@ export const enums = {
   ODD_PINNATE: 'Odd pinnate',
   EVEN_PINNATE: 'Even pinnate',
   BIPINNATE: 'Bipinnate',
-  COMPOUND_BIPINNATE: 'Compolobeund Bipinnate',
+  COMPOUND_BIPINNATE: 'Compound Bipinnate',
   TRIFOLIATE: 'Trifoliate',
   PINNATIFID: 'Pinnatifid',
   type: 'leafDivision',
@@ -742,6 +743,9 @@ export const enums = {
   OCCUPANT: 'Lives in',
   PARASITE: 'Parasite',
   COLONISER: 'Coloniser',
+  EARLY_SUCCESSION: 'early-succession',
+  SEED_DISPERSAL: 'Seed dispersal',
+  FERTILISATION: 'Fertilisation',
   type: 'role',
   name: 'role'
   },
@@ -758,6 +762,7 @@ export const enums = {
   MULTIPLE_FRUIT: 'Multiple fruit',
   SAMARA: 'Samara',
   ACHENE: 'Achene',
+  POD: 'Pod',
   type: 'fruitType',
   name: 'fruit type'
   },
@@ -883,6 +888,8 @@ export const enums = {
   DORMANCY: 'Dormancy',
   EVERGREEN: 'Evergreen',
   DECIDUOUS: 'Deciduous',
+  CONIFEROUS: 'Coniferous',
+  ADVENTITIOUS:'adventitious',
   type: 'physiology',
   name: 'physiology'
   },
@@ -919,6 +926,7 @@ export const enums = {
   KIN_SELECTION: 'Kin selection',
   BIOINDICATOR: 'Bioindicator',
   BROADLEAF: 'Broadleaf',
+  AERIAL_ROOTS: 'Aerial roots',
   type: 'characteristic',
   name: 'characteristic'
   },
@@ -987,6 +995,13 @@ export const enums = {
   SEEDS: 'seeds',
   type: 'propagation',
   name: 'propagation'
+  },
+  seedDispersal: {
+    AUTOCHORY: 'autochory',
+    ANEMOCHORY: 'anemochory',
+    HYDROCHORY: 'Hydrochory',
+    ZOOCHORY: 'Zoochory',
+    ANTHROPOCHORY: 'Anthropochory',
   },
   units: [
     { lifeSpan: [ 'DD', 'MM', 'YY'] },

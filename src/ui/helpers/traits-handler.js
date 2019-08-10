@@ -160,7 +160,7 @@ export const getLookalikeTraitProperties = item => {
 };
 
 export const getTraitsToExclude = () => {
-    return [ 'look-alikes', 'symbionts', 'voice', 'pollination', 'name', 'relationships', 'units' ];
+    return [ 'look-alikes', 'symbionts', 'voice', 'pollination', 'name', 'relationships', 'units', 'lookalikes' ];
 };
 
 export const convertTraitsToNameValuePairsArray = (traits, traitsToExclude) => {
