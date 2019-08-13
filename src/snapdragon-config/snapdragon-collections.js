@@ -348,7 +348,7 @@ const rhsWeeds = {
       'Tipuana tipu',
       'Gleditsia triacanthos',
       'Ulmus minor',
-      'Quercus suber'
+      'Quercus suber',
       // 'Sciurus vulgaris',
       // 'Vulpes vulpes',
       // 'Martes martes'
