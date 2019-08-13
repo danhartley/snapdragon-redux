@@ -252,37 +252,6 @@ const getRandomInt = max => {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-const getSetOfAnswers = (variables, pool, trait) => {
-  
-  let answers;
-
-  if(variables === 1) {
-      answers = pool;
-  } else {
-      answers = [];
-      const sets = [];
-      const combinations = pool.length/variables;
-      while(pool.length) {
-          const set = pool.splice(0,combinations);
-          sets.push(set);
-      }
-      while(sets[0].length) {
-          const answer = sets.map(item => {
-            const lastItem = item.pop();
-            return lastItem;
-          }).join(', ');
-          if(answer !== trait.value) {
-            answers.push(answer);
-          }
-      }
-      answers.push(trait.value);
-  }
-  
-  answers = utils.shuffleArray(answers);
-
-  return answers;
-};
-
 const createSessionToken = () => {
 
   // uuidv4
@@ -312,6 +281,22 @@ function debounce(func, wait, immediate) {
 	};
 };
 
+const getRandomObjectProperty = obj => {
+  if(Object.keys(obj).length === 0 && obj.constructor === Object) return {};
+  const keys = Object.keys(obj);
+  const key = keys[Math.floor(Math.random() * keys.length)];
+	return { key, value: obj[key] };
+};
+
+const toCamelCase = sentenceCase => {
+  var out = "";
+  sentenceCase.split(" ").forEach(function (el, idx) {
+      var add = el.toLowerCase();
+      out += (idx === 0 ? add : add[0].toUpperCase() + add.slice(1));
+  });
+  return out;
+};
+
 export const utils = {
   log,
   encodeQuery,
@@ -334,7 +319,8 @@ export const utils = {
   flatten,
   getObservableMonths,
   getRandomInt,
-  getSetOfAnswers,
   createSessionToken,
-  debounce
+  debounce,
+  getRandomObjectProperty,
+  toCamelCase
 };

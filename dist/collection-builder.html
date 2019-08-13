@@ -1,0 +1,114 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <title>Collection builder</title>
+    </head>
+    <body class="container">
+
+        <nav class="z-depth-0 grey lighten-4">
+            <div class="nav-wrapper container">
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li class="logged-in hide">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+                    </li>
+                    <li class="logged-in hide">
+                    <a href="#" class="grey-text" id="logout">Logout</a>
+                    </li>
+                    <li class="logged-in hide">
+                    <a href="#" class="grey-text" id="add-species">Add Species</a>
+                    </li>
+                    <li class="logged-in hide">
+                    <a href="#" class="grey-text" id="add-traits">Add Traits</a>
+                    </li>
+                    <li class="logged-in hide">
+                    <a href="#" class="grey-text" id="add-relationship">Add Relationship</a>
+                    </li>
+                    <li class="logged-in hide">
+                    <a href="#" class="grey-text" id="add-lookalike">Add Lookalike</a>
+                    </li>
+                    <li class="logged-in hide">
+                    <a href="#" class="grey-text" id="update-species">Update Species</a>
+                    </li>
+                    <li class="logged-out hide">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+                    </li>
+                    <li class="logged-out hide">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+                    </li>
+                </span>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="active-species js-active-species">
+                <span>Active species:</span><span class="feedback"></span>
+            </div>
+        </div>
+            
+         <!-- SIGN UP MODAL -->
+        <div id="modal-signup" class="modal">
+                <div class="modal-content">
+                <h4>Sign up</h4><br />
+                <form id="signup-form">
+                    <div class="input-field">
+                    <input type="email" id="signup-email" required />
+                    <label for="signup-email">Email address</label>
+                    </div>
+                    <div class="input-field">
+                    <input type="password" id="signup-password" required />
+                    <label for="signup-password">Choose password</label>
+                    </div>
+                    <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+                </form>
+                </div>
+        </div>
+        <!-- LOGIN MODAL -->
+        <div id="modal-login" class="modal">
+            <div class="modal-content">
+            <h4>Login</h4><br />
+            <form id="login-form">
+                <div class="input-field">
+                <input type="email" id="login-email" required autofocus />
+                <label for="login-email">Email address</label>
+                </div>
+                <div class="input-field">
+                <input type="password" id="login-password" required />
+                <label for="login-password">Your password</label>
+                </div>
+                <button class="btn yellow darken-2 z-depth-0">Login</button>
+            </form>
+            </div>
+        </div>
+        <!-- ACCOUNT MODAL -->
+        <div id="modal-account" class="modal">
+            <div class="modal-content center-align">
+            <h4>Account details</h4><br />
+            <div class="account-details"></div>
+            </div>
+        </div>
+
+        <div id="content-container"></div>
+
+        <div id="species-observations" class="hide">
+            <div class="container">Import species from iNaturalist user observations</div>
+            <div class="container">
+                <input id="inputUserId" type="text">
+                <button id="btnGetInatData">Get data</button>
+            </div>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-storage.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+        
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+        <script type="text/javascript" src="./stamp.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script type="text/javascript" src="admin.bundle.js"></script></body>
+</html>

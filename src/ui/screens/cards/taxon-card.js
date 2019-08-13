@@ -5,10 +5,8 @@ import { DOM } from 'ui/dom';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { taxonInfoSlider } from 'ui/screens/common/info-slider';
 import { renderTemplate } from 'ui/helpers/templating';
-import { taxa } from 'api/snapdragon/taxa';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, scaleImage } from 'ui/helpers/image-handlers';
-import { familyProps } from 'redux/reducers/initial-state/species-state/species-taxa';
 
 import taxonTemplate from 'ui/screens/cards/taxon-card-template.html';
 
@@ -30,7 +28,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
         const { config } = store.getState();
 
-        let rootNode, props;
+        let rootNode;
 
         switch(mode) {
             case 'STAND_ALONE':
@@ -52,56 +50,28 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
         parent.innerHTML = '';
 
-        let taxon, taxonName;
-
         rank = rank ? rank.toUpperCase() : '';
 
-        switch(rank) {
-            case 'FAMILY': 
-                taxonName = speciesTaxon || item.family;
-                taxon = taxa.find(f => f.name === taxonName);
-                break;
-            case 'ORDER':
-                taxonName = speciesTaxon || item.taxonomy.order;
-                taxon = taxa.find(f => f.name === taxonName);
-                break;
-            default:
+        const taxon = rank 
+                        ? rank === 'FAMILY' 
+                            ? item.family 
+                            : item.order
+                        : item.family || item.order;
 
-                props = itemProperties.taxonHasTaxaData(item.taxonomy.family, taxa);
-
-                if(props) {
-                    rank = 'FAMILY';
-                    taxonName = item.taxonomy.family;
-                } else {
-                    props = itemProperties.taxonHasTaxaData(item.taxonomy.order, taxa);
-                    if(props) {
-                        rank = 'ORDER';
-                        taxonName = item.taxonomy.order;                   
-                    } else {
-                        rank = 'CLASS';
-                        taxonName = item.taxonomy.class;
-                    }
-                }
-
-                taxon = taxa.find(f => f.name === taxonName);
-
-                break;
-        }
-
-        const familyStats = familyProps.getFamilyStats(collection.items);
+        const familyStats = itemProperties.getFamilyStats(collection.items);
         const occurrences = familyStats ? familyStats[taxon.name] : 0;
                 
         const context = {
             rank: rank,
-            name: taxonName,
+            name: taxon.name,
             headerImage: scaleImage({ url: item.images[0].url }, imageUseCases.TAXON_CARD, config),
             alt: taxon ? taxon.alt : '',
-            vernacularName: itemProperties.getNestedTaxonProp(taxon, config.language, 'names', 'names', '0').split(',')[0],
+            vernacularName: taxon.vernacularName || itemProperties.getNestedTaxonProp(taxon, config.language, 'names', 'names', '0').split(',')[0],
             species: taxon.species || '--',
             genera: taxon.genera || '--',
             families: taxon.families || '--',
-            identification: itemProperties.getNestedTaxonProp(taxon, config.language, 'descriptions', 'identification'),
-            summary: itemProperties.getNestedTaxonProp(taxon, config.language, 'descriptions', 'summary'),
+            identification: taxon.identification,
+            summary: taxon.summary,
             eol: taxon.eol ? taxon.eol.replace('en', config.language) : '',
             wiki: taxon.wiki ? taxon.wiki.replace('en', config.language) : '',
             occurrences: occurrences,
@@ -111,10 +81,7 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
 
         renderTemplate(context, template.content, parent, clone);
 
-        if(props && props.traits) {
-            taxonInfoSlider(props.traits, rootNode.querySelector('.js-taxon-info-box'), mode);
-            console.log('I have props!')
-        }
+        taxonInfoSlider(taxon.traits, rootNode.querySelector('.js-taxon-info-box'), mode);
 
         switch(rank) {
             case 'FAMILY': 
@@ -149,16 +116,16 @@ export const renderTaxonCard = (collection, mode = 'STAND_ALONE', selectedItem, 
         //     document.querySelector('.js-taxon-toxic-warning').innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
         // }
 
-        document.querySelector('.js-external-page-title').innerHTML = `${taxonName}`;
-        document.querySelector('.js-external-page-body').innerHTML = `<iframe class="modal-iframe" title="Wikipedia page for ${taxonName}" src="${context.wiki}"></iframe>`;
+        document.querySelector('.js-external-page-title').innerHTML = `${taxon.name}`;
+        document.querySelector('.js-external-page-body').innerHTML = `<iframe class="modal-iframe" title="Wikipedia page for ${taxon.name}" src="${context.wiki}"></iframe>`;
 
         const membersCount = document.querySelector('#taxon-card-header .js-names-badge');
 
         if(!context.occurrences || context.occurrences === 0) membersCount.classList.add('hide-important');
 
         membersCount.addEventListener('click', event => {
-            document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = `Members of the ${taxonName} family`;
-            const members = collection.items.filter(i => i.family === taxonName);
+            document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = `Members of the ${taxon.name} family`;
+            const members = collection.items.filter(i => i.family === taxon.name);
             const list = document.querySelector('#badgeListModal .js-modal-text');
             list.innerHTML = '';
             members.forEach(member => {

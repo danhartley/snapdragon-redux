@@ -6,7 +6,8 @@ module.exports = {
     entry: {
       app: './src/index.js',
       utils: './src/utils/utils.js',      
-      wiki: './src/wikipedia/wiki.js'
+      wiki: './src/wikipedia/wiki.js',
+      admin: './src/admin/collection-builder.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -32,6 +33,11 @@ module.exports = {
               use: {loader: 'html-loader'}
             },
             {
+              test: /collection-builder.html$/,
+              exclude: [ /node_modules/, path.resolve(__dirname, 'src/admin/collection-builder.html')],
+              use: {loader: 'html-loader'}
+            },
+            {
               test: /\.(png|svg|jpg|gif)$/,
               use: [{
                 loader: 'file-loader',
@@ -53,6 +59,12 @@ module.exports = {
         chunks: ['app'],
         inject: true
       }),
+      new HtmlWebpackPlugin({
+        filename: 'collection-builder.html',
+        template: './src/admin/collection-builder.html',
+        chunks: ['admin'],
+        inject: true
+      })
     ],
     resolve: {
         modules: [

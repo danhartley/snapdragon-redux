@@ -4,15 +4,14 @@ import { getGlossary } from 'api/glossary/glossary';
 import { epithets } from 'api/botanical-latin';
 import { actions } from 'redux/actions/action-creators';
 import { utils } from 'utils/utils';
-import { matchTaxon, iconicTaxa, matchTaxonKey } from 'api/snapdragon/iconic-taxa';
-import { taxa } from 'api/snapdragon/taxa';
-import { species } from 'api/species';
+import { matchTaxon, iconicTaxa, findRankByIconicTaxon } from 'api/snapdragon/iconic-taxa';
+import { firestore } from 'api/firebase/firestore';
 
 export const rebindLayoutState = (layout, item) => {
       
     const random = utils.getRandomInt(4);
 
-    let nextLayout, taxon;
+    let nextLayout;
 
     switch(random) {
       
@@ -68,8 +67,6 @@ export const rebindLayoutState = (layout, item) => {
 
         case 2:
 
-        taxon = taxa.find(taxon => taxon.name === item.name);
-
         nextLayout = {
           name: "familyMatch",
           type: "test",
@@ -89,8 +86,6 @@ export const rebindLayoutState = (layout, item) => {
       break;
 
         case 3:
-
-        taxon = taxa.find(taxon => taxon.name === item.name);
 
         nextLayout = {
           name: "family",
@@ -116,15 +111,15 @@ export const rebindLayoutState = (layout, item) => {
     actions.boundNextLayout(nextLayout);
 };
 
-export const getPoolItems = collection => {
+export const getPoolItems = async collection => {
 
   const item = collection.items.find(i => i.name === collection.nextItem.name);
 
-  const rank = matchTaxon(item.taxonomy, iconicTaxa).value;
+  const rank = findRankByIconicTaxon(item.taxonomy, item.iconicTaxon);
 
-  let taxonicMatches = species.filter(item => matchTaxonKey(item.taxonomy,[rank]).value);
+  let taxonicMatches = await firestore.getSpeciesByIconicTaxon({rank, value: item.iconicTaxon}, false); // islichen
 
-  if(rank === 'fungi') {
+  if(item.iconicTaxon.toLowerCase() === 'fungi') {
       const isLichen = item.lichen;
       taxonicMatches = isLichen ? taxonicMatches.filter(item => item.lichen) : taxonicMatches.filter(item => !item.lichen);
   }
@@ -139,16 +134,16 @@ export const getPoolItems = collection => {
   if(speciesInSameTaxon) {
     speciesPool = speciesInSameTaxon;  
   }
-  else {
-    const kingdom = item.taxonomy.kingdom;
-    const kingdomItems = species.filter(item => item.taxonomy).filter(item => item.taxonomy.kingdom.toLowerCase() === kingdom.toLowerCase());
-    const speciesInSameKingdom = utils.shuffleArray(kingdomItems.filter(ci => ci.name !== item.name));
-    if(speciesInSameKingdom) {
-      speciesPool = speciesInSameKingdom;
-    } else {
-      speciesPool = utils.shuffleArray(species.filter(ci => ci.name !== item));
-    }
-  }
+  // else {
+  //   const kingdomItems = firestore.getSpeciesByRank('kingdom', item.taxonomy.kingdom);
+  //   const speciesInSameKingdom = utils.shuffleArray(kingdomItems.filter(ci => ci.name !== item.name));
+  //   if(speciesInSameKingdom) {
+  //     speciesPool = speciesInSameKingdom;
+  //   } else {
+  //     const species = firestore.getAllSpecies();
+  //     speciesPool = utils.shuffleArray(species.filter(ci => ci.name !== item));
+  //   }
+  // }
 
   const items = R.take(5, speciesPool);
   

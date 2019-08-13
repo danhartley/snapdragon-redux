@@ -1,7 +1,12 @@
 import { renderTemplate } from 'ui/helpers/templating';
 import badgeTemplate from 'ui/screens/common/badge-template.html';
 
-export const renderBadge = (badge, occurrences, names) => {
+export const renderBadge = (badge, item, config) => {
+
+    const names = [ ...new Set(item.names.filter(name => name.language === config.language).map(name => name.vernacularName.toLowerCase())) ];
+    const occurrences = names.length;
+
+    const template = document.createElement('template');
 
     if(occurrences === 0) {
 
@@ -9,13 +14,17 @@ export const renderBadge = (badge, occurrences, names) => {
         
     } else {
 
+        badge.innerHTML = '';
+
+        template.innerHTML = `<span class="names-badge js-names-badge" data-toggle="modal" data-target="#badgeListModal">${occurrences}</span>`;
+
+        renderTemplate({}, template.content, badge);
+
         badge.addEventListener('click', event => {
             
             document.querySelector('#badgeListModal .js-modal-text-title').innerHTML = 'Common species names';
 
-            parent = document.querySelector('#badgeListModal .js-modal-text');
-
-            const template = document.createElement('template');
+            const parent = document.querySelector('#badgeListModal .js-modal-text');
 
             parent.innerHTML = '';
 

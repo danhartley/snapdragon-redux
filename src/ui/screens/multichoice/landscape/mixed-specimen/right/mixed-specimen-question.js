@@ -4,29 +4,26 @@ import { utils } from 'utils/utils';
 import { actions } from 'redux/actions/action-creators';
 import { store } from 'redux/store';
 import { returnIcon } from 'ui/helpers/icon-handler';
-// import { renderIcon } from 'ui/helpers/icon-handler';
-import { species } from 'api/species';
+import { firestore } from 'api/firebase/firestore';
 import { renderTestCardTemplate } from 'ui/screens/cards/test-card';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { listenToImageSelection, listenToUserAnswer, renderMixedSpecimenImages } from 'ui/screens/multichoice/landscape/mixed-specimen/left/mixed-specimen-images';
 import { renderTemplate } from 'ui/helpers/templating';
+
 import mixedSpecimenQuestionTemplate from 'ui/screens/multichoice/landscape/mixed-specimen/right/mixed-specimen-question-template.html';
 
-export const renderMixedSpecimenQuestion = (...args) => {
-
-    const collection = R.clone(args[0]);
-    const bonus = args[1]; 
+export const renderMixedSpecimenQuestion = (collection, bonusLayout) => {
 
     const { config, layout } = store.getState();
 
-    const item = collection.nextItem;
+    const item = R.clone(collection.nextItem);
 
     let question = 'Find the species';
     let help = '(Click on the matching photo.)';
 
-    if(bonus) {
-        question = bonus.overrides.question || question;
-        help = bonus.overrides.help || help;
+    if(bonusLayout) {
+        question = bonusLayout.overrides.question || question;
+        help = bonusLayout.overrides.help || help;
     }
 
     const parent = renderTestCardTemplate(collection, { vernacularName: item.vernacularName, binomial: item.name, question, help, term: '' });
@@ -40,22 +37,37 @@ export const renderMixedSpecimenQuestion = (...args) => {
 
     renderTemplate({ instructions, binomial }, template.content, parent);
 
-    // const icon = renderIcon(item.taxonomy, document);
+    let uniqueImages = [];
 
-    const listenToImageChangeHandler = images => {        
-        let speciesToShow = '';
-        const uniqueImages = [];
-        utils.shuffleArray(images).forEach(image => {            
-            const i = image;
-            const vernacularName = itemProperties.getVernacularName(species.find(sp => sp.name === image.itemName), config);  
-            const taxonIcon = returnIcon(species.find(sp => sp.name === image.itemName));
+    const listenToImageChangeHandler = async images => {        
+
+        let speciesList, unorderedImages;
+
+        unorderedImages = utils.shuffleArray(images);
+
+        speciesList = document.querySelector('.js-images-names-txt');
+
+        if(!speciesList) return;
+
+        unorderedImages.forEach(async (image, index) => {
+
+            if(index === 0) {
+                speciesList.innerHTML = "";
+                uniqueImages = [];          
+            }
+
+            const imageItem = await firestore.getSpeciesByName(image.itemName);
+            const vernacularName = itemProperties.getVernacularName(imageItem, config);
+            const taxonIcon = returnIcon(imageItem);
+            
             if(!R.contains(image.itemName, uniqueImages)) {
-                speciesToShow +=  `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;
+                speciesList.innerHTML += 
+                    imageItem.iconicTaxon === 'fungi'
+                        ? `<li id="${image.itemName}"><span>${vernacularName}</span></li>`
+                        : `<li id="${image.itemName}">${taxonIcon}<span>${vernacularName}</span></li>`;
                 uniqueImages.push(image.itemName);
             }
         });
-        const speciesList = document.querySelector('.js-images-names-txt');
-        if(speciesList) speciesList.innerHTML = speciesToShow;
     };
 
     listenToImageSelection(listenToImageChangeHandler);
@@ -69,8 +81,6 @@ export const renderMixedSpecimenQuestion = (...args) => {
         continueLessonBtn.disabled = false;
         pendingScore.score = score;
         pendingScore.scoreUpdateTimer = scoreUpdateTimer;
-
-        // score.success ? icon.classList.add('answer-success') : icon.classList.add('answer-alert');
     });
 
     continueLessonBtn.addEventListener('click', () => {
@@ -79,8 +89,8 @@ export const renderMixedSpecimenQuestion = (...args) => {
     });
 
     document.querySelector('.js-help-txt').addEventListener('click', () => {
-        const noOfImagesPerItem = layout.bonus ? 6 / collection.items.length : 1;
-        const preselectedItems = layout.bonus ? collection.items : null;
+        const noOfImagesPerItem = layout.bonusLayout ? 6 / collection.items.length : 1;
+        const preselectedItems = layout.bonusLayout ? collection.items : null;
         renderMixedSpecimenImages(collection, noOfImagesPerItem, preselectedItems);
     });    
 };

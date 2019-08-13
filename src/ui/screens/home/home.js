@@ -91,10 +91,10 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     };
 
     const getSpeciesHandler = () => {
-        const { config, collections } = store.getState();
+        let { config, collection, collections } = store.getState();
         const id = parseInt(config.collection.id);
-        const collection = collections.find(c => c.id === id);
-        if(collection.default) {
+        collection = collection.items ? collection : collections.find(c => c.id === id);
+        if(collection && collection.default) {
             renderSpeciesCollectionList(R.clone(collection));
         }
         else {
@@ -253,7 +253,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     const handleDeleteLinkTxt = event => {
         if(deleteEnabled) {
             actions.boundPauseLesson();
-            renderSpeciesGrid();
+            // renderSpeciesGrid();
             state = enums.lessonState.CREATE_LESSON;
             checkState(state);
         }
@@ -274,7 +274,7 @@ export const renderHome = (counter, loadSpeciesList = true, noRecords = false) =
     listenToCloseSaveLessonModal(()=>{        
         
         checkState(enums.lessonState.CREATE_LESSON);
-        renderSpeciesGrid();
+        // renderSpeciesGrid();
 
         const template = document.createElement('template');
         template.innerHTML = introTemple;

@@ -1,47 +1,67 @@
-import * as R from 'ramda';
-
-import { itemProperties } from 'ui/helpers/data-checking';
-import { species } from 'api/species';
 import { store } from 'redux/store';
-import { getTraits } from 'api/traits/traits';
+import { itemProperties } from 'ui/helpers/data-checking';
+import { firestore } from 'api/firebase/firestore';
 
-export const getLookalikeTests = itemsInThisRound => {
+export const getLookalikeTests = async itemsInThisRound => {
 
-    if(itemsInThisRound === undefined) return [];
+    const init = async () => {
 
-    const tests = itemsInThisRound.map(item => {
+        if(itemsInThisRound === undefined) return new Promise(resolve => resolve([]));
 
-        const { question, answers, overrides } = getLookalikeTest(item);
+        return Promise.all(itemsInThisRound.map(async item => {
+            
+            const { question, answers, overrides } = await getLookalikeTest(item);
 
-        if(!question) return {};
+            if(!question) return new Promise(resolve => resolve({}));
 
-        return {
-            item,
-            question,
-            answers,
-            overrides
-        }
-    });
+            return {
+                item,
+                question,
+                answers,
+                overrides
+            }
+        }));
+    }
+
+    const tests = await init();
 
     return tests;
 }
 
 const getLookalikeTest = item => {
 
-    const { enums, config } = store.getState();
+    const init = async () => {
 
-    const traits = getTraits(enums);
-    let lookalikes = itemProperties.itemContextProperty(traits, item, 'look-alikes');
+        const { config } = store.getState();
 
-    if(lookalikes.length === 0) return {};
+        if(!item.traits || Object.keys(item.traits).length === 0) return {};
 
-    lookalikes = species.filter(item => R.contains(item.name, lookalikes));
-    lookalikes.push(item);
+        const lookaliketraits = item.traits['look-alikes'];
 
-    if(lookalikes.length < 2) return {}; 
+        if(!lookaliketraits) return {};
 
-    const question = itemProperties.getVernacularName(item, config);
-    const answers = lookalikes.map(item => itemProperties.getVernacularName(item, config));
+        let lookalikes = lookaliketraits.value;
 
-    return { question, answers, overrides : { question: 'Avoid look-alikes', help: '(Pick one correct image)', binomial: 'Latin name', vernacularName: 'Common name', trait: { name: 'look-alikes', lookalikes } } };
+        if(lookalikes.length === 0) return {};
+
+        const getLookalikes = async () => {
+            return Promise.all(lookalikes.map(async name => {
+                return await firestore.getSpeciesByName(name);
+            })
+        )};
+        
+        lookalikes = await getLookalikes();
+        lookalikes = lookalikes.filter(lookalike => lookalike);
+
+        if(lookalikes.length < 2) return {}; 
+
+        const question = item.name;
+        const answers = [ question, ...lookalikes.map(item => item.name) ];
+        // const question = item.vernacularName;
+        // const answers = [ question, ...lookalikes.map(item => itemProperties.getVernacularName(item, config)) ];
+
+        return { question, answers, overrides : { question: 'Avoid look-alikes', help: '(Pick one correct image)', binomial: 'Latin name', vernacularName: 'Common name', trait: { name: 'look-alikes', lookalikes } } };
+    };
+
+    return init();
 };

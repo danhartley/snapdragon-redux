@@ -441,7 +441,7 @@ a.dropdown-item {
 
 .left-grid,
 .right-grid {
-  grid-template-rows: 1fr 0.3rem 12fr 1fr;
+  grid-template-rows: 3rem 0.25rem 12fr 3rem;
 }
 
 .left-body, .right-body {
@@ -604,10 +604,14 @@ a.dropdown-item {
 /* STRIPS */
 
 .strips {
-  height: 15rem;
+  height: calc(100vh - 20.5rem);
   display: grid;
   grid-template-columns: 1fr 1fr;
   cursor: pointer;
+}
+
+.sub-header-tall ~ div > div.strips {
+  height: calc(100vh - 24.5rem);
 }
 
 .strip {
@@ -1414,7 +1418,8 @@ label.btn.btn-secondary .lesson-icon {
 }
 
 .imageSlider .carousel-item {
-  height: 12.875rem;
+  /* height: 12.875rem; */
+  height: 30vh;
   padding: .5rem 10%;
 }
 

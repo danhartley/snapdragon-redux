@@ -46,12 +46,12 @@ setTimeout( () => {
         subscription.add(renderHeaders, 'page', 'flow');
         subscription.add(renderNavigation, 'page', 'flow');
         subscription.add(renderHome, 'counter', 'flow');
-        subscription.add(renderSpeciesGrid, 'counter', 'flow');
+        // subscription.add(renderSpeciesGrid, 'counter', 'flow');
         subscription.add(nextLesson, 'counter', 'flow');
         subscription.add(nextLayout, 'counter', 'flow');
         subscription.add(nextItem, 'layout', 'flow');
         subscription.add(renderScore, 'score', 'flow');
-        subscription.add(updateLanguage, 'config', 'localistation');
+        subscription.add(updateLanguage, 'config', 'localisation');
 
         const updateConfig = async () => {
             const initialisedConfig = await initialiseConfig(config);

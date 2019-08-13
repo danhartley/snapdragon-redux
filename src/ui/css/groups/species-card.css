@@ -142,13 +142,27 @@ td:empty:after{
     text-transform: initial;
 }
 
+.relationship-card {
+  border: 1px solid lightgray;
+  margin: .25rem;
+  padding: .5rem;
+  font-size: .8rem;
+}
+
+.relationship-card .cols {
+  display: flex;
+}
+
+.relationship-card .cols > div:nth-child(1) {
+  margin: 0 1rem 0 0;
+  font-style: italic;
+}
+
+.relationship-card .cols > div:nth-child(1)::after {
+  content: ":";
+}
+
 @media (min-width: 768px) {
-
-    /* CARD */
-
-    /* .info-box {        
-        margin: .5rem 0 0 0;
-    } */
 
     /* TRAITS CAROUSEL */
 

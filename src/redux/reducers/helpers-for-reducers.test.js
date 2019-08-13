@@ -13,13 +13,13 @@ test('spliceArrays shoudlre return single array with all common valus', () => {
     expect(helpers.spliceArrays(objs, names)).toEqual([ { id: 1, name: 'a'}, { id: 2, name: 'b'} ]);
 });
 
-test('extractScientificNames should add genus and species names to each item passed in', () =>{
-    const collection = { items: [ 
-        { name: 'Genus species L', id: 1 }        
-    ]};
+// test('extractScientificNames should add genus and species names to each item passed in', () =>{
+//     const collection = { items: [ 
+//         { name: 'Genus species L', id: 1 }        
+//     ]};
 
-    const { name, genus, species} = helpers.extractScientificNames(collection.items)[0];
-    expect(name).toBe('Genus species');
-    expect(genus).toBe('Genus');
-    expect(species).toBe('species');
-})
+//     const { name, genus, species} = helpers.extractScientificNames(collection.items)[0];
+//     expect(name).toBe('Genus species');
+//     expect(genus).toBe('Genus');
+//     expect(species).toBe('species');
+// })

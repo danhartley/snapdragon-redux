@@ -5,6 +5,7 @@ import { getBonusTests } from 'snapdragon-engine/bonus/bonus-test-handler';
 
 export const createLesson = (lessonPlan, layouts, progressScreens, collection, lesson) => {
 
+    const init = async () => {
     lessonPlan.layouts = [];
 
     const moduleSize = lesson.moduleSize;
@@ -30,7 +31,7 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, l
 
     const itemIndices = [ ...new Set(lessonPlan.layouts.map(layout => layout.itemIndex)) ];
 
-    const bonusTests = getBonusTests(collection, itemIndices, layouts.filter(layout => layout.bonus), lessonName, levelName);
+    const bonusTests = await getBonusTests(collection, itemIndices, layouts.filter(layout => layout.bonus), lessonName, levelName);
     
     lessonPlan.layouts = [ ...lessonLayouts, ...bonusTests ];
 
@@ -73,4 +74,7 @@ export const createLesson = (lessonPlan, layouts, progressScreens, collection, l
     lesson.layoutNames = lessonPlan.layouts.map(layout => layout.name);
 
     return { updatedLessonPlan: lessonPlan, updatedCollection: collection, updatedLesson: lesson };
+    }
+
+    return init();
 };

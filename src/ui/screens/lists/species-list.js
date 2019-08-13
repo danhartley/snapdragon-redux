@@ -10,7 +10,6 @@ import { renderTaxonCard } from 'ui/screens/cards/taxon-card';
 import { renderNonTaxonCard } from 'ui/screens/cards/non-taxon-card';
 import { modalImageHandler } from 'ui/helpers/image-handlers';
 import { lessonHandler } from 'ui/helpers/lesson-handler';
-import { getTraits } from 'api/traits/traits';
 import { buildTable } from 'ui/screens/lists/species-table-no-scores';
 import { collectionHandler } from 'ui/helpers/collection-handler';
 import { speciesPendingSpinner } from 'ui/screens/lists/species-pending';
@@ -19,7 +18,7 @@ import { enums } from 'ui/helpers/enum-helper';
 
 export const renderSpeciesCollectionList = (collection, readOnlyMode = false) => {
 
-    const { collections, config: configState, history, counter, enums: traitEnums, lesson  } = store.getState();
+    const { config: configState, history, counter, enums: traitEnums, lesson  } = store.getState();
 
     let config = R.clone(configState);
     
@@ -85,7 +84,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
         setTimeout(() => {
             
-            const speciesCardLinks = document.querySelectorAll('.js-species-card-link span');
+            const speciesCardLinks = document.querySelectorAll('.js-test-card-container-link span');
             speciesCardLinks.forEach((link, index) => {                
                 link.addEventListener('click', event => {                    
                     const name = event.target.dataset.name;
@@ -183,7 +182,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
     };    
 
     if(readOnlyMode) {
-        buildTable(collection, config, getTraits(traitEnums), traitEnums);
+        buildTable(collection, config, traitEnums);
         handleUserEvents();
     }
     else {
@@ -191,7 +190,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
 
             if(collection.items && collection.items.length) {
                 return function () {
-                    buildTable(collection, config, getTraits(traitEnums), traitEnums);
+                    buildTable(collection, config, traitEnums);
                     handleUserEvents();
                     const { counter } = store.getState();
                     listeners.forEach(listener => listener(counter, collection.items.length));
@@ -212,7 +211,7 @@ export const renderSpeciesCollectionList = (collection, readOnlyMode = false) =>
             renderHome(counter, false, true);
         }
         if(config.collection.id === 0) return;
-        collectionHandler(collections, collection, config, counter, callback, callbackWhenNoResults);
+        collectionHandler(collection, config, counter, callback, callbackWhenNoResults);
     }
 };
 

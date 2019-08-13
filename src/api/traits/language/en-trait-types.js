@@ -27,13 +27,10 @@ export const english = {
         SYMBIOSIS: 'Symbiosis',
         ASSOCIATE: 'associate',
         SYMBIONTS : 'symbionts',
-
         LOOK_ALIKES : 'look-alikes',
         ECOLOGY : 'ecology',
         HABITAT: 'habitat',
-        BIOINDICATOR: 'Bioindicator',
-        TROPHIC_LEVEL: 'Trophic level',        
-        OCCUPANT: 'Lives in',
+        TROPHIC_LEVEL: 'Trophic level',                
         ORGANISATION: 'Organisation',
         
         SMELL : 'smell',
@@ -62,6 +59,7 @@ export const english = {
         WEIGHT: 'Weight',
         COMPOUND: 'Leaf type',
         REPRODUCTION: 'Reproduction',
+        ASEXUAL_REPRODUCTION: 'Asexual reproduction',
         DISPLAY: 'Display',
         BEHAVIOUR: 'behaviour',
         CHARACTERISTIC: 'Characteristic',
@@ -73,17 +71,15 @@ export const english = {
         FOOD: 'Food',
         
         SEXUAL_DIMORPHISM: 'Sexual dimorphism',
-        
-        MIGRATORY: 'Migratory',
+            
         WING_SPAN: 'Wing span',
 
         BLADE: 'Blade',
         LEAF_VARIATION: 'Leaf variation',
         LEAF_SHAPE: 'Leaf shape',
-        STEM_ARRANGEMENT: 'Stem arrangement',
+        LEAF_ARRANGEMENT: 'Stem arrangement',
         LEAF_EDGE: 'Leaf edge',
         INFLORESCENCE: 'Inflorescence',
-        // SEASONAL: 'Seasonal',
         FEMALE_CONE_LENGTH: 'Female cone length',
         MALE_CONE_LENGTH: 'Male cone length',
         ALLOCHORY: 'Allochory',
@@ -114,7 +110,7 @@ export const english = {
         MALE: 'Male',        
         TAIL_LENGTH: 'Tail length',
         MAX_SPEED: 'Maximum speed',
-        KIN_SELECTION: 'Kin selection',
+        // KIN_SELECTION: 'Kin selection',
         DIET: 'Diet',
         ALTRICIAL: 'Altricial',
         MOULTING: 'Moulting',
@@ -122,6 +118,7 @@ export const english = {
 
         MARGIN_TYPE: 'Margin type',
         SOIL_TYPE: 'Soil type',
+        PH: 'pH',
         LICEN_CUP_COLOUR: 'Licen cup colour',
         RIM: 'Rim',
         CENTRE: 'Centre',
@@ -129,7 +126,8 @@ export const english = {
         POLLINATION: 'Pollination',
         PROPAGATION: 'Propagation',
 
-        CLIMATE_CONDITIONS: 'Climate conditions'
+        CLIMATE: 'Climate',
+        SONG: 'Song'
     },
     howEdible : {
         help: 'How edible is this species?',
@@ -195,6 +193,11 @@ export const english = {
         WATER: 'Water',
         SNOW: 'Snow',
         NO_SNOW: 'No snow',
+        CONIFERS: 'conifers',
+        BROAD_LEAF: 'broad-leaf',
+        PINE: 'pine',
+        BEECH: 'beech',
+        OAK: 'oak'
     },
     ecoType : {
         help: 'What is the ecological type of this mushroom?',
@@ -365,12 +368,12 @@ export const english = {
     nonTaxaType: {
         FORM : 'Form'
     },
-    boolean: {
-        YES: 'Yes',
-        NO: 'No',
-        BOTH: 'Both',
-        OR: 'Or'
-    },
+    // boolean: {
+    //     YES: 'Yes',
+    //     NO: 'No',
+    //     BOTH: 'Both',
+    //     OR: 'Or'
+    // },
     whether: {
         YES: 'Yes',
         NO: 'No'
@@ -396,8 +399,16 @@ export const english = {
         HOMOBLASTIC: 'Homoblastic',
         HETEROBLASTIC: 'Heteroblastic',        
     },
-    sex: {
-        HERMAPHRODITE: 'Hermaphrodite'
+    reproduction: {
+        SELF_POLLINATION: 'Self-pollination',
+        CROSS_POLLINATION: 'Cross-pollination'
+    },
+    asexualReproduction: {
+        BUDDING: 'budding',
+        FRAGMENTATION: 'fragmentation',
+        FISSION: 'fission',
+        SPORE_FORMATION: 'spore formation',
+        VEGETATIVE_PROPAGATION: 'vegetative propagation'
     },
     leafShape: {
         LINEAR: 'Linear',
@@ -418,7 +429,7 @@ export const english = {
         DENTATE: 'Dentate',
         SMOOTH: 'Smooth'
     },
-    foodType: {
+    food: {
         GRASS: 'Grass',
         ROTTEN_FRUIT: 'Rotten fruit',
         NECTAR: 'Nectar',
@@ -438,7 +449,7 @@ export const english = {
         BARK: 'Bark',
         SHOOTS: 'Shoots',
     },
-    developmentStage: {
+    hibernatingStage: {
         ADULT: 'Adult',
         CATERPILLAR: 'Caterpillar',
         PUPA: 'Pupa'
@@ -473,7 +484,8 @@ export const english = {
         LODGE: 'Lodge',
         DAM: 'Dam',
         NEST: 'Nest',
-        SHELTER: 'Shelter'
+        SHELTER: 'Shelter',
+        VEGETATION: 'vegetation'
     },
     active: {
         help: 'When is this species most active?',
@@ -606,7 +618,8 @@ export const english = {
         CARRIER: 'Carrier',
         RUDERAL: 'Ruderal',
         SUPERTRAMP: 'Supertramp',
-        SYMBIONT: 'Symbiont'
+        SYMBIONT: 'Symbiont',
+        OCCUPANT: 'Lives in'
     },
     fruitType: {
         help: 'What fruit type does this plant have?',
@@ -628,12 +641,6 @@ export const english = {
         RACEME: 'raceme',
         CORYMB: 'corymb'
     },
-    // seasonal: {
-    //     help: 'What is the life cycle of this plant?',
-    //     ANNUAL: 'Annual',
-    //     BIENNIAL: 'Biennial',
-    //     PERENNIAL: 'Perennial'
-    // },
     display: {
         help: 'Which form of display does this species exhibit?',
         DIEMATIC: 'Diematic',
@@ -681,7 +688,8 @@ export const english = {
         FARROWING: 'Farrowing',
         SWIMMING: 'Swimming',
         DECUMBENT: 'Decumbent', 
-        ETHYLENE_RIPENING: 'Ethylene ripening'      
+        ETHYLENE_RIPENING: 'Ethylene ripening',
+        MIGRATORY: 'Migratory'
     },
     sense: {
         help: 'Which sense does this species favour?',
@@ -714,7 +722,7 @@ export const english = {
         VOCALISATION: 'Vocalisation',
         POSTURING: 'Posturing'
     },
-    mating: {
+    matingSystem: {
         POLYGYNOUS: 'Polygynous',
         MONOGAMOUS: 'Monogamous'
     }, 
@@ -745,6 +753,8 @@ export const english = {
         CHAMAEPHYTE: 'Chamaephyte',
         FIBROUS_ROOT_SYSTEM: 'Fibrous root system',
         TAPROOT_SYSTEM: 'Taproot system',
+        KIN_SELECTION: 'Kin selection',
+        BIOINDICATOR: 'Bioindicator'        
     },
     climate: {
         HOT: 'Hot',
@@ -765,5 +775,39 @@ export const english = {
         PSYCHOPHILY: 'Psychophily',
         PHALAENOPHILY: 'Phalaenophily',
         SONICATION: 'Sonication',
+    },
+    stipeCharacter: {
+        RING: 'Ring',
+        RING_AND_VOLVA: 'ring and volva',
+        BARE: 'Bare',
+        NA: 'N/A',
+        NONE: 'None',
+        SHORT: 'short',
+        STUMPY: 'stumpy',
+        CLUB_LIKE: 'Club-like',
+        WARTS: 'warts',
+        HOLLOW: 'hollow'
+    },
+    gillAttachment: {
+        FREE: 'Free',
+        ADNATE: 'Adnate',
+        DECURRENT: 'Decurrent',
+        NA: 'N/A',
+        NONE: 'None',
+        EMARGINATE: 'emarginate',
+        SUBDECURRENT: 'subdecurrent'
+    },
+    grouping: {
+        LARGE_GROUPS: 'large groups',
+        CLUSTERS: 'clusters',
+        LARGE_CLUSTERS: 'large clusters',
+        SCATTERED_CLUSTERS: 'scattered clusters',
+        FAIRY_RINGS: 'fairy rings',
+        GREGARIOUS: 'gregarious',
+        NUMEROUS: 'numerous'
+    },
+    propagation: {
+        RHIZOMES: 'rhizomes',
+        SEEDS: 'seeds'
     }
 };

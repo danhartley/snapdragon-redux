@@ -1,5 +1,3 @@
-import { getBirdTraits } from 'api/traits/bird-traits';
-
 export const renderMediaPlayers = collection => {
 
     let isAudio = true;

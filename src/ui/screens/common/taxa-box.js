@@ -8,14 +8,14 @@ export const renderTaxaBox = async (parent, taxaBoxArgs) => {
 
     parent.innerHTML = '';
 
-    const { item, familyName, familyVernacularName, traits } = taxaBoxArgs;
+    const { item, familyName, familyVernacularName } = taxaBoxArgs;
 
     const options = [
-        { name: traitTypes.enums.name.RANK, formatter: trait => `UK # ${trait.value}` },
-        { name: traitTypes.enums.name.HOW_EDIBLE, formatter: trait => trait.value }
+        { name: traitTypes.enums.name.RANK, formatter: trait => `UK # ${trait[0]}` },
+        { name: traitTypes.enums.name.HOW_EDIBLE, formatter: trait => trait[0] }
     ];
 
-    let trait = itemProperties.getActiveTrait(traits, item.name, options);
+    let trait = itemProperties.getActiveTrait(item, options);
     
     const specific = infraspecifics.find(specific => specific.name === item.name);
     const subSpeciesCount = specific ? specific.subspecies.length : 0;

@@ -177,25 +177,9 @@ const layouts = [
     expect(months.map(month => month.name)).toEqual(['February','March','April']);
   });
 
-  test('should create set of questions with equal number of elements', () => {
-
-    const pool = [
-      "Drey",
-      "Burrow",
-      "Den",
-      "Warren",
-      "Sett",
-      "Rookery"
-    ];
-
-    const variables = 2;
-
-    const trait = {
-      "name": "shelter",
-      "value": "Burrow, Sett",
-      "type": "shelter"
-    };
-
-    const answers = utils.getSetOfAnswers(variables, pool, trait);
-
+  test('should return appropriate camel-cased text for any string', () => {
+    let string = 'Leaf blade';
+    expect(utils.toCamelCase(string)).toEqual('leafBlade');
+    string  = 'behaviour';
+    expect(utils.toCamelCase(string)).toEqual('behaviour');
   });

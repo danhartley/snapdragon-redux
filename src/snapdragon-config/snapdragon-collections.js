@@ -1,12 +1,3 @@
-import { deciduousAndEvergreenTrees } from 'api/rhs/deciduous-evergreen-trees';
-import { deciduousAndEvergreenTrees2 } from 'api/rhs/deciduous-evergreen-trees2';
-import { birds } from 'api/snapdragon/birds';
-import { mushrooms } from 'api/snapdragon/mushrooms';
-import { mushrooms2 } from 'api/snapdragon/mushrooms2';
-import { weeds } from 'api/rhs/weeds';
-import { lichen } from 'api/snapdragon/lichen';
-import { plants } from 'api/snapdragon/plants';
-
 export const allIconicTaxa = [
     {
       id: 'fungi',
@@ -132,7 +123,7 @@ const snapdragonLichens = {
       'Ramalina fastigiata', 'Flavoparmelia caperata', 'Parmotrema perlatum', 'Parmelia sulcata',
       'Lecidella elaeochroma', 'Lecanora chlarotera'
   ],
-  items: lichen,
+  items: [],
   guide: {
     locationPlace: 'Common Lichens',
     locationType: 'taxon',
@@ -169,19 +160,16 @@ const snapdragonKitchenGarden = {
         "Brassica nigra",
         "Carum carvi",
         "Satureja hortensis",
-
         "Piper nigrum",
         "Laurus nobilis",
         "Capsicum annuum",
         "Salvia officinalis",
         "Origanum vulgare",
-
         "Foeniculum vulgare",
         "Mentha spicata",
         "Anethum graveolens",
         "Thymus vulgaris",
         "Petroselinum crispum",
-
         "Ocimum basilicum",
         "Allium schoenoprasum",
         "Artemisia dracunculus",
@@ -192,7 +180,6 @@ const snapdragonKitchenGarden = {
         "Spinacia oleracea",
         "Raphanus sativus",
         "Cucurbita pepo",
-
         "Solanum lycopersicum",
         "Brassica rapa",
         "Vicia faba",
@@ -203,7 +190,6 @@ const snapdragonKitchenGarden = {
         "Cynara cardunculus",
         "Lactuca sativa",
         "Daucus carota",
-
         "Brassica oleracea",
         "Solanum tuberosum",
         "Allium cepa",
@@ -213,18 +199,14 @@ const snapdragonKitchenGarden = {
         "Prunus domestica",
         "Prunus persica",
         "Rubus idaeus",
-
         "Citrus limon",
-        // "Fragaria ananassa",
         "Pyrus communis",
         "Ficus carica",
-        // "Malus domestica",
         "Prunus avium",
-        // "Apis mellifera",
         "Lavandula angustifolia",
         "Lavandula stoechas"
       ],
-    items: [ ...plants ],
+    items: [],
     iconicTaxa: [ {
         id: 'plantae',
         common: 'Plants'
@@ -255,13 +237,9 @@ const rhsTrees = {
     glossary: ['plantae', 'common'],
     itemNames: [
         "Styrax hemsleyanus",
-        // "Stewartia sinensis",
-        // "Tilia euchlora",
         "Sorbus cashmiriana",
-        // "Tilia europaea",
         "Stewartia pseudocamellia",
         "Sorbus aucuparia",
-        // "Salix sepulcralis",
         "Sorbus aria",
         "Salix alba",
         "Robinia pseudoacacia",
@@ -269,7 +247,6 @@ const rhsTrees = {
         "Pyrus salicifolia",
         "Quercus ilex",
         "Quercus coccinea",
-        // "Prunus serrula",
         "Pyrus calleryana",
         "Prunus subhirtella",
         "Prunus cerasifera",
@@ -278,19 +255,12 @@ const rhsTrees = {
         "Prunus avium",
         "Olea europaea",
         "Platanus acerifolia",
-        // "Liriodendron chinense",
         "Malus floribunda",
         "Malus sylvestris",
         "Liriodendron tulipifera",
-        // "Laburnum watereri",
-        // "Magnolia soulangeana",
         "Liquidambar styraciflua",
-        // "Ilex altaclerensis",
         "Ligustrum lucidum",
-        // "Eucryphia x nymansensis",
         "Juglans regia",
-        // "Eucalyptus pauciflora",
-        // "Crataegus prunifolia",
         "Fraxinus ornus",
         "Eucalyptus gunnii",
         "Gleditsia triacanthos",
@@ -300,7 +270,6 @@ const rhsTrees = {
         "Crataegus monogyna",
         "Cercis siliquastrum",
         "Cercidiphyllum japonicum",
-        // "Cordyline australis",
         "Catalpa bignonioides",
         "Betula utilis",
         "Amelanchier lamarckii",
@@ -310,17 +279,15 @@ const rhsTrees = {
         "Amelanchier canadensis",
         "Alnus cordata",
         "Alnus glutinosa",
-        // "Aesculus carnea",
         "Aesculus hippocastanum",
         "Acer rubrum",
         "Acer platanoides",
         "Acer pseudoplatanus",
         "Acer davidii",
         "Acer griseum",
-        // "Acacia baileyana",
         "Acacia dealbata"
       ],
-    items: [ ...plants, ...deciduousAndEvergreenTrees, ...deciduousAndEvergreenTrees2 ],
+    items: [],
     iconicTaxa: [ {
         id: 'plantae',
         common: 'Plants'
@@ -347,30 +314,44 @@ const rhsTrees = {
 const rhsWeeds = { 
     id: 6, 
     behaviour: 'static',
-    name: 'RHS Weeds I', 
-    // descriptions: [
-    //     'Part I of the approved list of Weeds for students taking Royal Horticultural Society Qualifications in Practical Horticulture.',
-    //     'Snapdragon does not necessarily support the view that weeds are plants in the wrong place.'
-    // ],    
+    name: 'RHS Weeds I',
     type: 'custom',
     moduleSize: 4,
     lessonPlanLandscape: 1,
     lessonPlanPortrait: 101,
     glossary: ['plantae', 'common'],
-    items: weeds,
+    items: [],
     itemNames: [
-        "Elymus repens",
-        "Equisetum arvense",
-        "Dactylis glomerata",
-        "Convolvulus arvensis",
-        "Cerastium fontanum",
-        "Cirsium arvense",
-        "Calystegia sepium",
-        "Cardamine hirsuta",
-        "Aegopodium podagraria",
-        "Capsella bursa-pastoris",
-        "Bellis perennis"
-      ],
+
+      'Acer negundo',
+      'Acer pseudoplatanus',
+      'Celtis australis',
+      'Cercis siliquastrum',
+      'Cupressus sempervirens',
+      'Eucalyptus globulus',
+      'Fraxinus angustifolia',
+      'Fraxinus excelsior',
+      'Ginkgo biloba',
+      'Gleditsia triacanthus',
+      'Jacaranda mimosifolia',
+      'Olea europaea',
+      'Phoenix canariensis',
+      'Pinus pinea'
+      // 'Sciurus vulgaris',
+      // 'Vulpes vulpes',
+      // 'Martes martes'
+        // "Elymus repens",
+        // "Equisetum arvense",
+        // "Dactylis glomerata",
+        // "Convolvulus arvensis",
+        // "Cerastium fontanum",
+        // "Cirsium arvense",
+        // "Calystegia sepium",
+        // "Cardamine hirsuta",
+        // "Aegopodium podagraria",
+        // "Capsella bursa-pastoris",
+        // "Bellis perennis"
+    ],
     iconicTaxa: [ {
         id: 'plantae',
         common: 'Plants'
@@ -403,7 +384,7 @@ const mushroomDefaults = {
         id: 'fungi',
         common: 'Fungi & Lichens'
       } ],
-    items: [ ...mushrooms, ...mushrooms2 ]
+    items: []
 };
 
 const snapdragonMushroomsEasternUSA = {
@@ -448,7 +429,7 @@ const commonBritishBirds = {
     lessonPlanLandscape: 5,
     lessonPlanPortrait: 105,
     glossary: ['animalia', 'common'],
-    items: birds,
+    items: [],
     itemNames: [
         "Passer domesticus",
         "Sturnus vulgaris",
@@ -459,7 +440,11 @@ const commonBritishBirds = {
         "Parus major",
         "Erithacus rubecula",
         "Aegithalos caudatus",
-        "Fringilla coelebs"
+        "Fringilla coelebs",
+
+        // 'Apus apus',
+        // 'Delichon urbicum',
+        // 'Hirundo rustica'
       ],
     iconicTaxa: [ {
         id: 'aves',
@@ -481,6 +466,35 @@ const commonBritishBirds = {
   }
 };
 
+const selectedItemsCollection = { 
+  id: 9,
+  behaviour: 'static',
+  type: 'custom',
+  name: 'User collection', 
+  moduleSize: 6,
+  lessonPlanLandscape: 1,
+  lessonPlanPortrait: 101,
+  glossary: ['common'],
+  itemNames: [],
+  items: [],
+  iconicTaxa: [],
+  guide: {
+    iconicTaxa: [],
+    locationPlace: 'User collection',
+    locationType: 'taxon',
+    place: {
+        name: 'User collection',
+        id: 'any',
+        type: 'places'
+    },
+    season: {
+        type: 'all_year'
+    },
+    speciesRange: 0,
+    ready: true
+}
+};
+
 export const snapdragonCollections = [
     
     location,
@@ -495,5 +509,7 @@ export const snapdragonCollections = [
     commonBritishBirds,
     
     rhsTrees,
-    rhsWeeds
+    rhsWeeds,
+
+    selectedItemsCollection
 ];

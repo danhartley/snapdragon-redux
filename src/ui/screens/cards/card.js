@@ -1,86 +1,117 @@
 import { DOM } from 'ui/dom';
 import { store } from 'redux/store';
-import { taxa } from 'api/snapdragon/taxa';
 import { renderTemplate } from 'ui/helpers/templating';
 import { itemProperties } from 'ui/helpers/data-checking';
 import { imageSlider } from 'ui/screens/common/image-slider';
 import { getBirdSong } from 'xeno-canto/birdsong';
-import { getTraits } from 'api/traits/traits';
-import { lookALikes } from 'ui/screens/common/look-alikes';
-import { renderFeatures } from 'ui/screens/common/feature';
+import { lookalikeSpecies } from 'ui/screens/common/look-alikes';
+import { linkedTaxa } from 'ui/screens/common/linked-taxa';
 import { infoSlider } from 'ui/screens/common/info-slider';
-import { iconicTaxa, matchTaxon } from 'api/snapdragon/iconic-taxa';
 import { renderIcon } from 'ui/helpers/icon-handler';
 import { imageUseCases, prepImagesForCarousel, scaleImage } from 'ui/helpers/image-handlers';
 import { renderInatDataBox } from 'ui/screens/common/inat-box';
 import { renderCalendar } from 'ui/screens/common/calendar';
 import { renderTaxaBox } from 'ui/screens/common/taxa-box';
 import { renderBadge } from 'ui/screens/common/badge';
+import { enums } from 'ui/helpers/enum-helper';
+import { firestore } from 'api/firebase/firestore';
 
 import cardTemplate from 'ui/screens/cards/card-template.html';
 
 export const renderCard = (collection, mode = 'STAND_ALONE', selectedItem, parent = DOM.rightBody, isInCarousel = true) => {
 
-    const item = selectedItem || collection.nextItem;
+    const { layout, config } = store.getState();
 
-    const { layout, config, enums } = store.getState();
+    let item;
 
-    let rootNode;
+    const init = async () => {
 
-    switch(mode) {
-        case 'STAND_ALONE':
-            rootNode = document.querySelector('.right-body');
-            break;
-        case 'SWAP_OUT':
-            rootNode = document.querySelector('.js-species-container');
-            break;
-        case 'MODAL':
-            rootNode = document.querySelector('#cardModal');
-            break;
-    }
+        const getItemWithProps = async item => {
 
-    if(mode === 'STAND-ALONE') {        
-        const screen = layout.screens.filter(el => el.name === 'species-card')[0];
-        if(!screen) return;
-    }
+            if(item.eolId) return new Promise(resolve => resolve(item));
+            
+            const getItem = async item => {
+                return item.family
+                            ? new Promise(resolve => resolve(item))
+                            : await firestore.getSpeciesByName(item.name);
+            };
 
-    const prev = document.querySelector('#cardModal .js-prev');
-    const next = document.querySelector('#cardModal .js-next');
+            const itemWithProps = await getItem(item);
+            
+            itemWithProps.family = await firestore.getItemTaxonByName(config, itemWithProps.taxonomy[enums.taxon.FAMILY.name.toLowerCase()]) || { names: [ itemWithProps.taxonomy.family ]};
+            itemWithProps.order = await firestore.getItemTaxonByName(config, itemWithProps.taxonomy[enums.taxon.ORDER.name.toLowerCase()]);
+            itemWithProps.traits = await firestore.getTraitsBySpeciesName(item.name);
+            itemWithProps.vernacularName = itemWithProps.vernacularName || itemProperties.getVernacularName(item, config);
 
-    if(prev) isInCarousel ? prev.classList.remove('hide-important') : prev.classList.add('hide-important');
-    if(next) isInCarousel ? next.classList.remove('hide-important') : next.classList.add('hide-important');
+            const names = item.name.split(' ');
+
+            itemWithProps.taxonomy.genus = names[0];                
+            itemWithProps.taxonomy.species = names[1];
+
+            return itemWithProps;
+        };
     
-    const template = document.createElement('template');
+        item = selectedItem || collection.nextItem;
 
-    template.innerHTML = cardTemplate;
+        item = await getItemWithProps(item);
 
-    const traits = getTraits(enums);
+        let rootNode;
+    
+        switch(mode) {
+            case 'STAND_ALONE':
+                rootNode = document.querySelector('.right-body');
+                break;
+            case 'SWAP_OUT':
+                rootNode = document.querySelector('.js-species-container');
+                break;
+            case 'MODAL':
+                rootNode = document.querySelector('#cardModal');
+                break;
+        }
+    
+        if(mode === 'STAND-ALONE') {        
+            const screen = layout.screens.filter(el => el.name === 'species-card')[0];
+            if(!screen) return;
+        }
+    
+        const prev = document.querySelector('#cardModal .js-prev');
+        const next = document.querySelector('#cardModal .js-next');
+    
+        if(prev) isInCarousel ? prev.classList.remove('hide-important') : prev.classList.add('hide-important');
+        if(next) isInCarousel ? next.classList.remove('hide-important') : next.classList.add('hide-important');
+        
+        const template = document.createElement('template');
+    
+        template.innerHTML = cardTemplate;
+    
+        renderCommonParts(template, config, item, collection, mode, parent, rootNode, isInCarousel);
+    
+        config.isPortraitMode
+            ? renderPortrait(item, config, mode, rootNode)
+            : renderLandscape(item, config, mode, rootNode);
+    };
 
-    renderCommonParts(template, config, item, collection, traits, mode, parent, rootNode, isInCarousel);
-
-    config.isPortraitMode
-        ? renderPortrait(item, config, traits, mode, rootNode)
-        : renderLandscape(item, config, traits, mode, rootNode);
+    init();
 };
 
-const renderLandscape = (item, config, traits, mode, rootNode) => {
+const renderLandscape = (item, config, mode, rootNode) => {
 
     const src = rootNode.querySelector('.js-bird-song');
     
-    getBirdSong(item, traits, src, config.isPortraitMode);
+    getBirdSong(item, src, config.isPortraitMode);
 
     const inatNode = rootNode.querySelector('.js-inat-box');
 
     renderInatDataBox(inatNode, item, config, mode);
 
-    lookALikes(item, traits, config, rootNode);
+    lookalikeSpecies(item, config, rootNode);
 };
 
-const renderPortrait = (item, config, traits, mode, rootNode) => {
+const renderPortrait = (item, config, mode, rootNode) => {
 
     const images = prepImagesForCarousel(item, config, imageUseCases.SPECIES_CARD);
 
-    const parent = rootNode.querySelector('.js-species-card-images');
+    const parent = rootNode.querySelector('.js-test-card-container-images');
 
     imageSlider({ config, images, parent, disableModal: mode === 'MODAL', parentScreen: rootNode.querySelector('.card-card'), identifier: 'card-card' });
 
@@ -91,7 +122,7 @@ const renderPortrait = (item, config, traits, mode, rootNode) => {
         return;
     };
 
-    getBirdSong(item, traits, player, config.isPortraitMode);
+    getBirdSong(item, player, config.isPortraitMode);
 
     player.addEventListener('click', () => {
         const iframe = document.createElement('iframe');
@@ -108,43 +139,27 @@ const renderPortrait = (item, config, traits, mode, rootNode) => {
     });
 };
 
-const renderCommonParts = (template, config, item, collection, traits, mode, parent, rootNode, isInCarousel) => {
+const renderCommonParts = (template, config, item, collection, mode, parent, rootNode, isInCarousel) => {
 
-    const name = item.name;
-          item.vernacularName = item.vernacularName || itemProperties.getVernacularName(item, config);
-    const family = taxa.find(f => f.name === item.family);
-    const familyName = family ? family.name : item.taxonomy.family;
-    const familyVernacularNames = itemProperties.familyVernacularNames(item.family, config.language, taxa);
-    const familyVernacularName = familyVernacularNames ? familyVernacularNames[0] : '';
+    const familyVernacularName = item.family && item.family.names ? item.family.names[0] : '';
         
     const headerImage = scaleImage({ url: item.icon || item.images[0].url }, imageUseCases.SPECIES_CARD, config);
     
-    const names = [ ...new Set(item.names.filter(name => name.language === config.language).map(name => name.vernacularName.toLowerCase())) ];
-    const occurrences = names.length;
-
-    const iconicTaxon = matchTaxon(item.taxonomy, iconicTaxa).value;
-
     const clone = document.importNode(template.content, true);
     
     parent.innerHTML = '';
     
-    renderTemplate({ name, vernacularName: item.vernacularName, headerImage, occurrences, iconicTaxon }, template.content, parent, clone);
-
-    const taxaBoxNode = rootNode.querySelector('.js-taxa-box');
-
-    renderTaxaBox(taxaBoxNode, { item, familyName, familyVernacularName, traits });
-
-    infoSlider(item, traits, family, rootNode.querySelector('.js-info-box'), mode);
-
-    const badge = rootNode.querySelector('.js-names-badge');
-
-    renderBadge(badge, occurrences, names);
+    renderTemplate({ name: item.name, vernacularName: item.vernacularName, headerImage, iconicTaxon: item.iconicTaxon }, template.content, parent, clone);
     
-    renderFeatures(item, traits, config, rootNode.querySelector('.js-feature-types'), mode, isInCarousel);
-    
-    const calendarNode = rootNode.querySelector('.js-calendar-box');
+    renderTaxaBox(rootNode.querySelector('.js-taxa-box'), { item, familyName: item.taxonomy.family, familyVernacularName });
 
-    renderCalendar(calendarNode, item, config);
+    infoSlider(item, item.family, rootNode.querySelector('.js-info-box'), mode);
+
+    renderBadge(rootNode.querySelector('.js-names-badge'), item, config);
+    
+    linkedTaxa(item, config, rootNode.querySelector('.js-feature-types'), mode, isInCarousel, collection);
+    
+    renderCalendar(rootNode.querySelector('.js-calendar-box'), item, config);
 
     renderIcon(item.taxonomy, rootNode);
 

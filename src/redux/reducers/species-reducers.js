@@ -73,9 +73,7 @@ export const collection = (state = { id: 0 }, action) => {
         }
         case types.UPDATE_COLLECTION_ITEMS: {
             const collection = R.clone(state);
-            collection.excludedItems = action.data.filter(item => item.isDeselected);
             collection.items = action.data.filter(item => !item.isDeselected);
-            collection.allItems = [ ...collection.items, ...collection.excludedItems ];
             return collection;
         }
 

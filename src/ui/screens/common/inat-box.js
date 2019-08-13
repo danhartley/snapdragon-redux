@@ -1,11 +1,10 @@
-import { utils } from 'utils/utils';
 import { renderTemplate } from 'ui/helpers/templating';
 import { getPlace } from 'geo/geo';
 import { getInatTaxonStats, getInatPlaceId } from 'api/inat/inat';
-import inatBoxTemplate from 'ui/screens/common/inat-box-template.html';
-
 import { renderWiki } from 'wikipedia/wiki';
 import { renderWikiModal } from 'wikipedia/wiki-modal';
+
+import inatBoxTemplate from 'ui/screens/common/inat-box-template.html';
 
 export async function renderInatDataBox(parent, item, config, mode) {
 
@@ -56,18 +55,18 @@ export async function renderInatDataBox(parent, item, config, mode) {
         parent.querySelector('.js-place-taxon-count').innerHTML = placeTaxonCount.toLocaleString();
     });
     
-    const eolPage = document.querySelector('.js-species-card-eol-link');
+    const eolPage = document.querySelector('.js-test-card-container-eol-link');
     
     eolPage.setAttribute('href', `http://eol.org/pages/${item.id}/overview`);
     eolPage.setAttribute('target', '_blank');
     eolPage.setAttribute('style', 'text-decoration: none');
 
     setTimeout(()=>{
-        const wikiLink = document.querySelector('.js-species-card-wiki');            
+        const wikiLink = document.querySelector('.js-test-card-container-wiki');            
         renderWikiModal(item, wikiLink, config);
     });    
 
-    const wikiNode = document.querySelector('.js-species-card-wiki');
+    const wikiNode = document.querySelector('.js-test-card-container-wiki');
 
     wikiNode.innerHTML = '';
 

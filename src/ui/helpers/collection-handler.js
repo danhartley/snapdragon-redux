@@ -5,8 +5,10 @@ import { itemProperties } from 'ui/helpers/data-checking';
 import { actions } from 'redux/actions/action-creators';
 import { getInatSpecies } from 'api/inat/inat';
 import { getPlace } from 'geo/geo';
+import { firestore } from 'api/firebase/firestore';
+import { enums } from 'ui/helpers/enum-helper';
 
-async function getItems(collections, collection, config) {
+async function getItems(collection, config) {
 
     if(collection.behaviour === 'dynamic') {
 
@@ -33,32 +35,34 @@ async function getItems(collections, collection, config) {
 
                 actions.boundUpdateConfig(config);
 
-                return getInatSpecies(config).then(species => {
-                    const items = new Set(species.filter(item => item));
-                    return [ ...items ];
-                });
+                return await getInatSpecies(config);
             }
-
             else {
-                return getInatSpecies(config).then(species => {
-                    const items = new Set(species.filter(item => item));
-                    return [ ...items ];
-                });
+                return await getInatSpecies(config);
             }            
         }
     }
     else if(collection.behaviour === 'static') {
 
-        const itemNames = collections.find(c => c.id === collection.id).items.map(item => item.name);  
-        const items = collection.itemNames.map(name => { 
-            if(R.contains(name, itemNames)) {
-                return collections.find(c => c.id === collection.id).items.find(item => item.name === name);
+        const loadSpeciesInParallel = async itemNames => {
+            try {
+                return Promise.all(itemNames.map(name => {                    
+                    return firestore.getSpeciesByName(name).then(async item => {
+                        return await {                         
+                            ...item
+                        }
+                    })                    
+                }));
+    
+            } catch (error) {
+                console.log(`${item} problem!!! For ${name}`)
+                console.error(error);
             }
-        });
-        
-        return new Promise(resolve => {
-            resolve(items);
-        });
+        };
+
+        const itemNames = collection.itemNames.length > 0 ? collection.itemNames : config.guide.itemNames;
+
+        return loadSpeciesInParallel(itemNames);
     }
 };
 
@@ -69,14 +73,15 @@ export const keepItems = collection => {
     });
 }
 
-export async function collectionHandler(collections, collection, config, counter, callback, callbackWhenNoResults) {
+export const collectionHandler = async (collection, config, counter, callback, callbackWhenNoResults) => {
     
     if(counter.isLessonPaused) {
         collection.items = await keepItems(collection);
         callback(collection, config)();
     } else {
            
-        collection.items = utils.shuffleArray(await getItems(collections, collection, config));
+        const items = await getItems(collection, config);
+        collection.items = items.filter(item => item.name);
 
         if(R.contains('lepidoptera', config.guide.iconicTaxa.map(taxon => taxon.id)) && !R.contains('insecta', config.guide.iconicTaxa.map(taxon => taxon.id))) {
             const insecta = collection.items.filter(i => i.taxonomy.class.toLowerCase() === 'insecta');
@@ -95,18 +100,67 @@ export async function collectionHandler(collections, collection, config, counter
 
             collection.items = collection.items.filter(i => i);
             collection.items = utils.sortBy(collection.items.filter(item => item), 'observationCount', 'desc');
-            collection.items.forEach((item,index) => {
+
+            const families = [ ...new Set(collection.items.map(i => i.taxonomy.family)) ];
+            const orders = [ ...new Set(collection.items.map(i => i.taxonomy.order)) ];
+
+            const familyTaxa = [], orderTaxa = [];
+
+            const getFamilyTaxa = async families => {
+                return Promise.all(
+                    families.map(async(family) => {
+                        const familyTaxon = await firestore.getItemTaxonByName(config, family);
+                        familyTaxa.push(familyTaxon);
+                        return familyTaxon;
+                    })
+                );
+            };
+
+            await getFamilyTaxa(families);
+
+            const getOrderTaxa = async orders => {
+                return Promise.all(
+                    orders.map(async(order) => {
+                        const orderTaxon = await firestore.getItemTaxonByName(config, order);
+                        orderTaxa.push(orderTaxon);
+                        return orderTaxon;
+                    })
+                );
+            };
+
+            await getOrderTaxa(orders);
+
+            collection.items.forEach( async (item,index) => {
+
+                item.family = familyTaxa.find(family => family.name === item.taxonomy[enums.taxon.FAMILY.name.toLowerCase()]);
+                item.order = orderTaxa.find(order => order.name === item.taxonomy[enums.taxon.ORDER.name.toLowerCase()]);
 
                 item.snapIndex = index + 1;
+                item.id = item.eolId;
                 
                 item.vernacularNames = itemProperties.getVernacularNames(item, config);
-                item.vernacularName = itemProperties.getVernacularName(item, config);   
-
+                item.vernacularName = itemProperties.getVernacularName(item, config);
+                                
                 const names = item.name.split(' ');
-                item.genus = names[0];
-                item.species = names[1];
+
+                item.taxonomy.genus = names[0];                
+                item.taxonomy.species = names[1];
+                
                 item.name = names.slice(0,2).join(' ');
+
             });
+
+            const loadTraitsInParallel = items => {
+                return Promise.all(
+                    items.map(async(item) => {
+                        const itemTraits = await firestore.getTraitsBySpeciesName(item.name);
+                        item.traits = itemTraits || {};
+                        return item;                 
+                    })
+                );
+            };
+
+            await loadTraitsInParallel(collection.items);
 
             collection.itemIndex = 0;
 

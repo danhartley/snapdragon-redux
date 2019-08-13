@@ -37,7 +37,7 @@ export const getNonTaxa = (enums) => {
                 { name: SD.name.USAGE, value: SD.usage.BIRDS_NEST },
                 { name: SD.name.LIFE_SPAN, value: '30-60a' },
                 { name: SD.name.MEDICINAL_PROPERTIES, value: `${SD.medicinalProperties.ANTIBIOTIC}`},
-                { name: SD.name.BIOINDICATOR, value: SD.boolean.YES },
+                { name: SD.name.CHARACTERISTIC, value: SD.characteristic.BIOINDICATOR},
                 { name: SD.name.SUBSTRATE_ADHERANCE, value: SD.level.LOW }
             ],
             examples: [ 'Lobaria pulmonaria', 'Xanthoria parietina'  ],

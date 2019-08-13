@@ -1,0 +1,111 @@
+.hide {
+    display: none;
+}
+.container {
+    width: 100%;
+    max-width: 1300px;
+}            
+.sub.container {
+    width: 100%;
+    margin: 2rem .75rem;
+}
+.input-field {
+    margin-top: 0;
+}
+.input {
+    border-bottom: 1px solid rgb(99, 133, 95) !important;
+}
+.dropdown-content li>a, .dropdown-content li>span {
+    color: rgb(87, 97, 99);
+}
+#images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;                
+    min-height: 80vh;
+}
+.hide-important, .hide-empty {
+    display: none !important;
+}
+.btn {
+    background-color: rgb(87, 97, 99);
+    text-transform: initial;
+}
+.trait-key .input-field.col label {
+    left: .25rem;
+}
+.autocomplete-options-container {
+    z-index: 9999;
+    position: absolute;
+    padding: 0 .25rem;
+    color: rgb(50, 50, 50);
+    background-color: rgb(250, 250, 250);
+    letter-spacing: .04rem;
+    border: .05rem solid lightgray;
+    text-align: left;
+    overflow-y: scroll;
+  }
+  .autocomplete-options-container {
+    width: initial;
+  }
+  .autocomplete-options-container > div {
+    padding: .25rem;
+  }  
+  .autocomplete-options-container .selected {
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, .8);
+  }
+  .async-progress {
+    font-size: .9rem;
+    padding: 1rem 0 !important;
+    line-height: 1.15rem;
+  }
+  .trait-repeater {
+      display: grid;
+      grid-gap: 2rem;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .trait-repeater li {
+      width: 100%;
+      padding: 0 .75rem;
+  }
+  input[type=text]:not(.browser-default)[readonly="readonly"] {
+      border: none;
+  }
+  i {
+      cursor: pointer;
+  }
+  .chkSafety {
+      margin: 0 0 0 1rem;
+  }
+  input[type=text]:not(.browser-default)[readonly="readonly"]+label {
+      color: rgba(0,0,0,0.7);
+  }
+  input[type=text]:not(.browser-default)[readonly="readonly"] {
+    color: rgba(0,0,0,0.6);
+  }
+
+  /* to move/copy */
+
+  .relationship-card .cols {
+      display: flex;
+  }
+
+  .relationship-card .cols > div:nth-child(1) {
+    margin: 0 1rem 0 0;
+  }
+  .active-species {
+    padding: 1rem 0 0 .75rem;
+  }
+  .alert {
+      color: rgba(183, 12, 21,.8);
+  }
+  .row-centered {
+    display: flex;
+    align-items: center;
+  }
+
+  .feedback {
+      margin: 0 0 0 .5rem;
+      font-style: italic;
+  }

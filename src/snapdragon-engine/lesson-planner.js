@@ -4,7 +4,7 @@ import { getNextActiveLayerLayouts } from 'snapdragon-engine/lesson-plan-handler
 
 const { summary, history } = layouts;
 
-const createLessonPlan = (lessonPlan, config, collection, lesson) => {
+const createLessonPlan = async (lessonPlan, config, collection, lesson) => {
 
     lesson.moduleSize = lesson.moduleSize || config.moduleSize;
     lesson.currentRound = lesson.currentRound || 1;
@@ -16,7 +16,7 @@ const createLessonPlan = (lessonPlan, config, collection, lesson) => {
 
     const layouts = getNextActiveLayerLayouts(lessonPlan, config, lesson);
     
-    return createLesson(
+    return await createLesson(
         lessonPlan,
         layouts, 
         [ summary, history ],

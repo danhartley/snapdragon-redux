@@ -1,6 +1,6 @@
 .taxon-card-scrollable-container {
     overflow-y: scroll;
-    height: calc(100vh - 20rem);
+    height: calc(100vh - 20.5rem);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -26,6 +26,6 @@
 @media (min-width: 1024px) {
     .id-box-container {
         position: absolute;
-        top: 12rem;
+        top: 13rem;
     }
 }

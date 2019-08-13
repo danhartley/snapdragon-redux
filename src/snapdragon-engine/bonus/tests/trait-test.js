@@ -1,5 +1,5 @@
 import { store } from 'redux/store';
-import { getTypedTraitsForSpecies } from 'api/traits/species-typed-traits';
+import { getTraitsForTests } from 'api/traits/traits-for-tests';
 
 export const getTraitTests = itemsInThisRound => {
 
@@ -25,5 +25,5 @@ export const getTraitTests = itemsInThisRound => {
 }
 
 const getTraitTest = (enums, item) => {
-    return getTypedTraitsForSpecies(enums, item);
+    return getTraitsForTests(enums, item);
 };

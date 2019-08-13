@@ -30,8 +30,9 @@ class CreateGuide {
         
         this.steps = [
             { number: 1, title: 'Create Lesson', description: 'Location', nextStep: 'Filter species by category', disabled: true, className:'location-actions' },
-            { number: 2, title: 'Create Lesson', description: 'Species', nextStep: 'Choose season', disabled: true, className:'species-actions' },
-            { number: 3, title: 'Create Lesson', description: 'Season', nextStep: 'Start Lesson', disabled: true, className:'filter-actions' },
+            { number: 2, title: 'Create Lesson', description: 'Species', nextStep: 'Choose season', disabled: true, className:'species-actions',
+                alternative: { nextStep: 'Start Lesson' } },
+            { number: 3, title: 'Create Lesson', description: 'Season', nextStep: 'Start Lesson', disabled: true, className:'filter-actions' }
         ];
         
         this.modal = document.getElementById('createGuide');
@@ -63,10 +64,14 @@ class CreateGuide {
             this.config = config;
             actions.boundUpdateConfig(config);
         }
-    }
 
-    get getCurrentStep() {
-        return this.currentStep;
+        this.getCurrentStep = () => {
+            return this.currentStep;
+        }
+
+        this.setCurrentStep = step => {
+            this.currentStep = step;
+        }
     }
 
     addStepActions(className) {
@@ -100,7 +105,7 @@ class CreateGuide {
 
         this.nextStepActionTxt.removeAttribute('data-dismiss');
 
-        if(nextStep > this.steps.length) {
+        if(this.startLesson ) {
             closeModalListeners.forEach(listener => listener(enums.lessonState.GET_SPECIES));
             this.currentStep = 0;
             const config = this.getConfig();
@@ -173,14 +178,15 @@ export const createGuideHandler = (step) => {
     guide.createStep(step);
 
     const handleNextStepAction = event => {
-        guide.createStep(guide.getCurrentStep + 1, 'NEXT');
+        guide.startLesson = guide.nextStepActionTxt.innerHTML.indexOf('Start Lesson') > -1; // hack
+        guide.createStep(guide.getCurrentStep() + 1, 'NEXT');
         guide.listeners.push( { element: guide.nextStepAction, handler: handleNextStepAction });
     };
 
     guide.nextStepAction.addEventListener('click', handleNextStepAction, true);
 
     const handlePreviousStepAction = event => {
-        guide.createStep(guide.getCurrentStep - 1, 'PREVIOUS');
+        guide.createStep(guide.getCurrentStep() - 1, 'PREVIOUS');
         guide.listeners.push( { element: guide.previousStepAction, handler: handlePreviousStepAction });
     };
 

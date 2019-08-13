@@ -1,0 +1,45 @@
+<div>
+    <div class="sub container">
+
+    <div class="row">
+        <div class="input-field col s2">
+            <input id="input-search" type="text" class="validate autocomplete" autofocus>
+            <label for="input-search">Search by latin name</label>
+        </div>
+
+        <div class="async-progress hide col s2">Looking for matches on EOL…</div>
+    </div>
+
+    <div class="row">
+        
+        <div class="input-field col s2">
+            <input id="input-species" type="text" class="validate">
+            <label for="input-species">Enter EOL ID</label>
+        </div>
+
+        <div class="col s2"><a id="btnGetSpeciesById" class="btn">Get EOL Ref</a></div>    
+    </div>
+
+    <div class="row">
+        <div class="input-field">
+            <select name="licences" id="licences"></select>
+        </div>
+    </div>
+    
+    <div class="row">
+                
+        <div class="input-field col s4">
+            <select name="names" id="names"></select>
+            <label>Matching EOL species</label>
+        </div>
+
+        <div class="col s4">
+            <button class="btnAddSpecies btn hide">Save species</button>
+            <button class="btnAddTraits btn hide">Add traits</button>
+        </div>
+    </div>
+    <div class="sub container">
+        <div id="images"></div>        
+    </div>
+
+</div>

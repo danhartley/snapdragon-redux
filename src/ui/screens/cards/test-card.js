@@ -28,8 +28,8 @@ export const renderTestCardTemplate = (collection, context) => {
 
     renderTemplate(context, template.content, parent);
 
-    const testCardContainer = document.querySelector('.test-card-container');
-    const testCard = document.querySelector('.test-card-container');
+    const testCardContainer = document.querySelector('.js-test-card-container');
+    const testCard = document.querySelector('.js-test-card-container');
     const testCardIcon = testCard.querySelector('.js-card-link');
 
     const hideCurrentCard = (container, card) => {
@@ -52,36 +52,45 @@ export const renderTestCardTemplate = (collection, context) => {
         return { card, icon };
     }
 
-    testCardIcon.addEventListener('click', event => {        
+    testCardIcon.addEventListener('click', async event => {
         
         const speciesContainer = document.querySelector('.js-species-container');
         const taxonContainer = document.querySelector('.js-taxon-container');
 
         const item = collection.nextItem;
         
-        renderCard(collection, 'SWAP_OUT', item, speciesContainer, false);
-                
-        hideCurrentCard(testCardContainer, testCard);
+        const renderSpeciesCard = async () => {
 
-        const { card: speciesCard, icon: speciesIcon } = showNextCard(speciesContainer, '.js-card-card');
+            renderCard(collection, 'SWAP_OUT', item, speciesContainer, false);
+                    
+            setTimeout(() => {            
 
-        speciesIcon.addEventListener('click', event => {
+                hideCurrentCard(testCardContainer, testCard);
 
-            item.lichen 
-                ? renderNonTaxonCard('SWAP_OUT', item.keyTrait, taxonContainer, item.images[0].url)
-                : renderTaxonCard(collection, 'SWAP_OUT', item, taxonContainer, false);
-            
-            hideCurrentCard(speciesContainer, speciesCard);
+                const { card: speciesCard, icon: speciesIcon } = showNextCard(speciesContainer, '.js-species-card');
 
-            const { card: taxonCard, icon: taxonIcon } = item.lichen
-                ? showNextCard(taxonContainer, '.js-non-taxon-card')
-                : showNextCard(taxonContainer, '.js-taxon-card');
+                speciesIcon.addEventListener('click', async event => {
 
-            taxonIcon.addEventListener('click', event => {
-                hideCurrentCard(taxonContainer, taxonCard);
-                showNextCard(testCardContainer, '.js-test-card');
-            });
-        });
+                    item.lichen 
+                        ? renderNonTaxonCard('SWAP_OUT', item.keyTrait, taxonContainer, item.images[0].url)
+                        : renderTaxonCard(collection, 'SWAP_OUT', item, taxonContainer, false);
+                    
+                    hideCurrentCard(speciesContainer, speciesCard);
+
+                    const { card: taxonCard, icon: taxonIcon } = item.lichen
+                        ? showNextCard(taxonContainer, '.js-non-taxon-card')
+                        : showNextCard(taxonContainer, '.js-taxon-card');
+
+                    taxonIcon.addEventListener('click', event => {
+                        hideCurrentCard(taxonContainer, taxonCard);
+                        showNextCard(testCardContainer, '.js-test-card');
+                    });
+                });
+
+            }, 1000); // temporary!!!
+        };
+
+        await renderSpeciesCard();
     });
 
     const traitCardLink = document.querySelector('.js-traits-link');
@@ -99,9 +108,9 @@ export const renderTestCardTemplate = (collection, context) => {
         document.querySelector('.js-iconic-icon').classList.add('hide-important');
     }
 
-    const { bonus } = getBonusQuestion(item || {}, []);
+    const bonus = getBonusQuestion(item || {}, []);
 
-    if(bonus.typedItemTraits.length === 0) {
+    if(!bonus) {
         traitCardLink.classList.add('hide-important');
         document.querySelector('.js-iconic-icon').classList.remove('hide-important');
     }
